@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CodeRepositorySortOrder::NOT_SET:
+            return {};
           case CodeRepositorySortOrder::Ascending:
             return "Ascending";
           case CodeRepositorySortOrder::Descending:

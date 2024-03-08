@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ServerSideEncryption::NOT_SET:
+            return {};
           case ServerSideEncryption::AES256:
             return "AES256";
           case ServerSideEncryption::aws_kms:

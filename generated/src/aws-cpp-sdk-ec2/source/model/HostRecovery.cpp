@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HostRecovery::NOT_SET:
+            return {};
           case HostRecovery::on:
             return "on";
           case HostRecovery::off:

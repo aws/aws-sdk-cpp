@@ -27,7 +27,8 @@ RegisterJobDefinitionRequest::RegisterJobDefinitionRequest() :
     m_timeoutHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_platformCapabilitiesHasBeenSet(false),
-    m_eksPropertiesHasBeenSet(false)
+    m_eksPropertiesHasBeenSet(false),
+    m_ecsPropertiesHasBeenSet(false)
 {
 }
 
@@ -118,6 +119,12 @@ Aws::String RegisterJobDefinitionRequest::SerializePayload() const
   if(m_eksPropertiesHasBeenSet)
   {
    payload.WithObject("eksProperties", m_eksProperties.Jsonize());
+
+  }
+
+  if(m_ecsPropertiesHasBeenSet)
+  {
+   payload.WithObject("ecsProperties", m_ecsProperties.Jsonize());
 
   }
 

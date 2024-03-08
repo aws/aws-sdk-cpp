@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RiskLevelType::NOT_SET:
+            return {};
           case RiskLevelType::Low:
             return "Low";
           case RiskLevelType::Medium:

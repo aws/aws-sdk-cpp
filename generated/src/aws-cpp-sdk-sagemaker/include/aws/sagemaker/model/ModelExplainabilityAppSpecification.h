@@ -81,64 +81,64 @@ namespace Model
 
 
     /**
-     * <p>JSON formatted S3 file that defines explainability parameters. For more
-     * information on this JSON configuration file, see <a
+     * <p>JSON formatted Amazon S3 file that defines explainability parameters. For
+     * more information on this JSON configuration file, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-config-json-monitor-model-explainability-parameters.html">Configure
      * model explainability parameters</a>.</p>
      */
     inline const Aws::String& GetConfigUri() const{ return m_configUri; }
 
     /**
-     * <p>JSON formatted S3 file that defines explainability parameters. For more
-     * information on this JSON configuration file, see <a
+     * <p>JSON formatted Amazon S3 file that defines explainability parameters. For
+     * more information on this JSON configuration file, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-config-json-monitor-model-explainability-parameters.html">Configure
      * model explainability parameters</a>.</p>
      */
     inline bool ConfigUriHasBeenSet() const { return m_configUriHasBeenSet; }
 
     /**
-     * <p>JSON formatted S3 file that defines explainability parameters. For more
-     * information on this JSON configuration file, see <a
+     * <p>JSON formatted Amazon S3 file that defines explainability parameters. For
+     * more information on this JSON configuration file, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-config-json-monitor-model-explainability-parameters.html">Configure
      * model explainability parameters</a>.</p>
      */
     inline void SetConfigUri(const Aws::String& value) { m_configUriHasBeenSet = true; m_configUri = value; }
 
     /**
-     * <p>JSON formatted S3 file that defines explainability parameters. For more
-     * information on this JSON configuration file, see <a
+     * <p>JSON formatted Amazon S3 file that defines explainability parameters. For
+     * more information on this JSON configuration file, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-config-json-monitor-model-explainability-parameters.html">Configure
      * model explainability parameters</a>.</p>
      */
     inline void SetConfigUri(Aws::String&& value) { m_configUriHasBeenSet = true; m_configUri = std::move(value); }
 
     /**
-     * <p>JSON formatted S3 file that defines explainability parameters. For more
-     * information on this JSON configuration file, see <a
+     * <p>JSON formatted Amazon S3 file that defines explainability parameters. For
+     * more information on this JSON configuration file, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-config-json-monitor-model-explainability-parameters.html">Configure
      * model explainability parameters</a>.</p>
      */
     inline void SetConfigUri(const char* value) { m_configUriHasBeenSet = true; m_configUri.assign(value); }
 
     /**
-     * <p>JSON formatted S3 file that defines explainability parameters. For more
-     * information on this JSON configuration file, see <a
+     * <p>JSON formatted Amazon S3 file that defines explainability parameters. For
+     * more information on this JSON configuration file, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-config-json-monitor-model-explainability-parameters.html">Configure
      * model explainability parameters</a>.</p>
      */
     inline ModelExplainabilityAppSpecification& WithConfigUri(const Aws::String& value) { SetConfigUri(value); return *this;}
 
     /**
-     * <p>JSON formatted S3 file that defines explainability parameters. For more
-     * information on this JSON configuration file, see <a
+     * <p>JSON formatted Amazon S3 file that defines explainability parameters. For
+     * more information on this JSON configuration file, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-config-json-monitor-model-explainability-parameters.html">Configure
      * model explainability parameters</a>.</p>
      */
     inline ModelExplainabilityAppSpecification& WithConfigUri(Aws::String&& value) { SetConfigUri(std::move(value)); return *this;}
 
     /**
-     * <p>JSON formatted S3 file that defines explainability parameters. For more
-     * information on this JSON configuration file, see <a
+     * <p>JSON formatted Amazon S3 file that defines explainability parameters. For
+     * more information on this JSON configuration file, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-config-json-monitor-model-explainability-parameters.html">Configure
      * model explainability parameters</a>.</p>
      */

@@ -95,8 +95,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* DataSyncClient::SERVICE_NAME = "datasync";
-const char* DataSyncClient::ALLOCATION_TAG = "DataSyncClient";
+namespace Aws
+{
+  namespace DataSync
+  {
+    const char SERVICE_NAME[] = "datasync";
+    const char ALLOCATION_TAG[] = "DataSyncClient";
+  }
+}
+const char* DataSyncClient::GetServiceName() {return SERVICE_NAME;}
+const char* DataSyncClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 DataSyncClient::DataSyncClient(const DataSync::DataSyncClientConfiguration& clientConfiguration,
                                std::shared_ptr<DataSyncEndpointProviderBase> endpointProvider) :
@@ -108,7 +116,7 @@ DataSyncClient::DataSyncClient(const DataSync::DataSyncClientConfiguration& clie
             Aws::MakeShared<DataSyncErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<DataSyncEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -124,7 +132,7 @@ DataSyncClient::DataSyncClient(const AWSCredentials& credentials,
             Aws::MakeShared<DataSyncErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<DataSyncEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -140,7 +148,7 @@ DataSyncClient::DataSyncClient(const std::shared_ptr<AWSCredentialsProvider>& cr
             Aws::MakeShared<DataSyncErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<DataSyncEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

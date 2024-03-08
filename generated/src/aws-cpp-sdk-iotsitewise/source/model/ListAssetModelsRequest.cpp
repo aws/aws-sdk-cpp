@@ -18,7 +18,8 @@ using namespace Aws::Http;
 ListAssetModelsRequest::ListAssetModelsRequest() : 
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
+    m_maxResultsHasBeenSet(false),
+    m_assetModelTypesHasBeenSet(false)
 {
 }
 
@@ -42,6 +43,16 @@ void ListAssetModelsRequest::AddQueryStringParameters(URI& uri) const
       ss << m_maxResults;
       uri.AddQueryStringParameter("maxResults", ss.str());
       ss.str("");
+    }
+
+    if(m_assetModelTypesHasBeenSet)
+    {
+      for(const auto& item : m_assetModelTypes)
+      {
+        ss << AssetModelTypeMapper::GetNameForAssetModelType(item);
+        uri.AddQueryStringParameter("assetModelTypes", ss.str());
+        ss.str("");
+      }
     }
 
 }

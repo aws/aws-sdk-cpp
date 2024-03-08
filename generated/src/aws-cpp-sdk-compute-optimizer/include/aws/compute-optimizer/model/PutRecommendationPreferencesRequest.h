@@ -11,6 +11,11 @@
 #include <aws/compute-optimizer/model/EnhancedInfrastructureMetrics.h>
 #include <aws/compute-optimizer/model/InferredWorkloadTypesPreference.h>
 #include <aws/compute-optimizer/model/ExternalMetricsPreference.h>
+#include <aws/compute-optimizer/model/LookBackPeriodPreference.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/compute-optimizer/model/SavingsEstimationMode.h>
+#include <aws/compute-optimizer/model/UtilizationPreference.h>
+#include <aws/compute-optimizer/model/PreferredResource.h>
 #include <utility>
 
 namespace Aws
@@ -414,6 +419,298 @@ namespace Model
      */
     inline PutRecommendationPreferencesRequest& WithExternalMetricsPreference(ExternalMetricsPreference&& value) { SetExternalMetricsPreference(std::move(value)); return *this;}
 
+
+    /**
+     * <p> The preference to control the number of days the utilization metrics of the
+     * Amazon Web Services resource are analyzed. When this preference isn't specified,
+     * we use the default value <code>DAYS_14</code>. </p>  <p>You can only set
+     * this preference for the Amazon EC2 instance and Auto Scaling group resource
+     * types.</p> 
+     */
+    inline const LookBackPeriodPreference& GetLookBackPeriod() const{ return m_lookBackPeriod; }
+
+    /**
+     * <p> The preference to control the number of days the utilization metrics of the
+     * Amazon Web Services resource are analyzed. When this preference isn't specified,
+     * we use the default value <code>DAYS_14</code>. </p>  <p>You can only set
+     * this preference for the Amazon EC2 instance and Auto Scaling group resource
+     * types.</p> 
+     */
+    inline bool LookBackPeriodHasBeenSet() const { return m_lookBackPeriodHasBeenSet; }
+
+    /**
+     * <p> The preference to control the number of days the utilization metrics of the
+     * Amazon Web Services resource are analyzed. When this preference isn't specified,
+     * we use the default value <code>DAYS_14</code>. </p>  <p>You can only set
+     * this preference for the Amazon EC2 instance and Auto Scaling group resource
+     * types.</p> 
+     */
+    inline void SetLookBackPeriod(const LookBackPeriodPreference& value) { m_lookBackPeriodHasBeenSet = true; m_lookBackPeriod = value; }
+
+    /**
+     * <p> The preference to control the number of days the utilization metrics of the
+     * Amazon Web Services resource are analyzed. When this preference isn't specified,
+     * we use the default value <code>DAYS_14</code>. </p>  <p>You can only set
+     * this preference for the Amazon EC2 instance and Auto Scaling group resource
+     * types.</p> 
+     */
+    inline void SetLookBackPeriod(LookBackPeriodPreference&& value) { m_lookBackPeriodHasBeenSet = true; m_lookBackPeriod = std::move(value); }
+
+    /**
+     * <p> The preference to control the number of days the utilization metrics of the
+     * Amazon Web Services resource are analyzed. When this preference isn't specified,
+     * we use the default value <code>DAYS_14</code>. </p>  <p>You can only set
+     * this preference for the Amazon EC2 instance and Auto Scaling group resource
+     * types.</p> 
+     */
+    inline PutRecommendationPreferencesRequest& WithLookBackPeriod(const LookBackPeriodPreference& value) { SetLookBackPeriod(value); return *this;}
+
+    /**
+     * <p> The preference to control the number of days the utilization metrics of the
+     * Amazon Web Services resource are analyzed. When this preference isn't specified,
+     * we use the default value <code>DAYS_14</code>. </p>  <p>You can only set
+     * this preference for the Amazon EC2 instance and Auto Scaling group resource
+     * types.</p> 
+     */
+    inline PutRecommendationPreferencesRequest& WithLookBackPeriod(LookBackPeriodPreference&& value) { SetLookBackPeriod(std::move(value)); return *this;}
+
+
+    /**
+     * <p> The preference to control the resource’s CPU utilization thresholds -
+     * threshold and headroom. When this preference isn't specified, we use the
+     * following default values: </p> <ul> <li> <p> <code>P99_5</code> for
+     * threshold</p> </li> <li> <p> <code>PERCENT_17</code> for headroom</p> </li>
+     * </ul>  <p>You can only set this preference for the Amazon EC2 instance
+     * resource type.</p> 
+     */
+    inline const Aws::Vector<UtilizationPreference>& GetUtilizationPreferences() const{ return m_utilizationPreferences; }
+
+    /**
+     * <p> The preference to control the resource’s CPU utilization thresholds -
+     * threshold and headroom. When this preference isn't specified, we use the
+     * following default values: </p> <ul> <li> <p> <code>P99_5</code> for
+     * threshold</p> </li> <li> <p> <code>PERCENT_17</code> for headroom</p> </li>
+     * </ul>  <p>You can only set this preference for the Amazon EC2 instance
+     * resource type.</p> 
+     */
+    inline bool UtilizationPreferencesHasBeenSet() const { return m_utilizationPreferencesHasBeenSet; }
+
+    /**
+     * <p> The preference to control the resource’s CPU utilization thresholds -
+     * threshold and headroom. When this preference isn't specified, we use the
+     * following default values: </p> <ul> <li> <p> <code>P99_5</code> for
+     * threshold</p> </li> <li> <p> <code>PERCENT_17</code> for headroom</p> </li>
+     * </ul>  <p>You can only set this preference for the Amazon EC2 instance
+     * resource type.</p> 
+     */
+    inline void SetUtilizationPreferences(const Aws::Vector<UtilizationPreference>& value) { m_utilizationPreferencesHasBeenSet = true; m_utilizationPreferences = value; }
+
+    /**
+     * <p> The preference to control the resource’s CPU utilization thresholds -
+     * threshold and headroom. When this preference isn't specified, we use the
+     * following default values: </p> <ul> <li> <p> <code>P99_5</code> for
+     * threshold</p> </li> <li> <p> <code>PERCENT_17</code> for headroom</p> </li>
+     * </ul>  <p>You can only set this preference for the Amazon EC2 instance
+     * resource type.</p> 
+     */
+    inline void SetUtilizationPreferences(Aws::Vector<UtilizationPreference>&& value) { m_utilizationPreferencesHasBeenSet = true; m_utilizationPreferences = std::move(value); }
+
+    /**
+     * <p> The preference to control the resource’s CPU utilization thresholds -
+     * threshold and headroom. When this preference isn't specified, we use the
+     * following default values: </p> <ul> <li> <p> <code>P99_5</code> for
+     * threshold</p> </li> <li> <p> <code>PERCENT_17</code> for headroom</p> </li>
+     * </ul>  <p>You can only set this preference for the Amazon EC2 instance
+     * resource type.</p> 
+     */
+    inline PutRecommendationPreferencesRequest& WithUtilizationPreferences(const Aws::Vector<UtilizationPreference>& value) { SetUtilizationPreferences(value); return *this;}
+
+    /**
+     * <p> The preference to control the resource’s CPU utilization thresholds -
+     * threshold and headroom. When this preference isn't specified, we use the
+     * following default values: </p> <ul> <li> <p> <code>P99_5</code> for
+     * threshold</p> </li> <li> <p> <code>PERCENT_17</code> for headroom</p> </li>
+     * </ul>  <p>You can only set this preference for the Amazon EC2 instance
+     * resource type.</p> 
+     */
+    inline PutRecommendationPreferencesRequest& WithUtilizationPreferences(Aws::Vector<UtilizationPreference>&& value) { SetUtilizationPreferences(std::move(value)); return *this;}
+
+    /**
+     * <p> The preference to control the resource’s CPU utilization thresholds -
+     * threshold and headroom. When this preference isn't specified, we use the
+     * following default values: </p> <ul> <li> <p> <code>P99_5</code> for
+     * threshold</p> </li> <li> <p> <code>PERCENT_17</code> for headroom</p> </li>
+     * </ul>  <p>You can only set this preference for the Amazon EC2 instance
+     * resource type.</p> 
+     */
+    inline PutRecommendationPreferencesRequest& AddUtilizationPreferences(const UtilizationPreference& value) { m_utilizationPreferencesHasBeenSet = true; m_utilizationPreferences.push_back(value); return *this; }
+
+    /**
+     * <p> The preference to control the resource’s CPU utilization thresholds -
+     * threshold and headroom. When this preference isn't specified, we use the
+     * following default values: </p> <ul> <li> <p> <code>P99_5</code> for
+     * threshold</p> </li> <li> <p> <code>PERCENT_17</code> for headroom</p> </li>
+     * </ul>  <p>You can only set this preference for the Amazon EC2 instance
+     * resource type.</p> 
+     */
+    inline PutRecommendationPreferencesRequest& AddUtilizationPreferences(UtilizationPreference&& value) { m_utilizationPreferencesHasBeenSet = true; m_utilizationPreferences.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p> The preference to control which resource type values are considered when
+     * generating rightsizing recommendations. You can specify this preference as a
+     * combination of include and exclude lists. You must specify either an
+     * <code>includeList</code> or <code>excludeList</code>. If the preference is an
+     * empty set of resource type values, an error occurs. </p>  <p>You can only
+     * set this preference for the Amazon EC2 instance and Auto Scaling group resource
+     * types.</p> 
+     */
+    inline const Aws::Vector<PreferredResource>& GetPreferredResources() const{ return m_preferredResources; }
+
+    /**
+     * <p> The preference to control which resource type values are considered when
+     * generating rightsizing recommendations. You can specify this preference as a
+     * combination of include and exclude lists. You must specify either an
+     * <code>includeList</code> or <code>excludeList</code>. If the preference is an
+     * empty set of resource type values, an error occurs. </p>  <p>You can only
+     * set this preference for the Amazon EC2 instance and Auto Scaling group resource
+     * types.</p> 
+     */
+    inline bool PreferredResourcesHasBeenSet() const { return m_preferredResourcesHasBeenSet; }
+
+    /**
+     * <p> The preference to control which resource type values are considered when
+     * generating rightsizing recommendations. You can specify this preference as a
+     * combination of include and exclude lists. You must specify either an
+     * <code>includeList</code> or <code>excludeList</code>. If the preference is an
+     * empty set of resource type values, an error occurs. </p>  <p>You can only
+     * set this preference for the Amazon EC2 instance and Auto Scaling group resource
+     * types.</p> 
+     */
+    inline void SetPreferredResources(const Aws::Vector<PreferredResource>& value) { m_preferredResourcesHasBeenSet = true; m_preferredResources = value; }
+
+    /**
+     * <p> The preference to control which resource type values are considered when
+     * generating rightsizing recommendations. You can specify this preference as a
+     * combination of include and exclude lists. You must specify either an
+     * <code>includeList</code> or <code>excludeList</code>. If the preference is an
+     * empty set of resource type values, an error occurs. </p>  <p>You can only
+     * set this preference for the Amazon EC2 instance and Auto Scaling group resource
+     * types.</p> 
+     */
+    inline void SetPreferredResources(Aws::Vector<PreferredResource>&& value) { m_preferredResourcesHasBeenSet = true; m_preferredResources = std::move(value); }
+
+    /**
+     * <p> The preference to control which resource type values are considered when
+     * generating rightsizing recommendations. You can specify this preference as a
+     * combination of include and exclude lists. You must specify either an
+     * <code>includeList</code> or <code>excludeList</code>. If the preference is an
+     * empty set of resource type values, an error occurs. </p>  <p>You can only
+     * set this preference for the Amazon EC2 instance and Auto Scaling group resource
+     * types.</p> 
+     */
+    inline PutRecommendationPreferencesRequest& WithPreferredResources(const Aws::Vector<PreferredResource>& value) { SetPreferredResources(value); return *this;}
+
+    /**
+     * <p> The preference to control which resource type values are considered when
+     * generating rightsizing recommendations. You can specify this preference as a
+     * combination of include and exclude lists. You must specify either an
+     * <code>includeList</code> or <code>excludeList</code>. If the preference is an
+     * empty set of resource type values, an error occurs. </p>  <p>You can only
+     * set this preference for the Amazon EC2 instance and Auto Scaling group resource
+     * types.</p> 
+     */
+    inline PutRecommendationPreferencesRequest& WithPreferredResources(Aws::Vector<PreferredResource>&& value) { SetPreferredResources(std::move(value)); return *this;}
+
+    /**
+     * <p> The preference to control which resource type values are considered when
+     * generating rightsizing recommendations. You can specify this preference as a
+     * combination of include and exclude lists. You must specify either an
+     * <code>includeList</code> or <code>excludeList</code>. If the preference is an
+     * empty set of resource type values, an error occurs. </p>  <p>You can only
+     * set this preference for the Amazon EC2 instance and Auto Scaling group resource
+     * types.</p> 
+     */
+    inline PutRecommendationPreferencesRequest& AddPreferredResources(const PreferredResource& value) { m_preferredResourcesHasBeenSet = true; m_preferredResources.push_back(value); return *this; }
+
+    /**
+     * <p> The preference to control which resource type values are considered when
+     * generating rightsizing recommendations. You can specify this preference as a
+     * combination of include and exclude lists. You must specify either an
+     * <code>includeList</code> or <code>excludeList</code>. If the preference is an
+     * empty set of resource type values, an error occurs. </p>  <p>You can only
+     * set this preference for the Amazon EC2 instance and Auto Scaling group resource
+     * types.</p> 
+     */
+    inline PutRecommendationPreferencesRequest& AddPreferredResources(PreferredResource&& value) { m_preferredResourcesHasBeenSet = true; m_preferredResources.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p> The status of the savings estimation mode preference to create or update.
+     * </p> <p>Specify the <code>AfterDiscounts</code> status to activate the
+     * preference, or specify <code>BeforeDiscounts</code> to deactivate the
+     * preference.</p> <p>Only the account manager or delegated administrator of your
+     * organization can activate this preference.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/savings-estimation-mode.html">
+     * Savings estimation mode</a> in the <i>Compute Optimizer User Guide</i>.</p>
+     */
+    inline const SavingsEstimationMode& GetSavingsEstimationMode() const{ return m_savingsEstimationMode; }
+
+    /**
+     * <p> The status of the savings estimation mode preference to create or update.
+     * </p> <p>Specify the <code>AfterDiscounts</code> status to activate the
+     * preference, or specify <code>BeforeDiscounts</code> to deactivate the
+     * preference.</p> <p>Only the account manager or delegated administrator of your
+     * organization can activate this preference.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/savings-estimation-mode.html">
+     * Savings estimation mode</a> in the <i>Compute Optimizer User Guide</i>.</p>
+     */
+    inline bool SavingsEstimationModeHasBeenSet() const { return m_savingsEstimationModeHasBeenSet; }
+
+    /**
+     * <p> The status of the savings estimation mode preference to create or update.
+     * </p> <p>Specify the <code>AfterDiscounts</code> status to activate the
+     * preference, or specify <code>BeforeDiscounts</code> to deactivate the
+     * preference.</p> <p>Only the account manager or delegated administrator of your
+     * organization can activate this preference.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/savings-estimation-mode.html">
+     * Savings estimation mode</a> in the <i>Compute Optimizer User Guide</i>.</p>
+     */
+    inline void SetSavingsEstimationMode(const SavingsEstimationMode& value) { m_savingsEstimationModeHasBeenSet = true; m_savingsEstimationMode = value; }
+
+    /**
+     * <p> The status of the savings estimation mode preference to create or update.
+     * </p> <p>Specify the <code>AfterDiscounts</code> status to activate the
+     * preference, or specify <code>BeforeDiscounts</code> to deactivate the
+     * preference.</p> <p>Only the account manager or delegated administrator of your
+     * organization can activate this preference.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/savings-estimation-mode.html">
+     * Savings estimation mode</a> in the <i>Compute Optimizer User Guide</i>.</p>
+     */
+    inline void SetSavingsEstimationMode(SavingsEstimationMode&& value) { m_savingsEstimationModeHasBeenSet = true; m_savingsEstimationMode = std::move(value); }
+
+    /**
+     * <p> The status of the savings estimation mode preference to create or update.
+     * </p> <p>Specify the <code>AfterDiscounts</code> status to activate the
+     * preference, or specify <code>BeforeDiscounts</code> to deactivate the
+     * preference.</p> <p>Only the account manager or delegated administrator of your
+     * organization can activate this preference.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/savings-estimation-mode.html">
+     * Savings estimation mode</a> in the <i>Compute Optimizer User Guide</i>.</p>
+     */
+    inline PutRecommendationPreferencesRequest& WithSavingsEstimationMode(const SavingsEstimationMode& value) { SetSavingsEstimationMode(value); return *this;}
+
+    /**
+     * <p> The status of the savings estimation mode preference to create or update.
+     * </p> <p>Specify the <code>AfterDiscounts</code> status to activate the
+     * preference, or specify <code>BeforeDiscounts</code> to deactivate the
+     * preference.</p> <p>Only the account manager or delegated administrator of your
+     * organization can activate this preference.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/savings-estimation-mode.html">
+     * Savings estimation mode</a> in the <i>Compute Optimizer User Guide</i>.</p>
+     */
+    inline PutRecommendationPreferencesRequest& WithSavingsEstimationMode(SavingsEstimationMode&& value) { SetSavingsEstimationMode(std::move(value)); return *this;}
+
   private:
 
     ResourceType m_resourceType;
@@ -430,6 +727,18 @@ namespace Model
 
     ExternalMetricsPreference m_externalMetricsPreference;
     bool m_externalMetricsPreferenceHasBeenSet = false;
+
+    LookBackPeriodPreference m_lookBackPeriod;
+    bool m_lookBackPeriodHasBeenSet = false;
+
+    Aws::Vector<UtilizationPreference> m_utilizationPreferences;
+    bool m_utilizationPreferencesHasBeenSet = false;
+
+    Aws::Vector<PreferredResource> m_preferredResources;
+    bool m_preferredResourcesHasBeenSet = false;
+
+    SavingsEstimationMode m_savingsEstimationMode;
+    bool m_savingsEstimationModeHasBeenSet = false;
   };
 
 } // namespace Model

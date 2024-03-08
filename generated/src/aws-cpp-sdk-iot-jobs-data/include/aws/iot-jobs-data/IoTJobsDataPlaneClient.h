@@ -34,8 +34,8 @@ namespace IoTJobsDataPlane
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef IoTJobsDataPlaneClientConfiguration ClientConfigurationType;
       typedef IoTJobsDataPlaneEndpointProvider EndpointProviderType;
@@ -45,14 +45,14 @@ namespace IoTJobsDataPlane
         * is not specified, it will be initialized to default values.
         */
         IoTJobsDataPlaneClient(const Aws::IoTJobsDataPlane::IoTJobsDataPlaneClientConfiguration& clientConfiguration = Aws::IoTJobsDataPlane::IoTJobsDataPlaneClientConfiguration(),
-                               std::shared_ptr<IoTJobsDataPlaneEndpointProviderBase> endpointProvider = Aws::MakeShared<IoTJobsDataPlaneEndpointProvider>(ALLOCATION_TAG));
+                               std::shared_ptr<IoTJobsDataPlaneEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         IoTJobsDataPlaneClient(const Aws::Auth::AWSCredentials& credentials,
-                               std::shared_ptr<IoTJobsDataPlaneEndpointProviderBase> endpointProvider = Aws::MakeShared<IoTJobsDataPlaneEndpointProvider>(ALLOCATION_TAG),
+                               std::shared_ptr<IoTJobsDataPlaneEndpointProviderBase> endpointProvider = nullptr,
                                const Aws::IoTJobsDataPlane::IoTJobsDataPlaneClientConfiguration& clientConfiguration = Aws::IoTJobsDataPlane::IoTJobsDataPlaneClientConfiguration());
 
        /**
@@ -60,7 +60,7 @@ namespace IoTJobsDataPlane
         * the default http client factory will be used
         */
         IoTJobsDataPlaneClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                               std::shared_ptr<IoTJobsDataPlaneEndpointProviderBase> endpointProvider = Aws::MakeShared<IoTJobsDataPlaneEndpointProvider>(ALLOCATION_TAG),
+                               std::shared_ptr<IoTJobsDataPlaneEndpointProviderBase> endpointProvider = nullptr,
                                const Aws::IoTJobsDataPlane::IoTJobsDataPlaneClientConfiguration& clientConfiguration = Aws::IoTJobsDataPlane::IoTJobsDataPlaneClientConfiguration());
 
 

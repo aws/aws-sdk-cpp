@@ -124,67 +124,67 @@ namespace Model
 
 
     /**
-     * <p>Lists the hyperparameter names and ranges.</p>
+     * <p>Lists the algorithm hyperparameters and their values.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAlgorithmHyperParameters() const{ return m_algorithmHyperParameters; }
 
     /**
-     * <p>Lists the hyperparameter names and ranges.</p>
+     * <p>Lists the algorithm hyperparameters and their values.</p>
      */
     inline bool AlgorithmHyperParametersHasBeenSet() const { return m_algorithmHyperParametersHasBeenSet; }
 
     /**
-     * <p>Lists the hyperparameter names and ranges.</p>
+     * <p>Lists the algorithm hyperparameters and their values.</p>
      */
     inline void SetAlgorithmHyperParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_algorithmHyperParametersHasBeenSet = true; m_algorithmHyperParameters = value; }
 
     /**
-     * <p>Lists the hyperparameter names and ranges.</p>
+     * <p>Lists the algorithm hyperparameters and their values.</p>
      */
     inline void SetAlgorithmHyperParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_algorithmHyperParametersHasBeenSet = true; m_algorithmHyperParameters = std::move(value); }
 
     /**
-     * <p>Lists the hyperparameter names and ranges.</p>
+     * <p>Lists the algorithm hyperparameters and their values.</p>
      */
     inline SolutionConfig& WithAlgorithmHyperParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetAlgorithmHyperParameters(value); return *this;}
 
     /**
-     * <p>Lists the hyperparameter names and ranges.</p>
+     * <p>Lists the algorithm hyperparameters and their values.</p>
      */
     inline SolutionConfig& WithAlgorithmHyperParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetAlgorithmHyperParameters(std::move(value)); return *this;}
 
     /**
-     * <p>Lists the hyperparameter names and ranges.</p>
+     * <p>Lists the algorithm hyperparameters and their values.</p>
      */
     inline SolutionConfig& AddAlgorithmHyperParameters(const Aws::String& key, const Aws::String& value) { m_algorithmHyperParametersHasBeenSet = true; m_algorithmHyperParameters.emplace(key, value); return *this; }
 
     /**
-     * <p>Lists the hyperparameter names and ranges.</p>
+     * <p>Lists the algorithm hyperparameters and their values.</p>
      */
     inline SolutionConfig& AddAlgorithmHyperParameters(Aws::String&& key, const Aws::String& value) { m_algorithmHyperParametersHasBeenSet = true; m_algorithmHyperParameters.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Lists the hyperparameter names and ranges.</p>
+     * <p>Lists the algorithm hyperparameters and their values.</p>
      */
     inline SolutionConfig& AddAlgorithmHyperParameters(const Aws::String& key, Aws::String&& value) { m_algorithmHyperParametersHasBeenSet = true; m_algorithmHyperParameters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Lists the hyperparameter names and ranges.</p>
+     * <p>Lists the algorithm hyperparameters and their values.</p>
      */
     inline SolutionConfig& AddAlgorithmHyperParameters(Aws::String&& key, Aws::String&& value) { m_algorithmHyperParametersHasBeenSet = true; m_algorithmHyperParameters.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>Lists the hyperparameter names and ranges.</p>
+     * <p>Lists the algorithm hyperparameters and their values.</p>
      */
     inline SolutionConfig& AddAlgorithmHyperParameters(const char* key, Aws::String&& value) { m_algorithmHyperParametersHasBeenSet = true; m_algorithmHyperParameters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Lists the hyperparameter names and ranges.</p>
+     * <p>Lists the algorithm hyperparameters and their values.</p>
      */
     inline SolutionConfig& AddAlgorithmHyperParameters(Aws::String&& key, const char* value) { m_algorithmHyperParametersHasBeenSet = true; m_algorithmHyperParameters.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Lists the hyperparameter names and ranges.</p>
+     * <p>Lists the algorithm hyperparameters and their values.</p>
      */
     inline SolutionConfig& AddAlgorithmHyperParameters(const char* key, const char* value) { m_algorithmHyperParametersHasBeenSet = true; m_algorithmHyperParameters.emplace(key, value); return *this; }
 

@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AudioDurationCorrection::NOT_SET:
+            return {};
           case AudioDurationCorrection::DISABLED:
             return "DISABLED";
           case AudioDurationCorrection::AUTO:

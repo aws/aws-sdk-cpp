@@ -15,8 +15,11 @@
 #include <aws/emr-serverless/model/NetworkConfiguration.h>
 #include <aws/emr-serverless/model/Architecture.h>
 #include <aws/emr-serverless/model/ImageConfiguration.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/emr-serverless/model/MonitoringConfiguration.h>
 #include <aws/emr-serverless/model/InitialCapacityConfig.h>
 #include <aws/emr-serverless/model/WorkerTypeSpecification.h>
+#include <aws/emr-serverless/model/Configuration.h>
 #include <utility>
 
 namespace Aws
@@ -797,6 +800,122 @@ namespace Model
      */
     inline Application& AddWorkerTypeSpecifications(const char* key, const WorkerTypeSpecification& value) { m_workerTypeSpecificationsHasBeenSet = true; m_workerTypeSpecifications.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html">Configuration</a>
+     * specifications of an application. Each configuration consists of a
+     * classification and properties. You use this parameter when creating or updating
+     * an application. To see the runtimeConfiguration object of an application, run
+     * the <a
+     * href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_GetApplication.html">GetApplication</a>
+     * API operation.</p>
+     */
+    inline const Aws::Vector<Configuration>& GetRuntimeConfiguration() const{ return m_runtimeConfiguration; }
+
+    /**
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html">Configuration</a>
+     * specifications of an application. Each configuration consists of a
+     * classification and properties. You use this parameter when creating or updating
+     * an application. To see the runtimeConfiguration object of an application, run
+     * the <a
+     * href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_GetApplication.html">GetApplication</a>
+     * API operation.</p>
+     */
+    inline bool RuntimeConfigurationHasBeenSet() const { return m_runtimeConfigurationHasBeenSet; }
+
+    /**
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html">Configuration</a>
+     * specifications of an application. Each configuration consists of a
+     * classification and properties. You use this parameter when creating or updating
+     * an application. To see the runtimeConfiguration object of an application, run
+     * the <a
+     * href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_GetApplication.html">GetApplication</a>
+     * API operation.</p>
+     */
+    inline void SetRuntimeConfiguration(const Aws::Vector<Configuration>& value) { m_runtimeConfigurationHasBeenSet = true; m_runtimeConfiguration = value; }
+
+    /**
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html">Configuration</a>
+     * specifications of an application. Each configuration consists of a
+     * classification and properties. You use this parameter when creating or updating
+     * an application. To see the runtimeConfiguration object of an application, run
+     * the <a
+     * href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_GetApplication.html">GetApplication</a>
+     * API operation.</p>
+     */
+    inline void SetRuntimeConfiguration(Aws::Vector<Configuration>&& value) { m_runtimeConfigurationHasBeenSet = true; m_runtimeConfiguration = std::move(value); }
+
+    /**
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html">Configuration</a>
+     * specifications of an application. Each configuration consists of a
+     * classification and properties. You use this parameter when creating or updating
+     * an application. To see the runtimeConfiguration object of an application, run
+     * the <a
+     * href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_GetApplication.html">GetApplication</a>
+     * API operation.</p>
+     */
+    inline Application& WithRuntimeConfiguration(const Aws::Vector<Configuration>& value) { SetRuntimeConfiguration(value); return *this;}
+
+    /**
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html">Configuration</a>
+     * specifications of an application. Each configuration consists of a
+     * classification and properties. You use this parameter when creating or updating
+     * an application. To see the runtimeConfiguration object of an application, run
+     * the <a
+     * href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_GetApplication.html">GetApplication</a>
+     * API operation.</p>
+     */
+    inline Application& WithRuntimeConfiguration(Aws::Vector<Configuration>&& value) { SetRuntimeConfiguration(std::move(value)); return *this;}
+
+    /**
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html">Configuration</a>
+     * specifications of an application. Each configuration consists of a
+     * classification and properties. You use this parameter when creating or updating
+     * an application. To see the runtimeConfiguration object of an application, run
+     * the <a
+     * href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_GetApplication.html">GetApplication</a>
+     * API operation.</p>
+     */
+    inline Application& AddRuntimeConfiguration(const Configuration& value) { m_runtimeConfigurationHasBeenSet = true; m_runtimeConfiguration.push_back(value); return *this; }
+
+    /**
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html">Configuration</a>
+     * specifications of an application. Each configuration consists of a
+     * classification and properties. You use this parameter when creating or updating
+     * an application. To see the runtimeConfiguration object of an application, run
+     * the <a
+     * href="https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_GetApplication.html">GetApplication</a>
+     * API operation.</p>
+     */
+    inline Application& AddRuntimeConfiguration(Configuration&& value) { m_runtimeConfigurationHasBeenSet = true; m_runtimeConfiguration.push_back(std::move(value)); return *this; }
+
+
+    
+    inline const MonitoringConfiguration& GetMonitoringConfiguration() const{ return m_monitoringConfiguration; }
+
+    
+    inline bool MonitoringConfigurationHasBeenSet() const { return m_monitoringConfigurationHasBeenSet; }
+
+    
+    inline void SetMonitoringConfiguration(const MonitoringConfiguration& value) { m_monitoringConfigurationHasBeenSet = true; m_monitoringConfiguration = value; }
+
+    
+    inline void SetMonitoringConfiguration(MonitoringConfiguration&& value) { m_monitoringConfigurationHasBeenSet = true; m_monitoringConfiguration = std::move(value); }
+
+    
+    inline Application& WithMonitoringConfiguration(const MonitoringConfiguration& value) { SetMonitoringConfiguration(value); return *this;}
+
+    
+    inline Application& WithMonitoringConfiguration(MonitoringConfiguration&& value) { SetMonitoringConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_applicationId;
@@ -852,6 +971,12 @@ namespace Model
 
     Aws::Map<Aws::String, WorkerTypeSpecification> m_workerTypeSpecifications;
     bool m_workerTypeSpecificationsHasBeenSet = false;
+
+    Aws::Vector<Configuration> m_runtimeConfiguration;
+    bool m_runtimeConfigurationHasBeenSet = false;
+
+    MonitoringConfiguration m_monitoringConfiguration;
+    bool m_monitoringConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

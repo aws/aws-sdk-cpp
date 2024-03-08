@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Av1FilmGrainSynthesis::NOT_SET:
+            return {};
           case Av1FilmGrainSynthesis::DISABLED:
             return "DISABLED";
           case Av1FilmGrainSynthesis::ENABLED:

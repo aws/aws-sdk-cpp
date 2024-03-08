@@ -33,31 +33,31 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == CONFLICT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTTwinMakerErrors::CONFLICT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTTwinMakerErrors::CONFLICT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == SERVICE_QUOTA_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTTwinMakerErrors::SERVICE_QUOTA_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTTwinMakerErrors::SERVICE_QUOTA_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INTERNAL_SERVER_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTTwinMakerErrors::INTERNAL_SERVER), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTTwinMakerErrors::INTERNAL_SERVER), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == CONNECTOR_FAILURE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTTwinMakerErrors::CONNECTOR_FAILURE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTTwinMakerErrors::CONNECTOR_FAILURE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == QUERY_TIMEOUT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTTwinMakerErrors::QUERY_TIMEOUT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTTwinMakerErrors::QUERY_TIMEOUT), RetryableType::RETRYABLE);
   }
   else if (hashCode == CONNECTOR_TIMEOUT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTTwinMakerErrors::CONNECTOR_TIMEOUT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTTwinMakerErrors::CONNECTOR_TIMEOUT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == TOO_MANY_TAGS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTTwinMakerErrors::TOO_MANY_TAGS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(IoTTwinMakerErrors::TOO_MANY_TAGS), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

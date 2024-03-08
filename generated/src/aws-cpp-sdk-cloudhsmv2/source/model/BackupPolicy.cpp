@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BackupPolicy::NOT_SET:
+            return {};
           case BackupPolicy::DEFAULT:
             return "DEFAULT";
           default:

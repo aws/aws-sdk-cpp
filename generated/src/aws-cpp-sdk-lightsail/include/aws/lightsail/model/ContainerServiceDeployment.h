@@ -68,13 +68,13 @@ namespace Model
 
     /**
      * <p>The state of the deployment.</p> <p>A deployment can be in one of the
-     * following states:</p> <ul> <li> <p> <code>Activating</code> - The deployment is
-     * being created.</p> </li> <li> <p> <code>Active</code> - The deployment was
+     * following states:</p> <ul> <li> <p> <code>ACTIVATING</code> - The deployment is
+     * being created.</p> </li> <li> <p> <code>ACTIVE</code> - The deployment was
      * successfully created, and it's currently running on the container service. The
      * container service can have only one deployment in an active state at a time.</p>
-     * </li> <li> <p> <code>Inactive</code> - The deployment was previously
+     * </li> <li> <p> <code>INACTIVE</code> - The deployment was previously
      * successfully created, but it is not currently running on the container
-     * service.</p> </li> <li> <p> <code>Failed</code> - The deployment failed. Use the
+     * service.</p> </li> <li> <p> <code>FAILED</code> - The deployment failed. Use the
      * <code>GetContainerLog</code> action to view the log events for the containers in
      * the deployment to try to determine the reason for the failure.</p> </li> </ul>
      */
@@ -82,13 +82,13 @@ namespace Model
 
     /**
      * <p>The state of the deployment.</p> <p>A deployment can be in one of the
-     * following states:</p> <ul> <li> <p> <code>Activating</code> - The deployment is
-     * being created.</p> </li> <li> <p> <code>Active</code> - The deployment was
+     * following states:</p> <ul> <li> <p> <code>ACTIVATING</code> - The deployment is
+     * being created.</p> </li> <li> <p> <code>ACTIVE</code> - The deployment was
      * successfully created, and it's currently running on the container service. The
      * container service can have only one deployment in an active state at a time.</p>
-     * </li> <li> <p> <code>Inactive</code> - The deployment was previously
+     * </li> <li> <p> <code>INACTIVE</code> - The deployment was previously
      * successfully created, but it is not currently running on the container
-     * service.</p> </li> <li> <p> <code>Failed</code> - The deployment failed. Use the
+     * service.</p> </li> <li> <p> <code>FAILED</code> - The deployment failed. Use the
      * <code>GetContainerLog</code> action to view the log events for the containers in
      * the deployment to try to determine the reason for the failure.</p> </li> </ul>
      */
@@ -96,13 +96,13 @@ namespace Model
 
     /**
      * <p>The state of the deployment.</p> <p>A deployment can be in one of the
-     * following states:</p> <ul> <li> <p> <code>Activating</code> - The deployment is
-     * being created.</p> </li> <li> <p> <code>Active</code> - The deployment was
+     * following states:</p> <ul> <li> <p> <code>ACTIVATING</code> - The deployment is
+     * being created.</p> </li> <li> <p> <code>ACTIVE</code> - The deployment was
      * successfully created, and it's currently running on the container service. The
      * container service can have only one deployment in an active state at a time.</p>
-     * </li> <li> <p> <code>Inactive</code> - The deployment was previously
+     * </li> <li> <p> <code>INACTIVE</code> - The deployment was previously
      * successfully created, but it is not currently running on the container
-     * service.</p> </li> <li> <p> <code>Failed</code> - The deployment failed. Use the
+     * service.</p> </li> <li> <p> <code>FAILED</code> - The deployment failed. Use the
      * <code>GetContainerLog</code> action to view the log events for the containers in
      * the deployment to try to determine the reason for the failure.</p> </li> </ul>
      */
@@ -110,13 +110,13 @@ namespace Model
 
     /**
      * <p>The state of the deployment.</p> <p>A deployment can be in one of the
-     * following states:</p> <ul> <li> <p> <code>Activating</code> - The deployment is
-     * being created.</p> </li> <li> <p> <code>Active</code> - The deployment was
+     * following states:</p> <ul> <li> <p> <code>ACTIVATING</code> - The deployment is
+     * being created.</p> </li> <li> <p> <code>ACTIVE</code> - The deployment was
      * successfully created, and it's currently running on the container service. The
      * container service can have only one deployment in an active state at a time.</p>
-     * </li> <li> <p> <code>Inactive</code> - The deployment was previously
+     * </li> <li> <p> <code>INACTIVE</code> - The deployment was previously
      * successfully created, but it is not currently running on the container
-     * service.</p> </li> <li> <p> <code>Failed</code> - The deployment failed. Use the
+     * service.</p> </li> <li> <p> <code>FAILED</code> - The deployment failed. Use the
      * <code>GetContainerLog</code> action to view the log events for the containers in
      * the deployment to try to determine the reason for the failure.</p> </li> </ul>
      */
@@ -124,13 +124,13 @@ namespace Model
 
     /**
      * <p>The state of the deployment.</p> <p>A deployment can be in one of the
-     * following states:</p> <ul> <li> <p> <code>Activating</code> - The deployment is
-     * being created.</p> </li> <li> <p> <code>Active</code> - The deployment was
+     * following states:</p> <ul> <li> <p> <code>ACTIVATING</code> - The deployment is
+     * being created.</p> </li> <li> <p> <code>ACTIVE</code> - The deployment was
      * successfully created, and it's currently running on the container service. The
      * container service can have only one deployment in an active state at a time.</p>
-     * </li> <li> <p> <code>Inactive</code> - The deployment was previously
+     * </li> <li> <p> <code>INACTIVE</code> - The deployment was previously
      * successfully created, but it is not currently running on the container
-     * service.</p> </li> <li> <p> <code>Failed</code> - The deployment failed. Use the
+     * service.</p> </li> <li> <p> <code>FAILED</code> - The deployment failed. Use the
      * <code>GetContainerLog</code> action to view the log events for the containers in
      * the deployment to try to determine the reason for the failure.</p> </li> </ul>
      */
@@ -138,13 +138,13 @@ namespace Model
 
     /**
      * <p>The state of the deployment.</p> <p>A deployment can be in one of the
-     * following states:</p> <ul> <li> <p> <code>Activating</code> - The deployment is
-     * being created.</p> </li> <li> <p> <code>Active</code> - The deployment was
+     * following states:</p> <ul> <li> <p> <code>ACTIVATING</code> - The deployment is
+     * being created.</p> </li> <li> <p> <code>ACTIVE</code> - The deployment was
      * successfully created, and it's currently running on the container service. The
      * container service can have only one deployment in an active state at a time.</p>
-     * </li> <li> <p> <code>Inactive</code> - The deployment was previously
+     * </li> <li> <p> <code>INACTIVE</code> - The deployment was previously
      * successfully created, but it is not currently running on the container
-     * service.</p> </li> <li> <p> <code>Failed</code> - The deployment failed. Use the
+     * service.</p> </li> <li> <p> <code>FAILED</code> - The deployment failed. Use the
      * <code>GetContainerLog</code> action to view the log events for the containers in
      * the deployment to try to determine the reason for the failure.</p> </li> </ul>
      */

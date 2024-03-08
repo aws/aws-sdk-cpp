@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/mgn/Mgn_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mgn/model/SourceServerConnectorAction.h>
 #include <aws/mgn/model/DataReplicationInfo.h>
 #include <aws/mgn/model/LaunchedInstance.h>
 #include <aws/mgn/model/LifeCycle.h>
@@ -118,6 +119,37 @@ namespace Model
      * <p>Source server ARN.</p>
      */
     inline SourceServer& WithArn(const char* value) { SetArn(value); return *this;}
+
+
+    /**
+     * <p>Source Server connector action.</p>
+     */
+    inline const SourceServerConnectorAction& GetConnectorAction() const{ return m_connectorAction; }
+
+    /**
+     * <p>Source Server connector action.</p>
+     */
+    inline bool ConnectorActionHasBeenSet() const { return m_connectorActionHasBeenSet; }
+
+    /**
+     * <p>Source Server connector action.</p>
+     */
+    inline void SetConnectorAction(const SourceServerConnectorAction& value) { m_connectorActionHasBeenSet = true; m_connectorAction = value; }
+
+    /**
+     * <p>Source Server connector action.</p>
+     */
+    inline void SetConnectorAction(SourceServerConnectorAction&& value) { m_connectorActionHasBeenSet = true; m_connectorAction = std::move(value); }
+
+    /**
+     * <p>Source Server connector action.</p>
+     */
+    inline SourceServer& WithConnectorAction(const SourceServerConnectorAction& value) { SetConnectorAction(value); return *this;}
+
+    /**
+     * <p>Source Server connector action.</p>
+     */
+    inline SourceServer& WithConnectorAction(SourceServerConnectorAction&& value) { SetConnectorAction(std::move(value)); return *this;}
 
 
     /**
@@ -557,6 +589,9 @@ namespace Model
 
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
+
+    SourceServerConnectorAction m_connectorAction;
+    bool m_connectorActionHasBeenSet = false;
 
     DataReplicationInfo m_dataReplicationInfo;
     bool m_dataReplicationInfoHasBeenSet = false;

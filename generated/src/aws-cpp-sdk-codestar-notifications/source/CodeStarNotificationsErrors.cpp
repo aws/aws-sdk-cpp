@@ -31,23 +31,23 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == RESOURCE_ALREADY_EXISTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeStarNotificationsErrors::RESOURCE_ALREADY_EXISTS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeStarNotificationsErrors::RESOURCE_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeStarNotificationsErrors::LIMIT_EXCEEDED), true);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeStarNotificationsErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
   }
   else if (hashCode == CONFIGURATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeStarNotificationsErrors::CONFIGURATION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeStarNotificationsErrors::CONFIGURATION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == CONCURRENT_MODIFICATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeStarNotificationsErrors::CONCURRENT_MODIFICATION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeStarNotificationsErrors::CONCURRENT_MODIFICATION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_NEXT_TOKEN_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeStarNotificationsErrors::INVALID_NEXT_TOKEN), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeStarNotificationsErrors::INVALID_NEXT_TOKEN), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

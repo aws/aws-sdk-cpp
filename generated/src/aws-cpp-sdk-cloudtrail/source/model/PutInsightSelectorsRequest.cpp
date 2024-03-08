@@ -14,7 +14,9 @@ using namespace Aws::Utils;
 
 PutInsightSelectorsRequest::PutInsightSelectorsRequest() : 
     m_trailNameHasBeenSet(false),
-    m_insightSelectorsHasBeenSet(false)
+    m_insightSelectorsHasBeenSet(false),
+    m_eventDataStoreHasBeenSet(false),
+    m_insightsDestinationHasBeenSet(false)
 {
 }
 
@@ -36,6 +38,18 @@ Aws::String PutInsightSelectorsRequest::SerializePayload() const
      insightSelectorsJsonList[insightSelectorsIndex].AsObject(m_insightSelectors[insightSelectorsIndex].Jsonize());
    }
    payload.WithArray("InsightSelectors", std::move(insightSelectorsJsonList));
+
+  }
+
+  if(m_eventDataStoreHasBeenSet)
+  {
+   payload.WithString("EventDataStore", m_eventDataStore);
+
+  }
+
+  if(m_insightsDestinationHasBeenSet)
+  {
+   payload.WithString("InsightsDestination", m_insightsDestination);
 
   }
 

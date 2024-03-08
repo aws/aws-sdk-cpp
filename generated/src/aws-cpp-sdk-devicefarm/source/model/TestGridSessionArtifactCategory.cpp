@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TestGridSessionArtifactCategory::NOT_SET:
+            return {};
           case TestGridSessionArtifactCategory::VIDEO:
             return "VIDEO";
           case TestGridSessionArtifactCategory::LOG:

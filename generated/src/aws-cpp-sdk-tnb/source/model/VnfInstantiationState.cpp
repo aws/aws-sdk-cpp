@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VnfInstantiationState::NOT_SET:
+            return {};
           case VnfInstantiationState::INSTANTIATED:
             return "INSTANTIATED";
           case VnfInstantiationState::NOT_INSTANTIATED:

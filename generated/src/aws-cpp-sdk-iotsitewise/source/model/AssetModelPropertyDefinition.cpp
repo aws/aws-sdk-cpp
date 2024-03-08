@@ -24,7 +24,9 @@ AssetModelPropertyDefinition::AssetModelPropertyDefinition() :
     m_dataTypeHasBeenSet(false),
     m_dataTypeSpecHasBeenSet(false),
     m_unitHasBeenSet(false),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_idHasBeenSet(false),
+    m_externalIdHasBeenSet(false)
 {
 }
 
@@ -34,7 +36,9 @@ AssetModelPropertyDefinition::AssetModelPropertyDefinition(JsonView jsonValue) :
     m_dataTypeHasBeenSet(false),
     m_dataTypeSpecHasBeenSet(false),
     m_unitHasBeenSet(false),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_idHasBeenSet(false),
+    m_externalIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -76,6 +80,20 @@ AssetModelPropertyDefinition& AssetModelPropertyDefinition::operator =(JsonView 
     m_typeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("id"))
+  {
+    m_id = jsonValue.GetString("id");
+
+    m_idHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("externalId"))
+  {
+    m_externalId = jsonValue.GetString("externalId");
+
+    m_externalIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -109,6 +127,18 @@ JsonValue AssetModelPropertyDefinition::Jsonize() const
   if(m_typeHasBeenSet)
   {
    payload.WithObject("type", m_type.Jsonize());
+
+  }
+
+  if(m_idHasBeenSet)
+  {
+   payload.WithString("id", m_id);
+
+  }
+
+  if(m_externalIdHasBeenSet)
+  {
+   payload.WithString("externalId", m_externalId);
 
   }
 

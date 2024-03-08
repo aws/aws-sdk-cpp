@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PricingTier::NOT_SET:
+            return {};
           case PricingTier::TIER_1:
             return "TIER_1";
           case PricingTier::TIER_2:

@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LaunchType::NOT_SET:
+            return {};
           case LaunchType::aws_evidently_splits:
             return "aws.evidently.splits";
           default:

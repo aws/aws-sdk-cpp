@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/codepipeline/model/ExecutionTrigger.h>
 #include <aws/codepipeline/model/StopExecutionTrigger.h>
+#include <aws/codepipeline/model/ExecutionMode.h>
 #include <aws/codepipeline/model/SourceRevision.h>
 #include <utility>
 
@@ -395,6 +396,43 @@ namespace Model
      */
     inline PipelineExecutionSummary& WithStopTrigger(StopExecutionTrigger&& value) { SetStopTrigger(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The method that the pipeline will use to handle multiple executions. The
+     * default mode is SUPERSEDED.</p>
+     */
+    inline const ExecutionMode& GetExecutionMode() const{ return m_executionMode; }
+
+    /**
+     * <p>The method that the pipeline will use to handle multiple executions. The
+     * default mode is SUPERSEDED.</p>
+     */
+    inline bool ExecutionModeHasBeenSet() const { return m_executionModeHasBeenSet; }
+
+    /**
+     * <p>The method that the pipeline will use to handle multiple executions. The
+     * default mode is SUPERSEDED.</p>
+     */
+    inline void SetExecutionMode(const ExecutionMode& value) { m_executionModeHasBeenSet = true; m_executionMode = value; }
+
+    /**
+     * <p>The method that the pipeline will use to handle multiple executions. The
+     * default mode is SUPERSEDED.</p>
+     */
+    inline void SetExecutionMode(ExecutionMode&& value) { m_executionModeHasBeenSet = true; m_executionMode = std::move(value); }
+
+    /**
+     * <p>The method that the pipeline will use to handle multiple executions. The
+     * default mode is SUPERSEDED.</p>
+     */
+    inline PipelineExecutionSummary& WithExecutionMode(const ExecutionMode& value) { SetExecutionMode(value); return *this;}
+
+    /**
+     * <p>The method that the pipeline will use to handle multiple executions. The
+     * default mode is SUPERSEDED.</p>
+     */
+    inline PipelineExecutionSummary& WithExecutionMode(ExecutionMode&& value) { SetExecutionMode(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_pipelineExecutionId;
@@ -417,6 +455,9 @@ namespace Model
 
     StopExecutionTrigger m_stopTrigger;
     bool m_stopTriggerHasBeenSet = false;
+
+    ExecutionMode m_executionMode;
+    bool m_executionModeHasBeenSet = false;
   };
 
 } // namespace Model

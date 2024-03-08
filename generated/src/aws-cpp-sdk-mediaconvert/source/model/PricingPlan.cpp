@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PricingPlan::NOT_SET:
+            return {};
           case PricingPlan::ON_DEMAND:
             return "ON_DEMAND";
           case PricingPlan::RESERVED:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RecoverySnapshotsOrder::NOT_SET:
+            return {};
           case RecoverySnapshotsOrder::ASC:
             return "ASC";
           case RecoverySnapshotsOrder::DESC:

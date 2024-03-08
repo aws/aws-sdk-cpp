@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/iottwinmaker/IoTTwinMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
 #include <utility>
 
@@ -139,6 +140,47 @@ namespace Model
      * <p>The description of the workspace.</p>
      */
     inline GetWorkspaceResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+
+
+    /**
+     * <p>A list of services that are linked to the workspace.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetLinkedServices() const{ return m_linkedServices; }
+
+    /**
+     * <p>A list of services that are linked to the workspace.</p>
+     */
+    inline void SetLinkedServices(const Aws::Vector<Aws::String>& value) { m_linkedServices = value; }
+
+    /**
+     * <p>A list of services that are linked to the workspace.</p>
+     */
+    inline void SetLinkedServices(Aws::Vector<Aws::String>&& value) { m_linkedServices = std::move(value); }
+
+    /**
+     * <p>A list of services that are linked to the workspace.</p>
+     */
+    inline GetWorkspaceResult& WithLinkedServices(const Aws::Vector<Aws::String>& value) { SetLinkedServices(value); return *this;}
+
+    /**
+     * <p>A list of services that are linked to the workspace.</p>
+     */
+    inline GetWorkspaceResult& WithLinkedServices(Aws::Vector<Aws::String>&& value) { SetLinkedServices(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of services that are linked to the workspace.</p>
+     */
+    inline GetWorkspaceResult& AddLinkedServices(const Aws::String& value) { m_linkedServices.push_back(value); return *this; }
+
+    /**
+     * <p>A list of services that are linked to the workspace.</p>
+     */
+    inline GetWorkspaceResult& AddLinkedServices(Aws::String&& value) { m_linkedServices.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>A list of services that are linked to the workspace.</p>
+     */
+    inline GetWorkspaceResult& AddLinkedServices(const char* value) { m_linkedServices.push_back(value); return *this; }
 
 
     /**
@@ -300,6 +342,8 @@ namespace Model
     Aws::String m_arn;
 
     Aws::String m_description;
+
+    Aws::Vector<Aws::String> m_linkedServices;
 
     Aws::String m_s3Location;
 

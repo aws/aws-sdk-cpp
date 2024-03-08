@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TargetGroupIpAddressTypeEnum::NOT_SET:
+            return {};
           case TargetGroupIpAddressTypeEnum::ipv4:
             return "ipv4";
           case TargetGroupIpAddressTypeEnum::ipv6:

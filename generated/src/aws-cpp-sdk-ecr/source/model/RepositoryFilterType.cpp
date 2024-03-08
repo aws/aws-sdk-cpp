@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RepositoryFilterType::NOT_SET:
+            return {};
           case RepositoryFilterType::PREFIX_MATCH:
             return "PREFIX_MATCH";
           default:

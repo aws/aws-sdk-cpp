@@ -104,6 +104,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TransitGatewayAttachmentState::NOT_SET:
+            return {};
           case TransitGatewayAttachmentState::initiating:
             return "initiating";
           case TransitGatewayAttachmentState::initiatingRequest:

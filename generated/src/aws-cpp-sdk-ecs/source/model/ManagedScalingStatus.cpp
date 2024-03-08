@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ManagedScalingStatus::NOT_SET:
+            return {};
           case ManagedScalingStatus::ENABLED:
             return "ENABLED";
           case ManagedScalingStatus::DISABLED:

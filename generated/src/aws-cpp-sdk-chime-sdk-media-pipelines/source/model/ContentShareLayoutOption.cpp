@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ContentShareLayoutOption::NOT_SET:
+            return {};
           case ContentShareLayoutOption::PresenterOnly:
             return "PresenterOnly";
           case ContentShareLayoutOption::Horizontal:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ScanStatusCode::NOT_SET:
+            return {};
           case ScanStatusCode::ACTIVE:
             return "ACTIVE";
           case ScanStatusCode::INACTIVE:

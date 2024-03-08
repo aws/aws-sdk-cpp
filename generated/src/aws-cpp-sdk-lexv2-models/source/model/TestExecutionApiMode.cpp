@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TestExecutionApiMode::NOT_SET:
+            return {};
           case TestExecutionApiMode::Streaming:
             return "Streaming";
           case TestExecutionApiMode::NonStreaming:

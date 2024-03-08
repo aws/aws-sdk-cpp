@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HLSDisplayFragmentTimestamp::NOT_SET:
+            return {};
           case HLSDisplayFragmentTimestamp::ALWAYS:
             return "ALWAYS";
           case HLSDisplayFragmentTimestamp::NEVER:

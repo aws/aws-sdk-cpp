@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FileModeTypeEnum::NOT_SET:
+            return {};
           case FileModeTypeEnum::EXECUTABLE:
             return "EXECUTABLE";
           case FileModeTypeEnum::NORMAL:

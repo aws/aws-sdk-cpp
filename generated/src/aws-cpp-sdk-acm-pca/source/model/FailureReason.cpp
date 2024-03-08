@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FailureReason::NOT_SET:
+            return {};
           case FailureReason::REQUEST_TIMED_OUT:
             return "REQUEST_TIMED_OUT";
           case FailureReason::UNSUPPORTED_ALGORITHM:

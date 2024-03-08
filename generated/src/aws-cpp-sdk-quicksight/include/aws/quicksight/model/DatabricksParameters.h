@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>The required parameters that are needed to connect to a Databricks data
+   * <p>The parameters that are required to connect to a Databricks data
    * source.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DatabricksParameters">AWS
    * API Reference</a></p>

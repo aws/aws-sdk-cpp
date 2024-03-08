@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TopBottomComputationType::NOT_SET:
+            return {};
           case TopBottomComputationType::TOP:
             return "TOP";
           case TopBottomComputationType::BOTTOM:

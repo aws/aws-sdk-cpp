@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case KafkaClusterEncryptionInTransitType::NOT_SET:
+            return {};
           case KafkaClusterEncryptionInTransitType::PLAINTEXT:
             return "PLAINTEXT";
           case KafkaClusterEncryptionInTransitType::TLS:

@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TaskDefinitionPlacementConstraintType::NOT_SET:
+            return {};
           case TaskDefinitionPlacementConstraintType::memberOf:
             return "memberOf";
           default:

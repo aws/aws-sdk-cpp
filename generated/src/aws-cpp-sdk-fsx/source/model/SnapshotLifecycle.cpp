@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SnapshotLifecycle::NOT_SET:
+            return {};
           case SnapshotLifecycle::PENDING:
             return "PENDING";
           case SnapshotLifecycle::CREATING:

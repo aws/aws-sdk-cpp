@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case IsDefinedInJob::NOT_SET:
+            return {};
           case IsDefinedInJob::TRUE:
             return "TRUE";
           case IsDefinedInJob::FALSE:

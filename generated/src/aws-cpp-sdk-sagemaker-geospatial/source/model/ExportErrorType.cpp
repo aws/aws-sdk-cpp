@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ExportErrorType::NOT_SET:
+            return {};
           case ExportErrorType::CLIENT_ERROR:
             return "CLIENT_ERROR";
           case ExportErrorType::SERVER_ERROR:

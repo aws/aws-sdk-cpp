@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ExportSnapshotRecordSourceType::NOT_SET:
+            return {};
           case ExportSnapshotRecordSourceType::InstanceSnapshot:
             return "InstanceSnapshot";
           case ExportSnapshotRecordSourceType::DiskSnapshot:

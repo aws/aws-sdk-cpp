@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DukptKeyVariant::NOT_SET:
+            return {};
           case DukptKeyVariant::BIDIRECTIONAL:
             return "BIDIRECTIONAL";
           case DukptKeyVariant::REQUEST:

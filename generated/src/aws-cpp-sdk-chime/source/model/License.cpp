@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case License::NOT_SET:
+            return {};
           case License::Basic:
             return "Basic";
           case License::Plus:

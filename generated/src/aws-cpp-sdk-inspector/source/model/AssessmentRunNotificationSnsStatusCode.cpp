@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AssessmentRunNotificationSnsStatusCode::NOT_SET:
+            return {};
           case AssessmentRunNotificationSnsStatusCode::SUCCESS:
             return "SUCCESS";
           case AssessmentRunNotificationSnsStatusCode::TOPIC_DOES_NOT_EXIST:

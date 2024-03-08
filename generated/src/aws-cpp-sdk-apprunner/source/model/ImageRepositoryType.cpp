@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ImageRepositoryType::NOT_SET:
+            return {};
           case ImageRepositoryType::ECR:
             return "ECR";
           case ImageRepositoryType::ECR_PUBLIC:

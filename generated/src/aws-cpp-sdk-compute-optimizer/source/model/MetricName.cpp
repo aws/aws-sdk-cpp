@@ -119,6 +119,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MetricName::NOT_SET:
+            return {};
           case MetricName::Cpu:
             return "Cpu";
           case MetricName::Memory:

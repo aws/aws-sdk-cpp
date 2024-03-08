@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DeinterlacerMode::NOT_SET:
+            return {};
           case DeinterlacerMode::DEINTERLACE:
             return "DEINTERLACE";
           case DeinterlacerMode::INVERSE_TELECINE:

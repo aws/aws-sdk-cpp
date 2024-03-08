@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReceiptType::NOT_SET:
+            return {};
           case ReceiptType::DELIVERED:
             return "DELIVERED";
           case ReceiptType::ERROR_:

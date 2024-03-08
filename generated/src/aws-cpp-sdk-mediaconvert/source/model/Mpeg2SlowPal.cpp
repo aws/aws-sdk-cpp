@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Mpeg2SlowPal::NOT_SET:
+            return {};
           case Mpeg2SlowPal::DISABLED:
             return "DISABLED";
           case Mpeg2SlowPal::ENABLED:

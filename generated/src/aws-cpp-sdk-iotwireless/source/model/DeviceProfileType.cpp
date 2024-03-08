@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DeviceProfileType::NOT_SET:
+            return {};
           case DeviceProfileType::Sidewalk:
             return "Sidewalk";
           case DeviceProfileType::LoRaWAN:

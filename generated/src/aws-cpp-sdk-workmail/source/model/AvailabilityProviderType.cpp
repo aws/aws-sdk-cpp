@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AvailabilityProviderType::NOT_SET:
+            return {};
           case AvailabilityProviderType::EWS:
             return "EWS";
           case AvailabilityProviderType::LAMBDA:

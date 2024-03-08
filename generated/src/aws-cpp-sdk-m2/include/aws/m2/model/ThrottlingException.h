@@ -63,42 +63,42 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the throttled reuqest.</p>
+     * <p>The identifier of the throttled request.</p>
      */
     inline const Aws::String& GetQuotaCode() const{ return m_quotaCode; }
 
     /**
-     * <p>The identifier of the throttled reuqest.</p>
+     * <p>The identifier of the throttled request.</p>
      */
     inline bool QuotaCodeHasBeenSet() const { return m_quotaCodeHasBeenSet; }
 
     /**
-     * <p>The identifier of the throttled reuqest.</p>
+     * <p>The identifier of the throttled request.</p>
      */
     inline void SetQuotaCode(const Aws::String& value) { m_quotaCodeHasBeenSet = true; m_quotaCode = value; }
 
     /**
-     * <p>The identifier of the throttled reuqest.</p>
+     * <p>The identifier of the throttled request.</p>
      */
     inline void SetQuotaCode(Aws::String&& value) { m_quotaCodeHasBeenSet = true; m_quotaCode = std::move(value); }
 
     /**
-     * <p>The identifier of the throttled reuqest.</p>
+     * <p>The identifier of the throttled request.</p>
      */
     inline void SetQuotaCode(const char* value) { m_quotaCodeHasBeenSet = true; m_quotaCode.assign(value); }
 
     /**
-     * <p>The identifier of the throttled reuqest.</p>
+     * <p>The identifier of the throttled request.</p>
      */
     inline ThrottlingException& WithQuotaCode(const Aws::String& value) { SetQuotaCode(value); return *this;}
 
     /**
-     * <p>The identifier of the throttled reuqest.</p>
+     * <p>The identifier of the throttled request.</p>
      */
     inline ThrottlingException& WithQuotaCode(Aws::String&& value) { SetQuotaCode(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the throttled reuqest.</p>
+     * <p>The identifier of the throttled request.</p>
      */
     inline ThrottlingException& WithQuotaCode(const char* value) { SetQuotaCode(value); return *this;}
 

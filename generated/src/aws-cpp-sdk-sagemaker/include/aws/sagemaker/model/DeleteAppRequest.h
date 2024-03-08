@@ -126,6 +126,55 @@ namespace Model
 
 
     /**
+     * <p>The name of the space. If this value is not set, then
+     * <code>UserProfileName</code> must be set.</p>
+     */
+    inline const Aws::String& GetSpaceName() const{ return m_spaceName; }
+
+    /**
+     * <p>The name of the space. If this value is not set, then
+     * <code>UserProfileName</code> must be set.</p>
+     */
+    inline bool SpaceNameHasBeenSet() const { return m_spaceNameHasBeenSet; }
+
+    /**
+     * <p>The name of the space. If this value is not set, then
+     * <code>UserProfileName</code> must be set.</p>
+     */
+    inline void SetSpaceName(const Aws::String& value) { m_spaceNameHasBeenSet = true; m_spaceName = value; }
+
+    /**
+     * <p>The name of the space. If this value is not set, then
+     * <code>UserProfileName</code> must be set.</p>
+     */
+    inline void SetSpaceName(Aws::String&& value) { m_spaceNameHasBeenSet = true; m_spaceName = std::move(value); }
+
+    /**
+     * <p>The name of the space. If this value is not set, then
+     * <code>UserProfileName</code> must be set.</p>
+     */
+    inline void SetSpaceName(const char* value) { m_spaceNameHasBeenSet = true; m_spaceName.assign(value); }
+
+    /**
+     * <p>The name of the space. If this value is not set, then
+     * <code>UserProfileName</code> must be set.</p>
+     */
+    inline DeleteAppRequest& WithSpaceName(const Aws::String& value) { SetSpaceName(value); return *this;}
+
+    /**
+     * <p>The name of the space. If this value is not set, then
+     * <code>UserProfileName</code> must be set.</p>
+     */
+    inline DeleteAppRequest& WithSpaceName(Aws::String&& value) { SetSpaceName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the space. If this value is not set, then
+     * <code>UserProfileName</code> must be set.</p>
+     */
+    inline DeleteAppRequest& WithSpaceName(const char* value) { SetSpaceName(value); return *this;}
+
+
+    /**
      * <p>The type of app.</p>
      */
     inline const AppType& GetAppType() const{ return m_appType; }
@@ -196,55 +245,6 @@ namespace Model
      */
     inline DeleteAppRequest& WithAppName(const char* value) { SetAppName(value); return *this;}
 
-
-    /**
-     * <p>The name of the space. If this value is not set, then
-     * <code>UserProfileName</code> must be set.</p>
-     */
-    inline const Aws::String& GetSpaceName() const{ return m_spaceName; }
-
-    /**
-     * <p>The name of the space. If this value is not set, then
-     * <code>UserProfileName</code> must be set.</p>
-     */
-    inline bool SpaceNameHasBeenSet() const { return m_spaceNameHasBeenSet; }
-
-    /**
-     * <p>The name of the space. If this value is not set, then
-     * <code>UserProfileName</code> must be set.</p>
-     */
-    inline void SetSpaceName(const Aws::String& value) { m_spaceNameHasBeenSet = true; m_spaceName = value; }
-
-    /**
-     * <p>The name of the space. If this value is not set, then
-     * <code>UserProfileName</code> must be set.</p>
-     */
-    inline void SetSpaceName(Aws::String&& value) { m_spaceNameHasBeenSet = true; m_spaceName = std::move(value); }
-
-    /**
-     * <p>The name of the space. If this value is not set, then
-     * <code>UserProfileName</code> must be set.</p>
-     */
-    inline void SetSpaceName(const char* value) { m_spaceNameHasBeenSet = true; m_spaceName.assign(value); }
-
-    /**
-     * <p>The name of the space. If this value is not set, then
-     * <code>UserProfileName</code> must be set.</p>
-     */
-    inline DeleteAppRequest& WithSpaceName(const Aws::String& value) { SetSpaceName(value); return *this;}
-
-    /**
-     * <p>The name of the space. If this value is not set, then
-     * <code>UserProfileName</code> must be set.</p>
-     */
-    inline DeleteAppRequest& WithSpaceName(Aws::String&& value) { SetSpaceName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the space. If this value is not set, then
-     * <code>UserProfileName</code> must be set.</p>
-     */
-    inline DeleteAppRequest& WithSpaceName(const char* value) { SetSpaceName(value); return *this;}
-
   private:
 
     Aws::String m_domainId;
@@ -253,14 +253,14 @@ namespace Model
     Aws::String m_userProfileName;
     bool m_userProfileNameHasBeenSet = false;
 
+    Aws::String m_spaceName;
+    bool m_spaceNameHasBeenSet = false;
+
     AppType m_appType;
     bool m_appTypeHasBeenSet = false;
 
     Aws::String m_appName;
     bool m_appNameHasBeenSet = false;
-
-    Aws::String m_spaceName;
-    bool m_spaceNameHasBeenSet = false;
   };
 
 } // namespace Model

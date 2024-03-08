@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReplicationConfigurationDataPlaneRouting::NOT_SET:
+            return {};
           case ReplicationConfigurationDataPlaneRouting::PRIVATE_IP:
             return "PRIVATE_IP";
           case ReplicationConfigurationDataPlaneRouting::PUBLIC_IP:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case WorkflowEngine::NOT_SET:
+            return {};
           case WorkflowEngine::WDL:
             return "WDL";
           case WorkflowEngine::NEXTFLOW:

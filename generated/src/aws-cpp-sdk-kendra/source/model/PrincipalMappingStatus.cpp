@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PrincipalMappingStatus::NOT_SET:
+            return {};
           case PrincipalMappingStatus::FAILED:
             return "FAILED";
           case PrincipalMappingStatus::SUCCEEDED:

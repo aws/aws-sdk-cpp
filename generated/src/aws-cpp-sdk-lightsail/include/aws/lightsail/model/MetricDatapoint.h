@@ -144,32 +144,32 @@ namespace Model
 
 
     /**
-     * <p>The timestamp (e.g., <code>1479816991.349</code>).</p>
+     * <p>The timestamp (<code>1479816991.349</code>).</p>
      */
     inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
 
     /**
-     * <p>The timestamp (e.g., <code>1479816991.349</code>).</p>
+     * <p>The timestamp (<code>1479816991.349</code>).</p>
      */
     inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
 
     /**
-     * <p>The timestamp (e.g., <code>1479816991.349</code>).</p>
+     * <p>The timestamp (<code>1479816991.349</code>).</p>
      */
     inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
 
     /**
-     * <p>The timestamp (e.g., <code>1479816991.349</code>).</p>
+     * <p>The timestamp (<code>1479816991.349</code>).</p>
      */
     inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = std::move(value); }
 
     /**
-     * <p>The timestamp (e.g., <code>1479816991.349</code>).</p>
+     * <p>The timestamp (<code>1479816991.349</code>).</p>
      */
     inline MetricDatapoint& WithTimestamp(const Aws::Utils::DateTime& value) { SetTimestamp(value); return *this;}
 
     /**
-     * <p>The timestamp (e.g., <code>1479816991.349</code>).</p>
+     * <p>The timestamp (<code>1479816991.349</code>).</p>
      */
     inline MetricDatapoint& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
 

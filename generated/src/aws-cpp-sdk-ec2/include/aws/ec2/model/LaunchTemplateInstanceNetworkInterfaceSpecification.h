@@ -8,6 +8,8 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/model/LaunchTemplateEnaSrdSpecification.h>
+#include <aws/ec2/model/ConnectionTrackingSpecification.h>
 #include <aws/ec2/model/InstanceIpv6Address.h>
 #include <aws/ec2/model/PrivateIpAddressSpecification.h>
 #include <aws/ec2/model/Ipv4PrefixSpecificationResponse.h>
@@ -87,25 +89,41 @@ namespace Model
 
     /**
      * <p>Indicates whether to associate a public IPv4 address with eth0 for a new
-     * network interface.</p>
+     * network interface.</p> <p>Starting on February 1, 2024, Amazon Web Services will
+     * charge for all public IPv4 addresses, including public IPv4 addresses associated
+     * with running instances and Elastic IP addresses. For more information, see the
+     * <i>Public IPv4 Address</i> tab on the <a
+     * href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing page</a>.</p>
      */
     inline bool GetAssociatePublicIpAddress() const{ return m_associatePublicIpAddress; }
 
     /**
      * <p>Indicates whether to associate a public IPv4 address with eth0 for a new
-     * network interface.</p>
+     * network interface.</p> <p>Starting on February 1, 2024, Amazon Web Services will
+     * charge for all public IPv4 addresses, including public IPv4 addresses associated
+     * with running instances and Elastic IP addresses. For more information, see the
+     * <i>Public IPv4 Address</i> tab on the <a
+     * href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing page</a>.</p>
      */
     inline bool AssociatePublicIpAddressHasBeenSet() const { return m_associatePublicIpAddressHasBeenSet; }
 
     /**
      * <p>Indicates whether to associate a public IPv4 address with eth0 for a new
-     * network interface.</p>
+     * network interface.</p> <p>Starting on February 1, 2024, Amazon Web Services will
+     * charge for all public IPv4 addresses, including public IPv4 addresses associated
+     * with running instances and Elastic IP addresses. For more information, see the
+     * <i>Public IPv4 Address</i> tab on the <a
+     * href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing page</a>.</p>
      */
     inline void SetAssociatePublicIpAddress(bool value) { m_associatePublicIpAddressHasBeenSet = true; m_associatePublicIpAddress = value; }
 
     /**
      * <p>Indicates whether to associate a public IPv4 address with eth0 for a new
-     * network interface.</p>
+     * network interface.</p> <p>Starting on February 1, 2024, Amazon Web Services will
+     * charge for all public IPv4 addresses, including public IPv4 addresses associated
+     * with running instances and Elastic IP addresses. For more information, see the
+     * <i>Public IPv4 Address</i> tab on the <a
+     * href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing page</a>.</p>
      */
     inline LaunchTemplateInstanceNetworkInterfaceSpecification& WithAssociatePublicIpAddress(bool value) { SetAssociatePublicIpAddress(value); return *this;}
 
@@ -720,6 +738,98 @@ namespace Model
      */
     inline LaunchTemplateInstanceNetworkInterfaceSpecification& WithPrimaryIpv6(bool value) { SetPrimaryIpv6(value); return *this;}
 
+
+    /**
+     * <p>Contains the ENA Express settings for instances launched from your launch
+     * template.</p>
+     */
+    inline const LaunchTemplateEnaSrdSpecification& GetEnaSrdSpecification() const{ return m_enaSrdSpecification; }
+
+    /**
+     * <p>Contains the ENA Express settings for instances launched from your launch
+     * template.</p>
+     */
+    inline bool EnaSrdSpecificationHasBeenSet() const { return m_enaSrdSpecificationHasBeenSet; }
+
+    /**
+     * <p>Contains the ENA Express settings for instances launched from your launch
+     * template.</p>
+     */
+    inline void SetEnaSrdSpecification(const LaunchTemplateEnaSrdSpecification& value) { m_enaSrdSpecificationHasBeenSet = true; m_enaSrdSpecification = value; }
+
+    /**
+     * <p>Contains the ENA Express settings for instances launched from your launch
+     * template.</p>
+     */
+    inline void SetEnaSrdSpecification(LaunchTemplateEnaSrdSpecification&& value) { m_enaSrdSpecificationHasBeenSet = true; m_enaSrdSpecification = std::move(value); }
+
+    /**
+     * <p>Contains the ENA Express settings for instances launched from your launch
+     * template.</p>
+     */
+    inline LaunchTemplateInstanceNetworkInterfaceSpecification& WithEnaSrdSpecification(const LaunchTemplateEnaSrdSpecification& value) { SetEnaSrdSpecification(value); return *this;}
+
+    /**
+     * <p>Contains the ENA Express settings for instances launched from your launch
+     * template.</p>
+     */
+    inline LaunchTemplateInstanceNetworkInterfaceSpecification& WithEnaSrdSpecification(LaunchTemplateEnaSrdSpecification&& value) { SetEnaSrdSpecification(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A security group connection tracking specification that enables you to set
+     * the timeout for connection tracking on an Elastic network interface. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#connection-tracking-timeouts">Connection
+     * tracking timeouts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline const ConnectionTrackingSpecification& GetConnectionTrackingSpecification() const{ return m_connectionTrackingSpecification; }
+
+    /**
+     * <p>A security group connection tracking specification that enables you to set
+     * the timeout for connection tracking on an Elastic network interface. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#connection-tracking-timeouts">Connection
+     * tracking timeouts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline bool ConnectionTrackingSpecificationHasBeenSet() const { return m_connectionTrackingSpecificationHasBeenSet; }
+
+    /**
+     * <p>A security group connection tracking specification that enables you to set
+     * the timeout for connection tracking on an Elastic network interface. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#connection-tracking-timeouts">Connection
+     * tracking timeouts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline void SetConnectionTrackingSpecification(const ConnectionTrackingSpecification& value) { m_connectionTrackingSpecificationHasBeenSet = true; m_connectionTrackingSpecification = value; }
+
+    /**
+     * <p>A security group connection tracking specification that enables you to set
+     * the timeout for connection tracking on an Elastic network interface. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#connection-tracking-timeouts">Connection
+     * tracking timeouts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline void SetConnectionTrackingSpecification(ConnectionTrackingSpecification&& value) { m_connectionTrackingSpecificationHasBeenSet = true; m_connectionTrackingSpecification = std::move(value); }
+
+    /**
+     * <p>A security group connection tracking specification that enables you to set
+     * the timeout for connection tracking on an Elastic network interface. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#connection-tracking-timeouts">Connection
+     * tracking timeouts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline LaunchTemplateInstanceNetworkInterfaceSpecification& WithConnectionTrackingSpecification(const ConnectionTrackingSpecification& value) { SetConnectionTrackingSpecification(value); return *this;}
+
+    /**
+     * <p>A security group connection tracking specification that enables you to set
+     * the timeout for connection tracking on an Elastic network interface. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#connection-tracking-timeouts">Connection
+     * tracking timeouts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline LaunchTemplateInstanceNetworkInterfaceSpecification& WithConnectionTrackingSpecification(ConnectionTrackingSpecification&& value) { SetConnectionTrackingSpecification(std::move(value)); return *this;}
+
   private:
 
     bool m_associateCarrierIpAddress;
@@ -781,6 +891,12 @@ namespace Model
 
     bool m_primaryIpv6;
     bool m_primaryIpv6HasBeenSet = false;
+
+    LaunchTemplateEnaSrdSpecification m_enaSrdSpecification;
+    bool m_enaSrdSpecificationHasBeenSet = false;
+
+    ConnectionTrackingSpecification m_connectionTrackingSpecification;
+    bool m_connectionTrackingSpecificationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SmoothGroupTimestampOffsetMode::NOT_SET:
+            return {};
           case SmoothGroupTimestampOffsetMode::USE_CONFIGURED_OFFSET:
             return "USE_CONFIGURED_OFFSET";
           case SmoothGroupTimestampOffsetMode::USE_EVENT_START_DATE:

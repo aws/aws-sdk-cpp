@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DigitalSignatureMethod::NOT_SET:
+            return {};
           case DigitalSignatureMethod::JWT_PS384:
             return "JWT_PS384";
           default:

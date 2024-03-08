@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NielsenActiveWatermarkProcessType::NOT_SET:
+            return {};
           case NielsenActiveWatermarkProcessType::NAES2_AND_NW:
             return "NAES2_AND_NW";
           case NielsenActiveWatermarkProcessType::CBET:

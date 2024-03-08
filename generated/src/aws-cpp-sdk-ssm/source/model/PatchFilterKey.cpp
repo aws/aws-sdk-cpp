@@ -134,6 +134,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PatchFilterKey::NOT_SET:
+            return {};
           case PatchFilterKey::ARCH:
             return "ARCH";
           case PatchFilterKey::ADVISORY_ID:

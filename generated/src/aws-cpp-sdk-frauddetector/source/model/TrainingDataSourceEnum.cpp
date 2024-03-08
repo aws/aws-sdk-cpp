@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TrainingDataSourceEnum::NOT_SET:
+            return {};
           case TrainingDataSourceEnum::EXTERNAL_EVENTS:
             return "EXTERNAL_EVENTS";
           case TrainingDataSourceEnum::INGESTED_EVENTS:

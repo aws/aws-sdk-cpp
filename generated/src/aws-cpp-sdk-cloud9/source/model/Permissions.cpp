@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Permissions::NOT_SET:
+            return {};
           case Permissions::owner:
             return "owner";
           case Permissions::read_write:

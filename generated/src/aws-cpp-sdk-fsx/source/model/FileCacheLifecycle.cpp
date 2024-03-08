@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FileCacheLifecycle::NOT_SET:
+            return {};
           case FileCacheLifecycle::AVAILABLE:
             return "AVAILABLE";
           case FileCacheLifecycle::CREATING:

@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CachePolicyQueryStringBehavior::NOT_SET:
+            return {};
           case CachePolicyQueryStringBehavior::none:
             return "none";
           case CachePolicyQueryStringBehavior::whitelist:

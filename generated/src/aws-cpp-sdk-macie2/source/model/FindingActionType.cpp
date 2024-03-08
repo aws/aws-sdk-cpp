@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FindingActionType::NOT_SET:
+            return {};
           case FindingActionType::AWS_API_CALL:
             return "AWS_API_CALL";
           default:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case M2tsBufferModel::NOT_SET:
+            return {};
           case M2tsBufferModel::MULTIPLEX:
             return "MULTIPLEX";
           case M2tsBufferModel::NONE:

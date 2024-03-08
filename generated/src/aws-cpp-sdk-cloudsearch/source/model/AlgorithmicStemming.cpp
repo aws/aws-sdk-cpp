@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AlgorithmicStemming::NOT_SET:
+            return {};
           case AlgorithmicStemming::none:
             return "none";
           case AlgorithmicStemming::minimal:

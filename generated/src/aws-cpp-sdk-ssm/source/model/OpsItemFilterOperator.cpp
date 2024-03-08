@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OpsItemFilterOperator::NOT_SET:
+            return {};
           case OpsItemFilterOperator::Equal:
             return "Equal";
           case OpsItemFilterOperator::Contains:

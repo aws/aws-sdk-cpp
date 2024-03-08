@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ScheduledQueryState::NOT_SET:
+            return {};
           case ScheduledQueryState::ENABLED:
             return "ENABLED";
           case ScheduledQueryState::DISABLED:

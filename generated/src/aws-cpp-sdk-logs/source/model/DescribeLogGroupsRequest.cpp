@@ -20,7 +20,9 @@ DescribeLogGroupsRequest::DescribeLogGroupsRequest() :
     m_limit(0),
     m_limitHasBeenSet(false),
     m_includeLinkedAccounts(false),
-    m_includeLinkedAccountsHasBeenSet(false)
+    m_includeLinkedAccountsHasBeenSet(false),
+    m_logGroupClass(LogGroupClass::NOT_SET),
+    m_logGroupClassHasBeenSet(false)
 {
 }
 
@@ -67,6 +69,11 @@ Aws::String DescribeLogGroupsRequest::SerializePayload() const
   {
    payload.WithBool("includeLinkedAccounts", m_includeLinkedAccounts);
 
+  }
+
+  if(m_logGroupClassHasBeenSet)
+  {
+   payload.WithString("logGroupClass", LogGroupClassMapper::GetNameForLogGroupClass(m_logGroupClass));
   }
 
   return payload.View().WriteReadable();

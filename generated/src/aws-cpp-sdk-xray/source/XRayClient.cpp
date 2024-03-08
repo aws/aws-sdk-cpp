@@ -65,8 +65,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* XRayClient::SERVICE_NAME = "xray";
-const char* XRayClient::ALLOCATION_TAG = "XRayClient";
+namespace Aws
+{
+  namespace XRay
+  {
+    const char SERVICE_NAME[] = "xray";
+    const char ALLOCATION_TAG[] = "XRayClient";
+  }
+}
+const char* XRayClient::GetServiceName() {return SERVICE_NAME;}
+const char* XRayClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 XRayClient::XRayClient(const XRay::XRayClientConfiguration& clientConfiguration,
                        std::shared_ptr<XRayEndpointProviderBase> endpointProvider) :
@@ -78,7 +86,7 @@ XRayClient::XRayClient(const XRay::XRayClientConfiguration& clientConfiguration,
             Aws::MakeShared<XRayErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<XRayEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -94,7 +102,7 @@ XRayClient::XRayClient(const AWSCredentials& credentials,
             Aws::MakeShared<XRayErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<XRayEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -110,7 +118,7 @@ XRayClient::XRayClient(const std::shared_ptr<AWSCredentialsProvider>& credential
             Aws::MakeShared<XRayErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<XRayEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

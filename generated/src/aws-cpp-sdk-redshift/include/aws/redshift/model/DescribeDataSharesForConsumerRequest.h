@@ -38,50 +38,50 @@ namespace Model
   public:
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the consumer that returns in the list of
-     * datashares.</p>
+     * <p>The Amazon Resource Name (ARN) of the consumer namespace that returns in the
+     * list of datashares.</p>
      */
     inline const Aws::String& GetConsumerArn() const{ return m_consumerArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the consumer that returns in the list of
-     * datashares.</p>
+     * <p>The Amazon Resource Name (ARN) of the consumer namespace that returns in the
+     * list of datashares.</p>
      */
     inline bool ConsumerArnHasBeenSet() const { return m_consumerArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the consumer that returns in the list of
-     * datashares.</p>
+     * <p>The Amazon Resource Name (ARN) of the consumer namespace that returns in the
+     * list of datashares.</p>
      */
     inline void SetConsumerArn(const Aws::String& value) { m_consumerArnHasBeenSet = true; m_consumerArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the consumer that returns in the list of
-     * datashares.</p>
+     * <p>The Amazon Resource Name (ARN) of the consumer namespace that returns in the
+     * list of datashares.</p>
      */
     inline void SetConsumerArn(Aws::String&& value) { m_consumerArnHasBeenSet = true; m_consumerArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the consumer that returns in the list of
-     * datashares.</p>
+     * <p>The Amazon Resource Name (ARN) of the consumer namespace that returns in the
+     * list of datashares.</p>
      */
     inline void SetConsumerArn(const char* value) { m_consumerArnHasBeenSet = true; m_consumerArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the consumer that returns in the list of
-     * datashares.</p>
+     * <p>The Amazon Resource Name (ARN) of the consumer namespace that returns in the
+     * list of datashares.</p>
      */
     inline DescribeDataSharesForConsumerRequest& WithConsumerArn(const Aws::String& value) { SetConsumerArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the consumer that returns in the list of
-     * datashares.</p>
+     * <p>The Amazon Resource Name (ARN) of the consumer namespace that returns in the
+     * list of datashares.</p>
      */
     inline DescribeDataSharesForConsumerRequest& WithConsumerArn(Aws::String&& value) { SetConsumerArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the consumer that returns in the list of
-     * datashares.</p>
+     * <p>The Amazon Resource Name (ARN) of the consumer namespace that returns in the
+     * list of datashares.</p>
      */
     inline DescribeDataSharesForConsumerRequest& WithConsumerArn(const char* value) { SetConsumerArn(value); return *this;}
 

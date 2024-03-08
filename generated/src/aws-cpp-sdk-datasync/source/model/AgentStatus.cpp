@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AgentStatus::NOT_SET:
+            return {};
           case AgentStatus::ONLINE:
             return "ONLINE";
           case AgentStatus::OFFLINE:

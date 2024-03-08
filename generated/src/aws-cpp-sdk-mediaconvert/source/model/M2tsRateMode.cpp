@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case M2tsRateMode::NOT_SET:
+            return {};
           case M2tsRateMode::VBR:
             return "VBR";
           case M2tsRateMode::CBR:

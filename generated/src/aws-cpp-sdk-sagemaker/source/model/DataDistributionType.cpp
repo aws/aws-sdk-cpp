@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DataDistributionType::NOT_SET:
+            return {};
           case DataDistributionType::FullyReplicated:
             return "FullyReplicated";
           case DataDistributionType::ShardedByS3Key:

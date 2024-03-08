@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SortAssociationsBy::NOT_SET:
+            return {};
           case SortAssociationsBy::SourceArn:
             return "SourceArn";
           case SortAssociationsBy::DestinationArn:

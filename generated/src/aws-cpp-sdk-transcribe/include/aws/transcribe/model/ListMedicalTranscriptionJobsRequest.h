@@ -37,42 +37,42 @@ namespace Model
 
     /**
      * <p>Returns only medical transcription jobs with the specified status. Jobs are
-     * ordered by creation date, with the newest job first. If you don't include
+     * ordered by creation date, with the newest job first. If you do not include
      * <code>Status</code>, all medical transcription jobs are returned.</p>
      */
     inline const TranscriptionJobStatus& GetStatus() const{ return m_status; }
 
     /**
      * <p>Returns only medical transcription jobs with the specified status. Jobs are
-     * ordered by creation date, with the newest job first. If you don't include
+     * ordered by creation date, with the newest job first. If you do not include
      * <code>Status</code>, all medical transcription jobs are returned.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>Returns only medical transcription jobs with the specified status. Jobs are
-     * ordered by creation date, with the newest job first. If you don't include
+     * ordered by creation date, with the newest job first. If you do not include
      * <code>Status</code>, all medical transcription jobs are returned.</p>
      */
     inline void SetStatus(const TranscriptionJobStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
      * <p>Returns only medical transcription jobs with the specified status. Jobs are
-     * ordered by creation date, with the newest job first. If you don't include
+     * ordered by creation date, with the newest job first. If you do not include
      * <code>Status</code>, all medical transcription jobs are returned.</p>
      */
     inline void SetStatus(TranscriptionJobStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>Returns only medical transcription jobs with the specified status. Jobs are
-     * ordered by creation date, with the newest job first. If you don't include
+     * ordered by creation date, with the newest job first. If you do not include
      * <code>Status</code>, all medical transcription jobs are returned.</p>
      */
     inline ListMedicalTranscriptionJobsRequest& WithStatus(const TranscriptionJobStatus& value) { SetStatus(value); return *this;}
 
     /**
      * <p>Returns only medical transcription jobs with the specified status. Jobs are
-     * ordered by creation date, with the newest job first. If you don't include
+     * ordered by creation date, with the newest job first. If you do not include
      * <code>Status</code>, all medical transcription jobs are returned.</p>
      */
     inline ListMedicalTranscriptionJobsRequest& WithStatus(TranscriptionJobStatus&& value) { SetStatus(std::move(value)); return *this;}
@@ -203,7 +203,7 @@ namespace Model
     /**
      * <p>The maximum number of medical transcription jobs to return in each page of
      * results. If there are fewer results than the value that you specify, only the
-     * actual results are returned. If you don't specify a value, a default of 5 is
+     * actual results are returned. If you do not specify a value, a default of 5 is
      * used.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
@@ -211,7 +211,7 @@ namespace Model
     /**
      * <p>The maximum number of medical transcription jobs to return in each page of
      * results. If there are fewer results than the value that you specify, only the
-     * actual results are returned. If you don't specify a value, a default of 5 is
+     * actual results are returned. If you do not specify a value, a default of 5 is
      * used.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
@@ -219,7 +219,7 @@ namespace Model
     /**
      * <p>The maximum number of medical transcription jobs to return in each page of
      * results. If there are fewer results than the value that you specify, only the
-     * actual results are returned. If you don't specify a value, a default of 5 is
+     * actual results are returned. If you do not specify a value, a default of 5 is
      * used.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
@@ -227,7 +227,7 @@ namespace Model
     /**
      * <p>The maximum number of medical transcription jobs to return in each page of
      * results. If there are fewer results than the value that you specify, only the
-     * actual results are returned. If you don't specify a value, a default of 5 is
+     * actual results are returned. If you do not specify a value, a default of 5 is
      * used.</p>
      */
     inline ListMedicalTranscriptionJobsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}

@@ -29,15 +29,15 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == MESSAGE_FROZEN_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkMailMessageFlowErrors::MESSAGE_FROZEN), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkMailMessageFlowErrors::MESSAGE_FROZEN), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == MESSAGE_REJECTED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkMailMessageFlowErrors::MESSAGE_REJECTED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkMailMessageFlowErrors::MESSAGE_REJECTED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_CONTENT_LOCATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkMailMessageFlowErrors::INVALID_CONTENT_LOCATION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WorkMailMessageFlowErrors::INVALID_CONTENT_LOCATION), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

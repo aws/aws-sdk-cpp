@@ -20,7 +20,8 @@ UpdateGameSessionRequest::UpdateGameSessionRequest() :
     m_playerSessionCreationPolicy(PlayerSessionCreationPolicy::NOT_SET),
     m_playerSessionCreationPolicyHasBeenSet(false),
     m_protectionPolicy(ProtectionPolicy::NOT_SET),
-    m_protectionPolicyHasBeenSet(false)
+    m_protectionPolicyHasBeenSet(false),
+    m_gamePropertiesHasBeenSet(false)
 {
 }
 
@@ -54,6 +55,17 @@ Aws::String UpdateGameSessionRequest::SerializePayload() const
   if(m_protectionPolicyHasBeenSet)
   {
    payload.WithString("ProtectionPolicy", ProtectionPolicyMapper::GetNameForProtectionPolicy(m_protectionPolicy));
+  }
+
+  if(m_gamePropertiesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> gamePropertiesJsonList(m_gameProperties.size());
+   for(unsigned gamePropertiesIndex = 0; gamePropertiesIndex < gamePropertiesJsonList.GetLength(); ++gamePropertiesIndex)
+   {
+     gamePropertiesJsonList[gamePropertiesIndex].AsObject(m_gameProperties[gamePropertiesIndex].Jsonize());
+   }
+   payload.WithArray("GameProperties", std::move(gamePropertiesJsonList));
+
   }
 
   return payload.View().WriteReadable();

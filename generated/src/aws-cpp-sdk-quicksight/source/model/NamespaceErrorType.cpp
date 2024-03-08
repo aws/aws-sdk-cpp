@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NamespaceErrorType::NOT_SET:
+            return {};
           case NamespaceErrorType::PERMISSION_DENIED:
             return "PERMISSION_DENIED";
           case NamespaceErrorType::INTERNAL_SERVICE_ERROR:

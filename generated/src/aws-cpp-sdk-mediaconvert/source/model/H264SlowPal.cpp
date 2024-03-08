@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case H264SlowPal::NOT_SET:
+            return {};
           case H264SlowPal::DISABLED:
             return "DISABLED";
           case H264SlowPal::ENABLED:

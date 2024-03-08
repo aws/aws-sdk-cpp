@@ -37,6 +37,7 @@ namespace Model
     dotnetcore2_1,
     dotnetcore3_1,
     dotnet6,
+    dotnet8,
     nodejs4_3_edge,
     go1_x,
     ruby2_5,
@@ -47,7 +48,11 @@ namespace Model
     python3_10,
     java17,
     ruby3_2,
-    python3_11
+    python3_11,
+    nodejs20_x,
+    provided_al2023,
+    python3_12,
+    java21
   };
 
 namespace RuntimeMapper

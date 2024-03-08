@@ -12,6 +12,7 @@
 #include <aws/batch/model/JobTimeout.h>
 #include <aws/batch/model/NodeProperties.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/batch/model/EcsProperties.h>
 #include <aws/batch/model/EksProperties.h>
 #include <aws/batch/model/OrchestrationType.h>
 #include <aws/batch/model/PlatformCapability.h>
@@ -483,44 +484,50 @@ namespace Model
 
 
     /**
-     * <p>An object with various properties specific to Amazon ECS based jobs. Valid
-     * values are <code>containerProperties</code>, <code>eksProperties</code>, and
-     * <code>nodeProperties</code>. Only one can be specified.</p>
+     * <p>An object with properties specific to Amazon ECS-based jobs. When
+     * <code>containerProperties</code> is used in the job definition, it can't be used
+     * in addition to <code>eksProperties</code>, <code>ecsProperties</code>, or
+     * <code>nodeProperties</code>.</p>
      */
     inline const ContainerProperties& GetContainerProperties() const{ return m_containerProperties; }
 
     /**
-     * <p>An object with various properties specific to Amazon ECS based jobs. Valid
-     * values are <code>containerProperties</code>, <code>eksProperties</code>, and
-     * <code>nodeProperties</code>. Only one can be specified.</p>
+     * <p>An object with properties specific to Amazon ECS-based jobs. When
+     * <code>containerProperties</code> is used in the job definition, it can't be used
+     * in addition to <code>eksProperties</code>, <code>ecsProperties</code>, or
+     * <code>nodeProperties</code>.</p>
      */
     inline bool ContainerPropertiesHasBeenSet() const { return m_containerPropertiesHasBeenSet; }
 
     /**
-     * <p>An object with various properties specific to Amazon ECS based jobs. Valid
-     * values are <code>containerProperties</code>, <code>eksProperties</code>, and
-     * <code>nodeProperties</code>. Only one can be specified.</p>
+     * <p>An object with properties specific to Amazon ECS-based jobs. When
+     * <code>containerProperties</code> is used in the job definition, it can't be used
+     * in addition to <code>eksProperties</code>, <code>ecsProperties</code>, or
+     * <code>nodeProperties</code>.</p>
      */
     inline void SetContainerProperties(const ContainerProperties& value) { m_containerPropertiesHasBeenSet = true; m_containerProperties = value; }
 
     /**
-     * <p>An object with various properties specific to Amazon ECS based jobs. Valid
-     * values are <code>containerProperties</code>, <code>eksProperties</code>, and
-     * <code>nodeProperties</code>. Only one can be specified.</p>
+     * <p>An object with properties specific to Amazon ECS-based jobs. When
+     * <code>containerProperties</code> is used in the job definition, it can't be used
+     * in addition to <code>eksProperties</code>, <code>ecsProperties</code>, or
+     * <code>nodeProperties</code>.</p>
      */
     inline void SetContainerProperties(ContainerProperties&& value) { m_containerPropertiesHasBeenSet = true; m_containerProperties = std::move(value); }
 
     /**
-     * <p>An object with various properties specific to Amazon ECS based jobs. Valid
-     * values are <code>containerProperties</code>, <code>eksProperties</code>, and
-     * <code>nodeProperties</code>. Only one can be specified.</p>
+     * <p>An object with properties specific to Amazon ECS-based jobs. When
+     * <code>containerProperties</code> is used in the job definition, it can't be used
+     * in addition to <code>eksProperties</code>, <code>ecsProperties</code>, or
+     * <code>nodeProperties</code>.</p>
      */
     inline JobDefinition& WithContainerProperties(const ContainerProperties& value) { SetContainerProperties(value); return *this;}
 
     /**
-     * <p>An object with various properties specific to Amazon ECS based jobs. Valid
-     * values are <code>containerProperties</code>, <code>eksProperties</code>, and
-     * <code>nodeProperties</code>. Only one can be specified.</p>
+     * <p>An object with properties specific to Amazon ECS-based jobs. When
+     * <code>containerProperties</code> is used in the job definition, it can't be used
+     * in addition to <code>eksProperties</code>, <code>ecsProperties</code>, or
+     * <code>nodeProperties</code>.</p>
      */
     inline JobDefinition& WithContainerProperties(ContainerProperties&& value) { SetContainerProperties(std::move(value)); return *this;}
 
@@ -569,62 +576,62 @@ namespace Model
 
 
     /**
-     * <p>An object with various properties that are specific to multi-node parallel
-     * jobs. Valid values are <code>containerProperties</code>,
-     * <code>eksProperties</code>, and <code>nodeProperties</code>. Only one can be
-     * specified.</p>  <p>If the job runs on Fargate resources, don't specify
-     * <code>nodeProperties</code>. Use <code>containerProperties</code> instead.</p>
-     * 
+     * <p>An object with properties that are specific to multi-node parallel jobs. When
+     * <code>nodeProperties</code> is used in the job definition, it can't be used in
+     * addition to <code>containerProperties</code>, <code>ecsProperties</code>, or
+     * <code>eksProperties</code>.</p>  <p>If the job runs on Fargate resources,
+     * don't specify <code>nodeProperties</code>. Use <code>containerProperties</code>
+     * instead.</p> 
      */
     inline const NodeProperties& GetNodeProperties() const{ return m_nodeProperties; }
 
     /**
-     * <p>An object with various properties that are specific to multi-node parallel
-     * jobs. Valid values are <code>containerProperties</code>,
-     * <code>eksProperties</code>, and <code>nodeProperties</code>. Only one can be
-     * specified.</p>  <p>If the job runs on Fargate resources, don't specify
-     * <code>nodeProperties</code>. Use <code>containerProperties</code> instead.</p>
-     * 
+     * <p>An object with properties that are specific to multi-node parallel jobs. When
+     * <code>nodeProperties</code> is used in the job definition, it can't be used in
+     * addition to <code>containerProperties</code>, <code>ecsProperties</code>, or
+     * <code>eksProperties</code>.</p>  <p>If the job runs on Fargate resources,
+     * don't specify <code>nodeProperties</code>. Use <code>containerProperties</code>
+     * instead.</p> 
      */
     inline bool NodePropertiesHasBeenSet() const { return m_nodePropertiesHasBeenSet; }
 
     /**
-     * <p>An object with various properties that are specific to multi-node parallel
-     * jobs. Valid values are <code>containerProperties</code>,
-     * <code>eksProperties</code>, and <code>nodeProperties</code>. Only one can be
-     * specified.</p>  <p>If the job runs on Fargate resources, don't specify
-     * <code>nodeProperties</code>. Use <code>containerProperties</code> instead.</p>
-     * 
+     * <p>An object with properties that are specific to multi-node parallel jobs. When
+     * <code>nodeProperties</code> is used in the job definition, it can't be used in
+     * addition to <code>containerProperties</code>, <code>ecsProperties</code>, or
+     * <code>eksProperties</code>.</p>  <p>If the job runs on Fargate resources,
+     * don't specify <code>nodeProperties</code>. Use <code>containerProperties</code>
+     * instead.</p> 
      */
     inline void SetNodeProperties(const NodeProperties& value) { m_nodePropertiesHasBeenSet = true; m_nodeProperties = value; }
 
     /**
-     * <p>An object with various properties that are specific to multi-node parallel
-     * jobs. Valid values are <code>containerProperties</code>,
-     * <code>eksProperties</code>, and <code>nodeProperties</code>. Only one can be
-     * specified.</p>  <p>If the job runs on Fargate resources, don't specify
-     * <code>nodeProperties</code>. Use <code>containerProperties</code> instead.</p>
-     * 
+     * <p>An object with properties that are specific to multi-node parallel jobs. When
+     * <code>nodeProperties</code> is used in the job definition, it can't be used in
+     * addition to <code>containerProperties</code>, <code>ecsProperties</code>, or
+     * <code>eksProperties</code>.</p>  <p>If the job runs on Fargate resources,
+     * don't specify <code>nodeProperties</code>. Use <code>containerProperties</code>
+     * instead.</p> 
      */
     inline void SetNodeProperties(NodeProperties&& value) { m_nodePropertiesHasBeenSet = true; m_nodeProperties = std::move(value); }
 
     /**
-     * <p>An object with various properties that are specific to multi-node parallel
-     * jobs. Valid values are <code>containerProperties</code>,
-     * <code>eksProperties</code>, and <code>nodeProperties</code>. Only one can be
-     * specified.</p>  <p>If the job runs on Fargate resources, don't specify
-     * <code>nodeProperties</code>. Use <code>containerProperties</code> instead.</p>
-     * 
+     * <p>An object with properties that are specific to multi-node parallel jobs. When
+     * <code>nodeProperties</code> is used in the job definition, it can't be used in
+     * addition to <code>containerProperties</code>, <code>ecsProperties</code>, or
+     * <code>eksProperties</code>.</p>  <p>If the job runs on Fargate resources,
+     * don't specify <code>nodeProperties</code>. Use <code>containerProperties</code>
+     * instead.</p> 
      */
     inline JobDefinition& WithNodeProperties(const NodeProperties& value) { SetNodeProperties(value); return *this;}
 
     /**
-     * <p>An object with various properties that are specific to multi-node parallel
-     * jobs. Valid values are <code>containerProperties</code>,
-     * <code>eksProperties</code>, and <code>nodeProperties</code>. Only one can be
-     * specified.</p>  <p>If the job runs on Fargate resources, don't specify
-     * <code>nodeProperties</code>. Use <code>containerProperties</code> instead.</p>
-     * 
+     * <p>An object with properties that are specific to multi-node parallel jobs. When
+     * <code>nodeProperties</code> is used in the job definition, it can't be used in
+     * addition to <code>containerProperties</code>, <code>ecsProperties</code>, or
+     * <code>eksProperties</code>.</p>  <p>If the job runs on Fargate resources,
+     * don't specify <code>nodeProperties</code>. Use <code>containerProperties</code>
+     * instead.</p> 
      */
     inline JobDefinition& WithNodeProperties(NodeProperties&& value) { SetNodeProperties(std::move(value)); return *this;}
 
@@ -794,44 +801,99 @@ namespace Model
 
 
     /**
-     * <p>An object with various properties that are specific to Amazon EKS based jobs.
-     * Valid values are <code>containerProperties</code>, <code>eksProperties</code>,
-     * and <code>nodeProperties</code>. Only one can be specified.</p>
+     * <p>An object that contains the properties for the Amazon ECS resources of a
+     * job.When <code>ecsProperties</code> is used in the job definition, it can't be
+     * used in addition to <code>containerProperties</code>,
+     * <code>eksProperties</code>, or <code>nodeProperties</code>.</p>
+     */
+    inline const EcsProperties& GetEcsProperties() const{ return m_ecsProperties; }
+
+    /**
+     * <p>An object that contains the properties for the Amazon ECS resources of a
+     * job.When <code>ecsProperties</code> is used in the job definition, it can't be
+     * used in addition to <code>containerProperties</code>,
+     * <code>eksProperties</code>, or <code>nodeProperties</code>.</p>
+     */
+    inline bool EcsPropertiesHasBeenSet() const { return m_ecsPropertiesHasBeenSet; }
+
+    /**
+     * <p>An object that contains the properties for the Amazon ECS resources of a
+     * job.When <code>ecsProperties</code> is used in the job definition, it can't be
+     * used in addition to <code>containerProperties</code>,
+     * <code>eksProperties</code>, or <code>nodeProperties</code>.</p>
+     */
+    inline void SetEcsProperties(const EcsProperties& value) { m_ecsPropertiesHasBeenSet = true; m_ecsProperties = value; }
+
+    /**
+     * <p>An object that contains the properties for the Amazon ECS resources of a
+     * job.When <code>ecsProperties</code> is used in the job definition, it can't be
+     * used in addition to <code>containerProperties</code>,
+     * <code>eksProperties</code>, or <code>nodeProperties</code>.</p>
+     */
+    inline void SetEcsProperties(EcsProperties&& value) { m_ecsPropertiesHasBeenSet = true; m_ecsProperties = std::move(value); }
+
+    /**
+     * <p>An object that contains the properties for the Amazon ECS resources of a
+     * job.When <code>ecsProperties</code> is used in the job definition, it can't be
+     * used in addition to <code>containerProperties</code>,
+     * <code>eksProperties</code>, or <code>nodeProperties</code>.</p>
+     */
+    inline JobDefinition& WithEcsProperties(const EcsProperties& value) { SetEcsProperties(value); return *this;}
+
+    /**
+     * <p>An object that contains the properties for the Amazon ECS resources of a
+     * job.When <code>ecsProperties</code> is used in the job definition, it can't be
+     * used in addition to <code>containerProperties</code>,
+     * <code>eksProperties</code>, or <code>nodeProperties</code>.</p>
+     */
+    inline JobDefinition& WithEcsProperties(EcsProperties&& value) { SetEcsProperties(std::move(value)); return *this;}
+
+
+    /**
+     * <p>An object with properties that are specific to Amazon EKS-based jobs. When
+     * <code>eksProperties</code> is used in the job definition, it can't be used in
+     * addition to <code>containerProperties</code>, <code>ecsProperties</code>, or
+     * <code>nodeProperties</code>.</p>
      */
     inline const EksProperties& GetEksProperties() const{ return m_eksProperties; }
 
     /**
-     * <p>An object with various properties that are specific to Amazon EKS based jobs.
-     * Valid values are <code>containerProperties</code>, <code>eksProperties</code>,
-     * and <code>nodeProperties</code>. Only one can be specified.</p>
+     * <p>An object with properties that are specific to Amazon EKS-based jobs. When
+     * <code>eksProperties</code> is used in the job definition, it can't be used in
+     * addition to <code>containerProperties</code>, <code>ecsProperties</code>, or
+     * <code>nodeProperties</code>.</p>
      */
     inline bool EksPropertiesHasBeenSet() const { return m_eksPropertiesHasBeenSet; }
 
     /**
-     * <p>An object with various properties that are specific to Amazon EKS based jobs.
-     * Valid values are <code>containerProperties</code>, <code>eksProperties</code>,
-     * and <code>nodeProperties</code>. Only one can be specified.</p>
+     * <p>An object with properties that are specific to Amazon EKS-based jobs. When
+     * <code>eksProperties</code> is used in the job definition, it can't be used in
+     * addition to <code>containerProperties</code>, <code>ecsProperties</code>, or
+     * <code>nodeProperties</code>.</p>
      */
     inline void SetEksProperties(const EksProperties& value) { m_eksPropertiesHasBeenSet = true; m_eksProperties = value; }
 
     /**
-     * <p>An object with various properties that are specific to Amazon EKS based jobs.
-     * Valid values are <code>containerProperties</code>, <code>eksProperties</code>,
-     * and <code>nodeProperties</code>. Only one can be specified.</p>
+     * <p>An object with properties that are specific to Amazon EKS-based jobs. When
+     * <code>eksProperties</code> is used in the job definition, it can't be used in
+     * addition to <code>containerProperties</code>, <code>ecsProperties</code>, or
+     * <code>nodeProperties</code>.</p>
      */
     inline void SetEksProperties(EksProperties&& value) { m_eksPropertiesHasBeenSet = true; m_eksProperties = std::move(value); }
 
     /**
-     * <p>An object with various properties that are specific to Amazon EKS based jobs.
-     * Valid values are <code>containerProperties</code>, <code>eksProperties</code>,
-     * and <code>nodeProperties</code>. Only one can be specified.</p>
+     * <p>An object with properties that are specific to Amazon EKS-based jobs. When
+     * <code>eksProperties</code> is used in the job definition, it can't be used in
+     * addition to <code>containerProperties</code>, <code>ecsProperties</code>, or
+     * <code>nodeProperties</code>.</p>
      */
     inline JobDefinition& WithEksProperties(const EksProperties& value) { SetEksProperties(value); return *this;}
 
     /**
-     * <p>An object with various properties that are specific to Amazon EKS based jobs.
-     * Valid values are <code>containerProperties</code>, <code>eksProperties</code>,
-     * and <code>nodeProperties</code>. Only one can be specified.</p>
+     * <p>An object with properties that are specific to Amazon EKS-based jobs. When
+     * <code>eksProperties</code> is used in the job definition, it can't be used in
+     * addition to <code>containerProperties</code>, <code>ecsProperties</code>, or
+     * <code>nodeProperties</code>.</p>
      */
     inline JobDefinition& WithEksProperties(EksProperties&& value) { SetEksProperties(std::move(value)); return *this;}
 
@@ -915,6 +977,9 @@ namespace Model
 
     Aws::Vector<PlatformCapability> m_platformCapabilities;
     bool m_platformCapabilitiesHasBeenSet = false;
+
+    EcsProperties m_ecsProperties;
+    bool m_ecsPropertiesHasBeenSet = false;
 
     EksProperties m_eksProperties;
     bool m_eksPropertiesHasBeenSet = false;

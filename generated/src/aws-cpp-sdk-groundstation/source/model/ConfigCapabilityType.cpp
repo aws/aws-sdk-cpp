@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ConfigCapabilityType::NOT_SET:
+            return {};
           case ConfigCapabilityType::antenna_downlink:
             return "antenna-downlink";
           case ConfigCapabilityType::antenna_downlink_demod_decode:

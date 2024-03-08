@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PhoneNumberType::NOT_SET:
+            return {};
           case PhoneNumberType::MOBILE:
             return "MOBILE";
           case PhoneNumberType::WORK:

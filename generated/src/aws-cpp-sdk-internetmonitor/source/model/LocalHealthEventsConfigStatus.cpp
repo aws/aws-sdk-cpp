@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LocalHealthEventsConfigStatus::NOT_SET:
+            return {};
           case LocalHealthEventsConfigStatus::ENABLED:
             return "ENABLED";
           case LocalHealthEventsConfigStatus::DISABLED:

@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NumericOperator::NOT_SET:
+            return {};
           case NumericOperator::EQUAL:
             return "EQUAL";
           case NumericOperator::GREATER_THAN_OR_EQUAL:

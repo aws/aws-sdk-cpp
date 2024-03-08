@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CustomSMSSenderLambdaVersionType::NOT_SET:
+            return {};
           case CustomSMSSenderLambdaVersionType::V1_0:
             return "V1_0";
           default:

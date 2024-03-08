@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Av1AdaptiveQuantization::NOT_SET:
+            return {};
           case Av1AdaptiveQuantization::OFF:
             return "OFF";
           case Av1AdaptiveQuantization::LOW:

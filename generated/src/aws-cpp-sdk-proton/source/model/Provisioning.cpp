@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Provisioning::NOT_SET:
+            return {};
           case Provisioning::CUSTOMER_MANAGED:
             return "CUSTOMER_MANAGED";
           default:

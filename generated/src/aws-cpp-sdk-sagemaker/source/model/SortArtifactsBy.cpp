@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SortArtifactsBy::NOT_SET:
+            return {};
           case SortArtifactsBy::CreationTime:
             return "CreationTime";
           default:

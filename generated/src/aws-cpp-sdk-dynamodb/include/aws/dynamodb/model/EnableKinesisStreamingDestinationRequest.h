@@ -7,6 +7,7 @@
 #include <aws/dynamodb/DynamoDB_EXPORTS.h>
 #include <aws/dynamodb/DynamoDBRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/dynamodb/model/EnableKinesisStreamingConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -115,6 +116,37 @@ namespace Model
      */
     inline EnableKinesisStreamingDestinationRequest& WithStreamArn(const char* value) { SetStreamArn(value); return *this;}
 
+
+    /**
+     * <p>The source for the Kinesis streaming information that is being enabled.</p>
+     */
+    inline const EnableKinesisStreamingConfiguration& GetEnableKinesisStreamingConfiguration() const{ return m_enableKinesisStreamingConfiguration; }
+
+    /**
+     * <p>The source for the Kinesis streaming information that is being enabled.</p>
+     */
+    inline bool EnableKinesisStreamingConfigurationHasBeenSet() const { return m_enableKinesisStreamingConfigurationHasBeenSet; }
+
+    /**
+     * <p>The source for the Kinesis streaming information that is being enabled.</p>
+     */
+    inline void SetEnableKinesisStreamingConfiguration(const EnableKinesisStreamingConfiguration& value) { m_enableKinesisStreamingConfigurationHasBeenSet = true; m_enableKinesisStreamingConfiguration = value; }
+
+    /**
+     * <p>The source for the Kinesis streaming information that is being enabled.</p>
+     */
+    inline void SetEnableKinesisStreamingConfiguration(EnableKinesisStreamingConfiguration&& value) { m_enableKinesisStreamingConfigurationHasBeenSet = true; m_enableKinesisStreamingConfiguration = std::move(value); }
+
+    /**
+     * <p>The source for the Kinesis streaming information that is being enabled.</p>
+     */
+    inline EnableKinesisStreamingDestinationRequest& WithEnableKinesisStreamingConfiguration(const EnableKinesisStreamingConfiguration& value) { SetEnableKinesisStreamingConfiguration(value); return *this;}
+
+    /**
+     * <p>The source for the Kinesis streaming information that is being enabled.</p>
+     */
+    inline EnableKinesisStreamingDestinationRequest& WithEnableKinesisStreamingConfiguration(EnableKinesisStreamingConfiguration&& value) { SetEnableKinesisStreamingConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_tableName;
@@ -122,6 +154,9 @@ namespace Model
 
     Aws::String m_streamArn;
     bool m_streamArnHasBeenSet = false;
+
+    EnableKinesisStreamingConfiguration m_enableKinesisStreamingConfiguration;
+    bool m_enableKinesisStreamingConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

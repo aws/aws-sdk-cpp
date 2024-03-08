@@ -1812,6 +1812,64 @@ namespace Model
      */
     inline RunJobFlowRequest& WithOSReleaseLabel(const char* value) { SetOSReleaseLabel(value); return *this;}
 
+
+    /**
+     * <p>The IOPS, of the Amazon EBS root device volume of the Linux AMI that is used
+     * for each Amazon EC2 instance. Available in Amazon EMR releases 6.15.0 and
+     * later.</p>
+     */
+    inline int GetEbsRootVolumeIops() const{ return m_ebsRootVolumeIops; }
+
+    /**
+     * <p>The IOPS, of the Amazon EBS root device volume of the Linux AMI that is used
+     * for each Amazon EC2 instance. Available in Amazon EMR releases 6.15.0 and
+     * later.</p>
+     */
+    inline bool EbsRootVolumeIopsHasBeenSet() const { return m_ebsRootVolumeIopsHasBeenSet; }
+
+    /**
+     * <p>The IOPS, of the Amazon EBS root device volume of the Linux AMI that is used
+     * for each Amazon EC2 instance. Available in Amazon EMR releases 6.15.0 and
+     * later.</p>
+     */
+    inline void SetEbsRootVolumeIops(int value) { m_ebsRootVolumeIopsHasBeenSet = true; m_ebsRootVolumeIops = value; }
+
+    /**
+     * <p>The IOPS, of the Amazon EBS root device volume of the Linux AMI that is used
+     * for each Amazon EC2 instance. Available in Amazon EMR releases 6.15.0 and
+     * later.</p>
+     */
+    inline RunJobFlowRequest& WithEbsRootVolumeIops(int value) { SetEbsRootVolumeIops(value); return *this;}
+
+
+    /**
+     * <p>The throughput, in MiB/s, of the Amazon EBS root device volume of the Linux
+     * AMI that is used for each Amazon EC2 instance. Available in Amazon EMR releases
+     * 6.15.0 and later.</p>
+     */
+    inline int GetEbsRootVolumeThroughput() const{ return m_ebsRootVolumeThroughput; }
+
+    /**
+     * <p>The throughput, in MiB/s, of the Amazon EBS root device volume of the Linux
+     * AMI that is used for each Amazon EC2 instance. Available in Amazon EMR releases
+     * 6.15.0 and later.</p>
+     */
+    inline bool EbsRootVolumeThroughputHasBeenSet() const { return m_ebsRootVolumeThroughputHasBeenSet; }
+
+    /**
+     * <p>The throughput, in MiB/s, of the Amazon EBS root device volume of the Linux
+     * AMI that is used for each Amazon EC2 instance. Available in Amazon EMR releases
+     * 6.15.0 and later.</p>
+     */
+    inline void SetEbsRootVolumeThroughput(int value) { m_ebsRootVolumeThroughputHasBeenSet = true; m_ebsRootVolumeThroughput = value; }
+
+    /**
+     * <p>The throughput, in MiB/s, of the Amazon EBS root device volume of the Linux
+     * AMI that is used for each Amazon EC2 instance. Available in Amazon EMR releases
+     * 6.15.0 and later.</p>
+     */
+    inline RunJobFlowRequest& WithEbsRootVolumeThroughput(int value) { SetEbsRootVolumeThroughput(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -1900,6 +1958,12 @@ namespace Model
 
     Aws::String m_oSReleaseLabel;
     bool m_oSReleaseLabelHasBeenSet = false;
+
+    int m_ebsRootVolumeIops;
+    bool m_ebsRootVolumeIopsHasBeenSet = false;
+
+    int m_ebsRootVolumeThroughput;
+    bool m_ebsRootVolumeThroughputHasBeenSet = false;
   };
 
 } // namespace Model

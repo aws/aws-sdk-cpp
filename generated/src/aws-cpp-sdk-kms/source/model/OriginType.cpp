@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OriginType::NOT_SET:
+            return {};
           case OriginType::AWS_KMS:
             return "AWS_KMS";
           case OriginType::EXTERNAL:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RequestedJobStatus::NOT_SET:
+            return {};
           case RequestedJobStatus::Cancelled:
             return "Cancelled";
           case RequestedJobStatus::Ready:

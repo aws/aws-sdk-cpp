@@ -283,6 +283,152 @@ namespace Model
      */
     inline AssetModelPropertyDefinition& WithType(PropertyType&& value) { SetType(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The ID to assign to the asset model property, if desired. IoT SiteWise
+     * automatically generates a unique ID for you, so this parameter is never
+     * required. However, if you prefer to supply your own ID instead, you can specify
+     * it here in UUID format. If you specify your own ID, it must be globally
+     * unique.</p>
+     */
+    inline const Aws::String& GetId() const{ return m_id; }
+
+    /**
+     * <p>The ID to assign to the asset model property, if desired. IoT SiteWise
+     * automatically generates a unique ID for you, so this parameter is never
+     * required. However, if you prefer to supply your own ID instead, you can specify
+     * it here in UUID format. If you specify your own ID, it must be globally
+     * unique.</p>
+     */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The ID to assign to the asset model property, if desired. IoT SiteWise
+     * automatically generates a unique ID for you, so this parameter is never
+     * required. However, if you prefer to supply your own ID instead, you can specify
+     * it here in UUID format. If you specify your own ID, it must be globally
+     * unique.</p>
+     */
+    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
+
+    /**
+     * <p>The ID to assign to the asset model property, if desired. IoT SiteWise
+     * automatically generates a unique ID for you, so this parameter is never
+     * required. However, if you prefer to supply your own ID instead, you can specify
+     * it here in UUID format. If you specify your own ID, it must be globally
+     * unique.</p>
+     */
+    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
+
+    /**
+     * <p>The ID to assign to the asset model property, if desired. IoT SiteWise
+     * automatically generates a unique ID for you, so this parameter is never
+     * required. However, if you prefer to supply your own ID instead, you can specify
+     * it here in UUID format. If you specify your own ID, it must be globally
+     * unique.</p>
+     */
+    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
+
+    /**
+     * <p>The ID to assign to the asset model property, if desired. IoT SiteWise
+     * automatically generates a unique ID for you, so this parameter is never
+     * required. However, if you prefer to supply your own ID instead, you can specify
+     * it here in UUID format. If you specify your own ID, it must be globally
+     * unique.</p>
+     */
+    inline AssetModelPropertyDefinition& WithId(const Aws::String& value) { SetId(value); return *this;}
+
+    /**
+     * <p>The ID to assign to the asset model property, if desired. IoT SiteWise
+     * automatically generates a unique ID for you, so this parameter is never
+     * required. However, if you prefer to supply your own ID instead, you can specify
+     * it here in UUID format. If you specify your own ID, it must be globally
+     * unique.</p>
+     */
+    inline AssetModelPropertyDefinition& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID to assign to the asset model property, if desired. IoT SiteWise
+     * automatically generates a unique ID for you, so this parameter is never
+     * required. However, if you prefer to supply your own ID instead, you can specify
+     * it here in UUID format. If you specify your own ID, it must be globally
+     * unique.</p>
+     */
+    inline AssetModelPropertyDefinition& WithId(const char* value) { SetId(value); return *this;}
+
+
+    /**
+     * <p>An external ID to assign to the property definition. The external ID must be
+     * unique among property definitions within this asset model. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline const Aws::String& GetExternalId() const{ return m_externalId; }
+
+    /**
+     * <p>An external ID to assign to the property definition. The external ID must be
+     * unique among property definitions within this asset model. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline bool ExternalIdHasBeenSet() const { return m_externalIdHasBeenSet; }
+
+    /**
+     * <p>An external ID to assign to the property definition. The external ID must be
+     * unique among property definitions within this asset model. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline void SetExternalId(const Aws::String& value) { m_externalIdHasBeenSet = true; m_externalId = value; }
+
+    /**
+     * <p>An external ID to assign to the property definition. The external ID must be
+     * unique among property definitions within this asset model. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline void SetExternalId(Aws::String&& value) { m_externalIdHasBeenSet = true; m_externalId = std::move(value); }
+
+    /**
+     * <p>An external ID to assign to the property definition. The external ID must be
+     * unique among property definitions within this asset model. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline void SetExternalId(const char* value) { m_externalIdHasBeenSet = true; m_externalId.assign(value); }
+
+    /**
+     * <p>An external ID to assign to the property definition. The external ID must be
+     * unique among property definitions within this asset model. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline AssetModelPropertyDefinition& WithExternalId(const Aws::String& value) { SetExternalId(value); return *this;}
+
+    /**
+     * <p>An external ID to assign to the property definition. The external ID must be
+     * unique among property definitions within this asset model. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline AssetModelPropertyDefinition& WithExternalId(Aws::String&& value) { SetExternalId(std::move(value)); return *this;}
+
+    /**
+     * <p>An external ID to assign to the property definition. The external ID must be
+     * unique among property definitions within this asset model. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline AssetModelPropertyDefinition& WithExternalId(const char* value) { SetExternalId(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -299,6 +445,12 @@ namespace Model
 
     PropertyType m_type;
     bool m_typeHasBeenSet = false;
+
+    Aws::String m_id;
+    bool m_idHasBeenSet = false;
+
+    Aws::String m_externalId;
+    bool m_externalIdHasBeenSet = false;
   };
 
 } // namespace Model

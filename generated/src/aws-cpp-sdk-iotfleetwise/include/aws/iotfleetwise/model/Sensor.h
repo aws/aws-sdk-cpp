@@ -380,6 +380,71 @@ namespace Model
      */
     inline Sensor& WithComment(const char* value) { SetComment(value); return *this;}
 
+
+    /**
+     * <p>The fully qualified name of the struct node for a sensor if the data type of
+     * the actuator is <code>Struct</code> or <code>StructArray</code>. For example,
+     * the struct fully qualified name of a sensor might be
+     * <code>Vehicle.ADAS.CameraStruct</code>.</p>
+     */
+    inline const Aws::String& GetStructFullyQualifiedName() const{ return m_structFullyQualifiedName; }
+
+    /**
+     * <p>The fully qualified name of the struct node for a sensor if the data type of
+     * the actuator is <code>Struct</code> or <code>StructArray</code>. For example,
+     * the struct fully qualified name of a sensor might be
+     * <code>Vehicle.ADAS.CameraStruct</code>.</p>
+     */
+    inline bool StructFullyQualifiedNameHasBeenSet() const { return m_structFullyQualifiedNameHasBeenSet; }
+
+    /**
+     * <p>The fully qualified name of the struct node for a sensor if the data type of
+     * the actuator is <code>Struct</code> or <code>StructArray</code>. For example,
+     * the struct fully qualified name of a sensor might be
+     * <code>Vehicle.ADAS.CameraStruct</code>.</p>
+     */
+    inline void SetStructFullyQualifiedName(const Aws::String& value) { m_structFullyQualifiedNameHasBeenSet = true; m_structFullyQualifiedName = value; }
+
+    /**
+     * <p>The fully qualified name of the struct node for a sensor if the data type of
+     * the actuator is <code>Struct</code> or <code>StructArray</code>. For example,
+     * the struct fully qualified name of a sensor might be
+     * <code>Vehicle.ADAS.CameraStruct</code>.</p>
+     */
+    inline void SetStructFullyQualifiedName(Aws::String&& value) { m_structFullyQualifiedNameHasBeenSet = true; m_structFullyQualifiedName = std::move(value); }
+
+    /**
+     * <p>The fully qualified name of the struct node for a sensor if the data type of
+     * the actuator is <code>Struct</code> or <code>StructArray</code>. For example,
+     * the struct fully qualified name of a sensor might be
+     * <code>Vehicle.ADAS.CameraStruct</code>.</p>
+     */
+    inline void SetStructFullyQualifiedName(const char* value) { m_structFullyQualifiedNameHasBeenSet = true; m_structFullyQualifiedName.assign(value); }
+
+    /**
+     * <p>The fully qualified name of the struct node for a sensor if the data type of
+     * the actuator is <code>Struct</code> or <code>StructArray</code>. For example,
+     * the struct fully qualified name of a sensor might be
+     * <code>Vehicle.ADAS.CameraStruct</code>.</p>
+     */
+    inline Sensor& WithStructFullyQualifiedName(const Aws::String& value) { SetStructFullyQualifiedName(value); return *this;}
+
+    /**
+     * <p>The fully qualified name of the struct node for a sensor if the data type of
+     * the actuator is <code>Struct</code> or <code>StructArray</code>. For example,
+     * the struct fully qualified name of a sensor might be
+     * <code>Vehicle.ADAS.CameraStruct</code>.</p>
+     */
+    inline Sensor& WithStructFullyQualifiedName(Aws::String&& value) { SetStructFullyQualifiedName(std::move(value)); return *this;}
+
+    /**
+     * <p>The fully qualified name of the struct node for a sensor if the data type of
+     * the actuator is <code>Struct</code> or <code>StructArray</code>. For example,
+     * the struct fully qualified name of a sensor might be
+     * <code>Vehicle.ADAS.CameraStruct</code>.</p>
+     */
+    inline Sensor& WithStructFullyQualifiedName(const char* value) { SetStructFullyQualifiedName(value); return *this;}
+
   private:
 
     Aws::String m_fullyQualifiedName;
@@ -408,6 +473,9 @@ namespace Model
 
     Aws::String m_comment;
     bool m_commentHasBeenSet = false;
+
+    Aws::String m_structFullyQualifiedName;
+    bool m_structFullyQualifiedNameHasBeenSet = false;
   };
 
 } // namespace Model

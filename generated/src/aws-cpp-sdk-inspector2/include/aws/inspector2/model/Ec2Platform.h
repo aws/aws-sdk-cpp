@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     WINDOWS,
     LINUX,
-    UNKNOWN
+    UNKNOWN,
+    MACOS
   };
 
 namespace Ec2PlatformMapper

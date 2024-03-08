@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CredentialType::NOT_SET:
+            return {};
           case CredentialType::ADMIN:
             return "ADMIN";
           default:

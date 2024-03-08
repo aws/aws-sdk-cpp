@@ -48,8 +48,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* CodeGuruSecurityClient::SERVICE_NAME = "codeguru-security";
-const char* CodeGuruSecurityClient::ALLOCATION_TAG = "CodeGuruSecurityClient";
+namespace Aws
+{
+  namespace CodeGuruSecurity
+  {
+    const char SERVICE_NAME[] = "codeguru-security";
+    const char ALLOCATION_TAG[] = "CodeGuruSecurityClient";
+  }
+}
+const char* CodeGuruSecurityClient::GetServiceName() {return SERVICE_NAME;}
+const char* CodeGuruSecurityClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 CodeGuruSecurityClient::CodeGuruSecurityClient(const CodeGuruSecurity::CodeGuruSecurityClientConfiguration& clientConfiguration,
                                                std::shared_ptr<CodeGuruSecurityEndpointProviderBase> endpointProvider) :
@@ -61,7 +69,7 @@ CodeGuruSecurityClient::CodeGuruSecurityClient(const CodeGuruSecurity::CodeGuruS
             Aws::MakeShared<CodeGuruSecurityErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CodeGuruSecurityEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -77,7 +85,7 @@ CodeGuruSecurityClient::CodeGuruSecurityClient(const AWSCredentials& credentials
             Aws::MakeShared<CodeGuruSecurityErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CodeGuruSecurityEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -93,7 +101,7 @@ CodeGuruSecurityClient::CodeGuruSecurityClient(const std::shared_ptr<AWSCredenti
             Aws::MakeShared<CodeGuruSecurityErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CodeGuruSecurityEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

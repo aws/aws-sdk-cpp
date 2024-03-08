@@ -40,8 +40,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* S3OutpostsClient::SERVICE_NAME = "s3-outposts";
-const char* S3OutpostsClient::ALLOCATION_TAG = "S3OutpostsClient";
+namespace Aws
+{
+  namespace S3Outposts
+  {
+    const char SERVICE_NAME[] = "s3-outposts";
+    const char ALLOCATION_TAG[] = "S3OutpostsClient";
+  }
+}
+const char* S3OutpostsClient::GetServiceName() {return SERVICE_NAME;}
+const char* S3OutpostsClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 S3OutpostsClient::S3OutpostsClient(const S3Outposts::S3OutpostsClientConfiguration& clientConfiguration,
                                    std::shared_ptr<S3OutpostsEndpointProviderBase> endpointProvider) :
@@ -53,7 +61,7 @@ S3OutpostsClient::S3OutpostsClient(const S3Outposts::S3OutpostsClientConfigurati
             Aws::MakeShared<S3OutpostsErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<S3OutpostsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -69,7 +77,7 @@ S3OutpostsClient::S3OutpostsClient(const AWSCredentials& credentials,
             Aws::MakeShared<S3OutpostsErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<S3OutpostsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -85,7 +93,7 @@ S3OutpostsClient::S3OutpostsClient(const std::shared_ptr<AWSCredentialsProvider>
             Aws::MakeShared<S3OutpostsErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<S3OutpostsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

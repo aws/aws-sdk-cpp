@@ -44,6 +44,7 @@ CreateDBClusterRequest::CreateDBClusterRequest() :
     m_deletionProtectionHasBeenSet(false),
     m_serverlessV2ScalingConfigurationHasBeenSet(false),
     m_globalClusterIdentifierHasBeenSet(false),
+    m_storageTypeHasBeenSet(false),
     m_sourceRegionHasBeenSet(false)
 {
 }
@@ -208,6 +209,11 @@ Aws::String CreateDBClusterRequest::SerializePayload() const
   if(m_globalClusterIdentifierHasBeenSet)
   {
     ss << "GlobalClusterIdentifier=" << StringUtils::URLEncode(m_globalClusterIdentifier.c_str()) << "&";
+  }
+
+  if(m_storageTypeHasBeenSet)
+  {
+    ss << "StorageType=" << StringUtils::URLEncode(m_storageType.c_str()) << "&";
   }
 
   ss << "Version=2014-10-31";

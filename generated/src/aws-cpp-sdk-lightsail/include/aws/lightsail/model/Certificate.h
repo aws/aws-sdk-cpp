@@ -90,42 +90,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the certificate (e.g., <code>my-certificate</code>).</p>
+     * <p>The name of the certificate (<code>my-certificate</code>).</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the certificate (e.g., <code>my-certificate</code>).</p>
+     * <p>The name of the certificate (<code>my-certificate</code>).</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name of the certificate (e.g., <code>my-certificate</code>).</p>
+     * <p>The name of the certificate (<code>my-certificate</code>).</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the certificate (e.g., <code>my-certificate</code>).</p>
+     * <p>The name of the certificate (<code>my-certificate</code>).</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the certificate (e.g., <code>my-certificate</code>).</p>
+     * <p>The name of the certificate (<code>my-certificate</code>).</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the certificate (e.g., <code>my-certificate</code>).</p>
+     * <p>The name of the certificate (<code>my-certificate</code>).</p>
      */
     inline Certificate& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the certificate (e.g., <code>my-certificate</code>).</p>
+     * <p>The name of the certificate (<code>my-certificate</code>).</p>
      */
     inline Certificate& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the certificate (e.g., <code>my-certificate</code>).</p>
+     * <p>The name of the certificate (<code>my-certificate</code>).</p>
      */
     inline Certificate& WithName(const char* value) { SetName(value); return *this;}
 
@@ -244,65 +244,65 @@ namespace Model
 
 
     /**
-     * <p>An array of strings that specify the alternate domains (e.g.,
-     * <code>example2.com</code>) and subdomains (e.g., <code>blog.example.com</code>)
-     * of the certificate.</p>
+     * <p>An array of strings that specify the alternate domains
+     * (<code>example2.com</code>) and subdomains (<code>blog.example.com</code>) of
+     * the certificate.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubjectAlternativeNames() const{ return m_subjectAlternativeNames; }
 
     /**
-     * <p>An array of strings that specify the alternate domains (e.g.,
-     * <code>example2.com</code>) and subdomains (e.g., <code>blog.example.com</code>)
-     * of the certificate.</p>
+     * <p>An array of strings that specify the alternate domains
+     * (<code>example2.com</code>) and subdomains (<code>blog.example.com</code>) of
+     * the certificate.</p>
      */
     inline bool SubjectAlternativeNamesHasBeenSet() const { return m_subjectAlternativeNamesHasBeenSet; }
 
     /**
-     * <p>An array of strings that specify the alternate domains (e.g.,
-     * <code>example2.com</code>) and subdomains (e.g., <code>blog.example.com</code>)
-     * of the certificate.</p>
+     * <p>An array of strings that specify the alternate domains
+     * (<code>example2.com</code>) and subdomains (<code>blog.example.com</code>) of
+     * the certificate.</p>
      */
     inline void SetSubjectAlternativeNames(const Aws::Vector<Aws::String>& value) { m_subjectAlternativeNamesHasBeenSet = true; m_subjectAlternativeNames = value; }
 
     /**
-     * <p>An array of strings that specify the alternate domains (e.g.,
-     * <code>example2.com</code>) and subdomains (e.g., <code>blog.example.com</code>)
-     * of the certificate.</p>
+     * <p>An array of strings that specify the alternate domains
+     * (<code>example2.com</code>) and subdomains (<code>blog.example.com</code>) of
+     * the certificate.</p>
      */
     inline void SetSubjectAlternativeNames(Aws::Vector<Aws::String>&& value) { m_subjectAlternativeNamesHasBeenSet = true; m_subjectAlternativeNames = std::move(value); }
 
     /**
-     * <p>An array of strings that specify the alternate domains (e.g.,
-     * <code>example2.com</code>) and subdomains (e.g., <code>blog.example.com</code>)
-     * of the certificate.</p>
+     * <p>An array of strings that specify the alternate domains
+     * (<code>example2.com</code>) and subdomains (<code>blog.example.com</code>) of
+     * the certificate.</p>
      */
     inline Certificate& WithSubjectAlternativeNames(const Aws::Vector<Aws::String>& value) { SetSubjectAlternativeNames(value); return *this;}
 
     /**
-     * <p>An array of strings that specify the alternate domains (e.g.,
-     * <code>example2.com</code>) and subdomains (e.g., <code>blog.example.com</code>)
-     * of the certificate.</p>
+     * <p>An array of strings that specify the alternate domains
+     * (<code>example2.com</code>) and subdomains (<code>blog.example.com</code>) of
+     * the certificate.</p>
      */
     inline Certificate& WithSubjectAlternativeNames(Aws::Vector<Aws::String>&& value) { SetSubjectAlternativeNames(std::move(value)); return *this;}
 
     /**
-     * <p>An array of strings that specify the alternate domains (e.g.,
-     * <code>example2.com</code>) and subdomains (e.g., <code>blog.example.com</code>)
-     * of the certificate.</p>
+     * <p>An array of strings that specify the alternate domains
+     * (<code>example2.com</code>) and subdomains (<code>blog.example.com</code>) of
+     * the certificate.</p>
      */
     inline Certificate& AddSubjectAlternativeNames(const Aws::String& value) { m_subjectAlternativeNamesHasBeenSet = true; m_subjectAlternativeNames.push_back(value); return *this; }
 
     /**
-     * <p>An array of strings that specify the alternate domains (e.g.,
-     * <code>example2.com</code>) and subdomains (e.g., <code>blog.example.com</code>)
-     * of the certificate.</p>
+     * <p>An array of strings that specify the alternate domains
+     * (<code>example2.com</code>) and subdomains (<code>blog.example.com</code>) of
+     * the certificate.</p>
      */
     inline Certificate& AddSubjectAlternativeNames(Aws::String&& value) { m_subjectAlternativeNamesHasBeenSet = true; m_subjectAlternativeNames.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>An array of strings that specify the alternate domains (e.g.,
-     * <code>example2.com</code>) and subdomains (e.g., <code>blog.example.com</code>)
-     * of the certificate.</p>
+     * <p>An array of strings that specify the alternate domains
+     * (<code>example2.com</code>) and subdomains (<code>blog.example.com</code>) of
+     * the certificate.</p>
      */
     inline Certificate& AddSubjectAlternativeNames(const char* value) { m_subjectAlternativeNamesHasBeenSet = true; m_subjectAlternativeNames.push_back(value); return *this; }
 

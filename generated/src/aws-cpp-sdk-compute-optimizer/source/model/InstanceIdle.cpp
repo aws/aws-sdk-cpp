@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InstanceIdle::NOT_SET:
+            return {};
           case InstanceIdle::True:
             return "True";
           case InstanceIdle::False:

@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PricingUnit::NOT_SET:
+            return {};
           case PricingUnit::GB:
             return "GB";
           case PricingUnit::Hrs:

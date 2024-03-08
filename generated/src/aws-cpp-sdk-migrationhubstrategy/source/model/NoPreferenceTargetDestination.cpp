@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NoPreferenceTargetDestination::NOT_SET:
+            return {};
           case NoPreferenceTargetDestination::None_specified:
             return "None specified";
           case NoPreferenceTargetDestination::AWS_Elastic_BeanStalk:

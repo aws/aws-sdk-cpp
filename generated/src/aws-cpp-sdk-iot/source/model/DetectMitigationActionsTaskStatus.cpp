@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DetectMitigationActionsTaskStatus::NOT_SET:
+            return {};
           case DetectMitigationActionsTaskStatus::IN_PROGRESS:
             return "IN_PROGRESS";
           case DetectMitigationActionsTaskStatus::SUCCESSFUL:

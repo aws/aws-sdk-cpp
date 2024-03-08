@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LaunchType::NOT_SET:
+            return {};
           case LaunchType::EC2:
             return "EC2";
           case LaunchType::FARGATE:

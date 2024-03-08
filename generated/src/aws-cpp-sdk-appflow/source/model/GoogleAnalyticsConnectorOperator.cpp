@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case GoogleAnalyticsConnectorOperator::NOT_SET:
+            return {};
           case GoogleAnalyticsConnectorOperator::PROJECTION:
             return "PROJECTION";
           case GoogleAnalyticsConnectorOperator::BETWEEN:

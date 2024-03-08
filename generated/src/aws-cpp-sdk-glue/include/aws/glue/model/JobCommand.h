@@ -212,8 +212,8 @@ namespace Model
      * <p>In Ray jobs, Runtime is used to specify the versions of Ray, Python and
      * additional libraries available in your environment. This field is not used in
      * other job types. For supported runtime environment values, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/author-job-ray-runtimes.html">Working
-     * with Ray jobs</a> in the Glue Developer Guide.</p>
+     * href="https://docs.aws.amazon.com/glue/latest/dg/ray-jobs-section.html">Supported
+     * Ray runtime environments</a> in the Glue Developer Guide.</p>
      */
     inline const Aws::String& GetRuntime() const{ return m_runtime; }
 
@@ -221,8 +221,8 @@ namespace Model
      * <p>In Ray jobs, Runtime is used to specify the versions of Ray, Python and
      * additional libraries available in your environment. This field is not used in
      * other job types. For supported runtime environment values, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/author-job-ray-runtimes.html">Working
-     * with Ray jobs</a> in the Glue Developer Guide.</p>
+     * href="https://docs.aws.amazon.com/glue/latest/dg/ray-jobs-section.html">Supported
+     * Ray runtime environments</a> in the Glue Developer Guide.</p>
      */
     inline bool RuntimeHasBeenSet() const { return m_runtimeHasBeenSet; }
 
@@ -230,8 +230,8 @@ namespace Model
      * <p>In Ray jobs, Runtime is used to specify the versions of Ray, Python and
      * additional libraries available in your environment. This field is not used in
      * other job types. For supported runtime environment values, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/author-job-ray-runtimes.html">Working
-     * with Ray jobs</a> in the Glue Developer Guide.</p>
+     * href="https://docs.aws.amazon.com/glue/latest/dg/ray-jobs-section.html">Supported
+     * Ray runtime environments</a> in the Glue Developer Guide.</p>
      */
     inline void SetRuntime(const Aws::String& value) { m_runtimeHasBeenSet = true; m_runtime = value; }
 
@@ -239,8 +239,8 @@ namespace Model
      * <p>In Ray jobs, Runtime is used to specify the versions of Ray, Python and
      * additional libraries available in your environment. This field is not used in
      * other job types. For supported runtime environment values, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/author-job-ray-runtimes.html">Working
-     * with Ray jobs</a> in the Glue Developer Guide.</p>
+     * href="https://docs.aws.amazon.com/glue/latest/dg/ray-jobs-section.html">Supported
+     * Ray runtime environments</a> in the Glue Developer Guide.</p>
      */
     inline void SetRuntime(Aws::String&& value) { m_runtimeHasBeenSet = true; m_runtime = std::move(value); }
 
@@ -248,8 +248,8 @@ namespace Model
      * <p>In Ray jobs, Runtime is used to specify the versions of Ray, Python and
      * additional libraries available in your environment. This field is not used in
      * other job types. For supported runtime environment values, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/author-job-ray-runtimes.html">Working
-     * with Ray jobs</a> in the Glue Developer Guide.</p>
+     * href="https://docs.aws.amazon.com/glue/latest/dg/ray-jobs-section.html">Supported
+     * Ray runtime environments</a> in the Glue Developer Guide.</p>
      */
     inline void SetRuntime(const char* value) { m_runtimeHasBeenSet = true; m_runtime.assign(value); }
 
@@ -257,8 +257,8 @@ namespace Model
      * <p>In Ray jobs, Runtime is used to specify the versions of Ray, Python and
      * additional libraries available in your environment. This field is not used in
      * other job types. For supported runtime environment values, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/author-job-ray-runtimes.html">Working
-     * with Ray jobs</a> in the Glue Developer Guide.</p>
+     * href="https://docs.aws.amazon.com/glue/latest/dg/ray-jobs-section.html">Supported
+     * Ray runtime environments</a> in the Glue Developer Guide.</p>
      */
     inline JobCommand& WithRuntime(const Aws::String& value) { SetRuntime(value); return *this;}
 
@@ -266,8 +266,8 @@ namespace Model
      * <p>In Ray jobs, Runtime is used to specify the versions of Ray, Python and
      * additional libraries available in your environment. This field is not used in
      * other job types. For supported runtime environment values, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/author-job-ray-runtimes.html">Working
-     * with Ray jobs</a> in the Glue Developer Guide.</p>
+     * href="https://docs.aws.amazon.com/glue/latest/dg/ray-jobs-section.html">Supported
+     * Ray runtime environments</a> in the Glue Developer Guide.</p>
      */
     inline JobCommand& WithRuntime(Aws::String&& value) { SetRuntime(std::move(value)); return *this;}
 
@@ -275,8 +275,8 @@ namespace Model
      * <p>In Ray jobs, Runtime is used to specify the versions of Ray, Python and
      * additional libraries available in your environment. This field is not used in
      * other job types. For supported runtime environment values, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/author-job-ray-runtimes.html">Working
-     * with Ray jobs</a> in the Glue Developer Guide.</p>
+     * href="https://docs.aws.amazon.com/glue/latest/dg/ray-jobs-section.html">Supported
+     * Ray runtime environments</a> in the Glue Developer Guide.</p>
      */
     inline JobCommand& WithRuntime(const char* value) { SetRuntime(value); return *this;}
 

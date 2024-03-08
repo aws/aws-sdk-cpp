@@ -54,10 +54,16 @@ Aws::String ComputeOSVersionString()
 
     if(versionMatchResults.size() >= 2)
     {
-        return Aws::String("Android/") + versionMatchResults[1].str().c_str();
+        return Aws::String("Android#") + versionMatchResults[1].str().c_str();
     }
 
-    return Aws::String("Android/Unknown");
+    return Aws::String("Android");
+}
+
+Aws::String ComputeOSVersionArch()
+{
+    // TODO
+    return "";
 }
 
 } // namespace OSVersionInfo

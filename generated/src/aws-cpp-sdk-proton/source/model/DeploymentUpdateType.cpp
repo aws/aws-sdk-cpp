@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DeploymentUpdateType::NOT_SET:
+            return {};
           case DeploymentUpdateType::NONE:
             return "NONE";
           case DeploymentUpdateType::CURRENT_VERSION:

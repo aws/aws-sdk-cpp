@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InputMode::NOT_SET:
+            return {};
           case InputMode::Text:
             return "Text";
           case InputMode::Speech:

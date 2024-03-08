@@ -28,7 +28,10 @@ ExperimentTemplate::ExperimentTemplate() :
     m_lastUpdateTimeHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_logConfigurationHasBeenSet(false)
+    m_logConfigurationHasBeenSet(false),
+    m_experimentOptionsHasBeenSet(false),
+    m_targetAccountConfigurationsCount(0),
+    m_targetAccountConfigurationsCountHasBeenSet(false)
 {
 }
 
@@ -42,7 +45,10 @@ ExperimentTemplate::ExperimentTemplate(JsonView jsonValue) :
     m_lastUpdateTimeHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_logConfigurationHasBeenSet(false)
+    m_logConfigurationHasBeenSet(false),
+    m_experimentOptionsHasBeenSet(false),
+    m_targetAccountConfigurationsCount(0),
+    m_targetAccountConfigurationsCountHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -131,6 +137,20 @@ ExperimentTemplate& ExperimentTemplate::operator =(JsonView jsonValue)
     m_logConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("experimentOptions"))
+  {
+    m_experimentOptions = jsonValue.GetObject("experimentOptions");
+
+    m_experimentOptionsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("targetAccountConfigurationsCount"))
+  {
+    m_targetAccountConfigurationsCount = jsonValue.GetInt64("targetAccountConfigurationsCount");
+
+    m_targetAccountConfigurationsCountHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -213,6 +233,18 @@ JsonValue ExperimentTemplate::Jsonize() const
   if(m_logConfigurationHasBeenSet)
   {
    payload.WithObject("logConfiguration", m_logConfiguration.Jsonize());
+
+  }
+
+  if(m_experimentOptionsHasBeenSet)
+  {
+   payload.WithObject("experimentOptions", m_experimentOptions.Jsonize());
+
+  }
+
+  if(m_targetAccountConfigurationsCountHasBeenSet)
+  {
+   payload.WithInt64("targetAccountConfigurationsCount", m_targetAccountConfigurationsCount);
 
   }
 

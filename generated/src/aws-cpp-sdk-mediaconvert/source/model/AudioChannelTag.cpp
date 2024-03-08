@@ -179,6 +179,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AudioChannelTag::NOT_SET:
+            return {};
           case AudioChannelTag::L:
             return "L";
           case AudioChannelTag::R:

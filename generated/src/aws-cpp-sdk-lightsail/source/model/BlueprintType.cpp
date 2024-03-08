@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BlueprintType::NOT_SET:
+            return {};
           case BlueprintType::os:
             return "os";
           case BlueprintType::app:

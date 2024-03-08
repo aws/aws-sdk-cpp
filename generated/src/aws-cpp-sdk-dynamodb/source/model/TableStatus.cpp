@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TableStatus::NOT_SET:
+            return {};
           case TableStatus::CREATING:
             return "CREATING";
           case TableStatus::UPDATING:

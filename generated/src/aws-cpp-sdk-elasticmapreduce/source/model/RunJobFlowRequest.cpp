@@ -46,7 +46,11 @@ RunJobFlowRequest::RunJobFlowRequest() :
     m_managedScalingPolicyHasBeenSet(false),
     m_placementGroupConfigsHasBeenSet(false),
     m_autoTerminationPolicyHasBeenSet(false),
-    m_oSReleaseLabelHasBeenSet(false)
+    m_oSReleaseLabelHasBeenSet(false),
+    m_ebsRootVolumeIops(0),
+    m_ebsRootVolumeIopsHasBeenSet(false),
+    m_ebsRootVolumeThroughput(0),
+    m_ebsRootVolumeThroughputHasBeenSet(false)
 {
 }
 
@@ -263,6 +267,18 @@ Aws::String RunJobFlowRequest::SerializePayload() const
   if(m_oSReleaseLabelHasBeenSet)
   {
    payload.WithString("OSReleaseLabel", m_oSReleaseLabel);
+
+  }
+
+  if(m_ebsRootVolumeIopsHasBeenSet)
+  {
+   payload.WithInteger("EbsRootVolumeIops", m_ebsRootVolumeIops);
+
+  }
+
+  if(m_ebsRootVolumeThroughputHasBeenSet)
+  {
+   payload.WithInteger("EbsRootVolumeThroughput", m_ebsRootVolumeThroughput);
 
   }
 

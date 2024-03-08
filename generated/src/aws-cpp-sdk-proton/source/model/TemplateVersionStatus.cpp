@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TemplateVersionStatus::NOT_SET:
+            return {};
           case TemplateVersionStatus::REGISTRATION_IN_PROGRESS:
             return "REGISTRATION_IN_PROGRESS";
           case TemplateVersionStatus::REGISTRATION_FAILED:

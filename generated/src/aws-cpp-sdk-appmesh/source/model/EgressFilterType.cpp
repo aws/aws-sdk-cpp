@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EgressFilterType::NOT_SET:
+            return {};
           case EgressFilterType::ALLOW_ALL:
             return "ALLOW_ALL";
           case EgressFilterType::DROP_ALL:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PartialResultsStability::NOT_SET:
+            return {};
           case PartialResultsStability::high:
             return "high";
           case PartialResultsStability::medium:

@@ -24,7 +24,10 @@ RuleAction::RuleAction() :
     m_taskActionHasBeenSet(false),
     m_eventBridgeActionHasBeenSet(false),
     m_assignContactCategoryActionHasBeenSet(false),
-    m_sendNotificationActionHasBeenSet(false)
+    m_sendNotificationActionHasBeenSet(false),
+    m_createCaseActionHasBeenSet(false),
+    m_updateCaseActionHasBeenSet(false),
+    m_endAssociatedTasksActionHasBeenSet(false)
 {
 }
 
@@ -34,7 +37,10 @@ RuleAction::RuleAction(JsonView jsonValue) :
     m_taskActionHasBeenSet(false),
     m_eventBridgeActionHasBeenSet(false),
     m_assignContactCategoryActionHasBeenSet(false),
-    m_sendNotificationActionHasBeenSet(false)
+    m_sendNotificationActionHasBeenSet(false),
+    m_createCaseActionHasBeenSet(false),
+    m_updateCaseActionHasBeenSet(false),
+    m_endAssociatedTasksActionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -76,6 +82,27 @@ RuleAction& RuleAction::operator =(JsonView jsonValue)
     m_sendNotificationActionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CreateCaseAction"))
+  {
+    m_createCaseAction = jsonValue.GetObject("CreateCaseAction");
+
+    m_createCaseActionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("UpdateCaseAction"))
+  {
+    m_updateCaseAction = jsonValue.GetObject("UpdateCaseAction");
+
+    m_updateCaseActionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("EndAssociatedTasksAction"))
+  {
+    m_endAssociatedTasksAction = jsonValue.GetObject("EndAssociatedTasksAction");
+
+    m_endAssociatedTasksActionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -109,6 +136,24 @@ JsonValue RuleAction::Jsonize() const
   if(m_sendNotificationActionHasBeenSet)
   {
    payload.WithObject("SendNotificationAction", m_sendNotificationAction.Jsonize());
+
+  }
+
+  if(m_createCaseActionHasBeenSet)
+  {
+   payload.WithObject("CreateCaseAction", m_createCaseAction.Jsonize());
+
+  }
+
+  if(m_updateCaseActionHasBeenSet)
+  {
+   payload.WithObject("UpdateCaseAction", m_updateCaseAction.Jsonize());
+
+  }
+
+  if(m_endAssociatedTasksActionHasBeenSet)
+  {
+   payload.WithObject("EndAssociatedTasksAction", m_endAssociatedTasksAction.Jsonize());
 
   }
 

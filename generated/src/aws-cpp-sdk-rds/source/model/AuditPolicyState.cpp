@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AuditPolicyState::NOT_SET:
+            return {};
           case AuditPolicyState::locked:
             return "locked";
           case AuditPolicyState::unlocked:

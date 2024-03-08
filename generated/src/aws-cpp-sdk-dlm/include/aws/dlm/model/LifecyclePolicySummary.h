@@ -279,6 +279,39 @@ namespace Model
      */
     inline LifecyclePolicySummary& WithPolicyType(PolicyTypeValues&& value) { SetPolicyType(std::move(value)); return *this;}
 
+
+    /**
+     * <p> <b>[Default policies only]</b> The type of default policy. Values
+     * include:</p> <ul> <li> <p> <code>VOLUME</code> - Default policy for EBS
+     * snapshots</p> </li> <li> <p> <code>INSTANCE</code> - Default policy for
+     * EBS-backed AMIs</p> </li> </ul>
+     */
+    inline bool GetDefaultPolicy() const{ return m_defaultPolicy; }
+
+    /**
+     * <p> <b>[Default policies only]</b> The type of default policy. Values
+     * include:</p> <ul> <li> <p> <code>VOLUME</code> - Default policy for EBS
+     * snapshots</p> </li> <li> <p> <code>INSTANCE</code> - Default policy for
+     * EBS-backed AMIs</p> </li> </ul>
+     */
+    inline bool DefaultPolicyHasBeenSet() const { return m_defaultPolicyHasBeenSet; }
+
+    /**
+     * <p> <b>[Default policies only]</b> The type of default policy. Values
+     * include:</p> <ul> <li> <p> <code>VOLUME</code> - Default policy for EBS
+     * snapshots</p> </li> <li> <p> <code>INSTANCE</code> - Default policy for
+     * EBS-backed AMIs</p> </li> </ul>
+     */
+    inline void SetDefaultPolicy(bool value) { m_defaultPolicyHasBeenSet = true; m_defaultPolicy = value; }
+
+    /**
+     * <p> <b>[Default policies only]</b> The type of default policy. Values
+     * include:</p> <ul> <li> <p> <code>VOLUME</code> - Default policy for EBS
+     * snapshots</p> </li> <li> <p> <code>INSTANCE</code> - Default policy for
+     * EBS-backed AMIs</p> </li> </ul>
+     */
+    inline LifecyclePolicySummary& WithDefaultPolicy(bool value) { SetDefaultPolicy(value); return *this;}
+
   private:
 
     Aws::String m_policyId;
@@ -295,6 +328,9 @@ namespace Model
 
     PolicyTypeValues m_policyType;
     bool m_policyTypeHasBeenSet = false;
+
+    bool m_defaultPolicy;
+    bool m_defaultPolicyHasBeenSet = false;
   };
 
 } // namespace Model

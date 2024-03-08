@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case M2tsTimedMetadataBehavior::NOT_SET:
+            return {};
           case M2tsTimedMetadataBehavior::NO_PASSTHROUGH:
             return "NO_PASSTHROUGH";
           case M2tsTimedMetadataBehavior::PASSTHROUGH:

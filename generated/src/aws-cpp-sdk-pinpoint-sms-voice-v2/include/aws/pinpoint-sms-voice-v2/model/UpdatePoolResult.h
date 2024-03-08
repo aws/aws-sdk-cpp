@@ -215,6 +215,49 @@ namespace Model
 
 
     /**
+     * <p>An optional IAM Role Arn for a service to assume, to be able to post inbound
+     * SMS messages.</p>
+     */
+    inline const Aws::String& GetTwoWayChannelRole() const{ return m_twoWayChannelRole; }
+
+    /**
+     * <p>An optional IAM Role Arn for a service to assume, to be able to post inbound
+     * SMS messages.</p>
+     */
+    inline void SetTwoWayChannelRole(const Aws::String& value) { m_twoWayChannelRole = value; }
+
+    /**
+     * <p>An optional IAM Role Arn for a service to assume, to be able to post inbound
+     * SMS messages.</p>
+     */
+    inline void SetTwoWayChannelRole(Aws::String&& value) { m_twoWayChannelRole = std::move(value); }
+
+    /**
+     * <p>An optional IAM Role Arn for a service to assume, to be able to post inbound
+     * SMS messages.</p>
+     */
+    inline void SetTwoWayChannelRole(const char* value) { m_twoWayChannelRole.assign(value); }
+
+    /**
+     * <p>An optional IAM Role Arn for a service to assume, to be able to post inbound
+     * SMS messages.</p>
+     */
+    inline UpdatePoolResult& WithTwoWayChannelRole(const Aws::String& value) { SetTwoWayChannelRole(value); return *this;}
+
+    /**
+     * <p>An optional IAM Role Arn for a service to assume, to be able to post inbound
+     * SMS messages.</p>
+     */
+    inline UpdatePoolResult& WithTwoWayChannelRole(Aws::String&& value) { SetTwoWayChannelRole(std::move(value)); return *this;}
+
+    /**
+     * <p>An optional IAM Role Arn for a service to assume, to be able to post inbound
+     * SMS messages.</p>
+     */
+    inline UpdatePoolResult& WithTwoWayChannelRole(const char* value) { SetTwoWayChannelRole(value); return *this;}
+
+
+    /**
      * <p>When an end recipient sends a message that begins with HELP or STOP to one of
      * your dedicated numbers, Amazon Pinpoint automatically replies with a
      * customizable message and adds the end recipient to the OptOutList. When set to
@@ -375,6 +418,8 @@ namespace Model
     bool m_twoWayEnabled;
 
     Aws::String m_twoWayChannelArn;
+
+    Aws::String m_twoWayChannelRole;
 
     bool m_selfManagedOptOutsEnabled;
 

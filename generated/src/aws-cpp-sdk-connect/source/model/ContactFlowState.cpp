@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ContactFlowState::NOT_SET:
+            return {};
           case ContactFlowState::ACTIVE:
             return "ACTIVE";
           case ContactFlowState::ARCHIVED:

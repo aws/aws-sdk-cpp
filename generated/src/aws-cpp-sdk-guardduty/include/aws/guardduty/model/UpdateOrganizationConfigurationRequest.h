@@ -132,7 +132,12 @@ namespace Model
      * accounts.</p> </li> <li> <p> <code>NONE</code>: Indicates that GuardDuty will
      * not be automatically enabled for any account in the organization. The
      * administrator must manage GuardDuty for each account in the organization
-     * individually.</p> </li> </ul>
+     * individually.</p> <p>When you update the auto-enable setting from
+     * <code>ALL</code> or <code>NEW</code> to <code>NONE</code>, this action doesn't
+     * disable the corresponding option for your existing accounts. This configuration
+     * will apply to the new accounts that join the organization. After you update the
+     * auto-enable settings, no new account will have the corresponding option as
+     * enabled.</p> </li> </ul>
      */
     inline const AutoEnableMembers& GetAutoEnableOrganizationMembers() const{ return m_autoEnableOrganizationMembers; }
 
@@ -151,7 +156,12 @@ namespace Model
      * accounts.</p> </li> <li> <p> <code>NONE</code>: Indicates that GuardDuty will
      * not be automatically enabled for any account in the organization. The
      * administrator must manage GuardDuty for each account in the organization
-     * individually.</p> </li> </ul>
+     * individually.</p> <p>When you update the auto-enable setting from
+     * <code>ALL</code> or <code>NEW</code> to <code>NONE</code>, this action doesn't
+     * disable the corresponding option for your existing accounts. This configuration
+     * will apply to the new accounts that join the organization. After you update the
+     * auto-enable settings, no new account will have the corresponding option as
+     * enabled.</p> </li> </ul>
      */
     inline bool AutoEnableOrganizationMembersHasBeenSet() const { return m_autoEnableOrganizationMembersHasBeenSet; }
 
@@ -170,7 +180,12 @@ namespace Model
      * accounts.</p> </li> <li> <p> <code>NONE</code>: Indicates that GuardDuty will
      * not be automatically enabled for any account in the organization. The
      * administrator must manage GuardDuty for each account in the organization
-     * individually.</p> </li> </ul>
+     * individually.</p> <p>When you update the auto-enable setting from
+     * <code>ALL</code> or <code>NEW</code> to <code>NONE</code>, this action doesn't
+     * disable the corresponding option for your existing accounts. This configuration
+     * will apply to the new accounts that join the organization. After you update the
+     * auto-enable settings, no new account will have the corresponding option as
+     * enabled.</p> </li> </ul>
      */
     inline void SetAutoEnableOrganizationMembers(const AutoEnableMembers& value) { m_autoEnableOrganizationMembersHasBeenSet = true; m_autoEnableOrganizationMembers = value; }
 
@@ -189,7 +204,12 @@ namespace Model
      * accounts.</p> </li> <li> <p> <code>NONE</code>: Indicates that GuardDuty will
      * not be automatically enabled for any account in the organization. The
      * administrator must manage GuardDuty for each account in the organization
-     * individually.</p> </li> </ul>
+     * individually.</p> <p>When you update the auto-enable setting from
+     * <code>ALL</code> or <code>NEW</code> to <code>NONE</code>, this action doesn't
+     * disable the corresponding option for your existing accounts. This configuration
+     * will apply to the new accounts that join the organization. After you update the
+     * auto-enable settings, no new account will have the corresponding option as
+     * enabled.</p> </li> </ul>
      */
     inline void SetAutoEnableOrganizationMembers(AutoEnableMembers&& value) { m_autoEnableOrganizationMembersHasBeenSet = true; m_autoEnableOrganizationMembers = std::move(value); }
 
@@ -208,7 +228,12 @@ namespace Model
      * accounts.</p> </li> <li> <p> <code>NONE</code>: Indicates that GuardDuty will
      * not be automatically enabled for any account in the organization. The
      * administrator must manage GuardDuty for each account in the organization
-     * individually.</p> </li> </ul>
+     * individually.</p> <p>When you update the auto-enable setting from
+     * <code>ALL</code> or <code>NEW</code> to <code>NONE</code>, this action doesn't
+     * disable the corresponding option for your existing accounts. This configuration
+     * will apply to the new accounts that join the organization. After you update the
+     * auto-enable settings, no new account will have the corresponding option as
+     * enabled.</p> </li> </ul>
      */
     inline UpdateOrganizationConfigurationRequest& WithAutoEnableOrganizationMembers(const AutoEnableMembers& value) { SetAutoEnableOrganizationMembers(value); return *this;}
 
@@ -227,7 +252,12 @@ namespace Model
      * accounts.</p> </li> <li> <p> <code>NONE</code>: Indicates that GuardDuty will
      * not be automatically enabled for any account in the organization. The
      * administrator must manage GuardDuty for each account in the organization
-     * individually.</p> </li> </ul>
+     * individually.</p> <p>When you update the auto-enable setting from
+     * <code>ALL</code> or <code>NEW</code> to <code>NONE</code>, this action doesn't
+     * disable the corresponding option for your existing accounts. This configuration
+     * will apply to the new accounts that join the organization. After you update the
+     * auto-enable settings, no new account will have the corresponding option as
+     * enabled.</p> </li> </ul>
      */
     inline UpdateOrganizationConfigurationRequest& WithAutoEnableOrganizationMembers(AutoEnableMembers&& value) { SetAutoEnableOrganizationMembers(std::move(value)); return *this;}
 

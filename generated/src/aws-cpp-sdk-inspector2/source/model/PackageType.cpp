@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PackageType::NOT_SET:
+            return {};
           case PackageType::IMAGE:
             return "IMAGE";
           case PackageType::ZIP:

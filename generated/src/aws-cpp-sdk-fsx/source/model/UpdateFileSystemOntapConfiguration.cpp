@@ -28,7 +28,9 @@ UpdateFileSystemOntapConfiguration::UpdateFileSystemOntapConfiguration() :
     m_throughputCapacity(0),
     m_throughputCapacityHasBeenSet(false),
     m_addRouteTableIdsHasBeenSet(false),
-    m_removeRouteTableIdsHasBeenSet(false)
+    m_removeRouteTableIdsHasBeenSet(false),
+    m_throughputCapacityPerHAPair(0),
+    m_throughputCapacityPerHAPairHasBeenSet(false)
 {
 }
 
@@ -42,7 +44,9 @@ UpdateFileSystemOntapConfiguration::UpdateFileSystemOntapConfiguration(JsonView 
     m_throughputCapacity(0),
     m_throughputCapacityHasBeenSet(false),
     m_addRouteTableIdsHasBeenSet(false),
-    m_removeRouteTableIdsHasBeenSet(false)
+    m_removeRouteTableIdsHasBeenSet(false),
+    m_throughputCapacityPerHAPair(0),
+    m_throughputCapacityPerHAPairHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -111,6 +115,13 @@ UpdateFileSystemOntapConfiguration& UpdateFileSystemOntapConfiguration::operator
     m_removeRouteTableIdsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ThroughputCapacityPerHAPair"))
+  {
+    m_throughputCapacityPerHAPair = jsonValue.GetInteger("ThroughputCapacityPerHAPair");
+
+    m_throughputCapacityPerHAPairHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -173,6 +184,12 @@ JsonValue UpdateFileSystemOntapConfiguration::Jsonize() const
      removeRouteTableIdsJsonList[removeRouteTableIdsIndex].AsString(m_removeRouteTableIds[removeRouteTableIdsIndex]);
    }
    payload.WithArray("RemoveRouteTableIds", std::move(removeRouteTableIdsJsonList));
+
+  }
+
+  if(m_throughputCapacityPerHAPairHasBeenSet)
+  {
+   payload.WithInteger("ThroughputCapacityPerHAPair", m_throughputCapacityPerHAPair);
 
   }
 

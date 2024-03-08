@@ -34,8 +34,7 @@ namespace Model
   class AdministrativeAction;
 
   /**
-   * <p>Describes an Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS
-   * volume.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes an Amazon FSx volume.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/Volume">AWS API
    * Reference</a></p>
    */

@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EventSeverity::NOT_SET:
+            return {};
           case EventSeverity::TRACE:
             return "TRACE";
           case EventSeverity::DEBUG_:

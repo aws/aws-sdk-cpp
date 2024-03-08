@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SheetControlSliderType::NOT_SET:
+            return {};
           case SheetControlSliderType::SINGLE_POINT:
             return "SINGLE_POINT";
           case SheetControlSliderType::RANGE:

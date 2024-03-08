@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DiskImageFormat::NOT_SET:
+            return {};
           case DiskImageFormat::VMDK:
             return "VMDK";
           case DiskImageFormat::RAW:

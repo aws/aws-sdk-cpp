@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReplicationRuleStatus::NOT_SET:
+            return {};
           case ReplicationRuleStatus::Enabled:
             return "Enabled";
           case ReplicationRuleStatus::Disabled:

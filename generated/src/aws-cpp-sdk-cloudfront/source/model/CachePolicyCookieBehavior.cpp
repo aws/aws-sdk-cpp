@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CachePolicyCookieBehavior::NOT_SET:
+            return {};
           case CachePolicyCookieBehavior::none:
             return "none";
           case CachePolicyCookieBehavior::whitelist:

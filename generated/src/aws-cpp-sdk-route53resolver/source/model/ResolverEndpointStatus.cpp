@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResolverEndpointStatus::NOT_SET:
+            return {};
           case ResolverEndpointStatus::CREATING:
             return "CREATING";
           case ResolverEndpointStatus::OPERATIONAL:

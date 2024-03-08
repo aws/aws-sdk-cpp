@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ArchiveState::NOT_SET:
+            return {};
           case ArchiveState::ENABLED:
             return "ENABLED";
           case ArchiveState::DISABLED:

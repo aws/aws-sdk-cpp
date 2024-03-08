@@ -22,6 +22,7 @@ namespace Aws
 
         static const int jamf_HASH = HashingUtils::HashString("jamf");
         static const int crowdstrike_HASH = HashingUtils::HashString("crowdstrike");
+        static const int jumpcloud_HASH = HashingUtils::HashString("jumpcloud");
 
 
         DeviceTrustProviderType GetDeviceTrustProviderTypeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == crowdstrike_HASH)
           {
             return DeviceTrustProviderType::crowdstrike;
+          }
+          else if (hashCode == jumpcloud_HASH)
+          {
+            return DeviceTrustProviderType::jumpcloud;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -49,10 +54,14 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DeviceTrustProviderType::NOT_SET:
+            return {};
           case DeviceTrustProviderType::jamf:
             return "jamf";
           case DeviceTrustProviderType::crowdstrike:
             return "crowdstrike";
+          case DeviceTrustProviderType::jumpcloud:
+            return "jumpcloud";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

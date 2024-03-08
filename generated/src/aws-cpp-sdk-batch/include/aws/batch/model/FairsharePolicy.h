@@ -81,7 +81,7 @@ namespace Model
      * <code>(<i>computeReservation</i>/100)^<i>ActiveFairShares</i> </code> where
      * <code> <i>ActiveFairShares</i> </code> is the number of active fair share
      * identifiers.</p> <p>For example, a <code>computeReservation</code> value of 50
-     * indicates that Batchreserves 50% of the maximum available vCPU if there's only
+     * indicates that Batch reserves 50% of the maximum available vCPU if there's only
      * one fair share identifier. It reserves 25% if there are two fair share
      * identifiers. It reserves 12.5% if there are three fair share identifiers. A
      * <code>computeReservation</code> value of 25 indicates that Batch should reserve
@@ -98,7 +98,7 @@ namespace Model
      * <code>(<i>computeReservation</i>/100)^<i>ActiveFairShares</i> </code> where
      * <code> <i>ActiveFairShares</i> </code> is the number of active fair share
      * identifiers.</p> <p>For example, a <code>computeReservation</code> value of 50
-     * indicates that Batchreserves 50% of the maximum available vCPU if there's only
+     * indicates that Batch reserves 50% of the maximum available vCPU if there's only
      * one fair share identifier. It reserves 25% if there are two fair share
      * identifiers. It reserves 12.5% if there are three fair share identifiers. A
      * <code>computeReservation</code> value of 25 indicates that Batch should reserve
@@ -115,7 +115,7 @@ namespace Model
      * <code>(<i>computeReservation</i>/100)^<i>ActiveFairShares</i> </code> where
      * <code> <i>ActiveFairShares</i> </code> is the number of active fair share
      * identifiers.</p> <p>For example, a <code>computeReservation</code> value of 50
-     * indicates that Batchreserves 50% of the maximum available vCPU if there's only
+     * indicates that Batch reserves 50% of the maximum available vCPU if there's only
      * one fair share identifier. It reserves 25% if there are two fair share
      * identifiers. It reserves 12.5% if there are three fair share identifiers. A
      * <code>computeReservation</code> value of 25 indicates that Batch should reserve
@@ -132,7 +132,7 @@ namespace Model
      * <code>(<i>computeReservation</i>/100)^<i>ActiveFairShares</i> </code> where
      * <code> <i>ActiveFairShares</i> </code> is the number of active fair share
      * identifiers.</p> <p>For example, a <code>computeReservation</code> value of 50
-     * indicates that Batchreserves 50% of the maximum available vCPU if there's only
+     * indicates that Batch reserves 50% of the maximum available vCPU if there's only
      * one fair share identifier. It reserves 25% if there are two fair share
      * identifiers. It reserves 12.5% if there are three fair share identifiers. A
      * <code>computeReservation</code> value of 25 indicates that Batch should reserve

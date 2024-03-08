@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AppSecurityGroupManagement::NOT_SET:
+            return {};
           case AppSecurityGroupManagement::Service:
             return "Service";
           case AppSecurityGroupManagement::Customer:

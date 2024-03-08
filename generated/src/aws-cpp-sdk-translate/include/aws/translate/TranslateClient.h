@@ -23,8 +23,8 @@ namespace Translate
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef TranslateClientConfiguration ClientConfigurationType;
       typedef TranslateEndpointProvider EndpointProviderType;
@@ -34,14 +34,14 @@ namespace Translate
         * is not specified, it will be initialized to default values.
         */
         TranslateClient(const Aws::Translate::TranslateClientConfiguration& clientConfiguration = Aws::Translate::TranslateClientConfiguration(),
-                        std::shared_ptr<TranslateEndpointProviderBase> endpointProvider = Aws::MakeShared<TranslateEndpointProvider>(ALLOCATION_TAG));
+                        std::shared_ptr<TranslateEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         TranslateClient(const Aws::Auth::AWSCredentials& credentials,
-                        std::shared_ptr<TranslateEndpointProviderBase> endpointProvider = Aws::MakeShared<TranslateEndpointProvider>(ALLOCATION_TAG),
+                        std::shared_ptr<TranslateEndpointProviderBase> endpointProvider = nullptr,
                         const Aws::Translate::TranslateClientConfiguration& clientConfiguration = Aws::Translate::TranslateClientConfiguration());
 
        /**
@@ -49,7 +49,7 @@ namespace Translate
         * the default http client factory will be used
         */
         TranslateClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                        std::shared_ptr<TranslateEndpointProviderBase> endpointProvider = Aws::MakeShared<TranslateEndpointProvider>(ALLOCATION_TAG),
+                        std::shared_ptr<TranslateEndpointProviderBase> endpointProvider = nullptr,
                         const Aws::Translate::TranslateClientConfiguration& clientConfiguration = Aws::Translate::TranslateClientConfiguration());
 
 
@@ -499,12 +499,11 @@ namespace Translate
 
         /**
          * <p>Translates the input document from the source language to the target
-         * language. This synchronous operation supports plain text or HTML for the input
-         * document. <code>TranslateDocument</code> supports translations from English to
-         * any supported language, and from any supported language to English. Therefore,
-         * specify either the source language code or the target language code as “en”
-         * (English). </p> <p> <code>TranslateDocument</code> does not support language
-         * auto-detection. </p> <p> If you set the <code>Formality</code> parameter, the
+         * language. This synchronous operation supports text, HTML, or Word documents as
+         * the input document. <code>TranslateDocument</code> supports translations from
+         * English to any supported language, and from any supported language to English.
+         * Therefore, specify either the source language code or the target language code
+         * as “en” (English). </p> <p> If you set the <code>Formality</code> parameter, the
          * request will fail if the target language does not support formality. For a list
          * of target languages that support formality, see <a
          * href="https://docs.aws.amazon.com/translate/latest/dg/customizing-translations-formality.html">Setting

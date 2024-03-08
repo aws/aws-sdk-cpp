@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AvcIntraFramerateConversionAlgorithm::NOT_SET:
+            return {};
           case AvcIntraFramerateConversionAlgorithm::DUPLICATE_DROP:
             return "DUPLICATE_DROP";
           case AvcIntraFramerateConversionAlgorithm::INTERPOLATE:

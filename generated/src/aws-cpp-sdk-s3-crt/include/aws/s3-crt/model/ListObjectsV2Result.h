@@ -99,185 +99,87 @@ namespace Model
 
 
     /**
-     * <p>The bucket name.</p> <p>When using this action with an access point, you must
-     * direct requests to the access point hostname. The access point hostname takes
-     * the form
-     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this action with an access point through the Amazon Web Services
-     * SDKs, you provide the access point ARN in place of the bucket name. For more
-     * information about access point ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When you use this
-     * action with Amazon S3 on Outposts, you must direct requests to the S3 on
-     * Outposts hostname. The S3 on Outposts hostname takes the form <code>
-     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
-     * When you use this action with S3 on Outposts through the Amazon Web Services
-     * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
-     * more information about S3 on Outposts ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
-     * is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * <p>The bucket name.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The bucket name.</p> <p>When using this action with an access point, you must
-     * direct requests to the access point hostname. The access point hostname takes
-     * the form
-     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this action with an access point through the Amazon Web Services
-     * SDKs, you provide the access point ARN in place of the bucket name. For more
-     * information about access point ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When you use this
-     * action with Amazon S3 on Outposts, you must direct requests to the S3 on
-     * Outposts hostname. The S3 on Outposts hostname takes the form <code>
-     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
-     * When you use this action with S3 on Outposts through the Amazon Web Services
-     * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
-     * more information about S3 on Outposts ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
-     * is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * <p>The bucket name.</p>
      */
     inline void SetName(const Aws::String& value) { m_name = value; }
 
     /**
-     * <p>The bucket name.</p> <p>When using this action with an access point, you must
-     * direct requests to the access point hostname. The access point hostname takes
-     * the form
-     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this action with an access point through the Amazon Web Services
-     * SDKs, you provide the access point ARN in place of the bucket name. For more
-     * information about access point ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When you use this
-     * action with Amazon S3 on Outposts, you must direct requests to the S3 on
-     * Outposts hostname. The S3 on Outposts hostname takes the form <code>
-     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
-     * When you use this action with S3 on Outposts through the Amazon Web Services
-     * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
-     * more information about S3 on Outposts ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
-     * is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * <p>The bucket name.</p>
      */
     inline void SetName(Aws::String&& value) { m_name = std::move(value); }
 
     /**
-     * <p>The bucket name.</p> <p>When using this action with an access point, you must
-     * direct requests to the access point hostname. The access point hostname takes
-     * the form
-     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this action with an access point through the Amazon Web Services
-     * SDKs, you provide the access point ARN in place of the bucket name. For more
-     * information about access point ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When you use this
-     * action with Amazon S3 on Outposts, you must direct requests to the S3 on
-     * Outposts hostname. The S3 on Outposts hostname takes the form <code>
-     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
-     * When you use this action with S3 on Outposts through the Amazon Web Services
-     * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
-     * more information about S3 on Outposts ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
-     * is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * <p>The bucket name.</p>
      */
     inline void SetName(const char* value) { m_name.assign(value); }
 
     /**
-     * <p>The bucket name.</p> <p>When using this action with an access point, you must
-     * direct requests to the access point hostname. The access point hostname takes
-     * the form
-     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this action with an access point through the Amazon Web Services
-     * SDKs, you provide the access point ARN in place of the bucket name. For more
-     * information about access point ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When you use this
-     * action with Amazon S3 on Outposts, you must direct requests to the S3 on
-     * Outposts hostname. The S3 on Outposts hostname takes the form <code>
-     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
-     * When you use this action with S3 on Outposts through the Amazon Web Services
-     * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
-     * more information about S3 on Outposts ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
-     * is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * <p>The bucket name.</p>
      */
     inline ListObjectsV2Result& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The bucket name.</p> <p>When using this action with an access point, you must
-     * direct requests to the access point hostname. The access point hostname takes
-     * the form
-     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this action with an access point through the Amazon Web Services
-     * SDKs, you provide the access point ARN in place of the bucket name. For more
-     * information about access point ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When you use this
-     * action with Amazon S3 on Outposts, you must direct requests to the S3 on
-     * Outposts hostname. The S3 on Outposts hostname takes the form <code>
-     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
-     * When you use this action with S3 on Outposts through the Amazon Web Services
-     * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
-     * more information about S3 on Outposts ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
-     * is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * <p>The bucket name.</p>
      */
     inline ListObjectsV2Result& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The bucket name.</p> <p>When using this action with an access point, you must
-     * direct requests to the access point hostname. The access point hostname takes
-     * the form
-     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
-     * When using this action with an access point through the Amazon Web Services
-     * SDKs, you provide the access point ARN in place of the bucket name. For more
-     * information about access point ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When you use this
-     * action with Amazon S3 on Outposts, you must direct requests to the S3 on
-     * Outposts hostname. The S3 on Outposts hostname takes the form <code>
-     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
-     * When you use this action with S3 on Outposts through the Amazon Web Services
-     * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
-     * more information about S3 on Outposts ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
-     * is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * <p>The bucket name.</p>
      */
     inline ListObjectsV2Result& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p> Keys that begin with the indicated prefix.</p>
+     * <p>Keys that begin with the indicated prefix.</p>  <p> <b>Directory
+     * buckets</b> - For directory buckets, only prefixes that end in a delimiter
+     * (<code>/</code>) are supported.</p> 
      */
     inline const Aws::String& GetPrefix() const{ return m_prefix; }
 
     /**
-     * <p> Keys that begin with the indicated prefix.</p>
+     * <p>Keys that begin with the indicated prefix.</p>  <p> <b>Directory
+     * buckets</b> - For directory buckets, only prefixes that end in a delimiter
+     * (<code>/</code>) are supported.</p> 
      */
     inline void SetPrefix(const Aws::String& value) { m_prefix = value; }
 
     /**
-     * <p> Keys that begin with the indicated prefix.</p>
+     * <p>Keys that begin with the indicated prefix.</p>  <p> <b>Directory
+     * buckets</b> - For directory buckets, only prefixes that end in a delimiter
+     * (<code>/</code>) are supported.</p> 
      */
     inline void SetPrefix(Aws::String&& value) { m_prefix = std::move(value); }
 
     /**
-     * <p> Keys that begin with the indicated prefix.</p>
+     * <p>Keys that begin with the indicated prefix.</p>  <p> <b>Directory
+     * buckets</b> - For directory buckets, only prefixes that end in a delimiter
+     * (<code>/</code>) are supported.</p> 
      */
     inline void SetPrefix(const char* value) { m_prefix.assign(value); }
 
     /**
-     * <p> Keys that begin with the indicated prefix.</p>
+     * <p>Keys that begin with the indicated prefix.</p>  <p> <b>Directory
+     * buckets</b> - For directory buckets, only prefixes that end in a delimiter
+     * (<code>/</code>) are supported.</p> 
      */
     inline ListObjectsV2Result& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
 
     /**
-     * <p> Keys that begin with the indicated prefix.</p>
+     * <p>Keys that begin with the indicated prefix.</p>  <p> <b>Directory
+     * buckets</b> - For directory buckets, only prefixes that end in a delimiter
+     * (<code>/</code>) are supported.</p> 
      */
     inline ListObjectsV2Result& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
 
     /**
-     * <p> Keys that begin with the indicated prefix.</p>
+     * <p>Keys that begin with the indicated prefix.</p>  <p> <b>Directory
+     * buckets</b> - For directory buckets, only prefixes that end in a delimiter
+     * (<code>/</code>) are supported.</p> 
      */
     inline ListObjectsV2Result& WithPrefix(const char* value) { SetPrefix(value); return *this;}
 
@@ -287,7 +189,9 @@ namespace Model
      * the first occurrence of the delimiter to be rolled up into a single result
      * element in the <code>CommonPrefixes</code> collection. These rolled-up keys are
      * not returned elsewhere in the response. Each rolled-up result counts as only one
-     * return against the <code>MaxKeys</code> value.</p>
+     * return against the <code>MaxKeys</code> value.</p>  <p> <b>Directory
+     * buckets</b> - For directory buckets, <code>/</code> is the only supported
+     * delimiter.</p> 
      */
     inline const Aws::String& GetDelimiter() const{ return m_delimiter; }
 
@@ -296,7 +200,9 @@ namespace Model
      * the first occurrence of the delimiter to be rolled up into a single result
      * element in the <code>CommonPrefixes</code> collection. These rolled-up keys are
      * not returned elsewhere in the response. Each rolled-up result counts as only one
-     * return against the <code>MaxKeys</code> value.</p>
+     * return against the <code>MaxKeys</code> value.</p>  <p> <b>Directory
+     * buckets</b> - For directory buckets, <code>/</code> is the only supported
+     * delimiter.</p> 
      */
     inline void SetDelimiter(const Aws::String& value) { m_delimiter = value; }
 
@@ -305,7 +211,9 @@ namespace Model
      * the first occurrence of the delimiter to be rolled up into a single result
      * element in the <code>CommonPrefixes</code> collection. These rolled-up keys are
      * not returned elsewhere in the response. Each rolled-up result counts as only one
-     * return against the <code>MaxKeys</code> value.</p>
+     * return against the <code>MaxKeys</code> value.</p>  <p> <b>Directory
+     * buckets</b> - For directory buckets, <code>/</code> is the only supported
+     * delimiter.</p> 
      */
     inline void SetDelimiter(Aws::String&& value) { m_delimiter = std::move(value); }
 
@@ -314,7 +222,9 @@ namespace Model
      * the first occurrence of the delimiter to be rolled up into a single result
      * element in the <code>CommonPrefixes</code> collection. These rolled-up keys are
      * not returned elsewhere in the response. Each rolled-up result counts as only one
-     * return against the <code>MaxKeys</code> value.</p>
+     * return against the <code>MaxKeys</code> value.</p>  <p> <b>Directory
+     * buckets</b> - For directory buckets, <code>/</code> is the only supported
+     * delimiter.</p> 
      */
     inline void SetDelimiter(const char* value) { m_delimiter.assign(value); }
 
@@ -323,7 +233,9 @@ namespace Model
      * the first occurrence of the delimiter to be rolled up into a single result
      * element in the <code>CommonPrefixes</code> collection. These rolled-up keys are
      * not returned elsewhere in the response. Each rolled-up result counts as only one
-     * return against the <code>MaxKeys</code> value.</p>
+     * return against the <code>MaxKeys</code> value.</p>  <p> <b>Directory
+     * buckets</b> - For directory buckets, <code>/</code> is the only supported
+     * delimiter.</p> 
      */
     inline ListObjectsV2Result& WithDelimiter(const Aws::String& value) { SetDelimiter(value); return *this;}
 
@@ -332,7 +244,9 @@ namespace Model
      * the first occurrence of the delimiter to be rolled up into a single result
      * element in the <code>CommonPrefixes</code> collection. These rolled-up keys are
      * not returned elsewhere in the response. Each rolled-up result counts as only one
-     * return against the <code>MaxKeys</code> value.</p>
+     * return against the <code>MaxKeys</code> value.</p>  <p> <b>Directory
+     * buckets</b> - For directory buckets, <code>/</code> is the only supported
+     * delimiter.</p> 
      */
     inline ListObjectsV2Result& WithDelimiter(Aws::String&& value) { SetDelimiter(std::move(value)); return *this;}
 
@@ -341,7 +255,9 @@ namespace Model
      * the first occurrence of the delimiter to be rolled up into a single result
      * element in the <code>CommonPrefixes</code> collection. These rolled-up keys are
      * not returned elsewhere in the response. Each rolled-up result counts as only one
-     * return against the <code>MaxKeys</code> value.</p>
+     * return against the <code>MaxKeys</code> value.</p>  <p> <b>Directory
+     * buckets</b> - For directory buckets, <code>/</code> is the only supported
+     * delimiter.</p> 
      */
     inline ListObjectsV2Result& WithDelimiter(const char* value) { SetDelimiter(value); return *this;}
 
@@ -369,9 +285,10 @@ namespace Model
 
 
     /**
-     * <p>All of the keys (up to 1,000) rolled up into a common prefix count as a
-     * single return when calculating the number of returns.</p> <p>A response can
-     * contain <code>CommonPrefixes</code> only if you specify a delimiter.</p> <p>
+     * <p>All of the keys (up to 1,000) that share the same prefix are grouped
+     * together. When counting the total numbers of returns by this API operation, this
+     * group of keys is considered as one item.</p> <p>A response can contain
+     * <code>CommonPrefixes</code> only if you specify a delimiter.</p> <p>
      * <code>CommonPrefixes</code> contains all (if there are any) keys between
      * <code>Prefix</code> and the next occurrence of the string specified by a
      * delimiter.</p> <p> <code>CommonPrefixes</code> lists keys that act like
@@ -379,14 +296,24 @@ namespace Model
      * example, if the prefix is <code>notes/</code> and the delimiter is a slash
      * (<code>/</code>) as in <code>notes/summer/july</code>, the common prefix is
      * <code>notes/summer/</code>. All of the keys that roll up into a common prefix
-     * count as a single return when calculating the number of returns. </p>
+     * count as a single return when calculating the number of returns. </p> 
+     * <ul> <li> <p> <b>Directory buckets</b> - For directory buckets, only prefixes
+     * that end in a delimiter (<code>/</code>) are supported.</p> </li> <li> <p>
+     * <b>Directory buckets </b> - When you query <code>ListObjectsV2</code> with a
+     * delimiter during in-progress multipart uploads, the <code>CommonPrefixes</code>
+     * response parameter contains the prefixes that are associated with the
+     * in-progress multipart uploads. For more information about multipart uploads, see
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html">Multipart
+     * Upload Overview</a> in the <i>Amazon S3 User Guide</i>.</p> </li> </ul> 
      */
     inline const Aws::Vector<CommonPrefix>& GetCommonPrefixes() const{ return m_commonPrefixes; }
 
     /**
-     * <p>All of the keys (up to 1,000) rolled up into a common prefix count as a
-     * single return when calculating the number of returns.</p> <p>A response can
-     * contain <code>CommonPrefixes</code> only if you specify a delimiter.</p> <p>
+     * <p>All of the keys (up to 1,000) that share the same prefix are grouped
+     * together. When counting the total numbers of returns by this API operation, this
+     * group of keys is considered as one item.</p> <p>A response can contain
+     * <code>CommonPrefixes</code> only if you specify a delimiter.</p> <p>
      * <code>CommonPrefixes</code> contains all (if there are any) keys between
      * <code>Prefix</code> and the next occurrence of the string specified by a
      * delimiter.</p> <p> <code>CommonPrefixes</code> lists keys that act like
@@ -394,14 +321,24 @@ namespace Model
      * example, if the prefix is <code>notes/</code> and the delimiter is a slash
      * (<code>/</code>) as in <code>notes/summer/july</code>, the common prefix is
      * <code>notes/summer/</code>. All of the keys that roll up into a common prefix
-     * count as a single return when calculating the number of returns. </p>
+     * count as a single return when calculating the number of returns. </p> 
+     * <ul> <li> <p> <b>Directory buckets</b> - For directory buckets, only prefixes
+     * that end in a delimiter (<code>/</code>) are supported.</p> </li> <li> <p>
+     * <b>Directory buckets </b> - When you query <code>ListObjectsV2</code> with a
+     * delimiter during in-progress multipart uploads, the <code>CommonPrefixes</code>
+     * response parameter contains the prefixes that are associated with the
+     * in-progress multipart uploads. For more information about multipart uploads, see
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html">Multipart
+     * Upload Overview</a> in the <i>Amazon S3 User Guide</i>.</p> </li> </ul> 
      */
     inline void SetCommonPrefixes(const Aws::Vector<CommonPrefix>& value) { m_commonPrefixes = value; }
 
     /**
-     * <p>All of the keys (up to 1,000) rolled up into a common prefix count as a
-     * single return when calculating the number of returns.</p> <p>A response can
-     * contain <code>CommonPrefixes</code> only if you specify a delimiter.</p> <p>
+     * <p>All of the keys (up to 1,000) that share the same prefix are grouped
+     * together. When counting the total numbers of returns by this API operation, this
+     * group of keys is considered as one item.</p> <p>A response can contain
+     * <code>CommonPrefixes</code> only if you specify a delimiter.</p> <p>
      * <code>CommonPrefixes</code> contains all (if there are any) keys between
      * <code>Prefix</code> and the next occurrence of the string specified by a
      * delimiter.</p> <p> <code>CommonPrefixes</code> lists keys that act like
@@ -409,14 +346,24 @@ namespace Model
      * example, if the prefix is <code>notes/</code> and the delimiter is a slash
      * (<code>/</code>) as in <code>notes/summer/july</code>, the common prefix is
      * <code>notes/summer/</code>. All of the keys that roll up into a common prefix
-     * count as a single return when calculating the number of returns. </p>
+     * count as a single return when calculating the number of returns. </p> 
+     * <ul> <li> <p> <b>Directory buckets</b> - For directory buckets, only prefixes
+     * that end in a delimiter (<code>/</code>) are supported.</p> </li> <li> <p>
+     * <b>Directory buckets </b> - When you query <code>ListObjectsV2</code> with a
+     * delimiter during in-progress multipart uploads, the <code>CommonPrefixes</code>
+     * response parameter contains the prefixes that are associated with the
+     * in-progress multipart uploads. For more information about multipart uploads, see
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html">Multipart
+     * Upload Overview</a> in the <i>Amazon S3 User Guide</i>.</p> </li> </ul> 
      */
     inline void SetCommonPrefixes(Aws::Vector<CommonPrefix>&& value) { m_commonPrefixes = std::move(value); }
 
     /**
-     * <p>All of the keys (up to 1,000) rolled up into a common prefix count as a
-     * single return when calculating the number of returns.</p> <p>A response can
-     * contain <code>CommonPrefixes</code> only if you specify a delimiter.</p> <p>
+     * <p>All of the keys (up to 1,000) that share the same prefix are grouped
+     * together. When counting the total numbers of returns by this API operation, this
+     * group of keys is considered as one item.</p> <p>A response can contain
+     * <code>CommonPrefixes</code> only if you specify a delimiter.</p> <p>
      * <code>CommonPrefixes</code> contains all (if there are any) keys between
      * <code>Prefix</code> and the next occurrence of the string specified by a
      * delimiter.</p> <p> <code>CommonPrefixes</code> lists keys that act like
@@ -424,14 +371,24 @@ namespace Model
      * example, if the prefix is <code>notes/</code> and the delimiter is a slash
      * (<code>/</code>) as in <code>notes/summer/july</code>, the common prefix is
      * <code>notes/summer/</code>. All of the keys that roll up into a common prefix
-     * count as a single return when calculating the number of returns. </p>
+     * count as a single return when calculating the number of returns. </p> 
+     * <ul> <li> <p> <b>Directory buckets</b> - For directory buckets, only prefixes
+     * that end in a delimiter (<code>/</code>) are supported.</p> </li> <li> <p>
+     * <b>Directory buckets </b> - When you query <code>ListObjectsV2</code> with a
+     * delimiter during in-progress multipart uploads, the <code>CommonPrefixes</code>
+     * response parameter contains the prefixes that are associated with the
+     * in-progress multipart uploads. For more information about multipart uploads, see
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html">Multipart
+     * Upload Overview</a> in the <i>Amazon S3 User Guide</i>.</p> </li> </ul> 
      */
     inline ListObjectsV2Result& WithCommonPrefixes(const Aws::Vector<CommonPrefix>& value) { SetCommonPrefixes(value); return *this;}
 
     /**
-     * <p>All of the keys (up to 1,000) rolled up into a common prefix count as a
-     * single return when calculating the number of returns.</p> <p>A response can
-     * contain <code>CommonPrefixes</code> only if you specify a delimiter.</p> <p>
+     * <p>All of the keys (up to 1,000) that share the same prefix are grouped
+     * together. When counting the total numbers of returns by this API operation, this
+     * group of keys is considered as one item.</p> <p>A response can contain
+     * <code>CommonPrefixes</code> only if you specify a delimiter.</p> <p>
      * <code>CommonPrefixes</code> contains all (if there are any) keys between
      * <code>Prefix</code> and the next occurrence of the string specified by a
      * delimiter.</p> <p> <code>CommonPrefixes</code> lists keys that act like
@@ -439,14 +396,24 @@ namespace Model
      * example, if the prefix is <code>notes/</code> and the delimiter is a slash
      * (<code>/</code>) as in <code>notes/summer/july</code>, the common prefix is
      * <code>notes/summer/</code>. All of the keys that roll up into a common prefix
-     * count as a single return when calculating the number of returns. </p>
+     * count as a single return when calculating the number of returns. </p> 
+     * <ul> <li> <p> <b>Directory buckets</b> - For directory buckets, only prefixes
+     * that end in a delimiter (<code>/</code>) are supported.</p> </li> <li> <p>
+     * <b>Directory buckets </b> - When you query <code>ListObjectsV2</code> with a
+     * delimiter during in-progress multipart uploads, the <code>CommonPrefixes</code>
+     * response parameter contains the prefixes that are associated with the
+     * in-progress multipart uploads. For more information about multipart uploads, see
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html">Multipart
+     * Upload Overview</a> in the <i>Amazon S3 User Guide</i>.</p> </li> </ul> 
      */
     inline ListObjectsV2Result& WithCommonPrefixes(Aws::Vector<CommonPrefix>&& value) { SetCommonPrefixes(std::move(value)); return *this;}
 
     /**
-     * <p>All of the keys (up to 1,000) rolled up into a common prefix count as a
-     * single return when calculating the number of returns.</p> <p>A response can
-     * contain <code>CommonPrefixes</code> only if you specify a delimiter.</p> <p>
+     * <p>All of the keys (up to 1,000) that share the same prefix are grouped
+     * together. When counting the total numbers of returns by this API operation, this
+     * group of keys is considered as one item.</p> <p>A response can contain
+     * <code>CommonPrefixes</code> only if you specify a delimiter.</p> <p>
      * <code>CommonPrefixes</code> contains all (if there are any) keys between
      * <code>Prefix</code> and the next occurrence of the string specified by a
      * delimiter.</p> <p> <code>CommonPrefixes</code> lists keys that act like
@@ -454,14 +421,24 @@ namespace Model
      * example, if the prefix is <code>notes/</code> and the delimiter is a slash
      * (<code>/</code>) as in <code>notes/summer/july</code>, the common prefix is
      * <code>notes/summer/</code>. All of the keys that roll up into a common prefix
-     * count as a single return when calculating the number of returns. </p>
+     * count as a single return when calculating the number of returns. </p> 
+     * <ul> <li> <p> <b>Directory buckets</b> - For directory buckets, only prefixes
+     * that end in a delimiter (<code>/</code>) are supported.</p> </li> <li> <p>
+     * <b>Directory buckets </b> - When you query <code>ListObjectsV2</code> with a
+     * delimiter during in-progress multipart uploads, the <code>CommonPrefixes</code>
+     * response parameter contains the prefixes that are associated with the
+     * in-progress multipart uploads. For more information about multipart uploads, see
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html">Multipart
+     * Upload Overview</a> in the <i>Amazon S3 User Guide</i>.</p> </li> </ul> 
      */
     inline ListObjectsV2Result& AddCommonPrefixes(const CommonPrefix& value) { m_commonPrefixes.push_back(value); return *this; }
 
     /**
-     * <p>All of the keys (up to 1,000) rolled up into a common prefix count as a
-     * single return when calculating the number of returns.</p> <p>A response can
-     * contain <code>CommonPrefixes</code> only if you specify a delimiter.</p> <p>
+     * <p>All of the keys (up to 1,000) that share the same prefix are grouped
+     * together. When counting the total numbers of returns by this API operation, this
+     * group of keys is considered as one item.</p> <p>A response can contain
+     * <code>CommonPrefixes</code> only if you specify a delimiter.</p> <p>
      * <code>CommonPrefixes</code> contains all (if there are any) keys between
      * <code>Prefix</code> and the next occurrence of the string specified by a
      * delimiter.</p> <p> <code>CommonPrefixes</code> lists keys that act like
@@ -469,7 +446,16 @@ namespace Model
      * example, if the prefix is <code>notes/</code> and the delimiter is a slash
      * (<code>/</code>) as in <code>notes/summer/july</code>, the common prefix is
      * <code>notes/summer/</code>. All of the keys that roll up into a common prefix
-     * count as a single return when calculating the number of returns. </p>
+     * count as a single return when calculating the number of returns. </p> 
+     * <ul> <li> <p> <b>Directory buckets</b> - For directory buckets, only prefixes
+     * that end in a delimiter (<code>/</code>) are supported.</p> </li> <li> <p>
+     * <b>Directory buckets </b> - When you query <code>ListObjectsV2</code> with a
+     * delimiter during in-progress multipart uploads, the <code>CommonPrefixes</code>
+     * response parameter contains the prefixes that are associated with the
+     * in-progress multipart uploads. For more information about multipart uploads, see
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html">Multipart
+     * Upload Overview</a> in the <i>Amazon S3 User Guide</i>.</p> </li> </ul> 
      */
     inline ListObjectsV2Result& AddCommonPrefixes(CommonPrefix&& value) { m_commonPrefixes.push_back(std::move(value)); return *this; }
 
@@ -547,43 +533,57 @@ namespace Model
 
     /**
      * <p> If <code>ContinuationToken</code> was sent with the request, it is included
-     * in the response.</p>
+     * in the response. You can use the returned <code>ContinuationToken</code> for
+     * pagination of the list response. You can use this <code>ContinuationToken</code>
+     * for pagination of the list results. </p>
      */
     inline const Aws::String& GetContinuationToken() const{ return m_continuationToken; }
 
     /**
      * <p> If <code>ContinuationToken</code> was sent with the request, it is included
-     * in the response.</p>
+     * in the response. You can use the returned <code>ContinuationToken</code> for
+     * pagination of the list response. You can use this <code>ContinuationToken</code>
+     * for pagination of the list results. </p>
      */
     inline void SetContinuationToken(const Aws::String& value) { m_continuationToken = value; }
 
     /**
      * <p> If <code>ContinuationToken</code> was sent with the request, it is included
-     * in the response.</p>
+     * in the response. You can use the returned <code>ContinuationToken</code> for
+     * pagination of the list response. You can use this <code>ContinuationToken</code>
+     * for pagination of the list results. </p>
      */
     inline void SetContinuationToken(Aws::String&& value) { m_continuationToken = std::move(value); }
 
     /**
      * <p> If <code>ContinuationToken</code> was sent with the request, it is included
-     * in the response.</p>
+     * in the response. You can use the returned <code>ContinuationToken</code> for
+     * pagination of the list response. You can use this <code>ContinuationToken</code>
+     * for pagination of the list results. </p>
      */
     inline void SetContinuationToken(const char* value) { m_continuationToken.assign(value); }
 
     /**
      * <p> If <code>ContinuationToken</code> was sent with the request, it is included
-     * in the response.</p>
+     * in the response. You can use the returned <code>ContinuationToken</code> for
+     * pagination of the list response. You can use this <code>ContinuationToken</code>
+     * for pagination of the list results. </p>
      */
     inline ListObjectsV2Result& WithContinuationToken(const Aws::String& value) { SetContinuationToken(value); return *this;}
 
     /**
      * <p> If <code>ContinuationToken</code> was sent with the request, it is included
-     * in the response.</p>
+     * in the response. You can use the returned <code>ContinuationToken</code> for
+     * pagination of the list response. You can use this <code>ContinuationToken</code>
+     * for pagination of the list results. </p>
      */
     inline ListObjectsV2Result& WithContinuationToken(Aws::String&& value) { SetContinuationToken(std::move(value)); return *this;}
 
     /**
      * <p> If <code>ContinuationToken</code> was sent with the request, it is included
-     * in the response.</p>
+     * in the response. You can use the returned <code>ContinuationToken</code> for
+     * pagination of the list response. You can use this <code>ContinuationToken</code>
+     * for pagination of the list results. </p>
      */
     inline ListObjectsV2Result& WithContinuationToken(const char* value) { SetContinuationToken(value); return *this;}
 
@@ -654,36 +654,43 @@ namespace Model
 
     /**
      * <p>If StartAfter was sent with the request, it is included in the response.</p>
+     *  <p>This functionality is not supported for directory buckets.</p> 
      */
     inline const Aws::String& GetStartAfter() const{ return m_startAfter; }
 
     /**
      * <p>If StartAfter was sent with the request, it is included in the response.</p>
+     *  <p>This functionality is not supported for directory buckets.</p> 
      */
     inline void SetStartAfter(const Aws::String& value) { m_startAfter = value; }
 
     /**
      * <p>If StartAfter was sent with the request, it is included in the response.</p>
+     *  <p>This functionality is not supported for directory buckets.</p> 
      */
     inline void SetStartAfter(Aws::String&& value) { m_startAfter = std::move(value); }
 
     /**
      * <p>If StartAfter was sent with the request, it is included in the response.</p>
+     *  <p>This functionality is not supported for directory buckets.</p> 
      */
     inline void SetStartAfter(const char* value) { m_startAfter.assign(value); }
 
     /**
      * <p>If StartAfter was sent with the request, it is included in the response.</p>
+     *  <p>This functionality is not supported for directory buckets.</p> 
      */
     inline ListObjectsV2Result& WithStartAfter(const Aws::String& value) { SetStartAfter(value); return *this;}
 
     /**
      * <p>If StartAfter was sent with the request, it is included in the response.</p>
+     *  <p>This functionality is not supported for directory buckets.</p> 
      */
     inline ListObjectsV2Result& WithStartAfter(Aws::String&& value) { SetStartAfter(std::move(value)); return *this;}
 
     /**
      * <p>If StartAfter was sent with the request, it is included in the response.</p>
+     *  <p>This functionality is not supported for directory buckets.</p> 
      */
     inline ListObjectsV2Result& WithStartAfter(const char* value) { SetStartAfter(value); return *this;}
 

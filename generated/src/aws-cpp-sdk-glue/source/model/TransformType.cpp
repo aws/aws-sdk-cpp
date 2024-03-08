@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TransformType::NOT_SET:
+            return {};
           case TransformType::FIND_MATCHES:
             return "FIND_MATCHES";
           default:

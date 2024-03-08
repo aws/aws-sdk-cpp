@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VehicleWeightUnit::NOT_SET:
+            return {};
           case VehicleWeightUnit::Kilograms:
             return "Kilograms";
           case VehicleWeightUnit::Pounds:

@@ -7,7 +7,6 @@
 #include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/cognito-idp/model/LambdaConfigType.h>
-#include <aws/cognito-idp/model/StatusType.h>
 #include <aws/core/utils/DateTime.h>
 #include <utility>
 
@@ -154,37 +153,6 @@ namespace Model
 
 
     /**
-     * <p>The user pool status in a user pool description.</p>
-     */
-    inline const StatusType& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The user pool status in a user pool description.</p>
-     */
-    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The user pool status in a user pool description.</p>
-     */
-    inline void SetStatus(const StatusType& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The user pool status in a user pool description.</p>
-     */
-    inline void SetStatus(StatusType&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The user pool status in a user pool description.</p>
-     */
-    inline UserPoolDescriptionType& WithStatus(const StatusType& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The user pool status in a user pool description.</p>
-     */
-    inline UserPoolDescriptionType& WithStatus(StatusType&& value) { SetStatus(std::move(value)); return *this;}
-
-
-    /**
      * <p>The date and time, in <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
      * format, when the item was modified.</p>
@@ -279,9 +247,6 @@ namespace Model
 
     LambdaConfigType m_lambdaConfig;
     bool m_lambdaConfigHasBeenSet = false;
-
-    StatusType m_status;
-    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastModifiedDate;
     bool m_lastModifiedDateHasBeenSet = false;

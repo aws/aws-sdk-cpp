@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FollowPoint::NOT_SET:
+            return {};
           case FollowPoint::END:
             return "END";
           case FollowPoint::START:

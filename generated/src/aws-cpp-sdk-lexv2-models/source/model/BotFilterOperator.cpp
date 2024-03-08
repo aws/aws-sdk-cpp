@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BotFilterOperator::NOT_SET:
+            return {};
           case BotFilterOperator::CO:
             return "CO";
           case BotFilterOperator::EQ:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Decision::NOT_SET:
+            return {};
           case Decision::ALLOW:
             return "ALLOW";
           case Decision::DENY:

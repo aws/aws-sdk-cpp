@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AnomalyStatus::NOT_SET:
+            return {};
           case AnomalyStatus::ONGOING:
             return "ONGOING";
           case AnomalyStatus::CLOSED:

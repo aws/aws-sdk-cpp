@@ -84,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ContentCategoryType::NOT_SET:
+            return {};
           case ContentCategoryType::IMAGE:
             return "IMAGE";
           case ContentCategoryType::DOCUMENT:

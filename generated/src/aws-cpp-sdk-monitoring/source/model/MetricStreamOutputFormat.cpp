@@ -22,6 +22,7 @@ namespace Aws
 
         static const int json_HASH = HashingUtils::HashString("json");
         static const int opentelemetry0_7_HASH = HashingUtils::HashString("opentelemetry0.7");
+        static const int opentelemetry1_0_HASH = HashingUtils::HashString("opentelemetry1.0");
 
 
         MetricStreamOutputFormat GetMetricStreamOutputFormatForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == opentelemetry0_7_HASH)
           {
             return MetricStreamOutputFormat::opentelemetry0_7;
+          }
+          else if (hashCode == opentelemetry1_0_HASH)
+          {
+            return MetricStreamOutputFormat::opentelemetry1_0;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -49,10 +54,14 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MetricStreamOutputFormat::NOT_SET:
+            return {};
           case MetricStreamOutputFormat::json:
             return "json";
           case MetricStreamOutputFormat::opentelemetry0_7:
             return "opentelemetry0.7";
+          case MetricStreamOutputFormat::opentelemetry1_0:
+            return "opentelemetry1.0";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

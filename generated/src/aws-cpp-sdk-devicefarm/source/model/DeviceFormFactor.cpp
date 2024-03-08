@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DeviceFormFactor::NOT_SET:
+            return {};
           case DeviceFormFactor::PHONE:
             return "PHONE";
           case DeviceFormFactor::TABLET:

@@ -22,6 +22,7 @@ namespace Aws
 
         static const int CLONE_HASH = HashingUtils::HashString("CLONE");
         static const int FULL_COPY_HASH = HashingUtils::HashString("FULL_COPY");
+        static const int INCREMENTAL_COPY_HASH = HashingUtils::HashString("INCREMENTAL_COPY");
 
 
         OpenZFSCopyStrategy GetOpenZFSCopyStrategyForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == FULL_COPY_HASH)
           {
             return OpenZFSCopyStrategy::FULL_COPY;
+          }
+          else if (hashCode == INCREMENTAL_COPY_HASH)
+          {
+            return OpenZFSCopyStrategy::INCREMENTAL_COPY;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -49,10 +54,14 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OpenZFSCopyStrategy::NOT_SET:
+            return {};
           case OpenZFSCopyStrategy::CLONE:
             return "CLONE";
           case OpenZFSCopyStrategy::FULL_COPY:
             return "FULL_COPY";
+          case OpenZFSCopyStrategy::INCREMENTAL_COPY:
+            return "INCREMENTAL_COPY";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

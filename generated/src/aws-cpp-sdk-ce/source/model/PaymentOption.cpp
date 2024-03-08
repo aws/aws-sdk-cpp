@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PaymentOption::NOT_SET:
+            return {};
           case PaymentOption::NO_UPFRONT:
             return "NO_UPFRONT";
           case PaymentOption::PARTIAL_UPFRONT:

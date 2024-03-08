@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MLUserDataEncryptionModeString::NOT_SET:
+            return {};
           case MLUserDataEncryptionModeString::DISABLED:
             return "DISABLED";
           case MLUserDataEncryptionModeString::SSE_KMS:

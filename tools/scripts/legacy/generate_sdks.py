@@ -95,7 +95,7 @@ def generate_sdk(generator_path, sdk, output_dir, namespace, license_text, stand
         with codecs.open(sdk['filePath'], 'rb', 'utf-8') as api_definition:
             api_content = api_definition.read()
             jar_path = join(generator_path, 'target/aws-client-generator-1.0-SNAPSHOT-jar-with-dependencies.jar')
-            process = Popen(['java', '-jar', jar_path, '--service', sdk['serviceName'], '--version', sdk['apiVersion'],
+            process = Popen(['java', '-jar', jar_path, '--service', sdk['service_name'], '--version', sdk['apiVersion'],
                              '--namespace', namespace, '--license-text', license_text, '--language-binding', 'cpp',
                              '--arbitrary', '--standalone' if standalone else '',
                              '--enable-virtual-operations' if enable_virtual_operations else ''],

@@ -50,8 +50,8 @@ namespace AugmentedAIRuntime
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef AugmentedAIRuntimeClientConfiguration ClientConfigurationType;
       typedef AugmentedAIRuntimeEndpointProvider EndpointProviderType;
@@ -61,14 +61,14 @@ namespace AugmentedAIRuntime
         * is not specified, it will be initialized to default values.
         */
         AugmentedAIRuntimeClient(const Aws::AugmentedAIRuntime::AugmentedAIRuntimeClientConfiguration& clientConfiguration = Aws::AugmentedAIRuntime::AugmentedAIRuntimeClientConfiguration(),
-                                 std::shared_ptr<AugmentedAIRuntimeEndpointProviderBase> endpointProvider = Aws::MakeShared<AugmentedAIRuntimeEndpointProvider>(ALLOCATION_TAG));
+                                 std::shared_ptr<AugmentedAIRuntimeEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         AugmentedAIRuntimeClient(const Aws::Auth::AWSCredentials& credentials,
-                                 std::shared_ptr<AugmentedAIRuntimeEndpointProviderBase> endpointProvider = Aws::MakeShared<AugmentedAIRuntimeEndpointProvider>(ALLOCATION_TAG),
+                                 std::shared_ptr<AugmentedAIRuntimeEndpointProviderBase> endpointProvider = nullptr,
                                  const Aws::AugmentedAIRuntime::AugmentedAIRuntimeClientConfiguration& clientConfiguration = Aws::AugmentedAIRuntime::AugmentedAIRuntimeClientConfiguration());
 
        /**
@@ -76,7 +76,7 @@ namespace AugmentedAIRuntime
         * the default http client factory will be used
         */
         AugmentedAIRuntimeClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                                 std::shared_ptr<AugmentedAIRuntimeEndpointProviderBase> endpointProvider = Aws::MakeShared<AugmentedAIRuntimeEndpointProvider>(ALLOCATION_TAG),
+                                 std::shared_ptr<AugmentedAIRuntimeEndpointProviderBase> endpointProvider = nullptr,
                                  const Aws::AugmentedAIRuntime::AugmentedAIRuntimeClientConfiguration& clientConfiguration = Aws::AugmentedAIRuntime::AugmentedAIRuntimeClientConfiguration());
 
 

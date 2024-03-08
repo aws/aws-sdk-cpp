@@ -12,6 +12,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/docdb/model/DBSubnetGroup.h>
 #include <aws/docdb/model/PendingModifiedValues.h>
+#include <aws/docdb/model/CertificateDetails.h>
 #include <aws/docdb/model/VpcSecurityGroupMembership.h>
 #include <aws/docdb/model/DBInstanceStatusInfo.h>
 #include <utility>
@@ -1140,6 +1141,119 @@ namespace Model
      */
     inline DBInstance& AddEnabledCloudwatchLogsExports(const char* value) { m_enabledCloudwatchLogsExportsHasBeenSet = true; m_enabledCloudwatchLogsExports.push_back(value); return *this; }
 
+
+    /**
+     * <p>The details of the DB instance's server certificate.</p>
+     */
+    inline const CertificateDetails& GetCertificateDetails() const{ return m_certificateDetails; }
+
+    /**
+     * <p>The details of the DB instance's server certificate.</p>
+     */
+    inline bool CertificateDetailsHasBeenSet() const { return m_certificateDetailsHasBeenSet; }
+
+    /**
+     * <p>The details of the DB instance's server certificate.</p>
+     */
+    inline void SetCertificateDetails(const CertificateDetails& value) { m_certificateDetailsHasBeenSet = true; m_certificateDetails = value; }
+
+    /**
+     * <p>The details of the DB instance's server certificate.</p>
+     */
+    inline void SetCertificateDetails(CertificateDetails&& value) { m_certificateDetailsHasBeenSet = true; m_certificateDetails = std::move(value); }
+
+    /**
+     * <p>The details of the DB instance's server certificate.</p>
+     */
+    inline DBInstance& WithCertificateDetails(const CertificateDetails& value) { SetCertificateDetails(value); return *this;}
+
+    /**
+     * <p>The details of the DB instance's server certificate.</p>
+     */
+    inline DBInstance& WithCertificateDetails(CertificateDetails&& value) { SetCertificateDetails(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Set to <code>true</code> if Amazon RDS Performance Insights is enabled for
+     * the DB instance, and otherwise <code>false</code>.</p>
+     */
+    inline bool GetPerformanceInsightsEnabled() const{ return m_performanceInsightsEnabled; }
+
+    /**
+     * <p>Set to <code>true</code> if Amazon RDS Performance Insights is enabled for
+     * the DB instance, and otherwise <code>false</code>.</p>
+     */
+    inline bool PerformanceInsightsEnabledHasBeenSet() const { return m_performanceInsightsEnabledHasBeenSet; }
+
+    /**
+     * <p>Set to <code>true</code> if Amazon RDS Performance Insights is enabled for
+     * the DB instance, and otherwise <code>false</code>.</p>
+     */
+    inline void SetPerformanceInsightsEnabled(bool value) { m_performanceInsightsEnabledHasBeenSet = true; m_performanceInsightsEnabled = value; }
+
+    /**
+     * <p>Set to <code>true</code> if Amazon RDS Performance Insights is enabled for
+     * the DB instance, and otherwise <code>false</code>.</p>
+     */
+    inline DBInstance& WithPerformanceInsightsEnabled(bool value) { SetPerformanceInsightsEnabled(value); return *this;}
+
+
+    /**
+     * <p>The KMS key identifier for encryption of Performance Insights data. The KMS
+     * key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
+     * alias for the KMS encryption key.</p>
+     */
+    inline const Aws::String& GetPerformanceInsightsKMSKeyId() const{ return m_performanceInsightsKMSKeyId; }
+
+    /**
+     * <p>The KMS key identifier for encryption of Performance Insights data. The KMS
+     * key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
+     * alias for the KMS encryption key.</p>
+     */
+    inline bool PerformanceInsightsKMSKeyIdHasBeenSet() const { return m_performanceInsightsKMSKeyIdHasBeenSet; }
+
+    /**
+     * <p>The KMS key identifier for encryption of Performance Insights data. The KMS
+     * key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
+     * alias for the KMS encryption key.</p>
+     */
+    inline void SetPerformanceInsightsKMSKeyId(const Aws::String& value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId = value; }
+
+    /**
+     * <p>The KMS key identifier for encryption of Performance Insights data. The KMS
+     * key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
+     * alias for the KMS encryption key.</p>
+     */
+    inline void SetPerformanceInsightsKMSKeyId(Aws::String&& value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId = std::move(value); }
+
+    /**
+     * <p>The KMS key identifier for encryption of Performance Insights data. The KMS
+     * key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
+     * alias for the KMS encryption key.</p>
+     */
+    inline void SetPerformanceInsightsKMSKeyId(const char* value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId.assign(value); }
+
+    /**
+     * <p>The KMS key identifier for encryption of Performance Insights data. The KMS
+     * key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
+     * alias for the KMS encryption key.</p>
+     */
+    inline DBInstance& WithPerformanceInsightsKMSKeyId(const Aws::String& value) { SetPerformanceInsightsKMSKeyId(value); return *this;}
+
+    /**
+     * <p>The KMS key identifier for encryption of Performance Insights data. The KMS
+     * key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
+     * alias for the KMS encryption key.</p>
+     */
+    inline DBInstance& WithPerformanceInsightsKMSKeyId(Aws::String&& value) { SetPerformanceInsightsKMSKeyId(std::move(value)); return *this;}
+
+    /**
+     * <p>The KMS key identifier for encryption of Performance Insights data. The KMS
+     * key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
+     * alias for the KMS encryption key.</p>
+     */
+    inline DBInstance& WithPerformanceInsightsKMSKeyId(const char* value) { SetPerformanceInsightsKMSKeyId(value); return *this;}
+
   private:
 
     Aws::String m_dBInstanceIdentifier;
@@ -1222,6 +1336,15 @@ namespace Model
 
     Aws::Vector<Aws::String> m_enabledCloudwatchLogsExports;
     bool m_enabledCloudwatchLogsExportsHasBeenSet = false;
+
+    CertificateDetails m_certificateDetails;
+    bool m_certificateDetailsHasBeenSet = false;
+
+    bool m_performanceInsightsEnabled;
+    bool m_performanceInsightsEnabledHasBeenSet = false;
+
+    Aws::String m_performanceInsightsKMSKeyId;
+    bool m_performanceInsightsKMSKeyIdHasBeenSet = false;
   };
 
 } // namespace Model

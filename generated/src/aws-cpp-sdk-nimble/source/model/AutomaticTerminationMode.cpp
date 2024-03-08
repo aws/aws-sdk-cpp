@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AutomaticTerminationMode::NOT_SET:
+            return {};
           case AutomaticTerminationMode::DEACTIVATED:
             return "DEACTIVATED";
           case AutomaticTerminationMode::ACTIVATED:

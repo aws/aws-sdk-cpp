@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StreamProcessorParameterToDelete::NOT_SET:
+            return {};
           case StreamProcessorParameterToDelete::ConnectedHomeMinConfidence:
             return "ConnectedHomeMinConfidence";
           case StreamProcessorParameterToDelete::RegionsOfInterest:

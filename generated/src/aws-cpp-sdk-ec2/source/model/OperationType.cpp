@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OperationType::NOT_SET:
+            return {};
           case OperationType::add:
             return "add";
           case OperationType::remove:

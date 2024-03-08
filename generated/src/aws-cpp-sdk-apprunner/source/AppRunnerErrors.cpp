@@ -30,19 +30,19 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == SERVICE_QUOTA_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(AppRunnerErrors::SERVICE_QUOTA_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(AppRunnerErrors::SERVICE_QUOTA_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INTERNAL_SERVICE_ERROR_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(AppRunnerErrors::INTERNAL_SERVICE_ERROR), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(AppRunnerErrors::INTERNAL_SERVICE_ERROR), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_STATE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(AppRunnerErrors::INVALID_STATE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(AppRunnerErrors::INVALID_STATE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_REQUEST_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(AppRunnerErrors::INVALID_REQUEST), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(AppRunnerErrors::INVALID_REQUEST), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

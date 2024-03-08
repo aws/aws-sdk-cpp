@@ -19,20 +19,20 @@ namespace Model
 {
 
 InferenceRecommendation::InferenceRecommendation() : 
+    m_recommendationIdHasBeenSet(false),
     m_metricsHasBeenSet(false),
     m_endpointConfigurationHasBeenSet(false),
     m_modelConfigurationHasBeenSet(false),
-    m_recommendationIdHasBeenSet(false),
     m_invocationEndTimeHasBeenSet(false),
     m_invocationStartTimeHasBeenSet(false)
 {
 }
 
 InferenceRecommendation::InferenceRecommendation(JsonView jsonValue) : 
+    m_recommendationIdHasBeenSet(false),
     m_metricsHasBeenSet(false),
     m_endpointConfigurationHasBeenSet(false),
     m_modelConfigurationHasBeenSet(false),
-    m_recommendationIdHasBeenSet(false),
     m_invocationEndTimeHasBeenSet(false),
     m_invocationStartTimeHasBeenSet(false)
 {
@@ -41,6 +41,13 @@ InferenceRecommendation::InferenceRecommendation(JsonView jsonValue) :
 
 InferenceRecommendation& InferenceRecommendation::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("RecommendationId"))
+  {
+    m_recommendationId = jsonValue.GetString("RecommendationId");
+
+    m_recommendationIdHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Metrics"))
   {
     m_metrics = jsonValue.GetObject("Metrics");
@@ -60,13 +67,6 @@ InferenceRecommendation& InferenceRecommendation::operator =(JsonView jsonValue)
     m_modelConfiguration = jsonValue.GetObject("ModelConfiguration");
 
     m_modelConfigurationHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("RecommendationId"))
-  {
-    m_recommendationId = jsonValue.GetString("RecommendationId");
-
-    m_recommendationIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("InvocationEndTime"))
@@ -90,6 +90,12 @@ JsonValue InferenceRecommendation::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_recommendationIdHasBeenSet)
+  {
+   payload.WithString("RecommendationId", m_recommendationId);
+
+  }
+
   if(m_metricsHasBeenSet)
   {
    payload.WithObject("Metrics", m_metrics.Jsonize());
@@ -105,12 +111,6 @@ JsonValue InferenceRecommendation::Jsonize() const
   if(m_modelConfigurationHasBeenSet)
   {
    payload.WithObject("ModelConfiguration", m_modelConfiguration.Jsonize());
-
-  }
-
-  if(m_recommendationIdHasBeenSet)
-  {
-   payload.WithString("RecommendationId", m_recommendationId);
 
   }
 

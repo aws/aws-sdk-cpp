@@ -593,6 +593,52 @@ namespace Model
      */
     inline CreateWorkloadRequest& AddProfileArns(const char* value) { m_profileArnsHasBeenSet = true; m_profileArns.push_back(value); return *this; }
 
+
+    /**
+     * <p>The list of review template ARNs to associate with the workload.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetReviewTemplateArns() const{ return m_reviewTemplateArns; }
+
+    /**
+     * <p>The list of review template ARNs to associate with the workload.</p>
+     */
+    inline bool ReviewTemplateArnsHasBeenSet() const { return m_reviewTemplateArnsHasBeenSet; }
+
+    /**
+     * <p>The list of review template ARNs to associate with the workload.</p>
+     */
+    inline void SetReviewTemplateArns(const Aws::Vector<Aws::String>& value) { m_reviewTemplateArnsHasBeenSet = true; m_reviewTemplateArns = value; }
+
+    /**
+     * <p>The list of review template ARNs to associate with the workload.</p>
+     */
+    inline void SetReviewTemplateArns(Aws::Vector<Aws::String>&& value) { m_reviewTemplateArnsHasBeenSet = true; m_reviewTemplateArns = std::move(value); }
+
+    /**
+     * <p>The list of review template ARNs to associate with the workload.</p>
+     */
+    inline CreateWorkloadRequest& WithReviewTemplateArns(const Aws::Vector<Aws::String>& value) { SetReviewTemplateArns(value); return *this;}
+
+    /**
+     * <p>The list of review template ARNs to associate with the workload.</p>
+     */
+    inline CreateWorkloadRequest& WithReviewTemplateArns(Aws::Vector<Aws::String>&& value) { SetReviewTemplateArns(std::move(value)); return *this;}
+
+    /**
+     * <p>The list of review template ARNs to associate with the workload.</p>
+     */
+    inline CreateWorkloadRequest& AddReviewTemplateArns(const Aws::String& value) { m_reviewTemplateArnsHasBeenSet = true; m_reviewTemplateArns.push_back(value); return *this; }
+
+    /**
+     * <p>The list of review template ARNs to associate with the workload.</p>
+     */
+    inline CreateWorkloadRequest& AddReviewTemplateArns(Aws::String&& value) { m_reviewTemplateArnsHasBeenSet = true; m_reviewTemplateArns.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The list of review template ARNs to associate with the workload.</p>
+     */
+    inline CreateWorkloadRequest& AddReviewTemplateArns(const char* value) { m_reviewTemplateArnsHasBeenSet = true; m_reviewTemplateArns.push_back(value); return *this; }
+
   private:
 
     Aws::String m_workloadName;
@@ -648,6 +694,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_profileArns;
     bool m_profileArnsHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_reviewTemplateArns;
+    bool m_reviewTemplateArnsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EncoderProfile::NOT_SET:
+            return {};
           case EncoderProfile::main:
             return "main";
           case EncoderProfile::high:

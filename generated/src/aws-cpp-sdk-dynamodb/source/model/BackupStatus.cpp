@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BackupStatus::NOT_SET:
+            return {};
           case BackupStatus::CREATING:
             return "CREATING";
           case BackupStatus::DELETED:

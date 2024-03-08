@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AuthenticateCognitoActionConditionalBehaviorEnum::NOT_SET:
+            return {};
           case AuthenticateCognitoActionConditionalBehaviorEnum::deny:
             return "deny";
           case AuthenticateCognitoActionConditionalBehaviorEnum::allow:

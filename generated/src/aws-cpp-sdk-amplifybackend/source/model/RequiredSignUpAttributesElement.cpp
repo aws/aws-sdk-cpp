@@ -124,6 +124,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RequiredSignUpAttributesElement::NOT_SET:
+            return {};
           case RequiredSignUpAttributesElement::ADDRESS:
             return "ADDRESS";
           case RequiredSignUpAttributesElement::BIRTHDATE:

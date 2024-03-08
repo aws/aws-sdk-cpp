@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OnboardStatus::NOT_SET:
+            return {};
           case OnboardStatus::INITIALIZED:
             return "INITIALIZED";
           case OnboardStatus::PENDING:

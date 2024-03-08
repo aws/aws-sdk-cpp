@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BlockerType::NOT_SET:
+            return {};
           case BlockerType::AUTOMATED:
             return "AUTOMATED";
           default:

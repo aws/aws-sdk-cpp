@@ -94,6 +94,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PaperSize::NOT_SET:
+            return {};
           case PaperSize::US_LETTER:
             return "US_LETTER";
           case PaperSize::US_LEGAL:

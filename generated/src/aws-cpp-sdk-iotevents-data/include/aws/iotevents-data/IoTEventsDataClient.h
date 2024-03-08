@@ -27,8 +27,8 @@ namespace IoTEventsData
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef IoTEventsDataClientConfiguration ClientConfigurationType;
       typedef IoTEventsDataEndpointProvider EndpointProviderType;
@@ -38,14 +38,14 @@ namespace IoTEventsData
         * is not specified, it will be initialized to default values.
         */
         IoTEventsDataClient(const Aws::IoTEventsData::IoTEventsDataClientConfiguration& clientConfiguration = Aws::IoTEventsData::IoTEventsDataClientConfiguration(),
-                            std::shared_ptr<IoTEventsDataEndpointProviderBase> endpointProvider = Aws::MakeShared<IoTEventsDataEndpointProvider>(ALLOCATION_TAG));
+                            std::shared_ptr<IoTEventsDataEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         IoTEventsDataClient(const Aws::Auth::AWSCredentials& credentials,
-                            std::shared_ptr<IoTEventsDataEndpointProviderBase> endpointProvider = Aws::MakeShared<IoTEventsDataEndpointProvider>(ALLOCATION_TAG),
+                            std::shared_ptr<IoTEventsDataEndpointProviderBase> endpointProvider = nullptr,
                             const Aws::IoTEventsData::IoTEventsDataClientConfiguration& clientConfiguration = Aws::IoTEventsData::IoTEventsDataClientConfiguration());
 
        /**
@@ -53,7 +53,7 @@ namespace IoTEventsData
         * the default http client factory will be used
         */
         IoTEventsDataClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                            std::shared_ptr<IoTEventsDataEndpointProviderBase> endpointProvider = Aws::MakeShared<IoTEventsDataEndpointProvider>(ALLOCATION_TAG),
+                            std::shared_ptr<IoTEventsDataEndpointProviderBase> endpointProvider = nullptr,
                             const Aws::IoTEventsData::IoTEventsDataClientConfiguration& clientConfiguration = Aws::IoTEventsData::IoTEventsDataClientConfiguration());
 
 

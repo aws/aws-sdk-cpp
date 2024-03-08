@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/codepipeline/model/PipelineType.h>
+#include <aws/codepipeline/model/ExecutionMode.h>
 #include <aws/core/utils/DateTime.h>
 #include <utility>
 
@@ -101,6 +103,152 @@ namespace Model
 
 
     /**
+     * <p>CodePipeline provides the following pipeline types, which differ in
+     * characteristics and price, so that you can tailor your pipeline features and
+     * cost to the needs of your applications.</p> <ul> <li> <p>V1 type pipelines have
+     * a JSON structure that contains standard pipeline, stage, and action-level
+     * parameters.</p> </li> <li> <p>V2 type pipelines have the same structure as a V1
+     * type, along with additional parameters for release safety and trigger
+     * configuration.</p> </li> </ul>  <p>Including V2 parameters, such as
+     * triggers on Git tags, in the pipeline JSON when creating or updating a pipeline
+     * will result in the pipeline having the V2 type of pipeline and the associated
+     * costs.</p>  <p>For information about pricing for CodePipeline, see
+     * <a href="http://aws.amazon.com/codepipeline/pricing/">Pricing</a>.</p> <p> For
+     * information about which type of pipeline to choose, see <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types-planning.html">What
+     * type of pipeline is right for me?</a>.</p>
+     */
+    inline const PipelineType& GetPipelineType() const{ return m_pipelineType; }
+
+    /**
+     * <p>CodePipeline provides the following pipeline types, which differ in
+     * characteristics and price, so that you can tailor your pipeline features and
+     * cost to the needs of your applications.</p> <ul> <li> <p>V1 type pipelines have
+     * a JSON structure that contains standard pipeline, stage, and action-level
+     * parameters.</p> </li> <li> <p>V2 type pipelines have the same structure as a V1
+     * type, along with additional parameters for release safety and trigger
+     * configuration.</p> </li> </ul>  <p>Including V2 parameters, such as
+     * triggers on Git tags, in the pipeline JSON when creating or updating a pipeline
+     * will result in the pipeline having the V2 type of pipeline and the associated
+     * costs.</p>  <p>For information about pricing for CodePipeline, see
+     * <a href="http://aws.amazon.com/codepipeline/pricing/">Pricing</a>.</p> <p> For
+     * information about which type of pipeline to choose, see <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types-planning.html">What
+     * type of pipeline is right for me?</a>.</p>
+     */
+    inline bool PipelineTypeHasBeenSet() const { return m_pipelineTypeHasBeenSet; }
+
+    /**
+     * <p>CodePipeline provides the following pipeline types, which differ in
+     * characteristics and price, so that you can tailor your pipeline features and
+     * cost to the needs of your applications.</p> <ul> <li> <p>V1 type pipelines have
+     * a JSON structure that contains standard pipeline, stage, and action-level
+     * parameters.</p> </li> <li> <p>V2 type pipelines have the same structure as a V1
+     * type, along with additional parameters for release safety and trigger
+     * configuration.</p> </li> </ul>  <p>Including V2 parameters, such as
+     * triggers on Git tags, in the pipeline JSON when creating or updating a pipeline
+     * will result in the pipeline having the V2 type of pipeline and the associated
+     * costs.</p>  <p>For information about pricing for CodePipeline, see
+     * <a href="http://aws.amazon.com/codepipeline/pricing/">Pricing</a>.</p> <p> For
+     * information about which type of pipeline to choose, see <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types-planning.html">What
+     * type of pipeline is right for me?</a>.</p>
+     */
+    inline void SetPipelineType(const PipelineType& value) { m_pipelineTypeHasBeenSet = true; m_pipelineType = value; }
+
+    /**
+     * <p>CodePipeline provides the following pipeline types, which differ in
+     * characteristics and price, so that you can tailor your pipeline features and
+     * cost to the needs of your applications.</p> <ul> <li> <p>V1 type pipelines have
+     * a JSON structure that contains standard pipeline, stage, and action-level
+     * parameters.</p> </li> <li> <p>V2 type pipelines have the same structure as a V1
+     * type, along with additional parameters for release safety and trigger
+     * configuration.</p> </li> </ul>  <p>Including V2 parameters, such as
+     * triggers on Git tags, in the pipeline JSON when creating or updating a pipeline
+     * will result in the pipeline having the V2 type of pipeline and the associated
+     * costs.</p>  <p>For information about pricing for CodePipeline, see
+     * <a href="http://aws.amazon.com/codepipeline/pricing/">Pricing</a>.</p> <p> For
+     * information about which type of pipeline to choose, see <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types-planning.html">What
+     * type of pipeline is right for me?</a>.</p>
+     */
+    inline void SetPipelineType(PipelineType&& value) { m_pipelineTypeHasBeenSet = true; m_pipelineType = std::move(value); }
+
+    /**
+     * <p>CodePipeline provides the following pipeline types, which differ in
+     * characteristics and price, so that you can tailor your pipeline features and
+     * cost to the needs of your applications.</p> <ul> <li> <p>V1 type pipelines have
+     * a JSON structure that contains standard pipeline, stage, and action-level
+     * parameters.</p> </li> <li> <p>V2 type pipelines have the same structure as a V1
+     * type, along with additional parameters for release safety and trigger
+     * configuration.</p> </li> </ul>  <p>Including V2 parameters, such as
+     * triggers on Git tags, in the pipeline JSON when creating or updating a pipeline
+     * will result in the pipeline having the V2 type of pipeline and the associated
+     * costs.</p>  <p>For information about pricing for CodePipeline, see
+     * <a href="http://aws.amazon.com/codepipeline/pricing/">Pricing</a>.</p> <p> For
+     * information about which type of pipeline to choose, see <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types-planning.html">What
+     * type of pipeline is right for me?</a>.</p>
+     */
+    inline PipelineSummary& WithPipelineType(const PipelineType& value) { SetPipelineType(value); return *this;}
+
+    /**
+     * <p>CodePipeline provides the following pipeline types, which differ in
+     * characteristics and price, so that you can tailor your pipeline features and
+     * cost to the needs of your applications.</p> <ul> <li> <p>V1 type pipelines have
+     * a JSON structure that contains standard pipeline, stage, and action-level
+     * parameters.</p> </li> <li> <p>V2 type pipelines have the same structure as a V1
+     * type, along with additional parameters for release safety and trigger
+     * configuration.</p> </li> </ul>  <p>Including V2 parameters, such as
+     * triggers on Git tags, in the pipeline JSON when creating or updating a pipeline
+     * will result in the pipeline having the V2 type of pipeline and the associated
+     * costs.</p>  <p>For information about pricing for CodePipeline, see
+     * <a href="http://aws.amazon.com/codepipeline/pricing/">Pricing</a>.</p> <p> For
+     * information about which type of pipeline to choose, see <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-types-planning.html">What
+     * type of pipeline is right for me?</a>.</p>
+     */
+    inline PipelineSummary& WithPipelineType(PipelineType&& value) { SetPipelineType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The method that the pipeline will use to handle multiple executions. The
+     * default mode is SUPERSEDED.</p>
+     */
+    inline const ExecutionMode& GetExecutionMode() const{ return m_executionMode; }
+
+    /**
+     * <p>The method that the pipeline will use to handle multiple executions. The
+     * default mode is SUPERSEDED.</p>
+     */
+    inline bool ExecutionModeHasBeenSet() const { return m_executionModeHasBeenSet; }
+
+    /**
+     * <p>The method that the pipeline will use to handle multiple executions. The
+     * default mode is SUPERSEDED.</p>
+     */
+    inline void SetExecutionMode(const ExecutionMode& value) { m_executionModeHasBeenSet = true; m_executionMode = value; }
+
+    /**
+     * <p>The method that the pipeline will use to handle multiple executions. The
+     * default mode is SUPERSEDED.</p>
+     */
+    inline void SetExecutionMode(ExecutionMode&& value) { m_executionModeHasBeenSet = true; m_executionMode = std::move(value); }
+
+    /**
+     * <p>The method that the pipeline will use to handle multiple executions. The
+     * default mode is SUPERSEDED.</p>
+     */
+    inline PipelineSummary& WithExecutionMode(const ExecutionMode& value) { SetExecutionMode(value); return *this;}
+
+    /**
+     * <p>The method that the pipeline will use to handle multiple executions. The
+     * default mode is SUPERSEDED.</p>
+     */
+    inline PipelineSummary& WithExecutionMode(ExecutionMode&& value) { SetExecutionMode(std::move(value)); return *this;}
+
+
+    /**
      * <p>The date and time the pipeline was created, in timestamp format.</p>
      */
     inline const Aws::Utils::DateTime& GetCreated() const{ return m_created; }
@@ -174,6 +322,12 @@ namespace Model
 
     int m_version;
     bool m_versionHasBeenSet = false;
+
+    PipelineType m_pipelineType;
+    bool m_pipelineTypeHasBeenSet = false;
+
+    ExecutionMode m_executionMode;
+    bool m_executionModeHasBeenSet = false;
 
     Aws::Utils::DateTime m_created;
     bool m_createdHasBeenSet = false;

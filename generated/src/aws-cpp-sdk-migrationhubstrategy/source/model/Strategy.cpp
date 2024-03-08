@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Strategy::NOT_SET:
+            return {};
           case Strategy::Rehost:
             return "Rehost";
           case Strategy::Retirement:

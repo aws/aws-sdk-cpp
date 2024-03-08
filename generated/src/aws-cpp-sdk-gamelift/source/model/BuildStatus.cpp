@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BuildStatus::NOT_SET:
+            return {};
           case BuildStatus::INITIALIZED:
             return "INITIALIZED";
           case BuildStatus::READY:

@@ -21,6 +21,7 @@ namespace Model
     CreationPolicy,
     UpdatePolicy,
     DeletionPolicy,
+    UpdateReplacePolicy,
     Tags
   };
 

@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NoSuchEntityErrorCode::NOT_SET:
+            return {};
           case NoSuchEntityErrorCode::ASSESSMENT_TARGET_DOES_NOT_EXIST:
             return "ASSESSMENT_TARGET_DOES_NOT_EXIST";
           case NoSuchEntityErrorCode::ASSESSMENT_TEMPLATE_DOES_NOT_EXIST:

@@ -203,612 +203,612 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
 {
   if (hashCode == DRY_RUN_OPERATION_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::DRY_RUN_OPERATION), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::DRY_RUN_OPERATION), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_VPN_CONNECTION_I_D__NOT_FOUND_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_VPN_CONNECTION_I_D__NOT_FOUND), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_VPN_CONNECTION_I_D__NOT_FOUND), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == VOLUME_LIMIT_EXCEEDED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::VOLUME_LIMIT_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::VOLUME_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_SNAPSHOT__NOT_FOUND_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_SNAPSHOT__NOT_FOUND), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_SNAPSHOT__NOT_FOUND), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == RESERVED_INSTANCES_LIMIT_EXCEEDED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::RESERVED_INSTANCES_LIMIT_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::RESERVED_INSTANCES_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_VPC_ENDPOINT_ID__NOT_FOUND_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_VPC_ENDPOINT_ID__NOT_FOUND), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_VPC_ENDPOINT_ID__NOT_FOUND), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_ZONE__NOT_FOUND_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_ZONE__NOT_FOUND), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_ZONE__NOT_FOUND), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_ROUTE__NOT_FOUND_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_ROUTE__NOT_FOUND), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_ROUTE__NOT_FOUND), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_NETWORK_INTERFACE_ID__MALFORMED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_NETWORK_INTERFACE_ID__MALFORMED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_NETWORK_INTERFACE_ID__MALFORMED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_VPC__RANGE_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_VPC__RANGE), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_VPC__RANGE), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == NON_E_B_S_INSTANCE_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::NON_E_B_S_INSTANCE), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::NON_E_B_S_INSTANCE), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_A_M_I_I_D__NOT_FOUND_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_A_M_I_I_D__NOT_FOUND), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_A_M_I_I_D__NOT_FOUND), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_KEY_PAIR__NOT_FOUND_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_KEY_PAIR__NOT_FOUND), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_KEY_PAIR__NOT_FOUND), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == VPC_PEERING_CONNECTION_ALREADY_EXISTS_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::VPC_PEERING_CONNECTION_ALREADY_EXISTS), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::VPC_PEERING_CONNECTION_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_VPC_ENDPOINT_ID__MALFORMED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_VPC_ENDPOINT_ID__MALFORMED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_VPC_ENDPOINT_ID__MALFORMED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_VOLUME_I_D__MALFORMED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_VOLUME_I_D__MALFORMED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_VOLUME_I_D__MALFORMED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_RESERVED_INSTANCES_OFFERING_ID_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_RESERVED_INSTANCES_OFFERING_ID), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_RESERVED_INSTANCES_OFFERING_ID), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_BLOCK_DEVICE_MAPPING_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_BLOCK_DEVICE_MAPPING), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_BLOCK_DEVICE_MAPPING), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_VOLUME_I_D__ZONE_MISMATCH_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_VOLUME_I_D__ZONE_MISMATCH), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_VOLUME_I_D__ZONE_MISMATCH), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == UNSUPPORTED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::UNSUPPORTED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::UNSUPPORTED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_KEY__FORMAT_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_KEY__FORMAT), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_KEY__FORMAT), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_SPOT_FLEET_REQUEST_ID__MALFORMED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_SPOT_FLEET_REQUEST_ID__MALFORMED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_SPOT_FLEET_REQUEST_ID__MALFORMED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_ADDRESS_I_D__NOT_FOUND_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_ADDRESS_I_D__NOT_FOUND), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_ADDRESS_I_D__NOT_FOUND), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == ROUTE_ALREADY_EXISTS_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::ROUTE_ALREADY_EXISTS), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::ROUTE_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_A_M_I_I_D__MALFORMED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_A_M_I_I_D__MALFORMED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_A_M_I_I_D__MALFORMED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_KEY_PAIR__FORMAT_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_KEY_PAIR__FORMAT), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_KEY_PAIR__FORMAT), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == VPC_CIDR_CONFLICT_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::VPC_CIDR_CONFLICT), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::VPC_CIDR_CONFLICT), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_GROUP__RESERVED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_GROUP__RESERVED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_GROUP__RESERVED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == LEGACY_SECURITY_GROUP_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::LEGACY_SECURITY_GROUP), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::LEGACY_SECURITY_GROUP), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == CANNOT_DELETE_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::CANNOT_DELETE), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::CANNOT_DELETE), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_I_P_ADDRESS__IN_USE_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_I_P_ADDRESS__IN_USE), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_I_P_ADDRESS__IN_USE), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_A_M_I_I_D__UNAVAILABLE_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_A_M_I_I_D__UNAVAILABLE), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_A_M_I_I_D__UNAVAILABLE), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_FORMAT_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_FORMAT), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_FORMAT), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_GROUP_ID__MALFORMED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_GROUP_ID__MALFORMED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_GROUP_ID__MALFORMED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == BUNDLING_IN_PROGRESS_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::BUNDLING_IN_PROGRESS), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::BUNDLING_IN_PROGRESS), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_INSTANCE_TYPE_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_INSTANCE_TYPE), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_INSTANCE_TYPE), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_PERMISSION__NOT_FOUND_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_PERMISSION__NOT_FOUND), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_PERMISSION__NOT_FOUND), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_ROUTE__MALFORMED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_ROUTE__MALFORMED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_ROUTE__MALFORMED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_RESERVATION_I_D__MALFORMED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_RESERVATION_I_D__MALFORMED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_RESERVATION_I_D__MALFORMED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_KEY_PAIR__DUPLICATE_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_KEY_PAIR__DUPLICATE), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_KEY_PAIR__DUPLICATE), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == ROUTE_LIMIT_EXCEEDED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::ROUTE_LIMIT_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::ROUTE_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_SECURITY__REQUEST_HAS_EXPIRED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_SECURITY__REQUEST_HAS_EXPIRED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_SECURITY__REQUEST_HAS_EXPIRED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_SPOT_INSTANCE_REQUEST_I_D__MALFORMED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_SPOT_INSTANCE_REQUEST_I_D__MALFORMED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_SPOT_INSTANCE_REQUEST_I_D__MALFORMED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_VPC_I_D__NOT_FOUND_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_VPC_I_D__NOT_FOUND), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_VPC_I_D__NOT_FOUND), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == ROUTE_TABLE_LIMIT_EXCEEDED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::ROUTE_TABLE_LIMIT_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::ROUTE_TABLE_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_ATTACHMENT_I_D__NOT_FOUND_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_ATTACHMENT_I_D__NOT_FOUND), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_ATTACHMENT_I_D__NOT_FOUND), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_PERMISSION__MALFORMED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_PERMISSION__MALFORMED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_PERMISSION__MALFORMED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == VOLUME_IN_USE_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::VOLUME_IN_USE), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::VOLUME_IN_USE), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == ACTIVE_VPC_PEERING_CONNECTION_PER_VPC_LIMIT_EXCEEDED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::ACTIVE_VPC_PEERING_CONNECTION_PER_VPC_LIMIT_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::ACTIVE_VPC_PEERING_CONNECTION_PER_VPC_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_VOLUME__ZONE_MISMATCH_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_VOLUME__ZONE_MISMATCH), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_VOLUME__ZONE_MISMATCH), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_DHCP_OPTION_I_D__NOT_FOUND_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_DHCP_OPTION_I_D__NOT_FOUND), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_DHCP_OPTION_I_D__NOT_FOUND), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == PENDING_SNAPSHOT_LIMIT_EXCEEDED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::PENDING_SNAPSHOT_LIMIT_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::PENDING_SNAPSHOT_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_PREFIX_LIST_ID__MALFORMED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_PREFIX_LIST_ID__MALFORMED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_PREFIX_LIST_ID__MALFORMED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_VPN_CONNECTION_I_D_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_VPN_CONNECTION_I_D), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_VPN_CONNECTION_I_D), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_USER_I_D__MALFORMED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_USER_I_D__MALFORMED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_USER_I_D__MALFORMED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == ADDRESS_LIMIT_EXCEEDED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::ADDRESS_LIMIT_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::ADDRESS_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_GROUP__NOT_FOUND_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_GROUP__NOT_FOUND), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_GROUP__NOT_FOUND), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_I_D_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_I_D), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_I_D), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == VOLUME_TYPE_NOT_AVAILABLE_IN_ZONE_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::VOLUME_TYPE_NOT_AVAILABLE_IN_ZONE), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::VOLUME_TYPE_NOT_AVAILABLE_IN_ZONE), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INSUFFICIENT_FREE_ADDRESSES_IN_SUBNET_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INSUFFICIENT_FREE_ADDRESSES_IN_SUBNET), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INSUFFICIENT_FREE_ADDRESSES_IN_SUBNET), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == DISK_IMAGE_SIZE_TOO_LARGE_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::DISK_IMAGE_SIZE_TOO_LARGE), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::DISK_IMAGE_SIZE_TOO_LARGE), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_A_M_I_ATTRIBUTE_ITEM_VALUE_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_A_M_I_ATTRIBUTE_ITEM_VALUE), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_A_M_I_ATTRIBUTE_ITEM_VALUE), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_GROUP__IN_USE_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_GROUP__IN_USE), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_GROUP__IN_USE), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_SPOT_DATAFEED__NOT_FOUND_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_SPOT_DATAFEED__NOT_FOUND), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_SPOT_DATAFEED__NOT_FOUND), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INSUFFICIENT_RESERVED_INSTANCES_CAPACITY_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INSUFFICIENT_RESERVED_INSTANCES_CAPACITY), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INSUFFICIENT_RESERVED_INSTANCES_CAPACITY), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == MAX_I_O_P_S_LIMIT_EXCEEDED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::MAX_I_O_P_S_LIMIT_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::MAX_I_O_P_S_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == RESOURCE_COUNT_EXCEEDED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::RESOURCE_COUNT_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::RESOURCE_COUNT_EXCEEDED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INCORRECT_STATE_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INCORRECT_STATE), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INCORRECT_STATE), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == NETWORK_ACL_LIMIT_EXCEEDED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::NETWORK_ACL_LIMIT_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::NETWORK_ACL_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_RESERVED_INSTANCES_ID_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_RESERVED_INSTANCES_ID), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_RESERVED_INSTANCES_ID), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == UNSUPPORTED_OPERATION_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::UNSUPPORTED_OPERATION), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::UNSUPPORTED_OPERATION), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_REQUEST_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_REQUEST), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_REQUEST), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == VPC_ENDPOINT_LIMIT_EXCEEDED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::VPC_ENDPOINT_LIMIT_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::VPC_ENDPOINT_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_ROUTE_TABLE_ID__MALFORMED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_ROUTE_TABLE_ID__MALFORMED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_ROUTE_TABLE_ID__MALFORMED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_STATE_TRANSITION_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_STATE_TRANSITION), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_STATE_TRANSITION), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_VPC_PEERING_CONNECTION_ID__MALFORMED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_VPC_PEERING_CONNECTION_ID__MALFORMED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_VPC_PEERING_CONNECTION_ID__MALFORMED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == PRIVATE_IP_ADDRESS_LIMIT_EXCEEDED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::PRIVATE_IP_ADDRESS_LIMIT_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::PRIVATE_IP_ADDRESS_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == VPC_LIMIT_EXCEEDED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::VPC_LIMIT_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::VPC_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_PERMISSION__DUPLICATE_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_PERMISSION__DUPLICATE), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_PERMISSION__DUPLICATE), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == CUSTOMER_GATEWAY_LIMIT_EXCEEDED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::CUSTOMER_GATEWAY_LIMIT_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::CUSTOMER_GATEWAY_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INSTANCE_LIMIT_EXCEEDED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INSTANCE_LIMIT_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INSTANCE_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INTERNET_GATEWAY_LIMIT_EXCEEDED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INTERNET_GATEWAY_LIMIT_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INTERNET_GATEWAY_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == CONCURRENT_SNAPSHOT_LIMIT_EXCEEDED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::CONCURRENT_SNAPSHOT_LIMIT_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::CONCURRENT_SNAPSHOT_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == SECURITY_GROUPS_PER_INSTANCE_LIMIT_EXCEEDED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::SECURITY_GROUPS_PER_INSTANCE_LIMIT_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::SECURITY_GROUPS_PER_INSTANCE_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == V_P_C_RESOURCE_NOT_SPECIFIED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::V_P_C_RESOURCE_NOT_SPECIFIED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::V_P_C_RESOURCE_NOT_SPECIFIED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_SNAPSHOT__IN_USE_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_SNAPSHOT__IN_USE), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_SNAPSHOT__IN_USE), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == UNKNOWN_VOLUME_TYPE_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::UNKNOWN_VOLUME_TYPE), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::UNKNOWN_VOLUME_TYPE), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == SECURITY_GROUP_LIMIT_EXCEEDED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::SECURITY_GROUP_LIMIT_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::SECURITY_GROUP_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_SUBNET_I_D__NOT_FOUND_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_SUBNET_I_D__NOT_FOUND), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_SUBNET_I_D__NOT_FOUND), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == GATEWAY__NOT_ATTACHED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::GATEWAY__NOT_ATTACHED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::GATEWAY__NOT_ATTACHED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_GROUP__DUPLICATE_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_GROUP__DUPLICATE), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_GROUP__DUPLICATE), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == ENCRYPTED_VOLUMES_NOT_SUPPORTED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::ENCRYPTED_VOLUMES_NOT_SUPPORTED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::ENCRYPTED_VOLUMES_NOT_SUPPORTED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_ROUTE_TABLE_I_D__NOT_FOUND_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_ROUTE_TABLE_I_D__NOT_FOUND), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_ROUTE_TABLE_I_D__NOT_FOUND), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_SECURITY_GROUP_I_D__NOT_FOUND_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_SECURITY_GROUP_I_D__NOT_FOUND), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_SECURITY_GROUP_I_D__NOT_FOUND), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_PLACEMENT_GROUP__UNKNOWN_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_PLACEMENT_GROUP__UNKNOWN), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_PLACEMENT_GROUP__UNKNOWN), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_INSTANCE_I_D__MALFORMED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_INSTANCE_I_D__MALFORMED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_INSTANCE_I_D__MALFORMED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INSTANCE_ALREADY_LINKED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INSTANCE_ALREADY_LINKED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INSTANCE_ALREADY_LINKED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_ATTACHMENT__NOT_FOUND_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_ATTACHMENT__NOT_FOUND), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_ATTACHMENT__NOT_FOUND), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_CUSTOMER_GATEWAY__DUPLICATE_IP_ADDRESS_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_CUSTOMER_GATEWAY__DUPLICATE_IP_ADDRESS), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_CUSTOMER_GATEWAY__DUPLICATE_IP_ADDRESS), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_SUBNET__CONFLICT_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_SUBNET__CONFLICT), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_SUBNET__CONFLICT), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_INPUT_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_INPUT), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_INPUT), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_INSTANCE_ATTRIBUTE_VALUE_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_INSTANCE_ATTRIBUTE_VALUE), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_INSTANCE_ATTRIBUTE_VALUE), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == REQUEST_RESOURCE_COUNT_EXCEEDED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::REQUEST_RESOURCE_COUNT_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::REQUEST_RESOURCE_COUNT_EXCEEDED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_ASSOCIATION_I_D__NOT_FOUND_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_ASSOCIATION_I_D__NOT_FOUND), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_ASSOCIATION_I_D__NOT_FOUND), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_DEVICE__IN_USE_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_DEVICE__IN_USE), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_DEVICE__IN_USE), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_CONVERSION_TASK_ID_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_CONVERSION_TASK_ID), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_CONVERSION_TASK_ID), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == MAX_SPOT_FLEET_REQUEST_COUNT_EXCEEDED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::MAX_SPOT_FLEET_REQUEST_COUNT_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::MAX_SPOT_FLEET_REQUEST_COUNT_EXCEEDED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_ALLOCATION_I_D__NOT_FOUND_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_ALLOCATION_I_D__NOT_FOUND), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_ALLOCATION_I_D__NOT_FOUND), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_CUSTOMER_GATEWAY_I_D__NOT_FOUND_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_CUSTOMER_GATEWAY_I_D__NOT_FOUND), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_CUSTOMER_GATEWAY_I_D__NOT_FOUND), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_POLICY_DOCUMENT_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_POLICY_DOCUMENT), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_POLICY_DOCUMENT), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_SPOT_FLEET_REQUEST_ID__NOT_FOUND_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_SPOT_FLEET_REQUEST_ID__NOT_FOUND), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_SPOT_FLEET_REQUEST_ID__NOT_FOUND), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_FLOW_LOG_ID__NOT_FOUND_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_FLOW_LOG_ID__NOT_FOUND), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_FLOW_LOG_ID__NOT_FOUND), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == VPN_GATEWAY_ATTACHMENT_LIMIT_EXCEEDED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::VPN_GATEWAY_ATTACHMENT_LIMIT_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::VPN_GATEWAY_ATTACHMENT_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == FILTER_LIMIT_EXCEEDED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::FILTER_LIMIT_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::FILTER_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_SNAPSHOT_I_D__MALFORMED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_SNAPSHOT_I_D__MALFORMED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_SNAPSHOT_I_D__MALFORMED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_SPOT_FLEET_REQUEST_CONFIG_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_SPOT_FLEET_REQUEST_CONFIG), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_SPOT_FLEET_REQUEST_CONFIG), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == SNAPSHOT_LIMIT_EXCEEDED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::SNAPSHOT_LIMIT_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::SNAPSHOT_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_VPC_STATE_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_VPC_STATE), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_VPC_STATE), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_GATEWAY_I_D__NOT_FOUND_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_GATEWAY_I_D__NOT_FOUND), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_GATEWAY_I_D__NOT_FOUND), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == SECURITY_GROUPS_PER_INTERFACE_LIMIT_EXCEEDED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::SECURITY_GROUPS_PER_INTERFACE_LIMIT_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::SECURITY_GROUPS_PER_INTERFACE_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == MAX_SPOT_INSTANCE_COUNT_EXCEEDED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::MAX_SPOT_INSTANCE_COUNT_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::MAX_SPOT_INSTANCE_COUNT_EXCEEDED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_ADDRESS__MALFORMED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_ADDRESS__MALFORMED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_ADDRESS__MALFORMED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   return false;
@@ -818,257 +818,257 @@ static bool GetErrorForNameHelper1(int hashCode, AWSError<CoreErrors>& error)
 {
   if (hashCode == INVALID_DHCP_OPTIONS_ID__MALFORMED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_DHCP_OPTIONS_ID__MALFORMED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_DHCP_OPTIONS_ID__MALFORMED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == NETWORK_ACL_ENTRY_ALREADY_EXISTS_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::NETWORK_ACL_ENTRY_ALREADY_EXISTS), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::NETWORK_ACL_ENTRY_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == VPN_GATEWAY_LIMIT_EXCEEDED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::VPN_GATEWAY_LIMIT_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::VPN_GATEWAY_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_PREFIX_LIST_ID__NOT_FOUND_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_PREFIX_LIST_ID__NOT_FOUND), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_PREFIX_LIST_ID__NOT_FOUND), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_INSTANCE_I_D_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_INSTANCE_I_D), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_INSTANCE_I_D), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_STATE_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_STATE), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_STATE), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == FLOW_LOGS_LIMIT_EXCEEDED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::FLOW_LOGS_LIMIT_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::FLOW_LOGS_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_ADDRESS__NOT_FOUND_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_ADDRESS__NOT_FOUND), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_ADDRESS__NOT_FOUND), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == V_P_C_ID_NOT_SPECIFIED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::V_P_C_ID_NOT_SPECIFIED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::V_P_C_ID_NOT_SPECIFIED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == RESOURCE__ALREADY_ASSOCIATED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::RESOURCE__ALREADY_ASSOCIATED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::RESOURCE__ALREADY_ASSOCIATED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == NOT_EXPORTABLE_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::NOT_EXPORTABLE), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::NOT_EXPORTABLE), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_DHCP_OPTIONS_I_D__NOT_FOUND_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_DHCP_OPTIONS_I_D__NOT_FOUND), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_DHCP_OPTIONS_I_D__NOT_FOUND), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == NETWORK_ACL_ENTRY_LIMIT_EXCEEDED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::NETWORK_ACL_ENTRY_LIMIT_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::NETWORK_ACL_ENTRY_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == TAG_LIMIT_EXCEEDED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::TAG_LIMIT_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::TAG_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_NETWORK_INTERFACE_I_D__NOT_FOUND_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_NETWORK_INTERFACE_I_D__NOT_FOUND), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_NETWORK_INTERFACE_I_D__NOT_FOUND), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_VPN_GATEWAY_I_D__NOT_FOUND_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_VPN_GATEWAY_I_D__NOT_FOUND), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_VPN_GATEWAY_I_D__NOT_FOUND), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_SPOT_INSTANCE_REQUEST_I_D__NOT_FOUND_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_SPOT_INSTANCE_REQUEST_I_D__NOT_FOUND), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_SPOT_INSTANCE_REQUEST_I_D__NOT_FOUND), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == RULES_PER_SECURITY_GROUP_LIMIT_EXCEEDED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::RULES_PER_SECURITY_GROUP_LIMIT_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::RULES_PER_SECURITY_GROUP_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_PLACEMENT_GROUP__DUPLICATE_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_PLACEMENT_GROUP__DUPLICATE), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_PLACEMENT_GROUP__DUPLICATE), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == OPERATION_NOT_PERMITTED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::OPERATION_NOT_PERMITTED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::OPERATION_NOT_PERMITTED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_EXPORT_TASK_I_D__NOT_FOUND_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_EXPORT_TASK_I_D__NOT_FOUND), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_EXPORT_TASK_I_D__NOT_FOUND), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == VPN_CONNECTION_LIMIT_EXCEEDED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::VPN_CONNECTION_LIMIT_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::VPN_CONNECTION_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INCORRECT_INSTANCE_STATE_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INCORRECT_INSTANCE_STATE), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INCORRECT_INSTANCE_STATE), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_NETWORK_ACL_ENTRY__NOT_FOUND_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_NETWORK_ACL_ENTRY__NOT_FOUND), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_NETWORK_ACL_ENTRY__NOT_FOUND), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_VPC_PEERING_CONNECTION_I_D__NOT_FOUND_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_VPC_PEERING_CONNECTION_I_D__NOT_FOUND), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_VPC_PEERING_CONNECTION_I_D__NOT_FOUND), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == SUBNET_LIMIT_EXCEEDED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::SUBNET_LIMIT_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::SUBNET_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_VOLUME_I_D__DUPLICATE_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_VOLUME_I_D__DUPLICATE), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_VOLUME_I_D__DUPLICATE), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_OPTION__CONFLICT_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_OPTION__CONFLICT), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_OPTION__CONFLICT), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_BUNDLE_I_D__NOT_FOUND_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_BUNDLE_I_D__NOT_FOUND), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_BUNDLE_I_D__NOT_FOUND), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == ATTACHMENT_LIMIT_EXCEEDED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::ATTACHMENT_LIMIT_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::ATTACHMENT_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == FLOW_LOG_ALREADY_EXISTS_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::FLOW_LOG_ALREADY_EXISTS), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::FLOW_LOG_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_INSTANCE_I_D__NOT_LINKABLE_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_INSTANCE_I_D__NOT_LINKABLE), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_INSTANCE_I_D__NOT_LINKABLE), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_PLACEMENT_GROUP__IN_USE_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_PLACEMENT_GROUP__IN_USE), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_PLACEMENT_GROUP__IN_USE), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_SERVICE_NAME_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_SERVICE_NAME), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_SERVICE_NAME), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_INTERNET_GATEWAY_I_D__NOT_FOUND_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_INTERNET_GATEWAY_I_D__NOT_FOUND), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_INTERNET_GATEWAY_I_D__NOT_FOUND), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_INSTANCE_I_D__NOT_FOUND_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_INSTANCE_I_D__NOT_FOUND), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_INSTANCE_I_D__NOT_FOUND), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_NETWORK_INTERFACE_ATTACHMENT_I_D__MALFORMED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_NETWORK_INTERFACE_ATTACHMENT_I_D__MALFORMED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_NETWORK_INTERFACE_ATTACHMENT_I_D__MALFORMED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_A_M_I_NAME__DUPLICATE_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_A_M_I_NAME__DUPLICATE), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_A_M_I_NAME__DUPLICATE), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_VOLUME__NOT_FOUND_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_VOLUME__NOT_FOUND), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_VOLUME__NOT_FOUND), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_FILTER_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_FILTER), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_FILTER), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_MANIFEST_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_MANIFEST), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_MANIFEST), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_VPN_GATEWAY_ATTACHMENT__NOT_FOUND_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_VPN_GATEWAY_ATTACHMENT__NOT_FOUND), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_VPN_GATEWAY_ATTACHMENT__NOT_FOUND), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == OUTSTANDING_VPC_PEERING_CONNECTION_LIMIT_EXCEEDED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::OUTSTANDING_VPC_PEERING_CONNECTION_LIMIT_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::OUTSTANDING_VPC_PEERING_CONNECTION_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_CUSTOMER_GATEWAY_ID__MALFORMED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_CUSTOMER_GATEWAY_ID__MALFORMED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_CUSTOMER_GATEWAY_ID__MALFORMED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == CONCURRENT_TAG_ACCESS_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::CONCURRENT_TAG_ACCESS), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::CONCURRENT_TAG_ACCESS), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_INTERFACE__IP_ADDRESS_LIMIT_EXCEEDED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_INTERFACE__IP_ADDRESS_LIMIT_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_INTERFACE__IP_ADDRESS_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_NETWORK_ACL_I_D__NOT_FOUND_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_NETWORK_ACL_I_D__NOT_FOUND), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_NETWORK_ACL_I_D__NOT_FOUND), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_A_M_I_NAME__MALFORMED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_A_M_I_NAME__MALFORMED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_A_M_I_NAME__MALFORMED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == INVALID_RESERVATION_I_D__NOT_FOUND_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_RESERVATION_I_D__NOT_FOUND), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::INVALID_RESERVATION_I_D__NOT_FOUND), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == DEPENDENCY_VIOLATION_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::DEPENDENCY_VIOLATION), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::DEPENDENCY_VIOLATION), RetryableType::NOT_RETRYABLE);
     return true;
   }
   else if (hashCode == RESOURCE_LIMIT_EXCEEDED_HASH)
   {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::RESOURCE_LIMIT_EXCEEDED), false);
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(EC2Errors::RESOURCE_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
     return true;
   }
   return false;

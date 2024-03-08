@@ -89,6 +89,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ServiceLimit::NOT_SET:
+            return {};
           case ServiceLimit::FILE_SYSTEM_COUNT:
             return "FILE_SYSTEM_COUNT";
           case ServiceLimit::TOTAL_THROUGHPUT_CAPACITY:

@@ -17,6 +17,7 @@ CreateCaseRequest::CreateCaseRequest() :
     m_clientTokenHasBeenSet(true),
     m_domainIdHasBeenSet(false),
     m_fieldsHasBeenSet(false),
+    m_performedByHasBeenSet(false),
     m_templateIdHasBeenSet(false)
 {
 }
@@ -39,6 +40,12 @@ Aws::String CreateCaseRequest::SerializePayload() const
      fieldsJsonList[fieldsIndex].AsObject(m_fields[fieldsIndex].Jsonize());
    }
    payload.WithArray("fields", std::move(fieldsJsonList));
+
+  }
+
+  if(m_performedByHasBeenSet)
+  {
+   payload.WithObject("performedBy", m_performedBy.Jsonize());
 
   }
 

@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PrincipalType::NOT_SET:
+            return {};
           case PrincipalType::All:
             return "All";
           case PrincipalType::Service:

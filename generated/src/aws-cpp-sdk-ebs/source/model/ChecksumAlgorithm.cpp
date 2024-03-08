@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ChecksumAlgorithm::NOT_SET:
+            return {};
           case ChecksumAlgorithm::SHA256:
             return "SHA256";
           default:

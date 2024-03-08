@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ScalarAttributeType::NOT_SET:
+            return {};
           case ScalarAttributeType::S:
             return "S";
           case ScalarAttributeType::N:

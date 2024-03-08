@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HealthCheckType::NOT_SET:
+            return {};
           case HealthCheckType::HTTP:
             return "HTTP";
           case HealthCheckType::HTTPS:

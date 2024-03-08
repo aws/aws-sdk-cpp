@@ -205,83 +205,99 @@ namespace Model
 
 
     /**
-     * <p>The AWS Lambda function name used as resource filter criteria.</p>
+     * <p>The Amazon Web Services Lambda function name used as resource filter
+     * criteria.</p>
      */
     inline const Aws::Vector<ResourceStringFilter>& GetLambdaFunctionName() const{ return m_lambdaFunctionName; }
 
     /**
-     * <p>The AWS Lambda function name used as resource filter criteria.</p>
+     * <p>The Amazon Web Services Lambda function name used as resource filter
+     * criteria.</p>
      */
     inline bool LambdaFunctionNameHasBeenSet() const { return m_lambdaFunctionNameHasBeenSet; }
 
     /**
-     * <p>The AWS Lambda function name used as resource filter criteria.</p>
+     * <p>The Amazon Web Services Lambda function name used as resource filter
+     * criteria.</p>
      */
     inline void SetLambdaFunctionName(const Aws::Vector<ResourceStringFilter>& value) { m_lambdaFunctionNameHasBeenSet = true; m_lambdaFunctionName = value; }
 
     /**
-     * <p>The AWS Lambda function name used as resource filter criteria.</p>
+     * <p>The Amazon Web Services Lambda function name used as resource filter
+     * criteria.</p>
      */
     inline void SetLambdaFunctionName(Aws::Vector<ResourceStringFilter>&& value) { m_lambdaFunctionNameHasBeenSet = true; m_lambdaFunctionName = std::move(value); }
 
     /**
-     * <p>The AWS Lambda function name used as resource filter criteria.</p>
+     * <p>The Amazon Web Services Lambda function name used as resource filter
+     * criteria.</p>
      */
     inline ResourceFilterCriteria& WithLambdaFunctionName(const Aws::Vector<ResourceStringFilter>& value) { SetLambdaFunctionName(value); return *this;}
 
     /**
-     * <p>The AWS Lambda function name used as resource filter criteria.</p>
+     * <p>The Amazon Web Services Lambda function name used as resource filter
+     * criteria.</p>
      */
     inline ResourceFilterCriteria& WithLambdaFunctionName(Aws::Vector<ResourceStringFilter>&& value) { SetLambdaFunctionName(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Lambda function name used as resource filter criteria.</p>
+     * <p>The Amazon Web Services Lambda function name used as resource filter
+     * criteria.</p>
      */
     inline ResourceFilterCriteria& AddLambdaFunctionName(const ResourceStringFilter& value) { m_lambdaFunctionNameHasBeenSet = true; m_lambdaFunctionName.push_back(value); return *this; }
 
     /**
-     * <p>The AWS Lambda function name used as resource filter criteria.</p>
+     * <p>The Amazon Web Services Lambda function name used as resource filter
+     * criteria.</p>
      */
     inline ResourceFilterCriteria& AddLambdaFunctionName(ResourceStringFilter&& value) { m_lambdaFunctionNameHasBeenSet = true; m_lambdaFunctionName.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The AWS Lambda function tags used as resource filter criteria.</p>
+     * <p>The Amazon Web Services Lambda function tags used as resource filter
+     * criteria.</p>
      */
     inline const Aws::Vector<ResourceMapFilter>& GetLambdaFunctionTags() const{ return m_lambdaFunctionTags; }
 
     /**
-     * <p>The AWS Lambda function tags used as resource filter criteria.</p>
+     * <p>The Amazon Web Services Lambda function tags used as resource filter
+     * criteria.</p>
      */
     inline bool LambdaFunctionTagsHasBeenSet() const { return m_lambdaFunctionTagsHasBeenSet; }
 
     /**
-     * <p>The AWS Lambda function tags used as resource filter criteria.</p>
+     * <p>The Amazon Web Services Lambda function tags used as resource filter
+     * criteria.</p>
      */
     inline void SetLambdaFunctionTags(const Aws::Vector<ResourceMapFilter>& value) { m_lambdaFunctionTagsHasBeenSet = true; m_lambdaFunctionTags = value; }
 
     /**
-     * <p>The AWS Lambda function tags used as resource filter criteria.</p>
+     * <p>The Amazon Web Services Lambda function tags used as resource filter
+     * criteria.</p>
      */
     inline void SetLambdaFunctionTags(Aws::Vector<ResourceMapFilter>&& value) { m_lambdaFunctionTagsHasBeenSet = true; m_lambdaFunctionTags = std::move(value); }
 
     /**
-     * <p>The AWS Lambda function tags used as resource filter criteria.</p>
+     * <p>The Amazon Web Services Lambda function tags used as resource filter
+     * criteria.</p>
      */
     inline ResourceFilterCriteria& WithLambdaFunctionTags(const Aws::Vector<ResourceMapFilter>& value) { SetLambdaFunctionTags(value); return *this;}
 
     /**
-     * <p>The AWS Lambda function tags used as resource filter criteria.</p>
+     * <p>The Amazon Web Services Lambda function tags used as resource filter
+     * criteria.</p>
      */
     inline ResourceFilterCriteria& WithLambdaFunctionTags(Aws::Vector<ResourceMapFilter>&& value) { SetLambdaFunctionTags(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Lambda function tags used as resource filter criteria.</p>
+     * <p>The Amazon Web Services Lambda function tags used as resource filter
+     * criteria.</p>
      */
     inline ResourceFilterCriteria& AddLambdaFunctionTags(const ResourceMapFilter& value) { m_lambdaFunctionTagsHasBeenSet = true; m_lambdaFunctionTags.push_back(value); return *this; }
 
     /**
-     * <p>The AWS Lambda function tags used as resource filter criteria.</p>
+     * <p>The Amazon Web Services Lambda function tags used as resource filter
+     * criteria.</p>
      */
     inline ResourceFilterCriteria& AddLambdaFunctionTags(ResourceMapFilter&& value) { m_lambdaFunctionTagsHasBeenSet = true; m_lambdaFunctionTags.push_back(std::move(value)); return *this; }
 

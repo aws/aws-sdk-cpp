@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ImportSourceDataFormat::NOT_SET:
+            return {};
           case ImportSourceDataFormat::DELIMITED_TEXT:
             return "DELIMITED_TEXT";
           default:

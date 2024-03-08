@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InventorySchemaDeleteOption::NOT_SET:
+            return {};
           case InventorySchemaDeleteOption::DisableSchema:
             return "DisableSchema";
           case InventorySchemaDeleteOption::DeleteSchema:

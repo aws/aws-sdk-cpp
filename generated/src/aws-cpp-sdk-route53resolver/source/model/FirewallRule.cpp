@@ -35,7 +35,8 @@ FirewallRule::FirewallRule() :
     m_blockOverrideTtlHasBeenSet(false),
     m_creatorRequestIdHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
-    m_modificationTimeHasBeenSet(false)
+    m_modificationTimeHasBeenSet(false),
+    m_qtypeHasBeenSet(false)
 {
 }
 
@@ -56,7 +57,8 @@ FirewallRule::FirewallRule(JsonView jsonValue) :
     m_blockOverrideTtlHasBeenSet(false),
     m_creatorRequestIdHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
-    m_modificationTimeHasBeenSet(false)
+    m_modificationTimeHasBeenSet(false),
+    m_qtypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -147,6 +149,13 @@ FirewallRule& FirewallRule::operator =(JsonView jsonValue)
     m_modificationTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Qtype"))
+  {
+    m_qtype = jsonValue.GetString("Qtype");
+
+    m_qtypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -220,6 +229,12 @@ JsonValue FirewallRule::Jsonize() const
   if(m_modificationTimeHasBeenSet)
   {
    payload.WithString("ModificationTime", m_modificationTime);
+
+  }
+
+  if(m_qtypeHasBeenSet)
+  {
+   payload.WithString("Qtype", m_qtype);
 
   }
 

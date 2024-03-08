@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DlClass::NOT_SET:
+            return {};
           case DlClass::ClassB:
             return "ClassB";
           case DlClass::ClassC:

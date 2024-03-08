@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case QueryParser::NOT_SET:
+            return {};
           case QueryParser::simple:
             return "simple";
           case QueryParser::structured:

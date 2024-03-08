@@ -31,6 +31,7 @@ LineChartConfiguration::LineChartConfiguration() :
     m_primaryYAxisLabelOptionsHasBeenSet(false),
     m_secondaryYAxisDisplayOptionsHasBeenSet(false),
     m_secondaryYAxisLabelOptionsHasBeenSet(false),
+    m_singleAxisOptionsHasBeenSet(false),
     m_defaultSeriesSettingsHasBeenSet(false),
     m_seriesHasBeenSet(false),
     m_legendHasBeenSet(false),
@@ -38,7 +39,8 @@ LineChartConfiguration::LineChartConfiguration() :
     m_referenceLinesHasBeenSet(false),
     m_tooltipHasBeenSet(false),
     m_contributionAnalysisDefaultsHasBeenSet(false),
-    m_visualPaletteHasBeenSet(false)
+    m_visualPaletteHasBeenSet(false),
+    m_interactionsHasBeenSet(false)
 {
 }
 
@@ -55,6 +57,7 @@ LineChartConfiguration::LineChartConfiguration(JsonView jsonValue) :
     m_primaryYAxisLabelOptionsHasBeenSet(false),
     m_secondaryYAxisDisplayOptionsHasBeenSet(false),
     m_secondaryYAxisLabelOptionsHasBeenSet(false),
+    m_singleAxisOptionsHasBeenSet(false),
     m_defaultSeriesSettingsHasBeenSet(false),
     m_seriesHasBeenSet(false),
     m_legendHasBeenSet(false),
@@ -62,7 +65,8 @@ LineChartConfiguration::LineChartConfiguration(JsonView jsonValue) :
     m_referenceLinesHasBeenSet(false),
     m_tooltipHasBeenSet(false),
     m_contributionAnalysisDefaultsHasBeenSet(false),
-    m_visualPaletteHasBeenSet(false)
+    m_visualPaletteHasBeenSet(false),
+    m_interactionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -149,6 +153,13 @@ LineChartConfiguration& LineChartConfiguration::operator =(JsonView jsonValue)
     m_secondaryYAxisLabelOptionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SingleAxisOptions"))
+  {
+    m_singleAxisOptions = jsonValue.GetObject("SingleAxisOptions");
+
+    m_singleAxisOptionsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("DefaultSeriesSettings"))
   {
     m_defaultSeriesSettings = jsonValue.GetObject("DefaultSeriesSettings");
@@ -212,6 +223,13 @@ LineChartConfiguration& LineChartConfiguration::operator =(JsonView jsonValue)
     m_visualPalette = jsonValue.GetObject("VisualPalette");
 
     m_visualPaletteHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Interactions"))
+  {
+    m_interactions = jsonValue.GetObject("Interactions");
+
+    m_interactionsHasBeenSet = true;
   }
 
   return *this;
@@ -291,6 +309,12 @@ JsonValue LineChartConfiguration::Jsonize() const
 
   }
 
+  if(m_singleAxisOptionsHasBeenSet)
+  {
+   payload.WithObject("SingleAxisOptions", m_singleAxisOptions.Jsonize());
+
+  }
+
   if(m_defaultSeriesSettingsHasBeenSet)
   {
    payload.WithObject("DefaultSeriesSettings", m_defaultSeriesSettings.Jsonize());
@@ -351,6 +375,12 @@ JsonValue LineChartConfiguration::Jsonize() const
   if(m_visualPaletteHasBeenSet)
   {
    payload.WithObject("VisualPalette", m_visualPalette.Jsonize());
+
+  }
+
+  if(m_interactionsHasBeenSet)
+  {
+   payload.WithObject("Interactions", m_interactions.Jsonize());
 
   }
 

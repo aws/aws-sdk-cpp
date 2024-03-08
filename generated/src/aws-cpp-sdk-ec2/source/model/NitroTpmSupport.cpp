@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NitroTpmSupport::NOT_SET:
+            return {};
           case NitroTpmSupport::unsupported:
             return "unsupported";
           case NitroTpmSupport::supported:

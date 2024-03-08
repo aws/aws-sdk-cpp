@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VirtualGatewayListenerTlsMode::NOT_SET:
+            return {};
           case VirtualGatewayListenerTlsMode::STRICT:
             return "STRICT";
           case VirtualGatewayListenerTlsMode::PERMISSIVE:

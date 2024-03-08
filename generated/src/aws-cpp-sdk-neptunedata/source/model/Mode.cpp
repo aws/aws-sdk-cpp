@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Mode::NOT_SET:
+            return {};
           case Mode::RESUME:
             return "RESUME";
           case Mode::NEW_:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PortAccessType::NOT_SET:
+            return {};
           case PortAccessType::Public:
             return "Public";
           case PortAccessType::Private:

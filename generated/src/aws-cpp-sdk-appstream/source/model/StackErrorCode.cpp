@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StackErrorCode::NOT_SET:
+            return {};
           case StackErrorCode::STORAGE_CONNECTOR_ERROR:
             return "STORAGE_CONNECTOR_ERROR";
           case StackErrorCode::INTERNAL_SERVICE_ERROR:

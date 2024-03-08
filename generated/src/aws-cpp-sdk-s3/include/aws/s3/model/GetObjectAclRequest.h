@@ -48,9 +48,11 @@ namespace Model
 
     /**
      * <p>The bucket name that contains the object for which to get the ACL
-     * information. </p> <p>When using this action with an access point, you must
-     * direct requests to the access point hostname. The access point hostname takes
-     * the form
+     * information. </p> <p> <b>Access points</b> - When you use this action with an
+     * access point, you must provide the alias of the access point in place of the
+     * bucket name or specify the access point ARN. When using the access point ARN,
+     * you must direct requests to the access point hostname. The access point hostname
+     * takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
      * When using this action with an access point through the Amazon Web Services
      * SDKs, you provide the access point ARN in place of the bucket name. For more
@@ -62,9 +64,11 @@ namespace Model
 
     /**
      * <p>The bucket name that contains the object for which to get the ACL
-     * information. </p> <p>When using this action with an access point, you must
-     * direct requests to the access point hostname. The access point hostname takes
-     * the form
+     * information. </p> <p> <b>Access points</b> - When you use this action with an
+     * access point, you must provide the alias of the access point in place of the
+     * bucket name or specify the access point ARN. When using the access point ARN,
+     * you must direct requests to the access point hostname. The access point hostname
+     * takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
      * When using this action with an access point through the Amazon Web Services
      * SDKs, you provide the access point ARN in place of the bucket name. For more
@@ -76,9 +80,11 @@ namespace Model
 
     /**
      * <p>The bucket name that contains the object for which to get the ACL
-     * information. </p> <p>When using this action with an access point, you must
-     * direct requests to the access point hostname. The access point hostname takes
-     * the form
+     * information. </p> <p> <b>Access points</b> - When you use this action with an
+     * access point, you must provide the alias of the access point in place of the
+     * bucket name or specify the access point ARN. When using the access point ARN,
+     * you must direct requests to the access point hostname. The access point hostname
+     * takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
      * When using this action with an access point through the Amazon Web Services
      * SDKs, you provide the access point ARN in place of the bucket name. For more
@@ -90,9 +96,11 @@ namespace Model
 
     /**
      * <p>The bucket name that contains the object for which to get the ACL
-     * information. </p> <p>When using this action with an access point, you must
-     * direct requests to the access point hostname. The access point hostname takes
-     * the form
+     * information. </p> <p> <b>Access points</b> - When you use this action with an
+     * access point, you must provide the alias of the access point in place of the
+     * bucket name or specify the access point ARN. When using the access point ARN,
+     * you must direct requests to the access point hostname. The access point hostname
+     * takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
      * When using this action with an access point through the Amazon Web Services
      * SDKs, you provide the access point ARN in place of the bucket name. For more
@@ -104,9 +112,11 @@ namespace Model
 
     /**
      * <p>The bucket name that contains the object for which to get the ACL
-     * information. </p> <p>When using this action with an access point, you must
-     * direct requests to the access point hostname. The access point hostname takes
-     * the form
+     * information. </p> <p> <b>Access points</b> - When you use this action with an
+     * access point, you must provide the alias of the access point in place of the
+     * bucket name or specify the access point ARN. When using the access point ARN,
+     * you must direct requests to the access point hostname. The access point hostname
+     * takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
      * When using this action with an access point through the Amazon Web Services
      * SDKs, you provide the access point ARN in place of the bucket name. For more
@@ -118,9 +128,11 @@ namespace Model
 
     /**
      * <p>The bucket name that contains the object for which to get the ACL
-     * information. </p> <p>When using this action with an access point, you must
-     * direct requests to the access point hostname. The access point hostname takes
-     * the form
+     * information. </p> <p> <b>Access points</b> - When you use this action with an
+     * access point, you must provide the alias of the access point in place of the
+     * bucket name or specify the access point ARN. When using the access point ARN,
+     * you must direct requests to the access point hostname. The access point hostname
+     * takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
      * When using this action with an access point through the Amazon Web Services
      * SDKs, you provide the access point ARN in place of the bucket name. For more
@@ -132,9 +144,11 @@ namespace Model
 
     /**
      * <p>The bucket name that contains the object for which to get the ACL
-     * information. </p> <p>When using this action with an access point, you must
-     * direct requests to the access point hostname. The access point hostname takes
-     * the form
+     * information. </p> <p> <b>Access points</b> - When you use this action with an
+     * access point, you must provide the alias of the access point in place of the
+     * bucket name or specify the access point ARN. When using the access point ARN,
+     * you must direct requests to the access point hostname. The access point hostname
+     * takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
      * When using this action with an access point through the Amazon Web Services
      * SDKs, you provide the access point ARN in place of the bucket name. For more
@@ -146,9 +160,11 @@ namespace Model
 
     /**
      * <p>The bucket name that contains the object for which to get the ACL
-     * information. </p> <p>When using this action with an access point, you must
-     * direct requests to the access point hostname. The access point hostname takes
-     * the form
+     * information. </p> <p> <b>Access points</b> - When you use this action with an
+     * access point, you must provide the alias of the access point in place of the
+     * bucket name or specify the access point ARN. When using the access point ARN,
+     * you must direct requests to the access point hostname. The access point hostname
+     * takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
      * When using this action with an access point through the Amazon Web Services
      * SDKs, you provide the access point ARN in place of the bucket name. For more
@@ -201,42 +217,50 @@ namespace Model
 
 
     /**
-     * <p>VersionId used to reference a specific version of the object.</p>
+     * <p>Version ID used to reference a specific version of the object.</p> 
+     * <p>This functionality is not supported for directory buckets.</p> 
      */
     inline const Aws::String& GetVersionId() const{ return m_versionId; }
 
     /**
-     * <p>VersionId used to reference a specific version of the object.</p>
+     * <p>Version ID used to reference a specific version of the object.</p> 
+     * <p>This functionality is not supported for directory buckets.</p> 
      */
     inline bool VersionIdHasBeenSet() const { return m_versionIdHasBeenSet; }
 
     /**
-     * <p>VersionId used to reference a specific version of the object.</p>
+     * <p>Version ID used to reference a specific version of the object.</p> 
+     * <p>This functionality is not supported for directory buckets.</p> 
      */
     inline void SetVersionId(const Aws::String& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
 
     /**
-     * <p>VersionId used to reference a specific version of the object.</p>
+     * <p>Version ID used to reference a specific version of the object.</p> 
+     * <p>This functionality is not supported for directory buckets.</p> 
      */
     inline void SetVersionId(Aws::String&& value) { m_versionIdHasBeenSet = true; m_versionId = std::move(value); }
 
     /**
-     * <p>VersionId used to reference a specific version of the object.</p>
+     * <p>Version ID used to reference a specific version of the object.</p> 
+     * <p>This functionality is not supported for directory buckets.</p> 
      */
     inline void SetVersionId(const char* value) { m_versionIdHasBeenSet = true; m_versionId.assign(value); }
 
     /**
-     * <p>VersionId used to reference a specific version of the object.</p>
+     * <p>Version ID used to reference a specific version of the object.</p> 
+     * <p>This functionality is not supported for directory buckets.</p> 
      */
     inline GetObjectAclRequest& WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
 
     /**
-     * <p>VersionId used to reference a specific version of the object.</p>
+     * <p>Version ID used to reference a specific version of the object.</p> 
+     * <p>This functionality is not supported for directory buckets.</p> 
      */
     inline GetObjectAclRequest& WithVersionId(Aws::String&& value) { SetVersionId(std::move(value)); return *this;}
 
     /**
-     * <p>VersionId used to reference a specific version of the object.</p>
+     * <p>Version ID used to reference a specific version of the object.</p> 
+     * <p>This functionality is not supported for directory buckets.</p> 
      */
     inline GetObjectAclRequest& WithVersionId(const char* value) { SetVersionId(value); return *this;}
 
@@ -261,58 +285,58 @@ namespace Model
 
 
     /**
-     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
-     * different account, the request fails with the HTTP status code <code>403
-     * Forbidden</code> (access denied).</p>
+     * <p>The account ID of the expected bucket owner. If the account ID that you
+     * provide does not match the actual owner of the bucket, the request fails with
+     * the HTTP status code <code>403 Forbidden</code> (access denied).</p>
      */
     inline const Aws::String& GetExpectedBucketOwner() const{ return m_expectedBucketOwner; }
 
     /**
-     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
-     * different account, the request fails with the HTTP status code <code>403
-     * Forbidden</code> (access denied).</p>
+     * <p>The account ID of the expected bucket owner. If the account ID that you
+     * provide does not match the actual owner of the bucket, the request fails with
+     * the HTTP status code <code>403 Forbidden</code> (access denied).</p>
      */
     inline bool ExpectedBucketOwnerHasBeenSet() const { return m_expectedBucketOwnerHasBeenSet; }
 
     /**
-     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
-     * different account, the request fails with the HTTP status code <code>403
-     * Forbidden</code> (access denied).</p>
+     * <p>The account ID of the expected bucket owner. If the account ID that you
+     * provide does not match the actual owner of the bucket, the request fails with
+     * the HTTP status code <code>403 Forbidden</code> (access denied).</p>
      */
     inline void SetExpectedBucketOwner(const Aws::String& value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner = value; }
 
     /**
-     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
-     * different account, the request fails with the HTTP status code <code>403
-     * Forbidden</code> (access denied).</p>
+     * <p>The account ID of the expected bucket owner. If the account ID that you
+     * provide does not match the actual owner of the bucket, the request fails with
+     * the HTTP status code <code>403 Forbidden</code> (access denied).</p>
      */
     inline void SetExpectedBucketOwner(Aws::String&& value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner = std::move(value); }
 
     /**
-     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
-     * different account, the request fails with the HTTP status code <code>403
-     * Forbidden</code> (access denied).</p>
+     * <p>The account ID of the expected bucket owner. If the account ID that you
+     * provide does not match the actual owner of the bucket, the request fails with
+     * the HTTP status code <code>403 Forbidden</code> (access denied).</p>
      */
     inline void SetExpectedBucketOwner(const char* value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner.assign(value); }
 
     /**
-     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
-     * different account, the request fails with the HTTP status code <code>403
-     * Forbidden</code> (access denied).</p>
+     * <p>The account ID of the expected bucket owner. If the account ID that you
+     * provide does not match the actual owner of the bucket, the request fails with
+     * the HTTP status code <code>403 Forbidden</code> (access denied).</p>
      */
     inline GetObjectAclRequest& WithExpectedBucketOwner(const Aws::String& value) { SetExpectedBucketOwner(value); return *this;}
 
     /**
-     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
-     * different account, the request fails with the HTTP status code <code>403
-     * Forbidden</code> (access denied).</p>
+     * <p>The account ID of the expected bucket owner. If the account ID that you
+     * provide does not match the actual owner of the bucket, the request fails with
+     * the HTTP status code <code>403 Forbidden</code> (access denied).</p>
      */
     inline GetObjectAclRequest& WithExpectedBucketOwner(Aws::String&& value) { SetExpectedBucketOwner(std::move(value)); return *this;}
 
     /**
-     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
-     * different account, the request fails with the HTTP status code <code>403
-     * Forbidden</code> (access denied).</p>
+     * <p>The account ID of the expected bucket owner. If the account ID that you
+     * provide does not match the actual owner of the bucket, the request fails with
+     * the HTTP status code <code>403 Forbidden</code> (access denied).</p>
      */
     inline GetObjectAclRequest& WithExpectedBucketOwner(const char* value) { SetExpectedBucketOwner(value); return *this;}
 

@@ -40,47 +40,47 @@ namespace Model
 
 
     /**
-     * <p>The list of regions where Security Lake is enabled.</p>
+     * <p>The list of Regions where Security Lake is enabled.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRegions() const{ return m_regions; }
 
     /**
-     * <p>The list of regions where Security Lake is enabled.</p>
+     * <p>The list of Regions where Security Lake is enabled.</p>
      */
     inline bool RegionsHasBeenSet() const { return m_regionsHasBeenSet; }
 
     /**
-     * <p>The list of regions where Security Lake is enabled.</p>
+     * <p>The list of Regions where Security Lake is enabled.</p>
      */
     inline void SetRegions(const Aws::Vector<Aws::String>& value) { m_regionsHasBeenSet = true; m_regions = value; }
 
     /**
-     * <p>The list of regions where Security Lake is enabled.</p>
+     * <p>The list of Regions where Security Lake is enabled.</p>
      */
     inline void SetRegions(Aws::Vector<Aws::String>&& value) { m_regionsHasBeenSet = true; m_regions = std::move(value); }
 
     /**
-     * <p>The list of regions where Security Lake is enabled.</p>
+     * <p>The list of Regions where Security Lake is enabled.</p>
      */
     inline ListDataLakesRequest& WithRegions(const Aws::Vector<Aws::String>& value) { SetRegions(value); return *this;}
 
     /**
-     * <p>The list of regions where Security Lake is enabled.</p>
+     * <p>The list of Regions where Security Lake is enabled.</p>
      */
     inline ListDataLakesRequest& WithRegions(Aws::Vector<Aws::String>&& value) { SetRegions(std::move(value)); return *this;}
 
     /**
-     * <p>The list of regions where Security Lake is enabled.</p>
+     * <p>The list of Regions where Security Lake is enabled.</p>
      */
     inline ListDataLakesRequest& AddRegions(const Aws::String& value) { m_regionsHasBeenSet = true; m_regions.push_back(value); return *this; }
 
     /**
-     * <p>The list of regions where Security Lake is enabled.</p>
+     * <p>The list of Regions where Security Lake is enabled.</p>
      */
     inline ListDataLakesRequest& AddRegions(Aws::String&& value) { m_regionsHasBeenSet = true; m_regions.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The list of regions where Security Lake is enabled.</p>
+     * <p>The list of Regions where Security Lake is enabled.</p>
      */
     inline ListDataLakesRequest& AddRegions(const char* value) { m_regionsHasBeenSet = true; m_regions.push_back(value); return *this; }
 

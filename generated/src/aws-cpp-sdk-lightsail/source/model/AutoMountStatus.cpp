@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AutoMountStatus::NOT_SET:
+            return {};
           case AutoMountStatus::Failed:
             return "Failed";
           case AutoMountStatus::Pending:

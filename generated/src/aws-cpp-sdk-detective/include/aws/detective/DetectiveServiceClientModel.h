@@ -24,13 +24,17 @@
 #include <aws/detective/model/CreateMembersResult.h>
 #include <aws/detective/model/DeleteMembersResult.h>
 #include <aws/detective/model/DescribeOrganizationConfigurationResult.h>
+#include <aws/detective/model/GetInvestigationResult.h>
 #include <aws/detective/model/GetMembersResult.h>
 #include <aws/detective/model/ListDatasourcePackagesResult.h>
 #include <aws/detective/model/ListGraphsResult.h>
+#include <aws/detective/model/ListIndicatorsResult.h>
+#include <aws/detective/model/ListInvestigationsResult.h>
 #include <aws/detective/model/ListInvitationsResult.h>
 #include <aws/detective/model/ListMembersResult.h>
 #include <aws/detective/model/ListOrganizationAdminAccountsResult.h>
 #include <aws/detective/model/ListTagsForResourceResult.h>
+#include <aws/detective/model/StartInvestigationResult.h>
 #include <aws/detective/model/TagResourceResult.h>
 #include <aws/detective/model/UntagResourceResult.h>
 #include <aws/core/NoResult.h>
@@ -82,20 +86,26 @@ namespace Aws
       class DeleteGraphRequest;
       class DeleteMembersRequest;
       class DescribeOrganizationConfigurationRequest;
+      class DisableOrganizationAdminAccountRequest;
       class DisassociateMembershipRequest;
       class EnableOrganizationAdminAccountRequest;
+      class GetInvestigationRequest;
       class GetMembersRequest;
       class ListDatasourcePackagesRequest;
       class ListGraphsRequest;
+      class ListIndicatorsRequest;
+      class ListInvestigationsRequest;
       class ListInvitationsRequest;
       class ListMembersRequest;
       class ListOrganizationAdminAccountsRequest;
       class ListTagsForResourceRequest;
       class RejectInvitationRequest;
+      class StartInvestigationRequest;
       class StartMonitoringMemberRequest;
       class TagResourceRequest;
       class UntagResourceRequest;
       class UpdateDatasourcePackagesRequest;
+      class UpdateInvestigationStateRequest;
       class UpdateOrganizationConfigurationRequest;
       /* End of service model forward declarations required in DetectiveClient header */
 
@@ -111,18 +121,23 @@ namespace Aws
       typedef Aws::Utils::Outcome<Aws::NoResult, DetectiveError> DisableOrganizationAdminAccountOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, DetectiveError> DisassociateMembershipOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, DetectiveError> EnableOrganizationAdminAccountOutcome;
+      typedef Aws::Utils::Outcome<GetInvestigationResult, DetectiveError> GetInvestigationOutcome;
       typedef Aws::Utils::Outcome<GetMembersResult, DetectiveError> GetMembersOutcome;
       typedef Aws::Utils::Outcome<ListDatasourcePackagesResult, DetectiveError> ListDatasourcePackagesOutcome;
       typedef Aws::Utils::Outcome<ListGraphsResult, DetectiveError> ListGraphsOutcome;
+      typedef Aws::Utils::Outcome<ListIndicatorsResult, DetectiveError> ListIndicatorsOutcome;
+      typedef Aws::Utils::Outcome<ListInvestigationsResult, DetectiveError> ListInvestigationsOutcome;
       typedef Aws::Utils::Outcome<ListInvitationsResult, DetectiveError> ListInvitationsOutcome;
       typedef Aws::Utils::Outcome<ListMembersResult, DetectiveError> ListMembersOutcome;
       typedef Aws::Utils::Outcome<ListOrganizationAdminAccountsResult, DetectiveError> ListOrganizationAdminAccountsOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, DetectiveError> ListTagsForResourceOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, DetectiveError> RejectInvitationOutcome;
+      typedef Aws::Utils::Outcome<StartInvestigationResult, DetectiveError> StartInvestigationOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, DetectiveError> StartMonitoringMemberOutcome;
       typedef Aws::Utils::Outcome<TagResourceResult, DetectiveError> TagResourceOutcome;
       typedef Aws::Utils::Outcome<UntagResourceResult, DetectiveError> UntagResourceOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, DetectiveError> UpdateDatasourcePackagesOutcome;
+      typedef Aws::Utils::Outcome<Aws::NoResult, DetectiveError> UpdateInvestigationStateOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, DetectiveError> UpdateOrganizationConfigurationOutcome;
       /* End of service model Outcome class definitions */
 
@@ -138,18 +153,23 @@ namespace Aws
       typedef std::future<DisableOrganizationAdminAccountOutcome> DisableOrganizationAdminAccountOutcomeCallable;
       typedef std::future<DisassociateMembershipOutcome> DisassociateMembershipOutcomeCallable;
       typedef std::future<EnableOrganizationAdminAccountOutcome> EnableOrganizationAdminAccountOutcomeCallable;
+      typedef std::future<GetInvestigationOutcome> GetInvestigationOutcomeCallable;
       typedef std::future<GetMembersOutcome> GetMembersOutcomeCallable;
       typedef std::future<ListDatasourcePackagesOutcome> ListDatasourcePackagesOutcomeCallable;
       typedef std::future<ListGraphsOutcome> ListGraphsOutcomeCallable;
+      typedef std::future<ListIndicatorsOutcome> ListIndicatorsOutcomeCallable;
+      typedef std::future<ListInvestigationsOutcome> ListInvestigationsOutcomeCallable;
       typedef std::future<ListInvitationsOutcome> ListInvitationsOutcomeCallable;
       typedef std::future<ListMembersOutcome> ListMembersOutcomeCallable;
       typedef std::future<ListOrganizationAdminAccountsOutcome> ListOrganizationAdminAccountsOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
       typedef std::future<RejectInvitationOutcome> RejectInvitationOutcomeCallable;
+      typedef std::future<StartInvestigationOutcome> StartInvestigationOutcomeCallable;
       typedef std::future<StartMonitoringMemberOutcome> StartMonitoringMemberOutcomeCallable;
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
       typedef std::future<UpdateDatasourcePackagesOutcome> UpdateDatasourcePackagesOutcomeCallable;
+      typedef std::future<UpdateInvestigationStateOutcome> UpdateInvestigationStateOutcomeCallable;
       typedef std::future<UpdateOrganizationConfigurationOutcome> UpdateOrganizationConfigurationOutcomeCallable;
       /* End of service model Outcome callable definitions */
     } // namespace Model
@@ -165,21 +185,26 @@ namespace Aws
     typedef std::function<void(const DetectiveClient*, const Model::DeleteGraphRequest&, const Model::DeleteGraphOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteGraphResponseReceivedHandler;
     typedef std::function<void(const DetectiveClient*, const Model::DeleteMembersRequest&, const Model::DeleteMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteMembersResponseReceivedHandler;
     typedef std::function<void(const DetectiveClient*, const Model::DescribeOrganizationConfigurationRequest&, const Model::DescribeOrganizationConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeOrganizationConfigurationResponseReceivedHandler;
-    typedef std::function<void(const DetectiveClient*, const Model::DisableOrganizationAdminAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableOrganizationAdminAccountResponseReceivedHandler;
+    typedef std::function<void(const DetectiveClient*, const Model::DisableOrganizationAdminAccountRequest&, const Model::DisableOrganizationAdminAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableOrganizationAdminAccountResponseReceivedHandler;
     typedef std::function<void(const DetectiveClient*, const Model::DisassociateMembershipRequest&, const Model::DisassociateMembershipOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateMembershipResponseReceivedHandler;
     typedef std::function<void(const DetectiveClient*, const Model::EnableOrganizationAdminAccountRequest&, const Model::EnableOrganizationAdminAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableOrganizationAdminAccountResponseReceivedHandler;
+    typedef std::function<void(const DetectiveClient*, const Model::GetInvestigationRequest&, const Model::GetInvestigationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetInvestigationResponseReceivedHandler;
     typedef std::function<void(const DetectiveClient*, const Model::GetMembersRequest&, const Model::GetMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMembersResponseReceivedHandler;
     typedef std::function<void(const DetectiveClient*, const Model::ListDatasourcePackagesRequest&, const Model::ListDatasourcePackagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDatasourcePackagesResponseReceivedHandler;
     typedef std::function<void(const DetectiveClient*, const Model::ListGraphsRequest&, const Model::ListGraphsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListGraphsResponseReceivedHandler;
+    typedef std::function<void(const DetectiveClient*, const Model::ListIndicatorsRequest&, const Model::ListIndicatorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListIndicatorsResponseReceivedHandler;
+    typedef std::function<void(const DetectiveClient*, const Model::ListInvestigationsRequest&, const Model::ListInvestigationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListInvestigationsResponseReceivedHandler;
     typedef std::function<void(const DetectiveClient*, const Model::ListInvitationsRequest&, const Model::ListInvitationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListInvitationsResponseReceivedHandler;
     typedef std::function<void(const DetectiveClient*, const Model::ListMembersRequest&, const Model::ListMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMembersResponseReceivedHandler;
     typedef std::function<void(const DetectiveClient*, const Model::ListOrganizationAdminAccountsRequest&, const Model::ListOrganizationAdminAccountsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListOrganizationAdminAccountsResponseReceivedHandler;
     typedef std::function<void(const DetectiveClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const DetectiveClient*, const Model::RejectInvitationRequest&, const Model::RejectInvitationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RejectInvitationResponseReceivedHandler;
+    typedef std::function<void(const DetectiveClient*, const Model::StartInvestigationRequest&, const Model::StartInvestigationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartInvestigationResponseReceivedHandler;
     typedef std::function<void(const DetectiveClient*, const Model::StartMonitoringMemberRequest&, const Model::StartMonitoringMemberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartMonitoringMemberResponseReceivedHandler;
     typedef std::function<void(const DetectiveClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const DetectiveClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const DetectiveClient*, const Model::UpdateDatasourcePackagesRequest&, const Model::UpdateDatasourcePackagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDatasourcePackagesResponseReceivedHandler;
+    typedef std::function<void(const DetectiveClient*, const Model::UpdateInvestigationStateRequest&, const Model::UpdateInvestigationStateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateInvestigationStateResponseReceivedHandler;
     typedef std::function<void(const DetectiveClient*, const Model::UpdateOrganizationConfigurationRequest&, const Model::UpdateOrganizationConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateOrganizationConfigurationResponseReceivedHandler;
     /* End of service model async handlers definitions */
   } // namespace Detective

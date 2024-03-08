@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ImportFilterName::NOT_SET:
+            return {};
           case ImportFilterName::ImportResourceType:
             return "ImportResourceType";
           default:

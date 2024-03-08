@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Profile::NOT_SET:
+            return {};
           case Profile::NONE:
             return "NONE";
           case Profile::HBBTV_1_5:

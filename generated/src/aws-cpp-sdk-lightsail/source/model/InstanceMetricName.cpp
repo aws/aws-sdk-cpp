@@ -84,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InstanceMetricName::NOT_SET:
+            return {};
           case InstanceMetricName::CPUUtilization:
             return "CPUUtilization";
           case InstanceMetricName::NetworkIn:

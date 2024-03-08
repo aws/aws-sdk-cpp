@@ -21,7 +21,10 @@ namespace Model
     PINPOINT_APP,
     WISDOM_ASSISTANT,
     WISDOM_KNOWLEDGE_BASE,
-    CASES_DOMAIN
+    WISDOM_QUICK_RESPONSES,
+    CASES_DOMAIN,
+    APPLICATION,
+    FILE_SCANNER
   };
 
 namespace IntegrationTypeMapper

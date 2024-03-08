@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ServicePrincipalNameStatus::NOT_SET:
+            return {};
           case ServicePrincipalNameStatus::CREATING:
             return "CREATING";
           case ServicePrincipalNameStatus::ACTIVE:

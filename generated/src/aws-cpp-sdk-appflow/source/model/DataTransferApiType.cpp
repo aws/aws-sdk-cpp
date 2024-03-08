@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DataTransferApiType::NOT_SET:
+            return {};
           case DataTransferApiType::SYNC:
             return "SYNC";
           case DataTransferApiType::ASYNC:

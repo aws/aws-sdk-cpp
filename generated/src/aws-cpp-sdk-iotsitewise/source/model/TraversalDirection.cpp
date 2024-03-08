@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TraversalDirection::NOT_SET:
+            return {};
           case TraversalDirection::PARENT:
             return "PARENT";
           case TraversalDirection::CHILD:

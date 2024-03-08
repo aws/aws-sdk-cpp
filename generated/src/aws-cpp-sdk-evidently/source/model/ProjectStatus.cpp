@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ProjectStatus::NOT_SET:
+            return {};
           case ProjectStatus::AVAILABLE:
             return "AVAILABLE";
           case ProjectStatus::UPDATING:

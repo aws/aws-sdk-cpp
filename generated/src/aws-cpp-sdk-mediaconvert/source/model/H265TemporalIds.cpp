@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case H265TemporalIds::NOT_SET:
+            return {};
           case H265TemporalIds::DISABLED:
             return "DISABLED";
           case H265TemporalIds::ENABLED:

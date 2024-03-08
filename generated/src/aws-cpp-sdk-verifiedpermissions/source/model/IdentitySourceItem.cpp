@@ -20,21 +20,21 @@ namespace Model
 
 IdentitySourceItem::IdentitySourceItem() : 
     m_createdDateHasBeenSet(false),
-    m_detailsHasBeenSet(false),
     m_identitySourceIdHasBeenSet(false),
     m_lastUpdatedDateHasBeenSet(false),
     m_policyStoreIdHasBeenSet(false),
-    m_principalEntityTypeHasBeenSet(false)
+    m_principalEntityTypeHasBeenSet(false),
+    m_configurationHasBeenSet(false)
 {
 }
 
 IdentitySourceItem::IdentitySourceItem(JsonView jsonValue) : 
     m_createdDateHasBeenSet(false),
-    m_detailsHasBeenSet(false),
     m_identitySourceIdHasBeenSet(false),
     m_lastUpdatedDateHasBeenSet(false),
     m_policyStoreIdHasBeenSet(false),
-    m_principalEntityTypeHasBeenSet(false)
+    m_principalEntityTypeHasBeenSet(false),
+    m_configurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -46,13 +46,6 @@ IdentitySourceItem& IdentitySourceItem::operator =(JsonView jsonValue)
     m_createdDate = jsonValue.GetString("createdDate");
 
     m_createdDateHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("details"))
-  {
-    m_details = jsonValue.GetObject("details");
-
-    m_detailsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("identitySourceId"))
@@ -83,6 +76,13 @@ IdentitySourceItem& IdentitySourceItem::operator =(JsonView jsonValue)
     m_principalEntityTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("configuration"))
+  {
+    m_configuration = jsonValue.GetObject("configuration");
+
+    m_configurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -93,12 +93,6 @@ JsonValue IdentitySourceItem::Jsonize() const
   if(m_createdDateHasBeenSet)
   {
    payload.WithString("createdDate", m_createdDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
-  if(m_detailsHasBeenSet)
-  {
-   payload.WithObject("details", m_details.Jsonize());
-
   }
 
   if(m_identitySourceIdHasBeenSet)
@@ -121,6 +115,12 @@ JsonValue IdentitySourceItem::Jsonize() const
   if(m_principalEntityTypeHasBeenSet)
   {
    payload.WithString("principalEntityType", m_principalEntityType);
+
+  }
+
+  if(m_configurationHasBeenSet)
+  {
+   payload.WithObject("configuration", m_configuration.Jsonize());
 
   }
 

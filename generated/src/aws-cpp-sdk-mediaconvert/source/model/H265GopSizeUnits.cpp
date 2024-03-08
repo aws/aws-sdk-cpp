@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case H265GopSizeUnits::NOT_SET:
+            return {};
           case H265GopSizeUnits::FRAMES:
             return "FRAMES";
           case H265GopSizeUnits::SECONDS:

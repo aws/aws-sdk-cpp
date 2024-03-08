@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResourceMapComparison::NOT_SET:
+            return {};
           case ResourceMapComparison::EQUALS:
             return "EQUALS";
           default:

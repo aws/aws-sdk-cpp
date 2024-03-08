@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InputDeviceState::NOT_SET:
+            return {};
           case InputDeviceState::IDLE:
             return "IDLE";
           case InputDeviceState::STREAMING:

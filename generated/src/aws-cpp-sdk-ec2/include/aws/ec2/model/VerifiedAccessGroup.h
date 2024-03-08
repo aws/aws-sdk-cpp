@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/model/VerifiedAccessSseSpecificationResponse.h>
 #include <aws/ec2/model/Tag.h>
 #include <utility>
 
@@ -409,6 +410,37 @@ namespace Model
      */
     inline VerifiedAccessGroup& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The options in use for server side encryption.</p>
+     */
+    inline const VerifiedAccessSseSpecificationResponse& GetSseSpecification() const{ return m_sseSpecification; }
+
+    /**
+     * <p>The options in use for server side encryption.</p>
+     */
+    inline bool SseSpecificationHasBeenSet() const { return m_sseSpecificationHasBeenSet; }
+
+    /**
+     * <p>The options in use for server side encryption.</p>
+     */
+    inline void SetSseSpecification(const VerifiedAccessSseSpecificationResponse& value) { m_sseSpecificationHasBeenSet = true; m_sseSpecification = value; }
+
+    /**
+     * <p>The options in use for server side encryption.</p>
+     */
+    inline void SetSseSpecification(VerifiedAccessSseSpecificationResponse&& value) { m_sseSpecificationHasBeenSet = true; m_sseSpecification = std::move(value); }
+
+    /**
+     * <p>The options in use for server side encryption.</p>
+     */
+    inline VerifiedAccessGroup& WithSseSpecification(const VerifiedAccessSseSpecificationResponse& value) { SetSseSpecification(value); return *this;}
+
+    /**
+     * <p>The options in use for server side encryption.</p>
+     */
+    inline VerifiedAccessGroup& WithSseSpecification(VerifiedAccessSseSpecificationResponse&& value) { SetSseSpecification(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_verifiedAccessGroupId;
@@ -437,6 +469,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    VerifiedAccessSseSpecificationResponse m_sseSpecification;
+    bool m_sseSpecificationHasBeenSet = false;
   };
 
 } // namespace Model

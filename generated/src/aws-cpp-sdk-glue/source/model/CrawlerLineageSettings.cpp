@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CrawlerLineageSettings::NOT_SET:
+            return {};
           case CrawlerLineageSettings::ENABLE:
             return "ENABLE";
           case CrawlerLineageSettings::DISABLE:

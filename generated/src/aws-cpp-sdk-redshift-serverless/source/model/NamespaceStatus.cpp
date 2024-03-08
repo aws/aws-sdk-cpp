@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NamespaceStatus::NOT_SET:
+            return {};
           case NamespaceStatus::AVAILABLE:
             return "AVAILABLE";
           case NamespaceStatus::MODIFYING:

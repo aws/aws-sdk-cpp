@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TagResourceType::NOT_SET:
+            return {};
           case TagResourceType::healthcheck:
             return "healthcheck";
           case TagResourceType::hostedzone:

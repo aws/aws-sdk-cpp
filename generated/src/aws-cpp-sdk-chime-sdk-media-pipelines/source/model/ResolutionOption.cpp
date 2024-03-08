@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResolutionOption::NOT_SET:
+            return {};
           case ResolutionOption::HD:
             return "HD";
           case ResolutionOption::FHD:

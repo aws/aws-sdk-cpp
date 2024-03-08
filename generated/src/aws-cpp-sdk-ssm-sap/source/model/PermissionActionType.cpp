@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PermissionActionType::NOT_SET:
+            return {};
           case PermissionActionType::RESTORE:
             return "RESTORE";
           default:

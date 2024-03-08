@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ConfigurationEventResourceType::NOT_SET:
+            return {};
           case ConfigurationEventResourceType::CLOUDWATCH_ALARM:
             return "CLOUDWATCH_ALARM";
           case ConfigurationEventResourceType::CLOUDWATCH_LOG:

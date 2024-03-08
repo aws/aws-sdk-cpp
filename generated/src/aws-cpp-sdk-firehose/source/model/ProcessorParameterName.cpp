@@ -29,6 +29,8 @@ namespace Aws
         static const int BufferIntervalInSeconds_HASH = HashingUtils::HashString("BufferIntervalInSeconds");
         static const int SubRecordType_HASH = HashingUtils::HashString("SubRecordType");
         static const int Delimiter_HASH = HashingUtils::HashString("Delimiter");
+        static const int CompressionFormat_HASH = HashingUtils::HashString("CompressionFormat");
+        static const int DataMessageExtraction_HASH = HashingUtils::HashString("DataMessageExtraction");
 
 
         ProcessorParameterName GetProcessorParameterNameForName(const Aws::String& name)
@@ -70,6 +72,14 @@ namespace Aws
           {
             return ProcessorParameterName::Delimiter;
           }
+          else if (hashCode == CompressionFormat_HASH)
+          {
+            return ProcessorParameterName::CompressionFormat;
+          }
+          else if (hashCode == DataMessageExtraction_HASH)
+          {
+            return ProcessorParameterName::DataMessageExtraction;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -84,6 +94,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ProcessorParameterName::NOT_SET:
+            return {};
           case ProcessorParameterName::LambdaArn:
             return "LambdaArn";
           case ProcessorParameterName::NumberOfRetries:
@@ -102,6 +114,10 @@ namespace Aws
             return "SubRecordType";
           case ProcessorParameterName::Delimiter:
             return "Delimiter";
+          case ProcessorParameterName::CompressionFormat:
+            return "CompressionFormat";
+          case ProcessorParameterName::DataMessageExtraction:
+            return "DataMessageExtraction";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

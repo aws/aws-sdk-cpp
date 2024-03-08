@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MetadataOperation::NOT_SET:
+            return {};
           case MetadataOperation::CREATE:
             return "CREATE";
           default:

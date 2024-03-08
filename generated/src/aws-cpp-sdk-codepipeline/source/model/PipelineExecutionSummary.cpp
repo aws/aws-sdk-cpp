@@ -26,7 +26,9 @@ PipelineExecutionSummary::PipelineExecutionSummary() :
     m_lastUpdateTimeHasBeenSet(false),
     m_sourceRevisionsHasBeenSet(false),
     m_triggerHasBeenSet(false),
-    m_stopTriggerHasBeenSet(false)
+    m_stopTriggerHasBeenSet(false),
+    m_executionMode(ExecutionMode::NOT_SET),
+    m_executionModeHasBeenSet(false)
 {
 }
 
@@ -38,7 +40,9 @@ PipelineExecutionSummary::PipelineExecutionSummary(JsonView jsonValue) :
     m_lastUpdateTimeHasBeenSet(false),
     m_sourceRevisionsHasBeenSet(false),
     m_triggerHasBeenSet(false),
-    m_stopTriggerHasBeenSet(false)
+    m_stopTriggerHasBeenSet(false),
+    m_executionMode(ExecutionMode::NOT_SET),
+    m_executionModeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -97,6 +101,13 @@ PipelineExecutionSummary& PipelineExecutionSummary::operator =(JsonView jsonValu
     m_stopTriggerHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("executionMode"))
+  {
+    m_executionMode = ExecutionModeMapper::GetExecutionModeForName(jsonValue.GetString("executionMode"));
+
+    m_executionModeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -146,6 +157,11 @@ JsonValue PipelineExecutionSummary::Jsonize() const
   {
    payload.WithObject("stopTrigger", m_stopTrigger.Jsonize());
 
+  }
+
+  if(m_executionModeHasBeenSet)
+  {
+   payload.WithString("executionMode", ExecutionModeMapper::GetNameForExecutionMode(m_executionMode));
   }
 
   return payload;

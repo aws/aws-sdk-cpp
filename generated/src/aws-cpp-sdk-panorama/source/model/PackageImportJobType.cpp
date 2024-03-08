@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PackageImportJobType::NOT_SET:
+            return {};
           case PackageImportJobType::NODE_PACKAGE_VERSION:
             return "NODE_PACKAGE_VERSION";
           case PackageImportJobType::MARKETPLACE_NODE_PACKAGE_VERSION:

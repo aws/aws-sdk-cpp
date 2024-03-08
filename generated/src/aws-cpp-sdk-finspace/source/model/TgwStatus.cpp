@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TgwStatus::NOT_SET:
+            return {};
           case TgwStatus::NONE:
             return "NONE";
           case TgwStatus::UPDATE_REQUESTED:

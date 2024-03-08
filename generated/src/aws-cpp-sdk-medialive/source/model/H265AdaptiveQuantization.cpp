@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case H265AdaptiveQuantization::NOT_SET:
+            return {};
           case H265AdaptiveQuantization::AUTO:
             return "AUTO";
           case H265AdaptiveQuantization::HIGH:

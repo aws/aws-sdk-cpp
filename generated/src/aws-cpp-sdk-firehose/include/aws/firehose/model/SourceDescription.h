@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/firehose/Firehose_EXPORTS.h>
 #include <aws/firehose/model/KinesisStreamSourceDescription.h>
+#include <aws/firehose/model/MSKSourceDescription.h>
 #include <utility>
 
 namespace Aws
@@ -24,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Details about a Kinesis data stream used as the source for a Kinesis Data
-   * Firehose delivery stream.</p><p><h3>See Also:</h3>   <a
+   * <p>Details about a Kinesis data stream used as the source for a Firehose
+   * delivery stream.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/SourceDescription">AWS
    * API Reference</a></p>
    */
@@ -74,10 +75,50 @@ namespace Model
      */
     inline SourceDescription& WithKinesisStreamSourceDescription(KinesisStreamSourceDescription&& value) { SetKinesisStreamSourceDescription(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The configuration description for the Amazon MSK cluster to be used as the
+     * source for a delivery stream.</p>
+     */
+    inline const MSKSourceDescription& GetMSKSourceDescription() const{ return m_mSKSourceDescription; }
+
+    /**
+     * <p>The configuration description for the Amazon MSK cluster to be used as the
+     * source for a delivery stream.</p>
+     */
+    inline bool MSKSourceDescriptionHasBeenSet() const { return m_mSKSourceDescriptionHasBeenSet; }
+
+    /**
+     * <p>The configuration description for the Amazon MSK cluster to be used as the
+     * source for a delivery stream.</p>
+     */
+    inline void SetMSKSourceDescription(const MSKSourceDescription& value) { m_mSKSourceDescriptionHasBeenSet = true; m_mSKSourceDescription = value; }
+
+    /**
+     * <p>The configuration description for the Amazon MSK cluster to be used as the
+     * source for a delivery stream.</p>
+     */
+    inline void SetMSKSourceDescription(MSKSourceDescription&& value) { m_mSKSourceDescriptionHasBeenSet = true; m_mSKSourceDescription = std::move(value); }
+
+    /**
+     * <p>The configuration description for the Amazon MSK cluster to be used as the
+     * source for a delivery stream.</p>
+     */
+    inline SourceDescription& WithMSKSourceDescription(const MSKSourceDescription& value) { SetMSKSourceDescription(value); return *this;}
+
+    /**
+     * <p>The configuration description for the Amazon MSK cluster to be used as the
+     * source for a delivery stream.</p>
+     */
+    inline SourceDescription& WithMSKSourceDescription(MSKSourceDescription&& value) { SetMSKSourceDescription(std::move(value)); return *this;}
+
   private:
 
     KinesisStreamSourceDescription m_kinesisStreamSourceDescription;
     bool m_kinesisStreamSourceDescriptionHasBeenSet = false;
+
+    MSKSourceDescription m_mSKSourceDescription;
+    bool m_mSKSourceDescriptionHasBeenSet = false;
   };
 
 } // namespace Model

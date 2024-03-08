@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ShardIteratorType::NOT_SET:
+            return {};
           case ShardIteratorType::TRIM_HORIZON:
             return "TRIM_HORIZON";
           case ShardIteratorType::LATEST:

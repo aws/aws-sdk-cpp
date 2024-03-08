@@ -86,32 +86,32 @@ namespace Model
 
 
     /**
-     * <p>The state of the routing control. You can set the value to be On or Off.</p>
+     * <p>The state of the routing control. You can set the value to ON or OFF.</p>
      */
     inline const RoutingControlState& GetRoutingControlState() const{ return m_routingControlState; }
 
     /**
-     * <p>The state of the routing control. You can set the value to be On or Off.</p>
+     * <p>The state of the routing control. You can set the value to ON or OFF.</p>
      */
     inline bool RoutingControlStateHasBeenSet() const { return m_routingControlStateHasBeenSet; }
 
     /**
-     * <p>The state of the routing control. You can set the value to be On or Off.</p>
+     * <p>The state of the routing control. You can set the value to ON or OFF.</p>
      */
     inline void SetRoutingControlState(const RoutingControlState& value) { m_routingControlStateHasBeenSet = true; m_routingControlState = value; }
 
     /**
-     * <p>The state of the routing control. You can set the value to be On or Off.</p>
+     * <p>The state of the routing control. You can set the value to ON or OFF.</p>
      */
     inline void SetRoutingControlState(RoutingControlState&& value) { m_routingControlStateHasBeenSet = true; m_routingControlState = std::move(value); }
 
     /**
-     * <p>The state of the routing control. You can set the value to be On or Off.</p>
+     * <p>The state of the routing control. You can set the value to ON or OFF.</p>
      */
     inline UpdateRoutingControlStateRequest& WithRoutingControlState(const RoutingControlState& value) { SetRoutingControlState(value); return *this;}
 
     /**
-     * <p>The state of the routing control. You can set the value to be On or Off.</p>
+     * <p>The state of the routing control. You can set the value to ON or OFF.</p>
      */
     inline UpdateRoutingControlStateRequest& WithRoutingControlState(RoutingControlState&& value) { SetRoutingControlState(std::move(value)); return *this;}
 

@@ -94,6 +94,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AnomalyDetectorStatus::NOT_SET:
+            return {};
           case AnomalyDetectorStatus::ACTIVE:
             return "ACTIVE";
           case AnomalyDetectorStatus::ACTIVATING:

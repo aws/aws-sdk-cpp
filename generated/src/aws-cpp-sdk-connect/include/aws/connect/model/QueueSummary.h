@@ -7,6 +7,7 @@
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/connect/model/QueueType.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -191,6 +192,78 @@ namespace Model
      */
     inline QueueSummary& WithQueueType(QueueType&& value) { SetQueueType(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The timestamp when this resource was last modified.</p>
+     */
+    inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
+
+    /**
+     * <p>The timestamp when this resource was last modified.</p>
+     */
+    inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }
+
+    /**
+     * <p>The timestamp when this resource was last modified.</p>
+     */
+    inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = value; }
+
+    /**
+     * <p>The timestamp when this resource was last modified.</p>
+     */
+    inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::move(value); }
+
+    /**
+     * <p>The timestamp when this resource was last modified.</p>
+     */
+    inline QueueSummary& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
+
+    /**
+     * <p>The timestamp when this resource was last modified.</p>
+     */
+    inline QueueSummary& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The Amazon Web Services Region where this resource was last modified.</p>
+     */
+    inline const Aws::String& GetLastModifiedRegion() const{ return m_lastModifiedRegion; }
+
+    /**
+     * <p>The Amazon Web Services Region where this resource was last modified.</p>
+     */
+    inline bool LastModifiedRegionHasBeenSet() const { return m_lastModifiedRegionHasBeenSet; }
+
+    /**
+     * <p>The Amazon Web Services Region where this resource was last modified.</p>
+     */
+    inline void SetLastModifiedRegion(const Aws::String& value) { m_lastModifiedRegionHasBeenSet = true; m_lastModifiedRegion = value; }
+
+    /**
+     * <p>The Amazon Web Services Region where this resource was last modified.</p>
+     */
+    inline void SetLastModifiedRegion(Aws::String&& value) { m_lastModifiedRegionHasBeenSet = true; m_lastModifiedRegion = std::move(value); }
+
+    /**
+     * <p>The Amazon Web Services Region where this resource was last modified.</p>
+     */
+    inline void SetLastModifiedRegion(const char* value) { m_lastModifiedRegionHasBeenSet = true; m_lastModifiedRegion.assign(value); }
+
+    /**
+     * <p>The Amazon Web Services Region where this resource was last modified.</p>
+     */
+    inline QueueSummary& WithLastModifiedRegion(const Aws::String& value) { SetLastModifiedRegion(value); return *this;}
+
+    /**
+     * <p>The Amazon Web Services Region where this resource was last modified.</p>
+     */
+    inline QueueSummary& WithLastModifiedRegion(Aws::String&& value) { SetLastModifiedRegion(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Web Services Region where this resource was last modified.</p>
+     */
+    inline QueueSummary& WithLastModifiedRegion(const char* value) { SetLastModifiedRegion(value); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -204,6 +277,12 @@ namespace Model
 
     QueueType m_queueType;
     bool m_queueTypeHasBeenSet = false;
+
+    Aws::Utils::DateTime m_lastModifiedTime;
+    bool m_lastModifiedTimeHasBeenSet = false;
+
+    Aws::String m_lastModifiedRegion;
+    bool m_lastModifiedRegionHasBeenSet = false;
   };
 
 } // namespace Model

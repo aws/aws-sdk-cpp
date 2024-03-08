@@ -55,7 +55,8 @@ AutomationExecution::AutomationExecution() :
     m_runbooksHasBeenSet(false),
     m_opsItemIdHasBeenSet(false),
     m_associationIdHasBeenSet(false),
-    m_changeRequestNameHasBeenSet(false)
+    m_changeRequestNameHasBeenSet(false),
+    m_variablesHasBeenSet(false)
 {
 }
 
@@ -96,7 +97,8 @@ AutomationExecution::AutomationExecution(JsonView jsonValue) :
     m_runbooksHasBeenSet(false),
     m_opsItemIdHasBeenSet(false),
     m_associationIdHasBeenSet(false),
-    m_changeRequestNameHasBeenSet(false)
+    m_changeRequestNameHasBeenSet(false),
+    m_variablesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -385,6 +387,23 @@ AutomationExecution& AutomationExecution::operator =(JsonView jsonValue)
     m_changeRequestNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Variables"))
+  {
+    Aws::Map<Aws::String, JsonView> variablesJsonMap = jsonValue.GetObject("Variables").GetAllObjects();
+    for(auto& variablesItem : variablesJsonMap)
+    {
+      Aws::Utils::Array<JsonView> automationParameterValueListJsonList = variablesItem.second.AsArray();
+      Aws::Vector<Aws::String> automationParameterValueListList;
+      automationParameterValueListList.reserve((size_t)automationParameterValueListJsonList.GetLength());
+      for(unsigned automationParameterValueListIndex = 0; automationParameterValueListIndex < automationParameterValueListJsonList.GetLength(); ++automationParameterValueListIndex)
+      {
+        automationParameterValueListList.push_back(automationParameterValueListJsonList[automationParameterValueListIndex].AsString());
+      }
+      m_variables[variablesItem.first] = std::move(automationParameterValueListList);
+    }
+    m_variablesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -641,6 +660,22 @@ JsonValue AutomationExecution::Jsonize() const
   if(m_changeRequestNameHasBeenSet)
   {
    payload.WithString("ChangeRequestName", m_changeRequestName);
+
+  }
+
+  if(m_variablesHasBeenSet)
+  {
+   JsonValue variablesJsonMap;
+   for(auto& variablesItem : m_variables)
+   {
+     Aws::Utils::Array<JsonValue> automationParameterValueListJsonList(variablesItem.second.size());
+     for(unsigned automationParameterValueListIndex = 0; automationParameterValueListIndex < automationParameterValueListJsonList.GetLength(); ++automationParameterValueListIndex)
+     {
+       automationParameterValueListJsonList[automationParameterValueListIndex].AsString(variablesItem.second[automationParameterValueListIndex]);
+     }
+     variablesJsonMap.WithArray(variablesItem.first, std::move(automationParameterValueListJsonList));
+   }
+   payload.WithObject("Variables", std::move(variablesJsonMap));
 
   }
 

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AttackLayer::NOT_SET:
+            return {};
           case AttackLayer::NETWORK:
             return "NETWORK";
           case AttackLayer::APPLICATION:

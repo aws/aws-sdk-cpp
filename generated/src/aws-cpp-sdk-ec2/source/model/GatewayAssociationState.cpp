@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case GatewayAssociationState::NOT_SET:
+            return {};
           case GatewayAssociationState::associated:
             return "associated";
           case GatewayAssociationState::not_associated:

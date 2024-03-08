@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResolverDNSSECValidationStatus::NOT_SET:
+            return {};
           case ResolverDNSSECValidationStatus::ENABLING:
             return "ENABLING";
           case ResolverDNSSECValidationStatus::ENABLED:

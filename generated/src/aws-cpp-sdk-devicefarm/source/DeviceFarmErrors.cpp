@@ -60,51 +60,51 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == IDEMPOTENCY_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DeviceFarmErrors::IDEMPOTENCY), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DeviceFarmErrors::IDEMPOTENCY), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DeviceFarmErrors::NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DeviceFarmErrors::NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == ARGUMENT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DeviceFarmErrors::ARGUMENT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DeviceFarmErrors::ARGUMENT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DeviceFarmErrors::LIMIT_EXCEEDED), true);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DeviceFarmErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
   }
   else if (hashCode == SERVICE_ACCOUNT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DeviceFarmErrors::SERVICE_ACCOUNT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DeviceFarmErrors::SERVICE_ACCOUNT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == TOO_MANY_TAGS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DeviceFarmErrors::TOO_MANY_TAGS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DeviceFarmErrors::TOO_MANY_TAGS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == TAG_OPERATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DeviceFarmErrors::TAG_OPERATION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DeviceFarmErrors::TAG_OPERATION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INTERNAL_SERVICE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DeviceFarmErrors::INTERNAL_SERVICE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DeviceFarmErrors::INTERNAL_SERVICE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == TAG_POLICY_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DeviceFarmErrors::TAG_POLICY), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DeviceFarmErrors::TAG_POLICY), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == CANNOT_DELETE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DeviceFarmErrors::CANNOT_DELETE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DeviceFarmErrors::CANNOT_DELETE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_OPERATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DeviceFarmErrors::INVALID_OPERATION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DeviceFarmErrors::INVALID_OPERATION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == NOT_ELIGIBLE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DeviceFarmErrors::NOT_ELIGIBLE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DeviceFarmErrors::NOT_ELIGIBLE), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

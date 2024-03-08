@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ActionSubType::NOT_SET:
+            return {};
           case ActionSubType::STOP_EC2_INSTANCES:
             return "STOP_EC2_INSTANCES";
           case ActionSubType::STOP_RDS_INSTANCES:

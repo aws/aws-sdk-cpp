@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ArtifactCategory::NOT_SET:
+            return {};
           case ArtifactCategory::SCREENSHOT:
             return "SCREENSHOT";
           case ArtifactCategory::FILE:

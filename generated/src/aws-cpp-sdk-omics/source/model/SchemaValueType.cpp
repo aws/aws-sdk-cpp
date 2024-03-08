@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SchemaValueType::NOT_SET:
+            return {};
           case SchemaValueType::LONG:
             return "LONG";
           case SchemaValueType::INT:

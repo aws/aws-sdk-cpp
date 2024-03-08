@@ -94,6 +94,12 @@ DescribeSecurityProfileResult& DescribeSecurityProfileResult::operator =(const A
 
   }
 
+  if(jsonValue.ValueExists("metricsExportConfig"))
+  {
+    m_metricsExportConfig = jsonValue.GetObject("metricsExportConfig");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

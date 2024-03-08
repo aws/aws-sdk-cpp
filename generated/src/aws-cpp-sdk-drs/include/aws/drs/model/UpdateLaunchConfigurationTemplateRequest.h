@@ -191,6 +191,35 @@ namespace Model
 
 
     /**
+     * <p>DRS will set the 'launch into instance ID' of any source server when
+     * performing a drill, recovery or failback to the previous region or availability
+     * zone, using the instance ID of the source instance.</p>
+     */
+    inline bool GetLaunchIntoSourceInstance() const{ return m_launchIntoSourceInstance; }
+
+    /**
+     * <p>DRS will set the 'launch into instance ID' of any source server when
+     * performing a drill, recovery or failback to the previous region or availability
+     * zone, using the instance ID of the source instance.</p>
+     */
+    inline bool LaunchIntoSourceInstanceHasBeenSet() const { return m_launchIntoSourceInstanceHasBeenSet; }
+
+    /**
+     * <p>DRS will set the 'launch into instance ID' of any source server when
+     * performing a drill, recovery or failback to the previous region or availability
+     * zone, using the instance ID of the source instance.</p>
+     */
+    inline void SetLaunchIntoSourceInstance(bool value) { m_launchIntoSourceInstanceHasBeenSet = true; m_launchIntoSourceInstance = value; }
+
+    /**
+     * <p>DRS will set the 'launch into instance ID' of any source server when
+     * performing a drill, recovery or failback to the previous region or availability
+     * zone, using the instance ID of the source instance.</p>
+     */
+    inline UpdateLaunchConfigurationTemplateRequest& WithLaunchIntoSourceInstance(bool value) { SetLaunchIntoSourceInstance(value); return *this;}
+
+
+    /**
      * <p>Licensing.</p>
      */
     inline const Licensing& GetLicensing() const{ return m_licensing; }
@@ -288,6 +317,9 @@ namespace Model
 
     LaunchDisposition m_launchDisposition;
     bool m_launchDispositionHasBeenSet = false;
+
+    bool m_launchIntoSourceInstance;
+    bool m_launchIntoSourceInstanceHasBeenSet = false;
 
     Licensing m_licensing;
     bool m_licensingHasBeenSet = false;

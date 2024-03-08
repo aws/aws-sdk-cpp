@@ -80,6 +80,18 @@ CreateConfigurationProfileResult& CreateConfigurationProfileResult::operator =(c
 
   }
 
+  if(jsonValue.ValueExists("KmsKeyArn"))
+  {
+    m_kmsKeyArn = jsonValue.GetString("KmsKeyArn");
+
+  }
+
+  if(jsonValue.ValueExists("KmsKeyIdentifier"))
+  {
+    m_kmsKeyIdentifier = jsonValue.GetString("KmsKeyIdentifier");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

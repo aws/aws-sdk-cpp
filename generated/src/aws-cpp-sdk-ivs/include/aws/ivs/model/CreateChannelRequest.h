@@ -89,54 +89,42 @@ namespace Model
     /**
      * <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live
      * video up to Full HD. Use <code>LOW</code> for near-real-time interaction with
-     * viewers. (Note: In the Amazon IVS console, <code>LOW</code> and
-     * <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.)
-     * Default: <code>LOW</code>.</p>
+     * viewers. Default: <code>LOW</code>.</p>
      */
     inline const ChannelLatencyMode& GetLatencyMode() const{ return m_latencyMode; }
 
     /**
      * <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live
      * video up to Full HD. Use <code>LOW</code> for near-real-time interaction with
-     * viewers. (Note: In the Amazon IVS console, <code>LOW</code> and
-     * <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.)
-     * Default: <code>LOW</code>.</p>
+     * viewers. Default: <code>LOW</code>.</p>
      */
     inline bool LatencyModeHasBeenSet() const { return m_latencyModeHasBeenSet; }
 
     /**
      * <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live
      * video up to Full HD. Use <code>LOW</code> for near-real-time interaction with
-     * viewers. (Note: In the Amazon IVS console, <code>LOW</code> and
-     * <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.)
-     * Default: <code>LOW</code>.</p>
+     * viewers. Default: <code>LOW</code>.</p>
      */
     inline void SetLatencyMode(const ChannelLatencyMode& value) { m_latencyModeHasBeenSet = true; m_latencyMode = value; }
 
     /**
      * <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live
      * video up to Full HD. Use <code>LOW</code> for near-real-time interaction with
-     * viewers. (Note: In the Amazon IVS console, <code>LOW</code> and
-     * <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.)
-     * Default: <code>LOW</code>.</p>
+     * viewers. Default: <code>LOW</code>.</p>
      */
     inline void SetLatencyMode(ChannelLatencyMode&& value) { m_latencyModeHasBeenSet = true; m_latencyMode = std::move(value); }
 
     /**
      * <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live
      * video up to Full HD. Use <code>LOW</code> for near-real-time interaction with
-     * viewers. (Note: In the Amazon IVS console, <code>LOW</code> and
-     * <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.)
-     * Default: <code>LOW</code>.</p>
+     * viewers. Default: <code>LOW</code>.</p>
      */
     inline CreateChannelRequest& WithLatencyMode(const ChannelLatencyMode& value) { SetLatencyMode(value); return *this;}
 
     /**
      * <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live
      * video up to Full HD. Use <code>LOW</code> for near-real-time interaction with
-     * viewers. (Note: In the Amazon IVS console, <code>LOW</code> and
-     * <code>NORMAL</code> correspond to Ultra-low and Standard, respectively.)
-     * Default: <code>LOW</code>.</p>
+     * viewers. Default: <code>LOW</code>.</p>
      */
     inline CreateChannelRequest& WithLatencyMode(ChannelLatencyMode&& value) { SetLatencyMode(std::move(value)); return *this;}
 
@@ -180,6 +168,63 @@ namespace Model
      * <p>Channel name.</p>
      */
     inline CreateChannelRequest& WithName(const char* value) { SetName(value); return *this;}
+
+
+    /**
+     * <p>Playback-restriction-policy ARN. A valid ARN value here both specifies the
+     * ARN and enables playback restriction. Default: "" (empty string, no playback
+     * restriction policy is applied).</p>
+     */
+    inline const Aws::String& GetPlaybackRestrictionPolicyArn() const{ return m_playbackRestrictionPolicyArn; }
+
+    /**
+     * <p>Playback-restriction-policy ARN. A valid ARN value here both specifies the
+     * ARN and enables playback restriction. Default: "" (empty string, no playback
+     * restriction policy is applied).</p>
+     */
+    inline bool PlaybackRestrictionPolicyArnHasBeenSet() const { return m_playbackRestrictionPolicyArnHasBeenSet; }
+
+    /**
+     * <p>Playback-restriction-policy ARN. A valid ARN value here both specifies the
+     * ARN and enables playback restriction. Default: "" (empty string, no playback
+     * restriction policy is applied).</p>
+     */
+    inline void SetPlaybackRestrictionPolicyArn(const Aws::String& value) { m_playbackRestrictionPolicyArnHasBeenSet = true; m_playbackRestrictionPolicyArn = value; }
+
+    /**
+     * <p>Playback-restriction-policy ARN. A valid ARN value here both specifies the
+     * ARN and enables playback restriction. Default: "" (empty string, no playback
+     * restriction policy is applied).</p>
+     */
+    inline void SetPlaybackRestrictionPolicyArn(Aws::String&& value) { m_playbackRestrictionPolicyArnHasBeenSet = true; m_playbackRestrictionPolicyArn = std::move(value); }
+
+    /**
+     * <p>Playback-restriction-policy ARN. A valid ARN value here both specifies the
+     * ARN and enables playback restriction. Default: "" (empty string, no playback
+     * restriction policy is applied).</p>
+     */
+    inline void SetPlaybackRestrictionPolicyArn(const char* value) { m_playbackRestrictionPolicyArnHasBeenSet = true; m_playbackRestrictionPolicyArn.assign(value); }
+
+    /**
+     * <p>Playback-restriction-policy ARN. A valid ARN value here both specifies the
+     * ARN and enables playback restriction. Default: "" (empty string, no playback
+     * restriction policy is applied).</p>
+     */
+    inline CreateChannelRequest& WithPlaybackRestrictionPolicyArn(const Aws::String& value) { SetPlaybackRestrictionPolicyArn(value); return *this;}
+
+    /**
+     * <p>Playback-restriction-policy ARN. A valid ARN value here both specifies the
+     * ARN and enables playback restriction. Default: "" (empty string, no playback
+     * restriction policy is applied).</p>
+     */
+    inline CreateChannelRequest& WithPlaybackRestrictionPolicyArn(Aws::String&& value) { SetPlaybackRestrictionPolicyArn(std::move(value)); return *this;}
+
+    /**
+     * <p>Playback-restriction-policy ARN. A valid ARN value here both specifies the
+     * ARN and enables playback restriction. Default: "" (empty string, no playback
+     * restriction policy is applied).</p>
+     */
+    inline CreateChannelRequest& WithPlaybackRestrictionPolicyArn(const char* value) { SetPlaybackRestrictionPolicyArn(value); return *this;}
 
 
     /**
@@ -244,50 +289,50 @@ namespace Model
 
 
     /**
-     * <p>Recording-configuration ARN. Default: "" (empty string, recording is
-     * disabled).</p>
+     * <p>Recording-configuration ARN. A valid ARN value here both specifies the ARN
+     * and enables recording. Default: "" (empty string, recording is disabled).</p>
      */
     inline const Aws::String& GetRecordingConfigurationArn() const{ return m_recordingConfigurationArn; }
 
     /**
-     * <p>Recording-configuration ARN. Default: "" (empty string, recording is
-     * disabled).</p>
+     * <p>Recording-configuration ARN. A valid ARN value here both specifies the ARN
+     * and enables recording. Default: "" (empty string, recording is disabled).</p>
      */
     inline bool RecordingConfigurationArnHasBeenSet() const { return m_recordingConfigurationArnHasBeenSet; }
 
     /**
-     * <p>Recording-configuration ARN. Default: "" (empty string, recording is
-     * disabled).</p>
+     * <p>Recording-configuration ARN. A valid ARN value here both specifies the ARN
+     * and enables recording. Default: "" (empty string, recording is disabled).</p>
      */
     inline void SetRecordingConfigurationArn(const Aws::String& value) { m_recordingConfigurationArnHasBeenSet = true; m_recordingConfigurationArn = value; }
 
     /**
-     * <p>Recording-configuration ARN. Default: "" (empty string, recording is
-     * disabled).</p>
+     * <p>Recording-configuration ARN. A valid ARN value here both specifies the ARN
+     * and enables recording. Default: "" (empty string, recording is disabled).</p>
      */
     inline void SetRecordingConfigurationArn(Aws::String&& value) { m_recordingConfigurationArnHasBeenSet = true; m_recordingConfigurationArn = std::move(value); }
 
     /**
-     * <p>Recording-configuration ARN. Default: "" (empty string, recording is
-     * disabled).</p>
+     * <p>Recording-configuration ARN. A valid ARN value here both specifies the ARN
+     * and enables recording. Default: "" (empty string, recording is disabled).</p>
      */
     inline void SetRecordingConfigurationArn(const char* value) { m_recordingConfigurationArnHasBeenSet = true; m_recordingConfigurationArn.assign(value); }
 
     /**
-     * <p>Recording-configuration ARN. Default: "" (empty string, recording is
-     * disabled).</p>
+     * <p>Recording-configuration ARN. A valid ARN value here both specifies the ARN
+     * and enables recording. Default: "" (empty string, recording is disabled).</p>
      */
     inline CreateChannelRequest& WithRecordingConfigurationArn(const Aws::String& value) { SetRecordingConfigurationArn(value); return *this;}
 
     /**
-     * <p>Recording-configuration ARN. Default: "" (empty string, recording is
-     * disabled).</p>
+     * <p>Recording-configuration ARN. A valid ARN value here both specifies the ARN
+     * and enables recording. Default: "" (empty string, recording is disabled).</p>
      */
     inline CreateChannelRequest& WithRecordingConfigurationArn(Aws::String&& value) { SetRecordingConfigurationArn(std::move(value)); return *this;}
 
     /**
-     * <p>Recording-configuration ARN. Default: "" (empty string, recording is
-     * disabled).</p>
+     * <p>Recording-configuration ARN. A valid ARN value here both specifies the ARN
+     * and enables recording. Default: "" (empty string, recording is disabled).</p>
      */
     inline CreateChannelRequest& WithRecordingConfigurationArn(const char* value) { SetRecordingConfigurationArn(value); return *this;}
 
@@ -490,6 +535,9 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
+
+    Aws::String m_playbackRestrictionPolicyArn;
+    bool m_playbackRestrictionPolicyArnHasBeenSet = false;
 
     TranscodePreset m_preset;
     bool m_presetHasBeenSet = false;

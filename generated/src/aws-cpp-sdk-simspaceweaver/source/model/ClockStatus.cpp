@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ClockStatus::NOT_SET:
+            return {};
           case ClockStatus::UNKNOWN:
             return "UNKNOWN";
           case ClockStatus::STARTING:

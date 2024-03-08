@@ -56,7 +56,11 @@ DBInstanceAutomatedBackup::DBInstanceAutomatedBackup() :
     m_backupTargetHasBeenSet(false),
     m_storageThroughput(0),
     m_storageThroughputHasBeenSet(false),
-    m_awsBackupRecoveryPointArnHasBeenSet(false)
+    m_awsBackupRecoveryPointArnHasBeenSet(false),
+    m_dedicatedLogVolume(false),
+    m_dedicatedLogVolumeHasBeenSet(false),
+    m_multiTenant(false),
+    m_multiTenantHasBeenSet(false)
 {
 }
 
@@ -96,7 +100,11 @@ DBInstanceAutomatedBackup::DBInstanceAutomatedBackup(const XmlNode& xmlNode) :
     m_backupTargetHasBeenSet(false),
     m_storageThroughput(0),
     m_storageThroughputHasBeenSet(false),
-    m_awsBackupRecoveryPointArnHasBeenSet(false)
+    m_awsBackupRecoveryPointArnHasBeenSet(false),
+    m_dedicatedLogVolume(false),
+    m_dedicatedLogVolumeHasBeenSet(false),
+    m_multiTenant(false),
+    m_multiTenantHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -287,6 +295,18 @@ DBInstanceAutomatedBackup& DBInstanceAutomatedBackup::operator =(const XmlNode& 
       m_awsBackupRecoveryPointArn = Aws::Utils::Xml::DecodeEscapedXmlText(awsBackupRecoveryPointArnNode.GetText());
       m_awsBackupRecoveryPointArnHasBeenSet = true;
     }
+    XmlNode dedicatedLogVolumeNode = resultNode.FirstChild("DedicatedLogVolume");
+    if(!dedicatedLogVolumeNode.IsNull())
+    {
+      m_dedicatedLogVolume = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dedicatedLogVolumeNode.GetText()).c_str()).c_str());
+      m_dedicatedLogVolumeHasBeenSet = true;
+    }
+    XmlNode multiTenantNode = resultNode.FirstChild("MultiTenant");
+    if(!multiTenantNode.IsNull())
+    {
+      m_multiTenant = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(multiTenantNode.GetText()).c_str()).c_str());
+      m_multiTenantHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -447,6 +467,16 @@ void DBInstanceAutomatedBackup::OutputToStream(Aws::OStream& oStream, const char
       oStream << location << index << locationValue << ".AwsBackupRecoveryPointArn=" << StringUtils::URLEncode(m_awsBackupRecoveryPointArn.c_str()) << "&";
   }
 
+  if(m_dedicatedLogVolumeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DedicatedLogVolume=" << std::boolalpha << m_dedicatedLogVolume << "&";
+  }
+
+  if(m_multiTenantHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".MultiTenant=" << std::boolalpha << m_multiTenant << "&";
+  }
+
 }
 
 void DBInstanceAutomatedBackup::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -574,6 +604,14 @@ void DBInstanceAutomatedBackup::OutputToStream(Aws::OStream& oStream, const char
   if(m_awsBackupRecoveryPointArnHasBeenSet)
   {
       oStream << location << ".AwsBackupRecoveryPointArn=" << StringUtils::URLEncode(m_awsBackupRecoveryPointArn.c_str()) << "&";
+  }
+  if(m_dedicatedLogVolumeHasBeenSet)
+  {
+      oStream << location << ".DedicatedLogVolume=" << std::boolalpha << m_dedicatedLogVolume << "&";
+  }
+  if(m_multiTenantHasBeenSet)
+  {
+      oStream << location << ".MultiTenant=" << std::boolalpha << m_multiTenant << "&";
   }
 }
 

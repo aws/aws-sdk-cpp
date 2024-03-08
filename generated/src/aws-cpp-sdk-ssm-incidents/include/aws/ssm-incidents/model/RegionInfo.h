@@ -162,38 +162,38 @@ namespace Model
 
 
     /**
-     * <p>The most recent date and time that Incident Manager updated the Amazon Web
-     * Services Region's status.</p>
+     * <p>The timestamp for when Incident Manager updated the status of the Amazon Web
+     * Services Region.</p>
      */
     inline const Aws::Utils::DateTime& GetStatusUpdateDateTime() const{ return m_statusUpdateDateTime; }
 
     /**
-     * <p>The most recent date and time that Incident Manager updated the Amazon Web
-     * Services Region's status.</p>
+     * <p>The timestamp for when Incident Manager updated the status of the Amazon Web
+     * Services Region.</p>
      */
     inline bool StatusUpdateDateTimeHasBeenSet() const { return m_statusUpdateDateTimeHasBeenSet; }
 
     /**
-     * <p>The most recent date and time that Incident Manager updated the Amazon Web
-     * Services Region's status.</p>
+     * <p>The timestamp for when Incident Manager updated the status of the Amazon Web
+     * Services Region.</p>
      */
     inline void SetStatusUpdateDateTime(const Aws::Utils::DateTime& value) { m_statusUpdateDateTimeHasBeenSet = true; m_statusUpdateDateTime = value; }
 
     /**
-     * <p>The most recent date and time that Incident Manager updated the Amazon Web
-     * Services Region's status.</p>
+     * <p>The timestamp for when Incident Manager updated the status of the Amazon Web
+     * Services Region.</p>
      */
     inline void SetStatusUpdateDateTime(Aws::Utils::DateTime&& value) { m_statusUpdateDateTimeHasBeenSet = true; m_statusUpdateDateTime = std::move(value); }
 
     /**
-     * <p>The most recent date and time that Incident Manager updated the Amazon Web
-     * Services Region's status.</p>
+     * <p>The timestamp for when Incident Manager updated the status of the Amazon Web
+     * Services Region.</p>
      */
     inline RegionInfo& WithStatusUpdateDateTime(const Aws::Utils::DateTime& value) { SetStatusUpdateDateTime(value); return *this;}
 
     /**
-     * <p>The most recent date and time that Incident Manager updated the Amazon Web
-     * Services Region's status.</p>
+     * <p>The timestamp for when Incident Manager updated the status of the Amazon Web
+     * Services Region.</p>
      */
     inline RegionInfo& WithStatusUpdateDateTime(Aws::Utils::DateTime&& value) { SetStatusUpdateDateTime(std::move(value)); return *this;}
 

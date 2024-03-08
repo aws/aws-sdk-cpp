@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MLModelType::NOT_SET:
+            return {};
           case MLModelType::REGRESSION:
             return "REGRESSION";
           case MLModelType::BINARY:

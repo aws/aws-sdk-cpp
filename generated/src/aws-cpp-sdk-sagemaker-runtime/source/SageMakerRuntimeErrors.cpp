@@ -46,23 +46,23 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == MODEL_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SageMakerRuntimeErrors::MODEL), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SageMakerRuntimeErrors::MODEL), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INTERNAL_DEPENDENCY_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SageMakerRuntimeErrors::INTERNAL_DEPENDENCY), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SageMakerRuntimeErrors::INTERNAL_DEPENDENCY), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INTERNAL_STREAM_FAILURE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SageMakerRuntimeErrors::INTERNAL_STREAM_FAILURE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SageMakerRuntimeErrors::INTERNAL_STREAM_FAILURE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == MODEL_STREAM_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SageMakerRuntimeErrors::MODEL_STREAM), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SageMakerRuntimeErrors::MODEL_STREAM), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == MODEL_NOT_READY_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SageMakerRuntimeErrors::MODEL_NOT_READY), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SageMakerRuntimeErrors::MODEL_NOT_READY), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

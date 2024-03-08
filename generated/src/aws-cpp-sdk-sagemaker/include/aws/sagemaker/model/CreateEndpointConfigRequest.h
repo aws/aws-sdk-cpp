@@ -11,6 +11,7 @@
 #include <aws/sagemaker/model/DataCaptureConfig.h>
 #include <aws/sagemaker/model/AsyncInferenceConfig.h>
 #include <aws/sagemaker/model/ExplainerConfig.h>
+#include <aws/sagemaker/model/VpcConfig.h>
 #include <aws/sagemaker/model/ProductionVariant.h>
 #include <aws/sagemaker/model/Tag.h>
 #include <utility>
@@ -657,6 +658,135 @@ namespace Model
      */
     inline CreateEndpointConfigRequest& AddShadowProductionVariants(ProductionVariant&& value) { m_shadowProductionVariantsHasBeenSet = true; m_shadowProductionVariants.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can
+     * assume to perform actions on your behalf. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker
+     * Roles</a>. </p>  <p>To be able to pass this role to Amazon SageMaker, the
+     * caller of this action must have the <code>iam:PassRole</code> permission.</p>
+     * 
+     */
+    inline const Aws::String& GetExecutionRoleArn() const{ return m_executionRoleArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can
+     * assume to perform actions on your behalf. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker
+     * Roles</a>. </p>  <p>To be able to pass this role to Amazon SageMaker, the
+     * caller of this action must have the <code>iam:PassRole</code> permission.</p>
+     * 
+     */
+    inline bool ExecutionRoleArnHasBeenSet() const { return m_executionRoleArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can
+     * assume to perform actions on your behalf. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker
+     * Roles</a>. </p>  <p>To be able to pass this role to Amazon SageMaker, the
+     * caller of this action must have the <code>iam:PassRole</code> permission.</p>
+     * 
+     */
+    inline void SetExecutionRoleArn(const Aws::String& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can
+     * assume to perform actions on your behalf. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker
+     * Roles</a>. </p>  <p>To be able to pass this role to Amazon SageMaker, the
+     * caller of this action must have the <code>iam:PassRole</code> permission.</p>
+     * 
+     */
+    inline void SetExecutionRoleArn(Aws::String&& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can
+     * assume to perform actions on your behalf. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker
+     * Roles</a>. </p>  <p>To be able to pass this role to Amazon SageMaker, the
+     * caller of this action must have the <code>iam:PassRole</code> permission.</p>
+     * 
+     */
+    inline void SetExecutionRoleArn(const char* value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can
+     * assume to perform actions on your behalf. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker
+     * Roles</a>. </p>  <p>To be able to pass this role to Amazon SageMaker, the
+     * caller of this action must have the <code>iam:PassRole</code> permission.</p>
+     * 
+     */
+    inline CreateEndpointConfigRequest& WithExecutionRoleArn(const Aws::String& value) { SetExecutionRoleArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can
+     * assume to perform actions on your behalf. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker
+     * Roles</a>. </p>  <p>To be able to pass this role to Amazon SageMaker, the
+     * caller of this action must have the <code>iam:PassRole</code> permission.</p>
+     * 
+     */
+    inline CreateEndpointConfigRequest& WithExecutionRoleArn(Aws::String&& value) { SetExecutionRoleArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can
+     * assume to perform actions on your behalf. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">SageMaker
+     * Roles</a>. </p>  <p>To be able to pass this role to Amazon SageMaker, the
+     * caller of this action must have the <code>iam:PassRole</code> permission.</p>
+     * 
+     */
+    inline CreateEndpointConfigRequest& WithExecutionRoleArn(const char* value) { SetExecutionRoleArn(value); return *this;}
+
+
+    
+    inline const VpcConfig& GetVpcConfig() const{ return m_vpcConfig; }
+
+    
+    inline bool VpcConfigHasBeenSet() const { return m_vpcConfigHasBeenSet; }
+
+    
+    inline void SetVpcConfig(const VpcConfig& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = value; }
+
+    
+    inline void SetVpcConfig(VpcConfig&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = std::move(value); }
+
+    
+    inline CreateEndpointConfigRequest& WithVpcConfig(const VpcConfig& value) { SetVpcConfig(value); return *this;}
+
+    
+    inline CreateEndpointConfigRequest& WithVpcConfig(VpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Sets whether all model containers deployed to the endpoint are isolated. If
+     * they are, no inbound or outbound network calls can be made to or from the model
+     * containers.</p>
+     */
+    inline bool GetEnableNetworkIsolation() const{ return m_enableNetworkIsolation; }
+
+    /**
+     * <p>Sets whether all model containers deployed to the endpoint are isolated. If
+     * they are, no inbound or outbound network calls can be made to or from the model
+     * containers.</p>
+     */
+    inline bool EnableNetworkIsolationHasBeenSet() const { return m_enableNetworkIsolationHasBeenSet; }
+
+    /**
+     * <p>Sets whether all model containers deployed to the endpoint are isolated. If
+     * they are, no inbound or outbound network calls can be made to or from the model
+     * containers.</p>
+     */
+    inline void SetEnableNetworkIsolation(bool value) { m_enableNetworkIsolationHasBeenSet = true; m_enableNetworkIsolation = value; }
+
+    /**
+     * <p>Sets whether all model containers deployed to the endpoint are isolated. If
+     * they are, no inbound or outbound network calls can be made to or from the model
+     * containers.</p>
+     */
+    inline CreateEndpointConfigRequest& WithEnableNetworkIsolation(bool value) { SetEnableNetworkIsolation(value); return *this;}
+
   private:
 
     Aws::String m_endpointConfigName;
@@ -682,6 +812,15 @@ namespace Model
 
     Aws::Vector<ProductionVariant> m_shadowProductionVariants;
     bool m_shadowProductionVariantsHasBeenSet = false;
+
+    Aws::String m_executionRoleArn;
+    bool m_executionRoleArnHasBeenSet = false;
+
+    VpcConfig m_vpcConfig;
+    bool m_vpcConfigHasBeenSet = false;
+
+    bool m_enableNetworkIsolation;
+    bool m_enableNetworkIsolationHasBeenSet = false;
   };
 
 } // namespace Model

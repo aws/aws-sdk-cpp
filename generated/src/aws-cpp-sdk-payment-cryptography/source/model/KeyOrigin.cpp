@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case KeyOrigin::NOT_SET:
+            return {};
           case KeyOrigin::EXTERNAL:
             return "EXTERNAL";
           case KeyOrigin::AWS_PAYMENT_CRYPTOGRAPHY:

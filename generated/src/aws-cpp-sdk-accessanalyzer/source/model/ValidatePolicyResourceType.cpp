@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ValidatePolicyResourceType::NOT_SET:
+            return {};
           case ValidatePolicyResourceType::AWS_S3_Bucket:
             return "AWS::S3::Bucket";
           case ValidatePolicyResourceType::AWS_S3_AccessPoint:

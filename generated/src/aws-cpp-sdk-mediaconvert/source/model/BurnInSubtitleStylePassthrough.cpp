@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BurnInSubtitleStylePassthrough::NOT_SET:
+            return {};
           case BurnInSubtitleStylePassthrough::ENABLED:
             return "ENABLED";
           case BurnInSubtitleStylePassthrough::DISABLED:

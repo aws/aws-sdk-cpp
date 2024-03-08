@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PreloadDataType::NOT_SET:
+            return {};
           case PreloadDataType::SYNTHEA:
             return "SYNTHEA";
           default:

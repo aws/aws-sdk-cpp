@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LoadBalancerState::NOT_SET:
+            return {};
           case LoadBalancerState::active:
             return "active";
           case LoadBalancerState::provisioning:

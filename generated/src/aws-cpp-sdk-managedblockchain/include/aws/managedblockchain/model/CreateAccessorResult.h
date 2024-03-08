@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/managedblockchain/ManagedBlockchain_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/managedblockchain/model/AccessorNetworkType.h>
 #include <utility>
 
 namespace Aws
@@ -69,60 +70,79 @@ namespace Model
 
 
     /**
-     * <p>The billing token is a property of the Accessor. Use this token to make
-     * Ethereum API calls to your Ethereum node. The billing token is used to track
-     * your accessor object for billing Ethereum API requests made to your Ethereum
-     * nodes.</p>
+     * <p>The billing token is a property of the Accessor. Use this token to when
+     * making calls to the blockchain network. The billing token is used to track your
+     * accessor token for billing requests.</p>
      */
     inline const Aws::String& GetBillingToken() const{ return m_billingToken; }
 
     /**
-     * <p>The billing token is a property of the Accessor. Use this token to make
-     * Ethereum API calls to your Ethereum node. The billing token is used to track
-     * your accessor object for billing Ethereum API requests made to your Ethereum
-     * nodes.</p>
+     * <p>The billing token is a property of the Accessor. Use this token to when
+     * making calls to the blockchain network. The billing token is used to track your
+     * accessor token for billing requests.</p>
      */
     inline void SetBillingToken(const Aws::String& value) { m_billingToken = value; }
 
     /**
-     * <p>The billing token is a property of the Accessor. Use this token to make
-     * Ethereum API calls to your Ethereum node. The billing token is used to track
-     * your accessor object for billing Ethereum API requests made to your Ethereum
-     * nodes.</p>
+     * <p>The billing token is a property of the Accessor. Use this token to when
+     * making calls to the blockchain network. The billing token is used to track your
+     * accessor token for billing requests.</p>
      */
     inline void SetBillingToken(Aws::String&& value) { m_billingToken = std::move(value); }
 
     /**
-     * <p>The billing token is a property of the Accessor. Use this token to make
-     * Ethereum API calls to your Ethereum node. The billing token is used to track
-     * your accessor object for billing Ethereum API requests made to your Ethereum
-     * nodes.</p>
+     * <p>The billing token is a property of the Accessor. Use this token to when
+     * making calls to the blockchain network. The billing token is used to track your
+     * accessor token for billing requests.</p>
      */
     inline void SetBillingToken(const char* value) { m_billingToken.assign(value); }
 
     /**
-     * <p>The billing token is a property of the Accessor. Use this token to make
-     * Ethereum API calls to your Ethereum node. The billing token is used to track
-     * your accessor object for billing Ethereum API requests made to your Ethereum
-     * nodes.</p>
+     * <p>The billing token is a property of the Accessor. Use this token to when
+     * making calls to the blockchain network. The billing token is used to track your
+     * accessor token for billing requests.</p>
      */
     inline CreateAccessorResult& WithBillingToken(const Aws::String& value) { SetBillingToken(value); return *this;}
 
     /**
-     * <p>The billing token is a property of the Accessor. Use this token to make
-     * Ethereum API calls to your Ethereum node. The billing token is used to track
-     * your accessor object for billing Ethereum API requests made to your Ethereum
-     * nodes.</p>
+     * <p>The billing token is a property of the Accessor. Use this token to when
+     * making calls to the blockchain network. The billing token is used to track your
+     * accessor token for billing requests.</p>
      */
     inline CreateAccessorResult& WithBillingToken(Aws::String&& value) { SetBillingToken(std::move(value)); return *this;}
 
     /**
-     * <p>The billing token is a property of the Accessor. Use this token to make
-     * Ethereum API calls to your Ethereum node. The billing token is used to track
-     * your accessor object for billing Ethereum API requests made to your Ethereum
-     * nodes.</p>
+     * <p>The billing token is a property of the Accessor. Use this token to when
+     * making calls to the blockchain network. The billing token is used to track your
+     * accessor token for billing requests.</p>
      */
     inline CreateAccessorResult& WithBillingToken(const char* value) { SetBillingToken(value); return *this;}
+
+
+    /**
+     * <p>The blockchain network that the accessor token is created for.</p>
+     */
+    inline const AccessorNetworkType& GetNetworkType() const{ return m_networkType; }
+
+    /**
+     * <p>The blockchain network that the accessor token is created for.</p>
+     */
+    inline void SetNetworkType(const AccessorNetworkType& value) { m_networkType = value; }
+
+    /**
+     * <p>The blockchain network that the accessor token is created for.</p>
+     */
+    inline void SetNetworkType(AccessorNetworkType&& value) { m_networkType = std::move(value); }
+
+    /**
+     * <p>The blockchain network that the accessor token is created for.</p>
+     */
+    inline CreateAccessorResult& WithNetworkType(const AccessorNetworkType& value) { SetNetworkType(value); return *this;}
+
+    /**
+     * <p>The blockchain network that the accessor token is created for.</p>
+     */
+    inline CreateAccessorResult& WithNetworkType(AccessorNetworkType&& value) { SetNetworkType(std::move(value)); return *this;}
 
 
     
@@ -151,6 +171,8 @@ namespace Model
     Aws::String m_accessorId;
 
     Aws::String m_billingToken;
+
+    AccessorNetworkType m_networkType;
 
     Aws::String m_requestId;
   };

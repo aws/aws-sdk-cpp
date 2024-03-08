@@ -26,9 +26,9 @@ RecommendationJobContainerConfig::RecommendationJobContainerConfig() :
     m_payloadConfigHasBeenSet(false),
     m_nearestModelNameHasBeenSet(false),
     m_supportedInstanceTypesHasBeenSet(false),
-    m_dataInputConfigHasBeenSet(false),
     m_supportedEndpointType(RecommendationJobSupportedEndpointType::NOT_SET),
     m_supportedEndpointTypeHasBeenSet(false),
+    m_dataInputConfigHasBeenSet(false),
     m_supportedResponseMIMETypesHasBeenSet(false)
 {
 }
@@ -41,9 +41,9 @@ RecommendationJobContainerConfig::RecommendationJobContainerConfig(JsonView json
     m_payloadConfigHasBeenSet(false),
     m_nearestModelNameHasBeenSet(false),
     m_supportedInstanceTypesHasBeenSet(false),
-    m_dataInputConfigHasBeenSet(false),
     m_supportedEndpointType(RecommendationJobSupportedEndpointType::NOT_SET),
     m_supportedEndpointTypeHasBeenSet(false),
+    m_dataInputConfigHasBeenSet(false),
     m_supportedResponseMIMETypesHasBeenSet(false)
 {
   *this = jsonValue;
@@ -103,18 +103,18 @@ RecommendationJobContainerConfig& RecommendationJobContainerConfig::operator =(J
     m_supportedInstanceTypesHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("DataInputConfig"))
-  {
-    m_dataInputConfig = jsonValue.GetString("DataInputConfig");
-
-    m_dataInputConfigHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("SupportedEndpointType"))
   {
     m_supportedEndpointType = RecommendationJobSupportedEndpointTypeMapper::GetRecommendationJobSupportedEndpointTypeForName(jsonValue.GetString("SupportedEndpointType"));
 
     m_supportedEndpointTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DataInputConfig"))
+  {
+    m_dataInputConfig = jsonValue.GetString("DataInputConfig");
+
+    m_dataInputConfigHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("SupportedResponseMIMETypes"))
@@ -181,15 +181,15 @@ JsonValue RecommendationJobContainerConfig::Jsonize() const
 
   }
 
+  if(m_supportedEndpointTypeHasBeenSet)
+  {
+   payload.WithString("SupportedEndpointType", RecommendationJobSupportedEndpointTypeMapper::GetNameForRecommendationJobSupportedEndpointType(m_supportedEndpointType));
+  }
+
   if(m_dataInputConfigHasBeenSet)
   {
    payload.WithString("DataInputConfig", m_dataInputConfig);
 
-  }
-
-  if(m_supportedEndpointTypeHasBeenSet)
-  {
-   payload.WithString("SupportedEndpointType", RecommendationJobSupportedEndpointTypeMapper::GetNameForRecommendationJobSupportedEndpointType(m_supportedEndpointType));
   }
 
   if(m_supportedResponseMIMETypesHasBeenSet)

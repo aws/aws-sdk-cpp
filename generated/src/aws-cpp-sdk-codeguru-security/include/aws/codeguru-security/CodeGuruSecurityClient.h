@@ -31,8 +31,8 @@ namespace CodeGuruSecurity
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef CodeGuruSecurityClientConfiguration ClientConfigurationType;
       typedef CodeGuruSecurityEndpointProvider EndpointProviderType;
@@ -42,14 +42,14 @@ namespace CodeGuruSecurity
         * is not specified, it will be initialized to default values.
         */
         CodeGuruSecurityClient(const Aws::CodeGuruSecurity::CodeGuruSecurityClientConfiguration& clientConfiguration = Aws::CodeGuruSecurity::CodeGuruSecurityClientConfiguration(),
-                               std::shared_ptr<CodeGuruSecurityEndpointProviderBase> endpointProvider = Aws::MakeShared<CodeGuruSecurityEndpointProvider>(ALLOCATION_TAG));
+                               std::shared_ptr<CodeGuruSecurityEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         CodeGuruSecurityClient(const Aws::Auth::AWSCredentials& credentials,
-                               std::shared_ptr<CodeGuruSecurityEndpointProviderBase> endpointProvider = Aws::MakeShared<CodeGuruSecurityEndpointProvider>(ALLOCATION_TAG),
+                               std::shared_ptr<CodeGuruSecurityEndpointProviderBase> endpointProvider = nullptr,
                                const Aws::CodeGuruSecurity::CodeGuruSecurityClientConfiguration& clientConfiguration = Aws::CodeGuruSecurity::CodeGuruSecurityClientConfiguration());
 
        /**
@@ -57,7 +57,7 @@ namespace CodeGuruSecurity
         * the default http client factory will be used
         */
         CodeGuruSecurityClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                               std::shared_ptr<CodeGuruSecurityEndpointProviderBase> endpointProvider = Aws::MakeShared<CodeGuruSecurityEndpointProvider>(ALLOCATION_TAG),
+                               std::shared_ptr<CodeGuruSecurityEndpointProviderBase> endpointProvider = nullptr,
                                const Aws::CodeGuruSecurity::CodeGuruSecurityClientConfiguration& clientConfiguration = Aws::CodeGuruSecurity::CodeGuruSecurityClientConfiguration());
 
 

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SrtStylePassthrough::NOT_SET:
+            return {};
           case SrtStylePassthrough::ENABLED:
             return "ENABLED";
           case SrtStylePassthrough::DISABLED:

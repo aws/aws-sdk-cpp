@@ -169,6 +169,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case WorkspaceImageErrorDetailCode::NOT_SET:
+            return {};
           case WorkspaceImageErrorDetailCode::OutdatedPowershellVersion:
             return "OutdatedPowershellVersion";
           case WorkspaceImageErrorDetailCode::OfficeInstalled:

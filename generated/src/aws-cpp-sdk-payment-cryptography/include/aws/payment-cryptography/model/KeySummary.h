@@ -172,73 +172,49 @@ namespace Model
 
     /**
      * <p>The key check value (KCV) is used to check if all parties holding a given key
-     * have the same key or to detect that a key has changed. Amazon Web Services
-     * Payment Cryptography calculates the KCV by using standard algorithms, typically
-     * by encrypting 8 or 16 bytes or "00" or "01" and then truncating the result to
-     * the first 3 bytes, or 6 hex digits, of the resulting cryptogram.</p>
+     * have the same key or to detect that a key has changed.</p>
      */
     inline const Aws::String& GetKeyCheckValue() const{ return m_keyCheckValue; }
 
     /**
      * <p>The key check value (KCV) is used to check if all parties holding a given key
-     * have the same key or to detect that a key has changed. Amazon Web Services
-     * Payment Cryptography calculates the KCV by using standard algorithms, typically
-     * by encrypting 8 or 16 bytes or "00" or "01" and then truncating the result to
-     * the first 3 bytes, or 6 hex digits, of the resulting cryptogram.</p>
+     * have the same key or to detect that a key has changed.</p>
      */
     inline bool KeyCheckValueHasBeenSet() const { return m_keyCheckValueHasBeenSet; }
 
     /**
      * <p>The key check value (KCV) is used to check if all parties holding a given key
-     * have the same key or to detect that a key has changed. Amazon Web Services
-     * Payment Cryptography calculates the KCV by using standard algorithms, typically
-     * by encrypting 8 or 16 bytes or "00" or "01" and then truncating the result to
-     * the first 3 bytes, or 6 hex digits, of the resulting cryptogram.</p>
+     * have the same key or to detect that a key has changed.</p>
      */
     inline void SetKeyCheckValue(const Aws::String& value) { m_keyCheckValueHasBeenSet = true; m_keyCheckValue = value; }
 
     /**
      * <p>The key check value (KCV) is used to check if all parties holding a given key
-     * have the same key or to detect that a key has changed. Amazon Web Services
-     * Payment Cryptography calculates the KCV by using standard algorithms, typically
-     * by encrypting 8 or 16 bytes or "00" or "01" and then truncating the result to
-     * the first 3 bytes, or 6 hex digits, of the resulting cryptogram.</p>
+     * have the same key or to detect that a key has changed.</p>
      */
     inline void SetKeyCheckValue(Aws::String&& value) { m_keyCheckValueHasBeenSet = true; m_keyCheckValue = std::move(value); }
 
     /**
      * <p>The key check value (KCV) is used to check if all parties holding a given key
-     * have the same key or to detect that a key has changed. Amazon Web Services
-     * Payment Cryptography calculates the KCV by using standard algorithms, typically
-     * by encrypting 8 or 16 bytes or "00" or "01" and then truncating the result to
-     * the first 3 bytes, or 6 hex digits, of the resulting cryptogram.</p>
+     * have the same key or to detect that a key has changed.</p>
      */
     inline void SetKeyCheckValue(const char* value) { m_keyCheckValueHasBeenSet = true; m_keyCheckValue.assign(value); }
 
     /**
      * <p>The key check value (KCV) is used to check if all parties holding a given key
-     * have the same key or to detect that a key has changed. Amazon Web Services
-     * Payment Cryptography calculates the KCV by using standard algorithms, typically
-     * by encrypting 8 or 16 bytes or "00" or "01" and then truncating the result to
-     * the first 3 bytes, or 6 hex digits, of the resulting cryptogram.</p>
+     * have the same key or to detect that a key has changed.</p>
      */
     inline KeySummary& WithKeyCheckValue(const Aws::String& value) { SetKeyCheckValue(value); return *this;}
 
     /**
      * <p>The key check value (KCV) is used to check if all parties holding a given key
-     * have the same key or to detect that a key has changed. Amazon Web Services
-     * Payment Cryptography calculates the KCV by using standard algorithms, typically
-     * by encrypting 8 or 16 bytes or "00" or "01" and then truncating the result to
-     * the first 3 bytes, or 6 hex digits, of the resulting cryptogram.</p>
+     * have the same key or to detect that a key has changed.</p>
      */
     inline KeySummary& WithKeyCheckValue(Aws::String&& value) { SetKeyCheckValue(std::move(value)); return *this;}
 
     /**
      * <p>The key check value (KCV) is used to check if all parties holding a given key
-     * have the same key or to detect that a key has changed. Amazon Web Services
-     * Payment Cryptography calculates the KCV by using standard algorithms, typically
-     * by encrypting 8 or 16 bytes or "00" or "01" and then truncating the result to
-     * the first 3 bytes, or 6 hex digits, of the resulting cryptogram.</p>
+     * have the same key or to detect that a key has changed.</p>
      */
     inline KeySummary& WithKeyCheckValue(const char* value) { SetKeyCheckValue(value); return *this;}
 

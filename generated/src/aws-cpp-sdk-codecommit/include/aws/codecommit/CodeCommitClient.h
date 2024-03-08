@@ -29,6 +29,8 @@ namespace CodeCommit
    * <a>ListRepositories</a>, which lists all CodeCommit repositories associated with
    * your Amazon Web Services account.</p> </li> <li> <p>
    * <a>UpdateRepositoryDescription</a>, which sets or updates the description of the
+   * repository.</p> </li> <li> <p> <a>UpdateRepositoryEncryptionKey</a>, which
+   * updates the Key Management Service encryption key used to encrypt and decrypt a
    * repository.</p> </li> <li> <p> <a>UpdateRepositoryName</a>, which changes the
    * name of the repository. If you change the name of a repository, no other users
    * of that repository can access it until you send them the new HTTPS or SSH URL to
@@ -181,8 +183,8 @@ namespace CodeCommit
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef CodeCommitClientConfiguration ClientConfigurationType;
       typedef CodeCommitEndpointProvider EndpointProviderType;
@@ -192,14 +194,14 @@ namespace CodeCommit
         * is not specified, it will be initialized to default values.
         */
         CodeCommitClient(const Aws::CodeCommit::CodeCommitClientConfiguration& clientConfiguration = Aws::CodeCommit::CodeCommitClientConfiguration(),
-                         std::shared_ptr<CodeCommitEndpointProviderBase> endpointProvider = Aws::MakeShared<CodeCommitEndpointProvider>(ALLOCATION_TAG));
+                         std::shared_ptr<CodeCommitEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         CodeCommitClient(const Aws::Auth::AWSCredentials& credentials,
-                         std::shared_ptr<CodeCommitEndpointProviderBase> endpointProvider = Aws::MakeShared<CodeCommitEndpointProvider>(ALLOCATION_TAG),
+                         std::shared_ptr<CodeCommitEndpointProviderBase> endpointProvider = nullptr,
                          const Aws::CodeCommit::CodeCommitClientConfiguration& clientConfiguration = Aws::CodeCommit::CodeCommitClientConfiguration());
 
        /**
@@ -207,7 +209,7 @@ namespace CodeCommit
         * the default http client factory will be used
         */
         CodeCommitClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                         std::shared_ptr<CodeCommitEndpointProviderBase> endpointProvider = Aws::MakeShared<CodeCommitEndpointProvider>(ALLOCATION_TAG),
+                         std::shared_ptr<CodeCommitEndpointProviderBase> endpointProvider = nullptr,
                          const Aws::CodeCommit::CodeCommitClientConfiguration& clientConfiguration = Aws::CodeCommit::CodeCommitClientConfiguration());
 
 
@@ -2319,6 +2321,32 @@ namespace CodeCommit
         void UpdateRepositoryDescriptionAsync(const UpdateRepositoryDescriptionRequestT& request, const UpdateRepositoryDescriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CodeCommitClient::UpdateRepositoryDescription, request, handler, context);
+        }
+
+        /**
+         * <p>Updates the Key Management Service encryption key used to encrypt and decrypt
+         * a CodeCommit repository.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateRepositoryEncryptionKey">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateRepositoryEncryptionKeyOutcome UpdateRepositoryEncryptionKey(const Model::UpdateRepositoryEncryptionKeyRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateRepositoryEncryptionKey that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateRepositoryEncryptionKeyRequestT = Model::UpdateRepositoryEncryptionKeyRequest>
+        Model::UpdateRepositoryEncryptionKeyOutcomeCallable UpdateRepositoryEncryptionKeyCallable(const UpdateRepositoryEncryptionKeyRequestT& request) const
+        {
+            return SubmitCallable(&CodeCommitClient::UpdateRepositoryEncryptionKey, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateRepositoryEncryptionKey that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateRepositoryEncryptionKeyRequestT = Model::UpdateRepositoryEncryptionKeyRequest>
+        void UpdateRepositoryEncryptionKeyAsync(const UpdateRepositoryEncryptionKeyRequestT& request, const UpdateRepositoryEncryptionKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CodeCommitClient::UpdateRepositoryEncryptionKey, request, handler, context);
         }
 
         /**

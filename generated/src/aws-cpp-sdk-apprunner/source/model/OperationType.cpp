@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OperationType::NOT_SET:
+            return {};
           case OperationType::START_DEPLOYMENT:
             return "START_DEPLOYMENT";
           case OperationType::CREATE_SERVICE:

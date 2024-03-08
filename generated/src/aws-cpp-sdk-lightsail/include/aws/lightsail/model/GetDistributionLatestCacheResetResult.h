@@ -70,32 +70,32 @@ namespace Model
 
 
     /**
-     * <p>The timestamp of the last cache reset (e.g., <code>1479734909.17</code>) in
-     * Unix time format.</p>
+     * <p>The timestamp of the last cache reset (<code>1479734909.17</code>) in Unix
+     * time format.</p>
      */
     inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
 
     /**
-     * <p>The timestamp of the last cache reset (e.g., <code>1479734909.17</code>) in
-     * Unix time format.</p>
+     * <p>The timestamp of the last cache reset (<code>1479734909.17</code>) in Unix
+     * time format.</p>
      */
     inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTime = value; }
 
     /**
-     * <p>The timestamp of the last cache reset (e.g., <code>1479734909.17</code>) in
-     * Unix time format.</p>
+     * <p>The timestamp of the last cache reset (<code>1479734909.17</code>) in Unix
+     * time format.</p>
      */
     inline void SetCreateTime(Aws::Utils::DateTime&& value) { m_createTime = std::move(value); }
 
     /**
-     * <p>The timestamp of the last cache reset (e.g., <code>1479734909.17</code>) in
-     * Unix time format.</p>
+     * <p>The timestamp of the last cache reset (<code>1479734909.17</code>) in Unix
+     * time format.</p>
      */
     inline GetDistributionLatestCacheResetResult& WithCreateTime(const Aws::Utils::DateTime& value) { SetCreateTime(value); return *this;}
 
     /**
-     * <p>The timestamp of the last cache reset (e.g., <code>1479734909.17</code>) in
-     * Unix time format.</p>
+     * <p>The timestamp of the last cache reset (<code>1479734909.17</code>) in Unix
+     * time format.</p>
      */
     inline GetDistributionLatestCacheResetResult& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
 

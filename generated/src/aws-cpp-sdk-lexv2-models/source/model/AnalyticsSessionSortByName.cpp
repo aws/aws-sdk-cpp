@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AnalyticsSessionSortByName::NOT_SET:
+            return {};
           case AnalyticsSessionSortByName::ConversationStartTime:
             return "ConversationStartTime";
           case AnalyticsSessionSortByName::NumberOfTurns:

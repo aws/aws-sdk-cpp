@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Represents key, value pair to be matched against given resource
-   * property.</p><p><h3>See Also:</h3>   <a
+   * <p>Represents the <code>key:value</code> pair to be matched against given
+   * resource property.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ScanConditionPair">AWS
    * API Reference</a></p>
    */
@@ -39,91 +39,91 @@ namespace Model
 
 
     /**
-     * <p>Represents <i>key</i> <b/> in the map condition.</p>
+     * <p>Represents the <b>key</b> in the map condition.</p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
 
     /**
-     * <p>Represents <i>key</i> <b/> in the map condition.</p>
+     * <p>Represents the <b>key</b> in the map condition.</p>
      */
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
 
     /**
-     * <p>Represents <i>key</i> <b/> in the map condition.</p>
+     * <p>Represents the <b>key</b> in the map condition.</p>
      */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
-     * <p>Represents <i>key</i> <b/> in the map condition.</p>
+     * <p>Represents the <b>key</b> in the map condition.</p>
      */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
-     * <p>Represents <i>key</i> <b/> in the map condition.</p>
+     * <p>Represents the <b>key</b> in the map condition.</p>
      */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
     /**
-     * <p>Represents <i>key</i> <b/> in the map condition.</p>
+     * <p>Represents the <b>key</b> in the map condition.</p>
      */
     inline ScanConditionPair& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
     /**
-     * <p>Represents <i>key</i> <b/> in the map condition.</p>
+     * <p>Represents the <b>key</b> in the map condition.</p>
      */
     inline ScanConditionPair& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     /**
-     * <p>Represents <i>key</i> <b/> in the map condition.</p>
+     * <p>Represents the <b>key</b> in the map condition.</p>
      */
     inline ScanConditionPair& WithKey(const char* value) { SetKey(value); return *this;}
 
 
     /**
-     * <p>Represents optional <i>value</i> <b/> in the map condition. If not specified,
-     * only <i>key</i> <b/> will be matched.</p>
+     * <p>Represents optional <b>value</b> in the map condition. If not specified, only
+     * the <b>key</b> will be matched.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
 
     /**
-     * <p>Represents optional <i>value</i> <b/> in the map condition. If not specified,
-     * only <i>key</i> <b/> will be matched.</p>
+     * <p>Represents optional <b>value</b> in the map condition. If not specified, only
+     * the <b>key</b> will be matched.</p>
      */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
-     * <p>Represents optional <i>value</i> <b/> in the map condition. If not specified,
-     * only <i>key</i> <b/> will be matched.</p>
+     * <p>Represents optional <b>value</b> in the map condition. If not specified, only
+     * the <b>key</b> will be matched.</p>
      */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
-     * <p>Represents optional <i>value</i> <b/> in the map condition. If not specified,
-     * only <i>key</i> <b/> will be matched.</p>
+     * <p>Represents optional <b>value</b> in the map condition. If not specified, only
+     * the <b>key</b> will be matched.</p>
      */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
-     * <p>Represents optional <i>value</i> <b/> in the map condition. If not specified,
-     * only <i>key</i> <b/> will be matched.</p>
+     * <p>Represents optional <b>value</b> in the map condition. If not specified, only
+     * the <b>key</b> will be matched.</p>
      */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
     /**
-     * <p>Represents optional <i>value</i> <b/> in the map condition. If not specified,
-     * only <i>key</i> <b/> will be matched.</p>
+     * <p>Represents optional <b>value</b> in the map condition. If not specified, only
+     * the <b>key</b> will be matched.</p>
      */
     inline ScanConditionPair& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
     /**
-     * <p>Represents optional <i>value</i> <b/> in the map condition. If not specified,
-     * only <i>key</i> <b/> will be matched.</p>
+     * <p>Represents optional <b>value</b> in the map condition. If not specified, only
+     * the <b>key</b> will be matched.</p>
      */
     inline ScanConditionPair& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
-     * <p>Represents optional <i>value</i> <b/> in the map condition. If not specified,
-     * only <i>key</i> <b/> will be matched.</p>
+     * <p>Represents optional <b>value</b> in the map condition. If not specified, only
+     * the <b>key</b> will be matched.</p>
      */
     inline ScanConditionPair& WithValue(const char* value) { SetValue(value); return *this;}
 

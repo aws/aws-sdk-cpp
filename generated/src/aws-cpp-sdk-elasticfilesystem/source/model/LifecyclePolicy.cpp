@@ -22,7 +22,9 @@ LifecyclePolicy::LifecyclePolicy() :
     m_transitionToIA(TransitionToIARules::NOT_SET),
     m_transitionToIAHasBeenSet(false),
     m_transitionToPrimaryStorageClass(TransitionToPrimaryStorageClassRules::NOT_SET),
-    m_transitionToPrimaryStorageClassHasBeenSet(false)
+    m_transitionToPrimaryStorageClassHasBeenSet(false),
+    m_transitionToArchive(TransitionToArchiveRules::NOT_SET),
+    m_transitionToArchiveHasBeenSet(false)
 {
 }
 
@@ -30,7 +32,9 @@ LifecyclePolicy::LifecyclePolicy(JsonView jsonValue) :
     m_transitionToIA(TransitionToIARules::NOT_SET),
     m_transitionToIAHasBeenSet(false),
     m_transitionToPrimaryStorageClass(TransitionToPrimaryStorageClassRules::NOT_SET),
-    m_transitionToPrimaryStorageClassHasBeenSet(false)
+    m_transitionToPrimaryStorageClassHasBeenSet(false),
+    m_transitionToArchive(TransitionToArchiveRules::NOT_SET),
+    m_transitionToArchiveHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -51,6 +55,13 @@ LifecyclePolicy& LifecyclePolicy::operator =(JsonView jsonValue)
     m_transitionToPrimaryStorageClassHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TransitionToArchive"))
+  {
+    m_transitionToArchive = TransitionToArchiveRulesMapper::GetTransitionToArchiveRulesForName(jsonValue.GetString("TransitionToArchive"));
+
+    m_transitionToArchiveHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -66,6 +77,11 @@ JsonValue LifecyclePolicy::Jsonize() const
   if(m_transitionToPrimaryStorageClassHasBeenSet)
   {
    payload.WithString("TransitionToPrimaryStorageClass", TransitionToPrimaryStorageClassRulesMapper::GetNameForTransitionToPrimaryStorageClassRules(m_transitionToPrimaryStorageClass));
+  }
+
+  if(m_transitionToArchiveHasBeenSet)
+  {
+   payload.WithString("TransitionToArchive", TransitionToArchiveRulesMapper::GetNameForTransitionToArchiveRules(m_transitionToArchive));
   }
 
   return payload;

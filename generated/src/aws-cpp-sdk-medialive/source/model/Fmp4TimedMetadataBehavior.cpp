@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Fmp4TimedMetadataBehavior::NOT_SET:
+            return {};
           case Fmp4TimedMetadataBehavior::NO_PASSTHROUGH:
             return "NO_PASSTHROUGH";
           case Fmp4TimedMetadataBehavior::PASSTHROUGH:

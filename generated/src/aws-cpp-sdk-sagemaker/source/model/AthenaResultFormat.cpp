@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AthenaResultFormat::NOT_SET:
+            return {};
           case AthenaResultFormat::PARQUET:
             return "PARQUET";
           case AthenaResultFormat::ORC:

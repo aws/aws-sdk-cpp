@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ImportDataCharacterEncoding::NOT_SET:
+            return {};
           case ImportDataCharacterEncoding::UTF_8:
             return "UTF-8";
           case ImportDataCharacterEncoding::US_ASCII:

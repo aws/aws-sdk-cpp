@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CodeSigningPolicy::NOT_SET:
+            return {};
           case CodeSigningPolicy::Warn:
             return "Warn";
           case CodeSigningPolicy::Enforce:

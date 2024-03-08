@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DeploymentEventType::NOT_SET:
+            return {};
           case DeploymentEventType::PERCENTAGE_UPDATED:
             return "PERCENTAGE_UPDATED";
           case DeploymentEventType::ROLLBACK_STARTED:

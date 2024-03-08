@@ -53,8 +53,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* MedicalImagingClient::SERVICE_NAME = "medical-imaging";
-const char* MedicalImagingClient::ALLOCATION_TAG = "MedicalImagingClient";
+namespace Aws
+{
+  namespace MedicalImaging
+  {
+    const char SERVICE_NAME[] = "medical-imaging";
+    const char ALLOCATION_TAG[] = "MedicalImagingClient";
+  }
+}
+const char* MedicalImagingClient::GetServiceName() {return SERVICE_NAME;}
+const char* MedicalImagingClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 MedicalImagingClient::MedicalImagingClient(const MedicalImaging::MedicalImagingClientConfiguration& clientConfiguration,
                                            std::shared_ptr<MedicalImagingEndpointProviderBase> endpointProvider) :
@@ -66,7 +74,7 @@ MedicalImagingClient::MedicalImagingClient(const MedicalImaging::MedicalImagingC
             Aws::MakeShared<MedicalImagingErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<MedicalImagingEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -82,7 +90,7 @@ MedicalImagingClient::MedicalImagingClient(const AWSCredentials& credentials,
             Aws::MakeShared<MedicalImagingErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<MedicalImagingEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -98,7 +106,7 @@ MedicalImagingClient::MedicalImagingClient(const std::shared_ptr<AWSCredentialsP
             Aws::MakeShared<MedicalImagingErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<MedicalImagingEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

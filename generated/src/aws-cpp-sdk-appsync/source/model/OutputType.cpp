@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OutputType::NOT_SET:
+            return {};
           case OutputType::SDL:
             return "SDL";
           case OutputType::JSON:

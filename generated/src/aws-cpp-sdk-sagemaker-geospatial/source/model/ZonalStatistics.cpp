@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ZonalStatistics::NOT_SET:
+            return {};
           case ZonalStatistics::MEAN:
             return "MEAN";
           case ZonalStatistics::MEDIAN:

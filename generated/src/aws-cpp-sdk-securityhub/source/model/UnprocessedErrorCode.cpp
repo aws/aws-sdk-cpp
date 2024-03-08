@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UnprocessedErrorCode::NOT_SET:
+            return {};
           case UnprocessedErrorCode::INVALID_INPUT:
             return "INVALID_INPUT";
           case UnprocessedErrorCode::ACCESS_DENIED:

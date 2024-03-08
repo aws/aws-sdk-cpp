@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NetworkStatus::NOT_SET:
+            return {};
           case NetworkStatus::CREATED:
             return "CREATED";
           case NetworkStatus::PROVISIONING:

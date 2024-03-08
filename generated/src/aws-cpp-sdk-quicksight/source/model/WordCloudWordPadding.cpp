@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case WordCloudWordPadding::NOT_SET:
+            return {};
           case WordCloudWordPadding::NONE:
             return "NONE";
           case WordCloudWordPadding::SMALL:

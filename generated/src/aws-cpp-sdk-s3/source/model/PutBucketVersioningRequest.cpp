@@ -77,7 +77,7 @@ Aws::Http::HeaderValueCollection PutBucketVersioningRequest::GetRequestSpecificH
     ss.str("");
   }
 
-  if(m_checksumAlgorithmHasBeenSet)
+  if(m_checksumAlgorithmHasBeenSet && m_checksumAlgorithm != ChecksumAlgorithm::NOT_SET)
   {
     headers.emplace("x-amz-sdk-checksum-algorithm", ChecksumAlgorithmMapper::GetNameForChecksumAlgorithm(m_checksumAlgorithm));
   }
@@ -102,6 +102,8 @@ Aws::Http::HeaderValueCollection PutBucketVersioningRequest::GetRequestSpecificH
 PutBucketVersioningRequest::EndpointParameters PutBucketVersioningRequest::GetEndpointContextParams() const
 {
     EndpointParameters parameters;
+    // Static context parameters
+    parameters.emplace_back(Aws::String("UseS3ExpressControlEndpoint"), true, Aws::Endpoint::EndpointParameter::ParameterOrigin::STATIC_CONTEXT);
     // Operation context parameters
     if (BucketHasBeenSet()) {
         parameters.emplace_back(Aws::String("Bucket"), this->GetBucket(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);

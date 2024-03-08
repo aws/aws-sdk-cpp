@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BurnInFontColor::NOT_SET:
+            return {};
           case BurnInFontColor::BLACK:
             return "BLACK";
           case BurnInFontColor::BLUE:

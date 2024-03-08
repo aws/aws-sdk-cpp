@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InputDeviceConnectionState::NOT_SET:
+            return {};
           case InputDeviceConnectionState::DISCONNECTED:
             return "DISCONNECTED";
           case InputDeviceConnectionState::CONNECTED:

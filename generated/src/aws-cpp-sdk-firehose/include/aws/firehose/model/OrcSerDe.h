@@ -71,32 +71,32 @@ namespace Model
     /**
      * <p>The Hadoop Distributed File System (HDFS) block size. This is useful if you
      * intend to copy the data from Amazon S3 to HDFS before querying. The default is
-     * 256 MiB and the minimum is 64 MiB. Kinesis Data Firehose uses this value for
-     * padding calculations.</p>
+     * 256 MiB and the minimum is 64 MiB. Firehose uses this value for padding
+     * calculations.</p>
      */
     inline int GetBlockSizeBytes() const{ return m_blockSizeBytes; }
 
     /**
      * <p>The Hadoop Distributed File System (HDFS) block size. This is useful if you
      * intend to copy the data from Amazon S3 to HDFS before querying. The default is
-     * 256 MiB and the minimum is 64 MiB. Kinesis Data Firehose uses this value for
-     * padding calculations.</p>
+     * 256 MiB and the minimum is 64 MiB. Firehose uses this value for padding
+     * calculations.</p>
      */
     inline bool BlockSizeBytesHasBeenSet() const { return m_blockSizeBytesHasBeenSet; }
 
     /**
      * <p>The Hadoop Distributed File System (HDFS) block size. This is useful if you
      * intend to copy the data from Amazon S3 to HDFS before querying. The default is
-     * 256 MiB and the minimum is 64 MiB. Kinesis Data Firehose uses this value for
-     * padding calculations.</p>
+     * 256 MiB and the minimum is 64 MiB. Firehose uses this value for padding
+     * calculations.</p>
      */
     inline void SetBlockSizeBytes(int value) { m_blockSizeBytesHasBeenSet = true; m_blockSizeBytes = value; }
 
     /**
      * <p>The Hadoop Distributed File System (HDFS) block size. This is useful if you
      * intend to copy the data from Amazon S3 to HDFS before querying. The default is
-     * 256 MiB and the minimum is 64 MiB. Kinesis Data Firehose uses this value for
-     * padding calculations.</p>
+     * 256 MiB and the minimum is 64 MiB. Firehose uses this value for padding
+     * calculations.</p>
      */
     inline OrcSerDe& WithBlockSizeBytes(int value) { SetBlockSizeBytes(value); return *this;}
 
@@ -163,8 +163,8 @@ namespace Model
      * maximum of 3.2 MiB for padding within the 256 MiB block. In such a case, if the
      * available size within the block is more than 3.2 MiB, a new, smaller stripe is
      * inserted to fit within that space. This ensures that no stripe crosses block
-     * boundaries and causes remote reads within a node-local task.</p> <p>Kinesis Data
-     * Firehose ignores this parameter when <a>OrcSerDe$EnablePadding</a> is
+     * boundaries and causes remote reads within a node-local task.</p> <p>Firehose
+     * ignores this parameter when <a>OrcSerDe$EnablePadding</a> is
      * <code>false</code>.</p>
      */
     inline double GetPaddingTolerance() const{ return m_paddingTolerance; }
@@ -177,8 +177,8 @@ namespace Model
      * maximum of 3.2 MiB for padding within the 256 MiB block. In such a case, if the
      * available size within the block is more than 3.2 MiB, a new, smaller stripe is
      * inserted to fit within that space. This ensures that no stripe crosses block
-     * boundaries and causes remote reads within a node-local task.</p> <p>Kinesis Data
-     * Firehose ignores this parameter when <a>OrcSerDe$EnablePadding</a> is
+     * boundaries and causes remote reads within a node-local task.</p> <p>Firehose
+     * ignores this parameter when <a>OrcSerDe$EnablePadding</a> is
      * <code>false</code>.</p>
      */
     inline bool PaddingToleranceHasBeenSet() const { return m_paddingToleranceHasBeenSet; }
@@ -191,8 +191,8 @@ namespace Model
      * maximum of 3.2 MiB for padding within the 256 MiB block. In such a case, if the
      * available size within the block is more than 3.2 MiB, a new, smaller stripe is
      * inserted to fit within that space. This ensures that no stripe crosses block
-     * boundaries and causes remote reads within a node-local task.</p> <p>Kinesis Data
-     * Firehose ignores this parameter when <a>OrcSerDe$EnablePadding</a> is
+     * boundaries and causes remote reads within a node-local task.</p> <p>Firehose
+     * ignores this parameter when <a>OrcSerDe$EnablePadding</a> is
      * <code>false</code>.</p>
      */
     inline void SetPaddingTolerance(double value) { m_paddingToleranceHasBeenSet = true; m_paddingTolerance = value; }
@@ -205,8 +205,8 @@ namespace Model
      * maximum of 3.2 MiB for padding within the 256 MiB block. In such a case, if the
      * available size within the block is more than 3.2 MiB, a new, smaller stripe is
      * inserted to fit within that space. This ensures that no stripe crosses block
-     * boundaries and causes remote reads within a node-local task.</p> <p>Kinesis Data
-     * Firehose ignores this parameter when <a>OrcSerDe$EnablePadding</a> is
+     * boundaries and causes remote reads within a node-local task.</p> <p>Firehose
+     * ignores this parameter when <a>OrcSerDe$EnablePadding</a> is
      * <code>false</code>.</p>
      */
     inline OrcSerDe& WithPaddingTolerance(double value) { SetPaddingTolerance(value); return *this;}
@@ -250,56 +250,56 @@ namespace Model
 
 
     /**
-     * <p>The column names for which you want Kinesis Data Firehose to create bloom
-     * filters. The default is <code>null</code>.</p>
+     * <p>The column names for which you want Firehose to create bloom filters. The
+     * default is <code>null</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetBloomFilterColumns() const{ return m_bloomFilterColumns; }
 
     /**
-     * <p>The column names for which you want Kinesis Data Firehose to create bloom
-     * filters. The default is <code>null</code>.</p>
+     * <p>The column names for which you want Firehose to create bloom filters. The
+     * default is <code>null</code>.</p>
      */
     inline bool BloomFilterColumnsHasBeenSet() const { return m_bloomFilterColumnsHasBeenSet; }
 
     /**
-     * <p>The column names for which you want Kinesis Data Firehose to create bloom
-     * filters. The default is <code>null</code>.</p>
+     * <p>The column names for which you want Firehose to create bloom filters. The
+     * default is <code>null</code>.</p>
      */
     inline void SetBloomFilterColumns(const Aws::Vector<Aws::String>& value) { m_bloomFilterColumnsHasBeenSet = true; m_bloomFilterColumns = value; }
 
     /**
-     * <p>The column names for which you want Kinesis Data Firehose to create bloom
-     * filters. The default is <code>null</code>.</p>
+     * <p>The column names for which you want Firehose to create bloom filters. The
+     * default is <code>null</code>.</p>
      */
     inline void SetBloomFilterColumns(Aws::Vector<Aws::String>&& value) { m_bloomFilterColumnsHasBeenSet = true; m_bloomFilterColumns = std::move(value); }
 
     /**
-     * <p>The column names for which you want Kinesis Data Firehose to create bloom
-     * filters. The default is <code>null</code>.</p>
+     * <p>The column names for which you want Firehose to create bloom filters. The
+     * default is <code>null</code>.</p>
      */
     inline OrcSerDe& WithBloomFilterColumns(const Aws::Vector<Aws::String>& value) { SetBloomFilterColumns(value); return *this;}
 
     /**
-     * <p>The column names for which you want Kinesis Data Firehose to create bloom
-     * filters. The default is <code>null</code>.</p>
+     * <p>The column names for which you want Firehose to create bloom filters. The
+     * default is <code>null</code>.</p>
      */
     inline OrcSerDe& WithBloomFilterColumns(Aws::Vector<Aws::String>&& value) { SetBloomFilterColumns(std::move(value)); return *this;}
 
     /**
-     * <p>The column names for which you want Kinesis Data Firehose to create bloom
-     * filters. The default is <code>null</code>.</p>
+     * <p>The column names for which you want Firehose to create bloom filters. The
+     * default is <code>null</code>.</p>
      */
     inline OrcSerDe& AddBloomFilterColumns(const Aws::String& value) { m_bloomFilterColumnsHasBeenSet = true; m_bloomFilterColumns.push_back(value); return *this; }
 
     /**
-     * <p>The column names for which you want Kinesis Data Firehose to create bloom
-     * filters. The default is <code>null</code>.</p>
+     * <p>The column names for which you want Firehose to create bloom filters. The
+     * default is <code>null</code>.</p>
      */
     inline OrcSerDe& AddBloomFilterColumns(Aws::String&& value) { m_bloomFilterColumnsHasBeenSet = true; m_bloomFilterColumns.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The column names for which you want Kinesis Data Firehose to create bloom
-     * filters. The default is <code>null</code>.</p>
+     * <p>The column names for which you want Firehose to create bloom filters. The
+     * default is <code>null</code>.</p>
      */
     inline OrcSerDe& AddBloomFilterColumns(const char* value) { m_bloomFilterColumnsHasBeenSet = true; m_bloomFilterColumns.push_back(value); return *this; }
 

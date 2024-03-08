@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SelfManagedKafkaStartPosition::NOT_SET:
+            return {};
           case SelfManagedKafkaStartPosition::TRIM_HORIZON:
             return "TRIM_HORIZON";
           case SelfManagedKafkaStartPosition::LATEST:

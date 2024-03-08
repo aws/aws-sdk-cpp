@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case H264EntropyEncoding::NOT_SET:
+            return {};
           case H264EntropyEncoding::CABAC:
             return "CABAC";
           case H264EntropyEncoding::CAVLC:

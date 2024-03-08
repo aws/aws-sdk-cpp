@@ -1306,6 +1306,31 @@ namespace Model
      */
     inline Fleet& WithSessionScriptS3Location(S3Location&& value) { SetSessionScriptS3Location(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The maximum number of user sessions on an instance. This only applies to
+     * multi-session fleets.</p>
+     */
+    inline int GetMaxSessionsPerInstance() const{ return m_maxSessionsPerInstance; }
+
+    /**
+     * <p>The maximum number of user sessions on an instance. This only applies to
+     * multi-session fleets.</p>
+     */
+    inline bool MaxSessionsPerInstanceHasBeenSet() const { return m_maxSessionsPerInstanceHasBeenSet; }
+
+    /**
+     * <p>The maximum number of user sessions on an instance. This only applies to
+     * multi-session fleets.</p>
+     */
+    inline void SetMaxSessionsPerInstance(int value) { m_maxSessionsPerInstanceHasBeenSet = true; m_maxSessionsPerInstance = value; }
+
+    /**
+     * <p>The maximum number of user sessions on an instance. This only applies to
+     * multi-session fleets.</p>
+     */
+    inline Fleet& WithMaxSessionsPerInstance(int value) { SetMaxSessionsPerInstance(value); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -1379,6 +1404,9 @@ namespace Model
 
     S3Location m_sessionScriptS3Location;
     bool m_sessionScriptS3LocationHasBeenSet = false;
+
+    int m_maxSessionsPerInstance;
+    bool m_maxSessionsPerInstanceHasBeenSet = false;
   };
 
 } // namespace Model

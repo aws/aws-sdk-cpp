@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AggregatedUtterancesFilterOperator::NOT_SET:
+            return {};
           case AggregatedUtterancesFilterOperator::CO:
             return "CO";
           case AggregatedUtterancesFilterOperator::EQ:

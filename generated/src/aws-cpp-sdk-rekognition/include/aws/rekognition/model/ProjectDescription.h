@@ -9,6 +9,8 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/rekognition/model/ProjectStatus.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/rekognition/model/CustomizationFeature.h>
+#include <aws/rekognition/model/ProjectAutoUpdate.h>
 #include <aws/rekognition/model/DatasetMetadata.h>
 #include <utility>
 
@@ -185,6 +187,74 @@ namespace Model
      */
     inline ProjectDescription& AddDatasets(DatasetMetadata&& value) { m_datasetsHasBeenSet = true; m_datasets.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Specifies the project that is being customized.</p>
+     */
+    inline const CustomizationFeature& GetFeature() const{ return m_feature; }
+
+    /**
+     * <p>Specifies the project that is being customized.</p>
+     */
+    inline bool FeatureHasBeenSet() const { return m_featureHasBeenSet; }
+
+    /**
+     * <p>Specifies the project that is being customized.</p>
+     */
+    inline void SetFeature(const CustomizationFeature& value) { m_featureHasBeenSet = true; m_feature = value; }
+
+    /**
+     * <p>Specifies the project that is being customized.</p>
+     */
+    inline void SetFeature(CustomizationFeature&& value) { m_featureHasBeenSet = true; m_feature = std::move(value); }
+
+    /**
+     * <p>Specifies the project that is being customized.</p>
+     */
+    inline ProjectDescription& WithFeature(const CustomizationFeature& value) { SetFeature(value); return *this;}
+
+    /**
+     * <p>Specifies the project that is being customized.</p>
+     */
+    inline ProjectDescription& WithFeature(CustomizationFeature&& value) { SetFeature(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Indicates whether automatic retraining will be attempted for the versions of
+     * the project. Applies only to adapters. </p>
+     */
+    inline const ProjectAutoUpdate& GetAutoUpdate() const{ return m_autoUpdate; }
+
+    /**
+     * <p>Indicates whether automatic retraining will be attempted for the versions of
+     * the project. Applies only to adapters. </p>
+     */
+    inline bool AutoUpdateHasBeenSet() const { return m_autoUpdateHasBeenSet; }
+
+    /**
+     * <p>Indicates whether automatic retraining will be attempted for the versions of
+     * the project. Applies only to adapters. </p>
+     */
+    inline void SetAutoUpdate(const ProjectAutoUpdate& value) { m_autoUpdateHasBeenSet = true; m_autoUpdate = value; }
+
+    /**
+     * <p>Indicates whether automatic retraining will be attempted for the versions of
+     * the project. Applies only to adapters. </p>
+     */
+    inline void SetAutoUpdate(ProjectAutoUpdate&& value) { m_autoUpdateHasBeenSet = true; m_autoUpdate = std::move(value); }
+
+    /**
+     * <p>Indicates whether automatic retraining will be attempted for the versions of
+     * the project. Applies only to adapters. </p>
+     */
+    inline ProjectDescription& WithAutoUpdate(const ProjectAutoUpdate& value) { SetAutoUpdate(value); return *this;}
+
+    /**
+     * <p>Indicates whether automatic retraining will be attempted for the versions of
+     * the project. Applies only to adapters. </p>
+     */
+    inline ProjectDescription& WithAutoUpdate(ProjectAutoUpdate&& value) { SetAutoUpdate(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_projectArn;
@@ -198,6 +268,12 @@ namespace Model
 
     Aws::Vector<DatasetMetadata> m_datasets;
     bool m_datasetsHasBeenSet = false;
+
+    CustomizationFeature m_feature;
+    bool m_featureHasBeenSet = false;
+
+    ProjectAutoUpdate m_autoUpdate;
+    bool m_autoUpdateHasBeenSet = false;
   };
 
 } // namespace Model

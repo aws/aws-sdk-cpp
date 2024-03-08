@@ -102,49 +102,49 @@ namespace Model
 
     /**
      * <p>The ID of the destination to start returning the destination information.
-     * Kinesis Data Firehose supports one destination per delivery stream.</p>
+     * Firehose supports one destination per delivery stream.</p>
      */
     inline const Aws::String& GetExclusiveStartDestinationId() const{ return m_exclusiveStartDestinationId; }
 
     /**
      * <p>The ID of the destination to start returning the destination information.
-     * Kinesis Data Firehose supports one destination per delivery stream.</p>
+     * Firehose supports one destination per delivery stream.</p>
      */
     inline bool ExclusiveStartDestinationIdHasBeenSet() const { return m_exclusiveStartDestinationIdHasBeenSet; }
 
     /**
      * <p>The ID of the destination to start returning the destination information.
-     * Kinesis Data Firehose supports one destination per delivery stream.</p>
+     * Firehose supports one destination per delivery stream.</p>
      */
     inline void SetExclusiveStartDestinationId(const Aws::String& value) { m_exclusiveStartDestinationIdHasBeenSet = true; m_exclusiveStartDestinationId = value; }
 
     /**
      * <p>The ID of the destination to start returning the destination information.
-     * Kinesis Data Firehose supports one destination per delivery stream.</p>
+     * Firehose supports one destination per delivery stream.</p>
      */
     inline void SetExclusiveStartDestinationId(Aws::String&& value) { m_exclusiveStartDestinationIdHasBeenSet = true; m_exclusiveStartDestinationId = std::move(value); }
 
     /**
      * <p>The ID of the destination to start returning the destination information.
-     * Kinesis Data Firehose supports one destination per delivery stream.</p>
+     * Firehose supports one destination per delivery stream.</p>
      */
     inline void SetExclusiveStartDestinationId(const char* value) { m_exclusiveStartDestinationIdHasBeenSet = true; m_exclusiveStartDestinationId.assign(value); }
 
     /**
      * <p>The ID of the destination to start returning the destination information.
-     * Kinesis Data Firehose supports one destination per delivery stream.</p>
+     * Firehose supports one destination per delivery stream.</p>
      */
     inline DescribeDeliveryStreamRequest& WithExclusiveStartDestinationId(const Aws::String& value) { SetExclusiveStartDestinationId(value); return *this;}
 
     /**
      * <p>The ID of the destination to start returning the destination information.
-     * Kinesis Data Firehose supports one destination per delivery stream.</p>
+     * Firehose supports one destination per delivery stream.</p>
      */
     inline DescribeDeliveryStreamRequest& WithExclusiveStartDestinationId(Aws::String&& value) { SetExclusiveStartDestinationId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the destination to start returning the destination information.
-     * Kinesis Data Firehose supports one destination per delivery stream.</p>
+     * Firehose supports one destination per delivery stream.</p>
      */
     inline DescribeDeliveryStreamRequest& WithExclusiveStartDestinationId(const char* value) { SetExclusiveStartDestinationId(value); return *this;}
 

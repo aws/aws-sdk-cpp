@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Compatibility::NOT_SET:
+            return {};
           case Compatibility::NONE:
             return "NONE";
           case Compatibility::DISABLED:

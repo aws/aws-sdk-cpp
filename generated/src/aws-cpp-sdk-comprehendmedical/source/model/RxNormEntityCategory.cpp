@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RxNormEntityCategory::NOT_SET:
+            return {};
           case RxNormEntityCategory::MEDICATION:
             return "MEDICATION";
           default:

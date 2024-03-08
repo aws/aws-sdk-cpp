@@ -39,7 +39,8 @@ Cluster::Cluster() :
     m_connectorConfigHasBeenSet(false),
     m_idHasBeenSet(false),
     m_healthHasBeenSet(false),
-    m_outpostConfigHasBeenSet(false)
+    m_outpostConfigHasBeenSet(false),
+    m_accessConfigHasBeenSet(false)
 {
 }
 
@@ -64,7 +65,8 @@ Cluster::Cluster(JsonView jsonValue) :
     m_connectorConfigHasBeenSet(false),
     m_idHasBeenSet(false),
     m_healthHasBeenSet(false),
-    m_outpostConfigHasBeenSet(false)
+    m_outpostConfigHasBeenSet(false),
+    m_accessConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -217,6 +219,13 @@ Cluster& Cluster::operator =(JsonView jsonValue)
     m_outpostConfigHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("accessConfig"))
+  {
+    m_accessConfig = jsonValue.GetObject("accessConfig");
+
+    m_accessConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -349,6 +358,12 @@ JsonValue Cluster::Jsonize() const
   if(m_outpostConfigHasBeenSet)
   {
    payload.WithObject("outpostConfig", m_outpostConfig.Jsonize());
+
+  }
+
+  if(m_accessConfigHasBeenSet)
+  {
+   payload.WithObject("accessConfig", m_accessConfig.Jsonize());
 
   }
 

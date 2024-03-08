@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DeploymentStatus::NOT_SET:
+            return {};
           case DeploymentStatus::Created:
             return "Created";
           case DeploymentStatus::Queued:

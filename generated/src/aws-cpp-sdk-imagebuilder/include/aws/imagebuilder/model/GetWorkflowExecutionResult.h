@@ -475,6 +475,49 @@ namespace Model
      */
     inline GetWorkflowExecutionResult& WithEndTime(const char* value) { SetEndTime(value); return *this;}
 
+
+    /**
+     * <p>Test workflows are defined within named runtime groups. The parallel group is
+     * a named group that contains one or more test workflows.</p>
+     */
+    inline const Aws::String& GetParallelGroup() const{ return m_parallelGroup; }
+
+    /**
+     * <p>Test workflows are defined within named runtime groups. The parallel group is
+     * a named group that contains one or more test workflows.</p>
+     */
+    inline void SetParallelGroup(const Aws::String& value) { m_parallelGroup = value; }
+
+    /**
+     * <p>Test workflows are defined within named runtime groups. The parallel group is
+     * a named group that contains one or more test workflows.</p>
+     */
+    inline void SetParallelGroup(Aws::String&& value) { m_parallelGroup = std::move(value); }
+
+    /**
+     * <p>Test workflows are defined within named runtime groups. The parallel group is
+     * a named group that contains one or more test workflows.</p>
+     */
+    inline void SetParallelGroup(const char* value) { m_parallelGroup.assign(value); }
+
+    /**
+     * <p>Test workflows are defined within named runtime groups. The parallel group is
+     * a named group that contains one or more test workflows.</p>
+     */
+    inline GetWorkflowExecutionResult& WithParallelGroup(const Aws::String& value) { SetParallelGroup(value); return *this;}
+
+    /**
+     * <p>Test workflows are defined within named runtime groups. The parallel group is
+     * a named group that contains one or more test workflows.</p>
+     */
+    inline GetWorkflowExecutionResult& WithParallelGroup(Aws::String&& value) { SetParallelGroup(std::move(value)); return *this;}
+
+    /**
+     * <p>Test workflows are defined within named runtime groups. The parallel group is
+     * a named group that contains one or more test workflows.</p>
+     */
+    inline GetWorkflowExecutionResult& WithParallelGroup(const char* value) { SetParallelGroup(value); return *this;}
+
   private:
 
     Aws::String m_requestId;
@@ -502,6 +545,8 @@ namespace Model
     Aws::String m_startTime;
 
     Aws::String m_endTime;
+
+    Aws::String m_parallelGroup;
   };
 
 } // namespace Model

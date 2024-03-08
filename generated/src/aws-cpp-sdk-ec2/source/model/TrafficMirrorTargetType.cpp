@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TrafficMirrorTargetType::NOT_SET:
+            return {};
           case TrafficMirrorTargetType::network_interface:
             return "network-interface";
           case TrafficMirrorTargetType::network_load_balancer:

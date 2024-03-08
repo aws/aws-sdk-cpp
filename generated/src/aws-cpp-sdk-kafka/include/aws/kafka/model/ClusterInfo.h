@@ -18,6 +18,7 @@
 #include <aws/kafka/model/StateInfo.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/kafka/model/StorageMode.h>
+#include <aws/kafka/model/CustomerActionStatus.h>
 #include <utility>
 
 namespace Aws
@@ -1017,6 +1018,55 @@ namespace Model
      */
     inline ClusterInfo& WithStorageMode(StorageMode&& value) { SetStorageMode(std::move(value)); return *this;}
 
+
+    /**
+     * 
+            <p>Determines if there is an action required from the
+     * customer.</p>
+         
+     */
+    inline const CustomerActionStatus& GetCustomerActionStatus() const{ return m_customerActionStatus; }
+
+    /**
+     * 
+            <p>Determines if there is an action required from the
+     * customer.</p>
+         
+     */
+    inline bool CustomerActionStatusHasBeenSet() const { return m_customerActionStatusHasBeenSet; }
+
+    /**
+     * 
+            <p>Determines if there is an action required from the
+     * customer.</p>
+         
+     */
+    inline void SetCustomerActionStatus(const CustomerActionStatus& value) { m_customerActionStatusHasBeenSet = true; m_customerActionStatus = value; }
+
+    /**
+     * 
+            <p>Determines if there is an action required from the
+     * customer.</p>
+         
+     */
+    inline void SetCustomerActionStatus(CustomerActionStatus&& value) { m_customerActionStatusHasBeenSet = true; m_customerActionStatus = std::move(value); }
+
+    /**
+     * 
+            <p>Determines if there is an action required from the
+     * customer.</p>
+         
+     */
+    inline ClusterInfo& WithCustomerActionStatus(const CustomerActionStatus& value) { SetCustomerActionStatus(value); return *this;}
+
+    /**
+     * 
+            <p>Determines if there is an action required from the
+     * customer.</p>
+         
+     */
+    inline ClusterInfo& WithCustomerActionStatus(CustomerActionStatus&& value) { SetCustomerActionStatus(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_activeOperationArn;
@@ -1075,6 +1125,9 @@ namespace Model
 
     StorageMode m_storageMode;
     bool m_storageModeHasBeenSet = false;
+
+    CustomerActionStatus m_customerActionStatus;
+    bool m_customerActionStatusHasBeenSet = false;
   };
 
 } // namespace Model

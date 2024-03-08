@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DataSourceFilterAttribute::NOT_SET:
+            return {};
           case DataSourceFilterAttribute::DIRECT_QUICKSIGHT_VIEWER_OR_OWNER:
             return "DIRECT_QUICKSIGHT_VIEWER_OR_OWNER";
           case DataSourceFilterAttribute::DIRECT_QUICKSIGHT_OWNER:

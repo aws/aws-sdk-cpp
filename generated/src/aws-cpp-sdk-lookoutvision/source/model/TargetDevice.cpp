@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TargetDevice::NOT_SET:
+            return {};
           case TargetDevice::jetson_xavier:
             return "jetson_xavier";
           default:

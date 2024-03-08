@@ -43,8 +43,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* CloudControlApiClient::SERVICE_NAME = "cloudcontrolapi";
-const char* CloudControlApiClient::ALLOCATION_TAG = "CloudControlApiClient";
+namespace Aws
+{
+  namespace CloudControlApi
+  {
+    const char SERVICE_NAME[] = "cloudcontrolapi";
+    const char ALLOCATION_TAG[] = "CloudControlApiClient";
+  }
+}
+const char* CloudControlApiClient::GetServiceName() {return SERVICE_NAME;}
+const char* CloudControlApiClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 CloudControlApiClient::CloudControlApiClient(const CloudControlApi::CloudControlApiClientConfiguration& clientConfiguration,
                                              std::shared_ptr<CloudControlApiEndpointProviderBase> endpointProvider) :
@@ -56,7 +64,7 @@ CloudControlApiClient::CloudControlApiClient(const CloudControlApi::CloudControl
             Aws::MakeShared<CloudControlApiErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CloudControlApiEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -72,7 +80,7 @@ CloudControlApiClient::CloudControlApiClient(const AWSCredentials& credentials,
             Aws::MakeShared<CloudControlApiErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CloudControlApiEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -88,7 +96,7 @@ CloudControlApiClient::CloudControlApiClient(const std::shared_ptr<AWSCredential
             Aws::MakeShared<CloudControlApiErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CloudControlApiEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

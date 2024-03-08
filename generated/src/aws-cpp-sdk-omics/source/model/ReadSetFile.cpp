@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReadSetFile::NOT_SET:
+            return {};
           case ReadSetFile::SOURCE1:
             return "SOURCE1";
           case ReadSetFile::SOURCE2:

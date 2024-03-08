@@ -27,7 +27,8 @@ ConnectPeer::ConnectPeer() :
     m_stateHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_configurationHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_subnetArnHasBeenSet(false)
 {
 }
 
@@ -40,7 +41,8 @@ ConnectPeer::ConnectPeer(JsonView jsonValue) :
     m_stateHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_configurationHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_subnetArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -106,6 +108,13 @@ ConnectPeer& ConnectPeer::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SubnetArn"))
+  {
+    m_subnetArn = jsonValue.GetString("SubnetArn");
+
+    m_subnetArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -161,6 +170,12 @@ JsonValue ConnectPeer::Jsonize() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_subnetArnHasBeenSet)
+  {
+   payload.WithString("SubnetArn", m_subnetArn);
 
   }
 

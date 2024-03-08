@@ -10,6 +10,8 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/dynamodb/model/S3SseAlgorithm.h>
 #include <aws/dynamodb/model/ExportFormat.h>
+#include <aws/dynamodb/model/ExportType.h>
+#include <aws/dynamodb/model/IncrementalExportSpecification.h>
 #include <utility>
 
 namespace Aws
@@ -796,6 +798,80 @@ namespace Model
      */
     inline ExportDescription& WithItemCount(long long value) { SetItemCount(value); return *this;}
 
+
+    /**
+     * <p>The type of export that was performed. Valid values are
+     * <code>FULL_EXPORT</code> or <code>INCREMENTAL_EXPORT</code>.</p>
+     */
+    inline const ExportType& GetExportType() const{ return m_exportType; }
+
+    /**
+     * <p>The type of export that was performed. Valid values are
+     * <code>FULL_EXPORT</code> or <code>INCREMENTAL_EXPORT</code>.</p>
+     */
+    inline bool ExportTypeHasBeenSet() const { return m_exportTypeHasBeenSet; }
+
+    /**
+     * <p>The type of export that was performed. Valid values are
+     * <code>FULL_EXPORT</code> or <code>INCREMENTAL_EXPORT</code>.</p>
+     */
+    inline void SetExportType(const ExportType& value) { m_exportTypeHasBeenSet = true; m_exportType = value; }
+
+    /**
+     * <p>The type of export that was performed. Valid values are
+     * <code>FULL_EXPORT</code> or <code>INCREMENTAL_EXPORT</code>.</p>
+     */
+    inline void SetExportType(ExportType&& value) { m_exportTypeHasBeenSet = true; m_exportType = std::move(value); }
+
+    /**
+     * <p>The type of export that was performed. Valid values are
+     * <code>FULL_EXPORT</code> or <code>INCREMENTAL_EXPORT</code>.</p>
+     */
+    inline ExportDescription& WithExportType(const ExportType& value) { SetExportType(value); return *this;}
+
+    /**
+     * <p>The type of export that was performed. Valid values are
+     * <code>FULL_EXPORT</code> or <code>INCREMENTAL_EXPORT</code>.</p>
+     */
+    inline ExportDescription& WithExportType(ExportType&& value) { SetExportType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Optional object containing the parameters specific to an incremental
+     * export.</p>
+     */
+    inline const IncrementalExportSpecification& GetIncrementalExportSpecification() const{ return m_incrementalExportSpecification; }
+
+    /**
+     * <p>Optional object containing the parameters specific to an incremental
+     * export.</p>
+     */
+    inline bool IncrementalExportSpecificationHasBeenSet() const { return m_incrementalExportSpecificationHasBeenSet; }
+
+    /**
+     * <p>Optional object containing the parameters specific to an incremental
+     * export.</p>
+     */
+    inline void SetIncrementalExportSpecification(const IncrementalExportSpecification& value) { m_incrementalExportSpecificationHasBeenSet = true; m_incrementalExportSpecification = value; }
+
+    /**
+     * <p>Optional object containing the parameters specific to an incremental
+     * export.</p>
+     */
+    inline void SetIncrementalExportSpecification(IncrementalExportSpecification&& value) { m_incrementalExportSpecificationHasBeenSet = true; m_incrementalExportSpecification = std::move(value); }
+
+    /**
+     * <p>Optional object containing the parameters specific to an incremental
+     * export.</p>
+     */
+    inline ExportDescription& WithIncrementalExportSpecification(const IncrementalExportSpecification& value) { SetIncrementalExportSpecification(value); return *this;}
+
+    /**
+     * <p>Optional object containing the parameters specific to an incremental
+     * export.</p>
+     */
+    inline ExportDescription& WithIncrementalExportSpecification(IncrementalExportSpecification&& value) { SetIncrementalExportSpecification(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_exportArn;
@@ -854,6 +930,12 @@ namespace Model
 
     long long m_itemCount;
     bool m_itemCountHasBeenSet = false;
+
+    ExportType m_exportType;
+    bool m_exportTypeHasBeenSet = false;
+
+    IncrementalExportSpecification m_incrementalExportSpecification;
+    bool m_incrementalExportSpecificationHasBeenSet = false;
   };
 
 } // namespace Model

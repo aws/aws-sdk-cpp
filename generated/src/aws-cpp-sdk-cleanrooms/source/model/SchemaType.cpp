@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SchemaType::NOT_SET:
+            return {};
           case SchemaType::TABLE:
             return "TABLE";
           default:

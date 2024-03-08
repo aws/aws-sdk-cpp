@@ -211,50 +211,57 @@ namespace Model
 
     /**
      * <p>The IAM Identity Center application generated client ID (used with IAM
-     * Identity Center APIs). IoT SiteWise includes <code>portalClientId</code> for
-     * only portals that use IAM Identity Center to authenticate users.</p>
+     * Identity Center API operations). IoT SiteWise includes
+     * <code>portalClientId</code> for only portals that use IAM Identity Center to
+     * authenticate users.</p>
      */
     inline const Aws::String& GetPortalClientId() const{ return m_portalClientId; }
 
     /**
      * <p>The IAM Identity Center application generated client ID (used with IAM
-     * Identity Center APIs). IoT SiteWise includes <code>portalClientId</code> for
-     * only portals that use IAM Identity Center to authenticate users.</p>
+     * Identity Center API operations). IoT SiteWise includes
+     * <code>portalClientId</code> for only portals that use IAM Identity Center to
+     * authenticate users.</p>
      */
     inline void SetPortalClientId(const Aws::String& value) { m_portalClientId = value; }
 
     /**
      * <p>The IAM Identity Center application generated client ID (used with IAM
-     * Identity Center APIs). IoT SiteWise includes <code>portalClientId</code> for
-     * only portals that use IAM Identity Center to authenticate users.</p>
+     * Identity Center API operations). IoT SiteWise includes
+     * <code>portalClientId</code> for only portals that use IAM Identity Center to
+     * authenticate users.</p>
      */
     inline void SetPortalClientId(Aws::String&& value) { m_portalClientId = std::move(value); }
 
     /**
      * <p>The IAM Identity Center application generated client ID (used with IAM
-     * Identity Center APIs). IoT SiteWise includes <code>portalClientId</code> for
-     * only portals that use IAM Identity Center to authenticate users.</p>
+     * Identity Center API operations). IoT SiteWise includes
+     * <code>portalClientId</code> for only portals that use IAM Identity Center to
+     * authenticate users.</p>
      */
     inline void SetPortalClientId(const char* value) { m_portalClientId.assign(value); }
 
     /**
      * <p>The IAM Identity Center application generated client ID (used with IAM
-     * Identity Center APIs). IoT SiteWise includes <code>portalClientId</code> for
-     * only portals that use IAM Identity Center to authenticate users.</p>
+     * Identity Center API operations). IoT SiteWise includes
+     * <code>portalClientId</code> for only portals that use IAM Identity Center to
+     * authenticate users.</p>
      */
     inline DescribePortalResult& WithPortalClientId(const Aws::String& value) { SetPortalClientId(value); return *this;}
 
     /**
      * <p>The IAM Identity Center application generated client ID (used with IAM
-     * Identity Center APIs). IoT SiteWise includes <code>portalClientId</code> for
-     * only portals that use IAM Identity Center to authenticate users.</p>
+     * Identity Center API operations). IoT SiteWise includes
+     * <code>portalClientId</code> for only portals that use IAM Identity Center to
+     * authenticate users.</p>
      */
     inline DescribePortalResult& WithPortalClientId(Aws::String&& value) { SetPortalClientId(std::move(value)); return *this;}
 
     /**
      * <p>The IAM Identity Center application generated client ID (used with IAM
-     * Identity Center APIs). IoT SiteWise includes <code>portalClientId</code> for
-     * only portals that use IAM Identity Center to authenticate users.</p>
+     * Identity Center API operations). IoT SiteWise includes
+     * <code>portalClientId</code> for only portals that use IAM Identity Center to
+     * authenticate users.</p>
      */
     inline DescribePortalResult& WithPortalClientId(const char* value) { SetPortalClientId(value); return *this;}
 

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InstanceGeneration::NOT_SET:
+            return {};
           case InstanceGeneration::current:
             return "current";
           case InstanceGeneration::previous:

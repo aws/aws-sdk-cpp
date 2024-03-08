@@ -28,8 +28,8 @@ namespace Shield
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef ShieldClientConfiguration ClientConfigurationType;
       typedef ShieldEndpointProvider EndpointProviderType;
@@ -39,14 +39,14 @@ namespace Shield
         * is not specified, it will be initialized to default values.
         */
         ShieldClient(const Aws::Shield::ShieldClientConfiguration& clientConfiguration = Aws::Shield::ShieldClientConfiguration(),
-                     std::shared_ptr<ShieldEndpointProviderBase> endpointProvider = Aws::MakeShared<ShieldEndpointProvider>(ALLOCATION_TAG));
+                     std::shared_ptr<ShieldEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         ShieldClient(const Aws::Auth::AWSCredentials& credentials,
-                     std::shared_ptr<ShieldEndpointProviderBase> endpointProvider = Aws::MakeShared<ShieldEndpointProvider>(ALLOCATION_TAG),
+                     std::shared_ptr<ShieldEndpointProviderBase> endpointProvider = nullptr,
                      const Aws::Shield::ShieldClientConfiguration& clientConfiguration = Aws::Shield::ShieldClientConfiguration());
 
        /**
@@ -54,7 +54,7 @@ namespace Shield
         * the default http client factory will be used
         */
         ShieldClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                     std::shared_ptr<ShieldEndpointProviderBase> endpointProvider = Aws::MakeShared<ShieldEndpointProvider>(ALLOCATION_TAG),
+                     std::shared_ptr<ShieldEndpointProviderBase> endpointProvider = nullptr,
                      const Aws::Shield::ShieldClientConfiguration& clientConfiguration = Aws::Shield::ShieldClientConfiguration());
 
 

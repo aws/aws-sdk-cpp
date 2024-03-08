@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FailureReason::NOT_SET:
+            return {};
           case FailureReason::TOKEN_MISSING:
             return "TOKEN_MISSING";
           case FailureReason::TOKEN_EXPIRED:

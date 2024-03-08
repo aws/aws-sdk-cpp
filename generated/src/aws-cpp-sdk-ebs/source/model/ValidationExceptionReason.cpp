@@ -114,6 +114,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ValidationExceptionReason::NOT_SET:
+            return {};
           case ValidationExceptionReason::INVALID_CUSTOMER_KEY:
             return "INVALID_CUSTOMER_KEY";
           case ValidationExceptionReason::INVALID_PAGE_TOKEN:

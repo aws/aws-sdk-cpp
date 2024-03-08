@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ForwardingConfigState::NOT_SET:
+            return {};
           case ForwardingConfigState::DISABLED:
             return "DISABLED";
           case ForwardingConfigState::ENABLED:

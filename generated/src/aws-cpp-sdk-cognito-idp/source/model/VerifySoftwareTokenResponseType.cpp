@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VerifySoftwareTokenResponseType::NOT_SET:
+            return {};
           case VerifySoftwareTokenResponseType::SUCCESS:
             return "SUCCESS";
           case VerifySoftwareTokenResponseType::ERROR_:

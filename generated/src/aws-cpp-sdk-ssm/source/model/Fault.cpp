@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Fault::NOT_SET:
+            return {};
           case Fault::Client:
             return "Client";
           case Fault::Server:

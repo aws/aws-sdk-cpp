@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LaunchProfilePersona::NOT_SET:
+            return {};
           case LaunchProfilePersona::USER:
             return "USER";
           default:

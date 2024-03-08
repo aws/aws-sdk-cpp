@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ImportDestinationType::NOT_SET:
+            return {};
           case ImportDestinationType::SUPPRESSION_LIST:
             return "SUPPRESSION_LIST";
           case ImportDestinationType::CONTACT_LIST:

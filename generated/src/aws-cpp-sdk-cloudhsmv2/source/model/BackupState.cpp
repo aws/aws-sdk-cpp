@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BackupState::NOT_SET:
+            return {};
           case BackupState::CREATE_IN_PROGRESS:
             return "CREATE_IN_PROGRESS";
           case BackupState::READY:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Permission::NOT_SET:
+            return {};
           case Permission::ADMINISTRATOR:
             return "ADMINISTRATOR";
           case Permission::VIEWER:

@@ -36,8 +36,8 @@ namespace Synthetics
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef SyntheticsClientConfiguration ClientConfigurationType;
       typedef SyntheticsEndpointProvider EndpointProviderType;
@@ -47,14 +47,14 @@ namespace Synthetics
         * is not specified, it will be initialized to default values.
         */
         SyntheticsClient(const Aws::Synthetics::SyntheticsClientConfiguration& clientConfiguration = Aws::Synthetics::SyntheticsClientConfiguration(),
-                         std::shared_ptr<SyntheticsEndpointProviderBase> endpointProvider = Aws::MakeShared<SyntheticsEndpointProvider>(ALLOCATION_TAG));
+                         std::shared_ptr<SyntheticsEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         SyntheticsClient(const Aws::Auth::AWSCredentials& credentials,
-                         std::shared_ptr<SyntheticsEndpointProviderBase> endpointProvider = Aws::MakeShared<SyntheticsEndpointProvider>(ALLOCATION_TAG),
+                         std::shared_ptr<SyntheticsEndpointProviderBase> endpointProvider = nullptr,
                          const Aws::Synthetics::SyntheticsClientConfiguration& clientConfiguration = Aws::Synthetics::SyntheticsClientConfiguration());
 
        /**
@@ -62,7 +62,7 @@ namespace Synthetics
         * the default http client factory will be used
         */
         SyntheticsClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                         std::shared_ptr<SyntheticsEndpointProviderBase> endpointProvider = Aws::MakeShared<SyntheticsEndpointProvider>(ALLOCATION_TAG),
+                         std::shared_ptr<SyntheticsEndpointProviderBase> endpointProvider = nullptr,
                          const Aws::Synthetics::SyntheticsClientConfiguration& clientConfiguration = Aws::Synthetics::SyntheticsClientConfiguration());
 
 

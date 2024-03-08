@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ElasticGpuStatus::NOT_SET:
+            return {};
           case ElasticGpuStatus::OK:
             return "OK";
           case ElasticGpuStatus::IMPAIRED:

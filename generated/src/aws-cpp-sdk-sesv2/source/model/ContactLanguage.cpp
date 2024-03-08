@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ContactLanguage::NOT_SET:
+            return {};
           case ContactLanguage::EN:
             return "EN";
           case ContactLanguage::JA:

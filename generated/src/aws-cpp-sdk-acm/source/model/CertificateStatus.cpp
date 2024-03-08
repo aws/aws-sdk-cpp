@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CertificateStatus::NOT_SET:
+            return {};
           case CertificateStatus::PENDING_VALIDATION:
             return "PENDING_VALIDATION";
           case CertificateStatus::ISSUED:

@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DimensionType::NOT_SET:
+            return {};
           case DimensionType::TOPIC_FILTER:
             return "TOPIC_FILTER";
           default:

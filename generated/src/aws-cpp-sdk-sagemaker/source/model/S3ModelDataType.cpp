@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case S3ModelDataType::NOT_SET:
+            return {};
           case S3ModelDataType::S3Prefix:
             return "S3Prefix";
           case S3ModelDataType::S3Object:

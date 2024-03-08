@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NetworkProtocol::NOT_SET:
+            return {};
           case NetworkProtocol::tcp:
             return "tcp";
           case NetworkProtocol::all:

@@ -37,47 +37,47 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == OPERATION_NOT_PERMITTED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SMSErrors::OPERATION_NOT_PERMITTED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SMSErrors::OPERATION_NOT_PERMITTED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == REPLICATION_RUN_LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SMSErrors::REPLICATION_RUN_LIMIT_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SMSErrors::REPLICATION_RUN_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == NO_CONNECTORS_AVAILABLE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SMSErrors::NO_CONNECTORS_AVAILABLE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SMSErrors::NO_CONNECTORS_AVAILABLE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == MISSING_REQUIRED_PARAMETER_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SMSErrors::MISSING_REQUIRED_PARAMETER), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SMSErrors::MISSING_REQUIRED_PARAMETER), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == SERVER_CANNOT_BE_REPLICATED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SMSErrors::SERVER_CANNOT_BE_REPLICATED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SMSErrors::SERVER_CANNOT_BE_REPLICATED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == TEMPORARILY_UNAVAILABLE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SMSErrors::TEMPORARILY_UNAVAILABLE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SMSErrors::TEMPORARILY_UNAVAILABLE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == UNAUTHORIZED_OPERATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SMSErrors::UNAUTHORIZED_OPERATION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SMSErrors::UNAUTHORIZED_OPERATION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_PARAMETER_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SMSErrors::INVALID_PARAMETER), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SMSErrors::INVALID_PARAMETER), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == REPLICATION_JOB_ALREADY_EXISTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SMSErrors::REPLICATION_JOB_ALREADY_EXISTS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SMSErrors::REPLICATION_JOB_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == DRY_RUN_OPERATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SMSErrors::DRY_RUN_OPERATION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SMSErrors::DRY_RUN_OPERATION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == REPLICATION_JOB_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SMSErrors::REPLICATION_JOB_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SMSErrors::REPLICATION_JOB_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

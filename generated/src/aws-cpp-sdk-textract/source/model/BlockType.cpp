@@ -34,6 +34,16 @@ namespace Aws
         static const int SIGNATURE_HASH = HashingUtils::HashString("SIGNATURE");
         static const int TABLE_TITLE_HASH = HashingUtils::HashString("TABLE_TITLE");
         static const int TABLE_FOOTER_HASH = HashingUtils::HashString("TABLE_FOOTER");
+        static const int LAYOUT_TEXT_HASH = HashingUtils::HashString("LAYOUT_TEXT");
+        static const int LAYOUT_TITLE_HASH = HashingUtils::HashString("LAYOUT_TITLE");
+        static const int LAYOUT_HEADER_HASH = HashingUtils::HashString("LAYOUT_HEADER");
+        static const int LAYOUT_FOOTER_HASH = HashingUtils::HashString("LAYOUT_FOOTER");
+        static const int LAYOUT_SECTION_HEADER_HASH = HashingUtils::HashString("LAYOUT_SECTION_HEADER");
+        static const int LAYOUT_PAGE_NUMBER_HASH = HashingUtils::HashString("LAYOUT_PAGE_NUMBER");
+        static const int LAYOUT_LIST_HASH = HashingUtils::HashString("LAYOUT_LIST");
+        static const int LAYOUT_FIGURE_HASH = HashingUtils::HashString("LAYOUT_FIGURE");
+        static const int LAYOUT_TABLE_HASH = HashingUtils::HashString("LAYOUT_TABLE");
+        static const int LAYOUT_KEY_VALUE_HASH = HashingUtils::HashString("LAYOUT_KEY_VALUE");
 
 
         BlockType GetBlockTypeForName(const Aws::String& name)
@@ -95,6 +105,46 @@ namespace Aws
           {
             return BlockType::TABLE_FOOTER;
           }
+          else if (hashCode == LAYOUT_TEXT_HASH)
+          {
+            return BlockType::LAYOUT_TEXT;
+          }
+          else if (hashCode == LAYOUT_TITLE_HASH)
+          {
+            return BlockType::LAYOUT_TITLE;
+          }
+          else if (hashCode == LAYOUT_HEADER_HASH)
+          {
+            return BlockType::LAYOUT_HEADER;
+          }
+          else if (hashCode == LAYOUT_FOOTER_HASH)
+          {
+            return BlockType::LAYOUT_FOOTER;
+          }
+          else if (hashCode == LAYOUT_SECTION_HEADER_HASH)
+          {
+            return BlockType::LAYOUT_SECTION_HEADER;
+          }
+          else if (hashCode == LAYOUT_PAGE_NUMBER_HASH)
+          {
+            return BlockType::LAYOUT_PAGE_NUMBER;
+          }
+          else if (hashCode == LAYOUT_LIST_HASH)
+          {
+            return BlockType::LAYOUT_LIST;
+          }
+          else if (hashCode == LAYOUT_FIGURE_HASH)
+          {
+            return BlockType::LAYOUT_FIGURE;
+          }
+          else if (hashCode == LAYOUT_TABLE_HASH)
+          {
+            return BlockType::LAYOUT_TABLE;
+          }
+          else if (hashCode == LAYOUT_KEY_VALUE_HASH)
+          {
+            return BlockType::LAYOUT_KEY_VALUE;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -109,6 +159,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BlockType::NOT_SET:
+            return {};
           case BlockType::KEY_VALUE_SET:
             return "KEY_VALUE_SET";
           case BlockType::PAGE:
@@ -137,6 +189,26 @@ namespace Aws
             return "TABLE_TITLE";
           case BlockType::TABLE_FOOTER:
             return "TABLE_FOOTER";
+          case BlockType::LAYOUT_TEXT:
+            return "LAYOUT_TEXT";
+          case BlockType::LAYOUT_TITLE:
+            return "LAYOUT_TITLE";
+          case BlockType::LAYOUT_HEADER:
+            return "LAYOUT_HEADER";
+          case BlockType::LAYOUT_FOOTER:
+            return "LAYOUT_FOOTER";
+          case BlockType::LAYOUT_SECTION_HEADER:
+            return "LAYOUT_SECTION_HEADER";
+          case BlockType::LAYOUT_PAGE_NUMBER:
+            return "LAYOUT_PAGE_NUMBER";
+          case BlockType::LAYOUT_LIST:
+            return "LAYOUT_LIST";
+          case BlockType::LAYOUT_FIGURE:
+            return "LAYOUT_FIGURE";
+          case BlockType::LAYOUT_TABLE:
+            return "LAYOUT_TABLE";
+          case BlockType::LAYOUT_KEY_VALUE:
+            return "LAYOUT_KEY_VALUE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -25,8 +25,8 @@ namespace Panorama
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef PanoramaClientConfiguration ClientConfigurationType;
       typedef PanoramaEndpointProvider EndpointProviderType;
@@ -36,14 +36,14 @@ namespace Panorama
         * is not specified, it will be initialized to default values.
         */
         PanoramaClient(const Aws::Panorama::PanoramaClientConfiguration& clientConfiguration = Aws::Panorama::PanoramaClientConfiguration(),
-                       std::shared_ptr<PanoramaEndpointProviderBase> endpointProvider = Aws::MakeShared<PanoramaEndpointProvider>(ALLOCATION_TAG));
+                       std::shared_ptr<PanoramaEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         PanoramaClient(const Aws::Auth::AWSCredentials& credentials,
-                       std::shared_ptr<PanoramaEndpointProviderBase> endpointProvider = Aws::MakeShared<PanoramaEndpointProvider>(ALLOCATION_TAG),
+                       std::shared_ptr<PanoramaEndpointProviderBase> endpointProvider = nullptr,
                        const Aws::Panorama::PanoramaClientConfiguration& clientConfiguration = Aws::Panorama::PanoramaClientConfiguration());
 
        /**
@@ -51,7 +51,7 @@ namespace Panorama
         * the default http client factory will be used
         */
         PanoramaClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                       std::shared_ptr<PanoramaEndpointProviderBase> endpointProvider = Aws::MakeShared<PanoramaEndpointProvider>(ALLOCATION_TAG),
+                       std::shared_ptr<PanoramaEndpointProviderBase> endpointProvider = nullptr,
                        const Aws::Panorama::PanoramaClientConfiguration& clientConfiguration = Aws::Panorama::PanoramaClientConfiguration());
 
 

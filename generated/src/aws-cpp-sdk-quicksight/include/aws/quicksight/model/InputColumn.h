@@ -7,6 +7,7 @@
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/quicksight/model/InputColumnDataType.h>
+#include <aws/quicksight/model/ColumnDataSubType.h>
 #include <utility>
 
 namespace Aws
@@ -110,6 +111,43 @@ namespace Model
      */
     inline InputColumn& WithType(InputColumnDataType&& value) { SetType(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The sub data type of the column. Sub types are only available for decimal
+     * columns that are part of a SPICE dataset.</p>
+     */
+    inline const ColumnDataSubType& GetSubType() const{ return m_subType; }
+
+    /**
+     * <p>The sub data type of the column. Sub types are only available for decimal
+     * columns that are part of a SPICE dataset.</p>
+     */
+    inline bool SubTypeHasBeenSet() const { return m_subTypeHasBeenSet; }
+
+    /**
+     * <p>The sub data type of the column. Sub types are only available for decimal
+     * columns that are part of a SPICE dataset.</p>
+     */
+    inline void SetSubType(const ColumnDataSubType& value) { m_subTypeHasBeenSet = true; m_subType = value; }
+
+    /**
+     * <p>The sub data type of the column. Sub types are only available for decimal
+     * columns that are part of a SPICE dataset.</p>
+     */
+    inline void SetSubType(ColumnDataSubType&& value) { m_subTypeHasBeenSet = true; m_subType = std::move(value); }
+
+    /**
+     * <p>The sub data type of the column. Sub types are only available for decimal
+     * columns that are part of a SPICE dataset.</p>
+     */
+    inline InputColumn& WithSubType(const ColumnDataSubType& value) { SetSubType(value); return *this;}
+
+    /**
+     * <p>The sub data type of the column. Sub types are only available for decimal
+     * columns that are part of a SPICE dataset.</p>
+     */
+    inline InputColumn& WithSubType(ColumnDataSubType&& value) { SetSubType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -117,6 +155,9 @@ namespace Model
 
     InputColumnDataType m_type;
     bool m_typeHasBeenSet = false;
+
+    ColumnDataSubType m_subType;
+    bool m_subTypeHasBeenSet = false;
   };
 
 } // namespace Model

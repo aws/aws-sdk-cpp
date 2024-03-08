@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ImportMode::NOT_SET:
+            return {};
           case ImportMode::FULL:
             return "FULL";
           case ImportMode::INCREMENTAL:

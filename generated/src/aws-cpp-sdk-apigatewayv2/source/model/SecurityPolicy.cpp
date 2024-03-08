@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SecurityPolicy::NOT_SET:
+            return {};
           case SecurityPolicy::TLS_1_0:
             return "TLS_1_0";
           case SecurityPolicy::TLS_1_2:

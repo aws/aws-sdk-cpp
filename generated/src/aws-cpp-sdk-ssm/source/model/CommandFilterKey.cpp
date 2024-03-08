@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CommandFilterKey::NOT_SET:
+            return {};
           case CommandFilterKey::InvokedAfter:
             return "InvokedAfter";
           case CommandFilterKey::InvokedBefore:

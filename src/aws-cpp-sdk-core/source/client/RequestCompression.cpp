@@ -74,7 +74,7 @@ void aws_zfree(void * /* opaque */, void * ptr)
     }
 }
 
-#endif // AWS_CUSTOM_MEMORY_MANAGEMENT
+#endif // USE_AWS_MEMORY_MANAGEMENT
 #endif // ENABLED_ZLIB_REQUEST_COMPRESSION
 
 
@@ -136,7 +136,7 @@ iostream_outcome Aws::Client::RequestCompression::compress(std::shared_ptr<Aws::
 
         //Adding one to the stream size counter to account for the EOF marker.
         streamSize++;
-        size_t toRead;
+        size_t toRead = 0;
         // Compress
         do {
             toRead = std::min(streamSize, ZLIB_CHUNK);
@@ -155,8 +155,9 @@ iostream_outcome Aws::Client::RequestCompression::compress(std::shared_ptr<Aws::
                     return false;
                 }
             }
+            assert(streamSize >= toRead);
             streamSize -= toRead; //left to read
-            strm.avail_in = (flush == Z_FINISH)?toRead-1:toRead; //skip EOF if included
+            strm.avail_in = static_cast<uInt>((flush == Z_FINISH) ? toRead-1 : toRead); //skip EOF if included
             strm.next_in = in.get();
             do
             {
@@ -254,7 +255,7 @@ Aws::Client::RequestCompression::uncompress(std::shared_ptr<Aws::IOStream> input
 
         //Adding one to the stream size counter to account for the EOF marker.
         streamSize++;
-        size_t toRead;
+        size_t toRead = 0;
         // Decompress
         do {
             toRead = (streamSize < ZLIB_CHUNK)?streamSize:ZLIB_CHUNK;
@@ -277,7 +278,7 @@ Aws::Client::RequestCompression::uncompress(std::shared_ptr<Aws::IOStream> input
             }
 
             // Filling input buffer to decompress
-            strm.avail_in = toRead;
+            strm.avail_in = static_cast<uInt>(toRead);
             strm.next_in = in.get();
             do
             {

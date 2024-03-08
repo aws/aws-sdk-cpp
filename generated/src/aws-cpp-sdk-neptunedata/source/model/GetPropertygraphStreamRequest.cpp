@@ -38,7 +38,7 @@ Aws::Http::HeaderValueCollection GetPropertygraphStreamRequest::GetRequestSpecif
 {
   Aws::Http::HeaderValueCollection headers;
   Aws::StringStream ss;
-  if(m_encodingHasBeenSet)
+  if(m_encodingHasBeenSet && m_encoding != Encoding::NOT_SET)
   {
     headers.emplace("accept-encoding", EncodingMapper::GetNameForEncoding(m_encoding));
   }

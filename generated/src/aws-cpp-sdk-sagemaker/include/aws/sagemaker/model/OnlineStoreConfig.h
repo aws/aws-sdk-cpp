@@ -7,6 +7,7 @@
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/model/OnlineStoreSecurityConfig.h>
 #include <aws/sagemaker/model/TtlDuration.h>
+#include <aws/sagemaker/model/StorageType.h>
 #include <utility>
 
 namespace Aws
@@ -166,6 +167,61 @@ namespace Model
      */
     inline OnlineStoreConfig& WithTtlDuration(TtlDuration&& value) { SetTtlDuration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Option for different tiers of low latency storage for real-time data
+     * retrieval.</p> <ul> <li> <p> <code>Standard</code>: A managed low latency data
+     * store for feature groups.</p> </li> <li> <p> <code>InMemory</code>: A managed
+     * data store for feature groups that supports very low latency retrieval. </p>
+     * </li> </ul>
+     */
+    inline const StorageType& GetStorageType() const{ return m_storageType; }
+
+    /**
+     * <p>Option for different tiers of low latency storage for real-time data
+     * retrieval.</p> <ul> <li> <p> <code>Standard</code>: A managed low latency data
+     * store for feature groups.</p> </li> <li> <p> <code>InMemory</code>: A managed
+     * data store for feature groups that supports very low latency retrieval. </p>
+     * </li> </ul>
+     */
+    inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
+
+    /**
+     * <p>Option for different tiers of low latency storage for real-time data
+     * retrieval.</p> <ul> <li> <p> <code>Standard</code>: A managed low latency data
+     * store for feature groups.</p> </li> <li> <p> <code>InMemory</code>: A managed
+     * data store for feature groups that supports very low latency retrieval. </p>
+     * </li> </ul>
+     */
+    inline void SetStorageType(const StorageType& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
+
+    /**
+     * <p>Option for different tiers of low latency storage for real-time data
+     * retrieval.</p> <ul> <li> <p> <code>Standard</code>: A managed low latency data
+     * store for feature groups.</p> </li> <li> <p> <code>InMemory</code>: A managed
+     * data store for feature groups that supports very low latency retrieval. </p>
+     * </li> </ul>
+     */
+    inline void SetStorageType(StorageType&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
+
+    /**
+     * <p>Option for different tiers of low latency storage for real-time data
+     * retrieval.</p> <ul> <li> <p> <code>Standard</code>: A managed low latency data
+     * store for feature groups.</p> </li> <li> <p> <code>InMemory</code>: A managed
+     * data store for feature groups that supports very low latency retrieval. </p>
+     * </li> </ul>
+     */
+    inline OnlineStoreConfig& WithStorageType(const StorageType& value) { SetStorageType(value); return *this;}
+
+    /**
+     * <p>Option for different tiers of low latency storage for real-time data
+     * retrieval.</p> <ul> <li> <p> <code>Standard</code>: A managed low latency data
+     * store for feature groups.</p> </li> <li> <p> <code>InMemory</code>: A managed
+     * data store for feature groups that supports very low latency retrieval. </p>
+     * </li> </ul>
+     */
+    inline OnlineStoreConfig& WithStorageType(StorageType&& value) { SetStorageType(std::move(value)); return *this;}
+
   private:
 
     OnlineStoreSecurityConfig m_securityConfig;
@@ -176,6 +232,9 @@ namespace Model
 
     TtlDuration m_ttlDuration;
     bool m_ttlDurationHasBeenSet = false;
+
+    StorageType m_storageType;
+    bool m_storageTypeHasBeenSet = false;
   };
 
 } // namespace Model

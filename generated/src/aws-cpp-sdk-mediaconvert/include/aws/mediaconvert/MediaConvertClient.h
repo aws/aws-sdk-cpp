@@ -22,8 +22,8 @@ namespace MediaConvert
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef MediaConvertClientConfiguration ClientConfigurationType;
       typedef MediaConvertEndpointProvider EndpointProviderType;
@@ -33,14 +33,14 @@ namespace MediaConvert
         * is not specified, it will be initialized to default values.
         */
         MediaConvertClient(const Aws::MediaConvert::MediaConvertClientConfiguration& clientConfiguration = Aws::MediaConvert::MediaConvertClientConfiguration(),
-                           std::shared_ptr<MediaConvertEndpointProviderBase> endpointProvider = Aws::MakeShared<MediaConvertEndpointProvider>(ALLOCATION_TAG));
+                           std::shared_ptr<MediaConvertEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         MediaConvertClient(const Aws::Auth::AWSCredentials& credentials,
-                           std::shared_ptr<MediaConvertEndpointProviderBase> endpointProvider = Aws::MakeShared<MediaConvertEndpointProvider>(ALLOCATION_TAG),
+                           std::shared_ptr<MediaConvertEndpointProviderBase> endpointProvider = nullptr,
                            const Aws::MediaConvert::MediaConvertClientConfiguration& clientConfiguration = Aws::MediaConvert::MediaConvertClientConfiguration());
 
        /**
@@ -48,7 +48,7 @@ namespace MediaConvert
         * the default http client factory will be used
         */
         MediaConvertClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                           std::shared_ptr<MediaConvertEndpointProviderBase> endpointProvider = Aws::MakeShared<MediaConvertEndpointProvider>(ALLOCATION_TAG),
+                           std::shared_ptr<MediaConvertEndpointProviderBase> endpointProvider = nullptr,
                            const Aws::MediaConvert::MediaConvertClientConfiguration& clientConfiguration = Aws::MediaConvert::MediaConvertClientConfiguration());
 
 
@@ -337,32 +337,6 @@ namespace MediaConvert
         void DeleteQueueAsync(const DeleteQueueRequestT& request, const DeleteQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&MediaConvertClient::DeleteQueue, request, handler, context);
-        }
-
-        /**
-         * Send an request with an empty body to the regional API endpoint to get your
-         * account API endpoint.<p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/DescribeEndpoints">AWS
-         * API Reference</a></p>
-         */
-        virtual Model::DescribeEndpointsOutcome DescribeEndpoints(const Model::DescribeEndpointsRequest& request) const;
-
-        /**
-         * A Callable wrapper for DescribeEndpoints that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        template<typename DescribeEndpointsRequestT = Model::DescribeEndpointsRequest>
-        Model::DescribeEndpointsOutcomeCallable DescribeEndpointsCallable(const DescribeEndpointsRequestT& request) const
-        {
-            return SubmitCallable(&MediaConvertClient::DescribeEndpoints, request);
-        }
-
-        /**
-         * An Async wrapper for DescribeEndpoints that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        template<typename DescribeEndpointsRequestT = Model::DescribeEndpointsRequest>
-        void DescribeEndpointsAsync(const DescribeEndpointsRequestT& request, const DescribeEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
-        {
-            return SubmitAsync(&MediaConvertClient::DescribeEndpoints, request, handler, context);
         }
 
         /**

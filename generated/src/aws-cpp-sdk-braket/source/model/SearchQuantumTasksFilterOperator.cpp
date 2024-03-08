@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SearchQuantumTasksFilterOperator::NOT_SET:
+            return {};
           case SearchQuantumTasksFilterOperator::LT:
             return "LT";
           case SearchQuantumTasksFilterOperator::LTE:

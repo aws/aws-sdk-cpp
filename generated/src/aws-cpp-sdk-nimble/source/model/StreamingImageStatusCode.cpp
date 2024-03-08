@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StreamingImageStatusCode::NOT_SET:
+            return {};
           case StreamingImageStatusCode::STREAMING_IMAGE_CREATE_IN_PROGRESS:
             return "STREAMING_IMAGE_CREATE_IN_PROGRESS";
           case StreamingImageStatusCode::STREAMING_IMAGE_READY:

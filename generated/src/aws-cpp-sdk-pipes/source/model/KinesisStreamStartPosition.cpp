@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case KinesisStreamStartPosition::NOT_SET:
+            return {};
           case KinesisStreamStartPosition::TRIM_HORIZON:
             return "TRIM_HORIZON";
           case KinesisStreamStartPosition::LATEST:

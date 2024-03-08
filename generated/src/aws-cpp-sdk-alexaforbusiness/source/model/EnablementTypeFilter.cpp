@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EnablementTypeFilter::NOT_SET:
+            return {};
           case EnablementTypeFilter::ENABLED:
             return "ENABLED";
           case EnablementTypeFilter::PENDING:

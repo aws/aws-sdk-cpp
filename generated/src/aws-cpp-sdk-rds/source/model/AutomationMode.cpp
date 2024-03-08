@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AutomationMode::NOT_SET:
+            return {};
           case AutomationMode::full:
             return "full";
           case AutomationMode::all_paused:

@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Readiness::NOT_SET:
+            return {};
           case Readiness::READY:
             return "READY";
           case Readiness::NOT_READY:

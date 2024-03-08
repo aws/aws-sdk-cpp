@@ -61,8 +61,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* IoTEventsClient::SERVICE_NAME = "iotevents";
-const char* IoTEventsClient::ALLOCATION_TAG = "IoTEventsClient";
+namespace Aws
+{
+  namespace IoTEvents
+  {
+    const char SERVICE_NAME[] = "iotevents";
+    const char ALLOCATION_TAG[] = "IoTEventsClient";
+  }
+}
+const char* IoTEventsClient::GetServiceName() {return SERVICE_NAME;}
+const char* IoTEventsClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 IoTEventsClient::IoTEventsClient(const IoTEvents::IoTEventsClientConfiguration& clientConfiguration,
                                  std::shared_ptr<IoTEventsEndpointProviderBase> endpointProvider) :
@@ -74,7 +82,7 @@ IoTEventsClient::IoTEventsClient(const IoTEvents::IoTEventsClientConfiguration& 
             Aws::MakeShared<IoTEventsErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<IoTEventsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -90,7 +98,7 @@ IoTEventsClient::IoTEventsClient(const AWSCredentials& credentials,
             Aws::MakeShared<IoTEventsErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<IoTEventsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -106,7 +114,7 @@ IoTEventsClient::IoTEventsClient(const std::shared_ptr<AWSCredentialsProvider>& 
             Aws::MakeShared<IoTEventsErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<IoTEventsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

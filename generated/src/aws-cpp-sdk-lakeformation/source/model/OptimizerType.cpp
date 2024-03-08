@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OptimizerType::NOT_SET:
+            return {};
           case OptimizerType::COMPACTION:
             return "COMPACTION";
           case OptimizerType::GARBAGE_COLLECTION:

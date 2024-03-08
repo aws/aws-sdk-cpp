@@ -14,7 +14,8 @@ using namespace Aws::Utils;
 
 UpdatePolicyStoreRequest::UpdatePolicyStoreRequest() : 
     m_policyStoreIdHasBeenSet(false),
-    m_validationSettingsHasBeenSet(false)
+    m_validationSettingsHasBeenSet(false),
+    m_descriptionHasBeenSet(false)
 {
 }
 
@@ -31,6 +32,12 @@ Aws::String UpdatePolicyStoreRequest::SerializePayload() const
   if(m_validationSettingsHasBeenSet)
   {
    payload.WithObject("validationSettings", m_validationSettings.Jsonize());
+
+  }
+
+  if(m_descriptionHasBeenSet)
+  {
+   payload.WithString("description", m_description);
 
   }
 

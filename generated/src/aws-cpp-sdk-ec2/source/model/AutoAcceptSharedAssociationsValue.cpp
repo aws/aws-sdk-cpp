@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AutoAcceptSharedAssociationsValue::NOT_SET:
+            return {};
           case AutoAcceptSharedAssociationsValue::enable:
             return "enable";
           case AutoAcceptSharedAssociationsValue::disable:

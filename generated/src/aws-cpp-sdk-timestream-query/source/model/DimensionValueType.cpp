@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DimensionValueType::NOT_SET:
+            return {};
           case DimensionValueType::VARCHAR:
             return "VARCHAR";
           default:

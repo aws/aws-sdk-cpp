@@ -148,67 +148,67 @@ namespace Model
 
     /**
      * <p>The type of index. It can be one of the following values:</p> <ul> <li> <p>
-     * <b>LOCAL</b> – The index contains information about resources from only the same
-     * Amazon Web Services Region.</p> </li> <li> <p> <b>AGGREGATOR</b> – Resource
-     * Explorer replicates copies of the indexed information about resources in all
-     * other Amazon Web Services Regions to the aggregator index. This lets search
-     * results in the Region with the aggregator index to include resources from all
-     * Regions in the account where Resource Explorer is turned on.</p> </li> </ul>
+     * <code>LOCAL</code> – The index contains information about resources from only
+     * the same Amazon Web Services Region.</p> </li> <li> <p> <code>AGGREGATOR</code>
+     * – Resource Explorer replicates copies of the indexed information about resources
+     * in all other Amazon Web Services Regions to the aggregator index. This lets
+     * search results in the Region with the aggregator index to include resources from
+     * all Regions in the account where Resource Explorer is turned on.</p> </li> </ul>
      */
     inline const IndexType& GetType() const{ return m_type; }
 
     /**
      * <p>The type of index. It can be one of the following values:</p> <ul> <li> <p>
-     * <b>LOCAL</b> – The index contains information about resources from only the same
-     * Amazon Web Services Region.</p> </li> <li> <p> <b>AGGREGATOR</b> – Resource
-     * Explorer replicates copies of the indexed information about resources in all
-     * other Amazon Web Services Regions to the aggregator index. This lets search
-     * results in the Region with the aggregator index to include resources from all
-     * Regions in the account where Resource Explorer is turned on.</p> </li> </ul>
+     * <code>LOCAL</code> – The index contains information about resources from only
+     * the same Amazon Web Services Region.</p> </li> <li> <p> <code>AGGREGATOR</code>
+     * – Resource Explorer replicates copies of the indexed information about resources
+     * in all other Amazon Web Services Regions to the aggregator index. This lets
+     * search results in the Region with the aggregator index to include resources from
+     * all Regions in the account where Resource Explorer is turned on.</p> </li> </ul>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>The type of index. It can be one of the following values:</p> <ul> <li> <p>
-     * <b>LOCAL</b> – The index contains information about resources from only the same
-     * Amazon Web Services Region.</p> </li> <li> <p> <b>AGGREGATOR</b> – Resource
-     * Explorer replicates copies of the indexed information about resources in all
-     * other Amazon Web Services Regions to the aggregator index. This lets search
-     * results in the Region with the aggregator index to include resources from all
-     * Regions in the account where Resource Explorer is turned on.</p> </li> </ul>
+     * <code>LOCAL</code> – The index contains information about resources from only
+     * the same Amazon Web Services Region.</p> </li> <li> <p> <code>AGGREGATOR</code>
+     * – Resource Explorer replicates copies of the indexed information about resources
+     * in all other Amazon Web Services Regions to the aggregator index. This lets
+     * search results in the Region with the aggregator index to include resources from
+     * all Regions in the account where Resource Explorer is turned on.</p> </li> </ul>
      */
     inline void SetType(const IndexType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
      * <p>The type of index. It can be one of the following values:</p> <ul> <li> <p>
-     * <b>LOCAL</b> – The index contains information about resources from only the same
-     * Amazon Web Services Region.</p> </li> <li> <p> <b>AGGREGATOR</b> – Resource
-     * Explorer replicates copies of the indexed information about resources in all
-     * other Amazon Web Services Regions to the aggregator index. This lets search
-     * results in the Region with the aggregator index to include resources from all
-     * Regions in the account where Resource Explorer is turned on.</p> </li> </ul>
+     * <code>LOCAL</code> – The index contains information about resources from only
+     * the same Amazon Web Services Region.</p> </li> <li> <p> <code>AGGREGATOR</code>
+     * – Resource Explorer replicates copies of the indexed information about resources
+     * in all other Amazon Web Services Regions to the aggregator index. This lets
+     * search results in the Region with the aggregator index to include resources from
+     * all Regions in the account where Resource Explorer is turned on.</p> </li> </ul>
      */
     inline void SetType(IndexType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The type of index. It can be one of the following values:</p> <ul> <li> <p>
-     * <b>LOCAL</b> – The index contains information about resources from only the same
-     * Amazon Web Services Region.</p> </li> <li> <p> <b>AGGREGATOR</b> – Resource
-     * Explorer replicates copies of the indexed information about resources in all
-     * other Amazon Web Services Regions to the aggregator index. This lets search
-     * results in the Region with the aggregator index to include resources from all
-     * Regions in the account where Resource Explorer is turned on.</p> </li> </ul>
+     * <code>LOCAL</code> – The index contains information about resources from only
+     * the same Amazon Web Services Region.</p> </li> <li> <p> <code>AGGREGATOR</code>
+     * – Resource Explorer replicates copies of the indexed information about resources
+     * in all other Amazon Web Services Regions to the aggregator index. This lets
+     * search results in the Region with the aggregator index to include resources from
+     * all Regions in the account where Resource Explorer is turned on.</p> </li> </ul>
      */
     inline Index& WithType(const IndexType& value) { SetType(value); return *this;}
 
     /**
      * <p>The type of index. It can be one of the following values:</p> <ul> <li> <p>
-     * <b>LOCAL</b> – The index contains information about resources from only the same
-     * Amazon Web Services Region.</p> </li> <li> <p> <b>AGGREGATOR</b> – Resource
-     * Explorer replicates copies of the indexed information about resources in all
-     * other Amazon Web Services Regions to the aggregator index. This lets search
-     * results in the Region with the aggregator index to include resources from all
-     * Regions in the account where Resource Explorer is turned on.</p> </li> </ul>
+     * <code>LOCAL</code> – The index contains information about resources from only
+     * the same Amazon Web Services Region.</p> </li> <li> <p> <code>AGGREGATOR</code>
+     * – Resource Explorer replicates copies of the indexed information about resources
+     * in all other Amazon Web Services Regions to the aggregator index. This lets
+     * search results in the Region with the aggregator index to include resources from
+     * all Regions in the account where Resource Explorer is turned on.</p> </li> </ul>
      */
     inline Index& WithType(IndexType&& value) { SetType(std::move(value)); return *this;}
 

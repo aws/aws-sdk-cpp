@@ -104,6 +104,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case KeySpec::NOT_SET:
+            return {};
           case KeySpec::RSA_2048:
             return "RSA_2048";
           case KeySpec::RSA_3072:

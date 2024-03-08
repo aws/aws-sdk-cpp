@@ -89,6 +89,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ChallengeNameType::NOT_SET:
+            return {};
           case ChallengeNameType::SMS_MFA:
             return "SMS_MFA";
           case ChallengeNameType::SOFTWARE_TOKEN_MFA:

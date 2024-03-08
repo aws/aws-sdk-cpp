@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HlsStreamInfResolution::NOT_SET:
+            return {};
           case HlsStreamInfResolution::EXCLUDE:
             return "EXCLUDE";
           case HlsStreamInfResolution::INCLUDE:

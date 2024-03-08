@@ -52,47 +52,47 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == SERVICE_QUOTA_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CostExplorerErrors::SERVICE_QUOTA_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CostExplorerErrors::SERVICE_QUOTA_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == REQUEST_CHANGED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CostExplorerErrors::REQUEST_CHANGED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CostExplorerErrors::REQUEST_CHANGED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == UNRESOLVABLE_USAGE_UNIT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CostExplorerErrors::UNRESOLVABLE_USAGE_UNIT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CostExplorerErrors::UNRESOLVABLE_USAGE_UNIT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == UNKNOWN_SUBSCRIPTION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CostExplorerErrors::UNKNOWN_SUBSCRIPTION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CostExplorerErrors::UNKNOWN_SUBSCRIPTION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CostExplorerErrors::LIMIT_EXCEEDED), true);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CostExplorerErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
   }
   else if (hashCode == TOO_MANY_TAGS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CostExplorerErrors::TOO_MANY_TAGS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CostExplorerErrors::TOO_MANY_TAGS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == UNKNOWN_MONITOR_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CostExplorerErrors::UNKNOWN_MONITOR), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CostExplorerErrors::UNKNOWN_MONITOR), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == BILL_EXPIRATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CostExplorerErrors::BILL_EXPIRATION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CostExplorerErrors::BILL_EXPIRATION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_NEXT_TOKEN_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CostExplorerErrors::INVALID_NEXT_TOKEN), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CostExplorerErrors::INVALID_NEXT_TOKEN), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == DATA_UNAVAILABLE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CostExplorerErrors::DATA_UNAVAILABLE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CostExplorerErrors::DATA_UNAVAILABLE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == GENERATION_EXISTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CostExplorerErrors::GENERATION_EXISTS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CostExplorerErrors::GENERATION_EXISTS), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

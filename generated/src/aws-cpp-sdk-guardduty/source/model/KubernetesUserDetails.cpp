@@ -22,7 +22,8 @@ KubernetesUserDetails::KubernetesUserDetails() :
     m_usernameHasBeenSet(false),
     m_uidHasBeenSet(false),
     m_groupsHasBeenSet(false),
-    m_sessionNameHasBeenSet(false)
+    m_sessionNameHasBeenSet(false),
+    m_impersonatedUserHasBeenSet(false)
 {
 }
 
@@ -30,7 +31,8 @@ KubernetesUserDetails::KubernetesUserDetails(JsonView jsonValue) :
     m_usernameHasBeenSet(false),
     m_uidHasBeenSet(false),
     m_groupsHasBeenSet(false),
-    m_sessionNameHasBeenSet(false)
+    m_sessionNameHasBeenSet(false),
+    m_impersonatedUserHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -71,6 +73,13 @@ KubernetesUserDetails& KubernetesUserDetails::operator =(JsonView jsonValue)
     m_sessionNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("impersonatedUser"))
+  {
+    m_impersonatedUser = jsonValue.GetObject("impersonatedUser");
+
+    m_impersonatedUserHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -109,6 +118,12 @@ JsonValue KubernetesUserDetails::Jsonize() const
      sessionNameJsonList[sessionNameIndex].AsString(m_sessionName[sessionNameIndex]);
    }
    payload.WithArray("sessionName", std::move(sessionNameJsonList));
+
+  }
+
+  if(m_impersonatedUserHasBeenSet)
+  {
+   payload.WithObject("impersonatedUser", m_impersonatedUser.Jsonize());
 
   }
 

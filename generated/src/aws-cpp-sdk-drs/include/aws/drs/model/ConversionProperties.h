@@ -7,6 +7,8 @@
 #include <aws/drs/Drs_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/drs/model/ProductCode.h>
 #include <utility>
 
 namespace Aws
@@ -215,6 +217,79 @@ namespace Model
 
 
     /**
+     * <p>A mapping between the volumes being converted and the product codes
+     * associated with them</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::Vector<ProductCode>>& GetVolumeToProductCodes() const{ return m_volumeToProductCodes; }
+
+    /**
+     * <p>A mapping between the volumes being converted and the product codes
+     * associated with them</p>
+     */
+    inline bool VolumeToProductCodesHasBeenSet() const { return m_volumeToProductCodesHasBeenSet; }
+
+    /**
+     * <p>A mapping between the volumes being converted and the product codes
+     * associated with them</p>
+     */
+    inline void SetVolumeToProductCodes(const Aws::Map<Aws::String, Aws::Vector<ProductCode>>& value) { m_volumeToProductCodesHasBeenSet = true; m_volumeToProductCodes = value; }
+
+    /**
+     * <p>A mapping between the volumes being converted and the product codes
+     * associated with them</p>
+     */
+    inline void SetVolumeToProductCodes(Aws::Map<Aws::String, Aws::Vector<ProductCode>>&& value) { m_volumeToProductCodesHasBeenSet = true; m_volumeToProductCodes = std::move(value); }
+
+    /**
+     * <p>A mapping between the volumes being converted and the product codes
+     * associated with them</p>
+     */
+    inline ConversionProperties& WithVolumeToProductCodes(const Aws::Map<Aws::String, Aws::Vector<ProductCode>>& value) { SetVolumeToProductCodes(value); return *this;}
+
+    /**
+     * <p>A mapping between the volumes being converted and the product codes
+     * associated with them</p>
+     */
+    inline ConversionProperties& WithVolumeToProductCodes(Aws::Map<Aws::String, Aws::Vector<ProductCode>>&& value) { SetVolumeToProductCodes(std::move(value)); return *this;}
+
+    /**
+     * <p>A mapping between the volumes being converted and the product codes
+     * associated with them</p>
+     */
+    inline ConversionProperties& AddVolumeToProductCodes(const Aws::String& key, const Aws::Vector<ProductCode>& value) { m_volumeToProductCodesHasBeenSet = true; m_volumeToProductCodes.emplace(key, value); return *this; }
+
+    /**
+     * <p>A mapping between the volumes being converted and the product codes
+     * associated with them</p>
+     */
+    inline ConversionProperties& AddVolumeToProductCodes(Aws::String&& key, const Aws::Vector<ProductCode>& value) { m_volumeToProductCodesHasBeenSet = true; m_volumeToProductCodes.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>A mapping between the volumes being converted and the product codes
+     * associated with them</p>
+     */
+    inline ConversionProperties& AddVolumeToProductCodes(const Aws::String& key, Aws::Vector<ProductCode>&& value) { m_volumeToProductCodesHasBeenSet = true; m_volumeToProductCodes.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A mapping between the volumes being converted and the product codes
+     * associated with them</p>
+     */
+    inline ConversionProperties& AddVolumeToProductCodes(Aws::String&& key, Aws::Vector<ProductCode>&& value) { m_volumeToProductCodesHasBeenSet = true; m_volumeToProductCodes.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>A mapping between the volumes being converted and the product codes
+     * associated with them</p>
+     */
+    inline ConversionProperties& AddVolumeToProductCodes(const char* key, Aws::Vector<ProductCode>&& value) { m_volumeToProductCodesHasBeenSet = true; m_volumeToProductCodes.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A mapping between the volumes being converted and the product codes
+     * associated with them</p>
+     */
+    inline ConversionProperties& AddVolumeToProductCodes(const char* key, const Aws::Vector<ProductCode>& value) { m_volumeToProductCodesHasBeenSet = true; m_volumeToProductCodes.emplace(key, value); return *this; }
+
+
+    /**
      * <p>A mapping between the volumes and their sizes</p>
      */
     inline const Aws::Map<Aws::String, long long>& GetVolumeToVolumeSize() const{ return m_volumeToVolumeSize; }
@@ -272,6 +347,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>> m_volumeToConversionMap;
     bool m_volumeToConversionMapHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::Vector<ProductCode>> m_volumeToProductCodes;
+    bool m_volumeToProductCodesHasBeenSet = false;
 
     Aws::Map<Aws::String, long long> m_volumeToVolumeSize;
     bool m_volumeToVolumeSizeHasBeenSet = false;

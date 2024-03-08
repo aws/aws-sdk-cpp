@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case WorkflowType::NOT_SET:
+            return {};
           case WorkflowType::PRIVATE_:
             return "PRIVATE";
           case WorkflowType::READY2RUN:

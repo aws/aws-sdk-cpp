@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FieldName::NOT_SET:
+            return {};
           case FieldName::CRAWL_ID:
             return "CRAWL_ID";
           case FieldName::STATE:

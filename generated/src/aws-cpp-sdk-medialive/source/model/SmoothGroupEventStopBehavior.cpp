@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SmoothGroupEventStopBehavior::NOT_SET:
+            return {};
           case SmoothGroupEventStopBehavior::NONE:
             return "NONE";
           case SmoothGroupEventStopBehavior::SEND_EOS:

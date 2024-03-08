@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ConcatenationSinkType::NOT_SET:
+            return {};
           case ConcatenationSinkType::S3Bucket:
             return "S3Bucket";
           default:

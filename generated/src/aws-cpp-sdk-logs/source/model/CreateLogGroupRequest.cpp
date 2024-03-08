@@ -15,7 +15,9 @@ using namespace Aws::Utils;
 CreateLogGroupRequest::CreateLogGroupRequest() : 
     m_logGroupNameHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_logGroupClass(LogGroupClass::NOT_SET),
+    m_logGroupClassHasBeenSet(false)
 {
 }
 
@@ -44,6 +46,11 @@ Aws::String CreateLogGroupRequest::SerializePayload() const
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
 
+  }
+
+  if(m_logGroupClassHasBeenSet)
+  {
+   payload.WithString("logGroupClass", LogGroupClassMapper::GetNameForLogGroupClass(m_logGroupClass));
   }
 
   return payload.View().WriteReadable();

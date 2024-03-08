@@ -164,6 +164,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DataSetType::NOT_SET:
+            return {};
           case DataSetType::customer_subscriber_hourly_monthly_subscriptions:
             return "customer_subscriber_hourly_monthly_subscriptions";
           case DataSetType::customer_subscriber_annual_subscriptions:

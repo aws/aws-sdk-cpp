@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ClusterSettingName::NOT_SET:
+            return {};
           case ClusterSettingName::containerInsights:
             return "containerInsights";
           default:

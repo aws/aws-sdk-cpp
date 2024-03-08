@@ -184,147 +184,139 @@ namespace Model
 
 
     /**
-     * <p>The ID for a virtual private server image (e.g.,
-     * <code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>). Use the <code>get
-     * blueprints</code> operation to return a list of available images (or
-     * <i>blueprints</i>).</p>  <p>Use active blueprints when creating new
-     * instances. Inactive blueprints are listed to support customers with existing
-     * instances and are not necessarily available to create new instances. Blueprints
-     * are marked inactive when they become outdated due to operating system updates or
-     * new application releases.</p> 
+     * <p>The ID for a virtual private server image (<code>app_wordpress_4_4</code> or
+     * <code>app_lamp_7_0</code>). Use the <code>get blueprints</code> operation to
+     * return a list of available images (or <i>blueprints</i>).</p>  <p>Use
+     * active blueprints when creating new instances. Inactive blueprints are listed to
+     * support customers with existing instances and are not necessarily available to
+     * create new instances. Blueprints are marked inactive when they become outdated
+     * due to operating system updates or new application releases.</p> 
      */
     inline const Aws::String& GetBlueprintId() const{ return m_blueprintId; }
 
     /**
-     * <p>The ID for a virtual private server image (e.g.,
-     * <code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>). Use the <code>get
-     * blueprints</code> operation to return a list of available images (or
-     * <i>blueprints</i>).</p>  <p>Use active blueprints when creating new
-     * instances. Inactive blueprints are listed to support customers with existing
-     * instances and are not necessarily available to create new instances. Blueprints
-     * are marked inactive when they become outdated due to operating system updates or
-     * new application releases.</p> 
+     * <p>The ID for a virtual private server image (<code>app_wordpress_4_4</code> or
+     * <code>app_lamp_7_0</code>). Use the <code>get blueprints</code> operation to
+     * return a list of available images (or <i>blueprints</i>).</p>  <p>Use
+     * active blueprints when creating new instances. Inactive blueprints are listed to
+     * support customers with existing instances and are not necessarily available to
+     * create new instances. Blueprints are marked inactive when they become outdated
+     * due to operating system updates or new application releases.</p> 
      */
     inline bool BlueprintIdHasBeenSet() const { return m_blueprintIdHasBeenSet; }
 
     /**
-     * <p>The ID for a virtual private server image (e.g.,
-     * <code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>). Use the <code>get
-     * blueprints</code> operation to return a list of available images (or
-     * <i>blueprints</i>).</p>  <p>Use active blueprints when creating new
-     * instances. Inactive blueprints are listed to support customers with existing
-     * instances and are not necessarily available to create new instances. Blueprints
-     * are marked inactive when they become outdated due to operating system updates or
-     * new application releases.</p> 
+     * <p>The ID for a virtual private server image (<code>app_wordpress_4_4</code> or
+     * <code>app_lamp_7_0</code>). Use the <code>get blueprints</code> operation to
+     * return a list of available images (or <i>blueprints</i>).</p>  <p>Use
+     * active blueprints when creating new instances. Inactive blueprints are listed to
+     * support customers with existing instances and are not necessarily available to
+     * create new instances. Blueprints are marked inactive when they become outdated
+     * due to operating system updates or new application releases.</p> 
      */
     inline void SetBlueprintId(const Aws::String& value) { m_blueprintIdHasBeenSet = true; m_blueprintId = value; }
 
     /**
-     * <p>The ID for a virtual private server image (e.g.,
-     * <code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>). Use the <code>get
-     * blueprints</code> operation to return a list of available images (or
-     * <i>blueprints</i>).</p>  <p>Use active blueprints when creating new
-     * instances. Inactive blueprints are listed to support customers with existing
-     * instances and are not necessarily available to create new instances. Blueprints
-     * are marked inactive when they become outdated due to operating system updates or
-     * new application releases.</p> 
+     * <p>The ID for a virtual private server image (<code>app_wordpress_4_4</code> or
+     * <code>app_lamp_7_0</code>). Use the <code>get blueprints</code> operation to
+     * return a list of available images (or <i>blueprints</i>).</p>  <p>Use
+     * active blueprints when creating new instances. Inactive blueprints are listed to
+     * support customers with existing instances and are not necessarily available to
+     * create new instances. Blueprints are marked inactive when they become outdated
+     * due to operating system updates or new application releases.</p> 
      */
     inline void SetBlueprintId(Aws::String&& value) { m_blueprintIdHasBeenSet = true; m_blueprintId = std::move(value); }
 
     /**
-     * <p>The ID for a virtual private server image (e.g.,
-     * <code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>). Use the <code>get
-     * blueprints</code> operation to return a list of available images (or
-     * <i>blueprints</i>).</p>  <p>Use active blueprints when creating new
-     * instances. Inactive blueprints are listed to support customers with existing
-     * instances and are not necessarily available to create new instances. Blueprints
-     * are marked inactive when they become outdated due to operating system updates or
-     * new application releases.</p> 
+     * <p>The ID for a virtual private server image (<code>app_wordpress_4_4</code> or
+     * <code>app_lamp_7_0</code>). Use the <code>get blueprints</code> operation to
+     * return a list of available images (or <i>blueprints</i>).</p>  <p>Use
+     * active blueprints when creating new instances. Inactive blueprints are listed to
+     * support customers with existing instances and are not necessarily available to
+     * create new instances. Blueprints are marked inactive when they become outdated
+     * due to operating system updates or new application releases.</p> 
      */
     inline void SetBlueprintId(const char* value) { m_blueprintIdHasBeenSet = true; m_blueprintId.assign(value); }
 
     /**
-     * <p>The ID for a virtual private server image (e.g.,
-     * <code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>). Use the <code>get
-     * blueprints</code> operation to return a list of available images (or
-     * <i>blueprints</i>).</p>  <p>Use active blueprints when creating new
-     * instances. Inactive blueprints are listed to support customers with existing
-     * instances and are not necessarily available to create new instances. Blueprints
-     * are marked inactive when they become outdated due to operating system updates or
-     * new application releases.</p> 
+     * <p>The ID for a virtual private server image (<code>app_wordpress_4_4</code> or
+     * <code>app_lamp_7_0</code>). Use the <code>get blueprints</code> operation to
+     * return a list of available images (or <i>blueprints</i>).</p>  <p>Use
+     * active blueprints when creating new instances. Inactive blueprints are listed to
+     * support customers with existing instances and are not necessarily available to
+     * create new instances. Blueprints are marked inactive when they become outdated
+     * due to operating system updates or new application releases.</p> 
      */
     inline CreateInstancesRequest& WithBlueprintId(const Aws::String& value) { SetBlueprintId(value); return *this;}
 
     /**
-     * <p>The ID for a virtual private server image (e.g.,
-     * <code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>). Use the <code>get
-     * blueprints</code> operation to return a list of available images (or
-     * <i>blueprints</i>).</p>  <p>Use active blueprints when creating new
-     * instances. Inactive blueprints are listed to support customers with existing
-     * instances and are not necessarily available to create new instances. Blueprints
-     * are marked inactive when they become outdated due to operating system updates or
-     * new application releases.</p> 
+     * <p>The ID for a virtual private server image (<code>app_wordpress_4_4</code> or
+     * <code>app_lamp_7_0</code>). Use the <code>get blueprints</code> operation to
+     * return a list of available images (or <i>blueprints</i>).</p>  <p>Use
+     * active blueprints when creating new instances. Inactive blueprints are listed to
+     * support customers with existing instances and are not necessarily available to
+     * create new instances. Blueprints are marked inactive when they become outdated
+     * due to operating system updates or new application releases.</p> 
      */
     inline CreateInstancesRequest& WithBlueprintId(Aws::String&& value) { SetBlueprintId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID for a virtual private server image (e.g.,
-     * <code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>). Use the <code>get
-     * blueprints</code> operation to return a list of available images (or
-     * <i>blueprints</i>).</p>  <p>Use active blueprints when creating new
-     * instances. Inactive blueprints are listed to support customers with existing
-     * instances and are not necessarily available to create new instances. Blueprints
-     * are marked inactive when they become outdated due to operating system updates or
-     * new application releases.</p> 
+     * <p>The ID for a virtual private server image (<code>app_wordpress_4_4</code> or
+     * <code>app_lamp_7_0</code>). Use the <code>get blueprints</code> operation to
+     * return a list of available images (or <i>blueprints</i>).</p>  <p>Use
+     * active blueprints when creating new instances. Inactive blueprints are listed to
+     * support customers with existing instances and are not necessarily available to
+     * create new instances. Blueprints are marked inactive when they become outdated
+     * due to operating system updates or new application releases.</p> 
      */
     inline CreateInstancesRequest& WithBlueprintId(const char* value) { SetBlueprintId(value); return *this;}
 
 
     /**
      * <p>The bundle of specification information for your virtual private server (or
-     * <i>instance</i>), including the pricing plan (e.g., <code>micro_1_0</code>).</p>
+     * <i>instance</i>), including the pricing plan (<code>micro_1_0</code>).</p>
      */
     inline const Aws::String& GetBundleId() const{ return m_bundleId; }
 
     /**
      * <p>The bundle of specification information for your virtual private server (or
-     * <i>instance</i>), including the pricing plan (e.g., <code>micro_1_0</code>).</p>
+     * <i>instance</i>), including the pricing plan (<code>micro_1_0</code>).</p>
      */
     inline bool BundleIdHasBeenSet() const { return m_bundleIdHasBeenSet; }
 
     /**
      * <p>The bundle of specification information for your virtual private server (or
-     * <i>instance</i>), including the pricing plan (e.g., <code>micro_1_0</code>).</p>
+     * <i>instance</i>), including the pricing plan (<code>micro_1_0</code>).</p>
      */
     inline void SetBundleId(const Aws::String& value) { m_bundleIdHasBeenSet = true; m_bundleId = value; }
 
     /**
      * <p>The bundle of specification information for your virtual private server (or
-     * <i>instance</i>), including the pricing plan (e.g., <code>micro_1_0</code>).</p>
+     * <i>instance</i>), including the pricing plan (<code>micro_1_0</code>).</p>
      */
     inline void SetBundleId(Aws::String&& value) { m_bundleIdHasBeenSet = true; m_bundleId = std::move(value); }
 
     /**
      * <p>The bundle of specification information for your virtual private server (or
-     * <i>instance</i>), including the pricing plan (e.g., <code>micro_1_0</code>).</p>
+     * <i>instance</i>), including the pricing plan (<code>micro_1_0</code>).</p>
      */
     inline void SetBundleId(const char* value) { m_bundleIdHasBeenSet = true; m_bundleId.assign(value); }
 
     /**
      * <p>The bundle of specification information for your virtual private server (or
-     * <i>instance</i>), including the pricing plan (e.g., <code>micro_1_0</code>).</p>
+     * <i>instance</i>), including the pricing plan (<code>micro_1_0</code>).</p>
      */
     inline CreateInstancesRequest& WithBundleId(const Aws::String& value) { SetBundleId(value); return *this;}
 
     /**
      * <p>The bundle of specification information for your virtual private server (or
-     * <i>instance</i>), including the pricing plan (e.g., <code>micro_1_0</code>).</p>
+     * <i>instance</i>), including the pricing plan (<code>micro_1_0</code>).</p>
      */
     inline CreateInstancesRequest& WithBundleId(Aws::String&& value) { SetBundleId(std::move(value)); return *this;}
 
     /**
      * <p>The bundle of specification information for your virtual private server (or
-     * <i>instance</i>), including the pricing plan (e.g., <code>micro_1_0</code>).</p>
+     * <i>instance</i>), including the pricing plan (<code>micro_1_0</code>).</p>
      */
     inline CreateInstancesRequest& WithBundleId(const char* value) { SetBundleId(value); return *this;}
 

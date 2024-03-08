@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MetricDestination::NOT_SET:
+            return {};
           case MetricDestination::CloudWatch:
             return "CloudWatch";
           case MetricDestination::Evidently:

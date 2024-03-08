@@ -84,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NodeStatus::NOT_SET:
+            return {};
           case NodeStatus::CREATING:
             return "CREATING";
           case NodeStatus::AVAILABLE:

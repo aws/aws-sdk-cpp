@@ -566,6 +566,55 @@ namespace Model
      */
     inline DevEnvironmentSummary& WithPersistentStorage(PersistentStorage&& value) { SetPersistentStorage(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The name of the connection used to connect to Amazon VPC used when the Dev
+     * Environment was created, if any.</p>
+     */
+    inline const Aws::String& GetVpcConnectionName() const{ return m_vpcConnectionName; }
+
+    /**
+     * <p>The name of the connection used to connect to Amazon VPC used when the Dev
+     * Environment was created, if any.</p>
+     */
+    inline bool VpcConnectionNameHasBeenSet() const { return m_vpcConnectionNameHasBeenSet; }
+
+    /**
+     * <p>The name of the connection used to connect to Amazon VPC used when the Dev
+     * Environment was created, if any.</p>
+     */
+    inline void SetVpcConnectionName(const Aws::String& value) { m_vpcConnectionNameHasBeenSet = true; m_vpcConnectionName = value; }
+
+    /**
+     * <p>The name of the connection used to connect to Amazon VPC used when the Dev
+     * Environment was created, if any.</p>
+     */
+    inline void SetVpcConnectionName(Aws::String&& value) { m_vpcConnectionNameHasBeenSet = true; m_vpcConnectionName = std::move(value); }
+
+    /**
+     * <p>The name of the connection used to connect to Amazon VPC used when the Dev
+     * Environment was created, if any.</p>
+     */
+    inline void SetVpcConnectionName(const char* value) { m_vpcConnectionNameHasBeenSet = true; m_vpcConnectionName.assign(value); }
+
+    /**
+     * <p>The name of the connection used to connect to Amazon VPC used when the Dev
+     * Environment was created, if any.</p>
+     */
+    inline DevEnvironmentSummary& WithVpcConnectionName(const Aws::String& value) { SetVpcConnectionName(value); return *this;}
+
+    /**
+     * <p>The name of the connection used to connect to Amazon VPC used when the Dev
+     * Environment was created, if any.</p>
+     */
+    inline DevEnvironmentSummary& WithVpcConnectionName(Aws::String&& value) { SetVpcConnectionName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the connection used to connect to Amazon VPC used when the Dev
+     * Environment was created, if any.</p>
+     */
+    inline DevEnvironmentSummary& WithVpcConnectionName(const char* value) { SetVpcConnectionName(value); return *this;}
+
   private:
 
     Aws::String m_spaceName;
@@ -606,6 +655,9 @@ namespace Model
 
     PersistentStorage m_persistentStorage;
     bool m_persistentStorageHasBeenSet = false;
+
+    Aws::String m_vpcConnectionName;
+    bool m_vpcConnectionNameHasBeenSet = false;
   };
 
 } // namespace Model

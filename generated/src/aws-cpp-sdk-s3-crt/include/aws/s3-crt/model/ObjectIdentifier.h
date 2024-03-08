@@ -112,42 +112,50 @@ namespace Model
 
 
     /**
-     * <p>VersionId for the specific version of the object to delete.</p>
+     * <p>Version ID for the specific version of the object to delete.</p> 
+     * <p>This functionality is not supported for directory buckets.</p> 
      */
     inline const Aws::String& GetVersionId() const{ return m_versionId; }
 
     /**
-     * <p>VersionId for the specific version of the object to delete.</p>
+     * <p>Version ID for the specific version of the object to delete.</p> 
+     * <p>This functionality is not supported for directory buckets.</p> 
      */
     inline bool VersionIdHasBeenSet() const { return m_versionIdHasBeenSet; }
 
     /**
-     * <p>VersionId for the specific version of the object to delete.</p>
+     * <p>Version ID for the specific version of the object to delete.</p> 
+     * <p>This functionality is not supported for directory buckets.</p> 
      */
     inline void SetVersionId(const Aws::String& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
 
     /**
-     * <p>VersionId for the specific version of the object to delete.</p>
+     * <p>Version ID for the specific version of the object to delete.</p> 
+     * <p>This functionality is not supported for directory buckets.</p> 
      */
     inline void SetVersionId(Aws::String&& value) { m_versionIdHasBeenSet = true; m_versionId = std::move(value); }
 
     /**
-     * <p>VersionId for the specific version of the object to delete.</p>
+     * <p>Version ID for the specific version of the object to delete.</p> 
+     * <p>This functionality is not supported for directory buckets.</p> 
      */
     inline void SetVersionId(const char* value) { m_versionIdHasBeenSet = true; m_versionId.assign(value); }
 
     /**
-     * <p>VersionId for the specific version of the object to delete.</p>
+     * <p>Version ID for the specific version of the object to delete.</p> 
+     * <p>This functionality is not supported for directory buckets.</p> 
      */
     inline ObjectIdentifier& WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
 
     /**
-     * <p>VersionId for the specific version of the object to delete.</p>
+     * <p>Version ID for the specific version of the object to delete.</p> 
+     * <p>This functionality is not supported for directory buckets.</p> 
      */
     inline ObjectIdentifier& WithVersionId(Aws::String&& value) { SetVersionId(std::move(value)); return *this;}
 
     /**
-     * <p>VersionId for the specific version of the object to delete.</p>
+     * <p>Version ID for the specific version of the object to delete.</p> 
+     * <p>This functionality is not supported for directory buckets.</p> 
      */
     inline ObjectIdentifier& WithVersionId(const char* value) { SetVersionId(value); return *this;}
 

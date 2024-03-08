@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PolicyOwnerEntityType::NOT_SET:
+            return {};
           case PolicyOwnerEntityType::USER:
             return "USER";
           case PolicyOwnerEntityType::ROLE:

@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case QueryStateString::NOT_SET:
+            return {};
           case QueryStateString::PENDING:
             return "PENDING";
           case QueryStateString::WORKUNITS_AVAILABLE:

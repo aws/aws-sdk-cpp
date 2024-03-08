@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PayloadFormatIndicator::NOT_SET:
+            return {};
           case PayloadFormatIndicator::UNSPECIFIED_BYTES:
             return "UNSPECIFIED_BYTES";
           case PayloadFormatIndicator::UTF8_DATA:

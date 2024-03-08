@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UserPoolMfaType::NOT_SET:
+            return {};
           case UserPoolMfaType::OFF:
             return "OFF";
           case UserPoolMfaType::ON:

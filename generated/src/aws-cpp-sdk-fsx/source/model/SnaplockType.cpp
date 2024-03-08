@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SnaplockType::NOT_SET:
+            return {};
           case SnaplockType::COMPLIANCE:
             return "COMPLIANCE";
           case SnaplockType::ENTERPRISE:

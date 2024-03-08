@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReconnectEnum::NOT_SET:
+            return {};
           case ReconnectEnum::ENABLED:
             return "ENABLED";
           case ReconnectEnum::DISABLED:

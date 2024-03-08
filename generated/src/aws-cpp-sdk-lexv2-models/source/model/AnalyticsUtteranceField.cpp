@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AnalyticsUtteranceField::NOT_SET:
+            return {};
           case AnalyticsUtteranceField::UtteranceText:
             return "UtteranceText";
           case AnalyticsUtteranceField::UtteranceState:

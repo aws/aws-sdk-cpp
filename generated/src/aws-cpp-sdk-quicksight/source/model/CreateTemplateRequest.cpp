@@ -20,7 +20,8 @@ CreateTemplateRequest::CreateTemplateRequest() :
     m_sourceEntityHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_versionDescriptionHasBeenSet(false),
-    m_definitionHasBeenSet(false)
+    m_definitionHasBeenSet(false),
+    m_validationStrategyHasBeenSet(false)
 {
 }
 
@@ -71,6 +72,12 @@ Aws::String CreateTemplateRequest::SerializePayload() const
   if(m_definitionHasBeenSet)
   {
    payload.WithObject("Definition", m_definition.Jsonize());
+
+  }
+
+  if(m_validationStrategyHasBeenSet)
+  {
+   payload.WithObject("ValidationStrategy", m_validationStrategy.Jsonize());
 
   }
 

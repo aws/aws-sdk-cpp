@@ -19,7 +19,9 @@ using namespace Aws::Http;
 ListHostedZonesRequest::ListHostedZonesRequest() : 
     m_markerHasBeenSet(false),
     m_maxItemsHasBeenSet(false),
-    m_delegationSetIdHasBeenSet(false)
+    m_delegationSetIdHasBeenSet(false),
+    m_hostedZoneType(HostedZoneType::NOT_SET),
+    m_hostedZoneTypeHasBeenSet(false)
 {
 }
 
@@ -49,6 +51,13 @@ void ListHostedZonesRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_delegationSetId;
       uri.AddQueryStringParameter("delegationsetid", ss.str());
+      ss.str("");
+    }
+
+    if(m_hostedZoneTypeHasBeenSet)
+    {
+      ss << HostedZoneTypeMapper::GetNameForHostedZoneType(m_hostedZoneType);
+      uri.AddQueryStringParameter("hostedzonetype", ss.str());
       ss.str("");
     }
 

@@ -457,26 +457,26 @@ namespace Model
 
 
     /**
-     * <p>True if mapping of Amazon Web Services Identity and Access Management (IAM)
-     * accounts to database accounts is enabled, and otherwise false.</p>
+     * <p>Indicates whether mapping of Amazon Web Services Identity and Access
+     * Management (IAM) accounts to database accounts is enabled.</p>
      */
     inline bool GetIAMDatabaseAuthenticationEnabled() const{ return m_iAMDatabaseAuthenticationEnabled; }
 
     /**
-     * <p>True if mapping of Amazon Web Services Identity and Access Management (IAM)
-     * accounts to database accounts is enabled, and otherwise false.</p>
+     * <p>Indicates whether mapping of Amazon Web Services Identity and Access
+     * Management (IAM) accounts to database accounts is enabled.</p>
      */
     inline bool IAMDatabaseAuthenticationEnabledHasBeenSet() const { return m_iAMDatabaseAuthenticationEnabledHasBeenSet; }
 
     /**
-     * <p>True if mapping of Amazon Web Services Identity and Access Management (IAM)
-     * accounts to database accounts is enabled, and otherwise false.</p>
+     * <p>Indicates whether mapping of Amazon Web Services Identity and Access
+     * Management (IAM) accounts to database accounts is enabled.</p>
      */
     inline void SetIAMDatabaseAuthenticationEnabled(bool value) { m_iAMDatabaseAuthenticationEnabledHasBeenSet = true; m_iAMDatabaseAuthenticationEnabled = value; }
 
     /**
-     * <p>True if mapping of Amazon Web Services Identity and Access Management (IAM)
-     * accounts to database accounts is enabled, and otherwise false.</p>
+     * <p>Indicates whether mapping of Amazon Web Services Identity and Access
+     * Management (IAM) accounts to database accounts is enabled.</p>
      */
     inline DBClusterAutomatedBackup& WithIAMDatabaseAuthenticationEnabled(bool value) { SetIAMDatabaseAuthenticationEnabled(value); return *this;}
 
@@ -519,22 +519,22 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether the source DB cluster is encrypted.</p>
+     * <p>Indicates whether the source DB cluster is encrypted.</p>
      */
     inline bool GetStorageEncrypted() const{ return m_storageEncrypted; }
 
     /**
-     * <p>Specifies whether the source DB cluster is encrypted.</p>
+     * <p>Indicates whether the source DB cluster is encrypted.</p>
      */
     inline bool StorageEncryptedHasBeenSet() const { return m_storageEncryptedHasBeenSet; }
 
     /**
-     * <p>Specifies whether the source DB cluster is encrypted.</p>
+     * <p>Indicates whether the source DB cluster is encrypted.</p>
      */
     inline void SetStorageEncrypted(bool value) { m_storageEncryptedHasBeenSet = true; m_storageEncrypted = value; }
 
     /**
-     * <p>Specifies whether the source DB cluster is encrypted.</p>
+     * <p>Indicates whether the source DB cluster is encrypted.</p>
      */
     inline DBClusterAutomatedBackup& WithStorageEncrypted(bool value) { SetStorageEncrypted(value); return *this;}
 
@@ -997,6 +997,39 @@ namespace Model
      */
     inline DBClusterAutomatedBackup& WithAwsBackupRecoveryPointArn(const char* value) { SetAwsBackupRecoveryPointArn(value); return *this;}
 
+
+    /**
+     * <p>The storage throughput for the automated backup. The throughput is
+     * automatically set based on the IOPS that you provision, and is not
+     * configurable.</p> <p>This setting is only for non-Aurora Multi-AZ DB
+     * clusters.</p>
+     */
+    inline int GetStorageThroughput() const{ return m_storageThroughput; }
+
+    /**
+     * <p>The storage throughput for the automated backup. The throughput is
+     * automatically set based on the IOPS that you provision, and is not
+     * configurable.</p> <p>This setting is only for non-Aurora Multi-AZ DB
+     * clusters.</p>
+     */
+    inline bool StorageThroughputHasBeenSet() const { return m_storageThroughputHasBeenSet; }
+
+    /**
+     * <p>The storage throughput for the automated backup. The throughput is
+     * automatically set based on the IOPS that you provision, and is not
+     * configurable.</p> <p>This setting is only for non-Aurora Multi-AZ DB
+     * clusters.</p>
+     */
+    inline void SetStorageThroughput(int value) { m_storageThroughputHasBeenSet = true; m_storageThroughput = value; }
+
+    /**
+     * <p>The storage throughput for the automated backup. The throughput is
+     * automatically set based on the IOPS that you provision, and is not
+     * configurable.</p> <p>This setting is only for non-Aurora Multi-AZ DB
+     * clusters.</p>
+     */
+    inline DBClusterAutomatedBackup& WithStorageThroughput(int value) { SetStorageThroughput(value); return *this;}
+
   private:
 
     Aws::String m_engine;
@@ -1070,6 +1103,9 @@ namespace Model
 
     Aws::String m_awsBackupRecoveryPointArn;
     bool m_awsBackupRecoveryPointArnHasBeenSet = false;
+
+    int m_storageThroughput;
+    bool m_storageThroughputHasBeenSet = false;
   };
 
 } // namespace Model

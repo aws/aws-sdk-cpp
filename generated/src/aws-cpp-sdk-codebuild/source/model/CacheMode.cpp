@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CacheMode::NOT_SET:
+            return {};
           case CacheMode::LOCAL_DOCKER_LAYER_CACHE:
             return "LOCAL_DOCKER_LAYER_CACHE";
           case CacheMode::LOCAL_SOURCE_CACHE:

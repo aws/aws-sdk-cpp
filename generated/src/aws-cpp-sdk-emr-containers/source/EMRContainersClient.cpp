@@ -55,8 +55,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* EMRContainersClient::SERVICE_NAME = "emr-containers";
-const char* EMRContainersClient::ALLOCATION_TAG = "EMRContainersClient";
+namespace Aws
+{
+  namespace EMRContainers
+  {
+    const char SERVICE_NAME[] = "emr-containers";
+    const char ALLOCATION_TAG[] = "EMRContainersClient";
+  }
+}
+const char* EMRContainersClient::GetServiceName() {return SERVICE_NAME;}
+const char* EMRContainersClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 EMRContainersClient::EMRContainersClient(const EMRContainers::EMRContainersClientConfiguration& clientConfiguration,
                                          std::shared_ptr<EMRContainersEndpointProviderBase> endpointProvider) :
@@ -68,7 +76,7 @@ EMRContainersClient::EMRContainersClient(const EMRContainers::EMRContainersClien
             Aws::MakeShared<EMRContainersErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<EMRContainersEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -84,7 +92,7 @@ EMRContainersClient::EMRContainersClient(const AWSCredentials& credentials,
             Aws::MakeShared<EMRContainersErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<EMRContainersEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -100,7 +108,7 @@ EMRContainersClient::EMRContainersClient(const std::shared_ptr<AWSCredentialsPro
             Aws::MakeShared<EMRContainersErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<EMRContainersEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

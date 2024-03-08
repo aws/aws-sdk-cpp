@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case WebCrawlerMode::NOT_SET:
+            return {};
           case WebCrawlerMode::HOST_ONLY:
             return "HOST_ONLY";
           case WebCrawlerMode::SUBDOMAINS:

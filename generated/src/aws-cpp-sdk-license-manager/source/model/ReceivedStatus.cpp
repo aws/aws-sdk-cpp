@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReceivedStatus::NOT_SET:
+            return {};
           case ReceivedStatus::PENDING_WORKFLOW:
             return "PENDING_WORKFLOW";
           case ReceivedStatus::PENDING_ACCEPT:

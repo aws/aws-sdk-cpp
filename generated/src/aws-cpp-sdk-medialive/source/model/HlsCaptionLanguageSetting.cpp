@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HlsCaptionLanguageSetting::NOT_SET:
+            return {};
           case HlsCaptionLanguageSetting::INSERT:
             return "INSERT";
           case HlsCaptionLanguageSetting::NONE:

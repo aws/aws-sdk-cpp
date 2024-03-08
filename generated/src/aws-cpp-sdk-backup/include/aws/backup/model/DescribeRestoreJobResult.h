@@ -8,6 +8,9 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/backup/model/RestoreJobStatus.h>
+#include <aws/backup/model/RestoreJobCreator.h>
+#include <aws/backup/model/RestoreValidationStatus.h>
+#include <aws/backup/model/RestoreDeletionStatus.h>
 #include <utility>
 
 namespace Aws
@@ -505,6 +508,197 @@ namespace Model
     inline DescribeRestoreJobResult& WithResourceType(const char* value) { SetResourceType(value); return *this;}
 
 
+    /**
+     * <p>This is the creation date of the recovery point made by the specifed restore
+     * job.</p>
+     */
+    inline const Aws::Utils::DateTime& GetRecoveryPointCreationDate() const{ return m_recoveryPointCreationDate; }
+
+    /**
+     * <p>This is the creation date of the recovery point made by the specifed restore
+     * job.</p>
+     */
+    inline void SetRecoveryPointCreationDate(const Aws::Utils::DateTime& value) { m_recoveryPointCreationDate = value; }
+
+    /**
+     * <p>This is the creation date of the recovery point made by the specifed restore
+     * job.</p>
+     */
+    inline void SetRecoveryPointCreationDate(Aws::Utils::DateTime&& value) { m_recoveryPointCreationDate = std::move(value); }
+
+    /**
+     * <p>This is the creation date of the recovery point made by the specifed restore
+     * job.</p>
+     */
+    inline DescribeRestoreJobResult& WithRecoveryPointCreationDate(const Aws::Utils::DateTime& value) { SetRecoveryPointCreationDate(value); return *this;}
+
+    /**
+     * <p>This is the creation date of the recovery point made by the specifed restore
+     * job.</p>
+     */
+    inline DescribeRestoreJobResult& WithRecoveryPointCreationDate(Aws::Utils::DateTime&& value) { SetRecoveryPointCreationDate(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Contains identifying information about the creation of a restore job.</p>
+     */
+    inline const RestoreJobCreator& GetCreatedBy() const{ return m_createdBy; }
+
+    /**
+     * <p>Contains identifying information about the creation of a restore job.</p>
+     */
+    inline void SetCreatedBy(const RestoreJobCreator& value) { m_createdBy = value; }
+
+    /**
+     * <p>Contains identifying information about the creation of a restore job.</p>
+     */
+    inline void SetCreatedBy(RestoreJobCreator&& value) { m_createdBy = std::move(value); }
+
+    /**
+     * <p>Contains identifying information about the creation of a restore job.</p>
+     */
+    inline DescribeRestoreJobResult& WithCreatedBy(const RestoreJobCreator& value) { SetCreatedBy(value); return *this;}
+
+    /**
+     * <p>Contains identifying information about the creation of a restore job.</p>
+     */
+    inline DescribeRestoreJobResult& WithCreatedBy(RestoreJobCreator&& value) { SetCreatedBy(std::move(value)); return *this;}
+
+
+    /**
+     * <p>This is the status of validation run on the indicated restore job.</p>
+     */
+    inline const RestoreValidationStatus& GetValidationStatus() const{ return m_validationStatus; }
+
+    /**
+     * <p>This is the status of validation run on the indicated restore job.</p>
+     */
+    inline void SetValidationStatus(const RestoreValidationStatus& value) { m_validationStatus = value; }
+
+    /**
+     * <p>This is the status of validation run on the indicated restore job.</p>
+     */
+    inline void SetValidationStatus(RestoreValidationStatus&& value) { m_validationStatus = std::move(value); }
+
+    /**
+     * <p>This is the status of validation run on the indicated restore job.</p>
+     */
+    inline DescribeRestoreJobResult& WithValidationStatus(const RestoreValidationStatus& value) { SetValidationStatus(value); return *this;}
+
+    /**
+     * <p>This is the status of validation run on the indicated restore job.</p>
+     */
+    inline DescribeRestoreJobResult& WithValidationStatus(RestoreValidationStatus&& value) { SetValidationStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>This describes the status of validation run on the indicated restore job.</p>
+     */
+    inline const Aws::String& GetValidationStatusMessage() const{ return m_validationStatusMessage; }
+
+    /**
+     * <p>This describes the status of validation run on the indicated restore job.</p>
+     */
+    inline void SetValidationStatusMessage(const Aws::String& value) { m_validationStatusMessage = value; }
+
+    /**
+     * <p>This describes the status of validation run on the indicated restore job.</p>
+     */
+    inline void SetValidationStatusMessage(Aws::String&& value) { m_validationStatusMessage = std::move(value); }
+
+    /**
+     * <p>This describes the status of validation run on the indicated restore job.</p>
+     */
+    inline void SetValidationStatusMessage(const char* value) { m_validationStatusMessage.assign(value); }
+
+    /**
+     * <p>This describes the status of validation run on the indicated restore job.</p>
+     */
+    inline DescribeRestoreJobResult& WithValidationStatusMessage(const Aws::String& value) { SetValidationStatusMessage(value); return *this;}
+
+    /**
+     * <p>This describes the status of validation run on the indicated restore job.</p>
+     */
+    inline DescribeRestoreJobResult& WithValidationStatusMessage(Aws::String&& value) { SetValidationStatusMessage(std::move(value)); return *this;}
+
+    /**
+     * <p>This describes the status of validation run on the indicated restore job.</p>
+     */
+    inline DescribeRestoreJobResult& WithValidationStatusMessage(const char* value) { SetValidationStatusMessage(value); return *this;}
+
+
+    /**
+     * <p>This notes the status of the data generated by the restore test. The status
+     * may be <code>Deleting</code>, <code>Failed</code>, or
+     * <code>Successful</code>.</p>
+     */
+    inline const RestoreDeletionStatus& GetDeletionStatus() const{ return m_deletionStatus; }
+
+    /**
+     * <p>This notes the status of the data generated by the restore test. The status
+     * may be <code>Deleting</code>, <code>Failed</code>, or
+     * <code>Successful</code>.</p>
+     */
+    inline void SetDeletionStatus(const RestoreDeletionStatus& value) { m_deletionStatus = value; }
+
+    /**
+     * <p>This notes the status of the data generated by the restore test. The status
+     * may be <code>Deleting</code>, <code>Failed</code>, or
+     * <code>Successful</code>.</p>
+     */
+    inline void SetDeletionStatus(RestoreDeletionStatus&& value) { m_deletionStatus = std::move(value); }
+
+    /**
+     * <p>This notes the status of the data generated by the restore test. The status
+     * may be <code>Deleting</code>, <code>Failed</code>, or
+     * <code>Successful</code>.</p>
+     */
+    inline DescribeRestoreJobResult& WithDeletionStatus(const RestoreDeletionStatus& value) { SetDeletionStatus(value); return *this;}
+
+    /**
+     * <p>This notes the status of the data generated by the restore test. The status
+     * may be <code>Deleting</code>, <code>Failed</code>, or
+     * <code>Successful</code>.</p>
+     */
+    inline DescribeRestoreJobResult& WithDeletionStatus(RestoreDeletionStatus&& value) { SetDeletionStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>This describes the restore job deletion status.</p>
+     */
+    inline const Aws::String& GetDeletionStatusMessage() const{ return m_deletionStatusMessage; }
+
+    /**
+     * <p>This describes the restore job deletion status.</p>
+     */
+    inline void SetDeletionStatusMessage(const Aws::String& value) { m_deletionStatusMessage = value; }
+
+    /**
+     * <p>This describes the restore job deletion status.</p>
+     */
+    inline void SetDeletionStatusMessage(Aws::String&& value) { m_deletionStatusMessage = std::move(value); }
+
+    /**
+     * <p>This describes the restore job deletion status.</p>
+     */
+    inline void SetDeletionStatusMessage(const char* value) { m_deletionStatusMessage.assign(value); }
+
+    /**
+     * <p>This describes the restore job deletion status.</p>
+     */
+    inline DescribeRestoreJobResult& WithDeletionStatusMessage(const Aws::String& value) { SetDeletionStatusMessage(value); return *this;}
+
+    /**
+     * <p>This describes the restore job deletion status.</p>
+     */
+    inline DescribeRestoreJobResult& WithDeletionStatusMessage(Aws::String&& value) { SetDeletionStatusMessage(std::move(value)); return *this;}
+
+    /**
+     * <p>This describes the restore job deletion status.</p>
+     */
+    inline DescribeRestoreJobResult& WithDeletionStatusMessage(const char* value) { SetDeletionStatusMessage(value); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -553,6 +747,18 @@ namespace Model
     Aws::String m_createdResourceArn;
 
     Aws::String m_resourceType;
+
+    Aws::Utils::DateTime m_recoveryPointCreationDate;
+
+    RestoreJobCreator m_createdBy;
+
+    RestoreValidationStatus m_validationStatus;
+
+    Aws::String m_validationStatusMessage;
+
+    RestoreDeletionStatus m_deletionStatus;
+
+    Aws::String m_deletionStatusMessage;
 
     Aws::String m_requestId;
   };

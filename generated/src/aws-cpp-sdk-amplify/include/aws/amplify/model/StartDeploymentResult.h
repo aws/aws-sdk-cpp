@@ -26,7 +26,7 @@ namespace Amplify
 namespace Model
 {
   /**
-   * <p> The result structure for the start a deployment request. </p><p><h3>See
+   * <p>The result structure for the start a deployment request. </p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/StartDeploymentResult">AWS
    * API Reference</a></p>
@@ -40,27 +40,27 @@ namespace Model
 
 
     /**
-     * <p> The summary for the job. </p>
+     * <p>The summary for the job. </p>
      */
     inline const JobSummary& GetJobSummary() const{ return m_jobSummary; }
 
     /**
-     * <p> The summary for the job. </p>
+     * <p>The summary for the job. </p>
      */
     inline void SetJobSummary(const JobSummary& value) { m_jobSummary = value; }
 
     /**
-     * <p> The summary for the job. </p>
+     * <p>The summary for the job. </p>
      */
     inline void SetJobSummary(JobSummary&& value) { m_jobSummary = std::move(value); }
 
     /**
-     * <p> The summary for the job. </p>
+     * <p>The summary for the job. </p>
      */
     inline StartDeploymentResult& WithJobSummary(const JobSummary& value) { SetJobSummary(value); return *this;}
 
     /**
-     * <p> The summary for the job. </p>
+     * <p>The summary for the job. </p>
      */
     inline StartDeploymentResult& WithJobSummary(JobSummary&& value) { SetJobSummary(std::move(value)); return *this;}
 

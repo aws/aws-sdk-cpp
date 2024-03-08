@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AdditionalConstraintsElement::NOT_SET:
+            return {};
           case AdditionalConstraintsElement::REQUIRE_DIGIT:
             return "REQUIRE_DIGIT";
           case AdditionalConstraintsElement::REQUIRE_LOWERCASE:

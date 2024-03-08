@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AvcIntraTelecine::NOT_SET:
+            return {};
           case AvcIntraTelecine::NONE:
             return "NONE";
           case AvcIntraTelecine::HARD:

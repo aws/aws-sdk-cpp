@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ConnectorStatus::NOT_SET:
+            return {};
           case ConnectorStatus::HEALTHY:
             return "HEALTHY";
           case ConnectorStatus::UNHEALTHY:

@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TopicRefreshStatus::NOT_SET:
+            return {};
           case TopicRefreshStatus::INITIALIZED:
             return "INITIALIZED";
           case TopicRefreshStatus::RUNNING:

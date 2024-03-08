@@ -60,8 +60,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* ComprehendMedicalClient::SERVICE_NAME = "comprehendmedical";
-const char* ComprehendMedicalClient::ALLOCATION_TAG = "ComprehendMedicalClient";
+namespace Aws
+{
+  namespace ComprehendMedical
+  {
+    const char SERVICE_NAME[] = "comprehendmedical";
+    const char ALLOCATION_TAG[] = "ComprehendMedicalClient";
+  }
+}
+const char* ComprehendMedicalClient::GetServiceName() {return SERVICE_NAME;}
+const char* ComprehendMedicalClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 ComprehendMedicalClient::ComprehendMedicalClient(const ComprehendMedical::ComprehendMedicalClientConfiguration& clientConfiguration,
                                                  std::shared_ptr<ComprehendMedicalEndpointProviderBase> endpointProvider) :
@@ -73,7 +81,7 @@ ComprehendMedicalClient::ComprehendMedicalClient(const ComprehendMedical::Compre
             Aws::MakeShared<ComprehendMedicalErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ComprehendMedicalEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -89,7 +97,7 @@ ComprehendMedicalClient::ComprehendMedicalClient(const AWSCredentials& credentia
             Aws::MakeShared<ComprehendMedicalErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ComprehendMedicalEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -105,7 +113,7 @@ ComprehendMedicalClient::ComprehendMedicalClient(const std::shared_ptr<AWSCreden
             Aws::MakeShared<ComprehendMedicalErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ComprehendMedicalEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

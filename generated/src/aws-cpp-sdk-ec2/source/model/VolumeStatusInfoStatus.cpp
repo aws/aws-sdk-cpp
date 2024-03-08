@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VolumeStatusInfoStatus::NOT_SET:
+            return {};
           case VolumeStatusInfoStatus::ok:
             return "ok";
           case VolumeStatusInfoStatus::impaired:

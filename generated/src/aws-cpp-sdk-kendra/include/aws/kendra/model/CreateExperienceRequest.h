@@ -121,9 +121,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of an IAM role with permission to access
      * <code>Query</code> API, <code>GetQuerySuggestions</code> API, and other required
-     * APIs. The role also must include permission to access IAM Identity Center
-     * (successor to Single Sign-On) that stores your user and group information. For
-     * more information, see <a
+     * APIs. The role also must include permission to access IAM Identity Center that
+     * stores your user and group information. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access
      * roles for Amazon Kendra</a>.</p>
      */
@@ -132,9 +131,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of an IAM role with permission to access
      * <code>Query</code> API, <code>GetQuerySuggestions</code> API, and other required
-     * APIs. The role also must include permission to access IAM Identity Center
-     * (successor to Single Sign-On) that stores your user and group information. For
-     * more information, see <a
+     * APIs. The role also must include permission to access IAM Identity Center that
+     * stores your user and group information. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access
      * roles for Amazon Kendra</a>.</p>
      */
@@ -143,9 +141,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of an IAM role with permission to access
      * <code>Query</code> API, <code>GetQuerySuggestions</code> API, and other required
-     * APIs. The role also must include permission to access IAM Identity Center
-     * (successor to Single Sign-On) that stores your user and group information. For
-     * more information, see <a
+     * APIs. The role also must include permission to access IAM Identity Center that
+     * stores your user and group information. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access
      * roles for Amazon Kendra</a>.</p>
      */
@@ -154,9 +151,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of an IAM role with permission to access
      * <code>Query</code> API, <code>GetQuerySuggestions</code> API, and other required
-     * APIs. The role also must include permission to access IAM Identity Center
-     * (successor to Single Sign-On) that stores your user and group information. For
-     * more information, see <a
+     * APIs. The role also must include permission to access IAM Identity Center that
+     * stores your user and group information. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access
      * roles for Amazon Kendra</a>.</p>
      */
@@ -165,9 +161,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of an IAM role with permission to access
      * <code>Query</code> API, <code>GetQuerySuggestions</code> API, and other required
-     * APIs. The role also must include permission to access IAM Identity Center
-     * (successor to Single Sign-On) that stores your user and group information. For
-     * more information, see <a
+     * APIs. The role also must include permission to access IAM Identity Center that
+     * stores your user and group information. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access
      * roles for Amazon Kendra</a>.</p>
      */
@@ -176,9 +171,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of an IAM role with permission to access
      * <code>Query</code> API, <code>GetQuerySuggestions</code> API, and other required
-     * APIs. The role also must include permission to access IAM Identity Center
-     * (successor to Single Sign-On) that stores your user and group information. For
-     * more information, see <a
+     * APIs. The role also must include permission to access IAM Identity Center that
+     * stores your user and group information. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access
      * roles for Amazon Kendra</a>.</p>
      */
@@ -187,9 +181,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of an IAM role with permission to access
      * <code>Query</code> API, <code>GetQuerySuggestions</code> API, and other required
-     * APIs. The role also must include permission to access IAM Identity Center
-     * (successor to Single Sign-On) that stores your user and group information. For
-     * more information, see <a
+     * APIs. The role also must include permission to access IAM Identity Center that
+     * stores your user and group information. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access
      * roles for Amazon Kendra</a>.</p>
      */
@@ -198,9 +191,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of an IAM role with permission to access
      * <code>Query</code> API, <code>GetQuerySuggestions</code> API, and other required
-     * APIs. The role also must include permission to access IAM Identity Center
-     * (successor to Single Sign-On) that stores your user and group information. For
-     * more information, see <a
+     * APIs. The role also must include permission to access IAM Identity Center that
+     * stores your user and group information. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access
      * roles for Amazon Kendra</a>.</p>
      */

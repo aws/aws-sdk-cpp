@@ -44,9 +44,11 @@ namespace Model
      * </li> <li> <p> <b>Amazon DynamoDB Streams</b> – The ARN of the stream.</p> </li>
      * <li> <p> <b>Amazon Simple Queue Service</b> – The ARN of the queue.</p> </li>
      * <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the
-     * cluster.</p> </li> <li> <p> <b>Amazon MQ</b> – The ARN of the broker.</p> </li>
-     * <li> <p> <b>Amazon DocumentDB</b> – The ARN of the DocumentDB change stream.</p>
-     * </li> </ul>
+     * cluster or the ARN of the VPC connection (for <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#msk-multi-vpc">cross-account
+     * event source mappings</a>).</p> </li> <li> <p> <b>Amazon MQ</b> – The ARN of the
+     * broker.</p> </li> <li> <p> <b>Amazon DocumentDB</b> – The ARN of the DocumentDB
+     * change stream.</p> </li> </ul>
      */
     inline const Aws::String& GetEventSourceArn() const{ return m_eventSourceArn; }
 
@@ -56,9 +58,11 @@ namespace Model
      * </li> <li> <p> <b>Amazon DynamoDB Streams</b> – The ARN of the stream.</p> </li>
      * <li> <p> <b>Amazon Simple Queue Service</b> – The ARN of the queue.</p> </li>
      * <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the
-     * cluster.</p> </li> <li> <p> <b>Amazon MQ</b> – The ARN of the broker.</p> </li>
-     * <li> <p> <b>Amazon DocumentDB</b> – The ARN of the DocumentDB change stream.</p>
-     * </li> </ul>
+     * cluster or the ARN of the VPC connection (for <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#msk-multi-vpc">cross-account
+     * event source mappings</a>).</p> </li> <li> <p> <b>Amazon MQ</b> – The ARN of the
+     * broker.</p> </li> <li> <p> <b>Amazon DocumentDB</b> – The ARN of the DocumentDB
+     * change stream.</p> </li> </ul>
      */
     inline bool EventSourceArnHasBeenSet() const { return m_eventSourceArnHasBeenSet; }
 
@@ -68,9 +72,11 @@ namespace Model
      * </li> <li> <p> <b>Amazon DynamoDB Streams</b> – The ARN of the stream.</p> </li>
      * <li> <p> <b>Amazon Simple Queue Service</b> – The ARN of the queue.</p> </li>
      * <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the
-     * cluster.</p> </li> <li> <p> <b>Amazon MQ</b> – The ARN of the broker.</p> </li>
-     * <li> <p> <b>Amazon DocumentDB</b> – The ARN of the DocumentDB change stream.</p>
-     * </li> </ul>
+     * cluster or the ARN of the VPC connection (for <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#msk-multi-vpc">cross-account
+     * event source mappings</a>).</p> </li> <li> <p> <b>Amazon MQ</b> – The ARN of the
+     * broker.</p> </li> <li> <p> <b>Amazon DocumentDB</b> – The ARN of the DocumentDB
+     * change stream.</p> </li> </ul>
      */
     inline void SetEventSourceArn(const Aws::String& value) { m_eventSourceArnHasBeenSet = true; m_eventSourceArn = value; }
 
@@ -80,9 +86,11 @@ namespace Model
      * </li> <li> <p> <b>Amazon DynamoDB Streams</b> – The ARN of the stream.</p> </li>
      * <li> <p> <b>Amazon Simple Queue Service</b> – The ARN of the queue.</p> </li>
      * <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the
-     * cluster.</p> </li> <li> <p> <b>Amazon MQ</b> – The ARN of the broker.</p> </li>
-     * <li> <p> <b>Amazon DocumentDB</b> – The ARN of the DocumentDB change stream.</p>
-     * </li> </ul>
+     * cluster or the ARN of the VPC connection (for <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#msk-multi-vpc">cross-account
+     * event source mappings</a>).</p> </li> <li> <p> <b>Amazon MQ</b> – The ARN of the
+     * broker.</p> </li> <li> <p> <b>Amazon DocumentDB</b> – The ARN of the DocumentDB
+     * change stream.</p> </li> </ul>
      */
     inline void SetEventSourceArn(Aws::String&& value) { m_eventSourceArnHasBeenSet = true; m_eventSourceArn = std::move(value); }
 
@@ -92,9 +100,11 @@ namespace Model
      * </li> <li> <p> <b>Amazon DynamoDB Streams</b> – The ARN of the stream.</p> </li>
      * <li> <p> <b>Amazon Simple Queue Service</b> – The ARN of the queue.</p> </li>
      * <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the
-     * cluster.</p> </li> <li> <p> <b>Amazon MQ</b> – The ARN of the broker.</p> </li>
-     * <li> <p> <b>Amazon DocumentDB</b> – The ARN of the DocumentDB change stream.</p>
-     * </li> </ul>
+     * cluster or the ARN of the VPC connection (for <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#msk-multi-vpc">cross-account
+     * event source mappings</a>).</p> </li> <li> <p> <b>Amazon MQ</b> – The ARN of the
+     * broker.</p> </li> <li> <p> <b>Amazon DocumentDB</b> – The ARN of the DocumentDB
+     * change stream.</p> </li> </ul>
      */
     inline void SetEventSourceArn(const char* value) { m_eventSourceArnHasBeenSet = true; m_eventSourceArn.assign(value); }
 
@@ -104,9 +114,11 @@ namespace Model
      * </li> <li> <p> <b>Amazon DynamoDB Streams</b> – The ARN of the stream.</p> </li>
      * <li> <p> <b>Amazon Simple Queue Service</b> – The ARN of the queue.</p> </li>
      * <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the
-     * cluster.</p> </li> <li> <p> <b>Amazon MQ</b> – The ARN of the broker.</p> </li>
-     * <li> <p> <b>Amazon DocumentDB</b> – The ARN of the DocumentDB change stream.</p>
-     * </li> </ul>
+     * cluster or the ARN of the VPC connection (for <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#msk-multi-vpc">cross-account
+     * event source mappings</a>).</p> </li> <li> <p> <b>Amazon MQ</b> – The ARN of the
+     * broker.</p> </li> <li> <p> <b>Amazon DocumentDB</b> – The ARN of the DocumentDB
+     * change stream.</p> </li> </ul>
      */
     inline ListEventSourceMappingsRequest& WithEventSourceArn(const Aws::String& value) { SetEventSourceArn(value); return *this;}
 
@@ -116,9 +128,11 @@ namespace Model
      * </li> <li> <p> <b>Amazon DynamoDB Streams</b> – The ARN of the stream.</p> </li>
      * <li> <p> <b>Amazon Simple Queue Service</b> – The ARN of the queue.</p> </li>
      * <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the
-     * cluster.</p> </li> <li> <p> <b>Amazon MQ</b> – The ARN of the broker.</p> </li>
-     * <li> <p> <b>Amazon DocumentDB</b> – The ARN of the DocumentDB change stream.</p>
-     * </li> </ul>
+     * cluster or the ARN of the VPC connection (for <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#msk-multi-vpc">cross-account
+     * event source mappings</a>).</p> </li> <li> <p> <b>Amazon MQ</b> – The ARN of the
+     * broker.</p> </li> <li> <p> <b>Amazon DocumentDB</b> – The ARN of the DocumentDB
+     * change stream.</p> </li> </ul>
      */
     inline ListEventSourceMappingsRequest& WithEventSourceArn(Aws::String&& value) { SetEventSourceArn(std::move(value)); return *this;}
 
@@ -128,17 +142,19 @@ namespace Model
      * </li> <li> <p> <b>Amazon DynamoDB Streams</b> – The ARN of the stream.</p> </li>
      * <li> <p> <b>Amazon Simple Queue Service</b> – The ARN of the queue.</p> </li>
      * <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the
-     * cluster.</p> </li> <li> <p> <b>Amazon MQ</b> – The ARN of the broker.</p> </li>
-     * <li> <p> <b>Amazon DocumentDB</b> – The ARN of the DocumentDB change stream.</p>
-     * </li> </ul>
+     * cluster or the ARN of the VPC connection (for <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#msk-multi-vpc">cross-account
+     * event source mappings</a>).</p> </li> <li> <p> <b>Amazon MQ</b> – The ARN of the
+     * broker.</p> </li> <li> <p> <b>Amazon DocumentDB</b> – The ARN of the DocumentDB
+     * change stream.</p> </li> </ul>
      */
     inline ListEventSourceMappingsRequest& WithEventSourceArn(const char* value) { SetEventSourceArn(value); return *this;}
 
 
     /**
-     * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
-     * </p> <ul> <li> <p> <b>Function name</b> – <code>MyFunction</code>.</p> </li>
-     * <li> <p> <b>Function ARN</b> –
+     * <p>The name or ARN of the Lambda function.</p> <p class="title"> <b>Name
+     * formats</b> </p> <ul> <li> <p> <b>Function name</b> –
+     * <code>MyFunction</code>.</p> </li> <li> <p> <b>Function ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
      * </li> <li> <p> <b>Version or Alias ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p>
@@ -150,9 +166,9 @@ namespace Model
     inline const Aws::String& GetFunctionName() const{ return m_functionName; }
 
     /**
-     * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
-     * </p> <ul> <li> <p> <b>Function name</b> – <code>MyFunction</code>.</p> </li>
-     * <li> <p> <b>Function ARN</b> –
+     * <p>The name or ARN of the Lambda function.</p> <p class="title"> <b>Name
+     * formats</b> </p> <ul> <li> <p> <b>Function name</b> –
+     * <code>MyFunction</code>.</p> </li> <li> <p> <b>Function ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
      * </li> <li> <p> <b>Version or Alias ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p>
@@ -164,9 +180,9 @@ namespace Model
     inline bool FunctionNameHasBeenSet() const { return m_functionNameHasBeenSet; }
 
     /**
-     * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
-     * </p> <ul> <li> <p> <b>Function name</b> – <code>MyFunction</code>.</p> </li>
-     * <li> <p> <b>Function ARN</b> –
+     * <p>The name or ARN of the Lambda function.</p> <p class="title"> <b>Name
+     * formats</b> </p> <ul> <li> <p> <b>Function name</b> –
+     * <code>MyFunction</code>.</p> </li> <li> <p> <b>Function ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
      * </li> <li> <p> <b>Version or Alias ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p>
@@ -178,9 +194,9 @@ namespace Model
     inline void SetFunctionName(const Aws::String& value) { m_functionNameHasBeenSet = true; m_functionName = value; }
 
     /**
-     * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
-     * </p> <ul> <li> <p> <b>Function name</b> – <code>MyFunction</code>.</p> </li>
-     * <li> <p> <b>Function ARN</b> –
+     * <p>The name or ARN of the Lambda function.</p> <p class="title"> <b>Name
+     * formats</b> </p> <ul> <li> <p> <b>Function name</b> –
+     * <code>MyFunction</code>.</p> </li> <li> <p> <b>Function ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
      * </li> <li> <p> <b>Version or Alias ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p>
@@ -192,9 +208,9 @@ namespace Model
     inline void SetFunctionName(Aws::String&& value) { m_functionNameHasBeenSet = true; m_functionName = std::move(value); }
 
     /**
-     * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
-     * </p> <ul> <li> <p> <b>Function name</b> – <code>MyFunction</code>.</p> </li>
-     * <li> <p> <b>Function ARN</b> –
+     * <p>The name or ARN of the Lambda function.</p> <p class="title"> <b>Name
+     * formats</b> </p> <ul> <li> <p> <b>Function name</b> –
+     * <code>MyFunction</code>.</p> </li> <li> <p> <b>Function ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
      * </li> <li> <p> <b>Version or Alias ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p>
@@ -206,9 +222,9 @@ namespace Model
     inline void SetFunctionName(const char* value) { m_functionNameHasBeenSet = true; m_functionName.assign(value); }
 
     /**
-     * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
-     * </p> <ul> <li> <p> <b>Function name</b> – <code>MyFunction</code>.</p> </li>
-     * <li> <p> <b>Function ARN</b> –
+     * <p>The name or ARN of the Lambda function.</p> <p class="title"> <b>Name
+     * formats</b> </p> <ul> <li> <p> <b>Function name</b> –
+     * <code>MyFunction</code>.</p> </li> <li> <p> <b>Function ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
      * </li> <li> <p> <b>Version or Alias ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p>
@@ -220,9 +236,9 @@ namespace Model
     inline ListEventSourceMappingsRequest& WithFunctionName(const Aws::String& value) { SetFunctionName(value); return *this;}
 
     /**
-     * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
-     * </p> <ul> <li> <p> <b>Function name</b> – <code>MyFunction</code>.</p> </li>
-     * <li> <p> <b>Function ARN</b> –
+     * <p>The name or ARN of the Lambda function.</p> <p class="title"> <b>Name
+     * formats</b> </p> <ul> <li> <p> <b>Function name</b> –
+     * <code>MyFunction</code>.</p> </li> <li> <p> <b>Function ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
      * </li> <li> <p> <b>Version or Alias ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p>
@@ -234,9 +250,9 @@ namespace Model
     inline ListEventSourceMappingsRequest& WithFunctionName(Aws::String&& value) { SetFunctionName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
-     * </p> <ul> <li> <p> <b>Function name</b> – <code>MyFunction</code>.</p> </li>
-     * <li> <p> <b>Function ARN</b> –
+     * <p>The name or ARN of the Lambda function.</p> <p class="title"> <b>Name
+     * formats</b> </p> <ul> <li> <p> <b>Function name</b> –
+     * <code>MyFunction</code>.</p> </li> <li> <p> <b>Function ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
      * </li> <li> <p> <b>Version or Alias ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p>

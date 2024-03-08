@@ -185,30 +185,34 @@ namespace Model
 
 
     /**
-     * <p>Whether this target group is the first one used for connection requests by
-     * the associated proxy. Because each proxy is currently associated with a single
-     * target group, currently this setting is always <code>true</code>.</p>
+     * <p>Indicates whether this target group is the first one used for connection
+     * requests by the associated proxy. Because each proxy is currently associated
+     * with a single target group, currently this setting is always
+     * <code>true</code>.</p>
      */
     inline bool GetIsDefault() const{ return m_isDefault; }
 
     /**
-     * <p>Whether this target group is the first one used for connection requests by
-     * the associated proxy. Because each proxy is currently associated with a single
-     * target group, currently this setting is always <code>true</code>.</p>
+     * <p>Indicates whether this target group is the first one used for connection
+     * requests by the associated proxy. Because each proxy is currently associated
+     * with a single target group, currently this setting is always
+     * <code>true</code>.</p>
      */
     inline bool IsDefaultHasBeenSet() const { return m_isDefaultHasBeenSet; }
 
     /**
-     * <p>Whether this target group is the first one used for connection requests by
-     * the associated proxy. Because each proxy is currently associated with a single
-     * target group, currently this setting is always <code>true</code>.</p>
+     * <p>Indicates whether this target group is the first one used for connection
+     * requests by the associated proxy. Because each proxy is currently associated
+     * with a single target group, currently this setting is always
+     * <code>true</code>.</p>
      */
     inline void SetIsDefault(bool value) { m_isDefaultHasBeenSet = true; m_isDefault = value; }
 
     /**
-     * <p>Whether this target group is the first one used for connection requests by
-     * the associated proxy. Because each proxy is currently associated with a single
-     * target group, currently this setting is always <code>true</code>.</p>
+     * <p>Indicates whether this target group is the first one used for connection
+     * requests by the associated proxy. Because each proxy is currently associated
+     * with a single target group, currently this setting is always
+     * <code>true</code>.</p>
      */
     inline DBProxyTargetGroup& WithIsDefault(bool value) { SetIsDefault(value); return *this;}
 

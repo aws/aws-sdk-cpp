@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RightsizingType::NOT_SET:
+            return {};
           case RightsizingType::TERMINATE:
             return "TERMINATE";
           case RightsizingType::MODIFY:

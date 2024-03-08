@@ -92,42 +92,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the quick connect.</p>
+     * <p>A unique name of the quick connect.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the quick connect.</p>
+     * <p>A unique name of the quick connect.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name of the quick connect.</p>
+     * <p>A unique name of the quick connect.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the quick connect.</p>
+     * <p>A unique name of the quick connect.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the quick connect.</p>
+     * <p>A unique name of the quick connect.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the quick connect.</p>
+     * <p>A unique name of the quick connect.</p>
      */
     inline CreateQuickConnectRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the quick connect.</p>
+     * <p>A unique name of the quick connect.</p>
      */
     inline CreateQuickConnectRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the quick connect.</p>
+     * <p>A unique name of the quick connect.</p>
      */
     inline CreateQuickConnectRequest& WithName(const char* value) { SetName(value); return *this;}
 
@@ -206,79 +206,79 @@ namespace Model
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline CreateQuickConnectRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline CreateQuickConnectRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline CreateQuickConnectRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline CreateQuickConnectRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline CreateQuickConnectRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline CreateQuickConnectRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline CreateQuickConnectRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline CreateQuickConnectRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline CreateQuickConnectRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 

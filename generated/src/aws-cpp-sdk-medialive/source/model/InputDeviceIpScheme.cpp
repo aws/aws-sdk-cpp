@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InputDeviceIpScheme::NOT_SET:
+            return {};
           case InputDeviceIpScheme::STATIC_:
             return "STATIC";
           case InputDeviceIpScheme::DHCP:

@@ -69,80 +69,73 @@ namespace Model
 
 
     /**
-     * <p>The idempotency token used to make this request idempotent.</p>
+     * <p>The client token that uniquely identifies the request.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
-     * <p>The idempotency token used to make this request idempotent.</p>
+     * <p>The client token that uniquely identifies the request.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientToken = value; }
 
     /**
-     * <p>The idempotency token used to make this request idempotent.</p>
+     * <p>The client token that uniquely identifies the request.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientToken = std::move(value); }
 
     /**
-     * <p>The idempotency token used to make this request idempotent.</p>
+     * <p>The client token that uniquely identifies the request.</p>
      */
     inline void SetClientToken(const char* value) { m_clientToken.assign(value); }
 
     /**
-     * <p>The idempotency token used to make this request idempotent.</p>
+     * <p>The client token that uniquely identifies the request.</p>
      */
     inline CreateComponentResult& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
-     * <p>The idempotency token used to make this request idempotent.</p>
+     * <p>The client token that uniquely identifies the request.</p>
      */
     inline CreateComponentResult& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
-     * <p>The idempotency token used to make this request idempotent.</p>
+     * <p>The client token that uniquely identifies the request.</p>
      */
     inline CreateComponentResult& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the component that this request
-     * created.</p>
+     * <p>The Amazon Resource Name (ARN) of the component that the request created.</p>
      */
     inline const Aws::String& GetComponentBuildVersionArn() const{ return m_componentBuildVersionArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the component that this request
-     * created.</p>
+     * <p>The Amazon Resource Name (ARN) of the component that the request created.</p>
      */
     inline void SetComponentBuildVersionArn(const Aws::String& value) { m_componentBuildVersionArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the component that this request
-     * created.</p>
+     * <p>The Amazon Resource Name (ARN) of the component that the request created.</p>
      */
     inline void SetComponentBuildVersionArn(Aws::String&& value) { m_componentBuildVersionArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the component that this request
-     * created.</p>
+     * <p>The Amazon Resource Name (ARN) of the component that the request created.</p>
      */
     inline void SetComponentBuildVersionArn(const char* value) { m_componentBuildVersionArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the component that this request
-     * created.</p>
+     * <p>The Amazon Resource Name (ARN) of the component that the request created.</p>
      */
     inline CreateComponentResult& WithComponentBuildVersionArn(const Aws::String& value) { SetComponentBuildVersionArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the component that this request
-     * created.</p>
+     * <p>The Amazon Resource Name (ARN) of the component that the request created.</p>
      */
     inline CreateComponentResult& WithComponentBuildVersionArn(Aws::String&& value) { SetComponentBuildVersionArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the component that this request
-     * created.</p>
+     * <p>The Amazon Resource Name (ARN) of the component that the request created.</p>
      */
     inline CreateComponentResult& WithComponentBuildVersionArn(const char* value) { SetComponentBuildVersionArn(value); return *this;}
 

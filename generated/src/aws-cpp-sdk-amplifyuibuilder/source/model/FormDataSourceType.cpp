@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FormDataSourceType::NOT_SET:
+            return {};
           case FormDataSourceType::DataStore:
             return "DataStore";
           case FormDataSourceType::Custom:

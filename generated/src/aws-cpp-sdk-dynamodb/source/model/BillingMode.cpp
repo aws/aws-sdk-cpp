@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BillingMode::NOT_SET:
+            return {};
           case BillingMode::PROVISIONED:
             return "PROVISIONED";
           case BillingMode::PAY_PER_REQUEST:

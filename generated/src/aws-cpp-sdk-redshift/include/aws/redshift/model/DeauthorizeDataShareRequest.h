@@ -37,50 +37,50 @@ namespace Model
   public:
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the datashare to remove authorization
-     * from.</p>
+     * <p>The namespace Amazon Resource Name (ARN) of the datashare to remove
+     * authorization from.</p>
      */
     inline const Aws::String& GetDataShareArn() const{ return m_dataShareArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the datashare to remove authorization
-     * from.</p>
+     * <p>The namespace Amazon Resource Name (ARN) of the datashare to remove
+     * authorization from.</p>
      */
     inline bool DataShareArnHasBeenSet() const { return m_dataShareArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the datashare to remove authorization
-     * from.</p>
+     * <p>The namespace Amazon Resource Name (ARN) of the datashare to remove
+     * authorization from.</p>
      */
     inline void SetDataShareArn(const Aws::String& value) { m_dataShareArnHasBeenSet = true; m_dataShareArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the datashare to remove authorization
-     * from.</p>
+     * <p>The namespace Amazon Resource Name (ARN) of the datashare to remove
+     * authorization from.</p>
      */
     inline void SetDataShareArn(Aws::String&& value) { m_dataShareArnHasBeenSet = true; m_dataShareArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the datashare to remove authorization
-     * from.</p>
+     * <p>The namespace Amazon Resource Name (ARN) of the datashare to remove
+     * authorization from.</p>
      */
     inline void SetDataShareArn(const char* value) { m_dataShareArnHasBeenSet = true; m_dataShareArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the datashare to remove authorization
-     * from.</p>
+     * <p>The namespace Amazon Resource Name (ARN) of the datashare to remove
+     * authorization from.</p>
      */
     inline DeauthorizeDataShareRequest& WithDataShareArn(const Aws::String& value) { SetDataShareArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the datashare to remove authorization
-     * from.</p>
+     * <p>The namespace Amazon Resource Name (ARN) of the datashare to remove
+     * authorization from.</p>
      */
     inline DeauthorizeDataShareRequest& WithDataShareArn(Aws::String&& value) { SetDataShareArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the datashare to remove authorization
-     * from.</p>
+     * <p>The namespace Amazon Resource Name (ARN) of the datashare to remove
+     * authorization from.</p>
      */
     inline DeauthorizeDataShareRequest& WithDataShareArn(const char* value) { SetDataShareArn(value); return *this;}
 

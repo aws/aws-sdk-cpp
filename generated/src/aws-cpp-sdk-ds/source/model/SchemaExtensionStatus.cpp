@@ -84,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SchemaExtensionStatus::NOT_SET:
+            return {};
           case SchemaExtensionStatus::Initializing:
             return "Initializing";
           case SchemaExtensionStatus::CreatingSnapshot:

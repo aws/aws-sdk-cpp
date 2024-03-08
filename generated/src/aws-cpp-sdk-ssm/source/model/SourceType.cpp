@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SourceType::NOT_SET:
+            return {};
           case SourceType::AWS_EC2_Instance:
             return "AWS::EC2::Instance";
           case SourceType::AWS_IoT_Thing:

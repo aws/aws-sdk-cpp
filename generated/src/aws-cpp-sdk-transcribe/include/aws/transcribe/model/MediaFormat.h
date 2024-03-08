@@ -22,7 +22,8 @@ namespace Model
     flac,
     ogg,
     amr,
-    webm
+    webm,
+    m4a
   };
 
 namespace MediaFormatMapper

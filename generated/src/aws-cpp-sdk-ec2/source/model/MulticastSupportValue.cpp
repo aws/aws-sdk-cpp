@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MulticastSupportValue::NOT_SET:
+            return {};
           case MulticastSupportValue::enable:
             return "enable";
           case MulticastSupportValue::disable:

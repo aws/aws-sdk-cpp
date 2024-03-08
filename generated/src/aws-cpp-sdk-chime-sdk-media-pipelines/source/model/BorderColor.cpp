@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BorderColor::NOT_SET:
+            return {};
           case BorderColor::Black:
             return "Black";
           case BorderColor::Blue:

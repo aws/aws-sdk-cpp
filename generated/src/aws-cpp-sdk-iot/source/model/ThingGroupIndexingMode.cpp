@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ThingGroupIndexingMode::NOT_SET:
+            return {};
           case ThingGroupIndexingMode::OFF:
             return "OFF";
           case ThingGroupIndexingMode::ON:

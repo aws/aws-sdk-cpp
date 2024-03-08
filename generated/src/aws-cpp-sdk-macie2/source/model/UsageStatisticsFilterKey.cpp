@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UsageStatisticsFilterKey::NOT_SET:
+            return {};
           case UsageStatisticsFilterKey::accountId:
             return "accountId";
           case UsageStatisticsFilterKey::serviceLimit:

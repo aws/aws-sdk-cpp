@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ConnectionMode::NOT_SET:
+            return {};
           case ConnectionMode::Public:
             return "Public";
           case ConnectionMode::Private:

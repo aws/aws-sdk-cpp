@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Schema::NOT_SET:
+            return {};
           case Schema::ocsf:
             return "ocsf";
           case Schema::raw:

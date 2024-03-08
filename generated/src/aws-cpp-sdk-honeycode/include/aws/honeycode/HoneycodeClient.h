@@ -25,8 +25,8 @@ namespace Honeycode
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef HoneycodeClientConfiguration ClientConfigurationType;
       typedef HoneycodeEndpointProvider EndpointProviderType;
@@ -36,14 +36,14 @@ namespace Honeycode
         * is not specified, it will be initialized to default values.
         */
         HoneycodeClient(const Aws::Honeycode::HoneycodeClientConfiguration& clientConfiguration = Aws::Honeycode::HoneycodeClientConfiguration(),
-                        std::shared_ptr<HoneycodeEndpointProviderBase> endpointProvider = Aws::MakeShared<HoneycodeEndpointProvider>(ALLOCATION_TAG));
+                        std::shared_ptr<HoneycodeEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         HoneycodeClient(const Aws::Auth::AWSCredentials& credentials,
-                        std::shared_ptr<HoneycodeEndpointProviderBase> endpointProvider = Aws::MakeShared<HoneycodeEndpointProvider>(ALLOCATION_TAG),
+                        std::shared_ptr<HoneycodeEndpointProviderBase> endpointProvider = nullptr,
                         const Aws::Honeycode::HoneycodeClientConfiguration& clientConfiguration = Aws::Honeycode::HoneycodeClientConfiguration());
 
        /**
@@ -51,7 +51,7 @@ namespace Honeycode
         * the default http client factory will be used
         */
         HoneycodeClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                        std::shared_ptr<HoneycodeEndpointProviderBase> endpointProvider = Aws::MakeShared<HoneycodeEndpointProvider>(ALLOCATION_TAG),
+                        std::shared_ptr<HoneycodeEndpointProviderBase> endpointProvider = nullptr,
                         const Aws::Honeycode::HoneycodeClientConfiguration& clientConfiguration = Aws::Honeycode::HoneycodeClientConfiguration());
 
 

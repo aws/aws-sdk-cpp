@@ -25,16 +25,18 @@ namespace Aws
         static const int ExperimentTrial_HASH = HashingUtils::HashString("ExperimentTrial");
         static const int ExperimentTrialComponent_HASH = HashingUtils::HashString("ExperimentTrialComponent");
         static const int Endpoint_HASH = HashingUtils::HashString("Endpoint");
+        static const int Model_HASH = HashingUtils::HashString("Model");
         static const int ModelPackage_HASH = HashingUtils::HashString("ModelPackage");
         static const int ModelPackageGroup_HASH = HashingUtils::HashString("ModelPackageGroup");
         static const int Pipeline_HASH = HashingUtils::HashString("Pipeline");
         static const int PipelineExecution_HASH = HashingUtils::HashString("PipelineExecution");
         static const int FeatureGroup_HASH = HashingUtils::HashString("FeatureGroup");
-        static const int Project_HASH = HashingUtils::HashString("Project");
         static const int FeatureMetadata_HASH = HashingUtils::HashString("FeatureMetadata");
+        static const int Image_HASH = HashingUtils::HashString("Image");
+        static const int ImageVersion_HASH = HashingUtils::HashString("ImageVersion");
+        static const int Project_HASH = HashingUtils::HashString("Project");
         static const int HyperParameterTuningJob_HASH = HashingUtils::HashString("HyperParameterTuningJob");
         static const int ModelCard_HASH = HashingUtils::HashString("ModelCard");
-        static const int Model_HASH = HashingUtils::HashString("Model");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
@@ -60,6 +62,10 @@ namespace Aws
           {
             return ResourceType::Endpoint;
           }
+          else if (hashCode == Model_HASH)
+          {
+            return ResourceType::Model;
+          }
           else if (hashCode == ModelPackage_HASH)
           {
             return ResourceType::ModelPackage;
@@ -80,13 +86,21 @@ namespace Aws
           {
             return ResourceType::FeatureGroup;
           }
-          else if (hashCode == Project_HASH)
-          {
-            return ResourceType::Project;
-          }
           else if (hashCode == FeatureMetadata_HASH)
           {
             return ResourceType::FeatureMetadata;
+          }
+          else if (hashCode == Image_HASH)
+          {
+            return ResourceType::Image;
+          }
+          else if (hashCode == ImageVersion_HASH)
+          {
+            return ResourceType::ImageVersion;
+          }
+          else if (hashCode == Project_HASH)
+          {
+            return ResourceType::Project;
           }
           else if (hashCode == HyperParameterTuningJob_HASH)
           {
@@ -95,10 +109,6 @@ namespace Aws
           else if (hashCode == ModelCard_HASH)
           {
             return ResourceType::ModelCard;
-          }
-          else if (hashCode == Model_HASH)
-          {
-            return ResourceType::Model;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -114,6 +124,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResourceType::NOT_SET:
+            return {};
           case ResourceType::TrainingJob:
             return "TrainingJob";
           case ResourceType::Experiment:
@@ -124,6 +136,8 @@ namespace Aws
             return "ExperimentTrialComponent";
           case ResourceType::Endpoint:
             return "Endpoint";
+          case ResourceType::Model:
+            return "Model";
           case ResourceType::ModelPackage:
             return "ModelPackage";
           case ResourceType::ModelPackageGroup:
@@ -134,16 +148,18 @@ namespace Aws
             return "PipelineExecution";
           case ResourceType::FeatureGroup:
             return "FeatureGroup";
-          case ResourceType::Project:
-            return "Project";
           case ResourceType::FeatureMetadata:
             return "FeatureMetadata";
+          case ResourceType::Image:
+            return "Image";
+          case ResourceType::ImageVersion:
+            return "ImageVersion";
+          case ResourceType::Project:
+            return "Project";
           case ResourceType::HyperParameterTuningJob:
             return "HyperParameterTuningJob";
           case ResourceType::ModelCard:
             return "ModelCard";
-          case ResourceType::Model:
-            return "Model";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

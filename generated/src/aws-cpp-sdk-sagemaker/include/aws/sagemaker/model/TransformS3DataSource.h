@@ -114,7 +114,7 @@ namespace Model
     /**
      * <p>Depending on the value specified for the <code>S3DataType</code>, identifies
      * either a key name prefix or a manifest. For example:</p> <ul> <li> <p> A key
-     * name prefix might look like this: <code>s3://bucketname/exampleprefix</code>.
+     * name prefix might look like this: <code>s3://bucketname/exampleprefix/</code>.
      * </p> </li> <li> <p> A manifest might look like this:
      * <code>s3://bucketname/example.manifest</code> </p> <p> The manifest is an S3
      * object which is a JSON file with the following format: </p> <p> <code>[
@@ -137,7 +137,7 @@ namespace Model
     /**
      * <p>Depending on the value specified for the <code>S3DataType</code>, identifies
      * either a key name prefix or a manifest. For example:</p> <ul> <li> <p> A key
-     * name prefix might look like this: <code>s3://bucketname/exampleprefix</code>.
+     * name prefix might look like this: <code>s3://bucketname/exampleprefix/</code>.
      * </p> </li> <li> <p> A manifest might look like this:
      * <code>s3://bucketname/example.manifest</code> </p> <p> The manifest is an S3
      * object which is a JSON file with the following format: </p> <p> <code>[
@@ -160,7 +160,7 @@ namespace Model
     /**
      * <p>Depending on the value specified for the <code>S3DataType</code>, identifies
      * either a key name prefix or a manifest. For example:</p> <ul> <li> <p> A key
-     * name prefix might look like this: <code>s3://bucketname/exampleprefix</code>.
+     * name prefix might look like this: <code>s3://bucketname/exampleprefix/</code>.
      * </p> </li> <li> <p> A manifest might look like this:
      * <code>s3://bucketname/example.manifest</code> </p> <p> The manifest is an S3
      * object which is a JSON file with the following format: </p> <p> <code>[
@@ -183,7 +183,7 @@ namespace Model
     /**
      * <p>Depending on the value specified for the <code>S3DataType</code>, identifies
      * either a key name prefix or a manifest. For example:</p> <ul> <li> <p> A key
-     * name prefix might look like this: <code>s3://bucketname/exampleprefix</code>.
+     * name prefix might look like this: <code>s3://bucketname/exampleprefix/</code>.
      * </p> </li> <li> <p> A manifest might look like this:
      * <code>s3://bucketname/example.manifest</code> </p> <p> The manifest is an S3
      * object which is a JSON file with the following format: </p> <p> <code>[
@@ -206,7 +206,7 @@ namespace Model
     /**
      * <p>Depending on the value specified for the <code>S3DataType</code>, identifies
      * either a key name prefix or a manifest. For example:</p> <ul> <li> <p> A key
-     * name prefix might look like this: <code>s3://bucketname/exampleprefix</code>.
+     * name prefix might look like this: <code>s3://bucketname/exampleprefix/</code>.
      * </p> </li> <li> <p> A manifest might look like this:
      * <code>s3://bucketname/example.manifest</code> </p> <p> The manifest is an S3
      * object which is a JSON file with the following format: </p> <p> <code>[
@@ -229,7 +229,7 @@ namespace Model
     /**
      * <p>Depending on the value specified for the <code>S3DataType</code>, identifies
      * either a key name prefix or a manifest. For example:</p> <ul> <li> <p> A key
-     * name prefix might look like this: <code>s3://bucketname/exampleprefix</code>.
+     * name prefix might look like this: <code>s3://bucketname/exampleprefix/</code>.
      * </p> </li> <li> <p> A manifest might look like this:
      * <code>s3://bucketname/example.manifest</code> </p> <p> The manifest is an S3
      * object which is a JSON file with the following format: </p> <p> <code>[
@@ -252,7 +252,7 @@ namespace Model
     /**
      * <p>Depending on the value specified for the <code>S3DataType</code>, identifies
      * either a key name prefix or a manifest. For example:</p> <ul> <li> <p> A key
-     * name prefix might look like this: <code>s3://bucketname/exampleprefix</code>.
+     * name prefix might look like this: <code>s3://bucketname/exampleprefix/</code>.
      * </p> </li> <li> <p> A manifest might look like this:
      * <code>s3://bucketname/example.manifest</code> </p> <p> The manifest is an S3
      * object which is a JSON file with the following format: </p> <p> <code>[
@@ -275,7 +275,7 @@ namespace Model
     /**
      * <p>Depending on the value specified for the <code>S3DataType</code>, identifies
      * either a key name prefix or a manifest. For example:</p> <ul> <li> <p> A key
-     * name prefix might look like this: <code>s3://bucketname/exampleprefix</code>.
+     * name prefix might look like this: <code>s3://bucketname/exampleprefix/</code>.
      * </p> </li> <li> <p> A manifest might look like this:
      * <code>s3://bucketname/example.manifest</code> </p> <p> The manifest is an S3
      * object which is a JSON file with the following format: </p> <p> <code>[

@@ -21,7 +21,10 @@ namespace Model
     AFTER_30_DAYS,
     AFTER_60_DAYS,
     AFTER_90_DAYS,
-    AFTER_1_DAY
+    AFTER_1_DAY,
+    AFTER_180_DAYS,
+    AFTER_270_DAYS,
+    AFTER_365_DAYS
   };
 
 namespace TransitionToIARulesMapper

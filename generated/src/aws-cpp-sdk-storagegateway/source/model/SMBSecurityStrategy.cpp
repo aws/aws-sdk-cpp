@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SMBSecurityStrategy::NOT_SET:
+            return {};
           case SMBSecurityStrategy::ClientSpecified:
             return "ClientSpecified";
           case SMBSecurityStrategy::MandatorySigning:

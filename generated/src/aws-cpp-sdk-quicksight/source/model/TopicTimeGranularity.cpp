@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TopicTimeGranularity::NOT_SET:
+            return {};
           case TopicTimeGranularity::SECOND:
             return "SECOND";
           case TopicTimeGranularity::MINUTE:

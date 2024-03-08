@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SortContextsBy::NOT_SET:
+            return {};
           case SortContextsBy::Name:
             return "Name";
           case SortContextsBy::CreationTime:

@@ -24,6 +24,7 @@ TableRestoreStatus::TableRestoreStatus() :
     m_newTableNameHasBeenSet(false),
     m_progressInMegaBytes(0),
     m_progressInMegaBytesHasBeenSet(false),
+    m_recoveryPointIdHasBeenSet(false),
     m_requestTimeHasBeenSet(false),
     m_snapshotNameHasBeenSet(false),
     m_sourceDatabaseNameHasBeenSet(false),
@@ -45,6 +46,7 @@ TableRestoreStatus::TableRestoreStatus(JsonView jsonValue) :
     m_newTableNameHasBeenSet(false),
     m_progressInMegaBytes(0),
     m_progressInMegaBytesHasBeenSet(false),
+    m_recoveryPointIdHasBeenSet(false),
     m_requestTimeHasBeenSet(false),
     m_snapshotNameHasBeenSet(false),
     m_sourceDatabaseNameHasBeenSet(false),
@@ -89,6 +91,13 @@ TableRestoreStatus& TableRestoreStatus::operator =(JsonView jsonValue)
     m_progressInMegaBytes = jsonValue.GetInt64("progressInMegaBytes");
 
     m_progressInMegaBytesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("recoveryPointId"))
+  {
+    m_recoveryPointId = jsonValue.GetString("recoveryPointId");
+
+    m_recoveryPointIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("requestTime"))
@@ -196,6 +205,12 @@ JsonValue TableRestoreStatus::Jsonize() const
   if(m_progressInMegaBytesHasBeenSet)
   {
    payload.WithInt64("progressInMegaBytes", m_progressInMegaBytes);
+
+  }
+
+  if(m_recoveryPointIdHasBeenSet)
+  {
+   payload.WithString("recoveryPointId", m_recoveryPointId);
 
   }
 

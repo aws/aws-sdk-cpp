@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PermissionType::NOT_SET:
+            return {};
           case PermissionType::FULL_ACCESS:
             return "FULL_ACCESS";
           case PermissionType::SEND_AS:

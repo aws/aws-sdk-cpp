@@ -15,7 +15,8 @@ using namespace Aws::Utils;
 GetTableMetadataRequest::GetTableMetadataRequest() : 
     m_catalogNameHasBeenSet(false),
     m_databaseNameHasBeenSet(false),
-    m_tableNameHasBeenSet(false)
+    m_tableNameHasBeenSet(false),
+    m_workGroupHasBeenSet(false)
 {
 }
 
@@ -38,6 +39,12 @@ Aws::String GetTableMetadataRequest::SerializePayload() const
   if(m_tableNameHasBeenSet)
   {
    payload.WithString("TableName", m_tableName);
+
+  }
+
+  if(m_workGroupHasBeenSet)
+  {
+   payload.WithString("WorkGroup", m_workGroup);
 
   }
 

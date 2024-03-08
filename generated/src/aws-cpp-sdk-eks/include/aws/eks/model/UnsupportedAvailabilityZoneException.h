@@ -41,28 +41,68 @@ namespace Model
     AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    
+    /**
+     * <p>At least one of your specified cluster subnets is in an Availability Zone
+     * that does not support Amazon EKS. The exception output specifies the supported
+     * Availability Zones for your account, from which you can choose subnets for your
+     * cluster.</p>
+     */
     inline const Aws::String& GetMessage() const{ return m_message; }
 
-    
+    /**
+     * <p>At least one of your specified cluster subnets is in an Availability Zone
+     * that does not support Amazon EKS. The exception output specifies the supported
+     * Availability Zones for your account, from which you can choose subnets for your
+     * cluster.</p>
+     */
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
 
-    
+    /**
+     * <p>At least one of your specified cluster subnets is in an Availability Zone
+     * that does not support Amazon EKS. The exception output specifies the supported
+     * Availability Zones for your account, from which you can choose subnets for your
+     * cluster.</p>
+     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
 
-    
+    /**
+     * <p>At least one of your specified cluster subnets is in an Availability Zone
+     * that does not support Amazon EKS. The exception output specifies the supported
+     * Availability Zones for your account, from which you can choose subnets for your
+     * cluster.</p>
+     */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
 
-    
+    /**
+     * <p>At least one of your specified cluster subnets is in an Availability Zone
+     * that does not support Amazon EKS. The exception output specifies the supported
+     * Availability Zones for your account, from which you can choose subnets for your
+     * cluster.</p>
+     */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
 
-    
+    /**
+     * <p>At least one of your specified cluster subnets is in an Availability Zone
+     * that does not support Amazon EKS. The exception output specifies the supported
+     * Availability Zones for your account, from which you can choose subnets for your
+     * cluster.</p>
+     */
     inline UnsupportedAvailabilityZoneException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
 
-    
+    /**
+     * <p>At least one of your specified cluster subnets is in an Availability Zone
+     * that does not support Amazon EKS. The exception output specifies the supported
+     * Availability Zones for your account, from which you can choose subnets for your
+     * cluster.</p>
+     */
     inline UnsupportedAvailabilityZoneException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>At least one of your specified cluster subnets is in an Availability Zone
+     * that does not support Amazon EKS. The exception output specifies the supported
+     * Availability Zones for your account, from which you can choose subnets for your
+     * cluster.</p>
+     */
     inline UnsupportedAvailabilityZoneException& WithMessage(const char* value) { SetMessage(value); return *this;}
 
 

@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Sentiment::NOT_SET:
+            return {};
           case Sentiment::POSITIVE:
             return "POSITIVE";
           case Sentiment::NEGATIVE:

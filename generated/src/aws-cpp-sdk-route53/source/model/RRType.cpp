@@ -104,6 +104,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RRType::NOT_SET:
+            return {};
           case RRType::SOA:
             return "SOA";
           case RRType::A:

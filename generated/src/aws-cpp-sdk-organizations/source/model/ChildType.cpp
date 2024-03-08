@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ChildType::NOT_SET:
+            return {};
           case ChildType::ACCOUNT:
             return "ACCOUNT";
           case ChildType::ORGANIZATIONAL_UNIT:

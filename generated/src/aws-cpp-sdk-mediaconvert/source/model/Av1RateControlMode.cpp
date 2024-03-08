@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Av1RateControlMode::NOT_SET:
+            return {};
           case Av1RateControlMode::QVBR:
             return "QVBR";
           default:

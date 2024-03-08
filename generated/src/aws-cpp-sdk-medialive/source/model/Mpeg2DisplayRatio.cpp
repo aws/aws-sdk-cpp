@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Mpeg2DisplayRatio::NOT_SET:
+            return {};
           case Mpeg2DisplayRatio::DISPLAYRATIO16X9:
             return "DISPLAYRATIO16X9";
           case Mpeg2DisplayRatio::DISPLAYRATIO4X3:

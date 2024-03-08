@@ -17,6 +17,7 @@ CreateDomainRequest::CreateDomainRequest() :
     m_authMode(AuthMode::NOT_SET),
     m_authModeHasBeenSet(false),
     m_defaultUserSettingsHasBeenSet(false),
+    m_domainSettingsHasBeenSet(false),
     m_subnetIdsHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_tagsHasBeenSet(false),
@@ -25,7 +26,6 @@ CreateDomainRequest::CreateDomainRequest() :
     m_kmsKeyIdHasBeenSet(false),
     m_appSecurityGroupManagement(AppSecurityGroupManagement::NOT_SET),
     m_appSecurityGroupManagementHasBeenSet(false),
-    m_domainSettingsHasBeenSet(false),
     m_defaultSpaceSettingsHasBeenSet(false)
 {
 }
@@ -48,6 +48,12 @@ Aws::String CreateDomainRequest::SerializePayload() const
   if(m_defaultUserSettingsHasBeenSet)
   {
    payload.WithObject("DefaultUserSettings", m_defaultUserSettings.Jsonize());
+
+  }
+
+  if(m_domainSettingsHasBeenSet)
+  {
+   payload.WithObject("DomainSettings", m_domainSettings.Jsonize());
 
   }
 
@@ -93,12 +99,6 @@ Aws::String CreateDomainRequest::SerializePayload() const
   if(m_appSecurityGroupManagementHasBeenSet)
   {
    payload.WithString("AppSecurityGroupManagement", AppSecurityGroupManagementMapper::GetNameForAppSecurityGroupManagement(m_appSecurityGroupManagement));
-  }
-
-  if(m_domainSettingsHasBeenSet)
-  {
-   payload.WithObject("DomainSettings", m_domainSettings.Jsonize());
-
   }
 
   if(m_defaultSpaceSettingsHasBeenSet)

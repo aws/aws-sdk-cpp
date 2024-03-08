@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case WordCloudCloudLayout::NOT_SET:
+            return {};
           case WordCloudCloudLayout::FLUID:
             return "FLUID";
           case WordCloudCloudLayout::NORMAL:

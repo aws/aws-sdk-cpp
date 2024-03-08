@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ListTransactionsSortBy::NOT_SET:
+            return {};
           case ListTransactionsSortBy::TRANSACTION_TIMESTAMP:
             return "TRANSACTION_TIMESTAMP";
           default:

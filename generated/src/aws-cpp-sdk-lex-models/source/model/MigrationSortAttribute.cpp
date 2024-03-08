@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MigrationSortAttribute::NOT_SET:
+            return {};
           case MigrationSortAttribute::V1_BOT_NAME:
             return "V1_BOT_NAME";
           case MigrationSortAttribute::MIGRATION_DATE_TIME:

@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SpotInstanceState::NOT_SET:
+            return {};
           case SpotInstanceState::open:
             return "open";
           case SpotInstanceState::active:

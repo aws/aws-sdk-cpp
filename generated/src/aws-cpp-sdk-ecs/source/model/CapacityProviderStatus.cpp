@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CapacityProviderStatus::NOT_SET:
+            return {};
           case CapacityProviderStatus::ACTIVE:
             return "ACTIVE";
           case CapacityProviderStatus::INACTIVE:

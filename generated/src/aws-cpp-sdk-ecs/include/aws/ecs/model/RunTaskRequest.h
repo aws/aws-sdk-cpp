@@ -16,7 +16,9 @@
 #include <aws/ecs/model/PlacementConstraint.h>
 #include <aws/ecs/model/PlacementStrategy.h>
 #include <aws/ecs/model/Tag.h>
+#include <aws/ecs/model/TaskVolumeConfiguration.h>
 #include <utility>
+#include <aws/core/utils/UUID.h>
 
 namespace Aws
 {
@@ -354,11 +356,11 @@ namespace Model
      * Fargate On-Demand infrastructure.</p>  <p>Fargate Spot infrastructure is
      * available for use but a capacity provider strategy must be used. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">Fargate
-     * capacity providers</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p>
-     *  <p>The <code>EC2</code> launch type runs your tasks on Amazon EC2
-     * instances registered to your cluster.</p> <p>The <code>EXTERNAL</code> launch
-     * type runs your tasks on your on-premises server or virtual machine (VM) capacity
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/fargate-capacity-providers.html">Fargate
+     * capacity providers</a> in the <i>Amazon ECS Developer Guide</i>.</p> 
+     * <p>The <code>EC2</code> launch type runs your tasks on Amazon EC2 instances
+     * registered to your cluster.</p> <p>The <code>EXTERNAL</code> launch type runs
+     * your tasks on your on-premises server or virtual machine (VM) capacity
      * registered to your cluster.</p> <p>A task can use either a launch type or a
      * capacity provider strategy. If a <code>launchType</code> is specified, the
      * <code>capacityProviderStrategy</code> parameter must be omitted.</p> <p>When you
@@ -376,11 +378,11 @@ namespace Model
      * Fargate On-Demand infrastructure.</p>  <p>Fargate Spot infrastructure is
      * available for use but a capacity provider strategy must be used. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">Fargate
-     * capacity providers</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p>
-     *  <p>The <code>EC2</code> launch type runs your tasks on Amazon EC2
-     * instances registered to your cluster.</p> <p>The <code>EXTERNAL</code> launch
-     * type runs your tasks on your on-premises server or virtual machine (VM) capacity
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/fargate-capacity-providers.html">Fargate
+     * capacity providers</a> in the <i>Amazon ECS Developer Guide</i>.</p> 
+     * <p>The <code>EC2</code> launch type runs your tasks on Amazon EC2 instances
+     * registered to your cluster.</p> <p>The <code>EXTERNAL</code> launch type runs
+     * your tasks on your on-premises server or virtual machine (VM) capacity
      * registered to your cluster.</p> <p>A task can use either a launch type or a
      * capacity provider strategy. If a <code>launchType</code> is specified, the
      * <code>capacityProviderStrategy</code> parameter must be omitted.</p> <p>When you
@@ -398,11 +400,11 @@ namespace Model
      * Fargate On-Demand infrastructure.</p>  <p>Fargate Spot infrastructure is
      * available for use but a capacity provider strategy must be used. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">Fargate
-     * capacity providers</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p>
-     *  <p>The <code>EC2</code> launch type runs your tasks on Amazon EC2
-     * instances registered to your cluster.</p> <p>The <code>EXTERNAL</code> launch
-     * type runs your tasks on your on-premises server or virtual machine (VM) capacity
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/fargate-capacity-providers.html">Fargate
+     * capacity providers</a> in the <i>Amazon ECS Developer Guide</i>.</p> 
+     * <p>The <code>EC2</code> launch type runs your tasks on Amazon EC2 instances
+     * registered to your cluster.</p> <p>The <code>EXTERNAL</code> launch type runs
+     * your tasks on your on-premises server or virtual machine (VM) capacity
      * registered to your cluster.</p> <p>A task can use either a launch type or a
      * capacity provider strategy. If a <code>launchType</code> is specified, the
      * <code>capacityProviderStrategy</code> parameter must be omitted.</p> <p>When you
@@ -420,11 +422,11 @@ namespace Model
      * Fargate On-Demand infrastructure.</p>  <p>Fargate Spot infrastructure is
      * available for use but a capacity provider strategy must be used. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">Fargate
-     * capacity providers</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p>
-     *  <p>The <code>EC2</code> launch type runs your tasks on Amazon EC2
-     * instances registered to your cluster.</p> <p>The <code>EXTERNAL</code> launch
-     * type runs your tasks on your on-premises server or virtual machine (VM) capacity
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/fargate-capacity-providers.html">Fargate
+     * capacity providers</a> in the <i>Amazon ECS Developer Guide</i>.</p> 
+     * <p>The <code>EC2</code> launch type runs your tasks on Amazon EC2 instances
+     * registered to your cluster.</p> <p>The <code>EXTERNAL</code> launch type runs
+     * your tasks on your on-premises server or virtual machine (VM) capacity
      * registered to your cluster.</p> <p>A task can use either a launch type or a
      * capacity provider strategy. If a <code>launchType</code> is specified, the
      * <code>capacityProviderStrategy</code> parameter must be omitted.</p> <p>When you
@@ -442,11 +444,11 @@ namespace Model
      * Fargate On-Demand infrastructure.</p>  <p>Fargate Spot infrastructure is
      * available for use but a capacity provider strategy must be used. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">Fargate
-     * capacity providers</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p>
-     *  <p>The <code>EC2</code> launch type runs your tasks on Amazon EC2
-     * instances registered to your cluster.</p> <p>The <code>EXTERNAL</code> launch
-     * type runs your tasks on your on-premises server or virtual machine (VM) capacity
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/fargate-capacity-providers.html">Fargate
+     * capacity providers</a> in the <i>Amazon ECS Developer Guide</i>.</p> 
+     * <p>The <code>EC2</code> launch type runs your tasks on Amazon EC2 instances
+     * registered to your cluster.</p> <p>The <code>EXTERNAL</code> launch type runs
+     * your tasks on your on-premises server or virtual machine (VM) capacity
      * registered to your cluster.</p> <p>A task can use either a launch type or a
      * capacity provider strategy. If a <code>launchType</code> is specified, the
      * <code>capacityProviderStrategy</code> parameter must be omitted.</p> <p>When you
@@ -464,11 +466,11 @@ namespace Model
      * Fargate On-Demand infrastructure.</p>  <p>Fargate Spot infrastructure is
      * available for use but a capacity provider strategy must be used. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/fargate-capacity-providers.html">Fargate
-     * capacity providers</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p>
-     *  <p>The <code>EC2</code> launch type runs your tasks on Amazon EC2
-     * instances registered to your cluster.</p> <p>The <code>EXTERNAL</code> launch
-     * type runs your tasks on your on-premises server or virtual machine (VM) capacity
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/fargate-capacity-providers.html">Fargate
+     * capacity providers</a> in the <i>Amazon ECS Developer Guide</i>.</p> 
+     * <p>The <code>EC2</code> launch type runs your tasks on Amazon EC2 instances
+     * registered to your cluster.</p> <p>The <code>EXTERNAL</code> launch type runs
+     * your tasks on your on-premises server or virtual machine (VM) capacity
      * registered to your cluster.</p> <p>A task can use either a launch type or a
      * capacity provider strategy. If a <code>launchType</code> is specified, the
      * <code>capacityProviderStrategy</code> parameter must be omitted.</p> <p>When you
@@ -927,7 +929,7 @@ namespace Model
      * unique identifier for that job to your task with the <code>startedBy</code>
      * parameter. You can then identify which tasks belong to that job by filtering the
      * results of a <a>ListTasks</a> call with the <code>startedBy</code> value. Up to
-     * 36 letters (uppercase and lowercase), numbers, hyphens (-), and underscores (_)
+     * 128 letters (uppercase and lowercase), numbers, hyphens (-), and underscores (_)
      * are allowed.</p> <p>If a task is started by an Amazon ECS service, then the
      * <code>startedBy</code> parameter contains the deployment ID of the service that
      * starts it.</p>
@@ -940,7 +942,7 @@ namespace Model
      * unique identifier for that job to your task with the <code>startedBy</code>
      * parameter. You can then identify which tasks belong to that job by filtering the
      * results of a <a>ListTasks</a> call with the <code>startedBy</code> value. Up to
-     * 36 letters (uppercase and lowercase), numbers, hyphens (-), and underscores (_)
+     * 128 letters (uppercase and lowercase), numbers, hyphens (-), and underscores (_)
      * are allowed.</p> <p>If a task is started by an Amazon ECS service, then the
      * <code>startedBy</code> parameter contains the deployment ID of the service that
      * starts it.</p>
@@ -953,7 +955,7 @@ namespace Model
      * unique identifier for that job to your task with the <code>startedBy</code>
      * parameter. You can then identify which tasks belong to that job by filtering the
      * results of a <a>ListTasks</a> call with the <code>startedBy</code> value. Up to
-     * 36 letters (uppercase and lowercase), numbers, hyphens (-), and underscores (_)
+     * 128 letters (uppercase and lowercase), numbers, hyphens (-), and underscores (_)
      * are allowed.</p> <p>If a task is started by an Amazon ECS service, then the
      * <code>startedBy</code> parameter contains the deployment ID of the service that
      * starts it.</p>
@@ -966,7 +968,7 @@ namespace Model
      * unique identifier for that job to your task with the <code>startedBy</code>
      * parameter. You can then identify which tasks belong to that job by filtering the
      * results of a <a>ListTasks</a> call with the <code>startedBy</code> value. Up to
-     * 36 letters (uppercase and lowercase), numbers, hyphens (-), and underscores (_)
+     * 128 letters (uppercase and lowercase), numbers, hyphens (-), and underscores (_)
      * are allowed.</p> <p>If a task is started by an Amazon ECS service, then the
      * <code>startedBy</code> parameter contains the deployment ID of the service that
      * starts it.</p>
@@ -979,7 +981,7 @@ namespace Model
      * unique identifier for that job to your task with the <code>startedBy</code>
      * parameter. You can then identify which tasks belong to that job by filtering the
      * results of a <a>ListTasks</a> call with the <code>startedBy</code> value. Up to
-     * 36 letters (uppercase and lowercase), numbers, hyphens (-), and underscores (_)
+     * 128 letters (uppercase and lowercase), numbers, hyphens (-), and underscores (_)
      * are allowed.</p> <p>If a task is started by an Amazon ECS service, then the
      * <code>startedBy</code> parameter contains the deployment ID of the service that
      * starts it.</p>
@@ -992,7 +994,7 @@ namespace Model
      * unique identifier for that job to your task with the <code>startedBy</code>
      * parameter. You can then identify which tasks belong to that job by filtering the
      * results of a <a>ListTasks</a> call with the <code>startedBy</code> value. Up to
-     * 36 letters (uppercase and lowercase), numbers, hyphens (-), and underscores (_)
+     * 128 letters (uppercase and lowercase), numbers, hyphens (-), and underscores (_)
      * are allowed.</p> <p>If a task is started by an Amazon ECS service, then the
      * <code>startedBy</code> parameter contains the deployment ID of the service that
      * starts it.</p>
@@ -1005,7 +1007,7 @@ namespace Model
      * unique identifier for that job to your task with the <code>startedBy</code>
      * parameter. You can then identify which tasks belong to that job by filtering the
      * results of a <a>ListTasks</a> call with the <code>startedBy</code> value. Up to
-     * 36 letters (uppercase and lowercase), numbers, hyphens (-), and underscores (_)
+     * 128 letters (uppercase and lowercase), numbers, hyphens (-), and underscores (_)
      * are allowed.</p> <p>If a task is started by an Amazon ECS service, then the
      * <code>startedBy</code> parameter contains the deployment ID of the service that
      * starts it.</p>
@@ -1018,7 +1020,7 @@ namespace Model
      * unique identifier for that job to your task with the <code>startedBy</code>
      * parameter. You can then identify which tasks belong to that job by filtering the
      * results of a <a>ListTasks</a> call with the <code>startedBy</code> value. Up to
-     * 36 letters (uppercase and lowercase), numbers, hyphens (-), and underscores (_)
+     * 128 letters (uppercase and lowercase), numbers, hyphens (-), and underscores (_)
      * are allowed.</p> <p>If a task is started by an Amazon ECS service, then the
      * <code>startedBy</code> parameter contains the deployment ID of the service that
      * starts it.</p>
@@ -1403,6 +1405,168 @@ namespace Model
      */
     inline RunTaskRequest& WithTaskDefinition(const char* value) { SetTaskDefinition(value); return *this;}
 
+
+    /**
+     * <p>An identifier that you provide to ensure the idempotency of the request. It
+     * must be unique and is case sensitive. Up to 64 characters are allowed. The valid
+     * characters are characters in the range of 33-126, inclusive. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/ECS_Idempotency.html">Ensuring
+     * idempotency</a>.</p>
+     */
+    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+
+    /**
+     * <p>An identifier that you provide to ensure the idempotency of the request. It
+     * must be unique and is case sensitive. Up to 64 characters are allowed. The valid
+     * characters are characters in the range of 33-126, inclusive. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/ECS_Idempotency.html">Ensuring
+     * idempotency</a>.</p>
+     */
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+
+    /**
+     * <p>An identifier that you provide to ensure the idempotency of the request. It
+     * must be unique and is case sensitive. Up to 64 characters are allowed. The valid
+     * characters are characters in the range of 33-126, inclusive. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/ECS_Idempotency.html">Ensuring
+     * idempotency</a>.</p>
+     */
+    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
+
+    /**
+     * <p>An identifier that you provide to ensure the idempotency of the request. It
+     * must be unique and is case sensitive. Up to 64 characters are allowed. The valid
+     * characters are characters in the range of 33-126, inclusive. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/ECS_Idempotency.html">Ensuring
+     * idempotency</a>.</p>
+     */
+    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
+
+    /**
+     * <p>An identifier that you provide to ensure the idempotency of the request. It
+     * must be unique and is case sensitive. Up to 64 characters are allowed. The valid
+     * characters are characters in the range of 33-126, inclusive. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/ECS_Idempotency.html">Ensuring
+     * idempotency</a>.</p>
+     */
+    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
+
+    /**
+     * <p>An identifier that you provide to ensure the idempotency of the request. It
+     * must be unique and is case sensitive. Up to 64 characters are allowed. The valid
+     * characters are characters in the range of 33-126, inclusive. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/ECS_Idempotency.html">Ensuring
+     * idempotency</a>.</p>
+     */
+    inline RunTaskRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
+
+    /**
+     * <p>An identifier that you provide to ensure the idempotency of the request. It
+     * must be unique and is case sensitive. Up to 64 characters are allowed. The valid
+     * characters are characters in the range of 33-126, inclusive. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/ECS_Idempotency.html">Ensuring
+     * idempotency</a>.</p>
+     */
+    inline RunTaskRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
+
+    /**
+     * <p>An identifier that you provide to ensure the idempotency of the request. It
+     * must be unique and is case sensitive. Up to 64 characters are allowed. The valid
+     * characters are characters in the range of 33-126, inclusive. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/ECS_Idempotency.html">Ensuring
+     * idempotency</a>.</p>
+     */
+    inline RunTaskRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+
+
+    /**
+     * <p>The details of the volume that was <code>configuredAtLaunch</code>. You can
+     * configure the size, volumeType, IOPS, throughput, snapshot and encryption in in
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TaskManagedEBSVolumeConfiguration.html">TaskManagedEBSVolumeConfiguration</a>.
+     * The <code>name</code> of the volume must match the <code>name</code> from the
+     * task definition.</p>
+     */
+    inline const Aws::Vector<TaskVolumeConfiguration>& GetVolumeConfigurations() const{ return m_volumeConfigurations; }
+
+    /**
+     * <p>The details of the volume that was <code>configuredAtLaunch</code>. You can
+     * configure the size, volumeType, IOPS, throughput, snapshot and encryption in in
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TaskManagedEBSVolumeConfiguration.html">TaskManagedEBSVolumeConfiguration</a>.
+     * The <code>name</code> of the volume must match the <code>name</code> from the
+     * task definition.</p>
+     */
+    inline bool VolumeConfigurationsHasBeenSet() const { return m_volumeConfigurationsHasBeenSet; }
+
+    /**
+     * <p>The details of the volume that was <code>configuredAtLaunch</code>. You can
+     * configure the size, volumeType, IOPS, throughput, snapshot and encryption in in
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TaskManagedEBSVolumeConfiguration.html">TaskManagedEBSVolumeConfiguration</a>.
+     * The <code>name</code> of the volume must match the <code>name</code> from the
+     * task definition.</p>
+     */
+    inline void SetVolumeConfigurations(const Aws::Vector<TaskVolumeConfiguration>& value) { m_volumeConfigurationsHasBeenSet = true; m_volumeConfigurations = value; }
+
+    /**
+     * <p>The details of the volume that was <code>configuredAtLaunch</code>. You can
+     * configure the size, volumeType, IOPS, throughput, snapshot and encryption in in
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TaskManagedEBSVolumeConfiguration.html">TaskManagedEBSVolumeConfiguration</a>.
+     * The <code>name</code> of the volume must match the <code>name</code> from the
+     * task definition.</p>
+     */
+    inline void SetVolumeConfigurations(Aws::Vector<TaskVolumeConfiguration>&& value) { m_volumeConfigurationsHasBeenSet = true; m_volumeConfigurations = std::move(value); }
+
+    /**
+     * <p>The details of the volume that was <code>configuredAtLaunch</code>. You can
+     * configure the size, volumeType, IOPS, throughput, snapshot and encryption in in
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TaskManagedEBSVolumeConfiguration.html">TaskManagedEBSVolumeConfiguration</a>.
+     * The <code>name</code> of the volume must match the <code>name</code> from the
+     * task definition.</p>
+     */
+    inline RunTaskRequest& WithVolumeConfigurations(const Aws::Vector<TaskVolumeConfiguration>& value) { SetVolumeConfigurations(value); return *this;}
+
+    /**
+     * <p>The details of the volume that was <code>configuredAtLaunch</code>. You can
+     * configure the size, volumeType, IOPS, throughput, snapshot and encryption in in
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TaskManagedEBSVolumeConfiguration.html">TaskManagedEBSVolumeConfiguration</a>.
+     * The <code>name</code> of the volume must match the <code>name</code> from the
+     * task definition.</p>
+     */
+    inline RunTaskRequest& WithVolumeConfigurations(Aws::Vector<TaskVolumeConfiguration>&& value) { SetVolumeConfigurations(std::move(value)); return *this;}
+
+    /**
+     * <p>The details of the volume that was <code>configuredAtLaunch</code>. You can
+     * configure the size, volumeType, IOPS, throughput, snapshot and encryption in in
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TaskManagedEBSVolumeConfiguration.html">TaskManagedEBSVolumeConfiguration</a>.
+     * The <code>name</code> of the volume must match the <code>name</code> from the
+     * task definition.</p>
+     */
+    inline RunTaskRequest& AddVolumeConfigurations(const TaskVolumeConfiguration& value) { m_volumeConfigurationsHasBeenSet = true; m_volumeConfigurations.push_back(value); return *this; }
+
+    /**
+     * <p>The details of the volume that was <code>configuredAtLaunch</code>. You can
+     * configure the size, volumeType, IOPS, throughput, snapshot and encryption in in
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TaskManagedEBSVolumeConfiguration.html">TaskManagedEBSVolumeConfiguration</a>.
+     * The <code>name</code> of the volume must match the <code>name</code> from the
+     * task definition.</p>
+     */
+    inline RunTaskRequest& AddVolumeConfigurations(TaskVolumeConfiguration&& value) { m_volumeConfigurationsHasBeenSet = true; m_volumeConfigurations.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::Vector<CapacityProviderStrategyItem> m_capacityProviderStrategy;
@@ -1455,6 +1619,12 @@ namespace Model
 
     Aws::String m_taskDefinition;
     bool m_taskDefinitionHasBeenSet = false;
+
+    Aws::String m_clientToken;
+    bool m_clientTokenHasBeenSet = false;
+
+    Aws::Vector<TaskVolumeConfiguration> m_volumeConfigurations;
+    bool m_volumeConfigurationsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DashboardBehavior::NOT_SET:
+            return {};
           case DashboardBehavior::ENABLED:
             return "ENABLED";
           case DashboardBehavior::DISABLED:

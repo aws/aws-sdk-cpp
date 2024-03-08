@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DistributionMetricName::NOT_SET:
+            return {};
           case DistributionMetricName::Requests:
             return "Requests";
           case DistributionMetricName::BytesDownloaded:

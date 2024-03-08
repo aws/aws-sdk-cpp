@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReservationVideoQuality::NOT_SET:
+            return {};
           case ReservationVideoQuality::STANDARD:
             return "STANDARD";
           case ReservationVideoQuality::ENHANCED:

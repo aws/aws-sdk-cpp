@@ -31,9 +31,10 @@ namespace Model
    * <a>RuleGroup</a>. To use this, create a rule group with your rules, then provide
    * the ARN of the rule group in this statement.</p> <p>You cannot nest a
    * <code>RuleGroupReferenceStatement</code>, for example for use inside a
-   * <code>NotStatement</code> or <code>OrStatement</code>. You can only use a rule
-   * group reference statement at the top level inside a web ACL. </p><p><h3>See
-   * Also:</h3>   <a
+   * <code>NotStatement</code> or <code>OrStatement</code>. You cannot use a rule
+   * group reference statement inside another rule group. You can only reference a
+   * rule group as a top-level statement within a rule that you define in a web
+   * ACL.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/RuleGroupReferenceStatement">AWS
    * API Reference</a></p>
    */

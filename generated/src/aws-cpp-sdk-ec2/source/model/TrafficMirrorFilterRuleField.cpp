@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TrafficMirrorFilterRuleField::NOT_SET:
+            return {};
           case TrafficMirrorFilterRuleField::destination_port_range:
             return "destination-port-range";
           case TrafficMirrorFilterRuleField::source_port_range:

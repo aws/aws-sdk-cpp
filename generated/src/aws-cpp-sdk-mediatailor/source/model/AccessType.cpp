@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AccessType::NOT_SET:
+            return {};
           case AccessType::S3_SIGV4:
             return "S3_SIGV4";
           case AccessType::SECRETS_MANAGER_ACCESS_TOKEN:

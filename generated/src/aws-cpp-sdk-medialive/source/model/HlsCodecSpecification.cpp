@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HlsCodecSpecification::NOT_SET:
+            return {};
           case HlsCodecSpecification::RFC_4281:
             return "RFC_4281";
           case HlsCodecSpecification::RFC_6381:

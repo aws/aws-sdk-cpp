@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case GeospatialSelectedPointStyle::NOT_SET:
+            return {};
           case GeospatialSelectedPointStyle::POINT:
             return "POINT";
           case GeospatialSelectedPointStyle::CLUSTER:

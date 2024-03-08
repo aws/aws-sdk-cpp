@@ -29,8 +29,6 @@ Transaction::Transaction() :
     m_transactionIndexHasBeenSet(false),
     m_numberOfTransactions(0),
     m_numberOfTransactionsHasBeenSet(false),
-    m_status(QueryTransactionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
     m_toHasBeenSet(false),
     m_fromHasBeenSet(false),
     m_contractAddressHasBeenSet(false),
@@ -42,7 +40,11 @@ Transaction::Transaction() :
     m_signatureRHasBeenSet(false),
     m_signatureSHasBeenSet(false),
     m_transactionFeeHasBeenSet(false),
-    m_transactionIdHasBeenSet(false)
+    m_transactionIdHasBeenSet(false),
+    m_confirmationStatus(ConfirmationStatus::NOT_SET),
+    m_confirmationStatusHasBeenSet(false),
+    m_executionStatus(ExecutionStatus::NOT_SET),
+    m_executionStatusHasBeenSet(false)
 {
 }
 
@@ -57,8 +59,6 @@ Transaction::Transaction(JsonView jsonValue) :
     m_transactionIndexHasBeenSet(false),
     m_numberOfTransactions(0),
     m_numberOfTransactionsHasBeenSet(false),
-    m_status(QueryTransactionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
     m_toHasBeenSet(false),
     m_fromHasBeenSet(false),
     m_contractAddressHasBeenSet(false),
@@ -70,7 +70,11 @@ Transaction::Transaction(JsonView jsonValue) :
     m_signatureRHasBeenSet(false),
     m_signatureSHasBeenSet(false),
     m_transactionFeeHasBeenSet(false),
-    m_transactionIdHasBeenSet(false)
+    m_transactionIdHasBeenSet(false),
+    m_confirmationStatus(ConfirmationStatus::NOT_SET),
+    m_confirmationStatusHasBeenSet(false),
+    m_executionStatus(ExecutionStatus::NOT_SET),
+    m_executionStatusHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -124,13 +128,6 @@ Transaction& Transaction::operator =(JsonView jsonValue)
     m_numberOfTransactions = jsonValue.GetInt64("numberOfTransactions");
 
     m_numberOfTransactionsHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("status"))
-  {
-    m_status = QueryTransactionStatusMapper::GetQueryTransactionStatusForName(jsonValue.GetString("status"));
-
-    m_statusHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("to"))
@@ -210,6 +207,20 @@ Transaction& Transaction::operator =(JsonView jsonValue)
     m_transactionIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("confirmationStatus"))
+  {
+    m_confirmationStatus = ConfirmationStatusMapper::GetConfirmationStatusForName(jsonValue.GetString("confirmationStatus"));
+
+    m_confirmationStatusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("executionStatus"))
+  {
+    m_executionStatus = ExecutionStatusMapper::GetExecutionStatusForName(jsonValue.GetString("executionStatus"));
+
+    m_executionStatusHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -255,11 +266,6 @@ JsonValue Transaction::Jsonize() const
   {
    payload.WithInt64("numberOfTransactions", m_numberOfTransactions);
 
-  }
-
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", QueryTransactionStatusMapper::GetNameForQueryTransactionStatus(m_status));
   }
 
   if(m_toHasBeenSet)
@@ -326,6 +332,16 @@ JsonValue Transaction::Jsonize() const
   {
    payload.WithString("transactionId", m_transactionId);
 
+  }
+
+  if(m_confirmationStatusHasBeenSet)
+  {
+   payload.WithString("confirmationStatus", ConfirmationStatusMapper::GetNameForConfirmationStatus(m_confirmationStatus));
+  }
+
+  if(m_executionStatusHasBeenSet)
+  {
+   payload.WithString("executionStatus", ExecutionStatusMapper::GetNameForExecutionStatus(m_executionStatus));
   }
 
   return payload;

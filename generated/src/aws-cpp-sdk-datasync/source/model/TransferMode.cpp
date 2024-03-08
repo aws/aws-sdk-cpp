@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TransferMode::NOT_SET:
+            return {};
           case TransferMode::CHANGED:
             return "CHANGED";
           case TransferMode::ALL:

@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PhysicalConnectorType::NOT_SET:
+            return {};
           case PhysicalConnectorType::RJ45:
             return "RJ45";
           case PhysicalConnectorType::SFP_PLUS:

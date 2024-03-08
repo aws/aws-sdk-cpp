@@ -7,6 +7,7 @@
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/quicksight/model/ColumnDataType.h>
+#include <aws/quicksight/model/ColumnDataSubType.h>
 #include <utility>
 
 namespace Aws
@@ -39,42 +40,42 @@ namespace Model
 
 
     /**
-     * <p>A display name for the dataset.</p>
+     * <p>The display name of the column..</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>A display name for the dataset.</p>
+     * <p>The display name of the column..</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>A display name for the dataset.</p>
+     * <p>The display name of the column..</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>A display name for the dataset.</p>
+     * <p>The display name of the column..</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>A display name for the dataset.</p>
+     * <p>The display name of the column..</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>A display name for the dataset.</p>
+     * <p>The display name of the column..</p>
      */
     inline OutputColumn& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>A display name for the dataset.</p>
+     * <p>The display name of the column..</p>
      */
     inline OutputColumn& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>A display name for the dataset.</p>
+     * <p>The display name of the column..</p>
      */
     inline OutputColumn& WithName(const char* value) { SetName(value); return *this;}
 
@@ -121,34 +122,65 @@ namespace Model
 
 
     /**
-     * <p>The type.</p>
+     * <p>The data type of the column.</p>
      */
     inline const ColumnDataType& GetType() const{ return m_type; }
 
     /**
-     * <p>The type.</p>
+     * <p>The data type of the column.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The type.</p>
+     * <p>The data type of the column.</p>
      */
     inline void SetType(const ColumnDataType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type.</p>
+     * <p>The data type of the column.</p>
      */
     inline void SetType(ColumnDataType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type.</p>
+     * <p>The data type of the column.</p>
      */
     inline OutputColumn& WithType(const ColumnDataType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type.</p>
+     * <p>The data type of the column.</p>
      */
     inline OutputColumn& WithType(ColumnDataType&& value) { SetType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The sub data type of the column.</p>
+     */
+    inline const ColumnDataSubType& GetSubType() const{ return m_subType; }
+
+    /**
+     * <p>The sub data type of the column.</p>
+     */
+    inline bool SubTypeHasBeenSet() const { return m_subTypeHasBeenSet; }
+
+    /**
+     * <p>The sub data type of the column.</p>
+     */
+    inline void SetSubType(const ColumnDataSubType& value) { m_subTypeHasBeenSet = true; m_subType = value; }
+
+    /**
+     * <p>The sub data type of the column.</p>
+     */
+    inline void SetSubType(ColumnDataSubType&& value) { m_subTypeHasBeenSet = true; m_subType = std::move(value); }
+
+    /**
+     * <p>The sub data type of the column.</p>
+     */
+    inline OutputColumn& WithSubType(const ColumnDataSubType& value) { SetSubType(value); return *this;}
+
+    /**
+     * <p>The sub data type of the column.</p>
+     */
+    inline OutputColumn& WithSubType(ColumnDataSubType&& value) { SetSubType(std::move(value)); return *this;}
 
   private:
 
@@ -160,6 +192,9 @@ namespace Model
 
     ColumnDataType m_type;
     bool m_typeHasBeenSet = false;
+
+    ColumnDataSubType m_subType;
+    bool m_subTypeHasBeenSet = false;
   };
 
 } // namespace Model

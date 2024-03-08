@@ -39,55 +39,55 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == CLIENT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ImagebuilderErrors::CLIENT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ImagebuilderErrors::CLIENT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == RESOURCE_ALREADY_EXISTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ImagebuilderErrors::RESOURCE_ALREADY_EXISTS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ImagebuilderErrors::RESOURCE_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == RESOURCE_DEPENDENCY_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ImagebuilderErrors::RESOURCE_DEPENDENCY), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ImagebuilderErrors::RESOURCE_DEPENDENCY), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == FORBIDDEN_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ImagebuilderErrors::FORBIDDEN), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ImagebuilderErrors::FORBIDDEN), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == IDEMPOTENT_PARAMETER_MISMATCH_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ImagebuilderErrors::IDEMPOTENT_PARAMETER_MISMATCH), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ImagebuilderErrors::IDEMPOTENT_PARAMETER_MISMATCH), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_PAGINATION_TOKEN_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ImagebuilderErrors::INVALID_PAGINATION_TOKEN), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ImagebuilderErrors::INVALID_PAGINATION_TOKEN), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == SERVICE_QUOTA_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ImagebuilderErrors::SERVICE_QUOTA_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ImagebuilderErrors::SERVICE_QUOTA_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_VERSION_NUMBER_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ImagebuilderErrors::INVALID_VERSION_NUMBER), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ImagebuilderErrors::INVALID_VERSION_NUMBER), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_PARAMETER_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ImagebuilderErrors::INVALID_PARAMETER), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ImagebuilderErrors::INVALID_PARAMETER), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == CALL_RATE_LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ImagebuilderErrors::CALL_RATE_LIMIT_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ImagebuilderErrors::CALL_RATE_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == RESOURCE_IN_USE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ImagebuilderErrors::RESOURCE_IN_USE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ImagebuilderErrors::RESOURCE_IN_USE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == SERVICE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ImagebuilderErrors::SERVICE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ImagebuilderErrors::SERVICE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_REQUEST_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ImagebuilderErrors::INVALID_REQUEST), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ImagebuilderErrors::INVALID_REQUEST), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

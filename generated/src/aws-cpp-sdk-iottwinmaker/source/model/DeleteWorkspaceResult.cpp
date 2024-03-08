@@ -28,7 +28,13 @@ DeleteWorkspaceResult::DeleteWorkspaceResult(const Aws::AmazonWebServiceResult<J
 
 DeleteWorkspaceResult& DeleteWorkspaceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  AWS_UNREFERENCED_PARAM(result);
+  JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("message"))
+  {
+    m_message = jsonValue.GetString("message");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SmoothGroupStreamManifestBehavior::NOT_SET:
+            return {};
           case SmoothGroupStreamManifestBehavior::DO_NOT_SEND:
             return "DO_NOT_SEND";
           case SmoothGroupStreamManifestBehavior::SEND:

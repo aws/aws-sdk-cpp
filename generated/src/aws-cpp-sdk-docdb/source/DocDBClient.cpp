@@ -89,8 +89,16 @@ using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
 
-const char* DocDBClient::SERVICE_NAME = "rds";
-const char* DocDBClient::ALLOCATION_TAG = "DocDBClient";
+namespace Aws
+{
+  namespace DocDB
+  {
+    const char SERVICE_NAME[] = "rds";
+    const char ALLOCATION_TAG[] = "DocDBClient";
+  }
+}
+const char* DocDBClient::GetServiceName() {return SERVICE_NAME;}
+const char* DocDBClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 DocDBClient::DocDBClient(const DocDB::DocDBClientConfiguration& clientConfiguration,
                          std::shared_ptr<DocDBEndpointProviderBase> endpointProvider) :
@@ -102,7 +110,7 @@ DocDBClient::DocDBClient(const DocDB::DocDBClientConfiguration& clientConfigurat
             Aws::MakeShared<DocDBErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<DocDBEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -118,7 +126,7 @@ DocDBClient::DocDBClient(const AWSCredentials& credentials,
             Aws::MakeShared<DocDBErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<DocDBEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -134,7 +142,7 @@ DocDBClient::DocDBClient(const std::shared_ptr<AWSCredentialsProvider>& credenti
             Aws::MakeShared<DocDBErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<DocDBEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

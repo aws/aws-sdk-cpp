@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MergeType::NOT_SET:
+            return {};
           case MergeType::MANUAL_MERGE:
             return "MANUAL_MERGE";
           case MergeType::AUTO_MERGE:

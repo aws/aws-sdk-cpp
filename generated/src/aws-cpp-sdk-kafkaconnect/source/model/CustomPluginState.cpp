@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CustomPluginState::NOT_SET:
+            return {};
           case CustomPluginState::CREATING:
             return "CREATING";
           case CustomPluginState::CREATE_FAILED:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RolePermissionType::NOT_SET:
+            return {};
           case RolePermissionType::DIRECT:
             return "DIRECT";
           case RolePermissionType::INHERITED:

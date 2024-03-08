@@ -580,7 +580,7 @@ namespace Model
     /**
      * <p>The key-value pair for tagging the EC2 Fleet request on creation. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tag
      * your resources</a>.</p> <p>If the fleet type is <code>instant</code>, specify a
      * resource type of <code>fleet</code> to tag the fleet or <code>instance</code> to
      * tag the instances at launch.</p> <p>If the fleet type is <code>maintain</code>
@@ -595,7 +595,7 @@ namespace Model
     /**
      * <p>The key-value pair for tagging the EC2 Fleet request on creation. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tag
      * your resources</a>.</p> <p>If the fleet type is <code>instant</code>, specify a
      * resource type of <code>fleet</code> to tag the fleet or <code>instance</code> to
      * tag the instances at launch.</p> <p>If the fleet type is <code>maintain</code>
@@ -610,7 +610,7 @@ namespace Model
     /**
      * <p>The key-value pair for tagging the EC2 Fleet request on creation. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tag
      * your resources</a>.</p> <p>If the fleet type is <code>instant</code>, specify a
      * resource type of <code>fleet</code> to tag the fleet or <code>instance</code> to
      * tag the instances at launch.</p> <p>If the fleet type is <code>maintain</code>
@@ -625,7 +625,7 @@ namespace Model
     /**
      * <p>The key-value pair for tagging the EC2 Fleet request on creation. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tag
      * your resources</a>.</p> <p>If the fleet type is <code>instant</code>, specify a
      * resource type of <code>fleet</code> to tag the fleet or <code>instance</code> to
      * tag the instances at launch.</p> <p>If the fleet type is <code>maintain</code>
@@ -640,7 +640,7 @@ namespace Model
     /**
      * <p>The key-value pair for tagging the EC2 Fleet request on creation. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tag
      * your resources</a>.</p> <p>If the fleet type is <code>instant</code>, specify a
      * resource type of <code>fleet</code> to tag the fleet or <code>instance</code> to
      * tag the instances at launch.</p> <p>If the fleet type is <code>maintain</code>
@@ -655,7 +655,7 @@ namespace Model
     /**
      * <p>The key-value pair for tagging the EC2 Fleet request on creation. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tag
      * your resources</a>.</p> <p>If the fleet type is <code>instant</code>, specify a
      * resource type of <code>fleet</code> to tag the fleet or <code>instance</code> to
      * tag the instances at launch.</p> <p>If the fleet type is <code>maintain</code>
@@ -670,7 +670,7 @@ namespace Model
     /**
      * <p>The key-value pair for tagging the EC2 Fleet request on creation. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tag
      * your resources</a>.</p> <p>If the fleet type is <code>instant</code>, specify a
      * resource type of <code>fleet</code> to tag the fleet or <code>instance</code> to
      * tag the instances at launch.</p> <p>If the fleet type is <code>maintain</code>
@@ -685,7 +685,7 @@ namespace Model
     /**
      * <p>The key-value pair for tagging the EC2 Fleet request on creation. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tag
      * your resources</a>.</p> <p>If the fleet type is <code>instant</code>, specify a
      * resource type of <code>fleet</code> to tag the fleet or <code>instance</code> to
      * tag the instances at launch.</p> <p>If the fleet type is <code>maintain</code>

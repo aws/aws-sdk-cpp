@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EmbeddingIdentityType::NOT_SET:
+            return {};
           case EmbeddingIdentityType::IAM:
             return "IAM";
           case EmbeddingIdentityType::QUICKSIGHT:

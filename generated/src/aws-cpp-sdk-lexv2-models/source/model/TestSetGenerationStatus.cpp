@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TestSetGenerationStatus::NOT_SET:
+            return {};
           case TestSetGenerationStatus::Generating:
             return "Generating";
           case TestSetGenerationStatus::Ready:

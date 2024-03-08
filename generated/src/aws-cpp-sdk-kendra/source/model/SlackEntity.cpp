@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SlackEntity::NOT_SET:
+            return {};
           case SlackEntity::PUBLIC_CHANNEL:
             return "PUBLIC_CHANNEL";
           case SlackEntity::PRIVATE_CHANNEL:

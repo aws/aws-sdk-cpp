@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UsageReportSchedule::NOT_SET:
+            return {};
           case UsageReportSchedule::DAILY:
             return "DAILY";
           default:

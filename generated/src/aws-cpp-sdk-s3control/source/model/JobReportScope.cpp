@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case JobReportScope::NOT_SET:
+            return {};
           case JobReportScope::AllTasks:
             return "AllTasks";
           case JobReportScope::FailedTasksOnly:

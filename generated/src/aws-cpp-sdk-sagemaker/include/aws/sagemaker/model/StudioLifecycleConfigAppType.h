@@ -17,7 +17,9 @@ namespace Model
   {
     NOT_SET,
     JupyterServer,
-    KernelGateway
+    KernelGateway,
+    CodeEditor,
+    JupyterLab
   };
 
 namespace StudioLifecycleConfigAppTypeMapper

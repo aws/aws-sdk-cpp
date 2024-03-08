@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AuthTypeValue::NOT_SET:
+            return {};
           case AuthTypeValue::no:
             return "no";
           case AuthTypeValue::password:

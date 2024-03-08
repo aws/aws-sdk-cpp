@@ -232,6 +232,56 @@ namespace Model
      */
     inline DataShareAssociation& WithStatusChangeDate(Aws::Utils::DateTime&& value) { SetStatusChangeDate(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies whether write operations were allowed during data share
+     * authorization.</p>
+     */
+    inline bool GetProducerAllowedWrites() const{ return m_producerAllowedWrites; }
+
+    /**
+     * <p>Specifies whether write operations were allowed during data share
+     * authorization.</p>
+     */
+    inline bool ProducerAllowedWritesHasBeenSet() const { return m_producerAllowedWritesHasBeenSet; }
+
+    /**
+     * <p>Specifies whether write operations were allowed during data share
+     * authorization.</p>
+     */
+    inline void SetProducerAllowedWrites(bool value) { m_producerAllowedWritesHasBeenSet = true; m_producerAllowedWrites = value; }
+
+    /**
+     * <p>Specifies whether write operations were allowed during data share
+     * authorization.</p>
+     */
+    inline DataShareAssociation& WithProducerAllowedWrites(bool value) { SetProducerAllowedWrites(value); return *this;}
+
+
+    /**
+     * <p>Specifies whether write operations were allowed during data share
+     * association.</p>
+     */
+    inline bool GetConsumerAcceptedWrites() const{ return m_consumerAcceptedWrites; }
+
+    /**
+     * <p>Specifies whether write operations were allowed during data share
+     * association.</p>
+     */
+    inline bool ConsumerAcceptedWritesHasBeenSet() const { return m_consumerAcceptedWritesHasBeenSet; }
+
+    /**
+     * <p>Specifies whether write operations were allowed during data share
+     * association.</p>
+     */
+    inline void SetConsumerAcceptedWrites(bool value) { m_consumerAcceptedWritesHasBeenSet = true; m_consumerAcceptedWrites = value; }
+
+    /**
+     * <p>Specifies whether write operations were allowed during data share
+     * association.</p>
+     */
+    inline DataShareAssociation& WithConsumerAcceptedWrites(bool value) { SetConsumerAcceptedWrites(value); return *this;}
+
   private:
 
     Aws::String m_consumerIdentifier;
@@ -248,6 +298,12 @@ namespace Model
 
     Aws::Utils::DateTime m_statusChangeDate;
     bool m_statusChangeDateHasBeenSet = false;
+
+    bool m_producerAllowedWrites;
+    bool m_producerAllowedWritesHasBeenSet = false;
+
+    bool m_consumerAcceptedWrites;
+    bool m_consumerAcceptedWritesHasBeenSet = false;
   };
 
 } // namespace Model

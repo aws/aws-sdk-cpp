@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResourceType::NOT_SET:
+            return {};
           case ResourceType::Mbps_Outbound_Bandwidth:
             return "Mbps_Outbound_Bandwidth";
           default:

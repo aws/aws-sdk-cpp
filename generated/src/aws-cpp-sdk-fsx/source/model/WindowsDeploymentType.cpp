@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case WindowsDeploymentType::NOT_SET:
+            return {};
           case WindowsDeploymentType::MULTI_AZ_1:
             return "MULTI_AZ_1";
           case WindowsDeploymentType::SINGLE_AZ_1:

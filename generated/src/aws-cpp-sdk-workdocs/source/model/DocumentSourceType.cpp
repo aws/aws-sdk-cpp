@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DocumentSourceType::NOT_SET:
+            return {};
           case DocumentSourceType::ORIGINAL:
             return "ORIGINAL";
           case DocumentSourceType::WITH_COMMENTS:

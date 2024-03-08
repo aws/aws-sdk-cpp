@@ -43,22 +43,23 @@ namespace Model
      * <p>The supported cron expressions are:</p> <ul> <li> <p>If you want to set the
      * job to start every hour, use the following:</p> <p> <code>Hourly: cron(0 * ? * *
      * *)</code> </p> </li> <li> <p>If you want to start the job daily:</p> <p>
-     * <code>cron(0 [00-23] ? * * *)</code> </p> </li> </ul> <p>For example, the
-     * following are valid cron expressions:</p> <ul> <li> <p>Daily at noon UTC:
-     * <code>cron(0 12 ? * * *)</code> </p> </li> <li> <p>Daily at midnight UTC:
-     * <code>cron(0 0 ? * * *)</code> </p> </li> </ul> <p>To support running every 6,
-     * 12 hours, the following are also supported:</p> <p> <code>cron(0 [00-23]/[01-24]
-     * ? * * *)</code> </p> <p>For example, the following are valid cron
-     * expressions:</p> <ul> <li> <p>Every 12 hours, starting at 5pm UTC: <code>cron(0
-     * 17/12 ? * * *)</code> </p> </li> <li> <p>Every two hours starting at midnight:
-     * <code>cron(0 0/2 ? * * *)</code> </p> </li> </ul>  <ul> <li> <p>Even
-     * though the cron expression is set to start at 5PM UTC, note that there could be
-     * a delay of 0-20 minutes from the actual requested time to run the execution.
-     * </p> </li> <li> <p>We recommend that if you would like a daily schedule, you do
-     * not provide this parameter. Amazon SageMaker will pick a time for running every
-     * day.</p> </li> </ul>  <p>You can also specify the keyword
-     * <code>NOW</code> to run the monitoring job immediately, one time, without
-     * recurring.</p>
+     * <code>cron(0 [00-23] ? * * *)</code> </p> </li> <li> <p>If you want to run the
+     * job one time, immediately, use the following keyword:</p> <p> <code>NOW</code>
+     * </p> </li> </ul> <p>For example, the following are valid cron expressions:</p>
+     * <ul> <li> <p>Daily at noon UTC: <code>cron(0 12 ? * * *)</code> </p> </li> <li>
+     * <p>Daily at midnight UTC: <code>cron(0 0 ? * * *)</code> </p> </li> </ul> <p>To
+     * support running every 6, 12 hours, the following are also supported:</p> <p>
+     * <code>cron(0 [00-23]/[01-24] ? * * *)</code> </p> <p>For example, the following
+     * are valid cron expressions:</p> <ul> <li> <p>Every 12 hours, starting at 5pm
+     * UTC: <code>cron(0 17/12 ? * * *)</code> </p> </li> <li> <p>Every two hours
+     * starting at midnight: <code>cron(0 0/2 ? * * *)</code> </p> </li> </ul> 
+     * <ul> <li> <p>Even though the cron expression is set to start at 5PM UTC, note
+     * that there could be a delay of 0-20 minutes from the actual requested time to
+     * run the execution. </p> </li> <li> <p>We recommend that if you would like a
+     * daily schedule, you do not provide this parameter. Amazon SageMaker will pick a
+     * time for running every day.</p> </li> </ul>  <p>You can also specify the
+     * keyword <code>NOW</code> to run the monitoring job immediately, one time,
+     * without recurring.</p>
      */
     inline const Aws::String& GetScheduleExpression() const{ return m_scheduleExpression; }
 
@@ -67,22 +68,23 @@ namespace Model
      * <p>The supported cron expressions are:</p> <ul> <li> <p>If you want to set the
      * job to start every hour, use the following:</p> <p> <code>Hourly: cron(0 * ? * *
      * *)</code> </p> </li> <li> <p>If you want to start the job daily:</p> <p>
-     * <code>cron(0 [00-23] ? * * *)</code> </p> </li> </ul> <p>For example, the
-     * following are valid cron expressions:</p> <ul> <li> <p>Daily at noon UTC:
-     * <code>cron(0 12 ? * * *)</code> </p> </li> <li> <p>Daily at midnight UTC:
-     * <code>cron(0 0 ? * * *)</code> </p> </li> </ul> <p>To support running every 6,
-     * 12 hours, the following are also supported:</p> <p> <code>cron(0 [00-23]/[01-24]
-     * ? * * *)</code> </p> <p>For example, the following are valid cron
-     * expressions:</p> <ul> <li> <p>Every 12 hours, starting at 5pm UTC: <code>cron(0
-     * 17/12 ? * * *)</code> </p> </li> <li> <p>Every two hours starting at midnight:
-     * <code>cron(0 0/2 ? * * *)</code> </p> </li> </ul>  <ul> <li> <p>Even
-     * though the cron expression is set to start at 5PM UTC, note that there could be
-     * a delay of 0-20 minutes from the actual requested time to run the execution.
-     * </p> </li> <li> <p>We recommend that if you would like a daily schedule, you do
-     * not provide this parameter. Amazon SageMaker will pick a time for running every
-     * day.</p> </li> </ul>  <p>You can also specify the keyword
-     * <code>NOW</code> to run the monitoring job immediately, one time, without
-     * recurring.</p>
+     * <code>cron(0 [00-23] ? * * *)</code> </p> </li> <li> <p>If you want to run the
+     * job one time, immediately, use the following keyword:</p> <p> <code>NOW</code>
+     * </p> </li> </ul> <p>For example, the following are valid cron expressions:</p>
+     * <ul> <li> <p>Daily at noon UTC: <code>cron(0 12 ? * * *)</code> </p> </li> <li>
+     * <p>Daily at midnight UTC: <code>cron(0 0 ? * * *)</code> </p> </li> </ul> <p>To
+     * support running every 6, 12 hours, the following are also supported:</p> <p>
+     * <code>cron(0 [00-23]/[01-24] ? * * *)</code> </p> <p>For example, the following
+     * are valid cron expressions:</p> <ul> <li> <p>Every 12 hours, starting at 5pm
+     * UTC: <code>cron(0 17/12 ? * * *)</code> </p> </li> <li> <p>Every two hours
+     * starting at midnight: <code>cron(0 0/2 ? * * *)</code> </p> </li> </ul> 
+     * <ul> <li> <p>Even though the cron expression is set to start at 5PM UTC, note
+     * that there could be a delay of 0-20 minutes from the actual requested time to
+     * run the execution. </p> </li> <li> <p>We recommend that if you would like a
+     * daily schedule, you do not provide this parameter. Amazon SageMaker will pick a
+     * time for running every day.</p> </li> </ul>  <p>You can also specify the
+     * keyword <code>NOW</code> to run the monitoring job immediately, one time,
+     * without recurring.</p>
      */
     inline bool ScheduleExpressionHasBeenSet() const { return m_scheduleExpressionHasBeenSet; }
 
@@ -91,22 +93,23 @@ namespace Model
      * <p>The supported cron expressions are:</p> <ul> <li> <p>If you want to set the
      * job to start every hour, use the following:</p> <p> <code>Hourly: cron(0 * ? * *
      * *)</code> </p> </li> <li> <p>If you want to start the job daily:</p> <p>
-     * <code>cron(0 [00-23] ? * * *)</code> </p> </li> </ul> <p>For example, the
-     * following are valid cron expressions:</p> <ul> <li> <p>Daily at noon UTC:
-     * <code>cron(0 12 ? * * *)</code> </p> </li> <li> <p>Daily at midnight UTC:
-     * <code>cron(0 0 ? * * *)</code> </p> </li> </ul> <p>To support running every 6,
-     * 12 hours, the following are also supported:</p> <p> <code>cron(0 [00-23]/[01-24]
-     * ? * * *)</code> </p> <p>For example, the following are valid cron
-     * expressions:</p> <ul> <li> <p>Every 12 hours, starting at 5pm UTC: <code>cron(0
-     * 17/12 ? * * *)</code> </p> </li> <li> <p>Every two hours starting at midnight:
-     * <code>cron(0 0/2 ? * * *)</code> </p> </li> </ul>  <ul> <li> <p>Even
-     * though the cron expression is set to start at 5PM UTC, note that there could be
-     * a delay of 0-20 minutes from the actual requested time to run the execution.
-     * </p> </li> <li> <p>We recommend that if you would like a daily schedule, you do
-     * not provide this parameter. Amazon SageMaker will pick a time for running every
-     * day.</p> </li> </ul>  <p>You can also specify the keyword
-     * <code>NOW</code> to run the monitoring job immediately, one time, without
-     * recurring.</p>
+     * <code>cron(0 [00-23] ? * * *)</code> </p> </li> <li> <p>If you want to run the
+     * job one time, immediately, use the following keyword:</p> <p> <code>NOW</code>
+     * </p> </li> </ul> <p>For example, the following are valid cron expressions:</p>
+     * <ul> <li> <p>Daily at noon UTC: <code>cron(0 12 ? * * *)</code> </p> </li> <li>
+     * <p>Daily at midnight UTC: <code>cron(0 0 ? * * *)</code> </p> </li> </ul> <p>To
+     * support running every 6, 12 hours, the following are also supported:</p> <p>
+     * <code>cron(0 [00-23]/[01-24] ? * * *)</code> </p> <p>For example, the following
+     * are valid cron expressions:</p> <ul> <li> <p>Every 12 hours, starting at 5pm
+     * UTC: <code>cron(0 17/12 ? * * *)</code> </p> </li> <li> <p>Every two hours
+     * starting at midnight: <code>cron(0 0/2 ? * * *)</code> </p> </li> </ul> 
+     * <ul> <li> <p>Even though the cron expression is set to start at 5PM UTC, note
+     * that there could be a delay of 0-20 minutes from the actual requested time to
+     * run the execution. </p> </li> <li> <p>We recommend that if you would like a
+     * daily schedule, you do not provide this parameter. Amazon SageMaker will pick a
+     * time for running every day.</p> </li> </ul>  <p>You can also specify the
+     * keyword <code>NOW</code> to run the monitoring job immediately, one time,
+     * without recurring.</p>
      */
     inline void SetScheduleExpression(const Aws::String& value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression = value; }
 
@@ -115,22 +118,23 @@ namespace Model
      * <p>The supported cron expressions are:</p> <ul> <li> <p>If you want to set the
      * job to start every hour, use the following:</p> <p> <code>Hourly: cron(0 * ? * *
      * *)</code> </p> </li> <li> <p>If you want to start the job daily:</p> <p>
-     * <code>cron(0 [00-23] ? * * *)</code> </p> </li> </ul> <p>For example, the
-     * following are valid cron expressions:</p> <ul> <li> <p>Daily at noon UTC:
-     * <code>cron(0 12 ? * * *)</code> </p> </li> <li> <p>Daily at midnight UTC:
-     * <code>cron(0 0 ? * * *)</code> </p> </li> </ul> <p>To support running every 6,
-     * 12 hours, the following are also supported:</p> <p> <code>cron(0 [00-23]/[01-24]
-     * ? * * *)</code> </p> <p>For example, the following are valid cron
-     * expressions:</p> <ul> <li> <p>Every 12 hours, starting at 5pm UTC: <code>cron(0
-     * 17/12 ? * * *)</code> </p> </li> <li> <p>Every two hours starting at midnight:
-     * <code>cron(0 0/2 ? * * *)</code> </p> </li> </ul>  <ul> <li> <p>Even
-     * though the cron expression is set to start at 5PM UTC, note that there could be
-     * a delay of 0-20 minutes from the actual requested time to run the execution.
-     * </p> </li> <li> <p>We recommend that if you would like a daily schedule, you do
-     * not provide this parameter. Amazon SageMaker will pick a time for running every
-     * day.</p> </li> </ul>  <p>You can also specify the keyword
-     * <code>NOW</code> to run the monitoring job immediately, one time, without
-     * recurring.</p>
+     * <code>cron(0 [00-23] ? * * *)</code> </p> </li> <li> <p>If you want to run the
+     * job one time, immediately, use the following keyword:</p> <p> <code>NOW</code>
+     * </p> </li> </ul> <p>For example, the following are valid cron expressions:</p>
+     * <ul> <li> <p>Daily at noon UTC: <code>cron(0 12 ? * * *)</code> </p> </li> <li>
+     * <p>Daily at midnight UTC: <code>cron(0 0 ? * * *)</code> </p> </li> </ul> <p>To
+     * support running every 6, 12 hours, the following are also supported:</p> <p>
+     * <code>cron(0 [00-23]/[01-24] ? * * *)</code> </p> <p>For example, the following
+     * are valid cron expressions:</p> <ul> <li> <p>Every 12 hours, starting at 5pm
+     * UTC: <code>cron(0 17/12 ? * * *)</code> </p> </li> <li> <p>Every two hours
+     * starting at midnight: <code>cron(0 0/2 ? * * *)</code> </p> </li> </ul> 
+     * <ul> <li> <p>Even though the cron expression is set to start at 5PM UTC, note
+     * that there could be a delay of 0-20 minutes from the actual requested time to
+     * run the execution. </p> </li> <li> <p>We recommend that if you would like a
+     * daily schedule, you do not provide this parameter. Amazon SageMaker will pick a
+     * time for running every day.</p> </li> </ul>  <p>You can also specify the
+     * keyword <code>NOW</code> to run the monitoring job immediately, one time,
+     * without recurring.</p>
      */
     inline void SetScheduleExpression(Aws::String&& value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression = std::move(value); }
 
@@ -139,22 +143,23 @@ namespace Model
      * <p>The supported cron expressions are:</p> <ul> <li> <p>If you want to set the
      * job to start every hour, use the following:</p> <p> <code>Hourly: cron(0 * ? * *
      * *)</code> </p> </li> <li> <p>If you want to start the job daily:</p> <p>
-     * <code>cron(0 [00-23] ? * * *)</code> </p> </li> </ul> <p>For example, the
-     * following are valid cron expressions:</p> <ul> <li> <p>Daily at noon UTC:
-     * <code>cron(0 12 ? * * *)</code> </p> </li> <li> <p>Daily at midnight UTC:
-     * <code>cron(0 0 ? * * *)</code> </p> </li> </ul> <p>To support running every 6,
-     * 12 hours, the following are also supported:</p> <p> <code>cron(0 [00-23]/[01-24]
-     * ? * * *)</code> </p> <p>For example, the following are valid cron
-     * expressions:</p> <ul> <li> <p>Every 12 hours, starting at 5pm UTC: <code>cron(0
-     * 17/12 ? * * *)</code> </p> </li> <li> <p>Every two hours starting at midnight:
-     * <code>cron(0 0/2 ? * * *)</code> </p> </li> </ul>  <ul> <li> <p>Even
-     * though the cron expression is set to start at 5PM UTC, note that there could be
-     * a delay of 0-20 minutes from the actual requested time to run the execution.
-     * </p> </li> <li> <p>We recommend that if you would like a daily schedule, you do
-     * not provide this parameter. Amazon SageMaker will pick a time for running every
-     * day.</p> </li> </ul>  <p>You can also specify the keyword
-     * <code>NOW</code> to run the monitoring job immediately, one time, without
-     * recurring.</p>
+     * <code>cron(0 [00-23] ? * * *)</code> </p> </li> <li> <p>If you want to run the
+     * job one time, immediately, use the following keyword:</p> <p> <code>NOW</code>
+     * </p> </li> </ul> <p>For example, the following are valid cron expressions:</p>
+     * <ul> <li> <p>Daily at noon UTC: <code>cron(0 12 ? * * *)</code> </p> </li> <li>
+     * <p>Daily at midnight UTC: <code>cron(0 0 ? * * *)</code> </p> </li> </ul> <p>To
+     * support running every 6, 12 hours, the following are also supported:</p> <p>
+     * <code>cron(0 [00-23]/[01-24] ? * * *)</code> </p> <p>For example, the following
+     * are valid cron expressions:</p> <ul> <li> <p>Every 12 hours, starting at 5pm
+     * UTC: <code>cron(0 17/12 ? * * *)</code> </p> </li> <li> <p>Every two hours
+     * starting at midnight: <code>cron(0 0/2 ? * * *)</code> </p> </li> </ul> 
+     * <ul> <li> <p>Even though the cron expression is set to start at 5PM UTC, note
+     * that there could be a delay of 0-20 minutes from the actual requested time to
+     * run the execution. </p> </li> <li> <p>We recommend that if you would like a
+     * daily schedule, you do not provide this parameter. Amazon SageMaker will pick a
+     * time for running every day.</p> </li> </ul>  <p>You can also specify the
+     * keyword <code>NOW</code> to run the monitoring job immediately, one time,
+     * without recurring.</p>
      */
     inline void SetScheduleExpression(const char* value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression.assign(value); }
 
@@ -163,22 +168,23 @@ namespace Model
      * <p>The supported cron expressions are:</p> <ul> <li> <p>If you want to set the
      * job to start every hour, use the following:</p> <p> <code>Hourly: cron(0 * ? * *
      * *)</code> </p> </li> <li> <p>If you want to start the job daily:</p> <p>
-     * <code>cron(0 [00-23] ? * * *)</code> </p> </li> </ul> <p>For example, the
-     * following are valid cron expressions:</p> <ul> <li> <p>Daily at noon UTC:
-     * <code>cron(0 12 ? * * *)</code> </p> </li> <li> <p>Daily at midnight UTC:
-     * <code>cron(0 0 ? * * *)</code> </p> </li> </ul> <p>To support running every 6,
-     * 12 hours, the following are also supported:</p> <p> <code>cron(0 [00-23]/[01-24]
-     * ? * * *)</code> </p> <p>For example, the following are valid cron
-     * expressions:</p> <ul> <li> <p>Every 12 hours, starting at 5pm UTC: <code>cron(0
-     * 17/12 ? * * *)</code> </p> </li> <li> <p>Every two hours starting at midnight:
-     * <code>cron(0 0/2 ? * * *)</code> </p> </li> </ul>  <ul> <li> <p>Even
-     * though the cron expression is set to start at 5PM UTC, note that there could be
-     * a delay of 0-20 minutes from the actual requested time to run the execution.
-     * </p> </li> <li> <p>We recommend that if you would like a daily schedule, you do
-     * not provide this parameter. Amazon SageMaker will pick a time for running every
-     * day.</p> </li> </ul>  <p>You can also specify the keyword
-     * <code>NOW</code> to run the monitoring job immediately, one time, without
-     * recurring.</p>
+     * <code>cron(0 [00-23] ? * * *)</code> </p> </li> <li> <p>If you want to run the
+     * job one time, immediately, use the following keyword:</p> <p> <code>NOW</code>
+     * </p> </li> </ul> <p>For example, the following are valid cron expressions:</p>
+     * <ul> <li> <p>Daily at noon UTC: <code>cron(0 12 ? * * *)</code> </p> </li> <li>
+     * <p>Daily at midnight UTC: <code>cron(0 0 ? * * *)</code> </p> </li> </ul> <p>To
+     * support running every 6, 12 hours, the following are also supported:</p> <p>
+     * <code>cron(0 [00-23]/[01-24] ? * * *)</code> </p> <p>For example, the following
+     * are valid cron expressions:</p> <ul> <li> <p>Every 12 hours, starting at 5pm
+     * UTC: <code>cron(0 17/12 ? * * *)</code> </p> </li> <li> <p>Every two hours
+     * starting at midnight: <code>cron(0 0/2 ? * * *)</code> </p> </li> </ul> 
+     * <ul> <li> <p>Even though the cron expression is set to start at 5PM UTC, note
+     * that there could be a delay of 0-20 minutes from the actual requested time to
+     * run the execution. </p> </li> <li> <p>We recommend that if you would like a
+     * daily schedule, you do not provide this parameter. Amazon SageMaker will pick a
+     * time for running every day.</p> </li> </ul>  <p>You can also specify the
+     * keyword <code>NOW</code> to run the monitoring job immediately, one time,
+     * without recurring.</p>
      */
     inline ScheduleConfig& WithScheduleExpression(const Aws::String& value) { SetScheduleExpression(value); return *this;}
 
@@ -187,22 +193,23 @@ namespace Model
      * <p>The supported cron expressions are:</p> <ul> <li> <p>If you want to set the
      * job to start every hour, use the following:</p> <p> <code>Hourly: cron(0 * ? * *
      * *)</code> </p> </li> <li> <p>If you want to start the job daily:</p> <p>
-     * <code>cron(0 [00-23] ? * * *)</code> </p> </li> </ul> <p>For example, the
-     * following are valid cron expressions:</p> <ul> <li> <p>Daily at noon UTC:
-     * <code>cron(0 12 ? * * *)</code> </p> </li> <li> <p>Daily at midnight UTC:
-     * <code>cron(0 0 ? * * *)</code> </p> </li> </ul> <p>To support running every 6,
-     * 12 hours, the following are also supported:</p> <p> <code>cron(0 [00-23]/[01-24]
-     * ? * * *)</code> </p> <p>For example, the following are valid cron
-     * expressions:</p> <ul> <li> <p>Every 12 hours, starting at 5pm UTC: <code>cron(0
-     * 17/12 ? * * *)</code> </p> </li> <li> <p>Every two hours starting at midnight:
-     * <code>cron(0 0/2 ? * * *)</code> </p> </li> </ul>  <ul> <li> <p>Even
-     * though the cron expression is set to start at 5PM UTC, note that there could be
-     * a delay of 0-20 minutes from the actual requested time to run the execution.
-     * </p> </li> <li> <p>We recommend that if you would like a daily schedule, you do
-     * not provide this parameter. Amazon SageMaker will pick a time for running every
-     * day.</p> </li> </ul>  <p>You can also specify the keyword
-     * <code>NOW</code> to run the monitoring job immediately, one time, without
-     * recurring.</p>
+     * <code>cron(0 [00-23] ? * * *)</code> </p> </li> <li> <p>If you want to run the
+     * job one time, immediately, use the following keyword:</p> <p> <code>NOW</code>
+     * </p> </li> </ul> <p>For example, the following are valid cron expressions:</p>
+     * <ul> <li> <p>Daily at noon UTC: <code>cron(0 12 ? * * *)</code> </p> </li> <li>
+     * <p>Daily at midnight UTC: <code>cron(0 0 ? * * *)</code> </p> </li> </ul> <p>To
+     * support running every 6, 12 hours, the following are also supported:</p> <p>
+     * <code>cron(0 [00-23]/[01-24] ? * * *)</code> </p> <p>For example, the following
+     * are valid cron expressions:</p> <ul> <li> <p>Every 12 hours, starting at 5pm
+     * UTC: <code>cron(0 17/12 ? * * *)</code> </p> </li> <li> <p>Every two hours
+     * starting at midnight: <code>cron(0 0/2 ? * * *)</code> </p> </li> </ul> 
+     * <ul> <li> <p>Even though the cron expression is set to start at 5PM UTC, note
+     * that there could be a delay of 0-20 minutes from the actual requested time to
+     * run the execution. </p> </li> <li> <p>We recommend that if you would like a
+     * daily schedule, you do not provide this parameter. Amazon SageMaker will pick a
+     * time for running every day.</p> </li> </ul>  <p>You can also specify the
+     * keyword <code>NOW</code> to run the monitoring job immediately, one time,
+     * without recurring.</p>
      */
     inline ScheduleConfig& WithScheduleExpression(Aws::String&& value) { SetScheduleExpression(std::move(value)); return *this;}
 
@@ -211,22 +218,23 @@ namespace Model
      * <p>The supported cron expressions are:</p> <ul> <li> <p>If you want to set the
      * job to start every hour, use the following:</p> <p> <code>Hourly: cron(0 * ? * *
      * *)</code> </p> </li> <li> <p>If you want to start the job daily:</p> <p>
-     * <code>cron(0 [00-23] ? * * *)</code> </p> </li> </ul> <p>For example, the
-     * following are valid cron expressions:</p> <ul> <li> <p>Daily at noon UTC:
-     * <code>cron(0 12 ? * * *)</code> </p> </li> <li> <p>Daily at midnight UTC:
-     * <code>cron(0 0 ? * * *)</code> </p> </li> </ul> <p>To support running every 6,
-     * 12 hours, the following are also supported:</p> <p> <code>cron(0 [00-23]/[01-24]
-     * ? * * *)</code> </p> <p>For example, the following are valid cron
-     * expressions:</p> <ul> <li> <p>Every 12 hours, starting at 5pm UTC: <code>cron(0
-     * 17/12 ? * * *)</code> </p> </li> <li> <p>Every two hours starting at midnight:
-     * <code>cron(0 0/2 ? * * *)</code> </p> </li> </ul>  <ul> <li> <p>Even
-     * though the cron expression is set to start at 5PM UTC, note that there could be
-     * a delay of 0-20 minutes from the actual requested time to run the execution.
-     * </p> </li> <li> <p>We recommend that if you would like a daily schedule, you do
-     * not provide this parameter. Amazon SageMaker will pick a time for running every
-     * day.</p> </li> </ul>  <p>You can also specify the keyword
-     * <code>NOW</code> to run the monitoring job immediately, one time, without
-     * recurring.</p>
+     * <code>cron(0 [00-23] ? * * *)</code> </p> </li> <li> <p>If you want to run the
+     * job one time, immediately, use the following keyword:</p> <p> <code>NOW</code>
+     * </p> </li> </ul> <p>For example, the following are valid cron expressions:</p>
+     * <ul> <li> <p>Daily at noon UTC: <code>cron(0 12 ? * * *)</code> </p> </li> <li>
+     * <p>Daily at midnight UTC: <code>cron(0 0 ? * * *)</code> </p> </li> </ul> <p>To
+     * support running every 6, 12 hours, the following are also supported:</p> <p>
+     * <code>cron(0 [00-23]/[01-24] ? * * *)</code> </p> <p>For example, the following
+     * are valid cron expressions:</p> <ul> <li> <p>Every 12 hours, starting at 5pm
+     * UTC: <code>cron(0 17/12 ? * * *)</code> </p> </li> <li> <p>Every two hours
+     * starting at midnight: <code>cron(0 0/2 ? * * *)</code> </p> </li> </ul> 
+     * <ul> <li> <p>Even though the cron expression is set to start at 5PM UTC, note
+     * that there could be a delay of 0-20 minutes from the actual requested time to
+     * run the execution. </p> </li> <li> <p>We recommend that if you would like a
+     * daily schedule, you do not provide this parameter. Amazon SageMaker will pick a
+     * time for running every day.</p> </li> </ul>  <p>You can also specify the
+     * keyword <code>NOW</code> to run the monitoring job immediately, one time,
+     * without recurring.</p>
      */
     inline ScheduleConfig& WithScheduleExpression(const char* value) { SetScheduleExpression(value); return *this;}
 

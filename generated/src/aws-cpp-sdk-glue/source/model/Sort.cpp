@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Sort::NOT_SET:
+            return {};
           case Sort::ASC:
             return "ASC";
           case Sort::DESC:

@@ -248,6 +248,60 @@ namespace Model
      */
     inline CreateBulkImportJobRequest& WithJobConfiguration(JobConfiguration&& value) { SetJobConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>If set to true, ingest new data into IoT SiteWise storage. Measurements with
+     * notifications, metrics and transforms are computed. If set to false, historical
+     * data is ingested into IoT SiteWise as is.</p>
+     */
+    inline bool GetAdaptiveIngestion() const{ return m_adaptiveIngestion; }
+
+    /**
+     * <p>If set to true, ingest new data into IoT SiteWise storage. Measurements with
+     * notifications, metrics and transforms are computed. If set to false, historical
+     * data is ingested into IoT SiteWise as is.</p>
+     */
+    inline bool AdaptiveIngestionHasBeenSet() const { return m_adaptiveIngestionHasBeenSet; }
+
+    /**
+     * <p>If set to true, ingest new data into IoT SiteWise storage. Measurements with
+     * notifications, metrics and transforms are computed. If set to false, historical
+     * data is ingested into IoT SiteWise as is.</p>
+     */
+    inline void SetAdaptiveIngestion(bool value) { m_adaptiveIngestionHasBeenSet = true; m_adaptiveIngestion = value; }
+
+    /**
+     * <p>If set to true, ingest new data into IoT SiteWise storage. Measurements with
+     * notifications, metrics and transforms are computed. If set to false, historical
+     * data is ingested into IoT SiteWise as is.</p>
+     */
+    inline CreateBulkImportJobRequest& WithAdaptiveIngestion(bool value) { SetAdaptiveIngestion(value); return *this;}
+
+
+    /**
+     * <p>If set to true, your data files is deleted from S3, after ingestion into IoT
+     * SiteWise storage.</p>
+     */
+    inline bool GetDeleteFilesAfterImport() const{ return m_deleteFilesAfterImport; }
+
+    /**
+     * <p>If set to true, your data files is deleted from S3, after ingestion into IoT
+     * SiteWise storage.</p>
+     */
+    inline bool DeleteFilesAfterImportHasBeenSet() const { return m_deleteFilesAfterImportHasBeenSet; }
+
+    /**
+     * <p>If set to true, your data files is deleted from S3, after ingestion into IoT
+     * SiteWise storage.</p>
+     */
+    inline void SetDeleteFilesAfterImport(bool value) { m_deleteFilesAfterImportHasBeenSet = true; m_deleteFilesAfterImport = value; }
+
+    /**
+     * <p>If set to true, your data files is deleted from S3, after ingestion into IoT
+     * SiteWise storage.</p>
+     */
+    inline CreateBulkImportJobRequest& WithDeleteFilesAfterImport(bool value) { SetDeleteFilesAfterImport(value); return *this;}
+
   private:
 
     Aws::String m_jobName;
@@ -264,6 +318,12 @@ namespace Model
 
     JobConfiguration m_jobConfiguration;
     bool m_jobConfigurationHasBeenSet = false;
+
+    bool m_adaptiveIngestion;
+    bool m_adaptiveIngestionHasBeenSet = false;
+
+    bool m_deleteFilesAfterImport;
+    bool m_deleteFilesAfterImportHasBeenSet = false;
   };
 
 } // namespace Model

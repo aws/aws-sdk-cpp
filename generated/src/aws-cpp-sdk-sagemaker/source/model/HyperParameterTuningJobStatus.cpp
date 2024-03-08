@@ -25,6 +25,8 @@ namespace Aws
         static const int Failed_HASH = HashingUtils::HashString("Failed");
         static const int Stopped_HASH = HashingUtils::HashString("Stopped");
         static const int Stopping_HASH = HashingUtils::HashString("Stopping");
+        static const int Deleting_HASH = HashingUtils::HashString("Deleting");
+        static const int DeleteFailed_HASH = HashingUtils::HashString("DeleteFailed");
 
 
         HyperParameterTuningJobStatus GetHyperParameterTuningJobStatusForName(const Aws::String& name)
@@ -50,6 +52,14 @@ namespace Aws
           {
             return HyperParameterTuningJobStatus::Stopping;
           }
+          else if (hashCode == Deleting_HASH)
+          {
+            return HyperParameterTuningJobStatus::Deleting;
+          }
+          else if (hashCode == DeleteFailed_HASH)
+          {
+            return HyperParameterTuningJobStatus::DeleteFailed;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -64,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HyperParameterTuningJobStatus::NOT_SET:
+            return {};
           case HyperParameterTuningJobStatus::Completed:
             return "Completed";
           case HyperParameterTuningJobStatus::InProgress:
@@ -74,6 +86,10 @@ namespace Aws
             return "Stopped";
           case HyperParameterTuningJobStatus::Stopping:
             return "Stopping";
+          case HyperParameterTuningJobStatus::Deleting:
+            return "Deleting";
+          case HyperParameterTuningJobStatus::DeleteFailed:
+            return "DeleteFailed";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

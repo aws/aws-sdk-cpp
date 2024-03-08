@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ClusterStateChangeReasonCode::NOT_SET:
+            return {};
           case ClusterStateChangeReasonCode::INTERNAL_ERROR:
             return "INTERNAL_ERROR";
           case ClusterStateChangeReasonCode::VALIDATION_ERROR:

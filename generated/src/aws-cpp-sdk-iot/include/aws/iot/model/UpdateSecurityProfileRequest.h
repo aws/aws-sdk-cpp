@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/iot/model/MetricsExportConfig.h>
 #include <aws/iot/model/Behavior.h>
 #include <aws/iot/model/AlertTargetType.h>
 #include <aws/iot/model/AlertTarget.h>
@@ -410,6 +411,58 @@ namespace Model
      */
     inline UpdateSecurityProfileRequest& WithExpectedVersion(long long value) { SetExpectedVersion(value); return *this;}
 
+
+    /**
+     * <p>Specifies the MQTT topic and role ARN required for metric export.</p>
+     */
+    inline const MetricsExportConfig& GetMetricsExportConfig() const{ return m_metricsExportConfig; }
+
+    /**
+     * <p>Specifies the MQTT topic and role ARN required for metric export.</p>
+     */
+    inline bool MetricsExportConfigHasBeenSet() const { return m_metricsExportConfigHasBeenSet; }
+
+    /**
+     * <p>Specifies the MQTT topic and role ARN required for metric export.</p>
+     */
+    inline void SetMetricsExportConfig(const MetricsExportConfig& value) { m_metricsExportConfigHasBeenSet = true; m_metricsExportConfig = value; }
+
+    /**
+     * <p>Specifies the MQTT topic and role ARN required for metric export.</p>
+     */
+    inline void SetMetricsExportConfig(MetricsExportConfig&& value) { m_metricsExportConfigHasBeenSet = true; m_metricsExportConfig = std::move(value); }
+
+    /**
+     * <p>Specifies the MQTT topic and role ARN required for metric export.</p>
+     */
+    inline UpdateSecurityProfileRequest& WithMetricsExportConfig(const MetricsExportConfig& value) { SetMetricsExportConfig(value); return *this;}
+
+    /**
+     * <p>Specifies the MQTT topic and role ARN required for metric export.</p>
+     */
+    inline UpdateSecurityProfileRequest& WithMetricsExportConfig(MetricsExportConfig&& value) { SetMetricsExportConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Set the value as true to delete metrics export related configurations.</p>
+     */
+    inline bool GetDeleteMetricsExportConfig() const{ return m_deleteMetricsExportConfig; }
+
+    /**
+     * <p>Set the value as true to delete metrics export related configurations.</p>
+     */
+    inline bool DeleteMetricsExportConfigHasBeenSet() const { return m_deleteMetricsExportConfigHasBeenSet; }
+
+    /**
+     * <p>Set the value as true to delete metrics export related configurations.</p>
+     */
+    inline void SetDeleteMetricsExportConfig(bool value) { m_deleteMetricsExportConfigHasBeenSet = true; m_deleteMetricsExportConfig = value; }
+
+    /**
+     * <p>Set the value as true to delete metrics export related configurations.</p>
+     */
+    inline UpdateSecurityProfileRequest& WithDeleteMetricsExportConfig(bool value) { SetDeleteMetricsExportConfig(value); return *this;}
+
   private:
 
     Aws::String m_securityProfileName;
@@ -438,6 +491,12 @@ namespace Model
 
     long long m_expectedVersion;
     bool m_expectedVersionHasBeenSet = false;
+
+    MetricsExportConfig m_metricsExportConfig;
+    bool m_metricsExportConfigHasBeenSet = false;
+
+    bool m_deleteMetricsExportConfig;
+    bool m_deleteMetricsExportConfigHasBeenSet = false;
   };
 
 } // namespace Model

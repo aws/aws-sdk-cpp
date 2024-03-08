@@ -127,13 +127,12 @@ namespace Model
      * the Amazon Web Services CLI or one of the Amazon Web Services SDKs to call this
      * operation, then you can leave this parameter empty. The CLI or SDK generates a
      * random UUID for you and includes it as the value for this parameter in the
-     * request. If you don't use the SDK and instead generate a raw HTTP request to the
-     * Secrets Manager service endpoint, then you must generate a
-     * <code>ClientRequestToken</code> yourself for the new version and include the
-     * value in the request.</p>  <p>This value helps ensure idempotency.
-     * Secrets Manager uses this value to prevent the accidental creation of duplicate
-     * versions if there are failures and retries during a rotation. We recommend that
-     * you generate a <a
+     * request. </p>  <p>If you generate a raw HTTP request to the Secrets
+     * Manager service endpoint, then you must generate a
+     * <code>ClientRequestToken</code> and include it in the request.</p> <p>This value
+     * helps ensure idempotency. Secrets Manager uses this value to prevent the
+     * accidental creation of duplicate versions if there are failures and retries
+     * during a rotation. We recommend that you generate a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a>
      * value to ensure uniqueness of your versions within the specified secret. </p>
      * <ul> <li> <p>If the <code>ClientRequestToken</code> value isn't already
@@ -157,13 +156,12 @@ namespace Model
      * the Amazon Web Services CLI or one of the Amazon Web Services SDKs to call this
      * operation, then you can leave this parameter empty. The CLI or SDK generates a
      * random UUID for you and includes it as the value for this parameter in the
-     * request. If you don't use the SDK and instead generate a raw HTTP request to the
-     * Secrets Manager service endpoint, then you must generate a
-     * <code>ClientRequestToken</code> yourself for the new version and include the
-     * value in the request.</p>  <p>This value helps ensure idempotency.
-     * Secrets Manager uses this value to prevent the accidental creation of duplicate
-     * versions if there are failures and retries during a rotation. We recommend that
-     * you generate a <a
+     * request. </p>  <p>If you generate a raw HTTP request to the Secrets
+     * Manager service endpoint, then you must generate a
+     * <code>ClientRequestToken</code> and include it in the request.</p> <p>This value
+     * helps ensure idempotency. Secrets Manager uses this value to prevent the
+     * accidental creation of duplicate versions if there are failures and retries
+     * during a rotation. We recommend that you generate a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a>
      * value to ensure uniqueness of your versions within the specified secret. </p>
      * <ul> <li> <p>If the <code>ClientRequestToken</code> value isn't already
@@ -187,13 +185,12 @@ namespace Model
      * the Amazon Web Services CLI or one of the Amazon Web Services SDKs to call this
      * operation, then you can leave this parameter empty. The CLI or SDK generates a
      * random UUID for you and includes it as the value for this parameter in the
-     * request. If you don't use the SDK and instead generate a raw HTTP request to the
-     * Secrets Manager service endpoint, then you must generate a
-     * <code>ClientRequestToken</code> yourself for the new version and include the
-     * value in the request.</p>  <p>This value helps ensure idempotency.
-     * Secrets Manager uses this value to prevent the accidental creation of duplicate
-     * versions if there are failures and retries during a rotation. We recommend that
-     * you generate a <a
+     * request. </p>  <p>If you generate a raw HTTP request to the Secrets
+     * Manager service endpoint, then you must generate a
+     * <code>ClientRequestToken</code> and include it in the request.</p> <p>This value
+     * helps ensure idempotency. Secrets Manager uses this value to prevent the
+     * accidental creation of duplicate versions if there are failures and retries
+     * during a rotation. We recommend that you generate a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a>
      * value to ensure uniqueness of your versions within the specified secret. </p>
      * <ul> <li> <p>If the <code>ClientRequestToken</code> value isn't already
@@ -217,13 +214,12 @@ namespace Model
      * the Amazon Web Services CLI or one of the Amazon Web Services SDKs to call this
      * operation, then you can leave this parameter empty. The CLI or SDK generates a
      * random UUID for you and includes it as the value for this parameter in the
-     * request. If you don't use the SDK and instead generate a raw HTTP request to the
-     * Secrets Manager service endpoint, then you must generate a
-     * <code>ClientRequestToken</code> yourself for the new version and include the
-     * value in the request.</p>  <p>This value helps ensure idempotency.
-     * Secrets Manager uses this value to prevent the accidental creation of duplicate
-     * versions if there are failures and retries during a rotation. We recommend that
-     * you generate a <a
+     * request. </p>  <p>If you generate a raw HTTP request to the Secrets
+     * Manager service endpoint, then you must generate a
+     * <code>ClientRequestToken</code> and include it in the request.</p> <p>This value
+     * helps ensure idempotency. Secrets Manager uses this value to prevent the
+     * accidental creation of duplicate versions if there are failures and retries
+     * during a rotation. We recommend that you generate a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a>
      * value to ensure uniqueness of your versions within the specified secret. </p>
      * <ul> <li> <p>If the <code>ClientRequestToken</code> value isn't already
@@ -247,13 +243,12 @@ namespace Model
      * the Amazon Web Services CLI or one of the Amazon Web Services SDKs to call this
      * operation, then you can leave this parameter empty. The CLI or SDK generates a
      * random UUID for you and includes it as the value for this parameter in the
-     * request. If you don't use the SDK and instead generate a raw HTTP request to the
-     * Secrets Manager service endpoint, then you must generate a
-     * <code>ClientRequestToken</code> yourself for the new version and include the
-     * value in the request.</p>  <p>This value helps ensure idempotency.
-     * Secrets Manager uses this value to prevent the accidental creation of duplicate
-     * versions if there are failures and retries during a rotation. We recommend that
-     * you generate a <a
+     * request. </p>  <p>If you generate a raw HTTP request to the Secrets
+     * Manager service endpoint, then you must generate a
+     * <code>ClientRequestToken</code> and include it in the request.</p> <p>This value
+     * helps ensure idempotency. Secrets Manager uses this value to prevent the
+     * accidental creation of duplicate versions if there are failures and retries
+     * during a rotation. We recommend that you generate a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a>
      * value to ensure uniqueness of your versions within the specified secret. </p>
      * <ul> <li> <p>If the <code>ClientRequestToken</code> value isn't already
@@ -277,13 +272,12 @@ namespace Model
      * the Amazon Web Services CLI or one of the Amazon Web Services SDKs to call this
      * operation, then you can leave this parameter empty. The CLI or SDK generates a
      * random UUID for you and includes it as the value for this parameter in the
-     * request. If you don't use the SDK and instead generate a raw HTTP request to the
-     * Secrets Manager service endpoint, then you must generate a
-     * <code>ClientRequestToken</code> yourself for the new version and include the
-     * value in the request.</p>  <p>This value helps ensure idempotency.
-     * Secrets Manager uses this value to prevent the accidental creation of duplicate
-     * versions if there are failures and retries during a rotation. We recommend that
-     * you generate a <a
+     * request. </p>  <p>If you generate a raw HTTP request to the Secrets
+     * Manager service endpoint, then you must generate a
+     * <code>ClientRequestToken</code> and include it in the request.</p> <p>This value
+     * helps ensure idempotency. Secrets Manager uses this value to prevent the
+     * accidental creation of duplicate versions if there are failures and retries
+     * during a rotation. We recommend that you generate a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a>
      * value to ensure uniqueness of your versions within the specified secret. </p>
      * <ul> <li> <p>If the <code>ClientRequestToken</code> value isn't already
@@ -307,13 +301,12 @@ namespace Model
      * the Amazon Web Services CLI or one of the Amazon Web Services SDKs to call this
      * operation, then you can leave this parameter empty. The CLI or SDK generates a
      * random UUID for you and includes it as the value for this parameter in the
-     * request. If you don't use the SDK and instead generate a raw HTTP request to the
-     * Secrets Manager service endpoint, then you must generate a
-     * <code>ClientRequestToken</code> yourself for the new version and include the
-     * value in the request.</p>  <p>This value helps ensure idempotency.
-     * Secrets Manager uses this value to prevent the accidental creation of duplicate
-     * versions if there are failures and retries during a rotation. We recommend that
-     * you generate a <a
+     * request. </p>  <p>If you generate a raw HTTP request to the Secrets
+     * Manager service endpoint, then you must generate a
+     * <code>ClientRequestToken</code> and include it in the request.</p> <p>This value
+     * helps ensure idempotency. Secrets Manager uses this value to prevent the
+     * accidental creation of duplicate versions if there are failures and retries
+     * during a rotation. We recommend that you generate a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a>
      * value to ensure uniqueness of your versions within the specified secret. </p>
      * <ul> <li> <p>If the <code>ClientRequestToken</code> value isn't already
@@ -337,13 +330,12 @@ namespace Model
      * the Amazon Web Services CLI or one of the Amazon Web Services SDKs to call this
      * operation, then you can leave this parameter empty. The CLI or SDK generates a
      * random UUID for you and includes it as the value for this parameter in the
-     * request. If you don't use the SDK and instead generate a raw HTTP request to the
-     * Secrets Manager service endpoint, then you must generate a
-     * <code>ClientRequestToken</code> yourself for the new version and include the
-     * value in the request.</p>  <p>This value helps ensure idempotency.
-     * Secrets Manager uses this value to prevent the accidental creation of duplicate
-     * versions if there are failures and retries during a rotation. We recommend that
-     * you generate a <a
+     * request. </p>  <p>If you generate a raw HTTP request to the Secrets
+     * Manager service endpoint, then you must generate a
+     * <code>ClientRequestToken</code> and include it in the request.</p> <p>This value
+     * helps ensure idempotency. Secrets Manager uses this value to prevent the
+     * accidental creation of duplicate versions if there are failures and retries
+     * during a rotation. We recommend that you generate a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a>
      * value to ensure uniqueness of your versions within the specified secret. </p>
      * <ul> <li> <p>If the <code>ClientRequestToken</code> value isn't already
@@ -711,19 +703,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      * JSON for Parameters</a>. If your command-line tool or SDK requires quotation
      * marks around the parameter, you should use single quotes to avoid confusion with
-     * the double quotes required in the JSON text.</p> <p>The following restrictions
-     * apply to tags:</p> <ul> <li> <p>Maximum number of tags per secret: 50</p> </li>
-     * <li> <p>Maximum key length: 127 Unicode characters in UTF-8</p> </li> <li>
-     * <p>Maximum value length: 255 Unicode characters in UTF-8</p> </li> <li> <p>Tag
-     * keys and values are case sensitive.</p> </li> <li> <p>Do not use the
-     * <code>aws:</code> prefix in your tag names or values because Amazon Web Services
-     * reserves it for Amazon Web Services use. You can't edit or delete tag names or
-     * values with this prefix. Tags with this prefix do not count against your tags
-     * per secret limit.</p> </li> <li> <p>If you use your tagging schema across
-     * multiple services and resources, other services might have restrictions on
-     * allowed characters. Generally allowed characters: letters, spaces, and numbers
-     * representable in UTF-8, plus the following special characters: + - = . _ : /
-     * @.</p> </li> </ul>
+     * the double quotes required in the JSON text.</p> <p>For tag quotas and naming
+     * restrictions, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/arg.html#taged-reference-quotas">Service
+     * quotas for Tagging</a> in the <i>Amazon Web Services General Reference
+     * guide</i>.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
@@ -747,19 +731,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      * JSON for Parameters</a>. If your command-line tool or SDK requires quotation
      * marks around the parameter, you should use single quotes to avoid confusion with
-     * the double quotes required in the JSON text.</p> <p>The following restrictions
-     * apply to tags:</p> <ul> <li> <p>Maximum number of tags per secret: 50</p> </li>
-     * <li> <p>Maximum key length: 127 Unicode characters in UTF-8</p> </li> <li>
-     * <p>Maximum value length: 255 Unicode characters in UTF-8</p> </li> <li> <p>Tag
-     * keys and values are case sensitive.</p> </li> <li> <p>Do not use the
-     * <code>aws:</code> prefix in your tag names or values because Amazon Web Services
-     * reserves it for Amazon Web Services use. You can't edit or delete tag names or
-     * values with this prefix. Tags with this prefix do not count against your tags
-     * per secret limit.</p> </li> <li> <p>If you use your tagging schema across
-     * multiple services and resources, other services might have restrictions on
-     * allowed characters. Generally allowed characters: letters, spaces, and numbers
-     * representable in UTF-8, plus the following special characters: + - = . _ : /
-     * @.</p> </li> </ul>
+     * the double quotes required in the JSON text.</p> <p>For tag quotas and naming
+     * restrictions, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/arg.html#taged-reference-quotas">Service
+     * quotas for Tagging</a> in the <i>Amazon Web Services General Reference
+     * guide</i>.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
@@ -783,19 +759,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      * JSON for Parameters</a>. If your command-line tool or SDK requires quotation
      * marks around the parameter, you should use single quotes to avoid confusion with
-     * the double quotes required in the JSON text.</p> <p>The following restrictions
-     * apply to tags:</p> <ul> <li> <p>Maximum number of tags per secret: 50</p> </li>
-     * <li> <p>Maximum key length: 127 Unicode characters in UTF-8</p> </li> <li>
-     * <p>Maximum value length: 255 Unicode characters in UTF-8</p> </li> <li> <p>Tag
-     * keys and values are case sensitive.</p> </li> <li> <p>Do not use the
-     * <code>aws:</code> prefix in your tag names or values because Amazon Web Services
-     * reserves it for Amazon Web Services use. You can't edit or delete tag names or
-     * values with this prefix. Tags with this prefix do not count against your tags
-     * per secret limit.</p> </li> <li> <p>If you use your tagging schema across
-     * multiple services and resources, other services might have restrictions on
-     * allowed characters. Generally allowed characters: letters, spaces, and numbers
-     * representable in UTF-8, plus the following special characters: + - = . _ : /
-     * @.</p> </li> </ul>
+     * the double quotes required in the JSON text.</p> <p>For tag quotas and naming
+     * restrictions, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/arg.html#taged-reference-quotas">Service
+     * quotas for Tagging</a> in the <i>Amazon Web Services General Reference
+     * guide</i>.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
@@ -819,19 +787,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      * JSON for Parameters</a>. If your command-line tool or SDK requires quotation
      * marks around the parameter, you should use single quotes to avoid confusion with
-     * the double quotes required in the JSON text.</p> <p>The following restrictions
-     * apply to tags:</p> <ul> <li> <p>Maximum number of tags per secret: 50</p> </li>
-     * <li> <p>Maximum key length: 127 Unicode characters in UTF-8</p> </li> <li>
-     * <p>Maximum value length: 255 Unicode characters in UTF-8</p> </li> <li> <p>Tag
-     * keys and values are case sensitive.</p> </li> <li> <p>Do not use the
-     * <code>aws:</code> prefix in your tag names or values because Amazon Web Services
-     * reserves it for Amazon Web Services use. You can't edit or delete tag names or
-     * values with this prefix. Tags with this prefix do not count against your tags
-     * per secret limit.</p> </li> <li> <p>If you use your tagging schema across
-     * multiple services and resources, other services might have restrictions on
-     * allowed characters. Generally allowed characters: letters, spaces, and numbers
-     * representable in UTF-8, plus the following special characters: + - = . _ : /
-     * @.</p> </li> </ul>
+     * the double quotes required in the JSON text.</p> <p>For tag quotas and naming
+     * restrictions, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/arg.html#taged-reference-quotas">Service
+     * quotas for Tagging</a> in the <i>Amazon Web Services General Reference
+     * guide</i>.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
@@ -855,19 +815,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      * JSON for Parameters</a>. If your command-line tool or SDK requires quotation
      * marks around the parameter, you should use single quotes to avoid confusion with
-     * the double quotes required in the JSON text.</p> <p>The following restrictions
-     * apply to tags:</p> <ul> <li> <p>Maximum number of tags per secret: 50</p> </li>
-     * <li> <p>Maximum key length: 127 Unicode characters in UTF-8</p> </li> <li>
-     * <p>Maximum value length: 255 Unicode characters in UTF-8</p> </li> <li> <p>Tag
-     * keys and values are case sensitive.</p> </li> <li> <p>Do not use the
-     * <code>aws:</code> prefix in your tag names or values because Amazon Web Services
-     * reserves it for Amazon Web Services use. You can't edit or delete tag names or
-     * values with this prefix. Tags with this prefix do not count against your tags
-     * per secret limit.</p> </li> <li> <p>If you use your tagging schema across
-     * multiple services and resources, other services might have restrictions on
-     * allowed characters. Generally allowed characters: letters, spaces, and numbers
-     * representable in UTF-8, plus the following special characters: + - = . _ : /
-     * @.</p> </li> </ul>
+     * the double quotes required in the JSON text.</p> <p>For tag quotas and naming
+     * restrictions, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/arg.html#taged-reference-quotas">Service
+     * quotas for Tagging</a> in the <i>Amazon Web Services General Reference
+     * guide</i>.</p>
      */
     inline CreateSecretRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
@@ -891,19 +843,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      * JSON for Parameters</a>. If your command-line tool or SDK requires quotation
      * marks around the parameter, you should use single quotes to avoid confusion with
-     * the double quotes required in the JSON text.</p> <p>The following restrictions
-     * apply to tags:</p> <ul> <li> <p>Maximum number of tags per secret: 50</p> </li>
-     * <li> <p>Maximum key length: 127 Unicode characters in UTF-8</p> </li> <li>
-     * <p>Maximum value length: 255 Unicode characters in UTF-8</p> </li> <li> <p>Tag
-     * keys and values are case sensitive.</p> </li> <li> <p>Do not use the
-     * <code>aws:</code> prefix in your tag names or values because Amazon Web Services
-     * reserves it for Amazon Web Services use. You can't edit or delete tag names or
-     * values with this prefix. Tags with this prefix do not count against your tags
-     * per secret limit.</p> </li> <li> <p>If you use your tagging schema across
-     * multiple services and resources, other services might have restrictions on
-     * allowed characters. Generally allowed characters: letters, spaces, and numbers
-     * representable in UTF-8, plus the following special characters: + - = . _ : /
-     * @.</p> </li> </ul>
+     * the double quotes required in the JSON text.</p> <p>For tag quotas and naming
+     * restrictions, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/arg.html#taged-reference-quotas">Service
+     * quotas for Tagging</a> in the <i>Amazon Web Services General Reference
+     * guide</i>.</p>
      */
     inline CreateSecretRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
@@ -927,19 +871,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      * JSON for Parameters</a>. If your command-line tool or SDK requires quotation
      * marks around the parameter, you should use single quotes to avoid confusion with
-     * the double quotes required in the JSON text.</p> <p>The following restrictions
-     * apply to tags:</p> <ul> <li> <p>Maximum number of tags per secret: 50</p> </li>
-     * <li> <p>Maximum key length: 127 Unicode characters in UTF-8</p> </li> <li>
-     * <p>Maximum value length: 255 Unicode characters in UTF-8</p> </li> <li> <p>Tag
-     * keys and values are case sensitive.</p> </li> <li> <p>Do not use the
-     * <code>aws:</code> prefix in your tag names or values because Amazon Web Services
-     * reserves it for Amazon Web Services use. You can't edit or delete tag names or
-     * values with this prefix. Tags with this prefix do not count against your tags
-     * per secret limit.</p> </li> <li> <p>If you use your tagging schema across
-     * multiple services and resources, other services might have restrictions on
-     * allowed characters. Generally allowed characters: letters, spaces, and numbers
-     * representable in UTF-8, plus the following special characters: + - = . _ : /
-     * @.</p> </li> </ul>
+     * the double quotes required in the JSON text.</p> <p>For tag quotas and naming
+     * restrictions, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/arg.html#taged-reference-quotas">Service
+     * quotas for Tagging</a> in the <i>Amazon Web Services General Reference
+     * guide</i>.</p>
      */
     inline CreateSecretRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
@@ -963,19 +899,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      * JSON for Parameters</a>. If your command-line tool or SDK requires quotation
      * marks around the parameter, you should use single quotes to avoid confusion with
-     * the double quotes required in the JSON text.</p> <p>The following restrictions
-     * apply to tags:</p> <ul> <li> <p>Maximum number of tags per secret: 50</p> </li>
-     * <li> <p>Maximum key length: 127 Unicode characters in UTF-8</p> </li> <li>
-     * <p>Maximum value length: 255 Unicode characters in UTF-8</p> </li> <li> <p>Tag
-     * keys and values are case sensitive.</p> </li> <li> <p>Do not use the
-     * <code>aws:</code> prefix in your tag names or values because Amazon Web Services
-     * reserves it for Amazon Web Services use. You can't edit or delete tag names or
-     * values with this prefix. Tags with this prefix do not count against your tags
-     * per secret limit.</p> </li> <li> <p>If you use your tagging schema across
-     * multiple services and resources, other services might have restrictions on
-     * allowed characters. Generally allowed characters: letters, spaces, and numbers
-     * representable in UTF-8, plus the following special characters: + - = . _ : /
-     * @.</p> </li> </ul>
+     * the double quotes required in the JSON text.</p> <p>For tag quotas and naming
+     * restrictions, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/arg.html#taged-reference-quotas">Service
+     * quotas for Tagging</a> in the <i>Amazon Web Services General Reference
+     * guide</i>.</p>
      */
     inline CreateSecretRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

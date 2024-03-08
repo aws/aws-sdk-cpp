@@ -27,8 +27,8 @@ namespace SNS
 namespace Model
 {
   /**
-   * <p>Response for ListEndpointsByPlatformApplication action.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Response for <code>ListEndpointsByPlatformApplication</code>
+   * action.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListEndpointsByPlatformApplicationResponse">AWS
    * API Reference</a></p>
    */
@@ -41,85 +41,100 @@ namespace Model
 
 
     /**
-     * <p>Endpoints returned for ListEndpointsByPlatformApplication action.</p>
+     * <p>Endpoints returned for <code>ListEndpointsByPlatformApplication</code>
+     * action.</p>
      */
     inline const Aws::Vector<Aws::String>& GetEndpoints() const{ return m_endpoints; }
 
     /**
-     * <p>Endpoints returned for ListEndpointsByPlatformApplication action.</p>
+     * <p>Endpoints returned for <code>ListEndpointsByPlatformApplication</code>
+     * action.</p>
      */
     inline void SetEndpoints(const Aws::Vector<Aws::String>& value) { m_endpoints = value; }
 
     /**
-     * <p>Endpoints returned for ListEndpointsByPlatformApplication action.</p>
+     * <p>Endpoints returned for <code>ListEndpointsByPlatformApplication</code>
+     * action.</p>
      */
     inline void SetEndpoints(Aws::Vector<Aws::String>&& value) { m_endpoints = std::move(value); }
 
     /**
-     * <p>Endpoints returned for ListEndpointsByPlatformApplication action.</p>
+     * <p>Endpoints returned for <code>ListEndpointsByPlatformApplication</code>
+     * action.</p>
      */
     inline ListEndpointsByPlatformApplicationResult& WithEndpoints(const Aws::Vector<Aws::String>& value) { SetEndpoints(value); return *this;}
 
     /**
-     * <p>Endpoints returned for ListEndpointsByPlatformApplication action.</p>
+     * <p>Endpoints returned for <code>ListEndpointsByPlatformApplication</code>
+     * action.</p>
      */
     inline ListEndpointsByPlatformApplicationResult& WithEndpoints(Aws::Vector<Aws::String>&& value) { SetEndpoints(std::move(value)); return *this;}
 
     /**
-     * <p>Endpoints returned for ListEndpointsByPlatformApplication action.</p>
+     * <p>Endpoints returned for <code>ListEndpointsByPlatformApplication</code>
+     * action.</p>
      */
     inline ListEndpointsByPlatformApplicationResult& AddEndpoints(const Aws::String& value) { m_endpoints.push_back(value); return *this; }
 
     /**
-     * <p>Endpoints returned for ListEndpointsByPlatformApplication action.</p>
+     * <p>Endpoints returned for <code>ListEndpointsByPlatformApplication</code>
+     * action.</p>
      */
     inline ListEndpointsByPlatformApplicationResult& AddEndpoints(Aws::String&& value) { m_endpoints.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Endpoints returned for ListEndpointsByPlatformApplication action.</p>
+     * <p>Endpoints returned for <code>ListEndpointsByPlatformApplication</code>
+     * action.</p>
      */
     inline ListEndpointsByPlatformApplicationResult& AddEndpoints(const char* value) { m_endpoints.push_back(value); return *this; }
 
 
     /**
-     * <p>NextToken string is returned when calling ListEndpointsByPlatformApplication
-     * action if additional records are available after the first page results.</p>
+     * <p> <code>NextToken</code> string is returned when calling
+     * <code>ListEndpointsByPlatformApplication</code> action if additional records are
+     * available after the first page results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>NextToken string is returned when calling ListEndpointsByPlatformApplication
-     * action if additional records are available after the first page results.</p>
+     * <p> <code>NextToken</code> string is returned when calling
+     * <code>ListEndpointsByPlatformApplication</code> action if additional records are
+     * available after the first page results.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>NextToken string is returned when calling ListEndpointsByPlatformApplication
-     * action if additional records are available after the first page results.</p>
+     * <p> <code>NextToken</code> string is returned when calling
+     * <code>ListEndpointsByPlatformApplication</code> action if additional records are
+     * available after the first page results.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p>NextToken string is returned when calling ListEndpointsByPlatformApplication
-     * action if additional records are available after the first page results.</p>
+     * <p> <code>NextToken</code> string is returned when calling
+     * <code>ListEndpointsByPlatformApplication</code> action if additional records are
+     * available after the first page results.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>NextToken string is returned when calling ListEndpointsByPlatformApplication
-     * action if additional records are available after the first page results.</p>
+     * <p> <code>NextToken</code> string is returned when calling
+     * <code>ListEndpointsByPlatformApplication</code> action if additional records are
+     * available after the first page results.</p>
      */
     inline ListEndpointsByPlatformApplicationResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>NextToken string is returned when calling ListEndpointsByPlatformApplication
-     * action if additional records are available after the first page results.</p>
+     * <p> <code>NextToken</code> string is returned when calling
+     * <code>ListEndpointsByPlatformApplication</code> action if additional records are
+     * available after the first page results.</p>
      */
     inline ListEndpointsByPlatformApplicationResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>NextToken string is returned when calling ListEndpointsByPlatformApplication
-     * action if additional records are available after the first page results.</p>
+     * <p> <code>NextToken</code> string is returned when calling
+     * <code>ListEndpointsByPlatformApplication</code> action if additional records are
+     * available after the first page results.</p>
      */
     inline ListEndpointsByPlatformApplicationResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

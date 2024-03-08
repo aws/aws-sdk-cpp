@@ -50,6 +50,10 @@ namespace Aws
                  */
                 virtual void LogStream(LogLevel logLevel, const char* tag, const Aws::OStringStream &messageStream) override;
 
+                /**
+                 * Stops logging on this logger without destroying the object.
+                 */
+                virtual void Stop() override { return SetLogLevel(Aws::Utils::Logging::LogLevel::Off); };
             protected:
                 /**
                  * This is the method that most logger implementations will want to override.

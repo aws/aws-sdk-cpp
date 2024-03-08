@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ThrottleReason::NOT_SET:
+            return {};
           case ThrottleReason::ConcurrentInvocationLimitExceeded:
             return "ConcurrentInvocationLimitExceeded";
           case ThrottleReason::FunctionInvocationRateLimitExceeded:

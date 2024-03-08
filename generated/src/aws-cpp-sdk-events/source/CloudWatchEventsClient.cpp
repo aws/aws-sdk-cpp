@@ -86,8 +86,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* CloudWatchEventsClient::SERVICE_NAME = "events";
-const char* CloudWatchEventsClient::ALLOCATION_TAG = "CloudWatchEventsClient";
+namespace Aws
+{
+  namespace CloudWatchEvents
+  {
+    const char SERVICE_NAME[] = "events";
+    const char ALLOCATION_TAG[] = "CloudWatchEventsClient";
+  }
+}
+const char* CloudWatchEventsClient::GetServiceName() {return SERVICE_NAME;}
+const char* CloudWatchEventsClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 CloudWatchEventsClient::CloudWatchEventsClient(const CloudWatchEvents::CloudWatchEventsClientConfiguration& clientConfiguration,
                                                std::shared_ptr<CloudWatchEventsEndpointProviderBase> endpointProvider) :
@@ -99,7 +107,7 @@ CloudWatchEventsClient::CloudWatchEventsClient(const CloudWatchEvents::CloudWatc
             Aws::MakeShared<CloudWatchEventsErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CloudWatchEventsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -115,7 +123,7 @@ CloudWatchEventsClient::CloudWatchEventsClient(const AWSCredentials& credentials
             Aws::MakeShared<CloudWatchEventsErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CloudWatchEventsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -131,7 +139,7 @@ CloudWatchEventsClient::CloudWatchEventsClient(const std::shared_ptr<AWSCredenti
             Aws::MakeShared<CloudWatchEventsErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CloudWatchEventsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

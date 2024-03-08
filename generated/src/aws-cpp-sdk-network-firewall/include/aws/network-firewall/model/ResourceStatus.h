@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     ACTIVE,
-    DELETING
+    DELETING,
+    ERROR_
   };
 
 namespace ResourceStatusMapper

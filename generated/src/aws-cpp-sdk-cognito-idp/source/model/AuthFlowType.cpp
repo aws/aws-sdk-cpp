@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AuthFlowType::NOT_SET:
+            return {};
           case AuthFlowType::USER_SRP_AUTH:
             return "USER_SRP_AUTH";
           case AuthFlowType::REFRESH_TOKEN_AUTH:

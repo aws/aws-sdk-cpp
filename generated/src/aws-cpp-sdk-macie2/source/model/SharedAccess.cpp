@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SharedAccess::NOT_SET:
+            return {};
           case SharedAccess::EXTERNAL:
             return "EXTERNAL";
           case SharedAccess::INTERNAL:

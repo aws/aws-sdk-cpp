@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SampleType::NOT_SET:
+            return {};
           case SampleType::FIRST_N:
             return "FIRST_N";
           case SampleType::LAST_N:

@@ -854,6 +854,31 @@ namespace Model
      */
     inline MySQLSettings& WithSecretsManagerSecretId(const char* value) { SetSecretsManagerSecretId(value); return *this;}
 
+
+    /**
+     * <p>Sets the client statement timeout (in seconds) for a MySQL source
+     * endpoint.</p>
+     */
+    inline int GetExecuteTimeout() const{ return m_executeTimeout; }
+
+    /**
+     * <p>Sets the client statement timeout (in seconds) for a MySQL source
+     * endpoint.</p>
+     */
+    inline bool ExecuteTimeoutHasBeenSet() const { return m_executeTimeoutHasBeenSet; }
+
+    /**
+     * <p>Sets the client statement timeout (in seconds) for a MySQL source
+     * endpoint.</p>
+     */
+    inline void SetExecuteTimeout(int value) { m_executeTimeoutHasBeenSet = true; m_executeTimeout = value; }
+
+    /**
+     * <p>Sets the client statement timeout (in seconds) for a MySQL source
+     * endpoint.</p>
+     */
+    inline MySQLSettings& WithExecuteTimeout(int value) { SetExecuteTimeout(value); return *this;}
+
   private:
 
     Aws::String m_afterConnectScript;
@@ -897,6 +922,9 @@ namespace Model
 
     Aws::String m_secretsManagerSecretId;
     bool m_secretsManagerSecretIdHasBeenSet = false;
+
+    int m_executeTimeout;
+    bool m_executeTimeoutHasBeenSet = false;
   };
 
 } // namespace Model

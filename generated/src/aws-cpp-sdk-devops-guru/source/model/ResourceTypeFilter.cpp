@@ -174,6 +174,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResourceTypeFilter::NOT_SET:
+            return {};
           case ResourceTypeFilter::LOG_GROUPS:
             return "LOG_GROUPS";
           case ResourceTypeFilter::CLOUDFRONT_DISTRIBUTION:

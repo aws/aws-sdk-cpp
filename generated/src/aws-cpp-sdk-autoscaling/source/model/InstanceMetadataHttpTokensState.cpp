@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InstanceMetadataHttpTokensState::NOT_SET:
+            return {};
           case InstanceMetadataHttpTokensState::optional:
             return "optional";
           case InstanceMetadataHttpTokensState::required:

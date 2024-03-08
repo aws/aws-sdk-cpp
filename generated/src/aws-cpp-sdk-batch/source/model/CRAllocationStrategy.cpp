@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CRAllocationStrategy::NOT_SET:
+            return {};
           case CRAllocationStrategy::BEST_FIT:
             return "BEST_FIT";
           case CRAllocationStrategy::BEST_FIT_PROGRESSIVE:

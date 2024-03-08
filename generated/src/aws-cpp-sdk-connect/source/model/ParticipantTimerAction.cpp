@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ParticipantTimerAction::NOT_SET:
+            return {};
           case ParticipantTimerAction::Unset:
             return "Unset";
           default:

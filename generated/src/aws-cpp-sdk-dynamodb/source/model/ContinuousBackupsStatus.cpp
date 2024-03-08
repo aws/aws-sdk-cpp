@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ContinuousBackupsStatus::NOT_SET:
+            return {};
           case ContinuousBackupsStatus::ENABLED:
             return "ENABLED";
           case ContinuousBackupsStatus::DISABLED:

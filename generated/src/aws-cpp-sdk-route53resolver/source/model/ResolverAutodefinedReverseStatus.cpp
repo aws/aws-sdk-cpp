@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResolverAutodefinedReverseStatus::NOT_SET:
+            return {};
           case ResolverAutodefinedReverseStatus::ENABLING:
             return "ENABLING";
           case ResolverAutodefinedReverseStatus::ENABLED:

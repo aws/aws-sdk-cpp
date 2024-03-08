@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StatefulRuleDirection::NOT_SET:
+            return {};
           case StatefulRuleDirection::FORWARD:
             return "FORWARD";
           case StatefulRuleDirection::ANY:

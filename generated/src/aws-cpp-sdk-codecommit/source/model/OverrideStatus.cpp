@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OverrideStatus::NOT_SET:
+            return {};
           case OverrideStatus::OVERRIDE:
             return "OVERRIDE";
           case OverrideStatus::REVOKE:

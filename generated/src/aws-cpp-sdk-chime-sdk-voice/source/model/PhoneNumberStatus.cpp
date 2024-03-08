@@ -94,6 +94,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PhoneNumberStatus::NOT_SET:
+            return {};
           case PhoneNumberStatus::Cancelled:
             return "Cancelled";
           case PhoneNumberStatus::PortinCancelRequested:

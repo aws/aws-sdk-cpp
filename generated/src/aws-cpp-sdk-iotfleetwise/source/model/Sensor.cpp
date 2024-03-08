@@ -30,7 +30,8 @@ Sensor::Sensor() :
     m_max(0.0),
     m_maxHasBeenSet(false),
     m_deprecationMessageHasBeenSet(false),
-    m_commentHasBeenSet(false)
+    m_commentHasBeenSet(false),
+    m_structFullyQualifiedNameHasBeenSet(false)
 {
 }
 
@@ -46,7 +47,8 @@ Sensor::Sensor(JsonView jsonValue) :
     m_max(0.0),
     m_maxHasBeenSet(false),
     m_deprecationMessageHasBeenSet(false),
-    m_commentHasBeenSet(false)
+    m_commentHasBeenSet(false),
+    m_structFullyQualifiedNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -119,6 +121,13 @@ Sensor& Sensor::operator =(JsonView jsonValue)
     m_commentHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("structFullyQualifiedName"))
+  {
+    m_structFullyQualifiedName = jsonValue.GetString("structFullyQualifiedName");
+
+    m_structFullyQualifiedNameHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -181,6 +190,12 @@ JsonValue Sensor::Jsonize() const
   if(m_commentHasBeenSet)
   {
    payload.WithString("comment", m_comment);
+
+  }
+
+  if(m_structFullyQualifiedNameHasBeenSet)
+  {
+   payload.WithString("structFullyQualifiedName", m_structFullyQualifiedName);
 
   }
 

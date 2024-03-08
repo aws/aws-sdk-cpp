@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NfsVersion::NOT_SET:
+            return {};
           case NfsVersion::AUTOMATIC:
             return "AUTOMATIC";
           case NfsVersion::NFS3:

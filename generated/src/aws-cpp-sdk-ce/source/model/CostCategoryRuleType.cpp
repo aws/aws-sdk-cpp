@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CostCategoryRuleType::NOT_SET:
+            return {};
           case CostCategoryRuleType::REGULAR:
             return "REGULAR";
           case CostCategoryRuleType::INHERITED_VALUE:

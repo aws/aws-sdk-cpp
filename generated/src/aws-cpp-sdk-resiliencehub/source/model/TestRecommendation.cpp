@@ -27,6 +27,8 @@ TestRecommendation::TestRecommendation() :
     m_nameHasBeenSet(false),
     m_prerequisiteHasBeenSet(false),
     m_recommendationIdHasBeenSet(false),
+    m_recommendationStatus(RecommendationStatus::NOT_SET),
+    m_recommendationStatusHasBeenSet(false),
     m_referenceIdHasBeenSet(false),
     m_risk(TestRisk::NOT_SET),
     m_riskHasBeenSet(false),
@@ -44,6 +46,8 @@ TestRecommendation::TestRecommendation(JsonView jsonValue) :
     m_nameHasBeenSet(false),
     m_prerequisiteHasBeenSet(false),
     m_recommendationIdHasBeenSet(false),
+    m_recommendationStatus(RecommendationStatus::NOT_SET),
+    m_recommendationStatusHasBeenSet(false),
     m_referenceIdHasBeenSet(false),
     m_risk(TestRisk::NOT_SET),
     m_riskHasBeenSet(false),
@@ -115,6 +119,13 @@ TestRecommendation& TestRecommendation::operator =(JsonView jsonValue)
     m_recommendationId = jsonValue.GetString("recommendationId");
 
     m_recommendationIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("recommendationStatus"))
+  {
+    m_recommendationStatus = RecommendationStatusMapper::GetRecommendationStatusForName(jsonValue.GetString("recommendationStatus"));
+
+    m_recommendationStatusHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("referenceId"))
@@ -201,6 +212,11 @@ JsonValue TestRecommendation::Jsonize() const
   {
    payload.WithString("recommendationId", m_recommendationId);
 
+  }
+
+  if(m_recommendationStatusHasBeenSet)
+  {
+   payload.WithString("recommendationStatus", RecommendationStatusMapper::GetNameForRecommendationStatus(m_recommendationStatus));
   }
 
   if(m_referenceIdHasBeenSet)

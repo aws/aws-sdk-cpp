@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EvaluationType::NOT_SET:
+            return {};
           case EvaluationType::STATIC_:
             return "STATIC";
           case EvaluationType::DYNAMIC:

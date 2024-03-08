@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TemplateType::NOT_SET:
+            return {};
           case TemplateType::RTSP_CAMERA_STREAM:
             return "RTSP_CAMERA_STREAM";
           default:

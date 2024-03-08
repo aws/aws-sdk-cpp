@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case QualificationTypeStatus::NOT_SET:
+            return {};
           case QualificationTypeStatus::Active:
             return "Active";
           case QualificationTypeStatus::Inactive:

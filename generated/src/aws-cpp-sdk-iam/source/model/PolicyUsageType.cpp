@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PolicyUsageType::NOT_SET:
+            return {};
           case PolicyUsageType::PermissionsPolicy:
             return "PermissionsPolicy";
           case PolicyUsageType::PermissionsBoundary:

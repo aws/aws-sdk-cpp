@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CopyProtectionAction::NOT_SET:
+            return {};
           case CopyProtectionAction::PASSTHROUGH:
             return "PASSTHROUGH";
           case CopyProtectionAction::STRIP:

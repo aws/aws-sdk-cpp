@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FacetStyle::NOT_SET:
+            return {};
           case FacetStyle::STATIC_:
             return "STATIC";
           case FacetStyle::DYNAMIC:

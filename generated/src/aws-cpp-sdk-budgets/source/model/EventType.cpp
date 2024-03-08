@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EventType::NOT_SET:
+            return {};
           case EventType::SYSTEM:
             return "SYSTEM";
           case EventType::CREATE_ACTION:

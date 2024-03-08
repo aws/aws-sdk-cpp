@@ -22,6 +22,7 @@ namespace Aws
 
         static const int RULE_MATCHING_HASH = HashingUtils::HashString("RULE_MATCHING");
         static const int ML_MATCHING_HASH = HashingUtils::HashString("ML_MATCHING");
+        static const int PROVIDER_HASH = HashingUtils::HashString("PROVIDER");
 
 
         ResolutionType GetResolutionTypeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == ML_MATCHING_HASH)
           {
             return ResolutionType::ML_MATCHING;
+          }
+          else if (hashCode == PROVIDER_HASH)
+          {
+            return ResolutionType::PROVIDER;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -49,10 +54,14 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResolutionType::NOT_SET:
+            return {};
           case ResolutionType::RULE_MATCHING:
             return "RULE_MATCHING";
           case ResolutionType::ML_MATCHING:
             return "ML_MATCHING";
+          case ResolutionType::PROVIDER:
+            return "PROVIDER";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

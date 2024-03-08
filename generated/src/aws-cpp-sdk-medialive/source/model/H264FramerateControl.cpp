@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case H264FramerateControl::NOT_SET:
+            return {};
           case H264FramerateControl::INITIALIZE_FROM_SOURCE:
             return "INITIALIZE_FROM_SOURCE";
           case H264FramerateControl::SPECIFIED:

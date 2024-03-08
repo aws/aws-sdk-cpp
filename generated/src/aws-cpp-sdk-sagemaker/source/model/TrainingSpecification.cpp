@@ -27,7 +27,8 @@ TrainingSpecification::TrainingSpecification() :
     m_supportsDistributedTrainingHasBeenSet(false),
     m_metricDefinitionsHasBeenSet(false),
     m_trainingChannelsHasBeenSet(false),
-    m_supportedTuningJobObjectiveMetricsHasBeenSet(false)
+    m_supportedTuningJobObjectiveMetricsHasBeenSet(false),
+    m_additionalS3DataSourceHasBeenSet(false)
 {
 }
 
@@ -40,7 +41,8 @@ TrainingSpecification::TrainingSpecification(JsonView jsonValue) :
     m_supportsDistributedTrainingHasBeenSet(false),
     m_metricDefinitionsHasBeenSet(false),
     m_trainingChannelsHasBeenSet(false),
-    m_supportedTuningJobObjectiveMetricsHasBeenSet(false)
+    m_supportedTuningJobObjectiveMetricsHasBeenSet(false),
+    m_additionalS3DataSourceHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -116,6 +118,13 @@ TrainingSpecification& TrainingSpecification::operator =(JsonView jsonValue)
       m_supportedTuningJobObjectiveMetrics.push_back(supportedTuningJobObjectiveMetricsJsonList[supportedTuningJobObjectiveMetricsIndex].AsObject());
     }
     m_supportedTuningJobObjectiveMetricsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AdditionalS3DataSource"))
+  {
+    m_additionalS3DataSource = jsonValue.GetObject("AdditionalS3DataSource");
+
+    m_additionalS3DataSourceHasBeenSet = true;
   }
 
   return *this;
@@ -195,6 +204,12 @@ JsonValue TrainingSpecification::Jsonize() const
      supportedTuningJobObjectiveMetricsJsonList[supportedTuningJobObjectiveMetricsIndex].AsObject(m_supportedTuningJobObjectiveMetrics[supportedTuningJobObjectiveMetricsIndex].Jsonize());
    }
    payload.WithArray("SupportedTuningJobObjectiveMetrics", std::move(supportedTuningJobObjectiveMetricsJsonList));
+
+  }
+
+  if(m_additionalS3DataSourceHasBeenSet)
+  {
+   payload.WithObject("AdditionalS3DataSource", m_additionalS3DataSource.Jsonize());
 
   }
 

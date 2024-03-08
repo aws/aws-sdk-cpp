@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FleetState::NOT_SET:
+            return {};
           case FleetState::STARTING:
             return "STARTING";
           case FleetState::RUNNING:

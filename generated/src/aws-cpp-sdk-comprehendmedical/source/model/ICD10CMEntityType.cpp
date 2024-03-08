@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ICD10CMEntityType::NOT_SET:
+            return {};
           case ICD10CMEntityType::DX_NAME:
             return "DX_NAME";
           case ICD10CMEntityType::TIME_EXPRESSION:

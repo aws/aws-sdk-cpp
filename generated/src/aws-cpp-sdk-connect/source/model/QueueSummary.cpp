@@ -23,7 +23,9 @@ QueueSummary::QueueSummary() :
     m_arnHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_queueType(QueueType::NOT_SET),
-    m_queueTypeHasBeenSet(false)
+    m_queueTypeHasBeenSet(false),
+    m_lastModifiedTimeHasBeenSet(false),
+    m_lastModifiedRegionHasBeenSet(false)
 {
 }
 
@@ -32,7 +34,9 @@ QueueSummary::QueueSummary(JsonView jsonValue) :
     m_arnHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_queueType(QueueType::NOT_SET),
-    m_queueTypeHasBeenSet(false)
+    m_queueTypeHasBeenSet(false),
+    m_lastModifiedTimeHasBeenSet(false),
+    m_lastModifiedRegionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -67,6 +71,20 @@ QueueSummary& QueueSummary::operator =(JsonView jsonValue)
     m_queueTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("LastModifiedTime"))
+  {
+    m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
+
+    m_lastModifiedTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LastModifiedRegion"))
+  {
+    m_lastModifiedRegion = jsonValue.GetString("LastModifiedRegion");
+
+    m_lastModifiedRegionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -95,6 +113,17 @@ JsonValue QueueSummary::Jsonize() const
   if(m_queueTypeHasBeenSet)
   {
    payload.WithString("QueueType", QueueTypeMapper::GetNameForQueueType(m_queueType));
+  }
+
+  if(m_lastModifiedTimeHasBeenSet)
+  {
+   payload.WithDouble("LastModifiedTime", m_lastModifiedTime.SecondsWithMSPrecision());
+  }
+
+  if(m_lastModifiedRegionHasBeenSet)
+  {
+   payload.WithString("LastModifiedRegion", m_lastModifiedRegion);
+
   }
 
   return payload;

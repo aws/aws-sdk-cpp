@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DriftType::NOT_SET:
+            return {};
           case DriftType::ApplicationCompliance:
             return "ApplicationCompliance";
           default:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ClusterMode::NOT_SET:
+            return {};
           case ClusterMode::enabled:
             return "enabled";
           case ClusterMode::disabled:

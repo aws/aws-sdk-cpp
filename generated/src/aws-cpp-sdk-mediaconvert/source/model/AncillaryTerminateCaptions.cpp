@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AncillaryTerminateCaptions::NOT_SET:
+            return {};
           case AncillaryTerminateCaptions::END_OF_INPUT:
             return "END_OF_INPUT";
           case AncillaryTerminateCaptions::DISABLED:

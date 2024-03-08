@@ -37,7 +37,8 @@ Replication::Replication() :
     m_recoveryCheckpointHasBeenSet(false),
     m_replicationCreateTimeHasBeenSet(false),
     m_replicationUpdateTimeHasBeenSet(false),
-    m_replicationLastStopTimeHasBeenSet(false)
+    m_replicationLastStopTimeHasBeenSet(false),
+    m_replicationDeprovisionTimeHasBeenSet(false)
 {
 }
 
@@ -60,7 +61,8 @@ Replication::Replication(JsonView jsonValue) :
     m_recoveryCheckpointHasBeenSet(false),
     m_replicationCreateTimeHasBeenSet(false),
     m_replicationUpdateTimeHasBeenSet(false),
-    m_replicationLastStopTimeHasBeenSet(false)
+    m_replicationLastStopTimeHasBeenSet(false),
+    m_replicationDeprovisionTimeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -196,6 +198,13 @@ Replication& Replication::operator =(JsonView jsonValue)
     m_replicationLastStopTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ReplicationDeprovisionTime"))
+  {
+    m_replicationDeprovisionTime = jsonValue.GetDouble("ReplicationDeprovisionTime");
+
+    m_replicationDeprovisionTimeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -309,6 +318,11 @@ JsonValue Replication::Jsonize() const
   if(m_replicationLastStopTimeHasBeenSet)
   {
    payload.WithDouble("ReplicationLastStopTime", m_replicationLastStopTime.SecondsWithMSPrecision());
+  }
+
+  if(m_replicationDeprovisionTimeHasBeenSet)
+  {
+   payload.WithDouble("ReplicationDeprovisionTime", m_replicationDeprovisionTime.SecondsWithMSPrecision());
   }
 
   return payload;

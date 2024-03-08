@@ -12,6 +12,7 @@
 #include <aws/core/http/HttpClientFactory.h>
 #include <aws/core/monitoring/MonitoringManager.h>
 #include <aws/core/Core_EXPORTS.h>
+#include <aws/core/VersionConfig.h>
 #include <aws/crt/io/Bootstrap.h>
 #include <aws/crt/io/TlsOptions.h>
 

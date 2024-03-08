@@ -35,8 +35,8 @@ namespace Batch
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef BatchClientConfiguration ClientConfigurationType;
       typedef BatchEndpointProvider EndpointProviderType;
@@ -46,14 +46,14 @@ namespace Batch
         * is not specified, it will be initialized to default values.
         */
         BatchClient(const Aws::Batch::BatchClientConfiguration& clientConfiguration = Aws::Batch::BatchClientConfiguration(),
-                    std::shared_ptr<BatchEndpointProviderBase> endpointProvider = Aws::MakeShared<BatchEndpointProvider>(ALLOCATION_TAG));
+                    std::shared_ptr<BatchEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         BatchClient(const Aws::Auth::AWSCredentials& credentials,
-                    std::shared_ptr<BatchEndpointProviderBase> endpointProvider = Aws::MakeShared<BatchEndpointProvider>(ALLOCATION_TAG),
+                    std::shared_ptr<BatchEndpointProviderBase> endpointProvider = nullptr,
                     const Aws::Batch::BatchClientConfiguration& clientConfiguration = Aws::Batch::BatchClientConfiguration());
 
        /**
@@ -61,7 +61,7 @@ namespace Batch
         * the default http client factory will be used
         */
         BatchClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                    std::shared_ptr<BatchEndpointProviderBase> endpointProvider = Aws::MakeShared<BatchEndpointProvider>(ALLOCATION_TAG),
+                    std::shared_ptr<BatchEndpointProviderBase> endpointProvider = nullptr,
                     const Aws::Batch::BatchClientConfiguration& clientConfiguration = Aws::Batch::BatchClientConfiguration());
 
 

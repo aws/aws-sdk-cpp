@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InventoryIncludedObjectVersions::NOT_SET:
+            return {};
           case InventoryIncludedObjectVersions::All:
             return "All";
           case InventoryIncludedObjectVersions::Current:

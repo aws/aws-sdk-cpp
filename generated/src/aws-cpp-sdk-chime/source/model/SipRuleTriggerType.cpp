@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SipRuleTriggerType::NOT_SET:
+            return {};
           case SipRuleTriggerType::ToPhoneNumber:
             return "ToPhoneNumber";
           case SipRuleTriggerType::RequestUriHostname:

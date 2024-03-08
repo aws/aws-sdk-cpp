@@ -23,7 +23,8 @@ CreateDataSourceRequest::CreateDataSourceRequest() :
     m_permissionsHasBeenSet(false),
     m_vpcConnectionPropertiesHasBeenSet(false),
     m_sslPropertiesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_folderArnsHasBeenSet(false)
 {
 }
 
@@ -91,6 +92,17 @@ Aws::String CreateDataSourceRequest::SerializePayload() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_folderArnsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> folderArnsJsonList(m_folderArns.size());
+   for(unsigned folderArnsIndex = 0; folderArnsIndex < folderArnsJsonList.GetLength(); ++folderArnsIndex)
+   {
+     folderArnsJsonList[folderArnsIndex].AsString(m_folderArns[folderArnsIndex]);
+   }
+   payload.WithArray("FolderArns", std::move(folderArnsJsonList));
 
   }
 

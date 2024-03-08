@@ -66,8 +66,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* SecurityLakeClient::SERVICE_NAME = "securitylake";
-const char* SecurityLakeClient::ALLOCATION_TAG = "SecurityLakeClient";
+namespace Aws
+{
+  namespace SecurityLake
+  {
+    const char SERVICE_NAME[] = "securitylake";
+    const char ALLOCATION_TAG[] = "SecurityLakeClient";
+  }
+}
+const char* SecurityLakeClient::GetServiceName() {return SERVICE_NAME;}
+const char* SecurityLakeClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 SecurityLakeClient::SecurityLakeClient(const SecurityLake::SecurityLakeClientConfiguration& clientConfiguration,
                                        std::shared_ptr<SecurityLakeEndpointProviderBase> endpointProvider) :
@@ -79,7 +87,7 @@ SecurityLakeClient::SecurityLakeClient(const SecurityLake::SecurityLakeClientCon
             Aws::MakeShared<SecurityLakeErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SecurityLakeEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -95,7 +103,7 @@ SecurityLakeClient::SecurityLakeClient(const AWSCredentials& credentials,
             Aws::MakeShared<SecurityLakeErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SecurityLakeEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -111,7 +119,7 @@ SecurityLakeClient::SecurityLakeClient(const std::shared_ptr<AWSCredentialsProvi
             Aws::MakeShared<SecurityLakeErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SecurityLakeEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AnomalyDetectionTaskStatus::NOT_SET:
+            return {};
           case AnomalyDetectionTaskStatus::PENDING:
             return "PENDING";
           case AnomalyDetectionTaskStatus::IN_PROGRESS:

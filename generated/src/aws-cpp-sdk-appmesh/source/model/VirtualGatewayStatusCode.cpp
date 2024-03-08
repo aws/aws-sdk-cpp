@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VirtualGatewayStatusCode::NOT_SET:
+            return {};
           case VirtualGatewayStatusCode::ACTIVE:
             return "ACTIVE";
           case VirtualGatewayStatusCode::INACTIVE:

@@ -24,6 +24,10 @@ namespace Aws
         static const int POOLS_HASH = HashingUtils::HashString("POOLS");
         static const int CONFIGURATION_SETS_HASH = HashingUtils::HashString("CONFIGURATION_SETS");
         static const int OPT_OUT_LISTS_HASH = HashingUtils::HashString("OPT_OUT_LISTS");
+        static const int SENDER_IDS_HASH = HashingUtils::HashString("SENDER_IDS");
+        static const int REGISTRATIONS_HASH = HashingUtils::HashString("REGISTRATIONS");
+        static const int REGISTRATION_ATTACHMENTS_HASH = HashingUtils::HashString("REGISTRATION_ATTACHMENTS");
+        static const int VERIFIED_DESTINATION_NUMBERS_HASH = HashingUtils::HashString("VERIFIED_DESTINATION_NUMBERS");
 
 
         AccountLimitName GetAccountLimitNameForName(const Aws::String& name)
@@ -45,6 +49,22 @@ namespace Aws
           {
             return AccountLimitName::OPT_OUT_LISTS;
           }
+          else if (hashCode == SENDER_IDS_HASH)
+          {
+            return AccountLimitName::SENDER_IDS;
+          }
+          else if (hashCode == REGISTRATIONS_HASH)
+          {
+            return AccountLimitName::REGISTRATIONS;
+          }
+          else if (hashCode == REGISTRATION_ATTACHMENTS_HASH)
+          {
+            return AccountLimitName::REGISTRATION_ATTACHMENTS;
+          }
+          else if (hashCode == VERIFIED_DESTINATION_NUMBERS_HASH)
+          {
+            return AccountLimitName::VERIFIED_DESTINATION_NUMBERS;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -59,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AccountLimitName::NOT_SET:
+            return {};
           case AccountLimitName::PHONE_NUMBERS:
             return "PHONE_NUMBERS";
           case AccountLimitName::POOLS:
@@ -67,6 +89,14 @@ namespace Aws
             return "CONFIGURATION_SETS";
           case AccountLimitName::OPT_OUT_LISTS:
             return "OPT_OUT_LISTS";
+          case AccountLimitName::SENDER_IDS:
+            return "SENDER_IDS";
+          case AccountLimitName::REGISTRATIONS:
+            return "REGISTRATIONS";
+          case AccountLimitName::REGISTRATION_ATTACHMENTS:
+            return "REGISTRATION_ATTACHMENTS";
+          case AccountLimitName::VERIFIED_DESTINATION_NUMBERS:
+            return "VERIFIED_DESTINATION_NUMBERS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

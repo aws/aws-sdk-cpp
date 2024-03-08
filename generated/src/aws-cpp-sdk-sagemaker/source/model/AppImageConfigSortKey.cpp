@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AppImageConfigSortKey::NOT_SET:
+            return {};
           case AppImageConfigSortKey::CreationTime:
             return "CreationTime";
           case AppImageConfigSortKey::LastModifiedTime:

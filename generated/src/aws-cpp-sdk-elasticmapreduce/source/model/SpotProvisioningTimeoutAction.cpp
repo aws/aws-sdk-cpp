@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SpotProvisioningTimeoutAction::NOT_SET:
+            return {};
           case SpotProvisioningTimeoutAction::SWITCH_TO_ON_DEMAND:
             return "SWITCH_TO_ON_DEMAND";
           case SpotProvisioningTimeoutAction::TERMINATE_CLUSTER:

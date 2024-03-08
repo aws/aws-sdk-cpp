@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case GameServerProtectionPolicy::NOT_SET:
+            return {};
           case GameServerProtectionPolicy::NO_PROTECTION:
             return "NO_PROTECTION";
           case GameServerProtectionPolicy::FULL_PROTECTION:

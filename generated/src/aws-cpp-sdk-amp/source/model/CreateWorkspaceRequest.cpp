@@ -16,6 +16,7 @@ CreateWorkspaceRequest::CreateWorkspaceRequest() :
     m_aliasHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
+    m_kmsKeyArnHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -33,6 +34,12 @@ Aws::String CreateWorkspaceRequest::SerializePayload() const
   if(m_clientTokenHasBeenSet)
   {
    payload.WithString("clientToken", m_clientToken);
+
+  }
+
+  if(m_kmsKeyArnHasBeenSet)
+  {
+   payload.WithString("kmsKeyArn", m_kmsKeyArn);
 
   }
 

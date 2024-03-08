@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case GenericDataRelationshipType::NOT_SET:
+            return {};
           case GenericDataRelationshipType::HAS_MANY:
             return "HAS_MANY";
           case GenericDataRelationshipType::HAS_ONE:

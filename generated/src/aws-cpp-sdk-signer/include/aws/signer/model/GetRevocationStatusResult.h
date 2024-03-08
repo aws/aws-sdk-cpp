@@ -34,50 +34,50 @@ namespace Model
 
 
     /**
-     * <p>A list of revoked entities (including one or more of the signing profile ARN,
-     * signing job ID, and certificate hash) supplied as input to the API.</p>
+     * <p>A list of revoked entities (including zero or more of the signing profile
+     * ARN, signing job ARN, and certificate hashes) supplied as input to the API.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRevokedEntities() const{ return m_revokedEntities; }
 
     /**
-     * <p>A list of revoked entities (including one or more of the signing profile ARN,
-     * signing job ID, and certificate hash) supplied as input to the API.</p>
+     * <p>A list of revoked entities (including zero or more of the signing profile
+     * ARN, signing job ARN, and certificate hashes) supplied as input to the API.</p>
      */
     inline void SetRevokedEntities(const Aws::Vector<Aws::String>& value) { m_revokedEntities = value; }
 
     /**
-     * <p>A list of revoked entities (including one or more of the signing profile ARN,
-     * signing job ID, and certificate hash) supplied as input to the API.</p>
+     * <p>A list of revoked entities (including zero or more of the signing profile
+     * ARN, signing job ARN, and certificate hashes) supplied as input to the API.</p>
      */
     inline void SetRevokedEntities(Aws::Vector<Aws::String>&& value) { m_revokedEntities = std::move(value); }
 
     /**
-     * <p>A list of revoked entities (including one or more of the signing profile ARN,
-     * signing job ID, and certificate hash) supplied as input to the API.</p>
+     * <p>A list of revoked entities (including zero or more of the signing profile
+     * ARN, signing job ARN, and certificate hashes) supplied as input to the API.</p>
      */
     inline GetRevocationStatusResult& WithRevokedEntities(const Aws::Vector<Aws::String>& value) { SetRevokedEntities(value); return *this;}
 
     /**
-     * <p>A list of revoked entities (including one or more of the signing profile ARN,
-     * signing job ID, and certificate hash) supplied as input to the API.</p>
+     * <p>A list of revoked entities (including zero or more of the signing profile
+     * ARN, signing job ARN, and certificate hashes) supplied as input to the API.</p>
      */
     inline GetRevocationStatusResult& WithRevokedEntities(Aws::Vector<Aws::String>&& value) { SetRevokedEntities(std::move(value)); return *this;}
 
     /**
-     * <p>A list of revoked entities (including one or more of the signing profile ARN,
-     * signing job ID, and certificate hash) supplied as input to the API.</p>
+     * <p>A list of revoked entities (including zero or more of the signing profile
+     * ARN, signing job ARN, and certificate hashes) supplied as input to the API.</p>
      */
     inline GetRevocationStatusResult& AddRevokedEntities(const Aws::String& value) { m_revokedEntities.push_back(value); return *this; }
 
     /**
-     * <p>A list of revoked entities (including one or more of the signing profile ARN,
-     * signing job ID, and certificate hash) supplied as input to the API.</p>
+     * <p>A list of revoked entities (including zero or more of the signing profile
+     * ARN, signing job ARN, and certificate hashes) supplied as input to the API.</p>
      */
     inline GetRevocationStatusResult& AddRevokedEntities(Aws::String&& value) { m_revokedEntities.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of revoked entities (including one or more of the signing profile ARN,
-     * signing job ID, and certificate hash) supplied as input to the API.</p>
+     * <p>A list of revoked entities (including zero or more of the signing profile
+     * ARN, signing job ARN, and certificate hashes) supplied as input to the API.</p>
      */
     inline GetRevocationStatusResult& AddRevokedEntities(const char* value) { m_revokedEntities.push_back(value); return *this; }
 

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AssessmentReportType::NOT_SET:
+            return {};
           case AssessmentReportType::pdf:
             return "pdf";
           case AssessmentReportType::csv:

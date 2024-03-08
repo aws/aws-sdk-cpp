@@ -16,7 +16,8 @@ namespace Model
   enum class TunnelProtocol
   {
     NOT_SET,
-    GRE
+    GRE,
+    NO_ENCAP
   };
 
 namespace TunnelProtocolMapper

@@ -8,6 +8,7 @@
 #include <aws/amplify/AmplifyRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/amplify/model/CertificateSettings.h>
 #include <aws/amplify/model/SubDomainSetting.h>
 #include <utility>
 
@@ -276,6 +277,37 @@ namespace Model
      */
     inline UpdateDomainAssociationRequest& WithAutoSubDomainIAMRole(const char* value) { SetAutoSubDomainIAMRole(value); return *this;}
 
+
+    /**
+     * <p>The type of SSL/TLS certificate to use for your custom domain.</p>
+     */
+    inline const CertificateSettings& GetCertificateSettings() const{ return m_certificateSettings; }
+
+    /**
+     * <p>The type of SSL/TLS certificate to use for your custom domain.</p>
+     */
+    inline bool CertificateSettingsHasBeenSet() const { return m_certificateSettingsHasBeenSet; }
+
+    /**
+     * <p>The type of SSL/TLS certificate to use for your custom domain.</p>
+     */
+    inline void SetCertificateSettings(const CertificateSettings& value) { m_certificateSettingsHasBeenSet = true; m_certificateSettings = value; }
+
+    /**
+     * <p>The type of SSL/TLS certificate to use for your custom domain.</p>
+     */
+    inline void SetCertificateSettings(CertificateSettings&& value) { m_certificateSettingsHasBeenSet = true; m_certificateSettings = std::move(value); }
+
+    /**
+     * <p>The type of SSL/TLS certificate to use for your custom domain.</p>
+     */
+    inline UpdateDomainAssociationRequest& WithCertificateSettings(const CertificateSettings& value) { SetCertificateSettings(value); return *this;}
+
+    /**
+     * <p>The type of SSL/TLS certificate to use for your custom domain.</p>
+     */
+    inline UpdateDomainAssociationRequest& WithCertificateSettings(CertificateSettings&& value) { SetCertificateSettings(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_appId;
@@ -295,6 +327,9 @@ namespace Model
 
     Aws::String m_autoSubDomainIAMRole;
     bool m_autoSubDomainIAMRoleHasBeenSet = false;
+
+    CertificateSettings m_certificateSettings;
+    bool m_certificateSettingsHasBeenSet = false;
   };
 
 } // namespace Model

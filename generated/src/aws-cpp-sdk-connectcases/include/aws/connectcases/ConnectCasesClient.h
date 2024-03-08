@@ -28,8 +28,8 @@ namespace ConnectCases
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef ConnectCasesClientConfiguration ClientConfigurationType;
       typedef ConnectCasesEndpointProvider EndpointProviderType;
@@ -39,14 +39,14 @@ namespace ConnectCases
         * is not specified, it will be initialized to default values.
         */
         ConnectCasesClient(const Aws::ConnectCases::ConnectCasesClientConfiguration& clientConfiguration = Aws::ConnectCases::ConnectCasesClientConfiguration(),
-                           std::shared_ptr<ConnectCasesEndpointProviderBase> endpointProvider = Aws::MakeShared<ConnectCasesEndpointProvider>(ALLOCATION_TAG));
+                           std::shared_ptr<ConnectCasesEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         ConnectCasesClient(const Aws::Auth::AWSCredentials& credentials,
-                           std::shared_ptr<ConnectCasesEndpointProviderBase> endpointProvider = Aws::MakeShared<ConnectCasesEndpointProvider>(ALLOCATION_TAG),
+                           std::shared_ptr<ConnectCasesEndpointProviderBase> endpointProvider = nullptr,
                            const Aws::ConnectCases::ConnectCasesClientConfiguration& clientConfiguration = Aws::ConnectCases::ConnectCasesClientConfiguration());
 
        /**
@@ -54,7 +54,7 @@ namespace ConnectCases
         * the default http client factory will be used
         */
         ConnectCasesClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                           std::shared_ptr<ConnectCasesEndpointProviderBase> endpointProvider = Aws::MakeShared<ConnectCasesEndpointProvider>(ALLOCATION_TAG),
+                           std::shared_ptr<ConnectCasesEndpointProviderBase> endpointProvider = nullptr,
                            const Aws::ConnectCases::ConnectCasesClientConfiguration& clientConfiguration = Aws::ConnectCases::ConnectCasesClientConfiguration());
 
 
@@ -135,15 +135,20 @@ namespace ConnectCases
         }
 
         /**
-         * <p>Creates a case in the specified Cases domain. Case system and custom fields
-         * are taken as an array id/value pairs with a declared data types.</p> 
-         * <p>The following fields are required when creating a case:</p> <pre><code>
-         * &lt;ul&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;customer_id&lt;/code&gt; - You must
-         * provide the full customer profile ARN in this format:
-         * &lt;code&gt;arn:aws:profile:your AWS Region:your AWS account ID:domains/profiles
-         * domain name/profiles/profile ID&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;li&gt;
-         * &lt;p&gt; &lt;code&gt;title&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt;
-         * &lt;/note&gt; </code></pre><p><h3>See Also:</h3>   <a
+         *  <p>If you provide a value for <code>PerformedBy.UserArn</code> you must
+         * also have <a
+         * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">connect:DescribeUser</a>
+         * permission on the User ARN resource that you provide</p>  <pre><code>
+         * &lt;p&gt;Creates a case in the specified Cases domain. Case system and custom
+         * fields are taken as an array id/value pairs with a declared data
+         * types.&lt;/p&gt; &lt;p&gt;The following fields are required when creating a
+         * case:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;
+         * &lt;code&gt;customer_id&lt;/code&gt; - You must provide the full customer
+         * profile ARN in this format:
+         * &lt;code&gt;arn:aws:profile:your_AWS_Region:your_AWS_account
+         * ID:domains/your_profiles_domain_name/profiles/profile_ID&lt;/code&gt; &lt;/p&gt;
+         * &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;title&lt;/code&gt; &lt;/p&gt;
+         * &lt;/li&gt; &lt;/ul&gt; </code></pre><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/CreateCase">AWS
          * API Reference</a></p>
          */
@@ -260,12 +265,16 @@ namespace ConnectCases
 
         /**
          * <p>Creates a related item (comments, tasks, and contacts) and associates it with
-         * a case.</p>  <p>A Related Item is a resource that is associated with a
-         * case. It may or may not have an external identifier linking it to an external
-         * resource (for example, a <code>contactArn</code>). All Related Items have their
-         * own internal identifier, the <code>relatedItemArn</code>. Examples of related
-         * items include <code>comments</code> and <code>contacts</code>.</p>
-         * <p><h3>See Also:</h3>   <a
+         * a case.</p>  <ul> <li> <p>A Related Item is a resource that is associated
+         * with a case. It may or may not have an external identifier linking it to an
+         * external resource (for example, a <code>contactArn</code>). All Related Items
+         * have their own internal identifier, the <code>relatedItemArn</code>. Examples of
+         * related items include <code>comments</code> and <code>contacts</code>.</p> </li>
+         * <li> <p>If you provide a value for <code>performedBy.userArn</code> you must
+         * also have <a
+         * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">DescribeUser</a>
+         * permission on the ARN of the user that you provide.</p> </li> </ul> <pre><code>
+         * &lt;/note&gt; </code></pre><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/CreateRelatedItem">AWS
          * API Reference</a></p>
          */
@@ -374,6 +383,32 @@ namespace ConnectCases
         void GetCaseAsync(const GetCaseRequestT& request, const GetCaseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ConnectCasesClient::GetCase, request, handler, context);
+        }
+
+        /**
+         * <p>Returns the audit history about a specific case if it exists.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/GetCaseAuditEvents">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetCaseAuditEventsOutcome GetCaseAuditEvents(const Model::GetCaseAuditEventsRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetCaseAuditEvents that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetCaseAuditEventsRequestT = Model::GetCaseAuditEventsRequest>
+        Model::GetCaseAuditEventsOutcomeCallable GetCaseAuditEventsCallable(const GetCaseAuditEventsRequestT& request) const
+        {
+            return SubmitCallable(&ConnectCasesClient::GetCaseAuditEvents, request);
+        }
+
+        /**
+         * An Async wrapper for GetCaseAuditEvents that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetCaseAuditEventsRequestT = Model::GetCaseAuditEventsRequest>
+        void GetCaseAuditEventsAsync(const GetCaseAuditEventsRequestT& request, const GetCaseAuditEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectCasesClient::GetCaseAuditEvents, request, handler, context);
         }
 
         /**
@@ -659,8 +694,11 @@ namespace ConnectCases
         }
 
         /**
-         * <p>API for adding case event publishing configuration</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Adds case event publishing configuration. For a complete list of fields you
+         * can add to the event message, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/case-fields.html">Create
+         * case fields</a> in the <i>Amazon Connect Administrator Guide</i> </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/PutCaseEventConfiguration">AWS
          * API Reference</a></p>
          */
@@ -792,10 +830,15 @@ namespace ConnectCases
         }
 
         /**
-         * <p>Updates the values of fields on a case. Fields to be updated are received as
-         * an array of id/value pairs identical to the <code>CreateCase</code> input .</p>
-         * <p>If the action is successful, the service sends back an HTTP 200 response with
-         * an empty HTTP body.</p><p><h3>See Also:</h3>   <a
+         *  <p>If you provide a value for <code>PerformedBy.UserArn</code> you must
+         * also have <a
+         * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">connect:DescribeUser</a>
+         * permission on the User ARN resource that you provide</p>  <pre><code>
+         * &lt;p&gt;Updates the values of fields on a case. Fields to be updated are
+         * received as an array of id/value pairs identical to the
+         * &lt;code&gt;CreateCase&lt;/code&gt; input .&lt;/p&gt; &lt;p&gt;If the action is
+         * successful, the service sends back an HTTP 200 response with an empty HTTP
+         * body.&lt;/p&gt; </code></pre><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connectcases-2022-10-03/UpdateCase">AWS
          * API Reference</a></p>
          */

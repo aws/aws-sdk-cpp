@@ -18,7 +18,9 @@ namespace Model
     NOT_SET,
     DASHBOARD,
     ANALYSIS,
-    DATASET
+    DATASET,
+    DATASOURCE,
+    TOPIC
   };
 
 namespace MemberTypeMapper

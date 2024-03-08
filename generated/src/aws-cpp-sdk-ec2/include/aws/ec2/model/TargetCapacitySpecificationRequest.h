@@ -36,7 +36,7 @@ namespace Model
    * the On-Demand Instances and Spot Instances in your request, EC2 Fleet will
    * launch instances until it reaches the maximum amount that you're willing to pay.
    * When the maximum amount you're willing to pay is reached, the fleet stops
-   * launching instances even if it hasn’t met the target capacity. The
+   * launching instances even if it hasn't met the target capacity. The
    * <code>MaxTotalPrice</code> parameters are located in <a
    * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_OnDemandOptionsRequest">OnDemandOptionsRequest</a>
    * and <a
@@ -57,26 +57,26 @@ namespace Model
 
 
     /**
-     * <p>The number of units to request, filled using
-     * <code>DefaultTargetCapacityType</code>.</p>
+     * <p>The number of units to request, filled using the default target capacity
+     * type.</p>
      */
     inline int GetTotalTargetCapacity() const{ return m_totalTargetCapacity; }
 
     /**
-     * <p>The number of units to request, filled using
-     * <code>DefaultTargetCapacityType</code>.</p>
+     * <p>The number of units to request, filled using the default target capacity
+     * type.</p>
      */
     inline bool TotalTargetCapacityHasBeenSet() const { return m_totalTargetCapacityHasBeenSet; }
 
     /**
-     * <p>The number of units to request, filled using
-     * <code>DefaultTargetCapacityType</code>.</p>
+     * <p>The number of units to request, filled using the default target capacity
+     * type.</p>
      */
     inline void SetTotalTargetCapacity(int value) { m_totalTargetCapacityHasBeenSet = true; m_totalTargetCapacity = value; }
 
     /**
-     * <p>The number of units to request, filled using
-     * <code>DefaultTargetCapacityType</code>.</p>
+     * <p>The number of units to request, filled using the default target capacity
+     * type.</p>
      */
     inline TargetCapacitySpecificationRequest& WithTotalTargetCapacity(int value) { SetTotalTargetCapacity(value); return *this;}
 
@@ -124,81 +124,75 @@ namespace Model
 
 
     /**
-     * <p>The default <code>TotalTargetCapacity</code>, which is either
-     * <code>Spot</code> or <code>On-Demand</code>.</p>
+     * <p>The default target capacity type.</p>
      */
     inline const DefaultTargetCapacityType& GetDefaultTargetCapacityType() const{ return m_defaultTargetCapacityType; }
 
     /**
-     * <p>The default <code>TotalTargetCapacity</code>, which is either
-     * <code>Spot</code> or <code>On-Demand</code>.</p>
+     * <p>The default target capacity type.</p>
      */
     inline bool DefaultTargetCapacityTypeHasBeenSet() const { return m_defaultTargetCapacityTypeHasBeenSet; }
 
     /**
-     * <p>The default <code>TotalTargetCapacity</code>, which is either
-     * <code>Spot</code> or <code>On-Demand</code>.</p>
+     * <p>The default target capacity type.</p>
      */
     inline void SetDefaultTargetCapacityType(const DefaultTargetCapacityType& value) { m_defaultTargetCapacityTypeHasBeenSet = true; m_defaultTargetCapacityType = value; }
 
     /**
-     * <p>The default <code>TotalTargetCapacity</code>, which is either
-     * <code>Spot</code> or <code>On-Demand</code>.</p>
+     * <p>The default target capacity type.</p>
      */
     inline void SetDefaultTargetCapacityType(DefaultTargetCapacityType&& value) { m_defaultTargetCapacityTypeHasBeenSet = true; m_defaultTargetCapacityType = std::move(value); }
 
     /**
-     * <p>The default <code>TotalTargetCapacity</code>, which is either
-     * <code>Spot</code> or <code>On-Demand</code>.</p>
+     * <p>The default target capacity type.</p>
      */
     inline TargetCapacitySpecificationRequest& WithDefaultTargetCapacityType(const DefaultTargetCapacityType& value) { SetDefaultTargetCapacityType(value); return *this;}
 
     /**
-     * <p>The default <code>TotalTargetCapacity</code>, which is either
-     * <code>Spot</code> or <code>On-Demand</code>.</p>
+     * <p>The default target capacity type.</p>
      */
     inline TargetCapacitySpecificationRequest& WithDefaultTargetCapacityType(DefaultTargetCapacityType&& value) { SetDefaultTargetCapacityType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The unit for the target capacity. <code>TargetCapacityUnitType</code> can
-     * only be specified when <code>InstanceRequirements</code> is specified.</p>
-     * <p>Default: <code>units</code> (translates to number of instances)</p>
+     * <p>The unit for the target capacity. You can specify this parameter only when
+     * using attributed-based instance type selection.</p> <p>Default:
+     * <code>units</code> (the number of instances)</p>
      */
     inline const TargetCapacityUnitType& GetTargetCapacityUnitType() const{ return m_targetCapacityUnitType; }
 
     /**
-     * <p>The unit for the target capacity. <code>TargetCapacityUnitType</code> can
-     * only be specified when <code>InstanceRequirements</code> is specified.</p>
-     * <p>Default: <code>units</code> (translates to number of instances)</p>
+     * <p>The unit for the target capacity. You can specify this parameter only when
+     * using attributed-based instance type selection.</p> <p>Default:
+     * <code>units</code> (the number of instances)</p>
      */
     inline bool TargetCapacityUnitTypeHasBeenSet() const { return m_targetCapacityUnitTypeHasBeenSet; }
 
     /**
-     * <p>The unit for the target capacity. <code>TargetCapacityUnitType</code> can
-     * only be specified when <code>InstanceRequirements</code> is specified.</p>
-     * <p>Default: <code>units</code> (translates to number of instances)</p>
+     * <p>The unit for the target capacity. You can specify this parameter only when
+     * using attributed-based instance type selection.</p> <p>Default:
+     * <code>units</code> (the number of instances)</p>
      */
     inline void SetTargetCapacityUnitType(const TargetCapacityUnitType& value) { m_targetCapacityUnitTypeHasBeenSet = true; m_targetCapacityUnitType = value; }
 
     /**
-     * <p>The unit for the target capacity. <code>TargetCapacityUnitType</code> can
-     * only be specified when <code>InstanceRequirements</code> is specified.</p>
-     * <p>Default: <code>units</code> (translates to number of instances)</p>
+     * <p>The unit for the target capacity. You can specify this parameter only when
+     * using attributed-based instance type selection.</p> <p>Default:
+     * <code>units</code> (the number of instances)</p>
      */
     inline void SetTargetCapacityUnitType(TargetCapacityUnitType&& value) { m_targetCapacityUnitTypeHasBeenSet = true; m_targetCapacityUnitType = std::move(value); }
 
     /**
-     * <p>The unit for the target capacity. <code>TargetCapacityUnitType</code> can
-     * only be specified when <code>InstanceRequirements</code> is specified.</p>
-     * <p>Default: <code>units</code> (translates to number of instances)</p>
+     * <p>The unit for the target capacity. You can specify this parameter only when
+     * using attributed-based instance type selection.</p> <p>Default:
+     * <code>units</code> (the number of instances)</p>
      */
     inline TargetCapacitySpecificationRequest& WithTargetCapacityUnitType(const TargetCapacityUnitType& value) { SetTargetCapacityUnitType(value); return *this;}
 
     /**
-     * <p>The unit for the target capacity. <code>TargetCapacityUnitType</code> can
-     * only be specified when <code>InstanceRequirements</code> is specified.</p>
-     * <p>Default: <code>units</code> (translates to number of instances)</p>
+     * <p>The unit for the target capacity. You can specify this parameter only when
+     * using attributed-based instance type selection.</p> <p>Default:
+     * <code>units</code> (the number of instances)</p>
      */
     inline TargetCapacitySpecificationRequest& WithTargetCapacityUnitType(TargetCapacityUnitType&& value) { SetTargetCapacityUnitType(std::move(value)); return *this;}
 

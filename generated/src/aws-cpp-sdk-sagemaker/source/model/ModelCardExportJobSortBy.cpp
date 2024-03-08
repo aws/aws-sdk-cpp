@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ModelCardExportJobSortBy::NOT_SET:
+            return {};
           case ModelCardExportJobSortBy::Name:
             return "Name";
           case ModelCardExportJobSortBy::CreationTime:

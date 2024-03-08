@@ -79,52 +79,131 @@ namespace Model
 
     /**
      * <p>A JSON string that contains the Insights event types that you want to log on
-     * a trail. The valid Insights types in this release are
+     * a trail or event data store. The valid Insights types are
      * <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code>.</p>
      */
     inline const Aws::Vector<InsightSelector>& GetInsightSelectors() const{ return m_insightSelectors; }
 
     /**
      * <p>A JSON string that contains the Insights event types that you want to log on
-     * a trail. The valid Insights types in this release are
+     * a trail or event data store. The valid Insights types are
      * <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code>.</p>
      */
     inline void SetInsightSelectors(const Aws::Vector<InsightSelector>& value) { m_insightSelectors = value; }
 
     /**
      * <p>A JSON string that contains the Insights event types that you want to log on
-     * a trail. The valid Insights types in this release are
+     * a trail or event data store. The valid Insights types are
      * <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code>.</p>
      */
     inline void SetInsightSelectors(Aws::Vector<InsightSelector>&& value) { m_insightSelectors = std::move(value); }
 
     /**
      * <p>A JSON string that contains the Insights event types that you want to log on
-     * a trail. The valid Insights types in this release are
+     * a trail or event data store. The valid Insights types are
      * <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code>.</p>
      */
     inline PutInsightSelectorsResult& WithInsightSelectors(const Aws::Vector<InsightSelector>& value) { SetInsightSelectors(value); return *this;}
 
     /**
      * <p>A JSON string that contains the Insights event types that you want to log on
-     * a trail. The valid Insights types in this release are
+     * a trail or event data store. The valid Insights types are
      * <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code>.</p>
      */
     inline PutInsightSelectorsResult& WithInsightSelectors(Aws::Vector<InsightSelector>&& value) { SetInsightSelectors(std::move(value)); return *this;}
 
     /**
      * <p>A JSON string that contains the Insights event types that you want to log on
-     * a trail. The valid Insights types in this release are
+     * a trail or event data store. The valid Insights types are
      * <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code>.</p>
      */
     inline PutInsightSelectorsResult& AddInsightSelectors(const InsightSelector& value) { m_insightSelectors.push_back(value); return *this; }
 
     /**
      * <p>A JSON string that contains the Insights event types that you want to log on
-     * a trail. The valid Insights types in this release are
+     * a trail or event data store. The valid Insights types are
      * <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code>.</p>
      */
     inline PutInsightSelectorsResult& AddInsightSelectors(InsightSelector&& value) { m_insightSelectors.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the source event data store for which you
+     * want to change or add Insights selectors.</p>
+     */
+    inline const Aws::String& GetEventDataStoreArn() const{ return m_eventDataStoreArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the source event data store for which you
+     * want to change or add Insights selectors.</p>
+     */
+    inline void SetEventDataStoreArn(const Aws::String& value) { m_eventDataStoreArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the source event data store for which you
+     * want to change or add Insights selectors.</p>
+     */
+    inline void SetEventDataStoreArn(Aws::String&& value) { m_eventDataStoreArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the source event data store for which you
+     * want to change or add Insights selectors.</p>
+     */
+    inline void SetEventDataStoreArn(const char* value) { m_eventDataStoreArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the source event data store for which you
+     * want to change or add Insights selectors.</p>
+     */
+    inline PutInsightSelectorsResult& WithEventDataStoreArn(const Aws::String& value) { SetEventDataStoreArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the source event data store for which you
+     * want to change or add Insights selectors.</p>
+     */
+    inline PutInsightSelectorsResult& WithEventDataStoreArn(Aws::String&& value) { SetEventDataStoreArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the source event data store for which you
+     * want to change or add Insights selectors.</p>
+     */
+    inline PutInsightSelectorsResult& WithEventDataStoreArn(const char* value) { SetEventDataStoreArn(value); return *this;}
+
+
+    /**
+     * <p> The ARN of the destination event data store that logs Insights events. </p>
+     */
+    inline const Aws::String& GetInsightsDestination() const{ return m_insightsDestination; }
+
+    /**
+     * <p> The ARN of the destination event data store that logs Insights events. </p>
+     */
+    inline void SetInsightsDestination(const Aws::String& value) { m_insightsDestination = value; }
+
+    /**
+     * <p> The ARN of the destination event data store that logs Insights events. </p>
+     */
+    inline void SetInsightsDestination(Aws::String&& value) { m_insightsDestination = std::move(value); }
+
+    /**
+     * <p> The ARN of the destination event data store that logs Insights events. </p>
+     */
+    inline void SetInsightsDestination(const char* value) { m_insightsDestination.assign(value); }
+
+    /**
+     * <p> The ARN of the destination event data store that logs Insights events. </p>
+     */
+    inline PutInsightSelectorsResult& WithInsightsDestination(const Aws::String& value) { SetInsightsDestination(value); return *this;}
+
+    /**
+     * <p> The ARN of the destination event data store that logs Insights events. </p>
+     */
+    inline PutInsightSelectorsResult& WithInsightsDestination(Aws::String&& value) { SetInsightsDestination(std::move(value)); return *this;}
+
+    /**
+     * <p> The ARN of the destination event data store that logs Insights events. </p>
+     */
+    inline PutInsightSelectorsResult& WithInsightsDestination(const char* value) { SetInsightsDestination(value); return *this;}
 
 
     
@@ -153,6 +232,10 @@ namespace Model
     Aws::String m_trailARN;
 
     Aws::Vector<InsightSelector> m_insightSelectors;
+
+    Aws::String m_eventDataStoreArn;
+
+    Aws::String m_insightsDestination;
 
     Aws::String m_requestId;
   };

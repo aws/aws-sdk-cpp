@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SearchQueryScopeType::NOT_SET:
+            return {};
           case SearchQueryScopeType::NAME:
             return "NAME";
           case SearchQueryScopeType::CONTENT:

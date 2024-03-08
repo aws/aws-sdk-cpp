@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ChannelMembershipType::NOT_SET:
+            return {};
           case ChannelMembershipType::DEFAULT:
             return "DEFAULT";
           case ChannelMembershipType::HIDDEN:

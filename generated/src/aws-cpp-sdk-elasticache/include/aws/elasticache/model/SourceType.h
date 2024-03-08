@@ -21,6 +21,8 @@ namespace Model
     cache_security_group,
     cache_subnet_group,
     replication_group,
+    serverless_cache,
+    serverless_cache_snapshot,
     user,
     user_group
   };

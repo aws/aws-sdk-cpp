@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case KafkaVersionStatus::NOT_SET:
+            return {};
           case KafkaVersionStatus::ACTIVE:
             return "ACTIVE";
           case KafkaVersionStatus::DEPRECATED:

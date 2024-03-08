@@ -39,10 +39,12 @@ namespace Model
 
 
     /**
-     * <p>The fully qualified name of the parameter that you want to add to the system.
-     * The fully qualified name includes the complete hierarchy of the parameter path
-     * and name. For parameters in a hierarchy, you must include a leading forward
-     * slash character (/) when you create or reference a parameter. For example:
+     * <p>The fully qualified name of the parameter that you want to add to the
+     * system.</p>  <p>You can't enter the Amazon Resource Name (ARN) for a
+     * parameter, only the parameter name itself.</p>  <p>The fully qualified
+     * name includes the complete hierarchy of the parameter path and name. For
+     * parameters in a hierarchy, you must include a leading forward slash character
+     * (/) when you create or reference a parameter. For example:
      * <code>/Dev/DBServer/MySQL/db-string13</code> </p> <p>Naming Constraints:</p>
      * <ul> <li> <p>Parameter names are case sensitive.</p> </li> <li> <p>A parameter
      * name must be unique within an Amazon Web Services Region</p> </li> <li> <p>A
@@ -66,10 +68,12 @@ namespace Model
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The fully qualified name of the parameter that you want to add to the system.
-     * The fully qualified name includes the complete hierarchy of the parameter path
-     * and name. For parameters in a hierarchy, you must include a leading forward
-     * slash character (/) when you create or reference a parameter. For example:
+     * <p>The fully qualified name of the parameter that you want to add to the
+     * system.</p>  <p>You can't enter the Amazon Resource Name (ARN) for a
+     * parameter, only the parameter name itself.</p>  <p>The fully qualified
+     * name includes the complete hierarchy of the parameter path and name. For
+     * parameters in a hierarchy, you must include a leading forward slash character
+     * (/) when you create or reference a parameter. For example:
      * <code>/Dev/DBServer/MySQL/db-string13</code> </p> <p>Naming Constraints:</p>
      * <ul> <li> <p>Parameter names are case sensitive.</p> </li> <li> <p>A parameter
      * name must be unique within an Amazon Web Services Region</p> </li> <li> <p>A
@@ -93,10 +97,12 @@ namespace Model
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The fully qualified name of the parameter that you want to add to the system.
-     * The fully qualified name includes the complete hierarchy of the parameter path
-     * and name. For parameters in a hierarchy, you must include a leading forward
-     * slash character (/) when you create or reference a parameter. For example:
+     * <p>The fully qualified name of the parameter that you want to add to the
+     * system.</p>  <p>You can't enter the Amazon Resource Name (ARN) for a
+     * parameter, only the parameter name itself.</p>  <p>The fully qualified
+     * name includes the complete hierarchy of the parameter path and name. For
+     * parameters in a hierarchy, you must include a leading forward slash character
+     * (/) when you create or reference a parameter. For example:
      * <code>/Dev/DBServer/MySQL/db-string13</code> </p> <p>Naming Constraints:</p>
      * <ul> <li> <p>Parameter names are case sensitive.</p> </li> <li> <p>A parameter
      * name must be unique within an Amazon Web Services Region</p> </li> <li> <p>A
@@ -120,10 +126,12 @@ namespace Model
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The fully qualified name of the parameter that you want to add to the system.
-     * The fully qualified name includes the complete hierarchy of the parameter path
-     * and name. For parameters in a hierarchy, you must include a leading forward
-     * slash character (/) when you create or reference a parameter. For example:
+     * <p>The fully qualified name of the parameter that you want to add to the
+     * system.</p>  <p>You can't enter the Amazon Resource Name (ARN) for a
+     * parameter, only the parameter name itself.</p>  <p>The fully qualified
+     * name includes the complete hierarchy of the parameter path and name. For
+     * parameters in a hierarchy, you must include a leading forward slash character
+     * (/) when you create or reference a parameter. For example:
      * <code>/Dev/DBServer/MySQL/db-string13</code> </p> <p>Naming Constraints:</p>
      * <ul> <li> <p>Parameter names are case sensitive.</p> </li> <li> <p>A parameter
      * name must be unique within an Amazon Web Services Region</p> </li> <li> <p>A
@@ -147,10 +155,12 @@ namespace Model
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The fully qualified name of the parameter that you want to add to the system.
-     * The fully qualified name includes the complete hierarchy of the parameter path
-     * and name. For parameters in a hierarchy, you must include a leading forward
-     * slash character (/) when you create or reference a parameter. For example:
+     * <p>The fully qualified name of the parameter that you want to add to the
+     * system.</p>  <p>You can't enter the Amazon Resource Name (ARN) for a
+     * parameter, only the parameter name itself.</p>  <p>The fully qualified
+     * name includes the complete hierarchy of the parameter path and name. For
+     * parameters in a hierarchy, you must include a leading forward slash character
+     * (/) when you create or reference a parameter. For example:
      * <code>/Dev/DBServer/MySQL/db-string13</code> </p> <p>Naming Constraints:</p>
      * <ul> <li> <p>Parameter names are case sensitive.</p> </li> <li> <p>A parameter
      * name must be unique within an Amazon Web Services Region</p> </li> <li> <p>A
@@ -174,10 +184,12 @@ namespace Model
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The fully qualified name of the parameter that you want to add to the system.
-     * The fully qualified name includes the complete hierarchy of the parameter path
-     * and name. For parameters in a hierarchy, you must include a leading forward
-     * slash character (/) when you create or reference a parameter. For example:
+     * <p>The fully qualified name of the parameter that you want to add to the
+     * system.</p>  <p>You can't enter the Amazon Resource Name (ARN) for a
+     * parameter, only the parameter name itself.</p>  <p>The fully qualified
+     * name includes the complete hierarchy of the parameter path and name. For
+     * parameters in a hierarchy, you must include a leading forward slash character
+     * (/) when you create or reference a parameter. For example:
      * <code>/Dev/DBServer/MySQL/db-string13</code> </p> <p>Naming Constraints:</p>
      * <ul> <li> <p>Parameter names are case sensitive.</p> </li> <li> <p>A parameter
      * name must be unique within an Amazon Web Services Region</p> </li> <li> <p>A
@@ -201,10 +213,12 @@ namespace Model
     inline PutParameterRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The fully qualified name of the parameter that you want to add to the system.
-     * The fully qualified name includes the complete hierarchy of the parameter path
-     * and name. For parameters in a hierarchy, you must include a leading forward
-     * slash character (/) when you create or reference a parameter. For example:
+     * <p>The fully qualified name of the parameter that you want to add to the
+     * system.</p>  <p>You can't enter the Amazon Resource Name (ARN) for a
+     * parameter, only the parameter name itself.</p>  <p>The fully qualified
+     * name includes the complete hierarchy of the parameter path and name. For
+     * parameters in a hierarchy, you must include a leading forward slash character
+     * (/) when you create or reference a parameter. For example:
      * <code>/Dev/DBServer/MySQL/db-string13</code> </p> <p>Naming Constraints:</p>
      * <ul> <li> <p>Parameter names are case sensitive.</p> </li> <li> <p>A parameter
      * name must be unique within an Amazon Web Services Region</p> </li> <li> <p>A
@@ -228,10 +242,12 @@ namespace Model
     inline PutParameterRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The fully qualified name of the parameter that you want to add to the system.
-     * The fully qualified name includes the complete hierarchy of the parameter path
-     * and name. For parameters in a hierarchy, you must include a leading forward
-     * slash character (/) when you create or reference a parameter. For example:
+     * <p>The fully qualified name of the parameter that you want to add to the
+     * system.</p>  <p>You can't enter the Amazon Resource Name (ARN) for a
+     * parameter, only the parameter name itself.</p>  <p>The fully qualified
+     * name includes the complete hierarchy of the parameter path and name. For
+     * parameters in a hierarchy, you must include a leading forward slash character
+     * (/) when you create or reference a parameter. For example:
      * <code>/Dev/DBServer/MySQL/db-string13</code> </p> <p>Naming Constraints:</p>
      * <ul> <li> <p>Parameter names are case sensitive.</p> </li> <li> <p>A parameter
      * name must be unique within an Amazon Web Services Region</p> </li> <li> <p>A

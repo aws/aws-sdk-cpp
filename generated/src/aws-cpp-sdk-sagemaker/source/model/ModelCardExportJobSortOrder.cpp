@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ModelCardExportJobSortOrder::NOT_SET:
+            return {};
           case ModelCardExportJobSortOrder::Ascending:
             return "Ascending";
           case ModelCardExportJobSortOrder::Descending:

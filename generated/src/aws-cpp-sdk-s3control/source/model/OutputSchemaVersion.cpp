@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OutputSchemaVersion::NOT_SET:
+            return {};
           case OutputSchemaVersion::V_1:
             return "V_1";
           default:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InputDeviceTransferType::NOT_SET:
+            return {};
           case InputDeviceTransferType::OUTGOING:
             return "OUTGOING";
           case InputDeviceTransferType::INCOMING:

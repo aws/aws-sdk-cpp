@@ -125,58 +125,58 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key
-     * that Amazon SageMaker uses to encrypt data on the storage volume attached to the
-     * ML compute instance(s) that run the model monitoring job.</p>
+     * <p>The Key Management Service (KMS) key that Amazon SageMaker uses to encrypt
+     * data on the storage volume attached to the ML compute instance(s) that run the
+     * model monitoring job.</p>
      */
     inline const Aws::String& GetVolumeKmsKeyId() const{ return m_volumeKmsKeyId; }
 
     /**
-     * <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key
-     * that Amazon SageMaker uses to encrypt data on the storage volume attached to the
-     * ML compute instance(s) that run the model monitoring job.</p>
+     * <p>The Key Management Service (KMS) key that Amazon SageMaker uses to encrypt
+     * data on the storage volume attached to the ML compute instance(s) that run the
+     * model monitoring job.</p>
      */
     inline bool VolumeKmsKeyIdHasBeenSet() const { return m_volumeKmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key
-     * that Amazon SageMaker uses to encrypt data on the storage volume attached to the
-     * ML compute instance(s) that run the model monitoring job.</p>
+     * <p>The Key Management Service (KMS) key that Amazon SageMaker uses to encrypt
+     * data on the storage volume attached to the ML compute instance(s) that run the
+     * model monitoring job.</p>
      */
     inline void SetVolumeKmsKeyId(const Aws::String& value) { m_volumeKmsKeyIdHasBeenSet = true; m_volumeKmsKeyId = value; }
 
     /**
-     * <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key
-     * that Amazon SageMaker uses to encrypt data on the storage volume attached to the
-     * ML compute instance(s) that run the model monitoring job.</p>
+     * <p>The Key Management Service (KMS) key that Amazon SageMaker uses to encrypt
+     * data on the storage volume attached to the ML compute instance(s) that run the
+     * model monitoring job.</p>
      */
     inline void SetVolumeKmsKeyId(Aws::String&& value) { m_volumeKmsKeyIdHasBeenSet = true; m_volumeKmsKeyId = std::move(value); }
 
     /**
-     * <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key
-     * that Amazon SageMaker uses to encrypt data on the storage volume attached to the
-     * ML compute instance(s) that run the model monitoring job.</p>
+     * <p>The Key Management Service (KMS) key that Amazon SageMaker uses to encrypt
+     * data on the storage volume attached to the ML compute instance(s) that run the
+     * model monitoring job.</p>
      */
     inline void SetVolumeKmsKeyId(const char* value) { m_volumeKmsKeyIdHasBeenSet = true; m_volumeKmsKeyId.assign(value); }
 
     /**
-     * <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key
-     * that Amazon SageMaker uses to encrypt data on the storage volume attached to the
-     * ML compute instance(s) that run the model monitoring job.</p>
+     * <p>The Key Management Service (KMS) key that Amazon SageMaker uses to encrypt
+     * data on the storage volume attached to the ML compute instance(s) that run the
+     * model monitoring job.</p>
      */
     inline MonitoringClusterConfig& WithVolumeKmsKeyId(const Aws::String& value) { SetVolumeKmsKeyId(value); return *this;}
 
     /**
-     * <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key
-     * that Amazon SageMaker uses to encrypt data on the storage volume attached to the
-     * ML compute instance(s) that run the model monitoring job.</p>
+     * <p>The Key Management Service (KMS) key that Amazon SageMaker uses to encrypt
+     * data on the storage volume attached to the ML compute instance(s) that run the
+     * model monitoring job.</p>
      */
     inline MonitoringClusterConfig& WithVolumeKmsKeyId(Aws::String&& value) { SetVolumeKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key
-     * that Amazon SageMaker uses to encrypt data on the storage volume attached to the
-     * ML compute instance(s) that run the model monitoring job.</p>
+     * <p>The Key Management Service (KMS) key that Amazon SageMaker uses to encrypt
+     * data on the storage volume attached to the ML compute instance(s) that run the
+     * model monitoring job.</p>
      */
     inline MonitoringClusterConfig& WithVolumeKmsKeyId(const char* value) { SetVolumeKmsKeyId(value); return *this;}
 

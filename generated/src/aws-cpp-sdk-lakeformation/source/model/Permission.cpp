@@ -104,6 +104,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Permission::NOT_SET:
+            return {};
           case Permission::ALL:
             return "ALL";
           case Permission::SELECT:

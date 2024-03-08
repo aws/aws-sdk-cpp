@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TransitGatewayPolicyTableState::NOT_SET:
+            return {};
           case TransitGatewayPolicyTableState::pending:
             return "pending";
           case TransitGatewayPolicyTableState::available:

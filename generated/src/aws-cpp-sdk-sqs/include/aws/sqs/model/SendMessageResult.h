@@ -16,10 +16,10 @@ class AmazonWebServiceResult;
 
 namespace Utils
 {
-namespace Xml
+namespace Json
 {
-  class XmlDocument;
-} // namespace Xml
+  class JsonValue;
+} // namespace Json
 } // namespace Utils
 namespace SQS
 {
@@ -35,8 +35,8 @@ namespace Model
   {
   public:
     AWS_SQS_API SendMessageResult();
-    AWS_SQS_API SendMessageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    AWS_SQS_API SendMessageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SQS_API SendMessageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SQS_API SendMessageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -325,6 +325,28 @@ namespace Model
 
 
     
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline SendMessageResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline SendMessageResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline SendMessageResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
+
+    
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
     
@@ -350,6 +372,8 @@ namespace Model
     Aws::String m_messageId;
 
     Aws::String m_sequenceNumber;
+
+    Aws::String m_requestId;
 
     ResponseMetadata m_responseMetadata;
   };

@@ -76,26 +76,26 @@ namespace Model
 
 
     /**
-     * <p>Number of dedicated master nodes in the cluster. This number must be greater
-     * than 1, otherwise you receive a validation exception.</p>
+     * <p>Number of data nodes in the cluster. This number must be greater than 1,
+     * otherwise you receive a validation exception.</p>
      */
     inline int GetInstanceCount() const{ return m_instanceCount; }
 
     /**
-     * <p>Number of dedicated master nodes in the cluster. This number must be greater
-     * than 1, otherwise you receive a validation exception.</p>
+     * <p>Number of data nodes in the cluster. This number must be greater than 1,
+     * otherwise you receive a validation exception.</p>
      */
     inline bool InstanceCountHasBeenSet() const { return m_instanceCountHasBeenSet; }
 
     /**
-     * <p>Number of dedicated master nodes in the cluster. This number must be greater
-     * than 1, otherwise you receive a validation exception.</p>
+     * <p>Number of data nodes in the cluster. This number must be greater than 1,
+     * otherwise you receive a validation exception.</p>
      */
     inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
 
     /**
-     * <p>Number of dedicated master nodes in the cluster. This number must be greater
-     * than 1, otherwise you receive a validation exception.</p>
+     * <p>Number of data nodes in the cluster. This number must be greater than 1,
+     * otherwise you receive a validation exception.</p>
      */
     inline ClusterConfig& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
 

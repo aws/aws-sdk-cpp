@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RiskDecisionType::NOT_SET:
+            return {};
           case RiskDecisionType::NoRisk:
             return "NoRisk";
           case RiskDecisionType::AccountTakeover:

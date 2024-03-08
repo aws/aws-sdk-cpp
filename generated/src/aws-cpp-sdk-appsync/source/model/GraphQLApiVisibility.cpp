@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case GraphQLApiVisibility::NOT_SET:
+            return {};
           case GraphQLApiVisibility::GLOBAL:
             return "GLOBAL";
           case GraphQLApiVisibility::PRIVATE_:

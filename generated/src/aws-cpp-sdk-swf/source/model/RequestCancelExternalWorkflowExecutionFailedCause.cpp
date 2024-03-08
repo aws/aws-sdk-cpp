@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RequestCancelExternalWorkflowExecutionFailedCause::NOT_SET:
+            return {};
           case RequestCancelExternalWorkflowExecutionFailedCause::UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION:
             return "UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION";
           case RequestCancelExternalWorkflowExecutionFailedCause::REQUEST_CANCEL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED:

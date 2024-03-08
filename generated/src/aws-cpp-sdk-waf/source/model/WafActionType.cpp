@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case WafActionType::NOT_SET:
+            return {};
           case WafActionType::BLOCK:
             return "BLOCK";
           case WafActionType::ALLOW:

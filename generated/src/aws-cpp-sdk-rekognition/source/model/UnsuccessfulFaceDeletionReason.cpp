@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UnsuccessfulFaceDeletionReason::NOT_SET:
+            return {};
           case UnsuccessfulFaceDeletionReason::ASSOCIATED_TO_AN_EXISTING_USER:
             return "ASSOCIATED_TO_AN_EXISTING_USER";
           case UnsuccessfulFaceDeletionReason::FACE_NOT_FOUND:

@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DirectConnectGatewayAssociationState::NOT_SET:
+            return {};
           case DirectConnectGatewayAssociationState::associating:
             return "associating";
           case DirectConnectGatewayAssociationState::associated:

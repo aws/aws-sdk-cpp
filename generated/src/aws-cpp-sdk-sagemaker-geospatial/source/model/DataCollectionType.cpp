@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DataCollectionType::NOT_SET:
+            return {};
           case DataCollectionType::PUBLIC_:
             return "PUBLIC";
           case DataCollectionType::PREMIUM:

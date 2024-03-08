@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AdMarkers::NOT_SET:
+            return {};
           case AdMarkers::NONE:
             return "NONE";
           case AdMarkers::SCTE35_ENHANCED:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Telemetry::NOT_SET:
+            return {};
           case Telemetry::errors:
             return "errors";
           case Telemetry::performance:

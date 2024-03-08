@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DashboardUIState::NOT_SET:
+            return {};
           case DashboardUIState::EXPANDED:
             return "EXPANDED";
           case DashboardUIState::COLLAPSED:

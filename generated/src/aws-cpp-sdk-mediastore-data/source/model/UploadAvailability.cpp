@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UploadAvailability::NOT_SET:
+            return {};
           case UploadAvailability::STANDARD:
             return "STANDARD";
           case UploadAvailability::STREAMING:

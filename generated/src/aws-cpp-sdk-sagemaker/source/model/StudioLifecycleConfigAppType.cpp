@@ -22,6 +22,8 @@ namespace Aws
 
         static const int JupyterServer_HASH = HashingUtils::HashString("JupyterServer");
         static const int KernelGateway_HASH = HashingUtils::HashString("KernelGateway");
+        static const int CodeEditor_HASH = HashingUtils::HashString("CodeEditor");
+        static const int JupyterLab_HASH = HashingUtils::HashString("JupyterLab");
 
 
         StudioLifecycleConfigAppType GetStudioLifecycleConfigAppTypeForName(const Aws::String& name)
@@ -34,6 +36,14 @@ namespace Aws
           else if (hashCode == KernelGateway_HASH)
           {
             return StudioLifecycleConfigAppType::KernelGateway;
+          }
+          else if (hashCode == CodeEditor_HASH)
+          {
+            return StudioLifecycleConfigAppType::CodeEditor;
+          }
+          else if (hashCode == JupyterLab_HASH)
+          {
+            return StudioLifecycleConfigAppType::JupyterLab;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -49,10 +59,16 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StudioLifecycleConfigAppType::NOT_SET:
+            return {};
           case StudioLifecycleConfigAppType::JupyterServer:
             return "JupyterServer";
           case StudioLifecycleConfigAppType::KernelGateway:
             return "KernelGateway";
+          case StudioLifecycleConfigAppType::CodeEditor:
+            return "CodeEditor";
+          case StudioLifecycleConfigAppType::JupyterLab:
+            return "JupyterLab";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

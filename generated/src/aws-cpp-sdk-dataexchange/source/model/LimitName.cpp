@@ -179,6 +179,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LimitName::NOT_SET:
+            return {};
           case LimitName::Products_per_account:
             return "Products per account";
           case LimitName::Data_sets_per_account:

@@ -64,6 +64,12 @@ static void LogThread(DefaultLogSystem::LogSynchronizationData* syncData, std::s
             logFile->flush();
         }
     }
+
+    {
+        std::unique_lock<std::mutex> locker(syncData->m_logQueueMutex);
+        syncData->m_loggingThreadStopped = true;
+        syncData->m_queueSignal.notify_one();
+    }
 }
 
 DefaultLogSystem::DefaultLogSystem(LogLevel logLevel, const std::shared_ptr<Aws::OStream>& logFile) :
@@ -84,10 +90,17 @@ DefaultLogSystem::DefaultLogSystem(LogLevel logLevel, const Aws::String& filenam
 
 DefaultLogSystem::~DefaultLogSystem()
 {
+    Stop();
+
+    // explicitly wait for logging thread to finish
     {
-        std::lock_guard<std::mutex> locker(m_syncData.m_logQueueMutex);
-        m_syncData.m_stopLogging = true;
-        m_syncData.m_queueSignal.notify_one();
+        std::unique_lock<std::mutex> locker(m_syncData.m_logQueueMutex);
+        if (!m_syncData.m_loggingThreadStopped)
+        {
+            m_syncData.m_queueSignal.wait_for(locker,
+                                              std::chrono::milliseconds(500),
+                                              [&](){ return m_syncData.m_loggingThreadStopped; });
+        }
     }
 
     m_loggingThread.join();
@@ -96,6 +109,10 @@ DefaultLogSystem::~DefaultLogSystem()
 void DefaultLogSystem::ProcessFormattedStatement(Aws::String&& statement)
 {
     std::lock_guard<std::mutex> locker(m_syncData.m_logQueueMutex);
+    if (m_syncData.m_stopLogging)
+    {
+        return;
+    }
     m_syncData.m_queuedLogMessages.emplace_back(std::move(statement));
     if(m_syncData.m_queuedLogMessages.size() >= BUFFERED_MSG_COUNT)
     {
@@ -107,5 +124,17 @@ void DefaultLogSystem::Flush()
 {
     std::lock_guard<std::mutex> locker(m_syncData.m_logQueueMutex);
     m_syncData.m_queueSignal.notify_one();
+}
+
+void DefaultLogSystem::Stop()
+{
+    FormattedLogSystem::Stop();
+    Flush();
+
+    {
+        std::lock_guard<std::mutex> locker(m_syncData.m_logQueueMutex);
+        m_syncData.m_stopLogging = true;
+        m_syncData.m_queueSignal.notify_one();
+    }
 }
 

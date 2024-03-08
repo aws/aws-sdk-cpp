@@ -24,8 +24,8 @@ namespace SsmSap
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef SsmSapClientConfiguration ClientConfigurationType;
       typedef SsmSapEndpointProvider EndpointProviderType;
@@ -35,14 +35,14 @@ namespace SsmSap
         * is not specified, it will be initialized to default values.
         */
         SsmSapClient(const Aws::SsmSap::SsmSapClientConfiguration& clientConfiguration = Aws::SsmSap::SsmSapClientConfiguration(),
-                     std::shared_ptr<SsmSapEndpointProviderBase> endpointProvider = Aws::MakeShared<SsmSapEndpointProvider>(ALLOCATION_TAG));
+                     std::shared_ptr<SsmSapEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         SsmSapClient(const Aws::Auth::AWSCredentials& credentials,
-                     std::shared_ptr<SsmSapEndpointProviderBase> endpointProvider = Aws::MakeShared<SsmSapEndpointProvider>(ALLOCATION_TAG),
+                     std::shared_ptr<SsmSapEndpointProviderBase> endpointProvider = nullptr,
                      const Aws::SsmSap::SsmSapClientConfiguration& clientConfiguration = Aws::SsmSap::SsmSapClientConfiguration());
 
        /**
@@ -50,7 +50,7 @@ namespace SsmSap
         * the default http client factory will be used
         */
         SsmSapClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                     std::shared_ptr<SsmSapEndpointProviderBase> endpointProvider = Aws::MakeShared<SsmSapEndpointProvider>(ALLOCATION_TAG),
+                     std::shared_ptr<SsmSapEndpointProviderBase> endpointProvider = nullptr,
                      const Aws::SsmSap::SsmSapClientConfiguration& clientConfiguration = Aws::SsmSap::SsmSapClientConfiguration());
 
 

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StateMachineStatus::NOT_SET:
+            return {};
           case StateMachineStatus::ACTIVE:
             return "ACTIVE";
           case StateMachineStatus::DELETING:

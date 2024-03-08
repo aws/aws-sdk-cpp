@@ -15,7 +15,9 @@
 #include <aws/keyspaces/model/TimeToLive.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/keyspaces/model/ClientSideTimestamps.h>
+#include <aws/keyspaces/model/AutoScalingSpecification.h>
 #include <aws/keyspaces/model/Tag.h>
+#include <aws/keyspaces/model/ReplicaSpecification.h>
 #include <utility>
 
 namespace Aws
@@ -769,6 +771,220 @@ namespace Model
      */
     inline CreateTableRequest& WithClientSideTimestamps(ClientSideTimestamps&& value) { SetClientSideTimestamps(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The optional auto scaling settings for a table in provisioned capacity mode.
+     * Specifies if the service can manage throughput capacity automatically on your
+     * behalf.</p> <p>Auto scaling helps you provision throughput capacity for variable
+     * workloads efficiently by increasing and decreasing your table's read and write
+     * capacity automatically in response to application traffic. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html">Managing
+     * throughput capacity automatically with Amazon Keyspaces auto scaling</a> in the
+     * <i>Amazon Keyspaces Developer Guide</i>.</p> <p>By default, auto scaling is
+     * disabled for a table. </p>
+     */
+    inline const AutoScalingSpecification& GetAutoScalingSpecification() const{ return m_autoScalingSpecification; }
+
+    /**
+     * <p>The optional auto scaling settings for a table in provisioned capacity mode.
+     * Specifies if the service can manage throughput capacity automatically on your
+     * behalf.</p> <p>Auto scaling helps you provision throughput capacity for variable
+     * workloads efficiently by increasing and decreasing your table's read and write
+     * capacity automatically in response to application traffic. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html">Managing
+     * throughput capacity automatically with Amazon Keyspaces auto scaling</a> in the
+     * <i>Amazon Keyspaces Developer Guide</i>.</p> <p>By default, auto scaling is
+     * disabled for a table. </p>
+     */
+    inline bool AutoScalingSpecificationHasBeenSet() const { return m_autoScalingSpecificationHasBeenSet; }
+
+    /**
+     * <p>The optional auto scaling settings for a table in provisioned capacity mode.
+     * Specifies if the service can manage throughput capacity automatically on your
+     * behalf.</p> <p>Auto scaling helps you provision throughput capacity for variable
+     * workloads efficiently by increasing and decreasing your table's read and write
+     * capacity automatically in response to application traffic. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html">Managing
+     * throughput capacity automatically with Amazon Keyspaces auto scaling</a> in the
+     * <i>Amazon Keyspaces Developer Guide</i>.</p> <p>By default, auto scaling is
+     * disabled for a table. </p>
+     */
+    inline void SetAutoScalingSpecification(const AutoScalingSpecification& value) { m_autoScalingSpecificationHasBeenSet = true; m_autoScalingSpecification = value; }
+
+    /**
+     * <p>The optional auto scaling settings for a table in provisioned capacity mode.
+     * Specifies if the service can manage throughput capacity automatically on your
+     * behalf.</p> <p>Auto scaling helps you provision throughput capacity for variable
+     * workloads efficiently by increasing and decreasing your table's read and write
+     * capacity automatically in response to application traffic. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html">Managing
+     * throughput capacity automatically with Amazon Keyspaces auto scaling</a> in the
+     * <i>Amazon Keyspaces Developer Guide</i>.</p> <p>By default, auto scaling is
+     * disabled for a table. </p>
+     */
+    inline void SetAutoScalingSpecification(AutoScalingSpecification&& value) { m_autoScalingSpecificationHasBeenSet = true; m_autoScalingSpecification = std::move(value); }
+
+    /**
+     * <p>The optional auto scaling settings for a table in provisioned capacity mode.
+     * Specifies if the service can manage throughput capacity automatically on your
+     * behalf.</p> <p>Auto scaling helps you provision throughput capacity for variable
+     * workloads efficiently by increasing and decreasing your table's read and write
+     * capacity automatically in response to application traffic. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html">Managing
+     * throughput capacity automatically with Amazon Keyspaces auto scaling</a> in the
+     * <i>Amazon Keyspaces Developer Guide</i>.</p> <p>By default, auto scaling is
+     * disabled for a table. </p>
+     */
+    inline CreateTableRequest& WithAutoScalingSpecification(const AutoScalingSpecification& value) { SetAutoScalingSpecification(value); return *this;}
+
+    /**
+     * <p>The optional auto scaling settings for a table in provisioned capacity mode.
+     * Specifies if the service can manage throughput capacity automatically on your
+     * behalf.</p> <p>Auto scaling helps you provision throughput capacity for variable
+     * workloads efficiently by increasing and decreasing your table's read and write
+     * capacity automatically in response to application traffic. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html">Managing
+     * throughput capacity automatically with Amazon Keyspaces auto scaling</a> in the
+     * <i>Amazon Keyspaces Developer Guide</i>.</p> <p>By default, auto scaling is
+     * disabled for a table. </p>
+     */
+    inline CreateTableRequest& WithAutoScalingSpecification(AutoScalingSpecification&& value) { SetAutoScalingSpecification(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The optional Amazon Web Services Region specific settings of a multi-Region
+     * table. These settings overwrite the general settings of the table for the
+     * specified Region. </p> <p>For a multi-Region table in provisioned capacity mode,
+     * you can configure the table's read capacity differently for each Region's
+     * replica. The write capacity, however, remains synchronized between all replicas
+     * to ensure that there's enough capacity to replicate writes across all Regions.
+     * To define the read capacity for a table replica in a specific Region, you can do
+     * so by configuring the following parameters.</p> <ul> <li> <p>
+     * <code>region</code>: The Region where these settings are applied. (Required)</p>
+     * </li> <li> <p> <code>readCapacityUnits</code>: The provisioned read capacity
+     * units. (Optional)</p> </li> <li> <p> <code>readCapacityAutoScaling</code>: The
+     * read capacity auto scaling settings for the table. (Optional) </p> </li> </ul>
+     */
+    inline const Aws::Vector<ReplicaSpecification>& GetReplicaSpecifications() const{ return m_replicaSpecifications; }
+
+    /**
+     * <p>The optional Amazon Web Services Region specific settings of a multi-Region
+     * table. These settings overwrite the general settings of the table for the
+     * specified Region. </p> <p>For a multi-Region table in provisioned capacity mode,
+     * you can configure the table's read capacity differently for each Region's
+     * replica. The write capacity, however, remains synchronized between all replicas
+     * to ensure that there's enough capacity to replicate writes across all Regions.
+     * To define the read capacity for a table replica in a specific Region, you can do
+     * so by configuring the following parameters.</p> <ul> <li> <p>
+     * <code>region</code>: The Region where these settings are applied. (Required)</p>
+     * </li> <li> <p> <code>readCapacityUnits</code>: The provisioned read capacity
+     * units. (Optional)</p> </li> <li> <p> <code>readCapacityAutoScaling</code>: The
+     * read capacity auto scaling settings for the table. (Optional) </p> </li> </ul>
+     */
+    inline bool ReplicaSpecificationsHasBeenSet() const { return m_replicaSpecificationsHasBeenSet; }
+
+    /**
+     * <p>The optional Amazon Web Services Region specific settings of a multi-Region
+     * table. These settings overwrite the general settings of the table for the
+     * specified Region. </p> <p>For a multi-Region table in provisioned capacity mode,
+     * you can configure the table's read capacity differently for each Region's
+     * replica. The write capacity, however, remains synchronized between all replicas
+     * to ensure that there's enough capacity to replicate writes across all Regions.
+     * To define the read capacity for a table replica in a specific Region, you can do
+     * so by configuring the following parameters.</p> <ul> <li> <p>
+     * <code>region</code>: The Region where these settings are applied. (Required)</p>
+     * </li> <li> <p> <code>readCapacityUnits</code>: The provisioned read capacity
+     * units. (Optional)</p> </li> <li> <p> <code>readCapacityAutoScaling</code>: The
+     * read capacity auto scaling settings for the table. (Optional) </p> </li> </ul>
+     */
+    inline void SetReplicaSpecifications(const Aws::Vector<ReplicaSpecification>& value) { m_replicaSpecificationsHasBeenSet = true; m_replicaSpecifications = value; }
+
+    /**
+     * <p>The optional Amazon Web Services Region specific settings of a multi-Region
+     * table. These settings overwrite the general settings of the table for the
+     * specified Region. </p> <p>For a multi-Region table in provisioned capacity mode,
+     * you can configure the table's read capacity differently for each Region's
+     * replica. The write capacity, however, remains synchronized between all replicas
+     * to ensure that there's enough capacity to replicate writes across all Regions.
+     * To define the read capacity for a table replica in a specific Region, you can do
+     * so by configuring the following parameters.</p> <ul> <li> <p>
+     * <code>region</code>: The Region where these settings are applied. (Required)</p>
+     * </li> <li> <p> <code>readCapacityUnits</code>: The provisioned read capacity
+     * units. (Optional)</p> </li> <li> <p> <code>readCapacityAutoScaling</code>: The
+     * read capacity auto scaling settings for the table. (Optional) </p> </li> </ul>
+     */
+    inline void SetReplicaSpecifications(Aws::Vector<ReplicaSpecification>&& value) { m_replicaSpecificationsHasBeenSet = true; m_replicaSpecifications = std::move(value); }
+
+    /**
+     * <p>The optional Amazon Web Services Region specific settings of a multi-Region
+     * table. These settings overwrite the general settings of the table for the
+     * specified Region. </p> <p>For a multi-Region table in provisioned capacity mode,
+     * you can configure the table's read capacity differently for each Region's
+     * replica. The write capacity, however, remains synchronized between all replicas
+     * to ensure that there's enough capacity to replicate writes across all Regions.
+     * To define the read capacity for a table replica in a specific Region, you can do
+     * so by configuring the following parameters.</p> <ul> <li> <p>
+     * <code>region</code>: The Region where these settings are applied. (Required)</p>
+     * </li> <li> <p> <code>readCapacityUnits</code>: The provisioned read capacity
+     * units. (Optional)</p> </li> <li> <p> <code>readCapacityAutoScaling</code>: The
+     * read capacity auto scaling settings for the table. (Optional) </p> </li> </ul>
+     */
+    inline CreateTableRequest& WithReplicaSpecifications(const Aws::Vector<ReplicaSpecification>& value) { SetReplicaSpecifications(value); return *this;}
+
+    /**
+     * <p>The optional Amazon Web Services Region specific settings of a multi-Region
+     * table. These settings overwrite the general settings of the table for the
+     * specified Region. </p> <p>For a multi-Region table in provisioned capacity mode,
+     * you can configure the table's read capacity differently for each Region's
+     * replica. The write capacity, however, remains synchronized between all replicas
+     * to ensure that there's enough capacity to replicate writes across all Regions.
+     * To define the read capacity for a table replica in a specific Region, you can do
+     * so by configuring the following parameters.</p> <ul> <li> <p>
+     * <code>region</code>: The Region where these settings are applied. (Required)</p>
+     * </li> <li> <p> <code>readCapacityUnits</code>: The provisioned read capacity
+     * units. (Optional)</p> </li> <li> <p> <code>readCapacityAutoScaling</code>: The
+     * read capacity auto scaling settings for the table. (Optional) </p> </li> </ul>
+     */
+    inline CreateTableRequest& WithReplicaSpecifications(Aws::Vector<ReplicaSpecification>&& value) { SetReplicaSpecifications(std::move(value)); return *this;}
+
+    /**
+     * <p>The optional Amazon Web Services Region specific settings of a multi-Region
+     * table. These settings overwrite the general settings of the table for the
+     * specified Region. </p> <p>For a multi-Region table in provisioned capacity mode,
+     * you can configure the table's read capacity differently for each Region's
+     * replica. The write capacity, however, remains synchronized between all replicas
+     * to ensure that there's enough capacity to replicate writes across all Regions.
+     * To define the read capacity for a table replica in a specific Region, you can do
+     * so by configuring the following parameters.</p> <ul> <li> <p>
+     * <code>region</code>: The Region where these settings are applied. (Required)</p>
+     * </li> <li> <p> <code>readCapacityUnits</code>: The provisioned read capacity
+     * units. (Optional)</p> </li> <li> <p> <code>readCapacityAutoScaling</code>: The
+     * read capacity auto scaling settings for the table. (Optional) </p> </li> </ul>
+     */
+    inline CreateTableRequest& AddReplicaSpecifications(const ReplicaSpecification& value) { m_replicaSpecificationsHasBeenSet = true; m_replicaSpecifications.push_back(value); return *this; }
+
+    /**
+     * <p>The optional Amazon Web Services Region specific settings of a multi-Region
+     * table. These settings overwrite the general settings of the table for the
+     * specified Region. </p> <p>For a multi-Region table in provisioned capacity mode,
+     * you can configure the table's read capacity differently for each Region's
+     * replica. The write capacity, however, remains synchronized between all replicas
+     * to ensure that there's enough capacity to replicate writes across all Regions.
+     * To define the read capacity for a table replica in a specific Region, you can do
+     * so by configuring the following parameters.</p> <ul> <li> <p>
+     * <code>region</code>: The Region where these settings are applied. (Required)</p>
+     * </li> <li> <p> <code>readCapacityUnits</code>: The provisioned read capacity
+     * units. (Optional)</p> </li> <li> <p> <code>readCapacityAutoScaling</code>: The
+     * read capacity auto scaling settings for the table. (Optional) </p> </li> </ul>
+     */
+    inline CreateTableRequest& AddReplicaSpecifications(ReplicaSpecification&& value) { m_replicaSpecificationsHasBeenSet = true; m_replicaSpecifications.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_keyspaceName;
@@ -803,6 +1019,12 @@ namespace Model
 
     ClientSideTimestamps m_clientSideTimestamps;
     bool m_clientSideTimestampsHasBeenSet = false;
+
+    AutoScalingSpecification m_autoScalingSpecification;
+    bool m_autoScalingSpecificationHasBeenSet = false;
+
+    Aws::Vector<ReplicaSpecification> m_replicaSpecifications;
+    bool m_replicaSpecificationsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -49,6 +49,11 @@ namespace Aws
             */
             static Aws::String URLEncode(const char* unsafe);
 
+            static inline Aws::String URLEncode(const Aws::String& unsafe)
+            {
+              return URLEncode(unsafe.c_str());
+            }
+
             /**
             * Http Clients tend to escape some characters but not all. Escaping all of them causes problems, because the client
             * will also try to escape them.

@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ExperimentBaseStat::NOT_SET:
+            return {};
           case ExperimentBaseStat::Mean:
             return "Mean";
           default:

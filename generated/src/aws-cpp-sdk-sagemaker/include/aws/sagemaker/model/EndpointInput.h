@@ -188,37 +188,37 @@ namespace Model
 
     /**
      * <p>Whether input data distributed in Amazon S3 is fully replicated or sharded by
-     * an S3 key. Defaults to <code>FullyReplicated</code> </p>
+     * an Amazon S3 key. Defaults to <code>FullyReplicated</code> </p>
      */
     inline const ProcessingS3DataDistributionType& GetS3DataDistributionType() const{ return m_s3DataDistributionType; }
 
     /**
      * <p>Whether input data distributed in Amazon S3 is fully replicated or sharded by
-     * an S3 key. Defaults to <code>FullyReplicated</code> </p>
+     * an Amazon S3 key. Defaults to <code>FullyReplicated</code> </p>
      */
     inline bool S3DataDistributionTypeHasBeenSet() const { return m_s3DataDistributionTypeHasBeenSet; }
 
     /**
      * <p>Whether input data distributed in Amazon S3 is fully replicated or sharded by
-     * an S3 key. Defaults to <code>FullyReplicated</code> </p>
+     * an Amazon S3 key. Defaults to <code>FullyReplicated</code> </p>
      */
     inline void SetS3DataDistributionType(const ProcessingS3DataDistributionType& value) { m_s3DataDistributionTypeHasBeenSet = true; m_s3DataDistributionType = value; }
 
     /**
      * <p>Whether input data distributed in Amazon S3 is fully replicated or sharded by
-     * an S3 key. Defaults to <code>FullyReplicated</code> </p>
+     * an Amazon S3 key. Defaults to <code>FullyReplicated</code> </p>
      */
     inline void SetS3DataDistributionType(ProcessingS3DataDistributionType&& value) { m_s3DataDistributionTypeHasBeenSet = true; m_s3DataDistributionType = std::move(value); }
 
     /**
      * <p>Whether input data distributed in Amazon S3 is fully replicated or sharded by
-     * an S3 key. Defaults to <code>FullyReplicated</code> </p>
+     * an Amazon S3 key. Defaults to <code>FullyReplicated</code> </p>
      */
     inline EndpointInput& WithS3DataDistributionType(const ProcessingS3DataDistributionType& value) { SetS3DataDistributionType(value); return *this;}
 
     /**
      * <p>Whether input data distributed in Amazon S3 is fully replicated or sharded by
-     * an S3 key. Defaults to <code>FullyReplicated</code> </p>
+     * an Amazon S3 key. Defaults to <code>FullyReplicated</code> </p>
      */
     inline EndpointInput& WithS3DataDistributionType(ProcessingS3DataDistributionType&& value) { SetS3DataDistributionType(std::move(value)); return *this;}
 

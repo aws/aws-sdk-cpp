@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PredefinedMetricPairType::NOT_SET:
+            return {};
           case PredefinedMetricPairType::ASGCPUUtilization:
             return "ASGCPUUtilization";
           case PredefinedMetricPairType::ASGNetworkIn:

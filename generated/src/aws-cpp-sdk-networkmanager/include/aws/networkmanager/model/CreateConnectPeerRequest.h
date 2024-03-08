@@ -317,6 +317,47 @@ namespace Model
      */
     inline CreateConnectPeerRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
+
+    /**
+     * <p>The subnet ARN for the Connect peer.</p>
+     */
+    inline const Aws::String& GetSubnetArn() const{ return m_subnetArn; }
+
+    /**
+     * <p>The subnet ARN for the Connect peer.</p>
+     */
+    inline bool SubnetArnHasBeenSet() const { return m_subnetArnHasBeenSet; }
+
+    /**
+     * <p>The subnet ARN for the Connect peer.</p>
+     */
+    inline void SetSubnetArn(const Aws::String& value) { m_subnetArnHasBeenSet = true; m_subnetArn = value; }
+
+    /**
+     * <p>The subnet ARN for the Connect peer.</p>
+     */
+    inline void SetSubnetArn(Aws::String&& value) { m_subnetArnHasBeenSet = true; m_subnetArn = std::move(value); }
+
+    /**
+     * <p>The subnet ARN for the Connect peer.</p>
+     */
+    inline void SetSubnetArn(const char* value) { m_subnetArnHasBeenSet = true; m_subnetArn.assign(value); }
+
+    /**
+     * <p>The subnet ARN for the Connect peer.</p>
+     */
+    inline CreateConnectPeerRequest& WithSubnetArn(const Aws::String& value) { SetSubnetArn(value); return *this;}
+
+    /**
+     * <p>The subnet ARN for the Connect peer.</p>
+     */
+    inline CreateConnectPeerRequest& WithSubnetArn(Aws::String&& value) { SetSubnetArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The subnet ARN for the Connect peer.</p>
+     */
+    inline CreateConnectPeerRequest& WithSubnetArn(const char* value) { SetSubnetArn(value); return *this;}
+
   private:
 
     Aws::String m_connectAttachmentId;
@@ -339,6 +380,9 @@ namespace Model
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet = false;
+
+    Aws::String m_subnetArn;
+    bool m_subnetArnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -63,7 +63,7 @@ Aws::Http::HeaderValueCollection GetBucketAccelerateConfigurationRequest::GetReq
     ss.str("");
   }
 
-  if(m_requestPayerHasBeenSet)
+  if(m_requestPayerHasBeenSet && m_requestPayer != RequestPayer::NOT_SET)
   {
     headers.emplace("x-amz-request-payer", RequestPayerMapper::GetNameForRequestPayer(m_requestPayer));
   }
@@ -74,6 +74,8 @@ Aws::Http::HeaderValueCollection GetBucketAccelerateConfigurationRequest::GetReq
 GetBucketAccelerateConfigurationRequest::EndpointParameters GetBucketAccelerateConfigurationRequest::GetEndpointContextParams() const
 {
     EndpointParameters parameters;
+    // Static context parameters
+    parameters.emplace_back(Aws::String("UseS3ExpressControlEndpoint"), true, Aws::Endpoint::EndpointParameter::ParameterOrigin::STATIC_CONTEXT);
     // Operation context parameters
     if (BucketHasBeenSet()) {
         parameters.emplace_back(Aws::String("Bucket"), this->GetBucket(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);

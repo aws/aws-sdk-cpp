@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/marketplace-catalog/model/Entity.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/Document.h>
 #include <aws/marketplace-catalog/model/Tag.h>
 #include <utility>
 
@@ -44,10 +45,10 @@ namespace Model
     /**
      * <p>Change types are single string values that describe your intention for the
      * change. Each change type is unique for each <code>EntityType</code> provided in
-     * the change's scope. For more information on change types available for
+     * the change's scope. For more information about change types available for
      * single-AMI products, see <a
      * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#working-with-single-AMI-products">Working
-     * with single-AMI products</a>. Also, for more information on change types
+     * with single-AMI products</a>. Also, for more information about change types
      * available for container-based products, see <a
      * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/container-products.html#working-with-container-products">Working
      * with container products</a>.</p>
@@ -57,10 +58,10 @@ namespace Model
     /**
      * <p>Change types are single string values that describe your intention for the
      * change. Each change type is unique for each <code>EntityType</code> provided in
-     * the change's scope. For more information on change types available for
+     * the change's scope. For more information about change types available for
      * single-AMI products, see <a
      * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#working-with-single-AMI-products">Working
-     * with single-AMI products</a>. Also, for more information on change types
+     * with single-AMI products</a>. Also, for more information about change types
      * available for container-based products, see <a
      * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/container-products.html#working-with-container-products">Working
      * with container products</a>.</p>
@@ -70,10 +71,10 @@ namespace Model
     /**
      * <p>Change types are single string values that describe your intention for the
      * change. Each change type is unique for each <code>EntityType</code> provided in
-     * the change's scope. For more information on change types available for
+     * the change's scope. For more information about change types available for
      * single-AMI products, see <a
      * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#working-with-single-AMI-products">Working
-     * with single-AMI products</a>. Also, for more information on change types
+     * with single-AMI products</a>. Also, for more information about change types
      * available for container-based products, see <a
      * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/container-products.html#working-with-container-products">Working
      * with container products</a>.</p>
@@ -83,10 +84,10 @@ namespace Model
     /**
      * <p>Change types are single string values that describe your intention for the
      * change. Each change type is unique for each <code>EntityType</code> provided in
-     * the change's scope. For more information on change types available for
+     * the change's scope. For more information about change types available for
      * single-AMI products, see <a
      * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#working-with-single-AMI-products">Working
-     * with single-AMI products</a>. Also, for more information on change types
+     * with single-AMI products</a>. Also, for more information about change types
      * available for container-based products, see <a
      * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/container-products.html#working-with-container-products">Working
      * with container products</a>.</p>
@@ -96,10 +97,10 @@ namespace Model
     /**
      * <p>Change types are single string values that describe your intention for the
      * change. Each change type is unique for each <code>EntityType</code> provided in
-     * the change's scope. For more information on change types available for
+     * the change's scope. For more information about change types available for
      * single-AMI products, see <a
      * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#working-with-single-AMI-products">Working
-     * with single-AMI products</a>. Also, for more information on change types
+     * with single-AMI products</a>. Also, for more information about change types
      * available for container-based products, see <a
      * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/container-products.html#working-with-container-products">Working
      * with container products</a>.</p>
@@ -109,10 +110,10 @@ namespace Model
     /**
      * <p>Change types are single string values that describe your intention for the
      * change. Each change type is unique for each <code>EntityType</code> provided in
-     * the change's scope. For more information on change types available for
+     * the change's scope. For more information about change types available for
      * single-AMI products, see <a
      * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#working-with-single-AMI-products">Working
-     * with single-AMI products</a>. Also, for more information on change types
+     * with single-AMI products</a>. Also, for more information about change types
      * available for container-based products, see <a
      * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/container-products.html#working-with-container-products">Working
      * with container products</a>.</p>
@@ -122,10 +123,10 @@ namespace Model
     /**
      * <p>Change types are single string values that describe your intention for the
      * change. Each change type is unique for each <code>EntityType</code> provided in
-     * the change's scope. For more information on change types available for
+     * the change's scope. For more information about change types available for
      * single-AMI products, see <a
      * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#working-with-single-AMI-products">Working
-     * with single-AMI products</a>. Also, for more information on change types
+     * with single-AMI products</a>. Also, for more information about change types
      * available for container-based products, see <a
      * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/container-products.html#working-with-container-products">Working
      * with container products</a>.</p>
@@ -135,10 +136,10 @@ namespace Model
     /**
      * <p>Change types are single string values that describe your intention for the
      * change. Each change type is unique for each <code>EntityType</code> provided in
-     * the change's scope. For more information on change types available for
+     * the change's scope. For more information about change types available for
      * single-AMI products, see <a
      * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#working-with-single-AMI-products">Working
-     * with single-AMI products</a>. Also, for more information on change types
+     * with single-AMI products</a>. Also, for more information about change types
      * available for container-based products, see <a
      * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/container-products.html#working-with-container-products">Working
      * with container products</a>.</p>
@@ -220,10 +221,10 @@ namespace Model
 
     /**
      * <p>This object contains details specific to the change type of the requested
-     * change. For more information on change types available for single-AMI products,
-     * see <a
+     * change. For more information about change types available for single-AMI
+     * products, see <a
      * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#working-with-single-AMI-products">Working
-     * with single-AMI products</a>. Also, for more information on change types
+     * with single-AMI products</a>. Also, for more information about change types
      * available for container-based products, see <a
      * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/container-products.html#working-with-container-products">Working
      * with container products</a>.</p>
@@ -232,10 +233,10 @@ namespace Model
 
     /**
      * <p>This object contains details specific to the change type of the requested
-     * change. For more information on change types available for single-AMI products,
-     * see <a
+     * change. For more information about change types available for single-AMI
+     * products, see <a
      * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#working-with-single-AMI-products">Working
-     * with single-AMI products</a>. Also, for more information on change types
+     * with single-AMI products</a>. Also, for more information about change types
      * available for container-based products, see <a
      * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/container-products.html#working-with-container-products">Working
      * with container products</a>.</p>
@@ -244,10 +245,10 @@ namespace Model
 
     /**
      * <p>This object contains details specific to the change type of the requested
-     * change. For more information on change types available for single-AMI products,
-     * see <a
+     * change. For more information about change types available for single-AMI
+     * products, see <a
      * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#working-with-single-AMI-products">Working
-     * with single-AMI products</a>. Also, for more information on change types
+     * with single-AMI products</a>. Also, for more information about change types
      * available for container-based products, see <a
      * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/container-products.html#working-with-container-products">Working
      * with container products</a>.</p>
@@ -256,10 +257,10 @@ namespace Model
 
     /**
      * <p>This object contains details specific to the change type of the requested
-     * change. For more information on change types available for single-AMI products,
-     * see <a
+     * change. For more information about change types available for single-AMI
+     * products, see <a
      * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#working-with-single-AMI-products">Working
-     * with single-AMI products</a>. Also, for more information on change types
+     * with single-AMI products</a>. Also, for more information about change types
      * available for container-based products, see <a
      * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/container-products.html#working-with-container-products">Working
      * with container products</a>.</p>
@@ -268,10 +269,10 @@ namespace Model
 
     /**
      * <p>This object contains details specific to the change type of the requested
-     * change. For more information on change types available for single-AMI products,
-     * see <a
+     * change. For more information about change types available for single-AMI
+     * products, see <a
      * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#working-with-single-AMI-products">Working
-     * with single-AMI products</a>. Also, for more information on change types
+     * with single-AMI products</a>. Also, for more information about change types
      * available for container-based products, see <a
      * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/container-products.html#working-with-container-products">Working
      * with container products</a>.</p>
@@ -280,10 +281,10 @@ namespace Model
 
     /**
      * <p>This object contains details specific to the change type of the requested
-     * change. For more information on change types available for single-AMI products,
-     * see <a
+     * change. For more information about change types available for single-AMI
+     * products, see <a
      * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#working-with-single-AMI-products">Working
-     * with single-AMI products</a>. Also, for more information on change types
+     * with single-AMI products</a>. Also, for more information about change types
      * available for container-based products, see <a
      * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/container-products.html#working-with-container-products">Working
      * with container products</a>.</p>
@@ -292,10 +293,10 @@ namespace Model
 
     /**
      * <p>This object contains details specific to the change type of the requested
-     * change. For more information on change types available for single-AMI products,
-     * see <a
+     * change. For more information about change types available for single-AMI
+     * products, see <a
      * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#working-with-single-AMI-products">Working
-     * with single-AMI products</a>. Also, for more information on change types
+     * with single-AMI products</a>. Also, for more information about change types
      * available for container-based products, see <a
      * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/container-products.html#working-with-container-products">Working
      * with container products</a>.</p>
@@ -304,15 +305,58 @@ namespace Model
 
     /**
      * <p>This object contains details specific to the change type of the requested
-     * change. For more information on change types available for single-AMI products,
-     * see <a
+     * change. For more information about change types available for single-AMI
+     * products, see <a
      * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#working-with-single-AMI-products">Working
-     * with single-AMI products</a>. Also, for more information on change types
+     * with single-AMI products</a>. Also, for more information about change types
      * available for container-based products, see <a
      * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/container-products.html#working-with-container-products">Working
      * with container products</a>.</p>
      */
     inline Change& WithDetails(const char* value) { SetDetails(value); return *this;}
+
+
+    /**
+     * <p>Alternative field that accepts a JSON value instead of a string for
+     * <code>ChangeType</code> details. You can use either <code>Details</code> or
+     * <code>DetailsDocument</code>, but not both.</p>
+     */
+    inline Aws::Utils::DocumentView GetDetailsDocument() const{ return m_detailsDocument; }
+
+    /**
+     * <p>Alternative field that accepts a JSON value instead of a string for
+     * <code>ChangeType</code> details. You can use either <code>Details</code> or
+     * <code>DetailsDocument</code>, but not both.</p>
+     */
+    inline bool DetailsDocumentHasBeenSet() const { return m_detailsDocumentHasBeenSet; }
+
+    /**
+     * <p>Alternative field that accepts a JSON value instead of a string for
+     * <code>ChangeType</code> details. You can use either <code>Details</code> or
+     * <code>DetailsDocument</code>, but not both.</p>
+     */
+    inline void SetDetailsDocument(const Aws::Utils::Document& value) { m_detailsDocumentHasBeenSet = true; m_detailsDocument = value; }
+
+    /**
+     * <p>Alternative field that accepts a JSON value instead of a string for
+     * <code>ChangeType</code> details. You can use either <code>Details</code> or
+     * <code>DetailsDocument</code>, but not both.</p>
+     */
+    inline void SetDetailsDocument(Aws::Utils::Document&& value) { m_detailsDocumentHasBeenSet = true; m_detailsDocument = std::move(value); }
+
+    /**
+     * <p>Alternative field that accepts a JSON value instead of a string for
+     * <code>ChangeType</code> details. You can use either <code>Details</code> or
+     * <code>DetailsDocument</code>, but not both.</p>
+     */
+    inline Change& WithDetailsDocument(const Aws::Utils::Document& value) { SetDetailsDocument(value); return *this;}
+
+    /**
+     * <p>Alternative field that accepts a JSON value instead of a string for
+     * <code>ChangeType</code> details. You can use either <code>Details</code> or
+     * <code>DetailsDocument</code>, but not both.</p>
+     */
+    inline Change& WithDetailsDocument(Aws::Utils::Document&& value) { SetDetailsDocument(std::move(value)); return *this;}
 
 
     /**
@@ -368,6 +412,9 @@ namespace Model
 
     Aws::String m_details;
     bool m_detailsHasBeenSet = false;
+
+    Aws::Utils::Document m_detailsDocument;
+    bool m_detailsDocumentHasBeenSet = false;
 
     Aws::String m_changeName;
     bool m_changeNameHasBeenSet = false;

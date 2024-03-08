@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case XavcHdIntraCbgProfileClass::NOT_SET:
+            return {};
           case XavcHdIntraCbgProfileClass::CLASS_50:
             return "CLASS_50";
           case XavcHdIntraCbgProfileClass::CLASS_100:

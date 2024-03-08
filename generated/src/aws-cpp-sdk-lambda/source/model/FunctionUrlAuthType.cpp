@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FunctionUrlAuthType::NOT_SET:
+            return {};
           case FunctionUrlAuthType::NONE:
             return "NONE";
           case FunctionUrlAuthType::AWS_IAM:

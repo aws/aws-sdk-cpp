@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FirewallDeploymentModel::NOT_SET:
+            return {};
           case FirewallDeploymentModel::CENTRALIZED:
             return "CENTRALIZED";
           case FirewallDeploymentModel::DISTRIBUTED:

@@ -6,10 +6,10 @@
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/model/RecommendationMetrics.h>
+#include <aws/sagemaker/model/InferenceMetrics.h>
 #include <aws/sagemaker/model/EndpointOutputConfiguration.h>
 #include <aws/sagemaker/model/ModelConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/sagemaker/model/InferenceMetrics.h>
 #include <aws/core/utils/DateTime.h>
 #include <utility>
 
@@ -60,6 +60,25 @@ namespace Model
 
     
     inline RecommendationJobInferenceBenchmark& WithMetrics(RecommendationMetrics&& value) { SetMetrics(std::move(value)); return *this;}
+
+
+    
+    inline const InferenceMetrics& GetEndpointMetrics() const{ return m_endpointMetrics; }
+
+    
+    inline bool EndpointMetricsHasBeenSet() const { return m_endpointMetricsHasBeenSet; }
+
+    
+    inline void SetEndpointMetrics(const InferenceMetrics& value) { m_endpointMetricsHasBeenSet = true; m_endpointMetrics = value; }
+
+    
+    inline void SetEndpointMetrics(InferenceMetrics&& value) { m_endpointMetricsHasBeenSet = true; m_endpointMetrics = std::move(value); }
+
+    
+    inline RecommendationJobInferenceBenchmark& WithEndpointMetrics(const InferenceMetrics& value) { SetEndpointMetrics(value); return *this;}
+
+    
+    inline RecommendationJobInferenceBenchmark& WithEndpointMetrics(InferenceMetrics&& value) { SetEndpointMetrics(std::move(value)); return *this;}
 
 
     
@@ -141,25 +160,6 @@ namespace Model
     inline RecommendationJobInferenceBenchmark& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
 
 
-    
-    inline const InferenceMetrics& GetEndpointMetrics() const{ return m_endpointMetrics; }
-
-    
-    inline bool EndpointMetricsHasBeenSet() const { return m_endpointMetricsHasBeenSet; }
-
-    
-    inline void SetEndpointMetrics(const InferenceMetrics& value) { m_endpointMetricsHasBeenSet = true; m_endpointMetrics = value; }
-
-    
-    inline void SetEndpointMetrics(InferenceMetrics&& value) { m_endpointMetricsHasBeenSet = true; m_endpointMetrics = std::move(value); }
-
-    
-    inline RecommendationJobInferenceBenchmark& WithEndpointMetrics(const InferenceMetrics& value) { SetEndpointMetrics(value); return *this;}
-
-    
-    inline RecommendationJobInferenceBenchmark& WithEndpointMetrics(InferenceMetrics&& value) { SetEndpointMetrics(std::move(value)); return *this;}
-
-
     /**
      * <p>A timestamp that shows when the benchmark completed.</p>
      */
@@ -226,6 +226,9 @@ namespace Model
     RecommendationMetrics m_metrics;
     bool m_metricsHasBeenSet = false;
 
+    InferenceMetrics m_endpointMetrics;
+    bool m_endpointMetricsHasBeenSet = false;
+
     EndpointOutputConfiguration m_endpointConfiguration;
     bool m_endpointConfigurationHasBeenSet = false;
 
@@ -234,9 +237,6 @@ namespace Model
 
     Aws::String m_failureReason;
     bool m_failureReasonHasBeenSet = false;
-
-    InferenceMetrics m_endpointMetrics;
-    bool m_endpointMetricsHasBeenSet = false;
 
     Aws::Utils::DateTime m_invocationEndTime;
     bool m_invocationEndTimeHasBeenSet = false;

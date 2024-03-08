@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CmafInitializationVectorInManifest::NOT_SET:
+            return {};
           case CmafInitializationVectorInManifest::INCLUDE:
             return "INCLUDE";
           case CmafInitializationVectorInManifest::EXCLUDE:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UnsuccessfulFaceDisassociationReason::NOT_SET:
+            return {};
           case UnsuccessfulFaceDisassociationReason::FACE_NOT_FOUND:
             return "FACE_NOT_FOUND";
           case UnsuccessfulFaceDisassociationReason::ASSOCIATED_TO_A_DIFFERENT_USER:

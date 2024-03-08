@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NodeFromTemplateJobStatus::NOT_SET:
+            return {};
           case NodeFromTemplateJobStatus::PENDING:
             return "PENDING";
           case NodeFromTemplateJobStatus::SUCCEEDED:

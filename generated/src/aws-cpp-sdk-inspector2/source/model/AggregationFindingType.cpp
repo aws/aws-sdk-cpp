@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AggregationFindingType::NOT_SET:
+            return {};
           case AggregationFindingType::NETWORK_REACHABILITY:
             return "NETWORK_REACHABILITY";
           case AggregationFindingType::PACKAGE_VULNERABILITY:

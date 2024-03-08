@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EventIngestion::NOT_SET:
+            return {};
           case EventIngestion::ENABLED:
             return "ENABLED";
           case EventIngestion::DISABLED:

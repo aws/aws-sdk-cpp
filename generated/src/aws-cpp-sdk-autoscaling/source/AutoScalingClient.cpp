@@ -101,8 +101,16 @@ using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
 
-const char* AutoScalingClient::SERVICE_NAME = "autoscaling";
-const char* AutoScalingClient::ALLOCATION_TAG = "AutoScalingClient";
+namespace Aws
+{
+  namespace AutoScaling
+  {
+    const char SERVICE_NAME[] = "autoscaling";
+    const char ALLOCATION_TAG[] = "AutoScalingClient";
+  }
+}
+const char* AutoScalingClient::GetServiceName() {return SERVICE_NAME;}
+const char* AutoScalingClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 AutoScalingClient::AutoScalingClient(const AutoScaling::AutoScalingClientConfiguration& clientConfiguration,
                                      std::shared_ptr<AutoScalingEndpointProviderBase> endpointProvider) :
@@ -114,7 +122,7 @@ AutoScalingClient::AutoScalingClient(const AutoScaling::AutoScalingClientConfigu
             Aws::MakeShared<AutoScalingErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<AutoScalingEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -130,7 +138,7 @@ AutoScalingClient::AutoScalingClient(const AWSCredentials& credentials,
             Aws::MakeShared<AutoScalingErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<AutoScalingEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -146,7 +154,7 @@ AutoScalingClient::AutoScalingClient(const std::shared_ptr<AWSCredentialsProvide
             Aws::MakeShared<AutoScalingErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<AutoScalingEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

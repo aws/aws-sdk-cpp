@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LustreAccessAuditLogLevel::NOT_SET:
+            return {};
           case LustreAccessAuditLogLevel::DISABLED:
             return "DISABLED";
           case LustreAccessAuditLogLevel::WARN_ONLY:

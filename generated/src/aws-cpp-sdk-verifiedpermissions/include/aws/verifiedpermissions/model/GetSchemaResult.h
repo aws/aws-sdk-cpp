@@ -7,6 +7,7 @@
 #include <aws/verifiedpermissions/VerifiedPermissions_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -157,6 +158,47 @@ namespace Model
     inline GetSchemaResult& WithLastUpdatedDate(Aws::Utils::DateTime&& value) { SetLastUpdatedDate(std::move(value)); return *this;}
 
 
+    /**
+     * <p>The namespaces of the entities referenced by this schema.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetNamespaces() const{ return m_namespaces; }
+
+    /**
+     * <p>The namespaces of the entities referenced by this schema.</p>
+     */
+    inline void SetNamespaces(const Aws::Vector<Aws::String>& value) { m_namespaces = value; }
+
+    /**
+     * <p>The namespaces of the entities referenced by this schema.</p>
+     */
+    inline void SetNamespaces(Aws::Vector<Aws::String>&& value) { m_namespaces = std::move(value); }
+
+    /**
+     * <p>The namespaces of the entities referenced by this schema.</p>
+     */
+    inline GetSchemaResult& WithNamespaces(const Aws::Vector<Aws::String>& value) { SetNamespaces(value); return *this;}
+
+    /**
+     * <p>The namespaces of the entities referenced by this schema.</p>
+     */
+    inline GetSchemaResult& WithNamespaces(Aws::Vector<Aws::String>&& value) { SetNamespaces(std::move(value)); return *this;}
+
+    /**
+     * <p>The namespaces of the entities referenced by this schema.</p>
+     */
+    inline GetSchemaResult& AddNamespaces(const Aws::String& value) { m_namespaces.push_back(value); return *this; }
+
+    /**
+     * <p>The namespaces of the entities referenced by this schema.</p>
+     */
+    inline GetSchemaResult& AddNamespaces(Aws::String&& value) { m_namespaces.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The namespaces of the entities referenced by this schema.</p>
+     */
+    inline GetSchemaResult& AddNamespaces(const char* value) { m_namespaces.push_back(value); return *this; }
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -187,6 +229,8 @@ namespace Model
     Aws::Utils::DateTime m_createdDate;
 
     Aws::Utils::DateTime m_lastUpdatedDate;
+
+    Aws::Vector<Aws::String> m_namespaces;
 
     Aws::String m_requestId;
   };

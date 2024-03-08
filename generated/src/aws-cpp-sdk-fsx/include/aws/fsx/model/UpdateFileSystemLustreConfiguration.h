@@ -468,6 +468,63 @@ namespace Model
      */
     inline UpdateFileSystemLustreConfiguration& WithRootSquashConfiguration(LustreRootSquashConfiguration&& value) { SetRootSquashConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The throughput of an Amazon FSx for Lustre Persistent SSD-based file system,
+     * measured in megabytes per second per tebibyte (MB/s/TiB). You can increase or
+     * decrease your file system's throughput. Valid values depend on the deployment
+     * type of the file system, as follows:</p> <ul> <li> <p>For
+     * <code>PERSISTENT_1</code> SSD-based deployment types, valid values are 50, 100,
+     * and 200 MB/s/TiB.</p> </li> <li> <p>For <code>PERSISTENT_2</code> SSD-based
+     * deployment types, valid values are 125, 250, 500, and 1000 MB/s/TiB.</p> </li>
+     * </ul> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-throughput-capacity.html">
+     * Managing throughput capacity</a>.</p>
+     */
+    inline int GetPerUnitStorageThroughput() const{ return m_perUnitStorageThroughput; }
+
+    /**
+     * <p>The throughput of an Amazon FSx for Lustre Persistent SSD-based file system,
+     * measured in megabytes per second per tebibyte (MB/s/TiB). You can increase or
+     * decrease your file system's throughput. Valid values depend on the deployment
+     * type of the file system, as follows:</p> <ul> <li> <p>For
+     * <code>PERSISTENT_1</code> SSD-based deployment types, valid values are 50, 100,
+     * and 200 MB/s/TiB.</p> </li> <li> <p>For <code>PERSISTENT_2</code> SSD-based
+     * deployment types, valid values are 125, 250, 500, and 1000 MB/s/TiB.</p> </li>
+     * </ul> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-throughput-capacity.html">
+     * Managing throughput capacity</a>.</p>
+     */
+    inline bool PerUnitStorageThroughputHasBeenSet() const { return m_perUnitStorageThroughputHasBeenSet; }
+
+    /**
+     * <p>The throughput of an Amazon FSx for Lustre Persistent SSD-based file system,
+     * measured in megabytes per second per tebibyte (MB/s/TiB). You can increase or
+     * decrease your file system's throughput. Valid values depend on the deployment
+     * type of the file system, as follows:</p> <ul> <li> <p>For
+     * <code>PERSISTENT_1</code> SSD-based deployment types, valid values are 50, 100,
+     * and 200 MB/s/TiB.</p> </li> <li> <p>For <code>PERSISTENT_2</code> SSD-based
+     * deployment types, valid values are 125, 250, 500, and 1000 MB/s/TiB.</p> </li>
+     * </ul> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-throughput-capacity.html">
+     * Managing throughput capacity</a>.</p>
+     */
+    inline void SetPerUnitStorageThroughput(int value) { m_perUnitStorageThroughputHasBeenSet = true; m_perUnitStorageThroughput = value; }
+
+    /**
+     * <p>The throughput of an Amazon FSx for Lustre Persistent SSD-based file system,
+     * measured in megabytes per second per tebibyte (MB/s/TiB). You can increase or
+     * decrease your file system's throughput. Valid values depend on the deployment
+     * type of the file system, as follows:</p> <ul> <li> <p>For
+     * <code>PERSISTENT_1</code> SSD-based deployment types, valid values are 50, 100,
+     * and 200 MB/s/TiB.</p> </li> <li> <p>For <code>PERSISTENT_2</code> SSD-based
+     * deployment types, valid values are 125, 250, 500, and 1000 MB/s/TiB.</p> </li>
+     * </ul> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-throughput-capacity.html">
+     * Managing throughput capacity</a>.</p>
+     */
+    inline UpdateFileSystemLustreConfiguration& WithPerUnitStorageThroughput(int value) { SetPerUnitStorageThroughput(value); return *this;}
+
   private:
 
     Aws::String m_weeklyMaintenanceStartTime;
@@ -490,6 +547,9 @@ namespace Model
 
     LustreRootSquashConfiguration m_rootSquashConfiguration;
     bool m_rootSquashConfigurationHasBeenSet = false;
+
+    int m_perUnitStorageThroughput;
+    bool m_perUnitStorageThroughputHasBeenSet = false;
   };
 
 } // namespace Model

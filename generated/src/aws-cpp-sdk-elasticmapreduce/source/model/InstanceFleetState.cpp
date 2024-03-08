@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InstanceFleetState::NOT_SET:
+            return {};
           case InstanceFleetState::PROVISIONING:
             return "PROVISIONING";
           case InstanceFleetState::BOOTSTRAPPING:

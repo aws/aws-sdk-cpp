@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/fis/model/ExperimentLogConfiguration.h>
+#include <aws/fis/model/ExperimentOptions.h>
 #include <aws/fis/model/ExperimentTarget.h>
 #include <aws/fis/model/ExperimentAction.h>
 #include <aws/fis/model/ExperimentStopCondition.h>
@@ -559,6 +560,58 @@ namespace Model
      */
     inline Experiment& WithLogConfiguration(ExperimentLogConfiguration&& value) { SetLogConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The experiment options for the experiment.</p>
+     */
+    inline const ExperimentOptions& GetExperimentOptions() const{ return m_experimentOptions; }
+
+    /**
+     * <p>The experiment options for the experiment.</p>
+     */
+    inline bool ExperimentOptionsHasBeenSet() const { return m_experimentOptionsHasBeenSet; }
+
+    /**
+     * <p>The experiment options for the experiment.</p>
+     */
+    inline void SetExperimentOptions(const ExperimentOptions& value) { m_experimentOptionsHasBeenSet = true; m_experimentOptions = value; }
+
+    /**
+     * <p>The experiment options for the experiment.</p>
+     */
+    inline void SetExperimentOptions(ExperimentOptions&& value) { m_experimentOptionsHasBeenSet = true; m_experimentOptions = std::move(value); }
+
+    /**
+     * <p>The experiment options for the experiment.</p>
+     */
+    inline Experiment& WithExperimentOptions(const ExperimentOptions& value) { SetExperimentOptions(value); return *this;}
+
+    /**
+     * <p>The experiment options for the experiment.</p>
+     */
+    inline Experiment& WithExperimentOptions(ExperimentOptions&& value) { SetExperimentOptions(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The count of target account configurations for the experiment.</p>
+     */
+    inline long long GetTargetAccountConfigurationsCount() const{ return m_targetAccountConfigurationsCount; }
+
+    /**
+     * <p>The count of target account configurations for the experiment.</p>
+     */
+    inline bool TargetAccountConfigurationsCountHasBeenSet() const { return m_targetAccountConfigurationsCountHasBeenSet; }
+
+    /**
+     * <p>The count of target account configurations for the experiment.</p>
+     */
+    inline void SetTargetAccountConfigurationsCount(long long value) { m_targetAccountConfigurationsCountHasBeenSet = true; m_targetAccountConfigurationsCount = value; }
+
+    /**
+     * <p>The count of target account configurations for the experiment.</p>
+     */
+    inline Experiment& WithTargetAccountConfigurationsCount(long long value) { SetTargetAccountConfigurationsCount(value); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -596,6 +649,12 @@ namespace Model
 
     ExperimentLogConfiguration m_logConfiguration;
     bool m_logConfigurationHasBeenSet = false;
+
+    ExperimentOptions m_experimentOptions;
+    bool m_experimentOptionsHasBeenSet = false;
+
+    long long m_targetAccountConfigurationsCount;
+    bool m_targetAccountConfigurationsCountHasBeenSet = false;
   };
 
 } // namespace Model

@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BGPPeerState::NOT_SET:
+            return {};
           case BGPPeerState::verifying:
             return "verifying";
           case BGPPeerState::pending:

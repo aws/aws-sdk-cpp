@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StageStatus::NOT_SET:
+            return {};
           case StageStatus::CREATING:
             return "CREATING";
           case StageStatus::READYTODEPLOY:

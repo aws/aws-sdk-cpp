@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NestingLevelValue::NOT_SET:
+            return {};
           case NestingLevelValue::none:
             return "none";
           case NestingLevelValue::one:

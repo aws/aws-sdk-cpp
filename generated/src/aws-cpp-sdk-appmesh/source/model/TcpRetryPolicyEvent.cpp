@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TcpRetryPolicyEvent::NOT_SET:
+            return {};
           case TcpRetryPolicyEvent::connection_error:
             return "connection-error";
           default:

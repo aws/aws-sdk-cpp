@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ScalingPolicyUpdateBehavior::NOT_SET:
+            return {};
           case ScalingPolicyUpdateBehavior::KeepExternalPolicies:
             return "KeepExternalPolicies";
           case ScalingPolicyUpdateBehavior::ReplaceExternalPolicies:

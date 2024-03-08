@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AsyncOperationName::NOT_SET:
+            return {};
           case AsyncOperationName::CreateMultiRegionAccessPoint:
             return "CreateMultiRegionAccessPoint";
           case AsyncOperationName::DeleteMultiRegionAccessPoint:

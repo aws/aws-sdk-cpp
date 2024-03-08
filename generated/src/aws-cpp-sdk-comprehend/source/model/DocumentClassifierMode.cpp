@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DocumentClassifierMode::NOT_SET:
+            return {};
           case DocumentClassifierMode::MULTI_CLASS:
             return "MULTI_CLASS";
           case DocumentClassifierMode::MULTI_LABEL:

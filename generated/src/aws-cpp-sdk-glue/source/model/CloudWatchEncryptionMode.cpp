@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CloudWatchEncryptionMode::NOT_SET:
+            return {};
           case CloudWatchEncryptionMode::DISABLED:
             return "DISABLED";
           case CloudWatchEncryptionMode::SSE_KMS:

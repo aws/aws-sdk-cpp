@@ -9,6 +9,8 @@
 #include <aws/personalize/model/BatchInferenceJobInput.h>
 #include <aws/personalize/model/BatchInferenceJobOutput.h>
 #include <aws/personalize/model/BatchInferenceJobConfig.h>
+#include <aws/personalize/model/BatchInferenceJobMode.h>
+#include <aws/personalize/model/ThemeGenerationConfig.h>
 #include <aws/core/utils/DateTime.h>
 #include <utility>
 
@@ -440,6 +442,68 @@ namespace Model
 
 
     /**
+     * <p>The job's mode.</p>
+     */
+    inline const BatchInferenceJobMode& GetBatchInferenceJobMode() const{ return m_batchInferenceJobMode; }
+
+    /**
+     * <p>The job's mode.</p>
+     */
+    inline bool BatchInferenceJobModeHasBeenSet() const { return m_batchInferenceJobModeHasBeenSet; }
+
+    /**
+     * <p>The job's mode.</p>
+     */
+    inline void SetBatchInferenceJobMode(const BatchInferenceJobMode& value) { m_batchInferenceJobModeHasBeenSet = true; m_batchInferenceJobMode = value; }
+
+    /**
+     * <p>The job's mode.</p>
+     */
+    inline void SetBatchInferenceJobMode(BatchInferenceJobMode&& value) { m_batchInferenceJobModeHasBeenSet = true; m_batchInferenceJobMode = std::move(value); }
+
+    /**
+     * <p>The job's mode.</p>
+     */
+    inline BatchInferenceJob& WithBatchInferenceJobMode(const BatchInferenceJobMode& value) { SetBatchInferenceJobMode(value); return *this;}
+
+    /**
+     * <p>The job's mode.</p>
+     */
+    inline BatchInferenceJob& WithBatchInferenceJobMode(BatchInferenceJobMode&& value) { SetBatchInferenceJobMode(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The job's theme generation settings.</p>
+     */
+    inline const ThemeGenerationConfig& GetThemeGenerationConfig() const{ return m_themeGenerationConfig; }
+
+    /**
+     * <p>The job's theme generation settings.</p>
+     */
+    inline bool ThemeGenerationConfigHasBeenSet() const { return m_themeGenerationConfigHasBeenSet; }
+
+    /**
+     * <p>The job's theme generation settings.</p>
+     */
+    inline void SetThemeGenerationConfig(const ThemeGenerationConfig& value) { m_themeGenerationConfigHasBeenSet = true; m_themeGenerationConfig = value; }
+
+    /**
+     * <p>The job's theme generation settings.</p>
+     */
+    inline void SetThemeGenerationConfig(ThemeGenerationConfig&& value) { m_themeGenerationConfigHasBeenSet = true; m_themeGenerationConfig = std::move(value); }
+
+    /**
+     * <p>The job's theme generation settings.</p>
+     */
+    inline BatchInferenceJob& WithThemeGenerationConfig(const ThemeGenerationConfig& value) { SetThemeGenerationConfig(value); return *this;}
+
+    /**
+     * <p>The job's theme generation settings.</p>
+     */
+    inline BatchInferenceJob& WithThemeGenerationConfig(ThemeGenerationConfig&& value) { SetThemeGenerationConfig(std::move(value)); return *this;}
+
+
+    /**
      * <p>The status of the batch inference job. The status is one of the following
      * values:</p> <ul> <li> <p>PENDING</p> </li> <li> <p>IN PROGRESS</p> </li> <li>
      * <p>ACTIVE</p> </li> <li> <p>CREATE FAILED</p> </li> </ul>
@@ -588,6 +652,12 @@ namespace Model
 
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet = false;
+
+    BatchInferenceJobMode m_batchInferenceJobMode;
+    bool m_batchInferenceJobModeHasBeenSet = false;
+
+    ThemeGenerationConfig m_themeGenerationConfig;
+    bool m_themeGenerationConfigHasBeenSet = false;
 
     Aws::String m_status;
     bool m_statusHasBeenSet = false;

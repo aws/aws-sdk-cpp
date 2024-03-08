@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SearchCollectionType::NOT_SET:
+            return {};
           case SearchCollectionType::OWNED:
             return "OWNED";
           case SearchCollectionType::SHARED_WITH_ME:

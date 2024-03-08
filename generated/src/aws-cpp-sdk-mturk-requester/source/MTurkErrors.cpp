@@ -43,11 +43,11 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == SERVICE_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(MTurkErrors::SERVICE_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(MTurkErrors::SERVICE_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == REQUEST_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(MTurkErrors::REQUEST), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(MTurkErrors::REQUEST), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

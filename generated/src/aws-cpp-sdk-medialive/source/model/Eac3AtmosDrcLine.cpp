@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Eac3AtmosDrcLine::NOT_SET:
+            return {};
           case Eac3AtmosDrcLine::FILM_LIGHT:
             return "FILM_LIGHT";
           case Eac3AtmosDrcLine::FILM_STANDARD:

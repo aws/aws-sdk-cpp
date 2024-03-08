@@ -39,26 +39,26 @@ namespace Model
 
 
     /**
-     * <p>The exit code for the job attempt. A non-zero exit code is considered
-     * failed.</p>
+     * <p>The exit code returned for the job attempt. A non-zero exit code is
+     * considered failed.</p>
      */
     inline int GetExitCode() const{ return m_exitCode; }
 
     /**
-     * <p>The exit code for the job attempt. A non-zero exit code is considered
-     * failed.</p>
+     * <p>The exit code returned for the job attempt. A non-zero exit code is
+     * considered failed.</p>
      */
     inline bool ExitCodeHasBeenSet() const { return m_exitCodeHasBeenSet; }
 
     /**
-     * <p>The exit code for the job attempt. A non-zero exit code is considered
-     * failed.</p>
+     * <p>The exit code returned for the job attempt. A non-zero exit code is
+     * considered failed.</p>
      */
     inline void SetExitCode(int value) { m_exitCodeHasBeenSet = true; m_exitCode = value; }
 
     /**
-     * <p>The exit code for the job attempt. A non-zero exit code is considered
-     * failed.</p>
+     * <p>The exit code returned for the job attempt. A non-zero exit code is
+     * considered failed.</p>
      */
     inline EksAttemptContainerDetail& WithExitCode(int value) { SetExitCode(value); return *this;}
 

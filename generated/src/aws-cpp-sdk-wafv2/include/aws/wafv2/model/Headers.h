@@ -103,37 +103,67 @@ namespace Model
 
     /**
      * <p>The parts of the headers to match with the rule inspection criteria. If you
-     * specify <code>All</code>, WAF inspects both keys and values. </p>
+     * specify <code>ALL</code>, WAF inspects both keys and values. </p> <p>
+     * <code>All</code> does not require a match to be found in the keys and a match to
+     * be found in the values. It requires a match to be found in the keys or the
+     * values or both. To require a match in the keys and in the values, use a logical
+     * <code>AND</code> statement to combine two match rules, one that inspects the
+     * keys and another that inspects the values. </p>
      */
     inline const MapMatchScope& GetMatchScope() const{ return m_matchScope; }
 
     /**
      * <p>The parts of the headers to match with the rule inspection criteria. If you
-     * specify <code>All</code>, WAF inspects both keys and values. </p>
+     * specify <code>ALL</code>, WAF inspects both keys and values. </p> <p>
+     * <code>All</code> does not require a match to be found in the keys and a match to
+     * be found in the values. It requires a match to be found in the keys or the
+     * values or both. To require a match in the keys and in the values, use a logical
+     * <code>AND</code> statement to combine two match rules, one that inspects the
+     * keys and another that inspects the values. </p>
      */
     inline bool MatchScopeHasBeenSet() const { return m_matchScopeHasBeenSet; }
 
     /**
      * <p>The parts of the headers to match with the rule inspection criteria. If you
-     * specify <code>All</code>, WAF inspects both keys and values. </p>
+     * specify <code>ALL</code>, WAF inspects both keys and values. </p> <p>
+     * <code>All</code> does not require a match to be found in the keys and a match to
+     * be found in the values. It requires a match to be found in the keys or the
+     * values or both. To require a match in the keys and in the values, use a logical
+     * <code>AND</code> statement to combine two match rules, one that inspects the
+     * keys and another that inspects the values. </p>
      */
     inline void SetMatchScope(const MapMatchScope& value) { m_matchScopeHasBeenSet = true; m_matchScope = value; }
 
     /**
      * <p>The parts of the headers to match with the rule inspection criteria. If you
-     * specify <code>All</code>, WAF inspects both keys and values. </p>
+     * specify <code>ALL</code>, WAF inspects both keys and values. </p> <p>
+     * <code>All</code> does not require a match to be found in the keys and a match to
+     * be found in the values. It requires a match to be found in the keys or the
+     * values or both. To require a match in the keys and in the values, use a logical
+     * <code>AND</code> statement to combine two match rules, one that inspects the
+     * keys and another that inspects the values. </p>
      */
     inline void SetMatchScope(MapMatchScope&& value) { m_matchScopeHasBeenSet = true; m_matchScope = std::move(value); }
 
     /**
      * <p>The parts of the headers to match with the rule inspection criteria. If you
-     * specify <code>All</code>, WAF inspects both keys and values. </p>
+     * specify <code>ALL</code>, WAF inspects both keys and values. </p> <p>
+     * <code>All</code> does not require a match to be found in the keys and a match to
+     * be found in the values. It requires a match to be found in the keys or the
+     * values or both. To require a match in the keys and in the values, use a logical
+     * <code>AND</code> statement to combine two match rules, one that inspects the
+     * keys and another that inspects the values. </p>
      */
     inline Headers& WithMatchScope(const MapMatchScope& value) { SetMatchScope(value); return *this;}
 
     /**
      * <p>The parts of the headers to match with the rule inspection criteria. If you
-     * specify <code>All</code>, WAF inspects both keys and values. </p>
+     * specify <code>ALL</code>, WAF inspects both keys and values. </p> <p>
+     * <code>All</code> does not require a match to be found in the keys and a match to
+     * be found in the values. It requires a match to be found in the keys or the
+     * values or both. To require a match in the keys and in the values, use a logical
+     * <code>AND</code> statement to combine two match rules, one that inspects the
+     * keys and another that inspects the values. </p>
      */
     inline Headers& WithMatchScope(MapMatchScope&& value) { SetMatchScope(std::move(value)); return *this;}
 

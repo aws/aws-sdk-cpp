@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FileShareType::NOT_SET:
+            return {};
           case FileShareType::NFS:
             return "NFS";
           case FileShareType::SMB:

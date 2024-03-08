@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SmoothGroupEventIdMode::NOT_SET:
+            return {};
           case SmoothGroupEventIdMode::NO_EVENT_ID:
             return "NO_EVENT_ID";
           case SmoothGroupEventIdMode::USE_CONFIGURED:

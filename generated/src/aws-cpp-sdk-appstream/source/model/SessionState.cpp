@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SessionState::NOT_SET:
+            return {};
           case SessionState::ACTIVE:
             return "ACTIVE";
           case SessionState::PENDING:

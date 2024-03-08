@@ -124,6 +124,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SampleType::NOT_SET:
+            return {};
           case SampleType::CPU:
             return "CPU";
           case SampleType::MEMORY:

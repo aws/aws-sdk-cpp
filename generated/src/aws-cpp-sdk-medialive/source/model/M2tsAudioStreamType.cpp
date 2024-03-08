@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case M2tsAudioStreamType::NOT_SET:
+            return {};
           case M2tsAudioStreamType::ATSC:
             return "ATSC";
           case M2tsAudioStreamType::DVB:

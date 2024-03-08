@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case IpAddressType::NOT_SET:
+            return {};
           case IpAddressType::ipv4:
             return "ipv4";
           case IpAddressType::dualstack:

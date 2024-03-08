@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InsightFeedbackOption::NOT_SET:
+            return {};
           case InsightFeedbackOption::VALID_COLLECTION:
             return "VALID_COLLECTION";
           case InsightFeedbackOption::RECOMMENDATION_USEFUL:

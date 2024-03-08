@@ -39,23 +39,23 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == INVALID_ENDPOINT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(TimestreamQueryErrors::INVALID_ENDPOINT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(TimestreamQueryErrors::INVALID_ENDPOINT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == CONFLICT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(TimestreamQueryErrors::CONFLICT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(TimestreamQueryErrors::CONFLICT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == SERVICE_QUOTA_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(TimestreamQueryErrors::SERVICE_QUOTA_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(TimestreamQueryErrors::SERVICE_QUOTA_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INTERNAL_SERVER_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(TimestreamQueryErrors::INTERNAL_SERVER), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(TimestreamQueryErrors::INTERNAL_SERVER), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == QUERY_EXECUTION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(TimestreamQueryErrors::QUERY_EXECUTION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(TimestreamQueryErrors::QUERY_EXECUTION), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Request would cause a service quota to be exceeded.</p><p><h3>See Also:</h3> 
-   * <a
+   * <p>Completing the request would cause a service quota to be
+   * exceeded.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/ServiceQuotaExceededException">AWS
    * API Reference</a></p>
    */
@@ -77,6 +77,47 @@ namespace Model
      * <p>Description of the error.</p>
      */
     inline ServiceQuotaExceededException& WithMessage(const char* value) { SetMessage(value); return *this;}
+
+
+    /**
+     * <p>Service quotas code of the originating quota.</p>
+     */
+    inline const Aws::String& GetQuotaCode() const{ return m_quotaCode; }
+
+    /**
+     * <p>Service quotas code of the originating quota.</p>
+     */
+    inline bool QuotaCodeHasBeenSet() const { return m_quotaCodeHasBeenSet; }
+
+    /**
+     * <p>Service quotas code of the originating quota.</p>
+     */
+    inline void SetQuotaCode(const Aws::String& value) { m_quotaCodeHasBeenSet = true; m_quotaCode = value; }
+
+    /**
+     * <p>Service quotas code of the originating quota.</p>
+     */
+    inline void SetQuotaCode(Aws::String&& value) { m_quotaCodeHasBeenSet = true; m_quotaCode = std::move(value); }
+
+    /**
+     * <p>Service quotas code of the originating quota.</p>
+     */
+    inline void SetQuotaCode(const char* value) { m_quotaCodeHasBeenSet = true; m_quotaCode.assign(value); }
+
+    /**
+     * <p>Service quotas code of the originating quota.</p>
+     */
+    inline ServiceQuotaExceededException& WithQuotaCode(const Aws::String& value) { SetQuotaCode(value); return *this;}
+
+    /**
+     * <p>Service quotas code of the originating quota.</p>
+     */
+    inline ServiceQuotaExceededException& WithQuotaCode(Aws::String&& value) { SetQuotaCode(std::move(value)); return *this;}
+
+    /**
+     * <p>Service quotas code of the originating quota.</p>
+     */
+    inline ServiceQuotaExceededException& WithQuotaCode(const char* value) { SetQuotaCode(value); return *this;}
 
 
     /**
@@ -162,90 +203,52 @@ namespace Model
 
 
     /**
-     * <p>Service Quotas requirement to identify originating service.</p>
+     * <p>Service quotas code for the originating service.</p>
      */
     inline const Aws::String& GetServiceCode() const{ return m_serviceCode; }
 
     /**
-     * <p>Service Quotas requirement to identify originating service.</p>
+     * <p>Service quotas code for the originating service.</p>
      */
     inline bool ServiceCodeHasBeenSet() const { return m_serviceCodeHasBeenSet; }
 
     /**
-     * <p>Service Quotas requirement to identify originating service.</p>
+     * <p>Service quotas code for the originating service.</p>
      */
     inline void SetServiceCode(const Aws::String& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = value; }
 
     /**
-     * <p>Service Quotas requirement to identify originating service.</p>
+     * <p>Service quotas code for the originating service.</p>
      */
     inline void SetServiceCode(Aws::String&& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = std::move(value); }
 
     /**
-     * <p>Service Quotas requirement to identify originating service.</p>
+     * <p>Service quotas code for the originating service.</p>
      */
     inline void SetServiceCode(const char* value) { m_serviceCodeHasBeenSet = true; m_serviceCode.assign(value); }
 
     /**
-     * <p>Service Quotas requirement to identify originating service.</p>
+     * <p>Service quotas code for the originating service.</p>
      */
     inline ServiceQuotaExceededException& WithServiceCode(const Aws::String& value) { SetServiceCode(value); return *this;}
 
     /**
-     * <p>Service Quotas requirement to identify originating service.</p>
+     * <p>Service quotas code for the originating service.</p>
      */
     inline ServiceQuotaExceededException& WithServiceCode(Aws::String&& value) { SetServiceCode(std::move(value)); return *this;}
 
     /**
-     * <p>Service Quotas requirement to identify originating service.</p>
+     * <p>Service quotas code for the originating service.</p>
      */
     inline ServiceQuotaExceededException& WithServiceCode(const char* value) { SetServiceCode(value); return *this;}
-
-
-    /**
-     * <p>Service Quotas requirement to identify originating quota.</p>
-     */
-    inline const Aws::String& GetQuotaCode() const{ return m_quotaCode; }
-
-    /**
-     * <p>Service Quotas requirement to identify originating quota.</p>
-     */
-    inline bool QuotaCodeHasBeenSet() const { return m_quotaCodeHasBeenSet; }
-
-    /**
-     * <p>Service Quotas requirement to identify originating quota.</p>
-     */
-    inline void SetQuotaCode(const Aws::String& value) { m_quotaCodeHasBeenSet = true; m_quotaCode = value; }
-
-    /**
-     * <p>Service Quotas requirement to identify originating quota.</p>
-     */
-    inline void SetQuotaCode(Aws::String&& value) { m_quotaCodeHasBeenSet = true; m_quotaCode = std::move(value); }
-
-    /**
-     * <p>Service Quotas requirement to identify originating quota.</p>
-     */
-    inline void SetQuotaCode(const char* value) { m_quotaCodeHasBeenSet = true; m_quotaCode.assign(value); }
-
-    /**
-     * <p>Service Quotas requirement to identify originating quota.</p>
-     */
-    inline ServiceQuotaExceededException& WithQuotaCode(const Aws::String& value) { SetQuotaCode(value); return *this;}
-
-    /**
-     * <p>Service Quotas requirement to identify originating quota.</p>
-     */
-    inline ServiceQuotaExceededException& WithQuotaCode(Aws::String&& value) { SetQuotaCode(std::move(value)); return *this;}
-
-    /**
-     * <p>Service Quotas requirement to identify originating quota.</p>
-     */
-    inline ServiceQuotaExceededException& WithQuotaCode(const char* value) { SetQuotaCode(value); return *this;}
 
   private:
 
     Aws::String m_message;
     bool m_messageHasBeenSet = false;
+
+    Aws::String m_quotaCode;
+    bool m_quotaCodeHasBeenSet = false;
 
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet = false;
@@ -255,9 +258,6 @@ namespace Model
 
     Aws::String m_serviceCode;
     bool m_serviceCodeHasBeenSet = false;
-
-    Aws::String m_quotaCode;
-    bool m_quotaCodeHasBeenSet = false;
   };
 
 } // namespace Model

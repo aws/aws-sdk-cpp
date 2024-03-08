@@ -19,6 +19,7 @@ ListZonalShiftsRequest::ListZonalShiftsRequest() :
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
+    m_resourceIdentifierHasBeenSet(false),
     m_status(ZonalShiftStatus::NOT_SET),
     m_statusHasBeenSet(false)
 {
@@ -43,6 +44,13 @@ void ListZonalShiftsRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_nextToken;
       uri.AddQueryStringParameter("nextToken", ss.str());
+      ss.str("");
+    }
+
+    if(m_resourceIdentifierHasBeenSet)
+    {
+      ss << m_resourceIdentifier;
+      uri.AddQueryStringParameter("resourceIdentifier", ss.str());
       ss.str("");
     }
 

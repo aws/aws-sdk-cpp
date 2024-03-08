@@ -39,6 +39,22 @@ namespace Aws
                 m_cache.Put(std::move(key), std::forward<UValue>(val), duration);
             }
 
+            using TransformFunction = std::function<typename Aws::Utils::Cache<TKey, TValue>::Value(const TKey &,
+                const typename Aws::Utils::Cache<TKey, TValue>::Value &)>;
+
+            void Transform(TransformFunction function) {
+                Aws::Utils::Threading::WriterLockGuard g(m_rwlock);
+                m_cache.Transform(function);
+            }
+
+            using FilterFunction = std::function<bool(const TKey &,
+                const typename Aws::Utils::Cache<TKey, TValue>::Value &)>;
+
+            void Filter(FilterFunction function) {
+                Aws::Utils::Threading::WriterLockGuard g(m_rwlock);
+                m_cache.Filter(function);
+            }
+
         private:
             Aws::Utils::Cache<TKey, TValue> m_cache;
             mutable Aws::Utils::Threading::ReaderWriterLock m_rwlock;

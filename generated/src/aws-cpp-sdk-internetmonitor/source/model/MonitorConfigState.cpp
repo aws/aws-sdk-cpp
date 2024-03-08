@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MonitorConfigState::NOT_SET:
+            return {};
           case MonitorConfigState::PENDING:
             return "PENDING";
           case MonitorConfigState::ACTIVE:

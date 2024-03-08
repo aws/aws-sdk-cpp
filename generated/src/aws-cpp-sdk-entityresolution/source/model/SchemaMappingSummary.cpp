@@ -20,6 +20,8 @@ namespace Model
 
 SchemaMappingSummary::SchemaMappingSummary() : 
     m_createdAtHasBeenSet(false),
+    m_hasWorkflows(false),
+    m_hasWorkflowsHasBeenSet(false),
     m_schemaArnHasBeenSet(false),
     m_schemaNameHasBeenSet(false),
     m_updatedAtHasBeenSet(false)
@@ -28,6 +30,8 @@ SchemaMappingSummary::SchemaMappingSummary() :
 
 SchemaMappingSummary::SchemaMappingSummary(JsonView jsonValue) : 
     m_createdAtHasBeenSet(false),
+    m_hasWorkflows(false),
+    m_hasWorkflowsHasBeenSet(false),
     m_schemaArnHasBeenSet(false),
     m_schemaNameHasBeenSet(false),
     m_updatedAtHasBeenSet(false)
@@ -42,6 +46,13 @@ SchemaMappingSummary& SchemaMappingSummary::operator =(JsonView jsonValue)
     m_createdAt = jsonValue.GetDouble("createdAt");
 
     m_createdAtHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("hasWorkflows"))
+  {
+    m_hasWorkflows = jsonValue.GetBool("hasWorkflows");
+
+    m_hasWorkflowsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("schemaArn"))
@@ -75,6 +86,12 @@ JsonValue SchemaMappingSummary::Jsonize() const
   if(m_createdAtHasBeenSet)
   {
    payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
+  }
+
+  if(m_hasWorkflowsHasBeenSet)
+  {
+   payload.WithBool("hasWorkflows", m_hasWorkflows);
+
   }
 
   if(m_schemaArnHasBeenSet)

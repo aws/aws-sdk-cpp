@@ -241,31 +241,31 @@ namespace Model
 
 
     /**
-     * <p>Details about inference jobs that can be run with models based on this model
+     * <p>Details about inference jobs that you can run with models based on this model
      * package.</p>
      */
     inline const InferenceSpecification& GetInferenceSpecification() const{ return m_inferenceSpecification; }
 
     /**
-     * <p>Details about inference jobs that can be run with models based on this model
+     * <p>Details about inference jobs that you can run with models based on this model
      * package.</p>
      */
     inline void SetInferenceSpecification(const InferenceSpecification& value) { m_inferenceSpecification = value; }
 
     /**
-     * <p>Details about inference jobs that can be run with models based on this model
+     * <p>Details about inference jobs that you can run with models based on this model
      * package.</p>
      */
     inline void SetInferenceSpecification(InferenceSpecification&& value) { m_inferenceSpecification = std::move(value); }
 
     /**
-     * <p>Details about inference jobs that can be run with models based on this model
+     * <p>Details about inference jobs that you can run with models based on this model
      * package.</p>
      */
     inline DescribeModelPackageResult& WithInferenceSpecification(const InferenceSpecification& value) { SetInferenceSpecification(value); return *this;}
 
     /**
-     * <p>Details about inference jobs that can be run with models based on this model
+     * <p>Details about inference jobs that you can run with models based on this model
      * package.</p>
      */
     inline DescribeModelPackageResult& WithInferenceSpecification(InferenceSpecification&& value) { SetInferenceSpecification(std::move(value)); return *this;}
@@ -562,113 +562,6 @@ namespace Model
 
 
     /**
-     * <p>The metadata properties associated with the model package versions.</p>
-     */
-    inline const Aws::Map<Aws::String, Aws::String>& GetCustomerMetadataProperties() const{ return m_customerMetadataProperties; }
-
-    /**
-     * <p>The metadata properties associated with the model package versions.</p>
-     */
-    inline void SetCustomerMetadataProperties(const Aws::Map<Aws::String, Aws::String>& value) { m_customerMetadataProperties = value; }
-
-    /**
-     * <p>The metadata properties associated with the model package versions.</p>
-     */
-    inline void SetCustomerMetadataProperties(Aws::Map<Aws::String, Aws::String>&& value) { m_customerMetadataProperties = std::move(value); }
-
-    /**
-     * <p>The metadata properties associated with the model package versions.</p>
-     */
-    inline DescribeModelPackageResult& WithCustomerMetadataProperties(const Aws::Map<Aws::String, Aws::String>& value) { SetCustomerMetadataProperties(value); return *this;}
-
-    /**
-     * <p>The metadata properties associated with the model package versions.</p>
-     */
-    inline DescribeModelPackageResult& WithCustomerMetadataProperties(Aws::Map<Aws::String, Aws::String>&& value) { SetCustomerMetadataProperties(std::move(value)); return *this;}
-
-    /**
-     * <p>The metadata properties associated with the model package versions.</p>
-     */
-    inline DescribeModelPackageResult& AddCustomerMetadataProperties(const Aws::String& key, const Aws::String& value) { m_customerMetadataProperties.emplace(key, value); return *this; }
-
-    /**
-     * <p>The metadata properties associated with the model package versions.</p>
-     */
-    inline DescribeModelPackageResult& AddCustomerMetadataProperties(Aws::String&& key, const Aws::String& value) { m_customerMetadataProperties.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>The metadata properties associated with the model package versions.</p>
-     */
-    inline DescribeModelPackageResult& AddCustomerMetadataProperties(const Aws::String& key, Aws::String&& value) { m_customerMetadataProperties.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The metadata properties associated with the model package versions.</p>
-     */
-    inline DescribeModelPackageResult& AddCustomerMetadataProperties(Aws::String&& key, Aws::String&& value) { m_customerMetadataProperties.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>The metadata properties associated with the model package versions.</p>
-     */
-    inline DescribeModelPackageResult& AddCustomerMetadataProperties(const char* key, Aws::String&& value) { m_customerMetadataProperties.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The metadata properties associated with the model package versions.</p>
-     */
-    inline DescribeModelPackageResult& AddCustomerMetadataProperties(Aws::String&& key, const char* value) { m_customerMetadataProperties.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>The metadata properties associated with the model package versions.</p>
-     */
-    inline DescribeModelPackageResult& AddCustomerMetadataProperties(const char* key, const char* value) { m_customerMetadataProperties.emplace(key, value); return *this; }
-
-
-    /**
-     * <p>Represents the drift check baselines that can be used when the model monitor
-     * is set using the model package. For more information, see the topic on <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection">Drift
-     * Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon
-     * SageMaker Developer Guide</i>. </p>
-     */
-    inline const DriftCheckBaselines& GetDriftCheckBaselines() const{ return m_driftCheckBaselines; }
-
-    /**
-     * <p>Represents the drift check baselines that can be used when the model monitor
-     * is set using the model package. For more information, see the topic on <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection">Drift
-     * Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon
-     * SageMaker Developer Guide</i>. </p>
-     */
-    inline void SetDriftCheckBaselines(const DriftCheckBaselines& value) { m_driftCheckBaselines = value; }
-
-    /**
-     * <p>Represents the drift check baselines that can be used when the model monitor
-     * is set using the model package. For more information, see the topic on <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection">Drift
-     * Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon
-     * SageMaker Developer Guide</i>. </p>
-     */
-    inline void SetDriftCheckBaselines(DriftCheckBaselines&& value) { m_driftCheckBaselines = std::move(value); }
-
-    /**
-     * <p>Represents the drift check baselines that can be used when the model monitor
-     * is set using the model package. For more information, see the topic on <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection">Drift
-     * Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon
-     * SageMaker Developer Guide</i>. </p>
-     */
-    inline DescribeModelPackageResult& WithDriftCheckBaselines(const DriftCheckBaselines& value) { SetDriftCheckBaselines(value); return *this;}
-
-    /**
-     * <p>Represents the drift check baselines that can be used when the model monitor
-     * is set using the model package. For more information, see the topic on <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection">Drift
-     * Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon
-     * SageMaker Developer Guide</i>. </p>
-     */
-    inline DescribeModelPackageResult& WithDriftCheckBaselines(DriftCheckBaselines&& value) { SetDriftCheckBaselines(std::move(value)); return *this;}
-
-
-    /**
      * <p>The machine learning domain of the model package you specified. Common
      * machine learning domains include computer vision and natural language
      * processing.</p>
@@ -819,6 +712,113 @@ namespace Model
 
 
     /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetCustomerMetadataProperties() const{ return m_customerMetadataProperties; }
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline void SetCustomerMetadataProperties(const Aws::Map<Aws::String, Aws::String>& value) { m_customerMetadataProperties = value; }
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline void SetCustomerMetadataProperties(Aws::Map<Aws::String, Aws::String>&& value) { m_customerMetadataProperties = std::move(value); }
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline DescribeModelPackageResult& WithCustomerMetadataProperties(const Aws::Map<Aws::String, Aws::String>& value) { SetCustomerMetadataProperties(value); return *this;}
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline DescribeModelPackageResult& WithCustomerMetadataProperties(Aws::Map<Aws::String, Aws::String>&& value) { SetCustomerMetadataProperties(std::move(value)); return *this;}
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline DescribeModelPackageResult& AddCustomerMetadataProperties(const Aws::String& key, const Aws::String& value) { m_customerMetadataProperties.emplace(key, value); return *this; }
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline DescribeModelPackageResult& AddCustomerMetadataProperties(Aws::String&& key, const Aws::String& value) { m_customerMetadataProperties.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline DescribeModelPackageResult& AddCustomerMetadataProperties(const Aws::String& key, Aws::String&& value) { m_customerMetadataProperties.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline DescribeModelPackageResult& AddCustomerMetadataProperties(Aws::String&& key, Aws::String&& value) { m_customerMetadataProperties.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline DescribeModelPackageResult& AddCustomerMetadataProperties(const char* key, Aws::String&& value) { m_customerMetadataProperties.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline DescribeModelPackageResult& AddCustomerMetadataProperties(Aws::String&& key, const char* value) { m_customerMetadataProperties.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The metadata properties associated with the model package versions.</p>
+     */
+    inline DescribeModelPackageResult& AddCustomerMetadataProperties(const char* key, const char* value) { m_customerMetadataProperties.emplace(key, value); return *this; }
+
+
+    /**
+     * <p>Represents the drift check baselines that can be used when the model monitor
+     * is set using the model package. For more information, see the topic on <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection">Drift
+     * Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon
+     * SageMaker Developer Guide</i>. </p>
+     */
+    inline const DriftCheckBaselines& GetDriftCheckBaselines() const{ return m_driftCheckBaselines; }
+
+    /**
+     * <p>Represents the drift check baselines that can be used when the model monitor
+     * is set using the model package. For more information, see the topic on <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection">Drift
+     * Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon
+     * SageMaker Developer Guide</i>. </p>
+     */
+    inline void SetDriftCheckBaselines(const DriftCheckBaselines& value) { m_driftCheckBaselines = value; }
+
+    /**
+     * <p>Represents the drift check baselines that can be used when the model monitor
+     * is set using the model package. For more information, see the topic on <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection">Drift
+     * Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon
+     * SageMaker Developer Guide</i>. </p>
+     */
+    inline void SetDriftCheckBaselines(DriftCheckBaselines&& value) { m_driftCheckBaselines = std::move(value); }
+
+    /**
+     * <p>Represents the drift check baselines that can be used when the model monitor
+     * is set using the model package. For more information, see the topic on <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection">Drift
+     * Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon
+     * SageMaker Developer Guide</i>. </p>
+     */
+    inline DescribeModelPackageResult& WithDriftCheckBaselines(const DriftCheckBaselines& value) { SetDriftCheckBaselines(value); return *this;}
+
+    /**
+     * <p>Represents the drift check baselines that can be used when the model monitor
+     * is set using the model package. For more information, see the topic on <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection">Drift
+     * Detection against Previous Baselines in SageMaker Pipelines</a> in the <i>Amazon
+     * SageMaker Developer Guide</i>. </p>
+     */
+    inline DescribeModelPackageResult& WithDriftCheckBaselines(DriftCheckBaselines&& value) { SetDriftCheckBaselines(std::move(value)); return *this;}
+
+
+    /**
      * <p>An array of additional Inference Specification objects. Each additional
      * Inference Specification specifies artifacts based on this model package that can
      * be used on inference endpoints. Generally used with SageMaker Neo to store the
@@ -901,6 +901,42 @@ namespace Model
     inline DescribeModelPackageResult& WithSkipModelValidation(SkipModelValidation&& value) { SetSkipModelValidation(std::move(value)); return *this;}
 
 
+    /**
+     * <p>The URI of the source for the model package.</p>
+     */
+    inline const Aws::String& GetSourceUri() const{ return m_sourceUri; }
+
+    /**
+     * <p>The URI of the source for the model package.</p>
+     */
+    inline void SetSourceUri(const Aws::String& value) { m_sourceUri = value; }
+
+    /**
+     * <p>The URI of the source for the model package.</p>
+     */
+    inline void SetSourceUri(Aws::String&& value) { m_sourceUri = std::move(value); }
+
+    /**
+     * <p>The URI of the source for the model package.</p>
+     */
+    inline void SetSourceUri(const char* value) { m_sourceUri.assign(value); }
+
+    /**
+     * <p>The URI of the source for the model package.</p>
+     */
+    inline DescribeModelPackageResult& WithSourceUri(const Aws::String& value) { SetSourceUri(value); return *this;}
+
+    /**
+     * <p>The URI of the source for the model package.</p>
+     */
+    inline DescribeModelPackageResult& WithSourceUri(Aws::String&& value) { SetSourceUri(std::move(value)); return *this;}
+
+    /**
+     * <p>The URI of the source for the model package.</p>
+     */
+    inline DescribeModelPackageResult& WithSourceUri(const char* value) { SetSourceUri(value); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -962,19 +998,21 @@ namespace Model
 
     Aws::String m_approvalDescription;
 
-    Aws::Map<Aws::String, Aws::String> m_customerMetadataProperties;
-
-    DriftCheckBaselines m_driftCheckBaselines;
-
     Aws::String m_domain;
 
     Aws::String m_task;
 
     Aws::String m_samplePayloadUrl;
 
+    Aws::Map<Aws::String, Aws::String> m_customerMetadataProperties;
+
+    DriftCheckBaselines m_driftCheckBaselines;
+
     Aws::Vector<AdditionalInferenceSpecificationDefinition> m_additionalInferenceSpecifications;
 
     SkipModelValidation m_skipModelValidation;
+
+    Aws::String m_sourceUri;
 
     Aws::String m_requestId;
   };

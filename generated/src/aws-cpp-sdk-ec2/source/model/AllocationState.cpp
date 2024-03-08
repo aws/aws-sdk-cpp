@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AllocationState::NOT_SET:
+            return {};
           case AllocationState::available:
             return "available";
           case AllocationState::under_assessment:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CmafMpdProfile::NOT_SET:
+            return {};
           case CmafMpdProfile::MAIN_PROFILE:
             return "MAIN_PROFILE";
           case CmafMpdProfile::ON_DEMAND_PROFILE:

@@ -26,7 +26,8 @@ DescribedConnector::DescribedConnector() :
     m_accessRoleHasBeenSet(false),
     m_loggingRoleHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_sftpConfigHasBeenSet(false)
+    m_sftpConfigHasBeenSet(false),
+    m_serviceManagedEgressIpAddressesHasBeenSet(false)
 {
 }
 
@@ -38,7 +39,8 @@ DescribedConnector::DescribedConnector(JsonView jsonValue) :
     m_accessRoleHasBeenSet(false),
     m_loggingRoleHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_sftpConfigHasBeenSet(false)
+    m_sftpConfigHasBeenSet(false),
+    m_serviceManagedEgressIpAddressesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -104,6 +106,16 @@ DescribedConnector& DescribedConnector::operator =(JsonView jsonValue)
     m_sftpConfigHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ServiceManagedEgressIpAddresses"))
+  {
+    Aws::Utils::Array<JsonView> serviceManagedEgressIpAddressesJsonList = jsonValue.GetArray("ServiceManagedEgressIpAddresses");
+    for(unsigned serviceManagedEgressIpAddressesIndex = 0; serviceManagedEgressIpAddressesIndex < serviceManagedEgressIpAddressesJsonList.GetLength(); ++serviceManagedEgressIpAddressesIndex)
+    {
+      m_serviceManagedEgressIpAddresses.push_back(serviceManagedEgressIpAddressesJsonList[serviceManagedEgressIpAddressesIndex].AsString());
+    }
+    m_serviceManagedEgressIpAddressesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -161,6 +173,17 @@ JsonValue DescribedConnector::Jsonize() const
   if(m_sftpConfigHasBeenSet)
   {
    payload.WithObject("SftpConfig", m_sftpConfig.Jsonize());
+
+  }
+
+  if(m_serviceManagedEgressIpAddressesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> serviceManagedEgressIpAddressesJsonList(m_serviceManagedEgressIpAddresses.size());
+   for(unsigned serviceManagedEgressIpAddressesIndex = 0; serviceManagedEgressIpAddressesIndex < serviceManagedEgressIpAddressesJsonList.GetLength(); ++serviceManagedEgressIpAddressesIndex)
+   {
+     serviceManagedEgressIpAddressesJsonList[serviceManagedEgressIpAddressesIndex].AsString(m_serviceManagedEgressIpAddresses[serviceManagedEgressIpAddressesIndex]);
+   }
+   payload.WithArray("ServiceManagedEgressIpAddresses", std::move(serviceManagedEgressIpAddressesJsonList));
 
   }
 

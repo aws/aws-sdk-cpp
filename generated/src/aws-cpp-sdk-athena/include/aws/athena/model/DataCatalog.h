@@ -213,9 +213,7 @@ namespace Model
      * <code>catalog-id=<i>catalog_id</i> </code> </p> <ul> <li> <p>The
      * <code>GLUE</code> data catalog type also applies to the default
      * <code>AwsDataCatalog</code> that already exists in your account, of which you
-     * can have only one and cannot modify.</p> </li> <li> <p>Queries that specify a
-     * Glue Data Catalog other than the default <code>AwsDataCatalog</code> must be run
-     * on Athena engine version 2.</p> </li> </ul> </li> </ul>
+     * can have only one and cannot modify.</p> </li> </ul> </li> </ul>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const{ return m_parameters; }
 
@@ -241,9 +239,7 @@ namespace Model
      * <code>catalog-id=<i>catalog_id</i> </code> </p> <ul> <li> <p>The
      * <code>GLUE</code> data catalog type also applies to the default
      * <code>AwsDataCatalog</code> that already exists in your account, of which you
-     * can have only one and cannot modify.</p> </li> <li> <p>Queries that specify a
-     * Glue Data Catalog other than the default <code>AwsDataCatalog</code> must be run
-     * on Athena engine version 2.</p> </li> </ul> </li> </ul>
+     * can have only one and cannot modify.</p> </li> </ul> </li> </ul>
      */
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
 
@@ -269,9 +265,7 @@ namespace Model
      * <code>catalog-id=<i>catalog_id</i> </code> </p> <ul> <li> <p>The
      * <code>GLUE</code> data catalog type also applies to the default
      * <code>AwsDataCatalog</code> that already exists in your account, of which you
-     * can have only one and cannot modify.</p> </li> <li> <p>Queries that specify a
-     * Glue Data Catalog other than the default <code>AwsDataCatalog</code> must be run
-     * on Athena engine version 2.</p> </li> </ul> </li> </ul>
+     * can have only one and cannot modify.</p> </li> </ul> </li> </ul>
      */
     inline void SetParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
@@ -297,9 +291,7 @@ namespace Model
      * <code>catalog-id=<i>catalog_id</i> </code> </p> <ul> <li> <p>The
      * <code>GLUE</code> data catalog type also applies to the default
      * <code>AwsDataCatalog</code> that already exists in your account, of which you
-     * can have only one and cannot modify.</p> </li> <li> <p>Queries that specify a
-     * Glue Data Catalog other than the default <code>AwsDataCatalog</code> must be run
-     * on Athena engine version 2.</p> </li> </ul> </li> </ul>
+     * can have only one and cannot modify.</p> </li> </ul> </li> </ul>
      */
     inline void SetParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
 
@@ -325,9 +317,7 @@ namespace Model
      * <code>catalog-id=<i>catalog_id</i> </code> </p> <ul> <li> <p>The
      * <code>GLUE</code> data catalog type also applies to the default
      * <code>AwsDataCatalog</code> that already exists in your account, of which you
-     * can have only one and cannot modify.</p> </li> <li> <p>Queries that specify a
-     * Glue Data Catalog other than the default <code>AwsDataCatalog</code> must be run
-     * on Athena engine version 2.</p> </li> </ul> </li> </ul>
+     * can have only one and cannot modify.</p> </li> </ul> </li> </ul>
      */
     inline DataCatalog& WithParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetParameters(value); return *this;}
 
@@ -353,9 +343,7 @@ namespace Model
      * <code>catalog-id=<i>catalog_id</i> </code> </p> <ul> <li> <p>The
      * <code>GLUE</code> data catalog type also applies to the default
      * <code>AwsDataCatalog</code> that already exists in your account, of which you
-     * can have only one and cannot modify.</p> </li> <li> <p>Queries that specify a
-     * Glue Data Catalog other than the default <code>AwsDataCatalog</code> must be run
-     * on Athena engine version 2.</p> </li> </ul> </li> </ul>
+     * can have only one and cannot modify.</p> </li> </ul> </li> </ul>
      */
     inline DataCatalog& WithParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetParameters(std::move(value)); return *this;}
 
@@ -381,9 +369,7 @@ namespace Model
      * <code>catalog-id=<i>catalog_id</i> </code> </p> <ul> <li> <p>The
      * <code>GLUE</code> data catalog type also applies to the default
      * <code>AwsDataCatalog</code> that already exists in your account, of which you
-     * can have only one and cannot modify.</p> </li> <li> <p>Queries that specify a
-     * Glue Data Catalog other than the default <code>AwsDataCatalog</code> must be run
-     * on Athena engine version 2.</p> </li> </ul> </li> </ul>
+     * can have only one and cannot modify.</p> </li> </ul> </li> </ul>
      */
     inline DataCatalog& AddParameters(const Aws::String& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 
@@ -409,9 +395,7 @@ namespace Model
      * <code>catalog-id=<i>catalog_id</i> </code> </p> <ul> <li> <p>The
      * <code>GLUE</code> data catalog type also applies to the default
      * <code>AwsDataCatalog</code> that already exists in your account, of which you
-     * can have only one and cannot modify.</p> </li> <li> <p>Queries that specify a
-     * Glue Data Catalog other than the default <code>AwsDataCatalog</code> must be run
-     * on Athena engine version 2.</p> </li> </ul> </li> </ul>
+     * can have only one and cannot modify.</p> </li> </ul> </li> </ul>
      */
     inline DataCatalog& AddParameters(Aws::String&& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
 
@@ -437,9 +421,7 @@ namespace Model
      * <code>catalog-id=<i>catalog_id</i> </code> </p> <ul> <li> <p>The
      * <code>GLUE</code> data catalog type also applies to the default
      * <code>AwsDataCatalog</code> that already exists in your account, of which you
-     * can have only one and cannot modify.</p> </li> <li> <p>Queries that specify a
-     * Glue Data Catalog other than the default <code>AwsDataCatalog</code> must be run
-     * on Athena engine version 2.</p> </li> </ul> </li> </ul>
+     * can have only one and cannot modify.</p> </li> </ul> </li> </ul>
      */
     inline DataCatalog& AddParameters(const Aws::String& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
@@ -465,9 +447,7 @@ namespace Model
      * <code>catalog-id=<i>catalog_id</i> </code> </p> <ul> <li> <p>The
      * <code>GLUE</code> data catalog type also applies to the default
      * <code>AwsDataCatalog</code> that already exists in your account, of which you
-     * can have only one and cannot modify.</p> </li> <li> <p>Queries that specify a
-     * Glue Data Catalog other than the default <code>AwsDataCatalog</code> must be run
-     * on Athena engine version 2.</p> </li> </ul> </li> </ul>
+     * can have only one and cannot modify.</p> </li> </ul> </li> </ul>
      */
     inline DataCatalog& AddParameters(Aws::String&& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -493,9 +473,7 @@ namespace Model
      * <code>catalog-id=<i>catalog_id</i> </code> </p> <ul> <li> <p>The
      * <code>GLUE</code> data catalog type also applies to the default
      * <code>AwsDataCatalog</code> that already exists in your account, of which you
-     * can have only one and cannot modify.</p> </li> <li> <p>Queries that specify a
-     * Glue Data Catalog other than the default <code>AwsDataCatalog</code> must be run
-     * on Athena engine version 2.</p> </li> </ul> </li> </ul>
+     * can have only one and cannot modify.</p> </li> </ul> </li> </ul>
      */
     inline DataCatalog& AddParameters(const char* key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
 
@@ -521,9 +499,7 @@ namespace Model
      * <code>catalog-id=<i>catalog_id</i> </code> </p> <ul> <li> <p>The
      * <code>GLUE</code> data catalog type also applies to the default
      * <code>AwsDataCatalog</code> that already exists in your account, of which you
-     * can have only one and cannot modify.</p> </li> <li> <p>Queries that specify a
-     * Glue Data Catalog other than the default <code>AwsDataCatalog</code> must be run
-     * on Athena engine version 2.</p> </li> </ul> </li> </ul>
+     * can have only one and cannot modify.</p> </li> </ul> </li> </ul>
      */
     inline DataCatalog& AddParameters(Aws::String&& key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
 
@@ -549,9 +525,7 @@ namespace Model
      * <code>catalog-id=<i>catalog_id</i> </code> </p> <ul> <li> <p>The
      * <code>GLUE</code> data catalog type also applies to the default
      * <code>AwsDataCatalog</code> that already exists in your account, of which you
-     * can have only one and cannot modify.</p> </li> <li> <p>Queries that specify a
-     * Glue Data Catalog other than the default <code>AwsDataCatalog</code> must be run
-     * on Athena engine version 2.</p> </li> </ul> </li> </ul>
+     * can have only one and cannot modify.</p> </li> </ul> </li> </ul>
      */
     inline DataCatalog& AddParameters(const char* key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
 

@@ -40,7 +40,8 @@ DBClusterSnapshot::DBClusterSnapshot() :
     m_storageEncryptedHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
     m_dBClusterSnapshotArnHasBeenSet(false),
-    m_sourceDBClusterSnapshotArnHasBeenSet(false)
+    m_sourceDBClusterSnapshotArnHasBeenSet(false),
+    m_storageTypeHasBeenSet(false)
 {
 }
 
@@ -64,7 +65,8 @@ DBClusterSnapshot::DBClusterSnapshot(const XmlNode& xmlNode) :
     m_storageEncryptedHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
     m_dBClusterSnapshotArnHasBeenSet(false),
-    m_sourceDBClusterSnapshotArnHasBeenSet(false)
+    m_sourceDBClusterSnapshotArnHasBeenSet(false),
+    m_storageTypeHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -183,6 +185,12 @@ DBClusterSnapshot& DBClusterSnapshot::operator =(const XmlNode& xmlNode)
       m_sourceDBClusterSnapshotArn = Aws::Utils::Xml::DecodeEscapedXmlText(sourceDBClusterSnapshotArnNode.GetText());
       m_sourceDBClusterSnapshotArnHasBeenSet = true;
     }
+    XmlNode storageTypeNode = resultNode.FirstChild("StorageType");
+    if(!storageTypeNode.IsNull())
+    {
+      m_storageType = Aws::Utils::Xml::DecodeEscapedXmlText(storageTypeNode.GetText());
+      m_storageTypeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -279,6 +287,11 @@ void DBClusterSnapshot::OutputToStream(Aws::OStream& oStream, const char* locati
       oStream << location << index << locationValue << ".SourceDBClusterSnapshotArn=" << StringUtils::URLEncode(m_sourceDBClusterSnapshotArn.c_str()) << "&";
   }
 
+  if(m_storageTypeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".StorageType=" << StringUtils::URLEncode(m_storageType.c_str()) << "&";
+  }
+
 }
 
 void DBClusterSnapshot::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -354,6 +367,10 @@ void DBClusterSnapshot::OutputToStream(Aws::OStream& oStream, const char* locati
   if(m_sourceDBClusterSnapshotArnHasBeenSet)
   {
       oStream << location << ".SourceDBClusterSnapshotArn=" << StringUtils::URLEncode(m_sourceDBClusterSnapshotArn.c_str()) << "&";
+  }
+  if(m_storageTypeHasBeenSet)
+  {
+      oStream << location << ".StorageType=" << StringUtils::URLEncode(m_storageType.c_str()) << "&";
   }
 }
 

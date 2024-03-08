@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VirtualGatewayPortProtocol::NOT_SET:
+            return {};
           case VirtualGatewayPortProtocol::http:
             return "http";
           case VirtualGatewayPortProtocol::http2:

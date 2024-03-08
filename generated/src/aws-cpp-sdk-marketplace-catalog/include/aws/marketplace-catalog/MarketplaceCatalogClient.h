@@ -27,8 +27,8 @@ namespace MarketplaceCatalog
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef MarketplaceCatalogClientConfiguration ClientConfigurationType;
       typedef MarketplaceCatalogEndpointProvider EndpointProviderType;
@@ -38,14 +38,14 @@ namespace MarketplaceCatalog
         * is not specified, it will be initialized to default values.
         */
         MarketplaceCatalogClient(const Aws::MarketplaceCatalog::MarketplaceCatalogClientConfiguration& clientConfiguration = Aws::MarketplaceCatalog::MarketplaceCatalogClientConfiguration(),
-                                 std::shared_ptr<MarketplaceCatalogEndpointProviderBase> endpointProvider = Aws::MakeShared<MarketplaceCatalogEndpointProvider>(ALLOCATION_TAG));
+                                 std::shared_ptr<MarketplaceCatalogEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         MarketplaceCatalogClient(const Aws::Auth::AWSCredentials& credentials,
-                                 std::shared_ptr<MarketplaceCatalogEndpointProviderBase> endpointProvider = Aws::MakeShared<MarketplaceCatalogEndpointProvider>(ALLOCATION_TAG),
+                                 std::shared_ptr<MarketplaceCatalogEndpointProviderBase> endpointProvider = nullptr,
                                  const Aws::MarketplaceCatalog::MarketplaceCatalogClientConfiguration& clientConfiguration = Aws::MarketplaceCatalog::MarketplaceCatalogClientConfiguration());
 
        /**
@@ -53,7 +53,7 @@ namespace MarketplaceCatalog
         * the default http client factory will be used
         */
         MarketplaceCatalogClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                                 std::shared_ptr<MarketplaceCatalogEndpointProviderBase> endpointProvider = Aws::MakeShared<MarketplaceCatalogEndpointProvider>(ALLOCATION_TAG),
+                                 std::shared_ptr<MarketplaceCatalogEndpointProviderBase> endpointProvider = nullptr,
                                  const Aws::MarketplaceCatalog::MarketplaceCatalogClientConfiguration& clientConfiguration = Aws::MarketplaceCatalog::MarketplaceCatalogClientConfiguration());
 
 
@@ -80,6 +80,33 @@ namespace MarketplaceCatalog
 
         /* End of legacy constructors due deprecation */
         virtual ~MarketplaceCatalogClient();
+
+        /**
+         * <p>Returns metadata and content for multiple entities. This is the Batch version
+         * of the <code>DescribeEntity</code> API and uses the same IAM permission action
+         * as <code>DescribeEntity</code> API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/BatchDescribeEntities">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchDescribeEntitiesOutcome BatchDescribeEntities(const Model::BatchDescribeEntitiesRequest& request) const;
+
+        /**
+         * A Callable wrapper for BatchDescribeEntities that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename BatchDescribeEntitiesRequestT = Model::BatchDescribeEntitiesRequest>
+        Model::BatchDescribeEntitiesOutcomeCallable BatchDescribeEntitiesCallable(const BatchDescribeEntitiesRequestT& request) const
+        {
+            return SubmitCallable(&MarketplaceCatalogClient::BatchDescribeEntities, request);
+        }
+
+        /**
+         * An Async wrapper for BatchDescribeEntities that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename BatchDescribeEntitiesRequestT = Model::BatchDescribeEntitiesRequest>
+        void BatchDescribeEntitiesAsync(const BatchDescribeEntitiesRequestT& request, const BatchDescribeEntitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MarketplaceCatalogClient::BatchDescribeEntities, request, handler, context);
+        }
 
         /**
          * <p>Used to cancel an open change request. Must be sent before the status of the
@@ -110,7 +137,7 @@ namespace MarketplaceCatalog
         }
 
         /**
-         * <p>Deletes a resource-based policy on an Entity that is identified by its
+         * <p>Deletes a resource-based policy on an entity that is identified by its
          * resource ARN.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/DeleteResourcePolicy">AWS
          * API Reference</a></p>
@@ -186,7 +213,7 @@ namespace MarketplaceCatalog
         }
 
         /**
-         * <p>Gets a resource-based policy of an Entity that is identified by its resource
+         * <p>Gets a resource-based policy of an entity that is identified by its resource
          * ARN.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/GetResourcePolicy">AWS
          * API Reference</a></p>
@@ -296,7 +323,7 @@ namespace MarketplaceCatalog
         }
 
         /**
-         * <p>Attaches a resource-based policy to an Entity. Examples of an entity include:
+         * <p>Attaches a resource-based policy to an entity. Examples of an entity include:
          * <code>AmiProduct</code> and <code>ContainerProduct</code>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/PutResourcePolicy">AWS
@@ -337,10 +364,10 @@ namespace MarketplaceCatalog
          * (<code>entity-id@1</code>).</p> <p>For more information about working with
          * change sets, see <a
          * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html#working-with-change-sets">
-         * Working with change sets</a>. For information on change types for single-AMI
+         * Working with change sets</a>. For information about change types for single-AMI
          * products, see <a
          * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#working-with-single-AMI-products">Working
-         * with single-AMI products</a>. Als, for more information on change types
+         * with single-AMI products</a>. Also, for more information about change types
          * available for container-based products, see <a
          * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/container-products.html#working-with-container-products">Working
          * with container products</a>.</p><p><h3>See Also:</h3>   <a

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ProresFramerateConversionAlgorithm::NOT_SET:
+            return {};
           case ProresFramerateConversionAlgorithm::DUPLICATE_DROP:
             return "DUPLICATE_DROP";
           case ProresFramerateConversionAlgorithm::INTERPOLATE:

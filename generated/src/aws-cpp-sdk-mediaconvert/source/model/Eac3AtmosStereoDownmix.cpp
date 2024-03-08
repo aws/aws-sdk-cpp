@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Eac3AtmosStereoDownmix::NOT_SET:
+            return {};
           case Eac3AtmosStereoDownmix::NOT_INDICATED:
             return "NOT_INDICATED";
           case Eac3AtmosStereoDownmix::STEREO:

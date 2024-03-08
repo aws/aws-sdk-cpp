@@ -36,7 +36,8 @@ LambdaFunctionRecommendation::LambdaFunctionRecommendation() :
     m_memorySizeRecommendationOptionsHasBeenSet(false),
     m_currentPerformanceRisk(CurrentPerformanceRisk::NOT_SET),
     m_currentPerformanceRiskHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_effectiveRecommendationPreferencesHasBeenSet(false)
 {
 }
 
@@ -58,7 +59,8 @@ LambdaFunctionRecommendation::LambdaFunctionRecommendation(JsonView jsonValue) :
     m_memorySizeRecommendationOptionsHasBeenSet(false),
     m_currentPerformanceRisk(CurrentPerformanceRisk::NOT_SET),
     m_currentPerformanceRiskHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_effectiveRecommendationPreferencesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -168,6 +170,13 @@ LambdaFunctionRecommendation& LambdaFunctionRecommendation::operator =(JsonView 
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("effectiveRecommendationPreferences"))
+  {
+    m_effectiveRecommendationPreferences = jsonValue.GetObject("effectiveRecommendationPreferences");
+
+    m_effectiveRecommendationPreferencesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -267,6 +276,12 @@ JsonValue LambdaFunctionRecommendation::Jsonize() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_effectiveRecommendationPreferencesHasBeenSet)
+  {
+   payload.WithObject("effectiveRecommendationPreferences", m_effectiveRecommendationPreferences.Jsonize());
 
   }
 

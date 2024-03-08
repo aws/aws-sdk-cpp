@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CancelStepsRequestStatus::NOT_SET:
+            return {};
           case CancelStepsRequestStatus::SUBMITTED:
             return "SUBMITTED";
           case CancelStepsRequestStatus::FAILED:

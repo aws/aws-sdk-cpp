@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DataLakeResourceType::NOT_SET:
+            return {};
           case DataLakeResourceType::CATALOG:
             return "CATALOG";
           case DataLakeResourceType::DATABASE:

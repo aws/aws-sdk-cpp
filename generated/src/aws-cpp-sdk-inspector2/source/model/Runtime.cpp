@@ -114,6 +114,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Runtime::NOT_SET:
+            return {};
           case Runtime::NODEJS:
             return "NODEJS";
           case Runtime::NODEJS_12_X:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case QueueType::NOT_SET:
+            return {};
           case QueueType::STANDARD:
             return "STANDARD";
           case QueueType::AGENT:

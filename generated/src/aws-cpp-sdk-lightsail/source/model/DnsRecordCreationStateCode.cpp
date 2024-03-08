@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DnsRecordCreationStateCode::NOT_SET:
+            return {};
           case DnsRecordCreationStateCode::SUCCEEDED:
             return "SUCCEEDED";
           case DnsRecordCreationStateCode::STARTED:

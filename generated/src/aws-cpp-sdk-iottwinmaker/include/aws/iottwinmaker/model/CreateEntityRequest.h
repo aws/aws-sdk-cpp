@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/iottwinmaker/model/ComponentRequest.h>
+#include <aws/iottwinmaker/model/CompositeComponentRequest.h>
 #include <utility>
 
 namespace Aws
@@ -272,6 +273,91 @@ namespace Model
 
 
     /**
+     * <p>This is an object that maps strings to <code>compositeComponent</code>
+     * updates in the request. Each key of the map represents the
+     * <code>componentPath</code> of the <code>compositeComponent</code>.</p>
+     */
+    inline const Aws::Map<Aws::String, CompositeComponentRequest>& GetCompositeComponents() const{ return m_compositeComponents; }
+
+    /**
+     * <p>This is an object that maps strings to <code>compositeComponent</code>
+     * updates in the request. Each key of the map represents the
+     * <code>componentPath</code> of the <code>compositeComponent</code>.</p>
+     */
+    inline bool CompositeComponentsHasBeenSet() const { return m_compositeComponentsHasBeenSet; }
+
+    /**
+     * <p>This is an object that maps strings to <code>compositeComponent</code>
+     * updates in the request. Each key of the map represents the
+     * <code>componentPath</code> of the <code>compositeComponent</code>.</p>
+     */
+    inline void SetCompositeComponents(const Aws::Map<Aws::String, CompositeComponentRequest>& value) { m_compositeComponentsHasBeenSet = true; m_compositeComponents = value; }
+
+    /**
+     * <p>This is an object that maps strings to <code>compositeComponent</code>
+     * updates in the request. Each key of the map represents the
+     * <code>componentPath</code> of the <code>compositeComponent</code>.</p>
+     */
+    inline void SetCompositeComponents(Aws::Map<Aws::String, CompositeComponentRequest>&& value) { m_compositeComponentsHasBeenSet = true; m_compositeComponents = std::move(value); }
+
+    /**
+     * <p>This is an object that maps strings to <code>compositeComponent</code>
+     * updates in the request. Each key of the map represents the
+     * <code>componentPath</code> of the <code>compositeComponent</code>.</p>
+     */
+    inline CreateEntityRequest& WithCompositeComponents(const Aws::Map<Aws::String, CompositeComponentRequest>& value) { SetCompositeComponents(value); return *this;}
+
+    /**
+     * <p>This is an object that maps strings to <code>compositeComponent</code>
+     * updates in the request. Each key of the map represents the
+     * <code>componentPath</code> of the <code>compositeComponent</code>.</p>
+     */
+    inline CreateEntityRequest& WithCompositeComponents(Aws::Map<Aws::String, CompositeComponentRequest>&& value) { SetCompositeComponents(std::move(value)); return *this;}
+
+    /**
+     * <p>This is an object that maps strings to <code>compositeComponent</code>
+     * updates in the request. Each key of the map represents the
+     * <code>componentPath</code> of the <code>compositeComponent</code>.</p>
+     */
+    inline CreateEntityRequest& AddCompositeComponents(const Aws::String& key, const CompositeComponentRequest& value) { m_compositeComponentsHasBeenSet = true; m_compositeComponents.emplace(key, value); return *this; }
+
+    /**
+     * <p>This is an object that maps strings to <code>compositeComponent</code>
+     * updates in the request. Each key of the map represents the
+     * <code>componentPath</code> of the <code>compositeComponent</code>.</p>
+     */
+    inline CreateEntityRequest& AddCompositeComponents(Aws::String&& key, const CompositeComponentRequest& value) { m_compositeComponentsHasBeenSet = true; m_compositeComponents.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>This is an object that maps strings to <code>compositeComponent</code>
+     * updates in the request. Each key of the map represents the
+     * <code>componentPath</code> of the <code>compositeComponent</code>.</p>
+     */
+    inline CreateEntityRequest& AddCompositeComponents(const Aws::String& key, CompositeComponentRequest&& value) { m_compositeComponentsHasBeenSet = true; m_compositeComponents.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>This is an object that maps strings to <code>compositeComponent</code>
+     * updates in the request. Each key of the map represents the
+     * <code>componentPath</code> of the <code>compositeComponent</code>.</p>
+     */
+    inline CreateEntityRequest& AddCompositeComponents(Aws::String&& key, CompositeComponentRequest&& value) { m_compositeComponentsHasBeenSet = true; m_compositeComponents.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>This is an object that maps strings to <code>compositeComponent</code>
+     * updates in the request. Each key of the map represents the
+     * <code>componentPath</code> of the <code>compositeComponent</code>.</p>
+     */
+    inline CreateEntityRequest& AddCompositeComponents(const char* key, CompositeComponentRequest&& value) { m_compositeComponentsHasBeenSet = true; m_compositeComponents.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>This is an object that maps strings to <code>compositeComponent</code>
+     * updates in the request. Each key of the map represents the
+     * <code>componentPath</code> of the <code>compositeComponent</code>.</p>
+     */
+    inline CreateEntityRequest& AddCompositeComponents(const char* key, const CompositeComponentRequest& value) { m_compositeComponentsHasBeenSet = true; m_compositeComponents.emplace(key, value); return *this; }
+
+
+    /**
      * <p>The ID of the entity's parent entity.</p>
      */
     inline const Aws::String& GetParentEntityId() const{ return m_parentEntityId; }
@@ -393,6 +479,9 @@ namespace Model
 
     Aws::Map<Aws::String, ComponentRequest> m_components;
     bool m_componentsHasBeenSet = false;
+
+    Aws::Map<Aws::String, CompositeComponentRequest> m_compositeComponents;
+    bool m_compositeComponentsHasBeenSet = false;
 
     Aws::String m_parentEntityId;
     bool m_parentEntityIdHasBeenSet = false;

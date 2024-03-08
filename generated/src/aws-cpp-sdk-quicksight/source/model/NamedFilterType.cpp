@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NamedFilterType::NOT_SET:
+            return {};
           case NamedFilterType::CATEGORY_FILTER:
             return "CATEGORY_FILTER";
           case NamedFilterType::NUMERIC_EQUALITY_FILTER:

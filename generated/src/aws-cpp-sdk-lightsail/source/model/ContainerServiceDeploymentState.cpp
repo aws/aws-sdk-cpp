@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ContainerServiceDeploymentState::NOT_SET:
+            return {};
           case ContainerServiceDeploymentState::ACTIVATING:
             return "ACTIVATING";
           case ContainerServiceDeploymentState::ACTIVE:

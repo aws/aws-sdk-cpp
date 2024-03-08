@@ -90,31 +90,31 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == CONFLICT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KafkaErrors::CONFLICT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KafkaErrors::CONFLICT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KafkaErrors::NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KafkaErrors::NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == UNAUTHORIZED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KafkaErrors::UNAUTHORIZED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KafkaErrors::UNAUTHORIZED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == FORBIDDEN_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KafkaErrors::FORBIDDEN), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KafkaErrors::FORBIDDEN), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == TOO_MANY_REQUESTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KafkaErrors::TOO_MANY_REQUESTS), true);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KafkaErrors::TOO_MANY_REQUESTS), RetryableType::RETRYABLE);
   }
   else if (hashCode == BAD_REQUEST_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KafkaErrors::BAD_REQUEST), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KafkaErrors::BAD_REQUEST), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INTERNAL_SERVER_ERROR_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KafkaErrors::INTERNAL_SERVER_ERROR), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KafkaErrors::INTERNAL_SERVER_ERROR), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

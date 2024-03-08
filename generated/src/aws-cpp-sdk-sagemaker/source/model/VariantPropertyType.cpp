@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VariantPropertyType::NOT_SET:
+            return {};
           case VariantPropertyType::DesiredInstanceCount:
             return "DesiredInstanceCount";
           case VariantPropertyType::DesiredWeight:

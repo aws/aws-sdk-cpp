@@ -82,7 +82,7 @@ Aws::Http::HeaderValueCollection PutObjectRetentionRequest::GetRequestSpecificHe
 {
   Aws::Http::HeaderValueCollection headers;
   Aws::StringStream ss;
-  if(m_requestPayerHasBeenSet)
+  if(m_requestPayerHasBeenSet && m_requestPayer != RequestPayer::NOT_SET)
   {
     headers.emplace("x-amz-request-payer", RequestPayerMapper::GetNameForRequestPayer(m_requestPayer));
   }
@@ -101,7 +101,7 @@ Aws::Http::HeaderValueCollection PutObjectRetentionRequest::GetRequestSpecificHe
     ss.str("");
   }
 
-  if(m_checksumAlgorithmHasBeenSet)
+  if(m_checksumAlgorithmHasBeenSet && m_checksumAlgorithm != ChecksumAlgorithm::NOT_SET)
   {
     headers.emplace("x-amz-sdk-checksum-algorithm", ChecksumAlgorithmMapper::GetNameForChecksumAlgorithm(m_checksumAlgorithm));
   }

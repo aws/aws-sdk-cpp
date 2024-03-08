@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StreamingStatus::NOT_SET:
+            return {};
           case StreamingStatus::PENDING_CONFIGURATION:
             return "PENDING_CONFIGURATION";
           case StreamingStatus::ONGOING:

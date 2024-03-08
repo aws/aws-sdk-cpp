@@ -97,7 +97,8 @@ namespace Model
      * items to return in the response on each page. If additional items exist beyond
      * the number you specify, the <code>NextToken</code> element is sent in the
      * response. Use this <code>NextToken</code> value in a subsequent request to
-     * retrieve additional items.</p>
+     * retrieve additional items.</p> <p>Although the maximum value is 1000, the action
+     * only returns a maximum of 100 items.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
@@ -106,7 +107,8 @@ namespace Model
      * items to return in the response on each page. If additional items exist beyond
      * the number you specify, the <code>NextToken</code> element is sent in the
      * response. Use this <code>NextToken</code> value in a subsequent request to
-     * retrieve additional items.</p>
+     * retrieve additional items.</p> <p>Although the maximum value is 1000, the action
+     * only returns a maximum of 100 items.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
@@ -115,7 +117,8 @@ namespace Model
      * items to return in the response on each page. If additional items exist beyond
      * the number you specify, the <code>NextToken</code> element is sent in the
      * response. Use this <code>NextToken</code> value in a subsequent request to
-     * retrieve additional items.</p>
+     * retrieve additional items.</p> <p>Although the maximum value is 1000, the action
+     * only returns a maximum of 100 items.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
@@ -124,7 +127,8 @@ namespace Model
      * items to return in the response on each page. If additional items exist beyond
      * the number you specify, the <code>NextToken</code> element is sent in the
      * response. Use this <code>NextToken</code> value in a subsequent request to
-     * retrieve additional items.</p>
+     * retrieve additional items.</p> <p>Although the maximum value is 1000, the action
+     * only returns a maximum of 100 items.</p>
      */
     inline ListCertificateAuthoritiesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

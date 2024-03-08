@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DASHDisplayFragmentNumber::NOT_SET:
+            return {};
           case DASHDisplayFragmentNumber::ALWAYS:
             return "ALWAYS";
           case DASHDisplayFragmentNumber::NEVER:

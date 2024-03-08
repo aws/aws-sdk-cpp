@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AuthenticateOidcActionConditionalBehaviorEnum::NOT_SET:
+            return {};
           case AuthenticateOidcActionConditionalBehaviorEnum::deny:
             return "deny";
           case AuthenticateOidcActionConditionalBehaviorEnum::allow:

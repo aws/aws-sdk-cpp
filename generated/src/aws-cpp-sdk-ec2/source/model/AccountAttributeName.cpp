@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AccountAttributeName::NOT_SET:
+            return {};
           case AccountAttributeName::supported_platforms:
             return "supported-platforms";
           case AccountAttributeName::default_vpc:

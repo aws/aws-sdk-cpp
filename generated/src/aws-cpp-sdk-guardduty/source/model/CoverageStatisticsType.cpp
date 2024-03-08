@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CoverageStatisticsType::NOT_SET:
+            return {};
           case CoverageStatisticsType::COUNT_BY_RESOURCE_TYPE:
             return "COUNT_BY_RESOURCE_TYPE";
           case CoverageStatisticsType::COUNT_BY_COVERAGE_STATUS:

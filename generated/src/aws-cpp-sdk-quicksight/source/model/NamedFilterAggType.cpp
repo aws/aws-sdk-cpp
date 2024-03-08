@@ -99,6 +99,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NamedFilterAggType::NOT_SET:
+            return {};
           case NamedFilterAggType::NO_AGGREGATION:
             return "NO_AGGREGATION";
           case NamedFilterAggType::SUM:

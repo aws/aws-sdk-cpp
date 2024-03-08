@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BehaviorEnum::NOT_SET:
+            return {};
           case BehaviorEnum::dont_cache:
             return "dont-cache";
           case BehaviorEnum::cache:

@@ -28,6 +28,8 @@ namespace Aws
         static const int UNAVAILABLE_RESTRICTED_HASH = HashingUtils::HashString("UNAVAILABLE_RESTRICTED");
         static const int RESERVED_HASH = HashingUtils::HashString("RESERVED");
         static const int DONT_KNOW_HASH = HashingUtils::HashString("DONT_KNOW");
+        static const int INVALID_NAME_FOR_TLD_HASH = HashingUtils::HashString("INVALID_NAME_FOR_TLD");
+        static const int PENDING_HASH = HashingUtils::HashString("PENDING");
 
 
         DomainAvailability GetDomainAvailabilityForName(const Aws::String& name)
@@ -65,6 +67,14 @@ namespace Aws
           {
             return DomainAvailability::DONT_KNOW;
           }
+          else if (hashCode == INVALID_NAME_FOR_TLD_HASH)
+          {
+            return DomainAvailability::INVALID_NAME_FOR_TLD;
+          }
+          else if (hashCode == PENDING_HASH)
+          {
+            return DomainAvailability::PENDING;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -79,6 +89,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DomainAvailability::NOT_SET:
+            return {};
           case DomainAvailability::AVAILABLE:
             return "AVAILABLE";
           case DomainAvailability::AVAILABLE_RESERVED:
@@ -95,6 +107,10 @@ namespace Aws
             return "RESERVED";
           case DomainAvailability::DONT_KNOW:
             return "DONT_KNOW";
+          case DomainAvailability::INVALID_NAME_FOR_TLD:
+            return "INVALID_NAME_FOR_TLD";
+          case DomainAvailability::PENDING:
+            return "PENDING";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

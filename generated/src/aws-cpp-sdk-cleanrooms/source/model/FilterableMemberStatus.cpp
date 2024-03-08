@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FilterableMemberStatus::NOT_SET:
+            return {};
           case FilterableMemberStatus::INVITED:
             return "INVITED";
           case FilterableMemberStatus::ACTIVE:

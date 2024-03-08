@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CannedAccessControlList::NOT_SET:
+            return {};
           case CannedAccessControlList::private_:
             return "private";
           case CannedAccessControlList::public_read:

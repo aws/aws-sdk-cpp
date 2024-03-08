@@ -24,8 +24,10 @@ namespace Model
 {
 
   /**
-   * <p>Represents an event that failed to be submitted. For information about the
-   * errors that are common to all actions, see <a
+   * <p>Represents the results of an event submitted to an event bus.</p> <p>If the
+   * submission was successful, the entry has the event ID in it. Otherwise, you can
+   * use the error code and error message to identify the problem with the entry.</p>
+   * <p>For information about the errors that are common to all actions, see <a
    * href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/CommonErrors.html">Common
    * Errors</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/eventbridge-2015-10-07/PutEventsResultEntry">AWS
@@ -83,41 +85,193 @@ namespace Model
 
     /**
      * <p>The error code that indicates why the event submission failed.</p>
+     * <p>Retryable errors include:</p> <ul> <li> <p> <code> <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/CommonErrors.html">InternalFailure</a>
+     * </code> </p> <p>The request processing has failed because of an unknown error,
+     * exception or failure.</p> </li> <li> <p> <code> <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/CommonErrors.html">ThrottlingException</a>
+     * </code> </p> <p>The request was denied due to request throttling.</p> </li>
+     * </ul> <p>Non-retryable errors include:</p> <ul> <li> <p> <code> <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/CommonErrors.html">AccessDeniedException</a>
+     * </code> </p> <p>You do not have sufficient access to perform this action.</p>
+     * </li> <li> <p> <code>InvalidAccountIdException</code> </p> <p>The account ID
+     * provided is not valid.</p> </li> <li> <p> <code>InvalidArgument</code> </p> <p>A
+     * specified parameter is not valid.</p> </li> <li> <p>
+     * <code>MalformedDetail</code> </p> <p>The JSON provided is not valid.</p> </li>
+     * <li> <p> <code>RedactionFailure</code> </p> <p>Redacting the CloudTrail event
+     * failed.</p> </li> <li> <p> <code>NotAuthorizedForSourceException</code> </p>
+     * <p>You do not have permissions to publish events with this source onto this
+     * event bus.</p> </li> <li> <p> <code>NotAuthorizedForDetailTypeException</code>
+     * </p> <p>You do not have permissions to publish events with this detail type onto
+     * this event bus.</p> </li> </ul>
      */
     inline const Aws::String& GetErrorCode() const{ return m_errorCode; }
 
     /**
      * <p>The error code that indicates why the event submission failed.</p>
+     * <p>Retryable errors include:</p> <ul> <li> <p> <code> <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/CommonErrors.html">InternalFailure</a>
+     * </code> </p> <p>The request processing has failed because of an unknown error,
+     * exception or failure.</p> </li> <li> <p> <code> <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/CommonErrors.html">ThrottlingException</a>
+     * </code> </p> <p>The request was denied due to request throttling.</p> </li>
+     * </ul> <p>Non-retryable errors include:</p> <ul> <li> <p> <code> <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/CommonErrors.html">AccessDeniedException</a>
+     * </code> </p> <p>You do not have sufficient access to perform this action.</p>
+     * </li> <li> <p> <code>InvalidAccountIdException</code> </p> <p>The account ID
+     * provided is not valid.</p> </li> <li> <p> <code>InvalidArgument</code> </p> <p>A
+     * specified parameter is not valid.</p> </li> <li> <p>
+     * <code>MalformedDetail</code> </p> <p>The JSON provided is not valid.</p> </li>
+     * <li> <p> <code>RedactionFailure</code> </p> <p>Redacting the CloudTrail event
+     * failed.</p> </li> <li> <p> <code>NotAuthorizedForSourceException</code> </p>
+     * <p>You do not have permissions to publish events with this source onto this
+     * event bus.</p> </li> <li> <p> <code>NotAuthorizedForDetailTypeException</code>
+     * </p> <p>You do not have permissions to publish events with this detail type onto
+     * this event bus.</p> </li> </ul>
      */
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
 
     /**
      * <p>The error code that indicates why the event submission failed.</p>
+     * <p>Retryable errors include:</p> <ul> <li> <p> <code> <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/CommonErrors.html">InternalFailure</a>
+     * </code> </p> <p>The request processing has failed because of an unknown error,
+     * exception or failure.</p> </li> <li> <p> <code> <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/CommonErrors.html">ThrottlingException</a>
+     * </code> </p> <p>The request was denied due to request throttling.</p> </li>
+     * </ul> <p>Non-retryable errors include:</p> <ul> <li> <p> <code> <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/CommonErrors.html">AccessDeniedException</a>
+     * </code> </p> <p>You do not have sufficient access to perform this action.</p>
+     * </li> <li> <p> <code>InvalidAccountIdException</code> </p> <p>The account ID
+     * provided is not valid.</p> </li> <li> <p> <code>InvalidArgument</code> </p> <p>A
+     * specified parameter is not valid.</p> </li> <li> <p>
+     * <code>MalformedDetail</code> </p> <p>The JSON provided is not valid.</p> </li>
+     * <li> <p> <code>RedactionFailure</code> </p> <p>Redacting the CloudTrail event
+     * failed.</p> </li> <li> <p> <code>NotAuthorizedForSourceException</code> </p>
+     * <p>You do not have permissions to publish events with this source onto this
+     * event bus.</p> </li> <li> <p> <code>NotAuthorizedForDetailTypeException</code>
+     * </p> <p>You do not have permissions to publish events with this detail type onto
+     * this event bus.</p> </li> </ul>
      */
     inline void SetErrorCode(const Aws::String& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
 
     /**
      * <p>The error code that indicates why the event submission failed.</p>
+     * <p>Retryable errors include:</p> <ul> <li> <p> <code> <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/CommonErrors.html">InternalFailure</a>
+     * </code> </p> <p>The request processing has failed because of an unknown error,
+     * exception or failure.</p> </li> <li> <p> <code> <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/CommonErrors.html">ThrottlingException</a>
+     * </code> </p> <p>The request was denied due to request throttling.</p> </li>
+     * </ul> <p>Non-retryable errors include:</p> <ul> <li> <p> <code> <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/CommonErrors.html">AccessDeniedException</a>
+     * </code> </p> <p>You do not have sufficient access to perform this action.</p>
+     * </li> <li> <p> <code>InvalidAccountIdException</code> </p> <p>The account ID
+     * provided is not valid.</p> </li> <li> <p> <code>InvalidArgument</code> </p> <p>A
+     * specified parameter is not valid.</p> </li> <li> <p>
+     * <code>MalformedDetail</code> </p> <p>The JSON provided is not valid.</p> </li>
+     * <li> <p> <code>RedactionFailure</code> </p> <p>Redacting the CloudTrail event
+     * failed.</p> </li> <li> <p> <code>NotAuthorizedForSourceException</code> </p>
+     * <p>You do not have permissions to publish events with this source onto this
+     * event bus.</p> </li> <li> <p> <code>NotAuthorizedForDetailTypeException</code>
+     * </p> <p>You do not have permissions to publish events with this detail type onto
+     * this event bus.</p> </li> </ul>
      */
     inline void SetErrorCode(Aws::String&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
 
     /**
      * <p>The error code that indicates why the event submission failed.</p>
+     * <p>Retryable errors include:</p> <ul> <li> <p> <code> <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/CommonErrors.html">InternalFailure</a>
+     * </code> </p> <p>The request processing has failed because of an unknown error,
+     * exception or failure.</p> </li> <li> <p> <code> <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/CommonErrors.html">ThrottlingException</a>
+     * </code> </p> <p>The request was denied due to request throttling.</p> </li>
+     * </ul> <p>Non-retryable errors include:</p> <ul> <li> <p> <code> <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/CommonErrors.html">AccessDeniedException</a>
+     * </code> </p> <p>You do not have sufficient access to perform this action.</p>
+     * </li> <li> <p> <code>InvalidAccountIdException</code> </p> <p>The account ID
+     * provided is not valid.</p> </li> <li> <p> <code>InvalidArgument</code> </p> <p>A
+     * specified parameter is not valid.</p> </li> <li> <p>
+     * <code>MalformedDetail</code> </p> <p>The JSON provided is not valid.</p> </li>
+     * <li> <p> <code>RedactionFailure</code> </p> <p>Redacting the CloudTrail event
+     * failed.</p> </li> <li> <p> <code>NotAuthorizedForSourceException</code> </p>
+     * <p>You do not have permissions to publish events with this source onto this
+     * event bus.</p> </li> <li> <p> <code>NotAuthorizedForDetailTypeException</code>
+     * </p> <p>You do not have permissions to publish events with this detail type onto
+     * this event bus.</p> </li> </ul>
      */
     inline void SetErrorCode(const char* value) { m_errorCodeHasBeenSet = true; m_errorCode.assign(value); }
 
     /**
      * <p>The error code that indicates why the event submission failed.</p>
+     * <p>Retryable errors include:</p> <ul> <li> <p> <code> <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/CommonErrors.html">InternalFailure</a>
+     * </code> </p> <p>The request processing has failed because of an unknown error,
+     * exception or failure.</p> </li> <li> <p> <code> <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/CommonErrors.html">ThrottlingException</a>
+     * </code> </p> <p>The request was denied due to request throttling.</p> </li>
+     * </ul> <p>Non-retryable errors include:</p> <ul> <li> <p> <code> <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/CommonErrors.html">AccessDeniedException</a>
+     * </code> </p> <p>You do not have sufficient access to perform this action.</p>
+     * </li> <li> <p> <code>InvalidAccountIdException</code> </p> <p>The account ID
+     * provided is not valid.</p> </li> <li> <p> <code>InvalidArgument</code> </p> <p>A
+     * specified parameter is not valid.</p> </li> <li> <p>
+     * <code>MalformedDetail</code> </p> <p>The JSON provided is not valid.</p> </li>
+     * <li> <p> <code>RedactionFailure</code> </p> <p>Redacting the CloudTrail event
+     * failed.</p> </li> <li> <p> <code>NotAuthorizedForSourceException</code> </p>
+     * <p>You do not have permissions to publish events with this source onto this
+     * event bus.</p> </li> <li> <p> <code>NotAuthorizedForDetailTypeException</code>
+     * </p> <p>You do not have permissions to publish events with this detail type onto
+     * this event bus.</p> </li> </ul>
      */
     inline PutEventsResultEntry& WithErrorCode(const Aws::String& value) { SetErrorCode(value); return *this;}
 
     /**
      * <p>The error code that indicates why the event submission failed.</p>
+     * <p>Retryable errors include:</p> <ul> <li> <p> <code> <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/CommonErrors.html">InternalFailure</a>
+     * </code> </p> <p>The request processing has failed because of an unknown error,
+     * exception or failure.</p> </li> <li> <p> <code> <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/CommonErrors.html">ThrottlingException</a>
+     * </code> </p> <p>The request was denied due to request throttling.</p> </li>
+     * </ul> <p>Non-retryable errors include:</p> <ul> <li> <p> <code> <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/CommonErrors.html">AccessDeniedException</a>
+     * </code> </p> <p>You do not have sufficient access to perform this action.</p>
+     * </li> <li> <p> <code>InvalidAccountIdException</code> </p> <p>The account ID
+     * provided is not valid.</p> </li> <li> <p> <code>InvalidArgument</code> </p> <p>A
+     * specified parameter is not valid.</p> </li> <li> <p>
+     * <code>MalformedDetail</code> </p> <p>The JSON provided is not valid.</p> </li>
+     * <li> <p> <code>RedactionFailure</code> </p> <p>Redacting the CloudTrail event
+     * failed.</p> </li> <li> <p> <code>NotAuthorizedForSourceException</code> </p>
+     * <p>You do not have permissions to publish events with this source onto this
+     * event bus.</p> </li> <li> <p> <code>NotAuthorizedForDetailTypeException</code>
+     * </p> <p>You do not have permissions to publish events with this detail type onto
+     * this event bus.</p> </li> </ul>
      */
     inline PutEventsResultEntry& WithErrorCode(Aws::String&& value) { SetErrorCode(std::move(value)); return *this;}
 
     /**
      * <p>The error code that indicates why the event submission failed.</p>
+     * <p>Retryable errors include:</p> <ul> <li> <p> <code> <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/CommonErrors.html">InternalFailure</a>
+     * </code> </p> <p>The request processing has failed because of an unknown error,
+     * exception or failure.</p> </li> <li> <p> <code> <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/CommonErrors.html">ThrottlingException</a>
+     * </code> </p> <p>The request was denied due to request throttling.</p> </li>
+     * </ul> <p>Non-retryable errors include:</p> <ul> <li> <p> <code> <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/CommonErrors.html">AccessDeniedException</a>
+     * </code> </p> <p>You do not have sufficient access to perform this action.</p>
+     * </li> <li> <p> <code>InvalidAccountIdException</code> </p> <p>The account ID
+     * provided is not valid.</p> </li> <li> <p> <code>InvalidArgument</code> </p> <p>A
+     * specified parameter is not valid.</p> </li> <li> <p>
+     * <code>MalformedDetail</code> </p> <p>The JSON provided is not valid.</p> </li>
+     * <li> <p> <code>RedactionFailure</code> </p> <p>Redacting the CloudTrail event
+     * failed.</p> </li> <li> <p> <code>NotAuthorizedForSourceException</code> </p>
+     * <p>You do not have permissions to publish events with this source onto this
+     * event bus.</p> </li> <li> <p> <code>NotAuthorizedForDetailTypeException</code>
+     * </p> <p>You do not have permissions to publish events with this detail type onto
+     * this event bus.</p> </li> </ul>
      */
     inline PutEventsResultEntry& WithErrorCode(const char* value) { SetErrorCode(value); return *this;}
 

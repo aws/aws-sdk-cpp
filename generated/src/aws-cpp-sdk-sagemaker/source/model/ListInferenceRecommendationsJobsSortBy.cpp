@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ListInferenceRecommendationsJobsSortBy::NOT_SET:
+            return {};
           case ListInferenceRecommendationsJobsSortBy::Name:
             return "Name";
           case ListInferenceRecommendationsJobsSortBy::CreationTime:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HttpEndpoint::NOT_SET:
+            return {};
           case HttpEndpoint::disabled:
             return "disabled";
           case HttpEndpoint::enabled:

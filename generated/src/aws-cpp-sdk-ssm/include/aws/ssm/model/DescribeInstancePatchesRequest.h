@@ -95,8 +95,11 @@ namespace Model
      * <code>Severity</code> </b> </p> <p>Sample values: <code>Important</code> |
      * <code>Medium</code> | <code>Low</code> </p> </li> <li> <p> <b>
      * <code>State</code> </b> </p> <p>Sample values: <code>Installed</code> |
-     * <code>InstalledOther</code> | <code>InstalledPendingReboot</code> </p> </li>
-     * </ul>
+     * <code>InstalledOther</code> | <code>InstalledPendingReboot</code> </p> <p>For
+     * lists of all <code>State</code> values, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-compliance-states.html">Understanding
+     * patch compliance state values</a> in the <i>Amazon Web Services Systems Manager
+     * User Guide</i>.</p> </li> </ul>
      */
     inline const Aws::Vector<PatchOrchestratorFilter>& GetFilters() const{ return m_filters; }
 
@@ -110,8 +113,11 @@ namespace Model
      * <code>Severity</code> </b> </p> <p>Sample values: <code>Important</code> |
      * <code>Medium</code> | <code>Low</code> </p> </li> <li> <p> <b>
      * <code>State</code> </b> </p> <p>Sample values: <code>Installed</code> |
-     * <code>InstalledOther</code> | <code>InstalledPendingReboot</code> </p> </li>
-     * </ul>
+     * <code>InstalledOther</code> | <code>InstalledPendingReboot</code> </p> <p>For
+     * lists of all <code>State</code> values, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-compliance-states.html">Understanding
+     * patch compliance state values</a> in the <i>Amazon Web Services Systems Manager
+     * User Guide</i>.</p> </li> </ul>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
@@ -125,8 +131,11 @@ namespace Model
      * <code>Severity</code> </b> </p> <p>Sample values: <code>Important</code> |
      * <code>Medium</code> | <code>Low</code> </p> </li> <li> <p> <b>
      * <code>State</code> </b> </p> <p>Sample values: <code>Installed</code> |
-     * <code>InstalledOther</code> | <code>InstalledPendingReboot</code> </p> </li>
-     * </ul>
+     * <code>InstalledOther</code> | <code>InstalledPendingReboot</code> </p> <p>For
+     * lists of all <code>State</code> values, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-compliance-states.html">Understanding
+     * patch compliance state values</a> in the <i>Amazon Web Services Systems Manager
+     * User Guide</i>.</p> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<PatchOrchestratorFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
@@ -140,8 +149,11 @@ namespace Model
      * <code>Severity</code> </b> </p> <p>Sample values: <code>Important</code> |
      * <code>Medium</code> | <code>Low</code> </p> </li> <li> <p> <b>
      * <code>State</code> </b> </p> <p>Sample values: <code>Installed</code> |
-     * <code>InstalledOther</code> | <code>InstalledPendingReboot</code> </p> </li>
-     * </ul>
+     * <code>InstalledOther</code> | <code>InstalledPendingReboot</code> </p> <p>For
+     * lists of all <code>State</code> values, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-compliance-states.html">Understanding
+     * patch compliance state values</a> in the <i>Amazon Web Services Systems Manager
+     * User Guide</i>.</p> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<PatchOrchestratorFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
@@ -155,8 +167,11 @@ namespace Model
      * <code>Severity</code> </b> </p> <p>Sample values: <code>Important</code> |
      * <code>Medium</code> | <code>Low</code> </p> </li> <li> <p> <b>
      * <code>State</code> </b> </p> <p>Sample values: <code>Installed</code> |
-     * <code>InstalledOther</code> | <code>InstalledPendingReboot</code> </p> </li>
-     * </ul>
+     * <code>InstalledOther</code> | <code>InstalledPendingReboot</code> </p> <p>For
+     * lists of all <code>State</code> values, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-compliance-states.html">Understanding
+     * patch compliance state values</a> in the <i>Amazon Web Services Systems Manager
+     * User Guide</i>.</p> </li> </ul>
      */
     inline DescribeInstancePatchesRequest& WithFilters(const Aws::Vector<PatchOrchestratorFilter>& value) { SetFilters(value); return *this;}
 
@@ -170,8 +185,11 @@ namespace Model
      * <code>Severity</code> </b> </p> <p>Sample values: <code>Important</code> |
      * <code>Medium</code> | <code>Low</code> </p> </li> <li> <p> <b>
      * <code>State</code> </b> </p> <p>Sample values: <code>Installed</code> |
-     * <code>InstalledOther</code> | <code>InstalledPendingReboot</code> </p> </li>
-     * </ul>
+     * <code>InstalledOther</code> | <code>InstalledPendingReboot</code> </p> <p>For
+     * lists of all <code>State</code> values, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-compliance-states.html">Understanding
+     * patch compliance state values</a> in the <i>Amazon Web Services Systems Manager
+     * User Guide</i>.</p> </li> </ul>
      */
     inline DescribeInstancePatchesRequest& WithFilters(Aws::Vector<PatchOrchestratorFilter>&& value) { SetFilters(std::move(value)); return *this;}
 
@@ -185,8 +203,11 @@ namespace Model
      * <code>Severity</code> </b> </p> <p>Sample values: <code>Important</code> |
      * <code>Medium</code> | <code>Low</code> </p> </li> <li> <p> <b>
      * <code>State</code> </b> </p> <p>Sample values: <code>Installed</code> |
-     * <code>InstalledOther</code> | <code>InstalledPendingReboot</code> </p> </li>
-     * </ul>
+     * <code>InstalledOther</code> | <code>InstalledPendingReboot</code> </p> <p>For
+     * lists of all <code>State</code> values, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-compliance-states.html">Understanding
+     * patch compliance state values</a> in the <i>Amazon Web Services Systems Manager
+     * User Guide</i>.</p> </li> </ul>
      */
     inline DescribeInstancePatchesRequest& AddFilters(const PatchOrchestratorFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
@@ -200,8 +221,11 @@ namespace Model
      * <code>Severity</code> </b> </p> <p>Sample values: <code>Important</code> |
      * <code>Medium</code> | <code>Low</code> </p> </li> <li> <p> <b>
      * <code>State</code> </b> </p> <p>Sample values: <code>Installed</code> |
-     * <code>InstalledOther</code> | <code>InstalledPendingReboot</code> </p> </li>
-     * </ul>
+     * <code>InstalledOther</code> | <code>InstalledPendingReboot</code> </p> <p>For
+     * lists of all <code>State</code> values, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-compliance-states.html">Understanding
+     * patch compliance state values</a> in the <i>Amazon Web Services Systems Manager
+     * User Guide</i>.</p> </li> </ul>
      */
     inline DescribeInstancePatchesRequest& AddFilters(PatchOrchestratorFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

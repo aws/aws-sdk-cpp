@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Mpeg2GopSizeUnits::NOT_SET:
+            return {};
           case Mpeg2GopSizeUnits::FRAMES:
             return "FRAMES";
           case Mpeg2GopSizeUnits::SECONDS:

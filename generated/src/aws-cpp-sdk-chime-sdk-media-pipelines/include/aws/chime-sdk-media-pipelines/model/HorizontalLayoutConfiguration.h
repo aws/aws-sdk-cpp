@@ -124,42 +124,42 @@ namespace Model
 
 
     /**
-     * <p>Sets the aspect ratio of the video tiles, such as 16:9.</p>
+     * <p>Specifies the aspect ratio of all video tiles.</p>
      */
     inline const Aws::String& GetTileAspectRatio() const{ return m_tileAspectRatio; }
 
     /**
-     * <p>Sets the aspect ratio of the video tiles, such as 16:9.</p>
+     * <p>Specifies the aspect ratio of all video tiles.</p>
      */
     inline bool TileAspectRatioHasBeenSet() const { return m_tileAspectRatioHasBeenSet; }
 
     /**
-     * <p>Sets the aspect ratio of the video tiles, such as 16:9.</p>
+     * <p>Specifies the aspect ratio of all video tiles.</p>
      */
     inline void SetTileAspectRatio(const Aws::String& value) { m_tileAspectRatioHasBeenSet = true; m_tileAspectRatio = value; }
 
     /**
-     * <p>Sets the aspect ratio of the video tiles, such as 16:9.</p>
+     * <p>Specifies the aspect ratio of all video tiles.</p>
      */
     inline void SetTileAspectRatio(Aws::String&& value) { m_tileAspectRatioHasBeenSet = true; m_tileAspectRatio = std::move(value); }
 
     /**
-     * <p>Sets the aspect ratio of the video tiles, such as 16:9.</p>
+     * <p>Specifies the aspect ratio of all video tiles.</p>
      */
     inline void SetTileAspectRatio(const char* value) { m_tileAspectRatioHasBeenSet = true; m_tileAspectRatio.assign(value); }
 
     /**
-     * <p>Sets the aspect ratio of the video tiles, such as 16:9.</p>
+     * <p>Specifies the aspect ratio of all video tiles.</p>
      */
     inline HorizontalLayoutConfiguration& WithTileAspectRatio(const Aws::String& value) { SetTileAspectRatio(value); return *this;}
 
     /**
-     * <p>Sets the aspect ratio of the video tiles, such as 16:9.</p>
+     * <p>Specifies the aspect ratio of all video tiles.</p>
      */
     inline HorizontalLayoutConfiguration& WithTileAspectRatio(Aws::String&& value) { SetTileAspectRatio(std::move(value)); return *this;}
 
     /**
-     * <p>Sets the aspect ratio of the video tiles, such as 16:9.</p>
+     * <p>Specifies the aspect ratio of all video tiles.</p>
      */
     inline HorizontalLayoutConfiguration& WithTileAspectRatio(const char* value) { SetTileAspectRatio(value); return *this;}
 

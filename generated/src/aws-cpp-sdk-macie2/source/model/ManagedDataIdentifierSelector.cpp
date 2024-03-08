@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ManagedDataIdentifierSelector::NOT_SET:
+            return {};
           case ManagedDataIdentifierSelector::ALL:
             return "ALL";
           case ManagedDataIdentifierSelector::EXCLUDE:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ImageError::NOT_SET:
+            return {};
           case ImageError::NO_MEDIA:
             return "NO_MEDIA";
           case ImageError::MEDIA_ERROR:

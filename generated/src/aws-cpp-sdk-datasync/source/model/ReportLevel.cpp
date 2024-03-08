@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReportLevel::NOT_SET:
+            return {};
           case ReportLevel::ERRORS_ONLY:
             return "ERRORS_ONLY";
           case ReportLevel::SUCCESSES_AND_ERRORS:

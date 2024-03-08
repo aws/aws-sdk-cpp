@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Mpeg2InterlaceMode::NOT_SET:
+            return {};
           case Mpeg2InterlaceMode::PROGRESSIVE:
             return "PROGRESSIVE";
           case Mpeg2InterlaceMode::TOP_FIELD:

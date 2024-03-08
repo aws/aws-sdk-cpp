@@ -80,22 +80,26 @@ namespace Model
 
 
     /**
-     * <p>Asset property data of type integer (whole number).</p>
+     * <p>Asset property data of type integer (number that's greater than or equal to
+     * zero).</p>
      */
     inline int GetIntegerValue() const{ return m_integerValue; }
 
     /**
-     * <p>Asset property data of type integer (whole number).</p>
+     * <p>Asset property data of type integer (number that's greater than or equal to
+     * zero).</p>
      */
     inline bool IntegerValueHasBeenSet() const { return m_integerValueHasBeenSet; }
 
     /**
-     * <p>Asset property data of type integer (whole number).</p>
+     * <p>Asset property data of type integer (number that's greater than or equal to
+     * zero).</p>
      */
     inline void SetIntegerValue(int value) { m_integerValueHasBeenSet = true; m_integerValue = value; }
 
     /**
-     * <p>Asset property data of type integer (whole number).</p>
+     * <p>Asset property data of type integer (number that's greater than or equal to
+     * zero).</p>
      */
     inline Variant& WithIntegerValue(int value) { SetIntegerValue(value); return *this;}
 

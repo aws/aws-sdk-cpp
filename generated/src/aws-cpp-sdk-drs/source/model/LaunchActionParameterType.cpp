@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LaunchActionParameterType::NOT_SET:
+            return {};
           case LaunchActionParameterType::SSM_STORE:
             return "SSM_STORE";
           case LaunchActionParameterType::DYNAMIC:

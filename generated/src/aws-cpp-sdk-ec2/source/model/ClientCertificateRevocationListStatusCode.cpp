@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ClientCertificateRevocationListStatusCode::NOT_SET:
+            return {};
           case ClientCertificateRevocationListStatusCode::pending:
             return "pending";
           case ClientCertificateRevocationListStatusCode::active:

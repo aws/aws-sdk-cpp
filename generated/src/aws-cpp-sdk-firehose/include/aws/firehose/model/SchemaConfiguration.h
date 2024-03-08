@@ -24,9 +24,9 @@ namespace Model
 {
 
   /**
-   * <p>Specifies the schema to which you want Kinesis Data Firehose to configure
-   * your data before it writes it to Amazon S3. This parameter is required if
-   * <code>Enabled</code> is set to true.</p><p><h3>See Also:</h3>   <a
+   * <p>Specifies the schema to which you want Firehose to configure your data before
+   * it writes it to Amazon S3. This parameter is required if <code>Enabled</code> is
+   * set to true.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/SchemaConfiguration">AWS
    * API Reference</a></p>
    */
@@ -40,82 +40,82 @@ namespace Model
 
 
     /**
-     * <p>The role that Kinesis Data Firehose can use to access Amazon Web Services
-     * Glue. This role must be in the same account you use for Kinesis Data Firehose.
-     * Cross-account roles aren't allowed.</p>  <p>If the
-     * <code>SchemaConfiguration</code> request parameter is used as part of invoking
-     * the <code>CreateDeliveryStream</code> API, then the <code>RoleARN</code>
-     * property is required and its value must be specified.</p> 
+     * <p>The role that Firehose can use to access Amazon Web Services Glue. This role
+     * must be in the same account you use for Firehose. Cross-account roles aren't
+     * allowed.</p>  <p>If the <code>SchemaConfiguration</code> request
+     * parameter is used as part of invoking the <code>CreateDeliveryStream</code> API,
+     * then the <code>RoleARN</code> property is required and its value must be
+     * specified.</p> 
      */
     inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
 
     /**
-     * <p>The role that Kinesis Data Firehose can use to access Amazon Web Services
-     * Glue. This role must be in the same account you use for Kinesis Data Firehose.
-     * Cross-account roles aren't allowed.</p>  <p>If the
-     * <code>SchemaConfiguration</code> request parameter is used as part of invoking
-     * the <code>CreateDeliveryStream</code> API, then the <code>RoleARN</code>
-     * property is required and its value must be specified.</p> 
+     * <p>The role that Firehose can use to access Amazon Web Services Glue. This role
+     * must be in the same account you use for Firehose. Cross-account roles aren't
+     * allowed.</p>  <p>If the <code>SchemaConfiguration</code> request
+     * parameter is used as part of invoking the <code>CreateDeliveryStream</code> API,
+     * then the <code>RoleARN</code> property is required and its value must be
+     * specified.</p> 
      */
     inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
 
     /**
-     * <p>The role that Kinesis Data Firehose can use to access Amazon Web Services
-     * Glue. This role must be in the same account you use for Kinesis Data Firehose.
-     * Cross-account roles aren't allowed.</p>  <p>If the
-     * <code>SchemaConfiguration</code> request parameter is used as part of invoking
-     * the <code>CreateDeliveryStream</code> API, then the <code>RoleARN</code>
-     * property is required and its value must be specified.</p> 
+     * <p>The role that Firehose can use to access Amazon Web Services Glue. This role
+     * must be in the same account you use for Firehose. Cross-account roles aren't
+     * allowed.</p>  <p>If the <code>SchemaConfiguration</code> request
+     * parameter is used as part of invoking the <code>CreateDeliveryStream</code> API,
+     * then the <code>RoleARN</code> property is required and its value must be
+     * specified.</p> 
      */
     inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
 
     /**
-     * <p>The role that Kinesis Data Firehose can use to access Amazon Web Services
-     * Glue. This role must be in the same account you use for Kinesis Data Firehose.
-     * Cross-account roles aren't allowed.</p>  <p>If the
-     * <code>SchemaConfiguration</code> request parameter is used as part of invoking
-     * the <code>CreateDeliveryStream</code> API, then the <code>RoleARN</code>
-     * property is required and its value must be specified.</p> 
+     * <p>The role that Firehose can use to access Amazon Web Services Glue. This role
+     * must be in the same account you use for Firehose. Cross-account roles aren't
+     * allowed.</p>  <p>If the <code>SchemaConfiguration</code> request
+     * parameter is used as part of invoking the <code>CreateDeliveryStream</code> API,
+     * then the <code>RoleARN</code> property is required and its value must be
+     * specified.</p> 
      */
     inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
 
     /**
-     * <p>The role that Kinesis Data Firehose can use to access Amazon Web Services
-     * Glue. This role must be in the same account you use for Kinesis Data Firehose.
-     * Cross-account roles aren't allowed.</p>  <p>If the
-     * <code>SchemaConfiguration</code> request parameter is used as part of invoking
-     * the <code>CreateDeliveryStream</code> API, then the <code>RoleARN</code>
-     * property is required and its value must be specified.</p> 
+     * <p>The role that Firehose can use to access Amazon Web Services Glue. This role
+     * must be in the same account you use for Firehose. Cross-account roles aren't
+     * allowed.</p>  <p>If the <code>SchemaConfiguration</code> request
+     * parameter is used as part of invoking the <code>CreateDeliveryStream</code> API,
+     * then the <code>RoleARN</code> property is required and its value must be
+     * specified.</p> 
      */
     inline void SetRoleARN(const char* value) { m_roleARNHasBeenSet = true; m_roleARN.assign(value); }
 
     /**
-     * <p>The role that Kinesis Data Firehose can use to access Amazon Web Services
-     * Glue. This role must be in the same account you use for Kinesis Data Firehose.
-     * Cross-account roles aren't allowed.</p>  <p>If the
-     * <code>SchemaConfiguration</code> request parameter is used as part of invoking
-     * the <code>CreateDeliveryStream</code> API, then the <code>RoleARN</code>
-     * property is required and its value must be specified.</p> 
+     * <p>The role that Firehose can use to access Amazon Web Services Glue. This role
+     * must be in the same account you use for Firehose. Cross-account roles aren't
+     * allowed.</p>  <p>If the <code>SchemaConfiguration</code> request
+     * parameter is used as part of invoking the <code>CreateDeliveryStream</code> API,
+     * then the <code>RoleARN</code> property is required and its value must be
+     * specified.</p> 
      */
     inline SchemaConfiguration& WithRoleARN(const Aws::String& value) { SetRoleARN(value); return *this;}
 
     /**
-     * <p>The role that Kinesis Data Firehose can use to access Amazon Web Services
-     * Glue. This role must be in the same account you use for Kinesis Data Firehose.
-     * Cross-account roles aren't allowed.</p>  <p>If the
-     * <code>SchemaConfiguration</code> request parameter is used as part of invoking
-     * the <code>CreateDeliveryStream</code> API, then the <code>RoleARN</code>
-     * property is required and its value must be specified.</p> 
+     * <p>The role that Firehose can use to access Amazon Web Services Glue. This role
+     * must be in the same account you use for Firehose. Cross-account roles aren't
+     * allowed.</p>  <p>If the <code>SchemaConfiguration</code> request
+     * parameter is used as part of invoking the <code>CreateDeliveryStream</code> API,
+     * then the <code>RoleARN</code> property is required and its value must be
+     * specified.</p> 
      */
     inline SchemaConfiguration& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
 
     /**
-     * <p>The role that Kinesis Data Firehose can use to access Amazon Web Services
-     * Glue. This role must be in the same account you use for Kinesis Data Firehose.
-     * Cross-account roles aren't allowed.</p>  <p>If the
-     * <code>SchemaConfiguration</code> request parameter is used as part of invoking
-     * the <code>CreateDeliveryStream</code> API, then the <code>RoleARN</code>
-     * property is required and its value must be specified.</p> 
+     * <p>The role that Firehose can use to access Amazon Web Services Glue. This role
+     * must be in the same account you use for Firehose. Cross-account roles aren't
+     * allowed.</p>  <p>If the <code>SchemaConfiguration</code> request
+     * parameter is used as part of invoking the <code>CreateDeliveryStream</code> API,
+     * then the <code>RoleARN</code> property is required and its value must be
+     * specified.</p> 
      */
     inline SchemaConfiguration& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
 
@@ -366,65 +366,65 @@ namespace Model
 
     /**
      * <p>Specifies the table version for the output data schema. If you don't specify
-     * this version ID, or if you set it to <code>LATEST</code>, Kinesis Data Firehose
-     * uses the most recent version. This means that any updates to the table are
-     * automatically picked up.</p>
+     * this version ID, or if you set it to <code>LATEST</code>, Firehose uses the most
+     * recent version. This means that any updates to the table are automatically
+     * picked up.</p>
      */
     inline const Aws::String& GetVersionId() const{ return m_versionId; }
 
     /**
      * <p>Specifies the table version for the output data schema. If you don't specify
-     * this version ID, or if you set it to <code>LATEST</code>, Kinesis Data Firehose
-     * uses the most recent version. This means that any updates to the table are
-     * automatically picked up.</p>
+     * this version ID, or if you set it to <code>LATEST</code>, Firehose uses the most
+     * recent version. This means that any updates to the table are automatically
+     * picked up.</p>
      */
     inline bool VersionIdHasBeenSet() const { return m_versionIdHasBeenSet; }
 
     /**
      * <p>Specifies the table version for the output data schema. If you don't specify
-     * this version ID, or if you set it to <code>LATEST</code>, Kinesis Data Firehose
-     * uses the most recent version. This means that any updates to the table are
-     * automatically picked up.</p>
+     * this version ID, or if you set it to <code>LATEST</code>, Firehose uses the most
+     * recent version. This means that any updates to the table are automatically
+     * picked up.</p>
      */
     inline void SetVersionId(const Aws::String& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
 
     /**
      * <p>Specifies the table version for the output data schema. If you don't specify
-     * this version ID, or if you set it to <code>LATEST</code>, Kinesis Data Firehose
-     * uses the most recent version. This means that any updates to the table are
-     * automatically picked up.</p>
+     * this version ID, or if you set it to <code>LATEST</code>, Firehose uses the most
+     * recent version. This means that any updates to the table are automatically
+     * picked up.</p>
      */
     inline void SetVersionId(Aws::String&& value) { m_versionIdHasBeenSet = true; m_versionId = std::move(value); }
 
     /**
      * <p>Specifies the table version for the output data schema. If you don't specify
-     * this version ID, or if you set it to <code>LATEST</code>, Kinesis Data Firehose
-     * uses the most recent version. This means that any updates to the table are
-     * automatically picked up.</p>
+     * this version ID, or if you set it to <code>LATEST</code>, Firehose uses the most
+     * recent version. This means that any updates to the table are automatically
+     * picked up.</p>
      */
     inline void SetVersionId(const char* value) { m_versionIdHasBeenSet = true; m_versionId.assign(value); }
 
     /**
      * <p>Specifies the table version for the output data schema. If you don't specify
-     * this version ID, or if you set it to <code>LATEST</code>, Kinesis Data Firehose
-     * uses the most recent version. This means that any updates to the table are
-     * automatically picked up.</p>
+     * this version ID, or if you set it to <code>LATEST</code>, Firehose uses the most
+     * recent version. This means that any updates to the table are automatically
+     * picked up.</p>
      */
     inline SchemaConfiguration& WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
 
     /**
      * <p>Specifies the table version for the output data schema. If you don't specify
-     * this version ID, or if you set it to <code>LATEST</code>, Kinesis Data Firehose
-     * uses the most recent version. This means that any updates to the table are
-     * automatically picked up.</p>
+     * this version ID, or if you set it to <code>LATEST</code>, Firehose uses the most
+     * recent version. This means that any updates to the table are automatically
+     * picked up.</p>
      */
     inline SchemaConfiguration& WithVersionId(Aws::String&& value) { SetVersionId(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the table version for the output data schema. If you don't specify
-     * this version ID, or if you set it to <code>LATEST</code>, Kinesis Data Firehose
-     * uses the most recent version. This means that any updates to the table are
-     * automatically picked up.</p>
+     * this version ID, or if you set it to <code>LATEST</code>, Firehose uses the most
+     * recent version. This means that any updates to the table are automatically
+     * picked up.</p>
      */
     inline SchemaConfiguration& WithVersionId(const char* value) { SetVersionId(value); return *this;}
 

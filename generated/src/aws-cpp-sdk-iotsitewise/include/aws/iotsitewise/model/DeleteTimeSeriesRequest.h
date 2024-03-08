@@ -81,83 +81,147 @@ namespace Model
 
 
     /**
-     * <p>The ID of the asset in which the asset property was created.</p>
+     * <p>The ID of the asset in which the asset property was created. This can be
+     * either the actual ID in UUID format, or else <code>externalId:</code> followed
+     * by the external ID, if it has one. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline const Aws::String& GetAssetId() const{ return m_assetId; }
 
     /**
-     * <p>The ID of the asset in which the asset property was created.</p>
+     * <p>The ID of the asset in which the asset property was created. This can be
+     * either the actual ID in UUID format, or else <code>externalId:</code> followed
+     * by the external ID, if it has one. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline bool AssetIdHasBeenSet() const { return m_assetIdHasBeenSet; }
 
     /**
-     * <p>The ID of the asset in which the asset property was created.</p>
+     * <p>The ID of the asset in which the asset property was created. This can be
+     * either the actual ID in UUID format, or else <code>externalId:</code> followed
+     * by the external ID, if it has one. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline void SetAssetId(const Aws::String& value) { m_assetIdHasBeenSet = true; m_assetId = value; }
 
     /**
-     * <p>The ID of the asset in which the asset property was created.</p>
+     * <p>The ID of the asset in which the asset property was created. This can be
+     * either the actual ID in UUID format, or else <code>externalId:</code> followed
+     * by the external ID, if it has one. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline void SetAssetId(Aws::String&& value) { m_assetIdHasBeenSet = true; m_assetId = std::move(value); }
 
     /**
-     * <p>The ID of the asset in which the asset property was created.</p>
+     * <p>The ID of the asset in which the asset property was created. This can be
+     * either the actual ID in UUID format, or else <code>externalId:</code> followed
+     * by the external ID, if it has one. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline void SetAssetId(const char* value) { m_assetIdHasBeenSet = true; m_assetId.assign(value); }
 
     /**
-     * <p>The ID of the asset in which the asset property was created.</p>
+     * <p>The ID of the asset in which the asset property was created. This can be
+     * either the actual ID in UUID format, or else <code>externalId:</code> followed
+     * by the external ID, if it has one. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline DeleteTimeSeriesRequest& WithAssetId(const Aws::String& value) { SetAssetId(value); return *this;}
 
     /**
-     * <p>The ID of the asset in which the asset property was created.</p>
+     * <p>The ID of the asset in which the asset property was created. This can be
+     * either the actual ID in UUID format, or else <code>externalId:</code> followed
+     * by the external ID, if it has one. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline DeleteTimeSeriesRequest& WithAssetId(Aws::String&& value) { SetAssetId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the asset in which the asset property was created.</p>
+     * <p>The ID of the asset in which the asset property was created. This can be
+     * either the actual ID in UUID format, or else <code>externalId:</code> followed
+     * by the external ID, if it has one. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline DeleteTimeSeriesRequest& WithAssetId(const char* value) { SetAssetId(value); return *this;}
 
 
     /**
-     * <p>The ID of the asset property.</p>
+     * <p>The ID of the asset property. This can be either the actual ID in UUID
+     * format, or else <code>externalId:</code> followed by the external ID, if it has
+     * one. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline const Aws::String& GetPropertyId() const{ return m_propertyId; }
 
     /**
-     * <p>The ID of the asset property.</p>
+     * <p>The ID of the asset property. This can be either the actual ID in UUID
+     * format, or else <code>externalId:</code> followed by the external ID, if it has
+     * one. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline bool PropertyIdHasBeenSet() const { return m_propertyIdHasBeenSet; }
 
     /**
-     * <p>The ID of the asset property.</p>
+     * <p>The ID of the asset property. This can be either the actual ID in UUID
+     * format, or else <code>externalId:</code> followed by the external ID, if it has
+     * one. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline void SetPropertyId(const Aws::String& value) { m_propertyIdHasBeenSet = true; m_propertyId = value; }
 
     /**
-     * <p>The ID of the asset property.</p>
+     * <p>The ID of the asset property. This can be either the actual ID in UUID
+     * format, or else <code>externalId:</code> followed by the external ID, if it has
+     * one. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline void SetPropertyId(Aws::String&& value) { m_propertyIdHasBeenSet = true; m_propertyId = std::move(value); }
 
     /**
-     * <p>The ID of the asset property.</p>
+     * <p>The ID of the asset property. This can be either the actual ID in UUID
+     * format, or else <code>externalId:</code> followed by the external ID, if it has
+     * one. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline void SetPropertyId(const char* value) { m_propertyIdHasBeenSet = true; m_propertyId.assign(value); }
 
     /**
-     * <p>The ID of the asset property.</p>
+     * <p>The ID of the asset property. This can be either the actual ID in UUID
+     * format, or else <code>externalId:</code> followed by the external ID, if it has
+     * one. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline DeleteTimeSeriesRequest& WithPropertyId(const Aws::String& value) { SetPropertyId(value); return *this;}
 
     /**
-     * <p>The ID of the asset property.</p>
+     * <p>The ID of the asset property. This can be either the actual ID in UUID
+     * format, or else <code>externalId:</code> followed by the external ID, if it has
+     * one. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline DeleteTimeSeriesRequest& WithPropertyId(Aws::String&& value) { SetPropertyId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the asset property.</p>
+     * <p>The ID of the asset property. This can be either the actual ID in UUID
+     * format, or else <code>externalId:</code> followed by the external ID, if it has
+     * one. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline DeleteTimeSeriesRequest& WithPropertyId(const char* value) { SetPropertyId(value); return *this;}
 

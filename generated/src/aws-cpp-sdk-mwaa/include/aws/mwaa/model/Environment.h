@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/mwaa/model/EndpointManagement.h>
 #include <aws/mwaa/model/LastUpdate.h>
 #include <aws/mwaa/model/LoggingConfiguration.h>
 #include <aws/mwaa/model/NetworkConfiguration.h>
@@ -151,58 +152,66 @@ namespace Model
 
 
     /**
-     * <p>The Apache Airflow version on your environment. Valid values:
+     * <p>The Apache Airflow version on your environment.</p> <p>Valid values:
      * <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>,
-     * <code>2.4.3</code>, and <code>2.5.1</code>.</p>
+     * <code>2.4.3</code>, <code>2.5.1</code>, <code>2.6.3</code>,
+     * <code>2.7.2</code>.</p>
      */
     inline const Aws::String& GetAirflowVersion() const{ return m_airflowVersion; }
 
     /**
-     * <p>The Apache Airflow version on your environment. Valid values:
+     * <p>The Apache Airflow version on your environment.</p> <p>Valid values:
      * <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>,
-     * <code>2.4.3</code>, and <code>2.5.1</code>.</p>
+     * <code>2.4.3</code>, <code>2.5.1</code>, <code>2.6.3</code>,
+     * <code>2.7.2</code>.</p>
      */
     inline bool AirflowVersionHasBeenSet() const { return m_airflowVersionHasBeenSet; }
 
     /**
-     * <p>The Apache Airflow version on your environment. Valid values:
+     * <p>The Apache Airflow version on your environment.</p> <p>Valid values:
      * <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>,
-     * <code>2.4.3</code>, and <code>2.5.1</code>.</p>
+     * <code>2.4.3</code>, <code>2.5.1</code>, <code>2.6.3</code>,
+     * <code>2.7.2</code>.</p>
      */
     inline void SetAirflowVersion(const Aws::String& value) { m_airflowVersionHasBeenSet = true; m_airflowVersion = value; }
 
     /**
-     * <p>The Apache Airflow version on your environment. Valid values:
+     * <p>The Apache Airflow version on your environment.</p> <p>Valid values:
      * <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>,
-     * <code>2.4.3</code>, and <code>2.5.1</code>.</p>
+     * <code>2.4.3</code>, <code>2.5.1</code>, <code>2.6.3</code>,
+     * <code>2.7.2</code>.</p>
      */
     inline void SetAirflowVersion(Aws::String&& value) { m_airflowVersionHasBeenSet = true; m_airflowVersion = std::move(value); }
 
     /**
-     * <p>The Apache Airflow version on your environment. Valid values:
+     * <p>The Apache Airflow version on your environment.</p> <p>Valid values:
      * <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>,
-     * <code>2.4.3</code>, and <code>2.5.1</code>.</p>
+     * <code>2.4.3</code>, <code>2.5.1</code>, <code>2.6.3</code>,
+     * <code>2.7.2</code>.</p>
      */
     inline void SetAirflowVersion(const char* value) { m_airflowVersionHasBeenSet = true; m_airflowVersion.assign(value); }
 
     /**
-     * <p>The Apache Airflow version on your environment. Valid values:
+     * <p>The Apache Airflow version on your environment.</p> <p>Valid values:
      * <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>,
-     * <code>2.4.3</code>, and <code>2.5.1</code>.</p>
+     * <code>2.4.3</code>, <code>2.5.1</code>, <code>2.6.3</code>,
+     * <code>2.7.2</code>.</p>
      */
     inline Environment& WithAirflowVersion(const Aws::String& value) { SetAirflowVersion(value); return *this;}
 
     /**
-     * <p>The Apache Airflow version on your environment. Valid values:
+     * <p>The Apache Airflow version on your environment.</p> <p>Valid values:
      * <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>,
-     * <code>2.4.3</code>, and <code>2.5.1</code>.</p>
+     * <code>2.4.3</code>, <code>2.5.1</code>, <code>2.6.3</code>,
+     * <code>2.7.2</code>.</p>
      */
     inline Environment& WithAirflowVersion(Aws::String&& value) { SetAirflowVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The Apache Airflow version on your environment. Valid values:
+     * <p>The Apache Airflow version on your environment.</p> <p>Valid values:
      * <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>,
-     * <code>2.4.3</code>, and <code>2.5.1</code>.</p>
+     * <code>2.4.3</code>, <code>2.5.1</code>, <code>2.6.3</code>,
+     * <code>2.7.2</code>.</p>
      */
     inline Environment& WithAirflowVersion(const char* value) { SetAirflowVersion(value); return *this;}
 
@@ -246,6 +255,79 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the Amazon MWAA environment.</p>
      */
     inline Environment& WithArn(const char* value) { SetArn(value); return *this;}
+
+
+    /**
+     * <p>The queue ARN for the environment's <a
+     * href="https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/executor/celery.html">Celery
+     * Executor</a>. Amazon MWAA uses a Celery Executor to distribute tasks across
+     * multiple workers. When you create an environment in a shared VPC, you must
+     * provide access to the Celery Executor queue from your VPC.</p>
+     */
+    inline const Aws::String& GetCeleryExecutorQueue() const{ return m_celeryExecutorQueue; }
+
+    /**
+     * <p>The queue ARN for the environment's <a
+     * href="https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/executor/celery.html">Celery
+     * Executor</a>. Amazon MWAA uses a Celery Executor to distribute tasks across
+     * multiple workers. When you create an environment in a shared VPC, you must
+     * provide access to the Celery Executor queue from your VPC.</p>
+     */
+    inline bool CeleryExecutorQueueHasBeenSet() const { return m_celeryExecutorQueueHasBeenSet; }
+
+    /**
+     * <p>The queue ARN for the environment's <a
+     * href="https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/executor/celery.html">Celery
+     * Executor</a>. Amazon MWAA uses a Celery Executor to distribute tasks across
+     * multiple workers. When you create an environment in a shared VPC, you must
+     * provide access to the Celery Executor queue from your VPC.</p>
+     */
+    inline void SetCeleryExecutorQueue(const Aws::String& value) { m_celeryExecutorQueueHasBeenSet = true; m_celeryExecutorQueue = value; }
+
+    /**
+     * <p>The queue ARN for the environment's <a
+     * href="https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/executor/celery.html">Celery
+     * Executor</a>. Amazon MWAA uses a Celery Executor to distribute tasks across
+     * multiple workers. When you create an environment in a shared VPC, you must
+     * provide access to the Celery Executor queue from your VPC.</p>
+     */
+    inline void SetCeleryExecutorQueue(Aws::String&& value) { m_celeryExecutorQueueHasBeenSet = true; m_celeryExecutorQueue = std::move(value); }
+
+    /**
+     * <p>The queue ARN for the environment's <a
+     * href="https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/executor/celery.html">Celery
+     * Executor</a>. Amazon MWAA uses a Celery Executor to distribute tasks across
+     * multiple workers. When you create an environment in a shared VPC, you must
+     * provide access to the Celery Executor queue from your VPC.</p>
+     */
+    inline void SetCeleryExecutorQueue(const char* value) { m_celeryExecutorQueueHasBeenSet = true; m_celeryExecutorQueue.assign(value); }
+
+    /**
+     * <p>The queue ARN for the environment's <a
+     * href="https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/executor/celery.html">Celery
+     * Executor</a>. Amazon MWAA uses a Celery Executor to distribute tasks across
+     * multiple workers. When you create an environment in a shared VPC, you must
+     * provide access to the Celery Executor queue from your VPC.</p>
+     */
+    inline Environment& WithCeleryExecutorQueue(const Aws::String& value) { SetCeleryExecutorQueue(value); return *this;}
+
+    /**
+     * <p>The queue ARN for the environment's <a
+     * href="https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/executor/celery.html">Celery
+     * Executor</a>. Amazon MWAA uses a Celery Executor to distribute tasks across
+     * multiple workers. When you create an environment in a shared VPC, you must
+     * provide access to the Celery Executor queue from your VPC.</p>
+     */
+    inline Environment& WithCeleryExecutorQueue(Aws::String&& value) { SetCeleryExecutorQueue(std::move(value)); return *this;}
+
+    /**
+     * <p>The queue ARN for the environment's <a
+     * href="https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/executor/celery.html">Celery
+     * Executor</a>. Amazon MWAA uses a Celery Executor to distribute tasks across
+     * multiple workers. When you create an environment in a shared VPC, you must
+     * provide access to the Celery Executor queue from your VPC.</p>
+     */
+    inline Environment& WithCeleryExecutorQueue(const char* value) { SetCeleryExecutorQueue(value); return *this;}
 
 
     /**
@@ -342,6 +424,102 @@ namespace Model
      * or updating DAGs</a>.</p>
      */
     inline Environment& WithDagS3Path(const char* value) { SetDagS3Path(value); return *this;}
+
+
+    /**
+     * <p>The VPC endpoint for the environment's Amazon RDS database.</p>
+     */
+    inline const Aws::String& GetDatabaseVpcEndpointService() const{ return m_databaseVpcEndpointService; }
+
+    /**
+     * <p>The VPC endpoint for the environment's Amazon RDS database.</p>
+     */
+    inline bool DatabaseVpcEndpointServiceHasBeenSet() const { return m_databaseVpcEndpointServiceHasBeenSet; }
+
+    /**
+     * <p>The VPC endpoint for the environment's Amazon RDS database.</p>
+     */
+    inline void SetDatabaseVpcEndpointService(const Aws::String& value) { m_databaseVpcEndpointServiceHasBeenSet = true; m_databaseVpcEndpointService = value; }
+
+    /**
+     * <p>The VPC endpoint for the environment's Amazon RDS database.</p>
+     */
+    inline void SetDatabaseVpcEndpointService(Aws::String&& value) { m_databaseVpcEndpointServiceHasBeenSet = true; m_databaseVpcEndpointService = std::move(value); }
+
+    /**
+     * <p>The VPC endpoint for the environment's Amazon RDS database.</p>
+     */
+    inline void SetDatabaseVpcEndpointService(const char* value) { m_databaseVpcEndpointServiceHasBeenSet = true; m_databaseVpcEndpointService.assign(value); }
+
+    /**
+     * <p>The VPC endpoint for the environment's Amazon RDS database.</p>
+     */
+    inline Environment& WithDatabaseVpcEndpointService(const Aws::String& value) { SetDatabaseVpcEndpointService(value); return *this;}
+
+    /**
+     * <p>The VPC endpoint for the environment's Amazon RDS database.</p>
+     */
+    inline Environment& WithDatabaseVpcEndpointService(Aws::String&& value) { SetDatabaseVpcEndpointService(std::move(value)); return *this;}
+
+    /**
+     * <p>The VPC endpoint for the environment's Amazon RDS database.</p>
+     */
+    inline Environment& WithDatabaseVpcEndpointService(const char* value) { SetDatabaseVpcEndpointService(value); return *this;}
+
+
+    /**
+     * <p>Defines whether the VPC endpoints configured for the environment are created,
+     * and managed, by the customer or by Amazon MWAA. If set to <code>SERVICE</code>,
+     * Amazon MWAA will create and manage the required VPC endpoints in your VPC. If
+     * set to <code>CUSTOMER</code>, you must create, and manage, the VPC endpoints in
+     * your VPC.</p>
+     */
+    inline const EndpointManagement& GetEndpointManagement() const{ return m_endpointManagement; }
+
+    /**
+     * <p>Defines whether the VPC endpoints configured for the environment are created,
+     * and managed, by the customer or by Amazon MWAA. If set to <code>SERVICE</code>,
+     * Amazon MWAA will create and manage the required VPC endpoints in your VPC. If
+     * set to <code>CUSTOMER</code>, you must create, and manage, the VPC endpoints in
+     * your VPC.</p>
+     */
+    inline bool EndpointManagementHasBeenSet() const { return m_endpointManagementHasBeenSet; }
+
+    /**
+     * <p>Defines whether the VPC endpoints configured for the environment are created,
+     * and managed, by the customer or by Amazon MWAA. If set to <code>SERVICE</code>,
+     * Amazon MWAA will create and manage the required VPC endpoints in your VPC. If
+     * set to <code>CUSTOMER</code>, you must create, and manage, the VPC endpoints in
+     * your VPC.</p>
+     */
+    inline void SetEndpointManagement(const EndpointManagement& value) { m_endpointManagementHasBeenSet = true; m_endpointManagement = value; }
+
+    /**
+     * <p>Defines whether the VPC endpoints configured for the environment are created,
+     * and managed, by the customer or by Amazon MWAA. If set to <code>SERVICE</code>,
+     * Amazon MWAA will create and manage the required VPC endpoints in your VPC. If
+     * set to <code>CUSTOMER</code>, you must create, and manage, the VPC endpoints in
+     * your VPC.</p>
+     */
+    inline void SetEndpointManagement(EndpointManagement&& value) { m_endpointManagementHasBeenSet = true; m_endpointManagement = std::move(value); }
+
+    /**
+     * <p>Defines whether the VPC endpoints configured for the environment are created,
+     * and managed, by the customer or by Amazon MWAA. If set to <code>SERVICE</code>,
+     * Amazon MWAA will create and manage the required VPC endpoints in your VPC. If
+     * set to <code>CUSTOMER</code>, you must create, and manage, the VPC endpoints in
+     * your VPC.</p>
+     */
+    inline Environment& WithEndpointManagement(const EndpointManagement& value) { SetEndpointManagement(value); return *this;}
+
+    /**
+     * <p>Defines whether the VPC endpoints configured for the environment are created,
+     * and managed, by the customer or by Amazon MWAA. If set to <code>SERVICE</code>,
+     * Amazon MWAA will create and manage the required VPC endpoints in your VPC. If
+     * set to <code>CUSTOMER</code>, you must create, and manage, the VPC endpoints in
+     * your VPC.</p>
+     */
+    inline Environment& WithEndpointManagement(EndpointManagement&& value) { SetEndpointManagement(std::move(value)); return *this;}
 
 
     /**
@@ -491,50 +669,42 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Web Services Key Management Service (KMS) encryption key used to
-     * encrypt the data in your environment.</p>
+     * <p>The KMS encryption key used to encrypt the data in your environment.</p>
      */
     inline const Aws::String& GetKmsKey() const{ return m_kmsKey; }
 
     /**
-     * <p>The Amazon Web Services Key Management Service (KMS) encryption key used to
-     * encrypt the data in your environment.</p>
+     * <p>The KMS encryption key used to encrypt the data in your environment.</p>
      */
     inline bool KmsKeyHasBeenSet() const { return m_kmsKeyHasBeenSet; }
 
     /**
-     * <p>The Amazon Web Services Key Management Service (KMS) encryption key used to
-     * encrypt the data in your environment.</p>
+     * <p>The KMS encryption key used to encrypt the data in your environment.</p>
      */
     inline void SetKmsKey(const Aws::String& value) { m_kmsKeyHasBeenSet = true; m_kmsKey = value; }
 
     /**
-     * <p>The Amazon Web Services Key Management Service (KMS) encryption key used to
-     * encrypt the data in your environment.</p>
+     * <p>The KMS encryption key used to encrypt the data in your environment.</p>
      */
     inline void SetKmsKey(Aws::String&& value) { m_kmsKeyHasBeenSet = true; m_kmsKey = std::move(value); }
 
     /**
-     * <p>The Amazon Web Services Key Management Service (KMS) encryption key used to
-     * encrypt the data in your environment.</p>
+     * <p>The KMS encryption key used to encrypt the data in your environment.</p>
      */
     inline void SetKmsKey(const char* value) { m_kmsKeyHasBeenSet = true; m_kmsKey.assign(value); }
 
     /**
-     * <p>The Amazon Web Services Key Management Service (KMS) encryption key used to
-     * encrypt the data in your environment.</p>
+     * <p>The KMS encryption key used to encrypt the data in your environment.</p>
      */
     inline Environment& WithKmsKey(const Aws::String& value) { SetKmsKey(value); return *this;}
 
     /**
-     * <p>The Amazon Web Services Key Management Service (KMS) encryption key used to
-     * encrypt the data in your environment.</p>
+     * <p>The KMS encryption key used to encrypt the data in your environment.</p>
      */
     inline Environment& WithKmsKey(Aws::String&& value) { SetKmsKey(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Web Services Key Management Service (KMS) encryption key used to
-     * encrypt the data in your environment.</p>
+     * <p>The KMS encryption key used to encrypt the data in your environment.</p>
      */
     inline Environment& WithKmsKey(const char* value) { SetKmsKey(value); return *this;}
 
@@ -1501,9 +1671,9 @@ namespace Model
 
 
     /**
-     * <p>The status of the Amazon MWAA environment. Valid values:</p> <ul> <li> <p>
-     * <code>CREATING</code> - Indicates the request to create the environment is in
-     * progress.</p> </li> <li> <p> <code>CREATING_SNAPSHOT</code> - Indicates the
+     * <p>The status of the Amazon MWAA environment.</p> <p>Valid values:</p> <ul> <li>
+     * <p> <code>CREATING</code> - Indicates the request to create the environment is
+     * in progress.</p> </li> <li> <p> <code>CREATING_SNAPSHOT</code> - Indicates the
      * request to update environment details, or upgrade the environment version, is in
      * progress and Amazon MWAA is creating a storage volume snapshot of the Amazon RDS
      * database cluster associated with the environment. A database snapshot is a
@@ -1512,29 +1682,37 @@ namespace Model
      * fails.</p> </li> <li> <p> <code>CREATE_FAILED</code> - Indicates the request to
      * create the environment failed, and the environment could not be created.</p>
      * </li> <li> <p> <code>AVAILABLE</code> - Indicates the request was successful and
-     * the environment is ready to use.</p> </li> <li> <p> <code>UPDATING</code> -
-     * Indicates the request to update the environment is in progress.</p> </li> <li>
-     * <p> <code>ROLLING_BACK</code> - Indicates the request to update environment
-     * details, or upgrade the environment version, failed and Amazon MWAA is restoring
-     * the environment using the latest storage volume snapshot.</p> </li> <li> <p>
-     * <code>DELETING</code> - Indicates the request to delete the environment is in
-     * progress.</p> </li> <li> <p> <code>DELETED</code> - Indicates the request to
-     * delete the environment is complete, and the environment has been deleted.</p>
-     * </li> <li> <p> <code>UNAVAILABLE</code> - Indicates the request failed, but the
-     * environment was unable to rollback and is not in a stable state.</p> </li> <li>
-     * <p> <code>UPDATE_FAILED</code> - Indicates the request to update the environment
-     * failed, and the environment has rolled back successfully and is ready to
-     * use.</p> </li> </ul> <p>We recommend reviewing our troubleshooting guide for a
-     * list of common errors and their solutions. For more information, see <a
+     * the environment is ready to use.</p> </li> <li> <p> <code>PENDING</code> -
+     * Indicates the request was successful, but the process to create the environment
+     * is paused until you create the required VPC endpoints in your VPC. After you
+     * create the VPC endpoints, the process resumes.</p> </li> <li> <p>
+     * <code>UPDATING</code> - Indicates the request to update the environment is in
+     * progress.</p> </li> <li> <p> <code>ROLLING_BACK</code> - Indicates the request
+     * to update environment details, or upgrade the environment version, failed and
+     * Amazon MWAA is restoring the environment using the latest storage volume
+     * snapshot.</p> </li> <li> <p> <code>DELETING</code> - Indicates the request to
+     * delete the environment is in progress.</p> </li> <li> <p> <code>DELETED</code> -
+     * Indicates the request to delete the environment is complete, and the environment
+     * has been deleted.</p> </li> <li> <p> <code>UNAVAILABLE</code> - Indicates the
+     * request failed, but the environment did not return to its previous state and is
+     * not stable.</p> </li> <li> <p> <code>UPDATE_FAILED</code> - Indicates the
+     * request to update the environment failed, and the environment was restored to
+     * its previous state successfully and is ready to use.</p> </li> <li> <p>
+     * <code>MAINTENANCE</code> - Indicates that the environment is undergoing
+     * maintenance. Depending on the type of work Amazon MWAA is performing, your
+     * environment might become unavailable during this process. After all operations
+     * are done, your environment will return to its status prior to mainteneace
+     * operations. </p> </li> </ul> <p>We recommend reviewing our troubleshooting guide
+     * for a list of common errors and their solutions. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/troubleshooting.html">Amazon
      * MWAA troubleshooting</a>.</p>
      */
     inline const EnvironmentStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of the Amazon MWAA environment. Valid values:</p> <ul> <li> <p>
-     * <code>CREATING</code> - Indicates the request to create the environment is in
-     * progress.</p> </li> <li> <p> <code>CREATING_SNAPSHOT</code> - Indicates the
+     * <p>The status of the Amazon MWAA environment.</p> <p>Valid values:</p> <ul> <li>
+     * <p> <code>CREATING</code> - Indicates the request to create the environment is
+     * in progress.</p> </li> <li> <p> <code>CREATING_SNAPSHOT</code> - Indicates the
      * request to update environment details, or upgrade the environment version, is in
      * progress and Amazon MWAA is creating a storage volume snapshot of the Amazon RDS
      * database cluster associated with the environment. A database snapshot is a
@@ -1543,29 +1721,37 @@ namespace Model
      * fails.</p> </li> <li> <p> <code>CREATE_FAILED</code> - Indicates the request to
      * create the environment failed, and the environment could not be created.</p>
      * </li> <li> <p> <code>AVAILABLE</code> - Indicates the request was successful and
-     * the environment is ready to use.</p> </li> <li> <p> <code>UPDATING</code> -
-     * Indicates the request to update the environment is in progress.</p> </li> <li>
-     * <p> <code>ROLLING_BACK</code> - Indicates the request to update environment
-     * details, or upgrade the environment version, failed and Amazon MWAA is restoring
-     * the environment using the latest storage volume snapshot.</p> </li> <li> <p>
-     * <code>DELETING</code> - Indicates the request to delete the environment is in
-     * progress.</p> </li> <li> <p> <code>DELETED</code> - Indicates the request to
-     * delete the environment is complete, and the environment has been deleted.</p>
-     * </li> <li> <p> <code>UNAVAILABLE</code> - Indicates the request failed, but the
-     * environment was unable to rollback and is not in a stable state.</p> </li> <li>
-     * <p> <code>UPDATE_FAILED</code> - Indicates the request to update the environment
-     * failed, and the environment has rolled back successfully and is ready to
-     * use.</p> </li> </ul> <p>We recommend reviewing our troubleshooting guide for a
-     * list of common errors and their solutions. For more information, see <a
+     * the environment is ready to use.</p> </li> <li> <p> <code>PENDING</code> -
+     * Indicates the request was successful, but the process to create the environment
+     * is paused until you create the required VPC endpoints in your VPC. After you
+     * create the VPC endpoints, the process resumes.</p> </li> <li> <p>
+     * <code>UPDATING</code> - Indicates the request to update the environment is in
+     * progress.</p> </li> <li> <p> <code>ROLLING_BACK</code> - Indicates the request
+     * to update environment details, or upgrade the environment version, failed and
+     * Amazon MWAA is restoring the environment using the latest storage volume
+     * snapshot.</p> </li> <li> <p> <code>DELETING</code> - Indicates the request to
+     * delete the environment is in progress.</p> </li> <li> <p> <code>DELETED</code> -
+     * Indicates the request to delete the environment is complete, and the environment
+     * has been deleted.</p> </li> <li> <p> <code>UNAVAILABLE</code> - Indicates the
+     * request failed, but the environment did not return to its previous state and is
+     * not stable.</p> </li> <li> <p> <code>UPDATE_FAILED</code> - Indicates the
+     * request to update the environment failed, and the environment was restored to
+     * its previous state successfully and is ready to use.</p> </li> <li> <p>
+     * <code>MAINTENANCE</code> - Indicates that the environment is undergoing
+     * maintenance. Depending on the type of work Amazon MWAA is performing, your
+     * environment might become unavailable during this process. After all operations
+     * are done, your environment will return to its status prior to mainteneace
+     * operations. </p> </li> </ul> <p>We recommend reviewing our troubleshooting guide
+     * for a list of common errors and their solutions. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/troubleshooting.html">Amazon
      * MWAA troubleshooting</a>.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The status of the Amazon MWAA environment. Valid values:</p> <ul> <li> <p>
-     * <code>CREATING</code> - Indicates the request to create the environment is in
-     * progress.</p> </li> <li> <p> <code>CREATING_SNAPSHOT</code> - Indicates the
+     * <p>The status of the Amazon MWAA environment.</p> <p>Valid values:</p> <ul> <li>
+     * <p> <code>CREATING</code> - Indicates the request to create the environment is
+     * in progress.</p> </li> <li> <p> <code>CREATING_SNAPSHOT</code> - Indicates the
      * request to update environment details, or upgrade the environment version, is in
      * progress and Amazon MWAA is creating a storage volume snapshot of the Amazon RDS
      * database cluster associated with the environment. A database snapshot is a
@@ -1574,29 +1760,37 @@ namespace Model
      * fails.</p> </li> <li> <p> <code>CREATE_FAILED</code> - Indicates the request to
      * create the environment failed, and the environment could not be created.</p>
      * </li> <li> <p> <code>AVAILABLE</code> - Indicates the request was successful and
-     * the environment is ready to use.</p> </li> <li> <p> <code>UPDATING</code> -
-     * Indicates the request to update the environment is in progress.</p> </li> <li>
-     * <p> <code>ROLLING_BACK</code> - Indicates the request to update environment
-     * details, or upgrade the environment version, failed and Amazon MWAA is restoring
-     * the environment using the latest storage volume snapshot.</p> </li> <li> <p>
-     * <code>DELETING</code> - Indicates the request to delete the environment is in
-     * progress.</p> </li> <li> <p> <code>DELETED</code> - Indicates the request to
-     * delete the environment is complete, and the environment has been deleted.</p>
-     * </li> <li> <p> <code>UNAVAILABLE</code> - Indicates the request failed, but the
-     * environment was unable to rollback and is not in a stable state.</p> </li> <li>
-     * <p> <code>UPDATE_FAILED</code> - Indicates the request to update the environment
-     * failed, and the environment has rolled back successfully and is ready to
-     * use.</p> </li> </ul> <p>We recommend reviewing our troubleshooting guide for a
-     * list of common errors and their solutions. For more information, see <a
+     * the environment is ready to use.</p> </li> <li> <p> <code>PENDING</code> -
+     * Indicates the request was successful, but the process to create the environment
+     * is paused until you create the required VPC endpoints in your VPC. After you
+     * create the VPC endpoints, the process resumes.</p> </li> <li> <p>
+     * <code>UPDATING</code> - Indicates the request to update the environment is in
+     * progress.</p> </li> <li> <p> <code>ROLLING_BACK</code> - Indicates the request
+     * to update environment details, or upgrade the environment version, failed and
+     * Amazon MWAA is restoring the environment using the latest storage volume
+     * snapshot.</p> </li> <li> <p> <code>DELETING</code> - Indicates the request to
+     * delete the environment is in progress.</p> </li> <li> <p> <code>DELETED</code> -
+     * Indicates the request to delete the environment is complete, and the environment
+     * has been deleted.</p> </li> <li> <p> <code>UNAVAILABLE</code> - Indicates the
+     * request failed, but the environment did not return to its previous state and is
+     * not stable.</p> </li> <li> <p> <code>UPDATE_FAILED</code> - Indicates the
+     * request to update the environment failed, and the environment was restored to
+     * its previous state successfully and is ready to use.</p> </li> <li> <p>
+     * <code>MAINTENANCE</code> - Indicates that the environment is undergoing
+     * maintenance. Depending on the type of work Amazon MWAA is performing, your
+     * environment might become unavailable during this process. After all operations
+     * are done, your environment will return to its status prior to mainteneace
+     * operations. </p> </li> </ul> <p>We recommend reviewing our troubleshooting guide
+     * for a list of common errors and their solutions. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/troubleshooting.html">Amazon
      * MWAA troubleshooting</a>.</p>
      */
     inline void SetStatus(const EnvironmentStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The status of the Amazon MWAA environment. Valid values:</p> <ul> <li> <p>
-     * <code>CREATING</code> - Indicates the request to create the environment is in
-     * progress.</p> </li> <li> <p> <code>CREATING_SNAPSHOT</code> - Indicates the
+     * <p>The status of the Amazon MWAA environment.</p> <p>Valid values:</p> <ul> <li>
+     * <p> <code>CREATING</code> - Indicates the request to create the environment is
+     * in progress.</p> </li> <li> <p> <code>CREATING_SNAPSHOT</code> - Indicates the
      * request to update environment details, or upgrade the environment version, is in
      * progress and Amazon MWAA is creating a storage volume snapshot of the Amazon RDS
      * database cluster associated with the environment. A database snapshot is a
@@ -1605,29 +1799,37 @@ namespace Model
      * fails.</p> </li> <li> <p> <code>CREATE_FAILED</code> - Indicates the request to
      * create the environment failed, and the environment could not be created.</p>
      * </li> <li> <p> <code>AVAILABLE</code> - Indicates the request was successful and
-     * the environment is ready to use.</p> </li> <li> <p> <code>UPDATING</code> -
-     * Indicates the request to update the environment is in progress.</p> </li> <li>
-     * <p> <code>ROLLING_BACK</code> - Indicates the request to update environment
-     * details, or upgrade the environment version, failed and Amazon MWAA is restoring
-     * the environment using the latest storage volume snapshot.</p> </li> <li> <p>
-     * <code>DELETING</code> - Indicates the request to delete the environment is in
-     * progress.</p> </li> <li> <p> <code>DELETED</code> - Indicates the request to
-     * delete the environment is complete, and the environment has been deleted.</p>
-     * </li> <li> <p> <code>UNAVAILABLE</code> - Indicates the request failed, but the
-     * environment was unable to rollback and is not in a stable state.</p> </li> <li>
-     * <p> <code>UPDATE_FAILED</code> - Indicates the request to update the environment
-     * failed, and the environment has rolled back successfully and is ready to
-     * use.</p> </li> </ul> <p>We recommend reviewing our troubleshooting guide for a
-     * list of common errors and their solutions. For more information, see <a
+     * the environment is ready to use.</p> </li> <li> <p> <code>PENDING</code> -
+     * Indicates the request was successful, but the process to create the environment
+     * is paused until you create the required VPC endpoints in your VPC. After you
+     * create the VPC endpoints, the process resumes.</p> </li> <li> <p>
+     * <code>UPDATING</code> - Indicates the request to update the environment is in
+     * progress.</p> </li> <li> <p> <code>ROLLING_BACK</code> - Indicates the request
+     * to update environment details, or upgrade the environment version, failed and
+     * Amazon MWAA is restoring the environment using the latest storage volume
+     * snapshot.</p> </li> <li> <p> <code>DELETING</code> - Indicates the request to
+     * delete the environment is in progress.</p> </li> <li> <p> <code>DELETED</code> -
+     * Indicates the request to delete the environment is complete, and the environment
+     * has been deleted.</p> </li> <li> <p> <code>UNAVAILABLE</code> - Indicates the
+     * request failed, but the environment did not return to its previous state and is
+     * not stable.</p> </li> <li> <p> <code>UPDATE_FAILED</code> - Indicates the
+     * request to update the environment failed, and the environment was restored to
+     * its previous state successfully and is ready to use.</p> </li> <li> <p>
+     * <code>MAINTENANCE</code> - Indicates that the environment is undergoing
+     * maintenance. Depending on the type of work Amazon MWAA is performing, your
+     * environment might become unavailable during this process. After all operations
+     * are done, your environment will return to its status prior to mainteneace
+     * operations. </p> </li> </ul> <p>We recommend reviewing our troubleshooting guide
+     * for a list of common errors and their solutions. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/troubleshooting.html">Amazon
      * MWAA troubleshooting</a>.</p>
      */
     inline void SetStatus(EnvironmentStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The status of the Amazon MWAA environment. Valid values:</p> <ul> <li> <p>
-     * <code>CREATING</code> - Indicates the request to create the environment is in
-     * progress.</p> </li> <li> <p> <code>CREATING_SNAPSHOT</code> - Indicates the
+     * <p>The status of the Amazon MWAA environment.</p> <p>Valid values:</p> <ul> <li>
+     * <p> <code>CREATING</code> - Indicates the request to create the environment is
+     * in progress.</p> </li> <li> <p> <code>CREATING_SNAPSHOT</code> - Indicates the
      * request to update environment details, or upgrade the environment version, is in
      * progress and Amazon MWAA is creating a storage volume snapshot of the Amazon RDS
      * database cluster associated with the environment. A database snapshot is a
@@ -1636,29 +1838,37 @@ namespace Model
      * fails.</p> </li> <li> <p> <code>CREATE_FAILED</code> - Indicates the request to
      * create the environment failed, and the environment could not be created.</p>
      * </li> <li> <p> <code>AVAILABLE</code> - Indicates the request was successful and
-     * the environment is ready to use.</p> </li> <li> <p> <code>UPDATING</code> -
-     * Indicates the request to update the environment is in progress.</p> </li> <li>
-     * <p> <code>ROLLING_BACK</code> - Indicates the request to update environment
-     * details, or upgrade the environment version, failed and Amazon MWAA is restoring
-     * the environment using the latest storage volume snapshot.</p> </li> <li> <p>
-     * <code>DELETING</code> - Indicates the request to delete the environment is in
-     * progress.</p> </li> <li> <p> <code>DELETED</code> - Indicates the request to
-     * delete the environment is complete, and the environment has been deleted.</p>
-     * </li> <li> <p> <code>UNAVAILABLE</code> - Indicates the request failed, but the
-     * environment was unable to rollback and is not in a stable state.</p> </li> <li>
-     * <p> <code>UPDATE_FAILED</code> - Indicates the request to update the environment
-     * failed, and the environment has rolled back successfully and is ready to
-     * use.</p> </li> </ul> <p>We recommend reviewing our troubleshooting guide for a
-     * list of common errors and their solutions. For more information, see <a
+     * the environment is ready to use.</p> </li> <li> <p> <code>PENDING</code> -
+     * Indicates the request was successful, but the process to create the environment
+     * is paused until you create the required VPC endpoints in your VPC. After you
+     * create the VPC endpoints, the process resumes.</p> </li> <li> <p>
+     * <code>UPDATING</code> - Indicates the request to update the environment is in
+     * progress.</p> </li> <li> <p> <code>ROLLING_BACK</code> - Indicates the request
+     * to update environment details, or upgrade the environment version, failed and
+     * Amazon MWAA is restoring the environment using the latest storage volume
+     * snapshot.</p> </li> <li> <p> <code>DELETING</code> - Indicates the request to
+     * delete the environment is in progress.</p> </li> <li> <p> <code>DELETED</code> -
+     * Indicates the request to delete the environment is complete, and the environment
+     * has been deleted.</p> </li> <li> <p> <code>UNAVAILABLE</code> - Indicates the
+     * request failed, but the environment did not return to its previous state and is
+     * not stable.</p> </li> <li> <p> <code>UPDATE_FAILED</code> - Indicates the
+     * request to update the environment failed, and the environment was restored to
+     * its previous state successfully and is ready to use.</p> </li> <li> <p>
+     * <code>MAINTENANCE</code> - Indicates that the environment is undergoing
+     * maintenance. Depending on the type of work Amazon MWAA is performing, your
+     * environment might become unavailable during this process. After all operations
+     * are done, your environment will return to its status prior to mainteneace
+     * operations. </p> </li> </ul> <p>We recommend reviewing our troubleshooting guide
+     * for a list of common errors and their solutions. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/troubleshooting.html">Amazon
      * MWAA troubleshooting</a>.</p>
      */
     inline Environment& WithStatus(const EnvironmentStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of the Amazon MWAA environment. Valid values:</p> <ul> <li> <p>
-     * <code>CREATING</code> - Indicates the request to create the environment is in
-     * progress.</p> </li> <li> <p> <code>CREATING_SNAPSHOT</code> - Indicates the
+     * <p>The status of the Amazon MWAA environment.</p> <p>Valid values:</p> <ul> <li>
+     * <p> <code>CREATING</code> - Indicates the request to create the environment is
+     * in progress.</p> </li> <li> <p> <code>CREATING_SNAPSHOT</code> - Indicates the
      * request to update environment details, or upgrade the environment version, is in
      * progress and Amazon MWAA is creating a storage volume snapshot of the Amazon RDS
      * database cluster associated with the environment. A database snapshot is a
@@ -1667,20 +1877,28 @@ namespace Model
      * fails.</p> </li> <li> <p> <code>CREATE_FAILED</code> - Indicates the request to
      * create the environment failed, and the environment could not be created.</p>
      * </li> <li> <p> <code>AVAILABLE</code> - Indicates the request was successful and
-     * the environment is ready to use.</p> </li> <li> <p> <code>UPDATING</code> -
-     * Indicates the request to update the environment is in progress.</p> </li> <li>
-     * <p> <code>ROLLING_BACK</code> - Indicates the request to update environment
-     * details, or upgrade the environment version, failed and Amazon MWAA is restoring
-     * the environment using the latest storage volume snapshot.</p> </li> <li> <p>
-     * <code>DELETING</code> - Indicates the request to delete the environment is in
-     * progress.</p> </li> <li> <p> <code>DELETED</code> - Indicates the request to
-     * delete the environment is complete, and the environment has been deleted.</p>
-     * </li> <li> <p> <code>UNAVAILABLE</code> - Indicates the request failed, but the
-     * environment was unable to rollback and is not in a stable state.</p> </li> <li>
-     * <p> <code>UPDATE_FAILED</code> - Indicates the request to update the environment
-     * failed, and the environment has rolled back successfully and is ready to
-     * use.</p> </li> </ul> <p>We recommend reviewing our troubleshooting guide for a
-     * list of common errors and their solutions. For more information, see <a
+     * the environment is ready to use.</p> </li> <li> <p> <code>PENDING</code> -
+     * Indicates the request was successful, but the process to create the environment
+     * is paused until you create the required VPC endpoints in your VPC. After you
+     * create the VPC endpoints, the process resumes.</p> </li> <li> <p>
+     * <code>UPDATING</code> - Indicates the request to update the environment is in
+     * progress.</p> </li> <li> <p> <code>ROLLING_BACK</code> - Indicates the request
+     * to update environment details, or upgrade the environment version, failed and
+     * Amazon MWAA is restoring the environment using the latest storage volume
+     * snapshot.</p> </li> <li> <p> <code>DELETING</code> - Indicates the request to
+     * delete the environment is in progress.</p> </li> <li> <p> <code>DELETED</code> -
+     * Indicates the request to delete the environment is complete, and the environment
+     * has been deleted.</p> </li> <li> <p> <code>UNAVAILABLE</code> - Indicates the
+     * request failed, but the environment did not return to its previous state and is
+     * not stable.</p> </li> <li> <p> <code>UPDATE_FAILED</code> - Indicates the
+     * request to update the environment failed, and the environment was restored to
+     * its previous state successfully and is ready to use.</p> </li> <li> <p>
+     * <code>MAINTENANCE</code> - Indicates that the environment is undergoing
+     * maintenance. Depending on the type of work Amazon MWAA is performing, your
+     * environment might become unavailable during this process. After all operations
+     * are done, your environment will return to its status prior to mainteneace
+     * operations. </p> </li> </ul> <p>We recommend reviewing our troubleshooting guide
+     * for a list of common errors and their solutions. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/troubleshooting.html">Amazon
      * MWAA troubleshooting</a>.</p>
      */
@@ -1793,7 +2011,7 @@ namespace Model
 
 
     /**
-     * <p>The Apache Airflow <i>Web server</i> access mode. For more information, see
+     * <p>The Apache Airflow <i>web server</i> access mode. For more information, see
      * <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-networking.html">Apache
      * Airflow access modes</a>.</p>
@@ -1801,7 +2019,7 @@ namespace Model
     inline const WebserverAccessMode& GetWebserverAccessMode() const{ return m_webserverAccessMode; }
 
     /**
-     * <p>The Apache Airflow <i>Web server</i> access mode. For more information, see
+     * <p>The Apache Airflow <i>web server</i> access mode. For more information, see
      * <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-networking.html">Apache
      * Airflow access modes</a>.</p>
@@ -1809,7 +2027,7 @@ namespace Model
     inline bool WebserverAccessModeHasBeenSet() const { return m_webserverAccessModeHasBeenSet; }
 
     /**
-     * <p>The Apache Airflow <i>Web server</i> access mode. For more information, see
+     * <p>The Apache Airflow <i>web server</i> access mode. For more information, see
      * <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-networking.html">Apache
      * Airflow access modes</a>.</p>
@@ -1817,7 +2035,7 @@ namespace Model
     inline void SetWebserverAccessMode(const WebserverAccessMode& value) { m_webserverAccessModeHasBeenSet = true; m_webserverAccessMode = value; }
 
     /**
-     * <p>The Apache Airflow <i>Web server</i> access mode. For more information, see
+     * <p>The Apache Airflow <i>web server</i> access mode. For more information, see
      * <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-networking.html">Apache
      * Airflow access modes</a>.</p>
@@ -1825,7 +2043,7 @@ namespace Model
     inline void SetWebserverAccessMode(WebserverAccessMode&& value) { m_webserverAccessModeHasBeenSet = true; m_webserverAccessMode = std::move(value); }
 
     /**
-     * <p>The Apache Airflow <i>Web server</i> access mode. For more information, see
+     * <p>The Apache Airflow <i>web server</i> access mode. For more information, see
      * <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-networking.html">Apache
      * Airflow access modes</a>.</p>
@@ -1833,7 +2051,7 @@ namespace Model
     inline Environment& WithWebserverAccessMode(const WebserverAccessMode& value) { SetWebserverAccessMode(value); return *this;}
 
     /**
-     * <p>The Apache Airflow <i>Web server</i> access mode. For more information, see
+     * <p>The Apache Airflow <i>web server</i> access mode. For more information, see
      * <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-networking.html">Apache
      * Airflow access modes</a>.</p>
@@ -1842,7 +2060,7 @@ namespace Model
 
 
     /**
-     * <p>The Apache Airflow <i>Web server</i> host name for the Amazon MWAA
+     * <p>The Apache Airflow <i>web server</i> host name for the Amazon MWAA
      * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/access-airflow-ui.html">Accessing
      * the Apache Airflow UI</a>.</p>
@@ -1850,7 +2068,7 @@ namespace Model
     inline const Aws::String& GetWebserverUrl() const{ return m_webserverUrl; }
 
     /**
-     * <p>The Apache Airflow <i>Web server</i> host name for the Amazon MWAA
+     * <p>The Apache Airflow <i>web server</i> host name for the Amazon MWAA
      * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/access-airflow-ui.html">Accessing
      * the Apache Airflow UI</a>.</p>
@@ -1858,7 +2076,7 @@ namespace Model
     inline bool WebserverUrlHasBeenSet() const { return m_webserverUrlHasBeenSet; }
 
     /**
-     * <p>The Apache Airflow <i>Web server</i> host name for the Amazon MWAA
+     * <p>The Apache Airflow <i>web server</i> host name for the Amazon MWAA
      * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/access-airflow-ui.html">Accessing
      * the Apache Airflow UI</a>.</p>
@@ -1866,7 +2084,7 @@ namespace Model
     inline void SetWebserverUrl(const Aws::String& value) { m_webserverUrlHasBeenSet = true; m_webserverUrl = value; }
 
     /**
-     * <p>The Apache Airflow <i>Web server</i> host name for the Amazon MWAA
+     * <p>The Apache Airflow <i>web server</i> host name for the Amazon MWAA
      * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/access-airflow-ui.html">Accessing
      * the Apache Airflow UI</a>.</p>
@@ -1874,7 +2092,7 @@ namespace Model
     inline void SetWebserverUrl(Aws::String&& value) { m_webserverUrlHasBeenSet = true; m_webserverUrl = std::move(value); }
 
     /**
-     * <p>The Apache Airflow <i>Web server</i> host name for the Amazon MWAA
+     * <p>The Apache Airflow <i>web server</i> host name for the Amazon MWAA
      * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/access-airflow-ui.html">Accessing
      * the Apache Airflow UI</a>.</p>
@@ -1882,7 +2100,7 @@ namespace Model
     inline void SetWebserverUrl(const char* value) { m_webserverUrlHasBeenSet = true; m_webserverUrl.assign(value); }
 
     /**
-     * <p>The Apache Airflow <i>Web server</i> host name for the Amazon MWAA
+     * <p>The Apache Airflow <i>web server</i> host name for the Amazon MWAA
      * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/access-airflow-ui.html">Accessing
      * the Apache Airflow UI</a>.</p>
@@ -1890,7 +2108,7 @@ namespace Model
     inline Environment& WithWebserverUrl(const Aws::String& value) { SetWebserverUrl(value); return *this;}
 
     /**
-     * <p>The Apache Airflow <i>Web server</i> host name for the Amazon MWAA
+     * <p>The Apache Airflow <i>web server</i> host name for the Amazon MWAA
      * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/access-airflow-ui.html">Accessing
      * the Apache Airflow UI</a>.</p>
@@ -1898,12 +2116,53 @@ namespace Model
     inline Environment& WithWebserverUrl(Aws::String&& value) { SetWebserverUrl(std::move(value)); return *this;}
 
     /**
-     * <p>The Apache Airflow <i>Web server</i> host name for the Amazon MWAA
+     * <p>The Apache Airflow <i>web server</i> host name for the Amazon MWAA
      * environment. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/access-airflow-ui.html">Accessing
      * the Apache Airflow UI</a>.</p>
      */
     inline Environment& WithWebserverUrl(const char* value) { SetWebserverUrl(value); return *this;}
+
+
+    /**
+     * <p>The VPC endpoint for the environment's web server.</p>
+     */
+    inline const Aws::String& GetWebserverVpcEndpointService() const{ return m_webserverVpcEndpointService; }
+
+    /**
+     * <p>The VPC endpoint for the environment's web server.</p>
+     */
+    inline bool WebserverVpcEndpointServiceHasBeenSet() const { return m_webserverVpcEndpointServiceHasBeenSet; }
+
+    /**
+     * <p>The VPC endpoint for the environment's web server.</p>
+     */
+    inline void SetWebserverVpcEndpointService(const Aws::String& value) { m_webserverVpcEndpointServiceHasBeenSet = true; m_webserverVpcEndpointService = value; }
+
+    /**
+     * <p>The VPC endpoint for the environment's web server.</p>
+     */
+    inline void SetWebserverVpcEndpointService(Aws::String&& value) { m_webserverVpcEndpointServiceHasBeenSet = true; m_webserverVpcEndpointService = std::move(value); }
+
+    /**
+     * <p>The VPC endpoint for the environment's web server.</p>
+     */
+    inline void SetWebserverVpcEndpointService(const char* value) { m_webserverVpcEndpointServiceHasBeenSet = true; m_webserverVpcEndpointService.assign(value); }
+
+    /**
+     * <p>The VPC endpoint for the environment's web server.</p>
+     */
+    inline Environment& WithWebserverVpcEndpointService(const Aws::String& value) { SetWebserverVpcEndpointService(value); return *this;}
+
+    /**
+     * <p>The VPC endpoint for the environment's web server.</p>
+     */
+    inline Environment& WithWebserverVpcEndpointService(Aws::String&& value) { SetWebserverVpcEndpointService(std::move(value)); return *this;}
+
+    /**
+     * <p>The VPC endpoint for the environment's web server.</p>
+     */
+    inline Environment& WithWebserverVpcEndpointService(const char* value) { SetWebserverVpcEndpointService(value); return *this;}
 
 
     /**
@@ -1973,11 +2232,20 @@ namespace Model
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
 
+    Aws::String m_celeryExecutorQueue;
+    bool m_celeryExecutorQueueHasBeenSet = false;
+
     Aws::Utils::DateTime m_createdAt;
     bool m_createdAtHasBeenSet = false;
 
     Aws::String m_dagS3Path;
     bool m_dagS3PathHasBeenSet = false;
+
+    Aws::String m_databaseVpcEndpointService;
+    bool m_databaseVpcEndpointServiceHasBeenSet = false;
+
+    EndpointManagement m_endpointManagement;
+    bool m_endpointManagementHasBeenSet = false;
 
     Aws::String m_environmentClass;
     bool m_environmentClassHasBeenSet = false;
@@ -2044,6 +2312,9 @@ namespace Model
 
     Aws::String m_webserverUrl;
     bool m_webserverUrlHasBeenSet = false;
+
+    Aws::String m_webserverVpcEndpointService;
+    bool m_webserverVpcEndpointServiceHasBeenSet = false;
 
     Aws::String m_weeklyMaintenanceWindowStart;
     bool m_weeklyMaintenanceWindowStartHasBeenSet = false;

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InputLossActionForRtmpOut::NOT_SET:
+            return {};
           case InputLossActionForRtmpOut::EMIT_OUTPUT:
             return "EMIT_OUTPUT";
           case InputLossActionForRtmpOut::PAUSE_OUTPUT:

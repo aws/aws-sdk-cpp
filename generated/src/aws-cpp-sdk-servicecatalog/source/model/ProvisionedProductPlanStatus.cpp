@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ProvisionedProductPlanStatus::NOT_SET:
+            return {};
           case ProvisionedProductPlanStatus::CREATE_IN_PROGRESS:
             return "CREATE_IN_PROGRESS";
           case ProvisionedProductPlanStatus::CREATE_SUCCESS:

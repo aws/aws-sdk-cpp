@@ -7,6 +7,7 @@
 #include <aws/s3/S3_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/s3/model/TargetObjectKeyFormat.h>
 #include <aws/s3/model/TargetGrant.h>
 #include <utility>
 
@@ -253,6 +254,37 @@ namespace Model
      */
     inline LoggingEnabled& WithTargetPrefix(const char* value) { SetTargetPrefix(value); return *this;}
 
+
+    /**
+     * <p>Amazon S3 key format for log objects.</p>
+     */
+    inline const TargetObjectKeyFormat& GetTargetObjectKeyFormat() const{ return m_targetObjectKeyFormat; }
+
+    /**
+     * <p>Amazon S3 key format for log objects.</p>
+     */
+    inline bool TargetObjectKeyFormatHasBeenSet() const { return m_targetObjectKeyFormatHasBeenSet; }
+
+    /**
+     * <p>Amazon S3 key format for log objects.</p>
+     */
+    inline void SetTargetObjectKeyFormat(const TargetObjectKeyFormat& value) { m_targetObjectKeyFormatHasBeenSet = true; m_targetObjectKeyFormat = value; }
+
+    /**
+     * <p>Amazon S3 key format for log objects.</p>
+     */
+    inline void SetTargetObjectKeyFormat(TargetObjectKeyFormat&& value) { m_targetObjectKeyFormatHasBeenSet = true; m_targetObjectKeyFormat = std::move(value); }
+
+    /**
+     * <p>Amazon S3 key format for log objects.</p>
+     */
+    inline LoggingEnabled& WithTargetObjectKeyFormat(const TargetObjectKeyFormat& value) { SetTargetObjectKeyFormat(value); return *this;}
+
+    /**
+     * <p>Amazon S3 key format for log objects.</p>
+     */
+    inline LoggingEnabled& WithTargetObjectKeyFormat(TargetObjectKeyFormat&& value) { SetTargetObjectKeyFormat(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_targetBucket;
@@ -263,6 +295,9 @@ namespace Model
 
     Aws::String m_targetPrefix;
     bool m_targetPrefixHasBeenSet = false;
+
+    TargetObjectKeyFormat m_targetObjectKeyFormat;
+    bool m_targetObjectKeyFormatHasBeenSet = false;
   };
 
 } // namespace Model

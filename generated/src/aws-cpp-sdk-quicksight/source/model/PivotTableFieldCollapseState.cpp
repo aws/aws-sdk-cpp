@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PivotTableFieldCollapseState::NOT_SET:
+            return {};
           case PivotTableFieldCollapseState::COLLAPSED:
             return "COLLAPSED";
           case PivotTableFieldCollapseState::EXPANDED:

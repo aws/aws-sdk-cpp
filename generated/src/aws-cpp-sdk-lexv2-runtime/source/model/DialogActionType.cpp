@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DialogActionType::NOT_SET:
+            return {};
           case DialogActionType::Close:
             return "Close";
           case DialogActionType::ConfirmIntent:

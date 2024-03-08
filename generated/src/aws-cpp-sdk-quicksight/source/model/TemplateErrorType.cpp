@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TemplateErrorType::NOT_SET:
+            return {};
           case TemplateErrorType::SOURCE_NOT_FOUND:
             return "SOURCE_NOT_FOUND";
           case TemplateErrorType::DATA_SET_NOT_FOUND:

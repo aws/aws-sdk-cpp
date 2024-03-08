@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SnapStartApplyOn::NOT_SET:
+            return {};
           case SnapStartApplyOn::PublishedVersions:
             return "PublishedVersions";
           case SnapStartApplyOn::None:

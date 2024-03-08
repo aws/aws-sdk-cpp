@@ -425,64 +425,64 @@ namespace Model
 
     /**
      * <p>Multicast group resources to remove from the network analyzer configuration.
-     * Provide the <code>MulticastGroupId</code> of the resource to remove in the input
-     * array.</p>
+     * Provide the <code>MulticastGroupId</code> of the resources to remove in the
+     * input array.</p>
      */
     inline const Aws::Vector<Aws::String>& GetMulticastGroupsToRemove() const{ return m_multicastGroupsToRemove; }
 
     /**
      * <p>Multicast group resources to remove from the network analyzer configuration.
-     * Provide the <code>MulticastGroupId</code> of the resource to remove in the input
-     * array.</p>
+     * Provide the <code>MulticastGroupId</code> of the resources to remove in the
+     * input array.</p>
      */
     inline bool MulticastGroupsToRemoveHasBeenSet() const { return m_multicastGroupsToRemoveHasBeenSet; }
 
     /**
      * <p>Multicast group resources to remove from the network analyzer configuration.
-     * Provide the <code>MulticastGroupId</code> of the resource to remove in the input
-     * array.</p>
+     * Provide the <code>MulticastGroupId</code> of the resources to remove in the
+     * input array.</p>
      */
     inline void SetMulticastGroupsToRemove(const Aws::Vector<Aws::String>& value) { m_multicastGroupsToRemoveHasBeenSet = true; m_multicastGroupsToRemove = value; }
 
     /**
      * <p>Multicast group resources to remove from the network analyzer configuration.
-     * Provide the <code>MulticastGroupId</code> of the resource to remove in the input
-     * array.</p>
+     * Provide the <code>MulticastGroupId</code> of the resources to remove in the
+     * input array.</p>
      */
     inline void SetMulticastGroupsToRemove(Aws::Vector<Aws::String>&& value) { m_multicastGroupsToRemoveHasBeenSet = true; m_multicastGroupsToRemove = std::move(value); }
 
     /**
      * <p>Multicast group resources to remove from the network analyzer configuration.
-     * Provide the <code>MulticastGroupId</code> of the resource to remove in the input
-     * array.</p>
+     * Provide the <code>MulticastGroupId</code> of the resources to remove in the
+     * input array.</p>
      */
     inline UpdateNetworkAnalyzerConfigurationRequest& WithMulticastGroupsToRemove(const Aws::Vector<Aws::String>& value) { SetMulticastGroupsToRemove(value); return *this;}
 
     /**
      * <p>Multicast group resources to remove from the network analyzer configuration.
-     * Provide the <code>MulticastGroupId</code> of the resource to remove in the input
-     * array.</p>
+     * Provide the <code>MulticastGroupId</code> of the resources to remove in the
+     * input array.</p>
      */
     inline UpdateNetworkAnalyzerConfigurationRequest& WithMulticastGroupsToRemove(Aws::Vector<Aws::String>&& value) { SetMulticastGroupsToRemove(std::move(value)); return *this;}
 
     /**
      * <p>Multicast group resources to remove from the network analyzer configuration.
-     * Provide the <code>MulticastGroupId</code> of the resource to remove in the input
-     * array.</p>
+     * Provide the <code>MulticastGroupId</code> of the resources to remove in the
+     * input array.</p>
      */
     inline UpdateNetworkAnalyzerConfigurationRequest& AddMulticastGroupsToRemove(const Aws::String& value) { m_multicastGroupsToRemoveHasBeenSet = true; m_multicastGroupsToRemove.push_back(value); return *this; }
 
     /**
      * <p>Multicast group resources to remove from the network analyzer configuration.
-     * Provide the <code>MulticastGroupId</code> of the resource to remove in the input
-     * array.</p>
+     * Provide the <code>MulticastGroupId</code> of the resources to remove in the
+     * input array.</p>
      */
     inline UpdateNetworkAnalyzerConfigurationRequest& AddMulticastGroupsToRemove(Aws::String&& value) { m_multicastGroupsToRemoveHasBeenSet = true; m_multicastGroupsToRemove.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Multicast group resources to remove from the network analyzer configuration.
-     * Provide the <code>MulticastGroupId</code> of the resource to remove in the input
-     * array.</p>
+     * Provide the <code>MulticastGroupId</code> of the resources to remove in the
+     * input array.</p>
      */
     inline UpdateNetworkAnalyzerConfigurationRequest& AddMulticastGroupsToRemove(const char* value) { m_multicastGroupsToRemoveHasBeenSet = true; m_multicastGroupsToRemove.push_back(value); return *this; }
 

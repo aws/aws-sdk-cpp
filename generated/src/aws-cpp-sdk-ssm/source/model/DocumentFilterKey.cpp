@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DocumentFilterKey::NOT_SET:
+            return {};
           case DocumentFilterKey::Name:
             return "Name";
           case DocumentFilterKey::Owner:

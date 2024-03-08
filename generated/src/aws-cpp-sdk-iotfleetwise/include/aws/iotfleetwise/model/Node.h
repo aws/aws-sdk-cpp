@@ -9,6 +9,8 @@
 #include <aws/iotfleetwise/model/Sensor.h>
 #include <aws/iotfleetwise/model/Actuator.h>
 #include <aws/iotfleetwise/model/Attribute.h>
+#include <aws/iotfleetwise/model/CustomStruct.h>
+#include <aws/iotfleetwise/model/CustomProperty.h>
 #include <utility>
 
 namespace Aws
@@ -170,6 +172,74 @@ namespace Model
      */
     inline Node& WithAttribute(Attribute&& value) { SetAttribute(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Represents a complex or higher-order data structure.</p>
+     */
+    inline const CustomStruct& GetStruct() const{ return m_struct; }
+
+    /**
+     * <p>Represents a complex or higher-order data structure.</p>
+     */
+    inline bool StructHasBeenSet() const { return m_structHasBeenSet; }
+
+    /**
+     * <p>Represents a complex or higher-order data structure.</p>
+     */
+    inline void SetStruct(const CustomStruct& value) { m_structHasBeenSet = true; m_struct = value; }
+
+    /**
+     * <p>Represents a complex or higher-order data structure.</p>
+     */
+    inline void SetStruct(CustomStruct&& value) { m_structHasBeenSet = true; m_struct = std::move(value); }
+
+    /**
+     * <p>Represents a complex or higher-order data structure.</p>
+     */
+    inline Node& WithStruct(const CustomStruct& value) { SetStruct(value); return *this;}
+
+    /**
+     * <p>Represents a complex or higher-order data structure.</p>
+     */
+    inline Node& WithStruct(CustomStruct&& value) { SetStruct(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Represents a member of the complex data structure. The <code>datatype</code>
+     * of the property can be either primitive or another <code>struct</code>.</p>
+     */
+    inline const CustomProperty& GetProperty() const{ return m_property; }
+
+    /**
+     * <p>Represents a member of the complex data structure. The <code>datatype</code>
+     * of the property can be either primitive or another <code>struct</code>.</p>
+     */
+    inline bool PropertyHasBeenSet() const { return m_propertyHasBeenSet; }
+
+    /**
+     * <p>Represents a member of the complex data structure. The <code>datatype</code>
+     * of the property can be either primitive or another <code>struct</code>.</p>
+     */
+    inline void SetProperty(const CustomProperty& value) { m_propertyHasBeenSet = true; m_property = value; }
+
+    /**
+     * <p>Represents a member of the complex data structure. The <code>datatype</code>
+     * of the property can be either primitive or another <code>struct</code>.</p>
+     */
+    inline void SetProperty(CustomProperty&& value) { m_propertyHasBeenSet = true; m_property = std::move(value); }
+
+    /**
+     * <p>Represents a member of the complex data structure. The <code>datatype</code>
+     * of the property can be either primitive or another <code>struct</code>.</p>
+     */
+    inline Node& WithProperty(const CustomProperty& value) { SetProperty(value); return *this;}
+
+    /**
+     * <p>Represents a member of the complex data structure. The <code>datatype</code>
+     * of the property can be either primitive or another <code>struct</code>.</p>
+     */
+    inline Node& WithProperty(CustomProperty&& value) { SetProperty(std::move(value)); return *this;}
+
   private:
 
     Branch m_branch;
@@ -183,6 +253,12 @@ namespace Model
 
     Attribute m_attribute;
     bool m_attributeHasBeenSet = false;
+
+    CustomStruct m_struct;
+    bool m_structHasBeenSet = false;
+
+    CustomProperty m_property;
+    bool m_propertyHasBeenSet = false;
   };
 
 } // namespace Model

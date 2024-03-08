@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VerifiedAttributeType::NOT_SET:
+            return {};
           case VerifiedAttributeType::phone_number:
             return "phone_number";
           case VerifiedAttributeType::email:

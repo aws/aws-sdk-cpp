@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Operation::NOT_SET:
+            return {};
           case Operation::ENABLE_SCANNING:
             return "ENABLE_SCANNING";
           case Operation::DISABLE_SCANNING:

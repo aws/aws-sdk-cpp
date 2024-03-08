@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DestinationType::NOT_SET:
+            return {};
           case DestinationType::cloudwatch_logs:
             return "cloudwatch-logs";
           case DestinationType::kinesis_firehose:

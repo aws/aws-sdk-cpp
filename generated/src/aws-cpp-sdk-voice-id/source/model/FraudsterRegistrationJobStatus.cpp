@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FraudsterRegistrationJobStatus::NOT_SET:
+            return {};
           case FraudsterRegistrationJobStatus::SUBMITTED:
             return "SUBMITTED";
           case FraudsterRegistrationJobStatus::IN_PROGRESS:

@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticloadbalancingv2/model/TargetDescription.h>
+#include <aws/elasticloadbalancingv2/model/DescribeTargetHealthInputIncludeEnum.h>
 #include <utility>
 
 namespace Aws
@@ -119,6 +120,47 @@ namespace Model
      */
     inline DescribeTargetHealthRequest& AddTargets(TargetDescription&& value) { m_targetsHasBeenSet = true; m_targets.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Used to inclue anomaly detection information.</p>
+     */
+    inline const Aws::Vector<DescribeTargetHealthInputIncludeEnum>& GetInclude() const{ return m_include; }
+
+    /**
+     * <p>Used to inclue anomaly detection information.</p>
+     */
+    inline bool IncludeHasBeenSet() const { return m_includeHasBeenSet; }
+
+    /**
+     * <p>Used to inclue anomaly detection information.</p>
+     */
+    inline void SetInclude(const Aws::Vector<DescribeTargetHealthInputIncludeEnum>& value) { m_includeHasBeenSet = true; m_include = value; }
+
+    /**
+     * <p>Used to inclue anomaly detection information.</p>
+     */
+    inline void SetInclude(Aws::Vector<DescribeTargetHealthInputIncludeEnum>&& value) { m_includeHasBeenSet = true; m_include = std::move(value); }
+
+    /**
+     * <p>Used to inclue anomaly detection information.</p>
+     */
+    inline DescribeTargetHealthRequest& WithInclude(const Aws::Vector<DescribeTargetHealthInputIncludeEnum>& value) { SetInclude(value); return *this;}
+
+    /**
+     * <p>Used to inclue anomaly detection information.</p>
+     */
+    inline DescribeTargetHealthRequest& WithInclude(Aws::Vector<DescribeTargetHealthInputIncludeEnum>&& value) { SetInclude(std::move(value)); return *this;}
+
+    /**
+     * <p>Used to inclue anomaly detection information.</p>
+     */
+    inline DescribeTargetHealthRequest& AddInclude(const DescribeTargetHealthInputIncludeEnum& value) { m_includeHasBeenSet = true; m_include.push_back(value); return *this; }
+
+    /**
+     * <p>Used to inclue anomaly detection information.</p>
+     */
+    inline DescribeTargetHealthRequest& AddInclude(DescribeTargetHealthInputIncludeEnum&& value) { m_includeHasBeenSet = true; m_include.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_targetGroupArn;
@@ -126,6 +168,9 @@ namespace Model
 
     Aws::Vector<TargetDescription> m_targets;
     bool m_targetsHasBeenSet = false;
+
+    Aws::Vector<DescribeTargetHealthInputIncludeEnum> m_include;
+    bool m_includeHasBeenSet = false;
   };
 
 } // namespace Model

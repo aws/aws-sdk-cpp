@@ -39,50 +39,50 @@ namespace Model
 
 
     /**
-     * <p>A Sagemaker GroundTruth manifest file that contains the training images
-     * (assets).</p>
+     * <p>A manifest file that contains references to the training images and
+     * ground-truth annotations.</p>
      */
     inline const Aws::Vector<Asset>& GetAssets() const{ return m_assets; }
 
     /**
-     * <p>A Sagemaker GroundTruth manifest file that contains the training images
-     * (assets).</p>
+     * <p>A manifest file that contains references to the training images and
+     * ground-truth annotations.</p>
      */
     inline bool AssetsHasBeenSet() const { return m_assetsHasBeenSet; }
 
     /**
-     * <p>A Sagemaker GroundTruth manifest file that contains the training images
-     * (assets).</p>
+     * <p>A manifest file that contains references to the training images and
+     * ground-truth annotations.</p>
      */
     inline void SetAssets(const Aws::Vector<Asset>& value) { m_assetsHasBeenSet = true; m_assets = value; }
 
     /**
-     * <p>A Sagemaker GroundTruth manifest file that contains the training images
-     * (assets).</p>
+     * <p>A manifest file that contains references to the training images and
+     * ground-truth annotations.</p>
      */
     inline void SetAssets(Aws::Vector<Asset>&& value) { m_assetsHasBeenSet = true; m_assets = std::move(value); }
 
     /**
-     * <p>A Sagemaker GroundTruth manifest file that contains the training images
-     * (assets).</p>
+     * <p>A manifest file that contains references to the training images and
+     * ground-truth annotations.</p>
      */
     inline TrainingData& WithAssets(const Aws::Vector<Asset>& value) { SetAssets(value); return *this;}
 
     /**
-     * <p>A Sagemaker GroundTruth manifest file that contains the training images
-     * (assets).</p>
+     * <p>A manifest file that contains references to the training images and
+     * ground-truth annotations.</p>
      */
     inline TrainingData& WithAssets(Aws::Vector<Asset>&& value) { SetAssets(std::move(value)); return *this;}
 
     /**
-     * <p>A Sagemaker GroundTruth manifest file that contains the training images
-     * (assets).</p>
+     * <p>A manifest file that contains references to the training images and
+     * ground-truth annotations.</p>
      */
     inline TrainingData& AddAssets(const Asset& value) { m_assetsHasBeenSet = true; m_assets.push_back(value); return *this; }
 
     /**
-     * <p>A Sagemaker GroundTruth manifest file that contains the training images
-     * (assets).</p>
+     * <p>A manifest file that contains references to the training images and
+     * ground-truth annotations.</p>
      */
     inline TrainingData& AddAssets(Asset&& value) { m_assetsHasBeenSet = true; m_assets.push_back(std::move(value)); return *this; }
 

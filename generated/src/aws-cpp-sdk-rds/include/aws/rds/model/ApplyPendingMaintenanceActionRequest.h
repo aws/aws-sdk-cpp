@@ -106,56 +106,56 @@ namespace Model
 
     /**
      * <p>The pending maintenance action to apply to this resource.</p> <p>Valid
-     * values: <code>system-update</code>, <code>db-upgrade</code>,
+     * Values: <code>system-update</code>, <code>db-upgrade</code>,
      * <code>hardware-maintenance</code>, <code>ca-certificate-rotation</code> </p>
      */
     inline const Aws::String& GetApplyAction() const{ return m_applyAction; }
 
     /**
      * <p>The pending maintenance action to apply to this resource.</p> <p>Valid
-     * values: <code>system-update</code>, <code>db-upgrade</code>,
+     * Values: <code>system-update</code>, <code>db-upgrade</code>,
      * <code>hardware-maintenance</code>, <code>ca-certificate-rotation</code> </p>
      */
     inline bool ApplyActionHasBeenSet() const { return m_applyActionHasBeenSet; }
 
     /**
      * <p>The pending maintenance action to apply to this resource.</p> <p>Valid
-     * values: <code>system-update</code>, <code>db-upgrade</code>,
+     * Values: <code>system-update</code>, <code>db-upgrade</code>,
      * <code>hardware-maintenance</code>, <code>ca-certificate-rotation</code> </p>
      */
     inline void SetApplyAction(const Aws::String& value) { m_applyActionHasBeenSet = true; m_applyAction = value; }
 
     /**
      * <p>The pending maintenance action to apply to this resource.</p> <p>Valid
-     * values: <code>system-update</code>, <code>db-upgrade</code>,
+     * Values: <code>system-update</code>, <code>db-upgrade</code>,
      * <code>hardware-maintenance</code>, <code>ca-certificate-rotation</code> </p>
      */
     inline void SetApplyAction(Aws::String&& value) { m_applyActionHasBeenSet = true; m_applyAction = std::move(value); }
 
     /**
      * <p>The pending maintenance action to apply to this resource.</p> <p>Valid
-     * values: <code>system-update</code>, <code>db-upgrade</code>,
+     * Values: <code>system-update</code>, <code>db-upgrade</code>,
      * <code>hardware-maintenance</code>, <code>ca-certificate-rotation</code> </p>
      */
     inline void SetApplyAction(const char* value) { m_applyActionHasBeenSet = true; m_applyAction.assign(value); }
 
     /**
      * <p>The pending maintenance action to apply to this resource.</p> <p>Valid
-     * values: <code>system-update</code>, <code>db-upgrade</code>,
+     * Values: <code>system-update</code>, <code>db-upgrade</code>,
      * <code>hardware-maintenance</code>, <code>ca-certificate-rotation</code> </p>
      */
     inline ApplyPendingMaintenanceActionRequest& WithApplyAction(const Aws::String& value) { SetApplyAction(value); return *this;}
 
     /**
      * <p>The pending maintenance action to apply to this resource.</p> <p>Valid
-     * values: <code>system-update</code>, <code>db-upgrade</code>,
+     * Values: <code>system-update</code>, <code>db-upgrade</code>,
      * <code>hardware-maintenance</code>, <code>ca-certificate-rotation</code> </p>
      */
     inline ApplyPendingMaintenanceActionRequest& WithApplyAction(Aws::String&& value) { SetApplyAction(std::move(value)); return *this;}
 
     /**
      * <p>The pending maintenance action to apply to this resource.</p> <p>Valid
-     * values: <code>system-update</code>, <code>db-upgrade</code>,
+     * Values: <code>system-update</code>, <code>db-upgrade</code>,
      * <code>hardware-maintenance</code>, <code>ca-certificate-rotation</code> </p>
      */
     inline ApplyPendingMaintenanceActionRequest& WithApplyAction(const char* value) { SetApplyAction(value); return *this;}
@@ -164,7 +164,7 @@ namespace Model
     /**
      * <p>A value that specifies the type of opt-in request, or undoes an opt-in
      * request. An opt-in request of type <code>immediate</code> can't be undone.</p>
-     * <p>Valid values:</p> <ul> <li> <p> <code>immediate</code> - Apply the
+     * <p>Valid Values:</p> <ul> <li> <p> <code>immediate</code> - Apply the
      * maintenance action immediately.</p> </li> <li> <p> <code>next-maintenance</code>
      * - Apply the maintenance action during the next maintenance window for the
      * resource.</p> </li> <li> <p> <code>undo-opt-in</code> - Cancel any existing
@@ -175,7 +175,7 @@ namespace Model
     /**
      * <p>A value that specifies the type of opt-in request, or undoes an opt-in
      * request. An opt-in request of type <code>immediate</code> can't be undone.</p>
-     * <p>Valid values:</p> <ul> <li> <p> <code>immediate</code> - Apply the
+     * <p>Valid Values:</p> <ul> <li> <p> <code>immediate</code> - Apply the
      * maintenance action immediately.</p> </li> <li> <p> <code>next-maintenance</code>
      * - Apply the maintenance action during the next maintenance window for the
      * resource.</p> </li> <li> <p> <code>undo-opt-in</code> - Cancel any existing
@@ -186,7 +186,7 @@ namespace Model
     /**
      * <p>A value that specifies the type of opt-in request, or undoes an opt-in
      * request. An opt-in request of type <code>immediate</code> can't be undone.</p>
-     * <p>Valid values:</p> <ul> <li> <p> <code>immediate</code> - Apply the
+     * <p>Valid Values:</p> <ul> <li> <p> <code>immediate</code> - Apply the
      * maintenance action immediately.</p> </li> <li> <p> <code>next-maintenance</code>
      * - Apply the maintenance action during the next maintenance window for the
      * resource.</p> </li> <li> <p> <code>undo-opt-in</code> - Cancel any existing
@@ -197,7 +197,7 @@ namespace Model
     /**
      * <p>A value that specifies the type of opt-in request, or undoes an opt-in
      * request. An opt-in request of type <code>immediate</code> can't be undone.</p>
-     * <p>Valid values:</p> <ul> <li> <p> <code>immediate</code> - Apply the
+     * <p>Valid Values:</p> <ul> <li> <p> <code>immediate</code> - Apply the
      * maintenance action immediately.</p> </li> <li> <p> <code>next-maintenance</code>
      * - Apply the maintenance action during the next maintenance window for the
      * resource.</p> </li> <li> <p> <code>undo-opt-in</code> - Cancel any existing
@@ -208,7 +208,7 @@ namespace Model
     /**
      * <p>A value that specifies the type of opt-in request, or undoes an opt-in
      * request. An opt-in request of type <code>immediate</code> can't be undone.</p>
-     * <p>Valid values:</p> <ul> <li> <p> <code>immediate</code> - Apply the
+     * <p>Valid Values:</p> <ul> <li> <p> <code>immediate</code> - Apply the
      * maintenance action immediately.</p> </li> <li> <p> <code>next-maintenance</code>
      * - Apply the maintenance action during the next maintenance window for the
      * resource.</p> </li> <li> <p> <code>undo-opt-in</code> - Cancel any existing
@@ -219,7 +219,7 @@ namespace Model
     /**
      * <p>A value that specifies the type of opt-in request, or undoes an opt-in
      * request. An opt-in request of type <code>immediate</code> can't be undone.</p>
-     * <p>Valid values:</p> <ul> <li> <p> <code>immediate</code> - Apply the
+     * <p>Valid Values:</p> <ul> <li> <p> <code>immediate</code> - Apply the
      * maintenance action immediately.</p> </li> <li> <p> <code>next-maintenance</code>
      * - Apply the maintenance action during the next maintenance window for the
      * resource.</p> </li> <li> <p> <code>undo-opt-in</code> - Cancel any existing
@@ -230,7 +230,7 @@ namespace Model
     /**
      * <p>A value that specifies the type of opt-in request, or undoes an opt-in
      * request. An opt-in request of type <code>immediate</code> can't be undone.</p>
-     * <p>Valid values:</p> <ul> <li> <p> <code>immediate</code> - Apply the
+     * <p>Valid Values:</p> <ul> <li> <p> <code>immediate</code> - Apply the
      * maintenance action immediately.</p> </li> <li> <p> <code>next-maintenance</code>
      * - Apply the maintenance action during the next maintenance window for the
      * resource.</p> </li> <li> <p> <code>undo-opt-in</code> - Cancel any existing
@@ -241,7 +241,7 @@ namespace Model
     /**
      * <p>A value that specifies the type of opt-in request, or undoes an opt-in
      * request. An opt-in request of type <code>immediate</code> can't be undone.</p>
-     * <p>Valid values:</p> <ul> <li> <p> <code>immediate</code> - Apply the
+     * <p>Valid Values:</p> <ul> <li> <p> <code>immediate</code> - Apply the
      * maintenance action immediately.</p> </li> <li> <p> <code>next-maintenance</code>
      * - Apply the maintenance action during the next maintenance window for the
      * resource.</p> </li> <li> <p> <code>undo-opt-in</code> - Cancel any existing

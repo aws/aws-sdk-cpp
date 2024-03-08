@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EventStreamDestinationStatus::NOT_SET:
+            return {};
           case EventStreamDestinationStatus::HEALTHY:
             return "HEALTHY";
           case EventStreamDestinationStatus::UNHEALTHY:

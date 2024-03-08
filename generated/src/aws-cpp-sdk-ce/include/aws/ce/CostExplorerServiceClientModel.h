@@ -28,6 +28,7 @@
 #include <aws/ce/model/GetAnomaliesResult.h>
 #include <aws/ce/model/GetAnomalyMonitorsResult.h>
 #include <aws/ce/model/GetAnomalySubscriptionsResult.h>
+#include <aws/ce/model/GetApproximateUsageRecordsResult.h>
 #include <aws/ce/model/GetCostAndUsageResult.h>
 #include <aws/ce/model/GetCostAndUsageWithResourcesResult.h>
 #include <aws/ce/model/GetCostCategoriesResult.h>
@@ -106,6 +107,7 @@ namespace Aws
       class GetAnomaliesRequest;
       class GetAnomalyMonitorsRequest;
       class GetAnomalySubscriptionsRequest;
+      class GetApproximateUsageRecordsRequest;
       class GetCostAndUsageRequest;
       class GetCostAndUsageWithResourcesRequest;
       class GetCostCategoriesRequest;
@@ -147,6 +149,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetAnomaliesResult, CostExplorerError> GetAnomaliesOutcome;
       typedef Aws::Utils::Outcome<GetAnomalyMonitorsResult, CostExplorerError> GetAnomalyMonitorsOutcome;
       typedef Aws::Utils::Outcome<GetAnomalySubscriptionsResult, CostExplorerError> GetAnomalySubscriptionsOutcome;
+      typedef Aws::Utils::Outcome<GetApproximateUsageRecordsResult, CostExplorerError> GetApproximateUsageRecordsOutcome;
       typedef Aws::Utils::Outcome<GetCostAndUsageResult, CostExplorerError> GetCostAndUsageOutcome;
       typedef Aws::Utils::Outcome<GetCostAndUsageWithResourcesResult, CostExplorerError> GetCostAndUsageWithResourcesOutcome;
       typedef Aws::Utils::Outcome<GetCostCategoriesResult, CostExplorerError> GetCostCategoriesOutcome;
@@ -188,6 +191,7 @@ namespace Aws
       typedef std::future<GetAnomaliesOutcome> GetAnomaliesOutcomeCallable;
       typedef std::future<GetAnomalyMonitorsOutcome> GetAnomalyMonitorsOutcomeCallable;
       typedef std::future<GetAnomalySubscriptionsOutcome> GetAnomalySubscriptionsOutcomeCallable;
+      typedef std::future<GetApproximateUsageRecordsOutcome> GetApproximateUsageRecordsOutcomeCallable;
       typedef std::future<GetCostAndUsageOutcome> GetCostAndUsageOutcomeCallable;
       typedef std::future<GetCostAndUsageWithResourcesOutcome> GetCostAndUsageWithResourcesOutcomeCallable;
       typedef std::future<GetCostCategoriesOutcome> GetCostCategoriesOutcomeCallable;
@@ -232,6 +236,7 @@ namespace Aws
     typedef std::function<void(const CostExplorerClient*, const Model::GetAnomaliesRequest&, const Model::GetAnomaliesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAnomaliesResponseReceivedHandler;
     typedef std::function<void(const CostExplorerClient*, const Model::GetAnomalyMonitorsRequest&, const Model::GetAnomalyMonitorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAnomalyMonitorsResponseReceivedHandler;
     typedef std::function<void(const CostExplorerClient*, const Model::GetAnomalySubscriptionsRequest&, const Model::GetAnomalySubscriptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAnomalySubscriptionsResponseReceivedHandler;
+    typedef std::function<void(const CostExplorerClient*, const Model::GetApproximateUsageRecordsRequest&, const Model::GetApproximateUsageRecordsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetApproximateUsageRecordsResponseReceivedHandler;
     typedef std::function<void(const CostExplorerClient*, const Model::GetCostAndUsageRequest&, const Model::GetCostAndUsageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCostAndUsageResponseReceivedHandler;
     typedef std::function<void(const CostExplorerClient*, const Model::GetCostAndUsageWithResourcesRequest&, const Model::GetCostAndUsageWithResourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCostAndUsageWithResourcesResponseReceivedHandler;
     typedef std::function<void(const CostExplorerClient*, const Model::GetCostCategoriesRequest&, const Model::GetCostCategoriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCostCategoriesResponseReceivedHandler;

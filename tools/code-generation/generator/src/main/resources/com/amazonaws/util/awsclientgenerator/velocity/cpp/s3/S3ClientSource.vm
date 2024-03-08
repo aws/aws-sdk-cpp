@@ -123,7 +123,12 @@ Aws::String ${className}::GeneratePresignedUrl(const Aws::String& bucket,
     }
     Aws::Endpoint::AWSEndpoint& endpoint = computeEndpointOutcome.GetResult();
     endpoint.AddPathSegments(key);
-    return AWSClient::GeneratePresignedUrl(endpoint, method, customizedHeaders, expirationInSeconds);
+    Aws::Map<Aws::String, Aws::String> params;
+    params.emplace("bucketName", bucket);
+    ServiceSpecificParameters serviceSpecificParameters{params};
+    auto serviceParams = Aws::MakeShared<ServiceSpecificParameters>(ALLOCATION_TAG, serviceSpecificParameters);
+    return AWSClient::GeneratePresignedUrl(endpoint, method, customizedHeaders, expirationInSeconds, Aws::Auth::SIGV4_SIGNER,
+        nullptr, nullptr, serviceParams);
 #end
 }
 

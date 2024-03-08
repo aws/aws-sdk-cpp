@@ -78,7 +78,7 @@ namespace Aws
             }
 
             ss << SchemeMapper::ToString(uri.GetScheme()) << SEPARATOR << uri.GetAuthority() << port.str()
-                << ((uri.GetPath() == "/") ? "" : URI::URLEncodePath(uri.GetPath()))
+                << ((uri.GetPath() == "/") ? "" : uri.GetURLEncodedPathRFC3986())
                 << uri.GetQueryString();
 
             request->SetPath(Aws::Crt::ByteCursorFromCString(ss.str().c_str()));

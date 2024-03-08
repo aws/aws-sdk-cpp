@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Mp2CodingMode::NOT_SET:
+            return {};
           case Mp2CodingMode::CODING_MODE_1_0:
             return "CODING_MODE_1_0";
           case Mp2CodingMode::CODING_MODE_2_0:

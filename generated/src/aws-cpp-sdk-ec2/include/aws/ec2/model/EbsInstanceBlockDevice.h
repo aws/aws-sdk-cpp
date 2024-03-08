@@ -165,6 +165,104 @@ namespace Model
      */
     inline EbsInstanceBlockDevice& WithVolumeId(const char* value) { SetVolumeId(value); return *this;}
 
+
+    /**
+     * <p>The ARN of the Amazon ECS or Fargate task to which the volume is
+     * attached.</p>
+     */
+    inline const Aws::String& GetAssociatedResource() const{ return m_associatedResource; }
+
+    /**
+     * <p>The ARN of the Amazon ECS or Fargate task to which the volume is
+     * attached.</p>
+     */
+    inline bool AssociatedResourceHasBeenSet() const { return m_associatedResourceHasBeenSet; }
+
+    /**
+     * <p>The ARN of the Amazon ECS or Fargate task to which the volume is
+     * attached.</p>
+     */
+    inline void SetAssociatedResource(const Aws::String& value) { m_associatedResourceHasBeenSet = true; m_associatedResource = value; }
+
+    /**
+     * <p>The ARN of the Amazon ECS or Fargate task to which the volume is
+     * attached.</p>
+     */
+    inline void SetAssociatedResource(Aws::String&& value) { m_associatedResourceHasBeenSet = true; m_associatedResource = std::move(value); }
+
+    /**
+     * <p>The ARN of the Amazon ECS or Fargate task to which the volume is
+     * attached.</p>
+     */
+    inline void SetAssociatedResource(const char* value) { m_associatedResourceHasBeenSet = true; m_associatedResource.assign(value); }
+
+    /**
+     * <p>The ARN of the Amazon ECS or Fargate task to which the volume is
+     * attached.</p>
+     */
+    inline EbsInstanceBlockDevice& WithAssociatedResource(const Aws::String& value) { SetAssociatedResource(value); return *this;}
+
+    /**
+     * <p>The ARN of the Amazon ECS or Fargate task to which the volume is
+     * attached.</p>
+     */
+    inline EbsInstanceBlockDevice& WithAssociatedResource(Aws::String&& value) { SetAssociatedResource(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the Amazon ECS or Fargate task to which the volume is
+     * attached.</p>
+     */
+    inline EbsInstanceBlockDevice& WithAssociatedResource(const char* value) { SetAssociatedResource(value); return *this;}
+
+
+    /**
+     * <p>The ID of the Amazon Web Services account that owns the volume.</p> <p>This
+     * parameter is returned only for volumes that are attached to Fargate tasks.</p>
+     */
+    inline const Aws::String& GetVolumeOwnerId() const{ return m_volumeOwnerId; }
+
+    /**
+     * <p>The ID of the Amazon Web Services account that owns the volume.</p> <p>This
+     * parameter is returned only for volumes that are attached to Fargate tasks.</p>
+     */
+    inline bool VolumeOwnerIdHasBeenSet() const { return m_volumeOwnerIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Amazon Web Services account that owns the volume.</p> <p>This
+     * parameter is returned only for volumes that are attached to Fargate tasks.</p>
+     */
+    inline void SetVolumeOwnerId(const Aws::String& value) { m_volumeOwnerIdHasBeenSet = true; m_volumeOwnerId = value; }
+
+    /**
+     * <p>The ID of the Amazon Web Services account that owns the volume.</p> <p>This
+     * parameter is returned only for volumes that are attached to Fargate tasks.</p>
+     */
+    inline void SetVolumeOwnerId(Aws::String&& value) { m_volumeOwnerIdHasBeenSet = true; m_volumeOwnerId = std::move(value); }
+
+    /**
+     * <p>The ID of the Amazon Web Services account that owns the volume.</p> <p>This
+     * parameter is returned only for volumes that are attached to Fargate tasks.</p>
+     */
+    inline void SetVolumeOwnerId(const char* value) { m_volumeOwnerIdHasBeenSet = true; m_volumeOwnerId.assign(value); }
+
+    /**
+     * <p>The ID of the Amazon Web Services account that owns the volume.</p> <p>This
+     * parameter is returned only for volumes that are attached to Fargate tasks.</p>
+     */
+    inline EbsInstanceBlockDevice& WithVolumeOwnerId(const Aws::String& value) { SetVolumeOwnerId(value); return *this;}
+
+    /**
+     * <p>The ID of the Amazon Web Services account that owns the volume.</p> <p>This
+     * parameter is returned only for volumes that are attached to Fargate tasks.</p>
+     */
+    inline EbsInstanceBlockDevice& WithVolumeOwnerId(Aws::String&& value) { SetVolumeOwnerId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the Amazon Web Services account that owns the volume.</p> <p>This
+     * parameter is returned only for volumes that are attached to Fargate tasks.</p>
+     */
+    inline EbsInstanceBlockDevice& WithVolumeOwnerId(const char* value) { SetVolumeOwnerId(value); return *this;}
+
   private:
 
     Aws::Utils::DateTime m_attachTime;
@@ -178,6 +276,12 @@ namespace Model
 
     Aws::String m_volumeId;
     bool m_volumeIdHasBeenSet = false;
+
+    Aws::String m_associatedResource;
+    bool m_associatedResourceHasBeenSet = false;
+
+    Aws::String m_volumeOwnerId;
+    bool m_volumeOwnerIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/model/BlueGreenUpdatePolicy.h>
-#include <aws/sagemaker/model/AutoRollbackConfig.h>
 #include <aws/sagemaker/model/RollingUpdatePolicy.h>
+#include <aws/sagemaker/model/AutoRollbackConfig.h>
 #include <utility>
 
 namespace Aws
@@ -108,43 +108,6 @@ namespace Model
 
 
     /**
-     * <p>Automatic rollback configuration for handling endpoint deployment failures
-     * and recovery.</p>
-     */
-    inline const AutoRollbackConfig& GetAutoRollbackConfiguration() const{ return m_autoRollbackConfiguration; }
-
-    /**
-     * <p>Automatic rollback configuration for handling endpoint deployment failures
-     * and recovery.</p>
-     */
-    inline bool AutoRollbackConfigurationHasBeenSet() const { return m_autoRollbackConfigurationHasBeenSet; }
-
-    /**
-     * <p>Automatic rollback configuration for handling endpoint deployment failures
-     * and recovery.</p>
-     */
-    inline void SetAutoRollbackConfiguration(const AutoRollbackConfig& value) { m_autoRollbackConfigurationHasBeenSet = true; m_autoRollbackConfiguration = value; }
-
-    /**
-     * <p>Automatic rollback configuration for handling endpoint deployment failures
-     * and recovery.</p>
-     */
-    inline void SetAutoRollbackConfiguration(AutoRollbackConfig&& value) { m_autoRollbackConfigurationHasBeenSet = true; m_autoRollbackConfiguration = std::move(value); }
-
-    /**
-     * <p>Automatic rollback configuration for handling endpoint deployment failures
-     * and recovery.</p>
-     */
-    inline DeploymentConfig& WithAutoRollbackConfiguration(const AutoRollbackConfig& value) { SetAutoRollbackConfiguration(value); return *this;}
-
-    /**
-     * <p>Automatic rollback configuration for handling endpoint deployment failures
-     * and recovery.</p>
-     */
-    inline DeploymentConfig& WithAutoRollbackConfiguration(AutoRollbackConfig&& value) { SetAutoRollbackConfiguration(std::move(value)); return *this;}
-
-
-    /**
      * <p>Specifies a rolling deployment strategy for updating a SageMaker
      * endpoint.</p>
      */
@@ -180,16 +143,53 @@ namespace Model
      */
     inline DeploymentConfig& WithRollingUpdatePolicy(RollingUpdatePolicy&& value) { SetRollingUpdatePolicy(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Automatic rollback configuration for handling endpoint deployment failures
+     * and recovery.</p>
+     */
+    inline const AutoRollbackConfig& GetAutoRollbackConfiguration() const{ return m_autoRollbackConfiguration; }
+
+    /**
+     * <p>Automatic rollback configuration for handling endpoint deployment failures
+     * and recovery.</p>
+     */
+    inline bool AutoRollbackConfigurationHasBeenSet() const { return m_autoRollbackConfigurationHasBeenSet; }
+
+    /**
+     * <p>Automatic rollback configuration for handling endpoint deployment failures
+     * and recovery.</p>
+     */
+    inline void SetAutoRollbackConfiguration(const AutoRollbackConfig& value) { m_autoRollbackConfigurationHasBeenSet = true; m_autoRollbackConfiguration = value; }
+
+    /**
+     * <p>Automatic rollback configuration for handling endpoint deployment failures
+     * and recovery.</p>
+     */
+    inline void SetAutoRollbackConfiguration(AutoRollbackConfig&& value) { m_autoRollbackConfigurationHasBeenSet = true; m_autoRollbackConfiguration = std::move(value); }
+
+    /**
+     * <p>Automatic rollback configuration for handling endpoint deployment failures
+     * and recovery.</p>
+     */
+    inline DeploymentConfig& WithAutoRollbackConfiguration(const AutoRollbackConfig& value) { SetAutoRollbackConfiguration(value); return *this;}
+
+    /**
+     * <p>Automatic rollback configuration for handling endpoint deployment failures
+     * and recovery.</p>
+     */
+    inline DeploymentConfig& WithAutoRollbackConfiguration(AutoRollbackConfig&& value) { SetAutoRollbackConfiguration(std::move(value)); return *this;}
+
   private:
 
     BlueGreenUpdatePolicy m_blueGreenUpdatePolicy;
     bool m_blueGreenUpdatePolicyHasBeenSet = false;
 
-    AutoRollbackConfig m_autoRollbackConfiguration;
-    bool m_autoRollbackConfigurationHasBeenSet = false;
-
     RollingUpdatePolicy m_rollingUpdatePolicy;
     bool m_rollingUpdatePolicyHasBeenSet = false;
+
+    AutoRollbackConfig m_autoRollbackConfiguration;
+    bool m_autoRollbackConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

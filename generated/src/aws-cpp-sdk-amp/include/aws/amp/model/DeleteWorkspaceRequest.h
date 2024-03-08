@@ -22,8 +22,8 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input of a DeleteWorkspace operation.</p><p><h3>See Also:</h3>
-   * <a
+   * <p>Represents the input of a <code>DeleteWorkspace</code>
+   * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DeleteWorkspaceRequest">AWS
    * API Reference</a></p>
    */
@@ -41,6 +41,55 @@ namespace Model
     AWS_PROMETHEUSSERVICE_API Aws::String SerializePayload() const override;
 
     AWS_PROMETHEUSSERVICE_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+
+
+    /**
+     * <p>A unique identifier that you can provide to ensure the idempotency of the
+     * request. Case-sensitive.</p>
+     */
+    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+
+    /**
+     * <p>A unique identifier that you can provide to ensure the idempotency of the
+     * request. Case-sensitive.</p>
+     */
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+
+    /**
+     * <p>A unique identifier that you can provide to ensure the idempotency of the
+     * request. Case-sensitive.</p>
+     */
+    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
+
+    /**
+     * <p>A unique identifier that you can provide to ensure the idempotency of the
+     * request. Case-sensitive.</p>
+     */
+    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
+
+    /**
+     * <p>A unique identifier that you can provide to ensure the idempotency of the
+     * request. Case-sensitive.</p>
+     */
+    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
+
+    /**
+     * <p>A unique identifier that you can provide to ensure the idempotency of the
+     * request. Case-sensitive.</p>
+     */
+    inline DeleteWorkspaceRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
+
+    /**
+     * <p>A unique identifier that you can provide to ensure the idempotency of the
+     * request. Case-sensitive.</p>
+     */
+    inline DeleteWorkspaceRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
+
+    /**
+     * <p>A unique identifier that you can provide to ensure the idempotency of the
+     * request. Case-sensitive.</p>
+     */
+    inline DeleteWorkspaceRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
 
     /**
@@ -83,62 +132,13 @@ namespace Model
      */
     inline DeleteWorkspaceRequest& WithWorkspaceId(const char* value) { SetWorkspaceId(value); return *this;}
 
-
-    /**
-     * <p>Optional, unique, case-sensitive, user-provided identifier to ensure the
-     * idempotency of the request.</p>
-     */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
-
-    /**
-     * <p>Optional, unique, case-sensitive, user-provided identifier to ensure the
-     * idempotency of the request.</p>
-     */
-    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-
-    /**
-     * <p>Optional, unique, case-sensitive, user-provided identifier to ensure the
-     * idempotency of the request.</p>
-     */
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-
-    /**
-     * <p>Optional, unique, case-sensitive, user-provided identifier to ensure the
-     * idempotency of the request.</p>
-     */
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-
-    /**
-     * <p>Optional, unique, case-sensitive, user-provided identifier to ensure the
-     * idempotency of the request.</p>
-     */
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-
-    /**
-     * <p>Optional, unique, case-sensitive, user-provided identifier to ensure the
-     * idempotency of the request.</p>
-     */
-    inline DeleteWorkspaceRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-
-    /**
-     * <p>Optional, unique, case-sensitive, user-provided identifier to ensure the
-     * idempotency of the request.</p>
-     */
-    inline DeleteWorkspaceRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-
-    /**
-     * <p>Optional, unique, case-sensitive, user-provided identifier to ensure the
-     * idempotency of the request.</p>
-     */
-    inline DeleteWorkspaceRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
-
   private:
-
-    Aws::String m_workspaceId;
-    bool m_workspaceIdHasBeenSet = false;
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet = false;
+
+    Aws::String m_workspaceId;
+    bool m_workspaceIdHasBeenSet = false;
   };
 
 } // namespace Model

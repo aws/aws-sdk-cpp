@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TestSetStatus::NOT_SET:
+            return {};
           case TestSetStatus::Importing:
             return "Importing";
           case TestSetStatus::PendingAnnotation:

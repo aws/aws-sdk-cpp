@@ -12,6 +12,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/compute-optimizer/model/ECSServiceRecommendationFinding.h>
 #include <aws/compute-optimizer/model/CurrentPerformanceRisk.h>
+#include <aws/compute-optimizer/model/ECSEffectiveRecommendationPreferences.h>
 #include <aws/compute-optimizer/model/ECSServiceUtilizationMetric.h>
 #include <aws/compute-optimizer/model/ECSServiceRecommendationFindingReasonCode.h>
 #include <aws/compute-optimizer/model/ECSServiceRecommendationOption.h>
@@ -342,7 +343,7 @@ namespace Model
      * <code>Overprovisioned</code> </b> — When Compute Optimizer detects that there’s
      * excessive memory or CPU, an Amazon ECS service is considered over-provisioned.
      * An over-provisioned service might result in additional infrastructure costs.
-     * </p> </li> <li> <p> <b> <code>Optimized</code> </b> — When both the CPU and
+     * </p> </li> <li> <p> <b> <code>Optimized</code> </b> �� When both the CPU and
      * memory of your Amazon ECS service meet the performance requirements of your
      * workload, the service is considered optimized.</p> </li> </ul>
      */
@@ -357,7 +358,7 @@ namespace Model
      * <code>Overprovisioned</code> </b> — When Compute Optimizer detects that there’s
      * excessive memory or CPU, an Amazon ECS service is considered over-provisioned.
      * An over-provisioned service might result in additional infrastructure costs.
-     * </p> </li> <li> <p> <b> <code>Optimized</code> </b> — When both the CPU and
+     * </p> </li> <li> <p> <b> <code>Optimized</code> </b> �� When both the CPU and
      * memory of your Amazon ECS service meet the performance requirements of your
      * workload, the service is considered optimized.</p> </li> </ul>
      */
@@ -372,7 +373,7 @@ namespace Model
      * <code>Overprovisioned</code> </b> — When Compute Optimizer detects that there’s
      * excessive memory or CPU, an Amazon ECS service is considered over-provisioned.
      * An over-provisioned service might result in additional infrastructure costs.
-     * </p> </li> <li> <p> <b> <code>Optimized</code> </b> — When both the CPU and
+     * </p> </li> <li> <p> <b> <code>Optimized</code> </b> �� When both the CPU and
      * memory of your Amazon ECS service meet the performance requirements of your
      * workload, the service is considered optimized.</p> </li> </ul>
      */
@@ -387,7 +388,7 @@ namespace Model
      * <code>Overprovisioned</code> </b> — When Compute Optimizer detects that there’s
      * excessive memory or CPU, an Amazon ECS service is considered over-provisioned.
      * An over-provisioned service might result in additional infrastructure costs.
-     * </p> </li> <li> <p> <b> <code>Optimized</code> </b> — When both the CPU and
+     * </p> </li> <li> <p> <b> <code>Optimized</code> </b> �� When both the CPU and
      * memory of your Amazon ECS service meet the performance requirements of your
      * workload, the service is considered optimized.</p> </li> </ul>
      */
@@ -402,7 +403,7 @@ namespace Model
      * <code>Overprovisioned</code> </b> — When Compute Optimizer detects that there’s
      * excessive memory or CPU, an Amazon ECS service is considered over-provisioned.
      * An over-provisioned service might result in additional infrastructure costs.
-     * </p> </li> <li> <p> <b> <code>Optimized</code> </b> — When both the CPU and
+     * </p> </li> <li> <p> <b> <code>Optimized</code> </b> �� When both the CPU and
      * memory of your Amazon ECS service meet the performance requirements of your
      * workload, the service is considered optimized.</p> </li> </ul>
      */
@@ -417,7 +418,7 @@ namespace Model
      * <code>Overprovisioned</code> </b> — When Compute Optimizer detects that there’s
      * excessive memory or CPU, an Amazon ECS service is considered over-provisioned.
      * An over-provisioned service might result in additional infrastructure costs.
-     * </p> </li> <li> <p> <b> <code>Optimized</code> </b> — When both the CPU and
+     * </p> </li> <li> <p> <b> <code>Optimized</code> </b> �� When both the CPU and
      * memory of your Amazon ECS service meet the performance requirements of your
      * workload, the service is considered optimized.</p> </li> </ul>
      */
@@ -725,6 +726,43 @@ namespace Model
      */
     inline ECSServiceRecommendation& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p> Describes the effective recommendation preferences for Amazon ECS services.
+     * </p>
+     */
+    inline const ECSEffectiveRecommendationPreferences& GetEffectiveRecommendationPreferences() const{ return m_effectiveRecommendationPreferences; }
+
+    /**
+     * <p> Describes the effective recommendation preferences for Amazon ECS services.
+     * </p>
+     */
+    inline bool EffectiveRecommendationPreferencesHasBeenSet() const { return m_effectiveRecommendationPreferencesHasBeenSet; }
+
+    /**
+     * <p> Describes the effective recommendation preferences for Amazon ECS services.
+     * </p>
+     */
+    inline void SetEffectiveRecommendationPreferences(const ECSEffectiveRecommendationPreferences& value) { m_effectiveRecommendationPreferencesHasBeenSet = true; m_effectiveRecommendationPreferences = value; }
+
+    /**
+     * <p> Describes the effective recommendation preferences for Amazon ECS services.
+     * </p>
+     */
+    inline void SetEffectiveRecommendationPreferences(ECSEffectiveRecommendationPreferences&& value) { m_effectiveRecommendationPreferencesHasBeenSet = true; m_effectiveRecommendationPreferences = std::move(value); }
+
+    /**
+     * <p> Describes the effective recommendation preferences for Amazon ECS services.
+     * </p>
+     */
+    inline ECSServiceRecommendation& WithEffectiveRecommendationPreferences(const ECSEffectiveRecommendationPreferences& value) { SetEffectiveRecommendationPreferences(value); return *this;}
+
+    /**
+     * <p> Describes the effective recommendation preferences for Amazon ECS services.
+     * </p>
+     */
+    inline ECSServiceRecommendation& WithEffectiveRecommendationPreferences(ECSEffectiveRecommendationPreferences&& value) { SetEffectiveRecommendationPreferences(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_serviceArn;
@@ -762,6 +800,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    ECSEffectiveRecommendationPreferences m_effectiveRecommendationPreferences;
+    bool m_effectiveRecommendationPreferencesHasBeenSet = false;
   };
 
 } // namespace Model

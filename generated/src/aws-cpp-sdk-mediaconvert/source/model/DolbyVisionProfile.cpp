@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DolbyVisionProfile::NOT_SET:
+            return {};
           case DolbyVisionProfile::PROFILE_5:
             return "PROFILE_5";
           case DolbyVisionProfile::PROFILE_8_1:

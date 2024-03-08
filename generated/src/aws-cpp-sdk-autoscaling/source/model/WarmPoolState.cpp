@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case WarmPoolState::NOT_SET:
+            return {};
           case WarmPoolState::Stopped:
             return "Stopped";
           case WarmPoolState::Running:

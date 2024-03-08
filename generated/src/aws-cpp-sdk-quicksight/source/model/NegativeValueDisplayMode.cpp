@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NegativeValueDisplayMode::NOT_SET:
+            return {};
           case NegativeValueDisplayMode::POSITIVE:
             return "POSITIVE";
           case NegativeValueDisplayMode::NEGATIVE:

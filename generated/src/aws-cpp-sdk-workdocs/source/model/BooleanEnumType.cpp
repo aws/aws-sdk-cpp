@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BooleanEnumType::NOT_SET:
+            return {};
           case BooleanEnumType::TRUE:
             return "TRUE";
           case BooleanEnumType::FALSE:

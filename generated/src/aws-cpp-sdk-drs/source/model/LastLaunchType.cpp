@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LastLaunchType::NOT_SET:
+            return {};
           case LastLaunchType::RECOVERY:
             return "RECOVERY";
           case LastLaunchType::DRILL:

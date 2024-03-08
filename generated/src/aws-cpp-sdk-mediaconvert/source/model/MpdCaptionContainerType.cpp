@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MpdCaptionContainerType::NOT_SET:
+            return {};
           case MpdCaptionContainerType::RAW:
             return "RAW";
           case MpdCaptionContainerType::FRAGMENTED_MP4:

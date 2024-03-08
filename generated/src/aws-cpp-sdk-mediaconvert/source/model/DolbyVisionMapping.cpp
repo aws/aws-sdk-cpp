@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DolbyVisionMapping::NOT_SET:
+            return {};
           case DolbyVisionMapping::HDR10_NOMAP:
             return "HDR10_NOMAP";
           case DolbyVisionMapping::HDR10_1000:

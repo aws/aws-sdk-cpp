@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case M2tsScte35Control::NOT_SET:
+            return {};
           case M2tsScte35Control::NONE:
             return "NONE";
           case M2tsScte35Control::PASSTHROUGH:

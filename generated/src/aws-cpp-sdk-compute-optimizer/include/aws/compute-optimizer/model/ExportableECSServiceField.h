@@ -39,7 +39,11 @@ namespace Model
     RecommendationOptionsContainerRecommendations,
     RecommendationOptionsProjectedUtilizationMetricsCpuMaximum,
     RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum,
-    Tags
+    Tags,
+    EffectiveRecommendationPreferencesSavingsEstimationMode,
+    RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage,
+    RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts,
+    RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts
   };
 
 namespace ExportableECSServiceFieldMapper

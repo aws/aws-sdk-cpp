@@ -84,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Type::NOT_SET:
+            return {};
           case Type::IMPORT_ASSETS_FROM_S3:
             return "IMPORT_ASSETS_FROM_S3";
           case Type::IMPORT_ASSET_FROM_SIGNED_URL:

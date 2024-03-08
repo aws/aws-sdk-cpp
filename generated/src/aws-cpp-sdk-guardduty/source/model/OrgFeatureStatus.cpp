@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OrgFeatureStatus::NOT_SET:
+            return {};
           case OrgFeatureStatus::NEW_:
             return "NEW";
           case OrgFeatureStatus::NONE:

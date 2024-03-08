@@ -21,14 +21,18 @@ namespace Model
 VpcConfigResponse::VpcConfigResponse() : 
     m_subnetIdsHasBeenSet(false),
     m_securityGroupIdsHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
+    m_vpcIdHasBeenSet(false),
+    m_ipv6AllowedForDualStack(false),
+    m_ipv6AllowedForDualStackHasBeenSet(false)
 {
 }
 
 VpcConfigResponse::VpcConfigResponse(JsonView jsonValue) : 
     m_subnetIdsHasBeenSet(false),
     m_securityGroupIdsHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
+    m_vpcIdHasBeenSet(false),
+    m_ipv6AllowedForDualStack(false),
+    m_ipv6AllowedForDualStackHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -60,6 +64,13 @@ VpcConfigResponse& VpcConfigResponse::operator =(JsonView jsonValue)
     m_vpcId = jsonValue.GetString("VpcId");
 
     m_vpcIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Ipv6AllowedForDualStack"))
+  {
+    m_ipv6AllowedForDualStack = jsonValue.GetBool("Ipv6AllowedForDualStack");
+
+    m_ipv6AllowedForDualStackHasBeenSet = true;
   }
 
   return *this;
@@ -94,6 +105,12 @@ JsonValue VpcConfigResponse::Jsonize() const
   if(m_vpcIdHasBeenSet)
   {
    payload.WithString("VpcId", m_vpcId);
+
+  }
+
+  if(m_ipv6AllowedForDualStackHasBeenSet)
+  {
+   payload.WithBool("Ipv6AllowedForDualStack", m_ipv6AllowedForDualStack);
 
   }
 

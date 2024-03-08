@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ApiCachingBehavior::NOT_SET:
+            return {};
           case ApiCachingBehavior::FULL_REQUEST_CACHING:
             return "FULL_REQUEST_CACHING";
           case ApiCachingBehavior::PER_RESOLVER_CACHING:

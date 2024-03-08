@@ -84,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BotLocaleStatus::NOT_SET:
+            return {};
           case BotLocaleStatus::Creating:
             return "Creating";
           case BotLocaleStatus::Building:

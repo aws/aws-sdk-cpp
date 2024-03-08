@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case QuestionType::NOT_SET:
+            return {};
           case QuestionType::PRIORITIZED:
             return "PRIORITIZED";
           case QuestionType::NON_PRIORITIZED:

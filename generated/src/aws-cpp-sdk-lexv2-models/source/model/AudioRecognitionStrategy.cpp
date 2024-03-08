@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AudioRecognitionStrategy::NOT_SET:
+            return {};
           case AudioRecognitionStrategy::UseSlotValuesAsCustomVocabulary:
             return "UseSlotValuesAsCustomVocabulary";
           default:

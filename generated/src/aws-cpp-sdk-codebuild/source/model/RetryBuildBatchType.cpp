@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RetryBuildBatchType::NOT_SET:
+            return {};
           case RetryBuildBatchType::RETRY_ALL_BUILDS:
             return "RETRY_ALL_BUILDS";
           case RetryBuildBatchType::RETRY_FAILED_BUILDS:

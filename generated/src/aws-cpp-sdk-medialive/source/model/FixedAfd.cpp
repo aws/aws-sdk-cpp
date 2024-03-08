@@ -94,6 +94,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FixedAfd::NOT_SET:
+            return {};
           case FixedAfd::AFD_0000:
             return "AFD_0000";
           case FixedAfd::AFD_0010:

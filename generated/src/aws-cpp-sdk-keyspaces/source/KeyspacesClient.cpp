@@ -27,6 +27,7 @@
 #include <aws/keyspaces/model/DeleteTableRequest.h>
 #include <aws/keyspaces/model/GetKeyspaceRequest.h>
 #include <aws/keyspaces/model/GetTableRequest.h>
+#include <aws/keyspaces/model/GetTableAutoScalingSettingsRequest.h>
 #include <aws/keyspaces/model/ListKeyspacesRequest.h>
 #include <aws/keyspaces/model/ListTablesRequest.h>
 #include <aws/keyspaces/model/ListTagsForResourceRequest.h>
@@ -48,8 +49,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* KeyspacesClient::SERVICE_NAME = "cassandra";
-const char* KeyspacesClient::ALLOCATION_TAG = "KeyspacesClient";
+namespace Aws
+{
+  namespace Keyspaces
+  {
+    const char SERVICE_NAME[] = "cassandra";
+    const char ALLOCATION_TAG[] = "KeyspacesClient";
+  }
+}
+const char* KeyspacesClient::GetServiceName() {return SERVICE_NAME;}
+const char* KeyspacesClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 KeyspacesClient::KeyspacesClient(const Keyspaces::KeyspacesClientConfiguration& clientConfiguration,
                                  std::shared_ptr<KeyspacesEndpointProviderBase> endpointProvider) :
@@ -61,7 +70,7 @@ KeyspacesClient::KeyspacesClient(const Keyspaces::KeyspacesClientConfiguration& 
             Aws::MakeShared<KeyspacesErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<KeyspacesEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -77,7 +86,7 @@ KeyspacesClient::KeyspacesClient(const AWSCredentials& credentials,
             Aws::MakeShared<KeyspacesErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<KeyspacesEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -93,7 +102,7 @@ KeyspacesClient::KeyspacesClient(const std::shared_ptr<AWSCredentialsProvider>& 
             Aws::MakeShared<KeyspacesErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<KeyspacesEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -317,6 +326,32 @@ GetTableOutcome KeyspacesClient::GetTable(const GetTableRequest& request) const
           {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetTable, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
       return GetTableOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+GetTableAutoScalingSettingsOutcome KeyspacesClient::GetTableAutoScalingSettings(const GetTableAutoScalingSettingsRequest& request) const
+{
+  AWS_OPERATION_GUARD(GetTableAutoScalingSettings);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetTableAutoScalingSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetTableAutoScalingSettings, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetTableAutoScalingSettings, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetTableAutoScalingSettings",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetTableAutoScalingSettingsOutcome>(
+    [&]()-> GetTableAutoScalingSettingsOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetTableAutoScalingSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      return GetTableAutoScalingSettingsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

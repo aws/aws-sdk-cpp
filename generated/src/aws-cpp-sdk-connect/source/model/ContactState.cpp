@@ -84,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ContactState::NOT_SET:
+            return {};
           case ContactState::INCOMING:
             return "INCOMING";
           case ContactState::PENDING:

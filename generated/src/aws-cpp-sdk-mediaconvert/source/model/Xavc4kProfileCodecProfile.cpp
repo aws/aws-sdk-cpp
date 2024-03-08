@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Xavc4kProfileCodecProfile::NOT_SET:
+            return {};
           case Xavc4kProfileCodecProfile::HIGH:
             return "HIGH";
           case Xavc4kProfileCodecProfile::HIGH_422:

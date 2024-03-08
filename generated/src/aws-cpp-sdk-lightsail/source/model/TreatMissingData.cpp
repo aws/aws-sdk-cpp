@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TreatMissingData::NOT_SET:
+            return {};
           case TreatMissingData::breaching:
             return "breaching";
           case TreatMissingData::notBreaching:

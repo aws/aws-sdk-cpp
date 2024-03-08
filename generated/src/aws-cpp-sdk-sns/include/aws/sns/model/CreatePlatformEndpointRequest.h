@@ -41,50 +41,50 @@ namespace Model
   public:
 
     /**
-     * <p>PlatformApplicationArn returned from CreatePlatformApplication is used to
-     * create a an endpoint.</p>
+     * <p> <code>PlatformApplicationArn</code> returned from CreatePlatformApplication
+     * is used to create a an endpoint.</p>
      */
     inline const Aws::String& GetPlatformApplicationArn() const{ return m_platformApplicationArn; }
 
     /**
-     * <p>PlatformApplicationArn returned from CreatePlatformApplication is used to
-     * create a an endpoint.</p>
+     * <p> <code>PlatformApplicationArn</code> returned from CreatePlatformApplication
+     * is used to create a an endpoint.</p>
      */
     inline bool PlatformApplicationArnHasBeenSet() const { return m_platformApplicationArnHasBeenSet; }
 
     /**
-     * <p>PlatformApplicationArn returned from CreatePlatformApplication is used to
-     * create a an endpoint.</p>
+     * <p> <code>PlatformApplicationArn</code> returned from CreatePlatformApplication
+     * is used to create a an endpoint.</p>
      */
     inline void SetPlatformApplicationArn(const Aws::String& value) { m_platformApplicationArnHasBeenSet = true; m_platformApplicationArn = value; }
 
     /**
-     * <p>PlatformApplicationArn returned from CreatePlatformApplication is used to
-     * create a an endpoint.</p>
+     * <p> <code>PlatformApplicationArn</code> returned from CreatePlatformApplication
+     * is used to create a an endpoint.</p>
      */
     inline void SetPlatformApplicationArn(Aws::String&& value) { m_platformApplicationArnHasBeenSet = true; m_platformApplicationArn = std::move(value); }
 
     /**
-     * <p>PlatformApplicationArn returned from CreatePlatformApplication is used to
-     * create a an endpoint.</p>
+     * <p> <code>PlatformApplicationArn</code> returned from CreatePlatformApplication
+     * is used to create a an endpoint.</p>
      */
     inline void SetPlatformApplicationArn(const char* value) { m_platformApplicationArnHasBeenSet = true; m_platformApplicationArn.assign(value); }
 
     /**
-     * <p>PlatformApplicationArn returned from CreatePlatformApplication is used to
-     * create a an endpoint.</p>
+     * <p> <code>PlatformApplicationArn</code> returned from CreatePlatformApplication
+     * is used to create a an endpoint.</p>
      */
     inline CreatePlatformEndpointRequest& WithPlatformApplicationArn(const Aws::String& value) { SetPlatformApplicationArn(value); return *this;}
 
     /**
-     * <p>PlatformApplicationArn returned from CreatePlatformApplication is used to
-     * create a an endpoint.</p>
+     * <p> <code>PlatformApplicationArn</code> returned from CreatePlatformApplication
+     * is used to create a an endpoint.</p>
      */
     inline CreatePlatformEndpointRequest& WithPlatformApplicationArn(Aws::String&& value) { SetPlatformApplicationArn(std::move(value)); return *this;}
 
     /**
-     * <p>PlatformApplicationArn returned from CreatePlatformApplication is used to
-     * create a an endpoint.</p>
+     * <p> <code>PlatformApplicationArn</code> returned from CreatePlatformApplication
+     * is used to create a an endpoint.</p>
      */
     inline CreatePlatformEndpointRequest& WithPlatformApplicationArn(const char* value) { SetPlatformApplicationArn(value); return *this;}
 
@@ -213,79 +213,92 @@ namespace Model
 
     /**
      * <p>For a list of attributes, see <a
-     * href="https://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html">SetEndpointAttributes</a>.</p>
+     * href="https://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html">
+     * <code>SetEndpointAttributes</code> </a>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const{ return m_attributes; }
 
     /**
      * <p>For a list of attributes, see <a
-     * href="https://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html">SetEndpointAttributes</a>.</p>
+     * href="https://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html">
+     * <code>SetEndpointAttributes</code> </a>.</p>
      */
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
 
     /**
      * <p>For a list of attributes, see <a
-     * href="https://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html">SetEndpointAttributes</a>.</p>
+     * href="https://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html">
+     * <code>SetEndpointAttributes</code> </a>.</p>
      */
     inline void SetAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
     /**
      * <p>For a list of attributes, see <a
-     * href="https://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html">SetEndpointAttributes</a>.</p>
+     * href="https://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html">
+     * <code>SetEndpointAttributes</code> </a>.</p>
      */
     inline void SetAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
 
     /**
      * <p>For a list of attributes, see <a
-     * href="https://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html">SetEndpointAttributes</a>.</p>
+     * href="https://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html">
+     * <code>SetEndpointAttributes</code> </a>.</p>
      */
     inline CreatePlatformEndpointRequest& WithAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetAttributes(value); return *this;}
 
     /**
      * <p>For a list of attributes, see <a
-     * href="https://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html">SetEndpointAttributes</a>.</p>
+     * href="https://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html">
+     * <code>SetEndpointAttributes</code> </a>.</p>
      */
     inline CreatePlatformEndpointRequest& WithAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetAttributes(std::move(value)); return *this;}
 
     /**
      * <p>For a list of attributes, see <a
-     * href="https://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html">SetEndpointAttributes</a>.</p>
+     * href="https://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html">
+     * <code>SetEndpointAttributes</code> </a>.</p>
      */
     inline CreatePlatformEndpointRequest& AddAttributes(const Aws::String& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 
     /**
      * <p>For a list of attributes, see <a
-     * href="https://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html">SetEndpointAttributes</a>.</p>
+     * href="https://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html">
+     * <code>SetEndpointAttributes</code> </a>.</p>
      */
     inline CreatePlatformEndpointRequest& AddAttributes(Aws::String&& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>For a list of attributes, see <a
-     * href="https://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html">SetEndpointAttributes</a>.</p>
+     * href="https://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html">
+     * <code>SetEndpointAttributes</code> </a>.</p>
      */
     inline CreatePlatformEndpointRequest& AddAttributes(const Aws::String& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>For a list of attributes, see <a
-     * href="https://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html">SetEndpointAttributes</a>.</p>
+     * href="https://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html">
+     * <code>SetEndpointAttributes</code> </a>.</p>
      */
     inline CreatePlatformEndpointRequest& AddAttributes(Aws::String&& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>For a list of attributes, see <a
-     * href="https://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html">SetEndpointAttributes</a>.</p>
+     * href="https://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html">
+     * <code>SetEndpointAttributes</code> </a>.</p>
      */
     inline CreatePlatformEndpointRequest& AddAttributes(const char* key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>For a list of attributes, see <a
-     * href="https://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html">SetEndpointAttributes</a>.</p>
+     * href="https://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html">
+     * <code>SetEndpointAttributes</code> </a>.</p>
      */
     inline CreatePlatformEndpointRequest& AddAttributes(Aws::String&& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>For a list of attributes, see <a
-     * href="https://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html">SetEndpointAttributes</a>.</p>
+     * href="https://docs.aws.amazon.com/sns/latest/api/API_SetEndpointAttributes.html">
+     * <code>SetEndpointAttributes</code> </a>.</p>
      */
     inline CreatePlatformEndpointRequest& AddAttributes(const char* key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 

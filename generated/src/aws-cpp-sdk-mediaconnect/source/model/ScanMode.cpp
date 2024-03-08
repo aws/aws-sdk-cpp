@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ScanMode::NOT_SET:
+            return {};
           case ScanMode::progressive:
             return "progressive";
           case ScanMode::interlace:

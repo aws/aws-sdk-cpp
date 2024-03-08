@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FindingsFilterAction::NOT_SET:
+            return {};
           case FindingsFilterAction::ARCHIVE:
             return "ARCHIVE";
           case FindingsFilterAction::NOOP:

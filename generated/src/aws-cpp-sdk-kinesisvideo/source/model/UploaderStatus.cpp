@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UploaderStatus::NOT_SET:
+            return {};
           case UploaderStatus::SUCCESS:
             return "SUCCESS";
           case UploaderStatus::USER_ERROR:

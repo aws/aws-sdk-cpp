@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/model/OnlineStoreConfig.h>
 #include <aws/sagemaker/model/OfflineStoreConfig.h>
+#include <aws/sagemaker/model/ThroughputConfig.h>
 #include <aws/sagemaker/model/FeatureDefinition.h>
 #include <aws/sagemaker/model/Tag.h>
 #include <utility>
@@ -639,6 +640,25 @@ namespace Model
     inline CreateFeatureGroupRequest& WithOfflineStoreConfig(OfflineStoreConfig&& value) { SetOfflineStoreConfig(std::move(value)); return *this;}
 
 
+    
+    inline const ThroughputConfig& GetThroughputConfig() const{ return m_throughputConfig; }
+
+    
+    inline bool ThroughputConfigHasBeenSet() const { return m_throughputConfigHasBeenSet; }
+
+    
+    inline void SetThroughputConfig(const ThroughputConfig& value) { m_throughputConfigHasBeenSet = true; m_throughputConfig = value; }
+
+    
+    inline void SetThroughputConfig(ThroughputConfig&& value) { m_throughputConfigHasBeenSet = true; m_throughputConfig = std::move(value); }
+
+    
+    inline CreateFeatureGroupRequest& WithThroughputConfig(const ThroughputConfig& value) { SetThroughputConfig(value); return *this;}
+
+    
+    inline CreateFeatureGroupRequest& WithThroughputConfig(ThroughputConfig&& value) { SetThroughputConfig(std::move(value)); return *this;}
+
+
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM execution role used to persist data
      * into the <code>OfflineStore</code> if an <code>OfflineStoreConfig</code> is
@@ -804,6 +824,9 @@ namespace Model
 
     OfflineStoreConfig m_offlineStoreConfig;
     bool m_offlineStoreConfigHasBeenSet = false;
+
+    ThroughputConfig m_throughputConfig;
+    bool m_throughputConfigHasBeenSet = false;
 
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet = false;

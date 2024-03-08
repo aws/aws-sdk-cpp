@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OriginRequestPolicyCookieBehavior::NOT_SET:
+            return {};
           case OriginRequestPolicyCookieBehavior::none:
             return "none";
           case OriginRequestPolicyCookieBehavior::whitelist:

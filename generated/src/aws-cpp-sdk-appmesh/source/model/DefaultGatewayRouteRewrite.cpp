@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DefaultGatewayRouteRewrite::NOT_SET:
+            return {};
           case DefaultGatewayRouteRewrite::ENABLED:
             return "ENABLED";
           case DefaultGatewayRouteRewrite::DISABLED:

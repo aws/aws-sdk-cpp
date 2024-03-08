@@ -25,9 +25,9 @@ namespace Model
 
   /**
    * <p>The specified resource could not be found. You can view your available
-   * clusters with <a>ListClusters</a>. You can view your available managed node
-   * groups with <a>ListNodegroups</a>. Amazon EKS clusters and node groups are
-   * Region-specific.</p><p><h3>See Also:</h3>   <a
+   * clusters with <code>ListClusters</code>. You can view your available managed
+   * node groups with <code>ListNodegroups</code>. Amazon EKS clusters and node
+   * groups are Amazon Web Services Region specific.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ResourceNotFoundException">AWS
    * API Reference</a></p>
    */
@@ -163,53 +163,126 @@ namespace Model
     inline ResourceNotFoundException& WithFargateProfileName(const char* value) { SetFargateProfileName(value); return *this;}
 
 
-    
+    /**
+     * <p>The Amazon EKS add-on name associated with the exception.</p>
+     */
     inline const Aws::String& GetAddonName() const{ return m_addonName; }
 
-    
+    /**
+     * <p>The Amazon EKS add-on name associated with the exception.</p>
+     */
     inline bool AddonNameHasBeenSet() const { return m_addonNameHasBeenSet; }
 
-    
+    /**
+     * <p>The Amazon EKS add-on name associated with the exception.</p>
+     */
     inline void SetAddonName(const Aws::String& value) { m_addonNameHasBeenSet = true; m_addonName = value; }
 
-    
+    /**
+     * <p>The Amazon EKS add-on name associated with the exception.</p>
+     */
     inline void SetAddonName(Aws::String&& value) { m_addonNameHasBeenSet = true; m_addonName = std::move(value); }
 
-    
+    /**
+     * <p>The Amazon EKS add-on name associated with the exception.</p>
+     */
     inline void SetAddonName(const char* value) { m_addonNameHasBeenSet = true; m_addonName.assign(value); }
 
-    
+    /**
+     * <p>The Amazon EKS add-on name associated with the exception.</p>
+     */
     inline ResourceNotFoundException& WithAddonName(const Aws::String& value) { SetAddonName(value); return *this;}
 
-    
+    /**
+     * <p>The Amazon EKS add-on name associated with the exception.</p>
+     */
     inline ResourceNotFoundException& WithAddonName(Aws::String&& value) { SetAddonName(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The Amazon EKS add-on name associated with the exception.</p>
+     */
     inline ResourceNotFoundException& WithAddonName(const char* value) { SetAddonName(value); return *this;}
 
 
-    
+    /**
+     * <p>The Amazon EKS subscription ID with the exception.</p>
+     */
+    inline const Aws::String& GetSubscriptionId() const{ return m_subscriptionId; }
+
+    /**
+     * <p>The Amazon EKS subscription ID with the exception.</p>
+     */
+    inline bool SubscriptionIdHasBeenSet() const { return m_subscriptionIdHasBeenSet; }
+
+    /**
+     * <p>The Amazon EKS subscription ID with the exception.</p>
+     */
+    inline void SetSubscriptionId(const Aws::String& value) { m_subscriptionIdHasBeenSet = true; m_subscriptionId = value; }
+
+    /**
+     * <p>The Amazon EKS subscription ID with the exception.</p>
+     */
+    inline void SetSubscriptionId(Aws::String&& value) { m_subscriptionIdHasBeenSet = true; m_subscriptionId = std::move(value); }
+
+    /**
+     * <p>The Amazon EKS subscription ID with the exception.</p>
+     */
+    inline void SetSubscriptionId(const char* value) { m_subscriptionIdHasBeenSet = true; m_subscriptionId.assign(value); }
+
+    /**
+     * <p>The Amazon EKS subscription ID with the exception.</p>
+     */
+    inline ResourceNotFoundException& WithSubscriptionId(const Aws::String& value) { SetSubscriptionId(value); return *this;}
+
+    /**
+     * <p>The Amazon EKS subscription ID with the exception.</p>
+     */
+    inline ResourceNotFoundException& WithSubscriptionId(Aws::String&& value) { SetSubscriptionId(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon EKS subscription ID with the exception.</p>
+     */
+    inline ResourceNotFoundException& WithSubscriptionId(const char* value) { SetSubscriptionId(value); return *this;}
+
+
+    /**
+     * <p>The Amazon EKS message associated with the exception.</p>
+     */
     inline const Aws::String& GetMessage() const{ return m_message; }
 
-    
+    /**
+     * <p>The Amazon EKS message associated with the exception.</p>
+     */
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
 
-    
+    /**
+     * <p>The Amazon EKS message associated with the exception.</p>
+     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
 
-    
+    /**
+     * <p>The Amazon EKS message associated with the exception.</p>
+     */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
 
-    
+    /**
+     * <p>The Amazon EKS message associated with the exception.</p>
+     */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
 
-    
+    /**
+     * <p>The Amazon EKS message associated with the exception.</p>
+     */
     inline ResourceNotFoundException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
 
-    
+    /**
+     * <p>The Amazon EKS message associated with the exception.</p>
+     */
     inline ResourceNotFoundException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The Amazon EKS message associated with the exception.</p>
+     */
     inline ResourceNotFoundException& WithMessage(const char* value) { SetMessage(value); return *this;}
 
   private:
@@ -225,6 +298,9 @@ namespace Model
 
     Aws::String m_addonName;
     bool m_addonNameHasBeenSet = false;
+
+    Aws::String m_subscriptionId;
+    bool m_subscriptionIdHasBeenSet = false;
 
     Aws::String m_message;
     bool m_messageHasBeenSet = false;

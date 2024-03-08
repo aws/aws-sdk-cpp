@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AugmentedManifestsDocumentTypeFormat::NOT_SET:
+            return {};
           case AugmentedManifestsDocumentTypeFormat::PLAIN_TEXT_DOCUMENT:
             return "PLAIN_TEXT_DOCUMENT";
           case AugmentedManifestsDocumentTypeFormat::SEMI_STRUCTURED_DOCUMENT:

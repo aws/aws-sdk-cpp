@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case M2tsSegmentationStyle::NOT_SET:
+            return {};
           case M2tsSegmentationStyle::MAINTAIN_CADENCE:
             return "MAINTAIN_CADENCE";
           case M2tsSegmentationStyle::RESET_CADENCE:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DatasetStatus::NOT_SET:
+            return {};
           case DatasetStatus::CREATING:
             return "CREATING";
           case DatasetStatus::ACTIVE:

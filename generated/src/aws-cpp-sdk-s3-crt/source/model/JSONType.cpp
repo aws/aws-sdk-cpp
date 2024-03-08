@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case JSONType::NOT_SET:
+            return {};
           case JSONType::DOCUMENT:
             return "DOCUMENT";
           case JSONType::LINES:

@@ -13,6 +13,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 ExportKeyRequest::ExportKeyRequest() : 
+    m_exportAttributesHasBeenSet(false),
     m_exportKeyIdentifierHasBeenSet(false),
     m_keyMaterialHasBeenSet(false)
 {
@@ -21,6 +22,12 @@ ExportKeyRequest::ExportKeyRequest() :
 Aws::String ExportKeyRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_exportAttributesHasBeenSet)
+  {
+   payload.WithObject("ExportAttributes", m_exportAttributes.Jsonize());
+
+  }
 
   if(m_exportKeyIdentifierHasBeenSet)
   {

@@ -91,7 +91,13 @@ namespace Model
      * <p>A JSON array of user attribute names, for example <code>given_name</code>,
      * that you want Amazon Cognito to include in the response for each user. When you
      * don't provide an <code>AttributesToGet</code> parameter, Amazon Cognito returns
-     * all attributes for each user.</p>
+     * all attributes for each user.</p> <p>Use <code>AttributesToGet</code> with
+     * required attributes in your user pool, or in conjunction with
+     * <code>Filter</code>. Amazon Cognito returns an error if not all users in the
+     * results have set a value for the attribute you request. Attributes that you
+     * can't filter on, including custom attributes, must have a value set in every
+     * user profile before an <code>AttributesToGet</code> parameter returns
+     * results.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAttributesToGet() const{ return m_attributesToGet; }
 
@@ -99,7 +105,13 @@ namespace Model
      * <p>A JSON array of user attribute names, for example <code>given_name</code>,
      * that you want Amazon Cognito to include in the response for each user. When you
      * don't provide an <code>AttributesToGet</code> parameter, Amazon Cognito returns
-     * all attributes for each user.</p>
+     * all attributes for each user.</p> <p>Use <code>AttributesToGet</code> with
+     * required attributes in your user pool, or in conjunction with
+     * <code>Filter</code>. Amazon Cognito returns an error if not all users in the
+     * results have set a value for the attribute you request. Attributes that you
+     * can't filter on, including custom attributes, must have a value set in every
+     * user profile before an <code>AttributesToGet</code> parameter returns
+     * results.</p>
      */
     inline bool AttributesToGetHasBeenSet() const { return m_attributesToGetHasBeenSet; }
 
@@ -107,7 +119,13 @@ namespace Model
      * <p>A JSON array of user attribute names, for example <code>given_name</code>,
      * that you want Amazon Cognito to include in the response for each user. When you
      * don't provide an <code>AttributesToGet</code> parameter, Amazon Cognito returns
-     * all attributes for each user.</p>
+     * all attributes for each user.</p> <p>Use <code>AttributesToGet</code> with
+     * required attributes in your user pool, or in conjunction with
+     * <code>Filter</code>. Amazon Cognito returns an error if not all users in the
+     * results have set a value for the attribute you request. Attributes that you
+     * can't filter on, including custom attributes, must have a value set in every
+     * user profile before an <code>AttributesToGet</code> parameter returns
+     * results.</p>
      */
     inline void SetAttributesToGet(const Aws::Vector<Aws::String>& value) { m_attributesToGetHasBeenSet = true; m_attributesToGet = value; }
 
@@ -115,7 +133,13 @@ namespace Model
      * <p>A JSON array of user attribute names, for example <code>given_name</code>,
      * that you want Amazon Cognito to include in the response for each user. When you
      * don't provide an <code>AttributesToGet</code> parameter, Amazon Cognito returns
-     * all attributes for each user.</p>
+     * all attributes for each user.</p> <p>Use <code>AttributesToGet</code> with
+     * required attributes in your user pool, or in conjunction with
+     * <code>Filter</code>. Amazon Cognito returns an error if not all users in the
+     * results have set a value for the attribute you request. Attributes that you
+     * can't filter on, including custom attributes, must have a value set in every
+     * user profile before an <code>AttributesToGet</code> parameter returns
+     * results.</p>
      */
     inline void SetAttributesToGet(Aws::Vector<Aws::String>&& value) { m_attributesToGetHasBeenSet = true; m_attributesToGet = std::move(value); }
 
@@ -123,7 +147,13 @@ namespace Model
      * <p>A JSON array of user attribute names, for example <code>given_name</code>,
      * that you want Amazon Cognito to include in the response for each user. When you
      * don't provide an <code>AttributesToGet</code> parameter, Amazon Cognito returns
-     * all attributes for each user.</p>
+     * all attributes for each user.</p> <p>Use <code>AttributesToGet</code> with
+     * required attributes in your user pool, or in conjunction with
+     * <code>Filter</code>. Amazon Cognito returns an error if not all users in the
+     * results have set a value for the attribute you request. Attributes that you
+     * can't filter on, including custom attributes, must have a value set in every
+     * user profile before an <code>AttributesToGet</code> parameter returns
+     * results.</p>
      */
     inline ListUsersRequest& WithAttributesToGet(const Aws::Vector<Aws::String>& value) { SetAttributesToGet(value); return *this;}
 
@@ -131,7 +161,13 @@ namespace Model
      * <p>A JSON array of user attribute names, for example <code>given_name</code>,
      * that you want Amazon Cognito to include in the response for each user. When you
      * don't provide an <code>AttributesToGet</code> parameter, Amazon Cognito returns
-     * all attributes for each user.</p>
+     * all attributes for each user.</p> <p>Use <code>AttributesToGet</code> with
+     * required attributes in your user pool, or in conjunction with
+     * <code>Filter</code>. Amazon Cognito returns an error if not all users in the
+     * results have set a value for the attribute you request. Attributes that you
+     * can't filter on, including custom attributes, must have a value set in every
+     * user profile before an <code>AttributesToGet</code> parameter returns
+     * results.</p>
      */
     inline ListUsersRequest& WithAttributesToGet(Aws::Vector<Aws::String>&& value) { SetAttributesToGet(std::move(value)); return *this;}
 
@@ -139,7 +175,13 @@ namespace Model
      * <p>A JSON array of user attribute names, for example <code>given_name</code>,
      * that you want Amazon Cognito to include in the response for each user. When you
      * don't provide an <code>AttributesToGet</code> parameter, Amazon Cognito returns
-     * all attributes for each user.</p>
+     * all attributes for each user.</p> <p>Use <code>AttributesToGet</code> with
+     * required attributes in your user pool, or in conjunction with
+     * <code>Filter</code>. Amazon Cognito returns an error if not all users in the
+     * results have set a value for the attribute you request. Attributes that you
+     * can't filter on, including custom attributes, must have a value set in every
+     * user profile before an <code>AttributesToGet</code> parameter returns
+     * results.</p>
      */
     inline ListUsersRequest& AddAttributesToGet(const Aws::String& value) { m_attributesToGetHasBeenSet = true; m_attributesToGet.push_back(value); return *this; }
 
@@ -147,7 +189,13 @@ namespace Model
      * <p>A JSON array of user attribute names, for example <code>given_name</code>,
      * that you want Amazon Cognito to include in the response for each user. When you
      * don't provide an <code>AttributesToGet</code> parameter, Amazon Cognito returns
-     * all attributes for each user.</p>
+     * all attributes for each user.</p> <p>Use <code>AttributesToGet</code> with
+     * required attributes in your user pool, or in conjunction with
+     * <code>Filter</code>. Amazon Cognito returns an error if not all users in the
+     * results have set a value for the attribute you request. Attributes that you
+     * can't filter on, including custom attributes, must have a value set in every
+     * user profile before an <code>AttributesToGet</code> parameter returns
+     * results.</p>
      */
     inline ListUsersRequest& AddAttributesToGet(Aws::String&& value) { m_attributesToGetHasBeenSet = true; m_attributesToGet.push_back(std::move(value)); return *this; }
 
@@ -155,7 +203,13 @@ namespace Model
      * <p>A JSON array of user attribute names, for example <code>given_name</code>,
      * that you want Amazon Cognito to include in the response for each user. When you
      * don't provide an <code>AttributesToGet</code> parameter, Amazon Cognito returns
-     * all attributes for each user.</p>
+     * all attributes for each user.</p> <p>Use <code>AttributesToGet</code> with
+     * required attributes in your user pool, or in conjunction with
+     * <code>Filter</code>. Amazon Cognito returns an error if not all users in the
+     * results have set a value for the attribute you request. Attributes that you
+     * can't filter on, including custom attributes, must have a value set in every
+     * user profile before an <code>AttributesToGet</code> parameter returns
+     * results.</p>
      */
     inline ListUsersRequest& AddAttributesToGet(const char* value) { m_attributesToGetHasBeenSet = true; m_attributesToGet.push_back(value); return *this; }
 
@@ -182,50 +236,82 @@ namespace Model
 
 
     /**
-     * <p>An identifier that was returned from the previous call to this operation,
-     * which can be used to return the next set of items in the list.</p>
+     * <p>This API operation returns a limited number of results. The pagination token
+     * is an identifier that you can present in an additional API request with the same
+     * parameters. When you include the pagination token, Amazon Cognito returns the
+     * next set of items after the current list. Subsequent requests return a new
+     * pagination token. By use of this token, you can paginate through the full list
+     * of items.</p>
      */
     inline const Aws::String& GetPaginationToken() const{ return m_paginationToken; }
 
     /**
-     * <p>An identifier that was returned from the previous call to this operation,
-     * which can be used to return the next set of items in the list.</p>
+     * <p>This API operation returns a limited number of results. The pagination token
+     * is an identifier that you can present in an additional API request with the same
+     * parameters. When you include the pagination token, Amazon Cognito returns the
+     * next set of items after the current list. Subsequent requests return a new
+     * pagination token. By use of this token, you can paginate through the full list
+     * of items.</p>
      */
     inline bool PaginationTokenHasBeenSet() const { return m_paginationTokenHasBeenSet; }
 
     /**
-     * <p>An identifier that was returned from the previous call to this operation,
-     * which can be used to return the next set of items in the list.</p>
+     * <p>This API operation returns a limited number of results. The pagination token
+     * is an identifier that you can present in an additional API request with the same
+     * parameters. When you include the pagination token, Amazon Cognito returns the
+     * next set of items after the current list. Subsequent requests return a new
+     * pagination token. By use of this token, you can paginate through the full list
+     * of items.</p>
      */
     inline void SetPaginationToken(const Aws::String& value) { m_paginationTokenHasBeenSet = true; m_paginationToken = value; }
 
     /**
-     * <p>An identifier that was returned from the previous call to this operation,
-     * which can be used to return the next set of items in the list.</p>
+     * <p>This API operation returns a limited number of results. The pagination token
+     * is an identifier that you can present in an additional API request with the same
+     * parameters. When you include the pagination token, Amazon Cognito returns the
+     * next set of items after the current list. Subsequent requests return a new
+     * pagination token. By use of this token, you can paginate through the full list
+     * of items.</p>
      */
     inline void SetPaginationToken(Aws::String&& value) { m_paginationTokenHasBeenSet = true; m_paginationToken = std::move(value); }
 
     /**
-     * <p>An identifier that was returned from the previous call to this operation,
-     * which can be used to return the next set of items in the list.</p>
+     * <p>This API operation returns a limited number of results. The pagination token
+     * is an identifier that you can present in an additional API request with the same
+     * parameters. When you include the pagination token, Amazon Cognito returns the
+     * next set of items after the current list. Subsequent requests return a new
+     * pagination token. By use of this token, you can paginate through the full list
+     * of items.</p>
      */
     inline void SetPaginationToken(const char* value) { m_paginationTokenHasBeenSet = true; m_paginationToken.assign(value); }
 
     /**
-     * <p>An identifier that was returned from the previous call to this operation,
-     * which can be used to return the next set of items in the list.</p>
+     * <p>This API operation returns a limited number of results. The pagination token
+     * is an identifier that you can present in an additional API request with the same
+     * parameters. When you include the pagination token, Amazon Cognito returns the
+     * next set of items after the current list. Subsequent requests return a new
+     * pagination token. By use of this token, you can paginate through the full list
+     * of items.</p>
      */
     inline ListUsersRequest& WithPaginationToken(const Aws::String& value) { SetPaginationToken(value); return *this;}
 
     /**
-     * <p>An identifier that was returned from the previous call to this operation,
-     * which can be used to return the next set of items in the list.</p>
+     * <p>This API operation returns a limited number of results. The pagination token
+     * is an identifier that you can present in an additional API request with the same
+     * parameters. When you include the pagination token, Amazon Cognito returns the
+     * next set of items after the current list. Subsequent requests return a new
+     * pagination token. By use of this token, you can paginate through the full list
+     * of items.</p>
      */
     inline ListUsersRequest& WithPaginationToken(Aws::String&& value) { SetPaginationToken(std::move(value)); return *this;}
 
     /**
-     * <p>An identifier that was returned from the previous call to this operation,
-     * which can be used to return the next set of items in the list.</p>
+     * <p>This API operation returns a limited number of results. The pagination token
+     * is an identifier that you can present in an additional API request with the same
+     * parameters. When you include the pagination token, Amazon Cognito returns the
+     * next set of items after the current list. Subsequent requests return a new
+     * pagination token. By use of this token, you can paginate through the full list
+     * of items.</p>
      */
     inline ListUsersRequest& WithPaginationToken(const char* value) { SetPaginationToken(value); return *this;}
 
@@ -233,16 +319,16 @@ namespace Model
     /**
      * <p>A filter string of the form "<i>AttributeName</i> <i>Filter-Type</i>
      * "<i>AttributeValue</i>"". Quotation marks within the filter string must be
-     * escaped using the backslash (\) character. For example,
-     * "<code>family_name</code> = \"Reddy\"".</p> <ul> <li> <p> <i>AttributeName</i>:
+     * escaped using the backslash (<code>\</code>) character. For example,
+     * <code>"family_name = \"Reddy\""</code>.</p> <ul> <li> <p> <i>AttributeName</i>:
      * The name of the attribute to search for. You can only search for one attribute
-     * at a time.</p> </li> <li> <p> <i>Filter-Type</i>: For an exact match, use =, for
-     * example, "<code>given_name</code> = \"Jon\"". For a prefix ("starts with")
-     * match, use ^=, for example, "<code>given_name</code> ^= \"Jon\"". </p> </li>
-     * <li> <p> <i>AttributeValue</i>: The attribute value that must be matched for
-     * each user.</p> </li> </ul> <p>If the filter string is empty,
-     * <code>ListUsers</code> returns all users in the user pool.</p> <p>You can only
-     * search for the following standard attributes:</p> <ul> <li> <p>
+     * at a time.</p> </li> <li> <p> <i>Filter-Type</i>: For an exact match, use
+     * <code>=</code>, for example, "<code>given_name = \"Jon\"</code>". For a prefix
+     * ("starts with") match, use <code>^=</code>, for example, "<code>given_name ^=
+     * \"Jon\"</code>". </p> </li> <li> <p> <i>AttributeValue</i>: The attribute value
+     * that must be matched for each user.</p> </li> </ul> <p>If the filter string is
+     * empty, <code>ListUsers</code> returns all users in the user pool.</p> <p>You can
+     * only search for the following standard attributes:</p> <ul> <li> <p>
      * <code>username</code> (case-sensitive)</p> </li> <li> <p> <code>email</code>
      * </p> </li> <li> <p> <code>phone_number</code> </p> </li> <li> <p>
      * <code>name</code> </p> </li> <li> <p> <code>given_name</code> </p> </li> <li>
@@ -274,16 +360,16 @@ namespace Model
     /**
      * <p>A filter string of the form "<i>AttributeName</i> <i>Filter-Type</i>
      * "<i>AttributeValue</i>"". Quotation marks within the filter string must be
-     * escaped using the backslash (\) character. For example,
-     * "<code>family_name</code> = \"Reddy\"".</p> <ul> <li> <p> <i>AttributeName</i>:
+     * escaped using the backslash (<code>\</code>) character. For example,
+     * <code>"family_name = \"Reddy\""</code>.</p> <ul> <li> <p> <i>AttributeName</i>:
      * The name of the attribute to search for. You can only search for one attribute
-     * at a time.</p> </li> <li> <p> <i>Filter-Type</i>: For an exact match, use =, for
-     * example, "<code>given_name</code> = \"Jon\"". For a prefix ("starts with")
-     * match, use ^=, for example, "<code>given_name</code> ^= \"Jon\"". </p> </li>
-     * <li> <p> <i>AttributeValue</i>: The attribute value that must be matched for
-     * each user.</p> </li> </ul> <p>If the filter string is empty,
-     * <code>ListUsers</code> returns all users in the user pool.</p> <p>You can only
-     * search for the following standard attributes:</p> <ul> <li> <p>
+     * at a time.</p> </li> <li> <p> <i>Filter-Type</i>: For an exact match, use
+     * <code>=</code>, for example, "<code>given_name = \"Jon\"</code>". For a prefix
+     * ("starts with") match, use <code>^=</code>, for example, "<code>given_name ^=
+     * \"Jon\"</code>". </p> </li> <li> <p> <i>AttributeValue</i>: The attribute value
+     * that must be matched for each user.</p> </li> </ul> <p>If the filter string is
+     * empty, <code>ListUsers</code> returns all users in the user pool.</p> <p>You can
+     * only search for the following standard attributes:</p> <ul> <li> <p>
      * <code>username</code> (case-sensitive)</p> </li> <li> <p> <code>email</code>
      * </p> </li> <li> <p> <code>phone_number</code> </p> </li> <li> <p>
      * <code>name</code> </p> </li> <li> <p> <code>given_name</code> </p> </li> <li>
@@ -315,16 +401,16 @@ namespace Model
     /**
      * <p>A filter string of the form "<i>AttributeName</i> <i>Filter-Type</i>
      * "<i>AttributeValue</i>"". Quotation marks within the filter string must be
-     * escaped using the backslash (\) character. For example,
-     * "<code>family_name</code> = \"Reddy\"".</p> <ul> <li> <p> <i>AttributeName</i>:
+     * escaped using the backslash (<code>\</code>) character. For example,
+     * <code>"family_name = \"Reddy\""</code>.</p> <ul> <li> <p> <i>AttributeName</i>:
      * The name of the attribute to search for. You can only search for one attribute
-     * at a time.</p> </li> <li> <p> <i>Filter-Type</i>: For an exact match, use =, for
-     * example, "<code>given_name</code> = \"Jon\"". For a prefix ("starts with")
-     * match, use ^=, for example, "<code>given_name</code> ^= \"Jon\"". </p> </li>
-     * <li> <p> <i>AttributeValue</i>: The attribute value that must be matched for
-     * each user.</p> </li> </ul> <p>If the filter string is empty,
-     * <code>ListUsers</code> returns all users in the user pool.</p> <p>You can only
-     * search for the following standard attributes:</p> <ul> <li> <p>
+     * at a time.</p> </li> <li> <p> <i>Filter-Type</i>: For an exact match, use
+     * <code>=</code>, for example, "<code>given_name = \"Jon\"</code>". For a prefix
+     * ("starts with") match, use <code>^=</code>, for example, "<code>given_name ^=
+     * \"Jon\"</code>". </p> </li> <li> <p> <i>AttributeValue</i>: The attribute value
+     * that must be matched for each user.</p> </li> </ul> <p>If the filter string is
+     * empty, <code>ListUsers</code> returns all users in the user pool.</p> <p>You can
+     * only search for the following standard attributes:</p> <ul> <li> <p>
      * <code>username</code> (case-sensitive)</p> </li> <li> <p> <code>email</code>
      * </p> </li> <li> <p> <code>phone_number</code> </p> </li> <li> <p>
      * <code>name</code> </p> </li> <li> <p> <code>given_name</code> </p> </li> <li>
@@ -356,16 +442,16 @@ namespace Model
     /**
      * <p>A filter string of the form "<i>AttributeName</i> <i>Filter-Type</i>
      * "<i>AttributeValue</i>"". Quotation marks within the filter string must be
-     * escaped using the backslash (\) character. For example,
-     * "<code>family_name</code> = \"Reddy\"".</p> <ul> <li> <p> <i>AttributeName</i>:
+     * escaped using the backslash (<code>\</code>) character. For example,
+     * <code>"family_name = \"Reddy\""</code>.</p> <ul> <li> <p> <i>AttributeName</i>:
      * The name of the attribute to search for. You can only search for one attribute
-     * at a time.</p> </li> <li> <p> <i>Filter-Type</i>: For an exact match, use =, for
-     * example, "<code>given_name</code> = \"Jon\"". For a prefix ("starts with")
-     * match, use ^=, for example, "<code>given_name</code> ^= \"Jon\"". </p> </li>
-     * <li> <p> <i>AttributeValue</i>: The attribute value that must be matched for
-     * each user.</p> </li> </ul> <p>If the filter string is empty,
-     * <code>ListUsers</code> returns all users in the user pool.</p> <p>You can only
-     * search for the following standard attributes:</p> <ul> <li> <p>
+     * at a time.</p> </li> <li> <p> <i>Filter-Type</i>: For an exact match, use
+     * <code>=</code>, for example, "<code>given_name = \"Jon\"</code>". For a prefix
+     * ("starts with") match, use <code>^=</code>, for example, "<code>given_name ^=
+     * \"Jon\"</code>". </p> </li> <li> <p> <i>AttributeValue</i>: The attribute value
+     * that must be matched for each user.</p> </li> </ul> <p>If the filter string is
+     * empty, <code>ListUsers</code> returns all users in the user pool.</p> <p>You can
+     * only search for the following standard attributes:</p> <ul> <li> <p>
      * <code>username</code> (case-sensitive)</p> </li> <li> <p> <code>email</code>
      * </p> </li> <li> <p> <code>phone_number</code> </p> </li> <li> <p>
      * <code>name</code> </p> </li> <li> <p> <code>given_name</code> </p> </li> <li>
@@ -397,16 +483,16 @@ namespace Model
     /**
      * <p>A filter string of the form "<i>AttributeName</i> <i>Filter-Type</i>
      * "<i>AttributeValue</i>"". Quotation marks within the filter string must be
-     * escaped using the backslash (\) character. For example,
-     * "<code>family_name</code> = \"Reddy\"".</p> <ul> <li> <p> <i>AttributeName</i>:
+     * escaped using the backslash (<code>\</code>) character. For example,
+     * <code>"family_name = \"Reddy\""</code>.</p> <ul> <li> <p> <i>AttributeName</i>:
      * The name of the attribute to search for. You can only search for one attribute
-     * at a time.</p> </li> <li> <p> <i>Filter-Type</i>: For an exact match, use =, for
-     * example, "<code>given_name</code> = \"Jon\"". For a prefix ("starts with")
-     * match, use ^=, for example, "<code>given_name</code> ^= \"Jon\"". </p> </li>
-     * <li> <p> <i>AttributeValue</i>: The attribute value that must be matched for
-     * each user.</p> </li> </ul> <p>If the filter string is empty,
-     * <code>ListUsers</code> returns all users in the user pool.</p> <p>You can only
-     * search for the following standard attributes:</p> <ul> <li> <p>
+     * at a time.</p> </li> <li> <p> <i>Filter-Type</i>: For an exact match, use
+     * <code>=</code>, for example, "<code>given_name = \"Jon\"</code>". For a prefix
+     * ("starts with") match, use <code>^=</code>, for example, "<code>given_name ^=
+     * \"Jon\"</code>". </p> </li> <li> <p> <i>AttributeValue</i>: The attribute value
+     * that must be matched for each user.</p> </li> </ul> <p>If the filter string is
+     * empty, <code>ListUsers</code> returns all users in the user pool.</p> <p>You can
+     * only search for the following standard attributes:</p> <ul> <li> <p>
      * <code>username</code> (case-sensitive)</p> </li> <li> <p> <code>email</code>
      * </p> </li> <li> <p> <code>phone_number</code> </p> </li> <li> <p>
      * <code>name</code> </p> </li> <li> <p> <code>given_name</code> </p> </li> <li>
@@ -438,16 +524,16 @@ namespace Model
     /**
      * <p>A filter string of the form "<i>AttributeName</i> <i>Filter-Type</i>
      * "<i>AttributeValue</i>"". Quotation marks within the filter string must be
-     * escaped using the backslash (\) character. For example,
-     * "<code>family_name</code> = \"Reddy\"".</p> <ul> <li> <p> <i>AttributeName</i>:
+     * escaped using the backslash (<code>\</code>) character. For example,
+     * <code>"family_name = \"Reddy\""</code>.</p> <ul> <li> <p> <i>AttributeName</i>:
      * The name of the attribute to search for. You can only search for one attribute
-     * at a time.</p> </li> <li> <p> <i>Filter-Type</i>: For an exact match, use =, for
-     * example, "<code>given_name</code> = \"Jon\"". For a prefix ("starts with")
-     * match, use ^=, for example, "<code>given_name</code> ^= \"Jon\"". </p> </li>
-     * <li> <p> <i>AttributeValue</i>: The attribute value that must be matched for
-     * each user.</p> </li> </ul> <p>If the filter string is empty,
-     * <code>ListUsers</code> returns all users in the user pool.</p> <p>You can only
-     * search for the following standard attributes:</p> <ul> <li> <p>
+     * at a time.</p> </li> <li> <p> <i>Filter-Type</i>: For an exact match, use
+     * <code>=</code>, for example, "<code>given_name = \"Jon\"</code>". For a prefix
+     * ("starts with") match, use <code>^=</code>, for example, "<code>given_name ^=
+     * \"Jon\"</code>". </p> </li> <li> <p> <i>AttributeValue</i>: The attribute value
+     * that must be matched for each user.</p> </li> </ul> <p>If the filter string is
+     * empty, <code>ListUsers</code> returns all users in the user pool.</p> <p>You can
+     * only search for the following standard attributes:</p> <ul> <li> <p>
      * <code>username</code> (case-sensitive)</p> </li> <li> <p> <code>email</code>
      * </p> </li> <li> <p> <code>phone_number</code> </p> </li> <li> <p>
      * <code>name</code> </p> </li> <li> <p> <code>given_name</code> </p> </li> <li>
@@ -479,16 +565,16 @@ namespace Model
     /**
      * <p>A filter string of the form "<i>AttributeName</i> <i>Filter-Type</i>
      * "<i>AttributeValue</i>"". Quotation marks within the filter string must be
-     * escaped using the backslash (\) character. For example,
-     * "<code>family_name</code> = \"Reddy\"".</p> <ul> <li> <p> <i>AttributeName</i>:
+     * escaped using the backslash (<code>\</code>) character. For example,
+     * <code>"family_name = \"Reddy\""</code>.</p> <ul> <li> <p> <i>AttributeName</i>:
      * The name of the attribute to search for. You can only search for one attribute
-     * at a time.</p> </li> <li> <p> <i>Filter-Type</i>: For an exact match, use =, for
-     * example, "<code>given_name</code> = \"Jon\"". For a prefix ("starts with")
-     * match, use ^=, for example, "<code>given_name</code> ^= \"Jon\"". </p> </li>
-     * <li> <p> <i>AttributeValue</i>: The attribute value that must be matched for
-     * each user.</p> </li> </ul> <p>If the filter string is empty,
-     * <code>ListUsers</code> returns all users in the user pool.</p> <p>You can only
-     * search for the following standard attributes:</p> <ul> <li> <p>
+     * at a time.</p> </li> <li> <p> <i>Filter-Type</i>: For an exact match, use
+     * <code>=</code>, for example, "<code>given_name = \"Jon\"</code>". For a prefix
+     * ("starts with") match, use <code>^=</code>, for example, "<code>given_name ^=
+     * \"Jon\"</code>". </p> </li> <li> <p> <i>AttributeValue</i>: The attribute value
+     * that must be matched for each user.</p> </li> </ul> <p>If the filter string is
+     * empty, <code>ListUsers</code> returns all users in the user pool.</p> <p>You can
+     * only search for the following standard attributes:</p> <ul> <li> <p>
      * <code>username</code> (case-sensitive)</p> </li> <li> <p> <code>email</code>
      * </p> </li> <li> <p> <code>phone_number</code> </p> </li> <li> <p>
      * <code>name</code> </p> </li> <li> <p> <code>given_name</code> </p> </li> <li>
@@ -520,16 +606,16 @@ namespace Model
     /**
      * <p>A filter string of the form "<i>AttributeName</i> <i>Filter-Type</i>
      * "<i>AttributeValue</i>"". Quotation marks within the filter string must be
-     * escaped using the backslash (\) character. For example,
-     * "<code>family_name</code> = \"Reddy\"".</p> <ul> <li> <p> <i>AttributeName</i>:
+     * escaped using the backslash (<code>\</code>) character. For example,
+     * <code>"family_name = \"Reddy\""</code>.</p> <ul> <li> <p> <i>AttributeName</i>:
      * The name of the attribute to search for. You can only search for one attribute
-     * at a time.</p> </li> <li> <p> <i>Filter-Type</i>: For an exact match, use =, for
-     * example, "<code>given_name</code> = \"Jon\"". For a prefix ("starts with")
-     * match, use ^=, for example, "<code>given_name</code> ^= \"Jon\"". </p> </li>
-     * <li> <p> <i>AttributeValue</i>: The attribute value that must be matched for
-     * each user.</p> </li> </ul> <p>If the filter string is empty,
-     * <code>ListUsers</code> returns all users in the user pool.</p> <p>You can only
-     * search for the following standard attributes:</p> <ul> <li> <p>
+     * at a time.</p> </li> <li> <p> <i>Filter-Type</i>: For an exact match, use
+     * <code>=</code>, for example, "<code>given_name = \"Jon\"</code>". For a prefix
+     * ("starts with") match, use <code>^=</code>, for example, "<code>given_name ^=
+     * \"Jon\"</code>". </p> </li> <li> <p> <i>AttributeValue</i>: The attribute value
+     * that must be matched for each user.</p> </li> </ul> <p>If the filter string is
+     * empty, <code>ListUsers</code> returns all users in the user pool.</p> <p>You can
+     * only search for the following standard attributes:</p> <ul> <li> <p>
      * <code>username</code> (case-sensitive)</p> </li> <li> <p> <code>email</code>
      * </p> </li> <li> <p> <code>phone_number</code> </p> </li> <li> <p>
      * <code>name</code> </p> </li> <li> <p> <code>given_name</code> </p> </li> <li>

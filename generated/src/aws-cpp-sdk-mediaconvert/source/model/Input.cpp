@@ -51,6 +51,7 @@ Input::Input() :
     m_timecodeSourceHasBeenSet(false),
     m_timecodeStartHasBeenSet(false),
     m_videoGeneratorHasBeenSet(false),
+    m_videoOverlaysHasBeenSet(false),
     m_videoSelectorHasBeenSet(false)
 {
 }
@@ -88,6 +89,7 @@ Input::Input(JsonView jsonValue) :
     m_timecodeSourceHasBeenSet(false),
     m_timecodeStartHasBeenSet(false),
     m_videoGeneratorHasBeenSet(false),
+    m_videoOverlaysHasBeenSet(false),
     m_videoSelectorHasBeenSet(false)
 {
   *this = jsonValue;
@@ -271,6 +273,16 @@ Input& Input::operator =(JsonView jsonValue)
     m_videoGeneratorHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("videoOverlays"))
+  {
+    Aws::Utils::Array<JsonView> videoOverlaysJsonList = jsonValue.GetArray("videoOverlays");
+    for(unsigned videoOverlaysIndex = 0; videoOverlaysIndex < videoOverlaysJsonList.GetLength(); ++videoOverlaysIndex)
+    {
+      m_videoOverlays.push_back(videoOverlaysJsonList[videoOverlaysIndex].AsObject());
+    }
+    m_videoOverlaysHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("videoSelector"))
   {
     m_videoSelector = jsonValue.GetObject("videoSelector");
@@ -438,6 +450,17 @@ JsonValue Input::Jsonize() const
   if(m_videoGeneratorHasBeenSet)
   {
    payload.WithObject("videoGenerator", m_videoGenerator.Jsonize());
+
+  }
+
+  if(m_videoOverlaysHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> videoOverlaysJsonList(m_videoOverlays.size());
+   for(unsigned videoOverlaysIndex = 0; videoOverlaysIndex < videoOverlaysJsonList.GetLength(); ++videoOverlaysIndex)
+   {
+     videoOverlaysJsonList[videoOverlaysIndex].AsObject(m_videoOverlays[videoOverlaysIndex].Jsonize());
+   }
+   payload.WithArray("videoOverlays", std::move(videoOverlaysJsonList));
 
   }
 

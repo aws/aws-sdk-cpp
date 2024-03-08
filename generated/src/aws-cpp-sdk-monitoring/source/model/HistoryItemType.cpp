@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HistoryItemType::NOT_SET:
+            return {};
           case HistoryItemType::ConfigurationUpdate:
             return "ConfigurationUpdate";
           case HistoryItemType::StateUpdate:

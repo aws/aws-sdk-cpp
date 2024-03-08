@@ -31,7 +31,8 @@ EncoderSettings::EncoderSettings() :
     m_outputGroupsHasBeenSet(false),
     m_timecodeConfigHasBeenSet(false),
     m_videoDescriptionsHasBeenSet(false),
-    m_thumbnailConfigurationHasBeenSet(false)
+    m_thumbnailConfigurationHasBeenSet(false),
+    m_colorCorrectionSettingsHasBeenSet(false)
 {
 }
 
@@ -48,7 +49,8 @@ EncoderSettings::EncoderSettings(JsonView jsonValue) :
     m_outputGroupsHasBeenSet(false),
     m_timecodeConfigHasBeenSet(false),
     m_videoDescriptionsHasBeenSet(false),
-    m_thumbnailConfigurationHasBeenSet(false)
+    m_thumbnailConfigurationHasBeenSet(false),
+    m_colorCorrectionSettingsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -158,6 +160,13 @@ EncoderSettings& EncoderSettings::operator =(JsonView jsonValue)
     m_thumbnailConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("colorCorrectionSettings"))
+  {
+    m_colorCorrectionSettings = jsonValue.GetObject("colorCorrectionSettings");
+
+    m_colorCorrectionSettingsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -260,6 +269,12 @@ JsonValue EncoderSettings::Jsonize() const
   if(m_thumbnailConfigurationHasBeenSet)
   {
    payload.WithObject("thumbnailConfiguration", m_thumbnailConfiguration.Jsonize());
+
+  }
+
+  if(m_colorCorrectionSettingsHasBeenSet)
+  {
+   payload.WithObject("colorCorrectionSettings", m_colorCorrectionSettings.Jsonize());
 
   }
 

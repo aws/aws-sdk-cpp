@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SmoothGroupSegmentationMode::NOT_SET:
+            return {};
           case SmoothGroupSegmentationMode::USE_INPUT_SEGMENTATION:
             return "USE_INPUT_SEGMENTATION";
           case SmoothGroupSegmentationMode::USE_SEGMENT_DURATION:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ContainerType::NOT_SET:
+            return {};
           case ContainerType::TS:
             return "TS";
           case ContainerType::CMAF:

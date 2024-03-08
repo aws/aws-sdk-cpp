@@ -39,42 +39,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the cluster to delete the add-on from.</p>
+     * <p>The name of your cluster.</p>
      */
     inline const Aws::String& GetClusterName() const{ return m_clusterName; }
 
     /**
-     * <p>The name of the cluster to delete the add-on from.</p>
+     * <p>The name of your cluster.</p>
      */
     inline bool ClusterNameHasBeenSet() const { return m_clusterNameHasBeenSet; }
 
     /**
-     * <p>The name of the cluster to delete the add-on from.</p>
+     * <p>The name of your cluster.</p>
      */
     inline void SetClusterName(const Aws::String& value) { m_clusterNameHasBeenSet = true; m_clusterName = value; }
 
     /**
-     * <p>The name of the cluster to delete the add-on from.</p>
+     * <p>The name of your cluster.</p>
      */
     inline void SetClusterName(Aws::String&& value) { m_clusterNameHasBeenSet = true; m_clusterName = std::move(value); }
 
     /**
-     * <p>The name of the cluster to delete the add-on from.</p>
+     * <p>The name of your cluster.</p>
      */
     inline void SetClusterName(const char* value) { m_clusterNameHasBeenSet = true; m_clusterName.assign(value); }
 
     /**
-     * <p>The name of the cluster to delete the add-on from.</p>
+     * <p>The name of your cluster.</p>
      */
     inline DeleteAddonRequest& WithClusterName(const Aws::String& value) { SetClusterName(value); return *this;}
 
     /**
-     * <p>The name of the cluster to delete the add-on from.</p>
+     * <p>The name of your cluster.</p>
      */
     inline DeleteAddonRequest& WithClusterName(Aws::String&& value) { SetClusterName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the cluster to delete the add-on from.</p>
+     * <p>The name of your cluster.</p>
      */
     inline DeleteAddonRequest& WithClusterName(const char* value) { SetClusterName(value); return *this;}
 

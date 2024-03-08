@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case JobDefinitionType::NOT_SET:
+            return {};
           case JobDefinitionType::container:
             return "container";
           case JobDefinitionType::multinode:

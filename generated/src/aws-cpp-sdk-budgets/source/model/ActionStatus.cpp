@@ -89,6 +89,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ActionStatus::NOT_SET:
+            return {};
           case ActionStatus::STANDBY:
             return "STANDBY";
           case ActionStatus::PENDING:

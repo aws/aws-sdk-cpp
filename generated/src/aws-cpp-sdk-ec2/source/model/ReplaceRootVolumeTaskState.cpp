@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReplaceRootVolumeTaskState::NOT_SET:
+            return {};
           case ReplaceRootVolumeTaskState::pending:
             return "pending";
           case ReplaceRootVolumeTaskState::in_progress:

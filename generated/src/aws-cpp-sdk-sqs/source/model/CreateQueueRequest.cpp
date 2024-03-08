@@ -4,10 +4,12 @@
  */
 
 #include <aws/sqs/model/CreateQueueRequest.h>
-#include <aws/core/utils/StringUtils.h>
-#include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+
+#include <utility>
 
 using namespace Aws::SQS::Model;
+using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateQueueRequest::CreateQueueRequest() : 
@@ -19,45 +21,47 @@ CreateQueueRequest::CreateQueueRequest() :
 
 Aws::String CreateQueueRequest::SerializePayload() const
 {
-  Aws::StringStream ss;
-  ss << "Action=CreateQueue&";
+  JsonValue payload;
+
   if(m_queueNameHasBeenSet)
   {
-    ss << "QueueName=" << StringUtils::URLEncode(m_queueName.c_str()) << "&";
+   payload.WithString("QueueName", m_queueName);
+
   }
 
   if(m_attributesHasBeenSet)
   {
-    unsigned attributesCount = 1;
-    for(auto& item : m_attributes)
-    {
-      ss << "Attribute." << attributesCount << ".Name="
-          << StringUtils::URLEncode(QueueAttributeNameMapper::GetNameForQueueAttributeName(item.first).c_str()) << "&";
-      ss << "Attribute." << attributesCount << ".Value="
-          << StringUtils::URLEncode(item.second.c_str()) << "&";
-      attributesCount++;
-    }
+   JsonValue attributesJsonMap;
+   for(auto& attributesItem : m_attributes)
+   {
+     attributesJsonMap.WithString(QueueAttributeNameMapper::GetNameForQueueAttributeName(attributesItem.first), attributesItem.second);
+   }
+   payload.WithObject("Attributes", std::move(attributesJsonMap));
+
   }
 
   if(m_tagsHasBeenSet)
   {
-    unsigned tagsCount = 1;
-    for(auto& item : m_tags)
-    {
-      ss << "Tag." << tagsCount << ".Key="
-          << StringUtils::URLEncode(item.first.c_str()) << "&";
-      ss << "Tag." << tagsCount << ".Value="
-          << StringUtils::URLEncode(item.second.c_str()) << "&";
-      tagsCount++;
-    }
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
+
   }
 
-  ss << "Version=2012-11-05";
-  return ss.str();
+  return payload.View().WriteReadable();
 }
 
-
-void  CreateQueueRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+Aws::Http::HeaderValueCollection CreateQueueRequest::GetRequestSpecificHeaders() const
 {
-  uri.SetQueryString(SerializePayload());
+  Aws::Http::HeaderValueCollection headers;
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AmazonSQS.CreateQueue"));
+  return headers;
+
 }
+
+
+
+

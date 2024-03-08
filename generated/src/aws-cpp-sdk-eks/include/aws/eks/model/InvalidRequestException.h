@@ -120,53 +120,134 @@ namespace Model
     inline InvalidRequestException& WithNodegroupName(const char* value) { SetNodegroupName(value); return *this;}
 
 
-    
+    /**
+     * <p>The request is invalid given the state of the add-on name. Check the state of
+     * the cluster and the associated operations.</p>
+     */
     inline const Aws::String& GetAddonName() const{ return m_addonName; }
 
-    
+    /**
+     * <p>The request is invalid given the state of the add-on name. Check the state of
+     * the cluster and the associated operations.</p>
+     */
     inline bool AddonNameHasBeenSet() const { return m_addonNameHasBeenSet; }
 
-    
+    /**
+     * <p>The request is invalid given the state of the add-on name. Check the state of
+     * the cluster and the associated operations.</p>
+     */
     inline void SetAddonName(const Aws::String& value) { m_addonNameHasBeenSet = true; m_addonName = value; }
 
-    
+    /**
+     * <p>The request is invalid given the state of the add-on name. Check the state of
+     * the cluster and the associated operations.</p>
+     */
     inline void SetAddonName(Aws::String&& value) { m_addonNameHasBeenSet = true; m_addonName = std::move(value); }
 
-    
+    /**
+     * <p>The request is invalid given the state of the add-on name. Check the state of
+     * the cluster and the associated operations.</p>
+     */
     inline void SetAddonName(const char* value) { m_addonNameHasBeenSet = true; m_addonName.assign(value); }
 
-    
+    /**
+     * <p>The request is invalid given the state of the add-on name. Check the state of
+     * the cluster and the associated operations.</p>
+     */
     inline InvalidRequestException& WithAddonName(const Aws::String& value) { SetAddonName(value); return *this;}
 
-    
+    /**
+     * <p>The request is invalid given the state of the add-on name. Check the state of
+     * the cluster and the associated operations.</p>
+     */
     inline InvalidRequestException& WithAddonName(Aws::String&& value) { SetAddonName(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The request is invalid given the state of the add-on name. Check the state of
+     * the cluster and the associated operations.</p>
+     */
     inline InvalidRequestException& WithAddonName(const char* value) { SetAddonName(value); return *this;}
 
 
-    
+    /**
+     * <p>The Amazon EKS subscription ID with the exception.</p>
+     */
+    inline const Aws::String& GetSubscriptionId() const{ return m_subscriptionId; }
+
+    /**
+     * <p>The Amazon EKS subscription ID with the exception.</p>
+     */
+    inline bool SubscriptionIdHasBeenSet() const { return m_subscriptionIdHasBeenSet; }
+
+    /**
+     * <p>The Amazon EKS subscription ID with the exception.</p>
+     */
+    inline void SetSubscriptionId(const Aws::String& value) { m_subscriptionIdHasBeenSet = true; m_subscriptionId = value; }
+
+    /**
+     * <p>The Amazon EKS subscription ID with the exception.</p>
+     */
+    inline void SetSubscriptionId(Aws::String&& value) { m_subscriptionIdHasBeenSet = true; m_subscriptionId = std::move(value); }
+
+    /**
+     * <p>The Amazon EKS subscription ID with the exception.</p>
+     */
+    inline void SetSubscriptionId(const char* value) { m_subscriptionIdHasBeenSet = true; m_subscriptionId.assign(value); }
+
+    /**
+     * <p>The Amazon EKS subscription ID with the exception.</p>
+     */
+    inline InvalidRequestException& WithSubscriptionId(const Aws::String& value) { SetSubscriptionId(value); return *this;}
+
+    /**
+     * <p>The Amazon EKS subscription ID with the exception.</p>
+     */
+    inline InvalidRequestException& WithSubscriptionId(Aws::String&& value) { SetSubscriptionId(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon EKS subscription ID with the exception.</p>
+     */
+    inline InvalidRequestException& WithSubscriptionId(const char* value) { SetSubscriptionId(value); return *this;}
+
+
+    /**
+     * <p>The Amazon EKS add-on name associated with the exception.</p>
+     */
     inline const Aws::String& GetMessage() const{ return m_message; }
 
-    
+    /**
+     * <p>The Amazon EKS add-on name associated with the exception.</p>
+     */
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
 
-    
+    /**
+     * <p>The Amazon EKS add-on name associated with the exception.</p>
+     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
 
-    
+    /**
+     * <p>The Amazon EKS add-on name associated with the exception.</p>
+     */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
 
-    
+    /**
+     * <p>The Amazon EKS add-on name associated with the exception.</p>
+     */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
 
-    
+    /**
+     * <p>The Amazon EKS add-on name associated with the exception.</p>
+     */
     inline InvalidRequestException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
 
-    
+    /**
+     * <p>The Amazon EKS add-on name associated with the exception.</p>
+     */
     inline InvalidRequestException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The Amazon EKS add-on name associated with the exception.</p>
+     */
     inline InvalidRequestException& WithMessage(const char* value) { SetMessage(value); return *this;}
 
   private:
@@ -179,6 +260,9 @@ namespace Model
 
     Aws::String m_addonName;
     bool m_addonNameHasBeenSet = false;
+
+    Aws::String m_subscriptionId;
+    bool m_subscriptionIdHasBeenSet = false;
 
     Aws::String m_message;
     bool m_messageHasBeenSet = false;

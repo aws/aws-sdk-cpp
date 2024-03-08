@@ -1181,6 +1181,103 @@ namespace Model
 
 
     /**
+     * <p>The storage type to associate with the DB cluster.</p> <p>For information on
+     * storage types for Amazon DocumentDB clusters, see Cluster storage configurations
+     * in the <i>Amazon DocumentDB Developer Guide</i>.</p> <p>Valid values for storage
+     * type - <code>standard | iopt1</code> </p> <p>Default value is <code>standard
+     * </code> </p>  <p>When you create a DocumentDB DB cluster with the storage
+     * type set to <code>iopt1</code>, the storage type is returned in the response.
+     * The storage type isn't returned when you set it to <code>standard</code>.</p>
+     * 
+     */
+    inline const Aws::String& GetStorageType() const{ return m_storageType; }
+
+    /**
+     * <p>The storage type to associate with the DB cluster.</p> <p>For information on
+     * storage types for Amazon DocumentDB clusters, see Cluster storage configurations
+     * in the <i>Amazon DocumentDB Developer Guide</i>.</p> <p>Valid values for storage
+     * type - <code>standard | iopt1</code> </p> <p>Default value is <code>standard
+     * </code> </p>  <p>When you create a DocumentDB DB cluster with the storage
+     * type set to <code>iopt1</code>, the storage type is returned in the response.
+     * The storage type isn't returned when you set it to <code>standard</code>.</p>
+     * 
+     */
+    inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
+
+    /**
+     * <p>The storage type to associate with the DB cluster.</p> <p>For information on
+     * storage types for Amazon DocumentDB clusters, see Cluster storage configurations
+     * in the <i>Amazon DocumentDB Developer Guide</i>.</p> <p>Valid values for storage
+     * type - <code>standard | iopt1</code> </p> <p>Default value is <code>standard
+     * </code> </p>  <p>When you create a DocumentDB DB cluster with the storage
+     * type set to <code>iopt1</code>, the storage type is returned in the response.
+     * The storage type isn't returned when you set it to <code>standard</code>.</p>
+     * 
+     */
+    inline void SetStorageType(const Aws::String& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
+
+    /**
+     * <p>The storage type to associate with the DB cluster.</p> <p>For information on
+     * storage types for Amazon DocumentDB clusters, see Cluster storage configurations
+     * in the <i>Amazon DocumentDB Developer Guide</i>.</p> <p>Valid values for storage
+     * type - <code>standard | iopt1</code> </p> <p>Default value is <code>standard
+     * </code> </p>  <p>When you create a DocumentDB DB cluster with the storage
+     * type set to <code>iopt1</code>, the storage type is returned in the response.
+     * The storage type isn't returned when you set it to <code>standard</code>.</p>
+     * 
+     */
+    inline void SetStorageType(Aws::String&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
+
+    /**
+     * <p>The storage type to associate with the DB cluster.</p> <p>For information on
+     * storage types for Amazon DocumentDB clusters, see Cluster storage configurations
+     * in the <i>Amazon DocumentDB Developer Guide</i>.</p> <p>Valid values for storage
+     * type - <code>standard | iopt1</code> </p> <p>Default value is <code>standard
+     * </code> </p>  <p>When you create a DocumentDB DB cluster with the storage
+     * type set to <code>iopt1</code>, the storage type is returned in the response.
+     * The storage type isn't returned when you set it to <code>standard</code>.</p>
+     * 
+     */
+    inline void SetStorageType(const char* value) { m_storageTypeHasBeenSet = true; m_storageType.assign(value); }
+
+    /**
+     * <p>The storage type to associate with the DB cluster.</p> <p>For information on
+     * storage types for Amazon DocumentDB clusters, see Cluster storage configurations
+     * in the <i>Amazon DocumentDB Developer Guide</i>.</p> <p>Valid values for storage
+     * type - <code>standard | iopt1</code> </p> <p>Default value is <code>standard
+     * </code> </p>  <p>When you create a DocumentDB DB cluster with the storage
+     * type set to <code>iopt1</code>, the storage type is returned in the response.
+     * The storage type isn't returned when you set it to <code>standard</code>.</p>
+     * 
+     */
+    inline CreateDBClusterRequest& WithStorageType(const Aws::String& value) { SetStorageType(value); return *this;}
+
+    /**
+     * <p>The storage type to associate with the DB cluster.</p> <p>For information on
+     * storage types for Amazon DocumentDB clusters, see Cluster storage configurations
+     * in the <i>Amazon DocumentDB Developer Guide</i>.</p> <p>Valid values for storage
+     * type - <code>standard | iopt1</code> </p> <p>Default value is <code>standard
+     * </code> </p>  <p>When you create a DocumentDB DB cluster with the storage
+     * type set to <code>iopt1</code>, the storage type is returned in the response.
+     * The storage type isn't returned when you set it to <code>standard</code>.</p>
+     * 
+     */
+    inline CreateDBClusterRequest& WithStorageType(Aws::String&& value) { SetStorageType(std::move(value)); return *this;}
+
+    /**
+     * <p>The storage type to associate with the DB cluster.</p> <p>For information on
+     * storage types for Amazon DocumentDB clusters, see Cluster storage configurations
+     * in the <i>Amazon DocumentDB Developer Guide</i>.</p> <p>Valid values for storage
+     * type - <code>standard | iopt1</code> </p> <p>Default value is <code>standard
+     * </code> </p>  <p>When you create a DocumentDB DB cluster with the storage
+     * type set to <code>iopt1</code>, the storage type is returned in the response.
+     * The storage type isn't returned when you set it to <code>standard</code>.</p>
+     * 
+     */
+    inline CreateDBClusterRequest& WithStorageType(const char* value) { SetStorageType(value); return *this;}
+
+
+    /**
      * If SourceRegion is specified, SDKs will generate pre-signed URLs and populate the pre-signed URL field.
      */
     inline const Aws::String& GetSourceRegion() const{ return m_sourceRegion; }
@@ -1281,6 +1378,9 @@ namespace Model
 
     Aws::String m_globalClusterIdentifier;
     bool m_globalClusterIdentifierHasBeenSet = false;
+
+    Aws::String m_storageType;
+    bool m_storageTypeHasBeenSet = false;
 
     Aws::String m_sourceRegion;
     bool m_sourceRegionHasBeenSet = false;

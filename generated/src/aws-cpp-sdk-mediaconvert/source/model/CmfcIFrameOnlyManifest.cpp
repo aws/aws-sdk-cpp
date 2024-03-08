@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CmfcIFrameOnlyManifest::NOT_SET:
+            return {};
           case CmfcIFrameOnlyManifest::INCLUDE:
             return "INCLUDE";
           case CmfcIFrameOnlyManifest::EXCLUDE:

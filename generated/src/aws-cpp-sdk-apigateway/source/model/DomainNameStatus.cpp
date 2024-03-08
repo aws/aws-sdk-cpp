@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DomainNameStatus::NOT_SET:
+            return {};
           case DomainNameStatus::AVAILABLE:
             return "AVAILABLE";
           case DomainNameStatus::UPDATING:

@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     AUTO_MANAGED,
-    MANUAL
+    MANUAL,
+    DISABLED
   };
 
 namespace ManagementTypeMapper

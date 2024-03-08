@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SignalType::NOT_SET:
+            return {};
           case SignalType::Approve:
             return "Approve";
           case SignalType::Reject:

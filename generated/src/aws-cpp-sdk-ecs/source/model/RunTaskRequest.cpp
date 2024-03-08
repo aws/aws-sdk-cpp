@@ -34,7 +34,10 @@ RunTaskRequest::RunTaskRequest() :
     m_referenceIdHasBeenSet(false),
     m_startedByHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_taskDefinitionHasBeenSet(false)
+    m_taskDefinitionHasBeenSet(false),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
+    m_clientTokenHasBeenSet(true),
+    m_volumeConfigurationsHasBeenSet(false)
 {
 }
 
@@ -159,6 +162,23 @@ Aws::String RunTaskRequest::SerializePayload() const
   if(m_taskDefinitionHasBeenSet)
   {
    payload.WithString("taskDefinition", m_taskDefinition);
+
+  }
+
+  if(m_clientTokenHasBeenSet)
+  {
+   payload.WithString("clientToken", m_clientToken);
+
+  }
+
+  if(m_volumeConfigurationsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> volumeConfigurationsJsonList(m_volumeConfigurations.size());
+   for(unsigned volumeConfigurationsIndex = 0; volumeConfigurationsIndex < volumeConfigurationsJsonList.GetLength(); ++volumeConfigurationsIndex)
+   {
+     volumeConfigurationsJsonList[volumeConfigurationsIndex].AsObject(m_volumeConfigurations[volumeConfigurationsIndex].Jsonize());
+   }
+   payload.WithArray("volumeConfigurations", std::move(volumeConfigurationsJsonList));
 
   }
 

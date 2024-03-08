@@ -23,12 +23,14 @@ ModelPackageContainerDefinition::ModelPackageContainerDefinition() :
     m_imageHasBeenSet(false),
     m_imageDigestHasBeenSet(false),
     m_modelDataUrlHasBeenSet(false),
+    m_modelDataSourceHasBeenSet(false),
     m_productIdHasBeenSet(false),
     m_environmentHasBeenSet(false),
     m_modelInputHasBeenSet(false),
     m_frameworkHasBeenSet(false),
     m_frameworkVersionHasBeenSet(false),
-    m_nearestModelNameHasBeenSet(false)
+    m_nearestModelNameHasBeenSet(false),
+    m_additionalS3DataSourceHasBeenSet(false)
 {
 }
 
@@ -37,12 +39,14 @@ ModelPackageContainerDefinition::ModelPackageContainerDefinition(JsonView jsonVa
     m_imageHasBeenSet(false),
     m_imageDigestHasBeenSet(false),
     m_modelDataUrlHasBeenSet(false),
+    m_modelDataSourceHasBeenSet(false),
     m_productIdHasBeenSet(false),
     m_environmentHasBeenSet(false),
     m_modelInputHasBeenSet(false),
     m_frameworkHasBeenSet(false),
     m_frameworkVersionHasBeenSet(false),
-    m_nearestModelNameHasBeenSet(false)
+    m_nearestModelNameHasBeenSet(false),
+    m_additionalS3DataSourceHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -75,6 +79,13 @@ ModelPackageContainerDefinition& ModelPackageContainerDefinition::operator =(Jso
     m_modelDataUrl = jsonValue.GetString("ModelDataUrl");
 
     m_modelDataUrlHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ModelDataSource"))
+  {
+    m_modelDataSource = jsonValue.GetObject("ModelDataSource");
+
+    m_modelDataSourceHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ProductId"))
@@ -122,6 +133,13 @@ ModelPackageContainerDefinition& ModelPackageContainerDefinition::operator =(Jso
     m_nearestModelNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AdditionalS3DataSource"))
+  {
+    m_additionalS3DataSource = jsonValue.GetObject("AdditionalS3DataSource");
+
+    m_additionalS3DataSourceHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -150,6 +168,12 @@ JsonValue ModelPackageContainerDefinition::Jsonize() const
   if(m_modelDataUrlHasBeenSet)
   {
    payload.WithString("ModelDataUrl", m_modelDataUrl);
+
+  }
+
+  if(m_modelDataSourceHasBeenSet)
+  {
+   payload.WithObject("ModelDataSource", m_modelDataSource.Jsonize());
 
   }
 
@@ -191,6 +215,12 @@ JsonValue ModelPackageContainerDefinition::Jsonize() const
   if(m_nearestModelNameHasBeenSet)
   {
    payload.WithString("NearestModelName", m_nearestModelName);
+
+  }
+
+  if(m_additionalS3DataSourceHasBeenSet)
+  {
+   payload.WithObject("AdditionalS3DataSource", m_additionalS3DataSource.Jsonize());
 
   }
 

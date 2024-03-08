@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DataPullMode::NOT_SET:
+            return {};
           case DataPullMode::Incremental:
             return "Incremental";
           case DataPullMode::Complete:

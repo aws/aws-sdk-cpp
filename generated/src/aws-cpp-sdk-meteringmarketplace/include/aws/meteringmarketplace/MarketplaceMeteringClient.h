@@ -56,8 +56,8 @@ namespace MarketplaceMetering
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef MarketplaceMeteringClientConfiguration ClientConfigurationType;
       typedef MarketplaceMeteringEndpointProvider EndpointProviderType;
@@ -67,14 +67,14 @@ namespace MarketplaceMetering
         * is not specified, it will be initialized to default values.
         */
         MarketplaceMeteringClient(const Aws::MarketplaceMetering::MarketplaceMeteringClientConfiguration& clientConfiguration = Aws::MarketplaceMetering::MarketplaceMeteringClientConfiguration(),
-                                  std::shared_ptr<MarketplaceMeteringEndpointProviderBase> endpointProvider = Aws::MakeShared<MarketplaceMeteringEndpointProvider>(ALLOCATION_TAG));
+                                  std::shared_ptr<MarketplaceMeteringEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         MarketplaceMeteringClient(const Aws::Auth::AWSCredentials& credentials,
-                                  std::shared_ptr<MarketplaceMeteringEndpointProviderBase> endpointProvider = Aws::MakeShared<MarketplaceMeteringEndpointProvider>(ALLOCATION_TAG),
+                                  std::shared_ptr<MarketplaceMeteringEndpointProviderBase> endpointProvider = nullptr,
                                   const Aws::MarketplaceMetering::MarketplaceMeteringClientConfiguration& clientConfiguration = Aws::MarketplaceMetering::MarketplaceMeteringClientConfiguration());
 
        /**
@@ -82,7 +82,7 @@ namespace MarketplaceMetering
         * the default http client factory will be used
         */
         MarketplaceMeteringClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                                  std::shared_ptr<MarketplaceMeteringEndpointProviderBase> endpointProvider = Aws::MakeShared<MarketplaceMeteringEndpointProvider>(ALLOCATION_TAG),
+                                  std::shared_ptr<MarketplaceMeteringEndpointProviderBase> endpointProvider = nullptr,
                                   const Aws::MarketplaceMetering::MarketplaceMeteringClientConfiguration& clientConfiguration = Aws::MarketplaceMetering::MarketplaceMeteringClientConfiguration());
 
 

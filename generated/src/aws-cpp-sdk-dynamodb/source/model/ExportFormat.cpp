@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ExportFormat::NOT_SET:
+            return {};
           case ExportFormat::DYNAMODB_JSON:
             return "DYNAMODB_JSON";
           case ExportFormat::ION:

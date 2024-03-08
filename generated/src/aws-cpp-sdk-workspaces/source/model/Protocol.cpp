@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Protocol::NOT_SET:
+            return {};
           case Protocol::PCOIP:
             return "PCOIP";
           case Protocol::WSP:

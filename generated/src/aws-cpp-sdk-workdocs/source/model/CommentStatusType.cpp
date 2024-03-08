@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CommentStatusType::NOT_SET:
+            return {};
           case CommentStatusType::DRAFT:
             return "DRAFT";
           case CommentStatusType::PUBLISHED:

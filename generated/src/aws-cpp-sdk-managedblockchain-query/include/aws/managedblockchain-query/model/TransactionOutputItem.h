@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/managedblockchain-query/model/QueryNetwork.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/managedblockchain-query/model/ConfirmationStatus.h>
 #include <utility>
 
 namespace Aws
@@ -149,6 +150,37 @@ namespace Model
      */
     inline TransactionOutputItem& WithTransactionTimestamp(Aws::Utils::DateTime&& value) { SetTransactionTimestamp(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies whether to list transactions that have not reached Finality.</p>
+     */
+    inline const ConfirmationStatus& GetConfirmationStatus() const{ return m_confirmationStatus; }
+
+    /**
+     * <p>Specifies whether to list transactions that have not reached Finality.</p>
+     */
+    inline bool ConfirmationStatusHasBeenSet() const { return m_confirmationStatusHasBeenSet; }
+
+    /**
+     * <p>Specifies whether to list transactions that have not reached Finality.</p>
+     */
+    inline void SetConfirmationStatus(const ConfirmationStatus& value) { m_confirmationStatusHasBeenSet = true; m_confirmationStatus = value; }
+
+    /**
+     * <p>Specifies whether to list transactions that have not reached Finality.</p>
+     */
+    inline void SetConfirmationStatus(ConfirmationStatus&& value) { m_confirmationStatusHasBeenSet = true; m_confirmationStatus = std::move(value); }
+
+    /**
+     * <p>Specifies whether to list transactions that have not reached Finality.</p>
+     */
+    inline TransactionOutputItem& WithConfirmationStatus(const ConfirmationStatus& value) { SetConfirmationStatus(value); return *this;}
+
+    /**
+     * <p>Specifies whether to list transactions that have not reached Finality.</p>
+     */
+    inline TransactionOutputItem& WithConfirmationStatus(ConfirmationStatus&& value) { SetConfirmationStatus(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_transactionHash;
@@ -159,6 +191,9 @@ namespace Model
 
     Aws::Utils::DateTime m_transactionTimestamp;
     bool m_transactionTimestampHasBeenSet = false;
+
+    ConfirmationStatus m_confirmationStatus;
+    bool m_confirmationStatusHasBeenSet = false;
   };
 
 } // namespace Model

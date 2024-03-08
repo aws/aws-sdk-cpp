@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AssociateResourceErrorReason::NOT_SET:
+            return {};
           case AssociateResourceErrorReason::INVALID_ARN:
             return "INVALID_ARN";
           case AssociateResourceErrorReason::SERVICE_LIMIT_EXCEEDED:

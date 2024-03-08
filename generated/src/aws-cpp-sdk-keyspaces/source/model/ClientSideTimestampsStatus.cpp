@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ClientSideTimestampsStatus::NOT_SET:
+            return {};
           case ClientSideTimestampsStatus::ENABLED:
             return "ENABLED";
           default:

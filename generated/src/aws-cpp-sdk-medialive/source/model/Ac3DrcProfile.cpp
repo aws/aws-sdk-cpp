@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Ac3DrcProfile::NOT_SET:
+            return {};
           case Ac3DrcProfile::FILM_STANDARD:
             return "FILM_STANDARD";
           case Ac3DrcProfile::NONE:

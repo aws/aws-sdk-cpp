@@ -17,7 +17,7 @@ namespace Model
 {
 
   /**
-   * <p> The request structure for the get webhook request. </p><p><h3>See Also:</h3>
+   * <p>The request structure for the get webhook request. </p><p><h3>See Also:</h3> 
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GetWebhookRequest">AWS
    * API Reference</a></p>
@@ -37,42 +37,42 @@ namespace Model
 
 
     /**
-     * <p> The unique ID for a webhook. </p>
+     * <p>The unique ID for a webhook. </p>
      */
     inline const Aws::String& GetWebhookId() const{ return m_webhookId; }
 
     /**
-     * <p> The unique ID for a webhook. </p>
+     * <p>The unique ID for a webhook. </p>
      */
     inline bool WebhookIdHasBeenSet() const { return m_webhookIdHasBeenSet; }
 
     /**
-     * <p> The unique ID for a webhook. </p>
+     * <p>The unique ID for a webhook. </p>
      */
     inline void SetWebhookId(const Aws::String& value) { m_webhookIdHasBeenSet = true; m_webhookId = value; }
 
     /**
-     * <p> The unique ID for a webhook. </p>
+     * <p>The unique ID for a webhook. </p>
      */
     inline void SetWebhookId(Aws::String&& value) { m_webhookIdHasBeenSet = true; m_webhookId = std::move(value); }
 
     /**
-     * <p> The unique ID for a webhook. </p>
+     * <p>The unique ID for a webhook. </p>
      */
     inline void SetWebhookId(const char* value) { m_webhookIdHasBeenSet = true; m_webhookId.assign(value); }
 
     /**
-     * <p> The unique ID for a webhook. </p>
+     * <p>The unique ID for a webhook. </p>
      */
     inline GetWebhookRequest& WithWebhookId(const Aws::String& value) { SetWebhookId(value); return *this;}
 
     /**
-     * <p> The unique ID for a webhook. </p>
+     * <p>The unique ID for a webhook. </p>
      */
     inline GetWebhookRequest& WithWebhookId(Aws::String&& value) { SetWebhookId(std::move(value)); return *this;}
 
     /**
-     * <p> The unique ID for a webhook. </p>
+     * <p>The unique ID for a webhook. </p>
      */
     inline GetWebhookRequest& WithWebhookId(const char* value) { SetWebhookId(value); return *this;}
 

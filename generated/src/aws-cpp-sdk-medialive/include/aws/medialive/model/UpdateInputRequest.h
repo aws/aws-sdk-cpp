@@ -217,7 +217,6 @@ Flow and presently, as many as two. The
      * a
 separate Availability Zone as this ensures your EML input is redundant to AZ
      * issues.
-
      */
     inline const Aws::Vector<MediaConnectFlowRequest>& GetMediaConnectFlows() const{ return m_mediaConnectFlows; }
 
@@ -229,7 +228,6 @@ Flow and presently, as many as two. The
      * a
 separate Availability Zone as this ensures your EML input is redundant to AZ
      * issues.
-
      */
     inline bool MediaConnectFlowsHasBeenSet() const { return m_mediaConnectFlowsHasBeenSet; }
 
@@ -241,7 +239,6 @@ Flow and presently, as many as two. The
      * a
 separate Availability Zone as this ensures your EML input is redundant to AZ
      * issues.
-
      */
     inline void SetMediaConnectFlows(const Aws::Vector<MediaConnectFlowRequest>& value) { m_mediaConnectFlowsHasBeenSet = true; m_mediaConnectFlows = value; }
 
@@ -253,7 +250,6 @@ Flow and presently, as many as two. The
      * a
 separate Availability Zone as this ensures your EML input is redundant to AZ
      * issues.
-
      */
     inline void SetMediaConnectFlows(Aws::Vector<MediaConnectFlowRequest>&& value) { m_mediaConnectFlowsHasBeenSet = true; m_mediaConnectFlows = std::move(value); }
 
@@ -265,7 +261,6 @@ Flow and presently, as many as two. The
      * a
 separate Availability Zone as this ensures your EML input is redundant to AZ
      * issues.
-
      */
     inline UpdateInputRequest& WithMediaConnectFlows(const Aws::Vector<MediaConnectFlowRequest>& value) { SetMediaConnectFlows(value); return *this;}
 
@@ -277,7 +272,6 @@ Flow and presently, as many as two. The
      * a
 separate Availability Zone as this ensures your EML input is redundant to AZ
      * issues.
-
      */
     inline UpdateInputRequest& WithMediaConnectFlows(Aws::Vector<MediaConnectFlowRequest>&& value) { SetMediaConnectFlows(std::move(value)); return *this;}
 
@@ -289,7 +283,6 @@ Flow and presently, as many as two. The
      * a
 separate Availability Zone as this ensures your EML input is redundant to AZ
      * issues.
-
      */
     inline UpdateInputRequest& AddMediaConnectFlows(const MediaConnectFlowRequest& value) { m_mediaConnectFlowsHasBeenSet = true; m_mediaConnectFlows.push_back(value); return *this; }
 
@@ -301,7 +294,6 @@ Flow and presently, as many as two. The
      * a
 separate Availability Zone as this ensures your EML input is redundant to AZ
      * issues.
-
      */
     inline UpdateInputRequest& AddMediaConnectFlows(MediaConnectFlowRequest&& value) { m_mediaConnectFlowsHasBeenSet = true; m_mediaConnectFlows.push_back(std::move(value)); return *this; }
 
@@ -402,7 +394,6 @@ exactly two
      * source URLs for redundancy.
 Only specify sources for PULL type Inputs. Leave
      * Destinations empty.
-
      */
     inline const Aws::Vector<InputSourceRequest>& GetSources() const{ return m_sources; }
 
@@ -412,7 +403,6 @@ exactly two
      * source URLs for redundancy.
 Only specify sources for PULL type Inputs. Leave
      * Destinations empty.
-
      */
     inline bool SourcesHasBeenSet() const { return m_sourcesHasBeenSet; }
 
@@ -422,7 +412,6 @@ exactly two
      * source URLs for redundancy.
 Only specify sources for PULL type Inputs. Leave
      * Destinations empty.
-
      */
     inline void SetSources(const Aws::Vector<InputSourceRequest>& value) { m_sourcesHasBeenSet = true; m_sources = value; }
 
@@ -432,7 +421,6 @@ exactly two
      * source URLs for redundancy.
 Only specify sources for PULL type Inputs. Leave
      * Destinations empty.
-
      */
     inline void SetSources(Aws::Vector<InputSourceRequest>&& value) { m_sourcesHasBeenSet = true; m_sources = std::move(value); }
 
@@ -442,7 +430,6 @@ exactly two
      * source URLs for redundancy.
 Only specify sources for PULL type Inputs. Leave
      * Destinations empty.
-
      */
     inline UpdateInputRequest& WithSources(const Aws::Vector<InputSourceRequest>& value) { SetSources(value); return *this;}
 
@@ -452,7 +439,6 @@ exactly two
      * source URLs for redundancy.
 Only specify sources for PULL type Inputs. Leave
      * Destinations empty.
-
      */
     inline UpdateInputRequest& WithSources(Aws::Vector<InputSourceRequest>&& value) { SetSources(std::move(value)); return *this;}
 
@@ -462,7 +448,6 @@ exactly two
      * source URLs for redundancy.
 Only specify sources for PULL type Inputs. Leave
      * Destinations empty.
-
      */
     inline UpdateInputRequest& AddSources(const InputSourceRequest& value) { m_sourcesHasBeenSet = true; m_sources.push_back(value); return *this; }
 
@@ -472,7 +457,6 @@ exactly two
      * source URLs for redundancy.
 Only specify sources for PULL type Inputs. Leave
      * Destinations empty.
-
      */
     inline UpdateInputRequest& AddSources(InputSourceRequest&& value) { m_sourcesHasBeenSet = true; m_sources.push_back(std::move(value)); return *this; }
 

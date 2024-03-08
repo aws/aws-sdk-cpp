@@ -34,8 +34,8 @@ namespace ApplicationInsights
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef ApplicationInsightsClientConfiguration ClientConfigurationType;
       typedef ApplicationInsightsEndpointProvider EndpointProviderType;
@@ -45,14 +45,14 @@ namespace ApplicationInsights
         * is not specified, it will be initialized to default values.
         */
         ApplicationInsightsClient(const Aws::ApplicationInsights::ApplicationInsightsClientConfiguration& clientConfiguration = Aws::ApplicationInsights::ApplicationInsightsClientConfiguration(),
-                                  std::shared_ptr<ApplicationInsightsEndpointProviderBase> endpointProvider = Aws::MakeShared<ApplicationInsightsEndpointProvider>(ALLOCATION_TAG));
+                                  std::shared_ptr<ApplicationInsightsEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         ApplicationInsightsClient(const Aws::Auth::AWSCredentials& credentials,
-                                  std::shared_ptr<ApplicationInsightsEndpointProviderBase> endpointProvider = Aws::MakeShared<ApplicationInsightsEndpointProvider>(ALLOCATION_TAG),
+                                  std::shared_ptr<ApplicationInsightsEndpointProviderBase> endpointProvider = nullptr,
                                   const Aws::ApplicationInsights::ApplicationInsightsClientConfiguration& clientConfiguration = Aws::ApplicationInsights::ApplicationInsightsClientConfiguration());
 
        /**
@@ -60,7 +60,7 @@ namespace ApplicationInsights
         * the default http client factory will be used
         */
         ApplicationInsightsClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                                  std::shared_ptr<ApplicationInsightsEndpointProviderBase> endpointProvider = Aws::MakeShared<ApplicationInsightsEndpointProvider>(ALLOCATION_TAG),
+                                  std::shared_ptr<ApplicationInsightsEndpointProviderBase> endpointProvider = nullptr,
                                   const Aws::ApplicationInsights::ApplicationInsightsClientConfiguration& clientConfiguration = Aws::ApplicationInsights::ApplicationInsightsClientConfiguration());
 
 

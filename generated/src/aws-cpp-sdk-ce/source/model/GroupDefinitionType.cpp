@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case GroupDefinitionType::NOT_SET:
+            return {};
           case GroupDefinitionType::DIMENSION:
             return "DIMENSION";
           case GroupDefinitionType::TAG:

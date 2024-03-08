@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ListStateFilterAction::NOT_SET:
+            return {};
           case ListStateFilterAction::include:
             return "include";
           case ListStateFilterAction::exclude:

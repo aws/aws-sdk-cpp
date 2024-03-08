@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ExpressionType::NOT_SET:
+            return {};
           case ExpressionType::SQL:
             return "SQL";
           default:

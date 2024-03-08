@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case M3u8AudioDuration::NOT_SET:
+            return {};
           case M3u8AudioDuration::DEFAULT_CODEC_DURATION:
             return "DEFAULT_CODEC_DURATION";
           case M3u8AudioDuration::MATCH_VIDEO_DURATION:

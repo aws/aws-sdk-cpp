@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FulfillmentActivityType::NOT_SET:
+            return {};
           case FulfillmentActivityType::ReturnIntent:
             return "ReturnIntent";
           case FulfillmentActivityType::CodeHook:

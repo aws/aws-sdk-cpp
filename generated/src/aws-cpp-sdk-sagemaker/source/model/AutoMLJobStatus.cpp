@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AutoMLJobStatus::NOT_SET:
+            return {};
           case AutoMLJobStatus::Completed:
             return "Completed";
           case AutoMLJobStatus::InProgress:

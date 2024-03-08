@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CloudWatchMetricsStat::NOT_SET:
+            return {};
           case CloudWatchMetricsStat::Sum:
             return "Sum";
           case CloudWatchMetricsStat::Average:

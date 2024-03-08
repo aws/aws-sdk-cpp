@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DirectoryEdition::NOT_SET:
+            return {};
           case DirectoryEdition::Enterprise:
             return "Enterprise";
           case DirectoryEdition::Standard:

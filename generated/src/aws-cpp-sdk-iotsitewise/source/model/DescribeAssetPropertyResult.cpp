@@ -59,6 +59,12 @@ DescribeAssetPropertyResult& DescribeAssetPropertyResult::operator =(const Aws::
 
   }
 
+  if(jsonValue.ValueExists("assetExternalId"))
+  {
+    m_assetExternalId = jsonValue.GetString("assetExternalId");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

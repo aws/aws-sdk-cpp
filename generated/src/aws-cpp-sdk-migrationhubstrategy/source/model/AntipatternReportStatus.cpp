@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AntipatternReportStatus::NOT_SET:
+            return {};
           case AntipatternReportStatus::FAILED:
             return "FAILED";
           case AntipatternReportStatus::IN_PROGRESS:

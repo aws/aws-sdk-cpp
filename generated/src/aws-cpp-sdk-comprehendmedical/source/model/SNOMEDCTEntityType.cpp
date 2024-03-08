@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SNOMEDCTEntityType::NOT_SET:
+            return {};
           case SNOMEDCTEntityType::DX_NAME:
             return "DX_NAME";
           case SNOMEDCTEntityType::TEST_NAME:

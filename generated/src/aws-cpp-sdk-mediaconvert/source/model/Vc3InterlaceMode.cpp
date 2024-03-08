@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Vc3InterlaceMode::NOT_SET:
+            return {};
           case Vc3InterlaceMode::INTERLACED:
             return "INTERLACED";
           case Vc3InterlaceMode::PROGRESSIVE:

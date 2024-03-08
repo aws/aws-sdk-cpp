@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ModelStatus::NOT_SET:
+            return {};
           case ModelStatus::SUBMITTED:
             return "SUBMITTED";
           case ModelStatus::TRAINING:

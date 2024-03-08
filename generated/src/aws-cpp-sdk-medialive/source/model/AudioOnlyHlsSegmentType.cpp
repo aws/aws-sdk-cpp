@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AudioOnlyHlsSegmentType::NOT_SET:
+            return {};
           case AudioOnlyHlsSegmentType::AAC:
             return "AAC";
           case AudioOnlyHlsSegmentType::FMP4:

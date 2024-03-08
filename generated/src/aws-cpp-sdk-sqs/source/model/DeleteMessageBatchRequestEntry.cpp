@@ -4,13 +4,11 @@
  */
 
 #include <aws/sqs/model/DeleteMessageBatchRequestEntry.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
-#include <aws/core/utils/StringUtils.h>
-#include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 
 #include <utility>
 
-using namespace Aws::Utils::Xml;
+using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 namespace Aws
@@ -26,60 +24,49 @@ DeleteMessageBatchRequestEntry::DeleteMessageBatchRequestEntry() :
 {
 }
 
-DeleteMessageBatchRequestEntry::DeleteMessageBatchRequestEntry(const XmlNode& xmlNode) : 
+DeleteMessageBatchRequestEntry::DeleteMessageBatchRequestEntry(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_receiptHandleHasBeenSet(false)
 {
-  *this = xmlNode;
+  *this = jsonValue;
 }
 
-DeleteMessageBatchRequestEntry& DeleteMessageBatchRequestEntry::operator =(const XmlNode& xmlNode)
+DeleteMessageBatchRequestEntry& DeleteMessageBatchRequestEntry::operator =(JsonView jsonValue)
 {
-  XmlNode resultNode = xmlNode;
-
-  if(!resultNode.IsNull())
+  if(jsonValue.ValueExists("Id"))
   {
-    XmlNode idNode = resultNode.FirstChild("Id");
-    if(!idNode.IsNull())
-    {
-      m_id = Aws::Utils::Xml::DecodeEscapedXmlText(idNode.GetText());
-      m_idHasBeenSet = true;
-    }
-    XmlNode receiptHandleNode = resultNode.FirstChild("ReceiptHandle");
-    if(!receiptHandleNode.IsNull())
-    {
-      m_receiptHandle = Aws::Utils::Xml::DecodeEscapedXmlText(receiptHandleNode.GetText());
-      m_receiptHandleHasBeenSet = true;
-    }
+    m_id = jsonValue.GetString("Id");
+
+    m_idHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ReceiptHandle"))
+  {
+    m_receiptHandle = jsonValue.GetString("ReceiptHandle");
+
+    m_receiptHandleHasBeenSet = true;
   }
 
   return *this;
 }
 
-void DeleteMessageBatchRequestEntry::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
+JsonValue DeleteMessageBatchRequestEntry::Jsonize() const
 {
+  JsonValue payload;
+
   if(m_idHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Id=" << StringUtils::URLEncode(m_id.c_str()) << "&";
+   payload.WithString("Id", m_id);
+
   }
 
   if(m_receiptHandleHasBeenSet)
   {
-      oStream << location << index << locationValue << ".ReceiptHandle=" << StringUtils::URLEncode(m_receiptHandle.c_str()) << "&";
+   payload.WithString("ReceiptHandle", m_receiptHandle);
+
   }
 
-}
-
-void DeleteMessageBatchRequestEntry::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_idHasBeenSet)
-  {
-      oStream << location << ".Id=" << StringUtils::URLEncode(m_id.c_str()) << "&";
-  }
-  if(m_receiptHandleHasBeenSet)
-  {
-      oStream << location << ".ReceiptHandle=" << StringUtils::URLEncode(m_receiptHandle.c_str()) << "&";
-  }
+  return payload;
 }
 
 } // namespace Model

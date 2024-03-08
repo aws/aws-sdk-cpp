@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RecommendationComplianceStatus::NOT_SET:
+            return {};
           case RecommendationComplianceStatus::BreachedUnattainable:
             return "BreachedUnattainable";
           case RecommendationComplianceStatus::BreachedCanMeet:

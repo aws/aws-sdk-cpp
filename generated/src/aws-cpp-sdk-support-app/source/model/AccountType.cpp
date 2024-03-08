@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AccountType::NOT_SET:
+            return {};
           case AccountType::management:
             return "management";
           case AccountType::member:

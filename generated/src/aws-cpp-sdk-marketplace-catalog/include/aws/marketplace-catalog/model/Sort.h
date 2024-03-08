@@ -41,8 +41,9 @@ namespace Model
 
     /**
      * <p>For <code>ListEntities</code>, supported attributes include
-     * <code>LastModifiedDate</code> (default), <code>Visibility</code>,
-     * <code>EntityId</code>, and <code>Name</code>.</p> <p>For
+     * <code>LastModifiedDate</code> (default) and <code>EntityId</code>. In addition
+     * to <code>LastModifiedDate</code> and <code>EntityId</code>, each
+     * <code>EntityType</code> might support additional fields.</p> <p>For
      * <code>ListChangeSets</code>, supported attributes include <code>StartTime</code>
      * and <code>EndTime</code>.</p>
      */
@@ -50,8 +51,9 @@ namespace Model
 
     /**
      * <p>For <code>ListEntities</code>, supported attributes include
-     * <code>LastModifiedDate</code> (default), <code>Visibility</code>,
-     * <code>EntityId</code>, and <code>Name</code>.</p> <p>For
+     * <code>LastModifiedDate</code> (default) and <code>EntityId</code>. In addition
+     * to <code>LastModifiedDate</code> and <code>EntityId</code>, each
+     * <code>EntityType</code> might support additional fields.</p> <p>For
      * <code>ListChangeSets</code>, supported attributes include <code>StartTime</code>
      * and <code>EndTime</code>.</p>
      */
@@ -59,8 +61,9 @@ namespace Model
 
     /**
      * <p>For <code>ListEntities</code>, supported attributes include
-     * <code>LastModifiedDate</code> (default), <code>Visibility</code>,
-     * <code>EntityId</code>, and <code>Name</code>.</p> <p>For
+     * <code>LastModifiedDate</code> (default) and <code>EntityId</code>. In addition
+     * to <code>LastModifiedDate</code> and <code>EntityId</code>, each
+     * <code>EntityType</code> might support additional fields.</p> <p>For
      * <code>ListChangeSets</code>, supported attributes include <code>StartTime</code>
      * and <code>EndTime</code>.</p>
      */
@@ -68,8 +71,9 @@ namespace Model
 
     /**
      * <p>For <code>ListEntities</code>, supported attributes include
-     * <code>LastModifiedDate</code> (default), <code>Visibility</code>,
-     * <code>EntityId</code>, and <code>Name</code>.</p> <p>For
+     * <code>LastModifiedDate</code> (default) and <code>EntityId</code>. In addition
+     * to <code>LastModifiedDate</code> and <code>EntityId</code>, each
+     * <code>EntityType</code> might support additional fields.</p> <p>For
      * <code>ListChangeSets</code>, supported attributes include <code>StartTime</code>
      * and <code>EndTime</code>.</p>
      */
@@ -77,8 +81,9 @@ namespace Model
 
     /**
      * <p>For <code>ListEntities</code>, supported attributes include
-     * <code>LastModifiedDate</code> (default), <code>Visibility</code>,
-     * <code>EntityId</code>, and <code>Name</code>.</p> <p>For
+     * <code>LastModifiedDate</code> (default) and <code>EntityId</code>. In addition
+     * to <code>LastModifiedDate</code> and <code>EntityId</code>, each
+     * <code>EntityType</code> might support additional fields.</p> <p>For
      * <code>ListChangeSets</code>, supported attributes include <code>StartTime</code>
      * and <code>EndTime</code>.</p>
      */
@@ -86,8 +91,9 @@ namespace Model
 
     /**
      * <p>For <code>ListEntities</code>, supported attributes include
-     * <code>LastModifiedDate</code> (default), <code>Visibility</code>,
-     * <code>EntityId</code>, and <code>Name</code>.</p> <p>For
+     * <code>LastModifiedDate</code> (default) and <code>EntityId</code>. In addition
+     * to <code>LastModifiedDate</code> and <code>EntityId</code>, each
+     * <code>EntityType</code> might support additional fields.</p> <p>For
      * <code>ListChangeSets</code>, supported attributes include <code>StartTime</code>
      * and <code>EndTime</code>.</p>
      */
@@ -95,8 +101,9 @@ namespace Model
 
     /**
      * <p>For <code>ListEntities</code>, supported attributes include
-     * <code>LastModifiedDate</code> (default), <code>Visibility</code>,
-     * <code>EntityId</code>, and <code>Name</code>.</p> <p>For
+     * <code>LastModifiedDate</code> (default) and <code>EntityId</code>. In addition
+     * to <code>LastModifiedDate</code> and <code>EntityId</code>, each
+     * <code>EntityType</code> might support additional fields.</p> <p>For
      * <code>ListChangeSets</code>, supported attributes include <code>StartTime</code>
      * and <code>EndTime</code>.</p>
      */
@@ -104,8 +111,9 @@ namespace Model
 
     /**
      * <p>For <code>ListEntities</code>, supported attributes include
-     * <code>LastModifiedDate</code> (default), <code>Visibility</code>,
-     * <code>EntityId</code>, and <code>Name</code>.</p> <p>For
+     * <code>LastModifiedDate</code> (default) and <code>EntityId</code>. In addition
+     * to <code>LastModifiedDate</code> and <code>EntityId</code>, each
+     * <code>EntityType</code> might support additional fields.</p> <p>For
      * <code>ListChangeSets</code>, supported attributes include <code>StartTime</code>
      * and <code>EndTime</code>.</p>
      */

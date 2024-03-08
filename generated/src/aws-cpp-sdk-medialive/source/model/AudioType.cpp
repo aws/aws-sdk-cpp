@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AudioType::NOT_SET:
+            return {};
           case AudioType::CLEAN_EFFECTS:
             return "CLEAN_EFFECTS";
           case AudioType::HEARING_IMPAIRED:

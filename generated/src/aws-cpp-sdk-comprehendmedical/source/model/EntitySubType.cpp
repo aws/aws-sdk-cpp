@@ -264,6 +264,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EntitySubType::NOT_SET:
+            return {};
           case EntitySubType::NAME:
             return "NAME";
           case EntitySubType::DX_NAME:

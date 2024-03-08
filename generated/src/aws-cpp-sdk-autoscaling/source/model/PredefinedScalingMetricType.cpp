@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PredefinedScalingMetricType::NOT_SET:
+            return {};
           case PredefinedScalingMetricType::ASGAverageCPUUtilization:
             return "ASGAverageCPUUtilization";
           case PredefinedScalingMetricType::ASGAverageNetworkIn:

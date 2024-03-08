@@ -235,51 +235,214 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic
-     * distribution groups that phone numbers are claimed to.</p>
+     * distribution groups that phone number inbound traffic is routed through.</p>
      */
     inline const Aws::String& GetTargetArn() const{ return m_targetArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic
-     * distribution groups that phone numbers are claimed to.</p>
+     * distribution groups that phone number inbound traffic is routed through.</p>
      */
     inline bool TargetArnHasBeenSet() const { return m_targetArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic
-     * distribution groups that phone numbers are claimed to.</p>
+     * distribution groups that phone number inbound traffic is routed through.</p>
      */
     inline void SetTargetArn(const Aws::String& value) { m_targetArnHasBeenSet = true; m_targetArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic
-     * distribution groups that phone numbers are claimed to.</p>
+     * distribution groups that phone number inbound traffic is routed through.</p>
      */
     inline void SetTargetArn(Aws::String&& value) { m_targetArnHasBeenSet = true; m_targetArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic
-     * distribution groups that phone numbers are claimed to.</p>
+     * distribution groups that phone number inbound traffic is routed through.</p>
      */
     inline void SetTargetArn(const char* value) { m_targetArnHasBeenSet = true; m_targetArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic
-     * distribution groups that phone numbers are claimed to.</p>
+     * distribution groups that phone number inbound traffic is routed through.</p>
      */
     inline ListPhoneNumbersSummary& WithTargetArn(const Aws::String& value) { SetTargetArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic
-     * distribution groups that phone numbers are claimed to.</p>
+     * distribution groups that phone number inbound traffic is routed through.</p>
      */
     inline ListPhoneNumbersSummary& WithTargetArn(Aws::String&& value) { SetTargetArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic
-     * distribution groups that phone numbers are claimed to.</p>
+     * distribution groups that phone number inbound traffic is routed through.</p>
      */
     inline ListPhoneNumbersSummary& WithTargetArn(const char* value) { SetTargetArn(value); return *this;}
+
+
+    /**
+     * <p>The identifier of the Amazon Connect instance that phone numbers are claimed
+     * to. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+     */
+    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+
+    /**
+     * <p>The identifier of the Amazon Connect instance that phone numbers are claimed
+     * to. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+     */
+    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the Amazon Connect instance that phone numbers are claimed
+     * to. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+     */
+    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
+
+    /**
+     * <p>The identifier of the Amazon Connect instance that phone numbers are claimed
+     * to. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+     */
+    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
+
+    /**
+     * <p>The identifier of the Amazon Connect instance that phone numbers are claimed
+     * to. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+     */
+    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
+
+    /**
+     * <p>The identifier of the Amazon Connect instance that phone numbers are claimed
+     * to. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+     */
+    inline ListPhoneNumbersSummary& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
+
+    /**
+     * <p>The identifier of the Amazon Connect instance that phone numbers are claimed
+     * to. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+     */
+    inline ListPhoneNumbersSummary& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifier of the Amazon Connect instance that phone numbers are claimed
+     * to. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
+     */
+    inline ListPhoneNumbersSummary& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+
+
+    /**
+     * <p>The description of the phone number.</p>
+     */
+    inline const Aws::String& GetPhoneNumberDescription() const{ return m_phoneNumberDescription; }
+
+    /**
+     * <p>The description of the phone number.</p>
+     */
+    inline bool PhoneNumberDescriptionHasBeenSet() const { return m_phoneNumberDescriptionHasBeenSet; }
+
+    /**
+     * <p>The description of the phone number.</p>
+     */
+    inline void SetPhoneNumberDescription(const Aws::String& value) { m_phoneNumberDescriptionHasBeenSet = true; m_phoneNumberDescription = value; }
+
+    /**
+     * <p>The description of the phone number.</p>
+     */
+    inline void SetPhoneNumberDescription(Aws::String&& value) { m_phoneNumberDescriptionHasBeenSet = true; m_phoneNumberDescription = std::move(value); }
+
+    /**
+     * <p>The description of the phone number.</p>
+     */
+    inline void SetPhoneNumberDescription(const char* value) { m_phoneNumberDescriptionHasBeenSet = true; m_phoneNumberDescription.assign(value); }
+
+    /**
+     * <p>The description of the phone number.</p>
+     */
+    inline ListPhoneNumbersSummary& WithPhoneNumberDescription(const Aws::String& value) { SetPhoneNumberDescription(value); return *this;}
+
+    /**
+     * <p>The description of the phone number.</p>
+     */
+    inline ListPhoneNumbersSummary& WithPhoneNumberDescription(Aws::String&& value) { SetPhoneNumberDescription(std::move(value)); return *this;}
+
+    /**
+     * <p>The description of the phone number.</p>
+     */
+    inline ListPhoneNumbersSummary& WithPhoneNumberDescription(const char* value) { SetPhoneNumberDescription(value); return *this;}
+
+
+    /**
+     * <p>The claimed phone number ARN that was previously imported from the external
+     * service, such as Amazon Pinpoint. If it is from Amazon Pinpoint, it looks like
+     * the ARN of the phone number that was imported from Amazon Pinpoint.</p>
+     */
+    inline const Aws::String& GetSourcePhoneNumberArn() const{ return m_sourcePhoneNumberArn; }
+
+    /**
+     * <p>The claimed phone number ARN that was previously imported from the external
+     * service, such as Amazon Pinpoint. If it is from Amazon Pinpoint, it looks like
+     * the ARN of the phone number that was imported from Amazon Pinpoint.</p>
+     */
+    inline bool SourcePhoneNumberArnHasBeenSet() const { return m_sourcePhoneNumberArnHasBeenSet; }
+
+    /**
+     * <p>The claimed phone number ARN that was previously imported from the external
+     * service, such as Amazon Pinpoint. If it is from Amazon Pinpoint, it looks like
+     * the ARN of the phone number that was imported from Amazon Pinpoint.</p>
+     */
+    inline void SetSourcePhoneNumberArn(const Aws::String& value) { m_sourcePhoneNumberArnHasBeenSet = true; m_sourcePhoneNumberArn = value; }
+
+    /**
+     * <p>The claimed phone number ARN that was previously imported from the external
+     * service, such as Amazon Pinpoint. If it is from Amazon Pinpoint, it looks like
+     * the ARN of the phone number that was imported from Amazon Pinpoint.</p>
+     */
+    inline void SetSourcePhoneNumberArn(Aws::String&& value) { m_sourcePhoneNumberArnHasBeenSet = true; m_sourcePhoneNumberArn = std::move(value); }
+
+    /**
+     * <p>The claimed phone number ARN that was previously imported from the external
+     * service, such as Amazon Pinpoint. If it is from Amazon Pinpoint, it looks like
+     * the ARN of the phone number that was imported from Amazon Pinpoint.</p>
+     */
+    inline void SetSourcePhoneNumberArn(const char* value) { m_sourcePhoneNumberArnHasBeenSet = true; m_sourcePhoneNumberArn.assign(value); }
+
+    /**
+     * <p>The claimed phone number ARN that was previously imported from the external
+     * service, such as Amazon Pinpoint. If it is from Amazon Pinpoint, it looks like
+     * the ARN of the phone number that was imported from Amazon Pinpoint.</p>
+     */
+    inline ListPhoneNumbersSummary& WithSourcePhoneNumberArn(const Aws::String& value) { SetSourcePhoneNumberArn(value); return *this;}
+
+    /**
+     * <p>The claimed phone number ARN that was previously imported from the external
+     * service, such as Amazon Pinpoint. If it is from Amazon Pinpoint, it looks like
+     * the ARN of the phone number that was imported from Amazon Pinpoint.</p>
+     */
+    inline ListPhoneNumbersSummary& WithSourcePhoneNumberArn(Aws::String&& value) { SetSourcePhoneNumberArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The claimed phone number ARN that was previously imported from the external
+     * service, such as Amazon Pinpoint. If it is from Amazon Pinpoint, it looks like
+     * the ARN of the phone number that was imported from Amazon Pinpoint.</p>
+     */
+    inline ListPhoneNumbersSummary& WithSourcePhoneNumberArn(const char* value) { SetSourcePhoneNumberArn(value); return *this;}
 
   private:
 
@@ -300,6 +463,15 @@ namespace Model
 
     Aws::String m_targetArn;
     bool m_targetArnHasBeenSet = false;
+
+    Aws::String m_instanceId;
+    bool m_instanceIdHasBeenSet = false;
+
+    Aws::String m_phoneNumberDescription;
+    bool m_phoneNumberDescriptionHasBeenSet = false;
+
+    Aws::String m_sourcePhoneNumberArn;
+    bool m_sourcePhoneNumberArnHasBeenSet = false;
   };
 
 } // namespace Model

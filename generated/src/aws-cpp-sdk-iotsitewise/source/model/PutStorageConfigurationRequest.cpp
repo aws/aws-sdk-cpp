@@ -18,7 +18,10 @@ PutStorageConfigurationRequest::PutStorageConfigurationRequest() :
     m_multiLayerStorageHasBeenSet(false),
     m_disassociatedDataStorage(DisassociatedDataStorageState::NOT_SET),
     m_disassociatedDataStorageHasBeenSet(false),
-    m_retentionPeriodHasBeenSet(false)
+    m_retentionPeriodHasBeenSet(false),
+    m_warmTier(WarmTierState::NOT_SET),
+    m_warmTierHasBeenSet(false),
+    m_warmTierRetentionPeriodHasBeenSet(false)
 {
 }
 
@@ -45,6 +48,17 @@ Aws::String PutStorageConfigurationRequest::SerializePayload() const
   if(m_retentionPeriodHasBeenSet)
   {
    payload.WithObject("retentionPeriod", m_retentionPeriod.Jsonize());
+
+  }
+
+  if(m_warmTierHasBeenSet)
+  {
+   payload.WithString("warmTier", WarmTierStateMapper::GetNameForWarmTierState(m_warmTier));
+  }
+
+  if(m_warmTierRetentionPeriodHasBeenSet)
+  {
+   payload.WithObject("warmTierRetentionPeriod", m_warmTierRetentionPeriod.Jsonize());
 
   }
 

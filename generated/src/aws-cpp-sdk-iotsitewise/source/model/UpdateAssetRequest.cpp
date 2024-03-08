@@ -17,7 +17,8 @@ UpdateAssetRequest::UpdateAssetRequest() :
     m_assetNameHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
-    m_assetDescriptionHasBeenSet(false)
+    m_assetDescriptionHasBeenSet(false),
+    m_assetExternalIdHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,12 @@ Aws::String UpdateAssetRequest::SerializePayload() const
   if(m_assetDescriptionHasBeenSet)
   {
    payload.WithString("assetDescription", m_assetDescription);
+
+  }
+
+  if(m_assetExternalIdHasBeenSet)
+  {
+   payload.WithString("assetExternalId", m_assetExternalId);
 
   }
 

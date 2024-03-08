@@ -99,6 +99,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TargetHealthReasonEnum::NOT_SET:
+            return {};
           case TargetHealthReasonEnum::Elb_RegistrationInProgress:
             return "Elb.RegistrationInProgress";
           case TargetHealthReasonEnum::Elb_InitialHealthChecking:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DelegatedAdminStatus::NOT_SET:
+            return {};
           case DelegatedAdminStatus::ENABLED:
             return "ENABLED";
           case DelegatedAdminStatus::DISABLE_IN_PROGRESS:

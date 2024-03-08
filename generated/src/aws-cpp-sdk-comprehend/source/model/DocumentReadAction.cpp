@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DocumentReadAction::NOT_SET:
+            return {};
           case DocumentReadAction::TEXTRACT_DETECT_DOCUMENT_TEXT:
             return "TEXTRACT_DETECT_DOCUMENT_TEXT";
           case DocumentReadAction::TEXTRACT_ANALYZE_DOCUMENT:

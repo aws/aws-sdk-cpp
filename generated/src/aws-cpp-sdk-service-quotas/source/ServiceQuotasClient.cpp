@@ -54,8 +54,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* ServiceQuotasClient::SERVICE_NAME = "servicequotas";
-const char* ServiceQuotasClient::ALLOCATION_TAG = "ServiceQuotasClient";
+namespace Aws
+{
+  namespace ServiceQuotas
+  {
+    const char SERVICE_NAME[] = "servicequotas";
+    const char ALLOCATION_TAG[] = "ServiceQuotasClient";
+  }
+}
+const char* ServiceQuotasClient::GetServiceName() {return SERVICE_NAME;}
+const char* ServiceQuotasClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 ServiceQuotasClient::ServiceQuotasClient(const ServiceQuotas::ServiceQuotasClientConfiguration& clientConfiguration,
                                          std::shared_ptr<ServiceQuotasEndpointProviderBase> endpointProvider) :
@@ -67,7 +75,7 @@ ServiceQuotasClient::ServiceQuotasClient(const ServiceQuotas::ServiceQuotasClien
             Aws::MakeShared<ServiceQuotasErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ServiceQuotasEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -83,7 +91,7 @@ ServiceQuotasClient::ServiceQuotasClient(const AWSCredentials& credentials,
             Aws::MakeShared<ServiceQuotasErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ServiceQuotasEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -99,7 +107,7 @@ ServiceQuotasClient::ServiceQuotasClient(const std::shared_ptr<AWSCredentialsPro
             Aws::MakeShared<ServiceQuotasErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ServiceQuotasEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

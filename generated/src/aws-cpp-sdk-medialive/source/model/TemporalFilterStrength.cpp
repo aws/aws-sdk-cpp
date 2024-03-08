@@ -124,6 +124,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TemporalFilterStrength::NOT_SET:
+            return {};
           case TemporalFilterStrength::AUTO:
             return "AUTO";
           case TemporalFilterStrength::STRENGTH_1:

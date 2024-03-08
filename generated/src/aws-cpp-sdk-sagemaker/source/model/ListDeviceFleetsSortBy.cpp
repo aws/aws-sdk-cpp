@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ListDeviceFleetsSortBy::NOT_SET:
+            return {};
           case ListDeviceFleetsSortBy::NAME:
             return "NAME";
           case ListDeviceFleetsSortBy::CREATION_TIME:

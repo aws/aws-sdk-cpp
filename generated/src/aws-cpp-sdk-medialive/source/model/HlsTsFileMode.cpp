@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HlsTsFileMode::NOT_SET:
+            return {};
           case HlsTsFileMode::SEGMENTED_FILES:
             return "SEGMENTED_FILES";
           case HlsTsFileMode::SINGLE_FILE:

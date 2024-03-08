@@ -21,12 +21,14 @@ namespace Model
 {
 
 CreateVerifiedAccessTrustProviderDeviceOptions::CreateVerifiedAccessTrustProviderDeviceOptions() : 
-    m_tenantIdHasBeenSet(false)
+    m_tenantIdHasBeenSet(false),
+    m_publicSigningKeyUrlHasBeenSet(false)
 {
 }
 
 CreateVerifiedAccessTrustProviderDeviceOptions::CreateVerifiedAccessTrustProviderDeviceOptions(const XmlNode& xmlNode) : 
-    m_tenantIdHasBeenSet(false)
+    m_tenantIdHasBeenSet(false),
+    m_publicSigningKeyUrlHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -43,6 +45,12 @@ CreateVerifiedAccessTrustProviderDeviceOptions& CreateVerifiedAccessTrustProvide
       m_tenantId = Aws::Utils::Xml::DecodeEscapedXmlText(tenantIdNode.GetText());
       m_tenantIdHasBeenSet = true;
     }
+    XmlNode publicSigningKeyUrlNode = resultNode.FirstChild("PublicSigningKeyUrl");
+    if(!publicSigningKeyUrlNode.IsNull())
+    {
+      m_publicSigningKeyUrl = Aws::Utils::Xml::DecodeEscapedXmlText(publicSigningKeyUrlNode.GetText());
+      m_publicSigningKeyUrlHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -55,6 +63,11 @@ void CreateVerifiedAccessTrustProviderDeviceOptions::OutputToStream(Aws::OStream
       oStream << location << index << locationValue << ".TenantId=" << StringUtils::URLEncode(m_tenantId.c_str()) << "&";
   }
 
+  if(m_publicSigningKeyUrlHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".PublicSigningKeyUrl=" << StringUtils::URLEncode(m_publicSigningKeyUrl.c_str()) << "&";
+  }
+
 }
 
 void CreateVerifiedAccessTrustProviderDeviceOptions::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -62,6 +75,10 @@ void CreateVerifiedAccessTrustProviderDeviceOptions::OutputToStream(Aws::OStream
   if(m_tenantIdHasBeenSet)
   {
       oStream << location << ".TenantId=" << StringUtils::URLEncode(m_tenantId.c_str()) << "&";
+  }
+  if(m_publicSigningKeyUrlHasBeenSet)
+  {
+      oStream << location << ".PublicSigningKeyUrl=" << StringUtils::URLEncode(m_publicSigningKeyUrl.c_str()) << "&";
   }
 }
 

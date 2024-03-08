@@ -61,6 +61,27 @@ GetUnfilteredTableMetadataResult& GetUnfilteredTableMetadataResult::operator =(c
     }
   }
 
+  if(jsonValue.ValueExists("QueryAuthorizationId"))
+  {
+    m_queryAuthorizationId = jsonValue.GetString("QueryAuthorizationId");
+
+  }
+
+  if(jsonValue.ValueExists("ResourceArn"))
+  {
+    m_resourceArn = jsonValue.GetString("ResourceArn");
+
+  }
+
+  if(jsonValue.ValueExists("Permissions"))
+  {
+    Aws::Utils::Array<JsonView> permissionsJsonList = jsonValue.GetArray("Permissions");
+    for(unsigned permissionsIndex = 0; permissionsIndex < permissionsJsonList.GetLength(); ++permissionsIndex)
+    {
+      m_permissions.push_back(PermissionMapper::GetPermissionForName(permissionsJsonList[permissionsIndex].AsString()));
+    }
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

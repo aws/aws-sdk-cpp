@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SavingsPlanProductType::NOT_SET:
+            return {};
           case SavingsPlanProductType::EC2:
             return "EC2";
           case SavingsPlanProductType::Fargate:

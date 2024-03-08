@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     spot,
-    on_demand
+    on_demand,
+    capacity_block
   };
 
 namespace DefaultTargetCapacityTypeMapper

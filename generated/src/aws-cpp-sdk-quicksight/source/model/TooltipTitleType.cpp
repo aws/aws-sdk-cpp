@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TooltipTitleType::NOT_SET:
+            return {};
           case TooltipTitleType::NONE:
             return "NONE";
           case TooltipTitleType::PRIMARY_VALUE:

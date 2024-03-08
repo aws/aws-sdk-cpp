@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BucketMetadataErrorCode::NOT_SET:
+            return {};
           case BucketMetadataErrorCode::ACCESS_DENIED:
             return "ACCESS_DENIED";
           default:

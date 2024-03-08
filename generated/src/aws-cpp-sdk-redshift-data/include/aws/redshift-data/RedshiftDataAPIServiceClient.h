@@ -28,8 +28,8 @@ namespace RedshiftDataAPIService
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef RedshiftDataAPIServiceClientConfiguration ClientConfigurationType;
       typedef RedshiftDataAPIServiceEndpointProvider EndpointProviderType;
@@ -39,14 +39,14 @@ namespace RedshiftDataAPIService
         * is not specified, it will be initialized to default values.
         */
         RedshiftDataAPIServiceClient(const Aws::RedshiftDataAPIService::RedshiftDataAPIServiceClientConfiguration& clientConfiguration = Aws::RedshiftDataAPIService::RedshiftDataAPIServiceClientConfiguration(),
-                                     std::shared_ptr<RedshiftDataAPIServiceEndpointProviderBase> endpointProvider = Aws::MakeShared<RedshiftDataAPIServiceEndpointProvider>(ALLOCATION_TAG));
+                                     std::shared_ptr<RedshiftDataAPIServiceEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         RedshiftDataAPIServiceClient(const Aws::Auth::AWSCredentials& credentials,
-                                     std::shared_ptr<RedshiftDataAPIServiceEndpointProviderBase> endpointProvider = Aws::MakeShared<RedshiftDataAPIServiceEndpointProvider>(ALLOCATION_TAG),
+                                     std::shared_ptr<RedshiftDataAPIServiceEndpointProviderBase> endpointProvider = nullptr,
                                      const Aws::RedshiftDataAPIService::RedshiftDataAPIServiceClientConfiguration& clientConfiguration = Aws::RedshiftDataAPIService::RedshiftDataAPIServiceClientConfiguration());
 
        /**
@@ -54,7 +54,7 @@ namespace RedshiftDataAPIService
         * the default http client factory will be used
         */
         RedshiftDataAPIServiceClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                                     std::shared_ptr<RedshiftDataAPIServiceEndpointProviderBase> endpointProvider = Aws::MakeShared<RedshiftDataAPIServiceEndpointProvider>(ALLOCATION_TAG),
+                                     std::shared_ptr<RedshiftDataAPIServiceEndpointProviderBase> endpointProvider = nullptr,
                                      const Aws::RedshiftDataAPIService::RedshiftDataAPIServiceClientConfiguration& clientConfiguration = Aws::RedshiftDataAPIService::RedshiftDataAPIServiceClientConfiguration());
 
 

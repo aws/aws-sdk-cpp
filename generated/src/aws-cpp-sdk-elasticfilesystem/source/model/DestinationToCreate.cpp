@@ -21,14 +21,16 @@ namespace Model
 DestinationToCreate::DestinationToCreate() : 
     m_regionHasBeenSet(false),
     m_availabilityZoneNameHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
+    m_kmsKeyIdHasBeenSet(false),
+    m_fileSystemIdHasBeenSet(false)
 {
 }
 
 DestinationToCreate::DestinationToCreate(JsonView jsonValue) : 
     m_regionHasBeenSet(false),
     m_availabilityZoneNameHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
+    m_kmsKeyIdHasBeenSet(false),
+    m_fileSystemIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -56,6 +58,13 @@ DestinationToCreate& DestinationToCreate::operator =(JsonView jsonValue)
     m_kmsKeyIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("FileSystemId"))
+  {
+    m_fileSystemId = jsonValue.GetString("FileSystemId");
+
+    m_fileSystemIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -78,6 +87,12 @@ JsonValue DestinationToCreate::Jsonize() const
   if(m_kmsKeyIdHasBeenSet)
   {
    payload.WithString("KmsKeyId", m_kmsKeyId);
+
+  }
+
+  if(m_fileSystemIdHasBeenSet)
+  {
+   payload.WithString("FileSystemId", m_fileSystemId);
 
   }
 

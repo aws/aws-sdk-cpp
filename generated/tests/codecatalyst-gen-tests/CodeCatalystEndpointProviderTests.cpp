@@ -16,7 +16,8 @@ using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
 using EpParam = Aws::Endpoint::EndpointParameter;
 using EpProp = Aws::Endpoint::EndpointParameter; // just a container to store test expectations
-using ExpEpProps = Aws::UnorderedMap<Aws::String, Aws::Vector<EpProp>>;
+using ExpEpProps = Aws::UnorderedMap<Aws::String, Aws::Vector<Aws::Vector<EpProp>>>;
+using ExpEpAuthScheme = Aws::Vector<EpProp>;
 using ExpEpHeaders = Aws::UnorderedMap<Aws::String, Aws::Vector<Aws::String>>;
 
 class CodeCatalystEndpointProviderTests : public ::testing::TestWithParam<size_t> {};
@@ -30,6 +31,7 @@ struct CodeCatalystEndpointProviderEndpointTestCase
         struct Endpoint
         {
             Aws::String url;
+            ExpEpAuthScheme authScheme;
             ExpEpProps properties;
             ExpEpHeaders headers;
         } endpoint;
@@ -59,6 +61,7 @@ static const Aws::Vector<CodeCatalystEndpointProviderEndpointTestCase> TEST_CASE
     {EpParam("Endpoint", "https://test.codecatalyst.global.api.aws")}, // params
     {}, // tags
     {{/*epUrl*/"https://test.codecatalyst.global.api.aws",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -67,6 +70,7 @@ static const Aws::Vector<CodeCatalystEndpointProviderEndpointTestCase> TEST_CASE
     {}, // params
     {}, // tags
     {{/*epUrl*/"https://codecatalyst.global.api.aws",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -75,6 +79,7 @@ static const Aws::Vector<CodeCatalystEndpointProviderEndpointTestCase> TEST_CASE
     {EpParam("UseFIPS", true)}, // params
     {}, // tags
     {{/*epUrl*/"https://codecatalyst-fips.global.api.aws",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -83,6 +88,7 @@ static const Aws::Vector<CodeCatalystEndpointProviderEndpointTestCase> TEST_CASE
     {EpParam("Region", "aws-global")}, // params
     {}, // tags
     {{/*epUrl*/"https://codecatalyst.global.api.aws",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -91,6 +97,7 @@ static const Aws::Vector<CodeCatalystEndpointProviderEndpointTestCase> TEST_CASE
     {EpParam("UseFIPS", true), EpParam("Region", "aws-global")}, // params
     {}, // tags
     {{/*epUrl*/"https://codecatalyst-fips.global.api.aws",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -99,6 +106,7 @@ static const Aws::Vector<CodeCatalystEndpointProviderEndpointTestCase> TEST_CASE
     {EpParam("Region", "us-west-2")}, // params
     {}, // tags
     {{/*epUrl*/"https://codecatalyst.global.api.aws",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -107,6 +115,7 @@ static const Aws::Vector<CodeCatalystEndpointProviderEndpointTestCase> TEST_CASE
     {EpParam("UseFIPS", true), EpParam("Region", "us-west-2")}, // params
     {}, // tags
     {{/*epUrl*/"https://codecatalyst-fips.global.api.aws",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -115,6 +124,7 @@ static const Aws::Vector<CodeCatalystEndpointProviderEndpointTestCase> TEST_CASE
     {EpParam("Region", "us-east-1")}, // params
     {}, // tags
     {{/*epUrl*/"https://codecatalyst.global.api.aws",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   },
@@ -123,6 +133,7 @@ static const Aws::Vector<CodeCatalystEndpointProviderEndpointTestCase> TEST_CASE
     {EpParam("UseFIPS", true), EpParam("Region", "us-east-1")}, // params
     {}, // tags
     {{/*epUrl*/"https://codecatalyst-fips.global.api.aws",
+       {/*authScheme*/}, 
        {/*properties*/},
        {/*headers*/}}, {/*No error*/}} // expect
   }
@@ -139,6 +150,8 @@ Aws::String RulesToSdkSignerName(const Aws::String& rulesSignerName)
         sdkSigner = "NullSigner";
     } else if (rulesSignerName == "bearer") {
         sdkSigner = "Bearer";
+    } else if (rulesSignerName == "s3Express") {
+        sdkSigner = "S3ExpressSigner";
     } else {
         sdkSigner = rulesSignerName;
     }
@@ -160,9 +173,23 @@ void ValidateOutcome(const ResolveEndpointOutcome& outcome, const CodeCatalystEn
         const auto expAuthSchemesIt = expect.endpoint.properties.find("authSchemes");
         if (expAuthSchemesIt != expect.endpoint.properties.end())
         {
+            // in the list of AuthSchemes, select the one with a highest priority
+            const Aws::Vector<Aws::String> priotityList = {"s3Express", "sigv4a", "sigv4", "bearer", "none", ""};
+            const auto expectedAuthSchemePropsIt = std::find_first_of(expAuthSchemesIt->second.begin(), expAuthSchemesIt->second.end(),
+                                                                    priotityList.begin(), priotityList.end(), [](const Aws::Vector<EpProp>& props, const Aws::String& expName)
+                                                                    {
+                                                                        const auto& propNameIt = std::find_if(props.begin(), props.end(), [](const EpProp& prop)
+                                                                        {
+                                                                            return prop.GetName() == "name";
+                                                                        });
+                                                                        assert(propNameIt != props.end());
+                                                                        return propNameIt->GetStrValueNoCheck() == expName;
+                                                                    });
+            assert(expectedAuthSchemePropsIt != expAuthSchemesIt->second.end());
+
             const auto& endpointResultAttrs = outcome.GetResult().GetAttributes();
             ASSERT_TRUE(endpointResultAttrs) << "Expected non-empty EndpointAttributes (authSchemes)";
-            for (const auto& expProperty : expAuthSchemesIt->second)
+            for (const auto& expProperty : *expectedAuthSchemePropsIt)
             {
                 if (expProperty.GetName() == "name") {
                     ASSERT_TRUE(!endpointResultAttrs->authScheme.GetName().empty());

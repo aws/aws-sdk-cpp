@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ServiceNetworkVpcAssociationStatus::NOT_SET:
+            return {};
           case ServiceNetworkVpcAssociationStatus::CREATE_IN_PROGRESS:
             return "CREATE_IN_PROGRESS";
           case ServiceNetworkVpcAssociationStatus::ACTIVE:

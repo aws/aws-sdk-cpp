@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ProtectedQueryStatus::NOT_SET:
+            return {};
           case ProtectedQueryStatus::SUBMITTED:
             return "SUBMITTED";
           case ProtectedQueryStatus::STARTED:

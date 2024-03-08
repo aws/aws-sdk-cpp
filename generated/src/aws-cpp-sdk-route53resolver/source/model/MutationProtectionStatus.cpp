@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MutationProtectionStatus::NOT_SET:
+            return {};
           case MutationProtectionStatus::ENABLED:
             return "ENABLED";
           case MutationProtectionStatus::DISABLED:

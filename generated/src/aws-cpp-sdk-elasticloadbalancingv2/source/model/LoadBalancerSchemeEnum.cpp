@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LoadBalancerSchemeEnum::NOT_SET:
+            return {};
           case LoadBalancerSchemeEnum::internet_facing:
             return "internet-facing";
           case LoadBalancerSchemeEnum::internal:

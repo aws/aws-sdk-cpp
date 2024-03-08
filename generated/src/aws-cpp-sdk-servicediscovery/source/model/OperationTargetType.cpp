@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OperationTargetType::NOT_SET:
+            return {};
           case OperationTargetType::NAMESPACE:
             return "NAMESPACE";
           case OperationTargetType::SERVICE:

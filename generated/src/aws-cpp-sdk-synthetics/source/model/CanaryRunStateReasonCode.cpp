@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CanaryRunStateReasonCode::NOT_SET:
+            return {};
           case CanaryRunStateReasonCode::CANARY_FAILURE:
             return "CANARY_FAILURE";
           case CanaryRunStateReasonCode::EXECUTION_FAILURE:

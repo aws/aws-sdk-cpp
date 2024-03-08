@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ElasticsearchIndexRotationPeriod::NOT_SET:
+            return {};
           case ElasticsearchIndexRotationPeriod::NoRotation:
             return "NoRotation";
           case ElasticsearchIndexRotationPeriod::OneHour:

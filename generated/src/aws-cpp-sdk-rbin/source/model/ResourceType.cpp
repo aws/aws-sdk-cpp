@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResourceType::NOT_SET:
+            return {};
           case ResourceType::EBS_SNAPSHOT:
             return "EBS_SNAPSHOT";
           case ResourceType::EC2_IMAGE:

@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ComponentFormat::NOT_SET:
+            return {};
           case ComponentFormat::SHELL:
             return "SHELL";
           default:

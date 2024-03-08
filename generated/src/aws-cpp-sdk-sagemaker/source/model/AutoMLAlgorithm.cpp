@@ -84,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AutoMLAlgorithm::NOT_SET:
+            return {};
           case AutoMLAlgorithm::xgboost:
             return "xgboost";
           case AutoMLAlgorithm::linear_learner:

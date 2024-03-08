@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TrafficMirrorRuleAction::NOT_SET:
+            return {};
           case TrafficMirrorRuleAction::accept:
             return "accept";
           case TrafficMirrorRuleAction::reject:

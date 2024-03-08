@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DisplayFormat::NOT_SET:
+            return {};
           case DisplayFormat::AUTO:
             return "AUTO";
           case DisplayFormat::PERCENT:

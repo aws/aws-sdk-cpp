@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case XavcTemporalAdaptiveQuantization::NOT_SET:
+            return {};
           case XavcTemporalAdaptiveQuantization::DISABLED:
             return "DISABLED";
           case XavcTemporalAdaptiveQuantization::ENABLED:

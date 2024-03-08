@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EventSourcePosition::NOT_SET:
+            return {};
           case EventSourcePosition::TRIM_HORIZON:
             return "TRIM_HORIZON";
           case EventSourcePosition::LATEST:

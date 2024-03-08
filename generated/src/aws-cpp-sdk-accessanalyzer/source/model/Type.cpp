@@ -22,6 +22,8 @@ namespace Aws
 
         static const int ACCOUNT_HASH = HashingUtils::HashString("ACCOUNT");
         static const int ORGANIZATION_HASH = HashingUtils::HashString("ORGANIZATION");
+        static const int ACCOUNT_UNUSED_ACCESS_HASH = HashingUtils::HashString("ACCOUNT_UNUSED_ACCESS");
+        static const int ORGANIZATION_UNUSED_ACCESS_HASH = HashingUtils::HashString("ORGANIZATION_UNUSED_ACCESS");
 
 
         Type GetTypeForName(const Aws::String& name)
@@ -34,6 +36,14 @@ namespace Aws
           else if (hashCode == ORGANIZATION_HASH)
           {
             return Type::ORGANIZATION;
+          }
+          else if (hashCode == ACCOUNT_UNUSED_ACCESS_HASH)
+          {
+            return Type::ACCOUNT_UNUSED_ACCESS;
+          }
+          else if (hashCode == ORGANIZATION_UNUSED_ACCESS_HASH)
+          {
+            return Type::ORGANIZATION_UNUSED_ACCESS;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -49,10 +59,16 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Type::NOT_SET:
+            return {};
           case Type::ACCOUNT:
             return "ACCOUNT";
           case Type::ORGANIZATION:
             return "ORGANIZATION";
+          case Type::ACCOUNT_UNUSED_ACCESS:
+            return "ACCOUNT_UNUSED_ACCESS";
+          case Type::ORGANIZATION_UNUSED_ACCESS:
+            return "ORGANIZATION_UNUSED_ACCESS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

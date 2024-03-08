@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MessageFormatType::NOT_SET:
+            return {};
           case MessageFormatType::PlainText:
             return "PlainText";
           case MessageFormatType::CustomPayload:

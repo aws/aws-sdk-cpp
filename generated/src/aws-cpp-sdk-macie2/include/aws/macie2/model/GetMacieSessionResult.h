@@ -195,31 +195,31 @@ namespace Model
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, of the most recent
-     * change to the status of the Amazon Macie account.</p>
+     * change to the status or configuration settings for the Amazon Macie account.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, of the most recent
-     * change to the status of the Amazon Macie account.</p>
+     * change to the status or configuration settings for the Amazon Macie account.</p>
      */
     inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAt = value; }
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, of the most recent
-     * change to the status of the Amazon Macie account.</p>
+     * change to the status or configuration settings for the Amazon Macie account.</p>
      */
     inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAt = std::move(value); }
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, of the most recent
-     * change to the status of the Amazon Macie account.</p>
+     * change to the status or configuration settings for the Amazon Macie account.</p>
      */
     inline GetMacieSessionResult& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
 
     /**
      * <p>The date and time, in UTC and extended ISO 8601 format, of the most recent
-     * change to the status of the Amazon Macie account.</p>
+     * change to the status or configuration settings for the Amazon Macie account.</p>
      */
     inline GetMacieSessionResult& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
 

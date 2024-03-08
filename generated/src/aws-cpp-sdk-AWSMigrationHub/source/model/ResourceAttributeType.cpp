@@ -89,6 +89,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResourceAttributeType::NOT_SET:
+            return {};
           case ResourceAttributeType::IPV4_ADDRESS:
             return "IPV4_ADDRESS";
           case ResourceAttributeType::IPV6_ADDRESS:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CertificateAuthorityUsageMode::NOT_SET:
+            return {};
           case CertificateAuthorityUsageMode::GENERAL_PURPOSE:
             return "GENERAL_PURPOSE";
           case CertificateAuthorityUsageMode::SHORT_LIVED_CERTIFICATE:

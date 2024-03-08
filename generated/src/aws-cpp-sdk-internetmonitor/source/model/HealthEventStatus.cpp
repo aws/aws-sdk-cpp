@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HealthEventStatus::NOT_SET:
+            return {};
           case HealthEventStatus::ACTIVE:
             return "ACTIVE";
           case HealthEventStatus::RESOLVED:

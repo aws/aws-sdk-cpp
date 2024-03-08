@@ -234,6 +234,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InstanceType::NOT_SET:
+            return {};
           case InstanceType::ml_m4_xlarge:
             return "ml.m4.xlarge";
           case InstanceType::ml_m4_2xlarge:

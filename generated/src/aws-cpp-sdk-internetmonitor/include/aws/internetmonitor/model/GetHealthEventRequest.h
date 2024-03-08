@@ -74,56 +74,56 @@ namespace Model
 
 
     /**
-     * <p>The internally generated identifier of a health event. Because
+     * <p>The internally-generated identifier of a health event. Because
      * <code>EventID</code> contains the forward slash (“/”) character, you must
      * URL-encode the <code>EventID</code> field in the request URL.</p>
      */
     inline const Aws::String& GetEventId() const{ return m_eventId; }
 
     /**
-     * <p>The internally generated identifier of a health event. Because
+     * <p>The internally-generated identifier of a health event. Because
      * <code>EventID</code> contains the forward slash (“/”) character, you must
      * URL-encode the <code>EventID</code> field in the request URL.</p>
      */
     inline bool EventIdHasBeenSet() const { return m_eventIdHasBeenSet; }
 
     /**
-     * <p>The internally generated identifier of a health event. Because
+     * <p>The internally-generated identifier of a health event. Because
      * <code>EventID</code> contains the forward slash (“/”) character, you must
      * URL-encode the <code>EventID</code> field in the request URL.</p>
      */
     inline void SetEventId(const Aws::String& value) { m_eventIdHasBeenSet = true; m_eventId = value; }
 
     /**
-     * <p>The internally generated identifier of a health event. Because
+     * <p>The internally-generated identifier of a health event. Because
      * <code>EventID</code> contains the forward slash (“/”) character, you must
      * URL-encode the <code>EventID</code> field in the request URL.</p>
      */
     inline void SetEventId(Aws::String&& value) { m_eventIdHasBeenSet = true; m_eventId = std::move(value); }
 
     /**
-     * <p>The internally generated identifier of a health event. Because
+     * <p>The internally-generated identifier of a health event. Because
      * <code>EventID</code> contains the forward slash (“/”) character, you must
      * URL-encode the <code>EventID</code> field in the request URL.</p>
      */
     inline void SetEventId(const char* value) { m_eventIdHasBeenSet = true; m_eventId.assign(value); }
 
     /**
-     * <p>The internally generated identifier of a health event. Because
+     * <p>The internally-generated identifier of a health event. Because
      * <code>EventID</code> contains the forward slash (“/”) character, you must
      * URL-encode the <code>EventID</code> field in the request URL.</p>
      */
     inline GetHealthEventRequest& WithEventId(const Aws::String& value) { SetEventId(value); return *this;}
 
     /**
-     * <p>The internally generated identifier of a health event. Because
+     * <p>The internally-generated identifier of a health event. Because
      * <code>EventID</code> contains the forward slash (“/”) character, you must
      * URL-encode the <code>EventID</code> field in the request URL.</p>
      */
     inline GetHealthEventRequest& WithEventId(Aws::String&& value) { SetEventId(std::move(value)); return *this;}
 
     /**
-     * <p>The internally generated identifier of a health event. Because
+     * <p>The internally-generated identifier of a health event. Because
      * <code>EventID</code> contains the forward slash (“/”) character, you must
      * URL-encode the <code>EventID</code> field in the request URL.</p>
      */

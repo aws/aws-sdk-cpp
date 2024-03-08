@@ -39,8 +39,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* IoTJobsDataPlaneClient::SERVICE_NAME = "iot-jobs-data";
-const char* IoTJobsDataPlaneClient::ALLOCATION_TAG = "IoTJobsDataPlaneClient";
+namespace Aws
+{
+  namespace IoTJobsDataPlane
+  {
+    const char SERVICE_NAME[] = "iot-jobs-data";
+    const char ALLOCATION_TAG[] = "IoTJobsDataPlaneClient";
+  }
+}
+const char* IoTJobsDataPlaneClient::GetServiceName() {return SERVICE_NAME;}
+const char* IoTJobsDataPlaneClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 IoTJobsDataPlaneClient::IoTJobsDataPlaneClient(const IoTJobsDataPlane::IoTJobsDataPlaneClientConfiguration& clientConfiguration,
                                                std::shared_ptr<IoTJobsDataPlaneEndpointProviderBase> endpointProvider) :
@@ -52,7 +60,7 @@ IoTJobsDataPlaneClient::IoTJobsDataPlaneClient(const IoTJobsDataPlane::IoTJobsDa
             Aws::MakeShared<IoTJobsDataPlaneErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<IoTJobsDataPlaneEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -68,7 +76,7 @@ IoTJobsDataPlaneClient::IoTJobsDataPlaneClient(const AWSCredentials& credentials
             Aws::MakeShared<IoTJobsDataPlaneErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<IoTJobsDataPlaneEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -84,7 +92,7 @@ IoTJobsDataPlaneClient::IoTJobsDataPlaneClient(const std::shared_ptr<AWSCredenti
             Aws::MakeShared<IoTJobsDataPlaneErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<IoTJobsDataPlaneEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

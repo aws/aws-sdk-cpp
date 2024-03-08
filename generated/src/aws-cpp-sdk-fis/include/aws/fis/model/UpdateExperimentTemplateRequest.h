@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/fis/model/UpdateExperimentTemplateLogConfigurationInput.h>
+#include <aws/fis/model/UpdateExperimentTemplateExperimentOptionsInput.h>
 #include <aws/fis/model/UpdateExperimentTemplateStopConditionInput.h>
 #include <aws/fis/model/UpdateExperimentTemplateTargetInput.h>
 #include <aws/fis/model/UpdateExperimentTemplateActionInputItem.h>
@@ -362,6 +363,37 @@ namespace Model
      */
     inline UpdateExperimentTemplateRequest& WithLogConfiguration(UpdateExperimentTemplateLogConfigurationInput&& value) { SetLogConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The experiment options for the experiment template.</p>
+     */
+    inline const UpdateExperimentTemplateExperimentOptionsInput& GetExperimentOptions() const{ return m_experimentOptions; }
+
+    /**
+     * <p>The experiment options for the experiment template.</p>
+     */
+    inline bool ExperimentOptionsHasBeenSet() const { return m_experimentOptionsHasBeenSet; }
+
+    /**
+     * <p>The experiment options for the experiment template.</p>
+     */
+    inline void SetExperimentOptions(const UpdateExperimentTemplateExperimentOptionsInput& value) { m_experimentOptionsHasBeenSet = true; m_experimentOptions = value; }
+
+    /**
+     * <p>The experiment options for the experiment template.</p>
+     */
+    inline void SetExperimentOptions(UpdateExperimentTemplateExperimentOptionsInput&& value) { m_experimentOptionsHasBeenSet = true; m_experimentOptions = std::move(value); }
+
+    /**
+     * <p>The experiment options for the experiment template.</p>
+     */
+    inline UpdateExperimentTemplateRequest& WithExperimentOptions(const UpdateExperimentTemplateExperimentOptionsInput& value) { SetExperimentOptions(value); return *this;}
+
+    /**
+     * <p>The experiment options for the experiment template.</p>
+     */
+    inline UpdateExperimentTemplateRequest& WithExperimentOptions(UpdateExperimentTemplateExperimentOptionsInput&& value) { SetExperimentOptions(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -384,6 +416,9 @@ namespace Model
 
     UpdateExperimentTemplateLogConfigurationInput m_logConfiguration;
     bool m_logConfigurationHasBeenSet = false;
+
+    UpdateExperimentTemplateExperimentOptionsInput m_experimentOptions;
+    bool m_experimentOptionsHasBeenSet = false;
   };
 
 } // namespace Model

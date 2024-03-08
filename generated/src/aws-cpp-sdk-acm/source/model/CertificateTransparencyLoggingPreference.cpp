@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CertificateTransparencyLoggingPreference::NOT_SET:
+            return {};
           case CertificateTransparencyLoggingPreference::ENABLED:
             return "ENABLED";
           case CertificateTransparencyLoggingPreference::DISABLED:

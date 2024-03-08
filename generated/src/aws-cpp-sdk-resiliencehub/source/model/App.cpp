@@ -37,6 +37,10 @@ App::App() :
     m_policyArnHasBeenSet(false),
     m_resiliencyScore(0.0),
     m_resiliencyScoreHasBeenSet(false),
+    m_rpoInSecs(0),
+    m_rpoInSecsHasBeenSet(false),
+    m_rtoInSecs(0),
+    m_rtoInSecsHasBeenSet(false),
     m_status(AppStatusType::NOT_SET),
     m_statusHasBeenSet(false),
     m_tagsHasBeenSet(false)
@@ -62,6 +66,10 @@ App::App(JsonView jsonValue) :
     m_policyArnHasBeenSet(false),
     m_resiliencyScore(0.0),
     m_resiliencyScoreHasBeenSet(false),
+    m_rpoInSecs(0),
+    m_rpoInSecsHasBeenSet(false),
+    m_rtoInSecs(0),
+    m_rtoInSecsHasBeenSet(false),
     m_status(AppStatusType::NOT_SET),
     m_statusHasBeenSet(false),
     m_tagsHasBeenSet(false)
@@ -172,6 +180,20 @@ App& App::operator =(JsonView jsonValue)
     m_resiliencyScoreHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("rpoInSecs"))
+  {
+    m_rpoInSecs = jsonValue.GetInteger("rpoInSecs");
+
+    m_rpoInSecsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("rtoInSecs"))
+  {
+    m_rtoInSecs = jsonValue.GetInteger("rtoInSecs");
+
+    m_rtoInSecsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("status"))
   {
     m_status = AppStatusTypeMapper::GetAppStatusTypeForName(jsonValue.GetString("status"));
@@ -275,6 +297,18 @@ JsonValue App::Jsonize() const
   if(m_resiliencyScoreHasBeenSet)
   {
    payload.WithDouble("resiliencyScore", m_resiliencyScore);
+
+  }
+
+  if(m_rpoInSecsHasBeenSet)
+  {
+   payload.WithInteger("rpoInSecs", m_rpoInSecs);
+
+  }
+
+  if(m_rtoInSecsHasBeenSet)
+  {
+   payload.WithInteger("rtoInSecs", m_rtoInSecs);
 
   }
 

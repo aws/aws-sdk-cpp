@@ -118,6 +118,12 @@ GetWorkflowExecutionResult& GetWorkflowExecutionResult::operator =(const Aws::Am
 
   }
 
+  if(jsonValue.ValueExists("parallelGroup"))
+  {
+    m_parallelGroup = jsonValue.GetString("parallelGroup");
+
+  }
+
 
 
   return *this;

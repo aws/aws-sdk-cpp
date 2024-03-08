@@ -13,7 +13,11 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateProjectRequest::CreateProjectRequest() : 
-    m_projectNameHasBeenSet(false)
+    m_projectNameHasBeenSet(false),
+    m_feature(CustomizationFeature::NOT_SET),
+    m_featureHasBeenSet(false),
+    m_autoUpdate(ProjectAutoUpdate::NOT_SET),
+    m_autoUpdateHasBeenSet(false)
 {
 }
 
@@ -25,6 +29,16 @@ Aws::String CreateProjectRequest::SerializePayload() const
   {
    payload.WithString("ProjectName", m_projectName);
 
+  }
+
+  if(m_featureHasBeenSet)
+  {
+   payload.WithString("Feature", CustomizationFeatureMapper::GetNameForCustomizationFeature(m_feature));
+  }
+
+  if(m_autoUpdateHasBeenSet)
+  {
+   payload.WithString("AutoUpdate", ProjectAutoUpdateMapper::GetNameForProjectAutoUpdate(m_autoUpdate));
   }
 
   return payload.View().WriteReadable();

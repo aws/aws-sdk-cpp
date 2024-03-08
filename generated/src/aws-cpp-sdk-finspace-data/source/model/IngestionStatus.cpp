@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case IngestionStatus::NOT_SET:
+            return {};
           case IngestionStatus::PENDING:
             return "PENDING";
           case IngestionStatus::FAILED:

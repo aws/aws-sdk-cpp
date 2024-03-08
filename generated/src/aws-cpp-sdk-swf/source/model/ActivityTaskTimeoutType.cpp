@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ActivityTaskTimeoutType::NOT_SET:
+            return {};
           case ActivityTaskTimeoutType::START_TO_CLOSE:
             return "START_TO_CLOSE";
           case ActivityTaskTimeoutType::SCHEDULE_TO_START:

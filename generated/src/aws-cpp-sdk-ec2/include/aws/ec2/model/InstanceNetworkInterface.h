@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/NetworkInterfaceStatus.h>
+#include <aws/ec2/model/ConnectionTrackingSpecificationResponse.h>
 #include <aws/ec2/model/GroupIdentifier.h>
 #include <aws/ec2/model/InstanceIpv6Address.h>
 #include <aws/ec2/model/InstancePrivateIpAddress.h>
@@ -757,6 +758,61 @@ namespace Model
      */
     inline InstanceNetworkInterface& AddIpv6Prefixes(InstanceIpv6Prefix&& value) { m_ipv6PrefixesHasBeenSet = true; m_ipv6Prefixes.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>A security group connection tracking configuration that enables you to set
+     * the timeout for connection tracking on an Elastic network interface. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#connection-tracking-timeouts">Connection
+     * tracking timeouts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline const ConnectionTrackingSpecificationResponse& GetConnectionTrackingConfiguration() const{ return m_connectionTrackingConfiguration; }
+
+    /**
+     * <p>A security group connection tracking configuration that enables you to set
+     * the timeout for connection tracking on an Elastic network interface. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#connection-tracking-timeouts">Connection
+     * tracking timeouts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline bool ConnectionTrackingConfigurationHasBeenSet() const { return m_connectionTrackingConfigurationHasBeenSet; }
+
+    /**
+     * <p>A security group connection tracking configuration that enables you to set
+     * the timeout for connection tracking on an Elastic network interface. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#connection-tracking-timeouts">Connection
+     * tracking timeouts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline void SetConnectionTrackingConfiguration(const ConnectionTrackingSpecificationResponse& value) { m_connectionTrackingConfigurationHasBeenSet = true; m_connectionTrackingConfiguration = value; }
+
+    /**
+     * <p>A security group connection tracking configuration that enables you to set
+     * the timeout for connection tracking on an Elastic network interface. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#connection-tracking-timeouts">Connection
+     * tracking timeouts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline void SetConnectionTrackingConfiguration(ConnectionTrackingSpecificationResponse&& value) { m_connectionTrackingConfigurationHasBeenSet = true; m_connectionTrackingConfiguration = std::move(value); }
+
+    /**
+     * <p>A security group connection tracking configuration that enables you to set
+     * the timeout for connection tracking on an Elastic network interface. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#connection-tracking-timeouts">Connection
+     * tracking timeouts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline InstanceNetworkInterface& WithConnectionTrackingConfiguration(const ConnectionTrackingSpecificationResponse& value) { SetConnectionTrackingConfiguration(value); return *this;}
+
+    /**
+     * <p>A security group connection tracking configuration that enables you to set
+     * the timeout for connection tracking on an Elastic network interface. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#connection-tracking-timeouts">Connection
+     * tracking timeouts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     */
+    inline InstanceNetworkInterface& WithConnectionTrackingConfiguration(ConnectionTrackingSpecificationResponse&& value) { SetConnectionTrackingConfiguration(std::move(value)); return *this;}
+
   private:
 
     InstanceNetworkInterfaceAssociation m_association;
@@ -812,6 +868,9 @@ namespace Model
 
     Aws::Vector<InstanceIpv6Prefix> m_ipv6Prefixes;
     bool m_ipv6PrefixesHasBeenSet = false;
+
+    ConnectionTrackingSpecificationResponse m_connectionTrackingConfiguration;
+    bool m_connectionTrackingConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

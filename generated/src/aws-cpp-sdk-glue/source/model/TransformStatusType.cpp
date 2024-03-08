@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TransformStatusType::NOT_SET:
+            return {};
           case TransformStatusType::NOT_READY:
             return "NOT_READY";
           case TransformStatusType::READY:

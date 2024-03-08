@@ -126,44 +126,44 @@ namespace Model
 
 
     /**
-     * <p>A JSON schema that's used to validate the configuration values that you
-     * provide when an addon is created or updated.</p>
+     * <p>A JSON schema that's used to validate the configuration values you provide
+     * when an add-on is created or updated.</p>
      */
     inline const Aws::String& GetConfigurationSchema() const{ return m_configurationSchema; }
 
     /**
-     * <p>A JSON schema that's used to validate the configuration values that you
-     * provide when an addon is created or updated.</p>
+     * <p>A JSON schema that's used to validate the configuration values you provide
+     * when an add-on is created or updated.</p>
      */
     inline void SetConfigurationSchema(const Aws::String& value) { m_configurationSchema = value; }
 
     /**
-     * <p>A JSON schema that's used to validate the configuration values that you
-     * provide when an addon is created or updated.</p>
+     * <p>A JSON schema that's used to validate the configuration values you provide
+     * when an add-on is created or updated.</p>
      */
     inline void SetConfigurationSchema(Aws::String&& value) { m_configurationSchema = std::move(value); }
 
     /**
-     * <p>A JSON schema that's used to validate the configuration values that you
-     * provide when an addon is created or updated.</p>
+     * <p>A JSON schema that's used to validate the configuration values you provide
+     * when an add-on is created or updated.</p>
      */
     inline void SetConfigurationSchema(const char* value) { m_configurationSchema.assign(value); }
 
     /**
-     * <p>A JSON schema that's used to validate the configuration values that you
-     * provide when an addon is created or updated.</p>
+     * <p>A JSON schema that's used to validate the configuration values you provide
+     * when an add-on is created or updated.</p>
      */
     inline DescribeAddonConfigurationResult& WithConfigurationSchema(const Aws::String& value) { SetConfigurationSchema(value); return *this;}
 
     /**
-     * <p>A JSON schema that's used to validate the configuration values that you
-     * provide when an addon is created or updated.</p>
+     * <p>A JSON schema that's used to validate the configuration values you provide
+     * when an add-on is created or updated.</p>
      */
     inline DescribeAddonConfigurationResult& WithConfigurationSchema(Aws::String&& value) { SetConfigurationSchema(std::move(value)); return *this;}
 
     /**
-     * <p>A JSON schema that's used to validate the configuration values that you
-     * provide when an addon is created or updated.</p>
+     * <p>A JSON schema that's used to validate the configuration values you provide
+     * when an add-on is created or updated.</p>
      */
     inline DescribeAddonConfigurationResult& WithConfigurationSchema(const char* value) { SetConfigurationSchema(value); return *this;}
 

@@ -27,8 +27,8 @@ namespace OSIS
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef OSISClientConfiguration ClientConfigurationType;
       typedef OSISEndpointProvider EndpointProviderType;
@@ -38,14 +38,14 @@ namespace OSIS
         * is not specified, it will be initialized to default values.
         */
         OSISClient(const Aws::OSIS::OSISClientConfiguration& clientConfiguration = Aws::OSIS::OSISClientConfiguration(),
-                   std::shared_ptr<OSISEndpointProviderBase> endpointProvider = Aws::MakeShared<OSISEndpointProvider>(ALLOCATION_TAG));
+                   std::shared_ptr<OSISEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         OSISClient(const Aws::Auth::AWSCredentials& credentials,
-                   std::shared_ptr<OSISEndpointProviderBase> endpointProvider = Aws::MakeShared<OSISEndpointProvider>(ALLOCATION_TAG),
+                   std::shared_ptr<OSISEndpointProviderBase> endpointProvider = nullptr,
                    const Aws::OSIS::OSISClientConfiguration& clientConfiguration = Aws::OSIS::OSISClientConfiguration());
 
        /**
@@ -53,7 +53,7 @@ namespace OSIS
         * the default http client factory will be used
         */
         OSISClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                   std::shared_ptr<OSISEndpointProviderBase> endpointProvider = Aws::MakeShared<OSISEndpointProvider>(ALLOCATION_TAG),
+                   std::shared_ptr<OSISEndpointProviderBase> endpointProvider = nullptr,
                    const Aws::OSIS::OSISClientConfiguration& clientConfiguration = Aws::OSIS::OSISClientConfiguration());
 
 

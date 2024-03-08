@@ -51,8 +51,8 @@ namespace SupportApp
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef SupportAppClientConfiguration ClientConfigurationType;
       typedef SupportAppEndpointProvider EndpointProviderType;
@@ -62,14 +62,14 @@ namespace SupportApp
         * is not specified, it will be initialized to default values.
         */
         SupportAppClient(const Aws::SupportApp::SupportAppClientConfiguration& clientConfiguration = Aws::SupportApp::SupportAppClientConfiguration(),
-                         std::shared_ptr<SupportAppEndpointProviderBase> endpointProvider = Aws::MakeShared<SupportAppEndpointProvider>(ALLOCATION_TAG));
+                         std::shared_ptr<SupportAppEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         SupportAppClient(const Aws::Auth::AWSCredentials& credentials,
-                         std::shared_ptr<SupportAppEndpointProviderBase> endpointProvider = Aws::MakeShared<SupportAppEndpointProvider>(ALLOCATION_TAG),
+                         std::shared_ptr<SupportAppEndpointProviderBase> endpointProvider = nullptr,
                          const Aws::SupportApp::SupportAppClientConfiguration& clientConfiguration = Aws::SupportApp::SupportAppClientConfiguration());
 
        /**
@@ -77,7 +77,7 @@ namespace SupportApp
         * the default http client factory will be used
         */
         SupportAppClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                         std::shared_ptr<SupportAppEndpointProviderBase> endpointProvider = Aws::MakeShared<SupportAppEndpointProvider>(ALLOCATION_TAG),
+                         std::shared_ptr<SupportAppEndpointProviderBase> endpointProvider = nullptr,
                          const Aws::SupportApp::SupportAppClientConfiguration& clientConfiguration = Aws::SupportApp::SupportAppClientConfiguration());
 
 

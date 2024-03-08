@@ -22,7 +22,9 @@ TargetAddress::TargetAddress() :
     m_ipHasBeenSet(false),
     m_port(0),
     m_portHasBeenSet(false),
-    m_ipv6HasBeenSet(false)
+    m_ipv6HasBeenSet(false),
+    m_protocol(Protocol::NOT_SET),
+    m_protocolHasBeenSet(false)
 {
 }
 
@@ -30,7 +32,9 @@ TargetAddress::TargetAddress(JsonView jsonValue) :
     m_ipHasBeenSet(false),
     m_port(0),
     m_portHasBeenSet(false),
-    m_ipv6HasBeenSet(false)
+    m_ipv6HasBeenSet(false),
+    m_protocol(Protocol::NOT_SET),
+    m_protocolHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -58,6 +62,13 @@ TargetAddress& TargetAddress::operator =(JsonView jsonValue)
     m_ipv6HasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Protocol"))
+  {
+    m_protocol = ProtocolMapper::GetProtocolForName(jsonValue.GetString("Protocol"));
+
+    m_protocolHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -81,6 +92,11 @@ JsonValue TargetAddress::Jsonize() const
   {
    payload.WithString("Ipv6", m_ipv6);
 
+  }
+
+  if(m_protocolHasBeenSet)
+  {
+   payload.WithString("Protocol", ProtocolMapper::GetNameForProtocol(m_protocol));
   }
 
   return payload;

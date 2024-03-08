@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/entityresolution/EntityResolution_EXPORTS.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/entityresolution/model/ResolutionType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -69,6 +70,43 @@ namespace Model
      * <p>The timestamp of when the workflow was created.</p>
      */
     inline MatchingWorkflowSummary& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The method that has been specified for data matching, either using matching
+     * provided by Entity Resolution or through a provider service.</p>
+     */
+    inline const ResolutionType& GetResolutionType() const{ return m_resolutionType; }
+
+    /**
+     * <p>The method that has been specified for data matching, either using matching
+     * provided by Entity Resolution or through a provider service.</p>
+     */
+    inline bool ResolutionTypeHasBeenSet() const { return m_resolutionTypeHasBeenSet; }
+
+    /**
+     * <p>The method that has been specified for data matching, either using matching
+     * provided by Entity Resolution or through a provider service.</p>
+     */
+    inline void SetResolutionType(const ResolutionType& value) { m_resolutionTypeHasBeenSet = true; m_resolutionType = value; }
+
+    /**
+     * <p>The method that has been specified for data matching, either using matching
+     * provided by Entity Resolution or through a provider service.</p>
+     */
+    inline void SetResolutionType(ResolutionType&& value) { m_resolutionTypeHasBeenSet = true; m_resolutionType = std::move(value); }
+
+    /**
+     * <p>The method that has been specified for data matching, either using matching
+     * provided by Entity Resolution or through a provider service.</p>
+     */
+    inline MatchingWorkflowSummary& WithResolutionType(const ResolutionType& value) { SetResolutionType(value); return *this;}
+
+    /**
+     * <p>The method that has been specified for data matching, either using matching
+     * provided by Entity Resolution or through a provider service.</p>
+     */
+    inline MatchingWorkflowSummary& WithResolutionType(ResolutionType&& value) { SetResolutionType(std::move(value)); return *this;}
 
 
     /**
@@ -195,6 +233,9 @@ namespace Model
 
     Aws::Utils::DateTime m_createdAt;
     bool m_createdAtHasBeenSet = false;
+
+    ResolutionType m_resolutionType;
+    bool m_resolutionTypeHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedAt;
     bool m_updatedAtHasBeenSet = false;

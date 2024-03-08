@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EbsVolumeType::NOT_SET:
+            return {};
           case EbsVolumeType::standard:
             return "standard";
           case EbsVolumeType::io1:

@@ -15,7 +15,10 @@ using namespace Aws::Utils;
 CreatePullThroughCacheRuleRequest::CreatePullThroughCacheRuleRequest() : 
     m_ecrRepositoryPrefixHasBeenSet(false),
     m_upstreamRegistryUrlHasBeenSet(false),
-    m_registryIdHasBeenSet(false)
+    m_registryIdHasBeenSet(false),
+    m_upstreamRegistry(UpstreamRegistry::NOT_SET),
+    m_upstreamRegistryHasBeenSet(false),
+    m_credentialArnHasBeenSet(false)
 {
 }
 
@@ -38,6 +41,17 @@ Aws::String CreatePullThroughCacheRuleRequest::SerializePayload() const
   if(m_registryIdHasBeenSet)
   {
    payload.WithString("registryId", m_registryId);
+
+  }
+
+  if(m_upstreamRegistryHasBeenSet)
+  {
+   payload.WithString("upstreamRegistry", UpstreamRegistryMapper::GetNameForUpstreamRegistry(m_upstreamRegistry));
+  }
+
+  if(m_credentialArnHasBeenSet)
+  {
+   payload.WithString("credentialArn", m_credentialArn);
 
   }
 

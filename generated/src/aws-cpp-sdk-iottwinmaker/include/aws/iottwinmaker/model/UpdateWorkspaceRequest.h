@@ -154,6 +154,55 @@ namespace Model
      */
     inline UpdateWorkspaceRequest& WithRole(const char* value) { SetRole(value); return *this;}
 
+
+    /**
+     * <p>The ARN of the S3 bucket where resources associated with the workspace are
+     * stored.</p>
+     */
+    inline const Aws::String& GetS3Location() const{ return m_s3Location; }
+
+    /**
+     * <p>The ARN of the S3 bucket where resources associated with the workspace are
+     * stored.</p>
+     */
+    inline bool S3LocationHasBeenSet() const { return m_s3LocationHasBeenSet; }
+
+    /**
+     * <p>The ARN of the S3 bucket where resources associated with the workspace are
+     * stored.</p>
+     */
+    inline void SetS3Location(const Aws::String& value) { m_s3LocationHasBeenSet = true; m_s3Location = value; }
+
+    /**
+     * <p>The ARN of the S3 bucket where resources associated with the workspace are
+     * stored.</p>
+     */
+    inline void SetS3Location(Aws::String&& value) { m_s3LocationHasBeenSet = true; m_s3Location = std::move(value); }
+
+    /**
+     * <p>The ARN of the S3 bucket where resources associated with the workspace are
+     * stored.</p>
+     */
+    inline void SetS3Location(const char* value) { m_s3LocationHasBeenSet = true; m_s3Location.assign(value); }
+
+    /**
+     * <p>The ARN of the S3 bucket where resources associated with the workspace are
+     * stored.</p>
+     */
+    inline UpdateWorkspaceRequest& WithS3Location(const Aws::String& value) { SetS3Location(value); return *this;}
+
+    /**
+     * <p>The ARN of the S3 bucket where resources associated with the workspace are
+     * stored.</p>
+     */
+    inline UpdateWorkspaceRequest& WithS3Location(Aws::String&& value) { SetS3Location(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the S3 bucket where resources associated with the workspace are
+     * stored.</p>
+     */
+    inline UpdateWorkspaceRequest& WithS3Location(const char* value) { SetS3Location(value); return *this;}
+
   private:
 
     Aws::String m_workspaceId;
@@ -164,6 +213,9 @@ namespace Model
 
     Aws::String m_role;
     bool m_roleHasBeenSet = false;
+
+    Aws::String m_s3Location;
+    bool m_s3LocationHasBeenSet = false;
   };
 
 } // namespace Model

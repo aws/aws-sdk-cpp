@@ -34,35 +34,35 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == DISABLED_OPERATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticsearchServiceErrors::DISABLED_OPERATION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticsearchServiceErrors::DISABLED_OPERATION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INTERNAL_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticsearchServiceErrors::INTERNAL), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticsearchServiceErrors::INTERNAL), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == CONFLICT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticsearchServiceErrors::CONFLICT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticsearchServiceErrors::CONFLICT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == RESOURCE_ALREADY_EXISTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticsearchServiceErrors::RESOURCE_ALREADY_EXISTS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticsearchServiceErrors::RESOURCE_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == BASE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticsearchServiceErrors::BASE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticsearchServiceErrors::BASE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticsearchServiceErrors::LIMIT_EXCEEDED), true);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticsearchServiceErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
   }
   else if (hashCode == INVALID_TYPE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticsearchServiceErrors::INVALID_TYPE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticsearchServiceErrors::INVALID_TYPE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_PAGINATION_TOKEN_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticsearchServiceErrors::INVALID_PAGINATION_TOKEN), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticsearchServiceErrors::INVALID_PAGINATION_TOKEN), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

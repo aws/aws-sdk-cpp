@@ -20,6 +20,8 @@ namespace Model
 
 ApplicationSummary::ApplicationSummary() : 
     m_idHasBeenSet(false),
+    m_discoveryStatus(ApplicationDiscoveryStatus::NOT_SET),
+    m_discoveryStatusHasBeenSet(false),
     m_type(ApplicationType::NOT_SET),
     m_typeHasBeenSet(false),
     m_arnHasBeenSet(false),
@@ -29,6 +31,8 @@ ApplicationSummary::ApplicationSummary() :
 
 ApplicationSummary::ApplicationSummary(JsonView jsonValue) : 
     m_idHasBeenSet(false),
+    m_discoveryStatus(ApplicationDiscoveryStatus::NOT_SET),
+    m_discoveryStatusHasBeenSet(false),
     m_type(ApplicationType::NOT_SET),
     m_typeHasBeenSet(false),
     m_arnHasBeenSet(false),
@@ -44,6 +48,13 @@ ApplicationSummary& ApplicationSummary::operator =(JsonView jsonValue)
     m_id = jsonValue.GetString("Id");
 
     m_idHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DiscoveryStatus"))
+  {
+    m_discoveryStatus = ApplicationDiscoveryStatusMapper::GetApplicationDiscoveryStatusForName(jsonValue.GetString("DiscoveryStatus"));
+
+    m_discoveryStatusHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Type"))
@@ -81,6 +92,11 @@ JsonValue ApplicationSummary::Jsonize() const
   {
    payload.WithString("Id", m_id);
 
+  }
+
+  if(m_discoveryStatusHasBeenSet)
+  {
+   payload.WithString("DiscoveryStatus", ApplicationDiscoveryStatusMapper::GetNameForApplicationDiscoveryStatus(m_discoveryStatus));
   }
 
   if(m_typeHasBeenSet)

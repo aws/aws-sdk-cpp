@@ -33,7 +33,8 @@ Instance::Instance() :
     m_inboundCallsEnabledHasBeenSet(false),
     m_outboundCallsEnabled(false),
     m_outboundCallsEnabledHasBeenSet(false),
-    m_instanceAccessUrlHasBeenSet(false)
+    m_instanceAccessUrlHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -52,7 +53,8 @@ Instance::Instance(JsonView jsonValue) :
     m_inboundCallsEnabledHasBeenSet(false),
     m_outboundCallsEnabled(false),
     m_outboundCallsEnabledHasBeenSet(false),
-    m_instanceAccessUrlHasBeenSet(false)
+    m_instanceAccessUrlHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -136,6 +138,16 @@ Instance& Instance::operator =(JsonView jsonValue)
     m_instanceAccessUrlHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Tags"))
+  {
+    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
+    for(auto& tagsItem : tagsJsonMap)
+    {
+      m_tags[tagsItem.first] = tagsItem.second.AsString();
+    }
+    m_tagsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -203,6 +215,17 @@ JsonValue Instance::Jsonize() const
   if(m_instanceAccessUrlHasBeenSet)
   {
    payload.WithString("InstanceAccessUrl", m_instanceAccessUrl);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("Tags", std::move(tagsJsonMap));
 
   }
 

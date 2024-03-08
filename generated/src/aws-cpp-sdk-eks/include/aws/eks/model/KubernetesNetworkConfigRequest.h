@@ -50,9 +50,9 @@ namespace Model
      * address blocks: <code>10.0.0.0/8</code>, <code>172.16.0.0/12</code>, or
      * <code>192.168.0.0/16</code>.</p> </li> <li> <p>Doesn't overlap with any CIDR
      * block assigned to the VPC that you selected for VPC.</p> </li> <li> <p>Between
-     * /24 and /12.</p> </li> </ul>  <p>You can only specify a custom CIDR
-     * block when you create a cluster and can't change this value once the cluster is
-     * created.</p> 
+     * <code>/24</code> and <code>/12</code>.</p> </li> </ul>  <p>You can
+     * only specify a custom CIDR block when you create a cluster. You can't change
+     * this value after the cluster is created.</p> 
      */
     inline const Aws::String& GetServiceIpv4Cidr() const{ return m_serviceIpv4Cidr; }
 
@@ -67,9 +67,9 @@ namespace Model
      * address blocks: <code>10.0.0.0/8</code>, <code>172.16.0.0/12</code>, or
      * <code>192.168.0.0/16</code>.</p> </li> <li> <p>Doesn't overlap with any CIDR
      * block assigned to the VPC that you selected for VPC.</p> </li> <li> <p>Between
-     * /24 and /12.</p> </li> </ul>  <p>You can only specify a custom CIDR
-     * block when you create a cluster and can't change this value once the cluster is
-     * created.</p> 
+     * <code>/24</code> and <code>/12</code>.</p> </li> </ul>  <p>You can
+     * only specify a custom CIDR block when you create a cluster. You can't change
+     * this value after the cluster is created.</p> 
      */
     inline bool ServiceIpv4CidrHasBeenSet() const { return m_serviceIpv4CidrHasBeenSet; }
 
@@ -84,9 +84,9 @@ namespace Model
      * address blocks: <code>10.0.0.0/8</code>, <code>172.16.0.0/12</code>, or
      * <code>192.168.0.0/16</code>.</p> </li> <li> <p>Doesn't overlap with any CIDR
      * block assigned to the VPC that you selected for VPC.</p> </li> <li> <p>Between
-     * /24 and /12.</p> </li> </ul>  <p>You can only specify a custom CIDR
-     * block when you create a cluster and can't change this value once the cluster is
-     * created.</p> 
+     * <code>/24</code> and <code>/12</code>.</p> </li> </ul>  <p>You can
+     * only specify a custom CIDR block when you create a cluster. You can't change
+     * this value after the cluster is created.</p> 
      */
     inline void SetServiceIpv4Cidr(const Aws::String& value) { m_serviceIpv4CidrHasBeenSet = true; m_serviceIpv4Cidr = value; }
 
@@ -101,9 +101,9 @@ namespace Model
      * address blocks: <code>10.0.0.0/8</code>, <code>172.16.0.0/12</code>, or
      * <code>192.168.0.0/16</code>.</p> </li> <li> <p>Doesn't overlap with any CIDR
      * block assigned to the VPC that you selected for VPC.</p> </li> <li> <p>Between
-     * /24 and /12.</p> </li> </ul>  <p>You can only specify a custom CIDR
-     * block when you create a cluster and can't change this value once the cluster is
-     * created.</p> 
+     * <code>/24</code> and <code>/12</code>.</p> </li> </ul>  <p>You can
+     * only specify a custom CIDR block when you create a cluster. You can't change
+     * this value after the cluster is created.</p> 
      */
     inline void SetServiceIpv4Cidr(Aws::String&& value) { m_serviceIpv4CidrHasBeenSet = true; m_serviceIpv4Cidr = std::move(value); }
 
@@ -118,9 +118,9 @@ namespace Model
      * address blocks: <code>10.0.0.0/8</code>, <code>172.16.0.0/12</code>, or
      * <code>192.168.0.0/16</code>.</p> </li> <li> <p>Doesn't overlap with any CIDR
      * block assigned to the VPC that you selected for VPC.</p> </li> <li> <p>Between
-     * /24 and /12.</p> </li> </ul>  <p>You can only specify a custom CIDR
-     * block when you create a cluster and can't change this value once the cluster is
-     * created.</p> 
+     * <code>/24</code> and <code>/12</code>.</p> </li> </ul>  <p>You can
+     * only specify a custom CIDR block when you create a cluster. You can't change
+     * this value after the cluster is created.</p> 
      */
     inline void SetServiceIpv4Cidr(const char* value) { m_serviceIpv4CidrHasBeenSet = true; m_serviceIpv4Cidr.assign(value); }
 
@@ -135,9 +135,9 @@ namespace Model
      * address blocks: <code>10.0.0.0/8</code>, <code>172.16.0.0/12</code>, or
      * <code>192.168.0.0/16</code>.</p> </li> <li> <p>Doesn't overlap with any CIDR
      * block assigned to the VPC that you selected for VPC.</p> </li> <li> <p>Between
-     * /24 and /12.</p> </li> </ul>  <p>You can only specify a custom CIDR
-     * block when you create a cluster and can't change this value once the cluster is
-     * created.</p> 
+     * <code>/24</code> and <code>/12</code>.</p> </li> </ul>  <p>You can
+     * only specify a custom CIDR block when you create a cluster. You can't change
+     * this value after the cluster is created.</p> 
      */
     inline KubernetesNetworkConfigRequest& WithServiceIpv4Cidr(const Aws::String& value) { SetServiceIpv4Cidr(value); return *this;}
 
@@ -152,9 +152,9 @@ namespace Model
      * address blocks: <code>10.0.0.0/8</code>, <code>172.16.0.0/12</code>, or
      * <code>192.168.0.0/16</code>.</p> </li> <li> <p>Doesn't overlap with any CIDR
      * block assigned to the VPC that you selected for VPC.</p> </li> <li> <p>Between
-     * /24 and /12.</p> </li> </ul>  <p>You can only specify a custom CIDR
-     * block when you create a cluster and can't change this value once the cluster is
-     * created.</p> 
+     * <code>/24</code> and <code>/12</code>.</p> </li> </ul>  <p>You can
+     * only specify a custom CIDR block when you create a cluster. You can't change
+     * this value after the cluster is created.</p> 
      */
     inline KubernetesNetworkConfigRequest& WithServiceIpv4Cidr(Aws::String&& value) { SetServiceIpv4Cidr(std::move(value)); return *this;}
 
@@ -169,9 +169,9 @@ namespace Model
      * address blocks: <code>10.0.0.0/8</code>, <code>172.16.0.0/12</code>, or
      * <code>192.168.0.0/16</code>.</p> </li> <li> <p>Doesn't overlap with any CIDR
      * block assigned to the VPC that you selected for VPC.</p> </li> <li> <p>Between
-     * /24 and /12.</p> </li> </ul>  <p>You can only specify a custom CIDR
-     * block when you create a cluster and can't change this value once the cluster is
-     * created.</p> 
+     * <code>/24</code> and <code>/12</code>.</p> </li> </ul>  <p>You can
+     * only specify a custom CIDR block when you create a cluster. You can't change
+     * this value after the cluster is created.</p> 
      */
     inline KubernetesNetworkConfigRequest& WithServiceIpv4Cidr(const char* value) { SetServiceIpv4Cidr(value); return *this;}
 

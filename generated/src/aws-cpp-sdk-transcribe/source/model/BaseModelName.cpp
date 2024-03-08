@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BaseModelName::NOT_SET:
+            return {};
           case BaseModelName::NarrowBand:
             return "NarrowBand";
           case BaseModelName::WideBand:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AnomalySeverity::NOT_SET:
+            return {};
           case AnomalySeverity::LOW:
             return "LOW";
           case AnomalySeverity::MEDIUM:

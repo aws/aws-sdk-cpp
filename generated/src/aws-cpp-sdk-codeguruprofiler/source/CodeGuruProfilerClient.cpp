@@ -58,8 +58,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* CodeGuruProfilerClient::SERVICE_NAME = "codeguru-profiler";
-const char* CodeGuruProfilerClient::ALLOCATION_TAG = "CodeGuruProfilerClient";
+namespace Aws
+{
+  namespace CodeGuruProfiler
+  {
+    const char SERVICE_NAME[] = "codeguru-profiler";
+    const char ALLOCATION_TAG[] = "CodeGuruProfilerClient";
+  }
+}
+const char* CodeGuruProfilerClient::GetServiceName() {return SERVICE_NAME;}
+const char* CodeGuruProfilerClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 CodeGuruProfilerClient::CodeGuruProfilerClient(const CodeGuruProfiler::CodeGuruProfilerClientConfiguration& clientConfiguration,
                                                std::shared_ptr<CodeGuruProfilerEndpointProviderBase> endpointProvider) :
@@ -71,7 +79,7 @@ CodeGuruProfilerClient::CodeGuruProfilerClient(const CodeGuruProfiler::CodeGuruP
             Aws::MakeShared<CodeGuruProfilerErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CodeGuruProfilerEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -87,7 +95,7 @@ CodeGuruProfilerClient::CodeGuruProfilerClient(const AWSCredentials& credentials
             Aws::MakeShared<CodeGuruProfilerErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CodeGuruProfilerEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -103,7 +111,7 @@ CodeGuruProfilerClient::CodeGuruProfilerClient(const std::shared_ptr<AWSCredenti
             Aws::MakeShared<CodeGuruProfilerErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CodeGuruProfilerEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

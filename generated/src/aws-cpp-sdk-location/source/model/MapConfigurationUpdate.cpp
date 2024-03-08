@@ -19,11 +19,13 @@ namespace Model
 {
 
 MapConfigurationUpdate::MapConfigurationUpdate() : 
+    m_customLayersHasBeenSet(false),
     m_politicalViewHasBeenSet(false)
 {
 }
 
 MapConfigurationUpdate::MapConfigurationUpdate(JsonView jsonValue) : 
+    m_customLayersHasBeenSet(false),
     m_politicalViewHasBeenSet(false)
 {
   *this = jsonValue;
@@ -31,6 +33,16 @@ MapConfigurationUpdate::MapConfigurationUpdate(JsonView jsonValue) :
 
 MapConfigurationUpdate& MapConfigurationUpdate::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("CustomLayers"))
+  {
+    Aws::Utils::Array<JsonView> customLayersJsonList = jsonValue.GetArray("CustomLayers");
+    for(unsigned customLayersIndex = 0; customLayersIndex < customLayersJsonList.GetLength(); ++customLayersIndex)
+    {
+      m_customLayers.push_back(customLayersJsonList[customLayersIndex].AsString());
+    }
+    m_customLayersHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("PoliticalView"))
   {
     m_politicalView = jsonValue.GetString("PoliticalView");
@@ -44,6 +56,17 @@ MapConfigurationUpdate& MapConfigurationUpdate::operator =(JsonView jsonValue)
 JsonValue MapConfigurationUpdate::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_customLayersHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> customLayersJsonList(m_customLayers.size());
+   for(unsigned customLayersIndex = 0; customLayersIndex < customLayersJsonList.GetLength(); ++customLayersIndex)
+   {
+     customLayersJsonList[customLayersIndex].AsString(m_customLayers[customLayersIndex]);
+   }
+   payload.WithArray("CustomLayers", std::move(customLayersJsonList));
+
+  }
 
   if(m_politicalViewHasBeenSet)
   {

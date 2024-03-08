@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VpcTenancy::NOT_SET:
+            return {};
           case VpcTenancy::default_:
             return "default";
           default:

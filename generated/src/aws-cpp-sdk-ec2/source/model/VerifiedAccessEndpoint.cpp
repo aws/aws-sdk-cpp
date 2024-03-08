@@ -40,7 +40,8 @@ VerifiedAccessEndpoint::VerifiedAccessEndpoint() :
     m_creationTimeHasBeenSet(false),
     m_lastUpdatedTimeHasBeenSet(false),
     m_deletionTimeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_sseSpecificationHasBeenSet(false)
 {
 }
 
@@ -64,7 +65,8 @@ VerifiedAccessEndpoint::VerifiedAccessEndpoint(const XmlNode& xmlNode) :
     m_creationTimeHasBeenSet(false),
     m_lastUpdatedTimeHasBeenSet(false),
     m_deletionTimeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_sseSpecificationHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -195,6 +197,12 @@ VerifiedAccessEndpoint& VerifiedAccessEndpoint::operator =(const XmlNode& xmlNod
 
       m_tagsHasBeenSet = true;
     }
+    XmlNode sseSpecificationNode = resultNode.FirstChild("sseSpecification");
+    if(!sseSpecificationNode.IsNull())
+    {
+      m_sseSpecification = sseSpecificationNode;
+      m_sseSpecificationHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -308,6 +316,13 @@ void VerifiedAccessEndpoint::OutputToStream(Aws::OStream& oStream, const char* l
       }
   }
 
+  if(m_sseSpecificationHasBeenSet)
+  {
+      Aws::StringStream sseSpecificationLocationAndMemberSs;
+      sseSpecificationLocationAndMemberSs << location << index << locationValue << ".SseSpecification";
+      m_sseSpecification.OutputToStream(oStream, sseSpecificationLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void VerifiedAccessEndpoint::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -399,6 +414,12 @@ void VerifiedAccessEndpoint::OutputToStream(Aws::OStream& oStream, const char* l
         tagsSs << location <<  ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
+  }
+  if(m_sseSpecificationHasBeenSet)
+  {
+      Aws::String sseSpecificationLocationAndMember(location);
+      sseSpecificationLocationAndMember += ".SseSpecification";
+      m_sseSpecification.OutputToStream(oStream, sseSpecificationLocationAndMember.c_str());
   }
 }
 

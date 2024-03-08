@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DescribePackagesFilterName::NOT_SET:
+            return {};
           case DescribePackagesFilterName::PackageID:
             return "PackageID";
           case DescribePackagesFilterName::PackageName:

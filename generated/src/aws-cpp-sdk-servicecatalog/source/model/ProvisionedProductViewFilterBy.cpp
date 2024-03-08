@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ProvisionedProductViewFilterBy::NOT_SET:
+            return {};
           case ProvisionedProductViewFilterBy::SearchQuery:
             return "SearchQuery";
           default:

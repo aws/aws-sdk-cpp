@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SMSSandboxPhoneNumberVerificationStatus::NOT_SET:
+            return {};
           case SMSSandboxPhoneNumberVerificationStatus::Pending:
             return "Pending";
           case SMSSandboxPhoneNumberVerificationStatus::Verified:

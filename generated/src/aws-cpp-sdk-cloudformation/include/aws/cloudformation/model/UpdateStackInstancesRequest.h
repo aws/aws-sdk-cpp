@@ -328,11 +328,11 @@ namespace Model
      * <code>UpdateStackSet</code> to update the stack set template. If you add a
      * parameter to a template, before you can override the parameter value specified
      * in the stack set you must first use <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a>
-     * to update all stack instances with the updated template and parameter value
-     * specified in the stack set. Once a stack instance has been updated with the new
-     * parameter, you can then override the parameter value using
-     * <code>UpdateStackInstances</code>.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">
+     * <code>UpdateStackSet</code> </a> to update all stack instances with the updated
+     * template and parameter value specified in the stack set. Once a stack instance
+     * has been updated with the new parameter, you can then override the parameter
+     * value using <code>UpdateStackInstances</code>.</p>
      */
     inline const Aws::Vector<Parameter>& GetParameterOverrides() const{ return m_parameterOverrides; }
 
@@ -357,11 +357,11 @@ namespace Model
      * <code>UpdateStackSet</code> to update the stack set template. If you add a
      * parameter to a template, before you can override the parameter value specified
      * in the stack set you must first use <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a>
-     * to update all stack instances with the updated template and parameter value
-     * specified in the stack set. Once a stack instance has been updated with the new
-     * parameter, you can then override the parameter value using
-     * <code>UpdateStackInstances</code>.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">
+     * <code>UpdateStackSet</code> </a> to update all stack instances with the updated
+     * template and parameter value specified in the stack set. Once a stack instance
+     * has been updated with the new parameter, you can then override the parameter
+     * value using <code>UpdateStackInstances</code>.</p>
      */
     inline bool ParameterOverridesHasBeenSet() const { return m_parameterOverridesHasBeenSet; }
 
@@ -386,11 +386,11 @@ namespace Model
      * <code>UpdateStackSet</code> to update the stack set template. If you add a
      * parameter to a template, before you can override the parameter value specified
      * in the stack set you must first use <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a>
-     * to update all stack instances with the updated template and parameter value
-     * specified in the stack set. Once a stack instance has been updated with the new
-     * parameter, you can then override the parameter value using
-     * <code>UpdateStackInstances</code>.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">
+     * <code>UpdateStackSet</code> </a> to update all stack instances with the updated
+     * template and parameter value specified in the stack set. Once a stack instance
+     * has been updated with the new parameter, you can then override the parameter
+     * value using <code>UpdateStackInstances</code>.</p>
      */
     inline void SetParameterOverrides(const Aws::Vector<Parameter>& value) { m_parameterOverridesHasBeenSet = true; m_parameterOverrides = value; }
 
@@ -415,11 +415,11 @@ namespace Model
      * <code>UpdateStackSet</code> to update the stack set template. If you add a
      * parameter to a template, before you can override the parameter value specified
      * in the stack set you must first use <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a>
-     * to update all stack instances with the updated template and parameter value
-     * specified in the stack set. Once a stack instance has been updated with the new
-     * parameter, you can then override the parameter value using
-     * <code>UpdateStackInstances</code>.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">
+     * <code>UpdateStackSet</code> </a> to update all stack instances with the updated
+     * template and parameter value specified in the stack set. Once a stack instance
+     * has been updated with the new parameter, you can then override the parameter
+     * value using <code>UpdateStackInstances</code>.</p>
      */
     inline void SetParameterOverrides(Aws::Vector<Parameter>&& value) { m_parameterOverridesHasBeenSet = true; m_parameterOverrides = std::move(value); }
 
@@ -444,11 +444,11 @@ namespace Model
      * <code>UpdateStackSet</code> to update the stack set template. If you add a
      * parameter to a template, before you can override the parameter value specified
      * in the stack set you must first use <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a>
-     * to update all stack instances with the updated template and parameter value
-     * specified in the stack set. Once a stack instance has been updated with the new
-     * parameter, you can then override the parameter value using
-     * <code>UpdateStackInstances</code>.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">
+     * <code>UpdateStackSet</code> </a> to update all stack instances with the updated
+     * template and parameter value specified in the stack set. Once a stack instance
+     * has been updated with the new parameter, you can then override the parameter
+     * value using <code>UpdateStackInstances</code>.</p>
      */
     inline UpdateStackInstancesRequest& WithParameterOverrides(const Aws::Vector<Parameter>& value) { SetParameterOverrides(value); return *this;}
 
@@ -473,11 +473,11 @@ namespace Model
      * <code>UpdateStackSet</code> to update the stack set template. If you add a
      * parameter to a template, before you can override the parameter value specified
      * in the stack set you must first use <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a>
-     * to update all stack instances with the updated template and parameter value
-     * specified in the stack set. Once a stack instance has been updated with the new
-     * parameter, you can then override the parameter value using
-     * <code>UpdateStackInstances</code>.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">
+     * <code>UpdateStackSet</code> </a> to update all stack instances with the updated
+     * template and parameter value specified in the stack set. Once a stack instance
+     * has been updated with the new parameter, you can then override the parameter
+     * value using <code>UpdateStackInstances</code>.</p>
      */
     inline UpdateStackInstancesRequest& WithParameterOverrides(Aws::Vector<Parameter>&& value) { SetParameterOverrides(std::move(value)); return *this;}
 
@@ -502,11 +502,11 @@ namespace Model
      * <code>UpdateStackSet</code> to update the stack set template. If you add a
      * parameter to a template, before you can override the parameter value specified
      * in the stack set you must first use <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a>
-     * to update all stack instances with the updated template and parameter value
-     * specified in the stack set. Once a stack instance has been updated with the new
-     * parameter, you can then override the parameter value using
-     * <code>UpdateStackInstances</code>.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">
+     * <code>UpdateStackSet</code> </a> to update all stack instances with the updated
+     * template and parameter value specified in the stack set. Once a stack instance
+     * has been updated with the new parameter, you can then override the parameter
+     * value using <code>UpdateStackInstances</code>.</p>
      */
     inline UpdateStackInstancesRequest& AddParameterOverrides(const Parameter& value) { m_parameterOverridesHasBeenSet = true; m_parameterOverrides.push_back(value); return *this; }
 
@@ -531,11 +531,11 @@ namespace Model
      * <code>UpdateStackSet</code> to update the stack set template. If you add a
      * parameter to a template, before you can override the parameter value specified
      * in the stack set you must first use <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a>
-     * to update all stack instances with the updated template and parameter value
-     * specified in the stack set. Once a stack instance has been updated with the new
-     * parameter, you can then override the parameter value using
-     * <code>UpdateStackInstances</code>.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">
+     * <code>UpdateStackSet</code> </a> to update all stack instances with the updated
+     * template and parameter value specified in the stack set. Once a stack instance
+     * has been updated with the new parameter, you can then override the parameter
+     * value using <code>UpdateStackInstances</code>.</p>
      */
     inline UpdateStackInstancesRequest& AddParameterOverrides(Parameter&& value) { m_parameterOverridesHasBeenSet = true; m_parameterOverrides.push_back(std::move(value)); return *this; }
 

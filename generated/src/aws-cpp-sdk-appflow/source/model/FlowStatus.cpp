@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FlowStatus::NOT_SET:
+            return {};
           case FlowStatus::Active:
             return "Active";
           case FlowStatus::Deprecated:

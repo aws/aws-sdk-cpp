@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HlsId3SegmentTaggingState::NOT_SET:
+            return {};
           case HlsId3SegmentTaggingState::DISABLED:
             return "DISABLED";
           case HlsId3SegmentTaggingState::ENABLED:

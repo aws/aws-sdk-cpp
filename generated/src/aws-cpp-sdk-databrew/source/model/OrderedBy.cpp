@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OrderedBy::NOT_SET:
+            return {};
           case OrderedBy::LAST_MODIFIED_DATE:
             return "LAST_MODIFIED_DATE";
           default:

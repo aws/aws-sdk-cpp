@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RuntimeName::NOT_SET:
+            return {};
           case RuntimeName::APPSYNC_JS:
             return "APPSYNC_JS";
           default:

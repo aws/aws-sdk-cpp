@@ -248,34 +248,22 @@ namespace Model
 
 
     /**
-     * <p>This parameter indicates whether the Amazon EKS public API server endpoint is
-     * enabled. If the Amazon EKS public API server endpoint is disabled, your
-     * cluster's Kubernetes API server can only receive requests that originate from
-     * within the cluster VPC.</p>
+     * <p>Whether the public API server endpoint is enabled.</p>
      */
     inline bool GetEndpointPublicAccess() const{ return m_endpointPublicAccess; }
 
     /**
-     * <p>This parameter indicates whether the Amazon EKS public API server endpoint is
-     * enabled. If the Amazon EKS public API server endpoint is disabled, your
-     * cluster's Kubernetes API server can only receive requests that originate from
-     * within the cluster VPC.</p>
+     * <p>Whether the public API server endpoint is enabled.</p>
      */
     inline bool EndpointPublicAccessHasBeenSet() const { return m_endpointPublicAccessHasBeenSet; }
 
     /**
-     * <p>This parameter indicates whether the Amazon EKS public API server endpoint is
-     * enabled. If the Amazon EKS public API server endpoint is disabled, your
-     * cluster's Kubernetes API server can only receive requests that originate from
-     * within the cluster VPC.</p>
+     * <p>Whether the public API server endpoint is enabled.</p>
      */
     inline void SetEndpointPublicAccess(bool value) { m_endpointPublicAccessHasBeenSet = true; m_endpointPublicAccess = value; }
 
     /**
-     * <p>This parameter indicates whether the Amazon EKS public API server endpoint is
-     * enabled. If the Amazon EKS public API server endpoint is disabled, your
-     * cluster's Kubernetes API server can only receive requests that originate from
-     * within the cluster VPC.</p>
+     * <p>Whether the public API server endpoint is enabled.</p>
      */
     inline VpcConfigResponse& WithEndpointPublicAccess(bool value) { SetEndpointPublicAccess(value); return *this;}
 
@@ -339,118 +327,55 @@ namespace Model
 
     /**
      * <p>The CIDR blocks that are allowed access to your cluster's public Kubernetes
-     * API server endpoint. Communication to the endpoint from addresses outside of the
-     * listed CIDR blocks is denied. The default value is <code>0.0.0.0/0</code>. If
-     * you've disabled private endpoint access and you have nodes or Fargate pods in
-     * the cluster, then ensure that the necessary CIDR blocks are listed. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
-     * EKS cluster endpoint access control</a> in the <i> <i>Amazon EKS User Guide</i>
-     * </i>.</p>
+     * API server endpoint.</p>
      */
     inline const Aws::Vector<Aws::String>& GetPublicAccessCidrs() const{ return m_publicAccessCidrs; }
 
     /**
      * <p>The CIDR blocks that are allowed access to your cluster's public Kubernetes
-     * API server endpoint. Communication to the endpoint from addresses outside of the
-     * listed CIDR blocks is denied. The default value is <code>0.0.0.0/0</code>. If
-     * you've disabled private endpoint access and you have nodes or Fargate pods in
-     * the cluster, then ensure that the necessary CIDR blocks are listed. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
-     * EKS cluster endpoint access control</a> in the <i> <i>Amazon EKS User Guide</i>
-     * </i>.</p>
+     * API server endpoint.</p>
      */
     inline bool PublicAccessCidrsHasBeenSet() const { return m_publicAccessCidrsHasBeenSet; }
 
     /**
      * <p>The CIDR blocks that are allowed access to your cluster's public Kubernetes
-     * API server endpoint. Communication to the endpoint from addresses outside of the
-     * listed CIDR blocks is denied. The default value is <code>0.0.0.0/0</code>. If
-     * you've disabled private endpoint access and you have nodes or Fargate pods in
-     * the cluster, then ensure that the necessary CIDR blocks are listed. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
-     * EKS cluster endpoint access control</a> in the <i> <i>Amazon EKS User Guide</i>
-     * </i>.</p>
+     * API server endpoint.</p>
      */
     inline void SetPublicAccessCidrs(const Aws::Vector<Aws::String>& value) { m_publicAccessCidrsHasBeenSet = true; m_publicAccessCidrs = value; }
 
     /**
      * <p>The CIDR blocks that are allowed access to your cluster's public Kubernetes
-     * API server endpoint. Communication to the endpoint from addresses outside of the
-     * listed CIDR blocks is denied. The default value is <code>0.0.0.0/0</code>. If
-     * you've disabled private endpoint access and you have nodes or Fargate pods in
-     * the cluster, then ensure that the necessary CIDR blocks are listed. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
-     * EKS cluster endpoint access control</a> in the <i> <i>Amazon EKS User Guide</i>
-     * </i>.</p>
+     * API server endpoint.</p>
      */
     inline void SetPublicAccessCidrs(Aws::Vector<Aws::String>&& value) { m_publicAccessCidrsHasBeenSet = true; m_publicAccessCidrs = std::move(value); }
 
     /**
      * <p>The CIDR blocks that are allowed access to your cluster's public Kubernetes
-     * API server endpoint. Communication to the endpoint from addresses outside of the
-     * listed CIDR blocks is denied. The default value is <code>0.0.0.0/0</code>. If
-     * you've disabled private endpoint access and you have nodes or Fargate pods in
-     * the cluster, then ensure that the necessary CIDR blocks are listed. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
-     * EKS cluster endpoint access control</a> in the <i> <i>Amazon EKS User Guide</i>
-     * </i>.</p>
+     * API server endpoint.</p>
      */
     inline VpcConfigResponse& WithPublicAccessCidrs(const Aws::Vector<Aws::String>& value) { SetPublicAccessCidrs(value); return *this;}
 
     /**
      * <p>The CIDR blocks that are allowed access to your cluster's public Kubernetes
-     * API server endpoint. Communication to the endpoint from addresses outside of the
-     * listed CIDR blocks is denied. The default value is <code>0.0.0.0/0</code>. If
-     * you've disabled private endpoint access and you have nodes or Fargate pods in
-     * the cluster, then ensure that the necessary CIDR blocks are listed. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
-     * EKS cluster endpoint access control</a> in the <i> <i>Amazon EKS User Guide</i>
-     * </i>.</p>
+     * API server endpoint.</p>
      */
     inline VpcConfigResponse& WithPublicAccessCidrs(Aws::Vector<Aws::String>&& value) { SetPublicAccessCidrs(std::move(value)); return *this;}
 
     /**
      * <p>The CIDR blocks that are allowed access to your cluster's public Kubernetes
-     * API server endpoint. Communication to the endpoint from addresses outside of the
-     * listed CIDR blocks is denied. The default value is <code>0.0.0.0/0</code>. If
-     * you've disabled private endpoint access and you have nodes or Fargate pods in
-     * the cluster, then ensure that the necessary CIDR blocks are listed. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
-     * EKS cluster endpoint access control</a> in the <i> <i>Amazon EKS User Guide</i>
-     * </i>.</p>
+     * API server endpoint.</p>
      */
     inline VpcConfigResponse& AddPublicAccessCidrs(const Aws::String& value) { m_publicAccessCidrsHasBeenSet = true; m_publicAccessCidrs.push_back(value); return *this; }
 
     /**
      * <p>The CIDR blocks that are allowed access to your cluster's public Kubernetes
-     * API server endpoint. Communication to the endpoint from addresses outside of the
-     * listed CIDR blocks is denied. The default value is <code>0.0.0.0/0</code>. If
-     * you've disabled private endpoint access and you have nodes or Fargate pods in
-     * the cluster, then ensure that the necessary CIDR blocks are listed. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
-     * EKS cluster endpoint access control</a> in the <i> <i>Amazon EKS User Guide</i>
-     * </i>.</p>
+     * API server endpoint.</p>
      */
     inline VpcConfigResponse& AddPublicAccessCidrs(Aws::String&& value) { m_publicAccessCidrsHasBeenSet = true; m_publicAccessCidrs.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The CIDR blocks that are allowed access to your cluster's public Kubernetes
-     * API server endpoint. Communication to the endpoint from addresses outside of the
-     * listed CIDR blocks is denied. The default value is <code>0.0.0.0/0</code>. If
-     * you've disabled private endpoint access and you have nodes or Fargate pods in
-     * the cluster, then ensure that the necessary CIDR blocks are listed. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
-     * EKS cluster endpoint access control</a> in the <i> <i>Amazon EKS User Guide</i>
-     * </i>.</p>
+     * API server endpoint.</p>
      */
     inline VpcConfigResponse& AddPublicAccessCidrs(const char* value) { m_publicAccessCidrsHasBeenSet = true; m_publicAccessCidrs.push_back(value); return *this; }
 

@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/medialive/model/FeatureActivationsInputPrepareScheduleActions.h>
+#include <aws/medialive/model/FeatureActivationsOutputStaticImageOverlayScheduleActions.h>
 #include <utility>
 
 namespace Aws
@@ -91,10 +92,62 @@ If you disable the feature on an
      */
     inline FeatureActivations& WithInputPrepareScheduleActions(FeatureActivationsInputPrepareScheduleActions&& value) { SetInputPrepareScheduleActions(std::move(value)); return *this;}
 
+
+    /**
+     * Enables the output static image overlay feature. Enabling this feature allows
+     * you to send channel schedule updates
+to display/clear/modify image overlays on
+     * an output-by-output bases.
+     */
+    inline const FeatureActivationsOutputStaticImageOverlayScheduleActions& GetOutputStaticImageOverlayScheduleActions() const{ return m_outputStaticImageOverlayScheduleActions; }
+
+    /**
+     * Enables the output static image overlay feature. Enabling this feature allows
+     * you to send channel schedule updates
+to display/clear/modify image overlays on
+     * an output-by-output bases.
+     */
+    inline bool OutputStaticImageOverlayScheduleActionsHasBeenSet() const { return m_outputStaticImageOverlayScheduleActionsHasBeenSet; }
+
+    /**
+     * Enables the output static image overlay feature. Enabling this feature allows
+     * you to send channel schedule updates
+to display/clear/modify image overlays on
+     * an output-by-output bases.
+     */
+    inline void SetOutputStaticImageOverlayScheduleActions(const FeatureActivationsOutputStaticImageOverlayScheduleActions& value) { m_outputStaticImageOverlayScheduleActionsHasBeenSet = true; m_outputStaticImageOverlayScheduleActions = value; }
+
+    /**
+     * Enables the output static image overlay feature. Enabling this feature allows
+     * you to send channel schedule updates
+to display/clear/modify image overlays on
+     * an output-by-output bases.
+     */
+    inline void SetOutputStaticImageOverlayScheduleActions(FeatureActivationsOutputStaticImageOverlayScheduleActions&& value) { m_outputStaticImageOverlayScheduleActionsHasBeenSet = true; m_outputStaticImageOverlayScheduleActions = std::move(value); }
+
+    /**
+     * Enables the output static image overlay feature. Enabling this feature allows
+     * you to send channel schedule updates
+to display/clear/modify image overlays on
+     * an output-by-output bases.
+     */
+    inline FeatureActivations& WithOutputStaticImageOverlayScheduleActions(const FeatureActivationsOutputStaticImageOverlayScheduleActions& value) { SetOutputStaticImageOverlayScheduleActions(value); return *this;}
+
+    /**
+     * Enables the output static image overlay feature. Enabling this feature allows
+     * you to send channel schedule updates
+to display/clear/modify image overlays on
+     * an output-by-output bases.
+     */
+    inline FeatureActivations& WithOutputStaticImageOverlayScheduleActions(FeatureActivationsOutputStaticImageOverlayScheduleActions&& value) { SetOutputStaticImageOverlayScheduleActions(std::move(value)); return *this;}
+
   private:
 
     FeatureActivationsInputPrepareScheduleActions m_inputPrepareScheduleActions;
     bool m_inputPrepareScheduleActionsHasBeenSet = false;
+
+    FeatureActivationsOutputStaticImageOverlayScheduleActions m_outputStaticImageOverlayScheduleActions;
+    bool m_outputStaticImageOverlayScheduleActionsHasBeenSet = false;
   };
 
 } // namespace Model

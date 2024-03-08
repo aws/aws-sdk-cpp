@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Statistic::NOT_SET:
+            return {};
           case Statistic::FIRST_OCCURRENCE:
             return "FIRST_OCCURRENCE";
           case Statistic::LAST_OCCURRENCE:

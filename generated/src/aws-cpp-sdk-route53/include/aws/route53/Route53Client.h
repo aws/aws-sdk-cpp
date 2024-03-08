@@ -33,8 +33,8 @@ namespace Route53
   {
     public:
       typedef Aws::Client::AWSXMLClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef Route53ClientConfiguration ClientConfigurationType;
       typedef Route53EndpointProvider EndpointProviderType;
@@ -44,14 +44,14 @@ namespace Route53
         * is not specified, it will be initialized to default values.
         */
         Route53Client(const Aws::Route53::Route53ClientConfiguration& clientConfiguration = Aws::Route53::Route53ClientConfiguration(),
-                      std::shared_ptr<Route53EndpointProviderBase> endpointProvider = Aws::MakeShared<Route53EndpointProvider>(ALLOCATION_TAG));
+                      std::shared_ptr<Route53EndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         Route53Client(const Aws::Auth::AWSCredentials& credentials,
-                      std::shared_ptr<Route53EndpointProviderBase> endpointProvider = Aws::MakeShared<Route53EndpointProvider>(ALLOCATION_TAG),
+                      std::shared_ptr<Route53EndpointProviderBase> endpointProvider = nullptr,
                       const Aws::Route53::Route53ClientConfiguration& clientConfiguration = Aws::Route53::Route53ClientConfiguration());
 
        /**
@@ -59,7 +59,7 @@ namespace Route53
         * the default http client factory will be used
         */
         Route53Client(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                      std::shared_ptr<Route53EndpointProviderBase> endpointProvider = Aws::MakeShared<Route53EndpointProvider>(ALLOCATION_TAG),
+                      std::shared_ptr<Route53EndpointProviderBase> endpointProvider = nullptr,
                       const Aws::Route53::Route53ClientConfiguration& clientConfiguration = Aws::Route53::Route53ClientConfiguration());
 
 
@@ -234,15 +234,16 @@ namespace Route53
          * actions:</p> <ul> <li> <p> <code>CREATE</code>: Creates a resource record set
          * that has the specified values.</p> </li> <li> <p> <code>DELETE</code>: Deletes
          * an existing resource record set that has the specified values.</p> </li> <li>
-         * <p> <code>UPSERT</code>: If a resource set exists Route 53 updates it with the
-         * values in the request. </p> </li> </ul> <p> <b>Syntaxes for Creating, Updating,
-         * and Deleting Resource Record Sets</b> </p> <p>The syntax for a request depends
-         * on the type of resource record set that you want to create, delete, or update,
-         * such as weighted, alias, or failover. The XML elements in your request must
-         * appear in the order listed in the syntax. </p> <p>For an example for each type
-         * of resource record set, see "Examples."</p> <p>Don't refer to the syntax in the
-         * "Parameter Syntax" section, which includes all of the elements for every kind of
-         * resource record set that you can create, delete, or update by using
+         * <p> <code>UPSERT</code>: If a resource set doesn't exist, Route 53 creates it.
+         * If a resource set exists Route 53 updates it with the values in the request.
+         * </p> </li> </ul> <p> <b>Syntaxes for Creating, Updating, and Deleting Resource
+         * Record Sets</b> </p> <p>The syntax for a request depends on the type of resource
+         * record set that you want to create, delete, or update, such as weighted, alias,
+         * or failover. The XML elements in your request must appear in the order listed in
+         * the syntax. </p> <p>For an example for each type of resource record set, see
+         * "Examples."</p> <p>Don't refer to the syntax in the "Parameter Syntax" section,
+         * which includes all of the elements for every kind of resource record set that
+         * you can create, delete, or update by using
          * <code>ChangeResourceRecordSets</code>. </p> <p> <b>Change Propagation to Route
          * 53 DNS Servers</b> </p> <p>When you submit a
          * <code>ChangeResourceRecordSets</code> request, Route 53 propagates your changes
@@ -675,7 +676,14 @@ namespace Route53
          * with a specified domain name (such as example.com) or subdomain name (such as
          * www.example.com). Amazon Route 53 responds to DNS queries for the domain or
          * subdomain name by using the resource record sets that
-         * <code>CreateTrafficPolicyInstance</code> created.</p><p><h3>See Also:</h3>   <a
+         * <code>CreateTrafficPolicyInstance</code> created.</p>  <p>After you submit
+         * an <code>CreateTrafficPolicyInstance</code> request, there's a brief delay while
+         * Amazon Route 53 creates the resource record sets that are specified in the
+         * traffic policy definition. Use <code>GetTrafficPolicyInstance</code> with the
+         * <code>id</code> of new traffic policy instance to confirm that the
+         * <code>CreateTrafficPolicyInstance</code> request completed successfully. For
+         * more information, see the <code>State</code> response element.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateTrafficPolicyInstance">AWS
          * API Reference</a></p>
          */
@@ -1681,13 +1689,14 @@ namespace Route53
         }
 
         /**
-         * <p>Gets information about a specified traffic policy instance.</p> 
-         * <p>After you submit a <code>CreateTrafficPolicyInstance</code> or an
-         * <code>UpdateTrafficPolicyInstance</code> request, there's a brief delay while
-         * Amazon Route 53 creates the resource record sets that are specified in the
-         * traffic policy definition. For more information, see the <code>State</code>
-         * response element.</p>   <p>In the Route 53 console, traffic policy
-         * instances are known as policy records.</p> <p><h3>See Also:</h3>   <a
+         * <p>Gets information about a specified traffic policy instance.</p>  <p>
+         * Use <code>GetTrafficPolicyInstance</code> with the <code>id</code> of new
+         * traffic policy instance to confirm that the
+         * <code>CreateTrafficPolicyInstance</code> or an
+         * <code>UpdateTrafficPolicyInstance</code> request completed successfully. For
+         * more information, see the <code>State</code> response element.</p> 
+         *  <p>In the Route 53 console, traffic policy instances are known as policy
+         * records.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetTrafficPolicyInstance">AWS
          * API Reference</a></p>
          */
@@ -2497,6 +2506,13 @@ namespace Route53
         }
 
         /**
+         *  <p>After you submit a <code>UpdateTrafficPolicyInstance</code> request,
+         * there's a brief delay while Route 53 creates the resource record sets that are
+         * specified in the traffic policy definition. Use
+         * <code>GetTrafficPolicyInstance</code> with the <code>id</code> of updated
+         * traffic policy instance confirm that the
+         * <code>UpdateTrafficPolicyInstance</code> request completed successfully. For
+         * more information, see the <code>State</code> response element.</p> 
          * <p>Updates the resource record sets in a specified hosted zone that were created
          * based on the settings in a specified traffic policy version.</p> <p>When you
          * update a traffic policy instance, Amazon Route 53 continues to respond to DNS

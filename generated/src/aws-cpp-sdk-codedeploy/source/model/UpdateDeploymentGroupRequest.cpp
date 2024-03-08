@@ -31,7 +31,9 @@ UpdateDeploymentGroupRequest::UpdateDeploymentGroupRequest() :
     m_loadBalancerInfoHasBeenSet(false),
     m_ec2TagSetHasBeenSet(false),
     m_ecsServicesHasBeenSet(false),
-    m_onPremisesTagSetHasBeenSet(false)
+    m_onPremisesTagSetHasBeenSet(false),
+    m_terminationHookEnabled(false),
+    m_terminationHookEnabledHasBeenSet(false)
 {
 }
 
@@ -168,6 +170,12 @@ Aws::String UpdateDeploymentGroupRequest::SerializePayload() const
   if(m_onPremisesTagSetHasBeenSet)
   {
    payload.WithObject("onPremisesTagSet", m_onPremisesTagSet.Jsonize());
+
+  }
+
+  if(m_terminationHookEnabledHasBeenSet)
+  {
+   payload.WithBool("terminationHookEnabled", m_terminationHookEnabled);
 
   }
 

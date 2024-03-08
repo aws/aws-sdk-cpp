@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ErrorCode::NOT_SET:
+            return {};
           case ErrorCode::VALIDATION_ERROR:
             return "VALIDATION_ERROR";
           case ErrorCode::INTERNAL_FAILURE:

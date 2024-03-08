@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DestinationType::NOT_SET:
+            return {};
           case DestinationType::IPV4:
             return "IPV4";
           case DestinationType::IPV6:

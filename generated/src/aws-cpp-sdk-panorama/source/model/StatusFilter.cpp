@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StatusFilter::NOT_SET:
+            return {};
           case StatusFilter::DEPLOYMENT_SUCCEEDED:
             return "DEPLOYMENT_SUCCEEDED";
           case StatusFilter::DEPLOYMENT_ERROR:

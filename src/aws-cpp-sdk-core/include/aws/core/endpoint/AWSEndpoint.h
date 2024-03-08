@@ -8,11 +8,19 @@
 #include <aws/core/Core_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/core/http/URI.h>
 
 #include <aws/core/endpoint/internal/AWSEndpointAttribute.h>
 
 namespace Aws
 {
+    namespace Client
+    {
+        template<typename ERROR_TYPE>
+        class AWSError;
+
+        enum class CoreErrors;
+    }
     namespace Endpoint
     {
         /**
@@ -42,6 +50,11 @@ namespace Aws
             inline void AddPathSegments(T&& pathSegments)
             {
                 m_uri.AddPathSegments(std::forward<T>(pathSegments));
+            }
+
+            inline void SetRfc3986Encoded(bool rfcEncoded)
+            {
+                m_uri.SetRfc3986Encoded(rfcEncoded);
             }
 
             using OptionalError = Crt::Optional<Aws::Client::AWSError<Aws::Client::CoreErrors>>;

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case H264SubGopLength::NOT_SET:
+            return {};
           case H264SubGopLength::DYNAMIC:
             return "DYNAMIC";
           case H264SubGopLength::FIXED:

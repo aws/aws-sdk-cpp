@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SpreadLevel::NOT_SET:
+            return {};
           case SpreadLevel::host:
             return "host";
           case SpreadLevel::rack:

@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FormatToHeaderKey::NOT_SET:
+            return {};
           case FormatToHeaderKey::CHR:
             return "CHR";
           case FormatToHeaderKey::START:

@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AssociatedNetworkType::NOT_SET:
+            return {};
           case AssociatedNetworkType::vpc:
             return "vpc";
           default:

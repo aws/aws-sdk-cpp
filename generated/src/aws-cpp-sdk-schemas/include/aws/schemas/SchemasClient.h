@@ -22,8 +22,8 @@ namespace Schemas
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef SchemasClientConfiguration ClientConfigurationType;
       typedef SchemasEndpointProvider EndpointProviderType;
@@ -33,14 +33,14 @@ namespace Schemas
         * is not specified, it will be initialized to default values.
         */
         SchemasClient(const Aws::Schemas::SchemasClientConfiguration& clientConfiguration = Aws::Schemas::SchemasClientConfiguration(),
-                      std::shared_ptr<SchemasEndpointProviderBase> endpointProvider = Aws::MakeShared<SchemasEndpointProvider>(ALLOCATION_TAG));
+                      std::shared_ptr<SchemasEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         SchemasClient(const Aws::Auth::AWSCredentials& credentials,
-                      std::shared_ptr<SchemasEndpointProviderBase> endpointProvider = Aws::MakeShared<SchemasEndpointProvider>(ALLOCATION_TAG),
+                      std::shared_ptr<SchemasEndpointProviderBase> endpointProvider = nullptr,
                       const Aws::Schemas::SchemasClientConfiguration& clientConfiguration = Aws::Schemas::SchemasClientConfiguration());
 
        /**
@@ -48,7 +48,7 @@ namespace Schemas
         * the default http client factory will be used
         */
         SchemasClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                      std::shared_ptr<SchemasEndpointProviderBase> endpointProvider = Aws::MakeShared<SchemasEndpointProvider>(ALLOCATION_TAG),
+                      std::shared_ptr<SchemasEndpointProviderBase> endpointProvider = nullptr,
                       const Aws::Schemas::SchemasClientConfiguration& clientConfiguration = Aws::Schemas::SchemasClientConfiguration());
 
 

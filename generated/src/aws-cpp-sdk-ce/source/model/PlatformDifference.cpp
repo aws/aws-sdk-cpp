@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PlatformDifference::NOT_SET:
+            return {};
           case PlatformDifference::HYPERVISOR:
             return "HYPERVISOR";
           case PlatformDifference::NETWORK_INTERFACE:

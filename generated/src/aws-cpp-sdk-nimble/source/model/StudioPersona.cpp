@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StudioPersona::NOT_SET:
+            return {};
           case StudioPersona::ADMINISTRATOR:
             return "ADMINISTRATOR";
           default:

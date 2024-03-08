@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case JobType::NOT_SET:
+            return {};
           case JobType::OTA:
             return "OTA";
           case JobType::REBOOT:

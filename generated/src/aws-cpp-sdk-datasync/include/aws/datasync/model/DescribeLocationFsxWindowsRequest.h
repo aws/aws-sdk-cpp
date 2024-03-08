@@ -35,50 +35,50 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the FSx for Windows File Server location to
-     * describe.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the FSx for Windows File Server
+     * location.</p>
      */
     inline const Aws::String& GetLocationArn() const{ return m_locationArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the FSx for Windows File Server location to
-     * describe.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the FSx for Windows File Server
+     * location.</p>
      */
     inline bool LocationArnHasBeenSet() const { return m_locationArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the FSx for Windows File Server location to
-     * describe.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the FSx for Windows File Server
+     * location.</p>
      */
     inline void SetLocationArn(const Aws::String& value) { m_locationArnHasBeenSet = true; m_locationArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the FSx for Windows File Server location to
-     * describe.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the FSx for Windows File Server
+     * location.</p>
      */
     inline void SetLocationArn(Aws::String&& value) { m_locationArnHasBeenSet = true; m_locationArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the FSx for Windows File Server location to
-     * describe.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the FSx for Windows File Server
+     * location.</p>
      */
     inline void SetLocationArn(const char* value) { m_locationArnHasBeenSet = true; m_locationArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the FSx for Windows File Server location to
-     * describe.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the FSx for Windows File Server
+     * location.</p>
      */
     inline DescribeLocationFsxWindowsRequest& WithLocationArn(const Aws::String& value) { SetLocationArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the FSx for Windows File Server location to
-     * describe.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the FSx for Windows File Server
+     * location.</p>
      */
     inline DescribeLocationFsxWindowsRequest& WithLocationArn(Aws::String&& value) { SetLocationArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the FSx for Windows File Server location to
-     * describe.</p>
+     * <p>Specifies the Amazon Resource Name (ARN) of the FSx for Windows File Server
+     * location.</p>
      */
     inline DescribeLocationFsxWindowsRequest& WithLocationArn(const char* value) { SetLocationArn(value); return *this;}
 

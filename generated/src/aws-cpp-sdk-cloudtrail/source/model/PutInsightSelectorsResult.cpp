@@ -44,6 +44,18 @@ PutInsightSelectorsResult& PutInsightSelectorsResult::operator =(const Aws::Amaz
     }
   }
 
+  if(jsonValue.ValueExists("EventDataStoreArn"))
+  {
+    m_eventDataStoreArn = jsonValue.GetString("EventDataStoreArn");
+
+  }
+
+  if(jsonValue.ValueExists("InsightsDestination"))
+  {
+    m_insightsDestination = jsonValue.GetString("InsightsDestination");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

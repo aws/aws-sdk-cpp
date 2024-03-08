@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InputDeviceType::NOT_SET:
+            return {};
           case InputDeviceType::HD:
             return "HD";
           case InputDeviceType::UHD:

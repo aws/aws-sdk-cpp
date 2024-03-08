@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ForecastComputationSeasonality::NOT_SET:
+            return {};
           case ForecastComputationSeasonality::AUTOMATIC:
             return "AUTOMATIC";
           case ForecastComputationSeasonality::CUSTOM:

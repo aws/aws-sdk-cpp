@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VerifiedAccessEndpointType::NOT_SET:
+            return {};
           case VerifiedAccessEndpointType::load_balancer:
             return "load-balancer";
           case VerifiedAccessEndpointType::network_interface:

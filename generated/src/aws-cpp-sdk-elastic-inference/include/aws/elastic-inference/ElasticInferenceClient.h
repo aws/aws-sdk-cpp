@@ -29,8 +29,8 @@ namespace ElasticInference
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef ElasticInferenceClientConfiguration ClientConfigurationType;
       typedef ElasticInferenceEndpointProvider EndpointProviderType;
@@ -40,14 +40,14 @@ namespace ElasticInference
         * is not specified, it will be initialized to default values.
         */
         ElasticInferenceClient(const Aws::ElasticInference::ElasticInferenceClientConfiguration& clientConfiguration = Aws::ElasticInference::ElasticInferenceClientConfiguration(),
-                               std::shared_ptr<ElasticInferenceEndpointProviderBase> endpointProvider = Aws::MakeShared<ElasticInferenceEndpointProvider>(ALLOCATION_TAG));
+                               std::shared_ptr<ElasticInferenceEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         ElasticInferenceClient(const Aws::Auth::AWSCredentials& credentials,
-                               std::shared_ptr<ElasticInferenceEndpointProviderBase> endpointProvider = Aws::MakeShared<ElasticInferenceEndpointProvider>(ALLOCATION_TAG),
+                               std::shared_ptr<ElasticInferenceEndpointProviderBase> endpointProvider = nullptr,
                                const Aws::ElasticInference::ElasticInferenceClientConfiguration& clientConfiguration = Aws::ElasticInference::ElasticInferenceClientConfiguration());
 
        /**
@@ -55,7 +55,7 @@ namespace ElasticInference
         * the default http client factory will be used
         */
         ElasticInferenceClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                               std::shared_ptr<ElasticInferenceEndpointProviderBase> endpointProvider = Aws::MakeShared<ElasticInferenceEndpointProvider>(ALLOCATION_TAG),
+                               std::shared_ptr<ElasticInferenceEndpointProviderBase> endpointProvider = nullptr,
                                const Aws::ElasticInference::ElasticInferenceClientConfiguration& clientConfiguration = Aws::ElasticInference::ElasticInferenceClientConfiguration());
 
 

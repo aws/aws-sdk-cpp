@@ -35,8 +35,8 @@ namespace CloudWatch
   {
     public:
       typedef Aws::Client::AWSXMLClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef CloudWatchClientConfiguration ClientConfigurationType;
       typedef CloudWatchEndpointProvider EndpointProviderType;
@@ -46,14 +46,14 @@ namespace CloudWatch
         * is not specified, it will be initialized to default values.
         */
         CloudWatchClient(const Aws::CloudWatch::CloudWatchClientConfiguration& clientConfiguration = Aws::CloudWatch::CloudWatchClientConfiguration(),
-                         std::shared_ptr<CloudWatchEndpointProviderBase> endpointProvider = Aws::MakeShared<CloudWatchEndpointProvider>(ALLOCATION_TAG));
+                         std::shared_ptr<CloudWatchEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         CloudWatchClient(const Aws::Auth::AWSCredentials& credentials,
-                         std::shared_ptr<CloudWatchEndpointProviderBase> endpointProvider = Aws::MakeShared<CloudWatchEndpointProvider>(ALLOCATION_TAG),
+                         std::shared_ptr<CloudWatchEndpointProviderBase> endpointProvider = nullptr,
                          const Aws::CloudWatch::CloudWatchClientConfiguration& clientConfiguration = Aws::CloudWatch::CloudWatchClientConfiguration());
 
        /**
@@ -61,7 +61,7 @@ namespace CloudWatch
         * the default http client factory will be used
         */
         CloudWatchClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                         std::shared_ptr<CloudWatchEndpointProviderBase> endpointProvider = Aws::MakeShared<CloudWatchEndpointProvider>(ALLOCATION_TAG),
+                         std::shared_ptr<CloudWatchEndpointProviderBase> endpointProvider = nullptr,
                          const Aws::CloudWatch::CloudWatchClientConfiguration& clientConfiguration = Aws::CloudWatch::CloudWatchClientConfiguration());
 
 

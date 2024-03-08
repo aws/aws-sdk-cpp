@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ProresTelecine::NOT_SET:
+            return {};
           case ProresTelecine::NONE:
             return "NONE";
           case ProresTelecine::HARD:

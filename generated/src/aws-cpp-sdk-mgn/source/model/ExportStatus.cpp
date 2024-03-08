@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ExportStatus::NOT_SET:
+            return {};
           case ExportStatus::PENDING:
             return "PENDING";
           case ExportStatus::STARTED:

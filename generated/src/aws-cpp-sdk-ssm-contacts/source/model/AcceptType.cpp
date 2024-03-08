@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AcceptType::NOT_SET:
+            return {};
           case AcceptType::DELIVERED:
             return "DELIVERED";
           case AcceptType::READ:

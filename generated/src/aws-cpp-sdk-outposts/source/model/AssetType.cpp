@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AssetType::NOT_SET:
+            return {};
           case AssetType::COMPUTE:
             return "COMPUTE";
           default:

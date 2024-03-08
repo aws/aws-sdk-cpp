@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AnalyticsBinByName::NOT_SET:
+            return {};
           case AnalyticsBinByName::ConversationStartTime:
             return "ConversationStartTime";
           case AnalyticsBinByName::UtteranceTimestamp:

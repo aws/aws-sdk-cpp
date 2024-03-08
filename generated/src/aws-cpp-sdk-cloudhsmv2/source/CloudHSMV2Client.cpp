@@ -50,8 +50,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* CloudHSMV2Client::SERVICE_NAME = "cloudhsm";
-const char* CloudHSMV2Client::ALLOCATION_TAG = "CloudHSMV2Client";
+namespace Aws
+{
+  namespace CloudHSMV2
+  {
+    const char SERVICE_NAME[] = "cloudhsm";
+    const char ALLOCATION_TAG[] = "CloudHSMV2Client";
+  }
+}
+const char* CloudHSMV2Client::GetServiceName() {return SERVICE_NAME;}
+const char* CloudHSMV2Client::GetAllocationTag() {return ALLOCATION_TAG;}
 
 CloudHSMV2Client::CloudHSMV2Client(const CloudHSMV2::CloudHSMV2ClientConfiguration& clientConfiguration,
                                    std::shared_ptr<CloudHSMV2EndpointProviderBase> endpointProvider) :
@@ -63,7 +71,7 @@ CloudHSMV2Client::CloudHSMV2Client(const CloudHSMV2::CloudHSMV2ClientConfigurati
             Aws::MakeShared<CloudHSMV2ErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CloudHSMV2EndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -79,7 +87,7 @@ CloudHSMV2Client::CloudHSMV2Client(const AWSCredentials& credentials,
             Aws::MakeShared<CloudHSMV2ErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CloudHSMV2EndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -95,7 +103,7 @@ CloudHSMV2Client::CloudHSMV2Client(const std::shared_ptr<AWSCredentialsProvider>
             Aws::MakeShared<CloudHSMV2ErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CloudHSMV2EndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

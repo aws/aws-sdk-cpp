@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StateDBType::NOT_SET:
+            return {};
           case StateDBType::LevelDB:
             return "LevelDB";
           case StateDBType::CouchDB:

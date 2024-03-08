@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReturnConsumedCapacity::NOT_SET:
+            return {};
           case ReturnConsumedCapacity::INDEXES:
             return "INDEXES";
           case ReturnConsumedCapacity::TOTAL:

@@ -41,97 +41,97 @@ namespace Model
 
 
     /**
-     * <p>The continent code (e.g., <code>NA</code>, meaning North America).</p>
+     * <p>The continent code (<code>NA</code>, meaning North America).</p>
      */
     inline const Aws::String& GetContinentCode() const{ return m_continentCode; }
 
     /**
-     * <p>The continent code (e.g., <code>NA</code>, meaning North America).</p>
+     * <p>The continent code (<code>NA</code>, meaning North America).</p>
      */
     inline bool ContinentCodeHasBeenSet() const { return m_continentCodeHasBeenSet; }
 
     /**
-     * <p>The continent code (e.g., <code>NA</code>, meaning North America).</p>
+     * <p>The continent code (<code>NA</code>, meaning North America).</p>
      */
     inline void SetContinentCode(const Aws::String& value) { m_continentCodeHasBeenSet = true; m_continentCode = value; }
 
     /**
-     * <p>The continent code (e.g., <code>NA</code>, meaning North America).</p>
+     * <p>The continent code (<code>NA</code>, meaning North America).</p>
      */
     inline void SetContinentCode(Aws::String&& value) { m_continentCodeHasBeenSet = true; m_continentCode = std::move(value); }
 
     /**
-     * <p>The continent code (e.g., <code>NA</code>, meaning North America).</p>
+     * <p>The continent code (<code>NA</code>, meaning North America).</p>
      */
     inline void SetContinentCode(const char* value) { m_continentCodeHasBeenSet = true; m_continentCode.assign(value); }
 
     /**
-     * <p>The continent code (e.g., <code>NA</code>, meaning North America).</p>
+     * <p>The continent code (<code>NA</code>, meaning North America).</p>
      */
     inline Region& WithContinentCode(const Aws::String& value) { SetContinentCode(value); return *this;}
 
     /**
-     * <p>The continent code (e.g., <code>NA</code>, meaning North America).</p>
+     * <p>The continent code (<code>NA</code>, meaning North America).</p>
      */
     inline Region& WithContinentCode(Aws::String&& value) { SetContinentCode(std::move(value)); return *this;}
 
     /**
-     * <p>The continent code (e.g., <code>NA</code>, meaning North America).</p>
+     * <p>The continent code (<code>NA</code>, meaning North America).</p>
      */
     inline Region& WithContinentCode(const char* value) { SetContinentCode(value); return *this;}
 
 
     /**
-     * <p>The description of the Amazon Web Services Region (e.g., <code>This region is
+     * <p>The description of the Amazon Web Services Region (<code>This region is
      * recommended to serve users in the eastern United States and eastern
      * Canada</code>).</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>The description of the Amazon Web Services Region (e.g., <code>This region is
+     * <p>The description of the Amazon Web Services Region (<code>This region is
      * recommended to serve users in the eastern United States and eastern
      * Canada</code>).</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>The description of the Amazon Web Services Region (e.g., <code>This region is
+     * <p>The description of the Amazon Web Services Region (<code>This region is
      * recommended to serve users in the eastern United States and eastern
      * Canada</code>).</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>The description of the Amazon Web Services Region (e.g., <code>This region is
+     * <p>The description of the Amazon Web Services Region (<code>This region is
      * recommended to serve users in the eastern United States and eastern
      * Canada</code>).</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>The description of the Amazon Web Services Region (e.g., <code>This region is
+     * <p>The description of the Amazon Web Services Region (<code>This region is
      * recommended to serve users in the eastern United States and eastern
      * Canada</code>).</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>The description of the Amazon Web Services Region (e.g., <code>This region is
+     * <p>The description of the Amazon Web Services Region (<code>This region is
      * recommended to serve users in the eastern United States and eastern
      * Canada</code>).</p>
      */
     inline Region& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The description of the Amazon Web Services Region (e.g., <code>This region is
+     * <p>The description of the Amazon Web Services Region (<code>This region is
      * recommended to serve users in the eastern United States and eastern
      * Canada</code>).</p>
      */
     inline Region& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>The description of the Amazon Web Services Region (e.g., <code>This region is
+     * <p>The description of the Amazon Web Services Region (<code>This region is
      * recommended to serve users in the eastern United States and eastern
      * Canada</code>).</p>
      */
@@ -139,73 +139,73 @@ namespace Model
 
 
     /**
-     * <p>The display name (e.g., <code>Ohio</code>).</p>
+     * <p>The display name (<code>Ohio</code>).</p>
      */
     inline const Aws::String& GetDisplayName() const{ return m_displayName; }
 
     /**
-     * <p>The display name (e.g., <code>Ohio</code>).</p>
+     * <p>The display name (<code>Ohio</code>).</p>
      */
     inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
 
     /**
-     * <p>The display name (e.g., <code>Ohio</code>).</p>
+     * <p>The display name (<code>Ohio</code>).</p>
      */
     inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
 
     /**
-     * <p>The display name (e.g., <code>Ohio</code>).</p>
+     * <p>The display name (<code>Ohio</code>).</p>
      */
     inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
 
     /**
-     * <p>The display name (e.g., <code>Ohio</code>).</p>
+     * <p>The display name (<code>Ohio</code>).</p>
      */
     inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
 
     /**
-     * <p>The display name (e.g., <code>Ohio</code>).</p>
+     * <p>The display name (<code>Ohio</code>).</p>
      */
     inline Region& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
 
     /**
-     * <p>The display name (e.g., <code>Ohio</code>).</p>
+     * <p>The display name (<code>Ohio</code>).</p>
      */
     inline Region& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
 
     /**
-     * <p>The display name (e.g., <code>Ohio</code>).</p>
+     * <p>The display name (<code>Ohio</code>).</p>
      */
     inline Region& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
 
 
     /**
-     * <p>The region name (e.g., <code>us-east-2</code>).</p>
+     * <p>The region name (<code>us-east-2</code>).</p>
      */
     inline const RegionName& GetName() const{ return m_name; }
 
     /**
-     * <p>The region name (e.g., <code>us-east-2</code>).</p>
+     * <p>The region name (<code>us-east-2</code>).</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The region name (e.g., <code>us-east-2</code>).</p>
+     * <p>The region name (<code>us-east-2</code>).</p>
      */
     inline void SetName(const RegionName& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The region name (e.g., <code>us-east-2</code>).</p>
+     * <p>The region name (<code>us-east-2</code>).</p>
      */
     inline void SetName(RegionName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The region name (e.g., <code>us-east-2</code>).</p>
+     * <p>The region name (<code>us-east-2</code>).</p>
      */
     inline Region& WithName(const RegionName& value) { SetName(value); return *this;}
 
     /**
-     * <p>The region name (e.g., <code>us-east-2</code>).</p>
+     * <p>The region name (<code>us-east-2</code>).</p>
      */
     inline Region& WithName(RegionName&& value) { SetName(std::move(value)); return *this;}
 

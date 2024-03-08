@@ -114,42 +114,90 @@ namespace Model
 
 
     /**
-     * <p>The plaintext to be encrypted.</p>
+     * <p>The plaintext to be encrypted.</p>  <p>For encryption using asymmetric
+     * keys, plaintext data length is constrained by encryption key strength that you
+     * define in <code>KeyAlgorithm</code> and padding type that you define in
+     * <code>AsymmetricEncryptionAttributes</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/encrypt-data.html">Encrypt
+     * data</a> in the <i>Amazon Web Services Payment Cryptography User Guide</i>.</p>
+     * 
      */
     inline const Aws::String& GetPlainText() const{ return m_plainText; }
 
     /**
-     * <p>The plaintext to be encrypted.</p>
+     * <p>The plaintext to be encrypted.</p>  <p>For encryption using asymmetric
+     * keys, plaintext data length is constrained by encryption key strength that you
+     * define in <code>KeyAlgorithm</code> and padding type that you define in
+     * <code>AsymmetricEncryptionAttributes</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/encrypt-data.html">Encrypt
+     * data</a> in the <i>Amazon Web Services Payment Cryptography User Guide</i>.</p>
+     * 
      */
     inline bool PlainTextHasBeenSet() const { return m_plainTextHasBeenSet; }
 
     /**
-     * <p>The plaintext to be encrypted.</p>
+     * <p>The plaintext to be encrypted.</p>  <p>For encryption using asymmetric
+     * keys, plaintext data length is constrained by encryption key strength that you
+     * define in <code>KeyAlgorithm</code> and padding type that you define in
+     * <code>AsymmetricEncryptionAttributes</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/encrypt-data.html">Encrypt
+     * data</a> in the <i>Amazon Web Services Payment Cryptography User Guide</i>.</p>
+     * 
      */
     inline void SetPlainText(const Aws::String& value) { m_plainTextHasBeenSet = true; m_plainText = value; }
 
     /**
-     * <p>The plaintext to be encrypted.</p>
+     * <p>The plaintext to be encrypted.</p>  <p>For encryption using asymmetric
+     * keys, plaintext data length is constrained by encryption key strength that you
+     * define in <code>KeyAlgorithm</code> and padding type that you define in
+     * <code>AsymmetricEncryptionAttributes</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/encrypt-data.html">Encrypt
+     * data</a> in the <i>Amazon Web Services Payment Cryptography User Guide</i>.</p>
+     * 
      */
     inline void SetPlainText(Aws::String&& value) { m_plainTextHasBeenSet = true; m_plainText = std::move(value); }
 
     /**
-     * <p>The plaintext to be encrypted.</p>
+     * <p>The plaintext to be encrypted.</p>  <p>For encryption using asymmetric
+     * keys, plaintext data length is constrained by encryption key strength that you
+     * define in <code>KeyAlgorithm</code> and padding type that you define in
+     * <code>AsymmetricEncryptionAttributes</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/encrypt-data.html">Encrypt
+     * data</a> in the <i>Amazon Web Services Payment Cryptography User Guide</i>.</p>
+     * 
      */
     inline void SetPlainText(const char* value) { m_plainTextHasBeenSet = true; m_plainText.assign(value); }
 
     /**
-     * <p>The plaintext to be encrypted.</p>
+     * <p>The plaintext to be encrypted.</p>  <p>For encryption using asymmetric
+     * keys, plaintext data length is constrained by encryption key strength that you
+     * define in <code>KeyAlgorithm</code> and padding type that you define in
+     * <code>AsymmetricEncryptionAttributes</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/encrypt-data.html">Encrypt
+     * data</a> in the <i>Amazon Web Services Payment Cryptography User Guide</i>.</p>
+     * 
      */
     inline EncryptDataRequest& WithPlainText(const Aws::String& value) { SetPlainText(value); return *this;}
 
     /**
-     * <p>The plaintext to be encrypted.</p>
+     * <p>The plaintext to be encrypted.</p>  <p>For encryption using asymmetric
+     * keys, plaintext data length is constrained by encryption key strength that you
+     * define in <code>KeyAlgorithm</code> and padding type that you define in
+     * <code>AsymmetricEncryptionAttributes</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/encrypt-data.html">Encrypt
+     * data</a> in the <i>Amazon Web Services Payment Cryptography User Guide</i>.</p>
+     * 
      */
     inline EncryptDataRequest& WithPlainText(Aws::String&& value) { SetPlainText(std::move(value)); return *this;}
 
     /**
-     * <p>The plaintext to be encrypted.</p>
+     * <p>The plaintext to be encrypted.</p>  <p>For encryption using asymmetric
+     * keys, plaintext data length is constrained by encryption key strength that you
+     * define in <code>KeyAlgorithm</code> and padding type that you define in
+     * <code>AsymmetricEncryptionAttributes</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/encrypt-data.html">Encrypt
+     * data</a> in the <i>Amazon Web Services Payment Cryptography User Guide</i>.</p>
+     * 
      */
     inline EncryptDataRequest& WithPlainText(const char* value) { SetPlainText(value); return *this;}
 

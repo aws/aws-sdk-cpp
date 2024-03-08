@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UpdateResourceCollectionAction::NOT_SET:
+            return {};
           case UpdateResourceCollectionAction::ADD:
             return "ADD";
           case UpdateResourceCollectionAction::REMOVE:

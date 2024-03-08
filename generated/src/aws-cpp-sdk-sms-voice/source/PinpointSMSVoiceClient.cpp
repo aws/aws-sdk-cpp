@@ -43,8 +43,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* PinpointSMSVoiceClient::SERVICE_NAME = "sms-voice";
-const char* PinpointSMSVoiceClient::ALLOCATION_TAG = "PinpointSMSVoiceClient";
+namespace Aws
+{
+  namespace PinpointSMSVoice
+  {
+    const char SERVICE_NAME[] = "sms-voice";
+    const char ALLOCATION_TAG[] = "PinpointSMSVoiceClient";
+  }
+}
+const char* PinpointSMSVoiceClient::GetServiceName() {return SERVICE_NAME;}
+const char* PinpointSMSVoiceClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 PinpointSMSVoiceClient::PinpointSMSVoiceClient(const PinpointSMSVoice::PinpointSMSVoiceClientConfiguration& clientConfiguration,
                                                std::shared_ptr<PinpointSMSVoiceEndpointProviderBase> endpointProvider) :
@@ -56,7 +64,7 @@ PinpointSMSVoiceClient::PinpointSMSVoiceClient(const PinpointSMSVoice::PinpointS
             Aws::MakeShared<PinpointSMSVoiceErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<PinpointSMSVoiceEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -72,7 +80,7 @@ PinpointSMSVoiceClient::PinpointSMSVoiceClient(const AWSCredentials& credentials
             Aws::MakeShared<PinpointSMSVoiceErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<PinpointSMSVoiceEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -88,7 +96,7 @@ PinpointSMSVoiceClient::PinpointSMSVoiceClient(const std::shared_ptr<AWSCredenti
             Aws::MakeShared<PinpointSMSVoiceErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<PinpointSMSVoiceEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

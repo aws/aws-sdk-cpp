@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case IdentityProviderType::NOT_SET:
+            return {};
           case IdentityProviderType::SAML:
             return "SAML";
           default:

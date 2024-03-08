@@ -23,7 +23,8 @@ CreateDevEnvironmentRequest::CreateDevEnvironmentRequest() :
     m_instanceTypeHasBeenSet(false),
     m_inactivityTimeoutMinutes(0),
     m_inactivityTimeoutMinutesHasBeenSet(false),
-    m_persistentStorageHasBeenSet(false)
+    m_persistentStorageHasBeenSet(false),
+    m_vpcConnectionNameHasBeenSet(false)
 {
 }
 
@@ -79,6 +80,12 @@ Aws::String CreateDevEnvironmentRequest::SerializePayload() const
   if(m_persistentStorageHasBeenSet)
   {
    payload.WithObject("persistentStorage", m_persistentStorage.Jsonize());
+
+  }
+
+  if(m_vpcConnectionNameHasBeenSet)
+  {
+   payload.WithString("vpcConnectionName", m_vpcConnectionName);
 
   }
 

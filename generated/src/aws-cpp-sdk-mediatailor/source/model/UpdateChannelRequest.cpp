@@ -15,7 +15,8 @@ using namespace Aws::Utils;
 UpdateChannelRequest::UpdateChannelRequest() : 
     m_channelNameHasBeenSet(false),
     m_fillerSlateHasBeenSet(false),
-    m_outputsHasBeenSet(false)
+    m_outputsHasBeenSet(false),
+    m_timeShiftConfigurationHasBeenSet(false)
 {
 }
 
@@ -37,6 +38,12 @@ Aws::String UpdateChannelRequest::SerializePayload() const
      outputsJsonList[outputsIndex].AsObject(m_outputs[outputsIndex].Jsonize());
    }
    payload.WithArray("Outputs", std::move(outputsJsonList));
+
+  }
+
+  if(m_timeShiftConfigurationHasBeenSet)
+  {
+   payload.WithObject("TimeShiftConfiguration", m_timeShiftConfiguration.Jsonize());
 
   }
 

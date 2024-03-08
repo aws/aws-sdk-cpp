@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case GenderType::NOT_SET:
+            return {};
           case GenderType::Male:
             return "Male";
           case GenderType::Female:

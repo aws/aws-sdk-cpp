@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FilterClass::NOT_SET:
+            return {};
           case FilterClass::ENFORCED_VALUE_FILTER:
             return "ENFORCED_VALUE_FILTER";
           case FilterClass::CONDITIONAL_VALUE_FILTER:

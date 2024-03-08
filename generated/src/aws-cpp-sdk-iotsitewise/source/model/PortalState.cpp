@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PortalState::NOT_SET:
+            return {};
           case PortalState::CREATING:
             return "CREATING";
           case PortalState::UPDATING:

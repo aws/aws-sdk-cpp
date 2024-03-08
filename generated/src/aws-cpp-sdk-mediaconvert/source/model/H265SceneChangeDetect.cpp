@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case H265SceneChangeDetect::NOT_SET:
+            return {};
           case H265SceneChangeDetect::DISABLED:
             return "DISABLED";
           case H265SceneChangeDetect::ENABLED:

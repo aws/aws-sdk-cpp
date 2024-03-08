@@ -255,22 +255,46 @@ namespace Model
 
 
     /**
-     * <p>The number of units provided by the specified instance type.</p>
+     * <p>The number of units provided by the specified instance type.</p> 
+     * <p>When specifying weights, the price used in the <code>lowest-price</code> and
+     * <code>price-capacity-optimized</code> allocation strategies is per <i>unit</i>
+     * hour (where the instance price is divided by the specified weight). However, if
+     * all the specified weights are above the requested <code>TargetCapacity</code>,
+     * resulting in only 1 instance being launched, the price used is per
+     * <i>instance</i> hour.</p> 
      */
     inline double GetWeightedCapacity() const{ return m_weightedCapacity; }
 
     /**
-     * <p>The number of units provided by the specified instance type.</p>
+     * <p>The number of units provided by the specified instance type.</p> 
+     * <p>When specifying weights, the price used in the <code>lowest-price</code> and
+     * <code>price-capacity-optimized</code> allocation strategies is per <i>unit</i>
+     * hour (where the instance price is divided by the specified weight). However, if
+     * all the specified weights are above the requested <code>TargetCapacity</code>,
+     * resulting in only 1 instance being launched, the price used is per
+     * <i>instance</i> hour.</p> 
      */
     inline bool WeightedCapacityHasBeenSet() const { return m_weightedCapacityHasBeenSet; }
 
     /**
-     * <p>The number of units provided by the specified instance type.</p>
+     * <p>The number of units provided by the specified instance type.</p> 
+     * <p>When specifying weights, the price used in the <code>lowest-price</code> and
+     * <code>price-capacity-optimized</code> allocation strategies is per <i>unit</i>
+     * hour (where the instance price is divided by the specified weight). However, if
+     * all the specified weights are above the requested <code>TargetCapacity</code>,
+     * resulting in only 1 instance being launched, the price used is per
+     * <i>instance</i> hour.</p> 
      */
     inline void SetWeightedCapacity(double value) { m_weightedCapacityHasBeenSet = true; m_weightedCapacity = value; }
 
     /**
-     * <p>The number of units provided by the specified instance type.</p>
+     * <p>The number of units provided by the specified instance type.</p> 
+     * <p>When specifying weights, the price used in the <code>lowest-price</code> and
+     * <code>price-capacity-optimized</code> allocation strategies is per <i>unit</i>
+     * hour (where the instance price is divided by the specified weight). However, if
+     * all the specified weights are above the requested <code>TargetCapacity</code>,
+     * resulting in only 1 instance being launched, the price used is per
+     * <i>instance</i> hour.</p> 
      */
     inline FleetLaunchTemplateOverrides& WithWeightedCapacity(double value) { SetWeightedCapacity(value); return *this;}
 

@@ -7,6 +7,8 @@
 #include <aws/sesv2/SESV2_EXPORTS.h>
 #include <aws/sesv2/model/Content.h>
 #include <aws/sesv2/model/Body.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/sesv2/model/MessageHeader.h>
 #include <utility>
 
 namespace Aws
@@ -124,6 +126,47 @@ namespace Model
      */
     inline Message& WithBody(Body&& value) { SetBody(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The list of message headers that will be added to the email message.</p>
+     */
+    inline const Aws::Vector<MessageHeader>& GetHeaders() const{ return m_headers; }
+
+    /**
+     * <p>The list of message headers that will be added to the email message.</p>
+     */
+    inline bool HeadersHasBeenSet() const { return m_headersHasBeenSet; }
+
+    /**
+     * <p>The list of message headers that will be added to the email message.</p>
+     */
+    inline void SetHeaders(const Aws::Vector<MessageHeader>& value) { m_headersHasBeenSet = true; m_headers = value; }
+
+    /**
+     * <p>The list of message headers that will be added to the email message.</p>
+     */
+    inline void SetHeaders(Aws::Vector<MessageHeader>&& value) { m_headersHasBeenSet = true; m_headers = std::move(value); }
+
+    /**
+     * <p>The list of message headers that will be added to the email message.</p>
+     */
+    inline Message& WithHeaders(const Aws::Vector<MessageHeader>& value) { SetHeaders(value); return *this;}
+
+    /**
+     * <p>The list of message headers that will be added to the email message.</p>
+     */
+    inline Message& WithHeaders(Aws::Vector<MessageHeader>&& value) { SetHeaders(std::move(value)); return *this;}
+
+    /**
+     * <p>The list of message headers that will be added to the email message.</p>
+     */
+    inline Message& AddHeaders(const MessageHeader& value) { m_headersHasBeenSet = true; m_headers.push_back(value); return *this; }
+
+    /**
+     * <p>The list of message headers that will be added to the email message.</p>
+     */
+    inline Message& AddHeaders(MessageHeader&& value) { m_headersHasBeenSet = true; m_headers.push_back(std::move(value)); return *this; }
+
   private:
 
     Content m_subject;
@@ -131,6 +174,9 @@ namespace Model
 
     Body m_body;
     bool m_bodyHasBeenSet = false;
+
+    Aws::Vector<MessageHeader> m_headers;
+    bool m_headersHasBeenSet = false;
   };
 
 } // namespace Model

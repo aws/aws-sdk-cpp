@@ -21,7 +21,13 @@ CreateSubnetRequest::CreateSubnetRequest() :
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
     m_ipv6Native(false),
-    m_ipv6NativeHasBeenSet(false)
+    m_ipv6NativeHasBeenSet(false),
+    m_ipv4IpamPoolIdHasBeenSet(false),
+    m_ipv4NetmaskLength(0),
+    m_ipv4NetmaskLengthHasBeenSet(false),
+    m_ipv6IpamPoolIdHasBeenSet(false),
+    m_ipv6NetmaskLength(0),
+    m_ipv6NetmaskLengthHasBeenSet(false)
 {
 }
 
@@ -77,6 +83,26 @@ Aws::String CreateSubnetRequest::SerializePayload() const
   if(m_ipv6NativeHasBeenSet)
   {
     ss << "Ipv6Native=" << std::boolalpha << m_ipv6Native << "&";
+  }
+
+  if(m_ipv4IpamPoolIdHasBeenSet)
+  {
+    ss << "Ipv4IpamPoolId=" << StringUtils::URLEncode(m_ipv4IpamPoolId.c_str()) << "&";
+  }
+
+  if(m_ipv4NetmaskLengthHasBeenSet)
+  {
+    ss << "Ipv4NetmaskLength=" << m_ipv4NetmaskLength << "&";
+  }
+
+  if(m_ipv6IpamPoolIdHasBeenSet)
+  {
+    ss << "Ipv6IpamPoolId=" << StringUtils::URLEncode(m_ipv6IpamPoolId.c_str()) << "&";
+  }
+
+  if(m_ipv6NetmaskLengthHasBeenSet)
+  {
+    ss << "Ipv6NetmaskLength=" << m_ipv6NetmaskLength << "&";
   }
 
   ss << "Version=2016-11-15";

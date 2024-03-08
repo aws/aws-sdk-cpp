@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FailedItemReason::NOT_SET:
+            return {};
           case FailedItemReason::NOT_VALID_ARN:
             return "NOT_VALID_ARN";
           case FailedItemReason::NOT_VALID_PARTITION:

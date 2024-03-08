@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EmailSendingAccountType::NOT_SET:
+            return {};
           case EmailSendingAccountType::COGNITO_DEFAULT:
             return "COGNITO_DEFAULT";
           case EmailSendingAccountType::DEVELOPER:

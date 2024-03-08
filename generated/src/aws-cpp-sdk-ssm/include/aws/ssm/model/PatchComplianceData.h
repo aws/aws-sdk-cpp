@@ -315,49 +315,65 @@ namespace Model
 
     /**
      * <p>The IDs of one or more Common Vulnerabilities and Exposure (CVE) issues that
-     * are resolved by the patch.</p>
+     * are resolved by the patch.</p>  <p>Currently, CVE ID values are reported
+     * only for patches with a status of <code>Missing</code> or
+     * <code>Failed</code>.</p> 
      */
     inline const Aws::String& GetCVEIds() const{ return m_cVEIds; }
 
     /**
      * <p>The IDs of one or more Common Vulnerabilities and Exposure (CVE) issues that
-     * are resolved by the patch.</p>
+     * are resolved by the patch.</p>  <p>Currently, CVE ID values are reported
+     * only for patches with a status of <code>Missing</code> or
+     * <code>Failed</code>.</p> 
      */
     inline bool CVEIdsHasBeenSet() const { return m_cVEIdsHasBeenSet; }
 
     /**
      * <p>The IDs of one or more Common Vulnerabilities and Exposure (CVE) issues that
-     * are resolved by the patch.</p>
+     * are resolved by the patch.</p>  <p>Currently, CVE ID values are reported
+     * only for patches with a status of <code>Missing</code> or
+     * <code>Failed</code>.</p> 
      */
     inline void SetCVEIds(const Aws::String& value) { m_cVEIdsHasBeenSet = true; m_cVEIds = value; }
 
     /**
      * <p>The IDs of one or more Common Vulnerabilities and Exposure (CVE) issues that
-     * are resolved by the patch.</p>
+     * are resolved by the patch.</p>  <p>Currently, CVE ID values are reported
+     * only for patches with a status of <code>Missing</code> or
+     * <code>Failed</code>.</p> 
      */
     inline void SetCVEIds(Aws::String&& value) { m_cVEIdsHasBeenSet = true; m_cVEIds = std::move(value); }
 
     /**
      * <p>The IDs of one or more Common Vulnerabilities and Exposure (CVE) issues that
-     * are resolved by the patch.</p>
+     * are resolved by the patch.</p>  <p>Currently, CVE ID values are reported
+     * only for patches with a status of <code>Missing</code> or
+     * <code>Failed</code>.</p> 
      */
     inline void SetCVEIds(const char* value) { m_cVEIdsHasBeenSet = true; m_cVEIds.assign(value); }
 
     /**
      * <p>The IDs of one or more Common Vulnerabilities and Exposure (CVE) issues that
-     * are resolved by the patch.</p>
+     * are resolved by the patch.</p>  <p>Currently, CVE ID values are reported
+     * only for patches with a status of <code>Missing</code> or
+     * <code>Failed</code>.</p> 
      */
     inline PatchComplianceData& WithCVEIds(const Aws::String& value) { SetCVEIds(value); return *this;}
 
     /**
      * <p>The IDs of one or more Common Vulnerabilities and Exposure (CVE) issues that
-     * are resolved by the patch.</p>
+     * are resolved by the patch.</p>  <p>Currently, CVE ID values are reported
+     * only for patches with a status of <code>Missing</code> or
+     * <code>Failed</code>.</p> 
      */
     inline PatchComplianceData& WithCVEIds(Aws::String&& value) { SetCVEIds(std::move(value)); return *this;}
 
     /**
      * <p>The IDs of one or more Common Vulnerabilities and Exposure (CVE) issues that
-     * are resolved by the patch.</p>
+     * are resolved by the patch.</p>  <p>Currently, CVE ID values are reported
+     * only for patches with a status of <code>Missing</code> or
+     * <code>Failed</code>.</p> 
      */
     inline PatchComplianceData& WithCVEIds(const char* value) { SetCVEIds(value); return *this;}
 

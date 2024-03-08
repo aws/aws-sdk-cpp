@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ProresCodecProfile::NOT_SET:
+            return {};
           case ProresCodecProfile::APPLE_PRORES_422:
             return "APPLE_PRORES_422";
           case ProresCodecProfile::APPLE_PRORES_422_HQ:

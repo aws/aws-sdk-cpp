@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case XavcInterlaceMode::NOT_SET:
+            return {};
           case XavcInterlaceMode::PROGRESSIVE:
             return "PROGRESSIVE";
           case XavcInterlaceMode::TOP_FIELD:

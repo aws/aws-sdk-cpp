@@ -32,8 +32,8 @@ namespace IoTDeviceAdvisor
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef IoTDeviceAdvisorClientConfiguration ClientConfigurationType;
       typedef IoTDeviceAdvisorEndpointProvider EndpointProviderType;
@@ -43,14 +43,14 @@ namespace IoTDeviceAdvisor
         * is not specified, it will be initialized to default values.
         */
         IoTDeviceAdvisorClient(const Aws::IoTDeviceAdvisor::IoTDeviceAdvisorClientConfiguration& clientConfiguration = Aws::IoTDeviceAdvisor::IoTDeviceAdvisorClientConfiguration(),
-                               std::shared_ptr<IoTDeviceAdvisorEndpointProviderBase> endpointProvider = Aws::MakeShared<IoTDeviceAdvisorEndpointProvider>(ALLOCATION_TAG));
+                               std::shared_ptr<IoTDeviceAdvisorEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         IoTDeviceAdvisorClient(const Aws::Auth::AWSCredentials& credentials,
-                               std::shared_ptr<IoTDeviceAdvisorEndpointProviderBase> endpointProvider = Aws::MakeShared<IoTDeviceAdvisorEndpointProvider>(ALLOCATION_TAG),
+                               std::shared_ptr<IoTDeviceAdvisorEndpointProviderBase> endpointProvider = nullptr,
                                const Aws::IoTDeviceAdvisor::IoTDeviceAdvisorClientConfiguration& clientConfiguration = Aws::IoTDeviceAdvisor::IoTDeviceAdvisorClientConfiguration());
 
        /**
@@ -58,7 +58,7 @@ namespace IoTDeviceAdvisor
         * the default http client factory will be used
         */
         IoTDeviceAdvisorClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                               std::shared_ptr<IoTDeviceAdvisorEndpointProviderBase> endpointProvider = Aws::MakeShared<IoTDeviceAdvisorEndpointProvider>(ALLOCATION_TAG),
+                               std::shared_ptr<IoTDeviceAdvisorEndpointProviderBase> endpointProvider = nullptr,
                                const Aws::IoTDeviceAdvisor::IoTDeviceAdvisorClientConfiguration& clientConfiguration = Aws::IoTDeviceAdvisor::IoTDeviceAdvisorClientConfiguration());
 
 

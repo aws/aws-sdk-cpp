@@ -23,7 +23,8 @@ SearchRequest::SearchRequest() :
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
     m_crossAccountFilterOption(CrossAccountFilterOption::NOT_SET),
-    m_crossAccountFilterOptionHasBeenSet(false)
+    m_crossAccountFilterOptionHasBeenSet(false),
+    m_visibilityConditionsHasBeenSet(false)
 {
 }
 
@@ -68,6 +69,17 @@ Aws::String SearchRequest::SerializePayload() const
   if(m_crossAccountFilterOptionHasBeenSet)
   {
    payload.WithString("CrossAccountFilterOption", CrossAccountFilterOptionMapper::GetNameForCrossAccountFilterOption(m_crossAccountFilterOption));
+  }
+
+  if(m_visibilityConditionsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> visibilityConditionsJsonList(m_visibilityConditions.size());
+   for(unsigned visibilityConditionsIndex = 0; visibilityConditionsIndex < visibilityConditionsJsonList.GetLength(); ++visibilityConditionsIndex)
+   {
+     visibilityConditionsJsonList[visibilityConditionsIndex].AsObject(m_visibilityConditions[visibilityConditionsIndex].Jsonize());
+   }
+   payload.WithArray("VisibilityConditions", std::move(visibilityConditionsJsonList));
+
   }
 
   return payload.View().WriteReadable();

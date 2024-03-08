@@ -29,6 +29,12 @@ namespace Aws
         static const int CAN_SIGNAL_INFO_IS_NULL_HASH = HashingUtils::HashString("CAN_SIGNAL_INFO_IS_NULL");
         static const int OBD_SIGNAL_INFO_IS_NULL_HASH = HashingUtils::HashString("OBD_SIGNAL_INFO_IS_NULL");
         static const int NO_DECODER_INFO_FOR_SIGNAL_IN_MODEL_HASH = HashingUtils::HashString("NO_DECODER_INFO_FOR_SIGNAL_IN_MODEL");
+        static const int MESSAGE_SIGNAL_INFO_IS_NULL_HASH = HashingUtils::HashString("MESSAGE_SIGNAL_INFO_IS_NULL");
+        static const int SIGNAL_DECODER_TYPE_INCOMPATIBLE_WITH_MESSAGE_SIGNAL_TYPE_HASH = HashingUtils::HashString("SIGNAL_DECODER_TYPE_INCOMPATIBLE_WITH_MESSAGE_SIGNAL_TYPE");
+        static const int STRUCT_SIZE_MISMATCH_HASH = HashingUtils::HashString("STRUCT_SIZE_MISMATCH");
+        static const int NO_SIGNAL_IN_CATALOG_FOR_DECODER_SIGNAL_HASH = HashingUtils::HashString("NO_SIGNAL_IN_CATALOG_FOR_DECODER_SIGNAL");
+        static const int SIGNAL_DECODER_INCOMPATIBLE_WITH_SIGNAL_CATALOG_HASH = HashingUtils::HashString("SIGNAL_DECODER_INCOMPATIBLE_WITH_SIGNAL_CATALOG");
+        static const int EMPTY_MESSAGE_SIGNAL_HASH = HashingUtils::HashString("EMPTY_MESSAGE_SIGNAL");
 
 
         SignalDecoderFailureReason GetSignalDecoderFailureReasonForName(const Aws::String& name)
@@ -70,6 +76,30 @@ namespace Aws
           {
             return SignalDecoderFailureReason::NO_DECODER_INFO_FOR_SIGNAL_IN_MODEL;
           }
+          else if (hashCode == MESSAGE_SIGNAL_INFO_IS_NULL_HASH)
+          {
+            return SignalDecoderFailureReason::MESSAGE_SIGNAL_INFO_IS_NULL;
+          }
+          else if (hashCode == SIGNAL_DECODER_TYPE_INCOMPATIBLE_WITH_MESSAGE_SIGNAL_TYPE_HASH)
+          {
+            return SignalDecoderFailureReason::SIGNAL_DECODER_TYPE_INCOMPATIBLE_WITH_MESSAGE_SIGNAL_TYPE;
+          }
+          else if (hashCode == STRUCT_SIZE_MISMATCH_HASH)
+          {
+            return SignalDecoderFailureReason::STRUCT_SIZE_MISMATCH;
+          }
+          else if (hashCode == NO_SIGNAL_IN_CATALOG_FOR_DECODER_SIGNAL_HASH)
+          {
+            return SignalDecoderFailureReason::NO_SIGNAL_IN_CATALOG_FOR_DECODER_SIGNAL;
+          }
+          else if (hashCode == SIGNAL_DECODER_INCOMPATIBLE_WITH_SIGNAL_CATALOG_HASH)
+          {
+            return SignalDecoderFailureReason::SIGNAL_DECODER_INCOMPATIBLE_WITH_SIGNAL_CATALOG;
+          }
+          else if (hashCode == EMPTY_MESSAGE_SIGNAL_HASH)
+          {
+            return SignalDecoderFailureReason::EMPTY_MESSAGE_SIGNAL;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -84,6 +114,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SignalDecoderFailureReason::NOT_SET:
+            return {};
           case SignalDecoderFailureReason::DUPLICATE_SIGNAL:
             return "DUPLICATE_SIGNAL";
           case SignalDecoderFailureReason::CONFLICTING_SIGNAL:
@@ -102,6 +134,18 @@ namespace Aws
             return "OBD_SIGNAL_INFO_IS_NULL";
           case SignalDecoderFailureReason::NO_DECODER_INFO_FOR_SIGNAL_IN_MODEL:
             return "NO_DECODER_INFO_FOR_SIGNAL_IN_MODEL";
+          case SignalDecoderFailureReason::MESSAGE_SIGNAL_INFO_IS_NULL:
+            return "MESSAGE_SIGNAL_INFO_IS_NULL";
+          case SignalDecoderFailureReason::SIGNAL_DECODER_TYPE_INCOMPATIBLE_WITH_MESSAGE_SIGNAL_TYPE:
+            return "SIGNAL_DECODER_TYPE_INCOMPATIBLE_WITH_MESSAGE_SIGNAL_TYPE";
+          case SignalDecoderFailureReason::STRUCT_SIZE_MISMATCH:
+            return "STRUCT_SIZE_MISMATCH";
+          case SignalDecoderFailureReason::NO_SIGNAL_IN_CATALOG_FOR_DECODER_SIGNAL:
+            return "NO_SIGNAL_IN_CATALOG_FOR_DECODER_SIGNAL";
+          case SignalDecoderFailureReason::SIGNAL_DECODER_INCOMPATIBLE_WITH_SIGNAL_CATALOG:
+            return "SIGNAL_DECODER_INCOMPATIBLE_WITH_SIGNAL_CATALOG";
+          case SignalDecoderFailureReason::EMPTY_MESSAGE_SIGNAL:
+            return "EMPTY_MESSAGE_SIGNAL";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

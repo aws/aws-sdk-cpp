@@ -53,7 +53,7 @@
         },
         {
           "shape": "GatewayTimeoutException",
-          "documentation": "Gateway Timeout Error"
+          "documentation": "Gateway Timeout"
         },
         {
           "shape": "TooManyRequestsException",
@@ -241,7 +241,7 @@
         },
         {
           "shape": "InternalServerErrorException",
-          "documentation": "Unexpected internal service error."
+          "documentation": "Internal Service Error"
         },
         {
           "shape": "ForbiddenException",
@@ -257,7 +257,7 @@
         },
         {
           "shape": "GatewayTimeoutException",
-          "documentation": "Gateway Timeout Error"
+          "documentation": "Gateway Timeout"
         },
         {
           "shape": "TooManyRequestsException",
@@ -307,7 +307,7 @@
         },
         {
           "shape": "GatewayTimeoutException",
-          "documentation": "Gateway Timeout Error"
+          "documentation": "Gateway Timeout"
         },
         {
           "shape": "TooManyRequestsException",
@@ -361,7 +361,7 @@
         },
         {
           "shape": "GatewayTimeoutException",
-          "documentation": "Bad gateway error. Try again."
+          "documentation": "Gateway Timeout"
         },
         {
           "shape": "TooManyRequestsException",
@@ -395,7 +395,7 @@
         },
         {
           "shape": "InternalServerErrorException",
-          "documentation": "Unexpected internal service error."
+          "documentation": "Internal Service Error"
         },
         {
           "shape": "ForbiddenException",
@@ -407,7 +407,7 @@
         },
         {
           "shape": "GatewayTimeoutException",
-          "documentation": "Gateway Timeout Error"
+          "documentation": "Gateway Timeout"
         },
         {
           "shape": "TooManyRequestsException",
@@ -453,7 +453,7 @@
         },
         {
           "shape": "GatewayTimeoutException",
-          "documentation": "Gateway Timeout Error"
+          "documentation": "Gateway Timeout"
         },
         {
           "shape": "TooManyRequestsException",
@@ -495,7 +495,7 @@
         },
         {
           "shape": "GatewayTimeoutException",
-          "documentation": "Gateway Timeout Error"
+          "documentation": "Gateway Timeout"
         },
         {
           "shape": "TooManyRequestsException",
@@ -529,7 +529,7 @@
         },
         {
           "shape": "InternalServerErrorException",
-          "documentation": "Unexpected internal service error."
+          "documentation": "Internal Service Error"
         },
         {
           "shape": "ForbiddenException",
@@ -541,7 +541,7 @@
         },
         {
           "shape": "GatewayTimeoutException",
-          "documentation": "Gateway Timeout Error"
+          "documentation": "Gateway Timeout"
         },
         {
           "shape": "TooManyRequestsException",
@@ -579,7 +579,7 @@
         },
         {
           "shape": "InternalServerErrorException",
-          "documentation": "Unexpected internal service error."
+          "documentation": "Internal Service Error"
         },
         {
           "shape": "ForbiddenException",
@@ -591,7 +591,7 @@
         },
         {
           "shape": "GatewayTimeoutException",
-          "documentation": "Gateway Timeout Error"
+          "documentation": "Gateway Timeout"
         },
         {
           "shape": "TooManyRequestsException",
@@ -637,7 +637,7 @@
         },
         {
           "shape": "GatewayTimeoutException",
-          "documentation": "Gateway Timeout Error"
+          "documentation": "Gateway Timeout"
         },
         {
           "shape": "TooManyRequestsException",
@@ -697,7 +697,7 @@
         },
         {
           "shape": "InternalServerErrorException",
-          "documentation": "Unexpected internal service error."
+          "documentation": "Internal Service Error"
         },
         {
           "shape": "ForbiddenException",
@@ -713,7 +713,7 @@
         },
         {
           "shape": "GatewayTimeoutException",
-          "documentation": "Gateway Timeout Error"
+          "documentation": "Gateway Timeout"
         },
         {
           "shape": "TooManyRequestsException",
@@ -763,7 +763,7 @@
         },
         {
           "shape": "GatewayTimeoutException",
-          "documentation": "Gateway Timeout Error"
+          "documentation": "Gateway Timeout"
         },
         {
           "shape": "TooManyRequestsException",
@@ -813,7 +813,7 @@
         },
         {
           "shape": "GatewayTimeoutException",
-          "documentation": "Gateway Timeout Error"
+          "documentation": "Gateway Timeout"
         },
         {
           "shape": "TooManyRequestsException",
@@ -843,7 +843,7 @@
         },
         {
           "shape": "InternalServerErrorException",
-          "documentation": "Unexpected internal service error."
+          "documentation": "Internal Service Error"
         },
         {
           "shape": "ForbiddenException",
@@ -859,7 +859,7 @@
         },
         {
           "shape": "GatewayTimeoutException",
-          "documentation": "Gateway Timeout Error"
+          "documentation": "Gateway Timeout"
         },
         {
           "shape": "TooManyRequestsException",
@@ -893,7 +893,7 @@
         },
         {
           "shape": "InternalServerErrorException",
-          "documentation": "Unexpected internal service error."
+          "documentation": "Internal Service Error"
         },
         {
           "shape": "ForbiddenException",
@@ -909,7 +909,7 @@
         },
         {
           "shape": "GatewayTimeoutException",
-          "documentation": "Gateway Timeout Error"
+          "documentation": "Gateway Timeout"
         },
         {
           "shape": "TooManyRequestsException",
@@ -959,7 +959,7 @@
         },
         {
           "shape": "GatewayTimeoutException",
-          "documentation": "Gateway Timeout Error"
+          "documentation": "Gateway Timeout"
         },
         {
           "shape": "TooManyRequestsException",
@@ -993,7 +993,7 @@
         },
         {
           "shape": "InternalServerErrorException",
-          "documentation": "Unexpected internal service error."
+          "documentation": "Internal Service Error"
         },
         {
           "shape": "ForbiddenException",
@@ -1009,7 +1009,7 @@
         },
         {
           "shape": "GatewayTimeoutException",
-          "documentation": "Gateway Timeout Error"
+          "documentation": "Gateway Timeout"
         },
         {
           "shape": "TooManyRequestsException",
@@ -1048,6 +1048,48 @@
       ],
       "documentation": "Removes tags for a resource"
     },
+    "DescribeAccountConfiguration": {
+      "name": "DescribeAccountConfiguration",
+      "http": {
+        "method": "GET",
+        "requestUri": "/prod/accountConfiguration",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "DescribeAccountConfigurationRequest"
+      },
+      "output": {
+        "shape": "DescribeAccountConfigurationResponse",
+        "documentation": "An array of account configuration options."
+      },
+      "errors": [
+        {
+          "shape": "BadRequestException",
+          "documentation": "This request was invalid."
+        },
+        {
+          "shape": "InternalServerErrorException",
+          "documentation": "Internal Service Error"
+        },
+        {
+          "shape": "ForbiddenException",
+          "documentation": "You do not have permission to describe the account configuration."
+        },
+        {
+          "shape": "BadGatewayException",
+          "documentation": "Bad Gateway Error"
+        },
+        {
+          "shape": "GatewayTimeoutException",
+          "documentation": "Gateway Timeout"
+        },
+        {
+          "shape": "TooManyRequestsException",
+          "documentation": "Request limit exceeded on describe account configuration calls."
+        }
+      ],
+      "documentation": "Describe account configuration"
+    },
     "DescribeChannel": {
       "name": "DescribeChannel",
       "http": {
@@ -1069,7 +1111,7 @@
         },
         {
           "shape": "InternalServerErrorException",
-          "documentation": "Unexpected internal service error."
+          "documentation": "Internal Service Error"
         },
         {
           "shape": "ForbiddenException",
@@ -1085,7 +1127,7 @@
         },
         {
           "shape": "GatewayTimeoutException",
-          "documentation": "Gateway Timeout Error"
+          "documentation": "Gateway Timeout"
         },
         {
           "shape": "TooManyRequestsException",
@@ -1177,7 +1219,7 @@
         },
         {
           "shape": "GatewayTimeoutException",
-          "documentation": "Gateway Timeout Error"
+          "documentation": "Gateway Timeout"
         },
         {
           "shape": "TooManyRequestsException",
@@ -1223,7 +1265,7 @@
         },
         {
           "shape": "GatewayTimeoutException",
-          "documentation": "Gateway Timeout Error"
+          "documentation": "Gateway Timeout"
         },
         {
           "shape": "TooManyRequestsException",
@@ -1269,7 +1311,7 @@
         },
         {
           "shape": "GatewayTimeoutException",
-          "documentation": "Gateway Timeout Error"
+          "documentation": "Gateway Timeout"
         },
         {
           "shape": "TooManyRequestsException",
@@ -1299,7 +1341,7 @@
         },
         {
           "shape": "InternalServerErrorException",
-          "documentation": "Unexpected internal service error."
+          "documentation": "Internal Service Error"
         },
         {
           "shape": "ForbiddenException",
@@ -1315,7 +1357,7 @@
         },
         {
           "shape": "GatewayTimeoutException",
-          "documentation": "Gateway Timeout Error"
+          "documentation": "Gateway Timeout"
         },
         {
           "shape": "TooManyRequestsException",
@@ -1345,7 +1387,7 @@
         },
         {
           "shape": "InternalServerErrorException",
-          "documentation": "Unexpected internal service error."
+          "documentation": "Internal Service Error"
         },
         {
           "shape": "ForbiddenException",
@@ -1361,7 +1403,7 @@
         },
         {
           "shape": "GatewayTimeoutException",
-          "documentation": "Gateway Timeout Error"
+          "documentation": "Gateway Timeout"
         },
         {
           "shape": "TooManyRequestsException",
@@ -1407,7 +1449,7 @@
         },
         {
           "shape": "GatewayTimeoutException",
-          "documentation": "Gateway Timeout Error"
+          "documentation": "Gateway Timeout"
         },
         {
           "shape": "TooManyRequestsException",
@@ -1453,7 +1495,7 @@
         },
         {
           "shape": "GatewayTimeoutException",
-          "documentation": "Gateway Timeout Error"
+          "documentation": "Gateway Timeout"
         },
         {
           "shape": "TooManyRequestsException",
@@ -1483,7 +1525,7 @@
         },
         {
           "shape": "InternalServerErrorException",
-          "documentation": "Unexpected internal service error."
+          "documentation": "Internal Service Error"
         },
         {
           "shape": "ForbiddenException",
@@ -1499,7 +1541,7 @@
         },
         {
           "shape": "GatewayTimeoutException",
-          "documentation": "Gateway Timeout Error"
+          "documentation": "Gateway Timeout"
         },
         {
           "shape": "TooManyRequestsException",
@@ -1507,48 +1549,6 @@
         }
       ],
       "documentation": "Get a channel schedule"
-    },
-    "DescribeAccountConfiguration": {
-      "name": "DescribeAccountConfiguration",
-      "http": {
-        "method": "GET",
-        "requestUri": "/prod/accountConfiguration",
-        "responseCode": 200
-      },
-      "input": {
-        "shape": "DescribeAccountConfigurationRequest"
-      },
-      "output": {
-        "shape": "DescribeAccountConfigurationResponse",
-        "documentation": "An array of account configuration options."
-      },
-      "errors": [
-        {
-          "shape": "BadRequestException",
-          "documentation": "This request was invalid."
-        },
-        {
-          "shape": "InternalServerErrorException",
-          "documentation": "Unexpected internal service error."
-        },
-        {
-          "shape": "ForbiddenException",
-          "documentation": "You do not have permission to describe the account configuration."
-        },
-        {
-          "shape": "BadGatewayException",
-          "documentation": "Bad Gateway Error"
-        },
-        {
-          "shape": "GatewayTimeoutException",
-          "documentation": "Gateway Timeout Error"
-        },
-        {
-          "shape": "TooManyRequestsException",
-          "documentation": "Request limit exceeded on describe account configuration calls."
-        }
-      ],
-      "documentation": "Get account configuration"
     },
     "DescribeThumbnails": {
       "name": "DescribeThumbnails",
@@ -1571,11 +1571,11 @@
         },
         {
           "shape": "InternalServerErrorException",
-          "documentation": "Unexpected internal service error.."
+          "documentation": "Internal service error."
         },
         {
           "shape": "ForbiddenException",
-          "documentation": "You do not have permission to get thumbnails."
+          "documentation": "You do not have permission to describe thumbnails."
         },
         {
           "shape": "BadGatewayException",
@@ -1587,7 +1587,7 @@
         },
         {
           "shape": "GatewayTimeoutException",
-          "documentation": "Gateway Timeout Error"
+          "documentation": "Gateway Timeout"
         },
         {
           "shape": "TooManyRequestsException",
@@ -1621,7 +1621,7 @@
         },
         {
           "shape": "InternalServerErrorException",
-          "documentation": "Unexpected internal service error."
+          "documentation": "Internal Service Error"
         },
         {
           "shape": "ForbiddenException",
@@ -1633,7 +1633,7 @@
         },
         {
           "shape": "GatewayTimeoutException",
-          "documentation": "Gateway Timeout Error"
+          "documentation": "Gateway Timeout"
         },
         {
           "shape": "TooManyRequestsException",
@@ -1679,7 +1679,7 @@
         },
         {
           "shape": "GatewayTimeoutException",
-          "documentation": "Gateway Timeout Error"
+          "documentation": "Gateway Timeout"
         },
         {
           "shape": "TooManyRequestsException",
@@ -1721,7 +1721,7 @@
         },
         {
           "shape": "GatewayTimeoutException",
-          "documentation": "Gateway Timeout Error"
+          "documentation": "Gateway Timeout"
         },
         {
           "shape": "TooManyRequestsException",
@@ -1763,7 +1763,7 @@
         },
         {
           "shape": "GatewayTimeoutException",
-          "documentation": "Gateway Timeout Error"
+          "documentation": "Gateway Timeout"
         },
         {
           "shape": "TooManyRequestsException",
@@ -1835,7 +1835,7 @@
         },
         {
           "shape": "InternalServerErrorException",
-          "documentation": "Unexpected internal service error."
+          "documentation": "Internal Service Error"
         },
         {
           "shape": "ForbiddenException",
@@ -1851,7 +1851,7 @@
         },
         {
           "shape": "GatewayTimeoutException",
-          "documentation": "Gateway Timeout Error"
+          "documentation": "Gateway Timeout"
         },
         {
           "shape": "TooManyRequestsException",
@@ -1881,7 +1881,7 @@
         },
         {
           "shape": "InternalServerErrorException",
-          "documentation": "Unexpected internal service error."
+          "documentation": "Internal Service Error"
         },
         {
           "shape": "ForbiddenException",
@@ -1893,7 +1893,7 @@
         },
         {
           "shape": "GatewayTimeoutException",
-          "documentation": "Gateway Timeout Error"
+          "documentation": "Gateway Timeout"
         },
         {
           "shape": "TooManyRequestsException",
@@ -1935,7 +1935,7 @@
         },
         {
           "shape": "GatewayTimeoutException",
-          "documentation": "Gateway Timeout Error"
+          "documentation": "Gateway Timeout"
         },
         {
           "shape": "TooManyRequestsException",
@@ -1977,7 +1977,7 @@
         },
         {
           "shape": "GatewayTimeoutException",
-          "documentation": "Gateway Timeout Error"
+          "documentation": "Gateway Timeout"
         },
         {
           "shape": "TooManyRequestsException",
@@ -2057,7 +2057,7 @@
         },
         {
           "shape": "GatewayTimeoutException",
-          "documentation": "Gateway Timeout Error"
+          "documentation": "Gateway Timeout"
         },
         {
           "shape": "TooManyRequestsException",
@@ -2111,7 +2111,7 @@
         },
         {
           "shape": "GatewayTimeoutException",
-          "documentation": "Gateway Timeout Error"
+          "documentation": "Gateway Timeout"
         },
         {
           "shape": "TooManyRequestsException",
@@ -2161,7 +2161,7 @@
         },
         {
           "shape": "GatewayTimeoutException",
-          "documentation": "Gateway Timeout Error"
+          "documentation": "Gateway Timeout"
         },
         {
           "shape": "TooManyRequestsException",
@@ -2173,52 +2173,6 @@
         }
       ],
       "documentation": "Reject the transfer of the specified input device to your AWS account."
-    },
-    "UpdateAccountConfiguration": {
-      "name": "UpdateAccountConfiguration",
-      "http": {
-        "method": "PUT",
-        "requestUri": "/prod/accountConfiguration",
-        "responseCode": 200
-      },
-      "input": {
-        "shape": "UpdateAccountConfigurationRequest"
-      },
-      "output": {
-        "shape": "UpdateAccountConfigurationResponse",
-        "documentation": "Successful update of the account configuration."
-      },
-      "errors": [
-        {
-          "shape": "BadRequestException",
-          "documentation": "This request was invalid."
-        },
-        {
-          "shape": "UnprocessableEntityException",
-          "documentation": "The update account configuration request failed validation."
-        },
-        {
-          "shape": "InternalServerErrorException",
-          "documentation": "Unexpected internal service error."
-        },
-        {
-          "shape": "ForbiddenException",
-          "documentation": "You do not have permission to update the account's configuration."
-        },
-        {
-          "shape": "BadGatewayException",
-          "documentation": "Bad Gateway Error"
-        },
-        {
-          "shape": "GatewayTimeoutException",
-          "documentation": "Gateway Timeout Error"
-        },
-        {
-          "shape": "TooManyRequestsException",
-          "documentation": "Request limit exceeded on update account configuration calls."
-        }
-      ],
-      "documentation": "Update account configuration"
     },
     "StartChannel": {
       "name": "StartChannel",
@@ -2241,7 +2195,7 @@
         },
         {
           "shape": "InternalServerErrorException",
-          "documentation": "Unexpected internal service error."
+          "documentation": "Internal Service Error"
         },
         {
           "shape": "ForbiddenException",
@@ -2257,7 +2211,7 @@
         },
         {
           "shape": "GatewayTimeoutException",
-          "documentation": "Gateway Timeout Error"
+          "documentation": "Gateway Timeout"
         },
         {
           "shape": "TooManyRequestsException",
@@ -2311,7 +2265,7 @@
         },
         {
           "shape": "GatewayTimeoutException",
-          "documentation": "Gateway Timeout Error"
+          "documentation": "Gateway Timeout"
         },
         {
           "shape": "TooManyRequestsException",
@@ -2361,7 +2315,7 @@
         },
         {
           "shape": "GatewayTimeoutException",
-          "documentation": "Gateway Timeout Error"
+          "documentation": "Gateway Timeout"
         },
         {
           "shape": "TooManyRequestsException",
@@ -2391,7 +2345,7 @@
         },
         {
           "shape": "InternalServerErrorException",
-          "documentation": "Unexpected internal service error."
+          "documentation": "Internal Service Error"
         },
         {
           "shape": "ForbiddenException",
@@ -2407,7 +2361,7 @@
         },
         {
           "shape": "GatewayTimeoutException",
-          "documentation": "Gateway Timeout Error"
+          "documentation": "Gateway Timeout"
         },
         {
           "shape": "TooManyRequestsException",
@@ -2441,7 +2395,7 @@
         },
         {
           "shape": "InternalServerErrorException",
-          "documentation": "Unexpected internal service error."
+          "documentation": "Internal Service Error"
         },
         {
           "shape": "ForbiddenException",
@@ -2457,7 +2411,7 @@
         },
         {
           "shape": "GatewayTimeoutException",
-          "documentation": "Gateway Timeout Error"
+          "documentation": "Gateway Timeout"
         },
         {
           "shape": "TooManyRequestsException",
@@ -2511,7 +2465,7 @@
         },
         {
           "shape": "GatewayTimeoutException",
-          "documentation": "Gateway Timeout Error"
+          "documentation": "Gateway Timeout"
         },
         {
           "shape": "TooManyRequestsException",
@@ -2541,7 +2495,7 @@
         },
         {
           "shape": "InternalServerErrorException",
-          "documentation": "Unexpected internal service error."
+          "documentation": "Internal Service Error"
         },
         {
           "shape": "ForbiddenException",
@@ -2557,7 +2511,7 @@
         },
         {
           "shape": "GatewayTimeoutException",
-          "documentation": "Gateway Timeout Error"
+          "documentation": "Gateway Timeout"
         },
         {
           "shape": "TooManyRequestsException",
@@ -2611,7 +2565,7 @@
         },
         {
           "shape": "GatewayTimeoutException",
-          "documentation": "Gateway Timeout Error"
+          "documentation": "Gateway Timeout"
         },
         {
           "shape": "TooManyRequestsException",
@@ -2623,6 +2577,52 @@
         }
       ],
       "documentation": "Start an input device transfer to another AWS account. After you make the request, the other account must accept or reject the transfer."
+    },
+    "UpdateAccountConfiguration": {
+      "name": "UpdateAccountConfiguration",
+      "http": {
+        "method": "PUT",
+        "requestUri": "/prod/accountConfiguration",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "UpdateAccountConfigurationRequest"
+      },
+      "output": {
+        "shape": "UpdateAccountConfigurationResponse",
+        "documentation": "Successful update of the account configuration."
+      },
+      "errors": [
+        {
+          "shape": "BadRequestException",
+          "documentation": "This request was invalid."
+        },
+        {
+          "shape": "UnprocessableEntityException",
+          "documentation": "The update account configuration request failed validation."
+        },
+        {
+          "shape": "InternalServerErrorException",
+          "documentation": "Internal Service Error"
+        },
+        {
+          "shape": "ForbiddenException",
+          "documentation": "You do not have permission to update the account's configuration."
+        },
+        {
+          "shape": "BadGatewayException",
+          "documentation": "Bad Gateway Error"
+        },
+        {
+          "shape": "GatewayTimeoutException",
+          "documentation": "Gateway Timeout"
+        },
+        {
+          "shape": "TooManyRequestsException",
+          "documentation": "Request limit exceeded on update account configuration calls."
+        }
+      ],
+      "documentation": "Update account configuration"
     },
     "UpdateChannel": {
       "name": "UpdateChannel",
@@ -2649,7 +2649,7 @@
         },
         {
           "shape": "InternalServerErrorException",
-          "documentation": "Unexpected internal service error."
+          "documentation": "Internal Service Error"
         },
         {
           "shape": "ForbiddenException",
@@ -2661,7 +2661,7 @@
         },
         {
           "shape": "GatewayTimeoutException",
-          "documentation": "Gateway Timeout Error"
+          "documentation": "Gateway Timeout"
         },
         {
           "shape": "ConflictException",
@@ -2695,7 +2695,7 @@
         },
         {
           "shape": "InternalServerErrorException",
-          "documentation": "Unexpected internal service error."
+          "documentation": "Internal Service Error"
         },
         {
           "shape": "ForbiddenException",
@@ -2711,7 +2711,7 @@
         },
         {
           "shape": "GatewayTimeoutException",
-          "documentation": "Gateway Timeout Error"
+          "documentation": "Gateway Timeout"
         },
         {
           "shape": "TooManyRequestsException",
@@ -2761,7 +2761,7 @@
         },
         {
           "shape": "GatewayTimeoutException",
-          "documentation": "Gateway Timeout Error"
+          "documentation": "Gateway Timeout"
         },
         {
           "shape": "ConflictException",
@@ -2811,7 +2811,7 @@
         },
         {
           "shape": "GatewayTimeoutException",
-          "documentation": "Gateway Timeout Error"
+          "documentation": "Gateway Timeout"
         },
         {
           "shape": "TooManyRequestsException",
@@ -2857,7 +2857,7 @@
         },
         {
           "shape": "GatewayTimeoutException",
-          "documentation": "Gateway Timeout Error"
+          "documentation": "Gateway Timeout"
         },
         {
           "shape": "ConflictException",
@@ -2891,7 +2891,7 @@
         },
         {
           "shape": "InternalServerErrorException",
-          "documentation": "Unexpected internal service error."
+          "documentation": "Internal Service Error"
         },
         {
           "shape": "ForbiddenException",
@@ -2907,7 +2907,7 @@
         },
         {
           "shape": "GatewayTimeoutException",
-          "documentation": "Gateway Timeout Error"
+          "documentation": "Gateway Timeout"
         },
         {
           "shape": "ConflictException",
@@ -2941,7 +2941,7 @@
         },
         {
           "shape": "InternalServerErrorException",
-          "documentation": "Unexpected internal service error."
+          "documentation": "Internal Service Error"
         },
         {
           "shape": "ForbiddenException",
@@ -2957,7 +2957,7 @@
         },
         {
           "shape": "GatewayTimeoutException",
-          "documentation": "Gateway Timeout Error"
+          "documentation": "Gateway Timeout"
         },
         {
           "shape": "ConflictException",
@@ -3003,7 +3003,7 @@
         },
         {
           "shape": "GatewayTimeoutException",
-          "documentation": "Gateway Timeout Error"
+          "documentation": "Gateway Timeout"
         },
         {
           "shape": "TooManyRequestsException",
@@ -3015,6 +3015,56 @@
         }
       ],
       "documentation": "Update reservation."
+    },
+    "RestartChannelPipelines": {
+      "name": "RestartChannelPipelines",
+      "http": {
+        "method": "POST",
+        "requestUri": "/prod/channels/{channelId}/restartChannelPipelines",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "RestartChannelPipelinesRequest"
+      },
+      "output": {
+        "shape": "RestartChannelPipelinesResponse",
+        "documentation": "MediaLive successfully initiated the restart request."
+      },
+      "errors": [
+        {
+          "shape": "BadRequestException",
+          "documentation": "The service can't process your request because of a problem in the request. Verify that the syntax is correct."
+        },
+        {
+          "shape": "InternalServerErrorException",
+          "documentation": "Internal Service Error"
+        },
+        {
+          "shape": "ForbiddenException",
+          "documentation": "You don't have permissions for this action with the credentials that you sent."
+        },
+        {
+          "shape": "BadGatewayException",
+          "documentation": "Bad Gateway Error"
+        },
+        {
+          "shape": "NotFoundException",
+          "documentation": "The channel or pipeline you specified doesn't exist."
+        },
+        {
+          "shape": "GatewayTimeoutException",
+          "documentation": "Gateway Timeout"
+        },
+        {
+          "shape": "TooManyRequestsException",
+          "documentation": "Too many requests have been sent in too short of a time. The service limits the rate at which it will accept requests."
+        },
+        {
+          "shape": "ConflictException",
+          "documentation": "The service could not complete your request because there is a conflict with the current state of the resource."
+        }
+      ],
+      "documentation": "Restart pipelines in one channel that is currently running."
     }
   },
   "shapes": {
@@ -4524,7 +4574,7 @@
         "Accessibility": {
           "shape": "AccessibilityType",
           "locationName": "accessibility",
-          "documentation": "Indicates whether the caption track implements accessibility features such as written descriptions of spoken dialog, music, and sounds."
+          "documentation": "Indicates whether the caption track implements accessibility features such as written descriptions of spoken dialog, music, and sounds. This signaling is added to HLS output group and MediaPackage output group."
         },
         "CaptionSelectorName": {
           "shape": "__string",
@@ -4734,7 +4784,7 @@
     },
     "CdiInputResolution": {
       "type": "string",
-      "documentation": "Maximum CDI input resolution; SD is 480i and 576i up to 30 frames-per-second (fps), HD is 720p up to 60 fps / 1080i up to 30 fps, FHD is 1080p up to 60 fps, UHD is 2160p up to 60 fps\n",
+      "documentation": "Maximum CDI input resolution; SD is 480i and 576i up to 30 frames-per-second (fps), HD is 720p up to 60 fps / 1080i up to 30 fps, FHD is 1080p up to 60 fps, UHD is 2160p up to 60 fps",
       "enum": [
         "SD",
         "HD",
@@ -4774,7 +4824,7 @@
         "Destinations": {
           "shape": "__listOfOutputDestination",
           "locationName": "destinations",
-          "documentation": "A list of destinations of the channel. For UDP outputs, there is one\ndestination per output. For other types (HLS, for example), there is\none destination per packager.\n"
+          "documentation": "A list of destinations of the channel. For UDP outputs, there is one\ndestination per output. For other types (HLS, for example), there is\none destination per packager."
         },
         "EgressEndpoints": {
           "shape": "__listOfChannelEgressEndpoint",
@@ -4919,7 +4969,7 @@
         "Destinations": {
           "shape": "__listOfOutputDestination",
           "locationName": "destinations",
-          "documentation": "A list of destinations of the channel. For UDP outputs, there is one\ndestination per output. For other types (HLS, for example), there is\none destination per packager.\n"
+          "documentation": "A list of destinations of the channel. For UDP outputs, there is one\ndestination per output. For other types (HLS, for example), there is\none destination per packager."
         },
         "EgressEndpoints": {
           "shape": "__listOfChannelEgressEndpoint",
@@ -5000,6 +5050,56 @@
       },
       "documentation": "Placeholder documentation for ClaimDeviceResponse"
     },
+    "ColorCorrection": {
+      "type": "structure",
+      "members": {
+        "InputColorSpace": {
+          "shape": "ColorSpace",
+          "locationName": "inputColorSpace",
+          "documentation": "The color space of the input."
+        },
+        "OutputColorSpace": {
+          "shape": "ColorSpace",
+          "locationName": "outputColorSpace",
+          "documentation": "The color space of the output."
+        },
+        "Uri": {
+          "shape": "__string",
+          "locationName": "uri",
+          "documentation": "The URI of the 3D LUT file. The protocol must be 's3:' or 's3ssl:':."
+        }
+      },
+      "documentation": "Property of ColorCorrectionSettings. Used for custom color space conversion. The object identifies one 3D LUT file and specifies the input/output color space combination that the file will be used for.",
+      "required": [
+        "OutputColorSpace",
+        "InputColorSpace",
+        "Uri"
+      ]
+    },
+    "ColorCorrectionSettings": {
+      "type": "structure",
+      "members": {
+        "GlobalColorCorrections": {
+          "shape": "__listOfColorCorrection",
+          "locationName": "globalColorCorrections",
+          "documentation": "An array of colorCorrections that applies when you are using 3D LUT files to perform color conversion on video. Each colorCorrection contains one 3D LUT file (that defines the color mapping for converting an input color space to an output color space), and the input/output combination that this 3D LUT file applies to. MediaLive reads the color space in the input metadata, determines the color space that you have specified for the output, and finds and uses the LUT file that applies to this combination."
+        }
+      },
+      "documentation": "Property of encoderSettings. Controls color conversion when you are using 3D LUT files to perform color conversion on video.",
+      "required": [
+        "GlobalColorCorrections"
+      ]
+    },
+    "ColorSpace": {
+      "type": "string",
+      "documentation": "Property of colorCorrections. When you are using 3D LUT files to perform color conversion on video, these are the supported color spaces.",
+      "enum": [
+        "HDR10",
+        "HLG_2020",
+        "REC_601",
+        "REC_709"
+      ]
+    },
     "ColorSpacePassthroughSettings": {
       "type": "structure",
       "members": {
@@ -5069,7 +5169,7 @@
         "RequestId": {
           "shape": "__string",
           "locationName": "requestId",
-          "documentation": "Unique request ID to be specified. This is needed to prevent retries from\ncreating multiple resources.\n",
+          "documentation": "Unique request ID to be specified. This is needed to prevent retries from\ncreating multiple resources.",
           "idempotencyToken": true
         },
         "Reserved": {
@@ -5145,7 +5245,7 @@
         "RequestId": {
           "shape": "__string",
           "locationName": "requestId",
-          "documentation": "Unique request ID to be specified. This is needed to prevent retries from\ncreating multiple resources.\n",
+          "documentation": "Unique request ID to be specified. This is needed to prevent retries from\ncreating multiple resources.",
           "idempotencyToken": true
         },
         "Reserved": {
@@ -5213,7 +5313,7 @@
         "MediaConnectFlows": {
           "shape": "__listOfMediaConnectFlowRequest",
           "locationName": "mediaConnectFlows",
-          "documentation": "A list of the MediaConnect Flows that you want to use in this input. You can specify as few as one\nFlow and presently, as many as two. The only requirement is when you have more than one is that each Flow is in a\nseparate Availability Zone as this ensures your EML input is redundant to AZ issues.\n"
+          "documentation": "A list of the MediaConnect Flows that you want to use in this input. You can specify as few as one\nFlow and presently, as many as two. The only requirement is when you have more than one is that each Flow is in a\nseparate Availability Zone as this ensures your EML input is redundant to AZ issues."
         },
         "Name": {
           "shape": "__string",
@@ -5223,7 +5323,7 @@
         "RequestId": {
           "shape": "__string",
           "locationName": "requestId",
-          "documentation": "Unique identifier of the request to ensure the request is handled\nexactly once in case of retries.\n",
+          "documentation": "Unique identifier of the request to ensure the request is handled\nexactly once in case of retries.",
           "idempotencyToken": true
         },
         "RoleArn": {
@@ -5234,7 +5334,7 @@
         "Sources": {
           "shape": "__listOfInputSourceRequest",
           "locationName": "sources",
-          "documentation": "The source URLs for a PULL-type input. Every PULL type input needs\nexactly two source URLs for redundancy.\nOnly specify sources for PULL type Inputs. Leave Destinations empty.\n"
+          "documentation": "The source URLs for a PULL-type input. Every PULL type input needs\nexactly two source URLs for redundancy.\nOnly specify sources for PULL type Inputs. Leave Destinations empty."
         },
         "Tags": {
           "shape": "Tags",
@@ -5273,7 +5373,7 @@
         "MediaConnectFlows": {
           "shape": "__listOfMediaConnectFlowRequest",
           "locationName": "mediaConnectFlows",
-          "documentation": "A list of the MediaConnect Flows that you want to use in this input. You can specify as few as one\nFlow and presently, as many as two. The only requirement is when you have more than one is that each Flow is in a\nseparate Availability Zone as this ensures your EML input is redundant to AZ issues.\n"
+          "documentation": "A list of the MediaConnect Flows that you want to use in this input. You can specify as few as one\nFlow and presently, as many as two. The only requirement is when you have more than one is that each Flow is in a\nseparate Availability Zone as this ensures your EML input is redundant to AZ issues."
         },
         "Name": {
           "shape": "__string",
@@ -5283,7 +5383,7 @@
         "RequestId": {
           "shape": "__string",
           "locationName": "requestId",
-          "documentation": "Unique identifier of the request to ensure the request is handled\nexactly once in case of retries.\n",
+          "documentation": "Unique identifier of the request to ensure the request is handled\nexactly once in case of retries.",
           "idempotencyToken": true
         },
         "RoleArn": {
@@ -5294,7 +5394,7 @@
         "Sources": {
           "shape": "__listOfInputSourceRequest",
           "locationName": "sources",
-          "documentation": "The source URLs for a PULL-type input. Every PULL type input needs\nexactly two source URLs for redundancy.\nOnly specify sources for PULL type Inputs. Leave Destinations empty.\n"
+          "documentation": "The source URLs for a PULL-type input. Every PULL type input needs\nexactly two source URLs for redundancy.\nOnly specify sources for PULL type Inputs. Leave Destinations empty."
         },
         "Tags": {
           "shape": "Tags",
@@ -5389,7 +5489,7 @@
         "RequestId": {
           "shape": "__string",
           "locationName": "requestId",
-          "documentation": "Unique request ID. This prevents retries from creating multiple\nresources.\n",
+          "documentation": "Unique request ID. This prevents retries from creating multiple\nresources.",
           "idempotencyToken": true
         },
         "Tags": {
@@ -5422,7 +5522,7 @@
         "RequestId": {
           "shape": "__string",
           "locationName": "requestId",
-          "documentation": "Unique request ID. This prevents retries from creating multiple\nresources.\n",
+          "documentation": "Unique request ID. This prevents retries from creating multiple\nresources.",
           "idempotencyToken": true
         }
       },
@@ -5455,7 +5555,7 @@
         "RequestId": {
           "shape": "__string",
           "locationName": "requestId",
-          "documentation": "Unique request ID. This prevents retries from creating multiple\nresources.\n",
+          "documentation": "Unique request ID. This prevents retries from creating multiple\nresources.",
           "idempotencyToken": true
         }
       },
@@ -5510,7 +5610,7 @@
         "RequestId": {
           "shape": "__string",
           "locationName": "requestId",
-          "documentation": "Unique request ID. This prevents retries from creating multiple\nresources.\n",
+          "documentation": "Unique request ID. This prevents retries from creating multiple\nresources.",
           "idempotencyToken": true
         },
         "Tags": {
@@ -5555,7 +5655,7 @@
         "RequestId": {
           "shape": "__string",
           "locationName": "requestId",
-          "documentation": "Unique identifier of the request to ensure the request is handled\nexactly once in case of retries.\n",
+          "documentation": "Unique identifier of the request to ensure the request is handled\nexactly once in case of retries.",
           "idempotencyToken": true
         },
         "Tags": {
@@ -5578,7 +5678,7 @@
         "RequestId": {
           "shape": "__string",
           "locationName": "requestId",
-          "documentation": "Unique identifier of the request to ensure the request is handled\nexactly once in case of retries.\n",
+          "documentation": "Unique identifier of the request to ensure the request is handled\nexactly once in case of retries.",
           "idempotencyToken": true
         },
         "Tags": {
@@ -5666,7 +5766,7 @@
         "Destinations": {
           "shape": "__listOfOutputDestination",
           "locationName": "destinations",
-          "documentation": "A list of destinations of the channel. For UDP outputs, there is one\ndestination per output. For other types (HLS, for example), there is\none destination per packager.\n"
+          "documentation": "A list of destinations of the channel. For UDP outputs, there is one\ndestination per output. For other types (HLS, for example), there is\none destination per packager."
         },
         "EgressEndpoints": {
           "shape": "__listOfChannelEgressEndpoint",
@@ -6063,6 +6163,32 @@
       ],
       "documentation": "Placeholder documentation for DeleteTagsRequest"
     },
+    "DescribeAccountConfigurationRequest": {
+      "type": "structure",
+      "members": {
+      },
+      "documentation": "Placeholder documentation for DescribeAccountConfigurationRequest"
+    },
+    "DescribeAccountConfigurationResponse": {
+      "type": "structure",
+      "members": {
+        "AccountConfiguration": {
+          "shape": "AccountConfiguration",
+          "locationName": "accountConfiguration"
+        }
+      },
+      "documentation": "Placeholder documentation for DescribeAccountConfigurationResponse"
+    },
+    "DescribeAccountConfigurationResultModel": {
+      "type": "structure",
+      "members": {
+        "AccountConfiguration": {
+          "shape": "AccountConfiguration",
+          "locationName": "accountConfiguration"
+        }
+      },
+      "documentation": "The account's configuration."
+    },
     "DescribeChannelRequest": {
       "type": "structure",
       "members": {
@@ -6099,7 +6225,7 @@
         "Destinations": {
           "shape": "__listOfOutputDestination",
           "locationName": "destinations",
-          "documentation": "A list of destinations of the channel. For UDP outputs, there is one\ndestination per output. For other types (HLS, for example), there is\none destination per packager.\n"
+          "documentation": "A list of destinations of the channel. For UDP outputs, there is one\ndestination per output. For other types (HLS, for example), there is\none destination per packager."
         },
         "EgressEndpoints": {
           "shape": "__listOfChannelEgressEndpoint",
@@ -6372,7 +6498,7 @@
         "InputClass": {
           "shape": "InputClass",
           "locationName": "inputClass",
-          "documentation": "STANDARD - MediaLive expects two sources to be connected to this input. If the channel is also STANDARD, both sources will be ingested. If the channel is SINGLE_PIPELINE, only the first source will be ingested; the second source will always be ignored, even if the first source fails.\nSINGLE_PIPELINE - You can connect only one source to this input. If the ChannelClass is also  SINGLE_PIPELINE, this value is valid. If the ChannelClass is STANDARD, this value is not valid because the channel requires two sources in the input.\n"
+          "documentation": "STANDARD - MediaLive expects two sources to be connected to this input. If the channel is also STANDARD, both sources will be ingested. If the channel is SINGLE_PIPELINE, only the first source will be ingested; the second source will always be ignored, even if the first source fails.\nSINGLE_PIPELINE - You can connect only one source to this input. If the ChannelClass is also  SINGLE_PIPELINE, this value is valid. If the ChannelClass is STANDARD, this value is not valid because the channel requires two sources in the input."
         },
         "InputDevices": {
           "shape": "__listOfInputDeviceSettings",
@@ -6387,7 +6513,7 @@
         "InputSourceType": {
           "shape": "InputSourceType",
           "locationName": "inputSourceType",
-          "documentation": "Certain pull input sources can be dynamic, meaning that they can have their URL's dynamically changes\nduring input switch actions. Presently, this functionality only works with MP4_FILE and TS_FILE inputs.\n"
+          "documentation": "Certain pull input sources can be dynamic, meaning that they can have their URL's dynamically changes\nduring input switch actions. Presently, this functionality only works with MP4_FILE and TS_FILE inputs."
         },
         "MediaConnectFlows": {
           "shape": "__listOfMediaConnectFlow",
@@ -6837,6 +6963,55 @@
         }
       },
       "documentation": "Placeholder documentation for DescribeScheduleResponse"
+    },
+    "DescribeThumbnailsRequest": {
+      "type": "structure",
+      "members": {
+        "ChannelId": {
+          "shape": "__string",
+          "location": "uri",
+          "locationName": "channelId",
+          "documentation": "Unique ID of the channel"
+        },
+        "PipelineId": {
+          "shape": "__string",
+          "location": "querystring",
+          "locationName": "pipelineId",
+          "documentation": "Pipeline ID (\"0\" or \"1\")"
+        },
+        "ThumbnailType": {
+          "shape": "__string",
+          "location": "querystring",
+          "locationName": "thumbnailType",
+          "documentation": "thumbnail type"
+        }
+      },
+      "required": [
+        "ThumbnailType",
+        "PipelineId",
+        "ChannelId"
+      ],
+      "documentation": "Placeholder documentation for DescribeThumbnailsRequest"
+    },
+    "DescribeThumbnailsResponse": {
+      "type": "structure",
+      "members": {
+        "ThumbnailDetails": {
+          "shape": "__listOfThumbnailDetail",
+          "locationName": "thumbnailDetails"
+        }
+      },
+      "documentation": "Placeholder documentation for DescribeThumbnailsResponse"
+    },
+    "DescribeThumbnailsResultModel": {
+      "type": "structure",
+      "members": {
+        "ThumbnailDetails": {
+          "shape": "__listOfThumbnailDetail",
+          "locationName": "thumbnailDetails"
+        }
+      },
+      "documentation": "Thumbnail details for all the pipelines of a running channel."
     },
     "DeviceSettingsSyncState": {
       "type": "string",
@@ -7600,6 +7775,11 @@
           "shape": "ThumbnailConfiguration",
           "locationName": "thumbnailConfiguration",
           "documentation": "Thumbnail configuration settings."
+        },
+        "ColorCorrectionSettings": {
+          "shape": "ColorCorrectionSettings",
+          "locationName": "colorCorrectionSettings",
+          "documentation": "Color Correction Settings"
         }
       },
       "documentation": "Encoder Settings",
@@ -7705,6 +7885,11 @@
           "shape": "FeatureActivationsInputPrepareScheduleActions",
           "locationName": "inputPrepareScheduleActions",
           "documentation": "Enables the Input Prepare feature. You can create Input Prepare actions in the schedule only if this feature is enabled.\nIf you disable the feature on an existing schedule, make sure that you first delete all input prepare actions from the schedule."
+        },
+        "OutputStaticImageOverlayScheduleActions": {
+          "shape": "FeatureActivationsOutputStaticImageOverlayScheduleActions",
+          "locationName": "outputStaticImageOverlayScheduleActions",
+          "documentation": "Enables the output static image overlay feature. Enabling this feature allows you to send channel schedule updates\nto display/clear/modify image overlays on an output-by-output bases."
         }
       },
       "documentation": "Feature Activations"
@@ -7712,6 +7897,14 @@
     "FeatureActivationsInputPrepareScheduleActions": {
       "type": "string",
       "documentation": "Feature Activations Input Prepare Schedule Actions",
+      "enum": [
+        "DISABLED",
+        "ENABLED"
+      ]
+    },
+    "FeatureActivationsOutputStaticImageOverlayScheduleActions": {
+      "type": "string",
+      "documentation": "Feature Activations Output Static Image Overlay Schedule Actions",
       "enum": [
         "DISABLED",
         "ENABLED"
@@ -7963,81 +8156,6 @@
         "httpStatusCode": 504
       },
       "documentation": "Placeholder documentation for GatewayTimeoutException"
-    },
-    "DescribeAccountConfigurationRequest": {
-      "type": "structure",
-      "members": {
-      },
-      "documentation": "Placeholder documentation for DescribeAccountConfigurationRequest"
-    },
-    "DescribeAccountConfigurationResponse": {
-      "type": "structure",
-      "members": {
-        "AccountConfiguration": {
-          "shape": "AccountConfiguration",
-          "locationName": "accountConfiguration"
-        }
-      },
-      "documentation": "Placeholder documentation for DescribeAccountConfigurationResponse"
-    },
-    "DescribeAccountConfigurationResultModel": {
-      "type": "structure",
-      "members": {
-        "AccountConfiguration": {
-          "shape": "AccountConfiguration",
-          "locationName": "accountConfiguration"
-        }
-      },
-      "documentation": "The account's configuration."
-    },
-    "DescribeThumbnailsRequest": {
-      "type": "structure",
-      "members": {
-        "ChannelId": {
-          "shape": "__string",
-          "location": "uri",
-          "locationName": "channelId",
-          "documentation": "Unique ID of the channel"
-        },
-        "PipelineId": {
-          "shape": "__string",
-          "location": "querystring",
-          "locationName": "pipelineId",
-          "documentation": "Pipeline ID (\"0\" or \"1\")"
-        },
-        "ThumbnailType": {
-          "shape": "__string",
-          "location": "querystring",
-          "locationName": "thumbnailType",
-          "documentation": "thumbnail type"
-        }
-      },
-      "required": [
-        "ThumbnailType",
-        "PipelineId",
-        "ChannelId"
-      ],
-      "documentation": "Placeholder documentation for DescribeThumbnailsRequest"
-    },
-    "DescribeThumbnailsResponse": {
-      "type": "structure",
-      "members": {
-        "ThumbnailDetails": {
-          "shape": "__listOfThumbnailDetail",
-          "locationName": "thumbnailDetails"
-        }
-      },
-      "documentation": "Placeholder documentation for DescribeThumbnailsResponse"
-    },
-    "DescribeThumbnailsResultModel": {
-      "type": "structure",
-      "members": {
-        "ThumbnailDetails": {
-          "shape": "__listOfThumbnailDetail",
-          "locationName": "thumbnailDetails"
-        }
-      },
-      "documentation": "Thumbnail details for all the pipelines of a running channel."
     },
     "GlobalConfiguration": {
       "type": "structure",
@@ -9670,7 +9788,7 @@
         "InputClass": {
           "shape": "InputClass",
           "locationName": "inputClass",
-          "documentation": "STANDARD - MediaLive expects two sources to be connected to this input. If the channel is also STANDARD, both sources will be ingested. If the channel is SINGLE_PIPELINE, only the first source will be ingested; the second source will always be ignored, even if the first source fails.\nSINGLE_PIPELINE - You can connect only one source to this input. If the ChannelClass is also  SINGLE_PIPELINE, this value is valid. If the ChannelClass is STANDARD, this value is not valid because the channel requires two sources in the input.\n"
+          "documentation": "STANDARD - MediaLive expects two sources to be connected to this input. If the channel is also STANDARD, both sources will be ingested. If the channel is SINGLE_PIPELINE, only the first source will be ingested; the second source will always be ignored, even if the first source fails.\nSINGLE_PIPELINE - You can connect only one source to this input. If the ChannelClass is also  SINGLE_PIPELINE, this value is valid. If the ChannelClass is STANDARD, this value is not valid because the channel requires two sources in the input."
         },
         "InputDevices": {
           "shape": "__listOfInputDeviceSettings",
@@ -9685,7 +9803,7 @@
         "InputSourceType": {
           "shape": "InputSourceType",
           "locationName": "inputSourceType",
-          "documentation": "Certain pull input sources can be dynamic, meaning that they can have their URL's dynamically changes\nduring input switch actions. Presently, this functionality only works with MP4_FILE and TS_FILE inputs.\n"
+          "documentation": "Certain pull input sources can be dynamic, meaning that they can have their URL's dynamically changes\nduring input switch actions. Presently, this functionality only works with MP4_FILE and TS_FILE inputs."
         },
         "MediaConnectFlows": {
           "shape": "__listOfMediaConnectFlow",
@@ -9837,7 +9955,7 @@
         "Ip": {
           "shape": "__string",
           "locationName": "ip",
-          "documentation": "The system-generated static IP address of endpoint.\nIt remains fixed for the lifetime of the input.\n"
+          "documentation": "The system-generated static IP address of endpoint.\nIt remains fixed for the lifetime of the input."
         },
         "Port": {
           "shape": "__string",
@@ -9847,7 +9965,7 @@
         "Url": {
           "shape": "__string",
           "locationName": "url",
-          "documentation": "This represents the endpoint that the customer stream will be\npushed to.\n"
+          "documentation": "This represents the endpoint that the customer stream will be\npushed to."
         },
         "Vpc": {
           "shape": "InputDestinationVpc",
@@ -9862,7 +9980,7 @@
         "StreamName": {
           "shape": "__string",
           "locationName": "streamName",
-          "documentation": "A unique name for the location the RTMP stream is being pushed\nto.\n"
+          "documentation": "A unique name for the location the RTMP stream is being pushed\nto."
         }
       },
       "documentation": "Endpoint settings for a PUSH type input."
@@ -9873,12 +9991,12 @@
         "AvailabilityZone": {
           "shape": "__string",
           "locationName": "availabilityZone",
-          "documentation": "The availability zone of the Input destination.\n"
+          "documentation": "The availability zone of the Input destination."
         },
         "NetworkInterfaceId": {
           "shape": "__string",
           "locationName": "networkInterfaceId",
-          "documentation": "The network interface ID of the Input destination in the VPC.\n"
+          "documentation": "The network interface ID of the Input destination in the VPC."
         }
       },
       "documentation": "The properties for a VPC type input destination."
@@ -10012,6 +10130,11 @@
           "shape": "InputDeviceMediaConnectConfigurableSettings",
           "locationName": "mediaconnectSettings",
           "documentation": "To attach this device to a MediaConnect flow, specify these parameters. To detach an existing flow, enter {} for the value of mediaconnectSettings. Only UHD devices can specify this parameter."
+        },
+        "AudioChannelPairs": {
+          "shape": "__listOfInputDeviceConfigurableAudioChannelPairConfig",
+          "locationName": "audioChannelPairs",
+          "documentation": "An array of eight audio configurations, one for each audio pair in the source. Set up each audio configuration either to exclude the pair, or to format it and include it in the output from the device. This parameter applies only to UHD devices, and only when the device is configured as the source for a MediaConnect flow. For an HD device, you configure the audio by setting up audio selectors in the channel configuration."
         }
       },
       "documentation": "Configurable settings for the input device."
@@ -10397,6 +10520,11 @@
           "shape": "InputDeviceMediaConnectSettings",
           "locationName": "mediaconnectSettings",
           "documentation": "Information about the MediaConnect flow attached to the device. Returned only if the outputType is MEDIACONNECT_FLOW."
+        },
+        "AudioChannelPairs": {
+          "shape": "__listOfInputDeviceUhdAudioChannelPairConfig",
+          "locationName": "audioChannelPairs",
+          "documentation": "An array of eight audio configurations, one for each audio pair in the source. Each audio configuration specifies either to exclude the pair, or to format it and include it in the output from the UHD device. Applies only when the device is configured as the source for a MediaConnect flow."
         }
       },
       "documentation": "Settings that describe the active source from the input device, and the video characteristics of that source."
@@ -10528,7 +10656,7 @@
     },
     "InputPreference": {
       "type": "string",
-      "documentation": "Input preference when deciding which input to make active when a previously failed input has recovered.\nIf \\\"EQUAL_INPUT_PREFERENCE\\\", then the active input will stay active as long as it is healthy.\nIf \\\"PRIMARY_INPUT_PREFERRED\\\", then always switch back to the primary input when it is healthy.\n",
+      "documentation": "Input preference when deciding which input to make active when a previously failed input has recovered.\nIf \\\"EQUAL_INPUT_PREFERENCE\\\", then the active input will stay active as long as it is healthy.\nIf \\\"PRIMARY_INPUT_PREFERRED\\\", then always switch back to the primary input when it is healthy.",
       "enum": [
         "EQUAL_INPUT_PREFERENCE",
         "PRIMARY_INPUT_PREFERRED"
@@ -10557,7 +10685,7 @@
     },
     "InputResolution": {
       "type": "string",
-      "documentation": "Input resolution based on lines of vertical resolution in the input; SD is less than 720 lines, HD is 720 to 1080 lines, UHD is greater than 1080 lines\n",
+      "documentation": "Input resolution based on lines of vertical resolution in the input; SD is less than 720 lines, HD is 720 to 1080 lines, UHD is greater than 1080 lines",
       "enum": [
         "SD",
         "HD",
@@ -10698,7 +10826,7 @@
         "Url": {
           "shape": "__string",
           "locationName": "url",
-          "documentation": "This represents the customer's source URL where stream is\npulled from.\n"
+          "documentation": "This represents the customer's source URL where stream is\npulled from."
         },
         "Username": {
           "shape": "__string",
@@ -10727,7 +10855,7 @@
         "Url": {
           "shape": "__string",
           "locationName": "url",
-          "documentation": "This represents the customer's source URL where stream is\npulled from.\n"
+          "documentation": "This represents the customer's source URL where stream is\npulled from."
         },
         "Username": {
           "shape": "__string",
@@ -10739,7 +10867,7 @@
     },
     "InputSourceType": {
       "type": "string",
-      "documentation": "There are two types of input sources, static and dynamic. If an input source is dynamic you can\nchange the source url of the input dynamically using an input switch action. Currently, two input types\nsupport a dynamic url at this time, MP4_FILE and TS_FILE. By default all input sources are static.\n",
+      "documentation": "There are two types of input sources, static and dynamic. If an input source is dynamic you can\nchange the source url of the input dynamically using an input switch action. Currently, two input types\nsupport a dynamic url at this time, MP4_FILE and TS_FILE. By default all input sources are static.",
       "enum": [
         "STATIC",
         "DYNAMIC"
@@ -10831,15 +10959,15 @@
         "SecurityGroupIds": {
           "shape": "__listOf__string",
           "locationName": "securityGroupIds",
-          "documentation": "A list of up to 5 EC2 VPC security group IDs to attach to the Input VPC network interfaces.\nRequires subnetIds. If none are specified then the VPC default security group will be used.\n"
+          "documentation": "A list of up to 5 EC2 VPC security group IDs to attach to the Input VPC network interfaces.\nRequires subnetIds. If none are specified then the VPC default security group will be used."
         },
         "SubnetIds": {
           "shape": "__listOf__string",
           "locationName": "subnetIds",
-          "documentation": "A list of 2 VPC subnet IDs from the same VPC.\nSubnet IDs must be mapped to two unique availability zones (AZ).\n"
+          "documentation": "A list of 2 VPC subnet IDs from the same VPC.\nSubnet IDs must be mapped to two unique availability zones (AZ)."
         }
       },
-      "documentation": "Settings for a private VPC Input.\nWhen this property is specified, the input destination addresses will be created in a VPC rather than with public Internet addresses.\nThis property requires setting the roleArn property on Input creation.\nNot compatible with the inputSecurityGroups property.\n",
+      "documentation": "Settings for a private VPC Input.\nWhen this property is specified, the input destination addresses will be created in a VPC rather than with public Internet addresses.\nThis property requires setting the roleArn property on Input creation.\nNot compatible with the inputSecurityGroups property.",
       "required": [
         "SubnetIds"
       ]
@@ -11282,13 +11410,13 @@
           "shape": "__string",
           "location": "querystring",
           "locationName": "channelClass",
-          "documentation": "Filter by channel class, 'STANDARD' or 'SINGLE_PIPELINE'\n"
+          "documentation": "Filter by channel class, 'STANDARD' or 'SINGLE_PIPELINE'"
         },
         "ChannelConfiguration": {
           "shape": "__string",
           "location": "querystring",
           "locationName": "channelConfiguration",
-          "documentation": "Filter to offerings that match the configuration of an existing channel, e.g. '2345678' (a channel ID)\n"
+          "documentation": "Filter to offerings that match the configuration of an existing channel, e.g. '2345678' (a channel ID)"
         },
         "Codec": {
           "shape": "__string",
@@ -11311,7 +11439,7 @@
           "shape": "__string",
           "location": "querystring",
           "locationName": "maximumBitrate",
-          "documentation": "Filter by bitrate, 'MAX_10_MBPS', 'MAX_20_MBPS', or 'MAX_50_MBPS'\n"
+          "documentation": "Filter by bitrate, 'MAX_10_MBPS', 'MAX_20_MBPS', or 'MAX_50_MBPS'"
         },
         "MaximumFramerate": {
           "shape": "__string",
@@ -11340,13 +11468,13 @@
           "shape": "__string",
           "location": "querystring",
           "locationName": "specialFeature",
-          "documentation": "Filter by special feature, 'ADVANCED_AUDIO' or 'AUDIO_NORMALIZATION'\n"
+          "documentation": "Filter by special feature, 'ADVANCED_AUDIO' or 'AUDIO_NORMALIZATION'"
         },
         "VideoQuality": {
           "shape": "__string",
           "location": "querystring",
           "locationName": "videoQuality",
-          "documentation": "Filter by video quality, 'STANDARD', 'ENHANCED', or 'PREMIUM'\n"
+          "documentation": "Filter by video quality, 'STANDARD', 'ENHANCED', or 'PREMIUM'"
         }
       },
       "documentation": "Placeholder documentation for ListOfferingsRequest"
@@ -11390,7 +11518,7 @@
           "shape": "__string",
           "location": "querystring",
           "locationName": "channelClass",
-          "documentation": "Filter by channel class, 'STANDARD' or 'SINGLE_PIPELINE'\n"
+          "documentation": "Filter by channel class, 'STANDARD' or 'SINGLE_PIPELINE'"
         },
         "Codec": {
           "shape": "__string",
@@ -11407,7 +11535,7 @@
           "shape": "__string",
           "location": "querystring",
           "locationName": "maximumBitrate",
-          "documentation": "Filter by bitrate, 'MAX_10_MBPS', 'MAX_20_MBPS', or 'MAX_50_MBPS'\n"
+          "documentation": "Filter by bitrate, 'MAX_10_MBPS', 'MAX_20_MBPS', or 'MAX_50_MBPS'"
         },
         "MaximumFramerate": {
           "shape": "__string",
@@ -11436,13 +11564,13 @@
           "shape": "__string",
           "location": "querystring",
           "locationName": "specialFeature",
-          "documentation": "Filter by special feature, 'ADVANCED_AUDIO' or 'AUDIO_NORMALIZATION'\n"
+          "documentation": "Filter by special feature, 'ADVANCED_AUDIO' or 'AUDIO_NORMALIZATION'"
         },
         "VideoQuality": {
           "shape": "__string",
           "location": "querystring",
           "locationName": "videoQuality",
-          "documentation": "Filter by video quality, 'STANDARD', 'ENHANCED', or 'PREMIUM'\n"
+          "documentation": "Filter by video quality, 'STANDARD', 'ENHANCED', or 'PREMIUM'"
         }
       },
       "documentation": "Placeholder documentation for ListReservationsRequest"
@@ -13561,7 +13689,7 @@
     },
     "PreferredChannelPipeline": {
       "type": "string",
-      "documentation": "Indicates which pipeline is preferred by the multiplex for program ingest.\nIf set to \\\"PIPELINE_0\\\" or \\\"PIPELINE_1\\\" and an unhealthy ingest causes the multiplex to switch to the non-preferred pipeline,\nit will switch back once that ingest is healthy again. If set to \\\"CURRENTLY_ACTIVE\\\",\nit will not switch back to the other pipeline based on it recovering to a healthy state,\nit will only switch if the active pipeline becomes unhealthy.\n",
+      "documentation": "Indicates which pipeline is preferred by the multiplex for program ingest.\nIf set to \\\"PIPELINE_0\\\" or \\\"PIPELINE_1\\\" and an unhealthy ingest causes the multiplex to switch to the non-preferred pipeline,\nit will switch back once that ingest is healthy again. If set to \\\"CURRENTLY_ACTIVE\\\",\nit will not switch back to the other pipeline based on it recovering to a healthy state,\nit will only switch if the active pipeline becomes unhealthy.",
       "enum": [
         "CURRENTLY_ACTIVE",
         "PIPELINE_0",
@@ -13939,7 +14067,7 @@
     },
     "ReservationResolution": {
       "type": "string",
-      "documentation": "Resolution based on lines of vertical resolution; SD is less than 720 lines, HD is 720 to 1080 lines, FHD is 1080 lines, UHD is greater than 1080 lines\n",
+      "documentation": "Resolution based on lines of vertical resolution; SD is less than 720 lines, HD is 720 to 1080 lines, FHD is 1080 lines, UHD is greater than 1080 lines",
       "enum": [
         "SD",
         "HD",
@@ -14268,6 +14396,16 @@
           "shape": "StaticImageDeactivateScheduleActionSettings",
           "locationName": "staticImageDeactivateSettings",
           "documentation": "Action to deactivate a static image overlay"
+        },
+        "StaticImageOutputActivateSettings": {
+          "shape": "StaticImageOutputActivateScheduleActionSettings",
+          "locationName": "staticImageOutputActivateSettings",
+          "documentation": "Action to activate a static image overlay in one or more specified outputs"
+        },
+        "StaticImageOutputDeactivateSettings": {
+          "shape": "StaticImageOutputDeactivateScheduleActionSettings",
+          "locationName": "staticImageOutputDeactivateSettings",
+          "documentation": "Action to deactivate a static image overlay in one or more specified outputs"
         }
       },
       "documentation": "Holds the settings for a single schedule action."
@@ -14697,46 +14835,6 @@
         "WEB_DELIVERY_ALLOWED"
       ]
     },
-    "UpdateAccountConfigurationRequest": {
-      "type": "structure",
-      "members": {
-        "AccountConfiguration": {
-          "shape": "AccountConfiguration",
-          "locationName": "accountConfiguration"
-        }
-      },
-      "documentation": "List of account configuration parameters to update."
-    },
-    "UpdateAccountConfigurationRequestModel": {
-      "type": "structure",
-      "members": {
-        "AccountConfiguration": {
-          "shape": "AccountConfiguration",
-          "locationName": "accountConfiguration"
-        }
-      },
-      "documentation": "The desired new account configuration."
-    },
-    "UpdateAccountConfigurationResponse": {
-      "type": "structure",
-      "members": {
-        "AccountConfiguration": {
-          "shape": "AccountConfiguration",
-          "locationName": "accountConfiguration"
-        }
-      },
-      "documentation": "Placeholder documentation for UpdateAccountConfigurationResponse"
-    },
-    "UpdateAccountConfigurationResultModel": {
-      "type": "structure",
-      "members": {
-        "AccountConfiguration": {
-          "shape": "AccountConfiguration",
-          "locationName": "accountConfiguration"
-        }
-      },
-      "documentation": "The account's updated configuration."
-    },
     "SmoothGroupAudioOnlyTimecodeControl": {
       "type": "string",
       "documentation": "Smooth Group Audio Only Timecode Control",
@@ -14871,7 +14969,7 @@
         "Destinations": {
           "shape": "__listOfOutputDestination",
           "locationName": "destinations",
-          "documentation": "A list of destinations of the channel. For UDP outputs, there is one\ndestination per output. For other types (HLS, for example), there is\none destination per packager.\n"
+          "documentation": "A list of destinations of the channel. For UDP outputs, there is one\ndestination per output. For other types (HLS, for example), there is\none destination per packager."
         },
         "EgressEndpoints": {
           "shape": "__listOfChannelEgressEndpoint",
@@ -14972,7 +15070,7 @@
           "shape": "__string",
           "location": "uri",
           "locationName": "inputDeviceId",
-          "documentation": "The unique ID of the input device to reboot. For example, hd-123456789abcdef."
+          "documentation": "The unique ID of the input device to start. For example, hd-123456789abcdef."
         }
       },
       "required": [
@@ -15143,6 +15241,95 @@
       },
       "documentation": "Settings for the action to deactivate the image in a specific layer."
     },
+    "StaticImageOutputActivateScheduleActionSettings": {
+      "type": "structure",
+      "members": {
+        "Duration": {
+          "shape": "__integerMin0",
+          "locationName": "duration",
+          "documentation": "The duration in milliseconds for the image to remain on the video. If omitted or set to 0 the duration is unlimited and the image will remain until it is explicitly deactivated."
+        },
+        "FadeIn": {
+          "shape": "__integerMin0",
+          "locationName": "fadeIn",
+          "documentation": "The time in milliseconds for the image to fade in. The fade-in starts at the start time of the overlay. Default is 0 (no fade-in)."
+        },
+        "FadeOut": {
+          "shape": "__integerMin0",
+          "locationName": "fadeOut",
+          "documentation": "Applies only if a duration is specified. The time in milliseconds for the image to fade out. The fade-out starts when the duration time is hit, so it effectively extends the duration. Default is 0 (no fade-out)."
+        },
+        "Height": {
+          "shape": "__integerMin1",
+          "locationName": "height",
+          "documentation": "The height of the image when inserted into the video, in pixels. The overlay will be scaled up or down to the specified height. Leave blank to use the native height of the overlay."
+        },
+        "Image": {
+          "shape": "InputLocation",
+          "locationName": "image",
+          "documentation": "The location and filename of the image file to overlay on the video. The file must be a 32-bit BMP, PNG, or TGA file, and must not be larger (in pixels) than the input video."
+        },
+        "ImageX": {
+          "shape": "__integerMin0",
+          "locationName": "imageX",
+          "documentation": "Placement of the left edge of the overlay relative to the left edge of the video frame, in pixels. 0 (the default) is the left edge of the frame. If the placement causes the overlay to extend beyond the right edge of the underlying video, then the overlay is cropped on the right."
+        },
+        "ImageY": {
+          "shape": "__integerMin0",
+          "locationName": "imageY",
+          "documentation": "Placement of the top edge of the overlay relative to the top edge of the video frame, in pixels. 0 (the default) is the top edge of the frame. If the placement causes the overlay to extend beyond the bottom edge of the underlying video, then the overlay is cropped on the bottom."
+        },
+        "Layer": {
+          "shape": "__integerMin0Max7",
+          "locationName": "layer",
+          "documentation": "The number of the layer, 0 to 7. There are 8 layers that can be overlaid on the video, each layer with a different image. The layers are in Z order, which means that overlays with higher values of layer are inserted on top of overlays with lower values of layer. Default is 0."
+        },
+        "Opacity": {
+          "shape": "__integerMin0Max100",
+          "locationName": "opacity",
+          "documentation": "Opacity of image where 0 is transparent and 100 is fully opaque. Default is 100."
+        },
+        "OutputNames": {
+          "shape": "__listOf__string",
+          "locationName": "outputNames",
+          "documentation": "The name(s) of the output(s) the activation should apply to."
+        },
+        "Width": {
+          "shape": "__integerMin1",
+          "locationName": "width",
+          "documentation": "The width of the image when inserted into the video, in pixels. The overlay will be scaled up or down to the specified width. Leave blank to use the native width of the overlay."
+        }
+      },
+      "documentation": "Settings for the action to activate a static image.",
+      "required": [
+        "OutputNames",
+        "Image"
+      ]
+    },
+    "StaticImageOutputDeactivateScheduleActionSettings": {
+      "type": "structure",
+      "members": {
+        "FadeOut": {
+          "shape": "__integerMin0",
+          "locationName": "fadeOut",
+          "documentation": "The time in milliseconds for the image to fade out. Default is 0 (no fade-out)."
+        },
+        "Layer": {
+          "shape": "__integerMin0Max7",
+          "locationName": "layer",
+          "documentation": "The image overlay layer to deactivate, 0 to 7. Default is 0."
+        },
+        "OutputNames": {
+          "shape": "__listOf__string",
+          "locationName": "outputNames",
+          "documentation": "The name(s) of the output(s) the deactivation should apply to."
+        }
+      },
+      "documentation": "Settings for the action to deactivate the image in a specific layer.",
+      "required": [
+        "OutputNames"
+      ]
+    },
     "StaticKeySettings": {
       "type": "structure",
       "members": {
@@ -15198,7 +15385,7 @@
         "Destinations": {
           "shape": "__listOfOutputDestination",
           "locationName": "destinations",
-          "documentation": "A list of destinations of the channel. For UDP outputs, there is one\ndestination per output. For other types (HLS, for example), there is\none destination per packager.\n"
+          "documentation": "A list of destinations of the channel. For UDP outputs, there is one\ndestination per output. For other types (HLS, for example), there is\none destination per packager."
         },
         "EgressEndpoints": {
           "shape": "__listOfChannelEgressEndpoint",
@@ -15278,7 +15465,7 @@
           "shape": "__string",
           "location": "uri",
           "locationName": "inputDeviceId",
-          "documentation": "The unique ID of the input device to reboot. For example, hd-123456789abcdef."
+          "documentation": "The unique ID of the input device to stop. For example, hd-123456789abcdef."
         }
       },
       "required": [
@@ -15501,7 +15688,7 @@
         "State": {
           "shape": "ThumbnailState",
           "locationName": "state",
-          "documentation": "Whether Thumbnail is enabled."
+          "documentation": "Enables the thumbnail feature. The feature generates thumbnails of the incoming video in each pipeline in the channel. AUTO turns the feature on, DISABLE turns the feature off."
         }
       },
       "documentation": "Thumbnail Configuration",
@@ -15841,6 +16028,46 @@
       },
       "documentation": "Placeholder documentation for UnprocessableEntityException"
     },
+    "UpdateAccountConfigurationRequest": {
+      "type": "structure",
+      "members": {
+        "AccountConfiguration": {
+          "shape": "AccountConfiguration",
+          "locationName": "accountConfiguration"
+        }
+      },
+      "documentation": "List of account configuration parameters to update."
+    },
+    "UpdateAccountConfigurationRequestModel": {
+      "type": "structure",
+      "members": {
+        "AccountConfiguration": {
+          "shape": "AccountConfiguration",
+          "locationName": "accountConfiguration"
+        }
+      },
+      "documentation": "The desired new account configuration."
+    },
+    "UpdateAccountConfigurationResponse": {
+      "type": "structure",
+      "members": {
+        "AccountConfiguration": {
+          "shape": "AccountConfiguration",
+          "locationName": "accountConfiguration"
+        }
+      },
+      "documentation": "Placeholder documentation for UpdateAccountConfigurationResponse"
+    },
+    "UpdateAccountConfigurationResultModel": {
+      "type": "structure",
+      "members": {
+        "AccountConfiguration": {
+          "shape": "AccountConfiguration",
+          "locationName": "accountConfiguration"
+        }
+      },
+      "documentation": "The account's updated configuration."
+    },
     "UpdateChannel": {
       "type": "structure",
       "members": {
@@ -16046,7 +16273,7 @@
         "MediaConnectFlows": {
           "shape": "__listOfMediaConnectFlowRequest",
           "locationName": "mediaConnectFlows",
-          "documentation": "A list of the MediaConnect Flow ARNs that you want to use as the source of the input. You can specify as few as one\nFlow and presently, as many as two. The only requirement is when you have more than one is that each Flow is in a\nseparate Availability Zone as this ensures your EML input is redundant to AZ issues.\n"
+          "documentation": "A list of the MediaConnect Flow ARNs that you want to use as the source of the input. You can specify as few as one\nFlow and presently, as many as two. The only requirement is when you have more than one is that each Flow is in a\nseparate Availability Zone as this ensures your EML input is redundant to AZ issues."
         },
         "Name": {
           "shape": "__string",
@@ -16061,7 +16288,7 @@
         "Sources": {
           "shape": "__listOfInputSourceRequest",
           "locationName": "sources",
-          "documentation": "The source URLs for a PULL-type input. Every PULL type input needs\nexactly two source URLs for redundancy.\nOnly specify sources for PULL type Inputs. Leave Destinations empty.\n"
+          "documentation": "The source URLs for a PULL-type input. Every PULL type input needs\nexactly two source URLs for redundancy.\nOnly specify sources for PULL type Inputs. Leave Destinations empty."
         }
       },
       "documentation": "Placeholder documentation for UpdateInput"
@@ -16240,7 +16467,7 @@
         "MediaConnectFlows": {
           "shape": "__listOfMediaConnectFlowRequest",
           "locationName": "mediaConnectFlows",
-          "documentation": "A list of the MediaConnect Flow ARNs that you want to use as the source of the input. You can specify as few as one\nFlow and presently, as many as two. The only requirement is when you have more than one is that each Flow is in a\nseparate Availability Zone as this ensures your EML input is redundant to AZ issues.\n"
+          "documentation": "A list of the MediaConnect Flow ARNs that you want to use as the source of the input. You can specify as few as one\nFlow and presently, as many as two. The only requirement is when you have more than one is that each Flow is in a\nseparate Availability Zone as this ensures your EML input is redundant to AZ issues."
         },
         "Name": {
           "shape": "__string",
@@ -16255,7 +16482,7 @@
         "Sources": {
           "shape": "__listOfInputSourceRequest",
           "locationName": "sources",
-          "documentation": "The source URLs for a PULL-type input. Every PULL type input needs\nexactly two source URLs for redundancy.\nOnly specify sources for PULL type Inputs. Leave Destinations empty.\n"
+          "documentation": "The source URLs for a PULL-type input. Every PULL type input needs\nexactly two source URLs for redundancy.\nOnly specify sources for PULL type Inputs. Leave Destinations empty."
         }
       },
       "documentation": "A request to update an input.",
@@ -16724,20 +16951,20 @@
         "PublicAddressAllocationIds": {
           "shape": "__listOf__string",
           "locationName": "publicAddressAllocationIds",
-          "documentation": "List of public address allocation ids to associate with ENIs that will be created in Output VPC.\nMust specify one for SINGLE_PIPELINE, two for STANDARD channels\n"
+          "documentation": "List of public address allocation ids to associate with ENIs that will be created in Output VPC.\nMust specify one for SINGLE_PIPELINE, two for STANDARD channels"
         },
         "SecurityGroupIds": {
           "shape": "__listOf__string",
           "locationName": "securityGroupIds",
-          "documentation": "A list of up to 5 EC2 VPC security group IDs to attach to the Output VPC network interfaces.\nIf none are specified then the VPC default security group will be used\n"
+          "documentation": "A list of up to 5 EC2 VPC security group IDs to attach to the Output VPC network interfaces.\nIf none are specified then the VPC default security group will be used"
         },
         "SubnetIds": {
           "shape": "__listOf__string",
           "locationName": "subnetIds",
-          "documentation": "A list of VPC subnet IDs from the same VPC.\nIf STANDARD channel, subnet IDs must be mapped to two unique availability zones (AZ).\n"
+          "documentation": "A list of VPC subnet IDs from the same VPC.\nIf STANDARD channel, subnet IDs must be mapped to two unique availability zones (AZ)."
         }
       },
-      "documentation": "The properties for a private VPC Output\nWhen this property is specified, the output egress addresses will be created in a user specified VPC\n",
+      "documentation": "The properties for a private VPC Output\nWhen this property is specified, the output egress addresses will be created in a user specified VPC",
       "required": [
         "SubnetIds"
       ]
@@ -16748,25 +16975,25 @@
         "AvailabilityZones": {
           "shape": "__listOf__string",
           "locationName": "availabilityZones",
-          "documentation": "The Availability Zones where the vpc subnets are located.\nThe first Availability Zone applies to the first subnet in the list of subnets.\nThe second Availability Zone applies to the second subnet.\n"
+          "documentation": "The Availability Zones where the vpc subnets are located.\nThe first Availability Zone applies to the first subnet in the list of subnets.\nThe second Availability Zone applies to the second subnet."
         },
         "NetworkInterfaceIds": {
           "shape": "__listOf__string",
           "locationName": "networkInterfaceIds",
-          "documentation": "A list of Elastic Network Interfaces created by MediaLive in the customer's VPC\n"
+          "documentation": "A list of Elastic Network Interfaces created by MediaLive in the customer's VPC"
         },
         "SecurityGroupIds": {
           "shape": "__listOf__string",
           "locationName": "securityGroupIds",
-          "documentation": "A list of up EC2 VPC security group IDs attached to the Output VPC network interfaces.\n"
+          "documentation": "A list of up EC2 VPC security group IDs attached to the Output VPC network interfaces."
         },
         "SubnetIds": {
           "shape": "__listOf__string",
           "locationName": "subnetIds",
-          "documentation": "A list of VPC subnet IDs from the same VPC.\nIf STANDARD channel, subnet IDs must be mapped to two unique availability zones (AZ).\n"
+          "documentation": "A list of VPC subnet IDs from the same VPC.\nIf STANDARD channel, subnet IDs must be mapped to two unique availability zones (AZ)."
         }
       },
-      "documentation": "The properties for a private VPC Output\n"
+      "documentation": "The properties for a private VPC Output"
     },
     "WavCodingMode": {
       "type": "string",
@@ -16850,6 +17077,18 @@
       "type": "double",
       "documentation": "Placeholder documentation for __doubleMin1Max65535"
     },
+    "__doubleMin250Max5000": {
+      "type": "double",
+      "documentation": "Placeholder documentation for __doubleMin250Max5000"
+    },
+    "__doubleMin32Max46": {
+      "type": "double",
+      "documentation": "Placeholder documentation for __doubleMin32Max46"
+    },
+    "__doubleMinNegative1Max5": {
+      "type": "double",
+      "documentation": "Placeholder documentation for __doubleMinNegative1Max5"
+    },
     "__doubleMinNegative59Max0": {
       "type": "double",
       "documentation": "Placeholder documentation for __doubleMinNegative59Max0"
@@ -16910,6 +17149,12 @@
       "min": 0,
       "max": 15,
       "documentation": "Placeholder documentation for __integerMin0Max15"
+    },
+    "__integerMin0Max2000": {
+      "type": "integer",
+      "min": 0,
+      "max": 2000,
+      "documentation": "Placeholder documentation for __integerMin0Max2000"
     },
     "__integerMin0Max255": {
       "type": "integer",
@@ -17234,6 +17479,13 @@
         "shape": "ChannelSummary"
       },
       "documentation": "Placeholder documentation for __listOfChannelSummary"
+    },
+    "__listOfColorCorrection": {
+      "type": "list",
+      "member": {
+        "shape": "ColorCorrection"
+      },
+      "documentation": "Placeholder documentation for __listOfColorCorrection"
     },
     "__listOfFailoverCondition": {
       "type": "list",
@@ -17668,6 +17920,214 @@
     "__timestamp": {
       "type": "timestamp",
       "documentation": "Placeholder documentation for __timestamp"
+    },
+    "InputDeviceConfigurableAudioChannelPairConfig": {
+      "type": "structure",
+      "members": {
+        "Id": {
+          "shape": "__integer",
+          "locationName": "id",
+          "documentation": "The ID for one audio pair configuration, a value from 1 to 8."
+        },
+        "Profile": {
+          "shape": "InputDeviceConfigurableAudioChannelPairProfile",
+          "locationName": "profile",
+          "documentation": "The profile to set for one audio pair configuration. Choose an enumeration value. Each value describes one audio configuration using the format (rate control algorithm)-(codec)_(quality)-(bitrate in bytes). For example, CBR-AAC_HQ-192000. Or choose DISABLED, in which case the device won't produce audio for this pair."
+        }
+      },
+      "documentation": "One audio configuration that specifies the format for one audio pair that the device produces as output."
+    },
+    "InputDeviceConfigurableAudioChannelPairProfile": {
+      "type": "string",
+      "documentation": "Property of InputDeviceConfigurableAudioChannelPairConfig, which configures one audio channel that the device produces.",
+      "enum": [
+        "DISABLED",
+        "VBR-AAC_HHE-16000",
+        "VBR-AAC_HE-64000",
+        "VBR-AAC_LC-128000",
+        "CBR-AAC_HQ-192000",
+        "CBR-AAC_HQ-256000",
+        "CBR-AAC_HQ-384000",
+        "CBR-AAC_HQ-512000"
+      ]
+    },
+    "InputDeviceUhdAudioChannelPairConfig": {
+      "type": "structure",
+      "members": {
+        "Id": {
+          "shape": "__integer",
+          "locationName": "id",
+          "documentation": "The ID for one audio pair configuration, a value from 1 to 8."
+        },
+        "Profile": {
+          "shape": "InputDeviceUhdAudioChannelPairProfile",
+          "locationName": "profile",
+          "documentation": "The profile for one audio pair configuration. This property describes one audio configuration in the format (rate control algorithm)-(codec)_(quality)-(bitrate in bytes). For example, CBR-AAC_HQ-192000. Or DISABLED, in which case the device won't produce audio for this pair."
+        }
+      },
+      "documentation": "One audio configuration that specifies the format for one audio pair that the device produces as output."
+    },
+    "InputDeviceUhdAudioChannelPairProfile": {
+      "type": "string",
+      "documentation": "Property of InputDeviceUhdAudioChannelPairConfig, which describes one audio channel that the device is configured to produce.",
+      "enum": [
+        "DISABLED",
+        "VBR-AAC_HHE-16000",
+        "VBR-AAC_HE-64000",
+        "VBR-AAC_LC-128000",
+        "CBR-AAC_HQ-192000",
+        "CBR-AAC_HQ-256000",
+        "CBR-AAC_HQ-384000",
+        "CBR-AAC_HQ-512000"
+      ]
+    },
+    "__listOfInputDeviceConfigurableAudioChannelPairConfig": {
+      "type": "list",
+      "member": {
+        "shape": "InputDeviceConfigurableAudioChannelPairConfig"
+      },
+      "documentation": "Placeholder documentation for __listOfInputDeviceConfigurableAudioChannelPairConfig"
+    },
+    "__listOfInputDeviceUhdAudioChannelPairConfig": {
+      "type": "list",
+      "member": {
+        "shape": "InputDeviceUhdAudioChannelPairConfig"
+      },
+      "documentation": "Placeholder documentation for __listOfInputDeviceUhdAudioChannelPairConfig"
+    },
+    "ChannelPipelineIdToRestart": {
+      "type": "string",
+      "documentation": "Property of RestartChannelPipelinesRequest",
+      "enum": [
+        "PIPELINE_0",
+        "PIPELINE_1"
+      ]
+    },
+    "RestartChannelPipelinesRequest": {
+      "type": "structure",
+      "members": {
+        "ChannelId": {
+          "shape": "__string",
+          "location": "uri",
+          "locationName": "channelId",
+          "documentation": "ID of channel"
+        },
+        "PipelineIds": {
+          "shape": "__listOfChannelPipelineIdToRestart",
+          "locationName": "pipelineIds",
+          "documentation": "An array of pipelines to restart in this channel. Format PIPELINE_0 or PIPELINE_1."
+        }
+      },
+      "documentation": "Pipelines to restart.",
+      "required": [
+        "ChannelId"
+      ]
+    },
+    "RestartChannelPipelinesResponse": {
+      "type": "structure",
+      "members": {
+        "Arn": {
+          "shape": "__string",
+          "locationName": "arn",
+          "documentation": "The unique arn of the channel."
+        },
+        "CdiInputSpecification": {
+          "shape": "CdiInputSpecification",
+          "locationName": "cdiInputSpecification",
+          "documentation": "Specification of CDI inputs for this channel"
+        },
+        "ChannelClass": {
+          "shape": "ChannelClass",
+          "locationName": "channelClass",
+          "documentation": "The class for this channel. STANDARD for a channel with two pipelines or SINGLE_PIPELINE for a channel with one pipeline."
+        },
+        "Destinations": {
+          "shape": "__listOfOutputDestination",
+          "locationName": "destinations",
+          "documentation": "A list of destinations of the channel. For UDP outputs, there is one\ndestination per output. For other types (HLS, for example), there is\none destination per packager."
+        },
+        "EgressEndpoints": {
+          "shape": "__listOfChannelEgressEndpoint",
+          "locationName": "egressEndpoints",
+          "documentation": "The endpoints where outgoing connections initiate from"
+        },
+        "EncoderSettings": {
+          "shape": "EncoderSettings",
+          "locationName": "encoderSettings"
+        },
+        "Id": {
+          "shape": "__string",
+          "locationName": "id",
+          "documentation": "The unique id of the channel."
+        },
+        "InputAttachments": {
+          "shape": "__listOfInputAttachment",
+          "locationName": "inputAttachments",
+          "documentation": "List of input attachments for channel."
+        },
+        "InputSpecification": {
+          "shape": "InputSpecification",
+          "locationName": "inputSpecification",
+          "documentation": "Specification of network and file inputs for this channel"
+        },
+        "LogLevel": {
+          "shape": "LogLevel",
+          "locationName": "logLevel",
+          "documentation": "The log level being written to CloudWatch Logs."
+        },
+        "Maintenance": {
+          "shape": "MaintenanceStatus",
+          "locationName": "maintenance",
+          "documentation": "Maintenance settings for this channel."
+        },
+        "MaintenanceStatus": {
+          "shape": "__string",
+          "locationName": "maintenanceStatus",
+          "documentation": "The time in milliseconds by when the PVRE restart must occur."
+        },
+        "Name": {
+          "shape": "__string",
+          "locationName": "name",
+          "documentation": "The name of the channel. (user-mutable)"
+        },
+        "PipelineDetails": {
+          "shape": "__listOfPipelineDetail",
+          "locationName": "pipelineDetails",
+          "documentation": "Runtime details for the pipelines of a running channel."
+        },
+        "PipelinesRunningCount": {
+          "shape": "__integer",
+          "locationName": "pipelinesRunningCount",
+          "documentation": "The number of currently healthy pipelines."
+        },
+        "RoleArn": {
+          "shape": "__string",
+          "locationName": "roleArn",
+          "documentation": "The Amazon Resource Name (ARN) of the role assumed when running the Channel."
+        },
+        "State": {
+          "shape": "ChannelState",
+          "locationName": "state"
+        },
+        "Tags": {
+          "shape": "Tags",
+          "locationName": "tags",
+          "documentation": "A collection of key-value pairs."
+        },
+        "Vpc": {
+          "shape": "VpcOutputSettingsDescription",
+          "locationName": "vpc",
+          "documentation": "Settings for VPC output"
+        }
+      },
+      "documentation": "Placeholder documentation for RestartChannelPipelinesResponse"
+    },
+    "__listOfChannelPipelineIdToRestart": {
+      "type": "list",
+      "member": {
+        "shape": "ChannelPipelineIdToRestart"
+      },
+      "documentation": "Placeholder documentation for __listOfChannelPipelineIdToRestart"
     }
   },
   "documentation": "API for AWS Elemental MediaLive"

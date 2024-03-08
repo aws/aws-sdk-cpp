@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ClientAuthenticationStatus::NOT_SET:
+            return {};
           case ClientAuthenticationStatus::Enabled:
             return "Enabled";
           case ClientAuthenticationStatus::Disabled:

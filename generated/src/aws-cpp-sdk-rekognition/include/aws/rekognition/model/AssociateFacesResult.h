@@ -37,51 +37,51 @@ namespace Model
 
 
     /**
-     * <p>An array of AssociatedFace objects containing FaceIDs that are successfully
-     * associated with the UserID is returned. Returned if the AssociateFaces action is
-     * successful.</p>
+     * <p>An array of AssociatedFace objects containing FaceIDs that have been
+     * successfully associated with the UserID. Returned if the AssociateFaces action
+     * is successful.</p>
      */
     inline const Aws::Vector<AssociatedFace>& GetAssociatedFaces() const{ return m_associatedFaces; }
 
     /**
-     * <p>An array of AssociatedFace objects containing FaceIDs that are successfully
-     * associated with the UserID is returned. Returned if the AssociateFaces action is
-     * successful.</p>
+     * <p>An array of AssociatedFace objects containing FaceIDs that have been
+     * successfully associated with the UserID. Returned if the AssociateFaces action
+     * is successful.</p>
      */
     inline void SetAssociatedFaces(const Aws::Vector<AssociatedFace>& value) { m_associatedFaces = value; }
 
     /**
-     * <p>An array of AssociatedFace objects containing FaceIDs that are successfully
-     * associated with the UserID is returned. Returned if the AssociateFaces action is
-     * successful.</p>
+     * <p>An array of AssociatedFace objects containing FaceIDs that have been
+     * successfully associated with the UserID. Returned if the AssociateFaces action
+     * is successful.</p>
      */
     inline void SetAssociatedFaces(Aws::Vector<AssociatedFace>&& value) { m_associatedFaces = std::move(value); }
 
     /**
-     * <p>An array of AssociatedFace objects containing FaceIDs that are successfully
-     * associated with the UserID is returned. Returned if the AssociateFaces action is
-     * successful.</p>
+     * <p>An array of AssociatedFace objects containing FaceIDs that have been
+     * successfully associated with the UserID. Returned if the AssociateFaces action
+     * is successful.</p>
      */
     inline AssociateFacesResult& WithAssociatedFaces(const Aws::Vector<AssociatedFace>& value) { SetAssociatedFaces(value); return *this;}
 
     /**
-     * <p>An array of AssociatedFace objects containing FaceIDs that are successfully
-     * associated with the UserID is returned. Returned if the AssociateFaces action is
-     * successful.</p>
+     * <p>An array of AssociatedFace objects containing FaceIDs that have been
+     * successfully associated with the UserID. Returned if the AssociateFaces action
+     * is successful.</p>
      */
     inline AssociateFacesResult& WithAssociatedFaces(Aws::Vector<AssociatedFace>&& value) { SetAssociatedFaces(std::move(value)); return *this;}
 
     /**
-     * <p>An array of AssociatedFace objects containing FaceIDs that are successfully
-     * associated with the UserID is returned. Returned if the AssociateFaces action is
-     * successful.</p>
+     * <p>An array of AssociatedFace objects containing FaceIDs that have been
+     * successfully associated with the UserID. Returned if the AssociateFaces action
+     * is successful.</p>
      */
     inline AssociateFacesResult& AddAssociatedFaces(const AssociatedFace& value) { m_associatedFaces.push_back(value); return *this; }
 
     /**
-     * <p>An array of AssociatedFace objects containing FaceIDs that are successfully
-     * associated with the UserID is returned. Returned if the AssociateFaces action is
-     * successful.</p>
+     * <p>An array of AssociatedFace objects containing FaceIDs that have been
+     * successfully associated with the UserID. Returned if the AssociateFaces action
+     * is successful.</p>
      */
     inline AssociateFacesResult& AddAssociatedFaces(AssociatedFace&& value) { m_associatedFaces.push_back(std::move(value)); return *this; }
 

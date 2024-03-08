@@ -22,8 +22,8 @@ namespace S3Outposts
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef S3OutpostsClientConfiguration ClientConfigurationType;
       typedef S3OutpostsEndpointProvider EndpointProviderType;
@@ -33,14 +33,14 @@ namespace S3Outposts
         * is not specified, it will be initialized to default values.
         */
         S3OutpostsClient(const Aws::S3Outposts::S3OutpostsClientConfiguration& clientConfiguration = Aws::S3Outposts::S3OutpostsClientConfiguration(),
-                         std::shared_ptr<S3OutpostsEndpointProviderBase> endpointProvider = Aws::MakeShared<S3OutpostsEndpointProvider>(ALLOCATION_TAG));
+                         std::shared_ptr<S3OutpostsEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         S3OutpostsClient(const Aws::Auth::AWSCredentials& credentials,
-                         std::shared_ptr<S3OutpostsEndpointProviderBase> endpointProvider = Aws::MakeShared<S3OutpostsEndpointProvider>(ALLOCATION_TAG),
+                         std::shared_ptr<S3OutpostsEndpointProviderBase> endpointProvider = nullptr,
                          const Aws::S3Outposts::S3OutpostsClientConfiguration& clientConfiguration = Aws::S3Outposts::S3OutpostsClientConfiguration());
 
        /**
@@ -48,7 +48,7 @@ namespace S3Outposts
         * the default http client factory will be used
         */
         S3OutpostsClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                         std::shared_ptr<S3OutpostsEndpointProviderBase> endpointProvider = Aws::MakeShared<S3OutpostsEndpointProvider>(ALLOCATION_TAG),
+                         std::shared_ptr<S3OutpostsEndpointProviderBase> endpointProvider = nullptr,
                          const Aws::S3Outposts::S3OutpostsClientConfiguration& clientConfiguration = Aws::S3Outposts::S3OutpostsClientConfiguration());
 
 

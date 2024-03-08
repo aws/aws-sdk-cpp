@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AdMarkerHls::NOT_SET:
+            return {};
           case AdMarkerHls::DATERANGE:
             return "DATERANGE";
           default:

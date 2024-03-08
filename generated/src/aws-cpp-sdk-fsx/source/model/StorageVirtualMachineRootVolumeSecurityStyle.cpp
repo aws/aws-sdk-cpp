@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StorageVirtualMachineRootVolumeSecurityStyle::NOT_SET:
+            return {};
           case StorageVirtualMachineRootVolumeSecurityStyle::UNIX:
             return "UNIX";
           case StorageVirtualMachineRootVolumeSecurityStyle::NTFS:

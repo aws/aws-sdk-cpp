@@ -55,8 +55,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* IoTRoboRunnerClient::SERVICE_NAME = "iotroborunner";
-const char* IoTRoboRunnerClient::ALLOCATION_TAG = "IoTRoboRunnerClient";
+namespace Aws
+{
+  namespace IoTRoboRunner
+  {
+    const char SERVICE_NAME[] = "iotroborunner";
+    const char ALLOCATION_TAG[] = "IoTRoboRunnerClient";
+  }
+}
+const char* IoTRoboRunnerClient::GetServiceName() {return SERVICE_NAME;}
+const char* IoTRoboRunnerClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 IoTRoboRunnerClient::IoTRoboRunnerClient(const IoTRoboRunner::IoTRoboRunnerClientConfiguration& clientConfiguration,
                                          std::shared_ptr<IoTRoboRunnerEndpointProviderBase> endpointProvider) :
@@ -68,7 +76,7 @@ IoTRoboRunnerClient::IoTRoboRunnerClient(const IoTRoboRunner::IoTRoboRunnerClien
             Aws::MakeShared<IoTRoboRunnerErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<IoTRoboRunnerEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -84,7 +92,7 @@ IoTRoboRunnerClient::IoTRoboRunnerClient(const AWSCredentials& credentials,
             Aws::MakeShared<IoTRoboRunnerErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<IoTRoboRunnerEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -100,7 +108,7 @@ IoTRoboRunnerClient::IoTRoboRunnerClient(const std::shared_ptr<AWSCredentialsPro
             Aws::MakeShared<IoTRoboRunnerErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<IoTRoboRunnerEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

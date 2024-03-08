@@ -21,7 +21,9 @@ GetLifecyclePoliciesRequest::GetLifecyclePoliciesRequest() :
     m_stateHasBeenSet(false),
     m_resourceTypesHasBeenSet(false),
     m_targetTagsHasBeenSet(false),
-    m_tagsToAddHasBeenSet(false)
+    m_tagsToAddHasBeenSet(false),
+    m_defaultPolicyType(DefaultPoliciesTypeValues::NOT_SET),
+    m_defaultPolicyTypeHasBeenSet(false)
 {
 }
 
@@ -78,6 +80,13 @@ void GetLifecyclePoliciesRequest::AddQueryStringParameters(URI& uri) const
         uri.AddQueryStringParameter("tagsToAdd", ss.str());
         ss.str("");
       }
+    }
+
+    if(m_defaultPolicyTypeHasBeenSet)
+    {
+      ss << DefaultPoliciesTypeValuesMapper::GetNameForDefaultPoliciesTypeValues(m_defaultPolicyType);
+      uri.AddQueryStringParameter("defaultPolicyType", ss.str());
+      ss.str("");
     }
 
 }

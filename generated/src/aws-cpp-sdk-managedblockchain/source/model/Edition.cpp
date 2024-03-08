@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Edition::NOT_SET:
+            return {};
           case Edition::STARTER:
             return "STARTER";
           case Edition::STANDARD:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DeviceIdentifierFilterKeys::NOT_SET:
+            return {};
           case DeviceIdentifierFilterKeys::STATUS:
             return "STATUS";
           case DeviceIdentifierFilterKeys::ORDER:

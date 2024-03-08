@@ -31,7 +31,9 @@ StackSetOperationPreferences::StackSetOperationPreferences() :
     m_maxConcurrentCount(0),
     m_maxConcurrentCountHasBeenSet(false),
     m_maxConcurrentPercentage(0),
-    m_maxConcurrentPercentageHasBeenSet(false)
+    m_maxConcurrentPercentageHasBeenSet(false),
+    m_concurrencyMode(ConcurrencyMode::NOT_SET),
+    m_concurrencyModeHasBeenSet(false)
 {
 }
 
@@ -46,7 +48,9 @@ StackSetOperationPreferences::StackSetOperationPreferences(const XmlNode& xmlNod
     m_maxConcurrentCount(0),
     m_maxConcurrentCountHasBeenSet(false),
     m_maxConcurrentPercentage(0),
-    m_maxConcurrentPercentageHasBeenSet(false)
+    m_maxConcurrentPercentageHasBeenSet(false),
+    m_concurrencyMode(ConcurrencyMode::NOT_SET),
+    m_concurrencyModeHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -99,6 +103,12 @@ StackSetOperationPreferences& StackSetOperationPreferences::operator =(const Xml
       m_maxConcurrentPercentage = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxConcurrentPercentageNode.GetText()).c_str()).c_str());
       m_maxConcurrentPercentageHasBeenSet = true;
     }
+    XmlNode concurrencyModeNode = resultNode.FirstChild("ConcurrencyMode");
+    if(!concurrencyModeNode.IsNull())
+    {
+      m_concurrencyMode = ConcurrencyModeMapper::GetConcurrencyModeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(concurrencyModeNode.GetText()).c_str()).c_str());
+      m_concurrencyModeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -140,6 +150,11 @@ void StackSetOperationPreferences::OutputToStream(Aws::OStream& oStream, const c
       oStream << location << index << locationValue << ".MaxConcurrentPercentage=" << m_maxConcurrentPercentage << "&";
   }
 
+  if(m_concurrencyModeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ConcurrencyMode=" << ConcurrencyModeMapper::GetNameForConcurrencyMode(m_concurrencyMode) << "&";
+  }
+
 }
 
 void StackSetOperationPreferences::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -171,6 +186,10 @@ void StackSetOperationPreferences::OutputToStream(Aws::OStream& oStream, const c
   if(m_maxConcurrentPercentageHasBeenSet)
   {
       oStream << location << ".MaxConcurrentPercentage=" << m_maxConcurrentPercentage << "&";
+  }
+  if(m_concurrencyModeHasBeenSet)
+  {
+      oStream << location << ".ConcurrencyMode=" << ConcurrencyModeMapper::GetNameForConcurrencyMode(m_concurrencyMode) << "&";
   }
 }
 

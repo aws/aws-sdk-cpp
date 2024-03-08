@@ -14,6 +14,7 @@
 #include <aws/lexv2-models/model/KendraConfiguration.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/lexv2-models/model/InitialResponseSetting.h>
+#include <aws/lexv2-models/model/QnAIntentConfiguration.h>
 #include <aws/lexv2-models/model/SampleUtterance.h>
 #include <aws/lexv2-models/model/SlotPriority.h>
 #include <aws/lexv2-models/model/InputContext.h>
@@ -706,6 +707,37 @@ namespace Model
     inline UpdateIntentResult& WithInitialResponseSetting(InitialResponseSetting&& value) { SetInitialResponseSetting(std::move(value)); return *this;}
 
 
+    /**
+     * <p>Details about the configuration of the built-in
+     * <code>Amazon.QnAIntent</code>.</p>
+     */
+    inline const QnAIntentConfiguration& GetQnAIntentConfiguration() const{ return m_qnAIntentConfiguration; }
+
+    /**
+     * <p>Details about the configuration of the built-in
+     * <code>Amazon.QnAIntent</code>.</p>
+     */
+    inline void SetQnAIntentConfiguration(const QnAIntentConfiguration& value) { m_qnAIntentConfiguration = value; }
+
+    /**
+     * <p>Details about the configuration of the built-in
+     * <code>Amazon.QnAIntent</code>.</p>
+     */
+    inline void SetQnAIntentConfiguration(QnAIntentConfiguration&& value) { m_qnAIntentConfiguration = std::move(value); }
+
+    /**
+     * <p>Details about the configuration of the built-in
+     * <code>Amazon.QnAIntent</code>.</p>
+     */
+    inline UpdateIntentResult& WithQnAIntentConfiguration(const QnAIntentConfiguration& value) { SetQnAIntentConfiguration(value); return *this;}
+
+    /**
+     * <p>Details about the configuration of the built-in
+     * <code>Amazon.QnAIntent</code>.</p>
+     */
+    inline UpdateIntentResult& WithQnAIntentConfiguration(QnAIntentConfiguration&& value) { SetQnAIntentConfiguration(std::move(value)); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -766,6 +798,8 @@ namespace Model
     Aws::Utils::DateTime m_lastUpdatedDateTime;
 
     InitialResponseSetting m_initialResponseSetting;
+
+    QnAIntentConfiguration m_qnAIntentConfiguration;
 
     Aws::String m_requestId;
   };

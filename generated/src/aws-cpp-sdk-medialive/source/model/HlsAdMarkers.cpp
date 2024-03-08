@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HlsAdMarkers::NOT_SET:
+            return {};
           case HlsAdMarkers::ADOBE:
             return "ADOBE";
           case HlsAdMarkers::ELEMENTAL:

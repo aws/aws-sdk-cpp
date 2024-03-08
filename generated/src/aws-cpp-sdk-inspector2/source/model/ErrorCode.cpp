@@ -109,6 +109,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ErrorCode::NOT_SET:
+            return {};
           case ErrorCode::ALREADY_ENABLED:
             return "ALREADY_ENABLED";
           case ErrorCode::ENABLE_IN_PROGRESS:

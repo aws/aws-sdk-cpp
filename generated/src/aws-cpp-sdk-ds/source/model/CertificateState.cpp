@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CertificateState::NOT_SET:
+            return {};
           case CertificateState::Registering:
             return "Registering";
           case CertificateState::Registered:

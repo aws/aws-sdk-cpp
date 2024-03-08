@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RunTimeAssessmentStatus::NOT_SET:
+            return {};
           case RunTimeAssessmentStatus::dataCollectionTaskToBeScheduled:
             return "dataCollectionTaskToBeScheduled";
           case RunTimeAssessmentStatus::dataCollectionTaskScheduled:

@@ -111,6 +111,9 @@ namespace Model
      * <code>text/csv;header=present</code>.</p> </li> <li> <p>For time-series
      * forecasting: <code>text/csv;header=present</code> or
      * <code>x-application/vnd.amazon+parquet</code>. The default value is
+     * <code>text/csv;header=present</code>.</p> </li> <li> <p>For text generation
+     * (LLMs fine-tuning): <code>text/csv;header=present</code> or
+     * <code>x-application/vnd.amazon+parquet</code>. The default value is
      * <code>text/csv;header=present</code>.</p> </li> </ul>
      */
     inline const Aws::String& GetContentType() const{ return m_contentType; }
@@ -127,6 +130,9 @@ namespace Model
      * <code>x-application/vnd.amazon+parquet</code>. The default value is
      * <code>text/csv;header=present</code>.</p> </li> <li> <p>For time-series
      * forecasting: <code>text/csv;header=present</code> or
+     * <code>x-application/vnd.amazon+parquet</code>. The default value is
+     * <code>text/csv;header=present</code>.</p> </li> <li> <p>For text generation
+     * (LLMs fine-tuning): <code>text/csv;header=present</code> or
      * <code>x-application/vnd.amazon+parquet</code>. The default value is
      * <code>text/csv;header=present</code>.</p> </li> </ul>
      */
@@ -145,6 +151,9 @@ namespace Model
      * <code>text/csv;header=present</code>.</p> </li> <li> <p>For time-series
      * forecasting: <code>text/csv;header=present</code> or
      * <code>x-application/vnd.amazon+parquet</code>. The default value is
+     * <code>text/csv;header=present</code>.</p> </li> <li> <p>For text generation
+     * (LLMs fine-tuning): <code>text/csv;header=present</code> or
+     * <code>x-application/vnd.amazon+parquet</code>. The default value is
      * <code>text/csv;header=present</code>.</p> </li> </ul>
      */
     inline void SetContentType(const Aws::String& value) { m_contentTypeHasBeenSet = true; m_contentType = value; }
@@ -161,6 +170,9 @@ namespace Model
      * <code>x-application/vnd.amazon+parquet</code>. The default value is
      * <code>text/csv;header=present</code>.</p> </li> <li> <p>For time-series
      * forecasting: <code>text/csv;header=present</code> or
+     * <code>x-application/vnd.amazon+parquet</code>. The default value is
+     * <code>text/csv;header=present</code>.</p> </li> <li> <p>For text generation
+     * (LLMs fine-tuning): <code>text/csv;header=present</code> or
      * <code>x-application/vnd.amazon+parquet</code>. The default value is
      * <code>text/csv;header=present</code>.</p> </li> </ul>
      */
@@ -179,6 +191,9 @@ namespace Model
      * <code>text/csv;header=present</code>.</p> </li> <li> <p>For time-series
      * forecasting: <code>text/csv;header=present</code> or
      * <code>x-application/vnd.amazon+parquet</code>. The default value is
+     * <code>text/csv;header=present</code>.</p> </li> <li> <p>For text generation
+     * (LLMs fine-tuning): <code>text/csv;header=present</code> or
+     * <code>x-application/vnd.amazon+parquet</code>. The default value is
      * <code>text/csv;header=present</code>.</p> </li> </ul>
      */
     inline void SetContentType(const char* value) { m_contentTypeHasBeenSet = true; m_contentType.assign(value); }
@@ -195,6 +210,9 @@ namespace Model
      * <code>x-application/vnd.amazon+parquet</code>. The default value is
      * <code>text/csv;header=present</code>.</p> </li> <li> <p>For time-series
      * forecasting: <code>text/csv;header=present</code> or
+     * <code>x-application/vnd.amazon+parquet</code>. The default value is
+     * <code>text/csv;header=present</code>.</p> </li> <li> <p>For text generation
+     * (LLMs fine-tuning): <code>text/csv;header=present</code> or
      * <code>x-application/vnd.amazon+parquet</code>. The default value is
      * <code>text/csv;header=present</code>.</p> </li> </ul>
      */
@@ -213,6 +231,9 @@ namespace Model
      * <code>text/csv;header=present</code>.</p> </li> <li> <p>For time-series
      * forecasting: <code>text/csv;header=present</code> or
      * <code>x-application/vnd.amazon+parquet</code>. The default value is
+     * <code>text/csv;header=present</code>.</p> </li> <li> <p>For text generation
+     * (LLMs fine-tuning): <code>text/csv;header=present</code> or
+     * <code>x-application/vnd.amazon+parquet</code>. The default value is
      * <code>text/csv;header=present</code>.</p> </li> </ul>
      */
     inline AutoMLJobChannel& WithContentType(Aws::String&& value) { SetContentType(std::move(value)); return *this;}
@@ -229,6 +250,9 @@ namespace Model
      * <code>x-application/vnd.amazon+parquet</code>. The default value is
      * <code>text/csv;header=present</code>.</p> </li> <li> <p>For time-series
      * forecasting: <code>text/csv;header=present</code> or
+     * <code>x-application/vnd.amazon+parquet</code>. The default value is
+     * <code>text/csv;header=present</code>.</p> </li> <li> <p>For text generation
+     * (LLMs fine-tuning): <code>text/csv;header=present</code> or
      * <code>x-application/vnd.amazon+parquet</code>. The default value is
      * <code>text/csv;header=present</code>.</p> </li> </ul>
      */

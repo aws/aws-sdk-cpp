@@ -13,6 +13,7 @@
 #include <aws/mediaconvert/model/H265Settings.h>
 #include <aws/mediaconvert/model/Mpeg2Settings.h>
 #include <aws/mediaconvert/model/ProresSettings.h>
+#include <aws/mediaconvert/model/UncompressedSettings.h>
 #include <aws/mediaconvert/model/Vc3Settings.h>
 #include <aws/mediaconvert/model/Vp8Settings.h>
 #include <aws/mediaconvert/model/Vp9Settings.h>
@@ -41,8 +42,8 @@ namespace Model
    * object. The following lists the codec enum, settings object pairs. * AV1,
    * Av1Settings * AVC_INTRA, AvcIntraSettings * FRAME_CAPTURE, FrameCaptureSettings
    * * H_264, H264Settings * H_265, H265Settings * MPEG2, Mpeg2Settings * PRORES,
-   * ProresSettings * VC3, Vc3Settings * VP8, Vp8Settings * VP9, Vp9Settings * XAVC,
-   * XavcSettings<p><h3>See Also:</h3>   <a
+   * ProresSettings * UNCOMPRESSED, UncompressedSettings * VC3, Vc3Settings * VP8,
+   * Vp8Settings * VP9, Vp9Settings * XAVC, XavcSettings<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/VideoCodecSettings">AWS
    * API Reference</a></p>
    */
@@ -364,6 +365,43 @@ namespace Model
 
 
     /**
+     * Required when you set Codec, under VideoDescription>CodecSettings to the value
+     * UNCOMPRESSED.
+     */
+    inline const UncompressedSettings& GetUncompressedSettings() const{ return m_uncompressedSettings; }
+
+    /**
+     * Required when you set Codec, under VideoDescription>CodecSettings to the value
+     * UNCOMPRESSED.
+     */
+    inline bool UncompressedSettingsHasBeenSet() const { return m_uncompressedSettingsHasBeenSet; }
+
+    /**
+     * Required when you set Codec, under VideoDescription>CodecSettings to the value
+     * UNCOMPRESSED.
+     */
+    inline void SetUncompressedSettings(const UncompressedSettings& value) { m_uncompressedSettingsHasBeenSet = true; m_uncompressedSettings = value; }
+
+    /**
+     * Required when you set Codec, under VideoDescription>CodecSettings to the value
+     * UNCOMPRESSED.
+     */
+    inline void SetUncompressedSettings(UncompressedSettings&& value) { m_uncompressedSettingsHasBeenSet = true; m_uncompressedSettings = std::move(value); }
+
+    /**
+     * Required when you set Codec, under VideoDescription>CodecSettings to the value
+     * UNCOMPRESSED.
+     */
+    inline VideoCodecSettings& WithUncompressedSettings(const UncompressedSettings& value) { SetUncompressedSettings(value); return *this;}
+
+    /**
+     * Required when you set Codec, under VideoDescription>CodecSettings to the value
+     * UNCOMPRESSED.
+     */
+    inline VideoCodecSettings& WithUncompressedSettings(UncompressedSettings&& value) { SetUncompressedSettings(std::move(value)); return *this;}
+
+
+    /**
      * Required when you set Codec to the value VC3
      */
     inline const Vc3Settings& GetVc3Settings() const{ return m_vc3Settings; }
@@ -511,6 +549,9 @@ namespace Model
 
     ProresSettings m_proresSettings;
     bool m_proresSettingsHasBeenSet = false;
+
+    UncompressedSettings m_uncompressedSettings;
+    bool m_uncompressedSettingsHasBeenSet = false;
 
     Vc3Settings m_vc3Settings;
     bool m_vc3SettingsHasBeenSet = false;

@@ -104,6 +104,21 @@ DescribeAssetResult& DescribeAssetResult::operator =(const Aws::AmazonWebService
 
   }
 
+  if(jsonValue.ValueExists("assetCompositeModelSummaries"))
+  {
+    Aws::Utils::Array<JsonView> assetCompositeModelSummariesJsonList = jsonValue.GetArray("assetCompositeModelSummaries");
+    for(unsigned assetCompositeModelSummariesIndex = 0; assetCompositeModelSummariesIndex < assetCompositeModelSummariesJsonList.GetLength(); ++assetCompositeModelSummariesIndex)
+    {
+      m_assetCompositeModelSummaries.push_back(assetCompositeModelSummariesJsonList[assetCompositeModelSummariesIndex].AsObject());
+    }
+  }
+
+  if(jsonValue.ValueExists("assetExternalId"))
+  {
+    m_assetExternalId = jsonValue.GetString("assetExternalId");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

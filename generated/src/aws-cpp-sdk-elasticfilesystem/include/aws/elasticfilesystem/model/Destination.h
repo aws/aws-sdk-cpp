@@ -41,9 +41,9 @@ namespace Model
 
 
     /**
-     * <p>Describes the status of the destination Amazon EFS file system.</p> <ul> <li>
-     * <p>The <code>Paused</code> state occurs as a result of opting out of the source
-     * or destination Region after the replication configuration was created. To resume
+     * <p>Describes the status of the destination EFS file system.</p> <ul> <li> <p>The
+     * <code>Paused</code> state occurs as a result of opting out of the source or
+     * destination Region after the replication configuration was created. To resume
      * replication for the file system, you need to again opt in to the Amazon Web
      * Services Region. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html#rande-manage-enable">Managing
@@ -60,9 +60,9 @@ namespace Model
     inline const ReplicationStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>Describes the status of the destination Amazon EFS file system.</p> <ul> <li>
-     * <p>The <code>Paused</code> state occurs as a result of opting out of the source
-     * or destination Region after the replication configuration was created. To resume
+     * <p>Describes the status of the destination EFS file system.</p> <ul> <li> <p>The
+     * <code>Paused</code> state occurs as a result of opting out of the source or
+     * destination Region after the replication configuration was created. To resume
      * replication for the file system, you need to again opt in to the Amazon Web
      * Services Region. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html#rande-manage-enable">Managing
@@ -79,9 +79,9 @@ namespace Model
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>Describes the status of the destination Amazon EFS file system.</p> <ul> <li>
-     * <p>The <code>Paused</code> state occurs as a result of opting out of the source
-     * or destination Region after the replication configuration was created. To resume
+     * <p>Describes the status of the destination EFS file system.</p> <ul> <li> <p>The
+     * <code>Paused</code> state occurs as a result of opting out of the source or
+     * destination Region after the replication configuration was created. To resume
      * replication for the file system, you need to again opt in to the Amazon Web
      * Services Region. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html#rande-manage-enable">Managing
@@ -98,9 +98,9 @@ namespace Model
     inline void SetStatus(const ReplicationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>Describes the status of the destination Amazon EFS file system.</p> <ul> <li>
-     * <p>The <code>Paused</code> state occurs as a result of opting out of the source
-     * or destination Region after the replication configuration was created. To resume
+     * <p>Describes the status of the destination EFS file system.</p> <ul> <li> <p>The
+     * <code>Paused</code> state occurs as a result of opting out of the source or
+     * destination Region after the replication configuration was created. To resume
      * replication for the file system, you need to again opt in to the Amazon Web
      * Services Region. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html#rande-manage-enable">Managing
@@ -117,9 +117,9 @@ namespace Model
     inline void SetStatus(ReplicationStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>Describes the status of the destination Amazon EFS file system.</p> <ul> <li>
-     * <p>The <code>Paused</code> state occurs as a result of opting out of the source
-     * or destination Region after the replication configuration was created. To resume
+     * <p>Describes the status of the destination EFS file system.</p> <ul> <li> <p>The
+     * <code>Paused</code> state occurs as a result of opting out of the source or
+     * destination Region after the replication configuration was created. To resume
      * replication for the file system, you need to again opt in to the Amazon Web
      * Services Region. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html#rande-manage-enable">Managing
@@ -136,9 +136,9 @@ namespace Model
     inline Destination& WithStatus(const ReplicationStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>Describes the status of the destination Amazon EFS file system.</p> <ul> <li>
-     * <p>The <code>Paused</code> state occurs as a result of opting out of the source
-     * or destination Region after the replication configuration was created. To resume
+     * <p>Describes the status of the destination EFS file system.</p> <ul> <li> <p>The
+     * <code>Paused</code> state occurs as a result of opting out of the source or
+     * destination Region after the replication configuration was created. To resume
      * replication for the file system, you need to again opt in to the Amazon Web
      * Services Region. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html#rande-manage-enable">Managing

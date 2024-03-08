@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ImageBlockPublicAccessEnabledState::NOT_SET:
+            return {};
           case ImageBlockPublicAccessEnabledState::block_new_sharing:
             return "block-new-sharing";
           default:

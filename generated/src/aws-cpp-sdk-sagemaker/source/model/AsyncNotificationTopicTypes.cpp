@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AsyncNotificationTopicTypes::NOT_SET:
+            return {};
           case AsyncNotificationTopicTypes::SUCCESS_NOTIFICATION_TOPIC:
             return "SUCCESS_NOTIFICATION_TOPIC";
           case AsyncNotificationTopicTypes::ERROR_NOTIFICATION_TOPIC:

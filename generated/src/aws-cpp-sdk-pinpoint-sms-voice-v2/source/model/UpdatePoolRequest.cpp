@@ -17,6 +17,7 @@ UpdatePoolRequest::UpdatePoolRequest() :
     m_twoWayEnabled(false),
     m_twoWayEnabledHasBeenSet(false),
     m_twoWayChannelArnHasBeenSet(false),
+    m_twoWayChannelRoleHasBeenSet(false),
     m_selfManagedOptOutsEnabled(false),
     m_selfManagedOptOutsEnabledHasBeenSet(false),
     m_optOutListNameHasBeenSet(false),
@@ -46,6 +47,12 @@ Aws::String UpdatePoolRequest::SerializePayload() const
   if(m_twoWayChannelArnHasBeenSet)
   {
    payload.WithString("TwoWayChannelArn", m_twoWayChannelArn);
+
+  }
+
+  if(m_twoWayChannelRoleHasBeenSet)
+  {
+   payload.WithString("TwoWayChannelRole", m_twoWayChannelRole);
 
   }
 

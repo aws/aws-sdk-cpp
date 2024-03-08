@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NetworkResourceDefinitionType::NOT_SET:
+            return {};
           case NetworkResourceDefinitionType::RADIO_UNIT:
             return "RADIO_UNIT";
           case NetworkResourceDefinitionType::DEVICE_IDENTIFIER:

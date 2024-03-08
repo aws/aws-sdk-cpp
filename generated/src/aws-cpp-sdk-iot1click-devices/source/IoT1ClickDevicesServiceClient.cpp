@@ -48,8 +48,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* IoT1ClickDevicesServiceClient::SERVICE_NAME = "iot1click";
-const char* IoT1ClickDevicesServiceClient::ALLOCATION_TAG = "IoT1ClickDevicesServiceClient";
+namespace Aws
+{
+  namespace IoT1ClickDevicesService
+  {
+    const char SERVICE_NAME[] = "iot1click";
+    const char ALLOCATION_TAG[] = "IoT1ClickDevicesServiceClient";
+  }
+}
+const char* IoT1ClickDevicesServiceClient::GetServiceName() {return SERVICE_NAME;}
+const char* IoT1ClickDevicesServiceClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 IoT1ClickDevicesServiceClient::IoT1ClickDevicesServiceClient(const IoT1ClickDevicesService::IoT1ClickDevicesServiceClientConfiguration& clientConfiguration,
                                                              std::shared_ptr<IoT1ClickDevicesServiceEndpointProviderBase> endpointProvider) :
@@ -61,7 +69,7 @@ IoT1ClickDevicesServiceClient::IoT1ClickDevicesServiceClient(const IoT1ClickDevi
             Aws::MakeShared<IoT1ClickDevicesServiceErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<IoT1ClickDevicesServiceEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -77,7 +85,7 @@ IoT1ClickDevicesServiceClient::IoT1ClickDevicesServiceClient(const AWSCredential
             Aws::MakeShared<IoT1ClickDevicesServiceErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<IoT1ClickDevicesServiceEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -93,7 +101,7 @@ IoT1ClickDevicesServiceClient::IoT1ClickDevicesServiceClient(const std::shared_p
             Aws::MakeShared<IoT1ClickDevicesServiceErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<IoT1ClickDevicesServiceEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

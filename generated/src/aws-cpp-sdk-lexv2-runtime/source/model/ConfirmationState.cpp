@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ConfirmationState::NOT_SET:
+            return {};
           case ConfirmationState::Confirmed:
             return "Confirmed";
           case ConfirmationState::Denied:

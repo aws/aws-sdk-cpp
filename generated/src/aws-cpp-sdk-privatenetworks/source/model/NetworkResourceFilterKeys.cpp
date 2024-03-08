@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NetworkResourceFilterKeys::NOT_SET:
+            return {};
           case NetworkResourceFilterKeys::ORDER:
             return "ORDER";
           case NetworkResourceFilterKeys::STATUS:

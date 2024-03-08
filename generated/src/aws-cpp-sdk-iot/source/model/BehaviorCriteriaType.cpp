@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BehaviorCriteriaType::NOT_SET:
+            return {};
           case BehaviorCriteriaType::STATIC_:
             return "STATIC";
           case BehaviorCriteriaType::STATISTICAL:

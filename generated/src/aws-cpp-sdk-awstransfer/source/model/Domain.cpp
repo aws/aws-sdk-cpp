@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Domain::NOT_SET:
+            return {};
           case Domain::S3:
             return "S3";
           case Domain::EFS:

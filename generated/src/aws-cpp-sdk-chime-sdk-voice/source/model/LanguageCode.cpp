@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LanguageCode::NOT_SET:
+            return {};
           case LanguageCode::en_US:
             return "en-US";
           default:

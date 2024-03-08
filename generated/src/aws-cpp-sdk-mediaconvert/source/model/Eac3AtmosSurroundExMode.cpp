@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Eac3AtmosSurroundExMode::NOT_SET:
+            return {};
           case Eac3AtmosSurroundExMode::NOT_INDICATED:
             return "NOT_INDICATED";
           case Eac3AtmosSurroundExMode::ENABLED:

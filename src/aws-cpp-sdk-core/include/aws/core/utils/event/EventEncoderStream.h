@@ -58,7 +58,13 @@ namespace Aws
                  * Any writes to the stream after this call are not guaranteed to be read by another concurrent
                  * read thread.
                  */
-                void Close() { m_streambuf.SetEof(); setstate(eofbit); }
+                void Close() { m_streambuf.SetEofInput(this); }
+
+                /**
+                 * Blocks the current thread until all submitted data is consumed.
+                 * Returns false on timeout, and true if GetArea and back buffer are empty.
+                 */
+                bool WaitForDrain(int64_t timeoutMs = 1000);
 
             private:
                 Stream::ConcurrentStreamBuf m_streambuf;

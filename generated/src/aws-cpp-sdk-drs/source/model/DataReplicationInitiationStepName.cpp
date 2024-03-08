@@ -94,6 +94,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DataReplicationInitiationStepName::NOT_SET:
+            return {};
           case DataReplicationInitiationStepName::WAIT:
             return "WAIT";
           case DataReplicationInitiationStepName::CREATE_SECURITY_GROUP:

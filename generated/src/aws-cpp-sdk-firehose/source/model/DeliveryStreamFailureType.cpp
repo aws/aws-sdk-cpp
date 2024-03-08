@@ -114,6 +114,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DeliveryStreamFailureType::NOT_SET:
+            return {};
           case DeliveryStreamFailureType::RETIRE_KMS_GRANT_FAILED:
             return "RETIRE_KMS_GRANT_FAILED";
           case DeliveryStreamFailureType::CREATE_KMS_GRANT_FAILED:

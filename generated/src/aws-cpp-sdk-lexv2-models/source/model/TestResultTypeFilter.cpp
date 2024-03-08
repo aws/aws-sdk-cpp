@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TestResultTypeFilter::NOT_SET:
+            return {};
           case TestResultTypeFilter::OverallTestResults:
             return "OverallTestResults";
           case TestResultTypeFilter::ConversationLevelTestResults:

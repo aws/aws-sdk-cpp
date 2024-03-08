@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResponseStreamingInvocationType::NOT_SET:
+            return {};
           case ResponseStreamingInvocationType::RequestResponse:
             return "RequestResponse";
           case ResponseStreamingInvocationType::DryRun:

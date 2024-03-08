@@ -26,6 +26,9 @@ namespace Aws
         static const int AFTER_60_DAYS_HASH = HashingUtils::HashString("AFTER_60_DAYS");
         static const int AFTER_90_DAYS_HASH = HashingUtils::HashString("AFTER_90_DAYS");
         static const int AFTER_1_DAY_HASH = HashingUtils::HashString("AFTER_1_DAY");
+        static const int AFTER_180_DAYS_HASH = HashingUtils::HashString("AFTER_180_DAYS");
+        static const int AFTER_270_DAYS_HASH = HashingUtils::HashString("AFTER_270_DAYS");
+        static const int AFTER_365_DAYS_HASH = HashingUtils::HashString("AFTER_365_DAYS");
 
 
         TransitionToIARules GetTransitionToIARulesForName(const Aws::String& name)
@@ -55,6 +58,18 @@ namespace Aws
           {
             return TransitionToIARules::AFTER_1_DAY;
           }
+          else if (hashCode == AFTER_180_DAYS_HASH)
+          {
+            return TransitionToIARules::AFTER_180_DAYS;
+          }
+          else if (hashCode == AFTER_270_DAYS_HASH)
+          {
+            return TransitionToIARules::AFTER_270_DAYS;
+          }
+          else if (hashCode == AFTER_365_DAYS_HASH)
+          {
+            return TransitionToIARules::AFTER_365_DAYS;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -69,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TransitionToIARules::NOT_SET:
+            return {};
           case TransitionToIARules::AFTER_7_DAYS:
             return "AFTER_7_DAYS";
           case TransitionToIARules::AFTER_14_DAYS:
@@ -81,6 +98,12 @@ namespace Aws
             return "AFTER_90_DAYS";
           case TransitionToIARules::AFTER_1_DAY:
             return "AFTER_1_DAY";
+          case TransitionToIARules::AFTER_180_DAYS:
+            return "AFTER_180_DAYS";
+          case TransitionToIARules::AFTER_270_DAYS:
+            return "AFTER_270_DAYS";
+          case TransitionToIARules::AFTER_365_DAYS:
+            return "AFTER_365_DAYS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

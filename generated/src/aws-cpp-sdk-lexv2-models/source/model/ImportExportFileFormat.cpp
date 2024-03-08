@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ImportExportFileFormat::NOT_SET:
+            return {};
           case ImportExportFileFormat::LexJson:
             return "LexJson";
           case ImportExportFileFormat::TSV:

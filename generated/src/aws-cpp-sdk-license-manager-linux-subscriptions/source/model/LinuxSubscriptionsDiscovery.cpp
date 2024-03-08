@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LinuxSubscriptionsDiscovery::NOT_SET:
+            return {};
           case LinuxSubscriptionsDiscovery::Enabled:
             return "Enabled";
           case LinuxSubscriptionsDiscovery::Disabled:

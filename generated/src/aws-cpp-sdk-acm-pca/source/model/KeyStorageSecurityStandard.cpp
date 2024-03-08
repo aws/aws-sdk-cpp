@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case KeyStorageSecurityStandard::NOT_SET:
+            return {};
           case KeyStorageSecurityStandard::FIPS_140_2_LEVEL_2_OR_HIGHER:
             return "FIPS_140_2_LEVEL_2_OR_HIGHER";
           case KeyStorageSecurityStandard::FIPS_140_2_LEVEL_3_OR_HIGHER:

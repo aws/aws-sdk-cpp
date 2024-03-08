@@ -25,7 +25,9 @@ CreateApplicationRequest::CreateApplicationRequest() :
     m_autoCreate(false),
     m_autoCreateHasBeenSet(false),
     m_groupingType(GroupingType::NOT_SET),
-    m_groupingTypeHasBeenSet(false)
+    m_groupingTypeHasBeenSet(false),
+    m_attachMissingPermission(false),
+    m_attachMissingPermissionHasBeenSet(false)
 {
 }
 
@@ -83,6 +85,12 @@ Aws::String CreateApplicationRequest::SerializePayload() const
   if(m_groupingTypeHasBeenSet)
   {
    payload.WithString("GroupingType", GroupingTypeMapper::GetNameForGroupingType(m_groupingType));
+  }
+
+  if(m_attachMissingPermissionHasBeenSet)
+  {
+   payload.WithBool("AttachMissingPermission", m_attachMissingPermission);
+
   }
 
   return payload.View().WriteReadable();

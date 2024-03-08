@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LabelMatchScope::NOT_SET:
+            return {};
           case LabelMatchScope::LABEL:
             return "LABEL";
           case LabelMatchScope::NAMESPACE:

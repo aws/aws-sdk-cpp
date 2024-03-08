@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ESWarmPartitionInstanceType::NOT_SET:
+            return {};
           case ESWarmPartitionInstanceType::ultrawarm1_medium_elasticsearch:
             return "ultrawarm1.medium.elasticsearch";
           case ESWarmPartitionInstanceType::ultrawarm1_large_elasticsearch:

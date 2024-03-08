@@ -30,7 +30,8 @@ JobQueueDetail::JobQueueDetail() :
     m_priority(0),
     m_priorityHasBeenSet(false),
     m_computeEnvironmentOrderHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_jobStateTimeLimitActionsHasBeenSet(false)
 {
 }
 
@@ -46,7 +47,8 @@ JobQueueDetail::JobQueueDetail(JsonView jsonValue) :
     m_priority(0),
     m_priorityHasBeenSet(false),
     m_computeEnvironmentOrderHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_jobStateTimeLimitActionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -122,6 +124,16 @@ JobQueueDetail& JobQueueDetail::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("jobStateTimeLimitActions"))
+  {
+    Aws::Utils::Array<JsonView> jobStateTimeLimitActionsJsonList = jsonValue.GetArray("jobStateTimeLimitActions");
+    for(unsigned jobStateTimeLimitActionsIndex = 0; jobStateTimeLimitActionsIndex < jobStateTimeLimitActionsJsonList.GetLength(); ++jobStateTimeLimitActionsIndex)
+    {
+      m_jobStateTimeLimitActions.push_back(jobStateTimeLimitActionsJsonList[jobStateTimeLimitActionsIndex].AsObject());
+    }
+    m_jobStateTimeLimitActionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -188,6 +200,17 @@ JsonValue JobQueueDetail::Jsonize() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_jobStateTimeLimitActionsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> jobStateTimeLimitActionsJsonList(m_jobStateTimeLimitActions.size());
+   for(unsigned jobStateTimeLimitActionsIndex = 0; jobStateTimeLimitActionsIndex < jobStateTimeLimitActionsJsonList.GetLength(); ++jobStateTimeLimitActionsIndex)
+   {
+     jobStateTimeLimitActionsJsonList[jobStateTimeLimitActionsIndex].AsObject(m_jobStateTimeLimitActions[jobStateTimeLimitActionsIndex].Jsonize());
+   }
+   payload.WithArray("jobStateTimeLimitActions", std::move(jobStateTimeLimitActionsJsonList));
 
   }
 

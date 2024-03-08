@@ -139,8 +139,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* IoTWirelessClient::SERVICE_NAME = "iotwireless";
-const char* IoTWirelessClient::ALLOCATION_TAG = "IoTWirelessClient";
+namespace Aws
+{
+  namespace IoTWireless
+  {
+    const char SERVICE_NAME[] = "iotwireless";
+    const char ALLOCATION_TAG[] = "IoTWirelessClient";
+  }
+}
+const char* IoTWirelessClient::GetServiceName() {return SERVICE_NAME;}
+const char* IoTWirelessClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 IoTWirelessClient::IoTWirelessClient(const IoTWireless::IoTWirelessClientConfiguration& clientConfiguration,
                                      std::shared_ptr<IoTWirelessEndpointProviderBase> endpointProvider) :
@@ -152,7 +160,7 @@ IoTWirelessClient::IoTWirelessClient(const IoTWireless::IoTWirelessClientConfigu
             Aws::MakeShared<IoTWirelessErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<IoTWirelessEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -168,7 +176,7 @@ IoTWirelessClient::IoTWirelessClient(const AWSCredentials& credentials,
             Aws::MakeShared<IoTWirelessErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<IoTWirelessEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -184,7 +192,7 @@ IoTWirelessClient::IoTWirelessClient(const std::shared_ptr<AWSCredentialsProvide
             Aws::MakeShared<IoTWirelessErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<IoTWirelessEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

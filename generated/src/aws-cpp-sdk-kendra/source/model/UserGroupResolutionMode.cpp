@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UserGroupResolutionMode::NOT_SET:
+            return {};
           case UserGroupResolutionMode::AWS_SSO:
             return "AWS_SSO";
           case UserGroupResolutionMode::NONE:

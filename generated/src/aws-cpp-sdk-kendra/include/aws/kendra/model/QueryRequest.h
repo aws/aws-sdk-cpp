@@ -13,6 +13,7 @@
 #include <aws/kendra/model/SortingConfiguration.h>
 #include <aws/kendra/model/UserContext.h>
 #include <aws/kendra/model/SpellCorrectionConfiguration.h>
+#include <aws/kendra/model/CollapseConfiguration.h>
 #include <aws/kendra/model/Facet.h>
 #include <aws/kendra/model/DocumentRelevanceConfiguration.h>
 #include <utility>
@@ -568,6 +569,95 @@ namespace Model
 
 
     /**
+     * <p>Provides configuration information to determine how the results of a query
+     * are sorted.</p> <p>You can set upto 3 fields that Amazon Kendra should sort the
+     * results on, and specify whether the results should be sorted in ascending or
+     * descending order. The sort field quota can be increased.</p> <p>If you don't
+     * provide a sorting configuration, the results are sorted by the relevance that
+     * Amazon Kendra determines for the result. In the case of ties in sorting the
+     * results, the results are sorted by relevance. </p>
+     */
+    inline const Aws::Vector<SortingConfiguration>& GetSortingConfigurations() const{ return m_sortingConfigurations; }
+
+    /**
+     * <p>Provides configuration information to determine how the results of a query
+     * are sorted.</p> <p>You can set upto 3 fields that Amazon Kendra should sort the
+     * results on, and specify whether the results should be sorted in ascending or
+     * descending order. The sort field quota can be increased.</p> <p>If you don't
+     * provide a sorting configuration, the results are sorted by the relevance that
+     * Amazon Kendra determines for the result. In the case of ties in sorting the
+     * results, the results are sorted by relevance. </p>
+     */
+    inline bool SortingConfigurationsHasBeenSet() const { return m_sortingConfigurationsHasBeenSet; }
+
+    /**
+     * <p>Provides configuration information to determine how the results of a query
+     * are sorted.</p> <p>You can set upto 3 fields that Amazon Kendra should sort the
+     * results on, and specify whether the results should be sorted in ascending or
+     * descending order. The sort field quota can be increased.</p> <p>If you don't
+     * provide a sorting configuration, the results are sorted by the relevance that
+     * Amazon Kendra determines for the result. In the case of ties in sorting the
+     * results, the results are sorted by relevance. </p>
+     */
+    inline void SetSortingConfigurations(const Aws::Vector<SortingConfiguration>& value) { m_sortingConfigurationsHasBeenSet = true; m_sortingConfigurations = value; }
+
+    /**
+     * <p>Provides configuration information to determine how the results of a query
+     * are sorted.</p> <p>You can set upto 3 fields that Amazon Kendra should sort the
+     * results on, and specify whether the results should be sorted in ascending or
+     * descending order. The sort field quota can be increased.</p> <p>If you don't
+     * provide a sorting configuration, the results are sorted by the relevance that
+     * Amazon Kendra determines for the result. In the case of ties in sorting the
+     * results, the results are sorted by relevance. </p>
+     */
+    inline void SetSortingConfigurations(Aws::Vector<SortingConfiguration>&& value) { m_sortingConfigurationsHasBeenSet = true; m_sortingConfigurations = std::move(value); }
+
+    /**
+     * <p>Provides configuration information to determine how the results of a query
+     * are sorted.</p> <p>You can set upto 3 fields that Amazon Kendra should sort the
+     * results on, and specify whether the results should be sorted in ascending or
+     * descending order. The sort field quota can be increased.</p> <p>If you don't
+     * provide a sorting configuration, the results are sorted by the relevance that
+     * Amazon Kendra determines for the result. In the case of ties in sorting the
+     * results, the results are sorted by relevance. </p>
+     */
+    inline QueryRequest& WithSortingConfigurations(const Aws::Vector<SortingConfiguration>& value) { SetSortingConfigurations(value); return *this;}
+
+    /**
+     * <p>Provides configuration information to determine how the results of a query
+     * are sorted.</p> <p>You can set upto 3 fields that Amazon Kendra should sort the
+     * results on, and specify whether the results should be sorted in ascending or
+     * descending order. The sort field quota can be increased.</p> <p>If you don't
+     * provide a sorting configuration, the results are sorted by the relevance that
+     * Amazon Kendra determines for the result. In the case of ties in sorting the
+     * results, the results are sorted by relevance. </p>
+     */
+    inline QueryRequest& WithSortingConfigurations(Aws::Vector<SortingConfiguration>&& value) { SetSortingConfigurations(std::move(value)); return *this;}
+
+    /**
+     * <p>Provides configuration information to determine how the results of a query
+     * are sorted.</p> <p>You can set upto 3 fields that Amazon Kendra should sort the
+     * results on, and specify whether the results should be sorted in ascending or
+     * descending order. The sort field quota can be increased.</p> <p>If you don't
+     * provide a sorting configuration, the results are sorted by the relevance that
+     * Amazon Kendra determines for the result. In the case of ties in sorting the
+     * results, the results are sorted by relevance. </p>
+     */
+    inline QueryRequest& AddSortingConfigurations(const SortingConfiguration& value) { m_sortingConfigurationsHasBeenSet = true; m_sortingConfigurations.push_back(value); return *this; }
+
+    /**
+     * <p>Provides configuration information to determine how the results of a query
+     * are sorted.</p> <p>You can set upto 3 fields that Amazon Kendra should sort the
+     * results on, and specify whether the results should be sorted in ascending or
+     * descending order. The sort field quota can be increased.</p> <p>If you don't
+     * provide a sorting configuration, the results are sorted by the relevance that
+     * Amazon Kendra determines for the result. In the case of ties in sorting the
+     * results, the results are sorted by relevance. </p>
+     */
+    inline QueryRequest& AddSortingConfigurations(SortingConfiguration&& value) { m_sortingConfigurationsHasBeenSet = true; m_sortingConfigurations.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The user context token or user and group information.</p>
      */
     inline const UserContext& GetUserContext() const{ return m_userContext; }
@@ -693,6 +783,49 @@ namespace Model
      */
     inline QueryRequest& WithSpellCorrectionConfiguration(SpellCorrectionConfiguration&& value) { SetSpellCorrectionConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Provides configuration to determine how to group results by document
+     * attribute value, and how to display them (collapsed or expanded) under a
+     * designated primary document for each group.</p>
+     */
+    inline const CollapseConfiguration& GetCollapseConfiguration() const{ return m_collapseConfiguration; }
+
+    /**
+     * <p>Provides configuration to determine how to group results by document
+     * attribute value, and how to display them (collapsed or expanded) under a
+     * designated primary document for each group.</p>
+     */
+    inline bool CollapseConfigurationHasBeenSet() const { return m_collapseConfigurationHasBeenSet; }
+
+    /**
+     * <p>Provides configuration to determine how to group results by document
+     * attribute value, and how to display them (collapsed or expanded) under a
+     * designated primary document for each group.</p>
+     */
+    inline void SetCollapseConfiguration(const CollapseConfiguration& value) { m_collapseConfigurationHasBeenSet = true; m_collapseConfiguration = value; }
+
+    /**
+     * <p>Provides configuration to determine how to group results by document
+     * attribute value, and how to display them (collapsed or expanded) under a
+     * designated primary document for each group.</p>
+     */
+    inline void SetCollapseConfiguration(CollapseConfiguration&& value) { m_collapseConfigurationHasBeenSet = true; m_collapseConfiguration = std::move(value); }
+
+    /**
+     * <p>Provides configuration to determine how to group results by document
+     * attribute value, and how to display them (collapsed or expanded) under a
+     * designated primary document for each group.</p>
+     */
+    inline QueryRequest& WithCollapseConfiguration(const CollapseConfiguration& value) { SetCollapseConfiguration(value); return *this;}
+
+    /**
+     * <p>Provides configuration to determine how to group results by document
+     * attribute value, and how to display them (collapsed or expanded) under a
+     * designated primary document for each group.</p>
+     */
+    inline QueryRequest& WithCollapseConfiguration(CollapseConfiguration&& value) { SetCollapseConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_indexId;
@@ -725,6 +858,9 @@ namespace Model
     SortingConfiguration m_sortingConfiguration;
     bool m_sortingConfigurationHasBeenSet = false;
 
+    Aws::Vector<SortingConfiguration> m_sortingConfigurations;
+    bool m_sortingConfigurationsHasBeenSet = false;
+
     UserContext m_userContext;
     bool m_userContextHasBeenSet = false;
 
@@ -733,6 +869,9 @@ namespace Model
 
     SpellCorrectionConfiguration m_spellCorrectionConfiguration;
     bool m_spellCorrectionConfigurationHasBeenSet = false;
+
+    CollapseConfiguration m_collapseConfiguration;
+    bool m_collapseConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

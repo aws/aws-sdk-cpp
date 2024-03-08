@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EventNotificationResourceType::NOT_SET:
+            return {};
           case EventNotificationResourceType::SidewalkAccount:
             return "SidewalkAccount";
           case EventNotificationResourceType::WirelessDevice:

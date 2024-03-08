@@ -37,8 +37,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* EC2InstanceConnectClient::SERVICE_NAME = "ec2-instance-connect";
-const char* EC2InstanceConnectClient::ALLOCATION_TAG = "EC2InstanceConnectClient";
+namespace Aws
+{
+  namespace EC2InstanceConnect
+  {
+    const char SERVICE_NAME[] = "ec2-instance-connect";
+    const char ALLOCATION_TAG[] = "EC2InstanceConnectClient";
+  }
+}
+const char* EC2InstanceConnectClient::GetServiceName() {return SERVICE_NAME;}
+const char* EC2InstanceConnectClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 EC2InstanceConnectClient::EC2InstanceConnectClient(const EC2InstanceConnect::EC2InstanceConnectClientConfiguration& clientConfiguration,
                                                    std::shared_ptr<EC2InstanceConnectEndpointProviderBase> endpointProvider) :
@@ -50,7 +58,7 @@ EC2InstanceConnectClient::EC2InstanceConnectClient(const EC2InstanceConnect::EC2
             Aws::MakeShared<EC2InstanceConnectErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<EC2InstanceConnectEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -66,7 +74,7 @@ EC2InstanceConnectClient::EC2InstanceConnectClient(const AWSCredentials& credent
             Aws::MakeShared<EC2InstanceConnectErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<EC2InstanceConnectEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -82,7 +90,7 @@ EC2InstanceConnectClient::EC2InstanceConnectClient(const std::shared_ptr<AWSCred
             Aws::MakeShared<EC2InstanceConnectErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<EC2InstanceConnectEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

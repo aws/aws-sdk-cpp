@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MetricType::NOT_SET:
+            return {};
           case MetricType::ASGAverageCPUUtilization:
             return "ASGAverageCPUUtilization";
           case MetricType::ASGAverageNetworkIn:

@@ -21,6 +21,8 @@ CreatePipelineRequest::CreatePipelineRequest() :
     m_pipelineConfigurationBodyHasBeenSet(false),
     m_logPublishingOptionsHasBeenSet(false),
     m_vpcOptionsHasBeenSet(false),
+    m_bufferOptionsHasBeenSet(false),
+    m_encryptionAtRestOptionsHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -62,6 +64,18 @@ Aws::String CreatePipelineRequest::SerializePayload() const
   if(m_vpcOptionsHasBeenSet)
   {
    payload.WithObject("VpcOptions", m_vpcOptions.Jsonize());
+
+  }
+
+  if(m_bufferOptionsHasBeenSet)
+  {
+   payload.WithObject("BufferOptions", m_bufferOptions.Jsonize());
+
+  }
+
+  if(m_encryptionAtRestOptionsHasBeenSet)
+  {
+   payload.WithObject("EncryptionAtRestOptions", m_encryptionAtRestOptions.Jsonize());
 
   }
 

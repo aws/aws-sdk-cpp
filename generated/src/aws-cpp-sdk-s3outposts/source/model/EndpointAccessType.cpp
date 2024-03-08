@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EndpointAccessType::NOT_SET:
+            return {};
           case EndpointAccessType::Private:
             return "Private";
           case EndpointAccessType::CustomerOwnedIp:

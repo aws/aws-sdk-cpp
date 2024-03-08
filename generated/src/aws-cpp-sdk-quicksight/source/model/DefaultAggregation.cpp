@@ -94,6 +94,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DefaultAggregation::NOT_SET:
+            return {};
           case DefaultAggregation::SUM:
             return "SUM";
           case DefaultAggregation::MAX:

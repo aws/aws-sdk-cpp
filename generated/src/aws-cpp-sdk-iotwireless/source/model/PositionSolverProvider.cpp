@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PositionSolverProvider::NOT_SET:
+            return {};
           case PositionSolverProvider::Semtech:
             return "Semtech";
           default:

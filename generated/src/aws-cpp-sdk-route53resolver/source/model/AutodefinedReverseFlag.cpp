@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AutodefinedReverseFlag::NOT_SET:
+            return {};
           case AutodefinedReverseFlag::ENABLE:
             return "ENABLE";
           case AutodefinedReverseFlag::DISABLE:

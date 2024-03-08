@@ -26,6 +26,7 @@ namespace Aws
         static const int IAM_ROLE_ARN_HASH = HashingUtils::HashString("IAM_ROLE_ARN");
         static const int USB_DEVICE_FILTER_STRINGS_HASH = HashingUtils::HashString("USB_DEVICE_FILTER_STRINGS");
         static const int SESSION_SCRIPT_S3_LOCATION_HASH = HashingUtils::HashString("SESSION_SCRIPT_S3_LOCATION");
+        static const int MAX_SESSIONS_PER_INSTANCE_HASH = HashingUtils::HashString("MAX_SESSIONS_PER_INSTANCE");
 
 
         FleetAttribute GetFleetAttributeForName(const Aws::String& name)
@@ -55,6 +56,10 @@ namespace Aws
           {
             return FleetAttribute::SESSION_SCRIPT_S3_LOCATION;
           }
+          else if (hashCode == MAX_SESSIONS_PER_INSTANCE_HASH)
+          {
+            return FleetAttribute::MAX_SESSIONS_PER_INSTANCE;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -69,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FleetAttribute::NOT_SET:
+            return {};
           case FleetAttribute::VPC_CONFIGURATION:
             return "VPC_CONFIGURATION";
           case FleetAttribute::VPC_CONFIGURATION_SECURITY_GROUP_IDS:
@@ -81,6 +88,8 @@ namespace Aws
             return "USB_DEVICE_FILTER_STRINGS";
           case FleetAttribute::SESSION_SCRIPT_S3_LOCATION:
             return "SESSION_SCRIPT_S3_LOCATION";
+          case FleetAttribute::MAX_SESSIONS_PER_INSTANCE:
+            return "MAX_SESSIONS_PER_INSTANCE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

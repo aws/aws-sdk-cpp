@@ -13,6 +13,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 StartAssessmentRequest::StartAssessmentRequest() : 
+    m_assessmentDataSourceType(AssessmentDataSourceType::NOT_SET),
+    m_assessmentDataSourceTypeHasBeenSet(false),
     m_assessmentTargetsHasBeenSet(false),
     m_s3bucketForAnalysisDataHasBeenSet(false),
     m_s3bucketForReportDataHasBeenSet(false)
@@ -22,6 +24,11 @@ StartAssessmentRequest::StartAssessmentRequest() :
 Aws::String StartAssessmentRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_assessmentDataSourceTypeHasBeenSet)
+  {
+   payload.WithString("assessmentDataSourceType", AssessmentDataSourceTypeMapper::GetNameForAssessmentDataSourceType(m_assessmentDataSourceType));
+  }
 
   if(m_assessmentTargetsHasBeenSet)
   {

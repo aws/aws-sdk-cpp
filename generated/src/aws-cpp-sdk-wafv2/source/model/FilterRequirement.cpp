@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FilterRequirement::NOT_SET:
+            return {};
           case FilterRequirement::MEETS_ALL:
             return "MEETS_ALL";
           case FilterRequirement::MEETS_ANY:

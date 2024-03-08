@@ -28,6 +28,7 @@
 #include <aws/connectcases/model/CreateTemplateResult.h>
 #include <aws/connectcases/model/DeleteDomainResult.h>
 #include <aws/connectcases/model/GetCaseResult.h>
+#include <aws/connectcases/model/GetCaseAuditEventsResult.h>
 #include <aws/connectcases/model/GetCaseEventConfigurationResult.h>
 #include <aws/connectcases/model/GetDomainResult.h>
 #include <aws/connectcases/model/GetLayoutResult.h>
@@ -97,6 +98,7 @@ namespace Aws
       class CreateTemplateRequest;
       class DeleteDomainRequest;
       class GetCaseRequest;
+      class GetCaseAuditEventsRequest;
       class GetCaseEventConfigurationRequest;
       class GetDomainRequest;
       class GetLayoutRequest;
@@ -130,6 +132,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreateTemplateResult, ConnectCasesError> CreateTemplateOutcome;
       typedef Aws::Utils::Outcome<DeleteDomainResult, ConnectCasesError> DeleteDomainOutcome;
       typedef Aws::Utils::Outcome<GetCaseResult, ConnectCasesError> GetCaseOutcome;
+      typedef Aws::Utils::Outcome<GetCaseAuditEventsResult, ConnectCasesError> GetCaseAuditEventsOutcome;
       typedef Aws::Utils::Outcome<GetCaseEventConfigurationResult, ConnectCasesError> GetCaseEventConfigurationOutcome;
       typedef Aws::Utils::Outcome<GetDomainResult, ConnectCasesError> GetDomainOutcome;
       typedef Aws::Utils::Outcome<GetLayoutResult, ConnectCasesError> GetLayoutOutcome;
@@ -163,6 +166,7 @@ namespace Aws
       typedef std::future<CreateTemplateOutcome> CreateTemplateOutcomeCallable;
       typedef std::future<DeleteDomainOutcome> DeleteDomainOutcomeCallable;
       typedef std::future<GetCaseOutcome> GetCaseOutcomeCallable;
+      typedef std::future<GetCaseAuditEventsOutcome> GetCaseAuditEventsOutcomeCallable;
       typedef std::future<GetCaseEventConfigurationOutcome> GetCaseEventConfigurationOutcomeCallable;
       typedef std::future<GetDomainOutcome> GetDomainOutcomeCallable;
       typedef std::future<GetLayoutOutcome> GetLayoutOutcomeCallable;
@@ -199,6 +203,7 @@ namespace Aws
     typedef std::function<void(const ConnectCasesClient*, const Model::CreateTemplateRequest&, const Model::CreateTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTemplateResponseReceivedHandler;
     typedef std::function<void(const ConnectCasesClient*, const Model::DeleteDomainRequest&, const Model::DeleteDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDomainResponseReceivedHandler;
     typedef std::function<void(const ConnectCasesClient*, const Model::GetCaseRequest&, const Model::GetCaseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCaseResponseReceivedHandler;
+    typedef std::function<void(const ConnectCasesClient*, const Model::GetCaseAuditEventsRequest&, const Model::GetCaseAuditEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCaseAuditEventsResponseReceivedHandler;
     typedef std::function<void(const ConnectCasesClient*, const Model::GetCaseEventConfigurationRequest&, const Model::GetCaseEventConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCaseEventConfigurationResponseReceivedHandler;
     typedef std::function<void(const ConnectCasesClient*, const Model::GetDomainRequest&, const Model::GetDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDomainResponseReceivedHandler;
     typedef std::function<void(const ConnectCasesClient*, const Model::GetLayoutRequest&, const Model::GetLayoutOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLayoutResponseReceivedHandler;

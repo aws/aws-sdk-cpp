@@ -110,6 +110,27 @@ namespace Model
      */
     inline AgentInfo& WithConnectedToAgentTimestamp(Aws::Utils::DateTime&& value) { SetConnectedToAgentTimestamp(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Agent pause duration for a contact in seconds.</p>
+     */
+    inline int GetAgentPauseDurationInSeconds() const{ return m_agentPauseDurationInSeconds; }
+
+    /**
+     * <p>Agent pause duration for a contact in seconds.</p>
+     */
+    inline bool AgentPauseDurationInSecondsHasBeenSet() const { return m_agentPauseDurationInSecondsHasBeenSet; }
+
+    /**
+     * <p>Agent pause duration for a contact in seconds.</p>
+     */
+    inline void SetAgentPauseDurationInSeconds(int value) { m_agentPauseDurationInSecondsHasBeenSet = true; m_agentPauseDurationInSeconds = value; }
+
+    /**
+     * <p>Agent pause duration for a contact in seconds.</p>
+     */
+    inline AgentInfo& WithAgentPauseDurationInSeconds(int value) { SetAgentPauseDurationInSeconds(value); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -117,6 +138,9 @@ namespace Model
 
     Aws::Utils::DateTime m_connectedToAgentTimestamp;
     bool m_connectedToAgentTimestampHasBeenSet = false;
+
+    int m_agentPauseDurationInSeconds;
+    bool m_agentPauseDurationInSecondsHasBeenSet = false;
   };
 
 } // namespace Model

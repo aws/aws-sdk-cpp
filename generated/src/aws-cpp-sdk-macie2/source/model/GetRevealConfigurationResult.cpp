@@ -35,6 +35,12 @@ GetRevealConfigurationResult& GetRevealConfigurationResult::operator =(const Aws
 
   }
 
+  if(jsonValue.ValueExists("retrievalConfiguration"))
+  {
+    m_retrievalConfiguration = jsonValue.GetObject("retrievalConfiguration");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

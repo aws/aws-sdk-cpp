@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OriginEnvironment::NOT_SET:
+            return {};
           case OriginEnvironment::ON_PREMISES:
             return "ON_PREMISES";
           case OriginEnvironment::AWS:

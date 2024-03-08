@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReplicationRunState::NOT_SET:
+            return {};
           case ReplicationRunState::PENDING:
             return "PENDING";
           case ReplicationRunState::MISSED:

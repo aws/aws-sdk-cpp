@@ -21,14 +21,16 @@ namespace Model
 Filters::Filters() : 
     m_queuesHasBeenSet(false),
     m_channelsHasBeenSet(false),
-    m_routingProfilesHasBeenSet(false)
+    m_routingProfilesHasBeenSet(false),
+    m_routingStepExpressionsHasBeenSet(false)
 {
 }
 
 Filters::Filters(JsonView jsonValue) : 
     m_queuesHasBeenSet(false),
     m_channelsHasBeenSet(false),
-    m_routingProfilesHasBeenSet(false)
+    m_routingProfilesHasBeenSet(false),
+    m_routingStepExpressionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -63,6 +65,16 @@ Filters& Filters::operator =(JsonView jsonValue)
       m_routingProfiles.push_back(routingProfilesJsonList[routingProfilesIndex].AsString());
     }
     m_routingProfilesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RoutingStepExpressions"))
+  {
+    Aws::Utils::Array<JsonView> routingStepExpressionsJsonList = jsonValue.GetArray("RoutingStepExpressions");
+    for(unsigned routingStepExpressionsIndex = 0; routingStepExpressionsIndex < routingStepExpressionsJsonList.GetLength(); ++routingStepExpressionsIndex)
+    {
+      m_routingStepExpressions.push_back(routingStepExpressionsJsonList[routingStepExpressionsIndex].AsString());
+    }
+    m_routingStepExpressionsHasBeenSet = true;
   }
 
   return *this;
@@ -102,6 +114,17 @@ JsonValue Filters::Jsonize() const
      routingProfilesJsonList[routingProfilesIndex].AsString(m_routingProfiles[routingProfilesIndex]);
    }
    payload.WithArray("RoutingProfiles", std::move(routingProfilesJsonList));
+
+  }
+
+  if(m_routingStepExpressionsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> routingStepExpressionsJsonList(m_routingStepExpressions.size());
+   for(unsigned routingStepExpressionsIndex = 0; routingStepExpressionsIndex < routingStepExpressionsJsonList.GetLength(); ++routingStepExpressionsIndex)
+   {
+     routingStepExpressionsJsonList[routingStepExpressionsIndex].AsString(m_routingStepExpressions[routingStepExpressionsIndex]);
+   }
+   payload.WithArray("RoutingStepExpressions", std::move(routingStepExpressionsJsonList));
 
   }
 

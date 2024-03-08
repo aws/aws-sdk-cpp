@@ -23,8 +23,8 @@ namespace LexRuntimeV2
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef LexRuntimeV2ClientConfiguration ClientConfigurationType;
       typedef LexRuntimeV2EndpointProvider EndpointProviderType;
@@ -34,14 +34,14 @@ namespace LexRuntimeV2
         * is not specified, it will be initialized to default values.
         */
         LexRuntimeV2Client(const Aws::LexRuntimeV2::LexRuntimeV2ClientConfiguration& clientConfiguration = Aws::LexRuntimeV2::LexRuntimeV2ClientConfiguration(),
-                           std::shared_ptr<LexRuntimeV2EndpointProviderBase> endpointProvider = Aws::MakeShared<LexRuntimeV2EndpointProvider>(ALLOCATION_TAG));
+                           std::shared_ptr<LexRuntimeV2EndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         LexRuntimeV2Client(const Aws::Auth::AWSCredentials& credentials,
-                           std::shared_ptr<LexRuntimeV2EndpointProviderBase> endpointProvider = Aws::MakeShared<LexRuntimeV2EndpointProvider>(ALLOCATION_TAG),
+                           std::shared_ptr<LexRuntimeV2EndpointProviderBase> endpointProvider = nullptr,
                            const Aws::LexRuntimeV2::LexRuntimeV2ClientConfiguration& clientConfiguration = Aws::LexRuntimeV2::LexRuntimeV2ClientConfiguration());
 
        /**
@@ -49,7 +49,7 @@ namespace LexRuntimeV2
         * the default http client factory will be used
         */
         LexRuntimeV2Client(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                           std::shared_ptr<LexRuntimeV2EndpointProviderBase> endpointProvider = Aws::MakeShared<LexRuntimeV2EndpointProvider>(ALLOCATION_TAG),
+                           std::shared_ptr<LexRuntimeV2EndpointProviderBase> endpointProvider = nullptr,
                            const Aws::LexRuntimeV2::LexRuntimeV2ClientConfiguration& clientConfiguration = Aws::LexRuntimeV2::LexRuntimeV2ClientConfiguration());
 
 

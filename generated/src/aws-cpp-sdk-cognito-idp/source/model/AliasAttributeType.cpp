@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AliasAttributeType::NOT_SET:
+            return {};
           case AliasAttributeType::phone_number:
             return "phone_number";
           case AliasAttributeType::email:

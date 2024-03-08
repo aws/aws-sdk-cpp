@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SpecialValue::NOT_SET:
+            return {};
           case SpecialValue::EMPTY:
             return "EMPTY";
           case SpecialValue::NULL_:

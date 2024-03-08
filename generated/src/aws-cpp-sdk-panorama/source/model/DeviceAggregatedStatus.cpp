@@ -89,6 +89,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DeviceAggregatedStatus::NOT_SET:
+            return {};
           case DeviceAggregatedStatus::ERROR_:
             return "ERROR";
           case DeviceAggregatedStatus::AWAITING_PROVISIONING:

@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AgentStatus::NOT_SET:
+            return {};
           case AgentStatus::SUCCESS:
             return "SUCCESS";
           case AgentStatus::FAILED:

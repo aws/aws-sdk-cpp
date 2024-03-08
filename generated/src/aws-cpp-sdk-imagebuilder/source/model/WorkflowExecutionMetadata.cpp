@@ -35,7 +35,8 @@ WorkflowExecutionMetadata::WorkflowExecutionMetadata() :
     m_totalStepsSkipped(0),
     m_totalStepsSkippedHasBeenSet(false),
     m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+    m_endTimeHasBeenSet(false),
+    m_parallelGroupHasBeenSet(false)
 {
 }
 
@@ -56,7 +57,8 @@ WorkflowExecutionMetadata::WorkflowExecutionMetadata(JsonView jsonValue) :
     m_totalStepsSkipped(0),
     m_totalStepsSkippedHasBeenSet(false),
     m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+    m_endTimeHasBeenSet(false),
+    m_parallelGroupHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -140,6 +142,13 @@ WorkflowExecutionMetadata& WorkflowExecutionMetadata::operator =(JsonView jsonVa
     m_endTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("parallelGroup"))
+  {
+    m_parallelGroup = jsonValue.GetString("parallelGroup");
+
+    m_parallelGroupHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -208,6 +217,12 @@ JsonValue WorkflowExecutionMetadata::Jsonize() const
   if(m_endTimeHasBeenSet)
   {
    payload.WithString("endTime", m_endTime);
+
+  }
+
+  if(m_parallelGroupHasBeenSet)
+  {
+   payload.WithString("parallelGroup", m_parallelGroup);
 
   }
 

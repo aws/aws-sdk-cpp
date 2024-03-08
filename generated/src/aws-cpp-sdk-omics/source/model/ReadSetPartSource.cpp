@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReadSetPartSource::NOT_SET:
+            return {};
           case ReadSetPartSource::SOURCE1:
             return "SOURCE1";
           case ReadSetPartSource::SOURCE2:

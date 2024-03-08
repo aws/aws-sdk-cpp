@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Action::NOT_SET:
+            return {};
           case Action::initiateDatabaseReset:
             return "initiateDatabaseReset";
           case Action::performDatabaseReset:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PortfolioShareType::NOT_SET:
+            return {};
           case PortfolioShareType::IMPORTED:
             return "IMPORTED";
           case PortfolioShareType::AWS_SERVICECATALOG:

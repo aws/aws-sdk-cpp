@@ -84,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OperationName::NOT_SET:
+            return {};
           case OperationName::LambdaInvoke:
             return "LambdaInvoke";
           case OperationName::S3PutObjectCopy:

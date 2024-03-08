@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DescribeEndpointsMode::NOT_SET:
+            return {};
           case DescribeEndpointsMode::DEFAULT:
             return "DEFAULT";
           case DescribeEndpointsMode::GET_ONLY:

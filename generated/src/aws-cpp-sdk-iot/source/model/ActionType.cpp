@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ActionType::NOT_SET:
+            return {};
           case ActionType::PUBLISH:
             return "PUBLISH";
           case ActionType::SUBSCRIBE:

@@ -924,32 +924,56 @@ namespace Model
 
 
     /**
-     * <p>The boot mode of the virtual machine.</p>
+     * <p>The boot mode of the virtual machine.</p>  <p>The
+     * <code>uefi-preferred</code> boot mode isn't supported for importing images. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/vm-import/latest/userguide/prerequisites.html#vmimport-boot-modes">Boot
+     * modes</a> in the <i>VM Import/Export User Guide</i>.</p> 
      */
     inline const BootModeValues& GetBootMode() const{ return m_bootMode; }
 
     /**
-     * <p>The boot mode of the virtual machine.</p>
+     * <p>The boot mode of the virtual machine.</p>  <p>The
+     * <code>uefi-preferred</code> boot mode isn't supported for importing images. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/vm-import/latest/userguide/prerequisites.html#vmimport-boot-modes">Boot
+     * modes</a> in the <i>VM Import/Export User Guide</i>.</p> 
      */
     inline bool BootModeHasBeenSet() const { return m_bootModeHasBeenSet; }
 
     /**
-     * <p>The boot mode of the virtual machine.</p>
+     * <p>The boot mode of the virtual machine.</p>  <p>The
+     * <code>uefi-preferred</code> boot mode isn't supported for importing images. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/vm-import/latest/userguide/prerequisites.html#vmimport-boot-modes">Boot
+     * modes</a> in the <i>VM Import/Export User Guide</i>.</p> 
      */
     inline void SetBootMode(const BootModeValues& value) { m_bootModeHasBeenSet = true; m_bootMode = value; }
 
     /**
-     * <p>The boot mode of the virtual machine.</p>
+     * <p>The boot mode of the virtual machine.</p>  <p>The
+     * <code>uefi-preferred</code> boot mode isn't supported for importing images. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/vm-import/latest/userguide/prerequisites.html#vmimport-boot-modes">Boot
+     * modes</a> in the <i>VM Import/Export User Guide</i>.</p> 
      */
     inline void SetBootMode(BootModeValues&& value) { m_bootModeHasBeenSet = true; m_bootMode = std::move(value); }
 
     /**
-     * <p>The boot mode of the virtual machine.</p>
+     * <p>The boot mode of the virtual machine.</p>  <p>The
+     * <code>uefi-preferred</code> boot mode isn't supported for importing images. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/vm-import/latest/userguide/prerequisites.html#vmimport-boot-modes">Boot
+     * modes</a> in the <i>VM Import/Export User Guide</i>.</p> 
      */
     inline ImportImageRequest& WithBootMode(const BootModeValues& value) { SetBootMode(value); return *this;}
 
     /**
-     * <p>The boot mode of the virtual machine.</p>
+     * <p>The boot mode of the virtual machine.</p>  <p>The
+     * <code>uefi-preferred</code> boot mode isn't supported for importing images. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/vm-import/latest/userguide/prerequisites.html#vmimport-boot-modes">Boot
+     * modes</a> in the <i>VM Import/Export User Guide</i>.</p> 
      */
     inline ImportImageRequest& WithBootMode(BootModeValues&& value) { SetBootMode(std::move(value)); return *this;}
 

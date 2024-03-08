@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case H264Syntax::NOT_SET:
+            return {};
           case H264Syntax::DEFAULT:
             return "DEFAULT";
           case H264Syntax::RP2027:

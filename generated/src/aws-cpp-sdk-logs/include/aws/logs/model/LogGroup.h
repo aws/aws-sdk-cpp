@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/logs/model/DataProtectionStatus.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/logs/model/LogGroupClass.h>
 #include <aws/logs/model/InheritedProperty.h>
 #include <utility>
 
@@ -141,42 +142,122 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the log group.</p>
+     * <p>The Amazon Resource Name (ARN) of the log group. This version of the ARN
+     * includes a trailing <code>:*</code> after the log group name. </p> <p>Use this
+     * version to refer to the ARN in IAM policies when specifying permissions for most
+     * API actions. The exception is when specifying permissions for <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_TagResource.html">TagResource</a>,
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UntagResource.html">UntagResource</a>,
+     * and <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsForResource.html">ListTagsForResource</a>.
+     * The permissions for those three actions require the ARN version that doesn't
+     * include a trailing <code>:*</code>.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the log group.</p>
+     * <p>The Amazon Resource Name (ARN) of the log group. This version of the ARN
+     * includes a trailing <code>:*</code> after the log group name. </p> <p>Use this
+     * version to refer to the ARN in IAM policies when specifying permissions for most
+     * API actions. The exception is when specifying permissions for <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_TagResource.html">TagResource</a>,
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UntagResource.html">UntagResource</a>,
+     * and <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsForResource.html">ListTagsForResource</a>.
+     * The permissions for those three actions require the ARN version that doesn't
+     * include a trailing <code>:*</code>.</p>
      */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the log group.</p>
+     * <p>The Amazon Resource Name (ARN) of the log group. This version of the ARN
+     * includes a trailing <code>:*</code> after the log group name. </p> <p>Use this
+     * version to refer to the ARN in IAM policies when specifying permissions for most
+     * API actions. The exception is when specifying permissions for <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_TagResource.html">TagResource</a>,
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UntagResource.html">UntagResource</a>,
+     * and <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsForResource.html">ListTagsForResource</a>.
+     * The permissions for those three actions require the ARN version that doesn't
+     * include a trailing <code>:*</code>.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the log group.</p>
+     * <p>The Amazon Resource Name (ARN) of the log group. This version of the ARN
+     * includes a trailing <code>:*</code> after the log group name. </p> <p>Use this
+     * version to refer to the ARN in IAM policies when specifying permissions for most
+     * API actions. The exception is when specifying permissions for <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_TagResource.html">TagResource</a>,
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UntagResource.html">UntagResource</a>,
+     * and <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsForResource.html">ListTagsForResource</a>.
+     * The permissions for those three actions require the ARN version that doesn't
+     * include a trailing <code>:*</code>.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the log group.</p>
+     * <p>The Amazon Resource Name (ARN) of the log group. This version of the ARN
+     * includes a trailing <code>:*</code> after the log group name. </p> <p>Use this
+     * version to refer to the ARN in IAM policies when specifying permissions for most
+     * API actions. The exception is when specifying permissions for <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_TagResource.html">TagResource</a>,
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UntagResource.html">UntagResource</a>,
+     * and <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsForResource.html">ListTagsForResource</a>.
+     * The permissions for those three actions require the ARN version that doesn't
+     * include a trailing <code>:*</code>.</p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the log group.</p>
+     * <p>The Amazon Resource Name (ARN) of the log group. This version of the ARN
+     * includes a trailing <code>:*</code> after the log group name. </p> <p>Use this
+     * version to refer to the ARN in IAM policies when specifying permissions for most
+     * API actions. The exception is when specifying permissions for <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_TagResource.html">TagResource</a>,
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UntagResource.html">UntagResource</a>,
+     * and <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsForResource.html">ListTagsForResource</a>.
+     * The permissions for those three actions require the ARN version that doesn't
+     * include a trailing <code>:*</code>.</p>
      */
     inline LogGroup& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the log group.</p>
+     * <p>The Amazon Resource Name (ARN) of the log group. This version of the ARN
+     * includes a trailing <code>:*</code> after the log group name. </p> <p>Use this
+     * version to refer to the ARN in IAM policies when specifying permissions for most
+     * API actions. The exception is when specifying permissions for <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_TagResource.html">TagResource</a>,
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UntagResource.html">UntagResource</a>,
+     * and <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsForResource.html">ListTagsForResource</a>.
+     * The permissions for those three actions require the ARN version that doesn't
+     * include a trailing <code>:*</code>.</p>
      */
     inline LogGroup& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the log group.</p>
+     * <p>The Amazon Resource Name (ARN) of the log group. This version of the ARN
+     * includes a trailing <code>:*</code> after the log group name. </p> <p>Use this
+     * version to refer to the ARN in IAM policies when specifying permissions for most
+     * API actions. The exception is when specifying permissions for <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_TagResource.html">TagResource</a>,
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UntagResource.html">UntagResource</a>,
+     * and <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsForResource.html">ListTagsForResource</a>.
+     * The permissions for those three actions require the ARN version that doesn't
+     * include a trailing <code>:*</code>.</p>
      */
     inline LogGroup& WithArn(const char* value) { SetArn(value); return *this;}
 
@@ -342,6 +423,208 @@ namespace Model
      */
     inline LogGroup& AddInheritedProperties(InheritedProperty&& value) { m_inheritedPropertiesHasBeenSet = true; m_inheritedProperties.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>This specifies the log group class for this log group. There are two
+     * classes:</p> <ul> <li> <p>The <code>Standard</code> log class supports all
+     * CloudWatch Logs features.</p> </li> <li> <p>The <code>Infrequent Access</code>
+     * log class supports a subset of CloudWatch Logs features and incurs lower
+     * costs.</p> </li> </ul> <p>For details about the features supported by each
+     * class, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log
+     * classes</a> </p>
+     */
+    inline const LogGroupClass& GetLogGroupClass() const{ return m_logGroupClass; }
+
+    /**
+     * <p>This specifies the log group class for this log group. There are two
+     * classes:</p> <ul> <li> <p>The <code>Standard</code> log class supports all
+     * CloudWatch Logs features.</p> </li> <li> <p>The <code>Infrequent Access</code>
+     * log class supports a subset of CloudWatch Logs features and incurs lower
+     * costs.</p> </li> </ul> <p>For details about the features supported by each
+     * class, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log
+     * classes</a> </p>
+     */
+    inline bool LogGroupClassHasBeenSet() const { return m_logGroupClassHasBeenSet; }
+
+    /**
+     * <p>This specifies the log group class for this log group. There are two
+     * classes:</p> <ul> <li> <p>The <code>Standard</code> log class supports all
+     * CloudWatch Logs features.</p> </li> <li> <p>The <code>Infrequent Access</code>
+     * log class supports a subset of CloudWatch Logs features and incurs lower
+     * costs.</p> </li> </ul> <p>For details about the features supported by each
+     * class, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log
+     * classes</a> </p>
+     */
+    inline void SetLogGroupClass(const LogGroupClass& value) { m_logGroupClassHasBeenSet = true; m_logGroupClass = value; }
+
+    /**
+     * <p>This specifies the log group class for this log group. There are two
+     * classes:</p> <ul> <li> <p>The <code>Standard</code> log class supports all
+     * CloudWatch Logs features.</p> </li> <li> <p>The <code>Infrequent Access</code>
+     * log class supports a subset of CloudWatch Logs features and incurs lower
+     * costs.</p> </li> </ul> <p>For details about the features supported by each
+     * class, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log
+     * classes</a> </p>
+     */
+    inline void SetLogGroupClass(LogGroupClass&& value) { m_logGroupClassHasBeenSet = true; m_logGroupClass = std::move(value); }
+
+    /**
+     * <p>This specifies the log group class for this log group. There are two
+     * classes:</p> <ul> <li> <p>The <code>Standard</code> log class supports all
+     * CloudWatch Logs features.</p> </li> <li> <p>The <code>Infrequent Access</code>
+     * log class supports a subset of CloudWatch Logs features and incurs lower
+     * costs.</p> </li> </ul> <p>For details about the features supported by each
+     * class, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log
+     * classes</a> </p>
+     */
+    inline LogGroup& WithLogGroupClass(const LogGroupClass& value) { SetLogGroupClass(value); return *this;}
+
+    /**
+     * <p>This specifies the log group class for this log group. There are two
+     * classes:</p> <ul> <li> <p>The <code>Standard</code> log class supports all
+     * CloudWatch Logs features.</p> </li> <li> <p>The <code>Infrequent Access</code>
+     * log class supports a subset of CloudWatch Logs features and incurs lower
+     * costs.</p> </li> </ul> <p>For details about the features supported by each
+     * class, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log
+     * classes</a> </p>
+     */
+    inline LogGroup& WithLogGroupClass(LogGroupClass&& value) { SetLogGroupClass(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the log group. This version of the ARN
+     * doesn't include a trailing <code>:*</code> after the log group name. </p> <p>Use
+     * this version to refer to the ARN in the following situations:</p> <ul> <li>
+     * <p>In the <code>logGroupIdentifier</code> input field in many CloudWatch Logs
+     * APIs.</p> </li> <li> <p>In the <code>resourceArn</code> field in tagging
+     * APIs</p> </li> <li> <p>In IAM policies, when specifying permissions for <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_TagResource.html">TagResource</a>,
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UntagResource.html">UntagResource</a>,
+     * and <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsForResource.html">ListTagsForResource</a>.</p>
+     * </li> </ul>
+     */
+    inline const Aws::String& GetLogGroupArn() const{ return m_logGroupArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the log group. This version of the ARN
+     * doesn't include a trailing <code>:*</code> after the log group name. </p> <p>Use
+     * this version to refer to the ARN in the following situations:</p> <ul> <li>
+     * <p>In the <code>logGroupIdentifier</code> input field in many CloudWatch Logs
+     * APIs.</p> </li> <li> <p>In the <code>resourceArn</code> field in tagging
+     * APIs</p> </li> <li> <p>In IAM policies, when specifying permissions for <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_TagResource.html">TagResource</a>,
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UntagResource.html">UntagResource</a>,
+     * and <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsForResource.html">ListTagsForResource</a>.</p>
+     * </li> </ul>
+     */
+    inline bool LogGroupArnHasBeenSet() const { return m_logGroupArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the log group. This version of the ARN
+     * doesn't include a trailing <code>:*</code> after the log group name. </p> <p>Use
+     * this version to refer to the ARN in the following situations:</p> <ul> <li>
+     * <p>In the <code>logGroupIdentifier</code> input field in many CloudWatch Logs
+     * APIs.</p> </li> <li> <p>In the <code>resourceArn</code> field in tagging
+     * APIs</p> </li> <li> <p>In IAM policies, when specifying permissions for <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_TagResource.html">TagResource</a>,
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UntagResource.html">UntagResource</a>,
+     * and <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsForResource.html">ListTagsForResource</a>.</p>
+     * </li> </ul>
+     */
+    inline void SetLogGroupArn(const Aws::String& value) { m_logGroupArnHasBeenSet = true; m_logGroupArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the log group. This version of the ARN
+     * doesn't include a trailing <code>:*</code> after the log group name. </p> <p>Use
+     * this version to refer to the ARN in the following situations:</p> <ul> <li>
+     * <p>In the <code>logGroupIdentifier</code> input field in many CloudWatch Logs
+     * APIs.</p> </li> <li> <p>In the <code>resourceArn</code> field in tagging
+     * APIs</p> </li> <li> <p>In IAM policies, when specifying permissions for <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_TagResource.html">TagResource</a>,
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UntagResource.html">UntagResource</a>,
+     * and <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsForResource.html">ListTagsForResource</a>.</p>
+     * </li> </ul>
+     */
+    inline void SetLogGroupArn(Aws::String&& value) { m_logGroupArnHasBeenSet = true; m_logGroupArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the log group. This version of the ARN
+     * doesn't include a trailing <code>:*</code> after the log group name. </p> <p>Use
+     * this version to refer to the ARN in the following situations:</p> <ul> <li>
+     * <p>In the <code>logGroupIdentifier</code> input field in many CloudWatch Logs
+     * APIs.</p> </li> <li> <p>In the <code>resourceArn</code> field in tagging
+     * APIs</p> </li> <li> <p>In IAM policies, when specifying permissions for <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_TagResource.html">TagResource</a>,
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UntagResource.html">UntagResource</a>,
+     * and <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsForResource.html">ListTagsForResource</a>.</p>
+     * </li> </ul>
+     */
+    inline void SetLogGroupArn(const char* value) { m_logGroupArnHasBeenSet = true; m_logGroupArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the log group. This version of the ARN
+     * doesn't include a trailing <code>:*</code> after the log group name. </p> <p>Use
+     * this version to refer to the ARN in the following situations:</p> <ul> <li>
+     * <p>In the <code>logGroupIdentifier</code> input field in many CloudWatch Logs
+     * APIs.</p> </li> <li> <p>In the <code>resourceArn</code> field in tagging
+     * APIs</p> </li> <li> <p>In IAM policies, when specifying permissions for <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_TagResource.html">TagResource</a>,
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UntagResource.html">UntagResource</a>,
+     * and <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsForResource.html">ListTagsForResource</a>.</p>
+     * </li> </ul>
+     */
+    inline LogGroup& WithLogGroupArn(const Aws::String& value) { SetLogGroupArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the log group. This version of the ARN
+     * doesn't include a trailing <code>:*</code> after the log group name. </p> <p>Use
+     * this version to refer to the ARN in the following situations:</p> <ul> <li>
+     * <p>In the <code>logGroupIdentifier</code> input field in many CloudWatch Logs
+     * APIs.</p> </li> <li> <p>In the <code>resourceArn</code> field in tagging
+     * APIs</p> </li> <li> <p>In IAM policies, when specifying permissions for <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_TagResource.html">TagResource</a>,
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UntagResource.html">UntagResource</a>,
+     * and <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsForResource.html">ListTagsForResource</a>.</p>
+     * </li> </ul>
+     */
+    inline LogGroup& WithLogGroupArn(Aws::String&& value) { SetLogGroupArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the log group. This version of the ARN
+     * doesn't include a trailing <code>:*</code> after the log group name. </p> <p>Use
+     * this version to refer to the ARN in the following situations:</p> <ul> <li>
+     * <p>In the <code>logGroupIdentifier</code> input field in many CloudWatch Logs
+     * APIs.</p> </li> <li> <p>In the <code>resourceArn</code> field in tagging
+     * APIs</p> </li> <li> <p>In IAM policies, when specifying permissions for <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_TagResource.html">TagResource</a>,
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UntagResource.html">UntagResource</a>,
+     * and <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsForResource.html">ListTagsForResource</a>.</p>
+     * </li> </ul>
+     */
+    inline LogGroup& WithLogGroupArn(const char* value) { SetLogGroupArn(value); return *this;}
+
   private:
 
     Aws::String m_logGroupName;
@@ -370,6 +653,12 @@ namespace Model
 
     Aws::Vector<InheritedProperty> m_inheritedProperties;
     bool m_inheritedPropertiesHasBeenSet = false;
+
+    LogGroupClass m_logGroupClass;
+    bool m_logGroupClassHasBeenSet = false;
+
+    Aws::String m_logGroupArn;
+    bool m_logGroupArnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InstancePatchStateOperatorType::NOT_SET:
+            return {};
           case InstancePatchStateOperatorType::Equal:
             return "Equal";
           case InstancePatchStateOperatorType::NotEqual:

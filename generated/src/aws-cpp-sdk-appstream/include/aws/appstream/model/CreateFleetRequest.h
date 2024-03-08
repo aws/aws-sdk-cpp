@@ -592,7 +592,7 @@ namespace Model
      * before this limit is reached, they are prompted to save any open documents
      * before being disconnected. After this time elapses, the instance is terminated
      * and replaced by a new instance.</p> <p>Specify a value between 600 and
-     * 360000.</p>
+     * 432000.</p>
      */
     inline int GetMaxUserDurationInSeconds() const{ return m_maxUserDurationInSeconds; }
 
@@ -602,7 +602,7 @@ namespace Model
      * before this limit is reached, they are prompted to save any open documents
      * before being disconnected. After this time elapses, the instance is terminated
      * and replaced by a new instance.</p> <p>Specify a value between 600 and
-     * 360000.</p>
+     * 432000.</p>
      */
     inline bool MaxUserDurationInSecondsHasBeenSet() const { return m_maxUserDurationInSecondsHasBeenSet; }
 
@@ -612,7 +612,7 @@ namespace Model
      * before this limit is reached, they are prompted to save any open documents
      * before being disconnected. After this time elapses, the instance is terminated
      * and replaced by a new instance.</p> <p>Specify a value between 600 and
-     * 360000.</p>
+     * 432000.</p>
      */
     inline void SetMaxUserDurationInSeconds(int value) { m_maxUserDurationInSecondsHasBeenSet = true; m_maxUserDurationInSeconds = value; }
 
@@ -622,7 +622,7 @@ namespace Model
      * before this limit is reached, they are prompted to save any open documents
      * before being disconnected. After this time elapses, the instance is terminated
      * and replaced by a new instance.</p> <p>Specify a value between 600 and
-     * 360000.</p>
+     * 432000.</p>
      */
     inline CreateFleetRequest& WithMaxUserDurationInSeconds(int value) { SetMaxUserDurationInSeconds(value); return *this;}
 
@@ -1406,6 +1406,31 @@ namespace Model
      */
     inline CreateFleetRequest& WithSessionScriptS3Location(S3Location&& value) { SetSessionScriptS3Location(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The maximum number of user sessions on an instance. This only applies to
+     * multi-session fleets.</p>
+     */
+    inline int GetMaxSessionsPerInstance() const{ return m_maxSessionsPerInstance; }
+
+    /**
+     * <p>The maximum number of user sessions on an instance. This only applies to
+     * multi-session fleets.</p>
+     */
+    inline bool MaxSessionsPerInstanceHasBeenSet() const { return m_maxSessionsPerInstanceHasBeenSet; }
+
+    /**
+     * <p>The maximum number of user sessions on an instance. This only applies to
+     * multi-session fleets.</p>
+     */
+    inline void SetMaxSessionsPerInstance(int value) { m_maxSessionsPerInstanceHasBeenSet = true; m_maxSessionsPerInstance = value; }
+
+    /**
+     * <p>The maximum number of user sessions on an instance. This only applies to
+     * multi-session fleets.</p>
+     */
+    inline CreateFleetRequest& WithMaxSessionsPerInstance(int value) { SetMaxSessionsPerInstance(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -1470,6 +1495,9 @@ namespace Model
 
     S3Location m_sessionScriptS3Location;
     bool m_sessionScriptS3LocationHasBeenSet = false;
+
+    int m_maxSessionsPerInstance;
+    bool m_maxSessionsPerInstanceHasBeenSet = false;
   };
 
 } // namespace Model

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CmafWriteSegmentTimelineInRepresentation::NOT_SET:
+            return {};
           case CmafWriteSegmentTimelineInRepresentation::ENABLED:
             return "ENABLED";
           case CmafWriteSegmentTimelineInRepresentation::DISABLED:

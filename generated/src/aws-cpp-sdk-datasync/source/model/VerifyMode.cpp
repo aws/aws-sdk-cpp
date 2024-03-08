@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VerifyMode::NOT_SET:
+            return {};
           case VerifyMode::POINT_IN_TIME_CONSISTENT:
             return "POINT_IN_TIME_CONSISTENT";
           case VerifyMode::ONLY_FILES_TRANSFERRED:

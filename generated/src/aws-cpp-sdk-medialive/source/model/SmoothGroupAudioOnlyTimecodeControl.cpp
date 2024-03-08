@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SmoothGroupAudioOnlyTimecodeControl::NOT_SET:
+            return {};
           case SmoothGroupAudioOnlyTimecodeControl::PASSTHROUGH:
             return "PASSTHROUGH";
           case SmoothGroupAudioOnlyTimecodeControl::USE_CONFIGURED_CLOCK:

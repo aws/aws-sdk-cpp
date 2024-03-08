@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RedshiftS3BackupMode::NOT_SET:
+            return {};
           case RedshiftS3BackupMode::Disabled:
             return "Disabled";
           case RedshiftS3BackupMode::Enabled:

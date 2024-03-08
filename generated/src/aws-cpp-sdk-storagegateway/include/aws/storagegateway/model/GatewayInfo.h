@@ -458,6 +458,96 @@ namespace Model
      */
     inline GatewayInfo& WithHostEnvironmentId(const char* value) { SetHostEnvironmentId(value); return *this;}
 
+
+    /**
+     * <p>Date after which this gateway will not receive software updates for new
+     * features and bug fixes.</p>
+     */
+    inline const Aws::String& GetDeprecationDate() const{ return m_deprecationDate; }
+
+    /**
+     * <p>Date after which this gateway will not receive software updates for new
+     * features and bug fixes.</p>
+     */
+    inline bool DeprecationDateHasBeenSet() const { return m_deprecationDateHasBeenSet; }
+
+    /**
+     * <p>Date after which this gateway will not receive software updates for new
+     * features and bug fixes.</p>
+     */
+    inline void SetDeprecationDate(const Aws::String& value) { m_deprecationDateHasBeenSet = true; m_deprecationDate = value; }
+
+    /**
+     * <p>Date after which this gateway will not receive software updates for new
+     * features and bug fixes.</p>
+     */
+    inline void SetDeprecationDate(Aws::String&& value) { m_deprecationDateHasBeenSet = true; m_deprecationDate = std::move(value); }
+
+    /**
+     * <p>Date after which this gateway will not receive software updates for new
+     * features and bug fixes.</p>
+     */
+    inline void SetDeprecationDate(const char* value) { m_deprecationDateHasBeenSet = true; m_deprecationDate.assign(value); }
+
+    /**
+     * <p>Date after which this gateway will not receive software updates for new
+     * features and bug fixes.</p>
+     */
+    inline GatewayInfo& WithDeprecationDate(const Aws::String& value) { SetDeprecationDate(value); return *this;}
+
+    /**
+     * <p>Date after which this gateway will not receive software updates for new
+     * features and bug fixes.</p>
+     */
+    inline GatewayInfo& WithDeprecationDate(Aws::String&& value) { SetDeprecationDate(std::move(value)); return *this;}
+
+    /**
+     * <p>Date after which this gateway will not receive software updates for new
+     * features and bug fixes.</p>
+     */
+    inline GatewayInfo& WithDeprecationDate(const char* value) { SetDeprecationDate(value); return *this;}
+
+
+    /**
+     * <p>The version number of the software running on the gateway appliance.</p>
+     */
+    inline const Aws::String& GetSoftwareVersion() const{ return m_softwareVersion; }
+
+    /**
+     * <p>The version number of the software running on the gateway appliance.</p>
+     */
+    inline bool SoftwareVersionHasBeenSet() const { return m_softwareVersionHasBeenSet; }
+
+    /**
+     * <p>The version number of the software running on the gateway appliance.</p>
+     */
+    inline void SetSoftwareVersion(const Aws::String& value) { m_softwareVersionHasBeenSet = true; m_softwareVersion = value; }
+
+    /**
+     * <p>The version number of the software running on the gateway appliance.</p>
+     */
+    inline void SetSoftwareVersion(Aws::String&& value) { m_softwareVersionHasBeenSet = true; m_softwareVersion = std::move(value); }
+
+    /**
+     * <p>The version number of the software running on the gateway appliance.</p>
+     */
+    inline void SetSoftwareVersion(const char* value) { m_softwareVersionHasBeenSet = true; m_softwareVersion.assign(value); }
+
+    /**
+     * <p>The version number of the software running on the gateway appliance.</p>
+     */
+    inline GatewayInfo& WithSoftwareVersion(const Aws::String& value) { SetSoftwareVersion(value); return *this;}
+
+    /**
+     * <p>The version number of the software running on the gateway appliance.</p>
+     */
+    inline GatewayInfo& WithSoftwareVersion(Aws::String&& value) { SetSoftwareVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>The version number of the software running on the gateway appliance.</p>
+     */
+    inline GatewayInfo& WithSoftwareVersion(const char* value) { SetSoftwareVersion(value); return *this;}
+
   private:
 
     Aws::String m_gatewayId;
@@ -486,6 +576,12 @@ namespace Model
 
     Aws::String m_hostEnvironmentId;
     bool m_hostEnvironmentIdHasBeenSet = false;
+
+    Aws::String m_deprecationDate;
+    bool m_deprecationDateHasBeenSet = false;
+
+    Aws::String m_softwareVersion;
+    bool m_softwareVersionHasBeenSet = false;
   };
 
 } // namespace Model

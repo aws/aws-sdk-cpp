@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BandwidthReductionFilterStrength::NOT_SET:
+            return {};
           case BandwidthReductionFilterStrength::LOW:
             return "LOW";
           case BandwidthReductionFilterStrength::MEDIUM:

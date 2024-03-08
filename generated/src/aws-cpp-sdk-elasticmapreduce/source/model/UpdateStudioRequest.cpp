@@ -17,7 +17,8 @@ UpdateStudioRequest::UpdateStudioRequest() :
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_subnetIdsHasBeenSet(false),
-    m_defaultS3LocationHasBeenSet(false)
+    m_defaultS3LocationHasBeenSet(false),
+    m_encryptionKeyArnHasBeenSet(false)
 {
 }
 
@@ -57,6 +58,12 @@ Aws::String UpdateStudioRequest::SerializePayload() const
   if(m_defaultS3LocationHasBeenSet)
   {
    payload.WithString("DefaultS3Location", m_defaultS3Location);
+
+  }
+
+  if(m_encryptionKeyArnHasBeenSet)
+  {
+   payload.WithString("EncryptionKeyArn", m_encryptionKeyArn);
 
   }
 

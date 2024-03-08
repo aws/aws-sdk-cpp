@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/iottwinmaker/model/ParentEntityUpdateRequest.h>
 #include <aws/iottwinmaker/model/ComponentUpdateRequest.h>
+#include <aws/iottwinmaker/model/CompositeComponentUpdateRequest.h>
 #include <utility>
 
 namespace Aws
@@ -273,6 +274,91 @@ namespace Model
 
 
     /**
+     * <p>This is an object that maps strings to <code>compositeComponent</code>
+     * updates in the request. Each key of the map represents the
+     * <code>componentPath</code> of the <code>compositeComponent</code>.</p>
+     */
+    inline const Aws::Map<Aws::String, CompositeComponentUpdateRequest>& GetCompositeComponentUpdates() const{ return m_compositeComponentUpdates; }
+
+    /**
+     * <p>This is an object that maps strings to <code>compositeComponent</code>
+     * updates in the request. Each key of the map represents the
+     * <code>componentPath</code> of the <code>compositeComponent</code>.</p>
+     */
+    inline bool CompositeComponentUpdatesHasBeenSet() const { return m_compositeComponentUpdatesHasBeenSet; }
+
+    /**
+     * <p>This is an object that maps strings to <code>compositeComponent</code>
+     * updates in the request. Each key of the map represents the
+     * <code>componentPath</code> of the <code>compositeComponent</code>.</p>
+     */
+    inline void SetCompositeComponentUpdates(const Aws::Map<Aws::String, CompositeComponentUpdateRequest>& value) { m_compositeComponentUpdatesHasBeenSet = true; m_compositeComponentUpdates = value; }
+
+    /**
+     * <p>This is an object that maps strings to <code>compositeComponent</code>
+     * updates in the request. Each key of the map represents the
+     * <code>componentPath</code> of the <code>compositeComponent</code>.</p>
+     */
+    inline void SetCompositeComponentUpdates(Aws::Map<Aws::String, CompositeComponentUpdateRequest>&& value) { m_compositeComponentUpdatesHasBeenSet = true; m_compositeComponentUpdates = std::move(value); }
+
+    /**
+     * <p>This is an object that maps strings to <code>compositeComponent</code>
+     * updates in the request. Each key of the map represents the
+     * <code>componentPath</code> of the <code>compositeComponent</code>.</p>
+     */
+    inline UpdateEntityRequest& WithCompositeComponentUpdates(const Aws::Map<Aws::String, CompositeComponentUpdateRequest>& value) { SetCompositeComponentUpdates(value); return *this;}
+
+    /**
+     * <p>This is an object that maps strings to <code>compositeComponent</code>
+     * updates in the request. Each key of the map represents the
+     * <code>componentPath</code> of the <code>compositeComponent</code>.</p>
+     */
+    inline UpdateEntityRequest& WithCompositeComponentUpdates(Aws::Map<Aws::String, CompositeComponentUpdateRequest>&& value) { SetCompositeComponentUpdates(std::move(value)); return *this;}
+
+    /**
+     * <p>This is an object that maps strings to <code>compositeComponent</code>
+     * updates in the request. Each key of the map represents the
+     * <code>componentPath</code> of the <code>compositeComponent</code>.</p>
+     */
+    inline UpdateEntityRequest& AddCompositeComponentUpdates(const Aws::String& key, const CompositeComponentUpdateRequest& value) { m_compositeComponentUpdatesHasBeenSet = true; m_compositeComponentUpdates.emplace(key, value); return *this; }
+
+    /**
+     * <p>This is an object that maps strings to <code>compositeComponent</code>
+     * updates in the request. Each key of the map represents the
+     * <code>componentPath</code> of the <code>compositeComponent</code>.</p>
+     */
+    inline UpdateEntityRequest& AddCompositeComponentUpdates(Aws::String&& key, const CompositeComponentUpdateRequest& value) { m_compositeComponentUpdatesHasBeenSet = true; m_compositeComponentUpdates.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>This is an object that maps strings to <code>compositeComponent</code>
+     * updates in the request. Each key of the map represents the
+     * <code>componentPath</code> of the <code>compositeComponent</code>.</p>
+     */
+    inline UpdateEntityRequest& AddCompositeComponentUpdates(const Aws::String& key, CompositeComponentUpdateRequest&& value) { m_compositeComponentUpdatesHasBeenSet = true; m_compositeComponentUpdates.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>This is an object that maps strings to <code>compositeComponent</code>
+     * updates in the request. Each key of the map represents the
+     * <code>componentPath</code> of the <code>compositeComponent</code>.</p>
+     */
+    inline UpdateEntityRequest& AddCompositeComponentUpdates(Aws::String&& key, CompositeComponentUpdateRequest&& value) { m_compositeComponentUpdatesHasBeenSet = true; m_compositeComponentUpdates.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>This is an object that maps strings to <code>compositeComponent</code>
+     * updates in the request. Each key of the map represents the
+     * <code>componentPath</code> of the <code>compositeComponent</code>.</p>
+     */
+    inline UpdateEntityRequest& AddCompositeComponentUpdates(const char* key, CompositeComponentUpdateRequest&& value) { m_compositeComponentUpdatesHasBeenSet = true; m_compositeComponentUpdates.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>This is an object that maps strings to <code>compositeComponent</code>
+     * updates in the request. Each key of the map represents the
+     * <code>componentPath</code> of the <code>compositeComponent</code>.</p>
+     */
+    inline UpdateEntityRequest& AddCompositeComponentUpdates(const char* key, const CompositeComponentUpdateRequest& value) { m_compositeComponentUpdatesHasBeenSet = true; m_compositeComponentUpdates.emplace(key, value); return *this; }
+
+
+    /**
      * <p>An object that describes the update request for a parent entity.</p>
      */
     inline const ParentEntityUpdateRequest& GetParentEntityUpdate() const{ return m_parentEntityUpdate; }
@@ -318,6 +404,9 @@ namespace Model
 
     Aws::Map<Aws::String, ComponentUpdateRequest> m_componentUpdates;
     bool m_componentUpdatesHasBeenSet = false;
+
+    Aws::Map<Aws::String, CompositeComponentUpdateRequest> m_compositeComponentUpdates;
+    bool m_compositeComponentUpdatesHasBeenSet = false;
 
     ParentEntityUpdateRequest m_parentEntityUpdate;
     bool m_parentEntityUpdateHasBeenSet = false;

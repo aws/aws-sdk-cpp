@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InputMode::NOT_SET:
+            return {};
           case InputMode::Pipe:
             return "Pipe";
           case InputMode::File:

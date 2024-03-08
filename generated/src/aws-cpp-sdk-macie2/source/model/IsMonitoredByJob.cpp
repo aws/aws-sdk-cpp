@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case IsMonitoredByJob::NOT_SET:
+            return {};
           case IsMonitoredByJob::TRUE:
             return "TRUE";
           case IsMonitoredByJob::FALSE:

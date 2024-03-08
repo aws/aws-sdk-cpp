@@ -27,8 +27,8 @@ namespace Model
    * <p>Contains the notebook instance lifecycle configuration script.</p> <p>Each
    * lifecycle configuration script has a limit of 16384 characters.</p> <p>The value
    * of the <code>$PATH</code> environment variable that is available to both scripts
-   * is <code>/sbin:bin:/usr/sbin:/usr/bin</code>.</p> <p>View CloudWatch Logs for
-   * notebook instance lifecycle configurations in log group
+   * is <code>/sbin:bin:/usr/sbin:/usr/bin</code>.</p> <p>View Amazon CloudWatch Logs
+   * for notebook instance lifecycle configurations in log group
    * <code>/aws/sagemaker/NotebookInstances</code> in log stream
    * <code>[notebook-instance-name]/[LifecycleConfigHook]</code>.</p> <p>Lifecycle
    * configuration scripts cannot run for longer than 5 minutes. If a script runs for

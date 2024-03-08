@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HlsIvInManifest::NOT_SET:
+            return {};
           case HlsIvInManifest::EXCLUDE:
             return "EXCLUDE";
           case HlsIvInManifest::INCLUDE:

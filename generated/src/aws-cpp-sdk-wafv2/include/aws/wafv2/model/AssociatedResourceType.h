@@ -16,7 +16,11 @@ namespace Model
   enum class AssociatedResourceType
   {
     NOT_SET,
-    CLOUDFRONT
+    CLOUDFRONT,
+    API_GATEWAY,
+    COGNITO_USER_POOL,
+    APP_RUNNER_SERVICE,
+    VERIFIED_ACCESS_INSTANCE
   };
 
 namespace AssociatedResourceTypeMapper

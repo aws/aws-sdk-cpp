@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DataUploadFrequency::NOT_SET:
+            return {};
           case DataUploadFrequency::PT5M:
             return "PT5M";
           case DataUploadFrequency::PT10M:

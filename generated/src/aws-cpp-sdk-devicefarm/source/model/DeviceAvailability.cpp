@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DeviceAvailability::NOT_SET:
+            return {};
           case DeviceAvailability::TEMPORARY_NOT_AVAILABLE:
             return "TEMPORARY_NOT_AVAILABLE";
           case DeviceAvailability::BUSY:

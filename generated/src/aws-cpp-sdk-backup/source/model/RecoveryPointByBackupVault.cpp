@@ -44,7 +44,9 @@ RecoveryPointByBackupVault::RecoveryPointByBackupVault() :
     m_compositeMemberIdentifierHasBeenSet(false),
     m_isParent(false),
     m_isParentHasBeenSet(false),
-    m_resourceNameHasBeenSet(false)
+    m_resourceNameHasBeenSet(false),
+    m_vaultType(VaultType::NOT_SET),
+    m_vaultTypeHasBeenSet(false)
 {
 }
 
@@ -74,7 +76,9 @@ RecoveryPointByBackupVault::RecoveryPointByBackupVault(JsonView jsonValue) :
     m_compositeMemberIdentifierHasBeenSet(false),
     m_isParent(false),
     m_isParentHasBeenSet(false),
-    m_resourceNameHasBeenSet(false)
+    m_resourceNameHasBeenSet(false),
+    m_vaultType(VaultType::NOT_SET),
+    m_vaultTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -235,6 +239,13 @@ RecoveryPointByBackupVault& RecoveryPointByBackupVault::operator =(JsonView json
     m_resourceNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("VaultType"))
+  {
+    m_vaultType = VaultTypeMapper::GetVaultTypeForName(jsonValue.GetString("VaultType"));
+
+    m_vaultTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -368,6 +379,11 @@ JsonValue RecoveryPointByBackupVault::Jsonize() const
   {
    payload.WithString("ResourceName", m_resourceName);
 
+  }
+
+  if(m_vaultTypeHasBeenSet)
+  {
+   payload.WithString("VaultType", VaultTypeMapper::GetNameForVaultType(m_vaultType));
   }
 
   return payload;

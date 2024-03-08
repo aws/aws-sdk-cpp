@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AzureBlobAuthenticationType::NOT_SET:
+            return {};
           case AzureBlobAuthenticationType::SAS:
             return "SAS";
           default:

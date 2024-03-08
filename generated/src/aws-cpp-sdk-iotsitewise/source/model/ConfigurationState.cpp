@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ConfigurationState::NOT_SET:
+            return {};
           case ConfigurationState::ACTIVE:
             return "ACTIVE";
           case ConfigurationState::UPDATE_IN_PROGRESS:

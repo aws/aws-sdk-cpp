@@ -20,10 +20,16 @@ namespace Model
 
 Participant::Participant() : 
     m_attributesHasBeenSet(false),
+    m_browserNameHasBeenSet(false),
+    m_browserVersionHasBeenSet(false),
     m_firstJoinTimeHasBeenSet(false),
+    m_ispNameHasBeenSet(false),
+    m_osNameHasBeenSet(false),
+    m_osVersionHasBeenSet(false),
     m_participantIdHasBeenSet(false),
     m_published(false),
     m_publishedHasBeenSet(false),
+    m_sdkVersionHasBeenSet(false),
     m_state(ParticipantState::NOT_SET),
     m_stateHasBeenSet(false),
     m_userIdHasBeenSet(false)
@@ -32,10 +38,16 @@ Participant::Participant() :
 
 Participant::Participant(JsonView jsonValue) : 
     m_attributesHasBeenSet(false),
+    m_browserNameHasBeenSet(false),
+    m_browserVersionHasBeenSet(false),
     m_firstJoinTimeHasBeenSet(false),
+    m_ispNameHasBeenSet(false),
+    m_osNameHasBeenSet(false),
+    m_osVersionHasBeenSet(false),
     m_participantIdHasBeenSet(false),
     m_published(false),
     m_publishedHasBeenSet(false),
+    m_sdkVersionHasBeenSet(false),
     m_state(ParticipantState::NOT_SET),
     m_stateHasBeenSet(false),
     m_userIdHasBeenSet(false)
@@ -55,11 +67,46 @@ Participant& Participant::operator =(JsonView jsonValue)
     m_attributesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("browserName"))
+  {
+    m_browserName = jsonValue.GetString("browserName");
+
+    m_browserNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("browserVersion"))
+  {
+    m_browserVersion = jsonValue.GetString("browserVersion");
+
+    m_browserVersionHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("firstJoinTime"))
   {
     m_firstJoinTime = jsonValue.GetString("firstJoinTime");
 
     m_firstJoinTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ispName"))
+  {
+    m_ispName = jsonValue.GetString("ispName");
+
+    m_ispNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("osName"))
+  {
+    m_osName = jsonValue.GetString("osName");
+
+    m_osNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("osVersion"))
+  {
+    m_osVersion = jsonValue.GetString("osVersion");
+
+    m_osVersionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("participantId"))
@@ -74,6 +121,13 @@ Participant& Participant::operator =(JsonView jsonValue)
     m_published = jsonValue.GetBool("published");
 
     m_publishedHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("sdkVersion"))
+  {
+    m_sdkVersion = jsonValue.GetString("sdkVersion");
+
+    m_sdkVersionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("state"))
@@ -108,9 +162,39 @@ JsonValue Participant::Jsonize() const
 
   }
 
+  if(m_browserNameHasBeenSet)
+  {
+   payload.WithString("browserName", m_browserName);
+
+  }
+
+  if(m_browserVersionHasBeenSet)
+  {
+   payload.WithString("browserVersion", m_browserVersion);
+
+  }
+
   if(m_firstJoinTimeHasBeenSet)
   {
    payload.WithString("firstJoinTime", m_firstJoinTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_ispNameHasBeenSet)
+  {
+   payload.WithString("ispName", m_ispName);
+
+  }
+
+  if(m_osNameHasBeenSet)
+  {
+   payload.WithString("osName", m_osName);
+
+  }
+
+  if(m_osVersionHasBeenSet)
+  {
+   payload.WithString("osVersion", m_osVersion);
+
   }
 
   if(m_participantIdHasBeenSet)
@@ -122,6 +206,12 @@ JsonValue Participant::Jsonize() const
   if(m_publishedHasBeenSet)
   {
    payload.WithBool("published", m_published);
+
+  }
+
+  if(m_sdkVersionHasBeenSet)
+  {
+   payload.WithString("sdkVersion", m_sdkVersion);
 
   }
 

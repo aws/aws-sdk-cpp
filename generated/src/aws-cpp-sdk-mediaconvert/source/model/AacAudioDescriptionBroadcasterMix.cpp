@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AacAudioDescriptionBroadcasterMix::NOT_SET:
+            return {};
           case AacAudioDescriptionBroadcasterMix::BROADCASTER_MIXED_AD:
             return "BROADCASTER_MIXED_AD";
           case AacAudioDescriptionBroadcasterMix::NORMAL:

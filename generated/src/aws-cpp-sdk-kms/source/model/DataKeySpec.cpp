@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DataKeySpec::NOT_SET:
+            return {};
           case DataKeySpec::AES_256:
             return "AES_256";
           case DataKeySpec::AES_128:

@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ScheduleStatus::NOT_SET:
+            return {};
           case ScheduleStatus::Pending:
             return "Pending";
           case ScheduleStatus::Failed:

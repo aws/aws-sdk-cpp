@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReturnValuesOnConditionCheckFailure::NOT_SET:
+            return {};
           case ReturnValuesOnConditionCheckFailure::ALL_OLD:
             return "ALL_OLD";
           case ReturnValuesOnConditionCheckFailure::NONE:

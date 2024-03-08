@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResourceSourceType::NOT_SET:
+            return {};
           case ResourceSourceType::AppTemplate:
             return "AppTemplate";
           case ResourceSourceType::Discovered:

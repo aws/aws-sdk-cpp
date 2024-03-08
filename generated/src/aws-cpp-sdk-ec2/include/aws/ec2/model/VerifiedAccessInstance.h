@@ -287,6 +287,31 @@ namespace Model
      */
     inline VerifiedAccessInstance& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Indicates whether support for Federal Information Processing Standards (FIPS)
+     * is enabled on the instance.</p>
+     */
+    inline bool GetFipsEnabled() const{ return m_fipsEnabled; }
+
+    /**
+     * <p>Indicates whether support for Federal Information Processing Standards (FIPS)
+     * is enabled on the instance.</p>
+     */
+    inline bool FipsEnabledHasBeenSet() const { return m_fipsEnabledHasBeenSet; }
+
+    /**
+     * <p>Indicates whether support for Federal Information Processing Standards (FIPS)
+     * is enabled on the instance.</p>
+     */
+    inline void SetFipsEnabled(bool value) { m_fipsEnabledHasBeenSet = true; m_fipsEnabled = value; }
+
+    /**
+     * <p>Indicates whether support for Federal Information Processing Standards (FIPS)
+     * is enabled on the instance.</p>
+     */
+    inline VerifiedAccessInstance& WithFipsEnabled(bool value) { SetFipsEnabled(value); return *this;}
+
   private:
 
     Aws::String m_verifiedAccessInstanceId;
@@ -306,6 +331,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    bool m_fipsEnabled;
+    bool m_fipsEnabledHasBeenSet = false;
   };
 
 } // namespace Model

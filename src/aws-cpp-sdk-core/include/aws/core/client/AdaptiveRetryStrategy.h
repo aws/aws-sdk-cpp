@@ -139,6 +139,8 @@ public:
     virtual void RequestBookkeeping(const HttpResponseOutcome& httpResponseOutcome) override;
     virtual void RequestBookkeeping(const HttpResponseOutcome& httpResponseOutcome, const AWSError<CoreErrors>& lastError) override;
 
+    const char* GetStrategyName() const override { return "adaptive";}
+
 protected:
     RetryTokenBucket m_retryTokenBucket;
     bool m_fastFail = false;

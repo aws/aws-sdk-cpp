@@ -41,6 +41,42 @@ namespace Model
 
 
     /**
+     * <p>The version of the DRS agent installed on the source server</p>
+     */
+    inline const Aws::String& GetAgentVersion() const{ return m_agentVersion; }
+
+    /**
+     * <p>The version of the DRS agent installed on the source server</p>
+     */
+    inline void SetAgentVersion(const Aws::String& value) { m_agentVersion = value; }
+
+    /**
+     * <p>The version of the DRS agent installed on the source server</p>
+     */
+    inline void SetAgentVersion(Aws::String&& value) { m_agentVersion = std::move(value); }
+
+    /**
+     * <p>The version of the DRS agent installed on the source server</p>
+     */
+    inline void SetAgentVersion(const char* value) { m_agentVersion.assign(value); }
+
+    /**
+     * <p>The version of the DRS agent installed on the source server</p>
+     */
+    inline DisconnectSourceServerResult& WithAgentVersion(const Aws::String& value) { SetAgentVersion(value); return *this;}
+
+    /**
+     * <p>The version of the DRS agent installed on the source server</p>
+     */
+    inline DisconnectSourceServerResult& WithAgentVersion(Aws::String&& value) { SetAgentVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>The version of the DRS agent installed on the source server</p>
+     */
+    inline DisconnectSourceServerResult& WithAgentVersion(const char* value) { SetAgentVersion(value); return *this;}
+
+
+    /**
      * <p>The ARN of the Source Server.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
@@ -506,6 +542,8 @@ namespace Model
     inline DisconnectSourceServerResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
 
   private:
+
+    Aws::String m_agentVersion;
 
     Aws::String m_arn;
 

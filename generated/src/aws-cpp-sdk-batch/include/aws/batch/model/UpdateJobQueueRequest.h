@@ -10,6 +10,7 @@
 #include <aws/batch/model/JQState.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/batch/model/ComputeEnvironmentOrder.h>
+#include <aws/batch/model/JobStateTimeLimitAction.h>
 #include <utility>
 
 namespace Aws
@@ -375,6 +376,63 @@ namespace Model
      */
     inline UpdateJobQueueRequest& AddComputeEnvironmentOrder(ComputeEnvironmentOrder&& value) { m_computeEnvironmentOrderHasBeenSet = true; m_computeEnvironmentOrder.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The set of actions that Batch perform on jobs that remain at the head of the
+     * job queue in the specified state longer than specified times. Batch will perform
+     * each action after <code>maxTimeSeconds</code> has passed.</p>
+     */
+    inline const Aws::Vector<JobStateTimeLimitAction>& GetJobStateTimeLimitActions() const{ return m_jobStateTimeLimitActions; }
+
+    /**
+     * <p>The set of actions that Batch perform on jobs that remain at the head of the
+     * job queue in the specified state longer than specified times. Batch will perform
+     * each action after <code>maxTimeSeconds</code> has passed.</p>
+     */
+    inline bool JobStateTimeLimitActionsHasBeenSet() const { return m_jobStateTimeLimitActionsHasBeenSet; }
+
+    /**
+     * <p>The set of actions that Batch perform on jobs that remain at the head of the
+     * job queue in the specified state longer than specified times. Batch will perform
+     * each action after <code>maxTimeSeconds</code> has passed.</p>
+     */
+    inline void SetJobStateTimeLimitActions(const Aws::Vector<JobStateTimeLimitAction>& value) { m_jobStateTimeLimitActionsHasBeenSet = true; m_jobStateTimeLimitActions = value; }
+
+    /**
+     * <p>The set of actions that Batch perform on jobs that remain at the head of the
+     * job queue in the specified state longer than specified times. Batch will perform
+     * each action after <code>maxTimeSeconds</code> has passed.</p>
+     */
+    inline void SetJobStateTimeLimitActions(Aws::Vector<JobStateTimeLimitAction>&& value) { m_jobStateTimeLimitActionsHasBeenSet = true; m_jobStateTimeLimitActions = std::move(value); }
+
+    /**
+     * <p>The set of actions that Batch perform on jobs that remain at the head of the
+     * job queue in the specified state longer than specified times. Batch will perform
+     * each action after <code>maxTimeSeconds</code> has passed.</p>
+     */
+    inline UpdateJobQueueRequest& WithJobStateTimeLimitActions(const Aws::Vector<JobStateTimeLimitAction>& value) { SetJobStateTimeLimitActions(value); return *this;}
+
+    /**
+     * <p>The set of actions that Batch perform on jobs that remain at the head of the
+     * job queue in the specified state longer than specified times. Batch will perform
+     * each action after <code>maxTimeSeconds</code> has passed.</p>
+     */
+    inline UpdateJobQueueRequest& WithJobStateTimeLimitActions(Aws::Vector<JobStateTimeLimitAction>&& value) { SetJobStateTimeLimitActions(std::move(value)); return *this;}
+
+    /**
+     * <p>The set of actions that Batch perform on jobs that remain at the head of the
+     * job queue in the specified state longer than specified times. Batch will perform
+     * each action after <code>maxTimeSeconds</code> has passed.</p>
+     */
+    inline UpdateJobQueueRequest& AddJobStateTimeLimitActions(const JobStateTimeLimitAction& value) { m_jobStateTimeLimitActionsHasBeenSet = true; m_jobStateTimeLimitActions.push_back(value); return *this; }
+
+    /**
+     * <p>The set of actions that Batch perform on jobs that remain at the head of the
+     * job queue in the specified state longer than specified times. Batch will perform
+     * each action after <code>maxTimeSeconds</code> has passed.</p>
+     */
+    inline UpdateJobQueueRequest& AddJobStateTimeLimitActions(JobStateTimeLimitAction&& value) { m_jobStateTimeLimitActionsHasBeenSet = true; m_jobStateTimeLimitActions.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_jobQueue;
@@ -391,6 +449,9 @@ namespace Model
 
     Aws::Vector<ComputeEnvironmentOrder> m_computeEnvironmentOrder;
     bool m_computeEnvironmentOrderHasBeenSet = false;
+
+    Aws::Vector<JobStateTimeLimitAction> m_jobStateTimeLimitActions;
+    bool m_jobStateTimeLimitActionsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PerformanceMode::NOT_SET:
+            return {};
           case PerformanceMode::generalPurpose:
             return "generalPurpose";
           case PerformanceMode::maxIO:

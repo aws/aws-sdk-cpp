@@ -29,8 +29,8 @@ namespace DLM
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef DLMClientConfiguration ClientConfigurationType;
       typedef DLMEndpointProvider EndpointProviderType;
@@ -40,14 +40,14 @@ namespace DLM
         * is not specified, it will be initialized to default values.
         */
         DLMClient(const Aws::DLM::DLMClientConfiguration& clientConfiguration = Aws::DLM::DLMClientConfiguration(),
-                  std::shared_ptr<DLMEndpointProviderBase> endpointProvider = Aws::MakeShared<DLMEndpointProvider>(ALLOCATION_TAG));
+                  std::shared_ptr<DLMEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         DLMClient(const Aws::Auth::AWSCredentials& credentials,
-                  std::shared_ptr<DLMEndpointProviderBase> endpointProvider = Aws::MakeShared<DLMEndpointProvider>(ALLOCATION_TAG),
+                  std::shared_ptr<DLMEndpointProviderBase> endpointProvider = nullptr,
                   const Aws::DLM::DLMClientConfiguration& clientConfiguration = Aws::DLM::DLMClientConfiguration());
 
        /**
@@ -55,7 +55,7 @@ namespace DLM
         * the default http client factory will be used
         */
         DLMClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                  std::shared_ptr<DLMEndpointProviderBase> endpointProvider = Aws::MakeShared<DLMEndpointProvider>(ALLOCATION_TAG),
+                  std::shared_ptr<DLMEndpointProviderBase> endpointProvider = nullptr,
                   const Aws::DLM::DLMClientConfiguration& clientConfiguration = Aws::DLM::DLMClientConfiguration());
 
 
@@ -84,9 +84,17 @@ namespace DLM
         virtual ~DLMClient();
 
         /**
-         * <p>Creates a policy to manage the lifecycle of the specified Amazon Web Services
-         * resources. You can create up to 100 lifecycle policies.</p><p><h3>See Also:</h3>
-         * <a
+         * <p>Creates an Amazon Data Lifecycle Manager lifecycle policy. Amazon Data
+         * Lifecycle Manager supports the following policy types:</p> <ul> <li> <p>Custom
+         * EBS snapshot policy</p> </li> <li> <p>Custom EBS-backed AMI policy</p> </li>
+         * <li> <p>Cross-account copy event policy</p> </li> <li> <p>Default policy for EBS
+         * snapshots</p> </li> <li> <p>Default policy for EBS-backed AMIs</p> </li> </ul>
+         * <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/policy-differences.html">
+         * Default policies vs custom policies</a>.</p>  <p>If you create a
+         * default policy, you can specify the request parameters either in the request
+         * body, or in the PolicyDetails request structure, but not both.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/CreateLifecyclePolicy">AWS
          * API Reference</a></p>
          */
@@ -141,8 +149,9 @@ namespace DLM
 
         /**
          * <p>Gets summary information about all or the specified data lifecycle
-         * policies.</p> <p>To get complete information about a policy, use
-         * <a>GetLifecyclePolicy</a>.</p><p><h3>See Also:</h3>   <a
+         * policies.</p> <p>To get complete information about a policy, use <a
+         * href="https://docs.aws.amazon.com/dlm/latest/APIReference/API_GetLifecyclePolicy.html">GetLifecyclePolicy</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/GetLifecyclePolicies">AWS
          * API Reference</a></p>
          */

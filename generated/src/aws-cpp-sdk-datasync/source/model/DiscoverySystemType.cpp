@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DiscoverySystemType::NOT_SET:
+            return {};
           case DiscoverySystemType::NetAppONTAP:
             return "NetAppONTAP";
           default:

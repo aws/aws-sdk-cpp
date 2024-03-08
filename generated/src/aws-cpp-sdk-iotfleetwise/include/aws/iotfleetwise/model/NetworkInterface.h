@@ -9,6 +9,7 @@
 #include <aws/iotfleetwise/model/NetworkInterfaceType.h>
 #include <aws/iotfleetwise/model/CanInterface.h>
 #include <aws/iotfleetwise/model/ObdInterface.h>
+#include <aws/iotfleetwise/model/VehicleMiddleware.h>
 #include <utility>
 
 namespace Aws
@@ -206,6 +207,43 @@ namespace Model
      */
     inline NetworkInterface& WithObdInterface(ObdInterface&& value) { SetObdInterface(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The vehicle middleware defined as a type of network interface. Examples of
+     * vehicle middleware include <code>ROS2</code> and <code>SOME/IP</code>.</p>
+     */
+    inline const VehicleMiddleware& GetVehicleMiddleware() const{ return m_vehicleMiddleware; }
+
+    /**
+     * <p>The vehicle middleware defined as a type of network interface. Examples of
+     * vehicle middleware include <code>ROS2</code> and <code>SOME/IP</code>.</p>
+     */
+    inline bool VehicleMiddlewareHasBeenSet() const { return m_vehicleMiddlewareHasBeenSet; }
+
+    /**
+     * <p>The vehicle middleware defined as a type of network interface. Examples of
+     * vehicle middleware include <code>ROS2</code> and <code>SOME/IP</code>.</p>
+     */
+    inline void SetVehicleMiddleware(const VehicleMiddleware& value) { m_vehicleMiddlewareHasBeenSet = true; m_vehicleMiddleware = value; }
+
+    /**
+     * <p>The vehicle middleware defined as a type of network interface. Examples of
+     * vehicle middleware include <code>ROS2</code> and <code>SOME/IP</code>.</p>
+     */
+    inline void SetVehicleMiddleware(VehicleMiddleware&& value) { m_vehicleMiddlewareHasBeenSet = true; m_vehicleMiddleware = std::move(value); }
+
+    /**
+     * <p>The vehicle middleware defined as a type of network interface. Examples of
+     * vehicle middleware include <code>ROS2</code> and <code>SOME/IP</code>.</p>
+     */
+    inline NetworkInterface& WithVehicleMiddleware(const VehicleMiddleware& value) { SetVehicleMiddleware(value); return *this;}
+
+    /**
+     * <p>The vehicle middleware defined as a type of network interface. Examples of
+     * vehicle middleware include <code>ROS2</code> and <code>SOME/IP</code>.</p>
+     */
+    inline NetworkInterface& WithVehicleMiddleware(VehicleMiddleware&& value) { SetVehicleMiddleware(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_interfaceId;
@@ -219,6 +257,9 @@ namespace Model
 
     ObdInterface m_obdInterface;
     bool m_obdInterfaceHasBeenSet = false;
+
+    VehicleMiddleware m_vehicleMiddleware;
+    bool m_vehicleMiddlewareHasBeenSet = false;
   };
 
 } // namespace Model

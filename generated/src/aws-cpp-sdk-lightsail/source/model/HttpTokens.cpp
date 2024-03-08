@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HttpTokens::NOT_SET:
+            return {};
           case HttpTokens::optional:
             return "optional";
           case HttpTokens::required:

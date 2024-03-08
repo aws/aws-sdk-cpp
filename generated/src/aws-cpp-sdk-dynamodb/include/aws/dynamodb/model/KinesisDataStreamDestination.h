@@ -7,6 +7,7 @@
 #include <aws/dynamodb/DynamoDB_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/dynamodb/model/DestinationStatus.h>
+#include <aws/dynamodb/model/ApproximateCreationDateTimePrecision.h>
 #include <utility>
 
 namespace Aws
@@ -150,6 +151,43 @@ namespace Model
      */
     inline KinesisDataStreamDestination& WithDestinationStatusDescription(const char* value) { SetDestinationStatusDescription(value); return *this;}
 
+
+    /**
+     * <p>The precision of the Kinesis data stream timestamp. The values are either
+     * <code>MILLISECOND</code> or <code>MICROSECOND</code>.</p>
+     */
+    inline const ApproximateCreationDateTimePrecision& GetApproximateCreationDateTimePrecision() const{ return m_approximateCreationDateTimePrecision; }
+
+    /**
+     * <p>The precision of the Kinesis data stream timestamp. The values are either
+     * <code>MILLISECOND</code> or <code>MICROSECOND</code>.</p>
+     */
+    inline bool ApproximateCreationDateTimePrecisionHasBeenSet() const { return m_approximateCreationDateTimePrecisionHasBeenSet; }
+
+    /**
+     * <p>The precision of the Kinesis data stream timestamp. The values are either
+     * <code>MILLISECOND</code> or <code>MICROSECOND</code>.</p>
+     */
+    inline void SetApproximateCreationDateTimePrecision(const ApproximateCreationDateTimePrecision& value) { m_approximateCreationDateTimePrecisionHasBeenSet = true; m_approximateCreationDateTimePrecision = value; }
+
+    /**
+     * <p>The precision of the Kinesis data stream timestamp. The values are either
+     * <code>MILLISECOND</code> or <code>MICROSECOND</code>.</p>
+     */
+    inline void SetApproximateCreationDateTimePrecision(ApproximateCreationDateTimePrecision&& value) { m_approximateCreationDateTimePrecisionHasBeenSet = true; m_approximateCreationDateTimePrecision = std::move(value); }
+
+    /**
+     * <p>The precision of the Kinesis data stream timestamp. The values are either
+     * <code>MILLISECOND</code> or <code>MICROSECOND</code>.</p>
+     */
+    inline KinesisDataStreamDestination& WithApproximateCreationDateTimePrecision(const ApproximateCreationDateTimePrecision& value) { SetApproximateCreationDateTimePrecision(value); return *this;}
+
+    /**
+     * <p>The precision of the Kinesis data stream timestamp. The values are either
+     * <code>MILLISECOND</code> or <code>MICROSECOND</code>.</p>
+     */
+    inline KinesisDataStreamDestination& WithApproximateCreationDateTimePrecision(ApproximateCreationDateTimePrecision&& value) { SetApproximateCreationDateTimePrecision(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_streamArn;
@@ -160,6 +198,9 @@ namespace Model
 
     Aws::String m_destinationStatusDescription;
     bool m_destinationStatusDescriptionHasBeenSet = false;
+
+    ApproximateCreationDateTimePrecision m_approximateCreationDateTimePrecision;
+    bool m_approximateCreationDateTimePrecisionHasBeenSet = false;
   };
 
 } // namespace Model

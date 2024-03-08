@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FileSystemAccessMode::NOT_SET:
+            return {};
           case FileSystemAccessMode::rw:
             return "rw";
           case FileSystemAccessMode::ro:

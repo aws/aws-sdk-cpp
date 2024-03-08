@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RelativeFileVersionEnum::NOT_SET:
+            return {};
           case RelativeFileVersionEnum::BEFORE:
             return "BEFORE";
           case RelativeFileVersionEnum::AFTER:

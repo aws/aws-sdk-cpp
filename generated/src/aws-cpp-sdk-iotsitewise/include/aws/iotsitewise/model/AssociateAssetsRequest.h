@@ -34,113 +34,177 @@ namespace Model
 
 
     /**
-     * <p>The ID of the parent asset.</p>
+     * <p>The ID of the parent asset. This can be either the actual ID in UUID format,
+     * or else <code>externalId:</code> followed by the external ID, if it has one. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline const Aws::String& GetAssetId() const{ return m_assetId; }
 
     /**
-     * <p>The ID of the parent asset.</p>
+     * <p>The ID of the parent asset. This can be either the actual ID in UUID format,
+     * or else <code>externalId:</code> followed by the external ID, if it has one. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline bool AssetIdHasBeenSet() const { return m_assetIdHasBeenSet; }
 
     /**
-     * <p>The ID of the parent asset.</p>
+     * <p>The ID of the parent asset. This can be either the actual ID in UUID format,
+     * or else <code>externalId:</code> followed by the external ID, if it has one. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline void SetAssetId(const Aws::String& value) { m_assetIdHasBeenSet = true; m_assetId = value; }
 
     /**
-     * <p>The ID of the parent asset.</p>
+     * <p>The ID of the parent asset. This can be either the actual ID in UUID format,
+     * or else <code>externalId:</code> followed by the external ID, if it has one. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline void SetAssetId(Aws::String&& value) { m_assetIdHasBeenSet = true; m_assetId = std::move(value); }
 
     /**
-     * <p>The ID of the parent asset.</p>
+     * <p>The ID of the parent asset. This can be either the actual ID in UUID format,
+     * or else <code>externalId:</code> followed by the external ID, if it has one. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline void SetAssetId(const char* value) { m_assetIdHasBeenSet = true; m_assetId.assign(value); }
 
     /**
-     * <p>The ID of the parent asset.</p>
+     * <p>The ID of the parent asset. This can be either the actual ID in UUID format,
+     * or else <code>externalId:</code> followed by the external ID, if it has one. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline AssociateAssetsRequest& WithAssetId(const Aws::String& value) { SetAssetId(value); return *this;}
 
     /**
-     * <p>The ID of the parent asset.</p>
+     * <p>The ID of the parent asset. This can be either the actual ID in UUID format,
+     * or else <code>externalId:</code> followed by the external ID, if it has one. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline AssociateAssetsRequest& WithAssetId(Aws::String&& value) { SetAssetId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the parent asset.</p>
+     * <p>The ID of the parent asset. This can be either the actual ID in UUID format,
+     * or else <code>externalId:</code> followed by the external ID, if it has one. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline AssociateAssetsRequest& WithAssetId(const char* value) { SetAssetId(value); return *this;}
 
 
     /**
-     * <p>The ID of a hierarchy in the parent asset's model. Hierarchies allow
-     * different groupings of assets to be formed that all come from the same asset
-     * model. For more information, see <a
+     * <p>The ID of a hierarchy in the parent asset's model. (This can be either the
+     * actual ID in UUID format, or else <code>externalId:</code> followed by the
+     * external ID, if it has one. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.)
+     * Hierarchies allow different groupings of assets to be formed that all come from
+     * the same asset model. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset
      * hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline const Aws::String& GetHierarchyId() const{ return m_hierarchyId; }
 
     /**
-     * <p>The ID of a hierarchy in the parent asset's model. Hierarchies allow
-     * different groupings of assets to be formed that all come from the same asset
-     * model. For more information, see <a
+     * <p>The ID of a hierarchy in the parent asset's model. (This can be either the
+     * actual ID in UUID format, or else <code>externalId:</code> followed by the
+     * external ID, if it has one. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.)
+     * Hierarchies allow different groupings of assets to be formed that all come from
+     * the same asset model. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset
      * hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline bool HierarchyIdHasBeenSet() const { return m_hierarchyIdHasBeenSet; }
 
     /**
-     * <p>The ID of a hierarchy in the parent asset's model. Hierarchies allow
-     * different groupings of assets to be formed that all come from the same asset
-     * model. For more information, see <a
+     * <p>The ID of a hierarchy in the parent asset's model. (This can be either the
+     * actual ID in UUID format, or else <code>externalId:</code> followed by the
+     * external ID, if it has one. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.)
+     * Hierarchies allow different groupings of assets to be formed that all come from
+     * the same asset model. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset
      * hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline void SetHierarchyId(const Aws::String& value) { m_hierarchyIdHasBeenSet = true; m_hierarchyId = value; }
 
     /**
-     * <p>The ID of a hierarchy in the parent asset's model. Hierarchies allow
-     * different groupings of assets to be formed that all come from the same asset
-     * model. For more information, see <a
+     * <p>The ID of a hierarchy in the parent asset's model. (This can be either the
+     * actual ID in UUID format, or else <code>externalId:</code> followed by the
+     * external ID, if it has one. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.)
+     * Hierarchies allow different groupings of assets to be formed that all come from
+     * the same asset model. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset
      * hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline void SetHierarchyId(Aws::String&& value) { m_hierarchyIdHasBeenSet = true; m_hierarchyId = std::move(value); }
 
     /**
-     * <p>The ID of a hierarchy in the parent asset's model. Hierarchies allow
-     * different groupings of assets to be formed that all come from the same asset
-     * model. For more information, see <a
+     * <p>The ID of a hierarchy in the parent asset's model. (This can be either the
+     * actual ID in UUID format, or else <code>externalId:</code> followed by the
+     * external ID, if it has one. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.)
+     * Hierarchies allow different groupings of assets to be formed that all come from
+     * the same asset model. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset
      * hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline void SetHierarchyId(const char* value) { m_hierarchyIdHasBeenSet = true; m_hierarchyId.assign(value); }
 
     /**
-     * <p>The ID of a hierarchy in the parent asset's model. Hierarchies allow
-     * different groupings of assets to be formed that all come from the same asset
-     * model. For more information, see <a
+     * <p>The ID of a hierarchy in the parent asset's model. (This can be either the
+     * actual ID in UUID format, or else <code>externalId:</code> followed by the
+     * external ID, if it has one. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.)
+     * Hierarchies allow different groupings of assets to be formed that all come from
+     * the same asset model. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset
      * hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline AssociateAssetsRequest& WithHierarchyId(const Aws::String& value) { SetHierarchyId(value); return *this;}
 
     /**
-     * <p>The ID of a hierarchy in the parent asset's model. Hierarchies allow
-     * different groupings of assets to be formed that all come from the same asset
-     * model. For more information, see <a
+     * <p>The ID of a hierarchy in the parent asset's model. (This can be either the
+     * actual ID in UUID format, or else <code>externalId:</code> followed by the
+     * external ID, if it has one. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.)
+     * Hierarchies allow different groupings of assets to be formed that all come from
+     * the same asset model. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset
      * hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline AssociateAssetsRequest& WithHierarchyId(Aws::String&& value) { SetHierarchyId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of a hierarchy in the parent asset's model. Hierarchies allow
-     * different groupings of assets to be formed that all come from the same asset
-     * model. For more information, see <a
+     * <p>The ID of a hierarchy in the parent asset's model. (This can be either the
+     * actual ID in UUID format, or else <code>externalId:</code> followed by the
+     * external ID, if it has one. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.)
+     * Hierarchies allow different groupings of assets to be formed that all come from
+     * the same asset model. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset
      * hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
@@ -148,42 +212,74 @@ namespace Model
 
 
     /**
-     * <p>The ID of the child asset to be associated.</p>
+     * <p>The ID of the child asset to be associated. This can be either the actual ID
+     * in UUID format, or else <code>externalId:</code> followed by the external ID, if
+     * it has one. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline const Aws::String& GetChildAssetId() const{ return m_childAssetId; }
 
     /**
-     * <p>The ID of the child asset to be associated.</p>
+     * <p>The ID of the child asset to be associated. This can be either the actual ID
+     * in UUID format, or else <code>externalId:</code> followed by the external ID, if
+     * it has one. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline bool ChildAssetIdHasBeenSet() const { return m_childAssetIdHasBeenSet; }
 
     /**
-     * <p>The ID of the child asset to be associated.</p>
+     * <p>The ID of the child asset to be associated. This can be either the actual ID
+     * in UUID format, or else <code>externalId:</code> followed by the external ID, if
+     * it has one. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline void SetChildAssetId(const Aws::String& value) { m_childAssetIdHasBeenSet = true; m_childAssetId = value; }
 
     /**
-     * <p>The ID of the child asset to be associated.</p>
+     * <p>The ID of the child asset to be associated. This can be either the actual ID
+     * in UUID format, or else <code>externalId:</code> followed by the external ID, if
+     * it has one. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline void SetChildAssetId(Aws::String&& value) { m_childAssetIdHasBeenSet = true; m_childAssetId = std::move(value); }
 
     /**
-     * <p>The ID of the child asset to be associated.</p>
+     * <p>The ID of the child asset to be associated. This can be either the actual ID
+     * in UUID format, or else <code>externalId:</code> followed by the external ID, if
+     * it has one. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline void SetChildAssetId(const char* value) { m_childAssetIdHasBeenSet = true; m_childAssetId.assign(value); }
 
     /**
-     * <p>The ID of the child asset to be associated.</p>
+     * <p>The ID of the child asset to be associated. This can be either the actual ID
+     * in UUID format, or else <code>externalId:</code> followed by the external ID, if
+     * it has one. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline AssociateAssetsRequest& WithChildAssetId(const Aws::String& value) { SetChildAssetId(value); return *this;}
 
     /**
-     * <p>The ID of the child asset to be associated.</p>
+     * <p>The ID of the child asset to be associated. This can be either the actual ID
+     * in UUID format, or else <code>externalId:</code> followed by the external ID, if
+     * it has one. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline AssociateAssetsRequest& WithChildAssetId(Aws::String&& value) { SetChildAssetId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the child asset to be associated.</p>
+     * <p>The ID of the child asset to be associated. This can be either the actual ID
+     * in UUID format, or else <code>externalId:</code> followed by the external ID, if
+     * it has one. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline AssociateAssetsRequest& WithChildAssetId(const char* value) { SetChildAssetId(value); return *this;}
 

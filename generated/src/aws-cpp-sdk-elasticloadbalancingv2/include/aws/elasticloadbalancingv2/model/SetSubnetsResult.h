@@ -72,27 +72,32 @@ namespace Model
 
 
     /**
-     * <p>[Network Load Balancers] The IP address type.</p>
+     * <p>[Network Load Balancers] The IP address type.</p> <p>[Gateway Load Balancers]
+     * The IP address type.</p>
      */
     inline const IpAddressType& GetIpAddressType() const{ return m_ipAddressType; }
 
     /**
-     * <p>[Network Load Balancers] The IP address type.</p>
+     * <p>[Network Load Balancers] The IP address type.</p> <p>[Gateway Load Balancers]
+     * The IP address type.</p>
      */
     inline void SetIpAddressType(const IpAddressType& value) { m_ipAddressType = value; }
 
     /**
-     * <p>[Network Load Balancers] The IP address type.</p>
+     * <p>[Network Load Balancers] The IP address type.</p> <p>[Gateway Load Balancers]
+     * The IP address type.</p>
      */
     inline void SetIpAddressType(IpAddressType&& value) { m_ipAddressType = std::move(value); }
 
     /**
-     * <p>[Network Load Balancers] The IP address type.</p>
+     * <p>[Network Load Balancers] The IP address type.</p> <p>[Gateway Load Balancers]
+     * The IP address type.</p>
      */
     inline SetSubnetsResult& WithIpAddressType(const IpAddressType& value) { SetIpAddressType(value); return *this;}
 
     /**
-     * <p>[Network Load Balancers] The IP address type.</p>
+     * <p>[Network Load Balancers] The IP address type.</p> <p>[Gateway Load Balancers]
+     * The IP address type.</p>
      */
     inline SetSubnetsResult& WithIpAddressType(IpAddressType&& value) { SetIpAddressType(std::move(value)); return *this;}
 

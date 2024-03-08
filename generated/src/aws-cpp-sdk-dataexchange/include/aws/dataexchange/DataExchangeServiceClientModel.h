@@ -35,6 +35,7 @@
 #include <aws/dataexchange/model/ListTagsForResourceResult.h>
 #include <aws/dataexchange/model/RevokeRevisionResult.h>
 #include <aws/dataexchange/model/SendApiAssetResult.h>
+#include <aws/dataexchange/model/SendDataSetNotificationResult.h>
 #include <aws/dataexchange/model/StartJobResult.h>
 #include <aws/dataexchange/model/UpdateAssetResult.h>
 #include <aws/dataexchange/model/UpdateDataSetResult.h>
@@ -103,6 +104,7 @@ namespace Aws
       class ListTagsForResourceRequest;
       class RevokeRevisionRequest;
       class SendApiAssetRequest;
+      class SendDataSetNotificationRequest;
       class StartJobRequest;
       class TagResourceRequest;
       class UntagResourceRequest;
@@ -135,6 +137,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, DataExchangeError> ListTagsForResourceOutcome;
       typedef Aws::Utils::Outcome<RevokeRevisionResult, DataExchangeError> RevokeRevisionOutcome;
       typedef Aws::Utils::Outcome<SendApiAssetResult, DataExchangeError> SendApiAssetOutcome;
+      typedef Aws::Utils::Outcome<SendDataSetNotificationResult, DataExchangeError> SendDataSetNotificationOutcome;
       typedef Aws::Utils::Outcome<StartJobResult, DataExchangeError> StartJobOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, DataExchangeError> TagResourceOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, DataExchangeError> UntagResourceOutcome;
@@ -167,6 +170,7 @@ namespace Aws
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
       typedef std::future<RevokeRevisionOutcome> RevokeRevisionOutcomeCallable;
       typedef std::future<SendApiAssetOutcome> SendApiAssetOutcomeCallable;
+      typedef std::future<SendDataSetNotificationOutcome> SendDataSetNotificationOutcomeCallable;
       typedef std::future<StartJobOutcome> StartJobOutcomeCallable;
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
@@ -202,6 +206,7 @@ namespace Aws
     typedef std::function<void(const DataExchangeClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const DataExchangeClient*, const Model::RevokeRevisionRequest&, const Model::RevokeRevisionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RevokeRevisionResponseReceivedHandler;
     typedef std::function<void(const DataExchangeClient*, const Model::SendApiAssetRequest&, Model::SendApiAssetOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendApiAssetResponseReceivedHandler;
+    typedef std::function<void(const DataExchangeClient*, const Model::SendDataSetNotificationRequest&, const Model::SendDataSetNotificationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendDataSetNotificationResponseReceivedHandler;
     typedef std::function<void(const DataExchangeClient*, const Model::StartJobRequest&, const Model::StartJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartJobResponseReceivedHandler;
     typedef std::function<void(const DataExchangeClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const DataExchangeClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;

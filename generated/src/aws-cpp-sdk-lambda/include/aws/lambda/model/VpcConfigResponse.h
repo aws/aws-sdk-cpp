@@ -171,6 +171,31 @@ namespace Model
      */
     inline VpcConfigResponse& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
+
+    /**
+     * <p>Allows outbound IPv6 traffic on VPC functions that are connected to
+     * dual-stack subnets.</p>
+     */
+    inline bool GetIpv6AllowedForDualStack() const{ return m_ipv6AllowedForDualStack; }
+
+    /**
+     * <p>Allows outbound IPv6 traffic on VPC functions that are connected to
+     * dual-stack subnets.</p>
+     */
+    inline bool Ipv6AllowedForDualStackHasBeenSet() const { return m_ipv6AllowedForDualStackHasBeenSet; }
+
+    /**
+     * <p>Allows outbound IPv6 traffic on VPC functions that are connected to
+     * dual-stack subnets.</p>
+     */
+    inline void SetIpv6AllowedForDualStack(bool value) { m_ipv6AllowedForDualStackHasBeenSet = true; m_ipv6AllowedForDualStack = value; }
+
+    /**
+     * <p>Allows outbound IPv6 traffic on VPC functions that are connected to
+     * dual-stack subnets.</p>
+     */
+    inline VpcConfigResponse& WithIpv6AllowedForDualStack(bool value) { SetIpv6AllowedForDualStack(value); return *this;}
+
   private:
 
     Aws::Vector<Aws::String> m_subnetIds;
@@ -181,6 +206,9 @@ namespace Model
 
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet = false;
+
+    bool m_ipv6AllowedForDualStack;
+    bool m_ipv6AllowedForDualStackHasBeenSet = false;
   };
 
 } // namespace Model

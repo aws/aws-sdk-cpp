@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HandshakeResourceType::NOT_SET:
+            return {};
           case HandshakeResourceType::ACCOUNT:
             return "ACCOUNT";
           case HandshakeResourceType::ORGANIZATION:

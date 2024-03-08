@@ -445,6 +445,31 @@ namespace Model
 
 
     /**
+     * Specify the maximum mastering display luminance. Enter an integer from 0 to
+     * 2147483647, in units of 0.0001 nits. For example, enter 10000000 for 1000 nits.
+     */
+    inline int GetMaxLuminance() const{ return m_maxLuminance; }
+
+    /**
+     * Specify the maximum mastering display luminance. Enter an integer from 0 to
+     * 2147483647, in units of 0.0001 nits. For example, enter 10000000 for 1000 nits.
+     */
+    inline bool MaxLuminanceHasBeenSet() const { return m_maxLuminanceHasBeenSet; }
+
+    /**
+     * Specify the maximum mastering display luminance. Enter an integer from 0 to
+     * 2147483647, in units of 0.0001 nits. For example, enter 10000000 for 1000 nits.
+     */
+    inline void SetMaxLuminance(int value) { m_maxLuminanceHasBeenSet = true; m_maxLuminance = value; }
+
+    /**
+     * Specify the maximum mastering display luminance. Enter an integer from 0 to
+     * 2147483647, in units of 0.0001 nits. For example, enter 10000000 for 1000 nits.
+     */
+    inline ColorCorrector& WithMaxLuminance(int value) { SetMaxLuminance(value); return *this;}
+
+
+    /**
      * Specify how MediaConvert limits the color sample range for this output. To
      * create a limited range output from a full range input: Choose Limited range
      * squeeze. For full range inputs, MediaConvert performs a linear offset to color
@@ -644,6 +669,9 @@ namespace Model
 
     int m_hue;
     bool m_hueHasBeenSet = false;
+
+    int m_maxLuminance;
+    bool m_maxLuminanceHasBeenSet = false;
 
     SampleRangeConversion m_sampleRangeConversion;
     bool m_sampleRangeConversionHasBeenSet = false;

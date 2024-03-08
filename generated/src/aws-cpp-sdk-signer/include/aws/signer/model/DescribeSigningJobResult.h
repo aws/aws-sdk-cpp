@@ -598,32 +598,27 @@ namespace Model
 
 
     /**
-     * <p>Name of the S3 bucket where the signed code image is saved by code
-     * signing.</p>
+     * <p>Name of the S3 bucket where the signed code image is saved by AWS Signer.</p>
      */
     inline const SignedObject& GetSignedObject() const{ return m_signedObject; }
 
     /**
-     * <p>Name of the S3 bucket where the signed code image is saved by code
-     * signing.</p>
+     * <p>Name of the S3 bucket where the signed code image is saved by AWS Signer.</p>
      */
     inline void SetSignedObject(const SignedObject& value) { m_signedObject = value; }
 
     /**
-     * <p>Name of the S3 bucket where the signed code image is saved by code
-     * signing.</p>
+     * <p>Name of the S3 bucket where the signed code image is saved by AWS Signer.</p>
      */
     inline void SetSignedObject(SignedObject&& value) { m_signedObject = std::move(value); }
 
     /**
-     * <p>Name of the S3 bucket where the signed code image is saved by code
-     * signing.</p>
+     * <p>Name of the S3 bucket where the signed code image is saved by AWS Signer.</p>
      */
     inline DescribeSigningJobResult& WithSignedObject(const SignedObject& value) { SetSignedObject(value); return *this;}
 
     /**
-     * <p>Name of the S3 bucket where the signed code image is saved by code
-     * signing.</p>
+     * <p>Name of the S3 bucket where the signed code image is saved by AWS Signer.</p>
      */
     inline DescribeSigningJobResult& WithSignedObject(SignedObject&& value) { SetSignedObject(std::move(value)); return *this;}
 

@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Separator::NOT_SET:
+            return {};
           case Separator::comma:
             return "comma";
           case Separator::ctrla:

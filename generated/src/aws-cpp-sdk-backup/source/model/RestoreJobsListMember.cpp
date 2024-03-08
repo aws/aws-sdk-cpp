@@ -34,7 +34,15 @@ RestoreJobsListMember::RestoreJobsListMember() :
     m_expectedCompletionTimeMinutes(0),
     m_expectedCompletionTimeMinutesHasBeenSet(false),
     m_createdResourceArnHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false)
+    m_resourceTypeHasBeenSet(false),
+    m_recoveryPointCreationDateHasBeenSet(false),
+    m_createdByHasBeenSet(false),
+    m_validationStatus(RestoreValidationStatus::NOT_SET),
+    m_validationStatusHasBeenSet(false),
+    m_validationStatusMessageHasBeenSet(false),
+    m_deletionStatus(RestoreDeletionStatus::NOT_SET),
+    m_deletionStatusHasBeenSet(false),
+    m_deletionStatusMessageHasBeenSet(false)
 {
 }
 
@@ -54,7 +62,15 @@ RestoreJobsListMember::RestoreJobsListMember(JsonView jsonValue) :
     m_expectedCompletionTimeMinutes(0),
     m_expectedCompletionTimeMinutesHasBeenSet(false),
     m_createdResourceArnHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false)
+    m_resourceTypeHasBeenSet(false),
+    m_recoveryPointCreationDateHasBeenSet(false),
+    m_createdByHasBeenSet(false),
+    m_validationStatus(RestoreValidationStatus::NOT_SET),
+    m_validationStatusHasBeenSet(false),
+    m_validationStatusMessageHasBeenSet(false),
+    m_deletionStatus(RestoreDeletionStatus::NOT_SET),
+    m_deletionStatusHasBeenSet(false),
+    m_deletionStatusMessageHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -152,6 +168,48 @@ RestoreJobsListMember& RestoreJobsListMember::operator =(JsonView jsonValue)
     m_resourceTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("RecoveryPointCreationDate"))
+  {
+    m_recoveryPointCreationDate = jsonValue.GetDouble("RecoveryPointCreationDate");
+
+    m_recoveryPointCreationDateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CreatedBy"))
+  {
+    m_createdBy = jsonValue.GetObject("CreatedBy");
+
+    m_createdByHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ValidationStatus"))
+  {
+    m_validationStatus = RestoreValidationStatusMapper::GetRestoreValidationStatusForName(jsonValue.GetString("ValidationStatus"));
+
+    m_validationStatusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ValidationStatusMessage"))
+  {
+    m_validationStatusMessage = jsonValue.GetString("ValidationStatusMessage");
+
+    m_validationStatusMessageHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DeletionStatus"))
+  {
+    m_deletionStatus = RestoreDeletionStatusMapper::GetRestoreDeletionStatusForName(jsonValue.GetString("DeletionStatus"));
+
+    m_deletionStatusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DeletionStatusMessage"))
+  {
+    m_deletionStatusMessage = jsonValue.GetString("DeletionStatusMessage");
+
+    m_deletionStatusMessageHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -231,6 +289,39 @@ JsonValue RestoreJobsListMember::Jsonize() const
   if(m_resourceTypeHasBeenSet)
   {
    payload.WithString("ResourceType", m_resourceType);
+
+  }
+
+  if(m_recoveryPointCreationDateHasBeenSet)
+  {
+   payload.WithDouble("RecoveryPointCreationDate", m_recoveryPointCreationDate.SecondsWithMSPrecision());
+  }
+
+  if(m_createdByHasBeenSet)
+  {
+   payload.WithObject("CreatedBy", m_createdBy.Jsonize());
+
+  }
+
+  if(m_validationStatusHasBeenSet)
+  {
+   payload.WithString("ValidationStatus", RestoreValidationStatusMapper::GetNameForRestoreValidationStatus(m_validationStatus));
+  }
+
+  if(m_validationStatusMessageHasBeenSet)
+  {
+   payload.WithString("ValidationStatusMessage", m_validationStatusMessage);
+
+  }
+
+  if(m_deletionStatusHasBeenSet)
+  {
+   payload.WithString("DeletionStatus", RestoreDeletionStatusMapper::GetNameForRestoreDeletionStatus(m_deletionStatus));
+  }
+
+  if(m_deletionStatusMessageHasBeenSet)
+  {
+   payload.WithString("DeletionStatusMessage", m_deletionStatusMessage);
 
   }
 

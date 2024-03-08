@@ -6,15 +6,16 @@
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/mediaconvert/model/AvailBlanking.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mediaconvert/model/EsamSettings.h>
 #include <aws/mediaconvert/model/ExtendedDataServices.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mediaconvert/model/KantarWatermarkSettings.h>
 #include <aws/mediaconvert/model/MotionImageInserter.h>
 #include <aws/mediaconvert/model/NielsenConfiguration.h>
 #include <aws/mediaconvert/model/NielsenNonLinearWatermarkSettings.h>
 #include <aws/mediaconvert/model/TimecodeConfig.h>
 #include <aws/mediaconvert/model/TimedMetadataInsertion.h>
+#include <aws/mediaconvert/model/ColorConversion3DLUTSetting.h>
 #include <aws/mediaconvert/model/Input.h>
 #include <aws/mediaconvert/model/OutputGroup.h>
 #include <utility>
@@ -112,6 +113,55 @@ namespace Model
 
 
     /**
+     * Use 3D LUTs to specify custom color mapping behavior when you convert from one
+     * color space into another. You can include up to 8 different 3D LUTs.
+     */
+    inline const Aws::Vector<ColorConversion3DLUTSetting>& GetColorConversion3DLUTSettings() const{ return m_colorConversion3DLUTSettings; }
+
+    /**
+     * Use 3D LUTs to specify custom color mapping behavior when you convert from one
+     * color space into another. You can include up to 8 different 3D LUTs.
+     */
+    inline bool ColorConversion3DLUTSettingsHasBeenSet() const { return m_colorConversion3DLUTSettingsHasBeenSet; }
+
+    /**
+     * Use 3D LUTs to specify custom color mapping behavior when you convert from one
+     * color space into another. You can include up to 8 different 3D LUTs.
+     */
+    inline void SetColorConversion3DLUTSettings(const Aws::Vector<ColorConversion3DLUTSetting>& value) { m_colorConversion3DLUTSettingsHasBeenSet = true; m_colorConversion3DLUTSettings = value; }
+
+    /**
+     * Use 3D LUTs to specify custom color mapping behavior when you convert from one
+     * color space into another. You can include up to 8 different 3D LUTs.
+     */
+    inline void SetColorConversion3DLUTSettings(Aws::Vector<ColorConversion3DLUTSetting>&& value) { m_colorConversion3DLUTSettingsHasBeenSet = true; m_colorConversion3DLUTSettings = std::move(value); }
+
+    /**
+     * Use 3D LUTs to specify custom color mapping behavior when you convert from one
+     * color space into another. You can include up to 8 different 3D LUTs.
+     */
+    inline JobSettings& WithColorConversion3DLUTSettings(const Aws::Vector<ColorConversion3DLUTSetting>& value) { SetColorConversion3DLUTSettings(value); return *this;}
+
+    /**
+     * Use 3D LUTs to specify custom color mapping behavior when you convert from one
+     * color space into another. You can include up to 8 different 3D LUTs.
+     */
+    inline JobSettings& WithColorConversion3DLUTSettings(Aws::Vector<ColorConversion3DLUTSetting>&& value) { SetColorConversion3DLUTSettings(std::move(value)); return *this;}
+
+    /**
+     * Use 3D LUTs to specify custom color mapping behavior when you convert from one
+     * color space into another. You can include up to 8 different 3D LUTs.
+     */
+    inline JobSettings& AddColorConversion3DLUTSettings(const ColorConversion3DLUTSetting& value) { m_colorConversion3DLUTSettingsHasBeenSet = true; m_colorConversion3DLUTSettings.push_back(value); return *this; }
+
+    /**
+     * Use 3D LUTs to specify custom color mapping behavior when you convert from one
+     * color space into another. You can include up to 8 different 3D LUTs.
+     */
+    inline JobSettings& AddColorConversion3DLUTSettings(ColorConversion3DLUTSetting&& value) { m_colorConversion3DLUTSettingsHasBeenSet = true; m_colorConversion3DLUTSettings.push_back(std::move(value)); return *this; }
+
+
+    /**
      * Settings for Event Signaling And Messaging (ESAM). If you don't do ad insertion,
      * you can ignore these settings.
      */
@@ -201,6 +251,55 @@ namespace Model
      * Content Advisory.
      */
     inline JobSettings& WithExtendedDataServices(ExtendedDataServices&& value) { SetExtendedDataServices(std::move(value)); return *this;}
+
+
+    /**
+     * Specify the input that MediaConvert references for your default output settings.
+     * MediaConvert uses this input's Resolution, Frame rate, and Pixel aspect ratio
+     * for all  outputs that you don't manually specify different output settings for.
+     * Enabling this setting will disable "Follow source" for all other inputs.  If
+     * MediaConvert cannot follow your source, for example if you specify an audio-only
+     * input,  MediaConvert uses the first followable input instead. In your JSON job
+     * specification, enter an integer from 1 to 150 corresponding  to the order of
+     * your inputs.
+     */
+    inline int GetFollowSource() const{ return m_followSource; }
+
+    /**
+     * Specify the input that MediaConvert references for your default output settings.
+     * MediaConvert uses this input's Resolution, Frame rate, and Pixel aspect ratio
+     * for all  outputs that you don't manually specify different output settings for.
+     * Enabling this setting will disable "Follow source" for all other inputs.  If
+     * MediaConvert cannot follow your source, for example if you specify an audio-only
+     * input,  MediaConvert uses the first followable input instead. In your JSON job
+     * specification, enter an integer from 1 to 150 corresponding  to the order of
+     * your inputs.
+     */
+    inline bool FollowSourceHasBeenSet() const { return m_followSourceHasBeenSet; }
+
+    /**
+     * Specify the input that MediaConvert references for your default output settings.
+     * MediaConvert uses this input's Resolution, Frame rate, and Pixel aspect ratio
+     * for all  outputs that you don't manually specify different output settings for.
+     * Enabling this setting will disable "Follow source" for all other inputs.  If
+     * MediaConvert cannot follow your source, for example if you specify an audio-only
+     * input,  MediaConvert uses the first followable input instead. In your JSON job
+     * specification, enter an integer from 1 to 150 corresponding  to the order of
+     * your inputs.
+     */
+    inline void SetFollowSource(int value) { m_followSourceHasBeenSet = true; m_followSource = value; }
+
+    /**
+     * Specify the input that MediaConvert references for your default output settings.
+     * MediaConvert uses this input's Resolution, Frame rate, and Pixel aspect ratio
+     * for all  outputs that you don't manually specify different output settings for.
+     * Enabling this setting will disable "Follow source" for all other inputs.  If
+     * MediaConvert cannot follow your source, for example if you specify an audio-only
+     * input,  MediaConvert uses the first followable input instead. In your JSON job
+     * specification, enter an integer from 1 to 150 corresponding  to the order of
+     * your inputs.
+     */
+    inline JobSettings& WithFollowSource(int value) { SetFollowSource(value); return *this;}
 
 
     /**
@@ -664,11 +763,17 @@ namespace Model
     AvailBlanking m_availBlanking;
     bool m_availBlankingHasBeenSet = false;
 
+    Aws::Vector<ColorConversion3DLUTSetting> m_colorConversion3DLUTSettings;
+    bool m_colorConversion3DLUTSettingsHasBeenSet = false;
+
     EsamSettings m_esam;
     bool m_esamHasBeenSet = false;
 
     ExtendedDataServices m_extendedDataServices;
     bool m_extendedDataServicesHasBeenSet = false;
+
+    int m_followSource;
+    bool m_followSourceHasBeenSet = false;
 
     Aws::Vector<Input> m_inputs;
     bool m_inputsHasBeenSet = false;

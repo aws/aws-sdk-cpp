@@ -10,7 +10,8 @@
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/utils/threading/Semaphore.h>
 #include <aws/core/auth/AWSCredentialsProvider.h>
-#include <aws/core/utils/threading/Executor.h>
+#include <aws/core/utils/threading/PooledThreadExecutor.h>
+
 using namespace Aws::TextToSpeech;
 using namespace Aws::Polly;
 using namespace Aws::Polly::Model;

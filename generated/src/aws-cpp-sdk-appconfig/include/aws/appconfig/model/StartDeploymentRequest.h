@@ -435,6 +435,85 @@ namespace Model
      */
     inline StartDeploymentRequest& WithKmsKeyIdentifier(const char* value) { SetKmsKeyIdentifier(value); return *this;}
 
+
+    /**
+     * <p>A map of dynamic extension parameter names to values to pass to associated
+     * extensions with <code>PRE_START_DEPLOYMENT</code> actions.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetDynamicExtensionParameters() const{ return m_dynamicExtensionParameters; }
+
+    /**
+     * <p>A map of dynamic extension parameter names to values to pass to associated
+     * extensions with <code>PRE_START_DEPLOYMENT</code> actions.</p>
+     */
+    inline bool DynamicExtensionParametersHasBeenSet() const { return m_dynamicExtensionParametersHasBeenSet; }
+
+    /**
+     * <p>A map of dynamic extension parameter names to values to pass to associated
+     * extensions with <code>PRE_START_DEPLOYMENT</code> actions.</p>
+     */
+    inline void SetDynamicExtensionParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_dynamicExtensionParametersHasBeenSet = true; m_dynamicExtensionParameters = value; }
+
+    /**
+     * <p>A map of dynamic extension parameter names to values to pass to associated
+     * extensions with <code>PRE_START_DEPLOYMENT</code> actions.</p>
+     */
+    inline void SetDynamicExtensionParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_dynamicExtensionParametersHasBeenSet = true; m_dynamicExtensionParameters = std::move(value); }
+
+    /**
+     * <p>A map of dynamic extension parameter names to values to pass to associated
+     * extensions with <code>PRE_START_DEPLOYMENT</code> actions.</p>
+     */
+    inline StartDeploymentRequest& WithDynamicExtensionParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetDynamicExtensionParameters(value); return *this;}
+
+    /**
+     * <p>A map of dynamic extension parameter names to values to pass to associated
+     * extensions with <code>PRE_START_DEPLOYMENT</code> actions.</p>
+     */
+    inline StartDeploymentRequest& WithDynamicExtensionParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetDynamicExtensionParameters(std::move(value)); return *this;}
+
+    /**
+     * <p>A map of dynamic extension parameter names to values to pass to associated
+     * extensions with <code>PRE_START_DEPLOYMENT</code> actions.</p>
+     */
+    inline StartDeploymentRequest& AddDynamicExtensionParameters(const Aws::String& key, const Aws::String& value) { m_dynamicExtensionParametersHasBeenSet = true; m_dynamicExtensionParameters.emplace(key, value); return *this; }
+
+    /**
+     * <p>A map of dynamic extension parameter names to values to pass to associated
+     * extensions with <code>PRE_START_DEPLOYMENT</code> actions.</p>
+     */
+    inline StartDeploymentRequest& AddDynamicExtensionParameters(Aws::String&& key, const Aws::String& value) { m_dynamicExtensionParametersHasBeenSet = true; m_dynamicExtensionParameters.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>A map of dynamic extension parameter names to values to pass to associated
+     * extensions with <code>PRE_START_DEPLOYMENT</code> actions.</p>
+     */
+    inline StartDeploymentRequest& AddDynamicExtensionParameters(const Aws::String& key, Aws::String&& value) { m_dynamicExtensionParametersHasBeenSet = true; m_dynamicExtensionParameters.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A map of dynamic extension parameter names to values to pass to associated
+     * extensions with <code>PRE_START_DEPLOYMENT</code> actions.</p>
+     */
+    inline StartDeploymentRequest& AddDynamicExtensionParameters(Aws::String&& key, Aws::String&& value) { m_dynamicExtensionParametersHasBeenSet = true; m_dynamicExtensionParameters.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>A map of dynamic extension parameter names to values to pass to associated
+     * extensions with <code>PRE_START_DEPLOYMENT</code> actions.</p>
+     */
+    inline StartDeploymentRequest& AddDynamicExtensionParameters(const char* key, Aws::String&& value) { m_dynamicExtensionParametersHasBeenSet = true; m_dynamicExtensionParameters.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A map of dynamic extension parameter names to values to pass to associated
+     * extensions with <code>PRE_START_DEPLOYMENT</code> actions.</p>
+     */
+    inline StartDeploymentRequest& AddDynamicExtensionParameters(Aws::String&& key, const char* value) { m_dynamicExtensionParametersHasBeenSet = true; m_dynamicExtensionParameters.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>A map of dynamic extension parameter names to values to pass to associated
+     * extensions with <code>PRE_START_DEPLOYMENT</code> actions.</p>
+     */
+    inline StartDeploymentRequest& AddDynamicExtensionParameters(const char* key, const char* value) { m_dynamicExtensionParametersHasBeenSet = true; m_dynamicExtensionParameters.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_applicationId;
@@ -460,6 +539,9 @@ namespace Model
 
     Aws::String m_kmsKeyIdentifier;
     bool m_kmsKeyIdentifierHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_dynamicExtensionParameters;
+    bool m_dynamicExtensionParametersHasBeenSet = false;
   };
 
 } // namespace Model

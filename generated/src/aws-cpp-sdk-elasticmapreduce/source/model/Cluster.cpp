@@ -34,6 +34,8 @@ Cluster::Cluster() :
     m_autoTerminateHasBeenSet(false),
     m_terminationProtected(false),
     m_terminationProtectedHasBeenSet(false),
+    m_unhealthyNodeReplacement(false),
+    m_unhealthyNodeReplacementHasBeenSet(false),
     m_visibleToAllUsers(false),
     m_visibleToAllUsersHasBeenSet(false),
     m_applicationsHasBeenSet(false),
@@ -58,7 +60,11 @@ Cluster::Cluster() :
     m_stepConcurrencyLevel(0),
     m_stepConcurrencyLevelHasBeenSet(false),
     m_placementGroupsHasBeenSet(false),
-    m_oSReleaseLabelHasBeenSet(false)
+    m_oSReleaseLabelHasBeenSet(false),
+    m_ebsRootVolumeIops(0),
+    m_ebsRootVolumeIopsHasBeenSet(false),
+    m_ebsRootVolumeThroughput(0),
+    m_ebsRootVolumeThroughputHasBeenSet(false)
 {
 }
 
@@ -78,6 +84,8 @@ Cluster::Cluster(JsonView jsonValue) :
     m_autoTerminateHasBeenSet(false),
     m_terminationProtected(false),
     m_terminationProtectedHasBeenSet(false),
+    m_unhealthyNodeReplacement(false),
+    m_unhealthyNodeReplacementHasBeenSet(false),
     m_visibleToAllUsers(false),
     m_visibleToAllUsersHasBeenSet(false),
     m_applicationsHasBeenSet(false),
@@ -102,7 +110,11 @@ Cluster::Cluster(JsonView jsonValue) :
     m_stepConcurrencyLevel(0),
     m_stepConcurrencyLevelHasBeenSet(false),
     m_placementGroupsHasBeenSet(false),
-    m_oSReleaseLabelHasBeenSet(false)
+    m_oSReleaseLabelHasBeenSet(false),
+    m_ebsRootVolumeIops(0),
+    m_ebsRootVolumeIopsHasBeenSet(false),
+    m_ebsRootVolumeThroughput(0),
+    m_ebsRootVolumeThroughputHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -191,6 +203,13 @@ Cluster& Cluster::operator =(JsonView jsonValue)
     m_terminationProtected = jsonValue.GetBool("TerminationProtected");
 
     m_terminationProtectedHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("UnhealthyNodeReplacement"))
+  {
+    m_unhealthyNodeReplacement = jsonValue.GetBool("UnhealthyNodeReplacement");
+
+    m_unhealthyNodeReplacementHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("VisibleToAllUsers"))
@@ -338,6 +357,20 @@ Cluster& Cluster::operator =(JsonView jsonValue)
     m_oSReleaseLabelHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("EbsRootVolumeIops"))
+  {
+    m_ebsRootVolumeIops = jsonValue.GetInteger("EbsRootVolumeIops");
+
+    m_ebsRootVolumeIopsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("EbsRootVolumeThroughput"))
+  {
+    m_ebsRootVolumeThroughput = jsonValue.GetInteger("EbsRootVolumeThroughput");
+
+    m_ebsRootVolumeThroughputHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -413,6 +446,12 @@ JsonValue Cluster::Jsonize() const
   if(m_terminationProtectedHasBeenSet)
   {
    payload.WithBool("TerminationProtected", m_terminationProtected);
+
+  }
+
+  if(m_unhealthyNodeReplacementHasBeenSet)
+  {
+   payload.WithBool("UnhealthyNodeReplacement", m_unhealthyNodeReplacement);
 
   }
 
@@ -545,6 +584,18 @@ JsonValue Cluster::Jsonize() const
   if(m_oSReleaseLabelHasBeenSet)
   {
    payload.WithString("OSReleaseLabel", m_oSReleaseLabel);
+
+  }
+
+  if(m_ebsRootVolumeIopsHasBeenSet)
+  {
+   payload.WithInteger("EbsRootVolumeIops", m_ebsRootVolumeIops);
+
+  }
+
+  if(m_ebsRootVolumeThroughputHasBeenSet)
+  {
+   payload.WithInteger("EbsRootVolumeThroughput", m_ebsRootVolumeThroughput);
 
   }
 

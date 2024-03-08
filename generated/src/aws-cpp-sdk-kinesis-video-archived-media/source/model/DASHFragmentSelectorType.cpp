@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DASHFragmentSelectorType::NOT_SET:
+            return {};
           case DASHFragmentSelectorType::PRODUCER_TIMESTAMP:
             return "PRODUCER_TIMESTAMP";
           case DASHFragmentSelectorType::SERVER_TIMESTAMP:

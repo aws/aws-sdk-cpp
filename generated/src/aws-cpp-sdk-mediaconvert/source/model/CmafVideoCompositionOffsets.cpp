@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CmafVideoCompositionOffsets::NOT_SET:
+            return {};
           case CmafVideoCompositionOffsets::SIGNED:
             return "SIGNED";
           case CmafVideoCompositionOffsets::UNSIGNED:

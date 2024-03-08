@@ -17,6 +17,7 @@ namespace Model
   {
     NOT_SET,
     AWAITING_DEPENDENCIES,
+    SKIPPED,
     READY,
     IN_PROGRESS,
     COMPLETED,

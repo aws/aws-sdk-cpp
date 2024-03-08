@@ -45,19 +45,19 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(AmplifyBackendErrors::NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(AmplifyBackendErrors::NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == GATEWAY_TIMEOUT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(AmplifyBackendErrors::GATEWAY_TIMEOUT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(AmplifyBackendErrors::GATEWAY_TIMEOUT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == TOO_MANY_REQUESTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(AmplifyBackendErrors::TOO_MANY_REQUESTS), true);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(AmplifyBackendErrors::TOO_MANY_REQUESTS), RetryableType::RETRYABLE);
   }
   else if (hashCode == BAD_REQUEST_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(AmplifyBackendErrors::BAD_REQUEST), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(AmplifyBackendErrors::BAD_REQUEST), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

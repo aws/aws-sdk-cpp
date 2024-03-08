@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CustomerActionName::NOT_SET:
+            return {};
           case CustomerActionName::SNOOZE:
             return "SNOOZE";
           case CustomerActionName::ENABLE:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PivotTableConditionalFormattingScopeRole::NOT_SET:
+            return {};
           case PivotTableConditionalFormattingScopeRole::FIELD:
             return "FIELD";
           case PivotTableConditionalFormattingScopeRole::FIELD_TOTAL:

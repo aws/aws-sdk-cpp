@@ -18,7 +18,10 @@ namespace Model
     NOT_SET,
     EnhancedInfrastructureMetrics,
     InferredWorkloadTypes,
-    ExternalMetricsPreference
+    ExternalMetricsPreference,
+    LookBackPeriodPreference,
+    PreferredResources,
+    UtilizationPreferences
   };
 
 namespace RecommendationPreferenceNameMapper

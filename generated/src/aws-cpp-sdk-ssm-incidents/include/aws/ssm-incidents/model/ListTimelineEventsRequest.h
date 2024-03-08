@@ -39,104 +39,112 @@ namespace Model
     /**
      * <p>Filters the timeline events based on the provided conditional values. You can
      * filter timeline events with the following keys:</p> <ul> <li> <p>
-     * <code>eventTime</code> </p> </li> <li> <p> <code>eventType</code> </p> </li>
-     * </ul> <p>Note the following when deciding how to use Filters:</p> <ul> <li>
-     * <p>If you don't specify a Filter, the response includes all timeline events.</p>
-     * </li> <li> <p>If you specify more than one filter in a single request, the
-     * response returns timeline events that match all filters.</p> </li> <li> <p>If
-     * you specify a filter with more than one value, the response returns timeline
-     * events that match any of the values provided.</p> </li> </ul>
+     * <code>eventReference</code> </p> </li> <li> <p> <code>eventTime</code> </p>
+     * </li> <li> <p> <code>eventType</code> </p> </li> </ul> <p>Note the following
+     * when deciding how to use Filters:</p> <ul> <li> <p>If you don't specify a
+     * Filter, the response includes all timeline events.</p> </li> <li> <p>If you
+     * specify more than one filter in a single request, the response returns timeline
+     * events that match all filters.</p> </li> <li> <p>If you specify a filter with
+     * more than one value, the response returns timeline events that match any of the
+     * values provided.</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
      * <p>Filters the timeline events based on the provided conditional values. You can
      * filter timeline events with the following keys:</p> <ul> <li> <p>
-     * <code>eventTime</code> </p> </li> <li> <p> <code>eventType</code> </p> </li>
-     * </ul> <p>Note the following when deciding how to use Filters:</p> <ul> <li>
-     * <p>If you don't specify a Filter, the response includes all timeline events.</p>
-     * </li> <li> <p>If you specify more than one filter in a single request, the
-     * response returns timeline events that match all filters.</p> </li> <li> <p>If
-     * you specify a filter with more than one value, the response returns timeline
-     * events that match any of the values provided.</p> </li> </ul>
+     * <code>eventReference</code> </p> </li> <li> <p> <code>eventTime</code> </p>
+     * </li> <li> <p> <code>eventType</code> </p> </li> </ul> <p>Note the following
+     * when deciding how to use Filters:</p> <ul> <li> <p>If you don't specify a
+     * Filter, the response includes all timeline events.</p> </li> <li> <p>If you
+     * specify more than one filter in a single request, the response returns timeline
+     * events that match all filters.</p> </li> <li> <p>If you specify a filter with
+     * more than one value, the response returns timeline events that match any of the
+     * values provided.</p> </li> </ul>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
      * <p>Filters the timeline events based on the provided conditional values. You can
      * filter timeline events with the following keys:</p> <ul> <li> <p>
-     * <code>eventTime</code> </p> </li> <li> <p> <code>eventType</code> </p> </li>
-     * </ul> <p>Note the following when deciding how to use Filters:</p> <ul> <li>
-     * <p>If you don't specify a Filter, the response includes all timeline events.</p>
-     * </li> <li> <p>If you specify more than one filter in a single request, the
-     * response returns timeline events that match all filters.</p> </li> <li> <p>If
-     * you specify a filter with more than one value, the response returns timeline
-     * events that match any of the values provided.</p> </li> </ul>
+     * <code>eventReference</code> </p> </li> <li> <p> <code>eventTime</code> </p>
+     * </li> <li> <p> <code>eventType</code> </p> </li> </ul> <p>Note the following
+     * when deciding how to use Filters:</p> <ul> <li> <p>If you don't specify a
+     * Filter, the response includes all timeline events.</p> </li> <li> <p>If you
+     * specify more than one filter in a single request, the response returns timeline
+     * events that match all filters.</p> </li> <li> <p>If you specify a filter with
+     * more than one value, the response returns timeline events that match any of the
+     * values provided.</p> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
      * <p>Filters the timeline events based on the provided conditional values. You can
      * filter timeline events with the following keys:</p> <ul> <li> <p>
-     * <code>eventTime</code> </p> </li> <li> <p> <code>eventType</code> </p> </li>
-     * </ul> <p>Note the following when deciding how to use Filters:</p> <ul> <li>
-     * <p>If you don't specify a Filter, the response includes all timeline events.</p>
-     * </li> <li> <p>If you specify more than one filter in a single request, the
-     * response returns timeline events that match all filters.</p> </li> <li> <p>If
-     * you specify a filter with more than one value, the response returns timeline
-     * events that match any of the values provided.</p> </li> </ul>
+     * <code>eventReference</code> </p> </li> <li> <p> <code>eventTime</code> </p>
+     * </li> <li> <p> <code>eventType</code> </p> </li> </ul> <p>Note the following
+     * when deciding how to use Filters:</p> <ul> <li> <p>If you don't specify a
+     * Filter, the response includes all timeline events.</p> </li> <li> <p>If you
+     * specify more than one filter in a single request, the response returns timeline
+     * events that match all filters.</p> </li> <li> <p>If you specify a filter with
+     * more than one value, the response returns timeline events that match any of the
+     * values provided.</p> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
      * <p>Filters the timeline events based on the provided conditional values. You can
      * filter timeline events with the following keys:</p> <ul> <li> <p>
-     * <code>eventTime</code> </p> </li> <li> <p> <code>eventType</code> </p> </li>
-     * </ul> <p>Note the following when deciding how to use Filters:</p> <ul> <li>
-     * <p>If you don't specify a Filter, the response includes all timeline events.</p>
-     * </li> <li> <p>If you specify more than one filter in a single request, the
-     * response returns timeline events that match all filters.</p> </li> <li> <p>If
-     * you specify a filter with more than one value, the response returns timeline
-     * events that match any of the values provided.</p> </li> </ul>
+     * <code>eventReference</code> </p> </li> <li> <p> <code>eventTime</code> </p>
+     * </li> <li> <p> <code>eventType</code> </p> </li> </ul> <p>Note the following
+     * when deciding how to use Filters:</p> <ul> <li> <p>If you don't specify a
+     * Filter, the response includes all timeline events.</p> </li> <li> <p>If you
+     * specify more than one filter in a single request, the response returns timeline
+     * events that match all filters.</p> </li> <li> <p>If you specify a filter with
+     * more than one value, the response returns timeline events that match any of the
+     * values provided.</p> </li> </ul>
      */
     inline ListTimelineEventsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
      * <p>Filters the timeline events based on the provided conditional values. You can
      * filter timeline events with the following keys:</p> <ul> <li> <p>
-     * <code>eventTime</code> </p> </li> <li> <p> <code>eventType</code> </p> </li>
-     * </ul> <p>Note the following when deciding how to use Filters:</p> <ul> <li>
-     * <p>If you don't specify a Filter, the response includes all timeline events.</p>
-     * </li> <li> <p>If you specify more than one filter in a single request, the
-     * response returns timeline events that match all filters.</p> </li> <li> <p>If
-     * you specify a filter with more than one value, the response returns timeline
-     * events that match any of the values provided.</p> </li> </ul>
+     * <code>eventReference</code> </p> </li> <li> <p> <code>eventTime</code> </p>
+     * </li> <li> <p> <code>eventType</code> </p> </li> </ul> <p>Note the following
+     * when deciding how to use Filters:</p> <ul> <li> <p>If you don't specify a
+     * Filter, the response includes all timeline events.</p> </li> <li> <p>If you
+     * specify more than one filter in a single request, the response returns timeline
+     * events that match all filters.</p> </li> <li> <p>If you specify a filter with
+     * more than one value, the response returns timeline events that match any of the
+     * values provided.</p> </li> </ul>
      */
     inline ListTimelineEventsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
      * <p>Filters the timeline events based on the provided conditional values. You can
      * filter timeline events with the following keys:</p> <ul> <li> <p>
-     * <code>eventTime</code> </p> </li> <li> <p> <code>eventType</code> </p> </li>
-     * </ul> <p>Note the following when deciding how to use Filters:</p> <ul> <li>
-     * <p>If you don't specify a Filter, the response includes all timeline events.</p>
-     * </li> <li> <p>If you specify more than one filter in a single request, the
-     * response returns timeline events that match all filters.</p> </li> <li> <p>If
-     * you specify a filter with more than one value, the response returns timeline
-     * events that match any of the values provided.</p> </li> </ul>
+     * <code>eventReference</code> </p> </li> <li> <p> <code>eventTime</code> </p>
+     * </li> <li> <p> <code>eventType</code> </p> </li> </ul> <p>Note the following
+     * when deciding how to use Filters:</p> <ul> <li> <p>If you don't specify a
+     * Filter, the response includes all timeline events.</p> </li> <li> <p>If you
+     * specify more than one filter in a single request, the response returns timeline
+     * events that match all filters.</p> </li> <li> <p>If you specify a filter with
+     * more than one value, the response returns timeline events that match any of the
+     * values provided.</p> </li> </ul>
      */
     inline ListTimelineEventsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
      * <p>Filters the timeline events based on the provided conditional values. You can
      * filter timeline events with the following keys:</p> <ul> <li> <p>
-     * <code>eventTime</code> </p> </li> <li> <p> <code>eventType</code> </p> </li>
-     * </ul> <p>Note the following when deciding how to use Filters:</p> <ul> <li>
-     * <p>If you don't specify a Filter, the response includes all timeline events.</p>
-     * </li> <li> <p>If you specify more than one filter in a single request, the
-     * response returns timeline events that match all filters.</p> </li> <li> <p>If
-     * you specify a filter with more than one value, the response returns timeline
-     * events that match any of the values provided.</p> </li> </ul>
+     * <code>eventReference</code> </p> </li> <li> <p> <code>eventTime</code> </p>
+     * </li> <li> <p> <code>eventType</code> </p> </li> </ul> <p>Note the following
+     * when deciding how to use Filters:</p> <ul> <li> <p>If you don't specify a
+     * Filter, the response includes all timeline events.</p> </li> <li> <p>If you
+     * specify more than one filter in a single request, the response returns timeline
+     * events that match all filters.</p> </li> <li> <p>If you specify a filter with
+     * more than one value, the response returns timeline events that match any of the
+     * values provided.</p> </li> </ul>
      */
     inline ListTimelineEventsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
@@ -212,42 +220,50 @@ namespace Model
 
 
     /**
-     * <p>The pagination token to continue to the next page of results.</p>
+     * <p>The pagination token for the next set of items to return. (You received this
+     * token from a previous call.)</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>The pagination token to continue to the next page of results.</p>
+     * <p>The pagination token for the next set of items to return. (You received this
+     * token from a previous call.)</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * <p>The pagination token to continue to the next page of results.</p>
+     * <p>The pagination token for the next set of items to return. (You received this
+     * token from a previous call.)</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>The pagination token to continue to the next page of results.</p>
+     * <p>The pagination token for the next set of items to return. (You received this
+     * token from a previous call.)</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>The pagination token to continue to the next page of results.</p>
+     * <p>The pagination token for the next set of items to return. (You received this
+     * token from a previous call.)</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>The pagination token to continue to the next page of results.</p>
+     * <p>The pagination token for the next set of items to return. (You received this
+     * token from a previous call.)</p>
      */
     inline ListTimelineEventsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The pagination token to continue to the next page of results.</p>
+     * <p>The pagination token for the next set of items to return. (You received this
+     * token from a previous call.)</p>
      */
     inline ListTimelineEventsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>The pagination token to continue to the next page of results.</p>
+     * <p>The pagination token for the next set of items to return. (You received this
+     * token from a previous call.)</p>
      */
     inline ListTimelineEventsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

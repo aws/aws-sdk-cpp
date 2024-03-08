@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/sqs/SQS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
-#include <aws/sqs/model/ResponseMetadata.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sqs/model/ResponseMetadata.h>
 #include <utility>
 
 namespace Aws
@@ -17,10 +17,10 @@ class AmazonWebServiceResult;
 
 namespace Utils
 {
-namespace Xml
+namespace Json
 {
-  class XmlDocument;
-} // namespace Xml
+  class JsonValue;
+} // namespace Json
 } // namespace Utils
 namespace SQS
 {
@@ -30,8 +30,8 @@ namespace Model
   {
   public:
     AWS_SQS_API ListQueueTagsResult();
-    AWS_SQS_API ListQueueTagsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    AWS_SQS_API ListQueueTagsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SQS_API ListQueueTagsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SQS_API ListQueueTagsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -96,6 +96,28 @@ namespace Model
 
 
     
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline ListQueueTagsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline ListQueueTagsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline ListQueueTagsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
+
+    
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
     
@@ -113,6 +135,8 @@ namespace Model
   private:
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+
+    Aws::String m_requestId;
 
     ResponseMetadata m_responseMetadata;
   };

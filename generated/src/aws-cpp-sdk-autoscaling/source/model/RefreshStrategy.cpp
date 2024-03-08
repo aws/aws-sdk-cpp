@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RefreshStrategy::NOT_SET:
+            return {};
           case RefreshStrategy::Rolling:
             return "Rolling";
           default:

@@ -23,7 +23,9 @@ Volume::Volume() :
     m_hostHasBeenSet(false),
     m_dockerVolumeConfigurationHasBeenSet(false),
     m_efsVolumeConfigurationHasBeenSet(false),
-    m_fsxWindowsFileServerVolumeConfigurationHasBeenSet(false)
+    m_fsxWindowsFileServerVolumeConfigurationHasBeenSet(false),
+    m_configuredAtLaunch(false),
+    m_configuredAtLaunchHasBeenSet(false)
 {
 }
 
@@ -32,7 +34,9 @@ Volume::Volume(JsonView jsonValue) :
     m_hostHasBeenSet(false),
     m_dockerVolumeConfigurationHasBeenSet(false),
     m_efsVolumeConfigurationHasBeenSet(false),
-    m_fsxWindowsFileServerVolumeConfigurationHasBeenSet(false)
+    m_fsxWindowsFileServerVolumeConfigurationHasBeenSet(false),
+    m_configuredAtLaunch(false),
+    m_configuredAtLaunchHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -74,6 +78,13 @@ Volume& Volume::operator =(JsonView jsonValue)
     m_fsxWindowsFileServerVolumeConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("configuredAtLaunch"))
+  {
+    m_configuredAtLaunch = jsonValue.GetBool("configuredAtLaunch");
+
+    m_configuredAtLaunchHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -108,6 +119,12 @@ JsonValue Volume::Jsonize() const
   if(m_fsxWindowsFileServerVolumeConfigurationHasBeenSet)
   {
    payload.WithObject("fsxWindowsFileServerVolumeConfiguration", m_fsxWindowsFileServerVolumeConfiguration.Jsonize());
+
+  }
+
+  if(m_configuredAtLaunchHasBeenSet)
+  {
+   payload.WithBool("configuredAtLaunch", m_configuredAtLaunch);
 
   }
 

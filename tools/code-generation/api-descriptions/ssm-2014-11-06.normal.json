@@ -43,7 +43,8 @@
         {"shape":"OpsItemNotFoundException"},
         {"shape":"OpsItemLimitExceededException"},
         {"shape":"OpsItemInvalidParameterException"},
-        {"shape":"OpsItemRelatedItemAlreadyExistsException"}
+        {"shape":"OpsItemRelatedItemAlreadyExistsException"},
+        {"shape":"OpsItemConflictException"}
       ],
       "documentation":"<p>Associates a related item to a Systems Manager OpsCenter OpsItem. For example, you can associate an Incident Manager incident or analysis with an OpsItem. Incident Manager and OpsCenter are capabilities of Amazon Web Services Systems Manager.</p>"
     },
@@ -317,6 +318,20 @@
       ],
       "documentation":"<p>Deletes a maintenance window.</p>"
     },
+    "DeleteOpsItem":{
+      "name":"DeleteOpsItem",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DeleteOpsItemRequest"},
+      "output":{"shape":"DeleteOpsItemResponse"},
+      "errors":[
+        {"shape":"InternalServerError"},
+        {"shape":"OpsItemInvalidParameterException"}
+      ],
+      "documentation":"<p>Delete an OpsItem. You must have permission in Identity and Access Management (IAM) to delete an OpsItem. </p> <important> <p>Note the following important information about this operation.</p> <ul> <li> <p>Deleting an OpsItem is irreversible. You can't restore a deleted OpsItem.</p> </li> <li> <p>This operation uses an <i>eventual consistency model</i>, which means the system can take a few minutes to complete this operation. If you delete an OpsItem and immediately call, for example, <a>GetOpsItem</a>, the deleted OpsItem might still appear in the response. </p> </li> <li> <p>This operation is idempotent. The system doesn't throw an exception if you repeatedly call this operation for the same OpsItem. If the first call is successful, all additional calls return the same successful response as the first call.</p> </li> <li> <p>This operation doesn't support cross-account calls. A delegated administrator or management account can't delete OpsItems in other accounts, even if OpsCenter has been set up for cross-account administration. For more information about cross-account administration, see <a href=\"https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-setting-up-cross-account.html\">Setting up OpsCenter to centrally manage OpsItems across accounts</a> in the <i>Systems Manager User Guide</i>.</p> </li> </ul> </important>"
+    },
     "DeleteOpsMetadata":{
       "name":"DeleteOpsMetadata",
       "http":{
@@ -399,9 +414,12 @@
       "errors":[
         {"shape":"InternalServerError"},
         {"shape":"ResourcePolicyInvalidParameterException"},
-        {"shape":"ResourcePolicyConflictException"}
+        {"shape":"ResourcePolicyConflictException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"MalformedResourcePolicyDocumentException"},
+        {"shape":"ResourcePolicyNotFoundException"}
       ],
-      "documentation":"<p>Deletes a Systems Manager resource policy. A resource policy helps you to define the IAM entity (for example, an Amazon Web Services account) that can manage your Systems Manager resources. Currently, <code>OpsItemGroup</code> is the only resource that supports Systems Manager resource policies. The resource policy for <code>OpsItemGroup</code> enables Amazon Web Services accounts to view and interact with OpsCenter operational work items (OpsItems).</p>"
+      "documentation":"<p>Deletes a Systems Manager resource policy. A resource policy helps you to define the IAM entity (for example, an Amazon Web Services account) that can manage your Systems Manager resources. The following resources support Systems Manager resource policies.</p> <ul> <li> <p> <code>OpsItemGroup</code> - The resource policy for <code>OpsItemGroup</code> enables Amazon Web Services accounts to view and interact with OpsCenter operational work items (OpsItems).</p> </li> <li> <p> <code>Parameter</code> - The resource policy is used to share a parameter with other accounts using Resource Access Manager (RAM). For more information about cross-account sharing of parameters, see <a href=\"systems-manager/latest/userguide/parameter-store-shared-parameters.html\">Working with shared parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> </li> </ul>"
     },
     "DeregisterManagedInstance":{
       "name":"DeregisterManagedInstance",
@@ -567,7 +585,7 @@
       "errors":[
         {"shape":"InternalServerError"}
       ],
-      "documentation":"<p>Lists all patches eligible to be included in a patch baseline.</p>"
+      "documentation":"<p>Lists all patches eligible to be included in a patch baseline.</p> <note> <p>Currently, <code>DescribeAvailablePatches</code> supports only the Amazon Linux 1, Amazon Linux 2, and Windows Server operating systems.</p> </note>"
     },
     "DescribeDocument":{
       "name":"DescribeDocument",
@@ -861,7 +879,7 @@
         {"shape":"InvalidFilterValue"},
         {"shape":"InvalidNextToken"}
       ],
-      "documentation":"<p>Get information about a parameter.</p> <p>Request results are returned on a best-effort basis. If you specify <code>MaxResults</code> in the request, the response includes information up to the limit specified. The number of items returned, however, can be between zero and the value of <code>MaxResults</code>. If the service reaches an internal limit while processing the results, it stops the operation and returns the matching values up to that point and a <code>NextToken</code>. You can specify the <code>NextToken</code> in a subsequent call to get the next set of results.</p> <important> <p>If you change the KMS key alias for the KMS key used to encrypt a parameter, then you must also update the key alias the parameter uses to reference KMS. Otherwise, <code>DescribeParameters</code> retrieves whatever the original key alias was referencing.</p> </important>"
+      "documentation":"<p>Lists the parameters in your Amazon Web Services account or the parameters shared with you when you enable the <a href=\"https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeParameters.html#systemsmanager-DescribeParameters-request-Shared\">Shared</a> option.</p> <p>Request results are returned on a best-effort basis. If you specify <code>MaxResults</code> in the request, the response includes information up to the limit specified. The number of items returned, however, can be between zero and the value of <code>MaxResults</code>. If the service reaches an internal limit while processing the results, it stops the operation and returns the matching values up to that point and a <code>NextToken</code>. You can specify the <code>NextToken</code> in a subsequent call to get the next set of results.</p> <important> <p>If you change the KMS key alias for the KMS key used to encrypt a parameter, then you must also update the key alias the parameter uses to reference KMS. Otherwise, <code>DescribeParameters</code> retrieves whatever the original key alias was referencing.</p> </important>"
     },
     "DescribePatchBaselines":{
       "name":"DescribePatchBaselines",
@@ -943,7 +961,8 @@
         {"shape":"InternalServerError"},
         {"shape":"OpsItemRelatedItemAssociationNotFoundException"},
         {"shape":"OpsItemNotFoundException"},
-        {"shape":"OpsItemInvalidParameterException"}
+        {"shape":"OpsItemInvalidParameterException"},
+        {"shape":"OpsItemConflictException"}
       ],
       "documentation":"<p>Deletes the association between an OpsItem and a related item. For example, this API operation can delete an Incident Manager incident from an OpsItem. Incident Manager is a capability of Amazon Web Services Systems Manager.</p>"
     },
@@ -1304,7 +1323,8 @@
       "output":{"shape":"GetResourcePoliciesResponse"},
       "errors":[
         {"shape":"InternalServerError"},
-        {"shape":"ResourcePolicyInvalidParameterException"}
+        {"shape":"ResourcePolicyInvalidParameterException"},
+        {"shape":"ResourceNotFoundException"}
       ],
       "documentation":"<p>Returns an array of the <code>Policy</code> object.</p>"
     },
@@ -1685,9 +1705,12 @@
         {"shape":"InternalServerError"},
         {"shape":"ResourcePolicyInvalidParameterException"},
         {"shape":"ResourcePolicyLimitExceededException"},
-        {"shape":"ResourcePolicyConflictException"}
+        {"shape":"ResourcePolicyConflictException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"MalformedResourcePolicyDocumentException"},
+        {"shape":"ResourcePolicyNotFoundException"}
       ],
-      "documentation":"<p>Creates or updates a Systems Manager resource policy. A resource policy helps you to define the IAM entity (for example, an Amazon Web Services account) that can manage your Systems Manager resources. Currently, <code>OpsItemGroup</code> is the only resource that supports Systems Manager resource policies. The resource policy for <code>OpsItemGroup</code> enables Amazon Web Services accounts to view and interact with OpsCenter operational work items (OpsItems).</p>"
+      "documentation":"<p>Creates or updates a Systems Manager resource policy. A resource policy helps you to define the IAM entity (for example, an Amazon Web Services account) that can manage your Systems Manager resources. The following resources support Systems Manager resource policies.</p> <ul> <li> <p> <code>OpsItemGroup</code> - The resource policy for <code>OpsItemGroup</code> enables Amazon Web Services accounts to view and interact with OpsCenter operational work items (OpsItems).</p> </li> <li> <p> <code>Parameter</code> - The resource policy is used to share a parameter with other accounts using Resource Access Manager (RAM). </p> <p>To share a parameter, it must be in the advanced parameter tier. For information about parameter tiers, see <a href=\"https://docs.aws.amazon.com/parameter-store- advanced-parameters.html\">Managing parameter tiers</a>. For information about changing an existing standard parameter to an advanced parameter, see <a href=\"https://docs.aws.amazon.com/parameter-store-advanced-parameters.html#parameter- store-advanced-parameters-enabling\">Changing a standard parameter to an advanced parameter</a>.</p> <p>To share a <code>SecureString</code> parameter, it must be encrypted with a customer managed key, and you must share the key separately through Key Management Service. Amazon Web Services managed keys cannot be shared. Parameters encrypted with the default Amazon Web Services managed key can be updated to use a customer managed key instead. For KMS key definitions, see <a href=\"https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-mgmt\">KMS concepts</a> in the <i>Key Management Service Developer Guide</i>.</p> <important> <p>While you can share a parameter using the Systems Manager <code>PutResourcePolicy</code> operation, we recommend using Resource Access Manager (RAM) instead. This is because using <code>PutResourcePolicy</code> requires the extra step of promoting the parameter to a standard RAM Resource Share using the RAM <a href=\"https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html\">PromoteResourceShareCreatedFromPolicy</a> API operation. Otherwise, the parameter won't be returned by the Systems Manager <a href=\"https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeParameters.html\">DescribeParameters</a> API operation using the <code>--shared</code> option.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-shared-parameters.html#share\">Sharing a parameter</a> in the <i>Amazon Web Services Systems Manager User Guide</i> </p> </important> </li> </ul>"
     },
     "RegisterDefaultPatchBaseline":{
       "name":"RegisterDefaultPatchBaseline",
@@ -2116,7 +2139,8 @@
         {"shape":"OpsItemAlreadyExistsException"},
         {"shape":"OpsItemLimitExceededException"},
         {"shape":"OpsItemInvalidParameterException"},
-        {"shape":"OpsItemAccessDeniedException"}
+        {"shape":"OpsItemAccessDeniedException"},
+        {"shape":"OpsItemConflictException"}
       ],
       "documentation":"<p>Edit or change an OpsItem. You must have permission in Identity and Access Management (IAM) to update an OpsItem. For more information, see <a href=\"https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-setup.html\">Set up OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> <p>Operations engineers and IT professionals use Amazon Web Services Systems Manager OpsCenter to view, investigate, and remediate operational issues impacting the performance and health of their Amazon Web Services resources. For more information, see <a href=\"https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html\">OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p>"
     },
@@ -2487,6 +2511,11 @@
           "documentation":"<p>Number of days to wait after the scheduled day to run an association.</p>",
           "box":true
         },
+        "Duration":{
+          "shape":"Duration",
+          "documentation":"<p>The number of hours that an association can run on specified targets. After the resulting cutoff time passes, associations that are currently running are cancelled, and no pending executions are started on remaining targets.</p>",
+          "box":true
+        },
         "TargetMaps":{
           "shape":"TargetMaps",
           "documentation":"<p>A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>",
@@ -2614,6 +2643,11 @@
         "ScheduleOffset":{
           "shape":"ScheduleOffset",
           "documentation":"<p>Number of days to wait after the scheduled day to run an association.</p>",
+          "box":true
+        },
+        "Duration":{
+          "shape":"Duration",
+          "documentation":"<p>The number of hours that an association can run on specified targets. After the resulting cutoff time passes, associations that are currently running are cancelled, and no pending executions are started on remaining targets.</p>",
           "box":true
         },
         "TargetMaps":{
@@ -3049,6 +3083,11 @@
           "documentation":"<p>Number of days to wait after the scheduled day to run an association.</p>",
           "box":true
         },
+        "Duration":{
+          "shape":"Duration",
+          "documentation":"<p>The number of hours that an association can run on specified targets. After the resulting cutoff time passes, associations that are currently running are cancelled, and no pending executions are started on remaining targets.</p>",
+          "box":true
+        },
         "TargetMaps":{
           "shape":"TargetMaps",
           "documentation":"<p>A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>",
@@ -3347,6 +3386,10 @@
         "ChangeRequestName":{
           "shape":"ChangeRequestName",
           "documentation":"<p>The name of the Change Manager change request.</p>"
+        },
+        "Variables":{
+          "shape":"AutomationParameterMap",
+          "documentation":"<p>Variables defined for the automation.</p>"
         }
       },
       "documentation":"<p>Detailed information about the current state of an individual Automation execution.</p>"
@@ -3574,7 +3617,8 @@
         "ChangeCalendarOverrideApproved",
         "ChangeCalendarOverrideRejected",
         "CompletedWithSuccess",
-        "CompletedWithFailure"
+        "CompletedWithFailure",
+        "Exited"
       ]
     },
     "AutomationParameterKey":{
@@ -4397,8 +4441,8 @@
     "ConnectionStatus":{
       "type":"string",
       "enum":[
-        "Connected",
-        "NotConnected"
+        "connected",
+        "notconnected"
       ]
     },
     "ContentLength":{"type":"long"},
@@ -4538,6 +4582,11 @@
           "documentation":"<p>Number of days to wait after the scheduled day to run an association.</p>",
           "box":true
         },
+        "Duration":{
+          "shape":"Duration",
+          "documentation":"<p>The number of hours the association can run before it is canceled. Duration applies to associations that are currently running, and any pending and in progress commands on all targets. If a target was taken offline for the association to run, it is made available again immediately, without a reboot. </p> <p>The <code>Duration</code> parameter applies only when both these conditions are true:</p> <ul> <li> <p>The association for which you specify a duration is cancelable according to the parameters of the SSM command document or Automation runbook associated with this execution. </p> </li> <li> <p>The command specifies the <code> <a href=\"https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreateAssociationBatchRequestEntry.html#systemsmanager-Type-CreateAssociationBatchRequestEntry-ApplyOnlyAtCronInterval\">ApplyOnlyAtCronInterval</a> </code> parameter, which means that the association doesn't run immediately after it is created, but only according to the specified schedule.</p> </li> </ul>",
+          "box":true
+        },
         "TargetMaps":{
           "shape":"TargetMaps",
           "documentation":"<p>A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>",
@@ -4631,6 +4680,11 @@
         "ScheduleOffset":{
           "shape":"ScheduleOffset",
           "documentation":"<p>Number of days to wait after the scheduled day to run an association. For example, if you specified a cron schedule of <code>cron(0 0 ? * THU#2 *)</code>, you could specify an offset of 3 to run the association each Sunday after the second Thursday of the month. For more information about cron schedules for associations, see <a href=\"https://docs.aws.amazon.com/systems-manager/latest/userguide/reference-cron-and-rate-expressions.html\">Reference: Cron and rate expressions for Systems Manager</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p> <note> <p>To use offsets, you must specify the <code>ApplyOnlyAtCronInterval</code> parameter. This option tells the system not to run an association immediately after you create it. </p> </note>",
+          "box":true
+        },
+        "Duration":{
+          "shape":"Duration",
+          "documentation":"<p>The number of hours the association can run before it is canceled. Duration applies to associations that are currently running, and any pending and in progress commands on all targets. If a target was taken offline for the association to run, it is made available again immediately, without a reboot. </p> <p>The <code>Duration</code> parameter applies only when both these conditions are true:</p> <ul> <li> <p>The association for which you specify a duration is cancelable according to the parameters of the SSM command document or Automation runbook associated with this execution. </p> </li> <li> <p>The command specifies the <code> <a href=\"https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_CreateAssociation.html#systemsmanager-CreateAssociation-request-ApplyOnlyAtCronInterval\">ApplyOnlyAtCronInterval</a> </code> parameter, which means that the association doesn't run immediately after it is created, but only according to the specified schedule.</p> </li> </ul>",
           "box":true
         },
         "TargetMaps":{
@@ -4794,11 +4848,11 @@
       "members":{
         "Description":{
           "shape":"OpsItemDescription",
-          "documentation":"<p>Information about the OpsItem. </p>"
+          "documentation":"<p>User-defined text that contains information about the OpsItem, in Markdown format. </p> <note> <p>Provide enough information so that users viewing this OpsItem for the first time understand the issue. </p> </note>"
         },
         "OpsItemType":{
           "shape":"OpsItemType",
-          "documentation":"<p>The type of OpsItem to create. Systems Manager supports the following types of OpsItems:</p> <ul> <li> <p> <code>/aws/issue</code> </p> <p>This type of OpsItem is used for default OpsItems created by OpsCenter. </p> </li> <li> <p> <code>/aws/changerequest</code> </p> <p>This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests. </p> </li> <li> <p> <code>/aws/insights</code> </p> <p>This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li> </ul>"
+          "documentation":"<p>The type of OpsItem to create. Systems Manager supports the following types of OpsItems:</p> <ul> <li> <p> <code>/aws/issue</code> </p> <p>This type of OpsItem is used for default OpsItems created by OpsCenter. </p> </li> <li> <p> <code>/aws/changerequest</code> </p> <p>This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests. </p> </li> <li> <p> <code>/aws/insight</code> </p> <p>This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li> </ul>"
         },
         "OperationalData":{
           "shape":"OpsItemOperationalData",
@@ -5134,6 +5188,21 @@
         }
       }
     },
+    "DeleteOpsItemRequest":{
+      "type":"structure",
+      "required":["OpsItemId"],
+      "members":{
+        "OpsItemId":{
+          "shape":"OpsItemId",
+          "documentation":"<p>The ID of the OpsItem that you want to delete.</p>"
+        }
+      }
+    },
+    "DeleteOpsItemResponse":{
+      "type":"structure",
+      "members":{
+      }
+    },
     "DeleteOpsMetadataRequest":{
       "type":"structure",
       "required":["OpsMetadataArn"],
@@ -5155,7 +5224,7 @@
       "members":{
         "Name":{
           "shape":"PSParameterName",
-          "documentation":"<p>The name of the parameter to delete.</p>"
+          "documentation":"<p>The name of the parameter to delete.</p> <note> <p>You can't enter the Amazon Resource Name (ARN) for a parameter, only the parameter name itself.</p> </note>"
         }
       }
     },
@@ -5170,7 +5239,7 @@
       "members":{
         "Names":{
           "shape":"ParameterNameList",
-          "documentation":"<p>The names of the parameters to delete. After deleting a parameter, wait for at least 30 seconds to create a parameter with the same name.</p>"
+          "documentation":"<p>The names of the parameters to delete. After deleting a parameter, wait for at least 30 seconds to create a parameter with the same name.</p> <note> <p>You can't enter the Amazon Resource Name (ARN) for a parameter, only the parameter name itself.</p> </note>"
         }
       }
     },
@@ -5689,7 +5758,7 @@
         },
         "VersionName":{
           "shape":"DocumentVersionName",
-          "documentation":"<p>An optional field specifying the version of the artifact associated with the document. For example, \"Release 12, Update 6\". This value is unique across all versions of a document, and can't be changed.</p>"
+          "documentation":"<p>An optional field specifying the version of the artifact associated with the document. For example, 12.6. This value is unique across all versions of a document, and can't be changed.</p>"
         }
       }
     },
@@ -5911,7 +5980,7 @@
         },
         "Filters":{
           "shape":"PatchOrchestratorFilterList",
-          "documentation":"<p>Each element in the array is a structure containing a key-value pair.</p> <p>Supported keys for <code>DescribeInstancePatches</code>include the following:</p> <ul> <li> <p> <b> <code>Classification</code> </b> </p> <p>Sample values: <code>Security</code> | <code>SecurityUpdates</code> </p> </li> <li> <p> <b> <code>KBId</code> </b> </p> <p>Sample values: <code>KB4480056</code> | <code>java-1.7.0-openjdk.x86_64</code> </p> </li> <li> <p> <b> <code>Severity</code> </b> </p> <p>Sample values: <code>Important</code> | <code>Medium</code> | <code>Low</code> </p> </li> <li> <p> <b> <code>State</code> </b> </p> <p>Sample values: <code>Installed</code> | <code>InstalledOther</code> | <code>InstalledPendingReboot</code> </p> </li> </ul>"
+          "documentation":"<p>Each element in the array is a structure containing a key-value pair.</p> <p>Supported keys for <code>DescribeInstancePatches</code>include the following:</p> <ul> <li> <p> <b> <code>Classification</code> </b> </p> <p>Sample values: <code>Security</code> | <code>SecurityUpdates</code> </p> </li> <li> <p> <b> <code>KBId</code> </b> </p> <p>Sample values: <code>KB4480056</code> | <code>java-1.7.0-openjdk.x86_64</code> </p> </li> <li> <p> <b> <code>Severity</code> </b> </p> <p>Sample values: <code>Important</code> | <code>Medium</code> | <code>Low</code> </p> </li> <li> <p> <b> <code>State</code> </b> </p> <p>Sample values: <code>Installed</code> | <code>InstalledOther</code> | <code>InstalledPendingReboot</code> </p> <p>For lists of all <code>State</code> values, see <a href=\"https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-compliance-states.html\">Understanding patch compliance state values</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> </li> </ul>"
         },
         "NextToken":{
           "shape":"NextToken",
@@ -6317,6 +6386,11 @@
         "NextToken":{
           "shape":"NextToken",
           "documentation":"<p>The token for the next set of items to return. (You received this token from a previous call.)</p>"
+        },
+        "Shared":{
+          "shape":"Boolean",
+          "documentation":"<p>Lists parameters that are shared with you.</p> <note> <p>By default when using this option, the command returns parameters that have been shared using a standard Resource Access Manager Resource Share. In order for a parameter that was shared using the <a>PutResourcePolicy</a> command to be returned, the associated <code>RAM Resource Share Created From Policy</code> must have been promoted to a standard Resource Share using the RAM <a href=\"https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html\">PromoteResourceShareCreatedFromPolicy</a> API operation.</p> <p>For more information about sharing parameters, see <a href=\"systems-manager/latest/userguide/parameter-store-shared-parameters.html\">Working with shared parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> </note>",
+          "box":true
         }
       }
     },
@@ -6808,7 +6882,7 @@
         },
         "VersionName":{
           "shape":"DocumentVersionName",
-          "documentation":"<p>An optional field specifying the version of the artifact associated with the document. For example, \"Release 12, Update 6\". This value is unique across all versions of a document, and can't be changed.</p>"
+          "documentation":"<p>An optional field specifying the version of the artifact associated with the document. For example, 12.6. This value is unique across all versions of a document, and can't be changed.</p>"
         },
         "PlatformTypes":{
           "shape":"PlatformTypeList",
@@ -6989,7 +7063,7 @@
         },
         "VersionName":{
           "shape":"DocumentVersionName",
-          "documentation":"<p>An optional field specifying the version of the artifact associated with the document. For example, \"Release 12, Update 6\". This value is unique across all versions of a document, and can't be changed.</p>"
+          "documentation":"<p>An optional field specifying the version of the artifact associated with the document. For example, 12.6. This value is unique across all versions of a document, and can't be changed.</p>"
         }
       },
       "documentation":"<p>An SSM document required by the current document.</p>"
@@ -7141,7 +7215,7 @@
         },
         "VersionName":{
           "shape":"DocumentVersionName",
-          "documentation":"<p>The version of the artifact associated with the document. For example, \"Release 12, Update 6\". This value is unique across all versions of a document, and can't be changed.</p>"
+          "documentation":"<p>The version of the artifact associated with the document. For example, 12.6. This value is unique across all versions of a document, and can't be changed.</p>"
         },
         "CreatedDate":{
           "shape":"DateTime",
@@ -7222,6 +7296,12 @@
       },
       "documentation":"<p>You can't specify a managed node ID in more than one association.</p>",
       "exception":true
+    },
+    "Duration":{
+      "type":"integer",
+      "box":true,
+      "max":24,
+      "min":1
     },
     "EffectiveInstanceAssociationMaxResults":{
       "type":"integer",
@@ -7487,7 +7567,7 @@
         },
         "Status":{
           "shape":"ConnectionStatus",
-          "documentation":"<p>The status of the connection to the managed node. For example, 'Connected' or 'Not Connected'.</p>"
+          "documentation":"<p>The status of the connection to the managed node.</p>"
         }
       }
     },
@@ -7565,7 +7645,7 @@
         },
         "VersionName":{
           "shape":"DocumentVersionName",
-          "documentation":"<p>An optional field specifying the version of the artifact associated with the document. For example, \"Release 12, Update 6\". This value is unique across all versions of a document and can't be changed.</p>"
+          "documentation":"<p>An optional field specifying the version of the artifact associated with the document. For example, 12.6. This value is unique across all versions of a document and can't be changed.</p>"
         },
         "DocumentVersion":{
           "shape":"DocumentVersion",
@@ -7594,7 +7674,7 @@
         },
         "VersionName":{
           "shape":"DocumentVersionName",
-          "documentation":"<p>The version of the artifact associated with the document. For example, \"Release 12, Update 6\". This value is unique across all versions of a document, and can't be changed.</p>"
+          "documentation":"<p>The version of the artifact associated with the document. For example, 12.6. This value is unique across all versions of a document, and can't be changed.</p>"
         },
         "DocumentVersion":{
           "shape":"DocumentVersion",
@@ -8190,7 +8270,7 @@
       "members":{
         "Name":{
           "shape":"PSParameterName",
-          "documentation":"<p>The name of the parameter for which you want to review history.</p>"
+          "documentation":"<p>The name or Amazon Resource Name (ARN) of the parameter for which you want to review history. For parameters shared with you from another account, you must use the full ARN.</p>"
         },
         "WithDecryption":{
           "shape":"Boolean",
@@ -8227,7 +8307,7 @@
       "members":{
         "Name":{
           "shape":"PSParameterName",
-          "documentation":"<p>The name of the parameter you want to query.</p> <p>To query by parameter label, use <code>\"Name\": \"name:label\"</code>. To query by parameter version, use <code>\"Name\": \"name:version\"</code>.</p>"
+          "documentation":"<p>The name or Amazon Resource Name (ARN) of the parameter that you want to query. For parameters shared with you from another account, you must use the full ARN.</p> <p>To query by parameter label, use <code>\"Name\": \"name:label\"</code>. To query by parameter version, use <code>\"Name\": \"name:version\"</code>.</p> <p>For more information about shared parameters, see <a href=\"https://docs.aws.amazon.com/systems-manager/latest/userguide/sharing.html\">Working with shared parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>"
         },
         "WithDecryption":{
           "shape":"Boolean",
@@ -8302,7 +8382,7 @@
       "members":{
         "Names":{
           "shape":"ParameterNameList",
-          "documentation":"<p>Names of the parameters for which you want to query information.</p> <p>To query by parameter label, use <code>\"Name\": \"name:label\"</code>. To query by parameter version, use <code>\"Name\": \"name:version\"</code>.</p>"
+          "documentation":"<p>The names or Amazon Resource Names (ARNs) of the parameters that you want to query. For parameters shared with you from another account, you must use the full ARNs.</p> <p>To query by parameter label, use <code>\"Name\": \"name:label\"</code>. To query by parameter version, use <code>\"Name\": \"name:version\"</code>.</p> <p>For more information about shared parameters, see <a href=\"https://docs.aws.amazon.com/systems-manager/latest/userguide/sharing.html\">Working with shared parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>"
         },
         "WithDecryption":{
           "shape":"Boolean",
@@ -9905,7 +9985,7 @@
       "members":{
         "Name":{
           "shape":"PSParameterName",
-          "documentation":"<p>The parameter name on which you want to attach one or more labels.</p>"
+          "documentation":"<p>The parameter name on which you want to attach one or more labels.</p> <note> <p>You can't enter the Amazon Resource Name (ARN) for a parameter, only the parameter name itself.</p> </note>"
         },
         "ParameterVersion":{
           "shape":"PSParameterVersion",
@@ -11234,6 +11314,14 @@
       "type":"list",
       "member":{"shape":"MaintenanceWindowIdentityForTarget"}
     },
+    "MalformedResourcePolicyDocumentException":{
+      "type":"structure",
+      "members":{
+        "Message":{"shape":"String"}
+      },
+      "documentation":"<p>The specified policy document is malformed or invalid, or excessive <code>PutResourcePolicy</code> or <code>DeleteResourcePolicy</code> calls have been made.</p>",
+      "exception":true
+    },
     "ManagedInstanceId":{
       "type":"string",
       "max":124,
@@ -11615,7 +11703,7 @@
         },
         "OpsItemType":{
           "shape":"OpsItemType",
-          "documentation":"<p>The type of OpsItem. Systems Manager supports the following types of OpsItems:</p> <ul> <li> <p> <code>/aws/issue</code> </p> <p>This type of OpsItem is used for default OpsItems created by OpsCenter. </p> </li> <li> <p> <code>/aws/changerequest</code> </p> <p>This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests. </p> </li> <li> <p> <code>/aws/insights</code> </p> <p>This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li> </ul>"
+          "documentation":"<p>The type of OpsItem. Systems Manager supports the following types of OpsItems:</p> <ul> <li> <p> <code>/aws/issue</code> </p> <p>This type of OpsItem is used for default OpsItems created by OpsCenter. </p> </li> <li> <p> <code>/aws/changerequest</code> </p> <p>This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests. </p> </li> <li> <p> <code>/aws/insight</code> </p> <p>This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li> </ul>"
         },
         "CreatedTime":{
           "shape":"DateTime",
@@ -11732,6 +11820,14 @@
       "max":64,
       "min":1,
       "pattern":"^(?!\\s*$).+"
+    },
+    "OpsItemConflictException":{
+      "type":"structure",
+      "members":{
+        "Message":{"shape":"String"}
+      },
+      "documentation":"<p>The specified OpsItem is in the process of being deleted.</p>",
+      "exception":true
     },
     "OpsItemDataKey":{
       "type":"string",
@@ -12215,7 +12311,7 @@
         },
         "OpsItemType":{
           "shape":"OpsItemType",
-          "documentation":"<p>The type of OpsItem. Systems Manager supports the following types of OpsItems:</p> <ul> <li> <p> <code>/aws/issue</code> </p> <p>This type of OpsItem is used for default OpsItems created by OpsCenter. </p> </li> <li> <p> <code>/aws/changerequest</code> </p> <p>This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests. </p> </li> <li> <p> <code>/aws/insights</code> </p> <p>This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li> </ul>"
+          "documentation":"<p>The type of OpsItem. Systems Manager supports the following types of OpsItems:</p> <ul> <li> <p> <code>/aws/issue</code> </p> <p>This type of OpsItem is used for default OpsItems created by OpsCenter. </p> </li> <li> <p> <code>/aws/changerequest</code> </p> <p>This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests. </p> </li> <li> <p> <code>/aws/insight</code> </p> <p>This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li> </ul>"
         },
         "ActualStartTime":{
           "shape":"DateTime",
@@ -12506,7 +12602,7 @@
         },
         "KeyId":{
           "shape":"ParameterKeyId",
-          "documentation":"<p>The ID of the query key used for this parameter.</p>"
+          "documentation":"<p>The alias of the Key Management Service (KMS) key used to encrypt the parameter. Applies to <code>SecureString</code> parameters only</p>"
         },
         "LastModifiedDate":{
           "shape":"DateTime",
@@ -12617,13 +12713,17 @@
           "shape":"PSParameterName",
           "documentation":"<p>The parameter name.</p>"
         },
+        "ARN":{
+          "shape":"String",
+          "documentation":"<p>The (ARN) of the last user to update the parameter.</p>"
+        },
         "Type":{
           "shape":"ParameterType",
           "documentation":"<p>The type of parameter. Valid parameter types include the following: <code>String</code>, <code>StringList</code>, and <code>SecureString</code>.</p>"
         },
         "KeyId":{
           "shape":"ParameterKeyId",
-          "documentation":"<p>The ID of the query key used for this parameter.</p>"
+          "documentation":"<p>The alias of the Key Management Service (KMS) key used to encrypt the parameter. Applies to <code>SecureString</code> parameters only.</p>"
         },
         "LastModifiedDate":{
           "shape":"DateTime",
@@ -12658,7 +12758,7 @@
           "documentation":"<p>The data type of the parameter, such as <code>text</code> or <code>aws:ec2:image</code>. The default is <code>text</code>.</p>"
         }
       },
-      "documentation":"<p>Metadata includes information like the ARN of the last user and the date/time the parameter was last used.</p>"
+      "documentation":"<p>Metadata includes information like the Amazon Resource Name (ARN) of the last user to update the parameter and the date and time the parameter was last used.</p>"
     },
     "ParameterMetadataList":{
       "type":"list",
@@ -12827,6 +12927,33 @@
       "member":{"shape":"ParametersFilterValue"},
       "max":50,
       "min":1
+    },
+    "ParentStepDetails":{
+      "type":"structure",
+      "members":{
+        "StepExecutionId":{
+          "shape":"String",
+          "documentation":"<p>The unique ID of a step execution.</p>"
+        },
+        "StepName":{
+          "shape":"String",
+          "documentation":"<p>The name of the step.</p>"
+        },
+        "Action":{
+          "shape":"AutomationActionName",
+          "documentation":"<p>The name of the automation action.</p>"
+        },
+        "Iteration":{
+          "shape":"Integer",
+          "documentation":"<p>The current repetition of the loop represented by an integer.</p>",
+          "box":true
+        },
+        "IteratorValue":{
+          "shape":"String",
+          "documentation":"<p>The current value of the specified iterator in the loop.</p>"
+        }
+      },
+      "documentation":"<p>A detailed status of the parent step.</p>"
     },
     "Patch":{
       "type":"structure",
@@ -13023,7 +13150,7 @@
         },
         "CVEIds":{
           "shape":"PatchCVEIds",
-          "documentation":"<p>The IDs of one or more Common Vulnerabilities and Exposure (CVE) issues that are resolved by the patch.</p>"
+          "documentation":"<p>The IDs of one or more Common Vulnerabilities and Exposure (CVE) issues that are resolved by the patch.</p> <note> <p>Currently, CVE ID values are reported only for patches with a status of <code>Missing</code> or <code>Failed</code>.</p> </note>"
         }
       },
       "documentation":"<p>Information about the state of a patch on a particular managed node as it relates to the patch baseline used to patch the node.</p>"
@@ -13427,7 +13554,7 @@
     },
     "Policy":{
       "type":"string",
-      "pattern":"\\S+"
+      "pattern":"^(?!\\s*$).+"
     },
     "PolicyHash":{"type":"string"},
     "PolicyId":{"type":"string"},
@@ -13540,7 +13667,7 @@
       "members":{
         "Name":{
           "shape":"PSParameterName",
-          "documentation":"<p>The fully qualified name of the parameter that you want to add to the system. The fully qualified name includes the complete hierarchy of the parameter path and name. For parameters in a hierarchy, you must include a leading forward slash character (/) when you create or reference a parameter. For example: <code>/Dev/DBServer/MySQL/db-string13</code> </p> <p>Naming Constraints:</p> <ul> <li> <p>Parameter names are case sensitive.</p> </li> <li> <p>A parameter name must be unique within an Amazon Web Services Region</p> </li> <li> <p>A parameter name can't be prefixed with \"<code>aws</code>\" or \"<code>ssm</code>\" (case-insensitive).</p> </li> <li> <p>Parameter names can include only the following symbols and letters: <code>a-zA-Z0-9_.-</code> </p> <p>In addition, the slash character ( / ) is used to delineate hierarchies in parameter names. For example: <code>/Dev/Production/East/Project-ABC/MyParameter</code> </p> </li> <li> <p>A parameter name can't include spaces.</p> </li> <li> <p>Parameter hierarchies are limited to a maximum depth of fifteen levels.</p> </li> </ul> <p>For additional information about valid values for parameter names, see <a href=\"https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html\">Creating Systems Manager parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> <note> <p>The maximum length constraint of 2048 characters listed below includes 1037 characters reserved for internal use by Systems Manager. The maximum length for a parameter name that you create is 1011 characters. This includes the characters in the ARN that precede the name you specify, such as <code>arn:aws:ssm:us-east-2:111122223333:parameter/</code>.</p> </note>"
+          "documentation":"<p>The fully qualified name of the parameter that you want to add to the system.</p> <note> <p>You can't enter the Amazon Resource Name (ARN) for a parameter, only the parameter name itself.</p> </note> <p>The fully qualified name includes the complete hierarchy of the parameter path and name. For parameters in a hierarchy, you must include a leading forward slash character (/) when you create or reference a parameter. For example: <code>/Dev/DBServer/MySQL/db-string13</code> </p> <p>Naming Constraints:</p> <ul> <li> <p>Parameter names are case sensitive.</p> </li> <li> <p>A parameter name must be unique within an Amazon Web Services Region</p> </li> <li> <p>A parameter name can't be prefixed with \"<code>aws</code>\" or \"<code>ssm</code>\" (case-insensitive).</p> </li> <li> <p>Parameter names can include only the following symbols and letters: <code>a-zA-Z0-9_.-</code> </p> <p>In addition, the slash character ( / ) is used to delineate hierarchies in parameter names. For example: <code>/Dev/Production/East/Project-ABC/MyParameter</code> </p> </li> <li> <p>A parameter name can't include spaces.</p> </li> <li> <p>Parameter hierarchies are limited to a maximum depth of fifteen levels.</p> </li> </ul> <p>For additional information about valid values for parameter names, see <a href=\"https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html\">Creating Systems Manager parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> <note> <p>The maximum length constraint of 2048 characters listed below includes 1037 characters reserved for internal use by Systems Manager. The maximum length for a parameter name that you create is 1011 characters. This includes the characters in the ARN that precede the name you specify, such as <code>arn:aws:ssm:us-east-2:111122223333:parameter/</code>.</p> </note>"
         },
         "Description":{
           "shape":"ParameterDescription",
@@ -14331,6 +14458,14 @@
       "documentation":"<p>Error returned when the caller has exceeded the default resource quotas. For example, too many maintenance windows or patch baselines have been created.</p> <p>For information about resource quotas in Systems Manager, see <a href=\"https://docs.aws.amazon.com/general/latest/gr/ssm.html#limits_ssm\">Systems Manager service quotas</a> in the <i>Amazon Web Services General Reference</i>.</p>",
       "exception":true
     },
+    "ResourceNotFoundException":{
+      "type":"structure",
+      "members":{
+        "Message":{"shape":"String"}
+      },
+      "documentation":"<p>The specified parameter to be shared could not be found.</p>",
+      "exception":true
+    },
     "ResourcePolicyConflictException":{
       "type":"structure",
       "members":{
@@ -14363,6 +14498,14 @@
       "max":50,
       "min":1
     },
+    "ResourcePolicyNotFoundException":{
+      "type":"structure",
+      "members":{
+        "Message":{"shape":"String"}
+      },
+      "documentation":"<p>No policies with the specified policy ID and hash could be found.</p>",
+      "exception":true
+    },
     "ResourcePolicyParameterNamesList":{
       "type":"list",
       "member":{"shape":"String"}
@@ -14371,7 +14514,6 @@
       "type":"string",
       "enum":[
         "ManagedInstance",
-        "Document",
         "EC2Instance"
       ]
     },
@@ -15329,6 +15471,10 @@
         "TriggeredAlarms":{
           "shape":"AlarmStateInformationList",
           "documentation":"<p>The CloudWatch alarms that were invoked by the automation.</p>"
+        },
+        "ParentStepDetails":{
+          "shape":"ParentStepDetails",
+          "documentation":"<p>Information about the parent step.</p>"
         }
       },
       "documentation":"<p>Detailed information about an the execution state of an Automation step.</p>"
@@ -15342,7 +15488,7 @@
       "members":{
         "Key":{
           "shape":"StepExecutionFilterKey",
-          "documentation":"<p>One or more keys to limit the results. Valid filter keys include the following: StepName, Action, StepExecutionId, StepExecutionStatus, StartTimeBefore, StartTimeAfter.</p>"
+          "documentation":"<p>One or more keys to limit the results.</p>"
         },
         "Values":{
           "shape":"StepExecutionFilterValueList",
@@ -15359,7 +15505,10 @@
         "StepExecutionStatus",
         "StepExecutionId",
         "StepName",
-        "Action"
+        "Action",
+        "ParentStepExecutionId",
+        "ParentStepIteration",
+        "ParentStepIteratorValue"
       ]
     },
     "StepExecutionFilterList":{
@@ -15656,7 +15805,7 @@
       "members":{
         "Name":{
           "shape":"PSParameterName",
-          "documentation":"<p>The name of the parameter from which you want to delete one or more labels.</p>"
+          "documentation":"<p>The name of the parameter from which you want to delete one or more labels.</p> <note> <p>You can't enter the Amazon Resource Name (ARN) for a parameter, only the parameter name itself.</p> </note>"
         },
         "ParameterVersion":{
           "shape":"PSParameterVersion",
@@ -15816,6 +15965,11 @@
           "documentation":"<p>Number of days to wait after the scheduled day to run an association. For example, if you specified a cron schedule of <code>cron(0 0 ? * THU#2 *)</code>, you could specify an offset of 3 to run the association each Sunday after the second Thursday of the month. For more information about cron schedules for associations, see <a href=\"https://docs.aws.amazon.com/systems-manager/latest/userguide/reference-cron-and-rate-expressions.html\">Reference: Cron and rate expressions for Systems Manager</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p> <note> <p>To use offsets, you must specify the <code>ApplyOnlyAtCronInterval</code> parameter. This option tells the system not to run an association immediately after you create it. </p> </note>",
           "box":true
         },
+        "Duration":{
+          "shape":"Duration",
+          "documentation":"<p>The number of hours the association can run before it is canceled. Duration applies to associations that are currently running, and any pending and in progress commands on all targets. If a target was taken offline for the association to run, it is made available again immediately, without a reboot. </p> <p>The <code>Duration</code> parameter applies only when both these conditions are true:</p> <ul> <li> <p>The association for which you specify a duration is cancelable according to the parameters of the SSM command document or Automation runbook associated with this execution. </p> </li> <li> <p>The command specifies the <code> <a href=\"https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_UpdateAssociation.html#systemsmanager-UpdateAssociation-request-ApplyOnlyAtCronInterval\">ApplyOnlyAtCronInterval</a> </code> parameter, which means that the association doesn't run immediately after it is updated, but only according to the specified schedule.</p> </li> </ul>",
+          "box":true
+        },
         "TargetMaps":{
           "shape":"TargetMaps",
           "documentation":"<p>A key-value mapping of document parameters to target resources. Both Targets and TargetMaps can't be specified together.</p>",
@@ -15941,7 +16095,7 @@
         },
         "VersionName":{
           "shape":"DocumentVersionName",
-          "documentation":"<p>An optional field specifying the version of the artifact you are updating with the document. For example, \"Release 12, Update 6\". This value is unique across all versions of a document, and can't be changed.</p>"
+          "documentation":"<p>An optional field specifying the version of the artifact you are updating with the document. For example, 12.6. This value is unique across all versions of a document, and can't be changed.</p>"
         },
         "DocumentVersion":{
           "shape":"DocumentVersion",
@@ -16321,7 +16475,7 @@
       "members":{
         "Description":{
           "shape":"OpsItemDescription",
-          "documentation":"<p>Update the information about the OpsItem. Provide enough information so that users reading this OpsItem for the first time understand the issue. </p>"
+          "documentation":"<p>User-defined text that contains information about the OpsItem, in Markdown format. </p>"
         },
         "OperationalData":{
           "shape":"OpsItemOperationalData",
@@ -16575,7 +16729,7 @@
         },
         "SettingValue":{
           "shape":"ServiceSettingValue",
-          "documentation":"<p>The new value to specify for the service setting. The following list specifies the available values for each setting.</p> <ul> <li> <p> <code>/ssm/managed-instance/default-ec2-instance-management-role: The name of an IAM role</code> </p> </li> <li> <p> <code>/ssm/automation/customer-script-log-destination</code>: <code>CloudWatch</code> </p> </li> <li> <p> <code>/ssm/automation/customer-script-log-group-name</code>: The name of an Amazon CloudWatch Logs log group</p> </li> <li> <p> <code>/ssm/documents/console/public-sharing-permission</code>: <code>Enable</code> or <code>Disable</code> </p> </li> <li> <p> <code>/ssm/managed-instance/activation-tier</code>: <code>standard</code> or <code>advanced</code> </p> </li> <li> <p> <code>/ssm/opsinsights/opscenter</code>: <code>Enabled</code> or <code>Disabled</code> </p> </li> <li> <p> <code>/ssm/parameter-store/default-parameter-tier</code>: <code>Standard</code>, <code>Advanced</code>, <code>Intelligent-Tiering</code> </p> </li> <li> <p> <code>/ssm/parameter-store/high-throughput-enabled</code>: <code>true</code> or <code>false</code> </p> </li> </ul>"
+          "documentation":"<p>The new value to specify for the service setting. The following list specifies the available values for each setting.</p> <ul> <li> <p>For <code>/ssm/managed-instance/default-ec2-instance-management-role</code>, enter the name of an IAM role. </p> </li> <li> <p>For <code>/ssm/automation/customer-script-log-destination</code>, enter <code>CloudWatch</code>.</p> </li> <li> <p>For <code>/ssm/automation/customer-script-log-group-name</code>, enter the name of an Amazon CloudWatch Logs log group.</p> </li> <li> <p>For <code>/ssm/documents/console/public-sharing-permission</code>, enter <code>Enable</code> or <code>Disable</code>.</p> </li> <li> <p>For <code>/ssm/managed-instance/activation-tier</code>, enter <code>standard</code> or <code>advanced</code>.</p> </li> <li> <p> For <code>/ssm/opsinsights/opscenter</code>, enter <code>Enabled</code> or <code>Disabled</code>. </p> </li> <li> <p>For <code>/ssm/parameter-store/default-parameter-tier</code>, enter <code>Standard</code>, <code>Advanced</code>, or <code>Intelligent-Tiering</code> </p> </li> <li> <p>For <code>/ssm/parameter-store/high-throughput-enabled</code>, enter <code>true</code> or <code>false</code>.</p> </li> </ul>"
         }
       },
       "documentation":"<p>The request body of the UpdateServiceSetting API operation.</p>"
@@ -16601,5 +16755,5 @@
       "pattern":"^[0-9]{1,6}(\\.[0-9]{1,6}){2,3}$"
     }
   },
-  "documentation":"<p>Amazon Web Services Systems Manager is the operations hub for your Amazon Web Services applications and resources and a secure end-to-end management solution for hybrid cloud environments that enables safe and secure operations at scale.</p> <p>This reference is intended to be used with the <a href=\"https://docs.aws.amazon.com/systems-manager/latest/userguide/\">Amazon Web Services Systems Manager User Guide</a>. To get started, see <a href=\"https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up.html\">Setting up Amazon Web Services Systems Manager</a>.</p> <p class=\"title\"> <b>Related resources</b> </p> <ul> <li> <p>For information about each of the capabilities that comprise Systems Manager, see <a href=\"https://docs.aws.amazon.com/systems-manager-automation-runbooks/latest/userguide/systems-manager-capabilities.html\">Systems Manager capabilities</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> </li> <li> <p>For details about predefined runbooks for Automation, a capability of Amazon Web Services Systems Manager, see the <i> <a href=\"https://docs.aws.amazon.com/systems-manager-automation-runbooks/latest/userguide/automation-runbook-reference.html\">Systems Manager Automation runbook reference</a> </i>.</p> </li> <li> <p>For information about AppConfig, a capability of Systems Manager, see the <i> <a href=\"https://docs.aws.amazon.com/appconfig/latest/userguide/\">AppConfig User Guide</a> </i> and the <i> <a href=\"https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/\">AppConfig API Reference</a> </i>.</p> </li> <li> <p>For information about Incident Manager, a capability of Systems Manager, see the <i> <a href=\"https://docs.aws.amazon.com/incident-manager/latest/userguide/\">Systems Manager Incident Manager User Guide</a> </i> and the <i> <a href=\"https://docs.aws.amazon.com/incident-manager/latest/APIReference/\">Systems Manager Incident Manager API Reference</a> </i>.</p> </li> </ul>"
+  "documentation":"<p>Amazon Web Services Systems Manager is the operations hub for your Amazon Web Services applications and resources and a secure end-to-end management solution for hybrid cloud environments that enables safe and secure operations at scale.</p> <p>This reference is intended to be used with the <a href=\"https://docs.aws.amazon.com/systems-manager/latest/userguide/\">Amazon Web Services Systems Manager User Guide</a>. To get started, see <a href=\"https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up.html\">Setting up Amazon Web Services Systems Manager</a>.</p> <p class=\"title\"> <b>Related resources</b> </p> <ul> <li> <p>For information about each of the capabilities that comprise Systems Manager, see <a href=\"https://docs.aws.amazon.com/systems-manager/latest/userguide/what-is-systems-manager.html#systems-manager-capabilities\">Systems Manager capabilities</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> </li> <li> <p>For details about predefined runbooks for Automation, a capability of Amazon Web Services Systems Manager, see the <i> <a href=\"https://docs.aws.amazon.com/systems-manager-automation-runbooks/latest/userguide/automation-runbook-reference.html\">Systems Manager Automation runbook reference</a> </i>.</p> </li> <li> <p>For information about AppConfig, a capability of Systems Manager, see the <i> <a href=\"https://docs.aws.amazon.com/appconfig/latest/userguide/\">AppConfig User Guide</a> </i> and the <i> <a href=\"https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/\">AppConfig API Reference</a> </i>.</p> </li> <li> <p>For information about Incident Manager, a capability of Systems Manager, see the <i> <a href=\"https://docs.aws.amazon.com/incident-manager/latest/userguide/\">Systems Manager Incident Manager User Guide</a> </i> and the <i> <a href=\"https://docs.aws.amazon.com/incident-manager/latest/APIReference/\">Systems Manager Incident Manager API Reference</a> </i>.</p> </li> </ul>"
 }

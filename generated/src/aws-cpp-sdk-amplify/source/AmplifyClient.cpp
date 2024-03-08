@@ -72,8 +72,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* AmplifyClient::SERVICE_NAME = "amplify";
-const char* AmplifyClient::ALLOCATION_TAG = "AmplifyClient";
+namespace Aws
+{
+  namespace Amplify
+  {
+    const char SERVICE_NAME[] = "amplify";
+    const char ALLOCATION_TAG[] = "AmplifyClient";
+  }
+}
+const char* AmplifyClient::GetServiceName() {return SERVICE_NAME;}
+const char* AmplifyClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 AmplifyClient::AmplifyClient(const Amplify::AmplifyClientConfiguration& clientConfiguration,
                              std::shared_ptr<AmplifyEndpointProviderBase> endpointProvider) :
@@ -85,7 +93,7 @@ AmplifyClient::AmplifyClient(const Amplify::AmplifyClientConfiguration& clientCo
             Aws::MakeShared<AmplifyErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<AmplifyEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -101,7 +109,7 @@ AmplifyClient::AmplifyClient(const AWSCredentials& credentials,
             Aws::MakeShared<AmplifyErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<AmplifyEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -117,7 +125,7 @@ AmplifyClient::AmplifyClient(const std::shared_ptr<AWSCredentialsProvider>& cred
             Aws::MakeShared<AmplifyErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<AmplifyEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

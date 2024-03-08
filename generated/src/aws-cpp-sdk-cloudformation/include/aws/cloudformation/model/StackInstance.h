@@ -296,11 +296,16 @@ namespace Model
      * <code>UpdateStackSet</code> operations. You might need to perform a
      * <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set
      * to <code>true</code>, to delete the stack instance, and then delete the stack
-     * manually.</p> </li> <li> <p> <code>OUTDATED</code>: The stack isn't currently up
-     * to date with the stack set because:</p> <ul> <li> <p>The associated stack failed
-     * during a <code>CreateStackSet</code> or <code>UpdateStackSet</code>
-     * operation.</p> </li> <li> <p>The stack was part of a <code>CreateStackSet</code>
-     * or <code>UpdateStackSet</code> operation that failed or was stopped before the
+     * manually. <code>INOPERABLE</code> can be returned here when the cause is a
+     * failed import. If it's due to a failed import, the operation can be retried once
+     * the failures are fixed. To see if this is due to a failed import, look at the
+     * <code>DetailedStatus</code> member in the <code>StackInstanceSummary</code>
+     * member that is a peer to this <code>Status</code> member.</p> </li> <li> <p>
+     * <code>OUTDATED</code>: The stack isn't currently up to date with the stack set
+     * because:</p> <ul> <li> <p>The associated stack failed during a
+     * <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation.</p> </li>
+     * <li> <p>The stack was part of a <code>CreateStackSet</code> or
+     * <code>UpdateStackSet</code> operation that failed or was stopped before the
      * stack was created or updated.</p> </li> </ul> </li> <li> <p>
      * <code>CURRENT</code>: The stack is currently up to date with the stack set.</p>
      * </li> </ul>
@@ -315,11 +320,16 @@ namespace Model
      * <code>UpdateStackSet</code> operations. You might need to perform a
      * <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set
      * to <code>true</code>, to delete the stack instance, and then delete the stack
-     * manually.</p> </li> <li> <p> <code>OUTDATED</code>: The stack isn't currently up
-     * to date with the stack set because:</p> <ul> <li> <p>The associated stack failed
-     * during a <code>CreateStackSet</code> or <code>UpdateStackSet</code>
-     * operation.</p> </li> <li> <p>The stack was part of a <code>CreateStackSet</code>
-     * or <code>UpdateStackSet</code> operation that failed or was stopped before the
+     * manually. <code>INOPERABLE</code> can be returned here when the cause is a
+     * failed import. If it's due to a failed import, the operation can be retried once
+     * the failures are fixed. To see if this is due to a failed import, look at the
+     * <code>DetailedStatus</code> member in the <code>StackInstanceSummary</code>
+     * member that is a peer to this <code>Status</code> member.</p> </li> <li> <p>
+     * <code>OUTDATED</code>: The stack isn't currently up to date with the stack set
+     * because:</p> <ul> <li> <p>The associated stack failed during a
+     * <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation.</p> </li>
+     * <li> <p>The stack was part of a <code>CreateStackSet</code> or
+     * <code>UpdateStackSet</code> operation that failed or was stopped before the
      * stack was created or updated.</p> </li> </ul> </li> <li> <p>
      * <code>CURRENT</code>: The stack is currently up to date with the stack set.</p>
      * </li> </ul>
@@ -334,11 +344,16 @@ namespace Model
      * <code>UpdateStackSet</code> operations. You might need to perform a
      * <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set
      * to <code>true</code>, to delete the stack instance, and then delete the stack
-     * manually.</p> </li> <li> <p> <code>OUTDATED</code>: The stack isn't currently up
-     * to date with the stack set because:</p> <ul> <li> <p>The associated stack failed
-     * during a <code>CreateStackSet</code> or <code>UpdateStackSet</code>
-     * operation.</p> </li> <li> <p>The stack was part of a <code>CreateStackSet</code>
-     * or <code>UpdateStackSet</code> operation that failed or was stopped before the
+     * manually. <code>INOPERABLE</code> can be returned here when the cause is a
+     * failed import. If it's due to a failed import, the operation can be retried once
+     * the failures are fixed. To see if this is due to a failed import, look at the
+     * <code>DetailedStatus</code> member in the <code>StackInstanceSummary</code>
+     * member that is a peer to this <code>Status</code> member.</p> </li> <li> <p>
+     * <code>OUTDATED</code>: The stack isn't currently up to date with the stack set
+     * because:</p> <ul> <li> <p>The associated stack failed during a
+     * <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation.</p> </li>
+     * <li> <p>The stack was part of a <code>CreateStackSet</code> or
+     * <code>UpdateStackSet</code> operation that failed or was stopped before the
      * stack was created or updated.</p> </li> </ul> </li> <li> <p>
      * <code>CURRENT</code>: The stack is currently up to date with the stack set.</p>
      * </li> </ul>
@@ -353,11 +368,16 @@ namespace Model
      * <code>UpdateStackSet</code> operations. You might need to perform a
      * <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set
      * to <code>true</code>, to delete the stack instance, and then delete the stack
-     * manually.</p> </li> <li> <p> <code>OUTDATED</code>: The stack isn't currently up
-     * to date with the stack set because:</p> <ul> <li> <p>The associated stack failed
-     * during a <code>CreateStackSet</code> or <code>UpdateStackSet</code>
-     * operation.</p> </li> <li> <p>The stack was part of a <code>CreateStackSet</code>
-     * or <code>UpdateStackSet</code> operation that failed or was stopped before the
+     * manually. <code>INOPERABLE</code> can be returned here when the cause is a
+     * failed import. If it's due to a failed import, the operation can be retried once
+     * the failures are fixed. To see if this is due to a failed import, look at the
+     * <code>DetailedStatus</code> member in the <code>StackInstanceSummary</code>
+     * member that is a peer to this <code>Status</code> member.</p> </li> <li> <p>
+     * <code>OUTDATED</code>: The stack isn't currently up to date with the stack set
+     * because:</p> <ul> <li> <p>The associated stack failed during a
+     * <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation.</p> </li>
+     * <li> <p>The stack was part of a <code>CreateStackSet</code> or
+     * <code>UpdateStackSet</code> operation that failed or was stopped before the
      * stack was created or updated.</p> </li> </ul> </li> <li> <p>
      * <code>CURRENT</code>: The stack is currently up to date with the stack set.</p>
      * </li> </ul>
@@ -372,11 +392,16 @@ namespace Model
      * <code>UpdateStackSet</code> operations. You might need to perform a
      * <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set
      * to <code>true</code>, to delete the stack instance, and then delete the stack
-     * manually.</p> </li> <li> <p> <code>OUTDATED</code>: The stack isn't currently up
-     * to date with the stack set because:</p> <ul> <li> <p>The associated stack failed
-     * during a <code>CreateStackSet</code> or <code>UpdateStackSet</code>
-     * operation.</p> </li> <li> <p>The stack was part of a <code>CreateStackSet</code>
-     * or <code>UpdateStackSet</code> operation that failed or was stopped before the
+     * manually. <code>INOPERABLE</code> can be returned here when the cause is a
+     * failed import. If it's due to a failed import, the operation can be retried once
+     * the failures are fixed. To see if this is due to a failed import, look at the
+     * <code>DetailedStatus</code> member in the <code>StackInstanceSummary</code>
+     * member that is a peer to this <code>Status</code> member.</p> </li> <li> <p>
+     * <code>OUTDATED</code>: The stack isn't currently up to date with the stack set
+     * because:</p> <ul> <li> <p>The associated stack failed during a
+     * <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation.</p> </li>
+     * <li> <p>The stack was part of a <code>CreateStackSet</code> or
+     * <code>UpdateStackSet</code> operation that failed or was stopped before the
      * stack was created or updated.</p> </li> </ul> </li> <li> <p>
      * <code>CURRENT</code>: The stack is currently up to date with the stack set.</p>
      * </li> </ul>
@@ -391,11 +416,16 @@ namespace Model
      * <code>UpdateStackSet</code> operations. You might need to perform a
      * <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set
      * to <code>true</code>, to delete the stack instance, and then delete the stack
-     * manually.</p> </li> <li> <p> <code>OUTDATED</code>: The stack isn't currently up
-     * to date with the stack set because:</p> <ul> <li> <p>The associated stack failed
-     * during a <code>CreateStackSet</code> or <code>UpdateStackSet</code>
-     * operation.</p> </li> <li> <p>The stack was part of a <code>CreateStackSet</code>
-     * or <code>UpdateStackSet</code> operation that failed or was stopped before the
+     * manually. <code>INOPERABLE</code> can be returned here when the cause is a
+     * failed import. If it's due to a failed import, the operation can be retried once
+     * the failures are fixed. To see if this is due to a failed import, look at the
+     * <code>DetailedStatus</code> member in the <code>StackInstanceSummary</code>
+     * member that is a peer to this <code>Status</code> member.</p> </li> <li> <p>
+     * <code>OUTDATED</code>: The stack isn't currently up to date with the stack set
+     * because:</p> <ul> <li> <p>The associated stack failed during a
+     * <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation.</p> </li>
+     * <li> <p>The stack was part of a <code>CreateStackSet</code> or
+     * <code>UpdateStackSet</code> operation that failed or was stopped before the
      * stack was created or updated.</p> </li> </ul> </li> <li> <p>
      * <code>CURRENT</code>: The stack is currently up to date with the stack set.</p>
      * </li> </ul>
@@ -486,56 +516,64 @@ namespace Model
     /**
      * <p>[Service-managed permissions] The organization root ID or organizational unit
      * (OU) IDs that you specified for <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">
+     * <code>DeploymentTargets</code> </a>.</p>
      */
     inline const Aws::String& GetOrganizationalUnitId() const{ return m_organizationalUnitId; }
 
     /**
      * <p>[Service-managed permissions] The organization root ID or organizational unit
      * (OU) IDs that you specified for <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">
+     * <code>DeploymentTargets</code> </a>.</p>
      */
     inline bool OrganizationalUnitIdHasBeenSet() const { return m_organizationalUnitIdHasBeenSet; }
 
     /**
      * <p>[Service-managed permissions] The organization root ID or organizational unit
      * (OU) IDs that you specified for <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">
+     * <code>DeploymentTargets</code> </a>.</p>
      */
     inline void SetOrganizationalUnitId(const Aws::String& value) { m_organizationalUnitIdHasBeenSet = true; m_organizationalUnitId = value; }
 
     /**
      * <p>[Service-managed permissions] The organization root ID or organizational unit
      * (OU) IDs that you specified for <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">
+     * <code>DeploymentTargets</code> </a>.</p>
      */
     inline void SetOrganizationalUnitId(Aws::String&& value) { m_organizationalUnitIdHasBeenSet = true; m_organizationalUnitId = std::move(value); }
 
     /**
      * <p>[Service-managed permissions] The organization root ID or organizational unit
      * (OU) IDs that you specified for <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">
+     * <code>DeploymentTargets</code> </a>.</p>
      */
     inline void SetOrganizationalUnitId(const char* value) { m_organizationalUnitIdHasBeenSet = true; m_organizationalUnitId.assign(value); }
 
     /**
      * <p>[Service-managed permissions] The organization root ID or organizational unit
      * (OU) IDs that you specified for <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">
+     * <code>DeploymentTargets</code> </a>.</p>
      */
     inline StackInstance& WithOrganizationalUnitId(const Aws::String& value) { SetOrganizationalUnitId(value); return *this;}
 
     /**
      * <p>[Service-managed permissions] The organization root ID or organizational unit
      * (OU) IDs that you specified for <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">
+     * <code>DeploymentTargets</code> </a>.</p>
      */
     inline StackInstance& WithOrganizationalUnitId(Aws::String&& value) { SetOrganizationalUnitId(std::move(value)); return *this;}
 
     /**
      * <p>[Service-managed permissions] The organization root ID or organizational unit
      * (OU) IDs that you specified for <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">
+     * <code>DeploymentTargets</code> </a>.</p>
      */
     inline StackInstance& WithOrganizationalUnitId(const char* value) { SetOrganizationalUnitId(value); return *this;}
 

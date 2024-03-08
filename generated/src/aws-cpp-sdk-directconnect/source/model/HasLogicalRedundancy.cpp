@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HasLogicalRedundancy::NOT_SET:
+            return {};
           case HasLogicalRedundancy::unknown:
             return "unknown";
           case HasLogicalRedundancy::yes:

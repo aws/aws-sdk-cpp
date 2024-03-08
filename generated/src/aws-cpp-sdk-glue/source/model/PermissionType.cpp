@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PermissionType::NOT_SET:
+            return {};
           case PermissionType::COLUMN_PERMISSION:
             return "COLUMN_PERMISSION";
           case PermissionType::CELL_FILTER_PERMISSION:

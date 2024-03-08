@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MsSmoothH265PackagingType::NOT_SET:
+            return {};
           case MsSmoothH265PackagingType::HEV1:
             return "HEV1";
           case MsSmoothH265PackagingType::HVC1:

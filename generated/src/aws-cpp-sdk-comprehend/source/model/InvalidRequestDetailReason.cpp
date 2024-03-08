@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InvalidRequestDetailReason::NOT_SET:
+            return {};
           case InvalidRequestDetailReason::DOCUMENT_SIZE_EXCEEDED:
             return "DOCUMENT_SIZE_EXCEEDED";
           case InvalidRequestDetailReason::UNSUPPORTED_DOC_TYPE:

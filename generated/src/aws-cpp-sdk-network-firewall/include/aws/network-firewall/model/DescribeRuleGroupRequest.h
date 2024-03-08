@@ -189,6 +189,35 @@ namespace Model
      */
     inline DescribeRuleGroupRequest& WithType(RuleGroupType&& value) { SetType(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Indicates whether you want Network Firewall to analyze the stateless rules in
+     * the rule group for rule behavior such as asymmetric routing. If set to
+     * <code>TRUE</code>, Network Firewall runs the analysis.</p>
+     */
+    inline bool GetAnalyzeRuleGroup() const{ return m_analyzeRuleGroup; }
+
+    /**
+     * <p>Indicates whether you want Network Firewall to analyze the stateless rules in
+     * the rule group for rule behavior such as asymmetric routing. If set to
+     * <code>TRUE</code>, Network Firewall runs the analysis.</p>
+     */
+    inline bool AnalyzeRuleGroupHasBeenSet() const { return m_analyzeRuleGroupHasBeenSet; }
+
+    /**
+     * <p>Indicates whether you want Network Firewall to analyze the stateless rules in
+     * the rule group for rule behavior such as asymmetric routing. If set to
+     * <code>TRUE</code>, Network Firewall runs the analysis.</p>
+     */
+    inline void SetAnalyzeRuleGroup(bool value) { m_analyzeRuleGroupHasBeenSet = true; m_analyzeRuleGroup = value; }
+
+    /**
+     * <p>Indicates whether you want Network Firewall to analyze the stateless rules in
+     * the rule group for rule behavior such as asymmetric routing. If set to
+     * <code>TRUE</code>, Network Firewall runs the analysis.</p>
+     */
+    inline DescribeRuleGroupRequest& WithAnalyzeRuleGroup(bool value) { SetAnalyzeRuleGroup(value); return *this;}
+
   private:
 
     Aws::String m_ruleGroupName;
@@ -199,6 +228,9 @@ namespace Model
 
     RuleGroupType m_type;
     bool m_typeHasBeenSet = false;
+
+    bool m_analyzeRuleGroup;
+    bool m_analyzeRuleGroupHasBeenSet = false;
   };
 
 } // namespace Model

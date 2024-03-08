@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OrganizationStatus::NOT_SET:
+            return {};
           case OrganizationStatus::ONBOARDING:
             return "ONBOARDING";
           case OrganizationStatus::ONBOARDING_COMPLETE:

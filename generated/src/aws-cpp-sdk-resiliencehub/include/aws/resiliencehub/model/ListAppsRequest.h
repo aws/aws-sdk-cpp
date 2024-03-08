@@ -7,6 +7,7 @@
 #include <aws/resiliencehub/ResilienceHub_EXPORTS.h>
 #include <aws/resiliencehub/ResilienceHubRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -44,7 +45,8 @@ namespace Model
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i> guide.</p>
      */
     inline const Aws::String& GetAppArn() const{ return m_appArn; }
 
@@ -54,7 +56,8 @@ namespace Model
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i> guide.</p>
      */
     inline bool AppArnHasBeenSet() const { return m_appArnHasBeenSet; }
 
@@ -64,7 +67,8 @@ namespace Model
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i> guide.</p>
      */
     inline void SetAppArn(const Aws::String& value) { m_appArnHasBeenSet = true; m_appArn = value; }
 
@@ -74,7 +78,8 @@ namespace Model
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i> guide.</p>
      */
     inline void SetAppArn(Aws::String&& value) { m_appArnHasBeenSet = true; m_appArn = std::move(value); }
 
@@ -84,7 +89,8 @@ namespace Model
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i> guide.</p>
      */
     inline void SetAppArn(const char* value) { m_appArnHasBeenSet = true; m_appArn.assign(value); }
 
@@ -94,7 +100,8 @@ namespace Model
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i> guide.</p>
      */
     inline ListAppsRequest& WithAppArn(const Aws::String& value) { SetAppArn(value); return *this;}
 
@@ -104,7 +111,8 @@ namespace Model
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i> guide.</p>
      */
     inline ListAppsRequest& WithAppArn(Aws::String&& value) { SetAppArn(std::move(value)); return *this;}
 
@@ -114,9 +122,47 @@ namespace Model
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i> guide.</p>
      */
     inline ListAppsRequest& WithAppArn(const char* value) { SetAppArn(value); return *this;}
+
+
+    /**
+     * <p>Indicates the lower limit of the range that is used to filter applications
+     * based on their last assessment times.</p>
+     */
+    inline const Aws::Utils::DateTime& GetFromLastAssessmentTime() const{ return m_fromLastAssessmentTime; }
+
+    /**
+     * <p>Indicates the lower limit of the range that is used to filter applications
+     * based on their last assessment times.</p>
+     */
+    inline bool FromLastAssessmentTimeHasBeenSet() const { return m_fromLastAssessmentTimeHasBeenSet; }
+
+    /**
+     * <p>Indicates the lower limit of the range that is used to filter applications
+     * based on their last assessment times.</p>
+     */
+    inline void SetFromLastAssessmentTime(const Aws::Utils::DateTime& value) { m_fromLastAssessmentTimeHasBeenSet = true; m_fromLastAssessmentTime = value; }
+
+    /**
+     * <p>Indicates the lower limit of the range that is used to filter applications
+     * based on their last assessment times.</p>
+     */
+    inline void SetFromLastAssessmentTime(Aws::Utils::DateTime&& value) { m_fromLastAssessmentTimeHasBeenSet = true; m_fromLastAssessmentTime = std::move(value); }
+
+    /**
+     * <p>Indicates the lower limit of the range that is used to filter applications
+     * based on their last assessment times.</p>
+     */
+    inline ListAppsRequest& WithFromLastAssessmentTime(const Aws::Utils::DateTime& value) { SetFromLastAssessmentTime(value); return *this;}
+
+    /**
+     * <p>Indicates the lower limit of the range that is used to filter applications
+     * based on their last assessment times.</p>
+     */
+    inline ListAppsRequest& WithFromLastAssessmentTime(Aws::Utils::DateTime&& value) { SetFromLastAssessmentTime(std::move(value)); return *this;}
 
 
     /**
@@ -229,10 +275,83 @@ namespace Model
      */
     inline ListAppsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
+    /**
+     * <p>The application list is sorted based on the values of
+     * <code>lastAppComplianceEvaluationTime</code> field. By default, application list
+     * is sorted in ascending order. To sort the appliation list in descending order,
+     * set this field to <code>True</code>.</p>
+     */
+    inline bool GetReverseOrder() const{ return m_reverseOrder; }
+
+    /**
+     * <p>The application list is sorted based on the values of
+     * <code>lastAppComplianceEvaluationTime</code> field. By default, application list
+     * is sorted in ascending order. To sort the appliation list in descending order,
+     * set this field to <code>True</code>.</p>
+     */
+    inline bool ReverseOrderHasBeenSet() const { return m_reverseOrderHasBeenSet; }
+
+    /**
+     * <p>The application list is sorted based on the values of
+     * <code>lastAppComplianceEvaluationTime</code> field. By default, application list
+     * is sorted in ascending order. To sort the appliation list in descending order,
+     * set this field to <code>True</code>.</p>
+     */
+    inline void SetReverseOrder(bool value) { m_reverseOrderHasBeenSet = true; m_reverseOrder = value; }
+
+    /**
+     * <p>The application list is sorted based on the values of
+     * <code>lastAppComplianceEvaluationTime</code> field. By default, application list
+     * is sorted in ascending order. To sort the appliation list in descending order,
+     * set this field to <code>True</code>.</p>
+     */
+    inline ListAppsRequest& WithReverseOrder(bool value) { SetReverseOrder(value); return *this;}
+
+
+    /**
+     * <p>Indicates the upper limit of the range that is used to filter the
+     * applications based on their last assessment times.</p>
+     */
+    inline const Aws::Utils::DateTime& GetToLastAssessmentTime() const{ return m_toLastAssessmentTime; }
+
+    /**
+     * <p>Indicates the upper limit of the range that is used to filter the
+     * applications based on their last assessment times.</p>
+     */
+    inline bool ToLastAssessmentTimeHasBeenSet() const { return m_toLastAssessmentTimeHasBeenSet; }
+
+    /**
+     * <p>Indicates the upper limit of the range that is used to filter the
+     * applications based on their last assessment times.</p>
+     */
+    inline void SetToLastAssessmentTime(const Aws::Utils::DateTime& value) { m_toLastAssessmentTimeHasBeenSet = true; m_toLastAssessmentTime = value; }
+
+    /**
+     * <p>Indicates the upper limit of the range that is used to filter the
+     * applications based on their last assessment times.</p>
+     */
+    inline void SetToLastAssessmentTime(Aws::Utils::DateTime&& value) { m_toLastAssessmentTimeHasBeenSet = true; m_toLastAssessmentTime = std::move(value); }
+
+    /**
+     * <p>Indicates the upper limit of the range that is used to filter the
+     * applications based on their last assessment times.</p>
+     */
+    inline ListAppsRequest& WithToLastAssessmentTime(const Aws::Utils::DateTime& value) { SetToLastAssessmentTime(value); return *this;}
+
+    /**
+     * <p>Indicates the upper limit of the range that is used to filter the
+     * applications based on their last assessment times.</p>
+     */
+    inline ListAppsRequest& WithToLastAssessmentTime(Aws::Utils::DateTime&& value) { SetToLastAssessmentTime(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_appArn;
     bool m_appArnHasBeenSet = false;
+
+    Aws::Utils::DateTime m_fromLastAssessmentTime;
+    bool m_fromLastAssessmentTimeHasBeenSet = false;
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet = false;
@@ -242,6 +361,12 @@ namespace Model
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
+
+    bool m_reverseOrder;
+    bool m_reverseOrderHasBeenSet = false;
+
+    Aws::Utils::DateTime m_toLastAssessmentTime;
+    bool m_toLastAssessmentTimeHasBeenSet = false;
   };
 
 } // namespace Model

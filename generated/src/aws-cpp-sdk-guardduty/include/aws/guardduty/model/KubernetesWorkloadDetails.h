@@ -311,6 +311,89 @@ namespace Model
      */
     inline KubernetesWorkloadDetails& AddVolumes(Volume&& value) { m_volumesHasBeenSet = true; m_volumes.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The service account name that is associated with a Kubernetes workload.</p>
+     */
+    inline const Aws::String& GetServiceAccountName() const{ return m_serviceAccountName; }
+
+    /**
+     * <p>The service account name that is associated with a Kubernetes workload.</p>
+     */
+    inline bool ServiceAccountNameHasBeenSet() const { return m_serviceAccountNameHasBeenSet; }
+
+    /**
+     * <p>The service account name that is associated with a Kubernetes workload.</p>
+     */
+    inline void SetServiceAccountName(const Aws::String& value) { m_serviceAccountNameHasBeenSet = true; m_serviceAccountName = value; }
+
+    /**
+     * <p>The service account name that is associated with a Kubernetes workload.</p>
+     */
+    inline void SetServiceAccountName(Aws::String&& value) { m_serviceAccountNameHasBeenSet = true; m_serviceAccountName = std::move(value); }
+
+    /**
+     * <p>The service account name that is associated with a Kubernetes workload.</p>
+     */
+    inline void SetServiceAccountName(const char* value) { m_serviceAccountNameHasBeenSet = true; m_serviceAccountName.assign(value); }
+
+    /**
+     * <p>The service account name that is associated with a Kubernetes workload.</p>
+     */
+    inline KubernetesWorkloadDetails& WithServiceAccountName(const Aws::String& value) { SetServiceAccountName(value); return *this;}
+
+    /**
+     * <p>The service account name that is associated with a Kubernetes workload.</p>
+     */
+    inline KubernetesWorkloadDetails& WithServiceAccountName(Aws::String&& value) { SetServiceAccountName(std::move(value)); return *this;}
+
+    /**
+     * <p>The service account name that is associated with a Kubernetes workload.</p>
+     */
+    inline KubernetesWorkloadDetails& WithServiceAccountName(const char* value) { SetServiceAccountName(value); return *this;}
+
+
+    /**
+     * <p>Whether the host IPC flag is enabled for the pods in the workload.</p>
+     */
+    inline bool GetHostIPC() const{ return m_hostIPC; }
+
+    /**
+     * <p>Whether the host IPC flag is enabled for the pods in the workload.</p>
+     */
+    inline bool HostIPCHasBeenSet() const { return m_hostIPCHasBeenSet; }
+
+    /**
+     * <p>Whether the host IPC flag is enabled for the pods in the workload.</p>
+     */
+    inline void SetHostIPC(bool value) { m_hostIPCHasBeenSet = true; m_hostIPC = value; }
+
+    /**
+     * <p>Whether the host IPC flag is enabled for the pods in the workload.</p>
+     */
+    inline KubernetesWorkloadDetails& WithHostIPC(bool value) { SetHostIPC(value); return *this;}
+
+
+    /**
+     * <p>Whether the host PID flag is enabled for the pods in the workload. </p>
+     */
+    inline bool GetHostPID() const{ return m_hostPID; }
+
+    /**
+     * <p>Whether the host PID flag is enabled for the pods in the workload. </p>
+     */
+    inline bool HostPIDHasBeenSet() const { return m_hostPIDHasBeenSet; }
+
+    /**
+     * <p>Whether the host PID flag is enabled for the pods in the workload. </p>
+     */
+    inline void SetHostPID(bool value) { m_hostPIDHasBeenSet = true; m_hostPID = value; }
+
+    /**
+     * <p>Whether the host PID flag is enabled for the pods in the workload. </p>
+     */
+    inline KubernetesWorkloadDetails& WithHostPID(bool value) { SetHostPID(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -333,6 +416,15 @@ namespace Model
 
     Aws::Vector<Volume> m_volumes;
     bool m_volumesHasBeenSet = false;
+
+    Aws::String m_serviceAccountName;
+    bool m_serviceAccountNameHasBeenSet = false;
+
+    bool m_hostIPC;
+    bool m_hostIPCHasBeenSet = false;
+
+    bool m_hostPID;
+    bool m_hostPIDHasBeenSet = false;
   };
 
 } // namespace Model

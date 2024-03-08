@@ -31,8 +31,8 @@ namespace CostExplorer
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef CostExplorerClientConfiguration ClientConfigurationType;
       typedef CostExplorerEndpointProvider EndpointProviderType;
@@ -42,14 +42,14 @@ namespace CostExplorer
         * is not specified, it will be initialized to default values.
         */
         CostExplorerClient(const Aws::CostExplorer::CostExplorerClientConfiguration& clientConfiguration = Aws::CostExplorer::CostExplorerClientConfiguration(),
-                           std::shared_ptr<CostExplorerEndpointProviderBase> endpointProvider = Aws::MakeShared<CostExplorerEndpointProvider>(ALLOCATION_TAG));
+                           std::shared_ptr<CostExplorerEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         CostExplorerClient(const Aws::Auth::AWSCredentials& credentials,
-                           std::shared_ptr<CostExplorerEndpointProviderBase> endpointProvider = Aws::MakeShared<CostExplorerEndpointProvider>(ALLOCATION_TAG),
+                           std::shared_ptr<CostExplorerEndpointProviderBase> endpointProvider = nullptr,
                            const Aws::CostExplorer::CostExplorerClientConfiguration& clientConfiguration = Aws::CostExplorer::CostExplorerClientConfiguration());
 
        /**
@@ -57,7 +57,7 @@ namespace CostExplorer
         * the default http client factory will be used
         */
         CostExplorerClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                           std::shared_ptr<CostExplorerEndpointProviderBase> endpointProvider = Aws::MakeShared<CostExplorerEndpointProvider>(ALLOCATION_TAG),
+                           std::shared_ptr<CostExplorerEndpointProviderBase> endpointProvider = nullptr,
                            const Aws::CostExplorer::CostExplorerClientConfiguration& clientConfiguration = Aws::CostExplorer::CostExplorerClientConfiguration());
 
 
@@ -351,6 +351,32 @@ namespace CostExplorer
         void GetAnomalySubscriptionsAsync(const GetAnomalySubscriptionsRequestT& request, const GetAnomalySubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CostExplorerClient::GetAnomalySubscriptions, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves estimated usage records for hourly granularity or resource-level
+         * data at daily granularity.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetApproximateUsageRecords">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetApproximateUsageRecordsOutcome GetApproximateUsageRecords(const Model::GetApproximateUsageRecordsRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetApproximateUsageRecords that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetApproximateUsageRecordsRequestT = Model::GetApproximateUsageRecordsRequest>
+        Model::GetApproximateUsageRecordsOutcomeCallable GetApproximateUsageRecordsCallable(const GetApproximateUsageRecordsRequestT& request) const
+        {
+            return SubmitCallable(&CostExplorerClient::GetApproximateUsageRecords, request);
+        }
+
+        /**
+         * An Async wrapper for GetApproximateUsageRecords that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetApproximateUsageRecordsRequestT = Model::GetApproximateUsageRecordsRequest>
+        void GetApproximateUsageRecordsAsync(const GetApproximateUsageRecordsRequestT& request, const GetApproximateUsageRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CostExplorerClient::GetApproximateUsageRecords, request, handler, context);
         }
 
         /**

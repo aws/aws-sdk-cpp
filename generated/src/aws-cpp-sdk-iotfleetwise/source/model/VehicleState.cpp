@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VehicleState::NOT_SET:
+            return {};
           case VehicleState::CREATED:
             return "CREATED";
           case VehicleState::READY:

@@ -36,43 +36,43 @@ namespace Model
 
 
     /**
-     * <p>The Recovery Point Objective (RPO), in seconds.</p>
+     * <p>Recovery Point Objective (RPO) in seconds.</p>
      */
     inline int GetRpoInSecs() const{ return m_rpoInSecs; }
 
     /**
-     * <p>The Recovery Point Objective (RPO), in seconds.</p>
+     * <p>Recovery Point Objective (RPO) in seconds.</p>
      */
     inline bool RpoInSecsHasBeenSet() const { return m_rpoInSecsHasBeenSet; }
 
     /**
-     * <p>The Recovery Point Objective (RPO), in seconds.</p>
+     * <p>Recovery Point Objective (RPO) in seconds.</p>
      */
     inline void SetRpoInSecs(int value) { m_rpoInSecsHasBeenSet = true; m_rpoInSecs = value; }
 
     /**
-     * <p>The Recovery Point Objective (RPO), in seconds.</p>
+     * <p>Recovery Point Objective (RPO) in seconds.</p>
      */
     inline FailurePolicy& WithRpoInSecs(int value) { SetRpoInSecs(value); return *this;}
 
 
     /**
-     * <p>The Recovery Time Objective (RTO), in seconds.</p>
+     * <p>Recovery Time Objective (RTO) in seconds.</p>
      */
     inline int GetRtoInSecs() const{ return m_rtoInSecs; }
 
     /**
-     * <p>The Recovery Time Objective (RTO), in seconds.</p>
+     * <p>Recovery Time Objective (RTO) in seconds.</p>
      */
     inline bool RtoInSecsHasBeenSet() const { return m_rtoInSecsHasBeenSet; }
 
     /**
-     * <p>The Recovery Time Objective (RTO), in seconds.</p>
+     * <p>Recovery Time Objective (RTO) in seconds.</p>
      */
     inline void SetRtoInSecs(int value) { m_rtoInSecsHasBeenSet = true; m_rtoInSecs = value; }
 
     /**
-     * <p>The Recovery Time Objective (RTO), in seconds.</p>
+     * <p>Recovery Time Objective (RTO) in seconds.</p>
      */
     inline FailurePolicy& WithRtoInSecs(int value) { SetRtoInSecs(value); return *this;}
 

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AutoScalingConfiguration::NOT_SET:
+            return {};
           case AutoScalingConfiguration::TargetTrackingScalingCpu:
             return "TargetTrackingScalingCpu";
           case AutoScalingConfiguration::TargetTrackingScalingMemory:

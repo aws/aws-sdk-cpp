@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StaticSourcesSupportValue::NOT_SET:
+            return {};
           case StaticSourcesSupportValue::enable:
             return "enable";
           case StaticSourcesSupportValue::disable:

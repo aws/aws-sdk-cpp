@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TimeSeriesGranularity::NOT_SET:
+            return {};
           case TimeSeriesGranularity::ALL:
             return "ALL";
           case TimeSeriesGranularity::SPECIFIC:

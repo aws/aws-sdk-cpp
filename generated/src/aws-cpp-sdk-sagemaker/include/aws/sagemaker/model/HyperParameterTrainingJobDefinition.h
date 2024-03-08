@@ -14,10 +14,10 @@
 #include <aws/sagemaker/model/VpcConfig.h>
 #include <aws/sagemaker/model/OutputDataConfig.h>
 #include <aws/sagemaker/model/ResourceConfig.h>
+#include <aws/sagemaker/model/HyperParameterTuningResourceConfig.h>
 #include <aws/sagemaker/model/StoppingCondition.h>
 #include <aws/sagemaker/model/CheckpointConfig.h>
 #include <aws/sagemaker/model/RetryStrategy.h>
-#include <aws/sagemaker/model/HyperParameterTuningResourceConfig.h>
 #include <aws/sagemaker/model/Channel.h>
 #include <utility>
 
@@ -556,6 +556,67 @@ namespace Model
 
 
     /**
+     * <p>The configuration for the hyperparameter tuning resources, including the
+     * compute instances and storage volumes, used for training jobs launched by the
+     * tuning job. By default, storage volumes hold model artifacts and incremental
+     * states. Choose <code>File</code> for <code>TrainingInputMode</code> in the
+     * <code>AlgorithmSpecification</code> parameter to additionally store training
+     * data in the storage volume (optional).</p>
+     */
+    inline const HyperParameterTuningResourceConfig& GetHyperParameterTuningResourceConfig() const{ return m_hyperParameterTuningResourceConfig; }
+
+    /**
+     * <p>The configuration for the hyperparameter tuning resources, including the
+     * compute instances and storage volumes, used for training jobs launched by the
+     * tuning job. By default, storage volumes hold model artifacts and incremental
+     * states. Choose <code>File</code> for <code>TrainingInputMode</code> in the
+     * <code>AlgorithmSpecification</code> parameter to additionally store training
+     * data in the storage volume (optional).</p>
+     */
+    inline bool HyperParameterTuningResourceConfigHasBeenSet() const { return m_hyperParameterTuningResourceConfigHasBeenSet; }
+
+    /**
+     * <p>The configuration for the hyperparameter tuning resources, including the
+     * compute instances and storage volumes, used for training jobs launched by the
+     * tuning job. By default, storage volumes hold model artifacts and incremental
+     * states. Choose <code>File</code> for <code>TrainingInputMode</code> in the
+     * <code>AlgorithmSpecification</code> parameter to additionally store training
+     * data in the storage volume (optional).</p>
+     */
+    inline void SetHyperParameterTuningResourceConfig(const HyperParameterTuningResourceConfig& value) { m_hyperParameterTuningResourceConfigHasBeenSet = true; m_hyperParameterTuningResourceConfig = value; }
+
+    /**
+     * <p>The configuration for the hyperparameter tuning resources, including the
+     * compute instances and storage volumes, used for training jobs launched by the
+     * tuning job. By default, storage volumes hold model artifacts and incremental
+     * states. Choose <code>File</code> for <code>TrainingInputMode</code> in the
+     * <code>AlgorithmSpecification</code> parameter to additionally store training
+     * data in the storage volume (optional).</p>
+     */
+    inline void SetHyperParameterTuningResourceConfig(HyperParameterTuningResourceConfig&& value) { m_hyperParameterTuningResourceConfigHasBeenSet = true; m_hyperParameterTuningResourceConfig = std::move(value); }
+
+    /**
+     * <p>The configuration for the hyperparameter tuning resources, including the
+     * compute instances and storage volumes, used for training jobs launched by the
+     * tuning job. By default, storage volumes hold model artifacts and incremental
+     * states. Choose <code>File</code> for <code>TrainingInputMode</code> in the
+     * <code>AlgorithmSpecification</code> parameter to additionally store training
+     * data in the storage volume (optional).</p>
+     */
+    inline HyperParameterTrainingJobDefinition& WithHyperParameterTuningResourceConfig(const HyperParameterTuningResourceConfig& value) { SetHyperParameterTuningResourceConfig(value); return *this;}
+
+    /**
+     * <p>The configuration for the hyperparameter tuning resources, including the
+     * compute instances and storage volumes, used for training jobs launched by the
+     * tuning job. By default, storage volumes hold model artifacts and incremental
+     * states. Choose <code>File</code> for <code>TrainingInputMode</code> in the
+     * <code>AlgorithmSpecification</code> parameter to additionally store training
+     * data in the storage volume (optional).</p>
+     */
+    inline HyperParameterTrainingJobDefinition& WithHyperParameterTuningResourceConfig(HyperParameterTuningResourceConfig&& value) { SetHyperParameterTuningResourceConfig(std::move(value)); return *this;}
+
+
+    /**
      * <p>Specifies a limit to how long a model hyperparameter training job can run. It
      * also specifies how long a managed spot training job has to complete. When the
      * job reaches the time limit, SageMaker ends the training job. Use this API to cap
@@ -761,67 +822,6 @@ namespace Model
      * <code>InternalServerError</code>.</p>
      */
     inline HyperParameterTrainingJobDefinition& WithRetryStrategy(RetryStrategy&& value) { SetRetryStrategy(std::move(value)); return *this;}
-
-
-    /**
-     * <p>The configuration for the hyperparameter tuning resources, including the
-     * compute instances and storage volumes, used for training jobs launched by the
-     * tuning job. By default, storage volumes hold model artifacts and incremental
-     * states. Choose <code>File</code> for <code>TrainingInputMode</code> in the
-     * <code>AlgorithmSpecification</code> parameter to additionally store training
-     * data in the storage volume (optional).</p>
-     */
-    inline const HyperParameterTuningResourceConfig& GetHyperParameterTuningResourceConfig() const{ return m_hyperParameterTuningResourceConfig; }
-
-    /**
-     * <p>The configuration for the hyperparameter tuning resources, including the
-     * compute instances and storage volumes, used for training jobs launched by the
-     * tuning job. By default, storage volumes hold model artifacts and incremental
-     * states. Choose <code>File</code> for <code>TrainingInputMode</code> in the
-     * <code>AlgorithmSpecification</code> parameter to additionally store training
-     * data in the storage volume (optional).</p>
-     */
-    inline bool HyperParameterTuningResourceConfigHasBeenSet() const { return m_hyperParameterTuningResourceConfigHasBeenSet; }
-
-    /**
-     * <p>The configuration for the hyperparameter tuning resources, including the
-     * compute instances and storage volumes, used for training jobs launched by the
-     * tuning job. By default, storage volumes hold model artifacts and incremental
-     * states. Choose <code>File</code> for <code>TrainingInputMode</code> in the
-     * <code>AlgorithmSpecification</code> parameter to additionally store training
-     * data in the storage volume (optional).</p>
-     */
-    inline void SetHyperParameterTuningResourceConfig(const HyperParameterTuningResourceConfig& value) { m_hyperParameterTuningResourceConfigHasBeenSet = true; m_hyperParameterTuningResourceConfig = value; }
-
-    /**
-     * <p>The configuration for the hyperparameter tuning resources, including the
-     * compute instances and storage volumes, used for training jobs launched by the
-     * tuning job. By default, storage volumes hold model artifacts and incremental
-     * states. Choose <code>File</code> for <code>TrainingInputMode</code> in the
-     * <code>AlgorithmSpecification</code> parameter to additionally store training
-     * data in the storage volume (optional).</p>
-     */
-    inline void SetHyperParameterTuningResourceConfig(HyperParameterTuningResourceConfig&& value) { m_hyperParameterTuningResourceConfigHasBeenSet = true; m_hyperParameterTuningResourceConfig = std::move(value); }
-
-    /**
-     * <p>The configuration for the hyperparameter tuning resources, including the
-     * compute instances and storage volumes, used for training jobs launched by the
-     * tuning job. By default, storage volumes hold model artifacts and incremental
-     * states. Choose <code>File</code> for <code>TrainingInputMode</code> in the
-     * <code>AlgorithmSpecification</code> parameter to additionally store training
-     * data in the storage volume (optional).</p>
-     */
-    inline HyperParameterTrainingJobDefinition& WithHyperParameterTuningResourceConfig(const HyperParameterTuningResourceConfig& value) { SetHyperParameterTuningResourceConfig(value); return *this;}
-
-    /**
-     * <p>The configuration for the hyperparameter tuning resources, including the
-     * compute instances and storage volumes, used for training jobs launched by the
-     * tuning job. By default, storage volumes hold model artifacts and incremental
-     * states. Choose <code>File</code> for <code>TrainingInputMode</code> in the
-     * <code>AlgorithmSpecification</code> parameter to additionally store training
-     * data in the storage volume (optional).</p>
-     */
-    inline HyperParameterTrainingJobDefinition& WithHyperParameterTuningResourceConfig(HyperParameterTuningResourceConfig&& value) { SetHyperParameterTuningResourceConfig(std::move(value)); return *this;}
 
 
     /**
@@ -1064,6 +1064,9 @@ namespace Model
     ResourceConfig m_resourceConfig;
     bool m_resourceConfigHasBeenSet = false;
 
+    HyperParameterTuningResourceConfig m_hyperParameterTuningResourceConfig;
+    bool m_hyperParameterTuningResourceConfigHasBeenSet = false;
+
     StoppingCondition m_stoppingCondition;
     bool m_stoppingConditionHasBeenSet = false;
 
@@ -1081,9 +1084,6 @@ namespace Model
 
     RetryStrategy m_retryStrategy;
     bool m_retryStrategyHasBeenSet = false;
-
-    HyperParameterTuningResourceConfig m_hyperParameterTuningResourceConfig;
-    bool m_hyperParameterTuningResourceConfigHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_environment;
     bool m_environmentHasBeenSet = false;

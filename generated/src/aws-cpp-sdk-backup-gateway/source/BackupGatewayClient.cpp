@@ -60,8 +60,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* BackupGatewayClient::SERVICE_NAME = "backup-gateway";
-const char* BackupGatewayClient::ALLOCATION_TAG = "BackupGatewayClient";
+namespace Aws
+{
+  namespace BackupGateway
+  {
+    const char SERVICE_NAME[] = "backup-gateway";
+    const char ALLOCATION_TAG[] = "BackupGatewayClient";
+  }
+}
+const char* BackupGatewayClient::GetServiceName() {return SERVICE_NAME;}
+const char* BackupGatewayClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 BackupGatewayClient::BackupGatewayClient(const BackupGateway::BackupGatewayClientConfiguration& clientConfiguration,
                                          std::shared_ptr<BackupGatewayEndpointProviderBase> endpointProvider) :
@@ -73,7 +81,7 @@ BackupGatewayClient::BackupGatewayClient(const BackupGateway::BackupGatewayClien
             Aws::MakeShared<BackupGatewayErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<BackupGatewayEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -89,7 +97,7 @@ BackupGatewayClient::BackupGatewayClient(const AWSCredentials& credentials,
             Aws::MakeShared<BackupGatewayErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<BackupGatewayEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -105,7 +113,7 @@ BackupGatewayClient::BackupGatewayClient(const std::shared_ptr<AWSCredentialsPro
             Aws::MakeShared<BackupGatewayErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<BackupGatewayEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

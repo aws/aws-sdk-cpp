@@ -22,8 +22,8 @@ namespace SageMakerRuntime
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef SageMakerRuntimeClientConfiguration ClientConfigurationType;
       typedef SageMakerRuntimeEndpointProvider EndpointProviderType;
@@ -33,14 +33,14 @@ namespace SageMakerRuntime
         * is not specified, it will be initialized to default values.
         */
         SageMakerRuntimeClient(const Aws::SageMakerRuntime::SageMakerRuntimeClientConfiguration& clientConfiguration = Aws::SageMakerRuntime::SageMakerRuntimeClientConfiguration(),
-                               std::shared_ptr<SageMakerRuntimeEndpointProviderBase> endpointProvider = Aws::MakeShared<SageMakerRuntimeEndpointProvider>(ALLOCATION_TAG));
+                               std::shared_ptr<SageMakerRuntimeEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         SageMakerRuntimeClient(const Aws::Auth::AWSCredentials& credentials,
-                               std::shared_ptr<SageMakerRuntimeEndpointProviderBase> endpointProvider = Aws::MakeShared<SageMakerRuntimeEndpointProvider>(ALLOCATION_TAG),
+                               std::shared_ptr<SageMakerRuntimeEndpointProviderBase> endpointProvider = nullptr,
                                const Aws::SageMakerRuntime::SageMakerRuntimeClientConfiguration& clientConfiguration = Aws::SageMakerRuntime::SageMakerRuntimeClientConfiguration());
 
        /**
@@ -48,7 +48,7 @@ namespace SageMakerRuntime
         * the default http client factory will be used
         */
         SageMakerRuntimeClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                               std::shared_ptr<SageMakerRuntimeEndpointProviderBase> endpointProvider = Aws::MakeShared<SageMakerRuntimeEndpointProvider>(ALLOCATION_TAG),
+                               std::shared_ptr<SageMakerRuntimeEndpointProviderBase> endpointProvider = nullptr,
                                const Aws::SageMakerRuntime::SageMakerRuntimeClientConfiguration& clientConfiguration = Aws::SageMakerRuntime::SageMakerRuntimeClientConfiguration());
 
 
@@ -172,8 +172,14 @@ namespace SageMakerRuntime
          * Containers Serve Requests</a>.</p> </li> <li> <p>For information about how to
          * process the streaming response, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/realtime-endpoints-test-endpoints.html">Invoke
-         * real-time endpoints</a>.</p> </li> </ul> <p>Amazon SageMaker strips all POST
-         * headers except those supported by the API. Amazon SageMaker might add additional
+         * real-time endpoints</a>.</p> </li> </ul> <p>Before you can use this operation,
+         * your IAM permissions must allow the <code>sagemaker:InvokeEndpoint</code>
+         * action. For more information about Amazon SageMaker actions for IAM policies,
+         * see <a
+         * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html">Actions,
+         * resources, and condition keys for Amazon SageMaker</a> in the <i>IAM Service
+         * Authorization Reference</i>.</p> <p>Amazon SageMaker strips all POST headers
+         * except those supported by the API. Amazon SageMaker might add additional
          * headers. You should not rely on the behavior of headers outside those enumerated
          * in the request syntax. </p> <p>Calls to
          * <code>InvokeEndpointWithResponseStream</code> are authenticated by using Amazon

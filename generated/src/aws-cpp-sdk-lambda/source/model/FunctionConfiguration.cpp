@@ -64,6 +64,7 @@ FunctionConfiguration::FunctionConfiguration() :
     m_ephemeralStorageHasBeenSet(false),
     m_snapStartHasBeenSet(false),
     m_runtimeVersionConfigHasBeenSet(false),
+    m_loggingConfigHasBeenSet(false),
     m_requestIdHasBeenSet(false)
 {
 }
@@ -113,6 +114,7 @@ FunctionConfiguration::FunctionConfiguration(JsonView jsonValue) :
     m_ephemeralStorageHasBeenSet(false),
     m_snapStartHasBeenSet(false),
     m_runtimeVersionConfigHasBeenSet(false),
+    m_loggingConfigHasBeenSet(false),
     m_requestIdHasBeenSet(false)
 {
   *this = jsonValue;
@@ -374,6 +376,13 @@ FunctionConfiguration& FunctionConfiguration::operator =(JsonView jsonValue)
     m_runtimeVersionConfigHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("LoggingConfig"))
+  {
+    m_loggingConfig = jsonValue.GetObject("LoggingConfig");
+
+    m_loggingConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -597,6 +606,12 @@ JsonValue FunctionConfiguration::Jsonize() const
   if(m_runtimeVersionConfigHasBeenSet)
   {
    payload.WithObject("RuntimeVersionConfig", m_runtimeVersionConfig.Jsonize());
+
+  }
+
+  if(m_loggingConfigHasBeenSet)
+  {
+   payload.WithObject("LoggingConfig", m_loggingConfig.Jsonize());
 
   }
 

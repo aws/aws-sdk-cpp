@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Feature::NOT_SET:
+            return {};
           case Feature::BLUETOOTH:
             return "BLUETOOTH";
           case Feature::VOLUME:

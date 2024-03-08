@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CoverageMapComparison::NOT_SET:
+            return {};
           case CoverageMapComparison::EQUALS:
             return "EQUALS";
           default:

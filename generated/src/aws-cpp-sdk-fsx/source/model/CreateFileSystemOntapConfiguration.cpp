@@ -31,7 +31,11 @@ CreateFileSystemOntapConfiguration::CreateFileSystemOntapConfiguration() :
     m_routeTableIdsHasBeenSet(false),
     m_throughputCapacity(0),
     m_throughputCapacityHasBeenSet(false),
-    m_weeklyMaintenanceStartTimeHasBeenSet(false)
+    m_weeklyMaintenanceStartTimeHasBeenSet(false),
+    m_hAPairs(0),
+    m_hAPairsHasBeenSet(false),
+    m_throughputCapacityPerHAPair(0),
+    m_throughputCapacityPerHAPairHasBeenSet(false)
 {
 }
 
@@ -48,7 +52,11 @@ CreateFileSystemOntapConfiguration::CreateFileSystemOntapConfiguration(JsonView 
     m_routeTableIdsHasBeenSet(false),
     m_throughputCapacity(0),
     m_throughputCapacityHasBeenSet(false),
-    m_weeklyMaintenanceStartTimeHasBeenSet(false)
+    m_weeklyMaintenanceStartTimeHasBeenSet(false),
+    m_hAPairs(0),
+    m_hAPairsHasBeenSet(false),
+    m_throughputCapacityPerHAPair(0),
+    m_throughputCapacityPerHAPairHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -128,6 +136,20 @@ CreateFileSystemOntapConfiguration& CreateFileSystemOntapConfiguration::operator
     m_weeklyMaintenanceStartTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("HAPairs"))
+  {
+    m_hAPairs = jsonValue.GetInteger("HAPairs");
+
+    m_hAPairsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ThroughputCapacityPerHAPair"))
+  {
+    m_throughputCapacityPerHAPair = jsonValue.GetInteger("ThroughputCapacityPerHAPair");
+
+    m_throughputCapacityPerHAPairHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -196,6 +218,18 @@ JsonValue CreateFileSystemOntapConfiguration::Jsonize() const
   if(m_weeklyMaintenanceStartTimeHasBeenSet)
   {
    payload.WithString("WeeklyMaintenanceStartTime", m_weeklyMaintenanceStartTime);
+
+  }
+
+  if(m_hAPairsHasBeenSet)
+  {
+   payload.WithInteger("HAPairs", m_hAPairs);
+
+  }
+
+  if(m_throughputCapacityPerHAPairHasBeenSet)
+  {
+   payload.WithInteger("ThroughputCapacityPerHAPair", m_throughputCapacityPerHAPair);
 
   }
 

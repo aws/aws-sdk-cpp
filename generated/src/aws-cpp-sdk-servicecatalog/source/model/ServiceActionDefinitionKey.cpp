@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ServiceActionDefinitionKey::NOT_SET:
+            return {};
           case ServiceActionDefinitionKey::Name:
             return "Name";
           case ServiceActionDefinitionKey::Version:

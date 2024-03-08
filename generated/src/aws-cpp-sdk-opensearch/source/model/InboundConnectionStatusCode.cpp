@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InboundConnectionStatusCode::NOT_SET:
+            return {};
           case InboundConnectionStatusCode::PENDING_ACCEPTANCE:
             return "PENDING_ACCEPTANCE";
           case InboundConnectionStatusCode::APPROVED:

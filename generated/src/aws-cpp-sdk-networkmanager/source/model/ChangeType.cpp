@@ -84,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ChangeType::NOT_SET:
+            return {};
           case ChangeType::CORE_NETWORK_SEGMENT:
             return "CORE_NETWORK_SEGMENT";
           case ChangeType::CORE_NETWORK_EDGE:

@@ -13,6 +13,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/eks/model/OutpostConfigRequest.h>
+#include <aws/eks/model/CreateAccessConfigRequest.h>
 #include <aws/eks/model/EncryptionConfig.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -407,142 +408,142 @@ namespace Model
 
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request.</p>
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request.</p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request.</p>
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request.</p>
      */
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request.</p>
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request.</p>
      */
     inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request.</p>
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request.</p>
      */
     inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request.</p>
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request.</p>
      */
     inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request.</p>
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request.</p>
      */
     inline CreateClusterRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request.</p>
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request.</p>
      */
     inline CreateClusterRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request.</p>
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request.</p>
      */
     inline CreateClusterRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 
 
     /**
-     * <p>The metadata to apply to the cluster to assist with categorization and
-     * organization. Each tag consists of a key and an optional value. You define
-     * both.</p>
+     * <p>Metadata that assists with categorization and organization. Each tag consists
+     * of a key and an optional value. You define both. Tags don't propagate to any
+     * other cluster or Amazon Web Services resources.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>The metadata to apply to the cluster to assist with categorization and
-     * organization. Each tag consists of a key and an optional value. You define
-     * both.</p>
+     * <p>Metadata that assists with categorization and organization. Each tag consists
+     * of a key and an optional value. You define both. Tags don't propagate to any
+     * other cluster or Amazon Web Services resources.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>The metadata to apply to the cluster to assist with categorization and
-     * organization. Each tag consists of a key and an optional value. You define
-     * both.</p>
+     * <p>Metadata that assists with categorization and organization. Each tag consists
+     * of a key and an optional value. You define both. Tags don't propagate to any
+     * other cluster or Amazon Web Services resources.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>The metadata to apply to the cluster to assist with categorization and
-     * organization. Each tag consists of a key and an optional value. You define
-     * both.</p>
+     * <p>Metadata that assists with categorization and organization. Each tag consists
+     * of a key and an optional value. You define both. Tags don't propagate to any
+     * other cluster or Amazon Web Services resources.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>The metadata to apply to the cluster to assist with categorization and
-     * organization. Each tag consists of a key and an optional value. You define
-     * both.</p>
+     * <p>Metadata that assists with categorization and organization. Each tag consists
+     * of a key and an optional value. You define both. Tags don't propagate to any
+     * other cluster or Amazon Web Services resources.</p>
      */
     inline CreateClusterRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>The metadata to apply to the cluster to assist with categorization and
-     * organization. Each tag consists of a key and an optional value. You define
-     * both.</p>
+     * <p>Metadata that assists with categorization and organization. Each tag consists
+     * of a key and an optional value. You define both. Tags don't propagate to any
+     * other cluster or Amazon Web Services resources.</p>
      */
     inline CreateClusterRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>The metadata to apply to the cluster to assist with categorization and
-     * organization. Each tag consists of a key and an optional value. You define
-     * both.</p>
+     * <p>Metadata that assists with categorization and organization. Each tag consists
+     * of a key and an optional value. You define both. Tags don't propagate to any
+     * other cluster or Amazon Web Services resources.</p>
      */
     inline CreateClusterRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p>The metadata to apply to the cluster to assist with categorization and
-     * organization. Each tag consists of a key and an optional value. You define
-     * both.</p>
+     * <p>Metadata that assists with categorization and organization. Each tag consists
+     * of a key and an optional value. You define both. Tags don't propagate to any
+     * other cluster or Amazon Web Services resources.</p>
      */
     inline CreateClusterRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The metadata to apply to the cluster to assist with categorization and
-     * organization. Each tag consists of a key and an optional value. You define
-     * both.</p>
+     * <p>Metadata that assists with categorization and organization. Each tag consists
+     * of a key and an optional value. You define both. Tags don't propagate to any
+     * other cluster or Amazon Web Services resources.</p>
      */
     inline CreateClusterRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The metadata to apply to the cluster to assist with categorization and
-     * organization. Each tag consists of a key and an optional value. You define
-     * both.</p>
+     * <p>Metadata that assists with categorization and organization. Each tag consists
+     * of a key and an optional value. You define both. Tags don't propagate to any
+     * other cluster or Amazon Web Services resources.</p>
      */
     inline CreateClusterRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The metadata to apply to the cluster to assist with categorization and
-     * organization. Each tag consists of a key and an optional value. You define
-     * both.</p>
+     * <p>Metadata that assists with categorization and organization. Each tag consists
+     * of a key and an optional value. You define both. Tags don't propagate to any
+     * other cluster or Amazon Web Services resources.</p>
      */
     inline CreateClusterRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The metadata to apply to the cluster to assist with categorization and
-     * organization. Each tag consists of a key and an optional value. You define
-     * both.</p>
+     * <p>Metadata that assists with categorization and organization. Each tag consists
+     * of a key and an optional value. You define both. Tags don't propagate to any
+     * other cluster or Amazon Web Services resources.</p>
      */
     inline CreateClusterRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The metadata to apply to the cluster to assist with categorization and
-     * organization. Each tag consists of a key and an optional value. You define
-     * both.</p>
+     * <p>Metadata that assists with categorization and organization. Each tag consists
+     * of a key and an optional value. You define both. Tags don't propagate to any
+     * other cluster or Amazon Web Services resources.</p>
      */
     inline CreateClusterRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
@@ -654,6 +655,37 @@ namespace Model
      */
     inline CreateClusterRequest& WithOutpostConfig(OutpostConfigRequest&& value) { SetOutpostConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The access configuration for the cluster.</p>
+     */
+    inline const CreateAccessConfigRequest& GetAccessConfig() const{ return m_accessConfig; }
+
+    /**
+     * <p>The access configuration for the cluster.</p>
+     */
+    inline bool AccessConfigHasBeenSet() const { return m_accessConfigHasBeenSet; }
+
+    /**
+     * <p>The access configuration for the cluster.</p>
+     */
+    inline void SetAccessConfig(const CreateAccessConfigRequest& value) { m_accessConfigHasBeenSet = true; m_accessConfig = value; }
+
+    /**
+     * <p>The access configuration for the cluster.</p>
+     */
+    inline void SetAccessConfig(CreateAccessConfigRequest&& value) { m_accessConfigHasBeenSet = true; m_accessConfig = std::move(value); }
+
+    /**
+     * <p>The access configuration for the cluster.</p>
+     */
+    inline CreateClusterRequest& WithAccessConfig(const CreateAccessConfigRequest& value) { SetAccessConfig(value); return *this;}
+
+    /**
+     * <p>The access configuration for the cluster.</p>
+     */
+    inline CreateClusterRequest& WithAccessConfig(CreateAccessConfigRequest&& value) { SetAccessConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -685,6 +717,9 @@ namespace Model
 
     OutpostConfigRequest m_outpostConfig;
     bool m_outpostConfigHasBeenSet = false;
+
+    CreateAccessConfigRequest m_accessConfig;
+    bool m_accessConfigHasBeenSet = false;
   };
 
 } // namespace Model

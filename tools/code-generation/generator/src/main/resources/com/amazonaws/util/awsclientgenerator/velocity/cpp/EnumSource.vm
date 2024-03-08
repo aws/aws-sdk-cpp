@@ -121,6 +121,8 @@ namespace ${rootNamespace}
 #if($enumModel.members.size() > 0 && $enumModel.members.size() < 122)
           switch(enumValue)
           {
+          case ${enumModel.name}::NOT_SET:
+            return {};
 #foreach($enumMember in $enumModel.members)
           case ${enumModel.name}::${enumMember.memberName}:
             return "${enumMember.memberStringValue}";

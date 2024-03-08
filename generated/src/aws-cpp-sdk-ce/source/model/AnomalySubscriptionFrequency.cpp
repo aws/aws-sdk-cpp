@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AnomalySubscriptionFrequency::NOT_SET:
+            return {};
           case AnomalySubscriptionFrequency::DAILY:
             return "DAILY";
           case AnomalySubscriptionFrequency::IMMEDIATE:

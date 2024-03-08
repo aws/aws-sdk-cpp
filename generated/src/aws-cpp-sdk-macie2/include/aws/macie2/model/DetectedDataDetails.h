@@ -39,50 +39,50 @@ namespace Model
 
 
     /**
-     * <p>An occurrence of the specified type of sensitive data. Each occurrence can
-     * contain 1-128 characters.</p>
+     * <p>An occurrence of the specified type of sensitive data. Each occurrence
+     * contains 1-128 characters.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
 
     /**
-     * <p>An occurrence of the specified type of sensitive data. Each occurrence can
-     * contain 1-128 characters.</p>
+     * <p>An occurrence of the specified type of sensitive data. Each occurrence
+     * contains 1-128 characters.</p>
      */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
-     * <p>An occurrence of the specified type of sensitive data. Each occurrence can
-     * contain 1-128 characters.</p>
+     * <p>An occurrence of the specified type of sensitive data. Each occurrence
+     * contains 1-128 characters.</p>
      */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
-     * <p>An occurrence of the specified type of sensitive data. Each occurrence can
-     * contain 1-128 characters.</p>
+     * <p>An occurrence of the specified type of sensitive data. Each occurrence
+     * contains 1-128 characters.</p>
      */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
-     * <p>An occurrence of the specified type of sensitive data. Each occurrence can
-     * contain 1-128 characters.</p>
+     * <p>An occurrence of the specified type of sensitive data. Each occurrence
+     * contains 1-128 characters.</p>
      */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
     /**
-     * <p>An occurrence of the specified type of sensitive data. Each occurrence can
-     * contain 1-128 characters.</p>
+     * <p>An occurrence of the specified type of sensitive data. Each occurrence
+     * contains 1-128 characters.</p>
      */
     inline DetectedDataDetails& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
     /**
-     * <p>An occurrence of the specified type of sensitive data. Each occurrence can
-     * contain 1-128 characters.</p>
+     * <p>An occurrence of the specified type of sensitive data. Each occurrence
+     * contains 1-128 characters.</p>
      */
     inline DetectedDataDetails& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
-     * <p>An occurrence of the specified type of sensitive data. Each occurrence can
-     * contain 1-128 characters.</p>
+     * <p>An occurrence of the specified type of sensitive data. Each occurrence
+     * contains 1-128 characters.</p>
      */
     inline DetectedDataDetails& WithValue(const char* value) { SetValue(value); return *this;}
 

@@ -147,37 +147,37 @@ namespace Model
 
     /**
      * <p>Parameters that are required for MAC generation or verification using DUKPT
-     * ISO 9797 algorithm2.</p>
+     * ISO 9797 algorithm3.</p>
      */
     inline const MacAlgorithmDukpt& GetDukptIso9797Algorithm3() const{ return m_dukptIso9797Algorithm3; }
 
     /**
      * <p>Parameters that are required for MAC generation or verification using DUKPT
-     * ISO 9797 algorithm2.</p>
+     * ISO 9797 algorithm3.</p>
      */
     inline bool DukptIso9797Algorithm3HasBeenSet() const { return m_dukptIso9797Algorithm3HasBeenSet; }
 
     /**
      * <p>Parameters that are required for MAC generation or verification using DUKPT
-     * ISO 9797 algorithm2.</p>
+     * ISO 9797 algorithm3.</p>
      */
     inline void SetDukptIso9797Algorithm3(const MacAlgorithmDukpt& value) { m_dukptIso9797Algorithm3HasBeenSet = true; m_dukptIso9797Algorithm3 = value; }
 
     /**
      * <p>Parameters that are required for MAC generation or verification using DUKPT
-     * ISO 9797 algorithm2.</p>
+     * ISO 9797 algorithm3.</p>
      */
     inline void SetDukptIso9797Algorithm3(MacAlgorithmDukpt&& value) { m_dukptIso9797Algorithm3HasBeenSet = true; m_dukptIso9797Algorithm3 = std::move(value); }
 
     /**
      * <p>Parameters that are required for MAC generation or verification using DUKPT
-     * ISO 9797 algorithm2.</p>
+     * ISO 9797 algorithm3.</p>
      */
     inline MacAttributes& WithDukptIso9797Algorithm3(const MacAlgorithmDukpt& value) { SetDukptIso9797Algorithm3(value); return *this;}
 
     /**
      * <p>Parameters that are required for MAC generation or verification using DUKPT
-     * ISO 9797 algorithm2.</p>
+     * ISO 9797 algorithm3.</p>
      */
     inline MacAttributes& WithDukptIso9797Algorithm3(MacAlgorithmDukpt&& value) { SetDukptIso9797Algorithm3(std::move(value)); return *this;}
 

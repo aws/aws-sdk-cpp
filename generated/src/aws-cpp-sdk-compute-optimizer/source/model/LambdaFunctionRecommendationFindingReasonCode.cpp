@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LambdaFunctionRecommendationFindingReasonCode::NOT_SET:
+            return {};
           case LambdaFunctionRecommendationFindingReasonCode::MemoryOverprovisioned:
             return "MemoryOverprovisioned";
           case LambdaFunctionRecommendationFindingReasonCode::MemoryUnderprovisioned:

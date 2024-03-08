@@ -124,6 +124,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FlowExecutionEventType::NOT_SET:
+            return {};
           case FlowExecutionEventType::EXECUTION_STARTED:
             return "EXECUTION_STARTED";
           case FlowExecutionEventType::EXECUTION_FAILED:

@@ -41,43 +41,43 @@ namespace Model
 
     /**
      * <p>The type of destination for events arriving from a channel. For channels used
-     * for a CloudTrail Lake integration, the value is <code>EventDataStore</code>. For
-     * service-linked channels, the value is <code>AWS_SERVICE</code>. </p>
+     * for a CloudTrail Lake integration, the value is <code>EVENT_DATA_STORE</code>.
+     * For service-linked channels, the value is <code>AWS_SERVICE</code>. </p>
      */
     inline const DestinationType& GetType() const{ return m_type; }
 
     /**
      * <p>The type of destination for events arriving from a channel. For channels used
-     * for a CloudTrail Lake integration, the value is <code>EventDataStore</code>. For
-     * service-linked channels, the value is <code>AWS_SERVICE</code>. </p>
+     * for a CloudTrail Lake integration, the value is <code>EVENT_DATA_STORE</code>.
+     * For service-linked channels, the value is <code>AWS_SERVICE</code>. </p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>The type of destination for events arriving from a channel. For channels used
-     * for a CloudTrail Lake integration, the value is <code>EventDataStore</code>. For
-     * service-linked channels, the value is <code>AWS_SERVICE</code>. </p>
+     * for a CloudTrail Lake integration, the value is <code>EVENT_DATA_STORE</code>.
+     * For service-linked channels, the value is <code>AWS_SERVICE</code>. </p>
      */
     inline void SetType(const DestinationType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
      * <p>The type of destination for events arriving from a channel. For channels used
-     * for a CloudTrail Lake integration, the value is <code>EventDataStore</code>. For
-     * service-linked channels, the value is <code>AWS_SERVICE</code>. </p>
+     * for a CloudTrail Lake integration, the value is <code>EVENT_DATA_STORE</code>.
+     * For service-linked channels, the value is <code>AWS_SERVICE</code>. </p>
      */
     inline void SetType(DestinationType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The type of destination for events arriving from a channel. For channels used
-     * for a CloudTrail Lake integration, the value is <code>EventDataStore</code>. For
-     * service-linked channels, the value is <code>AWS_SERVICE</code>. </p>
+     * for a CloudTrail Lake integration, the value is <code>EVENT_DATA_STORE</code>.
+     * For service-linked channels, the value is <code>AWS_SERVICE</code>. </p>
      */
     inline Destination& WithType(const DestinationType& value) { SetType(value); return *this;}
 
     /**
      * <p>The type of destination for events arriving from a channel. For channels used
-     * for a CloudTrail Lake integration, the value is <code>EventDataStore</code>. For
-     * service-linked channels, the value is <code>AWS_SERVICE</code>. </p>
+     * for a CloudTrail Lake integration, the value is <code>EVENT_DATA_STORE</code>.
+     * For service-linked channels, the value is <code>AWS_SERVICE</code>. </p>
      */
     inline Destination& WithType(DestinationType&& value) { SetType(std::move(value)); return *this;}
 

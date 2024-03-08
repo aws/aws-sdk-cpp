@@ -94,8 +94,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* DirectConnectClient::SERVICE_NAME = "directconnect";
-const char* DirectConnectClient::ALLOCATION_TAG = "DirectConnectClient";
+namespace Aws
+{
+  namespace DirectConnect
+  {
+    const char SERVICE_NAME[] = "directconnect";
+    const char ALLOCATION_TAG[] = "DirectConnectClient";
+  }
+}
+const char* DirectConnectClient::GetServiceName() {return SERVICE_NAME;}
+const char* DirectConnectClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 DirectConnectClient::DirectConnectClient(const DirectConnect::DirectConnectClientConfiguration& clientConfiguration,
                                          std::shared_ptr<DirectConnectEndpointProviderBase> endpointProvider) :
@@ -107,7 +115,7 @@ DirectConnectClient::DirectConnectClient(const DirectConnect::DirectConnectClien
             Aws::MakeShared<DirectConnectErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<DirectConnectEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -123,7 +131,7 @@ DirectConnectClient::DirectConnectClient(const AWSCredentials& credentials,
             Aws::MakeShared<DirectConnectErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<DirectConnectEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -139,7 +147,7 @@ DirectConnectClient::DirectConnectClient(const std::shared_ptr<AWSCredentialsPro
             Aws::MakeShared<DirectConnectErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<DirectConnectEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

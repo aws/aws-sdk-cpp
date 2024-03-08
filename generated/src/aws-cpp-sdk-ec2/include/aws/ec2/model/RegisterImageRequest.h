@@ -13,6 +13,7 @@
 #include <aws/ec2/model/TpmSupportValues.h>
 #include <aws/ec2/model/ImdsSupportValues.h>
 #include <aws/ec2/model/BlockDeviceMapping.h>
+#include <aws/ec2/model/TagSpecification.h>
 #include <utility>
 
 namespace Aws
@@ -1084,6 +1085,79 @@ namespace Model
      */
     inline RegisterImageRequest& WithImdsSupport(ImdsSupportValues&& value) { SetImdsSupport(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The tags to apply to the AMI.</p> <p>To tag the AMI, the value for
+     * <code>ResourceType</code> must be <code>image</code>. If you specify another
+     * value for <code>ResourceType</code>, the request fails.</p> <p>To tag an AMI
+     * after it has been registered, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
+     */
+    inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
+
+    /**
+     * <p>The tags to apply to the AMI.</p> <p>To tag the AMI, the value for
+     * <code>ResourceType</code> must be <code>image</code>. If you specify another
+     * value for <code>ResourceType</code>, the request fails.</p> <p>To tag an AMI
+     * after it has been registered, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
+     */
+    inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
+
+    /**
+     * <p>The tags to apply to the AMI.</p> <p>To tag the AMI, the value for
+     * <code>ResourceType</code> must be <code>image</code>. If you specify another
+     * value for <code>ResourceType</code>, the request fails.</p> <p>To tag an AMI
+     * after it has been registered, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
+     */
+    inline void SetTagSpecifications(const Aws::Vector<TagSpecification>& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = value; }
+
+    /**
+     * <p>The tags to apply to the AMI.</p> <p>To tag the AMI, the value for
+     * <code>ResourceType</code> must be <code>image</code>. If you specify another
+     * value for <code>ResourceType</code>, the request fails.</p> <p>To tag an AMI
+     * after it has been registered, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
+     */
+    inline void SetTagSpecifications(Aws::Vector<TagSpecification>&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::move(value); }
+
+    /**
+     * <p>The tags to apply to the AMI.</p> <p>To tag the AMI, the value for
+     * <code>ResourceType</code> must be <code>image</code>. If you specify another
+     * value for <code>ResourceType</code>, the request fails.</p> <p>To tag an AMI
+     * after it has been registered, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
+     */
+    inline RegisterImageRequest& WithTagSpecifications(const Aws::Vector<TagSpecification>& value) { SetTagSpecifications(value); return *this;}
+
+    /**
+     * <p>The tags to apply to the AMI.</p> <p>To tag the AMI, the value for
+     * <code>ResourceType</code> must be <code>image</code>. If you specify another
+     * value for <code>ResourceType</code>, the request fails.</p> <p>To tag an AMI
+     * after it has been registered, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
+     */
+    inline RegisterImageRequest& WithTagSpecifications(Aws::Vector<TagSpecification>&& value) { SetTagSpecifications(std::move(value)); return *this;}
+
+    /**
+     * <p>The tags to apply to the AMI.</p> <p>To tag the AMI, the value for
+     * <code>ResourceType</code> must be <code>image</code>. If you specify another
+     * value for <code>ResourceType</code>, the request fails.</p> <p>To tag an AMI
+     * after it has been registered, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
+     */
+    inline RegisterImageRequest& AddTagSpecifications(const TagSpecification& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(value); return *this; }
+
+    /**
+     * <p>The tags to apply to the AMI.</p> <p>To tag the AMI, the value for
+     * <code>ResourceType</code> must be <code>image</code>. If you specify another
+     * value for <code>ResourceType</code>, the request fails.</p> <p>To tag an AMI
+     * after it has been registered, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
+     */
+    inline RegisterImageRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_imageLocation;
@@ -1136,6 +1210,9 @@ namespace Model
 
     ImdsSupportValues m_imdsSupport;
     bool m_imdsSupportHasBeenSet = false;
+
+    Aws::Vector<TagSpecification> m_tagSpecifications;
+    bool m_tagSpecificationsHasBeenSet = false;
   };
 
 } // namespace Model

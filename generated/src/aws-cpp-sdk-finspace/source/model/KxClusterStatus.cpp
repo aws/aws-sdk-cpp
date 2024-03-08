@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case KxClusterStatus::NOT_SET:
+            return {};
           case KxClusterStatus::PENDING:
             return "PENDING";
           case KxClusterStatus::CREATING:

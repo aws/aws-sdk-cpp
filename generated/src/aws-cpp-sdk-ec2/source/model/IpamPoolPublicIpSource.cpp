@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case IpamPoolPublicIpSource::NOT_SET:
+            return {};
           case IpamPoolPublicIpSource::amazon:
             return "amazon";
           case IpamPoolPublicIpSource::byoip:

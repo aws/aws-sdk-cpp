@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LaunchStatus::NOT_SET:
+            return {};
           case LaunchStatus::CREATED:
             return "CREATED";
           case LaunchStatus::UPDATING:

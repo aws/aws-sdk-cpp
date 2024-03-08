@@ -39,55 +39,55 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == VERSION_MISMATCH_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoErrors::VERSION_MISMATCH), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoErrors::VERSION_MISMATCH), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_RESOURCE_FORMAT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoErrors::INVALID_RESOURCE_FORMAT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoErrors::INVALID_RESOURCE_FORMAT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == ACCOUNT_CHANNEL_LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoErrors::ACCOUNT_CHANNEL_LIMIT_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoErrors::ACCOUNT_CHANNEL_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == DEVICE_STREAM_LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoErrors::DEVICE_STREAM_LIMIT_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoErrors::DEVICE_STREAM_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_DEVICE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoErrors::INVALID_DEVICE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoErrors::INVALID_DEVICE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == TAGS_PER_RESOURCE_EXCEEDED_LIMIT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoErrors::TAGS_PER_RESOURCE_EXCEEDED_LIMIT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoErrors::TAGS_PER_RESOURCE_EXCEEDED_LIMIT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == ACCOUNT_STREAM_LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoErrors::ACCOUNT_STREAM_LIMIT_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoErrors::ACCOUNT_STREAM_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == NO_DATA_RETENTION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoErrors::NO_DATA_RETENTION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoErrors::NO_DATA_RETENTION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == NOT_AUTHORIZED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoErrors::NOT_AUTHORIZED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoErrors::NOT_AUTHORIZED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == RESOURCE_IN_USE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoErrors::RESOURCE_IN_USE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoErrors::RESOURCE_IN_USE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == STREAM_EDGE_CONFIGURATION_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoErrors::STREAM_EDGE_CONFIGURATION_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoErrors::STREAM_EDGE_CONFIGURATION_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_ARGUMENT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoErrors::INVALID_ARGUMENT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoErrors::INVALID_ARGUMENT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == CLIENT_LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoErrors::CLIENT_LIMIT_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoErrors::CLIENT_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

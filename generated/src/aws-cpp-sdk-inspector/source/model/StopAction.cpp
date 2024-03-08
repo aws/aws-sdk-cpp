@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StopAction::NOT_SET:
+            return {};
           case StopAction::START_EVALUATION:
             return "START_EVALUATION";
           case StopAction::SKIP_EVALUATION:

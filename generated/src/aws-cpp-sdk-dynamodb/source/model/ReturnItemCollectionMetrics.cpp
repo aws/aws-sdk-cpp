@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReturnItemCollectionMetrics::NOT_SET:
+            return {};
           case ReturnItemCollectionMetrics::SIZE:
             return "SIZE";
           case ReturnItemCollectionMetrics::NONE:

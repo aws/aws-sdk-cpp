@@ -65,8 +65,16 @@ using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
 
-const char* ElasticLoadBalancingClient::SERVICE_NAME = "elasticloadbalancing";
-const char* ElasticLoadBalancingClient::ALLOCATION_TAG = "ElasticLoadBalancingClient";
+namespace Aws
+{
+  namespace ElasticLoadBalancing
+  {
+    const char SERVICE_NAME[] = "elasticloadbalancing";
+    const char ALLOCATION_TAG[] = "ElasticLoadBalancingClient";
+  }
+}
+const char* ElasticLoadBalancingClient::GetServiceName() {return SERVICE_NAME;}
+const char* ElasticLoadBalancingClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 ElasticLoadBalancingClient::ElasticLoadBalancingClient(const ElasticLoadBalancing::ElasticLoadBalancingClientConfiguration& clientConfiguration,
                                                        std::shared_ptr<ElasticLoadBalancingEndpointProviderBase> endpointProvider) :
@@ -78,7 +86,7 @@ ElasticLoadBalancingClient::ElasticLoadBalancingClient(const ElasticLoadBalancin
             Aws::MakeShared<ElasticLoadBalancingErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ElasticLoadBalancingEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -94,7 +102,7 @@ ElasticLoadBalancingClient::ElasticLoadBalancingClient(const AWSCredentials& cre
             Aws::MakeShared<ElasticLoadBalancingErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ElasticLoadBalancingEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -110,7 +118,7 @@ ElasticLoadBalancingClient::ElasticLoadBalancingClient(const std::shared_ptr<AWS
             Aws::MakeShared<ElasticLoadBalancingErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ElasticLoadBalancingEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

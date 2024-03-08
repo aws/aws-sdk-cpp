@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case WafRuleType::NOT_SET:
+            return {};
           case WafRuleType::REGULAR:
             return "REGULAR";
           case WafRuleType::RATE_BASED:

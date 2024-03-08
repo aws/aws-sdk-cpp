@@ -17,11 +17,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateAccessorResult::CreateAccessorResult()
+CreateAccessorResult::CreateAccessorResult() : 
+    m_networkType(AccessorNetworkType::NOT_SET)
 {
 }
 
-CreateAccessorResult::CreateAccessorResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+CreateAccessorResult::CreateAccessorResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_networkType(AccessorNetworkType::NOT_SET)
 {
   *this = result;
 }
@@ -38,6 +40,12 @@ CreateAccessorResult& CreateAccessorResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("BillingToken"))
   {
     m_billingToken = jsonValue.GetString("BillingToken");
+
+  }
+
+  if(jsonValue.ValueExists("NetworkType"))
+  {
+    m_networkType = AccessorNetworkTypeMapper::GetAccessorNetworkTypeForName(jsonValue.GetString("NetworkType"));
 
   }
 

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ProresScanTypeConversionMode::NOT_SET:
+            return {};
           case ProresScanTypeConversionMode::INTERLACED:
             return "INTERLACED";
           case ProresScanTypeConversionMode::INTERLACED_OPTIMIZE:

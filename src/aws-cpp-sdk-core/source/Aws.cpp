@@ -26,8 +26,20 @@ namespace Aws
 {
     static const char* ALLOCATION_TAG = "Aws_Init_Cleanup";
 
+    static std::mutex s_initShutdownMutex;
+    static size_t s_initCount = 0;
+
     void InitAPI(const SDKOptions &options)
     {
+        std::unique_lock<std::mutex> lock(s_initShutdownMutex);
+        s_initCount += 1;
+        if(s_initCount != 1)
+        {
+            AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "AWS-SDK-CPP is already initialized " << s_initCount - 1 << " times. "
+                                                "Consequent calls to InitAPI are ignored.");
+            return;
+        }
+
 #ifdef USE_AWS_MEMORY_MANAGEMENT
         if(options.memoryManagementOptions.memoryManager)
         {
@@ -172,6 +184,20 @@ namespace Aws
 
     void ShutdownAPI(const SDKOptions& options)
     {
+        std::unique_lock<std::mutex> lock(s_initShutdownMutex);
+        if(s_initCount != 1)
+        {
+            if(!s_initCount) {
+                AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Unable to ShutdownAPI of AWS-SDK-CPP: the SDK was not initialized.");
+            } else {
+                AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "AWS-SDK-CPP: this call to ShutdownAPI is ignored, current init count = " << s_initCount);
+                s_initCount -= 1;
+            }
+            return;
+        } else {
+            AWS_LOGSTREAM_INFO(ALLOCATION_TAG, "Shutdown AWS SDK for C++.");
+        }
+        s_initCount -= 1;
         Aws::Utils::ComponentRegistry::TerminateAllComponents();
         Aws::Utils::ComponentRegistry::ShutdownComponentRegistry();
         Aws::Monitoring::CleanupMonitoring();
@@ -186,10 +212,12 @@ namespace Aws
         if (options.loggingOptions.logLevel != Aws::Utils::Logging::LogLevel::Off)
         {
             Aws::Utils::Logging::ShutdownCRTLogging();
-            Aws::Utils::Logging::ShutdownAWSLogging();
+            Aws::Utils::Logging::PushLogger(nullptr); // stops further logging but keeps old logger object alive
         }
         Aws::Client::CoreErrorsMapper::CleanupCoreErrorsMapper();
         Aws::CleanupCrt();
+
+        Aws::Utils::Logging::ShutdownAWSLogging();
 #ifdef USE_AWS_MEMORY_MANAGEMENT
         if(options.memoryManagementOptions.memoryManager)
         {

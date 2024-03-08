@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ObjectLockMode::NOT_SET:
+            return {};
           case ObjectLockMode::GOVERNANCE:
             return "GOVERNANCE";
           case ObjectLockMode::COMPLIANCE:

@@ -46,7 +46,10 @@ namespace Model
      * value.</a>.</p> <p>If you don't provide this value, then Amazon Web Services
      * generates a random one for you.</p> <p>If you retry the operation with the same
      * <code>ClientToken</code>, but with different parameters, the retry fails with an
-     * <code>IdempotentParameterMismatch</code> error.</p>
+     * <code>ConflictException</code> error.</p> <p>Verified Permissions recognizes a
+     * <code>ClientToken</code> for eight hours. After eight hours, the next request
+     * with the same parameters performs the operation again regardless of the value of
+     * <code>ClientToken</code>.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
@@ -60,7 +63,10 @@ namespace Model
      * value.</a>.</p> <p>If you don't provide this value, then Amazon Web Services
      * generates a random one for you.</p> <p>If you retry the operation with the same
      * <code>ClientToken</code>, but with different parameters, the retry fails with an
-     * <code>IdempotentParameterMismatch</code> error.</p>
+     * <code>ConflictException</code> error.</p> <p>Verified Permissions recognizes a
+     * <code>ClientToken</code> for eight hours. After eight hours, the next request
+     * with the same parameters performs the operation again regardless of the value of
+     * <code>ClientToken</code>.</p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
@@ -74,7 +80,10 @@ namespace Model
      * value.</a>.</p> <p>If you don't provide this value, then Amazon Web Services
      * generates a random one for you.</p> <p>If you retry the operation with the same
      * <code>ClientToken</code>, but with different parameters, the retry fails with an
-     * <code>IdempotentParameterMismatch</code> error.</p>
+     * <code>ConflictException</code> error.</p> <p>Verified Permissions recognizes a
+     * <code>ClientToken</code> for eight hours. After eight hours, the next request
+     * with the same parameters performs the operation again regardless of the value of
+     * <code>ClientToken</code>.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
@@ -88,7 +97,10 @@ namespace Model
      * value.</a>.</p> <p>If you don't provide this value, then Amazon Web Services
      * generates a random one for you.</p> <p>If you retry the operation with the same
      * <code>ClientToken</code>, but with different parameters, the retry fails with an
-     * <code>IdempotentParameterMismatch</code> error.</p>
+     * <code>ConflictException</code> error.</p> <p>Verified Permissions recognizes a
+     * <code>ClientToken</code> for eight hours. After eight hours, the next request
+     * with the same parameters performs the operation again regardless of the value of
+     * <code>ClientToken</code>.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
@@ -102,7 +114,10 @@ namespace Model
      * value.</a>.</p> <p>If you don't provide this value, then Amazon Web Services
      * generates a random one for you.</p> <p>If you retry the operation with the same
      * <code>ClientToken</code>, but with different parameters, the retry fails with an
-     * <code>IdempotentParameterMismatch</code> error.</p>
+     * <code>ConflictException</code> error.</p> <p>Verified Permissions recognizes a
+     * <code>ClientToken</code> for eight hours. After eight hours, the next request
+     * with the same parameters performs the operation again regardless of the value of
+     * <code>ClientToken</code>.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
@@ -116,7 +131,10 @@ namespace Model
      * value.</a>.</p> <p>If you don't provide this value, then Amazon Web Services
      * generates a random one for you.</p> <p>If you retry the operation with the same
      * <code>ClientToken</code>, but with different parameters, the retry fails with an
-     * <code>IdempotentParameterMismatch</code> error.</p>
+     * <code>ConflictException</code> error.</p> <p>Verified Permissions recognizes a
+     * <code>ClientToken</code> for eight hours. After eight hours, the next request
+     * with the same parameters performs the operation again regardless of the value of
+     * <code>ClientToken</code>.</p>
      */
     inline CreatePolicyStoreRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
@@ -130,7 +148,10 @@ namespace Model
      * value.</a>.</p> <p>If you don't provide this value, then Amazon Web Services
      * generates a random one for you.</p> <p>If you retry the operation with the same
      * <code>ClientToken</code>, but with different parameters, the retry fails with an
-     * <code>IdempotentParameterMismatch</code> error.</p>
+     * <code>ConflictException</code> error.</p> <p>Verified Permissions recognizes a
+     * <code>ClientToken</code> for eight hours. After eight hours, the next request
+     * with the same parameters performs the operation again regardless of the value of
+     * <code>ClientToken</code>.</p>
      */
     inline CreatePolicyStoreRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
@@ -144,7 +165,10 @@ namespace Model
      * value.</a>.</p> <p>If you don't provide this value, then Amazon Web Services
      * generates a random one for you.</p> <p>If you retry the operation with the same
      * <code>ClientToken</code>, but with different parameters, the retry fails with an
-     * <code>IdempotentParameterMismatch</code> error.</p>
+     * <code>ConflictException</code> error.</p> <p>Verified Permissions recognizes a
+     * <code>ClientToken</code> for eight hours. After eight hours, the next request
+     * with the same parameters performs the operation again regardless of the value of
+     * <code>ClientToken</code>.</p>
      */
     inline CreatePolicyStoreRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
@@ -233,6 +257,55 @@ namespace Model
      */
     inline CreatePolicyStoreRequest& WithValidationSettings(ValidationSettings&& value) { SetValidationSettings(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Descriptive text that you can provide to help with identification of the
+     * current policy store.</p>
+     */
+    inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>Descriptive text that you can provide to help with identification of the
+     * current policy store.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>Descriptive text that you can provide to help with identification of the
+     * current policy store.</p>
+     */
+    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+
+    /**
+     * <p>Descriptive text that you can provide to help with identification of the
+     * current policy store.</p>
+     */
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
+
+    /**
+     * <p>Descriptive text that you can provide to help with identification of the
+     * current policy store.</p>
+     */
+    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
+
+    /**
+     * <p>Descriptive text that you can provide to help with identification of the
+     * current policy store.</p>
+     */
+    inline CreatePolicyStoreRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /**
+     * <p>Descriptive text that you can provide to help with identification of the
+     * current policy store.</p>
+     */
+    inline CreatePolicyStoreRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+
+    /**
+     * <p>Descriptive text that you can provide to help with identification of the
+     * current policy store.</p>
+     */
+    inline CreatePolicyStoreRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+
   private:
 
     Aws::String m_clientToken;
@@ -240,6 +313,9 @@ namespace Model
 
     ValidationSettings m_validationSettings;
     bool m_validationSettingsHasBeenSet = false;
+
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
   };
 
 } // namespace Model

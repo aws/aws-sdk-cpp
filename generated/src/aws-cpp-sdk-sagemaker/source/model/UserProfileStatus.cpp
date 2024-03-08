@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UserProfileStatus::NOT_SET:
+            return {};
           case UserProfileStatus::Deleting:
             return "Deleting";
           case UserProfileStatus::Failed:

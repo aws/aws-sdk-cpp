@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SourceCollectionStatus::NOT_SET:
+            return {};
           case SourceCollectionStatus::COLLECTING:
             return "COLLECTING";
           case SourceCollectionStatus::MISCONFIGURED:

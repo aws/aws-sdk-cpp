@@ -89,6 +89,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HandshakeConstraintViolationExceptionReason::NOT_SET:
+            return {};
           case HandshakeConstraintViolationExceptionReason::ACCOUNT_NUMBER_LIMIT_EXCEEDED:
             return "ACCOUNT_NUMBER_LIMIT_EXCEEDED";
           case HandshakeConstraintViolationExceptionReason::HANDSHAKE_RATE_LIMIT_EXCEEDED:

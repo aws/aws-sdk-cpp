@@ -40,27 +40,27 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == NOT_READABLE_INPUT_STREAM_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(BackupStorageErrors::NOT_READABLE_INPUT_STREAM), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(BackupStorageErrors::NOT_READABLE_INPUT_STREAM), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == ILLEGAL_ARGUMENT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(BackupStorageErrors::ILLEGAL_ARGUMENT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(BackupStorageErrors::ILLEGAL_ARGUMENT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == RETRYABLE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(BackupStorageErrors::RETRYABLE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(BackupStorageErrors::RETRYABLE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == DATA_ALREADY_EXISTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(BackupStorageErrors::DATA_ALREADY_EXISTS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(BackupStorageErrors::DATA_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == SERVICE_INTERNAL_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(BackupStorageErrors::SERVICE_INTERNAL), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(BackupStorageErrors::SERVICE_INTERNAL), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == K_M_S_INVALID_KEY_USAGE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(BackupStorageErrors::K_M_S_INVALID_KEY_USAGE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(BackupStorageErrors::K_M_S_INVALID_KEY_USAGE), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

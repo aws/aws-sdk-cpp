@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DataIdentifierType::NOT_SET:
+            return {};
           case DataIdentifierType::CUSTOM:
             return "CUSTOM";
           case DataIdentifierType::MANAGED:

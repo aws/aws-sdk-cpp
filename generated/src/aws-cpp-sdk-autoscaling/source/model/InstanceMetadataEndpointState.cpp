@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InstanceMetadataEndpointState::NOT_SET:
+            return {};
           case InstanceMetadataEndpointState::disabled:
             return "disabled";
           case InstanceMetadataEndpointState::enabled:

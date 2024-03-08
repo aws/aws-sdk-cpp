@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AdvancedInputFilter::NOT_SET:
+            return {};
           case AdvancedInputFilter::ENABLED:
             return "ENABLED";
           case AdvancedInputFilter::DISABLED:

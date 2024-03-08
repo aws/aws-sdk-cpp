@@ -20,13 +20,15 @@ namespace Model
 
 InsightConfiguration::InsightConfiguration() : 
     m_computationsHasBeenSet(false),
-    m_customNarrativeHasBeenSet(false)
+    m_customNarrativeHasBeenSet(false),
+    m_interactionsHasBeenSet(false)
 {
 }
 
 InsightConfiguration::InsightConfiguration(JsonView jsonValue) : 
     m_computationsHasBeenSet(false),
-    m_customNarrativeHasBeenSet(false)
+    m_customNarrativeHasBeenSet(false),
+    m_interactionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -50,6 +52,13 @@ InsightConfiguration& InsightConfiguration::operator =(JsonView jsonValue)
     m_customNarrativeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Interactions"))
+  {
+    m_interactions = jsonValue.GetObject("Interactions");
+
+    m_interactionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -71,6 +80,12 @@ JsonValue InsightConfiguration::Jsonize() const
   if(m_customNarrativeHasBeenSet)
   {
    payload.WithObject("CustomNarrative", m_customNarrative.Jsonize());
+
+  }
+
+  if(m_interactionsHasBeenSet)
+  {
+   payload.WithObject("Interactions", m_interactions.Jsonize());
 
   }
 

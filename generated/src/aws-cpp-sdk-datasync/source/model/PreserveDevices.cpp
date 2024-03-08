@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PreserveDevices::NOT_SET:
+            return {};
           case PreserveDevices::NONE:
             return "NONE";
           case PreserveDevices::PRESERVE:

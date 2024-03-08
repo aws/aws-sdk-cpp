@@ -29,13 +29,15 @@ ComboChartConfiguration::ComboChartConfiguration() :
     m_primaryYAxisLabelOptionsHasBeenSet(false),
     m_secondaryYAxisDisplayOptionsHasBeenSet(false),
     m_secondaryYAxisLabelOptionsHasBeenSet(false),
+    m_singleAxisOptionsHasBeenSet(false),
     m_colorLabelOptionsHasBeenSet(false),
     m_legendHasBeenSet(false),
     m_barDataLabelsHasBeenSet(false),
     m_lineDataLabelsHasBeenSet(false),
     m_tooltipHasBeenSet(false),
     m_referenceLinesHasBeenSet(false),
-    m_visualPaletteHasBeenSet(false)
+    m_visualPaletteHasBeenSet(false),
+    m_interactionsHasBeenSet(false)
 {
 }
 
@@ -50,13 +52,15 @@ ComboChartConfiguration::ComboChartConfiguration(JsonView jsonValue) :
     m_primaryYAxisLabelOptionsHasBeenSet(false),
     m_secondaryYAxisDisplayOptionsHasBeenSet(false),
     m_secondaryYAxisLabelOptionsHasBeenSet(false),
+    m_singleAxisOptionsHasBeenSet(false),
     m_colorLabelOptionsHasBeenSet(false),
     m_legendHasBeenSet(false),
     m_barDataLabelsHasBeenSet(false),
     m_lineDataLabelsHasBeenSet(false),
     m_tooltipHasBeenSet(false),
     m_referenceLinesHasBeenSet(false),
-    m_visualPaletteHasBeenSet(false)
+    m_visualPaletteHasBeenSet(false),
+    m_interactionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -126,6 +130,13 @@ ComboChartConfiguration& ComboChartConfiguration::operator =(JsonView jsonValue)
     m_secondaryYAxisLabelOptionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SingleAxisOptions"))
+  {
+    m_singleAxisOptions = jsonValue.GetObject("SingleAxisOptions");
+
+    m_singleAxisOptionsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("ColorLabelOptions"))
   {
     m_colorLabelOptions = jsonValue.GetObject("ColorLabelOptions");
@@ -176,6 +187,13 @@ ComboChartConfiguration& ComboChartConfiguration::operator =(JsonView jsonValue)
     m_visualPalette = jsonValue.GetObject("VisualPalette");
 
     m_visualPaletteHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Interactions"))
+  {
+    m_interactions = jsonValue.GetObject("Interactions");
+
+    m_interactionsHasBeenSet = true;
   }
 
   return *this;
@@ -238,6 +256,12 @@ JsonValue ComboChartConfiguration::Jsonize() const
 
   }
 
+  if(m_singleAxisOptionsHasBeenSet)
+  {
+   payload.WithObject("SingleAxisOptions", m_singleAxisOptions.Jsonize());
+
+  }
+
   if(m_colorLabelOptionsHasBeenSet)
   {
    payload.WithObject("ColorLabelOptions", m_colorLabelOptions.Jsonize());
@@ -282,6 +306,12 @@ JsonValue ComboChartConfiguration::Jsonize() const
   if(m_visualPaletteHasBeenSet)
   {
    payload.WithObject("VisualPalette", m_visualPalette.Jsonize());
+
+  }
+
+  if(m_interactionsHasBeenSet)
+  {
+   payload.WithObject("Interactions", m_interactions.Jsonize());
 
   }
 

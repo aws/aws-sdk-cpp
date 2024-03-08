@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NotificationRuleStatus::NOT_SET:
+            return {};
           case NotificationRuleStatus::ENABLED:
             return "ENABLED";
           case NotificationRuleStatus::DISABLED:

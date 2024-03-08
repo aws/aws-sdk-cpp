@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CustomMetricType::NOT_SET:
+            return {};
           case CustomMetricType::string_list:
             return "string-list";
           case CustomMetricType::ip_address_list:

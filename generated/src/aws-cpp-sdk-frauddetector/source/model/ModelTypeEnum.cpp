@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ModelTypeEnum::NOT_SET:
+            return {};
           case ModelTypeEnum::ONLINE_FRAUD_INSIGHTS:
             return "ONLINE_FRAUD_INSIGHTS";
           case ModelTypeEnum::TRANSACTION_FRAUD_INSIGHTS:

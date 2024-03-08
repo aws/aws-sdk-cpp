@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ServiceType::NOT_SET:
+            return {};
           case ServiceType::Interface:
             return "Interface";
           case ServiceType::Gateway:

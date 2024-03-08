@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ModelInfrastructureType::NOT_SET:
+            return {};
           case ModelInfrastructureType::RealTimeInference:
             return "RealTimeInference";
           default:

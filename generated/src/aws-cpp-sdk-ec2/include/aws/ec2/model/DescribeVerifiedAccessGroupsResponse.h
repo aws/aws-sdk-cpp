@@ -36,37 +36,37 @@ namespace Model
 
 
     /**
-     * <p>The ID of the Verified Access group.</p>
+     * <p>Details about the Verified Access groups.</p>
      */
     inline const Aws::Vector<VerifiedAccessGroup>& GetVerifiedAccessGroups() const{ return m_verifiedAccessGroups; }
 
     /**
-     * <p>The ID of the Verified Access group.</p>
+     * <p>Details about the Verified Access groups.</p>
      */
     inline void SetVerifiedAccessGroups(const Aws::Vector<VerifiedAccessGroup>& value) { m_verifiedAccessGroups = value; }
 
     /**
-     * <p>The ID of the Verified Access group.</p>
+     * <p>Details about the Verified Access groups.</p>
      */
     inline void SetVerifiedAccessGroups(Aws::Vector<VerifiedAccessGroup>&& value) { m_verifiedAccessGroups = std::move(value); }
 
     /**
-     * <p>The ID of the Verified Access group.</p>
+     * <p>Details about the Verified Access groups.</p>
      */
     inline DescribeVerifiedAccessGroupsResponse& WithVerifiedAccessGroups(const Aws::Vector<VerifiedAccessGroup>& value) { SetVerifiedAccessGroups(value); return *this;}
 
     /**
-     * <p>The ID of the Verified Access group.</p>
+     * <p>Details about the Verified Access groups.</p>
      */
     inline DescribeVerifiedAccessGroupsResponse& WithVerifiedAccessGroups(Aws::Vector<VerifiedAccessGroup>&& value) { SetVerifiedAccessGroups(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the Verified Access group.</p>
+     * <p>Details about the Verified Access groups.</p>
      */
     inline DescribeVerifiedAccessGroupsResponse& AddVerifiedAccessGroups(const VerifiedAccessGroup& value) { m_verifiedAccessGroups.push_back(value); return *this; }
 
     /**
-     * <p>The ID of the Verified Access group.</p>
+     * <p>Details about the Verified Access groups.</p>
      */
     inline DescribeVerifiedAccessGroupsResponse& AddVerifiedAccessGroups(VerifiedAccessGroup&& value) { m_verifiedAccessGroups.push_back(std::move(value)); return *this; }
 

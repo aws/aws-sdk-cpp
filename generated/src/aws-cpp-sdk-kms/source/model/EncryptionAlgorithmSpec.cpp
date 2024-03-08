@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EncryptionAlgorithmSpec::NOT_SET:
+            return {};
           case EncryptionAlgorithmSpec::SYMMETRIC_DEFAULT:
             return "SYMMETRIC_DEFAULT";
           case EncryptionAlgorithmSpec::RSAES_OAEP_SHA_1:

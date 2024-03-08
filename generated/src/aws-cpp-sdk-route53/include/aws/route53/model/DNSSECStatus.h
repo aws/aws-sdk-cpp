@@ -23,7 +23,7 @@ namespace Model
 {
 
   /**
-   * <p>A string repesenting the status of DNSSEC signing.</p><p><h3>See Also:</h3>  
+   * <p>A string representing the status of DNSSEC signing.</p><p><h3>See Also:</h3> 
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DNSSECStatus">AWS
    * API Reference</a></p>

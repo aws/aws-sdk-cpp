@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BucketVersioningStatus::NOT_SET:
+            return {};
           case BucketVersioningStatus::Enabled:
             return "Enabled";
           case BucketVersioningStatus::Suspended:

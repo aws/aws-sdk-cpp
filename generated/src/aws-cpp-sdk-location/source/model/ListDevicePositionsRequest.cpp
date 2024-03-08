@@ -13,6 +13,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 ListDevicePositionsRequest::ListDevicePositionsRequest() : 
+    m_filterGeometryHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
@@ -23,6 +24,12 @@ ListDevicePositionsRequest::ListDevicePositionsRequest() :
 Aws::String ListDevicePositionsRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_filterGeometryHasBeenSet)
+  {
+   payload.WithObject("FilterGeometry", m_filterGeometry.Jsonize());
+
+  }
 
   if(m_maxResultsHasBeenSet)
   {

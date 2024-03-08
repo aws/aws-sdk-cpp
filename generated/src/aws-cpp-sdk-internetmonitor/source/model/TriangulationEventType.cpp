@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TriangulationEventType::NOT_SET:
+            return {};
           case TriangulationEventType::AWS:
             return "AWS";
           case TriangulationEventType::Internet:

@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LineItemFilterAttributeName::NOT_SET:
+            return {};
           case LineItemFilterAttributeName::LINE_ITEM_TYPE:
             return "LINE_ITEM_TYPE";
           default:

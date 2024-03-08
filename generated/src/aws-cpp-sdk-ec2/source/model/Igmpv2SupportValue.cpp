@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Igmpv2SupportValue::NOT_SET:
+            return {};
           case Igmpv2SupportValue::enable:
             return "enable";
           case Igmpv2SupportValue::disable:

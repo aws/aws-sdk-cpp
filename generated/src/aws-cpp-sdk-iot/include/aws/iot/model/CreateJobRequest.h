@@ -598,8 +598,10 @@ namespace Model
      * sends jobs notifications to MQTT topics that contain the value in the following
      * format.</p> <p>
      * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
-     * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
-     * 
+     * </p>  <p>The <code>namespaceId</code> feature is only supported by IoT
+     * Greengrass at this time. For more information, see <a
+     * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/setting-up.html">Setting
+     * up IoT Greengrass core devices.</a> </p> 
      */
     inline const Aws::String& GetNamespaceId() const{ return m_namespaceId; }
 
@@ -609,8 +611,10 @@ namespace Model
      * sends jobs notifications to MQTT topics that contain the value in the following
      * format.</p> <p>
      * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
-     * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
-     * 
+     * </p>  <p>The <code>namespaceId</code> feature is only supported by IoT
+     * Greengrass at this time. For more information, see <a
+     * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/setting-up.html">Setting
+     * up IoT Greengrass core devices.</a> </p> 
      */
     inline bool NamespaceIdHasBeenSet() const { return m_namespaceIdHasBeenSet; }
 
@@ -620,8 +624,10 @@ namespace Model
      * sends jobs notifications to MQTT topics that contain the value in the following
      * format.</p> <p>
      * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
-     * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
-     * 
+     * </p>  <p>The <code>namespaceId</code> feature is only supported by IoT
+     * Greengrass at this time. For more information, see <a
+     * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/setting-up.html">Setting
+     * up IoT Greengrass core devices.</a> </p> 
      */
     inline void SetNamespaceId(const Aws::String& value) { m_namespaceIdHasBeenSet = true; m_namespaceId = value; }
 
@@ -631,8 +637,10 @@ namespace Model
      * sends jobs notifications to MQTT topics that contain the value in the following
      * format.</p> <p>
      * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
-     * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
-     * 
+     * </p>  <p>The <code>namespaceId</code> feature is only supported by IoT
+     * Greengrass at this time. For more information, see <a
+     * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/setting-up.html">Setting
+     * up IoT Greengrass core devices.</a> </p> 
      */
     inline void SetNamespaceId(Aws::String&& value) { m_namespaceIdHasBeenSet = true; m_namespaceId = std::move(value); }
 
@@ -642,8 +650,10 @@ namespace Model
      * sends jobs notifications to MQTT topics that contain the value in the following
      * format.</p> <p>
      * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
-     * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
-     * 
+     * </p>  <p>The <code>namespaceId</code> feature is only supported by IoT
+     * Greengrass at this time. For more information, see <a
+     * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/setting-up.html">Setting
+     * up IoT Greengrass core devices.</a> </p> 
      */
     inline void SetNamespaceId(const char* value) { m_namespaceIdHasBeenSet = true; m_namespaceId.assign(value); }
 
@@ -653,8 +663,10 @@ namespace Model
      * sends jobs notifications to MQTT topics that contain the value in the following
      * format.</p> <p>
      * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
-     * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
-     * 
+     * </p>  <p>The <code>namespaceId</code> feature is only supported by IoT
+     * Greengrass at this time. For more information, see <a
+     * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/setting-up.html">Setting
+     * up IoT Greengrass core devices.</a> </p> 
      */
     inline CreateJobRequest& WithNamespaceId(const Aws::String& value) { SetNamespaceId(value); return *this;}
 
@@ -664,8 +676,10 @@ namespace Model
      * sends jobs notifications to MQTT topics that contain the value in the following
      * format.</p> <p>
      * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
-     * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
-     * 
+     * </p>  <p>The <code>namespaceId</code> feature is only supported by IoT
+     * Greengrass at this time. For more information, see <a
+     * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/setting-up.html">Setting
+     * up IoT Greengrass core devices.</a> </p> 
      */
     inline CreateJobRequest& WithNamespaceId(Aws::String&& value) { SetNamespaceId(std::move(value)); return *this;}
 
@@ -675,8 +689,10 @@ namespace Model
      * sends jobs notifications to MQTT topics that contain the value in the following
      * format.</p> <p>
      * <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
-     * </p>  <p>The <code>namespaceId</code> feature is in public preview.</p>
-     * 
+     * </p>  <p>The <code>namespaceId</code> feature is only supported by IoT
+     * Greengrass at this time. For more information, see <a
+     * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/setting-up.html">Setting
+     * up IoT Greengrass core devices.</a> </p> 
      */
     inline CreateJobRequest& WithNamespaceId(const char* value) { SetNamespaceId(value); return *this;}
 
@@ -910,73 +926,100 @@ namespace Model
 
     /**
      * <p>The package version Amazon Resource Names (ARNs) that are installed on the
-     * device when the job successfully completes. </p> <p> <b>Note:</b>The following
-     * Length Constraints relates to a single string. Up to five strings are
-     * allowed.</p>
+     * device when the job successfully completes. The package version must be in
+     * either the Published or Deprecated state when the job deploys. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle">Package
+     * version lifecycle</a>. </p> <p> <b>Note:</b>The following Length Constraints
+     * relates to a single ARN. Up to 25 package version ARNs are allowed.</p>
      */
     inline const Aws::Vector<Aws::String>& GetDestinationPackageVersions() const{ return m_destinationPackageVersions; }
 
     /**
      * <p>The package version Amazon Resource Names (ARNs) that are installed on the
-     * device when the job successfully completes. </p> <p> <b>Note:</b>The following
-     * Length Constraints relates to a single string. Up to five strings are
-     * allowed.</p>
+     * device when the job successfully completes. The package version must be in
+     * either the Published or Deprecated state when the job deploys. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle">Package
+     * version lifecycle</a>. </p> <p> <b>Note:</b>The following Length Constraints
+     * relates to a single ARN. Up to 25 package version ARNs are allowed.</p>
      */
     inline bool DestinationPackageVersionsHasBeenSet() const { return m_destinationPackageVersionsHasBeenSet; }
 
     /**
      * <p>The package version Amazon Resource Names (ARNs) that are installed on the
-     * device when the job successfully completes. </p> <p> <b>Note:</b>The following
-     * Length Constraints relates to a single string. Up to five strings are
-     * allowed.</p>
+     * device when the job successfully completes. The package version must be in
+     * either the Published or Deprecated state when the job deploys. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle">Package
+     * version lifecycle</a>. </p> <p> <b>Note:</b>The following Length Constraints
+     * relates to a single ARN. Up to 25 package version ARNs are allowed.</p>
      */
     inline void SetDestinationPackageVersions(const Aws::Vector<Aws::String>& value) { m_destinationPackageVersionsHasBeenSet = true; m_destinationPackageVersions = value; }
 
     /**
      * <p>The package version Amazon Resource Names (ARNs) that are installed on the
-     * device when the job successfully completes. </p> <p> <b>Note:</b>The following
-     * Length Constraints relates to a single string. Up to five strings are
-     * allowed.</p>
+     * device when the job successfully completes. The package version must be in
+     * either the Published or Deprecated state when the job deploys. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle">Package
+     * version lifecycle</a>. </p> <p> <b>Note:</b>The following Length Constraints
+     * relates to a single ARN. Up to 25 package version ARNs are allowed.</p>
      */
     inline void SetDestinationPackageVersions(Aws::Vector<Aws::String>&& value) { m_destinationPackageVersionsHasBeenSet = true; m_destinationPackageVersions = std::move(value); }
 
     /**
      * <p>The package version Amazon Resource Names (ARNs) that are installed on the
-     * device when the job successfully completes. </p> <p> <b>Note:</b>The following
-     * Length Constraints relates to a single string. Up to five strings are
-     * allowed.</p>
+     * device when the job successfully completes. The package version must be in
+     * either the Published or Deprecated state when the job deploys. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle">Package
+     * version lifecycle</a>. </p> <p> <b>Note:</b>The following Length Constraints
+     * relates to a single ARN. Up to 25 package version ARNs are allowed.</p>
      */
     inline CreateJobRequest& WithDestinationPackageVersions(const Aws::Vector<Aws::String>& value) { SetDestinationPackageVersions(value); return *this;}
 
     /**
      * <p>The package version Amazon Resource Names (ARNs) that are installed on the
-     * device when the job successfully completes. </p> <p> <b>Note:</b>The following
-     * Length Constraints relates to a single string. Up to five strings are
-     * allowed.</p>
+     * device when the job successfully completes. The package version must be in
+     * either the Published or Deprecated state when the job deploys. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle">Package
+     * version lifecycle</a>. </p> <p> <b>Note:</b>The following Length Constraints
+     * relates to a single ARN. Up to 25 package version ARNs are allowed.</p>
      */
     inline CreateJobRequest& WithDestinationPackageVersions(Aws::Vector<Aws::String>&& value) { SetDestinationPackageVersions(std::move(value)); return *this;}
 
     /**
      * <p>The package version Amazon Resource Names (ARNs) that are installed on the
-     * device when the job successfully completes. </p> <p> <b>Note:</b>The following
-     * Length Constraints relates to a single string. Up to five strings are
-     * allowed.</p>
+     * device when the job successfully completes. The package version must be in
+     * either the Published or Deprecated state when the job deploys. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle">Package
+     * version lifecycle</a>. </p> <p> <b>Note:</b>The following Length Constraints
+     * relates to a single ARN. Up to 25 package version ARNs are allowed.</p>
      */
     inline CreateJobRequest& AddDestinationPackageVersions(const Aws::String& value) { m_destinationPackageVersionsHasBeenSet = true; m_destinationPackageVersions.push_back(value); return *this; }
 
     /**
      * <p>The package version Amazon Resource Names (ARNs) that are installed on the
-     * device when the job successfully completes. </p> <p> <b>Note:</b>The following
-     * Length Constraints relates to a single string. Up to five strings are
-     * allowed.</p>
+     * device when the job successfully completes. The package version must be in
+     * either the Published or Deprecated state when the job deploys. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle">Package
+     * version lifecycle</a>. </p> <p> <b>Note:</b>The following Length Constraints
+     * relates to a single ARN. Up to 25 package version ARNs are allowed.</p>
      */
     inline CreateJobRequest& AddDestinationPackageVersions(Aws::String&& value) { m_destinationPackageVersionsHasBeenSet = true; m_destinationPackageVersions.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The package version Amazon Resource Names (ARNs) that are installed on the
-     * device when the job successfully completes. </p> <p> <b>Note:</b>The following
-     * Length Constraints relates to a single string. Up to five strings are
-     * allowed.</p>
+     * device when the job successfully completes. The package version must be in
+     * either the Published or Deprecated state when the job deploys. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle">Package
+     * version lifecycle</a>. </p> <p> <b>Note:</b>The following Length Constraints
+     * relates to a single ARN. Up to 25 package version ARNs are allowed.</p>
      */
     inline CreateJobRequest& AddDestinationPackageVersions(const char* value) { m_destinationPackageVersionsHasBeenSet = true; m_destinationPackageVersions.push_back(value); return *this; }
 

@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ExportFilterName::NOT_SET:
+            return {};
           case ExportFilterName::ExportResourceType:
             return "ExportResourceType";
           default:

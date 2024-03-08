@@ -30,6 +30,8 @@ H264Settings::H264Settings() :
     m_codecProfileHasBeenSet(false),
     m_dynamicSubGop(H264DynamicSubGop::NOT_SET),
     m_dynamicSubGopHasBeenSet(false),
+    m_endOfStreamMarkers(H264EndOfStreamMarkers::NOT_SET),
+    m_endOfStreamMarkersHasBeenSet(false),
     m_entropyEncoding(H264EntropyEncoding::NOT_SET),
     m_entropyEncodingHasBeenSet(false),
     m_fieldEncoding(H264FieldEncoding::NOT_SET),
@@ -116,6 +118,8 @@ H264Settings::H264Settings(JsonView jsonValue) :
     m_codecProfileHasBeenSet(false),
     m_dynamicSubGop(H264DynamicSubGop::NOT_SET),
     m_dynamicSubGopHasBeenSet(false),
+    m_endOfStreamMarkers(H264EndOfStreamMarkers::NOT_SET),
+    m_endOfStreamMarkersHasBeenSet(false),
     m_entropyEncoding(H264EntropyEncoding::NOT_SET),
     m_entropyEncodingHasBeenSet(false),
     m_fieldEncoding(H264FieldEncoding::NOT_SET),
@@ -233,6 +237,13 @@ H264Settings& H264Settings::operator =(JsonView jsonValue)
     m_dynamicSubGop = H264DynamicSubGopMapper::GetH264DynamicSubGopForName(jsonValue.GetString("dynamicSubGop"));
 
     m_dynamicSubGopHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("endOfStreamMarkers"))
+  {
+    m_endOfStreamMarkers = H264EndOfStreamMarkersMapper::GetH264EndOfStreamMarkersForName(jsonValue.GetString("endOfStreamMarkers"));
+
+    m_endOfStreamMarkersHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("entropyEncoding"))
@@ -524,6 +535,11 @@ JsonValue H264Settings::Jsonize() const
   if(m_dynamicSubGopHasBeenSet)
   {
    payload.WithString("dynamicSubGop", H264DynamicSubGopMapper::GetNameForH264DynamicSubGop(m_dynamicSubGop));
+  }
+
+  if(m_endOfStreamMarkersHasBeenSet)
+  {
+   payload.WithString("endOfStreamMarkers", H264EndOfStreamMarkersMapper::GetNameForH264EndOfStreamMarkers(m_endOfStreamMarkers));
   }
 
   if(m_entropyEncodingHasBeenSet)

@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TCPFlag::NOT_SET:
+            return {};
           case TCPFlag::FIN:
             return "FIN";
           case TCPFlag::SYN:

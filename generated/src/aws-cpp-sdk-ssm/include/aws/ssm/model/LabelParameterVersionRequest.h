@@ -36,42 +36,58 @@ namespace Model
 
 
     /**
-     * <p>The parameter name on which you want to attach one or more labels.</p>
+     * <p>The parameter name on which you want to attach one or more labels.</p> 
+     * <p>You can't enter the Amazon Resource Name (ARN) for a parameter, only the
+     * parameter name itself.</p> 
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The parameter name on which you want to attach one or more labels.</p>
+     * <p>The parameter name on which you want to attach one or more labels.</p> 
+     * <p>You can't enter the Amazon Resource Name (ARN) for a parameter, only the
+     * parameter name itself.</p> 
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The parameter name on which you want to attach one or more labels.</p>
+     * <p>The parameter name on which you want to attach one or more labels.</p> 
+     * <p>You can't enter the Amazon Resource Name (ARN) for a parameter, only the
+     * parameter name itself.</p> 
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The parameter name on which you want to attach one or more labels.</p>
+     * <p>The parameter name on which you want to attach one or more labels.</p> 
+     * <p>You can't enter the Amazon Resource Name (ARN) for a parameter, only the
+     * parameter name itself.</p> 
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The parameter name on which you want to attach one or more labels.</p>
+     * <p>The parameter name on which you want to attach one or more labels.</p> 
+     * <p>You can't enter the Amazon Resource Name (ARN) for a parameter, only the
+     * parameter name itself.</p> 
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The parameter name on which you want to attach one or more labels.</p>
+     * <p>The parameter name on which you want to attach one or more labels.</p> 
+     * <p>You can't enter the Amazon Resource Name (ARN) for a parameter, only the
+     * parameter name itself.</p> 
      */
     inline LabelParameterVersionRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The parameter name on which you want to attach one or more labels.</p>
+     * <p>The parameter name on which you want to attach one or more labels.</p> 
+     * <p>You can't enter the Amazon Resource Name (ARN) for a parameter, only the
+     * parameter name itself.</p> 
      */
     inline LabelParameterVersionRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The parameter name on which you want to attach one or more labels.</p>
+     * <p>The parameter name on which you want to attach one or more labels.</p> 
+     * <p>You can't enter the Amazon Resource Name (ARN) for a parameter, only the
+     * parameter name itself.</p> 
      */
     inline LabelParameterVersionRequest& WithName(const char* value) { SetName(value); return *this;}
 

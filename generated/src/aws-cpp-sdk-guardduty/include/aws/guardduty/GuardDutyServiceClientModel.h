@@ -53,6 +53,7 @@
 #include <aws/guardduty/model/GetMalwareScanSettingsResult.h>
 #include <aws/guardduty/model/GetMemberDetectorsResult.h>
 #include <aws/guardduty/model/GetMembersResult.h>
+#include <aws/guardduty/model/GetOrganizationStatisticsResult.h>
 #include <aws/guardduty/model/GetRemainingFreeTrialDaysResult.h>
 #include <aws/guardduty/model/GetThreatIntelSetResult.h>
 #include <aws/guardduty/model/GetUsageStatisticsResult.h>
@@ -158,6 +159,7 @@ namespace Aws
       class GetMalwareScanSettingsRequest;
       class GetMemberDetectorsRequest;
       class GetMembersRequest;
+      class GetOrganizationStatisticsRequest;
       class GetRemainingFreeTrialDaysRequest;
       class GetThreatIntelSetRequest;
       class GetUsageStatisticsRequest;
@@ -226,6 +228,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetMalwareScanSettingsResult, GuardDutyError> GetMalwareScanSettingsOutcome;
       typedef Aws::Utils::Outcome<GetMemberDetectorsResult, GuardDutyError> GetMemberDetectorsOutcome;
       typedef Aws::Utils::Outcome<GetMembersResult, GuardDutyError> GetMembersOutcome;
+      typedef Aws::Utils::Outcome<GetOrganizationStatisticsResult, GuardDutyError> GetOrganizationStatisticsOutcome;
       typedef Aws::Utils::Outcome<GetRemainingFreeTrialDaysResult, GuardDutyError> GetRemainingFreeTrialDaysOutcome;
       typedef Aws::Utils::Outcome<GetThreatIntelSetResult, GuardDutyError> GetThreatIntelSetOutcome;
       typedef Aws::Utils::Outcome<GetUsageStatisticsResult, GuardDutyError> GetUsageStatisticsOutcome;
@@ -294,6 +297,7 @@ namespace Aws
       typedef std::future<GetMalwareScanSettingsOutcome> GetMalwareScanSettingsOutcomeCallable;
       typedef std::future<GetMemberDetectorsOutcome> GetMemberDetectorsOutcomeCallable;
       typedef std::future<GetMembersOutcome> GetMembersOutcomeCallable;
+      typedef std::future<GetOrganizationStatisticsOutcome> GetOrganizationStatisticsOutcomeCallable;
       typedef std::future<GetRemainingFreeTrialDaysOutcome> GetRemainingFreeTrialDaysOutcomeCallable;
       typedef std::future<GetThreatIntelSetOutcome> GetThreatIntelSetOutcomeCallable;
       typedef std::future<GetUsageStatisticsOutcome> GetUsageStatisticsOutcomeCallable;
@@ -365,6 +369,7 @@ namespace Aws
     typedef std::function<void(const GuardDutyClient*, const Model::GetMalwareScanSettingsRequest&, const Model::GetMalwareScanSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMalwareScanSettingsResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::GetMemberDetectorsRequest&, const Model::GetMemberDetectorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMemberDetectorsResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::GetMembersRequest&, const Model::GetMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMembersResponseReceivedHandler;
+    typedef std::function<void(const GuardDutyClient*, const Model::GetOrganizationStatisticsRequest&, const Model::GetOrganizationStatisticsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetOrganizationStatisticsResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::GetRemainingFreeTrialDaysRequest&, const Model::GetRemainingFreeTrialDaysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRemainingFreeTrialDaysResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::GetThreatIntelSetRequest&, const Model::GetThreatIntelSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetThreatIntelSetResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::GetUsageStatisticsRequest&, const Model::GetUsageStatisticsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetUsageStatisticsResponseReceivedHandler;

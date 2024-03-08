@@ -31,9 +31,11 @@ ClusterPendingModifiedValues::ClusterPendingModifiedValues() :
     m_backupRetentionPeriodHasBeenSet(false),
     m_allocatedStorage(0),
     m_allocatedStorageHasBeenSet(false),
+    m_rdsCustomClusterConfigurationHasBeenSet(false),
     m_iops(0),
     m_iopsHasBeenSet(false),
-    m_storageTypeHasBeenSet(false)
+    m_storageTypeHasBeenSet(false),
+    m_certificateDetailsHasBeenSet(false)
 {
 }
 
@@ -48,9 +50,11 @@ ClusterPendingModifiedValues::ClusterPendingModifiedValues(const XmlNode& xmlNod
     m_backupRetentionPeriodHasBeenSet(false),
     m_allocatedStorage(0),
     m_allocatedStorageHasBeenSet(false),
+    m_rdsCustomClusterConfigurationHasBeenSet(false),
     m_iops(0),
     m_iopsHasBeenSet(false),
-    m_storageTypeHasBeenSet(false)
+    m_storageTypeHasBeenSet(false),
+    m_certificateDetailsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -103,6 +107,12 @@ ClusterPendingModifiedValues& ClusterPendingModifiedValues::operator =(const Xml
       m_allocatedStorage = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(allocatedStorageNode.GetText()).c_str()).c_str());
       m_allocatedStorageHasBeenSet = true;
     }
+    XmlNode rdsCustomClusterConfigurationNode = resultNode.FirstChild("RdsCustomClusterConfiguration");
+    if(!rdsCustomClusterConfigurationNode.IsNull())
+    {
+      m_rdsCustomClusterConfiguration = rdsCustomClusterConfigurationNode;
+      m_rdsCustomClusterConfigurationHasBeenSet = true;
+    }
     XmlNode iopsNode = resultNode.FirstChild("Iops");
     if(!iopsNode.IsNull())
     {
@@ -114,6 +124,12 @@ ClusterPendingModifiedValues& ClusterPendingModifiedValues::operator =(const Xml
     {
       m_storageType = Aws::Utils::Xml::DecodeEscapedXmlText(storageTypeNode.GetText());
       m_storageTypeHasBeenSet = true;
+    }
+    XmlNode certificateDetailsNode = resultNode.FirstChild("CertificateDetails");
+    if(!certificateDetailsNode.IsNull())
+    {
+      m_certificateDetails = certificateDetailsNode;
+      m_certificateDetailsHasBeenSet = true;
     }
   }
 
@@ -159,6 +175,13 @@ void ClusterPendingModifiedValues::OutputToStream(Aws::OStream& oStream, const c
       oStream << location << index << locationValue << ".AllocatedStorage=" << m_allocatedStorage << "&";
   }
 
+  if(m_rdsCustomClusterConfigurationHasBeenSet)
+  {
+      Aws::StringStream rdsCustomClusterConfigurationLocationAndMemberSs;
+      rdsCustomClusterConfigurationLocationAndMemberSs << location << index << locationValue << ".RdsCustomClusterConfiguration";
+      m_rdsCustomClusterConfiguration.OutputToStream(oStream, rdsCustomClusterConfigurationLocationAndMemberSs.str().c_str());
+  }
+
   if(m_iopsHasBeenSet)
   {
       oStream << location << index << locationValue << ".Iops=" << m_iops << "&";
@@ -167,6 +190,13 @@ void ClusterPendingModifiedValues::OutputToStream(Aws::OStream& oStream, const c
   if(m_storageTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".StorageType=" << StringUtils::URLEncode(m_storageType.c_str()) << "&";
+  }
+
+  if(m_certificateDetailsHasBeenSet)
+  {
+      Aws::StringStream certificateDetailsLocationAndMemberSs;
+      certificateDetailsLocationAndMemberSs << location << index << locationValue << ".CertificateDetails";
+      m_certificateDetails.OutputToStream(oStream, certificateDetailsLocationAndMemberSs.str().c_str());
   }
 
 }
@@ -203,6 +233,12 @@ void ClusterPendingModifiedValues::OutputToStream(Aws::OStream& oStream, const c
   {
       oStream << location << ".AllocatedStorage=" << m_allocatedStorage << "&";
   }
+  if(m_rdsCustomClusterConfigurationHasBeenSet)
+  {
+      Aws::String rdsCustomClusterConfigurationLocationAndMember(location);
+      rdsCustomClusterConfigurationLocationAndMember += ".RdsCustomClusterConfiguration";
+      m_rdsCustomClusterConfiguration.OutputToStream(oStream, rdsCustomClusterConfigurationLocationAndMember.c_str());
+  }
   if(m_iopsHasBeenSet)
   {
       oStream << location << ".Iops=" << m_iops << "&";
@@ -210,6 +246,12 @@ void ClusterPendingModifiedValues::OutputToStream(Aws::OStream& oStream, const c
   if(m_storageTypeHasBeenSet)
   {
       oStream << location << ".StorageType=" << StringUtils::URLEncode(m_storageType.c_str()) << "&";
+  }
+  if(m_certificateDetailsHasBeenSet)
+  {
+      Aws::String certificateDetailsLocationAndMember(location);
+      certificateDetailsLocationAndMember += ".CertificateDetails";
+      m_certificateDetails.OutputToStream(oStream, certificateDetailsLocationAndMember.c_str());
   }
 }
 

@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResourceResolutionStatusType::NOT_SET:
+            return {};
           case ResourceResolutionStatusType::Pending:
             return "Pending";
           case ResourceResolutionStatusType::InProgress:

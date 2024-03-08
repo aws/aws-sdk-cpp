@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StatusType::NOT_SET:
+            return {};
           case StatusType::InSync:
             return "InSync";
           case StatusType::Failed:

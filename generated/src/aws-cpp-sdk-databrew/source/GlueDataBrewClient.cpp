@@ -79,8 +79,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* GlueDataBrewClient::SERVICE_NAME = "databrew";
-const char* GlueDataBrewClient::ALLOCATION_TAG = "GlueDataBrewClient";
+namespace Aws
+{
+  namespace GlueDataBrew
+  {
+    const char SERVICE_NAME[] = "databrew";
+    const char ALLOCATION_TAG[] = "GlueDataBrewClient";
+  }
+}
+const char* GlueDataBrewClient::GetServiceName() {return SERVICE_NAME;}
+const char* GlueDataBrewClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 GlueDataBrewClient::GlueDataBrewClient(const GlueDataBrew::GlueDataBrewClientConfiguration& clientConfiguration,
                                        std::shared_ptr<GlueDataBrewEndpointProviderBase> endpointProvider) :
@@ -92,7 +100,7 @@ GlueDataBrewClient::GlueDataBrewClient(const GlueDataBrew::GlueDataBrewClientCon
             Aws::MakeShared<GlueDataBrewErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<GlueDataBrewEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -108,7 +116,7 @@ GlueDataBrewClient::GlueDataBrewClient(const AWSCredentials& credentials,
             Aws::MakeShared<GlueDataBrewErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<GlueDataBrewEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -124,7 +132,7 @@ GlueDataBrewClient::GlueDataBrewClient(const std::shared_ptr<AWSCredentialsProvi
             Aws::MakeShared<GlueDataBrewErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<GlueDataBrewEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

@@ -20,13 +20,17 @@ namespace Model
 
 FeatureActivations::FeatureActivations() : 
     m_inputPrepareScheduleActions(FeatureActivationsInputPrepareScheduleActions::NOT_SET),
-    m_inputPrepareScheduleActionsHasBeenSet(false)
+    m_inputPrepareScheduleActionsHasBeenSet(false),
+    m_outputStaticImageOverlayScheduleActions(FeatureActivationsOutputStaticImageOverlayScheduleActions::NOT_SET),
+    m_outputStaticImageOverlayScheduleActionsHasBeenSet(false)
 {
 }
 
 FeatureActivations::FeatureActivations(JsonView jsonValue) : 
     m_inputPrepareScheduleActions(FeatureActivationsInputPrepareScheduleActions::NOT_SET),
-    m_inputPrepareScheduleActionsHasBeenSet(false)
+    m_inputPrepareScheduleActionsHasBeenSet(false),
+    m_outputStaticImageOverlayScheduleActions(FeatureActivationsOutputStaticImageOverlayScheduleActions::NOT_SET),
+    m_outputStaticImageOverlayScheduleActionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -40,6 +44,13 @@ FeatureActivations& FeatureActivations::operator =(JsonView jsonValue)
     m_inputPrepareScheduleActionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("outputStaticImageOverlayScheduleActions"))
+  {
+    m_outputStaticImageOverlayScheduleActions = FeatureActivationsOutputStaticImageOverlayScheduleActionsMapper::GetFeatureActivationsOutputStaticImageOverlayScheduleActionsForName(jsonValue.GetString("outputStaticImageOverlayScheduleActions"));
+
+    m_outputStaticImageOverlayScheduleActionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -50,6 +61,11 @@ JsonValue FeatureActivations::Jsonize() const
   if(m_inputPrepareScheduleActionsHasBeenSet)
   {
    payload.WithString("inputPrepareScheduleActions", FeatureActivationsInputPrepareScheduleActionsMapper::GetNameForFeatureActivationsInputPrepareScheduleActions(m_inputPrepareScheduleActions));
+  }
+
+  if(m_outputStaticImageOverlayScheduleActionsHasBeenSet)
+  {
+   payload.WithString("outputStaticImageOverlayScheduleActions", FeatureActivationsOutputStaticImageOverlayScheduleActionsMapper::GetNameForFeatureActivationsOutputStaticImageOverlayScheduleActions(m_outputStaticImageOverlayScheduleActions));
   }
 
   return payload;

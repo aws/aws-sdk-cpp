@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RepositorySortBy::NOT_SET:
+            return {};
           case RepositorySortBy::CRITICAL:
             return "CRITICAL";
           case RepositorySortBy::HIGH:

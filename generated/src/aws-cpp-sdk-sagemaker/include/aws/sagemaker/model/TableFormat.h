@@ -16,6 +16,7 @@ namespace Model
   enum class TableFormat
   {
     NOT_SET,
+    Default,
     Glue,
     Iceberg
   };

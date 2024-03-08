@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PostLaunchActionExecutionStatus::NOT_SET:
+            return {};
           case PostLaunchActionExecutionStatus::IN_PROGRESS:
             return "IN_PROGRESS";
           case PostLaunchActionExecutionStatus::SUCCESS:

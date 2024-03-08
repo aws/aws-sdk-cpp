@@ -20,20 +20,20 @@ namespace Model
 
 RuleGroupsNamespaceSummary::RuleGroupsNamespaceSummary() : 
     m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_statusHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_modifiedAtHasBeenSet(false),
+    m_nameHasBeenSet(false),
+    m_statusHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
 
 RuleGroupsNamespaceSummary::RuleGroupsNamespaceSummary(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_statusHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_modifiedAtHasBeenSet(false),
+    m_nameHasBeenSet(false),
+    m_statusHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -48,20 +48,6 @@ RuleGroupsNamespaceSummary& RuleGroupsNamespaceSummary::operator =(JsonView json
     m_arnHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("name"))
-  {
-    m_name = jsonValue.GetString("name");
-
-    m_nameHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("status"))
-  {
-    m_status = jsonValue.GetObject("status");
-
-    m_statusHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
@@ -74,6 +60,20 @@ RuleGroupsNamespaceSummary& RuleGroupsNamespaceSummary::operator =(JsonView json
     m_modifiedAt = jsonValue.GetDouble("modifiedAt");
 
     m_modifiedAtHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("name"))
+  {
+    m_name = jsonValue.GetString("name");
+
+    m_nameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("status"))
+  {
+    m_status = jsonValue.GetObject("status");
+
+    m_statusHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("tags"))
@@ -99,6 +99,16 @@ JsonValue RuleGroupsNamespaceSummary::Jsonize() const
 
   }
 
+  if(m_createdAtHasBeenSet)
+  {
+   payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
+  }
+
+  if(m_modifiedAtHasBeenSet)
+  {
+   payload.WithDouble("modifiedAt", m_modifiedAt.SecondsWithMSPrecision());
+  }
+
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
@@ -109,16 +119,6 @@ JsonValue RuleGroupsNamespaceSummary::Jsonize() const
   {
    payload.WithObject("status", m_status.Jsonize());
 
-  }
-
-  if(m_createdAtHasBeenSet)
-  {
-   payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
-  }
-
-  if(m_modifiedAtHasBeenSet)
-  {
-   payload.WithDouble("modifiedAt", m_modifiedAt.SecondsWithMSPrecision());
   }
 
   if(m_tagsHasBeenSet)

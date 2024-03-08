@@ -53,8 +53,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* SsmSapClient::SERVICE_NAME = "ssm-sap";
-const char* SsmSapClient::ALLOCATION_TAG = "SsmSapClient";
+namespace Aws
+{
+  namespace SsmSap
+  {
+    const char SERVICE_NAME[] = "ssm-sap";
+    const char ALLOCATION_TAG[] = "SsmSapClient";
+  }
+}
+const char* SsmSapClient::GetServiceName() {return SERVICE_NAME;}
+const char* SsmSapClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 SsmSapClient::SsmSapClient(const SsmSap::SsmSapClientConfiguration& clientConfiguration,
                            std::shared_ptr<SsmSapEndpointProviderBase> endpointProvider) :
@@ -66,7 +74,7 @@ SsmSapClient::SsmSapClient(const SsmSap::SsmSapClientConfiguration& clientConfig
             Aws::MakeShared<SsmSapErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SsmSapEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -82,7 +90,7 @@ SsmSapClient::SsmSapClient(const AWSCredentials& credentials,
             Aws::MakeShared<SsmSapErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SsmSapEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -98,7 +106,7 @@ SsmSapClient::SsmSapClient(const std::shared_ptr<AWSCredentialsProvider>& creden
             Aws::MakeShared<SsmSapErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SsmSapEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EnhancedInfrastructureMetrics::NOT_SET:
+            return {};
           case EnhancedInfrastructureMetrics::Active:
             return "Active";
           case EnhancedInfrastructureMetrics::Inactive:

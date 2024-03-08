@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ShareMethod::NOT_SET:
+            return {};
           case ShareMethod::ORGANIZATIONS:
             return "ORGANIZATIONS";
           case ShareMethod::HANDSHAKE:

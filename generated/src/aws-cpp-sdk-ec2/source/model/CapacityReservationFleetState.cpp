@@ -84,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CapacityReservationFleetState::NOT_SET:
+            return {};
           case CapacityReservationFleetState::submitted:
             return "submitted";
           case CapacityReservationFleetState::modifying:

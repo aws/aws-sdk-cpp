@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AbortAction::NOT_SET:
+            return {};
           case AbortAction::CANCEL:
             return "CANCEL";
           default:

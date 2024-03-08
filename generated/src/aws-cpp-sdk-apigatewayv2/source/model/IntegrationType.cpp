@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case IntegrationType::NOT_SET:
+            return {};
           case IntegrationType::AWS:
             return "AWS";
           case IntegrationType::HTTP:

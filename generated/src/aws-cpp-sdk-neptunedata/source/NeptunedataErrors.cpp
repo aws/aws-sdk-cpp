@@ -295,123 +295,123 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == QUERY_LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptunedataErrors::QUERY_LIMIT_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptunedataErrors::QUERY_LIMIT_EXCEEDED), RetryableType::RETRYABLE);
   }
   else if (hashCode == EXPIRED_STREAM_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptunedataErrors::EXPIRED_STREAM), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptunedataErrors::EXPIRED_STREAM), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == QUERY_LIMIT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptunedataErrors::QUERY_LIMIT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptunedataErrors::QUERY_LIMIT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == CONCURRENT_MODIFICATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptunedataErrors::CONCURRENT_MODIFICATION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptunedataErrors::CONCURRENT_MODIFICATION), RetryableType::RETRYABLE);
   }
   else if (hashCode == CANCELLED_BY_USER_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptunedataErrors::CANCELLED_BY_USER), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptunedataErrors::CANCELLED_BY_USER), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == STREAM_RECORDS_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptunedataErrors::STREAM_RECORDS_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptunedataErrors::STREAM_RECORDS_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == PARSING_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptunedataErrors::PARSING), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptunedataErrors::PARSING), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_PARAMETER_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptunedataErrors::INVALID_PARAMETER), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptunedataErrors::INVALID_PARAMETER), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == ILLEGAL_ARGUMENT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptunedataErrors::ILLEGAL_ARGUMENT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptunedataErrors::ILLEGAL_ARGUMENT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == BULK_LOAD_ID_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptunedataErrors::BULK_LOAD_ID_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptunedataErrors::BULK_LOAD_ID_NOT_FOUND), RetryableType::RETRYABLE);
   }
   else if (hashCode == INVALID_NUMERIC_DATA_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptunedataErrors::INVALID_NUMERIC_DATA), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptunedataErrors::INVALID_NUMERIC_DATA), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == UNSUPPORTED_OPERATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptunedataErrors::UNSUPPORTED_OPERATION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptunedataErrors::UNSUPPORTED_OPERATION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == CONSTRAINT_VIOLATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptunedataErrors::CONSTRAINT_VIOLATION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptunedataErrors::CONSTRAINT_VIOLATION), RetryableType::RETRYABLE);
   }
   else if (hashCode == SERVER_SHUTDOWN_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptunedataErrors::SERVER_SHUTDOWN), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptunedataErrors::SERVER_SHUTDOWN), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_ARGUMENT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptunedataErrors::INVALID_ARGUMENT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptunedataErrors::INVALID_ARGUMENT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == LOAD_URL_ACCESS_DENIED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptunedataErrors::LOAD_URL_ACCESS_DENIED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptunedataErrors::LOAD_URL_ACCESS_DENIED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == S3_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptunedataErrors::S3), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptunedataErrors::S3), RetryableType::RETRYABLE);
   }
   else if (hashCode == MALFORMED_QUERY_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptunedataErrors::MALFORMED_QUERY), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptunedataErrors::MALFORMED_QUERY), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == QUERY_TOO_LARGE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptunedataErrors::QUERY_TOO_LARGE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptunedataErrors::QUERY_TOO_LARGE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == READ_ONLY_VIOLATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptunedataErrors::READ_ONLY_VIOLATION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptunedataErrors::READ_ONLY_VIOLATION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == CLIENT_TIMEOUT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptunedataErrors::CLIENT_TIMEOUT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptunedataErrors::CLIENT_TIMEOUT), RetryableType::RETRYABLE);
   }
   else if (hashCode == STATISTICS_NOT_AVAILABLE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptunedataErrors::STATISTICS_NOT_AVAILABLE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptunedataErrors::STATISTICS_NOT_AVAILABLE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == METHOD_NOT_ALLOWED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptunedataErrors::METHOD_NOT_ALLOWED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptunedataErrors::METHOD_NOT_ALLOWED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == MEMORY_LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptunedataErrors::MEMORY_LIMIT_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptunedataErrors::MEMORY_LIMIT_EXCEEDED), RetryableType::RETRYABLE);
   }
   else if (hashCode == TOO_MANY_REQUESTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptunedataErrors::TOO_MANY_REQUESTS), true);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptunedataErrors::TOO_MANY_REQUESTS), RetryableType::RETRYABLE);
   }
   else if (hashCode == M_L_RESOURCE_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptunedataErrors::M_L_RESOURCE_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptunedataErrors::M_L_RESOURCE_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == BAD_REQUEST_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptunedataErrors::BAD_REQUEST), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptunedataErrors::BAD_REQUEST), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == PRECONDITIONS_FAILED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptunedataErrors::PRECONDITIONS_FAILED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptunedataErrors::PRECONDITIONS_FAILED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == TIME_LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptunedataErrors::TIME_LIMIT_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptunedataErrors::TIME_LIMIT_EXCEEDED), RetryableType::RETRYABLE);
   }
   else if (hashCode == FAILURE_BY_QUERY_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptunedataErrors::FAILURE_BY_QUERY), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NeptunedataErrors::FAILURE_BY_QUERY), RetryableType::RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

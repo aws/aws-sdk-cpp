@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/connect/model/Application.h>
 #include <utility>
 
 namespace Aws
@@ -248,79 +249,79 @@ namespace Model
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline CreateSecurityProfileRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline CreateSecurityProfileRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline CreateSecurityProfileRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline CreateSecurityProfileRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline CreateSecurityProfileRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline CreateSecurityProfileRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline CreateSecurityProfileRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline CreateSecurityProfileRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline CreateSecurityProfileRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
@@ -476,6 +477,63 @@ namespace Model
      */
     inline CreateSecurityProfileRequest& AddTagRestrictedResources(const char* value) { m_tagRestrictedResourcesHasBeenSet = true; m_tagRestrictedResources.push_back(value); return *this; }
 
+
+    /**
+     * <p>This API is in preview release for Amazon Connect and is subject to
+     * change.</p> <p>A list of third-party applications that the security profile will
+     * give access to.</p>
+     */
+    inline const Aws::Vector<Application>& GetApplications() const{ return m_applications; }
+
+    /**
+     * <p>This API is in preview release for Amazon Connect and is subject to
+     * change.</p> <p>A list of third-party applications that the security profile will
+     * give access to.</p>
+     */
+    inline bool ApplicationsHasBeenSet() const { return m_applicationsHasBeenSet; }
+
+    /**
+     * <p>This API is in preview release for Amazon Connect and is subject to
+     * change.</p> <p>A list of third-party applications that the security profile will
+     * give access to.</p>
+     */
+    inline void SetApplications(const Aws::Vector<Application>& value) { m_applicationsHasBeenSet = true; m_applications = value; }
+
+    /**
+     * <p>This API is in preview release for Amazon Connect and is subject to
+     * change.</p> <p>A list of third-party applications that the security profile will
+     * give access to.</p>
+     */
+    inline void SetApplications(Aws::Vector<Application>&& value) { m_applicationsHasBeenSet = true; m_applications = std::move(value); }
+
+    /**
+     * <p>This API is in preview release for Amazon Connect and is subject to
+     * change.</p> <p>A list of third-party applications that the security profile will
+     * give access to.</p>
+     */
+    inline CreateSecurityProfileRequest& WithApplications(const Aws::Vector<Application>& value) { SetApplications(value); return *this;}
+
+    /**
+     * <p>This API is in preview release for Amazon Connect and is subject to
+     * change.</p> <p>A list of third-party applications that the security profile will
+     * give access to.</p>
+     */
+    inline CreateSecurityProfileRequest& WithApplications(Aws::Vector<Application>&& value) { SetApplications(std::move(value)); return *this;}
+
+    /**
+     * <p>This API is in preview release for Amazon Connect and is subject to
+     * change.</p> <p>A list of third-party applications that the security profile will
+     * give access to.</p>
+     */
+    inline CreateSecurityProfileRequest& AddApplications(const Application& value) { m_applicationsHasBeenSet = true; m_applications.push_back(value); return *this; }
+
+    /**
+     * <p>This API is in preview release for Amazon Connect and is subject to
+     * change.</p> <p>A list of third-party applications that the security profile will
+     * give access to.</p>
+     */
+    inline CreateSecurityProfileRequest& AddApplications(Application&& value) { m_applicationsHasBeenSet = true; m_applications.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_securityProfileName;
@@ -498,6 +556,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_tagRestrictedResources;
     bool m_tagRestrictedResourcesHasBeenSet = false;
+
+    Aws::Vector<Application> m_applications;
+    bool m_applicationsHasBeenSet = false;
   };
 
 } // namespace Model

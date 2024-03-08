@@ -4,16 +4,16 @@
  */
 
 #include <aws/sqs/model/ReceiveMessageResult.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
-#include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
 using namespace Aws::SQS::Model;
-using namespace Aws::Utils::Xml;
-using namespace Aws::Utils::Logging;
+using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
@@ -21,40 +21,38 @@ ReceiveMessageResult::ReceiveMessageResult()
 {
 }
 
-ReceiveMessageResult::ReceiveMessageResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+ReceiveMessageResult::ReceiveMessageResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-ReceiveMessageResult& ReceiveMessageResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+ReceiveMessageResult& ReceiveMessageResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const XmlDocument& xmlDocument = result.GetPayload();
-  XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "ReceiveMessageResult"))
+  JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("Messages"))
   {
-    resultNode = rootNode.FirstChild("ReceiveMessageResult");
-  }
-
-  if(!resultNode.IsNull())
-  {
-    XmlNode messagesNode = resultNode.FirstChild("Message");
-    if(!messagesNode.IsNull())
+    Aws::Utils::Array<JsonView> messagesJsonList = jsonValue.GetArray("Messages");
+    for(unsigned messagesIndex = 0; messagesIndex < messagesJsonList.GetLength(); ++messagesIndex)
     {
-      XmlNode messageMember = messagesNode;
-      while(!messageMember.IsNull())
-      {
-        m_messages.push_back(messageMember);
-        messageMember = messageMember.NextNode("Message");
-      }
-
+      m_messages.push_back(messagesJsonList[messagesIndex].AsObject());
     }
   }
 
-  if (!rootNode.IsNull()) {
-    XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
-    m_responseMetadata = responseMetadataNode;
-    AWS_LOGSTREAM_DEBUG("Aws::SQS::Model::ReceiveMessageResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+
+  const auto& headers = result.GetHeaderValueCollection();
+  const auto& requestIdIter = headers.find("x-amzn-requestid");
+  if(requestIdIter != headers.end())
+  {
+    m_requestId = requestIdIter->second;
   }
+
+  const auto& responseMetadataIter = headers.find("x-amzn-requestid");
+  if(responseMetadataIter != headers.end())
+  {
+     // for backward compatibility for customers used to an old XML Client interface
+     m_responseMetadata.SetRequestId(responseMetadataIter->second);
+  }
+
+
   return *this;
 }

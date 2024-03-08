@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AcceleratorStatus::NOT_SET:
+            return {};
           case AcceleratorStatus::DEPLOYED:
             return "DEPLOYED";
           case AcceleratorStatus::IN_PROGRESS:

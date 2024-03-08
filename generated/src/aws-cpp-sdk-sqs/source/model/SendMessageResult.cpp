@@ -4,16 +4,16 @@
  */
 
 #include <aws/sqs/model/SendMessageResult.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
-#include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
 using namespace Aws::SQS::Model;
-using namespace Aws::Utils::Xml;
-using namespace Aws::Utils::Logging;
+using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
@@ -21,54 +21,59 @@ SendMessageResult::SendMessageResult()
 {
 }
 
-SendMessageResult::SendMessageResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+SendMessageResult::SendMessageResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-SendMessageResult& SendMessageResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+SendMessageResult& SendMessageResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const XmlDocument& xmlDocument = result.GetPayload();
-  XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "SendMessageResult"))
+  JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("MD5OfMessageBody"))
   {
-    resultNode = rootNode.FirstChild("SendMessageResult");
+    m_mD5OfMessageBody = jsonValue.GetString("MD5OfMessageBody");
+
   }
 
-  if(!resultNode.IsNull())
+  if(jsonValue.ValueExists("MD5OfMessageAttributes"))
   {
-    XmlNode mD5OfMessageBodyNode = resultNode.FirstChild("MD5OfMessageBody");
-    if(!mD5OfMessageBodyNode.IsNull())
-    {
-      m_mD5OfMessageBody = Aws::Utils::Xml::DecodeEscapedXmlText(mD5OfMessageBodyNode.GetText());
-    }
-    XmlNode mD5OfMessageAttributesNode = resultNode.FirstChild("MD5OfMessageAttributes");
-    if(!mD5OfMessageAttributesNode.IsNull())
-    {
-      m_mD5OfMessageAttributes = Aws::Utils::Xml::DecodeEscapedXmlText(mD5OfMessageAttributesNode.GetText());
-    }
-    XmlNode mD5OfMessageSystemAttributesNode = resultNode.FirstChild("MD5OfMessageSystemAttributes");
-    if(!mD5OfMessageSystemAttributesNode.IsNull())
-    {
-      m_mD5OfMessageSystemAttributes = Aws::Utils::Xml::DecodeEscapedXmlText(mD5OfMessageSystemAttributesNode.GetText());
-    }
-    XmlNode messageIdNode = resultNode.FirstChild("MessageId");
-    if(!messageIdNode.IsNull())
-    {
-      m_messageId = Aws::Utils::Xml::DecodeEscapedXmlText(messageIdNode.GetText());
-    }
-    XmlNode sequenceNumberNode = resultNode.FirstChild("SequenceNumber");
-    if(!sequenceNumberNode.IsNull())
-    {
-      m_sequenceNumber = Aws::Utils::Xml::DecodeEscapedXmlText(sequenceNumberNode.GetText());
-    }
+    m_mD5OfMessageAttributes = jsonValue.GetString("MD5OfMessageAttributes");
+
   }
 
-  if (!rootNode.IsNull()) {
-    XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
-    m_responseMetadata = responseMetadataNode;
-    AWS_LOGSTREAM_DEBUG("Aws::SQS::Model::SendMessageResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+  if(jsonValue.ValueExists("MD5OfMessageSystemAttributes"))
+  {
+    m_mD5OfMessageSystemAttributes = jsonValue.GetString("MD5OfMessageSystemAttributes");
+
   }
+
+  if(jsonValue.ValueExists("MessageId"))
+  {
+    m_messageId = jsonValue.GetString("MessageId");
+
+  }
+
+  if(jsonValue.ValueExists("SequenceNumber"))
+  {
+    m_sequenceNumber = jsonValue.GetString("SequenceNumber");
+
+  }
+
+
+  const auto& headers = result.GetHeaderValueCollection();
+  const auto& requestIdIter = headers.find("x-amzn-requestid");
+  if(requestIdIter != headers.end())
+  {
+    m_requestId = requestIdIter->second;
+  }
+
+  const auto& responseMetadataIter = headers.find("x-amzn-requestid");
+  if(responseMetadataIter != headers.end())
+  {
+     // for backward compatibility for customers used to an old XML Client interface
+     m_responseMetadata.SetRequestId(responseMetadataIter->second);
+  }
+
+
   return *this;
 }

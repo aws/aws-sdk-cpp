@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LogType::NOT_SET:
+            return {};
           case LogType::api:
             return "api";
           case LogType::audit:

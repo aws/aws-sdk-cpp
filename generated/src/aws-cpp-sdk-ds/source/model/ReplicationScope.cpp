@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReplicationScope::NOT_SET:
+            return {};
           case ReplicationScope::Domain:
             return "Domain";
           default:

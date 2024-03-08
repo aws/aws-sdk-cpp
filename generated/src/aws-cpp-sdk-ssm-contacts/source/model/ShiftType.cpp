@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ShiftType::NOT_SET:
+            return {};
           case ShiftType::REGULAR:
             return "REGULAR";
           case ShiftType::OVERRIDDEN:

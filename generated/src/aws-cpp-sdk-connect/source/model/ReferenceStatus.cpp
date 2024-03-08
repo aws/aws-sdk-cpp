@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReferenceStatus::NOT_SET:
+            return {};
           case ReferenceStatus::APPROVED:
             return "APPROVED";
           case ReferenceStatus::REJECTED:

@@ -181,58 +181,58 @@ namespace Model
 
 
     /**
-     * <p>The version of the artifact associated with the document. For example,
-     * "Release 12, Update 6". This value is unique across all versions of a document,
-     * and can't be changed.</p>
+     * <p>The version of the artifact associated with the document. For example, 12.6.
+     * This value is unique across all versions of a document, and can't be
+     * changed.</p>
      */
     inline const Aws::String& GetVersionName() const{ return m_versionName; }
 
     /**
-     * <p>The version of the artifact associated with the document. For example,
-     * "Release 12, Update 6". This value is unique across all versions of a document,
-     * and can't be changed.</p>
+     * <p>The version of the artifact associated with the document. For example, 12.6.
+     * This value is unique across all versions of a document, and can't be
+     * changed.</p>
      */
     inline bool VersionNameHasBeenSet() const { return m_versionNameHasBeenSet; }
 
     /**
-     * <p>The version of the artifact associated with the document. For example,
-     * "Release 12, Update 6". This value is unique across all versions of a document,
-     * and can't be changed.</p>
+     * <p>The version of the artifact associated with the document. For example, 12.6.
+     * This value is unique across all versions of a document, and can't be
+     * changed.</p>
      */
     inline void SetVersionName(const Aws::String& value) { m_versionNameHasBeenSet = true; m_versionName = value; }
 
     /**
-     * <p>The version of the artifact associated with the document. For example,
-     * "Release 12, Update 6". This value is unique across all versions of a document,
-     * and can't be changed.</p>
+     * <p>The version of the artifact associated with the document. For example, 12.6.
+     * This value is unique across all versions of a document, and can't be
+     * changed.</p>
      */
     inline void SetVersionName(Aws::String&& value) { m_versionNameHasBeenSet = true; m_versionName = std::move(value); }
 
     /**
-     * <p>The version of the artifact associated with the document. For example,
-     * "Release 12, Update 6". This value is unique across all versions of a document,
-     * and can't be changed.</p>
+     * <p>The version of the artifact associated with the document. For example, 12.6.
+     * This value is unique across all versions of a document, and can't be
+     * changed.</p>
      */
     inline void SetVersionName(const char* value) { m_versionNameHasBeenSet = true; m_versionName.assign(value); }
 
     /**
-     * <p>The version of the artifact associated with the document. For example,
-     * "Release 12, Update 6". This value is unique across all versions of a document,
-     * and can't be changed.</p>
+     * <p>The version of the artifact associated with the document. For example, 12.6.
+     * This value is unique across all versions of a document, and can't be
+     * changed.</p>
      */
     inline DocumentVersionInfo& WithVersionName(const Aws::String& value) { SetVersionName(value); return *this;}
 
     /**
-     * <p>The version of the artifact associated with the document. For example,
-     * "Release 12, Update 6". This value is unique across all versions of a document,
-     * and can't be changed.</p>
+     * <p>The version of the artifact associated with the document. For example, 12.6.
+     * This value is unique across all versions of a document, and can't be
+     * changed.</p>
      */
     inline DocumentVersionInfo& WithVersionName(Aws::String&& value) { SetVersionName(std::move(value)); return *this;}
 
     /**
-     * <p>The version of the artifact associated with the document. For example,
-     * "Release 12, Update 6". This value is unique across all versions of a document,
-     * and can't be changed.</p>
+     * <p>The version of the artifact associated with the document. For example, 12.6.
+     * This value is unique across all versions of a document, and can't be
+     * changed.</p>
      */
     inline DocumentVersionInfo& WithVersionName(const char* value) { SetVersionName(value); return *this;}
 

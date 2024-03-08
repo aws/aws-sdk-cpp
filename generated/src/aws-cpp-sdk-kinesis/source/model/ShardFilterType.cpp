@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ShardFilterType::NOT_SET:
+            return {};
           case ShardFilterType::AFTER_SHARD_ID:
             return "AFTER_SHARD_ID";
           case ShardFilterType::AT_TRIM_HORIZON:

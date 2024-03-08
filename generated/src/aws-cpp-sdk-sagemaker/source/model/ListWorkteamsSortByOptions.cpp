@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ListWorkteamsSortByOptions::NOT_SET:
+            return {};
           case ListWorkteamsSortByOptions::Name:
             return "Name";
           case ListWorkteamsSortByOptions::CreateDate:

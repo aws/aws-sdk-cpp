@@ -463,6 +463,31 @@ namespace Model
 
 
     /**
+     * <p>The duration of time in seconds to retain configured resources in a warm pool
+     * for subsequent training jobs.</p>
+     */
+    inline int GetKeepAlivePeriodInSeconds() const{ return m_keepAlivePeriodInSeconds; }
+
+    /**
+     * <p>The duration of time in seconds to retain configured resources in a warm pool
+     * for subsequent training jobs.</p>
+     */
+    inline bool KeepAlivePeriodInSecondsHasBeenSet() const { return m_keepAlivePeriodInSecondsHasBeenSet; }
+
+    /**
+     * <p>The duration of time in seconds to retain configured resources in a warm pool
+     * for subsequent training jobs.</p>
+     */
+    inline void SetKeepAlivePeriodInSeconds(int value) { m_keepAlivePeriodInSecondsHasBeenSet = true; m_keepAlivePeriodInSeconds = value; }
+
+    /**
+     * <p>The duration of time in seconds to retain configured resources in a warm pool
+     * for subsequent training jobs.</p>
+     */
+    inline ResourceConfig& WithKeepAlivePeriodInSeconds(int value) { SetKeepAlivePeriodInSeconds(value); return *this;}
+
+
+    /**
      * <p>The configuration of a heterogeneous cluster in JSON format.</p>
      */
     inline const Aws::Vector<InstanceGroup>& GetInstanceGroups() const{ return m_instanceGroups; }
@@ -502,31 +527,6 @@ namespace Model
      */
     inline ResourceConfig& AddInstanceGroups(InstanceGroup&& value) { m_instanceGroupsHasBeenSet = true; m_instanceGroups.push_back(std::move(value)); return *this; }
 
-
-    /**
-     * <p>The duration of time in seconds to retain configured resources in a warm pool
-     * for subsequent training jobs.</p>
-     */
-    inline int GetKeepAlivePeriodInSeconds() const{ return m_keepAlivePeriodInSeconds; }
-
-    /**
-     * <p>The duration of time in seconds to retain configured resources in a warm pool
-     * for subsequent training jobs.</p>
-     */
-    inline bool KeepAlivePeriodInSecondsHasBeenSet() const { return m_keepAlivePeriodInSecondsHasBeenSet; }
-
-    /**
-     * <p>The duration of time in seconds to retain configured resources in a warm pool
-     * for subsequent training jobs.</p>
-     */
-    inline void SetKeepAlivePeriodInSeconds(int value) { m_keepAlivePeriodInSecondsHasBeenSet = true; m_keepAlivePeriodInSeconds = value; }
-
-    /**
-     * <p>The duration of time in seconds to retain configured resources in a warm pool
-     * for subsequent training jobs.</p>
-     */
-    inline ResourceConfig& WithKeepAlivePeriodInSeconds(int value) { SetKeepAlivePeriodInSeconds(value); return *this;}
-
   private:
 
     TrainingInstanceType m_instanceType;
@@ -541,11 +541,11 @@ namespace Model
     Aws::String m_volumeKmsKeyId;
     bool m_volumeKmsKeyIdHasBeenSet = false;
 
-    Aws::Vector<InstanceGroup> m_instanceGroups;
-    bool m_instanceGroupsHasBeenSet = false;
-
     int m_keepAlivePeriodInSeconds;
     bool m_keepAlivePeriodInSecondsHasBeenSet = false;
+
+    Aws::Vector<InstanceGroup> m_instanceGroups;
+    bool m_instanceGroupsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,7 +28,6 @@
 #include <aws/mwaa/model/GetEnvironmentRequest.h>
 #include <aws/mwaa/model/ListEnvironmentsRequest.h>
 #include <aws/mwaa/model/ListTagsForResourceRequest.h>
-#include <aws/mwaa/model/PublishMetricsRequest.h>
 #include <aws/mwaa/model/TagResourceRequest.h>
 #include <aws/mwaa/model/UntagResourceRequest.h>
 #include <aws/mwaa/model/UpdateEnvironmentRequest.h>
@@ -46,8 +45,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* MWAAClient::SERVICE_NAME = "airflow";
-const char* MWAAClient::ALLOCATION_TAG = "MWAAClient";
+namespace Aws
+{
+  namespace MWAA
+  {
+    const char SERVICE_NAME[] = "airflow";
+    const char ALLOCATION_TAG[] = "MWAAClient";
+  }
+}
+const char* MWAAClient::GetServiceName() {return SERVICE_NAME;}
+const char* MWAAClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 MWAAClient::MWAAClient(const MWAA::MWAAClientConfiguration& clientConfiguration,
                        std::shared_ptr<MWAAEndpointProviderBase> endpointProvider) :
@@ -59,7 +66,7 @@ MWAAClient::MWAAClient(const MWAA::MWAAClientConfiguration& clientConfiguration,
             Aws::MakeShared<MWAAErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<MWAAEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -75,7 +82,7 @@ MWAAClient::MWAAClient(const AWSCredentials& credentials,
             Aws::MakeShared<MWAAErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<MWAAEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -91,7 +98,7 @@ MWAAClient::MWAAClient(const std::shared_ptr<AWSCredentialsProvider>& credential
             Aws::MakeShared<MWAAErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<MWAAEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -398,41 +405,6 @@ ListTagsForResourceOutcome MWAAClient::ListTagsForResource(const ListTagsForReso
       endpointResolutionOutcome.GetResult().AddPathSegments("/tags/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
       return ListTagsForResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-    },
-    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
-    *meter,
-    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-}
-
-PublishMetricsOutcome MWAAClient::PublishMetrics(const PublishMetricsRequest& request) const
-{
-  AWS_OPERATION_GUARD(PublishMetrics);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PublishMetrics, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.EnvironmentNameHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("PublishMetrics", "Required field: EnvironmentName, is not set");
-    return PublishMetricsOutcome(Aws::Client::AWSError<MWAAErrors>(MWAAErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EnvironmentName]", false));
-  }
-  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, PublishMetrics, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, PublishMetrics, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".PublishMetrics",
-    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
-    smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<PublishMetricsOutcome>(
-    [&]()-> PublishMetricsOutcome {
-      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
-          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-          *meter,
-          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PublishMetrics, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-      auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("ops.");
-      AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), PublishMetricsOutcome(addPrefixErr.value()));
-      endpointResolutionOutcome.GetResult().AddPathSegments("/metrics/environments/");
-      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEnvironmentName());
-      return PublishMetricsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

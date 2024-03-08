@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AgentParameterField::NOT_SET:
+            return {};
           case AgentParameterField::SamplingIntervalInMilliseconds:
             return "SamplingIntervalInMilliseconds";
           case AgentParameterField::ReportingIntervalInMilliseconds:

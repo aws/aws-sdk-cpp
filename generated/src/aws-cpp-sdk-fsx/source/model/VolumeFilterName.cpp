@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VolumeFilterName::NOT_SET:
+            return {};
           case VolumeFilterName::file_system_id:
             return "file-system-id";
           case VolumeFilterName::storage_virtual_machine_id:

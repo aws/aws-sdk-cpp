@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResourceStatus::NOT_SET:
+            return {};
           case ResourceStatus::CREATION_IN_PROGRESS:
             return "CREATION_IN_PROGRESS";
           case ResourceStatus::CREATION_SUCCESSFUL:

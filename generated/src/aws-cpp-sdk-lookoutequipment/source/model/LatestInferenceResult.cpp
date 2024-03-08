@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LatestInferenceResult::NOT_SET:
+            return {};
           case LatestInferenceResult::ANOMALOUS:
             return "ANOMALOUS";
           case LatestInferenceResult::NORMAL:

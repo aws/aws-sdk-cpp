@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UpdateActionType::NOT_SET:
+            return {};
           case UpdateActionType::CREATE_OR_UPDATE:
             return "CREATE_OR_UPDATE";
           case UpdateActionType::DELETE_:

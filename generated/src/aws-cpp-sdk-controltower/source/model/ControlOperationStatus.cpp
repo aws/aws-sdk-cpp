@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ControlOperationStatus::NOT_SET:
+            return {};
           case ControlOperationStatus::SUCCEEDED:
             return "SUCCEEDED";
           case ControlOperationStatus::FAILED:

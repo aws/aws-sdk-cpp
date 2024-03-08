@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SubscriptionType::NOT_SET:
+            return {};
           case SubscriptionType::PRODUCTION:
             return "PRODUCTION";
           default:

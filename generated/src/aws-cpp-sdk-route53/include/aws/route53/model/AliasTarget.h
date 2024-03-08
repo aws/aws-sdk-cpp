@@ -63,7 +63,7 @@ namespace Model
      * that you created the environment in. The environment must have a regionalized
      * subdomain. For a list of regions and the corresponding hosted zone IDs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/elasticbeanstalk.html">Elastic
-     * Beanstalk endpoints and quotas</a> in the the <i>Amazon Web Services General
+     * Beanstalk endpoints and quotas</a> in the <i>Amazon Web Services General
      * Reference</i>.</p> </dd> <dt>ELB load balancer</dt> <dd> <p>Specify the value of
      * the hosted zone ID for the load balancer. Use the following methods to get the
      * hosted zone ID:</p> <ul> <li> <p> <a
@@ -125,7 +125,7 @@ namespace Model
      * that you created the environment in. The environment must have a regionalized
      * subdomain. For a list of regions and the corresponding hosted zone IDs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/elasticbeanstalk.html">Elastic
-     * Beanstalk endpoints and quotas</a> in the the <i>Amazon Web Services General
+     * Beanstalk endpoints and quotas</a> in the <i>Amazon Web Services General
      * Reference</i>.</p> </dd> <dt>ELB load balancer</dt> <dd> <p>Specify the value of
      * the hosted zone ID for the load balancer. Use the following methods to get the
      * hosted zone ID:</p> <ul> <li> <p> <a
@@ -187,7 +187,7 @@ namespace Model
      * that you created the environment in. The environment must have a regionalized
      * subdomain. For a list of regions and the corresponding hosted zone IDs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/elasticbeanstalk.html">Elastic
-     * Beanstalk endpoints and quotas</a> in the the <i>Amazon Web Services General
+     * Beanstalk endpoints and quotas</a> in the <i>Amazon Web Services General
      * Reference</i>.</p> </dd> <dt>ELB load balancer</dt> <dd> <p>Specify the value of
      * the hosted zone ID for the load balancer. Use the following methods to get the
      * hosted zone ID:</p> <ul> <li> <p> <a
@@ -249,7 +249,7 @@ namespace Model
      * that you created the environment in. The environment must have a regionalized
      * subdomain. For a list of regions and the corresponding hosted zone IDs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/elasticbeanstalk.html">Elastic
-     * Beanstalk endpoints and quotas</a> in the the <i>Amazon Web Services General
+     * Beanstalk endpoints and quotas</a> in the <i>Amazon Web Services General
      * Reference</i>.</p> </dd> <dt>ELB load balancer</dt> <dd> <p>Specify the value of
      * the hosted zone ID for the load balancer. Use the following methods to get the
      * hosted zone ID:</p> <ul> <li> <p> <a
@@ -311,7 +311,7 @@ namespace Model
      * that you created the environment in. The environment must have a regionalized
      * subdomain. For a list of regions and the corresponding hosted zone IDs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/elasticbeanstalk.html">Elastic
-     * Beanstalk endpoints and quotas</a> in the the <i>Amazon Web Services General
+     * Beanstalk endpoints and quotas</a> in the <i>Amazon Web Services General
      * Reference</i>.</p> </dd> <dt>ELB load balancer</dt> <dd> <p>Specify the value of
      * the hosted zone ID for the load balancer. Use the following methods to get the
      * hosted zone ID:</p> <ul> <li> <p> <a
@@ -373,7 +373,7 @@ namespace Model
      * that you created the environment in. The environment must have a regionalized
      * subdomain. For a list of regions and the corresponding hosted zone IDs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/elasticbeanstalk.html">Elastic
-     * Beanstalk endpoints and quotas</a> in the the <i>Amazon Web Services General
+     * Beanstalk endpoints and quotas</a> in the <i>Amazon Web Services General
      * Reference</i>.</p> </dd> <dt>ELB load balancer</dt> <dd> <p>Specify the value of
      * the hosted zone ID for the load balancer. Use the following methods to get the
      * hosted zone ID:</p> <ul> <li> <p> <a
@@ -435,7 +435,7 @@ namespace Model
      * that you created the environment in. The environment must have a regionalized
      * subdomain. For a list of regions and the corresponding hosted zone IDs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/elasticbeanstalk.html">Elastic
-     * Beanstalk endpoints and quotas</a> in the the <i>Amazon Web Services General
+     * Beanstalk endpoints and quotas</a> in the <i>Amazon Web Services General
      * Reference</i>.</p> </dd> <dt>ELB load balancer</dt> <dd> <p>Specify the value of
      * the hosted zone ID for the load balancer. Use the following methods to get the
      * hosted zone ID:</p> <ul> <li> <p> <a
@@ -497,7 +497,7 @@ namespace Model
      * that you created the environment in. The environment must have a regionalized
      * subdomain. For a list of regions and the corresponding hosted zone IDs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/elasticbeanstalk.html">Elastic
-     * Beanstalk endpoints and quotas</a> in the the <i>Amazon Web Services General
+     * Beanstalk endpoints and quotas</a> in the <i>Amazon Web Services General
      * Reference</i>.</p> </dd> <dt>ELB load balancer</dt> <dd> <p>Specify the value of
      * the hosted zone ID for the load balancer. Use the following methods to get the
      * hosted zone ID:</p> <ul> <li> <p> <a

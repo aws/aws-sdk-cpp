@@ -25,12 +25,11 @@ namespace Model
 {
 
   /**
-   * <p>Specifies the configuration settings for retrieving occurrences of sensitive
-   * data reported by findings, and the status of the configuration for an Amazon
-   * Macie account. When you enable the configuration for the first time, your
-   * request must specify an Key Management Service (KMS) key. Otherwise, an error
-   * occurs. Macie uses the specified key to encrypt the sensitive data that you
-   * retrieve.</p><p><h3>See Also:</h3>   <a
+   * <p>Specifies the status of the Amazon Macie configuration for retrieving
+   * occurrences of sensitive data reported by findings, and the Key Management
+   * Service (KMS) key to use to encrypt sensitive data that's retrieved. When you
+   * enable the configuration for the first time, your request must specify an KMS
+   * key. Otherwise, an error occurs.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/RevealConfiguration">AWS
    * API Reference</a></p>
    */
@@ -46,143 +45,173 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN), ID, or alias of the KMS key to use to encrypt
      * sensitive data that's retrieved. The key must be an existing, customer managed,
-     * symmetric encryption key that's in the same Amazon Web Services Region as the
-     * Amazon Macie account.</p> <p>If this value specifies an alias, it must include
-     * the following prefix: alias/. If this value specifies a key that's owned by
-     * another Amazon Web Services account, it must specify the ARN of the key or the
-     * ARN of the key's alias.</p>
+     * symmetric encryption key that's enabled in the same Amazon Web Services Region
+     * as the Amazon Macie account.</p> <p>If this value specifies an alias, it must
+     * include the following prefix: alias/. If this value specifies a key that's owned
+     * by another Amazon Web Services account, it must specify the ARN of the key or
+     * the ARN of the key's alias.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
      * <p>The Amazon Resource Name (ARN), ID, or alias of the KMS key to use to encrypt
      * sensitive data that's retrieved. The key must be an existing, customer managed,
-     * symmetric encryption key that's in the same Amazon Web Services Region as the
-     * Amazon Macie account.</p> <p>If this value specifies an alias, it must include
-     * the following prefix: alias/. If this value specifies a key that's owned by
-     * another Amazon Web Services account, it must specify the ARN of the key or the
-     * ARN of the key's alias.</p>
+     * symmetric encryption key that's enabled in the same Amazon Web Services Region
+     * as the Amazon Macie account.</p> <p>If this value specifies an alias, it must
+     * include the following prefix: alias/. If this value specifies a key that's owned
+     * by another Amazon Web Services account, it must specify the ARN of the key or
+     * the ARN of the key's alias.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN), ID, or alias of the KMS key to use to encrypt
      * sensitive data that's retrieved. The key must be an existing, customer managed,
-     * symmetric encryption key that's in the same Amazon Web Services Region as the
-     * Amazon Macie account.</p> <p>If this value specifies an alias, it must include
-     * the following prefix: alias/. If this value specifies a key that's owned by
-     * another Amazon Web Services account, it must specify the ARN of the key or the
-     * ARN of the key's alias.</p>
+     * symmetric encryption key that's enabled in the same Amazon Web Services Region
+     * as the Amazon Macie account.</p> <p>If this value specifies an alias, it must
+     * include the following prefix: alias/. If this value specifies a key that's owned
+     * by another Amazon Web Services account, it must specify the ARN of the key or
+     * the ARN of the key's alias.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN), ID, or alias of the KMS key to use to encrypt
      * sensitive data that's retrieved. The key must be an existing, customer managed,
-     * symmetric encryption key that's in the same Amazon Web Services Region as the
-     * Amazon Macie account.</p> <p>If this value specifies an alias, it must include
-     * the following prefix: alias/. If this value specifies a key that's owned by
-     * another Amazon Web Services account, it must specify the ARN of the key or the
-     * ARN of the key's alias.</p>
+     * symmetric encryption key that's enabled in the same Amazon Web Services Region
+     * as the Amazon Macie account.</p> <p>If this value specifies an alias, it must
+     * include the following prefix: alias/. If this value specifies a key that's owned
+     * by another Amazon Web Services account, it must specify the ARN of the key or
+     * the ARN of the key's alias.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN), ID, or alias of the KMS key to use to encrypt
      * sensitive data that's retrieved. The key must be an existing, customer managed,
-     * symmetric encryption key that's in the same Amazon Web Services Region as the
-     * Amazon Macie account.</p> <p>If this value specifies an alias, it must include
-     * the following prefix: alias/. If this value specifies a key that's owned by
-     * another Amazon Web Services account, it must specify the ARN of the key or the
-     * ARN of the key's alias.</p>
+     * symmetric encryption key that's enabled in the same Amazon Web Services Region
+     * as the Amazon Macie account.</p> <p>If this value specifies an alias, it must
+     * include the following prefix: alias/. If this value specifies a key that's owned
+     * by another Amazon Web Services account, it must specify the ARN of the key or
+     * the ARN of the key's alias.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN), ID, or alias of the KMS key to use to encrypt
      * sensitive data that's retrieved. The key must be an existing, customer managed,
-     * symmetric encryption key that's in the same Amazon Web Services Region as the
-     * Amazon Macie account.</p> <p>If this value specifies an alias, it must include
-     * the following prefix: alias/. If this value specifies a key that's owned by
-     * another Amazon Web Services account, it must specify the ARN of the key or the
-     * ARN of the key's alias.</p>
+     * symmetric encryption key that's enabled in the same Amazon Web Services Region
+     * as the Amazon Macie account.</p> <p>If this value specifies an alias, it must
+     * include the following prefix: alias/. If this value specifies a key that's owned
+     * by another Amazon Web Services account, it must specify the ARN of the key or
+     * the ARN of the key's alias.</p>
      */
     inline RevealConfiguration& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN), ID, or alias of the KMS key to use to encrypt
      * sensitive data that's retrieved. The key must be an existing, customer managed,
-     * symmetric encryption key that's in the same Amazon Web Services Region as the
-     * Amazon Macie account.</p> <p>If this value specifies an alias, it must include
-     * the following prefix: alias/. If this value specifies a key that's owned by
-     * another Amazon Web Services account, it must specify the ARN of the key or the
-     * ARN of the key's alias.</p>
+     * symmetric encryption key that's enabled in the same Amazon Web Services Region
+     * as the Amazon Macie account.</p> <p>If this value specifies an alias, it must
+     * include the following prefix: alias/. If this value specifies a key that's owned
+     * by another Amazon Web Services account, it must specify the ARN of the key or
+     * the ARN of the key's alias.</p>
      */
     inline RevealConfiguration& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN), ID, or alias of the KMS key to use to encrypt
      * sensitive data that's retrieved. The key must be an existing, customer managed,
-     * symmetric encryption key that's in the same Amazon Web Services Region as the
-     * Amazon Macie account.</p> <p>If this value specifies an alias, it must include
-     * the following prefix: alias/. If this value specifies a key that's owned by
-     * another Amazon Web Services account, it must specify the ARN of the key or the
-     * ARN of the key's alias.</p>
+     * symmetric encryption key that's enabled in the same Amazon Web Services Region
+     * as the Amazon Macie account.</p> <p>If this value specifies an alias, it must
+     * include the following prefix: alias/. If this value specifies a key that's owned
+     * by another Amazon Web Services account, it must specify the ARN of the key or
+     * the ARN of the key's alias.</p>
      */
     inline RevealConfiguration& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
 
     /**
-     * <p>The status of the configuration for the Amazon Macie account. In a request,
-     * valid values are: ENABLED, enable the configuration for the account; and,
-     * DISABLED, disable the configuration for the account. In a response, possible
-     * values are: ENABLED, the configuration is currently enabled for the account;
-     * and, DISABLED, the configuration is currently disabled for the account.</p>
+     * <p>The status of the configuration for the Amazon Macie account. In a response,
+     * possible values are: ENABLED, the configuration is currently enabled for the
+     * account; and, DISABLED, the configuration is currently disabled for the account.
+     * In a request, valid values are: ENABLED, enable the configuration for the
+     * account; and, DISABLED, disable the configuration for the account.</p>
+     * <p>If you disable the configuration, you also permanently delete
+     * current settings that specify how to access affected S3 objects. If your current
+     * access method is ASSUME_ROLE, Macie also deletes the external ID and role name
+     * currently specified for the configuration. These settings can't be recovered
+     * after they're deleted.</p>
      */
     inline const RevealStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of the configuration for the Amazon Macie account. In a request,
-     * valid values are: ENABLED, enable the configuration for the account; and,
-     * DISABLED, disable the configuration for the account. In a response, possible
-     * values are: ENABLED, the configuration is currently enabled for the account;
-     * and, DISABLED, the configuration is currently disabled for the account.</p>
+     * <p>The status of the configuration for the Amazon Macie account. In a response,
+     * possible values are: ENABLED, the configuration is currently enabled for the
+     * account; and, DISABLED, the configuration is currently disabled for the account.
+     * In a request, valid values are: ENABLED, enable the configuration for the
+     * account; and, DISABLED, disable the configuration for the account.</p>
+     * <p>If you disable the configuration, you also permanently delete
+     * current settings that specify how to access affected S3 objects. If your current
+     * access method is ASSUME_ROLE, Macie also deletes the external ID and role name
+     * currently specified for the configuration. These settings can't be recovered
+     * after they're deleted.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The status of the configuration for the Amazon Macie account. In a request,
-     * valid values are: ENABLED, enable the configuration for the account; and,
-     * DISABLED, disable the configuration for the account. In a response, possible
-     * values are: ENABLED, the configuration is currently enabled for the account;
-     * and, DISABLED, the configuration is currently disabled for the account.</p>
+     * <p>The status of the configuration for the Amazon Macie account. In a response,
+     * possible values are: ENABLED, the configuration is currently enabled for the
+     * account; and, DISABLED, the configuration is currently disabled for the account.
+     * In a request, valid values are: ENABLED, enable the configuration for the
+     * account; and, DISABLED, disable the configuration for the account.</p>
+     * <p>If you disable the configuration, you also permanently delete
+     * current settings that specify how to access affected S3 objects. If your current
+     * access method is ASSUME_ROLE, Macie also deletes the external ID and role name
+     * currently specified for the configuration. These settings can't be recovered
+     * after they're deleted.</p>
      */
     inline void SetStatus(const RevealStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The status of the configuration for the Amazon Macie account. In a request,
-     * valid values are: ENABLED, enable the configuration for the account; and,
-     * DISABLED, disable the configuration for the account. In a response, possible
-     * values are: ENABLED, the configuration is currently enabled for the account;
-     * and, DISABLED, the configuration is currently disabled for the account.</p>
+     * <p>The status of the configuration for the Amazon Macie account. In a response,
+     * possible values are: ENABLED, the configuration is currently enabled for the
+     * account; and, DISABLED, the configuration is currently disabled for the account.
+     * In a request, valid values are: ENABLED, enable the configuration for the
+     * account; and, DISABLED, disable the configuration for the account.</p>
+     * <p>If you disable the configuration, you also permanently delete
+     * current settings that specify how to access affected S3 objects. If your current
+     * access method is ASSUME_ROLE, Macie also deletes the external ID and role name
+     * currently specified for the configuration. These settings can't be recovered
+     * after they're deleted.</p>
      */
     inline void SetStatus(RevealStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The status of the configuration for the Amazon Macie account. In a request,
-     * valid values are: ENABLED, enable the configuration for the account; and,
-     * DISABLED, disable the configuration for the account. In a response, possible
-     * values are: ENABLED, the configuration is currently enabled for the account;
-     * and, DISABLED, the configuration is currently disabled for the account.</p>
+     * <p>The status of the configuration for the Amazon Macie account. In a response,
+     * possible values are: ENABLED, the configuration is currently enabled for the
+     * account; and, DISABLED, the configuration is currently disabled for the account.
+     * In a request, valid values are: ENABLED, enable the configuration for the
+     * account; and, DISABLED, disable the configuration for the account.</p>
+     * <p>If you disable the configuration, you also permanently delete
+     * current settings that specify how to access affected S3 objects. If your current
+     * access method is ASSUME_ROLE, Macie also deletes the external ID and role name
+     * currently specified for the configuration. These settings can't be recovered
+     * after they're deleted.</p>
      */
     inline RevealConfiguration& WithStatus(const RevealStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of the configuration for the Amazon Macie account. In a request,
-     * valid values are: ENABLED, enable the configuration for the account; and,
-     * DISABLED, disable the configuration for the account. In a response, possible
-     * values are: ENABLED, the configuration is currently enabled for the account;
-     * and, DISABLED, the configuration is currently disabled for the account.</p>
+     * <p>The status of the configuration for the Amazon Macie account. In a response,
+     * possible values are: ENABLED, the configuration is currently enabled for the
+     * account; and, DISABLED, the configuration is currently disabled for the account.
+     * In a request, valid values are: ENABLED, enable the configuration for the
+     * account; and, DISABLED, disable the configuration for the account.</p>
+     * <p>If you disable the configuration, you also permanently delete
+     * current settings that specify how to access affected S3 objects. If your current
+     * access method is ASSUME_ROLE, Macie also deletes the external ID and role name
+     * currently specified for the configuration. These settings can't be recovered
+     * after they're deleted.</p>
      */
     inline RevealConfiguration& WithStatus(RevealStatus&& value) { SetStatus(std::move(value)); return *this;}
 

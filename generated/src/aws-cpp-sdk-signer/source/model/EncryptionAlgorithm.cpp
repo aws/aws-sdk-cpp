@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EncryptionAlgorithm::NOT_SET:
+            return {};
           case EncryptionAlgorithm::RSA:
             return "RSA";
           case EncryptionAlgorithm::ECDSA:

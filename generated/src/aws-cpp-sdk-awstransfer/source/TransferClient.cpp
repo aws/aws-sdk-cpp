@@ -94,8 +94,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* TransferClient::SERVICE_NAME = "transfer";
-const char* TransferClient::ALLOCATION_TAG = "TransferClient";
+namespace Aws
+{
+  namespace Transfer
+  {
+    const char SERVICE_NAME[] = "transfer";
+    const char ALLOCATION_TAG[] = "TransferClient";
+  }
+}
+const char* TransferClient::GetServiceName() {return SERVICE_NAME;}
+const char* TransferClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 TransferClient::TransferClient(const Transfer::TransferClientConfiguration& clientConfiguration,
                                std::shared_ptr<TransferEndpointProviderBase> endpointProvider) :
@@ -107,7 +115,7 @@ TransferClient::TransferClient(const Transfer::TransferClientConfiguration& clie
             Aws::MakeShared<TransferErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<TransferEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -123,7 +131,7 @@ TransferClient::TransferClient(const AWSCredentials& credentials,
             Aws::MakeShared<TransferErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<TransferEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -139,7 +147,7 @@ TransferClient::TransferClient(const std::shared_ptr<AWSCredentialsProvider>& cr
             Aws::MakeShared<TransferErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<TransferEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

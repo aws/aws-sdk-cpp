@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ModelHostingStatus::NOT_SET:
+            return {};
           case ModelHostingStatus::STARTING_HOSTING:
             return "STARTING_HOSTING";
           case ModelHostingStatus::HOSTED:

@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case GatewayType::NOT_SET:
+            return {};
           case GatewayType::ipsec_1:
             return "ipsec.1";
           default:

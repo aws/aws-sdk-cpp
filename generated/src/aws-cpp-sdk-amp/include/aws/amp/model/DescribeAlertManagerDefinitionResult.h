@@ -26,7 +26,7 @@ namespace PrometheusService
 namespace Model
 {
   /**
-   * <p>Represents the output of a DescribeAlertManagerDefinition
+   * <p>Represents the output of a <code>DescribeAlertManagerDefinition</code>
    * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeAlertManagerDefinitionResponse">AWS
    * API Reference</a></p>
@@ -40,27 +40,27 @@ namespace Model
 
 
     /**
-     * <p>The properties of the selected workspace's alert manager definition.</p>
+     * <p>The alert manager definition.</p>
      */
     inline const AlertManagerDefinitionDescription& GetAlertManagerDefinition() const{ return m_alertManagerDefinition; }
 
     /**
-     * <p>The properties of the selected workspace's alert manager definition.</p>
+     * <p>The alert manager definition.</p>
      */
     inline void SetAlertManagerDefinition(const AlertManagerDefinitionDescription& value) { m_alertManagerDefinition = value; }
 
     /**
-     * <p>The properties of the selected workspace's alert manager definition.</p>
+     * <p>The alert manager definition.</p>
      */
     inline void SetAlertManagerDefinition(AlertManagerDefinitionDescription&& value) { m_alertManagerDefinition = std::move(value); }
 
     /**
-     * <p>The properties of the selected workspace's alert manager definition.</p>
+     * <p>The alert manager definition.</p>
      */
     inline DescribeAlertManagerDefinitionResult& WithAlertManagerDefinition(const AlertManagerDefinitionDescription& value) { SetAlertManagerDefinition(value); return *this;}
 
     /**
-     * <p>The properties of the selected workspace's alert manager definition.</p>
+     * <p>The alert manager definition.</p>
      */
     inline DescribeAlertManagerDefinitionResult& WithAlertManagerDefinition(AlertManagerDefinitionDescription&& value) { SetAlertManagerDefinition(std::move(value)); return *this;}
 

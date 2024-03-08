@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SlotTypeCategory::NOT_SET:
+            return {};
           case SlotTypeCategory::Custom:
             return "Custom";
           case SlotTypeCategory::Extended:

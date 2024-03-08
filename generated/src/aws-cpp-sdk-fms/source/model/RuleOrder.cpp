@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RuleOrder::NOT_SET:
+            return {};
           case RuleOrder::STRICT_ORDER:
             return "STRICT_ORDER";
           case RuleOrder::DEFAULT_ACTION_ORDER:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NodeAssociationStatus::NOT_SET:
+            return {};
           case NodeAssociationStatus::SUCCESS:
             return "SUCCESS";
           case NodeAssociationStatus::FAILED:

@@ -26,7 +26,9 @@ SecurityProfile::SecurityProfile() :
     m_descriptionHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_allowedAccessControlTagsHasBeenSet(false),
-    m_tagRestrictedResourcesHasBeenSet(false)
+    m_tagRestrictedResourcesHasBeenSet(false),
+    m_lastModifiedTimeHasBeenSet(false),
+    m_lastModifiedRegionHasBeenSet(false)
 {
 }
 
@@ -38,7 +40,9 @@ SecurityProfile::SecurityProfile(JsonView jsonValue) :
     m_descriptionHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_allowedAccessControlTagsHasBeenSet(false),
-    m_tagRestrictedResourcesHasBeenSet(false)
+    m_tagRestrictedResourcesHasBeenSet(false),
+    m_lastModifiedTimeHasBeenSet(false),
+    m_lastModifiedRegionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -110,6 +114,20 @@ SecurityProfile& SecurityProfile::operator =(JsonView jsonValue)
     m_tagRestrictedResourcesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("LastModifiedTime"))
+  {
+    m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
+
+    m_lastModifiedTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LastModifiedRegion"))
+  {
+    m_lastModifiedRegion = jsonValue.GetString("LastModifiedRegion");
+
+    m_lastModifiedRegionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -177,6 +195,17 @@ JsonValue SecurityProfile::Jsonize() const
      tagRestrictedResourcesJsonList[tagRestrictedResourcesIndex].AsString(m_tagRestrictedResources[tagRestrictedResourcesIndex]);
    }
    payload.WithArray("TagRestrictedResources", std::move(tagRestrictedResourcesJsonList));
+
+  }
+
+  if(m_lastModifiedTimeHasBeenSet)
+  {
+   payload.WithDouble("LastModifiedTime", m_lastModifiedTime.SecondsWithMSPrecision());
+  }
+
+  if(m_lastModifiedRegionHasBeenSet)
+  {
+   payload.WithString("LastModifiedRegion", m_lastModifiedRegion);
 
   }
 

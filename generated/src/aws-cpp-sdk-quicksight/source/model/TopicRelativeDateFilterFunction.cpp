@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TopicRelativeDateFilterFunction::NOT_SET:
+            return {};
           case TopicRelativeDateFilterFunction::PREVIOUS:
             return "PREVIOUS";
           case TopicRelativeDateFilterFunction::THIS:

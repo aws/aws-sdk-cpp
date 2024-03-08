@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AuthPolicyState::NOT_SET:
+            return {};
           case AuthPolicyState::Active:
             return "Active";
           case AuthPolicyState::Inactive:

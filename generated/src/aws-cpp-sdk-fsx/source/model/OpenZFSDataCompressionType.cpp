@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OpenZFSDataCompressionType::NOT_SET:
+            return {};
           case OpenZFSDataCompressionType::NONE:
             return "NONE";
           case OpenZFSDataCompressionType::ZSTD:

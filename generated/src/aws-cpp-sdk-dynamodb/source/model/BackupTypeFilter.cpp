@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BackupTypeFilter::NOT_SET:
+            return {};
           case BackupTypeFilter::USER:
             return "USER";
           case BackupTypeFilter::SYSTEM:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MotionGraphicsInsertion::NOT_SET:
+            return {};
           case MotionGraphicsInsertion::DISABLED:
             return "DISABLED";
           case MotionGraphicsInsertion::ENABLED:

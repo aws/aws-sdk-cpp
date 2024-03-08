@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DetectLabelsFeatureName::NOT_SET:
+            return {};
           case DetectLabelsFeatureName::GENERAL_LABELS:
             return "GENERAL_LABELS";
           case DetectLabelsFeatureName::IMAGE_PROPERTIES:

@@ -23,7 +23,7 @@ namespace smithy {
                 TracingUtils() = default;
 
                 static const char COUNT_METRIC_TYPE[];
-                static const char MILLISECOND_METRIC_TYPE[];
+                static const char MICROSECOND_METRIC_TYPE[];
                 static const char BYTES_PER_SECOND_METRIC_TYPE[];
                 static const char SMITHY_CLIENT_DURATION_METRIC[];
                 static const char SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC[];
@@ -40,7 +40,8 @@ namespace smithy {
                 static const char SMITHY_METRICS_DNS_DURATION[];
                 static const char SMITHY_METRICS_CONNECT_DURATION[];
                 static const char SMITHY_METRICS_SSL_DURATION[];
-                static const char SMITHY_METRICS_THROUGHPUT[];
+                static const char SMITHY_METRICS_DOWNLOAD_SPEED_METRIC[];
+                static const char SMITHY_METRICS_UPLOAD_SPEED_METRIC[];
                 static const char SMITHY_METRICS_UNKNOWN_METRIC[];
 
                 /**
@@ -56,16 +57,16 @@ namespace smithy {
                  */
                 template<typename T>
                 static T MakeCallWithTiming(std::function<T()> func,
-                    Aws::String metricName,
+                    const Aws::String &metricName,
                     const Meter &meter,
                     Aws::Map<Aws::String, Aws::String>&& attributes,
-                    Aws::String description = "")
+                    const Aws::String &description = "")
                 {
                     auto before = std::chrono::steady_clock::now();
                     auto returnValue = func();
                     auto after = std::chrono::steady_clock::now();
-                    auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(after - before).count();
-                    auto histogram = meter.CreateHistogram(std::move(metricName), MILLISECOND_METRIC_TYPE, std::move(description));
+                    auto duration = std::chrono::duration_cast<std::chrono::microseconds>(after - before).count();
+                    auto histogram = meter.CreateHistogram(metricName, MICROSECOND_METRIC_TYPE, description);
                     if (!histogram) {
                         AWS_LOG_ERROR("TracingUtil", "Failed to create histogram");
                         return {};
@@ -92,8 +93,8 @@ namespace smithy {
                     auto before = std::chrono::steady_clock::now();
                     func();
                     auto after = std::chrono::steady_clock::now();
-                    auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(after - before).count();
-                    auto histogram = meter.CreateHistogram(std::move(metricName), MILLISECOND_METRIC_TYPE, std::move(description));
+                    auto duration = std::chrono::duration_cast<std::chrono::microseconds>(after - before).count();
+                    auto histogram = meter.CreateHistogram(std::move(metricName), MICROSECOND_METRIC_TYPE, std::move(description));
                     if (!histogram) {
                         AWS_LOG_ERROR("TracingUtil", "Failed to create histogram");
                         return;
@@ -122,7 +123,7 @@ namespace smithy {
                             if (!histogram) {
                                 AWS_LOG_ERROR("TracingUtil", "Failed to create histogram");
                             }
-                            histogram->record((double) entry.second, std::forward<Aws::Map<Aws::String, Aws::String>>(attributes));
+                            histogram->record((double) entry.second, attributes);
                         }
                     }
                 }
@@ -138,16 +139,19 @@ namespace smithy {
                         {
                             std::pair<int, std::pair<Aws::String, Aws::String>>(
                                 static_cast<int>(Aws::Monitoring::HttpClientMetricsType::DnsLatency),
-                                std::make_pair(SMITHY_METRICS_DNS_DURATION, MILLISECOND_METRIC_TYPE)),
+                                std::make_pair(SMITHY_METRICS_DNS_DURATION, MICROSECOND_METRIC_TYPE)),
                             std::pair<int, std::pair<Aws::String, Aws::String>>(
                                 static_cast<int>(Aws::Monitoring::HttpClientMetricsType::ConnectLatency),
-                                std::make_pair(SMITHY_METRICS_CONNECT_DURATION, MILLISECOND_METRIC_TYPE)),
+                                std::make_pair(SMITHY_METRICS_CONNECT_DURATION, MICROSECOND_METRIC_TYPE)),
                             std::pair<int, std::pair<Aws::String, Aws::String>>(
                                 static_cast<int>(Aws::Monitoring::HttpClientMetricsType::SslLatency),
-                                std::make_pair(SMITHY_METRICS_SSL_DURATION, MILLISECOND_METRIC_TYPE)),
+                                std::make_pair(SMITHY_METRICS_SSL_DURATION, MICROSECOND_METRIC_TYPE)),
                             std::pair<int, std::pair<Aws::String, Aws::String>>(
-                                static_cast<int>(Aws::Monitoring::HttpClientMetricsType::Throughput),
-                                std::make_pair(SMITHY_METRICS_THROUGHPUT, BYTES_PER_SECOND_METRIC_TYPE)),
+                                static_cast<int>(Aws::Monitoring::HttpClientMetricsType::DownloadSpeed),
+                                std::make_pair(SMITHY_METRICS_DOWNLOAD_SPEED_METRIC, BYTES_PER_SECOND_METRIC_TYPE)),
+                            std::pair<int, std::pair<Aws::String, Aws::String>>(
+                                static_cast<int>(Aws::Monitoring::HttpClientMetricsType::UploadSpeed),
+                                std::make_pair(SMITHY_METRICS_UPLOAD_SPEED_METRIC, BYTES_PER_SECOND_METRIC_TYPE)),
                         };
 
                     auto metricType = Aws::Monitoring::GetHttpClientMetricTypeByName(name);

@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case H264CodecProfile::NOT_SET:
+            return {};
           case H264CodecProfile::BASELINE:
             return "BASELINE";
           case H264CodecProfile::HIGH:

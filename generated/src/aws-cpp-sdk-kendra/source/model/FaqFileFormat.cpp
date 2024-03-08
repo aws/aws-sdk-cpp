@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FaqFileFormat::NOT_SET:
+            return {};
           case FaqFileFormat::CSV:
             return "CSV";
           case FaqFileFormat::CSV_WITH_HEADER:

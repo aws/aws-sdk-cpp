@@ -279,49 +279,81 @@ namespace Model
 
     /**
      * <p>Contains fields that are indexed and whose types are already known by the
-     * Fleet Indexing service.</p>
+     * Fleet Indexing service. This is an optional field. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/managing-fleet-index.html#managed-field">Managed
+     * fields</a> in the <i>Amazon Web Services IoT Core Developer Guide</i>.</p>
+     *  <p>You can't modify managed fields by updating fleet indexing
+     * configuration.</p> 
      */
     inline const Aws::Vector<Field>& GetManagedFields() const{ return m_managedFields; }
 
     /**
      * <p>Contains fields that are indexed and whose types are already known by the
-     * Fleet Indexing service.</p>
+     * Fleet Indexing service. This is an optional field. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/managing-fleet-index.html#managed-field">Managed
+     * fields</a> in the <i>Amazon Web Services IoT Core Developer Guide</i>.</p>
+     *  <p>You can't modify managed fields by updating fleet indexing
+     * configuration.</p> 
      */
     inline bool ManagedFieldsHasBeenSet() const { return m_managedFieldsHasBeenSet; }
 
     /**
      * <p>Contains fields that are indexed and whose types are already known by the
-     * Fleet Indexing service.</p>
+     * Fleet Indexing service. This is an optional field. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/managing-fleet-index.html#managed-field">Managed
+     * fields</a> in the <i>Amazon Web Services IoT Core Developer Guide</i>.</p>
+     *  <p>You can't modify managed fields by updating fleet indexing
+     * configuration.</p> 
      */
     inline void SetManagedFields(const Aws::Vector<Field>& value) { m_managedFieldsHasBeenSet = true; m_managedFields = value; }
 
     /**
      * <p>Contains fields that are indexed and whose types are already known by the
-     * Fleet Indexing service.</p>
+     * Fleet Indexing service. This is an optional field. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/managing-fleet-index.html#managed-field">Managed
+     * fields</a> in the <i>Amazon Web Services IoT Core Developer Guide</i>.</p>
+     *  <p>You can't modify managed fields by updating fleet indexing
+     * configuration.</p> 
      */
     inline void SetManagedFields(Aws::Vector<Field>&& value) { m_managedFieldsHasBeenSet = true; m_managedFields = std::move(value); }
 
     /**
      * <p>Contains fields that are indexed and whose types are already known by the
-     * Fleet Indexing service.</p>
+     * Fleet Indexing service. This is an optional field. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/managing-fleet-index.html#managed-field">Managed
+     * fields</a> in the <i>Amazon Web Services IoT Core Developer Guide</i>.</p>
+     *  <p>You can't modify managed fields by updating fleet indexing
+     * configuration.</p> 
      */
     inline ThingIndexingConfiguration& WithManagedFields(const Aws::Vector<Field>& value) { SetManagedFields(value); return *this;}
 
     /**
      * <p>Contains fields that are indexed and whose types are already known by the
-     * Fleet Indexing service.</p>
+     * Fleet Indexing service. This is an optional field. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/managing-fleet-index.html#managed-field">Managed
+     * fields</a> in the <i>Amazon Web Services IoT Core Developer Guide</i>.</p>
+     *  <p>You can't modify managed fields by updating fleet indexing
+     * configuration.</p> 
      */
     inline ThingIndexingConfiguration& WithManagedFields(Aws::Vector<Field>&& value) { SetManagedFields(std::move(value)); return *this;}
 
     /**
      * <p>Contains fields that are indexed and whose types are already known by the
-     * Fleet Indexing service.</p>
+     * Fleet Indexing service. This is an optional field. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/managing-fleet-index.html#managed-field">Managed
+     * fields</a> in the <i>Amazon Web Services IoT Core Developer Guide</i>.</p>
+     *  <p>You can't modify managed fields by updating fleet indexing
+     * configuration.</p> 
      */
     inline ThingIndexingConfiguration& AddManagedFields(const Field& value) { m_managedFieldsHasBeenSet = true; m_managedFields.push_back(value); return *this; }
 
     /**
      * <p>Contains fields that are indexed and whose types are already known by the
-     * Fleet Indexing service.</p>
+     * Fleet Indexing service. This is an optional field. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/managing-fleet-index.html#managed-field">Managed
+     * fields</a> in the <i>Amazon Web Services IoT Core Developer Guide</i>.</p>
+     *  <p>You can't modify managed fields by updating fleet indexing
+     * configuration.</p> 
      */
     inline ThingIndexingConfiguration& AddManagedFields(Field&& value) { m_managedFieldsHasBeenSet = true; m_managedFields.push_back(std::move(value)); return *this; }
 
@@ -368,56 +400,110 @@ namespace Model
 
 
     /**
-     * <p>Provides additional filters for specific data sources. Named shadow is the
-     * only data source that currently supports and requires a filter. To add named
-     * shadows to your fleet indexing configuration, set
-     * <code>namedShadowIndexingMode</code> to be <code>ON</code> and specify your
-     * shadow names in <code>filter</code>.</p>
+     * <p>Provides additional selections for named shadows and geolocation data. </p>
+     * <p>To add named shadows to your fleet indexing configuration, set
+     * <code>namedShadowIndexingMode</code> to be ON and specify your shadow names in
+     * <code>namedShadowNames</code> filter.</p> <p>To add geolocation data to your
+     * fleet indexing configuration: </p> <ul> <li> <p>If you store geolocation data in
+     * a class/unnamed shadow, set <code>thingIndexingMode</code> to be
+     * <code>REGISTRY_AND_SHADOW</code> and specify your geolocation data in
+     * <code>geoLocations</code> filter. </p> </li> <li> <p>If you store geolocation
+     * data in a named shadow, set <code>namedShadowIndexingMode</code> to be
+     * <code>ON</code>, add the shadow name in <code>namedShadowNames</code> filter,
+     * and specify your geolocation data in <code>geoLocations</code> filter. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/managing-fleet-index.html">Managing
+     * fleet indexing</a>.</p> </li> </ul>
      */
     inline const IndexingFilter& GetFilter() const{ return m_filter; }
 
     /**
-     * <p>Provides additional filters for specific data sources. Named shadow is the
-     * only data source that currently supports and requires a filter. To add named
-     * shadows to your fleet indexing configuration, set
-     * <code>namedShadowIndexingMode</code> to be <code>ON</code> and specify your
-     * shadow names in <code>filter</code>.</p>
+     * <p>Provides additional selections for named shadows and geolocation data. </p>
+     * <p>To add named shadows to your fleet indexing configuration, set
+     * <code>namedShadowIndexingMode</code> to be ON and specify your shadow names in
+     * <code>namedShadowNames</code> filter.</p> <p>To add geolocation data to your
+     * fleet indexing configuration: </p> <ul> <li> <p>If you store geolocation data in
+     * a class/unnamed shadow, set <code>thingIndexingMode</code> to be
+     * <code>REGISTRY_AND_SHADOW</code> and specify your geolocation data in
+     * <code>geoLocations</code> filter. </p> </li> <li> <p>If you store geolocation
+     * data in a named shadow, set <code>namedShadowIndexingMode</code> to be
+     * <code>ON</code>, add the shadow name in <code>namedShadowNames</code> filter,
+     * and specify your geolocation data in <code>geoLocations</code> filter. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/managing-fleet-index.html">Managing
+     * fleet indexing</a>.</p> </li> </ul>
      */
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
 
     /**
-     * <p>Provides additional filters for specific data sources. Named shadow is the
-     * only data source that currently supports and requires a filter. To add named
-     * shadows to your fleet indexing configuration, set
-     * <code>namedShadowIndexingMode</code> to be <code>ON</code> and specify your
-     * shadow names in <code>filter</code>.</p>
+     * <p>Provides additional selections for named shadows and geolocation data. </p>
+     * <p>To add named shadows to your fleet indexing configuration, set
+     * <code>namedShadowIndexingMode</code> to be ON and specify your shadow names in
+     * <code>namedShadowNames</code> filter.</p> <p>To add geolocation data to your
+     * fleet indexing configuration: </p> <ul> <li> <p>If you store geolocation data in
+     * a class/unnamed shadow, set <code>thingIndexingMode</code> to be
+     * <code>REGISTRY_AND_SHADOW</code> and specify your geolocation data in
+     * <code>geoLocations</code> filter. </p> </li> <li> <p>If you store geolocation
+     * data in a named shadow, set <code>namedShadowIndexingMode</code> to be
+     * <code>ON</code>, add the shadow name in <code>namedShadowNames</code> filter,
+     * and specify your geolocation data in <code>geoLocations</code> filter. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/managing-fleet-index.html">Managing
+     * fleet indexing</a>.</p> </li> </ul>
      */
     inline void SetFilter(const IndexingFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
 
     /**
-     * <p>Provides additional filters for specific data sources. Named shadow is the
-     * only data source that currently supports and requires a filter. To add named
-     * shadows to your fleet indexing configuration, set
-     * <code>namedShadowIndexingMode</code> to be <code>ON</code> and specify your
-     * shadow names in <code>filter</code>.</p>
+     * <p>Provides additional selections for named shadows and geolocation data. </p>
+     * <p>To add named shadows to your fleet indexing configuration, set
+     * <code>namedShadowIndexingMode</code> to be ON and specify your shadow names in
+     * <code>namedShadowNames</code> filter.</p> <p>To add geolocation data to your
+     * fleet indexing configuration: </p> <ul> <li> <p>If you store geolocation data in
+     * a class/unnamed shadow, set <code>thingIndexingMode</code> to be
+     * <code>REGISTRY_AND_SHADOW</code> and specify your geolocation data in
+     * <code>geoLocations</code> filter. </p> </li> <li> <p>If you store geolocation
+     * data in a named shadow, set <code>namedShadowIndexingMode</code> to be
+     * <code>ON</code>, add the shadow name in <code>namedShadowNames</code> filter,
+     * and specify your geolocation data in <code>geoLocations</code> filter. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/managing-fleet-index.html">Managing
+     * fleet indexing</a>.</p> </li> </ul>
      */
     inline void SetFilter(IndexingFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
 
     /**
-     * <p>Provides additional filters for specific data sources. Named shadow is the
-     * only data source that currently supports and requires a filter. To add named
-     * shadows to your fleet indexing configuration, set
-     * <code>namedShadowIndexingMode</code> to be <code>ON</code> and specify your
-     * shadow names in <code>filter</code>.</p>
+     * <p>Provides additional selections for named shadows and geolocation data. </p>
+     * <p>To add named shadows to your fleet indexing configuration, set
+     * <code>namedShadowIndexingMode</code> to be ON and specify your shadow names in
+     * <code>namedShadowNames</code> filter.</p> <p>To add geolocation data to your
+     * fleet indexing configuration: </p> <ul> <li> <p>If you store geolocation data in
+     * a class/unnamed shadow, set <code>thingIndexingMode</code> to be
+     * <code>REGISTRY_AND_SHADOW</code> and specify your geolocation data in
+     * <code>geoLocations</code> filter. </p> </li> <li> <p>If you store geolocation
+     * data in a named shadow, set <code>namedShadowIndexingMode</code> to be
+     * <code>ON</code>, add the shadow name in <code>namedShadowNames</code> filter,
+     * and specify your geolocation data in <code>geoLocations</code> filter. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/managing-fleet-index.html">Managing
+     * fleet indexing</a>.</p> </li> </ul>
      */
     inline ThingIndexingConfiguration& WithFilter(const IndexingFilter& value) { SetFilter(value); return *this;}
 
     /**
-     * <p>Provides additional filters for specific data sources. Named shadow is the
-     * only data source that currently supports and requires a filter. To add named
-     * shadows to your fleet indexing configuration, set
-     * <code>namedShadowIndexingMode</code> to be <code>ON</code> and specify your
-     * shadow names in <code>filter</code>.</p>
+     * <p>Provides additional selections for named shadows and geolocation data. </p>
+     * <p>To add named shadows to your fleet indexing configuration, set
+     * <code>namedShadowIndexingMode</code> to be ON and specify your shadow names in
+     * <code>namedShadowNames</code> filter.</p> <p>To add geolocation data to your
+     * fleet indexing configuration: </p> <ul> <li> <p>If you store geolocation data in
+     * a class/unnamed shadow, set <code>thingIndexingMode</code> to be
+     * <code>REGISTRY_AND_SHADOW</code> and specify your geolocation data in
+     * <code>geoLocations</code> filter. </p> </li> <li> <p>If you store geolocation
+     * data in a named shadow, set <code>namedShadowIndexingMode</code> to be
+     * <code>ON</code>, add the shadow name in <code>namedShadowNames</code> filter,
+     * and specify your geolocation data in <code>geoLocations</code> filter. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/managing-fleet-index.html">Managing
+     * fleet indexing</a>.</p> </li> </ul>
      */
     inline ThingIndexingConfiguration& WithFilter(IndexingFilter&& value) { SetFilter(std::move(value)); return *this;}
 

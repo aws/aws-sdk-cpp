@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Details about the Amazon RDS instances that Amazon Web Services recommends
+   * <p>Details about the Amazon RDS reservations that Amazon Web Services recommends
    * that you purchase.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/RDSInstanceDetails">AWS
    * API Reference</a></p>

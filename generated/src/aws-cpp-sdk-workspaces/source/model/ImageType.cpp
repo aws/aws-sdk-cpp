@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ImageType::NOT_SET:
+            return {};
           case ImageType::OWNED:
             return "OWNED";
           case ImageType::SHARED:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ApplicationProtocol::NOT_SET:
+            return {};
           case ApplicationProtocol::http:
             return "http";
           case ApplicationProtocol::http2:

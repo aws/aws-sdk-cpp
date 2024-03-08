@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ShardIteratorType::NOT_SET:
+            return {};
           case ShardIteratorType::AT_SEQUENCE_NUMBER:
             return "AT_SEQUENCE_NUMBER";
           case ShardIteratorType::AFTER_SEQUENCE_NUMBER:

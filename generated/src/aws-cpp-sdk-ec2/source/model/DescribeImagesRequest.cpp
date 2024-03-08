@@ -17,6 +17,8 @@ DescribeImagesRequest::DescribeImagesRequest() :
     m_ownersHasBeenSet(false),
     m_includeDeprecated(false),
     m_includeDeprecatedHasBeenSet(false),
+    m_includeDisabled(false),
+    m_includeDisabledHasBeenSet(false),
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
     m_maxResults(0),
@@ -75,6 +77,11 @@ Aws::String DescribeImagesRequest::SerializePayload() const
   if(m_includeDeprecatedHasBeenSet)
   {
     ss << "IncludeDeprecated=" << std::boolalpha << m_includeDeprecated << "&";
+  }
+
+  if(m_includeDisabledHasBeenSet)
+  {
+    ss << "IncludeDisabled=" << std::boolalpha << m_includeDisabled << "&";
   }
 
   if(m_dryRunHasBeenSet)

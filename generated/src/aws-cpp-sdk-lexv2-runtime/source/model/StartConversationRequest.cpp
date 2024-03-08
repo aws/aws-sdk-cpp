@@ -36,7 +36,7 @@ Aws::Http::HeaderValueCollection StartConversationRequest::GetRequestSpecificHea
   Aws::Http::HeaderValueCollection headers;
   headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::AMZN_EVENTSTREAM_CONTENT_TYPE);
   Aws::StringStream ss;
-  if(m_conversationModeHasBeenSet)
+  if(m_conversationModeHasBeenSet && m_conversationMode != ConversationMode::NOT_SET)
   {
     headers.emplace("x-amz-lex-conversation-mode", ConversationModeMapper::GetNameForConversationMode(m_conversationMode));
   }

@@ -380,7 +380,7 @@ namespace Model
      * of other health checks, Route 53 adds up the number of health checks that Route
      * 53 health checkers consider to be healthy and compares that number with the
      * value of <code>HealthThreshold</code>. </p> </li> <li> <p>
-     * <b>RECOVERY_CONTROL</b>: The health check is assocated with a Route53
+     * <b>RECOVERY_CONTROL</b>: The health check is associated with a Route53
      * Application Recovery Controller routing control. If the routing control state is
      * <code>ON</code>, the health check is considered healthy. If the state is
      * <code>OFF</code>, the health check is considered unhealthy. </p> </li> </ul>
@@ -422,7 +422,7 @@ namespace Model
      * of other health checks, Route 53 adds up the number of health checks that Route
      * 53 health checkers consider to be healthy and compares that number with the
      * value of <code>HealthThreshold</code>. </p> </li> <li> <p>
-     * <b>RECOVERY_CONTROL</b>: The health check is assocated with a Route53
+     * <b>RECOVERY_CONTROL</b>: The health check is associated with a Route53
      * Application Recovery Controller routing control. If the routing control state is
      * <code>ON</code>, the health check is considered healthy. If the state is
      * <code>OFF</code>, the health check is considered unhealthy. </p> </li> </ul>
@@ -464,7 +464,7 @@ namespace Model
      * of other health checks, Route 53 adds up the number of health checks that Route
      * 53 health checkers consider to be healthy and compares that number with the
      * value of <code>HealthThreshold</code>. </p> </li> <li> <p>
-     * <b>RECOVERY_CONTROL</b>: The health check is assocated with a Route53
+     * <b>RECOVERY_CONTROL</b>: The health check is associated with a Route53
      * Application Recovery Controller routing control. If the routing control state is
      * <code>ON</code>, the health check is considered healthy. If the state is
      * <code>OFF</code>, the health check is considered unhealthy. </p> </li> </ul>
@@ -506,7 +506,7 @@ namespace Model
      * of other health checks, Route 53 adds up the number of health checks that Route
      * 53 health checkers consider to be healthy and compares that number with the
      * value of <code>HealthThreshold</code>. </p> </li> <li> <p>
-     * <b>RECOVERY_CONTROL</b>: The health check is assocated with a Route53
+     * <b>RECOVERY_CONTROL</b>: The health check is associated with a Route53
      * Application Recovery Controller routing control. If the routing control state is
      * <code>ON</code>, the health check is considered healthy. If the state is
      * <code>OFF</code>, the health check is considered unhealthy. </p> </li> </ul>
@@ -548,7 +548,7 @@ namespace Model
      * of other health checks, Route 53 adds up the number of health checks that Route
      * 53 health checkers consider to be healthy and compares that number with the
      * value of <code>HealthThreshold</code>. </p> </li> <li> <p>
-     * <b>RECOVERY_CONTROL</b>: The health check is assocated with a Route53
+     * <b>RECOVERY_CONTROL</b>: The health check is associated with a Route53
      * Application Recovery Controller routing control. If the routing control state is
      * <code>ON</code>, the health check is considered healthy. If the state is
      * <code>OFF</code>, the health check is considered unhealthy. </p> </li> </ul>
@@ -590,7 +590,7 @@ namespace Model
      * of other health checks, Route 53 adds up the number of health checks that Route
      * 53 health checkers consider to be healthy and compares that number with the
      * value of <code>HealthThreshold</code>. </p> </li> <li> <p>
-     * <b>RECOVERY_CONTROL</b>: The health check is assocated with a Route53
+     * <b>RECOVERY_CONTROL</b>: The health check is associated with a Route53
      * Application Recovery Controller routing control. If the routing control state is
      * <code>ON</code>, the health check is considered healthy. If the state is
      * <code>OFF</code>, the health check is considered unhealthy. </p> </li> </ul>

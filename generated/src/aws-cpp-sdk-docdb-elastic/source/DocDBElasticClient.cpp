@@ -21,6 +21,7 @@
 #include <aws/docdb-elastic/DocDBElasticClient.h>
 #include <aws/docdb-elastic/DocDBElasticErrorMarshaller.h>
 #include <aws/docdb-elastic/DocDBElasticEndpointProvider.h>
+#include <aws/docdb-elastic/model/CopyClusterSnapshotRequest.h>
 #include <aws/docdb-elastic/model/CreateClusterRequest.h>
 #include <aws/docdb-elastic/model/CreateClusterSnapshotRequest.h>
 #include <aws/docdb-elastic/model/DeleteClusterRequest.h>
@@ -31,6 +32,8 @@
 #include <aws/docdb-elastic/model/ListClustersRequest.h>
 #include <aws/docdb-elastic/model/ListTagsForResourceRequest.h>
 #include <aws/docdb-elastic/model/RestoreClusterFromSnapshotRequest.h>
+#include <aws/docdb-elastic/model/StartClusterRequest.h>
+#include <aws/docdb-elastic/model/StopClusterRequest.h>
 #include <aws/docdb-elastic/model/TagResourceRequest.h>
 #include <aws/docdb-elastic/model/UntagResourceRequest.h>
 #include <aws/docdb-elastic/model/UpdateClusterRequest.h>
@@ -48,8 +51,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* DocDBElasticClient::SERVICE_NAME = "docdb-elastic";
-const char* DocDBElasticClient::ALLOCATION_TAG = "DocDBElasticClient";
+namespace Aws
+{
+  namespace DocDBElastic
+  {
+    const char SERVICE_NAME[] = "docdb-elastic";
+    const char ALLOCATION_TAG[] = "DocDBElasticClient";
+  }
+}
+const char* DocDBElasticClient::GetServiceName() {return SERVICE_NAME;}
+const char* DocDBElasticClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 DocDBElasticClient::DocDBElasticClient(const DocDBElastic::DocDBElasticClientConfiguration& clientConfiguration,
                                        std::shared_ptr<DocDBElasticEndpointProviderBase> endpointProvider) :
@@ -61,7 +72,7 @@ DocDBElasticClient::DocDBElasticClient(const DocDBElastic::DocDBElasticClientCon
             Aws::MakeShared<DocDBElasticErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<DocDBElasticEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -77,7 +88,7 @@ DocDBElasticClient::DocDBElasticClient(const AWSCredentials& credentials,
             Aws::MakeShared<DocDBElasticErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<DocDBElasticEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -93,7 +104,7 @@ DocDBElasticClient::DocDBElasticClient(const std::shared_ptr<AWSCredentialsProvi
             Aws::MakeShared<DocDBElasticErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<DocDBElasticEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -165,6 +176,40 @@ void DocDBElasticClient::OverrideEndpoint(const Aws::String& endpoint)
 {
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->OverrideEndpoint(endpoint);
+}
+
+CopyClusterSnapshotOutcome DocDBElasticClient::CopyClusterSnapshot(const CopyClusterSnapshotRequest& request) const
+{
+  AWS_OPERATION_GUARD(CopyClusterSnapshot);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CopyClusterSnapshot, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.SnapshotArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CopyClusterSnapshot", "Required field: SnapshotArn, is not set");
+    return CopyClusterSnapshotOutcome(Aws::Client::AWSError<DocDBElasticErrors>(DocDBElasticErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SnapshotArn]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CopyClusterSnapshot, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, CopyClusterSnapshot, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CopyClusterSnapshot",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<CopyClusterSnapshotOutcome>(
+    [&]()-> CopyClusterSnapshotOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CopyClusterSnapshot, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/cluster-snapshot/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSnapshotArn());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/copy");
+      return CopyClusterSnapshotOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
 CreateClusterOutcome DocDBElasticClient::CreateCluster(const CreateClusterRequest& request) const
@@ -468,6 +513,74 @@ RestoreClusterFromSnapshotOutcome DocDBElasticClient::RestoreClusterFromSnapshot
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSnapshotArn());
       endpointResolutionOutcome.GetResult().AddPathSegments("/restore");
       return RestoreClusterFromSnapshotOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+StartClusterOutcome DocDBElasticClient::StartCluster(const StartClusterRequest& request) const
+{
+  AWS_OPERATION_GUARD(StartCluster);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartCluster, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ClusterArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("StartCluster", "Required field: ClusterArn, is not set");
+    return StartClusterOutcome(Aws::Client::AWSError<DocDBElasticErrors>(DocDBElasticErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ClusterArn]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, StartCluster, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, StartCluster, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".StartCluster",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<StartClusterOutcome>(
+    [&]()-> StartClusterOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartCluster, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/cluster/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetClusterArn());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/start");
+      return StartClusterOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+StopClusterOutcome DocDBElasticClient::StopCluster(const StopClusterRequest& request) const
+{
+  AWS_OPERATION_GUARD(StopCluster);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StopCluster, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ClusterArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("StopCluster", "Required field: ClusterArn, is not set");
+    return StopClusterOutcome(Aws::Client::AWSError<DocDBElasticErrors>(DocDBElasticErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ClusterArn]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, StopCluster, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, StopCluster, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".StopCluster",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<StopClusterOutcome>(
+    [&]()-> StopClusterOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StopCluster, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/cluster/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetClusterArn());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/stop");
+      return StopClusterOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DirectConnectGatewayAssociationProposalState::NOT_SET:
+            return {};
           case DirectConnectGatewayAssociationProposalState::requested:
             return "requested";
           case DirectConnectGatewayAssociationProposalState::accepted:

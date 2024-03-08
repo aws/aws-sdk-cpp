@@ -349,6 +349,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ErrorCode::NOT_SET:
+            return {};
           case ErrorCode::ActivationKeyExpired:
             return "ActivationKeyExpired";
           case ErrorCode::ActivationKeyInvalid:

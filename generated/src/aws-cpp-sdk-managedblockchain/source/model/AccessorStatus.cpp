@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AccessorStatus::NOT_SET:
+            return {};
           case AccessorStatus::AVAILABLE:
             return "AVAILABLE";
           case AccessorStatus::PENDING_DELETION:

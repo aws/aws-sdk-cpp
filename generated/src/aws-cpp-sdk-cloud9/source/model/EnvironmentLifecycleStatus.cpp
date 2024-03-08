@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EnvironmentLifecycleStatus::NOT_SET:
+            return {};
           case EnvironmentLifecycleStatus::CREATING:
             return "CREATING";
           case EnvironmentLifecycleStatus::CREATED:

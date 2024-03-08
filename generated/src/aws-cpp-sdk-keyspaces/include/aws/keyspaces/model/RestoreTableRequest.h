@@ -12,7 +12,9 @@
 #include <aws/keyspaces/model/EncryptionSpecification.h>
 #include <aws/keyspaces/model/PointInTimeRecovery.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/keyspaces/model/AutoScalingSpecification.h>
 #include <aws/keyspaces/model/Tag.h>
+#include <aws/keyspaces/model/ReplicaSpecification.h>
 #include <utility>
 
 namespace Aws
@@ -532,6 +534,126 @@ namespace Model
      */
     inline RestoreTableRequest& AddTagsOverride(Tag&& value) { m_tagsOverrideHasBeenSet = true; m_tagsOverride.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The optional auto scaling settings for the restored table in provisioned
+     * capacity mode. Specifies if the service can manage throughput capacity of a
+     * provisioned table automatically on your behalf. Amazon Keyspaces auto scaling
+     * helps you provision throughput capacity for variable workloads efficiently by
+     * increasing and decreasing your table's read and write capacity automatically in
+     * response to application traffic.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html">Managing
+     * throughput capacity automatically with Amazon Keyspaces auto scaling</a> in the
+     * <i>Amazon Keyspaces Developer Guide</i>.</p>
+     */
+    inline const AutoScalingSpecification& GetAutoScalingSpecification() const{ return m_autoScalingSpecification; }
+
+    /**
+     * <p>The optional auto scaling settings for the restored table in provisioned
+     * capacity mode. Specifies if the service can manage throughput capacity of a
+     * provisioned table automatically on your behalf. Amazon Keyspaces auto scaling
+     * helps you provision throughput capacity for variable workloads efficiently by
+     * increasing and decreasing your table's read and write capacity automatically in
+     * response to application traffic.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html">Managing
+     * throughput capacity automatically with Amazon Keyspaces auto scaling</a> in the
+     * <i>Amazon Keyspaces Developer Guide</i>.</p>
+     */
+    inline bool AutoScalingSpecificationHasBeenSet() const { return m_autoScalingSpecificationHasBeenSet; }
+
+    /**
+     * <p>The optional auto scaling settings for the restored table in provisioned
+     * capacity mode. Specifies if the service can manage throughput capacity of a
+     * provisioned table automatically on your behalf. Amazon Keyspaces auto scaling
+     * helps you provision throughput capacity for variable workloads efficiently by
+     * increasing and decreasing your table's read and write capacity automatically in
+     * response to application traffic.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html">Managing
+     * throughput capacity automatically with Amazon Keyspaces auto scaling</a> in the
+     * <i>Amazon Keyspaces Developer Guide</i>.</p>
+     */
+    inline void SetAutoScalingSpecification(const AutoScalingSpecification& value) { m_autoScalingSpecificationHasBeenSet = true; m_autoScalingSpecification = value; }
+
+    /**
+     * <p>The optional auto scaling settings for the restored table in provisioned
+     * capacity mode. Specifies if the service can manage throughput capacity of a
+     * provisioned table automatically on your behalf. Amazon Keyspaces auto scaling
+     * helps you provision throughput capacity for variable workloads efficiently by
+     * increasing and decreasing your table's read and write capacity automatically in
+     * response to application traffic.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html">Managing
+     * throughput capacity automatically with Amazon Keyspaces auto scaling</a> in the
+     * <i>Amazon Keyspaces Developer Guide</i>.</p>
+     */
+    inline void SetAutoScalingSpecification(AutoScalingSpecification&& value) { m_autoScalingSpecificationHasBeenSet = true; m_autoScalingSpecification = std::move(value); }
+
+    /**
+     * <p>The optional auto scaling settings for the restored table in provisioned
+     * capacity mode. Specifies if the service can manage throughput capacity of a
+     * provisioned table automatically on your behalf. Amazon Keyspaces auto scaling
+     * helps you provision throughput capacity for variable workloads efficiently by
+     * increasing and decreasing your table's read and write capacity automatically in
+     * response to application traffic.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html">Managing
+     * throughput capacity automatically with Amazon Keyspaces auto scaling</a> in the
+     * <i>Amazon Keyspaces Developer Guide</i>.</p>
+     */
+    inline RestoreTableRequest& WithAutoScalingSpecification(const AutoScalingSpecification& value) { SetAutoScalingSpecification(value); return *this;}
+
+    /**
+     * <p>The optional auto scaling settings for the restored table in provisioned
+     * capacity mode. Specifies if the service can manage throughput capacity of a
+     * provisioned table automatically on your behalf. Amazon Keyspaces auto scaling
+     * helps you provision throughput capacity for variable workloads efficiently by
+     * increasing and decreasing your table's read and write capacity automatically in
+     * response to application traffic.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html">Managing
+     * throughput capacity automatically with Amazon Keyspaces auto scaling</a> in the
+     * <i>Amazon Keyspaces Developer Guide</i>.</p>
+     */
+    inline RestoreTableRequest& WithAutoScalingSpecification(AutoScalingSpecification&& value) { SetAutoScalingSpecification(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The optional Region specific settings of a multi-Regional table.</p>
+     */
+    inline const Aws::Vector<ReplicaSpecification>& GetReplicaSpecifications() const{ return m_replicaSpecifications; }
+
+    /**
+     * <p>The optional Region specific settings of a multi-Regional table.</p>
+     */
+    inline bool ReplicaSpecificationsHasBeenSet() const { return m_replicaSpecificationsHasBeenSet; }
+
+    /**
+     * <p>The optional Region specific settings of a multi-Regional table.</p>
+     */
+    inline void SetReplicaSpecifications(const Aws::Vector<ReplicaSpecification>& value) { m_replicaSpecificationsHasBeenSet = true; m_replicaSpecifications = value; }
+
+    /**
+     * <p>The optional Region specific settings of a multi-Regional table.</p>
+     */
+    inline void SetReplicaSpecifications(Aws::Vector<ReplicaSpecification>&& value) { m_replicaSpecificationsHasBeenSet = true; m_replicaSpecifications = std::move(value); }
+
+    /**
+     * <p>The optional Region specific settings of a multi-Regional table.</p>
+     */
+    inline RestoreTableRequest& WithReplicaSpecifications(const Aws::Vector<ReplicaSpecification>& value) { SetReplicaSpecifications(value); return *this;}
+
+    /**
+     * <p>The optional Region specific settings of a multi-Regional table.</p>
+     */
+    inline RestoreTableRequest& WithReplicaSpecifications(Aws::Vector<ReplicaSpecification>&& value) { SetReplicaSpecifications(std::move(value)); return *this;}
+
+    /**
+     * <p>The optional Region specific settings of a multi-Regional table.</p>
+     */
+    inline RestoreTableRequest& AddReplicaSpecifications(const ReplicaSpecification& value) { m_replicaSpecificationsHasBeenSet = true; m_replicaSpecifications.push_back(value); return *this; }
+
+    /**
+     * <p>The optional Region specific settings of a multi-Regional table.</p>
+     */
+    inline RestoreTableRequest& AddReplicaSpecifications(ReplicaSpecification&& value) { m_replicaSpecificationsHasBeenSet = true; m_replicaSpecifications.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_sourceKeyspaceName;
@@ -560,6 +682,12 @@ namespace Model
 
     Aws::Vector<Tag> m_tagsOverride;
     bool m_tagsOverrideHasBeenSet = false;
+
+    AutoScalingSpecification m_autoScalingSpecification;
+    bool m_autoScalingSpecificationHasBeenSet = false;
+
+    Aws::Vector<ReplicaSpecification> m_replicaSpecifications;
+    bool m_replicaSpecificationsHasBeenSet = false;
   };
 
 } // namespace Model

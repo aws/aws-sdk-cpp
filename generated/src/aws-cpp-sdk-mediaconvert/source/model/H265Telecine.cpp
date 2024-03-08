@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case H265Telecine::NOT_SET:
+            return {};
           case H265Telecine::NONE:
             return "NONE";
           case H265Telecine::SOFT:

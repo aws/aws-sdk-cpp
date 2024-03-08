@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SavingsPlanType::NOT_SET:
+            return {};
           case SavingsPlanType::Compute:
             return "Compute";
           case SavingsPlanType::EC2Instance:

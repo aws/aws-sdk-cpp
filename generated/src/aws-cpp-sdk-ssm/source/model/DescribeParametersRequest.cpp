@@ -17,7 +17,9 @@ DescribeParametersRequest::DescribeParametersRequest() :
     m_parameterFiltersHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+    m_nextTokenHasBeenSet(false),
+    m_shared(false),
+    m_sharedHasBeenSet(false)
 {
 }
 
@@ -56,6 +58,12 @@ Aws::String DescribeParametersRequest::SerializePayload() const
   if(m_nextTokenHasBeenSet)
   {
    payload.WithString("NextToken", m_nextToken);
+
+  }
+
+  if(m_sharedHasBeenSet)
+  {
+   payload.WithBool("Shared", m_shared);
 
   }
 

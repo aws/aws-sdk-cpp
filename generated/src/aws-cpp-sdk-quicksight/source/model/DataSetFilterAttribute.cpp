@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DataSetFilterAttribute::NOT_SET:
+            return {};
           case DataSetFilterAttribute::QUICKSIGHT_VIEWER_OR_OWNER:
             return "QUICKSIGHT_VIEWER_OR_OWNER";
           case DataSetFilterAttribute::QUICKSIGHT_OWNER:

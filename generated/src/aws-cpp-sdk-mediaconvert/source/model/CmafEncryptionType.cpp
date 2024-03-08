@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CmafEncryptionType::NOT_SET:
+            return {};
           case CmafEncryptionType::SAMPLE_AES:
             return "SAMPLE_AES";
           case CmafEncryptionType::AES_CTR:

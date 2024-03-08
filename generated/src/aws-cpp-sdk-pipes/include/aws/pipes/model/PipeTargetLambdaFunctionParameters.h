@@ -39,80 +39,98 @@ namespace Model
 
 
     /**
-     * <p>Choose from the following options.</p> <ul> <li> <p>
-     * <code>RequestResponse</code> (default) - Invoke the function synchronously. Keep
-     * the connection open until the function returns a response or times out. The API
-     * response includes the function response and additional data.</p> </li> <li> <p>
-     * <code>Event</code> - Invoke the function asynchronously. Send events that fail
-     * multiple times to the function's dead-letter queue (if it's configured). The API
-     * response only includes a status code.</p> </li> <li> <p> <code>DryRun</code> -
-     * Validate parameter values and verify that the user or role has permission to
-     * invoke the function.</p> </li> </ul>
+     * <p>Specify whether to invoke the function synchronously or asynchronously.</p>
+     * <ul> <li> <p> <code>REQUEST_RESPONSE</code> (default) - Invoke synchronously.
+     * This corresponds to the <code>RequestResponse</code> option in the
+     * <code>InvocationType</code> parameter for the Lambda <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html#API_Invoke_RequestSyntax">Invoke</a>
+     * API.</p> </li> <li> <p> <code>FIRE_AND_FORGET</code> - Invoke asynchronously.
+     * This corresponds to the <code>Event</code> option in the
+     * <code>InvocationType</code> parameter for the Lambda <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html#API_Invoke_RequestSyntax">Invoke</a>
+     * API.</p> </li> </ul> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes.html#pipes-invocation">Invocation
+     * types</a> in the <i>Amazon EventBridge User Guide</i>.</p>
      */
     inline const PipeTargetInvocationType& GetInvocationType() const{ return m_invocationType; }
 
     /**
-     * <p>Choose from the following options.</p> <ul> <li> <p>
-     * <code>RequestResponse</code> (default) - Invoke the function synchronously. Keep
-     * the connection open until the function returns a response or times out. The API
-     * response includes the function response and additional data.</p> </li> <li> <p>
-     * <code>Event</code> - Invoke the function asynchronously. Send events that fail
-     * multiple times to the function's dead-letter queue (if it's configured). The API
-     * response only includes a status code.</p> </li> <li> <p> <code>DryRun</code> -
-     * Validate parameter values and verify that the user or role has permission to
-     * invoke the function.</p> </li> </ul>
+     * <p>Specify whether to invoke the function synchronously or asynchronously.</p>
+     * <ul> <li> <p> <code>REQUEST_RESPONSE</code> (default) - Invoke synchronously.
+     * This corresponds to the <code>RequestResponse</code> option in the
+     * <code>InvocationType</code> parameter for the Lambda <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html#API_Invoke_RequestSyntax">Invoke</a>
+     * API.</p> </li> <li> <p> <code>FIRE_AND_FORGET</code> - Invoke asynchronously.
+     * This corresponds to the <code>Event</code> option in the
+     * <code>InvocationType</code> parameter for the Lambda <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html#API_Invoke_RequestSyntax">Invoke</a>
+     * API.</p> </li> </ul> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes.html#pipes-invocation">Invocation
+     * types</a> in the <i>Amazon EventBridge User Guide</i>.</p>
      */
     inline bool InvocationTypeHasBeenSet() const { return m_invocationTypeHasBeenSet; }
 
     /**
-     * <p>Choose from the following options.</p> <ul> <li> <p>
-     * <code>RequestResponse</code> (default) - Invoke the function synchronously. Keep
-     * the connection open until the function returns a response or times out. The API
-     * response includes the function response and additional data.</p> </li> <li> <p>
-     * <code>Event</code> - Invoke the function asynchronously. Send events that fail
-     * multiple times to the function's dead-letter queue (if it's configured). The API
-     * response only includes a status code.</p> </li> <li> <p> <code>DryRun</code> -
-     * Validate parameter values and verify that the user or role has permission to
-     * invoke the function.</p> </li> </ul>
+     * <p>Specify whether to invoke the function synchronously or asynchronously.</p>
+     * <ul> <li> <p> <code>REQUEST_RESPONSE</code> (default) - Invoke synchronously.
+     * This corresponds to the <code>RequestResponse</code> option in the
+     * <code>InvocationType</code> parameter for the Lambda <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html#API_Invoke_RequestSyntax">Invoke</a>
+     * API.</p> </li> <li> <p> <code>FIRE_AND_FORGET</code> - Invoke asynchronously.
+     * This corresponds to the <code>Event</code> option in the
+     * <code>InvocationType</code> parameter for the Lambda <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html#API_Invoke_RequestSyntax">Invoke</a>
+     * API.</p> </li> </ul> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes.html#pipes-invocation">Invocation
+     * types</a> in the <i>Amazon EventBridge User Guide</i>.</p>
      */
     inline void SetInvocationType(const PipeTargetInvocationType& value) { m_invocationTypeHasBeenSet = true; m_invocationType = value; }
 
     /**
-     * <p>Choose from the following options.</p> <ul> <li> <p>
-     * <code>RequestResponse</code> (default) - Invoke the function synchronously. Keep
-     * the connection open until the function returns a response or times out. The API
-     * response includes the function response and additional data.</p> </li> <li> <p>
-     * <code>Event</code> - Invoke the function asynchronously. Send events that fail
-     * multiple times to the function's dead-letter queue (if it's configured). The API
-     * response only includes a status code.</p> </li> <li> <p> <code>DryRun</code> -
-     * Validate parameter values and verify that the user or role has permission to
-     * invoke the function.</p> </li> </ul>
+     * <p>Specify whether to invoke the function synchronously or asynchronously.</p>
+     * <ul> <li> <p> <code>REQUEST_RESPONSE</code> (default) - Invoke synchronously.
+     * This corresponds to the <code>RequestResponse</code> option in the
+     * <code>InvocationType</code> parameter for the Lambda <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html#API_Invoke_RequestSyntax">Invoke</a>
+     * API.</p> </li> <li> <p> <code>FIRE_AND_FORGET</code> - Invoke asynchronously.
+     * This corresponds to the <code>Event</code> option in the
+     * <code>InvocationType</code> parameter for the Lambda <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html#API_Invoke_RequestSyntax">Invoke</a>
+     * API.</p> </li> </ul> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes.html#pipes-invocation">Invocation
+     * types</a> in the <i>Amazon EventBridge User Guide</i>.</p>
      */
     inline void SetInvocationType(PipeTargetInvocationType&& value) { m_invocationTypeHasBeenSet = true; m_invocationType = std::move(value); }
 
     /**
-     * <p>Choose from the following options.</p> <ul> <li> <p>
-     * <code>RequestResponse</code> (default) - Invoke the function synchronously. Keep
-     * the connection open until the function returns a response or times out. The API
-     * response includes the function response and additional data.</p> </li> <li> <p>
-     * <code>Event</code> - Invoke the function asynchronously. Send events that fail
-     * multiple times to the function's dead-letter queue (if it's configured). The API
-     * response only includes a status code.</p> </li> <li> <p> <code>DryRun</code> -
-     * Validate parameter values and verify that the user or role has permission to
-     * invoke the function.</p> </li> </ul>
+     * <p>Specify whether to invoke the function synchronously or asynchronously.</p>
+     * <ul> <li> <p> <code>REQUEST_RESPONSE</code> (default) - Invoke synchronously.
+     * This corresponds to the <code>RequestResponse</code> option in the
+     * <code>InvocationType</code> parameter for the Lambda <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html#API_Invoke_RequestSyntax">Invoke</a>
+     * API.</p> </li> <li> <p> <code>FIRE_AND_FORGET</code> - Invoke asynchronously.
+     * This corresponds to the <code>Event</code> option in the
+     * <code>InvocationType</code> parameter for the Lambda <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html#API_Invoke_RequestSyntax">Invoke</a>
+     * API.</p> </li> </ul> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes.html#pipes-invocation">Invocation
+     * types</a> in the <i>Amazon EventBridge User Guide</i>.</p>
      */
     inline PipeTargetLambdaFunctionParameters& WithInvocationType(const PipeTargetInvocationType& value) { SetInvocationType(value); return *this;}
 
     /**
-     * <p>Choose from the following options.</p> <ul> <li> <p>
-     * <code>RequestResponse</code> (default) - Invoke the function synchronously. Keep
-     * the connection open until the function returns a response or times out. The API
-     * response includes the function response and additional data.</p> </li> <li> <p>
-     * <code>Event</code> - Invoke the function asynchronously. Send events that fail
-     * multiple times to the function's dead-letter queue (if it's configured). The API
-     * response only includes a status code.</p> </li> <li> <p> <code>DryRun</code> -
-     * Validate parameter values and verify that the user or role has permission to
-     * invoke the function.</p> </li> </ul>
+     * <p>Specify whether to invoke the function synchronously or asynchronously.</p>
+     * <ul> <li> <p> <code>REQUEST_RESPONSE</code> (default) - Invoke synchronously.
+     * This corresponds to the <code>RequestResponse</code> option in the
+     * <code>InvocationType</code> parameter for the Lambda <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html#API_Invoke_RequestSyntax">Invoke</a>
+     * API.</p> </li> <li> <p> <code>FIRE_AND_FORGET</code> - Invoke asynchronously.
+     * This corresponds to the <code>Event</code> option in the
+     * <code>InvocationType</code> parameter for the Lambda <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html#API_Invoke_RequestSyntax">Invoke</a>
+     * API.</p> </li> </ul> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes.html#pipes-invocation">Invocation
+     * types</a> in the <i>Amazon EventBridge User Guide</i>.</p>
      */
     inline PipeTargetLambdaFunctionParameters& WithInvocationType(PipeTargetInvocationType&& value) { SetInvocationType(std::move(value)); return *this;}
 

@@ -338,7 +338,6 @@ namespace Model
      * Unique request ID to be specified. This is needed to prevent retries
      * from
 creating multiple resources.
-
      */
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -346,7 +345,6 @@ creating multiple resources.
      * Unique request ID to be specified. This is needed to prevent retries
      * from
 creating multiple resources.
-
      */
     inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
 
@@ -354,7 +352,6 @@ creating multiple resources.
      * Unique request ID to be specified. This is needed to prevent retries
      * from
 creating multiple resources.
-
      */
     inline void SetRequestId(const Aws::String& value) { m_requestIdHasBeenSet = true; m_requestId = value; }
 
@@ -362,7 +359,6 @@ creating multiple resources.
      * Unique request ID to be specified. This is needed to prevent retries
      * from
 creating multiple resources.
-
      */
     inline void SetRequestId(Aws::String&& value) { m_requestIdHasBeenSet = true; m_requestId = std::move(value); }
 
@@ -370,7 +366,6 @@ creating multiple resources.
      * Unique request ID to be specified. This is needed to prevent retries
      * from
 creating multiple resources.
-
      */
     inline void SetRequestId(const char* value) { m_requestIdHasBeenSet = true; m_requestId.assign(value); }
 
@@ -378,7 +373,6 @@ creating multiple resources.
      * Unique request ID to be specified. This is needed to prevent retries
      * from
 creating multiple resources.
-
      */
     inline CreateChannelRequest& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
 
@@ -386,7 +380,6 @@ creating multiple resources.
      * Unique request ID to be specified. This is needed to prevent retries
      * from
 creating multiple resources.
-
      */
     inline CreateChannelRequest& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
 
@@ -394,7 +387,6 @@ creating multiple resources.
      * Unique request ID to be specified. This is needed to prevent retries
      * from
 creating multiple resources.
-
      */
     inline CreateChannelRequest& WithRequestId(const char* value) { SetRequestId(value); return *this;}
 

@@ -1,0 +1,84 @@
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cfamily/Attribution.vm")
+
+\#include <aws/s3-crt/S3CrtIdentityProviderAdapter.h>
+\#include <aws/core/http/HttpRequest.h>
+
+using namespace Aws::S3Crt;
+
+static const char* ALLOC_TAG = "S3CrtIdentityProviderAdapter";
+
+aws_s3express_credentials_provider *S3CrtIdentityProviderAdapter::ProviderFactory(struct aws_allocator *allocator,
+    struct aws_s3_client *client,
+    aws_simple_completion_callback *on_provider_shutdown_callback,
+    void *shutdown_user_data,
+    void *factory_user_data)
+{
+  // We use our own client in our internal implementation.
+  AWS_UNREFERENCED_PARAM(client);
+  struct aws_s3express_credentials_provider* provider = nullptr;
+  provider = static_cast<aws_s3express_credentials_provider *>(aws_mem_calloc(allocator, 1,
+    sizeof(struct aws_s3express_credentials_provider)));
+
+  auto userData = static_cast<S3ExpressIdentityProvider*>(factory_user_data);
+  struct aws_s3express_credentials_provider_vtable* s_cpp_s3express_table =
+      static_cast<aws_s3express_credentials_provider_vtable *>(aws_mem_calloc(allocator, 1,
+        sizeof(struct aws_s3express_credentials_provider_vtable)));
+
+  s_cpp_s3express_table->get_credentials = [](struct aws_s3express_credentials_provider* provider,
+    const struct aws_credentials* original_credentials,
+    const struct aws_credentials_properties_s3express* s3express_properties,
+    aws_on_get_credentials_callback_fn* callback,
+    void* user_data) -> int
+  {
+    // Our internal implementation doesnt need original credentials.
+    AWS_UNREFERENCED_PARAM(original_credentials);
+
+    //Figure out service specific params
+    Aws::Map<Aws::String, Aws::String> params;
+    struct aws_string *str = aws_string_new_from_cursor(get_aws_allocator(), &s3express_properties->host);
+    Aws::String hostname(aws_string_c_str(str));
+    // This requires the hostname be virtually addressed and will fail if not. In theory express
+    // hostname at this point in theory will always be this way for express hosts.
+    auto bucketName = hostname.substr(0, hostname.find('.'));
+    params.emplace("bucketName", bucketName);
+    const auto serviceSpecificParameters = Aws::MakeShared<Http::ServiceSpecificParameters>(ALLOC_TAG);
+    serviceSpecificParameters->parameterMap = std::move(params);
+
+    //Get creds as raw ptr
+    auto providerImpl = static_cast<S3ExpressIdentityProvider *>(provider->impl);
+    auto creds = providerImpl->GetS3ExpressIdentity(serviceSpecificParameters);
+    struct aws_byte_cursor access_key_id_cursor = aws_byte_cursor_from_c_str(creds.getAccessKeyId().c_str());
+    struct aws_byte_cursor secret_access_key_cursor = aws_byte_cursor_from_c_str(creds.getSecretKeyId().c_str());
+
+    struct aws_byte_cursor session_token_cursor;
+    AWS_ZERO_STRUCT(session_token_cursor);
+    if (!creds.getSessionToken().empty()) {
+      session_token_cursor = aws_byte_cursor_from_c_str(creds.getSessionToken().c_str());
+    }
+
+    struct aws_credentials* credentials = aws_credentials_new(get_aws_allocator(),
+        access_key_id_cursor,
+        secret_access_key_cursor,
+        session_token_cursor,
+        creds.getExpiration().Seconds());
+
+    callback(credentials, AWS_OP_SUCCESS, user_data);
+    return AWS_OP_SUCCESS;
+  };
+
+  s_cpp_s3express_table->destroy = [](struct aws_s3express_credentials_provider* provider) -> void
+  {
+    aws_simple_completion_callback *callback = provider->shutdown_complete_callback;
+    void *user_data = provider->shutdown_user_data;
+    aws_mem_release(provider->allocator, provider);
+    callback(user_data);
+  };
+
+  aws_s3express_credentials_provider_init_base(provider,
+      allocator,
+      s_cpp_s3express_table,
+      userData);
+  provider->shutdown_complete_callback = on_provider_shutdown_callback;
+  provider->shutdown_user_data = shutdown_user_data;
+  return provider;
+}

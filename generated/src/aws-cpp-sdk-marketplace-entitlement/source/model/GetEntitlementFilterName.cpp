@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case GetEntitlementFilterName::NOT_SET:
+            return {};
           case GetEntitlementFilterName::CUSTOMER_IDENTIFIER:
             return "CUSTOMER_IDENTIFIER";
           case GetEntitlementFilterName::DIMENSION:

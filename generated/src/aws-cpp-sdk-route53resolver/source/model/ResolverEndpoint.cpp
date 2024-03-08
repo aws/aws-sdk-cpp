@@ -34,10 +34,11 @@ ResolverEndpoint::ResolverEndpoint() :
     m_statusMessageHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
     m_modificationTimeHasBeenSet(false),
+    m_outpostArnHasBeenSet(false),
+    m_preferredInstanceTypeHasBeenSet(false),
     m_resolverEndpointType(ResolverEndpointType::NOT_SET),
     m_resolverEndpointTypeHasBeenSet(false),
-    m_outpostArnHasBeenSet(false),
-    m_preferredInstanceTypeHasBeenSet(false)
+    m_protocolsHasBeenSet(false)
 {
 }
 
@@ -57,10 +58,11 @@ ResolverEndpoint::ResolverEndpoint(JsonView jsonValue) :
     m_statusMessageHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
     m_modificationTimeHasBeenSet(false),
+    m_outpostArnHasBeenSet(false),
+    m_preferredInstanceTypeHasBeenSet(false),
     m_resolverEndpointType(ResolverEndpointType::NOT_SET),
     m_resolverEndpointTypeHasBeenSet(false),
-    m_outpostArnHasBeenSet(false),
-    m_preferredInstanceTypeHasBeenSet(false)
+    m_protocolsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -154,13 +156,6 @@ ResolverEndpoint& ResolverEndpoint::operator =(JsonView jsonValue)
     m_modificationTimeHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("ResolverEndpointType"))
-  {
-    m_resolverEndpointType = ResolverEndpointTypeMapper::GetResolverEndpointTypeForName(jsonValue.GetString("ResolverEndpointType"));
-
-    m_resolverEndpointTypeHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("OutpostArn"))
   {
     m_outpostArn = jsonValue.GetString("OutpostArn");
@@ -173,6 +168,23 @@ ResolverEndpoint& ResolverEndpoint::operator =(JsonView jsonValue)
     m_preferredInstanceType = jsonValue.GetString("PreferredInstanceType");
 
     m_preferredInstanceTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ResolverEndpointType"))
+  {
+    m_resolverEndpointType = ResolverEndpointTypeMapper::GetResolverEndpointTypeForName(jsonValue.GetString("ResolverEndpointType"));
+
+    m_resolverEndpointTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Protocols"))
+  {
+    Aws::Utils::Array<JsonView> protocolsJsonList = jsonValue.GetArray("Protocols");
+    for(unsigned protocolsIndex = 0; protocolsIndex < protocolsJsonList.GetLength(); ++protocolsIndex)
+    {
+      m_protocols.push_back(ProtocolMapper::GetProtocolForName(protocolsJsonList[protocolsIndex].AsString()));
+    }
+    m_protocolsHasBeenSet = true;
   }
 
   return *this;
@@ -257,11 +269,6 @@ JsonValue ResolverEndpoint::Jsonize() const
 
   }
 
-  if(m_resolverEndpointTypeHasBeenSet)
-  {
-   payload.WithString("ResolverEndpointType", ResolverEndpointTypeMapper::GetNameForResolverEndpointType(m_resolverEndpointType));
-  }
-
   if(m_outpostArnHasBeenSet)
   {
    payload.WithString("OutpostArn", m_outpostArn);
@@ -271,6 +278,22 @@ JsonValue ResolverEndpoint::Jsonize() const
   if(m_preferredInstanceTypeHasBeenSet)
   {
    payload.WithString("PreferredInstanceType", m_preferredInstanceType);
+
+  }
+
+  if(m_resolverEndpointTypeHasBeenSet)
+  {
+   payload.WithString("ResolverEndpointType", ResolverEndpointTypeMapper::GetNameForResolverEndpointType(m_resolverEndpointType));
+  }
+
+  if(m_protocolsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> protocolsJsonList(m_protocols.size());
+   for(unsigned protocolsIndex = 0; protocolsIndex < protocolsJsonList.GetLength(); ++protocolsIndex)
+   {
+     protocolsJsonList[protocolsIndex].AsString(ProtocolMapper::GetNameForProtocol(m_protocols[protocolsIndex]));
+   }
+   payload.WithArray("Protocols", std::move(protocolsJsonList));
 
   }
 

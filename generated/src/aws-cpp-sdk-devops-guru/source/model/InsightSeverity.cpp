@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InsightSeverity::NOT_SET:
+            return {};
           case InsightSeverity::LOW:
             return "LOW";
           case InsightSeverity::MEDIUM:

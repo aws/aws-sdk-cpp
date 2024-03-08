@@ -22,8 +22,8 @@ namespace MediaConnect
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef MediaConnectClientConfiguration ClientConfigurationType;
       typedef MediaConnectEndpointProvider EndpointProviderType;
@@ -33,14 +33,14 @@ namespace MediaConnect
         * is not specified, it will be initialized to default values.
         */
         MediaConnectClient(const Aws::MediaConnect::MediaConnectClientConfiguration& clientConfiguration = Aws::MediaConnect::MediaConnectClientConfiguration(),
-                           std::shared_ptr<MediaConnectEndpointProviderBase> endpointProvider = Aws::MakeShared<MediaConnectEndpointProvider>(ALLOCATION_TAG));
+                           std::shared_ptr<MediaConnectEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         MediaConnectClient(const Aws::Auth::AWSCredentials& credentials,
-                           std::shared_ptr<MediaConnectEndpointProviderBase> endpointProvider = Aws::MakeShared<MediaConnectEndpointProvider>(ALLOCATION_TAG),
+                           std::shared_ptr<MediaConnectEndpointProviderBase> endpointProvider = nullptr,
                            const Aws::MediaConnect::MediaConnectClientConfiguration& clientConfiguration = Aws::MediaConnect::MediaConnectClientConfiguration());
 
        /**
@@ -48,7 +48,7 @@ namespace MediaConnect
         * the default http client factory will be used
         */
         MediaConnectClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                           std::shared_ptr<MediaConnectEndpointProviderBase> endpointProvider = Aws::MakeShared<MediaConnectEndpointProvider>(ALLOCATION_TAG),
+                           std::shared_ptr<MediaConnectEndpointProviderBase> endpointProvider = nullptr,
                            const Aws::MediaConnect::MediaConnectClientConfiguration& clientConfiguration = Aws::MediaConnect::MediaConnectClientConfiguration());
 
 
@@ -463,6 +463,32 @@ namespace MediaConnect
         void DescribeFlowAsync(const DescribeFlowRequestT& request, const DescribeFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&MediaConnectClient::DescribeFlow, request, handler, context);
+        }
+
+        /**
+         * Displays details of the flow's source stream. The response contains information
+         * about the contents of the stream and its programs.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DescribeFlowSourceMetadata">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeFlowSourceMetadataOutcome DescribeFlowSourceMetadata(const Model::DescribeFlowSourceMetadataRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeFlowSourceMetadata that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeFlowSourceMetadataRequestT = Model::DescribeFlowSourceMetadataRequest>
+        Model::DescribeFlowSourceMetadataOutcomeCallable DescribeFlowSourceMetadataCallable(const DescribeFlowSourceMetadataRequestT& request) const
+        {
+            return SubmitCallable(&MediaConnectClient::DescribeFlowSourceMetadata, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeFlowSourceMetadata that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeFlowSourceMetadataRequestT = Model::DescribeFlowSourceMetadataRequest>
+        void DescribeFlowSourceMetadataAsync(const DescribeFlowSourceMetadataRequestT& request, const DescribeFlowSourceMetadataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaConnectClient::DescribeFlowSourceMetadata, request, handler, context);
         }
 
         /**

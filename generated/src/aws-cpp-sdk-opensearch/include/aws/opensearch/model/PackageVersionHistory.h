@@ -7,6 +7,7 @@
 #include <aws/opensearch/OpenSearchService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/opensearch/model/PluginProperties.h>
 #include <utility>
 
 namespace Aws
@@ -150,6 +151,43 @@ namespace Model
      */
     inline PackageVersionHistory& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Additional information about plugin properties if the package is a
+     * <code>ZIP-PLUGIN</code> package.</p>
+     */
+    inline const PluginProperties& GetPluginProperties() const{ return m_pluginProperties; }
+
+    /**
+     * <p>Additional information about plugin properties if the package is a
+     * <code>ZIP-PLUGIN</code> package.</p>
+     */
+    inline bool PluginPropertiesHasBeenSet() const { return m_pluginPropertiesHasBeenSet; }
+
+    /**
+     * <p>Additional information about plugin properties if the package is a
+     * <code>ZIP-PLUGIN</code> package.</p>
+     */
+    inline void SetPluginProperties(const PluginProperties& value) { m_pluginPropertiesHasBeenSet = true; m_pluginProperties = value; }
+
+    /**
+     * <p>Additional information about plugin properties if the package is a
+     * <code>ZIP-PLUGIN</code> package.</p>
+     */
+    inline void SetPluginProperties(PluginProperties&& value) { m_pluginPropertiesHasBeenSet = true; m_pluginProperties = std::move(value); }
+
+    /**
+     * <p>Additional information about plugin properties if the package is a
+     * <code>ZIP-PLUGIN</code> package.</p>
+     */
+    inline PackageVersionHistory& WithPluginProperties(const PluginProperties& value) { SetPluginProperties(value); return *this;}
+
+    /**
+     * <p>Additional information about plugin properties if the package is a
+     * <code>ZIP-PLUGIN</code> package.</p>
+     */
+    inline PackageVersionHistory& WithPluginProperties(PluginProperties&& value) { SetPluginProperties(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_packageVersion;
@@ -160,6 +198,9 @@ namespace Model
 
     Aws::Utils::DateTime m_createdAt;
     bool m_createdAtHasBeenSet = false;
+
+    PluginProperties m_pluginProperties;
+    bool m_pluginPropertiesHasBeenSet = false;
   };
 
 } // namespace Model

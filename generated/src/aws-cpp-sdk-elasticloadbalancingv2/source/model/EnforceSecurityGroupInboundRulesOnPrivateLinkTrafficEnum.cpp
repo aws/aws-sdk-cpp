@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum::NOT_SET:
+            return {};
           case EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum::on:
             return "on";
           case EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum::off:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LambdaFunctionMetricStatistic::NOT_SET:
+            return {};
           case LambdaFunctionMetricStatistic::Maximum:
             return "Maximum";
           case LambdaFunctionMetricStatistic::Average:

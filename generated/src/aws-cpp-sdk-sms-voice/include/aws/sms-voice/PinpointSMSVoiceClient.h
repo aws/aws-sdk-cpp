@@ -22,8 +22,8 @@ namespace PinpointSMSVoice
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef PinpointSMSVoiceClientConfiguration ClientConfigurationType;
       typedef PinpointSMSVoiceEndpointProvider EndpointProviderType;
@@ -33,14 +33,14 @@ namespace PinpointSMSVoice
         * is not specified, it will be initialized to default values.
         */
         PinpointSMSVoiceClient(const Aws::PinpointSMSVoice::PinpointSMSVoiceClientConfiguration& clientConfiguration = Aws::PinpointSMSVoice::PinpointSMSVoiceClientConfiguration(),
-                               std::shared_ptr<PinpointSMSVoiceEndpointProviderBase> endpointProvider = Aws::MakeShared<PinpointSMSVoiceEndpointProvider>(ALLOCATION_TAG));
+                               std::shared_ptr<PinpointSMSVoiceEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         PinpointSMSVoiceClient(const Aws::Auth::AWSCredentials& credentials,
-                               std::shared_ptr<PinpointSMSVoiceEndpointProviderBase> endpointProvider = Aws::MakeShared<PinpointSMSVoiceEndpointProvider>(ALLOCATION_TAG),
+                               std::shared_ptr<PinpointSMSVoiceEndpointProviderBase> endpointProvider = nullptr,
                                const Aws::PinpointSMSVoice::PinpointSMSVoiceClientConfiguration& clientConfiguration = Aws::PinpointSMSVoice::PinpointSMSVoiceClientConfiguration());
 
        /**
@@ -48,7 +48,7 @@ namespace PinpointSMSVoice
         * the default http client factory will be used
         */
         PinpointSMSVoiceClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                               std::shared_ptr<PinpointSMSVoiceEndpointProviderBase> endpointProvider = Aws::MakeShared<PinpointSMSVoiceEndpointProvider>(ALLOCATION_TAG),
+                               std::shared_ptr<PinpointSMSVoiceEndpointProviderBase> endpointProvider = nullptr,
                                const Aws::PinpointSMSVoice::PinpointSMSVoiceClientConfiguration& clientConfiguration = Aws::PinpointSMSVoice::PinpointSMSVoiceClientConfiguration());
 
 

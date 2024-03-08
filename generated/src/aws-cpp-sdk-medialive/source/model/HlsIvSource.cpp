@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HlsIvSource::NOT_SET:
+            return {};
           case HlsIvSource::EXPLICIT:
             return "EXPLICIT";
           case HlsIvSource::FOLLOWS_SEGMENT_NUMBER:

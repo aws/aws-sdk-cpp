@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LastResourceDataSyncStatus::NOT_SET:
+            return {};
           case LastResourceDataSyncStatus::Successful:
             return "Successful";
           case LastResourceDataSyncStatus::Failed:

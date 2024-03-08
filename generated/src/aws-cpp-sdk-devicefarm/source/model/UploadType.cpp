@@ -199,6 +199,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UploadType::NOT_SET:
+            return {};
           case UploadType::ANDROID_APP:
             return "ANDROID_APP";
           case UploadType::IOS_APP:

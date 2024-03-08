@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CapacitySizeType::NOT_SET:
+            return {};
           case CapacitySizeType::INSTANCE_COUNT:
             return "INSTANCE_COUNT";
           case CapacitySizeType::CAPACITY_PERCENT:

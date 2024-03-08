@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/utils/threading/ThreadTask.h>
-#include <aws/core/utils/threading/Executor.h>
+#include <aws/core/utils/threading/PooledThreadExecutor.h>
 
 using namespace Aws::Utils;
 using namespace Aws::Utils::Threading;

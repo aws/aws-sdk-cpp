@@ -121,32 +121,32 @@ namespace Model
 
 
     /**
-     * <p>TThe type of event that occurred related to the Amazon Braket job.</p>
+     * <p>The type of event that occurred related to the Amazon Braket job.</p>
      */
     inline const Aws::Utils::DateTime& GetTimeOfEvent() const{ return m_timeOfEvent; }
 
     /**
-     * <p>TThe type of event that occurred related to the Amazon Braket job.</p>
+     * <p>The type of event that occurred related to the Amazon Braket job.</p>
      */
     inline bool TimeOfEventHasBeenSet() const { return m_timeOfEventHasBeenSet; }
 
     /**
-     * <p>TThe type of event that occurred related to the Amazon Braket job.</p>
+     * <p>The type of event that occurred related to the Amazon Braket job.</p>
      */
     inline void SetTimeOfEvent(const Aws::Utils::DateTime& value) { m_timeOfEventHasBeenSet = true; m_timeOfEvent = value; }
 
     /**
-     * <p>TThe type of event that occurred related to the Amazon Braket job.</p>
+     * <p>The type of event that occurred related to the Amazon Braket job.</p>
      */
     inline void SetTimeOfEvent(Aws::Utils::DateTime&& value) { m_timeOfEventHasBeenSet = true; m_timeOfEvent = std::move(value); }
 
     /**
-     * <p>TThe type of event that occurred related to the Amazon Braket job.</p>
+     * <p>The type of event that occurred related to the Amazon Braket job.</p>
      */
     inline JobEventDetails& WithTimeOfEvent(const Aws::Utils::DateTime& value) { SetTimeOfEvent(value); return *this;}
 
     /**
-     * <p>TThe type of event that occurred related to the Amazon Braket job.</p>
+     * <p>The type of event that occurred related to the Amazon Braket job.</p>
      */
     inline JobEventDetails& WithTimeOfEvent(Aws::Utils::DateTime&& value) { SetTimeOfEvent(std::move(value)); return *this;}
 

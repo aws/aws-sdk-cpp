@@ -85,6 +85,17 @@ DeleteUserGroupResult& DeleteUserGroupResult::operator =(const Aws::AmazonWebSer
       }
 
     }
+    XmlNode serverlessCachesNode = resultNode.FirstChild("ServerlessCaches");
+    if(!serverlessCachesNode.IsNull())
+    {
+      XmlNode serverlessCachesMember = serverlessCachesNode.FirstChild("member");
+      while(!serverlessCachesMember.IsNull())
+      {
+        m_serverlessCaches.push_back(serverlessCachesMember.GetText());
+        serverlessCachesMember = serverlessCachesMember.NextNode("member");
+      }
+
+    }
     XmlNode aRNNode = resultNode.FirstChild("ARN");
     if(!aRNNode.IsNull())
     {

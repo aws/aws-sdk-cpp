@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PingStatus::NOT_SET:
+            return {};
           case PingStatus::Online:
             return "Online";
           case PingStatus::ConnectionLost:

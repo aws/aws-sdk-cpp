@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case JDBCConnectionType::NOT_SET:
+            return {};
           case JDBCConnectionType::sqlserver:
             return "sqlserver";
           case JDBCConnectionType::mysql:

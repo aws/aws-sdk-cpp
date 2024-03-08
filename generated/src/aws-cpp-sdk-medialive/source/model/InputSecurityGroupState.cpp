@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InputSecurityGroupState::NOT_SET:
+            return {};
           case InputSecurityGroupState::IDLE:
             return "IDLE";
           case InputSecurityGroupState::IN_USE:

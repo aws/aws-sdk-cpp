@@ -35,7 +35,9 @@ ImageSummary::ImageSummary() :
     m_buildType(BuildType::NOT_SET),
     m_buildTypeHasBeenSet(false),
     m_imageSource(ImageSource::NOT_SET),
-    m_imageSourceHasBeenSet(false)
+    m_imageSourceHasBeenSet(false),
+    m_deprecationTimeHasBeenSet(false),
+    m_lifecycleExecutionIdHasBeenSet(false)
 {
 }
 
@@ -56,7 +58,9 @@ ImageSummary::ImageSummary(JsonView jsonValue) :
     m_buildType(BuildType::NOT_SET),
     m_buildTypeHasBeenSet(false),
     m_imageSource(ImageSource::NOT_SET),
-    m_imageSourceHasBeenSet(false)
+    m_imageSourceHasBeenSet(false),
+    m_deprecationTimeHasBeenSet(false),
+    m_lifecycleExecutionIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -157,6 +161,20 @@ ImageSummary& ImageSummary::operator =(JsonView jsonValue)
     m_imageSourceHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("deprecationTime"))
+  {
+    m_deprecationTime = jsonValue.GetDouble("deprecationTime");
+
+    m_deprecationTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("lifecycleExecutionId"))
+  {
+    m_lifecycleExecutionId = jsonValue.GetString("lifecycleExecutionId");
+
+    m_lifecycleExecutionIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -241,6 +259,17 @@ JsonValue ImageSummary::Jsonize() const
   if(m_imageSourceHasBeenSet)
   {
    payload.WithString("imageSource", ImageSourceMapper::GetNameForImageSource(m_imageSource));
+  }
+
+  if(m_deprecationTimeHasBeenSet)
+  {
+   payload.WithDouble("deprecationTime", m_deprecationTime.SecondsWithMSPrecision());
+  }
+
+  if(m_lifecycleExecutionIdHasBeenSet)
+  {
+   payload.WithString("lifecycleExecutionId", m_lifecycleExecutionId);
+
   }
 
   return payload;

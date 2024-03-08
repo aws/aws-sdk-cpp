@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AgentAvailabilityTimer::NOT_SET:
+            return {};
           case AgentAvailabilityTimer::TIME_SINCE_LAST_ACTIVITY:
             return "TIME_SINCE_LAST_ACTIVITY";
           case AgentAvailabilityTimer::TIME_SINCE_LAST_INBOUND:

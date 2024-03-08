@@ -5,10 +5,11 @@
 
 #pragma once
 #include <aws/mediatailor/MediaTailor_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/mediatailor/model/AdBreakOpportunity.h>
 #include <aws/mediatailor/model/HttpPackageConfiguration.h>
 #include <utility>
 
@@ -34,6 +35,42 @@ namespace Model
     AWS_MEDIATAILOR_API DescribeVodSourceResult();
     AWS_MEDIATAILOR_API DescribeVodSourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MEDIATAILOR_API DescribeVodSourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+
+    /**
+     * <p>The ad break opportunities within the VOD source.</p>
+     */
+    inline const Aws::Vector<AdBreakOpportunity>& GetAdBreakOpportunities() const{ return m_adBreakOpportunities; }
+
+    /**
+     * <p>The ad break opportunities within the VOD source.</p>
+     */
+    inline void SetAdBreakOpportunities(const Aws::Vector<AdBreakOpportunity>& value) { m_adBreakOpportunities = value; }
+
+    /**
+     * <p>The ad break opportunities within the VOD source.</p>
+     */
+    inline void SetAdBreakOpportunities(Aws::Vector<AdBreakOpportunity>&& value) { m_adBreakOpportunities = std::move(value); }
+
+    /**
+     * <p>The ad break opportunities within the VOD source.</p>
+     */
+    inline DescribeVodSourceResult& WithAdBreakOpportunities(const Aws::Vector<AdBreakOpportunity>& value) { SetAdBreakOpportunities(value); return *this;}
+
+    /**
+     * <p>The ad break opportunities within the VOD source.</p>
+     */
+    inline DescribeVodSourceResult& WithAdBreakOpportunities(Aws::Vector<AdBreakOpportunity>&& value) { SetAdBreakOpportunities(std::move(value)); return *this;}
+
+    /**
+     * <p>The ad break opportunities within the VOD source.</p>
+     */
+    inline DescribeVodSourceResult& AddAdBreakOpportunities(const AdBreakOpportunity& value) { m_adBreakOpportunities.push_back(value); return *this; }
+
+    /**
+     * <p>The ad break opportunities within the VOD source.</p>
+     */
+    inline DescribeVodSourceResult& AddAdBreakOpportunities(AdBreakOpportunity&& value) { m_adBreakOpportunities.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -363,6 +400,8 @@ namespace Model
     inline DescribeVodSourceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
 
   private:
+
+    Aws::Vector<AdBreakOpportunity> m_adBreakOpportunities;
 
     Aws::String m_arn;
 

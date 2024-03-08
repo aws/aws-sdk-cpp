@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StudioLifecycleConfigSortKey::NOT_SET:
+            return {};
           case StudioLifecycleConfigSortKey::CreationTime:
             return "CreationTime";
           case StudioLifecycleConfigSortKey::LastModifiedTime:

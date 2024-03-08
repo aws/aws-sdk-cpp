@@ -16,7 +16,8 @@ namespace Model
   enum class AdditionalOptionKeys
   {
     NOT_SET,
-    performanceTuning_caching
+    performanceTuning_caching,
+    observations_scope
   };
 
 namespace AdditionalOptionKeysMapper

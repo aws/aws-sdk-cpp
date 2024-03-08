@@ -26,7 +26,9 @@ VerifiedAccessInstance::VerifiedAccessInstance() :
     m_verifiedAccessTrustProvidersHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
     m_lastUpdatedTimeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_fipsEnabled(false),
+    m_fipsEnabledHasBeenSet(false)
 {
 }
 
@@ -36,7 +38,9 @@ VerifiedAccessInstance::VerifiedAccessInstance(const XmlNode& xmlNode) :
     m_verifiedAccessTrustProvidersHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
     m_lastUpdatedTimeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_fipsEnabled(false),
+    m_fipsEnabledHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -95,6 +99,12 @@ VerifiedAccessInstance& VerifiedAccessInstance::operator =(const XmlNode& xmlNod
 
       m_tagsHasBeenSet = true;
     }
+    XmlNode fipsEnabledNode = resultNode.FirstChild("fipsEnabled");
+    if(!fipsEnabledNode.IsNull())
+    {
+      m_fipsEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(fipsEnabledNode.GetText()).c_str()).c_str());
+      m_fipsEnabledHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -144,6 +154,11 @@ void VerifiedAccessInstance::OutputToStream(Aws::OStream& oStream, const char* l
       }
   }
 
+  if(m_fipsEnabledHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".FipsEnabled=" << std::boolalpha << m_fipsEnabled << "&";
+  }
+
 }
 
 void VerifiedAccessInstance::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -183,6 +198,10 @@ void VerifiedAccessInstance::OutputToStream(Aws::OStream& oStream, const char* l
         tagsSs << location <<  ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
+  }
+  if(m_fipsEnabledHasBeenSet)
+  {
+      oStream << location << ".FipsEnabled=" << std::boolalpha << m_fipsEnabled << "&";
   }
 }
 

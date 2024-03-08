@@ -79,7 +79,14 @@ namespace Model
     UtilizationMetricsGpuMemoryPercentageMaximum,
     RecommendationOptionsProjectedUtilizationMetricsGpuPercentageMaximum,
     RecommendationOptionsProjectedUtilizationMetricsGpuMemoryPercentageMaximum,
-    Idle
+    Idle,
+    EffectiveRecommendationPreferencesPreferredResources,
+    EffectiveRecommendationPreferencesLookBackPeriod,
+    EffectiveRecommendationPreferencesUtilizationPreferences,
+    EffectiveRecommendationPreferencesSavingsEstimationMode,
+    RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage,
+    RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts,
+    RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts
   };
 
 namespace ExportableInstanceFieldMapper

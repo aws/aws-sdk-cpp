@@ -13,12 +13,15 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 UpdateNamespaceRequest::UpdateNamespaceRequest() : 
+    m_adminPasswordSecretKmsKeyIdHasBeenSet(false),
     m_adminUserPasswordHasBeenSet(false),
     m_adminUsernameHasBeenSet(false),
     m_defaultIamRoleArnHasBeenSet(false),
     m_iamRolesHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
     m_logExportsHasBeenSet(false),
+    m_manageAdminPassword(false),
+    m_manageAdminPasswordHasBeenSet(false),
     m_namespaceNameHasBeenSet(false)
 {
 }
@@ -26,6 +29,12 @@ UpdateNamespaceRequest::UpdateNamespaceRequest() :
 Aws::String UpdateNamespaceRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_adminPasswordSecretKmsKeyIdHasBeenSet)
+  {
+   payload.WithString("adminPasswordSecretKmsKeyId", m_adminPasswordSecretKmsKeyId);
+
+  }
 
   if(m_adminUserPasswordHasBeenSet)
   {
@@ -70,6 +79,12 @@ Aws::String UpdateNamespaceRequest::SerializePayload() const
      logExportsJsonList[logExportsIndex].AsString(LogExportMapper::GetNameForLogExport(m_logExports[logExportsIndex]));
    }
    payload.WithArray("logExports", std::move(logExportsJsonList));
+
+  }
+
+  if(m_manageAdminPasswordHasBeenSet)
+  {
+   payload.WithBool("manageAdminPassword", m_manageAdminPassword);
 
   }
 

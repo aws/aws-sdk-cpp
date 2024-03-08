@@ -129,6 +129,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RecoveryInstanceDataReplicationInitiationStepName::NOT_SET:
+            return {};
           case RecoveryInstanceDataReplicationInitiationStepName::LINK_FAILBACK_CLIENT_WITH_RECOVERY_INSTANCE:
             return "LINK_FAILBACK_CLIENT_WITH_RECOVERY_INSTANCE";
           case RecoveryInstanceDataReplicationInitiationStepName::COMPLETE_VOLUME_MAPPING:

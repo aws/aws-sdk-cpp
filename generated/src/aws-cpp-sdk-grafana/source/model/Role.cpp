@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Role::NOT_SET:
+            return {};
           case Role::ADMIN:
             return "ADMIN";
           case Role::EDITOR:

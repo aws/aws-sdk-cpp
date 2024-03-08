@@ -51,7 +51,8 @@ Branch::Branch() :
     m_pullRequestEnvironmentNameHasBeenSet(false),
     m_destinationBranchHasBeenSet(false),
     m_sourceBranchHasBeenSet(false),
-    m_backendEnvironmentArnHasBeenSet(false)
+    m_backendEnvironmentArnHasBeenSet(false),
+    m_backendHasBeenSet(false)
 {
 }
 
@@ -88,7 +89,8 @@ Branch::Branch(JsonView jsonValue) :
     m_pullRequestEnvironmentNameHasBeenSet(false),
     m_destinationBranchHasBeenSet(false),
     m_sourceBranchHasBeenSet(false),
-    m_backendEnvironmentArnHasBeenSet(false)
+    m_backendEnvironmentArnHasBeenSet(false),
+    m_backendHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -296,6 +298,13 @@ Branch& Branch::operator =(JsonView jsonValue)
     m_backendEnvironmentArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("backend"))
+  {
+    m_backend = jsonValue.GetObject("backend");
+
+    m_backendHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -479,6 +488,12 @@ JsonValue Branch::Jsonize() const
   if(m_backendEnvironmentArnHasBeenSet)
   {
    payload.WithString("backendEnvironmentArn", m_backendEnvironmentArn);
+
+  }
+
+  if(m_backendHasBeenSet)
+  {
+   payload.WithObject("backend", m_backend.Jsonize());
 
   }
 

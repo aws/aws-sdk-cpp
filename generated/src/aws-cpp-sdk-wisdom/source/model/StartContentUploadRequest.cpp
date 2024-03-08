@@ -14,7 +14,9 @@ using namespace Aws::Utils;
 
 StartContentUploadRequest::StartContentUploadRequest() : 
     m_contentTypeHasBeenSet(false),
-    m_knowledgeBaseIdHasBeenSet(false)
+    m_knowledgeBaseIdHasBeenSet(false),
+    m_presignedUrlTimeToLive(0),
+    m_presignedUrlTimeToLiveHasBeenSet(false)
 {
 }
 
@@ -25,6 +27,12 @@ Aws::String StartContentUploadRequest::SerializePayload() const
   if(m_contentTypeHasBeenSet)
   {
    payload.WithString("contentType", m_contentType);
+
+  }
+
+  if(m_presignedUrlTimeToLiveHasBeenSet)
+  {
+   payload.WithInteger("presignedUrlTimeToLive", m_presignedUrlTimeToLive);
 
   }
 

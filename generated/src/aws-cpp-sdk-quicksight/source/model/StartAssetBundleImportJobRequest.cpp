@@ -18,7 +18,10 @@ StartAssetBundleImportJobRequest::StartAssetBundleImportJobRequest() :
     m_assetBundleImportSourceHasBeenSet(false),
     m_overrideParametersHasBeenSet(false),
     m_failureAction(AssetBundleImportFailureAction::NOT_SET),
-    m_failureActionHasBeenSet(false)
+    m_failureActionHasBeenSet(false),
+    m_overridePermissionsHasBeenSet(false),
+    m_overrideTagsHasBeenSet(false),
+    m_overrideValidationStrategyHasBeenSet(false)
 {
 }
 
@@ -47,6 +50,24 @@ Aws::String StartAssetBundleImportJobRequest::SerializePayload() const
   if(m_failureActionHasBeenSet)
   {
    payload.WithString("FailureAction", AssetBundleImportFailureActionMapper::GetNameForAssetBundleImportFailureAction(m_failureAction));
+  }
+
+  if(m_overridePermissionsHasBeenSet)
+  {
+   payload.WithObject("OverridePermissions", m_overridePermissions.Jsonize());
+
+  }
+
+  if(m_overrideTagsHasBeenSet)
+  {
+   payload.WithObject("OverrideTags", m_overrideTags.Jsonize());
+
+  }
+
+  if(m_overrideValidationStrategyHasBeenSet)
+  {
+   payload.WithObject("OverrideValidationStrategy", m_overrideValidationStrategy.Jsonize());
+
   }
 
   return payload.View().WriteReadable();

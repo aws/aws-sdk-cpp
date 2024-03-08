@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AuthenticationProviderTypes::NOT_SET:
+            return {};
           case AuthenticationProviderTypes::AWS_SSO:
             return "AWS_SSO";
           case AuthenticationProviderTypes::SAML:

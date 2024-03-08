@@ -36,32 +36,32 @@ namespace Model
 
 
     /**
-     * <p>List of filter names and values that you can use for requests.</p>
+     * <p> A list of filter names and values that you can use for requests.</p>
      */
     inline const CollectionFilters& GetCollectionFilters() const{ return m_collectionFilters; }
 
     /**
-     * <p>List of filter names and values that you can use for requests.</p>
+     * <p> A list of filter names and values that you can use for requests.</p>
      */
     inline bool CollectionFiltersHasBeenSet() const { return m_collectionFiltersHasBeenSet; }
 
     /**
-     * <p>List of filter names and values that you can use for requests.</p>
+     * <p> A list of filter names and values that you can use for requests.</p>
      */
     inline void SetCollectionFilters(const CollectionFilters& value) { m_collectionFiltersHasBeenSet = true; m_collectionFilters = value; }
 
     /**
-     * <p>List of filter names and values that you can use for requests.</p>
+     * <p> A list of filter names and values that you can use for requests.</p>
      */
     inline void SetCollectionFilters(CollectionFilters&& value) { m_collectionFiltersHasBeenSet = true; m_collectionFilters = std::move(value); }
 
     /**
-     * <p>List of filter names and values that you can use for requests.</p>
+     * <p> A list of filter names and values that you can use for requests.</p>
      */
     inline ListCollectionsRequest& WithCollectionFilters(const CollectionFilters& value) { SetCollectionFilters(value); return *this;}
 
     /**
-     * <p>List of filter names and values that you can use for requests.</p>
+     * <p> A list of filter names and values that you can use for requests.</p>
      */
     inline ListCollectionsRequest& WithCollectionFilters(CollectionFilters&& value) { SetCollectionFilters(std::move(value)); return *this;}
 

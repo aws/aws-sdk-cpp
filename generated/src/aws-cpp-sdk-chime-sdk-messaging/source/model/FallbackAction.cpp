@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FallbackAction::NOT_SET:
+            return {};
           case FallbackAction::CONTINUE:
             return "CONTINUE";
           case FallbackAction::ABORT:

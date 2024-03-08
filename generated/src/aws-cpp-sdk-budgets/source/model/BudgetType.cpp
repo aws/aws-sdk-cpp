@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BudgetType::NOT_SET:
+            return {};
           case BudgetType::USAGE:
             return "USAGE";
           case BudgetType::COST:

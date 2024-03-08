@@ -180,9 +180,11 @@ namespace Model
      * <p>Modifies the <code>DeleteOnTermination</code> attribute for volumes that are
      * currently attached. The volume must be owned by the caller. If no value is
      * specified for <code>DeleteOnTermination</code>, the default is <code>true</code>
-     * and the volume is deleted when the instance is terminated.</p> <p>To add
-     * instance store volumes to an Amazon EBS-backed instance, you must add them when
-     * you launch the instance. For more information, see <a
+     * and the volume is deleted when the instance is terminated. You can't modify the
+     * <code>DeleteOnTermination</code> attribute for volumes that are attached to
+     * Fargate tasks.</p> <p>To add instance store volumes to an Amazon EBS-backed
+     * instance, you must add them when you launch the instance. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM">Update
      * the block device mapping when launching an instance</a> in the <i>Amazon EC2
      * User Guide</i>.</p>
@@ -193,9 +195,11 @@ namespace Model
      * <p>Modifies the <code>DeleteOnTermination</code> attribute for volumes that are
      * currently attached. The volume must be owned by the caller. If no value is
      * specified for <code>DeleteOnTermination</code>, the default is <code>true</code>
-     * and the volume is deleted when the instance is terminated.</p> <p>To add
-     * instance store volumes to an Amazon EBS-backed instance, you must add them when
-     * you launch the instance. For more information, see <a
+     * and the volume is deleted when the instance is terminated. You can't modify the
+     * <code>DeleteOnTermination</code> attribute for volumes that are attached to
+     * Fargate tasks.</p> <p>To add instance store volumes to an Amazon EBS-backed
+     * instance, you must add them when you launch the instance. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM">Update
      * the block device mapping when launching an instance</a> in the <i>Amazon EC2
      * User Guide</i>.</p>
@@ -206,9 +210,11 @@ namespace Model
      * <p>Modifies the <code>DeleteOnTermination</code> attribute for volumes that are
      * currently attached. The volume must be owned by the caller. If no value is
      * specified for <code>DeleteOnTermination</code>, the default is <code>true</code>
-     * and the volume is deleted when the instance is terminated.</p> <p>To add
-     * instance store volumes to an Amazon EBS-backed instance, you must add them when
-     * you launch the instance. For more information, see <a
+     * and the volume is deleted when the instance is terminated. You can't modify the
+     * <code>DeleteOnTermination</code> attribute for volumes that are attached to
+     * Fargate tasks.</p> <p>To add instance store volumes to an Amazon EBS-backed
+     * instance, you must add them when you launch the instance. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM">Update
      * the block device mapping when launching an instance</a> in the <i>Amazon EC2
      * User Guide</i>.</p>
@@ -219,9 +225,11 @@ namespace Model
      * <p>Modifies the <code>DeleteOnTermination</code> attribute for volumes that are
      * currently attached. The volume must be owned by the caller. If no value is
      * specified for <code>DeleteOnTermination</code>, the default is <code>true</code>
-     * and the volume is deleted when the instance is terminated.</p> <p>To add
-     * instance store volumes to an Amazon EBS-backed instance, you must add them when
-     * you launch the instance. For more information, see <a
+     * and the volume is deleted when the instance is terminated. You can't modify the
+     * <code>DeleteOnTermination</code> attribute for volumes that are attached to
+     * Fargate tasks.</p> <p>To add instance store volumes to an Amazon EBS-backed
+     * instance, you must add them when you launch the instance. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM">Update
      * the block device mapping when launching an instance</a> in the <i>Amazon EC2
      * User Guide</i>.</p>
@@ -232,9 +240,11 @@ namespace Model
      * <p>Modifies the <code>DeleteOnTermination</code> attribute for volumes that are
      * currently attached. The volume must be owned by the caller. If no value is
      * specified for <code>DeleteOnTermination</code>, the default is <code>true</code>
-     * and the volume is deleted when the instance is terminated.</p> <p>To add
-     * instance store volumes to an Amazon EBS-backed instance, you must add them when
-     * you launch the instance. For more information, see <a
+     * and the volume is deleted when the instance is terminated. You can't modify the
+     * <code>DeleteOnTermination</code> attribute for volumes that are attached to
+     * Fargate tasks.</p> <p>To add instance store volumes to an Amazon EBS-backed
+     * instance, you must add them when you launch the instance. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM">Update
      * the block device mapping when launching an instance</a> in the <i>Amazon EC2
      * User Guide</i>.</p>
@@ -245,9 +255,11 @@ namespace Model
      * <p>Modifies the <code>DeleteOnTermination</code> attribute for volumes that are
      * currently attached. The volume must be owned by the caller. If no value is
      * specified for <code>DeleteOnTermination</code>, the default is <code>true</code>
-     * and the volume is deleted when the instance is terminated.</p> <p>To add
-     * instance store volumes to an Amazon EBS-backed instance, you must add them when
-     * you launch the instance. For more information, see <a
+     * and the volume is deleted when the instance is terminated. You can't modify the
+     * <code>DeleteOnTermination</code> attribute for volumes that are attached to
+     * Fargate tasks.</p> <p>To add instance store volumes to an Amazon EBS-backed
+     * instance, you must add them when you launch the instance. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM">Update
      * the block device mapping when launching an instance</a> in the <i>Amazon EC2
      * User Guide</i>.</p>
@@ -258,9 +270,11 @@ namespace Model
      * <p>Modifies the <code>DeleteOnTermination</code> attribute for volumes that are
      * currently attached. The volume must be owned by the caller. If no value is
      * specified for <code>DeleteOnTermination</code>, the default is <code>true</code>
-     * and the volume is deleted when the instance is terminated.</p> <p>To add
-     * instance store volumes to an Amazon EBS-backed instance, you must add them when
-     * you launch the instance. For more information, see <a
+     * and the volume is deleted when the instance is terminated. You can't modify the
+     * <code>DeleteOnTermination</code> attribute for volumes that are attached to
+     * Fargate tasks.</p> <p>To add instance store volumes to an Amazon EBS-backed
+     * instance, you must add them when you launch the instance. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM">Update
      * the block device mapping when launching an instance</a> in the <i>Amazon EC2
      * User Guide</i>.</p>
@@ -271,9 +285,11 @@ namespace Model
      * <p>Modifies the <code>DeleteOnTermination</code> attribute for volumes that are
      * currently attached. The volume must be owned by the caller. If no value is
      * specified for <code>DeleteOnTermination</code>, the default is <code>true</code>
-     * and the volume is deleted when the instance is terminated.</p> <p>To add
-     * instance store volumes to an Amazon EBS-backed instance, you must add them when
-     * you launch the instance. For more information, see <a
+     * and the volume is deleted when the instance is terminated. You can't modify the
+     * <code>DeleteOnTermination</code> attribute for volumes that are attached to
+     * Fargate tasks.</p> <p>To add instance store volumes to an Amazon EBS-backed
+     * instance, you must add them when you launch the instance. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM">Update
      * the block device mapping when launching an instance</a> in the <i>Amazon EC2
      * User Guide</i>.</p>

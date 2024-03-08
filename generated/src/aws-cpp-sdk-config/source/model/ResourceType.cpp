@@ -373,6 +373,60 @@ namespace Aws
         static const int AWS_S3_AccessPoint_HASH = HashingUtils::HashString("AWS::S3::AccessPoint");
         static const int AWS_NetworkManager_CustomerGatewayAssociation_HASH = HashingUtils::HashString("AWS::NetworkManager::CustomerGatewayAssociation");
         static const int AWS_NetworkManager_LinkAssociation_HASH = HashingUtils::HashString("AWS::NetworkManager::LinkAssociation");
+        static const int AWS_IoTWireless_MulticastGroup_HASH = HashingUtils::HashString("AWS::IoTWireless::MulticastGroup");
+        static const int AWS_Personalize_DatasetGroup_HASH = HashingUtils::HashString("AWS::Personalize::DatasetGroup");
+        static const int AWS_IoTTwinMaker_ComponentType_HASH = HashingUtils::HashString("AWS::IoTTwinMaker::ComponentType");
+        static const int AWS_CodeBuild_ReportGroup_HASH = HashingUtils::HashString("AWS::CodeBuild::ReportGroup");
+        static const int AWS_SageMaker_FeatureGroup_HASH = HashingUtils::HashString("AWS::SageMaker::FeatureGroup");
+        static const int AWS_MSK_BatchScramSecret_HASH = HashingUtils::HashString("AWS::MSK::BatchScramSecret");
+        static const int AWS_AppStream_Stack_HASH = HashingUtils::HashString("AWS::AppStream::Stack");
+        static const int AWS_IoT_JobTemplate_HASH = HashingUtils::HashString("AWS::IoT::JobTemplate");
+        static const int AWS_IoTWireless_FuotaTask_HASH = HashingUtils::HashString("AWS::IoTWireless::FuotaTask");
+        static const int AWS_IoT_ProvisioningTemplate_HASH = HashingUtils::HashString("AWS::IoT::ProvisioningTemplate");
+        static const int AWS_InspectorV2_Filter_HASH = HashingUtils::HashString("AWS::InspectorV2::Filter");
+        static const int AWS_Route53Resolver_ResolverQueryLoggingConfigAssociation_HASH = HashingUtils::HashString("AWS::Route53Resolver::ResolverQueryLoggingConfigAssociation");
+        static const int AWS_ServiceDiscovery_Instance_HASH = HashingUtils::HashString("AWS::ServiceDiscovery::Instance");
+        static const int AWS_Transfer_Certificate_HASH = HashingUtils::HashString("AWS::Transfer::Certificate");
+        static const int AWS_MediaConnect_FlowSource_HASH = HashingUtils::HashString("AWS::MediaConnect::FlowSource");
+        static const int AWS_APS_RuleGroupsNamespace_HASH = HashingUtils::HashString("AWS::APS::RuleGroupsNamespace");
+        static const int AWS_CodeGuruProfiler_ProfilingGroup_HASH = HashingUtils::HashString("AWS::CodeGuruProfiler::ProfilingGroup");
+        static const int AWS_Route53Resolver_ResolverQueryLoggingConfig_HASH = HashingUtils::HashString("AWS::Route53Resolver::ResolverQueryLoggingConfig");
+        static const int AWS_Batch_SchedulingPolicy_HASH = HashingUtils::HashString("AWS::Batch::SchedulingPolicy");
+        static const int AWS_ACMPCA_CertificateAuthorityActivation_HASH = HashingUtils::HashString("AWS::ACMPCA::CertificateAuthorityActivation");
+        static const int AWS_AppMesh_GatewayRoute_HASH = HashingUtils::HashString("AWS::AppMesh::GatewayRoute");
+        static const int AWS_AppMesh_Mesh_HASH = HashingUtils::HashString("AWS::AppMesh::Mesh");
+        static const int AWS_Connect_Instance_HASH = HashingUtils::HashString("AWS::Connect::Instance");
+        static const int AWS_Connect_QuickConnect_HASH = HashingUtils::HashString("AWS::Connect::QuickConnect");
+        static const int AWS_EC2_CarrierGateway_HASH = HashingUtils::HashString("AWS::EC2::CarrierGateway");
+        static const int AWS_EC2_IPAMPool_HASH = HashingUtils::HashString("AWS::EC2::IPAMPool");
+        static const int AWS_EC2_TransitGatewayConnect_HASH = HashingUtils::HashString("AWS::EC2::TransitGatewayConnect");
+        static const int AWS_EC2_TransitGatewayMulticastDomain_HASH = HashingUtils::HashString("AWS::EC2::TransitGatewayMulticastDomain");
+        static const int AWS_ECS_CapacityProvider_HASH = HashingUtils::HashString("AWS::ECS::CapacityProvider");
+        static const int AWS_IAM_InstanceProfile_HASH = HashingUtils::HashString("AWS::IAM::InstanceProfile");
+        static const int AWS_IoT_CACertificate_HASH = HashingUtils::HashString("AWS::IoT::CACertificate");
+        static const int AWS_IoTTwinMaker_SyncJob_HASH = HashingUtils::HashString("AWS::IoTTwinMaker::SyncJob");
+        static const int AWS_KafkaConnect_Connector_HASH = HashingUtils::HashString("AWS::KafkaConnect::Connector");
+        static const int AWS_Lambda_CodeSigningConfig_HASH = HashingUtils::HashString("AWS::Lambda::CodeSigningConfig");
+        static const int AWS_NetworkManager_ConnectPeer_HASH = HashingUtils::HashString("AWS::NetworkManager::ConnectPeer");
+        static const int AWS_ResourceExplorer2_Index_HASH = HashingUtils::HashString("AWS::ResourceExplorer2::Index");
+        static const int AWS_AppStream_Fleet_HASH = HashingUtils::HashString("AWS::AppStream::Fleet");
+        static const int AWS_Cognito_UserPool_HASH = HashingUtils::HashString("AWS::Cognito::UserPool");
+        static const int AWS_Cognito_UserPoolClient_HASH = HashingUtils::HashString("AWS::Cognito::UserPoolClient");
+        static const int AWS_Cognito_UserPoolGroup_HASH = HashingUtils::HashString("AWS::Cognito::UserPoolGroup");
+        static const int AWS_EC2_NetworkInsightsAccessScope_HASH = HashingUtils::HashString("AWS::EC2::NetworkInsightsAccessScope");
+        static const int AWS_EC2_NetworkInsightsAnalysis_HASH = HashingUtils::HashString("AWS::EC2::NetworkInsightsAnalysis");
+        static const int AWS_Grafana_Workspace_HASH = HashingUtils::HashString("AWS::Grafana::Workspace");
+        static const int AWS_GroundStation_DataflowEndpointGroup_HASH = HashingUtils::HashString("AWS::GroundStation::DataflowEndpointGroup");
+        static const int AWS_ImageBuilder_ImageRecipe_HASH = HashingUtils::HashString("AWS::ImageBuilder::ImageRecipe");
+        static const int AWS_KMS_Alias_HASH = HashingUtils::HashString("AWS::KMS::Alias");
+        static const int AWS_M2_Environment_HASH = HashingUtils::HashString("AWS::M2::Environment");
+        static const int AWS_QuickSight_DataSource_HASH = HashingUtils::HashString("AWS::QuickSight::DataSource");
+        static const int AWS_QuickSight_Template_HASH = HashingUtils::HashString("AWS::QuickSight::Template");
+        static const int AWS_QuickSight_Theme_HASH = HashingUtils::HashString("AWS::QuickSight::Theme");
+        static const int AWS_RDS_OptionGroup_HASH = HashingUtils::HashString("AWS::RDS::OptionGroup");
+        static const int AWS_Redshift_EndpointAccess_HASH = HashingUtils::HashString("AWS::Redshift::EndpointAccess");
+        static const int AWS_Route53Resolver_FirewallRuleGroup_HASH = HashingUtils::HashString("AWS::Route53Resolver::FirewallRuleGroup");
+        static const int AWS_SSM_Document_HASH = HashingUtils::HashString("AWS::SSM::Document");
 
         /*
         The if-else chains in this file are converted into a jump table by the compiler,
@@ -2154,6 +2208,280 @@ namespace Aws
             enumValue = ResourceType::AWS_NetworkManager_LinkAssociation;
             return true;
           }
+          else if (hashCode == AWS_IoTWireless_MulticastGroup_HASH)
+          {
+            enumValue = ResourceType::AWS_IoTWireless_MulticastGroup;
+            return true;
+          }
+          else if (hashCode == AWS_Personalize_DatasetGroup_HASH)
+          {
+            enumValue = ResourceType::AWS_Personalize_DatasetGroup;
+            return true;
+          }
+          else if (hashCode == AWS_IoTTwinMaker_ComponentType_HASH)
+          {
+            enumValue = ResourceType::AWS_IoTTwinMaker_ComponentType;
+            return true;
+          }
+          else if (hashCode == AWS_CodeBuild_ReportGroup_HASH)
+          {
+            enumValue = ResourceType::AWS_CodeBuild_ReportGroup;
+            return true;
+          }
+          else if (hashCode == AWS_SageMaker_FeatureGroup_HASH)
+          {
+            enumValue = ResourceType::AWS_SageMaker_FeatureGroup;
+            return true;
+          }
+          else if (hashCode == AWS_MSK_BatchScramSecret_HASH)
+          {
+            enumValue = ResourceType::AWS_MSK_BatchScramSecret;
+            return true;
+          }
+          else if (hashCode == AWS_AppStream_Stack_HASH)
+          {
+            enumValue = ResourceType::AWS_AppStream_Stack;
+            return true;
+          }
+          else if (hashCode == AWS_IoT_JobTemplate_HASH)
+          {
+            enumValue = ResourceType::AWS_IoT_JobTemplate;
+            return true;
+          }
+          else if (hashCode == AWS_IoTWireless_FuotaTask_HASH)
+          {
+            enumValue = ResourceType::AWS_IoTWireless_FuotaTask;
+            return true;
+          }
+          else if (hashCode == AWS_IoT_ProvisioningTemplate_HASH)
+          {
+            enumValue = ResourceType::AWS_IoT_ProvisioningTemplate;
+            return true;
+          }
+          else if (hashCode == AWS_InspectorV2_Filter_HASH)
+          {
+            enumValue = ResourceType::AWS_InspectorV2_Filter;
+            return true;
+          }
+          else if (hashCode == AWS_Route53Resolver_ResolverQueryLoggingConfigAssociation_HASH)
+          {
+            enumValue = ResourceType::AWS_Route53Resolver_ResolverQueryLoggingConfigAssociation;
+            return true;
+          }
+          else if (hashCode == AWS_ServiceDiscovery_Instance_HASH)
+          {
+            enumValue = ResourceType::AWS_ServiceDiscovery_Instance;
+            return true;
+          }
+          return false;
+        }
+        static bool GetEnumForNameHelper3(int hashCode, ResourceType& enumValue)
+        {
+          if (hashCode == AWS_Transfer_Certificate_HASH)
+          {
+            enumValue = ResourceType::AWS_Transfer_Certificate;
+            return true;
+          }
+          else if (hashCode == AWS_MediaConnect_FlowSource_HASH)
+          {
+            enumValue = ResourceType::AWS_MediaConnect_FlowSource;
+            return true;
+          }
+          else if (hashCode == AWS_APS_RuleGroupsNamespace_HASH)
+          {
+            enumValue = ResourceType::AWS_APS_RuleGroupsNamespace;
+            return true;
+          }
+          else if (hashCode == AWS_CodeGuruProfiler_ProfilingGroup_HASH)
+          {
+            enumValue = ResourceType::AWS_CodeGuruProfiler_ProfilingGroup;
+            return true;
+          }
+          else if (hashCode == AWS_Route53Resolver_ResolverQueryLoggingConfig_HASH)
+          {
+            enumValue = ResourceType::AWS_Route53Resolver_ResolverQueryLoggingConfig;
+            return true;
+          }
+          else if (hashCode == AWS_Batch_SchedulingPolicy_HASH)
+          {
+            enumValue = ResourceType::AWS_Batch_SchedulingPolicy;
+            return true;
+          }
+          else if (hashCode == AWS_ACMPCA_CertificateAuthorityActivation_HASH)
+          {
+            enumValue = ResourceType::AWS_ACMPCA_CertificateAuthorityActivation;
+            return true;
+          }
+          else if (hashCode == AWS_AppMesh_GatewayRoute_HASH)
+          {
+            enumValue = ResourceType::AWS_AppMesh_GatewayRoute;
+            return true;
+          }
+          else if (hashCode == AWS_AppMesh_Mesh_HASH)
+          {
+            enumValue = ResourceType::AWS_AppMesh_Mesh;
+            return true;
+          }
+          else if (hashCode == AWS_Connect_Instance_HASH)
+          {
+            enumValue = ResourceType::AWS_Connect_Instance;
+            return true;
+          }
+          else if (hashCode == AWS_Connect_QuickConnect_HASH)
+          {
+            enumValue = ResourceType::AWS_Connect_QuickConnect;
+            return true;
+          }
+          else if (hashCode == AWS_EC2_CarrierGateway_HASH)
+          {
+            enumValue = ResourceType::AWS_EC2_CarrierGateway;
+            return true;
+          }
+          else if (hashCode == AWS_EC2_IPAMPool_HASH)
+          {
+            enumValue = ResourceType::AWS_EC2_IPAMPool;
+            return true;
+          }
+          else if (hashCode == AWS_EC2_TransitGatewayConnect_HASH)
+          {
+            enumValue = ResourceType::AWS_EC2_TransitGatewayConnect;
+            return true;
+          }
+          else if (hashCode == AWS_EC2_TransitGatewayMulticastDomain_HASH)
+          {
+            enumValue = ResourceType::AWS_EC2_TransitGatewayMulticastDomain;
+            return true;
+          }
+          else if (hashCode == AWS_ECS_CapacityProvider_HASH)
+          {
+            enumValue = ResourceType::AWS_ECS_CapacityProvider;
+            return true;
+          }
+          else if (hashCode == AWS_IAM_InstanceProfile_HASH)
+          {
+            enumValue = ResourceType::AWS_IAM_InstanceProfile;
+            return true;
+          }
+          else if (hashCode == AWS_IoT_CACertificate_HASH)
+          {
+            enumValue = ResourceType::AWS_IoT_CACertificate;
+            return true;
+          }
+          else if (hashCode == AWS_IoTTwinMaker_SyncJob_HASH)
+          {
+            enumValue = ResourceType::AWS_IoTTwinMaker_SyncJob;
+            return true;
+          }
+          else if (hashCode == AWS_KafkaConnect_Connector_HASH)
+          {
+            enumValue = ResourceType::AWS_KafkaConnect_Connector;
+            return true;
+          }
+          else if (hashCode == AWS_Lambda_CodeSigningConfig_HASH)
+          {
+            enumValue = ResourceType::AWS_Lambda_CodeSigningConfig;
+            return true;
+          }
+          else if (hashCode == AWS_NetworkManager_ConnectPeer_HASH)
+          {
+            enumValue = ResourceType::AWS_NetworkManager_ConnectPeer;
+            return true;
+          }
+          else if (hashCode == AWS_ResourceExplorer2_Index_HASH)
+          {
+            enumValue = ResourceType::AWS_ResourceExplorer2_Index;
+            return true;
+          }
+          else if (hashCode == AWS_AppStream_Fleet_HASH)
+          {
+            enumValue = ResourceType::AWS_AppStream_Fleet;
+            return true;
+          }
+          else if (hashCode == AWS_Cognito_UserPool_HASH)
+          {
+            enumValue = ResourceType::AWS_Cognito_UserPool;
+            return true;
+          }
+          else if (hashCode == AWS_Cognito_UserPoolClient_HASH)
+          {
+            enumValue = ResourceType::AWS_Cognito_UserPoolClient;
+            return true;
+          }
+          else if (hashCode == AWS_Cognito_UserPoolGroup_HASH)
+          {
+            enumValue = ResourceType::AWS_Cognito_UserPoolGroup;
+            return true;
+          }
+          else if (hashCode == AWS_EC2_NetworkInsightsAccessScope_HASH)
+          {
+            enumValue = ResourceType::AWS_EC2_NetworkInsightsAccessScope;
+            return true;
+          }
+          else if (hashCode == AWS_EC2_NetworkInsightsAnalysis_HASH)
+          {
+            enumValue = ResourceType::AWS_EC2_NetworkInsightsAnalysis;
+            return true;
+          }
+          else if (hashCode == AWS_Grafana_Workspace_HASH)
+          {
+            enumValue = ResourceType::AWS_Grafana_Workspace;
+            return true;
+          }
+          else if (hashCode == AWS_GroundStation_DataflowEndpointGroup_HASH)
+          {
+            enumValue = ResourceType::AWS_GroundStation_DataflowEndpointGroup;
+            return true;
+          }
+          else if (hashCode == AWS_ImageBuilder_ImageRecipe_HASH)
+          {
+            enumValue = ResourceType::AWS_ImageBuilder_ImageRecipe;
+            return true;
+          }
+          else if (hashCode == AWS_KMS_Alias_HASH)
+          {
+            enumValue = ResourceType::AWS_KMS_Alias;
+            return true;
+          }
+          else if (hashCode == AWS_M2_Environment_HASH)
+          {
+            enumValue = ResourceType::AWS_M2_Environment;
+            return true;
+          }
+          else if (hashCode == AWS_QuickSight_DataSource_HASH)
+          {
+            enumValue = ResourceType::AWS_QuickSight_DataSource;
+            return true;
+          }
+          else if (hashCode == AWS_QuickSight_Template_HASH)
+          {
+            enumValue = ResourceType::AWS_QuickSight_Template;
+            return true;
+          }
+          else if (hashCode == AWS_QuickSight_Theme_HASH)
+          {
+            enumValue = ResourceType::AWS_QuickSight_Theme;
+            return true;
+          }
+          else if (hashCode == AWS_RDS_OptionGroup_HASH)
+          {
+            enumValue = ResourceType::AWS_RDS_OptionGroup;
+            return true;
+          }
+          else if (hashCode == AWS_Redshift_EndpointAccess_HASH)
+          {
+            enumValue = ResourceType::AWS_Redshift_EndpointAccess;
+            return true;
+          }
+          else if (hashCode == AWS_Route53Resolver_FirewallRuleGroup_HASH)
+          {
+            enumValue = ResourceType::AWS_Route53Resolver_FirewallRuleGroup;
+            return true;
+          }
+          else if (hashCode == AWS_SSM_Document_HASH)
+          {
+            enumValue = ResourceType::AWS_SSM_Document;
+            return true;
+          }
           return false;
         }
 
@@ -3236,6 +3564,176 @@ namespace Aws
           case ResourceType::AWS_NetworkManager_LinkAssociation:
             value = "AWS::NetworkManager::LinkAssociation";
             return true;
+          case ResourceType::AWS_IoTWireless_MulticastGroup:
+            value = "AWS::IoTWireless::MulticastGroup";
+            return true;
+          case ResourceType::AWS_Personalize_DatasetGroup:
+            value = "AWS::Personalize::DatasetGroup";
+            return true;
+          case ResourceType::AWS_IoTTwinMaker_ComponentType:
+            value = "AWS::IoTTwinMaker::ComponentType";
+            return true;
+          case ResourceType::AWS_CodeBuild_ReportGroup:
+            value = "AWS::CodeBuild::ReportGroup";
+            return true;
+          case ResourceType::AWS_SageMaker_FeatureGroup:
+            value = "AWS::SageMaker::FeatureGroup";
+            return true;
+          case ResourceType::AWS_MSK_BatchScramSecret:
+            value = "AWS::MSK::BatchScramSecret";
+            return true;
+          case ResourceType::AWS_AppStream_Stack:
+            value = "AWS::AppStream::Stack";
+            return true;
+          case ResourceType::AWS_IoT_JobTemplate:
+            value = "AWS::IoT::JobTemplate";
+            return true;
+          case ResourceType::AWS_IoTWireless_FuotaTask:
+            value = "AWS::IoTWireless::FuotaTask";
+            return true;
+          case ResourceType::AWS_IoT_ProvisioningTemplate:
+            value = "AWS::IoT::ProvisioningTemplate";
+            return true;
+          case ResourceType::AWS_InspectorV2_Filter:
+            value = "AWS::InspectorV2::Filter";
+            return true;
+          case ResourceType::AWS_Route53Resolver_ResolverQueryLoggingConfigAssociation:
+            value = "AWS::Route53Resolver::ResolverQueryLoggingConfigAssociation";
+            return true;
+          case ResourceType::AWS_ServiceDiscovery_Instance:
+            value = "AWS::ServiceDiscovery::Instance";
+            return true;
+          default:
+            return false;
+          }
+        }
+        static bool GetNameForEnumHelper3(ResourceType enumValue, Aws::String& value)
+        {
+          switch(enumValue)
+          {
+          case ResourceType::AWS_Transfer_Certificate:
+            value = "AWS::Transfer::Certificate";
+            return true;
+          case ResourceType::AWS_MediaConnect_FlowSource:
+            value = "AWS::MediaConnect::FlowSource";
+            return true;
+          case ResourceType::AWS_APS_RuleGroupsNamespace:
+            value = "AWS::APS::RuleGroupsNamespace";
+            return true;
+          case ResourceType::AWS_CodeGuruProfiler_ProfilingGroup:
+            value = "AWS::CodeGuruProfiler::ProfilingGroup";
+            return true;
+          case ResourceType::AWS_Route53Resolver_ResolverQueryLoggingConfig:
+            value = "AWS::Route53Resolver::ResolverQueryLoggingConfig";
+            return true;
+          case ResourceType::AWS_Batch_SchedulingPolicy:
+            value = "AWS::Batch::SchedulingPolicy";
+            return true;
+          case ResourceType::AWS_ACMPCA_CertificateAuthorityActivation:
+            value = "AWS::ACMPCA::CertificateAuthorityActivation";
+            return true;
+          case ResourceType::AWS_AppMesh_GatewayRoute:
+            value = "AWS::AppMesh::GatewayRoute";
+            return true;
+          case ResourceType::AWS_AppMesh_Mesh:
+            value = "AWS::AppMesh::Mesh";
+            return true;
+          case ResourceType::AWS_Connect_Instance:
+            value = "AWS::Connect::Instance";
+            return true;
+          case ResourceType::AWS_Connect_QuickConnect:
+            value = "AWS::Connect::QuickConnect";
+            return true;
+          case ResourceType::AWS_EC2_CarrierGateway:
+            value = "AWS::EC2::CarrierGateway";
+            return true;
+          case ResourceType::AWS_EC2_IPAMPool:
+            value = "AWS::EC2::IPAMPool";
+            return true;
+          case ResourceType::AWS_EC2_TransitGatewayConnect:
+            value = "AWS::EC2::TransitGatewayConnect";
+            return true;
+          case ResourceType::AWS_EC2_TransitGatewayMulticastDomain:
+            value = "AWS::EC2::TransitGatewayMulticastDomain";
+            return true;
+          case ResourceType::AWS_ECS_CapacityProvider:
+            value = "AWS::ECS::CapacityProvider";
+            return true;
+          case ResourceType::AWS_IAM_InstanceProfile:
+            value = "AWS::IAM::InstanceProfile";
+            return true;
+          case ResourceType::AWS_IoT_CACertificate:
+            value = "AWS::IoT::CACertificate";
+            return true;
+          case ResourceType::AWS_IoTTwinMaker_SyncJob:
+            value = "AWS::IoTTwinMaker::SyncJob";
+            return true;
+          case ResourceType::AWS_KafkaConnect_Connector:
+            value = "AWS::KafkaConnect::Connector";
+            return true;
+          case ResourceType::AWS_Lambda_CodeSigningConfig:
+            value = "AWS::Lambda::CodeSigningConfig";
+            return true;
+          case ResourceType::AWS_NetworkManager_ConnectPeer:
+            value = "AWS::NetworkManager::ConnectPeer";
+            return true;
+          case ResourceType::AWS_ResourceExplorer2_Index:
+            value = "AWS::ResourceExplorer2::Index";
+            return true;
+          case ResourceType::AWS_AppStream_Fleet:
+            value = "AWS::AppStream::Fleet";
+            return true;
+          case ResourceType::AWS_Cognito_UserPool:
+            value = "AWS::Cognito::UserPool";
+            return true;
+          case ResourceType::AWS_Cognito_UserPoolClient:
+            value = "AWS::Cognito::UserPoolClient";
+            return true;
+          case ResourceType::AWS_Cognito_UserPoolGroup:
+            value = "AWS::Cognito::UserPoolGroup";
+            return true;
+          case ResourceType::AWS_EC2_NetworkInsightsAccessScope:
+            value = "AWS::EC2::NetworkInsightsAccessScope";
+            return true;
+          case ResourceType::AWS_EC2_NetworkInsightsAnalysis:
+            value = "AWS::EC2::NetworkInsightsAnalysis";
+            return true;
+          case ResourceType::AWS_Grafana_Workspace:
+            value = "AWS::Grafana::Workspace";
+            return true;
+          case ResourceType::AWS_GroundStation_DataflowEndpointGroup:
+            value = "AWS::GroundStation::DataflowEndpointGroup";
+            return true;
+          case ResourceType::AWS_ImageBuilder_ImageRecipe:
+            value = "AWS::ImageBuilder::ImageRecipe";
+            return true;
+          case ResourceType::AWS_KMS_Alias:
+            value = "AWS::KMS::Alias";
+            return true;
+          case ResourceType::AWS_M2_Environment:
+            value = "AWS::M2::Environment";
+            return true;
+          case ResourceType::AWS_QuickSight_DataSource:
+            value = "AWS::QuickSight::DataSource";
+            return true;
+          case ResourceType::AWS_QuickSight_Template:
+            value = "AWS::QuickSight::Template";
+            return true;
+          case ResourceType::AWS_QuickSight_Theme:
+            value = "AWS::QuickSight::Theme";
+            return true;
+          case ResourceType::AWS_RDS_OptionGroup:
+            value = "AWS::RDS::OptionGroup";
+            return true;
+          case ResourceType::AWS_Redshift_EndpointAccess:
+            value = "AWS::Redshift::EndpointAccess";
+            return true;
+          case ResourceType::AWS_Route53Resolver_FirewallRuleGroup:
+            value = "AWS::Route53Resolver::FirewallRuleGroup";
+            return true;
+          case ResourceType::AWS_SSM_Document:
+            value = "AWS::SSM::Document";
+            return true;
           default:
             return false;
           }
@@ -3254,6 +3752,10 @@ namespace Aws
              return enumValue;
           }
           else if (GetEnumForNameHelper2(hashCode, enumValue))
+          {
+             return enumValue;
+          }
+          else if (GetEnumForNameHelper3(hashCode, enumValue))
           {
              return enumValue;
           }
@@ -3279,6 +3781,10 @@ namespace Aws
             return value;
           }
           else if (GetNameForEnumHelper2(enumValue, value))
+          {
+            return value;
+          }
+          else if (GetNameForEnumHelper3(enumValue, value))
           {
             return value;
           }

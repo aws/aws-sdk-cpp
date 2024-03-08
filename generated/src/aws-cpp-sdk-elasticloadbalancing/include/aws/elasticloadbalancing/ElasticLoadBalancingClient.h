@@ -42,8 +42,8 @@ namespace ElasticLoadBalancing
   {
     public:
       typedef Aws::Client::AWSXMLClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef ElasticLoadBalancingClientConfiguration ClientConfigurationType;
       typedef ElasticLoadBalancingEndpointProvider EndpointProviderType;
@@ -53,14 +53,14 @@ namespace ElasticLoadBalancing
         * is not specified, it will be initialized to default values.
         */
         ElasticLoadBalancingClient(const Aws::ElasticLoadBalancing::ElasticLoadBalancingClientConfiguration& clientConfiguration = Aws::ElasticLoadBalancing::ElasticLoadBalancingClientConfiguration(),
-                                   std::shared_ptr<ElasticLoadBalancingEndpointProviderBase> endpointProvider = Aws::MakeShared<ElasticLoadBalancingEndpointProvider>(ALLOCATION_TAG));
+                                   std::shared_ptr<ElasticLoadBalancingEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         ElasticLoadBalancingClient(const Aws::Auth::AWSCredentials& credentials,
-                                   std::shared_ptr<ElasticLoadBalancingEndpointProviderBase> endpointProvider = Aws::MakeShared<ElasticLoadBalancingEndpointProvider>(ALLOCATION_TAG),
+                                   std::shared_ptr<ElasticLoadBalancingEndpointProviderBase> endpointProvider = nullptr,
                                    const Aws::ElasticLoadBalancing::ElasticLoadBalancingClientConfiguration& clientConfiguration = Aws::ElasticLoadBalancing::ElasticLoadBalancingClientConfiguration());
 
        /**
@@ -68,7 +68,7 @@ namespace ElasticLoadBalancing
         * the default http client factory will be used
         */
         ElasticLoadBalancingClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                                   std::shared_ptr<ElasticLoadBalancingEndpointProviderBase> endpointProvider = Aws::MakeShared<ElasticLoadBalancingEndpointProvider>(ALLOCATION_TAG),
+                                   std::shared_ptr<ElasticLoadBalancingEndpointProviderBase> endpointProvider = nullptr,
                                    const Aws::ElasticLoadBalancing::ElasticLoadBalancingClientConfiguration& clientConfiguration = Aws::ElasticLoadBalancing::ElasticLoadBalancingClientConfiguration());
 
 

@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     RULE_MATCHING,
-    ML_MATCHING
+    ML_MATCHING,
+    PROVIDER
   };
 
 namespace ResolutionTypeMapper

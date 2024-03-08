@@ -84,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EmotionName::NOT_SET:
+            return {};
           case EmotionName::HAPPY:
             return "HAPPY";
           case EmotionName::SAD:

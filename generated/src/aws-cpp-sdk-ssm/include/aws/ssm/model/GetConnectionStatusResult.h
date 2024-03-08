@@ -70,32 +70,27 @@ namespace Model
 
 
     /**
-     * <p>The status of the connection to the managed node. For example, 'Connected' or
-     * 'Not Connected'.</p>
+     * <p>The status of the connection to the managed node.</p>
      */
     inline const ConnectionStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of the connection to the managed node. For example, 'Connected' or
-     * 'Not Connected'.</p>
+     * <p>The status of the connection to the managed node.</p>
      */
     inline void SetStatus(const ConnectionStatus& value) { m_status = value; }
 
     /**
-     * <p>The status of the connection to the managed node. For example, 'Connected' or
-     * 'Not Connected'.</p>
+     * <p>The status of the connection to the managed node.</p>
      */
     inline void SetStatus(ConnectionStatus&& value) { m_status = std::move(value); }
 
     /**
-     * <p>The status of the connection to the managed node. For example, 'Connected' or
-     * 'Not Connected'.</p>
+     * <p>The status of the connection to the managed node.</p>
      */
     inline GetConnectionStatusResult& WithStatus(const ConnectionStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of the connection to the managed node. For example, 'Connected' or
-     * 'Not Connected'.</p>
+     * <p>The status of the connection to the managed node.</p>
      */
     inline GetConnectionStatusResult& WithStatus(ConnectionStatus&& value) { SetStatus(std::move(value)); return *this;}
 

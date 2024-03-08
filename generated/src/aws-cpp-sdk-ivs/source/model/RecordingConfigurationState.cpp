@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RecordingConfigurationState::NOT_SET:
+            return {};
           case RecordingConfigurationState::CREATING:
             return "CREATING";
           case RecordingConfigurationState::CREATE_FAILED:

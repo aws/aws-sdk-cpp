@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LogLevel::NOT_SET:
+            return {};
           case LogLevel::INFO:
             return "INFO";
           case LogLevel::WARN:

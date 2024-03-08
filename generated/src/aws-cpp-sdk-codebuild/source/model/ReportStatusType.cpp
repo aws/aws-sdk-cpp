@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReportStatusType::NOT_SET:
+            return {};
           case ReportStatusType::GENERATING:
             return "GENERATING";
           case ReportStatusType::SUCCEEDED:

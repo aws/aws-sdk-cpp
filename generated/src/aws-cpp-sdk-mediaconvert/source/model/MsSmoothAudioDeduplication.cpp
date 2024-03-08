@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MsSmoothAudioDeduplication::NOT_SET:
+            return {};
           case MsSmoothAudioDeduplication::COMBINE_DUPLICATE_STREAMS:
             return "COMBINE_DUPLICATE_STREAMS";
           case MsSmoothAudioDeduplication::NONE:

@@ -178,56 +178,64 @@ namespace Model
     /**
      * <p>The type of dataset.</p> <p>One of the following (case insensitive)
      * values:</p> <ul> <li> <p>Interactions</p> </li> <li> <p>Items</p> </li> <li>
-     * <p>Users</p> </li> </ul>
+     * <p>Users</p> </li> <li> <p>Actions</p> </li> <li> <p>Action_Interactions</p>
+     * </li> </ul>
      */
     inline const Aws::String& GetDatasetType() const{ return m_datasetType; }
 
     /**
      * <p>The type of dataset.</p> <p>One of the following (case insensitive)
      * values:</p> <ul> <li> <p>Interactions</p> </li> <li> <p>Items</p> </li> <li>
-     * <p>Users</p> </li> </ul>
+     * <p>Users</p> </li> <li> <p>Actions</p> </li> <li> <p>Action_Interactions</p>
+     * </li> </ul>
      */
     inline bool DatasetTypeHasBeenSet() const { return m_datasetTypeHasBeenSet; }
 
     /**
      * <p>The type of dataset.</p> <p>One of the following (case insensitive)
      * values:</p> <ul> <li> <p>Interactions</p> </li> <li> <p>Items</p> </li> <li>
-     * <p>Users</p> </li> </ul>
+     * <p>Users</p> </li> <li> <p>Actions</p> </li> <li> <p>Action_Interactions</p>
+     * </li> </ul>
      */
     inline void SetDatasetType(const Aws::String& value) { m_datasetTypeHasBeenSet = true; m_datasetType = value; }
 
     /**
      * <p>The type of dataset.</p> <p>One of the following (case insensitive)
      * values:</p> <ul> <li> <p>Interactions</p> </li> <li> <p>Items</p> </li> <li>
-     * <p>Users</p> </li> </ul>
+     * <p>Users</p> </li> <li> <p>Actions</p> </li> <li> <p>Action_Interactions</p>
+     * </li> </ul>
      */
     inline void SetDatasetType(Aws::String&& value) { m_datasetTypeHasBeenSet = true; m_datasetType = std::move(value); }
 
     /**
      * <p>The type of dataset.</p> <p>One of the following (case insensitive)
      * values:</p> <ul> <li> <p>Interactions</p> </li> <li> <p>Items</p> </li> <li>
-     * <p>Users</p> </li> </ul>
+     * <p>Users</p> </li> <li> <p>Actions</p> </li> <li> <p>Action_Interactions</p>
+     * </li> </ul>
      */
     inline void SetDatasetType(const char* value) { m_datasetTypeHasBeenSet = true; m_datasetType.assign(value); }
 
     /**
      * <p>The type of dataset.</p> <p>One of the following (case insensitive)
      * values:</p> <ul> <li> <p>Interactions</p> </li> <li> <p>Items</p> </li> <li>
-     * <p>Users</p> </li> </ul>
+     * <p>Users</p> </li> <li> <p>Actions</p> </li> <li> <p>Action_Interactions</p>
+     * </li> </ul>
      */
     inline CreateDatasetRequest& WithDatasetType(const Aws::String& value) { SetDatasetType(value); return *this;}
 
     /**
      * <p>The type of dataset.</p> <p>One of the following (case insensitive)
      * values:</p> <ul> <li> <p>Interactions</p> </li> <li> <p>Items</p> </li> <li>
-     * <p>Users</p> </li> </ul>
+     * <p>Users</p> </li> <li> <p>Actions</p> </li> <li> <p>Action_Interactions</p>
+     * </li> </ul>
      */
     inline CreateDatasetRequest& WithDatasetType(Aws::String&& value) { SetDatasetType(std::move(value)); return *this;}
 
     /**
      * <p>The type of dataset.</p> <p>One of the following (case insensitive)
      * values:</p> <ul> <li> <p>Interactions</p> </li> <li> <p>Items</p> </li> <li>
-     * <p>Users</p> </li> </ul>
+     * <p>Users</p> </li> <li> <p>Actions</p> </li> <li> <p>Action_Interactions</p>
+     * </li> </ul>
      */
     inline CreateDatasetRequest& WithDatasetType(const char* value) { SetDatasetType(value); return *this;}
 

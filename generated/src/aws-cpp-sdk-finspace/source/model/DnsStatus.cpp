@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DnsStatus::NOT_SET:
+            return {};
           case DnsStatus::NONE:
             return "NONE";
           case DnsStatus::UPDATE_REQUESTED:

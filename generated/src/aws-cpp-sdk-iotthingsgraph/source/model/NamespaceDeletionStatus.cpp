@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NamespaceDeletionStatus::NOT_SET:
+            return {};
           case NamespaceDeletionStatus::IN_PROGRESS:
             return "IN_PROGRESS";
           case NamespaceDeletionStatus::SUCCEEDED:

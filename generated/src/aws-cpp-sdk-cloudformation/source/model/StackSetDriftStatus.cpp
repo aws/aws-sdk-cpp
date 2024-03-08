@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StackSetDriftStatus::NOT_SET:
+            return {};
           case StackSetDriftStatus::DRIFTED:
             return "DRIFTED";
           case StackSetDriftStatus::IN_SYNC:

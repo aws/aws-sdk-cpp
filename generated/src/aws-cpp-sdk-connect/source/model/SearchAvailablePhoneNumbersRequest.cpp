@@ -14,6 +14,7 @@ using namespace Aws::Utils;
 
 SearchAvailablePhoneNumbersRequest::SearchAvailablePhoneNumbersRequest() : 
     m_targetArnHasBeenSet(false),
+    m_instanceIdHasBeenSet(false),
     m_phoneNumberCountryCode(PhoneNumberCountryCode::NOT_SET),
     m_phoneNumberCountryCodeHasBeenSet(false),
     m_phoneNumberType(PhoneNumberType::NOT_SET),
@@ -32,6 +33,12 @@ Aws::String SearchAvailablePhoneNumbersRequest::SerializePayload() const
   if(m_targetArnHasBeenSet)
   {
    payload.WithString("TargetArn", m_targetArn);
+
+  }
+
+  if(m_instanceIdHasBeenSet)
+  {
+   payload.WithString("InstanceId", m_instanceId);
 
   }
 

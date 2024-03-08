@@ -30,14 +30,14 @@ namespace ECS
    * resource needs, isolation policies, and availability requirements. With Amazon
    * ECS, you don't need to operate your own cluster management and configuration
    * management systems. You also don't need to worry about scaling your management
-   * infrastructure.</p>
+   * infrastructure. </p>
    */
   class AWS_ECS_API ECSClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ECSClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef ECSClientConfiguration ClientConfigurationType;
       typedef ECSEndpointProvider EndpointProviderType;
@@ -47,14 +47,14 @@ namespace ECS
         * is not specified, it will be initialized to default values.
         */
         ECSClient(const Aws::ECS::ECSClientConfiguration& clientConfiguration = Aws::ECS::ECSClientConfiguration(),
-                  std::shared_ptr<ECSEndpointProviderBase> endpointProvider = Aws::MakeShared<ECSEndpointProvider>(ALLOCATION_TAG));
+                  std::shared_ptr<ECSEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         ECSClient(const Aws::Auth::AWSCredentials& credentials,
-                  std::shared_ptr<ECSEndpointProviderBase> endpointProvider = Aws::MakeShared<ECSEndpointProvider>(ALLOCATION_TAG),
+                  std::shared_ptr<ECSEndpointProviderBase> endpointProvider = nullptr,
                   const Aws::ECS::ECSClientConfiguration& clientConfiguration = Aws::ECS::ECSClientConfiguration());
 
        /**
@@ -62,7 +62,7 @@ namespace ECS
         * the default http client factory will be used
         */
         ECSClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                  std::shared_ptr<ECSEndpointProviderBase> endpointProvider = Aws::MakeShared<ECSEndpointProvider>(ALLOCATION_TAG),
+                  std::shared_ptr<ECSEndpointProviderBase> endpointProvider = nullptr,
                   const Aws::ECS::ECSClientConfiguration& clientConfiguration = Aws::ECS::ECSClientConfiguration());
 
 
@@ -175,6 +175,12 @@ namespace ECS
          * associated with the service. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
          * load balancing</a> in the <i>Amazon Elastic Container Service Developer
+         * Guide</i>.</p> <p>You can attach Amazon EBS volumes to Amazon ECS tasks by
+         * configuring the volume when creating or updating a service.
+         * <code>volumeConfigurations</code> is only supported for REPLICA service and not
+         * DAEMON service. For more infomation, see <a
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ebs-volumes.html#ebs-volume-types">Amazon
+         * EBS volumes</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p> <p>Tasks for services that don't use a load balancer are
          * considered healthy if they're in the <code>RUNNING</code> state. Tasks for
          * services that use a load balancer are considered healthy if they're in the
@@ -280,6 +286,10 @@ namespace ECS
          * information, see <a
          * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
          * ECS deployment types</a> in the <i>Amazon Elastic Container Service Developer
+         * Guide</i>.</p> <p>For information about the maximum number of task sets and
+         * otther quotas, see <a
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-quotas.html">Amazon
+         * ECS service quotas</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateTaskSet">AWS
          * API Reference</a></p>
@@ -1193,47 +1203,7 @@ namespace ECS
          * are reset for users and roles that do not have specified individual account
          * settings. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html">Account
-         * Settings</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-         * <p>When you specify <code>serviceLongArnFormat</code>,
-         * <code>taskLongArnFormat</code>, or <code>containerInstanceLongArnFormat</code>,
-         * the Amazon Resource Name (ARN) and resource ID format of the resource type for a
-         * specified user, role, or the root user for an account is affected. The opt-in
-         * and opt-out account setting must be set for each Amazon ECS resource separately.
-         * The ARN and resource ID format of a resource is defined by the opt-in status of
-         * the user or role that created the resource. You must turn on this setting to use
-         * Amazon ECS features such as resource tagging.</p> <p>When you specify
-         * <code>awsvpcTrunking</code>, the elastic network interface (ENI) limit for any
-         * new container instances that support the feature is changed. If
-         * <code>awsvpcTrunking</code> is turned on, any new container instances that
-         * support the feature are launched have the increased ENI limits available to
-         * them. For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-eni.html">Elastic
-         * Network Interface Trunking</a> in the <i>Amazon Elastic Container Service
-         * Developer Guide</i>.</p> <p>When you specify <code>containerInsights</code>, the
-         * default setting indicating whether Amazon Web Services CloudWatch Container
-         * Insights is turned on for your clusters is changed. If
-         * <code>containerInsights</code> is turned on, any new clusters that are created
-         * will have Container Insights turned on unless you disable it during cluster
-         * creation. For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cloudwatch-container-insights.html">CloudWatch
-         * Container Insights</a> in the <i>Amazon Elastic Container Service Developer
-         * Guide</i>.</p> <p>Amazon ECS is introducing tagging authorization for resource
-         * creation. Users must have permissions for actions that create the resource, such
-         * as <code>ecsCreateCluster</code>. If tags are specified when you create a
-         * resource, Amazon Web Services performs additional authorization to verify if
-         * users or roles have permissions to create tags. Therefore, you must grant
-         * explicit permissions to use the <code>ecs:TagResource</code> action. For more
-         * information, see <a
-         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/supported-iam-actions-tagging.html">Grant
-         * permission to tag resources on creation</a> in the <i>Amazon ECS Developer
-         * Guide</i>.</p> <p>When Amazon Web Services determines that a security or
-         * infrastructure update is needed for an Amazon ECS task hosted on Fargate, the
-         * tasks need to be stopped and new tasks launched to replace them. Use
-         * <code>fargateTaskRetirementWaitPeriod</code> to configure the wait time to
-         * retire a Fargate task. For information about the Fargate tasks maintenance, see
-         * <a
-         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-maintenance.html">Amazon
-         * Web Services Fargate task maintenance</a> in the <i>Amazon ECS Developer
+         * Settings</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAccountSetting">AWS
          * API Reference</a></p>
@@ -1445,23 +1415,27 @@ namespace ECS
          * customers will not be able to launch instances with Amazon EI accelerators in
          * Amazon SageMaker, Amazon ECS, or Amazon EC2. However, customers who have used
          * Amazon EI at least once during the past 30-day period are considered current
-         * customers and will be able to continue using the service. </p>  <p>The
-         * Amazon ECS API follows an eventual consistency model. This is because of the
-         * distributed nature of the system supporting the API. This means that the result
-         * of an API command you run that affects your Amazon ECS resources might not be
-         * immediately visible to all subsequent commands you run. Keep this in mind when
-         * you carry out an API command that immediately follows a previous API
-         * command.</p> <p>To manage eventual consistency, you can do the following:</p>
-         * <ul> <li> <p>Confirm the state of the resource before you run a command to
-         * modify it. Run the DescribeTasks command using an exponential backoff algorithm
-         * to ensure that you allow enough time for the previous command to propagate
-         * through the system. To do this, run the DescribeTasks command repeatedly,
-         * starting with a couple of seconds of wait time and increasing gradually up to
-         * five minutes of wait time.</p> </li> <li> <p>Add wait time between subsequent
-         * commands, even if the DescribeTasks command returns an accurate response. Apply
-         * an exponential backoff algorithm starting with a couple of seconds of wait time,
-         * and increase gradually up to about five minutes of wait time.</p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * customers and will be able to continue using the service. </p>  <p>You
+         * can attach Amazon EBS volumes to Amazon ECS tasks by configuring the volume when
+         * creating or updating a service. For more infomation, see <a
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ebs-volumes.html#ebs-volume-types">Amazon
+         * EBS volumes</a> in the <i>Amazon Elastic Container Service Developer
+         * Guide</i>.</p> <p>The Amazon ECS API follows an eventual consistency model. This
+         * is because of the distributed nature of the system supporting the API. This
+         * means that the result of an API command you run that affects your Amazon ECS
+         * resources might not be immediately visible to all subsequent commands you run.
+         * Keep this in mind when you carry out an API command that immediately follows a
+         * previous API command.</p> <p>To manage eventual consistency, you can do the
+         * following:</p> <ul> <li> <p>Confirm the state of the resource before you run a
+         * command to modify it. Run the DescribeTasks command using an exponential backoff
+         * algorithm to ensure that you allow enough time for the previous command to
+         * propagate through the system. To do this, run the DescribeTasks command
+         * repeatedly, starting with a couple of seconds of wait time and increasing
+         * gradually up to five minutes of wait time.</p> </li> <li> <p>Add wait time
+         * between subsequent commands, even if the DescribeTasks command returns an
+         * accurate response. Apply an exponential backoff algorithm starting with a couple
+         * of seconds of wait time, and increase gradually up to about five minutes of wait
+         * time.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RunTask">AWS API
          * Reference</a></p>
          */
@@ -1497,7 +1471,11 @@ namespace ECS
          * to continue using the service. </p>  <p>Alternatively, you can use
          * <a>RunTask</a> to place tasks for you. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling
-         * Tasks</a> in the <i>Amazon Elastic Container Service Developer
+         * Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+         * <p>You can attach Amazon EBS volumes to Amazon ECS tasks by configuring the
+         * volume when creating or updating a service. For more infomation, see <a
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ebs-volumes.html#ebs-volume-types">Amazon
+         * EBS volumes</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StartTask">AWS API
          * Reference</a></p>
@@ -1887,13 +1865,25 @@ namespace ECS
          * configuration, network configuration, load balancers, service registries, enable
          * ECS managed tags option, propagate tags option, task placement constraints and
          * strategies, and task definition. When you update any of these parameters, Amazon
-         * ECS starts new tasks with the new configuration. </p> <p>For services using the
-         * blue/green (<code>CODE_DEPLOY</code>) deployment controller, only the desired
-         * count, deployment configuration, health check grace period, task placement
-         * constraints and strategies, enable ECS managed tags option, and propagate tags
-         * can be updated using this API. If the network configuration, platform version,
-         * task definition, or load balancer need to be updated, create a new CodeDeploy
-         * deployment. For more information, see <a
+         * ECS starts new tasks with the new configuration. </p> <p>You can attach Amazon
+         * EBS volumes to Amazon ECS tasks by configuring the volume when starting or
+         * running a task, or when creating or updating a service. For more infomation, see
+         * <a
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ebs-volumes.html#ebs-volume-types">Amazon
+         * EBS volumes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+         * You can update your volume configurations and trigger a new deployment.
+         * <code>volumeConfigurations</code> is only supported for REPLICA service and not
+         * DAEMON service. If you leave <code>volumeConfigurations</code>
+         * <code>null</code>, it doesn't trigger a new deployment. For more infomation on
+         * volumes, see <a
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ebs-volumes.html#ebs-volume-types">Amazon
+         * EBS volumes</a> in the <i>Amazon Elastic Container Service Developer
+         * Guide</i>.</p> <p>For services using the blue/green (<code>CODE_DEPLOY</code>)
+         * deployment controller, only the desired count, deployment configuration, health
+         * check grace period, task placement constraints and strategies, enable ECS
+         * managed tags option, and propagate tags can be updated using this API. If the
+         * network configuration, platform version, task definition, or load balancer need
+         * to be updated, create a new CodeDeploy deployment. For more information, see <a
          * href="https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_CreateDeployment.html">CreateDeployment</a>
          * in the <i>CodeDeploy API Reference</i>.</p> <p>For services using an external
          * deployment controller, you can update only the desired count, task placement
@@ -1904,12 +1894,17 @@ namespace ECS
          * <a>CreateTaskSet</a>.</p> <p>You can add to or subtract from the number of
          * instantiations of a task definition in a service by specifying the cluster that
          * the service is running in and a new <code>desiredCount</code> parameter.</p>
-         * <p>If you have updated the Docker image of your application, you can create a
-         * new task definition with that image and deploy it to your service. The service
-         * scheduler uses the minimum healthy percent and maximum percent parameters (in
-         * the service's deployment configuration) to determine the deployment
-         * strategy.</p>  <p>If your updated Docker image uses the same tag as what
-         * is in the existing task definition for your service (for example,
+         * <p>You can attach Amazon EBS volumes to Amazon ECS tasks by configuring the
+         * volume when starting or running a task, or when creating or updating a service.
+         * For more infomation, see <a
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ebs-volumes.html#ebs-volume-types">Amazon
+         * EBS volumes</a> in the <i>Amazon Elastic Container Service Developer
+         * Guide</i>.</p> <p>If you have updated the container image of your application,
+         * you can create a new task definition with that image and deploy it to your
+         * service. The service scheduler uses the minimum healthy percent and maximum
+         * percent parameters (in the service's deployment configuration) to determine the
+         * deployment strategy.</p>  <p>If your updated Docker image uses the same
+         * tag as what is in the existing task definition for your service (for example,
          * <code>my_image:latest</code>), you don't need to create a new revision of your
          * task definition. You can update the service using the
          * <code>forceNewDeployment</code> option. The new tasks launched by the deployment

@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SyncMetadataStatus::NOT_SET:
+            return {};
           case SyncMetadataStatus::CREATED:
             return "CREATED";
           case SyncMetadataStatus::RUNNING:

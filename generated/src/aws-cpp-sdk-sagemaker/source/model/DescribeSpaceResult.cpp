@@ -85,6 +85,30 @@ DescribeSpaceResult& DescribeSpaceResult::operator =(const Aws::AmazonWebService
 
   }
 
+  if(jsonValue.ValueExists("OwnershipSettings"))
+  {
+    m_ownershipSettings = jsonValue.GetObject("OwnershipSettings");
+
+  }
+
+  if(jsonValue.ValueExists("SpaceSharingSettings"))
+  {
+    m_spaceSharingSettings = jsonValue.GetObject("SpaceSharingSettings");
+
+  }
+
+  if(jsonValue.ValueExists("SpaceDisplayName"))
+  {
+    m_spaceDisplayName = jsonValue.GetString("SpaceDisplayName");
+
+  }
+
+  if(jsonValue.ValueExists("Url"))
+  {
+    m_url = jsonValue.GetString("Url");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

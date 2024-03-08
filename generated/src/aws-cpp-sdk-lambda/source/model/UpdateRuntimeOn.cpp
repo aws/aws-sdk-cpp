@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UpdateRuntimeOn::NOT_SET:
+            return {};
           case UpdateRuntimeOn::Auto:
             return "Auto";
           case UpdateRuntimeOn::Manual:

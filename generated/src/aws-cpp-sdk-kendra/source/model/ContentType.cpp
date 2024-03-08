@@ -99,6 +99,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ContentType::NOT_SET:
+            return {};
           case ContentType::PDF:
             return "PDF";
           case ContentType::HTML:

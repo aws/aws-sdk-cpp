@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ScheduleAt::NOT_SET:
+            return {};
           case ScheduleAt::NOW:
             return "NOW";
           case ScheduleAt::TIMESTAMP:

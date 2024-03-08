@@ -206,6 +206,9 @@ namespace Aws
                 return false;
 
             const AWSError<CoreErrors>& error = httpResponseOutcome.GetError();
+            if (error.ShouldThrottle()) {
+                return true;
+            }
             const Aws::Client::CoreErrors enumValue = error.GetErrorType();
             switch(enumValue)
             {

@@ -147,42 +147,50 @@ namespace Model
 
 
     /**
-     * <p>Payload content type</p>
+     * <p>Payload content type. The single valid type is
+     * <code>application/vnd.cncf.notary.payload.v1+json</code>.</p>
      */
     inline const Aws::String& GetPayloadFormat() const{ return m_payloadFormat; }
 
     /**
-     * <p>Payload content type</p>
+     * <p>Payload content type. The single valid type is
+     * <code>application/vnd.cncf.notary.payload.v1+json</code>.</p>
      */
     inline bool PayloadFormatHasBeenSet() const { return m_payloadFormatHasBeenSet; }
 
     /**
-     * <p>Payload content type</p>
+     * <p>Payload content type. The single valid type is
+     * <code>application/vnd.cncf.notary.payload.v1+json</code>.</p>
      */
     inline void SetPayloadFormat(const Aws::String& value) { m_payloadFormatHasBeenSet = true; m_payloadFormat = value; }
 
     /**
-     * <p>Payload content type</p>
+     * <p>Payload content type. The single valid type is
+     * <code>application/vnd.cncf.notary.payload.v1+json</code>.</p>
      */
     inline void SetPayloadFormat(Aws::String&& value) { m_payloadFormatHasBeenSet = true; m_payloadFormat = std::move(value); }
 
     /**
-     * <p>Payload content type</p>
+     * <p>Payload content type. The single valid type is
+     * <code>application/vnd.cncf.notary.payload.v1+json</code>.</p>
      */
     inline void SetPayloadFormat(const char* value) { m_payloadFormatHasBeenSet = true; m_payloadFormat.assign(value); }
 
     /**
-     * <p>Payload content type</p>
+     * <p>Payload content type. The single valid type is
+     * <code>application/vnd.cncf.notary.payload.v1+json</code>.</p>
      */
     inline SignPayloadRequest& WithPayloadFormat(const Aws::String& value) { SetPayloadFormat(value); return *this;}
 
     /**
-     * <p>Payload content type</p>
+     * <p>Payload content type. The single valid type is
+     * <code>application/vnd.cncf.notary.payload.v1+json</code>.</p>
      */
     inline SignPayloadRequest& WithPayloadFormat(Aws::String&& value) { SetPayloadFormat(std::move(value)); return *this;}
 
     /**
-     * <p>Payload content type</p>
+     * <p>Payload content type. The single valid type is
+     * <code>application/vnd.cncf.notary.payload.v1+json</code>.</p>
      */
     inline SignPayloadRequest& WithPayloadFormat(const char* value) { SetPayloadFormat(value); return *this;}
 

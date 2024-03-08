@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InstanceHealthCheckState::NOT_SET:
+            return {};
           case InstanceHealthCheckState::OK:
             return "OK";
           case InstanceHealthCheckState::IMPAIRED:

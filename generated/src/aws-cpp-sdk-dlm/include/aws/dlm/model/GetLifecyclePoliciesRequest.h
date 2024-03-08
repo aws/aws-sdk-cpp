@@ -8,6 +8,7 @@
 #include <aws/dlm/DLMRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/dlm/model/GettablePolicyStateValues.h>
+#include <aws/dlm/model/DefaultPoliciesTypeValues.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/dlm/model/ResourceTypeValues.h>
 #include <utility>
@@ -277,6 +278,61 @@ namespace Model
      */
     inline GetLifecyclePoliciesRequest& AddTagsToAdd(const char* value) { m_tagsToAddHasBeenSet = true; m_tagsToAdd.push_back(value); return *this; }
 
+
+    /**
+     * <p> <b>[Default policies only]</b> Specifies the type of default policy to get.
+     * Specify one of the following:</p> <ul> <li> <p> <code>VOLUME</code> - To get
+     * only the default policy for EBS snapshots</p> </li> <li> <p>
+     * <code>INSTANCE</code> - To get only the default policy for EBS-backed AMIs</p>
+     * </li> <li> <p> <code>ALL</code> - To get all default policies</p> </li> </ul>
+     */
+    inline const DefaultPoliciesTypeValues& GetDefaultPolicyType() const{ return m_defaultPolicyType; }
+
+    /**
+     * <p> <b>[Default policies only]</b> Specifies the type of default policy to get.
+     * Specify one of the following:</p> <ul> <li> <p> <code>VOLUME</code> - To get
+     * only the default policy for EBS snapshots</p> </li> <li> <p>
+     * <code>INSTANCE</code> - To get only the default policy for EBS-backed AMIs</p>
+     * </li> <li> <p> <code>ALL</code> - To get all default policies</p> </li> </ul>
+     */
+    inline bool DefaultPolicyTypeHasBeenSet() const { return m_defaultPolicyTypeHasBeenSet; }
+
+    /**
+     * <p> <b>[Default policies only]</b> Specifies the type of default policy to get.
+     * Specify one of the following:</p> <ul> <li> <p> <code>VOLUME</code> - To get
+     * only the default policy for EBS snapshots</p> </li> <li> <p>
+     * <code>INSTANCE</code> - To get only the default policy for EBS-backed AMIs</p>
+     * </li> <li> <p> <code>ALL</code> - To get all default policies</p> </li> </ul>
+     */
+    inline void SetDefaultPolicyType(const DefaultPoliciesTypeValues& value) { m_defaultPolicyTypeHasBeenSet = true; m_defaultPolicyType = value; }
+
+    /**
+     * <p> <b>[Default policies only]</b> Specifies the type of default policy to get.
+     * Specify one of the following:</p> <ul> <li> <p> <code>VOLUME</code> - To get
+     * only the default policy for EBS snapshots</p> </li> <li> <p>
+     * <code>INSTANCE</code> - To get only the default policy for EBS-backed AMIs</p>
+     * </li> <li> <p> <code>ALL</code> - To get all default policies</p> </li> </ul>
+     */
+    inline void SetDefaultPolicyType(DefaultPoliciesTypeValues&& value) { m_defaultPolicyTypeHasBeenSet = true; m_defaultPolicyType = std::move(value); }
+
+    /**
+     * <p> <b>[Default policies only]</b> Specifies the type of default policy to get.
+     * Specify one of the following:</p> <ul> <li> <p> <code>VOLUME</code> - To get
+     * only the default policy for EBS snapshots</p> </li> <li> <p>
+     * <code>INSTANCE</code> - To get only the default policy for EBS-backed AMIs</p>
+     * </li> <li> <p> <code>ALL</code> - To get all default policies</p> </li> </ul>
+     */
+    inline GetLifecyclePoliciesRequest& WithDefaultPolicyType(const DefaultPoliciesTypeValues& value) { SetDefaultPolicyType(value); return *this;}
+
+    /**
+     * <p> <b>[Default policies only]</b> Specifies the type of default policy to get.
+     * Specify one of the following:</p> <ul> <li> <p> <code>VOLUME</code> - To get
+     * only the default policy for EBS snapshots</p> </li> <li> <p>
+     * <code>INSTANCE</code> - To get only the default policy for EBS-backed AMIs</p>
+     * </li> <li> <p> <code>ALL</code> - To get all default policies</p> </li> </ul>
+     */
+    inline GetLifecyclePoliciesRequest& WithDefaultPolicyType(DefaultPoliciesTypeValues&& value) { SetDefaultPolicyType(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<Aws::String> m_policyIds;
@@ -293,6 +349,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_tagsToAdd;
     bool m_tagsToAddHasBeenSet = false;
+
+    DefaultPoliciesTypeValues m_defaultPolicyType;
+    bool m_defaultPolicyTypeHasBeenSet = false;
   };
 
 } // namespace Model

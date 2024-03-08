@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ThirdPartyFirewall::NOT_SET:
+            return {};
           case ThirdPartyFirewall::PALO_ALTO_NETWORKS_CLOUD_NGFW:
             return "PALO_ALTO_NETWORKS_CLOUD_NGFW";
           case ThirdPartyFirewall::FORTIGATE_CLOUD_NATIVE_FIREWALL:

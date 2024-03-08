@@ -68,8 +68,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* ApplicationInsightsClient::SERVICE_NAME = "applicationinsights";
-const char* ApplicationInsightsClient::ALLOCATION_TAG = "ApplicationInsightsClient";
+namespace Aws
+{
+  namespace ApplicationInsights
+  {
+    const char SERVICE_NAME[] = "applicationinsights";
+    const char ALLOCATION_TAG[] = "ApplicationInsightsClient";
+  }
+}
+const char* ApplicationInsightsClient::GetServiceName() {return SERVICE_NAME;}
+const char* ApplicationInsightsClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 ApplicationInsightsClient::ApplicationInsightsClient(const ApplicationInsights::ApplicationInsightsClientConfiguration& clientConfiguration,
                                                      std::shared_ptr<ApplicationInsightsEndpointProviderBase> endpointProvider) :
@@ -81,7 +89,7 @@ ApplicationInsightsClient::ApplicationInsightsClient(const ApplicationInsights::
             Aws::MakeShared<ApplicationInsightsErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ApplicationInsightsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -97,7 +105,7 @@ ApplicationInsightsClient::ApplicationInsightsClient(const AWSCredentials& crede
             Aws::MakeShared<ApplicationInsightsErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ApplicationInsightsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -113,7 +121,7 @@ ApplicationInsightsClient::ApplicationInsightsClient(const std::shared_ptr<AWSCr
             Aws::MakeShared<ApplicationInsightsErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ApplicationInsightsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

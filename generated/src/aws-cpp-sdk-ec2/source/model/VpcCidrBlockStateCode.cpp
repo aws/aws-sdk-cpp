@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VpcCidrBlockStateCode::NOT_SET:
+            return {};
           case VpcCidrBlockStateCode::associating:
             return "associating";
           case VpcCidrBlockStateCode::associated:

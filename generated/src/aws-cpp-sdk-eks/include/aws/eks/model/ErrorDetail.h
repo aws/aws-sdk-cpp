@@ -47,7 +47,7 @@ namespace Model
      * associated with the cluster.</p> </li> <li> <p> <b>EniLimitReached</b>: You have
      * reached the elastic network interface limit for your account.</p> </li> <li> <p>
      * <b>IpNotAvailable</b>: A subnet associated with the cluster doesn't have any
-     * free IP addresses.</p> </li> <li> <p> <b>AccessDenied</b>: You don't have
+     * available IP addresses.</p> </li> <li> <p> <b>AccessDenied</b>: You don't have
      * permissions to perform the specified operation.</p> </li> <li> <p>
      * <b>OperationNotPermitted</b>: The service role associated with the cluster
      * doesn't have the required access permissions for Amazon EKS.</p> </li> <li> <p>
@@ -63,7 +63,7 @@ namespace Model
      * associated with the cluster.</p> </li> <li> <p> <b>EniLimitReached</b>: You have
      * reached the elastic network interface limit for your account.</p> </li> <li> <p>
      * <b>IpNotAvailable</b>: A subnet associated with the cluster doesn't have any
-     * free IP addresses.</p> </li> <li> <p> <b>AccessDenied</b>: You don't have
+     * available IP addresses.</p> </li> <li> <p> <b>AccessDenied</b>: You don't have
      * permissions to perform the specified operation.</p> </li> <li> <p>
      * <b>OperationNotPermitted</b>: The service role associated with the cluster
      * doesn't have the required access permissions for Amazon EKS.</p> </li> <li> <p>
@@ -79,7 +79,7 @@ namespace Model
      * associated with the cluster.</p> </li> <li> <p> <b>EniLimitReached</b>: You have
      * reached the elastic network interface limit for your account.</p> </li> <li> <p>
      * <b>IpNotAvailable</b>: A subnet associated with the cluster doesn't have any
-     * free IP addresses.</p> </li> <li> <p> <b>AccessDenied</b>: You don't have
+     * available IP addresses.</p> </li> <li> <p> <b>AccessDenied</b>: You don't have
      * permissions to perform the specified operation.</p> </li> <li> <p>
      * <b>OperationNotPermitted</b>: The service role associated with the cluster
      * doesn't have the required access permissions for Amazon EKS.</p> </li> <li> <p>
@@ -95,7 +95,7 @@ namespace Model
      * associated with the cluster.</p> </li> <li> <p> <b>EniLimitReached</b>: You have
      * reached the elastic network interface limit for your account.</p> </li> <li> <p>
      * <b>IpNotAvailable</b>: A subnet associated with the cluster doesn't have any
-     * free IP addresses.</p> </li> <li> <p> <b>AccessDenied</b>: You don't have
+     * available IP addresses.</p> </li> <li> <p> <b>AccessDenied</b>: You don't have
      * permissions to perform the specified operation.</p> </li> <li> <p>
      * <b>OperationNotPermitted</b>: The service role associated with the cluster
      * doesn't have the required access permissions for Amazon EKS.</p> </li> <li> <p>
@@ -111,7 +111,7 @@ namespace Model
      * associated with the cluster.</p> </li> <li> <p> <b>EniLimitReached</b>: You have
      * reached the elastic network interface limit for your account.</p> </li> <li> <p>
      * <b>IpNotAvailable</b>: A subnet associated with the cluster doesn't have any
-     * free IP addresses.</p> </li> <li> <p> <b>AccessDenied</b>: You don't have
+     * available IP addresses.</p> </li> <li> <p> <b>AccessDenied</b>: You don't have
      * permissions to perform the specified operation.</p> </li> <li> <p>
      * <b>OperationNotPermitted</b>: The service role associated with the cluster
      * doesn't have the required access permissions for Amazon EKS.</p> </li> <li> <p>
@@ -127,7 +127,7 @@ namespace Model
      * associated with the cluster.</p> </li> <li> <p> <b>EniLimitReached</b>: You have
      * reached the elastic network interface limit for your account.</p> </li> <li> <p>
      * <b>IpNotAvailable</b>: A subnet associated with the cluster doesn't have any
-     * free IP addresses.</p> </li> <li> <p> <b>AccessDenied</b>: You don't have
+     * available IP addresses.</p> </li> <li> <p> <b>AccessDenied</b>: You don't have
      * permissions to perform the specified operation.</p> </li> <li> <p>
      * <b>OperationNotPermitted</b>: The service role associated with the cluster
      * doesn't have the required access permissions for Amazon EKS.</p> </li> <li> <p>

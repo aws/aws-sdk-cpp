@@ -124,6 +124,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PackageManager::NOT_SET:
+            return {};
           case PackageManager::BUNDLER:
             return "BUNDLER";
           case PackageManager::CARGO:

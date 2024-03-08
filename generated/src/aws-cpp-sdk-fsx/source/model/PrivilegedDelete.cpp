@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PrivilegedDelete::NOT_SET:
+            return {};
           case PrivilegedDelete::DISABLED:
             return "DISABLED";
           case PrivilegedDelete::ENABLED:

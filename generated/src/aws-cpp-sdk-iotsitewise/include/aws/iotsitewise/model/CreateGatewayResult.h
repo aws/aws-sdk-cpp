@@ -34,43 +34,43 @@ namespace Model
 
     /**
      * <p>The ID of the gateway device. You can use this ID when you call other IoT
-     * SiteWise APIs.</p>
+     * SiteWise API operations.</p>
      */
     inline const Aws::String& GetGatewayId() const{ return m_gatewayId; }
 
     /**
      * <p>The ID of the gateway device. You can use this ID when you call other IoT
-     * SiteWise APIs.</p>
+     * SiteWise API operations.</p>
      */
     inline void SetGatewayId(const Aws::String& value) { m_gatewayId = value; }
 
     /**
      * <p>The ID of the gateway device. You can use this ID when you call other IoT
-     * SiteWise APIs.</p>
+     * SiteWise API operations.</p>
      */
     inline void SetGatewayId(Aws::String&& value) { m_gatewayId = std::move(value); }
 
     /**
      * <p>The ID of the gateway device. You can use this ID when you call other IoT
-     * SiteWise APIs.</p>
+     * SiteWise API operations.</p>
      */
     inline void SetGatewayId(const char* value) { m_gatewayId.assign(value); }
 
     /**
      * <p>The ID of the gateway device. You can use this ID when you call other IoT
-     * SiteWise APIs.</p>
+     * SiteWise API operations.</p>
      */
     inline CreateGatewayResult& WithGatewayId(const Aws::String& value) { SetGatewayId(value); return *this;}
 
     /**
      * <p>The ID of the gateway device. You can use this ID when you call other IoT
-     * SiteWise APIs.</p>
+     * SiteWise API operations.</p>
      */
     inline CreateGatewayResult& WithGatewayId(Aws::String&& value) { SetGatewayId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the gateway device. You can use this ID when you call other IoT
-     * SiteWise APIs.</p>
+     * SiteWise API operations.</p>
      */
     inline CreateGatewayResult& WithGatewayId(const char* value) { SetGatewayId(value); return *this;}
 

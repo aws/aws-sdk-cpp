@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case S3InputFileType::NOT_SET:
+            return {};
           case S3InputFileType::CSV:
             return "CSV";
           case S3InputFileType::JSON:

@@ -28,8 +28,8 @@ namespace VPCLattice
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef VPCLatticeClientConfiguration ClientConfigurationType;
       typedef VPCLatticeEndpointProvider EndpointProviderType;
@@ -39,14 +39,14 @@ namespace VPCLattice
         * is not specified, it will be initialized to default values.
         */
         VPCLatticeClient(const Aws::VPCLattice::VPCLatticeClientConfiguration& clientConfiguration = Aws::VPCLattice::VPCLatticeClientConfiguration(),
-                         std::shared_ptr<VPCLatticeEndpointProviderBase> endpointProvider = Aws::MakeShared<VPCLatticeEndpointProvider>(ALLOCATION_TAG));
+                         std::shared_ptr<VPCLatticeEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         VPCLatticeClient(const Aws::Auth::AWSCredentials& credentials,
-                         std::shared_ptr<VPCLatticeEndpointProviderBase> endpointProvider = Aws::MakeShared<VPCLatticeEndpointProvider>(ALLOCATION_TAG),
+                         std::shared_ptr<VPCLatticeEndpointProviderBase> endpointProvider = nullptr,
                          const Aws::VPCLattice::VPCLatticeClientConfiguration& clientConfiguration = Aws::VPCLattice::VPCLatticeClientConfiguration());
 
        /**
@@ -54,7 +54,7 @@ namespace VPCLattice
         * the default http client factory will be used
         */
         VPCLatticeClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                         std::shared_ptr<VPCLatticeEndpointProviderBase> endpointProvider = Aws::MakeShared<VPCLatticeEndpointProvider>(ALLOCATION_TAG),
+                         std::shared_ptr<VPCLatticeEndpointProviderBase> endpointProvider = nullptr,
                          const Aws::VPCLattice::VPCLatticeClientConfiguration& clientConfiguration = Aws::VPCLattice::VPCLatticeClientConfiguration());
 
 

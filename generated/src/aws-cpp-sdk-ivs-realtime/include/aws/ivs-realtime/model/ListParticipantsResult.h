@@ -35,43 +35,43 @@ namespace Model
 
 
     /**
-     * <p>If there are more rooms than <code>maxResults</code>, use
+     * <p>If there are more participants than <code>maxResults</code>, use
      * <code>nextToken</code> in the request to get the next set.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>If there are more rooms than <code>maxResults</code>, use
+     * <p>If there are more participants than <code>maxResults</code>, use
      * <code>nextToken</code> in the request to get the next set.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>If there are more rooms than <code>maxResults</code>, use
+     * <p>If there are more participants than <code>maxResults</code>, use
      * <code>nextToken</code> in the request to get the next set.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p>If there are more rooms than <code>maxResults</code>, use
+     * <p>If there are more participants than <code>maxResults</code>, use
      * <code>nextToken</code> in the request to get the next set.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>If there are more rooms than <code>maxResults</code>, use
+     * <p>If there are more participants than <code>maxResults</code>, use
      * <code>nextToken</code> in the request to get the next set.</p>
      */
     inline ListParticipantsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>If there are more rooms than <code>maxResults</code>, use
+     * <p>If there are more participants than <code>maxResults</code>, use
      * <code>nextToken</code> in the request to get the next set.</p>
      */
     inline ListParticipantsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>If there are more rooms than <code>maxResults</code>, use
+     * <p>If there are more participants than <code>maxResults</code>, use
      * <code>nextToken</code> in the request to get the next set.</p>
      */
     inline ListParticipantsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}

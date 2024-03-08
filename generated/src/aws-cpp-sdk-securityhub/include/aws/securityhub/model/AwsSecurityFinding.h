@@ -2177,6 +2177,136 @@ namespace Model
      */
     inline AwsSecurityFinding& WithGeneratorDetails(GeneratorDetails&& value) { SetGeneratorDetails(std::move(value)); return *this;}
 
+
+    /**
+     * <p>An ISO8601-formatted timestamp that indicates when Security Hub received a
+     * finding and begins to process it.</p> <p>A correctly formatted example is
+     * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
+     * and time should be separated by <code>T</code>. For more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
+     */
+    inline const Aws::String& GetProcessedAt() const{ return m_processedAt; }
+
+    /**
+     * <p>An ISO8601-formatted timestamp that indicates when Security Hub received a
+     * finding and begins to process it.</p> <p>A correctly formatted example is
+     * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
+     * and time should be separated by <code>T</code>. For more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
+     */
+    inline bool ProcessedAtHasBeenSet() const { return m_processedAtHasBeenSet; }
+
+    /**
+     * <p>An ISO8601-formatted timestamp that indicates when Security Hub received a
+     * finding and begins to process it.</p> <p>A correctly formatted example is
+     * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
+     * and time should be separated by <code>T</code>. For more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
+     */
+    inline void SetProcessedAt(const Aws::String& value) { m_processedAtHasBeenSet = true; m_processedAt = value; }
+
+    /**
+     * <p>An ISO8601-formatted timestamp that indicates when Security Hub received a
+     * finding and begins to process it.</p> <p>A correctly formatted example is
+     * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
+     * and time should be separated by <code>T</code>. For more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
+     */
+    inline void SetProcessedAt(Aws::String&& value) { m_processedAtHasBeenSet = true; m_processedAt = std::move(value); }
+
+    /**
+     * <p>An ISO8601-formatted timestamp that indicates when Security Hub received a
+     * finding and begins to process it.</p> <p>A correctly formatted example is
+     * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
+     * and time should be separated by <code>T</code>. For more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
+     */
+    inline void SetProcessedAt(const char* value) { m_processedAtHasBeenSet = true; m_processedAt.assign(value); }
+
+    /**
+     * <p>An ISO8601-formatted timestamp that indicates when Security Hub received a
+     * finding and begins to process it.</p> <p>A correctly formatted example is
+     * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
+     * and time should be separated by <code>T</code>. For more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
+     */
+    inline AwsSecurityFinding& WithProcessedAt(const Aws::String& value) { SetProcessedAt(value); return *this;}
+
+    /**
+     * <p>An ISO8601-formatted timestamp that indicates when Security Hub received a
+     * finding and begins to process it.</p> <p>A correctly formatted example is
+     * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
+     * and time should be separated by <code>T</code>. For more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
+     */
+    inline AwsSecurityFinding& WithProcessedAt(Aws::String&& value) { SetProcessedAt(std::move(value)); return *this;}
+
+    /**
+     * <p>An ISO8601-formatted timestamp that indicates when Security Hub received a
+     * finding and begins to process it.</p> <p>A correctly formatted example is
+     * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
+     * and time should be separated by <code>T</code>. For more information, see <a
+     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
+     * Internet Date/Time Format</a>.</p>
+     */
+    inline AwsSecurityFinding& WithProcessedAt(const char* value) { SetProcessedAt(value); return *this;}
+
+
+    /**
+     * <p>The name of the Amazon Web Services account from which a finding was
+     * generated. </p>
+     */
+    inline const Aws::String& GetAwsAccountName() const{ return m_awsAccountName; }
+
+    /**
+     * <p>The name of the Amazon Web Services account from which a finding was
+     * generated. </p>
+     */
+    inline bool AwsAccountNameHasBeenSet() const { return m_awsAccountNameHasBeenSet; }
+
+    /**
+     * <p>The name of the Amazon Web Services account from which a finding was
+     * generated. </p>
+     */
+    inline void SetAwsAccountName(const Aws::String& value) { m_awsAccountNameHasBeenSet = true; m_awsAccountName = value; }
+
+    /**
+     * <p>The name of the Amazon Web Services account from which a finding was
+     * generated. </p>
+     */
+    inline void SetAwsAccountName(Aws::String&& value) { m_awsAccountNameHasBeenSet = true; m_awsAccountName = std::move(value); }
+
+    /**
+     * <p>The name of the Amazon Web Services account from which a finding was
+     * generated. </p>
+     */
+    inline void SetAwsAccountName(const char* value) { m_awsAccountNameHasBeenSet = true; m_awsAccountName.assign(value); }
+
+    /**
+     * <p>The name of the Amazon Web Services account from which a finding was
+     * generated. </p>
+     */
+    inline AwsSecurityFinding& WithAwsAccountName(const Aws::String& value) { SetAwsAccountName(value); return *this;}
+
+    /**
+     * <p>The name of the Amazon Web Services account from which a finding was
+     * generated. </p>
+     */
+    inline AwsSecurityFinding& WithAwsAccountName(Aws::String&& value) { SetAwsAccountName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the Amazon Web Services account from which a finding was
+     * generated. </p>
+     */
+    inline AwsSecurityFinding& WithAwsAccountName(const char* value) { SetAwsAccountName(value); return *this;}
+
   private:
 
     Aws::String m_schemaVersion;
@@ -2304,6 +2434,12 @@ namespace Model
 
     GeneratorDetails m_generatorDetails;
     bool m_generatorDetailsHasBeenSet = false;
+
+    Aws::String m_processedAt;
+    bool m_processedAtHasBeenSet = false;
+
+    Aws::String m_awsAccountName;
+    bool m_awsAccountNameHasBeenSet = false;
   };
 
 } // namespace Model

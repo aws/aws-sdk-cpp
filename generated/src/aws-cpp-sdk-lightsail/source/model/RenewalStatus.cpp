@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RenewalStatus::NOT_SET:
+            return {};
           case RenewalStatus::PendingAutoRenewal:
             return "PendingAutoRenewal";
           case RenewalStatus::PendingValidation:

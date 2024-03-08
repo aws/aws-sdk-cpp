@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DeviceStatus::NOT_SET:
+            return {};
           case DeviceStatus::READY:
             return "READY";
           case DeviceStatus::PENDING:

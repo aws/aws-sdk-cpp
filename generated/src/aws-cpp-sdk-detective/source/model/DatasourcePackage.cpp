@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DatasourcePackage::NOT_SET:
+            return {};
           case DatasourcePackage::DETECTIVE_CORE:
             return "DETECTIVE_CORE";
           case DatasourcePackage::EKS_AUDIT:

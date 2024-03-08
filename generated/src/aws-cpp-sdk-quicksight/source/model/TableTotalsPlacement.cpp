@@ -22,6 +22,7 @@ namespace Aws
 
         static const int START_HASH = HashingUtils::HashString("START");
         static const int END_HASH = HashingUtils::HashString("END");
+        static const int AUTO_HASH = HashingUtils::HashString("AUTO");
 
 
         TableTotalsPlacement GetTableTotalsPlacementForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == END_HASH)
           {
             return TableTotalsPlacement::END;
+          }
+          else if (hashCode == AUTO_HASH)
+          {
+            return TableTotalsPlacement::AUTO;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -49,10 +54,14 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TableTotalsPlacement::NOT_SET:
+            return {};
           case TableTotalsPlacement::START:
             return "START";
           case TableTotalsPlacement::END:
             return "END";
+          case TableTotalsPlacement::AUTO:
+            return "AUTO";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

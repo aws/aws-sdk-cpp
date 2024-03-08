@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DataSourceFilterVariable::NOT_SET:
+            return {};
           case DataSourceFilterVariable::CreatedAt:
             return "CreatedAt";
           case DataSourceFilterVariable::LastUpdatedAt:

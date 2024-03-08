@@ -17,7 +17,9 @@ DescribeSnapshotsRequest::DescribeSnapshotsRequest() :
     m_filtersHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+    m_nextTokenHasBeenSet(false),
+    m_includeShared(false),
+    m_includeSharedHasBeenSet(false)
 {
 }
 
@@ -56,6 +58,12 @@ Aws::String DescribeSnapshotsRequest::SerializePayload() const
   if(m_nextTokenHasBeenSet)
   {
    payload.WithString("NextToken", m_nextToken);
+
+  }
+
+  if(m_includeSharedHasBeenSet)
+  {
+   payload.WithBool("IncludeShared", m_includeShared);
 
   }
 

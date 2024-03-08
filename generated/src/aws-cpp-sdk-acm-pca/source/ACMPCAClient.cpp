@@ -58,8 +58,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* ACMPCAClient::SERVICE_NAME = "acm-pca";
-const char* ACMPCAClient::ALLOCATION_TAG = "ACMPCAClient";
+namespace Aws
+{
+  namespace ACMPCA
+  {
+    const char SERVICE_NAME[] = "acm-pca";
+    const char ALLOCATION_TAG[] = "ACMPCAClient";
+  }
+}
+const char* ACMPCAClient::GetServiceName() {return SERVICE_NAME;}
+const char* ACMPCAClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 ACMPCAClient::ACMPCAClient(const ACMPCA::ACMPCAClientConfiguration& clientConfiguration,
                            std::shared_ptr<ACMPCAEndpointProviderBase> endpointProvider) :
@@ -71,7 +79,7 @@ ACMPCAClient::ACMPCAClient(const ACMPCA::ACMPCAClientConfiguration& clientConfig
             Aws::MakeShared<ACMPCAErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ACMPCAEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -87,7 +95,7 @@ ACMPCAClient::ACMPCAClient(const AWSCredentials& credentials,
             Aws::MakeShared<ACMPCAErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ACMPCAEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -103,7 +111,7 @@ ACMPCAClient::ACMPCAClient(const std::shared_ptr<AWSCredentialsProvider>& creden
             Aws::MakeShared<ACMPCAErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ACMPCAEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

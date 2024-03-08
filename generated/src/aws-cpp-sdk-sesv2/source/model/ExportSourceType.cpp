@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ExportSourceType::NOT_SET:
+            return {};
           case ExportSourceType::METRICS_DATA:
             return "METRICS_DATA";
           case ExportSourceType::MESSAGE_INSIGHTS:

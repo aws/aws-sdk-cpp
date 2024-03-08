@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MaintenanceWindowTaskType::NOT_SET:
+            return {};
           case MaintenanceWindowTaskType::RUN_COMMAND:
             return "RUN_COMMAND";
           case MaintenanceWindowTaskType::AUTOMATION:

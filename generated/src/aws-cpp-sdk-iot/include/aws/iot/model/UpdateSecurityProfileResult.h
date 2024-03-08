@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/iot/model/MetricsExportConfig.h>
 #include <aws/iot/model/Behavior.h>
 #include <aws/iot/model/AlertTargetType.h>
 #include <aws/iot/model/AlertTarget.h>
@@ -361,6 +362,32 @@ namespace Model
     inline UpdateSecurityProfileResult& WithLastModifiedDate(Aws::Utils::DateTime&& value) { SetLastModifiedDate(std::move(value)); return *this;}
 
 
+    /**
+     * <p>Specifies the MQTT topic and role ARN required for metric export.</p>
+     */
+    inline const MetricsExportConfig& GetMetricsExportConfig() const{ return m_metricsExportConfig; }
+
+    /**
+     * <p>Specifies the MQTT topic and role ARN required for metric export.</p>
+     */
+    inline void SetMetricsExportConfig(const MetricsExportConfig& value) { m_metricsExportConfig = value; }
+
+    /**
+     * <p>Specifies the MQTT topic and role ARN required for metric export.</p>
+     */
+    inline void SetMetricsExportConfig(MetricsExportConfig&& value) { m_metricsExportConfig = std::move(value); }
+
+    /**
+     * <p>Specifies the MQTT topic and role ARN required for metric export.</p>
+     */
+    inline UpdateSecurityProfileResult& WithMetricsExportConfig(const MetricsExportConfig& value) { SetMetricsExportConfig(value); return *this;}
+
+    /**
+     * <p>Specifies the MQTT topic and role ARN required for metric export.</p>
+     */
+    inline UpdateSecurityProfileResult& WithMetricsExportConfig(MetricsExportConfig&& value) { SetMetricsExportConfig(std::move(value)); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -401,6 +428,8 @@ namespace Model
     Aws::Utils::DateTime m_creationDate;
 
     Aws::Utils::DateTime m_lastModifiedDate;
+
+    MetricsExportConfig m_metricsExportConfig;
 
     Aws::String m_requestId;
   };

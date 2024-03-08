@@ -130,58 +130,58 @@ namespace Model
 
 
     /**
-     * <p>The endpoint to use when communicating with the cluster. Kinesis Data
-     * Firehose uses either this ClusterEndpoint or the DomainARN field to send data to
-     * Amazon OpenSearch Service. </p>
+     * <p>The endpoint to use when communicating with the cluster. Firehose uses either
+     * this ClusterEndpoint or the DomainARN field to send data to Amazon OpenSearch
+     * Service. </p>
      */
     inline const Aws::String& GetClusterEndpoint() const{ return m_clusterEndpoint; }
 
     /**
-     * <p>The endpoint to use when communicating with the cluster. Kinesis Data
-     * Firehose uses either this ClusterEndpoint or the DomainARN field to send data to
-     * Amazon OpenSearch Service. </p>
+     * <p>The endpoint to use when communicating with the cluster. Firehose uses either
+     * this ClusterEndpoint or the DomainARN field to send data to Amazon OpenSearch
+     * Service. </p>
      */
     inline bool ClusterEndpointHasBeenSet() const { return m_clusterEndpointHasBeenSet; }
 
     /**
-     * <p>The endpoint to use when communicating with the cluster. Kinesis Data
-     * Firehose uses either this ClusterEndpoint or the DomainARN field to send data to
-     * Amazon OpenSearch Service. </p>
+     * <p>The endpoint to use when communicating with the cluster. Firehose uses either
+     * this ClusterEndpoint or the DomainARN field to send data to Amazon OpenSearch
+     * Service. </p>
      */
     inline void SetClusterEndpoint(const Aws::String& value) { m_clusterEndpointHasBeenSet = true; m_clusterEndpoint = value; }
 
     /**
-     * <p>The endpoint to use when communicating with the cluster. Kinesis Data
-     * Firehose uses either this ClusterEndpoint or the DomainARN field to send data to
-     * Amazon OpenSearch Service. </p>
+     * <p>The endpoint to use when communicating with the cluster. Firehose uses either
+     * this ClusterEndpoint or the DomainARN field to send data to Amazon OpenSearch
+     * Service. </p>
      */
     inline void SetClusterEndpoint(Aws::String&& value) { m_clusterEndpointHasBeenSet = true; m_clusterEndpoint = std::move(value); }
 
     /**
-     * <p>The endpoint to use when communicating with the cluster. Kinesis Data
-     * Firehose uses either this ClusterEndpoint or the DomainARN field to send data to
-     * Amazon OpenSearch Service. </p>
+     * <p>The endpoint to use when communicating with the cluster. Firehose uses either
+     * this ClusterEndpoint or the DomainARN field to send data to Amazon OpenSearch
+     * Service. </p>
      */
     inline void SetClusterEndpoint(const char* value) { m_clusterEndpointHasBeenSet = true; m_clusterEndpoint.assign(value); }
 
     /**
-     * <p>The endpoint to use when communicating with the cluster. Kinesis Data
-     * Firehose uses either this ClusterEndpoint or the DomainARN field to send data to
-     * Amazon OpenSearch Service. </p>
+     * <p>The endpoint to use when communicating with the cluster. Firehose uses either
+     * this ClusterEndpoint or the DomainARN field to send data to Amazon OpenSearch
+     * Service. </p>
      */
     inline AmazonopensearchserviceDestinationDescription& WithClusterEndpoint(const Aws::String& value) { SetClusterEndpoint(value); return *this;}
 
     /**
-     * <p>The endpoint to use when communicating with the cluster. Kinesis Data
-     * Firehose uses either this ClusterEndpoint or the DomainARN field to send data to
-     * Amazon OpenSearch Service. </p>
+     * <p>The endpoint to use when communicating with the cluster. Firehose uses either
+     * this ClusterEndpoint or the DomainARN field to send data to Amazon OpenSearch
+     * Service. </p>
      */
     inline AmazonopensearchserviceDestinationDescription& WithClusterEndpoint(Aws::String&& value) { SetClusterEndpoint(std::move(value)); return *this;}
 
     /**
-     * <p>The endpoint to use when communicating with the cluster. Kinesis Data
-     * Firehose uses either this ClusterEndpoint or the DomainARN field to send data to
-     * Amazon OpenSearch Service. </p>
+     * <p>The endpoint to use when communicating with the cluster. Firehose uses either
+     * this ClusterEndpoint or the DomainARN field to send data to Amazon OpenSearch
+     * Service. </p>
      */
     inline AmazonopensearchserviceDestinationDescription& WithClusterEndpoint(const char* value) { SetClusterEndpoint(value); return *this;}
 
@@ -486,43 +486,37 @@ namespace Model
 
     /**
      * <p>Indicates the method for setting up document ID. The supported methods are
-     * Kinesis Data Firehose generated document ID and OpenSearch Service generated
-     * document ID.</p>
+     * Firehose generated document ID and OpenSearch Service generated document ID.</p>
      */
     inline const DocumentIdOptions& GetDocumentIdOptions() const{ return m_documentIdOptions; }
 
     /**
      * <p>Indicates the method for setting up document ID. The supported methods are
-     * Kinesis Data Firehose generated document ID and OpenSearch Service generated
-     * document ID.</p>
+     * Firehose generated document ID and OpenSearch Service generated document ID.</p>
      */
     inline bool DocumentIdOptionsHasBeenSet() const { return m_documentIdOptionsHasBeenSet; }
 
     /**
      * <p>Indicates the method for setting up document ID. The supported methods are
-     * Kinesis Data Firehose generated document ID and OpenSearch Service generated
-     * document ID.</p>
+     * Firehose generated document ID and OpenSearch Service generated document ID.</p>
      */
     inline void SetDocumentIdOptions(const DocumentIdOptions& value) { m_documentIdOptionsHasBeenSet = true; m_documentIdOptions = value; }
 
     /**
      * <p>Indicates the method for setting up document ID. The supported methods are
-     * Kinesis Data Firehose generated document ID and OpenSearch Service generated
-     * document ID.</p>
+     * Firehose generated document ID and OpenSearch Service generated document ID.</p>
      */
     inline void SetDocumentIdOptions(DocumentIdOptions&& value) { m_documentIdOptionsHasBeenSet = true; m_documentIdOptions = std::move(value); }
 
     /**
      * <p>Indicates the method for setting up document ID. The supported methods are
-     * Kinesis Data Firehose generated document ID and OpenSearch Service generated
-     * document ID.</p>
+     * Firehose generated document ID and OpenSearch Service generated document ID.</p>
      */
     inline AmazonopensearchserviceDestinationDescription& WithDocumentIdOptions(const DocumentIdOptions& value) { SetDocumentIdOptions(value); return *this;}
 
     /**
      * <p>Indicates the method for setting up document ID. The supported methods are
-     * Kinesis Data Firehose generated document ID and OpenSearch Service generated
-     * document ID.</p>
+     * Firehose generated document ID and OpenSearch Service generated document ID.</p>
      */
     inline AmazonopensearchserviceDestinationDescription& WithDocumentIdOptions(DocumentIdOptions&& value) { SetDocumentIdOptions(std::move(value)); return *this;}
 

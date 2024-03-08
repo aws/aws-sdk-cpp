@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StreamingSessionStorageMode::NOT_SET:
+            return {};
           case StreamingSessionStorageMode::UPLOAD:
             return "UPLOAD";
           default:

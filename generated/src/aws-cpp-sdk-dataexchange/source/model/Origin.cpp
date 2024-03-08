@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Origin::NOT_SET:
+            return {};
           case Origin::OWNED:
             return "OWNED";
           case Origin::ENTITLED:

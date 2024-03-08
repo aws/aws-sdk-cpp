@@ -28,7 +28,8 @@ namespace Model
     AWS_ECR_Repository,
     AWS_RDS_DBSnapshot,
     AWS_RDS_DBClusterSnapshot,
-    AWS_SNS_Topic
+    AWS_SNS_Topic,
+    AWS_S3Express_DirectoryBucket
   };
 
 namespace ResourceTypeMapper

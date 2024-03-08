@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ControlResponse::NOT_SET:
+            return {};
           case ControlResponse::MANUAL:
             return "MANUAL";
           case ControlResponse::AUTOMATE:

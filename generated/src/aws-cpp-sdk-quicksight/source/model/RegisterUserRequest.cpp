@@ -26,7 +26,8 @@ RegisterUserRequest::RegisterUserRequest() :
     m_customPermissionsNameHasBeenSet(false),
     m_externalLoginFederationProviderTypeHasBeenSet(false),
     m_customFederationProviderUrlHasBeenSet(false),
-    m_externalLoginIdHasBeenSet(false)
+    m_externalLoginIdHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -89,6 +90,17 @@ Aws::String RegisterUserRequest::SerializePayload() const
   if(m_externalLoginIdHasBeenSet)
   {
    payload.WithString("ExternalLoginId", m_externalLoginId);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
 
   }
 

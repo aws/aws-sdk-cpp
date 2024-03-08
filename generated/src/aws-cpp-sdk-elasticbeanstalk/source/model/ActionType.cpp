@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ActionType::NOT_SET:
+            return {};
           case ActionType::InstanceRefresh:
             return "InstanceRefresh";
           case ActionType::PlatformUpdate:

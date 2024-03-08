@@ -99,6 +99,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RelationshipStatus::NOT_SET:
+            return {};
           case RelationshipStatus::CREATED:
             return "CREATED";
           case RelationshipStatus::INVITED:

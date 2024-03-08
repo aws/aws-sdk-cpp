@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RecordMarkerFailedCause::NOT_SET:
+            return {};
           case RecordMarkerFailedCause::OPERATION_NOT_PERMITTED:
             return "OPERATION_NOT_PERMITTED";
           default:

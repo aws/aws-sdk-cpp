@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StyledCellType::NOT_SET:
+            return {};
           case StyledCellType::TOTAL:
             return "TOTAL";
           case StyledCellType::METRIC_HEADER:

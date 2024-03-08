@@ -21,6 +21,8 @@ namespace Aws
       {
 
         static const int RecordDeAggregation_HASH = HashingUtils::HashString("RecordDeAggregation");
+        static const int Decompression_HASH = HashingUtils::HashString("Decompression");
+        static const int CloudWatchLogProcessing_HASH = HashingUtils::HashString("CloudWatchLogProcessing");
         static const int Lambda_HASH = HashingUtils::HashString("Lambda");
         static const int MetadataExtraction_HASH = HashingUtils::HashString("MetadataExtraction");
         static const int AppendDelimiterToRecord_HASH = HashingUtils::HashString("AppendDelimiterToRecord");
@@ -32,6 +34,14 @@ namespace Aws
           if (hashCode == RecordDeAggregation_HASH)
           {
             return ProcessorType::RecordDeAggregation;
+          }
+          else if (hashCode == Decompression_HASH)
+          {
+            return ProcessorType::Decompression;
+          }
+          else if (hashCode == CloudWatchLogProcessing_HASH)
+          {
+            return ProcessorType::CloudWatchLogProcessing;
           }
           else if (hashCode == Lambda_HASH)
           {
@@ -59,8 +69,14 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ProcessorType::NOT_SET:
+            return {};
           case ProcessorType::RecordDeAggregation:
             return "RecordDeAggregation";
+          case ProcessorType::Decompression:
+            return "Decompression";
+          case ProcessorType::CloudWatchLogProcessing:
+            return "CloudWatchLogProcessing";
           case ProcessorType::Lambda:
             return "Lambda";
           case ProcessorType::MetadataExtraction:

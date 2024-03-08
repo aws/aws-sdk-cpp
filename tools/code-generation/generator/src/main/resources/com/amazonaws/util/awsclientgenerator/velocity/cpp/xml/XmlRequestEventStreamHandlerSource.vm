@@ -26,6 +26,12 @@ namespace Model
 
     ${operation.name}Handler::${operation.name}Handler() : EventStreamHandler()
     {
+        m_onInitialResponse = [&](const ${operation.name}InitialResponse&)
+        {
+            AWS_LOGSTREAM_TRACE(${operation.name.toUpperCase()}_HANDLER_CLASS_TAG,
+                "${operation.name} initial response received.");
+        };
+
 #foreach($eventMemberEntry in $eventStreamShape.members.entrySet())
 #set($eventShape = $eventMemberEntry.value.shape)
 #if($eventShape.isException())
@@ -99,6 +105,19 @@ namespace Model
         }
         switch (${operation.name}EventMapper::Get${operation.name}EventTypeForName(eventTypeHeaderIter->second.GetEventHeaderValueAsString()))
         {
+
+        case ${operation.name}EventType::INITIAL_RESPONSE: 
+        {
+            auto xmlDoc = XmlDocument::CreateFromXmlString(GetEventPayloadAsString());
+            if (!xmlDoc.WasParseSuccessful())
+            {
+                AWS_LOGSTREAM_WARN(${operation.name.toUpperCase()}_HANDLER_CLASS_TAG, "Unable to generate a proper InitialResponse object from the response in XML format.");
+                break;
+            }
+            ${operation.name}InitialResponse event(xmlDoc.GetRootElement());
+            m_onInitialResponse(event);
+            break;
+        }   
 #foreach($eventMemberEntry in $eventStreamShape.members.entrySet())
 #set($eventShape = $eventMemberEntry.value.shape)
 #if($eventShape.isException())
@@ -211,6 +230,7 @@ namespace Model
 
 namespace ${operation.name}EventMapper
 {
+    static const int INITIAL_RESPONSE_HASH = Aws::Utils::HashingUtils::HashString("initial-response");
 #foreach($eventMemberEntry in $eventStreamShape.members.entrySet())
 #if(!$eventMemberEntry.value.shape.isException())
 #set($memberKey = $eventMemberEntry.key)
@@ -221,15 +241,19 @@ namespace ${operation.name}EventMapper
     ${operation.name}EventType Get${operation.name}EventTypeForName(const Aws::String& name)
     {
         int hashCode = Aws::Utils::HashingUtils::HashString(name.c_str());
-#set($elseText = "")
+
+        if (hashCode == INITIAL_RESPONSE_HASH) 
+        {
+            return ${operation.name}EventType::INITIAL_RESPONSE;
+        }
+
 #foreach($eventMemberEntry in $eventStreamShape.members.entrySet())
 #if(!$eventMemberEntry.value.shape.isException())
 #set($memberKeyUpperCase = $eventMemberEntry.key.toUpperCase())
-        ${elseText}if (hashCode == ${memberKeyUpperCase}_HASH)
+        else if (hashCode == ${memberKeyUpperCase}_HASH)
         {
             return ${operation.name}EventType::${memberKeyUpperCase};
         }
-#set($elseText = "else ")
 #end
 #end
         return ${operation.name}EventType::UNKNOWN;
@@ -239,6 +263,8 @@ namespace ${operation.name}EventMapper
     {
         switch (value)
         {
+        case ${operation.name}EventType::INITIAL_RESPONSE:
+            return "initial-response";
 #foreach($eventMemberEntry in $eventStreamShape.members.entrySet())
 #if(!$eventMemberEntry.value.shape.isException())
 #set($memberKey = $eventMemberEntry.key)

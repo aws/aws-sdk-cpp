@@ -24,7 +24,9 @@ Behavior::Behavior() :
     m_metricDimensionHasBeenSet(false),
     m_criteriaHasBeenSet(false),
     m_suppressAlerts(false),
-    m_suppressAlertsHasBeenSet(false)
+    m_suppressAlertsHasBeenSet(false),
+    m_exportMetric(false),
+    m_exportMetricHasBeenSet(false)
 {
 }
 
@@ -34,7 +36,9 @@ Behavior::Behavior(JsonView jsonValue) :
     m_metricDimensionHasBeenSet(false),
     m_criteriaHasBeenSet(false),
     m_suppressAlerts(false),
-    m_suppressAlertsHasBeenSet(false)
+    m_suppressAlertsHasBeenSet(false),
+    m_exportMetric(false),
+    m_exportMetricHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -76,6 +80,13 @@ Behavior& Behavior::operator =(JsonView jsonValue)
     m_suppressAlertsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("exportMetric"))
+  {
+    m_exportMetric = jsonValue.GetBool("exportMetric");
+
+    m_exportMetricHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -110,6 +121,12 @@ JsonValue Behavior::Jsonize() const
   if(m_suppressAlertsHasBeenSet)
   {
    payload.WithBool("suppressAlerts", m_suppressAlerts);
+
+  }
+
+  if(m_exportMetricHasBeenSet)
+  {
+   payload.WithBool("exportMetric", m_exportMetric);
 
   }
 

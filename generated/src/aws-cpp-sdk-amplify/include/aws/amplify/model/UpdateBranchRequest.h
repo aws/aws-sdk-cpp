@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/amplify/model/Stage.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/amplify/model/Backend.h>
 #include <utility>
 
 namespace Aws
@@ -19,7 +20,7 @@ namespace Model
 {
 
   /**
-   * <p> The request structure for the update branch request. </p><p><h3>See
+   * <p>The request structure for the update branch request. </p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/UpdateBranchRequest">AWS
    * API Reference</a></p>
@@ -80,42 +81,42 @@ namespace Model
 
 
     /**
-     * <p> The name for the branch. </p>
+     * <p>The name of the branch. </p>
      */
     inline const Aws::String& GetBranchName() const{ return m_branchName; }
 
     /**
-     * <p> The name for the branch. </p>
+     * <p>The name of the branch. </p>
      */
     inline bool BranchNameHasBeenSet() const { return m_branchNameHasBeenSet; }
 
     /**
-     * <p> The name for the branch. </p>
+     * <p>The name of the branch. </p>
      */
     inline void SetBranchName(const Aws::String& value) { m_branchNameHasBeenSet = true; m_branchName = value; }
 
     /**
-     * <p> The name for the branch. </p>
+     * <p>The name of the branch. </p>
      */
     inline void SetBranchName(Aws::String&& value) { m_branchNameHasBeenSet = true; m_branchName = std::move(value); }
 
     /**
-     * <p> The name for the branch. </p>
+     * <p>The name of the branch. </p>
      */
     inline void SetBranchName(const char* value) { m_branchNameHasBeenSet = true; m_branchName.assign(value); }
 
     /**
-     * <p> The name for the branch. </p>
+     * <p>The name of the branch. </p>
      */
     inline UpdateBranchRequest& WithBranchName(const Aws::String& value) { SetBranchName(value); return *this;}
 
     /**
-     * <p> The name for the branch. </p>
+     * <p>The name of the branch. </p>
      */
     inline UpdateBranchRequest& WithBranchName(Aws::String&& value) { SetBranchName(std::move(value)); return *this;}
 
     /**
-     * <p> The name for the branch. </p>
+     * <p>The name of the branch. </p>
      */
     inline UpdateBranchRequest& WithBranchName(const char* value) { SetBranchName(value); return *this;}
 
@@ -646,52 +647,89 @@ namespace Model
 
 
     /**
-     * <p> The Amazon Resource Name (ARN) for a backend environment that is part of an
+     * <p>The Amazon Resource Name (ARN) for a backend environment that is part of an
      * Amplify app. </p>
      */
     inline const Aws::String& GetBackendEnvironmentArn() const{ return m_backendEnvironmentArn; }
 
     /**
-     * <p> The Amazon Resource Name (ARN) for a backend environment that is part of an
+     * <p>The Amazon Resource Name (ARN) for a backend environment that is part of an
      * Amplify app. </p>
      */
     inline bool BackendEnvironmentArnHasBeenSet() const { return m_backendEnvironmentArnHasBeenSet; }
 
     /**
-     * <p> The Amazon Resource Name (ARN) for a backend environment that is part of an
+     * <p>The Amazon Resource Name (ARN) for a backend environment that is part of an
      * Amplify app. </p>
      */
     inline void SetBackendEnvironmentArn(const Aws::String& value) { m_backendEnvironmentArnHasBeenSet = true; m_backendEnvironmentArn = value; }
 
     /**
-     * <p> The Amazon Resource Name (ARN) for a backend environment that is part of an
+     * <p>The Amazon Resource Name (ARN) for a backend environment that is part of an
      * Amplify app. </p>
      */
     inline void SetBackendEnvironmentArn(Aws::String&& value) { m_backendEnvironmentArnHasBeenSet = true; m_backendEnvironmentArn = std::move(value); }
 
     /**
-     * <p> The Amazon Resource Name (ARN) for a backend environment that is part of an
+     * <p>The Amazon Resource Name (ARN) for a backend environment that is part of an
      * Amplify app. </p>
      */
     inline void SetBackendEnvironmentArn(const char* value) { m_backendEnvironmentArnHasBeenSet = true; m_backendEnvironmentArn.assign(value); }
 
     /**
-     * <p> The Amazon Resource Name (ARN) for a backend environment that is part of an
+     * <p>The Amazon Resource Name (ARN) for a backend environment that is part of an
      * Amplify app. </p>
      */
     inline UpdateBranchRequest& WithBackendEnvironmentArn(const Aws::String& value) { SetBackendEnvironmentArn(value); return *this;}
 
     /**
-     * <p> The Amazon Resource Name (ARN) for a backend environment that is part of an
+     * <p>The Amazon Resource Name (ARN) for a backend environment that is part of an
      * Amplify app. </p>
      */
     inline UpdateBranchRequest& WithBackendEnvironmentArn(Aws::String&& value) { SetBackendEnvironmentArn(std::move(value)); return *this;}
 
     /**
-     * <p> The Amazon Resource Name (ARN) for a backend environment that is part of an
+     * <p>The Amazon Resource Name (ARN) for a backend environment that is part of an
      * Amplify app. </p>
      */
     inline UpdateBranchRequest& WithBackendEnvironmentArn(const char* value) { SetBackendEnvironmentArn(value); return *this;}
+
+
+    /**
+     * <p>The backend for a <code>Branch</code> of an Amplify app. Use for a backend
+     * created from an CloudFormation stack.</p>
+     */
+    inline const Backend& GetBackend() const{ return m_backend; }
+
+    /**
+     * <p>The backend for a <code>Branch</code> of an Amplify app. Use for a backend
+     * created from an CloudFormation stack.</p>
+     */
+    inline bool BackendHasBeenSet() const { return m_backendHasBeenSet; }
+
+    /**
+     * <p>The backend for a <code>Branch</code> of an Amplify app. Use for a backend
+     * created from an CloudFormation stack.</p>
+     */
+    inline void SetBackend(const Backend& value) { m_backendHasBeenSet = true; m_backend = value; }
+
+    /**
+     * <p>The backend for a <code>Branch</code> of an Amplify app. Use for a backend
+     * created from an CloudFormation stack.</p>
+     */
+    inline void SetBackend(Backend&& value) { m_backendHasBeenSet = true; m_backend = std::move(value); }
+
+    /**
+     * <p>The backend for a <code>Branch</code> of an Amplify app. Use for a backend
+     * created from an CloudFormation stack.</p>
+     */
+    inline UpdateBranchRequest& WithBackend(const Backend& value) { SetBackend(value); return *this;}
+
+    /**
+     * <p>The backend for a <code>Branch</code> of an Amplify app. Use for a backend
+     * created from an CloudFormation stack.</p>
+     */
+    inline UpdateBranchRequest& WithBackend(Backend&& value) { SetBackend(std::move(value)); return *this;}
 
   private:
 
@@ -745,6 +783,9 @@ namespace Model
 
     Aws::String m_backendEnvironmentArn;
     bool m_backendEnvironmentArnHasBeenSet = false;
+
+    Backend m_backend;
+    bool m_backendHasBeenSet = false;
   };
 
 } // namespace Model

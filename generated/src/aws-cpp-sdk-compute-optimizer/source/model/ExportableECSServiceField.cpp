@@ -44,6 +44,10 @@ namespace Aws
         static const int RecommendationOptionsProjectedUtilizationMetricsCpuMaximum_HASH = HashingUtils::HashString("RecommendationOptionsProjectedUtilizationMetricsCpuMaximum");
         static const int RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum_HASH = HashingUtils::HashString("RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum");
         static const int Tags_HASH = HashingUtils::HashString("Tags");
+        static const int EffectiveRecommendationPreferencesSavingsEstimationMode_HASH = HashingUtils::HashString("EffectiveRecommendationPreferencesSavingsEstimationMode");
+        static const int RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage_HASH = HashingUtils::HashString("RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage");
+        static const int RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts_HASH = HashingUtils::HashString("RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts");
+        static const int RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts_HASH = HashingUtils::HashString("RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts");
 
 
         ExportableECSServiceField GetExportableECSServiceFieldForName(const Aws::String& name)
@@ -145,6 +149,22 @@ namespace Aws
           {
             return ExportableECSServiceField::Tags;
           }
+          else if (hashCode == EffectiveRecommendationPreferencesSavingsEstimationMode_HASH)
+          {
+            return ExportableECSServiceField::EffectiveRecommendationPreferencesSavingsEstimationMode;
+          }
+          else if (hashCode == RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage_HASH)
+          {
+            return ExportableECSServiceField::RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage;
+          }
+          else if (hashCode == RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts_HASH)
+          {
+            return ExportableECSServiceField::RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts;
+          }
+          else if (hashCode == RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts_HASH)
+          {
+            return ExportableECSServiceField::RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -159,6 +179,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ExportableECSServiceField::NOT_SET:
+            return {};
           case ExportableECSServiceField::AccountId:
             return "AccountId";
           case ExportableECSServiceField::ServiceArn:
@@ -207,6 +229,14 @@ namespace Aws
             return "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum";
           case ExportableECSServiceField::Tags:
             return "Tags";
+          case ExportableECSServiceField::EffectiveRecommendationPreferencesSavingsEstimationMode:
+            return "EffectiveRecommendationPreferencesSavingsEstimationMode";
+          case ExportableECSServiceField::RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage:
+            return "RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage";
+          case ExportableECSServiceField::RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts:
+            return "RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts";
+          case ExportableECSServiceField::RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts:
+            return "RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

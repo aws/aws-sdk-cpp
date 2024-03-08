@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AnchorOption::NOT_SET:
+            return {};
           case AnchorOption::NOW:
             return "NOW";
           default:

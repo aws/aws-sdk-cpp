@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Layout::NOT_SET:
+            return {};
           case Layout::BOTTOM_BANNER:
             return "BOTTOM_BANNER";
           case Layout::TOP_BANNER:

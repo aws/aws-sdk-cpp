@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case GeoSpatialCountryCode::NOT_SET:
+            return {};
           case GeoSpatialCountryCode::US:
             return "US";
           default:

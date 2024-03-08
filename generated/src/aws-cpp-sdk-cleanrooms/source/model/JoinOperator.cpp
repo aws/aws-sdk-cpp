@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case JoinOperator::NOT_SET:
+            return {};
           case JoinOperator::OR:
             return "OR";
           case JoinOperator::AND:

@@ -14,6 +14,7 @@ using namespace Aws::Utils;
 
 ClaimPhoneNumberRequest::ClaimPhoneNumberRequest() : 
     m_targetArnHasBeenSet(false),
+    m_instanceIdHasBeenSet(false),
     m_phoneNumberHasBeenSet(false),
     m_phoneNumberDescriptionHasBeenSet(false),
     m_tagsHasBeenSet(false),
@@ -29,6 +30,12 @@ Aws::String ClaimPhoneNumberRequest::SerializePayload() const
   if(m_targetArnHasBeenSet)
   {
    payload.WithString("TargetArn", m_targetArn);
+
+  }
+
+  if(m_instanceIdHasBeenSet)
+  {
+   payload.WithString("InstanceId", m_instanceId);
 
   }
 

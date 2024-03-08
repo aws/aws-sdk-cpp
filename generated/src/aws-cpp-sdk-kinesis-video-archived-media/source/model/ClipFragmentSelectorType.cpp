@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ClipFragmentSelectorType::NOT_SET:
+            return {};
           case ClipFragmentSelectorType::PRODUCER_TIMESTAMP:
             return "PRODUCER_TIMESTAMP";
           case ClipFragmentSelectorType::SERVER_TIMESTAMP:

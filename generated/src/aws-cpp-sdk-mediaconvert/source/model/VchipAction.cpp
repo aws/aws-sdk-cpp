@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VchipAction::NOT_SET:
+            return {};
           case VchipAction::PASSTHROUGH:
             return "PASSTHROUGH";
           case VchipAction::STRIP:

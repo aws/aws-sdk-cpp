@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DeletionMode::NOT_SET:
+            return {};
           case DeletionMode::SoftDelete:
             return "SoftDelete";
           case DeletionMode::HardDelete:

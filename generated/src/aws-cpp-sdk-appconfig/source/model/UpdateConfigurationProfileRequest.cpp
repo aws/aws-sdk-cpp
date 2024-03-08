@@ -18,7 +18,8 @@ UpdateConfigurationProfileRequest::UpdateConfigurationProfileRequest() :
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_retrievalRoleArnHasBeenSet(false),
-    m_validatorsHasBeenSet(false)
+    m_validatorsHasBeenSet(false),
+    m_kmsKeyIdentifierHasBeenSet(false)
 {
 }
 
@@ -52,6 +53,12 @@ Aws::String UpdateConfigurationProfileRequest::SerializePayload() const
      validatorsJsonList[validatorsIndex].AsObject(m_validators[validatorsIndex].Jsonize());
    }
    payload.WithArray("Validators", std::move(validatorsJsonList));
+
+  }
+
+  if(m_kmsKeyIdentifierHasBeenSet)
+  {
+   payload.WithString("KmsKeyIdentifier", m_kmsKeyIdentifier);
 
   }
 

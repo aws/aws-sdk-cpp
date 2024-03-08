@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>The configuration object for Config rule evaluation mode. The Supported valid
+   * <p>The configuration object for Config rule evaluation mode. The supported valid
    * values are Detective or Proactive.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/EvaluationModeConfiguration">AWS
    * API Reference</a></p>

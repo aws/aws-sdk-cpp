@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LocalGatewayRouteTableMode::NOT_SET:
+            return {};
           case LocalGatewayRouteTableMode::direct_vpc_routing:
             return "direct-vpc-routing";
           case LocalGatewayRouteTableMode::coip:

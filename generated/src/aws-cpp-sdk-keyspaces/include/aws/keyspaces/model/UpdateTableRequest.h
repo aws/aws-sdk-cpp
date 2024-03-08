@@ -13,7 +13,9 @@
 #include <aws/keyspaces/model/PointInTimeRecovery.h>
 #include <aws/keyspaces/model/TimeToLive.h>
 #include <aws/keyspaces/model/ClientSideTimestamps.h>
+#include <aws/keyspaces/model/AutoScalingSpecification.h>
 #include <aws/keyspaces/model/ColumnDefinition.h>
+#include <aws/keyspaces/model/ReplicaSpecification.h>
 #include <utility>
 
 namespace Aws
@@ -585,6 +587,144 @@ namespace Model
      */
     inline UpdateTableRequest& WithClientSideTimestamps(ClientSideTimestamps&& value) { SetClientSideTimestamps(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The optional auto scaling settings to update for a table in provisioned
+     * capacity mode. Specifies if the service can manage throughput capacity of a
+     * provisioned table automatically on your behalf. Amazon Keyspaces auto scaling
+     * helps you provision throughput capacity for variable workloads efficiently by
+     * increasing and decreasing your table's read and write capacity automatically in
+     * response to application traffic.</p> <p>If auto scaling is already enabled for
+     * the table, you can use <code>UpdateTable</code> to update the minimum and
+     * maximum values or the auto scaling policy settings independently.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html">Managing
+     * throughput capacity automatically with Amazon Keyspaces auto scaling</a> in the
+     * <i>Amazon Keyspaces Developer Guide</i>.</p>
+     */
+    inline const AutoScalingSpecification& GetAutoScalingSpecification() const{ return m_autoScalingSpecification; }
+
+    /**
+     * <p>The optional auto scaling settings to update for a table in provisioned
+     * capacity mode. Specifies if the service can manage throughput capacity of a
+     * provisioned table automatically on your behalf. Amazon Keyspaces auto scaling
+     * helps you provision throughput capacity for variable workloads efficiently by
+     * increasing and decreasing your table's read and write capacity automatically in
+     * response to application traffic.</p> <p>If auto scaling is already enabled for
+     * the table, you can use <code>UpdateTable</code> to update the minimum and
+     * maximum values or the auto scaling policy settings independently.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html">Managing
+     * throughput capacity automatically with Amazon Keyspaces auto scaling</a> in the
+     * <i>Amazon Keyspaces Developer Guide</i>.</p>
+     */
+    inline bool AutoScalingSpecificationHasBeenSet() const { return m_autoScalingSpecificationHasBeenSet; }
+
+    /**
+     * <p>The optional auto scaling settings to update for a table in provisioned
+     * capacity mode. Specifies if the service can manage throughput capacity of a
+     * provisioned table automatically on your behalf. Amazon Keyspaces auto scaling
+     * helps you provision throughput capacity for variable workloads efficiently by
+     * increasing and decreasing your table's read and write capacity automatically in
+     * response to application traffic.</p> <p>If auto scaling is already enabled for
+     * the table, you can use <code>UpdateTable</code> to update the minimum and
+     * maximum values or the auto scaling policy settings independently.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html">Managing
+     * throughput capacity automatically with Amazon Keyspaces auto scaling</a> in the
+     * <i>Amazon Keyspaces Developer Guide</i>.</p>
+     */
+    inline void SetAutoScalingSpecification(const AutoScalingSpecification& value) { m_autoScalingSpecificationHasBeenSet = true; m_autoScalingSpecification = value; }
+
+    /**
+     * <p>The optional auto scaling settings to update for a table in provisioned
+     * capacity mode. Specifies if the service can manage throughput capacity of a
+     * provisioned table automatically on your behalf. Amazon Keyspaces auto scaling
+     * helps you provision throughput capacity for variable workloads efficiently by
+     * increasing and decreasing your table's read and write capacity automatically in
+     * response to application traffic.</p> <p>If auto scaling is already enabled for
+     * the table, you can use <code>UpdateTable</code> to update the minimum and
+     * maximum values or the auto scaling policy settings independently.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html">Managing
+     * throughput capacity automatically with Amazon Keyspaces auto scaling</a> in the
+     * <i>Amazon Keyspaces Developer Guide</i>.</p>
+     */
+    inline void SetAutoScalingSpecification(AutoScalingSpecification&& value) { m_autoScalingSpecificationHasBeenSet = true; m_autoScalingSpecification = std::move(value); }
+
+    /**
+     * <p>The optional auto scaling settings to update for a table in provisioned
+     * capacity mode. Specifies if the service can manage throughput capacity of a
+     * provisioned table automatically on your behalf. Amazon Keyspaces auto scaling
+     * helps you provision throughput capacity for variable workloads efficiently by
+     * increasing and decreasing your table's read and write capacity automatically in
+     * response to application traffic.</p> <p>If auto scaling is already enabled for
+     * the table, you can use <code>UpdateTable</code> to update the minimum and
+     * maximum values or the auto scaling policy settings independently.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html">Managing
+     * throughput capacity automatically with Amazon Keyspaces auto scaling</a> in the
+     * <i>Amazon Keyspaces Developer Guide</i>.</p>
+     */
+    inline UpdateTableRequest& WithAutoScalingSpecification(const AutoScalingSpecification& value) { SetAutoScalingSpecification(value); return *this;}
+
+    /**
+     * <p>The optional auto scaling settings to update for a table in provisioned
+     * capacity mode. Specifies if the service can manage throughput capacity of a
+     * provisioned table automatically on your behalf. Amazon Keyspaces auto scaling
+     * helps you provision throughput capacity for variable workloads efficiently by
+     * increasing and decreasing your table's read and write capacity automatically in
+     * response to application traffic.</p> <p>If auto scaling is already enabled for
+     * the table, you can use <code>UpdateTable</code> to update the minimum and
+     * maximum values or the auto scaling policy settings independently.</p> <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/keyspaces/latest/devguide/autoscaling.html">Managing
+     * throughput capacity automatically with Amazon Keyspaces auto scaling</a> in the
+     * <i>Amazon Keyspaces Developer Guide</i>.</p>
+     */
+    inline UpdateTableRequest& WithAutoScalingSpecification(AutoScalingSpecification&& value) { SetAutoScalingSpecification(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The Region specific settings of a multi-Regional table.</p>
+     */
+    inline const Aws::Vector<ReplicaSpecification>& GetReplicaSpecifications() const{ return m_replicaSpecifications; }
+
+    /**
+     * <p>The Region specific settings of a multi-Regional table.</p>
+     */
+    inline bool ReplicaSpecificationsHasBeenSet() const { return m_replicaSpecificationsHasBeenSet; }
+
+    /**
+     * <p>The Region specific settings of a multi-Regional table.</p>
+     */
+    inline void SetReplicaSpecifications(const Aws::Vector<ReplicaSpecification>& value) { m_replicaSpecificationsHasBeenSet = true; m_replicaSpecifications = value; }
+
+    /**
+     * <p>The Region specific settings of a multi-Regional table.</p>
+     */
+    inline void SetReplicaSpecifications(Aws::Vector<ReplicaSpecification>&& value) { m_replicaSpecificationsHasBeenSet = true; m_replicaSpecifications = std::move(value); }
+
+    /**
+     * <p>The Region specific settings of a multi-Regional table.</p>
+     */
+    inline UpdateTableRequest& WithReplicaSpecifications(const Aws::Vector<ReplicaSpecification>& value) { SetReplicaSpecifications(value); return *this;}
+
+    /**
+     * <p>The Region specific settings of a multi-Regional table.</p>
+     */
+    inline UpdateTableRequest& WithReplicaSpecifications(Aws::Vector<ReplicaSpecification>&& value) { SetReplicaSpecifications(std::move(value)); return *this;}
+
+    /**
+     * <p>The Region specific settings of a multi-Regional table.</p>
+     */
+    inline UpdateTableRequest& AddReplicaSpecifications(const ReplicaSpecification& value) { m_replicaSpecificationsHasBeenSet = true; m_replicaSpecifications.push_back(value); return *this; }
+
+    /**
+     * <p>The Region specific settings of a multi-Regional table.</p>
+     */
+    inline UpdateTableRequest& AddReplicaSpecifications(ReplicaSpecification&& value) { m_replicaSpecificationsHasBeenSet = true; m_replicaSpecifications.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_keyspaceName;
@@ -613,6 +753,12 @@ namespace Model
 
     ClientSideTimestamps m_clientSideTimestamps;
     bool m_clientSideTimestampsHasBeenSet = false;
+
+    AutoScalingSpecification m_autoScalingSpecification;
+    bool m_autoScalingSpecificationHasBeenSet = false;
+
+    Aws::Vector<ReplicaSpecification> m_replicaSpecifications;
+    bool m_replicaSpecificationsHasBeenSet = false;
   };
 
 } // namespace Model

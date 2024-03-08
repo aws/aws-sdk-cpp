@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReplicationConfigurationReplicatedDiskStagingDiskType::NOT_SET:
+            return {};
           case ReplicationConfigurationReplicatedDiskStagingDiskType::AUTO:
             return "AUTO";
           case ReplicationConfigurationReplicatedDiskStagingDiskType::GP2:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MsSmoothManifestEncoding::NOT_SET:
+            return {};
           case MsSmoothManifestEncoding::UTF8:
             return "UTF8";
           case MsSmoothManifestEncoding::UTF16:

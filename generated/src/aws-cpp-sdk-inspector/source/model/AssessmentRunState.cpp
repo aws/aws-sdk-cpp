@@ -104,6 +104,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AssessmentRunState::NOT_SET:
+            return {};
           case AssessmentRunState::CREATED:
             return "CREATED";
           case AssessmentRunState::START_DATA_COLLECTION_PENDING:

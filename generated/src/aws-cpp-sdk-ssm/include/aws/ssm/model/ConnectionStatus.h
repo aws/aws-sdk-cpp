@@ -16,8 +16,8 @@ namespace Model
   enum class ConnectionStatus
   {
     NOT_SET,
-    Connected,
-    NotConnected
+    connected,
+    notconnected
   };
 
 namespace ConnectionStatusMapper

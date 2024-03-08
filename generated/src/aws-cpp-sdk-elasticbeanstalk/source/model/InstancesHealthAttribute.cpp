@@ -94,6 +94,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InstancesHealthAttribute::NOT_SET:
+            return {};
           case InstancesHealthAttribute::HealthStatus:
             return "HealthStatus";
           case InstancesHealthAttribute::Color:

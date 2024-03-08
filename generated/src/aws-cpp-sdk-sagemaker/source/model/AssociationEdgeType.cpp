@@ -24,6 +24,7 @@ namespace Aws
         static const int AssociatedWith_HASH = HashingUtils::HashString("AssociatedWith");
         static const int DerivedFrom_HASH = HashingUtils::HashString("DerivedFrom");
         static const int Produced_HASH = HashingUtils::HashString("Produced");
+        static const int SameAs_HASH = HashingUtils::HashString("SameAs");
 
 
         AssociationEdgeType GetAssociationEdgeTypeForName(const Aws::String& name)
@@ -45,6 +46,10 @@ namespace Aws
           {
             return AssociationEdgeType::Produced;
           }
+          else if (hashCode == SameAs_HASH)
+          {
+            return AssociationEdgeType::SameAs;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -59,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AssociationEdgeType::NOT_SET:
+            return {};
           case AssociationEdgeType::ContributedTo:
             return "ContributedTo";
           case AssociationEdgeType::AssociatedWith:
@@ -67,6 +74,8 @@ namespace Aws
             return "DerivedFrom";
           case AssociationEdgeType::Produced:
             return "Produced";
+          case AssociationEdgeType::SameAs:
+            return "SameAs";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

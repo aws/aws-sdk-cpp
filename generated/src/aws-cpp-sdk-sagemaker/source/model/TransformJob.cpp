@@ -35,6 +35,7 @@ TransformJob::TransformJob() :
     m_environmentHasBeenSet(false),
     m_transformInputHasBeenSet(false),
     m_transformOutputHasBeenSet(false),
+    m_dataCaptureConfigHasBeenSet(false),
     m_transformResourcesHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
     m_transformStartTimeHasBeenSet(false),
@@ -43,8 +44,7 @@ TransformJob::TransformJob() :
     m_autoMLJobArnHasBeenSet(false),
     m_dataProcessingHasBeenSet(false),
     m_experimentConfigHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_dataCaptureConfigHasBeenSet(false)
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -65,6 +65,7 @@ TransformJob::TransformJob(JsonView jsonValue) :
     m_environmentHasBeenSet(false),
     m_transformInputHasBeenSet(false),
     m_transformOutputHasBeenSet(false),
+    m_dataCaptureConfigHasBeenSet(false),
     m_transformResourcesHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
     m_transformStartTimeHasBeenSet(false),
@@ -73,8 +74,7 @@ TransformJob::TransformJob(JsonView jsonValue) :
     m_autoMLJobArnHasBeenSet(false),
     m_dataProcessingHasBeenSet(false),
     m_experimentConfigHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_dataCaptureConfigHasBeenSet(false)
+    m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -168,6 +168,13 @@ TransformJob& TransformJob::operator =(JsonView jsonValue)
     m_transformOutputHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DataCaptureConfig"))
+  {
+    m_dataCaptureConfig = jsonValue.GetObject("DataCaptureConfig");
+
+    m_dataCaptureConfigHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("TransformResources"))
   {
     m_transformResources = jsonValue.GetObject("TransformResources");
@@ -232,13 +239,6 @@ TransformJob& TransformJob::operator =(JsonView jsonValue)
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
     }
     m_tagsHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("DataCaptureConfig"))
-  {
-    m_dataCaptureConfig = jsonValue.GetObject("DataCaptureConfig");
-
-    m_dataCaptureConfigHasBeenSet = true;
   }
 
   return *this;
@@ -323,6 +323,12 @@ JsonValue TransformJob::Jsonize() const
 
   }
 
+  if(m_dataCaptureConfigHasBeenSet)
+  {
+   payload.WithObject("DataCaptureConfig", m_dataCaptureConfig.Jsonize());
+
+  }
+
   if(m_transformResourcesHasBeenSet)
   {
    payload.WithObject("TransformResources", m_transformResources.Jsonize());
@@ -376,12 +382,6 @@ JsonValue TransformJob::Jsonize() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
-
-  }
-
-  if(m_dataCaptureConfigHasBeenSet)
-  {
-   payload.WithObject("DataCaptureConfig", m_dataCaptureConfig.Jsonize());
 
   }
 

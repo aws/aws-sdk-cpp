@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ImportResourceType::NOT_SET:
+            return {};
           case ImportResourceType::Bot:
             return "Bot";
           case ImportResourceType::BotLocale:

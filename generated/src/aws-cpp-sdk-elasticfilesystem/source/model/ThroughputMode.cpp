@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ThroughputMode::NOT_SET:
+            return {};
           case ThroughputMode::bursting:
             return "bursting";
           case ThroughputMode::provisioned:

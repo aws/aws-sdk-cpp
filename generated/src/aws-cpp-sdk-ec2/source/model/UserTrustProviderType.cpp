@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UserTrustProviderType::NOT_SET:
+            return {};
           case UserTrustProviderType::iam_identity_center:
             return "iam-identity-center";
           case UserTrustProviderType::oidc:

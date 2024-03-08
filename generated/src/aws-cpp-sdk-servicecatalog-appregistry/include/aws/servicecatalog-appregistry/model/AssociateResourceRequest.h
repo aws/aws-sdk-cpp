@@ -8,6 +8,8 @@
 #include <aws/servicecatalog-appregistry/AppRegistryRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/servicecatalog-appregistry/model/ResourceType.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/servicecatalog-appregistry/model/AssociationOption.h>
 #include <utility>
 
 namespace Aws
@@ -153,6 +155,47 @@ namespace Model
      */
     inline AssociateResourceRequest& WithResource(const char* value) { SetResource(value); return *this;}
 
+
+    /**
+     * <p> Determines whether an application tag is applied or skipped. </p>
+     */
+    inline const Aws::Vector<AssociationOption>& GetOptions() const{ return m_options; }
+
+    /**
+     * <p> Determines whether an application tag is applied or skipped. </p>
+     */
+    inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
+
+    /**
+     * <p> Determines whether an application tag is applied or skipped. </p>
+     */
+    inline void SetOptions(const Aws::Vector<AssociationOption>& value) { m_optionsHasBeenSet = true; m_options = value; }
+
+    /**
+     * <p> Determines whether an application tag is applied or skipped. </p>
+     */
+    inline void SetOptions(Aws::Vector<AssociationOption>&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
+
+    /**
+     * <p> Determines whether an application tag is applied or skipped. </p>
+     */
+    inline AssociateResourceRequest& WithOptions(const Aws::Vector<AssociationOption>& value) { SetOptions(value); return *this;}
+
+    /**
+     * <p> Determines whether an application tag is applied or skipped. </p>
+     */
+    inline AssociateResourceRequest& WithOptions(Aws::Vector<AssociationOption>&& value) { SetOptions(std::move(value)); return *this;}
+
+    /**
+     * <p> Determines whether an application tag is applied or skipped. </p>
+     */
+    inline AssociateResourceRequest& AddOptions(const AssociationOption& value) { m_optionsHasBeenSet = true; m_options.push_back(value); return *this; }
+
+    /**
+     * <p> Determines whether an application tag is applied or skipped. </p>
+     */
+    inline AssociateResourceRequest& AddOptions(AssociationOption&& value) { m_optionsHasBeenSet = true; m_options.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_application;
@@ -163,6 +206,9 @@ namespace Model
 
     Aws::String m_resource;
     bool m_resourceHasBeenSet = false;
+
+    Aws::Vector<AssociationOption> m_options;
+    bool m_optionsHasBeenSet = false;
   };
 
 } // namespace Model

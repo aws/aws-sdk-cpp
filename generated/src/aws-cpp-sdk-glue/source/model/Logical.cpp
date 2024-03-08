@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Logical::NOT_SET:
+            return {};
           case Logical::AND:
             return "AND";
           case Logical::ANY:

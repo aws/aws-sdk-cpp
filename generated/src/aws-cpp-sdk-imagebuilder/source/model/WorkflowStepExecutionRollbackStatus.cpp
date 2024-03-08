@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case WorkflowStepExecutionRollbackStatus::NOT_SET:
+            return {};
           case WorkflowStepExecutionRollbackStatus::RUNNING:
             return "RUNNING";
           case WorkflowStepExecutionRollbackStatus::COMPLETED:

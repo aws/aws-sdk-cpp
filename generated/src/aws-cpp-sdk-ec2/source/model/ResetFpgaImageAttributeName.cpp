@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResetFpgaImageAttributeName::NOT_SET:
+            return {};
           case ResetFpgaImageAttributeName::loadPermission:
             return "loadPermission";
           default:

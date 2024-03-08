@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case __PeriodTriggersElement::NOT_SET:
+            return {};
           case __PeriodTriggersElement::ADS:
             return "ADS";
           default:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Platform::NOT_SET:
+            return {};
           case Platform::IOS:
             return "IOS";
           case Platform::ANDROID_:

@@ -199,6 +199,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TransformInstanceType::NOT_SET:
+            return {};
           case TransformInstanceType::ml_m4_xlarge:
             return "ml.m4.xlarge";
           case TransformInstanceType::ml_m4_2xlarge:

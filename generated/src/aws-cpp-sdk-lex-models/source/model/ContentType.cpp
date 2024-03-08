@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ContentType::NOT_SET:
+            return {};
           case ContentType::PlainText:
             return "PlainText";
           case ContentType::SSML:

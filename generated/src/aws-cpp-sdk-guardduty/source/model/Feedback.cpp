@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Feedback::NOT_SET:
+            return {};
           case Feedback::USEFUL:
             return "USEFUL";
           case Feedback::NOT_USEFUL:

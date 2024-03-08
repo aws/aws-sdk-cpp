@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ObjectiveStatus::NOT_SET:
+            return {};
           case ObjectiveStatus::Succeeded:
             return "Succeeded";
           case ObjectiveStatus::Pending:

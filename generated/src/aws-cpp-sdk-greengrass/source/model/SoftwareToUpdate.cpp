@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SoftwareToUpdate::NOT_SET:
+            return {};
           case SoftwareToUpdate::core:
             return "core";
           case SoftwareToUpdate::ota_agent:

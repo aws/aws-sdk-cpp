@@ -48,7 +48,8 @@ namespace Model
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i> guide.</p>
      */
     inline const Aws::String& GetAppArn() const{ return m_appArn; }
 
@@ -58,7 +59,8 @@ namespace Model
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i> guide.</p>
      */
     inline bool AppArnHasBeenSet() const { return m_appArnHasBeenSet; }
 
@@ -68,7 +70,8 @@ namespace Model
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i> guide.</p>
      */
     inline void SetAppArn(const Aws::String& value) { m_appArnHasBeenSet = true; m_appArn = value; }
 
@@ -78,7 +81,8 @@ namespace Model
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i> guide.</p>
      */
     inline void SetAppArn(Aws::String&& value) { m_appArnHasBeenSet = true; m_appArn = std::move(value); }
 
@@ -88,7 +92,8 @@ namespace Model
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i> guide.</p>
      */
     inline void SetAppArn(const char* value) { m_appArnHasBeenSet = true; m_appArn.assign(value); }
 
@@ -98,7 +103,8 @@ namespace Model
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i> guide.</p>
      */
     inline AppSummary& WithAppArn(const Aws::String& value) { SetAppArn(value); return *this;}
 
@@ -108,7 +114,8 @@ namespace Model
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i> guide.</p>
      */
     inline AppSummary& WithAppArn(Aws::String&& value) { SetAppArn(std::move(value)); return *this;}
 
@@ -118,7 +125,8 @@ namespace Model
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-     * Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
+     * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
+     * Reference</i> guide.</p>
      */
     inline AppSummary& WithAppArn(const char* value) { SetAppArn(value); return *this;}
 
@@ -186,32 +194,32 @@ namespace Model
 
 
     /**
-     * <p>The timestamp for when the app was created.</p>
+     * <p>Date and time when the app was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
 
     /**
-     * <p>The timestamp for when the app was created.</p>
+     * <p>Date and time when the app was created.</p>
      */
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
 
     /**
-     * <p>The timestamp for when the app was created.</p>
+     * <p>Date and time when the app was created.</p>
      */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
-     * <p>The timestamp for when the app was created.</p>
+     * <p>Date and time when the app was created.</p>
      */
     inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
 
     /**
-     * <p>The timestamp for when the app was created.</p>
+     * <p>Date and time when the app was created.</p>
      */
     inline AppSummary& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
 
     /**
-     * <p>The timestamp for when the app was created.</p>
+     * <p>Date and time when the app was created.</p>
      */
     inline AppSummary& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 
@@ -295,6 +303,37 @@ namespace Model
 
 
     /**
+     * <p>Date and time of the most recent compliance evaluation.</p>
+     */
+    inline const Aws::Utils::DateTime& GetLastAppComplianceEvaluationTime() const{ return m_lastAppComplianceEvaluationTime; }
+
+    /**
+     * <p>Date and time of the most recent compliance evaluation.</p>
+     */
+    inline bool LastAppComplianceEvaluationTimeHasBeenSet() const { return m_lastAppComplianceEvaluationTimeHasBeenSet; }
+
+    /**
+     * <p>Date and time of the most recent compliance evaluation.</p>
+     */
+    inline void SetLastAppComplianceEvaluationTime(const Aws::Utils::DateTime& value) { m_lastAppComplianceEvaluationTimeHasBeenSet = true; m_lastAppComplianceEvaluationTime = value; }
+
+    /**
+     * <p>Date and time of the most recent compliance evaluation.</p>
+     */
+    inline void SetLastAppComplianceEvaluationTime(Aws::Utils::DateTime&& value) { m_lastAppComplianceEvaluationTimeHasBeenSet = true; m_lastAppComplianceEvaluationTime = std::move(value); }
+
+    /**
+     * <p>Date and time of the most recent compliance evaluation.</p>
+     */
+    inline AppSummary& WithLastAppComplianceEvaluationTime(const Aws::Utils::DateTime& value) { SetLastAppComplianceEvaluationTime(value); return *this;}
+
+    /**
+     * <p>Date and time of the most recent compliance evaluation.</p>
+     */
+    inline AppSummary& WithLastAppComplianceEvaluationTime(Aws::Utils::DateTime&& value) { SetLastAppComplianceEvaluationTime(std::move(value)); return *this;}
+
+
+    /**
      * <p>The name of the application.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
@@ -357,6 +396,48 @@ namespace Model
 
 
     /**
+     * <p>Recovery Point Objective (RPO) in seconds.</p>
+     */
+    inline int GetRpoInSecs() const{ return m_rpoInSecs; }
+
+    /**
+     * <p>Recovery Point Objective (RPO) in seconds.</p>
+     */
+    inline bool RpoInSecsHasBeenSet() const { return m_rpoInSecsHasBeenSet; }
+
+    /**
+     * <p>Recovery Point Objective (RPO) in seconds.</p>
+     */
+    inline void SetRpoInSecs(int value) { m_rpoInSecsHasBeenSet = true; m_rpoInSecs = value; }
+
+    /**
+     * <p>Recovery Point Objective (RPO) in seconds.</p>
+     */
+    inline AppSummary& WithRpoInSecs(int value) { SetRpoInSecs(value); return *this;}
+
+
+    /**
+     * <p>Recovery Time Objective (RTO) in seconds.</p>
+     */
+    inline int GetRtoInSecs() const{ return m_rtoInSecs; }
+
+    /**
+     * <p>Recovery Time Objective (RTO) in seconds.</p>
+     */
+    inline bool RtoInSecsHasBeenSet() const { return m_rtoInSecsHasBeenSet; }
+
+    /**
+     * <p>Recovery Time Objective (RTO) in seconds.</p>
+     */
+    inline void SetRtoInSecs(int value) { m_rtoInSecsHasBeenSet = true; m_rtoInSecs = value; }
+
+    /**
+     * <p>Recovery Time Objective (RTO) in seconds.</p>
+     */
+    inline AppSummary& WithRtoInSecs(int value) { SetRtoInSecs(value); return *this;}
+
+
+    /**
      * <p>Status of the application.</p>
      */
     inline const AppStatusType& GetStatus() const{ return m_status; }
@@ -406,11 +487,20 @@ namespace Model
     AppDriftStatusType m_driftStatus;
     bool m_driftStatusHasBeenSet = false;
 
+    Aws::Utils::DateTime m_lastAppComplianceEvaluationTime;
+    bool m_lastAppComplianceEvaluationTimeHasBeenSet = false;
+
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
     double m_resiliencyScore;
     bool m_resiliencyScoreHasBeenSet = false;
+
+    int m_rpoInSecs;
+    bool m_rpoInSecsHasBeenSet = false;
+
+    int m_rtoInSecs;
+    bool m_rtoInSecsHasBeenSet = false;
 
     AppStatusType m_status;
     bool m_statusHasBeenSet = false;

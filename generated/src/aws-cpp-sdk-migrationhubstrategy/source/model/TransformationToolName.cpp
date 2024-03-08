@@ -89,6 +89,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TransformationToolName::NOT_SET:
+            return {};
           case TransformationToolName::App2Container:
             return "App2Container";
           case TransformationToolName::Porting_Assistant_For_NET:

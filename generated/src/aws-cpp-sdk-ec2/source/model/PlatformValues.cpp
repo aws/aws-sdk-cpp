@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PlatformValues::NOT_SET:
+            return {};
           case PlatformValues::Windows:
             return "Windows";
           default:

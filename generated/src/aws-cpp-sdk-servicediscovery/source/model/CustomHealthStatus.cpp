@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CustomHealthStatus::NOT_SET:
+            return {};
           case CustomHealthStatus::HEALTHY:
             return "HEALTHY";
           case CustomHealthStatus::UNHEALTHY:

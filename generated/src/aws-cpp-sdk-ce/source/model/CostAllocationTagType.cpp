@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CostAllocationTagType::NOT_SET:
+            return {};
           case CostAllocationTagType::AWSGenerated:
             return "AWSGenerated";
           case CostAllocationTagType::UserDefined:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RemediationActionType::NOT_SET:
+            return {};
           case RemediationActionType::REMOVE:
             return "REMOVE";
           case RemediationActionType::MODIFY:

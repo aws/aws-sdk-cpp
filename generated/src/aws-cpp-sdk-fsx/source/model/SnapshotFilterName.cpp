@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SnapshotFilterName::NOT_SET:
+            return {};
           case SnapshotFilterName::file_system_id:
             return "file-system-id";
           case SnapshotFilterName::volume_id:

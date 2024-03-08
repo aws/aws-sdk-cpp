@@ -39,7 +39,9 @@ UpdateFleetRequest::UpdateFleetRequest() :
     m_maxConcurrentSessions(0),
     m_maxConcurrentSessionsHasBeenSet(false),
     m_usbDeviceFilterStringsHasBeenSet(false),
-    m_sessionScriptS3LocationHasBeenSet(false)
+    m_sessionScriptS3LocationHasBeenSet(false),
+    m_maxSessionsPerInstance(0),
+    m_maxSessionsPerInstanceHasBeenSet(false)
 {
 }
 
@@ -172,6 +174,12 @@ Aws::String UpdateFleetRequest::SerializePayload() const
   if(m_sessionScriptS3LocationHasBeenSet)
   {
    payload.WithObject("SessionScriptS3Location", m_sessionScriptS3Location.Jsonize());
+
+  }
+
+  if(m_maxSessionsPerInstanceHasBeenSet)
+  {
+   payload.WithInteger("MaxSessionsPerInstance", m_maxSessionsPerInstance);
 
   }
 

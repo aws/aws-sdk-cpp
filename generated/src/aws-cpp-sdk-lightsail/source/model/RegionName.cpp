@@ -114,6 +114,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RegionName::NOT_SET:
+            return {};
           case RegionName::us_east_1:
             return "us-east-1";
           case RegionName::us_east_2:

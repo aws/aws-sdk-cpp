@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ExportSortAttribute::NOT_SET:
+            return {};
           case ExportSortAttribute::LastUpdatedDateTime:
             return "LastUpdatedDateTime";
           default:

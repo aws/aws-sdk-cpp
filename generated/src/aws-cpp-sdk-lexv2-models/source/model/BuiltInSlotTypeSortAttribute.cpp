@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BuiltInSlotTypeSortAttribute::NOT_SET:
+            return {};
           case BuiltInSlotTypeSortAttribute::SlotTypeSignature:
             return "SlotTypeSignature";
           default:

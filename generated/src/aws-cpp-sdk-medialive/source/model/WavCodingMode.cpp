@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case WavCodingMode::NOT_SET:
+            return {};
           case WavCodingMode::CODING_MODE_1_0:
             return "CODING_MODE_1_0";
           case WavCodingMode::CODING_MODE_2_0:

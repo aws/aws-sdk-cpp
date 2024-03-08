@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Directionality::NOT_SET:
+            return {};
           case Directionality::UNI:
             return "UNI";
           case Directionality::MULTI:

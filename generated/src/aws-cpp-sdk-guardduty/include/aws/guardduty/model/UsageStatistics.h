@@ -7,6 +7,7 @@
 #include <aws/guardduty/GuardDuty_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/guardduty/model/UsageAccountResult.h>
+#include <aws/guardduty/model/UsageTopAccountsResult.h>
 #include <aws/guardduty/model/UsageDataSourceResult.h>
 #include <aws/guardduty/model/UsageResourceResult.h>
 #include <aws/guardduty/model/UsageFeatureResult.h>
@@ -81,6 +82,63 @@ namespace Model
      * <p>The usage statistic sum organized by account ID.</p>
      */
     inline UsageStatistics& AddSumByAccount(UsageAccountResult&& value) { m_sumByAccountHasBeenSet = true; m_sumByAccount.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Lists the top 50 accounts by feature that have generated the most GuardDuty
+     * usage, in the order from most to least expensive.</p> <p>Currently, this doesn't
+     * support <code>RDS_LOGIN_EVENTS</code>.</p>
+     */
+    inline const Aws::Vector<UsageTopAccountsResult>& GetTopAccountsByFeature() const{ return m_topAccountsByFeature; }
+
+    /**
+     * <p>Lists the top 50 accounts by feature that have generated the most GuardDuty
+     * usage, in the order from most to least expensive.</p> <p>Currently, this doesn't
+     * support <code>RDS_LOGIN_EVENTS</code>.</p>
+     */
+    inline bool TopAccountsByFeatureHasBeenSet() const { return m_topAccountsByFeatureHasBeenSet; }
+
+    /**
+     * <p>Lists the top 50 accounts by feature that have generated the most GuardDuty
+     * usage, in the order from most to least expensive.</p> <p>Currently, this doesn't
+     * support <code>RDS_LOGIN_EVENTS</code>.</p>
+     */
+    inline void SetTopAccountsByFeature(const Aws::Vector<UsageTopAccountsResult>& value) { m_topAccountsByFeatureHasBeenSet = true; m_topAccountsByFeature = value; }
+
+    /**
+     * <p>Lists the top 50 accounts by feature that have generated the most GuardDuty
+     * usage, in the order from most to least expensive.</p> <p>Currently, this doesn't
+     * support <code>RDS_LOGIN_EVENTS</code>.</p>
+     */
+    inline void SetTopAccountsByFeature(Aws::Vector<UsageTopAccountsResult>&& value) { m_topAccountsByFeatureHasBeenSet = true; m_topAccountsByFeature = std::move(value); }
+
+    /**
+     * <p>Lists the top 50 accounts by feature that have generated the most GuardDuty
+     * usage, in the order from most to least expensive.</p> <p>Currently, this doesn't
+     * support <code>RDS_LOGIN_EVENTS</code>.</p>
+     */
+    inline UsageStatistics& WithTopAccountsByFeature(const Aws::Vector<UsageTopAccountsResult>& value) { SetTopAccountsByFeature(value); return *this;}
+
+    /**
+     * <p>Lists the top 50 accounts by feature that have generated the most GuardDuty
+     * usage, in the order from most to least expensive.</p> <p>Currently, this doesn't
+     * support <code>RDS_LOGIN_EVENTS</code>.</p>
+     */
+    inline UsageStatistics& WithTopAccountsByFeature(Aws::Vector<UsageTopAccountsResult>&& value) { SetTopAccountsByFeature(std::move(value)); return *this;}
+
+    /**
+     * <p>Lists the top 50 accounts by feature that have generated the most GuardDuty
+     * usage, in the order from most to least expensive.</p> <p>Currently, this doesn't
+     * support <code>RDS_LOGIN_EVENTS</code>.</p>
+     */
+    inline UsageStatistics& AddTopAccountsByFeature(const UsageTopAccountsResult& value) { m_topAccountsByFeatureHasBeenSet = true; m_topAccountsByFeature.push_back(value); return *this; }
+
+    /**
+     * <p>Lists the top 50 accounts by feature that have generated the most GuardDuty
+     * usage, in the order from most to least expensive.</p> <p>Currently, this doesn't
+     * support <code>RDS_LOGIN_EVENTS</code>.</p>
+     */
+    inline UsageStatistics& AddTopAccountsByFeature(UsageTopAccountsResult&& value) { m_topAccountsByFeatureHasBeenSet = true; m_topAccountsByFeature.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -258,6 +316,9 @@ namespace Model
 
     Aws::Vector<UsageAccountResult> m_sumByAccount;
     bool m_sumByAccountHasBeenSet = false;
+
+    Aws::Vector<UsageTopAccountsResult> m_topAccountsByFeature;
+    bool m_topAccountsByFeatureHasBeenSet = false;
 
     Aws::Vector<UsageDataSourceResult> m_sumByDataSource;
     bool m_sumByDataSourceHasBeenSet = false;

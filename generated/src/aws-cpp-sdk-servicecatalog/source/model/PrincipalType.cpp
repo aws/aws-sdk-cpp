@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PrincipalType::NOT_SET:
+            return {};
           case PrincipalType::IAM:
             return "IAM";
           case PrincipalType::IAM_PATTERN:

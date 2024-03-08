@@ -119,6 +119,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case GrantOperation::NOT_SET:
+            return {};
           case GrantOperation::Decrypt:
             return "Decrypt";
           case GrantOperation::Encrypt:

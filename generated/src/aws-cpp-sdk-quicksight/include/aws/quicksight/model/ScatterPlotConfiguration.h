@@ -6,12 +6,14 @@
 #pragma once
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/quicksight/model/ScatterPlotFieldWells.h>
+#include <aws/quicksight/model/ScatterPlotSortConfiguration.h>
 #include <aws/quicksight/model/ChartAxisLabelOptions.h>
 #include <aws/quicksight/model/AxisDisplayOptions.h>
 #include <aws/quicksight/model/LegendOptions.h>
 #include <aws/quicksight/model/DataLabelOptions.h>
 #include <aws/quicksight/model/TooltipOptions.h>
 #include <aws/quicksight/model/VisualPalette.h>
+#include <aws/quicksight/model/VisualInteractionOptions.h>
 #include <utility>
 
 namespace Aws
@@ -72,6 +74,37 @@ namespace Model
      * <p>The field wells of the visual.</p>
      */
     inline ScatterPlotConfiguration& WithFieldWells(ScatterPlotFieldWells&& value) { SetFieldWells(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The sort configuration of a scatter plot.</p>
+     */
+    inline const ScatterPlotSortConfiguration& GetSortConfiguration() const{ return m_sortConfiguration; }
+
+    /**
+     * <p>The sort configuration of a scatter plot.</p>
+     */
+    inline bool SortConfigurationHasBeenSet() const { return m_sortConfigurationHasBeenSet; }
+
+    /**
+     * <p>The sort configuration of a scatter plot.</p>
+     */
+    inline void SetSortConfiguration(const ScatterPlotSortConfiguration& value) { m_sortConfigurationHasBeenSet = true; m_sortConfiguration = value; }
+
+    /**
+     * <p>The sort configuration of a scatter plot.</p>
+     */
+    inline void SetSortConfiguration(ScatterPlotSortConfiguration&& value) { m_sortConfigurationHasBeenSet = true; m_sortConfiguration = std::move(value); }
+
+    /**
+     * <p>The sort configuration of a scatter plot.</p>
+     */
+    inline ScatterPlotConfiguration& WithSortConfiguration(const ScatterPlotSortConfiguration& value) { SetSortConfiguration(value); return *this;}
+
+    /**
+     * <p>The sort configuration of a scatter plot.</p>
+     */
+    inline ScatterPlotConfiguration& WithSortConfiguration(ScatterPlotSortConfiguration&& value) { SetSortConfiguration(std::move(value)); return *this;}
 
 
     /**
@@ -345,10 +378,44 @@ namespace Model
      */
     inline ScatterPlotConfiguration& WithVisualPalette(VisualPalette&& value) { SetVisualPalette(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The general visual interactions setup for a visual.</p>
+     */
+    inline const VisualInteractionOptions& GetInteractions() const{ return m_interactions; }
+
+    /**
+     * <p>The general visual interactions setup for a visual.</p>
+     */
+    inline bool InteractionsHasBeenSet() const { return m_interactionsHasBeenSet; }
+
+    /**
+     * <p>The general visual interactions setup for a visual.</p>
+     */
+    inline void SetInteractions(const VisualInteractionOptions& value) { m_interactionsHasBeenSet = true; m_interactions = value; }
+
+    /**
+     * <p>The general visual interactions setup for a visual.</p>
+     */
+    inline void SetInteractions(VisualInteractionOptions&& value) { m_interactionsHasBeenSet = true; m_interactions = std::move(value); }
+
+    /**
+     * <p>The general visual interactions setup for a visual.</p>
+     */
+    inline ScatterPlotConfiguration& WithInteractions(const VisualInteractionOptions& value) { SetInteractions(value); return *this;}
+
+    /**
+     * <p>The general visual interactions setup for a visual.</p>
+     */
+    inline ScatterPlotConfiguration& WithInteractions(VisualInteractionOptions&& value) { SetInteractions(std::move(value)); return *this;}
+
   private:
 
     ScatterPlotFieldWells m_fieldWells;
     bool m_fieldWellsHasBeenSet = false;
+
+    ScatterPlotSortConfiguration m_sortConfiguration;
+    bool m_sortConfigurationHasBeenSet = false;
 
     ChartAxisLabelOptions m_xAxisLabelOptions;
     bool m_xAxisLabelOptionsHasBeenSet = false;
@@ -373,6 +440,9 @@ namespace Model
 
     VisualPalette m_visualPalette;
     bool m_visualPaletteHasBeenSet = false;
+
+    VisualInteractionOptions m_interactions;
+    bool m_interactionsHasBeenSet = false;
   };
 
 } // namespace Model

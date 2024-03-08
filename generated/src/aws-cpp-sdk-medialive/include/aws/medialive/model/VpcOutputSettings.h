@@ -27,8 +27,7 @@ namespace Model
   /**
    * The properties for a private VPC Output
 When this property is specified, the
-   * output egress addresses will be created in a user specified VPC
-<p><h3>See
+   * output egress addresses will be created in a user specified VPC<p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/VpcOutputSettings">AWS
    * API Reference</a></p>
@@ -47,7 +46,6 @@ When this property is specified, the
      * created in Output VPC.
 Must specify one for SINGLE_PIPELINE, two for STANDARD
      * channels
-
      */
     inline const Aws::Vector<Aws::String>& GetPublicAddressAllocationIds() const{ return m_publicAddressAllocationIds; }
 
@@ -56,7 +54,6 @@ Must specify one for SINGLE_PIPELINE, two for STANDARD
      * created in Output VPC.
 Must specify one for SINGLE_PIPELINE, two for STANDARD
      * channels
-
      */
     inline bool PublicAddressAllocationIdsHasBeenSet() const { return m_publicAddressAllocationIdsHasBeenSet; }
 
@@ -65,7 +62,6 @@ Must specify one for SINGLE_PIPELINE, two for STANDARD
      * created in Output VPC.
 Must specify one for SINGLE_PIPELINE, two for STANDARD
      * channels
-
      */
     inline void SetPublicAddressAllocationIds(const Aws::Vector<Aws::String>& value) { m_publicAddressAllocationIdsHasBeenSet = true; m_publicAddressAllocationIds = value; }
 
@@ -74,7 +70,6 @@ Must specify one for SINGLE_PIPELINE, two for STANDARD
      * created in Output VPC.
 Must specify one for SINGLE_PIPELINE, two for STANDARD
      * channels
-
      */
     inline void SetPublicAddressAllocationIds(Aws::Vector<Aws::String>&& value) { m_publicAddressAllocationIdsHasBeenSet = true; m_publicAddressAllocationIds = std::move(value); }
 
@@ -83,7 +78,6 @@ Must specify one for SINGLE_PIPELINE, two for STANDARD
      * created in Output VPC.
 Must specify one for SINGLE_PIPELINE, two for STANDARD
      * channels
-
      */
     inline VpcOutputSettings& WithPublicAddressAllocationIds(const Aws::Vector<Aws::String>& value) { SetPublicAddressAllocationIds(value); return *this;}
 
@@ -92,7 +86,6 @@ Must specify one for SINGLE_PIPELINE, two for STANDARD
      * created in Output VPC.
 Must specify one for SINGLE_PIPELINE, two for STANDARD
      * channels
-
      */
     inline VpcOutputSettings& WithPublicAddressAllocationIds(Aws::Vector<Aws::String>&& value) { SetPublicAddressAllocationIds(std::move(value)); return *this;}
 
@@ -101,7 +94,6 @@ Must specify one for SINGLE_PIPELINE, two for STANDARD
      * created in Output VPC.
 Must specify one for SINGLE_PIPELINE, two for STANDARD
      * channels
-
      */
     inline VpcOutputSettings& AddPublicAddressAllocationIds(const Aws::String& value) { m_publicAddressAllocationIdsHasBeenSet = true; m_publicAddressAllocationIds.push_back(value); return *this; }
 
@@ -110,7 +102,6 @@ Must specify one for SINGLE_PIPELINE, two for STANDARD
      * created in Output VPC.
 Must specify one for SINGLE_PIPELINE, two for STANDARD
      * channels
-
      */
     inline VpcOutputSettings& AddPublicAddressAllocationIds(Aws::String&& value) { m_publicAddressAllocationIdsHasBeenSet = true; m_publicAddressAllocationIds.push_back(std::move(value)); return *this; }
 
@@ -119,7 +110,6 @@ Must specify one for SINGLE_PIPELINE, two for STANDARD
      * created in Output VPC.
 Must specify one for SINGLE_PIPELINE, two for STANDARD
      * channels
-
      */
     inline VpcOutputSettings& AddPublicAddressAllocationIds(const char* value) { m_publicAddressAllocationIdsHasBeenSet = true; m_publicAddressAllocationIds.push_back(value); return *this; }
 
@@ -129,7 +119,6 @@ Must specify one for SINGLE_PIPELINE, two for STANDARD
      * interfaces.
 If none are specified then the VPC default security group will be
      * used
-
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
 
@@ -138,7 +127,6 @@ If none are specified then the VPC default security group will be
      * interfaces.
 If none are specified then the VPC default security group will be
      * used
-
      */
     inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
 
@@ -147,7 +135,6 @@ If none are specified then the VPC default security group will be
      * interfaces.
 If none are specified then the VPC default security group will be
      * used
-
      */
     inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
 
@@ -156,7 +143,6 @@ If none are specified then the VPC default security group will be
      * interfaces.
 If none are specified then the VPC default security group will be
      * used
-
      */
     inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::move(value); }
 
@@ -165,7 +151,6 @@ If none are specified then the VPC default security group will be
      * interfaces.
 If none are specified then the VPC default security group will be
      * used
-
      */
     inline VpcOutputSettings& WithSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupIds(value); return *this;}
 
@@ -174,7 +159,6 @@ If none are specified then the VPC default security group will be
      * interfaces.
 If none are specified then the VPC default security group will be
      * used
-
      */
     inline VpcOutputSettings& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
 
@@ -183,7 +167,6 @@ If none are specified then the VPC default security group will be
      * interfaces.
 If none are specified then the VPC default security group will be
      * used
-
      */
     inline VpcOutputSettings& AddSecurityGroupIds(const Aws::String& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
@@ -192,7 +175,6 @@ If none are specified then the VPC default security group will be
      * interfaces.
 If none are specified then the VPC default security group will be
      * used
-
      */
     inline VpcOutputSettings& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(std::move(value)); return *this; }
 
@@ -201,7 +183,6 @@ If none are specified then the VPC default security group will be
      * interfaces.
 If none are specified then the VPC default security group will be
      * used
-
      */
     inline VpcOutputSettings& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
@@ -210,7 +191,6 @@ If none are specified then the VPC default security group will be
      * A list of VPC subnet IDs from the same VPC.
 If STANDARD channel, subnet IDs must
      * be mapped to two unique availability zones (AZ).
-
      */
     inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
 
@@ -218,7 +198,6 @@ If STANDARD channel, subnet IDs must
      * A list of VPC subnet IDs from the same VPC.
 If STANDARD channel, subnet IDs must
      * be mapped to two unique availability zones (AZ).
-
      */
     inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
 
@@ -226,7 +205,6 @@ If STANDARD channel, subnet IDs must
      * A list of VPC subnet IDs from the same VPC.
 If STANDARD channel, subnet IDs must
      * be mapped to two unique availability zones (AZ).
-
      */
     inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
 
@@ -234,7 +212,6 @@ If STANDARD channel, subnet IDs must
      * A list of VPC subnet IDs from the same VPC.
 If STANDARD channel, subnet IDs must
      * be mapped to two unique availability zones (AZ).
-
      */
     inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::move(value); }
 
@@ -242,7 +219,6 @@ If STANDARD channel, subnet IDs must
      * A list of VPC subnet IDs from the same VPC.
 If STANDARD channel, subnet IDs must
      * be mapped to two unique availability zones (AZ).
-
      */
     inline VpcOutputSettings& WithSubnetIds(const Aws::Vector<Aws::String>& value) { SetSubnetIds(value); return *this;}
 
@@ -250,7 +226,6 @@ If STANDARD channel, subnet IDs must
      * A list of VPC subnet IDs from the same VPC.
 If STANDARD channel, subnet IDs must
      * be mapped to two unique availability zones (AZ).
-
      */
     inline VpcOutputSettings& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(std::move(value)); return *this;}
 
@@ -258,7 +233,6 @@ If STANDARD channel, subnet IDs must
      * A list of VPC subnet IDs from the same VPC.
 If STANDARD channel, subnet IDs must
      * be mapped to two unique availability zones (AZ).
-
      */
     inline VpcOutputSettings& AddSubnetIds(const Aws::String& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
@@ -266,7 +240,6 @@ If STANDARD channel, subnet IDs must
      * A list of VPC subnet IDs from the same VPC.
 If STANDARD channel, subnet IDs must
      * be mapped to two unique availability zones (AZ).
-
      */
     inline VpcOutputSettings& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(std::move(value)); return *this; }
 
@@ -274,7 +247,6 @@ If STANDARD channel, subnet IDs must
      * A list of VPC subnet IDs from the same VPC.
 If STANDARD channel, subnet IDs must
      * be mapped to two unique availability zones (AZ).
-
      */
     inline VpcOutputSettings& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 

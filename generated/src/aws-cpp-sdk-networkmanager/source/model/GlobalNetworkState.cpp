@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case GlobalNetworkState::NOT_SET:
+            return {};
           case GlobalNetworkState::PENDING:
             return "PENDING";
           case GlobalNetworkState::AVAILABLE:

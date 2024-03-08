@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LogType::NOT_SET:
+            return {};
           case LogType::AS_RUN:
             return "AS_RUN";
           default:

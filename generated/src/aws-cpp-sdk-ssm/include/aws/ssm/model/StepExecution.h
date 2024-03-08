@@ -12,6 +12,7 @@
 #include <aws/ssm/model/FailureDetails.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ssm/model/TargetLocation.h>
+#include <aws/ssm/model/ParentStepDetails.h>
 #include <aws/ssm/model/Target.h>
 #include <aws/ssm/model/AlarmStateInformation.h>
 #include <utility>
@@ -1010,6 +1011,37 @@ namespace Model
      */
     inline StepExecution& AddTriggeredAlarms(AlarmStateInformation&& value) { m_triggeredAlarmsHasBeenSet = true; m_triggeredAlarms.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Information about the parent step.</p>
+     */
+    inline const ParentStepDetails& GetParentStepDetails() const{ return m_parentStepDetails; }
+
+    /**
+     * <p>Information about the parent step.</p>
+     */
+    inline bool ParentStepDetailsHasBeenSet() const { return m_parentStepDetailsHasBeenSet; }
+
+    /**
+     * <p>Information about the parent step.</p>
+     */
+    inline void SetParentStepDetails(const ParentStepDetails& value) { m_parentStepDetailsHasBeenSet = true; m_parentStepDetails = value; }
+
+    /**
+     * <p>Information about the parent step.</p>
+     */
+    inline void SetParentStepDetails(ParentStepDetails&& value) { m_parentStepDetailsHasBeenSet = true; m_parentStepDetails = std::move(value); }
+
+    /**
+     * <p>Information about the parent step.</p>
+     */
+    inline StepExecution& WithParentStepDetails(const ParentStepDetails& value) { SetParentStepDetails(value); return *this;}
+
+    /**
+     * <p>Information about the parent step.</p>
+     */
+    inline StepExecution& WithParentStepDetails(ParentStepDetails&& value) { SetParentStepDetails(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_stepName;
@@ -1080,6 +1112,9 @@ namespace Model
 
     Aws::Vector<AlarmStateInformation> m_triggeredAlarms;
     bool m_triggeredAlarmsHasBeenSet = false;
+
+    ParentStepDetails m_parentStepDetails;
+    bool m_parentStepDetailsHasBeenSet = false;
   };
 
 } // namespace Model

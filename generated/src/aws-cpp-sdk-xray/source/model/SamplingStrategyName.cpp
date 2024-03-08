@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SamplingStrategyName::NOT_SET:
+            return {};
           case SamplingStrategyName::PartialScan:
             return "PartialScan";
           case SamplingStrategyName::FixedRate:

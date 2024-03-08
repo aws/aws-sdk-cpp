@@ -12,6 +12,7 @@
 #include <cassert>
 #include <iostream>
 #include <cstring>
+#include <iomanip>
 
 static const char* CLASS_TAG = "DateTime";
 static const char* RFC822_DATE_FORMAT_STR_MINUS_Z = "%a, %d %b %Y %H:%M:%S";
@@ -1120,9 +1121,9 @@ DateTime::DateTime(int64_t millisSinceEpoch) : m_valid(true)
     m_time = std::chrono::system_clock::time_point(timestamp);
 }
 
-DateTime::DateTime(double epoch_millis) : m_valid(true)
+DateTime::DateTime(double secondsSinceEpoch) : m_valid(true)
 {
-    std::chrono::duration<double, std::chrono::seconds::period> timestamp(epoch_millis);
+    std::chrono::duration<double, std::chrono::seconds::period> timestamp(secondsSinceEpoch);
     m_time = std::chrono::system_clock::time_point(std::chrono::duration_cast<std::chrono::milliseconds>(timestamp));
 }
 
@@ -1262,6 +1263,22 @@ Aws::String DateTime::ToGmtString(const char* formatStr) const
     char formattedString[100];
     std::strftime(formattedString, sizeof(formattedString), formatStr, &gmtTimeStamp);
     return formattedString;
+}
+
+Aws::String DateTime::ToGmtStringWithMs() const
+{
+    struct tm gmtTimeStamp = ConvertTimestampToGmtStruct();
+
+    char formattedString[100];
+    std::strftime(formattedString, sizeof(formattedString), "%Y-%m-%dT%H:%M:%S", &gmtTimeStamp);
+    Aws::String formattedStringStr = formattedString;
+
+    Aws::StringStream msSs;
+    msSs << "." << std::setfill('0') << std::setw(3) <<
+        std::chrono::duration_cast<std::chrono::milliseconds>(m_time.time_since_epoch()).count() % 1000;
+
+    formattedStringStr += msSs.str();
+    return formattedStringStr;
 }
 
 double DateTime::SecondsWithMSPrecision() const

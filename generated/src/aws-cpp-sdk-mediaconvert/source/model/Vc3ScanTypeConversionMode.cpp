@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Vc3ScanTypeConversionMode::NOT_SET:
+            return {};
           case Vc3ScanTypeConversionMode::INTERLACED:
             return "INTERLACED";
           case Vc3ScanTypeConversionMode::INTERLACED_OPTIMIZE:

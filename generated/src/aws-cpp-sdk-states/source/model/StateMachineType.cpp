@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StateMachineType::NOT_SET:
+            return {};
           case StateMachineType::STANDARD:
             return "STANDARD";
           case StateMachineType::EXPRESS:

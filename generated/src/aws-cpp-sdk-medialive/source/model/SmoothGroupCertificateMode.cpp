@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SmoothGroupCertificateMode::NOT_SET:
+            return {};
           case SmoothGroupCertificateMode::SELF_SIGNED:
             return "SELF_SIGNED";
           case SmoothGroupCertificateMode::VERIFY_AUTHENTICITY:

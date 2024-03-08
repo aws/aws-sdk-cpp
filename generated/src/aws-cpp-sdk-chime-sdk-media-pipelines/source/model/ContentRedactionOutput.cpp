@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ContentRedactionOutput::NOT_SET:
+            return {};
           case ContentRedactionOutput::redacted:
             return "redacted";
           case ContentRedactionOutput::redacted_and_unredacted:

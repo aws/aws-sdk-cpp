@@ -89,6 +89,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InstanceStorageResourceType::NOT_SET:
+            return {};
           case InstanceStorageResourceType::CHAT_TRANSCRIPTS:
             return "CHAT_TRANSCRIPTS";
           case InstanceStorageResourceType::CALL_RECORDINGS:

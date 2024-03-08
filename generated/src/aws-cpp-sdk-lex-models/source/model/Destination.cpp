@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Destination::NOT_SET:
+            return {};
           case Destination::CLOUDWATCH_LOGS:
             return "CLOUDWATCH_LOGS";
           case Destination::S3:

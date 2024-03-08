@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TagTarget::NOT_SET:
+            return {};
           case TagTarget::S3_OBJECT:
             return "S3_OBJECT";
           default:

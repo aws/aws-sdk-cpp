@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DedicatedTenancyModificationStateEnum::NOT_SET:
+            return {};
           case DedicatedTenancyModificationStateEnum::PENDING:
             return "PENDING";
           case DedicatedTenancyModificationStateEnum::COMPLETED:

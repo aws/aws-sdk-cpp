@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TaskDefinitionStatus::NOT_SET:
+            return {};
           case TaskDefinitionStatus::ACTIVE:
             return "ACTIVE";
           case TaskDefinitionStatus::INACTIVE:

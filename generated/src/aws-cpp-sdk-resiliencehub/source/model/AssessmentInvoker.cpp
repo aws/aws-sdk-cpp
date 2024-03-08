@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AssessmentInvoker::NOT_SET:
+            return {};
           case AssessmentInvoker::User:
             return "User";
           case AssessmentInvoker::System:

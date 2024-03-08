@@ -11,7 +11,11 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/osis/model/LogPublishingOptions.h>
+#include <aws/osis/model/BufferOptions.h>
+#include <aws/osis/model/EncryptionAtRestOptions.h>
 #include <aws/osis/model/VpcEndpoint.h>
+#include <aws/osis/model/ServiceVpcEndpoint.h>
+#include <aws/osis/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -450,6 +454,134 @@ namespace Model
      */
     inline Pipeline& AddVpcEndpoints(VpcEndpoint&& value) { m_vpcEndpointsHasBeenSet = true; m_vpcEndpoints.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const BufferOptions& GetBufferOptions() const{ return m_bufferOptions; }
+
+    
+    inline bool BufferOptionsHasBeenSet() const { return m_bufferOptionsHasBeenSet; }
+
+    
+    inline void SetBufferOptions(const BufferOptions& value) { m_bufferOptionsHasBeenSet = true; m_bufferOptions = value; }
+
+    
+    inline void SetBufferOptions(BufferOptions&& value) { m_bufferOptionsHasBeenSet = true; m_bufferOptions = std::move(value); }
+
+    
+    inline Pipeline& WithBufferOptions(const BufferOptions& value) { SetBufferOptions(value); return *this;}
+
+    
+    inline Pipeline& WithBufferOptions(BufferOptions&& value) { SetBufferOptions(std::move(value)); return *this;}
+
+
+    
+    inline const EncryptionAtRestOptions& GetEncryptionAtRestOptions() const{ return m_encryptionAtRestOptions; }
+
+    
+    inline bool EncryptionAtRestOptionsHasBeenSet() const { return m_encryptionAtRestOptionsHasBeenSet; }
+
+    
+    inline void SetEncryptionAtRestOptions(const EncryptionAtRestOptions& value) { m_encryptionAtRestOptionsHasBeenSet = true; m_encryptionAtRestOptions = value; }
+
+    
+    inline void SetEncryptionAtRestOptions(EncryptionAtRestOptions&& value) { m_encryptionAtRestOptionsHasBeenSet = true; m_encryptionAtRestOptions = std::move(value); }
+
+    
+    inline Pipeline& WithEncryptionAtRestOptions(const EncryptionAtRestOptions& value) { SetEncryptionAtRestOptions(value); return *this;}
+
+    
+    inline Pipeline& WithEncryptionAtRestOptions(EncryptionAtRestOptions&& value) { SetEncryptionAtRestOptions(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A list of VPC endpoints that OpenSearch Ingestion has created to other AWS
+     * services.</p>
+     */
+    inline const Aws::Vector<ServiceVpcEndpoint>& GetServiceVpcEndpoints() const{ return m_serviceVpcEndpoints; }
+
+    /**
+     * <p>A list of VPC endpoints that OpenSearch Ingestion has created to other AWS
+     * services.</p>
+     */
+    inline bool ServiceVpcEndpointsHasBeenSet() const { return m_serviceVpcEndpointsHasBeenSet; }
+
+    /**
+     * <p>A list of VPC endpoints that OpenSearch Ingestion has created to other AWS
+     * services.</p>
+     */
+    inline void SetServiceVpcEndpoints(const Aws::Vector<ServiceVpcEndpoint>& value) { m_serviceVpcEndpointsHasBeenSet = true; m_serviceVpcEndpoints = value; }
+
+    /**
+     * <p>A list of VPC endpoints that OpenSearch Ingestion has created to other AWS
+     * services.</p>
+     */
+    inline void SetServiceVpcEndpoints(Aws::Vector<ServiceVpcEndpoint>&& value) { m_serviceVpcEndpointsHasBeenSet = true; m_serviceVpcEndpoints = std::move(value); }
+
+    /**
+     * <p>A list of VPC endpoints that OpenSearch Ingestion has created to other AWS
+     * services.</p>
+     */
+    inline Pipeline& WithServiceVpcEndpoints(const Aws::Vector<ServiceVpcEndpoint>& value) { SetServiceVpcEndpoints(value); return *this;}
+
+    /**
+     * <p>A list of VPC endpoints that OpenSearch Ingestion has created to other AWS
+     * services.</p>
+     */
+    inline Pipeline& WithServiceVpcEndpoints(Aws::Vector<ServiceVpcEndpoint>&& value) { SetServiceVpcEndpoints(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of VPC endpoints that OpenSearch Ingestion has created to other AWS
+     * services.</p>
+     */
+    inline Pipeline& AddServiceVpcEndpoints(const ServiceVpcEndpoint& value) { m_serviceVpcEndpointsHasBeenSet = true; m_serviceVpcEndpoints.push_back(value); return *this; }
+
+    /**
+     * <p>A list of VPC endpoints that OpenSearch Ingestion has created to other AWS
+     * services.</p>
+     */
+    inline Pipeline& AddServiceVpcEndpoints(ServiceVpcEndpoint&& value) { m_serviceVpcEndpointsHasBeenSet = true; m_serviceVpcEndpoints.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>A list of tags associated with the given pipeline.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A list of tags associated with the given pipeline.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>A list of tags associated with the given pipeline.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>A list of tags associated with the given pipeline.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>A list of tags associated with the given pipeline.</p>
+     */
+    inline Pipeline& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>A list of tags associated with the given pipeline.</p>
+     */
+    inline Pipeline& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of tags associated with the given pipeline.</p>
+     */
+    inline Pipeline& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>A list of tags associated with the given pipeline.</p>
+     */
+    inline Pipeline& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_pipelineName;
@@ -487,6 +619,18 @@ namespace Model
 
     Aws::Vector<VpcEndpoint> m_vpcEndpoints;
     bool m_vpcEndpointsHasBeenSet = false;
+
+    BufferOptions m_bufferOptions;
+    bool m_bufferOptionsHasBeenSet = false;
+
+    EncryptionAtRestOptions m_encryptionAtRestOptions;
+    bool m_encryptionAtRestOptionsHasBeenSet = false;
+
+    Aws::Vector<ServiceVpcEndpoint> m_serviceVpcEndpoints;
+    bool m_serviceVpcEndpointsHasBeenSet = false;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

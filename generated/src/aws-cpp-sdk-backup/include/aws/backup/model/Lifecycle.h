@@ -95,6 +95,35 @@ namespace Model
      */
     inline Lifecycle& WithDeleteAfterDays(long long value) { SetDeleteAfterDays(value); return *this;}
 
+
+    /**
+     * <p>Optional Boolean. If this is true, this setting will instruct your backup
+     * plan to transition supported resources to archive (cold) storage tier in
+     * accordance with your lifecycle settings.</p>
+     */
+    inline bool GetOptInToArchiveForSupportedResources() const{ return m_optInToArchiveForSupportedResources; }
+
+    /**
+     * <p>Optional Boolean. If this is true, this setting will instruct your backup
+     * plan to transition supported resources to archive (cold) storage tier in
+     * accordance with your lifecycle settings.</p>
+     */
+    inline bool OptInToArchiveForSupportedResourcesHasBeenSet() const { return m_optInToArchiveForSupportedResourcesHasBeenSet; }
+
+    /**
+     * <p>Optional Boolean. If this is true, this setting will instruct your backup
+     * plan to transition supported resources to archive (cold) storage tier in
+     * accordance with your lifecycle settings.</p>
+     */
+    inline void SetOptInToArchiveForSupportedResources(bool value) { m_optInToArchiveForSupportedResourcesHasBeenSet = true; m_optInToArchiveForSupportedResources = value; }
+
+    /**
+     * <p>Optional Boolean. If this is true, this setting will instruct your backup
+     * plan to transition supported resources to archive (cold) storage tier in
+     * accordance with your lifecycle settings.</p>
+     */
+    inline Lifecycle& WithOptInToArchiveForSupportedResources(bool value) { SetOptInToArchiveForSupportedResources(value); return *this;}
+
   private:
 
     long long m_moveToColdStorageAfterDays;
@@ -102,6 +131,9 @@ namespace Model
 
     long long m_deleteAfterDays;
     bool m_deleteAfterDaysHasBeenSet = false;
+
+    bool m_optInToArchiveForSupportedResources;
+    bool m_optInToArchiveForSupportedResourcesHasBeenSet = false;
   };
 
 } // namespace Model

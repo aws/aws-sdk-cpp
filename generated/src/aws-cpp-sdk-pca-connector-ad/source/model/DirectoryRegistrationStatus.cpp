@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DirectoryRegistrationStatus::NOT_SET:
+            return {};
           case DirectoryRegistrationStatus::CREATING:
             return "CREATING";
           case DirectoryRegistrationStatus::ACTIVE:

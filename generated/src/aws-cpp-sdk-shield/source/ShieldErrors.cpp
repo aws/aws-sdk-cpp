@@ -66,47 +66,47 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == INTERNAL_ERROR_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ShieldErrors::INTERNAL_ERROR), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ShieldErrors::INTERNAL_ERROR), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == LOCKED_SUBSCRIPTION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ShieldErrors::LOCKED_SUBSCRIPTION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ShieldErrors::LOCKED_SUBSCRIPTION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == RESOURCE_ALREADY_EXISTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ShieldErrors::RESOURCE_ALREADY_EXISTS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ShieldErrors::RESOURCE_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_PARAMETER_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ShieldErrors::INVALID_PARAMETER), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ShieldErrors::INVALID_PARAMETER), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == ACCESS_DENIED_FOR_DEPENDENCY_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ShieldErrors::ACCESS_DENIED_FOR_DEPENDENCY), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ShieldErrors::ACCESS_DENIED_FOR_DEPENDENCY), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == NO_ASSOCIATED_ROLE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ShieldErrors::NO_ASSOCIATED_ROLE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ShieldErrors::NO_ASSOCIATED_ROLE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == LIMITS_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ShieldErrors::LIMITS_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ShieldErrors::LIMITS_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_PAGINATION_TOKEN_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ShieldErrors::INVALID_PAGINATION_TOKEN), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ShieldErrors::INVALID_PAGINATION_TOKEN), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == OPTIMISTIC_LOCK_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ShieldErrors::OPTIMISTIC_LOCK), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ShieldErrors::OPTIMISTIC_LOCK), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_OPERATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ShieldErrors::INVALID_OPERATION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ShieldErrors::INVALID_OPERATION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_RESOURCE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ShieldErrors::INVALID_RESOURCE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ShieldErrors::INVALID_RESOURCE), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

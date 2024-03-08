@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AccountTakeoverEventActionType::NOT_SET:
+            return {};
           case AccountTakeoverEventActionType::BLOCK:
             return "BLOCK";
           case AccountTakeoverEventActionType::MFA_IF_CONFIGURED:

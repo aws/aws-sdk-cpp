@@ -28,7 +28,8 @@ WorkspaceRequest::WorkspaceRequest() :
     m_rootVolumeEncryptionEnabled(false),
     m_rootVolumeEncryptionEnabledHasBeenSet(false),
     m_workspacePropertiesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_workspaceNameHasBeenSet(false)
 {
 }
 
@@ -42,7 +43,8 @@ WorkspaceRequest::WorkspaceRequest(JsonView jsonValue) :
     m_rootVolumeEncryptionEnabled(false),
     m_rootVolumeEncryptionEnabledHasBeenSet(false),
     m_workspacePropertiesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_workspaceNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -108,6 +110,13 @@ WorkspaceRequest& WorkspaceRequest::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("WorkspaceName"))
+  {
+    m_workspaceName = jsonValue.GetString("WorkspaceName");
+
+    m_workspaceNameHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -165,6 +174,12 @@ JsonValue WorkspaceRequest::Jsonize() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_workspaceNameHasBeenSet)
+  {
+   payload.WithString("WorkspaceName", m_workspaceName);
 
   }
 

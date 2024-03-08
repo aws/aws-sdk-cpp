@@ -169,43 +169,43 @@ namespace Model
 
 
     /**
-     * <p>The type of message. Valid values are TRANSACTIONAL for messages that are
-     * critical or time-sensitive and PROMOTIONAL for messages that aren't critical or
+     * <p>The type of message. Valid values are for messages that are critical or
+     * time-sensitive and PROMOTIONAL for messages that aren't critical or
      * time-sensitive.</p>
      */
     inline const MessageType& GetMessageType() const{ return m_messageType; }
 
     /**
-     * <p>The type of message. Valid values are TRANSACTIONAL for messages that are
-     * critical or time-sensitive and PROMOTIONAL for messages that aren't critical or
+     * <p>The type of message. Valid values are for messages that are critical or
+     * time-sensitive and PROMOTIONAL for messages that aren't critical or
      * time-sensitive.</p>
      */
     inline bool MessageTypeHasBeenSet() const { return m_messageTypeHasBeenSet; }
 
     /**
-     * <p>The type of message. Valid values are TRANSACTIONAL for messages that are
-     * critical or time-sensitive and PROMOTIONAL for messages that aren't critical or
+     * <p>The type of message. Valid values are for messages that are critical or
+     * time-sensitive and PROMOTIONAL for messages that aren't critical or
      * time-sensitive.</p>
      */
     inline void SetMessageType(const MessageType& value) { m_messageTypeHasBeenSet = true; m_messageType = value; }
 
     /**
-     * <p>The type of message. Valid values are TRANSACTIONAL for messages that are
-     * critical or time-sensitive and PROMOTIONAL for messages that aren't critical or
+     * <p>The type of message. Valid values are for messages that are critical or
+     * time-sensitive and PROMOTIONAL for messages that aren't critical or
      * time-sensitive.</p>
      */
     inline void SetMessageType(MessageType&& value) { m_messageTypeHasBeenSet = true; m_messageType = std::move(value); }
 
     /**
-     * <p>The type of message. Valid values are TRANSACTIONAL for messages that are
-     * critical or time-sensitive and PROMOTIONAL for messages that aren't critical or
+     * <p>The type of message. Valid values are for messages that are critical or
+     * time-sensitive and PROMOTIONAL for messages that aren't critical or
      * time-sensitive.</p>
      */
     inline SendTextMessageRequest& WithMessageType(const MessageType& value) { SetMessageType(value); return *this;}
 
     /**
-     * <p>The type of message. Valid values are TRANSACTIONAL for messages that are
-     * critical or time-sensitive and PROMOTIONAL for messages that aren't critical or
+     * <p>The type of message. Valid values are for messages that are critical or
+     * time-sensitive and PROMOTIONAL for messages that aren't critical or
      * time-sensitive.</p>
      */
     inline SendTextMessageRequest& WithMessageType(MessageType&& value) { SetMessageType(std::move(value)); return *this;}
@@ -213,49 +213,49 @@ namespace Model
 
     /**
      * <p>When you register a short code in the US, you must specify a program name. If
-     * you don���t have a US short code, omit this attribute.</p>
+     * you don’t have a US short code, omit this attribute.</p>
      */
     inline const Aws::String& GetKeyword() const{ return m_keyword; }
 
     /**
      * <p>When you register a short code in the US, you must specify a program name. If
-     * you don���t have a US short code, omit this attribute.</p>
+     * you don’t have a US short code, omit this attribute.</p>
      */
     inline bool KeywordHasBeenSet() const { return m_keywordHasBeenSet; }
 
     /**
      * <p>When you register a short code in the US, you must specify a program name. If
-     * you don���t have a US short code, omit this attribute.</p>
+     * you don’t have a US short code, omit this attribute.</p>
      */
     inline void SetKeyword(const Aws::String& value) { m_keywordHasBeenSet = true; m_keyword = value; }
 
     /**
      * <p>When you register a short code in the US, you must specify a program name. If
-     * you don���t have a US short code, omit this attribute.</p>
+     * you don’t have a US short code, omit this attribute.</p>
      */
     inline void SetKeyword(Aws::String&& value) { m_keywordHasBeenSet = true; m_keyword = std::move(value); }
 
     /**
      * <p>When you register a short code in the US, you must specify a program name. If
-     * you don���t have a US short code, omit this attribute.</p>
+     * you don’t have a US short code, omit this attribute.</p>
      */
     inline void SetKeyword(const char* value) { m_keywordHasBeenSet = true; m_keyword.assign(value); }
 
     /**
      * <p>When you register a short code in the US, you must specify a program name. If
-     * you don���t have a US short code, omit this attribute.</p>
+     * you don’t have a US short code, omit this attribute.</p>
      */
     inline SendTextMessageRequest& WithKeyword(const Aws::String& value) { SetKeyword(value); return *this;}
 
     /**
      * <p>When you register a short code in the US, you must specify a program name. If
-     * you don���t have a US short code, omit this attribute.</p>
+     * you don’t have a US short code, omit this attribute.</p>
      */
     inline SendTextMessageRequest& WithKeyword(Aws::String&& value) { SetKeyword(std::move(value)); return *this;}
 
     /**
      * <p>When you register a short code in the US, you must specify a program name. If
-     * you don���t have a US short code, omit this attribute.</p>
+     * you don’t have a US short code, omit this attribute.</p>
      */
     inline SendTextMessageRequest& WithKeyword(const char* value) { SetKeyword(value); return *this;}
 

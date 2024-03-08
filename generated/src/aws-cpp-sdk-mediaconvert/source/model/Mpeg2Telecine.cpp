@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Mpeg2Telecine::NOT_SET:
+            return {};
           case Mpeg2Telecine::NONE:
             return "NONE";
           case Mpeg2Telecine::SOFT:

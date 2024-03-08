@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PredicateType::NOT_SET:
+            return {};
           case PredicateType::IPMatch:
             return "IPMatch";
           case PredicateType::ByteMatch:

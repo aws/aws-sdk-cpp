@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ModelVariantStatus::NOT_SET:
+            return {};
           case ModelVariantStatus::Creating:
             return "Creating";
           case ModelVariantStatus::Updating:

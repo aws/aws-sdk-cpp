@@ -143,7 +143,6 @@ namespace Aws
       class DeleteStageRequest;
       class DeleteVpcLinkRequest;
       class ExportApiRequest;
-      class ResetAuthorizersCacheRequest;
       class GetApiRequest;
       class GetApiMappingRequest;
       class GetApiMappingsRequest;
@@ -172,6 +171,7 @@ namespace Aws
       class GetVpcLinksRequest;
       class ImportApiRequest;
       class ReimportApiRequest;
+      class ResetAuthorizersCacheRequest;
       class TagResourceRequest;
       class UntagResourceRequest;
       class UpdateApiRequest;
@@ -218,7 +218,6 @@ namespace Aws
       typedef Aws::Utils::Outcome<Aws::NoResult, ApiGatewayV2Error> DeleteStageOutcome;
       typedef Aws::Utils::Outcome<DeleteVpcLinkResult, ApiGatewayV2Error> DeleteVpcLinkOutcome;
       typedef Aws::Utils::Outcome<ExportApiResult, ApiGatewayV2Error> ExportApiOutcome;
-      typedef Aws::Utils::Outcome<Aws::NoResult, ApiGatewayV2Error> ResetAuthorizersCacheOutcome;
       typedef Aws::Utils::Outcome<GetApiResult, ApiGatewayV2Error> GetApiOutcome;
       typedef Aws::Utils::Outcome<GetApiMappingResult, ApiGatewayV2Error> GetApiMappingOutcome;
       typedef Aws::Utils::Outcome<GetApiMappingsResult, ApiGatewayV2Error> GetApiMappingsOutcome;
@@ -247,6 +246,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetVpcLinksResult, ApiGatewayV2Error> GetVpcLinksOutcome;
       typedef Aws::Utils::Outcome<ImportApiResult, ApiGatewayV2Error> ImportApiOutcome;
       typedef Aws::Utils::Outcome<ReimportApiResult, ApiGatewayV2Error> ReimportApiOutcome;
+      typedef Aws::Utils::Outcome<Aws::NoResult, ApiGatewayV2Error> ResetAuthorizersCacheOutcome;
       typedef Aws::Utils::Outcome<TagResourceResult, ApiGatewayV2Error> TagResourceOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, ApiGatewayV2Error> UntagResourceOutcome;
       typedef Aws::Utils::Outcome<UpdateApiResult, ApiGatewayV2Error> UpdateApiOutcome;
@@ -293,7 +293,6 @@ namespace Aws
       typedef std::future<DeleteStageOutcome> DeleteStageOutcomeCallable;
       typedef std::future<DeleteVpcLinkOutcome> DeleteVpcLinkOutcomeCallable;
       typedef std::future<ExportApiOutcome> ExportApiOutcomeCallable;
-      typedef std::future<ResetAuthorizersCacheOutcome> ResetAuthorizersCacheOutcomeCallable;
       typedef std::future<GetApiOutcome> GetApiOutcomeCallable;
       typedef std::future<GetApiMappingOutcome> GetApiMappingOutcomeCallable;
       typedef std::future<GetApiMappingsOutcome> GetApiMappingsOutcomeCallable;
@@ -322,6 +321,7 @@ namespace Aws
       typedef std::future<GetVpcLinksOutcome> GetVpcLinksOutcomeCallable;
       typedef std::future<ImportApiOutcome> ImportApiOutcomeCallable;
       typedef std::future<ReimportApiOutcome> ReimportApiOutcomeCallable;
+      typedef std::future<ResetAuthorizersCacheOutcome> ResetAuthorizersCacheOutcomeCallable;
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
       typedef std::future<UpdateApiOutcome> UpdateApiOutcomeCallable;
@@ -371,7 +371,6 @@ namespace Aws
     typedef std::function<void(const ApiGatewayV2Client*, const Model::DeleteStageRequest&, const Model::DeleteStageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteStageResponseReceivedHandler;
     typedef std::function<void(const ApiGatewayV2Client*, const Model::DeleteVpcLinkRequest&, const Model::DeleteVpcLinkOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVpcLinkResponseReceivedHandler;
     typedef std::function<void(const ApiGatewayV2Client*, const Model::ExportApiRequest&, Model::ExportApiOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExportApiResponseReceivedHandler;
-    typedef std::function<void(const ApiGatewayV2Client*, const Model::ResetAuthorizersCacheRequest&, const Model::ResetAuthorizersCacheOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResetAuthorizersCacheResponseReceivedHandler;
     typedef std::function<void(const ApiGatewayV2Client*, const Model::GetApiRequest&, const Model::GetApiOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetApiResponseReceivedHandler;
     typedef std::function<void(const ApiGatewayV2Client*, const Model::GetApiMappingRequest&, const Model::GetApiMappingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetApiMappingResponseReceivedHandler;
     typedef std::function<void(const ApiGatewayV2Client*, const Model::GetApiMappingsRequest&, const Model::GetApiMappingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetApiMappingsResponseReceivedHandler;
@@ -400,6 +399,7 @@ namespace Aws
     typedef std::function<void(const ApiGatewayV2Client*, const Model::GetVpcLinksRequest&, const Model::GetVpcLinksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetVpcLinksResponseReceivedHandler;
     typedef std::function<void(const ApiGatewayV2Client*, const Model::ImportApiRequest&, const Model::ImportApiOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportApiResponseReceivedHandler;
     typedef std::function<void(const ApiGatewayV2Client*, const Model::ReimportApiRequest&, const Model::ReimportApiOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ReimportApiResponseReceivedHandler;
+    typedef std::function<void(const ApiGatewayV2Client*, const Model::ResetAuthorizersCacheRequest&, const Model::ResetAuthorizersCacheOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResetAuthorizersCacheResponseReceivedHandler;
     typedef std::function<void(const ApiGatewayV2Client*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const ApiGatewayV2Client*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const ApiGatewayV2Client*, const Model::UpdateApiRequest&, const Model::UpdateApiOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateApiResponseReceivedHandler;

@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UnsearchedFaceReason::NOT_SET:
+            return {};
           case UnsearchedFaceReason::FACE_NOT_LARGEST:
             return "FACE_NOT_LARGEST";
           case UnsearchedFaceReason::EXCEEDS_MAX_FACES:

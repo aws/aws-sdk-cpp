@@ -43,6 +43,7 @@
 #include <aws/dataexchange/model/ListTagsForResourceRequest.h>
 #include <aws/dataexchange/model/RevokeRevisionRequest.h>
 #include <aws/dataexchange/model/SendApiAssetRequest.h>
+#include <aws/dataexchange/model/SendDataSetNotificationRequest.h>
 #include <aws/dataexchange/model/StartJobRequest.h>
 #include <aws/dataexchange/model/TagResourceRequest.h>
 #include <aws/dataexchange/model/UntagResourceRequest.h>
@@ -64,8 +65,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* DataExchangeClient::SERVICE_NAME = "dataexchange";
-const char* DataExchangeClient::ALLOCATION_TAG = "DataExchangeClient";
+namespace Aws
+{
+  namespace DataExchange
+  {
+    const char SERVICE_NAME[] = "dataexchange";
+    const char ALLOCATION_TAG[] = "DataExchangeClient";
+  }
+}
+const char* DataExchangeClient::GetServiceName() {return SERVICE_NAME;}
+const char* DataExchangeClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 DataExchangeClient::DataExchangeClient(const DataExchange::DataExchangeClientConfiguration& clientConfiguration,
                                        std::shared_ptr<DataExchangeEndpointProviderBase> endpointProvider) :
@@ -77,7 +86,7 @@ DataExchangeClient::DataExchangeClient(const DataExchange::DataExchangeClientCon
             Aws::MakeShared<DataExchangeErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<DataExchangeEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -93,7 +102,7 @@ DataExchangeClient::DataExchangeClient(const AWSCredentials& credentials,
             Aws::MakeShared<DataExchangeErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<DataExchangeEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -109,7 +118,7 @@ DataExchangeClient::DataExchangeClient(const std::shared_ptr<AWSCredentialsProvi
             Aws::MakeShared<DataExchangeErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<DataExchangeEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -938,6 +947,40 @@ SendApiAssetOutcome DataExchangeClient::SendApiAsset(const SendApiAssetRequest& 
       AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), SendApiAssetOutcome(addPrefixErr.value()));
       endpointResolutionOutcome.GetResult().AddPathSegments("/v1");
       return SendApiAssetOutcome(MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+SendDataSetNotificationOutcome DataExchangeClient::SendDataSetNotification(const SendDataSetNotificationRequest& request) const
+{
+  AWS_OPERATION_GUARD(SendDataSetNotification);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, SendDataSetNotification, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DataSetIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("SendDataSetNotification", "Required field: DataSetId, is not set");
+    return SendDataSetNotificationOutcome(Aws::Client::AWSError<DataExchangeErrors>(DataExchangeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DataSetId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, SendDataSetNotification, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, SendDataSetNotification, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".SendDataSetNotification",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<SendDataSetNotificationOutcome>(
+    [&]()-> SendDataSetNotificationOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SendDataSetNotification, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/v1/data-sets/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDataSetId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/notification");
+      return SendDataSetNotificationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

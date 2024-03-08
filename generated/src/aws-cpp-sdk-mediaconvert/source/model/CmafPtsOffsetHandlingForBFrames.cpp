@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CmafPtsOffsetHandlingForBFrames::NOT_SET:
+            return {};
           case CmafPtsOffsetHandlingForBFrames::ZERO_BASED:
             return "ZERO_BASED";
           case CmafPtsOffsetHandlingForBFrames::MATCH_INITIAL_PTS:

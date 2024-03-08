@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MajorKeyDerivationMode::NOT_SET:
+            return {};
           case MajorKeyDerivationMode::EMV_OPTION_A:
             return "EMV_OPTION_A";
           case MajorKeyDerivationMode::EMV_OPTION_B:

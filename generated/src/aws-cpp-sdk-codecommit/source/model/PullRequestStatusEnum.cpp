@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PullRequestStatusEnum::NOT_SET:
+            return {};
           case PullRequestStatusEnum::OPEN:
             return "OPEN";
           case PullRequestStatusEnum::CLOSED:

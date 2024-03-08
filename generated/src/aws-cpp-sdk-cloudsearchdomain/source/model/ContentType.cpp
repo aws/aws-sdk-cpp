@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ContentType::NOT_SET:
+            return {};
           case ContentType::application_json:
             return "application/json";
           case ContentType::application_xml:

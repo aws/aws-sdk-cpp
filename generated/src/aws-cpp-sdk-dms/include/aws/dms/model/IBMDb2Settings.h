@@ -539,6 +539,114 @@ namespace Model
      */
     inline IBMDb2Settings& WithSecretsManagerSecretId(const char* value) { SetSecretsManagerSecretId(value); return *this;}
 
+
+    /**
+     * <p>The amount of time (in milliseconds) before DMS times out operations
+     * performed by DMS on the Db2 target. The default value is 1200 (20 minutes).</p>
+     */
+    inline int GetLoadTimeout() const{ return m_loadTimeout; }
+
+    /**
+     * <p>The amount of time (in milliseconds) before DMS times out operations
+     * performed by DMS on the Db2 target. The default value is 1200 (20 minutes).</p>
+     */
+    inline bool LoadTimeoutHasBeenSet() const { return m_loadTimeoutHasBeenSet; }
+
+    /**
+     * <p>The amount of time (in milliseconds) before DMS times out operations
+     * performed by DMS on the Db2 target. The default value is 1200 (20 minutes).</p>
+     */
+    inline void SetLoadTimeout(int value) { m_loadTimeoutHasBeenSet = true; m_loadTimeout = value; }
+
+    /**
+     * <p>The amount of time (in milliseconds) before DMS times out operations
+     * performed by DMS on the Db2 target. The default value is 1200 (20 minutes).</p>
+     */
+    inline IBMDb2Settings& WithLoadTimeout(int value) { SetLoadTimeout(value); return *this;}
+
+
+    /**
+     * <p>The size (in KB) of the in-memory file write buffer used when generating .csv
+     * files on the local disk on the DMS replication instance. The default value is
+     * 1024 (1 MB).</p>
+     */
+    inline int GetWriteBufferSize() const{ return m_writeBufferSize; }
+
+    /**
+     * <p>The size (in KB) of the in-memory file write buffer used when generating .csv
+     * files on the local disk on the DMS replication instance. The default value is
+     * 1024 (1 MB).</p>
+     */
+    inline bool WriteBufferSizeHasBeenSet() const { return m_writeBufferSizeHasBeenSet; }
+
+    /**
+     * <p>The size (in KB) of the in-memory file write buffer used when generating .csv
+     * files on the local disk on the DMS replication instance. The default value is
+     * 1024 (1 MB).</p>
+     */
+    inline void SetWriteBufferSize(int value) { m_writeBufferSizeHasBeenSet = true; m_writeBufferSize = value; }
+
+    /**
+     * <p>The size (in KB) of the in-memory file write buffer used when generating .csv
+     * files on the local disk on the DMS replication instance. The default value is
+     * 1024 (1 MB).</p>
+     */
+    inline IBMDb2Settings& WithWriteBufferSize(int value) { SetWriteBufferSize(value); return *this;}
+
+
+    /**
+     * <p>Specifies the maximum size (in KB) of .csv files used to transfer data to Db2
+     * LUW.</p>
+     */
+    inline int GetMaxFileSize() const{ return m_maxFileSize; }
+
+    /**
+     * <p>Specifies the maximum size (in KB) of .csv files used to transfer data to Db2
+     * LUW.</p>
+     */
+    inline bool MaxFileSizeHasBeenSet() const { return m_maxFileSizeHasBeenSet; }
+
+    /**
+     * <p>Specifies the maximum size (in KB) of .csv files used to transfer data to Db2
+     * LUW.</p>
+     */
+    inline void SetMaxFileSize(int value) { m_maxFileSizeHasBeenSet = true; m_maxFileSize = value; }
+
+    /**
+     * <p>Specifies the maximum size (in KB) of .csv files used to transfer data to Db2
+     * LUW.</p>
+     */
+    inline IBMDb2Settings& WithMaxFileSize(int value) { SetMaxFileSize(value); return *this;}
+
+
+    /**
+     * <p>If true, DMS saves any .csv files to the Db2 LUW target that were used to
+     * replicate data. DMS uses these files for analysis and troubleshooting.</p>
+     * <p>The default value is false. </p>
+     */
+    inline bool GetKeepCsvFiles() const{ return m_keepCsvFiles; }
+
+    /**
+     * <p>If true, DMS saves any .csv files to the Db2 LUW target that were used to
+     * replicate data. DMS uses these files for analysis and troubleshooting.</p>
+     * <p>The default value is false. </p>
+     */
+    inline bool KeepCsvFilesHasBeenSet() const { return m_keepCsvFilesHasBeenSet; }
+
+    /**
+     * <p>If true, DMS saves any .csv files to the Db2 LUW target that were used to
+     * replicate data. DMS uses these files for analysis and troubleshooting.</p>
+     * <p>The default value is false. </p>
+     */
+    inline void SetKeepCsvFiles(bool value) { m_keepCsvFilesHasBeenSet = true; m_keepCsvFiles = value; }
+
+    /**
+     * <p>If true, DMS saves any .csv files to the Db2 LUW target that were used to
+     * replicate data. DMS uses these files for analysis and troubleshooting.</p>
+     * <p>The default value is false. </p>
+     */
+    inline IBMDb2Settings& WithKeepCsvFiles(bool value) { SetKeepCsvFiles(value); return *this;}
+
   private:
 
     Aws::String m_databaseName;
@@ -570,6 +678,18 @@ namespace Model
 
     Aws::String m_secretsManagerSecretId;
     bool m_secretsManagerSecretIdHasBeenSet = false;
+
+    int m_loadTimeout;
+    bool m_loadTimeoutHasBeenSet = false;
+
+    int m_writeBufferSize;
+    bool m_writeBufferSizeHasBeenSet = false;
+
+    int m_maxFileSize;
+    bool m_maxFileSizeHasBeenSet = false;
+
+    bool m_keepCsvFiles;
+    bool m_keepCsvFilesHasBeenSet = false;
   };
 
 } // namespace Model

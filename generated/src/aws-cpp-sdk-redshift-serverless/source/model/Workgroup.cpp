@@ -23,10 +23,17 @@ Workgroup::Workgroup() :
     m_baseCapacityHasBeenSet(false),
     m_configParametersHasBeenSet(false),
     m_creationDateHasBeenSet(false),
+    m_crossAccountVpcsHasBeenSet(false),
+    m_customDomainCertificateArnHasBeenSet(false),
+    m_customDomainCertificateExpiryTimeHasBeenSet(false),
+    m_customDomainNameHasBeenSet(false),
     m_endpointHasBeenSet(false),
     m_enhancedVpcRouting(false),
     m_enhancedVpcRoutingHasBeenSet(false),
+    m_maxCapacity(0),
+    m_maxCapacityHasBeenSet(false),
     m_namespaceNameHasBeenSet(false),
+    m_patchVersionHasBeenSet(false),
     m_port(0),
     m_portHasBeenSet(false),
     m_publiclyAccessible(false),
@@ -37,7 +44,8 @@ Workgroup::Workgroup() :
     m_subnetIdsHasBeenSet(false),
     m_workgroupArnHasBeenSet(false),
     m_workgroupIdHasBeenSet(false),
-    m_workgroupNameHasBeenSet(false)
+    m_workgroupNameHasBeenSet(false),
+    m_workgroupVersionHasBeenSet(false)
 {
 }
 
@@ -46,10 +54,17 @@ Workgroup::Workgroup(JsonView jsonValue) :
     m_baseCapacityHasBeenSet(false),
     m_configParametersHasBeenSet(false),
     m_creationDateHasBeenSet(false),
+    m_crossAccountVpcsHasBeenSet(false),
+    m_customDomainCertificateArnHasBeenSet(false),
+    m_customDomainCertificateExpiryTimeHasBeenSet(false),
+    m_customDomainNameHasBeenSet(false),
     m_endpointHasBeenSet(false),
     m_enhancedVpcRouting(false),
     m_enhancedVpcRoutingHasBeenSet(false),
+    m_maxCapacity(0),
+    m_maxCapacityHasBeenSet(false),
     m_namespaceNameHasBeenSet(false),
+    m_patchVersionHasBeenSet(false),
     m_port(0),
     m_portHasBeenSet(false),
     m_publiclyAccessible(false),
@@ -60,7 +75,8 @@ Workgroup::Workgroup(JsonView jsonValue) :
     m_subnetIdsHasBeenSet(false),
     m_workgroupArnHasBeenSet(false),
     m_workgroupIdHasBeenSet(false),
-    m_workgroupNameHasBeenSet(false)
+    m_workgroupNameHasBeenSet(false),
+    m_workgroupVersionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -91,6 +107,37 @@ Workgroup& Workgroup::operator =(JsonView jsonValue)
     m_creationDateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("crossAccountVpcs"))
+  {
+    Aws::Utils::Array<JsonView> crossAccountVpcsJsonList = jsonValue.GetArray("crossAccountVpcs");
+    for(unsigned crossAccountVpcsIndex = 0; crossAccountVpcsIndex < crossAccountVpcsJsonList.GetLength(); ++crossAccountVpcsIndex)
+    {
+      m_crossAccountVpcs.push_back(crossAccountVpcsJsonList[crossAccountVpcsIndex].AsString());
+    }
+    m_crossAccountVpcsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("customDomainCertificateArn"))
+  {
+    m_customDomainCertificateArn = jsonValue.GetString("customDomainCertificateArn");
+
+    m_customDomainCertificateArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("customDomainCertificateExpiryTime"))
+  {
+    m_customDomainCertificateExpiryTime = jsonValue.GetString("customDomainCertificateExpiryTime");
+
+    m_customDomainCertificateExpiryTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("customDomainName"))
+  {
+    m_customDomainName = jsonValue.GetString("customDomainName");
+
+    m_customDomainNameHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("endpoint"))
   {
     m_endpoint = jsonValue.GetObject("endpoint");
@@ -105,11 +152,25 @@ Workgroup& Workgroup::operator =(JsonView jsonValue)
     m_enhancedVpcRoutingHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("maxCapacity"))
+  {
+    m_maxCapacity = jsonValue.GetInteger("maxCapacity");
+
+    m_maxCapacityHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("namespaceName"))
   {
     m_namespaceName = jsonValue.GetString("namespaceName");
 
     m_namespaceNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("patchVersion"))
+  {
+    m_patchVersion = jsonValue.GetString("patchVersion");
+
+    m_patchVersionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("port"))
@@ -174,6 +235,13 @@ Workgroup& Workgroup::operator =(JsonView jsonValue)
     m_workgroupNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("workgroupVersion"))
+  {
+    m_workgroupVersion = jsonValue.GetString("workgroupVersion");
+
+    m_workgroupVersionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -203,6 +271,34 @@ JsonValue Workgroup::Jsonize() const
    payload.WithString("creationDate", m_creationDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
+  if(m_crossAccountVpcsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> crossAccountVpcsJsonList(m_crossAccountVpcs.size());
+   for(unsigned crossAccountVpcsIndex = 0; crossAccountVpcsIndex < crossAccountVpcsJsonList.GetLength(); ++crossAccountVpcsIndex)
+   {
+     crossAccountVpcsJsonList[crossAccountVpcsIndex].AsString(m_crossAccountVpcs[crossAccountVpcsIndex]);
+   }
+   payload.WithArray("crossAccountVpcs", std::move(crossAccountVpcsJsonList));
+
+  }
+
+  if(m_customDomainCertificateArnHasBeenSet)
+  {
+   payload.WithString("customDomainCertificateArn", m_customDomainCertificateArn);
+
+  }
+
+  if(m_customDomainCertificateExpiryTimeHasBeenSet)
+  {
+   payload.WithString("customDomainCertificateExpiryTime", m_customDomainCertificateExpiryTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_customDomainNameHasBeenSet)
+  {
+   payload.WithString("customDomainName", m_customDomainName);
+
+  }
+
   if(m_endpointHasBeenSet)
   {
    payload.WithObject("endpoint", m_endpoint.Jsonize());
@@ -215,9 +311,21 @@ JsonValue Workgroup::Jsonize() const
 
   }
 
+  if(m_maxCapacityHasBeenSet)
+  {
+   payload.WithInteger("maxCapacity", m_maxCapacity);
+
+  }
+
   if(m_namespaceNameHasBeenSet)
   {
    payload.WithString("namespaceName", m_namespaceName);
+
+  }
+
+  if(m_patchVersionHasBeenSet)
+  {
+   payload.WithString("patchVersion", m_patchVersion);
 
   }
 
@@ -275,6 +383,12 @@ JsonValue Workgroup::Jsonize() const
   if(m_workgroupNameHasBeenSet)
   {
    payload.WithString("workgroupName", m_workgroupName);
+
+  }
+
+  if(m_workgroupVersionHasBeenSet)
+  {
+   payload.WithString("workgroupVersion", m_workgroupVersion);
 
   }
 

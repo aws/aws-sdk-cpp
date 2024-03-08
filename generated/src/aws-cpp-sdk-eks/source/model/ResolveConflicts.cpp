@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResolveConflicts::NOT_SET:
+            return {};
           case ResolveConflicts::OVERWRITE:
             return "OVERWRITE";
           case ResolveConflicts::NONE:

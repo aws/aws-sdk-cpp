@@ -27,7 +27,7 @@ namespace Model
   /**
    * <p>The configuration that Amazon FSx uses to join the ONTAP storage virtual
    * machine (SVM) to your self-managed (including on-premises) Microsoft Active
-   * Directory (AD) directory.</p><p><h3>See Also:</h3>   <a
+   * Directory directory.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateSvmActiveDirectoryConfiguration">AWS
    * API Reference</a></p>
    */

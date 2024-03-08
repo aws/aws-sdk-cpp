@@ -7,6 +7,8 @@
 #include <aws/guardduty/GuardDuty_EXPORTS.h>
 #include <aws/guardduty/model/CoverageEksClusterDetails.h>
 #include <aws/guardduty/model/ResourceType.h>
+#include <aws/guardduty/model/CoverageEcsClusterDetails.h>
+#include <aws/guardduty/model/CoverageEc2InstanceDetails.h>
 #include <utility>
 
 namespace Aws
@@ -100,6 +102,104 @@ namespace Model
      */
     inline CoverageResourceDetails& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Information about the Amazon ECS cluster that is assessed for runtime
+     * coverage.</p>
+     */
+    inline const CoverageEcsClusterDetails& GetEcsClusterDetails() const{ return m_ecsClusterDetails; }
+
+    /**
+     * <p>Information about the Amazon ECS cluster that is assessed for runtime
+     * coverage.</p>
+     */
+    inline bool EcsClusterDetailsHasBeenSet() const { return m_ecsClusterDetailsHasBeenSet; }
+
+    /**
+     * <p>Information about the Amazon ECS cluster that is assessed for runtime
+     * coverage.</p>
+     */
+    inline void SetEcsClusterDetails(const CoverageEcsClusterDetails& value) { m_ecsClusterDetailsHasBeenSet = true; m_ecsClusterDetails = value; }
+
+    /**
+     * <p>Information about the Amazon ECS cluster that is assessed for runtime
+     * coverage.</p>
+     */
+    inline void SetEcsClusterDetails(CoverageEcsClusterDetails&& value) { m_ecsClusterDetailsHasBeenSet = true; m_ecsClusterDetails = std::move(value); }
+
+    /**
+     * <p>Information about the Amazon ECS cluster that is assessed for runtime
+     * coverage.</p>
+     */
+    inline CoverageResourceDetails& WithEcsClusterDetails(const CoverageEcsClusterDetails& value) { SetEcsClusterDetails(value); return *this;}
+
+    /**
+     * <p>Information about the Amazon ECS cluster that is assessed for runtime
+     * coverage.</p>
+     */
+    inline CoverageResourceDetails& WithEcsClusterDetails(CoverageEcsClusterDetails&& value) { SetEcsClusterDetails(std::move(value)); return *this;}
+
+
+    /**
+     *  <p>This API is also used when you use GuardDuty Runtime Monitoring for
+     * your Amazon EC2 instances (currently in preview release) and is subject to
+     * change. The use of this API is subject to Section 2 of the <a
+     * href="http://aws.amazon.com/service-terms/">Amazon Web Services Service
+     * Terms</a> ("Betas and Previews").</p>  <p>Information about the Amazon
+     * EC2 instance assessed for runtime coverage.</p>
+     */
+    inline const CoverageEc2InstanceDetails& GetEc2InstanceDetails() const{ return m_ec2InstanceDetails; }
+
+    /**
+     *  <p>This API is also used when you use GuardDuty Runtime Monitoring for
+     * your Amazon EC2 instances (currently in preview release) and is subject to
+     * change. The use of this API is subject to Section 2 of the <a
+     * href="http://aws.amazon.com/service-terms/">Amazon Web Services Service
+     * Terms</a> ("Betas and Previews").</p>  <p>Information about the Amazon
+     * EC2 instance assessed for runtime coverage.</p>
+     */
+    inline bool Ec2InstanceDetailsHasBeenSet() const { return m_ec2InstanceDetailsHasBeenSet; }
+
+    /**
+     *  <p>This API is also used when you use GuardDuty Runtime Monitoring for
+     * your Amazon EC2 instances (currently in preview release) and is subject to
+     * change. The use of this API is subject to Section 2 of the <a
+     * href="http://aws.amazon.com/service-terms/">Amazon Web Services Service
+     * Terms</a> ("Betas and Previews").</p>  <p>Information about the Amazon
+     * EC2 instance assessed for runtime coverage.</p>
+     */
+    inline void SetEc2InstanceDetails(const CoverageEc2InstanceDetails& value) { m_ec2InstanceDetailsHasBeenSet = true; m_ec2InstanceDetails = value; }
+
+    /**
+     *  <p>This API is also used when you use GuardDuty Runtime Monitoring for
+     * your Amazon EC2 instances (currently in preview release) and is subject to
+     * change. The use of this API is subject to Section 2 of the <a
+     * href="http://aws.amazon.com/service-terms/">Amazon Web Services Service
+     * Terms</a> ("Betas and Previews").</p>  <p>Information about the Amazon
+     * EC2 instance assessed for runtime coverage.</p>
+     */
+    inline void SetEc2InstanceDetails(CoverageEc2InstanceDetails&& value) { m_ec2InstanceDetailsHasBeenSet = true; m_ec2InstanceDetails = std::move(value); }
+
+    /**
+     *  <p>This API is also used when you use GuardDuty Runtime Monitoring for
+     * your Amazon EC2 instances (currently in preview release) and is subject to
+     * change. The use of this API is subject to Section 2 of the <a
+     * href="http://aws.amazon.com/service-terms/">Amazon Web Services Service
+     * Terms</a> ("Betas and Previews").</p>  <p>Information about the Amazon
+     * EC2 instance assessed for runtime coverage.</p>
+     */
+    inline CoverageResourceDetails& WithEc2InstanceDetails(const CoverageEc2InstanceDetails& value) { SetEc2InstanceDetails(value); return *this;}
+
+    /**
+     *  <p>This API is also used when you use GuardDuty Runtime Monitoring for
+     * your Amazon EC2 instances (currently in preview release) and is subject to
+     * change. The use of this API is subject to Section 2 of the <a
+     * href="http://aws.amazon.com/service-terms/">Amazon Web Services Service
+     * Terms</a> ("Betas and Previews").</p>  <p>Information about the Amazon
+     * EC2 instance assessed for runtime coverage.</p>
+     */
+    inline CoverageResourceDetails& WithEc2InstanceDetails(CoverageEc2InstanceDetails&& value) { SetEc2InstanceDetails(std::move(value)); return *this;}
+
   private:
 
     CoverageEksClusterDetails m_eksClusterDetails;
@@ -107,6 +207,12 @@ namespace Model
 
     ResourceType m_resourceType;
     bool m_resourceTypeHasBeenSet = false;
+
+    CoverageEcsClusterDetails m_ecsClusterDetails;
+    bool m_ecsClusterDetailsHasBeenSet = false;
+
+    CoverageEc2InstanceDetails m_ec2InstanceDetails;
+    bool m_ec2InstanceDetailsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case JobPhase::NOT_SET:
+            return {};
           case JobPhase::PROBING:
             return "PROBING";
           case JobPhase::TRANSCODING:

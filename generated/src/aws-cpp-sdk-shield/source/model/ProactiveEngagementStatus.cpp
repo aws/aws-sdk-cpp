@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ProactiveEngagementStatus::NOT_SET:
+            return {};
           case ProactiveEngagementStatus::ENABLED:
             return "ENABLED";
           case ProactiveEngagementStatus::DISABLED:

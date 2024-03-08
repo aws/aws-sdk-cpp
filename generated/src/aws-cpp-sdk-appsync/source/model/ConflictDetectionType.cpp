@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ConflictDetectionType::NOT_SET:
+            return {};
           case ConflictDetectionType::VERSION:
             return "VERSION";
           case ConflictDetectionType::NONE:

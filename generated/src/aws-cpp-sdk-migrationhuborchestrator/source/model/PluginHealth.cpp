@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PluginHealth::NOT_SET:
+            return {};
           case PluginHealth::HEALTHY:
             return "HEALTHY";
           case PluginHealth::UNHEALTHY:

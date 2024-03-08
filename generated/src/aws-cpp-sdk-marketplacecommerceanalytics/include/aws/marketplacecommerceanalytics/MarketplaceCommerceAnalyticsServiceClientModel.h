@@ -19,7 +19,6 @@
 
 /* Service model headers required in MarketplaceCommerceAnalyticsClient header */
 #include <aws/marketplacecommerceanalytics/model/GenerateDataSetResult.h>
-#include <aws/marketplacecommerceanalytics/model/StartSupportDataExportResult.h>
 /* End of service model headers required in MarketplaceCommerceAnalyticsClient header */
 
 namespace Aws
@@ -61,17 +60,14 @@ namespace Aws
     {
       /* Service model forward declarations required in MarketplaceCommerceAnalyticsClient header */
       class GenerateDataSetRequest;
-      class StartSupportDataExportRequest;
       /* End of service model forward declarations required in MarketplaceCommerceAnalyticsClient header */
 
       /* Service model Outcome class definitions */
       typedef Aws::Utils::Outcome<GenerateDataSetResult, MarketplaceCommerceAnalyticsError> GenerateDataSetOutcome;
-      typedef Aws::Utils::Outcome<StartSupportDataExportResult, MarketplaceCommerceAnalyticsError> StartSupportDataExportOutcome;
       /* End of service model Outcome class definitions */
 
       /* Service model Outcome callable definitions */
       typedef std::future<GenerateDataSetOutcome> GenerateDataSetOutcomeCallable;
-      typedef std::future<StartSupportDataExportOutcome> StartSupportDataExportOutcomeCallable;
       /* End of service model Outcome callable definitions */
     } // namespace Model
 
@@ -79,7 +75,6 @@ namespace Aws
 
     /* Service model async handlers definitions */
     typedef std::function<void(const MarketplaceCommerceAnalyticsClient*, const Model::GenerateDataSetRequest&, const Model::GenerateDataSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GenerateDataSetResponseReceivedHandler;
-    typedef std::function<void(const MarketplaceCommerceAnalyticsClient*, const Model::StartSupportDataExportRequest&, const Model::StartSupportDataExportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartSupportDataExportResponseReceivedHandler;
     /* End of service model async handlers definitions */
   } // namespace MarketplaceCommerceAnalytics
 } // namespace Aws

@@ -1190,37 +1190,37 @@ namespace Model
 
     /**
      * <p>Specifies whether major version upgrades are allowed.</p> <p>Valid for
-     * Cluster Type: Aurora DB clusters only</p> <p>Constraints:</p> <ul> <li> <p>You
-     * must allow major version upgrades when specifying a value for the
-     * <code>EngineVersion</code> parameter that is a different major version than the
-     * DB cluster's current version.</p> </li> </ul>
+     * Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
+     * <p>Constraints:</p> <ul> <li> <p>You must allow major version upgrades when
+     * specifying a value for the <code>EngineVersion</code> parameter that is a
+     * different major version than the DB cluster's current version.</p> </li> </ul>
      */
     inline bool GetAllowMajorVersionUpgrade() const{ return m_allowMajorVersionUpgrade; }
 
     /**
      * <p>Specifies whether major version upgrades are allowed.</p> <p>Valid for
-     * Cluster Type: Aurora DB clusters only</p> <p>Constraints:</p> <ul> <li> <p>You
-     * must allow major version upgrades when specifying a value for the
-     * <code>EngineVersion</code> parameter that is a different major version than the
-     * DB cluster's current version.</p> </li> </ul>
+     * Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
+     * <p>Constraints:</p> <ul> <li> <p>You must allow major version upgrades when
+     * specifying a value for the <code>EngineVersion</code> parameter that is a
+     * different major version than the DB cluster's current version.</p> </li> </ul>
      */
     inline bool AllowMajorVersionUpgradeHasBeenSet() const { return m_allowMajorVersionUpgradeHasBeenSet; }
 
     /**
      * <p>Specifies whether major version upgrades are allowed.</p> <p>Valid for
-     * Cluster Type: Aurora DB clusters only</p> <p>Constraints:</p> <ul> <li> <p>You
-     * must allow major version upgrades when specifying a value for the
-     * <code>EngineVersion</code> parameter that is a different major version than the
-     * DB cluster's current version.</p> </li> </ul>
+     * Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
+     * <p>Constraints:</p> <ul> <li> <p>You must allow major version upgrades when
+     * specifying a value for the <code>EngineVersion</code> parameter that is a
+     * different major version than the DB cluster's current version.</p> </li> </ul>
      */
     inline void SetAllowMajorVersionUpgrade(bool value) { m_allowMajorVersionUpgradeHasBeenSet = true; m_allowMajorVersionUpgrade = value; }
 
     /**
      * <p>Specifies whether major version upgrades are allowed.</p> <p>Valid for
-     * Cluster Type: Aurora DB clusters only</p> <p>Constraints:</p> <ul> <li> <p>You
-     * must allow major version upgrades when specifying a value for the
-     * <code>EngineVersion</code> parameter that is a different major version than the
-     * DB cluster's current version.</p> </li> </ul>
+     * Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p>
+     * <p>Constraints:</p> <ul> <li> <p>You must allow major version upgrades when
+     * specifying a value for the <code>EngineVersion</code> parameter that is a
+     * different major version than the DB cluster's current version.</p> </li> </ul>
      */
     inline ModifyDBClusterRequest& WithAllowMajorVersionUpgrade(bool value) { SetAllowMajorVersionUpgrade(value); return *this;}
 
@@ -1554,53 +1554,69 @@ namespace Model
 
     /**
      * <p>Specifies whether to enable the HTTP endpoint for an Aurora Serverless v1 DB
-     * cluster. By default, the HTTP endpoint is disabled.</p> <p>When enabled, the
-     * HTTP endpoint provides a connectionless web service API for running SQL queries
-     * on the Aurora Serverless v1 DB cluster. You can also query your database from
-     * inside the RDS console with the query editor.</p> <p>For more information, see
-     * <a
+     * cluster. By default, the HTTP endpoint isn't enabled.</p> <p>When enabled, the
+     * HTTP endpoint provides a connectionless web service API (RDS Data API) for
+     * running SQL queries on the Aurora Serverless v1 DB cluster. You can also query
+     * your database from inside the RDS console with the RDS query editor.</p> <p>For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
-     * the Data API for Aurora Serverless v1</a> in the <i>Amazon Aurora User
-     * Guide</i>.</p> <p>Valid for Cluster Type: Aurora DB clusters only</p>
+     * RDS Data API</a> in the <i>Amazon Aurora User Guide</i>.</p>  <p>This
+     * parameter applies only to Aurora Serverless v1 DB clusters. To enable or disable
+     * the HTTP endpoint for an Aurora PostgreSQL Serverless v2 or provisioned DB
+     * cluster, use the <code>EnableHttpEndpoint</code> and
+     * <code>DisableHttpEndpoint</code> operations.</p>  <p>Valid for Cluster
+     * Type: Aurora DB clusters only</p>
      */
     inline bool GetEnableHttpEndpoint() const{ return m_enableHttpEndpoint; }
 
     /**
      * <p>Specifies whether to enable the HTTP endpoint for an Aurora Serverless v1 DB
-     * cluster. By default, the HTTP endpoint is disabled.</p> <p>When enabled, the
-     * HTTP endpoint provides a connectionless web service API for running SQL queries
-     * on the Aurora Serverless v1 DB cluster. You can also query your database from
-     * inside the RDS console with the query editor.</p> <p>For more information, see
-     * <a
+     * cluster. By default, the HTTP endpoint isn't enabled.</p> <p>When enabled, the
+     * HTTP endpoint provides a connectionless web service API (RDS Data API) for
+     * running SQL queries on the Aurora Serverless v1 DB cluster. You can also query
+     * your database from inside the RDS console with the RDS query editor.</p> <p>For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
-     * the Data API for Aurora Serverless v1</a> in the <i>Amazon Aurora User
-     * Guide</i>.</p> <p>Valid for Cluster Type: Aurora DB clusters only</p>
+     * RDS Data API</a> in the <i>Amazon Aurora User Guide</i>.</p>  <p>This
+     * parameter applies only to Aurora Serverless v1 DB clusters. To enable or disable
+     * the HTTP endpoint for an Aurora PostgreSQL Serverless v2 or provisioned DB
+     * cluster, use the <code>EnableHttpEndpoint</code> and
+     * <code>DisableHttpEndpoint</code> operations.</p>  <p>Valid for Cluster
+     * Type: Aurora DB clusters only</p>
      */
     inline bool EnableHttpEndpointHasBeenSet() const { return m_enableHttpEndpointHasBeenSet; }
 
     /**
      * <p>Specifies whether to enable the HTTP endpoint for an Aurora Serverless v1 DB
-     * cluster. By default, the HTTP endpoint is disabled.</p> <p>When enabled, the
-     * HTTP endpoint provides a connectionless web service API for running SQL queries
-     * on the Aurora Serverless v1 DB cluster. You can also query your database from
-     * inside the RDS console with the query editor.</p> <p>For more information, see
-     * <a
+     * cluster. By default, the HTTP endpoint isn't enabled.</p> <p>When enabled, the
+     * HTTP endpoint provides a connectionless web service API (RDS Data API) for
+     * running SQL queries on the Aurora Serverless v1 DB cluster. You can also query
+     * your database from inside the RDS console with the RDS query editor.</p> <p>For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
-     * the Data API for Aurora Serverless v1</a> in the <i>Amazon Aurora User
-     * Guide</i>.</p> <p>Valid for Cluster Type: Aurora DB clusters only</p>
+     * RDS Data API</a> in the <i>Amazon Aurora User Guide</i>.</p>  <p>This
+     * parameter applies only to Aurora Serverless v1 DB clusters. To enable or disable
+     * the HTTP endpoint for an Aurora PostgreSQL Serverless v2 or provisioned DB
+     * cluster, use the <code>EnableHttpEndpoint</code> and
+     * <code>DisableHttpEndpoint</code> operations.</p>  <p>Valid for Cluster
+     * Type: Aurora DB clusters only</p>
      */
     inline void SetEnableHttpEndpoint(bool value) { m_enableHttpEndpointHasBeenSet = true; m_enableHttpEndpoint = value; }
 
     /**
      * <p>Specifies whether to enable the HTTP endpoint for an Aurora Serverless v1 DB
-     * cluster. By default, the HTTP endpoint is disabled.</p> <p>When enabled, the
-     * HTTP endpoint provides a connectionless web service API for running SQL queries
-     * on the Aurora Serverless v1 DB cluster. You can also query your database from
-     * inside the RDS console with the query editor.</p> <p>For more information, see
-     * <a
+     * cluster. By default, the HTTP endpoint isn't enabled.</p> <p>When enabled, the
+     * HTTP endpoint provides a connectionless web service API (RDS Data API) for
+     * running SQL queries on the Aurora Serverless v1 DB cluster. You can also query
+     * your database from inside the RDS console with the RDS query editor.</p> <p>For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
-     * the Data API for Aurora Serverless v1</a> in the <i>Amazon Aurora User
-     * Guide</i>.</p> <p>Valid for Cluster Type: Aurora DB clusters only</p>
+     * RDS Data API</a> in the <i>Amazon Aurora User Guide</i>.</p>  <p>This
+     * parameter applies only to Aurora Serverless v1 DB clusters. To enable or disable
+     * the HTTP endpoint for an Aurora PostgreSQL Serverless v2 or provisioned DB
+     * cluster, use the <code>EnableHttpEndpoint</code> and
+     * <code>DisableHttpEndpoint</code> operations.</p>  <p>Valid for Cluster
+     * Type: Aurora DB clusters only</p>
      */
     inline ModifyDBClusterRequest& WithEnableHttpEndpoint(bool value) { SetEnableHttpEndpoint(value); return *this;}
 
@@ -1828,9 +1844,10 @@ namespace Model
      * cluster, a value for the <code>Iops</code> parameter is required.</p> <p>Valid
      * for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p> <p>Valid
      * Values:</p> <ul> <li> <p>Aurora DB clusters - <code>aurora | aurora-iopt1</code>
-     * </p> </li> <li> <p>Multi-AZ DB clusters - <code>io1</code> </p> </li> </ul>
-     * <p>Default:</p> <ul> <li> <p>Aurora DB clusters - <code>aurora</code> </p> </li>
-     * <li> <p>Multi-AZ DB clusters - <code>io1</code> </p> </li> </ul>
+     * </p> </li> <li> <p>Multi-AZ DB clusters - <code>io1 | io2 | gp3</code> </p>
+     * </li> </ul> <p>Default:</p> <ul> <li> <p>Aurora DB clusters -
+     * <code>aurora</code> </p> </li> <li> <p>Multi-AZ DB clusters - <code>io1</code>
+     * </p> </li> </ul>
      */
     inline const Aws::String& GetStorageType() const{ return m_storageType; }
 
@@ -1845,9 +1862,10 @@ namespace Model
      * cluster, a value for the <code>Iops</code> parameter is required.</p> <p>Valid
      * for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p> <p>Valid
      * Values:</p> <ul> <li> <p>Aurora DB clusters - <code>aurora | aurora-iopt1</code>
-     * </p> </li> <li> <p>Multi-AZ DB clusters - <code>io1</code> </p> </li> </ul>
-     * <p>Default:</p> <ul> <li> <p>Aurora DB clusters - <code>aurora</code> </p> </li>
-     * <li> <p>Multi-AZ DB clusters - <code>io1</code> </p> </li> </ul>
+     * </p> </li> <li> <p>Multi-AZ DB clusters - <code>io1 | io2 | gp3</code> </p>
+     * </li> </ul> <p>Default:</p> <ul> <li> <p>Aurora DB clusters -
+     * <code>aurora</code> </p> </li> <li> <p>Multi-AZ DB clusters - <code>io1</code>
+     * </p> </li> </ul>
      */
     inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
 
@@ -1862,9 +1880,10 @@ namespace Model
      * cluster, a value for the <code>Iops</code> parameter is required.</p> <p>Valid
      * for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p> <p>Valid
      * Values:</p> <ul> <li> <p>Aurora DB clusters - <code>aurora | aurora-iopt1</code>
-     * </p> </li> <li> <p>Multi-AZ DB clusters - <code>io1</code> </p> </li> </ul>
-     * <p>Default:</p> <ul> <li> <p>Aurora DB clusters - <code>aurora</code> </p> </li>
-     * <li> <p>Multi-AZ DB clusters - <code>io1</code> </p> </li> </ul>
+     * </p> </li> <li> <p>Multi-AZ DB clusters - <code>io1 | io2 | gp3</code> </p>
+     * </li> </ul> <p>Default:</p> <ul> <li> <p>Aurora DB clusters -
+     * <code>aurora</code> </p> </li> <li> <p>Multi-AZ DB clusters - <code>io1</code>
+     * </p> </li> </ul>
      */
     inline void SetStorageType(const Aws::String& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
 
@@ -1879,9 +1898,10 @@ namespace Model
      * cluster, a value for the <code>Iops</code> parameter is required.</p> <p>Valid
      * for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p> <p>Valid
      * Values:</p> <ul> <li> <p>Aurora DB clusters - <code>aurora | aurora-iopt1</code>
-     * </p> </li> <li> <p>Multi-AZ DB clusters - <code>io1</code> </p> </li> </ul>
-     * <p>Default:</p> <ul> <li> <p>Aurora DB clusters - <code>aurora</code> </p> </li>
-     * <li> <p>Multi-AZ DB clusters - <code>io1</code> </p> </li> </ul>
+     * </p> </li> <li> <p>Multi-AZ DB clusters - <code>io1 | io2 | gp3</code> </p>
+     * </li> </ul> <p>Default:</p> <ul> <li> <p>Aurora DB clusters -
+     * <code>aurora</code> </p> </li> <li> <p>Multi-AZ DB clusters - <code>io1</code>
+     * </p> </li> </ul>
      */
     inline void SetStorageType(Aws::String&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
 
@@ -1896,9 +1916,10 @@ namespace Model
      * cluster, a value for the <code>Iops</code> parameter is required.</p> <p>Valid
      * for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p> <p>Valid
      * Values:</p> <ul> <li> <p>Aurora DB clusters - <code>aurora | aurora-iopt1</code>
-     * </p> </li> <li> <p>Multi-AZ DB clusters - <code>io1</code> </p> </li> </ul>
-     * <p>Default:</p> <ul> <li> <p>Aurora DB clusters - <code>aurora</code> </p> </li>
-     * <li> <p>Multi-AZ DB clusters - <code>io1</code> </p> </li> </ul>
+     * </p> </li> <li> <p>Multi-AZ DB clusters - <code>io1 | io2 | gp3</code> </p>
+     * </li> </ul> <p>Default:</p> <ul> <li> <p>Aurora DB clusters -
+     * <code>aurora</code> </p> </li> <li> <p>Multi-AZ DB clusters - <code>io1</code>
+     * </p> </li> </ul>
      */
     inline void SetStorageType(const char* value) { m_storageTypeHasBeenSet = true; m_storageType.assign(value); }
 
@@ -1913,9 +1934,10 @@ namespace Model
      * cluster, a value for the <code>Iops</code> parameter is required.</p> <p>Valid
      * for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p> <p>Valid
      * Values:</p> <ul> <li> <p>Aurora DB clusters - <code>aurora | aurora-iopt1</code>
-     * </p> </li> <li> <p>Multi-AZ DB clusters - <code>io1</code> </p> </li> </ul>
-     * <p>Default:</p> <ul> <li> <p>Aurora DB clusters - <code>aurora</code> </p> </li>
-     * <li> <p>Multi-AZ DB clusters - <code>io1</code> </p> </li> </ul>
+     * </p> </li> <li> <p>Multi-AZ DB clusters - <code>io1 | io2 | gp3</code> </p>
+     * </li> </ul> <p>Default:</p> <ul> <li> <p>Aurora DB clusters -
+     * <code>aurora</code> </p> </li> <li> <p>Multi-AZ DB clusters - <code>io1</code>
+     * </p> </li> </ul>
      */
     inline ModifyDBClusterRequest& WithStorageType(const Aws::String& value) { SetStorageType(value); return *this;}
 
@@ -1930,9 +1952,10 @@ namespace Model
      * cluster, a value for the <code>Iops</code> parameter is required.</p> <p>Valid
      * for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p> <p>Valid
      * Values:</p> <ul> <li> <p>Aurora DB clusters - <code>aurora | aurora-iopt1</code>
-     * </p> </li> <li> <p>Multi-AZ DB clusters - <code>io1</code> </p> </li> </ul>
-     * <p>Default:</p> <ul> <li> <p>Aurora DB clusters - <code>aurora</code> </p> </li>
-     * <li> <p>Multi-AZ DB clusters - <code>io1</code> </p> </li> </ul>
+     * </p> </li> <li> <p>Multi-AZ DB clusters - <code>io1 | io2 | gp3</code> </p>
+     * </li> </ul> <p>Default:</p> <ul> <li> <p>Aurora DB clusters -
+     * <code>aurora</code> </p> </li> <li> <p>Multi-AZ DB clusters - <code>io1</code>
+     * </p> </li> </ul>
      */
     inline ModifyDBClusterRequest& WithStorageType(Aws::String&& value) { SetStorageType(std::move(value)); return *this;}
 
@@ -1947,9 +1970,10 @@ namespace Model
      * cluster, a value for the <code>Iops</code> parameter is required.</p> <p>Valid
      * for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters</p> <p>Valid
      * Values:</p> <ul> <li> <p>Aurora DB clusters - <code>aurora | aurora-iopt1</code>
-     * </p> </li> <li> <p>Multi-AZ DB clusters - <code>io1</code> </p> </li> </ul>
-     * <p>Default:</p> <ul> <li> <p>Aurora DB clusters - <code>aurora</code> </p> </li>
-     * <li> <p>Multi-AZ DB clusters - <code>io1</code> </p> </li> </ul>
+     * </p> </li> <li> <p>Multi-AZ DB clusters - <code>io1 | io2 | gp3</code> </p>
+     * </li> </ul> <p>Default:</p> <ul> <li> <p>Aurora DB clusters -
+     * <code>aurora</code> </p> </li> <li> <p>Multi-AZ DB clusters - <code>io1</code>
+     * </p> </li> </ul>
      */
     inline ModifyDBClusterRequest& WithStorageType(const char* value) { SetStorageType(value); return *this;}
 
@@ -3031,6 +3055,108 @@ namespace Model
      */
     inline ModifyDBClusterRequest& WithAwsBackupRecoveryPointArn(const char* value) { SetAwsBackupRecoveryPointArn(value); return *this;}
 
+
+    /**
+     * <p>Specifies whether to enable Aurora Limitless Database. You must enable Aurora
+     * Limitless Database to create a DB shard group.</p> <p>Valid for: Aurora DB
+     * clusters only</p>
+     */
+    inline bool GetEnableLimitlessDatabase() const{ return m_enableLimitlessDatabase; }
+
+    /**
+     * <p>Specifies whether to enable Aurora Limitless Database. You must enable Aurora
+     * Limitless Database to create a DB shard group.</p> <p>Valid for: Aurora DB
+     * clusters only</p>
+     */
+    inline bool EnableLimitlessDatabaseHasBeenSet() const { return m_enableLimitlessDatabaseHasBeenSet; }
+
+    /**
+     * <p>Specifies whether to enable Aurora Limitless Database. You must enable Aurora
+     * Limitless Database to create a DB shard group.</p> <p>Valid for: Aurora DB
+     * clusters only</p>
+     */
+    inline void SetEnableLimitlessDatabase(bool value) { m_enableLimitlessDatabaseHasBeenSet = true; m_enableLimitlessDatabase = value; }
+
+    /**
+     * <p>Specifies whether to enable Aurora Limitless Database. You must enable Aurora
+     * Limitless Database to create a DB shard group.</p> <p>Valid for: Aurora DB
+     * clusters only</p>
+     */
+    inline ModifyDBClusterRequest& WithEnableLimitlessDatabase(bool value) { SetEnableLimitlessDatabase(value); return *this;}
+
+
+    /**
+     * <p>The CA certificate identifier to use for the DB cluster's server
+     * certificate.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using
+     * SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User
+     * Guide</i>.</p> <p>Valid for Cluster Type: Multi-AZ DB clusters</p>
+     */
+    inline const Aws::String& GetCACertificateIdentifier() const{ return m_cACertificateIdentifier; }
+
+    /**
+     * <p>The CA certificate identifier to use for the DB cluster's server
+     * certificate.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using
+     * SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User
+     * Guide</i>.</p> <p>Valid for Cluster Type: Multi-AZ DB clusters</p>
+     */
+    inline bool CACertificateIdentifierHasBeenSet() const { return m_cACertificateIdentifierHasBeenSet; }
+
+    /**
+     * <p>The CA certificate identifier to use for the DB cluster's server
+     * certificate.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using
+     * SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User
+     * Guide</i>.</p> <p>Valid for Cluster Type: Multi-AZ DB clusters</p>
+     */
+    inline void SetCACertificateIdentifier(const Aws::String& value) { m_cACertificateIdentifierHasBeenSet = true; m_cACertificateIdentifier = value; }
+
+    /**
+     * <p>The CA certificate identifier to use for the DB cluster's server
+     * certificate.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using
+     * SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User
+     * Guide</i>.</p> <p>Valid for Cluster Type: Multi-AZ DB clusters</p>
+     */
+    inline void SetCACertificateIdentifier(Aws::String&& value) { m_cACertificateIdentifierHasBeenSet = true; m_cACertificateIdentifier = std::move(value); }
+
+    /**
+     * <p>The CA certificate identifier to use for the DB cluster's server
+     * certificate.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using
+     * SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User
+     * Guide</i>.</p> <p>Valid for Cluster Type: Multi-AZ DB clusters</p>
+     */
+    inline void SetCACertificateIdentifier(const char* value) { m_cACertificateIdentifierHasBeenSet = true; m_cACertificateIdentifier.assign(value); }
+
+    /**
+     * <p>The CA certificate identifier to use for the DB cluster's server
+     * certificate.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using
+     * SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User
+     * Guide</i>.</p> <p>Valid for Cluster Type: Multi-AZ DB clusters</p>
+     */
+    inline ModifyDBClusterRequest& WithCACertificateIdentifier(const Aws::String& value) { SetCACertificateIdentifier(value); return *this;}
+
+    /**
+     * <p>The CA certificate identifier to use for the DB cluster's server
+     * certificate.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using
+     * SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User
+     * Guide</i>.</p> <p>Valid for Cluster Type: Multi-AZ DB clusters</p>
+     */
+    inline ModifyDBClusterRequest& WithCACertificateIdentifier(Aws::String&& value) { SetCACertificateIdentifier(std::move(value)); return *this;}
+
+    /**
+     * <p>The CA certificate identifier to use for the DB cluster's server
+     * certificate.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using
+     * SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User
+     * Guide</i>.</p> <p>Valid for Cluster Type: Multi-AZ DB clusters</p>
+     */
+    inline ModifyDBClusterRequest& WithCACertificateIdentifier(const char* value) { SetCACertificateIdentifier(value); return *this;}
+
   private:
 
     Aws::String m_dBClusterIdentifier;
@@ -3161,6 +3287,12 @@ namespace Model
 
     Aws::String m_awsBackupRecoveryPointArn;
     bool m_awsBackupRecoveryPointArnHasBeenSet = false;
+
+    bool m_enableLimitlessDatabase;
+    bool m_enableLimitlessDatabaseHasBeenSet = false;
+
+    Aws::String m_cACertificateIdentifier;
+    bool m_cACertificateIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OAuth2GrantType::NOT_SET:
+            return {};
           case OAuth2GrantType::CLIENT_CREDENTIALS:
             return "CLIENT_CREDENTIALS";
           case OAuth2GrantType::AUTHORIZATION_CODE:

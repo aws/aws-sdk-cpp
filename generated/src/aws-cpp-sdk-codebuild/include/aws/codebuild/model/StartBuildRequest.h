@@ -19,6 +19,7 @@
 #include <aws/codebuild/model/LogsConfig.h>
 #include <aws/codebuild/model/RegistryCredential.h>
 #include <aws/codebuild/model/ImagePullCredentialsType.h>
+#include <aws/codebuild/model/ProjectFleet.h>
 #include <aws/codebuild/model/ProjectSource.h>
 #include <aws/codebuild/model/ProjectSourceVersion.h>
 #include <aws/codebuild/model/EnvironmentVariable.h>
@@ -696,130 +697,170 @@ namespace Model
 
 
     /**
-     * <p>A buildspec file declaration that overrides, for this build only, the latest
-     * one already defined in the build project.</p> <p> If this value is set, it can
-     * be either an inline buildspec definition, the path to an alternate buildspec
-     * file relative to the value of the built-in <code>CODEBUILD_SRC_DIR</code>
-     * environment variable, or the path to an S3 bucket. The bucket must be in the
-     * same Amazon Web Services Region as the build project. Specify the buildspec file
-     * using its ARN (for example,
+     * <p>A buildspec file declaration that overrides the latest one defined in the
+     * build project, for this build only. The buildspec defined on the project is not
+     * changed.</p> <p>If this value is set, it can be either an inline buildspec
+     * definition, the path to an alternate buildspec file relative to the value of the
+     * built-in <code>CODEBUILD_SRC_DIR</code> environment variable, or the path to an
+     * S3 bucket. The bucket must be in the same Amazon Web Services Region as the
+     * build project. Specify the buildspec file using its ARN (for example,
      * <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If this value is
      * not provided or is set to an empty string, the source code must contain a
      * buildspec file in its root directory. For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage">Buildspec
-     * File Name and Storage Location</a>. </p>
+     * File Name and Storage Location</a>.</p>  <p>Since this property allows you
+     * to change the build commands that will run in the container, you should note
+     * that an IAM principal with the ability to call this API and set this parameter
+     * can override the default settings. Moreover, we encourage that you use a
+     * trustworthy buildspec location like a file in your source repository or a Amazon
+     * S3 bucket.</p> 
      */
     inline const Aws::String& GetBuildspecOverride() const{ return m_buildspecOverride; }
 
     /**
-     * <p>A buildspec file declaration that overrides, for this build only, the latest
-     * one already defined in the build project.</p> <p> If this value is set, it can
-     * be either an inline buildspec definition, the path to an alternate buildspec
-     * file relative to the value of the built-in <code>CODEBUILD_SRC_DIR</code>
-     * environment variable, or the path to an S3 bucket. The bucket must be in the
-     * same Amazon Web Services Region as the build project. Specify the buildspec file
-     * using its ARN (for example,
+     * <p>A buildspec file declaration that overrides the latest one defined in the
+     * build project, for this build only. The buildspec defined on the project is not
+     * changed.</p> <p>If this value is set, it can be either an inline buildspec
+     * definition, the path to an alternate buildspec file relative to the value of the
+     * built-in <code>CODEBUILD_SRC_DIR</code> environment variable, or the path to an
+     * S3 bucket. The bucket must be in the same Amazon Web Services Region as the
+     * build project. Specify the buildspec file using its ARN (for example,
      * <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If this value is
      * not provided or is set to an empty string, the source code must contain a
      * buildspec file in its root directory. For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage">Buildspec
-     * File Name and Storage Location</a>. </p>
+     * File Name and Storage Location</a>.</p>  <p>Since this property allows you
+     * to change the build commands that will run in the container, you should note
+     * that an IAM principal with the ability to call this API and set this parameter
+     * can override the default settings. Moreover, we encourage that you use a
+     * trustworthy buildspec location like a file in your source repository or a Amazon
+     * S3 bucket.</p> 
      */
     inline bool BuildspecOverrideHasBeenSet() const { return m_buildspecOverrideHasBeenSet; }
 
     /**
-     * <p>A buildspec file declaration that overrides, for this build only, the latest
-     * one already defined in the build project.</p> <p> If this value is set, it can
-     * be either an inline buildspec definition, the path to an alternate buildspec
-     * file relative to the value of the built-in <code>CODEBUILD_SRC_DIR</code>
-     * environment variable, or the path to an S3 bucket. The bucket must be in the
-     * same Amazon Web Services Region as the build project. Specify the buildspec file
-     * using its ARN (for example,
+     * <p>A buildspec file declaration that overrides the latest one defined in the
+     * build project, for this build only. The buildspec defined on the project is not
+     * changed.</p> <p>If this value is set, it can be either an inline buildspec
+     * definition, the path to an alternate buildspec file relative to the value of the
+     * built-in <code>CODEBUILD_SRC_DIR</code> environment variable, or the path to an
+     * S3 bucket. The bucket must be in the same Amazon Web Services Region as the
+     * build project. Specify the buildspec file using its ARN (for example,
      * <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If this value is
      * not provided or is set to an empty string, the source code must contain a
      * buildspec file in its root directory. For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage">Buildspec
-     * File Name and Storage Location</a>. </p>
+     * File Name and Storage Location</a>.</p>  <p>Since this property allows you
+     * to change the build commands that will run in the container, you should note
+     * that an IAM principal with the ability to call this API and set this parameter
+     * can override the default settings. Moreover, we encourage that you use a
+     * trustworthy buildspec location like a file in your source repository or a Amazon
+     * S3 bucket.</p> 
      */
     inline void SetBuildspecOverride(const Aws::String& value) { m_buildspecOverrideHasBeenSet = true; m_buildspecOverride = value; }
 
     /**
-     * <p>A buildspec file declaration that overrides, for this build only, the latest
-     * one already defined in the build project.</p> <p> If this value is set, it can
-     * be either an inline buildspec definition, the path to an alternate buildspec
-     * file relative to the value of the built-in <code>CODEBUILD_SRC_DIR</code>
-     * environment variable, or the path to an S3 bucket. The bucket must be in the
-     * same Amazon Web Services Region as the build project. Specify the buildspec file
-     * using its ARN (for example,
+     * <p>A buildspec file declaration that overrides the latest one defined in the
+     * build project, for this build only. The buildspec defined on the project is not
+     * changed.</p> <p>If this value is set, it can be either an inline buildspec
+     * definition, the path to an alternate buildspec file relative to the value of the
+     * built-in <code>CODEBUILD_SRC_DIR</code> environment variable, or the path to an
+     * S3 bucket. The bucket must be in the same Amazon Web Services Region as the
+     * build project. Specify the buildspec file using its ARN (for example,
      * <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If this value is
      * not provided or is set to an empty string, the source code must contain a
      * buildspec file in its root directory. For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage">Buildspec
-     * File Name and Storage Location</a>. </p>
+     * File Name and Storage Location</a>.</p>  <p>Since this property allows you
+     * to change the build commands that will run in the container, you should note
+     * that an IAM principal with the ability to call this API and set this parameter
+     * can override the default settings. Moreover, we encourage that you use a
+     * trustworthy buildspec location like a file in your source repository or a Amazon
+     * S3 bucket.</p> 
      */
     inline void SetBuildspecOverride(Aws::String&& value) { m_buildspecOverrideHasBeenSet = true; m_buildspecOverride = std::move(value); }
 
     /**
-     * <p>A buildspec file declaration that overrides, for this build only, the latest
-     * one already defined in the build project.</p> <p> If this value is set, it can
-     * be either an inline buildspec definition, the path to an alternate buildspec
-     * file relative to the value of the built-in <code>CODEBUILD_SRC_DIR</code>
-     * environment variable, or the path to an S3 bucket. The bucket must be in the
-     * same Amazon Web Services Region as the build project. Specify the buildspec file
-     * using its ARN (for example,
+     * <p>A buildspec file declaration that overrides the latest one defined in the
+     * build project, for this build only. The buildspec defined on the project is not
+     * changed.</p> <p>If this value is set, it can be either an inline buildspec
+     * definition, the path to an alternate buildspec file relative to the value of the
+     * built-in <code>CODEBUILD_SRC_DIR</code> environment variable, or the path to an
+     * S3 bucket. The bucket must be in the same Amazon Web Services Region as the
+     * build project. Specify the buildspec file using its ARN (for example,
      * <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If this value is
      * not provided or is set to an empty string, the source code must contain a
      * buildspec file in its root directory. For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage">Buildspec
-     * File Name and Storage Location</a>. </p>
+     * File Name and Storage Location</a>.</p>  <p>Since this property allows you
+     * to change the build commands that will run in the container, you should note
+     * that an IAM principal with the ability to call this API and set this parameter
+     * can override the default settings. Moreover, we encourage that you use a
+     * trustworthy buildspec location like a file in your source repository or a Amazon
+     * S3 bucket.</p> 
      */
     inline void SetBuildspecOverride(const char* value) { m_buildspecOverrideHasBeenSet = true; m_buildspecOverride.assign(value); }
 
     /**
-     * <p>A buildspec file declaration that overrides, for this build only, the latest
-     * one already defined in the build project.</p> <p> If this value is set, it can
-     * be either an inline buildspec definition, the path to an alternate buildspec
-     * file relative to the value of the built-in <code>CODEBUILD_SRC_DIR</code>
-     * environment variable, or the path to an S3 bucket. The bucket must be in the
-     * same Amazon Web Services Region as the build project. Specify the buildspec file
-     * using its ARN (for example,
+     * <p>A buildspec file declaration that overrides the latest one defined in the
+     * build project, for this build only. The buildspec defined on the project is not
+     * changed.</p> <p>If this value is set, it can be either an inline buildspec
+     * definition, the path to an alternate buildspec file relative to the value of the
+     * built-in <code>CODEBUILD_SRC_DIR</code> environment variable, or the path to an
+     * S3 bucket. The bucket must be in the same Amazon Web Services Region as the
+     * build project. Specify the buildspec file using its ARN (for example,
      * <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If this value is
      * not provided or is set to an empty string, the source code must contain a
      * buildspec file in its root directory. For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage">Buildspec
-     * File Name and Storage Location</a>. </p>
+     * File Name and Storage Location</a>.</p>  <p>Since this property allows you
+     * to change the build commands that will run in the container, you should note
+     * that an IAM principal with the ability to call this API and set this parameter
+     * can override the default settings. Moreover, we encourage that you use a
+     * trustworthy buildspec location like a file in your source repository or a Amazon
+     * S3 bucket.</p> 
      */
     inline StartBuildRequest& WithBuildspecOverride(const Aws::String& value) { SetBuildspecOverride(value); return *this;}
 
     /**
-     * <p>A buildspec file declaration that overrides, for this build only, the latest
-     * one already defined in the build project.</p> <p> If this value is set, it can
-     * be either an inline buildspec definition, the path to an alternate buildspec
-     * file relative to the value of the built-in <code>CODEBUILD_SRC_DIR</code>
-     * environment variable, or the path to an S3 bucket. The bucket must be in the
-     * same Amazon Web Services Region as the build project. Specify the buildspec file
-     * using its ARN (for example,
+     * <p>A buildspec file declaration that overrides the latest one defined in the
+     * build project, for this build only. The buildspec defined on the project is not
+     * changed.</p> <p>If this value is set, it can be either an inline buildspec
+     * definition, the path to an alternate buildspec file relative to the value of the
+     * built-in <code>CODEBUILD_SRC_DIR</code> environment variable, or the path to an
+     * S3 bucket. The bucket must be in the same Amazon Web Services Region as the
+     * build project. Specify the buildspec file using its ARN (for example,
      * <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If this value is
      * not provided or is set to an empty string, the source code must contain a
      * buildspec file in its root directory. For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage">Buildspec
-     * File Name and Storage Location</a>. </p>
+     * File Name and Storage Location</a>.</p>  <p>Since this property allows you
+     * to change the build commands that will run in the container, you should note
+     * that an IAM principal with the ability to call this API and set this parameter
+     * can override the default settings. Moreover, we encourage that you use a
+     * trustworthy buildspec location like a file in your source repository or a Amazon
+     * S3 bucket.</p> 
      */
     inline StartBuildRequest& WithBuildspecOverride(Aws::String&& value) { SetBuildspecOverride(std::move(value)); return *this;}
 
     /**
-     * <p>A buildspec file declaration that overrides, for this build only, the latest
-     * one already defined in the build project.</p> <p> If this value is set, it can
-     * be either an inline buildspec definition, the path to an alternate buildspec
-     * file relative to the value of the built-in <code>CODEBUILD_SRC_DIR</code>
-     * environment variable, or the path to an S3 bucket. The bucket must be in the
-     * same Amazon Web Services Region as the build project. Specify the buildspec file
-     * using its ARN (for example,
+     * <p>A buildspec file declaration that overrides the latest one defined in the
+     * build project, for this build only. The buildspec defined on the project is not
+     * changed.</p> <p>If this value is set, it can be either an inline buildspec
+     * definition, the path to an alternate buildspec file relative to the value of the
+     * built-in <code>CODEBUILD_SRC_DIR</code> environment variable, or the path to an
+     * S3 bucket. The bucket must be in the same Amazon Web Services Region as the
+     * build project. Specify the buildspec file using its ARN (for example,
      * <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If this value is
      * not provided or is set to an empty string, the source code must contain a
      * buildspec file in its root directory. For more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage">Buildspec
-     * File Name and Storage Location</a>. </p>
+     * File Name and Storage Location</a>.</p>  <p>Since this property allows you
+     * to change the build commands that will run in the container, you should note
+     * that an IAM principal with the ability to call this API and set this parameter
+     * can override the default settings. Moreover, we encourage that you use a
+     * trustworthy buildspec location like a file in your source repository or a Amazon
+     * S3 bucket.</p> 
      */
     inline StartBuildRequest& WithBuildspecOverride(const char* value) { SetBuildspecOverride(value); return *this;}
 
@@ -1627,6 +1668,43 @@ namespace Model
      */
     inline StartBuildRequest& WithDebugSessionEnabled(bool value) { SetDebugSessionEnabled(value); return *this;}
 
+
+    /**
+     * <p>A ProjectFleet object specified for this build that overrides the one defined
+     * in the build project.</p>
+     */
+    inline const ProjectFleet& GetFleetOverride() const{ return m_fleetOverride; }
+
+    /**
+     * <p>A ProjectFleet object specified for this build that overrides the one defined
+     * in the build project.</p>
+     */
+    inline bool FleetOverrideHasBeenSet() const { return m_fleetOverrideHasBeenSet; }
+
+    /**
+     * <p>A ProjectFleet object specified for this build that overrides the one defined
+     * in the build project.</p>
+     */
+    inline void SetFleetOverride(const ProjectFleet& value) { m_fleetOverrideHasBeenSet = true; m_fleetOverride = value; }
+
+    /**
+     * <p>A ProjectFleet object specified for this build that overrides the one defined
+     * in the build project.</p>
+     */
+    inline void SetFleetOverride(ProjectFleet&& value) { m_fleetOverrideHasBeenSet = true; m_fleetOverride = std::move(value); }
+
+    /**
+     * <p>A ProjectFleet object specified for this build that overrides the one defined
+     * in the build project.</p>
+     */
+    inline StartBuildRequest& WithFleetOverride(const ProjectFleet& value) { SetFleetOverride(value); return *this;}
+
+    /**
+     * <p>A ProjectFleet object specified for this build that overrides the one defined
+     * in the build project.</p>
+     */
+    inline StartBuildRequest& WithFleetOverride(ProjectFleet&& value) { SetFleetOverride(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_projectName;
@@ -1721,6 +1799,9 @@ namespace Model
 
     bool m_debugSessionEnabled;
     bool m_debugSessionEnabledHasBeenSet = false;
+
+    ProjectFleet m_fleetOverride;
+    bool m_fleetOverrideHasBeenSet = false;
   };
 
 } // namespace Model

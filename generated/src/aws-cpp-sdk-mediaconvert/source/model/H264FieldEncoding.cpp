@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case H264FieldEncoding::NOT_SET:
+            return {};
           case H264FieldEncoding::PAFF:
             return "PAFF";
           case H264FieldEncoding::FORCE_FIELD:

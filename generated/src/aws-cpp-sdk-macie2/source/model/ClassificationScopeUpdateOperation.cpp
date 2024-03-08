@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ClassificationScopeUpdateOperation::NOT_SET:
+            return {};
           case ClassificationScopeUpdateOperation::ADD:
             return "ADD";
           case ClassificationScopeUpdateOperation::REPLACE:

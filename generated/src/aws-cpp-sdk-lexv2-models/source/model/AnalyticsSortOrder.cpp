@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AnalyticsSortOrder::NOT_SET:
+            return {};
           case AnalyticsSortOrder::Ascending:
             return "Ascending";
           case AnalyticsSortOrder::Descending:

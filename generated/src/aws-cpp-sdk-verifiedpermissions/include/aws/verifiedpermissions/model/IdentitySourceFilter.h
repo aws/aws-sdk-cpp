@@ -25,7 +25,7 @@ namespace Model
 
   /**
    * <p>A structure that defines characteristics of an identity source that you can
-   * use to filter.</p> <p>This data type is used as a request parameter for the <a
+   * use to filter.</p> <p>This data type is a request parameter for the <a
    * href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_ListIdentityStores.html">ListIdentityStores</a>
    * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/verifiedpermissions-2021-12-01/IdentitySourceFilter">AWS

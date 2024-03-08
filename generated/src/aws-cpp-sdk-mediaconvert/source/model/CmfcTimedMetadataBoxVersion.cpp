@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CmfcTimedMetadataBoxVersion::NOT_SET:
+            return {};
           case CmfcTimedMetadataBoxVersion::VERSION_0:
             return "VERSION_0";
           case CmfcTimedMetadataBoxVersion::VERSION_1:

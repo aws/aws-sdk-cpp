@@ -17,7 +17,7 @@ namespace Model
 {
 
   /**
-   * <p> Returns the request structure for the get artifact request. </p><p><h3>See
+   * <p>Returns the request structure for the get artifact request. </p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GetArtifactUrlRequest">AWS
    * API Reference</a></p>
@@ -37,42 +37,42 @@ namespace Model
 
 
     /**
-     * <p> The unique ID for an artifact. </p>
+     * <p>The unique ID for an artifact. </p>
      */
     inline const Aws::String& GetArtifactId() const{ return m_artifactId; }
 
     /**
-     * <p> The unique ID for an artifact. </p>
+     * <p>The unique ID for an artifact. </p>
      */
     inline bool ArtifactIdHasBeenSet() const { return m_artifactIdHasBeenSet; }
 
     /**
-     * <p> The unique ID for an artifact. </p>
+     * <p>The unique ID for an artifact. </p>
      */
     inline void SetArtifactId(const Aws::String& value) { m_artifactIdHasBeenSet = true; m_artifactId = value; }
 
     /**
-     * <p> The unique ID for an artifact. </p>
+     * <p>The unique ID for an artifact. </p>
      */
     inline void SetArtifactId(Aws::String&& value) { m_artifactIdHasBeenSet = true; m_artifactId = std::move(value); }
 
     /**
-     * <p> The unique ID for an artifact. </p>
+     * <p>The unique ID for an artifact. </p>
      */
     inline void SetArtifactId(const char* value) { m_artifactIdHasBeenSet = true; m_artifactId.assign(value); }
 
     /**
-     * <p> The unique ID for an artifact. </p>
+     * <p>The unique ID for an artifact. </p>
      */
     inline GetArtifactUrlRequest& WithArtifactId(const Aws::String& value) { SetArtifactId(value); return *this;}
 
     /**
-     * <p> The unique ID for an artifact. </p>
+     * <p>The unique ID for an artifact. </p>
      */
     inline GetArtifactUrlRequest& WithArtifactId(Aws::String&& value) { SetArtifactId(std::move(value)); return *this;}
 
     /**
-     * <p> The unique ID for an artifact. </p>
+     * <p>The unique ID for an artifact. </p>
      */
     inline GetArtifactUrlRequest& WithArtifactId(const char* value) { SetArtifactId(value); return *this;}
 

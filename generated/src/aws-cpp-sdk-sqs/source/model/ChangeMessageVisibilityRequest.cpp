@@ -4,10 +4,12 @@
  */
 
 #include <aws/sqs/model/ChangeMessageVisibilityRequest.h>
-#include <aws/core/utils/StringUtils.h>
-#include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+
+#include <utility>
 
 using namespace Aws::SQS::Model;
+using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 ChangeMessageVisibilityRequest::ChangeMessageVisibilityRequest() : 
@@ -20,29 +22,37 @@ ChangeMessageVisibilityRequest::ChangeMessageVisibilityRequest() :
 
 Aws::String ChangeMessageVisibilityRequest::SerializePayload() const
 {
-  Aws::StringStream ss;
-  ss << "Action=ChangeMessageVisibility&";
+  JsonValue payload;
+
   if(m_queueUrlHasBeenSet)
   {
-    ss << "QueueUrl=" << StringUtils::URLEncode(m_queueUrl.c_str()) << "&";
+   payload.WithString("QueueUrl", m_queueUrl);
+
   }
 
   if(m_receiptHandleHasBeenSet)
   {
-    ss << "ReceiptHandle=" << StringUtils::URLEncode(m_receiptHandle.c_str()) << "&";
+   payload.WithString("ReceiptHandle", m_receiptHandle);
+
   }
 
   if(m_visibilityTimeoutHasBeenSet)
   {
-    ss << "VisibilityTimeout=" << m_visibilityTimeout << "&";
+   payload.WithInteger("VisibilityTimeout", m_visibilityTimeout);
+
   }
 
-  ss << "Version=2012-11-05";
-  return ss.str();
+  return payload.View().WriteReadable();
 }
 
-
-void  ChangeMessageVisibilityRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+Aws::Http::HeaderValueCollection ChangeMessageVisibilityRequest::GetRequestSpecificHeaders() const
 {
-  uri.SetQueryString(SerializePayload());
+  Aws::Http::HeaderValueCollection headers;
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AmazonSQS.ChangeMessageVisibility"));
+  return headers;
+
 }
+
+
+
+

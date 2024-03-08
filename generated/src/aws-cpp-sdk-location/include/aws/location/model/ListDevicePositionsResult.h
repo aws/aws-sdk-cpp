@@ -35,58 +35,37 @@ namespace Model
 
 
     /**
-     * <p>Contains details about each device's last known position. These details
-     * includes the device ID, the time when the position was sampled on the device,
-     * the time that the service received the update, and the most recent
-     * coordinates.</p>
+     * <p>Contains details about each device's last known position.</p>
      */
     inline const Aws::Vector<ListDevicePositionsResponseEntry>& GetEntries() const{ return m_entries; }
 
     /**
-     * <p>Contains details about each device's last known position. These details
-     * includes the device ID, the time when the position was sampled on the device,
-     * the time that the service received the update, and the most recent
-     * coordinates.</p>
+     * <p>Contains details about each device's last known position.</p>
      */
     inline void SetEntries(const Aws::Vector<ListDevicePositionsResponseEntry>& value) { m_entries = value; }
 
     /**
-     * <p>Contains details about each device's last known position. These details
-     * includes the device ID, the time when the position was sampled on the device,
-     * the time that the service received the update, and the most recent
-     * coordinates.</p>
+     * <p>Contains details about each device's last known position.</p>
      */
     inline void SetEntries(Aws::Vector<ListDevicePositionsResponseEntry>&& value) { m_entries = std::move(value); }
 
     /**
-     * <p>Contains details about each device's last known position. These details
-     * includes the device ID, the time when the position was sampled on the device,
-     * the time that the service received the update, and the most recent
-     * coordinates.</p>
+     * <p>Contains details about each device's last known position.</p>
      */
     inline ListDevicePositionsResult& WithEntries(const Aws::Vector<ListDevicePositionsResponseEntry>& value) { SetEntries(value); return *this;}
 
     /**
-     * <p>Contains details about each device's last known position. These details
-     * includes the device ID, the time when the position was sampled on the device,
-     * the time that the service received the update, and the most recent
-     * coordinates.</p>
+     * <p>Contains details about each device's last known position.</p>
      */
     inline ListDevicePositionsResult& WithEntries(Aws::Vector<ListDevicePositionsResponseEntry>&& value) { SetEntries(std::move(value)); return *this;}
 
     /**
-     * <p>Contains details about each device's last known position. These details
-     * includes the device ID, the time when the position was sampled on the device,
-     * the time that the service received the update, and the most recent
-     * coordinates.</p>
+     * <p>Contains details about each device's last known position.</p>
      */
     inline ListDevicePositionsResult& AddEntries(const ListDevicePositionsResponseEntry& value) { m_entries.push_back(value); return *this; }
 
     /**
-     * <p>Contains details about each device's last known position. These details
-     * includes the device ID, the time when the position was sampled on the device,
-     * the time that the service received the update, and the most recent
-     * coordinates.</p>
+     * <p>Contains details about each device's last known position.</p>
      */
     inline ListDevicePositionsResult& AddEntries(ListDevicePositionsResponseEntry&& value) { m_entries.push_back(std::move(value)); return *this; }
 

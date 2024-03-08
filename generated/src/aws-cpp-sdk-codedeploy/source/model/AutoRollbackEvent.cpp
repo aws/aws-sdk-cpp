@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AutoRollbackEvent::NOT_SET:
+            return {};
           case AutoRollbackEvent::DEPLOYMENT_FAILURE:
             return "DEPLOYMENT_FAILURE";
           case AutoRollbackEvent::DEPLOYMENT_STOP_ON_ALARM:

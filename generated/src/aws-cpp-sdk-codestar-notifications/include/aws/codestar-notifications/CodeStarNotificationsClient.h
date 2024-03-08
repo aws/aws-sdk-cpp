@@ -49,8 +49,8 @@ namespace CodeStarNotifications
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef CodeStarNotificationsClientConfiguration ClientConfigurationType;
       typedef CodeStarNotificationsEndpointProvider EndpointProviderType;
@@ -60,14 +60,14 @@ namespace CodeStarNotifications
         * is not specified, it will be initialized to default values.
         */
         CodeStarNotificationsClient(const Aws::CodeStarNotifications::CodeStarNotificationsClientConfiguration& clientConfiguration = Aws::CodeStarNotifications::CodeStarNotificationsClientConfiguration(),
-                                    std::shared_ptr<CodeStarNotificationsEndpointProviderBase> endpointProvider = Aws::MakeShared<CodeStarNotificationsEndpointProvider>(ALLOCATION_TAG));
+                                    std::shared_ptr<CodeStarNotificationsEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         CodeStarNotificationsClient(const Aws::Auth::AWSCredentials& credentials,
-                                    std::shared_ptr<CodeStarNotificationsEndpointProviderBase> endpointProvider = Aws::MakeShared<CodeStarNotificationsEndpointProvider>(ALLOCATION_TAG),
+                                    std::shared_ptr<CodeStarNotificationsEndpointProviderBase> endpointProvider = nullptr,
                                     const Aws::CodeStarNotifications::CodeStarNotificationsClientConfiguration& clientConfiguration = Aws::CodeStarNotifications::CodeStarNotificationsClientConfiguration());
 
        /**
@@ -75,7 +75,7 @@ namespace CodeStarNotifications
         * the default http client factory will be used
         */
         CodeStarNotificationsClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                                    std::shared_ptr<CodeStarNotificationsEndpointProviderBase> endpointProvider = Aws::MakeShared<CodeStarNotificationsEndpointProvider>(ALLOCATION_TAG),
+                                    std::shared_ptr<CodeStarNotificationsEndpointProviderBase> endpointProvider = nullptr,
                                     const Aws::CodeStarNotifications::CodeStarNotificationsClientConfiguration& clientConfiguration = Aws::CodeStarNotifications::CodeStarNotificationsClientConfiguration());
 
 

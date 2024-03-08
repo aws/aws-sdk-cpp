@@ -24,6 +24,7 @@ namespace Model
     MPEG2,
     PASSTHROUGH,
     PRORES,
+    UNCOMPRESSED,
     VC3,
     VP8,
     VP9,

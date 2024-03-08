@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RoutingPolicy::NOT_SET:
+            return {};
           case RoutingPolicy::MULTIVALUE:
             return "MULTIVALUE";
           case RoutingPolicy::WEIGHTED:

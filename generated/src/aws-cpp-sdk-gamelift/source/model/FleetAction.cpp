@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FleetAction::NOT_SET:
+            return {};
           case FleetAction::AUTO_SCALING:
             return "AUTO_SCALING";
           default:

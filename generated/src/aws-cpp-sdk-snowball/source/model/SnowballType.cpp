@@ -89,6 +89,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SnowballType::NOT_SET:
+            return {};
           case SnowballType::STANDARD:
             return "STANDARD";
           case SnowballType::EDGE:

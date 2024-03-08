@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LexVersion::NOT_SET:
+            return {};
           case LexVersion::V1:
             return "V1";
           case LexVersion::V2:

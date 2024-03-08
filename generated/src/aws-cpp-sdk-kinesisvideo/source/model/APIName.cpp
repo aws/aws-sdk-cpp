@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case APIName::NOT_SET:
+            return {};
           case APIName::PUT_MEDIA:
             return "PUT_MEDIA";
           case APIName::GET_MEDIA:

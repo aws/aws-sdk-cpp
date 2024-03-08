@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InvocationType::NOT_SET:
+            return {};
           case InvocationType::ASYNC:
             return "ASYNC";
           default:

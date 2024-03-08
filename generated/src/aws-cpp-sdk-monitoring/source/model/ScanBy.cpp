@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ScanBy::NOT_SET:
+            return {};
           case ScanBy::TimestampDescending:
             return "TimestampDescending";
           case ScanBy::TimestampAscending:

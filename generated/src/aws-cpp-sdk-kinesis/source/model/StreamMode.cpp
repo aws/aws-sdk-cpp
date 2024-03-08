@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StreamMode::NOT_SET:
+            return {};
           case StreamMode::PROVISIONED:
             return "PROVISIONED";
           case StreamMode::ON_DEMAND:

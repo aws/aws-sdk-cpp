@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DASHDisplayFragmentTimestamp::NOT_SET:
+            return {};
           case DASHDisplayFragmentTimestamp::ALWAYS:
             return "ALWAYS";
           case DASHDisplayFragmentTimestamp::NEVER:

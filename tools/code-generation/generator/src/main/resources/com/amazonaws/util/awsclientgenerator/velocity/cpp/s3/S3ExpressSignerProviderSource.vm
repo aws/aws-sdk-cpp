@@ -1,0 +1,32 @@
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cfamily/Attribution.vm")
+
+#set($metadata = $serviceModel.metadata)
+#set($rootNamespace = $serviceModel.namespace)
+#set($serviceNamespace = $metadata.namespace)
+
+\#include <aws/${metadata.projectName}/S3ExpressSignerProvider.h>
+\#include <aws/${metadata.projectName}/S3ExpressSigner.h>
+
+static const char *CLASS_TAG = "S3ExpressSignerProvider";
+
+${rootNamespace}::Auth::S3ExpressSignerProvider::S3ExpressSignerProvider(
+    const std::shared_ptr<AWSCredentialsProvider> &credentialsProvider,
+    const std::shared_ptr<${serviceNamespace}::S3ExpressIdentityProvider> &S3ExpressIdentityProvider,
+    const ${rootNamespace}::String &serviceName,
+    const ${rootNamespace}::String &region,
+    ${rootNamespace}::Client::AWSAuthV4Signer::PayloadSigningPolicy signingPolicy,
+    bool urlEscapePath) :
+    DefaultAuthSignerProvider(credentialsProvider,
+        serviceName,
+        region,
+        signingPolicy,
+        urlEscapePath) {
+    m_signers.emplace_back(${rootNamespace}::MakeShared<Aws::${serviceNamespace}::S3ExpressSigner>(CLASS_TAG,
+        S3ExpressIdentityProvider,
+        credentialsProvider,
+        serviceName.c_str(),
+        region,
+        signingPolicy,
+        urlEscapePath,
+        AWSSigningAlgorithm::SIGV4));
+}

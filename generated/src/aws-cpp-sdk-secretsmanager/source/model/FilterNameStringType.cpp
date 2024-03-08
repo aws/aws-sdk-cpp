@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FilterNameStringType::NOT_SET:
+            return {};
           case FilterNameStringType::description:
             return "description";
           case FilterNameStringType::name:

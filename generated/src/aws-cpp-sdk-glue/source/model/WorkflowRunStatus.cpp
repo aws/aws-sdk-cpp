@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case WorkflowRunStatus::NOT_SET:
+            return {};
           case WorkflowRunStatus::RUNNING:
             return "RUNNING";
           case WorkflowRunStatus::COMPLETED:

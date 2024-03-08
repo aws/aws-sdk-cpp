@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VerificationFailedReason::NOT_SET:
+            return {};
           case VerificationFailedReason::INVALID_MAC:
             return "INVALID_MAC";
           case VerificationFailedReason::INVALID_PIN:

@@ -239,44 +239,44 @@ namespace Model
 
 
     /**
-     * <p>The S3 location where the custom vocabulary is stored; use this URI to view
-     * or download the custom vocabulary.</p>
+     * <p>The Amazon S3 location where the custom vocabulary is stored; use this URI to
+     * view or download the custom vocabulary.</p>
      */
     inline const Aws::String& GetDownloadUri() const{ return m_downloadUri; }
 
     /**
-     * <p>The S3 location where the custom vocabulary is stored; use this URI to view
-     * or download the custom vocabulary.</p>
+     * <p>The Amazon S3 location where the custom vocabulary is stored; use this URI to
+     * view or download the custom vocabulary.</p>
      */
     inline void SetDownloadUri(const Aws::String& value) { m_downloadUri = value; }
 
     /**
-     * <p>The S3 location where the custom vocabulary is stored; use this URI to view
-     * or download the custom vocabulary.</p>
+     * <p>The Amazon S3 location where the custom vocabulary is stored; use this URI to
+     * view or download the custom vocabulary.</p>
      */
     inline void SetDownloadUri(Aws::String&& value) { m_downloadUri = std::move(value); }
 
     /**
-     * <p>The S3 location where the custom vocabulary is stored; use this URI to view
-     * or download the custom vocabulary.</p>
+     * <p>The Amazon S3 location where the custom vocabulary is stored; use this URI to
+     * view or download the custom vocabulary.</p>
      */
     inline void SetDownloadUri(const char* value) { m_downloadUri.assign(value); }
 
     /**
-     * <p>The S3 location where the custom vocabulary is stored; use this URI to view
-     * or download the custom vocabulary.</p>
+     * <p>The Amazon S3 location where the custom vocabulary is stored; use this URI to
+     * view or download the custom vocabulary.</p>
      */
     inline GetVocabularyResult& WithDownloadUri(const Aws::String& value) { SetDownloadUri(value); return *this;}
 
     /**
-     * <p>The S3 location where the custom vocabulary is stored; use this URI to view
-     * or download the custom vocabulary.</p>
+     * <p>The Amazon S3 location where the custom vocabulary is stored; use this URI to
+     * view or download the custom vocabulary.</p>
      */
     inline GetVocabularyResult& WithDownloadUri(Aws::String&& value) { SetDownloadUri(std::move(value)); return *this;}
 
     /**
-     * <p>The S3 location where the custom vocabulary is stored; use this URI to view
-     * or download the custom vocabulary.</p>
+     * <p>The Amazon S3 location where the custom vocabulary is stored; use this URI to
+     * view or download the custom vocabulary.</p>
      */
     inline GetVocabularyResult& WithDownloadUri(const char* value) { SetDownloadUri(value); return *this;}
 

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HypervisorType::NOT_SET:
+            return {};
           case HypervisorType::ovm:
             return "ovm";
           case HypervisorType::xen:

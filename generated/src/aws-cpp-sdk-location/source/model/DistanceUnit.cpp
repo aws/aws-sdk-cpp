@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DistanceUnit::NOT_SET:
+            return {};
           case DistanceUnit::Kilometers:
             return "Kilometers";
           case DistanceUnit::Miles:

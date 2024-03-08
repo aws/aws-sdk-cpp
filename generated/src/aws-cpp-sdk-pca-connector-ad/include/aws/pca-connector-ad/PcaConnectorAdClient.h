@@ -27,8 +27,8 @@ namespace PcaConnectorAd
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef PcaConnectorAdClientConfiguration ClientConfigurationType;
       typedef PcaConnectorAdEndpointProvider EndpointProviderType;
@@ -38,14 +38,14 @@ namespace PcaConnectorAd
         * is not specified, it will be initialized to default values.
         */
         PcaConnectorAdClient(const Aws::PcaConnectorAd::PcaConnectorAdClientConfiguration& clientConfiguration = Aws::PcaConnectorAd::PcaConnectorAdClientConfiguration(),
-                             std::shared_ptr<PcaConnectorAdEndpointProviderBase> endpointProvider = Aws::MakeShared<PcaConnectorAdEndpointProvider>(ALLOCATION_TAG));
+                             std::shared_ptr<PcaConnectorAdEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         PcaConnectorAdClient(const Aws::Auth::AWSCredentials& credentials,
-                             std::shared_ptr<PcaConnectorAdEndpointProviderBase> endpointProvider = Aws::MakeShared<PcaConnectorAdEndpointProvider>(ALLOCATION_TAG),
+                             std::shared_ptr<PcaConnectorAdEndpointProviderBase> endpointProvider = nullptr,
                              const Aws::PcaConnectorAd::PcaConnectorAdClientConfiguration& clientConfiguration = Aws::PcaConnectorAd::PcaConnectorAdClientConfiguration());
 
        /**
@@ -53,7 +53,7 @@ namespace PcaConnectorAd
         * the default http client factory will be used
         */
         PcaConnectorAdClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                             std::shared_ptr<PcaConnectorAdEndpointProviderBase> endpointProvider = Aws::MakeShared<PcaConnectorAdEndpointProvider>(ALLOCATION_TAG),
+                             std::shared_ptr<PcaConnectorAdEndpointProviderBase> endpointProvider = nullptr,
                              const Aws::PcaConnectorAd::PcaConnectorAdClientConfiguration& clientConfiguration = Aws::PcaConnectorAd::PcaConnectorAdClientConfiguration());
 
 

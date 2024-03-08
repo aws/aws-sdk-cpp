@@ -109,7 +109,7 @@ namespace Aws
 
             CryptoBuffer SymmetricCipher::GenerateKey(size_t keyLengthBytes)
             {
-                CryptoBuffer const& key = GenerateXRandomBytes(keyLengthBytes, false);
+                CryptoBuffer key = GenerateXRandomBytes(keyLengthBytes, false);
 
                 if(key.GetLength() == 0)
                 {

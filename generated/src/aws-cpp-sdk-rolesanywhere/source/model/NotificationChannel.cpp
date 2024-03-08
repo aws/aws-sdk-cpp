@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NotificationChannel::NOT_SET:
+            return {};
           case NotificationChannel::ALL:
             return "ALL";
           default:

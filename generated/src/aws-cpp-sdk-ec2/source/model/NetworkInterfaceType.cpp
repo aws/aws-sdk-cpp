@@ -124,6 +124,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NetworkInterfaceType::NOT_SET:
+            return {};
           case NetworkInterfaceType::interface:
             return "interface";
           case NetworkInterfaceType::natGateway:

@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AacCodingMode::NOT_SET:
+            return {};
           case AacCodingMode::AD_RECEIVER_MIX:
             return "AD_RECEIVER_MIX";
           case AacCodingMode::CODING_MODE_1_0:

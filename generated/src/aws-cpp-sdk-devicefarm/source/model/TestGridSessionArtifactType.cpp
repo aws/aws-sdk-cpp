@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TestGridSessionArtifactType::NOT_SET:
+            return {};
           case TestGridSessionArtifactType::UNKNOWN:
             return "UNKNOWN";
           case TestGridSessionArtifactType::VIDEO:

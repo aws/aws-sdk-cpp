@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UsageStatisticsSortKey::NOT_SET:
+            return {};
           case UsageStatisticsSortKey::accountId:
             return "accountId";
           case UsageStatisticsSortKey::total:

@@ -189,6 +189,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FleetErrorCode::NOT_SET:
+            return {};
           case FleetErrorCode::IAM_SERVICE_ROLE_MISSING_ENI_DESCRIBE_ACTION:
             return "IAM_SERVICE_ROLE_MISSING_ENI_DESCRIBE_ACTION";
           case FleetErrorCode::IAM_SERVICE_ROLE_MISSING_ENI_CREATE_ACTION:

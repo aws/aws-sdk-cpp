@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AddressAttributeName::NOT_SET:
+            return {};
           case AddressAttributeName::domain_name:
             return "domain-name";
           default:

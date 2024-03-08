@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MasterNodeStatus::NOT_SET:
+            return {};
           case MasterNodeStatus::Available:
             return "Available";
           case MasterNodeStatus::UnAvailable:

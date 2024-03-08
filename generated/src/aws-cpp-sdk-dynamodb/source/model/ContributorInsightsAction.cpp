@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ContributorInsightsAction::NOT_SET:
+            return {};
           case ContributorInsightsAction::ENABLE:
             return "ENABLE";
           case ContributorInsightsAction::DISABLE:

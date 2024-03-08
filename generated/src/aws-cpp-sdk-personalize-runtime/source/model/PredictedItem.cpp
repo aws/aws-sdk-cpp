@@ -22,7 +22,8 @@ PredictedItem::PredictedItem() :
     m_itemIdHasBeenSet(false),
     m_score(0.0),
     m_scoreHasBeenSet(false),
-    m_promotionNameHasBeenSet(false)
+    m_promotionNameHasBeenSet(false),
+    m_metadataHasBeenSet(false)
 {
 }
 
@@ -30,7 +31,8 @@ PredictedItem::PredictedItem(JsonView jsonValue) :
     m_itemIdHasBeenSet(false),
     m_score(0.0),
     m_scoreHasBeenSet(false),
-    m_promotionNameHasBeenSet(false)
+    m_promotionNameHasBeenSet(false),
+    m_metadataHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -58,6 +60,16 @@ PredictedItem& PredictedItem::operator =(JsonView jsonValue)
     m_promotionNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("metadata"))
+  {
+    Aws::Map<Aws::String, JsonView> metadataJsonMap = jsonValue.GetObject("metadata").GetAllObjects();
+    for(auto& metadataItem : metadataJsonMap)
+    {
+      m_metadata[metadataItem.first] = metadataItem.second.AsString();
+    }
+    m_metadataHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -80,6 +92,17 @@ JsonValue PredictedItem::Jsonize() const
   if(m_promotionNameHasBeenSet)
   {
    payload.WithString("promotionName", m_promotionName);
+
+  }
+
+  if(m_metadataHasBeenSet)
+  {
+   JsonValue metadataJsonMap;
+   for(auto& metadataItem : m_metadata)
+   {
+     metadataJsonMap.WithString(metadataItem.first, metadataItem.second);
+   }
+   payload.WithObject("metadata", std::move(metadataJsonMap));
 
   }
 

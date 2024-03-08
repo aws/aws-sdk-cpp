@@ -35,7 +35,8 @@ CreateNetworkInterfaceRequest::CreateNetworkInterfaceRequest() :
     m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_enablePrimaryIpv6(false),
-    m_enablePrimaryIpv6HasBeenSet(false)
+    m_enablePrimaryIpv6HasBeenSet(false),
+    m_connectionTrackingSpecificationHasBeenSet(false)
 {
 }
 
@@ -157,6 +158,11 @@ Aws::String CreateNetworkInterfaceRequest::SerializePayload() const
   if(m_enablePrimaryIpv6HasBeenSet)
   {
     ss << "EnablePrimaryIpv6=" << std::boolalpha << m_enablePrimaryIpv6 << "&";
+  }
+
+  if(m_connectionTrackingSpecificationHasBeenSet)
+  {
+    m_connectionTrackingSpecification.OutputToStream(ss, "ConnectionTrackingSpecification");
   }
 
   ss << "Version=2016-11-15";

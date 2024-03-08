@@ -748,58 +748,58 @@ namespace Model
 
 
     /**
-     * <p>The identifier that you provide to ensure the idempotency of the request.
-     * It's case sensitive and must be unique. It can be up to 32 ASCII characters are
-     * allowed.</p>
+     * <p>An identifier that you provide to ensure the idempotency of the request. It
+     * must be unique and is case sensitive. Up to 36 ASCII characters in the range of
+     * 33-126 (inclusive) are allowed.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
-     * <p>The identifier that you provide to ensure the idempotency of the request.
-     * It's case sensitive and must be unique. It can be up to 32 ASCII characters are
-     * allowed.</p>
+     * <p>An identifier that you provide to ensure the idempotency of the request. It
+     * must be unique and is case sensitive. Up to 36 ASCII characters in the range of
+     * 33-126 (inclusive) are allowed.</p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
-     * <p>The identifier that you provide to ensure the idempotency of the request.
-     * It's case sensitive and must be unique. It can be up to 32 ASCII characters are
-     * allowed.</p>
+     * <p>An identifier that you provide to ensure the idempotency of the request. It
+     * must be unique and is case sensitive. Up to 36 ASCII characters in the range of
+     * 33-126 (inclusive) are allowed.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
-     * <p>The identifier that you provide to ensure the idempotency of the request.
-     * It's case sensitive and must be unique. It can be up to 32 ASCII characters are
-     * allowed.</p>
+     * <p>An identifier that you provide to ensure the idempotency of the request. It
+     * must be unique and is case sensitive. Up to 36 ASCII characters in the range of
+     * 33-126 (inclusive) are allowed.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
-     * <p>The identifier that you provide to ensure the idempotency of the request.
-     * It's case sensitive and must be unique. It can be up to 32 ASCII characters are
-     * allowed.</p>
+     * <p>An identifier that you provide to ensure the idempotency of the request. It
+     * must be unique and is case sensitive. Up to 36 ASCII characters in the range of
+     * 33-126 (inclusive) are allowed.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
-     * <p>The identifier that you provide to ensure the idempotency of the request.
-     * It's case sensitive and must be unique. It can be up to 32 ASCII characters are
-     * allowed.</p>
+     * <p>An identifier that you provide to ensure the idempotency of the request. It
+     * must be unique and is case sensitive. Up to 36 ASCII characters in the range of
+     * 33-126 (inclusive) are allowed.</p>
      */
     inline CreateTaskSetRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
-     * <p>The identifier that you provide to ensure the idempotency of the request.
-     * It's case sensitive and must be unique. It can be up to 32 ASCII characters are
-     * allowed.</p>
+     * <p>An identifier that you provide to ensure the idempotency of the request. It
+     * must be unique and is case sensitive. Up to 36 ASCII characters in the range of
+     * 33-126 (inclusive) are allowed.</p>
      */
     inline CreateTaskSetRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier that you provide to ensure the idempotency of the request.
-     * It's case sensitive and must be unique. It can be up to 32 ASCII characters are
-     * allowed.</p>
+     * <p>An identifier that you provide to ensure the idempotency of the request. It
+     * must be unique and is case sensitive. Up to 36 ASCII characters in the range of
+     * 33-126 (inclusive) are allowed.</p>
      */
     inline CreateTaskSetRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 

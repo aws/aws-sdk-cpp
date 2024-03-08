@@ -27,7 +27,10 @@ RegisterDomainRequest::RegisterDomainRequest() :
     m_privacyProtectRegistrantContact(false),
     m_privacyProtectRegistrantContactHasBeenSet(false),
     m_privacyProtectTechContact(false),
-    m_privacyProtectTechContactHasBeenSet(false)
+    m_privacyProtectTechContactHasBeenSet(false),
+    m_billingContactHasBeenSet(false),
+    m_privacyProtectBillingContact(false),
+    m_privacyProtectBillingContactHasBeenSet(false)
 {
 }
 
@@ -92,6 +95,18 @@ Aws::String RegisterDomainRequest::SerializePayload() const
   if(m_privacyProtectTechContactHasBeenSet)
   {
    payload.WithBool("PrivacyProtectTechContact", m_privacyProtectTechContact);
+
+  }
+
+  if(m_billingContactHasBeenSet)
+  {
+   payload.WithObject("BillingContact", m_billingContact.Jsonize());
+
+  }
+
+  if(m_privacyProtectBillingContactHasBeenSet)
+  {
+   payload.WithBool("PrivacyProtectBillingContact", m_privacyProtectBillingContact);
 
   }
 

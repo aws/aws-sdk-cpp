@@ -99,6 +99,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TaskTemplateFieldType::NOT_SET:
+            return {};
           case TaskTemplateFieldType::NAME:
             return "NAME";
           case TaskTemplateFieldType::DESCRIPTION:

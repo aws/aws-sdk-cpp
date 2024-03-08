@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ModelVersionStatus::NOT_SET:
+            return {};
           case ModelVersionStatus::IN_PROGRESS:
             return "IN_PROGRESS";
           case ModelVersionStatus::SUCCESS:

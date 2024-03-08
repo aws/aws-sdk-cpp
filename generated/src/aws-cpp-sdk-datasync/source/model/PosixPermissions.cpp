@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PosixPermissions::NOT_SET:
+            return {};
           case PosixPermissions::NONE:
             return "NONE";
           case PosixPermissions::PRESERVE:

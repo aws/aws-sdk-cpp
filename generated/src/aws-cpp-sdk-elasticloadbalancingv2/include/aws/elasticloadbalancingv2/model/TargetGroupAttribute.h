@@ -87,13 +87,17 @@ namespace Model
      * Balancer and the target is an instance or an IP address:</p> <ul> <li> <p>
      * <code>load_balancing.algorithm.type</code> - The load balancing algorithm
      * determines how the load balancer selects targets when routing requests. The
-     * value is <code>round_robin</code> or <code>least_outstanding_requests</code>.
-     * The default is <code>round_robin</code>.</p> </li> <li> <p>
-     * <code>slow_start.duration_seconds</code> - The time period, in seconds, during
-     * which a newly registered target receives an increasing share of the traffic to
-     * the target group. After this time period ends, the target receives its full
-     * share of traffic. The range is 30-900 seconds (15 minutes). The default is 0
-     * seconds (disabled).</p> </li> <li> <p>
+     * value is <code>round_robin</code>, <code>least_outstanding_requests</code>, or
+     * <code>weighted_random</code>. The default is <code>round_robin</code>.</p> </li>
+     * <li> <p> <code>load_balancing.algorithm.anomaly_mitigation</code> - Only
+     * available when <code>load_balancing.algorithm.type</code> is
+     * <code>weighted_random</code>. Indicates whether anomaly mitigation is enabled.
+     * The value is <code>on</code> or <code>off</code>. The default is
+     * <code>off</code>.</p> </li> <li> <p> <code>slow_start.duration_seconds</code> -
+     * The time period, in seconds, during which a newly registered target receives an
+     * increasing share of the traffic to the target group. After this time period
+     * ends, the target receives its full share of traffic. The range is 30-900 seconds
+     * (15 minutes). The default is 0 seconds (disabled).</p> </li> <li> <p>
      * <code>stickiness.app_cookie.cookie_name</code> - Indicates the name of the
      * application-based cookie. Names that start with the following prefixes are not
      * allowed: <code>AWSALB</code>, <code>AWSALBAPP</code>, and <code>AWSALBTG</code>;
@@ -134,7 +138,14 @@ namespace Model
      * <code>target_health_state.unhealthy.connection_termination.enabled</code> -
      * Indicates whether the load balancer terminates connections to unhealthy targets.
      * The value is <code>true</code> or <code>false</code>. The default is
-     * <code>true</code>.</p> </li> </ul> <p>The following attributes are supported
+     * <code>true</code>.</p> </li> <li> <p>
+     * <code>target_health_state.unhealthy.draining_interval_seconds</code> - The
+     * amount of time for Elastic Load Balancing to wait before changing the state of
+     * an unhealthy target from <code>unhealthy.draining</code> to
+     * <code>unhealthy</code>. The range is 0-360000 seconds. The default value is 0
+     * seconds.</p> <p>Note: This attribute can only be configured when
+     * <code>target_health_state.unhealthy.connection_termination.enabled</code> is
+     * <code>false</code>.</p> </li> </ul> <p>The following attributes are supported
      * only by Gateway Load Balancers:</p> <ul> <li> <p>
      * <code>target_failover.on_deregistration</code> - Indicates how the Gateway Load
      * Balancer handles existing flows when a target is deregistered. The possible
@@ -201,13 +212,17 @@ namespace Model
      * Balancer and the target is an instance or an IP address:</p> <ul> <li> <p>
      * <code>load_balancing.algorithm.type</code> - The load balancing algorithm
      * determines how the load balancer selects targets when routing requests. The
-     * value is <code>round_robin</code> or <code>least_outstanding_requests</code>.
-     * The default is <code>round_robin</code>.</p> </li> <li> <p>
-     * <code>slow_start.duration_seconds</code> - The time period, in seconds, during
-     * which a newly registered target receives an increasing share of the traffic to
-     * the target group. After this time period ends, the target receives its full
-     * share of traffic. The range is 30-900 seconds (15 minutes). The default is 0
-     * seconds (disabled).</p> </li> <li> <p>
+     * value is <code>round_robin</code>, <code>least_outstanding_requests</code>, or
+     * <code>weighted_random</code>. The default is <code>round_robin</code>.</p> </li>
+     * <li> <p> <code>load_balancing.algorithm.anomaly_mitigation</code> - Only
+     * available when <code>load_balancing.algorithm.type</code> is
+     * <code>weighted_random</code>. Indicates whether anomaly mitigation is enabled.
+     * The value is <code>on</code> or <code>off</code>. The default is
+     * <code>off</code>.</p> </li> <li> <p> <code>slow_start.duration_seconds</code> -
+     * The time period, in seconds, during which a newly registered target receives an
+     * increasing share of the traffic to the target group. After this time period
+     * ends, the target receives its full share of traffic. The range is 30-900 seconds
+     * (15 minutes). The default is 0 seconds (disabled).</p> </li> <li> <p>
      * <code>stickiness.app_cookie.cookie_name</code> - Indicates the name of the
      * application-based cookie. Names that start with the following prefixes are not
      * allowed: <code>AWSALB</code>, <code>AWSALBAPP</code>, and <code>AWSALBTG</code>;
@@ -248,7 +263,14 @@ namespace Model
      * <code>target_health_state.unhealthy.connection_termination.enabled</code> -
      * Indicates whether the load balancer terminates connections to unhealthy targets.
      * The value is <code>true</code> or <code>false</code>. The default is
-     * <code>true</code>.</p> </li> </ul> <p>The following attributes are supported
+     * <code>true</code>.</p> </li> <li> <p>
+     * <code>target_health_state.unhealthy.draining_interval_seconds</code> - The
+     * amount of time for Elastic Load Balancing to wait before changing the state of
+     * an unhealthy target from <code>unhealthy.draining</code> to
+     * <code>unhealthy</code>. The range is 0-360000 seconds. The default value is 0
+     * seconds.</p> <p>Note: This attribute can only be configured when
+     * <code>target_health_state.unhealthy.connection_termination.enabled</code> is
+     * <code>false</code>.</p> </li> </ul> <p>The following attributes are supported
      * only by Gateway Load Balancers:</p> <ul> <li> <p>
      * <code>target_failover.on_deregistration</code> - Indicates how the Gateway Load
      * Balancer handles existing flows when a target is deregistered. The possible
@@ -315,13 +337,17 @@ namespace Model
      * Balancer and the target is an instance or an IP address:</p> <ul> <li> <p>
      * <code>load_balancing.algorithm.type</code> - The load balancing algorithm
      * determines how the load balancer selects targets when routing requests. The
-     * value is <code>round_robin</code> or <code>least_outstanding_requests</code>.
-     * The default is <code>round_robin</code>.</p> </li> <li> <p>
-     * <code>slow_start.duration_seconds</code> - The time period, in seconds, during
-     * which a newly registered target receives an increasing share of the traffic to
-     * the target group. After this time period ends, the target receives its full
-     * share of traffic. The range is 30-900 seconds (15 minutes). The default is 0
-     * seconds (disabled).</p> </li> <li> <p>
+     * value is <code>round_robin</code>, <code>least_outstanding_requests</code>, or
+     * <code>weighted_random</code>. The default is <code>round_robin</code>.</p> </li>
+     * <li> <p> <code>load_balancing.algorithm.anomaly_mitigation</code> - Only
+     * available when <code>load_balancing.algorithm.type</code> is
+     * <code>weighted_random</code>. Indicates whether anomaly mitigation is enabled.
+     * The value is <code>on</code> or <code>off</code>. The default is
+     * <code>off</code>.</p> </li> <li> <p> <code>slow_start.duration_seconds</code> -
+     * The time period, in seconds, during which a newly registered target receives an
+     * increasing share of the traffic to the target group. After this time period
+     * ends, the target receives its full share of traffic. The range is 30-900 seconds
+     * (15 minutes). The default is 0 seconds (disabled).</p> </li> <li> <p>
      * <code>stickiness.app_cookie.cookie_name</code> - Indicates the name of the
      * application-based cookie. Names that start with the following prefixes are not
      * allowed: <code>AWSALB</code>, <code>AWSALBAPP</code>, and <code>AWSALBTG</code>;
@@ -362,7 +388,14 @@ namespace Model
      * <code>target_health_state.unhealthy.connection_termination.enabled</code> -
      * Indicates whether the load balancer terminates connections to unhealthy targets.
      * The value is <code>true</code> or <code>false</code>. The default is
-     * <code>true</code>.</p> </li> </ul> <p>The following attributes are supported
+     * <code>true</code>.</p> </li> <li> <p>
+     * <code>target_health_state.unhealthy.draining_interval_seconds</code> - The
+     * amount of time for Elastic Load Balancing to wait before changing the state of
+     * an unhealthy target from <code>unhealthy.draining</code> to
+     * <code>unhealthy</code>. The range is 0-360000 seconds. The default value is 0
+     * seconds.</p> <p>Note: This attribute can only be configured when
+     * <code>target_health_state.unhealthy.connection_termination.enabled</code> is
+     * <code>false</code>.</p> </li> </ul> <p>The following attributes are supported
      * only by Gateway Load Balancers:</p> <ul> <li> <p>
      * <code>target_failover.on_deregistration</code> - Indicates how the Gateway Load
      * Balancer handles existing flows when a target is deregistered. The possible
@@ -429,13 +462,17 @@ namespace Model
      * Balancer and the target is an instance or an IP address:</p> <ul> <li> <p>
      * <code>load_balancing.algorithm.type</code> - The load balancing algorithm
      * determines how the load balancer selects targets when routing requests. The
-     * value is <code>round_robin</code> or <code>least_outstanding_requests</code>.
-     * The default is <code>round_robin</code>.</p> </li> <li> <p>
-     * <code>slow_start.duration_seconds</code> - The time period, in seconds, during
-     * which a newly registered target receives an increasing share of the traffic to
-     * the target group. After this time period ends, the target receives its full
-     * share of traffic. The range is 30-900 seconds (15 minutes). The default is 0
-     * seconds (disabled).</p> </li> <li> <p>
+     * value is <code>round_robin</code>, <code>least_outstanding_requests</code>, or
+     * <code>weighted_random</code>. The default is <code>round_robin</code>.</p> </li>
+     * <li> <p> <code>load_balancing.algorithm.anomaly_mitigation</code> - Only
+     * available when <code>load_balancing.algorithm.type</code> is
+     * <code>weighted_random</code>. Indicates whether anomaly mitigation is enabled.
+     * The value is <code>on</code> or <code>off</code>. The default is
+     * <code>off</code>.</p> </li> <li> <p> <code>slow_start.duration_seconds</code> -
+     * The time period, in seconds, during which a newly registered target receives an
+     * increasing share of the traffic to the target group. After this time period
+     * ends, the target receives its full share of traffic. The range is 30-900 seconds
+     * (15 minutes). The default is 0 seconds (disabled).</p> </li> <li> <p>
      * <code>stickiness.app_cookie.cookie_name</code> - Indicates the name of the
      * application-based cookie. Names that start with the following prefixes are not
      * allowed: <code>AWSALB</code>, <code>AWSALBAPP</code>, and <code>AWSALBTG</code>;
@@ -476,7 +513,14 @@ namespace Model
      * <code>target_health_state.unhealthy.connection_termination.enabled</code> -
      * Indicates whether the load balancer terminates connections to unhealthy targets.
      * The value is <code>true</code> or <code>false</code>. The default is
-     * <code>true</code>.</p> </li> </ul> <p>The following attributes are supported
+     * <code>true</code>.</p> </li> <li> <p>
+     * <code>target_health_state.unhealthy.draining_interval_seconds</code> - The
+     * amount of time for Elastic Load Balancing to wait before changing the state of
+     * an unhealthy target from <code>unhealthy.draining</code> to
+     * <code>unhealthy</code>. The range is 0-360000 seconds. The default value is 0
+     * seconds.</p> <p>Note: This attribute can only be configured when
+     * <code>target_health_state.unhealthy.connection_termination.enabled</code> is
+     * <code>false</code>.</p> </li> </ul> <p>The following attributes are supported
      * only by Gateway Load Balancers:</p> <ul> <li> <p>
      * <code>target_failover.on_deregistration</code> - Indicates how the Gateway Load
      * Balancer handles existing flows when a target is deregistered. The possible
@@ -543,13 +587,17 @@ namespace Model
      * Balancer and the target is an instance or an IP address:</p> <ul> <li> <p>
      * <code>load_balancing.algorithm.type</code> - The load balancing algorithm
      * determines how the load balancer selects targets when routing requests. The
-     * value is <code>round_robin</code> or <code>least_outstanding_requests</code>.
-     * The default is <code>round_robin</code>.</p> </li> <li> <p>
-     * <code>slow_start.duration_seconds</code> - The time period, in seconds, during
-     * which a newly registered target receives an increasing share of the traffic to
-     * the target group. After this time period ends, the target receives its full
-     * share of traffic. The range is 30-900 seconds (15 minutes). The default is 0
-     * seconds (disabled).</p> </li> <li> <p>
+     * value is <code>round_robin</code>, <code>least_outstanding_requests</code>, or
+     * <code>weighted_random</code>. The default is <code>round_robin</code>.</p> </li>
+     * <li> <p> <code>load_balancing.algorithm.anomaly_mitigation</code> - Only
+     * available when <code>load_balancing.algorithm.type</code> is
+     * <code>weighted_random</code>. Indicates whether anomaly mitigation is enabled.
+     * The value is <code>on</code> or <code>off</code>. The default is
+     * <code>off</code>.</p> </li> <li> <p> <code>slow_start.duration_seconds</code> -
+     * The time period, in seconds, during which a newly registered target receives an
+     * increasing share of the traffic to the target group. After this time period
+     * ends, the target receives its full share of traffic. The range is 30-900 seconds
+     * (15 minutes). The default is 0 seconds (disabled).</p> </li> <li> <p>
      * <code>stickiness.app_cookie.cookie_name</code> - Indicates the name of the
      * application-based cookie. Names that start with the following prefixes are not
      * allowed: <code>AWSALB</code>, <code>AWSALBAPP</code>, and <code>AWSALBTG</code>;
@@ -590,7 +638,14 @@ namespace Model
      * <code>target_health_state.unhealthy.connection_termination.enabled</code> -
      * Indicates whether the load balancer terminates connections to unhealthy targets.
      * The value is <code>true</code> or <code>false</code>. The default is
-     * <code>true</code>.</p> </li> </ul> <p>The following attributes are supported
+     * <code>true</code>.</p> </li> <li> <p>
+     * <code>target_health_state.unhealthy.draining_interval_seconds</code> - The
+     * amount of time for Elastic Load Balancing to wait before changing the state of
+     * an unhealthy target from <code>unhealthy.draining</code> to
+     * <code>unhealthy</code>. The range is 0-360000 seconds. The default value is 0
+     * seconds.</p> <p>Note: This attribute can only be configured when
+     * <code>target_health_state.unhealthy.connection_termination.enabled</code> is
+     * <code>false</code>.</p> </li> </ul> <p>The following attributes are supported
      * only by Gateway Load Balancers:</p> <ul> <li> <p>
      * <code>target_failover.on_deregistration</code> - Indicates how the Gateway Load
      * Balancer handles existing flows when a target is deregistered. The possible
@@ -657,13 +712,17 @@ namespace Model
      * Balancer and the target is an instance or an IP address:</p> <ul> <li> <p>
      * <code>load_balancing.algorithm.type</code> - The load balancing algorithm
      * determines how the load balancer selects targets when routing requests. The
-     * value is <code>round_robin</code> or <code>least_outstanding_requests</code>.
-     * The default is <code>round_robin</code>.</p> </li> <li> <p>
-     * <code>slow_start.duration_seconds</code> - The time period, in seconds, during
-     * which a newly registered target receives an increasing share of the traffic to
-     * the target group. After this time period ends, the target receives its full
-     * share of traffic. The range is 30-900 seconds (15 minutes). The default is 0
-     * seconds (disabled).</p> </li> <li> <p>
+     * value is <code>round_robin</code>, <code>least_outstanding_requests</code>, or
+     * <code>weighted_random</code>. The default is <code>round_robin</code>.</p> </li>
+     * <li> <p> <code>load_balancing.algorithm.anomaly_mitigation</code> - Only
+     * available when <code>load_balancing.algorithm.type</code> is
+     * <code>weighted_random</code>. Indicates whether anomaly mitigation is enabled.
+     * The value is <code>on</code> or <code>off</code>. The default is
+     * <code>off</code>.</p> </li> <li> <p> <code>slow_start.duration_seconds</code> -
+     * The time period, in seconds, during which a newly registered target receives an
+     * increasing share of the traffic to the target group. After this time period
+     * ends, the target receives its full share of traffic. The range is 30-900 seconds
+     * (15 minutes). The default is 0 seconds (disabled).</p> </li> <li> <p>
      * <code>stickiness.app_cookie.cookie_name</code> - Indicates the name of the
      * application-based cookie. Names that start with the following prefixes are not
      * allowed: <code>AWSALB</code>, <code>AWSALBAPP</code>, and <code>AWSALBTG</code>;
@@ -704,7 +763,14 @@ namespace Model
      * <code>target_health_state.unhealthy.connection_termination.enabled</code> -
      * Indicates whether the load balancer terminates connections to unhealthy targets.
      * The value is <code>true</code> or <code>false</code>. The default is
-     * <code>true</code>.</p> </li> </ul> <p>The following attributes are supported
+     * <code>true</code>.</p> </li> <li> <p>
+     * <code>target_health_state.unhealthy.draining_interval_seconds</code> - The
+     * amount of time for Elastic Load Balancing to wait before changing the state of
+     * an unhealthy target from <code>unhealthy.draining</code> to
+     * <code>unhealthy</code>. The range is 0-360000 seconds. The default value is 0
+     * seconds.</p> <p>Note: This attribute can only be configured when
+     * <code>target_health_state.unhealthy.connection_termination.enabled</code> is
+     * <code>false</code>.</p> </li> </ul> <p>The following attributes are supported
      * only by Gateway Load Balancers:</p> <ul> <li> <p>
      * <code>target_failover.on_deregistration</code> - Indicates how the Gateway Load
      * Balancer handles existing flows when a target is deregistered. The possible
@@ -771,13 +837,17 @@ namespace Model
      * Balancer and the target is an instance or an IP address:</p> <ul> <li> <p>
      * <code>load_balancing.algorithm.type</code> - The load balancing algorithm
      * determines how the load balancer selects targets when routing requests. The
-     * value is <code>round_robin</code> or <code>least_outstanding_requests</code>.
-     * The default is <code>round_robin</code>.</p> </li> <li> <p>
-     * <code>slow_start.duration_seconds</code> - The time period, in seconds, during
-     * which a newly registered target receives an increasing share of the traffic to
-     * the target group. After this time period ends, the target receives its full
-     * share of traffic. The range is 30-900 seconds (15 minutes). The default is 0
-     * seconds (disabled).</p> </li> <li> <p>
+     * value is <code>round_robin</code>, <code>least_outstanding_requests</code>, or
+     * <code>weighted_random</code>. The default is <code>round_robin</code>.</p> </li>
+     * <li> <p> <code>load_balancing.algorithm.anomaly_mitigation</code> - Only
+     * available when <code>load_balancing.algorithm.type</code> is
+     * <code>weighted_random</code>. Indicates whether anomaly mitigation is enabled.
+     * The value is <code>on</code> or <code>off</code>. The default is
+     * <code>off</code>.</p> </li> <li> <p> <code>slow_start.duration_seconds</code> -
+     * The time period, in seconds, during which a newly registered target receives an
+     * increasing share of the traffic to the target group. After this time period
+     * ends, the target receives its full share of traffic. The range is 30-900 seconds
+     * (15 minutes). The default is 0 seconds (disabled).</p> </li> <li> <p>
      * <code>stickiness.app_cookie.cookie_name</code> - Indicates the name of the
      * application-based cookie. Names that start with the following prefixes are not
      * allowed: <code>AWSALB</code>, <code>AWSALBAPP</code>, and <code>AWSALBTG</code>;
@@ -818,7 +888,14 @@ namespace Model
      * <code>target_health_state.unhealthy.connection_termination.enabled</code> -
      * Indicates whether the load balancer terminates connections to unhealthy targets.
      * The value is <code>true</code> or <code>false</code>. The default is
-     * <code>true</code>.</p> </li> </ul> <p>The following attributes are supported
+     * <code>true</code>.</p> </li> <li> <p>
+     * <code>target_health_state.unhealthy.draining_interval_seconds</code> - The
+     * amount of time for Elastic Load Balancing to wait before changing the state of
+     * an unhealthy target from <code>unhealthy.draining</code> to
+     * <code>unhealthy</code>. The range is 0-360000 seconds. The default value is 0
+     * seconds.</p> <p>Note: This attribute can only be configured when
+     * <code>target_health_state.unhealthy.connection_termination.enabled</code> is
+     * <code>false</code>.</p> </li> </ul> <p>The following attributes are supported
      * only by Gateway Load Balancers:</p> <ul> <li> <p>
      * <code>target_failover.on_deregistration</code> - Indicates how the Gateway Load
      * Balancer handles existing flows when a target is deregistered. The possible
@@ -885,13 +962,17 @@ namespace Model
      * Balancer and the target is an instance or an IP address:</p> <ul> <li> <p>
      * <code>load_balancing.algorithm.type</code> - The load balancing algorithm
      * determines how the load balancer selects targets when routing requests. The
-     * value is <code>round_robin</code> or <code>least_outstanding_requests</code>.
-     * The default is <code>round_robin</code>.</p> </li> <li> <p>
-     * <code>slow_start.duration_seconds</code> - The time period, in seconds, during
-     * which a newly registered target receives an increasing share of the traffic to
-     * the target group. After this time period ends, the target receives its full
-     * share of traffic. The range is 30-900 seconds (15 minutes). The default is 0
-     * seconds (disabled).</p> </li> <li> <p>
+     * value is <code>round_robin</code>, <code>least_outstanding_requests</code>, or
+     * <code>weighted_random</code>. The default is <code>round_robin</code>.</p> </li>
+     * <li> <p> <code>load_balancing.algorithm.anomaly_mitigation</code> - Only
+     * available when <code>load_balancing.algorithm.type</code> is
+     * <code>weighted_random</code>. Indicates whether anomaly mitigation is enabled.
+     * The value is <code>on</code> or <code>off</code>. The default is
+     * <code>off</code>.</p> </li> <li> <p> <code>slow_start.duration_seconds</code> -
+     * The time period, in seconds, during which a newly registered target receives an
+     * increasing share of the traffic to the target group. After this time period
+     * ends, the target receives its full share of traffic. The range is 30-900 seconds
+     * (15 minutes). The default is 0 seconds (disabled).</p> </li> <li> <p>
      * <code>stickiness.app_cookie.cookie_name</code> - Indicates the name of the
      * application-based cookie. Names that start with the following prefixes are not
      * allowed: <code>AWSALB</code>, <code>AWSALBAPP</code>, and <code>AWSALBTG</code>;
@@ -932,7 +1013,14 @@ namespace Model
      * <code>target_health_state.unhealthy.connection_termination.enabled</code> -
      * Indicates whether the load balancer terminates connections to unhealthy targets.
      * The value is <code>true</code> or <code>false</code>. The default is
-     * <code>true</code>.</p> </li> </ul> <p>The following attributes are supported
+     * <code>true</code>.</p> </li> <li> <p>
+     * <code>target_health_state.unhealthy.draining_interval_seconds</code> - The
+     * amount of time for Elastic Load Balancing to wait before changing the state of
+     * an unhealthy target from <code>unhealthy.draining</code> to
+     * <code>unhealthy</code>. The range is 0-360000 seconds. The default value is 0
+     * seconds.</p> <p>Note: This attribute can only be configured when
+     * <code>target_health_state.unhealthy.connection_termination.enabled</code> is
+     * <code>false</code>.</p> </li> </ul> <p>The following attributes are supported
      * only by Gateway Load Balancers:</p> <ul> <li> <p>
      * <code>target_failover.on_deregistration</code> - Indicates how the Gateway Load
      * Balancer handles existing flows when a target is deregistered. The possible

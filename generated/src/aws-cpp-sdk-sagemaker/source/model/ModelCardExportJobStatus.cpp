@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ModelCardExportJobStatus::NOT_SET:
+            return {};
           case ModelCardExportJobStatus::InProgress:
             return "InProgress";
           case ModelCardExportJobStatus::Completed:

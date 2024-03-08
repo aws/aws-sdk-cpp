@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HlsIFrameOnlyManifest::NOT_SET:
+            return {};
           case HlsIFrameOnlyManifest::INCLUDE:
             return "INCLUDE";
           case HlsIFrameOnlyManifest::EXCLUDE:

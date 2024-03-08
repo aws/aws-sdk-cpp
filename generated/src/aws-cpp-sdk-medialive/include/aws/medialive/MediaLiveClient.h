@@ -22,8 +22,8 @@ namespace MediaLive
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef MediaLiveClientConfiguration ClientConfigurationType;
       typedef MediaLiveEndpointProvider EndpointProviderType;
@@ -33,14 +33,14 @@ namespace MediaLive
         * is not specified, it will be initialized to default values.
         */
         MediaLiveClient(const Aws::MediaLive::MediaLiveClientConfiguration& clientConfiguration = Aws::MediaLive::MediaLiveClientConfiguration(),
-                        std::shared_ptr<MediaLiveEndpointProviderBase> endpointProvider = Aws::MakeShared<MediaLiveEndpointProvider>(ALLOCATION_TAG));
+                        std::shared_ptr<MediaLiveEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         MediaLiveClient(const Aws::Auth::AWSCredentials& credentials,
-                        std::shared_ptr<MediaLiveEndpointProviderBase> endpointProvider = Aws::MakeShared<MediaLiveEndpointProvider>(ALLOCATION_TAG),
+                        std::shared_ptr<MediaLiveEndpointProviderBase> endpointProvider = nullptr,
                         const Aws::MediaLive::MediaLiveClientConfiguration& clientConfiguration = Aws::MediaLive::MediaLiveClientConfiguration());
 
        /**
@@ -48,7 +48,7 @@ namespace MediaLive
         * the default http client factory will be used
         */
         MediaLiveClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                        std::shared_ptr<MediaLiveEndpointProviderBase> endpointProvider = Aws::MakeShared<MediaLiveEndpointProvider>(ALLOCATION_TAG),
+                        std::shared_ptr<MediaLiveEndpointProviderBase> endpointProvider = nullptr,
                         const Aws::MediaLive::MediaLiveClientConfiguration& clientConfiguration = Aws::MediaLive::MediaLiveClientConfiguration());
 
 
@@ -632,6 +632,31 @@ namespace MediaLive
         }
 
         /**
+         * Describe account configuration<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeAccountConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeAccountConfigurationOutcome DescribeAccountConfiguration(const Model::DescribeAccountConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeAccountConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeAccountConfigurationRequestT = Model::DescribeAccountConfigurationRequest>
+        Model::DescribeAccountConfigurationOutcomeCallable DescribeAccountConfigurationCallable(const DescribeAccountConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&MediaLiveClient::DescribeAccountConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeAccountConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeAccountConfigurationRequestT = Model::DescribeAccountConfigurationRequest>
+        void DescribeAccountConfigurationAsync(const DescribeAccountConfigurationRequestT& request, const DescribeAccountConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaLiveClient::DescribeAccountConfiguration, request, handler, context);
+        }
+
+        /**
          * Gets details about a channel<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeChannel">AWS
          * API Reference</a></p>
@@ -879,31 +904,6 @@ namespace MediaLive
         void DescribeScheduleAsync(const DescribeScheduleRequestT& request, const DescribeScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&MediaLiveClient::DescribeSchedule, request, handler, context);
-        }
-
-        /**
-         * Get account configuration<p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeAccountConfiguration">AWS
-         * API Reference</a></p>
-         */
-        virtual Model::DescribeAccountConfigurationOutcome DescribeAccountConfiguration(const Model::DescribeAccountConfigurationRequest& request) const;
-
-        /**
-         * A Callable wrapper for DescribeAccountConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        template<typename DescribeAccountConfigurationRequestT = Model::DescribeAccountConfigurationRequest>
-        Model::DescribeAccountConfigurationOutcomeCallable DescribeAccountConfigurationCallable(const DescribeAccountConfigurationRequestT& request) const
-        {
-            return SubmitCallable(&MediaLiveClient::DescribeAccountConfiguration, request);
-        }
-
-        /**
-         * An Async wrapper for DescribeAccountConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        template<typename DescribeAccountConfigurationRequestT = Model::DescribeAccountConfigurationRequest>
-        void DescribeAccountConfigurationAsync(const DescribeAccountConfigurationRequestT& request, const DescribeAccountConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
-        {
-            return SubmitAsync(&MediaLiveClient::DescribeAccountConfiguration, request, handler, context);
         }
 
         /**
@@ -1266,28 +1266,29 @@ namespace MediaLive
         }
 
         /**
-         * Update account configuration<p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateAccountConfiguration">AWS
+         * Restart pipelines in one channel that is currently running.<p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/RestartChannelPipelines">AWS
          * API Reference</a></p>
          */
-        virtual Model::UpdateAccountConfigurationOutcome UpdateAccountConfiguration(const Model::UpdateAccountConfigurationRequest& request) const;
+        virtual Model::RestartChannelPipelinesOutcome RestartChannelPipelines(const Model::RestartChannelPipelinesRequest& request) const;
 
         /**
-         * A Callable wrapper for UpdateAccountConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         * A Callable wrapper for RestartChannelPipelines that returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        template<typename UpdateAccountConfigurationRequestT = Model::UpdateAccountConfigurationRequest>
-        Model::UpdateAccountConfigurationOutcomeCallable UpdateAccountConfigurationCallable(const UpdateAccountConfigurationRequestT& request) const
+        template<typename RestartChannelPipelinesRequestT = Model::RestartChannelPipelinesRequest>
+        Model::RestartChannelPipelinesOutcomeCallable RestartChannelPipelinesCallable(const RestartChannelPipelinesRequestT& request) const
         {
-            return SubmitCallable(&MediaLiveClient::UpdateAccountConfiguration, request);
+            return SubmitCallable(&MediaLiveClient::RestartChannelPipelines, request);
         }
 
         /**
-         * An Async wrapper for UpdateAccountConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         * An Async wrapper for RestartChannelPipelines that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        template<typename UpdateAccountConfigurationRequestT = Model::UpdateAccountConfigurationRequest>
-        void UpdateAccountConfigurationAsync(const UpdateAccountConfigurationRequestT& request, const UpdateAccountConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        template<typename RestartChannelPipelinesRequestT = Model::RestartChannelPipelinesRequest>
+        void RestartChannelPipelinesAsync(const RestartChannelPipelinesRequestT& request, const RestartChannelPipelinesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
-            return SubmitAsync(&MediaLiveClient::UpdateAccountConfiguration, request, handler, context);
+            return SubmitAsync(&MediaLiveClient::RestartChannelPipelines, request, handler, context);
         }
 
         /**
@@ -1503,6 +1504,31 @@ namespace MediaLive
         void TransferInputDeviceAsync(const TransferInputDeviceRequestT& request, const TransferInputDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&MediaLiveClient::TransferInputDevice, request, handler, context);
+        }
+
+        /**
+         * Update account configuration<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateAccountConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateAccountConfigurationOutcome UpdateAccountConfiguration(const Model::UpdateAccountConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateAccountConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateAccountConfigurationRequestT = Model::UpdateAccountConfigurationRequest>
+        Model::UpdateAccountConfigurationOutcomeCallable UpdateAccountConfigurationCallable(const UpdateAccountConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&MediaLiveClient::UpdateAccountConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateAccountConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateAccountConfigurationRequestT = Model::UpdateAccountConfigurationRequest>
+        void UpdateAccountConfigurationAsync(const UpdateAccountConfigurationRequestT& request, const UpdateAccountConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaLiveClient::UpdateAccountConfiguration, request, handler, context);
         }
 
         /**

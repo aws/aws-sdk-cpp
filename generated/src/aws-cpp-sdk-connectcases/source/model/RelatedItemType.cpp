@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RelatedItemType::NOT_SET:
+            return {};
           case RelatedItemType::Contact:
             return "Contact";
           case RelatedItemType::Comment:

@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BatchItemErrorCode::NOT_SET:
+            return {};
           case BatchItemErrorCode::AccessDeniedError:
             return "AccessDeniedError";
           case BatchItemErrorCode::ConflictError:

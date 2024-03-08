@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BrokerState::NOT_SET:
+            return {};
           case BrokerState::CREATION_IN_PROGRESS:
             return "CREATION_IN_PROGRESS";
           case BrokerState::CREATION_FAILED:

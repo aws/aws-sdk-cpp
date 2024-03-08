@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case WebvttStylePassthrough::NOT_SET:
+            return {};
           case WebvttStylePassthrough::ENABLED:
             return "ENABLED";
           case WebvttStylePassthrough::DISABLED:

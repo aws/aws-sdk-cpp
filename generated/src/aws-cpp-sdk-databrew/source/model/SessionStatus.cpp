@@ -89,6 +89,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SessionStatus::NOT_SET:
+            return {};
           case SessionStatus::ASSIGNED:
             return "ASSIGNED";
           case SessionStatus::FAILED:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DashIsoMpdProfile::NOT_SET:
+            return {};
           case DashIsoMpdProfile::MAIN_PROFILE:
             return "MAIN_PROFILE";
           case DashIsoMpdProfile::ON_DEMAND_PROFILE:

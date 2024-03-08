@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CancelSpotInstanceRequestState::NOT_SET:
+            return {};
           case CancelSpotInstanceRequestState::active:
             return "active";
           case CancelSpotInstanceRequestState::open:

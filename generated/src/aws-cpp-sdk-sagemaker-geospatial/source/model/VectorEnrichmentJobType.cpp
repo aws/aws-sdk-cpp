@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VectorEnrichmentJobType::NOT_SET:
+            return {};
           case VectorEnrichmentJobType::REVERSE_GEOCODING:
             return "REVERSE_GEOCODING";
           case VectorEnrichmentJobType::MAP_MATCHING:

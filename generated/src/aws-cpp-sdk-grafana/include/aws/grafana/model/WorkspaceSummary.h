@@ -8,6 +8,7 @@
 #include <aws/grafana/model/AuthenticationSummary.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/grafana/model/LicenseType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/grafana/model/WorkspaceStatus.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
@@ -195,6 +196,71 @@ namespace Model
 
 
     /**
+     * <p>The token that ties this workspace to a Grafana Labs account. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise">Register
+     * with Grafana Labs</a>.</p>
+     */
+    inline const Aws::String& GetGrafanaToken() const{ return m_grafanaToken; }
+
+    /**
+     * <p>The token that ties this workspace to a Grafana Labs account. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise">Register
+     * with Grafana Labs</a>.</p>
+     */
+    inline bool GrafanaTokenHasBeenSet() const { return m_grafanaTokenHasBeenSet; }
+
+    /**
+     * <p>The token that ties this workspace to a Grafana Labs account. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise">Register
+     * with Grafana Labs</a>.</p>
+     */
+    inline void SetGrafanaToken(const Aws::String& value) { m_grafanaTokenHasBeenSet = true; m_grafanaToken = value; }
+
+    /**
+     * <p>The token that ties this workspace to a Grafana Labs account. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise">Register
+     * with Grafana Labs</a>.</p>
+     */
+    inline void SetGrafanaToken(Aws::String&& value) { m_grafanaTokenHasBeenSet = true; m_grafanaToken = std::move(value); }
+
+    /**
+     * <p>The token that ties this workspace to a Grafana Labs account. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise">Register
+     * with Grafana Labs</a>.</p>
+     */
+    inline void SetGrafanaToken(const char* value) { m_grafanaTokenHasBeenSet = true; m_grafanaToken.assign(value); }
+
+    /**
+     * <p>The token that ties this workspace to a Grafana Labs account. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise">Register
+     * with Grafana Labs</a>.</p>
+     */
+    inline WorkspaceSummary& WithGrafanaToken(const Aws::String& value) { SetGrafanaToken(value); return *this;}
+
+    /**
+     * <p>The token that ties this workspace to a Grafana Labs account. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise">Register
+     * with Grafana Labs</a>.</p>
+     */
+    inline WorkspaceSummary& WithGrafanaToken(Aws::String&& value) { SetGrafanaToken(std::move(value)); return *this;}
+
+    /**
+     * <p>The token that ties this workspace to a Grafana Labs account. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise">Register
+     * with Grafana Labs</a>.</p>
+     */
+    inline WorkspaceSummary& WithGrafanaToken(const char* value) { SetGrafanaToken(value); return *this;}
+
+
+    /**
      * <p>The Grafana version that the workspace is running.</p>
      */
     inline const Aws::String& GetGrafanaVersion() const{ return m_grafanaVersion; }
@@ -274,6 +340,49 @@ namespace Model
      * <p>The unique ID of the workspace.</p>
      */
     inline WorkspaceSummary& WithId(const char* value) { SetId(value); return *this;}
+
+
+    /**
+     * <p>Specifies whether this workspace has a full Grafana Enterprise license.</p>
+     *  <p>Amazon Managed Grafana workspaces no longer support Grafana Enterprise
+     * free trials.</p> 
+     */
+    inline const LicenseType& GetLicenseType() const{ return m_licenseType; }
+
+    /**
+     * <p>Specifies whether this workspace has a full Grafana Enterprise license.</p>
+     *  <p>Amazon Managed Grafana workspaces no longer support Grafana Enterprise
+     * free trials.</p> 
+     */
+    inline bool LicenseTypeHasBeenSet() const { return m_licenseTypeHasBeenSet; }
+
+    /**
+     * <p>Specifies whether this workspace has a full Grafana Enterprise license.</p>
+     *  <p>Amazon Managed Grafana workspaces no longer support Grafana Enterprise
+     * free trials.</p> 
+     */
+    inline void SetLicenseType(const LicenseType& value) { m_licenseTypeHasBeenSet = true; m_licenseType = value; }
+
+    /**
+     * <p>Specifies whether this workspace has a full Grafana Enterprise license.</p>
+     *  <p>Amazon Managed Grafana workspaces no longer support Grafana Enterprise
+     * free trials.</p> 
+     */
+    inline void SetLicenseType(LicenseType&& value) { m_licenseTypeHasBeenSet = true; m_licenseType = std::move(value); }
+
+    /**
+     * <p>Specifies whether this workspace has a full Grafana Enterprise license.</p>
+     *  <p>Amazon Managed Grafana workspaces no longer support Grafana Enterprise
+     * free trials.</p> 
+     */
+    inline WorkspaceSummary& WithLicenseType(const LicenseType& value) { SetLicenseType(value); return *this;}
+
+    /**
+     * <p>Specifies whether this workspace has a full Grafana Enterprise license.</p>
+     *  <p>Amazon Managed Grafana workspaces no longer support Grafana Enterprise
+     * free trials.</p> 
+     */
+    inline WorkspaceSummary& WithLicenseType(LicenseType&& value) { SetLicenseType(std::move(value)); return *this;}
 
 
     /**
@@ -515,11 +624,17 @@ namespace Model
     Aws::String m_endpoint;
     bool m_endpointHasBeenSet = false;
 
+    Aws::String m_grafanaToken;
+    bool m_grafanaTokenHasBeenSet = false;
+
     Aws::String m_grafanaVersion;
     bool m_grafanaVersionHasBeenSet = false;
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;
+
+    LicenseType m_licenseType;
+    bool m_licenseTypeHasBeenSet = false;
 
     Aws::Utils::DateTime m_modified;
     bool m_modifiedHasBeenSet = false;

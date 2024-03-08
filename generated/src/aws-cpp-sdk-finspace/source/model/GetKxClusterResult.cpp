@@ -59,6 +59,21 @@ GetKxClusterResult& GetKxClusterResult::operator =(const Aws::AmazonWebServiceRe
 
   }
 
+  if(jsonValue.ValueExists("tickerplantLogConfiguration"))
+  {
+    m_tickerplantLogConfiguration = jsonValue.GetObject("tickerplantLogConfiguration");
+
+  }
+
+  if(jsonValue.ValueExists("volumes"))
+  {
+    Aws::Utils::Array<JsonView> volumesJsonList = jsonValue.GetArray("volumes");
+    for(unsigned volumesIndex = 0; volumesIndex < volumesJsonList.GetLength(); ++volumesIndex)
+    {
+      m_volumes.push_back(volumesJsonList[volumesIndex].AsObject());
+    }
+  }
+
   if(jsonValue.ValueExists("databases"))
   {
     Aws::Utils::Array<JsonView> databasesJsonList = jsonValue.GetArray("databases");
@@ -161,6 +176,12 @@ GetKxClusterResult& GetKxClusterResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("createdTimestamp"))
   {
     m_createdTimestamp = jsonValue.GetDouble("createdTimestamp");
+
+  }
+
+  if(jsonValue.ValueExists("scalingGroupConfiguration"))
+  {
+    m_scalingGroupConfiguration = jsonValue.GetObject("scalingGroupConfiguration");
 
   }
 

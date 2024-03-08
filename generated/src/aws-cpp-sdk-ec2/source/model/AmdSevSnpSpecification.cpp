@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AmdSevSnpSpecification::NOT_SET:
+            return {};
           case AmdSevSnpSpecification::enabled:
             return "enabled";
           case AmdSevSnpSpecification::disabled:

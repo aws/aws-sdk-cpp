@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case IssueSubEntity::NOT_SET:
+            return {};
           case IssueSubEntity::COMMENTS:
             return "COMMENTS";
           case IssueSubEntity::ATTACHMENTS:

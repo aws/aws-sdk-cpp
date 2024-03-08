@@ -52,13 +52,13 @@ namespace Aws
              * you are using for your client configuration. This executor will be used in a different context than the s3 client is used.
              * It is not a bug to use the same executor, but at least be aware that this is how the manager will be used.
              */
-            Aws::Utils::Threading::Executor* transferExecutor;
+            Aws::Utils::Threading::Executor* transferExecutor = nullptr;
             /**
              * When true, TransferManager will calculate the MD5 digest of the content being uploaded.
              * The digest is sent to S3 via an HTTP header enabling the service to perform integrity checks.
              * This option is disabled by default. Defer to checksumAlgorithm to use other checksum algorithms.
              */
-            bool computeContentMD5;
+            bool computeContentMD5 = false;
             /**
              * If you have special arguments you want passed to our put object calls, put them here. We will copy the template for each put object call
              * overriding the body stream, bucket, and key. If object metadata is passed through, we will override that as well.
@@ -89,12 +89,12 @@ namespace Aws
              * allocate for all transfer buffers. default is 50MB.
              * If you are using Aws::Utils::Threading::PooledThreadExecutor for transferExecutor, this size should be greater than bufferSize * poolSize.
              */
-            uint64_t transferBufferMaxHeapSize;
+            uint64_t transferBufferMaxHeapSize = 10 * MB5;
             /**
              * Defaults to 5MB. If you are uploading large files,  (larger than 50GB, this needs to be specified to be something larger than 5MB. Also keep in mind that you may need
              * to increase your max heap size if this is something you plan on increasing.
              */
-            uint64_t bufferSize;
+            uint64_t bufferSize = MB5;
 
             /**
              * Callback to receive progress updates for uploads.

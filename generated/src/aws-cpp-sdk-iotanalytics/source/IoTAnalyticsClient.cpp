@@ -69,8 +69,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* IoTAnalyticsClient::SERVICE_NAME = "iotanalytics";
-const char* IoTAnalyticsClient::ALLOCATION_TAG = "IoTAnalyticsClient";
+namespace Aws
+{
+  namespace IoTAnalytics
+  {
+    const char SERVICE_NAME[] = "iotanalytics";
+    const char ALLOCATION_TAG[] = "IoTAnalyticsClient";
+  }
+}
+const char* IoTAnalyticsClient::GetServiceName() {return SERVICE_NAME;}
+const char* IoTAnalyticsClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 IoTAnalyticsClient::IoTAnalyticsClient(const IoTAnalytics::IoTAnalyticsClientConfiguration& clientConfiguration,
                                        std::shared_ptr<IoTAnalyticsEndpointProviderBase> endpointProvider) :
@@ -82,7 +90,7 @@ IoTAnalyticsClient::IoTAnalyticsClient(const IoTAnalytics::IoTAnalyticsClientCon
             Aws::MakeShared<IoTAnalyticsErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<IoTAnalyticsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -98,7 +106,7 @@ IoTAnalyticsClient::IoTAnalyticsClient(const AWSCredentials& credentials,
             Aws::MakeShared<IoTAnalyticsErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<IoTAnalyticsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -114,7 +122,7 @@ IoTAnalyticsClient::IoTAnalyticsClient(const std::shared_ptr<AWSCredentialsProvi
             Aws::MakeShared<IoTAnalyticsErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<IoTAnalyticsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

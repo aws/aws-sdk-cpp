@@ -17,7 +17,9 @@ namespace Model
   {
     NOT_SET,
     ACCOUNT,
-    ORGANIZATION
+    ORGANIZATION,
+    ACCOUNT_UNUSED_ACCESS,
+    ORGANIZATION_UNUSED_ACCESS
   };
 
 namespace TypeMapper

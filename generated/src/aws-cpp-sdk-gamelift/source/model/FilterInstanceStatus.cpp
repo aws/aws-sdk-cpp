@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FilterInstanceStatus::NOT_SET:
+            return {};
           case FilterInstanceStatus::ACTIVE:
             return "ACTIVE";
           case FilterInstanceStatus::DRAINING:

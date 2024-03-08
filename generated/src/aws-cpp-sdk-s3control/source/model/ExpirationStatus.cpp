@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ExpirationStatus::NOT_SET:
+            return {};
           case ExpirationStatus::Enabled:
             return "Enabled";
           case ExpirationStatus::Disabled:

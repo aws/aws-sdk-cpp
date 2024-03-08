@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AnalysisStatus::NOT_SET:
+            return {};
           case AnalysisStatus::RUNNING:
             return "RUNNING";
           case AnalysisStatus::COMPLETE:

@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AcceptHeader::NOT_SET:
+            return {};
           case AcceptHeader::image_jpeg:
             return "image/jpeg";
           default:

@@ -34,43 +34,64 @@ namespace Model
 
     /**
      * <p>The Amazon CloudFront endpoint that you use as the target of the alias that
-     * you set up with your Domain Name Service (DNS) provider.</p>
+     * you set up with your Domain Name Service (DNS) provider. Amazon Cognito returns
+     * this value if you set a custom domain with <code>CustomDomainConfig</code>. If
+     * you set an Amazon Cognito prefix domain, this operation returns a blank
+     * response.</p>
      */
     inline const Aws::String& GetCloudFrontDomain() const{ return m_cloudFrontDomain; }
 
     /**
      * <p>The Amazon CloudFront endpoint that you use as the target of the alias that
-     * you set up with your Domain Name Service (DNS) provider.</p>
+     * you set up with your Domain Name Service (DNS) provider. Amazon Cognito returns
+     * this value if you set a custom domain with <code>CustomDomainConfig</code>. If
+     * you set an Amazon Cognito prefix domain, this operation returns a blank
+     * response.</p>
      */
     inline void SetCloudFrontDomain(const Aws::String& value) { m_cloudFrontDomain = value; }
 
     /**
      * <p>The Amazon CloudFront endpoint that you use as the target of the alias that
-     * you set up with your Domain Name Service (DNS) provider.</p>
+     * you set up with your Domain Name Service (DNS) provider. Amazon Cognito returns
+     * this value if you set a custom domain with <code>CustomDomainConfig</code>. If
+     * you set an Amazon Cognito prefix domain, this operation returns a blank
+     * response.</p>
      */
     inline void SetCloudFrontDomain(Aws::String&& value) { m_cloudFrontDomain = std::move(value); }
 
     /**
      * <p>The Amazon CloudFront endpoint that you use as the target of the alias that
-     * you set up with your Domain Name Service (DNS) provider.</p>
+     * you set up with your Domain Name Service (DNS) provider. Amazon Cognito returns
+     * this value if you set a custom domain with <code>CustomDomainConfig</code>. If
+     * you set an Amazon Cognito prefix domain, this operation returns a blank
+     * response.</p>
      */
     inline void SetCloudFrontDomain(const char* value) { m_cloudFrontDomain.assign(value); }
 
     /**
      * <p>The Amazon CloudFront endpoint that you use as the target of the alias that
-     * you set up with your Domain Name Service (DNS) provider.</p>
+     * you set up with your Domain Name Service (DNS) provider. Amazon Cognito returns
+     * this value if you set a custom domain with <code>CustomDomainConfig</code>. If
+     * you set an Amazon Cognito prefix domain, this operation returns a blank
+     * response.</p>
      */
     inline CreateUserPoolDomainResult& WithCloudFrontDomain(const Aws::String& value) { SetCloudFrontDomain(value); return *this;}
 
     /**
      * <p>The Amazon CloudFront endpoint that you use as the target of the alias that
-     * you set up with your Domain Name Service (DNS) provider.</p>
+     * you set up with your Domain Name Service (DNS) provider. Amazon Cognito returns
+     * this value if you set a custom domain with <code>CustomDomainConfig</code>. If
+     * you set an Amazon Cognito prefix domain, this operation returns a blank
+     * response.</p>
      */
     inline CreateUserPoolDomainResult& WithCloudFrontDomain(Aws::String&& value) { SetCloudFrontDomain(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon CloudFront endpoint that you use as the target of the alias that
-     * you set up with your Domain Name Service (DNS) provider.</p>
+     * you set up with your Domain Name Service (DNS) provider. Amazon Cognito returns
+     * this value if you set a custom domain with <code>CustomDomainConfig</code>. If
+     * you set an Amazon Cognito prefix domain, this operation returns a blank
+     * response.</p>
      */
     inline CreateUserPoolDomainResult& WithCloudFrontDomain(const char* value) { SetCloudFrontDomain(value); return *this;}
 

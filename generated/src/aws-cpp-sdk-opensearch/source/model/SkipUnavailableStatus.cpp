@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SkipUnavailableStatus::NOT_SET:
+            return {};
           case SkipUnavailableStatus::ENABLED:
             return "ENABLED";
           case SkipUnavailableStatus::DISABLED:

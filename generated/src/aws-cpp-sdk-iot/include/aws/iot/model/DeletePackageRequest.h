@@ -40,42 +40,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the target package.</p>
+     * <p>The name of the target software package.</p>
      */
     inline const Aws::String& GetPackageName() const{ return m_packageName; }
 
     /**
-     * <p>The name of the target package.</p>
+     * <p>The name of the target software package.</p>
      */
     inline bool PackageNameHasBeenSet() const { return m_packageNameHasBeenSet; }
 
     /**
-     * <p>The name of the target package.</p>
+     * <p>The name of the target software package.</p>
      */
     inline void SetPackageName(const Aws::String& value) { m_packageNameHasBeenSet = true; m_packageName = value; }
 
     /**
-     * <p>The name of the target package.</p>
+     * <p>The name of the target software package.</p>
      */
     inline void SetPackageName(Aws::String&& value) { m_packageNameHasBeenSet = true; m_packageName = std::move(value); }
 
     /**
-     * <p>The name of the target package.</p>
+     * <p>The name of the target software package.</p>
      */
     inline void SetPackageName(const char* value) { m_packageNameHasBeenSet = true; m_packageName.assign(value); }
 
     /**
-     * <p>The name of the target package.</p>
+     * <p>The name of the target software package.</p>
      */
     inline DeletePackageRequest& WithPackageName(const Aws::String& value) { SetPackageName(value); return *this;}
 
     /**
-     * <p>The name of the target package.</p>
+     * <p>The name of the target software package.</p>
      */
     inline DeletePackageRequest& WithPackageName(Aws::String&& value) { SetPackageName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the target package.</p>
+     * <p>The name of the target software package.</p>
      */
     inline DeletePackageRequest& WithPackageName(const char* value) { SetPackageName(value); return *this;}
 

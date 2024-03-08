@@ -44,9 +44,8 @@ namespace Model
      * <p>The default instance type and the Amazon Resource Name (ARN) of the default
      * SageMaker image used by the KernelGateway app.</p>  <p>The Amazon
      * SageMaker Studio UI does not use the default instance type value set here. The
-     * default instance type set here is used when Apps are created using the Amazon
-     * Web Services Command Line Interface or Amazon Web Services CloudFormation and
-     * the instance type parameter value is not passed.</p> 
+     * default instance type set here is used when Apps are created using the CLI or
+     * CloudFormation and the instance type parameter value is not passed.</p> 
      */
     inline const ResourceSpec& GetDefaultResourceSpec() const{ return m_defaultResourceSpec; }
 
@@ -54,9 +53,8 @@ namespace Model
      * <p>The default instance type and the Amazon Resource Name (ARN) of the default
      * SageMaker image used by the KernelGateway app.</p>  <p>The Amazon
      * SageMaker Studio UI does not use the default instance type value set here. The
-     * default instance type set here is used when Apps are created using the Amazon
-     * Web Services Command Line Interface or Amazon Web Services CloudFormation and
-     * the instance type parameter value is not passed.</p> 
+     * default instance type set here is used when Apps are created using the CLI or
+     * CloudFormation and the instance type parameter value is not passed.</p> 
      */
     inline bool DefaultResourceSpecHasBeenSet() const { return m_defaultResourceSpecHasBeenSet; }
 
@@ -64,9 +62,8 @@ namespace Model
      * <p>The default instance type and the Amazon Resource Name (ARN) of the default
      * SageMaker image used by the KernelGateway app.</p>  <p>The Amazon
      * SageMaker Studio UI does not use the default instance type value set here. The
-     * default instance type set here is used when Apps are created using the Amazon
-     * Web Services Command Line Interface or Amazon Web Services CloudFormation and
-     * the instance type parameter value is not passed.</p> 
+     * default instance type set here is used when Apps are created using the CLI or
+     * CloudFormation and the instance type parameter value is not passed.</p> 
      */
     inline void SetDefaultResourceSpec(const ResourceSpec& value) { m_defaultResourceSpecHasBeenSet = true; m_defaultResourceSpec = value; }
 
@@ -74,9 +71,8 @@ namespace Model
      * <p>The default instance type and the Amazon Resource Name (ARN) of the default
      * SageMaker image used by the KernelGateway app.</p>  <p>The Amazon
      * SageMaker Studio UI does not use the default instance type value set here. The
-     * default instance type set here is used when Apps are created using the Amazon
-     * Web Services Command Line Interface or Amazon Web Services CloudFormation and
-     * the instance type parameter value is not passed.</p> 
+     * default instance type set here is used when Apps are created using the CLI or
+     * CloudFormation and the instance type parameter value is not passed.</p> 
      */
     inline void SetDefaultResourceSpec(ResourceSpec&& value) { m_defaultResourceSpecHasBeenSet = true; m_defaultResourceSpec = std::move(value); }
 
@@ -84,9 +80,8 @@ namespace Model
      * <p>The default instance type and the Amazon Resource Name (ARN) of the default
      * SageMaker image used by the KernelGateway app.</p>  <p>The Amazon
      * SageMaker Studio UI does not use the default instance type value set here. The
-     * default instance type set here is used when Apps are created using the Amazon
-     * Web Services Command Line Interface or Amazon Web Services CloudFormation and
-     * the instance type parameter value is not passed.</p> 
+     * default instance type set here is used when Apps are created using the CLI or
+     * CloudFormation and the instance type parameter value is not passed.</p> 
      */
     inline KernelGatewayAppSettings& WithDefaultResourceSpec(const ResourceSpec& value) { SetDefaultResourceSpec(value); return *this;}
 
@@ -94,9 +89,8 @@ namespace Model
      * <p>The default instance type and the Amazon Resource Name (ARN) of the default
      * SageMaker image used by the KernelGateway app.</p>  <p>The Amazon
      * SageMaker Studio UI does not use the default instance type value set here. The
-     * default instance type set here is used when Apps are created using the Amazon
-     * Web Services Command Line Interface or Amazon Web Services CloudFormation and
-     * the instance type parameter value is not passed.</p> 
+     * default instance type set here is used when Apps are created using the CLI or
+     * CloudFormation and the instance type parameter value is not passed.</p> 
      */
     inline KernelGatewayAppSettings& WithDefaultResourceSpec(ResourceSpec&& value) { SetDefaultResourceSpec(std::move(value)); return *this;}
 

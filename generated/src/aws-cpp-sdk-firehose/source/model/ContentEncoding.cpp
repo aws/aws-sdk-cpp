@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ContentEncoding::NOT_SET:
+            return {};
           case ContentEncoding::NONE:
             return "NONE";
           case ContentEncoding::GZIP:

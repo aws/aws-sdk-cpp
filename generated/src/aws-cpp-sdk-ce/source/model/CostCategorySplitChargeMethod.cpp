@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CostCategorySplitChargeMethod::NOT_SET:
+            return {};
           case CostCategorySplitChargeMethod::FIXED:
             return "FIXED";
           case CostCategorySplitChargeMethod::PROPORTIONAL:

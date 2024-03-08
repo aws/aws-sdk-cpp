@@ -31,7 +31,8 @@ ModelDashboardMonitoringSchedule::ModelDashboardMonitoringSchedule() :
     m_monitoringScheduleConfigHasBeenSet(false),
     m_endpointNameHasBeenSet(false),
     m_monitoringAlertSummariesHasBeenSet(false),
-    m_lastMonitoringExecutionSummaryHasBeenSet(false)
+    m_lastMonitoringExecutionSummaryHasBeenSet(false),
+    m_batchTransformInputHasBeenSet(false)
 {
 }
 
@@ -48,7 +49,8 @@ ModelDashboardMonitoringSchedule::ModelDashboardMonitoringSchedule(JsonView json
     m_monitoringScheduleConfigHasBeenSet(false),
     m_endpointNameHasBeenSet(false),
     m_monitoringAlertSummariesHasBeenSet(false),
-    m_lastMonitoringExecutionSummaryHasBeenSet(false)
+    m_lastMonitoringExecutionSummaryHasBeenSet(false),
+    m_batchTransformInputHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -135,6 +137,13 @@ ModelDashboardMonitoringSchedule& ModelDashboardMonitoringSchedule::operator =(J
     m_lastMonitoringExecutionSummaryHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("BatchTransformInput"))
+  {
+    m_batchTransformInput = jsonValue.GetObject("BatchTransformInput");
+
+    m_batchTransformInputHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -206,6 +215,12 @@ JsonValue ModelDashboardMonitoringSchedule::Jsonize() const
   if(m_lastMonitoringExecutionSummaryHasBeenSet)
   {
    payload.WithObject("LastMonitoringExecutionSummary", m_lastMonitoringExecutionSummary.Jsonize());
+
+  }
+
+  if(m_batchTransformInputHasBeenSet)
+  {
+   payload.WithObject("BatchTransformInput", m_batchTransformInput.Jsonize());
 
   }
 

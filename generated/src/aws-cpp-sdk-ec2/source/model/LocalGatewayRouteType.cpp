@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LocalGatewayRouteType::NOT_SET:
+            return {};
           case LocalGatewayRouteType::static_:
             return "static";
           case LocalGatewayRouteType::propagated:

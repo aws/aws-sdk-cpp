@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Algorithm::NOT_SET:
+            return {};
           case Algorithm::sgd:
             return "sgd";
           default:

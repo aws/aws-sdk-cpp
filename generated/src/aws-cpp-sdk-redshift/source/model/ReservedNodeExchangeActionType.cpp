@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReservedNodeExchangeActionType::NOT_SET:
+            return {};
           case ReservedNodeExchangeActionType::restore_cluster:
             return "restore-cluster";
           case ReservedNodeExchangeActionType::resize_cluster:

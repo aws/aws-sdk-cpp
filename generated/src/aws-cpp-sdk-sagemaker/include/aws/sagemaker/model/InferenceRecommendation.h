@@ -5,10 +5,10 @@
 
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker/model/RecommendationMetrics.h>
 #include <aws/sagemaker/model/EndpointOutputConfiguration.h>
 #include <aws/sagemaker/model/ModelConfiguration.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <utility>
 
@@ -40,6 +40,47 @@ namespace Model
     AWS_SAGEMAKER_API InferenceRecommendation(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API InferenceRecommendation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>The recommendation ID which uniquely identifies each recommendation.</p>
+     */
+    inline const Aws::String& GetRecommendationId() const{ return m_recommendationId; }
+
+    /**
+     * <p>The recommendation ID which uniquely identifies each recommendation.</p>
+     */
+    inline bool RecommendationIdHasBeenSet() const { return m_recommendationIdHasBeenSet; }
+
+    /**
+     * <p>The recommendation ID which uniquely identifies each recommendation.</p>
+     */
+    inline void SetRecommendationId(const Aws::String& value) { m_recommendationIdHasBeenSet = true; m_recommendationId = value; }
+
+    /**
+     * <p>The recommendation ID which uniquely identifies each recommendation.</p>
+     */
+    inline void SetRecommendationId(Aws::String&& value) { m_recommendationIdHasBeenSet = true; m_recommendationId = std::move(value); }
+
+    /**
+     * <p>The recommendation ID which uniquely identifies each recommendation.</p>
+     */
+    inline void SetRecommendationId(const char* value) { m_recommendationIdHasBeenSet = true; m_recommendationId.assign(value); }
+
+    /**
+     * <p>The recommendation ID which uniquely identifies each recommendation.</p>
+     */
+    inline InferenceRecommendation& WithRecommendationId(const Aws::String& value) { SetRecommendationId(value); return *this;}
+
+    /**
+     * <p>The recommendation ID which uniquely identifies each recommendation.</p>
+     */
+    inline InferenceRecommendation& WithRecommendationId(Aws::String&& value) { SetRecommendationId(std::move(value)); return *this;}
+
+    /**
+     * <p>The recommendation ID which uniquely identifies each recommendation.</p>
+     */
+    inline InferenceRecommendation& WithRecommendationId(const char* value) { SetRecommendationId(value); return *this;}
 
 
     /**
@@ -136,47 +177,6 @@ namespace Model
 
 
     /**
-     * <p>The recommendation ID which uniquely identifies each recommendation.</p>
-     */
-    inline const Aws::String& GetRecommendationId() const{ return m_recommendationId; }
-
-    /**
-     * <p>The recommendation ID which uniquely identifies each recommendation.</p>
-     */
-    inline bool RecommendationIdHasBeenSet() const { return m_recommendationIdHasBeenSet; }
-
-    /**
-     * <p>The recommendation ID which uniquely identifies each recommendation.</p>
-     */
-    inline void SetRecommendationId(const Aws::String& value) { m_recommendationIdHasBeenSet = true; m_recommendationId = value; }
-
-    /**
-     * <p>The recommendation ID which uniquely identifies each recommendation.</p>
-     */
-    inline void SetRecommendationId(Aws::String&& value) { m_recommendationIdHasBeenSet = true; m_recommendationId = std::move(value); }
-
-    /**
-     * <p>The recommendation ID which uniquely identifies each recommendation.</p>
-     */
-    inline void SetRecommendationId(const char* value) { m_recommendationIdHasBeenSet = true; m_recommendationId.assign(value); }
-
-    /**
-     * <p>The recommendation ID which uniquely identifies each recommendation.</p>
-     */
-    inline InferenceRecommendation& WithRecommendationId(const Aws::String& value) { SetRecommendationId(value); return *this;}
-
-    /**
-     * <p>The recommendation ID which uniquely identifies each recommendation.</p>
-     */
-    inline InferenceRecommendation& WithRecommendationId(Aws::String&& value) { SetRecommendationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The recommendation ID which uniquely identifies each recommendation.</p>
-     */
-    inline InferenceRecommendation& WithRecommendationId(const char* value) { SetRecommendationId(value); return *this;}
-
-
-    /**
      * <p>A timestamp that shows when the benchmark completed.</p>
      */
     inline const Aws::Utils::DateTime& GetInvocationEndTime() const{ return m_invocationEndTime; }
@@ -239,6 +239,9 @@ namespace Model
 
   private:
 
+    Aws::String m_recommendationId;
+    bool m_recommendationIdHasBeenSet = false;
+
     RecommendationMetrics m_metrics;
     bool m_metricsHasBeenSet = false;
 
@@ -247,9 +250,6 @@ namespace Model
 
     ModelConfiguration m_modelConfiguration;
     bool m_modelConfigurationHasBeenSet = false;
-
-    Aws::String m_recommendationId;
-    bool m_recommendationIdHasBeenSet = false;
 
     Aws::Utils::DateTime m_invocationEndTime;
     bool m_invocationEndTimeHasBeenSet = false;

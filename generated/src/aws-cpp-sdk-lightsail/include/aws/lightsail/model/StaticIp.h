@@ -41,91 +41,91 @@ namespace Model
 
 
     /**
-     * <p>The name of the static IP (e.g., <code>StaticIP-Ohio-EXAMPLE</code>).</p>
+     * <p>The name of the static IP (<code>StaticIP-Ohio-EXAMPLE</code>).</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the static IP (e.g., <code>StaticIP-Ohio-EXAMPLE</code>).</p>
+     * <p>The name of the static IP (<code>StaticIP-Ohio-EXAMPLE</code>).</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name of the static IP (e.g., <code>StaticIP-Ohio-EXAMPLE</code>).</p>
+     * <p>The name of the static IP (<code>StaticIP-Ohio-EXAMPLE</code>).</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the static IP (e.g., <code>StaticIP-Ohio-EXAMPLE</code>).</p>
+     * <p>The name of the static IP (<code>StaticIP-Ohio-EXAMPLE</code>).</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the static IP (e.g., <code>StaticIP-Ohio-EXAMPLE</code>).</p>
+     * <p>The name of the static IP (<code>StaticIP-Ohio-EXAMPLE</code>).</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the static IP (e.g., <code>StaticIP-Ohio-EXAMPLE</code>).</p>
+     * <p>The name of the static IP (<code>StaticIP-Ohio-EXAMPLE</code>).</p>
      */
     inline StaticIp& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the static IP (e.g., <code>StaticIP-Ohio-EXAMPLE</code>).</p>
+     * <p>The name of the static IP (<code>StaticIP-Ohio-EXAMPLE</code>).</p>
      */
     inline StaticIp& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the static IP (e.g., <code>StaticIP-Ohio-EXAMPLE</code>).</p>
+     * <p>The name of the static IP (<code>StaticIP-Ohio-EXAMPLE</code>).</p>
      */
     inline StaticIp& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the static IP (e.g.,
-     * <code>arn:aws:lightsail:us-east-2:123456789101:StaticIp/9cbb4a9e-f8e3-4dfe-b57e-12345EXAMPLE</code>).</p>
+     * <p>The Amazon Resource Name (ARN) of the static IP
+     * (<code>arn:aws:lightsail:us-east-2:123456789101:StaticIp/9cbb4a9e-f8e3-4dfe-b57e-12345EXAMPLE</code>).</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the static IP (e.g.,
-     * <code>arn:aws:lightsail:us-east-2:123456789101:StaticIp/9cbb4a9e-f8e3-4dfe-b57e-12345EXAMPLE</code>).</p>
+     * <p>The Amazon Resource Name (ARN) of the static IP
+     * (<code>arn:aws:lightsail:us-east-2:123456789101:StaticIp/9cbb4a9e-f8e3-4dfe-b57e-12345EXAMPLE</code>).</p>
      */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the static IP (e.g.,
-     * <code>arn:aws:lightsail:us-east-2:123456789101:StaticIp/9cbb4a9e-f8e3-4dfe-b57e-12345EXAMPLE</code>).</p>
+     * <p>The Amazon Resource Name (ARN) of the static IP
+     * (<code>arn:aws:lightsail:us-east-2:123456789101:StaticIp/9cbb4a9e-f8e3-4dfe-b57e-12345EXAMPLE</code>).</p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the static IP (e.g.,
-     * <code>arn:aws:lightsail:us-east-2:123456789101:StaticIp/9cbb4a9e-f8e3-4dfe-b57e-12345EXAMPLE</code>).</p>
+     * <p>The Amazon Resource Name (ARN) of the static IP
+     * (<code>arn:aws:lightsail:us-east-2:123456789101:StaticIp/9cbb4a9e-f8e3-4dfe-b57e-12345EXAMPLE</code>).</p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the static IP (e.g.,
-     * <code>arn:aws:lightsail:us-east-2:123456789101:StaticIp/9cbb4a9e-f8e3-4dfe-b57e-12345EXAMPLE</code>).</p>
+     * <p>The Amazon Resource Name (ARN) of the static IP
+     * (<code>arn:aws:lightsail:us-east-2:123456789101:StaticIp/9cbb4a9e-f8e3-4dfe-b57e-12345EXAMPLE</code>).</p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the static IP (e.g.,
-     * <code>arn:aws:lightsail:us-east-2:123456789101:StaticIp/9cbb4a9e-f8e3-4dfe-b57e-12345EXAMPLE</code>).</p>
+     * <p>The Amazon Resource Name (ARN) of the static IP
+     * (<code>arn:aws:lightsail:us-east-2:123456789101:StaticIp/9cbb4a9e-f8e3-4dfe-b57e-12345EXAMPLE</code>).</p>
      */
     inline StaticIp& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the static IP (e.g.,
-     * <code>arn:aws:lightsail:us-east-2:123456789101:StaticIp/9cbb4a9e-f8e3-4dfe-b57e-12345EXAMPLE</code>).</p>
+     * <p>The Amazon Resource Name (ARN) of the static IP
+     * (<code>arn:aws:lightsail:us-east-2:123456789101:StaticIp/9cbb4a9e-f8e3-4dfe-b57e-12345EXAMPLE</code>).</p>
      */
     inline StaticIp& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the static IP (e.g.,
-     * <code>arn:aws:lightsail:us-east-2:123456789101:StaticIp/9cbb4a9e-f8e3-4dfe-b57e-12345EXAMPLE</code>).</p>
+     * <p>The Amazon Resource Name (ARN) of the static IP
+     * (<code>arn:aws:lightsail:us-east-2:123456789101:StaticIp/9cbb4a9e-f8e3-4dfe-b57e-12345EXAMPLE</code>).</p>
      */
     inline StaticIp& WithArn(const char* value) { SetArn(value); return *this;}
 
@@ -188,38 +188,38 @@ namespace Model
 
 
     /**
-     * <p>The timestamp when the static IP was created (e.g.,
-     * <code>1479735304.222</code>).</p>
+     * <p>The timestamp when the static IP was created
+     * (<code>1479735304.222</code>).</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
 
     /**
-     * <p>The timestamp when the static IP was created (e.g.,
-     * <code>1479735304.222</code>).</p>
+     * <p>The timestamp when the static IP was created
+     * (<code>1479735304.222</code>).</p>
      */
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
 
     /**
-     * <p>The timestamp when the static IP was created (e.g.,
-     * <code>1479735304.222</code>).</p>
+     * <p>The timestamp when the static IP was created
+     * (<code>1479735304.222</code>).</p>
      */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
-     * <p>The timestamp when the static IP was created (e.g.,
-     * <code>1479735304.222</code>).</p>
+     * <p>The timestamp when the static IP was created
+     * (<code>1479735304.222</code>).</p>
      */
     inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
 
     /**
-     * <p>The timestamp when the static IP was created (e.g.,
-     * <code>1479735304.222</code>).</p>
+     * <p>The timestamp when the static IP was created
+     * (<code>1479735304.222</code>).</p>
      */
     inline StaticIp& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
 
     /**
-     * <p>The timestamp when the static IP was created (e.g.,
-     * <code>1479735304.222</code>).</p>
+     * <p>The timestamp when the static IP was created
+     * (<code>1479735304.222</code>).</p>
      */
     inline StaticIp& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
@@ -328,50 +328,50 @@ namespace Model
 
 
     /**
-     * <p>The instance where the static IP is attached (e.g.,
-     * <code>Amazon_Linux-1GB-Ohio-1</code>).</p>
+     * <p>The instance where the static IP is attached
+     * (<code>Amazon_Linux-1GB-Ohio-1</code>).</p>
      */
     inline const Aws::String& GetAttachedTo() const{ return m_attachedTo; }
 
     /**
-     * <p>The instance where the static IP is attached (e.g.,
-     * <code>Amazon_Linux-1GB-Ohio-1</code>).</p>
+     * <p>The instance where the static IP is attached
+     * (<code>Amazon_Linux-1GB-Ohio-1</code>).</p>
      */
     inline bool AttachedToHasBeenSet() const { return m_attachedToHasBeenSet; }
 
     /**
-     * <p>The instance where the static IP is attached (e.g.,
-     * <code>Amazon_Linux-1GB-Ohio-1</code>).</p>
+     * <p>The instance where the static IP is attached
+     * (<code>Amazon_Linux-1GB-Ohio-1</code>).</p>
      */
     inline void SetAttachedTo(const Aws::String& value) { m_attachedToHasBeenSet = true; m_attachedTo = value; }
 
     /**
-     * <p>The instance where the static IP is attached (e.g.,
-     * <code>Amazon_Linux-1GB-Ohio-1</code>).</p>
+     * <p>The instance where the static IP is attached
+     * (<code>Amazon_Linux-1GB-Ohio-1</code>).</p>
      */
     inline void SetAttachedTo(Aws::String&& value) { m_attachedToHasBeenSet = true; m_attachedTo = std::move(value); }
 
     /**
-     * <p>The instance where the static IP is attached (e.g.,
-     * <code>Amazon_Linux-1GB-Ohio-1</code>).</p>
+     * <p>The instance where the static IP is attached
+     * (<code>Amazon_Linux-1GB-Ohio-1</code>).</p>
      */
     inline void SetAttachedTo(const char* value) { m_attachedToHasBeenSet = true; m_attachedTo.assign(value); }
 
     /**
-     * <p>The instance where the static IP is attached (e.g.,
-     * <code>Amazon_Linux-1GB-Ohio-1</code>).</p>
+     * <p>The instance where the static IP is attached
+     * (<code>Amazon_Linux-1GB-Ohio-1</code>).</p>
      */
     inline StaticIp& WithAttachedTo(const Aws::String& value) { SetAttachedTo(value); return *this;}
 
     /**
-     * <p>The instance where the static IP is attached (e.g.,
-     * <code>Amazon_Linux-1GB-Ohio-1</code>).</p>
+     * <p>The instance where the static IP is attached
+     * (<code>Amazon_Linux-1GB-Ohio-1</code>).</p>
      */
     inline StaticIp& WithAttachedTo(Aws::String&& value) { SetAttachedTo(std::move(value)); return *this;}
 
     /**
-     * <p>The instance where the static IP is attached (e.g.,
-     * <code>Amazon_Linux-1GB-Ohio-1</code>).</p>
+     * <p>The instance where the static IP is attached
+     * (<code>Amazon_Linux-1GB-Ohio-1</code>).</p>
      */
     inline StaticIp& WithAttachedTo(const char* value) { SetAttachedTo(value); return *this;}
 

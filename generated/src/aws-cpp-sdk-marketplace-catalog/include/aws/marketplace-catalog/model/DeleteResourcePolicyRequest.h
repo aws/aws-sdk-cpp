@@ -39,49 +39,49 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Entity resource that is associated with
+     * <p>The Amazon Resource Name (ARN) of the entity resource that is associated with
      * the resource policy.</p>
      */
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Entity resource that is associated with
+     * <p>The Amazon Resource Name (ARN) of the entity resource that is associated with
      * the resource policy.</p>
      */
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Entity resource that is associated with
+     * <p>The Amazon Resource Name (ARN) of the entity resource that is associated with
      * the resource policy.</p>
      */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Entity resource that is associated with
+     * <p>The Amazon Resource Name (ARN) of the entity resource that is associated with
      * the resource policy.</p>
      */
     inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Entity resource that is associated with
+     * <p>The Amazon Resource Name (ARN) of the entity resource that is associated with
      * the resource policy.</p>
      */
     inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Entity resource that is associated with
+     * <p>The Amazon Resource Name (ARN) of the entity resource that is associated with
      * the resource policy.</p>
      */
     inline DeleteResourcePolicyRequest& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Entity resource that is associated with
+     * <p>The Amazon Resource Name (ARN) of the entity resource that is associated with
      * the resource policy.</p>
      */
     inline DeleteResourcePolicyRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Entity resource that is associated with
+     * <p>The Amazon Resource Name (ARN) of the entity resource that is associated with
      * the resource policy.</p>
      */
     inline DeleteResourcePolicyRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}

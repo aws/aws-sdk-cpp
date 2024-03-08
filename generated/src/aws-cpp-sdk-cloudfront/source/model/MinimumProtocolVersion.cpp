@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MinimumProtocolVersion::NOT_SET:
+            return {};
           case MinimumProtocolVersion::SSLv3:
             return "SSLv3";
           case MinimumProtocolVersion::TLSv1:

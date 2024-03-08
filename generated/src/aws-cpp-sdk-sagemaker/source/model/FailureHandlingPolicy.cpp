@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FailureHandlingPolicy::NOT_SET:
+            return {};
           case FailureHandlingPolicy::ROLLBACK_ON_FAILURE:
             return "ROLLBACK_ON_FAILURE";
           case FailureHandlingPolicy::DO_NOTHING:

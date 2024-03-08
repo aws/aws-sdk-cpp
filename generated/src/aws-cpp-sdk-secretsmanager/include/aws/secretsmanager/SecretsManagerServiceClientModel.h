@@ -18,6 +18,7 @@
 /* End of generic header includes */
 
 /* Service model headers required in SecretsManagerClient header */
+#include <aws/secretsmanager/model/BatchGetSecretValueResult.h>
 #include <aws/secretsmanager/model/CancelRotateSecretResult.h>
 #include <aws/secretsmanager/model/CreateSecretResult.h>
 #include <aws/secretsmanager/model/DeleteResourcePolicyResult.h>
@@ -79,6 +80,7 @@ namespace Aws
     namespace Model
     {
       /* Service model forward declarations required in SecretsManagerClient header */
+      class BatchGetSecretValueRequest;
       class CancelRotateSecretRequest;
       class CreateSecretRequest;
       class DeleteResourcePolicyRequest;
@@ -104,6 +106,7 @@ namespace Aws
       /* End of service model forward declarations required in SecretsManagerClient header */
 
       /* Service model Outcome class definitions */
+      typedef Aws::Utils::Outcome<BatchGetSecretValueResult, SecretsManagerError> BatchGetSecretValueOutcome;
       typedef Aws::Utils::Outcome<CancelRotateSecretResult, SecretsManagerError> CancelRotateSecretOutcome;
       typedef Aws::Utils::Outcome<CreateSecretResult, SecretsManagerError> CreateSecretOutcome;
       typedef Aws::Utils::Outcome<DeleteResourcePolicyResult, SecretsManagerError> DeleteResourcePolicyOutcome;
@@ -129,6 +132,7 @@ namespace Aws
       /* End of service model Outcome class definitions */
 
       /* Service model Outcome callable definitions */
+      typedef std::future<BatchGetSecretValueOutcome> BatchGetSecretValueOutcomeCallable;
       typedef std::future<CancelRotateSecretOutcome> CancelRotateSecretOutcomeCallable;
       typedef std::future<CreateSecretOutcome> CreateSecretOutcomeCallable;
       typedef std::future<DeleteResourcePolicyOutcome> DeleteResourcePolicyOutcomeCallable;
@@ -157,6 +161,7 @@ namespace Aws
     class SecretsManagerClient;
 
     /* Service model async handlers definitions */
+    typedef std::function<void(const SecretsManagerClient*, const Model::BatchGetSecretValueRequest&, const Model::BatchGetSecretValueOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetSecretValueResponseReceivedHandler;
     typedef std::function<void(const SecretsManagerClient*, const Model::CancelRotateSecretRequest&, const Model::CancelRotateSecretOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelRotateSecretResponseReceivedHandler;
     typedef std::function<void(const SecretsManagerClient*, const Model::CreateSecretRequest&, const Model::CreateSecretOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSecretResponseReceivedHandler;
     typedef std::function<void(const SecretsManagerClient*, const Model::DeleteResourcePolicyRequest&, const Model::DeleteResourcePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteResourcePolicyResponseReceivedHandler;

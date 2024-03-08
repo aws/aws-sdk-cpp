@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SelectAllValueOptions::NOT_SET:
+            return {};
           case SelectAllValueOptions::ALL_VALUES:
             return "ALL_VALUES";
           default:

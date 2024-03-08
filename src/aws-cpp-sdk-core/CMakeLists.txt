@@ -118,7 +118,18 @@ include(CheckCXXSourceRuns)
 if(ENABLE_CURL_CLIENT)
     file(GLOB HTTP_CURL_CLIENT_HEADERS "include/aws/core/http/curl/*.h")
     file(GLOB HTTP_CURL_CLIENT_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/http/curl/*.cpp")
-    set(CMAKE_REQUIRED_LIBRARIES ${CURL_LIBRARIES})
+    # If using aliased curl we need actual target.
+    if(TARGET "${CURL_LIBRARIES}")
+        get_property(aliased_target TARGET "${CURL_LIBRARIES}" PROPERTY ALIASED_TARGET)
+        if(NOT "${aliased_target}" STREQUAL "")
+            set(curl_lib "${aliased_target}")
+        else ()
+            set(curl_lib "${CURL_LIBRARIES}")
+        endif()
+    else ()
+        set(curl_lib "${CURL_LIBRARIES}")
+    endif ()
+    set(CMAKE_REQUIRED_LIBRARIES ${curl_lib})
     set(CHECK_CURL_HAS_H2 "
     #include <curl/curl.h>
     int main() {

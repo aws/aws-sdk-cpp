@@ -31,7 +31,9 @@ DataSource::DataSource() :
     m_openSearchServiceConfigHasBeenSet(false),
     m_httpConfigHasBeenSet(false),
     m_relationalDatabaseConfigHasBeenSet(false),
-    m_eventBridgeConfigHasBeenSet(false)
+    m_eventBridgeConfigHasBeenSet(false),
+    m_metricsConfig(DataSourceLevelMetricsConfig::NOT_SET),
+    m_metricsConfigHasBeenSet(false)
 {
 }
 
@@ -48,7 +50,9 @@ DataSource::DataSource(JsonView jsonValue) :
     m_openSearchServiceConfigHasBeenSet(false),
     m_httpConfigHasBeenSet(false),
     m_relationalDatabaseConfigHasBeenSet(false),
-    m_eventBridgeConfigHasBeenSet(false)
+    m_eventBridgeConfigHasBeenSet(false),
+    m_metricsConfig(DataSourceLevelMetricsConfig::NOT_SET),
+    m_metricsConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -139,6 +143,13 @@ DataSource& DataSource::operator =(JsonView jsonValue)
     m_eventBridgeConfigHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("metricsConfig"))
+  {
+    m_metricsConfig = DataSourceLevelMetricsConfigMapper::GetDataSourceLevelMetricsConfigForName(jsonValue.GetString("metricsConfig"));
+
+    m_metricsConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -215,6 +226,11 @@ JsonValue DataSource::Jsonize() const
   {
    payload.WithObject("eventBridgeConfig", m_eventBridgeConfig.Jsonize());
 
+  }
+
+  if(m_metricsConfigHasBeenSet)
+  {
+   payload.WithString("metricsConfig", DataSourceLevelMetricsConfigMapper::GetNameForDataSourceLevelMetricsConfig(m_metricsConfig));
   }
 
   return payload;

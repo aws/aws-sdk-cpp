@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AvcIntraClass::NOT_SET:
+            return {};
           case AvcIntraClass::CLASS_50:
             return "CLASS_50";
           case AvcIntraClass::CLASS_100:

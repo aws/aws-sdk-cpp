@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PackageVersionStatus::NOT_SET:
+            return {};
           case PackageVersionStatus::REGISTER_PENDING:
             return "REGISTER_PENDING";
           case PackageVersionStatus::REGISTER_COMPLETED:

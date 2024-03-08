@@ -40,8 +40,8 @@ namespace WorkMail
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef WorkMailClientConfiguration ClientConfigurationType;
       typedef WorkMailEndpointProvider EndpointProviderType;
@@ -51,14 +51,14 @@ namespace WorkMail
         * is not specified, it will be initialized to default values.
         */
         WorkMailClient(const Aws::WorkMail::WorkMailClientConfiguration& clientConfiguration = Aws::WorkMail::WorkMailClientConfiguration(),
-                       std::shared_ptr<WorkMailEndpointProviderBase> endpointProvider = Aws::MakeShared<WorkMailEndpointProvider>(ALLOCATION_TAG));
+                       std::shared_ptr<WorkMailEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         WorkMailClient(const Aws::Auth::AWSCredentials& credentials,
-                       std::shared_ptr<WorkMailEndpointProviderBase> endpointProvider = Aws::MakeShared<WorkMailEndpointProvider>(ALLOCATION_TAG),
+                       std::shared_ptr<WorkMailEndpointProviderBase> endpointProvider = nullptr,
                        const Aws::WorkMail::WorkMailClientConfiguration& clientConfiguration = Aws::WorkMail::WorkMailClientConfiguration());
 
        /**
@@ -66,7 +66,7 @@ namespace WorkMail
         * the default http client factory will be used
         */
         WorkMailClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                       std::shared_ptr<WorkMailEndpointProviderBase> endpointProvider = Aws::MakeShared<WorkMailEndpointProvider>(ALLOCATION_TAG),
+                       std::shared_ptr<WorkMailEndpointProviderBase> endpointProvider = nullptr,
                        const Aws::WorkMail::WorkMailClientConfiguration& clientConfiguration = Aws::WorkMail::WorkMailClientConfiguration());
 
 

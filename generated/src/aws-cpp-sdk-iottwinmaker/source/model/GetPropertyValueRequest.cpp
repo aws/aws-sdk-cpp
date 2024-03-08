@@ -14,6 +14,7 @@ using namespace Aws::Utils;
 
 GetPropertyValueRequest::GetPropertyValueRequest() : 
     m_componentNameHasBeenSet(false),
+    m_componentPathHasBeenSet(false),
     m_componentTypeIdHasBeenSet(false),
     m_entityIdHasBeenSet(false),
     m_selectedPropertiesHasBeenSet(false),
@@ -33,6 +34,12 @@ Aws::String GetPropertyValueRequest::SerializePayload() const
   if(m_componentNameHasBeenSet)
   {
    payload.WithString("componentName", m_componentName);
+
+  }
+
+  if(m_componentPathHasBeenSet)
+  {
+   payload.WithString("componentPath", m_componentPath);
 
   }
 

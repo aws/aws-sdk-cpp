@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TransitionStorageClass::NOT_SET:
+            return {};
           case TransitionStorageClass::GLACIER:
             return "GLACIER";
           case TransitionStorageClass::STANDARD_IA:

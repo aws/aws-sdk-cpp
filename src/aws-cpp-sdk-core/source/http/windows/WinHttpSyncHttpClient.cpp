@@ -21,6 +21,7 @@
 #include <winhttp.h>
 #include <sstream>
 #include <iostream>
+#include <versionhelpers.h>
 
 using namespace Aws::Client;
 using namespace Aws::Http;
@@ -244,11 +245,13 @@ WinHttpSyncHttpClient::WinHttpSyncHttpClient(const ClientConfiguration& config) 
     AWS_LOGSTREAM_INFO(GetLogTag(), "Creating http client with user agent " << config.userAgent << " with max connections " << config.maxConnections
         << " request timeout " << config.requestTimeoutMs << ",and connect timeout " << config.connectTimeoutMs);
 
-#if defined(WINHTTP_ACCESS_TYPE_AUTOMATIC_PROXY)
-    DWORD winhttpFlags = config.allowSystemProxy ? WINHTTP_ACCESS_TYPE_AUTOMATIC_PROXY : WINHTTP_ACCESS_TYPE_NO_PROXY;
-#else
     DWORD winhttpFlags = config.allowSystemProxy ? WINHTTP_ACCESS_TYPE_DEFAULT_PROXY : WINHTTP_ACCESS_TYPE_NO_PROXY;
+#if defined(WINHTTP_ACCESS_TYPE_AUTOMATIC_PROXY)
+    if (config.allowSystemProxy && IsWindows8Point1OrGreater()) {
+        winhttpFlags = WINHTTP_ACCESS_TYPE_AUTOMATIC_PROXY;
+    }
 #endif
+
     const char* proxyHosts = nullptr;
     Aws::String strProxyHosts;
 
@@ -349,7 +352,7 @@ void* WinHttpSyncHttpClient::OpenRequest(const std::shared_ptr<HttpRequest>& req
     LPCWSTR accept[2] = { nullptr, nullptr };
 
     DWORD requestFlags = WINHTTP_FLAG_REFRESH |
-        (request->GetUri().GetScheme() == Scheme::HTTPS ? WINHTTP_FLAG_SECURE : 0);
+        (request->GetUri().GetScheme() == Scheme::HTTPS && m_verifySSL ? WINHTTP_FLAG_SECURE : 0);
 
     Aws::WString acceptHeader(L"*/*");
 

@@ -36,65 +36,119 @@ namespace Model
 
 
     /**
-     * <p>Names of the parameters for which you want to query information.</p> <p>To
-     * query by parameter label, use <code>"Name": "name:label"</code>. To query by
-     * parameter version, use <code>"Name": "name:version"</code>.</p>
+     * <p>The names or Amazon Resource Names (ARNs) of the parameters that you want to
+     * query. For parameters shared with you from another account, you must use the
+     * full ARNs.</p> <p>To query by parameter label, use <code>"Name":
+     * "name:label"</code>. To query by parameter version, use <code>"Name":
+     * "name:version"</code>.</p> <p>For more information about shared parameters, see
+     * <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sharing.html">Working
+     * with shared parameters</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetNames() const{ return m_names; }
 
     /**
-     * <p>Names of the parameters for which you want to query information.</p> <p>To
-     * query by parameter label, use <code>"Name": "name:label"</code>. To query by
-     * parameter version, use <code>"Name": "name:version"</code>.</p>
+     * <p>The names or Amazon Resource Names (ARNs) of the parameters that you want to
+     * query. For parameters shared with you from another account, you must use the
+     * full ARNs.</p> <p>To query by parameter label, use <code>"Name":
+     * "name:label"</code>. To query by parameter version, use <code>"Name":
+     * "name:version"</code>.</p> <p>For more information about shared parameters, see
+     * <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sharing.html">Working
+     * with shared parameters</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline bool NamesHasBeenSet() const { return m_namesHasBeenSet; }
 
     /**
-     * <p>Names of the parameters for which you want to query information.</p> <p>To
-     * query by parameter label, use <code>"Name": "name:label"</code>. To query by
-     * parameter version, use <code>"Name": "name:version"</code>.</p>
+     * <p>The names or Amazon Resource Names (ARNs) of the parameters that you want to
+     * query. For parameters shared with you from another account, you must use the
+     * full ARNs.</p> <p>To query by parameter label, use <code>"Name":
+     * "name:label"</code>. To query by parameter version, use <code>"Name":
+     * "name:version"</code>.</p> <p>For more information about shared parameters, see
+     * <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sharing.html">Working
+     * with shared parameters</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline void SetNames(const Aws::Vector<Aws::String>& value) { m_namesHasBeenSet = true; m_names = value; }
 
     /**
-     * <p>Names of the parameters for which you want to query information.</p> <p>To
-     * query by parameter label, use <code>"Name": "name:label"</code>. To query by
-     * parameter version, use <code>"Name": "name:version"</code>.</p>
+     * <p>The names or Amazon Resource Names (ARNs) of the parameters that you want to
+     * query. For parameters shared with you from another account, you must use the
+     * full ARNs.</p> <p>To query by parameter label, use <code>"Name":
+     * "name:label"</code>. To query by parameter version, use <code>"Name":
+     * "name:version"</code>.</p> <p>For more information about shared parameters, see
+     * <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sharing.html">Working
+     * with shared parameters</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline void SetNames(Aws::Vector<Aws::String>&& value) { m_namesHasBeenSet = true; m_names = std::move(value); }
 
     /**
-     * <p>Names of the parameters for which you want to query information.</p> <p>To
-     * query by parameter label, use <code>"Name": "name:label"</code>. To query by
-     * parameter version, use <code>"Name": "name:version"</code>.</p>
+     * <p>The names or Amazon Resource Names (ARNs) of the parameters that you want to
+     * query. For parameters shared with you from another account, you must use the
+     * full ARNs.</p> <p>To query by parameter label, use <code>"Name":
+     * "name:label"</code>. To query by parameter version, use <code>"Name":
+     * "name:version"</code>.</p> <p>For more information about shared parameters, see
+     * <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sharing.html">Working
+     * with shared parameters</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline GetParametersRequest& WithNames(const Aws::Vector<Aws::String>& value) { SetNames(value); return *this;}
 
     /**
-     * <p>Names of the parameters for which you want to query information.</p> <p>To
-     * query by parameter label, use <code>"Name": "name:label"</code>. To query by
-     * parameter version, use <code>"Name": "name:version"</code>.</p>
+     * <p>The names or Amazon Resource Names (ARNs) of the parameters that you want to
+     * query. For parameters shared with you from another account, you must use the
+     * full ARNs.</p> <p>To query by parameter label, use <code>"Name":
+     * "name:label"</code>. To query by parameter version, use <code>"Name":
+     * "name:version"</code>.</p> <p>For more information about shared parameters, see
+     * <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sharing.html">Working
+     * with shared parameters</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline GetParametersRequest& WithNames(Aws::Vector<Aws::String>&& value) { SetNames(std::move(value)); return *this;}
 
     /**
-     * <p>Names of the parameters for which you want to query information.</p> <p>To
-     * query by parameter label, use <code>"Name": "name:label"</code>. To query by
-     * parameter version, use <code>"Name": "name:version"</code>.</p>
+     * <p>The names or Amazon Resource Names (ARNs) of the parameters that you want to
+     * query. For parameters shared with you from another account, you must use the
+     * full ARNs.</p> <p>To query by parameter label, use <code>"Name":
+     * "name:label"</code>. To query by parameter version, use <code>"Name":
+     * "name:version"</code>.</p> <p>For more information about shared parameters, see
+     * <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sharing.html">Working
+     * with shared parameters</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline GetParametersRequest& AddNames(const Aws::String& value) { m_namesHasBeenSet = true; m_names.push_back(value); return *this; }
 
     /**
-     * <p>Names of the parameters for which you want to query information.</p> <p>To
-     * query by parameter label, use <code>"Name": "name:label"</code>. To query by
-     * parameter version, use <code>"Name": "name:version"</code>.</p>
+     * <p>The names or Amazon Resource Names (ARNs) of the parameters that you want to
+     * query. For parameters shared with you from another account, you must use the
+     * full ARNs.</p> <p>To query by parameter label, use <code>"Name":
+     * "name:label"</code>. To query by parameter version, use <code>"Name":
+     * "name:version"</code>.</p> <p>For more information about shared parameters, see
+     * <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sharing.html">Working
+     * with shared parameters</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline GetParametersRequest& AddNames(Aws::String&& value) { m_namesHasBeenSet = true; m_names.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Names of the parameters for which you want to query information.</p> <p>To
-     * query by parameter label, use <code>"Name": "name:label"</code>. To query by
-     * parameter version, use <code>"Name": "name:version"</code>.</p>
+     * <p>The names or Amazon Resource Names (ARNs) of the parameters that you want to
+     * query. For parameters shared with you from another account, you must use the
+     * full ARNs.</p> <p>To query by parameter label, use <code>"Name":
+     * "name:label"</code>. To query by parameter version, use <code>"Name":
+     * "name:version"</code>.</p> <p>For more information about shared parameters, see
+     * <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sharing.html">Working
+     * with shared parameters</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline GetParametersRequest& AddNames(const char* value) { m_namesHasBeenSet = true; m_names.push_back(value); return *this; }
 

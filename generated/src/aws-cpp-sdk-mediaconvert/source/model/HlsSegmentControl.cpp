@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HlsSegmentControl::NOT_SET:
+            return {};
           case HlsSegmentControl::SINGLE_FILE:
             return "SINGLE_FILE";
           case HlsSegmentControl::SEGMENTED_FILES:

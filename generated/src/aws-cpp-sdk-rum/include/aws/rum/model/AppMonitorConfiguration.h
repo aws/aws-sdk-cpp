@@ -243,49 +243,153 @@ namespace Model
 
     /**
      * <p>The ARN of the guest IAM role that is attached to the Amazon Cognito identity
-     * pool that is used to authorize the sending of data to RUM.</p>
+     * pool that is used to authorize the sending of data to RUM.</p>  <p>It is
+     * possible that an app monitor does not have a value for
+     * <code>GuestRoleArn</code>. For example, this can happen when you use the console
+     * to create an app monitor and you allow CloudWatch RUM to create a new identity
+     * pool for Authorization. In this case, <code>GuestRoleArn</code> is not present
+     * in the <a
+     * href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_GetAppMonitor.html">GetAppMonitor</a>
+     * response because it is not stored by the service.</p> <p>If this issue affects
+     * you, you can take one of the following steps:</p> <ul> <li> <p>Use the Cloud
+     * Development Kit (CDK) to create an identity pool and the associated IAM role,
+     * and use that for your app monitor.</p> </li> <li> <p>Make a separate <a
+     * href="https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetIdentityPoolRoles.html">GetIdentityPoolRoles</a>
+     * call to Amazon Cognito to retrieve the <code>GuestRoleArn</code>.</p> </li>
+     * </ul> 
      */
     inline const Aws::String& GetGuestRoleArn() const{ return m_guestRoleArn; }
 
     /**
      * <p>The ARN of the guest IAM role that is attached to the Amazon Cognito identity
-     * pool that is used to authorize the sending of data to RUM.</p>
+     * pool that is used to authorize the sending of data to RUM.</p>  <p>It is
+     * possible that an app monitor does not have a value for
+     * <code>GuestRoleArn</code>. For example, this can happen when you use the console
+     * to create an app monitor and you allow CloudWatch RUM to create a new identity
+     * pool for Authorization. In this case, <code>GuestRoleArn</code> is not present
+     * in the <a
+     * href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_GetAppMonitor.html">GetAppMonitor</a>
+     * response because it is not stored by the service.</p> <p>If this issue affects
+     * you, you can take one of the following steps:</p> <ul> <li> <p>Use the Cloud
+     * Development Kit (CDK) to create an identity pool and the associated IAM role,
+     * and use that for your app monitor.</p> </li> <li> <p>Make a separate <a
+     * href="https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetIdentityPoolRoles.html">GetIdentityPoolRoles</a>
+     * call to Amazon Cognito to retrieve the <code>GuestRoleArn</code>.</p> </li>
+     * </ul> 
      */
     inline bool GuestRoleArnHasBeenSet() const { return m_guestRoleArnHasBeenSet; }
 
     /**
      * <p>The ARN of the guest IAM role that is attached to the Amazon Cognito identity
-     * pool that is used to authorize the sending of data to RUM.</p>
+     * pool that is used to authorize the sending of data to RUM.</p>  <p>It is
+     * possible that an app monitor does not have a value for
+     * <code>GuestRoleArn</code>. For example, this can happen when you use the console
+     * to create an app monitor and you allow CloudWatch RUM to create a new identity
+     * pool for Authorization. In this case, <code>GuestRoleArn</code> is not present
+     * in the <a
+     * href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_GetAppMonitor.html">GetAppMonitor</a>
+     * response because it is not stored by the service.</p> <p>If this issue affects
+     * you, you can take one of the following steps:</p> <ul> <li> <p>Use the Cloud
+     * Development Kit (CDK) to create an identity pool and the associated IAM role,
+     * and use that for your app monitor.</p> </li> <li> <p>Make a separate <a
+     * href="https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetIdentityPoolRoles.html">GetIdentityPoolRoles</a>
+     * call to Amazon Cognito to retrieve the <code>GuestRoleArn</code>.</p> </li>
+     * </ul> 
      */
     inline void SetGuestRoleArn(const Aws::String& value) { m_guestRoleArnHasBeenSet = true; m_guestRoleArn = value; }
 
     /**
      * <p>The ARN of the guest IAM role that is attached to the Amazon Cognito identity
-     * pool that is used to authorize the sending of data to RUM.</p>
+     * pool that is used to authorize the sending of data to RUM.</p>  <p>It is
+     * possible that an app monitor does not have a value for
+     * <code>GuestRoleArn</code>. For example, this can happen when you use the console
+     * to create an app monitor and you allow CloudWatch RUM to create a new identity
+     * pool for Authorization. In this case, <code>GuestRoleArn</code> is not present
+     * in the <a
+     * href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_GetAppMonitor.html">GetAppMonitor</a>
+     * response because it is not stored by the service.</p> <p>If this issue affects
+     * you, you can take one of the following steps:</p> <ul> <li> <p>Use the Cloud
+     * Development Kit (CDK) to create an identity pool and the associated IAM role,
+     * and use that for your app monitor.</p> </li> <li> <p>Make a separate <a
+     * href="https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetIdentityPoolRoles.html">GetIdentityPoolRoles</a>
+     * call to Amazon Cognito to retrieve the <code>GuestRoleArn</code>.</p> </li>
+     * </ul> 
      */
     inline void SetGuestRoleArn(Aws::String&& value) { m_guestRoleArnHasBeenSet = true; m_guestRoleArn = std::move(value); }
 
     /**
      * <p>The ARN of the guest IAM role that is attached to the Amazon Cognito identity
-     * pool that is used to authorize the sending of data to RUM.</p>
+     * pool that is used to authorize the sending of data to RUM.</p>  <p>It is
+     * possible that an app monitor does not have a value for
+     * <code>GuestRoleArn</code>. For example, this can happen when you use the console
+     * to create an app monitor and you allow CloudWatch RUM to create a new identity
+     * pool for Authorization. In this case, <code>GuestRoleArn</code> is not present
+     * in the <a
+     * href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_GetAppMonitor.html">GetAppMonitor</a>
+     * response because it is not stored by the service.</p> <p>If this issue affects
+     * you, you can take one of the following steps:</p> <ul> <li> <p>Use the Cloud
+     * Development Kit (CDK) to create an identity pool and the associated IAM role,
+     * and use that for your app monitor.</p> </li> <li> <p>Make a separate <a
+     * href="https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetIdentityPoolRoles.html">GetIdentityPoolRoles</a>
+     * call to Amazon Cognito to retrieve the <code>GuestRoleArn</code>.</p> </li>
+     * </ul> 
      */
     inline void SetGuestRoleArn(const char* value) { m_guestRoleArnHasBeenSet = true; m_guestRoleArn.assign(value); }
 
     /**
      * <p>The ARN of the guest IAM role that is attached to the Amazon Cognito identity
-     * pool that is used to authorize the sending of data to RUM.</p>
+     * pool that is used to authorize the sending of data to RUM.</p>  <p>It is
+     * possible that an app monitor does not have a value for
+     * <code>GuestRoleArn</code>. For example, this can happen when you use the console
+     * to create an app monitor and you allow CloudWatch RUM to create a new identity
+     * pool for Authorization. In this case, <code>GuestRoleArn</code> is not present
+     * in the <a
+     * href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_GetAppMonitor.html">GetAppMonitor</a>
+     * response because it is not stored by the service.</p> <p>If this issue affects
+     * you, you can take one of the following steps:</p> <ul> <li> <p>Use the Cloud
+     * Development Kit (CDK) to create an identity pool and the associated IAM role,
+     * and use that for your app monitor.</p> </li> <li> <p>Make a separate <a
+     * href="https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetIdentityPoolRoles.html">GetIdentityPoolRoles</a>
+     * call to Amazon Cognito to retrieve the <code>GuestRoleArn</code>.</p> </li>
+     * </ul> 
      */
     inline AppMonitorConfiguration& WithGuestRoleArn(const Aws::String& value) { SetGuestRoleArn(value); return *this;}
 
     /**
      * <p>The ARN of the guest IAM role that is attached to the Amazon Cognito identity
-     * pool that is used to authorize the sending of data to RUM.</p>
+     * pool that is used to authorize the sending of data to RUM.</p>  <p>It is
+     * possible that an app monitor does not have a value for
+     * <code>GuestRoleArn</code>. For example, this can happen when you use the console
+     * to create an app monitor and you allow CloudWatch RUM to create a new identity
+     * pool for Authorization. In this case, <code>GuestRoleArn</code> is not present
+     * in the <a
+     * href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_GetAppMonitor.html">GetAppMonitor</a>
+     * response because it is not stored by the service.</p> <p>If this issue affects
+     * you, you can take one of the following steps:</p> <ul> <li> <p>Use the Cloud
+     * Development Kit (CDK) to create an identity pool and the associated IAM role,
+     * and use that for your app monitor.</p> </li> <li> <p>Make a separate <a
+     * href="https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetIdentityPoolRoles.html">GetIdentityPoolRoles</a>
+     * call to Amazon Cognito to retrieve the <code>GuestRoleArn</code>.</p> </li>
+     * </ul> 
      */
     inline AppMonitorConfiguration& WithGuestRoleArn(Aws::String&& value) { SetGuestRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the guest IAM role that is attached to the Amazon Cognito identity
-     * pool that is used to authorize the sending of data to RUM.</p>
+     * pool that is used to authorize the sending of data to RUM.</p>  <p>It is
+     * possible that an app monitor does not have a value for
+     * <code>GuestRoleArn</code>. For example, this can happen when you use the console
+     * to create an app monitor and you allow CloudWatch RUM to create a new identity
+     * pool for Authorization. In this case, <code>GuestRoleArn</code> is not present
+     * in the <a
+     * href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_GetAppMonitor.html">GetAppMonitor</a>
+     * response because it is not stored by the service.</p> <p>If this issue affects
+     * you, you can take one of the following steps:</p> <ul> <li> <p>Use the Cloud
+     * Development Kit (CDK) to create an identity pool and the associated IAM role,
+     * and use that for your app monitor.</p> </li> <li> <p>Make a separate <a
+     * href="https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetIdentityPoolRoles.html">GetIdentityPoolRoles</a>
+     * call to Amazon Cognito to retrieve the <code>GuestRoleArn</code>.</p> </li>
+     * </ul> 
      */
     inline AppMonitorConfiguration& WithGuestRoleArn(const char* value) { SetGuestRoleArn(value); return *this;}
 

@@ -22,7 +22,8 @@ DnsRequestAction::DnsRequestAction() :
     m_domainHasBeenSet(false),
     m_protocolHasBeenSet(false),
     m_blocked(false),
-    m_blockedHasBeenSet(false)
+    m_blockedHasBeenSet(false),
+    m_domainWithSuffixHasBeenSet(false)
 {
 }
 
@@ -30,7 +31,8 @@ DnsRequestAction::DnsRequestAction(JsonView jsonValue) :
     m_domainHasBeenSet(false),
     m_protocolHasBeenSet(false),
     m_blocked(false),
-    m_blockedHasBeenSet(false)
+    m_blockedHasBeenSet(false),
+    m_domainWithSuffixHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -58,6 +60,13 @@ DnsRequestAction& DnsRequestAction::operator =(JsonView jsonValue)
     m_blockedHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("domainWithSuffix"))
+  {
+    m_domainWithSuffix = jsonValue.GetString("domainWithSuffix");
+
+    m_domainWithSuffixHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -80,6 +89,12 @@ JsonValue DnsRequestAction::Jsonize() const
   if(m_blockedHasBeenSet)
   {
    payload.WithBool("blocked", m_blocked);
+
+  }
+
+  if(m_domainWithSuffixHasBeenSet)
+  {
+   payload.WithString("domainWithSuffix", m_domainWithSuffix);
 
   }
 

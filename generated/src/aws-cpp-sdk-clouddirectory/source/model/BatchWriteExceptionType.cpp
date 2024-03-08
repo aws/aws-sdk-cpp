@@ -129,6 +129,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BatchWriteExceptionType::NOT_SET:
+            return {};
           case BatchWriteExceptionType::InternalServiceException:
             return "InternalServiceException";
           case BatchWriteExceptionType::ValidationException:

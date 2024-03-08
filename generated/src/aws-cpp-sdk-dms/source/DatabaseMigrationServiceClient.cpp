@@ -141,8 +141,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* DatabaseMigrationServiceClient::SERVICE_NAME = "dms";
-const char* DatabaseMigrationServiceClient::ALLOCATION_TAG = "DatabaseMigrationServiceClient";
+namespace Aws
+{
+  namespace DatabaseMigrationService
+  {
+    const char SERVICE_NAME[] = "dms";
+    const char ALLOCATION_TAG[] = "DatabaseMigrationServiceClient";
+  }
+}
+const char* DatabaseMigrationServiceClient::GetServiceName() {return SERVICE_NAME;}
+const char* DatabaseMigrationServiceClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 DatabaseMigrationServiceClient::DatabaseMigrationServiceClient(const DatabaseMigrationService::DatabaseMigrationServiceClientConfiguration& clientConfiguration,
                                                                std::shared_ptr<DatabaseMigrationServiceEndpointProviderBase> endpointProvider) :
@@ -154,7 +162,7 @@ DatabaseMigrationServiceClient::DatabaseMigrationServiceClient(const DatabaseMig
             Aws::MakeShared<DatabaseMigrationServiceErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<DatabaseMigrationServiceEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -170,7 +178,7 @@ DatabaseMigrationServiceClient::DatabaseMigrationServiceClient(const AWSCredenti
             Aws::MakeShared<DatabaseMigrationServiceErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<DatabaseMigrationServiceEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -186,7 +194,7 @@ DatabaseMigrationServiceClient::DatabaseMigrationServiceClient(const std::shared
             Aws::MakeShared<DatabaseMigrationServiceErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<DatabaseMigrationServiceEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

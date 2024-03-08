@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UsageType::NOT_SET:
+            return {};
           case UsageType::DATA_INVENTORY_EVALUATION:
             return "DATA_INVENTORY_EVALUATION";
           case UsageType::SENSITIVE_DATA_DISCOVERY:

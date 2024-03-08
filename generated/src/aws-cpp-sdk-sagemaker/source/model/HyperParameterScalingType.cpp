@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HyperParameterScalingType::NOT_SET:
+            return {};
           case HyperParameterScalingType::Auto:
             return "Auto";
           case HyperParameterScalingType::Linear:

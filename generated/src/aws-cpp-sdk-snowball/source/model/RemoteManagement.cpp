@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RemoteManagement::NOT_SET:
+            return {};
           case RemoteManagement::INSTALLED_ONLY:
             return "INSTALLED_ONLY";
           case RemoteManagement::INSTALLED_AUTOSTART:

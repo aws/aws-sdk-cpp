@@ -41,8 +41,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* ApplicationCostProfilerClient::SERVICE_NAME = "application-cost-profiler";
-const char* ApplicationCostProfilerClient::ALLOCATION_TAG = "ApplicationCostProfilerClient";
+namespace Aws
+{
+  namespace ApplicationCostProfiler
+  {
+    const char SERVICE_NAME[] = "application-cost-profiler";
+    const char ALLOCATION_TAG[] = "ApplicationCostProfilerClient";
+  }
+}
+const char* ApplicationCostProfilerClient::GetServiceName() {return SERVICE_NAME;}
+const char* ApplicationCostProfilerClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 ApplicationCostProfilerClient::ApplicationCostProfilerClient(const ApplicationCostProfiler::ApplicationCostProfilerClientConfiguration& clientConfiguration,
                                                              std::shared_ptr<ApplicationCostProfilerEndpointProviderBase> endpointProvider) :
@@ -54,7 +62,7 @@ ApplicationCostProfilerClient::ApplicationCostProfilerClient(const ApplicationCo
             Aws::MakeShared<ApplicationCostProfilerErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ApplicationCostProfilerEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -70,7 +78,7 @@ ApplicationCostProfilerClient::ApplicationCostProfilerClient(const AWSCredential
             Aws::MakeShared<ApplicationCostProfilerErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ApplicationCostProfilerEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -86,7 +94,7 @@ ApplicationCostProfilerClient::ApplicationCostProfilerClient(const std::shared_p
             Aws::MakeShared<ApplicationCostProfilerErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ApplicationCostProfilerEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

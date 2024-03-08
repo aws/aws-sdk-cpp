@@ -7,6 +7,7 @@
 #include <aws/mediapackagev2/Mediapackagev2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediapackagev2/model/ScteHls.h>
+#include <aws/mediapackagev2/model/FilterConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -277,6 +278,25 @@ namespace Model
      */
     inline CreateLowLatencyHlsManifestConfiguration& WithProgramDateTimeIntervalSeconds(int value) { SetProgramDateTimeIntervalSeconds(value); return *this;}
 
+
+    
+    inline const FilterConfiguration& GetFilterConfiguration() const{ return m_filterConfiguration; }
+
+    
+    inline bool FilterConfigurationHasBeenSet() const { return m_filterConfigurationHasBeenSet; }
+
+    
+    inline void SetFilterConfiguration(const FilterConfiguration& value) { m_filterConfigurationHasBeenSet = true; m_filterConfiguration = value; }
+
+    
+    inline void SetFilterConfiguration(FilterConfiguration&& value) { m_filterConfigurationHasBeenSet = true; m_filterConfiguration = std::move(value); }
+
+    
+    inline CreateLowLatencyHlsManifestConfiguration& WithFilterConfiguration(const FilterConfiguration& value) { SetFilterConfiguration(value); return *this;}
+
+    
+    inline CreateLowLatencyHlsManifestConfiguration& WithFilterConfiguration(FilterConfiguration&& value) { SetFilterConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_manifestName;
@@ -293,6 +313,9 @@ namespace Model
 
     int m_programDateTimeIntervalSeconds;
     bool m_programDateTimeIntervalSecondsHasBeenSet = false;
+
+    FilterConfiguration m_filterConfiguration;
+    bool m_filterConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

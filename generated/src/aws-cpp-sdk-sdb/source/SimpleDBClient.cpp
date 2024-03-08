@@ -46,8 +46,16 @@ using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
 
-const char* SimpleDBClient::SERVICE_NAME = "sdb";
-const char* SimpleDBClient::ALLOCATION_TAG = "SimpleDBClient";
+namespace Aws
+{
+  namespace SimpleDB
+  {
+    const char SERVICE_NAME[] = "sdb";
+    const char ALLOCATION_TAG[] = "SimpleDBClient";
+  }
+}
+const char* SimpleDBClient::GetServiceName() {return SERVICE_NAME;}
+const char* SimpleDBClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 SimpleDBClient::SimpleDBClient(const SimpleDB::SimpleDBClientConfiguration& clientConfiguration,
                                std::shared_ptr<SimpleDBEndpointProviderBase> endpointProvider) :
@@ -59,7 +67,7 @@ SimpleDBClient::SimpleDBClient(const SimpleDB::SimpleDBClientConfiguration& clie
             Aws::MakeShared<SimpleDBErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SimpleDBEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -75,7 +83,7 @@ SimpleDBClient::SimpleDBClient(const AWSCredentials& credentials,
             Aws::MakeShared<SimpleDBErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SimpleDBEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -91,7 +99,7 @@ SimpleDBClient::SimpleDBClient(const std::shared_ptr<AWSCredentialsProvider>& cr
             Aws::MakeShared<SimpleDBErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SimpleDBEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

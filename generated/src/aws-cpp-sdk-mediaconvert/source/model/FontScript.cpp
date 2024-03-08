@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FontScript::NOT_SET:
+            return {};
           case FontScript::AUTOMATIC:
             return "AUTOMATIC";
           case FontScript::HANS:

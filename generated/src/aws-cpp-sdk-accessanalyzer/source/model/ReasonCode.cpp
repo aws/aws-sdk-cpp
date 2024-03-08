@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReasonCode::NOT_SET:
+            return {};
           case ReasonCode::AWS_SERVICE_ACCESS_DISABLED:
             return "AWS_SERVICE_ACCESS_DISABLED";
           case ReasonCode::DELEGATED_ADMINISTRATOR_DEREGISTERED:

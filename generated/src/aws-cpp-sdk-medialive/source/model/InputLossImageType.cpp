@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InputLossImageType::NOT_SET:
+            return {};
           case InputLossImageType::COLOR:
             return "COLOR";
           case InputLossImageType::SLATE:

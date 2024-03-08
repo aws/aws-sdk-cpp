@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case JobPrimaryStatus::NOT_SET:
+            return {};
           case JobPrimaryStatus::QUEUED:
             return "QUEUED";
           case JobPrimaryStatus::RUNNING:

@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ConnectionType::NOT_SET:
+            return {};
           case ConnectionType::JDBC:
             return "JDBC";
           case ConnectionType::SFTP:

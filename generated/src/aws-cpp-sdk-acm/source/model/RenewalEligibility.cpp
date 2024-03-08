@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RenewalEligibility::NOT_SET:
+            return {};
           case RenewalEligibility::ELIGIBLE:
             return "ELIGIBLE";
           case RenewalEligibility::INELIGIBLE:

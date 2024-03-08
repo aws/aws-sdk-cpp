@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InferenceExperimentStatus::NOT_SET:
+            return {};
           case InferenceExperimentStatus::Creating:
             return "Creating";
           case InferenceExperimentStatus::Created:

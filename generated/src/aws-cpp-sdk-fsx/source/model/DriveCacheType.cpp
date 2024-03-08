@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DriveCacheType::NOT_SET:
+            return {};
           case DriveCacheType::NONE:
             return "NONE";
           case DriveCacheType::READ:

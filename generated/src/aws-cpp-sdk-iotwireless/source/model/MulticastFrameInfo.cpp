@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MulticastFrameInfo::NOT_SET:
+            return {};
           case MulticastFrameInfo::ENABLED:
             return "ENABLED";
           case MulticastFrameInfo::DISABLED:

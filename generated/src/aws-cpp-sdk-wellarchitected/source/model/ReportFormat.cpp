@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReportFormat::NOT_SET:
+            return {};
           case ReportFormat::PDF:
             return "PDF";
           case ReportFormat::JSON:

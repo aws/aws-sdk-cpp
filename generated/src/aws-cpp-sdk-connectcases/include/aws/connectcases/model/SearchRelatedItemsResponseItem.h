@@ -7,6 +7,7 @@
 #include <aws/connectcases/ConnectCases_EXPORTS.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/connectcases/model/RelatedItemContent.h>
+#include <aws/connectcases/model/UserUnion.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/connectcases/model/RelatedItemType.h>
@@ -101,6 +102,37 @@ namespace Model
      * <p>Represents the content of a particular type of related item.</p>
      */
     inline SearchRelatedItemsResponseItem& WithContent(RelatedItemContent&& value) { SetContent(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Represents the creator of the related item.</p>
+     */
+    inline const UserUnion& GetPerformedBy() const{ return m_performedBy; }
+
+    /**
+     * <p>Represents the creator of the related item.</p>
+     */
+    inline bool PerformedByHasBeenSet() const { return m_performedByHasBeenSet; }
+
+    /**
+     * <p>Represents the creator of the related item.</p>
+     */
+    inline void SetPerformedBy(const UserUnion& value) { m_performedByHasBeenSet = true; m_performedBy = value; }
+
+    /**
+     * <p>Represents the creator of the related item.</p>
+     */
+    inline void SetPerformedBy(UserUnion&& value) { m_performedByHasBeenSet = true; m_performedBy = std::move(value); }
+
+    /**
+     * <p>Represents the creator of the related item.</p>
+     */
+    inline SearchRelatedItemsResponseItem& WithPerformedBy(const UserUnion& value) { SetPerformedBy(value); return *this;}
+
+    /**
+     * <p>Represents the creator of the related item.</p>
+     */
+    inline SearchRelatedItemsResponseItem& WithPerformedBy(UserUnion&& value) { SetPerformedBy(std::move(value)); return *this;}
 
 
     /**
@@ -260,6 +292,9 @@ namespace Model
 
     RelatedItemContent m_content;
     bool m_contentHasBeenSet = false;
+
+    UserUnion m_performedBy;
+    bool m_performedByHasBeenSet = false;
 
     Aws::String m_relatedItemId;
     bool m_relatedItemIdHasBeenSet = false;

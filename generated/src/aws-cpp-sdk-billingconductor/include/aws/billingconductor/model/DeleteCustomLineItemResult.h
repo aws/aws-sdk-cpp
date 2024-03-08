@@ -33,37 +33,37 @@ namespace Model
 
 
     /**
-     * <p> Then ARN of the deleted custom line item. </p>
+     * <p>The ARN of the deleted custom line item. </p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p> Then ARN of the deleted custom line item. </p>
+     * <p>The ARN of the deleted custom line item. </p>
      */
     inline void SetArn(const Aws::String& value) { m_arn = value; }
 
     /**
-     * <p> Then ARN of the deleted custom line item. </p>
+     * <p>The ARN of the deleted custom line item. </p>
      */
     inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
 
     /**
-     * <p> Then ARN of the deleted custom line item. </p>
+     * <p>The ARN of the deleted custom line item. </p>
      */
     inline void SetArn(const char* value) { m_arn.assign(value); }
 
     /**
-     * <p> Then ARN of the deleted custom line item. </p>
+     * <p>The ARN of the deleted custom line item. </p>
      */
     inline DeleteCustomLineItemResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p> Then ARN of the deleted custom line item. </p>
+     * <p>The ARN of the deleted custom line item. </p>
      */
     inline DeleteCustomLineItemResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p> Then ARN of the deleted custom line item. </p>
+     * <p>The ARN of the deleted custom line item. </p>
      */
     inline DeleteCustomLineItemResult& WithArn(const char* value) { SetArn(value); return *this;}
 

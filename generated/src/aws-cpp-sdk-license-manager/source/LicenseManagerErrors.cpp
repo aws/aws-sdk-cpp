@@ -54,55 +54,55 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == CONFLICT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LicenseManagerErrors::CONFLICT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LicenseManagerErrors::CONFLICT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == AUTHORIZATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LicenseManagerErrors::AUTHORIZATION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LicenseManagerErrors::AUTHORIZATION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == REDIRECT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LicenseManagerErrors::REDIRECT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LicenseManagerErrors::REDIRECT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == FAILED_DEPENDENCY_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LicenseManagerErrors::FAILED_DEPENDENCY), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LicenseManagerErrors::FAILED_DEPENDENCY), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == NO_ENTITLEMENTS_ALLOWED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LicenseManagerErrors::NO_ENTITLEMENTS_ALLOWED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LicenseManagerErrors::NO_ENTITLEMENTS_ALLOWED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == UNSUPPORTED_DIGITAL_SIGNATURE_METHOD_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LicenseManagerErrors::UNSUPPORTED_DIGITAL_SIGNATURE_METHOD), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LicenseManagerErrors::UNSUPPORTED_DIGITAL_SIGNATURE_METHOD), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_RESOURCE_STATE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LicenseManagerErrors::INVALID_RESOURCE_STATE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LicenseManagerErrors::INVALID_RESOURCE_STATE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == SERVER_INTERNAL_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LicenseManagerErrors::SERVER_INTERNAL), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LicenseManagerErrors::SERVER_INTERNAL), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == ENTITLEMENT_NOT_ALLOWED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LicenseManagerErrors::ENTITLEMENT_NOT_ALLOWED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LicenseManagerErrors::ENTITLEMENT_NOT_ALLOWED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == LICENSE_USAGE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LicenseManagerErrors::LICENSE_USAGE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LicenseManagerErrors::LICENSE_USAGE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == RESOURCE_LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LicenseManagerErrors::RESOURCE_LIMIT_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LicenseManagerErrors::RESOURCE_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == RATE_LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LicenseManagerErrors::RATE_LIMIT_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LicenseManagerErrors::RATE_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == FILTER_LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LicenseManagerErrors::FILTER_LIMIT_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LicenseManagerErrors::FILTER_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

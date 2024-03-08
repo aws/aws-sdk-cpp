@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PresetSpeke20Audio::NOT_SET:
+            return {};
           case PresetSpeke20Audio::PRESET_AUDIO_1:
             return "PRESET-AUDIO-1";
           case PresetSpeke20Audio::PRESET_AUDIO_2:

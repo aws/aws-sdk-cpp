@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CostCategoryStatus::NOT_SET:
+            return {};
           case CostCategoryStatus::PROCESSING:
             return "PROCESSING";
           case CostCategoryStatus::APPLIED:

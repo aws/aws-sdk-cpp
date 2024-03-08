@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AssetBundleExportJobRefreshSchedulePropertyToOverride::NOT_SET:
+            return {};
           case AssetBundleExportJobRefreshSchedulePropertyToOverride::StartAfterDateTime:
             return "StartAfterDateTime";
           default:

@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OSFamily::NOT_SET:
+            return {};
           case OSFamily::WINDOWS_SERVER_2019_FULL:
             return "WINDOWS_SERVER_2019_FULL";
           case OSFamily::WINDOWS_SERVER_2019_CORE:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ApiDestinationState::NOT_SET:
+            return {};
           case ApiDestinationState::ACTIVE:
             return "ACTIVE";
           case ApiDestinationState::INACTIVE:

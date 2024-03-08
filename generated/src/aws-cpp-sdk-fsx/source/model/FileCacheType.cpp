@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FileCacheType::NOT_SET:
+            return {};
           case FileCacheType::LUSTRE:
             return "LUSTRE";
           default:

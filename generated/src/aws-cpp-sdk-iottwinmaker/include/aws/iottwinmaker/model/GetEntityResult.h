@@ -452,6 +452,25 @@ namespace Model
     inline GetEntityResult& WithSyncSource(const char* value) { SetSyncSource(value); return *this;}
 
 
+    /**
+     * <p>This flag notes whether all components are returned in the API response. The
+     * maximum number of components returned is 30.</p>
+     */
+    inline bool GetAreAllComponentsReturned() const{ return m_areAllComponentsReturned; }
+
+    /**
+     * <p>This flag notes whether all components are returned in the API response. The
+     * maximum number of components returned is 30.</p>
+     */
+    inline void SetAreAllComponentsReturned(bool value) { m_areAllComponentsReturned = value; }
+
+    /**
+     * <p>This flag notes whether all components are returned in the API response. The
+     * maximum number of components returned is 30.</p>
+     */
+    inline GetEntityResult& WithAreAllComponentsReturned(bool value) { SetAreAllComponentsReturned(value); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -498,6 +517,8 @@ namespace Model
     Aws::Utils::DateTime m_updateDateTime;
 
     Aws::String m_syncSource;
+
+    bool m_areAllComponentsReturned;
 
     Aws::String m_requestId;
   };

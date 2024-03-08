@@ -103,32 +103,32 @@ namespace Model
 
 
     /**
-     * <p>Metrics that measure bais in a model.</p>
+     * <p>Metrics that measure bias in a model.</p>
      */
     inline const Bias& GetBias() const{ return m_bias; }
 
     /**
-     * <p>Metrics that measure bais in a model.</p>
+     * <p>Metrics that measure bias in a model.</p>
      */
     inline bool BiasHasBeenSet() const { return m_biasHasBeenSet; }
 
     /**
-     * <p>Metrics that measure bais in a model.</p>
+     * <p>Metrics that measure bias in a model.</p>
      */
     inline void SetBias(const Bias& value) { m_biasHasBeenSet = true; m_bias = value; }
 
     /**
-     * <p>Metrics that measure bais in a model.</p>
+     * <p>Metrics that measure bias in a model.</p>
      */
     inline void SetBias(Bias&& value) { m_biasHasBeenSet = true; m_bias = std::move(value); }
 
     /**
-     * <p>Metrics that measure bais in a model.</p>
+     * <p>Metrics that measure bias in a model.</p>
      */
     inline ModelMetrics& WithBias(const Bias& value) { SetBias(value); return *this;}
 
     /**
-     * <p>Metrics that measure bais in a model.</p>
+     * <p>Metrics that measure bias in a model.</p>
      */
     inline ModelMetrics& WithBias(Bias&& value) { SetBias(std::move(value)); return *this;}
 

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ParallelDataFormat::NOT_SET:
+            return {};
           case ParallelDataFormat::TSV:
             return "TSV";
           case ParallelDataFormat::CSV:

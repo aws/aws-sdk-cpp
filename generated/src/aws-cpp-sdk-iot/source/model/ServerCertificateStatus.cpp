@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ServerCertificateStatus::NOT_SET:
+            return {};
           case ServerCertificateStatus::INVALID:
             return "INVALID";
           case ServerCertificateStatus::VALID:

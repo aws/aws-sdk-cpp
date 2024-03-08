@@ -109,6 +109,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case KmsGrantOperation::NOT_SET:
+            return {};
           case KmsGrantOperation::CreateGrant:
             return "CreateGrant";
           case KmsGrantOperation::Decrypt:

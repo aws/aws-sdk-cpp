@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PadVideo::NOT_SET:
+            return {};
           case PadVideo::DISABLED:
             return "DISABLED";
           case PadVideo::BLACK:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case IngestionDestinationStatus::NOT_SET:
+            return {};
           case IngestionDestinationStatus::Active:
             return "Active";
           case IngestionDestinationStatus::Failed:

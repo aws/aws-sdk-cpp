@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ComplianceUploadType::NOT_SET:
+            return {};
           case ComplianceUploadType::COMPLETE:
             return "COMPLETE";
           case ComplianceUploadType::PARTIAL:

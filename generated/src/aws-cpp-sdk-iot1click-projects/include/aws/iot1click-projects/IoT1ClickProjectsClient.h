@@ -22,8 +22,8 @@ namespace IoT1ClickProjects
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef IoT1ClickProjectsClientConfiguration ClientConfigurationType;
       typedef IoT1ClickProjectsEndpointProvider EndpointProviderType;
@@ -33,14 +33,14 @@ namespace IoT1ClickProjects
         * is not specified, it will be initialized to default values.
         */
         IoT1ClickProjectsClient(const Aws::IoT1ClickProjects::IoT1ClickProjectsClientConfiguration& clientConfiguration = Aws::IoT1ClickProjects::IoT1ClickProjectsClientConfiguration(),
-                                std::shared_ptr<IoT1ClickProjectsEndpointProviderBase> endpointProvider = Aws::MakeShared<IoT1ClickProjectsEndpointProvider>(ALLOCATION_TAG));
+                                std::shared_ptr<IoT1ClickProjectsEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         IoT1ClickProjectsClient(const Aws::Auth::AWSCredentials& credentials,
-                                std::shared_ptr<IoT1ClickProjectsEndpointProviderBase> endpointProvider = Aws::MakeShared<IoT1ClickProjectsEndpointProvider>(ALLOCATION_TAG),
+                                std::shared_ptr<IoT1ClickProjectsEndpointProviderBase> endpointProvider = nullptr,
                                 const Aws::IoT1ClickProjects::IoT1ClickProjectsClientConfiguration& clientConfiguration = Aws::IoT1ClickProjects::IoT1ClickProjectsClientConfiguration());
 
        /**
@@ -48,7 +48,7 @@ namespace IoT1ClickProjects
         * the default http client factory will be used
         */
         IoT1ClickProjectsClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                                std::shared_ptr<IoT1ClickProjectsEndpointProviderBase> endpointProvider = Aws::MakeShared<IoT1ClickProjectsEndpointProvider>(ALLOCATION_TAG),
+                                std::shared_ptr<IoT1ClickProjectsEndpointProviderBase> endpointProvider = nullptr,
                                 const Aws::IoT1ClickProjects::IoT1ClickProjectsClientConfiguration& clientConfiguration = Aws::IoT1ClickProjects::IoT1ClickProjectsClientConfiguration());
 
 

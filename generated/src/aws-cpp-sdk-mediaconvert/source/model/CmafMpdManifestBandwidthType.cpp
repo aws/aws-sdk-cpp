@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CmafMpdManifestBandwidthType::NOT_SET:
+            return {};
           case CmafMpdManifestBandwidthType::AVERAGE:
             return "AVERAGE";
           case CmafMpdManifestBandwidthType::MAX:

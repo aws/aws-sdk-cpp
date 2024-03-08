@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case GeoSpatialDataRole::NOT_SET:
+            return {};
           case GeoSpatialDataRole::COUNTRY:
             return "COUNTRY";
           case GeoSpatialDataRole::STATE:

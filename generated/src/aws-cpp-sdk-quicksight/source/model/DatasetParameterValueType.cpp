@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DatasetParameterValueType::NOT_SET:
+            return {};
           case DatasetParameterValueType::MULTI_VALUED:
             return "MULTI_VALUED";
           case DatasetParameterValueType::SINGLE_VALUED:

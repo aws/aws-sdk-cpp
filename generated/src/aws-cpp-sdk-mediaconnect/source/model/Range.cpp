@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Range::NOT_SET:
+            return {};
           case Range::NARROW:
             return "NARROW";
           case Range::FULL:

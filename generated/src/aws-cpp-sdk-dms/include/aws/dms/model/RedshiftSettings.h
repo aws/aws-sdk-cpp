@@ -1565,25 +1565,29 @@ namespace Model
 
     /**
      * <p>When true, lets Redshift migrate the boolean type as boolean. By default,
-     * Redshift migrates booleans as <code>varchar(1)</code>.</p>
+     * Redshift migrates booleans as <code>varchar(1)</code>. You must set this setting
+     * on both the source and target endpoints for it to take effect.</p>
      */
     inline bool GetMapBooleanAsBoolean() const{ return m_mapBooleanAsBoolean; }
 
     /**
      * <p>When true, lets Redshift migrate the boolean type as boolean. By default,
-     * Redshift migrates booleans as <code>varchar(1)</code>.</p>
+     * Redshift migrates booleans as <code>varchar(1)</code>. You must set this setting
+     * on both the source and target endpoints for it to take effect.</p>
      */
     inline bool MapBooleanAsBooleanHasBeenSet() const { return m_mapBooleanAsBooleanHasBeenSet; }
 
     /**
      * <p>When true, lets Redshift migrate the boolean type as boolean. By default,
-     * Redshift migrates booleans as <code>varchar(1)</code>.</p>
+     * Redshift migrates booleans as <code>varchar(1)</code>. You must set this setting
+     * on both the source and target endpoints for it to take effect.</p>
      */
     inline void SetMapBooleanAsBoolean(bool value) { m_mapBooleanAsBooleanHasBeenSet = true; m_mapBooleanAsBoolean = value; }
 
     /**
      * <p>When true, lets Redshift migrate the boolean type as boolean. By default,
-     * Redshift migrates booleans as <code>varchar(1)</code>.</p>
+     * Redshift migrates booleans as <code>varchar(1)</code>. You must set this setting
+     * on both the source and target endpoints for it to take effect.</p>
      */
     inline RedshiftSettings& WithMapBooleanAsBoolean(bool value) { SetMapBooleanAsBoolean(value); return *this;}
 

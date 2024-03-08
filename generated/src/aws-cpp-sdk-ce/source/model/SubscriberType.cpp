@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SubscriberType::NOT_SET:
+            return {};
           case SubscriberType::EMAIL:
             return "EMAIL";
           case SubscriberType::SNS:

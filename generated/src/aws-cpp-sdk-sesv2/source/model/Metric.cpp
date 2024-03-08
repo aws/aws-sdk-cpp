@@ -89,6 +89,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Metric::NOT_SET:
+            return {};
           case Metric::SEND:
             return "SEND";
           case Metric::COMPLAINT:

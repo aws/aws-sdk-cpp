@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TimecodeConfigSource::NOT_SET:
+            return {};
           case TimecodeConfigSource::EMBEDDED:
             return "EMBEDDED";
           case TimecodeConfigSource::SYSTEMCLOCK:

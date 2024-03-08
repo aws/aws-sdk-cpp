@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CertificateType::NOT_SET:
+            return {};
           case CertificateType::IMPORTED:
             return "IMPORTED";
           case CertificateType::AMAZON_ISSUED:

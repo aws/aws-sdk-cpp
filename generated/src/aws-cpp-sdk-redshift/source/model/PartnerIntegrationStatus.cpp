@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PartnerIntegrationStatus::NOT_SET:
+            return {};
           case PartnerIntegrationStatus::Active:
             return "Active";
           case PartnerIntegrationStatus::Inactive:

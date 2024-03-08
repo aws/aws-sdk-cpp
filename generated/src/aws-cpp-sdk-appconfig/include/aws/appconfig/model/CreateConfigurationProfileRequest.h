@@ -605,6 +605,87 @@ namespace Model
      */
     inline CreateConfigurationProfileRequest& WithType(const char* value) { SetType(value); return *this;}
 
+
+    /**
+     * <p>The identifier for an Key Management Service key to encrypt new configuration
+     * data versions in the AppConfig hosted configuration store. This attribute is
+     * only used for <code>hosted</code> configuration types. The identifier can be an
+     * KMS key ID, alias, or the Amazon Resource Name (ARN) of the key ID or alias. To
+     * encrypt data managed in other configuration stores, see the documentation for
+     * how to specify an KMS key for that particular service.</p>
+     */
+    inline const Aws::String& GetKmsKeyIdentifier() const{ return m_kmsKeyIdentifier; }
+
+    /**
+     * <p>The identifier for an Key Management Service key to encrypt new configuration
+     * data versions in the AppConfig hosted configuration store. This attribute is
+     * only used for <code>hosted</code> configuration types. The identifier can be an
+     * KMS key ID, alias, or the Amazon Resource Name (ARN) of the key ID or alias. To
+     * encrypt data managed in other configuration stores, see the documentation for
+     * how to specify an KMS key for that particular service.</p>
+     */
+    inline bool KmsKeyIdentifierHasBeenSet() const { return m_kmsKeyIdentifierHasBeenSet; }
+
+    /**
+     * <p>The identifier for an Key Management Service key to encrypt new configuration
+     * data versions in the AppConfig hosted configuration store. This attribute is
+     * only used for <code>hosted</code> configuration types. The identifier can be an
+     * KMS key ID, alias, or the Amazon Resource Name (ARN) of the key ID or alias. To
+     * encrypt data managed in other configuration stores, see the documentation for
+     * how to specify an KMS key for that particular service.</p>
+     */
+    inline void SetKmsKeyIdentifier(const Aws::String& value) { m_kmsKeyIdentifierHasBeenSet = true; m_kmsKeyIdentifier = value; }
+
+    /**
+     * <p>The identifier for an Key Management Service key to encrypt new configuration
+     * data versions in the AppConfig hosted configuration store. This attribute is
+     * only used for <code>hosted</code> configuration types. The identifier can be an
+     * KMS key ID, alias, or the Amazon Resource Name (ARN) of the key ID or alias. To
+     * encrypt data managed in other configuration stores, see the documentation for
+     * how to specify an KMS key for that particular service.</p>
+     */
+    inline void SetKmsKeyIdentifier(Aws::String&& value) { m_kmsKeyIdentifierHasBeenSet = true; m_kmsKeyIdentifier = std::move(value); }
+
+    /**
+     * <p>The identifier for an Key Management Service key to encrypt new configuration
+     * data versions in the AppConfig hosted configuration store. This attribute is
+     * only used for <code>hosted</code> configuration types. The identifier can be an
+     * KMS key ID, alias, or the Amazon Resource Name (ARN) of the key ID or alias. To
+     * encrypt data managed in other configuration stores, see the documentation for
+     * how to specify an KMS key for that particular service.</p>
+     */
+    inline void SetKmsKeyIdentifier(const char* value) { m_kmsKeyIdentifierHasBeenSet = true; m_kmsKeyIdentifier.assign(value); }
+
+    /**
+     * <p>The identifier for an Key Management Service key to encrypt new configuration
+     * data versions in the AppConfig hosted configuration store. This attribute is
+     * only used for <code>hosted</code> configuration types. The identifier can be an
+     * KMS key ID, alias, or the Amazon Resource Name (ARN) of the key ID or alias. To
+     * encrypt data managed in other configuration stores, see the documentation for
+     * how to specify an KMS key for that particular service.</p>
+     */
+    inline CreateConfigurationProfileRequest& WithKmsKeyIdentifier(const Aws::String& value) { SetKmsKeyIdentifier(value); return *this;}
+
+    /**
+     * <p>The identifier for an Key Management Service key to encrypt new configuration
+     * data versions in the AppConfig hosted configuration store. This attribute is
+     * only used for <code>hosted</code> configuration types. The identifier can be an
+     * KMS key ID, alias, or the Amazon Resource Name (ARN) of the key ID or alias. To
+     * encrypt data managed in other configuration stores, see the documentation for
+     * how to specify an KMS key for that particular service.</p>
+     */
+    inline CreateConfigurationProfileRequest& WithKmsKeyIdentifier(Aws::String&& value) { SetKmsKeyIdentifier(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifier for an Key Management Service key to encrypt new configuration
+     * data versions in the AppConfig hosted configuration store. This attribute is
+     * only used for <code>hosted</code> configuration types. The identifier can be an
+     * KMS key ID, alias, or the Amazon Resource Name (ARN) of the key ID or alias. To
+     * encrypt data managed in other configuration stores, see the documentation for
+     * how to specify an KMS key for that particular service.</p>
+     */
+    inline CreateConfigurationProfileRequest& WithKmsKeyIdentifier(const char* value) { SetKmsKeyIdentifier(value); return *this;}
+
   private:
 
     Aws::String m_applicationId;
@@ -630,6 +711,9 @@ namespace Model
 
     Aws::String m_type;
     bool m_typeHasBeenSet = false;
+
+    Aws::String m_kmsKeyIdentifier;
+    bool m_kmsKeyIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

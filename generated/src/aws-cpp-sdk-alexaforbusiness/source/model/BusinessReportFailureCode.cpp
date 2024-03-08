@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BusinessReportFailureCode::NOT_SET:
+            return {};
           case BusinessReportFailureCode::ACCESS_DENIED:
             return "ACCESS_DENIED";
           case BusinessReportFailureCode::NO_SUCH_BUCKET:

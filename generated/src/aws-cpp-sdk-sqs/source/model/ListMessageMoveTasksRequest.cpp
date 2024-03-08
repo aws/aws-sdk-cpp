@@ -4,10 +4,12 @@
  */
 
 #include <aws/sqs/model/ListMessageMoveTasksRequest.h>
-#include <aws/core/utils/StringUtils.h>
-#include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+
+#include <utility>
 
 using namespace Aws::SQS::Model;
+using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 ListMessageMoveTasksRequest::ListMessageMoveTasksRequest() : 
@@ -19,24 +21,31 @@ ListMessageMoveTasksRequest::ListMessageMoveTasksRequest() :
 
 Aws::String ListMessageMoveTasksRequest::SerializePayload() const
 {
-  Aws::StringStream ss;
-  ss << "Action=ListMessageMoveTasks&";
+  JsonValue payload;
+
   if(m_sourceArnHasBeenSet)
   {
-    ss << "SourceArn=" << StringUtils::URLEncode(m_sourceArn.c_str()) << "&";
+   payload.WithString("SourceArn", m_sourceArn);
+
   }
 
   if(m_maxResultsHasBeenSet)
   {
-    ss << "MaxResults=" << m_maxResults << "&";
+   payload.WithInteger("MaxResults", m_maxResults);
+
   }
 
-  ss << "Version=2012-11-05";
-  return ss.str();
+  return payload.View().WriteReadable();
 }
 
-
-void  ListMessageMoveTasksRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+Aws::Http::HeaderValueCollection ListMessageMoveTasksRequest::GetRequestSpecificHeaders() const
 {
-  uri.SetQueryString(SerializePayload());
+  Aws::Http::HeaderValueCollection headers;
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AmazonSQS.ListMessageMoveTasks"));
+  return headers;
+
 }
+
+
+
+

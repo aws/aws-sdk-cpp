@@ -37,75 +37,164 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic
-     * distribution groups that phone numbers are claimed to. If <code>TargetArn</code>
-     * input is not provided, this API lists numbers claimed to all the Amazon Connect
-     * instances belonging to your account in the same Amazon Web Services Region as
-     * the request.</p>
+     * distribution groups that phone number inbound traffic is routed through. If both
+     * <code>TargetArn</code> and <code>InstanceId</code> input are not provided, this
+     * API lists numbers claimed to all the Amazon Connect instances belonging to your
+     * account in the same Amazon Web Services Region as the request.</p>
      */
     inline const Aws::String& GetTargetArn() const{ return m_targetArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic
-     * distribution groups that phone numbers are claimed to. If <code>TargetArn</code>
-     * input is not provided, this API lists numbers claimed to all the Amazon Connect
-     * instances belonging to your account in the same Amazon Web Services Region as
-     * the request.</p>
+     * distribution groups that phone number inbound traffic is routed through. If both
+     * <code>TargetArn</code> and <code>InstanceId</code> input are not provided, this
+     * API lists numbers claimed to all the Amazon Connect instances belonging to your
+     * account in the same Amazon Web Services Region as the request.</p>
      */
     inline bool TargetArnHasBeenSet() const { return m_targetArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic
-     * distribution groups that phone numbers are claimed to. If <code>TargetArn</code>
-     * input is not provided, this API lists numbers claimed to all the Amazon Connect
-     * instances belonging to your account in the same Amazon Web Services Region as
-     * the request.</p>
+     * distribution groups that phone number inbound traffic is routed through. If both
+     * <code>TargetArn</code> and <code>InstanceId</code> input are not provided, this
+     * API lists numbers claimed to all the Amazon Connect instances belonging to your
+     * account in the same Amazon Web Services Region as the request.</p>
      */
     inline void SetTargetArn(const Aws::String& value) { m_targetArnHasBeenSet = true; m_targetArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic
-     * distribution groups that phone numbers are claimed to. If <code>TargetArn</code>
-     * input is not provided, this API lists numbers claimed to all the Amazon Connect
-     * instances belonging to your account in the same Amazon Web Services Region as
-     * the request.</p>
+     * distribution groups that phone number inbound traffic is routed through. If both
+     * <code>TargetArn</code> and <code>InstanceId</code> input are not provided, this
+     * API lists numbers claimed to all the Amazon Connect instances belonging to your
+     * account in the same Amazon Web Services Region as the request.</p>
      */
     inline void SetTargetArn(Aws::String&& value) { m_targetArnHasBeenSet = true; m_targetArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic
-     * distribution groups that phone numbers are claimed to. If <code>TargetArn</code>
-     * input is not provided, this API lists numbers claimed to all the Amazon Connect
-     * instances belonging to your account in the same Amazon Web Services Region as
-     * the request.</p>
+     * distribution groups that phone number inbound traffic is routed through. If both
+     * <code>TargetArn</code> and <code>InstanceId</code> input are not provided, this
+     * API lists numbers claimed to all the Amazon Connect instances belonging to your
+     * account in the same Amazon Web Services Region as the request.</p>
      */
     inline void SetTargetArn(const char* value) { m_targetArnHasBeenSet = true; m_targetArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic
-     * distribution groups that phone numbers are claimed to. If <code>TargetArn</code>
-     * input is not provided, this API lists numbers claimed to all the Amazon Connect
-     * instances belonging to your account in the same Amazon Web Services Region as
-     * the request.</p>
+     * distribution groups that phone number inbound traffic is routed through. If both
+     * <code>TargetArn</code> and <code>InstanceId</code> input are not provided, this
+     * API lists numbers claimed to all the Amazon Connect instances belonging to your
+     * account in the same Amazon Web Services Region as the request.</p>
      */
     inline ListPhoneNumbersV2Request& WithTargetArn(const Aws::String& value) { SetTargetArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic
-     * distribution groups that phone numbers are claimed to. If <code>TargetArn</code>
-     * input is not provided, this API lists numbers claimed to all the Amazon Connect
-     * instances belonging to your account in the same Amazon Web Services Region as
-     * the request.</p>
+     * distribution groups that phone number inbound traffic is routed through. If both
+     * <code>TargetArn</code> and <code>InstanceId</code> input are not provided, this
+     * API lists numbers claimed to all the Amazon Connect instances belonging to your
+     * account in the same Amazon Web Services Region as the request.</p>
      */
     inline ListPhoneNumbersV2Request& WithTargetArn(Aws::String&& value) { SetTargetArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) for Amazon Connect instances or traffic
-     * distribution groups that phone numbers are claimed to. If <code>TargetArn</code>
-     * input is not provided, this API lists numbers claimed to all the Amazon Connect
-     * instances belonging to your account in the same Amazon Web Services Region as
-     * the request.</p>
+     * distribution groups that phone number inbound traffic is routed through. If both
+     * <code>TargetArn</code> and <code>InstanceId</code> input are not provided, this
+     * API lists numbers claimed to all the Amazon Connect instances belonging to your
+     * account in the same Amazon Web Services Region as the request.</p>
      */
     inline ListPhoneNumbersV2Request& WithTargetArn(const char* value) { SetTargetArn(value); return *this;}
+
+
+    /**
+     * <p>The identifier of the Amazon Connect instance that phone numbers are claimed
+     * to. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance. If both
+     * <code>TargetArn</code> and <code>InstanceId</code> are not provided, this API
+     * lists numbers claimed to all the Amazon Connect instances belonging to your
+     * account in the same AWS Region as the request.</p>
+     */
+    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+
+    /**
+     * <p>The identifier of the Amazon Connect instance that phone numbers are claimed
+     * to. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance. If both
+     * <code>TargetArn</code> and <code>InstanceId</code> are not provided, this API
+     * lists numbers claimed to all the Amazon Connect instances belonging to your
+     * account in the same AWS Region as the request.</p>
+     */
+    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the Amazon Connect instance that phone numbers are claimed
+     * to. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance. If both
+     * <code>TargetArn</code> and <code>InstanceId</code> are not provided, this API
+     * lists numbers claimed to all the Amazon Connect instances belonging to your
+     * account in the same AWS Region as the request.</p>
+     */
+    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
+
+    /**
+     * <p>The identifier of the Amazon Connect instance that phone numbers are claimed
+     * to. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance. If both
+     * <code>TargetArn</code> and <code>InstanceId</code> are not provided, this API
+     * lists numbers claimed to all the Amazon Connect instances belonging to your
+     * account in the same AWS Region as the request.</p>
+     */
+    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
+
+    /**
+     * <p>The identifier of the Amazon Connect instance that phone numbers are claimed
+     * to. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance. If both
+     * <code>TargetArn</code> and <code>InstanceId</code> are not provided, this API
+     * lists numbers claimed to all the Amazon Connect instances belonging to your
+     * account in the same AWS Region as the request.</p>
+     */
+    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
+
+    /**
+     * <p>The identifier of the Amazon Connect instance that phone numbers are claimed
+     * to. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance. If both
+     * <code>TargetArn</code> and <code>InstanceId</code> are not provided, this API
+     * lists numbers claimed to all the Amazon Connect instances belonging to your
+     * account in the same AWS Region as the request.</p>
+     */
+    inline ListPhoneNumbersV2Request& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
+
+    /**
+     * <p>The identifier of the Amazon Connect instance that phone numbers are claimed
+     * to. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance. If both
+     * <code>TargetArn</code> and <code>InstanceId</code> are not provided, this API
+     * lists numbers claimed to all the Amazon Connect instances belonging to your
+     * account in the same AWS Region as the request.</p>
+     */
+    inline ListPhoneNumbersV2Request& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifier of the Amazon Connect instance that phone numbers are claimed
+     * to. You can <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance. If both
+     * <code>TargetArn</code> and <code>InstanceId</code> are not provided, this API
+     * lists numbers claimed to all the Amazon Connect instances belonging to your
+     * account in the same AWS Region as the request.</p>
+     */
+    inline ListPhoneNumbersV2Request& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
 
     /**
@@ -312,6 +401,9 @@ namespace Model
 
     Aws::String m_targetArn;
     bool m_targetArnHasBeenSet = false;
+
+    Aws::String m_instanceId;
+    bool m_instanceIdHasBeenSet = false;
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet = false;

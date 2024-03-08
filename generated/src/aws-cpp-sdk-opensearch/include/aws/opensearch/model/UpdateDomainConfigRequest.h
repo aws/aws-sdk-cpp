@@ -13,6 +13,7 @@
 #include <aws/opensearch/model/VPCOptions.h>
 #include <aws/opensearch/model/CognitoOptions.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/opensearch/model/IPAddressType.h>
 #include <aws/opensearch/model/EncryptionAtRestOptions.h>
 #include <aws/opensearch/model/DomainEndpointOptions.h>
 #include <aws/opensearch/model/NodeToNodeEncryptionOptions.h>
@@ -608,6 +609,55 @@ namespace Model
 
 
     /**
+     * <p>Specify either dual stack or IPv4 as your IP address type. Dual stack allows
+     * you to share domain resources across IPv4 and IPv6 address types, and is the
+     * recommended option. If your IP address type is currently set to dual stack, you
+     * can't change it. </p>
+     */
+    inline const IPAddressType& GetIPAddressType() const{ return m_iPAddressType; }
+
+    /**
+     * <p>Specify either dual stack or IPv4 as your IP address type. Dual stack allows
+     * you to share domain resources across IPv4 and IPv6 address types, and is the
+     * recommended option. If your IP address type is currently set to dual stack, you
+     * can't change it. </p>
+     */
+    inline bool IPAddressTypeHasBeenSet() const { return m_iPAddressTypeHasBeenSet; }
+
+    /**
+     * <p>Specify either dual stack or IPv4 as your IP address type. Dual stack allows
+     * you to share domain resources across IPv4 and IPv6 address types, and is the
+     * recommended option. If your IP address type is currently set to dual stack, you
+     * can't change it. </p>
+     */
+    inline void SetIPAddressType(const IPAddressType& value) { m_iPAddressTypeHasBeenSet = true; m_iPAddressType = value; }
+
+    /**
+     * <p>Specify either dual stack or IPv4 as your IP address type. Dual stack allows
+     * you to share domain resources across IPv4 and IPv6 address types, and is the
+     * recommended option. If your IP address type is currently set to dual stack, you
+     * can't change it. </p>
+     */
+    inline void SetIPAddressType(IPAddressType&& value) { m_iPAddressTypeHasBeenSet = true; m_iPAddressType = std::move(value); }
+
+    /**
+     * <p>Specify either dual stack or IPv4 as your IP address type. Dual stack allows
+     * you to share domain resources across IPv4 and IPv6 address types, and is the
+     * recommended option. If your IP address type is currently set to dual stack, you
+     * can't change it. </p>
+     */
+    inline UpdateDomainConfigRequest& WithIPAddressType(const IPAddressType& value) { SetIPAddressType(value); return *this;}
+
+    /**
+     * <p>Specify either dual stack or IPv4 as your IP address type. Dual stack allows
+     * you to share domain resources across IPv4 and IPv6 address types, and is the
+     * recommended option. If your IP address type is currently set to dual stack, you
+     * can't change it. </p>
+     */
+    inline UpdateDomainConfigRequest& WithIPAddressType(IPAddressType&& value) { SetIPAddressType(std::move(value)); return *this;}
+
+
+    /**
      * <p>Options to publish OpenSearch logs to Amazon CloudWatch Logs.</p>
      */
     inline const Aws::Map<LogType, LogPublishingOption>& GetLogPublishingOptions() const{ return m_logPublishingOptions; }
@@ -999,6 +1049,9 @@ namespace Model
 
     Aws::String m_accessPolicies;
     bool m_accessPoliciesHasBeenSet = false;
+
+    IPAddressType m_iPAddressType;
+    bool m_iPAddressTypeHasBeenSet = false;
 
     Aws::Map<LogType, LogPublishingOption> m_logPublishingOptions;
     bool m_logPublishingOptionsHasBeenSet = false;

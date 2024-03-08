@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UploadBehavior::NOT_SET:
+            return {};
           case UploadBehavior::UPLOAD_ON_TERMINATE:
             return "UPLOAD_ON_TERMINATE";
           case UploadBehavior::UPLOAD_ROLLING_AUTO_REMOVE:

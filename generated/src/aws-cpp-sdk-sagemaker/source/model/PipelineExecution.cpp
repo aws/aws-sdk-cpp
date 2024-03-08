@@ -32,8 +32,8 @@ PipelineExecution::PipelineExecution() :
     m_createdByHasBeenSet(false),
     m_lastModifiedByHasBeenSet(false),
     m_parallelismConfigurationHasBeenSet(false),
-    m_pipelineParametersHasBeenSet(false),
-    m_selectiveExecutionConfigHasBeenSet(false)
+    m_selectiveExecutionConfigHasBeenSet(false),
+    m_pipelineParametersHasBeenSet(false)
 {
 }
 
@@ -51,8 +51,8 @@ PipelineExecution::PipelineExecution(JsonView jsonValue) :
     m_createdByHasBeenSet(false),
     m_lastModifiedByHasBeenSet(false),
     m_parallelismConfigurationHasBeenSet(false),
-    m_pipelineParametersHasBeenSet(false),
-    m_selectiveExecutionConfigHasBeenSet(false)
+    m_selectiveExecutionConfigHasBeenSet(false),
+    m_pipelineParametersHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -143,6 +143,13 @@ PipelineExecution& PipelineExecution::operator =(JsonView jsonValue)
     m_parallelismConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SelectiveExecutionConfig"))
+  {
+    m_selectiveExecutionConfig = jsonValue.GetObject("SelectiveExecutionConfig");
+
+    m_selectiveExecutionConfigHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("PipelineParameters"))
   {
     Aws::Utils::Array<JsonView> pipelineParametersJsonList = jsonValue.GetArray("PipelineParameters");
@@ -151,13 +158,6 @@ PipelineExecution& PipelineExecution::operator =(JsonView jsonValue)
       m_pipelineParameters.push_back(pipelineParametersJsonList[pipelineParametersIndex].AsObject());
     }
     m_pipelineParametersHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("SelectiveExecutionConfig"))
-  {
-    m_selectiveExecutionConfig = jsonValue.GetObject("SelectiveExecutionConfig");
-
-    m_selectiveExecutionConfigHasBeenSet = true;
   }
 
   return *this;
@@ -236,6 +236,12 @@ JsonValue PipelineExecution::Jsonize() const
 
   }
 
+  if(m_selectiveExecutionConfigHasBeenSet)
+  {
+   payload.WithObject("SelectiveExecutionConfig", m_selectiveExecutionConfig.Jsonize());
+
+  }
+
   if(m_pipelineParametersHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> pipelineParametersJsonList(m_pipelineParameters.size());
@@ -244,12 +250,6 @@ JsonValue PipelineExecution::Jsonize() const
      pipelineParametersJsonList[pipelineParametersIndex].AsObject(m_pipelineParameters[pipelineParametersIndex].Jsonize());
    }
    payload.WithArray("PipelineParameters", std::move(pipelineParametersJsonList));
-
-  }
-
-  if(m_selectiveExecutionConfigHasBeenSet)
-  {
-   payload.WithObject("SelectiveExecutionConfig", m_selectiveExecutionConfig.Jsonize());
 
   }
 

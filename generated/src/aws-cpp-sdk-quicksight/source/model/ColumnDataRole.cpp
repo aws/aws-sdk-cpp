@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ColumnDataRole::NOT_SET:
+            return {};
           case ColumnDataRole::DIMENSION:
             return "DIMENSION";
           case ColumnDataRole::MEASURE:

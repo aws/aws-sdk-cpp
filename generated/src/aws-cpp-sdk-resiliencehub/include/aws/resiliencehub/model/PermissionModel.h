@@ -154,8 +154,10 @@ namespace Model
      * <p>Existing Amazon Web Services IAM role name in the primary Amazon Web Services
      * account that will be assumed by Resilience Hub Service Principle to obtain a
      * read-only access to your application resources while running an assessment.</p>
-     *  <p>You must have <code>iam:passRole</code> permission for this role while
-     * creating or updating the application.</p> 
+     *  <ul> <li> <p>You must have <code>iam:passRole</code> permission for this
+     * role while creating or updating the application.</p> </li> <li> <p>Currently,
+     * <code>invokerRoleName</code> accepts only <code>[A-Za-z0-9_+=,.@-]</code>
+     * characters.</p> </li> </ul> 
      */
     inline const Aws::String& GetInvokerRoleName() const{ return m_invokerRoleName; }
 
@@ -163,8 +165,10 @@ namespace Model
      * <p>Existing Amazon Web Services IAM role name in the primary Amazon Web Services
      * account that will be assumed by Resilience Hub Service Principle to obtain a
      * read-only access to your application resources while running an assessment.</p>
-     *  <p>You must have <code>iam:passRole</code> permission for this role while
-     * creating or updating the application.</p> 
+     *  <ul> <li> <p>You must have <code>iam:passRole</code> permission for this
+     * role while creating or updating the application.</p> </li> <li> <p>Currently,
+     * <code>invokerRoleName</code> accepts only <code>[A-Za-z0-9_+=,.@-]</code>
+     * characters.</p> </li> </ul> 
      */
     inline bool InvokerRoleNameHasBeenSet() const { return m_invokerRoleNameHasBeenSet; }
 
@@ -172,8 +176,10 @@ namespace Model
      * <p>Existing Amazon Web Services IAM role name in the primary Amazon Web Services
      * account that will be assumed by Resilience Hub Service Principle to obtain a
      * read-only access to your application resources while running an assessment.</p>
-     *  <p>You must have <code>iam:passRole</code> permission for this role while
-     * creating or updating the application.</p> 
+     *  <ul> <li> <p>You must have <code>iam:passRole</code> permission for this
+     * role while creating or updating the application.</p> </li> <li> <p>Currently,
+     * <code>invokerRoleName</code> accepts only <code>[A-Za-z0-9_+=,.@-]</code>
+     * characters.</p> </li> </ul> 
      */
     inline void SetInvokerRoleName(const Aws::String& value) { m_invokerRoleNameHasBeenSet = true; m_invokerRoleName = value; }
 
@@ -181,8 +187,10 @@ namespace Model
      * <p>Existing Amazon Web Services IAM role name in the primary Amazon Web Services
      * account that will be assumed by Resilience Hub Service Principle to obtain a
      * read-only access to your application resources while running an assessment.</p>
-     *  <p>You must have <code>iam:passRole</code> permission for this role while
-     * creating or updating the application.</p> 
+     *  <ul> <li> <p>You must have <code>iam:passRole</code> permission for this
+     * role while creating or updating the application.</p> </li> <li> <p>Currently,
+     * <code>invokerRoleName</code> accepts only <code>[A-Za-z0-9_+=,.@-]</code>
+     * characters.</p> </li> </ul> 
      */
     inline void SetInvokerRoleName(Aws::String&& value) { m_invokerRoleNameHasBeenSet = true; m_invokerRoleName = std::move(value); }
 
@@ -190,8 +198,10 @@ namespace Model
      * <p>Existing Amazon Web Services IAM role name in the primary Amazon Web Services
      * account that will be assumed by Resilience Hub Service Principle to obtain a
      * read-only access to your application resources while running an assessment.</p>
-     *  <p>You must have <code>iam:passRole</code> permission for this role while
-     * creating or updating the application.</p> 
+     *  <ul> <li> <p>You must have <code>iam:passRole</code> permission for this
+     * role while creating or updating the application.</p> </li> <li> <p>Currently,
+     * <code>invokerRoleName</code> accepts only <code>[A-Za-z0-9_+=,.@-]</code>
+     * characters.</p> </li> </ul> 
      */
     inline void SetInvokerRoleName(const char* value) { m_invokerRoleNameHasBeenSet = true; m_invokerRoleName.assign(value); }
 
@@ -199,8 +209,10 @@ namespace Model
      * <p>Existing Amazon Web Services IAM role name in the primary Amazon Web Services
      * account that will be assumed by Resilience Hub Service Principle to obtain a
      * read-only access to your application resources while running an assessment.</p>
-     *  <p>You must have <code>iam:passRole</code> permission for this role while
-     * creating or updating the application.</p> 
+     *  <ul> <li> <p>You must have <code>iam:passRole</code> permission for this
+     * role while creating or updating the application.</p> </li> <li> <p>Currently,
+     * <code>invokerRoleName</code> accepts only <code>[A-Za-z0-9_+=,.@-]</code>
+     * characters.</p> </li> </ul> 
      */
     inline PermissionModel& WithInvokerRoleName(const Aws::String& value) { SetInvokerRoleName(value); return *this;}
 
@@ -208,8 +220,10 @@ namespace Model
      * <p>Existing Amazon Web Services IAM role name in the primary Amazon Web Services
      * account that will be assumed by Resilience Hub Service Principle to obtain a
      * read-only access to your application resources while running an assessment.</p>
-     *  <p>You must have <code>iam:passRole</code> permission for this role while
-     * creating or updating the application.</p> 
+     *  <ul> <li> <p>You must have <code>iam:passRole</code> permission for this
+     * role while creating or updating the application.</p> </li> <li> <p>Currently,
+     * <code>invokerRoleName</code> accepts only <code>[A-Za-z0-9_+=,.@-]</code>
+     * characters.</p> </li> </ul> 
      */
     inline PermissionModel& WithInvokerRoleName(Aws::String&& value) { SetInvokerRoleName(std::move(value)); return *this;}
 
@@ -217,8 +231,10 @@ namespace Model
      * <p>Existing Amazon Web Services IAM role name in the primary Amazon Web Services
      * account that will be assumed by Resilience Hub Service Principle to obtain a
      * read-only access to your application resources while running an assessment.</p>
-     *  <p>You must have <code>iam:passRole</code> permission for this role while
-     * creating or updating the application.</p> 
+     *  <ul> <li> <p>You must have <code>iam:passRole</code> permission for this
+     * role while creating or updating the application.</p> </li> <li> <p>Currently,
+     * <code>invokerRoleName</code> accepts only <code>[A-Za-z0-9_+=,.@-]</code>
+     * characters.</p> </li> </ul> 
      */
     inline PermissionModel& WithInvokerRoleName(const char* value) { SetInvokerRoleName(value); return *this;}
 

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RoutingControlState::NOT_SET:
+            return {};
           case RoutingControlState::On:
             return "On";
           case RoutingControlState::Off:

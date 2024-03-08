@@ -94,6 +94,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AggregationType::NOT_SET:
+            return {};
           case AggregationType::FINDING_TYPE:
             return "FINDING_TYPE";
           case AggregationType::PACKAGE:

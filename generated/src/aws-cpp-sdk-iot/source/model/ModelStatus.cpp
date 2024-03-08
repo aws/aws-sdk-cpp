@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ModelStatus::NOT_SET:
+            return {};
           case ModelStatus::PENDING_BUILD:
             return "PENDING_BUILD";
           case ModelStatus::ACTIVE:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FunctionRuntime::NOT_SET:
+            return {};
           case FunctionRuntime::cloudfront_js_1_0:
             return "cloudfront-js-1.0";
           case FunctionRuntime::cloudfront_js_2_0:

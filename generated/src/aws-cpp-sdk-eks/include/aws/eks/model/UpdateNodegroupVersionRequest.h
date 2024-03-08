@@ -35,50 +35,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the Amazon EKS cluster that is associated with the managed node
-     * group to update.</p>
+     * <p>The name of your cluster.</p>
      */
     inline const Aws::String& GetClusterName() const{ return m_clusterName; }
 
     /**
-     * <p>The name of the Amazon EKS cluster that is associated with the managed node
-     * group to update.</p>
+     * <p>The name of your cluster.</p>
      */
     inline bool ClusterNameHasBeenSet() const { return m_clusterNameHasBeenSet; }
 
     /**
-     * <p>The name of the Amazon EKS cluster that is associated with the managed node
-     * group to update.</p>
+     * <p>The name of your cluster.</p>
      */
     inline void SetClusterName(const Aws::String& value) { m_clusterNameHasBeenSet = true; m_clusterName = value; }
 
     /**
-     * <p>The name of the Amazon EKS cluster that is associated with the managed node
-     * group to update.</p>
+     * <p>The name of your cluster.</p>
      */
     inline void SetClusterName(Aws::String&& value) { m_clusterNameHasBeenSet = true; m_clusterName = std::move(value); }
 
     /**
-     * <p>The name of the Amazon EKS cluster that is associated with the managed node
-     * group to update.</p>
+     * <p>The name of your cluster.</p>
      */
     inline void SetClusterName(const char* value) { m_clusterNameHasBeenSet = true; m_clusterName.assign(value); }
 
     /**
-     * <p>The name of the Amazon EKS cluster that is associated with the managed node
-     * group to update.</p>
+     * <p>The name of your cluster.</p>
      */
     inline UpdateNodegroupVersionRequest& WithClusterName(const Aws::String& value) { SetClusterName(value); return *this;}
 
     /**
-     * <p>The name of the Amazon EKS cluster that is associated with the managed node
-     * group to update.</p>
+     * <p>The name of your cluster.</p>
      */
     inline UpdateNodegroupVersionRequest& WithClusterName(Aws::String&& value) { SetClusterName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the Amazon EKS cluster that is associated with the managed node
-     * group to update.</p>
+     * <p>The name of your cluster.</p>
      */
     inline UpdateNodegroupVersionRequest& WithClusterName(const char* value) { SetClusterName(value); return *this;}
 
@@ -426,83 +418,87 @@ namespace Model
 
 
     /**
-     * <p>Force the update if the existing node group's pods are unable to be drained
-     * due to a pod disruption budget issue. If an update fails because pods could not
-     * be drained, you can force the update after it fails to terminate the old node
-     * whether or not any pods are running on the node.</p>
+     * <p>Force the update if any <code>Pod</code> on the existing node group can't be
+     * drained due to a <code>Pod</code> disruption budget issue. If an update fails
+     * because all Pods can't be drained, you can force the update after it fails to
+     * terminate the old node whether or not any <code>Pod</code> is running on the
+     * node.</p>
      */
     inline bool GetForce() const{ return m_force; }
 
     /**
-     * <p>Force the update if the existing node group's pods are unable to be drained
-     * due to a pod disruption budget issue. If an update fails because pods could not
-     * be drained, you can force the update after it fails to terminate the old node
-     * whether or not any pods are running on the node.</p>
+     * <p>Force the update if any <code>Pod</code> on the existing node group can't be
+     * drained due to a <code>Pod</code> disruption budget issue. If an update fails
+     * because all Pods can't be drained, you can force the update after it fails to
+     * terminate the old node whether or not any <code>Pod</code> is running on the
+     * node.</p>
      */
     inline bool ForceHasBeenSet() const { return m_forceHasBeenSet; }
 
     /**
-     * <p>Force the update if the existing node group's pods are unable to be drained
-     * due to a pod disruption budget issue. If an update fails because pods could not
-     * be drained, you can force the update after it fails to terminate the old node
-     * whether or not any pods are running on the node.</p>
+     * <p>Force the update if any <code>Pod</code> on the existing node group can't be
+     * drained due to a <code>Pod</code> disruption budget issue. If an update fails
+     * because all Pods can't be drained, you can force the update after it fails to
+     * terminate the old node whether or not any <code>Pod</code> is running on the
+     * node.</p>
      */
     inline void SetForce(bool value) { m_forceHasBeenSet = true; m_force = value; }
 
     /**
-     * <p>Force the update if the existing node group's pods are unable to be drained
-     * due to a pod disruption budget issue. If an update fails because pods could not
-     * be drained, you can force the update after it fails to terminate the old node
-     * whether or not any pods are running on the node.</p>
+     * <p>Force the update if any <code>Pod</code> on the existing node group can't be
+     * drained due to a <code>Pod</code> disruption budget issue. If an update fails
+     * because all Pods can't be drained, you can force the update after it fails to
+     * terminate the old node whether or not any <code>Pod</code> is running on the
+     * node.</p>
      */
     inline UpdateNodegroupVersionRequest& WithForce(bool value) { SetForce(value); return *this;}
 
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request.</p>
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request.</p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request.</p>
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request.</p>
      */
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request.</p>
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request.</p>
      */
     inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request.</p>
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request.</p>
      */
     inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request.</p>
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request.</p>
      */
     inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request.</p>
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request.</p>
      */
     inline UpdateNodegroupVersionRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request.</p>
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request.</p>
      */
     inline UpdateNodegroupVersionRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request.</p>
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request.</p>
      */
     inline UpdateNodegroupVersionRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 

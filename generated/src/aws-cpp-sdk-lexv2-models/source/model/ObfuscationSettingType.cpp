@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ObfuscationSettingType::NOT_SET:
+            return {};
           case ObfuscationSettingType::None:
             return "None";
           case ObfuscationSettingType::DefaultObfuscation:

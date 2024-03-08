@@ -73,8 +73,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* AppMeshClient::SERVICE_NAME = "appmesh";
-const char* AppMeshClient::ALLOCATION_TAG = "AppMeshClient";
+namespace Aws
+{
+  namespace AppMesh
+  {
+    const char SERVICE_NAME[] = "appmesh";
+    const char ALLOCATION_TAG[] = "AppMeshClient";
+  }
+}
+const char* AppMeshClient::GetServiceName() {return SERVICE_NAME;}
+const char* AppMeshClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 AppMeshClient::AppMeshClient(const AppMesh::AppMeshClientConfiguration& clientConfiguration,
                              std::shared_ptr<AppMeshEndpointProviderBase> endpointProvider) :
@@ -86,7 +94,7 @@ AppMeshClient::AppMeshClient(const AppMesh::AppMeshClientConfiguration& clientCo
             Aws::MakeShared<AppMeshErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<AppMeshEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -102,7 +110,7 @@ AppMeshClient::AppMeshClient(const AWSCredentials& credentials,
             Aws::MakeShared<AppMeshErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<AppMeshEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -118,7 +126,7 @@ AppMeshClient::AppMeshClient(const std::shared_ptr<AWSCredentialsProvider>& cred
             Aws::MakeShared<AppMeshErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<AppMeshEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LogType::NOT_SET:
+            return {};
           case LogType::INDEX_SLOW_LOGS:
             return "INDEX_SLOW_LOGS";
           case LogType::SEARCH_SLOW_LOGS:

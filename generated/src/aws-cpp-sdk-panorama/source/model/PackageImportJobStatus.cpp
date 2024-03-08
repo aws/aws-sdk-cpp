@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PackageImportJobStatus::NOT_SET:
+            return {};
           case PackageImportJobStatus::PENDING:
             return "PENDING";
           case PackageImportJobStatus::SUCCEEDED:

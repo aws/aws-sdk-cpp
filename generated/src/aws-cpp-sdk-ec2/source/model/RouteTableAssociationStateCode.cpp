@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RouteTableAssociationStateCode::NOT_SET:
+            return {};
           case RouteTableAssociationStateCode::associating:
             return "associating";
           case RouteTableAssociationStateCode::associated:

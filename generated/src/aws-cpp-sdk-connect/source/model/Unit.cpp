@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Unit::NOT_SET:
+            return {};
           case Unit::SECONDS:
             return "SECONDS";
           case Unit::COUNT:

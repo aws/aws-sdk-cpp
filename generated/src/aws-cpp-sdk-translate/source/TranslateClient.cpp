@@ -54,8 +54,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* TranslateClient::SERVICE_NAME = "translate";
-const char* TranslateClient::ALLOCATION_TAG = "TranslateClient";
+namespace Aws
+{
+  namespace Translate
+  {
+    const char SERVICE_NAME[] = "translate";
+    const char ALLOCATION_TAG[] = "TranslateClient";
+  }
+}
+const char* TranslateClient::GetServiceName() {return SERVICE_NAME;}
+const char* TranslateClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 TranslateClient::TranslateClient(const Translate::TranslateClientConfiguration& clientConfiguration,
                                  std::shared_ptr<TranslateEndpointProviderBase> endpointProvider) :
@@ -67,7 +75,7 @@ TranslateClient::TranslateClient(const Translate::TranslateClientConfiguration& 
             Aws::MakeShared<TranslateErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<TranslateEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -83,7 +91,7 @@ TranslateClient::TranslateClient(const AWSCredentials& credentials,
             Aws::MakeShared<TranslateErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<TranslateEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -99,7 +107,7 @@ TranslateClient::TranslateClient(const std::shared_ptr<AWSCredentialsProvider>& 
             Aws::MakeShared<TranslateErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<TranslateEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case GlobalConfigurationOutputTimingSource::NOT_SET:
+            return {};
           case GlobalConfigurationOutputTimingSource::INPUT_CLOCK:
             return "INPUT_CLOCK";
           case GlobalConfigurationOutputTimingSource::SYSTEM_CLOCK:

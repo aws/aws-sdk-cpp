@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HlsSegmentationMode::NOT_SET:
+            return {};
           case HlsSegmentationMode::USE_INPUT_SEGMENTATION:
             return "USE_INPUT_SEGMENTATION";
           case HlsSegmentationMode::USE_SEGMENT_DURATION:

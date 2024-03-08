@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LogDriver::NOT_SET:
+            return {};
           case LogDriver::json_file:
             return "json-file";
           case LogDriver::syslog:

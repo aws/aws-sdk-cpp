@@ -53,6 +53,12 @@ DeletePullThroughCacheRuleResult& DeletePullThroughCacheRuleResult::operator =(c
 
   }
 
+  if(jsonValue.ValueExists("credentialArn"))
+  {
+    m_credentialArn = jsonValue.GetString("credentialArn");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

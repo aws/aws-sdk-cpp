@@ -99,6 +99,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DeploymentCommandName::NOT_SET:
+            return {};
           case DeploymentCommandName::install_dependencies:
             return "install_dependencies";
           case DeploymentCommandName::update_dependencies:

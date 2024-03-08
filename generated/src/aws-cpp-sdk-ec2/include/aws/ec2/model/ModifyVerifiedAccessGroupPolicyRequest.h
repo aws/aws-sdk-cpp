@@ -7,6 +7,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/model/VerifiedAccessSseSpecificationRequest.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -237,6 +238,37 @@ namespace Model
      */
     inline ModifyVerifiedAccessGroupPolicyRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
+
+    /**
+     * <p>The options for server side encryption.</p>
+     */
+    inline const VerifiedAccessSseSpecificationRequest& GetSseSpecification() const{ return m_sseSpecification; }
+
+    /**
+     * <p>The options for server side encryption.</p>
+     */
+    inline bool SseSpecificationHasBeenSet() const { return m_sseSpecificationHasBeenSet; }
+
+    /**
+     * <p>The options for server side encryption.</p>
+     */
+    inline void SetSseSpecification(const VerifiedAccessSseSpecificationRequest& value) { m_sseSpecificationHasBeenSet = true; m_sseSpecification = value; }
+
+    /**
+     * <p>The options for server side encryption.</p>
+     */
+    inline void SetSseSpecification(VerifiedAccessSseSpecificationRequest&& value) { m_sseSpecificationHasBeenSet = true; m_sseSpecification = std::move(value); }
+
+    /**
+     * <p>The options for server side encryption.</p>
+     */
+    inline ModifyVerifiedAccessGroupPolicyRequest& WithSseSpecification(const VerifiedAccessSseSpecificationRequest& value) { SetSseSpecification(value); return *this;}
+
+    /**
+     * <p>The options for server side encryption.</p>
+     */
+    inline ModifyVerifiedAccessGroupPolicyRequest& WithSseSpecification(VerifiedAccessSseSpecificationRequest&& value) { SetSseSpecification(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_verifiedAccessGroupId;
@@ -253,6 +285,9 @@ namespace Model
 
     bool m_dryRun;
     bool m_dryRunHasBeenSet = false;
+
+    VerifiedAccessSseSpecificationRequest m_sseSpecification;
+    bool m_sseSpecificationHasBeenSet = false;
   };
 
 } // namespace Model

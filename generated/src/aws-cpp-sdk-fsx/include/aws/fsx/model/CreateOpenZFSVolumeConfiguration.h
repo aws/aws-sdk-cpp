@@ -513,50 +513,42 @@ namespace Model
 
 
     /**
-     * <p>An object specifying how much storage users or groups can use on the
-     * volume.</p>
+     * <p>Configures how much storage users and groups can use on the volume.</p>
      */
     inline const Aws::Vector<OpenZFSUserOrGroupQuota>& GetUserAndGroupQuotas() const{ return m_userAndGroupQuotas; }
 
     /**
-     * <p>An object specifying how much storage users or groups can use on the
-     * volume.</p>
+     * <p>Configures how much storage users and groups can use on the volume.</p>
      */
     inline bool UserAndGroupQuotasHasBeenSet() const { return m_userAndGroupQuotasHasBeenSet; }
 
     /**
-     * <p>An object specifying how much storage users or groups can use on the
-     * volume.</p>
+     * <p>Configures how much storage users and groups can use on the volume.</p>
      */
     inline void SetUserAndGroupQuotas(const Aws::Vector<OpenZFSUserOrGroupQuota>& value) { m_userAndGroupQuotasHasBeenSet = true; m_userAndGroupQuotas = value; }
 
     /**
-     * <p>An object specifying how much storage users or groups can use on the
-     * volume.</p>
+     * <p>Configures how much storage users and groups can use on the volume.</p>
      */
     inline void SetUserAndGroupQuotas(Aws::Vector<OpenZFSUserOrGroupQuota>&& value) { m_userAndGroupQuotasHasBeenSet = true; m_userAndGroupQuotas = std::move(value); }
 
     /**
-     * <p>An object specifying how much storage users or groups can use on the
-     * volume.</p>
+     * <p>Configures how much storage users and groups can use on the volume.</p>
      */
     inline CreateOpenZFSVolumeConfiguration& WithUserAndGroupQuotas(const Aws::Vector<OpenZFSUserOrGroupQuota>& value) { SetUserAndGroupQuotas(value); return *this;}
 
     /**
-     * <p>An object specifying how much storage users or groups can use on the
-     * volume.</p>
+     * <p>Configures how much storage users and groups can use on the volume.</p>
      */
     inline CreateOpenZFSVolumeConfiguration& WithUserAndGroupQuotas(Aws::Vector<OpenZFSUserOrGroupQuota>&& value) { SetUserAndGroupQuotas(std::move(value)); return *this;}
 
     /**
-     * <p>An object specifying how much storage users or groups can use on the
-     * volume.</p>
+     * <p>Configures how much storage users and groups can use on the volume.</p>
      */
     inline CreateOpenZFSVolumeConfiguration& AddUserAndGroupQuotas(const OpenZFSUserOrGroupQuota& value) { m_userAndGroupQuotasHasBeenSet = true; m_userAndGroupQuotas.push_back(value); return *this; }
 
     /**
-     * <p>An object specifying how much storage users or groups can use on the
-     * volume.</p>
+     * <p>Configures how much storage users and groups can use on the volume.</p>
      */
     inline CreateOpenZFSVolumeConfiguration& AddUserAndGroupQuotas(OpenZFSUserOrGroupQuota&& value) { m_userAndGroupQuotasHasBeenSet = true; m_userAndGroupQuotas.push_back(std::move(value)); return *this; }
 

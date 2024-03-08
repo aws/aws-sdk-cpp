@@ -43,7 +43,8 @@ namespace Model
      * Virginia)</p> </li> <li> <p>US West (N. California)</p> </li> <li> <p>US West
      * (Oregon)</p> </li> <li> <p>Asia Pacific (Singapore)</p> </li> <li> <p>Asia
      * Pacific (Sydney)</p> </li> <li> <p>Asia Pacific (Tokyo)</p> </li> <li> <p>Europe
-     * (Ireland)</p> </li> <li> <p>South America (São Paulo)</p> </li> </ul>
+     * (Ireland)</p> </li> <li> <p>South America (São Paulo)</p> </li> </ul> 
+     * <p>This functionality is not supported for directory buckets.</p> 
      */
     inline const Aws::String& GetDisplayName() const{ return m_displayName; }
 
@@ -53,7 +54,8 @@ namespace Model
      * Virginia)</p> </li> <li> <p>US West (N. California)</p> </li> <li> <p>US West
      * (Oregon)</p> </li> <li> <p>Asia Pacific (Singapore)</p> </li> <li> <p>Asia
      * Pacific (Sydney)</p> </li> <li> <p>Asia Pacific (Tokyo)</p> </li> <li> <p>Europe
-     * (Ireland)</p> </li> <li> <p>South America (São Paulo)</p> </li> </ul>
+     * (Ireland)</p> </li> <li> <p>South America (São Paulo)</p> </li> </ul> 
+     * <p>This functionality is not supported for directory buckets.</p> 
      */
     inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
 
@@ -63,7 +65,8 @@ namespace Model
      * Virginia)</p> </li> <li> <p>US West (N. California)</p> </li> <li> <p>US West
      * (Oregon)</p> </li> <li> <p>Asia Pacific (Singapore)</p> </li> <li> <p>Asia
      * Pacific (Sydney)</p> </li> <li> <p>Asia Pacific (Tokyo)</p> </li> <li> <p>Europe
-     * (Ireland)</p> </li> <li> <p>South America (São Paulo)</p> </li> </ul>
+     * (Ireland)</p> </li> <li> <p>South America (São Paulo)</p> </li> </ul> 
+     * <p>This functionality is not supported for directory buckets.</p> 
      */
     inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
 
@@ -73,7 +76,8 @@ namespace Model
      * Virginia)</p> </li> <li> <p>US West (N. California)</p> </li> <li> <p>US West
      * (Oregon)</p> </li> <li> <p>Asia Pacific (Singapore)</p> </li> <li> <p>Asia
      * Pacific (Sydney)</p> </li> <li> <p>Asia Pacific (Tokyo)</p> </li> <li> <p>Europe
-     * (Ireland)</p> </li> <li> <p>South America (São Paulo)</p> </li> </ul>
+     * (Ireland)</p> </li> <li> <p>South America (São Paulo)</p> </li> </ul> 
+     * <p>This functionality is not supported for directory buckets.</p> 
      */
     inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
 
@@ -83,7 +87,8 @@ namespace Model
      * Virginia)</p> </li> <li> <p>US West (N. California)</p> </li> <li> <p>US West
      * (Oregon)</p> </li> <li> <p>Asia Pacific (Singapore)</p> </li> <li> <p>Asia
      * Pacific (Sydney)</p> </li> <li> <p>Asia Pacific (Tokyo)</p> </li> <li> <p>Europe
-     * (Ireland)</p> </li> <li> <p>South America (São Paulo)</p> </li> </ul>
+     * (Ireland)</p> </li> <li> <p>South America (São Paulo)</p> </li> </ul> 
+     * <p>This functionality is not supported for directory buckets.</p> 
      */
     inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
 
@@ -93,7 +98,8 @@ namespace Model
      * Virginia)</p> </li> <li> <p>US West (N. California)</p> </li> <li> <p>US West
      * (Oregon)</p> </li> <li> <p>Asia Pacific (Singapore)</p> </li> <li> <p>Asia
      * Pacific (Sydney)</p> </li> <li> <p>Asia Pacific (Tokyo)</p> </li> <li> <p>Europe
-     * (Ireland)</p> </li> <li> <p>South America (São Paulo)</p> </li> </ul>
+     * (Ireland)</p> </li> <li> <p>South America (São Paulo)</p> </li> </ul> 
+     * <p>This functionality is not supported for directory buckets.</p> 
      */
     inline Owner& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
 
@@ -103,7 +109,8 @@ namespace Model
      * Virginia)</p> </li> <li> <p>US West (N. California)</p> </li> <li> <p>US West
      * (Oregon)</p> </li> <li> <p>Asia Pacific (Singapore)</p> </li> <li> <p>Asia
      * Pacific (Sydney)</p> </li> <li> <p>Asia Pacific (Tokyo)</p> </li> <li> <p>Europe
-     * (Ireland)</p> </li> <li> <p>South America (São Paulo)</p> </li> </ul>
+     * (Ireland)</p> </li> <li> <p>South America (São Paulo)</p> </li> </ul> 
+     * <p>This functionality is not supported for directory buckets.</p> 
      */
     inline Owner& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
 
@@ -113,7 +120,8 @@ namespace Model
      * Virginia)</p> </li> <li> <p>US West (N. California)</p> </li> <li> <p>US West
      * (Oregon)</p> </li> <li> <p>Asia Pacific (Singapore)</p> </li> <li> <p>Asia
      * Pacific (Sydney)</p> </li> <li> <p>Asia Pacific (Tokyo)</p> </li> <li> <p>Europe
-     * (Ireland)</p> </li> <li> <p>South America (São Paulo)</p> </li> </ul>
+     * (Ireland)</p> </li> <li> <p>South America (São Paulo)</p> </li> </ul> 
+     * <p>This functionality is not supported for directory buckets.</p> 
      */
     inline Owner& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
 

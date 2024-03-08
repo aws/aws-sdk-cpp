@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PartitionLoadFrequency::NOT_SET:
+            return {};
           case PartitionLoadFrequency::none:
             return "none";
           case PartitionLoadFrequency::daily:

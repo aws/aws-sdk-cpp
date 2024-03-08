@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AccessRight::NOT_SET:
+            return {};
           case AccessRight::ALLOW:
             return "ALLOW";
           case AccessRight::DENY:

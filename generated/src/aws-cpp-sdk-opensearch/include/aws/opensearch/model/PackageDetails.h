@@ -10,6 +10,7 @@
 #include <aws/opensearch/model/PackageStatus.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/opensearch/model/ErrorDetails.h>
+#include <aws/opensearch/model/PluginProperties.h>
 #include <utility>
 
 namespace Aws
@@ -383,6 +384,92 @@ namespace Model
      */
     inline PackageDetails& WithErrorDetails(ErrorDetails&& value) { SetErrorDetails(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or
+     * OpenSearch_X.Y. Defaults to the latest version of OpenSearch.</p>
+     */
+    inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
+
+    /**
+     * <p>Version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or
+     * OpenSearch_X.Y. Defaults to the latest version of OpenSearch.</p>
+     */
+    inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
+
+    /**
+     * <p>Version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or
+     * OpenSearch_X.Y. Defaults to the latest version of OpenSearch.</p>
+     */
+    inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
+
+    /**
+     * <p>Version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or
+     * OpenSearch_X.Y. Defaults to the latest version of OpenSearch.</p>
+     */
+    inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
+
+    /**
+     * <p>Version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or
+     * OpenSearch_X.Y. Defaults to the latest version of OpenSearch.</p>
+     */
+    inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
+
+    /**
+     * <p>Version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or
+     * OpenSearch_X.Y. Defaults to the latest version of OpenSearch.</p>
+     */
+    inline PackageDetails& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
+
+    /**
+     * <p>Version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or
+     * OpenSearch_X.Y. Defaults to the latest version of OpenSearch.</p>
+     */
+    inline PackageDetails& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>Version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or
+     * OpenSearch_X.Y. Defaults to the latest version of OpenSearch.</p>
+     */
+    inline PackageDetails& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
+
+
+    /**
+     * <p>If the package is a <code>ZIP-PLUGIN</code> package, additional information
+     * about plugin properties.</p>
+     */
+    inline const PluginProperties& GetAvailablePluginProperties() const{ return m_availablePluginProperties; }
+
+    /**
+     * <p>If the package is a <code>ZIP-PLUGIN</code> package, additional information
+     * about plugin properties.</p>
+     */
+    inline bool AvailablePluginPropertiesHasBeenSet() const { return m_availablePluginPropertiesHasBeenSet; }
+
+    /**
+     * <p>If the package is a <code>ZIP-PLUGIN</code> package, additional information
+     * about plugin properties.</p>
+     */
+    inline void SetAvailablePluginProperties(const PluginProperties& value) { m_availablePluginPropertiesHasBeenSet = true; m_availablePluginProperties = value; }
+
+    /**
+     * <p>If the package is a <code>ZIP-PLUGIN</code> package, additional information
+     * about plugin properties.</p>
+     */
+    inline void SetAvailablePluginProperties(PluginProperties&& value) { m_availablePluginPropertiesHasBeenSet = true; m_availablePluginProperties = std::move(value); }
+
+    /**
+     * <p>If the package is a <code>ZIP-PLUGIN</code> package, additional information
+     * about plugin properties.</p>
+     */
+    inline PackageDetails& WithAvailablePluginProperties(const PluginProperties& value) { SetAvailablePluginProperties(value); return *this;}
+
+    /**
+     * <p>If the package is a <code>ZIP-PLUGIN</code> package, additional information
+     * about plugin properties.</p>
+     */
+    inline PackageDetails& WithAvailablePluginProperties(PluginProperties&& value) { SetAvailablePluginProperties(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_packageID;
@@ -411,6 +498,12 @@ namespace Model
 
     ErrorDetails m_errorDetails;
     bool m_errorDetailsHasBeenSet = false;
+
+    Aws::String m_engineVersion;
+    bool m_engineVersionHasBeenSet = false;
+
+    PluginProperties m_availablePluginProperties;
+    bool m_availablePluginPropertiesHasBeenSet = false;
   };
 
 } // namespace Model

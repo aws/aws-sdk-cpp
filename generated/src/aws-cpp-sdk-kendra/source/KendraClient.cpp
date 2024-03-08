@@ -101,8 +101,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* KendraClient::SERVICE_NAME = "kendra";
-const char* KendraClient::ALLOCATION_TAG = "KendraClient";
+namespace Aws
+{
+  namespace kendra
+  {
+    const char SERVICE_NAME[] = "kendra";
+    const char ALLOCATION_TAG[] = "KendraClient";
+  }
+}
+const char* KendraClient::GetServiceName() {return SERVICE_NAME;}
+const char* KendraClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 KendraClient::KendraClient(const kendra::KendraClientConfiguration& clientConfiguration,
                            std::shared_ptr<KendraEndpointProviderBase> endpointProvider) :
@@ -114,7 +122,7 @@ KendraClient::KendraClient(const kendra::KendraClientConfiguration& clientConfig
             Aws::MakeShared<KendraErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<KendraEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -130,7 +138,7 @@ KendraClient::KendraClient(const AWSCredentials& credentials,
             Aws::MakeShared<KendraErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<KendraEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -146,7 +154,7 @@ KendraClient::KendraClient(const std::shared_ptr<AWSCredentialsProvider>& creden
             Aws::MakeShared<KendraErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<KendraEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

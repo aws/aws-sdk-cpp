@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StartingPosition::NOT_SET:
+            return {};
           case StartingPosition::latest:
             return "latest";
           case StartingPosition::trim_horizon:

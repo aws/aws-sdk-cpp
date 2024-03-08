@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResponseHeadersPolicyAccessControlAllowMethodsValues::NOT_SET:
+            return {};
           case ResponseHeadersPolicyAccessControlAllowMethodsValues::GET_:
             return "GET";
           case ResponseHeadersPolicyAccessControlAllowMethodsValues::POST:

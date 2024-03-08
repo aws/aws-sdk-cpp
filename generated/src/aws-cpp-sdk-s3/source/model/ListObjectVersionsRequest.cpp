@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
+#include <numeric>
 
 using namespace Aws::S3::Model;
 using namespace Aws::Utils::Xml;
@@ -114,19 +115,20 @@ Aws::Http::HeaderValueCollection ListObjectVersionsRequest::GetRequestSpecificHe
     ss.str("");
   }
 
-  if(m_requestPayerHasBeenSet)
+  if(m_requestPayerHasBeenSet && m_requestPayer != RequestPayer::NOT_SET)
   {
     headers.emplace("x-amz-request-payer", RequestPayerMapper::GetNameForRequestPayer(m_requestPayer));
   }
 
   if(m_optionalObjectAttributesHasBeenSet)
   {
-    for(const auto& item : m_optionalObjectAttributes)
-    {
-      ss << OptionalObjectAttributesMapper::GetNameForOptionalObjectAttributes(item);
-      headers.emplace("x-amz-optional-object-attributes", ss.str());
-      ss.str("");
-    }
+    headers.emplace("x-amz-optional-object-attributes", std::accumulate(std::begin(m_optionalObjectAttributes),
+      std::end(m_optionalObjectAttributes),
+      Aws::String{},
+      [](const Aws::String &acc, const OptionalObjectAttributes &item) -> Aws::String {
+        const auto headerValue = OptionalObjectAttributesMapper::GetNameForOptionalObjectAttributes(item);
+        return acc.empty() ? headerValue : acc + "," + headerValue;
+      }));
   }
 
   return headers;
@@ -138,6 +140,9 @@ ListObjectVersionsRequest::EndpointParameters ListObjectVersionsRequest::GetEndp
     // Operation context parameters
     if (BucketHasBeenSet()) {
         parameters.emplace_back(Aws::String("Bucket"), this->GetBucket(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
+    }
+    if (PrefixHasBeenSet()) {
+        parameters.emplace_back(Aws::String("Prefix"), this->GetPrefix(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);
     }
     return parameters;
 }

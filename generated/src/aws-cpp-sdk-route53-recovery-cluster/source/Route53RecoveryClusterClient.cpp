@@ -39,8 +39,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* Route53RecoveryClusterClient::SERVICE_NAME = "route53-recovery-cluster";
-const char* Route53RecoveryClusterClient::ALLOCATION_TAG = "Route53RecoveryClusterClient";
+namespace Aws
+{
+  namespace Route53RecoveryCluster
+  {
+    const char SERVICE_NAME[] = "route53-recovery-cluster";
+    const char ALLOCATION_TAG[] = "Route53RecoveryClusterClient";
+  }
+}
+const char* Route53RecoveryClusterClient::GetServiceName() {return SERVICE_NAME;}
+const char* Route53RecoveryClusterClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 Route53RecoveryClusterClient::Route53RecoveryClusterClient(const Route53RecoveryCluster::Route53RecoveryClusterClientConfiguration& clientConfiguration,
                                                            std::shared_ptr<Route53RecoveryClusterEndpointProviderBase> endpointProvider) :
@@ -52,7 +60,7 @@ Route53RecoveryClusterClient::Route53RecoveryClusterClient(const Route53Recovery
             Aws::MakeShared<Route53RecoveryClusterErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<Route53RecoveryClusterEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -68,7 +76,7 @@ Route53RecoveryClusterClient::Route53RecoveryClusterClient(const AWSCredentials&
             Aws::MakeShared<Route53RecoveryClusterErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<Route53RecoveryClusterEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -84,7 +92,7 @@ Route53RecoveryClusterClient::Route53RecoveryClusterClient(const std::shared_ptr
             Aws::MakeShared<Route53RecoveryClusterErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<Route53RecoveryClusterEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

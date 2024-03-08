@@ -190,8 +190,9 @@ namespace Model
      * <p>The location of the file that contains the revised template. The URL must
      * point to a template (max size: 460,800 bytes) that's located in an Amazon S3
      * bucket or a Systems Manager document. CloudFormation generates the change set by
-     * comparing this template with the stack that you specified.</p> <p>Conditional:
-     * You must specify only <code>TemplateBody</code> or <code>TemplateURL</code>.</p>
+     * comparing this template with the stack that you specified. The location for an
+     * Amazon S3 bucket must start with <code>https://</code>.</p> <p>Conditional: You
+     * must specify only <code>TemplateBody</code> or <code>TemplateURL</code>.</p>
      */
     inline const Aws::String& GetTemplateURL() const{ return m_templateURL; }
 
@@ -199,8 +200,9 @@ namespace Model
      * <p>The location of the file that contains the revised template. The URL must
      * point to a template (max size: 460,800 bytes) that's located in an Amazon S3
      * bucket or a Systems Manager document. CloudFormation generates the change set by
-     * comparing this template with the stack that you specified.</p> <p>Conditional:
-     * You must specify only <code>TemplateBody</code> or <code>TemplateURL</code>.</p>
+     * comparing this template with the stack that you specified. The location for an
+     * Amazon S3 bucket must start with <code>https://</code>.</p> <p>Conditional: You
+     * must specify only <code>TemplateBody</code> or <code>TemplateURL</code>.</p>
      */
     inline bool TemplateURLHasBeenSet() const { return m_templateURLHasBeenSet; }
 
@@ -208,8 +210,9 @@ namespace Model
      * <p>The location of the file that contains the revised template. The URL must
      * point to a template (max size: 460,800 bytes) that's located in an Amazon S3
      * bucket or a Systems Manager document. CloudFormation generates the change set by
-     * comparing this template with the stack that you specified.</p> <p>Conditional:
-     * You must specify only <code>TemplateBody</code> or <code>TemplateURL</code>.</p>
+     * comparing this template with the stack that you specified. The location for an
+     * Amazon S3 bucket must start with <code>https://</code>.</p> <p>Conditional: You
+     * must specify only <code>TemplateBody</code> or <code>TemplateURL</code>.</p>
      */
     inline void SetTemplateURL(const Aws::String& value) { m_templateURLHasBeenSet = true; m_templateURL = value; }
 
@@ -217,8 +220,9 @@ namespace Model
      * <p>The location of the file that contains the revised template. The URL must
      * point to a template (max size: 460,800 bytes) that's located in an Amazon S3
      * bucket or a Systems Manager document. CloudFormation generates the change set by
-     * comparing this template with the stack that you specified.</p> <p>Conditional:
-     * You must specify only <code>TemplateBody</code> or <code>TemplateURL</code>.</p>
+     * comparing this template with the stack that you specified. The location for an
+     * Amazon S3 bucket must start with <code>https://</code>.</p> <p>Conditional: You
+     * must specify only <code>TemplateBody</code> or <code>TemplateURL</code>.</p>
      */
     inline void SetTemplateURL(Aws::String&& value) { m_templateURLHasBeenSet = true; m_templateURL = std::move(value); }
 
@@ -226,8 +230,9 @@ namespace Model
      * <p>The location of the file that contains the revised template. The URL must
      * point to a template (max size: 460,800 bytes) that's located in an Amazon S3
      * bucket or a Systems Manager document. CloudFormation generates the change set by
-     * comparing this template with the stack that you specified.</p> <p>Conditional:
-     * You must specify only <code>TemplateBody</code> or <code>TemplateURL</code>.</p>
+     * comparing this template with the stack that you specified. The location for an
+     * Amazon S3 bucket must start with <code>https://</code>.</p> <p>Conditional: You
+     * must specify only <code>TemplateBody</code> or <code>TemplateURL</code>.</p>
      */
     inline void SetTemplateURL(const char* value) { m_templateURLHasBeenSet = true; m_templateURL.assign(value); }
 
@@ -235,8 +240,9 @@ namespace Model
      * <p>The location of the file that contains the revised template. The URL must
      * point to a template (max size: 460,800 bytes) that's located in an Amazon S3
      * bucket or a Systems Manager document. CloudFormation generates the change set by
-     * comparing this template with the stack that you specified.</p> <p>Conditional:
-     * You must specify only <code>TemplateBody</code> or <code>TemplateURL</code>.</p>
+     * comparing this template with the stack that you specified. The location for an
+     * Amazon S3 bucket must start with <code>https://</code>.</p> <p>Conditional: You
+     * must specify only <code>TemplateBody</code> or <code>TemplateURL</code>.</p>
      */
     inline CreateChangeSetRequest& WithTemplateURL(const Aws::String& value) { SetTemplateURL(value); return *this;}
 
@@ -244,8 +250,9 @@ namespace Model
      * <p>The location of the file that contains the revised template. The URL must
      * point to a template (max size: 460,800 bytes) that's located in an Amazon S3
      * bucket or a Systems Manager document. CloudFormation generates the change set by
-     * comparing this template with the stack that you specified.</p> <p>Conditional:
-     * You must specify only <code>TemplateBody</code> or <code>TemplateURL</code>.</p>
+     * comparing this template with the stack that you specified. The location for an
+     * Amazon S3 bucket must start with <code>https://</code>.</p> <p>Conditional: You
+     * must specify only <code>TemplateBody</code> or <code>TemplateURL</code>.</p>
      */
     inline CreateChangeSetRequest& WithTemplateURL(Aws::String&& value) { SetTemplateURL(std::move(value)); return *this;}
 
@@ -253,8 +260,9 @@ namespace Model
      * <p>The location of the file that contains the revised template. The URL must
      * point to a template (max size: 460,800 bytes) that's located in an Amazon S3
      * bucket or a Systems Manager document. CloudFormation generates the change set by
-     * comparing this template with the stack that you specified.</p> <p>Conditional:
-     * You must specify only <code>TemplateBody</code> or <code>TemplateURL</code>.</p>
+     * comparing this template with the stack that you specified. The location for an
+     * Amazon S3 bucket must start with <code>https://</code>.</p> <p>Conditional: You
+     * must specify only <code>TemplateBody</code> or <code>TemplateURL</code>.</p>
      */
     inline CreateChangeSetRequest& WithTemplateURL(const char* value) { SetTemplateURL(value); return *this;}
 
@@ -352,19 +360,20 @@ namespace Model
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
      * <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
-     * AWS::IAM::AccessKey</a> </p> </li> <li> <p> <a
+     * <code>AWS::IAM::AccessKey</code> </a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
-     * AWS::IAM::Group</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>
-     * </p> </li> <li> <p> <a
+     * <code>AWS::IAM::Group</code> </a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
+     * <code>AWS::IAM::InstanceProfile</code> </a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
-     * AWS::IAM::Policy</a> </p> </li> <li> <p> <a
+     * <code>AWS::IAM::Policy</code> </a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
-     * AWS::IAM::Role</a> </p> </li> <li> <p> <a
+     * <code>AWS::IAM::Role</code> </a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
-     * AWS::IAM::User</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>
-     * </p> </li> </ul> <p>For more information, see <a
+     * <code>AWS::IAM::User</code> </a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
+     * <code>AWS::IAM::UserToGroupAddition</code> </a> </p> </li> </ul> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
      * IAM resources in CloudFormation templates</a>.</p> </li> <li> <p>
      * <code>CAPABILITY_AUTO_EXPAND</code> </p> <p>Some template contain macros. Macros
@@ -376,19 +385,20 @@ namespace Model
      * or more macros, and you choose to create a stack directly from the processed
      * template, without first reviewing the resulting changes in a change set, you
      * must acknowledge this capability. This includes the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
-     * and <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
-     * transforms, which are macros hosted by CloudFormation.</p>  <p>This
-     * capacity doesn't apply to creating change sets, and specifying it when creating
-     * change sets has no effect.</p> <p>If you want to create a stack from a stack
-     * template that contains macros <i>and</i> nested stacks, you must create or
-     * update the stack directly from the template using the <a>CreateStack</a> or
-     * <a>UpdateStack</a> action, and specifying this capability.</p>  <p>For
-     * more information about macros, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">
+     * <code>AWS::Include</code> </a> and <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">
+     * <code>AWS::Serverless</code> </a> transforms, which are macros hosted by
+     * CloudFormation.</p>  <p>This capacity doesn't apply to creating change
+     * sets, and specifying it when creating change sets has no effect.</p> <p>If you
+     * want to create a stack from a stack template that contains macros <i>and</i>
+     * nested stacks, you must create or update the stack directly from the template
+     * using the <a>CreateStack</a> or <a>UpdateStack</a> action, and specifying this
+     * capability.</p>  <p>For more information about macros, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * CloudFormation macros to perform custom processing on templates</a>.</p> </li>
-     * </ul>
+     * </ul>  <p>Only one of the <code>Capabilities</code> and
+     * <code>ResourceType</code> parameters can be specified.</p> 
      */
     inline const Aws::Vector<Capability>& GetCapabilities() const{ return m_capabilities; }
 
@@ -411,19 +421,20 @@ namespace Model
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
      * <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
-     * AWS::IAM::AccessKey</a> </p> </li> <li> <p> <a
+     * <code>AWS::IAM::AccessKey</code> </a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
-     * AWS::IAM::Group</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>
-     * </p> </li> <li> <p> <a
+     * <code>AWS::IAM::Group</code> </a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
+     * <code>AWS::IAM::InstanceProfile</code> </a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
-     * AWS::IAM::Policy</a> </p> </li> <li> <p> <a
+     * <code>AWS::IAM::Policy</code> </a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
-     * AWS::IAM::Role</a> </p> </li> <li> <p> <a
+     * <code>AWS::IAM::Role</code> </a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
-     * AWS::IAM::User</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>
-     * </p> </li> </ul> <p>For more information, see <a
+     * <code>AWS::IAM::User</code> </a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
+     * <code>AWS::IAM::UserToGroupAddition</code> </a> </p> </li> </ul> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
      * IAM resources in CloudFormation templates</a>.</p> </li> <li> <p>
      * <code>CAPABILITY_AUTO_EXPAND</code> </p> <p>Some template contain macros. Macros
@@ -435,19 +446,20 @@ namespace Model
      * or more macros, and you choose to create a stack directly from the processed
      * template, without first reviewing the resulting changes in a change set, you
      * must acknowledge this capability. This includes the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
-     * and <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
-     * transforms, which are macros hosted by CloudFormation.</p>  <p>This
-     * capacity doesn't apply to creating change sets, and specifying it when creating
-     * change sets has no effect.</p> <p>If you want to create a stack from a stack
-     * template that contains macros <i>and</i> nested stacks, you must create or
-     * update the stack directly from the template using the <a>CreateStack</a> or
-     * <a>UpdateStack</a> action, and specifying this capability.</p>  <p>For
-     * more information about macros, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">
+     * <code>AWS::Include</code> </a> and <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">
+     * <code>AWS::Serverless</code> </a> transforms, which are macros hosted by
+     * CloudFormation.</p>  <p>This capacity doesn't apply to creating change
+     * sets, and specifying it when creating change sets has no effect.</p> <p>If you
+     * want to create a stack from a stack template that contains macros <i>and</i>
+     * nested stacks, you must create or update the stack directly from the template
+     * using the <a>CreateStack</a> or <a>UpdateStack</a> action, and specifying this
+     * capability.</p>  <p>For more information about macros, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * CloudFormation macros to perform custom processing on templates</a>.</p> </li>
-     * </ul>
+     * </ul>  <p>Only one of the <code>Capabilities</code> and
+     * <code>ResourceType</code> parameters can be specified.</p> 
      */
     inline bool CapabilitiesHasBeenSet() const { return m_capabilitiesHasBeenSet; }
 
@@ -470,19 +482,20 @@ namespace Model
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
      * <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
-     * AWS::IAM::AccessKey</a> </p> </li> <li> <p> <a
+     * <code>AWS::IAM::AccessKey</code> </a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
-     * AWS::IAM::Group</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>
-     * </p> </li> <li> <p> <a
+     * <code>AWS::IAM::Group</code> </a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
+     * <code>AWS::IAM::InstanceProfile</code> </a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
-     * AWS::IAM::Policy</a> </p> </li> <li> <p> <a
+     * <code>AWS::IAM::Policy</code> </a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
-     * AWS::IAM::Role</a> </p> </li> <li> <p> <a
+     * <code>AWS::IAM::Role</code> </a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
-     * AWS::IAM::User</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>
-     * </p> </li> </ul> <p>For more information, see <a
+     * <code>AWS::IAM::User</code> </a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
+     * <code>AWS::IAM::UserToGroupAddition</code> </a> </p> </li> </ul> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
      * IAM resources in CloudFormation templates</a>.</p> </li> <li> <p>
      * <code>CAPABILITY_AUTO_EXPAND</code> </p> <p>Some template contain macros. Macros
@@ -494,19 +507,20 @@ namespace Model
      * or more macros, and you choose to create a stack directly from the processed
      * template, without first reviewing the resulting changes in a change set, you
      * must acknowledge this capability. This includes the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
-     * and <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
-     * transforms, which are macros hosted by CloudFormation.</p>  <p>This
-     * capacity doesn't apply to creating change sets, and specifying it when creating
-     * change sets has no effect.</p> <p>If you want to create a stack from a stack
-     * template that contains macros <i>and</i> nested stacks, you must create or
-     * update the stack directly from the template using the <a>CreateStack</a> or
-     * <a>UpdateStack</a> action, and specifying this capability.</p>  <p>For
-     * more information about macros, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">
+     * <code>AWS::Include</code> </a> and <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">
+     * <code>AWS::Serverless</code> </a> transforms, which are macros hosted by
+     * CloudFormation.</p>  <p>This capacity doesn't apply to creating change
+     * sets, and specifying it when creating change sets has no effect.</p> <p>If you
+     * want to create a stack from a stack template that contains macros <i>and</i>
+     * nested stacks, you must create or update the stack directly from the template
+     * using the <a>CreateStack</a> or <a>UpdateStack</a> action, and specifying this
+     * capability.</p>  <p>For more information about macros, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * CloudFormation macros to perform custom processing on templates</a>.</p> </li>
-     * </ul>
+     * </ul>  <p>Only one of the <code>Capabilities</code> and
+     * <code>ResourceType</code> parameters can be specified.</p> 
      */
     inline void SetCapabilities(const Aws::Vector<Capability>& value) { m_capabilitiesHasBeenSet = true; m_capabilities = value; }
 
@@ -529,19 +543,20 @@ namespace Model
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
      * <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
-     * AWS::IAM::AccessKey</a> </p> </li> <li> <p> <a
+     * <code>AWS::IAM::AccessKey</code> </a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
-     * AWS::IAM::Group</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>
-     * </p> </li> <li> <p> <a
+     * <code>AWS::IAM::Group</code> </a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
+     * <code>AWS::IAM::InstanceProfile</code> </a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
-     * AWS::IAM::Policy</a> </p> </li> <li> <p> <a
+     * <code>AWS::IAM::Policy</code> </a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
-     * AWS::IAM::Role</a> </p> </li> <li> <p> <a
+     * <code>AWS::IAM::Role</code> </a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
-     * AWS::IAM::User</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>
-     * </p> </li> </ul> <p>For more information, see <a
+     * <code>AWS::IAM::User</code> </a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
+     * <code>AWS::IAM::UserToGroupAddition</code> </a> </p> </li> </ul> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
      * IAM resources in CloudFormation templates</a>.</p> </li> <li> <p>
      * <code>CAPABILITY_AUTO_EXPAND</code> </p> <p>Some template contain macros. Macros
@@ -553,19 +568,20 @@ namespace Model
      * or more macros, and you choose to create a stack directly from the processed
      * template, without first reviewing the resulting changes in a change set, you
      * must acknowledge this capability. This includes the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
-     * and <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
-     * transforms, which are macros hosted by CloudFormation.</p>  <p>This
-     * capacity doesn't apply to creating change sets, and specifying it when creating
-     * change sets has no effect.</p> <p>If you want to create a stack from a stack
-     * template that contains macros <i>and</i> nested stacks, you must create or
-     * update the stack directly from the template using the <a>CreateStack</a> or
-     * <a>UpdateStack</a> action, and specifying this capability.</p>  <p>For
-     * more information about macros, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">
+     * <code>AWS::Include</code> </a> and <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">
+     * <code>AWS::Serverless</code> </a> transforms, which are macros hosted by
+     * CloudFormation.</p>  <p>This capacity doesn't apply to creating change
+     * sets, and specifying it when creating change sets has no effect.</p> <p>If you
+     * want to create a stack from a stack template that contains macros <i>and</i>
+     * nested stacks, you must create or update the stack directly from the template
+     * using the <a>CreateStack</a> or <a>UpdateStack</a> action, and specifying this
+     * capability.</p>  <p>For more information about macros, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * CloudFormation macros to perform custom processing on templates</a>.</p> </li>
-     * </ul>
+     * </ul>  <p>Only one of the <code>Capabilities</code> and
+     * <code>ResourceType</code> parameters can be specified.</p> 
      */
     inline void SetCapabilities(Aws::Vector<Capability>&& value) { m_capabilitiesHasBeenSet = true; m_capabilities = std::move(value); }
 
@@ -588,19 +604,20 @@ namespace Model
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
      * <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
-     * AWS::IAM::AccessKey</a> </p> </li> <li> <p> <a
+     * <code>AWS::IAM::AccessKey</code> </a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
-     * AWS::IAM::Group</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>
-     * </p> </li> <li> <p> <a
+     * <code>AWS::IAM::Group</code> </a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
+     * <code>AWS::IAM::InstanceProfile</code> </a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
-     * AWS::IAM::Policy</a> </p> </li> <li> <p> <a
+     * <code>AWS::IAM::Policy</code> </a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
-     * AWS::IAM::Role</a> </p> </li> <li> <p> <a
+     * <code>AWS::IAM::Role</code> </a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
-     * AWS::IAM::User</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>
-     * </p> </li> </ul> <p>For more information, see <a
+     * <code>AWS::IAM::User</code> </a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
+     * <code>AWS::IAM::UserToGroupAddition</code> </a> </p> </li> </ul> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
      * IAM resources in CloudFormation templates</a>.</p> </li> <li> <p>
      * <code>CAPABILITY_AUTO_EXPAND</code> </p> <p>Some template contain macros. Macros
@@ -612,19 +629,20 @@ namespace Model
      * or more macros, and you choose to create a stack directly from the processed
      * template, without first reviewing the resulting changes in a change set, you
      * must acknowledge this capability. This includes the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
-     * and <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
-     * transforms, which are macros hosted by CloudFormation.</p>  <p>This
-     * capacity doesn't apply to creating change sets, and specifying it when creating
-     * change sets has no effect.</p> <p>If you want to create a stack from a stack
-     * template that contains macros <i>and</i> nested stacks, you must create or
-     * update the stack directly from the template using the <a>CreateStack</a> or
-     * <a>UpdateStack</a> action, and specifying this capability.</p>  <p>For
-     * more information about macros, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">
+     * <code>AWS::Include</code> </a> and <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">
+     * <code>AWS::Serverless</code> </a> transforms, which are macros hosted by
+     * CloudFormation.</p>  <p>This capacity doesn't apply to creating change
+     * sets, and specifying it when creating change sets has no effect.</p> <p>If you
+     * want to create a stack from a stack template that contains macros <i>and</i>
+     * nested stacks, you must create or update the stack directly from the template
+     * using the <a>CreateStack</a> or <a>UpdateStack</a> action, and specifying this
+     * capability.</p>  <p>For more information about macros, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * CloudFormation macros to perform custom processing on templates</a>.</p> </li>
-     * </ul>
+     * </ul>  <p>Only one of the <code>Capabilities</code> and
+     * <code>ResourceType</code> parameters can be specified.</p> 
      */
     inline CreateChangeSetRequest& WithCapabilities(const Aws::Vector<Capability>& value) { SetCapabilities(value); return *this;}
 
@@ -647,19 +665,20 @@ namespace Model
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
      * <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
-     * AWS::IAM::AccessKey</a> </p> </li> <li> <p> <a
+     * <code>AWS::IAM::AccessKey</code> </a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
-     * AWS::IAM::Group</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>
-     * </p> </li> <li> <p> <a
+     * <code>AWS::IAM::Group</code> </a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
+     * <code>AWS::IAM::InstanceProfile</code> </a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
-     * AWS::IAM::Policy</a> </p> </li> <li> <p> <a
+     * <code>AWS::IAM::Policy</code> </a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
-     * AWS::IAM::Role</a> </p> </li> <li> <p> <a
+     * <code>AWS::IAM::Role</code> </a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
-     * AWS::IAM::User</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>
-     * </p> </li> </ul> <p>For more information, see <a
+     * <code>AWS::IAM::User</code> </a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
+     * <code>AWS::IAM::UserToGroupAddition</code> </a> </p> </li> </ul> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
      * IAM resources in CloudFormation templates</a>.</p> </li> <li> <p>
      * <code>CAPABILITY_AUTO_EXPAND</code> </p> <p>Some template contain macros. Macros
@@ -671,19 +690,20 @@ namespace Model
      * or more macros, and you choose to create a stack directly from the processed
      * template, without first reviewing the resulting changes in a change set, you
      * must acknowledge this capability. This includes the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
-     * and <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
-     * transforms, which are macros hosted by CloudFormation.</p>  <p>This
-     * capacity doesn't apply to creating change sets, and specifying it when creating
-     * change sets has no effect.</p> <p>If you want to create a stack from a stack
-     * template that contains macros <i>and</i> nested stacks, you must create or
-     * update the stack directly from the template using the <a>CreateStack</a> or
-     * <a>UpdateStack</a> action, and specifying this capability.</p>  <p>For
-     * more information about macros, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">
+     * <code>AWS::Include</code> </a> and <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">
+     * <code>AWS::Serverless</code> </a> transforms, which are macros hosted by
+     * CloudFormation.</p>  <p>This capacity doesn't apply to creating change
+     * sets, and specifying it when creating change sets has no effect.</p> <p>If you
+     * want to create a stack from a stack template that contains macros <i>and</i>
+     * nested stacks, you must create or update the stack directly from the template
+     * using the <a>CreateStack</a> or <a>UpdateStack</a> action, and specifying this
+     * capability.</p>  <p>For more information about macros, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * CloudFormation macros to perform custom processing on templates</a>.</p> </li>
-     * </ul>
+     * </ul>  <p>Only one of the <code>Capabilities</code> and
+     * <code>ResourceType</code> parameters can be specified.</p> 
      */
     inline CreateChangeSetRequest& WithCapabilities(Aws::Vector<Capability>&& value) { SetCapabilities(std::move(value)); return *this;}
 
@@ -706,19 +726,20 @@ namespace Model
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
      * <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
-     * AWS::IAM::AccessKey</a> </p> </li> <li> <p> <a
+     * <code>AWS::IAM::AccessKey</code> </a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
-     * AWS::IAM::Group</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>
-     * </p> </li> <li> <p> <a
+     * <code>AWS::IAM::Group</code> </a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
+     * <code>AWS::IAM::InstanceProfile</code> </a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
-     * AWS::IAM::Policy</a> </p> </li> <li> <p> <a
+     * <code>AWS::IAM::Policy</code> </a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
-     * AWS::IAM::Role</a> </p> </li> <li> <p> <a
+     * <code>AWS::IAM::Role</code> </a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
-     * AWS::IAM::User</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>
-     * </p> </li> </ul> <p>For more information, see <a
+     * <code>AWS::IAM::User</code> </a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
+     * <code>AWS::IAM::UserToGroupAddition</code> </a> </p> </li> </ul> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
      * IAM resources in CloudFormation templates</a>.</p> </li> <li> <p>
      * <code>CAPABILITY_AUTO_EXPAND</code> </p> <p>Some template contain macros. Macros
@@ -730,19 +751,20 @@ namespace Model
      * or more macros, and you choose to create a stack directly from the processed
      * template, without first reviewing the resulting changes in a change set, you
      * must acknowledge this capability. This includes the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
-     * and <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
-     * transforms, which are macros hosted by CloudFormation.</p>  <p>This
-     * capacity doesn't apply to creating change sets, and specifying it when creating
-     * change sets has no effect.</p> <p>If you want to create a stack from a stack
-     * template that contains macros <i>and</i> nested stacks, you must create or
-     * update the stack directly from the template using the <a>CreateStack</a> or
-     * <a>UpdateStack</a> action, and specifying this capability.</p>  <p>For
-     * more information about macros, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">
+     * <code>AWS::Include</code> </a> and <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">
+     * <code>AWS::Serverless</code> </a> transforms, which are macros hosted by
+     * CloudFormation.</p>  <p>This capacity doesn't apply to creating change
+     * sets, and specifying it when creating change sets has no effect.</p> <p>If you
+     * want to create a stack from a stack template that contains macros <i>and</i>
+     * nested stacks, you must create or update the stack directly from the template
+     * using the <a>CreateStack</a> or <a>UpdateStack</a> action, and specifying this
+     * capability.</p>  <p>For more information about macros, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * CloudFormation macros to perform custom processing on templates</a>.</p> </li>
-     * </ul>
+     * </ul>  <p>Only one of the <code>Capabilities</code> and
+     * <code>ResourceType</code> parameters can be specified.</p> 
      */
     inline CreateChangeSetRequest& AddCapabilities(const Capability& value) { m_capabilitiesHasBeenSet = true; m_capabilities.push_back(value); return *this; }
 
@@ -765,19 +787,20 @@ namespace Model
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
      * <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
-     * AWS::IAM::AccessKey</a> </p> </li> <li> <p> <a
+     * <code>AWS::IAM::AccessKey</code> </a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
-     * AWS::IAM::Group</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>
-     * </p> </li> <li> <p> <a
+     * <code>AWS::IAM::Group</code> </a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
+     * <code>AWS::IAM::InstanceProfile</code> </a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
-     * AWS::IAM::Policy</a> </p> </li> <li> <p> <a
+     * <code>AWS::IAM::Policy</code> </a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
-     * AWS::IAM::Role</a> </p> </li> <li> <p> <a
+     * <code>AWS::IAM::Role</code> </a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
-     * AWS::IAM::User</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>
-     * </p> </li> </ul> <p>For more information, see <a
+     * <code>AWS::IAM::User</code> </a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
+     * <code>AWS::IAM::UserToGroupAddition</code> </a> </p> </li> </ul> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
      * IAM resources in CloudFormation templates</a>.</p> </li> <li> <p>
      * <code>CAPABILITY_AUTO_EXPAND</code> </p> <p>Some template contain macros. Macros
@@ -789,19 +812,20 @@ namespace Model
      * or more macros, and you choose to create a stack directly from the processed
      * template, without first reviewing the resulting changes in a change set, you
      * must acknowledge this capability. This includes the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
-     * and <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
-     * transforms, which are macros hosted by CloudFormation.</p>  <p>This
-     * capacity doesn't apply to creating change sets, and specifying it when creating
-     * change sets has no effect.</p> <p>If you want to create a stack from a stack
-     * template that contains macros <i>and</i> nested stacks, you must create or
-     * update the stack directly from the template using the <a>CreateStack</a> or
-     * <a>UpdateStack</a> action, and specifying this capability.</p>  <p>For
-     * more information about macros, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">
+     * <code>AWS::Include</code> </a> and <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">
+     * <code>AWS::Serverless</code> </a> transforms, which are macros hosted by
+     * CloudFormation.</p>  <p>This capacity doesn't apply to creating change
+     * sets, and specifying it when creating change sets has no effect.</p> <p>If you
+     * want to create a stack from a stack template that contains macros <i>and</i>
+     * nested stacks, you must create or update the stack directly from the template
+     * using the <a>CreateStack</a> or <a>UpdateStack</a> action, and specifying this
+     * capability.</p>  <p>For more information about macros, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * CloudFormation macros to perform custom processing on templates</a>.</p> </li>
-     * </ul>
+     * </ul>  <p>Only one of the <code>Capabilities</code> and
+     * <code>ResourceType</code> parameters can be specified.</p> 
      */
     inline CreateChangeSetRequest& AddCapabilities(Capability&& value) { m_capabilitiesHasBeenSet = true; m_capabilities.push_back(std::move(value)); return *this; }
 
@@ -815,8 +839,9 @@ namespace Model
      * resource types. Identity and Access Management (IAM) uses this parameter for
      * condition keys in IAM policies for CloudFormation. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
-     * access with Identity and Access Management</a> in the CloudFormation User
-     * Guide.</p>
+     * access with Identity and Access Management</a> in the <i>CloudFormation User
+     * Guide</i>.</p>  <p>Only one of the <code>Capabilities</code> and
+     * <code>ResourceType</code> parameters can be specified.</p> 
      */
     inline const Aws::Vector<Aws::String>& GetResourceTypes() const{ return m_resourceTypes; }
 
@@ -829,8 +854,9 @@ namespace Model
      * resource types. Identity and Access Management (IAM) uses this parameter for
      * condition keys in IAM policies for CloudFormation. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
-     * access with Identity and Access Management</a> in the CloudFormation User
-     * Guide.</p>
+     * access with Identity and Access Management</a> in the <i>CloudFormation User
+     * Guide</i>.</p>  <p>Only one of the <code>Capabilities</code> and
+     * <code>ResourceType</code> parameters can be specified.</p> 
      */
     inline bool ResourceTypesHasBeenSet() const { return m_resourceTypesHasBeenSet; }
 
@@ -843,8 +869,9 @@ namespace Model
      * resource types. Identity and Access Management (IAM) uses this parameter for
      * condition keys in IAM policies for CloudFormation. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
-     * access with Identity and Access Management</a> in the CloudFormation User
-     * Guide.</p>
+     * access with Identity and Access Management</a> in the <i>CloudFormation User
+     * Guide</i>.</p>  <p>Only one of the <code>Capabilities</code> and
+     * <code>ResourceType</code> parameters can be specified.</p> 
      */
     inline void SetResourceTypes(const Aws::Vector<Aws::String>& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes = value; }
 
@@ -857,8 +884,9 @@ namespace Model
      * resource types. Identity and Access Management (IAM) uses this parameter for
      * condition keys in IAM policies for CloudFormation. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
-     * access with Identity and Access Management</a> in the CloudFormation User
-     * Guide.</p>
+     * access with Identity and Access Management</a> in the <i>CloudFormation User
+     * Guide</i>.</p>  <p>Only one of the <code>Capabilities</code> and
+     * <code>ResourceType</code> parameters can be specified.</p> 
      */
     inline void SetResourceTypes(Aws::Vector<Aws::String>&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes = std::move(value); }
 
@@ -871,8 +899,9 @@ namespace Model
      * resource types. Identity and Access Management (IAM) uses this parameter for
      * condition keys in IAM policies for CloudFormation. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
-     * access with Identity and Access Management</a> in the CloudFormation User
-     * Guide.</p>
+     * access with Identity and Access Management</a> in the <i>CloudFormation User
+     * Guide</i>.</p>  <p>Only one of the <code>Capabilities</code> and
+     * <code>ResourceType</code> parameters can be specified.</p> 
      */
     inline CreateChangeSetRequest& WithResourceTypes(const Aws::Vector<Aws::String>& value) { SetResourceTypes(value); return *this;}
 
@@ -885,8 +914,9 @@ namespace Model
      * resource types. Identity and Access Management (IAM) uses this parameter for
      * condition keys in IAM policies for CloudFormation. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
-     * access with Identity and Access Management</a> in the CloudFormation User
-     * Guide.</p>
+     * access with Identity and Access Management</a> in the <i>CloudFormation User
+     * Guide</i>.</p>  <p>Only one of the <code>Capabilities</code> and
+     * <code>ResourceType</code> parameters can be specified.</p> 
      */
     inline CreateChangeSetRequest& WithResourceTypes(Aws::Vector<Aws::String>&& value) { SetResourceTypes(std::move(value)); return *this;}
 
@@ -899,8 +929,9 @@ namespace Model
      * resource types. Identity and Access Management (IAM) uses this parameter for
      * condition keys in IAM policies for CloudFormation. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
-     * access with Identity and Access Management</a> in the CloudFormation User
-     * Guide.</p>
+     * access with Identity and Access Management</a> in the <i>CloudFormation User
+     * Guide</i>.</p>  <p>Only one of the <code>Capabilities</code> and
+     * <code>ResourceType</code> parameters can be specified.</p> 
      */
     inline CreateChangeSetRequest& AddResourceTypes(const Aws::String& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(value); return *this; }
 
@@ -913,8 +944,9 @@ namespace Model
      * resource types. Identity and Access Management (IAM) uses this parameter for
      * condition keys in IAM policies for CloudFormation. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
-     * access with Identity and Access Management</a> in the CloudFormation User
-     * Guide.</p>
+     * access with Identity and Access Management</a> in the <i>CloudFormation User
+     * Guide</i>.</p>  <p>Only one of the <code>Capabilities</code> and
+     * <code>ResourceType</code> parameters can be specified.</p> 
      */
     inline CreateChangeSetRequest& AddResourceTypes(Aws::String&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(std::move(value)); return *this; }
 
@@ -927,8 +959,9 @@ namespace Model
      * resource types. Identity and Access Management (IAM) uses this parameter for
      * condition keys in IAM policies for CloudFormation. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling
-     * access with Identity and Access Management</a> in the CloudFormation User
-     * Guide.</p>
+     * access with Identity and Access Management</a> in the <i>CloudFormation User
+     * Guide</i>.</p>  <p>Only one of the <code>Capabilities</code> and
+     * <code>ResourceType</code> parameters can be specified.</p> 
      */
     inline CreateChangeSetRequest& AddResourceTypes(const char* value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(value); return *this; }
 
@@ -1539,140 +1572,215 @@ namespace Model
     /**
      * <p>Determines what action will be taken if stack creation fails. If this
      * parameter is specified, the <code>DisableRollback</code> parameter to the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a>
-     * API operation must not be specified. This must be one of these values:</p> <ul>
-     * <li> <p> <code>DELETE</code> - Deletes the change set if the stack creation
-     * fails. This is only valid when the <code>ChangeSetType</code> parameter is set
-     * to <code>CREATE</code>. If the deletion of the stack fails, the status of the
-     * stack is <code>DELETE_FAILED</code>.</p> </li> <li> <p> <code>DO_NOTHING</code>
-     * - if the stack creation fails, do nothing. This is equivalent to specifying
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">
+     * <code>ExecuteChangeSet</code> </a> API operation must not be specified. This
+     * must be one of these values:</p> <ul> <li> <p> <code>DELETE</code> - Deletes the
+     * change set if the stack creation fails. This is only valid when the
+     * <code>ChangeSetType</code> parameter is set to <code>CREATE</code>. If the
+     * deletion of the stack fails, the status of the stack is
+     * <code>DELETE_FAILED</code>.</p> </li> <li> <p> <code>DO_NOTHING</code> - if the
+     * stack creation fails, do nothing. This is equivalent to specifying
      * <code>true</code> for the <code>DisableRollback</code> parameter to the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a>
-     * API operation.</p> </li> <li> <p> <code>ROLLBACK</code> - if the stack creation
-     * fails, roll back the stack. This is equivalent to specifying <code>false</code>
-     * for the <code>DisableRollback</code> parameter to the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a>
-     * API operation.</p> </li> </ul> <p>For nested stacks, when the
-     * <code>OnStackFailure</code> parameter is set to <code>DELETE</code> for the
-     * change set for the parent stack, any failure in a child stack will cause the
-     * parent stack creation to fail and all stacks to be deleted.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">
+     * <code>ExecuteChangeSet</code> </a> API operation.</p> </li> <li> <p>
+     * <code>ROLLBACK</code> - if the stack creation fails, roll back the stack. This
+     * is equivalent to specifying <code>false</code> for the
+     * <code>DisableRollback</code> parameter to the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">
+     * <code>ExecuteChangeSet</code> </a> API operation.</p> </li> </ul> <p>For nested
+     * stacks, when the <code>OnStackFailure</code> parameter is set to
+     * <code>DELETE</code> for the change set for the parent stack, any failure in a
+     * child stack will cause the parent stack creation to fail and all stacks to be
+     * deleted.</p>
      */
     inline const OnStackFailure& GetOnStackFailure() const{ return m_onStackFailure; }
 
     /**
      * <p>Determines what action will be taken if stack creation fails. If this
      * parameter is specified, the <code>DisableRollback</code> parameter to the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a>
-     * API operation must not be specified. This must be one of these values:</p> <ul>
-     * <li> <p> <code>DELETE</code> - Deletes the change set if the stack creation
-     * fails. This is only valid when the <code>ChangeSetType</code> parameter is set
-     * to <code>CREATE</code>. If the deletion of the stack fails, the status of the
-     * stack is <code>DELETE_FAILED</code>.</p> </li> <li> <p> <code>DO_NOTHING</code>
-     * - if the stack creation fails, do nothing. This is equivalent to specifying
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">
+     * <code>ExecuteChangeSet</code> </a> API operation must not be specified. This
+     * must be one of these values:</p> <ul> <li> <p> <code>DELETE</code> - Deletes the
+     * change set if the stack creation fails. This is only valid when the
+     * <code>ChangeSetType</code> parameter is set to <code>CREATE</code>. If the
+     * deletion of the stack fails, the status of the stack is
+     * <code>DELETE_FAILED</code>.</p> </li> <li> <p> <code>DO_NOTHING</code> - if the
+     * stack creation fails, do nothing. This is equivalent to specifying
      * <code>true</code> for the <code>DisableRollback</code> parameter to the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a>
-     * API operation.</p> </li> <li> <p> <code>ROLLBACK</code> - if the stack creation
-     * fails, roll back the stack. This is equivalent to specifying <code>false</code>
-     * for the <code>DisableRollback</code> parameter to the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a>
-     * API operation.</p> </li> </ul> <p>For nested stacks, when the
-     * <code>OnStackFailure</code> parameter is set to <code>DELETE</code> for the
-     * change set for the parent stack, any failure in a child stack will cause the
-     * parent stack creation to fail and all stacks to be deleted.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">
+     * <code>ExecuteChangeSet</code> </a> API operation.</p> </li> <li> <p>
+     * <code>ROLLBACK</code> - if the stack creation fails, roll back the stack. This
+     * is equivalent to specifying <code>false</code> for the
+     * <code>DisableRollback</code> parameter to the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">
+     * <code>ExecuteChangeSet</code> </a> API operation.</p> </li> </ul> <p>For nested
+     * stacks, when the <code>OnStackFailure</code> parameter is set to
+     * <code>DELETE</code> for the change set for the parent stack, any failure in a
+     * child stack will cause the parent stack creation to fail and all stacks to be
+     * deleted.</p>
      */
     inline bool OnStackFailureHasBeenSet() const { return m_onStackFailureHasBeenSet; }
 
     /**
      * <p>Determines what action will be taken if stack creation fails. If this
      * parameter is specified, the <code>DisableRollback</code> parameter to the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a>
-     * API operation must not be specified. This must be one of these values:</p> <ul>
-     * <li> <p> <code>DELETE</code> - Deletes the change set if the stack creation
-     * fails. This is only valid when the <code>ChangeSetType</code> parameter is set
-     * to <code>CREATE</code>. If the deletion of the stack fails, the status of the
-     * stack is <code>DELETE_FAILED</code>.</p> </li> <li> <p> <code>DO_NOTHING</code>
-     * - if the stack creation fails, do nothing. This is equivalent to specifying
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">
+     * <code>ExecuteChangeSet</code> </a> API operation must not be specified. This
+     * must be one of these values:</p> <ul> <li> <p> <code>DELETE</code> - Deletes the
+     * change set if the stack creation fails. This is only valid when the
+     * <code>ChangeSetType</code> parameter is set to <code>CREATE</code>. If the
+     * deletion of the stack fails, the status of the stack is
+     * <code>DELETE_FAILED</code>.</p> </li> <li> <p> <code>DO_NOTHING</code> - if the
+     * stack creation fails, do nothing. This is equivalent to specifying
      * <code>true</code> for the <code>DisableRollback</code> parameter to the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a>
-     * API operation.</p> </li> <li> <p> <code>ROLLBACK</code> - if the stack creation
-     * fails, roll back the stack. This is equivalent to specifying <code>false</code>
-     * for the <code>DisableRollback</code> parameter to the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a>
-     * API operation.</p> </li> </ul> <p>For nested stacks, when the
-     * <code>OnStackFailure</code> parameter is set to <code>DELETE</code> for the
-     * change set for the parent stack, any failure in a child stack will cause the
-     * parent stack creation to fail and all stacks to be deleted.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">
+     * <code>ExecuteChangeSet</code> </a> API operation.</p> </li> <li> <p>
+     * <code>ROLLBACK</code> - if the stack creation fails, roll back the stack. This
+     * is equivalent to specifying <code>false</code> for the
+     * <code>DisableRollback</code> parameter to the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">
+     * <code>ExecuteChangeSet</code> </a> API operation.</p> </li> </ul> <p>For nested
+     * stacks, when the <code>OnStackFailure</code> parameter is set to
+     * <code>DELETE</code> for the change set for the parent stack, any failure in a
+     * child stack will cause the parent stack creation to fail and all stacks to be
+     * deleted.</p>
      */
     inline void SetOnStackFailure(const OnStackFailure& value) { m_onStackFailureHasBeenSet = true; m_onStackFailure = value; }
 
     /**
      * <p>Determines what action will be taken if stack creation fails. If this
      * parameter is specified, the <code>DisableRollback</code> parameter to the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a>
-     * API operation must not be specified. This must be one of these values:</p> <ul>
-     * <li> <p> <code>DELETE</code> - Deletes the change set if the stack creation
-     * fails. This is only valid when the <code>ChangeSetType</code> parameter is set
-     * to <code>CREATE</code>. If the deletion of the stack fails, the status of the
-     * stack is <code>DELETE_FAILED</code>.</p> </li> <li> <p> <code>DO_NOTHING</code>
-     * - if the stack creation fails, do nothing. This is equivalent to specifying
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">
+     * <code>ExecuteChangeSet</code> </a> API operation must not be specified. This
+     * must be one of these values:</p> <ul> <li> <p> <code>DELETE</code> - Deletes the
+     * change set if the stack creation fails. This is only valid when the
+     * <code>ChangeSetType</code> parameter is set to <code>CREATE</code>. If the
+     * deletion of the stack fails, the status of the stack is
+     * <code>DELETE_FAILED</code>.</p> </li> <li> <p> <code>DO_NOTHING</code> - if the
+     * stack creation fails, do nothing. This is equivalent to specifying
      * <code>true</code> for the <code>DisableRollback</code> parameter to the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a>
-     * API operation.</p> </li> <li> <p> <code>ROLLBACK</code> - if the stack creation
-     * fails, roll back the stack. This is equivalent to specifying <code>false</code>
-     * for the <code>DisableRollback</code> parameter to the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a>
-     * API operation.</p> </li> </ul> <p>For nested stacks, when the
-     * <code>OnStackFailure</code> parameter is set to <code>DELETE</code> for the
-     * change set for the parent stack, any failure in a child stack will cause the
-     * parent stack creation to fail and all stacks to be deleted.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">
+     * <code>ExecuteChangeSet</code> </a> API operation.</p> </li> <li> <p>
+     * <code>ROLLBACK</code> - if the stack creation fails, roll back the stack. This
+     * is equivalent to specifying <code>false</code> for the
+     * <code>DisableRollback</code> parameter to the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">
+     * <code>ExecuteChangeSet</code> </a> API operation.</p> </li> </ul> <p>For nested
+     * stacks, when the <code>OnStackFailure</code> parameter is set to
+     * <code>DELETE</code> for the change set for the parent stack, any failure in a
+     * child stack will cause the parent stack creation to fail and all stacks to be
+     * deleted.</p>
      */
     inline void SetOnStackFailure(OnStackFailure&& value) { m_onStackFailureHasBeenSet = true; m_onStackFailure = std::move(value); }
 
     /**
      * <p>Determines what action will be taken if stack creation fails. If this
      * parameter is specified, the <code>DisableRollback</code> parameter to the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a>
-     * API operation must not be specified. This must be one of these values:</p> <ul>
-     * <li> <p> <code>DELETE</code> - Deletes the change set if the stack creation
-     * fails. This is only valid when the <code>ChangeSetType</code> parameter is set
-     * to <code>CREATE</code>. If the deletion of the stack fails, the status of the
-     * stack is <code>DELETE_FAILED</code>.</p> </li> <li> <p> <code>DO_NOTHING</code>
-     * - if the stack creation fails, do nothing. This is equivalent to specifying
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">
+     * <code>ExecuteChangeSet</code> </a> API operation must not be specified. This
+     * must be one of these values:</p> <ul> <li> <p> <code>DELETE</code> - Deletes the
+     * change set if the stack creation fails. This is only valid when the
+     * <code>ChangeSetType</code> parameter is set to <code>CREATE</code>. If the
+     * deletion of the stack fails, the status of the stack is
+     * <code>DELETE_FAILED</code>.</p> </li> <li> <p> <code>DO_NOTHING</code> - if the
+     * stack creation fails, do nothing. This is equivalent to specifying
      * <code>true</code> for the <code>DisableRollback</code> parameter to the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a>
-     * API operation.</p> </li> <li> <p> <code>ROLLBACK</code> - if the stack creation
-     * fails, roll back the stack. This is equivalent to specifying <code>false</code>
-     * for the <code>DisableRollback</code> parameter to the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a>
-     * API operation.</p> </li> </ul> <p>For nested stacks, when the
-     * <code>OnStackFailure</code> parameter is set to <code>DELETE</code> for the
-     * change set for the parent stack, any failure in a child stack will cause the
-     * parent stack creation to fail and all stacks to be deleted.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">
+     * <code>ExecuteChangeSet</code> </a> API operation.</p> </li> <li> <p>
+     * <code>ROLLBACK</code> - if the stack creation fails, roll back the stack. This
+     * is equivalent to specifying <code>false</code> for the
+     * <code>DisableRollback</code> parameter to the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">
+     * <code>ExecuteChangeSet</code> </a> API operation.</p> </li> </ul> <p>For nested
+     * stacks, when the <code>OnStackFailure</code> parameter is set to
+     * <code>DELETE</code> for the change set for the parent stack, any failure in a
+     * child stack will cause the parent stack creation to fail and all stacks to be
+     * deleted.</p>
      */
     inline CreateChangeSetRequest& WithOnStackFailure(const OnStackFailure& value) { SetOnStackFailure(value); return *this;}
 
     /**
      * <p>Determines what action will be taken if stack creation fails. If this
      * parameter is specified, the <code>DisableRollback</code> parameter to the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a>
-     * API operation must not be specified. This must be one of these values:</p> <ul>
-     * <li> <p> <code>DELETE</code> - Deletes the change set if the stack creation
-     * fails. This is only valid when the <code>ChangeSetType</code> parameter is set
-     * to <code>CREATE</code>. If the deletion of the stack fails, the status of the
-     * stack is <code>DELETE_FAILED</code>.</p> </li> <li> <p> <code>DO_NOTHING</code>
-     * - if the stack creation fails, do nothing. This is equivalent to specifying
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">
+     * <code>ExecuteChangeSet</code> </a> API operation must not be specified. This
+     * must be one of these values:</p> <ul> <li> <p> <code>DELETE</code> - Deletes the
+     * change set if the stack creation fails. This is only valid when the
+     * <code>ChangeSetType</code> parameter is set to <code>CREATE</code>. If the
+     * deletion of the stack fails, the status of the stack is
+     * <code>DELETE_FAILED</code>.</p> </li> <li> <p> <code>DO_NOTHING</code> - if the
+     * stack creation fails, do nothing. This is equivalent to specifying
      * <code>true</code> for the <code>DisableRollback</code> parameter to the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a>
-     * API operation.</p> </li> <li> <p> <code>ROLLBACK</code> - if the stack creation
-     * fails, roll back the stack. This is equivalent to specifying <code>false</code>
-     * for the <code>DisableRollback</code> parameter to the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a>
-     * API operation.</p> </li> </ul> <p>For nested stacks, when the
-     * <code>OnStackFailure</code> parameter is set to <code>DELETE</code> for the
-     * change set for the parent stack, any failure in a child stack will cause the
-     * parent stack creation to fail and all stacks to be deleted.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">
+     * <code>ExecuteChangeSet</code> </a> API operation.</p> </li> <li> <p>
+     * <code>ROLLBACK</code> - if the stack creation fails, roll back the stack. This
+     * is equivalent to specifying <code>false</code> for the
+     * <code>DisableRollback</code> parameter to the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">
+     * <code>ExecuteChangeSet</code> </a> API operation.</p> </li> </ul> <p>For nested
+     * stacks, when the <code>OnStackFailure</code> parameter is set to
+     * <code>DELETE</code> for the change set for the parent stack, any failure in a
+     * child stack will cause the parent stack creation to fail and all stacks to be
+     * deleted.</p>
      */
     inline CreateChangeSetRequest& WithOnStackFailure(OnStackFailure&& value) { SetOnStackFailure(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Indicates if the change set imports resources that already exist.</p> 
+     * <p>This parameter can only import resources that have custom names in templates.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html">name
+     * type</a> in the <i>CloudFormation User Guide</i>. To import resources that do
+     * not accept custom names, such as EC2 instances, use the resource import feature
+     * instead. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import.html">Bringing
+     * existing resources into CloudFormation management</a> in the <i>CloudFormation
+     * User Guide</i>.</p> 
+     */
+    inline bool GetImportExistingResources() const{ return m_importExistingResources; }
+
+    /**
+     * <p>Indicates if the change set imports resources that already exist.</p> 
+     * <p>This parameter can only import resources that have custom names in templates.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html">name
+     * type</a> in the <i>CloudFormation User Guide</i>. To import resources that do
+     * not accept custom names, such as EC2 instances, use the resource import feature
+     * instead. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import.html">Bringing
+     * existing resources into CloudFormation management</a> in the <i>CloudFormation
+     * User Guide</i>.</p> 
+     */
+    inline bool ImportExistingResourcesHasBeenSet() const { return m_importExistingResourcesHasBeenSet; }
+
+    /**
+     * <p>Indicates if the change set imports resources that already exist.</p> 
+     * <p>This parameter can only import resources that have custom names in templates.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html">name
+     * type</a> in the <i>CloudFormation User Guide</i>. To import resources that do
+     * not accept custom names, such as EC2 instances, use the resource import feature
+     * instead. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import.html">Bringing
+     * existing resources into CloudFormation management</a> in the <i>CloudFormation
+     * User Guide</i>.</p> 
+     */
+    inline void SetImportExistingResources(bool value) { m_importExistingResourcesHasBeenSet = true; m_importExistingResources = value; }
+
+    /**
+     * <p>Indicates if the change set imports resources that already exist.</p> 
+     * <p>This parameter can only import resources that have custom names in templates.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-name.html">name
+     * type</a> in the <i>CloudFormation User Guide</i>. To import resources that do
+     * not accept custom names, such as EC2 instances, use the resource import feature
+     * instead. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import.html">Bringing
+     * existing resources into CloudFormation management</a> in the <i>CloudFormation
+     * User Guide</i>.</p> 
+     */
+    inline CreateChangeSetRequest& WithImportExistingResources(bool value) { SetImportExistingResources(value); return *this;}
 
   private:
 
@@ -1729,6 +1837,9 @@ namespace Model
 
     OnStackFailure m_onStackFailure;
     bool m_onStackFailureHasBeenSet = false;
+
+    bool m_importExistingResources;
+    bool m_importExistingResourcesHasBeenSet = false;
   };
 
 } // namespace Model

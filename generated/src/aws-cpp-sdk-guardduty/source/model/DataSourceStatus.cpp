@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DataSourceStatus::NOT_SET:
+            return {};
           case DataSourceStatus::ENABLED:
             return "ENABLED";
           case DataSourceStatus::DISABLED:

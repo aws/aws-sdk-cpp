@@ -109,6 +109,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MigrationWorkflowStatusEnum::NOT_SET:
+            return {};
           case MigrationWorkflowStatusEnum::CREATING:
             return "CREATING";
           case MigrationWorkflowStatusEnum::NOT_STARTED:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LambdaFilesystemPermission::NOT_SET:
+            return {};
           case LambdaFilesystemPermission::ro:
             return "ro";
           case LambdaFilesystemPermission::rw:

@@ -98,116 +98,150 @@ namespace Model
 
 
     /**
-     * <p>The source bucket used by the ManifestGenerator.</p>
+     * <p>The source bucket used by the ManifestGenerator.</p>  <p> <b>Directory
+     * buckets</b> - Directory buckets aren't supported as the source buckets used by
+     * <code>S3JobManifestGenerator</code> to generate the job manifest.</p> 
      */
     inline const Aws::String& GetSourceBucket() const{ return m_sourceBucket; }
 
     /**
-     * <p>The source bucket used by the ManifestGenerator.</p>
+     * <p>The source bucket used by the ManifestGenerator.</p>  <p> <b>Directory
+     * buckets</b> - Directory buckets aren't supported as the source buckets used by
+     * <code>S3JobManifestGenerator</code> to generate the job manifest.</p> 
      */
     inline bool SourceBucketHasBeenSet() const { return m_sourceBucketHasBeenSet; }
 
     /**
-     * <p>The source bucket used by the ManifestGenerator.</p>
+     * <p>The source bucket used by the ManifestGenerator.</p>  <p> <b>Directory
+     * buckets</b> - Directory buckets aren't supported as the source buckets used by
+     * <code>S3JobManifestGenerator</code> to generate the job manifest.</p> 
      */
     inline void SetSourceBucket(const Aws::String& value) { m_sourceBucketHasBeenSet = true; m_sourceBucket = value; }
 
     /**
-     * <p>The source bucket used by the ManifestGenerator.</p>
+     * <p>The source bucket used by the ManifestGenerator.</p>  <p> <b>Directory
+     * buckets</b> - Directory buckets aren't supported as the source buckets used by
+     * <code>S3JobManifestGenerator</code> to generate the job manifest.</p> 
      */
     inline void SetSourceBucket(Aws::String&& value) { m_sourceBucketHasBeenSet = true; m_sourceBucket = std::move(value); }
 
     /**
-     * <p>The source bucket used by the ManifestGenerator.</p>
+     * <p>The source bucket used by the ManifestGenerator.</p>  <p> <b>Directory
+     * buckets</b> - Directory buckets aren't supported as the source buckets used by
+     * <code>S3JobManifestGenerator</code> to generate the job manifest.</p> 
      */
     inline void SetSourceBucket(const char* value) { m_sourceBucketHasBeenSet = true; m_sourceBucket.assign(value); }
 
     /**
-     * <p>The source bucket used by the ManifestGenerator.</p>
+     * <p>The source bucket used by the ManifestGenerator.</p>  <p> <b>Directory
+     * buckets</b> - Directory buckets aren't supported as the source buckets used by
+     * <code>S3JobManifestGenerator</code> to generate the job manifest.</p> 
      */
     inline S3JobManifestGenerator& WithSourceBucket(const Aws::String& value) { SetSourceBucket(value); return *this;}
 
     /**
-     * <p>The source bucket used by the ManifestGenerator.</p>
+     * <p>The source bucket used by the ManifestGenerator.</p>  <p> <b>Directory
+     * buckets</b> - Directory buckets aren't supported as the source buckets used by
+     * <code>S3JobManifestGenerator</code> to generate the job manifest.</p> 
      */
     inline S3JobManifestGenerator& WithSourceBucket(Aws::String&& value) { SetSourceBucket(std::move(value)); return *this;}
 
     /**
-     * <p>The source bucket used by the ManifestGenerator.</p>
+     * <p>The source bucket used by the ManifestGenerator.</p>  <p> <b>Directory
+     * buckets</b> - Directory buckets aren't supported as the source buckets used by
+     * <code>S3JobManifestGenerator</code> to generate the job manifest.</p> 
      */
     inline S3JobManifestGenerator& WithSourceBucket(const char* value) { SetSourceBucket(value); return *this;}
 
 
     /**
-     * <p>Specifies the location the generated manifest will be written to.</p>
+     * <p>Specifies the location the generated manifest will be written to. Manifests
+     * can't be written to directory buckets. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-overview.html">Directory
+     * buckets</a>.</p>
      */
     inline const S3ManifestOutputLocation& GetManifestOutputLocation() const{ return m_manifestOutputLocation; }
 
     /**
-     * <p>Specifies the location the generated manifest will be written to.</p>
+     * <p>Specifies the location the generated manifest will be written to. Manifests
+     * can't be written to directory buckets. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-overview.html">Directory
+     * buckets</a>.</p>
      */
     inline bool ManifestOutputLocationHasBeenSet() const { return m_manifestOutputLocationHasBeenSet; }
 
     /**
-     * <p>Specifies the location the generated manifest will be written to.</p>
+     * <p>Specifies the location the generated manifest will be written to. Manifests
+     * can't be written to directory buckets. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-overview.html">Directory
+     * buckets</a>.</p>
      */
     inline void SetManifestOutputLocation(const S3ManifestOutputLocation& value) { m_manifestOutputLocationHasBeenSet = true; m_manifestOutputLocation = value; }
 
     /**
-     * <p>Specifies the location the generated manifest will be written to.</p>
+     * <p>Specifies the location the generated manifest will be written to. Manifests
+     * can't be written to directory buckets. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-overview.html">Directory
+     * buckets</a>.</p>
      */
     inline void SetManifestOutputLocation(S3ManifestOutputLocation&& value) { m_manifestOutputLocationHasBeenSet = true; m_manifestOutputLocation = std::move(value); }
 
     /**
-     * <p>Specifies the location the generated manifest will be written to.</p>
+     * <p>Specifies the location the generated manifest will be written to. Manifests
+     * can't be written to directory buckets. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-overview.html">Directory
+     * buckets</a>.</p>
      */
     inline S3JobManifestGenerator& WithManifestOutputLocation(const S3ManifestOutputLocation& value) { SetManifestOutputLocation(value); return *this;}
 
     /**
-     * <p>Specifies the location the generated manifest will be written to.</p>
+     * <p>Specifies the location the generated manifest will be written to. Manifests
+     * can't be written to directory buckets. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-overview.html">Directory
+     * buckets</a>.</p>
      */
     inline S3JobManifestGenerator& WithManifestOutputLocation(S3ManifestOutputLocation&& value) { SetManifestOutputLocation(std::move(value)); return *this;}
 
 
     /**
-     * <p>Specifies rules the S3JobManifestGenerator should use to use to decide
-     * whether an object in the source bucket should or should not be included in the
-     * generated job manifest.</p>
+     * <p>Specifies rules the S3JobManifestGenerator should use to decide whether an
+     * object in the source bucket should or should not be included in the generated
+     * job manifest.</p>
      */
     inline const JobManifestGeneratorFilter& GetFilter() const{ return m_filter; }
 
     /**
-     * <p>Specifies rules the S3JobManifestGenerator should use to use to decide
-     * whether an object in the source bucket should or should not be included in the
-     * generated job manifest.</p>
+     * <p>Specifies rules the S3JobManifestGenerator should use to decide whether an
+     * object in the source bucket should or should not be included in the generated
+     * job manifest.</p>
      */
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
 
     /**
-     * <p>Specifies rules the S3JobManifestGenerator should use to use to decide
-     * whether an object in the source bucket should or should not be included in the
-     * generated job manifest.</p>
+     * <p>Specifies rules the S3JobManifestGenerator should use to decide whether an
+     * object in the source bucket should or should not be included in the generated
+     * job manifest.</p>
      */
     inline void SetFilter(const JobManifestGeneratorFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
 
     /**
-     * <p>Specifies rules the S3JobManifestGenerator should use to use to decide
-     * whether an object in the source bucket should or should not be included in the
-     * generated job manifest.</p>
+     * <p>Specifies rules the S3JobManifestGenerator should use to decide whether an
+     * object in the source bucket should or should not be included in the generated
+     * job manifest.</p>
      */
     inline void SetFilter(JobManifestGeneratorFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
 
     /**
-     * <p>Specifies rules the S3JobManifestGenerator should use to use to decide
-     * whether an object in the source bucket should or should not be included in the
-     * generated job manifest.</p>
+     * <p>Specifies rules the S3JobManifestGenerator should use to decide whether an
+     * object in the source bucket should or should not be included in the generated
+     * job manifest.</p>
      */
     inline S3JobManifestGenerator& WithFilter(const JobManifestGeneratorFilter& value) { SetFilter(value); return *this;}
 
     /**
-     * <p>Specifies rules the S3JobManifestGenerator should use to use to decide
-     * whether an object in the source bucket should or should not be included in the
-     * generated job manifest.</p>
+     * <p>Specifies rules the S3JobManifestGenerator should use to decide whether an
+     * object in the source bucket should or should not be included in the generated
+     * job manifest.</p>
      */
     inline S3JobManifestGenerator& WithFilter(JobManifestGeneratorFilter&& value) { SetFilter(std::move(value)); return *this;}
 

@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StorageVirtualMachineFilterName::NOT_SET:
+            return {};
           case StorageVirtualMachineFilterName::file_system_id:
             return "file-system-id";
           default:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UploadStatus::NOT_SET:
+            return {};
           case UploadStatus::IN_PROGRESS:
             return "IN_PROGRESS";
           case UploadStatus::SUCCEEDED:

@@ -24,6 +24,7 @@ NetworkInterface::NetworkInterface() :
     m_associationHasBeenSet(false),
     m_attachmentHasBeenSet(false),
     m_availabilityZoneHasBeenSet(false),
+    m_connectionTrackingConfigurationHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_groupsHasBeenSet(false),
     m_interfaceType(NetworkInterfaceType::NOT_SET),
@@ -60,6 +61,7 @@ NetworkInterface::NetworkInterface(const XmlNode& xmlNode) :
     m_associationHasBeenSet(false),
     m_attachmentHasBeenSet(false),
     m_availabilityZoneHasBeenSet(false),
+    m_connectionTrackingConfigurationHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_groupsHasBeenSet(false),
     m_interfaceType(NetworkInterfaceType::NOT_SET),
@@ -116,6 +118,12 @@ NetworkInterface& NetworkInterface::operator =(const XmlNode& xmlNode)
     {
       m_availabilityZone = Aws::Utils::Xml::DecodeEscapedXmlText(availabilityZoneNode.GetText());
       m_availabilityZoneHasBeenSet = true;
+    }
+    XmlNode connectionTrackingConfigurationNode = resultNode.FirstChild("connectionTrackingConfiguration");
+    if(!connectionTrackingConfigurationNode.IsNull())
+    {
+      m_connectionTrackingConfiguration = connectionTrackingConfigurationNode;
+      m_connectionTrackingConfigurationHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("description");
     if(!descriptionNode.IsNull())
@@ -317,6 +325,13 @@ void NetworkInterface::OutputToStream(Aws::OStream& oStream, const char* locatio
       oStream << location << index << locationValue << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
   }
 
+  if(m_connectionTrackingConfigurationHasBeenSet)
+  {
+      Aws::StringStream connectionTrackingConfigurationLocationAndMemberSs;
+      connectionTrackingConfigurationLocationAndMemberSs << location << index << locationValue << ".ConnectionTrackingConfiguration";
+      m_connectionTrackingConfiguration.OutputToStream(oStream, connectionTrackingConfigurationLocationAndMemberSs.str().c_str());
+  }
+
   if(m_descriptionHasBeenSet)
   {
       oStream << location << index << locationValue << ".Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
@@ -487,6 +502,12 @@ void NetworkInterface::OutputToStream(Aws::OStream& oStream, const char* locatio
   if(m_availabilityZoneHasBeenSet)
   {
       oStream << location << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
+  }
+  if(m_connectionTrackingConfigurationHasBeenSet)
+  {
+      Aws::String connectionTrackingConfigurationLocationAndMember(location);
+      connectionTrackingConfigurationLocationAndMember += ".ConnectionTrackingConfiguration";
+      m_connectionTrackingConfiguration.OutputToStream(oStream, connectionTrackingConfigurationLocationAndMember.c_str());
   }
   if(m_descriptionHasBeenSet)
   {

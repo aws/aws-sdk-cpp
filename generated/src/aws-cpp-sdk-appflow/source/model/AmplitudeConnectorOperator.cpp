@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AmplitudeConnectorOperator::NOT_SET:
+            return {};
           case AmplitudeConnectorOperator::BETWEEN:
             return "BETWEEN";
           default:

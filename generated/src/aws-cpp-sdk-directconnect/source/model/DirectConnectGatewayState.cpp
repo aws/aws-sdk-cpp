@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DirectConnectGatewayState::NOT_SET:
+            return {};
           case DirectConnectGatewayState::pending:
             return "pending";
           case DirectConnectGatewayState::available:

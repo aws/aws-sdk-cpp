@@ -342,6 +342,47 @@ namespace Model
      */
     inline RegisterApplicationRequest& AddCredentials(ApplicationCredential&& value) { m_credentialsHasBeenSet = true; m_credentials.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The Amazon Resource Name of the SAP HANA database.</p>
+     */
+    inline const Aws::String& GetDatabaseArn() const{ return m_databaseArn; }
+
+    /**
+     * <p>The Amazon Resource Name of the SAP HANA database.</p>
+     */
+    inline bool DatabaseArnHasBeenSet() const { return m_databaseArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name of the SAP HANA database.</p>
+     */
+    inline void SetDatabaseArn(const Aws::String& value) { m_databaseArnHasBeenSet = true; m_databaseArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name of the SAP HANA database.</p>
+     */
+    inline void SetDatabaseArn(Aws::String&& value) { m_databaseArnHasBeenSet = true; m_databaseArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name of the SAP HANA database.</p>
+     */
+    inline void SetDatabaseArn(const char* value) { m_databaseArnHasBeenSet = true; m_databaseArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name of the SAP HANA database.</p>
+     */
+    inline RegisterApplicationRequest& WithDatabaseArn(const Aws::String& value) { SetDatabaseArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name of the SAP HANA database.</p>
+     */
+    inline RegisterApplicationRequest& WithDatabaseArn(Aws::String&& value) { SetDatabaseArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name of the SAP HANA database.</p>
+     */
+    inline RegisterApplicationRequest& WithDatabaseArn(const char* value) { SetDatabaseArn(value); return *this;}
+
   private:
 
     Aws::String m_applicationId;
@@ -364,6 +405,9 @@ namespace Model
 
     Aws::Vector<ApplicationCredential> m_credentials;
     bool m_credentialsHasBeenSet = false;
+
+    Aws::String m_databaseArn;
+    bool m_databaseArnHasBeenSet = false;
   };
 
 } // namespace Model

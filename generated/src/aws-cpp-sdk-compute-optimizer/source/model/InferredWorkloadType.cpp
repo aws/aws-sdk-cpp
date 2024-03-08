@@ -84,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InferredWorkloadType::NOT_SET:
+            return {};
           case InferredWorkloadType::AmazonEmr:
             return "AmazonEmr";
           case InferredWorkloadType::ApacheCassandra:

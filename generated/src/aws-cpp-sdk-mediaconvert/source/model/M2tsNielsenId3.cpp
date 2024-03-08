@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case M2tsNielsenId3::NOT_SET:
+            return {};
           case M2tsNielsenId3::INSERT:
             return "INSERT";
           case M2tsNielsenId3::NONE:

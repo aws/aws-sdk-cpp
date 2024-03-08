@@ -78,42 +78,42 @@ namespace Model
 
 
     /**
-     * <p> The name for the branch, for the job. </p>
+     * <p>The name of the branch to use for the job. </p>
      */
     inline const Aws::String& GetBranchName() const{ return m_branchName; }
 
     /**
-     * <p> The name for the branch, for the job. </p>
+     * <p>The name of the branch to use for the job. </p>
      */
     inline bool BranchNameHasBeenSet() const { return m_branchNameHasBeenSet; }
 
     /**
-     * <p> The name for the branch, for the job. </p>
+     * <p>The name of the branch to use for the job. </p>
      */
     inline void SetBranchName(const Aws::String& value) { m_branchNameHasBeenSet = true; m_branchName = value; }
 
     /**
-     * <p> The name for the branch, for the job. </p>
+     * <p>The name of the branch to use for the job. </p>
      */
     inline void SetBranchName(Aws::String&& value) { m_branchNameHasBeenSet = true; m_branchName = std::move(value); }
 
     /**
-     * <p> The name for the branch, for the job. </p>
+     * <p>The name of the branch to use for the job. </p>
      */
     inline void SetBranchName(const char* value) { m_branchNameHasBeenSet = true; m_branchName.assign(value); }
 
     /**
-     * <p> The name for the branch, for the job. </p>
+     * <p>The name of the branch to use for the job. </p>
      */
     inline DeleteJobRequest& WithBranchName(const Aws::String& value) { SetBranchName(value); return *this;}
 
     /**
-     * <p> The name for the branch, for the job. </p>
+     * <p>The name of the branch to use for the job. </p>
      */
     inline DeleteJobRequest& WithBranchName(Aws::String&& value) { SetBranchName(std::move(value)); return *this;}
 
     /**
-     * <p> The name for the branch, for the job. </p>
+     * <p>The name of the branch to use for the job. </p>
      */
     inline DeleteJobRequest& WithBranchName(const char* value) { SetBranchName(value); return *this;}
 

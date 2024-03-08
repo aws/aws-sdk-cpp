@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MessageContentType::NOT_SET:
+            return {};
           case MessageContentType::CustomPayload:
             return "CustomPayload";
           case MessageContentType::ImageResponseCard:

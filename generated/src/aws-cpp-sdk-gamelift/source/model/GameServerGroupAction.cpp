@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case GameServerGroupAction::NOT_SET:
+            return {};
           case GameServerGroupAction::REPLACE_INSTANCE_TYPES:
             return "REPLACE_INSTANCE_TYPES";
           default:

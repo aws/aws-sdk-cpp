@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DataRepositoryLifecycle::NOT_SET:
+            return {};
           case DataRepositoryLifecycle::CREATING:
             return "CREATING";
           case DataRepositoryLifecycle::AVAILABLE:

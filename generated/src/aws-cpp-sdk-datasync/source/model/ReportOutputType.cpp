@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReportOutputType::NOT_SET:
+            return {};
           case ReportOutputType::SUMMARY_ONLY:
             return "SUMMARY_ONLY";
           case ReportOutputType::STANDARD:

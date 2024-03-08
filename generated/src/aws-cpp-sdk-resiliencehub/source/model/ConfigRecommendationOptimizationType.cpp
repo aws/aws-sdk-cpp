@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ConfigRecommendationOptimizationType::NOT_SET:
+            return {};
           case ConfigRecommendationOptimizationType::LeastCost:
             return "LeastCost";
           case ConfigRecommendationOptimizationType::LeastChange:

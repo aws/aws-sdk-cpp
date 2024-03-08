@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FileSystemMaintenanceOperation::NOT_SET:
+            return {};
           case FileSystemMaintenanceOperation::PATCHING:
             return "PATCHING";
           case FileSystemMaintenanceOperation::BACKING_UP:

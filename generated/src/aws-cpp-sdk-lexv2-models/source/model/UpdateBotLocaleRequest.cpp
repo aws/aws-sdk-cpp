@@ -19,7 +19,8 @@ UpdateBotLocaleRequest::UpdateBotLocaleRequest() :
     m_descriptionHasBeenSet(false),
     m_nluIntentConfidenceThreshold(0.0),
     m_nluIntentConfidenceThresholdHasBeenSet(false),
-    m_voiceSettingsHasBeenSet(false)
+    m_voiceSettingsHasBeenSet(false),
+    m_generativeAISettingsHasBeenSet(false)
 {
 }
 
@@ -42,6 +43,12 @@ Aws::String UpdateBotLocaleRequest::SerializePayload() const
   if(m_voiceSettingsHasBeenSet)
   {
    payload.WithObject("voiceSettings", m_voiceSettings.Jsonize());
+
+  }
+
+  if(m_generativeAISettingsHasBeenSet)
+  {
+   payload.WithObject("generativeAISettings", m_generativeAISettings.Jsonize());
 
   }
 

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case JobType::NOT_SET:
+            return {};
           case JobType::LAUNCH:
             return "LAUNCH";
           case JobType::TERMINATE:

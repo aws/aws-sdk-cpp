@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case WorkflowStepType::NOT_SET:
+            return {};
           case WorkflowStepType::COPY:
             return "COPY";
           case WorkflowStepType::CUSTOM:

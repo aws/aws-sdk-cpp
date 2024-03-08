@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OfferingTransactionType::NOT_SET:
+            return {};
           case OfferingTransactionType::PURCHASE:
             return "PURCHASE";
           case OfferingTransactionType::RENEW:

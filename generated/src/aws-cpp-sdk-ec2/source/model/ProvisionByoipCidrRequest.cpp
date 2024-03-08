@@ -20,7 +20,8 @@ ProvisionByoipCidrRequest::ProvisionByoipCidrRequest() :
     m_dryRunHasBeenSet(false),
     m_poolTagSpecificationsHasBeenSet(false),
     m_multiRegion(false),
-    m_multiRegionHasBeenSet(false)
+    m_multiRegionHasBeenSet(false),
+    m_networkBorderGroupHasBeenSet(false)
 {
 }
 
@@ -66,6 +67,11 @@ Aws::String ProvisionByoipCidrRequest::SerializePayload() const
   if(m_multiRegionHasBeenSet)
   {
     ss << "MultiRegion=" << std::boolalpha << m_multiRegion << "&";
+  }
+
+  if(m_networkBorderGroupHasBeenSet)
+  {
+    ss << "NetworkBorderGroup=" << StringUtils::URLEncode(m_networkBorderGroup.c_str()) << "&";
   }
 
   ss << "Version=2016-11-15";

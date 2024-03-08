@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VideoDescriptionScalingBehavior::NOT_SET:
+            return {};
           case VideoDescriptionScalingBehavior::DEFAULT:
             return "DEFAULT";
           case VideoDescriptionScalingBehavior::STRETCH_TO_OUTPUT:

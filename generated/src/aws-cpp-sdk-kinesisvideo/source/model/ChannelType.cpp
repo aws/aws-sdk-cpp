@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ChannelType::NOT_SET:
+            return {};
           case ChannelType::SINGLE_MASTER:
             return "SINGLE_MASTER";
           case ChannelType::FULL_MESH:

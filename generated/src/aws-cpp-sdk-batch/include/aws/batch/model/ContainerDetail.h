@@ -13,6 +13,7 @@
 #include <aws/batch/model/FargatePlatformConfiguration.h>
 #include <aws/batch/model/EphemeralStorage.h>
 #include <aws/batch/model/RuntimePlatform.h>
+#include <aws/batch/model/RepositoryCredentials.h>
 #include <aws/batch/model/Volume.h>
 #include <aws/batch/model/KeyValuePair.h>
 #include <aws/batch/model/MountPoint.h>
@@ -94,8 +95,8 @@ namespace Model
 
 
     /**
-     * <p>The number of vCPUs reserved for the container. For jobs that run on EC2
-     * resources, you can specify the vCPU requirement for the job using
+     * <p>The number of vCPUs reserved for the container. For jobs that run on Amazon
+     * EC2 resources, you can specify the vCPU requirement for the job using
      * <code>resourceRequirements</code>, but you can't specify the vCPU requirements
      * in both the <code>vcpus</code> and <code>resourceRequirements</code> object.
      * This parameter maps to <code>CpuShares</code> in the <a
@@ -114,8 +115,8 @@ namespace Model
     inline int GetVcpus() const{ return m_vcpus; }
 
     /**
-     * <p>The number of vCPUs reserved for the container. For jobs that run on EC2
-     * resources, you can specify the vCPU requirement for the job using
+     * <p>The number of vCPUs reserved for the container. For jobs that run on Amazon
+     * EC2 resources, you can specify the vCPU requirement for the job using
      * <code>resourceRequirements</code>, but you can't specify the vCPU requirements
      * in both the <code>vcpus</code> and <code>resourceRequirements</code> object.
      * This parameter maps to <code>CpuShares</code> in the <a
@@ -134,8 +135,8 @@ namespace Model
     inline bool VcpusHasBeenSet() const { return m_vcpusHasBeenSet; }
 
     /**
-     * <p>The number of vCPUs reserved for the container. For jobs that run on EC2
-     * resources, you can specify the vCPU requirement for the job using
+     * <p>The number of vCPUs reserved for the container. For jobs that run on Amazon
+     * EC2 resources, you can specify the vCPU requirement for the job using
      * <code>resourceRequirements</code>, but you can't specify the vCPU requirements
      * in both the <code>vcpus</code> and <code>resourceRequirements</code> object.
      * This parameter maps to <code>CpuShares</code> in the <a
@@ -154,8 +155,8 @@ namespace Model
     inline void SetVcpus(int value) { m_vcpusHasBeenSet = true; m_vcpus = value; }
 
     /**
-     * <p>The number of vCPUs reserved for the container. For jobs that run on EC2
-     * resources, you can specify the vCPU requirement for the job using
+     * <p>The number of vCPUs reserved for the container. For jobs that run on Amazon
+     * EC2 resources, you can specify the vCPU requirement for the job using
      * <code>resourceRequirements</code>, but you can't specify the vCPU requirements
      * in both the <code>vcpus</code> and <code>resourceRequirements</code> object.
      * This parameter maps to <code>CpuShares</code> in the <a
@@ -175,34 +176,34 @@ namespace Model
 
 
     /**
-     * <p>For jobs running on EC2 resources that didn't specify memory requirements
-     * using <code>resourceRequirements</code>, the number of MiB of memory reserved
-     * for the job. For other jobs, including all run on Fargate resources, see
-     * <code>resourceRequirements</code>.</p>
+     * <p>For jobs running on Amazon EC2 resources that didn't specify memory
+     * requirements using <code>resourceRequirements</code>, the number of MiB of
+     * memory reserved for the job. For other jobs, including all run on Fargate
+     * resources, see <code>resourceRequirements</code>.</p>
      */
     inline int GetMemory() const{ return m_memory; }
 
     /**
-     * <p>For jobs running on EC2 resources that didn't specify memory requirements
-     * using <code>resourceRequirements</code>, the number of MiB of memory reserved
-     * for the job. For other jobs, including all run on Fargate resources, see
-     * <code>resourceRequirements</code>.</p>
+     * <p>For jobs running on Amazon EC2 resources that didn't specify memory
+     * requirements using <code>resourceRequirements</code>, the number of MiB of
+     * memory reserved for the job. For other jobs, including all run on Fargate
+     * resources, see <code>resourceRequirements</code>.</p>
      */
     inline bool MemoryHasBeenSet() const { return m_memoryHasBeenSet; }
 
     /**
-     * <p>For jobs running on EC2 resources that didn't specify memory requirements
-     * using <code>resourceRequirements</code>, the number of MiB of memory reserved
-     * for the job. For other jobs, including all run on Fargate resources, see
-     * <code>resourceRequirements</code>.</p>
+     * <p>For jobs running on Amazon EC2 resources that didn't specify memory
+     * requirements using <code>resourceRequirements</code>, the number of MiB of
+     * memory reserved for the job. For other jobs, including all run on Fargate
+     * resources, see <code>resourceRequirements</code>.</p>
      */
     inline void SetMemory(int value) { m_memoryHasBeenSet = true; m_memory = value; }
 
     /**
-     * <p>For jobs running on EC2 resources that didn't specify memory requirements
-     * using <code>resourceRequirements</code>, the number of MiB of memory reserved
-     * for the job. For other jobs, including all run on Fargate resources, see
-     * <code>resourceRequirements</code>.</p>
+     * <p>For jobs running on Amazon EC2 resources that didn't specify memory
+     * requirements using <code>resourceRequirements</code>, the number of MiB of
+     * memory reserved for the job. For other jobs, including all run on Fargate
+     * resources, see <code>resourceRequirements</code>.</p>
      */
     inline ContainerDetail& WithMemory(int value) { SetMemory(value); return *this;}
 
@@ -779,22 +780,22 @@ namespace Model
 
 
     /**
-     * <p>The exit code to return upon completion.</p>
+     * <p>The exit code returned upon completion.</p>
      */
     inline int GetExitCode() const{ return m_exitCode; }
 
     /**
-     * <p>The exit code to return upon completion.</p>
+     * <p>The exit code returned upon completion.</p>
      */
     inline bool ExitCodeHasBeenSet() const { return m_exitCodeHasBeenSet; }
 
     /**
-     * <p>The exit code to return upon completion.</p>
+     * <p>The exit code returned upon completion.</p>
      */
     inline void SetExitCode(int value) { m_exitCodeHasBeenSet = true; m_exitCode = value; }
 
     /**
-     * <p>The exit code to return upon completion.</p>
+     * <p>The exit code returned upon completion.</p>
      */
     inline ContainerDetail& WithExitCode(int value) { SetExitCode(value); return *this;}
 
@@ -1228,16 +1229,16 @@ namespace Model
      * options for different supported log drivers, see <a
      * href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging
      * drivers</a> in the Docker documentation.</p>  <p>Batch currently supports
-     * a subset of the logging drivers available to the Docker daemon (shown in the
-     * <a>LogConfiguration</a> data type). Additional log drivers might be available in
-     * future releases of the Amazon ECS container agent.</p>  <p>This parameter
-     * requires version 1.18 of the Docker Remote API or greater on your container
-     * instance. To check the Docker Remote API version on your container instance, log
-     * in to your container instance and run the following command: <code>sudo docker
-     * version | grep "Server API version"</code> </p>  <p>The Amazon ECS
-     * container agent running on a container instance must register the logging
-     * drivers available on that instance with the
-     * <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before
+     * a subset of the logging drivers available to the Docker daemon (shown in the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties-logconfiguration.html">LogConfiguration</a>
+     * data type). Additional log drivers might be available in future releases of the
+     * Amazon ECS container agent.</p>  <p>This parameter requires version 1.18
+     * of the Docker Remote API or greater on your container instance. To check the
+     * Docker Remote API version on your container instance, log in to your container
+     * instance and run the following command: <code>sudo docker version | grep "Server
+     * API version"</code> </p>  <p>The Amazon ECS container agent running on a
+     * container instance must register the logging drivers available on that instance
+     * with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before
      * containers placed on that instance can use these log configuration options. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
@@ -1263,16 +1264,16 @@ namespace Model
      * options for different supported log drivers, see <a
      * href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging
      * drivers</a> in the Docker documentation.</p>  <p>Batch currently supports
-     * a subset of the logging drivers available to the Docker daemon (shown in the
-     * <a>LogConfiguration</a> data type). Additional log drivers might be available in
-     * future releases of the Amazon ECS container agent.</p>  <p>This parameter
-     * requires version 1.18 of the Docker Remote API or greater on your container
-     * instance. To check the Docker Remote API version on your container instance, log
-     * in to your container instance and run the following command: <code>sudo docker
-     * version | grep "Server API version"</code> </p>  <p>The Amazon ECS
-     * container agent running on a container instance must register the logging
-     * drivers available on that instance with the
-     * <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before
+     * a subset of the logging drivers available to the Docker daemon (shown in the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties-logconfiguration.html">LogConfiguration</a>
+     * data type). Additional log drivers might be available in future releases of the
+     * Amazon ECS container agent.</p>  <p>This parameter requires version 1.18
+     * of the Docker Remote API or greater on your container instance. To check the
+     * Docker Remote API version on your container instance, log in to your container
+     * instance and run the following command: <code>sudo docker version | grep "Server
+     * API version"</code> </p>  <p>The Amazon ECS container agent running on a
+     * container instance must register the logging drivers available on that instance
+     * with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before
      * containers placed on that instance can use these log configuration options. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
@@ -1298,16 +1299,16 @@ namespace Model
      * options for different supported log drivers, see <a
      * href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging
      * drivers</a> in the Docker documentation.</p>  <p>Batch currently supports
-     * a subset of the logging drivers available to the Docker daemon (shown in the
-     * <a>LogConfiguration</a> data type). Additional log drivers might be available in
-     * future releases of the Amazon ECS container agent.</p>  <p>This parameter
-     * requires version 1.18 of the Docker Remote API or greater on your container
-     * instance. To check the Docker Remote API version on your container instance, log
-     * in to your container instance and run the following command: <code>sudo docker
-     * version | grep "Server API version"</code> </p>  <p>The Amazon ECS
-     * container agent running on a container instance must register the logging
-     * drivers available on that instance with the
-     * <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before
+     * a subset of the logging drivers available to the Docker daemon (shown in the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties-logconfiguration.html">LogConfiguration</a>
+     * data type). Additional log drivers might be available in future releases of the
+     * Amazon ECS container agent.</p>  <p>This parameter requires version 1.18
+     * of the Docker Remote API or greater on your container instance. To check the
+     * Docker Remote API version on your container instance, log in to your container
+     * instance and run the following command: <code>sudo docker version | grep "Server
+     * API version"</code> </p>  <p>The Amazon ECS container agent running on a
+     * container instance must register the logging drivers available on that instance
+     * with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before
      * containers placed on that instance can use these log configuration options. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
@@ -1333,16 +1334,16 @@ namespace Model
      * options for different supported log drivers, see <a
      * href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging
      * drivers</a> in the Docker documentation.</p>  <p>Batch currently supports
-     * a subset of the logging drivers available to the Docker daemon (shown in the
-     * <a>LogConfiguration</a> data type). Additional log drivers might be available in
-     * future releases of the Amazon ECS container agent.</p>  <p>This parameter
-     * requires version 1.18 of the Docker Remote API or greater on your container
-     * instance. To check the Docker Remote API version on your container instance, log
-     * in to your container instance and run the following command: <code>sudo docker
-     * version | grep "Server API version"</code> </p>  <p>The Amazon ECS
-     * container agent running on a container instance must register the logging
-     * drivers available on that instance with the
-     * <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before
+     * a subset of the logging drivers available to the Docker daemon (shown in the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties-logconfiguration.html">LogConfiguration</a>
+     * data type). Additional log drivers might be available in future releases of the
+     * Amazon ECS container agent.</p>  <p>This parameter requires version 1.18
+     * of the Docker Remote API or greater on your container instance. To check the
+     * Docker Remote API version on your container instance, log in to your container
+     * instance and run the following command: <code>sudo docker version | grep "Server
+     * API version"</code> </p>  <p>The Amazon ECS container agent running on a
+     * container instance must register the logging drivers available on that instance
+     * with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before
      * containers placed on that instance can use these log configuration options. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
@@ -1368,16 +1369,16 @@ namespace Model
      * options for different supported log drivers, see <a
      * href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging
      * drivers</a> in the Docker documentation.</p>  <p>Batch currently supports
-     * a subset of the logging drivers available to the Docker daemon (shown in the
-     * <a>LogConfiguration</a> data type). Additional log drivers might be available in
-     * future releases of the Amazon ECS container agent.</p>  <p>This parameter
-     * requires version 1.18 of the Docker Remote API or greater on your container
-     * instance. To check the Docker Remote API version on your container instance, log
-     * in to your container instance and run the following command: <code>sudo docker
-     * version | grep "Server API version"</code> </p>  <p>The Amazon ECS
-     * container agent running on a container instance must register the logging
-     * drivers available on that instance with the
-     * <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before
+     * a subset of the logging drivers available to the Docker daemon (shown in the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties-logconfiguration.html">LogConfiguration</a>
+     * data type). Additional log drivers might be available in future releases of the
+     * Amazon ECS container agent.</p>  <p>This parameter requires version 1.18
+     * of the Docker Remote API or greater on your container instance. To check the
+     * Docker Remote API version on your container instance, log in to your container
+     * instance and run the following command: <code>sudo docker version | grep "Server
+     * API version"</code> </p>  <p>The Amazon ECS container agent running on a
+     * container instance must register the logging drivers available on that instance
+     * with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before
      * containers placed on that instance can use these log configuration options. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
@@ -1403,16 +1404,16 @@ namespace Model
      * options for different supported log drivers, see <a
      * href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging
      * drivers</a> in the Docker documentation.</p>  <p>Batch currently supports
-     * a subset of the logging drivers available to the Docker daemon (shown in the
-     * <a>LogConfiguration</a> data type). Additional log drivers might be available in
-     * future releases of the Amazon ECS container agent.</p>  <p>This parameter
-     * requires version 1.18 of the Docker Remote API or greater on your container
-     * instance. To check the Docker Remote API version on your container instance, log
-     * in to your container instance and run the following command: <code>sudo docker
-     * version | grep "Server API version"</code> </p>  <p>The Amazon ECS
-     * container agent running on a container instance must register the logging
-     * drivers available on that instance with the
-     * <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before
+     * a subset of the logging drivers available to the Docker daemon (shown in the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties-logconfiguration.html">LogConfiguration</a>
+     * data type). Additional log drivers might be available in future releases of the
+     * Amazon ECS container agent.</p>  <p>This parameter requires version 1.18
+     * of the Docker Remote API or greater on your container instance. To check the
+     * Docker Remote API version on your container instance, log in to your container
+     * instance and run the following command: <code>sudo docker version | grep "Server
+     * API version"</code> </p>  <p>The Amazon ECS container agent running on a
+     * container instance must register the logging drivers available on that instance
+     * with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before
      * containers placed on that instance can use these log configuration options. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
@@ -1481,74 +1482,86 @@ namespace Model
 
     /**
      * <p>The network configuration for jobs that are running on Fargate resources.
-     * Jobs that are running on EC2 resources must not specify this parameter.</p>
+     * Jobs that are running on Amazon EC2 resources must not specify this
+     * parameter.</p>
      */
     inline const NetworkConfiguration& GetNetworkConfiguration() const{ return m_networkConfiguration; }
 
     /**
      * <p>The network configuration for jobs that are running on Fargate resources.
-     * Jobs that are running on EC2 resources must not specify this parameter.</p>
+     * Jobs that are running on Amazon EC2 resources must not specify this
+     * parameter.</p>
      */
     inline bool NetworkConfigurationHasBeenSet() const { return m_networkConfigurationHasBeenSet; }
 
     /**
      * <p>The network configuration for jobs that are running on Fargate resources.
-     * Jobs that are running on EC2 resources must not specify this parameter.</p>
+     * Jobs that are running on Amazon EC2 resources must not specify this
+     * parameter.</p>
      */
     inline void SetNetworkConfiguration(const NetworkConfiguration& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = value; }
 
     /**
      * <p>The network configuration for jobs that are running on Fargate resources.
-     * Jobs that are running on EC2 resources must not specify this parameter.</p>
+     * Jobs that are running on Amazon EC2 resources must not specify this
+     * parameter.</p>
      */
     inline void SetNetworkConfiguration(NetworkConfiguration&& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = std::move(value); }
 
     /**
      * <p>The network configuration for jobs that are running on Fargate resources.
-     * Jobs that are running on EC2 resources must not specify this parameter.</p>
+     * Jobs that are running on Amazon EC2 resources must not specify this
+     * parameter.</p>
      */
     inline ContainerDetail& WithNetworkConfiguration(const NetworkConfiguration& value) { SetNetworkConfiguration(value); return *this;}
 
     /**
      * <p>The network configuration for jobs that are running on Fargate resources.
-     * Jobs that are running on EC2 resources must not specify this parameter.</p>
+     * Jobs that are running on Amazon EC2 resources must not specify this
+     * parameter.</p>
      */
     inline ContainerDetail& WithNetworkConfiguration(NetworkConfiguration&& value) { SetNetworkConfiguration(std::move(value)); return *this;}
 
 
     /**
      * <p>The platform configuration for jobs that are running on Fargate resources.
-     * Jobs that are running on EC2 resources must not specify this parameter.</p>
+     * Jobs that are running on Amazon EC2 resources must not specify this
+     * parameter.</p>
      */
     inline const FargatePlatformConfiguration& GetFargatePlatformConfiguration() const{ return m_fargatePlatformConfiguration; }
 
     /**
      * <p>The platform configuration for jobs that are running on Fargate resources.
-     * Jobs that are running on EC2 resources must not specify this parameter.</p>
+     * Jobs that are running on Amazon EC2 resources must not specify this
+     * parameter.</p>
      */
     inline bool FargatePlatformConfigurationHasBeenSet() const { return m_fargatePlatformConfigurationHasBeenSet; }
 
     /**
      * <p>The platform configuration for jobs that are running on Fargate resources.
-     * Jobs that are running on EC2 resources must not specify this parameter.</p>
+     * Jobs that are running on Amazon EC2 resources must not specify this
+     * parameter.</p>
      */
     inline void SetFargatePlatformConfiguration(const FargatePlatformConfiguration& value) { m_fargatePlatformConfigurationHasBeenSet = true; m_fargatePlatformConfiguration = value; }
 
     /**
      * <p>The platform configuration for jobs that are running on Fargate resources.
-     * Jobs that are running on EC2 resources must not specify this parameter.</p>
+     * Jobs that are running on Amazon EC2 resources must not specify this
+     * parameter.</p>
      */
     inline void SetFargatePlatformConfiguration(FargatePlatformConfiguration&& value) { m_fargatePlatformConfigurationHasBeenSet = true; m_fargatePlatformConfiguration = std::move(value); }
 
     /**
      * <p>The platform configuration for jobs that are running on Fargate resources.
-     * Jobs that are running on EC2 resources must not specify this parameter.</p>
+     * Jobs that are running on Amazon EC2 resources must not specify this
+     * parameter.</p>
      */
     inline ContainerDetail& WithFargatePlatformConfiguration(const FargatePlatformConfiguration& value) { SetFargatePlatformConfiguration(value); return *this;}
 
     /**
      * <p>The platform configuration for jobs that are running on Fargate resources.
-     * Jobs that are running on EC2 resources must not specify this parameter.</p>
+     * Jobs that are running on Amazon EC2 resources must not specify this
+     * parameter.</p>
      */
     inline ContainerDetail& WithFargatePlatformConfiguration(FargatePlatformConfiguration&& value) { SetFargatePlatformConfiguration(std::move(value)); return *this;}
 
@@ -1596,23 +1609,72 @@ namespace Model
     inline ContainerDetail& WithEphemeralStorage(EphemeralStorage&& value) { SetEphemeralStorage(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>An object that represents the compute environment architecture for Batch jobs
+     * on Fargate.</p>
+     */
     inline const RuntimePlatform& GetRuntimePlatform() const{ return m_runtimePlatform; }
 
-    
+    /**
+     * <p>An object that represents the compute environment architecture for Batch jobs
+     * on Fargate.</p>
+     */
     inline bool RuntimePlatformHasBeenSet() const { return m_runtimePlatformHasBeenSet; }
 
-    
+    /**
+     * <p>An object that represents the compute environment architecture for Batch jobs
+     * on Fargate.</p>
+     */
     inline void SetRuntimePlatform(const RuntimePlatform& value) { m_runtimePlatformHasBeenSet = true; m_runtimePlatform = value; }
 
-    
+    /**
+     * <p>An object that represents the compute environment architecture for Batch jobs
+     * on Fargate.</p>
+     */
     inline void SetRuntimePlatform(RuntimePlatform&& value) { m_runtimePlatformHasBeenSet = true; m_runtimePlatform = std::move(value); }
 
-    
+    /**
+     * <p>An object that represents the compute environment architecture for Batch jobs
+     * on Fargate.</p>
+     */
     inline ContainerDetail& WithRuntimePlatform(const RuntimePlatform& value) { SetRuntimePlatform(value); return *this;}
 
-    
+    /**
+     * <p>An object that represents the compute environment architecture for Batch jobs
+     * on Fargate.</p>
+     */
     inline ContainerDetail& WithRuntimePlatform(RuntimePlatform&& value) { SetRuntimePlatform(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The private repository authentication credentials to use.</p>
+     */
+    inline const RepositoryCredentials& GetRepositoryCredentials() const{ return m_repositoryCredentials; }
+
+    /**
+     * <p>The private repository authentication credentials to use.</p>
+     */
+    inline bool RepositoryCredentialsHasBeenSet() const { return m_repositoryCredentialsHasBeenSet; }
+
+    /**
+     * <p>The private repository authentication credentials to use.</p>
+     */
+    inline void SetRepositoryCredentials(const RepositoryCredentials& value) { m_repositoryCredentialsHasBeenSet = true; m_repositoryCredentials = value; }
+
+    /**
+     * <p>The private repository authentication credentials to use.</p>
+     */
+    inline void SetRepositoryCredentials(RepositoryCredentials&& value) { m_repositoryCredentialsHasBeenSet = true; m_repositoryCredentials = std::move(value); }
+
+    /**
+     * <p>The private repository authentication credentials to use.</p>
+     */
+    inline ContainerDetail& WithRepositoryCredentials(const RepositoryCredentials& value) { SetRepositoryCredentials(value); return *this;}
+
+    /**
+     * <p>The private repository authentication credentials to use.</p>
+     */
+    inline ContainerDetail& WithRepositoryCredentials(RepositoryCredentials&& value) { SetRepositoryCredentials(std::move(value)); return *this;}
 
   private:
 
@@ -1699,6 +1761,9 @@ namespace Model
 
     RuntimePlatform m_runtimePlatform;
     bool m_runtimePlatformHasBeenSet = false;
+
+    RepositoryCredentials m_repositoryCredentials;
+    bool m_repositoryCredentialsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EncryptionMode::NOT_SET:
+            return {};
           case EncryptionMode::ECB:
             return "ECB";
           case EncryptionMode::CBC:

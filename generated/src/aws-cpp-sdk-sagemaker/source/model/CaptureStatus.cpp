@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CaptureStatus::NOT_SET:
+            return {};
           case CaptureStatus::Started:
             return "Started";
           case CaptureStatus::Stopped:

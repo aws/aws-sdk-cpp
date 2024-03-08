@@ -20,7 +20,8 @@ namespace Model
     SKIPPED,
     RUNNING,
     COMPLETED,
-    FAILED
+    FAILED,
+    CANCELLED
   };
 
 namespace WorkflowStepExecutionStatusMapper

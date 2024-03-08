@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VPCConnectionAvailabilityStatus::NOT_SET:
+            return {};
           case VPCConnectionAvailabilityStatus::AVAILABLE:
             return "AVAILABLE";
           case VPCConnectionAvailabilityStatus::UNAVAILABLE:

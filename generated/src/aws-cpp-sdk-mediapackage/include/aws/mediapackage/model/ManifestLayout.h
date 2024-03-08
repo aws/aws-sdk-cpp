@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     FULL,
-    COMPACT
+    COMPACT,
+    DRM_TOP_LEVEL_COMPACT
   };
 
 namespace ManifestLayoutMapper

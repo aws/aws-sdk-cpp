@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case GeneratedRulesType::NOT_SET:
+            return {};
           case GeneratedRulesType::ALLOWLIST:
             return "ALLOWLIST";
           case GeneratedRulesType::DENYLIST:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BatchGetAssetPropertyAggregatesErrorCode::NOT_SET:
+            return {};
           case BatchGetAssetPropertyAggregatesErrorCode::ResourceNotFoundException:
             return "ResourceNotFoundException";
           case BatchGetAssetPropertyAggregatesErrorCode::InvalidRequestException:

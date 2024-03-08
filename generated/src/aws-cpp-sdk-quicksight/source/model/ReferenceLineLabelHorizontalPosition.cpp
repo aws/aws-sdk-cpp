@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReferenceLineLabelHorizontalPosition::NOT_SET:
+            return {};
           case ReferenceLineLabelHorizontalPosition::LEFT:
             return "LEFT";
           case ReferenceLineLabelHorizontalPosition::CENTER:

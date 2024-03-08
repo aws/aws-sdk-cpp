@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VectorEnrichmentJobStatus::NOT_SET:
+            return {};
           case VectorEnrichmentJobStatus::INITIALIZING:
             return "INITIALIZING";
           case VectorEnrichmentJobStatus::IN_PROGRESS:

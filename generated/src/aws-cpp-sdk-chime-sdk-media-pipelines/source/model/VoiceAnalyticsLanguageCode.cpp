@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VoiceAnalyticsLanguageCode::NOT_SET:
+            return {};
           case VoiceAnalyticsLanguageCode::en_US:
             return "en-US";
           default:

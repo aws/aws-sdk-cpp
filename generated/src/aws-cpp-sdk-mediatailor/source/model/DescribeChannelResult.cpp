@@ -103,6 +103,12 @@ DescribeChannelResult& DescribeChannelResult::operator =(const Aws::AmazonWebSer
 
   }
 
+  if(jsonValue.ValueExists("TimeShiftConfiguration"))
+  {
+    m_timeShiftConfiguration = jsonValue.GetObject("TimeShiftConfiguration");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

@@ -89,6 +89,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SigningAlgorithmSpec::NOT_SET:
+            return {};
           case SigningAlgorithmSpec::RSASSA_PSS_SHA_256:
             return "RSASSA_PSS_SHA_256";
           case SigningAlgorithmSpec::RSASSA_PSS_SHA_384:

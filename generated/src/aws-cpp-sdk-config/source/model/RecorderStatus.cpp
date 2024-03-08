@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RecorderStatus::NOT_SET:
+            return {};
           case RecorderStatus::Pending:
             return "Pending";
           case RecorderStatus::Success:

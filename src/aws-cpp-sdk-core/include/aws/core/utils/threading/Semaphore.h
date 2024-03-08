@@ -27,6 +27,11 @@ namespace Aws
                      */
                     void WaitOne();
                     /**
+                     * Blocks the current thread until it receives a signal or timeout is reached.
+                     * Returns false on timeout, and true if a signal is received
+                     */
+                    bool WaitOneFor(size_t timeoutMs);
+                    /**
                      * Exits the semaphore once.
                      */
                     void Release();

@@ -26,8 +26,9 @@ namespace Model
 {
 
   /**
-   * <p>A dataset group is a collection of related datasets (Interactions, User, and
-   * Item). You create a dataset group by calling <a
+   * <p>A dataset group is a collection of related datasets (Item interactions,
+   * Users, Items, Actions, Action interactions). You create a dataset group by
+   * calling <a
    * href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDatasetGroup.html">CreateDatasetGroup</a>.
    * You then create a dataset and add it to a dataset group by calling <a
    * href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDataset.html">CreateDataset</a>.
@@ -188,42 +189,58 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the IAM role that has permissions to create the dataset group.</p>
+     * <p>The ARN of the Identity and Access Management (IAM) role that has permissions
+     * to access the Key Management Service (KMS) key. Supplying an IAM role is only
+     * valid when also specifying a KMS key.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>The ARN of the IAM role that has permissions to create the dataset group.</p>
+     * <p>The ARN of the Identity and Access Management (IAM) role that has permissions
+     * to access the Key Management Service (KMS) key. Supplying an IAM role is only
+     * valid when also specifying a KMS key.</p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the IAM role that has permissions to create the dataset group.</p>
+     * <p>The ARN of the Identity and Access Management (IAM) role that has permissions
+     * to access the Key Management Service (KMS) key. Supplying an IAM role is only
+     * valid when also specifying a KMS key.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
-     * <p>The ARN of the IAM role that has permissions to create the dataset group.</p>
+     * <p>The ARN of the Identity and Access Management (IAM) role that has permissions
+     * to access the Key Management Service (KMS) key. Supplying an IAM role is only
+     * valid when also specifying a KMS key.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
-     * <p>The ARN of the IAM role that has permissions to create the dataset group.</p>
+     * <p>The ARN of the Identity and Access Management (IAM) role that has permissions
+     * to access the Key Management Service (KMS) key. Supplying an IAM role is only
+     * valid when also specifying a KMS key.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
-     * <p>The ARN of the IAM role that has permissions to create the dataset group.</p>
+     * <p>The ARN of the Identity and Access Management (IAM) role that has permissions
+     * to access the Key Management Service (KMS) key. Supplying an IAM role is only
+     * valid when also specifying a KMS key.</p>
      */
     inline DatasetGroup& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>The ARN of the IAM role that has permissions to create the dataset group.</p>
+     * <p>The ARN of the Identity and Access Management (IAM) role that has permissions
+     * to access the Key Management Service (KMS) key. Supplying an IAM role is only
+     * valid when also specifying a KMS key.</p>
      */
     inline DatasetGroup& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the IAM role that has permissions to create the dataset group.</p>
+     * <p>The ARN of the Identity and Access Management (IAM) role that has permissions
+     * to access the Key Management Service (KMS) key. Supplying an IAM role is only
+     * valid when also specifying a KMS key.</p>
      */
     inline DatasetGroup& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 

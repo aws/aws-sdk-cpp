@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OutpostMode::NOT_SET:
+            return {};
           case OutpostMode::single_outpost:
             return "single-outpost";
           case OutpostMode::cross_outpost:

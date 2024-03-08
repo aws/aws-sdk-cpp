@@ -47,9 +47,9 @@ namespace Model
      * The value is expressed as a percentage of the <code>max_connections</code>
      * setting for the RDS DB instance or Aurora DB cluster used by the target
      * group.</p> <p>If you specify <code>MaxIdleConnectionsPercent</code>, then you
-     * must also include a value for this parameter.</p> <p>Default: 10 for RDS for
-     * Microsoft SQL Server, and 100 for all other engines</p> <p>Constraints: Must be
-     * between 1 and 100.</p>
+     * must also include a value for this parameter.</p> <p>Default: <code>10</code>
+     * for RDS for Microsoft SQL Server, and <code>100</code> for all other engines</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be between 1 and 100.</p> </li> </ul>
      */
     inline int GetMaxConnectionsPercent() const{ return m_maxConnectionsPercent; }
 
@@ -58,9 +58,9 @@ namespace Model
      * The value is expressed as a percentage of the <code>max_connections</code>
      * setting for the RDS DB instance or Aurora DB cluster used by the target
      * group.</p> <p>If you specify <code>MaxIdleConnectionsPercent</code>, then you
-     * must also include a value for this parameter.</p> <p>Default: 10 for RDS for
-     * Microsoft SQL Server, and 100 for all other engines</p> <p>Constraints: Must be
-     * between 1 and 100.</p>
+     * must also include a value for this parameter.</p> <p>Default: <code>10</code>
+     * for RDS for Microsoft SQL Server, and <code>100</code> for all other engines</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be between 1 and 100.</p> </li> </ul>
      */
     inline bool MaxConnectionsPercentHasBeenSet() const { return m_maxConnectionsPercentHasBeenSet; }
 
@@ -69,9 +69,9 @@ namespace Model
      * The value is expressed as a percentage of the <code>max_connections</code>
      * setting for the RDS DB instance or Aurora DB cluster used by the target
      * group.</p> <p>If you specify <code>MaxIdleConnectionsPercent</code>, then you
-     * must also include a value for this parameter.</p> <p>Default: 10 for RDS for
-     * Microsoft SQL Server, and 100 for all other engines</p> <p>Constraints: Must be
-     * between 1 and 100.</p>
+     * must also include a value for this parameter.</p> <p>Default: <code>10</code>
+     * for RDS for Microsoft SQL Server, and <code>100</code> for all other engines</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be between 1 and 100.</p> </li> </ul>
      */
     inline void SetMaxConnectionsPercent(int value) { m_maxConnectionsPercentHasBeenSet = true; m_maxConnectionsPercent = value; }
 
@@ -80,16 +80,16 @@ namespace Model
      * The value is expressed as a percentage of the <code>max_connections</code>
      * setting for the RDS DB instance or Aurora DB cluster used by the target
      * group.</p> <p>If you specify <code>MaxIdleConnectionsPercent</code>, then you
-     * must also include a value for this parameter.</p> <p>Default: 10 for RDS for
-     * Microsoft SQL Server, and 100 for all other engines</p> <p>Constraints: Must be
-     * between 1 and 100.</p>
+     * must also include a value for this parameter.</p> <p>Default: <code>10</code>
+     * for RDS for Microsoft SQL Server, and <code>100</code> for all other engines</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be between 1 and 100.</p> </li> </ul>
      */
     inline ConnectionPoolConfiguration& WithMaxConnectionsPercent(int value) { SetMaxConnectionsPercent(value); return *this;}
 
 
     /**
-     * <p>Controls how actively the proxy closes idle database connections in the
-     * connection pool. The value is expressed as a percentage of the
+     * <p>A value that controls how actively the proxy closes idle database connections
+     * in the connection pool. The value is expressed as a percentage of the
      * <code>max_connections</code> setting for the RDS DB instance or Aurora DB
      * cluster used by the target group. With a high value, the proxy leaves a high
      * percentage of idle database connections open. A low value causes the proxy to
@@ -100,15 +100,16 @@ namespace Model
      * <code>MaxConnectionsPercent</code> is 80, then the default value of
      * <code>MaxIdleConnectionsPercent</code> is 40. If the value of
      * <code>MaxConnectionsPercent</code> isn't specified, then for SQL Server,
-     * <code>MaxIdleConnectionsPercent</code> is 5, and for all other engines, the
-     * default is 50.</p> <p>Constraints: Must be between 0 and the value of
-     * <code>MaxConnectionsPercent</code>.</p>
+     * <code>MaxIdleConnectionsPercent</code> is <code>5</code>, and for all other
+     * engines, the default is <code>50</code>.</p> <p>Constraints:</p> <ul> <li>
+     * <p>Must be between 0 and the value of <code>MaxConnectionsPercent</code>.</p>
+     * </li> </ul>
      */
     inline int GetMaxIdleConnectionsPercent() const{ return m_maxIdleConnectionsPercent; }
 
     /**
-     * <p>Controls how actively the proxy closes idle database connections in the
-     * connection pool. The value is expressed as a percentage of the
+     * <p>A value that controls how actively the proxy closes idle database connections
+     * in the connection pool. The value is expressed as a percentage of the
      * <code>max_connections</code> setting for the RDS DB instance or Aurora DB
      * cluster used by the target group. With a high value, the proxy leaves a high
      * percentage of idle database connections open. A low value causes the proxy to
@@ -119,15 +120,16 @@ namespace Model
      * <code>MaxConnectionsPercent</code> is 80, then the default value of
      * <code>MaxIdleConnectionsPercent</code> is 40. If the value of
      * <code>MaxConnectionsPercent</code> isn't specified, then for SQL Server,
-     * <code>MaxIdleConnectionsPercent</code> is 5, and for all other engines, the
-     * default is 50.</p> <p>Constraints: Must be between 0 and the value of
-     * <code>MaxConnectionsPercent</code>.</p>
+     * <code>MaxIdleConnectionsPercent</code> is <code>5</code>, and for all other
+     * engines, the default is <code>50</code>.</p> <p>Constraints:</p> <ul> <li>
+     * <p>Must be between 0 and the value of <code>MaxConnectionsPercent</code>.</p>
+     * </li> </ul>
      */
     inline bool MaxIdleConnectionsPercentHasBeenSet() const { return m_maxIdleConnectionsPercentHasBeenSet; }
 
     /**
-     * <p>Controls how actively the proxy closes idle database connections in the
-     * connection pool. The value is expressed as a percentage of the
+     * <p>A value that controls how actively the proxy closes idle database connections
+     * in the connection pool. The value is expressed as a percentage of the
      * <code>max_connections</code> setting for the RDS DB instance or Aurora DB
      * cluster used by the target group. With a high value, the proxy leaves a high
      * percentage of idle database connections open. A low value causes the proxy to
@@ -138,15 +140,16 @@ namespace Model
      * <code>MaxConnectionsPercent</code> is 80, then the default value of
      * <code>MaxIdleConnectionsPercent</code> is 40. If the value of
      * <code>MaxConnectionsPercent</code> isn't specified, then for SQL Server,
-     * <code>MaxIdleConnectionsPercent</code> is 5, and for all other engines, the
-     * default is 50.</p> <p>Constraints: Must be between 0 and the value of
-     * <code>MaxConnectionsPercent</code>.</p>
+     * <code>MaxIdleConnectionsPercent</code> is <code>5</code>, and for all other
+     * engines, the default is <code>50</code>.</p> <p>Constraints:</p> <ul> <li>
+     * <p>Must be between 0 and the value of <code>MaxConnectionsPercent</code>.</p>
+     * </li> </ul>
      */
     inline void SetMaxIdleConnectionsPercent(int value) { m_maxIdleConnectionsPercentHasBeenSet = true; m_maxIdleConnectionsPercent = value; }
 
     /**
-     * <p>Controls how actively the proxy closes idle database connections in the
-     * connection pool. The value is expressed as a percentage of the
+     * <p>A value that controls how actively the proxy closes idle database connections
+     * in the connection pool. The value is expressed as a percentage of the
      * <code>max_connections</code> setting for the RDS DB instance or Aurora DB
      * cluster used by the target group. With a high value, the proxy leaves a high
      * percentage of idle database connections open. A low value causes the proxy to
@@ -157,46 +160,51 @@ namespace Model
      * <code>MaxConnectionsPercent</code> is 80, then the default value of
      * <code>MaxIdleConnectionsPercent</code> is 40. If the value of
      * <code>MaxConnectionsPercent</code> isn't specified, then for SQL Server,
-     * <code>MaxIdleConnectionsPercent</code> is 5, and for all other engines, the
-     * default is 50.</p> <p>Constraints: Must be between 0 and the value of
-     * <code>MaxConnectionsPercent</code>.</p>
+     * <code>MaxIdleConnectionsPercent</code> is <code>5</code>, and for all other
+     * engines, the default is <code>50</code>.</p> <p>Constraints:</p> <ul> <li>
+     * <p>Must be between 0 and the value of <code>MaxConnectionsPercent</code>.</p>
+     * </li> </ul>
      */
     inline ConnectionPoolConfiguration& WithMaxIdleConnectionsPercent(int value) { SetMaxIdleConnectionsPercent(value); return *this;}
 
 
     /**
      * <p>The number of seconds for a proxy to wait for a connection to become
-     * available in the connection pool. Only applies when the proxy has opened its
-     * maximum number of connections and all connections are busy with client
-     * sessions.</p> <p>Default: 120</p> <p>Constraints: between 1 and 3600, or 0
-     * representing unlimited</p>
+     * available in the connection pool. This setting only applies when the proxy has
+     * opened its maximum number of connections and all connections are busy with
+     * client sessions. For an unlimited wait time, specify <code>0</code>.</p>
+     * <p>Default: <code>120</code> </p> <p>Constraints:</p> <ul> <li> <p>Must be
+     * between 0 and 3600.</p> </li> </ul>
      */
     inline int GetConnectionBorrowTimeout() const{ return m_connectionBorrowTimeout; }
 
     /**
      * <p>The number of seconds for a proxy to wait for a connection to become
-     * available in the connection pool. Only applies when the proxy has opened its
-     * maximum number of connections and all connections are busy with client
-     * sessions.</p> <p>Default: 120</p> <p>Constraints: between 1 and 3600, or 0
-     * representing unlimited</p>
+     * available in the connection pool. This setting only applies when the proxy has
+     * opened its maximum number of connections and all connections are busy with
+     * client sessions. For an unlimited wait time, specify <code>0</code>.</p>
+     * <p>Default: <code>120</code> </p> <p>Constraints:</p> <ul> <li> <p>Must be
+     * between 0 and 3600.</p> </li> </ul>
      */
     inline bool ConnectionBorrowTimeoutHasBeenSet() const { return m_connectionBorrowTimeoutHasBeenSet; }
 
     /**
      * <p>The number of seconds for a proxy to wait for a connection to become
-     * available in the connection pool. Only applies when the proxy has opened its
-     * maximum number of connections and all connections are busy with client
-     * sessions.</p> <p>Default: 120</p> <p>Constraints: between 1 and 3600, or 0
-     * representing unlimited</p>
+     * available in the connection pool. This setting only applies when the proxy has
+     * opened its maximum number of connections and all connections are busy with
+     * client sessions. For an unlimited wait time, specify <code>0</code>.</p>
+     * <p>Default: <code>120</code> </p> <p>Constraints:</p> <ul> <li> <p>Must be
+     * between 0 and 3600.</p> </li> </ul>
      */
     inline void SetConnectionBorrowTimeout(int value) { m_connectionBorrowTimeoutHasBeenSet = true; m_connectionBorrowTimeout = value; }
 
     /**
      * <p>The number of seconds for a proxy to wait for a connection to become
-     * available in the connection pool. Only applies when the proxy has opened its
-     * maximum number of connections and all connections are busy with client
-     * sessions.</p> <p>Default: 120</p> <p>Constraints: between 1 and 3600, or 0
-     * representing unlimited</p>
+     * available in the connection pool. This setting only applies when the proxy has
+     * opened its maximum number of connections and all connections are busy with
+     * client sessions. For an unlimited wait time, specify <code>0</code>.</p>
+     * <p>Default: <code>120</code> </p> <p>Constraints:</p> <ul> <li> <p>Must be
+     * between 0 and 3600.</p> </li> </ul>
      */
     inline ConnectionPoolConfiguration& WithConnectionBorrowTimeout(int value) { SetConnectionBorrowTimeout(value); return *this;}
 

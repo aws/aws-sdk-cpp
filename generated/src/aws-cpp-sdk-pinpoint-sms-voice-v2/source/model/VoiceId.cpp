@@ -334,6 +334,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VoiceId::NOT_SET:
+            return {};
           case VoiceId::AMY:
             return "AMY";
           case VoiceId::ASTRID:

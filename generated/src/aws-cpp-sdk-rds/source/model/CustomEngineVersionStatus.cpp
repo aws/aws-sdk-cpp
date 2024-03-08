@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CustomEngineVersionStatus::NOT_SET:
+            return {};
           case CustomEngineVersionStatus::available:
             return "available";
           case CustomEngineVersionStatus::inactive:

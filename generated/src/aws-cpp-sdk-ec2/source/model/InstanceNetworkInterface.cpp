@@ -40,7 +40,8 @@ InstanceNetworkInterface::InstanceNetworkInterface() :
     m_vpcIdHasBeenSet(false),
     m_interfaceTypeHasBeenSet(false),
     m_ipv4PrefixesHasBeenSet(false),
-    m_ipv6PrefixesHasBeenSet(false)
+    m_ipv6PrefixesHasBeenSet(false),
+    m_connectionTrackingConfigurationHasBeenSet(false)
 {
 }
 
@@ -64,7 +65,8 @@ InstanceNetworkInterface::InstanceNetworkInterface(const XmlNode& xmlNode) :
     m_vpcIdHasBeenSet(false),
     m_interfaceTypeHasBeenSet(false),
     m_ipv4PrefixesHasBeenSet(false),
-    m_ipv6PrefixesHasBeenSet(false)
+    m_ipv6PrefixesHasBeenSet(false),
+    m_connectionTrackingConfigurationHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -213,6 +215,12 @@ InstanceNetworkInterface& InstanceNetworkInterface::operator =(const XmlNode& xm
 
       m_ipv6PrefixesHasBeenSet = true;
     }
+    XmlNode connectionTrackingConfigurationNode = resultNode.FirstChild("connectionTrackingConfiguration");
+    if(!connectionTrackingConfigurationNode.IsNull())
+    {
+      m_connectionTrackingConfiguration = connectionTrackingConfigurationNode;
+      m_connectionTrackingConfigurationHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -344,6 +352,13 @@ void InstanceNetworkInterface::OutputToStream(Aws::OStream& oStream, const char*
       }
   }
 
+  if(m_connectionTrackingConfigurationHasBeenSet)
+  {
+      Aws::StringStream connectionTrackingConfigurationLocationAndMemberSs;
+      connectionTrackingConfigurationLocationAndMemberSs << location << index << locationValue << ".ConnectionTrackingConfiguration";
+      m_connectionTrackingConfiguration.OutputToStream(oStream, connectionTrackingConfigurationLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void InstanceNetworkInterface::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -453,6 +468,12 @@ void InstanceNetworkInterface::OutputToStream(Aws::OStream& oStream, const char*
         ipv6PrefixesSs << location <<  ".Ipv6PrefixSet." << ipv6PrefixesIdx++;
         item.OutputToStream(oStream, ipv6PrefixesSs.str().c_str());
       }
+  }
+  if(m_connectionTrackingConfigurationHasBeenSet)
+  {
+      Aws::String connectionTrackingConfigurationLocationAndMember(location);
+      connectionTrackingConfigurationLocationAndMember += ".ConnectionTrackingConfiguration";
+      m_connectionTrackingConfiguration.OutputToStream(oStream, connectionTrackingConfigurationLocationAndMember.c_str());
   }
 }
 

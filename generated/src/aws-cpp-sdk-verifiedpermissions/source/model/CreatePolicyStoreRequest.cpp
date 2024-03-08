@@ -15,7 +15,8 @@ using namespace Aws::Utils;
 CreatePolicyStoreRequest::CreatePolicyStoreRequest() : 
     m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
-    m_validationSettingsHasBeenSet(false)
+    m_validationSettingsHasBeenSet(false),
+    m_descriptionHasBeenSet(false)
 {
 }
 
@@ -32,6 +33,12 @@ Aws::String CreatePolicyStoreRequest::SerializePayload() const
   if(m_validationSettingsHasBeenSet)
   {
    payload.WithObject("validationSettings", m_validationSettings.Jsonize());
+
+  }
+
+  if(m_descriptionHasBeenSet)
+  {
+   payload.WithString("description", m_description);
 
   }
 

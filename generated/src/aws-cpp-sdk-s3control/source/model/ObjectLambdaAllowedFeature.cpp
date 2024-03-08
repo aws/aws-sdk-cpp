@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ObjectLambdaAllowedFeature::NOT_SET:
+            return {};
           case ObjectLambdaAllowedFeature::GetObject_Range:
             return "GetObject-Range";
           case ObjectLambdaAllowedFeature::GetObject_PartNumber:

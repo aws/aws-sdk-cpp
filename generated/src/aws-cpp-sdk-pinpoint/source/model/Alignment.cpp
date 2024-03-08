@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Alignment::NOT_SET:
+            return {};
           case Alignment::LEFT:
             return "LEFT";
           case Alignment::CENTER:

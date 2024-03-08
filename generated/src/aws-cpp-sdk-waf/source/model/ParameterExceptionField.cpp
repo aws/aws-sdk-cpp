@@ -129,6 +129,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ParameterExceptionField::NOT_SET:
+            return {};
           case ParameterExceptionField::CHANGE_ACTION:
             return "CHANGE_ACTION";
           case ParameterExceptionField::WAF_ACTION:

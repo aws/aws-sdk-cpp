@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BridgePlacement::NOT_SET:
+            return {};
           case BridgePlacement::AVAILABLE:
             return "AVAILABLE";
           case BridgePlacement::LOCKED:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ChannelMessageType::NOT_SET:
+            return {};
           case ChannelMessageType::STANDARD:
             return "STANDARD";
           case ChannelMessageType::CONTROL:

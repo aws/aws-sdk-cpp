@@ -53,6 +53,15 @@ GetTemporaryGlueTableCredentialsResult& GetTemporaryGlueTableCredentialsResult::
 
   }
 
+  if(jsonValue.ValueExists("VendedS3Path"))
+  {
+    Aws::Utils::Array<JsonView> vendedS3PathJsonList = jsonValue.GetArray("VendedS3Path");
+    for(unsigned vendedS3PathIndex = 0; vendedS3PathIndex < vendedS3PathJsonList.GetLength(); ++vendedS3PathIndex)
+    {
+      m_vendedS3Path.push_back(vendedS3PathJsonList[vendedS3PathIndex].AsString());
+    }
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

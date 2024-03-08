@@ -89,6 +89,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NotebookExecutionStatus::NOT_SET:
+            return {};
           case NotebookExecutionStatus::START_PENDING:
             return "START_PENDING";
           case NotebookExecutionStatus::STARTING:

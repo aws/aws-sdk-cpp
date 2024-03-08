@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PromptAttempt::NOT_SET:
+            return {};
           case PromptAttempt::Initial:
             return "Initial";
           case PromptAttempt::Retry1:

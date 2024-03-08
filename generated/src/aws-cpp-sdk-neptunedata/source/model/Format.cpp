@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Format::NOT_SET:
+            return {};
           case Format::csv:
             return "csv";
           case Format::opencypher:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CsvSerdeOption::NOT_SET:
+            return {};
           case CsvSerdeOption::OpenCSVSerDe:
             return "OpenCSVSerDe";
           case CsvSerdeOption::LazySimpleSerDe:

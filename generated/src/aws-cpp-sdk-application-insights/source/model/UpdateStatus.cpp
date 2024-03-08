@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UpdateStatus::NOT_SET:
+            return {};
           case UpdateStatus::RESOLVED:
             return "RESOLVED";
           default:

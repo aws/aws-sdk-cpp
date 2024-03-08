@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case IAMUserAccessToBilling::NOT_SET:
+            return {};
           case IAMUserAccessToBilling::ALLOW:
             return "ALLOW";
           case IAMUserAccessToBilling::DENY:

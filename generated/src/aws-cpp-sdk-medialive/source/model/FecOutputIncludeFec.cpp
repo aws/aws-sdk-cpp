@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FecOutputIncludeFec::NOT_SET:
+            return {};
           case FecOutputIncludeFec::COLUMN:
             return "COLUMN";
           case FecOutputIncludeFec::COLUMN_AND_ROW:

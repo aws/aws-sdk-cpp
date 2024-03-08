@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UtcTiming::NOT_SET:
+            return {};
           case UtcTiming::NONE:
             return "NONE";
           case UtcTiming::HTTP_HEAD:

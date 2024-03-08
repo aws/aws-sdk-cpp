@@ -14,6 +14,7 @@ using namespace Aws::Utils;
 
 CreateEndpointAccessRequest::CreateEndpointAccessRequest() : 
     m_endpointNameHasBeenSet(false),
+    m_ownerAccountHasBeenSet(false),
     m_subnetIdsHasBeenSet(false),
     m_vpcSecurityGroupIdsHasBeenSet(false),
     m_workgroupNameHasBeenSet(false)
@@ -27,6 +28,12 @@ Aws::String CreateEndpointAccessRequest::SerializePayload() const
   if(m_endpointNameHasBeenSet)
   {
    payload.WithString("endpointName", m_endpointName);
+
+  }
+
+  if(m_ownerAccountHasBeenSet)
+  {
+   payload.WithString("ownerAccount", m_ownerAccount);
 
   }
 

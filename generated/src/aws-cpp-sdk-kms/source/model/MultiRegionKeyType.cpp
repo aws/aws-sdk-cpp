@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MultiRegionKeyType::NOT_SET:
+            return {};
           case MultiRegionKeyType::PRIMARY:
             return "PRIMARY";
           case MultiRegionKeyType::REPLICA:

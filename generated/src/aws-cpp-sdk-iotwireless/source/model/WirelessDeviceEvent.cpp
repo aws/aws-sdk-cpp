@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case WirelessDeviceEvent::NOT_SET:
+            return {};
           case WirelessDeviceEvent::Join:
             return "Join";
           case WirelessDeviceEvent::Rejoin:

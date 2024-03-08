@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Visibility::NOT_SET:
+            return {};
           case Visibility::IGNORED:
             return "IGNORED";
           case Visibility::VISIBLE:

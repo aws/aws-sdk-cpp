@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AssetBundleExportJobDataSetPropertyToOverride::NOT_SET:
+            return {};
           case AssetBundleExportJobDataSetPropertyToOverride::Name:
             return "Name";
           default:

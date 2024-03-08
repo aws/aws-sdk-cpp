@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EventPublisher::NOT_SET:
+            return {};
           case EventPublisher::AnomalyDetection:
             return "AnomalyDetection";
           default:

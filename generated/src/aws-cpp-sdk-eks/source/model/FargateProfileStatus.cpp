@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FargateProfileStatus::NOT_SET:
+            return {};
           case FargateProfileStatus::CREATING:
             return "CREATING";
           case FargateProfileStatus::ACTIVE:

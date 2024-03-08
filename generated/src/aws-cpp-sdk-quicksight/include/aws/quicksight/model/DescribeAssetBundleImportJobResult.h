@@ -12,6 +12,9 @@
 #include <aws/quicksight/model/AssetBundleImportSourceDescription.h>
 #include <aws/quicksight/model/AssetBundleImportJobOverrideParameters.h>
 #include <aws/quicksight/model/AssetBundleImportFailureAction.h>
+#include <aws/quicksight/model/AssetBundleImportJobOverridePermissions.h>
+#include <aws/quicksight/model/AssetBundleImportJobOverrideTags.h>
+#include <aws/quicksight/model/AssetBundleImportJobOverrideValidationStrategy.h>
 #include <aws/quicksight/model/AssetBundleImportJobError.h>
 #include <utility>
 
@@ -384,31 +387,31 @@ namespace Model
 
 
     /**
-     * <p>Optional overrides to be applied to the resource configuration before
+     * <p>Optional overrides that are applied to the resource configuration before
      * import.</p>
      */
     inline const AssetBundleImportJobOverrideParameters& GetOverrideParameters() const{ return m_overrideParameters; }
 
     /**
-     * <p>Optional overrides to be applied to the resource configuration before
+     * <p>Optional overrides that are applied to the resource configuration before
      * import.</p>
      */
     inline void SetOverrideParameters(const AssetBundleImportJobOverrideParameters& value) { m_overrideParameters = value; }
 
     /**
-     * <p>Optional overrides to be applied to the resource configuration before
+     * <p>Optional overrides that are applied to the resource configuration before
      * import.</p>
      */
     inline void SetOverrideParameters(AssetBundleImportJobOverrideParameters&& value) { m_overrideParameters = std::move(value); }
 
     /**
-     * <p>Optional overrides to be applied to the resource configuration before
+     * <p>Optional overrides that are applied to the resource configuration before
      * import.</p>
      */
     inline DescribeAssetBundleImportJobResult& WithOverrideParameters(const AssetBundleImportJobOverrideParameters& value) { SetOverrideParameters(value); return *this;}
 
     /**
-     * <p>Optional overrides to be applied to the resource configuration before
+     * <p>Optional overrides that are applied to the resource configuration before
      * import.</p>
      */
     inline DescribeAssetBundleImportJobResult& WithOverrideParameters(AssetBundleImportJobOverrideParameters&& value) { SetOverrideParameters(std::move(value)); return *this;}
@@ -477,6 +480,99 @@ namespace Model
      */
     inline DescribeAssetBundleImportJobResult& WithStatus(int value) { SetStatus(value); return *this;}
 
+
+    /**
+     * <p>Optional permission overrides that are applied to the resource configuration
+     * before import.</p>
+     */
+    inline const AssetBundleImportJobOverridePermissions& GetOverridePermissions() const{ return m_overridePermissions; }
+
+    /**
+     * <p>Optional permission overrides that are applied to the resource configuration
+     * before import.</p>
+     */
+    inline void SetOverridePermissions(const AssetBundleImportJobOverridePermissions& value) { m_overridePermissions = value; }
+
+    /**
+     * <p>Optional permission overrides that are applied to the resource configuration
+     * before import.</p>
+     */
+    inline void SetOverridePermissions(AssetBundleImportJobOverridePermissions&& value) { m_overridePermissions = std::move(value); }
+
+    /**
+     * <p>Optional permission overrides that are applied to the resource configuration
+     * before import.</p>
+     */
+    inline DescribeAssetBundleImportJobResult& WithOverridePermissions(const AssetBundleImportJobOverridePermissions& value) { SetOverridePermissions(value); return *this;}
+
+    /**
+     * <p>Optional permission overrides that are applied to the resource configuration
+     * before import.</p>
+     */
+    inline DescribeAssetBundleImportJobResult& WithOverridePermissions(AssetBundleImportJobOverridePermissions&& value) { SetOverridePermissions(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Optional tag overrides that are applied to the resource configuration before
+     * import.</p>
+     */
+    inline const AssetBundleImportJobOverrideTags& GetOverrideTags() const{ return m_overrideTags; }
+
+    /**
+     * <p>Optional tag overrides that are applied to the resource configuration before
+     * import.</p>
+     */
+    inline void SetOverrideTags(const AssetBundleImportJobOverrideTags& value) { m_overrideTags = value; }
+
+    /**
+     * <p>Optional tag overrides that are applied to the resource configuration before
+     * import.</p>
+     */
+    inline void SetOverrideTags(AssetBundleImportJobOverrideTags&& value) { m_overrideTags = std::move(value); }
+
+    /**
+     * <p>Optional tag overrides that are applied to the resource configuration before
+     * import.</p>
+     */
+    inline DescribeAssetBundleImportJobResult& WithOverrideTags(const AssetBundleImportJobOverrideTags& value) { SetOverrideTags(value); return *this;}
+
+    /**
+     * <p>Optional tag overrides that are applied to the resource configuration before
+     * import.</p>
+     */
+    inline DescribeAssetBundleImportJobResult& WithOverrideTags(AssetBundleImportJobOverrideTags&& value) { SetOverrideTags(std::move(value)); return *this;}
+
+
+    /**
+     * <p>An optional validation strategy override for all analyses and dashboards to
+     * be applied to the resource configuration before import.</p>
+     */
+    inline const AssetBundleImportJobOverrideValidationStrategy& GetOverrideValidationStrategy() const{ return m_overrideValidationStrategy; }
+
+    /**
+     * <p>An optional validation strategy override for all analyses and dashboards to
+     * be applied to the resource configuration before import.</p>
+     */
+    inline void SetOverrideValidationStrategy(const AssetBundleImportJobOverrideValidationStrategy& value) { m_overrideValidationStrategy = value; }
+
+    /**
+     * <p>An optional validation strategy override for all analyses and dashboards to
+     * be applied to the resource configuration before import.</p>
+     */
+    inline void SetOverrideValidationStrategy(AssetBundleImportJobOverrideValidationStrategy&& value) { m_overrideValidationStrategy = std::move(value); }
+
+    /**
+     * <p>An optional validation strategy override for all analyses and dashboards to
+     * be applied to the resource configuration before import.</p>
+     */
+    inline DescribeAssetBundleImportJobResult& WithOverrideValidationStrategy(const AssetBundleImportJobOverrideValidationStrategy& value) { SetOverrideValidationStrategy(value); return *this;}
+
+    /**
+     * <p>An optional validation strategy override for all analyses and dashboards to
+     * be applied to the resource configuration before import.</p>
+     */
+    inline DescribeAssetBundleImportJobResult& WithOverrideValidationStrategy(AssetBundleImportJobOverrideValidationStrategy&& value) { SetOverrideValidationStrategy(std::move(value)); return *this;}
+
   private:
 
     AssetBundleImportJobStatus m_jobStatus;
@@ -502,6 +598,12 @@ namespace Model
     Aws::String m_requestId;
 
     int m_status;
+
+    AssetBundleImportJobOverridePermissions m_overridePermissions;
+
+    AssetBundleImportJobOverrideTags m_overrideTags;
+
+    AssetBundleImportJobOverrideValidationStrategy m_overrideValidationStrategy;
   };
 
 } // namespace Model

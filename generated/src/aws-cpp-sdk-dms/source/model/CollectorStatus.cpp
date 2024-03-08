@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CollectorStatus::NOT_SET:
+            return {};
           case CollectorStatus::UNREGISTERED:
             return "UNREGISTERED";
           case CollectorStatus::ACTIVE:

@@ -6,6 +6,7 @@
 #include <aws/core/utils/logging/LogMacros.h>
 #include <cstdint>
 #include <cassert>
+#include <thread>
 
 namespace Aws
 {
@@ -16,7 +17,8 @@ namespace Aws
             const char TAG[] = "ConcurrentStreamBuf";
             ConcurrentStreamBuf::ConcurrentStreamBuf(size_t bufferLength) :
                 m_putArea(bufferLength), // we access [0] of the put area below so we must initialize it.
-                m_eof(false)
+                m_eofInput(false),
+                m_eofOutput(false)
             {
                 m_getArea.reserve(bufferLength);
                 m_backbuf.reserve(bufferLength);
@@ -25,13 +27,104 @@ namespace Aws
                 setp(pbegin, pbegin + bufferLength);
             }
 
-            void ConcurrentStreamBuf::SetEof()
+            void ConcurrentStreamBuf::SetEofInput(Aws::IOStream* pStreamToClose)
+            {
+                bool closeStream = false;
+                {
+                    std::unique_lock<std::mutex> lock(m_lock);
+                    m_eofInput = true;
+                }
+                FlushPutArea();
+                if (pStreamToClose)
+                {
+                    m_pStreamToClose = pStreamToClose;
+                    if (m_backbuf.empty())
+                    {
+                        closeStream = true;
+                    }
+                }
+                if (closeStream)
+                {
+                    CloseStream();
+                }
+                m_signal.notify_all();
+            }
+
+            void ConcurrentStreamBuf::CloseStream()
             {
                 {
                     std::unique_lock<std::mutex> lock(m_lock);
-                    m_eof = true;
+                    m_eofOutput = true;
+                    if (m_pStreamToClose)
+                    {
+                        m_pStreamToClose->setstate(Aws::IOStream::eofbit);
+                        m_pStreamToClose = nullptr;
+                    }
                 }
                 m_signal.notify_all();
+            }
+
+            bool ConcurrentStreamBuf::WaitForDrain(int64_t timeoutMs)
+            {
+                const auto waitStarted = std::chrono::steady_clock::now();
+
+                // timed FlushPutArea
+                do
+                {
+                    std::unique_lock<std::mutex> lock(m_lock);
+                    const size_t bitslen = pptr() - pbase();
+                    if(!bitslen)
+                        break;
+
+                    m_signal.wait_for(lock, std::chrono::milliseconds(timeoutMs), [this, bitslen]{ return m_eofInput || bitslen <= (m_backbuf.capacity() - m_backbuf.size()); });
+                    std::copy(pbase(), pptr(), std::back_inserter(m_backbuf));
+
+                    m_signal.notify_one();
+                    char* pbegin = reinterpret_cast<char*>(&m_putArea[0]);
+                    setp(pbegin, pbegin + m_putArea.size());
+
+                    timeoutMs -= std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::steady_clock::now() - waitStarted).count();
+                }
+                while(timeoutMs > 0);
+
+                // timed wait for drained back buffer
+                do
+                {
+                    std::unique_lock<std::mutex> lock(m_lock);
+                    const size_t bitslen = pptr() - pbase();
+                    if(bitslen || timeoutMs <= 0)
+                    {
+                        return false;
+                    }
+
+                    m_signal.wait_for(lock, std::chrono::milliseconds(timeoutMs), [this]{ return m_eofOutput || m_backbuf.empty(); });
+                    if (m_eofOutput)
+                    {
+                        return true;
+                    }
+                    if (m_backbuf.empty())
+                    {
+                        break;
+                    }
+
+                    timeoutMs -= std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::steady_clock::now() - waitStarted).count();
+                }
+                while(timeoutMs > 0);
+
+                // timed wait for drained GetArea
+                do
+                {
+                    if (gptr() == nullptr || gptr() >= egptr())
+                    {
+                        return true;
+                    }
+                    std::this_thread::sleep_for(std::chrono::milliseconds(20));
+
+                    timeoutMs -= std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::steady_clock::now() - waitStarted).count();
+                }
+                while(timeoutMs > 0);
+
+                return false;
             }
 
             void ConcurrentStreamBuf::FlushPutArea()
@@ -42,11 +135,8 @@ namespace Aws
                     // scope the lock
                     {
                         std::unique_lock<std::mutex> lock(m_lock);
-                        m_signal.wait(lock, [this, bitslen]{ return m_eof || bitslen <= (m_backbuf.capacity() - m_backbuf.size()); });
-                        if (m_eof)
-                        {
-                            return;
-                        }
+                        m_signal.wait(lock, [this, bitslen]{ return m_eofInput || bitslen <= (m_backbuf.capacity() - m_backbuf.size()); });
+
                         std::copy(pbase(), pptr(), std::back_inserter(m_backbuf));
                     }
                     m_signal.notify_one();
@@ -67,23 +157,51 @@ namespace Aws
 
             int ConcurrentStreamBuf::underflow()
             {
+                bool closeStream = false;
                 {
-                    std::unique_lock<std::mutex> lock(m_lock);
-                    m_signal.wait(lock, [this]{ return m_backbuf.empty() == false || m_eof; });
-
-                    if (m_eof && m_backbuf.empty())
+                    std::unique_lock<std::mutex> lock(m_lock, std::defer_lock);
+                    if (!lock.try_lock())
                     {
-                        return std::char_traits<char>::eof();
+                        // don't block consumer, it will retry asking later
+                        return 'z'; // just returning some valid value other than EOF
                     }
 
-                    m_getArea.clear(); // keep the get-area from growing unbounded.
-                    std::copy(m_backbuf.begin(), m_backbuf.end(), std::back_inserter(m_getArea));
-                    m_backbuf.clear();
+                    if (m_eofInput && m_backbuf.empty())
+                    {
+                        closeStream = true;
+                    }
+                    else
+                    {
+                        m_getArea.clear(); // keep the get-area from growing unbounded.
+                        std::copy(m_backbuf.begin(), m_backbuf.end(), std::back_inserter(m_getArea));
+                        m_backbuf.clear();
+                    }
+                    m_signal.notify_one();
                 }
-                m_signal.notify_one();
-                char* gbegin = reinterpret_cast<char*>(&m_getArea[0]);
+                if (closeStream)
+                {
+                    CloseStream();
+                    return std::char_traits<char>::eof();
+                }
+
+                char* gbegin = reinterpret_cast<char*>(m_getArea.data());
                 setg(gbegin, gbegin, gbegin + m_getArea.size());
-                return std::char_traits<char>::to_int_type(*gptr());
+
+                if (!m_getArea.empty())
+                  return std::char_traits<char>::to_int_type(*gptr());
+                else
+                  return 'a'; // just returning some valid value other than EOF
+            }
+
+            int ConcurrentStreamBuf::uflow()
+            {
+                /* Make clang happy with our "great" streambuf */
+                if (underflow() == std::char_traits<char>::eof() || m_getArea.empty())
+                    return std::char_traits<char>::eof();
+
+                auto ret = traits_type::to_int_type(*this->gptr());
+                this->gbump(1);
+                return ret;
             }
 
             std::streamsize ConcurrentStreamBuf::showmanyc()
@@ -109,7 +227,7 @@ namespace Aws
                 FlushPutArea();
                 {
                     std::unique_lock<std::mutex> lock(m_lock);
-                    if (m_eof)
+                    if (m_eofInput)
                     {
                         return eof;
                     }

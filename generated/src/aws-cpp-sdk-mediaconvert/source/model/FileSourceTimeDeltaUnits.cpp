@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FileSourceTimeDeltaUnits::NOT_SET:
+            return {};
           case FileSourceTimeDeltaUnits::SECONDS:
             return "SECONDS";
           case FileSourceTimeDeltaUnits::MILLISECONDS:

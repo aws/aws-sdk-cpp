@@ -1348,6 +1348,104 @@ namespace Model
      */
     inline Snapshot& WithSnapshotRetentionStartTime(Aws::Utils::DateTime&& value) { SetSnapshotRetentionStartTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the cluster's admin user credentials
+     * secret.</p>
+     */
+    inline const Aws::String& GetMasterPasswordSecretArn() const{ return m_masterPasswordSecretArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the cluster's admin user credentials
+     * secret.</p>
+     */
+    inline bool MasterPasswordSecretArnHasBeenSet() const { return m_masterPasswordSecretArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the cluster's admin user credentials
+     * secret.</p>
+     */
+    inline void SetMasterPasswordSecretArn(const Aws::String& value) { m_masterPasswordSecretArnHasBeenSet = true; m_masterPasswordSecretArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the cluster's admin user credentials
+     * secret.</p>
+     */
+    inline void SetMasterPasswordSecretArn(Aws::String&& value) { m_masterPasswordSecretArnHasBeenSet = true; m_masterPasswordSecretArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the cluster's admin user credentials
+     * secret.</p>
+     */
+    inline void SetMasterPasswordSecretArn(const char* value) { m_masterPasswordSecretArnHasBeenSet = true; m_masterPasswordSecretArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the cluster's admin user credentials
+     * secret.</p>
+     */
+    inline Snapshot& WithMasterPasswordSecretArn(const Aws::String& value) { SetMasterPasswordSecretArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the cluster's admin user credentials
+     * secret.</p>
+     */
+    inline Snapshot& WithMasterPasswordSecretArn(Aws::String&& value) { SetMasterPasswordSecretArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the cluster's admin user credentials
+     * secret.</p>
+     */
+    inline Snapshot& WithMasterPasswordSecretArn(const char* value) { SetMasterPasswordSecretArn(value); return *this;}
+
+
+    /**
+     * <p>The ID of the Key Management Service (KMS) key used to encrypt and store the
+     * cluster's admin credentials secret.</p>
+     */
+    inline const Aws::String& GetMasterPasswordSecretKmsKeyId() const{ return m_masterPasswordSecretKmsKeyId; }
+
+    /**
+     * <p>The ID of the Key Management Service (KMS) key used to encrypt and store the
+     * cluster's admin credentials secret.</p>
+     */
+    inline bool MasterPasswordSecretKmsKeyIdHasBeenSet() const { return m_masterPasswordSecretKmsKeyIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Key Management Service (KMS) key used to encrypt and store the
+     * cluster's admin credentials secret.</p>
+     */
+    inline void SetMasterPasswordSecretKmsKeyId(const Aws::String& value) { m_masterPasswordSecretKmsKeyIdHasBeenSet = true; m_masterPasswordSecretKmsKeyId = value; }
+
+    /**
+     * <p>The ID of the Key Management Service (KMS) key used to encrypt and store the
+     * cluster's admin credentials secret.</p>
+     */
+    inline void SetMasterPasswordSecretKmsKeyId(Aws::String&& value) { m_masterPasswordSecretKmsKeyIdHasBeenSet = true; m_masterPasswordSecretKmsKeyId = std::move(value); }
+
+    /**
+     * <p>The ID of the Key Management Service (KMS) key used to encrypt and store the
+     * cluster's admin credentials secret.</p>
+     */
+    inline void SetMasterPasswordSecretKmsKeyId(const char* value) { m_masterPasswordSecretKmsKeyIdHasBeenSet = true; m_masterPasswordSecretKmsKeyId.assign(value); }
+
+    /**
+     * <p>The ID of the Key Management Service (KMS) key used to encrypt and store the
+     * cluster's admin credentials secret.</p>
+     */
+    inline Snapshot& WithMasterPasswordSecretKmsKeyId(const Aws::String& value) { SetMasterPasswordSecretKmsKeyId(value); return *this;}
+
+    /**
+     * <p>The ID of the Key Management Service (KMS) key used to encrypt and store the
+     * cluster's admin credentials secret.</p>
+     */
+    inline Snapshot& WithMasterPasswordSecretKmsKeyId(Aws::String&& value) { SetMasterPasswordSecretKmsKeyId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the Key Management Service (KMS) key used to encrypt and store the
+     * cluster's admin credentials secret.</p>
+     */
+    inline Snapshot& WithMasterPasswordSecretKmsKeyId(const char* value) { SetMasterPasswordSecretKmsKeyId(value); return *this;}
+
   private:
 
     Aws::String m_snapshotIdentifier;
@@ -1451,6 +1549,12 @@ namespace Model
 
     Aws::Utils::DateTime m_snapshotRetentionStartTime;
     bool m_snapshotRetentionStartTimeHasBeenSet = false;
+
+    Aws::String m_masterPasswordSecretArn;
+    bool m_masterPasswordSecretArnHasBeenSet = false;
+
+    Aws::String m_masterPasswordSecretKmsKeyId;
+    bool m_masterPasswordSecretKmsKeyIdHasBeenSet = false;
   };
 
 } // namespace Model

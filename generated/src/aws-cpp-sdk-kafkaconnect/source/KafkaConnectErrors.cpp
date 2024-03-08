@@ -33,31 +33,31 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == CONFLICT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KafkaConnectErrors::CONFLICT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KafkaConnectErrors::CONFLICT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KafkaConnectErrors::NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KafkaConnectErrors::NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == FORBIDDEN_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KafkaConnectErrors::FORBIDDEN), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KafkaConnectErrors::FORBIDDEN), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == UNAUTHORIZED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KafkaConnectErrors::UNAUTHORIZED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KafkaConnectErrors::UNAUTHORIZED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == TOO_MANY_REQUESTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KafkaConnectErrors::TOO_MANY_REQUESTS), true);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KafkaConnectErrors::TOO_MANY_REQUESTS), RetryableType::RETRYABLE);
   }
   else if (hashCode == BAD_REQUEST_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KafkaConnectErrors::BAD_REQUEST), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KafkaConnectErrors::BAD_REQUEST), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INTERNAL_SERVER_ERROR_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KafkaConnectErrors::INTERNAL_SERVER_ERROR), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KafkaConnectErrors::INTERNAL_SERVER_ERROR), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

@@ -438,6 +438,27 @@ namespace Model
      */
     inline UpdateOntapVolumeConfiguration& WithSnaplockConfiguration(UpdateSnaplockConfiguration&& value) { SetSnaplockConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The configured size of the volume, in bytes.</p>
+     */
+    inline long long GetSizeInBytes() const{ return m_sizeInBytes; }
+
+    /**
+     * <p>The configured size of the volume, in bytes.</p>
+     */
+    inline bool SizeInBytesHasBeenSet() const { return m_sizeInBytesHasBeenSet; }
+
+    /**
+     * <p>The configured size of the volume, in bytes.</p>
+     */
+    inline void SetSizeInBytes(long long value) { m_sizeInBytesHasBeenSet = true; m_sizeInBytes = value; }
+
+    /**
+     * <p>The configured size of the volume, in bytes.</p>
+     */
+    inline UpdateOntapVolumeConfiguration& WithSizeInBytes(long long value) { SetSizeInBytes(value); return *this;}
+
   private:
 
     Aws::String m_junctionPath;
@@ -463,6 +484,9 @@ namespace Model
 
     UpdateSnaplockConfiguration m_snaplockConfiguration;
     bool m_snaplockConfigurationHasBeenSet = false;
+
+    long long m_sizeInBytes;
+    bool m_sizeInBytesHasBeenSet = false;
   };
 
 } // namespace Model

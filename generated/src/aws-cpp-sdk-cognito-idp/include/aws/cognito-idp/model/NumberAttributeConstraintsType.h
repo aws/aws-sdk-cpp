@@ -80,42 +80,58 @@ namespace Model
 
 
     /**
-     * <p>The maximum value of an attribute that is of the number data type.</p>
+     * <p>The maximum length of a number attribute value. Must be a number less than or
+     * equal to <code>2^1023</code>, represented as a string with a length of 131072
+     * characters or fewer.</p>
      */
     inline const Aws::String& GetMaxValue() const{ return m_maxValue; }
 
     /**
-     * <p>The maximum value of an attribute that is of the number data type.</p>
+     * <p>The maximum length of a number attribute value. Must be a number less than or
+     * equal to <code>2^1023</code>, represented as a string with a length of 131072
+     * characters or fewer.</p>
      */
     inline bool MaxValueHasBeenSet() const { return m_maxValueHasBeenSet; }
 
     /**
-     * <p>The maximum value of an attribute that is of the number data type.</p>
+     * <p>The maximum length of a number attribute value. Must be a number less than or
+     * equal to <code>2^1023</code>, represented as a string with a length of 131072
+     * characters or fewer.</p>
      */
     inline void SetMaxValue(const Aws::String& value) { m_maxValueHasBeenSet = true; m_maxValue = value; }
 
     /**
-     * <p>The maximum value of an attribute that is of the number data type.</p>
+     * <p>The maximum length of a number attribute value. Must be a number less than or
+     * equal to <code>2^1023</code>, represented as a string with a length of 131072
+     * characters or fewer.</p>
      */
     inline void SetMaxValue(Aws::String&& value) { m_maxValueHasBeenSet = true; m_maxValue = std::move(value); }
 
     /**
-     * <p>The maximum value of an attribute that is of the number data type.</p>
+     * <p>The maximum length of a number attribute value. Must be a number less than or
+     * equal to <code>2^1023</code>, represented as a string with a length of 131072
+     * characters or fewer.</p>
      */
     inline void SetMaxValue(const char* value) { m_maxValueHasBeenSet = true; m_maxValue.assign(value); }
 
     /**
-     * <p>The maximum value of an attribute that is of the number data type.</p>
+     * <p>The maximum length of a number attribute value. Must be a number less than or
+     * equal to <code>2^1023</code>, represented as a string with a length of 131072
+     * characters or fewer.</p>
      */
     inline NumberAttributeConstraintsType& WithMaxValue(const Aws::String& value) { SetMaxValue(value); return *this;}
 
     /**
-     * <p>The maximum value of an attribute that is of the number data type.</p>
+     * <p>The maximum length of a number attribute value. Must be a number less than or
+     * equal to <code>2^1023</code>, represented as a string with a length of 131072
+     * characters or fewer.</p>
      */
     inline NumberAttributeConstraintsType& WithMaxValue(Aws::String&& value) { SetMaxValue(std::move(value)); return *this;}
 
     /**
-     * <p>The maximum value of an attribute that is of the number data type.</p>
+     * <p>The maximum length of a number attribute value. Must be a number less than or
+     * equal to <code>2^1023</code>, represented as a string with a length of 131072
+     * characters or fewer.</p>
      */
     inline NumberAttributeConstraintsType& WithMaxValue(const char* value) { SetMaxValue(value); return *this;}
 

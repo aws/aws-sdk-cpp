@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NsdOnboardingState::NOT_SET:
+            return {};
           case NsdOnboardingState::CREATED:
             return "CREATED";
           case NsdOnboardingState::ONBOARDED:

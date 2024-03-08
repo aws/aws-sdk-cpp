@@ -248,6 +248,35 @@ namespace Model
      */
     inline MetricFilterV2& AddMetricFilterValues(const char* value) { m_metricFilterValuesHasBeenSet = true; m_metricFilterValues.push_back(value); return *this; }
 
+
+    /**
+     * <p>The flag to use to filter on requested metric filter values or to not filter
+     * on requested metric filter values. By default the negate is <code>false</code>,
+     * which indicates to filter on the requested metric filter. </p>
+     */
+    inline bool GetNegate() const{ return m_negate; }
+
+    /**
+     * <p>The flag to use to filter on requested metric filter values or to not filter
+     * on requested metric filter values. By default the negate is <code>false</code>,
+     * which indicates to filter on the requested metric filter. </p>
+     */
+    inline bool NegateHasBeenSet() const { return m_negateHasBeenSet; }
+
+    /**
+     * <p>The flag to use to filter on requested metric filter values or to not filter
+     * on requested metric filter values. By default the negate is <code>false</code>,
+     * which indicates to filter on the requested metric filter. </p>
+     */
+    inline void SetNegate(bool value) { m_negateHasBeenSet = true; m_negate = value; }
+
+    /**
+     * <p>The flag to use to filter on requested metric filter values or to not filter
+     * on requested metric filter values. By default the negate is <code>false</code>,
+     * which indicates to filter on the requested metric filter. </p>
+     */
+    inline MetricFilterV2& WithNegate(bool value) { SetNegate(value); return *this;}
+
   private:
 
     Aws::String m_metricFilterKey;
@@ -255,6 +284,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_metricFilterValues;
     bool m_metricFilterValuesHasBeenSet = false;
+
+    bool m_negate;
+    bool m_negateHasBeenSet = false;
   };
 
 } // namespace Model

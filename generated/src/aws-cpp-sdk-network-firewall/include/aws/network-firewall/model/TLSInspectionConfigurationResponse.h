@@ -10,8 +10,8 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/network-firewall/model/EncryptionConfiguration.h>
-#include <aws/network-firewall/model/Tag.h>
 #include <aws/network-firewall/model/TlsCertificateData.h>
+#include <aws/network-firewall/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -466,6 +466,25 @@ namespace Model
      */
     inline TLSInspectionConfigurationResponse& AddCertificates(TlsCertificateData&& value) { m_certificatesHasBeenSet = true; m_certificates.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const TlsCertificateData& GetCertificateAuthority() const{ return m_certificateAuthority; }
+
+    
+    inline bool CertificateAuthorityHasBeenSet() const { return m_certificateAuthorityHasBeenSet; }
+
+    
+    inline void SetCertificateAuthority(const TlsCertificateData& value) { m_certificateAuthorityHasBeenSet = true; m_certificateAuthority = value; }
+
+    
+    inline void SetCertificateAuthority(TlsCertificateData&& value) { m_certificateAuthorityHasBeenSet = true; m_certificateAuthority = std::move(value); }
+
+    
+    inline TLSInspectionConfigurationResponse& WithCertificateAuthority(const TlsCertificateData& value) { SetCertificateAuthority(value); return *this;}
+
+    
+    inline TLSInspectionConfigurationResponse& WithCertificateAuthority(TlsCertificateData&& value) { SetCertificateAuthority(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_tLSInspectionConfigurationArn;
@@ -497,6 +516,9 @@ namespace Model
 
     Aws::Vector<TlsCertificateData> m_certificates;
     bool m_certificatesHasBeenSet = false;
+
+    TlsCertificateData m_certificateAuthority;
+    bool m_certificateAuthorityHasBeenSet = false;
   };
 
 } // namespace Model

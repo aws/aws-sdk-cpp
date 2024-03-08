@@ -27,7 +27,7 @@ namespace Model
    * <p>Represents item metadata added to an Items dataset using the
    * <code>PutItems</code> API. For more information see <a
    * href="https://docs.aws.amazon.com/personalize/latest/dg/importing-items.html">Importing
-   * Items Incrementally</a>. </p><p><h3>See Also:</h3>   <a
+   * items individually</a>. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-events-2018-03-22/Item">AWS
    * API Reference</a></p>
    */

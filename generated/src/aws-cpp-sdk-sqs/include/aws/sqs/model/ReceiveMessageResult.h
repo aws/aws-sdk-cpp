@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/sqs/SQS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sqs/model/ResponseMetadata.h>
 #include <aws/sqs/model/Message.h>
 #include <utility>
@@ -17,10 +18,10 @@ class AmazonWebServiceResult;
 
 namespace Utils
 {
-namespace Xml
+namespace Json
 {
-  class XmlDocument;
-} // namespace Xml
+  class JsonValue;
+} // namespace Json
 } // namespace Utils
 namespace SQS
 {
@@ -35,8 +36,8 @@ namespace Model
   {
   public:
     AWS_SQS_API ReceiveMessageResult();
-    AWS_SQS_API ReceiveMessageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    AWS_SQS_API ReceiveMessageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SQS_API ReceiveMessageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SQS_API ReceiveMessageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     /**
@@ -76,6 +77,28 @@ namespace Model
 
 
     
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline ReceiveMessageResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline ReceiveMessageResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline ReceiveMessageResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
+
+    
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
     
@@ -93,6 +116,8 @@ namespace Model
   private:
 
     Aws::Vector<Message> m_messages;
+
+    Aws::String m_requestId;
 
     ResponseMetadata m_responseMetadata;
   };

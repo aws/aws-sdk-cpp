@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Action::NOT_SET:
+            return {};
           case Action::ALLOW:
             return "ALLOW";
           case Action::BLOCK:

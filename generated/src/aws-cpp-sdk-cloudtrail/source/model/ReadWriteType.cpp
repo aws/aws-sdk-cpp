@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReadWriteType::NOT_SET:
+            return {};
           case ReadWriteType::ReadOnly:
             return "ReadOnly";
           case ReadWriteType::WriteOnly:

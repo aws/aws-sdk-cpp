@@ -26,7 +26,7 @@ namespace SSM
    * up Amazon Web Services Systems Manager</a>.</p> <p class="title"> <b>Related
    * resources</b> </p> <ul> <li> <p>For information about each of the capabilities
    * that comprise Systems Manager, see <a
-   * href="https://docs.aws.amazon.com/systems-manager-automation-runbooks/latest/userguide/systems-manager-capabilities.html">Systems
+   * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/what-is-systems-manager.html#systems-manager-capabilities">Systems
    * Manager capabilities</a> in the <i>Amazon Web Services Systems Manager User
    * Guide</i>.</p> </li> <li> <p>For details about predefined runbooks for
    * Automation, a capability of Amazon Web Services Systems Manager, see the <i> <a
@@ -47,8 +47,8 @@ namespace SSM
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef SSMClientConfiguration ClientConfigurationType;
       typedef SSMEndpointProvider EndpointProviderType;
@@ -58,14 +58,14 @@ namespace SSM
         * is not specified, it will be initialized to default values.
         */
         SSMClient(const Aws::SSM::SSMClientConfiguration& clientConfiguration = Aws::SSM::SSMClientConfiguration(),
-                  std::shared_ptr<SSMEndpointProviderBase> endpointProvider = Aws::MakeShared<SSMEndpointProvider>(ALLOCATION_TAG));
+                  std::shared_ptr<SSMEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         SSMClient(const Aws::Auth::AWSCredentials& credentials,
-                  std::shared_ptr<SSMEndpointProviderBase> endpointProvider = Aws::MakeShared<SSMEndpointProvider>(ALLOCATION_TAG),
+                  std::shared_ptr<SSMEndpointProviderBase> endpointProvider = nullptr,
                   const Aws::SSM::SSMClientConfiguration& clientConfiguration = Aws::SSM::SSMClientConfiguration());
 
        /**
@@ -73,7 +73,7 @@ namespace SSM
         * the default http client factory will be used
         */
         SSMClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                  std::shared_ptr<SSMEndpointProviderBase> endpointProvider = Aws::MakeShared<SSMEndpointProvider>(ALLOCATION_TAG),
+                  std::shared_ptr<SSMEndpointProviderBase> endpointProvider = nullptr,
                   const Aws::SSM::SSMClientConfiguration& clientConfiguration = Aws::SSM::SSMClientConfiguration());
 
 
@@ -679,6 +679,48 @@ namespace SSM
         }
 
         /**
+         * <p>Delete an OpsItem. You must have permission in Identity and Access Management
+         * (IAM) to delete an OpsItem. </p>  <p>Note the following important
+         * information about this operation.</p> <ul> <li> <p>Deleting an OpsItem is
+         * irreversible. You can't restore a deleted OpsItem.</p> </li> <li> <p>This
+         * operation uses an <i>eventual consistency model</i>, which means the system can
+         * take a few minutes to complete this operation. If you delete an OpsItem and
+         * immediately call, for example, <a>GetOpsItem</a>, the deleted OpsItem might
+         * still appear in the response. </p> </li> <li> <p>This operation is idempotent.
+         * The system doesn't throw an exception if you repeatedly call this operation for
+         * the same OpsItem. If the first call is successful, all additional calls return
+         * the same successful response as the first call.</p> </li> <li> <p>This operation
+         * doesn't support cross-account calls. A delegated administrator or management
+         * account can't delete OpsItems in other accounts, even if OpsCenter has been set
+         * up for cross-account administration. For more information about cross-account
+         * administration, see <a
+         * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-setting-up-cross-account.html">Setting
+         * up OpsCenter to centrally manage OpsItems across accounts</a> in the <i>Systems
+         * Manager User Guide</i>.</p> </li> </ul> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteOpsItem">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteOpsItemOutcome DeleteOpsItem(const Model::DeleteOpsItemRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteOpsItem that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteOpsItemRequestT = Model::DeleteOpsItemRequest>
+        Model::DeleteOpsItemOutcomeCallable DeleteOpsItemCallable(const DeleteOpsItemRequestT& request) const
+        {
+            return SubmitCallable(&SSMClient::DeleteOpsItem, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteOpsItem that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteOpsItemRequestT = Model::DeleteOpsItemRequest>
+        void DeleteOpsItemAsync(const DeleteOpsItemRequestT& request, const DeleteOpsItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SSMClient::DeleteOpsItem, request, handler, context);
+        }
+
+        /**
          * <p>Delete OpsMetadata related to an application.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteOpsMetadata">AWS
          * API Reference</a></p>
@@ -812,11 +854,16 @@ namespace SSM
         /**
          * <p>Deletes a Systems Manager resource policy. A resource policy helps you to
          * define the IAM entity (for example, an Amazon Web Services account) that can
-         * manage your Systems Manager resources. Currently, <code>OpsItemGroup</code> is
-         * the only resource that supports Systems Manager resource policies. The resource
-         * policy for <code>OpsItemGroup</code> enables Amazon Web Services accounts to
-         * view and interact with OpsCenter operational work items
-         * (OpsItems).</p><p><h3>See Also:</h3>   <a
+         * manage your Systems Manager resources. The following resources support Systems
+         * Manager resource policies.</p> <ul> <li> <p> <code>OpsItemGroup</code> - The
+         * resource policy for <code>OpsItemGroup</code> enables Amazon Web Services
+         * accounts to view and interact with OpsCenter operational work items
+         * (OpsItems).</p> </li> <li> <p> <code>Parameter</code> - The resource policy is
+         * used to share a parameter with other accounts using Resource Access Manager
+         * (RAM). For more information about cross-account sharing of parameters, see <a
+         * href="systems-manager/latest/userguide/parameter-store-shared-parameters.html">Working
+         * with shared parameters</a> in the <i>Amazon Web Services Systems Manager User
+         * Guide</i>.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteResourcePolicy">AWS
          * API Reference</a></p>
          */
@@ -1104,8 +1151,10 @@ namespace SSM
         }
 
         /**
-         * <p>Lists all patches eligible to be included in a patch baseline.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists all patches eligible to be included in a patch baseline.</p> 
+         * <p>Currently, <code>DescribeAvailablePatches</code> supports only the Amazon
+         * Linux 1, Amazon Linux 2, and Windows Server operating systems.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeAvailablePatches">AWS
          * API Reference</a></p>
          */
@@ -1652,18 +1701,21 @@ namespace SSM
         }
 
         /**
-         * <p>Get information about a parameter.</p> <p>Request results are returned on a
-         * best-effort basis. If you specify <code>MaxResults</code> in the request, the
-         * response includes information up to the limit specified. The number of items
-         * returned, however, can be between zero and the value of <code>MaxResults</code>.
-         * If the service reaches an internal limit while processing the results, it stops
-         * the operation and returns the matching values up to that point and a
-         * <code>NextToken</code>. You can specify the <code>NextToken</code> in a
-         * subsequent call to get the next set of results.</p>  <p>If you change
-         * the KMS key alias for the KMS key used to encrypt a parameter, then you must
-         * also update the key alias the parameter uses to reference KMS. Otherwise,
-         * <code>DescribeParameters</code> retrieves whatever the original key alias was
-         * referencing.</p> <p><h3>See Also:</h3>   <a
+         * <p>Lists the parameters in your Amazon Web Services account or the parameters
+         * shared with you when you enable the <a
+         * href="https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeParameters.html#systemsmanager-DescribeParameters-request-Shared">Shared</a>
+         * option.</p> <p>Request results are returned on a best-effort basis. If you
+         * specify <code>MaxResults</code> in the request, the response includes
+         * information up to the limit specified. The number of items returned, however,
+         * can be between zero and the value of <code>MaxResults</code>. If the service
+         * reaches an internal limit while processing the results, it stops the operation
+         * and returns the matching values up to that point and a <code>NextToken</code>.
+         * You can specify the <code>NextToken</code> in a subsequent call to get the next
+         * set of results.</p>  <p>If you change the KMS key alias for the KMS
+         * key used to encrypt a parameter, then you must also update the key alias the
+         * parameter uses to reference KMS. Otherwise, <code>DescribeParameters</code>
+         * retrieves whatever the original key alias was referencing.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeParameters">AWS
          * API Reference</a></p>
          */
@@ -3213,11 +3265,41 @@ namespace SSM
         /**
          * <p>Creates or updates a Systems Manager resource policy. A resource policy helps
          * you to define the IAM entity (for example, an Amazon Web Services account) that
-         * can manage your Systems Manager resources. Currently, <code>OpsItemGroup</code>
-         * is the only resource that supports Systems Manager resource policies. The
-         * resource policy for <code>OpsItemGroup</code> enables Amazon Web Services
+         * can manage your Systems Manager resources. The following resources support
+         * Systems Manager resource policies.</p> <ul> <li> <p> <code>OpsItemGroup</code> -
+         * The resource policy for <code>OpsItemGroup</code> enables Amazon Web Services
          * accounts to view and interact with OpsCenter operational work items
-         * (OpsItems).</p><p><h3>See Also:</h3>   <a
+         * (OpsItems).</p> </li> <li> <p> <code>Parameter</code> - The resource policy is
+         * used to share a parameter with other accounts using Resource Access Manager
+         * (RAM). </p> <p>To share a parameter, it must be in the advanced parameter tier.
+         * For information about parameter tiers, see <a
+         * href="https://docs.aws.amazon.com/parameter-store-
+         * advanced-parameters.html">Managing parameter tiers</a>. For information about
+         * changing an existing standard parameter to an advanced parameter, see <a
+         * href="https://docs.aws.amazon.com/parameter-store-advanced-parameters.html#parameter-
+         * store-advanced-parameters-enabling">Changing a standard parameter to an advanced
+         * parameter</a>.</p> <p>To share a <code>SecureString</code> parameter, it must be
+         * encrypted with a customer managed key, and you must share the key separately
+         * through Key Management Service. Amazon Web Services managed keys cannot be
+         * shared. Parameters encrypted with the default Amazon Web Services managed key
+         * can be updated to use a customer managed key instead. For KMS key definitions,
+         * see <a
+         * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-mgmt">KMS
+         * concepts</a> in the <i>Key Management Service Developer Guide</i>.</p>
+         *  <p>While you can share a parameter using the Systems Manager
+         * <code>PutResourcePolicy</code> operation, we recommend using Resource Access
+         * Manager (RAM) instead. This is because using <code>PutResourcePolicy</code>
+         * requires the extra step of promoting the parameter to a standard RAM Resource
+         * Share using the RAM <a
+         * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>
+         * API operation. Otherwise, the parameter won't be returned by the Systems Manager
+         * <a
+         * href="https://docs.aws.amazon.com/systems-manager/latest/APIReference/API_DescribeParameters.html">DescribeParameters</a>
+         * API operation using the <code>--shared</code> option.</p> <p>For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-shared-parameters.html#share">Sharing
+         * a parameter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>
+         * </p>  </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutResourcePolicy">AWS
          * API Reference</a></p>
          */

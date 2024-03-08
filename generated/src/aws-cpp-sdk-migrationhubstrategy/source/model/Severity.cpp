@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Severity::NOT_SET:
+            return {};
           case Severity::HIGH:
             return "HIGH";
           case Severity::MEDIUM:

@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case GameSessionPlacementState::NOT_SET:
+            return {};
           case GameSessionPlacementState::PENDING:
             return "PENDING";
           case GameSessionPlacementState::FULFILLED:

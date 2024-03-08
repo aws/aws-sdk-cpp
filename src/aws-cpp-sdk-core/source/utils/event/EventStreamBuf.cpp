@@ -11,7 +11,7 @@ namespace Aws
     {
         namespace Event
         {
-            const size_t DEFAULT_BUF_SIZE = 1024;
+            const size_t DEFAULT_BUF_SIZE = 8096;
 
             EventStreamBuf::EventStreamBuf(EventStreamDecoder& decoder, size_t bufferLength) :
                 m_byteBuffer(bufferLength),
@@ -38,12 +38,17 @@ namespace Aws
             {
                 if (pptr() > pbase())
                 {
+                    assert(epptr() >= pptr()); // check that we are in a put area
                     size_t length = static_cast<size_t>(pptr() - pbase());
                     m_decoder.Pump(m_byteBuffer, length);
 
                     if (!m_decoder)
                     {
                         m_err.write(reinterpret_cast<char*>(m_byteBuffer.GetUnderlyingData()), length);
+                        if (m_err.fail()) {
+                            AWS_LOGSTREAM_ERROR("EventStreamBuf",
+                                                "Failed to write " << length << " (eof: " << m_err.eof() << ", bad: " << m_err.bad() << ")");
+                        }
                     }
                     else
                     {
@@ -120,13 +125,25 @@ namespace Aws
 
                 if (m_decoder)
                 {
+                    if (pptr() == epptr()) // always the case by C++ standard, but someone may inherit from this class
+                    {
+                        writeToDecoder();
+                    }
+                    // writeToDecoder had to take some data from the put buffer but failed
+                    if (pptr() == epptr())
+                    {
+                        AWS_LOGSTREAM_ERROR("EventStreamBuf", "Failed to decode EventStream event on char with int value: " << ch);
+                        // let's just reset the put buffer and move on.
+                        setp(pbase(), epptr() - 1);
+                    }
+
+                    // put char to the put area and advance current pptr
                     if (ch != eof)
                     {
                         *pptr() = (char)ch;
                         pbump(1);
                     }
 
-                    writeToDecoder();
                     return ch;
                 }
 

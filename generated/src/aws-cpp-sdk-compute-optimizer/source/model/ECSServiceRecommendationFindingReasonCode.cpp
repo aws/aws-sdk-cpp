@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ECSServiceRecommendationFindingReasonCode::NOT_SET:
+            return {};
           case ECSServiceRecommendationFindingReasonCode::MemoryOverprovisioned:
             return "MemoryOverprovisioned";
           case ECSServiceRecommendationFindingReasonCode::MemoryUnderprovisioned:

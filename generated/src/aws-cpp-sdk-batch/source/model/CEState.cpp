@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CEState::NOT_SET:
+            return {};
           case CEState::ENABLED:
             return "ENABLED";
           case CEState::DISABLED:

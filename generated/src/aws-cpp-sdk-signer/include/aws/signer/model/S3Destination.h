@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>The name and prefix of the S3 bucket where code signing saves your signed
-   * objects.</p><p><h3>See Also:</h3>   <a
+   * <p>The name and prefix of the Amazon S3 bucket where AWS Signer saves your
+   * signed objects.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/S3Destination">AWS
    * API Reference</a></p>
    */
@@ -80,50 +80,50 @@ namespace Model
 
 
     /**
-     * <p>An Amazon S3 prefix that you can use to limit responses to those that begin
-     * with the specified prefix.</p>
+     * <p>An S3 prefix that you can use to limit responses to those that begin with the
+     * specified prefix.</p>
      */
     inline const Aws::String& GetPrefix() const{ return m_prefix; }
 
     /**
-     * <p>An Amazon S3 prefix that you can use to limit responses to those that begin
-     * with the specified prefix.</p>
+     * <p>An S3 prefix that you can use to limit responses to those that begin with the
+     * specified prefix.</p>
      */
     inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
 
     /**
-     * <p>An Amazon S3 prefix that you can use to limit responses to those that begin
-     * with the specified prefix.</p>
+     * <p>An S3 prefix that you can use to limit responses to those that begin with the
+     * specified prefix.</p>
      */
     inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
 
     /**
-     * <p>An Amazon S3 prefix that you can use to limit responses to those that begin
-     * with the specified prefix.</p>
+     * <p>An S3 prefix that you can use to limit responses to those that begin with the
+     * specified prefix.</p>
      */
     inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
 
     /**
-     * <p>An Amazon S3 prefix that you can use to limit responses to those that begin
-     * with the specified prefix.</p>
+     * <p>An S3 prefix that you can use to limit responses to those that begin with the
+     * specified prefix.</p>
      */
     inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
 
     /**
-     * <p>An Amazon S3 prefix that you can use to limit responses to those that begin
-     * with the specified prefix.</p>
+     * <p>An S3 prefix that you can use to limit responses to those that begin with the
+     * specified prefix.</p>
      */
     inline S3Destination& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
 
     /**
-     * <p>An Amazon S3 prefix that you can use to limit responses to those that begin
-     * with the specified prefix.</p>
+     * <p>An S3 prefix that you can use to limit responses to those that begin with the
+     * specified prefix.</p>
      */
     inline S3Destination& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
 
     /**
-     * <p>An Amazon S3 prefix that you can use to limit responses to those that begin
-     * with the specified prefix.</p>
+     * <p>An S3 prefix that you can use to limit responses to those that begin with the
+     * specified prefix.</p>
      */
     inline S3Destination& WithPrefix(const char* value) { SetPrefix(value); return *this;}
 

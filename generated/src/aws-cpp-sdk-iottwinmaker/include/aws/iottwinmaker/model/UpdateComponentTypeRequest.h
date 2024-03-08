@@ -12,6 +12,7 @@
 #include <aws/iottwinmaker/model/PropertyDefinitionRequest.h>
 #include <aws/iottwinmaker/model/FunctionRequest.h>
 #include <aws/iottwinmaker/model/PropertyGroupRequest.h>
+#include <aws/iottwinmaker/model/CompositeComponentTypeRequest.h>
 #include <utility>
 
 namespace Aws
@@ -478,6 +479,91 @@ namespace Model
      */
     inline UpdateComponentTypeRequest& WithComponentTypeName(const char* value) { SetComponentTypeName(value); return *this;}
 
+
+    /**
+     * <p>This is an object that maps strings to <code>compositeComponentTypes</code>
+     * of the <code>componentType</code>. <code>CompositeComponentType</code> is
+     * referenced by <code>componentTypeId</code>.</p>
+     */
+    inline const Aws::Map<Aws::String, CompositeComponentTypeRequest>& GetCompositeComponentTypes() const{ return m_compositeComponentTypes; }
+
+    /**
+     * <p>This is an object that maps strings to <code>compositeComponentTypes</code>
+     * of the <code>componentType</code>. <code>CompositeComponentType</code> is
+     * referenced by <code>componentTypeId</code>.</p>
+     */
+    inline bool CompositeComponentTypesHasBeenSet() const { return m_compositeComponentTypesHasBeenSet; }
+
+    /**
+     * <p>This is an object that maps strings to <code>compositeComponentTypes</code>
+     * of the <code>componentType</code>. <code>CompositeComponentType</code> is
+     * referenced by <code>componentTypeId</code>.</p>
+     */
+    inline void SetCompositeComponentTypes(const Aws::Map<Aws::String, CompositeComponentTypeRequest>& value) { m_compositeComponentTypesHasBeenSet = true; m_compositeComponentTypes = value; }
+
+    /**
+     * <p>This is an object that maps strings to <code>compositeComponentTypes</code>
+     * of the <code>componentType</code>. <code>CompositeComponentType</code> is
+     * referenced by <code>componentTypeId</code>.</p>
+     */
+    inline void SetCompositeComponentTypes(Aws::Map<Aws::String, CompositeComponentTypeRequest>&& value) { m_compositeComponentTypesHasBeenSet = true; m_compositeComponentTypes = std::move(value); }
+
+    /**
+     * <p>This is an object that maps strings to <code>compositeComponentTypes</code>
+     * of the <code>componentType</code>. <code>CompositeComponentType</code> is
+     * referenced by <code>componentTypeId</code>.</p>
+     */
+    inline UpdateComponentTypeRequest& WithCompositeComponentTypes(const Aws::Map<Aws::String, CompositeComponentTypeRequest>& value) { SetCompositeComponentTypes(value); return *this;}
+
+    /**
+     * <p>This is an object that maps strings to <code>compositeComponentTypes</code>
+     * of the <code>componentType</code>. <code>CompositeComponentType</code> is
+     * referenced by <code>componentTypeId</code>.</p>
+     */
+    inline UpdateComponentTypeRequest& WithCompositeComponentTypes(Aws::Map<Aws::String, CompositeComponentTypeRequest>&& value) { SetCompositeComponentTypes(std::move(value)); return *this;}
+
+    /**
+     * <p>This is an object that maps strings to <code>compositeComponentTypes</code>
+     * of the <code>componentType</code>. <code>CompositeComponentType</code> is
+     * referenced by <code>componentTypeId</code>.</p>
+     */
+    inline UpdateComponentTypeRequest& AddCompositeComponentTypes(const Aws::String& key, const CompositeComponentTypeRequest& value) { m_compositeComponentTypesHasBeenSet = true; m_compositeComponentTypes.emplace(key, value); return *this; }
+
+    /**
+     * <p>This is an object that maps strings to <code>compositeComponentTypes</code>
+     * of the <code>componentType</code>. <code>CompositeComponentType</code> is
+     * referenced by <code>componentTypeId</code>.</p>
+     */
+    inline UpdateComponentTypeRequest& AddCompositeComponentTypes(Aws::String&& key, const CompositeComponentTypeRequest& value) { m_compositeComponentTypesHasBeenSet = true; m_compositeComponentTypes.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>This is an object that maps strings to <code>compositeComponentTypes</code>
+     * of the <code>componentType</code>. <code>CompositeComponentType</code> is
+     * referenced by <code>componentTypeId</code>.</p>
+     */
+    inline UpdateComponentTypeRequest& AddCompositeComponentTypes(const Aws::String& key, CompositeComponentTypeRequest&& value) { m_compositeComponentTypesHasBeenSet = true; m_compositeComponentTypes.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>This is an object that maps strings to <code>compositeComponentTypes</code>
+     * of the <code>componentType</code>. <code>CompositeComponentType</code> is
+     * referenced by <code>componentTypeId</code>.</p>
+     */
+    inline UpdateComponentTypeRequest& AddCompositeComponentTypes(Aws::String&& key, CompositeComponentTypeRequest&& value) { m_compositeComponentTypesHasBeenSet = true; m_compositeComponentTypes.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>This is an object that maps strings to <code>compositeComponentTypes</code>
+     * of the <code>componentType</code>. <code>CompositeComponentType</code> is
+     * referenced by <code>componentTypeId</code>.</p>
+     */
+    inline UpdateComponentTypeRequest& AddCompositeComponentTypes(const char* key, CompositeComponentTypeRequest&& value) { m_compositeComponentTypesHasBeenSet = true; m_compositeComponentTypes.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>This is an object that maps strings to <code>compositeComponentTypes</code>
+     * of the <code>componentType</code>. <code>CompositeComponentType</code> is
+     * referenced by <code>componentTypeId</code>.</p>
+     */
+    inline UpdateComponentTypeRequest& AddCompositeComponentTypes(const char* key, const CompositeComponentTypeRequest& value) { m_compositeComponentTypesHasBeenSet = true; m_compositeComponentTypes.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_workspaceId;
@@ -506,6 +592,9 @@ namespace Model
 
     Aws::String m_componentTypeName;
     bool m_componentTypeNameHasBeenSet = false;
+
+    Aws::Map<Aws::String, CompositeComponentTypeRequest> m_compositeComponentTypes;
+    bool m_compositeComponentTypesHasBeenSet = false;
   };
 
 } // namespace Model

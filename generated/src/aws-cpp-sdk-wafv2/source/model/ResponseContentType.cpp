@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResponseContentType::NOT_SET:
+            return {};
           case ResponseContentType::TEXT_PLAIN:
             return "TEXT_PLAIN";
           case ResponseContentType::TEXT_HTML:

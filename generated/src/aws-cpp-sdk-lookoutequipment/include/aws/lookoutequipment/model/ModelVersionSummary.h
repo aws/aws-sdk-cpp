@@ -9,6 +9,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/lookoutequipment/model/ModelVersionStatus.h>
 #include <aws/lookoutequipment/model/ModelVersionSourceType.h>
+#include <aws/lookoutequipment/model/ModelQuality.h>
 #include <utility>
 
 namespace Aws
@@ -285,6 +286,91 @@ namespace Model
      */
     inline ModelVersionSummary& WithSourceType(ModelVersionSourceType&& value) { SetSourceType(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Provides a quality assessment for a model that uses labels. If Lookout for
+     * Equipment determines that the model quality is poor based on training metrics,
+     * the value is <code>POOR_QUALITY_DETECTED</code>. Otherwise, the value is
+     * <code>QUALITY_THRESHOLD_MET</code>. </p> <p>If the model is unlabeled, the model
+     * quality can't be assessed and the value of <code>ModelQuality</code> is
+     * <code>CANNOT_DETERMINE_QUALITY</code>. In this situation, you can get a model
+     * quality assessment by adding labels to the input dataset and retraining the
+     * model.</p> <p>For information about improving the quality of a model, see <a
+     * href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/best-practices.html">Best
+     * practices with Amazon Lookout for Equipment</a>.</p>
+     */
+    inline const ModelQuality& GetModelQuality() const{ return m_modelQuality; }
+
+    /**
+     * <p>Provides a quality assessment for a model that uses labels. If Lookout for
+     * Equipment determines that the model quality is poor based on training metrics,
+     * the value is <code>POOR_QUALITY_DETECTED</code>. Otherwise, the value is
+     * <code>QUALITY_THRESHOLD_MET</code>. </p> <p>If the model is unlabeled, the model
+     * quality can't be assessed and the value of <code>ModelQuality</code> is
+     * <code>CANNOT_DETERMINE_QUALITY</code>. In this situation, you can get a model
+     * quality assessment by adding labels to the input dataset and retraining the
+     * model.</p> <p>For information about improving the quality of a model, see <a
+     * href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/best-practices.html">Best
+     * practices with Amazon Lookout for Equipment</a>.</p>
+     */
+    inline bool ModelQualityHasBeenSet() const { return m_modelQualityHasBeenSet; }
+
+    /**
+     * <p>Provides a quality assessment for a model that uses labels. If Lookout for
+     * Equipment determines that the model quality is poor based on training metrics,
+     * the value is <code>POOR_QUALITY_DETECTED</code>. Otherwise, the value is
+     * <code>QUALITY_THRESHOLD_MET</code>. </p> <p>If the model is unlabeled, the model
+     * quality can't be assessed and the value of <code>ModelQuality</code> is
+     * <code>CANNOT_DETERMINE_QUALITY</code>. In this situation, you can get a model
+     * quality assessment by adding labels to the input dataset and retraining the
+     * model.</p> <p>For information about improving the quality of a model, see <a
+     * href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/best-practices.html">Best
+     * practices with Amazon Lookout for Equipment</a>.</p>
+     */
+    inline void SetModelQuality(const ModelQuality& value) { m_modelQualityHasBeenSet = true; m_modelQuality = value; }
+
+    /**
+     * <p>Provides a quality assessment for a model that uses labels. If Lookout for
+     * Equipment determines that the model quality is poor based on training metrics,
+     * the value is <code>POOR_QUALITY_DETECTED</code>. Otherwise, the value is
+     * <code>QUALITY_THRESHOLD_MET</code>. </p> <p>If the model is unlabeled, the model
+     * quality can't be assessed and the value of <code>ModelQuality</code> is
+     * <code>CANNOT_DETERMINE_QUALITY</code>. In this situation, you can get a model
+     * quality assessment by adding labels to the input dataset and retraining the
+     * model.</p> <p>For information about improving the quality of a model, see <a
+     * href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/best-practices.html">Best
+     * practices with Amazon Lookout for Equipment</a>.</p>
+     */
+    inline void SetModelQuality(ModelQuality&& value) { m_modelQualityHasBeenSet = true; m_modelQuality = std::move(value); }
+
+    /**
+     * <p>Provides a quality assessment for a model that uses labels. If Lookout for
+     * Equipment determines that the model quality is poor based on training metrics,
+     * the value is <code>POOR_QUALITY_DETECTED</code>. Otherwise, the value is
+     * <code>QUALITY_THRESHOLD_MET</code>. </p> <p>If the model is unlabeled, the model
+     * quality can't be assessed and the value of <code>ModelQuality</code> is
+     * <code>CANNOT_DETERMINE_QUALITY</code>. In this situation, you can get a model
+     * quality assessment by adding labels to the input dataset and retraining the
+     * model.</p> <p>For information about improving the quality of a model, see <a
+     * href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/best-practices.html">Best
+     * practices with Amazon Lookout for Equipment</a>.</p>
+     */
+    inline ModelVersionSummary& WithModelQuality(const ModelQuality& value) { SetModelQuality(value); return *this;}
+
+    /**
+     * <p>Provides a quality assessment for a model that uses labels. If Lookout for
+     * Equipment determines that the model quality is poor based on training metrics,
+     * the value is <code>POOR_QUALITY_DETECTED</code>. Otherwise, the value is
+     * <code>QUALITY_THRESHOLD_MET</code>. </p> <p>If the model is unlabeled, the model
+     * quality can't be assessed and the value of <code>ModelQuality</code> is
+     * <code>CANNOT_DETERMINE_QUALITY</code>. In this situation, you can get a model
+     * quality assessment by adding labels to the input dataset and retraining the
+     * model.</p> <p>For information about improving the quality of a model, see <a
+     * href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/best-practices.html">Best
+     * practices with Amazon Lookout for Equipment</a>.</p>
+     */
+    inline ModelVersionSummary& WithModelQuality(ModelQuality&& value) { SetModelQuality(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_modelName;
@@ -307,6 +393,9 @@ namespace Model
 
     ModelVersionSourceType m_sourceType;
     bool m_sourceTypeHasBeenSet = false;
+
+    ModelQuality m_modelQuality;
+    bool m_modelQualityHasBeenSet = false;
   };
 
 } // namespace Model

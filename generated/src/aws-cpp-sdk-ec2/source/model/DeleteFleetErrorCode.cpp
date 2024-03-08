@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DeleteFleetErrorCode::NOT_SET:
+            return {};
           case DeleteFleetErrorCode::fleetIdDoesNotExist:
             return "fleetIdDoesNotExist";
           case DeleteFleetErrorCode::fleetIdMalformed:

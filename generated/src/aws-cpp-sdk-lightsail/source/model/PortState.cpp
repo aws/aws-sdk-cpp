@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PortState::NOT_SET:
+            return {};
           case PortState::open:
             return "open";
           case PortState::closed:

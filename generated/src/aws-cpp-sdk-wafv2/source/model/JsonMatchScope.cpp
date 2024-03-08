@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case JsonMatchScope::NOT_SET:
+            return {};
           case JsonMatchScope::ALL:
             return "ALL";
           case JsonMatchScope::KEY:

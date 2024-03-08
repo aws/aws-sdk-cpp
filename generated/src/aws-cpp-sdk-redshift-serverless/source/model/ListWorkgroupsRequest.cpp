@@ -15,7 +15,8 @@ using namespace Aws::Utils;
 ListWorkgroupsRequest::ListWorkgroupsRequest() : 
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+    m_nextTokenHasBeenSet(false),
+    m_ownerAccountHasBeenSet(false)
 {
 }
 
@@ -32,6 +33,12 @@ Aws::String ListWorkgroupsRequest::SerializePayload() const
   if(m_nextTokenHasBeenSet)
   {
    payload.WithString("nextToken", m_nextToken);
+
+  }
+
+  if(m_ownerAccountHasBeenSet)
+  {
+   payload.WithString("ownerAccount", m_ownerAccount);
 
   }
 

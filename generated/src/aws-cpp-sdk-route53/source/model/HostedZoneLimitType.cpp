@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HostedZoneLimitType::NOT_SET:
+            return {};
           case HostedZoneLimitType::MAX_RRSETS_BY_ZONE:
             return "MAX_RRSETS_BY_ZONE";
           case HostedZoneLimitType::MAX_VPCS_ASSOCIATED_BY_ZONE:

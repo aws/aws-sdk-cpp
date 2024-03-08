@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AudioSelectorType::NOT_SET:
+            return {};
           case AudioSelectorType::PID:
             return "PID";
           case AudioSelectorType::TRACK:

@@ -21,14 +21,18 @@ namespace Model
 InputColumn::InputColumn() : 
     m_nameHasBeenSet(false),
     m_type(InputColumnDataType::NOT_SET),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_subType(ColumnDataSubType::NOT_SET),
+    m_subTypeHasBeenSet(false)
 {
 }
 
 InputColumn::InputColumn(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_type(InputColumnDataType::NOT_SET),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_subType(ColumnDataSubType::NOT_SET),
+    m_subTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -49,6 +53,13 @@ InputColumn& InputColumn::operator =(JsonView jsonValue)
     m_typeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SubType"))
+  {
+    m_subType = ColumnDataSubTypeMapper::GetColumnDataSubTypeForName(jsonValue.GetString("SubType"));
+
+    m_subTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -65,6 +76,11 @@ JsonValue InputColumn::Jsonize() const
   if(m_typeHasBeenSet)
   {
    payload.WithString("Type", InputColumnDataTypeMapper::GetNameForInputColumnDataType(m_type));
+  }
+
+  if(m_subTypeHasBeenSet)
+  {
+   payload.WithString("SubType", ColumnDataSubTypeMapper::GetNameForColumnDataSubType(m_subType));
   }
 
   return payload;

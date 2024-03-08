@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AccessPreviewStatus::NOT_SET:
+            return {};
           case AccessPreviewStatus::COMPLETED:
             return "COMPLETED";
           case AccessPreviewStatus::CREATING:

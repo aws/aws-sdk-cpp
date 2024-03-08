@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NamedShadowIndexingMode::NOT_SET:
+            return {};
           case NamedShadowIndexingMode::OFF:
             return "OFF";
           case NamedShadowIndexingMode::ON:

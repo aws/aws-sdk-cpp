@@ -149,6 +149,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RelationshipType::NOT_SET:
+            return {};
           case RelationshipType::EVERY:
             return "EVERY";
           case RelationshipType::WITH_DOSAGE:

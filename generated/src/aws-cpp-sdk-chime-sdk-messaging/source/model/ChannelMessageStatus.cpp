@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ChannelMessageStatus::NOT_SET:
+            return {};
           case ChannelMessageStatus::SENT:
             return "SENT";
           case ChannelMessageStatus::PENDING:

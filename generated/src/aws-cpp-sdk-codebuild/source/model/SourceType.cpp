@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SourceType::NOT_SET:
+            return {};
           case SourceType::CODECOMMIT:
             return "CODECOMMIT";
           case SourceType::CODEPIPELINE:

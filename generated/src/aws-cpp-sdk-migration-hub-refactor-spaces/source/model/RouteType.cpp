@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RouteType::NOT_SET:
+            return {};
           case RouteType::DEFAULT:
             return "DEFAULT";
           case RouteType::URI_PATH:

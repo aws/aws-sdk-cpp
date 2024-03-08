@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AccessDeniedForDependencyExceptionReason::NOT_SET:
+            return {};
           case AccessDeniedForDependencyExceptionReason::ACCESS_DENIED_DURING_CREATE_SERVICE_LINKED_ROLE:
             return "ACCESS_DENIED_DURING_CREATE_SERVICE_LINKED_ROLE";
           default:

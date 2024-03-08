@@ -84,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TimeGranularity::NOT_SET:
+            return {};
           case TimeGranularity::YEAR:
             return "YEAR";
           case TimeGranularity::QUARTER:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RecommendationJobType::NOT_SET:
+            return {};
           case RecommendationJobType::Default:
             return "Default";
           case RecommendationJobType::Advanced:

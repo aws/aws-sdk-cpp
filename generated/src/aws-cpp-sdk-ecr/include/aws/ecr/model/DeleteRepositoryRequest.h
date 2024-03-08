@@ -133,22 +133,30 @@ namespace Model
 
 
     /**
-     * <p> If a repository contains images, forces the deletion.</p>
+     * <p>If true, deleting the repository force deletes the contents of the
+     * repository. If false, the repository must be empty before attempting to delete
+     * it.</p>
      */
     inline bool GetForce() const{ return m_force; }
 
     /**
-     * <p> If a repository contains images, forces the deletion.</p>
+     * <p>If true, deleting the repository force deletes the contents of the
+     * repository. If false, the repository must be empty before attempting to delete
+     * it.</p>
      */
     inline bool ForceHasBeenSet() const { return m_forceHasBeenSet; }
 
     /**
-     * <p> If a repository contains images, forces the deletion.</p>
+     * <p>If true, deleting the repository force deletes the contents of the
+     * repository. If false, the repository must be empty before attempting to delete
+     * it.</p>
      */
     inline void SetForce(bool value) { m_forceHasBeenSet = true; m_force = value; }
 
     /**
-     * <p> If a repository contains images, forces the deletion.</p>
+     * <p>If true, deleting the repository force deletes the contents of the
+     * repository. If false, the repository must be empty before attempting to delete
+     * it.</p>
      */
     inline DeleteRepositoryRequest& WithForce(bool value) { SetForce(value); return *this;}
 

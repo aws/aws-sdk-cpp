@@ -507,7 +507,7 @@
       "errors":[
         {"shape":"InternalServerError"}
       ],
-      "documentation":"<p>List backups associated with an Amazon Web Services account. To list backups for a given table, specify <code>TableName</code>. <code>ListBackups</code> returns a paginated list of results with at most 1 MB worth of items in a page. You can also specify a maximum number of entries to be returned in a page.</p> <p>In the request, start time is inclusive, but end time is exclusive. Note that these boundaries are for the time at which the original backup was requested.</p> <p>You can call <code>ListBackups</code> a maximum of five times per second.</p>",
+      "documentation":"<p>List DynamoDB backups that are associated with an Amazon Web Services account and weren't made with Amazon Web Services Backup. To list these backups for a given table, specify <code>TableName</code>. <code>ListBackups</code> returns a paginated list of results with at most 1 MB worth of items in a page. You can also specify a maximum number of entries to be returned in a page.</p> <p>In the request, start time is inclusive, but end time is exclusive. Note that these boundaries are for the time at which the original backup was requested.</p> <p>You can call <code>ListBackups</code> a maximum of five times per second.</p> <p>If you want to retrieve the complete list of backups made with Amazon Web Services Backup, use the <a href=\"https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListBackupJobs.html\">Amazon Web Services Backup list API.</a> </p>",
       "endpointdiscovery":{
       }
     },
@@ -674,7 +674,7 @@
         {"shape":"PointInTimeRecoveryUnavailableException"},
         {"shape":"InternalServerError"}
       ],
-      "documentation":"<p>Restores the specified table to the specified point in time within <code>EarliestRestorableDateTime</code> and <code>LatestRestorableDateTime</code>. You can restore your table to any point in time during the last 35 days. Any number of users can execute up to 4 concurrent restores (any type of restore) in a given account. </p> <p> When you restore using point in time recovery, DynamoDB restores your table data to the state based on the selected date and time (day:hour:minute:second) to a new table. </p> <p> Along with data, the following are also included on the new restored table using point in time recovery: </p> <ul> <li> <p>Global secondary indexes (GSIs)</p> </li> <li> <p>Local secondary indexes (LSIs)</p> </li> <li> <p>Provisioned read and write capacity</p> </li> <li> <p>Encryption settings</p> <important> <p> All these settings come from the current settings of the source table at the time of restore. </p> </important> </li> </ul> <p>You must manually set up the following on the restored table:</p> <ul> <li> <p>Auto scaling policies</p> </li> <li> <p>IAM policies</p> </li> <li> <p>Amazon CloudWatch metrics and alarms</p> </li> <li> <p>Tags</p> </li> <li> <p>Stream settings</p> </li> <li> <p>Time to Live (TTL) settings</p> </li> <li> <p>Point in time recovery settings</p> </li> </ul>",
+      "documentation":"<p>Restores the specified table to the specified point in time within <code>EarliestRestorableDateTime</code> and <code>LatestRestorableDateTime</code>. You can restore your table to any point in time during the last 35 days. Any number of users can execute up to 50 concurrent restores (any type of restore) in a given account. </p> <p>When you restore using point in time recovery, DynamoDB restores your table data to the state based on the selected date and time (day:hour:minute:second) to a new table. </p> <p>Along with data, the following are also included on the new restored table using point in time recovery: </p> <ul> <li> <p>Global secondary indexes (GSIs)</p> </li> <li> <p>Local secondary indexes (LSIs)</p> </li> <li> <p>Provisioned read and write capacity</p> </li> <li> <p>Encryption settings</p> <important> <p> All these settings come from the current settings of the source table at the time of restore. </p> </important> </li> </ul> <p>You must manually set up the following on the restored table:</p> <ul> <li> <p>Auto scaling policies</p> </li> <li> <p>IAM policies</p> </li> <li> <p>Amazon CloudWatch metrics and alarms</p> </li> <li> <p>Tags</p> </li> <li> <p>Stream settings</p> </li> <li> <p>Time to Live (TTL) settings</p> </li> <li> <p>Point in time recovery settings</p> </li> </ul>",
       "endpointdiscovery":{
       }
     },
@@ -816,7 +816,7 @@
         {"shape":"ReplicaNotFoundException"},
         {"shape":"TableNotFoundException"}
       ],
-      "documentation":"<p>Adds or removes replicas in the specified global table. The global table must already exist to be able to use this operation. Any replica to be added must be empty, have the same name as the global table, have the same key schema, have DynamoDB Streams enabled, and have the same provisioned and maximum write capacity units.</p> <important> <p>This operation only applies to <a href=\"https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html\">Version 2017.11.29 (Legacy)</a> of global tables. We recommend using <a href=\"https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html\">Version 2019.11.21 (Current)</a> when creating new global tables, as it provides greater flexibility, higher efficiency and consumes less write capacity than 2017.11.29 (Legacy). To determine which version you are using, see <a href=\"https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.DetermineVersion.html\">Determining the version</a>. To update existing global tables from version 2017.11.29 (Legacy) to version 2019.11.21 (Current), see <a href=\"https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2globaltables_upgrade.html\"> Updating global tables</a>. </p> </important> <note> <p> This operation only applies to <a href=\"https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html\">Version 2017.11.29</a> of global tables. If you are using global tables <a href=\"https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html\">Version 2019.11.21</a> you can use <a href=\"https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeTable.html\">DescribeTable</a> instead. </p> <p> Although you can use <code>UpdateGlobalTable</code> to add replicas and remove replicas in a single request, for simplicity we recommend that you issue separate requests for adding or removing replicas. </p> </note> <p> If global secondary indexes are specified, then the following conditions must also be met: </p> <ul> <li> <p> The global secondary indexes must have the same name. </p> </li> <li> <p> The global secondary indexes must have the same hash key and sort key (if present). </p> </li> <li> <p> The global secondary indexes must have the same provisioned and maximum write capacity units. </p> </li> </ul>",
+      "documentation":"<p>Adds or removes replicas in the specified global table. The global table must already exist to be able to use this operation. Any replica to be added must be empty, have the same name as the global table, have the same key schema, have DynamoDB Streams enabled, and have the same provisioned and maximum write capacity units.</p> <important> <p>This operation only applies to <a href=\"https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html\">Version 2017.11.29 (Legacy)</a> of global tables. We recommend using <a href=\"https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html\">Version 2019.11.21 (Current)</a> when creating new global tables, as it provides greater flexibility, higher efficiency and consumes less write capacity than 2017.11.29 (Legacy). To determine which version you are using, see <a href=\"https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.DetermineVersion.html\">Determining the version</a>. To update existing global tables from version 2017.11.29 (Legacy) to version 2019.11.21 (Current), see <a href=\"https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2globaltables_upgrade.html\"> Updating global tables</a>. </p> </important> <note> <p> This operation only applies to <a href=\"https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html\">Version 2017.11.29</a> of global tables. If you are using global tables <a href=\"https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html\">Version 2019.11.21</a> you can use <a href=\"https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateTable.html\">UpdateTable</a> instead. </p> <p> Although you can use <code>UpdateGlobalTable</code> to add replicas and remove replicas in a single request, for simplicity we recommend that you issue separate requests for adding or removing replicas. </p> </note> <p> If global secondary indexes are specified, then the following conditions must also be met: </p> <ul> <li> <p> The global secondary indexes must have the same name. </p> </li> <li> <p> The global secondary indexes must have the same hash key and sort key (if present). </p> </li> <li> <p> The global secondary indexes must have the same provisioned and maximum write capacity units. </p> </li> </ul>",
       "endpointdiscovery":{
       }
     },
@@ -861,6 +861,24 @@
       "endpointdiscovery":{
       }
     },
+    "UpdateKinesisStreamingDestination":{
+      "name":"UpdateKinesisStreamingDestination",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"UpdateKinesisStreamingDestinationInput"},
+      "output":{"shape":"UpdateKinesisStreamingDestinationOutput"},
+      "errors":[
+        {"shape":"InternalServerError"},
+        {"shape":"LimitExceededException"},
+        {"shape":"ResourceInUseException"},
+        {"shape":"ResourceNotFoundException"}
+      ],
+      "documentation":"<p>The command to update the Kinesis stream destination.</p>",
+      "endpointdiscovery":{
+      }
+    },
     "UpdateTable":{
       "name":"UpdateTable",
       "http":{
@@ -875,7 +893,7 @@
         {"shape":"LimitExceededException"},
         {"shape":"InternalServerError"}
       ],
-      "documentation":"<p>Modifies the provisioned throughput settings, global secondary indexes, or DynamoDB Streams settings for a given table.</p> <important> <p>This operation only applies to <a href=\"https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html\">Version 2019.11.21 (Current)</a> of global tables. </p> </important> <p>You can only perform one of the following operations at once:</p> <ul> <li> <p>Modify the provisioned throughput settings of the table.</p> </li> <li> <p>Remove a global secondary index from the table.</p> </li> <li> <p>Create a new global secondary index on the table. After the index begins backfilling, you can use <code>UpdateTable</code> to perform other operations.</p> </li> </ul> <p> <code>UpdateTable</code> is an asynchronous operation; while it is executing, the table status changes from <code>ACTIVE</code> to <code>UPDATING</code>. While it is <code>UPDATING</code>, you cannot issue another <code>UpdateTable</code> request. When the table returns to the <code>ACTIVE</code> state, the <code>UpdateTable</code> operation is complete.</p>",
+      "documentation":"<p>Modifies the provisioned throughput settings, global secondary indexes, or DynamoDB Streams settings for a given table.</p> <important> <p>This operation only applies to <a href=\"https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html\">Version 2019.11.21 (Current)</a> of global tables. </p> </important> <p>You can only perform one of the following operations at once:</p> <ul> <li> <p>Modify the provisioned throughput settings of the table.</p> </li> <li> <p>Remove a global secondary index from the table.</p> </li> <li> <p>Create a new global secondary index on the table. After the index begins backfilling, you can use <code>UpdateTable</code> to perform other operations.</p> </li> </ul> <p> <code>UpdateTable</code> is an asynchronous operation; while it's executing, the table status changes from <code>ACTIVE</code> to <code>UPDATING</code>. While it's <code>UPDATING</code>, you can't issue another <code>UpdateTable</code> request on the base table nor any replicas. When the table returns to the <code>ACTIVE</code> state, the <code>UpdateTable</code> operation is complete.</p>",
       "endpointdiscovery":{
       }
     },
@@ -915,6 +933,13 @@
     }
   },
   "shapes":{
+    "ApproximateCreationDateTimePrecision":{
+      "type":"string",
+      "enum":[
+        "MILLISECOND",
+        "MICROSECOND"
+      ]
+    },
     "ArchivalReason":{"type":"string"},
     "ArchivalSummary":{
       "type":"structure",
@@ -958,7 +983,7 @@
           "documentation":"<p>The data type for the attribute, where:</p> <ul> <li> <p> <code>S</code> - the attribute is of type String</p> </li> <li> <p> <code>N</code> - the attribute is of type Number</p> </li> <li> <p> <code>B</code> - the attribute is of type Binary</p> </li> </ul>"
         }
       },
-      "documentation":"<p>Represents an attribute for describing the key schema for the table and indexes.</p>"
+      "documentation":"<p>Represents an attribute for describing the schema for the table and indexes.</p>"
     },
     "AttributeDefinitions":{
       "type":"list",
@@ -2542,7 +2567,8 @@
         "ACTIVE",
         "DISABLING",
         "DISABLED",
-        "ENABLE_FAILED"
+        "ENABLE_FAILED",
+        "UPDATING"
       ]
     },
     "DoubleObject":{"type":"double"},
@@ -2553,6 +2579,16 @@
       },
       "documentation":"<p> There was an attempt to insert an item with the same primary key as an item that already exists in the DynamoDB table.</p>",
       "exception":true
+    },
+    "EnableKinesisStreamingConfiguration":{
+      "type":"structure",
+      "members":{
+        "ApproximateCreationDateTimePrecision":{
+          "shape":"ApproximateCreationDateTimePrecision",
+          "documentation":"<p>Toggle for the precision of Kinesis data stream timestamp. The values are either <code>MILLISECOND</code> or <code>MICROSECOND</code>.</p>"
+        }
+      },
+      "documentation":"<p>Enables setting the configuration for Kinesis Streaming.</p>"
     },
     "Endpoint":{
       "type":"structure",
@@ -2782,6 +2818,14 @@
         "ItemCount":{
           "shape":"ItemCount",
           "documentation":"<p>The number of items exported.</p>"
+        },
+        "ExportType":{
+          "shape":"ExportType",
+          "documentation":"<p>The type of export that was performed. Valid values are <code>FULL_EXPORT</code> or <code>INCREMENTAL_EXPORT</code>.</p>"
+        },
+        "IncrementalExportSpecification":{
+          "shape":"IncrementalExportSpecification",
+          "documentation":"<p>Optional object containing the parameters specific to an incremental export.</p>"
         }
       },
       "documentation":"<p>Represents the properties of the exported table.</p>"
@@ -2794,6 +2838,7 @@
         "ION"
       ]
     },
+    "ExportFromTime":{"type":"timestamp"},
     "ExportManifest":{"type":"string"},
     "ExportNextToken":{"type":"string"},
     "ExportNotFoundException":{
@@ -2827,6 +2872,10 @@
         "ExportStatus":{
           "shape":"ExportStatus",
           "documentation":"<p>Export can be in one of the following states: IN_PROGRESS, COMPLETED, or FAILED.</p>"
+        },
+        "ExportType":{
+          "shape":"ExportType",
+          "documentation":"<p>The type of export that was performed. Valid values are <code>FULL_EXPORT</code> or <code>INCREMENTAL_EXPORT</code>.</p>"
         }
       },
       "documentation":"<p>Summary information about an export task.</p>"
@@ -2857,7 +2906,7 @@
         },
         "S3BucketOwner":{
           "shape":"S3BucketOwner",
-          "documentation":"<p>The ID of the Amazon Web Services account that owns the bucket the export will be stored in.</p>"
+          "documentation":"<p>The ID of the Amazon Web Services account that owns the bucket the export will be stored in.</p> <note> <p>S3BucketOwner is a required parameter when exporting to a S3 bucket in another account.</p> </note>"
         },
         "S3Prefix":{
           "shape":"S3Prefix",
@@ -2874,6 +2923,14 @@
         "ExportFormat":{
           "shape":"ExportFormat",
           "documentation":"<p>The format for the exported data. Valid values for <code>ExportFormat</code> are <code>DYNAMODB_JSON</code> or <code>ION</code>.</p>"
+        },
+        "ExportType":{
+          "shape":"ExportType",
+          "documentation":"<p>Choice of whether to execute as a full export or incremental export. Valid values are FULL_EXPORT or INCREMENTAL_EXPORT. The default value is FULL_EXPORT. If INCREMENTAL_EXPORT is provided, the IncrementalExportSpecification must also be used.</p>"
+        },
+        "IncrementalExportSpecification":{
+          "shape":"IncrementalExportSpecification",
+          "documentation":"<p>Optional object containing the parameters specific to an incremental export.</p>"
         }
       }
     },
@@ -2887,6 +2944,21 @@
       }
     },
     "ExportTime":{"type":"timestamp"},
+    "ExportToTime":{"type":"timestamp"},
+    "ExportType":{
+      "type":"string",
+      "enum":[
+        "FULL_EXPORT",
+        "INCREMENTAL_EXPORT"
+      ]
+    },
+    "ExportViewType":{
+      "type":"string",
+      "enum":[
+        "NEW_IMAGE",
+        "NEW_AND_OLD_IMAGES"
+      ]
+    },
     "ExpressionAttributeNameMap":{
       "type":"map",
       "key":{"shape":"ExpressionAttributeNameVariable"},
@@ -3451,6 +3523,24 @@
       "type":"long",
       "min":0
     },
+    "IncrementalExportSpecification":{
+      "type":"structure",
+      "members":{
+        "ExportFromTime":{
+          "shape":"ExportFromTime",
+          "documentation":"<p>Time in the past which provides the inclusive start range for the export table's data, counted in seconds from the start of the Unix epoch. The incremental export will reflect the table's state including and after this point in time.</p>"
+        },
+        "ExportToTime":{
+          "shape":"ExportToTime",
+          "documentation":"<p>Time in the past which provides the exclusive end range for the export table's data, counted in seconds from the start of the Unix epoch. The incremental export will reflect the table's state just prior to this point in time. If this is not provided, the latest time with data available will be used.</p>"
+        },
+        "ExportViewType":{
+          "shape":"ExportViewType",
+          "documentation":"<p>The view type that was chosen for the export. Valid values are <code>NEW_AND_OLD_IMAGES</code> and <code>NEW_IMAGES</code>. The default value is <code>NEW_AND_OLD_IMAGES</code>.</p>"
+        }
+      },
+      "documentation":"<p>Optional object containing the parameters specific to an incremental export.</p>"
+    },
     "IndexName":{
       "type":"string",
       "max":255,
@@ -3694,6 +3784,10 @@
         "DestinationStatusDescription":{
           "shape":"String",
           "documentation":"<p>The human-readable string that corresponds to the replica status.</p>"
+        },
+        "ApproximateCreationDateTimePrecision":{
+          "shape":"ApproximateCreationDateTimePrecision",
+          "documentation":"<p>The precision of the Kinesis data stream timestamp. The values are either <code>MILLISECOND</code> or <code>MICROSECOND</code>.</p>"
         }
       },
       "documentation":"<p>Describes a Kinesis data stream destination.</p>"
@@ -3716,6 +3810,10 @@
         "StreamArn":{
           "shape":"StreamArn",
           "documentation":"<p>The ARN for a Kinesis data stream.</p>"
+        },
+        "EnableKinesisStreamingConfiguration":{
+          "shape":"EnableKinesisStreamingConfiguration",
+          "documentation":"<p>The source for the Kinesis streaming information that is being enabled.</p>"
         }
       }
     },
@@ -3733,6 +3831,10 @@
         "DestinationStatus":{
           "shape":"DestinationStatus",
           "documentation":"<p>The current status of the replication.</p>"
+        },
+        "EnableKinesisStreamingConfiguration":{
+          "shape":"EnableKinesisStreamingConfiguration",
+          "documentation":"<p>The destination for the Kinesis streaming information that is being enabled.</p>"
         }
       }
     },
@@ -4106,7 +4208,7 @@
       "members":{
         "Statement":{
           "shape":"PartiQLStatement",
-          "documentation":"<p> A PartiQL statment that uses parameters. </p>"
+          "documentation":"<p> A PartiQL statement that uses parameters. </p>"
         },
         "Parameters":{
           "shape":"PreparedStatementParameters",
@@ -4117,7 +4219,7 @@
           "documentation":"<p>An optional parameter that returns the item attributes for a PartiQL <code>ParameterizedStatement</code> operation that failed a condition check.</p> <p>There is no additional cost associated with requesting a return value aside from the small network and processing overhead of receiving a larger response. No read capacity units are consumed.</p>"
         }
       },
-      "documentation":"<p> Represents a PartiQL statment that uses parameters. </p>"
+      "documentation":"<p> Represents a PartiQL statement that uses parameters. </p>"
     },
     "ParameterizedStatements":{
       "type":"list",
@@ -4211,7 +4313,7 @@
       "members":{
         "ProjectionType":{
           "shape":"ProjectionType",
-          "documentation":"<p>The set of attributes that are projected into the index:</p> <ul> <li> <p> <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the index.</p> </li> <li> <p> <code>INCLUDE</code> - In addition to the attributes described in <code>KEYS_ONLY</code>, the secondary index will include other non-key attributes that you specify.</p> </li> <li> <p> <code>ALL</code> - All of the table attributes are projected into the index.</p> </li> </ul>"
+          "documentation":"<p>The set of attributes that are projected into the index:</p> <ul> <li> <p> <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the index.</p> </li> <li> <p> <code>INCLUDE</code> - In addition to the attributes described in <code>KEYS_ONLY</code>, the secondary index will include other non-key attributes that you specify.</p> </li> <li> <p> <code>ALL</code> - All of the table attributes are projected into the index.</p> </li> </ul> <p>When using the DynamoDB console, <code>ALL</code> is selected by default.</p>"
         },
         "NonKeyAttributes":{
           "shape":"NonKeyAttributeNameList",
@@ -4468,7 +4570,7 @@
         },
         "FilterExpression":{
           "shape":"ConditionExpression",
-          "documentation":"<p>A string that contains conditions that DynamoDB applies after the <code>Query</code> operation, but before the data is returned to you. Items that do not satisfy the <code>FilterExpression</code> criteria are not returned.</p> <p>A <code>FilterExpression</code> does not allow key attributes. You cannot define a filter expression based on a partition key or a sort key.</p> <note> <p>A <code>FilterExpression</code> is applied after the items have already been read; the process of filtering does not consume any additional read capacity units.</p> </note> <p>For more information, see <a href=\"https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Query.FilterExpression\">Filter Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>"
+          "documentation":"<p>A string that contains conditions that DynamoDB applies after the <code>Query</code> operation, but before the data is returned to you. Items that do not satisfy the <code>FilterExpression</code> criteria are not returned.</p> <p>A <code>FilterExpression</code> does not allow key attributes. You cannot define a filter expression based on a partition key or a sort key.</p> <note> <p>A <code>FilterExpression</code> is applied after the items have already been read; the process of filtering does not consume any additional read capacity units.</p> </note> <p>For more information, see <a href=\"https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Query.FilterExpression.html\">Filter Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>"
         },
         "KeyConditionExpression":{
           "shape":"KeyExpression",
@@ -5252,7 +5354,7 @@
         },
         "FilterExpression":{
           "shape":"ConditionExpression",
-          "documentation":"<p>A string that contains conditions that DynamoDB applies after the <code>Scan</code> operation, but before the data is returned to you. Items that do not satisfy the <code>FilterExpression</code> criteria are not returned.</p> <note> <p>A <code>FilterExpression</code> is applied after the items have already been read; the process of filtering does not consume any additional read capacity units.</p> </note> <p>For more information, see <a href=\"https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Query.FilterExpression\">Filter Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>"
+          "documentation":"<p>A string that contains conditions that DynamoDB applies after the <code>Scan</code> operation, but before the data is returned to you. Items that do not satisfy the <code>FilterExpression</code> criteria are not returned.</p> <note> <p>A <code>FilterExpression</code> is applied after the items have already been read; the process of filtering does not consume any additional read capacity units.</p> </note> <p>For more information, see <a href=\"https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Scan.html#Scan.FilterExpression\">Filter Expressions</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>"
         },
         "ExpressionAttributeNames":{
           "shape":"ExpressionAttributeNameMap",
@@ -5868,7 +5970,7 @@
           "documentation":"<p>A list of cancellation reasons.</p>"
         }
       },
-      "documentation":"<p>The entire transaction request was canceled.</p> <p>DynamoDB cancels a <code>TransactWriteItems</code> request under the following circumstances:</p> <ul> <li> <p>A condition in one of the condition expressions is not met.</p> </li> <li> <p>A table in the <code>TransactWriteItems</code> request is in a different account or region.</p> </li> <li> <p>More than one action in the <code>TransactWriteItems</code> operation targets the same item.</p> </li> <li> <p>There is insufficient provisioned capacity for the transaction to be completed.</p> </li> <li> <p>An item size becomes too large (larger than 400 KB), or a local secondary index (LSI) becomes too large, or a similar validation error occurs because of changes made by the transaction.</p> </li> <li> <p>There is a user error, such as an invalid data format.</p> </li> </ul> <p>DynamoDB cancels a <code>TransactGetItems</code> request under the following circumstances:</p> <ul> <li> <p>There is an ongoing <code>TransactGetItems</code> operation that conflicts with a concurrent <code>PutItem</code>, <code>UpdateItem</code>, <code>DeleteItem</code> or <code>TransactWriteItems</code> request. In this case the <code>TransactGetItems</code> operation fails with a <code>TransactionCanceledException</code>.</p> </li> <li> <p>A table in the <code>TransactGetItems</code> request is in a different account or region.</p> </li> <li> <p>There is insufficient provisioned capacity for the transaction to be completed.</p> </li> <li> <p>There is a user error, such as an invalid data format.</p> </li> </ul> <note> <p>If using Java, DynamoDB lists the cancellation reasons on the <code>CancellationReasons</code> property. This property is not set for other languages. Transaction cancellation reasons are ordered in the order of requested items, if an item has no error it will have <code>None</code> code and <code>Null</code> message.</p> </note> <p>Cancellation reason codes and possible error messages:</p> <ul> <li> <p>No Errors:</p> <ul> <li> <p>Code: <code>None</code> </p> </li> <li> <p>Message: <code>null</code> </p> </li> </ul> </li> <li> <p>Conditional Check Failed:</p> <ul> <li> <p>Code: <code>ConditionalCheckFailed</code> </p> </li> <li> <p>Message: The conditional request failed. </p> </li> </ul> </li> <li> <p>Item Collection Size Limit Exceeded:</p> <ul> <li> <p>Code: <code>ItemCollectionSizeLimitExceeded</code> </p> </li> <li> <p>Message: Collection size exceeded.</p> </li> </ul> </li> <li> <p>Transaction Conflict:</p> <ul> <li> <p>Code: <code>TransactionConflict</code> </p> </li> <li> <p>Message: Transaction is ongoing for the item.</p> </li> </ul> </li> <li> <p>Provisioned Throughput Exceeded:</p> <ul> <li> <p>Code: <code>ProvisionedThroughputExceeded</code> </p> </li> <li> <p>Messages:</p> <ul> <li> <p>The level of configured provisioned throughput for the table was exceeded. Consider increasing your provisioning level with the UpdateTable API.</p> <note> <p>This Message is received when provisioned throughput is exceeded is on a provisioned DynamoDB table.</p> </note> </li> <li> <p>The level of configured provisioned throughput for one or more global secondary indexes of the table was exceeded. Consider increasing your provisioning level for the under-provisioned global secondary indexes with the UpdateTable API.</p> <note> <p>This message is returned when provisioned throughput is exceeded is on a provisioned GSI.</p> </note> </li> </ul> </li> </ul> </li> <li> <p>Throttling Error:</p> <ul> <li> <p>Code: <code>ThrottlingError</code> </p> </li> <li> <p>Messages: </p> <ul> <li> <p>Throughput exceeds the current capacity of your table or index. DynamoDB is automatically scaling your table or index so please try again shortly. If exceptions persist, check if you have a hot key: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/bp-partition-key-design.html.</p> <note> <p>This message is returned when writes get throttled on an On-Demand table as DynamoDB is automatically scaling the table.</p> </note> </li> <li> <p>Throughput exceeds the current capacity for one or more global secondary indexes. DynamoDB is automatically scaling your index so please try again shortly.</p> <note> <p>This message is returned when writes get throttled on an On-Demand GSI as DynamoDB is automatically scaling the GSI.</p> </note> </li> </ul> </li> </ul> </li> <li> <p>Validation Error:</p> <ul> <li> <p>Code: <code>ValidationError</code> </p> </li> <li> <p>Messages: </p> <ul> <li> <p>One or more parameter values were invalid.</p> </li> <li> <p>The update expression attempted to update the secondary index key beyond allowed size limits.</p> </li> <li> <p>The update expression attempted to update the secondary index key to unsupported type.</p> </li> <li> <p>An operand in the update expression has an incorrect data type.</p> </li> <li> <p>Item size to update has exceeded the maximum allowed size.</p> </li> <li> <p>Number overflow. Attempting to store a number with magnitude larger than supported range.</p> </li> <li> <p>Type mismatch for attribute to update.</p> </li> <li> <p>Nesting Levels have exceeded supported limits.</p> </li> <li> <p>The document path provided in the update expression is invalid for update.</p> </li> <li> <p>The provided expression refers to an attribute that does not exist in the item.</p> </li> </ul> </li> </ul> </li> </ul>",
+      "documentation":"<p>The entire transaction request was canceled.</p> <p>DynamoDB cancels a <code>TransactWriteItems</code> request under the following circumstances:</p> <ul> <li> <p>A condition in one of the condition expressions is not met.</p> </li> <li> <p>A table in the <code>TransactWriteItems</code> request is in a different account or region.</p> </li> <li> <p>More than one action in the <code>TransactWriteItems</code> operation targets the same item.</p> </li> <li> <p>There is insufficient provisioned capacity for the transaction to be completed.</p> </li> <li> <p>An item size becomes too large (larger than 400 KB), or a local secondary index (LSI) becomes too large, or a similar validation error occurs because of changes made by the transaction.</p> </li> <li> <p>There is a user error, such as an invalid data format.</p> </li> <li> <p> There is an ongoing <code>TransactWriteItems</code> operation that conflicts with a concurrent <code>TransactWriteItems</code> request. In this case the <code>TransactWriteItems</code> operation fails with a <code>TransactionCanceledException</code>. </p> </li> </ul> <p>DynamoDB cancels a <code>TransactGetItems</code> request under the following circumstances:</p> <ul> <li> <p>There is an ongoing <code>TransactGetItems</code> operation that conflicts with a concurrent <code>PutItem</code>, <code>UpdateItem</code>, <code>DeleteItem</code> or <code>TransactWriteItems</code> request. In this case the <code>TransactGetItems</code> operation fails with a <code>TransactionCanceledException</code>.</p> </li> <li> <p>A table in the <code>TransactGetItems</code> request is in a different account or region.</p> </li> <li> <p>There is insufficient provisioned capacity for the transaction to be completed.</p> </li> <li> <p>There is a user error, such as an invalid data format.</p> </li> </ul> <note> <p>If using Java, DynamoDB lists the cancellation reasons on the <code>CancellationReasons</code> property. This property is not set for other languages. Transaction cancellation reasons are ordered in the order of requested items, if an item has no error it will have <code>None</code> code and <code>Null</code> message.</p> </note> <p>Cancellation reason codes and possible error messages:</p> <ul> <li> <p>No Errors:</p> <ul> <li> <p>Code: <code>None</code> </p> </li> <li> <p>Message: <code>null</code> </p> </li> </ul> </li> <li> <p>Conditional Check Failed:</p> <ul> <li> <p>Code: <code>ConditionalCheckFailed</code> </p> </li> <li> <p>Message: The conditional request failed. </p> </li> </ul> </li> <li> <p>Item Collection Size Limit Exceeded:</p> <ul> <li> <p>Code: <code>ItemCollectionSizeLimitExceeded</code> </p> </li> <li> <p>Message: Collection size exceeded.</p> </li> </ul> </li> <li> <p>Transaction Conflict:</p> <ul> <li> <p>Code: <code>TransactionConflict</code> </p> </li> <li> <p>Message: Transaction is ongoing for the item.</p> </li> </ul> </li> <li> <p>Provisioned Throughput Exceeded:</p> <ul> <li> <p>Code: <code>ProvisionedThroughputExceeded</code> </p> </li> <li> <p>Messages:</p> <ul> <li> <p>The level of configured provisioned throughput for the table was exceeded. Consider increasing your provisioning level with the UpdateTable API.</p> <note> <p>This Message is received when provisioned throughput is exceeded is on a provisioned DynamoDB table.</p> </note> </li> <li> <p>The level of configured provisioned throughput for one or more global secondary indexes of the table was exceeded. Consider increasing your provisioning level for the under-provisioned global secondary indexes with the UpdateTable API.</p> <note> <p>This message is returned when provisioned throughput is exceeded is on a provisioned GSI.</p> </note> </li> </ul> </li> </ul> </li> <li> <p>Throttling Error:</p> <ul> <li> <p>Code: <code>ThrottlingError</code> </p> </li> <li> <p>Messages: </p> <ul> <li> <p>Throughput exceeds the current capacity of your table or index. DynamoDB is automatically scaling your table or index so please try again shortly. If exceptions persist, check if you have a hot key: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/bp-partition-key-design.html.</p> <note> <p>This message is returned when writes get throttled on an On-Demand table as DynamoDB is automatically scaling the table.</p> </note> </li> <li> <p>Throughput exceeds the current capacity for one or more global secondary indexes. DynamoDB is automatically scaling your index so please try again shortly.</p> <note> <p>This message is returned when writes get throttled on an On-Demand GSI as DynamoDB is automatically scaling the GSI.</p> </note> </li> </ul> </li> </ul> </li> <li> <p>Validation Error:</p> <ul> <li> <p>Code: <code>ValidationError</code> </p> </li> <li> <p>Messages: </p> <ul> <li> <p>One or more parameter values were invalid.</p> </li> <li> <p>The update expression attempted to update the secondary index key beyond allowed size limits.</p> </li> <li> <p>The update expression attempted to update the secondary index key to unsupported type.</p> </li> <li> <p>An operand in the update expression has an incorrect data type.</p> </li> <li> <p>Item size to update has exceeded the maximum allowed size.</p> </li> <li> <p>Number overflow. Attempting to store a number with magnitude larger than supported range.</p> </li> <li> <p>Type mismatch for attribute to update.</p> </li> <li> <p>Nesting Levels have exceeded supported limits.</p> </li> <li> <p>The document path provided in the update expression is invalid for update.</p> </li> <li> <p>The provided expression refers to an attribute that does not exist in the item.</p> </li> </ul> </li> </ul> </li> </ul>",
       "exception":true
     },
     "TransactionConflictException":{
@@ -6172,6 +6274,58 @@
       },
       "documentation":"<p>Represents the output of an <code>UpdateItem</code> operation.</p>"
     },
+    "UpdateKinesisStreamingConfiguration":{
+      "type":"structure",
+      "members":{
+        "ApproximateCreationDateTimePrecision":{
+          "shape":"ApproximateCreationDateTimePrecision",
+          "documentation":"<p>Enables updating the precision of Kinesis data stream timestamp. </p>"
+        }
+      },
+      "documentation":"<p>Enables updating the configuration for Kinesis Streaming.</p>"
+    },
+    "UpdateKinesisStreamingDestinationInput":{
+      "type":"structure",
+      "required":[
+        "TableName",
+        "StreamArn"
+      ],
+      "members":{
+        "TableName":{
+          "shape":"TableName",
+          "documentation":"<p>The table name for the Kinesis streaming destination input.</p>"
+        },
+        "StreamArn":{
+          "shape":"StreamArn",
+          "documentation":"<p>The ARN for the Kinesis stream input.</p>"
+        },
+        "UpdateKinesisStreamingConfiguration":{
+          "shape":"UpdateKinesisStreamingConfiguration",
+          "documentation":"<p>The command to update the Kinesis stream configuration.</p>"
+        }
+      }
+    },
+    "UpdateKinesisStreamingDestinationOutput":{
+      "type":"structure",
+      "members":{
+        "TableName":{
+          "shape":"TableName",
+          "documentation":"<p>The table name for the Kinesis streaming destination output.</p>"
+        },
+        "StreamArn":{
+          "shape":"StreamArn",
+          "documentation":"<p>The ARN for the Kinesis stream input.</p>"
+        },
+        "DestinationStatus":{
+          "shape":"DestinationStatus",
+          "documentation":"<p>The status of the attempt to update the Kinesis streaming destination output.</p>"
+        },
+        "UpdateKinesisStreamingConfiguration":{
+          "shape":"UpdateKinesisStreamingConfiguration",
+          "documentation":"<p>The command to update the Kinesis streaming destination configuration.</p>"
+        }
+      }
+    },
     "UpdateReplicationGroupMemberAction":{
       "type":"structure",
       "required":["RegionName"],
@@ -6225,7 +6379,7 @@
         },
         "StreamSpecification":{
           "shape":"StreamSpecification",
-          "documentation":"<p>Represents the DynamoDB Streams configuration for the table.</p> <note> <p>You receive a <code>ResourceInUseException</code> if you try to enable a stream on a table that already has a stream, or if you try to disable a stream on a table that doesn't have a stream.</p> </note>"
+          "documentation":"<p>Represents the DynamoDB Streams configuration for the table.</p> <note> <p>You receive a <code>ValidationException</code> if you try to enable a stream on a table that already has a stream, or if you try to disable a stream on a table that doesn't have a stream.</p> </note>"
         },
         "SSESpecification":{
           "shape":"SSESpecification",

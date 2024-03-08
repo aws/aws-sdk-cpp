@@ -84,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ContactInitiationMethod::NOT_SET:
+            return {};
           case ContactInitiationMethod::INBOUND:
             return "INBOUND";
           case ContactInitiationMethod::OUTBOUND:

@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ChannelType::NOT_SET:
+            return {};
           case ChannelType::Facebook:
             return "Facebook";
           case ChannelType::Slack:

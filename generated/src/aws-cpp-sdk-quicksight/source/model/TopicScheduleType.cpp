@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TopicScheduleType::NOT_SET:
+            return {};
           case TopicScheduleType::HOURLY:
             return "HOURLY";
           case TopicScheduleType::DAILY:

@@ -259,6 +259,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ProcessingInstanceType::NOT_SET:
+            return {};
           case ProcessingInstanceType::ml_t3_medium:
             return "ml.t3.medium";
           case ProcessingInstanceType::ml_t3_large:

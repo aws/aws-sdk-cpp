@@ -79,8 +79,8 @@ namespace Model
 
     /**
      * <p>The buffering options that can be used before data is delivered to the
-     * specified destination. Kinesis Data Firehose treats these options as hints, and
-     * it might choose to use more optimal values. The <code>SizeInMBs</code> and
+     * specified destination. Firehose treats these options as hints, and it might
+     * choose to use more optimal values. The <code>SizeInMBs</code> and
      * <code>IntervalInSeconds</code> parameters are optional. However, if you specify
      * a value for one of them, you must also provide a value for the other. </p>
      */
@@ -88,8 +88,8 @@ namespace Model
 
     /**
      * <p>The buffering options that can be used before data is delivered to the
-     * specified destination. Kinesis Data Firehose treats these options as hints, and
-     * it might choose to use more optimal values. The <code>SizeInMBs</code> and
+     * specified destination. Firehose treats these options as hints, and it might
+     * choose to use more optimal values. The <code>SizeInMBs</code> and
      * <code>IntervalInSeconds</code> parameters are optional. However, if you specify
      * a value for one of them, you must also provide a value for the other. </p>
      */
@@ -97,8 +97,8 @@ namespace Model
 
     /**
      * <p>The buffering options that can be used before data is delivered to the
-     * specified destination. Kinesis Data Firehose treats these options as hints, and
-     * it might choose to use more optimal values. The <code>SizeInMBs</code> and
+     * specified destination. Firehose treats these options as hints, and it might
+     * choose to use more optimal values. The <code>SizeInMBs</code> and
      * <code>IntervalInSeconds</code> parameters are optional. However, if you specify
      * a value for one of them, you must also provide a value for the other. </p>
      */
@@ -106,8 +106,8 @@ namespace Model
 
     /**
      * <p>The buffering options that can be used before data is delivered to the
-     * specified destination. Kinesis Data Firehose treats these options as hints, and
-     * it might choose to use more optimal values. The <code>SizeInMBs</code> and
+     * specified destination. Firehose treats these options as hints, and it might
+     * choose to use more optimal values. The <code>SizeInMBs</code> and
      * <code>IntervalInSeconds</code> parameters are optional. However, if you specify
      * a value for one of them, you must also provide a value for the other. </p>
      */
@@ -115,8 +115,8 @@ namespace Model
 
     /**
      * <p>The buffering options that can be used before data is delivered to the
-     * specified destination. Kinesis Data Firehose treats these options as hints, and
-     * it might choose to use more optimal values. The <code>SizeInMBs</code> and
+     * specified destination. Firehose treats these options as hints, and it might
+     * choose to use more optimal values. The <code>SizeInMBs</code> and
      * <code>IntervalInSeconds</code> parameters are optional. However, if you specify
      * a value for one of them, you must also provide a value for the other. </p>
      */
@@ -124,8 +124,8 @@ namespace Model
 
     /**
      * <p>The buffering options that can be used before data is delivered to the
-     * specified destination. Kinesis Data Firehose treats these options as hints, and
-     * it might choose to use more optimal values. The <code>SizeInMBs</code> and
+     * specified destination. Firehose treats these options as hints, and it might
+     * choose to use more optimal values. The <code>SizeInMBs</code> and
      * <code>IntervalInSeconds</code> parameters are optional. However, if you specify
      * a value for one of them, you must also provide a value for the other. </p>
      */
@@ -208,154 +208,142 @@ namespace Model
 
 
     /**
-     * <p>Kinesis Data Firehose uses this IAM role for all the permissions that the
-     * delivery stream needs.</p>
+     * <p>Firehose uses this IAM role for all the permissions that the delivery stream
+     * needs.</p>
      */
     inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
 
     /**
-     * <p>Kinesis Data Firehose uses this IAM role for all the permissions that the
-     * delivery stream needs.</p>
+     * <p>Firehose uses this IAM role for all the permissions that the delivery stream
+     * needs.</p>
      */
     inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
 
     /**
-     * <p>Kinesis Data Firehose uses this IAM role for all the permissions that the
-     * delivery stream needs.</p>
+     * <p>Firehose uses this IAM role for all the permissions that the delivery stream
+     * needs.</p>
      */
     inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
 
     /**
-     * <p>Kinesis Data Firehose uses this IAM role for all the permissions that the
-     * delivery stream needs.</p>
+     * <p>Firehose uses this IAM role for all the permissions that the delivery stream
+     * needs.</p>
      */
     inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
 
     /**
-     * <p>Kinesis Data Firehose uses this IAM role for all the permissions that the
-     * delivery stream needs.</p>
+     * <p>Firehose uses this IAM role for all the permissions that the delivery stream
+     * needs.</p>
      */
     inline void SetRoleARN(const char* value) { m_roleARNHasBeenSet = true; m_roleARN.assign(value); }
 
     /**
-     * <p>Kinesis Data Firehose uses this IAM role for all the permissions that the
-     * delivery stream needs.</p>
+     * <p>Firehose uses this IAM role for all the permissions that the delivery stream
+     * needs.</p>
      */
     inline HttpEndpointDestinationConfiguration& WithRoleARN(const Aws::String& value) { SetRoleARN(value); return *this;}
 
     /**
-     * <p>Kinesis Data Firehose uses this IAM role for all the permissions that the
-     * delivery stream needs.</p>
+     * <p>Firehose uses this IAM role for all the permissions that the delivery stream
+     * needs.</p>
      */
     inline HttpEndpointDestinationConfiguration& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
 
     /**
-     * <p>Kinesis Data Firehose uses this IAM role for all the permissions that the
-     * delivery stream needs.</p>
+     * <p>Firehose uses this IAM role for all the permissions that the delivery stream
+     * needs.</p>
      */
     inline HttpEndpointDestinationConfiguration& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
 
 
     /**
-     * <p>Describes the retry behavior in case Kinesis Data Firehose is unable to
-     * deliver data to the specified HTTP endpoint destination, or if it doesn't
-     * receive a valid acknowledgment of receipt from the specified HTTP endpoint
-     * destination.</p>
+     * <p>Describes the retry behavior in case Firehose is unable to deliver data to
+     * the specified HTTP endpoint destination, or if it doesn't receive a valid
+     * acknowledgment of receipt from the specified HTTP endpoint destination.</p>
      */
     inline const HttpEndpointRetryOptions& GetRetryOptions() const{ return m_retryOptions; }
 
     /**
-     * <p>Describes the retry behavior in case Kinesis Data Firehose is unable to
-     * deliver data to the specified HTTP endpoint destination, or if it doesn't
-     * receive a valid acknowledgment of receipt from the specified HTTP endpoint
-     * destination.</p>
+     * <p>Describes the retry behavior in case Firehose is unable to deliver data to
+     * the specified HTTP endpoint destination, or if it doesn't receive a valid
+     * acknowledgment of receipt from the specified HTTP endpoint destination.</p>
      */
     inline bool RetryOptionsHasBeenSet() const { return m_retryOptionsHasBeenSet; }
 
     /**
-     * <p>Describes the retry behavior in case Kinesis Data Firehose is unable to
-     * deliver data to the specified HTTP endpoint destination, or if it doesn't
-     * receive a valid acknowledgment of receipt from the specified HTTP endpoint
-     * destination.</p>
+     * <p>Describes the retry behavior in case Firehose is unable to deliver data to
+     * the specified HTTP endpoint destination, or if it doesn't receive a valid
+     * acknowledgment of receipt from the specified HTTP endpoint destination.</p>
      */
     inline void SetRetryOptions(const HttpEndpointRetryOptions& value) { m_retryOptionsHasBeenSet = true; m_retryOptions = value; }
 
     /**
-     * <p>Describes the retry behavior in case Kinesis Data Firehose is unable to
-     * deliver data to the specified HTTP endpoint destination, or if it doesn't
-     * receive a valid acknowledgment of receipt from the specified HTTP endpoint
-     * destination.</p>
+     * <p>Describes the retry behavior in case Firehose is unable to deliver data to
+     * the specified HTTP endpoint destination, or if it doesn't receive a valid
+     * acknowledgment of receipt from the specified HTTP endpoint destination.</p>
      */
     inline void SetRetryOptions(HttpEndpointRetryOptions&& value) { m_retryOptionsHasBeenSet = true; m_retryOptions = std::move(value); }
 
     /**
-     * <p>Describes the retry behavior in case Kinesis Data Firehose is unable to
-     * deliver data to the specified HTTP endpoint destination, or if it doesn't
-     * receive a valid acknowledgment of receipt from the specified HTTP endpoint
-     * destination.</p>
+     * <p>Describes the retry behavior in case Firehose is unable to deliver data to
+     * the specified HTTP endpoint destination, or if it doesn't receive a valid
+     * acknowledgment of receipt from the specified HTTP endpoint destination.</p>
      */
     inline HttpEndpointDestinationConfiguration& WithRetryOptions(const HttpEndpointRetryOptions& value) { SetRetryOptions(value); return *this;}
 
     /**
-     * <p>Describes the retry behavior in case Kinesis Data Firehose is unable to
-     * deliver data to the specified HTTP endpoint destination, or if it doesn't
-     * receive a valid acknowledgment of receipt from the specified HTTP endpoint
-     * destination.</p>
+     * <p>Describes the retry behavior in case Firehose is unable to deliver data to
+     * the specified HTTP endpoint destination, or if it doesn't receive a valid
+     * acknowledgment of receipt from the specified HTTP endpoint destination.</p>
      */
     inline HttpEndpointDestinationConfiguration& WithRetryOptions(HttpEndpointRetryOptions&& value) { SetRetryOptions(std::move(value)); return *this;}
 
 
     /**
-     * <p>Describes the S3 bucket backup options for the data that Kinesis Data
-     * Firehose delivers to the HTTP endpoint destination. You can back up all
-     * documents (<code>AllData</code>) or only the documents that Kinesis Data
-     * Firehose could not deliver to the specified HTTP endpoint destination
-     * (<code>FailedDataOnly</code>).</p>
+     * <p>Describes the S3 bucket backup options for the data that Firehose delivers to
+     * the HTTP endpoint destination. You can back up all documents
+     * (<code>AllData</code>) or only the documents that Firehose could not deliver to
+     * the specified HTTP endpoint destination (<code>FailedDataOnly</code>).</p>
      */
     inline const HttpEndpointS3BackupMode& GetS3BackupMode() const{ return m_s3BackupMode; }
 
     /**
-     * <p>Describes the S3 bucket backup options for the data that Kinesis Data
-     * Firehose delivers to the HTTP endpoint destination. You can back up all
-     * documents (<code>AllData</code>) or only the documents that Kinesis Data
-     * Firehose could not deliver to the specified HTTP endpoint destination
-     * (<code>FailedDataOnly</code>).</p>
+     * <p>Describes the S3 bucket backup options for the data that Firehose delivers to
+     * the HTTP endpoint destination. You can back up all documents
+     * (<code>AllData</code>) or only the documents that Firehose could not deliver to
+     * the specified HTTP endpoint destination (<code>FailedDataOnly</code>).</p>
      */
     inline bool S3BackupModeHasBeenSet() const { return m_s3BackupModeHasBeenSet; }
 
     /**
-     * <p>Describes the S3 bucket backup options for the data that Kinesis Data
-     * Firehose delivers to the HTTP endpoint destination. You can back up all
-     * documents (<code>AllData</code>) or only the documents that Kinesis Data
-     * Firehose could not deliver to the specified HTTP endpoint destination
-     * (<code>FailedDataOnly</code>).</p>
+     * <p>Describes the S3 bucket backup options for the data that Firehose delivers to
+     * the HTTP endpoint destination. You can back up all documents
+     * (<code>AllData</code>) or only the documents that Firehose could not deliver to
+     * the specified HTTP endpoint destination (<code>FailedDataOnly</code>).</p>
      */
     inline void SetS3BackupMode(const HttpEndpointS3BackupMode& value) { m_s3BackupModeHasBeenSet = true; m_s3BackupMode = value; }
 
     /**
-     * <p>Describes the S3 bucket backup options for the data that Kinesis Data
-     * Firehose delivers to the HTTP endpoint destination. You can back up all
-     * documents (<code>AllData</code>) or only the documents that Kinesis Data
-     * Firehose could not deliver to the specified HTTP endpoint destination
-     * (<code>FailedDataOnly</code>).</p>
+     * <p>Describes the S3 bucket backup options for the data that Firehose delivers to
+     * the HTTP endpoint destination. You can back up all documents
+     * (<code>AllData</code>) or only the documents that Firehose could not deliver to
+     * the specified HTTP endpoint destination (<code>FailedDataOnly</code>).</p>
      */
     inline void SetS3BackupMode(HttpEndpointS3BackupMode&& value) { m_s3BackupModeHasBeenSet = true; m_s3BackupMode = std::move(value); }
 
     /**
-     * <p>Describes the S3 bucket backup options for the data that Kinesis Data
-     * Firehose delivers to the HTTP endpoint destination. You can back up all
-     * documents (<code>AllData</code>) or only the documents that Kinesis Data
-     * Firehose could not deliver to the specified HTTP endpoint destination
-     * (<code>FailedDataOnly</code>).</p>
+     * <p>Describes the S3 bucket backup options for the data that Firehose delivers to
+     * the HTTP endpoint destination. You can back up all documents
+     * (<code>AllData</code>) or only the documents that Firehose could not deliver to
+     * the specified HTTP endpoint destination (<code>FailedDataOnly</code>).</p>
      */
     inline HttpEndpointDestinationConfiguration& WithS3BackupMode(const HttpEndpointS3BackupMode& value) { SetS3BackupMode(value); return *this;}
 
     /**
-     * <p>Describes the S3 bucket backup options for the data that Kinesis Data
-     * Firehose delivers to the HTTP endpoint destination. You can back up all
-     * documents (<code>AllData</code>) or only the documents that Kinesis Data
-     * Firehose could not deliver to the specified HTTP endpoint destination
-     * (<code>FailedDataOnly</code>).</p>
+     * <p>Describes the S3 bucket backup options for the data that Firehose delivers to
+     * the HTTP endpoint destination. You can back up all documents
+     * (<code>AllData</code>) or only the documents that Firehose could not deliver to
+     * the specified HTTP endpoint destination (<code>FailedDataOnly</code>).</p>
      */
     inline HttpEndpointDestinationConfiguration& WithS3BackupMode(HttpEndpointS3BackupMode&& value) { SetS3BackupMode(std::move(value)); return *this;}
 

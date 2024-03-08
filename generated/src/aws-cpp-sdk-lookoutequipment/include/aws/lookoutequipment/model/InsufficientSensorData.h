@@ -78,37 +78,37 @@ namespace Model
 
     /**
      * <p> Parameter that describes the total number of sensors that have a short date
-     * range of less than 90 days of data overall. </p>
+     * range of less than 14 days of data overall. </p>
      */
     inline const SensorsWithShortDateRange& GetSensorsWithShortDateRange() const{ return m_sensorsWithShortDateRange; }
 
     /**
      * <p> Parameter that describes the total number of sensors that have a short date
-     * range of less than 90 days of data overall. </p>
+     * range of less than 14 days of data overall. </p>
      */
     inline bool SensorsWithShortDateRangeHasBeenSet() const { return m_sensorsWithShortDateRangeHasBeenSet; }
 
     /**
      * <p> Parameter that describes the total number of sensors that have a short date
-     * range of less than 90 days of data overall. </p>
+     * range of less than 14 days of data overall. </p>
      */
     inline void SetSensorsWithShortDateRange(const SensorsWithShortDateRange& value) { m_sensorsWithShortDateRangeHasBeenSet = true; m_sensorsWithShortDateRange = value; }
 
     /**
      * <p> Parameter that describes the total number of sensors that have a short date
-     * range of less than 90 days of data overall. </p>
+     * range of less than 14 days of data overall. </p>
      */
     inline void SetSensorsWithShortDateRange(SensorsWithShortDateRange&& value) { m_sensorsWithShortDateRangeHasBeenSet = true; m_sensorsWithShortDateRange = std::move(value); }
 
     /**
      * <p> Parameter that describes the total number of sensors that have a short date
-     * range of less than 90 days of data overall. </p>
+     * range of less than 14 days of data overall. </p>
      */
     inline InsufficientSensorData& WithSensorsWithShortDateRange(const SensorsWithShortDateRange& value) { SetSensorsWithShortDateRange(value); return *this;}
 
     /**
      * <p> Parameter that describes the total number of sensors that have a short date
-     * range of less than 90 days of data overall. </p>
+     * range of less than 14 days of data overall. </p>
      */
     inline InsufficientSensorData& WithSensorsWithShortDateRange(SensorsWithShortDateRange&& value) { SetSensorsWithShortDateRange(std::move(value)); return *this;}
 

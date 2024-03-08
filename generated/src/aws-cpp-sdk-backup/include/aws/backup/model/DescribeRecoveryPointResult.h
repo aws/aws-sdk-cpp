@@ -12,6 +12,7 @@
 #include <aws/backup/model/CalculatedLifecycle.h>
 #include <aws/backup/model/Lifecycle.h>
 #include <aws/backup/model/StorageClass.h>
+#include <aws/backup/model/VaultType.h>
 #include <utility>
 
 namespace Aws
@@ -1127,6 +1128,37 @@ namespace Model
     inline DescribeRecoveryPointResult& WithResourceName(const char* value) { SetResourceName(value); return *this;}
 
 
+    /**
+     * <p>This is the type of vault in which the described recovery point is
+     * stored.</p>
+     */
+    inline const VaultType& GetVaultType() const{ return m_vaultType; }
+
+    /**
+     * <p>This is the type of vault in which the described recovery point is
+     * stored.</p>
+     */
+    inline void SetVaultType(const VaultType& value) { m_vaultType = value; }
+
+    /**
+     * <p>This is the type of vault in which the described recovery point is
+     * stored.</p>
+     */
+    inline void SetVaultType(VaultType&& value) { m_vaultType = std::move(value); }
+
+    /**
+     * <p>This is the type of vault in which the described recovery point is
+     * stored.</p>
+     */
+    inline DescribeRecoveryPointResult& WithVaultType(const VaultType& value) { SetVaultType(value); return *this;}
+
+    /**
+     * <p>This is the type of vault in which the described recovery point is
+     * stored.</p>
+     */
+    inline DescribeRecoveryPointResult& WithVaultType(VaultType&& value) { SetVaultType(std::move(value)); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -1195,6 +1227,8 @@ namespace Model
     bool m_isParent;
 
     Aws::String m_resourceName;
+
+    VaultType m_vaultType;
 
     Aws::String m_requestId;
   };

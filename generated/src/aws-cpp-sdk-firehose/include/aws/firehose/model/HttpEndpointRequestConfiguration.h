@@ -40,54 +40,48 @@ namespace Model
 
 
     /**
-     * <p>Kinesis Data Firehose uses the content encoding to compress the body of a
-     * request before sending the request to the destination. For more information, see
-     * <a
+     * <p>Firehose uses the content encoding to compress the body of a request before
+     * sending the request to the destination. For more information, see <a
      * href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Encoding">Content-Encoding</a>
      * in MDN Web Docs, the official Mozilla documentation.</p>
      */
     inline const ContentEncoding& GetContentEncoding() const{ return m_contentEncoding; }
 
     /**
-     * <p>Kinesis Data Firehose uses the content encoding to compress the body of a
-     * request before sending the request to the destination. For more information, see
-     * <a
+     * <p>Firehose uses the content encoding to compress the body of a request before
+     * sending the request to the destination. For more information, see <a
      * href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Encoding">Content-Encoding</a>
      * in MDN Web Docs, the official Mozilla documentation.</p>
      */
     inline bool ContentEncodingHasBeenSet() const { return m_contentEncodingHasBeenSet; }
 
     /**
-     * <p>Kinesis Data Firehose uses the content encoding to compress the body of a
-     * request before sending the request to the destination. For more information, see
-     * <a
+     * <p>Firehose uses the content encoding to compress the body of a request before
+     * sending the request to the destination. For more information, see <a
      * href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Encoding">Content-Encoding</a>
      * in MDN Web Docs, the official Mozilla documentation.</p>
      */
     inline void SetContentEncoding(const ContentEncoding& value) { m_contentEncodingHasBeenSet = true; m_contentEncoding = value; }
 
     /**
-     * <p>Kinesis Data Firehose uses the content encoding to compress the body of a
-     * request before sending the request to the destination. For more information, see
-     * <a
+     * <p>Firehose uses the content encoding to compress the body of a request before
+     * sending the request to the destination. For more information, see <a
      * href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Encoding">Content-Encoding</a>
      * in MDN Web Docs, the official Mozilla documentation.</p>
      */
     inline void SetContentEncoding(ContentEncoding&& value) { m_contentEncodingHasBeenSet = true; m_contentEncoding = std::move(value); }
 
     /**
-     * <p>Kinesis Data Firehose uses the content encoding to compress the body of a
-     * request before sending the request to the destination. For more information, see
-     * <a
+     * <p>Firehose uses the content encoding to compress the body of a request before
+     * sending the request to the destination. For more information, see <a
      * href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Encoding">Content-Encoding</a>
      * in MDN Web Docs, the official Mozilla documentation.</p>
      */
     inline HttpEndpointRequestConfiguration& WithContentEncoding(const ContentEncoding& value) { SetContentEncoding(value); return *this;}
 
     /**
-     * <p>Kinesis Data Firehose uses the content encoding to compress the body of a
-     * request before sending the request to the destination. For more information, see
-     * <a
+     * <p>Firehose uses the content encoding to compress the body of a request before
+     * sending the request to the destination. For more information, see <a
      * href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Encoding">Content-Encoding</a>
      * in MDN Web Docs, the official Mozilla documentation.</p>
      */

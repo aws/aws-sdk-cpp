@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case JobReportFormat::NOT_SET:
+            return {};
           case JobReportFormat::Report_CSV_20180820:
             return "Report_CSV_20180820";
           default:

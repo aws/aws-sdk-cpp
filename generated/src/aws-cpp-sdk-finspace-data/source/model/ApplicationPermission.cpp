@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ApplicationPermission::NOT_SET:
+            return {};
           case ApplicationPermission::CreateDataset:
             return "CreateDataset";
           case ApplicationPermission::ManageClusters:

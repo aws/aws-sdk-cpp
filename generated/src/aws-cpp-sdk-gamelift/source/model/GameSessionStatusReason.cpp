@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case GameSessionStatusReason::NOT_SET:
+            return {};
           case GameSessionStatusReason::INTERRUPTED:
             return "INTERRUPTED";
           default:

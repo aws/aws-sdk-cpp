@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HlsIntervalCadence::NOT_SET:
+            return {};
           case HlsIntervalCadence::FOLLOW_IFRAME:
             return "FOLLOW_IFRAME";
           case HlsIntervalCadence::FOLLOW_CUSTOM:

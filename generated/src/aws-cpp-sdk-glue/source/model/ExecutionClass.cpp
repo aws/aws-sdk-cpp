@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ExecutionClass::NOT_SET:
+            return {};
           case ExecutionClass::FLEX:
             return "FLEX";
           case ExecutionClass::STANDARD:

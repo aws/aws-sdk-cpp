@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ContainerLevelMetrics::NOT_SET:
+            return {};
           case ContainerLevelMetrics::ENABLED:
             return "ENABLED";
           case ContainerLevelMetrics::DISABLED:

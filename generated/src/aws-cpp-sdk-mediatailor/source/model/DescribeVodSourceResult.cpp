@@ -29,6 +29,15 @@ DescribeVodSourceResult::DescribeVodSourceResult(const Aws::AmazonWebServiceResu
 DescribeVodSourceResult& DescribeVodSourceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("AdBreakOpportunities"))
+  {
+    Aws::Utils::Array<JsonView> adBreakOpportunitiesJsonList = jsonValue.GetArray("AdBreakOpportunities");
+    for(unsigned adBreakOpportunitiesIndex = 0; adBreakOpportunitiesIndex < adBreakOpportunitiesJsonList.GetLength(); ++adBreakOpportunitiesIndex)
+    {
+      m_adBreakOpportunities.push_back(adBreakOpportunitiesJsonList[adBreakOpportunitiesIndex].AsObject());
+    }
+  }
+
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");

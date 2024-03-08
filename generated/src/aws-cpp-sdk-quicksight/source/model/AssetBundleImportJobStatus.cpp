@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AssetBundleImportJobStatus::NOT_SET:
+            return {};
           case AssetBundleImportJobStatus::QUEUED_FOR_IMMEDIATE_EXECUTION:
             return "QUEUED_FOR_IMMEDIATE_EXECUTION";
           case AssetBundleImportJobStatus::IN_PROGRESS:

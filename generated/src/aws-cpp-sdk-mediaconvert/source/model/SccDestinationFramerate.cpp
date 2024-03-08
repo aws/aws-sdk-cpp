@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SccDestinationFramerate::NOT_SET:
+            return {};
           case SccDestinationFramerate::FRAMERATE_23_97:
             return "FRAMERATE_23_97";
           case SccDestinationFramerate::FRAMERATE_24:

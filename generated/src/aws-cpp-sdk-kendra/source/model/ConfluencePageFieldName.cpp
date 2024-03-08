@@ -99,6 +99,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ConfluencePageFieldName::NOT_SET:
+            return {};
           case ConfluencePageFieldName::AUTHOR:
             return "AUTHOR";
           case ConfluencePageFieldName::CONTENT_STATUS:

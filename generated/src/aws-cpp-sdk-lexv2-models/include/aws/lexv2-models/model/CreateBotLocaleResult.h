@@ -9,6 +9,7 @@
 #include <aws/lexv2-models/model/VoiceSettings.h>
 #include <aws/lexv2-models/model/BotLocaleStatus.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/lexv2-models/model/GenerativeAISettings.h>
 #include <utility>
 
 namespace Aws
@@ -356,6 +357,22 @@ namespace Model
 
 
     
+    inline const GenerativeAISettings& GetGenerativeAISettings() const{ return m_generativeAISettings; }
+
+    
+    inline void SetGenerativeAISettings(const GenerativeAISettings& value) { m_generativeAISettings = value; }
+
+    
+    inline void SetGenerativeAISettings(GenerativeAISettings&& value) { m_generativeAISettings = std::move(value); }
+
+    
+    inline CreateBotLocaleResult& WithGenerativeAISettings(const GenerativeAISettings& value) { SetGenerativeAISettings(value); return *this;}
+
+    
+    inline CreateBotLocaleResult& WithGenerativeAISettings(GenerativeAISettings&& value) { SetGenerativeAISettings(std::move(value)); return *this;}
+
+
+    
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
     
@@ -395,6 +412,8 @@ namespace Model
     BotLocaleStatus m_botLocaleStatus;
 
     Aws::Utils::DateTime m_creationDateTime;
+
+    GenerativeAISettings m_generativeAISettings;
 
     Aws::String m_requestId;
   };

@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DeleteFileSystemOpenZFSOption::NOT_SET:
+            return {};
           case DeleteFileSystemOpenZFSOption::DELETE_CHILD_VOLUMES_AND_SNAPSHOTS:
             return "DELETE_CHILD_VOLUMES_AND_SNAPSHOTS";
           default:

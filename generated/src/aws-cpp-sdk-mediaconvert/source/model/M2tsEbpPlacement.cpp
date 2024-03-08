@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case M2tsEbpPlacement::NOT_SET:
+            return {};
           case M2tsEbpPlacement::VIDEO_AND_AUDIO_PIDS:
             return "VIDEO_AND_AUDIO_PIDS";
           case M2tsEbpPlacement::VIDEO_PID:

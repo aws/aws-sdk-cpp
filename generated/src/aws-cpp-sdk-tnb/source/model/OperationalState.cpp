@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OperationalState::NOT_SET:
+            return {};
           case OperationalState::ENABLED:
             return "ENABLED";
           case OperationalState::DISABLED:

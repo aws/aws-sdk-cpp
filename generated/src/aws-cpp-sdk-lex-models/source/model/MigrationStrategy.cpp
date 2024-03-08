@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MigrationStrategy::NOT_SET:
+            return {};
           case MigrationStrategy::CREATE_NEW:
             return "CREATE_NEW";
           case MigrationStrategy::UPDATE_EXISTING:

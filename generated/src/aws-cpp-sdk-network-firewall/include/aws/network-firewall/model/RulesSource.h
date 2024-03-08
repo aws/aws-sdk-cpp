@@ -45,82 +45,98 @@ namespace Model
 
 
     /**
-     * <p>Stateful inspection criteria, provided in Suricata compatible intrusion
-     * prevention system (IPS) rules. Suricata is an open-source network IPS that
-     * includes a standard rule-based language for network traffic inspection.</p>
-     * <p>These rules contain the inspection criteria and the action to take for
-     * traffic that matches the criteria, so this type of rule group doesn't have a
-     * separate action setting.</p>
+     * <p>Stateful inspection criteria, provided in Suricata compatible rules. Suricata
+     * is an open-source threat detection framework that includes a standard rule-based
+     * language for network traffic inspection.</p> <p>These rules contain the
+     * inspection criteria and the action to take for traffic that matches the
+     * criteria, so this type of rule group doesn't have a separate action setting.</p>
+     *  <p>You can't use the <code>priority</code> keyword if the
+     * <code>RuleOrder</code> option in <a>StatefulRuleOptions</a> is set to
+     * <code>STRICT_ORDER</code>.</p> 
      */
     inline const Aws::String& GetRulesString() const{ return m_rulesString; }
 
     /**
-     * <p>Stateful inspection criteria, provided in Suricata compatible intrusion
-     * prevention system (IPS) rules. Suricata is an open-source network IPS that
-     * includes a standard rule-based language for network traffic inspection.</p>
-     * <p>These rules contain the inspection criteria and the action to take for
-     * traffic that matches the criteria, so this type of rule group doesn't have a
-     * separate action setting.</p>
+     * <p>Stateful inspection criteria, provided in Suricata compatible rules. Suricata
+     * is an open-source threat detection framework that includes a standard rule-based
+     * language for network traffic inspection.</p> <p>These rules contain the
+     * inspection criteria and the action to take for traffic that matches the
+     * criteria, so this type of rule group doesn't have a separate action setting.</p>
+     *  <p>You can't use the <code>priority</code> keyword if the
+     * <code>RuleOrder</code> option in <a>StatefulRuleOptions</a> is set to
+     * <code>STRICT_ORDER</code>.</p> 
      */
     inline bool RulesStringHasBeenSet() const { return m_rulesStringHasBeenSet; }
 
     /**
-     * <p>Stateful inspection criteria, provided in Suricata compatible intrusion
-     * prevention system (IPS) rules. Suricata is an open-source network IPS that
-     * includes a standard rule-based language for network traffic inspection.</p>
-     * <p>These rules contain the inspection criteria and the action to take for
-     * traffic that matches the criteria, so this type of rule group doesn't have a
-     * separate action setting.</p>
+     * <p>Stateful inspection criteria, provided in Suricata compatible rules. Suricata
+     * is an open-source threat detection framework that includes a standard rule-based
+     * language for network traffic inspection.</p> <p>These rules contain the
+     * inspection criteria and the action to take for traffic that matches the
+     * criteria, so this type of rule group doesn't have a separate action setting.</p>
+     *  <p>You can't use the <code>priority</code> keyword if the
+     * <code>RuleOrder</code> option in <a>StatefulRuleOptions</a> is set to
+     * <code>STRICT_ORDER</code>.</p> 
      */
     inline void SetRulesString(const Aws::String& value) { m_rulesStringHasBeenSet = true; m_rulesString = value; }
 
     /**
-     * <p>Stateful inspection criteria, provided in Suricata compatible intrusion
-     * prevention system (IPS) rules. Suricata is an open-source network IPS that
-     * includes a standard rule-based language for network traffic inspection.</p>
-     * <p>These rules contain the inspection criteria and the action to take for
-     * traffic that matches the criteria, so this type of rule group doesn't have a
-     * separate action setting.</p>
+     * <p>Stateful inspection criteria, provided in Suricata compatible rules. Suricata
+     * is an open-source threat detection framework that includes a standard rule-based
+     * language for network traffic inspection.</p> <p>These rules contain the
+     * inspection criteria and the action to take for traffic that matches the
+     * criteria, so this type of rule group doesn't have a separate action setting.</p>
+     *  <p>You can't use the <code>priority</code> keyword if the
+     * <code>RuleOrder</code> option in <a>StatefulRuleOptions</a> is set to
+     * <code>STRICT_ORDER</code>.</p> 
      */
     inline void SetRulesString(Aws::String&& value) { m_rulesStringHasBeenSet = true; m_rulesString = std::move(value); }
 
     /**
-     * <p>Stateful inspection criteria, provided in Suricata compatible intrusion
-     * prevention system (IPS) rules. Suricata is an open-source network IPS that
-     * includes a standard rule-based language for network traffic inspection.</p>
-     * <p>These rules contain the inspection criteria and the action to take for
-     * traffic that matches the criteria, so this type of rule group doesn't have a
-     * separate action setting.</p>
+     * <p>Stateful inspection criteria, provided in Suricata compatible rules. Suricata
+     * is an open-source threat detection framework that includes a standard rule-based
+     * language for network traffic inspection.</p> <p>These rules contain the
+     * inspection criteria and the action to take for traffic that matches the
+     * criteria, so this type of rule group doesn't have a separate action setting.</p>
+     *  <p>You can't use the <code>priority</code> keyword if the
+     * <code>RuleOrder</code> option in <a>StatefulRuleOptions</a> is set to
+     * <code>STRICT_ORDER</code>.</p> 
      */
     inline void SetRulesString(const char* value) { m_rulesStringHasBeenSet = true; m_rulesString.assign(value); }
 
     /**
-     * <p>Stateful inspection criteria, provided in Suricata compatible intrusion
-     * prevention system (IPS) rules. Suricata is an open-source network IPS that
-     * includes a standard rule-based language for network traffic inspection.</p>
-     * <p>These rules contain the inspection criteria and the action to take for
-     * traffic that matches the criteria, so this type of rule group doesn't have a
-     * separate action setting.</p>
+     * <p>Stateful inspection criteria, provided in Suricata compatible rules. Suricata
+     * is an open-source threat detection framework that includes a standard rule-based
+     * language for network traffic inspection.</p> <p>These rules contain the
+     * inspection criteria and the action to take for traffic that matches the
+     * criteria, so this type of rule group doesn't have a separate action setting.</p>
+     *  <p>You can't use the <code>priority</code> keyword if the
+     * <code>RuleOrder</code> option in <a>StatefulRuleOptions</a> is set to
+     * <code>STRICT_ORDER</code>.</p> 
      */
     inline RulesSource& WithRulesString(const Aws::String& value) { SetRulesString(value); return *this;}
 
     /**
-     * <p>Stateful inspection criteria, provided in Suricata compatible intrusion
-     * prevention system (IPS) rules. Suricata is an open-source network IPS that
-     * includes a standard rule-based language for network traffic inspection.</p>
-     * <p>These rules contain the inspection criteria and the action to take for
-     * traffic that matches the criteria, so this type of rule group doesn't have a
-     * separate action setting.</p>
+     * <p>Stateful inspection criteria, provided in Suricata compatible rules. Suricata
+     * is an open-source threat detection framework that includes a standard rule-based
+     * language for network traffic inspection.</p> <p>These rules contain the
+     * inspection criteria and the action to take for traffic that matches the
+     * criteria, so this type of rule group doesn't have a separate action setting.</p>
+     *  <p>You can't use the <code>priority</code> keyword if the
+     * <code>RuleOrder</code> option in <a>StatefulRuleOptions</a> is set to
+     * <code>STRICT_ORDER</code>.</p> 
      */
     inline RulesSource& WithRulesString(Aws::String&& value) { SetRulesString(std::move(value)); return *this;}
 
     /**
-     * <p>Stateful inspection criteria, provided in Suricata compatible intrusion
-     * prevention system (IPS) rules. Suricata is an open-source network IPS that
-     * includes a standard rule-based language for network traffic inspection.</p>
-     * <p>These rules contain the inspection criteria and the action to take for
-     * traffic that matches the criteria, so this type of rule group doesn't have a
-     * separate action setting.</p>
+     * <p>Stateful inspection criteria, provided in Suricata compatible rules. Suricata
+     * is an open-source threat detection framework that includes a standard rule-based
+     * language for network traffic inspection.</p> <p>These rules contain the
+     * inspection criteria and the action to take for traffic that matches the
+     * criteria, so this type of rule group doesn't have a separate action setting.</p>
+     *  <p>You can't use the <code>priority</code> keyword if the
+     * <code>RuleOrder</code> option in <a>StatefulRuleOptions</a> is set to
+     * <code>STRICT_ORDER</code>.</p> 
      */
     inline RulesSource& WithRulesString(const char* value) { SetRulesString(value); return *this;}
 

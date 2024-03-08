@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Scte35NoRegionalBlackoutFlag::NOT_SET:
+            return {};
           case Scte35NoRegionalBlackoutFlag::REGIONAL_BLACKOUT:
             return "REGIONAL_BLACKOUT";
           case Scte35NoRegionalBlackoutFlag::NO_REGIONAL_BLACKOUT:

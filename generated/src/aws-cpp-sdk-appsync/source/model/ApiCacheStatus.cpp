@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ApiCacheStatus::NOT_SET:
+            return {};
           case ApiCacheStatus::AVAILABLE:
             return "AVAILABLE";
           case ApiCacheStatus::CREATING:

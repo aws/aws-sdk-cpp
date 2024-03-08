@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AppAttributesKeys::NOT_SET:
+            return {};
           case AppAttributesKeys::DocumentRoot:
             return "DocumentRoot";
           case AppAttributesKeys::RailsEnv:

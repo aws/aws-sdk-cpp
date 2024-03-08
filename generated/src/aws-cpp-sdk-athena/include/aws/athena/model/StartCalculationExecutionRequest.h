@@ -117,42 +117,50 @@ namespace Model
 
 
     /**
-     * <p>A string that contains the code of the calculation.</p>
+     * <p>A string that contains the code of the calculation. Use this parameter
+     * instead of <a>CalculationConfiguration$CodeBlock</a>, which is deprecated.</p>
      */
     inline const Aws::String& GetCodeBlock() const{ return m_codeBlock; }
 
     /**
-     * <p>A string that contains the code of the calculation.</p>
+     * <p>A string that contains the code of the calculation. Use this parameter
+     * instead of <a>CalculationConfiguration$CodeBlock</a>, which is deprecated.</p>
      */
     inline bool CodeBlockHasBeenSet() const { return m_codeBlockHasBeenSet; }
 
     /**
-     * <p>A string that contains the code of the calculation.</p>
+     * <p>A string that contains the code of the calculation. Use this parameter
+     * instead of <a>CalculationConfiguration$CodeBlock</a>, which is deprecated.</p>
      */
     inline void SetCodeBlock(const Aws::String& value) { m_codeBlockHasBeenSet = true; m_codeBlock = value; }
 
     /**
-     * <p>A string that contains the code of the calculation.</p>
+     * <p>A string that contains the code of the calculation. Use this parameter
+     * instead of <a>CalculationConfiguration$CodeBlock</a>, which is deprecated.</p>
      */
     inline void SetCodeBlock(Aws::String&& value) { m_codeBlockHasBeenSet = true; m_codeBlock = std::move(value); }
 
     /**
-     * <p>A string that contains the code of the calculation.</p>
+     * <p>A string that contains the code of the calculation. Use this parameter
+     * instead of <a>CalculationConfiguration$CodeBlock</a>, which is deprecated.</p>
      */
     inline void SetCodeBlock(const char* value) { m_codeBlockHasBeenSet = true; m_codeBlock.assign(value); }
 
     /**
-     * <p>A string that contains the code of the calculation.</p>
+     * <p>A string that contains the code of the calculation. Use this parameter
+     * instead of <a>CalculationConfiguration$CodeBlock</a>, which is deprecated.</p>
      */
     inline StartCalculationExecutionRequest& WithCodeBlock(const Aws::String& value) { SetCodeBlock(value); return *this;}
 
     /**
-     * <p>A string that contains the code of the calculation.</p>
+     * <p>A string that contains the code of the calculation. Use this parameter
+     * instead of <a>CalculationConfiguration$CodeBlock</a>, which is deprecated.</p>
      */
     inline StartCalculationExecutionRequest& WithCodeBlock(Aws::String&& value) { SetCodeBlock(std::move(value)); return *this;}
 
     /**
-     * <p>A string that contains the code of the calculation.</p>
+     * <p>A string that contains the code of the calculation. Use this parameter
+     * instead of <a>CalculationConfiguration$CodeBlock</a>, which is deprecated.</p>
      */
     inline StartCalculationExecutionRequest& WithCodeBlock(const char* value) { SetCodeBlock(value); return *this;}
 

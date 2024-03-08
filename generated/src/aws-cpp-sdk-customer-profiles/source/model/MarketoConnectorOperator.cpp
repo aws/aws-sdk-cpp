@@ -119,6 +119,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MarketoConnectorOperator::NOT_SET:
+            return {};
           case MarketoConnectorOperator::PROJECTION:
             return "PROJECTION";
           case MarketoConnectorOperator::LESS_THAN:

@@ -33,37 +33,37 @@ namespace Model
 
 
     /**
-     * <p>The name of the package.</p>
+     * <p>The name of the software package.</p>
      */
     inline const Aws::String& GetPackageName() const{ return m_packageName; }
 
     /**
-     * <p>The name of the package.</p>
+     * <p>The name of the software package.</p>
      */
     inline void SetPackageName(const Aws::String& value) { m_packageName = value; }
 
     /**
-     * <p>The name of the package.</p>
+     * <p>The name of the software package.</p>
      */
     inline void SetPackageName(Aws::String&& value) { m_packageName = std::move(value); }
 
     /**
-     * <p>The name of the package.</p>
+     * <p>The name of the software package.</p>
      */
     inline void SetPackageName(const char* value) { m_packageName.assign(value); }
 
     /**
-     * <p>The name of the package.</p>
+     * <p>The name of the software package.</p>
      */
     inline CreatePackageResult& WithPackageName(const Aws::String& value) { SetPackageName(value); return *this;}
 
     /**
-     * <p>The name of the package.</p>
+     * <p>The name of the software package.</p>
      */
     inline CreatePackageResult& WithPackageName(Aws::String&& value) { SetPackageName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the package.</p>
+     * <p>The name of the software package.</p>
      */
     inline CreatePackageResult& WithPackageName(const char* value) { SetPackageName(value); return *this;}
 

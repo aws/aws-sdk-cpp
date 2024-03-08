@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BurnInTeletextGridControl::NOT_SET:
+            return {};
           case BurnInTeletextGridControl::FIXED:
             return "FIXED";
           case BurnInTeletextGridControl::SCALED:

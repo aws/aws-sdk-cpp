@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OperationFilterName::NOT_SET:
+            return {};
           case OperationFilterName::NAMESPACE_ID:
             return "NAMESPACE_ID";
           case OperationFilterName::SERVICE_ID:

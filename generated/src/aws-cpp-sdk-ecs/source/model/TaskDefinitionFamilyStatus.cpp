@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TaskDefinitionFamilyStatus::NOT_SET:
+            return {};
           case TaskDefinitionFamilyStatus::ACTIVE:
             return "ACTIVE";
           case TaskDefinitionFamilyStatus::INACTIVE:

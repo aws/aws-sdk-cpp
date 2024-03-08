@@ -144,6 +144,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TextTransformationType::NOT_SET:
+            return {};
           case TextTransformationType::NONE:
             return "NONE";
           case TextTransformationType::COMPRESS_WHITE_SPACE:

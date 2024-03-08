@@ -25,7 +25,9 @@ CreateDataSourceRequest::CreateDataSourceRequest() :
     m_openSearchServiceConfigHasBeenSet(false),
     m_httpConfigHasBeenSet(false),
     m_relationalDatabaseConfigHasBeenSet(false),
-    m_eventBridgeConfigHasBeenSet(false)
+    m_eventBridgeConfigHasBeenSet(false),
+    m_metricsConfig(DataSourceLevelMetricsConfig::NOT_SET),
+    m_metricsConfigHasBeenSet(false)
 {
 }
 
@@ -96,6 +98,11 @@ Aws::String CreateDataSourceRequest::SerializePayload() const
   {
    payload.WithObject("eventBridgeConfig", m_eventBridgeConfig.Jsonize());
 
+  }
+
+  if(m_metricsConfigHasBeenSet)
+  {
+   payload.WithString("metricsConfig", DataSourceLevelMetricsConfigMapper::GetNameForDataSourceLevelMetricsConfig(m_metricsConfig));
   }
 
   return payload.View().WriteReadable();

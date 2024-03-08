@@ -53,17 +53,23 @@ namespace Aws
                 void Flush() override;
 
                 /**
+                 * Stops logging on this logger without destroying the object.
+                 */
+                void Stop() override;
+
+                /**
                  * Structure containing semaphores, queue etc... 
                  */
                 struct LogSynchronizationData
                 {
                 public:
-                    LogSynchronizationData() : m_stopLogging(false) {}
+                    LogSynchronizationData() : m_stopLogging(false), m_loggingThreadStopped(false) {}
 
                     std::mutex m_logQueueMutex;
                     std::condition_variable m_queueSignal;
                     Aws::Vector<Aws::String> m_queuedLogMessages;
-                    bool m_stopLogging;
+                    bool m_stopLogging = false;
+                    bool m_loggingThreadStopped = false;
 
                 private:
                     LogSynchronizationData(const LogSynchronizationData& rhs) = delete;

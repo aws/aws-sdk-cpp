@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DocumentFormat::NOT_SET:
+            return {};
           case DocumentFormat::YAML:
             return "YAML";
           case DocumentFormat::JSON:

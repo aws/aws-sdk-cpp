@@ -40,7 +40,8 @@ ResourceRecordSet::ResourceRecordSet() :
     m_aliasTargetHasBeenSet(false),
     m_healthCheckIdHasBeenSet(false),
     m_trafficPolicyInstanceIdHasBeenSet(false),
-    m_cidrRoutingConfigHasBeenSet(false)
+    m_cidrRoutingConfigHasBeenSet(false),
+    m_geoProximityLocationHasBeenSet(false)
 {
 }
 
@@ -64,7 +65,8 @@ ResourceRecordSet::ResourceRecordSet(const XmlNode& xmlNode) :
     m_aliasTargetHasBeenSet(false),
     m_healthCheckIdHasBeenSet(false),
     m_trafficPolicyInstanceIdHasBeenSet(false),
-    m_cidrRoutingConfigHasBeenSet(false)
+    m_cidrRoutingConfigHasBeenSet(false),
+    m_geoProximityLocationHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -164,6 +166,12 @@ ResourceRecordSet& ResourceRecordSet::operator =(const XmlNode& xmlNode)
     {
       m_cidrRoutingConfig = cidrRoutingConfigNode;
       m_cidrRoutingConfigHasBeenSet = true;
+    }
+    XmlNode geoProximityLocationNode = resultNode.FirstChild("GeoProximityLocation");
+    if(!geoProximityLocationNode.IsNull())
+    {
+      m_geoProximityLocation = geoProximityLocationNode;
+      m_geoProximityLocationHasBeenSet = true;
     }
   }
 
@@ -265,6 +273,12 @@ void ResourceRecordSet::AddToNode(XmlNode& parentNode) const
   {
    XmlNode cidrRoutingConfigNode = parentNode.CreateChildElement("CidrRoutingConfig");
    m_cidrRoutingConfig.AddToNode(cidrRoutingConfigNode);
+  }
+
+  if(m_geoProximityLocationHasBeenSet)
+  {
+   XmlNode geoProximityLocationNode = parentNode.CreateChildElement("GeoProximityLocation");
+   m_geoProximityLocation.AddToNode(geoProximityLocationNode);
   }
 
 }

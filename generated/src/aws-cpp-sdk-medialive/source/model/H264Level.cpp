@@ -124,6 +124,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case H264Level::NOT_SET:
+            return {};
           case H264Level::H264_LEVEL_1:
             return "H264_LEVEL_1";
           case H264Level::H264_LEVEL_1_1:

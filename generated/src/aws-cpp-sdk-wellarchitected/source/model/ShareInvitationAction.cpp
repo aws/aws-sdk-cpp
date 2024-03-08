@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ShareInvitationAction::NOT_SET:
+            return {};
           case ShareInvitationAction::ACCEPT:
             return "ACCEPT";
           case ShareInvitationAction::REJECT:

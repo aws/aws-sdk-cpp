@@ -22,7 +22,9 @@ TranslationSettings::TranslationSettings() :
     m_formality(Formality::NOT_SET),
     m_formalityHasBeenSet(false),
     m_profanity(Profanity::NOT_SET),
-    m_profanityHasBeenSet(false)
+    m_profanityHasBeenSet(false),
+    m_brevity(Brevity::NOT_SET),
+    m_brevityHasBeenSet(false)
 {
 }
 
@@ -30,7 +32,9 @@ TranslationSettings::TranslationSettings(JsonView jsonValue) :
     m_formality(Formality::NOT_SET),
     m_formalityHasBeenSet(false),
     m_profanity(Profanity::NOT_SET),
-    m_profanityHasBeenSet(false)
+    m_profanityHasBeenSet(false),
+    m_brevity(Brevity::NOT_SET),
+    m_brevityHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -51,6 +55,13 @@ TranslationSettings& TranslationSettings::operator =(JsonView jsonValue)
     m_profanityHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Brevity"))
+  {
+    m_brevity = BrevityMapper::GetBrevityForName(jsonValue.GetString("Brevity"));
+
+    m_brevityHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -66,6 +77,11 @@ JsonValue TranslationSettings::Jsonize() const
   if(m_profanityHasBeenSet)
   {
    payload.WithString("Profanity", ProfanityMapper::GetNameForProfanity(m_profanity));
+  }
+
+  if(m_brevityHasBeenSet)
+  {
+   payload.WithString("Brevity", BrevityMapper::GetNameForBrevity(m_brevity));
   }
 
   return payload;

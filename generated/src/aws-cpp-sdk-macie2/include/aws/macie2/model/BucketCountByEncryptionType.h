@@ -42,33 +42,33 @@ namespace Model
 
     /**
      * <p>The total number of buckets whose default encryption settings are configured
-     * to encrypt new objects with an Amazon Web Services managed KMS key or a customer
-     * managed KMS key. By default, these buckets encrypt new objects automatically
-     * using SSE-KMS encryption.</p>
+     * to encrypt new objects with an KMS key, either an Amazon Web Services managed
+     * key or a customer managed key. By default, these buckets encrypt new objects
+     * automatically using DSSE-KMS or SSE-KMS encryption.</p>
      */
     inline long long GetKmsManaged() const{ return m_kmsManaged; }
 
     /**
      * <p>The total number of buckets whose default encryption settings are configured
-     * to encrypt new objects with an Amazon Web Services managed KMS key or a customer
-     * managed KMS key. By default, these buckets encrypt new objects automatically
-     * using SSE-KMS encryption.</p>
+     * to encrypt new objects with an KMS key, either an Amazon Web Services managed
+     * key or a customer managed key. By default, these buckets encrypt new objects
+     * automatically using DSSE-KMS or SSE-KMS encryption.</p>
      */
     inline bool KmsManagedHasBeenSet() const { return m_kmsManagedHasBeenSet; }
 
     /**
      * <p>The total number of buckets whose default encryption settings are configured
-     * to encrypt new objects with an Amazon Web Services managed KMS key or a customer
-     * managed KMS key. By default, these buckets encrypt new objects automatically
-     * using SSE-KMS encryption.</p>
+     * to encrypt new objects with an KMS key, either an Amazon Web Services managed
+     * key or a customer managed key. By default, these buckets encrypt new objects
+     * automatically using DSSE-KMS or SSE-KMS encryption.</p>
      */
     inline void SetKmsManaged(long long value) { m_kmsManagedHasBeenSet = true; m_kmsManaged = value; }
 
     /**
      * <p>The total number of buckets whose default encryption settings are configured
-     * to encrypt new objects with an Amazon Web Services managed KMS key or a customer
-     * managed KMS key. By default, these buckets encrypt new objects automatically
-     * using SSE-KMS encryption.</p>
+     * to encrypt new objects with an KMS key, either an Amazon Web Services managed
+     * key or a customer managed key. By default, these buckets encrypt new objects
+     * automatically using DSSE-KMS or SSE-KMS encryption.</p>
      */
     inline BucketCountByEncryptionType& WithKmsManaged(long long value) { SetKmsManaged(value); return *this;}
 

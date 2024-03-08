@@ -19,7 +19,8 @@ UpdateAnalysisRequest::UpdateAnalysisRequest() :
     m_parametersHasBeenSet(false),
     m_sourceEntityHasBeenSet(false),
     m_themeArnHasBeenSet(false),
-    m_definitionHasBeenSet(false)
+    m_definitionHasBeenSet(false),
+    m_validationStrategyHasBeenSet(false)
 {
 }
 
@@ -54,6 +55,12 @@ Aws::String UpdateAnalysisRequest::SerializePayload() const
   if(m_definitionHasBeenSet)
   {
    payload.WithObject("Definition", m_definition.Jsonize());
+
+  }
+
+  if(m_validationStrategyHasBeenSet)
+  {
+   payload.WithObject("ValidationStrategy", m_validationStrategy.Jsonize());
 
   }
 

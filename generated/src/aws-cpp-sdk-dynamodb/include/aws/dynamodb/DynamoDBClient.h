@@ -37,8 +37,8 @@ namespace DynamoDB
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef DynamoDBClientConfiguration ClientConfigurationType;
       typedef DynamoDBEndpointProvider EndpointProviderType;
@@ -48,14 +48,14 @@ namespace DynamoDB
         * is not specified, it will be initialized to default values.
         */
         DynamoDBClient(const Aws::DynamoDB::DynamoDBClientConfiguration& clientConfiguration = Aws::DynamoDB::DynamoDBClientConfiguration(),
-                       std::shared_ptr<DynamoDBEndpointProviderBase> endpointProvider = Aws::MakeShared<DynamoDBEndpointProvider>(ALLOCATION_TAG));
+                       std::shared_ptr<DynamoDBEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         DynamoDBClient(const Aws::Auth::AWSCredentials& credentials,
-                       std::shared_ptr<DynamoDBEndpointProviderBase> endpointProvider = Aws::MakeShared<DynamoDBEndpointProvider>(ALLOCATION_TAG),
+                       std::shared_ptr<DynamoDBEndpointProviderBase> endpointProvider = nullptr,
                        const Aws::DynamoDB::DynamoDBClientConfiguration& clientConfiguration = Aws::DynamoDB::DynamoDBClientConfiguration());
 
        /**
@@ -63,7 +63,7 @@ namespace DynamoDB
         * the default http client factory will be used
         */
         DynamoDBClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                       std::shared_ptr<DynamoDBEndpointProviderBase> endpointProvider = Aws::MakeShared<DynamoDBEndpointProvider>(ALLOCATION_TAG),
+                       std::shared_ptr<DynamoDBEndpointProviderBase> endpointProvider = nullptr,
                        const Aws::DynamoDB::DynamoDBClientConfiguration& clientConfiguration = Aws::DynamoDB::DynamoDBClientConfiguration());
 
 
@@ -1163,14 +1163,18 @@ namespace DynamoDB
         }
 
         /**
-         * <p>List backups associated with an Amazon Web Services account. To list backups
-         * for a given table, specify <code>TableName</code>. <code>ListBackups</code>
-         * returns a paginated list of results with at most 1 MB worth of items in a page.
-         * You can also specify a maximum number of entries to be returned in a page.</p>
-         * <p>In the request, start time is inclusive, but end time is exclusive. Note that
-         * these boundaries are for the time at which the original backup was
-         * requested.</p> <p>You can call <code>ListBackups</code> a maximum of five times
-         * per second.</p><p><h3>See Also:</h3>   <a
+         * <p>List DynamoDB backups that are associated with an Amazon Web Services account
+         * and weren't made with Amazon Web Services Backup. To list these backups for a
+         * given table, specify <code>TableName</code>. <code>ListBackups</code> returns a
+         * paginated list of results with at most 1 MB worth of items in a page. You can
+         * also specify a maximum number of entries to be returned in a page.</p> <p>In the
+         * request, start time is inclusive, but end time is exclusive. Note that these
+         * boundaries are for the time at which the original backup was requested.</p>
+         * <p>You can call <code>ListBackups</code> a maximum of five times per second.</p>
+         * <p>If you want to retrieve the complete list of backups made with Amazon Web
+         * Services Backup, use the <a
+         * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ListBackupJobs.html">Amazon
+         * Web Services Backup list API.</a> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListBackups">AWS
          * API Reference</a></p>
          */
@@ -1516,11 +1520,11 @@ namespace DynamoDB
          * <p>Restores the specified table to the specified point in time within
          * <code>EarliestRestorableDateTime</code> and
          * <code>LatestRestorableDateTime</code>. You can restore your table to any point
-         * in time during the last 35 days. Any number of users can execute up to 4
-         * concurrent restores (any type of restore) in a given account. </p> <p> When you
+         * in time during the last 35 days. Any number of users can execute up to 50
+         * concurrent restores (any type of restore) in a given account. </p> <p>When you
          * restore using point in time recovery, DynamoDB restores your table data to the
          * state based on the selected date and time (day:hour:minute:second) to a new
-         * table. </p> <p> Along with data, the following are also included on the new
+         * table. </p> <p>Along with data, the following are also included on the new
          * restored table using point in time recovery: </p> <ul> <li> <p>Global secondary
          * indexes (GSIs)</p> </li> <li> <p>Local secondary indexes (LSIs)</p> </li> <li>
          * <p>Provisioned read and write capacity</p> </li> <li> <p>Encryption settings</p>
@@ -1874,7 +1878,7 @@ namespace DynamoDB
          * 2017.11.29</a> of global tables. If you are using global tables <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
          * 2019.11.21</a> you can use <a
-         * href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_DescribeTable.html">DescribeTable</a>
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateTable.html">UpdateTable</a>
          * instead. </p> <p> Although you can use <code>UpdateGlobalTable</code> to add
          * replicas and remove replicas in a single request, for simplicity we recommend
          * that you issue separate requests for adding or removing replicas. </p> 
@@ -1976,6 +1980,32 @@ namespace DynamoDB
         }
 
         /**
+         * <p>The command to update the Kinesis stream destination.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateKinesisStreamingDestination">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateKinesisStreamingDestinationOutcome UpdateKinesisStreamingDestination(const Model::UpdateKinesisStreamingDestinationRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateKinesisStreamingDestination that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateKinesisStreamingDestinationRequestT = Model::UpdateKinesisStreamingDestinationRequest>
+        Model::UpdateKinesisStreamingDestinationOutcomeCallable UpdateKinesisStreamingDestinationCallable(const UpdateKinesisStreamingDestinationRequestT& request) const
+        {
+            return SubmitCallable(&DynamoDBClient::UpdateKinesisStreamingDestination, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateKinesisStreamingDestination that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateKinesisStreamingDestinationRequestT = Model::UpdateKinesisStreamingDestinationRequest>
+        void UpdateKinesisStreamingDestinationAsync(const UpdateKinesisStreamingDestinationRequestT& request, const UpdateKinesisStreamingDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DynamoDBClient::UpdateKinesisStreamingDestination, request, handler, context);
+        }
+
+        /**
          * <p>Modifies the provisioned throughput settings, global secondary indexes, or
          * DynamoDB Streams settings for a given table.</p>  <p>This operation
          * only applies to <a
@@ -1986,10 +2016,10 @@ namespace DynamoDB
          * secondary index from the table.</p> </li> <li> <p>Create a new global secondary
          * index on the table. After the index begins backfilling, you can use
          * <code>UpdateTable</code> to perform other operations.</p> </li> </ul> <p>
-         * <code>UpdateTable</code> is an asynchronous operation; while it is executing,
-         * the table status changes from <code>ACTIVE</code> to <code>UPDATING</code>.
-         * While it is <code>UPDATING</code>, you cannot issue another
-         * <code>UpdateTable</code> request. When the table returns to the
+         * <code>UpdateTable</code> is an asynchronous operation; while it's executing, the
+         * table status changes from <code>ACTIVE</code> to <code>UPDATING</code>. While
+         * it's <code>UPDATING</code>, you can't issue another <code>UpdateTable</code>
+         * request on the base table nor any replicas. When the table returns to the
          * <code>ACTIVE</code> state, the <code>UpdateTable</code> operation is
          * complete.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateTable">AWS

@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SystemTemplateFilterName::NOT_SET:
+            return {};
           case SystemTemplateFilterName::FLOW_TEMPLATE_ID:
             return "FLOW_TEMPLATE_ID";
           default:

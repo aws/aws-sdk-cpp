@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EmbeddedTimecodeOverride::NOT_SET:
+            return {};
           case EmbeddedTimecodeOverride::NONE:
             return "NONE";
           case EmbeddedTimecodeOverride::USE_MDPM:

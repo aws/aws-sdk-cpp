@@ -20,7 +20,8 @@ StartDocumentAnalysisRequest::StartDocumentAnalysisRequest() :
     m_notificationChannelHasBeenSet(false),
     m_outputConfigHasBeenSet(false),
     m_kMSKeyIdHasBeenSet(false),
-    m_queriesConfigHasBeenSet(false)
+    m_queriesConfigHasBeenSet(false),
+    m_adaptersConfigHasBeenSet(false)
 {
 }
 
@@ -78,6 +79,12 @@ Aws::String StartDocumentAnalysisRequest::SerializePayload() const
   if(m_queriesConfigHasBeenSet)
   {
    payload.WithObject("QueriesConfig", m_queriesConfig.Jsonize());
+
+  }
+
+  if(m_adaptersConfigHasBeenSet)
+  {
+   payload.WithObject("AdaptersConfig", m_adaptersConfig.Jsonize());
 
   }
 

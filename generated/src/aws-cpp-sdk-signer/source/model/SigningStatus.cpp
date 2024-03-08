@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SigningStatus::NOT_SET:
+            return {};
           case SigningStatus::InProgress:
             return "InProgress";
           case SigningStatus::Failed:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InputDeviceCodec::NOT_SET:
+            return {};
           case InputDeviceCodec::HEVC:
             return "HEVC";
           case InputDeviceCodec::AVC:

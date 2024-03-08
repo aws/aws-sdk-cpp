@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RetentionLockType::NOT_SET:
+            return {};
           case RetentionLockType::COMPLIANCE:
             return "COMPLIANCE";
           case RetentionLockType::GOVERNANCE:

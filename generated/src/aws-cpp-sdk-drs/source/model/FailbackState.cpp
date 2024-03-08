@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FailbackState::NOT_SET:
+            return {};
           case FailbackState::FAILBACK_NOT_STARTED:
             return "FAILBACK_NOT_STARTED";
           case FailbackState::FAILBACK_IN_PROGRESS:

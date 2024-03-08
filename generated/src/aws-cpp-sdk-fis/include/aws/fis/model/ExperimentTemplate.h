@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/fis/model/ExperimentTemplateLogConfiguration.h>
+#include <aws/fis/model/ExperimentTemplateExperimentOptions.h>
 #include <aws/fis/model/ExperimentTemplateTarget.h>
 #include <aws/fis/model/ExperimentTemplateAction.h>
 #include <aws/fis/model/ExperimentTemplateStopCondition.h>
@@ -488,6 +489,58 @@ namespace Model
      */
     inline ExperimentTemplate& WithLogConfiguration(ExperimentTemplateLogConfiguration&& value) { SetLogConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The experiment options for an experiment template.</p>
+     */
+    inline const ExperimentTemplateExperimentOptions& GetExperimentOptions() const{ return m_experimentOptions; }
+
+    /**
+     * <p>The experiment options for an experiment template.</p>
+     */
+    inline bool ExperimentOptionsHasBeenSet() const { return m_experimentOptionsHasBeenSet; }
+
+    /**
+     * <p>The experiment options for an experiment template.</p>
+     */
+    inline void SetExperimentOptions(const ExperimentTemplateExperimentOptions& value) { m_experimentOptionsHasBeenSet = true; m_experimentOptions = value; }
+
+    /**
+     * <p>The experiment options for an experiment template.</p>
+     */
+    inline void SetExperimentOptions(ExperimentTemplateExperimentOptions&& value) { m_experimentOptionsHasBeenSet = true; m_experimentOptions = std::move(value); }
+
+    /**
+     * <p>The experiment options for an experiment template.</p>
+     */
+    inline ExperimentTemplate& WithExperimentOptions(const ExperimentTemplateExperimentOptions& value) { SetExperimentOptions(value); return *this;}
+
+    /**
+     * <p>The experiment options for an experiment template.</p>
+     */
+    inline ExperimentTemplate& WithExperimentOptions(ExperimentTemplateExperimentOptions&& value) { SetExperimentOptions(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The count of target account configurations for the experiment template.</p>
+     */
+    inline long long GetTargetAccountConfigurationsCount() const{ return m_targetAccountConfigurationsCount; }
+
+    /**
+     * <p>The count of target account configurations for the experiment template.</p>
+     */
+    inline bool TargetAccountConfigurationsCountHasBeenSet() const { return m_targetAccountConfigurationsCountHasBeenSet; }
+
+    /**
+     * <p>The count of target account configurations for the experiment template.</p>
+     */
+    inline void SetTargetAccountConfigurationsCount(long long value) { m_targetAccountConfigurationsCountHasBeenSet = true; m_targetAccountConfigurationsCount = value; }
+
+    /**
+     * <p>The count of target account configurations for the experiment template.</p>
+     */
+    inline ExperimentTemplate& WithTargetAccountConfigurationsCount(long long value) { SetTargetAccountConfigurationsCount(value); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -519,6 +572,12 @@ namespace Model
 
     ExperimentTemplateLogConfiguration m_logConfiguration;
     bool m_logConfigurationHasBeenSet = false;
+
+    ExperimentTemplateExperimentOptions m_experimentOptions;
+    bool m_experimentOptionsHasBeenSet = false;
+
+    long long m_targetAccountConfigurationsCount;
+    bool m_targetAccountConfigurationsCountHasBeenSet = false;
   };
 
 } // namespace Model

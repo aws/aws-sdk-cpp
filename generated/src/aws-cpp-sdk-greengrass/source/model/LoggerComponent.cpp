@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LoggerComponent::NOT_SET:
+            return {};
           case LoggerComponent::GreengrassSystem:
             return "GreengrassSystem";
           case LoggerComponent::Lambda:

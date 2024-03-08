@@ -34,35 +34,35 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == MALFORMED_POLICY_DOCUMENT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(STSErrors::MALFORMED_POLICY_DOCUMENT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(STSErrors::MALFORMED_POLICY_DOCUMENT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == PACKED_POLICY_TOO_LARGE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(STSErrors::PACKED_POLICY_TOO_LARGE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(STSErrors::PACKED_POLICY_TOO_LARGE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == I_D_P_COMMUNICATION_ERROR_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(STSErrors::I_D_P_COMMUNICATION_ERROR), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(STSErrors::I_D_P_COMMUNICATION_ERROR), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == I_D_P_REJECTED_CLAIM_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(STSErrors::I_D_P_REJECTED_CLAIM), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(STSErrors::I_D_P_REJECTED_CLAIM), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == EXPIRED_TOKEN_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(STSErrors::EXPIRED_TOKEN), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(STSErrors::EXPIRED_TOKEN), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_IDENTITY_TOKEN_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(STSErrors::INVALID_IDENTITY_TOKEN), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(STSErrors::INVALID_IDENTITY_TOKEN), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_AUTHORIZATION_MESSAGE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(STSErrors::INVALID_AUTHORIZATION_MESSAGE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(STSErrors::INVALID_AUTHORIZATION_MESSAGE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == REGION_DISABLED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(STSErrors::REGION_DISABLED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(STSErrors::REGION_DISABLED), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

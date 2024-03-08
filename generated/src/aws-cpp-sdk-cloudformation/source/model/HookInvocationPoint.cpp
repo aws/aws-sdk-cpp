@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HookInvocationPoint::NOT_SET:
+            return {};
           case HookInvocationPoint::PRE_PROVISION:
             return "PRE_PROVISION";
           default:

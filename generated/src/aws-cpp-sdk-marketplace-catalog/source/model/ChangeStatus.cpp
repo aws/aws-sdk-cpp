@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ChangeStatus::NOT_SET:
+            return {};
           case ChangeStatus::PREPARING:
             return "PREPARING";
           case ChangeStatus::APPLYING:

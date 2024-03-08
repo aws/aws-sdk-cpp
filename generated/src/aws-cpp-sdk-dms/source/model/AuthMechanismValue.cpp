@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AuthMechanismValue::NOT_SET:
+            return {};
           case AuthMechanismValue::default_:
             return "default";
           case AuthMechanismValue::mongodb_cr:

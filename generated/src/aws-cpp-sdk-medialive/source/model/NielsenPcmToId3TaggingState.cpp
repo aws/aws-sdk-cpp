@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NielsenPcmToId3TaggingState::NOT_SET:
+            return {};
           case NielsenPcmToId3TaggingState::DISABLED:
             return "DISABLED";
           case NielsenPcmToId3TaggingState::ENABLED:

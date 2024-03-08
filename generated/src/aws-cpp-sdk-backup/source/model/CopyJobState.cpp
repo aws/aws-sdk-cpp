@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CopyJobState::NOT_SET:
+            return {};
           case CopyJobState::CREATED:
             return "CREATED";
           case CopyJobState::RUNNING:

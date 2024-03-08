@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LicenseFindingReasonCode::NOT_SET:
+            return {};
           case LicenseFindingReasonCode::InvalidCloudWatchApplicationInsightsSetup:
             return "InvalidCloudWatchApplicationInsightsSetup";
           case LicenseFindingReasonCode::CloudWatchApplicationInsightsError:

@@ -37,8 +37,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* ForecastQueryServiceClient::SERVICE_NAME = "forecast";
-const char* ForecastQueryServiceClient::ALLOCATION_TAG = "ForecastQueryServiceClient";
+namespace Aws
+{
+  namespace ForecastQueryService
+  {
+    const char SERVICE_NAME[] = "forecast";
+    const char ALLOCATION_TAG[] = "ForecastQueryServiceClient";
+  }
+}
+const char* ForecastQueryServiceClient::GetServiceName() {return SERVICE_NAME;}
+const char* ForecastQueryServiceClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 ForecastQueryServiceClient::ForecastQueryServiceClient(const ForecastQueryService::ForecastQueryServiceClientConfiguration& clientConfiguration,
                                                        std::shared_ptr<ForecastQueryServiceEndpointProviderBase> endpointProvider) :
@@ -50,7 +58,7 @@ ForecastQueryServiceClient::ForecastQueryServiceClient(const ForecastQueryServic
             Aws::MakeShared<ForecastQueryServiceErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ForecastQueryServiceEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -66,7 +74,7 @@ ForecastQueryServiceClient::ForecastQueryServiceClient(const AWSCredentials& cre
             Aws::MakeShared<ForecastQueryServiceErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ForecastQueryServiceEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -82,7 +90,7 @@ ForecastQueryServiceClient::ForecastQueryServiceClient(const std::shared_ptr<AWS
             Aws::MakeShared<ForecastQueryServiceErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ForecastQueryServiceEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

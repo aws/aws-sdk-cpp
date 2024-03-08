@@ -19,12 +19,14 @@ using namespace Aws;
 
 GetDataSetDetailsResult::GetDataSetDetailsResult() : 
     m_blocksize(0),
+    m_fileSize(0),
     m_recordLength(0)
 {
 }
 
 GetDataSetDetailsResult::GetDataSetDetailsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_blocksize(0),
+    m_fileSize(0),
     m_recordLength(0)
 {
   *this = result;
@@ -54,6 +56,12 @@ GetDataSetDetailsResult& GetDataSetDetailsResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("dataSetOrg"))
   {
     m_dataSetOrg = jsonValue.GetObject("dataSetOrg");
+
+  }
+
+  if(jsonValue.ValueExists("fileSize"))
+  {
+    m_fileSize = jsonValue.GetInt64("fileSize");
 
   }
 

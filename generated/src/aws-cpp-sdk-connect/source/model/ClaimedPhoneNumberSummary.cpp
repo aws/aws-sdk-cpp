@@ -28,8 +28,10 @@ ClaimedPhoneNumberSummary::ClaimedPhoneNumberSummary() :
     m_phoneNumberTypeHasBeenSet(false),
     m_phoneNumberDescriptionHasBeenSet(false),
     m_targetArnHasBeenSet(false),
+    m_instanceIdHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_phoneNumberStatusHasBeenSet(false)
+    m_phoneNumberStatusHasBeenSet(false),
+    m_sourcePhoneNumberArnHasBeenSet(false)
 {
 }
 
@@ -43,8 +45,10 @@ ClaimedPhoneNumberSummary::ClaimedPhoneNumberSummary(JsonView jsonValue) :
     m_phoneNumberTypeHasBeenSet(false),
     m_phoneNumberDescriptionHasBeenSet(false),
     m_targetArnHasBeenSet(false),
+    m_instanceIdHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_phoneNumberStatusHasBeenSet(false)
+    m_phoneNumberStatusHasBeenSet(false),
+    m_sourcePhoneNumberArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -100,6 +104,13 @@ ClaimedPhoneNumberSummary& ClaimedPhoneNumberSummary::operator =(JsonView jsonVa
     m_targetArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("InstanceId"))
+  {
+    m_instanceId = jsonValue.GetString("InstanceId");
+
+    m_instanceIdHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
@@ -115,6 +126,13 @@ ClaimedPhoneNumberSummary& ClaimedPhoneNumberSummary::operator =(JsonView jsonVa
     m_phoneNumberStatus = jsonValue.GetObject("PhoneNumberStatus");
 
     m_phoneNumberStatusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SourcePhoneNumberArn"))
+  {
+    m_sourcePhoneNumberArn = jsonValue.GetString("SourcePhoneNumberArn");
+
+    m_sourcePhoneNumberArnHasBeenSet = true;
   }
 
   return *this;
@@ -164,6 +182,12 @@ JsonValue ClaimedPhoneNumberSummary::Jsonize() const
 
   }
 
+  if(m_instanceIdHasBeenSet)
+  {
+   payload.WithString("InstanceId", m_instanceId);
+
+  }
+
   if(m_tagsHasBeenSet)
   {
    JsonValue tagsJsonMap;
@@ -178,6 +202,12 @@ JsonValue ClaimedPhoneNumberSummary::Jsonize() const
   if(m_phoneNumberStatusHasBeenSet)
   {
    payload.WithObject("PhoneNumberStatus", m_phoneNumberStatus.Jsonize());
+
+  }
+
+  if(m_sourcePhoneNumberArnHasBeenSet)
+  {
+   payload.WithString("SourcePhoneNumberArn", m_sourcePhoneNumberArn);
 
   }
 

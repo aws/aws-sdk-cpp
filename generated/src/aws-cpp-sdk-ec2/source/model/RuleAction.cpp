@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RuleAction::NOT_SET:
+            return {};
           case RuleAction::allow:
             return "allow";
           case RuleAction::deny:

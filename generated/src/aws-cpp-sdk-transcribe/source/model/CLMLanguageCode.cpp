@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CLMLanguageCode::NOT_SET:
+            return {};
           case CLMLanguageCode::en_US:
             return "en-US";
           case CLMLanguageCode::hi_IN:

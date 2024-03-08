@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResourceType::NOT_SET:
+            return {};
           case ResourceType::BATCH_JOB:
             return "BATCH_JOB";
           case ResourceType::COMPLIANCE_CONSENT:

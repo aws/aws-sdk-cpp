@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ValidityPeriodType::NOT_SET:
+            return {};
           case ValidityPeriodType::END_DATE:
             return "END_DATE";
           case ValidityPeriodType::ABSOLUTE:

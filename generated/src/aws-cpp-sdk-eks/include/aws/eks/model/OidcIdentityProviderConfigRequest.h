@@ -29,8 +29,8 @@ namespace Model
    * associating an OIDC identity provider to your cluster, review the considerations
    * in <a
    * href="https://docs.aws.amazon.com/eks/latest/userguide/authenticate-oidc-identity-provider.html">Authenticating
-   * users for your cluster from an OpenID Connect identity provider</a> in the
-   * <i>Amazon EKS User Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * users for your cluster from an OIDC identity provider</a> in the <i>Amazon EKS
+   * User Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/OidcIdentityProviderConfigRequest">AWS
    * API Reference</a></p>
    */
@@ -85,12 +85,12 @@ namespace Model
 
 
     /**
-     * <p>The URL of the OpenID identity provider that allows the API server to
-     * discover public signing keys for verifying tokens. The URL must begin with
+     * <p>The URL of the OIDC identity provider that allows the API server to discover
+     * public signing keys for verifying tokens. The URL must begin with
      * <code>https://</code> and should correspond to the <code>iss</code> claim in the
-     * provider's OIDC ID tokens. Per the OIDC standard, path components are allowed
-     * but query parameters are not. Typically the URL consists of only a hostname,
-     * like <code>https://server.example.org</code> or
+     * provider's OIDC ID tokens. Based on the OIDC standard, path components are
+     * allowed but query parameters are not. Typically the URL consists of only a
+     * hostname, like <code>https://server.example.org</code> or
      * <code>https://example.com</code>. This URL should point to the level below
      * <code>.well-known/openid-configuration</code> and must be publicly accessible
      * over the internet.</p>
@@ -98,12 +98,12 @@ namespace Model
     inline const Aws::String& GetIssuerUrl() const{ return m_issuerUrl; }
 
     /**
-     * <p>The URL of the OpenID identity provider that allows the API server to
-     * discover public signing keys for verifying tokens. The URL must begin with
+     * <p>The URL of the OIDC identity provider that allows the API server to discover
+     * public signing keys for verifying tokens. The URL must begin with
      * <code>https://</code> and should correspond to the <code>iss</code> claim in the
-     * provider's OIDC ID tokens. Per the OIDC standard, path components are allowed
-     * but query parameters are not. Typically the URL consists of only a hostname,
-     * like <code>https://server.example.org</code> or
+     * provider's OIDC ID tokens. Based on the OIDC standard, path components are
+     * allowed but query parameters are not. Typically the URL consists of only a
+     * hostname, like <code>https://server.example.org</code> or
      * <code>https://example.com</code>. This URL should point to the level below
      * <code>.well-known/openid-configuration</code> and must be publicly accessible
      * over the internet.</p>
@@ -111,12 +111,12 @@ namespace Model
     inline bool IssuerUrlHasBeenSet() const { return m_issuerUrlHasBeenSet; }
 
     /**
-     * <p>The URL of the OpenID identity provider that allows the API server to
-     * discover public signing keys for verifying tokens. The URL must begin with
+     * <p>The URL of the OIDC identity provider that allows the API server to discover
+     * public signing keys for verifying tokens. The URL must begin with
      * <code>https://</code> and should correspond to the <code>iss</code> claim in the
-     * provider's OIDC ID tokens. Per the OIDC standard, path components are allowed
-     * but query parameters are not. Typically the URL consists of only a hostname,
-     * like <code>https://server.example.org</code> or
+     * provider's OIDC ID tokens. Based on the OIDC standard, path components are
+     * allowed but query parameters are not. Typically the URL consists of only a
+     * hostname, like <code>https://server.example.org</code> or
      * <code>https://example.com</code>. This URL should point to the level below
      * <code>.well-known/openid-configuration</code> and must be publicly accessible
      * over the internet.</p>
@@ -124,12 +124,12 @@ namespace Model
     inline void SetIssuerUrl(const Aws::String& value) { m_issuerUrlHasBeenSet = true; m_issuerUrl = value; }
 
     /**
-     * <p>The URL of the OpenID identity provider that allows the API server to
-     * discover public signing keys for verifying tokens. The URL must begin with
+     * <p>The URL of the OIDC identity provider that allows the API server to discover
+     * public signing keys for verifying tokens. The URL must begin with
      * <code>https://</code> and should correspond to the <code>iss</code> claim in the
-     * provider's OIDC ID tokens. Per the OIDC standard, path components are allowed
-     * but query parameters are not. Typically the URL consists of only a hostname,
-     * like <code>https://server.example.org</code> or
+     * provider's OIDC ID tokens. Based on the OIDC standard, path components are
+     * allowed but query parameters are not. Typically the URL consists of only a
+     * hostname, like <code>https://server.example.org</code> or
      * <code>https://example.com</code>. This URL should point to the level below
      * <code>.well-known/openid-configuration</code> and must be publicly accessible
      * over the internet.</p>
@@ -137,12 +137,12 @@ namespace Model
     inline void SetIssuerUrl(Aws::String&& value) { m_issuerUrlHasBeenSet = true; m_issuerUrl = std::move(value); }
 
     /**
-     * <p>The URL of the OpenID identity provider that allows the API server to
-     * discover public signing keys for verifying tokens. The URL must begin with
+     * <p>The URL of the OIDC identity provider that allows the API server to discover
+     * public signing keys for verifying tokens. The URL must begin with
      * <code>https://</code> and should correspond to the <code>iss</code> claim in the
-     * provider's OIDC ID tokens. Per the OIDC standard, path components are allowed
-     * but query parameters are not. Typically the URL consists of only a hostname,
-     * like <code>https://server.example.org</code> or
+     * provider's OIDC ID tokens. Based on the OIDC standard, path components are
+     * allowed but query parameters are not. Typically the URL consists of only a
+     * hostname, like <code>https://server.example.org</code> or
      * <code>https://example.com</code>. This URL should point to the level below
      * <code>.well-known/openid-configuration</code> and must be publicly accessible
      * over the internet.</p>
@@ -150,12 +150,12 @@ namespace Model
     inline void SetIssuerUrl(const char* value) { m_issuerUrlHasBeenSet = true; m_issuerUrl.assign(value); }
 
     /**
-     * <p>The URL of the OpenID identity provider that allows the API server to
-     * discover public signing keys for verifying tokens. The URL must begin with
+     * <p>The URL of the OIDC identity provider that allows the API server to discover
+     * public signing keys for verifying tokens. The URL must begin with
      * <code>https://</code> and should correspond to the <code>iss</code> claim in the
-     * provider's OIDC ID tokens. Per the OIDC standard, path components are allowed
-     * but query parameters are not. Typically the URL consists of only a hostname,
-     * like <code>https://server.example.org</code> or
+     * provider's OIDC ID tokens. Based on the OIDC standard, path components are
+     * allowed but query parameters are not. Typically the URL consists of only a
+     * hostname, like <code>https://server.example.org</code> or
      * <code>https://example.com</code>. This URL should point to the level below
      * <code>.well-known/openid-configuration</code> and must be publicly accessible
      * over the internet.</p>
@@ -163,12 +163,12 @@ namespace Model
     inline OidcIdentityProviderConfigRequest& WithIssuerUrl(const Aws::String& value) { SetIssuerUrl(value); return *this;}
 
     /**
-     * <p>The URL of the OpenID identity provider that allows the API server to
-     * discover public signing keys for verifying tokens. The URL must begin with
+     * <p>The URL of the OIDC identity provider that allows the API server to discover
+     * public signing keys for verifying tokens. The URL must begin with
      * <code>https://</code> and should correspond to the <code>iss</code> claim in the
-     * provider's OIDC ID tokens. Per the OIDC standard, path components are allowed
-     * but query parameters are not. Typically the URL consists of only a hostname,
-     * like <code>https://server.example.org</code> or
+     * provider's OIDC ID tokens. Based on the OIDC standard, path components are
+     * allowed but query parameters are not. Typically the URL consists of only a
+     * hostname, like <code>https://server.example.org</code> or
      * <code>https://example.com</code>. This URL should point to the level below
      * <code>.well-known/openid-configuration</code> and must be publicly accessible
      * over the internet.</p>
@@ -176,12 +176,12 @@ namespace Model
     inline OidcIdentityProviderConfigRequest& WithIssuerUrl(Aws::String&& value) { SetIssuerUrl(std::move(value)); return *this;}
 
     /**
-     * <p>The URL of the OpenID identity provider that allows the API server to
-     * discover public signing keys for verifying tokens. The URL must begin with
+     * <p>The URL of the OIDC identity provider that allows the API server to discover
+     * public signing keys for verifying tokens. The URL must begin with
      * <code>https://</code> and should correspond to the <code>iss</code> claim in the
-     * provider's OIDC ID tokens. Per the OIDC standard, path components are allowed
-     * but query parameters are not. Typically the URL consists of only a hostname,
-     * like <code>https://server.example.org</code> or
+     * provider's OIDC ID tokens. Based on the OIDC standard, path components are
+     * allowed but query parameters are not. Typically the URL consists of only a
+     * hostname, like <code>https://server.example.org</code> or
      * <code>https://example.com</code>. This URL should point to the level below
      * <code>.well-known/openid-configuration</code> and must be publicly accessible
      * over the internet.</p>
@@ -191,49 +191,49 @@ namespace Model
 
     /**
      * <p>This is also known as <i>audience</i>. The ID for the client application that
-     * makes authentication requests to the OpenID identity provider.</p>
+     * makes authentication requests to the OIDC identity provider.</p>
      */
     inline const Aws::String& GetClientId() const{ return m_clientId; }
 
     /**
      * <p>This is also known as <i>audience</i>. The ID for the client application that
-     * makes authentication requests to the OpenID identity provider.</p>
+     * makes authentication requests to the OIDC identity provider.</p>
      */
     inline bool ClientIdHasBeenSet() const { return m_clientIdHasBeenSet; }
 
     /**
      * <p>This is also known as <i>audience</i>. The ID for the client application that
-     * makes authentication requests to the OpenID identity provider.</p>
+     * makes authentication requests to the OIDC identity provider.</p>
      */
     inline void SetClientId(const Aws::String& value) { m_clientIdHasBeenSet = true; m_clientId = value; }
 
     /**
      * <p>This is also known as <i>audience</i>. The ID for the client application that
-     * makes authentication requests to the OpenID identity provider.</p>
+     * makes authentication requests to the OIDC identity provider.</p>
      */
     inline void SetClientId(Aws::String&& value) { m_clientIdHasBeenSet = true; m_clientId = std::move(value); }
 
     /**
      * <p>This is also known as <i>audience</i>. The ID for the client application that
-     * makes authentication requests to the OpenID identity provider.</p>
+     * makes authentication requests to the OIDC identity provider.</p>
      */
     inline void SetClientId(const char* value) { m_clientIdHasBeenSet = true; m_clientId.assign(value); }
 
     /**
      * <p>This is also known as <i>audience</i>. The ID for the client application that
-     * makes authentication requests to the OpenID identity provider.</p>
+     * makes authentication requests to the OIDC identity provider.</p>
      */
     inline OidcIdentityProviderConfigRequest& WithClientId(const Aws::String& value) { SetClientId(value); return *this;}
 
     /**
      * <p>This is also known as <i>audience</i>. The ID for the client application that
-     * makes authentication requests to the OpenID identity provider.</p>
+     * makes authentication requests to the OIDC identity provider.</p>
      */
     inline OidcIdentityProviderConfigRequest& WithClientId(Aws::String&& value) { SetClientId(std::move(value)); return *this;}
 
     /**
      * <p>This is also known as <i>audience</i>. The ID for the client application that
-     * makes authentication requests to the OpenID identity provider.</p>
+     * makes authentication requests to the OIDC identity provider.</p>
      */
     inline OidcIdentityProviderConfigRequest& WithClientId(const char* value) { SetClientId(value); return *this;}
 
@@ -242,7 +242,7 @@ namespace Model
      * <p>The JSON Web Token (JWT) claim to use as the username. The default is
      * <code>sub</code>, which is expected to be a unique identifier of the end user.
      * You can choose other claims, such as <code>email</code> or <code>name</code>,
-     * depending on the OpenID identity provider. Claims other than <code>email</code>
+     * depending on the OIDC identity provider. Claims other than <code>email</code>
      * are prefixed with the issuer URL to prevent naming clashes with other
      * plug-ins.</p>
      */
@@ -252,7 +252,7 @@ namespace Model
      * <p>The JSON Web Token (JWT) claim to use as the username. The default is
      * <code>sub</code>, which is expected to be a unique identifier of the end user.
      * You can choose other claims, such as <code>email</code> or <code>name</code>,
-     * depending on the OpenID identity provider. Claims other than <code>email</code>
+     * depending on the OIDC identity provider. Claims other than <code>email</code>
      * are prefixed with the issuer URL to prevent naming clashes with other
      * plug-ins.</p>
      */
@@ -262,7 +262,7 @@ namespace Model
      * <p>The JSON Web Token (JWT) claim to use as the username. The default is
      * <code>sub</code>, which is expected to be a unique identifier of the end user.
      * You can choose other claims, such as <code>email</code> or <code>name</code>,
-     * depending on the OpenID identity provider. Claims other than <code>email</code>
+     * depending on the OIDC identity provider. Claims other than <code>email</code>
      * are prefixed with the issuer URL to prevent naming clashes with other
      * plug-ins.</p>
      */
@@ -272,7 +272,7 @@ namespace Model
      * <p>The JSON Web Token (JWT) claim to use as the username. The default is
      * <code>sub</code>, which is expected to be a unique identifier of the end user.
      * You can choose other claims, such as <code>email</code> or <code>name</code>,
-     * depending on the OpenID identity provider. Claims other than <code>email</code>
+     * depending on the OIDC identity provider. Claims other than <code>email</code>
      * are prefixed with the issuer URL to prevent naming clashes with other
      * plug-ins.</p>
      */
@@ -282,7 +282,7 @@ namespace Model
      * <p>The JSON Web Token (JWT) claim to use as the username. The default is
      * <code>sub</code>, which is expected to be a unique identifier of the end user.
      * You can choose other claims, such as <code>email</code> or <code>name</code>,
-     * depending on the OpenID identity provider. Claims other than <code>email</code>
+     * depending on the OIDC identity provider. Claims other than <code>email</code>
      * are prefixed with the issuer URL to prevent naming clashes with other
      * plug-ins.</p>
      */
@@ -292,7 +292,7 @@ namespace Model
      * <p>The JSON Web Token (JWT) claim to use as the username. The default is
      * <code>sub</code>, which is expected to be a unique identifier of the end user.
      * You can choose other claims, such as <code>email</code> or <code>name</code>,
-     * depending on the OpenID identity provider. Claims other than <code>email</code>
+     * depending on the OIDC identity provider. Claims other than <code>email</code>
      * are prefixed with the issuer URL to prevent naming clashes with other
      * plug-ins.</p>
      */
@@ -302,7 +302,7 @@ namespace Model
      * <p>The JSON Web Token (JWT) claim to use as the username. The default is
      * <code>sub</code>, which is expected to be a unique identifier of the end user.
      * You can choose other claims, such as <code>email</code> or <code>name</code>,
-     * depending on the OpenID identity provider. Claims other than <code>email</code>
+     * depending on the OIDC identity provider. Claims other than <code>email</code>
      * are prefixed with the issuer URL to prevent naming clashes with other
      * plug-ins.</p>
      */
@@ -312,7 +312,7 @@ namespace Model
      * <p>The JSON Web Token (JWT) claim to use as the username. The default is
      * <code>sub</code>, which is expected to be a unique identifier of the end user.
      * You can choose other claims, such as <code>email</code> or <code>name</code>,
-     * depending on the OpenID identity provider. Claims other than <code>email</code>
+     * depending on the OIDC identity provider. Claims other than <code>email</code>
      * are prefixed with the issuer URL to prevent naming clashes with other
      * plug-ins.</p>
      */

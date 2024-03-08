@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LaunchDisposition::NOT_SET:
+            return {};
           case LaunchDisposition::STOPPED:
             return "STOPPED";
           case LaunchDisposition::STARTED:

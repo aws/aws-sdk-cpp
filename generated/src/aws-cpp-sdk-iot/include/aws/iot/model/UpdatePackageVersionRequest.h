@@ -166,118 +166,118 @@ namespace Model
 
     /**
      * <p>Metadata that can be used to define a package version’s configuration. For
-     * example, the S3 file location, configuration options that are being sent to the
-     * device or fleet. </p> <p> <b>Note:</b> Attributes can be updated only when the
-     * package version is in a draft state.</p> <p>The combined size of all the
-     * attributes on a package version is limited to 3KB.</p>
+     * example, the Amazon S3 file location, configuration options that are being sent
+     * to the device or fleet. </p> <p> <b>Note:</b> Attributes can be updated only
+     * when the package version is in a draft state.</p> <p>The combined size of all
+     * the attributes on a package version is limited to 3KB.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const{ return m_attributes; }
 
     /**
      * <p>Metadata that can be used to define a package version’s configuration. For
-     * example, the S3 file location, configuration options that are being sent to the
-     * device or fleet. </p> <p> <b>Note:</b> Attributes can be updated only when the
-     * package version is in a draft state.</p> <p>The combined size of all the
-     * attributes on a package version is limited to 3KB.</p>
+     * example, the Amazon S3 file location, configuration options that are being sent
+     * to the device or fleet. </p> <p> <b>Note:</b> Attributes can be updated only
+     * when the package version is in a draft state.</p> <p>The combined size of all
+     * the attributes on a package version is limited to 3KB.</p>
      */
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
 
     /**
      * <p>Metadata that can be used to define a package version’s configuration. For
-     * example, the S3 file location, configuration options that are being sent to the
-     * device or fleet. </p> <p> <b>Note:</b> Attributes can be updated only when the
-     * package version is in a draft state.</p> <p>The combined size of all the
-     * attributes on a package version is limited to 3KB.</p>
+     * example, the Amazon S3 file location, configuration options that are being sent
+     * to the device or fleet. </p> <p> <b>Note:</b> Attributes can be updated only
+     * when the package version is in a draft state.</p> <p>The combined size of all
+     * the attributes on a package version is limited to 3KB.</p>
      */
     inline void SetAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
     /**
      * <p>Metadata that can be used to define a package version’s configuration. For
-     * example, the S3 file location, configuration options that are being sent to the
-     * device or fleet. </p> <p> <b>Note:</b> Attributes can be updated only when the
-     * package version is in a draft state.</p> <p>The combined size of all the
-     * attributes on a package version is limited to 3KB.</p>
+     * example, the Amazon S3 file location, configuration options that are being sent
+     * to the device or fleet. </p> <p> <b>Note:</b> Attributes can be updated only
+     * when the package version is in a draft state.</p> <p>The combined size of all
+     * the attributes on a package version is limited to 3KB.</p>
      */
     inline void SetAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
 
     /**
      * <p>Metadata that can be used to define a package version’s configuration. For
-     * example, the S3 file location, configuration options that are being sent to the
-     * device or fleet. </p> <p> <b>Note:</b> Attributes can be updated only when the
-     * package version is in a draft state.</p> <p>The combined size of all the
-     * attributes on a package version is limited to 3KB.</p>
+     * example, the Amazon S3 file location, configuration options that are being sent
+     * to the device or fleet. </p> <p> <b>Note:</b> Attributes can be updated only
+     * when the package version is in a draft state.</p> <p>The combined size of all
+     * the attributes on a package version is limited to 3KB.</p>
      */
     inline UpdatePackageVersionRequest& WithAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetAttributes(value); return *this;}
 
     /**
      * <p>Metadata that can be used to define a package version’s configuration. For
-     * example, the S3 file location, configuration options that are being sent to the
-     * device or fleet. </p> <p> <b>Note:</b> Attributes can be updated only when the
-     * package version is in a draft state.</p> <p>The combined size of all the
-     * attributes on a package version is limited to 3KB.</p>
+     * example, the Amazon S3 file location, configuration options that are being sent
+     * to the device or fleet. </p> <p> <b>Note:</b> Attributes can be updated only
+     * when the package version is in a draft state.</p> <p>The combined size of all
+     * the attributes on a package version is limited to 3KB.</p>
      */
     inline UpdatePackageVersionRequest& WithAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetAttributes(std::move(value)); return *this;}
 
     /**
      * <p>Metadata that can be used to define a package version’s configuration. For
-     * example, the S3 file location, configuration options that are being sent to the
-     * device or fleet. </p> <p> <b>Note:</b> Attributes can be updated only when the
-     * package version is in a draft state.</p> <p>The combined size of all the
-     * attributes on a package version is limited to 3KB.</p>
+     * example, the Amazon S3 file location, configuration options that are being sent
+     * to the device or fleet. </p> <p> <b>Note:</b> Attributes can be updated only
+     * when the package version is in a draft state.</p> <p>The combined size of all
+     * the attributes on a package version is limited to 3KB.</p>
      */
     inline UpdatePackageVersionRequest& AddAttributes(const Aws::String& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 
     /**
      * <p>Metadata that can be used to define a package version’s configuration. For
-     * example, the S3 file location, configuration options that are being sent to the
-     * device or fleet. </p> <p> <b>Note:</b> Attributes can be updated only when the
-     * package version is in a draft state.</p> <p>The combined size of all the
-     * attributes on a package version is limited to 3KB.</p>
+     * example, the Amazon S3 file location, configuration options that are being sent
+     * to the device or fleet. </p> <p> <b>Note:</b> Attributes can be updated only
+     * when the package version is in a draft state.</p> <p>The combined size of all
+     * the attributes on a package version is limited to 3KB.</p>
      */
     inline UpdatePackageVersionRequest& AddAttributes(Aws::String&& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>Metadata that can be used to define a package version’s configuration. For
-     * example, the S3 file location, configuration options that are being sent to the
-     * device or fleet. </p> <p> <b>Note:</b> Attributes can be updated only when the
-     * package version is in a draft state.</p> <p>The combined size of all the
-     * attributes on a package version is limited to 3KB.</p>
+     * example, the Amazon S3 file location, configuration options that are being sent
+     * to the device or fleet. </p> <p> <b>Note:</b> Attributes can be updated only
+     * when the package version is in a draft state.</p> <p>The combined size of all
+     * the attributes on a package version is limited to 3KB.</p>
      */
     inline UpdatePackageVersionRequest& AddAttributes(const Aws::String& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>Metadata that can be used to define a package version’s configuration. For
-     * example, the S3 file location, configuration options that are being sent to the
-     * device or fleet. </p> <p> <b>Note:</b> Attributes can be updated only when the
-     * package version is in a draft state.</p> <p>The combined size of all the
-     * attributes on a package version is limited to 3KB.</p>
+     * example, the Amazon S3 file location, configuration options that are being sent
+     * to the device or fleet. </p> <p> <b>Note:</b> Attributes can be updated only
+     * when the package version is in a draft state.</p> <p>The combined size of all
+     * the attributes on a package version is limited to 3KB.</p>
      */
     inline UpdatePackageVersionRequest& AddAttributes(Aws::String&& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>Metadata that can be used to define a package version’s configuration. For
-     * example, the S3 file location, configuration options that are being sent to the
-     * device or fleet. </p> <p> <b>Note:</b> Attributes can be updated only when the
-     * package version is in a draft state.</p> <p>The combined size of all the
-     * attributes on a package version is limited to 3KB.</p>
+     * example, the Amazon S3 file location, configuration options that are being sent
+     * to the device or fleet. </p> <p> <b>Note:</b> Attributes can be updated only
+     * when the package version is in a draft state.</p> <p>The combined size of all
+     * the attributes on a package version is limited to 3KB.</p>
      */
     inline UpdatePackageVersionRequest& AddAttributes(const char* key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>Metadata that can be used to define a package version’s configuration. For
-     * example, the S3 file location, configuration options that are being sent to the
-     * device or fleet. </p> <p> <b>Note:</b> Attributes can be updated only when the
-     * package version is in a draft state.</p> <p>The combined size of all the
-     * attributes on a package version is limited to 3KB.</p>
+     * example, the Amazon S3 file location, configuration options that are being sent
+     * to the device or fleet. </p> <p> <b>Note:</b> Attributes can be updated only
+     * when the package version is in a draft state.</p> <p>The combined size of all
+     * the attributes on a package version is limited to 3KB.</p>
      */
     inline UpdatePackageVersionRequest& AddAttributes(Aws::String&& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>Metadata that can be used to define a package version’s configuration. For
-     * example, the S3 file location, configuration options that are being sent to the
-     * device or fleet. </p> <p> <b>Note:</b> Attributes can be updated only when the
-     * package version is in a draft state.</p> <p>The combined size of all the
-     * attributes on a package version is limited to 3KB.</p>
+     * example, the Amazon S3 file location, configuration options that are being sent
+     * to the device or fleet. </p> <p> <b>Note:</b> Attributes can be updated only
+     * when the package version is in a draft state.</p> <p>The combined size of all
+     * the attributes on a package version is limited to 3KB.</p>
      */
     inline UpdatePackageVersionRequest& AddAttributes(const char* key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 

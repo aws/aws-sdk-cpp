@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PropertyUpdateType::NOT_SET:
+            return {};
           case PropertyUpdateType::UPDATE:
             return "UPDATE";
           case PropertyUpdateType::DELETE_:

@@ -175,6 +175,35 @@ namespace Model
      */
     inline RegisterResourceRequest& WithWithFederation(bool value) { SetWithFederation(value); return *this;}
 
+
+    /**
+     * <p> Specifies whether the data access of tables pointing to the location can be
+     * managed by both Lake Formation permissions as well as Amazon S3 bucket policies.
+     * </p>
+     */
+    inline bool GetHybridAccessEnabled() const{ return m_hybridAccessEnabled; }
+
+    /**
+     * <p> Specifies whether the data access of tables pointing to the location can be
+     * managed by both Lake Formation permissions as well as Amazon S3 bucket policies.
+     * </p>
+     */
+    inline bool HybridAccessEnabledHasBeenSet() const { return m_hybridAccessEnabledHasBeenSet; }
+
+    /**
+     * <p> Specifies whether the data access of tables pointing to the location can be
+     * managed by both Lake Formation permissions as well as Amazon S3 bucket policies.
+     * </p>
+     */
+    inline void SetHybridAccessEnabled(bool value) { m_hybridAccessEnabledHasBeenSet = true; m_hybridAccessEnabled = value; }
+
+    /**
+     * <p> Specifies whether the data access of tables pointing to the location can be
+     * managed by both Lake Formation permissions as well as Amazon S3 bucket policies.
+     * </p>
+     */
+    inline RegisterResourceRequest& WithHybridAccessEnabled(bool value) { SetHybridAccessEnabled(value); return *this;}
+
   private:
 
     Aws::String m_resourceArn;
@@ -188,6 +217,9 @@ namespace Model
 
     bool m_withFederation;
     bool m_withFederationHasBeenSet = false;
+
+    bool m_hybridAccessEnabled;
+    bool m_hybridAccessEnabledHasBeenSet = false;
   };
 
 } // namespace Model

@@ -84,8 +84,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* LookoutEquipmentClient::SERVICE_NAME = "lookoutequipment";
-const char* LookoutEquipmentClient::ALLOCATION_TAG = "LookoutEquipmentClient";
+namespace Aws
+{
+  namespace LookoutEquipment
+  {
+    const char SERVICE_NAME[] = "lookoutequipment";
+    const char ALLOCATION_TAG[] = "LookoutEquipmentClient";
+  }
+}
+const char* LookoutEquipmentClient::GetServiceName() {return SERVICE_NAME;}
+const char* LookoutEquipmentClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 LookoutEquipmentClient::LookoutEquipmentClient(const LookoutEquipment::LookoutEquipmentClientConfiguration& clientConfiguration,
                                                std::shared_ptr<LookoutEquipmentEndpointProviderBase> endpointProvider) :
@@ -97,7 +105,7 @@ LookoutEquipmentClient::LookoutEquipmentClient(const LookoutEquipment::LookoutEq
             Aws::MakeShared<LookoutEquipmentErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<LookoutEquipmentEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -113,7 +121,7 @@ LookoutEquipmentClient::LookoutEquipmentClient(const AWSCredentials& credentials
             Aws::MakeShared<LookoutEquipmentErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<LookoutEquipmentEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -129,7 +137,7 @@ LookoutEquipmentClient::LookoutEquipmentClient(const std::shared_ptr<AWSCredenti
             Aws::MakeShared<LookoutEquipmentErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<LookoutEquipmentEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VideoJobStatus::NOT_SET:
+            return {};
           case VideoJobStatus::IN_PROGRESS:
             return "IN_PROGRESS";
           case VideoJobStatus::SUCCEEDED:

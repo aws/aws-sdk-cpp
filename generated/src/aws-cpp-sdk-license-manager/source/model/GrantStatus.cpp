@@ -84,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case GrantStatus::NOT_SET:
+            return {};
           case GrantStatus::PENDING_WORKFLOW:
             return "PENDING_WORKFLOW";
           case GrantStatus::PENDING_ACCEPT:

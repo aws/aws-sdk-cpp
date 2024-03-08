@@ -23,6 +23,7 @@ DomainConfig::DomainConfig() :
     m_clusterConfigHasBeenSet(false),
     m_eBSOptionsHasBeenSet(false),
     m_accessPoliciesHasBeenSet(false),
+    m_iPAddressTypeHasBeenSet(false),
     m_snapshotOptionsHasBeenSet(false),
     m_vPCOptionsHasBeenSet(false),
     m_cognitoOptionsHasBeenSet(false),
@@ -35,7 +36,8 @@ DomainConfig::DomainConfig() :
     m_autoTuneOptionsHasBeenSet(false),
     m_changeProgressDetailsHasBeenSet(false),
     m_offPeakWindowOptionsHasBeenSet(false),
-    m_softwareUpdateOptionsHasBeenSet(false)
+    m_softwareUpdateOptionsHasBeenSet(false),
+    m_modifyingPropertiesHasBeenSet(false)
 {
 }
 
@@ -44,6 +46,7 @@ DomainConfig::DomainConfig(JsonView jsonValue) :
     m_clusterConfigHasBeenSet(false),
     m_eBSOptionsHasBeenSet(false),
     m_accessPoliciesHasBeenSet(false),
+    m_iPAddressTypeHasBeenSet(false),
     m_snapshotOptionsHasBeenSet(false),
     m_vPCOptionsHasBeenSet(false),
     m_cognitoOptionsHasBeenSet(false),
@@ -56,7 +59,8 @@ DomainConfig::DomainConfig(JsonView jsonValue) :
     m_autoTuneOptionsHasBeenSet(false),
     m_changeProgressDetailsHasBeenSet(false),
     m_offPeakWindowOptionsHasBeenSet(false),
-    m_softwareUpdateOptionsHasBeenSet(false)
+    m_softwareUpdateOptionsHasBeenSet(false),
+    m_modifyingPropertiesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -89,6 +93,13 @@ DomainConfig& DomainConfig::operator =(JsonView jsonValue)
     m_accessPolicies = jsonValue.GetObject("AccessPolicies");
 
     m_accessPoliciesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("IPAddressType"))
+  {
+    m_iPAddressType = jsonValue.GetObject("IPAddressType");
+
+    m_iPAddressTypeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("SnapshotOptions"))
@@ -182,6 +193,16 @@ DomainConfig& DomainConfig::operator =(JsonView jsonValue)
     m_softwareUpdateOptionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ModifyingProperties"))
+  {
+    Aws::Utils::Array<JsonView> modifyingPropertiesJsonList = jsonValue.GetArray("ModifyingProperties");
+    for(unsigned modifyingPropertiesIndex = 0; modifyingPropertiesIndex < modifyingPropertiesJsonList.GetLength(); ++modifyingPropertiesIndex)
+    {
+      m_modifyingProperties.push_back(modifyingPropertiesJsonList[modifyingPropertiesIndex].AsObject());
+    }
+    m_modifyingPropertiesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -210,6 +231,12 @@ JsonValue DomainConfig::Jsonize() const
   if(m_accessPoliciesHasBeenSet)
   {
    payload.WithObject("AccessPolicies", m_accessPolicies.Jsonize());
+
+  }
+
+  if(m_iPAddressTypeHasBeenSet)
+  {
+   payload.WithObject("IPAddressType", m_iPAddressType.Jsonize());
 
   }
 
@@ -288,6 +315,17 @@ JsonValue DomainConfig::Jsonize() const
   if(m_softwareUpdateOptionsHasBeenSet)
   {
    payload.WithObject("SoftwareUpdateOptions", m_softwareUpdateOptions.Jsonize());
+
+  }
+
+  if(m_modifyingPropertiesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> modifyingPropertiesJsonList(m_modifyingProperties.size());
+   for(unsigned modifyingPropertiesIndex = 0; modifyingPropertiesIndex < modifyingPropertiesJsonList.GetLength(); ++modifyingPropertiesIndex)
+   {
+     modifyingPropertiesJsonList[modifyingPropertiesIndex].AsObject(m_modifyingProperties[modifyingPropertiesIndex].Jsonize());
+   }
+   payload.WithArray("ModifyingProperties", std::move(modifyingPropertiesJsonList));
 
   }
 

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LayerFailureCode::NOT_SET:
+            return {};
           case LayerFailureCode::InvalidLayerDigest:
             return "InvalidLayerDigest";
           case LayerFailureCode::MissingLayerDigest:

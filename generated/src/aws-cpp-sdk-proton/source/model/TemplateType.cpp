@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TemplateType::NOT_SET:
+            return {};
           case TemplateType::ENVIRONMENT:
             return "ENVIRONMENT";
           case TemplateType::SERVICE:

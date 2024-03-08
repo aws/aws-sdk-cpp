@@ -42,7 +42,7 @@ namespace Model
 
     /**
      * <p>The next item following a partial list of returned items. For example, if a
-     * request is made to return <code>maxResults</code> number of items,
+     * request is made to return <code>MaxResults</code> number of items,
      * <code>NextToken</code> allows you to return more items in your list starting at
      * the location pointed to by the next token.</p>
      */
@@ -50,7 +50,7 @@ namespace Model
 
     /**
      * <p>The next item following a partial list of returned items. For example, if a
-     * request is made to return <code>maxResults</code> number of items,
+     * request is made to return <code>MaxResults</code> number of items,
      * <code>NextToken</code> allows you to return more items in your list starting at
      * the location pointed to by the next token.</p>
      */
@@ -58,7 +58,7 @@ namespace Model
 
     /**
      * <p>The next item following a partial list of returned items. For example, if a
-     * request is made to return <code>maxResults</code> number of items,
+     * request is made to return <code>MaxResults</code> number of items,
      * <code>NextToken</code> allows you to return more items in your list starting at
      * the location pointed to by the next token.</p>
      */
@@ -66,7 +66,7 @@ namespace Model
 
     /**
      * <p>The next item following a partial list of returned items. For example, if a
-     * request is made to return <code>maxResults</code> number of items,
+     * request is made to return <code>MaxResults</code> number of items,
      * <code>NextToken</code> allows you to return more items in your list starting at
      * the location pointed to by the next token.</p>
      */
@@ -74,7 +74,7 @@ namespace Model
 
     /**
      * <p>The next item following a partial list of returned items. For example, if a
-     * request is made to return <code>maxResults</code> number of items,
+     * request is made to return <code>MaxResults</code> number of items,
      * <code>NextToken</code> allows you to return more items in your list starting at
      * the location pointed to by the next token.</p>
      */
@@ -82,7 +82,7 @@ namespace Model
 
     /**
      * <p>The next item following a partial list of returned items. For example, if a
-     * request is made to return <code>maxResults</code> number of items,
+     * request is made to return <code>MaxResults</code> number of items,
      * <code>NextToken</code> allows you to return more items in your list starting at
      * the location pointed to by the next token.</p>
      */
@@ -90,7 +90,7 @@ namespace Model
 
     /**
      * <p>The next item following a partial list of returned items. For example, if a
-     * request is made to return <code>maxResults</code> number of items,
+     * request is made to return <code>MaxResults</code> number of items,
      * <code>NextToken</code> allows you to return more items in your list starting at
      * the location pointed to by the next token.</p>
      */
@@ -98,7 +98,7 @@ namespace Model
 
     /**
      * <p>The next item following a partial list of returned items. For example, if a
-     * request is made to return <code>maxResults</code> number of items,
+     * request is made to return <code>MaxResults</code> number of items,
      * <code>NextToken</code> allows you to return more items in your list starting at
      * the location pointed to by the next token.</p>
      */
@@ -173,6 +173,167 @@ namespace Model
      * with the specified account ID.</p>
      */
     inline ListRestoreJobsRequest& WithByAccountId(const char* value) { SetByAccountId(value); return *this;}
+
+
+    /**
+     * <p>Include this parameter to return only restore jobs for the specified
+     * resources:</p> <ul> <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
+     * <li> <p> <code>CloudFormation</code> for CloudFormation</p> </li> <li> <p>
+     * <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p>
+     * </li> <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li> <li> <p>
+     * <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p>
+     * <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li> <li> <p>
+     * <code>EFS</code> for Amazon Elastic File System</p> </li> <li> <p>
+     * <code>FSx</code> for Amazon FSx</p> </li> <li> <p> <code>Neptune</code> for
+     * Amazon Neptune</p> </li> <li> <p> <code>Redshift</code> for Amazon Redshift</p>
+     * </li> <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
+     * <li> <p> <code>SAP HANA on Amazon EC2</code> for SAP HANA databases</p> </li>
+     * <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li> <li> <p>
+     * <code>S3</code> for Amazon S3</p> </li> <li> <p> <code>Timestream</code> for
+     * Amazon Timestream</p> </li> <li> <p> <code>VirtualMachine</code> for virtual
+     * machines</p> </li> </ul>
+     */
+    inline const Aws::String& GetByResourceType() const{ return m_byResourceType; }
+
+    /**
+     * <p>Include this parameter to return only restore jobs for the specified
+     * resources:</p> <ul> <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
+     * <li> <p> <code>CloudFormation</code> for CloudFormation</p> </li> <li> <p>
+     * <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p>
+     * </li> <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li> <li> <p>
+     * <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p>
+     * <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li> <li> <p>
+     * <code>EFS</code> for Amazon Elastic File System</p> </li> <li> <p>
+     * <code>FSx</code> for Amazon FSx</p> </li> <li> <p> <code>Neptune</code> for
+     * Amazon Neptune</p> </li> <li> <p> <code>Redshift</code> for Amazon Redshift</p>
+     * </li> <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
+     * <li> <p> <code>SAP HANA on Amazon EC2</code> for SAP HANA databases</p> </li>
+     * <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li> <li> <p>
+     * <code>S3</code> for Amazon S3</p> </li> <li> <p> <code>Timestream</code> for
+     * Amazon Timestream</p> </li> <li> <p> <code>VirtualMachine</code> for virtual
+     * machines</p> </li> </ul>
+     */
+    inline bool ByResourceTypeHasBeenSet() const { return m_byResourceTypeHasBeenSet; }
+
+    /**
+     * <p>Include this parameter to return only restore jobs for the specified
+     * resources:</p> <ul> <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
+     * <li> <p> <code>CloudFormation</code> for CloudFormation</p> </li> <li> <p>
+     * <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p>
+     * </li> <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li> <li> <p>
+     * <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p>
+     * <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li> <li> <p>
+     * <code>EFS</code> for Amazon Elastic File System</p> </li> <li> <p>
+     * <code>FSx</code> for Amazon FSx</p> </li> <li> <p> <code>Neptune</code> for
+     * Amazon Neptune</p> </li> <li> <p> <code>Redshift</code> for Amazon Redshift</p>
+     * </li> <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
+     * <li> <p> <code>SAP HANA on Amazon EC2</code> for SAP HANA databases</p> </li>
+     * <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li> <li> <p>
+     * <code>S3</code> for Amazon S3</p> </li> <li> <p> <code>Timestream</code> for
+     * Amazon Timestream</p> </li> <li> <p> <code>VirtualMachine</code> for virtual
+     * machines</p> </li> </ul>
+     */
+    inline void SetByResourceType(const Aws::String& value) { m_byResourceTypeHasBeenSet = true; m_byResourceType = value; }
+
+    /**
+     * <p>Include this parameter to return only restore jobs for the specified
+     * resources:</p> <ul> <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
+     * <li> <p> <code>CloudFormation</code> for CloudFormation</p> </li> <li> <p>
+     * <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p>
+     * </li> <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li> <li> <p>
+     * <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p>
+     * <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li> <li> <p>
+     * <code>EFS</code> for Amazon Elastic File System</p> </li> <li> <p>
+     * <code>FSx</code> for Amazon FSx</p> </li> <li> <p> <code>Neptune</code> for
+     * Amazon Neptune</p> </li> <li> <p> <code>Redshift</code> for Amazon Redshift</p>
+     * </li> <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
+     * <li> <p> <code>SAP HANA on Amazon EC2</code> for SAP HANA databases</p> </li>
+     * <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li> <li> <p>
+     * <code>S3</code> for Amazon S3</p> </li> <li> <p> <code>Timestream</code> for
+     * Amazon Timestream</p> </li> <li> <p> <code>VirtualMachine</code> for virtual
+     * machines</p> </li> </ul>
+     */
+    inline void SetByResourceType(Aws::String&& value) { m_byResourceTypeHasBeenSet = true; m_byResourceType = std::move(value); }
+
+    /**
+     * <p>Include this parameter to return only restore jobs for the specified
+     * resources:</p> <ul> <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
+     * <li> <p> <code>CloudFormation</code> for CloudFormation</p> </li> <li> <p>
+     * <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p>
+     * </li> <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li> <li> <p>
+     * <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p>
+     * <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li> <li> <p>
+     * <code>EFS</code> for Amazon Elastic File System</p> </li> <li> <p>
+     * <code>FSx</code> for Amazon FSx</p> </li> <li> <p> <code>Neptune</code> for
+     * Amazon Neptune</p> </li> <li> <p> <code>Redshift</code> for Amazon Redshift</p>
+     * </li> <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
+     * <li> <p> <code>SAP HANA on Amazon EC2</code> for SAP HANA databases</p> </li>
+     * <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li> <li> <p>
+     * <code>S3</code> for Amazon S3</p> </li> <li> <p> <code>Timestream</code> for
+     * Amazon Timestream</p> </li> <li> <p> <code>VirtualMachine</code> for virtual
+     * machines</p> </li> </ul>
+     */
+    inline void SetByResourceType(const char* value) { m_byResourceTypeHasBeenSet = true; m_byResourceType.assign(value); }
+
+    /**
+     * <p>Include this parameter to return only restore jobs for the specified
+     * resources:</p> <ul> <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
+     * <li> <p> <code>CloudFormation</code> for CloudFormation</p> </li> <li> <p>
+     * <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p>
+     * </li> <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li> <li> <p>
+     * <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p>
+     * <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li> <li> <p>
+     * <code>EFS</code> for Amazon Elastic File System</p> </li> <li> <p>
+     * <code>FSx</code> for Amazon FSx</p> </li> <li> <p> <code>Neptune</code> for
+     * Amazon Neptune</p> </li> <li> <p> <code>Redshift</code> for Amazon Redshift</p>
+     * </li> <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
+     * <li> <p> <code>SAP HANA on Amazon EC2</code> for SAP HANA databases</p> </li>
+     * <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li> <li> <p>
+     * <code>S3</code> for Amazon S3</p> </li> <li> <p> <code>Timestream</code> for
+     * Amazon Timestream</p> </li> <li> <p> <code>VirtualMachine</code> for virtual
+     * machines</p> </li> </ul>
+     */
+    inline ListRestoreJobsRequest& WithByResourceType(const Aws::String& value) { SetByResourceType(value); return *this;}
+
+    /**
+     * <p>Include this parameter to return only restore jobs for the specified
+     * resources:</p> <ul> <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
+     * <li> <p> <code>CloudFormation</code> for CloudFormation</p> </li> <li> <p>
+     * <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p>
+     * </li> <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li> <li> <p>
+     * <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p>
+     * <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li> <li> <p>
+     * <code>EFS</code> for Amazon Elastic File System</p> </li> <li> <p>
+     * <code>FSx</code> for Amazon FSx</p> </li> <li> <p> <code>Neptune</code> for
+     * Amazon Neptune</p> </li> <li> <p> <code>Redshift</code> for Amazon Redshift</p>
+     * </li> <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
+     * <li> <p> <code>SAP HANA on Amazon EC2</code> for SAP HANA databases</p> </li>
+     * <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li> <li> <p>
+     * <code>S3</code> for Amazon S3</p> </li> <li> <p> <code>Timestream</code> for
+     * Amazon Timestream</p> </li> <li> <p> <code>VirtualMachine</code> for virtual
+     * machines</p> </li> </ul>
+     */
+    inline ListRestoreJobsRequest& WithByResourceType(Aws::String&& value) { SetByResourceType(std::move(value)); return *this;}
+
+    /**
+     * <p>Include this parameter to return only restore jobs for the specified
+     * resources:</p> <ul> <li> <p> <code>Aurora</code> for Amazon Aurora</p> </li>
+     * <li> <p> <code>CloudFormation</code> for CloudFormation</p> </li> <li> <p>
+     * <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)</p>
+     * </li> <li> <p> <code>DynamoDB</code> for Amazon DynamoDB</p> </li> <li> <p>
+     * <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p>
+     * <code>EC2</code> for Amazon Elastic Compute Cloud</p> </li> <li> <p>
+     * <code>EFS</code> for Amazon Elastic File System</p> </li> <li> <p>
+     * <code>FSx</code> for Amazon FSx</p> </li> <li> <p> <code>Neptune</code> for
+     * Amazon Neptune</p> </li> <li> <p> <code>Redshift</code> for Amazon Redshift</p>
+     * </li> <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li>
+     * <li> <p> <code>SAP HANA on Amazon EC2</code> for SAP HANA databases</p> </li>
+     * <li> <p> <code>Storage Gateway</code> for Storage Gateway</p> </li> <li> <p>
+     * <code>S3</code> for Amazon S3</p> </li> <li> <p> <code>Timestream</code> for
+     * Amazon Timestream</p> </li> <li> <p> <code>VirtualMachine</code> for virtual
+     * machines</p> </li> </ul>
+     */
+    inline ListRestoreJobsRequest& WithByResourceType(const char* value) { SetByResourceType(value); return *this;}
 
 
     /**
@@ -341,6 +502,55 @@ namespace Model
      */
     inline ListRestoreJobsRequest& WithByCompleteAfter(Aws::Utils::DateTime&& value) { SetByCompleteAfter(std::move(value)); return *this;}
 
+
+    /**
+     * <p>This returns only restore testing jobs that match the specified resource
+     * Amazon Resource Name (ARN).</p>
+     */
+    inline const Aws::String& GetByRestoreTestingPlanArn() const{ return m_byRestoreTestingPlanArn; }
+
+    /**
+     * <p>This returns only restore testing jobs that match the specified resource
+     * Amazon Resource Name (ARN).</p>
+     */
+    inline bool ByRestoreTestingPlanArnHasBeenSet() const { return m_byRestoreTestingPlanArnHasBeenSet; }
+
+    /**
+     * <p>This returns only restore testing jobs that match the specified resource
+     * Amazon Resource Name (ARN).</p>
+     */
+    inline void SetByRestoreTestingPlanArn(const Aws::String& value) { m_byRestoreTestingPlanArnHasBeenSet = true; m_byRestoreTestingPlanArn = value; }
+
+    /**
+     * <p>This returns only restore testing jobs that match the specified resource
+     * Amazon Resource Name (ARN).</p>
+     */
+    inline void SetByRestoreTestingPlanArn(Aws::String&& value) { m_byRestoreTestingPlanArnHasBeenSet = true; m_byRestoreTestingPlanArn = std::move(value); }
+
+    /**
+     * <p>This returns only restore testing jobs that match the specified resource
+     * Amazon Resource Name (ARN).</p>
+     */
+    inline void SetByRestoreTestingPlanArn(const char* value) { m_byRestoreTestingPlanArnHasBeenSet = true; m_byRestoreTestingPlanArn.assign(value); }
+
+    /**
+     * <p>This returns only restore testing jobs that match the specified resource
+     * Amazon Resource Name (ARN).</p>
+     */
+    inline ListRestoreJobsRequest& WithByRestoreTestingPlanArn(const Aws::String& value) { SetByRestoreTestingPlanArn(value); return *this;}
+
+    /**
+     * <p>This returns only restore testing jobs that match the specified resource
+     * Amazon Resource Name (ARN).</p>
+     */
+    inline ListRestoreJobsRequest& WithByRestoreTestingPlanArn(Aws::String&& value) { SetByRestoreTestingPlanArn(std::move(value)); return *this;}
+
+    /**
+     * <p>This returns only restore testing jobs that match the specified resource
+     * Amazon Resource Name (ARN).</p>
+     */
+    inline ListRestoreJobsRequest& WithByRestoreTestingPlanArn(const char* value) { SetByRestoreTestingPlanArn(value); return *this;}
+
   private:
 
     Aws::String m_nextToken;
@@ -351,6 +561,9 @@ namespace Model
 
     Aws::String m_byAccountId;
     bool m_byAccountIdHasBeenSet = false;
+
+    Aws::String m_byResourceType;
+    bool m_byResourceTypeHasBeenSet = false;
 
     Aws::Utils::DateTime m_byCreatedBefore;
     bool m_byCreatedBeforeHasBeenSet = false;
@@ -366,6 +579,9 @@ namespace Model
 
     Aws::Utils::DateTime m_byCompleteAfter;
     bool m_byCompleteAfterHasBeenSet = false;
+
+    Aws::String m_byRestoreTestingPlanArn;
+    bool m_byRestoreTestingPlanArnHasBeenSet = false;
   };
 
 } // namespace Model

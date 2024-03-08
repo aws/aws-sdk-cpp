@@ -134,56 +134,105 @@ namespace Model
 
 
     /**
+     * <p>The identifier for the resource that you want to list zonal shifts for. The
+     * identifier is the Amazon Resource Name (ARN) for the resource.</p>
+     */
+    inline const Aws::String& GetResourceIdentifier() const{ return m_resourceIdentifier; }
+
+    /**
+     * <p>The identifier for the resource that you want to list zonal shifts for. The
+     * identifier is the Amazon Resource Name (ARN) for the resource.</p>
+     */
+    inline bool ResourceIdentifierHasBeenSet() const { return m_resourceIdentifierHasBeenSet; }
+
+    /**
+     * <p>The identifier for the resource that you want to list zonal shifts for. The
+     * identifier is the Amazon Resource Name (ARN) for the resource.</p>
+     */
+    inline void SetResourceIdentifier(const Aws::String& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = value; }
+
+    /**
+     * <p>The identifier for the resource that you want to list zonal shifts for. The
+     * identifier is the Amazon Resource Name (ARN) for the resource.</p>
+     */
+    inline void SetResourceIdentifier(Aws::String&& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = std::move(value); }
+
+    /**
+     * <p>The identifier for the resource that you want to list zonal shifts for. The
+     * identifier is the Amazon Resource Name (ARN) for the resource.</p>
+     */
+    inline void SetResourceIdentifier(const char* value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier.assign(value); }
+
+    /**
+     * <p>The identifier for the resource that you want to list zonal shifts for. The
+     * identifier is the Amazon Resource Name (ARN) for the resource.</p>
+     */
+    inline ListZonalShiftsRequest& WithResourceIdentifier(const Aws::String& value) { SetResourceIdentifier(value); return *this;}
+
+    /**
+     * <p>The identifier for the resource that you want to list zonal shifts for. The
+     * identifier is the Amazon Resource Name (ARN) for the resource.</p>
+     */
+    inline ListZonalShiftsRequest& WithResourceIdentifier(Aws::String&& value) { SetResourceIdentifier(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifier for the resource that you want to list zonal shifts for. The
+     * identifier is the Amazon Resource Name (ARN) for the resource.</p>
+     */
+    inline ListZonalShiftsRequest& WithResourceIdentifier(const char* value) { SetResourceIdentifier(value); return *this;}
+
+
+    /**
      * <p>A status for a zonal shift.</p> <p>The <code>Status</code> for a zonal shift
      * can have one of the following values:</p> <ul> <li> <p> <b>ACTIVE</b>: The zonal
-     * shift is started and active.</p> </li> <li> <p> <b>EXPIRED</b>: The zonal shift
-     * has expired (the expiry time was exceeded).</p> </li> <li> <p> <b>CANCELED</b>:
-     * The zonal shift was canceled.</p> </li> </ul>
+     * shift has been started and active.</p> </li> <li> <p> <b>EXPIRED</b>: The zonal
+     * shift has expired (the expiry time was exceeded).</p> </li> <li> <p>
+     * <b>CANCELED</b>: The zonal shift was canceled.</p> </li> </ul>
      */
     inline const ZonalShiftStatus& GetStatus() const{ return m_status; }
 
     /**
      * <p>A status for a zonal shift.</p> <p>The <code>Status</code> for a zonal shift
      * can have one of the following values:</p> <ul> <li> <p> <b>ACTIVE</b>: The zonal
-     * shift is started and active.</p> </li> <li> <p> <b>EXPIRED</b>: The zonal shift
-     * has expired (the expiry time was exceeded).</p> </li> <li> <p> <b>CANCELED</b>:
-     * The zonal shift was canceled.</p> </li> </ul>
+     * shift has been started and active.</p> </li> <li> <p> <b>EXPIRED</b>: The zonal
+     * shift has expired (the expiry time was exceeded).</p> </li> <li> <p>
+     * <b>CANCELED</b>: The zonal shift was canceled.</p> </li> </ul>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>A status for a zonal shift.</p> <p>The <code>Status</code> for a zonal shift
      * can have one of the following values:</p> <ul> <li> <p> <b>ACTIVE</b>: The zonal
-     * shift is started and active.</p> </li> <li> <p> <b>EXPIRED</b>: The zonal shift
-     * has expired (the expiry time was exceeded).</p> </li> <li> <p> <b>CANCELED</b>:
-     * The zonal shift was canceled.</p> </li> </ul>
+     * shift has been started and active.</p> </li> <li> <p> <b>EXPIRED</b>: The zonal
+     * shift has expired (the expiry time was exceeded).</p> </li> <li> <p>
+     * <b>CANCELED</b>: The zonal shift was canceled.</p> </li> </ul>
      */
     inline void SetStatus(const ZonalShiftStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
      * <p>A status for a zonal shift.</p> <p>The <code>Status</code> for a zonal shift
      * can have one of the following values:</p> <ul> <li> <p> <b>ACTIVE</b>: The zonal
-     * shift is started and active.</p> </li> <li> <p> <b>EXPIRED</b>: The zonal shift
-     * has expired (the expiry time was exceeded).</p> </li> <li> <p> <b>CANCELED</b>:
-     * The zonal shift was canceled.</p> </li> </ul>
+     * shift has been started and active.</p> </li> <li> <p> <b>EXPIRED</b>: The zonal
+     * shift has expired (the expiry time was exceeded).</p> </li> <li> <p>
+     * <b>CANCELED</b>: The zonal shift was canceled.</p> </li> </ul>
      */
     inline void SetStatus(ZonalShiftStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>A status for a zonal shift.</p> <p>The <code>Status</code> for a zonal shift
      * can have one of the following values:</p> <ul> <li> <p> <b>ACTIVE</b>: The zonal
-     * shift is started and active.</p> </li> <li> <p> <b>EXPIRED</b>: The zonal shift
-     * has expired (the expiry time was exceeded).</p> </li> <li> <p> <b>CANCELED</b>:
-     * The zonal shift was canceled.</p> </li> </ul>
+     * shift has been started and active.</p> </li> <li> <p> <b>EXPIRED</b>: The zonal
+     * shift has expired (the expiry time was exceeded).</p> </li> <li> <p>
+     * <b>CANCELED</b>: The zonal shift was canceled.</p> </li> </ul>
      */
     inline ListZonalShiftsRequest& WithStatus(const ZonalShiftStatus& value) { SetStatus(value); return *this;}
 
     /**
      * <p>A status for a zonal shift.</p> <p>The <code>Status</code> for a zonal shift
      * can have one of the following values:</p> <ul> <li> <p> <b>ACTIVE</b>: The zonal
-     * shift is started and active.</p> </li> <li> <p> <b>EXPIRED</b>: The zonal shift
-     * has expired (the expiry time was exceeded).</p> </li> <li> <p> <b>CANCELED</b>:
-     * The zonal shift was canceled.</p> </li> </ul>
+     * shift has been started and active.</p> </li> <li> <p> <b>EXPIRED</b>: The zonal
+     * shift has expired (the expiry time was exceeded).</p> </li> <li> <p>
+     * <b>CANCELED</b>: The zonal shift was canceled.</p> </li> </ul>
      */
     inline ListZonalShiftsRequest& WithStatus(ZonalShiftStatus&& value) { SetStatus(std::move(value)); return *this;}
 
@@ -194,6 +243,9 @@ namespace Model
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
+
+    Aws::String m_resourceIdentifier;
+    bool m_resourceIdentifierHasBeenSet = false;
 
     ZonalShiftStatus m_status;
     bool m_statusHasBeenSet = false;

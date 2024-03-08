@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EphemerisSource::NOT_SET:
+            return {};
           case EphemerisSource::CUSTOMER_PROVIDED:
             return "CUSTOMER_PROVIDED";
           case EphemerisSource::SPACE_TRACK:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DashIsoMpdManifestBandwidthType::NOT_SET:
+            return {};
           case DashIsoMpdManifestBandwidthType::AVERAGE:
             return "AVERAGE";
           case DashIsoMpdManifestBandwidthType::MAX:

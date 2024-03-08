@@ -33,49 +33,49 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the model version that was created. Use
+     * <p>The ARN of the model or the project version that was created. Use
      * <code>DescribeProjectVersion</code> to get the current status of the training
      * operation.</p>
      */
     inline const Aws::String& GetProjectVersionArn() const{ return m_projectVersionArn; }
 
     /**
-     * <p>The ARN of the model version that was created. Use
+     * <p>The ARN of the model or the project version that was created. Use
      * <code>DescribeProjectVersion</code> to get the current status of the training
      * operation.</p>
      */
     inline void SetProjectVersionArn(const Aws::String& value) { m_projectVersionArn = value; }
 
     /**
-     * <p>The ARN of the model version that was created. Use
+     * <p>The ARN of the model or the project version that was created. Use
      * <code>DescribeProjectVersion</code> to get the current status of the training
      * operation.</p>
      */
     inline void SetProjectVersionArn(Aws::String&& value) { m_projectVersionArn = std::move(value); }
 
     /**
-     * <p>The ARN of the model version that was created. Use
+     * <p>The ARN of the model or the project version that was created. Use
      * <code>DescribeProjectVersion</code> to get the current status of the training
      * operation.</p>
      */
     inline void SetProjectVersionArn(const char* value) { m_projectVersionArn.assign(value); }
 
     /**
-     * <p>The ARN of the model version that was created. Use
+     * <p>The ARN of the model or the project version that was created. Use
      * <code>DescribeProjectVersion</code> to get the current status of the training
      * operation.</p>
      */
     inline CreateProjectVersionResult& WithProjectVersionArn(const Aws::String& value) { SetProjectVersionArn(value); return *this;}
 
     /**
-     * <p>The ARN of the model version that was created. Use
+     * <p>The ARN of the model or the project version that was created. Use
      * <code>DescribeProjectVersion</code> to get the current status of the training
      * operation.</p>
      */
     inline CreateProjectVersionResult& WithProjectVersionArn(Aws::String&& value) { SetProjectVersionArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the model version that was created. Use
+     * <p>The ARN of the model or the project version that was created. Use
      * <code>DescribeProjectVersion</code> to get the current status of the training
      * operation.</p>
      */

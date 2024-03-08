@@ -4,16 +4,16 @@
  */
 
 #include <aws/sqs/model/SendMessageBatchResult.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
-#include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
 using namespace Aws::SQS::Model;
-using namespace Aws::Utils::Xml;
-using namespace Aws::Utils::Logging;
+using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
@@ -21,51 +21,47 @@ SendMessageBatchResult::SendMessageBatchResult()
 {
 }
 
-SendMessageBatchResult::SendMessageBatchResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+SendMessageBatchResult::SendMessageBatchResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
 }
 
-SendMessageBatchResult& SendMessageBatchResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+SendMessageBatchResult& SendMessageBatchResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  const XmlDocument& xmlDocument = result.GetPayload();
-  XmlNode rootNode = xmlDocument.GetRootElement();
-  XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "SendMessageBatchResult"))
+  JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("Successful"))
   {
-    resultNode = rootNode.FirstChild("SendMessageBatchResult");
-  }
-
-  if(!resultNode.IsNull())
-  {
-    XmlNode successfulNode = resultNode.FirstChild("SendMessageBatchResultEntry");
-    if(!successfulNode.IsNull())
+    Aws::Utils::Array<JsonView> successfulJsonList = jsonValue.GetArray("Successful");
+    for(unsigned successfulIndex = 0; successfulIndex < successfulJsonList.GetLength(); ++successfulIndex)
     {
-      XmlNode sendMessageBatchResultEntryMember = successfulNode;
-      while(!sendMessageBatchResultEntryMember.IsNull())
-      {
-        m_successful.push_back(sendMessageBatchResultEntryMember);
-        sendMessageBatchResultEntryMember = sendMessageBatchResultEntryMember.NextNode("SendMessageBatchResultEntry");
-      }
-
-    }
-    XmlNode failedNode = resultNode.FirstChild("BatchResultErrorEntry");
-    if(!failedNode.IsNull())
-    {
-      XmlNode batchResultErrorEntryMember = failedNode;
-      while(!batchResultErrorEntryMember.IsNull())
-      {
-        m_failed.push_back(batchResultErrorEntryMember);
-        batchResultErrorEntryMember = batchResultErrorEntryMember.NextNode("BatchResultErrorEntry");
-      }
-
+      m_successful.push_back(successfulJsonList[successfulIndex].AsObject());
     }
   }
 
-  if (!rootNode.IsNull()) {
-    XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
-    m_responseMetadata = responseMetadataNode;
-    AWS_LOGSTREAM_DEBUG("Aws::SQS::Model::SendMessageBatchResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+  if(jsonValue.ValueExists("Failed"))
+  {
+    Aws::Utils::Array<JsonView> failedJsonList = jsonValue.GetArray("Failed");
+    for(unsigned failedIndex = 0; failedIndex < failedJsonList.GetLength(); ++failedIndex)
+    {
+      m_failed.push_back(failedJsonList[failedIndex].AsObject());
+    }
   }
+
+
+  const auto& headers = result.GetHeaderValueCollection();
+  const auto& requestIdIter = headers.find("x-amzn-requestid");
+  if(requestIdIter != headers.end())
+  {
+    m_requestId = requestIdIter->second;
+  }
+
+  const auto& responseMetadataIter = headers.find("x-amzn-requestid");
+  if(responseMetadataIter != headers.end())
+  {
+     // for backward compatibility for customers used to an old XML Client interface
+     m_responseMetadata.SetRequestId(responseMetadataIter->second);
+  }
+
+
   return *this;
 }

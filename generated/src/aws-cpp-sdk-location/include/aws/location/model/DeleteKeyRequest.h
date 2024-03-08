@@ -11,6 +11,10 @@
 
 namespace Aws
 {
+namespace Http
+{
+    class URI;
+} //namespace Http
 namespace LocationService
 {
 namespace Model
@@ -30,6 +34,49 @@ namespace Model
     inline virtual const char* GetServiceRequestName() const override { return "DeleteKey"; }
 
     AWS_LOCATIONSERVICE_API Aws::String SerializePayload() const override;
+
+    AWS_LOCATIONSERVICE_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+
+
+    /**
+     * <p>ForceDelete bypasses an API key's expiry conditions and deletes the key. Set
+     * the parameter <code>true</code> to delete the key or to <code>false</code> to
+     * not preemptively delete the API key.</p> <p>Valid values: <code>true</code>, or
+     * <code>false</code>.</p> <p>Required: No</p>  <p>This action is
+     * irreversible. Only use ForceDelete if you are certain the key is no longer in
+     * use.</p> 
+     */
+    inline bool GetForceDelete() const{ return m_forceDelete; }
+
+    /**
+     * <p>ForceDelete bypasses an API key's expiry conditions and deletes the key. Set
+     * the parameter <code>true</code> to delete the key or to <code>false</code> to
+     * not preemptively delete the API key.</p> <p>Valid values: <code>true</code>, or
+     * <code>false</code>.</p> <p>Required: No</p>  <p>This action is
+     * irreversible. Only use ForceDelete if you are certain the key is no longer in
+     * use.</p> 
+     */
+    inline bool ForceDeleteHasBeenSet() const { return m_forceDeleteHasBeenSet; }
+
+    /**
+     * <p>ForceDelete bypasses an API key's expiry conditions and deletes the key. Set
+     * the parameter <code>true</code> to delete the key or to <code>false</code> to
+     * not preemptively delete the API key.</p> <p>Valid values: <code>true</code>, or
+     * <code>false</code>.</p> <p>Required: No</p>  <p>This action is
+     * irreversible. Only use ForceDelete if you are certain the key is no longer in
+     * use.</p> 
+     */
+    inline void SetForceDelete(bool value) { m_forceDeleteHasBeenSet = true; m_forceDelete = value; }
+
+    /**
+     * <p>ForceDelete bypasses an API key's expiry conditions and deletes the key. Set
+     * the parameter <code>true</code> to delete the key or to <code>false</code> to
+     * not preemptively delete the API key.</p> <p>Valid values: <code>true</code>, or
+     * <code>false</code>.</p> <p>Required: No</p>  <p>This action is
+     * irreversible. Only use ForceDelete if you are certain the key is no longer in
+     * use.</p> 
+     */
+    inline DeleteKeyRequest& WithForceDelete(bool value) { SetForceDelete(value); return *this;}
 
 
     /**
@@ -73,6 +120,9 @@ namespace Model
     inline DeleteKeyRequest& WithKeyName(const char* value) { SetKeyName(value); return *this;}
 
   private:
+
+    bool m_forceDelete;
+    bool m_forceDeleteHasBeenSet = false;
 
     Aws::String m_keyName;
     bool m_keyNameHasBeenSet = false;

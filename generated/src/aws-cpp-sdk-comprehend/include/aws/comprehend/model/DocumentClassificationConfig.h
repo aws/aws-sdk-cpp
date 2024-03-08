@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>Configuration required for a custom classification model.</p><p><h3>See
+   * <p>Configuration required for a document classification model.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DocumentClassificationConfig">AWS
    * API Reference</a></p>

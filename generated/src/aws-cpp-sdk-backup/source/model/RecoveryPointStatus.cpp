@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RecoveryPointStatus::NOT_SET:
+            return {};
           case RecoveryPointStatus::COMPLETED:
             return "COMPLETED";
           case RecoveryPointStatus::PARTIAL:

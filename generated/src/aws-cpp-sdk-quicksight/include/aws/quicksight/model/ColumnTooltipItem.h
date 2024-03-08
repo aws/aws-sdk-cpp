@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/quicksight/model/Visibility.h>
 #include <aws/quicksight/model/AggregationFunction.h>
+#include <aws/quicksight/model/TooltipTarget.h>
 #include <utility>
 
 namespace Aws
@@ -174,6 +175,37 @@ namespace Model
      */
     inline ColumnTooltipItem& WithAggregation(AggregationFunction&& value) { SetAggregation(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Determines the target of the column tooltip item in a combo chart visual.</p>
+     */
+    inline const TooltipTarget& GetTooltipTarget() const{ return m_tooltipTarget; }
+
+    /**
+     * <p>Determines the target of the column tooltip item in a combo chart visual.</p>
+     */
+    inline bool TooltipTargetHasBeenSet() const { return m_tooltipTargetHasBeenSet; }
+
+    /**
+     * <p>Determines the target of the column tooltip item in a combo chart visual.</p>
+     */
+    inline void SetTooltipTarget(const TooltipTarget& value) { m_tooltipTargetHasBeenSet = true; m_tooltipTarget = value; }
+
+    /**
+     * <p>Determines the target of the column tooltip item in a combo chart visual.</p>
+     */
+    inline void SetTooltipTarget(TooltipTarget&& value) { m_tooltipTargetHasBeenSet = true; m_tooltipTarget = std::move(value); }
+
+    /**
+     * <p>Determines the target of the column tooltip item in a combo chart visual.</p>
+     */
+    inline ColumnTooltipItem& WithTooltipTarget(const TooltipTarget& value) { SetTooltipTarget(value); return *this;}
+
+    /**
+     * <p>Determines the target of the column tooltip item in a combo chart visual.</p>
+     */
+    inline ColumnTooltipItem& WithTooltipTarget(TooltipTarget&& value) { SetTooltipTarget(std::move(value)); return *this;}
+
   private:
 
     ColumnIdentifier m_column;
@@ -187,6 +219,9 @@ namespace Model
 
     AggregationFunction m_aggregation;
     bool m_aggregationHasBeenSet = false;
+
+    TooltipTarget m_tooltipTarget;
+    bool m_tooltipTargetHasBeenSet = false;
   };
 
 } // namespace Model

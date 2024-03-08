@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AzureAccessTier::NOT_SET:
+            return {};
           case AzureAccessTier::HOT:
             return "HOT";
           case AzureAccessTier::COOL:

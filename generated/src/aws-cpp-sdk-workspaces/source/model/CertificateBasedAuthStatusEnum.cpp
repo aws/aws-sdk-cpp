@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CertificateBasedAuthStatusEnum::NOT_SET:
+            return {};
           case CertificateBasedAuthStatusEnum::DISABLED:
             return "DISABLED";
           case CertificateBasedAuthStatusEnum::ENABLED:

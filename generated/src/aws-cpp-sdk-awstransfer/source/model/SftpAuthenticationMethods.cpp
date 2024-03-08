@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SftpAuthenticationMethods::NOT_SET:
+            return {};
           case SftpAuthenticationMethods::PASSWORD:
             return "PASSWORD";
           case SftpAuthenticationMethods::PUBLIC_KEY:

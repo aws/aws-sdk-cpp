@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InputDeviceConfiguredInput::NOT_SET:
+            return {};
           case InputDeviceConfiguredInput::AUTO:
             return "AUTO";
           case InputDeviceConfiguredInput::HDMI:

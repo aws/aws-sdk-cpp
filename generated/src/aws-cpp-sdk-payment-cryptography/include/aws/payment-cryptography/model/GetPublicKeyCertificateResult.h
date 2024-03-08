@@ -33,101 +33,94 @@ namespace Model
 
 
     /**
-     * <p>The public key component of the asymmetric key pair in a certificate (PEM)
-     * format. It is signed by the root certificate authority (CA) within your service
-     * account. The certificate expires in 90 days.</p>
+     * <p>The public key component of the asymmetric key pair in a certificate PEM
+     * format (base64 encoded). It is signed by the root certificate authority (CA).
+     * The certificate expires in 90 days.</p>
      */
     inline const Aws::String& GetKeyCertificate() const{ return m_keyCertificate; }
 
     /**
-     * <p>The public key component of the asymmetric key pair in a certificate (PEM)
-     * format. It is signed by the root certificate authority (CA) within your service
-     * account. The certificate expires in 90 days.</p>
+     * <p>The public key component of the asymmetric key pair in a certificate PEM
+     * format (base64 encoded). It is signed by the root certificate authority (CA).
+     * The certificate expires in 90 days.</p>
      */
     inline void SetKeyCertificate(const Aws::String& value) { m_keyCertificate = value; }
 
     /**
-     * <p>The public key component of the asymmetric key pair in a certificate (PEM)
-     * format. It is signed by the root certificate authority (CA) within your service
-     * account. The certificate expires in 90 days.</p>
+     * <p>The public key component of the asymmetric key pair in a certificate PEM
+     * format (base64 encoded). It is signed by the root certificate authority (CA).
+     * The certificate expires in 90 days.</p>
      */
     inline void SetKeyCertificate(Aws::String&& value) { m_keyCertificate = std::move(value); }
 
     /**
-     * <p>The public key component of the asymmetric key pair in a certificate (PEM)
-     * format. It is signed by the root certificate authority (CA) within your service
-     * account. The certificate expires in 90 days.</p>
+     * <p>The public key component of the asymmetric key pair in a certificate PEM
+     * format (base64 encoded). It is signed by the root certificate authority (CA).
+     * The certificate expires in 90 days.</p>
      */
     inline void SetKeyCertificate(const char* value) { m_keyCertificate.assign(value); }
 
     /**
-     * <p>The public key component of the asymmetric key pair in a certificate (PEM)
-     * format. It is signed by the root certificate authority (CA) within your service
-     * account. The certificate expires in 90 days.</p>
+     * <p>The public key component of the asymmetric key pair in a certificate PEM
+     * format (base64 encoded). It is signed by the root certificate authority (CA).
+     * The certificate expires in 90 days.</p>
      */
     inline GetPublicKeyCertificateResult& WithKeyCertificate(const Aws::String& value) { SetKeyCertificate(value); return *this;}
 
     /**
-     * <p>The public key component of the asymmetric key pair in a certificate (PEM)
-     * format. It is signed by the root certificate authority (CA) within your service
-     * account. The certificate expires in 90 days.</p>
+     * <p>The public key component of the asymmetric key pair in a certificate PEM
+     * format (base64 encoded). It is signed by the root certificate authority (CA).
+     * The certificate expires in 90 days.</p>
      */
     inline GetPublicKeyCertificateResult& WithKeyCertificate(Aws::String&& value) { SetKeyCertificate(std::move(value)); return *this;}
 
     /**
-     * <p>The public key component of the asymmetric key pair in a certificate (PEM)
-     * format. It is signed by the root certificate authority (CA) within your service
-     * account. The certificate expires in 90 days.</p>
+     * <p>The public key component of the asymmetric key pair in a certificate PEM
+     * format (base64 encoded). It is signed by the root certificate authority (CA).
+     * The certificate expires in 90 days.</p>
      */
     inline GetPublicKeyCertificateResult& WithKeyCertificate(const char* value) { SetKeyCertificate(value); return *this;}
 
 
     /**
-     * <p>The certificate chain that signed the public key certificate of the
-     * asymmetric key pair. This is the root certificate authority (CA) within your
-     * service account.</p>
+     * <p>The root certificate authority (CA) that signed the public key certificate in
+     * PEM format (base64 encoded) of the asymmetric key pair.</p>
      */
     inline const Aws::String& GetKeyCertificateChain() const{ return m_keyCertificateChain; }
 
     /**
-     * <p>The certificate chain that signed the public key certificate of the
-     * asymmetric key pair. This is the root certificate authority (CA) within your
-     * service account.</p>
+     * <p>The root certificate authority (CA) that signed the public key certificate in
+     * PEM format (base64 encoded) of the asymmetric key pair.</p>
      */
     inline void SetKeyCertificateChain(const Aws::String& value) { m_keyCertificateChain = value; }
 
     /**
-     * <p>The certificate chain that signed the public key certificate of the
-     * asymmetric key pair. This is the root certificate authority (CA) within your
-     * service account.</p>
+     * <p>The root certificate authority (CA) that signed the public key certificate in
+     * PEM format (base64 encoded) of the asymmetric key pair.</p>
      */
     inline void SetKeyCertificateChain(Aws::String&& value) { m_keyCertificateChain = std::move(value); }
 
     /**
-     * <p>The certificate chain that signed the public key certificate of the
-     * asymmetric key pair. This is the root certificate authority (CA) within your
-     * service account.</p>
+     * <p>The root certificate authority (CA) that signed the public key certificate in
+     * PEM format (base64 encoded) of the asymmetric key pair.</p>
      */
     inline void SetKeyCertificateChain(const char* value) { m_keyCertificateChain.assign(value); }
 
     /**
-     * <p>The certificate chain that signed the public key certificate of the
-     * asymmetric key pair. This is the root certificate authority (CA) within your
-     * service account.</p>
+     * <p>The root certificate authority (CA) that signed the public key certificate in
+     * PEM format (base64 encoded) of the asymmetric key pair.</p>
      */
     inline GetPublicKeyCertificateResult& WithKeyCertificateChain(const Aws::String& value) { SetKeyCertificateChain(value); return *this;}
 
     /**
-     * <p>The certificate chain that signed the public key certificate of the
-     * asymmetric key pair. This is the root certificate authority (CA) within your
-     * service account.</p>
+     * <p>The root certificate authority (CA) that signed the public key certificate in
+     * PEM format (base64 encoded) of the asymmetric key pair.</p>
      */
     inline GetPublicKeyCertificateResult& WithKeyCertificateChain(Aws::String&& value) { SetKeyCertificateChain(std::move(value)); return *this;}
 
     /**
-     * <p>The certificate chain that signed the public key certificate of the
-     * asymmetric key pair. This is the root certificate authority (CA) within your
-     * service account.</p>
+     * <p>The root certificate authority (CA) that signed the public key certificate in
+     * PEM format (base64 encoded) of the asymmetric key pair.</p>
      */
     inline GetPublicKeyCertificateResult& WithKeyCertificateChain(const char* value) { SetKeyCertificateChain(value); return *this;}
 

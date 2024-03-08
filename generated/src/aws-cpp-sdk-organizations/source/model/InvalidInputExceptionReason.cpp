@@ -179,6 +179,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InvalidInputExceptionReason::NOT_SET:
+            return {};
           case InvalidInputExceptionReason::INVALID_PARTY_TYPE_TARGET:
             return "INVALID_PARTY_TYPE_TARGET";
           case InvalidInputExceptionReason::INVALID_SYNTAX_ORGANIZATION_ARN:

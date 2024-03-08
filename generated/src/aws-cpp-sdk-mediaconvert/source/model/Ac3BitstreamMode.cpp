@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Ac3BitstreamMode::NOT_SET:
+            return {};
           case Ac3BitstreamMode::COMPLETE_MAIN:
             return "COMPLETE_MAIN";
           case Ac3BitstreamMode::COMMENTARY:

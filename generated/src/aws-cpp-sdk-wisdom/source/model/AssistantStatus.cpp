@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AssistantStatus::NOT_SET:
+            return {};
           case AssistantStatus::CREATE_IN_PROGRESS:
             return "CREATE_IN_PROGRESS";
           case AssistantStatus::CREATE_FAILED:

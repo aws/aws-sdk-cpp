@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ProtectedResourceType::NOT_SET:
+            return {};
           case ProtectedResourceType::CLOUDFRONT_DISTRIBUTION:
             return "CLOUDFRONT_DISTRIBUTION";
           case ProtectedResourceType::ROUTE_53_HOSTED_ZONE:

@@ -482,42 +482,50 @@ namespace Model
 
 
     /**
-     * <p>The details of the error returned for the image.</p>
+     * <p>Additional details of the error returned for the image, including the
+     * possible causes of the errors and troubleshooting information.</p>
      */
     inline const Aws::Vector<ErrorDetails>& GetErrorDetails() const{ return m_errorDetails; }
 
     /**
-     * <p>The details of the error returned for the image.</p>
+     * <p>Additional details of the error returned for the image, including the
+     * possible causes of the errors and troubleshooting information.</p>
      */
     inline bool ErrorDetailsHasBeenSet() const { return m_errorDetailsHasBeenSet; }
 
     /**
-     * <p>The details of the error returned for the image.</p>
+     * <p>Additional details of the error returned for the image, including the
+     * possible causes of the errors and troubleshooting information.</p>
      */
     inline void SetErrorDetails(const Aws::Vector<ErrorDetails>& value) { m_errorDetailsHasBeenSet = true; m_errorDetails = value; }
 
     /**
-     * <p>The details of the error returned for the image.</p>
+     * <p>Additional details of the error returned for the image, including the
+     * possible causes of the errors and troubleshooting information.</p>
      */
     inline void SetErrorDetails(Aws::Vector<ErrorDetails>&& value) { m_errorDetailsHasBeenSet = true; m_errorDetails = std::move(value); }
 
     /**
-     * <p>The details of the error returned for the image.</p>
+     * <p>Additional details of the error returned for the image, including the
+     * possible causes of the errors and troubleshooting information.</p>
      */
     inline WorkspaceImage& WithErrorDetails(const Aws::Vector<ErrorDetails>& value) { SetErrorDetails(value); return *this;}
 
     /**
-     * <p>The details of the error returned for the image.</p>
+     * <p>Additional details of the error returned for the image, including the
+     * possible causes of the errors and troubleshooting information.</p>
      */
     inline WorkspaceImage& WithErrorDetails(Aws::Vector<ErrorDetails>&& value) { SetErrorDetails(std::move(value)); return *this;}
 
     /**
-     * <p>The details of the error returned for the image.</p>
+     * <p>Additional details of the error returned for the image, including the
+     * possible causes of the errors and troubleshooting information.</p>
      */
     inline WorkspaceImage& AddErrorDetails(const ErrorDetails& value) { m_errorDetailsHasBeenSet = true; m_errorDetails.push_back(value); return *this; }
 
     /**
-     * <p>The details of the error returned for the image.</p>
+     * <p>Additional details of the error returned for the image, including the
+     * possible causes of the errors and troubleshooting information.</p>
      */
     inline WorkspaceImage& AddErrorDetails(ErrorDetails&& value) { m_errorDetailsHasBeenSet = true; m_errorDetails.push_back(std::move(value)); return *this; }
 

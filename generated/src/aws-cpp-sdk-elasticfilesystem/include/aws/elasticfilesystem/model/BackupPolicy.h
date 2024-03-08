@@ -43,66 +43,66 @@ namespace Model
 
     /**
      * <p>Describes the status of the file system's backup policy.</p> <ul> <li> <p>
-     * <b> <code>ENABLED</code> </b> - EFS is automatically backing up the file
-     * system.</p> </li> <li> <p> <b> <code>ENABLING</code> </b> - EFS is turning on
+     * <b> <code>ENABLED</code> </b> – EFS is automatically backing up the file
+     * system.</p> </li> <li> <p> <b> <code>ENABLING</code> </b> – EFS is turning on
      * automatic backups for the file system.</p> </li> <li> <p> <b>
-     * <code>DISABLED</code> </b> - Automatic back ups are turned off for the file
-     * system.</p> </li> <li> <p> <b> <code>DISABLING</code> </b> - EFS is turning off
+     * <code>DISABLED</code> </b> – Automatic back ups are turned off for the file
+     * system.</p> </li> <li> <p> <b> <code>DISABLING</code> </b> – EFS is turning off
      * automatic backups for the file system.</p> </li> </ul>
      */
     inline const Status& GetStatus() const{ return m_status; }
 
     /**
      * <p>Describes the status of the file system's backup policy.</p> <ul> <li> <p>
-     * <b> <code>ENABLED</code> </b> - EFS is automatically backing up the file
-     * system.</p> </li> <li> <p> <b> <code>ENABLING</code> </b> - EFS is turning on
+     * <b> <code>ENABLED</code> </b> – EFS is automatically backing up the file
+     * system.</p> </li> <li> <p> <b> <code>ENABLING</code> </b> – EFS is turning on
      * automatic backups for the file system.</p> </li> <li> <p> <b>
-     * <code>DISABLED</code> </b> - Automatic back ups are turned off for the file
-     * system.</p> </li> <li> <p> <b> <code>DISABLING</code> </b> - EFS is turning off
+     * <code>DISABLED</code> </b> – Automatic back ups are turned off for the file
+     * system.</p> </li> <li> <p> <b> <code>DISABLING</code> </b> – EFS is turning off
      * automatic backups for the file system.</p> </li> </ul>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>Describes the status of the file system's backup policy.</p> <ul> <li> <p>
-     * <b> <code>ENABLED</code> </b> - EFS is automatically backing up the file
-     * system.</p> </li> <li> <p> <b> <code>ENABLING</code> </b> - EFS is turning on
+     * <b> <code>ENABLED</code> </b> – EFS is automatically backing up the file
+     * system.</p> </li> <li> <p> <b> <code>ENABLING</code> </b> – EFS is turning on
      * automatic backups for the file system.</p> </li> <li> <p> <b>
-     * <code>DISABLED</code> </b> - Automatic back ups are turned off for the file
-     * system.</p> </li> <li> <p> <b> <code>DISABLING</code> </b> - EFS is turning off
+     * <code>DISABLED</code> </b> – Automatic back ups are turned off for the file
+     * system.</p> </li> <li> <p> <b> <code>DISABLING</code> </b> – EFS is turning off
      * automatic backups for the file system.</p> </li> </ul>
      */
     inline void SetStatus(const Status& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
      * <p>Describes the status of the file system's backup policy.</p> <ul> <li> <p>
-     * <b> <code>ENABLED</code> </b> - EFS is automatically backing up the file
-     * system.</p> </li> <li> <p> <b> <code>ENABLING</code> </b> - EFS is turning on
+     * <b> <code>ENABLED</code> </b> – EFS is automatically backing up the file
+     * system.</p> </li> <li> <p> <b> <code>ENABLING</code> </b> – EFS is turning on
      * automatic backups for the file system.</p> </li> <li> <p> <b>
-     * <code>DISABLED</code> </b> - Automatic back ups are turned off for the file
-     * system.</p> </li> <li> <p> <b> <code>DISABLING</code> </b> - EFS is turning off
+     * <code>DISABLED</code> </b> – Automatic back ups are turned off for the file
+     * system.</p> </li> <li> <p> <b> <code>DISABLING</code> </b> – EFS is turning off
      * automatic backups for the file system.</p> </li> </ul>
      */
     inline void SetStatus(Status&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>Describes the status of the file system's backup policy.</p> <ul> <li> <p>
-     * <b> <code>ENABLED</code> </b> - EFS is automatically backing up the file
-     * system.</p> </li> <li> <p> <b> <code>ENABLING</code> </b> - EFS is turning on
+     * <b> <code>ENABLED</code> </b> – EFS is automatically backing up the file
+     * system.</p> </li> <li> <p> <b> <code>ENABLING</code> </b> – EFS is turning on
      * automatic backups for the file system.</p> </li> <li> <p> <b>
-     * <code>DISABLED</code> </b> - Automatic back ups are turned off for the file
-     * system.</p> </li> <li> <p> <b> <code>DISABLING</code> </b> - EFS is turning off
+     * <code>DISABLED</code> </b> – Automatic back ups are turned off for the file
+     * system.</p> </li> <li> <p> <b> <code>DISABLING</code> </b> – EFS is turning off
      * automatic backups for the file system.</p> </li> </ul>
      */
     inline BackupPolicy& WithStatus(const Status& value) { SetStatus(value); return *this;}
 
     /**
      * <p>Describes the status of the file system's backup policy.</p> <ul> <li> <p>
-     * <b> <code>ENABLED</code> </b> - EFS is automatically backing up the file
-     * system.</p> </li> <li> <p> <b> <code>ENABLING</code> </b> - EFS is turning on
+     * <b> <code>ENABLED</code> </b> – EFS is automatically backing up the file
+     * system.</p> </li> <li> <p> <b> <code>ENABLING</code> </b> – EFS is turning on
      * automatic backups for the file system.</p> </li> <li> <p> <b>
-     * <code>DISABLED</code> </b> - Automatic back ups are turned off for the file
-     * system.</p> </li> <li> <p> <b> <code>DISABLING</code> </b> - EFS is turning off
+     * <code>DISABLED</code> </b> – Automatic back ups are turned off for the file
+     * system.</p> </li> <li> <p> <b> <code>DISABLING</code> </b> – EFS is turning off
      * automatic backups for the file system.</p> </li> </ul>
      */
     inline BackupPolicy& WithStatus(Status&& value) { SetStatus(std::move(value)); return *this;}

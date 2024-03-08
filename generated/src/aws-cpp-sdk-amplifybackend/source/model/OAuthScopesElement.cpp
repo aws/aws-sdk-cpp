@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OAuthScopesElement::NOT_SET:
+            return {};
           case OAuthScopesElement::PHONE:
             return "PHONE";
           case OAuthScopesElement::EMAIL:

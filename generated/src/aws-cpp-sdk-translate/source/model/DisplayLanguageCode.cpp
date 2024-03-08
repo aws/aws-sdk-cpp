@@ -89,6 +89,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DisplayLanguageCode::NOT_SET:
+            return {};
           case DisplayLanguageCode::de:
             return "de";
           case DisplayLanguageCode::en:

@@ -31,6 +31,7 @@
 #include <aws/migrationhubstrategy/model/GetRecommendationReportDetailsRequest.h>
 #include <aws/migrationhubstrategy/model/GetServerDetailsRequest.h>
 #include <aws/migrationhubstrategy/model/GetServerStrategiesRequest.h>
+#include <aws/migrationhubstrategy/model/ListAnalyzableServersRequest.h>
 #include <aws/migrationhubstrategy/model/ListApplicationComponentsRequest.h>
 #include <aws/migrationhubstrategy/model/ListCollectorsRequest.h>
 #include <aws/migrationhubstrategy/model/ListImportFileTaskRequest.h>
@@ -56,8 +57,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* MigrationHubStrategyRecommendationsClient::SERVICE_NAME = "migrationhub-strategy";
-const char* MigrationHubStrategyRecommendationsClient::ALLOCATION_TAG = "MigrationHubStrategyRecommendationsClient";
+namespace Aws
+{
+  namespace MigrationHubStrategyRecommendations
+  {
+    const char SERVICE_NAME[] = "migrationhub-strategy";
+    const char ALLOCATION_TAG[] = "MigrationHubStrategyRecommendationsClient";
+  }
+}
+const char* MigrationHubStrategyRecommendationsClient::GetServiceName() {return SERVICE_NAME;}
+const char* MigrationHubStrategyRecommendationsClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 MigrationHubStrategyRecommendationsClient::MigrationHubStrategyRecommendationsClient(const MigrationHubStrategyRecommendations::MigrationHubStrategyRecommendationsClientConfiguration& clientConfiguration,
                                                                                      std::shared_ptr<MigrationHubStrategyRecommendationsEndpointProviderBase> endpointProvider) :
@@ -69,7 +78,7 @@ MigrationHubStrategyRecommendationsClient::MigrationHubStrategyRecommendationsCl
             Aws::MakeShared<MigrationHubStrategyRecommendationsErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<MigrationHubStrategyRecommendationsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -85,7 +94,7 @@ MigrationHubStrategyRecommendationsClient::MigrationHubStrategyRecommendationsCl
             Aws::MakeShared<MigrationHubStrategyRecommendationsErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<MigrationHubStrategyRecommendationsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -101,7 +110,7 @@ MigrationHubStrategyRecommendationsClient::MigrationHubStrategyRecommendationsCl
             Aws::MakeShared<MigrationHubStrategyRecommendationsErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<MigrationHubStrategyRecommendationsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -481,6 +490,33 @@ GetServerStrategiesOutcome MigrationHubStrategyRecommendationsClient::GetServerS
       endpointResolutionOutcome.GetResult().AddPathSegments("/get-server-strategies/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetServerId());
       return GetServerStrategiesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ListAnalyzableServersOutcome MigrationHubStrategyRecommendationsClient::ListAnalyzableServers(const ListAnalyzableServersRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListAnalyzableServers);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAnalyzableServers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListAnalyzableServers, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListAnalyzableServers, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListAnalyzableServers",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListAnalyzableServersOutcome>(
+    [&]()-> ListAnalyzableServersOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListAnalyzableServers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/list-analyzable-servers");
+      return ListAnalyzableServersOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

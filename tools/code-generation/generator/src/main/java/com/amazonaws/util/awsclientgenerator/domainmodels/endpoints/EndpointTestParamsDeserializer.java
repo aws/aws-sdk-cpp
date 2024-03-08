@@ -22,46 +22,52 @@ public class EndpointTestParamsDeserializer implements JsonDeserializer<Endpoint
             String parameterName = entry.getKey();
             JsonElement subJsonElement = entry.getValue();
 
-            EndpointTests.EndpointTestParameter parameter = new EndpointTests.EndpointTestParameter();
-            parameter.setName(parameterName);
+            EndpointTests.EndpointTestParameter parameter = deserializeParameter(parameterName, subJsonElement);
+            retValue.put(parameterName, parameter);
+        }
+        
+        return retValue;
+    }
 
-            if (subJsonElement.isJsonPrimitive()) {
-                JsonPrimitive jsonPrimitive = subJsonElement.getAsJsonPrimitive();
+    public static EndpointTests.EndpointTestParameter deserializeParameter(String parameterName, JsonElement element) {
+        EndpointTests.EndpointTestParameter parameter = new EndpointTests.EndpointTestParameter();
+        parameter.setName(parameterName);
 
-                if (jsonPrimitive.isBoolean()) {
-                    parameter.setType(EndpointTests.EndpointTestParameter.ParameterType.BOOLEAN);
-                    parameter.setBoolValue(jsonPrimitive.getAsBoolean());
-                } else if (jsonPrimitive.isNumber()) {
-                    parameter.setType(EndpointTests.EndpointTestParameter.ParameterType.INTEGER);
-                    parameter.setIntValue(jsonPrimitive.getAsInt());
-                } else if (jsonPrimitive.isString()) {
-                    parameter.setType(EndpointTests.EndpointTestParameter.ParameterType.STRING);
-                    parameter.setStrValue(jsonPrimitive.getAsString());
-                } else {
-                    throw new JsonParseException("Unexpected EndpointTestParameter JSON value");
-                }
-                retValue.put(parameterName, parameter);
+        if (element.isJsonPrimitive()) {
+            JsonPrimitive jsonPrimitive = element.getAsJsonPrimitive();
+
+            if (jsonPrimitive.isBoolean()) {
+                parameter.setType(EndpointTests.EndpointTestParameter.ParameterType.BOOLEAN);
+                parameter.setBoolValue(jsonPrimitive.getAsBoolean());
+            } else if (jsonPrimitive.isNumber()) {
+                parameter.setType(EndpointTests.EndpointTestParameter.ParameterType.INTEGER);
+                parameter.setIntValue(jsonPrimitive.getAsInt());
+            } else if (jsonPrimitive.isString()) {
+                parameter.setType(EndpointTests.EndpointTestParameter.ParameterType.STRING);
+                parameter.setStrValue(jsonPrimitive.getAsString());
             } else {
-                if (parameterName.equals("signingRegionSet") &&
-                        subJsonElement.getAsJsonArray().size() == 1 &&
-                        subJsonElement.getAsString().equals("*")) {
-                    // The set of signing regions to use for this endpoint. Currently,
-                    // this will always be ["*"], however this should not be relied upon.
-                    parameter.setType(EndpointTests.EndpointTestParameter.ParameterType.STRING);
-                    parameter.setStrValue("[\"*\"]");
-                } else {
-                    // TODO: follow-up once per-operation tests are enabled
-                    // throw new JsonParseException("Unexpected EndpointTestParameter JSON value/type, primitive expected.");
-                    // tracing Warning to Error because STDOUT is already occupied for binary forwarding
-                    parameter.setType(EndpointTests.EndpointTestParameter.ParameterType.STRING);
-                    parameter.setStrValue(subJsonElement.toString());
+                throw new JsonParseException("Unexpected EndpointTestParameter JSON value");
+            }
+            
+        } else {
+            if (parameterName.equals("signingRegionSet") &&
+                element.getAsJsonArray().size() == 1 &&
+                element.getAsString().equals("*")) {
+                // The set of signing regions to use for this endpoint. Currently,
+                // this will always be ["*"], however this should not be relied upon.
+                parameter.setType(EndpointTests.EndpointTestParameter.ParameterType.STRING);
+                parameter.setStrValue("*");
+            } else {
+                // TODO: follow-up once per-operation tests are enabled
+                // throw new JsonParseException("Unexpected EndpointTestParameter JSON value/type, primitive expected.");
+                // tracing Warning to Error because STDOUT is already occupied for binary forwarding
+                parameter.setType(EndpointTests.EndpointTestParameter.ParameterType.STRING);
+                parameter.setStrValue(element.toString());
 
-                    System.err.println("Warning: Unexpected json element while parsing test EndpointParameters: " + parameterName);
-                }
+                System.err.println("Warning: Unexpected json element while parsing test EndpointParameters: " + parameterName);
             }
         }
 
-        return retValue;
-
+        return parameter;
     }
 }

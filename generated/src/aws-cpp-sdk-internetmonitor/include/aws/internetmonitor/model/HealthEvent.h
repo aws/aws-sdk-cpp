@@ -85,49 +85,49 @@ namespace Model
 
 
     /**
-     * <p>The internally generated identifier of a specific network traffic impairment
+     * <p>The internally-generated identifier of a specific network traffic impairment
      * health event.</p>
      */
     inline const Aws::String& GetEventId() const{ return m_eventId; }
 
     /**
-     * <p>The internally generated identifier of a specific network traffic impairment
+     * <p>The internally-generated identifier of a specific network traffic impairment
      * health event.</p>
      */
     inline bool EventIdHasBeenSet() const { return m_eventIdHasBeenSet; }
 
     /**
-     * <p>The internally generated identifier of a specific network traffic impairment
+     * <p>The internally-generated identifier of a specific network traffic impairment
      * health event.</p>
      */
     inline void SetEventId(const Aws::String& value) { m_eventIdHasBeenSet = true; m_eventId = value; }
 
     /**
-     * <p>The internally generated identifier of a specific network traffic impairment
+     * <p>The internally-generated identifier of a specific network traffic impairment
      * health event.</p>
      */
     inline void SetEventId(Aws::String&& value) { m_eventIdHasBeenSet = true; m_eventId = std::move(value); }
 
     /**
-     * <p>The internally generated identifier of a specific network traffic impairment
+     * <p>The internally-generated identifier of a specific network traffic impairment
      * health event.</p>
      */
     inline void SetEventId(const char* value) { m_eventIdHasBeenSet = true; m_eventId.assign(value); }
 
     /**
-     * <p>The internally generated identifier of a specific network traffic impairment
+     * <p>The internally-generated identifier of a specific network traffic impairment
      * health event.</p>
      */
     inline HealthEvent& WithEventId(const Aws::String& value) { SetEventId(value); return *this;}
 
     /**
-     * <p>The internally generated identifier of a specific network traffic impairment
+     * <p>The internally-generated identifier of a specific network traffic impairment
      * health event.</p>
      */
     inline HealthEvent& WithEventId(Aws::String&& value) { SetEventId(std::move(value)); return *this;}
 
     /**
-     * <p>The internally generated identifier of a specific network traffic impairment
+     * <p>The internally-generated identifier of a specific network traffic impairment
      * health event.</p>
      */
     inline HealthEvent& WithEventId(const char* value) { SetEventId(value); return *this;}

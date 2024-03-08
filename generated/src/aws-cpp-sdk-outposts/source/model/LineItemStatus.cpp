@@ -84,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LineItemStatus::NOT_SET:
+            return {};
           case LineItemStatus::PREPARING:
             return "PREPARING";
           case LineItemStatus::BUILDING:

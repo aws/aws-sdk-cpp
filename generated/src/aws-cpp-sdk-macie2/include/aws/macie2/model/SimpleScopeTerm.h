@@ -45,8 +45,11 @@ namespace Model
      * <p>The operator to use in the condition. Valid values for each supported
      * property (key) are:</p> <ul><li><p>OBJECT_EXTENSION - EQ (equals) or NE (not
      * equals)</p></li> <li><p>OBJECT_KEY - STARTS_WITH</p></li>
-     * <li><p>OBJECT_LAST_MODIFIED_DATE - Any operator except CONTAINS</p></li>
-     * <li><p>OBJECT_SIZE - Any operator except CONTAINS</p></li></ul>
+     * <li><p>OBJECT_LAST_MODIFIED_DATE - EQ (equals), GT (greater than), GTE (greater
+     * than or equals), LT (less than), LTE (less than or equals), or NE (not
+     * equals)</p></li> <li><p>OBJECT_SIZE - EQ (equals), GT (greater than), GTE
+     * (greater than or equals), LT (less than), LTE (less than or equals), or NE (not
+     * equals)</p></li></ul>
      */
     inline const JobComparator& GetComparator() const{ return m_comparator; }
 
@@ -54,8 +57,11 @@ namespace Model
      * <p>The operator to use in the condition. Valid values for each supported
      * property (key) are:</p> <ul><li><p>OBJECT_EXTENSION - EQ (equals) or NE (not
      * equals)</p></li> <li><p>OBJECT_KEY - STARTS_WITH</p></li>
-     * <li><p>OBJECT_LAST_MODIFIED_DATE - Any operator except CONTAINS</p></li>
-     * <li><p>OBJECT_SIZE - Any operator except CONTAINS</p></li></ul>
+     * <li><p>OBJECT_LAST_MODIFIED_DATE - EQ (equals), GT (greater than), GTE (greater
+     * than or equals), LT (less than), LTE (less than or equals), or NE (not
+     * equals)</p></li> <li><p>OBJECT_SIZE - EQ (equals), GT (greater than), GTE
+     * (greater than or equals), LT (less than), LTE (less than or equals), or NE (not
+     * equals)</p></li></ul>
      */
     inline bool ComparatorHasBeenSet() const { return m_comparatorHasBeenSet; }
 
@@ -63,8 +69,11 @@ namespace Model
      * <p>The operator to use in the condition. Valid values for each supported
      * property (key) are:</p> <ul><li><p>OBJECT_EXTENSION - EQ (equals) or NE (not
      * equals)</p></li> <li><p>OBJECT_KEY - STARTS_WITH</p></li>
-     * <li><p>OBJECT_LAST_MODIFIED_DATE - Any operator except CONTAINS</p></li>
-     * <li><p>OBJECT_SIZE - Any operator except CONTAINS</p></li></ul>
+     * <li><p>OBJECT_LAST_MODIFIED_DATE - EQ (equals), GT (greater than), GTE (greater
+     * than or equals), LT (less than), LTE (less than or equals), or NE (not
+     * equals)</p></li> <li><p>OBJECT_SIZE - EQ (equals), GT (greater than), GTE
+     * (greater than or equals), LT (less than), LTE (less than or equals), or NE (not
+     * equals)</p></li></ul>
      */
     inline void SetComparator(const JobComparator& value) { m_comparatorHasBeenSet = true; m_comparator = value; }
 
@@ -72,8 +81,11 @@ namespace Model
      * <p>The operator to use in the condition. Valid values for each supported
      * property (key) are:</p> <ul><li><p>OBJECT_EXTENSION - EQ (equals) or NE (not
      * equals)</p></li> <li><p>OBJECT_KEY - STARTS_WITH</p></li>
-     * <li><p>OBJECT_LAST_MODIFIED_DATE - Any operator except CONTAINS</p></li>
-     * <li><p>OBJECT_SIZE - Any operator except CONTAINS</p></li></ul>
+     * <li><p>OBJECT_LAST_MODIFIED_DATE - EQ (equals), GT (greater than), GTE (greater
+     * than or equals), LT (less than), LTE (less than or equals), or NE (not
+     * equals)</p></li> <li><p>OBJECT_SIZE - EQ (equals), GT (greater than), GTE
+     * (greater than or equals), LT (less than), LTE (less than or equals), or NE (not
+     * equals)</p></li></ul>
      */
     inline void SetComparator(JobComparator&& value) { m_comparatorHasBeenSet = true; m_comparator = std::move(value); }
 
@@ -81,8 +93,11 @@ namespace Model
      * <p>The operator to use in the condition. Valid values for each supported
      * property (key) are:</p> <ul><li><p>OBJECT_EXTENSION - EQ (equals) or NE (not
      * equals)</p></li> <li><p>OBJECT_KEY - STARTS_WITH</p></li>
-     * <li><p>OBJECT_LAST_MODIFIED_DATE - Any operator except CONTAINS</p></li>
-     * <li><p>OBJECT_SIZE - Any operator except CONTAINS</p></li></ul>
+     * <li><p>OBJECT_LAST_MODIFIED_DATE - EQ (equals), GT (greater than), GTE (greater
+     * than or equals), LT (less than), LTE (less than or equals), or NE (not
+     * equals)</p></li> <li><p>OBJECT_SIZE - EQ (equals), GT (greater than), GTE
+     * (greater than or equals), LT (less than), LTE (less than or equals), or NE (not
+     * equals)</p></li></ul>
      */
     inline SimpleScopeTerm& WithComparator(const JobComparator& value) { SetComparator(value); return *this;}
 
@@ -90,8 +105,11 @@ namespace Model
      * <p>The operator to use in the condition. Valid values for each supported
      * property (key) are:</p> <ul><li><p>OBJECT_EXTENSION - EQ (equals) or NE (not
      * equals)</p></li> <li><p>OBJECT_KEY - STARTS_WITH</p></li>
-     * <li><p>OBJECT_LAST_MODIFIED_DATE - Any operator except CONTAINS</p></li>
-     * <li><p>OBJECT_SIZE - Any operator except CONTAINS</p></li></ul>
+     * <li><p>OBJECT_LAST_MODIFIED_DATE - EQ (equals), GT (greater than), GTE (greater
+     * than or equals), LT (less than), LTE (less than or equals), or NE (not
+     * equals)</p></li> <li><p>OBJECT_SIZE - EQ (equals), GT (greater than), GTE
+     * (greater than or equals), LT (less than), LTE (less than or equals), or NE (not
+     * equals)</p></li></ul>
      */
     inline SimpleScopeTerm& WithComparator(JobComparator&& value) { SetComparator(std::move(value)); return *this;}
 
@@ -139,7 +157,7 @@ namespace Model
      * objects whose keys (names) begin with the specified value.</p></li>
      * <li><p>OBJECT_LAST_MODIFIED_DATE - The date and time (in UTC and extended ISO
      * 8601 format) when an object was created or last changed, whichever is latest.
-     * For example: 2020-09-28T14:31:13Z</p></li> <li><p>OBJECT_SIZE - An integer that
+     * For example: 2023-09-24T14:31:13Z</p></li> <li><p>OBJECT_SIZE - An integer that
      * represents the storage size (in bytes) of an object.</p></li></ul> <p>Macie
      * doesn't support use of wildcard characters in these values. Also, string values
      * are case sensitive.</p>
@@ -158,7 +176,7 @@ namespace Model
      * objects whose keys (names) begin with the specified value.</p></li>
      * <li><p>OBJECT_LAST_MODIFIED_DATE - The date and time (in UTC and extended ISO
      * 8601 format) when an object was created or last changed, whichever is latest.
-     * For example: 2020-09-28T14:31:13Z</p></li> <li><p>OBJECT_SIZE - An integer that
+     * For example: 2023-09-24T14:31:13Z</p></li> <li><p>OBJECT_SIZE - An integer that
      * represents the storage size (in bytes) of an object.</p></li></ul> <p>Macie
      * doesn't support use of wildcard characters in these values. Also, string values
      * are case sensitive.</p>
@@ -177,7 +195,7 @@ namespace Model
      * objects whose keys (names) begin with the specified value.</p></li>
      * <li><p>OBJECT_LAST_MODIFIED_DATE - The date and time (in UTC and extended ISO
      * 8601 format) when an object was created or last changed, whichever is latest.
-     * For example: 2020-09-28T14:31:13Z</p></li> <li><p>OBJECT_SIZE - An integer that
+     * For example: 2023-09-24T14:31:13Z</p></li> <li><p>OBJECT_SIZE - An integer that
      * represents the storage size (in bytes) of an object.</p></li></ul> <p>Macie
      * doesn't support use of wildcard characters in these values. Also, string values
      * are case sensitive.</p>
@@ -196,7 +214,7 @@ namespace Model
      * objects whose keys (names) begin with the specified value.</p></li>
      * <li><p>OBJECT_LAST_MODIFIED_DATE - The date and time (in UTC and extended ISO
      * 8601 format) when an object was created or last changed, whichever is latest.
-     * For example: 2020-09-28T14:31:13Z</p></li> <li><p>OBJECT_SIZE - An integer that
+     * For example: 2023-09-24T14:31:13Z</p></li> <li><p>OBJECT_SIZE - An integer that
      * represents the storage size (in bytes) of an object.</p></li></ul> <p>Macie
      * doesn't support use of wildcard characters in these values. Also, string values
      * are case sensitive.</p>
@@ -215,7 +233,7 @@ namespace Model
      * objects whose keys (names) begin with the specified value.</p></li>
      * <li><p>OBJECT_LAST_MODIFIED_DATE - The date and time (in UTC and extended ISO
      * 8601 format) when an object was created or last changed, whichever is latest.
-     * For example: 2020-09-28T14:31:13Z</p></li> <li><p>OBJECT_SIZE - An integer that
+     * For example: 2023-09-24T14:31:13Z</p></li> <li><p>OBJECT_SIZE - An integer that
      * represents the storage size (in bytes) of an object.</p></li></ul> <p>Macie
      * doesn't support use of wildcard characters in these values. Also, string values
      * are case sensitive.</p>
@@ -234,7 +252,7 @@ namespace Model
      * objects whose keys (names) begin with the specified value.</p></li>
      * <li><p>OBJECT_LAST_MODIFIED_DATE - The date and time (in UTC and extended ISO
      * 8601 format) when an object was created or last changed, whichever is latest.
-     * For example: 2020-09-28T14:31:13Z</p></li> <li><p>OBJECT_SIZE - An integer that
+     * For example: 2023-09-24T14:31:13Z</p></li> <li><p>OBJECT_SIZE - An integer that
      * represents the storage size (in bytes) of an object.</p></li></ul> <p>Macie
      * doesn't support use of wildcard characters in these values. Also, string values
      * are case sensitive.</p>
@@ -253,7 +271,7 @@ namespace Model
      * objects whose keys (names) begin with the specified value.</p></li>
      * <li><p>OBJECT_LAST_MODIFIED_DATE - The date and time (in UTC and extended ISO
      * 8601 format) when an object was created or last changed, whichever is latest.
-     * For example: 2020-09-28T14:31:13Z</p></li> <li><p>OBJECT_SIZE - An integer that
+     * For example: 2023-09-24T14:31:13Z</p></li> <li><p>OBJECT_SIZE - An integer that
      * represents the storage size (in bytes) of an object.</p></li></ul> <p>Macie
      * doesn't support use of wildcard characters in these values. Also, string values
      * are case sensitive.</p>
@@ -272,7 +290,7 @@ namespace Model
      * objects whose keys (names) begin with the specified value.</p></li>
      * <li><p>OBJECT_LAST_MODIFIED_DATE - The date and time (in UTC and extended ISO
      * 8601 format) when an object was created or last changed, whichever is latest.
-     * For example: 2020-09-28T14:31:13Z</p></li> <li><p>OBJECT_SIZE - An integer that
+     * For example: 2023-09-24T14:31:13Z</p></li> <li><p>OBJECT_SIZE - An integer that
      * represents the storage size (in bytes) of an object.</p></li></ul> <p>Macie
      * doesn't support use of wildcard characters in these values. Also, string values
      * are case sensitive.</p>
@@ -291,7 +309,7 @@ namespace Model
      * objects whose keys (names) begin with the specified value.</p></li>
      * <li><p>OBJECT_LAST_MODIFIED_DATE - The date and time (in UTC and extended ISO
      * 8601 format) when an object was created or last changed, whichever is latest.
-     * For example: 2020-09-28T14:31:13Z</p></li> <li><p>OBJECT_SIZE - An integer that
+     * For example: 2023-09-24T14:31:13Z</p></li> <li><p>OBJECT_SIZE - An integer that
      * represents the storage size (in bytes) of an object.</p></li></ul> <p>Macie
      * doesn't support use of wildcard characters in these values. Also, string values
      * are case sensitive.</p>

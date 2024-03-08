@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case IncludeFillerNalUnits::NOT_SET:
+            return {};
           case IncludeFillerNalUnits::AUTO:
             return "AUTO";
           case IncludeFillerNalUnits::DROP:

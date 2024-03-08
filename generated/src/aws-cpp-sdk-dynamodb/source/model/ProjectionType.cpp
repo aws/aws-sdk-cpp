@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ProjectionType::NOT_SET:
+            return {};
           case ProjectionType::ALL:
             return "ALL";
           case ProjectionType::KEYS_ONLY:

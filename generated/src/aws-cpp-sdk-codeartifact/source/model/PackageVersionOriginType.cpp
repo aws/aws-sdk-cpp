@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PackageVersionOriginType::NOT_SET:
+            return {};
           case PackageVersionOriginType::INTERNAL:
             return "INTERNAL";
           case PackageVersionOriginType::EXTERNAL:

@@ -26,7 +26,11 @@ KubernetesApiCallAction::KubernetesApiCallAction() :
     m_remoteIpDetailsHasBeenSet(false),
     m_statusCode(0),
     m_statusCodeHasBeenSet(false),
-    m_parametersHasBeenSet(false)
+    m_parametersHasBeenSet(false),
+    m_resourceHasBeenSet(false),
+    m_subresourceHasBeenSet(false),
+    m_namespaceHasBeenSet(false),
+    m_resourceNameHasBeenSet(false)
 {
 }
 
@@ -38,7 +42,11 @@ KubernetesApiCallAction::KubernetesApiCallAction(JsonView jsonValue) :
     m_remoteIpDetailsHasBeenSet(false),
     m_statusCode(0),
     m_statusCodeHasBeenSet(false),
-    m_parametersHasBeenSet(false)
+    m_parametersHasBeenSet(false),
+    m_resourceHasBeenSet(false),
+    m_subresourceHasBeenSet(false),
+    m_namespaceHasBeenSet(false),
+    m_resourceNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -97,6 +105,34 @@ KubernetesApiCallAction& KubernetesApiCallAction::operator =(JsonView jsonValue)
     m_parametersHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("resource"))
+  {
+    m_resource = jsonValue.GetString("resource");
+
+    m_resourceHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("subresource"))
+  {
+    m_subresource = jsonValue.GetString("subresource");
+
+    m_subresourceHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("namespace"))
+  {
+    m_namespace = jsonValue.GetString("namespace");
+
+    m_namespaceHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("resourceName"))
+  {
+    m_resourceName = jsonValue.GetString("resourceName");
+
+    m_resourceNameHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -148,6 +184,30 @@ JsonValue KubernetesApiCallAction::Jsonize() const
   if(m_parametersHasBeenSet)
   {
    payload.WithString("parameters", m_parameters);
+
+  }
+
+  if(m_resourceHasBeenSet)
+  {
+   payload.WithString("resource", m_resource);
+
+  }
+
+  if(m_subresourceHasBeenSet)
+  {
+   payload.WithString("subresource", m_subresource);
+
+  }
+
+  if(m_namespaceHasBeenSet)
+  {
+   payload.WithString("namespace", m_namespace);
+
+  }
+
+  if(m_resourceNameHasBeenSet)
+  {
+   payload.WithString("resourceName", m_resourceName);
 
   }
 

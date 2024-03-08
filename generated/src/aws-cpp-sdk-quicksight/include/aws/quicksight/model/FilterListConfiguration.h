@@ -8,6 +8,7 @@
 #include <aws/quicksight/model/CategoryFilterMatchOperator.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/quicksight/model/CategoryFilterSelectAllOptions.h>
+#include <aws/quicksight/model/FilterNullOption.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -159,6 +160,61 @@ namespace Model
      */
     inline FilterListConfiguration& WithSelectAllOptions(CategoryFilterSelectAllOptions&& value) { SetSelectAllOptions(std::move(value)); return *this;}
 
+
+    /**
+     * <p>This option determines how null values should be treated when filtering
+     * data.</p> <ul> <li> <p> <code>ALL_VALUES</code>: Include null values in filtered
+     * results.</p> </li> <li> <p> <code>NULLS_ONLY</code>: Only include null values in
+     * filtered results.</p> </li> <li> <p> <code>NON_NULLS_ONLY</code>: Exclude null
+     * values from filtered results.</p> </li> </ul>
+     */
+    inline const FilterNullOption& GetNullOption() const{ return m_nullOption; }
+
+    /**
+     * <p>This option determines how null values should be treated when filtering
+     * data.</p> <ul> <li> <p> <code>ALL_VALUES</code>: Include null values in filtered
+     * results.</p> </li> <li> <p> <code>NULLS_ONLY</code>: Only include null values in
+     * filtered results.</p> </li> <li> <p> <code>NON_NULLS_ONLY</code>: Exclude null
+     * values from filtered results.</p> </li> </ul>
+     */
+    inline bool NullOptionHasBeenSet() const { return m_nullOptionHasBeenSet; }
+
+    /**
+     * <p>This option determines how null values should be treated when filtering
+     * data.</p> <ul> <li> <p> <code>ALL_VALUES</code>: Include null values in filtered
+     * results.</p> </li> <li> <p> <code>NULLS_ONLY</code>: Only include null values in
+     * filtered results.</p> </li> <li> <p> <code>NON_NULLS_ONLY</code>: Exclude null
+     * values from filtered results.</p> </li> </ul>
+     */
+    inline void SetNullOption(const FilterNullOption& value) { m_nullOptionHasBeenSet = true; m_nullOption = value; }
+
+    /**
+     * <p>This option determines how null values should be treated when filtering
+     * data.</p> <ul> <li> <p> <code>ALL_VALUES</code>: Include null values in filtered
+     * results.</p> </li> <li> <p> <code>NULLS_ONLY</code>: Only include null values in
+     * filtered results.</p> </li> <li> <p> <code>NON_NULLS_ONLY</code>: Exclude null
+     * values from filtered results.</p> </li> </ul>
+     */
+    inline void SetNullOption(FilterNullOption&& value) { m_nullOptionHasBeenSet = true; m_nullOption = std::move(value); }
+
+    /**
+     * <p>This option determines how null values should be treated when filtering
+     * data.</p> <ul> <li> <p> <code>ALL_VALUES</code>: Include null values in filtered
+     * results.</p> </li> <li> <p> <code>NULLS_ONLY</code>: Only include null values in
+     * filtered results.</p> </li> <li> <p> <code>NON_NULLS_ONLY</code>: Exclude null
+     * values from filtered results.</p> </li> </ul>
+     */
+    inline FilterListConfiguration& WithNullOption(const FilterNullOption& value) { SetNullOption(value); return *this;}
+
+    /**
+     * <p>This option determines how null values should be treated when filtering
+     * data.</p> <ul> <li> <p> <code>ALL_VALUES</code>: Include null values in filtered
+     * results.</p> </li> <li> <p> <code>NULLS_ONLY</code>: Only include null values in
+     * filtered results.</p> </li> <li> <p> <code>NON_NULLS_ONLY</code>: Exclude null
+     * values from filtered results.</p> </li> </ul>
+     */
+    inline FilterListConfiguration& WithNullOption(FilterNullOption&& value) { SetNullOption(std::move(value)); return *this;}
+
   private:
 
     CategoryFilterMatchOperator m_matchOperator;
@@ -169,6 +225,9 @@ namespace Model
 
     CategoryFilterSelectAllOptions m_selectAllOptions;
     bool m_selectAllOptionsHasBeenSet = false;
+
+    FilterNullOption m_nullOption;
+    bool m_nullOptionHasBeenSet = false;
   };
 
 } // namespace Model

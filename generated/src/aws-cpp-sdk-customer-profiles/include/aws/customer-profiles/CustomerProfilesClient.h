@@ -30,8 +30,8 @@ namespace CustomerProfiles
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef CustomerProfilesClientConfiguration ClientConfigurationType;
       typedef CustomerProfilesEndpointProvider EndpointProviderType;
@@ -41,14 +41,14 @@ namespace CustomerProfiles
         * is not specified, it will be initialized to default values.
         */
         CustomerProfilesClient(const Aws::CustomerProfiles::CustomerProfilesClientConfiguration& clientConfiguration = Aws::CustomerProfiles::CustomerProfilesClientConfiguration(),
-                               std::shared_ptr<CustomerProfilesEndpointProviderBase> endpointProvider = Aws::MakeShared<CustomerProfilesEndpointProvider>(ALLOCATION_TAG));
+                               std::shared_ptr<CustomerProfilesEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         CustomerProfilesClient(const Aws::Auth::AWSCredentials& credentials,
-                               std::shared_ptr<CustomerProfilesEndpointProviderBase> endpointProvider = Aws::MakeShared<CustomerProfilesEndpointProvider>(ALLOCATION_TAG),
+                               std::shared_ptr<CustomerProfilesEndpointProviderBase> endpointProvider = nullptr,
                                const Aws::CustomerProfiles::CustomerProfilesClientConfiguration& clientConfiguration = Aws::CustomerProfiles::CustomerProfilesClientConfiguration());
 
        /**
@@ -56,7 +56,7 @@ namespace CustomerProfiles
         * the default http client factory will be used
         */
         CustomerProfilesClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                               std::shared_ptr<CustomerProfilesEndpointProviderBase> endpointProvider = Aws::MakeShared<CustomerProfilesEndpointProvider>(ALLOCATION_TAG),
+                               std::shared_ptr<CustomerProfilesEndpointProviderBase> endpointProvider = nullptr,
                                const Aws::CustomerProfiles::CustomerProfilesClientConfiguration& clientConfiguration = Aws::CustomerProfiles::CustomerProfilesClientConfiguration());
 
 
@@ -503,6 +503,32 @@ namespace CustomerProfiles
         void DeleteWorkflowAsync(const DeleteWorkflowRequestT& request, const DeleteWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CustomerProfilesClient::DeleteWorkflow, request, handler, context);
+        }
+
+        /**
+         * <p>The process of detecting profile object type mapping by using given
+         * objects.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DetectProfileObjectType">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DetectProfileObjectTypeOutcome DetectProfileObjectType(const Model::DetectProfileObjectTypeRequest& request) const;
+
+        /**
+         * A Callable wrapper for DetectProfileObjectType that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DetectProfileObjectTypeRequestT = Model::DetectProfileObjectTypeRequest>
+        Model::DetectProfileObjectTypeOutcomeCallable DetectProfileObjectTypeCallable(const DetectProfileObjectTypeRequestT& request) const
+        {
+            return SubmitCallable(&CustomerProfilesClient::DetectProfileObjectType, request);
+        }
+
+        /**
+         * An Async wrapper for DetectProfileObjectType that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DetectProfileObjectTypeRequestT = Model::DetectProfileObjectTypeRequest>
+        void DetectProfileObjectTypeAsync(const DetectProfileObjectTypeRequestT& request, const DetectProfileObjectTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CustomerProfilesClient::DetectProfileObjectType, request, handler, context);
         }
 
         /**

@@ -99,6 +99,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StackAttribute::NOT_SET:
+            return {};
           case StackAttribute::STORAGE_CONNECTORS:
             return "STORAGE_CONNECTORS";
           case StackAttribute::STORAGE_CONNECTOR_HOMEFOLDERS:

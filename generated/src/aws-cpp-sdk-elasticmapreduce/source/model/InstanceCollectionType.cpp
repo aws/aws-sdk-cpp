@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InstanceCollectionType::NOT_SET:
+            return {};
           case InstanceCollectionType::INSTANCE_FLEET:
             return "INSTANCE_FLEET";
           case InstanceCollectionType::INSTANCE_GROUP:

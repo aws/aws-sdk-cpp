@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TlogAccessMode::NOT_SET:
+            return {};
           case TlogAccessMode::BackupOnly:
             return "BackupOnly";
           case TlogAccessMode::PreferBackup:

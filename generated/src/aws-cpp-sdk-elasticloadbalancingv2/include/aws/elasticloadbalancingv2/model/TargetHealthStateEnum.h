@@ -19,6 +19,7 @@ namespace Model
     initial,
     healthy,
     unhealthy,
+    unhealthy_draining,
     unused,
     draining,
     unavailable

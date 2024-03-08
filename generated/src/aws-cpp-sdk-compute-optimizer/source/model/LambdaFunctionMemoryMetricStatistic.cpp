@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LambdaFunctionMemoryMetricStatistic::NOT_SET:
+            return {};
           case LambdaFunctionMemoryMetricStatistic::LowerBound:
             return "LowerBound";
           case LambdaFunctionMemoryMetricStatistic::UpperBound:

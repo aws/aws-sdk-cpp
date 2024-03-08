@@ -47,8 +47,8 @@ namespace Budgets
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef BudgetsClientConfiguration ClientConfigurationType;
       typedef BudgetsEndpointProvider EndpointProviderType;
@@ -58,14 +58,14 @@ namespace Budgets
         * is not specified, it will be initialized to default values.
         */
         BudgetsClient(const Aws::Budgets::BudgetsClientConfiguration& clientConfiguration = Aws::Budgets::BudgetsClientConfiguration(),
-                      std::shared_ptr<BudgetsEndpointProviderBase> endpointProvider = Aws::MakeShared<BudgetsEndpointProvider>(ALLOCATION_TAG));
+                      std::shared_ptr<BudgetsEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         BudgetsClient(const Aws::Auth::AWSCredentials& credentials,
-                      std::shared_ptr<BudgetsEndpointProviderBase> endpointProvider = Aws::MakeShared<BudgetsEndpointProvider>(ALLOCATION_TAG),
+                      std::shared_ptr<BudgetsEndpointProviderBase> endpointProvider = nullptr,
                       const Aws::Budgets::BudgetsClientConfiguration& clientConfiguration = Aws::Budgets::BudgetsClientConfiguration());
 
        /**
@@ -73,7 +73,7 @@ namespace Budgets
         * the default http client factory will be used
         */
         BudgetsClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                      std::shared_ptr<BudgetsEndpointProviderBase> endpointProvider = Aws::MakeShared<BudgetsEndpointProvider>(ALLOCATION_TAG),
+                      std::shared_ptr<BudgetsEndpointProviderBase> endpointProvider = nullptr,
                       const Aws::Budgets::BudgetsClientConfiguration& clientConfiguration = Aws::Budgets::BudgetsClientConfiguration());
 
 

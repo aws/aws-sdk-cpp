@@ -25,8 +25,6 @@ UserPoolType::UserPoolType() :
     m_deletionProtection(DeletionProtectionType::NOT_SET),
     m_deletionProtectionHasBeenSet(false),
     m_lambdaConfigHasBeenSet(false),
-    m_status(StatusType::NOT_SET),
-    m_statusHasBeenSet(false),
     m_lastModifiedDateHasBeenSet(false),
     m_creationDateHasBeenSet(false),
     m_schemaAttributesHasBeenSet(false),
@@ -66,8 +64,6 @@ UserPoolType::UserPoolType(JsonView jsonValue) :
     m_deletionProtection(DeletionProtectionType::NOT_SET),
     m_deletionProtectionHasBeenSet(false),
     m_lambdaConfigHasBeenSet(false),
-    m_status(StatusType::NOT_SET),
-    m_statusHasBeenSet(false),
     m_lastModifiedDateHasBeenSet(false),
     m_creationDateHasBeenSet(false),
     m_schemaAttributesHasBeenSet(false),
@@ -136,13 +132,6 @@ UserPoolType& UserPoolType::operator =(JsonView jsonValue)
     m_lambdaConfig = jsonValue.GetObject("LambdaConfig");
 
     m_lambdaConfigHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("Status"))
-  {
-    m_status = StatusTypeMapper::GetStatusTypeForName(jsonValue.GetString("Status"));
-
-    m_statusHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("LastModifiedDate"))
@@ -383,11 +372,6 @@ JsonValue UserPoolType::Jsonize() const
   {
    payload.WithObject("LambdaConfig", m_lambdaConfig.Jsonize());
 
-  }
-
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("Status", StatusTypeMapper::GetNameForStatusType(m_status));
   }
 
   if(m_lastModifiedDateHasBeenSet)

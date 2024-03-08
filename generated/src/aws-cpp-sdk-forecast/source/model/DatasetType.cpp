@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DatasetType::NOT_SET:
+            return {};
           case DatasetType::TARGET_TIME_SERIES:
             return "TARGET_TIME_SERIES";
           case DatasetType::RELATED_TIME_SERIES:

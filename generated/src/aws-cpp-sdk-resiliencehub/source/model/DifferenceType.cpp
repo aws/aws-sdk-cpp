@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DifferenceType::NOT_SET:
+            return {};
           case DifferenceType::NotEqual:
             return "NotEqual";
           default:

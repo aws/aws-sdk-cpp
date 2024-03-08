@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RenditionConfigurationRenditionSelection::NOT_SET:
+            return {};
           case RenditionConfigurationRenditionSelection::ALL:
             return "ALL";
           case RenditionConfigurationRenditionSelection::NONE:

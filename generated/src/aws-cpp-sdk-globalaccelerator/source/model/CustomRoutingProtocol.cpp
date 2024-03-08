@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CustomRoutingProtocol::NOT_SET:
+            return {};
           case CustomRoutingProtocol::TCP:
             return "TCP";
           case CustomRoutingProtocol::UDP:

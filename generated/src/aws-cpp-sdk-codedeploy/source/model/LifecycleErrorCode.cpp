@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LifecycleErrorCode::NOT_SET:
+            return {};
           case LifecycleErrorCode::Success:
             return "Success";
           case LifecycleErrorCode::ScriptMissing:

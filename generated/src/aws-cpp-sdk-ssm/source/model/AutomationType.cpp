@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AutomationType::NOT_SET:
+            return {};
           case AutomationType::CrossAccount:
             return "CrossAccount";
           case AutomationType::Local:

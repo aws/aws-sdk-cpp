@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/location/LocationService_EXPORTS.h>
 #include <aws/location/LocationServiceRequest.h>
+#include <aws/location/model/TrackingFilterGeometry.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -30,6 +31,37 @@ namespace Model
     inline virtual const char* GetServiceRequestName() const override { return "ListDevicePositions"; }
 
     AWS_LOCATIONSERVICE_API Aws::String SerializePayload() const override;
+
+
+    /**
+     * <p>The geometry used to filter device positions.</p>
+     */
+    inline const TrackingFilterGeometry& GetFilterGeometry() const{ return m_filterGeometry; }
+
+    /**
+     * <p>The geometry used to filter device positions.</p>
+     */
+    inline bool FilterGeometryHasBeenSet() const { return m_filterGeometryHasBeenSet; }
+
+    /**
+     * <p>The geometry used to filter device positions.</p>
+     */
+    inline void SetFilterGeometry(const TrackingFilterGeometry& value) { m_filterGeometryHasBeenSet = true; m_filterGeometry = value; }
+
+    /**
+     * <p>The geometry used to filter device positions.</p>
+     */
+    inline void SetFilterGeometry(TrackingFilterGeometry&& value) { m_filterGeometryHasBeenSet = true; m_filterGeometry = std::move(value); }
+
+    /**
+     * <p>The geometry used to filter device positions.</p>
+     */
+    inline ListDevicePositionsRequest& WithFilterGeometry(const TrackingFilterGeometry& value) { SetFilterGeometry(value); return *this;}
+
+    /**
+     * <p>The geometry used to filter device positions.</p>
+     */
+    inline ListDevicePositionsRequest& WithFilterGeometry(TrackingFilterGeometry&& value) { SetFilterGeometry(std::move(value)); return *this;}
 
 
     /**
@@ -155,6 +187,9 @@ namespace Model
     inline ListDevicePositionsRequest& WithTrackerName(const char* value) { SetTrackerName(value); return *this;}
 
   private:
+
+    TrackingFilterGeometry m_filterGeometry;
+    bool m_filterGeometryHasBeenSet = false;
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet = false;

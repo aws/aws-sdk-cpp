@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DuplicateRegistrationAction::NOT_SET:
+            return {};
           case DuplicateRegistrationAction::SKIP:
             return "SKIP";
           case DuplicateRegistrationAction::REGISTER_AS_NEW:

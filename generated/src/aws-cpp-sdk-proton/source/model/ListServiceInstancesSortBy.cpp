@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ListServiceInstancesSortBy::NOT_SET:
+            return {};
           case ListServiceInstancesSortBy::name:
             return "name";
           case ListServiceInstancesSortBy::deploymentStatus:

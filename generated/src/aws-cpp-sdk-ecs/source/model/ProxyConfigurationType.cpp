@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ProxyConfigurationType::NOT_SET:
+            return {};
           case ProxyConfigurationType::APPMESH:
             return "APPMESH";
           default:

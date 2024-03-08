@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DvbSubSubtitleFallbackFont::NOT_SET:
+            return {};
           case DvbSubSubtitleFallbackFont::BEST_MATCH:
             return "BEST_MATCH";
           case DvbSubSubtitleFallbackFont::MONOSPACED_SANSSERIF:

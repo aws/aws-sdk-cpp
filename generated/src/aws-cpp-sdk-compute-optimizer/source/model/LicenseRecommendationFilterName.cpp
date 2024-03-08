@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LicenseRecommendationFilterName::NOT_SET:
+            return {};
           case LicenseRecommendationFilterName::Finding:
             return "Finding";
           case LicenseRecommendationFilterName::FindingReasonCode:

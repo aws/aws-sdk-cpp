@@ -24,7 +24,9 @@ namespace Model
     BufferSizeInMBs,
     BufferIntervalInSeconds,
     SubRecordType,
-    Delimiter
+    Delimiter,
+    CompressionFormat,
+    DataMessageExtraction
   };
 
 namespace ProcessorParameterNameMapper

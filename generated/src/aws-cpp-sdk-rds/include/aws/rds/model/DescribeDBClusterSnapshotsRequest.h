@@ -568,40 +568,40 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates whether to include shared manual DB cluster snapshots
-     * from other Amazon Web Services accounts that this Amazon Web Services account
-     * has been given permission to copy or restore. By default, these snapshots are
-     * not included.</p> <p>You can give an Amazon Web Services account permission to
+     * <p>Specifies whether to include shared manual DB cluster snapshots from other
+     * Amazon Web Services accounts that this Amazon Web Services account has been
+     * given permission to copy or restore. By default, these snapshots are not
+     * included.</p> <p>You can give an Amazon Web Services account permission to
      * restore a manual DB cluster snapshot from another Amazon Web Services account by
      * the <code>ModifyDBClusterSnapshotAttribute</code> API action.</p>
      */
     inline bool GetIncludeShared() const{ return m_includeShared; }
 
     /**
-     * <p>A value that indicates whether to include shared manual DB cluster snapshots
-     * from other Amazon Web Services accounts that this Amazon Web Services account
-     * has been given permission to copy or restore. By default, these snapshots are
-     * not included.</p> <p>You can give an Amazon Web Services account permission to
+     * <p>Specifies whether to include shared manual DB cluster snapshots from other
+     * Amazon Web Services accounts that this Amazon Web Services account has been
+     * given permission to copy or restore. By default, these snapshots are not
+     * included.</p> <p>You can give an Amazon Web Services account permission to
      * restore a manual DB cluster snapshot from another Amazon Web Services account by
      * the <code>ModifyDBClusterSnapshotAttribute</code> API action.</p>
      */
     inline bool IncludeSharedHasBeenSet() const { return m_includeSharedHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether to include shared manual DB cluster snapshots
-     * from other Amazon Web Services accounts that this Amazon Web Services account
-     * has been given permission to copy or restore. By default, these snapshots are
-     * not included.</p> <p>You can give an Amazon Web Services account permission to
+     * <p>Specifies whether to include shared manual DB cluster snapshots from other
+     * Amazon Web Services accounts that this Amazon Web Services account has been
+     * given permission to copy or restore. By default, these snapshots are not
+     * included.</p> <p>You can give an Amazon Web Services account permission to
      * restore a manual DB cluster snapshot from another Amazon Web Services account by
      * the <code>ModifyDBClusterSnapshotAttribute</code> API action.</p>
      */
     inline void SetIncludeShared(bool value) { m_includeSharedHasBeenSet = true; m_includeShared = value; }
 
     /**
-     * <p>A value that indicates whether to include shared manual DB cluster snapshots
-     * from other Amazon Web Services accounts that this Amazon Web Services account
-     * has been given permission to copy or restore. By default, these snapshots are
-     * not included.</p> <p>You can give an Amazon Web Services account permission to
+     * <p>Specifies whether to include shared manual DB cluster snapshots from other
+     * Amazon Web Services accounts that this Amazon Web Services account has been
+     * given permission to copy or restore. By default, these snapshots are not
+     * included.</p> <p>You can give an Amazon Web Services account permission to
      * restore a manual DB cluster snapshot from another Amazon Web Services account by
      * the <code>ModifyDBClusterSnapshotAttribute</code> API action.</p>
      */
@@ -609,38 +609,38 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates whether to include manual DB cluster snapshots that
-     * are public and can be copied or restored by any Amazon Web Services account. By
-     * default, the public snapshots are not included.</p> <p>You can share a manual DB
-     * cluster snapshot as public by using the <a>ModifyDBClusterSnapshotAttribute</a>
-     * API action.</p>
+     * <p>Specifies whether to include manual DB cluster snapshots that are public and
+     * can be copied or restored by any Amazon Web Services account. By default, the
+     * public snapshots are not included.</p> <p>You can share a manual DB cluster
+     * snapshot as public by using the <a>ModifyDBClusterSnapshotAttribute</a> API
+     * action.</p>
      */
     inline bool GetIncludePublic() const{ return m_includePublic; }
 
     /**
-     * <p>A value that indicates whether to include manual DB cluster snapshots that
-     * are public and can be copied or restored by any Amazon Web Services account. By
-     * default, the public snapshots are not included.</p> <p>You can share a manual DB
-     * cluster snapshot as public by using the <a>ModifyDBClusterSnapshotAttribute</a>
-     * API action.</p>
+     * <p>Specifies whether to include manual DB cluster snapshots that are public and
+     * can be copied or restored by any Amazon Web Services account. By default, the
+     * public snapshots are not included.</p> <p>You can share a manual DB cluster
+     * snapshot as public by using the <a>ModifyDBClusterSnapshotAttribute</a> API
+     * action.</p>
      */
     inline bool IncludePublicHasBeenSet() const { return m_includePublicHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether to include manual DB cluster snapshots that
-     * are public and can be copied or restored by any Amazon Web Services account. By
-     * default, the public snapshots are not included.</p> <p>You can share a manual DB
-     * cluster snapshot as public by using the <a>ModifyDBClusterSnapshotAttribute</a>
-     * API action.</p>
+     * <p>Specifies whether to include manual DB cluster snapshots that are public and
+     * can be copied or restored by any Amazon Web Services account. By default, the
+     * public snapshots are not included.</p> <p>You can share a manual DB cluster
+     * snapshot as public by using the <a>ModifyDBClusterSnapshotAttribute</a> API
+     * action.</p>
      */
     inline void SetIncludePublic(bool value) { m_includePublicHasBeenSet = true; m_includePublic = value; }
 
     /**
-     * <p>A value that indicates whether to include manual DB cluster snapshots that
-     * are public and can be copied or restored by any Amazon Web Services account. By
-     * default, the public snapshots are not included.</p> <p>You can share a manual DB
-     * cluster snapshot as public by using the <a>ModifyDBClusterSnapshotAttribute</a>
-     * API action.</p>
+     * <p>Specifies whether to include manual DB cluster snapshots that are public and
+     * can be copied or restored by any Amazon Web Services account. By default, the
+     * public snapshots are not included.</p> <p>You can share a manual DB cluster
+     * snapshot as public by using the <a>ModifyDBClusterSnapshotAttribute</a> API
+     * action.</p>
      */
     inline DescribeDBClusterSnapshotsRequest& WithIncludePublic(bool value) { SetIncludePublic(value); return *this;}
 

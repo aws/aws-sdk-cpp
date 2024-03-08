@@ -24,7 +24,8 @@ DeleteCustomDBEngineVersionResult::DeleteCustomDBEngineVersionResult() :
     m_supportsGlobalDatabases(false),
     m_supportsBabelfish(false),
     m_supportsCertificateRotationWithoutRestart(false),
-    m_supportsLocalWriteForwarding(false)
+    m_supportsLocalWriteForwarding(false),
+    m_supportsIntegrations(false)
 {
 }
 
@@ -35,7 +36,8 @@ DeleteCustomDBEngineVersionResult::DeleteCustomDBEngineVersionResult(const Aws::
     m_supportsGlobalDatabases(false),
     m_supportsBabelfish(false),
     m_supportsCertificateRotationWithoutRestart(false),
-    m_supportsLocalWriteForwarding(false)
+    m_supportsLocalWriteForwarding(false),
+    m_supportsIntegrations(false)
 {
   *this = result;
 }
@@ -265,6 +267,11 @@ DeleteCustomDBEngineVersionResult& DeleteCustomDBEngineVersionResult::operator =
     if(!supportsLocalWriteForwardingNode.IsNull())
     {
       m_supportsLocalWriteForwarding = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsLocalWriteForwardingNode.GetText()).c_str()).c_str());
+    }
+    XmlNode supportsIntegrationsNode = resultNode.FirstChild("SupportsIntegrations");
+    if(!supportsIntegrationsNode.IsNull())
+    {
+      m_supportsIntegrations = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportsIntegrationsNode.GetText()).c_str()).c_str());
     }
   }
 

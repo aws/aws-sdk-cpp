@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case WorkspaceImageIngestionProcess::NOT_SET:
+            return {};
           case WorkspaceImageIngestionProcess::BYOL_REGULAR:
             return "BYOL_REGULAR";
           case WorkspaceImageIngestionProcess::BYOL_GRAPHICS:

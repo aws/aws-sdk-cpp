@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VnfOperationalState::NOT_SET:
+            return {};
           case VnfOperationalState::STARTED:
             return "STARTED";
           case VnfOperationalState::STOPPED:

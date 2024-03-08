@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case M2tsAudioBufferModel::NOT_SET:
+            return {};
           case M2tsAudioBufferModel::DVB:
             return "DVB";
           case M2tsAudioBufferModel::ATSC:

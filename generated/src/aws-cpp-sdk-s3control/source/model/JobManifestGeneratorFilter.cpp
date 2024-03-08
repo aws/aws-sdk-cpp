@@ -25,7 +25,13 @@ JobManifestGeneratorFilter::JobManifestGeneratorFilter() :
     m_eligibleForReplicationHasBeenSet(false),
     m_createdAfterHasBeenSet(false),
     m_createdBeforeHasBeenSet(false),
-    m_objectReplicationStatusesHasBeenSet(false)
+    m_objectReplicationStatusesHasBeenSet(false),
+    m_keyNameConstraintHasBeenSet(false),
+    m_objectSizeGreaterThanBytes(0),
+    m_objectSizeGreaterThanBytesHasBeenSet(false),
+    m_objectSizeLessThanBytes(0),
+    m_objectSizeLessThanBytesHasBeenSet(false),
+    m_matchAnyStorageClassHasBeenSet(false)
 {
 }
 
@@ -34,7 +40,13 @@ JobManifestGeneratorFilter::JobManifestGeneratorFilter(const XmlNode& xmlNode) :
     m_eligibleForReplicationHasBeenSet(false),
     m_createdAfterHasBeenSet(false),
     m_createdBeforeHasBeenSet(false),
-    m_objectReplicationStatusesHasBeenSet(false)
+    m_objectReplicationStatusesHasBeenSet(false),
+    m_keyNameConstraintHasBeenSet(false),
+    m_objectSizeGreaterThanBytes(0),
+    m_objectSizeGreaterThanBytesHasBeenSet(false),
+    m_objectSizeLessThanBytes(0),
+    m_objectSizeLessThanBytesHasBeenSet(false),
+    m_matchAnyStorageClassHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -75,6 +87,36 @@ JobManifestGeneratorFilter& JobManifestGeneratorFilter::operator =(const XmlNode
 
       m_objectReplicationStatusesHasBeenSet = true;
     }
+    XmlNode keyNameConstraintNode = resultNode.FirstChild("KeyNameConstraint");
+    if(!keyNameConstraintNode.IsNull())
+    {
+      m_keyNameConstraint = keyNameConstraintNode;
+      m_keyNameConstraintHasBeenSet = true;
+    }
+    XmlNode objectSizeGreaterThanBytesNode = resultNode.FirstChild("ObjectSizeGreaterThanBytes");
+    if(!objectSizeGreaterThanBytesNode.IsNull())
+    {
+      m_objectSizeGreaterThanBytes = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(objectSizeGreaterThanBytesNode.GetText()).c_str()).c_str());
+      m_objectSizeGreaterThanBytesHasBeenSet = true;
+    }
+    XmlNode objectSizeLessThanBytesNode = resultNode.FirstChild("ObjectSizeLessThanBytes");
+    if(!objectSizeLessThanBytesNode.IsNull())
+    {
+      m_objectSizeLessThanBytes = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(objectSizeLessThanBytesNode.GetText()).c_str()).c_str());
+      m_objectSizeLessThanBytesHasBeenSet = true;
+    }
+    XmlNode matchAnyStorageClassNode = resultNode.FirstChild("MatchAnyStorageClass");
+    if(!matchAnyStorageClassNode.IsNull())
+    {
+      XmlNode matchAnyStorageClassMember = matchAnyStorageClassNode.FirstChild("member");
+      while(!matchAnyStorageClassMember.IsNull())
+      {
+        m_matchAnyStorageClass.push_back(S3StorageClassMapper::GetS3StorageClassForName(StringUtils::Trim(matchAnyStorageClassMember.GetText().c_str())));
+        matchAnyStorageClassMember = matchAnyStorageClassMember.NextNode("member");
+      }
+
+      m_matchAnyStorageClassHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -110,6 +152,38 @@ void JobManifestGeneratorFilter::AddToNode(XmlNode& parentNode) const
    {
      XmlNode objectReplicationStatusesNode = objectReplicationStatusesParentNode.CreateChildElement("ReplicationStatus");
      objectReplicationStatusesNode.SetText(ReplicationStatusMapper::GetNameForReplicationStatus(item));
+   }
+  }
+
+  if(m_keyNameConstraintHasBeenSet)
+  {
+   XmlNode keyNameConstraintNode = parentNode.CreateChildElement("KeyNameConstraint");
+   m_keyNameConstraint.AddToNode(keyNameConstraintNode);
+  }
+
+  if(m_objectSizeGreaterThanBytesHasBeenSet)
+  {
+   XmlNode objectSizeGreaterThanBytesNode = parentNode.CreateChildElement("ObjectSizeGreaterThanBytes");
+   ss << m_objectSizeGreaterThanBytes;
+   objectSizeGreaterThanBytesNode.SetText(ss.str());
+   ss.str("");
+  }
+
+  if(m_objectSizeLessThanBytesHasBeenSet)
+  {
+   XmlNode objectSizeLessThanBytesNode = parentNode.CreateChildElement("ObjectSizeLessThanBytes");
+   ss << m_objectSizeLessThanBytes;
+   objectSizeLessThanBytesNode.SetText(ss.str());
+   ss.str("");
+  }
+
+  if(m_matchAnyStorageClassHasBeenSet)
+  {
+   XmlNode matchAnyStorageClassParentNode = parentNode.CreateChildElement("MatchAnyStorageClass");
+   for(const auto& item : m_matchAnyStorageClass)
+   {
+     XmlNode matchAnyStorageClassNode = matchAnyStorageClassParentNode.CreateChildElement("S3StorageClass");
+     matchAnyStorageClassNode.SetText(S3StorageClassMapper::GetNameForS3StorageClass(item));
    }
   }
 

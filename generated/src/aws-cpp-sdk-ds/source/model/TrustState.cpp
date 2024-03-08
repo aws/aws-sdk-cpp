@@ -94,6 +94,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TrustState::NOT_SET:
+            return {};
           case TrustState::Creating:
             return "Creating";
           case TrustState::Created:

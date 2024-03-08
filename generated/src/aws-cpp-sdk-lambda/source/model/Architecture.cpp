@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Architecture::NOT_SET:
+            return {};
           case Architecture::x86_64:
             return "x86_64";
           case Architecture::arm64:

@@ -457,6 +457,61 @@ namespace Model
      */
     inline CreateDataSourceRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>When you create the data source, Amazon QuickSight adds the data source to
+     * these folders.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetFolderArns() const{ return m_folderArns; }
+
+    /**
+     * <p>When you create the data source, Amazon QuickSight adds the data source to
+     * these folders.</p>
+     */
+    inline bool FolderArnsHasBeenSet() const { return m_folderArnsHasBeenSet; }
+
+    /**
+     * <p>When you create the data source, Amazon QuickSight adds the data source to
+     * these folders.</p>
+     */
+    inline void SetFolderArns(const Aws::Vector<Aws::String>& value) { m_folderArnsHasBeenSet = true; m_folderArns = value; }
+
+    /**
+     * <p>When you create the data source, Amazon QuickSight adds the data source to
+     * these folders.</p>
+     */
+    inline void SetFolderArns(Aws::Vector<Aws::String>&& value) { m_folderArnsHasBeenSet = true; m_folderArns = std::move(value); }
+
+    /**
+     * <p>When you create the data source, Amazon QuickSight adds the data source to
+     * these folders.</p>
+     */
+    inline CreateDataSourceRequest& WithFolderArns(const Aws::Vector<Aws::String>& value) { SetFolderArns(value); return *this;}
+
+    /**
+     * <p>When you create the data source, Amazon QuickSight adds the data source to
+     * these folders.</p>
+     */
+    inline CreateDataSourceRequest& WithFolderArns(Aws::Vector<Aws::String>&& value) { SetFolderArns(std::move(value)); return *this;}
+
+    /**
+     * <p>When you create the data source, Amazon QuickSight adds the data source to
+     * these folders.</p>
+     */
+    inline CreateDataSourceRequest& AddFolderArns(const Aws::String& value) { m_folderArnsHasBeenSet = true; m_folderArns.push_back(value); return *this; }
+
+    /**
+     * <p>When you create the data source, Amazon QuickSight adds the data source to
+     * these folders.</p>
+     */
+    inline CreateDataSourceRequest& AddFolderArns(Aws::String&& value) { m_folderArnsHasBeenSet = true; m_folderArns.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>When you create the data source, Amazon QuickSight adds the data source to
+     * these folders.</p>
+     */
+    inline CreateDataSourceRequest& AddFolderArns(const char* value) { m_folderArnsHasBeenSet = true; m_folderArns.push_back(value); return *this; }
+
   private:
 
     Aws::String m_awsAccountId;
@@ -488,6 +543,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_folderArns;
+    bool m_folderArnsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -72,27 +72,32 @@ namespace Model
 
 
     /**
-     * <p>The resource type (e.g., <code>Instance</code> or <code>Disk</code>).</p>
+     * <p>The resource type of the automatic snapshot. The possible values are
+     * <code>Instance</code>, and <code>Disk</code>.</p>
      */
     inline const ResourceType& GetResourceType() const{ return m_resourceType; }
 
     /**
-     * <p>The resource type (e.g., <code>Instance</code> or <code>Disk</code>).</p>
+     * <p>The resource type of the automatic snapshot. The possible values are
+     * <code>Instance</code>, and <code>Disk</code>.</p>
      */
     inline void SetResourceType(const ResourceType& value) { m_resourceType = value; }
 
     /**
-     * <p>The resource type (e.g., <code>Instance</code> or <code>Disk</code>).</p>
+     * <p>The resource type of the automatic snapshot. The possible values are
+     * <code>Instance</code>, and <code>Disk</code>.</p>
      */
     inline void SetResourceType(ResourceType&& value) { m_resourceType = std::move(value); }
 
     /**
-     * <p>The resource type (e.g., <code>Instance</code> or <code>Disk</code>).</p>
+     * <p>The resource type of the automatic snapshot. The possible values are
+     * <code>Instance</code>, and <code>Disk</code>.</p>
      */
     inline GetAutoSnapshotsResult& WithResourceType(const ResourceType& value) { SetResourceType(value); return *this;}
 
     /**
-     * <p>The resource type (e.g., <code>Instance</code> or <code>Disk</code>).</p>
+     * <p>The resource type of the automatic snapshot. The possible values are
+     * <code>Instance</code>, and <code>Disk</code>.</p>
      */
     inline GetAutoSnapshotsResult& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
 

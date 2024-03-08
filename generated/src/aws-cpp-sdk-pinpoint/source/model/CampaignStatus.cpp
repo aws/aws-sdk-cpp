@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CampaignStatus::NOT_SET:
+            return {};
           case CampaignStatus::SCHEDULED:
             return "SCHEDULED";
           case CampaignStatus::EXECUTING:

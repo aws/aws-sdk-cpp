@@ -88,6 +88,15 @@ GetApplicationResult& GetApplicationResult::operator =(const Aws::AmazonWebServi
 
   }
 
+  if(jsonValue.ValueExists("applicationTag"))
+  {
+    Aws::Map<Aws::String, JsonView> applicationTagJsonMap = jsonValue.GetObject("applicationTag").GetAllObjects();
+    for(auto& applicationTagItem : applicationTagJsonMap)
+    {
+      m_applicationTag[applicationTagItem.first] = applicationTagItem.second.AsString();
+    }
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

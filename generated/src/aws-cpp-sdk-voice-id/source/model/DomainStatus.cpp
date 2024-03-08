@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DomainStatus::NOT_SET:
+            return {};
           case DomainStatus::ACTIVE:
             return "ACTIVE";
           case DomainStatus::PENDING:

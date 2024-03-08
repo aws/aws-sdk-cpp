@@ -172,6 +172,104 @@ namespace Model
 
 
     /**
+     * <p>The Amazon Resource Name (ARN) for the namespace's admin user credentials
+     * secret.</p>
+     */
+    inline const Aws::String& GetAdminPasswordSecretArn() const{ return m_adminPasswordSecretArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the namespace's admin user credentials
+     * secret.</p>
+     */
+    inline bool AdminPasswordSecretArnHasBeenSet() const { return m_adminPasswordSecretArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the namespace's admin user credentials
+     * secret.</p>
+     */
+    inline void SetAdminPasswordSecretArn(const Aws::String& value) { m_adminPasswordSecretArnHasBeenSet = true; m_adminPasswordSecretArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the namespace's admin user credentials
+     * secret.</p>
+     */
+    inline void SetAdminPasswordSecretArn(Aws::String&& value) { m_adminPasswordSecretArnHasBeenSet = true; m_adminPasswordSecretArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the namespace's admin user credentials
+     * secret.</p>
+     */
+    inline void SetAdminPasswordSecretArn(const char* value) { m_adminPasswordSecretArnHasBeenSet = true; m_adminPasswordSecretArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the namespace's admin user credentials
+     * secret.</p>
+     */
+    inline Snapshot& WithAdminPasswordSecretArn(const Aws::String& value) { SetAdminPasswordSecretArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the namespace's admin user credentials
+     * secret.</p>
+     */
+    inline Snapshot& WithAdminPasswordSecretArn(Aws::String&& value) { SetAdminPasswordSecretArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the namespace's admin user credentials
+     * secret.</p>
+     */
+    inline Snapshot& WithAdminPasswordSecretArn(const char* value) { SetAdminPasswordSecretArn(value); return *this;}
+
+
+    /**
+     * <p>The ID of the Key Management Service (KMS) key used to encrypt and store the
+     * namespace's admin credentials secret.</p>
+     */
+    inline const Aws::String& GetAdminPasswordSecretKmsKeyId() const{ return m_adminPasswordSecretKmsKeyId; }
+
+    /**
+     * <p>The ID of the Key Management Service (KMS) key used to encrypt and store the
+     * namespace's admin credentials secret.</p>
+     */
+    inline bool AdminPasswordSecretKmsKeyIdHasBeenSet() const { return m_adminPasswordSecretKmsKeyIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Key Management Service (KMS) key used to encrypt and store the
+     * namespace's admin credentials secret.</p>
+     */
+    inline void SetAdminPasswordSecretKmsKeyId(const Aws::String& value) { m_adminPasswordSecretKmsKeyIdHasBeenSet = true; m_adminPasswordSecretKmsKeyId = value; }
+
+    /**
+     * <p>The ID of the Key Management Service (KMS) key used to encrypt and store the
+     * namespace's admin credentials secret.</p>
+     */
+    inline void SetAdminPasswordSecretKmsKeyId(Aws::String&& value) { m_adminPasswordSecretKmsKeyIdHasBeenSet = true; m_adminPasswordSecretKmsKeyId = std::move(value); }
+
+    /**
+     * <p>The ID of the Key Management Service (KMS) key used to encrypt and store the
+     * namespace's admin credentials secret.</p>
+     */
+    inline void SetAdminPasswordSecretKmsKeyId(const char* value) { m_adminPasswordSecretKmsKeyIdHasBeenSet = true; m_adminPasswordSecretKmsKeyId.assign(value); }
+
+    /**
+     * <p>The ID of the Key Management Service (KMS) key used to encrypt and store the
+     * namespace's admin credentials secret.</p>
+     */
+    inline Snapshot& WithAdminPasswordSecretKmsKeyId(const Aws::String& value) { SetAdminPasswordSecretKmsKeyId(value); return *this;}
+
+    /**
+     * <p>The ID of the Key Management Service (KMS) key used to encrypt and store the
+     * namespace's admin credentials secret.</p>
+     */
+    inline Snapshot& WithAdminPasswordSecretKmsKeyId(Aws::String&& value) { SetAdminPasswordSecretKmsKeyId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the Key Management Service (KMS) key used to encrypt and store the
+     * namespace's admin credentials secret.</p>
+     */
+    inline Snapshot& WithAdminPasswordSecretKmsKeyId(const char* value) { SetAdminPasswordSecretKmsKeyId(value); return *this;}
+
+
+    /**
      * <p>The username of the database within a snapshot.</p>
      */
     inline const Aws::String& GetAdminUsername() const{ return m_adminUsername; }
@@ -719,6 +817,12 @@ namespace Model
 
     double m_actualIncrementalBackupSizeInMegaBytes;
     bool m_actualIncrementalBackupSizeInMegaBytesHasBeenSet = false;
+
+    Aws::String m_adminPasswordSecretArn;
+    bool m_adminPasswordSecretArnHasBeenSet = false;
+
+    Aws::String m_adminPasswordSecretKmsKeyId;
+    bool m_adminPasswordSecretKmsKeyIdHasBeenSet = false;
 
     Aws::String m_adminUsername;
     bool m_adminUsernameHasBeenSet = false;

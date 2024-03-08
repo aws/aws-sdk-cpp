@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StackDriftDetectionStatus::NOT_SET:
+            return {};
           case StackDriftDetectionStatus::DETECTION_IN_PROGRESS:
             return "DETECTION_IN_PROGRESS";
           case StackDriftDetectionStatus::DETECTION_FAILED:

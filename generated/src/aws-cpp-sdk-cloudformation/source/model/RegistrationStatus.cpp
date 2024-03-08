@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RegistrationStatus::NOT_SET:
+            return {};
           case RegistrationStatus::COMPLETE:
             return "COMPLETE";
           case RegistrationStatus::IN_PROGRESS:

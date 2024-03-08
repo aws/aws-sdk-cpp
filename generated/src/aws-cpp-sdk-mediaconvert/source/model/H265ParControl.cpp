@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case H265ParControl::NOT_SET:
+            return {};
           case H265ParControl::INITIALIZE_FROM_SOURCE:
             return "INITIALIZE_FROM_SOURCE";
           case H265ParControl::SPECIFIED:

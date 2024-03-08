@@ -26,7 +26,7 @@ namespace PrometheusService
 namespace Model
 {
   /**
-   * <p>Represents the output of a CreateAlertManagerDefinition
+   * <p>Represents the output of a <code>CreateAlertManagerDefinition</code>
    * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/CreateAlertManagerDefinitionResponse">AWS
    * API Reference</a></p>
@@ -40,27 +40,32 @@ namespace Model
 
 
     /**
-     * <p>The status of alert manager definition.</p>
+     * <p>A structure that displays the current status of the alert manager
+     * definition.</p>
      */
     inline const AlertManagerDefinitionStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of alert manager definition.</p>
+     * <p>A structure that displays the current status of the alert manager
+     * definition.</p>
      */
     inline void SetStatus(const AlertManagerDefinitionStatus& value) { m_status = value; }
 
     /**
-     * <p>The status of alert manager definition.</p>
+     * <p>A structure that displays the current status of the alert manager
+     * definition.</p>
      */
     inline void SetStatus(AlertManagerDefinitionStatus&& value) { m_status = std::move(value); }
 
     /**
-     * <p>The status of alert manager definition.</p>
+     * <p>A structure that displays the current status of the alert manager
+     * definition.</p>
      */
     inline CreateAlertManagerDefinitionResult& WithStatus(const AlertManagerDefinitionStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of alert manager definition.</p>
+     * <p>A structure that displays the current status of the alert manager
+     * definition.</p>
      */
     inline CreateAlertManagerDefinitionResult& WithStatus(AlertManagerDefinitionStatus&& value) { SetStatus(std::move(value)); return *this;}
 

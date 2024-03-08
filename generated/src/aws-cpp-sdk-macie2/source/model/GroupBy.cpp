@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case GroupBy::NOT_SET:
+            return {};
           case GroupBy::resourcesAffected_s3Bucket_name:
             return "resourcesAffected.s3Bucket.name";
           case GroupBy::type:

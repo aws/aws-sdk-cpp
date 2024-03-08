@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReportPackagingType::NOT_SET:
+            return {};
           case ReportPackagingType::ZIP:
             return "ZIP";
           case ReportPackagingType::NONE:

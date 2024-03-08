@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ScalingType::NOT_SET:
+            return {};
           case ScalingType::UNIFORM_SCALING:
             return "UNIFORM_SCALING";
           default:

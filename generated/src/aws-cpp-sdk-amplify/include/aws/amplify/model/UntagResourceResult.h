@@ -25,7 +25,7 @@ namespace Amplify
 namespace Model
 {
   /**
-   * <p> The response for the untag resource request. </p><p><h3>See Also:</h3>   <a
+   * <p>The response for the untag resource request. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/UntagResourceResponse">AWS
    * API Reference</a></p>
    */

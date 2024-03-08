@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FilterName::NOT_SET:
+            return {};
           case FilterName::file_system_id:
             return "file-system-id";
           case FilterName::backup_type:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ComputeType::NOT_SET:
+            return {};
           case ComputeType::BUILD_GENERAL1_SMALL:
             return "BUILD_GENERAL1_SMALL";
           case ComputeType::BUILD_GENERAL1_MEDIUM:

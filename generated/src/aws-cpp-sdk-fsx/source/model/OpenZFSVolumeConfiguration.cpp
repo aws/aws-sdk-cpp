@@ -40,7 +40,13 @@ OpenZFSVolumeConfiguration::OpenZFSVolumeConfiguration() :
     m_deleteIntermediateSnaphots(false),
     m_deleteIntermediateSnaphotsHasBeenSet(false),
     m_deleteClonedVolumes(false),
-    m_deleteClonedVolumesHasBeenSet(false)
+    m_deleteClonedVolumesHasBeenSet(false),
+    m_deleteIntermediateData(false),
+    m_deleteIntermediateDataHasBeenSet(false),
+    m_sourceSnapshotARNHasBeenSet(false),
+    m_destinationSnapshotHasBeenSet(false),
+    m_copyStrategy(OpenZFSCopyStrategy::NOT_SET),
+    m_copyStrategyHasBeenSet(false)
 {
 }
 
@@ -66,7 +72,13 @@ OpenZFSVolumeConfiguration::OpenZFSVolumeConfiguration(JsonView jsonValue) :
     m_deleteIntermediateSnaphots(false),
     m_deleteIntermediateSnaphotsHasBeenSet(false),
     m_deleteClonedVolumes(false),
-    m_deleteClonedVolumesHasBeenSet(false)
+    m_deleteClonedVolumesHasBeenSet(false),
+    m_deleteIntermediateData(false),
+    m_deleteIntermediateDataHasBeenSet(false),
+    m_sourceSnapshotARNHasBeenSet(false),
+    m_destinationSnapshotHasBeenSet(false),
+    m_copyStrategy(OpenZFSCopyStrategy::NOT_SET),
+    m_copyStrategyHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -177,6 +189,34 @@ OpenZFSVolumeConfiguration& OpenZFSVolumeConfiguration::operator =(JsonView json
     m_deleteClonedVolumesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DeleteIntermediateData"))
+  {
+    m_deleteIntermediateData = jsonValue.GetBool("DeleteIntermediateData");
+
+    m_deleteIntermediateDataHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SourceSnapshotARN"))
+  {
+    m_sourceSnapshotARN = jsonValue.GetString("SourceSnapshotARN");
+
+    m_sourceSnapshotARNHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DestinationSnapshot"))
+  {
+    m_destinationSnapshot = jsonValue.GetString("DestinationSnapshot");
+
+    m_destinationSnapshotHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CopyStrategy"))
+  {
+    m_copyStrategy = OpenZFSCopyStrategyMapper::GetOpenZFSCopyStrategyForName(jsonValue.GetString("CopyStrategy"));
+
+    m_copyStrategyHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -275,6 +315,29 @@ JsonValue OpenZFSVolumeConfiguration::Jsonize() const
   {
    payload.WithBool("DeleteClonedVolumes", m_deleteClonedVolumes);
 
+  }
+
+  if(m_deleteIntermediateDataHasBeenSet)
+  {
+   payload.WithBool("DeleteIntermediateData", m_deleteIntermediateData);
+
+  }
+
+  if(m_sourceSnapshotARNHasBeenSet)
+  {
+   payload.WithString("SourceSnapshotARN", m_sourceSnapshotARN);
+
+  }
+
+  if(m_destinationSnapshotHasBeenSet)
+  {
+   payload.WithString("DestinationSnapshot", m_destinationSnapshot);
+
+  }
+
+  if(m_copyStrategyHasBeenSet)
+  {
+   payload.WithString("CopyStrategy", OpenZFSCopyStrategyMapper::GetNameForOpenZFSCopyStrategy(m_copyStrategy));
   }
 
   return payload;

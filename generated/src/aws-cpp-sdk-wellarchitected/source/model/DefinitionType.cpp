@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DefinitionType::NOT_SET:
+            return {};
           case DefinitionType::WORKLOAD_METADATA:
             return "WORKLOAD_METADATA";
           case DefinitionType::APP_REGISTRY:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FlexMatchMode::NOT_SET:
+            return {};
           case FlexMatchMode::STANDALONE:
             return "STANDALONE";
           case FlexMatchMode::WITH_QUEUE:

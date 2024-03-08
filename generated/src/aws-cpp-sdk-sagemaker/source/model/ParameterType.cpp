@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ParameterType::NOT_SET:
+            return {};
           case ParameterType::Integer:
             return "Integer";
           case ParameterType::Continuous:

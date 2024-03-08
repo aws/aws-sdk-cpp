@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case M2tsEsRateInPes::NOT_SET:
+            return {};
           case M2tsEsRateInPes::EXCLUDE:
             return "EXCLUDE";
           case M2tsEsRateInPes::INCLUDE:

@@ -53,6 +53,13 @@ public:
     */
     void SetAccelerate(bool value);
     const ClientContextParameters::EndpointParameter& GetAccelerate() const;
+
+    /**
+    * Disables this client's usage of Session Auth for S3Express
+      buckets and reverts to using conventional SigV4 for those.
+    */
+    void SetDisableS3ExpressSessionAuth(bool value);
+    const ClientContextParameters::EndpointParameter& GetDisableS3ExpressSessionAuth() const;
 };
 
 class AWS_S3CRT_API S3CrtBuiltInParameters : public Aws::Endpoint::BuiltInParameters

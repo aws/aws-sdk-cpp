@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PatchComplianceDataState::NOT_SET:
+            return {};
           case PatchComplianceDataState::INSTALLED:
             return "INSTALLED";
           case PatchComplianceDataState::INSTALLED_OTHER:

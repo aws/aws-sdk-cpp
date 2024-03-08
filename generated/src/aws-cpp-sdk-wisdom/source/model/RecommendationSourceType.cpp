@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RecommendationSourceType::NOT_SET:
+            return {};
           case RecommendationSourceType::ISSUE_DETECTION:
             return "ISSUE_DETECTION";
           case RecommendationSourceType::RULE_EVALUATION:

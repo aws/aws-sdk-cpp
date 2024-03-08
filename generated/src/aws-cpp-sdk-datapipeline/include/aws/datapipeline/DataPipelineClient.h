@@ -39,8 +39,8 @@ namespace DataPipeline
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef DataPipelineClientConfiguration ClientConfigurationType;
       typedef DataPipelineEndpointProvider EndpointProviderType;
@@ -50,14 +50,14 @@ namespace DataPipeline
         * is not specified, it will be initialized to default values.
         */
         DataPipelineClient(const Aws::DataPipeline::DataPipelineClientConfiguration& clientConfiguration = Aws::DataPipeline::DataPipelineClientConfiguration(),
-                           std::shared_ptr<DataPipelineEndpointProviderBase> endpointProvider = Aws::MakeShared<DataPipelineEndpointProvider>(ALLOCATION_TAG));
+                           std::shared_ptr<DataPipelineEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         DataPipelineClient(const Aws::Auth::AWSCredentials& credentials,
-                           std::shared_ptr<DataPipelineEndpointProviderBase> endpointProvider = Aws::MakeShared<DataPipelineEndpointProvider>(ALLOCATION_TAG),
+                           std::shared_ptr<DataPipelineEndpointProviderBase> endpointProvider = nullptr,
                            const Aws::DataPipeline::DataPipelineClientConfiguration& clientConfiguration = Aws::DataPipeline::DataPipelineClientConfiguration());
 
        /**
@@ -65,7 +65,7 @@ namespace DataPipeline
         * the default http client factory will be used
         */
         DataPipelineClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                           std::shared_ptr<DataPipelineEndpointProviderBase> endpointProvider = Aws::MakeShared<DataPipelineEndpointProvider>(ALLOCATION_TAG),
+                           std::shared_ptr<DataPipelineEndpointProviderBase> endpointProvider = nullptr,
                            const Aws::DataPipeline::DataPipelineClientConfiguration& clientConfiguration = Aws::DataPipeline::DataPipelineClientConfiguration());
 
 

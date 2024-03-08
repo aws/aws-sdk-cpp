@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case S3BackupMode::NOT_SET:
+            return {};
           case S3BackupMode::Disabled:
             return "Disabled";
           case S3BackupMode::Enabled:

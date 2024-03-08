@@ -173,121 +173,145 @@ namespace Model
 
 
     /**
-     * <p>The URI for the S3 bucket where the prompt is stored.</p>
+     * <p>The URI for the S3 bucket where the prompt is stored. You can provide S3
+     * pre-signed URLs returned by the <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_GetPromptFile.html">GetPromptFile</a>
+     * API instead of providing S3 URIs.</p>
      */
     inline const Aws::String& GetS3Uri() const{ return m_s3Uri; }
 
     /**
-     * <p>The URI for the S3 bucket where the prompt is stored.</p>
+     * <p>The URI for the S3 bucket where the prompt is stored. You can provide S3
+     * pre-signed URLs returned by the <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_GetPromptFile.html">GetPromptFile</a>
+     * API instead of providing S3 URIs.</p>
      */
     inline bool S3UriHasBeenSet() const { return m_s3UriHasBeenSet; }
 
     /**
-     * <p>The URI for the S3 bucket where the prompt is stored.</p>
+     * <p>The URI for the S3 bucket where the prompt is stored. You can provide S3
+     * pre-signed URLs returned by the <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_GetPromptFile.html">GetPromptFile</a>
+     * API instead of providing S3 URIs.</p>
      */
     inline void SetS3Uri(const Aws::String& value) { m_s3UriHasBeenSet = true; m_s3Uri = value; }
 
     /**
-     * <p>The URI for the S3 bucket where the prompt is stored.</p>
+     * <p>The URI for the S3 bucket where the prompt is stored. You can provide S3
+     * pre-signed URLs returned by the <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_GetPromptFile.html">GetPromptFile</a>
+     * API instead of providing S3 URIs.</p>
      */
     inline void SetS3Uri(Aws::String&& value) { m_s3UriHasBeenSet = true; m_s3Uri = std::move(value); }
 
     /**
-     * <p>The URI for the S3 bucket where the prompt is stored.</p>
+     * <p>The URI for the S3 bucket where the prompt is stored. You can provide S3
+     * pre-signed URLs returned by the <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_GetPromptFile.html">GetPromptFile</a>
+     * API instead of providing S3 URIs.</p>
      */
     inline void SetS3Uri(const char* value) { m_s3UriHasBeenSet = true; m_s3Uri.assign(value); }
 
     /**
-     * <p>The URI for the S3 bucket where the prompt is stored.</p>
+     * <p>The URI for the S3 bucket where the prompt is stored. You can provide S3
+     * pre-signed URLs returned by the <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_GetPromptFile.html">GetPromptFile</a>
+     * API instead of providing S3 URIs.</p>
      */
     inline CreatePromptRequest& WithS3Uri(const Aws::String& value) { SetS3Uri(value); return *this;}
 
     /**
-     * <p>The URI for the S3 bucket where the prompt is stored.</p>
+     * <p>The URI for the S3 bucket where the prompt is stored. You can provide S3
+     * pre-signed URLs returned by the <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_GetPromptFile.html">GetPromptFile</a>
+     * API instead of providing S3 URIs.</p>
      */
     inline CreatePromptRequest& WithS3Uri(Aws::String&& value) { SetS3Uri(std::move(value)); return *this;}
 
     /**
-     * <p>The URI for the S3 bucket where the prompt is stored.</p>
+     * <p>The URI for the S3 bucket where the prompt is stored. You can provide S3
+     * pre-signed URLs returned by the <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_GetPromptFile.html">GetPromptFile</a>
+     * API instead of providing S3 URIs.</p>
      */
     inline CreatePromptRequest& WithS3Uri(const char* value) { SetS3Uri(value); return *this;}
 
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline CreatePromptRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline CreatePromptRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline CreatePromptRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline CreatePromptRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline CreatePromptRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline CreatePromptRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline CreatePromptRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline CreatePromptRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline CreatePromptRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 

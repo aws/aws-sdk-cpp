@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InterfacePermissionType::NOT_SET:
+            return {};
           case InterfacePermissionType::INSTANCE_ATTACH:
             return "INSTANCE-ATTACH";
           case InterfacePermissionType::EIP_ASSOCIATE:

@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ImageFailureCode::NOT_SET:
+            return {};
           case ImageFailureCode::InvalidImageDigest:
             return "InvalidImageDigest";
           case ImageFailureCode::InvalidImageTag:

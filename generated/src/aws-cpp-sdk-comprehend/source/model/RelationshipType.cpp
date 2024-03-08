@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RelationshipType::NOT_SET:
+            return {};
           case RelationshipType::CHILD:
             return "CHILD";
           default:

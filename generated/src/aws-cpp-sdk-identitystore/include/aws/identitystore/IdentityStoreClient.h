@@ -30,8 +30,8 @@ namespace IdentityStore
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef IdentityStoreClientConfiguration ClientConfigurationType;
       typedef IdentityStoreEndpointProvider EndpointProviderType;
@@ -41,14 +41,14 @@ namespace IdentityStore
         * is not specified, it will be initialized to default values.
         */
         IdentityStoreClient(const Aws::IdentityStore::IdentityStoreClientConfiguration& clientConfiguration = Aws::IdentityStore::IdentityStoreClientConfiguration(),
-                            std::shared_ptr<IdentityStoreEndpointProviderBase> endpointProvider = Aws::MakeShared<IdentityStoreEndpointProvider>(ALLOCATION_TAG));
+                            std::shared_ptr<IdentityStoreEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         IdentityStoreClient(const Aws::Auth::AWSCredentials& credentials,
-                            std::shared_ptr<IdentityStoreEndpointProviderBase> endpointProvider = Aws::MakeShared<IdentityStoreEndpointProvider>(ALLOCATION_TAG),
+                            std::shared_ptr<IdentityStoreEndpointProviderBase> endpointProvider = nullptr,
                             const Aws::IdentityStore::IdentityStoreClientConfiguration& clientConfiguration = Aws::IdentityStore::IdentityStoreClientConfiguration());
 
        /**
@@ -56,7 +56,7 @@ namespace IdentityStore
         * the default http client factory will be used
         */
         IdentityStoreClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                            std::shared_ptr<IdentityStoreEndpointProviderBase> endpointProvider = Aws::MakeShared<IdentityStoreEndpointProvider>(ALLOCATION_TAG),
+                            std::shared_ptr<IdentityStoreEndpointProviderBase> endpointProvider = nullptr,
                             const Aws::IdentityStore::IdentityStoreClientConfiguration& clientConfiguration = Aws::IdentityStore::IdentityStoreClientConfiguration());
 
 

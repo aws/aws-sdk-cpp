@@ -18,6 +18,7 @@
 /* End of generic header includes */
 
 /* Service model headers required in MarketplaceCatalogClient header */
+#include <aws/marketplace-catalog/model/BatchDescribeEntitiesResult.h>
 #include <aws/marketplace-catalog/model/CancelChangeSetResult.h>
 #include <aws/marketplace-catalog/model/DeleteResourcePolicyResult.h>
 #include <aws/marketplace-catalog/model/DescribeChangeSetResult.h>
@@ -70,6 +71,7 @@ namespace Aws
     namespace Model
     {
       /* Service model forward declarations required in MarketplaceCatalogClient header */
+      class BatchDescribeEntitiesRequest;
       class CancelChangeSetRequest;
       class DeleteResourcePolicyRequest;
       class DescribeChangeSetRequest;
@@ -85,6 +87,7 @@ namespace Aws
       /* End of service model forward declarations required in MarketplaceCatalogClient header */
 
       /* Service model Outcome class definitions */
+      typedef Aws::Utils::Outcome<BatchDescribeEntitiesResult, MarketplaceCatalogError> BatchDescribeEntitiesOutcome;
       typedef Aws::Utils::Outcome<CancelChangeSetResult, MarketplaceCatalogError> CancelChangeSetOutcome;
       typedef Aws::Utils::Outcome<DeleteResourcePolicyResult, MarketplaceCatalogError> DeleteResourcePolicyOutcome;
       typedef Aws::Utils::Outcome<DescribeChangeSetResult, MarketplaceCatalogError> DescribeChangeSetOutcome;
@@ -100,6 +103,7 @@ namespace Aws
       /* End of service model Outcome class definitions */
 
       /* Service model Outcome callable definitions */
+      typedef std::future<BatchDescribeEntitiesOutcome> BatchDescribeEntitiesOutcomeCallable;
       typedef std::future<CancelChangeSetOutcome> CancelChangeSetOutcomeCallable;
       typedef std::future<DeleteResourcePolicyOutcome> DeleteResourcePolicyOutcomeCallable;
       typedef std::future<DescribeChangeSetOutcome> DescribeChangeSetOutcomeCallable;
@@ -118,6 +122,7 @@ namespace Aws
     class MarketplaceCatalogClient;
 
     /* Service model async handlers definitions */
+    typedef std::function<void(const MarketplaceCatalogClient*, const Model::BatchDescribeEntitiesRequest&, const Model::BatchDescribeEntitiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchDescribeEntitiesResponseReceivedHandler;
     typedef std::function<void(const MarketplaceCatalogClient*, const Model::CancelChangeSetRequest&, const Model::CancelChangeSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelChangeSetResponseReceivedHandler;
     typedef std::function<void(const MarketplaceCatalogClient*, const Model::DeleteResourcePolicyRequest&, const Model::DeleteResourcePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteResourcePolicyResponseReceivedHandler;
     typedef std::function<void(const MarketplaceCatalogClient*, const Model::DescribeChangeSetRequest&, const Model::DescribeChangeSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeChangeSetResponseReceivedHandler;

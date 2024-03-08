@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LoadBalancerTlsCertificateDomainStatus::NOT_SET:
+            return {};
           case LoadBalancerTlsCertificateDomainStatus::PENDING_VALIDATION:
             return "PENDING_VALIDATION";
           case LoadBalancerTlsCertificateDomainStatus::FAILED:

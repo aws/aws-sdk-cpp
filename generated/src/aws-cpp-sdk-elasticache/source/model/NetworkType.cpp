@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NetworkType::NOT_SET:
+            return {};
           case NetworkType::ipv4:
             return "ipv4";
           case NetworkType::ipv6:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ModelPackageGroupSortBy::NOT_SET:
+            return {};
           case ModelPackageGroupSortBy::Name:
             return "Name";
           case ModelPackageGroupSortBy::CreationTime:

@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AttributeType::NOT_SET:
+            return {};
           case AttributeType::INCLUSIVE:
             return "INCLUSIVE";
           case AttributeType::EXCLUSIVE:

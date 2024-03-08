@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OtherCategories::NOT_SET:
+            return {};
           case OtherCategories::INCLUDE:
             return "INCLUDE";
           case OtherCategories::EXCLUDE:

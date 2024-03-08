@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReloadOptionValue::NOT_SET:
+            return {};
           case ReloadOptionValue::data_reload:
             return "data-reload";
           case ReloadOptionValue::validate_only:

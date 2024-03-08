@@ -19,7 +19,7 @@ namespace Model
 {
 
   /**
-   * <p> The request structure for the start job request. </p><p><h3>See Also:</h3>  
+   * <p>The request structure for the start job request. </p><p><h3>See Also:</h3>  
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/StartJobRequest">AWS
    * API Reference</a></p>
@@ -39,185 +39,185 @@ namespace Model
 
 
     /**
-     * <p> The unique ID for an Amplify app. </p>
+     * <p>The unique ID for an Amplify app. </p>
      */
     inline const Aws::String& GetAppId() const{ return m_appId; }
 
     /**
-     * <p> The unique ID for an Amplify app. </p>
+     * <p>The unique ID for an Amplify app. </p>
      */
     inline bool AppIdHasBeenSet() const { return m_appIdHasBeenSet; }
 
     /**
-     * <p> The unique ID for an Amplify app. </p>
+     * <p>The unique ID for an Amplify app. </p>
      */
     inline void SetAppId(const Aws::String& value) { m_appIdHasBeenSet = true; m_appId = value; }
 
     /**
-     * <p> The unique ID for an Amplify app. </p>
+     * <p>The unique ID for an Amplify app. </p>
      */
     inline void SetAppId(Aws::String&& value) { m_appIdHasBeenSet = true; m_appId = std::move(value); }
 
     /**
-     * <p> The unique ID for an Amplify app. </p>
+     * <p>The unique ID for an Amplify app. </p>
      */
     inline void SetAppId(const char* value) { m_appIdHasBeenSet = true; m_appId.assign(value); }
 
     /**
-     * <p> The unique ID for an Amplify app. </p>
+     * <p>The unique ID for an Amplify app. </p>
      */
     inline StartJobRequest& WithAppId(const Aws::String& value) { SetAppId(value); return *this;}
 
     /**
-     * <p> The unique ID for an Amplify app. </p>
+     * <p>The unique ID for an Amplify app. </p>
      */
     inline StartJobRequest& WithAppId(Aws::String&& value) { SetAppId(std::move(value)); return *this;}
 
     /**
-     * <p> The unique ID for an Amplify app. </p>
+     * <p>The unique ID for an Amplify app. </p>
      */
     inline StartJobRequest& WithAppId(const char* value) { SetAppId(value); return *this;}
 
 
     /**
-     * <p> The branch name for the job. </p>
+     * <p>The name of the branch to use for the job. </p>
      */
     inline const Aws::String& GetBranchName() const{ return m_branchName; }
 
     /**
-     * <p> The branch name for the job. </p>
+     * <p>The name of the branch to use for the job. </p>
      */
     inline bool BranchNameHasBeenSet() const { return m_branchNameHasBeenSet; }
 
     /**
-     * <p> The branch name for the job. </p>
+     * <p>The name of the branch to use for the job. </p>
      */
     inline void SetBranchName(const Aws::String& value) { m_branchNameHasBeenSet = true; m_branchName = value; }
 
     /**
-     * <p> The branch name for the job. </p>
+     * <p>The name of the branch to use for the job. </p>
      */
     inline void SetBranchName(Aws::String&& value) { m_branchNameHasBeenSet = true; m_branchName = std::move(value); }
 
     /**
-     * <p> The branch name for the job. </p>
+     * <p>The name of the branch to use for the job. </p>
      */
     inline void SetBranchName(const char* value) { m_branchNameHasBeenSet = true; m_branchName.assign(value); }
 
     /**
-     * <p> The branch name for the job. </p>
+     * <p>The name of the branch to use for the job. </p>
      */
     inline StartJobRequest& WithBranchName(const Aws::String& value) { SetBranchName(value); return *this;}
 
     /**
-     * <p> The branch name for the job. </p>
+     * <p>The name of the branch to use for the job. </p>
      */
     inline StartJobRequest& WithBranchName(Aws::String&& value) { SetBranchName(std::move(value)); return *this;}
 
     /**
-     * <p> The branch name for the job. </p>
+     * <p>The name of the branch to use for the job. </p>
      */
     inline StartJobRequest& WithBranchName(const char* value) { SetBranchName(value); return *this;}
 
 
     /**
-     * <p> The unique ID for an existing job. This is required if the value of
+     * <p>The unique ID for an existing job. This is required if the value of
      * <code>jobType</code> is <code>RETRY</code>. </p>
      */
     inline const Aws::String& GetJobId() const{ return m_jobId; }
 
     /**
-     * <p> The unique ID for an existing job. This is required if the value of
+     * <p>The unique ID for an existing job. This is required if the value of
      * <code>jobType</code> is <code>RETRY</code>. </p>
      */
     inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
 
     /**
-     * <p> The unique ID for an existing job. This is required if the value of
+     * <p>The unique ID for an existing job. This is required if the value of
      * <code>jobType</code> is <code>RETRY</code>. </p>
      */
     inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
 
     /**
-     * <p> The unique ID for an existing job. This is required if the value of
+     * <p>The unique ID for an existing job. This is required if the value of
      * <code>jobType</code> is <code>RETRY</code>. </p>
      */
     inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
 
     /**
-     * <p> The unique ID for an existing job. This is required if the value of
+     * <p>The unique ID for an existing job. This is required if the value of
      * <code>jobType</code> is <code>RETRY</code>. </p>
      */
     inline void SetJobId(const char* value) { m_jobIdHasBeenSet = true; m_jobId.assign(value); }
 
     /**
-     * <p> The unique ID for an existing job. This is required if the value of
+     * <p>The unique ID for an existing job. This is required if the value of
      * <code>jobType</code> is <code>RETRY</code>. </p>
      */
     inline StartJobRequest& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
 
     /**
-     * <p> The unique ID for an existing job. This is required if the value of
+     * <p>The unique ID for an existing job. This is required if the value of
      * <code>jobType</code> is <code>RETRY</code>. </p>
      */
     inline StartJobRequest& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
 
     /**
-     * <p> The unique ID for an existing job. This is required if the value of
+     * <p>The unique ID for an existing job. This is required if the value of
      * <code>jobType</code> is <code>RETRY</code>. </p>
      */
     inline StartJobRequest& WithJobId(const char* value) { SetJobId(value); return *this;}
 
 
     /**
-     * <p> Describes the type for the job. The job type <code>RELEASE</code> starts a
+     * <p>Describes the type for the job. The job type <code>RELEASE</code> starts a
      * new job with the latest change from the specified branch. This value is
-     * available only for apps that are connected to a repository. The job type
+     * available only for apps that are connected to a repository. </p> <p>The job type
      * <code>RETRY</code> retries an existing job. If the job type value is
      * <code>RETRY</code>, the <code>jobId</code> is also required. </p>
      */
     inline const JobType& GetJobType() const{ return m_jobType; }
 
     /**
-     * <p> Describes the type for the job. The job type <code>RELEASE</code> starts a
+     * <p>Describes the type for the job. The job type <code>RELEASE</code> starts a
      * new job with the latest change from the specified branch. This value is
-     * available only for apps that are connected to a repository. The job type
+     * available only for apps that are connected to a repository. </p> <p>The job type
      * <code>RETRY</code> retries an existing job. If the job type value is
      * <code>RETRY</code>, the <code>jobId</code> is also required. </p>
      */
     inline bool JobTypeHasBeenSet() const { return m_jobTypeHasBeenSet; }
 
     /**
-     * <p> Describes the type for the job. The job type <code>RELEASE</code> starts a
+     * <p>Describes the type for the job. The job type <code>RELEASE</code> starts a
      * new job with the latest change from the specified branch. This value is
-     * available only for apps that are connected to a repository. The job type
+     * available only for apps that are connected to a repository. </p> <p>The job type
      * <code>RETRY</code> retries an existing job. If the job type value is
      * <code>RETRY</code>, the <code>jobId</code> is also required. </p>
      */
     inline void SetJobType(const JobType& value) { m_jobTypeHasBeenSet = true; m_jobType = value; }
 
     /**
-     * <p> Describes the type for the job. The job type <code>RELEASE</code> starts a
+     * <p>Describes the type for the job. The job type <code>RELEASE</code> starts a
      * new job with the latest change from the specified branch. This value is
-     * available only for apps that are connected to a repository. The job type
+     * available only for apps that are connected to a repository. </p> <p>The job type
      * <code>RETRY</code> retries an existing job. If the job type value is
      * <code>RETRY</code>, the <code>jobId</code> is also required. </p>
      */
     inline void SetJobType(JobType&& value) { m_jobTypeHasBeenSet = true; m_jobType = std::move(value); }
 
     /**
-     * <p> Describes the type for the job. The job type <code>RELEASE</code> starts a
+     * <p>Describes the type for the job. The job type <code>RELEASE</code> starts a
      * new job with the latest change from the specified branch. This value is
-     * available only for apps that are connected to a repository. The job type
+     * available only for apps that are connected to a repository. </p> <p>The job type
      * <code>RETRY</code> retries an existing job. If the job type value is
      * <code>RETRY</code>, the <code>jobId</code> is also required. </p>
      */
     inline StartJobRequest& WithJobType(const JobType& value) { SetJobType(value); return *this;}
 
     /**
-     * <p> Describes the type for the job. The job type <code>RELEASE</code> starts a
+     * <p>Describes the type for the job. The job type <code>RELEASE</code> starts a
      * new job with the latest change from the specified branch. This value is
-     * available only for apps that are connected to a repository. The job type
+     * available only for apps that are connected to a repository. </p> <p>The job type
      * <code>RETRY</code> retries an existing job. If the job type value is
      * <code>RETRY</code>, the <code>jobId</code> is also required. </p>
      */
@@ -225,42 +225,42 @@ namespace Model
 
 
     /**
-     * <p> A descriptive reason for starting this job. </p>
+     * <p>A descriptive reason for starting the job.</p>
      */
     inline const Aws::String& GetJobReason() const{ return m_jobReason; }
 
     /**
-     * <p> A descriptive reason for starting this job. </p>
+     * <p>A descriptive reason for starting the job.</p>
      */
     inline bool JobReasonHasBeenSet() const { return m_jobReasonHasBeenSet; }
 
     /**
-     * <p> A descriptive reason for starting this job. </p>
+     * <p>A descriptive reason for starting the job.</p>
      */
     inline void SetJobReason(const Aws::String& value) { m_jobReasonHasBeenSet = true; m_jobReason = value; }
 
     /**
-     * <p> A descriptive reason for starting this job. </p>
+     * <p>A descriptive reason for starting the job.</p>
      */
     inline void SetJobReason(Aws::String&& value) { m_jobReasonHasBeenSet = true; m_jobReason = std::move(value); }
 
     /**
-     * <p> A descriptive reason for starting this job. </p>
+     * <p>A descriptive reason for starting the job.</p>
      */
     inline void SetJobReason(const char* value) { m_jobReasonHasBeenSet = true; m_jobReason.assign(value); }
 
     /**
-     * <p> A descriptive reason for starting this job. </p>
+     * <p>A descriptive reason for starting the job.</p>
      */
     inline StartJobRequest& WithJobReason(const Aws::String& value) { SetJobReason(value); return *this;}
 
     /**
-     * <p> A descriptive reason for starting this job. </p>
+     * <p>A descriptive reason for starting the job.</p>
      */
     inline StartJobRequest& WithJobReason(Aws::String&& value) { SetJobReason(std::move(value)); return *this;}
 
     /**
-     * <p> A descriptive reason for starting this job. </p>
+     * <p>A descriptive reason for starting the job.</p>
      */
     inline StartJobRequest& WithJobReason(const char* value) { SetJobReason(value); return *this;}
 

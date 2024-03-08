@@ -117,37 +117,44 @@ namespace Model
 
 
     /**
-     * <p>Upload ID after which listing began.</p>
+     * <p>Upload ID after which listing began.</p>  <p>This functionality is not
+     * supported for directory buckets.</p> 
      */
     inline const Aws::String& GetUploadIdMarker() const{ return m_uploadIdMarker; }
 
     /**
-     * <p>Upload ID after which listing began.</p>
+     * <p>Upload ID after which listing began.</p>  <p>This functionality is not
+     * supported for directory buckets.</p> 
      */
     inline void SetUploadIdMarker(const Aws::String& value) { m_uploadIdMarker = value; }
 
     /**
-     * <p>Upload ID after which listing began.</p>
+     * <p>Upload ID after which listing began.</p>  <p>This functionality is not
+     * supported for directory buckets.</p> 
      */
     inline void SetUploadIdMarker(Aws::String&& value) { m_uploadIdMarker = std::move(value); }
 
     /**
-     * <p>Upload ID after which listing began.</p>
+     * <p>Upload ID after which listing began.</p>  <p>This functionality is not
+     * supported for directory buckets.</p> 
      */
     inline void SetUploadIdMarker(const char* value) { m_uploadIdMarker.assign(value); }
 
     /**
-     * <p>Upload ID after which listing began.</p>
+     * <p>Upload ID after which listing began.</p>  <p>This functionality is not
+     * supported for directory buckets.</p> 
      */
     inline ListMultipartUploadsResult& WithUploadIdMarker(const Aws::String& value) { SetUploadIdMarker(value); return *this;}
 
     /**
-     * <p>Upload ID after which listing began.</p>
+     * <p>Upload ID after which listing began.</p>  <p>This functionality is not
+     * supported for directory buckets.</p> 
      */
     inline ListMultipartUploadsResult& WithUploadIdMarker(Aws::String&& value) { SetUploadIdMarker(std::move(value)); return *this;}
 
     /**
-     * <p>Upload ID after which listing began.</p>
+     * <p>Upload ID after which listing began.</p>  <p>This functionality is not
+     * supported for directory buckets.</p> 
      */
     inline ListMultipartUploadsResult& WithUploadIdMarker(const char* value) { SetUploadIdMarker(value); return *this;}
 
@@ -198,85 +205,113 @@ namespace Model
     /**
      * <p>When a prefix is provided in the request, this field contains the specified
      * prefix. The result contains only keys starting with the specified prefix.</p>
+     *  <p> <b>Directory buckets</b> - For directory buckets, only prefixes that
+     * end in a delimiter (<code>/</code>) are supported.</p> 
      */
     inline const Aws::String& GetPrefix() const{ return m_prefix; }
 
     /**
      * <p>When a prefix is provided in the request, this field contains the specified
      * prefix. The result contains only keys starting with the specified prefix.</p>
+     *  <p> <b>Directory buckets</b> - For directory buckets, only prefixes that
+     * end in a delimiter (<code>/</code>) are supported.</p> 
      */
     inline void SetPrefix(const Aws::String& value) { m_prefix = value; }
 
     /**
      * <p>When a prefix is provided in the request, this field contains the specified
      * prefix. The result contains only keys starting with the specified prefix.</p>
+     *  <p> <b>Directory buckets</b> - For directory buckets, only prefixes that
+     * end in a delimiter (<code>/</code>) are supported.</p> 
      */
     inline void SetPrefix(Aws::String&& value) { m_prefix = std::move(value); }
 
     /**
      * <p>When a prefix is provided in the request, this field contains the specified
      * prefix. The result contains only keys starting with the specified prefix.</p>
+     *  <p> <b>Directory buckets</b> - For directory buckets, only prefixes that
+     * end in a delimiter (<code>/</code>) are supported.</p> 
      */
     inline void SetPrefix(const char* value) { m_prefix.assign(value); }
 
     /**
      * <p>When a prefix is provided in the request, this field contains the specified
      * prefix. The result contains only keys starting with the specified prefix.</p>
+     *  <p> <b>Directory buckets</b> - For directory buckets, only prefixes that
+     * end in a delimiter (<code>/</code>) are supported.</p> 
      */
     inline ListMultipartUploadsResult& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
 
     /**
      * <p>When a prefix is provided in the request, this field contains the specified
      * prefix. The result contains only keys starting with the specified prefix.</p>
+     *  <p> <b>Directory buckets</b> - For directory buckets, only prefixes that
+     * end in a delimiter (<code>/</code>) are supported.</p> 
      */
     inline ListMultipartUploadsResult& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
 
     /**
      * <p>When a prefix is provided in the request, this field contains the specified
      * prefix. The result contains only keys starting with the specified prefix.</p>
+     *  <p> <b>Directory buckets</b> - For directory buckets, only prefixes that
+     * end in a delimiter (<code>/</code>) are supported.</p> 
      */
     inline ListMultipartUploadsResult& WithPrefix(const char* value) { SetPrefix(value); return *this;}
 
 
     /**
      * <p>Contains the delimiter you specified in the request. If you don't specify a
-     * delimiter in your request, this element is absent from the response.</p>
+     * delimiter in your request, this element is absent from the response.</p> 
+     * <p> <b>Directory buckets</b> - For directory buckets, <code>/</code> is the only
+     * supported delimiter.</p> 
      */
     inline const Aws::String& GetDelimiter() const{ return m_delimiter; }
 
     /**
      * <p>Contains the delimiter you specified in the request. If you don't specify a
-     * delimiter in your request, this element is absent from the response.</p>
+     * delimiter in your request, this element is absent from the response.</p> 
+     * <p> <b>Directory buckets</b> - For directory buckets, <code>/</code> is the only
+     * supported delimiter.</p> 
      */
     inline void SetDelimiter(const Aws::String& value) { m_delimiter = value; }
 
     /**
      * <p>Contains the delimiter you specified in the request. If you don't specify a
-     * delimiter in your request, this element is absent from the response.</p>
+     * delimiter in your request, this element is absent from the response.</p> 
+     * <p> <b>Directory buckets</b> - For directory buckets, <code>/</code> is the only
+     * supported delimiter.</p> 
      */
     inline void SetDelimiter(Aws::String&& value) { m_delimiter = std::move(value); }
 
     /**
      * <p>Contains the delimiter you specified in the request. If you don't specify a
-     * delimiter in your request, this element is absent from the response.</p>
+     * delimiter in your request, this element is absent from the response.</p> 
+     * <p> <b>Directory buckets</b> - For directory buckets, <code>/</code> is the only
+     * supported delimiter.</p> 
      */
     inline void SetDelimiter(const char* value) { m_delimiter.assign(value); }
 
     /**
      * <p>Contains the delimiter you specified in the request. If you don't specify a
-     * delimiter in your request, this element is absent from the response.</p>
+     * delimiter in your request, this element is absent from the response.</p> 
+     * <p> <b>Directory buckets</b> - For directory buckets, <code>/</code> is the only
+     * supported delimiter.</p> 
      */
     inline ListMultipartUploadsResult& WithDelimiter(const Aws::String& value) { SetDelimiter(value); return *this;}
 
     /**
      * <p>Contains the delimiter you specified in the request. If you don't specify a
-     * delimiter in your request, this element is absent from the response.</p>
+     * delimiter in your request, this element is absent from the response.</p> 
+     * <p> <b>Directory buckets</b> - For directory buckets, <code>/</code> is the only
+     * supported delimiter.</p> 
      */
     inline ListMultipartUploadsResult& WithDelimiter(Aws::String&& value) { SetDelimiter(std::move(value)); return *this;}
 
     /**
      * <p>Contains the delimiter you specified in the request. If you don't specify a
-     * delimiter in your request, this element is absent from the response.</p>
+     * delimiter in your request, this element is absent from the response.</p> 
+     * <p> <b>Directory buckets</b> - For directory buckets, <code>/</code> is the only
+     * supported delimiter.</p> 
      */
     inline ListMultipartUploadsResult& WithDelimiter(const char* value) { SetDelimiter(value); return *this;}
 
@@ -284,49 +319,56 @@ namespace Model
     /**
      * <p>When a list is truncated, this element specifies the value that should be
      * used for the <code>upload-id-marker</code> request parameter in a subsequent
-     * request.</p>
+     * request.</p>  <p>This functionality is not supported for directory
+     * buckets.</p> 
      */
     inline const Aws::String& GetNextUploadIdMarker() const{ return m_nextUploadIdMarker; }
 
     /**
      * <p>When a list is truncated, this element specifies the value that should be
      * used for the <code>upload-id-marker</code> request parameter in a subsequent
-     * request.</p>
+     * request.</p>  <p>This functionality is not supported for directory
+     * buckets.</p> 
      */
     inline void SetNextUploadIdMarker(const Aws::String& value) { m_nextUploadIdMarker = value; }
 
     /**
      * <p>When a list is truncated, this element specifies the value that should be
      * used for the <code>upload-id-marker</code> request parameter in a subsequent
-     * request.</p>
+     * request.</p>  <p>This functionality is not supported for directory
+     * buckets.</p> 
      */
     inline void SetNextUploadIdMarker(Aws::String&& value) { m_nextUploadIdMarker = std::move(value); }
 
     /**
      * <p>When a list is truncated, this element specifies the value that should be
      * used for the <code>upload-id-marker</code> request parameter in a subsequent
-     * request.</p>
+     * request.</p>  <p>This functionality is not supported for directory
+     * buckets.</p> 
      */
     inline void SetNextUploadIdMarker(const char* value) { m_nextUploadIdMarker.assign(value); }
 
     /**
      * <p>When a list is truncated, this element specifies the value that should be
      * used for the <code>upload-id-marker</code> request parameter in a subsequent
-     * request.</p>
+     * request.</p>  <p>This functionality is not supported for directory
+     * buckets.</p> 
      */
     inline ListMultipartUploadsResult& WithNextUploadIdMarker(const Aws::String& value) { SetNextUploadIdMarker(value); return *this;}
 
     /**
      * <p>When a list is truncated, this element specifies the value that should be
      * used for the <code>upload-id-marker</code> request parameter in a subsequent
-     * request.</p>
+     * request.</p>  <p>This functionality is not supported for directory
+     * buckets.</p> 
      */
     inline ListMultipartUploadsResult& WithNextUploadIdMarker(Aws::String&& value) { SetNextUploadIdMarker(std::move(value)); return *this;}
 
     /**
      * <p>When a list is truncated, this element specifies the value that should be
      * used for the <code>upload-id-marker</code> request parameter in a subsequent
-     * request.</p>
+     * request.</p>  <p>This functionality is not supported for directory
+     * buckets.</p> 
      */
     inline ListMultipartUploadsResult& WithNextUploadIdMarker(const char* value) { SetNextUploadIdMarker(value); return *this;}
 
@@ -422,7 +464,8 @@ namespace Model
      * <p>If you specify a delimiter in the request, then the result returns each
      * distinct key prefix containing the delimiter in a <code>CommonPrefixes</code>
      * element. The distinct key prefixes are returned in the <code>Prefix</code> child
-     * element.</p>
+     * element.</p>  <p> <b>Directory buckets</b> - For directory buckets, only
+     * prefixes that end in a delimiter (<code>/</code>) are supported.</p> 
      */
     inline const Aws::Vector<CommonPrefix>& GetCommonPrefixes() const{ return m_commonPrefixes; }
 
@@ -430,7 +473,8 @@ namespace Model
      * <p>If you specify a delimiter in the request, then the result returns each
      * distinct key prefix containing the delimiter in a <code>CommonPrefixes</code>
      * element. The distinct key prefixes are returned in the <code>Prefix</code> child
-     * element.</p>
+     * element.</p>  <p> <b>Directory buckets</b> - For directory buckets, only
+     * prefixes that end in a delimiter (<code>/</code>) are supported.</p> 
      */
     inline void SetCommonPrefixes(const Aws::Vector<CommonPrefix>& value) { m_commonPrefixes = value; }
 
@@ -438,7 +482,8 @@ namespace Model
      * <p>If you specify a delimiter in the request, then the result returns each
      * distinct key prefix containing the delimiter in a <code>CommonPrefixes</code>
      * element. The distinct key prefixes are returned in the <code>Prefix</code> child
-     * element.</p>
+     * element.</p>  <p> <b>Directory buckets</b> - For directory buckets, only
+     * prefixes that end in a delimiter (<code>/</code>) are supported.</p> 
      */
     inline void SetCommonPrefixes(Aws::Vector<CommonPrefix>&& value) { m_commonPrefixes = std::move(value); }
 
@@ -446,7 +491,8 @@ namespace Model
      * <p>If you specify a delimiter in the request, then the result returns each
      * distinct key prefix containing the delimiter in a <code>CommonPrefixes</code>
      * element. The distinct key prefixes are returned in the <code>Prefix</code> child
-     * element.</p>
+     * element.</p>  <p> <b>Directory buckets</b> - For directory buckets, only
+     * prefixes that end in a delimiter (<code>/</code>) are supported.</p> 
      */
     inline ListMultipartUploadsResult& WithCommonPrefixes(const Aws::Vector<CommonPrefix>& value) { SetCommonPrefixes(value); return *this;}
 
@@ -454,7 +500,8 @@ namespace Model
      * <p>If you specify a delimiter in the request, then the result returns each
      * distinct key prefix containing the delimiter in a <code>CommonPrefixes</code>
      * element. The distinct key prefixes are returned in the <code>Prefix</code> child
-     * element.</p>
+     * element.</p>  <p> <b>Directory buckets</b> - For directory buckets, only
+     * prefixes that end in a delimiter (<code>/</code>) are supported.</p> 
      */
     inline ListMultipartUploadsResult& WithCommonPrefixes(Aws::Vector<CommonPrefix>&& value) { SetCommonPrefixes(std::move(value)); return *this;}
 
@@ -462,7 +509,8 @@ namespace Model
      * <p>If you specify a delimiter in the request, then the result returns each
      * distinct key prefix containing the delimiter in a <code>CommonPrefixes</code>
      * element. The distinct key prefixes are returned in the <code>Prefix</code> child
-     * element.</p>
+     * element.</p>  <p> <b>Directory buckets</b> - For directory buckets, only
+     * prefixes that end in a delimiter (<code>/</code>) are supported.</p> 
      */
     inline ListMultipartUploadsResult& AddCommonPrefixes(const CommonPrefix& value) { m_commonPrefixes.push_back(value); return *this; }
 
@@ -470,7 +518,8 @@ namespace Model
      * <p>If you specify a delimiter in the request, then the result returns each
      * distinct key prefix containing the delimiter in a <code>CommonPrefixes</code>
      * element. The distinct key prefixes are returned in the <code>Prefix</code> child
-     * element.</p>
+     * element.</p>  <p> <b>Directory buckets</b> - For directory buckets, only
+     * prefixes that end in a delimiter (<code>/</code>) are supported.</p> 
      */
     inline ListMultipartUploadsResult& AddCommonPrefixes(CommonPrefix&& value) { m_commonPrefixes.push_back(std::move(value)); return *this; }
 

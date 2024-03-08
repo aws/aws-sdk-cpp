@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RuntimeAnalysisStatus::NOT_SET:
+            return {};
           case RuntimeAnalysisStatus::ANALYSIS_TO_BE_SCHEDULED:
             return "ANALYSIS_TO_BE_SCHEDULED";
           case RuntimeAnalysisStatus::ANALYSIS_STARTED:

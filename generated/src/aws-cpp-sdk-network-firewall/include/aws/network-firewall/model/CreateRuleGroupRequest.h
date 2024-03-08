@@ -607,6 +607,43 @@ namespace Model
      */
     inline CreateRuleGroupRequest& WithSourceMetadata(SourceMetadata&& value) { SetSourceMetadata(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Indicates whether you want Network Firewall to analyze the stateless rules in
+     * the rule group for rule behavior such as asymmetric routing. If set to
+     * <code>TRUE</code>, Network Firewall runs the analysis and then creates the rule
+     * group for you. To run the stateless rule group analyzer without creating the
+     * rule group, set <code>DryRun</code> to <code>TRUE</code>.</p>
+     */
+    inline bool GetAnalyzeRuleGroup() const{ return m_analyzeRuleGroup; }
+
+    /**
+     * <p>Indicates whether you want Network Firewall to analyze the stateless rules in
+     * the rule group for rule behavior such as asymmetric routing. If set to
+     * <code>TRUE</code>, Network Firewall runs the analysis and then creates the rule
+     * group for you. To run the stateless rule group analyzer without creating the
+     * rule group, set <code>DryRun</code> to <code>TRUE</code>.</p>
+     */
+    inline bool AnalyzeRuleGroupHasBeenSet() const { return m_analyzeRuleGroupHasBeenSet; }
+
+    /**
+     * <p>Indicates whether you want Network Firewall to analyze the stateless rules in
+     * the rule group for rule behavior such as asymmetric routing. If set to
+     * <code>TRUE</code>, Network Firewall runs the analysis and then creates the rule
+     * group for you. To run the stateless rule group analyzer without creating the
+     * rule group, set <code>DryRun</code> to <code>TRUE</code>.</p>
+     */
+    inline void SetAnalyzeRuleGroup(bool value) { m_analyzeRuleGroupHasBeenSet = true; m_analyzeRuleGroup = value; }
+
+    /**
+     * <p>Indicates whether you want Network Firewall to analyze the stateless rules in
+     * the rule group for rule behavior such as asymmetric routing. If set to
+     * <code>TRUE</code>, Network Firewall runs the analysis and then creates the rule
+     * group for you. To run the stateless rule group analyzer without creating the
+     * rule group, set <code>DryRun</code> to <code>TRUE</code>.</p>
+     */
+    inline CreateRuleGroupRequest& WithAnalyzeRuleGroup(bool value) { SetAnalyzeRuleGroup(value); return *this;}
+
   private:
 
     Aws::String m_ruleGroupName;
@@ -638,6 +675,9 @@ namespace Model
 
     SourceMetadata m_sourceMetadata;
     bool m_sourceMetadataHasBeenSet = false;
+
+    bool m_analyzeRuleGroup;
+    bool m_analyzeRuleGroupHasBeenSet = false;
   };
 
 } // namespace Model

@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AggregateType::NOT_SET:
+            return {};
           case AggregateType::AVERAGE:
             return "AVERAGE";
           case AggregateType::COUNT:

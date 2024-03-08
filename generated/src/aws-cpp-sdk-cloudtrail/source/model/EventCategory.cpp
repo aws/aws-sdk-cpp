@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EventCategory::NOT_SET:
+            return {};
           case EventCategory::insight:
             return "insight";
           default:

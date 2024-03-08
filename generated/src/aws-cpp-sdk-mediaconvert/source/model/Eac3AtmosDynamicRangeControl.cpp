@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Eac3AtmosDynamicRangeControl::NOT_SET:
+            return {};
           case Eac3AtmosDynamicRangeControl::SPECIFIED:
             return "SPECIFIED";
           case Eac3AtmosDynamicRangeControl::INITIALIZE_FROM_SOURCE:

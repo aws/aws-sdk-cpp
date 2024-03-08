@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PolicyTypeStatus::NOT_SET:
+            return {};
           case PolicyTypeStatus::ENABLED:
             return "ENABLED";
           case PolicyTypeStatus::PENDING_ENABLE:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case QueryResultFormat::NOT_SET:
+            return {};
           case QueryResultFormat::TABLE:
             return "TABLE";
           case QueryResultFormat::TEXT:

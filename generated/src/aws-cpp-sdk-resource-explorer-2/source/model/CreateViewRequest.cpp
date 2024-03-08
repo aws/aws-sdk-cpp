@@ -17,6 +17,7 @@ CreateViewRequest::CreateViewRequest() :
     m_clientTokenHasBeenSet(true),
     m_filtersHasBeenSet(false),
     m_includedPropertiesHasBeenSet(false),
+    m_scopeHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_viewNameHasBeenSet(false)
 {
@@ -46,6 +47,12 @@ Aws::String CreateViewRequest::SerializePayload() const
      includedPropertiesJsonList[includedPropertiesIndex].AsObject(m_includedProperties[includedPropertiesIndex].Jsonize());
    }
    payload.WithArray("IncludedProperties", std::move(includedPropertiesJsonList));
+
+  }
+
+  if(m_scopeHasBeenSet)
+  {
+   payload.WithString("Scope", m_scope);
 
   }
 

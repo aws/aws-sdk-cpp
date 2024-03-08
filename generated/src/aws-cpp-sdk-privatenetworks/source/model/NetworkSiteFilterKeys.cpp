@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NetworkSiteFilterKeys::NOT_SET:
+            return {};
           case NetworkSiteFilterKeys::STATUS:
             return "STATUS";
           default:

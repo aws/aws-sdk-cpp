@@ -11,6 +11,7 @@
 #include <aws/config/model/ResourceType.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/config/model/RecordingFrequency.h>
 #include <aws/config/model/Relationship.h>
 #include <utility>
 
@@ -127,111 +128,111 @@ namespace Model
 
 
     /**
-     * <p>The time when the configuration recording was initiated.</p>
+     * <p>The time when the recording of configuration changes was initiated for the
+     * resource.</p>
      */
     inline const Aws::Utils::DateTime& GetConfigurationItemCaptureTime() const{ return m_configurationItemCaptureTime; }
 
     /**
-     * <p>The time when the configuration recording was initiated.</p>
+     * <p>The time when the recording of configuration changes was initiated for the
+     * resource.</p>
      */
     inline bool ConfigurationItemCaptureTimeHasBeenSet() const { return m_configurationItemCaptureTimeHasBeenSet; }
 
     /**
-     * <p>The time when the configuration recording was initiated.</p>
+     * <p>The time when the recording of configuration changes was initiated for the
+     * resource.</p>
      */
     inline void SetConfigurationItemCaptureTime(const Aws::Utils::DateTime& value) { m_configurationItemCaptureTimeHasBeenSet = true; m_configurationItemCaptureTime = value; }
 
     /**
-     * <p>The time when the configuration recording was initiated.</p>
+     * <p>The time when the recording of configuration changes was initiated for the
+     * resource.</p>
      */
     inline void SetConfigurationItemCaptureTime(Aws::Utils::DateTime&& value) { m_configurationItemCaptureTimeHasBeenSet = true; m_configurationItemCaptureTime = std::move(value); }
 
     /**
-     * <p>The time when the configuration recording was initiated.</p>
+     * <p>The time when the recording of configuration changes was initiated for the
+     * resource.</p>
      */
     inline ConfigurationItem& WithConfigurationItemCaptureTime(const Aws::Utils::DateTime& value) { SetConfigurationItemCaptureTime(value); return *this;}
 
     /**
-     * <p>The time when the configuration recording was initiated.</p>
+     * <p>The time when the recording of configuration changes was initiated for the
+     * resource.</p>
      */
     inline ConfigurationItem& WithConfigurationItemCaptureTime(Aws::Utils::DateTime&& value) { SetConfigurationItemCaptureTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>The configuration item status. The valid values are:</p> <ul> <li> <p>OK –
+     * <p>The configuration item status. Valid values include:</p> <ul> <li> <p>OK –
      * The resource configuration has been updated</p> </li> <li> <p>ResourceDiscovered
      * – The resource was newly discovered</p> </li> <li> <p>ResourceNotRecorded – The
      * resource was discovered but its configuration was not recorded since the
-     * recorder excludes the recording of resources of this type</p> </li> <li>
-     * <p>ResourceDeleted – The resource was deleted</p> </li> <li>
-     * <p>ResourceDeletedNotRecorded – The resource was deleted but its configuration
-     * was not recorded since the recorder excludes the recording of resources of this
-     * type</p> </li> </ul>  <p>The CIs do not incur any cost.</p> 
+     * recorder doesn't record resources of this type</p> </li> <li> <p>ResourceDeleted
+     * – The resource was deleted</p> </li> <li> <p>ResourceDeletedNotRecorded – The
+     * resource was deleted but its configuration was not recorded since the recorder
+     * doesn't record resources of this type</p> </li> </ul>
      */
     inline const ConfigurationItemStatus& GetConfigurationItemStatus() const{ return m_configurationItemStatus; }
 
     /**
-     * <p>The configuration item status. The valid values are:</p> <ul> <li> <p>OK –
+     * <p>The configuration item status. Valid values include:</p> <ul> <li> <p>OK –
      * The resource configuration has been updated</p> </li> <li> <p>ResourceDiscovered
      * – The resource was newly discovered</p> </li> <li> <p>ResourceNotRecorded – The
      * resource was discovered but its configuration was not recorded since the
-     * recorder excludes the recording of resources of this type</p> </li> <li>
-     * <p>ResourceDeleted – The resource was deleted</p> </li> <li>
-     * <p>ResourceDeletedNotRecorded – The resource was deleted but its configuration
-     * was not recorded since the recorder excludes the recording of resources of this
-     * type</p> </li> </ul>  <p>The CIs do not incur any cost.</p> 
+     * recorder doesn't record resources of this type</p> </li> <li> <p>ResourceDeleted
+     * – The resource was deleted</p> </li> <li> <p>ResourceDeletedNotRecorded – The
+     * resource was deleted but its configuration was not recorded since the recorder
+     * doesn't record resources of this type</p> </li> </ul>
      */
     inline bool ConfigurationItemStatusHasBeenSet() const { return m_configurationItemStatusHasBeenSet; }
 
     /**
-     * <p>The configuration item status. The valid values are:</p> <ul> <li> <p>OK –
+     * <p>The configuration item status. Valid values include:</p> <ul> <li> <p>OK –
      * The resource configuration has been updated</p> </li> <li> <p>ResourceDiscovered
      * – The resource was newly discovered</p> </li> <li> <p>ResourceNotRecorded – The
      * resource was discovered but its configuration was not recorded since the
-     * recorder excludes the recording of resources of this type</p> </li> <li>
-     * <p>ResourceDeleted – The resource was deleted</p> </li> <li>
-     * <p>ResourceDeletedNotRecorded – The resource was deleted but its configuration
-     * was not recorded since the recorder excludes the recording of resources of this
-     * type</p> </li> </ul>  <p>The CIs do not incur any cost.</p> 
+     * recorder doesn't record resources of this type</p> </li> <li> <p>ResourceDeleted
+     * – The resource was deleted</p> </li> <li> <p>ResourceDeletedNotRecorded – The
+     * resource was deleted but its configuration was not recorded since the recorder
+     * doesn't record resources of this type</p> </li> </ul>
      */
     inline void SetConfigurationItemStatus(const ConfigurationItemStatus& value) { m_configurationItemStatusHasBeenSet = true; m_configurationItemStatus = value; }
 
     /**
-     * <p>The configuration item status. The valid values are:</p> <ul> <li> <p>OK –
+     * <p>The configuration item status. Valid values include:</p> <ul> <li> <p>OK –
      * The resource configuration has been updated</p> </li> <li> <p>ResourceDiscovered
      * – The resource was newly discovered</p> </li> <li> <p>ResourceNotRecorded – The
      * resource was discovered but its configuration was not recorded since the
-     * recorder excludes the recording of resources of this type</p> </li> <li>
-     * <p>ResourceDeleted – The resource was deleted</p> </li> <li>
-     * <p>ResourceDeletedNotRecorded – The resource was deleted but its configuration
-     * was not recorded since the recorder excludes the recording of resources of this
-     * type</p> </li> </ul>  <p>The CIs do not incur any cost.</p> 
+     * recorder doesn't record resources of this type</p> </li> <li> <p>ResourceDeleted
+     * – The resource was deleted</p> </li> <li> <p>ResourceDeletedNotRecorded – The
+     * resource was deleted but its configuration was not recorded since the recorder
+     * doesn't record resources of this type</p> </li> </ul>
      */
     inline void SetConfigurationItemStatus(ConfigurationItemStatus&& value) { m_configurationItemStatusHasBeenSet = true; m_configurationItemStatus = std::move(value); }
 
     /**
-     * <p>The configuration item status. The valid values are:</p> <ul> <li> <p>OK –
+     * <p>The configuration item status. Valid values include:</p> <ul> <li> <p>OK –
      * The resource configuration has been updated</p> </li> <li> <p>ResourceDiscovered
      * – The resource was newly discovered</p> </li> <li> <p>ResourceNotRecorded – The
      * resource was discovered but its configuration was not recorded since the
-     * recorder excludes the recording of resources of this type</p> </li> <li>
-     * <p>ResourceDeleted – The resource was deleted</p> </li> <li>
-     * <p>ResourceDeletedNotRecorded – The resource was deleted but its configuration
-     * was not recorded since the recorder excludes the recording of resources of this
-     * type</p> </li> </ul>  <p>The CIs do not incur any cost.</p> 
+     * recorder doesn't record resources of this type</p> </li> <li> <p>ResourceDeleted
+     * – The resource was deleted</p> </li> <li> <p>ResourceDeletedNotRecorded – The
+     * resource was deleted but its configuration was not recorded since the recorder
+     * doesn't record resources of this type</p> </li> </ul>
      */
     inline ConfigurationItem& WithConfigurationItemStatus(const ConfigurationItemStatus& value) { SetConfigurationItemStatus(value); return *this;}
 
     /**
-     * <p>The configuration item status. The valid values are:</p> <ul> <li> <p>OK –
+     * <p>The configuration item status. Valid values include:</p> <ul> <li> <p>OK –
      * The resource configuration has been updated</p> </li> <li> <p>ResourceDiscovered
      * – The resource was newly discovered</p> </li> <li> <p>ResourceNotRecorded – The
      * resource was discovered but its configuration was not recorded since the
-     * recorder excludes the recording of resources of this type</p> </li> <li>
-     * <p>ResourceDeleted – The resource was deleted</p> </li> <li>
-     * <p>ResourceDeletedNotRecorded – The resource was deleted but its configuration
-     * was not recorded since the recorder excludes the recording of resources of this
-     * type</p> </li> </ul>  <p>The CIs do not incur any cost.</p> 
+     * recorder doesn't record resources of this type</p> </li> <li> <p>ResourceDeleted
+     * – The resource was deleted</p> </li> <li> <p>ResourceDeletedNotRecorded – The
+     * resource was deleted but its configuration was not recorded since the recorder
+     * doesn't record resources of this type</p> </li> </ul>
      */
     inline ConfigurationItem& WithConfigurationItemStatus(ConfigurationItemStatus&& value) { SetConfigurationItemStatus(std::move(value)); return *this;}
 
@@ -975,6 +976,74 @@ namespace Model
      */
     inline ConfigurationItem& AddSupplementaryConfiguration(const char* key, const char* value) { m_supplementaryConfigurationHasBeenSet = true; m_supplementaryConfiguration.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The recording frequency that Config uses to record configuration changes for
+     * the resource.</p>
+     */
+    inline const RecordingFrequency& GetRecordingFrequency() const{ return m_recordingFrequency; }
+
+    /**
+     * <p>The recording frequency that Config uses to record configuration changes for
+     * the resource.</p>
+     */
+    inline bool RecordingFrequencyHasBeenSet() const { return m_recordingFrequencyHasBeenSet; }
+
+    /**
+     * <p>The recording frequency that Config uses to record configuration changes for
+     * the resource.</p>
+     */
+    inline void SetRecordingFrequency(const RecordingFrequency& value) { m_recordingFrequencyHasBeenSet = true; m_recordingFrequency = value; }
+
+    /**
+     * <p>The recording frequency that Config uses to record configuration changes for
+     * the resource.</p>
+     */
+    inline void SetRecordingFrequency(RecordingFrequency&& value) { m_recordingFrequencyHasBeenSet = true; m_recordingFrequency = std::move(value); }
+
+    /**
+     * <p>The recording frequency that Config uses to record configuration changes for
+     * the resource.</p>
+     */
+    inline ConfigurationItem& WithRecordingFrequency(const RecordingFrequency& value) { SetRecordingFrequency(value); return *this;}
+
+    /**
+     * <p>The recording frequency that Config uses to record configuration changes for
+     * the resource.</p>
+     */
+    inline ConfigurationItem& WithRecordingFrequency(RecordingFrequency&& value) { SetRecordingFrequency(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The time when configuration changes for the resource were delivered.</p>
+     */
+    inline const Aws::Utils::DateTime& GetConfigurationItemDeliveryTime() const{ return m_configurationItemDeliveryTime; }
+
+    /**
+     * <p>The time when configuration changes for the resource were delivered.</p>
+     */
+    inline bool ConfigurationItemDeliveryTimeHasBeenSet() const { return m_configurationItemDeliveryTimeHasBeenSet; }
+
+    /**
+     * <p>The time when configuration changes for the resource were delivered.</p>
+     */
+    inline void SetConfigurationItemDeliveryTime(const Aws::Utils::DateTime& value) { m_configurationItemDeliveryTimeHasBeenSet = true; m_configurationItemDeliveryTime = value; }
+
+    /**
+     * <p>The time when configuration changes for the resource were delivered.</p>
+     */
+    inline void SetConfigurationItemDeliveryTime(Aws::Utils::DateTime&& value) { m_configurationItemDeliveryTimeHasBeenSet = true; m_configurationItemDeliveryTime = std::move(value); }
+
+    /**
+     * <p>The time when configuration changes for the resource were delivered.</p>
+     */
+    inline ConfigurationItem& WithConfigurationItemDeliveryTime(const Aws::Utils::DateTime& value) { SetConfigurationItemDeliveryTime(value); return *this;}
+
+    /**
+     * <p>The time when configuration changes for the resource were delivered.</p>
+     */
+    inline ConfigurationItem& WithConfigurationItemDeliveryTime(Aws::Utils::DateTime&& value) { SetConfigurationItemDeliveryTime(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_version;
@@ -1030,6 +1099,12 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_supplementaryConfiguration;
     bool m_supplementaryConfigurationHasBeenSet = false;
+
+    RecordingFrequency m_recordingFrequency;
+    bool m_recordingFrequencyHasBeenSet = false;
+
+    Aws::Utils::DateTime m_configurationItemDeliveryTime;
+    bool m_configurationItemDeliveryTimeHasBeenSet = false;
   };
 
 } // namespace Model

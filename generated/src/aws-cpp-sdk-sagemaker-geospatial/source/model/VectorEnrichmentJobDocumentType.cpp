@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VectorEnrichmentJobDocumentType::NOT_SET:
+            return {};
           case VectorEnrichmentJobDocumentType::CSV:
             return "CSV";
           default:

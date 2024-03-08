@@ -198,28 +198,36 @@ namespace Model
     /**
      * <p> The average upload rate limit component of the bandwidth rate limit
      * interval, in bits per second. This field does not appear in the response if the
-     * upload rate limit is not set. </p>
+     * upload rate limit is not set. </p>  <p>For Tape Gateway and Volume
+     * Gateway, the minimum value is <code>51200</code>.</p> <p>For S3 File Gateway and
+     * FSx File Gateway, the minimum value is <code>104857600</code>.</p> 
      */
     inline long long GetAverageUploadRateLimitInBitsPerSec() const{ return m_averageUploadRateLimitInBitsPerSec; }
 
     /**
      * <p> The average upload rate limit component of the bandwidth rate limit
      * interval, in bits per second. This field does not appear in the response if the
-     * upload rate limit is not set. </p>
+     * upload rate limit is not set. </p>  <p>For Tape Gateway and Volume
+     * Gateway, the minimum value is <code>51200</code>.</p> <p>For S3 File Gateway and
+     * FSx File Gateway, the minimum value is <code>104857600</code>.</p> 
      */
     inline bool AverageUploadRateLimitInBitsPerSecHasBeenSet() const { return m_averageUploadRateLimitInBitsPerSecHasBeenSet; }
 
     /**
      * <p> The average upload rate limit component of the bandwidth rate limit
      * interval, in bits per second. This field does not appear in the response if the
-     * upload rate limit is not set. </p>
+     * upload rate limit is not set. </p>  <p>For Tape Gateway and Volume
+     * Gateway, the minimum value is <code>51200</code>.</p> <p>For S3 File Gateway and
+     * FSx File Gateway, the minimum value is <code>104857600</code>.</p> 
      */
     inline void SetAverageUploadRateLimitInBitsPerSec(long long value) { m_averageUploadRateLimitInBitsPerSecHasBeenSet = true; m_averageUploadRateLimitInBitsPerSec = value; }
 
     /**
      * <p> The average upload rate limit component of the bandwidth rate limit
      * interval, in bits per second. This field does not appear in the response if the
-     * upload rate limit is not set. </p>
+     * upload rate limit is not set. </p>  <p>For Tape Gateway and Volume
+     * Gateway, the minimum value is <code>51200</code>.</p> <p>For S3 File Gateway and
+     * FSx File Gateway, the minimum value is <code>104857600</code>.</p> 
      */
     inline BandwidthRateLimitInterval& WithAverageUploadRateLimitInBitsPerSec(long long value) { SetAverageUploadRateLimitInBitsPerSec(value); return *this;}
 

@@ -141,42 +141,50 @@ namespace Model
 
 
     /**
-     * <p>This is the ID of the creation request.</p>
+     * <p>This is the ID of the creation request.</p> <p>This parameter is optional. If
+     * used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
      */
     inline const Aws::String& GetCreatorRequestId() const{ return m_creatorRequestId; }
 
     /**
-     * <p>This is the ID of the creation request.</p>
+     * <p>This is the ID of the creation request.</p> <p>This parameter is optional. If
+     * used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
      */
     inline bool CreatorRequestIdHasBeenSet() const { return m_creatorRequestIdHasBeenSet; }
 
     /**
-     * <p>This is the ID of the creation request.</p>
+     * <p>This is the ID of the creation request.</p> <p>This parameter is optional. If
+     * used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
      */
     inline void SetCreatorRequestId(const Aws::String& value) { m_creatorRequestIdHasBeenSet = true; m_creatorRequestId = value; }
 
     /**
-     * <p>This is the ID of the creation request.</p>
+     * <p>This is the ID of the creation request.</p> <p>This parameter is optional. If
+     * used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
      */
     inline void SetCreatorRequestId(Aws::String&& value) { m_creatorRequestIdHasBeenSet = true; m_creatorRequestId = std::move(value); }
 
     /**
-     * <p>This is the ID of the creation request.</p>
+     * <p>This is the ID of the creation request.</p> <p>This parameter is optional. If
+     * used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
      */
     inline void SetCreatorRequestId(const char* value) { m_creatorRequestIdHasBeenSet = true; m_creatorRequestId.assign(value); }
 
     /**
-     * <p>This is the ID of the creation request.</p>
+     * <p>This is the ID of the creation request.</p> <p>This parameter is optional. If
+     * used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
      */
     inline CreateLogicallyAirGappedBackupVaultRequest& WithCreatorRequestId(const Aws::String& value) { SetCreatorRequestId(value); return *this;}
 
     /**
-     * <p>This is the ID of the creation request.</p>
+     * <p>This is the ID of the creation request.</p> <p>This parameter is optional. If
+     * used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
      */
     inline CreateLogicallyAirGappedBackupVaultRequest& WithCreatorRequestId(Aws::String&& value) { SetCreatorRequestId(std::move(value)); return *this;}
 
     /**
-     * <p>This is the ID of the creation request.</p>
+     * <p>This is the ID of the creation request.</p> <p>This parameter is optional. If
+     * used, this parameter must contain 1 to 50 alphanumeric or '-_.' characters.</p>
      */
     inline CreateLogicallyAirGappedBackupVaultRequest& WithCreatorRequestId(const char* value) { SetCreatorRequestId(value); return *this;}
 

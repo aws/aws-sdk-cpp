@@ -179,7 +179,11 @@ namespace Model
      * identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p>
      * </li> <li> <p>SageMaker Serverless endpoint - The resource type is
      * <code>variant</code> and the unique identifier is the resource ID. Example:
-     * <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p> </li> </ul>
+     * <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p> </li> <li>
+     * <p>SageMaker inference component - The resource type is
+     * <code>inference-component</code> and the unique identifier is the resource ID.
+     * Example: <code>inference-component/my-inference-component</code>.</p> </li>
+     * </ul>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
 
@@ -236,7 +240,11 @@ namespace Model
      * identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p>
      * </li> <li> <p>SageMaker Serverless endpoint - The resource type is
      * <code>variant</code> and the unique identifier is the resource ID. Example:
-     * <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p> </li> </ul>
+     * <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p> </li> <li>
+     * <p>SageMaker inference component - The resource type is
+     * <code>inference-component</code> and the unique identifier is the resource ID.
+     * Example: <code>inference-component/my-inference-component</code>.</p> </li>
+     * </ul>
      */
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
 
@@ -293,7 +301,11 @@ namespace Model
      * identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p>
      * </li> <li> <p>SageMaker Serverless endpoint - The resource type is
      * <code>variant</code> and the unique identifier is the resource ID. Example:
-     * <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p> </li> </ul>
+     * <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p> </li> <li>
+     * <p>SageMaker inference component - The resource type is
+     * <code>inference-component</code> and the unique identifier is the resource ID.
+     * Example: <code>inference-component/my-inference-component</code>.</p> </li>
+     * </ul>
      */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
@@ -350,7 +362,11 @@ namespace Model
      * identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p>
      * </li> <li> <p>SageMaker Serverless endpoint - The resource type is
      * <code>variant</code> and the unique identifier is the resource ID. Example:
-     * <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p> </li> </ul>
+     * <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p> </li> <li>
+     * <p>SageMaker inference component - The resource type is
+     * <code>inference-component</code> and the unique identifier is the resource ID.
+     * Example: <code>inference-component/my-inference-component</code>.</p> </li>
+     * </ul>
      */
     inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
 
@@ -407,7 +423,11 @@ namespace Model
      * identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p>
      * </li> <li> <p>SageMaker Serverless endpoint - The resource type is
      * <code>variant</code> and the unique identifier is the resource ID. Example:
-     * <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p> </li> </ul>
+     * <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p> </li> <li>
+     * <p>SageMaker inference component - The resource type is
+     * <code>inference-component</code> and the unique identifier is the resource ID.
+     * Example: <code>inference-component/my-inference-component</code>.</p> </li>
+     * </ul>
      */
     inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
 
@@ -464,7 +484,11 @@ namespace Model
      * identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p>
      * </li> <li> <p>SageMaker Serverless endpoint - The resource type is
      * <code>variant</code> and the unique identifier is the resource ID. Example:
-     * <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p> </li> </ul>
+     * <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p> </li> <li>
+     * <p>SageMaker inference component - The resource type is
+     * <code>inference-component</code> and the unique identifier is the resource ID.
+     * Example: <code>inference-component/my-inference-component</code>.</p> </li>
+     * </ul>
      */
     inline DescribeScalingPoliciesRequest& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
 
@@ -521,7 +545,11 @@ namespace Model
      * identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p>
      * </li> <li> <p>SageMaker Serverless endpoint - The resource type is
      * <code>variant</code> and the unique identifier is the resource ID. Example:
-     * <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p> </li> </ul>
+     * <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p> </li> <li>
+     * <p>SageMaker inference component - The resource type is
+     * <code>inference-component</code> and the unique identifier is the resource ID.
+     * Example: <code>inference-component/my-inference-component</code>.</p> </li>
+     * </ul>
      */
     inline DescribeScalingPoliciesRequest& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
 
@@ -578,7 +606,11 @@ namespace Model
      * identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p>
      * </li> <li> <p>SageMaker Serverless endpoint - The resource type is
      * <code>variant</code> and the unique identifier is the resource ID. Example:
-     * <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p> </li> </ul>
+     * <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p> </li> <li>
+     * <p>SageMaker inference component - The resource type is
+     * <code>inference-component</code> and the unique identifier is the resource ID.
+     * Example: <code>inference-component/my-inference-component</code>.</p> </li>
+     * </ul>
      */
     inline DescribeScalingPoliciesRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
@@ -629,7 +661,9 @@ namespace Model
      * <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an
      * Amazon Neptune DB cluster.</p> </li> <li> <p>
      * <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned
-     * concurrency for a SageMaker Serverless endpoint.</p> </li> </ul>
+     * concurrency for a SageMaker Serverless endpoint.</p> </li> <li> <p>
+     * <code>sagemaker:inference-component:DesiredCopyCount</code> - The number of
+     * copies across an endpoint for a SageMaker inference component.</p> </li> </ul>
      */
     inline const ScalableDimension& GetScalableDimension() const{ return m_scalableDimension; }
 
@@ -679,7 +713,9 @@ namespace Model
      * <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an
      * Amazon Neptune DB cluster.</p> </li> <li> <p>
      * <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned
-     * concurrency for a SageMaker Serverless endpoint.</p> </li> </ul>
+     * concurrency for a SageMaker Serverless endpoint.</p> </li> <li> <p>
+     * <code>sagemaker:inference-component:DesiredCopyCount</code> - The number of
+     * copies across an endpoint for a SageMaker inference component.</p> </li> </ul>
      */
     inline bool ScalableDimensionHasBeenSet() const { return m_scalableDimensionHasBeenSet; }
 
@@ -729,7 +765,9 @@ namespace Model
      * <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an
      * Amazon Neptune DB cluster.</p> </li> <li> <p>
      * <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned
-     * concurrency for a SageMaker Serverless endpoint.</p> </li> </ul>
+     * concurrency for a SageMaker Serverless endpoint.</p> </li> <li> <p>
+     * <code>sagemaker:inference-component:DesiredCopyCount</code> - The number of
+     * copies across an endpoint for a SageMaker inference component.</p> </li> </ul>
      */
     inline void SetScalableDimension(const ScalableDimension& value) { m_scalableDimensionHasBeenSet = true; m_scalableDimension = value; }
 
@@ -779,7 +817,9 @@ namespace Model
      * <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an
      * Amazon Neptune DB cluster.</p> </li> <li> <p>
      * <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned
-     * concurrency for a SageMaker Serverless endpoint.</p> </li> </ul>
+     * concurrency for a SageMaker Serverless endpoint.</p> </li> <li> <p>
+     * <code>sagemaker:inference-component:DesiredCopyCount</code> - The number of
+     * copies across an endpoint for a SageMaker inference component.</p> </li> </ul>
      */
     inline void SetScalableDimension(ScalableDimension&& value) { m_scalableDimensionHasBeenSet = true; m_scalableDimension = std::move(value); }
 
@@ -829,7 +869,9 @@ namespace Model
      * <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an
      * Amazon Neptune DB cluster.</p> </li> <li> <p>
      * <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned
-     * concurrency for a SageMaker Serverless endpoint.</p> </li> </ul>
+     * concurrency for a SageMaker Serverless endpoint.</p> </li> <li> <p>
+     * <code>sagemaker:inference-component:DesiredCopyCount</code> - The number of
+     * copies across an endpoint for a SageMaker inference component.</p> </li> </ul>
      */
     inline DescribeScalingPoliciesRequest& WithScalableDimension(const ScalableDimension& value) { SetScalableDimension(value); return *this;}
 
@@ -879,7 +921,9 @@ namespace Model
      * <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an
      * Amazon Neptune DB cluster.</p> </li> <li> <p>
      * <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned
-     * concurrency for a SageMaker Serverless endpoint.</p> </li> </ul>
+     * concurrency for a SageMaker Serverless endpoint.</p> </li> <li> <p>
+     * <code>sagemaker:inference-component:DesiredCopyCount</code> - The number of
+     * copies across an endpoint for a SageMaker inference component.</p> </li> </ul>
      */
     inline DescribeScalingPoliciesRequest& WithScalableDimension(ScalableDimension&& value) { SetScalableDimension(std::move(value)); return *this;}
 

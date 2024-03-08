@@ -420,7 +420,7 @@ def Main():
         InstallTests(credentialsFile)
 
         print("Installing certs...")
-        BuildAndInstallCertSet("android-build", buildDir)
+        BuildAndInstallCertSet("tools/android-build", buildDir)
 
         print("Uploading test resources")
         UploadTestResources("aws-cpp-sdk-lambda-integration-tests/resources")

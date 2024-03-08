@@ -12,6 +12,7 @@
 #include <aws/iotsitewise/model/AssetProperty.h>
 #include <aws/iotsitewise/model/AssetHierarchy.h>
 #include <aws/iotsitewise/model/AssetCompositeModel.h>
+#include <aws/iotsitewise/model/AssetCompositeModelSummary.h>
 #include <utility>
 
 namespace Aws
@@ -39,37 +40,37 @@ namespace Model
 
 
     /**
-     * <p>The ID of the asset.</p>
+     * <p>The ID of the asset, in UUID format.</p>
      */
     inline const Aws::String& GetAssetId() const{ return m_assetId; }
 
     /**
-     * <p>The ID of the asset.</p>
+     * <p>The ID of the asset, in UUID format.</p>
      */
     inline void SetAssetId(const Aws::String& value) { m_assetId = value; }
 
     /**
-     * <p>The ID of the asset.</p>
+     * <p>The ID of the asset, in UUID format.</p>
      */
     inline void SetAssetId(Aws::String&& value) { m_assetId = std::move(value); }
 
     /**
-     * <p>The ID of the asset.</p>
+     * <p>The ID of the asset, in UUID format.</p>
      */
     inline void SetAssetId(const char* value) { m_assetId.assign(value); }
 
     /**
-     * <p>The ID of the asset.</p>
+     * <p>The ID of the asset, in UUID format.</p>
      */
     inline DescribeAssetResult& WithAssetId(const Aws::String& value) { SetAssetId(value); return *this;}
 
     /**
-     * <p>The ID of the asset.</p>
+     * <p>The ID of the asset, in UUID format.</p>
      */
     inline DescribeAssetResult& WithAssetId(Aws::String&& value) { SetAssetId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the asset.</p>
+     * <p>The ID of the asset, in UUID format.</p>
      */
     inline DescribeAssetResult& WithAssetId(const char* value) { SetAssetId(value); return *this;}
 
@@ -458,6 +459,85 @@ namespace Model
     inline DescribeAssetResult& WithAssetDescription(const char* value) { SetAssetDescription(value); return *this;}
 
 
+    /**
+     * <p>The list of the immediate child custom composite model summaries for the
+     * asset.</p>
+     */
+    inline const Aws::Vector<AssetCompositeModelSummary>& GetAssetCompositeModelSummaries() const{ return m_assetCompositeModelSummaries; }
+
+    /**
+     * <p>The list of the immediate child custom composite model summaries for the
+     * asset.</p>
+     */
+    inline void SetAssetCompositeModelSummaries(const Aws::Vector<AssetCompositeModelSummary>& value) { m_assetCompositeModelSummaries = value; }
+
+    /**
+     * <p>The list of the immediate child custom composite model summaries for the
+     * asset.</p>
+     */
+    inline void SetAssetCompositeModelSummaries(Aws::Vector<AssetCompositeModelSummary>&& value) { m_assetCompositeModelSummaries = std::move(value); }
+
+    /**
+     * <p>The list of the immediate child custom composite model summaries for the
+     * asset.</p>
+     */
+    inline DescribeAssetResult& WithAssetCompositeModelSummaries(const Aws::Vector<AssetCompositeModelSummary>& value) { SetAssetCompositeModelSummaries(value); return *this;}
+
+    /**
+     * <p>The list of the immediate child custom composite model summaries for the
+     * asset.</p>
+     */
+    inline DescribeAssetResult& WithAssetCompositeModelSummaries(Aws::Vector<AssetCompositeModelSummary>&& value) { SetAssetCompositeModelSummaries(std::move(value)); return *this;}
+
+    /**
+     * <p>The list of the immediate child custom composite model summaries for the
+     * asset.</p>
+     */
+    inline DescribeAssetResult& AddAssetCompositeModelSummaries(const AssetCompositeModelSummary& value) { m_assetCompositeModelSummaries.push_back(value); return *this; }
+
+    /**
+     * <p>The list of the immediate child custom composite model summaries for the
+     * asset.</p>
+     */
+    inline DescribeAssetResult& AddAssetCompositeModelSummaries(AssetCompositeModelSummary&& value) { m_assetCompositeModelSummaries.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The external ID of the asset, if any.</p>
+     */
+    inline const Aws::String& GetAssetExternalId() const{ return m_assetExternalId; }
+
+    /**
+     * <p>The external ID of the asset, if any.</p>
+     */
+    inline void SetAssetExternalId(const Aws::String& value) { m_assetExternalId = value; }
+
+    /**
+     * <p>The external ID of the asset, if any.</p>
+     */
+    inline void SetAssetExternalId(Aws::String&& value) { m_assetExternalId = std::move(value); }
+
+    /**
+     * <p>The external ID of the asset, if any.</p>
+     */
+    inline void SetAssetExternalId(const char* value) { m_assetExternalId.assign(value); }
+
+    /**
+     * <p>The external ID of the asset, if any.</p>
+     */
+    inline DescribeAssetResult& WithAssetExternalId(const Aws::String& value) { SetAssetExternalId(value); return *this;}
+
+    /**
+     * <p>The external ID of the asset, if any.</p>
+     */
+    inline DescribeAssetResult& WithAssetExternalId(Aws::String&& value) { SetAssetExternalId(std::move(value)); return *this;}
+
+    /**
+     * <p>The external ID of the asset, if any.</p>
+     */
+    inline DescribeAssetResult& WithAssetExternalId(const char* value) { SetAssetExternalId(value); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -502,6 +582,10 @@ namespace Model
     AssetStatus m_assetStatus;
 
     Aws::String m_assetDescription;
+
+    Aws::Vector<AssetCompositeModelSummary> m_assetCompositeModelSummaries;
+
+    Aws::String m_assetExternalId;
 
     Aws::String m_requestId;
   };

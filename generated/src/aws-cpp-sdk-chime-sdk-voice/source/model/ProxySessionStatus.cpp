@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ProxySessionStatus::NOT_SET:
+            return {};
           case ProxySessionStatus::Open:
             return "Open";
           case ProxySessionStatus::InProgress:

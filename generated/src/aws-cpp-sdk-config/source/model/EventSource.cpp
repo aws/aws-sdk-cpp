@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EventSource::NOT_SET:
+            return {};
           case EventSource::aws_config:
             return "aws.config";
           default:

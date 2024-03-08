@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SharingModel::NOT_SET:
+            return {};
           case SharingModel::ACCOUNT:
             return "ACCOUNT";
           case SharingModel::NAMESPACE:

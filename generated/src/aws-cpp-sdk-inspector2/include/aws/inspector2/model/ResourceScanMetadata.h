@@ -147,32 +147,38 @@ namespace Model
 
 
     /**
-     * <p>An object that contains metadata details for an AWS Lambda function.</p>
+     * <p>An object that contains metadata details for an Amazon Web Services Lambda
+     * function.</p>
      */
     inline const LambdaFunctionMetadata& GetLambdaFunction() const{ return m_lambdaFunction; }
 
     /**
-     * <p>An object that contains metadata details for an AWS Lambda function.</p>
+     * <p>An object that contains metadata details for an Amazon Web Services Lambda
+     * function.</p>
      */
     inline bool LambdaFunctionHasBeenSet() const { return m_lambdaFunctionHasBeenSet; }
 
     /**
-     * <p>An object that contains metadata details for an AWS Lambda function.</p>
+     * <p>An object that contains metadata details for an Amazon Web Services Lambda
+     * function.</p>
      */
     inline void SetLambdaFunction(const LambdaFunctionMetadata& value) { m_lambdaFunctionHasBeenSet = true; m_lambdaFunction = value; }
 
     /**
-     * <p>An object that contains metadata details for an AWS Lambda function.</p>
+     * <p>An object that contains metadata details for an Amazon Web Services Lambda
+     * function.</p>
      */
     inline void SetLambdaFunction(LambdaFunctionMetadata&& value) { m_lambdaFunctionHasBeenSet = true; m_lambdaFunction = std::move(value); }
 
     /**
-     * <p>An object that contains metadata details for an AWS Lambda function.</p>
+     * <p>An object that contains metadata details for an Amazon Web Services Lambda
+     * function.</p>
      */
     inline ResourceScanMetadata& WithLambdaFunction(const LambdaFunctionMetadata& value) { SetLambdaFunction(value); return *this;}
 
     /**
-     * <p>An object that contains metadata details for an AWS Lambda function.</p>
+     * <p>An object that contains metadata details for an Amazon Web Services Lambda
+     * function.</p>
      */
     inline ResourceScanMetadata& WithLambdaFunction(LambdaFunctionMetadata&& value) { SetLambdaFunction(std::move(value)); return *this;}
 

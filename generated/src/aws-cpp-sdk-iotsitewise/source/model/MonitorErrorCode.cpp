@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MonitorErrorCode::NOT_SET:
+            return {};
           case MonitorErrorCode::INTERNAL_FAILURE:
             return "INTERNAL_FAILURE";
           case MonitorErrorCode::VALIDATION_ERROR:

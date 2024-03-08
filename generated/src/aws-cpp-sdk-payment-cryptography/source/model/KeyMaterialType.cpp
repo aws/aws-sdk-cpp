@@ -24,6 +24,7 @@ namespace Aws
         static const int TR31_KEY_BLOCK_HASH = HashingUtils::HashString("TR31_KEY_BLOCK");
         static const int ROOT_PUBLIC_KEY_CERTIFICATE_HASH = HashingUtils::HashString("ROOT_PUBLIC_KEY_CERTIFICATE");
         static const int TRUSTED_PUBLIC_KEY_CERTIFICATE_HASH = HashingUtils::HashString("TRUSTED_PUBLIC_KEY_CERTIFICATE");
+        static const int KEY_CRYPTOGRAM_HASH = HashingUtils::HashString("KEY_CRYPTOGRAM");
 
 
         KeyMaterialType GetKeyMaterialTypeForName(const Aws::String& name)
@@ -45,6 +46,10 @@ namespace Aws
           {
             return KeyMaterialType::TRUSTED_PUBLIC_KEY_CERTIFICATE;
           }
+          else if (hashCode == KEY_CRYPTOGRAM_HASH)
+          {
+            return KeyMaterialType::KEY_CRYPTOGRAM;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -59,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case KeyMaterialType::NOT_SET:
+            return {};
           case KeyMaterialType::TR34_KEY_BLOCK:
             return "TR34_KEY_BLOCK";
           case KeyMaterialType::TR31_KEY_BLOCK:
@@ -67,6 +74,8 @@ namespace Aws
             return "ROOT_PUBLIC_KEY_CERTIFICATE";
           case KeyMaterialType::TRUSTED_PUBLIC_KEY_CERTIFICATE:
             return "TRUSTED_PUBLIC_KEY_CERTIFICATE";
+          case KeyMaterialType::KEY_CRYPTOGRAM:
+            return "KEY_CRYPTOGRAM";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

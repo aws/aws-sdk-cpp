@@ -61,7 +61,9 @@ RestoreDBInstanceFromDBSnapshotRequest::RestoreDBInstanceFromDBSnapshotRequest()
     m_storageThroughputHasBeenSet(false),
     m_dBClusterSnapshotIdentifierHasBeenSet(false),
     m_allocatedStorage(0),
-    m_allocatedStorageHasBeenSet(false)
+    m_allocatedStorageHasBeenSet(false),
+    m_dedicatedLogVolume(false),
+    m_dedicatedLogVolumeHasBeenSet(false)
 {
 }
 
@@ -290,6 +292,11 @@ Aws::String RestoreDBInstanceFromDBSnapshotRequest::SerializePayload() const
   if(m_allocatedStorageHasBeenSet)
   {
     ss << "AllocatedStorage=" << m_allocatedStorage << "&";
+  }
+
+  if(m_dedicatedLogVolumeHasBeenSet)
+  {
+    ss << "DedicatedLogVolume=" << std::boolalpha << m_dedicatedLogVolume << "&";
   }
 
   ss << "Version=2014-10-31";

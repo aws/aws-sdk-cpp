@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ContainerMode::NOT_SET:
+            return {};
           case ContainerMode::SingleModel:
             return "SingleModel";
           case ContainerMode::MultiModel:

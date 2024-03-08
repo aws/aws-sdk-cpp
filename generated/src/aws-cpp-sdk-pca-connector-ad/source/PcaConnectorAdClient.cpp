@@ -60,8 +60,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* PcaConnectorAdClient::SERVICE_NAME = "pca-connector-ad";
-const char* PcaConnectorAdClient::ALLOCATION_TAG = "PcaConnectorAdClient";
+namespace Aws
+{
+  namespace PcaConnectorAd
+  {
+    const char SERVICE_NAME[] = "pca-connector-ad";
+    const char ALLOCATION_TAG[] = "PcaConnectorAdClient";
+  }
+}
+const char* PcaConnectorAdClient::GetServiceName() {return SERVICE_NAME;}
+const char* PcaConnectorAdClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 PcaConnectorAdClient::PcaConnectorAdClient(const PcaConnectorAd::PcaConnectorAdClientConfiguration& clientConfiguration,
                                            std::shared_ptr<PcaConnectorAdEndpointProviderBase> endpointProvider) :
@@ -73,7 +81,7 @@ PcaConnectorAdClient::PcaConnectorAdClient(const PcaConnectorAd::PcaConnectorAdC
             Aws::MakeShared<PcaConnectorAdErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<PcaConnectorAdEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -89,7 +97,7 @@ PcaConnectorAdClient::PcaConnectorAdClient(const AWSCredentials& credentials,
             Aws::MakeShared<PcaConnectorAdErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<PcaConnectorAdEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -105,7 +113,7 @@ PcaConnectorAdClient::PcaConnectorAdClient(const std::shared_ptr<AWSCredentialsP
             Aws::MakeShared<PcaConnectorAdErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<PcaConnectorAdEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

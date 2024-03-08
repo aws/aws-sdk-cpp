@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PermissionType::NOT_SET:
+            return {};
           case PermissionType::READONLY:
             return "READONLY";
           case PermissionType::CONTRIBUTOR:

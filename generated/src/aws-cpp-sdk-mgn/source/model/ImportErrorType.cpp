@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ImportErrorType::NOT_SET:
+            return {};
           case ImportErrorType::VALIDATION_ERROR:
             return "VALIDATION_ERROR";
           case ImportErrorType::PROCESSING_ERROR:

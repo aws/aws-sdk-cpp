@@ -35,12 +35,6 @@ GetIdentitySourceResult& GetIdentitySourceResult::operator =(const Aws::AmazonWe
 
   }
 
-  if(jsonValue.ValueExists("details"))
-  {
-    m_details = jsonValue.GetObject("details");
-
-  }
-
   if(jsonValue.ValueExists("identitySourceId"))
   {
     m_identitySourceId = jsonValue.GetString("identitySourceId");
@@ -62,6 +56,12 @@ GetIdentitySourceResult& GetIdentitySourceResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("principalEntityType"))
   {
     m_principalEntityType = jsonValue.GetString("principalEntityType");
+
+  }
+
+  if(jsonValue.ValueExists("configuration"))
+  {
+    m_configuration = jsonValue.GetObject("configuration");
 
   }
 

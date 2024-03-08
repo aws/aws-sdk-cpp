@@ -164,6 +164,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HistoricalMetricName::NOT_SET:
+            return {};
           case HistoricalMetricName::CONTACTS_QUEUED:
             return "CONTACTS_QUEUED";
           case HistoricalMetricName::CONTACTS_HANDLED:

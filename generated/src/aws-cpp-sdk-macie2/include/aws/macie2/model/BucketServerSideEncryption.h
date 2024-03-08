@@ -110,72 +110,84 @@ namespace Model
     /**
      * <p>The server-side encryption algorithm that's used by default to encrypt
      * objects that are added to the bucket. Possible values are:</p> <ul><li><p>AES256
-     * - New objects are encrypted with an Amazon S3 managed key. They use SSE-S3
-     * encryption.</p></li> <li><p>aws:kms - New objects are encrypted with an KMS key
+     * - New objects use SSE-S3 encryption. They're encrypted with an Amazon S3 managed
+     * key.</p></li> <li><p>aws:kms - New objects use SSE-KMS encryption. They're
+     * encrypted with an KMS key (kmsMasterKeyId), either an Amazon Web Services
+     * managed key or a customer managed key.</p></li> <li><p>aws:kms:dsse - New
+     * objects use DSSE-KMS encryption. They're encrypted with an KMS key
      * (kmsMasterKeyId), either an Amazon Web Services managed key or a customer
-     * managed key. They use SSE-KMS encryption.</p></li> <li><p>NONE - The bucket's
-     * default encryption settings don't specify server-side encryption behavior for
-     * new objects.</p></li></ul>
+     * managed key.</p></li> <li><p>NONE - The bucket's default encryption settings
+     * don't specify server-side encryption behavior for new objects.</p></li></ul>
      */
     inline const Type& GetType() const{ return m_type; }
 
     /**
      * <p>The server-side encryption algorithm that's used by default to encrypt
      * objects that are added to the bucket. Possible values are:</p> <ul><li><p>AES256
-     * - New objects are encrypted with an Amazon S3 managed key. They use SSE-S3
-     * encryption.</p></li> <li><p>aws:kms - New objects are encrypted with an KMS key
+     * - New objects use SSE-S3 encryption. They're encrypted with an Amazon S3 managed
+     * key.</p></li> <li><p>aws:kms - New objects use SSE-KMS encryption. They're
+     * encrypted with an KMS key (kmsMasterKeyId), either an Amazon Web Services
+     * managed key or a customer managed key.</p></li> <li><p>aws:kms:dsse - New
+     * objects use DSSE-KMS encryption. They're encrypted with an KMS key
      * (kmsMasterKeyId), either an Amazon Web Services managed key or a customer
-     * managed key. They use SSE-KMS encryption.</p></li> <li><p>NONE - The bucket's
-     * default encryption settings don't specify server-side encryption behavior for
-     * new objects.</p></li></ul>
+     * managed key.</p></li> <li><p>NONE - The bucket's default encryption settings
+     * don't specify server-side encryption behavior for new objects.</p></li></ul>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>The server-side encryption algorithm that's used by default to encrypt
      * objects that are added to the bucket. Possible values are:</p> <ul><li><p>AES256
-     * - New objects are encrypted with an Amazon S3 managed key. They use SSE-S3
-     * encryption.</p></li> <li><p>aws:kms - New objects are encrypted with an KMS key
+     * - New objects use SSE-S3 encryption. They're encrypted with an Amazon S3 managed
+     * key.</p></li> <li><p>aws:kms - New objects use SSE-KMS encryption. They're
+     * encrypted with an KMS key (kmsMasterKeyId), either an Amazon Web Services
+     * managed key or a customer managed key.</p></li> <li><p>aws:kms:dsse - New
+     * objects use DSSE-KMS encryption. They're encrypted with an KMS key
      * (kmsMasterKeyId), either an Amazon Web Services managed key or a customer
-     * managed key. They use SSE-KMS encryption.</p></li> <li><p>NONE - The bucket's
-     * default encryption settings don't specify server-side encryption behavior for
-     * new objects.</p></li></ul>
+     * managed key.</p></li> <li><p>NONE - The bucket's default encryption settings
+     * don't specify server-side encryption behavior for new objects.</p></li></ul>
      */
     inline void SetType(const Type& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
      * <p>The server-side encryption algorithm that's used by default to encrypt
      * objects that are added to the bucket. Possible values are:</p> <ul><li><p>AES256
-     * - New objects are encrypted with an Amazon S3 managed key. They use SSE-S3
-     * encryption.</p></li> <li><p>aws:kms - New objects are encrypted with an KMS key
+     * - New objects use SSE-S3 encryption. They're encrypted with an Amazon S3 managed
+     * key.</p></li> <li><p>aws:kms - New objects use SSE-KMS encryption. They're
+     * encrypted with an KMS key (kmsMasterKeyId), either an Amazon Web Services
+     * managed key or a customer managed key.</p></li> <li><p>aws:kms:dsse - New
+     * objects use DSSE-KMS encryption. They're encrypted with an KMS key
      * (kmsMasterKeyId), either an Amazon Web Services managed key or a customer
-     * managed key. They use SSE-KMS encryption.</p></li> <li><p>NONE - The bucket's
-     * default encryption settings don't specify server-side encryption behavior for
-     * new objects.</p></li></ul>
+     * managed key.</p></li> <li><p>NONE - The bucket's default encryption settings
+     * don't specify server-side encryption behavior for new objects.</p></li></ul>
      */
     inline void SetType(Type&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The server-side encryption algorithm that's used by default to encrypt
      * objects that are added to the bucket. Possible values are:</p> <ul><li><p>AES256
-     * - New objects are encrypted with an Amazon S3 managed key. They use SSE-S3
-     * encryption.</p></li> <li><p>aws:kms - New objects are encrypted with an KMS key
+     * - New objects use SSE-S3 encryption. They're encrypted with an Amazon S3 managed
+     * key.</p></li> <li><p>aws:kms - New objects use SSE-KMS encryption. They're
+     * encrypted with an KMS key (kmsMasterKeyId), either an Amazon Web Services
+     * managed key or a customer managed key.</p></li> <li><p>aws:kms:dsse - New
+     * objects use DSSE-KMS encryption. They're encrypted with an KMS key
      * (kmsMasterKeyId), either an Amazon Web Services managed key or a customer
-     * managed key. They use SSE-KMS encryption.</p></li> <li><p>NONE - The bucket's
-     * default encryption settings don't specify server-side encryption behavior for
-     * new objects.</p></li></ul>
+     * managed key.</p></li> <li><p>NONE - The bucket's default encryption settings
+     * don't specify server-side encryption behavior for new objects.</p></li></ul>
      */
     inline BucketServerSideEncryption& WithType(const Type& value) { SetType(value); return *this;}
 
     /**
      * <p>The server-side encryption algorithm that's used by default to encrypt
      * objects that are added to the bucket. Possible values are:</p> <ul><li><p>AES256
-     * - New objects are encrypted with an Amazon S3 managed key. They use SSE-S3
-     * encryption.</p></li> <li><p>aws:kms - New objects are encrypted with an KMS key
+     * - New objects use SSE-S3 encryption. They're encrypted with an Amazon S3 managed
+     * key.</p></li> <li><p>aws:kms - New objects use SSE-KMS encryption. They're
+     * encrypted with an KMS key (kmsMasterKeyId), either an Amazon Web Services
+     * managed key or a customer managed key.</p></li> <li><p>aws:kms:dsse - New
+     * objects use DSSE-KMS encryption. They're encrypted with an KMS key
      * (kmsMasterKeyId), either an Amazon Web Services managed key or a customer
-     * managed key. They use SSE-KMS encryption.</p></li> <li><p>NONE - The bucket's
-     * default encryption settings don't specify server-side encryption behavior for
-     * new objects.</p></li></ul>
+     * managed key.</p></li> <li><p>NONE - The bucket's default encryption settings
+     * don't specify server-side encryption behavior for new objects.</p></li></ul>
      */
     inline BucketServerSideEncryption& WithType(Type&& value) { SetType(std::move(value)); return *this;}
 

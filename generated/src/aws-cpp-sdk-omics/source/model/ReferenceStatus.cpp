@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReferenceStatus::NOT_SET:
+            return {};
           case ReferenceStatus::ACTIVE:
             return "ACTIVE";
           case ReferenceStatus::DELETING:

@@ -224,11 +224,15 @@ namespace Model
      * the root device volume (for example, <code>/dev/sda1</code>).</p> </li> <li> <p>
      * <code>root-device-type</code> - The type of the root device volume
      * (<code>ebs</code> | <code>instance-store</code>).</p> </li> <li> <p>
-     * <code>state</code> - The state of the image (<code>available</code> |
-     * <code>pending</code> | <code>failed</code>).</p> </li> <li> <p>
-     * <code>state-reason-code</code> - The reason code for the state change.</p> </li>
-     * <li> <p> <code>state-reason-message</code> - The message for the state
-     * change.</p> </li> <li> <p> <code>sriov-net-support</code> - A value of
+     * <code>source-instance-id</code> - The ID of the instance that the AMI was
+     * created from if the AMI was created using CreateImage. This filter is applicable
+     * only if the AMI was created using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.</p>
+     * </li> <li> <p> <code>state</code> - The state of the image
+     * (<code>available</code> | <code>pending</code> | <code>failed</code>).</p> </li>
+     * <li> <p> <code>state-reason-code</code> - The reason code for the state
+     * change.</p> </li> <li> <p> <code>state-reason-message</code> - The message for
+     * the state change.</p> </li> <li> <p> <code>sriov-net-support</code> - A value of
      * <code>simple</code> indicates that enhanced networking with the Intel 82599 VF
      * interface is enabled.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
      * key/value combination of a tag assigned to the resource. Use the tag key in the
@@ -293,11 +297,15 @@ namespace Model
      * the root device volume (for example, <code>/dev/sda1</code>).</p> </li> <li> <p>
      * <code>root-device-type</code> - The type of the root device volume
      * (<code>ebs</code> | <code>instance-store</code>).</p> </li> <li> <p>
-     * <code>state</code> - The state of the image (<code>available</code> |
-     * <code>pending</code> | <code>failed</code>).</p> </li> <li> <p>
-     * <code>state-reason-code</code> - The reason code for the state change.</p> </li>
-     * <li> <p> <code>state-reason-message</code> - The message for the state
-     * change.</p> </li> <li> <p> <code>sriov-net-support</code> - A value of
+     * <code>source-instance-id</code> - The ID of the instance that the AMI was
+     * created from if the AMI was created using CreateImage. This filter is applicable
+     * only if the AMI was created using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.</p>
+     * </li> <li> <p> <code>state</code> - The state of the image
+     * (<code>available</code> | <code>pending</code> | <code>failed</code>).</p> </li>
+     * <li> <p> <code>state-reason-code</code> - The reason code for the state
+     * change.</p> </li> <li> <p> <code>state-reason-message</code> - The message for
+     * the state change.</p> </li> <li> <p> <code>sriov-net-support</code> - A value of
      * <code>simple</code> indicates that enhanced networking with the Intel 82599 VF
      * interface is enabled.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
      * key/value combination of a tag assigned to the resource. Use the tag key in the
@@ -362,11 +370,15 @@ namespace Model
      * the root device volume (for example, <code>/dev/sda1</code>).</p> </li> <li> <p>
      * <code>root-device-type</code> - The type of the root device volume
      * (<code>ebs</code> | <code>instance-store</code>).</p> </li> <li> <p>
-     * <code>state</code> - The state of the image (<code>available</code> |
-     * <code>pending</code> | <code>failed</code>).</p> </li> <li> <p>
-     * <code>state-reason-code</code> - The reason code for the state change.</p> </li>
-     * <li> <p> <code>state-reason-message</code> - The message for the state
-     * change.</p> </li> <li> <p> <code>sriov-net-support</code> - A value of
+     * <code>source-instance-id</code> - The ID of the instance that the AMI was
+     * created from if the AMI was created using CreateImage. This filter is applicable
+     * only if the AMI was created using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.</p>
+     * </li> <li> <p> <code>state</code> - The state of the image
+     * (<code>available</code> | <code>pending</code> | <code>failed</code>).</p> </li>
+     * <li> <p> <code>state-reason-code</code> - The reason code for the state
+     * change.</p> </li> <li> <p> <code>state-reason-message</code> - The message for
+     * the state change.</p> </li> <li> <p> <code>sriov-net-support</code> - A value of
      * <code>simple</code> indicates that enhanced networking with the Intel 82599 VF
      * interface is enabled.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
      * key/value combination of a tag assigned to the resource. Use the tag key in the
@@ -431,11 +443,15 @@ namespace Model
      * the root device volume (for example, <code>/dev/sda1</code>).</p> </li> <li> <p>
      * <code>root-device-type</code> - The type of the root device volume
      * (<code>ebs</code> | <code>instance-store</code>).</p> </li> <li> <p>
-     * <code>state</code> - The state of the image (<code>available</code> |
-     * <code>pending</code> | <code>failed</code>).</p> </li> <li> <p>
-     * <code>state-reason-code</code> - The reason code for the state change.</p> </li>
-     * <li> <p> <code>state-reason-message</code> - The message for the state
-     * change.</p> </li> <li> <p> <code>sriov-net-support</code> - A value of
+     * <code>source-instance-id</code> - The ID of the instance that the AMI was
+     * created from if the AMI was created using CreateImage. This filter is applicable
+     * only if the AMI was created using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.</p>
+     * </li> <li> <p> <code>state</code> - The state of the image
+     * (<code>available</code> | <code>pending</code> | <code>failed</code>).</p> </li>
+     * <li> <p> <code>state-reason-code</code> - The reason code for the state
+     * change.</p> </li> <li> <p> <code>state-reason-message</code> - The message for
+     * the state change.</p> </li> <li> <p> <code>sriov-net-support</code> - A value of
      * <code>simple</code> indicates that enhanced networking with the Intel 82599 VF
      * interface is enabled.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
      * key/value combination of a tag assigned to the resource. Use the tag key in the
@@ -500,11 +516,15 @@ namespace Model
      * the root device volume (for example, <code>/dev/sda1</code>).</p> </li> <li> <p>
      * <code>root-device-type</code> - The type of the root device volume
      * (<code>ebs</code> | <code>instance-store</code>).</p> </li> <li> <p>
-     * <code>state</code> - The state of the image (<code>available</code> |
-     * <code>pending</code> | <code>failed</code>).</p> </li> <li> <p>
-     * <code>state-reason-code</code> - The reason code for the state change.</p> </li>
-     * <li> <p> <code>state-reason-message</code> - The message for the state
-     * change.</p> </li> <li> <p> <code>sriov-net-support</code> - A value of
+     * <code>source-instance-id</code> - The ID of the instance that the AMI was
+     * created from if the AMI was created using CreateImage. This filter is applicable
+     * only if the AMI was created using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.</p>
+     * </li> <li> <p> <code>state</code> - The state of the image
+     * (<code>available</code> | <code>pending</code> | <code>failed</code>).</p> </li>
+     * <li> <p> <code>state-reason-code</code> - The reason code for the state
+     * change.</p> </li> <li> <p> <code>state-reason-message</code> - The message for
+     * the state change.</p> </li> <li> <p> <code>sriov-net-support</code> - A value of
      * <code>simple</code> indicates that enhanced networking with the Intel 82599 VF
      * interface is enabled.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
      * key/value combination of a tag assigned to the resource. Use the tag key in the
@@ -569,11 +589,15 @@ namespace Model
      * the root device volume (for example, <code>/dev/sda1</code>).</p> </li> <li> <p>
      * <code>root-device-type</code> - The type of the root device volume
      * (<code>ebs</code> | <code>instance-store</code>).</p> </li> <li> <p>
-     * <code>state</code> - The state of the image (<code>available</code> |
-     * <code>pending</code> | <code>failed</code>).</p> </li> <li> <p>
-     * <code>state-reason-code</code> - The reason code for the state change.</p> </li>
-     * <li> <p> <code>state-reason-message</code> - The message for the state
-     * change.</p> </li> <li> <p> <code>sriov-net-support</code> - A value of
+     * <code>source-instance-id</code> - The ID of the instance that the AMI was
+     * created from if the AMI was created using CreateImage. This filter is applicable
+     * only if the AMI was created using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.</p>
+     * </li> <li> <p> <code>state</code> - The state of the image
+     * (<code>available</code> | <code>pending</code> | <code>failed</code>).</p> </li>
+     * <li> <p> <code>state-reason-code</code> - The reason code for the state
+     * change.</p> </li> <li> <p> <code>state-reason-message</code> - The message for
+     * the state change.</p> </li> <li> <p> <code>sriov-net-support</code> - A value of
      * <code>simple</code> indicates that enhanced networking with the Intel 82599 VF
      * interface is enabled.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
      * key/value combination of a tag assigned to the resource. Use the tag key in the
@@ -638,11 +662,15 @@ namespace Model
      * the root device volume (for example, <code>/dev/sda1</code>).</p> </li> <li> <p>
      * <code>root-device-type</code> - The type of the root device volume
      * (<code>ebs</code> | <code>instance-store</code>).</p> </li> <li> <p>
-     * <code>state</code> - The state of the image (<code>available</code> |
-     * <code>pending</code> | <code>failed</code>).</p> </li> <li> <p>
-     * <code>state-reason-code</code> - The reason code for the state change.</p> </li>
-     * <li> <p> <code>state-reason-message</code> - The message for the state
-     * change.</p> </li> <li> <p> <code>sriov-net-support</code> - A value of
+     * <code>source-instance-id</code> - The ID of the instance that the AMI was
+     * created from if the AMI was created using CreateImage. This filter is applicable
+     * only if the AMI was created using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.</p>
+     * </li> <li> <p> <code>state</code> - The state of the image
+     * (<code>available</code> | <code>pending</code> | <code>failed</code>).</p> </li>
+     * <li> <p> <code>state-reason-code</code> - The reason code for the state
+     * change.</p> </li> <li> <p> <code>state-reason-message</code> - The message for
+     * the state change.</p> </li> <li> <p> <code>sriov-net-support</code> - A value of
      * <code>simple</code> indicates that enhanced networking with the Intel 82599 VF
      * interface is enabled.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
      * key/value combination of a tag assigned to the resource. Use the tag key in the
@@ -707,11 +735,15 @@ namespace Model
      * the root device volume (for example, <code>/dev/sda1</code>).</p> </li> <li> <p>
      * <code>root-device-type</code> - The type of the root device volume
      * (<code>ebs</code> | <code>instance-store</code>).</p> </li> <li> <p>
-     * <code>state</code> - The state of the image (<code>available</code> |
-     * <code>pending</code> | <code>failed</code>).</p> </li> <li> <p>
-     * <code>state-reason-code</code> - The reason code for the state change.</p> </li>
-     * <li> <p> <code>state-reason-message</code> - The message for the state
-     * change.</p> </li> <li> <p> <code>sriov-net-support</code> - A value of
+     * <code>source-instance-id</code> - The ID of the instance that the AMI was
+     * created from if the AMI was created using CreateImage. This filter is applicable
+     * only if the AMI was created using <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.</p>
+     * </li> <li> <p> <code>state</code> - The state of the image
+     * (<code>available</code> | <code>pending</code> | <code>failed</code>).</p> </li>
+     * <li> <p> <code>state-reason-code</code> - The reason code for the state
+     * change.</p> </li> <li> <p> <code>state-reason-message</code> - The message for
+     * the state change.</p> </li> <li> <p> <code>sriov-net-support</code> - A value of
      * <code>simple</code> indicates that enhanced networking with the Intel 82599 VF
      * interface is enabled.</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
      * key/value combination of a tag assigned to the resource. Use the tag key in the
@@ -889,6 +921,31 @@ namespace Model
 
 
     /**
+     * <p>Specifies whether to include disabled AMIs.</p> <p>Default: No disabled AMIs
+     * are included in the response.</p>
+     */
+    inline bool GetIncludeDisabled() const{ return m_includeDisabled; }
+
+    /**
+     * <p>Specifies whether to include disabled AMIs.</p> <p>Default: No disabled AMIs
+     * are included in the response.</p>
+     */
+    inline bool IncludeDisabledHasBeenSet() const { return m_includeDisabledHasBeenSet; }
+
+    /**
+     * <p>Specifies whether to include disabled AMIs.</p> <p>Default: No disabled AMIs
+     * are included in the response.</p>
+     */
+    inline void SetIncludeDisabled(bool value) { m_includeDisabledHasBeenSet = true; m_includeDisabled = value; }
+
+    /**
+     * <p>Specifies whether to include disabled AMIs.</p> <p>Default: No disabled AMIs
+     * are included in the response.</p>
+     */
+    inline DescribeImagesRequest& WithIncludeDisabled(bool value) { SetIncludeDisabled(value); return *this;}
+
+
+    /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
      * required permissions, the error response is <code>DryRunOperation</code>.
@@ -1018,6 +1075,9 @@ namespace Model
 
     bool m_includeDeprecated;
     bool m_includeDeprecatedHasBeenSet = false;
+
+    bool m_includeDisabled;
+    bool m_includeDisabledHasBeenSet = false;
 
     bool m_dryRun;
     bool m_dryRunHasBeenSet = false;

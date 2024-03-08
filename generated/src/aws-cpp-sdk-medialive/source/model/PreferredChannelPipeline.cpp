@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PreferredChannelPipeline::NOT_SET:
+            return {};
           case PreferredChannelPipeline::CURRENTLY_ACTIVE:
             return "CURRENTLY_ACTIVE";
           case PreferredChannelPipeline::PIPELINE_0:

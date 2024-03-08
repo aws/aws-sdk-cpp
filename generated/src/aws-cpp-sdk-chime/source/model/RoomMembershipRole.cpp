@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RoomMembershipRole::NOT_SET:
+            return {};
           case RoomMembershipRole::Administrator:
             return "Administrator";
           case RoomMembershipRole::Member:

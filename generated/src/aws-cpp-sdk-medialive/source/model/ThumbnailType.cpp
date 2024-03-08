@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ThumbnailType::NOT_SET:
+            return {};
           case ThumbnailType::UNSPECIFIED:
             return "UNSPECIFIED";
           case ThumbnailType::CURRENT_ACTIVE:

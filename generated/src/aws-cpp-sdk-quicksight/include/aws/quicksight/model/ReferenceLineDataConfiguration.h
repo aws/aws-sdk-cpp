@@ -8,6 +8,7 @@
 #include <aws/quicksight/model/ReferenceLineStaticDataConfiguration.h>
 #include <aws/quicksight/model/ReferenceLineDynamicDataConfiguration.h>
 #include <aws/quicksight/model/AxisBinding.h>
+#include <aws/quicksight/model/ReferenceLineSeriesType.h>
 #include <utility>
 
 namespace Aws
@@ -103,39 +104,88 @@ namespace Model
 
     /**
      * <p>The axis binding type of the reference line. Choose one of the following
-     * options:</p> <ul> <li> <p>PrimaryY</p> </li> <li> <p>SecondaryY</p> </li> </ul>
+     * options:</p> <ul> <li> <p> <code>PrimaryY</code> </p> </li> <li> <p>
+     * <code>SecondaryY</code> </p> </li> </ul>
      */
     inline const AxisBinding& GetAxisBinding() const{ return m_axisBinding; }
 
     /**
      * <p>The axis binding type of the reference line. Choose one of the following
-     * options:</p> <ul> <li> <p>PrimaryY</p> </li> <li> <p>SecondaryY</p> </li> </ul>
+     * options:</p> <ul> <li> <p> <code>PrimaryY</code> </p> </li> <li> <p>
+     * <code>SecondaryY</code> </p> </li> </ul>
      */
     inline bool AxisBindingHasBeenSet() const { return m_axisBindingHasBeenSet; }
 
     /**
      * <p>The axis binding type of the reference line. Choose one of the following
-     * options:</p> <ul> <li> <p>PrimaryY</p> </li> <li> <p>SecondaryY</p> </li> </ul>
+     * options:</p> <ul> <li> <p> <code>PrimaryY</code> </p> </li> <li> <p>
+     * <code>SecondaryY</code> </p> </li> </ul>
      */
     inline void SetAxisBinding(const AxisBinding& value) { m_axisBindingHasBeenSet = true; m_axisBinding = value; }
 
     /**
      * <p>The axis binding type of the reference line. Choose one of the following
-     * options:</p> <ul> <li> <p>PrimaryY</p> </li> <li> <p>SecondaryY</p> </li> </ul>
+     * options:</p> <ul> <li> <p> <code>PrimaryY</code> </p> </li> <li> <p>
+     * <code>SecondaryY</code> </p> </li> </ul>
      */
     inline void SetAxisBinding(AxisBinding&& value) { m_axisBindingHasBeenSet = true; m_axisBinding = std::move(value); }
 
     /**
      * <p>The axis binding type of the reference line. Choose one of the following
-     * options:</p> <ul> <li> <p>PrimaryY</p> </li> <li> <p>SecondaryY</p> </li> </ul>
+     * options:</p> <ul> <li> <p> <code>PrimaryY</code> </p> </li> <li> <p>
+     * <code>SecondaryY</code> </p> </li> </ul>
      */
     inline ReferenceLineDataConfiguration& WithAxisBinding(const AxisBinding& value) { SetAxisBinding(value); return *this;}
 
     /**
      * <p>The axis binding type of the reference line. Choose one of the following
-     * options:</p> <ul> <li> <p>PrimaryY</p> </li> <li> <p>SecondaryY</p> </li> </ul>
+     * options:</p> <ul> <li> <p> <code>PrimaryY</code> </p> </li> <li> <p>
+     * <code>SecondaryY</code> </p> </li> </ul>
      */
     inline ReferenceLineDataConfiguration& WithAxisBinding(AxisBinding&& value) { SetAxisBinding(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The series type of the reference line data configuration. Choose one of the
+     * following options:</p> <ul> <li> <p> <code>BAR</code> </p> </li> <li> <p>
+     * <code>LINE</code> </p> </li> </ul>
+     */
+    inline const ReferenceLineSeriesType& GetSeriesType() const{ return m_seriesType; }
+
+    /**
+     * <p>The series type of the reference line data configuration. Choose one of the
+     * following options:</p> <ul> <li> <p> <code>BAR</code> </p> </li> <li> <p>
+     * <code>LINE</code> </p> </li> </ul>
+     */
+    inline bool SeriesTypeHasBeenSet() const { return m_seriesTypeHasBeenSet; }
+
+    /**
+     * <p>The series type of the reference line data configuration. Choose one of the
+     * following options:</p> <ul> <li> <p> <code>BAR</code> </p> </li> <li> <p>
+     * <code>LINE</code> </p> </li> </ul>
+     */
+    inline void SetSeriesType(const ReferenceLineSeriesType& value) { m_seriesTypeHasBeenSet = true; m_seriesType = value; }
+
+    /**
+     * <p>The series type of the reference line data configuration. Choose one of the
+     * following options:</p> <ul> <li> <p> <code>BAR</code> </p> </li> <li> <p>
+     * <code>LINE</code> </p> </li> </ul>
+     */
+    inline void SetSeriesType(ReferenceLineSeriesType&& value) { m_seriesTypeHasBeenSet = true; m_seriesType = std::move(value); }
+
+    /**
+     * <p>The series type of the reference line data configuration. Choose one of the
+     * following options:</p> <ul> <li> <p> <code>BAR</code> </p> </li> <li> <p>
+     * <code>LINE</code> </p> </li> </ul>
+     */
+    inline ReferenceLineDataConfiguration& WithSeriesType(const ReferenceLineSeriesType& value) { SetSeriesType(value); return *this;}
+
+    /**
+     * <p>The series type of the reference line data configuration. Choose one of the
+     * following options:</p> <ul> <li> <p> <code>BAR</code> </p> </li> <li> <p>
+     * <code>LINE</code> </p> </li> </ul>
+     */
+    inline ReferenceLineDataConfiguration& WithSeriesType(ReferenceLineSeriesType&& value) { SetSeriesType(std::move(value)); return *this;}
 
   private:
 
@@ -147,6 +197,9 @@ namespace Model
 
     AxisBinding m_axisBinding;
     bool m_axisBindingHasBeenSet = false;
+
+    ReferenceLineSeriesType m_seriesType;
+    bool m_seriesTypeHasBeenSet = false;
   };
 
 } // namespace Model

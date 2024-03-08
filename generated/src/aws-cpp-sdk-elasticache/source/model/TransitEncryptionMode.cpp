@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TransitEncryptionMode::NOT_SET:
+            return {};
           case TransitEncryptionMode::preferred:
             return "preferred";
           case TransitEncryptionMode::required:

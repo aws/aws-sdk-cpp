@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HttpMethod::NOT_SET:
+            return {};
           case HttpMethod::POST:
             return "POST";
           case HttpMethod::PUT:

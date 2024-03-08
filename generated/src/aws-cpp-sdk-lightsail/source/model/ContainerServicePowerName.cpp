@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ContainerServicePowerName::NOT_SET:
+            return {};
           case ContainerServicePowerName::nano:
             return "nano";
           case ContainerServicePowerName::micro:

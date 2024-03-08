@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResolutionMethod::NOT_SET:
+            return {};
           case ResolutionMethod::MANUAL:
             return "MANUAL";
           case ResolutionMethod::AUTOMATIC:

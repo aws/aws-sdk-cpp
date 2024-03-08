@@ -14,7 +14,8 @@ using namespace Aws::Utils;
 
 GetDatabaseRequest::GetDatabaseRequest() : 
     m_catalogNameHasBeenSet(false),
-    m_databaseNameHasBeenSet(false)
+    m_databaseNameHasBeenSet(false),
+    m_workGroupHasBeenSet(false)
 {
 }
 
@@ -31,6 +32,12 @@ Aws::String GetDatabaseRequest::SerializePayload() const
   if(m_databaseNameHasBeenSet)
   {
    payload.WithString("DatabaseName", m_databaseName);
+
+  }
+
+  if(m_workGroupHasBeenSet)
+  {
+   payload.WithString("WorkGroup", m_workGroup);
 
   }
 

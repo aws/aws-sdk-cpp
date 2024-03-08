@@ -230,72 +230,72 @@ namespace Model
 
 
     /**
-     * <p>A prefix that Kinesis Data Firehose evaluates and adds to failed records
-     * before writing them to S3. This prefix appears immediately following the bucket
-     * name. For information about how to specify this prefix, see <a
+     * <p>A prefix that Firehose evaluates and adds to failed records before writing
+     * them to S3. This prefix appears immediately following the bucket name. For
+     * information about how to specify this prefix, see <a
      * href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom
      * Prefixes for Amazon S3 Objects</a>.</p>
      */
     inline const Aws::String& GetErrorOutputPrefix() const{ return m_errorOutputPrefix; }
 
     /**
-     * <p>A prefix that Kinesis Data Firehose evaluates and adds to failed records
-     * before writing them to S3. This prefix appears immediately following the bucket
-     * name. For information about how to specify this prefix, see <a
+     * <p>A prefix that Firehose evaluates and adds to failed records before writing
+     * them to S3. This prefix appears immediately following the bucket name. For
+     * information about how to specify this prefix, see <a
      * href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom
      * Prefixes for Amazon S3 Objects</a>.</p>
      */
     inline bool ErrorOutputPrefixHasBeenSet() const { return m_errorOutputPrefixHasBeenSet; }
 
     /**
-     * <p>A prefix that Kinesis Data Firehose evaluates and adds to failed records
-     * before writing them to S3. This prefix appears immediately following the bucket
-     * name. For information about how to specify this prefix, see <a
+     * <p>A prefix that Firehose evaluates and adds to failed records before writing
+     * them to S3. This prefix appears immediately following the bucket name. For
+     * information about how to specify this prefix, see <a
      * href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom
      * Prefixes for Amazon S3 Objects</a>.</p>
      */
     inline void SetErrorOutputPrefix(const Aws::String& value) { m_errorOutputPrefixHasBeenSet = true; m_errorOutputPrefix = value; }
 
     /**
-     * <p>A prefix that Kinesis Data Firehose evaluates and adds to failed records
-     * before writing them to S3. This prefix appears immediately following the bucket
-     * name. For information about how to specify this prefix, see <a
+     * <p>A prefix that Firehose evaluates and adds to failed records before writing
+     * them to S3. This prefix appears immediately following the bucket name. For
+     * information about how to specify this prefix, see <a
      * href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom
      * Prefixes for Amazon S3 Objects</a>.</p>
      */
     inline void SetErrorOutputPrefix(Aws::String&& value) { m_errorOutputPrefixHasBeenSet = true; m_errorOutputPrefix = std::move(value); }
 
     /**
-     * <p>A prefix that Kinesis Data Firehose evaluates and adds to failed records
-     * before writing them to S3. This prefix appears immediately following the bucket
-     * name. For information about how to specify this prefix, see <a
+     * <p>A prefix that Firehose evaluates and adds to failed records before writing
+     * them to S3. This prefix appears immediately following the bucket name. For
+     * information about how to specify this prefix, see <a
      * href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom
      * Prefixes for Amazon S3 Objects</a>.</p>
      */
     inline void SetErrorOutputPrefix(const char* value) { m_errorOutputPrefixHasBeenSet = true; m_errorOutputPrefix.assign(value); }
 
     /**
-     * <p>A prefix that Kinesis Data Firehose evaluates and adds to failed records
-     * before writing them to S3. This prefix appears immediately following the bucket
-     * name. For information about how to specify this prefix, see <a
+     * <p>A prefix that Firehose evaluates and adds to failed records before writing
+     * them to S3. This prefix appears immediately following the bucket name. For
+     * information about how to specify this prefix, see <a
      * href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom
      * Prefixes for Amazon S3 Objects</a>.</p>
      */
     inline S3DestinationUpdate& WithErrorOutputPrefix(const Aws::String& value) { SetErrorOutputPrefix(value); return *this;}
 
     /**
-     * <p>A prefix that Kinesis Data Firehose evaluates and adds to failed records
-     * before writing them to S3. This prefix appears immediately following the bucket
-     * name. For information about how to specify this prefix, see <a
+     * <p>A prefix that Firehose evaluates and adds to failed records before writing
+     * them to S3. This prefix appears immediately following the bucket name. For
+     * information about how to specify this prefix, see <a
      * href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom
      * Prefixes for Amazon S3 Objects</a>.</p>
      */
     inline S3DestinationUpdate& WithErrorOutputPrefix(Aws::String&& value) { SetErrorOutputPrefix(std::move(value)); return *this;}
 
     /**
-     * <p>A prefix that Kinesis Data Firehose evaluates and adds to failed records
-     * before writing them to S3. This prefix appears immediately following the bucket
-     * name. For information about how to specify this prefix, see <a
+     * <p>A prefix that Firehose evaluates and adds to failed records before writing
+     * them to S3. This prefix appears immediately following the bucket name. For
+     * information about how to specify this prefix, see <a
      * href="https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html">Custom
      * Prefixes for Amazon S3 Objects</a>.</p>
      */

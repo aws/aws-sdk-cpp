@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Granularity::NOT_SET:
+            return {};
           case Granularity::DAILY:
             return "DAILY";
           case Granularity::MONTHLY:

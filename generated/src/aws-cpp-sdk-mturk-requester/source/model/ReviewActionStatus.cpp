@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReviewActionStatus::NOT_SET:
+            return {};
           case ReviewActionStatus::Intended:
             return "Intended";
           case ReviewActionStatus::Succeeded:

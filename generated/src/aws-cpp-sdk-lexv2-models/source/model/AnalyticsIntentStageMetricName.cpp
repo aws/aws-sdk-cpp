@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AnalyticsIntentStageMetricName::NOT_SET:
+            return {};
           case AnalyticsIntentStageMetricName::Count:
             return "Count";
           case AnalyticsIntentStageMetricName::Success:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LocalStorage::NOT_SET:
+            return {};
           case LocalStorage::included:
             return "included";
           case LocalStorage::excluded:

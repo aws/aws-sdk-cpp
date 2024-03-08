@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LastFrameClippingBehavior::NOT_SET:
+            return {};
           case LastFrameClippingBehavior::EXCLUDE_LAST_FRAME:
             return "EXCLUDE_LAST_FRAME";
           case LastFrameClippingBehavior::INCLUDE_LAST_FRAME:

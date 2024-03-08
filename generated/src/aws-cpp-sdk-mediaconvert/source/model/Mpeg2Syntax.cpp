@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Mpeg2Syntax::NOT_SET:
+            return {};
           case Mpeg2Syntax::DEFAULT:
             return "DEFAULT";
           case Mpeg2Syntax::D_10:

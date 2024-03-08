@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VirtualClusterState::NOT_SET:
+            return {};
           case VirtualClusterState::RUNNING:
             return "RUNNING";
           case VirtualClusterState::TERMINATING:

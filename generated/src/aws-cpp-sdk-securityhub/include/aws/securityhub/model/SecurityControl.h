@@ -8,6 +8,9 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/securityhub/model/SeverityRating.h>
 #include <aws/securityhub/model/ControlStatus.h>
+#include <aws/securityhub/model/UpdateStatus.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/securityhub/model/ParameterConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -396,6 +399,225 @@ namespace Model
      */
     inline SecurityControl& WithSecurityControlStatus(ControlStatus&& value) { SetSecurityControlStatus(std::move(value)); return *this;}
 
+
+    /**
+     * <p> Identifies whether customizable properties of a security control are
+     * reflected in Security Hub findings. A status of <code>READY</code> indicates
+     * findings include the current parameter values. A status of <code>UPDATING</code>
+     * indicates that all findings may not include the current parameter values. </p>
+     */
+    inline const UpdateStatus& GetUpdateStatus() const{ return m_updateStatus; }
+
+    /**
+     * <p> Identifies whether customizable properties of a security control are
+     * reflected in Security Hub findings. A status of <code>READY</code> indicates
+     * findings include the current parameter values. A status of <code>UPDATING</code>
+     * indicates that all findings may not include the current parameter values. </p>
+     */
+    inline bool UpdateStatusHasBeenSet() const { return m_updateStatusHasBeenSet; }
+
+    /**
+     * <p> Identifies whether customizable properties of a security control are
+     * reflected in Security Hub findings. A status of <code>READY</code> indicates
+     * findings include the current parameter values. A status of <code>UPDATING</code>
+     * indicates that all findings may not include the current parameter values. </p>
+     */
+    inline void SetUpdateStatus(const UpdateStatus& value) { m_updateStatusHasBeenSet = true; m_updateStatus = value; }
+
+    /**
+     * <p> Identifies whether customizable properties of a security control are
+     * reflected in Security Hub findings. A status of <code>READY</code> indicates
+     * findings include the current parameter values. A status of <code>UPDATING</code>
+     * indicates that all findings may not include the current parameter values. </p>
+     */
+    inline void SetUpdateStatus(UpdateStatus&& value) { m_updateStatusHasBeenSet = true; m_updateStatus = std::move(value); }
+
+    /**
+     * <p> Identifies whether customizable properties of a security control are
+     * reflected in Security Hub findings. A status of <code>READY</code> indicates
+     * findings include the current parameter values. A status of <code>UPDATING</code>
+     * indicates that all findings may not include the current parameter values. </p>
+     */
+    inline SecurityControl& WithUpdateStatus(const UpdateStatus& value) { SetUpdateStatus(value); return *this;}
+
+    /**
+     * <p> Identifies whether customizable properties of a security control are
+     * reflected in Security Hub findings. A status of <code>READY</code> indicates
+     * findings include the current parameter values. A status of <code>UPDATING</code>
+     * indicates that all findings may not include the current parameter values. </p>
+     */
+    inline SecurityControl& WithUpdateStatus(UpdateStatus&& value) { SetUpdateStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p> An object that identifies the name of a control parameter, its current
+     * value, and whether it has been customized. </p>
+     */
+    inline const Aws::Map<Aws::String, ParameterConfiguration>& GetParameters() const{ return m_parameters; }
+
+    /**
+     * <p> An object that identifies the name of a control parameter, its current
+     * value, and whether it has been customized. </p>
+     */
+    inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
+
+    /**
+     * <p> An object that identifies the name of a control parameter, its current
+     * value, and whether it has been customized. </p>
+     */
+    inline void SetParameters(const Aws::Map<Aws::String, ParameterConfiguration>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
+
+    /**
+     * <p> An object that identifies the name of a control parameter, its current
+     * value, and whether it has been customized. </p>
+     */
+    inline void SetParameters(Aws::Map<Aws::String, ParameterConfiguration>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
+
+    /**
+     * <p> An object that identifies the name of a control parameter, its current
+     * value, and whether it has been customized. </p>
+     */
+    inline SecurityControl& WithParameters(const Aws::Map<Aws::String, ParameterConfiguration>& value) { SetParameters(value); return *this;}
+
+    /**
+     * <p> An object that identifies the name of a control parameter, its current
+     * value, and whether it has been customized. </p>
+     */
+    inline SecurityControl& WithParameters(Aws::Map<Aws::String, ParameterConfiguration>&& value) { SetParameters(std::move(value)); return *this;}
+
+    /**
+     * <p> An object that identifies the name of a control parameter, its current
+     * value, and whether it has been customized. </p>
+     */
+    inline SecurityControl& AddParameters(const Aws::String& key, const ParameterConfiguration& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
+
+    /**
+     * <p> An object that identifies the name of a control parameter, its current
+     * value, and whether it has been customized. </p>
+     */
+    inline SecurityControl& AddParameters(Aws::String&& key, const ParameterConfiguration& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p> An object that identifies the name of a control parameter, its current
+     * value, and whether it has been customized. </p>
+     */
+    inline SecurityControl& AddParameters(const Aws::String& key, ParameterConfiguration&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p> An object that identifies the name of a control parameter, its current
+     * value, and whether it has been customized. </p>
+     */
+    inline SecurityControl& AddParameters(Aws::String&& key, ParameterConfiguration&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p> An object that identifies the name of a control parameter, its current
+     * value, and whether it has been customized. </p>
+     */
+    inline SecurityControl& AddParameters(const char* key, ParameterConfiguration&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p> An object that identifies the name of a control parameter, its current
+     * value, and whether it has been customized. </p>
+     */
+    inline SecurityControl& AddParameters(const char* key, const ParameterConfiguration& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
+
+
+    /**
+     * <p> The most recent reason for updating the customizable properties of a
+     * security control. This differs from the <code>UpdateReason</code> field of the
+     * <a
+     * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateStandardsControlAssociations.html">
+     * <code>BatchUpdateStandardsControlAssociations</code> </a> API, which tracks the
+     * reason for updating the enablement status of a control. This field accepts
+     * alphanumeric characters in addition to white spaces, dashes, and underscores.
+     * </p>
+     */
+    inline const Aws::String& GetLastUpdateReason() const{ return m_lastUpdateReason; }
+
+    /**
+     * <p> The most recent reason for updating the customizable properties of a
+     * security control. This differs from the <code>UpdateReason</code> field of the
+     * <a
+     * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateStandardsControlAssociations.html">
+     * <code>BatchUpdateStandardsControlAssociations</code> </a> API, which tracks the
+     * reason for updating the enablement status of a control. This field accepts
+     * alphanumeric characters in addition to white spaces, dashes, and underscores.
+     * </p>
+     */
+    inline bool LastUpdateReasonHasBeenSet() const { return m_lastUpdateReasonHasBeenSet; }
+
+    /**
+     * <p> The most recent reason for updating the customizable properties of a
+     * security control. This differs from the <code>UpdateReason</code> field of the
+     * <a
+     * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateStandardsControlAssociations.html">
+     * <code>BatchUpdateStandardsControlAssociations</code> </a> API, which tracks the
+     * reason for updating the enablement status of a control. This field accepts
+     * alphanumeric characters in addition to white spaces, dashes, and underscores.
+     * </p>
+     */
+    inline void SetLastUpdateReason(const Aws::String& value) { m_lastUpdateReasonHasBeenSet = true; m_lastUpdateReason = value; }
+
+    /**
+     * <p> The most recent reason for updating the customizable properties of a
+     * security control. This differs from the <code>UpdateReason</code> field of the
+     * <a
+     * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateStandardsControlAssociations.html">
+     * <code>BatchUpdateStandardsControlAssociations</code> </a> API, which tracks the
+     * reason for updating the enablement status of a control. This field accepts
+     * alphanumeric characters in addition to white spaces, dashes, and underscores.
+     * </p>
+     */
+    inline void SetLastUpdateReason(Aws::String&& value) { m_lastUpdateReasonHasBeenSet = true; m_lastUpdateReason = std::move(value); }
+
+    /**
+     * <p> The most recent reason for updating the customizable properties of a
+     * security control. This differs from the <code>UpdateReason</code> field of the
+     * <a
+     * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateStandardsControlAssociations.html">
+     * <code>BatchUpdateStandardsControlAssociations</code> </a> API, which tracks the
+     * reason for updating the enablement status of a control. This field accepts
+     * alphanumeric characters in addition to white spaces, dashes, and underscores.
+     * </p>
+     */
+    inline void SetLastUpdateReason(const char* value) { m_lastUpdateReasonHasBeenSet = true; m_lastUpdateReason.assign(value); }
+
+    /**
+     * <p> The most recent reason for updating the customizable properties of a
+     * security control. This differs from the <code>UpdateReason</code> field of the
+     * <a
+     * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateStandardsControlAssociations.html">
+     * <code>BatchUpdateStandardsControlAssociations</code> </a> API, which tracks the
+     * reason for updating the enablement status of a control. This field accepts
+     * alphanumeric characters in addition to white spaces, dashes, and underscores.
+     * </p>
+     */
+    inline SecurityControl& WithLastUpdateReason(const Aws::String& value) { SetLastUpdateReason(value); return *this;}
+
+    /**
+     * <p> The most recent reason for updating the customizable properties of a
+     * security control. This differs from the <code>UpdateReason</code> field of the
+     * <a
+     * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateStandardsControlAssociations.html">
+     * <code>BatchUpdateStandardsControlAssociations</code> </a> API, which tracks the
+     * reason for updating the enablement status of a control. This field accepts
+     * alphanumeric characters in addition to white spaces, dashes, and underscores.
+     * </p>
+     */
+    inline SecurityControl& WithLastUpdateReason(Aws::String&& value) { SetLastUpdateReason(std::move(value)); return *this;}
+
+    /**
+     * <p> The most recent reason for updating the customizable properties of a
+     * security control. This differs from the <code>UpdateReason</code> field of the
+     * <a
+     * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateStandardsControlAssociations.html">
+     * <code>BatchUpdateStandardsControlAssociations</code> </a> API, which tracks the
+     * reason for updating the enablement status of a control. This field accepts
+     * alphanumeric characters in addition to white spaces, dashes, and underscores.
+     * </p>
+     */
+    inline SecurityControl& WithLastUpdateReason(const char* value) { SetLastUpdateReason(value); return *this;}
+
   private:
 
     Aws::String m_securityControlId;
@@ -418,6 +640,15 @@ namespace Model
 
     ControlStatus m_securityControlStatus;
     bool m_securityControlStatusHasBeenSet = false;
+
+    UpdateStatus m_updateStatus;
+    bool m_updateStatusHasBeenSet = false;
+
+    Aws::Map<Aws::String, ParameterConfiguration> m_parameters;
+    bool m_parametersHasBeenSet = false;
+
+    Aws::String m_lastUpdateReason;
+    bool m_lastUpdateReasonHasBeenSet = false;
   };
 
 } // namespace Model

@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LaunchProfileValidationType::NOT_SET:
+            return {};
           case LaunchProfileValidationType::VALIDATE_ACTIVE_DIRECTORY_STUDIO_COMPONENT:
             return "VALIDATE_ACTIVE_DIRECTORY_STUDIO_COMPONENT";
           case LaunchProfileValidationType::VALIDATE_SUBNET_ASSOCIATION:

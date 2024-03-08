@@ -33,17 +33,16 @@ namespace Pricing
    * attribute. With the service code and an attribute name and value, you can use
    * <code>GetProducts</code> to find specific products that you're interested in,
    * such as an <code>AmazonEC2</code> instance, with a <code>Provisioned IOPS</code>
-   * <code>volumeType</code>.</p> <p>You can use the following endpoints for the
-   * Amazon Web Services Price List API:</p> <ul> <li>
-   * <p>https://api.pricing.us-east-1.amazonaws.com</p> </li> <li>
-   * <p>https://api.pricing.ap-south-1.amazonaws.com</p> </li> </ul>
+   * <code>volumeType</code>.</p> <p>For more information, see <a
+   * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/price-changes.html">Using
+   * the Amazon Web Services Price List API</a> in the <i>Billing User Guide</i>.</p>
    */
   class AWS_PRICING_API PricingClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<PricingClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef PricingClientConfiguration ClientConfigurationType;
       typedef PricingEndpointProvider EndpointProviderType;
@@ -53,14 +52,14 @@ namespace Pricing
         * is not specified, it will be initialized to default values.
         */
         PricingClient(const Aws::Pricing::PricingClientConfiguration& clientConfiguration = Aws::Pricing::PricingClientConfiguration(),
-                      std::shared_ptr<PricingEndpointProviderBase> endpointProvider = Aws::MakeShared<PricingEndpointProvider>(ALLOCATION_TAG));
+                      std::shared_ptr<PricingEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         PricingClient(const Aws::Auth::AWSCredentials& credentials,
-                      std::shared_ptr<PricingEndpointProviderBase> endpointProvider = Aws::MakeShared<PricingEndpointProvider>(ALLOCATION_TAG),
+                      std::shared_ptr<PricingEndpointProviderBase> endpointProvider = nullptr,
                       const Aws::Pricing::PricingClientConfiguration& clientConfiguration = Aws::Pricing::PricingClientConfiguration());
 
        /**
@@ -68,7 +67,7 @@ namespace Pricing
         * the default http client factory will be used
         */
         PricingClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                      std::shared_ptr<PricingEndpointProviderBase> endpointProvider = Aws::MakeShared<PricingEndpointProvider>(ALLOCATION_TAG),
+                      std::shared_ptr<PricingEndpointProviderBase> endpointProvider = nullptr,
                       const Aws::Pricing::PricingClientConfiguration& clientConfiguration = Aws::Pricing::PricingClientConfiguration());
 
 
@@ -167,8 +166,8 @@ namespace Pricing
          * retrieve your Price List file from. This URL is based on the
          * <code>PriceListArn</code> and <code>FileFormat</code> that you retrieve from the
          * <a
-         * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_ListPriceLists.html">
-         * <code>ListPriceLists</code> </a> response. </p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_ListPriceLists.html">ListPriceLists</a>
+         * response. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pricing-2017-10-15/GetPriceListFileUrl">AWS
          * API Reference</a></p>
          */
@@ -232,8 +231,8 @@ namespace Pricing
          * to a specific Amazon Web Services Region. You can use the
          * <code>PriceListArn</code> from the response to get your preferred Price List
          * files through the <a
-         * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_GetPriceListFileUrl.html">
-         * <code>GetPriceListFileUrl</code> </a> API.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_GetPriceListFileUrl.html">GetPriceListFileUrl</a>
+         * API.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pricing-2017-10-15/ListPriceLists">AWS
          * API Reference</a></p>
          */

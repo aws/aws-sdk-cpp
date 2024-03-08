@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RxNormTraitName::NOT_SET:
+            return {};
           case RxNormTraitName::NEGATION:
             return "NEGATION";
           case RxNormTraitName::PAST_HISTORY:

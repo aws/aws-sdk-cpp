@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BarChartOrientation::NOT_SET:
+            return {};
           case BarChartOrientation::HORIZONTAL:
             return "HORIZONTAL";
           case BarChartOrientation::VERTICAL:

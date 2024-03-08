@@ -94,6 +94,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Protocol::NOT_SET:
+            return {};
           case Protocol::zixi_push:
             return "zixi-push";
           case Protocol::rtp_fec:

@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReservationState::NOT_SET:
+            return {};
           case ReservationState::payment_pending:
             return "payment-pending";
           case ReservationState::payment_failed:

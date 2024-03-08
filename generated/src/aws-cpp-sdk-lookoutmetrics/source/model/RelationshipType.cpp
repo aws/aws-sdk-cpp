@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RelationshipType::NOT_SET:
+            return {};
           case RelationshipType::CAUSE_OF_INPUT_ANOMALY_GROUP:
             return "CAUSE_OF_INPUT_ANOMALY_GROUP";
           case RelationshipType::EFFECT_OF_INPUT_ANOMALY_GROUP:

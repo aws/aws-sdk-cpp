@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EndOfMeetingReminderType::NOT_SET:
+            return {};
           case EndOfMeetingReminderType::ANNOUNCEMENT_TIME_CHECK:
             return "ANNOUNCEMENT_TIME_CHECK";
           case EndOfMeetingReminderType::ANNOUNCEMENT_VARIABLE_TIME_LEFT:

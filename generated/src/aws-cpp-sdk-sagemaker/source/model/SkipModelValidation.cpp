@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SkipModelValidation::NOT_SET:
+            return {};
           case SkipModelValidation::All:
             return "All";
           case SkipModelValidation::None:

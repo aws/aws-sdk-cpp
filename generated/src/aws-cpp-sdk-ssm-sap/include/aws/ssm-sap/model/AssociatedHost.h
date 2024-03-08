@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/ssm-sap/SsmSap_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ssm-sap/model/IpAddressMember.h>
 #include <utility>
 
 namespace Aws
@@ -121,6 +123,47 @@ namespace Model
 
 
     /**
+     * <p>The IP addresses of the associated host.</p>
+     */
+    inline const Aws::Vector<IpAddressMember>& GetIpAddresses() const{ return m_ipAddresses; }
+
+    /**
+     * <p>The IP addresses of the associated host.</p>
+     */
+    inline bool IpAddressesHasBeenSet() const { return m_ipAddressesHasBeenSet; }
+
+    /**
+     * <p>The IP addresses of the associated host.</p>
+     */
+    inline void SetIpAddresses(const Aws::Vector<IpAddressMember>& value) { m_ipAddressesHasBeenSet = true; m_ipAddresses = value; }
+
+    /**
+     * <p>The IP addresses of the associated host.</p>
+     */
+    inline void SetIpAddresses(Aws::Vector<IpAddressMember>&& value) { m_ipAddressesHasBeenSet = true; m_ipAddresses = std::move(value); }
+
+    /**
+     * <p>The IP addresses of the associated host.</p>
+     */
+    inline AssociatedHost& WithIpAddresses(const Aws::Vector<IpAddressMember>& value) { SetIpAddresses(value); return *this;}
+
+    /**
+     * <p>The IP addresses of the associated host.</p>
+     */
+    inline AssociatedHost& WithIpAddresses(Aws::Vector<IpAddressMember>&& value) { SetIpAddresses(std::move(value)); return *this;}
+
+    /**
+     * <p>The IP addresses of the associated host.</p>
+     */
+    inline AssociatedHost& AddIpAddresses(const IpAddressMember& value) { m_ipAddressesHasBeenSet = true; m_ipAddresses.push_back(value); return *this; }
+
+    /**
+     * <p>The IP addresses of the associated host.</p>
+     */
+    inline AssociatedHost& AddIpAddresses(IpAddressMember&& value) { m_ipAddressesHasBeenSet = true; m_ipAddresses.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The version of the operating system.</p>
      */
     inline const Aws::String& GetOsVersion() const{ return m_osVersion; }
@@ -167,6 +210,9 @@ namespace Model
 
     Aws::String m_ec2InstanceId;
     bool m_ec2InstanceIdHasBeenSet = false;
+
+    Aws::Vector<IpAddressMember> m_ipAddresses;
+    bool m_ipAddressesHasBeenSet = false;
 
     Aws::String m_osVersion;
     bool m_osVersionHasBeenSet = false;

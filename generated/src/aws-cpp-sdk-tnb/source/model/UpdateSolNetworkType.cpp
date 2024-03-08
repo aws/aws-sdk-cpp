@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UpdateSolNetworkType::NOT_SET:
+            return {};
           case UpdateSolNetworkType::MODIFY_VNF_INFORMATION:
             return "MODIFY_VNF_INFORMATION";
           default:

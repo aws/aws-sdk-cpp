@@ -47,7 +47,8 @@ namespace Model
      * index.</p> </li> <li> <p> <code>INCLUDE</code> - In addition to the attributes
      * described in <code>KEYS_ONLY</code>, the secondary index will include other
      * non-key attributes that you specify.</p> </li> <li> <p> <code>ALL</code> - All
-     * of the table attributes are projected into the index.</p> </li> </ul>
+     * of the table attributes are projected into the index.</p> </li> </ul> <p>When
+     * using the DynamoDB console, <code>ALL</code> is selected by default.</p>
      */
     inline const ProjectionType& GetProjectionType() const{ return m_projectionType; }
 
@@ -57,7 +58,8 @@ namespace Model
      * index.</p> </li> <li> <p> <code>INCLUDE</code> - In addition to the attributes
      * described in <code>KEYS_ONLY</code>, the secondary index will include other
      * non-key attributes that you specify.</p> </li> <li> <p> <code>ALL</code> - All
-     * of the table attributes are projected into the index.</p> </li> </ul>
+     * of the table attributes are projected into the index.</p> </li> </ul> <p>When
+     * using the DynamoDB console, <code>ALL</code> is selected by default.</p>
      */
     inline bool ProjectionTypeHasBeenSet() const { return m_projectionTypeHasBeenSet; }
 
@@ -67,7 +69,8 @@ namespace Model
      * index.</p> </li> <li> <p> <code>INCLUDE</code> - In addition to the attributes
      * described in <code>KEYS_ONLY</code>, the secondary index will include other
      * non-key attributes that you specify.</p> </li> <li> <p> <code>ALL</code> - All
-     * of the table attributes are projected into the index.</p> </li> </ul>
+     * of the table attributes are projected into the index.</p> </li> </ul> <p>When
+     * using the DynamoDB console, <code>ALL</code> is selected by default.</p>
      */
     inline void SetProjectionType(const ProjectionType& value) { m_projectionTypeHasBeenSet = true; m_projectionType = value; }
 
@@ -77,7 +80,8 @@ namespace Model
      * index.</p> </li> <li> <p> <code>INCLUDE</code> - In addition to the attributes
      * described in <code>KEYS_ONLY</code>, the secondary index will include other
      * non-key attributes that you specify.</p> </li> <li> <p> <code>ALL</code> - All
-     * of the table attributes are projected into the index.</p> </li> </ul>
+     * of the table attributes are projected into the index.</p> </li> </ul> <p>When
+     * using the DynamoDB console, <code>ALL</code> is selected by default.</p>
      */
     inline void SetProjectionType(ProjectionType&& value) { m_projectionTypeHasBeenSet = true; m_projectionType = std::move(value); }
 
@@ -87,7 +91,8 @@ namespace Model
      * index.</p> </li> <li> <p> <code>INCLUDE</code> - In addition to the attributes
      * described in <code>KEYS_ONLY</code>, the secondary index will include other
      * non-key attributes that you specify.</p> </li> <li> <p> <code>ALL</code> - All
-     * of the table attributes are projected into the index.</p> </li> </ul>
+     * of the table attributes are projected into the index.</p> </li> </ul> <p>When
+     * using the DynamoDB console, <code>ALL</code> is selected by default.</p>
      */
     inline Projection& WithProjectionType(const ProjectionType& value) { SetProjectionType(value); return *this;}
 
@@ -97,7 +102,8 @@ namespace Model
      * index.</p> </li> <li> <p> <code>INCLUDE</code> - In addition to the attributes
      * described in <code>KEYS_ONLY</code>, the secondary index will include other
      * non-key attributes that you specify.</p> </li> <li> <p> <code>ALL</code> - All
-     * of the table attributes are projected into the index.</p> </li> </ul>
+     * of the table attributes are projected into the index.</p> </li> </ul> <p>When
+     * using the DynamoDB console, <code>ALL</code> is selected by default.</p>
      */
     inline Projection& WithProjectionType(ProjectionType&& value) { SetProjectionType(std::move(value)); return *this;}
 

@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ObjectTypeEnum::NOT_SET:
+            return {};
           case ObjectTypeEnum::ASSESSMENT:
             return "ASSESSMENT";
           case ObjectTypeEnum::CONTROL_SET:

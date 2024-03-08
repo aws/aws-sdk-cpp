@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case S3ServerSideEncryptionType::NOT_SET:
+            return {};
           case S3ServerSideEncryptionType::SERVER_SIDE_ENCRYPTION_S3:
             return "SERVER_SIDE_ENCRYPTION_S3";
           case S3ServerSideEncryptionType::SERVER_SIDE_ENCRYPTION_KMS:

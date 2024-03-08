@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/entityresolution/EntityResolution_EXPORTS.h>
+#include <aws/entityresolution/model/ProviderProperties.h>
 #include <aws/entityresolution/model/ResolutionType.h>
 #include <aws/entityresolution/model/RuleBasedProperties.h>
 #include <utility>
@@ -37,6 +38,37 @@ namespace Model
     AWS_ENTITYRESOLUTION_API ResolutionTechniques(Aws::Utils::Json::JsonView jsonValue);
     AWS_ENTITYRESOLUTION_API ResolutionTechniques& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ENTITYRESOLUTION_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>The properties of the provider service.</p>
+     */
+    inline const ProviderProperties& GetProviderProperties() const{ return m_providerProperties; }
+
+    /**
+     * <p>The properties of the provider service.</p>
+     */
+    inline bool ProviderPropertiesHasBeenSet() const { return m_providerPropertiesHasBeenSet; }
+
+    /**
+     * <p>The properties of the provider service.</p>
+     */
+    inline void SetProviderProperties(const ProviderProperties& value) { m_providerPropertiesHasBeenSet = true; m_providerProperties = value; }
+
+    /**
+     * <p>The properties of the provider service.</p>
+     */
+    inline void SetProviderProperties(ProviderProperties&& value) { m_providerPropertiesHasBeenSet = true; m_providerProperties = std::move(value); }
+
+    /**
+     * <p>The properties of the provider service.</p>
+     */
+    inline ResolutionTechniques& WithProviderProperties(const ProviderProperties& value) { SetProviderProperties(value); return *this;}
+
+    /**
+     * <p>The properties of the provider service.</p>
+     */
+    inline ResolutionTechniques& WithProviderProperties(ProviderProperties&& value) { SetProviderProperties(std::move(value)); return *this;}
 
 
     /**
@@ -113,6 +145,9 @@ namespace Model
     inline ResolutionTechniques& WithRuleBasedProperties(RuleBasedProperties&& value) { SetRuleBasedProperties(std::move(value)); return *this;}
 
   private:
+
+    ProviderProperties m_providerProperties;
+    bool m_providerPropertiesHasBeenSet = false;
 
     ResolutionType m_resolutionType;
     bool m_resolutionTypeHasBeenSet = false;

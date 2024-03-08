@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RowLevelPermissionFormatVersion::NOT_SET:
+            return {};
           case RowLevelPermissionFormatVersion::VERSION_1:
             return "VERSION_1";
           case RowLevelPermissionFormatVersion::VERSION_2:

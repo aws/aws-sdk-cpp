@@ -10,6 +10,7 @@
 #include <aws/lambda/Lambda_EXPORTS.h>
 #include <aws/lambda/LambdaErrors.h>
 
+#include <aws/lambda/model/InvokeWithResponseStreamInitialResponse.h>
 #include <aws/lambda/model/InvokeResponseStreamUpdate.h>
 #include <aws/lambda/model/InvokeWithResponseStreamCompleteEvent.h>
 
@@ -21,6 +22,7 @@ namespace Model
 {
     enum class InvokeWithResponseStreamEventType
     {
+        INITIAL_RESPONSE,
         PAYLOADCHUNK,
         INVOKECOMPLETE,
         UNKNOWN
@@ -28,6 +30,7 @@ namespace Model
 
     class InvokeWithResponseStreamHandler : public Aws::Utils::Event::EventStreamHandler
     {
+        typedef std::function<void(const InvokeWithResponseStreamInitialResponse&)> InvokeWithResponseStreamInitialResponseCallback;
         typedef std::function<void(const InvokeResponseStreamUpdate&)> InvokeResponseStreamUpdateCallback;
         typedef std::function<void(const InvokeWithResponseStreamCompleteEvent&)> InvokeWithResponseStreamCompleteEventCallback;
         typedef std::function<void(const Aws::Client::AWSError<LambdaErrors>& error)> ErrorCallback;
@@ -38,6 +41,7 @@ namespace Model
 
         AWS_LAMBDA_API virtual void OnEvent() override;
 
+        inline void SetInitialResponseCallback(const InvokeWithResponseStreamInitialResponseCallback& callback) { m_onInitialResponse = callback; }
         inline void SetInvokeResponseStreamUpdateCallback(const InvokeResponseStreamUpdateCallback& callback) { m_onInvokeResponseStreamUpdate = callback; }
         inline void SetInvokeWithResponseStreamCompleteEventCallback(const InvokeWithResponseStreamCompleteEventCallback& callback) { m_onInvokeWithResponseStreamCompleteEvent = callback; }
         inline void SetOnErrorCallback(const ErrorCallback& callback) { m_onError = callback; }
@@ -47,6 +51,7 @@ namespace Model
         AWS_LAMBDA_API void HandleErrorInMessage();
         AWS_LAMBDA_API void MarshallError(const Aws::String& errorCode, const Aws::String& errorMessage);
 
+        InvokeWithResponseStreamInitialResponseCallback m_onInitialResponse;
         InvokeResponseStreamUpdateCallback m_onInvokeResponseStreamUpdate;
         InvokeWithResponseStreamCompleteEventCallback m_onInvokeWithResponseStreamCompleteEvent;
         ErrorCallback m_onError;

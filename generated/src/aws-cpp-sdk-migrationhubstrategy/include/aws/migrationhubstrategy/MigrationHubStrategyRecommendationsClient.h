@@ -29,8 +29,8 @@ namespace MigrationHubStrategyRecommendations
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef MigrationHubStrategyRecommendationsClientConfiguration ClientConfigurationType;
       typedef MigrationHubStrategyRecommendationsEndpointProvider EndpointProviderType;
@@ -40,14 +40,14 @@ namespace MigrationHubStrategyRecommendations
         * is not specified, it will be initialized to default values.
         */
         MigrationHubStrategyRecommendationsClient(const Aws::MigrationHubStrategyRecommendations::MigrationHubStrategyRecommendationsClientConfiguration& clientConfiguration = Aws::MigrationHubStrategyRecommendations::MigrationHubStrategyRecommendationsClientConfiguration(),
-                                                  std::shared_ptr<MigrationHubStrategyRecommendationsEndpointProviderBase> endpointProvider = Aws::MakeShared<MigrationHubStrategyRecommendationsEndpointProvider>(ALLOCATION_TAG));
+                                                  std::shared_ptr<MigrationHubStrategyRecommendationsEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         MigrationHubStrategyRecommendationsClient(const Aws::Auth::AWSCredentials& credentials,
-                                                  std::shared_ptr<MigrationHubStrategyRecommendationsEndpointProviderBase> endpointProvider = Aws::MakeShared<MigrationHubStrategyRecommendationsEndpointProvider>(ALLOCATION_TAG),
+                                                  std::shared_ptr<MigrationHubStrategyRecommendationsEndpointProviderBase> endpointProvider = nullptr,
                                                   const Aws::MigrationHubStrategyRecommendations::MigrationHubStrategyRecommendationsClientConfiguration& clientConfiguration = Aws::MigrationHubStrategyRecommendations::MigrationHubStrategyRecommendationsClientConfiguration());
 
        /**
@@ -55,7 +55,7 @@ namespace MigrationHubStrategyRecommendations
         * the default http client factory will be used
         */
         MigrationHubStrategyRecommendationsClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                                                  std::shared_ptr<MigrationHubStrategyRecommendationsEndpointProviderBase> endpointProvider = Aws::MakeShared<MigrationHubStrategyRecommendationsEndpointProvider>(ALLOCATION_TAG),
+                                                  std::shared_ptr<MigrationHubStrategyRecommendationsEndpointProviderBase> endpointProvider = nullptr,
                                                   const Aws::MigrationHubStrategyRecommendations::MigrationHubStrategyRecommendationsClientConfiguration& clientConfiguration = Aws::MigrationHubStrategyRecommendations::MigrationHubStrategyRecommendationsClientConfiguration());
 
 
@@ -341,6 +341,32 @@ namespace MigrationHubStrategyRecommendations
         void GetServerStrategiesAsync(const GetServerStrategiesRequestT& request, const GetServerStrategiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&MigrationHubStrategyRecommendationsClient::GetServerStrategies, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves a list of all the servers fetched from customer vCenter using
+         * Strategy Recommendation Collector.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/ListAnalyzableServers">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListAnalyzableServersOutcome ListAnalyzableServers(const Model::ListAnalyzableServersRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListAnalyzableServers that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListAnalyzableServersRequestT = Model::ListAnalyzableServersRequest>
+        Model::ListAnalyzableServersOutcomeCallable ListAnalyzableServersCallable(const ListAnalyzableServersRequestT& request) const
+        {
+            return SubmitCallable(&MigrationHubStrategyRecommendationsClient::ListAnalyzableServers, request);
+        }
+
+        /**
+         * An Async wrapper for ListAnalyzableServers that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListAnalyzableServersRequestT = Model::ListAnalyzableServersRequest>
+        void ListAnalyzableServersAsync(const ListAnalyzableServersRequestT& request, const ListAnalyzableServersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MigrationHubStrategyRecommendationsClient::ListAnalyzableServers, request, handler, context);
         }
 
         /**

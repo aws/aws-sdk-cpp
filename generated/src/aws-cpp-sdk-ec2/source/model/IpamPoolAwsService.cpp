@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case IpamPoolAwsService::NOT_SET:
+            return {};
           case IpamPoolAwsService::ec2:
             return "ec2";
           default:

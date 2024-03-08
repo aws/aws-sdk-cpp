@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NodeCategory::NOT_SET:
+            return {};
           case NodeCategory::BUSINESS_LOGIC:
             return "BUSINESS_LOGIC";
           case NodeCategory::ML_MODEL:

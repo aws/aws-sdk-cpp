@@ -23,8 +23,8 @@ namespace XRay
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef XRayClientConfiguration ClientConfigurationType;
       typedef XRayEndpointProvider EndpointProviderType;
@@ -34,14 +34,14 @@ namespace XRay
         * is not specified, it will be initialized to default values.
         */
         XRayClient(const Aws::XRay::XRayClientConfiguration& clientConfiguration = Aws::XRay::XRayClientConfiguration(),
-                   std::shared_ptr<XRayEndpointProviderBase> endpointProvider = Aws::MakeShared<XRayEndpointProvider>(ALLOCATION_TAG));
+                   std::shared_ptr<XRayEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         XRayClient(const Aws::Auth::AWSCredentials& credentials,
-                   std::shared_ptr<XRayEndpointProviderBase> endpointProvider = Aws::MakeShared<XRayEndpointProvider>(ALLOCATION_TAG),
+                   std::shared_ptr<XRayEndpointProviderBase> endpointProvider = nullptr,
                    const Aws::XRay::XRayClientConfiguration& clientConfiguration = Aws::XRay::XRayClientConfiguration());
 
        /**
@@ -49,7 +49,7 @@ namespace XRay
         * the default http client factory will be used
         */
         XRayClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                   std::shared_ptr<XRayEndpointProviderBase> endpointProvider = Aws::MakeShared<XRayEndpointProvider>(ALLOCATION_TAG),
+                   std::shared_ptr<XRayEndpointProviderBase> endpointProvider = nullptr,
                    const Aws::XRay::XRayClientConfiguration& clientConfiguration = Aws::XRay::XRayClientConfiguration());
 
 

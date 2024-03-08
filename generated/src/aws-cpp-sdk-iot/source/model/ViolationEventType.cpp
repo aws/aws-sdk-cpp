@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ViolationEventType::NOT_SET:
+            return {};
           case ViolationEventType::in_alarm:
             return "in-alarm";
           case ViolationEventType::alarm_cleared:

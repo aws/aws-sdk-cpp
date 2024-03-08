@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case GenerationStatus::NOT_SET:
+            return {};
           case GenerationStatus::SUCCEEDED:
             return "SUCCEEDED";
           case GenerationStatus::PROCESSING:

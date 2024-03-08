@@ -47,16 +47,19 @@ namespace Model
 
     /**
      * <p>The bucket name containing the objects from which to remove the tags. </p>
-     * <p>When using this action with an access point, you must direct requests to the
-     * access point hostname. The access point hostname takes the form
+     * <p> <b>Access points</b> - When you use this action with an access point, you
+     * must provide the alias of the access point in place of the bucket name or
+     * specify the access point ARN. When using the access point ARN, you must direct
+     * requests to the access point hostname. The access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
      * When using this action with an access point through the Amazon Web Services
      * SDKs, you provide the access point ARN in place of the bucket name. For more
      * information about access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When you use this
-     * action with Amazon S3 on Outposts, you must direct requests to the S3 on
-     * Outposts hostname. The S3 on Outposts hostname takes the form <code>
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p> <b>S3 on
+     * Outposts</b> - When you use this action with Amazon S3 on Outposts, you must
+     * direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname
+     * takes the form <code>
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
      * When you use this action with S3 on Outposts through the Amazon Web Services
      * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
@@ -68,16 +71,19 @@ namespace Model
 
     /**
      * <p>The bucket name containing the objects from which to remove the tags. </p>
-     * <p>When using this action with an access point, you must direct requests to the
-     * access point hostname. The access point hostname takes the form
+     * <p> <b>Access points</b> - When you use this action with an access point, you
+     * must provide the alias of the access point in place of the bucket name or
+     * specify the access point ARN. When using the access point ARN, you must direct
+     * requests to the access point hostname. The access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
      * When using this action with an access point through the Amazon Web Services
      * SDKs, you provide the access point ARN in place of the bucket name. For more
      * information about access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When you use this
-     * action with Amazon S3 on Outposts, you must direct requests to the S3 on
-     * Outposts hostname. The S3 on Outposts hostname takes the form <code>
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p> <b>S3 on
+     * Outposts</b> - When you use this action with Amazon S3 on Outposts, you must
+     * direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname
+     * takes the form <code>
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
      * When you use this action with S3 on Outposts through the Amazon Web Services
      * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
@@ -89,16 +95,19 @@ namespace Model
 
     /**
      * <p>The bucket name containing the objects from which to remove the tags. </p>
-     * <p>When using this action with an access point, you must direct requests to the
-     * access point hostname. The access point hostname takes the form
+     * <p> <b>Access points</b> - When you use this action with an access point, you
+     * must provide the alias of the access point in place of the bucket name or
+     * specify the access point ARN. When using the access point ARN, you must direct
+     * requests to the access point hostname. The access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
      * When using this action with an access point through the Amazon Web Services
      * SDKs, you provide the access point ARN in place of the bucket name. For more
      * information about access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When you use this
-     * action with Amazon S3 on Outposts, you must direct requests to the S3 on
-     * Outposts hostname. The S3 on Outposts hostname takes the form <code>
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p> <b>S3 on
+     * Outposts</b> - When you use this action with Amazon S3 on Outposts, you must
+     * direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname
+     * takes the form <code>
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
      * When you use this action with S3 on Outposts through the Amazon Web Services
      * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
@@ -110,16 +119,19 @@ namespace Model
 
     /**
      * <p>The bucket name containing the objects from which to remove the tags. </p>
-     * <p>When using this action with an access point, you must direct requests to the
-     * access point hostname. The access point hostname takes the form
+     * <p> <b>Access points</b> - When you use this action with an access point, you
+     * must provide the alias of the access point in place of the bucket name or
+     * specify the access point ARN. When using the access point ARN, you must direct
+     * requests to the access point hostname. The access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
      * When using this action with an access point through the Amazon Web Services
      * SDKs, you provide the access point ARN in place of the bucket name. For more
      * information about access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When you use this
-     * action with Amazon S3 on Outposts, you must direct requests to the S3 on
-     * Outposts hostname. The S3 on Outposts hostname takes the form <code>
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p> <b>S3 on
+     * Outposts</b> - When you use this action with Amazon S3 on Outposts, you must
+     * direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname
+     * takes the form <code>
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
      * When you use this action with S3 on Outposts through the Amazon Web Services
      * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
@@ -131,16 +143,19 @@ namespace Model
 
     /**
      * <p>The bucket name containing the objects from which to remove the tags. </p>
-     * <p>When using this action with an access point, you must direct requests to the
-     * access point hostname. The access point hostname takes the form
+     * <p> <b>Access points</b> - When you use this action with an access point, you
+     * must provide the alias of the access point in place of the bucket name or
+     * specify the access point ARN. When using the access point ARN, you must direct
+     * requests to the access point hostname. The access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
      * When using this action with an access point through the Amazon Web Services
      * SDKs, you provide the access point ARN in place of the bucket name. For more
      * information about access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When you use this
-     * action with Amazon S3 on Outposts, you must direct requests to the S3 on
-     * Outposts hostname. The S3 on Outposts hostname takes the form <code>
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p> <b>S3 on
+     * Outposts</b> - When you use this action with Amazon S3 on Outposts, you must
+     * direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname
+     * takes the form <code>
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
      * When you use this action with S3 on Outposts through the Amazon Web Services
      * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
@@ -152,16 +167,19 @@ namespace Model
 
     /**
      * <p>The bucket name containing the objects from which to remove the tags. </p>
-     * <p>When using this action with an access point, you must direct requests to the
-     * access point hostname. The access point hostname takes the form
+     * <p> <b>Access points</b> - When you use this action with an access point, you
+     * must provide the alias of the access point in place of the bucket name or
+     * specify the access point ARN. When using the access point ARN, you must direct
+     * requests to the access point hostname. The access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
      * When using this action with an access point through the Amazon Web Services
      * SDKs, you provide the access point ARN in place of the bucket name. For more
      * information about access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When you use this
-     * action with Amazon S3 on Outposts, you must direct requests to the S3 on
-     * Outposts hostname. The S3 on Outposts hostname takes the form <code>
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p> <b>S3 on
+     * Outposts</b> - When you use this action with Amazon S3 on Outposts, you must
+     * direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname
+     * takes the form <code>
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
      * When you use this action with S3 on Outposts through the Amazon Web Services
      * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
@@ -173,16 +191,19 @@ namespace Model
 
     /**
      * <p>The bucket name containing the objects from which to remove the tags. </p>
-     * <p>When using this action with an access point, you must direct requests to the
-     * access point hostname. The access point hostname takes the form
+     * <p> <b>Access points</b> - When you use this action with an access point, you
+     * must provide the alias of the access point in place of the bucket name or
+     * specify the access point ARN. When using the access point ARN, you must direct
+     * requests to the access point hostname. The access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
      * When using this action with an access point through the Amazon Web Services
      * SDKs, you provide the access point ARN in place of the bucket name. For more
      * information about access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When you use this
-     * action with Amazon S3 on Outposts, you must direct requests to the S3 on
-     * Outposts hostname. The S3 on Outposts hostname takes the form <code>
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p> <b>S3 on
+     * Outposts</b> - When you use this action with Amazon S3 on Outposts, you must
+     * direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname
+     * takes the form <code>
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
      * When you use this action with S3 on Outposts through the Amazon Web Services
      * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
@@ -194,16 +215,19 @@ namespace Model
 
     /**
      * <p>The bucket name containing the objects from which to remove the tags. </p>
-     * <p>When using this action with an access point, you must direct requests to the
-     * access point hostname. The access point hostname takes the form
+     * <p> <b>Access points</b> - When you use this action with an access point, you
+     * must provide the alias of the access point in place of the bucket name or
+     * specify the access point ARN. When using the access point ARN, you must direct
+     * requests to the access point hostname. The access point hostname takes the form
      * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
      * When using this action with an access point through the Amazon Web Services
      * SDKs, you provide the access point ARN in place of the bucket name. For more
      * information about access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When you use this
-     * action with Amazon S3 on Outposts, you must direct requests to the S3 on
-     * Outposts hostname. The S3 on Outposts hostname takes the form <code>
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p> <b>S3 on
+     * Outposts</b> - When you use this action with Amazon S3 on Outposts, you must
+     * direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname
+     * takes the form <code>
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
      * When you use this action with S3 on Outposts through the Amazon Web Services
      * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
@@ -305,58 +329,58 @@ namespace Model
 
 
     /**
-     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
-     * different account, the request fails with the HTTP status code <code>403
-     * Forbidden</code> (access denied).</p>
+     * <p>The account ID of the expected bucket owner. If the account ID that you
+     * provide does not match the actual owner of the bucket, the request fails with
+     * the HTTP status code <code>403 Forbidden</code> (access denied).</p>
      */
     inline const Aws::String& GetExpectedBucketOwner() const{ return m_expectedBucketOwner; }
 
     /**
-     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
-     * different account, the request fails with the HTTP status code <code>403
-     * Forbidden</code> (access denied).</p>
+     * <p>The account ID of the expected bucket owner. If the account ID that you
+     * provide does not match the actual owner of the bucket, the request fails with
+     * the HTTP status code <code>403 Forbidden</code> (access denied).</p>
      */
     inline bool ExpectedBucketOwnerHasBeenSet() const { return m_expectedBucketOwnerHasBeenSet; }
 
     /**
-     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
-     * different account, the request fails with the HTTP status code <code>403
-     * Forbidden</code> (access denied).</p>
+     * <p>The account ID of the expected bucket owner. If the account ID that you
+     * provide does not match the actual owner of the bucket, the request fails with
+     * the HTTP status code <code>403 Forbidden</code> (access denied).</p>
      */
     inline void SetExpectedBucketOwner(const Aws::String& value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner = value; }
 
     /**
-     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
-     * different account, the request fails with the HTTP status code <code>403
-     * Forbidden</code> (access denied).</p>
+     * <p>The account ID of the expected bucket owner. If the account ID that you
+     * provide does not match the actual owner of the bucket, the request fails with
+     * the HTTP status code <code>403 Forbidden</code> (access denied).</p>
      */
     inline void SetExpectedBucketOwner(Aws::String&& value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner = std::move(value); }
 
     /**
-     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
-     * different account, the request fails with the HTTP status code <code>403
-     * Forbidden</code> (access denied).</p>
+     * <p>The account ID of the expected bucket owner. If the account ID that you
+     * provide does not match the actual owner of the bucket, the request fails with
+     * the HTTP status code <code>403 Forbidden</code> (access denied).</p>
      */
     inline void SetExpectedBucketOwner(const char* value) { m_expectedBucketOwnerHasBeenSet = true; m_expectedBucketOwner.assign(value); }
 
     /**
-     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
-     * different account, the request fails with the HTTP status code <code>403
-     * Forbidden</code> (access denied).</p>
+     * <p>The account ID of the expected bucket owner. If the account ID that you
+     * provide does not match the actual owner of the bucket, the request fails with
+     * the HTTP status code <code>403 Forbidden</code> (access denied).</p>
      */
     inline DeleteObjectTaggingRequest& WithExpectedBucketOwner(const Aws::String& value) { SetExpectedBucketOwner(value); return *this;}
 
     /**
-     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
-     * different account, the request fails with the HTTP status code <code>403
-     * Forbidden</code> (access denied).</p>
+     * <p>The account ID of the expected bucket owner. If the account ID that you
+     * provide does not match the actual owner of the bucket, the request fails with
+     * the HTTP status code <code>403 Forbidden</code> (access denied).</p>
      */
     inline DeleteObjectTaggingRequest& WithExpectedBucketOwner(Aws::String&& value) { SetExpectedBucketOwner(std::move(value)); return *this;}
 
     /**
-     * <p>The account ID of the expected bucket owner. If the bucket is owned by a
-     * different account, the request fails with the HTTP status code <code>403
-     * Forbidden</code> (access denied).</p>
+     * <p>The account ID of the expected bucket owner. If the account ID that you
+     * provide does not match the actual owner of the bucket, the request fails with
+     * the HTTP status code <code>403 Forbidden</code> (access denied).</p>
      */
     inline DeleteObjectTaggingRequest& WithExpectedBucketOwner(const char* value) { SetExpectedBucketOwner(value); return *this;}
 

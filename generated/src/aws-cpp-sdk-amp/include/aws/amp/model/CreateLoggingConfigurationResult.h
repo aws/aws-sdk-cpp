@@ -26,7 +26,7 @@ namespace PrometheusService
 namespace Model
 {
   /**
-   * <p>Represents the output of a CreateLoggingConfiguration
+   * <p>Represents the output of a <code>CreateLoggingConfiguration</code>
    * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/CreateLoggingConfigurationResponse">AWS
    * API Reference</a></p>
@@ -40,27 +40,32 @@ namespace Model
 
 
     /**
-     * <p>The status of the logging configuration.</p>
+     * <p>A structure that displays the current status of the logging
+     * configuration.</p>
      */
     inline const LoggingConfigurationStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of the logging configuration.</p>
+     * <p>A structure that displays the current status of the logging
+     * configuration.</p>
      */
     inline void SetStatus(const LoggingConfigurationStatus& value) { m_status = value; }
 
     /**
-     * <p>The status of the logging configuration.</p>
+     * <p>A structure that displays the current status of the logging
+     * configuration.</p>
      */
     inline void SetStatus(LoggingConfigurationStatus&& value) { m_status = std::move(value); }
 
     /**
-     * <p>The status of the logging configuration.</p>
+     * <p>A structure that displays the current status of the logging
+     * configuration.</p>
      */
     inline CreateLoggingConfigurationResult& WithStatus(const LoggingConfigurationStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of the logging configuration.</p>
+     * <p>A structure that displays the current status of the logging
+     * configuration.</p>
      */
     inline CreateLoggingConfigurationResult& WithStatus(LoggingConfigurationStatus&& value) { SetStatus(std::move(value)); return *this;}
 

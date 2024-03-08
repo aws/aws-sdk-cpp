@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AccessDeniedExceptionReason::NOT_SET:
+            return {};
           case AccessDeniedExceptionReason::INSUFFICIENT_ACCOUNT_REPUTATION:
             return "INSUFFICIENT_ACCOUNT_REPUTATION";
           case AccessDeniedExceptionReason::ACCOUNT_DISABLED:

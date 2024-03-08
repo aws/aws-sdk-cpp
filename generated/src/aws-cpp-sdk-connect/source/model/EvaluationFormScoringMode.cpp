@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EvaluationFormScoringMode::NOT_SET:
+            return {};
           case EvaluationFormScoringMode::QUESTION_ONLY:
             return "QUESTION_ONLY";
           case EvaluationFormScoringMode::SECTION_ONLY:

@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FindingStatisticType::NOT_SET:
+            return {};
           case FindingStatisticType::COUNT_BY_SEVERITY:
             return "COUNT_BY_SEVERITY";
           default:

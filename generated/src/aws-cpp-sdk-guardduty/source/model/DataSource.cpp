@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DataSource::NOT_SET:
+            return {};
           case DataSource::FLOW_LOGS:
             return "FLOW_LOGS";
           case DataSource::CLOUD_TRAIL:

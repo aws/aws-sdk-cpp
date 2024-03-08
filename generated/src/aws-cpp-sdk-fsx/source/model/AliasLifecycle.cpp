@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AliasLifecycle::NOT_SET:
+            return {};
           case AliasLifecycle::AVAILABLE:
             return "AVAILABLE";
           case AliasLifecycle::CREATING:

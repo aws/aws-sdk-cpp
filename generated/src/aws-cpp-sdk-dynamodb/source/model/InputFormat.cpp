@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InputFormat::NOT_SET:
+            return {};
           case InputFormat::DYNAMODB_JSON:
             return "DYNAMODB_JSON";
           case InputFormat::ION:

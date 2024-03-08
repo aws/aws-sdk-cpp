@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NotificationContentType::NOT_SET:
+            return {};
           case NotificationContentType::PLAIN_TEXT:
             return "PLAIN_TEXT";
           default:

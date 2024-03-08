@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SimulationAppTargetStatus::NOT_SET:
+            return {};
           case SimulationAppTargetStatus::UNKNOWN:
             return "UNKNOWN";
           case SimulationAppTargetStatus::STARTED:

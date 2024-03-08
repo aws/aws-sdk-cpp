@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TransactionStatus::NOT_SET:
+            return {};
           case TransactionStatus::ACTIVE:
             return "ACTIVE";
           case TransactionStatus::COMMITTED:

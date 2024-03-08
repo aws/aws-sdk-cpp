@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AssociationType::NOT_SET:
+            return {};
           case AssociationType::KNOWLEDGE_BASE:
             return "KNOWLEDGE_BASE";
           default:

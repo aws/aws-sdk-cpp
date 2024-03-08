@@ -23,14 +23,16 @@ namespace Model
 LoggingEnabled::LoggingEnabled() : 
     m_targetBucketHasBeenSet(false),
     m_targetGrantsHasBeenSet(false),
-    m_targetPrefixHasBeenSet(false)
+    m_targetPrefixHasBeenSet(false),
+    m_targetObjectKeyFormatHasBeenSet(false)
 {
 }
 
 LoggingEnabled::LoggingEnabled(const XmlNode& xmlNode) : 
     m_targetBucketHasBeenSet(false),
     m_targetGrantsHasBeenSet(false),
-    m_targetPrefixHasBeenSet(false)
+    m_targetPrefixHasBeenSet(false),
+    m_targetObjectKeyFormatHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -65,6 +67,12 @@ LoggingEnabled& LoggingEnabled::operator =(const XmlNode& xmlNode)
       m_targetPrefix = Aws::Utils::Xml::DecodeEscapedXmlText(targetPrefixNode.GetText());
       m_targetPrefixHasBeenSet = true;
     }
+    XmlNode targetObjectKeyFormatNode = resultNode.FirstChild("TargetObjectKeyFormat");
+    if(!targetObjectKeyFormatNode.IsNull())
+    {
+      m_targetObjectKeyFormat = targetObjectKeyFormatNode;
+      m_targetObjectKeyFormatHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -93,6 +101,12 @@ void LoggingEnabled::AddToNode(XmlNode& parentNode) const
   {
    XmlNode targetPrefixNode = parentNode.CreateChildElement("TargetPrefix");
    targetPrefixNode.SetText(m_targetPrefix);
+  }
+
+  if(m_targetObjectKeyFormatHasBeenSet)
+  {
+   XmlNode targetObjectKeyFormatNode = parentNode.CreateChildElement("TargetObjectKeyFormat");
+   m_targetObjectKeyFormat.AddToNode(targetObjectKeyFormatNode);
   }
 
 }

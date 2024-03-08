@@ -20,7 +20,8 @@ CreateChannelRequest::CreateChannelRequest() :
     m_playbackModeHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_tier(Tier::NOT_SET),
-    m_tierHasBeenSet(false)
+    m_tierHasBeenSet(false),
+    m_timeShiftConfigurationHasBeenSet(false)
 {
 }
 
@@ -64,6 +65,12 @@ Aws::String CreateChannelRequest::SerializePayload() const
   if(m_tierHasBeenSet)
   {
    payload.WithString("Tier", TierMapper::GetNameForTier(m_tier));
+  }
+
+  if(m_timeShiftConfigurationHasBeenSet)
+  {
+   payload.WithObject("TimeShiftConfiguration", m_timeShiftConfiguration.Jsonize());
+
   }
 
   return payload.View().WriteReadable();

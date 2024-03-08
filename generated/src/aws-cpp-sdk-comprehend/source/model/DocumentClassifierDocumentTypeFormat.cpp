@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DocumentClassifierDocumentTypeFormat::NOT_SET:
+            return {};
           case DocumentClassifierDocumentTypeFormat::PLAIN_TEXT_DOCUMENT:
             return "PLAIN_TEXT_DOCUMENT";
           case DocumentClassifierDocumentTypeFormat::SEMI_STRUCTURED_DOCUMENT:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NumericSeparatorSymbol::NOT_SET:
+            return {};
           case NumericSeparatorSymbol::COMMA:
             return "COMMA";
           case NumericSeparatorSymbol::DOT:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Compatibility::NOT_SET:
+            return {};
           case Compatibility::EC2:
             return "EC2";
           case Compatibility::FARGATE:

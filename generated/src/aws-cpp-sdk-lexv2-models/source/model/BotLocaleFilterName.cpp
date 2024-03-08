@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BotLocaleFilterName::NOT_SET:
+            return {};
           case BotLocaleFilterName::BotLocaleName:
             return "BotLocaleName";
           default:

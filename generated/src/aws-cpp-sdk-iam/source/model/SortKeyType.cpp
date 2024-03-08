@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SortKeyType::NOT_SET:
+            return {};
           case SortKeyType::SERVICE_NAMESPACE_ASCENDING:
             return "SERVICE_NAMESPACE_ASCENDING";
           case SortKeyType::SERVICE_NAMESPACE_DESCENDING:

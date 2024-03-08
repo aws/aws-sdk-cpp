@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SortByEnum::NOT_SET:
+            return {};
           case SortByEnum::repositoryName:
             return "repositoryName";
           case SortByEnum::lastModifiedDate:

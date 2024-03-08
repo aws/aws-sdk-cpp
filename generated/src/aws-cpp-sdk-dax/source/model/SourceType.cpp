@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SourceType::NOT_SET:
+            return {};
           case SourceType::CLUSTER:
             return "CLUSTER";
           case SourceType::PARAMETER_GROUP:

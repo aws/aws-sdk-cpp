@@ -30,6 +30,8 @@ namespace Aws
         static const int keyword_HASH = HashingUtils::HashString("keyword");
         static const int opted_out_number_HASH = HashingUtils::HashString("opted-out-number");
         static const int registration_HASH = HashingUtils::HashString("registration");
+        static const int registration_attachment_HASH = HashingUtils::HashString("registration-attachment");
+        static const int verified_destination_number_HASH = HashingUtils::HashString("verified-destination-number");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
@@ -75,6 +77,14 @@ namespace Aws
           {
             return ResourceType::registration;
           }
+          else if (hashCode == registration_attachment_HASH)
+          {
+            return ResourceType::registration_attachment;
+          }
+          else if (hashCode == verified_destination_number_HASH)
+          {
+            return ResourceType::verified_destination_number;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -89,6 +99,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResourceType::NOT_SET:
+            return {};
           case ResourceType::account:
             return "account";
           case ResourceType::phone_number:
@@ -109,6 +121,10 @@ namespace Aws
             return "opted-out-number";
           case ResourceType::registration:
             return "registration";
+          case ResourceType::registration_attachment:
+            return "registration-attachment";
+          case ResourceType::verified_destination_number:
+            return "verified-destination-number";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

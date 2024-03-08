@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OpenZFSDeploymentType::NOT_SET:
+            return {};
           case OpenZFSDeploymentType::SINGLE_AZ_1:
             return "SINGLE_AZ_1";
           case OpenZFSDeploymentType::SINGLE_AZ_2:

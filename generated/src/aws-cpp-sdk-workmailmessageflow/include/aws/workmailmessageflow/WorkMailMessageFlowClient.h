@@ -23,8 +23,8 @@ namespace WorkMailMessageFlow
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef WorkMailMessageFlowClientConfiguration ClientConfigurationType;
       typedef WorkMailMessageFlowEndpointProvider EndpointProviderType;
@@ -34,14 +34,14 @@ namespace WorkMailMessageFlow
         * is not specified, it will be initialized to default values.
         */
         WorkMailMessageFlowClient(const Aws::WorkMailMessageFlow::WorkMailMessageFlowClientConfiguration& clientConfiguration = Aws::WorkMailMessageFlow::WorkMailMessageFlowClientConfiguration(),
-                                  std::shared_ptr<WorkMailMessageFlowEndpointProviderBase> endpointProvider = Aws::MakeShared<WorkMailMessageFlowEndpointProvider>(ALLOCATION_TAG));
+                                  std::shared_ptr<WorkMailMessageFlowEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         WorkMailMessageFlowClient(const Aws::Auth::AWSCredentials& credentials,
-                                  std::shared_ptr<WorkMailMessageFlowEndpointProviderBase> endpointProvider = Aws::MakeShared<WorkMailMessageFlowEndpointProvider>(ALLOCATION_TAG),
+                                  std::shared_ptr<WorkMailMessageFlowEndpointProviderBase> endpointProvider = nullptr,
                                   const Aws::WorkMailMessageFlow::WorkMailMessageFlowClientConfiguration& clientConfiguration = Aws::WorkMailMessageFlow::WorkMailMessageFlowClientConfiguration());
 
        /**
@@ -49,7 +49,7 @@ namespace WorkMailMessageFlow
         * the default http client factory will be used
         */
         WorkMailMessageFlowClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                                  std::shared_ptr<WorkMailMessageFlowEndpointProviderBase> endpointProvider = Aws::MakeShared<WorkMailMessageFlowEndpointProvider>(ALLOCATION_TAG),
+                                  std::shared_ptr<WorkMailMessageFlowEndpointProviderBase> endpointProvider = nullptr,
                                   const Aws::WorkMailMessageFlow::WorkMailMessageFlowClientConfiguration& clientConfiguration = Aws::WorkMailMessageFlow::WorkMailMessageFlowClientConfiguration());
 
 

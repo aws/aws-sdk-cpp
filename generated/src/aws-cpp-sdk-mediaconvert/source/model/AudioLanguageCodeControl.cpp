@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AudioLanguageCodeControl::NOT_SET:
+            return {};
           case AudioLanguageCodeControl::FOLLOW_INPUT:
             return "FOLLOW_INPUT";
           case AudioLanguageCodeControl::USE_CONFIGURED:

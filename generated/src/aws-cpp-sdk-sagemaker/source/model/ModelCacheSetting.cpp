@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ModelCacheSetting::NOT_SET:
+            return {};
           case ModelCacheSetting::Enabled:
             return "Enabled";
           case ModelCacheSetting::Disabled:

@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CapabilityHealthReason::NOT_SET:
+            return {};
           case CapabilityHealthReason::NO_REGISTERED_AGENT:
             return "NO_REGISTERED_AGENT";
           case CapabilityHealthReason::INVALID_IP_OWNERSHIP:

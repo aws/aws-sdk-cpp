@@ -27,8 +27,9 @@ namespace Model
 
   /**
    * <p>Details for an Amazon EMR Studio, including ID, Name, VPC, and Description.
-   * The details do not include subnets, IAM roles, security groups, or tags
-   * associated with the Studio.</p><p><h3>See Also:</h3>   <a
+   * To fetch additional details such as subnets, IAM roles, security groups, and
+   * tags for the Studio, use the <a>DescribeStudio</a> API.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/StudioSummary">AWS
    * API Reference</a></p>
    */

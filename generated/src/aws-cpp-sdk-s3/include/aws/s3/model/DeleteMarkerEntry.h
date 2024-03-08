@@ -178,32 +178,32 @@ namespace Model
 
 
     /**
-     * <p>Date and time the object was last modified.</p>
+     * <p>Date and time when the object was last modified.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModified() const{ return m_lastModified; }
 
     /**
-     * <p>Date and time the object was last modified.</p>
+     * <p>Date and time when the object was last modified.</p>
      */
     inline bool LastModifiedHasBeenSet() const { return m_lastModifiedHasBeenSet; }
 
     /**
-     * <p>Date and time the object was last modified.</p>
+     * <p>Date and time when the object was last modified.</p>
      */
     inline void SetLastModified(const Aws::Utils::DateTime& value) { m_lastModifiedHasBeenSet = true; m_lastModified = value; }
 
     /**
-     * <p>Date and time the object was last modified.</p>
+     * <p>Date and time when the object was last modified.</p>
      */
     inline void SetLastModified(Aws::Utils::DateTime&& value) { m_lastModifiedHasBeenSet = true; m_lastModified = std::move(value); }
 
     /**
-     * <p>Date and time the object was last modified.</p>
+     * <p>Date and time when the object was last modified.</p>
      */
     inline DeleteMarkerEntry& WithLastModified(const Aws::Utils::DateTime& value) { SetLastModified(value); return *this;}
 
     /**
-     * <p>Date and time the object was last modified.</p>
+     * <p>Date and time when the object was last modified.</p>
      */
     inline DeleteMarkerEntry& WithLastModified(Aws::Utils::DateTime&& value) { SetLastModified(std::move(value)); return *this;}
 

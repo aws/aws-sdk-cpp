@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AuthTokenUpdateStrategyType::NOT_SET:
+            return {};
           case AuthTokenUpdateStrategyType::SET:
             return "SET";
           case AuthTokenUpdateStrategyType::ROTATE:

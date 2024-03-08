@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Application::NOT_SET:
+            return {};
           case Application::Microsoft_Office_2016:
             return "Microsoft_Office_2016";
           case Application::Microsoft_Office_2019:

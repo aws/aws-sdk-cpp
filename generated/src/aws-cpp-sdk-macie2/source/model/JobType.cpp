@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case JobType::NOT_SET:
+            return {};
           case JobType::ONE_TIME:
             return "ONE_TIME";
           case JobType::SCHEDULED:

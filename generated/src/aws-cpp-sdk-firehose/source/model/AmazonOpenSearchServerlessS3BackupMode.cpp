@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AmazonOpenSearchServerlessS3BackupMode::NOT_SET:
+            return {};
           case AmazonOpenSearchServerlessS3BackupMode::FailedDocumentsOnly:
             return "FailedDocumentsOnly";
           case AmazonOpenSearchServerlessS3BackupMode::AllDocuments:

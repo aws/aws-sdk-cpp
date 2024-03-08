@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UnlabeledEventsTreatment::NOT_SET:
+            return {};
           case UnlabeledEventsTreatment::IGNORE:
             return "IGNORE";
           case UnlabeledEventsTreatment::FRAUD:

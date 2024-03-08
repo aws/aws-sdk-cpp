@@ -417,22 +417,22 @@ namespace Model
 
 
     /**
-     * <p>The MaxDutyCycle value.</p>
+     * <p>The MaxDutyCycle value. It ranges from 0 to 15.</p>
      */
     inline int GetMaxDutyCycle() const{ return m_maxDutyCycle; }
 
     /**
-     * <p>The MaxDutyCycle value.</p>
+     * <p>The MaxDutyCycle value. It ranges from 0 to 15.</p>
      */
     inline bool MaxDutyCycleHasBeenSet() const { return m_maxDutyCycleHasBeenSet; }
 
     /**
-     * <p>The MaxDutyCycle value.</p>
+     * <p>The MaxDutyCycle value. It ranges from 0 to 15.</p>
      */
     inline void SetMaxDutyCycle(int value) { m_maxDutyCycleHasBeenSet = true; m_maxDutyCycle = value; }
 
     /**
-     * <p>The MaxDutyCycle value.</p>
+     * <p>The MaxDutyCycle value. It ranges from 0 to 15.</p>
      */
     inline LoRaWANDeviceProfile& WithMaxDutyCycle(int value) { SetMaxDutyCycle(value); return *this;}
 

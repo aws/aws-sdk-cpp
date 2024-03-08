@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LogType::NOT_SET:
+            return {};
           case LogType::ALERT:
             return "ALERT";
           case LogType::FLOW:

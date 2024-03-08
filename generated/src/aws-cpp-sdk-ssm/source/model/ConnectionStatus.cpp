@@ -20,20 +20,20 @@ namespace Aws
       namespace ConnectionStatusMapper
       {
 
-        static const int Connected_HASH = HashingUtils::HashString("Connected");
-        static const int NotConnected_HASH = HashingUtils::HashString("NotConnected");
+        static const int connected_HASH = HashingUtils::HashString("connected");
+        static const int notconnected_HASH = HashingUtils::HashString("notconnected");
 
 
         ConnectionStatus GetConnectionStatusForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == Connected_HASH)
+          if (hashCode == connected_HASH)
           {
-            return ConnectionStatus::Connected;
+            return ConnectionStatus::connected;
           }
-          else if (hashCode == NotConnected_HASH)
+          else if (hashCode == notconnected_HASH)
           {
-            return ConnectionStatus::NotConnected;
+            return ConnectionStatus::notconnected;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -49,10 +49,12 @@ namespace Aws
         {
           switch(enumValue)
           {
-          case ConnectionStatus::Connected:
-            return "Connected";
-          case ConnectionStatus::NotConnected:
-            return "NotConnected";
+          case ConnectionStatus::NOT_SET:
+            return {};
+          case ConnectionStatus::connected:
+            return "connected";
+          case ConnectionStatus::notconnected:
+            return "notconnected";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

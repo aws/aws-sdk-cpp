@@ -11,6 +11,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/sagemaker/model/AsyncInferenceConfig.h>
 #include <aws/sagemaker/model/ExplainerConfig.h>
+#include <aws/sagemaker/model/VpcConfig.h>
 #include <aws/sagemaker/model/ProductionVariant.h>
 #include <utility>
 
@@ -350,6 +351,87 @@ namespace Model
     inline DescribeEndpointConfigResult& AddShadowProductionVariants(ProductionVariant&& value) { m_shadowProductionVariants.push_back(std::move(value)); return *this; }
 
 
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM role that you assigned to the
+     * endpoint configuration.</p>
+     */
+    inline const Aws::String& GetExecutionRoleArn() const{ return m_executionRoleArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM role that you assigned to the
+     * endpoint configuration.</p>
+     */
+    inline void SetExecutionRoleArn(const Aws::String& value) { m_executionRoleArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM role that you assigned to the
+     * endpoint configuration.</p>
+     */
+    inline void SetExecutionRoleArn(Aws::String&& value) { m_executionRoleArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM role that you assigned to the
+     * endpoint configuration.</p>
+     */
+    inline void SetExecutionRoleArn(const char* value) { m_executionRoleArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM role that you assigned to the
+     * endpoint configuration.</p>
+     */
+    inline DescribeEndpointConfigResult& WithExecutionRoleArn(const Aws::String& value) { SetExecutionRoleArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM role that you assigned to the
+     * endpoint configuration.</p>
+     */
+    inline DescribeEndpointConfigResult& WithExecutionRoleArn(Aws::String&& value) { SetExecutionRoleArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM role that you assigned to the
+     * endpoint configuration.</p>
+     */
+    inline DescribeEndpointConfigResult& WithExecutionRoleArn(const char* value) { SetExecutionRoleArn(value); return *this;}
+
+
+    
+    inline const VpcConfig& GetVpcConfig() const{ return m_vpcConfig; }
+
+    
+    inline void SetVpcConfig(const VpcConfig& value) { m_vpcConfig = value; }
+
+    
+    inline void SetVpcConfig(VpcConfig&& value) { m_vpcConfig = std::move(value); }
+
+    
+    inline DescribeEndpointConfigResult& WithVpcConfig(const VpcConfig& value) { SetVpcConfig(value); return *this;}
+
+    
+    inline DescribeEndpointConfigResult& WithVpcConfig(VpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Indicates whether all model containers deployed to the endpoint are isolated.
+     * If they are, no inbound or outbound network calls can be made to or from the
+     * model containers.</p>
+     */
+    inline bool GetEnableNetworkIsolation() const{ return m_enableNetworkIsolation; }
+
+    /**
+     * <p>Indicates whether all model containers deployed to the endpoint are isolated.
+     * If they are, no inbound or outbound network calls can be made to or from the
+     * model containers.</p>
+     */
+    inline void SetEnableNetworkIsolation(bool value) { m_enableNetworkIsolation = value; }
+
+    /**
+     * <p>Indicates whether all model containers deployed to the endpoint are isolated.
+     * If they are, no inbound or outbound network calls can be made to or from the
+     * model containers.</p>
+     */
+    inline DescribeEndpointConfigResult& WithEnableNetworkIsolation(bool value) { SetEnableNetworkIsolation(value); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -390,6 +472,12 @@ namespace Model
     ExplainerConfig m_explainerConfig;
 
     Aws::Vector<ProductionVariant> m_shadowProductionVariants;
+
+    Aws::String m_executionRoleArn;
+
+    VpcConfig m_vpcConfig;
+
+    bool m_enableNetworkIsolation;
 
     Aws::String m_requestId;
   };

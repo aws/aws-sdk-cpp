@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/opensearch/model/ClusterConfig.h>
 #include <aws/opensearch/model/EBSOptions.h>
+#include <aws/opensearch/model/IPAddressType.h>
 #include <aws/opensearch/model/SnapshotOptions.h>
 #include <aws/opensearch/model/VPCDerivedInfo.h>
 #include <aws/opensearch/model/CognitoOptions.h>
@@ -21,8 +22,11 @@
 #include <aws/opensearch/model/ChangeProgressDetails.h>
 #include <aws/opensearch/model/OffPeakWindowOptions.h>
 #include <aws/opensearch/model/SoftwareUpdateOptions.h>
+#include <aws/opensearch/model/DomainProcessingStatusType.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/opensearch/model/LogType.h>
 #include <aws/opensearch/model/LogPublishingOption.h>
+#include <aws/opensearch/model/ModifyingProperties.h>
 #include <utility>
 
 namespace Aws
@@ -314,92 +318,157 @@ namespace Model
 
 
     /**
+     * <p>If <code>IPAddressType</code> to set to <code>dualstack</code>, a version 2
+     * domain endpoint is provisioned. This endpoint functions like a normal endpoint,
+     * except that it works with both IPv4 and IPv6 IP addresses. Normal endpoints work
+     * only with IPv4 IP addresses. </p>
+     */
+    inline const Aws::String& GetEndpointV2() const{ return m_endpointV2; }
+
+    /**
+     * <p>If <code>IPAddressType</code> to set to <code>dualstack</code>, a version 2
+     * domain endpoint is provisioned. This endpoint functions like a normal endpoint,
+     * except that it works with both IPv4 and IPv6 IP addresses. Normal endpoints work
+     * only with IPv4 IP addresses. </p>
+     */
+    inline bool EndpointV2HasBeenSet() const { return m_endpointV2HasBeenSet; }
+
+    /**
+     * <p>If <code>IPAddressType</code> to set to <code>dualstack</code>, a version 2
+     * domain endpoint is provisioned. This endpoint functions like a normal endpoint,
+     * except that it works with both IPv4 and IPv6 IP addresses. Normal endpoints work
+     * only with IPv4 IP addresses. </p>
+     */
+    inline void SetEndpointV2(const Aws::String& value) { m_endpointV2HasBeenSet = true; m_endpointV2 = value; }
+
+    /**
+     * <p>If <code>IPAddressType</code> to set to <code>dualstack</code>, a version 2
+     * domain endpoint is provisioned. This endpoint functions like a normal endpoint,
+     * except that it works with both IPv4 and IPv6 IP addresses. Normal endpoints work
+     * only with IPv4 IP addresses. </p>
+     */
+    inline void SetEndpointV2(Aws::String&& value) { m_endpointV2HasBeenSet = true; m_endpointV2 = std::move(value); }
+
+    /**
+     * <p>If <code>IPAddressType</code> to set to <code>dualstack</code>, a version 2
+     * domain endpoint is provisioned. This endpoint functions like a normal endpoint,
+     * except that it works with both IPv4 and IPv6 IP addresses. Normal endpoints work
+     * only with IPv4 IP addresses. </p>
+     */
+    inline void SetEndpointV2(const char* value) { m_endpointV2HasBeenSet = true; m_endpointV2.assign(value); }
+
+    /**
+     * <p>If <code>IPAddressType</code> to set to <code>dualstack</code>, a version 2
+     * domain endpoint is provisioned. This endpoint functions like a normal endpoint,
+     * except that it works with both IPv4 and IPv6 IP addresses. Normal endpoints work
+     * only with IPv4 IP addresses. </p>
+     */
+    inline DomainStatus& WithEndpointV2(const Aws::String& value) { SetEndpointV2(value); return *this;}
+
+    /**
+     * <p>If <code>IPAddressType</code> to set to <code>dualstack</code>, a version 2
+     * domain endpoint is provisioned. This endpoint functions like a normal endpoint,
+     * except that it works with both IPv4 and IPv6 IP addresses. Normal endpoints work
+     * only with IPv4 IP addresses. </p>
+     */
+    inline DomainStatus& WithEndpointV2(Aws::String&& value) { SetEndpointV2(std::move(value)); return *this;}
+
+    /**
+     * <p>If <code>IPAddressType</code> to set to <code>dualstack</code>, a version 2
+     * domain endpoint is provisioned. This endpoint functions like a normal endpoint,
+     * except that it works with both IPv4 and IPv6 IP addresses. Normal endpoints work
+     * only with IPv4 IP addresses. </p>
+     */
+    inline DomainStatus& WithEndpointV2(const char* value) { SetEndpointV2(value); return *this;}
+
+
+    /**
      * <p>The key-value pair that exists if the OpenSearch Service domain uses VPC
-     * endpoints.. Example <code>key, value</code>:
+     * endpoints. Example <code>key, value</code>:
      * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetEndpoints() const{ return m_endpoints; }
 
     /**
      * <p>The key-value pair that exists if the OpenSearch Service domain uses VPC
-     * endpoints.. Example <code>key, value</code>:
+     * endpoints. Example <code>key, value</code>:
      * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.</p>
      */
     inline bool EndpointsHasBeenSet() const { return m_endpointsHasBeenSet; }
 
     /**
      * <p>The key-value pair that exists if the OpenSearch Service domain uses VPC
-     * endpoints.. Example <code>key, value</code>:
+     * endpoints. Example <code>key, value</code>:
      * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.</p>
      */
     inline void SetEndpoints(const Aws::Map<Aws::String, Aws::String>& value) { m_endpointsHasBeenSet = true; m_endpoints = value; }
 
     /**
      * <p>The key-value pair that exists if the OpenSearch Service domain uses VPC
-     * endpoints.. Example <code>key, value</code>:
+     * endpoints. Example <code>key, value</code>:
      * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.</p>
      */
     inline void SetEndpoints(Aws::Map<Aws::String, Aws::String>&& value) { m_endpointsHasBeenSet = true; m_endpoints = std::move(value); }
 
     /**
      * <p>The key-value pair that exists if the OpenSearch Service domain uses VPC
-     * endpoints.. Example <code>key, value</code>:
+     * endpoints. Example <code>key, value</code>:
      * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.</p>
      */
     inline DomainStatus& WithEndpoints(const Aws::Map<Aws::String, Aws::String>& value) { SetEndpoints(value); return *this;}
 
     /**
      * <p>The key-value pair that exists if the OpenSearch Service domain uses VPC
-     * endpoints.. Example <code>key, value</code>:
+     * endpoints. Example <code>key, value</code>:
      * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.</p>
      */
     inline DomainStatus& WithEndpoints(Aws::Map<Aws::String, Aws::String>&& value) { SetEndpoints(std::move(value)); return *this;}
 
     /**
      * <p>The key-value pair that exists if the OpenSearch Service domain uses VPC
-     * endpoints.. Example <code>key, value</code>:
+     * endpoints. Example <code>key, value</code>:
      * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.</p>
      */
     inline DomainStatus& AddEndpoints(const Aws::String& key, const Aws::String& value) { m_endpointsHasBeenSet = true; m_endpoints.emplace(key, value); return *this; }
 
     /**
      * <p>The key-value pair that exists if the OpenSearch Service domain uses VPC
-     * endpoints.. Example <code>key, value</code>:
+     * endpoints. Example <code>key, value</code>:
      * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.</p>
      */
     inline DomainStatus& AddEndpoints(Aws::String&& key, const Aws::String& value) { m_endpointsHasBeenSet = true; m_endpoints.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The key-value pair that exists if the OpenSearch Service domain uses VPC
-     * endpoints.. Example <code>key, value</code>:
+     * endpoints. Example <code>key, value</code>:
      * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.</p>
      */
     inline DomainStatus& AddEndpoints(const Aws::String& key, Aws::String&& value) { m_endpointsHasBeenSet = true; m_endpoints.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The key-value pair that exists if the OpenSearch Service domain uses VPC
-     * endpoints.. Example <code>key, value</code>:
+     * endpoints. Example <code>key, value</code>:
      * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.</p>
      */
     inline DomainStatus& AddEndpoints(Aws::String&& key, Aws::String&& value) { m_endpointsHasBeenSet = true; m_endpoints.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>The key-value pair that exists if the OpenSearch Service domain uses VPC
-     * endpoints.. Example <code>key, value</code>:
+     * endpoints. Example <code>key, value</code>:
      * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.</p>
      */
     inline DomainStatus& AddEndpoints(const char* key, Aws::String&& value) { m_endpointsHasBeenSet = true; m_endpoints.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The key-value pair that exists if the OpenSearch Service domain uses VPC
-     * endpoints.. Example <code>key, value</code>:
+     * endpoints. Example <code>key, value</code>:
      * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.</p>
      */
     inline DomainStatus& AddEndpoints(Aws::String&& key, const char* value) { m_endpointsHasBeenSet = true; m_endpoints.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The key-value pair that exists if the OpenSearch Service domain uses VPC
-     * endpoints.. Example <code>key, value</code>:
+     * endpoints. Example <code>key, value</code>:
      * <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.</p>
      */
     inline DomainStatus& AddEndpoints(const char* key, const char* value) { m_endpointsHasBeenSet = true; m_endpoints.emplace(key, value); return *this; }
@@ -617,6 +686,37 @@ namespace Model
      * policies for the domain.</p>
      */
     inline DomainStatus& WithAccessPolicies(const char* value) { SetAccessPolicies(value); return *this;}
+
+
+    /**
+     * <p>The type of IP addresses supported by the endpoint for the domain.</p>
+     */
+    inline const IPAddressType& GetIPAddressType() const{ return m_iPAddressType; }
+
+    /**
+     * <p>The type of IP addresses supported by the endpoint for the domain.</p>
+     */
+    inline bool IPAddressTypeHasBeenSet() const { return m_iPAddressTypeHasBeenSet; }
+
+    /**
+     * <p>The type of IP addresses supported by the endpoint for the domain.</p>
+     */
+    inline void SetIPAddressType(const IPAddressType& value) { m_iPAddressTypeHasBeenSet = true; m_iPAddressType = value; }
+
+    /**
+     * <p>The type of IP addresses supported by the endpoint for the domain.</p>
+     */
+    inline void SetIPAddressType(IPAddressType&& value) { m_iPAddressTypeHasBeenSet = true; m_iPAddressType = std::move(value); }
+
+    /**
+     * <p>The type of IP addresses supported by the endpoint for the domain.</p>
+     */
+    inline DomainStatus& WithIPAddressType(const IPAddressType& value) { SetIPAddressType(value); return *this;}
+
+    /**
+     * <p>The type of IP addresses supported by the endpoint for the domain.</p>
+     */
+    inline DomainStatus& WithIPAddressType(IPAddressType&& value) { SetIPAddressType(std::move(value)); return *this;}
 
 
     /**
@@ -1131,6 +1231,86 @@ namespace Model
      */
     inline DomainStatus& WithSoftwareUpdateOptions(SoftwareUpdateOptions&& value) { SetSoftwareUpdateOptions(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The status of any changes that are currently in progress for the domain.</p>
+     */
+    inline const DomainProcessingStatusType& GetDomainProcessingStatus() const{ return m_domainProcessingStatus; }
+
+    /**
+     * <p>The status of any changes that are currently in progress for the domain.</p>
+     */
+    inline bool DomainProcessingStatusHasBeenSet() const { return m_domainProcessingStatusHasBeenSet; }
+
+    /**
+     * <p>The status of any changes that are currently in progress for the domain.</p>
+     */
+    inline void SetDomainProcessingStatus(const DomainProcessingStatusType& value) { m_domainProcessingStatusHasBeenSet = true; m_domainProcessingStatus = value; }
+
+    /**
+     * <p>The status of any changes that are currently in progress for the domain.</p>
+     */
+    inline void SetDomainProcessingStatus(DomainProcessingStatusType&& value) { m_domainProcessingStatusHasBeenSet = true; m_domainProcessingStatus = std::move(value); }
+
+    /**
+     * <p>The status of any changes that are currently in progress for the domain.</p>
+     */
+    inline DomainStatus& WithDomainProcessingStatus(const DomainProcessingStatusType& value) { SetDomainProcessingStatus(value); return *this;}
+
+    /**
+     * <p>The status of any changes that are currently in progress for the domain.</p>
+     */
+    inline DomainStatus& WithDomainProcessingStatus(DomainProcessingStatusType&& value) { SetDomainProcessingStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Information about the domain properties that are currently being
+     * modified.</p>
+     */
+    inline const Aws::Vector<ModifyingProperties>& GetModifyingProperties() const{ return m_modifyingProperties; }
+
+    /**
+     * <p>Information about the domain properties that are currently being
+     * modified.</p>
+     */
+    inline bool ModifyingPropertiesHasBeenSet() const { return m_modifyingPropertiesHasBeenSet; }
+
+    /**
+     * <p>Information about the domain properties that are currently being
+     * modified.</p>
+     */
+    inline void SetModifyingProperties(const Aws::Vector<ModifyingProperties>& value) { m_modifyingPropertiesHasBeenSet = true; m_modifyingProperties = value; }
+
+    /**
+     * <p>Information about the domain properties that are currently being
+     * modified.</p>
+     */
+    inline void SetModifyingProperties(Aws::Vector<ModifyingProperties>&& value) { m_modifyingPropertiesHasBeenSet = true; m_modifyingProperties = std::move(value); }
+
+    /**
+     * <p>Information about the domain properties that are currently being
+     * modified.</p>
+     */
+    inline DomainStatus& WithModifyingProperties(const Aws::Vector<ModifyingProperties>& value) { SetModifyingProperties(value); return *this;}
+
+    /**
+     * <p>Information about the domain properties that are currently being
+     * modified.</p>
+     */
+    inline DomainStatus& WithModifyingProperties(Aws::Vector<ModifyingProperties>&& value) { SetModifyingProperties(std::move(value)); return *this;}
+
+    /**
+     * <p>Information about the domain properties that are currently being
+     * modified.</p>
+     */
+    inline DomainStatus& AddModifyingProperties(const ModifyingProperties& value) { m_modifyingPropertiesHasBeenSet = true; m_modifyingProperties.push_back(value); return *this; }
+
+    /**
+     * <p>Information about the domain properties that are currently being
+     * modified.</p>
+     */
+    inline DomainStatus& AddModifyingProperties(ModifyingProperties&& value) { m_modifyingPropertiesHasBeenSet = true; m_modifyingProperties.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_domainId;
@@ -1150,6 +1330,9 @@ namespace Model
 
     Aws::String m_endpoint;
     bool m_endpointHasBeenSet = false;
+
+    Aws::String m_endpointV2;
+    bool m_endpointV2HasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_endpoints;
     bool m_endpointsHasBeenSet = false;
@@ -1171,6 +1354,9 @@ namespace Model
 
     Aws::String m_accessPolicies;
     bool m_accessPoliciesHasBeenSet = false;
+
+    IPAddressType m_iPAddressType;
+    bool m_iPAddressTypeHasBeenSet = false;
 
     SnapshotOptions m_snapshotOptions;
     bool m_snapshotOptionsHasBeenSet = false;
@@ -1213,6 +1399,12 @@ namespace Model
 
     SoftwareUpdateOptions m_softwareUpdateOptions;
     bool m_softwareUpdateOptionsHasBeenSet = false;
+
+    DomainProcessingStatusType m_domainProcessingStatus;
+    bool m_domainProcessingStatusHasBeenSet = false;
+
+    Aws::Vector<ModifyingProperties> m_modifyingProperties;
+    bool m_modifyingPropertiesHasBeenSet = false;
   };
 
 } // namespace Model

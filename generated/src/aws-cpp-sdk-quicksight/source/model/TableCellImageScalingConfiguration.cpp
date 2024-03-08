@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TableCellImageScalingConfiguration::NOT_SET:
+            return {};
           case TableCellImageScalingConfiguration::FIT_TO_CELL_HEIGHT:
             return "FIT_TO_CELL_HEIGHT";
           case TableCellImageScalingConfiguration::FIT_TO_CELL_WIDTH:

@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BuiltInIntentSortAttribute::NOT_SET:
+            return {};
           case BuiltInIntentSortAttribute::IntentSignature:
             return "IntentSignature";
           default:

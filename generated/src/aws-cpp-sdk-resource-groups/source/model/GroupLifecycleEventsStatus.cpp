@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case GroupLifecycleEventsStatus::NOT_SET:
+            return {};
           case GroupLifecycleEventsStatus::ACTIVE:
             return "ACTIVE";
           case GroupLifecycleEventsStatus::INACTIVE:

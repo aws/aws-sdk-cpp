@@ -119,6 +119,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StreamingSessionStatusCode::NOT_SET:
+            return {};
           case StreamingSessionStatusCode::STREAMING_SESSION_READY:
             return "STREAMING_SESSION_READY";
           case StreamingSessionStatusCode::STREAMING_SESSION_DELETED:

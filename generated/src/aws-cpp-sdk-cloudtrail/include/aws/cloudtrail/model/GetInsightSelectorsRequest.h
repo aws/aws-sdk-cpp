@@ -44,7 +44,8 @@ namespace Model
      * <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p>
      * </li> <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
      * </ul> <p>If you specify a trail ARN, it must be in the format:</p> <p>
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p> <p>You
+     * cannot use this parameter with the <code>EventDataStore</code> parameter.</p>
      */
     inline const Aws::String& GetTrailName() const{ return m_trailName; }
 
@@ -58,7 +59,8 @@ namespace Model
      * <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p>
      * </li> <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
      * </ul> <p>If you specify a trail ARN, it must be in the format:</p> <p>
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p> <p>You
+     * cannot use this parameter with the <code>EventDataStore</code> parameter.</p>
      */
     inline bool TrailNameHasBeenSet() const { return m_trailNameHasBeenSet; }
 
@@ -72,7 +74,8 @@ namespace Model
      * <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p>
      * </li> <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
      * </ul> <p>If you specify a trail ARN, it must be in the format:</p> <p>
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p> <p>You
+     * cannot use this parameter with the <code>EventDataStore</code> parameter.</p>
      */
     inline void SetTrailName(const Aws::String& value) { m_trailNameHasBeenSet = true; m_trailName = value; }
 
@@ -86,7 +89,8 @@ namespace Model
      * <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p>
      * </li> <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
      * </ul> <p>If you specify a trail ARN, it must be in the format:</p> <p>
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p> <p>You
+     * cannot use this parameter with the <code>EventDataStore</code> parameter.</p>
      */
     inline void SetTrailName(Aws::String&& value) { m_trailNameHasBeenSet = true; m_trailName = std::move(value); }
 
@@ -100,7 +104,8 @@ namespace Model
      * <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p>
      * </li> <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
      * </ul> <p>If you specify a trail ARN, it must be in the format:</p> <p>
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p> <p>You
+     * cannot use this parameter with the <code>EventDataStore</code> parameter.</p>
      */
     inline void SetTrailName(const char* value) { m_trailNameHasBeenSet = true; m_trailName.assign(value); }
 
@@ -114,7 +119,8 @@ namespace Model
      * <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p>
      * </li> <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
      * </ul> <p>If you specify a trail ARN, it must be in the format:</p> <p>
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p> <p>You
+     * cannot use this parameter with the <code>EventDataStore</code> parameter.</p>
      */
     inline GetInsightSelectorsRequest& WithTrailName(const Aws::String& value) { SetTrailName(value); return *this;}
 
@@ -128,7 +134,8 @@ namespace Model
      * <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p>
      * </li> <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
      * </ul> <p>If you specify a trail ARN, it must be in the format:</p> <p>
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p> <p>You
+     * cannot use this parameter with the <code>EventDataStore</code> parameter.</p>
      */
     inline GetInsightSelectorsRequest& WithTrailName(Aws::String&& value) { SetTrailName(std::move(value)); return *this;}
 
@@ -142,14 +149,75 @@ namespace Model
      * <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p>
      * </li> <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
      * </ul> <p>If you specify a trail ARN, it must be in the format:</p> <p>
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p> <p>You
+     * cannot use this parameter with the <code>EventDataStore</code> parameter.</p>
      */
     inline GetInsightSelectorsRequest& WithTrailName(const char* value) { SetTrailName(value); return *this;}
+
+
+    /**
+     * <p> Specifies the ARN (or ID suffix of the ARN) of the event data store for
+     * which you want to get Insights selectors. </p> <p>You cannot use this parameter
+     * with the <code>TrailName</code> parameter.</p>
+     */
+    inline const Aws::String& GetEventDataStore() const{ return m_eventDataStore; }
+
+    /**
+     * <p> Specifies the ARN (or ID suffix of the ARN) of the event data store for
+     * which you want to get Insights selectors. </p> <p>You cannot use this parameter
+     * with the <code>TrailName</code> parameter.</p>
+     */
+    inline bool EventDataStoreHasBeenSet() const { return m_eventDataStoreHasBeenSet; }
+
+    /**
+     * <p> Specifies the ARN (or ID suffix of the ARN) of the event data store for
+     * which you want to get Insights selectors. </p> <p>You cannot use this parameter
+     * with the <code>TrailName</code> parameter.</p>
+     */
+    inline void SetEventDataStore(const Aws::String& value) { m_eventDataStoreHasBeenSet = true; m_eventDataStore = value; }
+
+    /**
+     * <p> Specifies the ARN (or ID suffix of the ARN) of the event data store for
+     * which you want to get Insights selectors. </p> <p>You cannot use this parameter
+     * with the <code>TrailName</code> parameter.</p>
+     */
+    inline void SetEventDataStore(Aws::String&& value) { m_eventDataStoreHasBeenSet = true; m_eventDataStore = std::move(value); }
+
+    /**
+     * <p> Specifies the ARN (or ID suffix of the ARN) of the event data store for
+     * which you want to get Insights selectors. </p> <p>You cannot use this parameter
+     * with the <code>TrailName</code> parameter.</p>
+     */
+    inline void SetEventDataStore(const char* value) { m_eventDataStoreHasBeenSet = true; m_eventDataStore.assign(value); }
+
+    /**
+     * <p> Specifies the ARN (or ID suffix of the ARN) of the event data store for
+     * which you want to get Insights selectors. </p> <p>You cannot use this parameter
+     * with the <code>TrailName</code> parameter.</p>
+     */
+    inline GetInsightSelectorsRequest& WithEventDataStore(const Aws::String& value) { SetEventDataStore(value); return *this;}
+
+    /**
+     * <p> Specifies the ARN (or ID suffix of the ARN) of the event data store for
+     * which you want to get Insights selectors. </p> <p>You cannot use this parameter
+     * with the <code>TrailName</code> parameter.</p>
+     */
+    inline GetInsightSelectorsRequest& WithEventDataStore(Aws::String&& value) { SetEventDataStore(std::move(value)); return *this;}
+
+    /**
+     * <p> Specifies the ARN (or ID suffix of the ARN) of the event data store for
+     * which you want to get Insights selectors. </p> <p>You cannot use this parameter
+     * with the <code>TrailName</code> parameter.</p>
+     */
+    inline GetInsightSelectorsRequest& WithEventDataStore(const char* value) { SetEventDataStore(value); return *this;}
 
   private:
 
     Aws::String m_trailName;
     bool m_trailNameHasBeenSet = false;
+
+    Aws::String m_eventDataStore;
+    bool m_eventDataStoreHasBeenSet = false;
   };
 
 } // namespace Model

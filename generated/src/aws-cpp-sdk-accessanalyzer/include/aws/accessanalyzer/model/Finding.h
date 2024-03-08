@@ -85,79 +85,79 @@ namespace Model
 
 
     /**
-     * <p>The external principal that access to a resource within the zone of
+     * <p>The external principal that has access to a resource within the zone of
      * trust.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetPrincipal() const{ return m_principal; }
 
     /**
-     * <p>The external principal that access to a resource within the zone of
+     * <p>The external principal that has access to a resource within the zone of
      * trust.</p>
      */
     inline bool PrincipalHasBeenSet() const { return m_principalHasBeenSet; }
 
     /**
-     * <p>The external principal that access to a resource within the zone of
+     * <p>The external principal that has access to a resource within the zone of
      * trust.</p>
      */
     inline void SetPrincipal(const Aws::Map<Aws::String, Aws::String>& value) { m_principalHasBeenSet = true; m_principal = value; }
 
     /**
-     * <p>The external principal that access to a resource within the zone of
+     * <p>The external principal that has access to a resource within the zone of
      * trust.</p>
      */
     inline void SetPrincipal(Aws::Map<Aws::String, Aws::String>&& value) { m_principalHasBeenSet = true; m_principal = std::move(value); }
 
     /**
-     * <p>The external principal that access to a resource within the zone of
+     * <p>The external principal that has access to a resource within the zone of
      * trust.</p>
      */
     inline Finding& WithPrincipal(const Aws::Map<Aws::String, Aws::String>& value) { SetPrincipal(value); return *this;}
 
     /**
-     * <p>The external principal that access to a resource within the zone of
+     * <p>The external principal that has access to a resource within the zone of
      * trust.</p>
      */
     inline Finding& WithPrincipal(Aws::Map<Aws::String, Aws::String>&& value) { SetPrincipal(std::move(value)); return *this;}
 
     /**
-     * <p>The external principal that access to a resource within the zone of
+     * <p>The external principal that has access to a resource within the zone of
      * trust.</p>
      */
     inline Finding& AddPrincipal(const Aws::String& key, const Aws::String& value) { m_principalHasBeenSet = true; m_principal.emplace(key, value); return *this; }
 
     /**
-     * <p>The external principal that access to a resource within the zone of
+     * <p>The external principal that has access to a resource within the zone of
      * trust.</p>
      */
     inline Finding& AddPrincipal(Aws::String&& key, const Aws::String& value) { m_principalHasBeenSet = true; m_principal.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The external principal that access to a resource within the zone of
+     * <p>The external principal that has access to a resource within the zone of
      * trust.</p>
      */
     inline Finding& AddPrincipal(const Aws::String& key, Aws::String&& value) { m_principalHasBeenSet = true; m_principal.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The external principal that access to a resource within the zone of
+     * <p>The external principal that has access to a resource within the zone of
      * trust.</p>
      */
     inline Finding& AddPrincipal(Aws::String&& key, Aws::String&& value) { m_principalHasBeenSet = true; m_principal.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The external principal that access to a resource within the zone of
+     * <p>The external principal that has access to a resource within the zone of
      * trust.</p>
      */
     inline Finding& AddPrincipal(const char* key, Aws::String&& value) { m_principalHasBeenSet = true; m_principal.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The external principal that access to a resource within the zone of
+     * <p>The external principal that has access to a resource within the zone of
      * trust.</p>
      */
     inline Finding& AddPrincipal(Aws::String&& key, const char* value) { m_principalHasBeenSet = true; m_principal.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The external principal that access to a resource within the zone of
+     * <p>The external principal that has access to a resource within the zone of
      * trust.</p>
      */
     inline Finding& AddPrincipal(const char* key, const char* value) { m_principalHasBeenSet = true; m_principal.emplace(key, value); return *this; }

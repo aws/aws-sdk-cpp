@@ -73,8 +73,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* CloudWatchEvidentlyClient::SERVICE_NAME = "evidently";
-const char* CloudWatchEvidentlyClient::ALLOCATION_TAG = "CloudWatchEvidentlyClient";
+namespace Aws
+{
+  namespace CloudWatchEvidently
+  {
+    const char SERVICE_NAME[] = "evidently";
+    const char ALLOCATION_TAG[] = "CloudWatchEvidentlyClient";
+  }
+}
+const char* CloudWatchEvidentlyClient::GetServiceName() {return SERVICE_NAME;}
+const char* CloudWatchEvidentlyClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 CloudWatchEvidentlyClient::CloudWatchEvidentlyClient(const CloudWatchEvidently::CloudWatchEvidentlyClientConfiguration& clientConfiguration,
                                                      std::shared_ptr<CloudWatchEvidentlyEndpointProviderBase> endpointProvider) :
@@ -86,7 +94,7 @@ CloudWatchEvidentlyClient::CloudWatchEvidentlyClient(const CloudWatchEvidently::
             Aws::MakeShared<CloudWatchEvidentlyErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CloudWatchEvidentlyEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -102,7 +110,7 @@ CloudWatchEvidentlyClient::CloudWatchEvidentlyClient(const AWSCredentials& crede
             Aws::MakeShared<CloudWatchEvidentlyErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CloudWatchEvidentlyEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -118,7 +126,7 @@ CloudWatchEvidentlyClient::CloudWatchEvidentlyClient(const std::shared_ptr<AWSCr
             Aws::MakeShared<CloudWatchEvidentlyErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CloudWatchEvidentlyEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

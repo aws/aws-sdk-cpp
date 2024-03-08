@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NotificationType::NOT_SET:
+            return {};
           case NotificationType::Bounce:
             return "Bounce";
           case NotificationType::Complaint:

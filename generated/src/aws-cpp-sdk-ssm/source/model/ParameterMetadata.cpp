@@ -20,6 +20,7 @@ namespace Model
 
 ParameterMetadata::ParameterMetadata() : 
     m_nameHasBeenSet(false),
+    m_aRNHasBeenSet(false),
     m_type(ParameterType::NOT_SET),
     m_typeHasBeenSet(false),
     m_keyIdHasBeenSet(false),
@@ -38,6 +39,7 @@ ParameterMetadata::ParameterMetadata() :
 
 ParameterMetadata::ParameterMetadata(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
+    m_aRNHasBeenSet(false),
     m_type(ParameterType::NOT_SET),
     m_typeHasBeenSet(false),
     m_keyIdHasBeenSet(false),
@@ -62,6 +64,13 @@ ParameterMetadata& ParameterMetadata::operator =(JsonView jsonValue)
     m_name = jsonValue.GetString("Name");
 
     m_nameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ARN"))
+  {
+    m_aRN = jsonValue.GetString("ARN");
+
+    m_aRNHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Type"))
@@ -147,6 +156,12 @@ JsonValue ParameterMetadata::Jsonize() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("Name", m_name);
+
+  }
+
+  if(m_aRNHasBeenSet)
+  {
+   payload.WithString("ARN", m_aRN);
 
   }
 

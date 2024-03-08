@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UrlType::NOT_SET:
+            return {};
           case UrlType::FLINK_DASHBOARD_URL:
             return "FLINK_DASHBOARD_URL";
           case UrlType::ZEPPELIN_UI_URL:

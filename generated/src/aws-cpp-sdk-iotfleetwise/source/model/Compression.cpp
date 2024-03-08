@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Compression::NOT_SET:
+            return {};
           case Compression::OFF:
             return "OFF";
           case Compression::SNAPPY:

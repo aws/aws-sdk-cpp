@@ -24,8 +24,8 @@ namespace CloudControlApi
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef CloudControlApiClientConfiguration ClientConfigurationType;
       typedef CloudControlApiEndpointProvider EndpointProviderType;
@@ -35,14 +35,14 @@ namespace CloudControlApi
         * is not specified, it will be initialized to default values.
         */
         CloudControlApiClient(const Aws::CloudControlApi::CloudControlApiClientConfiguration& clientConfiguration = Aws::CloudControlApi::CloudControlApiClientConfiguration(),
-                              std::shared_ptr<CloudControlApiEndpointProviderBase> endpointProvider = Aws::MakeShared<CloudControlApiEndpointProvider>(ALLOCATION_TAG));
+                              std::shared_ptr<CloudControlApiEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         CloudControlApiClient(const Aws::Auth::AWSCredentials& credentials,
-                              std::shared_ptr<CloudControlApiEndpointProviderBase> endpointProvider = Aws::MakeShared<CloudControlApiEndpointProvider>(ALLOCATION_TAG),
+                              std::shared_ptr<CloudControlApiEndpointProviderBase> endpointProvider = nullptr,
                               const Aws::CloudControlApi::CloudControlApiClientConfiguration& clientConfiguration = Aws::CloudControlApi::CloudControlApiClientConfiguration());
 
        /**
@@ -50,7 +50,7 @@ namespace CloudControlApi
         * the default http client factory will be used
         */
         CloudControlApiClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                              std::shared_ptr<CloudControlApiEndpointProviderBase> endpointProvider = Aws::MakeShared<CloudControlApiEndpointProvider>(ALLOCATION_TAG),
+                              std::shared_ptr<CloudControlApiEndpointProviderBase> endpointProvider = nullptr,
                               const Aws::CloudControlApi::CloudControlApiClientConfiguration& clientConfiguration = Aws::CloudControlApi::CloudControlApiClientConfiguration());
 
 

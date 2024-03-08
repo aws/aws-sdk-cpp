@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReservationSpecialFeature::NOT_SET:
+            return {};
           case ReservationSpecialFeature::ADVANCED_AUDIO:
             return "ADVANCED_AUDIO";
           case ReservationSpecialFeature::AUDIO_NORMALIZATION:

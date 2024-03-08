@@ -25,8 +25,9 @@ namespace Model
 {
 
   /**
-   * <p>The collection of event patterns used to filter events. For more information,
-   * see <a
+   * <p>The collection of event patterns used to filter events.</p> <p>To remove a
+   * filter, specify a <code>FilterCriteria</code> object with an empty array of
+   * <code>Filter</code> objects.</p> <p>For more information, see <a
    * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events
    * and Event Patterns</a> in the <i>Amazon EventBridge User
    * Guide</i>.</p><p><h3>See Also:</h3>   <a

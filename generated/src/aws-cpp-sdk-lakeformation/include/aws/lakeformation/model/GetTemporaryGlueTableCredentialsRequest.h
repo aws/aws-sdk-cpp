@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/lakeformation/model/AuditContext.h>
+#include <aws/lakeformation/model/QuerySessionContext.h>
 #include <aws/lakeformation/model/Permission.h>
 #include <aws/lakeformation/model/PermissionType.h>
 #include <utility>
@@ -244,6 +245,90 @@ namespace Model
      */
     inline GetTemporaryGlueTableCredentialsRequest& AddSupportedPermissionTypes(PermissionType&& value) { m_supportedPermissionTypesHasBeenSet = true; m_supportedPermissionTypes.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The Amazon S3 path for the table.</p>
+     */
+    inline const Aws::String& GetS3Path() const{ return m_s3Path; }
+
+    /**
+     * <p>The Amazon S3 path for the table.</p>
+     */
+    inline bool S3PathHasBeenSet() const { return m_s3PathHasBeenSet; }
+
+    /**
+     * <p>The Amazon S3 path for the table.</p>
+     */
+    inline void SetS3Path(const Aws::String& value) { m_s3PathHasBeenSet = true; m_s3Path = value; }
+
+    /**
+     * <p>The Amazon S3 path for the table.</p>
+     */
+    inline void SetS3Path(Aws::String&& value) { m_s3PathHasBeenSet = true; m_s3Path = std::move(value); }
+
+    /**
+     * <p>The Amazon S3 path for the table.</p>
+     */
+    inline void SetS3Path(const char* value) { m_s3PathHasBeenSet = true; m_s3Path.assign(value); }
+
+    /**
+     * <p>The Amazon S3 path for the table.</p>
+     */
+    inline GetTemporaryGlueTableCredentialsRequest& WithS3Path(const Aws::String& value) { SetS3Path(value); return *this;}
+
+    /**
+     * <p>The Amazon S3 path for the table.</p>
+     */
+    inline GetTemporaryGlueTableCredentialsRequest& WithS3Path(Aws::String&& value) { SetS3Path(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon S3 path for the table.</p>
+     */
+    inline GetTemporaryGlueTableCredentialsRequest& WithS3Path(const char* value) { SetS3Path(value); return *this;}
+
+
+    /**
+     * <p>A structure used as a protocol between query engines and Lake Formation or
+     * Glue. Contains both a Lake Formation generated authorization identifier and
+     * information from the request's authorization context.</p>
+     */
+    inline const QuerySessionContext& GetQuerySessionContext() const{ return m_querySessionContext; }
+
+    /**
+     * <p>A structure used as a protocol between query engines and Lake Formation or
+     * Glue. Contains both a Lake Formation generated authorization identifier and
+     * information from the request's authorization context.</p>
+     */
+    inline bool QuerySessionContextHasBeenSet() const { return m_querySessionContextHasBeenSet; }
+
+    /**
+     * <p>A structure used as a protocol between query engines and Lake Formation or
+     * Glue. Contains both a Lake Formation generated authorization identifier and
+     * information from the request's authorization context.</p>
+     */
+    inline void SetQuerySessionContext(const QuerySessionContext& value) { m_querySessionContextHasBeenSet = true; m_querySessionContext = value; }
+
+    /**
+     * <p>A structure used as a protocol between query engines and Lake Formation or
+     * Glue. Contains both a Lake Formation generated authorization identifier and
+     * information from the request's authorization context.</p>
+     */
+    inline void SetQuerySessionContext(QuerySessionContext&& value) { m_querySessionContextHasBeenSet = true; m_querySessionContext = std::move(value); }
+
+    /**
+     * <p>A structure used as a protocol between query engines and Lake Formation or
+     * Glue. Contains both a Lake Formation generated authorization identifier and
+     * information from the request's authorization context.</p>
+     */
+    inline GetTemporaryGlueTableCredentialsRequest& WithQuerySessionContext(const QuerySessionContext& value) { SetQuerySessionContext(value); return *this;}
+
+    /**
+     * <p>A structure used as a protocol between query engines and Lake Formation or
+     * Glue. Contains both a Lake Formation generated authorization identifier and
+     * information from the request's authorization context.</p>
+     */
+    inline GetTemporaryGlueTableCredentialsRequest& WithQuerySessionContext(QuerySessionContext&& value) { SetQuerySessionContext(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_tableArn;
@@ -260,6 +345,12 @@ namespace Model
 
     Aws::Vector<PermissionType> m_supportedPermissionTypes;
     bool m_supportedPermissionTypesHasBeenSet = false;
+
+    Aws::String m_s3Path;
+    bool m_s3PathHasBeenSet = false;
+
+    QuerySessionContext m_querySessionContext;
+    bool m_querySessionContextHasBeenSet = false;
   };
 
 } // namespace Model

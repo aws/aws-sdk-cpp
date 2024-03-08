@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RemediationExecutionState::NOT_SET:
+            return {};
           case RemediationExecutionState::QUEUED:
             return "QUEUED";
           case RemediationExecutionState::IN_PROGRESS:

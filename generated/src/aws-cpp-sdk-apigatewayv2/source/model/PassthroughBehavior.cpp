@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PassthroughBehavior::NOT_SET:
+            return {};
           case PassthroughBehavior::WHEN_NO_MATCH:
             return "WHEN_NO_MATCH";
           case PassthroughBehavior::NEVER:

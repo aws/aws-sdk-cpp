@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LifeCycleState::NOT_SET:
+            return {};
           case LifeCycleState::creating:
             return "creating";
           case LifeCycleState::available:

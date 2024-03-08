@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Reaction::NOT_SET:
+            return {};
           case Reaction::ThumbsUp:
             return "ThumbsUp";
           case Reaction::ThumbsDown:

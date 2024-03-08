@@ -18,6 +18,11 @@ namespace OSVersionInfo
     AWS_CORE_API Aws::String ComputeOSVersionString();
 
     /**
+    * Get architecture of the current running operating system.
+    */
+    AWS_CORE_API Aws::String ComputeOSVersionArch();
+
+    /**
     * runs a (shell) command string and returns the output; not needed on windows currently
     */
     AWS_CORE_API Aws::String GetSysCommandOutput(const char* command);

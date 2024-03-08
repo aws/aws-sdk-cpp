@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SelectiveAuth::NOT_SET:
+            return {};
           case SelectiveAuth::Enabled:
             return "Enabled";
           case SelectiveAuth::Disabled:

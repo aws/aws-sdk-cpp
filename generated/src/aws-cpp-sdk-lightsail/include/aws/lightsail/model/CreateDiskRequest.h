@@ -38,49 +38,49 @@ namespace Model
 
 
     /**
-     * <p>The unique Lightsail disk name (e.g., <code>my-disk</code>).</p>
+     * <p>The unique Lightsail disk name (<code>my-disk</code>).</p>
      */
     inline const Aws::String& GetDiskName() const{ return m_diskName; }
 
     /**
-     * <p>The unique Lightsail disk name (e.g., <code>my-disk</code>).</p>
+     * <p>The unique Lightsail disk name (<code>my-disk</code>).</p>
      */
     inline bool DiskNameHasBeenSet() const { return m_diskNameHasBeenSet; }
 
     /**
-     * <p>The unique Lightsail disk name (e.g., <code>my-disk</code>).</p>
+     * <p>The unique Lightsail disk name (<code>my-disk</code>).</p>
      */
     inline void SetDiskName(const Aws::String& value) { m_diskNameHasBeenSet = true; m_diskName = value; }
 
     /**
-     * <p>The unique Lightsail disk name (e.g., <code>my-disk</code>).</p>
+     * <p>The unique Lightsail disk name (<code>my-disk</code>).</p>
      */
     inline void SetDiskName(Aws::String&& value) { m_diskNameHasBeenSet = true; m_diskName = std::move(value); }
 
     /**
-     * <p>The unique Lightsail disk name (e.g., <code>my-disk</code>).</p>
+     * <p>The unique Lightsail disk name (<code>my-disk</code>).</p>
      */
     inline void SetDiskName(const char* value) { m_diskNameHasBeenSet = true; m_diskName.assign(value); }
 
     /**
-     * <p>The unique Lightsail disk name (e.g., <code>my-disk</code>).</p>
+     * <p>The unique Lightsail disk name (<code>my-disk</code>).</p>
      */
     inline CreateDiskRequest& WithDiskName(const Aws::String& value) { SetDiskName(value); return *this;}
 
     /**
-     * <p>The unique Lightsail disk name (e.g., <code>my-disk</code>).</p>
+     * <p>The unique Lightsail disk name (<code>my-disk</code>).</p>
      */
     inline CreateDiskRequest& WithDiskName(Aws::String&& value) { SetDiskName(std::move(value)); return *this;}
 
     /**
-     * <p>The unique Lightsail disk name (e.g., <code>my-disk</code>).</p>
+     * <p>The unique Lightsail disk name (<code>my-disk</code>).</p>
      */
     inline CreateDiskRequest& WithDiskName(const char* value) { SetDiskName(value); return *this;}
 
 
     /**
-     * <p>The Availability Zone where you want to create the disk (e.g.,
-     * <code>us-east-2a</code>). Use the same Availability Zone as the Lightsail
+     * <p>The Availability Zone where you want to create the disk
+     * (<code>us-east-2a</code>). Use the same Availability Zone as the Lightsail
      * instance to which you want to attach the disk.</p> <p>Use the <code>get
      * regions</code> operation to list the Availability Zones where Lightsail is
      * currently available.</p>
@@ -88,8 +88,8 @@ namespace Model
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
 
     /**
-     * <p>The Availability Zone where you want to create the disk (e.g.,
-     * <code>us-east-2a</code>). Use the same Availability Zone as the Lightsail
+     * <p>The Availability Zone where you want to create the disk
+     * (<code>us-east-2a</code>). Use the same Availability Zone as the Lightsail
      * instance to which you want to attach the disk.</p> <p>Use the <code>get
      * regions</code> operation to list the Availability Zones where Lightsail is
      * currently available.</p>
@@ -97,8 +97,8 @@ namespace Model
     inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
 
     /**
-     * <p>The Availability Zone where you want to create the disk (e.g.,
-     * <code>us-east-2a</code>). Use the same Availability Zone as the Lightsail
+     * <p>The Availability Zone where you want to create the disk
+     * (<code>us-east-2a</code>). Use the same Availability Zone as the Lightsail
      * instance to which you want to attach the disk.</p> <p>Use the <code>get
      * regions</code> operation to list the Availability Zones where Lightsail is
      * currently available.</p>
@@ -106,8 +106,8 @@ namespace Model
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /**
-     * <p>The Availability Zone where you want to create the disk (e.g.,
-     * <code>us-east-2a</code>). Use the same Availability Zone as the Lightsail
+     * <p>The Availability Zone where you want to create the disk
+     * (<code>us-east-2a</code>). Use the same Availability Zone as the Lightsail
      * instance to which you want to attach the disk.</p> <p>Use the <code>get
      * regions</code> operation to list the Availability Zones where Lightsail is
      * currently available.</p>
@@ -115,8 +115,8 @@ namespace Model
     inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
 
     /**
-     * <p>The Availability Zone where you want to create the disk (e.g.,
-     * <code>us-east-2a</code>). Use the same Availability Zone as the Lightsail
+     * <p>The Availability Zone where you want to create the disk
+     * (<code>us-east-2a</code>). Use the same Availability Zone as the Lightsail
      * instance to which you want to attach the disk.</p> <p>Use the <code>get
      * regions</code> operation to list the Availability Zones where Lightsail is
      * currently available.</p>
@@ -124,8 +124,8 @@ namespace Model
     inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
 
     /**
-     * <p>The Availability Zone where you want to create the disk (e.g.,
-     * <code>us-east-2a</code>). Use the same Availability Zone as the Lightsail
+     * <p>The Availability Zone where you want to create the disk
+     * (<code>us-east-2a</code>). Use the same Availability Zone as the Lightsail
      * instance to which you want to attach the disk.</p> <p>Use the <code>get
      * regions</code> operation to list the Availability Zones where Lightsail is
      * currently available.</p>
@@ -133,8 +133,8 @@ namespace Model
     inline CreateDiskRequest& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
 
     /**
-     * <p>The Availability Zone where you want to create the disk (e.g.,
-     * <code>us-east-2a</code>). Use the same Availability Zone as the Lightsail
+     * <p>The Availability Zone where you want to create the disk
+     * (<code>us-east-2a</code>). Use the same Availability Zone as the Lightsail
      * instance to which you want to attach the disk.</p> <p>Use the <code>get
      * regions</code> operation to list the Availability Zones where Lightsail is
      * currently available.</p>
@@ -142,8 +142,8 @@ namespace Model
     inline CreateDiskRequest& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
 
     /**
-     * <p>The Availability Zone where you want to create the disk (e.g.,
-     * <code>us-east-2a</code>). Use the same Availability Zone as the Lightsail
+     * <p>The Availability Zone where you want to create the disk
+     * (<code>us-east-2a</code>). Use the same Availability Zone as the Lightsail
      * instance to which you want to attach the disk.</p> <p>Use the <code>get
      * regions</code> operation to list the Availability Zones where Lightsail is
      * currently available.</p>
@@ -152,22 +152,22 @@ namespace Model
 
 
     /**
-     * <p>The size of the disk in GB (e.g., <code>32</code>).</p>
+     * <p>The size of the disk in GB (<code>32</code>).</p>
      */
     inline int GetSizeInGb() const{ return m_sizeInGb; }
 
     /**
-     * <p>The size of the disk in GB (e.g., <code>32</code>).</p>
+     * <p>The size of the disk in GB (<code>32</code>).</p>
      */
     inline bool SizeInGbHasBeenSet() const { return m_sizeInGbHasBeenSet; }
 
     /**
-     * <p>The size of the disk in GB (e.g., <code>32</code>).</p>
+     * <p>The size of the disk in GB (<code>32</code>).</p>
      */
     inline void SetSizeInGb(int value) { m_sizeInGbHasBeenSet = true; m_sizeInGb = value; }
 
     /**
-     * <p>The size of the disk in GB (e.g., <code>32</code>).</p>
+     * <p>The size of the disk in GB (<code>32</code>).</p>
      */
     inline CreateDiskRequest& WithSizeInGb(int value) { SetSizeInGb(value); return *this;}
 

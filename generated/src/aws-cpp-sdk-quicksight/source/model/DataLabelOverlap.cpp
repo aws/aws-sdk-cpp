@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DataLabelOverlap::NOT_SET:
+            return {};
           case DataLabelOverlap::DISABLE_OVERLAP:
             return "DISABLE_OVERLAP";
           case DataLabelOverlap::ENABLE_OVERLAP:

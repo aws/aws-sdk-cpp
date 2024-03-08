@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RetryAction::NOT_SET:
+            return {};
           case RetryAction::RETRY:
             return "RETRY";
           case RetryAction::EXIT:

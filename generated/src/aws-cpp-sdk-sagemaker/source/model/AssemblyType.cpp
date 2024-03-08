@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AssemblyType::NOT_SET:
+            return {};
           case AssemblyType::None:
             return "None";
           case AssemblyType::Line:

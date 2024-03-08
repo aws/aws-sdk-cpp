@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ScoreConfidence::NOT_SET:
+            return {};
           case ScoreConfidence::VERY_HIGH:
             return "VERY_HIGH";
           case ScoreConfidence::HIGH:

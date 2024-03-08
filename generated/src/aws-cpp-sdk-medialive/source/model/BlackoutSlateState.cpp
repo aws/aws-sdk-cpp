@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BlackoutSlateState::NOT_SET:
+            return {};
           case BlackoutSlateState::DISABLED:
             return "DISABLED";
           case BlackoutSlateState::ENABLED:

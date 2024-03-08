@@ -89,6 +89,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PresetSpeke20Video::NOT_SET:
+            return {};
           case PresetSpeke20Video::PRESET_VIDEO_1:
             return "PRESET-VIDEO-1";
           case PresetSpeke20Video::PRESET_VIDEO_2:

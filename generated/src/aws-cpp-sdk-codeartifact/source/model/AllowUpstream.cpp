@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AllowUpstream::NOT_SET:
+            return {};
           case AllowUpstream::ALLOW:
             return "ALLOW";
           case AllowUpstream::BLOCK:

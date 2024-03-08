@@ -7,6 +7,7 @@
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/quicksight/model/Visibility.h>
+#include <aws/quicksight/model/TooltipTarget.h>
 #include <utility>
 
 namespace Aws
@@ -150,6 +151,37 @@ namespace Model
      */
     inline FieldTooltipItem& WithVisibility(Visibility&& value) { SetVisibility(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Determines the target of the field tooltip item in a combo chart visual.</p>
+     */
+    inline const TooltipTarget& GetTooltipTarget() const{ return m_tooltipTarget; }
+
+    /**
+     * <p>Determines the target of the field tooltip item in a combo chart visual.</p>
+     */
+    inline bool TooltipTargetHasBeenSet() const { return m_tooltipTargetHasBeenSet; }
+
+    /**
+     * <p>Determines the target of the field tooltip item in a combo chart visual.</p>
+     */
+    inline void SetTooltipTarget(const TooltipTarget& value) { m_tooltipTargetHasBeenSet = true; m_tooltipTarget = value; }
+
+    /**
+     * <p>Determines the target of the field tooltip item in a combo chart visual.</p>
+     */
+    inline void SetTooltipTarget(TooltipTarget&& value) { m_tooltipTargetHasBeenSet = true; m_tooltipTarget = std::move(value); }
+
+    /**
+     * <p>Determines the target of the field tooltip item in a combo chart visual.</p>
+     */
+    inline FieldTooltipItem& WithTooltipTarget(const TooltipTarget& value) { SetTooltipTarget(value); return *this;}
+
+    /**
+     * <p>Determines the target of the field tooltip item in a combo chart visual.</p>
+     */
+    inline FieldTooltipItem& WithTooltipTarget(TooltipTarget&& value) { SetTooltipTarget(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_fieldId;
@@ -160,6 +192,9 @@ namespace Model
 
     Visibility m_visibility;
     bool m_visibilityHasBeenSet = false;
+
+    TooltipTarget m_tooltipTarget;
+    bool m_tooltipTargetHasBeenSet = false;
   };
 
 } // namespace Model

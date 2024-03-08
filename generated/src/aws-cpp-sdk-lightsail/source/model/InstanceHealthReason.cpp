@@ -94,6 +94,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InstanceHealthReason::NOT_SET:
+            return {};
           case InstanceHealthReason::Lb_RegistrationInProgress:
             return "Lb.RegistrationInProgress";
           case InstanceHealthReason::Lb_InitialHealthChecking:

@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LegendPosition::NOT_SET:
+            return {};
           case LegendPosition::AUTO:
             return "AUTO";
           case LegendPosition::RIGHT:

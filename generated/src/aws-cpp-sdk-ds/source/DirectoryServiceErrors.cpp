@@ -322,147 +322,147 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == CLIENT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::CLIENT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::CLIENT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == ENTITY_ALREADY_EXISTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::ENTITY_ALREADY_EXISTS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::ENTITY_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == UNSUPPORTED_SETTINGS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::UNSUPPORTED_SETTINGS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::UNSUPPORTED_SETTINGS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == DIRECTORY_ALREADY_SHARED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::DIRECTORY_ALREADY_SHARED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::DIRECTORY_ALREADY_SHARED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == DIRECTORY_ALREADY_IN_REGION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::DIRECTORY_ALREADY_IN_REGION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::DIRECTORY_ALREADY_IN_REGION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_L_D_A_P_S_STATUS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::INVALID_L_D_A_P_S_STATUS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::INVALID_L_D_A_P_S_STATUS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == DIRECTORY_UNAVAILABLE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::DIRECTORY_UNAVAILABLE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::DIRECTORY_UNAVAILABLE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == USER_DOES_NOT_EXIST_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::USER_DOES_NOT_EXIST), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::USER_DOES_NOT_EXIST), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == ENTITY_DOES_NOT_EXIST_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::ENTITY_DOES_NOT_EXIST), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::ENTITY_DOES_NOT_EXIST), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == AUTHENTICATION_FAILED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::AUTHENTICATION_FAILED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::AUTHENTICATION_FAILED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INSUFFICIENT_PERMISSIONS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::INSUFFICIENT_PERMISSIONS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::INSUFFICIENT_PERMISSIONS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_NEXT_TOKEN_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::INVALID_NEXT_TOKEN), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::INVALID_NEXT_TOKEN), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == DIRECTORY_IN_DESIRED_STATE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::DIRECTORY_IN_DESIRED_STATE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::DIRECTORY_IN_DESIRED_STATE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_PARAMETER_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::INVALID_PARAMETER), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::INVALID_PARAMETER), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == TAG_LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::TAG_LIMIT_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::TAG_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_CERTIFICATE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::INVALID_CERTIFICATE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::INVALID_CERTIFICATE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == UNSUPPORTED_OPERATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::UNSUPPORTED_OPERATION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::UNSUPPORTED_OPERATION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == CERTIFICATE_DOES_NOT_EXIST_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::CERTIFICATE_DOES_NOT_EXIST), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::CERTIFICATE_DOES_NOT_EXIST), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == CERTIFICATE_ALREADY_EXISTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::CERTIFICATE_ALREADY_EXISTS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::CERTIFICATE_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_PASSWORD_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::INVALID_PASSWORD), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::INVALID_PASSWORD), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INCOMPATIBLE_SETTINGS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::INCOMPATIBLE_SETTINGS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::INCOMPATIBLE_SETTINGS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == DIRECTORY_LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::DIRECTORY_LIMIT_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::DIRECTORY_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == DIRECTORY_NOT_SHARED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::DIRECTORY_NOT_SHARED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::DIRECTORY_NOT_SHARED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == CERTIFICATE_IN_USE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::CERTIFICATE_IN_USE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::CERTIFICATE_IN_USE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == SHARE_LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::SHARE_LIMIT_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::SHARE_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == DIRECTORY_DOES_NOT_EXIST_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::DIRECTORY_DOES_NOT_EXIST), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::DIRECTORY_DOES_NOT_EXIST), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == NO_AVAILABLE_CERTIFICATE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::NO_AVAILABLE_CERTIFICATE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::NO_AVAILABLE_CERTIFICATE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_CLIENT_AUTH_STATUS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::INVALID_CLIENT_AUTH_STATUS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::INVALID_CLIENT_AUTH_STATUS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == ORGANIZATIONS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::ORGANIZATIONS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::ORGANIZATIONS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_TARGET_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::INVALID_TARGET), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::INVALID_TARGET), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == DOMAIN_CONTROLLER_LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::DOMAIN_CONTROLLER_LIMIT_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::DOMAIN_CONTROLLER_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == REGION_LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::REGION_LIMIT_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::REGION_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == SERVICE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::SERVICE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::SERVICE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == IP_ROUTE_LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::IP_ROUTE_LIMIT_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::IP_ROUTE_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == SNAPSHOT_LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::SNAPSHOT_LIMIT_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::SNAPSHOT_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == CERTIFICATE_LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::CERTIFICATE_LIMIT_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DirectoryServiceErrors::CERTIFICATE_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

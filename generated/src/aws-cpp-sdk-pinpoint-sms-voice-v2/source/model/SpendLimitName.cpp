@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SpendLimitName::NOT_SET:
+            return {};
           case SpendLimitName::TEXT_MESSAGE_MONTHLY_SPEND_LIMIT:
             return "TEXT_MESSAGE_MONTHLY_SPEND_LIMIT";
           case SpendLimitName::VOICE_MESSAGE_MONTHLY_SPEND_LIMIT:

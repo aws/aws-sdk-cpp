@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ConditionType::NOT_SET:
+            return {};
           case ConditionType::STRINGEQUALS:
             return "STRINGEQUALS";
           default:

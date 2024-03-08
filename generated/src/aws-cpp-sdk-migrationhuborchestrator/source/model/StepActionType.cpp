@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StepActionType::NOT_SET:
+            return {};
           case StepActionType::MANUAL:
             return "MANUAL";
           case StepActionType::AUTOMATED:

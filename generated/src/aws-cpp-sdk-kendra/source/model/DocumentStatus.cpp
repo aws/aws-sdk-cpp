@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DocumentStatus::NOT_SET:
+            return {};
           case DocumentStatus::NOT_FOUND:
             return "NOT_FOUND";
           case DocumentStatus::PROCESSING:

@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     DISABLED,
-    SSE_KMS
+    SSE_KMS,
+    SSE_KMS_WITH_SERVICE_ROLE
   };
 
 namespace CatalogEncryptionModeMapper

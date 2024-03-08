@@ -94,6 +94,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ByoipCidrState::NOT_SET:
+            return {};
           case ByoipCidrState::PENDING_PROVISIONING:
             return "PENDING_PROVISIONING";
           case ByoipCidrState::READY:

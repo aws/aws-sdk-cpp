@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Risk::NOT_SET:
+            return {};
           case Risk::UNANSWERED:
             return "UNANSWERED";
           case Risk::HIGH:

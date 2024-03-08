@@ -401,7 +401,7 @@ namespace Model
      * key that is being created.</p> </li> <li> <p>Other than wildcards, you must
      * include the full ARN, including the <code>arn</code>, <code>partition</code>,
      * <code>service</code>, <code>region</code>, <code>account-id</code> and
-     * <code>resource-id</code>, delimited by colons (:).</p> </li> <li> <p>No spaces
+     * <code>resource-id</code> delimited by colons (:).</p> </li> <li> <p>No spaces
      * allowed, even with wildcards. For example,
      * <code>arn:aws:geo:region:<i>account-id</i>:map/ExampleMap*</code>.</p> </li>
      * </ul> <p>For more information about ARN format, see <a
@@ -419,7 +419,7 @@ namespace Model
      * key that is being created.</p> </li> <li> <p>Other than wildcards, you must
      * include the full ARN, including the <code>arn</code>, <code>partition</code>,
      * <code>service</code>, <code>region</code>, <code>account-id</code> and
-     * <code>resource-id</code>, delimited by colons (:).</p> </li> <li> <p>No spaces
+     * <code>resource-id</code> delimited by colons (:).</p> </li> <li> <p>No spaces
      * allowed, even with wildcards. For example,
      * <code>arn:aws:geo:region:<i>account-id</i>:map/ExampleMap*</code>.</p> </li>
      * </ul> <p>For more information about ARN format, see <a
@@ -437,7 +437,7 @@ namespace Model
      * key that is being created.</p> </li> <li> <p>Other than wildcards, you must
      * include the full ARN, including the <code>arn</code>, <code>partition</code>,
      * <code>service</code>, <code>region</code>, <code>account-id</code> and
-     * <code>resource-id</code>, delimited by colons (:).</p> </li> <li> <p>No spaces
+     * <code>resource-id</code> delimited by colons (:).</p> </li> <li> <p>No spaces
      * allowed, even with wildcards. For example,
      * <code>arn:aws:geo:region:<i>account-id</i>:map/ExampleMap*</code>.</p> </li>
      * </ul> <p>For more information about ARN format, see <a
@@ -455,7 +455,7 @@ namespace Model
      * key that is being created.</p> </li> <li> <p>Other than wildcards, you must
      * include the full ARN, including the <code>arn</code>, <code>partition</code>,
      * <code>service</code>, <code>region</code>, <code>account-id</code> and
-     * <code>resource-id</code>, delimited by colons (:).</p> </li> <li> <p>No spaces
+     * <code>resource-id</code> delimited by colons (:).</p> </li> <li> <p>No spaces
      * allowed, even with wildcards. For example,
      * <code>arn:aws:geo:region:<i>account-id</i>:map/ExampleMap*</code>.</p> </li>
      * </ul> <p>For more information about ARN format, see <a
@@ -473,7 +473,7 @@ namespace Model
      * key that is being created.</p> </li> <li> <p>Other than wildcards, you must
      * include the full ARN, including the <code>arn</code>, <code>partition</code>,
      * <code>service</code>, <code>region</code>, <code>account-id</code> and
-     * <code>resource-id</code>, delimited by colons (:).</p> </li> <li> <p>No spaces
+     * <code>resource-id</code> delimited by colons (:).</p> </li> <li> <p>No spaces
      * allowed, even with wildcards. For example,
      * <code>arn:aws:geo:region:<i>account-id</i>:map/ExampleMap*</code>.</p> </li>
      * </ul> <p>For more information about ARN format, see <a
@@ -491,7 +491,7 @@ namespace Model
      * key that is being created.</p> </li> <li> <p>Other than wildcards, you must
      * include the full ARN, including the <code>arn</code>, <code>partition</code>,
      * <code>service</code>, <code>region</code>, <code>account-id</code> and
-     * <code>resource-id</code>, delimited by colons (:).</p> </li> <li> <p>No spaces
+     * <code>resource-id</code> delimited by colons (:).</p> </li> <li> <p>No spaces
      * allowed, even with wildcards. For example,
      * <code>arn:aws:geo:region:<i>account-id</i>:map/ExampleMap*</code>.</p> </li>
      * </ul> <p>For more information about ARN format, see <a
@@ -509,7 +509,7 @@ namespace Model
      * key that is being created.</p> </li> <li> <p>Other than wildcards, you must
      * include the full ARN, including the <code>arn</code>, <code>partition</code>,
      * <code>service</code>, <code>region</code>, <code>account-id</code> and
-     * <code>resource-id</code>, delimited by colons (:).</p> </li> <li> <p>No spaces
+     * <code>resource-id</code> delimited by colons (:).</p> </li> <li> <p>No spaces
      * allowed, even with wildcards. For example,
      * <code>arn:aws:geo:region:<i>account-id</i>:map/ExampleMap*</code>.</p> </li>
      * </ul> <p>For more information about ARN format, see <a
@@ -527,7 +527,7 @@ namespace Model
      * key that is being created.</p> </li> <li> <p>Other than wildcards, you must
      * include the full ARN, including the <code>arn</code>, <code>partition</code>,
      * <code>service</code>, <code>region</code>, <code>account-id</code> and
-     * <code>resource-id</code>, delimited by colons (:).</p> </li> <li> <p>No spaces
+     * <code>resource-id</code> delimited by colons (:).</p> </li> <li> <p>No spaces
      * allowed, even with wildcards. For example,
      * <code>arn:aws:geo:region:<i>account-id</i>:map/ExampleMap*</code>.</p> </li>
      * </ul> <p>For more information about ARN format, see <a
@@ -545,7 +545,7 @@ namespace Model
      * key that is being created.</p> </li> <li> <p>Other than wildcards, you must
      * include the full ARN, including the <code>arn</code>, <code>partition</code>,
      * <code>service</code>, <code>region</code>, <code>account-id</code> and
-     * <code>resource-id</code>, delimited by colons (:).</p> </li> <li> <p>No spaces
+     * <code>resource-id</code> delimited by colons (:).</p> </li> <li> <p>No spaces
      * allowed, even with wildcards. For example,
      * <code>arn:aws:geo:region:<i>account-id</i>:map/ExampleMap*</code>.</p> </li>
      * </ul> <p>For more information about ARN format, see <a

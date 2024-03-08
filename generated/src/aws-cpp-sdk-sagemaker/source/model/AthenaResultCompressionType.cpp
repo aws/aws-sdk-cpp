@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AthenaResultCompressionType::NOT_SET:
+            return {};
           case AthenaResultCompressionType::GZIP:
             return "GZIP";
           case AthenaResultCompressionType::SNAPPY:

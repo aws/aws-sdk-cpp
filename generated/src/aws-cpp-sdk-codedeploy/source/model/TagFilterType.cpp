@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TagFilterType::NOT_SET:
+            return {};
           case TagFilterType::KEY_ONLY:
             return "KEY_ONLY";
           case TagFilterType::VALUE_ONLY:

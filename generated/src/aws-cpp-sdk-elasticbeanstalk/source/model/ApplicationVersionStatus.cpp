@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ApplicationVersionStatus::NOT_SET:
+            return {};
           case ApplicationVersionStatus::Processed:
             return "Processed";
           case ApplicationVersionStatus::Unprocessed:

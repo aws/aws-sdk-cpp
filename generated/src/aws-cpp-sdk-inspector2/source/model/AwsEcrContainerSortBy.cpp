@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AwsEcrContainerSortBy::NOT_SET:
+            return {};
           case AwsEcrContainerSortBy::CRITICAL:
             return "CRITICAL";
           case AwsEcrContainerSortBy::HIGH:

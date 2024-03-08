@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case IpamAddressHistoryResourceType::NOT_SET:
+            return {};
           case IpamAddressHistoryResourceType::eip:
             return "eip";
           case IpamAddressHistoryResourceType::vpc:

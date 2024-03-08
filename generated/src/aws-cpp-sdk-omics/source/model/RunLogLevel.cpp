@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RunLogLevel::NOT_SET:
+            return {};
           case RunLogLevel::OFF:
             return "OFF";
           case RunLogLevel::FATAL:

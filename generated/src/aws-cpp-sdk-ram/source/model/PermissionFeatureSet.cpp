@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PermissionFeatureSet::NOT_SET:
+            return {};
           case PermissionFeatureSet::CREATED_FROM_POLICY:
             return "CREATED_FROM_POLICY";
           case PermissionFeatureSet::PROMOTING_TO_STANDARD:

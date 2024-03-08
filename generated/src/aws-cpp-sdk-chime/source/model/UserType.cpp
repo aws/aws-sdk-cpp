@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UserType::NOT_SET:
+            return {};
           case UserType::PrivateUser:
             return "PrivateUser";
           case UserType::SharedDevice:

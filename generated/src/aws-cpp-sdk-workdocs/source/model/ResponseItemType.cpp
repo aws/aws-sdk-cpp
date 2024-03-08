@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResponseItemType::NOT_SET:
+            return {};
           case ResponseItemType::DOCUMENT:
             return "DOCUMENT";
           case ResponseItemType::FOLDER:

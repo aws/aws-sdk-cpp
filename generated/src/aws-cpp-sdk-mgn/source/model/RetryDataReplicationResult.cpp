@@ -45,6 +45,12 @@ RetryDataReplicationResult& RetryDataReplicationResult::operator =(const Aws::Am
 
   }
 
+  if(jsonValue.ValueExists("connectorAction"))
+  {
+    m_connectorAction = jsonValue.GetObject("connectorAction");
+
+  }
+
   if(jsonValue.ValueExists("dataReplicationInfo"))
   {
     m_dataReplicationInfo = jsonValue.GetObject("dataReplicationInfo");

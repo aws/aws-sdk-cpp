@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CertificateAuthorityType::NOT_SET:
+            return {};
           case CertificateAuthorityType::ROOT:
             return "ROOT";
           case CertificateAuthorityType::SUBORDINATE:

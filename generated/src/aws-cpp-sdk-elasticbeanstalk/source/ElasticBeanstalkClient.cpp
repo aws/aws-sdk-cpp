@@ -83,8 +83,16 @@ using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
 
-const char* ElasticBeanstalkClient::SERVICE_NAME = "elasticbeanstalk";
-const char* ElasticBeanstalkClient::ALLOCATION_TAG = "ElasticBeanstalkClient";
+namespace Aws
+{
+  namespace ElasticBeanstalk
+  {
+    const char SERVICE_NAME[] = "elasticbeanstalk";
+    const char ALLOCATION_TAG[] = "ElasticBeanstalkClient";
+  }
+}
+const char* ElasticBeanstalkClient::GetServiceName() {return SERVICE_NAME;}
+const char* ElasticBeanstalkClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 ElasticBeanstalkClient::ElasticBeanstalkClient(const ElasticBeanstalk::ElasticBeanstalkClientConfiguration& clientConfiguration,
                                                std::shared_ptr<ElasticBeanstalkEndpointProviderBase> endpointProvider) :
@@ -96,7 +104,7 @@ ElasticBeanstalkClient::ElasticBeanstalkClient(const ElasticBeanstalk::ElasticBe
             Aws::MakeShared<ElasticBeanstalkErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ElasticBeanstalkEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -112,7 +120,7 @@ ElasticBeanstalkClient::ElasticBeanstalkClient(const AWSCredentials& credentials
             Aws::MakeShared<ElasticBeanstalkErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ElasticBeanstalkEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -128,7 +136,7 @@ ElasticBeanstalkClient::ElasticBeanstalkClient(const std::shared_ptr<AWSCredenti
             Aws::MakeShared<ElasticBeanstalkErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ElasticBeanstalkEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

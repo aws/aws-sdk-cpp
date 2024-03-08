@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BlueprintRunState::NOT_SET:
+            return {};
           case BlueprintRunState::RUNNING:
             return "RUNNING";
           case BlueprintRunState::SUCCEEDED:

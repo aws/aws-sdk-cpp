@@ -109,6 +109,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ServiceNamespace::NOT_SET:
+            return {};
           case ServiceNamespace::ecs:
             return "ecs";
           case ServiceNamespace::elasticmapreduce:

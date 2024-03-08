@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PreventUserExistenceErrorTypes::NOT_SET:
+            return {};
           case PreventUserExistenceErrorTypes::LEGACY:
             return "LEGACY";
           case PreventUserExistenceErrorTypes::ENABLED:

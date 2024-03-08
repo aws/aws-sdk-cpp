@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UserContextPolicy::NOT_SET:
+            return {};
           case UserContextPolicy::ATTRIBUTE_FILTER:
             return "ATTRIBUTE_FILTER";
           case UserContextPolicy::USER_TOKEN:

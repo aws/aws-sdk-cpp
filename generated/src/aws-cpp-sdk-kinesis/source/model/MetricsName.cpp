@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MetricsName::NOT_SET:
+            return {};
           case MetricsName::IncomingBytes:
             return "IncomingBytes";
           case MetricsName::IncomingRecords:

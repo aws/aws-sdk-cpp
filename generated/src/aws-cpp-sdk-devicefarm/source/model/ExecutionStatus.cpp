@@ -84,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ExecutionStatus::NOT_SET:
+            return {};
           case ExecutionStatus::PENDING:
             return "PENDING";
           case ExecutionStatus::PENDING_CONCURRENCY:

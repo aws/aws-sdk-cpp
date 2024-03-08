@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MergeOptionTypeEnum::NOT_SET:
+            return {};
           case MergeOptionTypeEnum::FAST_FORWARD_MERGE:
             return "FAST_FORWARD_MERGE";
           case MergeOptionTypeEnum::SQUASH_MERGE:

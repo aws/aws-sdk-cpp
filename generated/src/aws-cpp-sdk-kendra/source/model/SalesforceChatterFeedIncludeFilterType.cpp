@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SalesforceChatterFeedIncludeFilterType::NOT_SET:
+            return {};
           case SalesforceChatterFeedIncludeFilterType::ACTIVE_USER:
             return "ACTIVE_USER";
           case SalesforceChatterFeedIncludeFilterType::STANDARD_USER:

@@ -35,9 +35,12 @@ Workspace::Workspace() :
     m_userVolumeEncryptionEnabledHasBeenSet(false),
     m_rootVolumeEncryptionEnabled(false),
     m_rootVolumeEncryptionEnabledHasBeenSet(false),
+    m_workspaceNameHasBeenSet(false),
     m_workspacePropertiesHasBeenSet(false),
     m_modificationStatesHasBeenSet(false),
-    m_relatedWorkspacesHasBeenSet(false)
+    m_relatedWorkspacesHasBeenSet(false),
+    m_dataReplicationSettingsHasBeenSet(false),
+    m_standbyWorkspacesPropertiesHasBeenSet(false)
 {
 }
 
@@ -58,9 +61,12 @@ Workspace::Workspace(JsonView jsonValue) :
     m_userVolumeEncryptionEnabledHasBeenSet(false),
     m_rootVolumeEncryptionEnabled(false),
     m_rootVolumeEncryptionEnabledHasBeenSet(false),
+    m_workspaceNameHasBeenSet(false),
     m_workspacePropertiesHasBeenSet(false),
     m_modificationStatesHasBeenSet(false),
-    m_relatedWorkspacesHasBeenSet(false)
+    m_relatedWorkspacesHasBeenSet(false),
+    m_dataReplicationSettingsHasBeenSet(false),
+    m_standbyWorkspacesPropertiesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -158,6 +164,13 @@ Workspace& Workspace::operator =(JsonView jsonValue)
     m_rootVolumeEncryptionEnabledHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("WorkspaceName"))
+  {
+    m_workspaceName = jsonValue.GetString("WorkspaceName");
+
+    m_workspaceNameHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("WorkspaceProperties"))
   {
     m_workspaceProperties = jsonValue.GetObject("WorkspaceProperties");
@@ -183,6 +196,23 @@ Workspace& Workspace::operator =(JsonView jsonValue)
       m_relatedWorkspaces.push_back(relatedWorkspacesJsonList[relatedWorkspacesIndex].AsObject());
     }
     m_relatedWorkspacesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DataReplicationSettings"))
+  {
+    m_dataReplicationSettings = jsonValue.GetObject("DataReplicationSettings");
+
+    m_dataReplicationSettingsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("StandbyWorkspacesProperties"))
+  {
+    Aws::Utils::Array<JsonView> standbyWorkspacesPropertiesJsonList = jsonValue.GetArray("StandbyWorkspacesProperties");
+    for(unsigned standbyWorkspacesPropertiesIndex = 0; standbyWorkspacesPropertiesIndex < standbyWorkspacesPropertiesJsonList.GetLength(); ++standbyWorkspacesPropertiesIndex)
+    {
+      m_standbyWorkspacesProperties.push_back(standbyWorkspacesPropertiesJsonList[standbyWorkspacesPropertiesIndex].AsObject());
+    }
+    m_standbyWorkspacesPropertiesHasBeenSet = true;
   }
 
   return *this;
@@ -269,6 +299,12 @@ JsonValue Workspace::Jsonize() const
 
   }
 
+  if(m_workspaceNameHasBeenSet)
+  {
+   payload.WithString("WorkspaceName", m_workspaceName);
+
+  }
+
   if(m_workspacePropertiesHasBeenSet)
   {
    payload.WithObject("WorkspaceProperties", m_workspaceProperties.Jsonize());
@@ -294,6 +330,23 @@ JsonValue Workspace::Jsonize() const
      relatedWorkspacesJsonList[relatedWorkspacesIndex].AsObject(m_relatedWorkspaces[relatedWorkspacesIndex].Jsonize());
    }
    payload.WithArray("RelatedWorkspaces", std::move(relatedWorkspacesJsonList));
+
+  }
+
+  if(m_dataReplicationSettingsHasBeenSet)
+  {
+   payload.WithObject("DataReplicationSettings", m_dataReplicationSettings.Jsonize());
+
+  }
+
+  if(m_standbyWorkspacesPropertiesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> standbyWorkspacesPropertiesJsonList(m_standbyWorkspacesProperties.size());
+   for(unsigned standbyWorkspacesPropertiesIndex = 0; standbyWorkspacesPropertiesIndex < standbyWorkspacesPropertiesJsonList.GetLength(); ++standbyWorkspacesPropertiesIndex)
+   {
+     standbyWorkspacesPropertiesJsonList[standbyWorkspacesPropertiesIndex].AsObject(m_standbyWorkspacesProperties[standbyWorkspacesPropertiesIndex].Jsonize());
+   }
+   payload.WithArray("StandbyWorkspacesProperties", std::move(standbyWorkspacesPropertiesJsonList));
 
   }
 

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CustomEventsStatus::NOT_SET:
+            return {};
           case CustomEventsStatus::ENABLED:
             return "ENABLED";
           case CustomEventsStatus::DISABLED:

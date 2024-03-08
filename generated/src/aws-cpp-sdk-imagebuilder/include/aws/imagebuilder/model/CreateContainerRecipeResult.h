@@ -69,37 +69,37 @@ namespace Model
 
 
     /**
-     * <p>The client token used to make this request idempotent.</p>
+     * <p>The client token that uniquely identifies the request.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
-     * <p>The client token used to make this request idempotent.</p>
+     * <p>The client token that uniquely identifies the request.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientToken = value; }
 
     /**
-     * <p>The client token used to make this request idempotent.</p>
+     * <p>The client token that uniquely identifies the request.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientToken = std::move(value); }
 
     /**
-     * <p>The client token used to make this request idempotent.</p>
+     * <p>The client token that uniquely identifies the request.</p>
      */
     inline void SetClientToken(const char* value) { m_clientToken.assign(value); }
 
     /**
-     * <p>The client token used to make this request idempotent.</p>
+     * <p>The client token that uniquely identifies the request.</p>
      */
     inline CreateContainerRecipeResult& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
-     * <p>The client token used to make this request idempotent.</p>
+     * <p>The client token that uniquely identifies the request.</p>
      */
     inline CreateContainerRecipeResult& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
-     * <p>The client token used to make this request idempotent.</p>
+     * <p>The client token that uniquely identifies the request.</p>
      */
     inline CreateContainerRecipeResult& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 

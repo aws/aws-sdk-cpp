@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AnalyticsS3ExportFileFormat::NOT_SET:
+            return {};
           case AnalyticsS3ExportFileFormat::CSV:
             return "CSV";
           default:

@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SourceApiAssociationStatus::NOT_SET:
+            return {};
           case SourceApiAssociationStatus::MERGE_SCHEDULED:
             return "MERGE_SCHEDULED";
           case SourceApiAssociationStatus::MERGE_FAILED:

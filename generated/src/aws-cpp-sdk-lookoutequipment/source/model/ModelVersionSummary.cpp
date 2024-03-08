@@ -28,7 +28,9 @@ ModelVersionSummary::ModelVersionSummary() :
     m_status(ModelVersionStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_sourceType(ModelVersionSourceType::NOT_SET),
-    m_sourceTypeHasBeenSet(false)
+    m_sourceTypeHasBeenSet(false),
+    m_modelQuality(ModelQuality::NOT_SET),
+    m_modelQualityHasBeenSet(false)
 {
 }
 
@@ -42,7 +44,9 @@ ModelVersionSummary::ModelVersionSummary(JsonView jsonValue) :
     m_status(ModelVersionStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_sourceType(ModelVersionSourceType::NOT_SET),
-    m_sourceTypeHasBeenSet(false)
+    m_sourceTypeHasBeenSet(false),
+    m_modelQuality(ModelQuality::NOT_SET),
+    m_modelQualityHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -98,6 +102,13 @@ ModelVersionSummary& ModelVersionSummary::operator =(JsonView jsonValue)
     m_sourceTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ModelQuality"))
+  {
+    m_modelQuality = ModelQualityMapper::GetModelQualityForName(jsonValue.GetString("ModelQuality"));
+
+    m_modelQualityHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -142,6 +153,11 @@ JsonValue ModelVersionSummary::Jsonize() const
   if(m_sourceTypeHasBeenSet)
   {
    payload.WithString("SourceType", ModelVersionSourceTypeMapper::GetNameForModelVersionSourceType(m_sourceType));
+  }
+
+  if(m_modelQualityHasBeenSet)
+  {
+   payload.WithString("ModelQuality", ModelQualityMapper::GetNameForModelQuality(m_modelQuality));
   }
 
   return payload;

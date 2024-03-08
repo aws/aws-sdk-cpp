@@ -288,6 +288,55 @@ namespace Model
      */
     inline UpdateStudioRequest& WithDefaultS3Location(const char* value) { SetDefaultS3Location(value); return *this;}
 
+
+    /**
+     * <p>The KMS key identifier (ARN) used to encrypt Amazon EMR Studio workspace and
+     * notebook files when backed up to Amazon S3.</p>
+     */
+    inline const Aws::String& GetEncryptionKeyArn() const{ return m_encryptionKeyArn; }
+
+    /**
+     * <p>The KMS key identifier (ARN) used to encrypt Amazon EMR Studio workspace and
+     * notebook files when backed up to Amazon S3.</p>
+     */
+    inline bool EncryptionKeyArnHasBeenSet() const { return m_encryptionKeyArnHasBeenSet; }
+
+    /**
+     * <p>The KMS key identifier (ARN) used to encrypt Amazon EMR Studio workspace and
+     * notebook files when backed up to Amazon S3.</p>
+     */
+    inline void SetEncryptionKeyArn(const Aws::String& value) { m_encryptionKeyArnHasBeenSet = true; m_encryptionKeyArn = value; }
+
+    /**
+     * <p>The KMS key identifier (ARN) used to encrypt Amazon EMR Studio workspace and
+     * notebook files when backed up to Amazon S3.</p>
+     */
+    inline void SetEncryptionKeyArn(Aws::String&& value) { m_encryptionKeyArnHasBeenSet = true; m_encryptionKeyArn = std::move(value); }
+
+    /**
+     * <p>The KMS key identifier (ARN) used to encrypt Amazon EMR Studio workspace and
+     * notebook files when backed up to Amazon S3.</p>
+     */
+    inline void SetEncryptionKeyArn(const char* value) { m_encryptionKeyArnHasBeenSet = true; m_encryptionKeyArn.assign(value); }
+
+    /**
+     * <p>The KMS key identifier (ARN) used to encrypt Amazon EMR Studio workspace and
+     * notebook files when backed up to Amazon S3.</p>
+     */
+    inline UpdateStudioRequest& WithEncryptionKeyArn(const Aws::String& value) { SetEncryptionKeyArn(value); return *this;}
+
+    /**
+     * <p>The KMS key identifier (ARN) used to encrypt Amazon EMR Studio workspace and
+     * notebook files when backed up to Amazon S3.</p>
+     */
+    inline UpdateStudioRequest& WithEncryptionKeyArn(Aws::String&& value) { SetEncryptionKeyArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The KMS key identifier (ARN) used to encrypt Amazon EMR Studio workspace and
+     * notebook files when backed up to Amazon S3.</p>
+     */
+    inline UpdateStudioRequest& WithEncryptionKeyArn(const char* value) { SetEncryptionKeyArn(value); return *this;}
+
   private:
 
     Aws::String m_studioId;
@@ -304,6 +353,9 @@ namespace Model
 
     Aws::String m_defaultS3Location;
     bool m_defaultS3LocationHasBeenSet = false;
+
+    Aws::String m_encryptionKeyArn;
+    bool m_encryptionKeyArnHasBeenSet = false;
   };
 
 } // namespace Model

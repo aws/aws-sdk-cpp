@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AssetBundleExportJobVPCConnectionPropertyToOverride::NOT_SET:
+            return {};
           case AssetBundleExportJobVPCConnectionPropertyToOverride::Name:
             return "Name";
           case AssetBundleExportJobVPCConnectionPropertyToOverride::DnsResolvers:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SourceRepository::NOT_SET:
+            return {};
           case SourceRepository::CodeCommit:
             return "CodeCommit";
           case SourceRepository::S3:

@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RegionOptStatus::NOT_SET:
+            return {};
           case RegionOptStatus::ENABLED:
             return "ENABLED";
           case RegionOptStatus::ENABLING:

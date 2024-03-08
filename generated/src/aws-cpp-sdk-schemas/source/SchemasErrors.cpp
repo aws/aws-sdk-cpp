@@ -106,39 +106,39 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == CONFLICT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SchemasErrors::CONFLICT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SchemasErrors::CONFLICT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SchemasErrors::NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SchemasErrors::NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == UNAUTHORIZED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SchemasErrors::UNAUTHORIZED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SchemasErrors::UNAUTHORIZED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == FORBIDDEN_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SchemasErrors::FORBIDDEN), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SchemasErrors::FORBIDDEN), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == PRECONDITION_FAILED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SchemasErrors::PRECONDITION_FAILED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SchemasErrors::PRECONDITION_FAILED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == GONE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SchemasErrors::GONE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SchemasErrors::GONE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == TOO_MANY_REQUESTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SchemasErrors::TOO_MANY_REQUESTS), true);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SchemasErrors::TOO_MANY_REQUESTS), RetryableType::RETRYABLE);
   }
   else if (hashCode == BAD_REQUEST_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SchemasErrors::BAD_REQUEST), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SchemasErrors::BAD_REQUEST), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INTERNAL_SERVER_ERROR_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SchemasErrors::INTERNAL_SERVER_ERROR), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SchemasErrors::INTERNAL_SERVER_ERROR), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

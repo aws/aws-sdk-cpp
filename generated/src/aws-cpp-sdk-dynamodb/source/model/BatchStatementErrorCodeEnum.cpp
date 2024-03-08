@@ -94,6 +94,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BatchStatementErrorCodeEnum::NOT_SET:
+            return {};
           case BatchStatementErrorCodeEnum::ConditionalCheckFailed:
             return "ConditionalCheckFailed";
           case BatchStatementErrorCodeEnum::ItemCollectionSizeLimitExceeded:

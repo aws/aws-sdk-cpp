@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CustomKeyStoreType::NOT_SET:
+            return {};
           case CustomKeyStoreType::AWS_CLOUDHSM:
             return "AWS_CLOUDHSM";
           case CustomKeyStoreType::EXTERNAL_KEY_STORE:

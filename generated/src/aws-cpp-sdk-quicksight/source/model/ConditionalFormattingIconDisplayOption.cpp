@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ConditionalFormattingIconDisplayOption::NOT_SET:
+            return {};
           case ConditionalFormattingIconDisplayOption::ICON_ONLY:
             return "ICON_ONLY";
           default:

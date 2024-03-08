@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LogDeliveryStatus::NOT_SET:
+            return {};
           case LogDeliveryStatus::ENABLED:
             return "ENABLED";
           case LogDeliveryStatus::DISABLED:

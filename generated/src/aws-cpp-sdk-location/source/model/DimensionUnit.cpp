@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DimensionUnit::NOT_SET:
+            return {};
           case DimensionUnit::Meters:
             return "Meters";
           case DimensionUnit::Feet:

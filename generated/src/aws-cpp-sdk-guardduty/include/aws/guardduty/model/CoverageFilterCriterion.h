@@ -40,32 +40,44 @@ namespace Model
 
 
     /**
-     * <p>An enum value representing possible filter fields.</p>
+     * <p>An enum value representing possible filter fields.</p>  <p>Replace the
+     * enum value <code>CLUSTER_NAME</code> with <code>EKS_CLUSTER_NAME</code>.
+     * <code>CLUSTER_NAME</code> has been deprecated.</p> 
      */
     inline const CoverageFilterCriterionKey& GetCriterionKey() const{ return m_criterionKey; }
 
     /**
-     * <p>An enum value representing possible filter fields.</p>
+     * <p>An enum value representing possible filter fields.</p>  <p>Replace the
+     * enum value <code>CLUSTER_NAME</code> with <code>EKS_CLUSTER_NAME</code>.
+     * <code>CLUSTER_NAME</code> has been deprecated.</p> 
      */
     inline bool CriterionKeyHasBeenSet() const { return m_criterionKeyHasBeenSet; }
 
     /**
-     * <p>An enum value representing possible filter fields.</p>
+     * <p>An enum value representing possible filter fields.</p>  <p>Replace the
+     * enum value <code>CLUSTER_NAME</code> with <code>EKS_CLUSTER_NAME</code>.
+     * <code>CLUSTER_NAME</code> has been deprecated.</p> 
      */
     inline void SetCriterionKey(const CoverageFilterCriterionKey& value) { m_criterionKeyHasBeenSet = true; m_criterionKey = value; }
 
     /**
-     * <p>An enum value representing possible filter fields.</p>
+     * <p>An enum value representing possible filter fields.</p>  <p>Replace the
+     * enum value <code>CLUSTER_NAME</code> with <code>EKS_CLUSTER_NAME</code>.
+     * <code>CLUSTER_NAME</code> has been deprecated.</p> 
      */
     inline void SetCriterionKey(CoverageFilterCriterionKey&& value) { m_criterionKeyHasBeenSet = true; m_criterionKey = std::move(value); }
 
     /**
-     * <p>An enum value representing possible filter fields.</p>
+     * <p>An enum value representing possible filter fields.</p>  <p>Replace the
+     * enum value <code>CLUSTER_NAME</code> with <code>EKS_CLUSTER_NAME</code>.
+     * <code>CLUSTER_NAME</code> has been deprecated.</p> 
      */
     inline CoverageFilterCriterion& WithCriterionKey(const CoverageFilterCriterionKey& value) { SetCriterionKey(value); return *this;}
 
     /**
-     * <p>An enum value representing possible filter fields.</p>
+     * <p>An enum value representing possible filter fields.</p>  <p>Replace the
+     * enum value <code>CLUSTER_NAME</code> with <code>EKS_CLUSTER_NAME</code>.
+     * <code>CLUSTER_NAME</code> has been deprecated.</p> 
      */
     inline CoverageFilterCriterion& WithCriterionKey(CoverageFilterCriterionKey&& value) { SetCriterionKey(std::move(value)); return *this;}
 

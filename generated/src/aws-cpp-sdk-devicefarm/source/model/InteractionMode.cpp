@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InteractionMode::NOT_SET:
+            return {};
           case InteractionMode::INTERACTIVE:
             return "INTERACTIVE";
           case InteractionMode::NO_VIDEO:

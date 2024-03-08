@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HlsProgressiveWriteHlsManifest::NOT_SET:
+            return {};
           case HlsProgressiveWriteHlsManifest::ENABLED:
             return "ENABLED";
           case HlsProgressiveWriteHlsManifest::DISABLED:

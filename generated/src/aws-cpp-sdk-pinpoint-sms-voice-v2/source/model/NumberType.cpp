@@ -24,6 +24,7 @@ namespace Aws
         static const int LONG_CODE_HASH = HashingUtils::HashString("LONG_CODE");
         static const int TOLL_FREE_HASH = HashingUtils::HashString("TOLL_FREE");
         static const int TEN_DLC_HASH = HashingUtils::HashString("TEN_DLC");
+        static const int SIMULATOR_HASH = HashingUtils::HashString("SIMULATOR");
 
 
         NumberType GetNumberTypeForName(const Aws::String& name)
@@ -45,6 +46,10 @@ namespace Aws
           {
             return NumberType::TEN_DLC;
           }
+          else if (hashCode == SIMULATOR_HASH)
+          {
+            return NumberType::SIMULATOR;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -59,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NumberType::NOT_SET:
+            return {};
           case NumberType::SHORT_CODE:
             return "SHORT_CODE";
           case NumberType::LONG_CODE:
@@ -67,6 +74,8 @@ namespace Aws
             return "TOLL_FREE";
           case NumberType::TEN_DLC:
             return "TEN_DLC";
+          case NumberType::SIMULATOR:
+            return "SIMULATOR";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -63,32 +63,38 @@ namespace Model
 
 
     /**
-     * <p>The date and time of the last change in status.</p>
+     * <p>The date and time of the last change in status. This field is updated when
+     * changes in IKE (Phase 1), IPSec (Phase 2), or BGP status are detected.</p>
      */
     inline const Aws::Utils::DateTime& GetLastStatusChange() const{ return m_lastStatusChange; }
 
     /**
-     * <p>The date and time of the last change in status.</p>
+     * <p>The date and time of the last change in status. This field is updated when
+     * changes in IKE (Phase 1), IPSec (Phase 2), or BGP status are detected.</p>
      */
     inline bool LastStatusChangeHasBeenSet() const { return m_lastStatusChangeHasBeenSet; }
 
     /**
-     * <p>The date and time of the last change in status.</p>
+     * <p>The date and time of the last change in status. This field is updated when
+     * changes in IKE (Phase 1), IPSec (Phase 2), or BGP status are detected.</p>
      */
     inline void SetLastStatusChange(const Aws::Utils::DateTime& value) { m_lastStatusChangeHasBeenSet = true; m_lastStatusChange = value; }
 
     /**
-     * <p>The date and time of the last change in status.</p>
+     * <p>The date and time of the last change in status. This field is updated when
+     * changes in IKE (Phase 1), IPSec (Phase 2), or BGP status are detected.</p>
      */
     inline void SetLastStatusChange(Aws::Utils::DateTime&& value) { m_lastStatusChangeHasBeenSet = true; m_lastStatusChange = std::move(value); }
 
     /**
-     * <p>The date and time of the last change in status.</p>
+     * <p>The date and time of the last change in status. This field is updated when
+     * changes in IKE (Phase 1), IPSec (Phase 2), or BGP status are detected.</p>
      */
     inline VgwTelemetry& WithLastStatusChange(const Aws::Utils::DateTime& value) { SetLastStatusChange(value); return *this;}
 
     /**
-     * <p>The date and time of the last change in status.</p>
+     * <p>The date and time of the last change in status. This field is updated when
+     * changes in IKE (Phase 1), IPSec (Phase 2), or BGP status are detected.</p>
      */
     inline VgwTelemetry& WithLastStatusChange(Aws::Utils::DateTime&& value) { SetLastStatusChange(std::move(value)); return *this;}
 

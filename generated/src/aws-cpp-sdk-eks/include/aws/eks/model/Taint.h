@@ -25,10 +25,11 @@ namespace Model
 {
 
   /**
-   * <p>A property that allows a node to repel a set of pods. For more information,
-   * see <a
+   * <p>A property that allows a node to repel a <code>Pod</code>. For more
+   * information, see <a
    * href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node
-   * taints on managed node groups</a>.</p><p><h3>See Also:</h3>   <a
+   * taints on managed node groups</a> in the <i>Amazon EKS User
+   * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/Taint">AWS API
    * Reference</a></p>
    */

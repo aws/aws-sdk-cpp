@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CmafStreamInfResolution::NOT_SET:
+            return {};
           case CmafStreamInfResolution::INCLUDE:
             return "INCLUDE";
           case CmafStreamInfResolution::EXCLUDE:

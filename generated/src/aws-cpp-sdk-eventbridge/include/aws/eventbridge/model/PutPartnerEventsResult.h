@@ -54,44 +54,65 @@ namespace Model
 
 
     /**
-     * <p>The list of events from this operation that were successfully written to the
-     * partner event bus.</p>
+     * <p>The results for each event entry the partner submitted in this request. If
+     * the event was successfully submitted, the entry has the event ID in it.
+     * Otherwise, you can use the error code and error message to identify the problem
+     * with the entry.</p> <p>For each record, the index of the response element is the
+     * same as the index in the request array.</p>
      */
     inline const Aws::Vector<PutPartnerEventsResultEntry>& GetEntries() const{ return m_entries; }
 
     /**
-     * <p>The list of events from this operation that were successfully written to the
-     * partner event bus.</p>
+     * <p>The results for each event entry the partner submitted in this request. If
+     * the event was successfully submitted, the entry has the event ID in it.
+     * Otherwise, you can use the error code and error message to identify the problem
+     * with the entry.</p> <p>For each record, the index of the response element is the
+     * same as the index in the request array.</p>
      */
     inline void SetEntries(const Aws::Vector<PutPartnerEventsResultEntry>& value) { m_entries = value; }
 
     /**
-     * <p>The list of events from this operation that were successfully written to the
-     * partner event bus.</p>
+     * <p>The results for each event entry the partner submitted in this request. If
+     * the event was successfully submitted, the entry has the event ID in it.
+     * Otherwise, you can use the error code and error message to identify the problem
+     * with the entry.</p> <p>For each record, the index of the response element is the
+     * same as the index in the request array.</p>
      */
     inline void SetEntries(Aws::Vector<PutPartnerEventsResultEntry>&& value) { m_entries = std::move(value); }
 
     /**
-     * <p>The list of events from this operation that were successfully written to the
-     * partner event bus.</p>
+     * <p>The results for each event entry the partner submitted in this request. If
+     * the event was successfully submitted, the entry has the event ID in it.
+     * Otherwise, you can use the error code and error message to identify the problem
+     * with the entry.</p> <p>For each record, the index of the response element is the
+     * same as the index in the request array.</p>
      */
     inline PutPartnerEventsResult& WithEntries(const Aws::Vector<PutPartnerEventsResultEntry>& value) { SetEntries(value); return *this;}
 
     /**
-     * <p>The list of events from this operation that were successfully written to the
-     * partner event bus.</p>
+     * <p>The results for each event entry the partner submitted in this request. If
+     * the event was successfully submitted, the entry has the event ID in it.
+     * Otherwise, you can use the error code and error message to identify the problem
+     * with the entry.</p> <p>For each record, the index of the response element is the
+     * same as the index in the request array.</p>
      */
     inline PutPartnerEventsResult& WithEntries(Aws::Vector<PutPartnerEventsResultEntry>&& value) { SetEntries(std::move(value)); return *this;}
 
     /**
-     * <p>The list of events from this operation that were successfully written to the
-     * partner event bus.</p>
+     * <p>The results for each event entry the partner submitted in this request. If
+     * the event was successfully submitted, the entry has the event ID in it.
+     * Otherwise, you can use the error code and error message to identify the problem
+     * with the entry.</p> <p>For each record, the index of the response element is the
+     * same as the index in the request array.</p>
      */
     inline PutPartnerEventsResult& AddEntries(const PutPartnerEventsResultEntry& value) { m_entries.push_back(value); return *this; }
 
     /**
-     * <p>The list of events from this operation that were successfully written to the
-     * partner event bus.</p>
+     * <p>The results for each event entry the partner submitted in this request. If
+     * the event was successfully submitted, the entry has the event ID in it.
+     * Otherwise, you can use the error code and error message to identify the problem
+     * with the entry.</p> <p>For each record, the index of the response element is the
+     * same as the index in the request array.</p>
      */
     inline PutPartnerEventsResult& AddEntries(PutPartnerEventsResultEntry&& value) { m_entries.push_back(std::move(value)); return *this; }
 

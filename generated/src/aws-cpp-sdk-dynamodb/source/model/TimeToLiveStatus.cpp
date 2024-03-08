@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TimeToLiveStatus::NOT_SET:
+            return {};
           case TimeToLiveStatus::ENABLING:
             return "ENABLING";
           case TimeToLiveStatus::DISABLING:

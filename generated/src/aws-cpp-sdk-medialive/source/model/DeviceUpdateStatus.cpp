@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DeviceUpdateStatus::NOT_SET:
+            return {};
           case DeviceUpdateStatus::UP_TO_DATE:
             return "UP_TO_DATE";
           case DeviceUpdateStatus::NOT_UP_TO_DATE:

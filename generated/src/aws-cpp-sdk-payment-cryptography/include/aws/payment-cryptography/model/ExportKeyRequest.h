@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/payment-cryptography/PaymentCryptography_EXPORTS.h>
 #include <aws/payment-cryptography/PaymentCryptographyRequest.h>
+#include <aws/payment-cryptography/model/ExportAttributes.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/payment-cryptography/model/ExportKeyMaterial.h>
 #include <utility>
@@ -33,6 +34,37 @@ namespace Model
     AWS_PAYMENTCRYPTOGRAPHY_API Aws::String SerializePayload() const override;
 
     AWS_PAYMENTCRYPTOGRAPHY_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+
+    /**
+     * <p>The attributes for IPEK generation during export.</p>
+     */
+    inline const ExportAttributes& GetExportAttributes() const{ return m_exportAttributes; }
+
+    /**
+     * <p>The attributes for IPEK generation during export.</p>
+     */
+    inline bool ExportAttributesHasBeenSet() const { return m_exportAttributesHasBeenSet; }
+
+    /**
+     * <p>The attributes for IPEK generation during export.</p>
+     */
+    inline void SetExportAttributes(const ExportAttributes& value) { m_exportAttributesHasBeenSet = true; m_exportAttributes = value; }
+
+    /**
+     * <p>The attributes for IPEK generation during export.</p>
+     */
+    inline void SetExportAttributes(ExportAttributes&& value) { m_exportAttributesHasBeenSet = true; m_exportAttributes = std::move(value); }
+
+    /**
+     * <p>The attributes for IPEK generation during export.</p>
+     */
+    inline ExportKeyRequest& WithExportAttributes(const ExportAttributes& value) { SetExportAttributes(value); return *this;}
+
+    /**
+     * <p>The attributes for IPEK generation during export.</p>
+     */
+    inline ExportKeyRequest& WithExportAttributes(ExportAttributes&& value) { SetExportAttributes(std::move(value)); return *this;}
 
 
     /**
@@ -121,6 +153,9 @@ namespace Model
     inline ExportKeyRequest& WithKeyMaterial(ExportKeyMaterial&& value) { SetKeyMaterial(std::move(value)); return *this;}
 
   private:
+
+    ExportAttributes m_exportAttributes;
+    bool m_exportAttributesHasBeenSet = false;
 
     Aws::String m_exportKeyIdentifier;
     bool m_exportKeyIdentifierHasBeenSet = false;

@@ -11,7 +11,9 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/quicksight/model/AssetBundleExportFormat.h>
 #include <aws/quicksight/model/AssetBundleCloudFormationOverridePropertyConfiguration.h>
+#include <aws/quicksight/model/AssetBundleExportJobValidationStrategy.h>
 #include <aws/quicksight/model/AssetBundleExportJobError.h>
+#include <aws/quicksight/model/AssetBundleExportJobWarning.h>
 #include <utility>
 
 namespace Aws
@@ -525,6 +527,128 @@ namespace Model
      */
     inline DescribeAssetBundleExportJobResult& WithStatus(int value) { SetStatus(value); return *this;}
 
+
+    /**
+     * <p>The include permissions flag.</p>
+     */
+    inline bool GetIncludePermissions() const{ return m_includePermissions; }
+
+    /**
+     * <p>The include permissions flag.</p>
+     */
+    inline void SetIncludePermissions(bool value) { m_includePermissions = value; }
+
+    /**
+     * <p>The include permissions flag.</p>
+     */
+    inline DescribeAssetBundleExportJobResult& WithIncludePermissions(bool value) { SetIncludePermissions(value); return *this;}
+
+
+    /**
+     * <p>The include tags flag.</p>
+     */
+    inline bool GetIncludeTags() const{ return m_includeTags; }
+
+    /**
+     * <p>The include tags flag.</p>
+     */
+    inline void SetIncludeTags(bool value) { m_includeTags = value; }
+
+    /**
+     * <p>The include tags flag.</p>
+     */
+    inline DescribeAssetBundleExportJobResult& WithIncludeTags(bool value) { SetIncludeTags(value); return *this;}
+
+
+    /**
+     * <p>The validation strategy that is used to export the analysis or dashboard.</p>
+     */
+    inline const AssetBundleExportJobValidationStrategy& GetValidationStrategy() const{ return m_validationStrategy; }
+
+    /**
+     * <p>The validation strategy that is used to export the analysis or dashboard.</p>
+     */
+    inline void SetValidationStrategy(const AssetBundleExportJobValidationStrategy& value) { m_validationStrategy = value; }
+
+    /**
+     * <p>The validation strategy that is used to export the analysis or dashboard.</p>
+     */
+    inline void SetValidationStrategy(AssetBundleExportJobValidationStrategy&& value) { m_validationStrategy = std::move(value); }
+
+    /**
+     * <p>The validation strategy that is used to export the analysis or dashboard.</p>
+     */
+    inline DescribeAssetBundleExportJobResult& WithValidationStrategy(const AssetBundleExportJobValidationStrategy& value) { SetValidationStrategy(value); return *this;}
+
+    /**
+     * <p>The validation strategy that is used to export the analysis or dashboard.</p>
+     */
+    inline DescribeAssetBundleExportJobResult& WithValidationStrategy(AssetBundleExportJobValidationStrategy&& value) { SetValidationStrategy(std::move(value)); return *this;}
+
+
+    /**
+     * <p>An array of warning records that describe the analysis or dashboard that is
+     * exported. This array includes UI errors that can be skipped during the
+     * validation process.</p> <p>This property only appears if
+     * <code>StrictModeForAllResources</code> in <code>ValidationStrategy</code> is set
+     * to <code>FALSE</code>.</p>
+     */
+    inline const Aws::Vector<AssetBundleExportJobWarning>& GetWarnings() const{ return m_warnings; }
+
+    /**
+     * <p>An array of warning records that describe the analysis or dashboard that is
+     * exported. This array includes UI errors that can be skipped during the
+     * validation process.</p> <p>This property only appears if
+     * <code>StrictModeForAllResources</code> in <code>ValidationStrategy</code> is set
+     * to <code>FALSE</code>.</p>
+     */
+    inline void SetWarnings(const Aws::Vector<AssetBundleExportJobWarning>& value) { m_warnings = value; }
+
+    /**
+     * <p>An array of warning records that describe the analysis or dashboard that is
+     * exported. This array includes UI errors that can be skipped during the
+     * validation process.</p> <p>This property only appears if
+     * <code>StrictModeForAllResources</code> in <code>ValidationStrategy</code> is set
+     * to <code>FALSE</code>.</p>
+     */
+    inline void SetWarnings(Aws::Vector<AssetBundleExportJobWarning>&& value) { m_warnings = std::move(value); }
+
+    /**
+     * <p>An array of warning records that describe the analysis or dashboard that is
+     * exported. This array includes UI errors that can be skipped during the
+     * validation process.</p> <p>This property only appears if
+     * <code>StrictModeForAllResources</code> in <code>ValidationStrategy</code> is set
+     * to <code>FALSE</code>.</p>
+     */
+    inline DescribeAssetBundleExportJobResult& WithWarnings(const Aws::Vector<AssetBundleExportJobWarning>& value) { SetWarnings(value); return *this;}
+
+    /**
+     * <p>An array of warning records that describe the analysis or dashboard that is
+     * exported. This array includes UI errors that can be skipped during the
+     * validation process.</p> <p>This property only appears if
+     * <code>StrictModeForAllResources</code> in <code>ValidationStrategy</code> is set
+     * to <code>FALSE</code>.</p>
+     */
+    inline DescribeAssetBundleExportJobResult& WithWarnings(Aws::Vector<AssetBundleExportJobWarning>&& value) { SetWarnings(std::move(value)); return *this;}
+
+    /**
+     * <p>An array of warning records that describe the analysis or dashboard that is
+     * exported. This array includes UI errors that can be skipped during the
+     * validation process.</p> <p>This property only appears if
+     * <code>StrictModeForAllResources</code> in <code>ValidationStrategy</code> is set
+     * to <code>FALSE</code>.</p>
+     */
+    inline DescribeAssetBundleExportJobResult& AddWarnings(const AssetBundleExportJobWarning& value) { m_warnings.push_back(value); return *this; }
+
+    /**
+     * <p>An array of warning records that describe the analysis or dashboard that is
+     * exported. This array includes UI errors that can be skipped during the
+     * validation process.</p> <p>This property only appears if
+     * <code>StrictModeForAllResources</code> in <code>ValidationStrategy</code> is set
+     * to <code>FALSE</code>.</p>
+     */
+    inline DescribeAssetBundleExportJobResult& AddWarnings(AssetBundleExportJobWarning&& value) { m_warnings.push_back(std::move(value)); return *this; }
+
   private:
 
     AssetBundleExportJobStatus m_jobStatus;
@@ -552,6 +676,14 @@ namespace Model
     Aws::String m_requestId;
 
     int m_status;
+
+    bool m_includePermissions;
+
+    bool m_includeTags;
+
+    AssetBundleExportJobValidationStrategy m_validationStrategy;
+
+    Aws::Vector<AssetBundleExportJobWarning> m_warnings;
   };
 
 } // namespace Model

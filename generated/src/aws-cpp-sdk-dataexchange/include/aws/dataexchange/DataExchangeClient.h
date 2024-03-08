@@ -39,8 +39,8 @@ namespace DataExchange
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef DataExchangeClientConfiguration ClientConfigurationType;
       typedef DataExchangeEndpointProvider EndpointProviderType;
@@ -50,14 +50,14 @@ namespace DataExchange
         * is not specified, it will be initialized to default values.
         */
         DataExchangeClient(const Aws::DataExchange::DataExchangeClientConfiguration& clientConfiguration = Aws::DataExchange::DataExchangeClientConfiguration(),
-                           std::shared_ptr<DataExchangeEndpointProviderBase> endpointProvider = Aws::MakeShared<DataExchangeEndpointProvider>(ALLOCATION_TAG));
+                           std::shared_ptr<DataExchangeEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         DataExchangeClient(const Aws::Auth::AWSCredentials& credentials,
-                           std::shared_ptr<DataExchangeEndpointProviderBase> endpointProvider = Aws::MakeShared<DataExchangeEndpointProvider>(ALLOCATION_TAG),
+                           std::shared_ptr<DataExchangeEndpointProviderBase> endpointProvider = nullptr,
                            const Aws::DataExchange::DataExchangeClientConfiguration& clientConfiguration = Aws::DataExchange::DataExchangeClientConfiguration());
 
        /**
@@ -65,7 +65,7 @@ namespace DataExchange
         * the default http client factory will be used
         */
         DataExchangeClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                           std::shared_ptr<DataExchangeEndpointProviderBase> endpointProvider = Aws::MakeShared<DataExchangeEndpointProvider>(ALLOCATION_TAG),
+                           std::shared_ptr<DataExchangeEndpointProviderBase> endpointProvider = nullptr,
                            const Aws::DataExchange::DataExchangeClientConfiguration& clientConfiguration = Aws::DataExchange::DataExchangeClientConfiguration());
 
 
@@ -655,6 +655,31 @@ namespace DataExchange
         void SendApiAssetAsync(const SendApiAssetRequestT& request, const SendApiAssetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&DataExchangeClient::SendApiAsset, request, handler, context);
+        }
+
+        /**
+         * <p>The type of event associated with the data set.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/SendDataSetNotification">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SendDataSetNotificationOutcome SendDataSetNotification(const Model::SendDataSetNotificationRequest& request) const;
+
+        /**
+         * A Callable wrapper for SendDataSetNotification that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename SendDataSetNotificationRequestT = Model::SendDataSetNotificationRequest>
+        Model::SendDataSetNotificationOutcomeCallable SendDataSetNotificationCallable(const SendDataSetNotificationRequestT& request) const
+        {
+            return SubmitCallable(&DataExchangeClient::SendDataSetNotification, request);
+        }
+
+        /**
+         * An Async wrapper for SendDataSetNotification that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename SendDataSetNotificationRequestT = Model::SendDataSetNotificationRequest>
+        void SendDataSetNotificationAsync(const SendDataSetNotificationRequestT& request, const SendDataSetNotificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DataExchangeClient::SendDataSetNotification, request, handler, context);
         }
 
         /**

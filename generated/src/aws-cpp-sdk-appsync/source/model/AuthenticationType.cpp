@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AuthenticationType::NOT_SET:
+            return {};
           case AuthenticationType::API_KEY:
             return "API_KEY";
           case AuthenticationType::AWS_IAM:

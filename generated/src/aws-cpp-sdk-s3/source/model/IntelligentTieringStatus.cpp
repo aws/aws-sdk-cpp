@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case IntelligentTieringStatus::NOT_SET:
+            return {};
           case IntelligentTieringStatus::Enabled:
             return "Enabled";
           case IntelligentTieringStatus::Disabled:

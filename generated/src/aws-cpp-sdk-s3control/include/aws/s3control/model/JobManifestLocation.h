@@ -23,8 +23,10 @@ namespace Model
 {
 
   /**
-   * <p>Contains the information required to locate a manifest object.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Contains the information required to locate a manifest object. Manifests
+   * can't be imported from directory buckets. For more information, see <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-buckets-overview.html">Directory
+   * buckets</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/JobManifestLocation">AWS
    * API Reference</a></p>
    */

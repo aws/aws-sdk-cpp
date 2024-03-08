@@ -33,37 +33,37 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AppImageConfig.</p>
+     * <p>The ARN of the AppImageConfig.</p>
      */
     inline const Aws::String& GetAppImageConfigArn() const{ return m_appImageConfigArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AppImageConfig.</p>
+     * <p>The ARN of the AppImageConfig.</p>
      */
     inline void SetAppImageConfigArn(const Aws::String& value) { m_appImageConfigArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AppImageConfig.</p>
+     * <p>The ARN of the AppImageConfig.</p>
      */
     inline void SetAppImageConfigArn(Aws::String&& value) { m_appImageConfigArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AppImageConfig.</p>
+     * <p>The ARN of the AppImageConfig.</p>
      */
     inline void SetAppImageConfigArn(const char* value) { m_appImageConfigArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AppImageConfig.</p>
+     * <p>The ARN of the AppImageConfig.</p>
      */
     inline CreateAppImageConfigResult& WithAppImageConfigArn(const Aws::String& value) { SetAppImageConfigArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AppImageConfig.</p>
+     * <p>The ARN of the AppImageConfig.</p>
      */
     inline CreateAppImageConfigResult& WithAppImageConfigArn(Aws::String&& value) { SetAppImageConfigArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AppImageConfig.</p>
+     * <p>The ARN of the AppImageConfig.</p>
      */
     inline CreateAppImageConfigResult& WithAppImageConfigArn(const char* value) { SetAppImageConfigArn(value); return *this;}
 

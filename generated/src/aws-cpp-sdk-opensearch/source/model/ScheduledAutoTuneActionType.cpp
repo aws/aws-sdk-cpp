@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ScheduledAutoTuneActionType::NOT_SET:
+            return {};
           case ScheduledAutoTuneActionType::JVM_HEAP_SIZE_TUNING:
             return "JVM_HEAP_SIZE_TUNING";
           case ScheduledAutoTuneActionType::JVM_YOUNG_GEN_TUNING:

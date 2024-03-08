@@ -104,6 +104,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BatchReadExceptionType::NOT_SET:
+            return {};
           case BatchReadExceptionType::ValidationException:
             return "ValidationException";
           case BatchReadExceptionType::InvalidArnException:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BurninSubtitleAlignment::NOT_SET:
+            return {};
           case BurninSubtitleAlignment::CENTERED:
             return "CENTERED";
           case BurninSubtitleAlignment::LEFT:

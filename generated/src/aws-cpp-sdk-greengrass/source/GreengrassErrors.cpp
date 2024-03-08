@@ -43,11 +43,11 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == BAD_REQUEST_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(GreengrassErrors::BAD_REQUEST), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(GreengrassErrors::BAD_REQUEST), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INTERNAL_SERVER_ERROR_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(GreengrassErrors::INTERNAL_SERVER_ERROR), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(GreengrassErrors::INTERNAL_SERVER_ERROR), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

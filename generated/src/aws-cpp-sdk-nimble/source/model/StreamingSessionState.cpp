@@ -94,6 +94,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StreamingSessionState::NOT_SET:
+            return {};
           case StreamingSessionState::CREATE_IN_PROGRESS:
             return "CREATE_IN_PROGRESS";
           case StreamingSessionState::DELETE_IN_PROGRESS:

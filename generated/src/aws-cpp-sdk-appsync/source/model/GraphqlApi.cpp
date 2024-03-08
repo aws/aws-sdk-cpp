@@ -41,7 +41,14 @@ GraphqlApi::GraphqlApi() :
     m_apiTypeHasBeenSet(false),
     m_mergedApiExecutionRoleArnHasBeenSet(false),
     m_ownerHasBeenSet(false),
-    m_ownerContactHasBeenSet(false)
+    m_ownerContactHasBeenSet(false),
+    m_introspectionConfig(GraphQLApiIntrospectionConfig::NOT_SET),
+    m_introspectionConfigHasBeenSet(false),
+    m_queryDepthLimit(0),
+    m_queryDepthLimitHasBeenSet(false),
+    m_resolverCountLimit(0),
+    m_resolverCountLimitHasBeenSet(false),
+    m_enhancedMetricsConfigHasBeenSet(false)
 {
 }
 
@@ -68,7 +75,14 @@ GraphqlApi::GraphqlApi(JsonView jsonValue) :
     m_apiTypeHasBeenSet(false),
     m_mergedApiExecutionRoleArnHasBeenSet(false),
     m_ownerHasBeenSet(false),
-    m_ownerContactHasBeenSet(false)
+    m_ownerContactHasBeenSet(false),
+    m_introspectionConfig(GraphQLApiIntrospectionConfig::NOT_SET),
+    m_introspectionConfigHasBeenSet(false),
+    m_queryDepthLimit(0),
+    m_queryDepthLimitHasBeenSet(false),
+    m_resolverCountLimit(0),
+    m_resolverCountLimitHasBeenSet(false),
+    m_enhancedMetricsConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -220,6 +234,34 @@ GraphqlApi& GraphqlApi::operator =(JsonView jsonValue)
     m_ownerContactHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("introspectionConfig"))
+  {
+    m_introspectionConfig = GraphQLApiIntrospectionConfigMapper::GetGraphQLApiIntrospectionConfigForName(jsonValue.GetString("introspectionConfig"));
+
+    m_introspectionConfigHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("queryDepthLimit"))
+  {
+    m_queryDepthLimit = jsonValue.GetInteger("queryDepthLimit");
+
+    m_queryDepthLimitHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("resolverCountLimit"))
+  {
+    m_resolverCountLimit = jsonValue.GetInteger("resolverCountLimit");
+
+    m_resolverCountLimitHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("enhancedMetricsConfig"))
+  {
+    m_enhancedMetricsConfig = jsonValue.GetObject("enhancedMetricsConfig");
+
+    m_enhancedMetricsConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -355,6 +397,29 @@ JsonValue GraphqlApi::Jsonize() const
   if(m_ownerContactHasBeenSet)
   {
    payload.WithString("ownerContact", m_ownerContact);
+
+  }
+
+  if(m_introspectionConfigHasBeenSet)
+  {
+   payload.WithString("introspectionConfig", GraphQLApiIntrospectionConfigMapper::GetNameForGraphQLApiIntrospectionConfig(m_introspectionConfig));
+  }
+
+  if(m_queryDepthLimitHasBeenSet)
+  {
+   payload.WithInteger("queryDepthLimit", m_queryDepthLimit);
+
+  }
+
+  if(m_resolverCountLimitHasBeenSet)
+  {
+   payload.WithInteger("resolverCountLimit", m_resolverCountLimit);
+
+  }
+
+  if(m_enhancedMetricsConfigHasBeenSet)
+  {
+   payload.WithObject("enhancedMetricsConfig", m_enhancedMetricsConfig.Jsonize());
 
   }
 

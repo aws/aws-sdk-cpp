@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LogExport::NOT_SET:
+            return {};
           case LogExport::useractivitylog:
             return "useractivitylog";
           case LogExport::userlog:

@@ -43,7 +43,7 @@ TEST_F(EC2DualStackTests, TestDualStackMocked)
     goodResponse->GetResponseBody() << goodReply;
     mockHttpClient->AddResponseToReturn(goodResponse);
 
-    Aws::Client::ClientConfiguration clientConfig;
+    Aws::Client::ClientConfiguration clientConfig("default", true);
     clientConfig.region = "us-east-1";
     clientConfig.useDualStack = true;
 
@@ -69,7 +69,7 @@ TEST_F(EC2DualStackTests, TestDualStackMocked)
 
 TEST_F(EC2DualStackTests, TestDualStackEndpoint)
 {
-    Aws::Client::ClientConfiguration clientConfig;
+    Aws::Client::ClientConfiguration clientConfig("default", true);
     clientConfig.region = "us-east-1";
     clientConfig.useDualStack = true;
 

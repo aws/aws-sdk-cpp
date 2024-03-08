@@ -184,74 +184,130 @@ namespace Model
 
 
     /**
-     * <p>The language code for the language of the source text. Do not use
-     * <code>auto</code>, because <code>TranslateDocument</code> does not support
-     * language auto-detection. For a list of supported language codes, see <a
+     * <p>The language code for the language of the source text. For a list of
+     * supported language codes, see <a
      * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
-     * languages</a>.</p>
+     * languages</a>.</p> <p>To have Amazon Translate determine the source language of
+     * your text, you can specify <code>auto</code> in the
+     * <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon
+     * Translate will call <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon
+     * Comprehend</a> to determine the source language.</p>  <p>If you specify
+     * <code>auto</code>, you must send the <code>TranslateDocument</code> request in a
+     * region that supports Amazon Comprehend. Otherwise, the request returns an error
+     * indicating that autodetect is not supported. </p> 
      */
     inline const Aws::String& GetSourceLanguageCode() const{ return m_sourceLanguageCode; }
 
     /**
-     * <p>The language code for the language of the source text. Do not use
-     * <code>auto</code>, because <code>TranslateDocument</code> does not support
-     * language auto-detection. For a list of supported language codes, see <a
+     * <p>The language code for the language of the source text. For a list of
+     * supported language codes, see <a
      * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
-     * languages</a>.</p>
+     * languages</a>.</p> <p>To have Amazon Translate determine the source language of
+     * your text, you can specify <code>auto</code> in the
+     * <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon
+     * Translate will call <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon
+     * Comprehend</a> to determine the source language.</p>  <p>If you specify
+     * <code>auto</code>, you must send the <code>TranslateDocument</code> request in a
+     * region that supports Amazon Comprehend. Otherwise, the request returns an error
+     * indicating that autodetect is not supported. </p> 
      */
     inline bool SourceLanguageCodeHasBeenSet() const { return m_sourceLanguageCodeHasBeenSet; }
 
     /**
-     * <p>The language code for the language of the source text. Do not use
-     * <code>auto</code>, because <code>TranslateDocument</code> does not support
-     * language auto-detection. For a list of supported language codes, see <a
+     * <p>The language code for the language of the source text. For a list of
+     * supported language codes, see <a
      * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
-     * languages</a>.</p>
+     * languages</a>.</p> <p>To have Amazon Translate determine the source language of
+     * your text, you can specify <code>auto</code> in the
+     * <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon
+     * Translate will call <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon
+     * Comprehend</a> to determine the source language.</p>  <p>If you specify
+     * <code>auto</code>, you must send the <code>TranslateDocument</code> request in a
+     * region that supports Amazon Comprehend. Otherwise, the request returns an error
+     * indicating that autodetect is not supported. </p> 
      */
     inline void SetSourceLanguageCode(const Aws::String& value) { m_sourceLanguageCodeHasBeenSet = true; m_sourceLanguageCode = value; }
 
     /**
-     * <p>The language code for the language of the source text. Do not use
-     * <code>auto</code>, because <code>TranslateDocument</code> does not support
-     * language auto-detection. For a list of supported language codes, see <a
+     * <p>The language code for the language of the source text. For a list of
+     * supported language codes, see <a
      * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
-     * languages</a>.</p>
+     * languages</a>.</p> <p>To have Amazon Translate determine the source language of
+     * your text, you can specify <code>auto</code> in the
+     * <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon
+     * Translate will call <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon
+     * Comprehend</a> to determine the source language.</p>  <p>If you specify
+     * <code>auto</code>, you must send the <code>TranslateDocument</code> request in a
+     * region that supports Amazon Comprehend. Otherwise, the request returns an error
+     * indicating that autodetect is not supported. </p> 
      */
     inline void SetSourceLanguageCode(Aws::String&& value) { m_sourceLanguageCodeHasBeenSet = true; m_sourceLanguageCode = std::move(value); }
 
     /**
-     * <p>The language code for the language of the source text. Do not use
-     * <code>auto</code>, because <code>TranslateDocument</code> does not support
-     * language auto-detection. For a list of supported language codes, see <a
+     * <p>The language code for the language of the source text. For a list of
+     * supported language codes, see <a
      * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
-     * languages</a>.</p>
+     * languages</a>.</p> <p>To have Amazon Translate determine the source language of
+     * your text, you can specify <code>auto</code> in the
+     * <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon
+     * Translate will call <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon
+     * Comprehend</a> to determine the source language.</p>  <p>If you specify
+     * <code>auto</code>, you must send the <code>TranslateDocument</code> request in a
+     * region that supports Amazon Comprehend. Otherwise, the request returns an error
+     * indicating that autodetect is not supported. </p> 
      */
     inline void SetSourceLanguageCode(const char* value) { m_sourceLanguageCodeHasBeenSet = true; m_sourceLanguageCode.assign(value); }
 
     /**
-     * <p>The language code for the language of the source text. Do not use
-     * <code>auto</code>, because <code>TranslateDocument</code> does not support
-     * language auto-detection. For a list of supported language codes, see <a
+     * <p>The language code for the language of the source text. For a list of
+     * supported language codes, see <a
      * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
-     * languages</a>.</p>
+     * languages</a>.</p> <p>To have Amazon Translate determine the source language of
+     * your text, you can specify <code>auto</code> in the
+     * <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon
+     * Translate will call <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon
+     * Comprehend</a> to determine the source language.</p>  <p>If you specify
+     * <code>auto</code>, you must send the <code>TranslateDocument</code> request in a
+     * region that supports Amazon Comprehend. Otherwise, the request returns an error
+     * indicating that autodetect is not supported. </p> 
      */
     inline TranslateDocumentRequest& WithSourceLanguageCode(const Aws::String& value) { SetSourceLanguageCode(value); return *this;}
 
     /**
-     * <p>The language code for the language of the source text. Do not use
-     * <code>auto</code>, because <code>TranslateDocument</code> does not support
-     * language auto-detection. For a list of supported language codes, see <a
+     * <p>The language code for the language of the source text. For a list of
+     * supported language codes, see <a
      * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
-     * languages</a>.</p>
+     * languages</a>.</p> <p>To have Amazon Translate determine the source language of
+     * your text, you can specify <code>auto</code> in the
+     * <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon
+     * Translate will call <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon
+     * Comprehend</a> to determine the source language.</p>  <p>If you specify
+     * <code>auto</code>, you must send the <code>TranslateDocument</code> request in a
+     * region that supports Amazon Comprehend. Otherwise, the request returns an error
+     * indicating that autodetect is not supported. </p> 
      */
     inline TranslateDocumentRequest& WithSourceLanguageCode(Aws::String&& value) { SetSourceLanguageCode(std::move(value)); return *this;}
 
     /**
-     * <p>The language code for the language of the source text. Do not use
-     * <code>auto</code>, because <code>TranslateDocument</code> does not support
-     * language auto-detection. For a list of supported language codes, see <a
+     * <p>The language code for the language of the source text. For a list of
+     * supported language codes, see <a
      * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
-     * languages</a>.</p>
+     * languages</a>.</p> <p>To have Amazon Translate determine the source language of
+     * your text, you can specify <code>auto</code> in the
+     * <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon
+     * Translate will call <a
+     * href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon
+     * Comprehend</a> to determine the source language.</p>  <p>If you specify
+     * <code>auto</code>, you must send the <code>TranslateDocument</code> request in a
+     * region that supports Amazon Comprehend. Otherwise, the request returns an error
+     * indicating that autodetect is not supported. </p> 
      */
     inline TranslateDocumentRequest& WithSourceLanguageCode(const char* value) { SetSourceLanguageCode(value); return *this;}
 
@@ -321,22 +377,58 @@ namespace Model
     inline TranslateDocumentRequest& WithTargetLanguageCode(const char* value) { SetTargetLanguageCode(value); return *this;}
 
 
-    
+    /**
+     * <p>Settings to configure your translation output. You can configure the
+     * following options:</p> <ul> <li> <p>Brevity: not supported.</p> </li> <li>
+     * <p>Formality: sets the formality level of the output text.</p> </li> <li>
+     * <p>Profanity: masks profane words and phrases in your translation output.</p>
+     * </li> </ul>
+     */
     inline const TranslationSettings& GetSettings() const{ return m_settings; }
 
-    
+    /**
+     * <p>Settings to configure your translation output. You can configure the
+     * following options:</p> <ul> <li> <p>Brevity: not supported.</p> </li> <li>
+     * <p>Formality: sets the formality level of the output text.</p> </li> <li>
+     * <p>Profanity: masks profane words and phrases in your translation output.</p>
+     * </li> </ul>
+     */
     inline bool SettingsHasBeenSet() const { return m_settingsHasBeenSet; }
 
-    
+    /**
+     * <p>Settings to configure your translation output. You can configure the
+     * following options:</p> <ul> <li> <p>Brevity: not supported.</p> </li> <li>
+     * <p>Formality: sets the formality level of the output text.</p> </li> <li>
+     * <p>Profanity: masks profane words and phrases in your translation output.</p>
+     * </li> </ul>
+     */
     inline void SetSettings(const TranslationSettings& value) { m_settingsHasBeenSet = true; m_settings = value; }
 
-    
+    /**
+     * <p>Settings to configure your translation output. You can configure the
+     * following options:</p> <ul> <li> <p>Brevity: not supported.</p> </li> <li>
+     * <p>Formality: sets the formality level of the output text.</p> </li> <li>
+     * <p>Profanity: masks profane words and phrases in your translation output.</p>
+     * </li> </ul>
+     */
     inline void SetSettings(TranslationSettings&& value) { m_settingsHasBeenSet = true; m_settings = std::move(value); }
 
-    
+    /**
+     * <p>Settings to configure your translation output. You can configure the
+     * following options:</p> <ul> <li> <p>Brevity: not supported.</p> </li> <li>
+     * <p>Formality: sets the formality level of the output text.</p> </li> <li>
+     * <p>Profanity: masks profane words and phrases in your translation output.</p>
+     * </li> </ul>
+     */
     inline TranslateDocumentRequest& WithSettings(const TranslationSettings& value) { SetSettings(value); return *this;}
 
-    
+    /**
+     * <p>Settings to configure your translation output. You can configure the
+     * following options:</p> <ul> <li> <p>Brevity: not supported.</p> </li> <li>
+     * <p>Formality: sets the formality level of the output text.</p> </li> <li>
+     * <p>Profanity: masks profane words and phrases in your translation output.</p>
+     * </li> </ul>
+     */
     inline TranslateDocumentRequest& WithSettings(TranslationSettings&& value) { SetSettings(std::move(value)); return *this;}
 
   private:

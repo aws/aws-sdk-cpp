@@ -31,7 +31,15 @@ IBMDb2Settings::IBMDb2Settings() :
     m_maxKBytesPerReadHasBeenSet(false),
     m_usernameHasBeenSet(false),
     m_secretsManagerAccessRoleArnHasBeenSet(false),
-    m_secretsManagerSecretIdHasBeenSet(false)
+    m_secretsManagerSecretIdHasBeenSet(false),
+    m_loadTimeout(0),
+    m_loadTimeoutHasBeenSet(false),
+    m_writeBufferSize(0),
+    m_writeBufferSizeHasBeenSet(false),
+    m_maxFileSize(0),
+    m_maxFileSizeHasBeenSet(false),
+    m_keepCsvFiles(false),
+    m_keepCsvFilesHasBeenSet(false)
 {
 }
 
@@ -48,7 +56,15 @@ IBMDb2Settings::IBMDb2Settings(JsonView jsonValue) :
     m_maxKBytesPerReadHasBeenSet(false),
     m_usernameHasBeenSet(false),
     m_secretsManagerAccessRoleArnHasBeenSet(false),
-    m_secretsManagerSecretIdHasBeenSet(false)
+    m_secretsManagerSecretIdHasBeenSet(false),
+    m_loadTimeout(0),
+    m_loadTimeoutHasBeenSet(false),
+    m_writeBufferSize(0),
+    m_writeBufferSizeHasBeenSet(false),
+    m_maxFileSize(0),
+    m_maxFileSizeHasBeenSet(false),
+    m_keepCsvFiles(false),
+    m_keepCsvFilesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -125,6 +141,34 @@ IBMDb2Settings& IBMDb2Settings::operator =(JsonView jsonValue)
     m_secretsManagerSecretIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("LoadTimeout"))
+  {
+    m_loadTimeout = jsonValue.GetInteger("LoadTimeout");
+
+    m_loadTimeoutHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("WriteBufferSize"))
+  {
+    m_writeBufferSize = jsonValue.GetInteger("WriteBufferSize");
+
+    m_writeBufferSizeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("MaxFileSize"))
+  {
+    m_maxFileSize = jsonValue.GetInteger("MaxFileSize");
+
+    m_maxFileSizeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("KeepCsvFiles"))
+  {
+    m_keepCsvFiles = jsonValue.GetBool("KeepCsvFiles");
+
+    m_keepCsvFilesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -189,6 +233,30 @@ JsonValue IBMDb2Settings::Jsonize() const
   if(m_secretsManagerSecretIdHasBeenSet)
   {
    payload.WithString("SecretsManagerSecretId", m_secretsManagerSecretId);
+
+  }
+
+  if(m_loadTimeoutHasBeenSet)
+  {
+   payload.WithInteger("LoadTimeout", m_loadTimeout);
+
+  }
+
+  if(m_writeBufferSizeHasBeenSet)
+  {
+   payload.WithInteger("WriteBufferSize", m_writeBufferSize);
+
+  }
+
+  if(m_maxFileSizeHasBeenSet)
+  {
+   payload.WithInteger("MaxFileSize", m_maxFileSize);
+
+  }
+
+  if(m_keepCsvFilesHasBeenSet)
+  {
+   payload.WithBool("KeepCsvFiles", m_keepCsvFiles);
 
   }
 

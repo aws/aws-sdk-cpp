@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ConfigurationItemStatus::NOT_SET:
+            return {};
           case ConfigurationItemStatus::OK:
             return "OK";
           case ConfigurationItemStatus::ResourceDiscovered:

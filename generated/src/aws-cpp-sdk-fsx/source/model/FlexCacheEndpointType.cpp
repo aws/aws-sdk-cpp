@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FlexCacheEndpointType::NOT_SET:
+            return {};
           case FlexCacheEndpointType::NONE:
             return "NONE";
           case FlexCacheEndpointType::ORIGIN:

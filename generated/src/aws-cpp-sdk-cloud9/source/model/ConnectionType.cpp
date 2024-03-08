@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ConnectionType::NOT_SET:
+            return {};
           case ConnectionType::CONNECT_SSH:
             return "CONNECT_SSH";
           case ConnectionType::CONNECT_SSM:

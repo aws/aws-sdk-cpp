@@ -118,32 +118,38 @@ namespace Model
 
 
     /**
-     * <p>The sort order for results. The default is <code>Descending</code>.</p>
+     * <p>Whether to sort the results in <code>Ascending</code> or
+     * <code>Descending</code> order. The default is <code>Descending</code>.</p>
      */
     inline const SortOrder& GetSortOrder() const{ return m_sortOrder; }
 
     /**
-     * <p>The sort order for results. The default is <code>Descending</code>.</p>
+     * <p>Whether to sort the results in <code>Ascending</code> or
+     * <code>Descending</code> order. The default is <code>Descending</code>.</p>
      */
     inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
 
     /**
-     * <p>The sort order for results. The default is <code>Descending</code>.</p>
+     * <p>Whether to sort the results in <code>Ascending</code> or
+     * <code>Descending</code> order. The default is <code>Descending</code>.</p>
      */
     inline void SetSortOrder(const SortOrder& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
 
     /**
-     * <p>The sort order for results. The default is <code>Descending</code>.</p>
+     * <p>Whether to sort the results in <code>Ascending</code> or
+     * <code>Descending</code> order. The default is <code>Descending</code>.</p>
      */
     inline void SetSortOrder(SortOrder&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
 
     /**
-     * <p>The sort order for results. The default is <code>Descending</code>.</p>
+     * <p>Whether to sort the results in <code>Ascending</code> or
+     * <code>Descending</code> order. The default is <code>Descending</code>.</p>
      */
     inline ListDataQualityJobDefinitionsRequest& WithSortOrder(const SortOrder& value) { SetSortOrder(value); return *this;}
 
     /**
-     * <p>The sort order for results. The default is <code>Descending</code>.</p>
+     * <p>Whether to sort the results in <code>Ascending</code> or
+     * <code>Descending</code> order. The default is <code>Descending</code>.</p>
      */
     inline ListDataQualityJobDefinitionsRequest& WithSortOrder(SortOrder&& value) { SetSortOrder(std::move(value)); return *this;}
 

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SubscriberStatus::NOT_SET:
+            return {};
           case SubscriberStatus::CONFIRMED:
             return "CONFIRMED";
           case SubscriberStatus::DECLINED:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InventoryFormat::NOT_SET:
+            return {};
           case InventoryFormat::CSV:
             return "CSV";
           case InventoryFormat::ORC:

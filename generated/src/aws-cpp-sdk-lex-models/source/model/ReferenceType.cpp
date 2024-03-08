@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReferenceType::NOT_SET:
+            return {};
           case ReferenceType::Intent:
             return "Intent";
           case ReferenceType::Bot:

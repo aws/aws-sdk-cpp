@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NotificationEvent::NOT_SET:
+            return {};
           case NotificationEvent::CA_CERTIFICATE_EXPIRY:
             return "CA_CERTIFICATE_EXPIRY";
           case NotificationEvent::END_ENTITY_CERTIFICATE_EXPIRY:

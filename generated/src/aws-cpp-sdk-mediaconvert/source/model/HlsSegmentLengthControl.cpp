@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HlsSegmentLengthControl::NOT_SET:
+            return {};
           case HlsSegmentLengthControl::EXACT:
             return "EXACT";
           case HlsSegmentLengthControl::GOP_MULTIPLE:

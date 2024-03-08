@@ -124,6 +124,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PartitionInstanceType::NOT_SET:
+            return {};
           case PartitionInstanceType::search_m1_small:
             return "search.m1.small";
           case PartitionInstanceType::search_m1_large:

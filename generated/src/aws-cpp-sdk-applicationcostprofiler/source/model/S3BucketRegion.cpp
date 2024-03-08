@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case S3BucketRegion::NOT_SET:
+            return {};
           case S3BucketRegion::ap_east_1:
             return "ap-east-1";
           case S3BucketRegion::me_south_1:

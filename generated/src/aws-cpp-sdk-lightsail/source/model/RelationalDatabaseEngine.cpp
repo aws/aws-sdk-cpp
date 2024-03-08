@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RelationalDatabaseEngine::NOT_SET:
+            return {};
           case RelationalDatabaseEngine::mysql:
             return "mysql";
           default:

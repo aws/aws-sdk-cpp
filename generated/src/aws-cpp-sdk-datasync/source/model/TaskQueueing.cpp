@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TaskQueueing::NOT_SET:
+            return {};
           case TaskQueueing::ENABLED:
             return "ENABLED";
           case TaskQueueing::DISABLED:

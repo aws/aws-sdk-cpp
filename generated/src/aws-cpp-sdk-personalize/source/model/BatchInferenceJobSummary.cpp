@@ -25,7 +25,9 @@ BatchInferenceJobSummary::BatchInferenceJobSummary() :
     m_creationDateTimeHasBeenSet(false),
     m_lastUpdatedDateTimeHasBeenSet(false),
     m_failureReasonHasBeenSet(false),
-    m_solutionVersionArnHasBeenSet(false)
+    m_solutionVersionArnHasBeenSet(false),
+    m_batchInferenceJobMode(BatchInferenceJobMode::NOT_SET),
+    m_batchInferenceJobModeHasBeenSet(false)
 {
 }
 
@@ -36,7 +38,9 @@ BatchInferenceJobSummary::BatchInferenceJobSummary(JsonView jsonValue) :
     m_creationDateTimeHasBeenSet(false),
     m_lastUpdatedDateTimeHasBeenSet(false),
     m_failureReasonHasBeenSet(false),
-    m_solutionVersionArnHasBeenSet(false)
+    m_solutionVersionArnHasBeenSet(false),
+    m_batchInferenceJobMode(BatchInferenceJobMode::NOT_SET),
+    m_batchInferenceJobModeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -92,6 +96,13 @@ BatchInferenceJobSummary& BatchInferenceJobSummary::operator =(JsonView jsonValu
     m_solutionVersionArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("batchInferenceJobMode"))
+  {
+    m_batchInferenceJobMode = BatchInferenceJobModeMapper::GetBatchInferenceJobModeForName(jsonValue.GetString("batchInferenceJobMode"));
+
+    m_batchInferenceJobModeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -137,6 +148,11 @@ JsonValue BatchInferenceJobSummary::Jsonize() const
   {
    payload.WithString("solutionVersionArn", m_solutionVersionArn);
 
+  }
+
+  if(m_batchInferenceJobModeHasBeenSet)
+  {
+   payload.WithString("batchInferenceJobMode", BatchInferenceJobModeMapper::GetNameForBatchInferenceJobMode(m_batchInferenceJobMode));
   }
 
   return payload;

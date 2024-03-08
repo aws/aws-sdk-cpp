@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RulePublishStatus::NOT_SET:
+            return {};
           case RulePublishStatus::DRAFT:
             return "DRAFT";
           case RulePublishStatus::PUBLISHED:

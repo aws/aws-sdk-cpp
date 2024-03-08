@@ -13,7 +13,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 PutReportDefinitionRequest::PutReportDefinitionRequest() : 
-    m_reportDefinitionHasBeenSet(false)
+    m_reportDefinitionHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -24,6 +25,17 @@ Aws::String PutReportDefinitionRequest::SerializePayload() const
   if(m_reportDefinitionHasBeenSet)
   {
    payload.WithObject("ReportDefinition", m_reportDefinition.Jsonize());
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
 
   }
 

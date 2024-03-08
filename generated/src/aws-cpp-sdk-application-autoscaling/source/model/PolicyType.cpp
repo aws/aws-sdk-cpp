@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PolicyType::NOT_SET:
+            return {};
           case PolicyType::StepScaling:
             return "StepScaling";
           case PolicyType::TargetTrackingScaling:

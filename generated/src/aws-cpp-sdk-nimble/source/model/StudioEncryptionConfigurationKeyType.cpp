@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StudioEncryptionConfigurationKeyType::NOT_SET:
+            return {};
           case StudioEncryptionConfigurationKeyType::AWS_OWNED_KEY:
             return "AWS_OWNED_KEY";
           case StudioEncryptionConfigurationKeyType::CUSTOMER_MANAGED_KEY:

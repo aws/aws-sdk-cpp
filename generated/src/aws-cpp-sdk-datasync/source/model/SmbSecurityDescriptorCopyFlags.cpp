@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SmbSecurityDescriptorCopyFlags::NOT_SET:
+            return {};
           case SmbSecurityDescriptorCopyFlags::NONE:
             return "NONE";
           case SmbSecurityDescriptorCopyFlags::OWNER_DACL:

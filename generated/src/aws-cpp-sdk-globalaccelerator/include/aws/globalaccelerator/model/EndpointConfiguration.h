@@ -170,15 +170,15 @@ namespace Model
 
     /**
      * <p>Indicates whether client IP address preservation is enabled for an endpoint.
-     * The value is true or false. The default value is true for new accelerators. </p>
-     * <p>If the value is set to true, the client's IP address is preserved in the
-     * <code>X-Forwarded-For</code> request header as traffic travels to applications
-     * on the endpoint fronted by the accelerator.</p> <p>Client IP address
-     * preservation is supported, in specific Amazon Web Services Regions, for
-     * endpoints that are Application Load Balancers, Amazon EC2 instances, and Network
-     * Load Balancers with Security Groups. IMPORTANT: You cannot use client IP address
-     * preservation with Network Load Balancers with TLS listeners.</p> <p>For more
-     * information, see <a
+     * The value is true or false. The default value is true for Application Load
+     * Balancer endpoints. </p> <p>If the value is set to true, the client's IP address
+     * is preserved in the <code>X-Forwarded-For</code> request header as traffic
+     * travels to applications on the endpoint fronted by the accelerator.</p>
+     * <p>Client IP address preservation is supported, in specific Amazon Web Services
+     * Regions, for endpoints that are Application Load Balancers, Amazon EC2
+     * instances, and Network Load Balancers with security groups. IMPORTANT: You
+     * cannot use client IP address preservation with Network Load Balancers with TLS
+     * listeners.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/preserve-client-ip-address.html">
      * Preserve client IP addresses in Global Accelerator</a> in the <i>Global
      * Accelerator Developer Guide</i>.</p>
@@ -187,15 +187,15 @@ namespace Model
 
     /**
      * <p>Indicates whether client IP address preservation is enabled for an endpoint.
-     * The value is true or false. The default value is true for new accelerators. </p>
-     * <p>If the value is set to true, the client's IP address is preserved in the
-     * <code>X-Forwarded-For</code> request header as traffic travels to applications
-     * on the endpoint fronted by the accelerator.</p> <p>Client IP address
-     * preservation is supported, in specific Amazon Web Services Regions, for
-     * endpoints that are Application Load Balancers, Amazon EC2 instances, and Network
-     * Load Balancers with Security Groups. IMPORTANT: You cannot use client IP address
-     * preservation with Network Load Balancers with TLS listeners.</p> <p>For more
-     * information, see <a
+     * The value is true or false. The default value is true for Application Load
+     * Balancer endpoints. </p> <p>If the value is set to true, the client's IP address
+     * is preserved in the <code>X-Forwarded-For</code> request header as traffic
+     * travels to applications on the endpoint fronted by the accelerator.</p>
+     * <p>Client IP address preservation is supported, in specific Amazon Web Services
+     * Regions, for endpoints that are Application Load Balancers, Amazon EC2
+     * instances, and Network Load Balancers with security groups. IMPORTANT: You
+     * cannot use client IP address preservation with Network Load Balancers with TLS
+     * listeners.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/preserve-client-ip-address.html">
      * Preserve client IP addresses in Global Accelerator</a> in the <i>Global
      * Accelerator Developer Guide</i>.</p>
@@ -204,15 +204,15 @@ namespace Model
 
     /**
      * <p>Indicates whether client IP address preservation is enabled for an endpoint.
-     * The value is true or false. The default value is true for new accelerators. </p>
-     * <p>If the value is set to true, the client's IP address is preserved in the
-     * <code>X-Forwarded-For</code> request header as traffic travels to applications
-     * on the endpoint fronted by the accelerator.</p> <p>Client IP address
-     * preservation is supported, in specific Amazon Web Services Regions, for
-     * endpoints that are Application Load Balancers, Amazon EC2 instances, and Network
-     * Load Balancers with Security Groups. IMPORTANT: You cannot use client IP address
-     * preservation with Network Load Balancers with TLS listeners.</p> <p>For more
-     * information, see <a
+     * The value is true or false. The default value is true for Application Load
+     * Balancer endpoints. </p> <p>If the value is set to true, the client's IP address
+     * is preserved in the <code>X-Forwarded-For</code> request header as traffic
+     * travels to applications on the endpoint fronted by the accelerator.</p>
+     * <p>Client IP address preservation is supported, in specific Amazon Web Services
+     * Regions, for endpoints that are Application Load Balancers, Amazon EC2
+     * instances, and Network Load Balancers with security groups. IMPORTANT: You
+     * cannot use client IP address preservation with Network Load Balancers with TLS
+     * listeners.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/preserve-client-ip-address.html">
      * Preserve client IP addresses in Global Accelerator</a> in the <i>Global
      * Accelerator Developer Guide</i>.</p>
@@ -221,20 +221,77 @@ namespace Model
 
     /**
      * <p>Indicates whether client IP address preservation is enabled for an endpoint.
-     * The value is true or false. The default value is true for new accelerators. </p>
-     * <p>If the value is set to true, the client's IP address is preserved in the
-     * <code>X-Forwarded-For</code> request header as traffic travels to applications
-     * on the endpoint fronted by the accelerator.</p> <p>Client IP address
-     * preservation is supported, in specific Amazon Web Services Regions, for
-     * endpoints that are Application Load Balancers, Amazon EC2 instances, and Network
-     * Load Balancers with Security Groups. IMPORTANT: You cannot use client IP address
-     * preservation with Network Load Balancers with TLS listeners.</p> <p>For more
-     * information, see <a
+     * The value is true or false. The default value is true for Application Load
+     * Balancer endpoints. </p> <p>If the value is set to true, the client's IP address
+     * is preserved in the <code>X-Forwarded-For</code> request header as traffic
+     * travels to applications on the endpoint fronted by the accelerator.</p>
+     * <p>Client IP address preservation is supported, in specific Amazon Web Services
+     * Regions, for endpoints that are Application Load Balancers, Amazon EC2
+     * instances, and Network Load Balancers with security groups. IMPORTANT: You
+     * cannot use client IP address preservation with Network Load Balancers with TLS
+     * listeners.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/preserve-client-ip-address.html">
      * Preserve client IP addresses in Global Accelerator</a> in the <i>Global
      * Accelerator Developer Guide</i>.</p>
      */
     inline EndpointConfiguration& WithClientIPPreservationEnabled(bool value) { SetClientIPPreservationEnabled(value); return *this;}
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the cross-account attachment that specifies
+     * the endpoints (resources) that can be added to accelerators and principals that
+     * have permission to add the endpoints to accelerators.</p>
+     */
+    inline const Aws::String& GetAttachmentArn() const{ return m_attachmentArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the cross-account attachment that specifies
+     * the endpoints (resources) that can be added to accelerators and principals that
+     * have permission to add the endpoints to accelerators.</p>
+     */
+    inline bool AttachmentArnHasBeenSet() const { return m_attachmentArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the cross-account attachment that specifies
+     * the endpoints (resources) that can be added to accelerators and principals that
+     * have permission to add the endpoints to accelerators.</p>
+     */
+    inline void SetAttachmentArn(const Aws::String& value) { m_attachmentArnHasBeenSet = true; m_attachmentArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the cross-account attachment that specifies
+     * the endpoints (resources) that can be added to accelerators and principals that
+     * have permission to add the endpoints to accelerators.</p>
+     */
+    inline void SetAttachmentArn(Aws::String&& value) { m_attachmentArnHasBeenSet = true; m_attachmentArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the cross-account attachment that specifies
+     * the endpoints (resources) that can be added to accelerators and principals that
+     * have permission to add the endpoints to accelerators.</p>
+     */
+    inline void SetAttachmentArn(const char* value) { m_attachmentArnHasBeenSet = true; m_attachmentArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the cross-account attachment that specifies
+     * the endpoints (resources) that can be added to accelerators and principals that
+     * have permission to add the endpoints to accelerators.</p>
+     */
+    inline EndpointConfiguration& WithAttachmentArn(const Aws::String& value) { SetAttachmentArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the cross-account attachment that specifies
+     * the endpoints (resources) that can be added to accelerators and principals that
+     * have permission to add the endpoints to accelerators.</p>
+     */
+    inline EndpointConfiguration& WithAttachmentArn(Aws::String&& value) { SetAttachmentArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the cross-account attachment that specifies
+     * the endpoints (resources) that can be added to accelerators and principals that
+     * have permission to add the endpoints to accelerators.</p>
+     */
+    inline EndpointConfiguration& WithAttachmentArn(const char* value) { SetAttachmentArn(value); return *this;}
 
   private:
 
@@ -246,6 +303,9 @@ namespace Model
 
     bool m_clientIPPreservationEnabled;
     bool m_clientIPPreservationEnabledHasBeenSet = false;
+
+    Aws::String m_attachmentArn;
+    bool m_attachmentArnHasBeenSet = false;
   };
 
 } // namespace Model

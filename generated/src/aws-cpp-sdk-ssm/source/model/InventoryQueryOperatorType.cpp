@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InventoryQueryOperatorType::NOT_SET:
+            return {};
           case InventoryQueryOperatorType::Equal:
             return "Equal";
           case InventoryQueryOperatorType::NotEqual:

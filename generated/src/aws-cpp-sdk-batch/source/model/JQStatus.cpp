@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case JQStatus::NOT_SET:
+            return {};
           case JQStatus::CREATING:
             return "CREATING";
           case JQStatus::UPDATING:

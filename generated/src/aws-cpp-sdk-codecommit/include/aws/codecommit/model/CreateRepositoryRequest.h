@@ -274,6 +274,95 @@ namespace Model
      */
     inline CreateRepositoryRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The ID of the encryption key. You can view the ID of an encryption key in the
+     * KMS console, or use the KMS APIs to programmatically retrieve a key ID. For more
+     * information about acceptable values for kmsKeyID, see <a
+     * href="https://docs.aws.amazon.com/APIReference/API_Decrypt.html#KMS-Decrypt-request-KeyId">KeyId</a>
+     * in the Decrypt API description in the <i>Key Management Service API
+     * Reference</i>.</p> <p>If no key is specified, the default
+     * <code>aws/codecommit</code> Amazon Web Services managed key is used.</p>
+     */
+    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+
+    /**
+     * <p>The ID of the encryption key. You can view the ID of an encryption key in the
+     * KMS console, or use the KMS APIs to programmatically retrieve a key ID. For more
+     * information about acceptable values for kmsKeyID, see <a
+     * href="https://docs.aws.amazon.com/APIReference/API_Decrypt.html#KMS-Decrypt-request-KeyId">KeyId</a>
+     * in the Decrypt API description in the <i>Key Management Service API
+     * Reference</i>.</p> <p>If no key is specified, the default
+     * <code>aws/codecommit</code> Amazon Web Services managed key is used.</p>
+     */
+    inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the encryption key. You can view the ID of an encryption key in the
+     * KMS console, or use the KMS APIs to programmatically retrieve a key ID. For more
+     * information about acceptable values for kmsKeyID, see <a
+     * href="https://docs.aws.amazon.com/APIReference/API_Decrypt.html#KMS-Decrypt-request-KeyId">KeyId</a>
+     * in the Decrypt API description in the <i>Key Management Service API
+     * Reference</i>.</p> <p>If no key is specified, the default
+     * <code>aws/codecommit</code> Amazon Web Services managed key is used.</p>
+     */
+    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
+
+    /**
+     * <p>The ID of the encryption key. You can view the ID of an encryption key in the
+     * KMS console, or use the KMS APIs to programmatically retrieve a key ID. For more
+     * information about acceptable values for kmsKeyID, see <a
+     * href="https://docs.aws.amazon.com/APIReference/API_Decrypt.html#KMS-Decrypt-request-KeyId">KeyId</a>
+     * in the Decrypt API description in the <i>Key Management Service API
+     * Reference</i>.</p> <p>If no key is specified, the default
+     * <code>aws/codecommit</code> Amazon Web Services managed key is used.</p>
+     */
+    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
+
+    /**
+     * <p>The ID of the encryption key. You can view the ID of an encryption key in the
+     * KMS console, or use the KMS APIs to programmatically retrieve a key ID. For more
+     * information about acceptable values for kmsKeyID, see <a
+     * href="https://docs.aws.amazon.com/APIReference/API_Decrypt.html#KMS-Decrypt-request-KeyId">KeyId</a>
+     * in the Decrypt API description in the <i>Key Management Service API
+     * Reference</i>.</p> <p>If no key is specified, the default
+     * <code>aws/codecommit</code> Amazon Web Services managed key is used.</p>
+     */
+    inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
+
+    /**
+     * <p>The ID of the encryption key. You can view the ID of an encryption key in the
+     * KMS console, or use the KMS APIs to programmatically retrieve a key ID. For more
+     * information about acceptable values for kmsKeyID, see <a
+     * href="https://docs.aws.amazon.com/APIReference/API_Decrypt.html#KMS-Decrypt-request-KeyId">KeyId</a>
+     * in the Decrypt API description in the <i>Key Management Service API
+     * Reference</i>.</p> <p>If no key is specified, the default
+     * <code>aws/codecommit</code> Amazon Web Services managed key is used.</p>
+     */
+    inline CreateRepositoryRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
+
+    /**
+     * <p>The ID of the encryption key. You can view the ID of an encryption key in the
+     * KMS console, or use the KMS APIs to programmatically retrieve a key ID. For more
+     * information about acceptable values for kmsKeyID, see <a
+     * href="https://docs.aws.amazon.com/APIReference/API_Decrypt.html#KMS-Decrypt-request-KeyId">KeyId</a>
+     * in the Decrypt API description in the <i>Key Management Service API
+     * Reference</i>.</p> <p>If no key is specified, the default
+     * <code>aws/codecommit</code> Amazon Web Services managed key is used.</p>
+     */
+    inline CreateRepositoryRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the encryption key. You can view the ID of an encryption key in the
+     * KMS console, or use the KMS APIs to programmatically retrieve a key ID. For more
+     * information about acceptable values for kmsKeyID, see <a
+     * href="https://docs.aws.amazon.com/APIReference/API_Decrypt.html#KMS-Decrypt-request-KeyId">KeyId</a>
+     * in the Decrypt API description in the <i>Key Management Service API
+     * Reference</i>.</p> <p>If no key is specified, the default
+     * <code>aws/codecommit</code> Amazon Web Services managed key is used.</p>
+     */
+    inline CreateRepositoryRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+
   private:
 
     Aws::String m_repositoryName;
@@ -284,6 +373,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    Aws::String m_kmsKeyId;
+    bool m_kmsKeyIdHasBeenSet = false;
   };
 
 } // namespace Model

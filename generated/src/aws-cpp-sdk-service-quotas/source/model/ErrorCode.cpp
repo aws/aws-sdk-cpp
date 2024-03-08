@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ErrorCode::NOT_SET:
+            return {};
           case ErrorCode::DEPENDENCY_ACCESS_DENIED_ERROR:
             return "DEPENDENCY_ACCESS_DENIED_ERROR";
           case ErrorCode::DEPENDENCY_THROTTLING_ERROR:

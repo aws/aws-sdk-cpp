@@ -41,135 +41,81 @@ namespace Model
 
 
     /**
-     * <p>An input to cryptographic primitive used to provide the intial state. The
-     * <code>InitializationVector</code> is typically required have a random or
-     * psuedo-random value, but sometimes it only needs to be unpredictable or unique.
-     * If a value is not provided, Amazon Web Services Payment Cryptography generates a
-     * random value.</p>
+     * <p>An input used to provide the intial state. If no value is provided, Amazon
+     * Web Services Payment Cryptography defaults it to zero.</p>
      */
     inline const Aws::String& GetInitializationVector() const{ return m_initializationVector; }
 
     /**
-     * <p>An input to cryptographic primitive used to provide the intial state. The
-     * <code>InitializationVector</code> is typically required have a random or
-     * psuedo-random value, but sometimes it only needs to be unpredictable or unique.
-     * If a value is not provided, Amazon Web Services Payment Cryptography generates a
-     * random value.</p>
+     * <p>An input used to provide the intial state. If no value is provided, Amazon
+     * Web Services Payment Cryptography defaults it to zero.</p>
      */
     inline bool InitializationVectorHasBeenSet() const { return m_initializationVectorHasBeenSet; }
 
     /**
-     * <p>An input to cryptographic primitive used to provide the intial state. The
-     * <code>InitializationVector</code> is typically required have a random or
-     * psuedo-random value, but sometimes it only needs to be unpredictable or unique.
-     * If a value is not provided, Amazon Web Services Payment Cryptography generates a
-     * random value.</p>
+     * <p>An input used to provide the intial state. If no value is provided, Amazon
+     * Web Services Payment Cryptography defaults it to zero.</p>
      */
     inline void SetInitializationVector(const Aws::String& value) { m_initializationVectorHasBeenSet = true; m_initializationVector = value; }
 
     /**
-     * <p>An input to cryptographic primitive used to provide the intial state. The
-     * <code>InitializationVector</code> is typically required have a random or
-     * psuedo-random value, but sometimes it only needs to be unpredictable or unique.
-     * If a value is not provided, Amazon Web Services Payment Cryptography generates a
-     * random value.</p>
+     * <p>An input used to provide the intial state. If no value is provided, Amazon
+     * Web Services Payment Cryptography defaults it to zero.</p>
      */
     inline void SetInitializationVector(Aws::String&& value) { m_initializationVectorHasBeenSet = true; m_initializationVector = std::move(value); }
 
     /**
-     * <p>An input to cryptographic primitive used to provide the intial state. The
-     * <code>InitializationVector</code> is typically required have a random or
-     * psuedo-random value, but sometimes it only needs to be unpredictable or unique.
-     * If a value is not provided, Amazon Web Services Payment Cryptography generates a
-     * random value.</p>
+     * <p>An input used to provide the intial state. If no value is provided, Amazon
+     * Web Services Payment Cryptography defaults it to zero.</p>
      */
     inline void SetInitializationVector(const char* value) { m_initializationVectorHasBeenSet = true; m_initializationVector.assign(value); }
 
     /**
-     * <p>An input to cryptographic primitive used to provide the intial state. The
-     * <code>InitializationVector</code> is typically required have a random or
-     * psuedo-random value, but sometimes it only needs to be unpredictable or unique.
-     * If a value is not provided, Amazon Web Services Payment Cryptography generates a
-     * random value.</p>
+     * <p>An input used to provide the intial state. If no value is provided, Amazon
+     * Web Services Payment Cryptography defaults it to zero.</p>
      */
     inline SymmetricEncryptionAttributes& WithInitializationVector(const Aws::String& value) { SetInitializationVector(value); return *this;}
 
     /**
-     * <p>An input to cryptographic primitive used to provide the intial state. The
-     * <code>InitializationVector</code> is typically required have a random or
-     * psuedo-random value, but sometimes it only needs to be unpredictable or unique.
-     * If a value is not provided, Amazon Web Services Payment Cryptography generates a
-     * random value.</p>
+     * <p>An input used to provide the intial state. If no value is provided, Amazon
+     * Web Services Payment Cryptography defaults it to zero.</p>
      */
     inline SymmetricEncryptionAttributes& WithInitializationVector(Aws::String&& value) { SetInitializationVector(std::move(value)); return *this;}
 
     /**
-     * <p>An input to cryptographic primitive used to provide the intial state. The
-     * <code>InitializationVector</code> is typically required have a random or
-     * psuedo-random value, but sometimes it only needs to be unpredictable or unique.
-     * If a value is not provided, Amazon Web Services Payment Cryptography generates a
-     * random value.</p>
+     * <p>An input used to provide the intial state. If no value is provided, Amazon
+     * Web Services Payment Cryptography defaults it to zero.</p>
      */
     inline SymmetricEncryptionAttributes& WithInitializationVector(const char* value) { SetInitializationVector(value); return *this;}
 
 
     /**
-     * <p>The block cipher mode of operation. Block ciphers are designed to encrypt a
-     * block of data of fixed size (for example, 128 bits). The size of the input block
-     * is usually same as the size of the encrypted output block, while the key length
-     * can be different. A mode of operation describes how to repeatedly apply a
-     * cipher's single-block operation to securely transform amounts of data larger
-     * than a block.</p>
+     * <p>The block cipher method to use for encryption.</p>
      */
     inline const EncryptionMode& GetMode() const{ return m_mode; }
 
     /**
-     * <p>The block cipher mode of operation. Block ciphers are designed to encrypt a
-     * block of data of fixed size (for example, 128 bits). The size of the input block
-     * is usually same as the size of the encrypted output block, while the key length
-     * can be different. A mode of operation describes how to repeatedly apply a
-     * cipher's single-block operation to securely transform amounts of data larger
-     * than a block.</p>
+     * <p>The block cipher method to use for encryption.</p>
      */
     inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
 
     /**
-     * <p>The block cipher mode of operation. Block ciphers are designed to encrypt a
-     * block of data of fixed size (for example, 128 bits). The size of the input block
-     * is usually same as the size of the encrypted output block, while the key length
-     * can be different. A mode of operation describes how to repeatedly apply a
-     * cipher's single-block operation to securely transform amounts of data larger
-     * than a block.</p>
+     * <p>The block cipher method to use for encryption.</p>
      */
     inline void SetMode(const EncryptionMode& value) { m_modeHasBeenSet = true; m_mode = value; }
 
     /**
-     * <p>The block cipher mode of operation. Block ciphers are designed to encrypt a
-     * block of data of fixed size (for example, 128 bits). The size of the input block
-     * is usually same as the size of the encrypted output block, while the key length
-     * can be different. A mode of operation describes how to repeatedly apply a
-     * cipher's single-block operation to securely transform amounts of data larger
-     * than a block.</p>
+     * <p>The block cipher method to use for encryption.</p>
      */
     inline void SetMode(EncryptionMode&& value) { m_modeHasBeenSet = true; m_mode = std::move(value); }
 
     /**
-     * <p>The block cipher mode of operation. Block ciphers are designed to encrypt a
-     * block of data of fixed size (for example, 128 bits). The size of the input block
-     * is usually same as the size of the encrypted output block, while the key length
-     * can be different. A mode of operation describes how to repeatedly apply a
-     * cipher's single-block operation to securely transform amounts of data larger
-     * than a block.</p>
+     * <p>The block cipher method to use for encryption.</p>
      */
     inline SymmetricEncryptionAttributes& WithMode(const EncryptionMode& value) { SetMode(value); return *this;}
 
     /**
-     * <p>The block cipher mode of operation. Block ciphers are designed to encrypt a
-     * block of data of fixed size (for example, 128 bits). The size of the input block
-     * is usually same as the size of the encrypted output block, while the key length
-     * can be different. A mode of operation describes how to repeatedly apply a
-     * cipher's single-block operation to securely transform amounts of data larger
-     * than a block.</p>
+     * <p>The block cipher method to use for encryption.</p>
      */
     inline SymmetricEncryptionAttributes& WithMode(EncryptionMode&& value) { SetMode(std::move(value)); return *this;}
 

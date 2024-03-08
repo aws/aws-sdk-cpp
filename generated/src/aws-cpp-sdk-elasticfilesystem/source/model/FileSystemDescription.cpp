@@ -43,6 +43,7 @@ FileSystemDescription::FileSystemDescription() :
     m_availabilityZoneNameHasBeenSet(false),
     m_availabilityZoneIdHasBeenSet(false),
     m_tagsHasBeenSet(false),
+    m_fileSystemProtectionHasBeenSet(false),
     m_requestIdHasBeenSet(false)
 {
 }
@@ -71,6 +72,7 @@ FileSystemDescription::FileSystemDescription(JsonView jsonValue) :
     m_availabilityZoneNameHasBeenSet(false),
     m_availabilityZoneIdHasBeenSet(false),
     m_tagsHasBeenSet(false),
+    m_fileSystemProtectionHasBeenSet(false),
     m_requestIdHasBeenSet(false)
 {
   *this = jsonValue;
@@ -200,6 +202,13 @@ FileSystemDescription& FileSystemDescription::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("FileSystemProtection"))
+  {
+    m_fileSystemProtection = jsonValue.GetObject("FileSystemProtection");
+
+    m_fileSystemProtectionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -307,6 +316,12 @@ JsonValue FileSystemDescription::Jsonize() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_fileSystemProtectionHasBeenSet)
+  {
+   payload.WithObject("FileSystemProtection", m_fileSystemProtection.Jsonize());
 
   }
 

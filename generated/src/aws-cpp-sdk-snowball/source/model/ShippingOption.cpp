@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ShippingOption::NOT_SET:
+            return {};
           case ShippingOption::SECOND_DAY:
             return "SECOND_DAY";
           case ShippingOption::NEXT_DAY:

@@ -32,8 +32,8 @@ namespace CodeBuild
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef CodeBuildClientConfiguration ClientConfigurationType;
       typedef CodeBuildEndpointProvider EndpointProviderType;
@@ -43,14 +43,14 @@ namespace CodeBuild
         * is not specified, it will be initialized to default values.
         */
         CodeBuildClient(const Aws::CodeBuild::CodeBuildClientConfiguration& clientConfiguration = Aws::CodeBuild::CodeBuildClientConfiguration(),
-                        std::shared_ptr<CodeBuildEndpointProviderBase> endpointProvider = Aws::MakeShared<CodeBuildEndpointProvider>(ALLOCATION_TAG));
+                        std::shared_ptr<CodeBuildEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         CodeBuildClient(const Aws::Auth::AWSCredentials& credentials,
-                        std::shared_ptr<CodeBuildEndpointProviderBase> endpointProvider = Aws::MakeShared<CodeBuildEndpointProvider>(ALLOCATION_TAG),
+                        std::shared_ptr<CodeBuildEndpointProviderBase> endpointProvider = nullptr,
                         const Aws::CodeBuild::CodeBuildClientConfiguration& clientConfiguration = Aws::CodeBuild::CodeBuildClientConfiguration());
 
        /**
@@ -58,7 +58,7 @@ namespace CodeBuild
         * the default http client factory will be used
         */
         CodeBuildClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                        std::shared_ptr<CodeBuildEndpointProviderBase> endpointProvider = Aws::MakeShared<CodeBuildEndpointProvider>(ALLOCATION_TAG),
+                        std::shared_ptr<CodeBuildEndpointProviderBase> endpointProvider = nullptr,
                         const Aws::CodeBuild::CodeBuildClientConfiguration& clientConfiguration = Aws::CodeBuild::CodeBuildClientConfiguration());
 
 
@@ -163,6 +163,32 @@ namespace CodeBuild
         }
 
         /**
+         * <p>Gets information about one or more compute fleets.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetFleets">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchGetFleetsOutcome BatchGetFleets(const Model::BatchGetFleetsRequest& request) const;
+
+        /**
+         * A Callable wrapper for BatchGetFleets that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename BatchGetFleetsRequestT = Model::BatchGetFleetsRequest>
+        Model::BatchGetFleetsOutcomeCallable BatchGetFleetsCallable(const BatchGetFleetsRequestT& request) const
+        {
+            return SubmitCallable(&CodeBuildClient::BatchGetFleets, request);
+        }
+
+        /**
+         * An Async wrapper for BatchGetFleets that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename BatchGetFleetsRequestT = Model::BatchGetFleetsRequest>
+        void BatchGetFleetsAsync(const BatchGetFleetsRequestT& request, const BatchGetFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CodeBuildClient::BatchGetFleets, request, handler, context);
+        }
+
+        /**
          * <p>Gets information about one or more build projects.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetProjects">AWS
@@ -236,6 +262,31 @@ namespace CodeBuild
         void BatchGetReportsAsync(const BatchGetReportsRequestT& request, const BatchGetReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CodeBuildClient::BatchGetReports, request, handler, context);
+        }
+
+        /**
+         * <p>Creates a compute fleet.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/CreateFleet">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateFleetOutcome CreateFleet(const Model::CreateFleetRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateFleet that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateFleetRequestT = Model::CreateFleetRequest>
+        Model::CreateFleetOutcomeCallable CreateFleetCallable(const CreateFleetRequestT& request) const
+        {
+            return SubmitCallable(&CodeBuildClient::CreateFleet, request);
+        }
+
+        /**
+         * An Async wrapper for CreateFleet that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateFleetRequestT = Model::CreateFleetRequest>
+        void CreateFleetAsync(const CreateFleetRequestT& request, const CreateFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CodeBuildClient::CreateFleet, request, handler, context);
         }
 
         /**
@@ -348,6 +399,32 @@ namespace CodeBuild
         void DeleteBuildBatchAsync(const DeleteBuildBatchRequestT& request, const DeleteBuildBatchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CodeBuildClient::DeleteBuildBatch, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes a compute fleet. When you delete a compute fleet, its builds are not
+         * deleted.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteFleet">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteFleetOutcome DeleteFleet(const Model::DeleteFleetRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteFleet that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteFleetRequestT = Model::DeleteFleetRequest>
+        Model::DeleteFleetOutcomeCallable DeleteFleetCallable(const DeleteFleetRequestT& request) const
+        {
+            return SubmitCallable(&CodeBuildClient::DeleteFleet, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteFleet that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteFleetRequestT = Model::DeleteFleetRequest>
+        void DeleteFleetAsync(const DeleteFleetRequestT& request, const DeleteFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CodeBuildClient::DeleteFleet, request, handler, context);
         }
 
         /**
@@ -793,6 +870,32 @@ namespace CodeBuild
         }
 
         /**
+         * <p>Gets a list of compute fleet names with each compute fleet name representing
+         * a single compute fleet.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListFleets">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListFleetsOutcome ListFleets(const Model::ListFleetsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListFleets that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListFleetsRequestT = Model::ListFleetsRequest>
+        Model::ListFleetsOutcomeCallable ListFleetsCallable(const ListFleetsRequestT& request) const
+        {
+            return SubmitCallable(&CodeBuildClient::ListFleets, request);
+        }
+
+        /**
+         * An Async wrapper for ListFleets that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListFleetsRequestT = Model::ListFleetsRequest>
+        void ListFleetsAsync(const ListFleetsRequestT& request, const ListFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CodeBuildClient::ListFleets, request, handler, context);
+        }
+
+        /**
          * <p>Gets a list of build project names, with each build project name representing
          * a single build project.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListProjects">AWS
@@ -1052,7 +1155,13 @@ namespace CodeBuild
         }
 
         /**
-         * <p>Starts running a build.</p><p><h3>See Also:</h3>   <a
+         * <p>Starts running a build with the settings defined in the project. These
+         * setting include: how to run a build, where to get the source code, which build
+         * environment to use, which build commands to run, and where to store the build
+         * output.</p> <p>You can also start a build run by overriding some of the build
+         * settings in the project. The overrides only apply for that specific start build
+         * request. The settings in the project are unaltered.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StartBuild">AWS
          * API Reference</a></p>
          */
@@ -1152,6 +1261,31 @@ namespace CodeBuild
         }
 
         /**
+         * <p>Updates a compute fleet.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/UpdateFleet">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateFleetOutcome UpdateFleet(const Model::UpdateFleetRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateFleet that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateFleetRequestT = Model::UpdateFleetRequest>
+        Model::UpdateFleetOutcomeCallable UpdateFleetCallable(const UpdateFleetRequestT& request) const
+        {
+            return SubmitCallable(&CodeBuildClient::UpdateFleet, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateFleet that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateFleetRequestT = Model::UpdateFleetRequest>
+        void UpdateFleetAsync(const UpdateFleetRequestT& request, const UpdateFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CodeBuildClient::UpdateFleet, request, handler, context);
+        }
+
+        /**
          * <p>Changes the settings of a build project.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/UpdateProject">AWS
          * API Reference</a></p>
@@ -1189,10 +1323,9 @@ namespace CodeBuild
          * Environment variables, source code, and other sensitive information may have
          * been output to the build logs and artifacts. You must be careful about what
          * information is output to the build logs. Some best practice are:</p> <ul> <li>
-         * <p>Do not store sensitive values, especially Amazon Web Services access key IDs
-         * and secret access keys, in environment variables. We recommend that you use an
-         * Amazon EC2 Systems Manager Parameter Store or Secrets Manager to store sensitive
-         * values.</p> </li> <li> <p>Follow <a
+         * <p>Do not store sensitive values in environment variables. We recommend that you
+         * use an Amazon EC2 Systems Manager Parameter Store or Secrets Manager to store
+         * sensitive values.</p> </li> <li> <p>Follow <a
          * href="https://docs.aws.amazon.com/codebuild/latest/userguide/webhooks.html#webhook-best-practices">Best
          * practices for using webhooks</a> in the <i>CodeBuild User Guide</i> to limit
          * which entities can trigger a build, and do not store the buildspec in the

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReservedInstancePaymentOption::NOT_SET:
+            return {};
           case ReservedInstancePaymentOption::ALL_UPFRONT:
             return "ALL_UPFRONT";
           case ReservedInstancePaymentOption::PARTIAL_UPFRONT:

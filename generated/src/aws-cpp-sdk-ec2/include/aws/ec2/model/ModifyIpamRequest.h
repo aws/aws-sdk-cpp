@@ -8,6 +8,7 @@
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/model/IpamTier.h>
 #include <aws/ec2/model/AddIpamOperatingRegion.h>
 #include <aws/ec2/model/RemoveIpamOperatingRegion.h>
 #include <utility>
@@ -275,6 +276,55 @@ namespace Model
      */
     inline ModifyIpamRequest& AddRemoveOperatingRegions(RemoveIpamOperatingRegion&& value) { m_removeOperatingRegionsHasBeenSet = true; m_removeOperatingRegions.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>IPAM is offered in a Free Tier and an Advanced Tier. For more information
+     * about the features available in each tier and the costs associated with the
+     * tiers, see <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing &gt;
+     * IPAM tab</a>.</p>
+     */
+    inline const IpamTier& GetTier() const{ return m_tier; }
+
+    /**
+     * <p>IPAM is offered in a Free Tier and an Advanced Tier. For more information
+     * about the features available in each tier and the costs associated with the
+     * tiers, see <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing &gt;
+     * IPAM tab</a>.</p>
+     */
+    inline bool TierHasBeenSet() const { return m_tierHasBeenSet; }
+
+    /**
+     * <p>IPAM is offered in a Free Tier and an Advanced Tier. For more information
+     * about the features available in each tier and the costs associated with the
+     * tiers, see <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing &gt;
+     * IPAM tab</a>.</p>
+     */
+    inline void SetTier(const IpamTier& value) { m_tierHasBeenSet = true; m_tier = value; }
+
+    /**
+     * <p>IPAM is offered in a Free Tier and an Advanced Tier. For more information
+     * about the features available in each tier and the costs associated with the
+     * tiers, see <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing &gt;
+     * IPAM tab</a>.</p>
+     */
+    inline void SetTier(IpamTier&& value) { m_tierHasBeenSet = true; m_tier = std::move(value); }
+
+    /**
+     * <p>IPAM is offered in a Free Tier and an Advanced Tier. For more information
+     * about the features available in each tier and the costs associated with the
+     * tiers, see <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing &gt;
+     * IPAM tab</a>.</p>
+     */
+    inline ModifyIpamRequest& WithTier(const IpamTier& value) { SetTier(value); return *this;}
+
+    /**
+     * <p>IPAM is offered in a Free Tier and an Advanced Tier. For more information
+     * about the features available in each tier and the costs associated with the
+     * tiers, see <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing &gt;
+     * IPAM tab</a>.</p>
+     */
+    inline ModifyIpamRequest& WithTier(IpamTier&& value) { SetTier(std::move(value)); return *this;}
+
   private:
 
     bool m_dryRun;
@@ -291,6 +341,9 @@ namespace Model
 
     Aws::Vector<RemoveIpamOperatingRegion> m_removeOperatingRegions;
     bool m_removeOperatingRegionsHasBeenSet = false;
+
+    IpamTier m_tier;
+    bool m_tierHasBeenSet = false;
   };
 
 } // namespace Model

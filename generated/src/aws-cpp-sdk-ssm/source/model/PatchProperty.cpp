@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PatchProperty::NOT_SET:
+            return {};
           case PatchProperty::PRODUCT:
             return "PRODUCT";
           case PatchProperty::PRODUCT_FAMILY:

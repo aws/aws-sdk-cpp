@@ -110,6 +110,55 @@ namespace Model
      */
     inline EncryptionAtRest& WithSseAwsKmsKeyId(const char* value) { SetSseAwsKmsKeyId(value); return *this;}
 
+
+    /**
+     * <p>The role that Glue assumes to encrypt and decrypt the Data Catalog objects on
+     * the caller's behalf.</p>
+     */
+    inline const Aws::String& GetCatalogEncryptionServiceRole() const{ return m_catalogEncryptionServiceRole; }
+
+    /**
+     * <p>The role that Glue assumes to encrypt and decrypt the Data Catalog objects on
+     * the caller's behalf.</p>
+     */
+    inline bool CatalogEncryptionServiceRoleHasBeenSet() const { return m_catalogEncryptionServiceRoleHasBeenSet; }
+
+    /**
+     * <p>The role that Glue assumes to encrypt and decrypt the Data Catalog objects on
+     * the caller's behalf.</p>
+     */
+    inline void SetCatalogEncryptionServiceRole(const Aws::String& value) { m_catalogEncryptionServiceRoleHasBeenSet = true; m_catalogEncryptionServiceRole = value; }
+
+    /**
+     * <p>The role that Glue assumes to encrypt and decrypt the Data Catalog objects on
+     * the caller's behalf.</p>
+     */
+    inline void SetCatalogEncryptionServiceRole(Aws::String&& value) { m_catalogEncryptionServiceRoleHasBeenSet = true; m_catalogEncryptionServiceRole = std::move(value); }
+
+    /**
+     * <p>The role that Glue assumes to encrypt and decrypt the Data Catalog objects on
+     * the caller's behalf.</p>
+     */
+    inline void SetCatalogEncryptionServiceRole(const char* value) { m_catalogEncryptionServiceRoleHasBeenSet = true; m_catalogEncryptionServiceRole.assign(value); }
+
+    /**
+     * <p>The role that Glue assumes to encrypt and decrypt the Data Catalog objects on
+     * the caller's behalf.</p>
+     */
+    inline EncryptionAtRest& WithCatalogEncryptionServiceRole(const Aws::String& value) { SetCatalogEncryptionServiceRole(value); return *this;}
+
+    /**
+     * <p>The role that Glue assumes to encrypt and decrypt the Data Catalog objects on
+     * the caller's behalf.</p>
+     */
+    inline EncryptionAtRest& WithCatalogEncryptionServiceRole(Aws::String&& value) { SetCatalogEncryptionServiceRole(std::move(value)); return *this;}
+
+    /**
+     * <p>The role that Glue assumes to encrypt and decrypt the Data Catalog objects on
+     * the caller's behalf.</p>
+     */
+    inline EncryptionAtRest& WithCatalogEncryptionServiceRole(const char* value) { SetCatalogEncryptionServiceRole(value); return *this;}
+
   private:
 
     CatalogEncryptionMode m_catalogEncryptionMode;
@@ -117,6 +166,9 @@ namespace Model
 
     Aws::String m_sseAwsKmsKeyId;
     bool m_sseAwsKmsKeyIdHasBeenSet = false;
+
+    Aws::String m_catalogEncryptionServiceRole;
+    bool m_catalogEncryptionServiceRoleHasBeenSet = false;
   };
 
 } // namespace Model

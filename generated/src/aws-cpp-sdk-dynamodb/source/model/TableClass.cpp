@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TableClass::NOT_SET:
+            return {};
           case TableClass::STANDARD:
             return "STANDARD";
           case TableClass::STANDARD_INFREQUENT_ACCESS:

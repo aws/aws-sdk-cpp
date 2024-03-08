@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ModificationResourceEnum::NOT_SET:
+            return {};
           case ModificationResourceEnum::ROOT_VOLUME:
             return "ROOT_VOLUME";
           case ModificationResourceEnum::USER_VOLUME:

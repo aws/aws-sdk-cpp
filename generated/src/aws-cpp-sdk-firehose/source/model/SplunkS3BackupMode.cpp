@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SplunkS3BackupMode::NOT_SET:
+            return {};
           case SplunkS3BackupMode::FailedEventsOnly:
             return "FailedEventsOnly";
           case SplunkS3BackupMode::AllEvents:

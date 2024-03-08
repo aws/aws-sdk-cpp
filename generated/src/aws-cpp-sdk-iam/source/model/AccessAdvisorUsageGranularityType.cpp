@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AccessAdvisorUsageGranularityType::NOT_SET:
+            return {};
           case AccessAdvisorUsageGranularityType::SERVICE_LEVEL:
             return "SERVICE_LEVEL";
           case AccessAdvisorUsageGranularityType::ACTION_LEVEL:

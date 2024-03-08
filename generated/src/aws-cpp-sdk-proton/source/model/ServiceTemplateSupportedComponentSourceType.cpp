@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ServiceTemplateSupportedComponentSourceType::NOT_SET:
+            return {};
           case ServiceTemplateSupportedComponentSourceType::DIRECTLY_DEFINED:
             return "DIRECTLY_DEFINED";
           default:

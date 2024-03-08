@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BodyPart::NOT_SET:
+            return {};
           case BodyPart::FACE:
             return "FACE";
           case BodyPart::HEAD:

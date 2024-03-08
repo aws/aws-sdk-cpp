@@ -50,42 +50,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the load balancer (e.g., <code>my-load-balancer</code>).</p>
+     * <p>The name of the load balancer (<code>my-load-balancer</code>).</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the load balancer (e.g., <code>my-load-balancer</code>).</p>
+     * <p>The name of the load balancer (<code>my-load-balancer</code>).</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name of the load balancer (e.g., <code>my-load-balancer</code>).</p>
+     * <p>The name of the load balancer (<code>my-load-balancer</code>).</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the load balancer (e.g., <code>my-load-balancer</code>).</p>
+     * <p>The name of the load balancer (<code>my-load-balancer</code>).</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the load balancer (e.g., <code>my-load-balancer</code>).</p>
+     * <p>The name of the load balancer (<code>my-load-balancer</code>).</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the load balancer (e.g., <code>my-load-balancer</code>).</p>
+     * <p>The name of the load balancer (<code>my-load-balancer</code>).</p>
      */
     inline LoadBalancer& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the load balancer (e.g., <code>my-load-balancer</code>).</p>
+     * <p>The name of the load balancer (<code>my-load-balancer</code>).</p>
      */
     inline LoadBalancer& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the load balancer (e.g., <code>my-load-balancer</code>).</p>
+     * <p>The name of the load balancer (<code>my-load-balancer</code>).</p>
      */
     inline LoadBalancer& WithName(const char* value) { SetName(value); return *this;}
 
@@ -220,75 +220,75 @@ namespace Model
 
 
     /**
-     * <p>The AWS Region where your load balancer was created (e.g.,
-     * <code>us-east-2a</code>). Lightsail automatically creates your load balancer
+     * <p>The AWS Region where your load balancer was created
+     * (<code>us-east-2a</code>). Lightsail automatically creates your load balancer
      * across Availability Zones.</p>
      */
     inline const ResourceLocation& GetLocation() const{ return m_location; }
 
     /**
-     * <p>The AWS Region where your load balancer was created (e.g.,
-     * <code>us-east-2a</code>). Lightsail automatically creates your load balancer
+     * <p>The AWS Region where your load balancer was created
+     * (<code>us-east-2a</code>). Lightsail automatically creates your load balancer
      * across Availability Zones.</p>
      */
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
 
     /**
-     * <p>The AWS Region where your load balancer was created (e.g.,
-     * <code>us-east-2a</code>). Lightsail automatically creates your load balancer
+     * <p>The AWS Region where your load balancer was created
+     * (<code>us-east-2a</code>). Lightsail automatically creates your load balancer
      * across Availability Zones.</p>
      */
     inline void SetLocation(const ResourceLocation& value) { m_locationHasBeenSet = true; m_location = value; }
 
     /**
-     * <p>The AWS Region where your load balancer was created (e.g.,
-     * <code>us-east-2a</code>). Lightsail automatically creates your load balancer
+     * <p>The AWS Region where your load balancer was created
+     * (<code>us-east-2a</code>). Lightsail automatically creates your load balancer
      * across Availability Zones.</p>
      */
     inline void SetLocation(ResourceLocation&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
 
     /**
-     * <p>The AWS Region where your load balancer was created (e.g.,
-     * <code>us-east-2a</code>). Lightsail automatically creates your load balancer
+     * <p>The AWS Region where your load balancer was created
+     * (<code>us-east-2a</code>). Lightsail automatically creates your load balancer
      * across Availability Zones.</p>
      */
     inline LoadBalancer& WithLocation(const ResourceLocation& value) { SetLocation(value); return *this;}
 
     /**
-     * <p>The AWS Region where your load balancer was created (e.g.,
-     * <code>us-east-2a</code>). Lightsail automatically creates your load balancer
+     * <p>The AWS Region where your load balancer was created
+     * (<code>us-east-2a</code>). Lightsail automatically creates your load balancer
      * across Availability Zones.</p>
      */
     inline LoadBalancer& WithLocation(ResourceLocation&& value) { SetLocation(std::move(value)); return *this;}
 
 
     /**
-     * <p>The resource type (e.g., <code>LoadBalancer</code>.</p>
+     * <p>The resource type (<code>LoadBalancer</code>.</p>
      */
     inline const ResourceType& GetResourceType() const{ return m_resourceType; }
 
     /**
-     * <p>The resource type (e.g., <code>LoadBalancer</code>.</p>
+     * <p>The resource type (<code>LoadBalancer</code>.</p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
-     * <p>The resource type (e.g., <code>LoadBalancer</code>.</p>
+     * <p>The resource type (<code>LoadBalancer</code>.</p>
      */
     inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
-     * <p>The resource type (e.g., <code>LoadBalancer</code>.</p>
+     * <p>The resource type (<code>LoadBalancer</code>.</p>
      */
     inline void SetResourceType(ResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
-     * <p>The resource type (e.g., <code>LoadBalancer</code>.</p>
+     * <p>The resource type (<code>LoadBalancer</code>.</p>
      */
     inline LoadBalancer& WithResourceType(const ResourceType& value) { SetResourceType(value); return *this;}
 
     /**
-     * <p>The resource type (e.g., <code>LoadBalancer</code>.</p>
+     * <p>The resource type (<code>LoadBalancer</code>.</p>
      */
     inline LoadBalancer& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
 

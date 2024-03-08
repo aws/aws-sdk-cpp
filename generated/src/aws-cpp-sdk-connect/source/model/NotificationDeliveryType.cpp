@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NotificationDeliveryType::NOT_SET:
+            return {};
           case NotificationDeliveryType::EMAIL:
             return "EMAIL";
           default:

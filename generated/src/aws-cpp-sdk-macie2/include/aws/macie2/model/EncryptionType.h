@@ -19,7 +19,8 @@ namespace Model
     NONE,
     AES256,
     aws_kms,
-    UNKNOWN
+    UNKNOWN,
+    aws_kms_dsse
   };
 
 namespace EncryptionTypeMapper

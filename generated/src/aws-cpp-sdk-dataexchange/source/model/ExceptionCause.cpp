@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ExceptionCause::NOT_SET:
+            return {};
           case ExceptionCause::InsufficientS3BucketPolicy:
             return "InsufficientS3BucketPolicy";
           case ExceptionCause::S3AccessDenied:

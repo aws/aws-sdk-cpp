@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VirtualRouterStatusCode::NOT_SET:
+            return {};
           case VirtualRouterStatusCode::ACTIVE:
             return "ACTIVE";
           case VirtualRouterStatusCode::INACTIVE:

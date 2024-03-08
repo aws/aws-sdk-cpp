@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FilterOperator::NOT_SET:
+            return {};
           case FilterOperator::GT:
             return "GT";
           case FilterOperator::GE:

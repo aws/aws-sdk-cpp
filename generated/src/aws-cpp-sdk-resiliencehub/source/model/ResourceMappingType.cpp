@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResourceMappingType::NOT_SET:
+            return {};
           case ResourceMappingType::CfnStack:
             return "CfnStack";
           case ResourceMappingType::Resource:

@@ -389,6 +389,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ParameterExceptionField::NOT_SET:
+            return {};
           case ParameterExceptionField::WEB_ACL:
             return "WEB_ACL";
           case ParameterExceptionField::RULE_GROUP:

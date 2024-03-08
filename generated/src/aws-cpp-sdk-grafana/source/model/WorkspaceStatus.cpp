@@ -104,6 +104,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case WorkspaceStatus::NOT_SET:
+            return {};
           case WorkspaceStatus::ACTIVE:
             return "ACTIVE";
           case WorkspaceStatus::CREATING:

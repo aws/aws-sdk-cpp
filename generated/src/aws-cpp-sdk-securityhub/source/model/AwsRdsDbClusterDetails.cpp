@@ -65,7 +65,9 @@ AwsRdsDbClusterDetails::AwsRdsDbClusterDetails() :
     m_dbClusterIdentifierHasBeenSet(false),
     m_dbClusterMembersHasBeenSet(false),
     m_iamDatabaseAuthenticationEnabled(false),
-    m_iamDatabaseAuthenticationEnabledHasBeenSet(false)
+    m_iamDatabaseAuthenticationEnabledHasBeenSet(false),
+    m_autoMinorVersionUpgrade(false),
+    m_autoMinorVersionUpgradeHasBeenSet(false)
 {
 }
 
@@ -116,7 +118,9 @@ AwsRdsDbClusterDetails::AwsRdsDbClusterDetails(JsonView jsonValue) :
     m_dbClusterIdentifierHasBeenSet(false),
     m_dbClusterMembersHasBeenSet(false),
     m_iamDatabaseAuthenticationEnabled(false),
-    m_iamDatabaseAuthenticationEnabledHasBeenSet(false)
+    m_iamDatabaseAuthenticationEnabledHasBeenSet(false),
+    m_autoMinorVersionUpgrade(false),
+    m_autoMinorVersionUpgradeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -409,6 +413,13 @@ AwsRdsDbClusterDetails& AwsRdsDbClusterDetails::operator =(JsonView jsonValue)
     m_iamDatabaseAuthenticationEnabledHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AutoMinorVersionUpgrade"))
+  {
+    m_autoMinorVersionUpgrade = jsonValue.GetBool("AutoMinorVersionUpgrade");
+
+    m_autoMinorVersionUpgradeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -680,6 +691,12 @@ JsonValue AwsRdsDbClusterDetails::Jsonize() const
   if(m_iamDatabaseAuthenticationEnabledHasBeenSet)
   {
    payload.WithBool("IamDatabaseAuthenticationEnabled", m_iamDatabaseAuthenticationEnabled);
+
+  }
+
+  if(m_autoMinorVersionUpgradeHasBeenSet)
+  {
+   payload.WithBool("AutoMinorVersionUpgrade", m_autoMinorVersionUpgrade);
 
   }
 

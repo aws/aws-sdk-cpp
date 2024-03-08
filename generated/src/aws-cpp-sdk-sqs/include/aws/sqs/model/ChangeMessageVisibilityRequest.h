@@ -31,10 +31,8 @@ namespace Model
 
     AWS_SQS_API Aws::String SerializePayload() const override;
 
-  protected:
-    AWS_SQS_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
+    AWS_SQS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-  public:
 
     /**
      * <p>The URL of the Amazon SQS queue whose message's visibility is changed.</p>

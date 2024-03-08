@@ -144,6 +144,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SAPODataConnectorOperator::NOT_SET:
+            return {};
           case SAPODataConnectorOperator::PROJECTION:
             return "PROJECTION";
           case SAPODataConnectorOperator::LESS_THAN:

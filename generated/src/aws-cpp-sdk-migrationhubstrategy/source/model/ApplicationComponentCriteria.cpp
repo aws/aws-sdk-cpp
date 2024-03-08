@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ApplicationComponentCriteria::NOT_SET:
+            return {};
           case ApplicationComponentCriteria::NOT_DEFINED:
             return "NOT_DEFINED";
           case ApplicationComponentCriteria::APP_NAME:

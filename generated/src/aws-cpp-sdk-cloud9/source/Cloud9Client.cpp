@@ -48,8 +48,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* Cloud9Client::SERVICE_NAME = "cloud9";
-const char* Cloud9Client::ALLOCATION_TAG = "Cloud9Client";
+namespace Aws
+{
+  namespace Cloud9
+  {
+    const char SERVICE_NAME[] = "cloud9";
+    const char ALLOCATION_TAG[] = "Cloud9Client";
+  }
+}
+const char* Cloud9Client::GetServiceName() {return SERVICE_NAME;}
+const char* Cloud9Client::GetAllocationTag() {return ALLOCATION_TAG;}
 
 Cloud9Client::Cloud9Client(const Cloud9::Cloud9ClientConfiguration& clientConfiguration,
                            std::shared_ptr<Cloud9EndpointProviderBase> endpointProvider) :
@@ -61,7 +69,7 @@ Cloud9Client::Cloud9Client(const Cloud9::Cloud9ClientConfiguration& clientConfig
             Aws::MakeShared<Cloud9ErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<Cloud9EndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -77,7 +85,7 @@ Cloud9Client::Cloud9Client(const AWSCredentials& credentials,
             Aws::MakeShared<Cloud9ErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<Cloud9EndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -93,7 +101,7 @@ Cloud9Client::Cloud9Client(const std::shared_ptr<AWSCredentialsProvider>& creden
             Aws::MakeShared<Cloud9ErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<Cloud9EndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

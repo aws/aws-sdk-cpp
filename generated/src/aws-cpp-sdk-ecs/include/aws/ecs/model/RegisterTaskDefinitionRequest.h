@@ -1832,8 +1832,8 @@ namespace Model
      * <p>The amount of ephemeral storage to allocate for the task. This parameter is
      * used to expand the total amount of ephemeral storage available, beyond the
      * default amount, for tasks hosted on Fargate. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/using_data_volumes.html">Fargate
-     * task storage</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p> 
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using
+     * data volumes in tasks</a> in the <i>Amazon ECS Developer Guide</i>.</p> 
      * <p>For tasks using the Fargate launch type, the task requires the following
      * platforms:</p> <ul> <li> <p>Linux platform version <code>1.4.0</code> or
      * later.</p> </li> <li> <p>Windows platform version <code>1.0.0</code> or
@@ -1845,8 +1845,8 @@ namespace Model
      * <p>The amount of ephemeral storage to allocate for the task. This parameter is
      * used to expand the total amount of ephemeral storage available, beyond the
      * default amount, for tasks hosted on Fargate. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/using_data_volumes.html">Fargate
-     * task storage</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p> 
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using
+     * data volumes in tasks</a> in the <i>Amazon ECS Developer Guide</i>.</p> 
      * <p>For tasks using the Fargate launch type, the task requires the following
      * platforms:</p> <ul> <li> <p>Linux platform version <code>1.4.0</code> or
      * later.</p> </li> <li> <p>Windows platform version <code>1.0.0</code> or
@@ -1858,8 +1858,8 @@ namespace Model
      * <p>The amount of ephemeral storage to allocate for the task. This parameter is
      * used to expand the total amount of ephemeral storage available, beyond the
      * default amount, for tasks hosted on Fargate. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/using_data_volumes.html">Fargate
-     * task storage</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p> 
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using
+     * data volumes in tasks</a> in the <i>Amazon ECS Developer Guide</i>.</p> 
      * <p>For tasks using the Fargate launch type, the task requires the following
      * platforms:</p> <ul> <li> <p>Linux platform version <code>1.4.0</code> or
      * later.</p> </li> <li> <p>Windows platform version <code>1.0.0</code> or
@@ -1871,8 +1871,8 @@ namespace Model
      * <p>The amount of ephemeral storage to allocate for the task. This parameter is
      * used to expand the total amount of ephemeral storage available, beyond the
      * default amount, for tasks hosted on Fargate. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/using_data_volumes.html">Fargate
-     * task storage</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p> 
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using
+     * data volumes in tasks</a> in the <i>Amazon ECS Developer Guide</i>.</p> 
      * <p>For tasks using the Fargate launch type, the task requires the following
      * platforms:</p> <ul> <li> <p>Linux platform version <code>1.4.0</code> or
      * later.</p> </li> <li> <p>Windows platform version <code>1.0.0</code> or
@@ -1884,8 +1884,8 @@ namespace Model
      * <p>The amount of ephemeral storage to allocate for the task. This parameter is
      * used to expand the total amount of ephemeral storage available, beyond the
      * default amount, for tasks hosted on Fargate. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/using_data_volumes.html">Fargate
-     * task storage</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p> 
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using
+     * data volumes in tasks</a> in the <i>Amazon ECS Developer Guide</i>.</p> 
      * <p>For tasks using the Fargate launch type, the task requires the following
      * platforms:</p> <ul> <li> <p>Linux platform version <code>1.4.0</code> or
      * later.</p> </li> <li> <p>Windows platform version <code>1.0.0</code> or
@@ -1897,8 +1897,8 @@ namespace Model
      * <p>The amount of ephemeral storage to allocate for the task. This parameter is
      * used to expand the total amount of ephemeral storage available, beyond the
      * default amount, for tasks hosted on Fargate. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/using_data_volumes.html">Fargate
-     * task storage</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p> 
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using
+     * data volumes in tasks</a> in the <i>Amazon ECS Developer Guide</i>.</p> 
      * <p>For tasks using the Fargate launch type, the task requires the following
      * platforms:</p> <ul> <li> <p>Linux platform version <code>1.4.0</code> or
      * later.</p> </li> <li> <p>Windows platform version <code>1.0.0</code> or

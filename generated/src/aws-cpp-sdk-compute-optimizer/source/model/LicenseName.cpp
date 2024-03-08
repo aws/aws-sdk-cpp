@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LicenseName::NOT_SET:
+            return {};
           case LicenseName::SQLServer:
             return "SQLServer";
           default:

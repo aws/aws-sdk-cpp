@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ValidationExceptionReason::NOT_SET:
+            return {};
           case ValidationExceptionReason::INVALID_PAGE_TOKEN:
             return "INVALID_PAGE_TOKEN";
           case ValidationExceptionReason::INVALID_PARAMETER_VALUE:

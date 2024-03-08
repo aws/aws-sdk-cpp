@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DataLakeStatus::NOT_SET:
+            return {};
           case DataLakeStatus::INITIALIZED:
             return "INITIALIZED";
           case DataLakeStatus::PENDING:

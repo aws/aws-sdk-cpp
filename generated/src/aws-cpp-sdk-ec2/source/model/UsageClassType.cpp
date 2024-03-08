@@ -22,6 +22,7 @@ namespace Aws
 
         static const int spot_HASH = HashingUtils::HashString("spot");
         static const int on_demand_HASH = HashingUtils::HashString("on-demand");
+        static const int capacity_block_HASH = HashingUtils::HashString("capacity-block");
 
 
         UsageClassType GetUsageClassTypeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == on_demand_HASH)
           {
             return UsageClassType::on_demand;
+          }
+          else if (hashCode == capacity_block_HASH)
+          {
+            return UsageClassType::capacity_block;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -49,10 +54,14 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UsageClassType::NOT_SET:
+            return {};
           case UsageClassType::spot:
             return "spot";
           case UsageClassType::on_demand:
             return "on-demand";
+          case UsageClassType::capacity_block:
+            return "capacity-block";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

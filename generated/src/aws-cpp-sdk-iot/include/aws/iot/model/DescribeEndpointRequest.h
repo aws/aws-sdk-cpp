@@ -50,7 +50,8 @@ namespace Model
      * <code>iot:Jobs</code> - Returns an IoT device management Jobs API endpoint.</p>
      * </li> </ul> <p>We strongly recommend that customers use the newer
      * <code>iot:Data-ATS</code> endpoint type to avoid issues related to the
-     * widespread distrust of Symantec certificate authorities.</p>
+     * widespread distrust of Symantec certificate authorities. ATS Signed Certificates
+     * are more secure and are trusted by most popular browsers.</p>
      */
     inline const Aws::String& GetEndpointType() const{ return m_endpointType; }
 
@@ -63,7 +64,8 @@ namespace Model
      * <code>iot:Jobs</code> - Returns an IoT device management Jobs API endpoint.</p>
      * </li> </ul> <p>We strongly recommend that customers use the newer
      * <code>iot:Data-ATS</code> endpoint type to avoid issues related to the
-     * widespread distrust of Symantec certificate authorities.</p>
+     * widespread distrust of Symantec certificate authorities. ATS Signed Certificates
+     * are more secure and are trusted by most popular browsers.</p>
      */
     inline bool EndpointTypeHasBeenSet() const { return m_endpointTypeHasBeenSet; }
 
@@ -76,7 +78,8 @@ namespace Model
      * <code>iot:Jobs</code> - Returns an IoT device management Jobs API endpoint.</p>
      * </li> </ul> <p>We strongly recommend that customers use the newer
      * <code>iot:Data-ATS</code> endpoint type to avoid issues related to the
-     * widespread distrust of Symantec certificate authorities.</p>
+     * widespread distrust of Symantec certificate authorities. ATS Signed Certificates
+     * are more secure and are trusted by most popular browsers.</p>
      */
     inline void SetEndpointType(const Aws::String& value) { m_endpointTypeHasBeenSet = true; m_endpointType = value; }
 
@@ -89,7 +92,8 @@ namespace Model
      * <code>iot:Jobs</code> - Returns an IoT device management Jobs API endpoint.</p>
      * </li> </ul> <p>We strongly recommend that customers use the newer
      * <code>iot:Data-ATS</code> endpoint type to avoid issues related to the
-     * widespread distrust of Symantec certificate authorities.</p>
+     * widespread distrust of Symantec certificate authorities. ATS Signed Certificates
+     * are more secure and are trusted by most popular browsers.</p>
      */
     inline void SetEndpointType(Aws::String&& value) { m_endpointTypeHasBeenSet = true; m_endpointType = std::move(value); }
 
@@ -102,7 +106,8 @@ namespace Model
      * <code>iot:Jobs</code> - Returns an IoT device management Jobs API endpoint.</p>
      * </li> </ul> <p>We strongly recommend that customers use the newer
      * <code>iot:Data-ATS</code> endpoint type to avoid issues related to the
-     * widespread distrust of Symantec certificate authorities.</p>
+     * widespread distrust of Symantec certificate authorities. ATS Signed Certificates
+     * are more secure and are trusted by most popular browsers.</p>
      */
     inline void SetEndpointType(const char* value) { m_endpointTypeHasBeenSet = true; m_endpointType.assign(value); }
 
@@ -115,7 +120,8 @@ namespace Model
      * <code>iot:Jobs</code> - Returns an IoT device management Jobs API endpoint.</p>
      * </li> </ul> <p>We strongly recommend that customers use the newer
      * <code>iot:Data-ATS</code> endpoint type to avoid issues related to the
-     * widespread distrust of Symantec certificate authorities.</p>
+     * widespread distrust of Symantec certificate authorities. ATS Signed Certificates
+     * are more secure and are trusted by most popular browsers.</p>
      */
     inline DescribeEndpointRequest& WithEndpointType(const Aws::String& value) { SetEndpointType(value); return *this;}
 
@@ -128,7 +134,8 @@ namespace Model
      * <code>iot:Jobs</code> - Returns an IoT device management Jobs API endpoint.</p>
      * </li> </ul> <p>We strongly recommend that customers use the newer
      * <code>iot:Data-ATS</code> endpoint type to avoid issues related to the
-     * widespread distrust of Symantec certificate authorities.</p>
+     * widespread distrust of Symantec certificate authorities. ATS Signed Certificates
+     * are more secure and are trusted by most popular browsers.</p>
      */
     inline DescribeEndpointRequest& WithEndpointType(Aws::String&& value) { SetEndpointType(std::move(value)); return *this;}
 
@@ -141,7 +148,8 @@ namespace Model
      * <code>iot:Jobs</code> - Returns an IoT device management Jobs API endpoint.</p>
      * </li> </ul> <p>We strongly recommend that customers use the newer
      * <code>iot:Data-ATS</code> endpoint type to avoid issues related to the
-     * widespread distrust of Symantec certificate authorities.</p>
+     * widespread distrust of Symantec certificate authorities. ATS Signed Certificates
+     * are more secure and are trusted by most popular browsers.</p>
      */
     inline DescribeEndpointRequest& WithEndpointType(const char* value) { SetEndpointType(value); return *this;}
 

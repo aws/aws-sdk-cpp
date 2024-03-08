@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ConfigurationSetAttribute::NOT_SET:
+            return {};
           case ConfigurationSetAttribute::eventDestinations:
             return "eventDestinations";
           case ConfigurationSetAttribute::trackingOptions:

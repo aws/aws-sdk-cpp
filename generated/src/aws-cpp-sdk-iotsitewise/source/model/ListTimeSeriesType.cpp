@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ListTimeSeriesType::NOT_SET:
+            return {};
           case ListTimeSeriesType::ASSOCIATED:
             return "ASSOCIATED";
           case ListTimeSeriesType::DISASSOCIATED:

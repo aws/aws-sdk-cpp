@@ -21,7 +21,20 @@ namespace Model
     ConfigurationConflict,
     InternalFailure,
     ResourceLimitExceeded,
-    ResourceNotFound
+    ResourceNotFound,
+    IamRoleNotFound,
+    VpcNotFound,
+    InsufficientFreeAddresses,
+    Ec2ServiceNotSubscribed,
+    Ec2SubnetNotFound,
+    Ec2SecurityGroupNotFound,
+    KmsGrantRevoked,
+    KmsKeyNotFound,
+    KmsKeyMarkedForDeletion,
+    KmsKeyDisabled,
+    StsRegionalEndpointDisabled,
+    UnsupportedVersion,
+    Other
   };
 
 namespace ClusterIssueCodeMapper

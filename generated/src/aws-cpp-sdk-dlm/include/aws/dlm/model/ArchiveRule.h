@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p> <b>[Snapshot policies only]</b> Specifies a snapshot archiving rule for a
-   * schedule.</p><p><h3>See Also:</h3>   <a
+   * <p> <b>[Custom snapshot policies only]</b> Specifies a snapshot archiving rule
+   * for a schedule.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/ArchiveRule">AWS API
    * Reference</a></p>
    */

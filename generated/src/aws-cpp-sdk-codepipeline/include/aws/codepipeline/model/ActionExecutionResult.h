@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/codepipeline/CodePipeline_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/codepipeline/model/ErrorDetails.h>
 #include <utility>
 
 namespace Aws
@@ -168,6 +169,25 @@ namespace Model
      */
     inline ActionExecutionResult& WithExternalExecutionUrl(const char* value) { SetExternalExecutionUrl(value); return *this;}
 
+
+    
+    inline const ErrorDetails& GetErrorDetails() const{ return m_errorDetails; }
+
+    
+    inline bool ErrorDetailsHasBeenSet() const { return m_errorDetailsHasBeenSet; }
+
+    
+    inline void SetErrorDetails(const ErrorDetails& value) { m_errorDetailsHasBeenSet = true; m_errorDetails = value; }
+
+    
+    inline void SetErrorDetails(ErrorDetails&& value) { m_errorDetailsHasBeenSet = true; m_errorDetails = std::move(value); }
+
+    
+    inline ActionExecutionResult& WithErrorDetails(const ErrorDetails& value) { SetErrorDetails(value); return *this;}
+
+    
+    inline ActionExecutionResult& WithErrorDetails(ErrorDetails&& value) { SetErrorDetails(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_externalExecutionId;
@@ -178,6 +198,9 @@ namespace Model
 
     Aws::String m_externalExecutionUrl;
     bool m_externalExecutionUrlHasBeenSet = false;
+
+    ErrorDetails m_errorDetails;
+    bool m_errorDetailsHasBeenSet = false;
   };
 
 } // namespace Model

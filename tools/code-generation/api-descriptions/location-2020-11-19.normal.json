@@ -31,7 +31,7 @@
         {"shape":"ThrottlingException"}
       ],
       "documentation":"<p>Creates an association between a geofence collection and a tracker resource. This allows the tracker resource to communicate location data to the linked geofence collection. </p> <p>You can associate up to five geofence collections to each tracker resource.</p> <note> <p>Currently not supported — Cross-account configurations, such as creating associations between a tracker resource in one account and a geofence collection in another account.</p> </note>",
-      "endpoint":{"hostPrefix":"tracking."}
+      "endpoint":{"hostPrefix":"cp.tracking."}
     },
     "BatchDeleteDevicePositionHistory":{
       "name":"BatchDeleteDevicePositionHistory",
@@ -203,7 +203,7 @@
         {"shape":"ThrottlingException"}
       ],
       "documentation":"<p>Creates a geofence collection, which manages and stores geofences.</p>",
-      "endpoint":{"hostPrefix":"geofencing."},
+      "endpoint":{"hostPrefix":"cp.geofencing."},
       "idempotent":true
     },
     "CreateKey":{
@@ -224,7 +224,7 @@
         {"shape":"ThrottlingException"}
       ],
       "documentation":"<p>Creates an API key resource in your Amazon Web Services account, which lets you grant actions for Amazon Location resources to the API key bearer.</p> <note> <p>For more information, see <a href=\"https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html\">Using API keys</a>.</p> </note>",
-      "endpoint":{"hostPrefix":"metadata."},
+      "endpoint":{"hostPrefix":"cp.metadata."},
       "idempotent":true
     },
     "CreateMap":{
@@ -245,7 +245,7 @@
         {"shape":"ThrottlingException"}
       ],
       "documentation":"<p>Creates a map resource in your Amazon Web Services account, which provides map tiles of different styles sourced from global location data providers.</p> <note> <p>If your application is tracking or routing assets you use in your business, such as delivery vehicles or employees, you must not use Esri as your geolocation provider. See section 82 of the <a href=\"http://aws.amazon.com/service-terms\">Amazon Web Services service terms</a> for more details.</p> </note>",
-      "endpoint":{"hostPrefix":"maps."},
+      "endpoint":{"hostPrefix":"cp.maps."},
       "idempotent":true
     },
     "CreatePlaceIndex":{
@@ -266,7 +266,7 @@
         {"shape":"ThrottlingException"}
       ],
       "documentation":"<p>Creates a place index resource in your Amazon Web Services account. Use a place index resource to geocode addresses and other text queries by using the <code>SearchPlaceIndexForText</code> operation, and reverse geocode coordinates by using the <code>SearchPlaceIndexForPosition</code> operation, and enable autosuggestions by using the <code>SearchPlaceIndexForSuggestions</code> operation.</p> <note> <p>If your application is tracking or routing assets you use in your business, such as delivery vehicles or employees, you must not use Esri as your geolocation provider. See section 82 of the <a href=\"http://aws.amazon.com/service-terms\">Amazon Web Services service terms</a> for more details.</p> </note>",
-      "endpoint":{"hostPrefix":"places."},
+      "endpoint":{"hostPrefix":"cp.places."},
       "idempotent":true
     },
     "CreateRouteCalculator":{
@@ -287,7 +287,7 @@
         {"shape":"ThrottlingException"}
       ],
       "documentation":"<p>Creates a route calculator resource in your Amazon Web Services account.</p> <p>You can send requests to a route calculator resource to estimate travel time, distance, and get directions. A route calculator sources traffic and road network data from your chosen data provider.</p> <note> <p>If your application is tracking or routing assets you use in your business, such as delivery vehicles or employees, you must not use Esri as your geolocation provider. See section 82 of the <a href=\"http://aws.amazon.com/service-terms\">Amazon Web Services service terms</a> for more details.</p> </note>",
-      "endpoint":{"hostPrefix":"routes."},
+      "endpoint":{"hostPrefix":"cp.routes."},
       "idempotent":true
     },
     "CreateTracker":{
@@ -308,7 +308,7 @@
         {"shape":"ThrottlingException"}
       ],
       "documentation":"<p>Creates a tracker resource in your Amazon Web Services account, which lets you retrieve current and historical location of devices.</p>",
-      "endpoint":{"hostPrefix":"tracking."},
+      "endpoint":{"hostPrefix":"cp.tracking."},
       "idempotent":true
     },
     "DeleteGeofenceCollection":{
@@ -328,7 +328,7 @@
         {"shape":"ThrottlingException"}
       ],
       "documentation":"<p>Deletes a geofence collection from your Amazon Web Services account.</p> <note> <p>This operation deletes the resource permanently. If the geofence collection is the target of a tracker resource, the devices will no longer be monitored.</p> </note>",
-      "endpoint":{"hostPrefix":"geofencing."},
+      "endpoint":{"hostPrefix":"cp.geofencing."},
       "idempotent":true
     },
     "DeleteKey":{
@@ -348,7 +348,7 @@
         {"shape":"ThrottlingException"}
       ],
       "documentation":"<p>Deletes the specified API key. The API key must have been deactivated more than 90 days previously.</p>",
-      "endpoint":{"hostPrefix":"metadata."},
+      "endpoint":{"hostPrefix":"cp.metadata."},
       "idempotent":true
     },
     "DeleteMap":{
@@ -368,7 +368,7 @@
         {"shape":"ThrottlingException"}
       ],
       "documentation":"<p>Deletes a map resource from your Amazon Web Services account.</p> <note> <p>This operation deletes the resource permanently. If the map is being used in an application, the map may not render.</p> </note>",
-      "endpoint":{"hostPrefix":"maps."},
+      "endpoint":{"hostPrefix":"cp.maps."},
       "idempotent":true
     },
     "DeletePlaceIndex":{
@@ -388,7 +388,7 @@
         {"shape":"ThrottlingException"}
       ],
       "documentation":"<p>Deletes a place index resource from your Amazon Web Services account.</p> <note> <p>This operation deletes the resource permanently.</p> </note>",
-      "endpoint":{"hostPrefix":"places."},
+      "endpoint":{"hostPrefix":"cp.places."},
       "idempotent":true
     },
     "DeleteRouteCalculator":{
@@ -408,7 +408,7 @@
         {"shape":"ThrottlingException"}
       ],
       "documentation":"<p>Deletes a route calculator resource from your Amazon Web Services account.</p> <note> <p>This operation deletes the resource permanently.</p> </note>",
-      "endpoint":{"hostPrefix":"routes."},
+      "endpoint":{"hostPrefix":"cp.routes."},
       "idempotent":true
     },
     "DeleteTracker":{
@@ -428,7 +428,7 @@
         {"shape":"ThrottlingException"}
       ],
       "documentation":"<p>Deletes a tracker resource from your Amazon Web Services account.</p> <note> <p>This operation deletes the resource permanently. If the tracker resource is in use, you may encounter an error. Make sure that the target resource isn't a dependency for your applications.</p> </note>",
-      "endpoint":{"hostPrefix":"tracking."},
+      "endpoint":{"hostPrefix":"cp.tracking."},
       "idempotent":true
     },
     "DescribeGeofenceCollection":{
@@ -448,7 +448,7 @@
         {"shape":"ThrottlingException"}
       ],
       "documentation":"<p>Retrieves the geofence collection details.</p>",
-      "endpoint":{"hostPrefix":"geofencing."}
+      "endpoint":{"hostPrefix":"cp.geofencing."}
     },
     "DescribeKey":{
       "name":"DescribeKey",
@@ -467,7 +467,7 @@
         {"shape":"ThrottlingException"}
       ],
       "documentation":"<p>Retrieves the API key resource details.</p>",
-      "endpoint":{"hostPrefix":"metadata."}
+      "endpoint":{"hostPrefix":"cp.metadata."}
     },
     "DescribeMap":{
       "name":"DescribeMap",
@@ -486,7 +486,7 @@
         {"shape":"ThrottlingException"}
       ],
       "documentation":"<p>Retrieves the map resource details.</p>",
-      "endpoint":{"hostPrefix":"maps."}
+      "endpoint":{"hostPrefix":"cp.maps."}
     },
     "DescribePlaceIndex":{
       "name":"DescribePlaceIndex",
@@ -505,7 +505,7 @@
         {"shape":"ThrottlingException"}
       ],
       "documentation":"<p>Retrieves the place index resource details.</p>",
-      "endpoint":{"hostPrefix":"places."}
+      "endpoint":{"hostPrefix":"cp.places."}
     },
     "DescribeRouteCalculator":{
       "name":"DescribeRouteCalculator",
@@ -524,7 +524,7 @@
         {"shape":"ThrottlingException"}
       ],
       "documentation":"<p>Retrieves the route calculator resource details.</p>",
-      "endpoint":{"hostPrefix":"routes."}
+      "endpoint":{"hostPrefix":"cp.routes."}
     },
     "DescribeTracker":{
       "name":"DescribeTracker",
@@ -543,7 +543,7 @@
         {"shape":"ThrottlingException"}
       ],
       "documentation":"<p>Retrieves the tracker resource details.</p>",
-      "endpoint":{"hostPrefix":"tracking."}
+      "endpoint":{"hostPrefix":"cp.tracking."}
     },
     "DisassociateTrackerConsumer":{
       "name":"DisassociateTrackerConsumer",
@@ -562,7 +562,7 @@
         {"shape":"ThrottlingException"}
       ],
       "documentation":"<p>Removes the association between a tracker resource and a geofence collection.</p> <note> <p>Once you unlink a tracker resource from a geofence collection, the tracker positions will no longer be automatically evaluated against geofences.</p> </note>",
-      "endpoint":{"hostPrefix":"tracking."}
+      "endpoint":{"hostPrefix":"cp.tracking."}
     },
     "GetDevicePosition":{
       "name":"GetDevicePosition",
@@ -750,7 +750,7 @@
         {"shape":"ThrottlingException"}
       ],
       "documentation":"<p>Lists geofence collections in your Amazon Web Services account.</p>",
-      "endpoint":{"hostPrefix":"geofencing."}
+      "endpoint":{"hostPrefix":"cp.geofencing."}
     },
     "ListGeofences":{
       "name":"ListGeofences",
@@ -787,7 +787,7 @@
         {"shape":"ThrottlingException"}
       ],
       "documentation":"<p>Lists API key resources in your Amazon Web Services account.</p>",
-      "endpoint":{"hostPrefix":"metadata."}
+      "endpoint":{"hostPrefix":"cp.metadata."}
     },
     "ListMaps":{
       "name":"ListMaps",
@@ -805,7 +805,7 @@
         {"shape":"ThrottlingException"}
       ],
       "documentation":"<p>Lists map resources in your Amazon Web Services account.</p>",
-      "endpoint":{"hostPrefix":"maps."}
+      "endpoint":{"hostPrefix":"cp.maps."}
     },
     "ListPlaceIndexes":{
       "name":"ListPlaceIndexes",
@@ -823,7 +823,7 @@
         {"shape":"ThrottlingException"}
       ],
       "documentation":"<p>Lists place index resources in your Amazon Web Services account.</p>",
-      "endpoint":{"hostPrefix":"places."}
+      "endpoint":{"hostPrefix":"cp.places."}
     },
     "ListRouteCalculators":{
       "name":"ListRouteCalculators",
@@ -841,7 +841,7 @@
         {"shape":"ThrottlingException"}
       ],
       "documentation":"<p>Lists route calculator resources in your Amazon Web Services account.</p>",
-      "endpoint":{"hostPrefix":"routes."}
+      "endpoint":{"hostPrefix":"cp.routes."}
     },
     "ListTagsForResource":{
       "name":"ListTagsForResource",
@@ -860,7 +860,7 @@
         {"shape":"ThrottlingException"}
       ],
       "documentation":"<p>Returns a list of tags that are applied to the specified Amazon Location resource.</p>",
-      "endpoint":{"hostPrefix":"metadata."}
+      "endpoint":{"hostPrefix":"cp.metadata."}
     },
     "ListTrackerConsumers":{
       "name":"ListTrackerConsumers",
@@ -879,7 +879,7 @@
         {"shape":"ThrottlingException"}
       ],
       "documentation":"<p>Lists geofence collections currently associated to the given tracker resource.</p>",
-      "endpoint":{"hostPrefix":"tracking."}
+      "endpoint":{"hostPrefix":"cp.tracking."}
     },
     "ListTrackers":{
       "name":"ListTrackers",
@@ -897,7 +897,7 @@
         {"shape":"ThrottlingException"}
       ],
       "documentation":"<p>Lists tracker resources in your Amazon Web Services account.</p>",
-      "endpoint":{"hostPrefix":"tracking."}
+      "endpoint":{"hostPrefix":"cp.tracking."}
     },
     "PutGeofence":{
       "name":"PutGeofence",
@@ -993,7 +993,7 @@
         {"shape":"ThrottlingException"}
       ],
       "documentation":"<p>Assigns one or more tags (key-value pairs) to the specified Amazon Location Service resource.</p> <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only resources with certain tag values.</p> <p>You can use the <code>TagResource</code> operation with an Amazon Location Service resource that already has tags. If you specify a new tag key for the resource, this tag is appended to the tags already associated with the resource. If you specify a tag key that's already associated with the resource, the new tag value that you specify replaces the previous value for that tag. </p> <p>You can associate up to 50 tags with a resource.</p>",
-      "endpoint":{"hostPrefix":"metadata."}
+      "endpoint":{"hostPrefix":"cp.metadata."}
     },
     "UntagResource":{
       "name":"UntagResource",
@@ -1012,7 +1012,7 @@
         {"shape":"ThrottlingException"}
       ],
       "documentation":"<p>Removes one or more tags from the specified Amazon Location resource.</p>",
-      "endpoint":{"hostPrefix":"metadata."},
+      "endpoint":{"hostPrefix":"cp.metadata."},
       "idempotent":true
     },
     "UpdateGeofenceCollection":{
@@ -1032,7 +1032,7 @@
         {"shape":"ThrottlingException"}
       ],
       "documentation":"<p>Updates the specified properties of a given geofence collection.</p>",
-      "endpoint":{"hostPrefix":"geofencing."},
+      "endpoint":{"hostPrefix":"cp.geofencing."},
       "idempotent":true
     },
     "UpdateKey":{
@@ -1052,7 +1052,7 @@
         {"shape":"ThrottlingException"}
       ],
       "documentation":"<p>Updates the specified properties of a given API key resource.</p>",
-      "endpoint":{"hostPrefix":"metadata."},
+      "endpoint":{"hostPrefix":"cp.metadata."},
       "idempotent":true
     },
     "UpdateMap":{
@@ -1072,7 +1072,7 @@
         {"shape":"ThrottlingException"}
       ],
       "documentation":"<p>Updates the specified properties of a given map resource.</p>",
-      "endpoint":{"hostPrefix":"maps."},
+      "endpoint":{"hostPrefix":"cp.maps."},
       "idempotent":true
     },
     "UpdatePlaceIndex":{
@@ -1092,7 +1092,7 @@
         {"shape":"ThrottlingException"}
       ],
       "documentation":"<p>Updates the specified properties of a given place index resource.</p>",
-      "endpoint":{"hostPrefix":"places."},
+      "endpoint":{"hostPrefix":"cp.places."},
       "idempotent":true
     },
     "UpdateRouteCalculator":{
@@ -1112,7 +1112,7 @@
         {"shape":"ThrottlingException"}
       ],
       "documentation":"<p>Updates the specified properties for a given route calculator resource.</p>",
-      "endpoint":{"hostPrefix":"routes."},
+      "endpoint":{"hostPrefix":"cp.routes."},
       "idempotent":true
     },
     "UpdateTracker":{
@@ -1132,7 +1132,7 @@
         {"shape":"ThrottlingException"}
       ],
       "documentation":"<p>Updates the specified properties of a given tracker resource.</p>",
-      "endpoint":{"hostPrefix":"tracking."},
+      "endpoint":{"hostPrefix":"cp.tracking."},
       "idempotent":true
     }
   },
@@ -1192,7 +1192,7 @@
         },
         "AllowResources":{
           "shape":"ApiKeyRestrictionsAllowResourcesList",
-          "documentation":"<p>A list of allowed resource ARNs that a API key bearer can perform actions on.</p> <ul> <li> <p>The ARN must be the correct ARN for a map, place, or route ARN. You may include wildcards in the resource-id to match multiple resources of the same type.</p> </li> <li> <p>The resources must be in the same <code>partition</code>, <code>region</code>, and <code>account-id</code> as the key that is being created.</p> </li> <li> <p>Other than wildcards, you must include the full ARN, including the <code>arn</code>, <code>partition</code>, <code>service</code>, <code>region</code>, <code>account-id</code> and <code>resource-id</code>, delimited by colons (:).</p> </li> <li> <p>No spaces allowed, even with wildcards. For example, <code>arn:aws:geo:region:<i>account-id</i>:map/ExampleMap*</code>.</p> </li> </ul> <p>For more information about ARN format, see <a href=\"https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs)</a>.</p>"
+          "documentation":"<p>A list of allowed resource ARNs that a API key bearer can perform actions on.</p> <ul> <li> <p>The ARN must be the correct ARN for a map, place, or route ARN. You may include wildcards in the resource-id to match multiple resources of the same type.</p> </li> <li> <p>The resources must be in the same <code>partition</code>, <code>region</code>, and <code>account-id</code> as the key that is being created.</p> </li> <li> <p>Other than wildcards, you must include the full ARN, including the <code>arn</code>, <code>partition</code>, <code>service</code>, <code>region</code>, <code>account-id</code> and <code>resource-id</code> delimited by colons (:).</p> </li> <li> <p>No spaces allowed, even with wildcards. For example, <code>arn:aws:geo:region:<i>account-id</i>:map/ExampleMap*</code>.</p> </li> </ul> <p>For more information about ARN format, see <a href=\"https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html\">Amazon Resource Names (ARNs)</a>.</p>"
         }
       },
       "documentation":"<p>API Restrictions on the allowed actions, resources, and referers for an API key resource.</p>"
@@ -1869,6 +1869,10 @@
         "DestinationPosition"
       ],
       "members":{
+        "ArrivalTime":{
+          "shape":"Timestamp",
+          "documentation":"<p>Specifies the desired time of arrival. Uses the given time to calculate the route. Otherwise, the best time of day to travel with the best traffic conditions is used to calculate the route.</p> <note> <p>ArrivalTime is not supported Esri.</p> </note>"
+        },
         "CalculatorName":{
           "shape":"ResourceName",
           "documentation":"<p>The name of the route calculator resource that you want to use to calculate the route. </p>",
@@ -1889,7 +1893,7 @@
         },
         "DepartureTime":{
           "shape":"Timestamp",
-          "documentation":"<p>Specifies the desired time of departure. Uses the given time to calculate the route. Otherwise, the best time of day to travel with the best traffic conditions is used to calculate the route.</p> <note> <p>Setting a departure time in the past returns a <code>400 ValidationException</code> error.</p> </note> <ul> <li> <p>In <a href=\"https://www.iso.org/iso-8601-date-and-time-format.html\">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li> </ul>"
+          "documentation":"<p>Specifies the desired time of departure. Uses the given time to calculate the route. Otherwise, the best time of day to travel with the best traffic conditions is used to calculate the route.</p> <ul> <li> <p>In <a href=\"https://www.iso.org/iso-8601-date-and-time-format.html\">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li> </ul>"
         },
         "DestinationPosition":{
           "shape":"Position",
@@ -1908,6 +1912,10 @@
           "documentation":"<p>The optional <a href=\"https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html\">API key</a> to authorize the request.</p>",
           "location":"querystring",
           "locationName":"key"
+        },
+        "OptimizeFor":{
+          "shape":"OptimizationMode",
+          "documentation":"<p>Specifies the distance to optimize for when calculating a route.</p>"
         },
         "TravelMode":{
           "shape":"TravelMode",
@@ -2360,6 +2368,10 @@
           "shape":"Boolean",
           "documentation":"<p>Whether to enable position <code>UPDATE</code> events from this tracker to be sent to EventBridge.</p> <note> <p>You do not need enable this feature to get <code>ENTER</code> and <code>EXIT</code> events for geofences with this tracker. Those events are always sent to EventBridge.</p> </note>"
         },
+        "KmsKeyEnableGeospatialQueries":{
+          "shape":"Boolean",
+          "documentation":"<p>Enables <code>GeospatialQueries</code> for a tracker that uses a <a href=\"https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html\">Amazon Web Services KMS customer managed key</a>.</p> <p>This parameter is only used if you are using a KMS customer managed key.</p> <note> <p>If you wish to encrypt your data using your own KMS customer managed key, then the Bounding Polygon Queries feature will be disabled by default. This is because by using this feature, a representation of your device positions will not be encrypted using the your KMS managed key. The exact device position, however; is still encrypted using your managed key.</p> <p>You can choose to opt-in to the Bounding Polygon Quseries feature. This is done by setting the <code>KmsKeyEnableGeospatialQueries</code> parameter to true when creating or updating a Tracker.</p> </note>"
+        },
         "KmsKeyId":{
           "shape":"KmsKeyId",
           "documentation":"<p>A key identifier for an <a href=\"https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html\">Amazon Web Services KMS customer managed key</a>. Enter a key ID, key ARN, alias name, or alias ARN.</p>"
@@ -2412,6 +2424,18 @@
         }
       }
     },
+    "CustomLayer":{
+      "type":"string",
+      "max":100,
+      "min":1,
+      "pattern":"^[-._\\w]+$"
+    },
+    "CustomLayerList":{
+      "type":"list",
+      "member":{"shape":"CustomLayer"},
+      "max":10,
+      "min":0
+    },
     "DataSourceConfiguration":{
       "type":"structure",
       "members":{
@@ -2443,6 +2467,12 @@
       "type":"structure",
       "required":["KeyName"],
       "members":{
+        "ForceDelete":{
+          "shape":"Boolean",
+          "documentation":"<p>ForceDelete bypasses an API key's expiry conditions and deletes the key. Set the parameter <code>true</code> to delete the key or to <code>false</code> to not preemptively delete the API key.</p> <p>Valid values: <code>true</code>, or <code>false</code>.</p> <p>Required: No</p> <note> <p>This action is irreversible. Only use ForceDelete if you are certain the key is no longer in use.</p> </note>",
+          "location":"querystring",
+          "locationName":"forceDelete"
+        },
         "KeyName":{
           "shape":"ResourceName",
           "documentation":"<p>The name of the API key to delete.</p>",
@@ -2562,6 +2592,10 @@
           "shape":"ResourceDescription",
           "documentation":"<p>The optional description for the geofence collection.</p>"
         },
+        "GeofenceCount":{
+          "shape":"DescribeGeofenceCollectionResponseGeofenceCountInteger",
+          "documentation":"<p>The number of geofences in the geofence collection.</p>"
+        },
         "KmsKeyId":{
           "shape":"KmsKeyId",
           "documentation":"<p>A key identifier for an <a href=\"https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html\">Amazon Web Services KMS customer managed key</a> assigned to the Amazon Location resource</p>"
@@ -2587,6 +2621,11 @@
           "documentation":"<p>The timestamp for when the geofence collection was last updated in <a href=\"https://www.iso.org/iso-8601-date-and-time-format.html\">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>"
         }
       }
+    },
+    "DescribeGeofenceCollectionResponseGeofenceCountInteger":{
+      "type":"integer",
+      "box":true,
+      "min":0
     },
     "DescribeKeyRequest":{
       "type":"structure",
@@ -2867,6 +2906,10 @@
         "EventBridgeEnabled":{
           "shape":"Boolean",
           "documentation":"<p>Whether <code>UPDATE</code> events from this tracker in EventBridge are enabled. If set to <code>true</code> these events will be sent to EventBridge.</p>"
+        },
+        "KmsKeyEnableGeospatialQueries":{
+          "shape":"Boolean",
+          "documentation":"<p>Enables <code>GeospatialQueries</code> for a tracker that uses a <a href=\"https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html\">Amazon Web Services KMS customer managed key</a>.</p> <p>This parameter is only used if you are using a KMS customer managed key.</p> <note> <p>If you wish to encrypt your data using your own KMS customer managed key, then the Bounding Polygon Queries feature will be disabled by default. This is because by using this feature, a representation of your device positions will not be encrypted using the your KMS managed key. The exact device position, however; is still encrypted using your managed key.</p> <p>You can choose to opt-in to the Bounding Polygon Quseries feature. This is done by setting the <code>KmsKeyEnableGeospatialQueries</code> parameter to true when creating or updating a Tracker.</p> </note>"
         },
         "KmsKeyId":{
           "shape":"KmsKeyId",
@@ -3225,7 +3268,7 @@
       "members":{
         "FontStack":{
           "shape":"String",
-          "documentation":"<p>A comma-separated list of fonts to load glyphs from in order of preference. For example, <code>Noto Sans Regular, Arial Unicode</code>.</p> <p>Valid fonts stacks for <a href=\"https://docs.aws.amazon.com/location/latest/developerguide/esri.html\">Esri</a> styles: </p> <ul> <li> <p>VectorEsriDarkGrayCanvas – <code>Ubuntu Medium Italic</code> | <code>Ubuntu Medium</code> | <code>Ubuntu Italic</code> | <code>Ubuntu Regular</code> | <code>Ubuntu Bold</code> </p> </li> <li> <p>VectorEsriLightGrayCanvas – <code>Ubuntu Italic</code> | <code>Ubuntu Regular</code> | <code>Ubuntu Light</code> | <code>Ubuntu Bold</code> </p> </li> <li> <p>VectorEsriTopographic – <code>Noto Sans Italic</code> | <code>Noto Sans Regular</code> | <code>Noto Sans Bold</code> | <code>Noto Serif Regular</code> | <code>Roboto Condensed Light Italic</code> </p> </li> <li> <p>VectorEsriStreets – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial Bold</code> </p> </li> <li> <p>VectorEsriNavigation – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial Bold</code> </p> </li> </ul> <p>Valid font stacks for <a href=\"https://docs.aws.amazon.com/location/latest/developerguide/HERE.html\">HERE Technologies</a> styles:</p> <ul> <li> <p>VectorHereContrast – <code>Fira GO Regular</code> | <code>Fira GO Bold</code> </p> </li> <li> <p>VectorHereExplore, VectorHereExploreTruck, HybridHereExploreSatellite – <code>Fira GO Italic</code> | <code>Fira GO Map</code> | <code>Fira GO Map Bold</code> | <code>Noto Sans CJK JP Bold</code> | <code>Noto Sans CJK JP Light</code> | <code>Noto Sans CJK JP Regular</code> </p> </li> </ul> <p>Valid font stacks for <a href=\"https://docs.aws.amazon.com/location/latest/developerguide/grab.html\">GrabMaps</a> styles:</p> <ul> <li> <p>VectorGrabStandardLight, VectorGrabStandardDark – <code>Noto Sans Regular</code> | <code>Noto Sans Medium</code> | <code>Noto Sans Bold</code> </p> </li> </ul> <p>Valid font stacks for <a href=\"https://docs.aws.amazon.com/location/latest/developerguide/open-data.html\">Open Data</a> styles:</p> <ul> <li> <p>VectorOpenDataStandardLight, VectorOpenDataStandardDark, VectorOpenDataVisualizationLight, VectorOpenDataVisualizationDark – <code>Amazon Ember Regular,Noto Sans Regular</code> | <code>Amazon Ember Bold,Noto Sans Bold</code> | <code>Amazon Ember Medium,Noto Sans Medium</code> | <code>Amazon Ember Regular Italic,Noto Sans Italic</code> | <code>Amazon Ember Condensed RC Regular,Noto Sans Regular</code> | <code>Amazon Ember Condensed RC Bold,Noto Sans Bold</code> | <code>Amazon Ember Regular,Noto Sans Regular,Noto Sans Arabic Regular</code> | <code>Amazon Ember Condensed RC Bold,Noto Sans Bold,Noto Sans Arabic Condensed Bold</code> | <code>Amazon Ember Bold,Noto Sans Bold,Noto Sans Arabic Bold</code> | <code>Amazon Ember Regular Italic,Noto Sans Italic,Noto Sans Arabic Regular</code> | <code>Amazon Ember Condensed RC Regular,Noto Sans Regular,Noto Sans Arabic Condensed Regular</code> | <code>Amazon Ember Medium,Noto Sans Medium,Noto Sans Arabic Medium</code> </p> </li> </ul> <note> <p>The fonts used by the Open Data map styles are combined fonts that use <code>Amazon Ember</code> for most glyphs but <code>Noto Sans</code> for glyphs unsupported by <code>Amazon Ember</code>.</p> </note>",
+          "documentation":"<p>A comma-separated list of fonts to load glyphs from in order of preference. For example, <code>Noto Sans Regular, Arial Unicode</code>.</p> <p>Valid font stacks for <a href=\"https://docs.aws.amazon.com/location/latest/developerguide/esri.html\">Esri</a> styles: </p> <ul> <li> <p>VectorEsriDarkGrayCanvas – <code>Ubuntu Medium Italic</code> | <code>Ubuntu Medium</code> | <code>Ubuntu Italic</code> | <code>Ubuntu Regular</code> | <code>Ubuntu Bold</code> </p> </li> <li> <p>VectorEsriLightGrayCanvas – <code>Ubuntu Italic</code> | <code>Ubuntu Regular</code> | <code>Ubuntu Light</code> | <code>Ubuntu Bold</code> </p> </li> <li> <p>VectorEsriTopographic – <code>Noto Sans Italic</code> | <code>Noto Sans Regular</code> | <code>Noto Sans Bold</code> | <code>Noto Serif Regular</code> | <code>Roboto Condensed Light Italic</code> </p> </li> <li> <p>VectorEsriStreets – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial Bold</code> </p> </li> <li> <p>VectorEsriNavigation – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial Bold</code> | <code>Arial Unicode MS Bold</code> | <code>Arial Unicode MS Regular</code> </p> </li> </ul> <p>Valid font stacks for <a href=\"https://docs.aws.amazon.com/location/latest/developerguide/HERE.html\">HERE Technologies</a> styles:</p> <ul> <li> <p>VectorHereContrast – <code>Fira GO Regular</code> | <code>Fira GO Bold</code> </p> </li> <li> <p>VectorHereExplore, VectorHereExploreTruck, HybridHereExploreSatellite – <code>Fira GO Italic</code> | <code>Fira GO Map</code> | <code>Fira GO Map Bold</code> | <code>Noto Sans CJK JP Bold</code> | <code>Noto Sans CJK JP Light</code> | <code>Noto Sans CJK JP Regular</code> </p> </li> </ul> <p>Valid font stacks for <a href=\"https://docs.aws.amazon.com/location/latest/developerguide/grab.html\">GrabMaps</a> styles:</p> <ul> <li> <p>VectorGrabStandardLight, VectorGrabStandardDark – <code>Noto Sans Regular</code> | <code>Noto Sans Medium</code> | <code>Noto Sans Bold</code> </p> </li> </ul> <p>Valid font stacks for <a href=\"https://docs.aws.amazon.com/location/latest/developerguide/open-data.html\">Open Data</a> styles:</p> <ul> <li> <p>VectorOpenDataStandardLight, VectorOpenDataStandardDark, VectorOpenDataVisualizationLight, VectorOpenDataVisualizationDark – <code>Amazon Ember Regular,Noto Sans Regular</code> | <code>Amazon Ember Bold,Noto Sans Bold</code> | <code>Amazon Ember Medium,Noto Sans Medium</code> | <code>Amazon Ember Regular Italic,Noto Sans Italic</code> | <code>Amazon Ember Condensed RC Regular,Noto Sans Regular</code> | <code>Amazon Ember Condensed RC Bold,Noto Sans Bold</code> | <code>Amazon Ember Regular,Noto Sans Regular,Noto Sans Arabic Regular</code> | <code>Amazon Ember Condensed RC Bold,Noto Sans Bold,Noto Sans Arabic Condensed Bold</code> | <code>Amazon Ember Bold,Noto Sans Bold,Noto Sans Arabic Bold</code> | <code>Amazon Ember Regular Italic,Noto Sans Italic,Noto Sans Arabic Regular</code> | <code>Amazon Ember Condensed RC Regular,Noto Sans Regular,Noto Sans Arabic Condensed Regular</code> | <code>Amazon Ember Medium,Noto Sans Medium,Noto Sans Arabic Medium</code> </p> </li> </ul> <note> <p>The fonts used by the Open Data map styles are combined fonts that use <code>Amazon Ember</code> for most glyphs but <code>Noto Sans</code> for glyphs unsupported by <code>Amazon Ember</code>.</p> </note>",
           "location":"uri",
           "locationName":"FontStack"
         },
@@ -3470,7 +3513,7 @@
         },
         "PlaceId":{
           "shape":"PlaceId",
-          "documentation":"<p>The identifier of the place to find.</p>",
+          "documentation":"<p>The identifier of the place to find.</p> <p>While you can use PlaceID in subsequent requests, PlaceID is not intended to be a permanent identifier and the ID can change between consecutive API calls. Please see the following PlaceID behaviour for each data provider:</p> <ul> <li> <p>Esri: Place IDs will change every quarter at a minimum. The typical time period for these changes would be March, June, September, and December. Place IDs might also change between the typical quarterly change but that will be much less frequent.</p> </li> <li> <p>HERE: We recommend that you cache data for no longer than a week to keep your data data fresh. You can assume that less than 1% ID shifts will release over release which is approximately 1 - 2 times per week.</p> </li> <li> <p>Grab: Place IDs can expire or become invalid in the following situations.</p> <ul> <li> <p>Data operations: The POI may be removed from Grab POI database by Grab Map Ops based on the ground-truth, such as being closed in the real world, being detected as a duplicate POI, or having incorrect information. Grab will synchronize data to the Waypoint environment on weekly basis.</p> </li> <li> <p>Interpolated POI: Interpolated POI is a temporary POI generated in real time when serving a request, and it will be marked as derived in the <code>place.result_type</code> field in the response. The information of interpolated POIs will be retained for at least 30 days, which means that within 30 days, you are able to obtain POI details by Place ID from Place Details API. After 30 days, the interpolated POIs(both Place ID and details) may expire and inaccessible from the Places Details API.</p> </li> </ul> </li> </ul>",
           "location":"uri",
           "locationName":"PlaceId"
         }
@@ -3608,6 +3651,10 @@
       "type":"structure",
       "required":["TrackerName"],
       "members":{
+        "FilterGeometry":{
+          "shape":"TrackingFilterGeometry",
+          "documentation":"<p>The geometry used to filter device positions.</p>"
+        },
         "MaxResults":{
           "shape":"ListDevicePositionsRequestMaxResultsInteger",
           "documentation":"<p>An optional limit for the number of entries returned in a single call.</p> <p>Default value: <code>100</code> </p>"
@@ -3636,7 +3683,7 @@
       "members":{
         "Entries":{
           "shape":"ListDevicePositionsResponseEntryList",
-          "documentation":"<p>Contains details about each device's last known position. These details includes the device ID, the time when the position was sampled on the device, the time that the service received the update, and the most recent coordinates.</p>"
+          "documentation":"<p>Contains details about each device's last known position.</p>"
         },
         "NextToken":{
           "shape":"Token",
@@ -4282,13 +4329,17 @@
       "type":"structure",
       "required":["Style"],
       "members":{
+        "CustomLayers":{
+          "shape":"CustomLayerList",
+          "documentation":"<p>Specifies the custom layers for the style. Leave unset to not enable any custom layer, or, for styles that support custom layers, you can enable layer(s), such as <code>POI</code> layer for the VectorEsriNavigation style. Default is <code>unset</code>.</p> <note> <p>Currenlty only <code>VectorEsriNavigation</code> supports CustomLayers. For more information, see <a href=\"https://docs.aws.amazon.com/location/latest/developerguide/map-concepts.html#map-custom-layers\">Custom Layers</a>.</p> </note>"
+        },
         "PoliticalView":{
           "shape":"CountryCode3",
           "documentation":"<p>Specifies the political view for the style. Leave unset to not use a political view, or, for styles that support specific political views, you can choose a view, such as <code>IND</code> for the Indian view.</p> <p>Default is unset.</p> <note> <p>Not all map resources or styles support political view styles. See <a href=\"https://docs.aws.amazon.com/location/latest/developerguide/map-concepts.html#political-views\">Political views</a> for more information.</p> </note>"
         },
         "Style":{
           "shape":"MapStyle",
-          "documentation":"<p>Specifies the map style selected from an available data provider.</p> <p>Valid <a href=\"https://docs.aws.amazon.com/location/latest/developerguide/esri.html\">Esri map styles</a>:</p> <ul> <li> <p> <code>VectorEsriDarkGrayCanvas</code> – The Esri Dark Gray Canvas map style. A vector basemap with a dark gray, neutral background with minimal colors, labels, and features that's designed to draw attention to your thematic content. </p> </li> <li> <p> <code>RasterEsriImagery</code> – The Esri Imagery map style. A raster basemap that provides one meter or better satellite and aerial imagery in many parts of the world and lower resolution satellite imagery worldwide. </p> </li> <li> <p> <code>VectorEsriLightGrayCanvas</code> – The Esri Light Gray Canvas map style, which provides a detailed vector basemap with a light gray, neutral background style with minimal colors, labels, and features that's designed to draw attention to your thematic content. </p> </li> <li> <p> <code>VectorEsriTopographic</code> – The Esri Light map style, which provides a detailed vector basemap with a classic Esri map style.</p> </li> <li> <p> <code>VectorEsriStreets</code> – The Esri Street Map style, which provides a detailed vector basemap for the world symbolized with a classic Esri street map style. The vector tile layer is similar in content and style to the World Street Map raster map.</p> </li> <li> <p> <code>VectorEsriNavigation</code> – The Esri Navigation map style, which provides a detailed basemap for the world symbolized with a custom navigation map style that's designed for use during the day in mobile devices.</p> </li> </ul> <p>Valid <a href=\"https://docs.aws.amazon.com/location/latest/developerguide/HERE.html\">HERE Technologies map styles</a>:</p> <ul> <li> <p> <code>VectorHereContrast</code> – The HERE Contrast (Berlin) map style is a high contrast detailed base map of the world that blends 3D and 2D rendering.</p> <note> <p>The <code>VectorHereContrast</code> style has been renamed from <code>VectorHereBerlin</code>. <code>VectorHereBerlin</code> has been deprecated, but will continue to work in applications that use it.</p> </note> </li> <li> <p> <code>VectorHereExplore</code> – A default HERE map style containing a neutral, global map and its features including roads, buildings, landmarks, and water features. It also now includes a fully designed map of Japan.</p> </li> <li> <p> <code>VectorHereExploreTruck</code> – A global map containing truck restrictions and attributes (e.g. width / height / HAZMAT) symbolized with highlighted segments and icons on top of HERE Explore to support use cases within transport and logistics.</p> </li> <li> <p> <code>RasterHereExploreSatellite</code> – A global map containing high resolution satellite imagery.</p> </li> <li> <p> <code>HybridHereExploreSatellite</code> – A global map displaying the road network, street names, and city labels over satellite imagery. This style will automatically retrieve both raster and vector tiles, and your charges will be based on total tiles retrieved.</p> <note> <p>Hybrid styles use both vector and raster tiles when rendering the map that you see. This means that more tiles are retrieved than when using either vector or raster tiles alone. Your charges will include all tiles retrieved.</p> </note> </li> </ul> <p>Valid <a href=\"https://docs.aws.amazon.com/location/latest/developerguide/grab.html\">GrabMaps map styles</a>:</p> <ul> <li> <p> <code>VectorGrabStandardLight</code> – The Grab Standard Light map style provides a basemap with detailed land use coloring, area names, roads, landmarks, and points of interest covering Southeast Asia.</p> </li> <li> <p> <code>VectorGrabStandardDark</code> – The Grab Standard Dark map style provides a dark variation of the standard basemap covering Southeast Asia.</p> </li> </ul> <note> <p>Grab provides maps only for countries in Southeast Asia, and is only available in the Asia Pacific (Singapore) Region (<code>ap-southeast-1</code>). For more information, see <a href=\"https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area\">GrabMaps countries and area covered</a>.</p> </note> <p>Valid <a href=\"https://docs.aws.amazon.com/location/latest/developerguide/open-data.html\">Open Data map styles</a>:</p> <ul> <li> <p> <code>VectorOpenDataStandardLight</code> – The Open Data Standard Light map style provides a detailed basemap for the world suitable for website and mobile application use. The map includes highways major roads, minor roads, railways, water features, cities, parks, landmarks, building footprints, and administrative boundaries.</p> </li> <li> <p> <code>VectorOpenDataStandardDark</code> – Open Data Standard Dark is a dark-themed map style that provides a detailed basemap for the world suitable for website and mobile application use. The map includes highways major roads, minor roads, railways, water features, cities, parks, landmarks, building footprints, and administrative boundaries.</p> </li> <li> <p> <code>VectorOpenDataVisualizationLight</code> – The Open Data Visualization Light map style is a light-themed style with muted colors and fewer features that aids in understanding overlaid data.</p> </li> <li> <p> <code>VectorOpenDataVisualizationDark</code> – The Open Data Visualization Dark map style is a dark-themed style with muted colors and fewer features that aids in understanding overlaid data.</p> </li> </ul>"
+          "documentation":"<p>Specifies the map style selected from an available data provider.</p> <p>Valid <a href=\"https://docs.aws.amazon.com/location/latest/developerguide/esri.html\">Esri map styles</a>:</p> <ul> <li> <p> <code>VectorEsriNavigation</code> – The Esri Navigation map style, which provides a detailed basemap for the world symbolized with a custom navigation map style that's designed for use during the day in mobile devices. It also includes a richer set of places, such as shops, services, restaurants, attractions, and other points of interest. Enable the <code>POI</code> layer by setting it in CustomLayers to leverage the additional places data.</p> <p/> </li> <li> <p> <code>RasterEsriImagery</code> – The Esri Imagery map style. A raster basemap that provides one meter or better satellite and aerial imagery in many parts of the world and lower resolution satellite imagery worldwide. </p> </li> <li> <p> <code>VectorEsriLightGrayCanvas</code> – The Esri Light Gray Canvas map style, which provides a detailed vector basemap with a light gray, neutral background style with minimal colors, labels, and features that's designed to draw attention to your thematic content. </p> </li> <li> <p> <code>VectorEsriTopographic</code> – The Esri Light map style, which provides a detailed vector basemap with a classic Esri map style.</p> </li> <li> <p> <code>VectorEsriStreets</code> – The Esri Street Map style, which provides a detailed vector basemap for the world symbolized with a classic Esri street map style. The vector tile layer is similar in content and style to the World Street Map raster map.</p> </li> <li> <p> <code>VectorEsriDarkGrayCanvas</code> – The Esri Dark Gray Canvas map style. A vector basemap with a dark gray, neutral background with minimal colors, labels, and features that's designed to draw attention to your thematic content. </p> </li> </ul> <p>Valid <a href=\"https://docs.aws.amazon.com/location/latest/developerguide/HERE.html\">HERE Technologies map styles</a>:</p> <ul> <li> <p> <code>VectorHereExplore</code> – A default HERE map style containing a neutral, global map and its features including roads, buildings, landmarks, and water features. It also now includes a fully designed map of Japan.</p> </li> <li> <p> <code>RasterHereExploreSatellite</code> – A global map containing high resolution satellite imagery.</p> </li> <li> <p> <code>HybridHereExploreSatellite</code> – A global map displaying the road network, street names, and city labels over satellite imagery. This style will automatically retrieve both raster and vector tiles, and your charges will be based on total tiles retrieved.</p> <note> <p>Hybrid styles use both vector and raster tiles when rendering the map that you see. This means that more tiles are retrieved than when using either vector or raster tiles alone. Your charges will include all tiles retrieved.</p> </note> </li> <li> <p> <code>VectorHereContrast</code> – The HERE Contrast (Berlin) map style is a high contrast detailed base map of the world that blends 3D and 2D rendering.</p> <note> <p>The <code>VectorHereContrast</code> style has been renamed from <code>VectorHereBerlin</code>. <code>VectorHereBerlin</code> has been deprecated, but will continue to work in applications that use it.</p> </note> </li> <li> <p> <code>VectorHereExploreTruck</code> – A global map containing truck restrictions and attributes (e.g. width / height / HAZMAT) symbolized with highlighted segments and icons on top of HERE Explore to support use cases within transport and logistics.</p> </li> </ul> <p>Valid <a href=\"https://docs.aws.amazon.com/location/latest/developerguide/grab.html\">GrabMaps map styles</a>:</p> <ul> <li> <p> <code>VectorGrabStandardLight</code> – The Grab Standard Light map style provides a basemap with detailed land use coloring, area names, roads, landmarks, and points of interest covering Southeast Asia.</p> </li> <li> <p> <code>VectorGrabStandardDark</code> – The Grab Standard Dark map style provides a dark variation of the standard basemap covering Southeast Asia.</p> </li> </ul> <note> <p>Grab provides maps only for countries in Southeast Asia, and is only available in the Asia Pacific (Singapore) Region (<code>ap-southeast-1</code>). For more information, see <a href=\"https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area\">GrabMaps countries and area covered</a>.</p> </note> <p>Valid <a href=\"https://docs.aws.amazon.com/location/latest/developerguide/open-data.html\">Open Data map styles</a>:</p> <ul> <li> <p> <code>VectorOpenDataStandardLight</code> – The Open Data Standard Light map style provides a detailed basemap for the world suitable for website and mobile application use. The map includes highways major roads, minor roads, railways, water features, cities, parks, landmarks, building footprints, and administrative boundaries.</p> </li> <li> <p> <code>VectorOpenDataStandardDark</code> – Open Data Standard Dark is a dark-themed map style that provides a detailed basemap for the world suitable for website and mobile application use. The map includes highways major roads, minor roads, railways, water features, cities, parks, landmarks, building footprints, and administrative boundaries.</p> </li> <li> <p> <code>VectorOpenDataVisualizationLight</code> – The Open Data Visualization Light map style is a light-themed style with muted colors and fewer features that aids in understanding overlaid data.</p> </li> <li> <p> <code>VectorOpenDataVisualizationDark</code> – The Open Data Visualization Dark map style is a dark-themed style with muted colors and fewer features that aids in understanding overlaid data.</p> </li> </ul>"
         }
       },
       "documentation":"<p>Specifies the map tile style selected from an available provider.</p>"
@@ -4296,6 +4347,10 @@
     "MapConfigurationUpdate":{
       "type":"structure",
       "members":{
+        "CustomLayers":{
+          "shape":"CustomLayerList",
+          "documentation":"<p>Specifies the custom layers for the style. Leave unset to not enable any custom layer, or, for styles that support custom layers, you can enable layer(s), such as <code>POI</code> layer for the VectorEsriNavigation style. Default is <code>unset</code>.</p> <note> <p>Currenlty only <code>VectorEsriNavigation</code> supports CustomLayers. For more information, see <a href=\"https://docs.aws.amazon.com/location/latest/developerguide/map-concepts.html#map-custom-layers\">Custom Layers</a>.</p> </note>"
+        },
         "PoliticalView":{
           "shape":"CountryCode3OrEmpty",
           "documentation":"<p>Specifies the political view for the style. Set to an empty string to not use a political view, or, for styles that support specific political views, you can choose a view, such as <code>IND</code> for the Indian view.</p> <note> <p>Not all map resources or styles support political view styles. See <a href=\"https://docs.aws.amazon.com/location/latest/developerguide/map-concepts.html#political-views\">Political views</a> for more information.</p> </note>"
@@ -4308,6 +4363,13 @@
       "max":100,
       "min":1,
       "pattern":"^[-._\\w]+$"
+    },
+    "OptimizationMode":{
+      "type":"string",
+      "enum":[
+        "FastestRoute",
+        "ShortestRoute"
+      ]
     },
     "Place":{
       "type":"structure",
@@ -4354,6 +4416,10 @@
           "shape":"String",
           "documentation":"<p>The name for a street or a road to identify a location. For example, <code>Main Street</code>.</p>"
         },
+        "SubMunicipality":{
+          "shape":"String",
+          "documentation":"<p>An area that's part of a larger municipality. For example, <code>Blissville</code> is a submunicipality in the Queen County in New York.</p> <note> <p>This property is only returned for a place index that uses Esri as a data provider. The property is represented as a <code>district</code>.</p> </note> <p>For more information about data providers, see <a href=\"https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html\">Amazon Location Service data providers</a>.</p>"
+        },
         "SubRegion":{
           "shape":"String",
           "documentation":"<p>A county, or an area that's part of a larger region. For example, <code>Metro Vancouver</code>.</p>"
@@ -4368,11 +4434,11 @@
         },
         "UnitNumber":{
           "shape":"String",
-          "documentation":"<p>For addresses with multiple units, the unit identifier. Can include numbers and letters, for example <code>3B</code> or <code>Unit 123</code>.</p> <note> <p>Returned only for a place index that uses Esri or Grab as a data provider. Is not returned for <code>SearchPlaceIndexForPosition</code>.</p> </note>"
+          "documentation":"<p>For addresses with multiple units, the unit identifier. Can include numbers and letters, for example <code>3B</code> or <code>Unit 123</code>.</p> <note> <p>This property is returned only for a place index that uses Esri or Grab as a data provider. It is not returned for <code>SearchPlaceIndexForPosition</code>.</p> </note>"
         },
         "UnitType":{
           "shape":"String",
-          "documentation":"<p>For addresses with a <code>UnitNumber</code>, the type of unit. For example, <code>Apartment</code>.</p> <note> <p>Returned only for a place index that uses Esri as a data provider.</p> </note>"
+          "documentation":"<p>For addresses with a <code>UnitNumber</code>, the type of unit. For example, <code>Apartment</code>.</p> <note> <p>This property is returned only for a place index that uses Esri as a data provider.</p> </note>"
         }
       },
       "documentation":"<p>Contains details about addresses or points of interest that match the search criteria.</p> <p>Not all details are included with all responses. Some details may only be returned by specific data partners.</p>"
@@ -4401,6 +4467,7 @@
     "PlaceId":{"type":"string"},
     "PlaceIndexSearchResultLimit":{
       "type":"integer",
+      "box":true,
       "max":50,
       "min":1
     },
@@ -4661,7 +4728,7 @@
         },
         "PlaceId":{
           "shape":"PlaceId",
-          "documentation":"<p>The unique identifier of the Place. You can use this with the <code>GetPlace</code> operation to find the place again later, or to get full information for the Place.</p> <p>The <code>GetPlace</code> request must use the same <code>PlaceIndex</code> resource as the <code>SearchPlaceIndexForSuggestions</code> that generated the Place ID.</p> <note> <p>For <code>SearchPlaceIndexForSuggestions</code> operations, the <code>PlaceId</code> is returned by place indexes that use Esri, Grab, or HERE as data providers.</p> </note>"
+          "documentation":"<p>The unique identifier of the Place. You can use this with the <code>GetPlace</code> operation to find the place again later, or to get full information for the Place.</p> <p>The <code>GetPlace</code> request must use the same <code>PlaceIndex</code> resource as the <code>SearchPlaceIndexForSuggestions</code> that generated the Place ID.</p> <note> <p>For <code>SearchPlaceIndexForSuggestions</code> operations, the <code>PlaceId</code> is returned by place indexes that use Esri, Grab, or HERE as data providers.</p> </note> <p>While you can use PlaceID in subsequent requests, PlaceID is not intended to be a permanent identifier and the ID can change between consecutive API calls. Please see the following PlaceID behaviour for each data provider:</p> <ul> <li> <p>Esri: Place IDs will change every quarter at a minimum. The typical time period for these changes would be March, June, September, and December. Place IDs might also change between the typical quarterly change but that will be much less frequent.</p> </li> <li> <p>HERE: We recommend that you cache data for no longer than a week to keep your data data fresh. You can assume that less than 1% ID shifts will release over release which is approximately 1 - 2 times per week.</p> </li> <li> <p>Grab: Place IDs can expire or become invalid in the following situations.</p> <ul> <li> <p>Data operations: The POI may be removed from Grab POI database by Grab Map Ops based on the ground-truth, such as being closed in the real world, being detected as a duplicate POI, or having incorrect information. Grab will synchronize data to the Waypoint environment on weekly basis.</p> </li> <li> <p>Interpolated POI: Interpolated POI is a temporary POI generated in real time when serving a request, and it will be marked as derived in the <code>place.result_type</code> field in the response. The information of interpolated POIs will be retained for at least 30 days, which means that within 30 days, you are able to obtain POI details by Place ID from Place Details API. After 30 days, the interpolated POIs(both Place ID and details) may expire and inaccessible from the Places Details API.</p> </li> </ul> </li> </ul>"
         },
         "SupplementalCategories":{
           "shape":"PlaceSupplementalCategoryList",
@@ -5200,6 +5267,16 @@
       "max":2000,
       "min":1
     },
+    "TrackingFilterGeometry":{
+      "type":"structure",
+      "members":{
+        "Polygon":{
+          "shape":"LinearRings",
+          "documentation":"<p>The set of arrays which define the polygon. A polygon can have between 4 and 1000 vertices.</p>"
+        }
+      },
+      "documentation":"<p>The geomerty used to filter device positions.</p>"
+    },
     "TravelMode":{
       "type":"string",
       "enum":[
@@ -5547,6 +5624,10 @@
         "EventBridgeEnabled":{
           "shape":"Boolean",
           "documentation":"<p>Whether to enable position <code>UPDATE</code> events from this tracker to be sent to EventBridge.</p> <note> <p>You do not need enable this feature to get <code>ENTER</code> and <code>EXIT</code> events for geofences with this tracker. Those events are always sent to EventBridge.</p> </note>"
+        },
+        "KmsKeyEnableGeospatialQueries":{
+          "shape":"Boolean",
+          "documentation":"<p>Enables <code>GeospatialQueries</code> for a tracker that uses a <a href=\"https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html\">Amazon Web Services KMS customer managed key</a>.</p> <p>This parameter is only used if you are using a KMS customer managed key.</p>"
         },
         "PositionFiltering":{
           "shape":"PositionFiltering",

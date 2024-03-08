@@ -16,7 +16,8 @@ UpdateKxEnvironmentRequest::UpdateKxEnvironmentRequest() :
     m_environmentIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_clientTokenHasBeenSet(false)
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
+    m_clientTokenHasBeenSet(true)
 {
 }
 

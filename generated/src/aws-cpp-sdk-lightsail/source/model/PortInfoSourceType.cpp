@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PortInfoSourceType::NOT_SET:
+            return {};
           case PortInfoSourceType::DEFAULT:
             return "DEFAULT";
           case PortInfoSourceType::INSTANCE:

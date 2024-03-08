@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CustomLineItemRelationship::NOT_SET:
+            return {};
           case CustomLineItemRelationship::PARENT:
             return "PARENT";
           case CustomLineItemRelationship::CHILD:

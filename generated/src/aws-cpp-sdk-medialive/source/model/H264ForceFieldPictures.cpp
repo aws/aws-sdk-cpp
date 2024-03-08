@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case H264ForceFieldPictures::NOT_SET:
+            return {};
           case H264ForceFieldPictures::DISABLED:
             return "DISABLED";
           case H264ForceFieldPictures::ENABLED:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SyncAction::NOT_SET:
+            return {};
           case SyncAction::START_SYNC:
             return "START_SYNC";
           case SyncAction::NO_ACTION:

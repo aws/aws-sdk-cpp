@@ -305,50 +305,50 @@ namespace Model
 
 
     /**
-     * <p>Specifies which engines (<code>standard</code> or <code>neural</code>) that
-     * are supported by a given voice.</p>
+     * <p>Specifies which engines (<code>standard</code>, <code>neural</code> or
+     * <code>long-form</code>) are supported by a given voice.</p>
      */
     inline const Aws::Vector<Engine>& GetSupportedEngines() const{ return m_supportedEngines; }
 
     /**
-     * <p>Specifies which engines (<code>standard</code> or <code>neural</code>) that
-     * are supported by a given voice.</p>
+     * <p>Specifies which engines (<code>standard</code>, <code>neural</code> or
+     * <code>long-form</code>) are supported by a given voice.</p>
      */
     inline bool SupportedEnginesHasBeenSet() const { return m_supportedEnginesHasBeenSet; }
 
     /**
-     * <p>Specifies which engines (<code>standard</code> or <code>neural</code>) that
-     * are supported by a given voice.</p>
+     * <p>Specifies which engines (<code>standard</code>, <code>neural</code> or
+     * <code>long-form</code>) are supported by a given voice.</p>
      */
     inline void SetSupportedEngines(const Aws::Vector<Engine>& value) { m_supportedEnginesHasBeenSet = true; m_supportedEngines = value; }
 
     /**
-     * <p>Specifies which engines (<code>standard</code> or <code>neural</code>) that
-     * are supported by a given voice.</p>
+     * <p>Specifies which engines (<code>standard</code>, <code>neural</code> or
+     * <code>long-form</code>) are supported by a given voice.</p>
      */
     inline void SetSupportedEngines(Aws::Vector<Engine>&& value) { m_supportedEnginesHasBeenSet = true; m_supportedEngines = std::move(value); }
 
     /**
-     * <p>Specifies which engines (<code>standard</code> or <code>neural</code>) that
-     * are supported by a given voice.</p>
+     * <p>Specifies which engines (<code>standard</code>, <code>neural</code> or
+     * <code>long-form</code>) are supported by a given voice.</p>
      */
     inline Voice& WithSupportedEngines(const Aws::Vector<Engine>& value) { SetSupportedEngines(value); return *this;}
 
     /**
-     * <p>Specifies which engines (<code>standard</code> or <code>neural</code>) that
-     * are supported by a given voice.</p>
+     * <p>Specifies which engines (<code>standard</code>, <code>neural</code> or
+     * <code>long-form</code>) are supported by a given voice.</p>
      */
     inline Voice& WithSupportedEngines(Aws::Vector<Engine>&& value) { SetSupportedEngines(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies which engines (<code>standard</code> or <code>neural</code>) that
-     * are supported by a given voice.</p>
+     * <p>Specifies which engines (<code>standard</code>, <code>neural</code> or
+     * <code>long-form</code>) are supported by a given voice.</p>
      */
     inline Voice& AddSupportedEngines(const Engine& value) { m_supportedEnginesHasBeenSet = true; m_supportedEngines.push_back(value); return *this; }
 
     /**
-     * <p>Specifies which engines (<code>standard</code> or <code>neural</code>) that
-     * are supported by a given voice.</p>
+     * <p>Specifies which engines (<code>standard</code>, <code>neural</code> or
+     * <code>long-form</code>) are supported by a given voice.</p>
      */
     inline Voice& AddSupportedEngines(Engine&& value) { m_supportedEnginesHasBeenSet = true; m_supportedEngines.push_back(std::move(value)); return *this; }
 

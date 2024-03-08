@@ -144,6 +144,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VeevaConnectorOperator::NOT_SET:
+            return {};
           case VeevaConnectorOperator::PROJECTION:
             return "PROJECTION";
           case VeevaConnectorOperator::LESS_THAN:

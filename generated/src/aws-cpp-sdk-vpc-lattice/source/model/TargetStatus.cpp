@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TargetStatus::NOT_SET:
+            return {};
           case TargetStatus::DRAINING:
             return "DRAINING";
           case TargetStatus::UNAVAILABLE:

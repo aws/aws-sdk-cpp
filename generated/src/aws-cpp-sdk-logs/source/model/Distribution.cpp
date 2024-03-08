@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Distribution::NOT_SET:
+            return {};
           case Distribution::Random:
             return "Random";
           case Distribution::ByLogStream:

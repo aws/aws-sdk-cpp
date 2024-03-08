@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MonitoringAlertStatus::NOT_SET:
+            return {};
           case MonitoringAlertStatus::InAlert:
             return "InAlert";
           case MonitoringAlertStatus::OK:

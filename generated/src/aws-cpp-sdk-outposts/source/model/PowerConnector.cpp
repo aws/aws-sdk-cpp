@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PowerConnector::NOT_SET:
+            return {};
           case PowerConnector::L6_30P:
             return "L6_30P";
           case PowerConnector::IEC309:

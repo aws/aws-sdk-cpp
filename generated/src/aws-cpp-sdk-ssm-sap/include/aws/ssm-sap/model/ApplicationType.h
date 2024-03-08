@@ -16,7 +16,8 @@ namespace Model
   enum class ApplicationType
   {
     NOT_SET,
-    HANA
+    HANA,
+    SAP_ABAP
   };
 
 namespace ApplicationTypeMapper

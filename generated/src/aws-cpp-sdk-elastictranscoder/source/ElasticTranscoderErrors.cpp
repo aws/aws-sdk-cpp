@@ -30,19 +30,19 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticTranscoderErrors::LIMIT_EXCEEDED), true);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticTranscoderErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
   }
   else if (hashCode == RESOURCE_IN_USE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticTranscoderErrors::RESOURCE_IN_USE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticTranscoderErrors::RESOURCE_IN_USE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INTERNAL_SERVICE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticTranscoderErrors::INTERNAL_SERVICE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticTranscoderErrors::INTERNAL_SERVICE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INCOMPATIBLE_VERSION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticTranscoderErrors::INCOMPATIBLE_VERSION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ElasticTranscoderErrors::INCOMPATIBLE_VERSION), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

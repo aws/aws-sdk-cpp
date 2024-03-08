@@ -114,6 +114,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LaunchProfileStatusCode::NOT_SET:
+            return {};
           case LaunchProfileStatusCode::LAUNCH_PROFILE_CREATED:
             return "LAUNCH_PROFILE_CREATED";
           case LaunchProfileStatusCode::LAUNCH_PROFILE_UPDATED:

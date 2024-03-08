@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SipType::NOT_SET:
+            return {};
           case SipType::WORK:
             return "WORK";
           default:

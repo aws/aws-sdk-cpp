@@ -27,7 +27,8 @@ StartTaskRequest::StartTaskRequest() :
     m_referenceIdHasBeenSet(false),
     m_startedByHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_taskDefinitionHasBeenSet(false)
+    m_taskDefinitionHasBeenSet(false),
+    m_volumeConfigurationsHasBeenSet(false)
 {
 }
 
@@ -113,6 +114,17 @@ Aws::String StartTaskRequest::SerializePayload() const
   if(m_taskDefinitionHasBeenSet)
   {
    payload.WithString("taskDefinition", m_taskDefinition);
+
+  }
+
+  if(m_volumeConfigurationsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> volumeConfigurationsJsonList(m_volumeConfigurations.size());
+   for(unsigned volumeConfigurationsIndex = 0; volumeConfigurationsIndex < volumeConfigurationsJsonList.GetLength(); ++volumeConfigurationsIndex)
+   {
+     volumeConfigurationsJsonList[volumeConfigurationsIndex].AsObject(m_volumeConfigurations[volumeConfigurationsIndex].Jsonize());
+   }
+   payload.WithArray("volumeConfigurations", std::move(volumeConfigurationsJsonList));
 
   }
 

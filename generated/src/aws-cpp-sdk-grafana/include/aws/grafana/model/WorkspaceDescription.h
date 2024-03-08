@@ -338,64 +338,145 @@ namespace Model
 
     /**
      * <p>Specifies whether this workspace has already fully used its free trial for
-     * Grafana Enterprise.</p>
+     * Grafana Enterprise.</p>  <p>Amazon Managed Grafana workspaces no longer
+     * support Grafana Enterprise free trials.</p> 
      */
     inline bool GetFreeTrialConsumed() const{ return m_freeTrialConsumed; }
 
     /**
      * <p>Specifies whether this workspace has already fully used its free trial for
-     * Grafana Enterprise.</p>
+     * Grafana Enterprise.</p>  <p>Amazon Managed Grafana workspaces no longer
+     * support Grafana Enterprise free trials.</p> 
      */
     inline bool FreeTrialConsumedHasBeenSet() const { return m_freeTrialConsumedHasBeenSet; }
 
     /**
      * <p>Specifies whether this workspace has already fully used its free trial for
-     * Grafana Enterprise.</p>
+     * Grafana Enterprise.</p>  <p>Amazon Managed Grafana workspaces no longer
+     * support Grafana Enterprise free trials.</p> 
      */
     inline void SetFreeTrialConsumed(bool value) { m_freeTrialConsumedHasBeenSet = true; m_freeTrialConsumed = value; }
 
     /**
      * <p>Specifies whether this workspace has already fully used its free trial for
-     * Grafana Enterprise.</p>
+     * Grafana Enterprise.</p>  <p>Amazon Managed Grafana workspaces no longer
+     * support Grafana Enterprise free trials.</p> 
      */
     inline WorkspaceDescription& WithFreeTrialConsumed(bool value) { SetFreeTrialConsumed(value); return *this;}
 
 
     /**
      * <p>If this workspace is currently in the free trial period for Grafana
-     * Enterprise, this value specifies when that free trial ends.</p>
+     * Enterprise, this value specifies when that free trial ends.</p>  <p>Amazon
+     * Managed Grafana workspaces no longer support Grafana Enterprise free trials.</p>
+     * 
      */
     inline const Aws::Utils::DateTime& GetFreeTrialExpiration() const{ return m_freeTrialExpiration; }
 
     /**
      * <p>If this workspace is currently in the free trial period for Grafana
-     * Enterprise, this value specifies when that free trial ends.</p>
+     * Enterprise, this value specifies when that free trial ends.</p>  <p>Amazon
+     * Managed Grafana workspaces no longer support Grafana Enterprise free trials.</p>
+     * 
      */
     inline bool FreeTrialExpirationHasBeenSet() const { return m_freeTrialExpirationHasBeenSet; }
 
     /**
      * <p>If this workspace is currently in the free trial period for Grafana
-     * Enterprise, this value specifies when that free trial ends.</p>
+     * Enterprise, this value specifies when that free trial ends.</p>  <p>Amazon
+     * Managed Grafana workspaces no longer support Grafana Enterprise free trials.</p>
+     * 
      */
     inline void SetFreeTrialExpiration(const Aws::Utils::DateTime& value) { m_freeTrialExpirationHasBeenSet = true; m_freeTrialExpiration = value; }
 
     /**
      * <p>If this workspace is currently in the free trial period for Grafana
-     * Enterprise, this value specifies when that free trial ends.</p>
+     * Enterprise, this value specifies when that free trial ends.</p>  <p>Amazon
+     * Managed Grafana workspaces no longer support Grafana Enterprise free trials.</p>
+     * 
      */
     inline void SetFreeTrialExpiration(Aws::Utils::DateTime&& value) { m_freeTrialExpirationHasBeenSet = true; m_freeTrialExpiration = std::move(value); }
 
     /**
      * <p>If this workspace is currently in the free trial period for Grafana
-     * Enterprise, this value specifies when that free trial ends.</p>
+     * Enterprise, this value specifies when that free trial ends.</p>  <p>Amazon
+     * Managed Grafana workspaces no longer support Grafana Enterprise free trials.</p>
+     * 
      */
     inline WorkspaceDescription& WithFreeTrialExpiration(const Aws::Utils::DateTime& value) { SetFreeTrialExpiration(value); return *this;}
 
     /**
      * <p>If this workspace is currently in the free trial period for Grafana
-     * Enterprise, this value specifies when that free trial ends.</p>
+     * Enterprise, this value specifies when that free trial ends.</p>  <p>Amazon
+     * Managed Grafana workspaces no longer support Grafana Enterprise free trials.</p>
+     * 
      */
     inline WorkspaceDescription& WithFreeTrialExpiration(Aws::Utils::DateTime&& value) { SetFreeTrialExpiration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The token that ties this workspace to a Grafana Labs account. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise">Register
+     * with Grafana Labs</a>.</p>
+     */
+    inline const Aws::String& GetGrafanaToken() const{ return m_grafanaToken; }
+
+    /**
+     * <p>The token that ties this workspace to a Grafana Labs account. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise">Register
+     * with Grafana Labs</a>.</p>
+     */
+    inline bool GrafanaTokenHasBeenSet() const { return m_grafanaTokenHasBeenSet; }
+
+    /**
+     * <p>The token that ties this workspace to a Grafana Labs account. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise">Register
+     * with Grafana Labs</a>.</p>
+     */
+    inline void SetGrafanaToken(const Aws::String& value) { m_grafanaTokenHasBeenSet = true; m_grafanaToken = value; }
+
+    /**
+     * <p>The token that ties this workspace to a Grafana Labs account. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise">Register
+     * with Grafana Labs</a>.</p>
+     */
+    inline void SetGrafanaToken(Aws::String&& value) { m_grafanaTokenHasBeenSet = true; m_grafanaToken = std::move(value); }
+
+    /**
+     * <p>The token that ties this workspace to a Grafana Labs account. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise">Register
+     * with Grafana Labs</a>.</p>
+     */
+    inline void SetGrafanaToken(const char* value) { m_grafanaTokenHasBeenSet = true; m_grafanaToken.assign(value); }
+
+    /**
+     * <p>The token that ties this workspace to a Grafana Labs account. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise">Register
+     * with Grafana Labs</a>.</p>
+     */
+    inline WorkspaceDescription& WithGrafanaToken(const Aws::String& value) { SetGrafanaToken(value); return *this;}
+
+    /**
+     * <p>The token that ties this workspace to a Grafana Labs account. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise">Register
+     * with Grafana Labs</a>.</p>
+     */
+    inline WorkspaceDescription& WithGrafanaToken(Aws::String&& value) { SetGrafanaToken(std::move(value)); return *this;}
+
+    /**
+     * <p>The token that ties this workspace to a Grafana Labs account. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise">Register
+     * with Grafana Labs</a>.</p>
+     */
+    inline WorkspaceDescription& WithGrafanaToken(const char* value) { SetGrafanaToken(value); return *this;}
 
 
     /**
@@ -481,75 +562,99 @@ namespace Model
 
 
     /**
-     * <p>If this workspace has a full Grafana Enterprise license, this specifies when
-     * the license ends and will need to be renewed.</p>
+     * <p>If this workspace has a full Grafana Enterprise license purchased through
+     * Amazon Web Services Marketplace, this specifies when the license ends and will
+     * need to be renewed. Purchasing the Enterprise plugins option through Amazon
+     * Managed Grafana does not have an expiration. It is valid until the license is
+     * removed.</p>
      */
     inline const Aws::Utils::DateTime& GetLicenseExpiration() const{ return m_licenseExpiration; }
 
     /**
-     * <p>If this workspace has a full Grafana Enterprise license, this specifies when
-     * the license ends and will need to be renewed.</p>
+     * <p>If this workspace has a full Grafana Enterprise license purchased through
+     * Amazon Web Services Marketplace, this specifies when the license ends and will
+     * need to be renewed. Purchasing the Enterprise plugins option through Amazon
+     * Managed Grafana does not have an expiration. It is valid until the license is
+     * removed.</p>
      */
     inline bool LicenseExpirationHasBeenSet() const { return m_licenseExpirationHasBeenSet; }
 
     /**
-     * <p>If this workspace has a full Grafana Enterprise license, this specifies when
-     * the license ends and will need to be renewed.</p>
+     * <p>If this workspace has a full Grafana Enterprise license purchased through
+     * Amazon Web Services Marketplace, this specifies when the license ends and will
+     * need to be renewed. Purchasing the Enterprise plugins option through Amazon
+     * Managed Grafana does not have an expiration. It is valid until the license is
+     * removed.</p>
      */
     inline void SetLicenseExpiration(const Aws::Utils::DateTime& value) { m_licenseExpirationHasBeenSet = true; m_licenseExpiration = value; }
 
     /**
-     * <p>If this workspace has a full Grafana Enterprise license, this specifies when
-     * the license ends and will need to be renewed.</p>
+     * <p>If this workspace has a full Grafana Enterprise license purchased through
+     * Amazon Web Services Marketplace, this specifies when the license ends and will
+     * need to be renewed. Purchasing the Enterprise plugins option through Amazon
+     * Managed Grafana does not have an expiration. It is valid until the license is
+     * removed.</p>
      */
     inline void SetLicenseExpiration(Aws::Utils::DateTime&& value) { m_licenseExpirationHasBeenSet = true; m_licenseExpiration = std::move(value); }
 
     /**
-     * <p>If this workspace has a full Grafana Enterprise license, this specifies when
-     * the license ends and will need to be renewed.</p>
+     * <p>If this workspace has a full Grafana Enterprise license purchased through
+     * Amazon Web Services Marketplace, this specifies when the license ends and will
+     * need to be renewed. Purchasing the Enterprise plugins option through Amazon
+     * Managed Grafana does not have an expiration. It is valid until the license is
+     * removed.</p>
      */
     inline WorkspaceDescription& WithLicenseExpiration(const Aws::Utils::DateTime& value) { SetLicenseExpiration(value); return *this;}
 
     /**
-     * <p>If this workspace has a full Grafana Enterprise license, this specifies when
-     * the license ends and will need to be renewed.</p>
+     * <p>If this workspace has a full Grafana Enterprise license purchased through
+     * Amazon Web Services Marketplace, this specifies when the license ends and will
+     * need to be renewed. Purchasing the Enterprise plugins option through Amazon
+     * Managed Grafana does not have an expiration. It is valid until the license is
+     * removed.</p>
      */
     inline WorkspaceDescription& WithLicenseExpiration(Aws::Utils::DateTime&& value) { SetLicenseExpiration(std::move(value)); return *this;}
 
 
     /**
-     * <p>Specifies whether this workspace has a full Grafana Enterprise license or a
-     * free trial license.</p>
+     * <p>Specifies whether this workspace has a full Grafana Enterprise license.</p>
+     *  <p>Amazon Managed Grafana workspaces no longer support Grafana Enterprise
+     * free trials.</p> 
      */
     inline const LicenseType& GetLicenseType() const{ return m_licenseType; }
 
     /**
-     * <p>Specifies whether this workspace has a full Grafana Enterprise license or a
-     * free trial license.</p>
+     * <p>Specifies whether this workspace has a full Grafana Enterprise license.</p>
+     *  <p>Amazon Managed Grafana workspaces no longer support Grafana Enterprise
+     * free trials.</p> 
      */
     inline bool LicenseTypeHasBeenSet() const { return m_licenseTypeHasBeenSet; }
 
     /**
-     * <p>Specifies whether this workspace has a full Grafana Enterprise license or a
-     * free trial license.</p>
+     * <p>Specifies whether this workspace has a full Grafana Enterprise license.</p>
+     *  <p>Amazon Managed Grafana workspaces no longer support Grafana Enterprise
+     * free trials.</p> 
      */
     inline void SetLicenseType(const LicenseType& value) { m_licenseTypeHasBeenSet = true; m_licenseType = value; }
 
     /**
-     * <p>Specifies whether this workspace has a full Grafana Enterprise license or a
-     * free trial license.</p>
+     * <p>Specifies whether this workspace has a full Grafana Enterprise license.</p>
+     *  <p>Amazon Managed Grafana workspaces no longer support Grafana Enterprise
+     * free trials.</p> 
      */
     inline void SetLicenseType(LicenseType&& value) { m_licenseTypeHasBeenSet = true; m_licenseType = std::move(value); }
 
     /**
-     * <p>Specifies whether this workspace has a full Grafana Enterprise license or a
-     * free trial license.</p>
+     * <p>Specifies whether this workspace has a full Grafana Enterprise license.</p>
+     *  <p>Amazon Managed Grafana workspaces no longer support Grafana Enterprise
+     * free trials.</p> 
      */
     inline WorkspaceDescription& WithLicenseType(const LicenseType& value) { SetLicenseType(value); return *this;}
 
     /**
-     * <p>Specifies whether this workspace has a full Grafana Enterprise license or a
-     * free trial license.</p>
+     * <p>Specifies whether this workspace has a full Grafana Enterprise license.</p>
+     *  <p>Amazon Managed Grafana workspaces no longer support Grafana Enterprise
+     * free trials.</p> 
      */
     inline WorkspaceDescription& WithLicenseType(LicenseType&& value) { SetLicenseType(std::move(value)); return *this;}
 
@@ -1216,6 +1321,9 @@ namespace Model
 
     Aws::Utils::DateTime m_freeTrialExpiration;
     bool m_freeTrialExpirationHasBeenSet = false;
+
+    Aws::String m_grafanaToken;
+    bool m_grafanaTokenHasBeenSet = false;
 
     Aws::String m_grafanaVersion;
     bool m_grafanaVersionHasBeenSet = false;

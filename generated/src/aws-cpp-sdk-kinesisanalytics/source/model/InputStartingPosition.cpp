@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InputStartingPosition::NOT_SET:
+            return {};
           case InputStartingPosition::NOW:
             return "NOW";
           case InputStartingPosition::TRIM_HORIZON:

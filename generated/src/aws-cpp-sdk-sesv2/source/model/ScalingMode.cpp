@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ScalingMode::NOT_SET:
+            return {};
           case ScalingMode::STANDARD:
             return "STANDARD";
           case ScalingMode::MANAGED:

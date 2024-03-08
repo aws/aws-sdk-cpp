@@ -133,42 +133,50 @@ namespace Model
 
 
     /**
-     * <p>The data for which a MAC is under generation.</p>
+     * <p>The data for which a MAC is under generation. This value must be
+     * hexBinary.</p>
      */
     inline const Aws::String& GetMessageData() const{ return m_messageData; }
 
     /**
-     * <p>The data for which a MAC is under generation.</p>
+     * <p>The data for which a MAC is under generation. This value must be
+     * hexBinary.</p>
      */
     inline bool MessageDataHasBeenSet() const { return m_messageDataHasBeenSet; }
 
     /**
-     * <p>The data for which a MAC is under generation.</p>
+     * <p>The data for which a MAC is under generation. This value must be
+     * hexBinary.</p>
      */
     inline void SetMessageData(const Aws::String& value) { m_messageDataHasBeenSet = true; m_messageData = value; }
 
     /**
-     * <p>The data for which a MAC is under generation.</p>
+     * <p>The data for which a MAC is under generation. This value must be
+     * hexBinary.</p>
      */
     inline void SetMessageData(Aws::String&& value) { m_messageDataHasBeenSet = true; m_messageData = std::move(value); }
 
     /**
-     * <p>The data for which a MAC is under generation.</p>
+     * <p>The data for which a MAC is under generation. This value must be
+     * hexBinary.</p>
      */
     inline void SetMessageData(const char* value) { m_messageDataHasBeenSet = true; m_messageData.assign(value); }
 
     /**
-     * <p>The data for which a MAC is under generation.</p>
+     * <p>The data for which a MAC is under generation. This value must be
+     * hexBinary.</p>
      */
     inline GenerateMacRequest& WithMessageData(const Aws::String& value) { SetMessageData(value); return *this;}
 
     /**
-     * <p>The data for which a MAC is under generation.</p>
+     * <p>The data for which a MAC is under generation. This value must be
+     * hexBinary.</p>
      */
     inline GenerateMacRequest& WithMessageData(Aws::String&& value) { SetMessageData(std::move(value)); return *this;}
 
     /**
-     * <p>The data for which a MAC is under generation.</p>
+     * <p>The data for which a MAC is under generation. This value must be
+     * hexBinary.</p>
      */
     inline GenerateMacRequest& WithMessageData(const char* value) { SetMessageData(value); return *this;}
 

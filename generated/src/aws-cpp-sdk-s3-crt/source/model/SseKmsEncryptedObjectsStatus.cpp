@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SseKmsEncryptedObjectsStatus::NOT_SET:
+            return {};
           case SseKmsEncryptedObjectsStatus::Enabled:
             return "Enabled";
           case SseKmsEncryptedObjectsStatus::Disabled:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ThresholdType::NOT_SET:
+            return {};
           case ThresholdType::PERCENTAGE:
             return "PERCENTAGE";
           case ThresholdType::ABSOLUTE_VALUE:

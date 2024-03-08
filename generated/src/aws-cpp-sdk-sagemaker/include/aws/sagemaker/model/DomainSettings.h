@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/model/RStudioServerProDomainSettings.h>
 #include <aws/sagemaker/model/ExecutionRoleIdentityConfig.h>
+#include <aws/sagemaker/model/DockerSettings.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -191,6 +192,37 @@ namespace Model
      */
     inline DomainSettings& WithExecutionRoleIdentityConfig(ExecutionRoleIdentityConfig&& value) { SetExecutionRoleIdentityConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A collection of settings that configure the domain's Docker interaction.</p>
+     */
+    inline const DockerSettings& GetDockerSettings() const{ return m_dockerSettings; }
+
+    /**
+     * <p>A collection of settings that configure the domain's Docker interaction.</p>
+     */
+    inline bool DockerSettingsHasBeenSet() const { return m_dockerSettingsHasBeenSet; }
+
+    /**
+     * <p>A collection of settings that configure the domain's Docker interaction.</p>
+     */
+    inline void SetDockerSettings(const DockerSettings& value) { m_dockerSettingsHasBeenSet = true; m_dockerSettings = value; }
+
+    /**
+     * <p>A collection of settings that configure the domain's Docker interaction.</p>
+     */
+    inline void SetDockerSettings(DockerSettings&& value) { m_dockerSettingsHasBeenSet = true; m_dockerSettings = std::move(value); }
+
+    /**
+     * <p>A collection of settings that configure the domain's Docker interaction.</p>
+     */
+    inline DomainSettings& WithDockerSettings(const DockerSettings& value) { SetDockerSettings(value); return *this;}
+
+    /**
+     * <p>A collection of settings that configure the domain's Docker interaction.</p>
+     */
+    inline DomainSettings& WithDockerSettings(DockerSettings&& value) { SetDockerSettings(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<Aws::String> m_securityGroupIds;
@@ -201,6 +233,9 @@ namespace Model
 
     ExecutionRoleIdentityConfig m_executionRoleIdentityConfig;
     bool m_executionRoleIdentityConfigHasBeenSet = false;
+
+    DockerSettings m_dockerSettings;
+    bool m_dockerSettingsHasBeenSet = false;
   };
 
 } // namespace Model

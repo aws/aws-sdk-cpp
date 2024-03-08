@@ -21,14 +21,18 @@ namespace Model
 Parameter::Parameter() : 
     m_descriptionHasBeenSet(false),
     m_required(false),
-    m_requiredHasBeenSet(false)
+    m_requiredHasBeenSet(false),
+    m_dynamic(false),
+    m_dynamicHasBeenSet(false)
 {
 }
 
 Parameter::Parameter(JsonView jsonValue) : 
     m_descriptionHasBeenSet(false),
     m_required(false),
-    m_requiredHasBeenSet(false)
+    m_requiredHasBeenSet(false),
+    m_dynamic(false),
+    m_dynamicHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -49,6 +53,13 @@ Parameter& Parameter::operator =(JsonView jsonValue)
     m_requiredHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Dynamic"))
+  {
+    m_dynamic = jsonValue.GetBool("Dynamic");
+
+    m_dynamicHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -65,6 +76,12 @@ JsonValue Parameter::Jsonize() const
   if(m_requiredHasBeenSet)
   {
    payload.WithBool("Required", m_required);
+
+  }
+
+  if(m_dynamicHasBeenSet)
+  {
+   payload.WithBool("Dynamic", m_dynamic);
 
   }
 

@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Status::NOT_SET:
+            return {};
           case Status::ENABLING:
             return "ENABLING";
           case Status::ENABLED:

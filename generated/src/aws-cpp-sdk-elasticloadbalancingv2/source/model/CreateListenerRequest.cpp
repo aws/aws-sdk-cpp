@@ -20,7 +20,8 @@ CreateListenerRequest::CreateListenerRequest() :
     m_certificatesHasBeenSet(false),
     m_defaultActionsHasBeenSet(false),
     m_alpnPolicyHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_mutualAuthenticationHasBeenSet(false)
 {
 }
 
@@ -87,6 +88,11 @@ Aws::String CreateListenerRequest::SerializePayload() const
       item.OutputToStream(ss, "Tags.member.", tagsCount, "");
       tagsCount++;
     }
+  }
+
+  if(m_mutualAuthenticationHasBeenSet)
+  {
+    m_mutualAuthentication.OutputToStream(ss, "MutualAuthentication");
   }
 
   ss << "Version=2015-12-01";

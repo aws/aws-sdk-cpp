@@ -23,7 +23,8 @@ NetworkInterface::NetworkInterface() :
     m_type(NetworkInterfaceType::NOT_SET),
     m_typeHasBeenSet(false),
     m_canInterfaceHasBeenSet(false),
-    m_obdInterfaceHasBeenSet(false)
+    m_obdInterfaceHasBeenSet(false),
+    m_vehicleMiddlewareHasBeenSet(false)
 {
 }
 
@@ -32,7 +33,8 @@ NetworkInterface::NetworkInterface(JsonView jsonValue) :
     m_type(NetworkInterfaceType::NOT_SET),
     m_typeHasBeenSet(false),
     m_canInterfaceHasBeenSet(false),
-    m_obdInterfaceHasBeenSet(false)
+    m_obdInterfaceHasBeenSet(false),
+    m_vehicleMiddlewareHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -67,6 +69,13 @@ NetworkInterface& NetworkInterface::operator =(JsonView jsonValue)
     m_obdInterfaceHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("vehicleMiddleware"))
+  {
+    m_vehicleMiddleware = jsonValue.GetObject("vehicleMiddleware");
+
+    m_vehicleMiddlewareHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -94,6 +103,12 @@ JsonValue NetworkInterface::Jsonize() const
   if(m_obdInterfaceHasBeenSet)
   {
    payload.WithObject("obdInterface", m_obdInterface.Jsonize());
+
+  }
+
+  if(m_vehicleMiddlewareHasBeenSet)
+  {
+   payload.WithObject("vehicleMiddleware", m_vehicleMiddleware.Jsonize());
 
   }
 

@@ -16,7 +16,8 @@ DescribeProjectsRequest::DescribeProjectsRequest() :
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
-    m_projectNamesHasBeenSet(false)
+    m_projectNamesHasBeenSet(false),
+    m_featuresHasBeenSet(false)
 {
 }
 
@@ -44,6 +45,17 @@ Aws::String DescribeProjectsRequest::SerializePayload() const
      projectNamesJsonList[projectNamesIndex].AsString(m_projectNames[projectNamesIndex]);
    }
    payload.WithArray("ProjectNames", std::move(projectNamesJsonList));
+
+  }
+
+  if(m_featuresHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> featuresJsonList(m_features.size());
+   for(unsigned featuresIndex = 0; featuresIndex < featuresJsonList.GetLength(); ++featuresIndex)
+   {
+     featuresJsonList[featuresIndex].AsString(CustomizationFeatureMapper::GetNameForCustomizationFeature(m_features[featuresIndex]));
+   }
+   payload.WithArray("Features", std::move(featuresJsonList));
 
   }
 

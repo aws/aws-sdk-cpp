@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InventoryAttributeDataType::NOT_SET:
+            return {};
           case InventoryAttributeDataType::string:
             return "string";
           case InventoryAttributeDataType::number:

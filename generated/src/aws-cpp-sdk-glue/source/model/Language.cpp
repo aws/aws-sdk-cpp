@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Language::NOT_SET:
+            return {};
           case Language::PYTHON:
             return "PYTHON";
           case Language::SCALA:

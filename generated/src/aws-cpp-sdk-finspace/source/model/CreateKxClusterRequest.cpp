@@ -19,6 +19,7 @@ CreateKxClusterRequest::CreateKxClusterRequest() :
     m_clusterNameHasBeenSet(false),
     m_clusterType(KxClusterType::NOT_SET),
     m_clusterTypeHasBeenSet(false),
+    m_tickerplantLogConfigurationHasBeenSet(false),
     m_databasesHasBeenSet(false),
     m_cacheStorageConfigurationsHasBeenSet(false),
     m_autoScalingConfigurationHasBeenSet(false),
@@ -34,7 +35,8 @@ CreateKxClusterRequest::CreateKxClusterRequest() :
     m_azMode(KxAzMode::NOT_SET),
     m_azModeHasBeenSet(false),
     m_availabilityZoneIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_scalingGroupConfigurationHasBeenSet(false)
 {
 }
 
@@ -57,6 +59,12 @@ Aws::String CreateKxClusterRequest::SerializePayload() const
   if(m_clusterTypeHasBeenSet)
   {
    payload.WithString("clusterType", KxClusterTypeMapper::GetNameForKxClusterType(m_clusterType));
+  }
+
+  if(m_tickerplantLogConfigurationHasBeenSet)
+  {
+   payload.WithObject("tickerplantLogConfiguration", m_tickerplantLogConfiguration.Jsonize());
+
   }
 
   if(m_databasesHasBeenSet)
@@ -165,6 +173,12 @@ Aws::String CreateKxClusterRequest::SerializePayload() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_scalingGroupConfigurationHasBeenSet)
+  {
+   payload.WithObject("scalingGroupConfiguration", m_scalingGroupConfiguration.Jsonize());
 
   }
 

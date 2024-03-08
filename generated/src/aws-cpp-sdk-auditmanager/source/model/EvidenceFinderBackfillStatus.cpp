@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EvidenceFinderBackfillStatus::NOT_SET:
+            return {};
           case EvidenceFinderBackfillStatus::NOT_STARTED:
             return "NOT_STARTED";
           case EvidenceFinderBackfillStatus::IN_PROGRESS:

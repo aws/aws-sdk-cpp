@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DASHPlaybackMode::NOT_SET:
+            return {};
           case DASHPlaybackMode::LIVE:
             return "LIVE";
           case DASHPlaybackMode::LIVE_REPLAY:

@@ -89,6 +89,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OrderStatus::NOT_SET:
+            return {};
           case OrderStatus::RECEIVED:
             return "RECEIVED";
           case OrderStatus::PENDING:

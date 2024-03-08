@@ -527,91 +527,132 @@ namespace Model
 
 
     /**
-     * <p>The price protection threshold for Spot Instance. This is the maximum you’ll
-     * pay for an Spot Instance, expressed as a percentage above the least expensive
-     * current generation M, C, or R instance type with your specified attributes. When
-     * Amazon EC2 selects instance types with your attributes, it excludes instance
-     * types priced above your threshold.</p> <p>The parameter accepts an integer,
-     * which Amazon EC2 interprets as a percentage.</p> <p>To turn off price
-     * protection, specify a high value, such as <code>999999</code>.</p> <p>This
+     * <p>[Price protection] The price protection threshold for Spot Instances, as a
+     * percentage higher than an identified Spot price. The identified Spot price is
+     * the Spot price of the lowest priced current generation C, M, or R instance type
+     * with your specified attributes. If no current generation C, M, or R instance
+     * type matches your attributes, then the identified Spot price is from the lowest
+     * priced current generation instance types, and failing that, from the lowest
+     * priced previous generation instance types that match your attributes. When
+     * Amazon EC2 selects instance types with your attributes, it will exclude instance
+     * types whose Spot price exceeds your specified threshold.</p> <p>The parameter
+     * accepts an integer, which Amazon EC2 interprets as a percentage.</p> <p>If you
+     * set <code>TargetCapacityUnitType</code> to <code>vcpu</code> or
+     * <code>memory-mib</code>, the price protection threshold is applied based on the
+     * per-vCPU or per-memory price instead of the per-instance price.</p> <p>This
      * parameter is not supported for <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetSpotPlacementScores.html">GetSpotPlacementScores</a>
      * and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceTypesFromInstanceRequirements.html">GetInstanceTypesFromInstanceRequirements</a>.</p>
-     *  <p>If you set <code>TargetCapacityUnitType</code> to <code>vcpu</code> or
-     * <code>memory-mib</code>, the price protection threshold is applied based on the
-     * per-vCPU or per-memory price instead of the per-instance price.</p> 
+     *  <p>Only one of <code>SpotMaxPricePercentageOverLowestPrice</code> or
+     * <code>MaxSpotPriceAsPercentageOfOptimalOnDemandPrice</code> can be specified. If
+     * you don't specify either, Amazon EC2 will automatically apply optimal price
+     * protection to consistently select from a wide range of instance types. To
+     * indicate no price protection threshold for Spot Instances, meaning you want to
+     * consider all instance types that match your attributes, include one of these
+     * parameters and specify a high value, such as <code>999999</code>.</p> 
      * <p>Default: <code>100</code> </p>
      */
     inline int GetSpotMaxPricePercentageOverLowestPrice() const{ return m_spotMaxPricePercentageOverLowestPrice; }
 
     /**
-     * <p>The price protection threshold for Spot Instance. This is the maximum you’ll
-     * pay for an Spot Instance, expressed as a percentage above the least expensive
-     * current generation M, C, or R instance type with your specified attributes. When
-     * Amazon EC2 selects instance types with your attributes, it excludes instance
-     * types priced above your threshold.</p> <p>The parameter accepts an integer,
-     * which Amazon EC2 interprets as a percentage.</p> <p>To turn off price
-     * protection, specify a high value, such as <code>999999</code>.</p> <p>This
+     * <p>[Price protection] The price protection threshold for Spot Instances, as a
+     * percentage higher than an identified Spot price. The identified Spot price is
+     * the Spot price of the lowest priced current generation C, M, or R instance type
+     * with your specified attributes. If no current generation C, M, or R instance
+     * type matches your attributes, then the identified Spot price is from the lowest
+     * priced current generation instance types, and failing that, from the lowest
+     * priced previous generation instance types that match your attributes. When
+     * Amazon EC2 selects instance types with your attributes, it will exclude instance
+     * types whose Spot price exceeds your specified threshold.</p> <p>The parameter
+     * accepts an integer, which Amazon EC2 interprets as a percentage.</p> <p>If you
+     * set <code>TargetCapacityUnitType</code> to <code>vcpu</code> or
+     * <code>memory-mib</code>, the price protection threshold is applied based on the
+     * per-vCPU or per-memory price instead of the per-instance price.</p> <p>This
      * parameter is not supported for <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetSpotPlacementScores.html">GetSpotPlacementScores</a>
      * and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceTypesFromInstanceRequirements.html">GetInstanceTypesFromInstanceRequirements</a>.</p>
-     *  <p>If you set <code>TargetCapacityUnitType</code> to <code>vcpu</code> or
-     * <code>memory-mib</code>, the price protection threshold is applied based on the
-     * per-vCPU or per-memory price instead of the per-instance price.</p> 
+     *  <p>Only one of <code>SpotMaxPricePercentageOverLowestPrice</code> or
+     * <code>MaxSpotPriceAsPercentageOfOptimalOnDemandPrice</code> can be specified. If
+     * you don't specify either, Amazon EC2 will automatically apply optimal price
+     * protection to consistently select from a wide range of instance types. To
+     * indicate no price protection threshold for Spot Instances, meaning you want to
+     * consider all instance types that match your attributes, include one of these
+     * parameters and specify a high value, such as <code>999999</code>.</p> 
      * <p>Default: <code>100</code> </p>
      */
     inline bool SpotMaxPricePercentageOverLowestPriceHasBeenSet() const { return m_spotMaxPricePercentageOverLowestPriceHasBeenSet; }
 
     /**
-     * <p>The price protection threshold for Spot Instance. This is the maximum you’ll
-     * pay for an Spot Instance, expressed as a percentage above the least expensive
-     * current generation M, C, or R instance type with your specified attributes. When
-     * Amazon EC2 selects instance types with your attributes, it excludes instance
-     * types priced above your threshold.</p> <p>The parameter accepts an integer,
-     * which Amazon EC2 interprets as a percentage.</p> <p>To turn off price
-     * protection, specify a high value, such as <code>999999</code>.</p> <p>This
+     * <p>[Price protection] The price protection threshold for Spot Instances, as a
+     * percentage higher than an identified Spot price. The identified Spot price is
+     * the Spot price of the lowest priced current generation C, M, or R instance type
+     * with your specified attributes. If no current generation C, M, or R instance
+     * type matches your attributes, then the identified Spot price is from the lowest
+     * priced current generation instance types, and failing that, from the lowest
+     * priced previous generation instance types that match your attributes. When
+     * Amazon EC2 selects instance types with your attributes, it will exclude instance
+     * types whose Spot price exceeds your specified threshold.</p> <p>The parameter
+     * accepts an integer, which Amazon EC2 interprets as a percentage.</p> <p>If you
+     * set <code>TargetCapacityUnitType</code> to <code>vcpu</code> or
+     * <code>memory-mib</code>, the price protection threshold is applied based on the
+     * per-vCPU or per-memory price instead of the per-instance price.</p> <p>This
      * parameter is not supported for <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetSpotPlacementScores.html">GetSpotPlacementScores</a>
      * and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceTypesFromInstanceRequirements.html">GetInstanceTypesFromInstanceRequirements</a>.</p>
-     *  <p>If you set <code>TargetCapacityUnitType</code> to <code>vcpu</code> or
-     * <code>memory-mib</code>, the price protection threshold is applied based on the
-     * per-vCPU or per-memory price instead of the per-instance price.</p> 
+     *  <p>Only one of <code>SpotMaxPricePercentageOverLowestPrice</code> or
+     * <code>MaxSpotPriceAsPercentageOfOptimalOnDemandPrice</code> can be specified. If
+     * you don't specify either, Amazon EC2 will automatically apply optimal price
+     * protection to consistently select from a wide range of instance types. To
+     * indicate no price protection threshold for Spot Instances, meaning you want to
+     * consider all instance types that match your attributes, include one of these
+     * parameters and specify a high value, such as <code>999999</code>.</p> 
      * <p>Default: <code>100</code> </p>
      */
     inline void SetSpotMaxPricePercentageOverLowestPrice(int value) { m_spotMaxPricePercentageOverLowestPriceHasBeenSet = true; m_spotMaxPricePercentageOverLowestPrice = value; }
 
     /**
-     * <p>The price protection threshold for Spot Instance. This is the maximum you’ll
-     * pay for an Spot Instance, expressed as a percentage above the least expensive
-     * current generation M, C, or R instance type with your specified attributes. When
-     * Amazon EC2 selects instance types with your attributes, it excludes instance
-     * types priced above your threshold.</p> <p>The parameter accepts an integer,
-     * which Amazon EC2 interprets as a percentage.</p> <p>To turn off price
-     * protection, specify a high value, such as <code>999999</code>.</p> <p>This
+     * <p>[Price protection] The price protection threshold for Spot Instances, as a
+     * percentage higher than an identified Spot price. The identified Spot price is
+     * the Spot price of the lowest priced current generation C, M, or R instance type
+     * with your specified attributes. If no current generation C, M, or R instance
+     * type matches your attributes, then the identified Spot price is from the lowest
+     * priced current generation instance types, and failing that, from the lowest
+     * priced previous generation instance types that match your attributes. When
+     * Amazon EC2 selects instance types with your attributes, it will exclude instance
+     * types whose Spot price exceeds your specified threshold.</p> <p>The parameter
+     * accepts an integer, which Amazon EC2 interprets as a percentage.</p> <p>If you
+     * set <code>TargetCapacityUnitType</code> to <code>vcpu</code> or
+     * <code>memory-mib</code>, the price protection threshold is applied based on the
+     * per-vCPU or per-memory price instead of the per-instance price.</p> <p>This
      * parameter is not supported for <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetSpotPlacementScores.html">GetSpotPlacementScores</a>
      * and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceTypesFromInstanceRequirements.html">GetInstanceTypesFromInstanceRequirements</a>.</p>
-     *  <p>If you set <code>TargetCapacityUnitType</code> to <code>vcpu</code> or
-     * <code>memory-mib</code>, the price protection threshold is applied based on the
-     * per-vCPU or per-memory price instead of the per-instance price.</p> 
+     *  <p>Only one of <code>SpotMaxPricePercentageOverLowestPrice</code> or
+     * <code>MaxSpotPriceAsPercentageOfOptimalOnDemandPrice</code> can be specified. If
+     * you don't specify either, Amazon EC2 will automatically apply optimal price
+     * protection to consistently select from a wide range of instance types. To
+     * indicate no price protection threshold for Spot Instances, meaning you want to
+     * consider all instance types that match your attributes, include one of these
+     * parameters and specify a high value, such as <code>999999</code>.</p> 
      * <p>Default: <code>100</code> </p>
      */
     inline InstanceRequirementsRequest& WithSpotMaxPricePercentageOverLowestPrice(int value) { SetSpotMaxPricePercentageOverLowestPrice(value); return *this;}
 
 
     /**
-     * <p>The price protection threshold for On-Demand Instances. This is the maximum
-     * you’ll pay for an On-Demand Instance, expressed as a percentage above the least
-     * expensive current generation M, C, or R instance type with your specified
-     * attributes. When Amazon EC2 selects instance types with your attributes, it
-     * excludes instance types priced above your threshold.</p> <p>The parameter
-     * accepts an integer, which Amazon EC2 interprets as a percentage.</p> <p>To turn
-     * off price protection, specify a high value, such as <code>999999</code>.</p>
-     * <p>This parameter is not supported for <a
+     * <p>[Price protection] The price protection threshold for On-Demand Instances, as
+     * a percentage higher than an identified On-Demand price. The identified On-Demand
+     * price is the price of the lowest priced current generation C, M, or R instance
+     * type with your specified attributes. When Amazon EC2 selects instance types with
+     * your attributes, it will exclude instance types whose price exceeds your
+     * specified threshold.</p> <p>The parameter accepts an integer, which Amazon EC2
+     * interprets as a percentage.</p> <p>To indicate no price protection threshold,
+     * specify a high value, such as <code>999999</code>.</p> <p>This parameter is not
+     * supported for <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetSpotPlacementScores.html">GetSpotPlacementScores</a>
      * and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceTypesFromInstanceRequirements.html">GetInstanceTypesFromInstanceRequirements</a>.</p>
@@ -623,14 +664,15 @@ namespace Model
     inline int GetOnDemandMaxPricePercentageOverLowestPrice() const{ return m_onDemandMaxPricePercentageOverLowestPrice; }
 
     /**
-     * <p>The price protection threshold for On-Demand Instances. This is the maximum
-     * you’ll pay for an On-Demand Instance, expressed as a percentage above the least
-     * expensive current generation M, C, or R instance type with your specified
-     * attributes. When Amazon EC2 selects instance types with your attributes, it
-     * excludes instance types priced above your threshold.</p> <p>The parameter
-     * accepts an integer, which Amazon EC2 interprets as a percentage.</p> <p>To turn
-     * off price protection, specify a high value, such as <code>999999</code>.</p>
-     * <p>This parameter is not supported for <a
+     * <p>[Price protection] The price protection threshold for On-Demand Instances, as
+     * a percentage higher than an identified On-Demand price. The identified On-Demand
+     * price is the price of the lowest priced current generation C, M, or R instance
+     * type with your specified attributes. When Amazon EC2 selects instance types with
+     * your attributes, it will exclude instance types whose price exceeds your
+     * specified threshold.</p> <p>The parameter accepts an integer, which Amazon EC2
+     * interprets as a percentage.</p> <p>To indicate no price protection threshold,
+     * specify a high value, such as <code>999999</code>.</p> <p>This parameter is not
+     * supported for <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetSpotPlacementScores.html">GetSpotPlacementScores</a>
      * and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceTypesFromInstanceRequirements.html">GetInstanceTypesFromInstanceRequirements</a>.</p>
@@ -642,14 +684,15 @@ namespace Model
     inline bool OnDemandMaxPricePercentageOverLowestPriceHasBeenSet() const { return m_onDemandMaxPricePercentageOverLowestPriceHasBeenSet; }
 
     /**
-     * <p>The price protection threshold for On-Demand Instances. This is the maximum
-     * you’ll pay for an On-Demand Instance, expressed as a percentage above the least
-     * expensive current generation M, C, or R instance type with your specified
-     * attributes. When Amazon EC2 selects instance types with your attributes, it
-     * excludes instance types priced above your threshold.</p> <p>The parameter
-     * accepts an integer, which Amazon EC2 interprets as a percentage.</p> <p>To turn
-     * off price protection, specify a high value, such as <code>999999</code>.</p>
-     * <p>This parameter is not supported for <a
+     * <p>[Price protection] The price protection threshold for On-Demand Instances, as
+     * a percentage higher than an identified On-Demand price. The identified On-Demand
+     * price is the price of the lowest priced current generation C, M, or R instance
+     * type with your specified attributes. When Amazon EC2 selects instance types with
+     * your attributes, it will exclude instance types whose price exceeds your
+     * specified threshold.</p> <p>The parameter accepts an integer, which Amazon EC2
+     * interprets as a percentage.</p> <p>To indicate no price protection threshold,
+     * specify a high value, such as <code>999999</code>.</p> <p>This parameter is not
+     * supported for <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetSpotPlacementScores.html">GetSpotPlacementScores</a>
      * and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceTypesFromInstanceRequirements.html">GetInstanceTypesFromInstanceRequirements</a>.</p>
@@ -661,14 +704,15 @@ namespace Model
     inline void SetOnDemandMaxPricePercentageOverLowestPrice(int value) { m_onDemandMaxPricePercentageOverLowestPriceHasBeenSet = true; m_onDemandMaxPricePercentageOverLowestPrice = value; }
 
     /**
-     * <p>The price protection threshold for On-Demand Instances. This is the maximum
-     * you’ll pay for an On-Demand Instance, expressed as a percentage above the least
-     * expensive current generation M, C, or R instance type with your specified
-     * attributes. When Amazon EC2 selects instance types with your attributes, it
-     * excludes instance types priced above your threshold.</p> <p>The parameter
-     * accepts an integer, which Amazon EC2 interprets as a percentage.</p> <p>To turn
-     * off price protection, specify a high value, such as <code>999999</code>.</p>
-     * <p>This parameter is not supported for <a
+     * <p>[Price protection] The price protection threshold for On-Demand Instances, as
+     * a percentage higher than an identified On-Demand price. The identified On-Demand
+     * price is the price of the lowest priced current generation C, M, or R instance
+     * type with your specified attributes. When Amazon EC2 selects instance types with
+     * your attributes, it will exclude instance types whose price exceeds your
+     * specified threshold.</p> <p>The parameter accepts an integer, which Amazon EC2
+     * interprets as a percentage.</p> <p>To indicate no price protection threshold,
+     * specify a high value, such as <code>999999</code>.</p> <p>This parameter is not
+     * supported for <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetSpotPlacementScores.html">GetSpotPlacementScores</a>
      * and <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetInstanceTypesFromInstanceRequirements.html">GetInstanceTypesFromInstanceRequirements</a>.</p>
@@ -1260,226 +1304,258 @@ namespace Model
 
     /**
      * <p>Indicates whether instance types must have accelerators by specific
-     * manufacturers.</p> <ul> <li> <p>For instance types with NVIDIA devices, specify
-     * <code>nvidia</code>.</p> </li> <li> <p>For instance types with AMD devices,
-     * specify <code>amd</code>.</p> </li> <li> <p>For instance types with Amazon Web
-     * Services devices, specify <code>amazon-web-services</code>.</p> </li> <li>
-     * <p>For instance types with Xilinx devices, specify <code>xilinx</code>.</p>
-     * </li> </ul> <p>Default: Any manufacturer</p>
+     * manufacturers.</p> <ul> <li> <p>For instance types with Amazon Web Services
+     * devices, specify <code>amazon-web-services</code>.</p> </li> <li> <p>For
+     * instance types with AMD devices, specify <code>amd</code>.</p> </li> <li> <p>For
+     * instance types with Habana devices, specify <code>habana</code>.</p> </li> <li>
+     * <p>For instance types with NVIDIA devices, specify <code>nvidia</code>.</p>
+     * </li> <li> <p>For instance types with Xilinx devices, specify
+     * <code>xilinx</code>.</p> </li> </ul> <p>Default: Any manufacturer</p>
      */
     inline const Aws::Vector<AcceleratorManufacturer>& GetAcceleratorManufacturers() const{ return m_acceleratorManufacturers; }
 
     /**
      * <p>Indicates whether instance types must have accelerators by specific
-     * manufacturers.</p> <ul> <li> <p>For instance types with NVIDIA devices, specify
-     * <code>nvidia</code>.</p> </li> <li> <p>For instance types with AMD devices,
-     * specify <code>amd</code>.</p> </li> <li> <p>For instance types with Amazon Web
-     * Services devices, specify <code>amazon-web-services</code>.</p> </li> <li>
-     * <p>For instance types with Xilinx devices, specify <code>xilinx</code>.</p>
-     * </li> </ul> <p>Default: Any manufacturer</p>
+     * manufacturers.</p> <ul> <li> <p>For instance types with Amazon Web Services
+     * devices, specify <code>amazon-web-services</code>.</p> </li> <li> <p>For
+     * instance types with AMD devices, specify <code>amd</code>.</p> </li> <li> <p>For
+     * instance types with Habana devices, specify <code>habana</code>.</p> </li> <li>
+     * <p>For instance types with NVIDIA devices, specify <code>nvidia</code>.</p>
+     * </li> <li> <p>For instance types with Xilinx devices, specify
+     * <code>xilinx</code>.</p> </li> </ul> <p>Default: Any manufacturer</p>
      */
     inline bool AcceleratorManufacturersHasBeenSet() const { return m_acceleratorManufacturersHasBeenSet; }
 
     /**
      * <p>Indicates whether instance types must have accelerators by specific
-     * manufacturers.</p> <ul> <li> <p>For instance types with NVIDIA devices, specify
-     * <code>nvidia</code>.</p> </li> <li> <p>For instance types with AMD devices,
-     * specify <code>amd</code>.</p> </li> <li> <p>For instance types with Amazon Web
-     * Services devices, specify <code>amazon-web-services</code>.</p> </li> <li>
-     * <p>For instance types with Xilinx devices, specify <code>xilinx</code>.</p>
-     * </li> </ul> <p>Default: Any manufacturer</p>
+     * manufacturers.</p> <ul> <li> <p>For instance types with Amazon Web Services
+     * devices, specify <code>amazon-web-services</code>.</p> </li> <li> <p>For
+     * instance types with AMD devices, specify <code>amd</code>.</p> </li> <li> <p>For
+     * instance types with Habana devices, specify <code>habana</code>.</p> </li> <li>
+     * <p>For instance types with NVIDIA devices, specify <code>nvidia</code>.</p>
+     * </li> <li> <p>For instance types with Xilinx devices, specify
+     * <code>xilinx</code>.</p> </li> </ul> <p>Default: Any manufacturer</p>
      */
     inline void SetAcceleratorManufacturers(const Aws::Vector<AcceleratorManufacturer>& value) { m_acceleratorManufacturersHasBeenSet = true; m_acceleratorManufacturers = value; }
 
     /**
      * <p>Indicates whether instance types must have accelerators by specific
-     * manufacturers.</p> <ul> <li> <p>For instance types with NVIDIA devices, specify
-     * <code>nvidia</code>.</p> </li> <li> <p>For instance types with AMD devices,
-     * specify <code>amd</code>.</p> </li> <li> <p>For instance types with Amazon Web
-     * Services devices, specify <code>amazon-web-services</code>.</p> </li> <li>
-     * <p>For instance types with Xilinx devices, specify <code>xilinx</code>.</p>
-     * </li> </ul> <p>Default: Any manufacturer</p>
+     * manufacturers.</p> <ul> <li> <p>For instance types with Amazon Web Services
+     * devices, specify <code>amazon-web-services</code>.</p> </li> <li> <p>For
+     * instance types with AMD devices, specify <code>amd</code>.</p> </li> <li> <p>For
+     * instance types with Habana devices, specify <code>habana</code>.</p> </li> <li>
+     * <p>For instance types with NVIDIA devices, specify <code>nvidia</code>.</p>
+     * </li> <li> <p>For instance types with Xilinx devices, specify
+     * <code>xilinx</code>.</p> </li> </ul> <p>Default: Any manufacturer</p>
      */
     inline void SetAcceleratorManufacturers(Aws::Vector<AcceleratorManufacturer>&& value) { m_acceleratorManufacturersHasBeenSet = true; m_acceleratorManufacturers = std::move(value); }
 
     /**
      * <p>Indicates whether instance types must have accelerators by specific
-     * manufacturers.</p> <ul> <li> <p>For instance types with NVIDIA devices, specify
-     * <code>nvidia</code>.</p> </li> <li> <p>For instance types with AMD devices,
-     * specify <code>amd</code>.</p> </li> <li> <p>For instance types with Amazon Web
-     * Services devices, specify <code>amazon-web-services</code>.</p> </li> <li>
-     * <p>For instance types with Xilinx devices, specify <code>xilinx</code>.</p>
-     * </li> </ul> <p>Default: Any manufacturer</p>
+     * manufacturers.</p> <ul> <li> <p>For instance types with Amazon Web Services
+     * devices, specify <code>amazon-web-services</code>.</p> </li> <li> <p>For
+     * instance types with AMD devices, specify <code>amd</code>.</p> </li> <li> <p>For
+     * instance types with Habana devices, specify <code>habana</code>.</p> </li> <li>
+     * <p>For instance types with NVIDIA devices, specify <code>nvidia</code>.</p>
+     * </li> <li> <p>For instance types with Xilinx devices, specify
+     * <code>xilinx</code>.</p> </li> </ul> <p>Default: Any manufacturer</p>
      */
     inline InstanceRequirementsRequest& WithAcceleratorManufacturers(const Aws::Vector<AcceleratorManufacturer>& value) { SetAcceleratorManufacturers(value); return *this;}
 
     /**
      * <p>Indicates whether instance types must have accelerators by specific
-     * manufacturers.</p> <ul> <li> <p>For instance types with NVIDIA devices, specify
-     * <code>nvidia</code>.</p> </li> <li> <p>For instance types with AMD devices,
-     * specify <code>amd</code>.</p> </li> <li> <p>For instance types with Amazon Web
-     * Services devices, specify <code>amazon-web-services</code>.</p> </li> <li>
-     * <p>For instance types with Xilinx devices, specify <code>xilinx</code>.</p>
-     * </li> </ul> <p>Default: Any manufacturer</p>
+     * manufacturers.</p> <ul> <li> <p>For instance types with Amazon Web Services
+     * devices, specify <code>amazon-web-services</code>.</p> </li> <li> <p>For
+     * instance types with AMD devices, specify <code>amd</code>.</p> </li> <li> <p>For
+     * instance types with Habana devices, specify <code>habana</code>.</p> </li> <li>
+     * <p>For instance types with NVIDIA devices, specify <code>nvidia</code>.</p>
+     * </li> <li> <p>For instance types with Xilinx devices, specify
+     * <code>xilinx</code>.</p> </li> </ul> <p>Default: Any manufacturer</p>
      */
     inline InstanceRequirementsRequest& WithAcceleratorManufacturers(Aws::Vector<AcceleratorManufacturer>&& value) { SetAcceleratorManufacturers(std::move(value)); return *this;}
 
     /**
      * <p>Indicates whether instance types must have accelerators by specific
-     * manufacturers.</p> <ul> <li> <p>For instance types with NVIDIA devices, specify
-     * <code>nvidia</code>.</p> </li> <li> <p>For instance types with AMD devices,
-     * specify <code>amd</code>.</p> </li> <li> <p>For instance types with Amazon Web
-     * Services devices, specify <code>amazon-web-services</code>.</p> </li> <li>
-     * <p>For instance types with Xilinx devices, specify <code>xilinx</code>.</p>
-     * </li> </ul> <p>Default: Any manufacturer</p>
+     * manufacturers.</p> <ul> <li> <p>For instance types with Amazon Web Services
+     * devices, specify <code>amazon-web-services</code>.</p> </li> <li> <p>For
+     * instance types with AMD devices, specify <code>amd</code>.</p> </li> <li> <p>For
+     * instance types with Habana devices, specify <code>habana</code>.</p> </li> <li>
+     * <p>For instance types with NVIDIA devices, specify <code>nvidia</code>.</p>
+     * </li> <li> <p>For instance types with Xilinx devices, specify
+     * <code>xilinx</code>.</p> </li> </ul> <p>Default: Any manufacturer</p>
      */
     inline InstanceRequirementsRequest& AddAcceleratorManufacturers(const AcceleratorManufacturer& value) { m_acceleratorManufacturersHasBeenSet = true; m_acceleratorManufacturers.push_back(value); return *this; }
 
     /**
      * <p>Indicates whether instance types must have accelerators by specific
-     * manufacturers.</p> <ul> <li> <p>For instance types with NVIDIA devices, specify
-     * <code>nvidia</code>.</p> </li> <li> <p>For instance types with AMD devices,
-     * specify <code>amd</code>.</p> </li> <li> <p>For instance types with Amazon Web
-     * Services devices, specify <code>amazon-web-services</code>.</p> </li> <li>
-     * <p>For instance types with Xilinx devices, specify <code>xilinx</code>.</p>
-     * </li> </ul> <p>Default: Any manufacturer</p>
+     * manufacturers.</p> <ul> <li> <p>For instance types with Amazon Web Services
+     * devices, specify <code>amazon-web-services</code>.</p> </li> <li> <p>For
+     * instance types with AMD devices, specify <code>amd</code>.</p> </li> <li> <p>For
+     * instance types with Habana devices, specify <code>habana</code>.</p> </li> <li>
+     * <p>For instance types with NVIDIA devices, specify <code>nvidia</code>.</p>
+     * </li> <li> <p>For instance types with Xilinx devices, specify
+     * <code>xilinx</code>.</p> </li> </ul> <p>Default: Any manufacturer</p>
      */
     inline InstanceRequirementsRequest& AddAcceleratorManufacturers(AcceleratorManufacturer&& value) { m_acceleratorManufacturersHasBeenSet = true; m_acceleratorManufacturers.push_back(std::move(value)); return *this; }
 
 
     /**
      * <p>The accelerators that must be on the instance type.</p> <ul> <li> <p>For
-     * instance types with NVIDIA A100 GPUs, specify <code>a100</code>.</p> </li> <li>
+     * instance types with NVIDIA A10G GPUs, specify <code>a10g</code>.</p> </li> <li>
+     * <p>For instance types with NVIDIA A100 GPUs, specify <code>a100</code>.</p>
+     * </li> <li> <p>For instance types with NVIDIA H100 GPUs, specify
+     * <code>h100</code>.</p> </li> <li> <p>For instance types with Amazon Web Services
+     * Inferentia chips, specify <code>inferentia</code>.</p> </li> <li> <p>For
+     * instance types with NVIDIA GRID K520 GPUs, specify <code>k520</code>.</p> </li>
+     * <li> <p>For instance types with NVIDIA K80 GPUs, specify <code>k80</code>.</p>
+     * </li> <li> <p>For instance types with NVIDIA M60 GPUs, specify
+     * <code>m60</code>.</p> </li> <li> <p>For instance types with AMD Radeon Pro V520
+     * GPUs, specify <code>radeon-pro-v520</code>.</p> </li> <li> <p>For instance types
+     * with NVIDIA T4 GPUs, specify <code>t4</code>.</p> </li> <li> <p>For instance
+     * types with NVIDIA T4G GPUs, specify <code>t4g</code>.</p> </li> <li> <p>For
+     * instance types with Xilinx VU9P FPGAs, specify <code>vu9p</code>.</p> </li> <li>
      * <p>For instance types with NVIDIA V100 GPUs, specify <code>v100</code>.</p>
-     * </li> <li> <p>For instance types with NVIDIA K80 GPUs, specify
-     * <code>k80</code>.</p> </li> <li> <p>For instance types with NVIDIA T4 GPUs,
-     * specify <code>t4</code>.</p> </li> <li> <p>For instance types with NVIDIA M60
-     * GPUs, specify <code>m60</code>.</p> </li> <li> <p>For instance types with AMD
-     * Radeon Pro V520 GPUs, specify <code>radeon-pro-v520</code>.</p> </li> <li>
-     * <p>For instance types with Xilinx VU9P FPGAs, specify <code> vu9p</code>.</p>
-     * </li> <li> <p>For instance types with Amazon Web Services Inferentia chips,
-     * specify <code>inferentia</code>.</p> </li> <li> <p>For instance types with
-     * NVIDIA GRID K520 GPUs, specify <code>k520</code>.</p> </li> </ul> <p>Default:
-     * Any accelerator</p>
+     * </li> </ul> <p>Default: Any accelerator</p>
      */
     inline const Aws::Vector<AcceleratorName>& GetAcceleratorNames() const{ return m_acceleratorNames; }
 
     /**
      * <p>The accelerators that must be on the instance type.</p> <ul> <li> <p>For
-     * instance types with NVIDIA A100 GPUs, specify <code>a100</code>.</p> </li> <li>
+     * instance types with NVIDIA A10G GPUs, specify <code>a10g</code>.</p> </li> <li>
+     * <p>For instance types with NVIDIA A100 GPUs, specify <code>a100</code>.</p>
+     * </li> <li> <p>For instance types with NVIDIA H100 GPUs, specify
+     * <code>h100</code>.</p> </li> <li> <p>For instance types with Amazon Web Services
+     * Inferentia chips, specify <code>inferentia</code>.</p> </li> <li> <p>For
+     * instance types with NVIDIA GRID K520 GPUs, specify <code>k520</code>.</p> </li>
+     * <li> <p>For instance types with NVIDIA K80 GPUs, specify <code>k80</code>.</p>
+     * </li> <li> <p>For instance types with NVIDIA M60 GPUs, specify
+     * <code>m60</code>.</p> </li> <li> <p>For instance types with AMD Radeon Pro V520
+     * GPUs, specify <code>radeon-pro-v520</code>.</p> </li> <li> <p>For instance types
+     * with NVIDIA T4 GPUs, specify <code>t4</code>.</p> </li> <li> <p>For instance
+     * types with NVIDIA T4G GPUs, specify <code>t4g</code>.</p> </li> <li> <p>For
+     * instance types with Xilinx VU9P FPGAs, specify <code>vu9p</code>.</p> </li> <li>
      * <p>For instance types with NVIDIA V100 GPUs, specify <code>v100</code>.</p>
-     * </li> <li> <p>For instance types with NVIDIA K80 GPUs, specify
-     * <code>k80</code>.</p> </li> <li> <p>For instance types with NVIDIA T4 GPUs,
-     * specify <code>t4</code>.</p> </li> <li> <p>For instance types with NVIDIA M60
-     * GPUs, specify <code>m60</code>.</p> </li> <li> <p>For instance types with AMD
-     * Radeon Pro V520 GPUs, specify <code>radeon-pro-v520</code>.</p> </li> <li>
-     * <p>For instance types with Xilinx VU9P FPGAs, specify <code> vu9p</code>.</p>
-     * </li> <li> <p>For instance types with Amazon Web Services Inferentia chips,
-     * specify <code>inferentia</code>.</p> </li> <li> <p>For instance types with
-     * NVIDIA GRID K520 GPUs, specify <code>k520</code>.</p> </li> </ul> <p>Default:
-     * Any accelerator</p>
+     * </li> </ul> <p>Default: Any accelerator</p>
      */
     inline bool AcceleratorNamesHasBeenSet() const { return m_acceleratorNamesHasBeenSet; }
 
     /**
      * <p>The accelerators that must be on the instance type.</p> <ul> <li> <p>For
-     * instance types with NVIDIA A100 GPUs, specify <code>a100</code>.</p> </li> <li>
+     * instance types with NVIDIA A10G GPUs, specify <code>a10g</code>.</p> </li> <li>
+     * <p>For instance types with NVIDIA A100 GPUs, specify <code>a100</code>.</p>
+     * </li> <li> <p>For instance types with NVIDIA H100 GPUs, specify
+     * <code>h100</code>.</p> </li> <li> <p>For instance types with Amazon Web Services
+     * Inferentia chips, specify <code>inferentia</code>.</p> </li> <li> <p>For
+     * instance types with NVIDIA GRID K520 GPUs, specify <code>k520</code>.</p> </li>
+     * <li> <p>For instance types with NVIDIA K80 GPUs, specify <code>k80</code>.</p>
+     * </li> <li> <p>For instance types with NVIDIA M60 GPUs, specify
+     * <code>m60</code>.</p> </li> <li> <p>For instance types with AMD Radeon Pro V520
+     * GPUs, specify <code>radeon-pro-v520</code>.</p> </li> <li> <p>For instance types
+     * with NVIDIA T4 GPUs, specify <code>t4</code>.</p> </li> <li> <p>For instance
+     * types with NVIDIA T4G GPUs, specify <code>t4g</code>.</p> </li> <li> <p>For
+     * instance types with Xilinx VU9P FPGAs, specify <code>vu9p</code>.</p> </li> <li>
      * <p>For instance types with NVIDIA V100 GPUs, specify <code>v100</code>.</p>
-     * </li> <li> <p>For instance types with NVIDIA K80 GPUs, specify
-     * <code>k80</code>.</p> </li> <li> <p>For instance types with NVIDIA T4 GPUs,
-     * specify <code>t4</code>.</p> </li> <li> <p>For instance types with NVIDIA M60
-     * GPUs, specify <code>m60</code>.</p> </li> <li> <p>For instance types with AMD
-     * Radeon Pro V520 GPUs, specify <code>radeon-pro-v520</code>.</p> </li> <li>
-     * <p>For instance types with Xilinx VU9P FPGAs, specify <code> vu9p</code>.</p>
-     * </li> <li> <p>For instance types with Amazon Web Services Inferentia chips,
-     * specify <code>inferentia</code>.</p> </li> <li> <p>For instance types with
-     * NVIDIA GRID K520 GPUs, specify <code>k520</code>.</p> </li> </ul> <p>Default:
-     * Any accelerator</p>
+     * </li> </ul> <p>Default: Any accelerator</p>
      */
     inline void SetAcceleratorNames(const Aws::Vector<AcceleratorName>& value) { m_acceleratorNamesHasBeenSet = true; m_acceleratorNames = value; }
 
     /**
      * <p>The accelerators that must be on the instance type.</p> <ul> <li> <p>For
-     * instance types with NVIDIA A100 GPUs, specify <code>a100</code>.</p> </li> <li>
+     * instance types with NVIDIA A10G GPUs, specify <code>a10g</code>.</p> </li> <li>
+     * <p>For instance types with NVIDIA A100 GPUs, specify <code>a100</code>.</p>
+     * </li> <li> <p>For instance types with NVIDIA H100 GPUs, specify
+     * <code>h100</code>.</p> </li> <li> <p>For instance types with Amazon Web Services
+     * Inferentia chips, specify <code>inferentia</code>.</p> </li> <li> <p>For
+     * instance types with NVIDIA GRID K520 GPUs, specify <code>k520</code>.</p> </li>
+     * <li> <p>For instance types with NVIDIA K80 GPUs, specify <code>k80</code>.</p>
+     * </li> <li> <p>For instance types with NVIDIA M60 GPUs, specify
+     * <code>m60</code>.</p> </li> <li> <p>For instance types with AMD Radeon Pro V520
+     * GPUs, specify <code>radeon-pro-v520</code>.</p> </li> <li> <p>For instance types
+     * with NVIDIA T4 GPUs, specify <code>t4</code>.</p> </li> <li> <p>For instance
+     * types with NVIDIA T4G GPUs, specify <code>t4g</code>.</p> </li> <li> <p>For
+     * instance types with Xilinx VU9P FPGAs, specify <code>vu9p</code>.</p> </li> <li>
      * <p>For instance types with NVIDIA V100 GPUs, specify <code>v100</code>.</p>
-     * </li> <li> <p>For instance types with NVIDIA K80 GPUs, specify
-     * <code>k80</code>.</p> </li> <li> <p>For instance types with NVIDIA T4 GPUs,
-     * specify <code>t4</code>.</p> </li> <li> <p>For instance types with NVIDIA M60
-     * GPUs, specify <code>m60</code>.</p> </li> <li> <p>For instance types with AMD
-     * Radeon Pro V520 GPUs, specify <code>radeon-pro-v520</code>.</p> </li> <li>
-     * <p>For instance types with Xilinx VU9P FPGAs, specify <code> vu9p</code>.</p>
-     * </li> <li> <p>For instance types with Amazon Web Services Inferentia chips,
-     * specify <code>inferentia</code>.</p> </li> <li> <p>For instance types with
-     * NVIDIA GRID K520 GPUs, specify <code>k520</code>.</p> </li> </ul> <p>Default:
-     * Any accelerator</p>
+     * </li> </ul> <p>Default: Any accelerator</p>
      */
     inline void SetAcceleratorNames(Aws::Vector<AcceleratorName>&& value) { m_acceleratorNamesHasBeenSet = true; m_acceleratorNames = std::move(value); }
 
     /**
      * <p>The accelerators that must be on the instance type.</p> <ul> <li> <p>For
-     * instance types with NVIDIA A100 GPUs, specify <code>a100</code>.</p> </li> <li>
+     * instance types with NVIDIA A10G GPUs, specify <code>a10g</code>.</p> </li> <li>
+     * <p>For instance types with NVIDIA A100 GPUs, specify <code>a100</code>.</p>
+     * </li> <li> <p>For instance types with NVIDIA H100 GPUs, specify
+     * <code>h100</code>.</p> </li> <li> <p>For instance types with Amazon Web Services
+     * Inferentia chips, specify <code>inferentia</code>.</p> </li> <li> <p>For
+     * instance types with NVIDIA GRID K520 GPUs, specify <code>k520</code>.</p> </li>
+     * <li> <p>For instance types with NVIDIA K80 GPUs, specify <code>k80</code>.</p>
+     * </li> <li> <p>For instance types with NVIDIA M60 GPUs, specify
+     * <code>m60</code>.</p> </li> <li> <p>For instance types with AMD Radeon Pro V520
+     * GPUs, specify <code>radeon-pro-v520</code>.</p> </li> <li> <p>For instance types
+     * with NVIDIA T4 GPUs, specify <code>t4</code>.</p> </li> <li> <p>For instance
+     * types with NVIDIA T4G GPUs, specify <code>t4g</code>.</p> </li> <li> <p>For
+     * instance types with Xilinx VU9P FPGAs, specify <code>vu9p</code>.</p> </li> <li>
      * <p>For instance types with NVIDIA V100 GPUs, specify <code>v100</code>.</p>
-     * </li> <li> <p>For instance types with NVIDIA K80 GPUs, specify
-     * <code>k80</code>.</p> </li> <li> <p>For instance types with NVIDIA T4 GPUs,
-     * specify <code>t4</code>.</p> </li> <li> <p>For instance types with NVIDIA M60
-     * GPUs, specify <code>m60</code>.</p> </li> <li> <p>For instance types with AMD
-     * Radeon Pro V520 GPUs, specify <code>radeon-pro-v520</code>.</p> </li> <li>
-     * <p>For instance types with Xilinx VU9P FPGAs, specify <code> vu9p</code>.</p>
-     * </li> <li> <p>For instance types with Amazon Web Services Inferentia chips,
-     * specify <code>inferentia</code>.</p> </li> <li> <p>For instance types with
-     * NVIDIA GRID K520 GPUs, specify <code>k520</code>.</p> </li> </ul> <p>Default:
-     * Any accelerator</p>
+     * </li> </ul> <p>Default: Any accelerator</p>
      */
     inline InstanceRequirementsRequest& WithAcceleratorNames(const Aws::Vector<AcceleratorName>& value) { SetAcceleratorNames(value); return *this;}
 
     /**
      * <p>The accelerators that must be on the instance type.</p> <ul> <li> <p>For
-     * instance types with NVIDIA A100 GPUs, specify <code>a100</code>.</p> </li> <li>
+     * instance types with NVIDIA A10G GPUs, specify <code>a10g</code>.</p> </li> <li>
+     * <p>For instance types with NVIDIA A100 GPUs, specify <code>a100</code>.</p>
+     * </li> <li> <p>For instance types with NVIDIA H100 GPUs, specify
+     * <code>h100</code>.</p> </li> <li> <p>For instance types with Amazon Web Services
+     * Inferentia chips, specify <code>inferentia</code>.</p> </li> <li> <p>For
+     * instance types with NVIDIA GRID K520 GPUs, specify <code>k520</code>.</p> </li>
+     * <li> <p>For instance types with NVIDIA K80 GPUs, specify <code>k80</code>.</p>
+     * </li> <li> <p>For instance types with NVIDIA M60 GPUs, specify
+     * <code>m60</code>.</p> </li> <li> <p>For instance types with AMD Radeon Pro V520
+     * GPUs, specify <code>radeon-pro-v520</code>.</p> </li> <li> <p>For instance types
+     * with NVIDIA T4 GPUs, specify <code>t4</code>.</p> </li> <li> <p>For instance
+     * types with NVIDIA T4G GPUs, specify <code>t4g</code>.</p> </li> <li> <p>For
+     * instance types with Xilinx VU9P FPGAs, specify <code>vu9p</code>.</p> </li> <li>
      * <p>For instance types with NVIDIA V100 GPUs, specify <code>v100</code>.</p>
-     * </li> <li> <p>For instance types with NVIDIA K80 GPUs, specify
-     * <code>k80</code>.</p> </li> <li> <p>For instance types with NVIDIA T4 GPUs,
-     * specify <code>t4</code>.</p> </li> <li> <p>For instance types with NVIDIA M60
-     * GPUs, specify <code>m60</code>.</p> </li> <li> <p>For instance types with AMD
-     * Radeon Pro V520 GPUs, specify <code>radeon-pro-v520</code>.</p> </li> <li>
-     * <p>For instance types with Xilinx VU9P FPGAs, specify <code> vu9p</code>.</p>
-     * </li> <li> <p>For instance types with Amazon Web Services Inferentia chips,
-     * specify <code>inferentia</code>.</p> </li> <li> <p>For instance types with
-     * NVIDIA GRID K520 GPUs, specify <code>k520</code>.</p> </li> </ul> <p>Default:
-     * Any accelerator</p>
+     * </li> </ul> <p>Default: Any accelerator</p>
      */
     inline InstanceRequirementsRequest& WithAcceleratorNames(Aws::Vector<AcceleratorName>&& value) { SetAcceleratorNames(std::move(value)); return *this;}
 
     /**
      * <p>The accelerators that must be on the instance type.</p> <ul> <li> <p>For
-     * instance types with NVIDIA A100 GPUs, specify <code>a100</code>.</p> </li> <li>
+     * instance types with NVIDIA A10G GPUs, specify <code>a10g</code>.</p> </li> <li>
+     * <p>For instance types with NVIDIA A100 GPUs, specify <code>a100</code>.</p>
+     * </li> <li> <p>For instance types with NVIDIA H100 GPUs, specify
+     * <code>h100</code>.</p> </li> <li> <p>For instance types with Amazon Web Services
+     * Inferentia chips, specify <code>inferentia</code>.</p> </li> <li> <p>For
+     * instance types with NVIDIA GRID K520 GPUs, specify <code>k520</code>.</p> </li>
+     * <li> <p>For instance types with NVIDIA K80 GPUs, specify <code>k80</code>.</p>
+     * </li> <li> <p>For instance types with NVIDIA M60 GPUs, specify
+     * <code>m60</code>.</p> </li> <li> <p>For instance types with AMD Radeon Pro V520
+     * GPUs, specify <code>radeon-pro-v520</code>.</p> </li> <li> <p>For instance types
+     * with NVIDIA T4 GPUs, specify <code>t4</code>.</p> </li> <li> <p>For instance
+     * types with NVIDIA T4G GPUs, specify <code>t4g</code>.</p> </li> <li> <p>For
+     * instance types with Xilinx VU9P FPGAs, specify <code>vu9p</code>.</p> </li> <li>
      * <p>For instance types with NVIDIA V100 GPUs, specify <code>v100</code>.</p>
-     * </li> <li> <p>For instance types with NVIDIA K80 GPUs, specify
-     * <code>k80</code>.</p> </li> <li> <p>For instance types with NVIDIA T4 GPUs,
-     * specify <code>t4</code>.</p> </li> <li> <p>For instance types with NVIDIA M60
-     * GPUs, specify <code>m60</code>.</p> </li> <li> <p>For instance types with AMD
-     * Radeon Pro V520 GPUs, specify <code>radeon-pro-v520</code>.</p> </li> <li>
-     * <p>For instance types with Xilinx VU9P FPGAs, specify <code> vu9p</code>.</p>
-     * </li> <li> <p>For instance types with Amazon Web Services Inferentia chips,
-     * specify <code>inferentia</code>.</p> </li> <li> <p>For instance types with
-     * NVIDIA GRID K520 GPUs, specify <code>k520</code>.</p> </li> </ul> <p>Default:
-     * Any accelerator</p>
+     * </li> </ul> <p>Default: Any accelerator</p>
      */
     inline InstanceRequirementsRequest& AddAcceleratorNames(const AcceleratorName& value) { m_acceleratorNamesHasBeenSet = true; m_acceleratorNames.push_back(value); return *this; }
 
     /**
      * <p>The accelerators that must be on the instance type.</p> <ul> <li> <p>For
-     * instance types with NVIDIA A100 GPUs, specify <code>a100</code>.</p> </li> <li>
+     * instance types with NVIDIA A10G GPUs, specify <code>a10g</code>.</p> </li> <li>
+     * <p>For instance types with NVIDIA A100 GPUs, specify <code>a100</code>.</p>
+     * </li> <li> <p>For instance types with NVIDIA H100 GPUs, specify
+     * <code>h100</code>.</p> </li> <li> <p>For instance types with Amazon Web Services
+     * Inferentia chips, specify <code>inferentia</code>.</p> </li> <li> <p>For
+     * instance types with NVIDIA GRID K520 GPUs, specify <code>k520</code>.</p> </li>
+     * <li> <p>For instance types with NVIDIA K80 GPUs, specify <code>k80</code>.</p>
+     * </li> <li> <p>For instance types with NVIDIA M60 GPUs, specify
+     * <code>m60</code>.</p> </li> <li> <p>For instance types with AMD Radeon Pro V520
+     * GPUs, specify <code>radeon-pro-v520</code>.</p> </li> <li> <p>For instance types
+     * with NVIDIA T4 GPUs, specify <code>t4</code>.</p> </li> <li> <p>For instance
+     * types with NVIDIA T4G GPUs, specify <code>t4g</code>.</p> </li> <li> <p>For
+     * instance types with Xilinx VU9P FPGAs, specify <code>vu9p</code>.</p> </li> <li>
      * <p>For instance types with NVIDIA V100 GPUs, specify <code>v100</code>.</p>
-     * </li> <li> <p>For instance types with NVIDIA K80 GPUs, specify
-     * <code>k80</code>.</p> </li> <li> <p>For instance types with NVIDIA T4 GPUs,
-     * specify <code>t4</code>.</p> </li> <li> <p>For instance types with NVIDIA M60
-     * GPUs, specify <code>m60</code>.</p> </li> <li> <p>For instance types with AMD
-     * Radeon Pro V520 GPUs, specify <code>radeon-pro-v520</code>.</p> </li> <li>
-     * <p>For instance types with Xilinx VU9P FPGAs, specify <code> vu9p</code>.</p>
-     * </li> <li> <p>For instance types with Amazon Web Services Inferentia chips,
-     * specify <code>inferentia</code>.</p> </li> <li> <p>For instance types with
-     * NVIDIA GRID K520 GPUs, specify <code>k520</code>.</p> </li> </ul> <p>Default:
-     * Any accelerator</p>
+     * </li> </ul> <p>Default: Any accelerator</p>
      */
     inline InstanceRequirementsRequest& AddAcceleratorNames(AcceleratorName&& value) { m_acceleratorNamesHasBeenSet = true; m_acceleratorNames.push_back(std::move(value)); return *this; }
 
@@ -1720,6 +1796,103 @@ namespace Model
      */
     inline InstanceRequirementsRequest& AddAllowedInstanceTypes(const char* value) { m_allowedInstanceTypesHasBeenSet = true; m_allowedInstanceTypes.push_back(value); return *this; }
 
+
+    /**
+     * <p>[Price protection] The price protection threshold for Spot Instances, as a
+     * percentage of an identified On-Demand price. The identified On-Demand price is
+     * the price of the lowest priced current generation C, M, or R instance type with
+     * your specified attributes. If no current generation C, M, or R instance type
+     * matches your attributes, then the identified price is from the lowest priced
+     * current generation instance types, and failing that, from the lowest priced
+     * previous generation instance types that match your attributes. When Amazon EC2
+     * selects instance types with your attributes, it will exclude instance types
+     * whose price exceeds your specified threshold.</p> <p>The parameter accepts an
+     * integer, which Amazon EC2 interprets as a percentage.</p> <p>If you set
+     * <code>DesiredCapacityType</code> to <code>vcpu</code> or
+     * <code>memory-mib</code>, the price protection threshold is based on the per vCPU
+     * or per memory price instead of the per instance price.</p>  <p>Only one of
+     * <code>SpotMaxPricePercentageOverLowestPrice</code> or
+     * <code>MaxSpotPriceAsPercentageOfOptimalOnDemandPrice</code> can be specified. If
+     * you don't specify either, Amazon EC2 will automatically apply optimal price
+     * protection to consistently select from a wide range of instance types. To
+     * indicate no price protection threshold for Spot Instances, meaning you want to
+     * consider all instance types that match your attributes, include one of these
+     * parameters and specify a high value, such as <code>999999</code>.</p> 
+     */
+    inline int GetMaxSpotPriceAsPercentageOfOptimalOnDemandPrice() const{ return m_maxSpotPriceAsPercentageOfOptimalOnDemandPrice; }
+
+    /**
+     * <p>[Price protection] The price protection threshold for Spot Instances, as a
+     * percentage of an identified On-Demand price. The identified On-Demand price is
+     * the price of the lowest priced current generation C, M, or R instance type with
+     * your specified attributes. If no current generation C, M, or R instance type
+     * matches your attributes, then the identified price is from the lowest priced
+     * current generation instance types, and failing that, from the lowest priced
+     * previous generation instance types that match your attributes. When Amazon EC2
+     * selects instance types with your attributes, it will exclude instance types
+     * whose price exceeds your specified threshold.</p> <p>The parameter accepts an
+     * integer, which Amazon EC2 interprets as a percentage.</p> <p>If you set
+     * <code>DesiredCapacityType</code> to <code>vcpu</code> or
+     * <code>memory-mib</code>, the price protection threshold is based on the per vCPU
+     * or per memory price instead of the per instance price.</p>  <p>Only one of
+     * <code>SpotMaxPricePercentageOverLowestPrice</code> or
+     * <code>MaxSpotPriceAsPercentageOfOptimalOnDemandPrice</code> can be specified. If
+     * you don't specify either, Amazon EC2 will automatically apply optimal price
+     * protection to consistently select from a wide range of instance types. To
+     * indicate no price protection threshold for Spot Instances, meaning you want to
+     * consider all instance types that match your attributes, include one of these
+     * parameters and specify a high value, such as <code>999999</code>.</p> 
+     */
+    inline bool MaxSpotPriceAsPercentageOfOptimalOnDemandPriceHasBeenSet() const { return m_maxSpotPriceAsPercentageOfOptimalOnDemandPriceHasBeenSet; }
+
+    /**
+     * <p>[Price protection] The price protection threshold for Spot Instances, as a
+     * percentage of an identified On-Demand price. The identified On-Demand price is
+     * the price of the lowest priced current generation C, M, or R instance type with
+     * your specified attributes. If no current generation C, M, or R instance type
+     * matches your attributes, then the identified price is from the lowest priced
+     * current generation instance types, and failing that, from the lowest priced
+     * previous generation instance types that match your attributes. When Amazon EC2
+     * selects instance types with your attributes, it will exclude instance types
+     * whose price exceeds your specified threshold.</p> <p>The parameter accepts an
+     * integer, which Amazon EC2 interprets as a percentage.</p> <p>If you set
+     * <code>DesiredCapacityType</code> to <code>vcpu</code> or
+     * <code>memory-mib</code>, the price protection threshold is based on the per vCPU
+     * or per memory price instead of the per instance price.</p>  <p>Only one of
+     * <code>SpotMaxPricePercentageOverLowestPrice</code> or
+     * <code>MaxSpotPriceAsPercentageOfOptimalOnDemandPrice</code> can be specified. If
+     * you don't specify either, Amazon EC2 will automatically apply optimal price
+     * protection to consistently select from a wide range of instance types. To
+     * indicate no price protection threshold for Spot Instances, meaning you want to
+     * consider all instance types that match your attributes, include one of these
+     * parameters and specify a high value, such as <code>999999</code>.</p> 
+     */
+    inline void SetMaxSpotPriceAsPercentageOfOptimalOnDemandPrice(int value) { m_maxSpotPriceAsPercentageOfOptimalOnDemandPriceHasBeenSet = true; m_maxSpotPriceAsPercentageOfOptimalOnDemandPrice = value; }
+
+    /**
+     * <p>[Price protection] The price protection threshold for Spot Instances, as a
+     * percentage of an identified On-Demand price. The identified On-Demand price is
+     * the price of the lowest priced current generation C, M, or R instance type with
+     * your specified attributes. If no current generation C, M, or R instance type
+     * matches your attributes, then the identified price is from the lowest priced
+     * current generation instance types, and failing that, from the lowest priced
+     * previous generation instance types that match your attributes. When Amazon EC2
+     * selects instance types with your attributes, it will exclude instance types
+     * whose price exceeds your specified threshold.</p> <p>The parameter accepts an
+     * integer, which Amazon EC2 interprets as a percentage.</p> <p>If you set
+     * <code>DesiredCapacityType</code> to <code>vcpu</code> or
+     * <code>memory-mib</code>, the price protection threshold is based on the per vCPU
+     * or per memory price instead of the per instance price.</p>  <p>Only one of
+     * <code>SpotMaxPricePercentageOverLowestPrice</code> or
+     * <code>MaxSpotPriceAsPercentageOfOptimalOnDemandPrice</code> can be specified. If
+     * you don't specify either, Amazon EC2 will automatically apply optimal price
+     * protection to consistently select from a wide range of instance types. To
+     * indicate no price protection threshold for Spot Instances, meaning you want to
+     * consider all instance types that match your attributes, include one of these
+     * parameters and specify a high value, such as <code>999999</code>.</p> 
+     */
+    inline InstanceRequirementsRequest& WithMaxSpotPriceAsPercentageOfOptimalOnDemandPrice(int value) { SetMaxSpotPriceAsPercentageOfOptimalOnDemandPrice(value); return *this;}
+
   private:
 
     VCpuCountRangeRequest m_vCpuCount;
@@ -1790,6 +1963,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_allowedInstanceTypes;
     bool m_allowedInstanceTypesHasBeenSet = false;
+
+    int m_maxSpotPriceAsPercentageOfOptimalOnDemandPrice;
+    bool m_maxSpotPriceAsPercentageOfOptimalOnDemandPriceHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,7 +29,8 @@ PieChartConfiguration::PieChartConfiguration() :
     m_dataLabelsHasBeenSet(false),
     m_tooltipHasBeenSet(false),
     m_visualPaletteHasBeenSet(false),
-    m_contributionAnalysisDefaultsHasBeenSet(false)
+    m_contributionAnalysisDefaultsHasBeenSet(false),
+    m_interactionsHasBeenSet(false)
 {
 }
 
@@ -44,7 +45,8 @@ PieChartConfiguration::PieChartConfiguration(JsonView jsonValue) :
     m_dataLabelsHasBeenSet(false),
     m_tooltipHasBeenSet(false),
     m_visualPaletteHasBeenSet(false),
-    m_contributionAnalysisDefaultsHasBeenSet(false)
+    m_contributionAnalysisDefaultsHasBeenSet(false),
+    m_interactionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -131,6 +133,13 @@ PieChartConfiguration& PieChartConfiguration::operator =(JsonView jsonValue)
     m_contributionAnalysisDefaultsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Interactions"))
+  {
+    m_interactions = jsonValue.GetObject("Interactions");
+
+    m_interactionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -206,6 +215,12 @@ JsonValue PieChartConfiguration::Jsonize() const
      contributionAnalysisDefaultsJsonList[contributionAnalysisDefaultsIndex].AsObject(m_contributionAnalysisDefaults[contributionAnalysisDefaultsIndex].Jsonize());
    }
    payload.WithArray("ContributionAnalysisDefaults", std::move(contributionAnalysisDefaultsJsonList));
+
+  }
+
+  if(m_interactionsHasBeenSet)
+  {
+   payload.WithObject("Interactions", m_interactions.Jsonize());
 
   }
 

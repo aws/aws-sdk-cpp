@@ -33,6 +33,7 @@
 #include <aws/iot/model/CreateAuthorizerResult.h>
 #include <aws/iot/model/CreateBillingGroupResult.h>
 #include <aws/iot/model/CreateCertificateFromCsrResult.h>
+#include <aws/iot/model/CreateCertificateProviderResult.h>
 #include <aws/iot/model/CreateCustomMetricResult.h>
 #include <aws/iot/model/CreateDimensionResult.h>
 #include <aws/iot/model/CreateDomainConfigurationResult.h>
@@ -63,6 +64,7 @@
 #include <aws/iot/model/DeleteAuthorizerResult.h>
 #include <aws/iot/model/DeleteBillingGroupResult.h>
 #include <aws/iot/model/DeleteCACertificateResult.h>
+#include <aws/iot/model/DeleteCertificateProviderResult.h>
 #include <aws/iot/model/DeleteCustomMetricResult.h>
 #include <aws/iot/model/DeleteDimensionResult.h>
 #include <aws/iot/model/DeleteDomainConfigurationResult.h>
@@ -92,6 +94,7 @@
 #include <aws/iot/model/DescribeBillingGroupResult.h>
 #include <aws/iot/model/DescribeCACertificateResult.h>
 #include <aws/iot/model/DescribeCertificateResult.h>
+#include <aws/iot/model/DescribeCertificateProviderResult.h>
 #include <aws/iot/model/DescribeCustomMetricResult.h>
 #include <aws/iot/model/DescribeDefaultAuthorizerResult.h>
 #include <aws/iot/model/DescribeDetectMitigationActionsTaskResult.h>
@@ -147,6 +150,7 @@
 #include <aws/iot/model/ListAuthorizersResult.h>
 #include <aws/iot/model/ListBillingGroupsResult.h>
 #include <aws/iot/model/ListCACertificatesResult.h>
+#include <aws/iot/model/ListCertificateProvidersResult.h>
 #include <aws/iot/model/ListCertificatesResult.h>
 #include <aws/iot/model/ListCertificatesByCAResult.h>
 #include <aws/iot/model/ListCustomMetricsResult.h>
@@ -217,6 +221,7 @@
 #include <aws/iot/model/UpdateAuditSuppressionResult.h>
 #include <aws/iot/model/UpdateAuthorizerResult.h>
 #include <aws/iot/model/UpdateBillingGroupResult.h>
+#include <aws/iot/model/UpdateCertificateProviderResult.h>
 #include <aws/iot/model/UpdateCustomMetricResult.h>
 #include <aws/iot/model/UpdateDimensionResult.h>
 #include <aws/iot/model/UpdateDomainConfigurationResult.h>
@@ -297,6 +302,7 @@ namespace Aws
       class CreateAuthorizerRequest;
       class CreateBillingGroupRequest;
       class CreateCertificateFromCsrRequest;
+      class CreateCertificateProviderRequest;
       class CreateCustomMetricRequest;
       class CreateDimensionRequest;
       class CreateDomainConfigurationRequest;
@@ -329,6 +335,7 @@ namespace Aws
       class DeleteBillingGroupRequest;
       class DeleteCACertificateRequest;
       class DeleteCertificateRequest;
+      class DeleteCertificateProviderRequest;
       class DeleteCustomMetricRequest;
       class DeleteDimensionRequest;
       class DeleteDomainConfigurationRequest;
@@ -366,6 +373,7 @@ namespace Aws
       class DescribeBillingGroupRequest;
       class DescribeCACertificateRequest;
       class DescribeCertificateRequest;
+      class DescribeCertificateProviderRequest;
       class DescribeCustomMetricRequest;
       class DescribeDefaultAuthorizerRequest;
       class DescribeDetectMitigationActionsTaskRequest;
@@ -424,6 +432,7 @@ namespace Aws
       class ListAuthorizersRequest;
       class ListBillingGroupsRequest;
       class ListCACertificatesRequest;
+      class ListCertificateProvidersRequest;
       class ListCertificatesRequest;
       class ListCertificatesByCARequest;
       class ListCustomMetricsRequest;
@@ -502,6 +511,7 @@ namespace Aws
       class UpdateBillingGroupRequest;
       class UpdateCACertificateRequest;
       class UpdateCertificateRequest;
+      class UpdateCertificateProviderRequest;
       class UpdateCustomMetricRequest;
       class UpdateDimensionRequest;
       class UpdateDomainConfigurationRequest;
@@ -546,6 +556,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreateAuthorizerResult, IoTError> CreateAuthorizerOutcome;
       typedef Aws::Utils::Outcome<CreateBillingGroupResult, IoTError> CreateBillingGroupOutcome;
       typedef Aws::Utils::Outcome<CreateCertificateFromCsrResult, IoTError> CreateCertificateFromCsrOutcome;
+      typedef Aws::Utils::Outcome<CreateCertificateProviderResult, IoTError> CreateCertificateProviderOutcome;
       typedef Aws::Utils::Outcome<CreateCustomMetricResult, IoTError> CreateCustomMetricOutcome;
       typedef Aws::Utils::Outcome<CreateDimensionResult, IoTError> CreateDimensionOutcome;
       typedef Aws::Utils::Outcome<CreateDomainConfigurationResult, IoTError> CreateDomainConfigurationOutcome;
@@ -578,6 +589,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DeleteBillingGroupResult, IoTError> DeleteBillingGroupOutcome;
       typedef Aws::Utils::Outcome<DeleteCACertificateResult, IoTError> DeleteCACertificateOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, IoTError> DeleteCertificateOutcome;
+      typedef Aws::Utils::Outcome<DeleteCertificateProviderResult, IoTError> DeleteCertificateProviderOutcome;
       typedef Aws::Utils::Outcome<DeleteCustomMetricResult, IoTError> DeleteCustomMetricOutcome;
       typedef Aws::Utils::Outcome<DeleteDimensionResult, IoTError> DeleteDimensionOutcome;
       typedef Aws::Utils::Outcome<DeleteDomainConfigurationResult, IoTError> DeleteDomainConfigurationOutcome;
@@ -615,6 +627,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeBillingGroupResult, IoTError> DescribeBillingGroupOutcome;
       typedef Aws::Utils::Outcome<DescribeCACertificateResult, IoTError> DescribeCACertificateOutcome;
       typedef Aws::Utils::Outcome<DescribeCertificateResult, IoTError> DescribeCertificateOutcome;
+      typedef Aws::Utils::Outcome<DescribeCertificateProviderResult, IoTError> DescribeCertificateProviderOutcome;
       typedef Aws::Utils::Outcome<DescribeCustomMetricResult, IoTError> DescribeCustomMetricOutcome;
       typedef Aws::Utils::Outcome<DescribeDefaultAuthorizerResult, IoTError> DescribeDefaultAuthorizerOutcome;
       typedef Aws::Utils::Outcome<DescribeDetectMitigationActionsTaskResult, IoTError> DescribeDetectMitigationActionsTaskOutcome;
@@ -673,6 +686,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListAuthorizersResult, IoTError> ListAuthorizersOutcome;
       typedef Aws::Utils::Outcome<ListBillingGroupsResult, IoTError> ListBillingGroupsOutcome;
       typedef Aws::Utils::Outcome<ListCACertificatesResult, IoTError> ListCACertificatesOutcome;
+      typedef Aws::Utils::Outcome<ListCertificateProvidersResult, IoTError> ListCertificateProvidersOutcome;
       typedef Aws::Utils::Outcome<ListCertificatesResult, IoTError> ListCertificatesOutcome;
       typedef Aws::Utils::Outcome<ListCertificatesByCAResult, IoTError> ListCertificatesByCAOutcome;
       typedef Aws::Utils::Outcome<ListCustomMetricsResult, IoTError> ListCustomMetricsOutcome;
@@ -751,6 +765,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<UpdateBillingGroupResult, IoTError> UpdateBillingGroupOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, IoTError> UpdateCACertificateOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, IoTError> UpdateCertificateOutcome;
+      typedef Aws::Utils::Outcome<UpdateCertificateProviderResult, IoTError> UpdateCertificateProviderOutcome;
       typedef Aws::Utils::Outcome<UpdateCustomMetricResult, IoTError> UpdateCustomMetricOutcome;
       typedef Aws::Utils::Outcome<UpdateDimensionResult, IoTError> UpdateDimensionOutcome;
       typedef Aws::Utils::Outcome<UpdateDomainConfigurationResult, IoTError> UpdateDomainConfigurationOutcome;
@@ -795,6 +810,7 @@ namespace Aws
       typedef std::future<CreateAuthorizerOutcome> CreateAuthorizerOutcomeCallable;
       typedef std::future<CreateBillingGroupOutcome> CreateBillingGroupOutcomeCallable;
       typedef std::future<CreateCertificateFromCsrOutcome> CreateCertificateFromCsrOutcomeCallable;
+      typedef std::future<CreateCertificateProviderOutcome> CreateCertificateProviderOutcomeCallable;
       typedef std::future<CreateCustomMetricOutcome> CreateCustomMetricOutcomeCallable;
       typedef std::future<CreateDimensionOutcome> CreateDimensionOutcomeCallable;
       typedef std::future<CreateDomainConfigurationOutcome> CreateDomainConfigurationOutcomeCallable;
@@ -827,6 +843,7 @@ namespace Aws
       typedef std::future<DeleteBillingGroupOutcome> DeleteBillingGroupOutcomeCallable;
       typedef std::future<DeleteCACertificateOutcome> DeleteCACertificateOutcomeCallable;
       typedef std::future<DeleteCertificateOutcome> DeleteCertificateOutcomeCallable;
+      typedef std::future<DeleteCertificateProviderOutcome> DeleteCertificateProviderOutcomeCallable;
       typedef std::future<DeleteCustomMetricOutcome> DeleteCustomMetricOutcomeCallable;
       typedef std::future<DeleteDimensionOutcome> DeleteDimensionOutcomeCallable;
       typedef std::future<DeleteDomainConfigurationOutcome> DeleteDomainConfigurationOutcomeCallable;
@@ -864,6 +881,7 @@ namespace Aws
       typedef std::future<DescribeBillingGroupOutcome> DescribeBillingGroupOutcomeCallable;
       typedef std::future<DescribeCACertificateOutcome> DescribeCACertificateOutcomeCallable;
       typedef std::future<DescribeCertificateOutcome> DescribeCertificateOutcomeCallable;
+      typedef std::future<DescribeCertificateProviderOutcome> DescribeCertificateProviderOutcomeCallable;
       typedef std::future<DescribeCustomMetricOutcome> DescribeCustomMetricOutcomeCallable;
       typedef std::future<DescribeDefaultAuthorizerOutcome> DescribeDefaultAuthorizerOutcomeCallable;
       typedef std::future<DescribeDetectMitigationActionsTaskOutcome> DescribeDetectMitigationActionsTaskOutcomeCallable;
@@ -922,6 +940,7 @@ namespace Aws
       typedef std::future<ListAuthorizersOutcome> ListAuthorizersOutcomeCallable;
       typedef std::future<ListBillingGroupsOutcome> ListBillingGroupsOutcomeCallable;
       typedef std::future<ListCACertificatesOutcome> ListCACertificatesOutcomeCallable;
+      typedef std::future<ListCertificateProvidersOutcome> ListCertificateProvidersOutcomeCallable;
       typedef std::future<ListCertificatesOutcome> ListCertificatesOutcomeCallable;
       typedef std::future<ListCertificatesByCAOutcome> ListCertificatesByCAOutcomeCallable;
       typedef std::future<ListCustomMetricsOutcome> ListCustomMetricsOutcomeCallable;
@@ -1000,6 +1019,7 @@ namespace Aws
       typedef std::future<UpdateBillingGroupOutcome> UpdateBillingGroupOutcomeCallable;
       typedef std::future<UpdateCACertificateOutcome> UpdateCACertificateOutcomeCallable;
       typedef std::future<UpdateCertificateOutcome> UpdateCertificateOutcomeCallable;
+      typedef std::future<UpdateCertificateProviderOutcome> UpdateCertificateProviderOutcomeCallable;
       typedef std::future<UpdateCustomMetricOutcome> UpdateCustomMetricOutcomeCallable;
       typedef std::future<UpdateDimensionOutcome> UpdateDimensionOutcomeCallable;
       typedef std::future<UpdateDomainConfigurationOutcome> UpdateDomainConfigurationOutcomeCallable;
@@ -1047,6 +1067,7 @@ namespace Aws
     typedef std::function<void(const IoTClient*, const Model::CreateAuthorizerRequest&, const Model::CreateAuthorizerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAuthorizerResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::CreateBillingGroupRequest&, const Model::CreateBillingGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateBillingGroupResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::CreateCertificateFromCsrRequest&, const Model::CreateCertificateFromCsrOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCertificateFromCsrResponseReceivedHandler;
+    typedef std::function<void(const IoTClient*, const Model::CreateCertificateProviderRequest&, const Model::CreateCertificateProviderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCertificateProviderResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::CreateCustomMetricRequest&, const Model::CreateCustomMetricOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCustomMetricResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::CreateDimensionRequest&, const Model::CreateDimensionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDimensionResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::CreateDomainConfigurationRequest&, const Model::CreateDomainConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDomainConfigurationResponseReceivedHandler;
@@ -1079,6 +1100,7 @@ namespace Aws
     typedef std::function<void(const IoTClient*, const Model::DeleteBillingGroupRequest&, const Model::DeleteBillingGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBillingGroupResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::DeleteCACertificateRequest&, const Model::DeleteCACertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCACertificateResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::DeleteCertificateRequest&, const Model::DeleteCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCertificateResponseReceivedHandler;
+    typedef std::function<void(const IoTClient*, const Model::DeleteCertificateProviderRequest&, const Model::DeleteCertificateProviderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCertificateProviderResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::DeleteCustomMetricRequest&, const Model::DeleteCustomMetricOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCustomMetricResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::DeleteDimensionRequest&, const Model::DeleteDimensionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDimensionResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::DeleteDomainConfigurationRequest&, const Model::DeleteDomainConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDomainConfigurationResponseReceivedHandler;
@@ -1116,6 +1138,7 @@ namespace Aws
     typedef std::function<void(const IoTClient*, const Model::DescribeBillingGroupRequest&, const Model::DescribeBillingGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBillingGroupResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::DescribeCACertificateRequest&, const Model::DescribeCACertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCACertificateResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::DescribeCertificateRequest&, const Model::DescribeCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCertificateResponseReceivedHandler;
+    typedef std::function<void(const IoTClient*, const Model::DescribeCertificateProviderRequest&, const Model::DescribeCertificateProviderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCertificateProviderResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::DescribeCustomMetricRequest&, const Model::DescribeCustomMetricOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCustomMetricResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::DescribeDefaultAuthorizerRequest&, const Model::DescribeDefaultAuthorizerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDefaultAuthorizerResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::DescribeDetectMitigationActionsTaskRequest&, const Model::DescribeDetectMitigationActionsTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDetectMitigationActionsTaskResponseReceivedHandler;
@@ -1174,6 +1197,7 @@ namespace Aws
     typedef std::function<void(const IoTClient*, const Model::ListAuthorizersRequest&, const Model::ListAuthorizersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAuthorizersResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::ListBillingGroupsRequest&, const Model::ListBillingGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBillingGroupsResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::ListCACertificatesRequest&, const Model::ListCACertificatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCACertificatesResponseReceivedHandler;
+    typedef std::function<void(const IoTClient*, const Model::ListCertificateProvidersRequest&, const Model::ListCertificateProvidersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCertificateProvidersResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::ListCertificatesRequest&, const Model::ListCertificatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCertificatesResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::ListCertificatesByCARequest&, const Model::ListCertificatesByCAOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCertificatesByCAResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::ListCustomMetricsRequest&, const Model::ListCustomMetricsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCustomMetricsResponseReceivedHandler;
@@ -1252,6 +1276,7 @@ namespace Aws
     typedef std::function<void(const IoTClient*, const Model::UpdateBillingGroupRequest&, const Model::UpdateBillingGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateBillingGroupResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::UpdateCACertificateRequest&, const Model::UpdateCACertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateCACertificateResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::UpdateCertificateRequest&, const Model::UpdateCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateCertificateResponseReceivedHandler;
+    typedef std::function<void(const IoTClient*, const Model::UpdateCertificateProviderRequest&, const Model::UpdateCertificateProviderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateCertificateProviderResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::UpdateCustomMetricRequest&, const Model::UpdateCustomMetricOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateCustomMetricResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::UpdateDimensionRequest&, const Model::UpdateDimensionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDimensionResponseReceivedHandler;
     typedef std::function<void(const IoTClient*, const Model::UpdateDomainConfigurationRequest&, const Model::UpdateDomainConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDomainConfigurationResponseReceivedHandler;

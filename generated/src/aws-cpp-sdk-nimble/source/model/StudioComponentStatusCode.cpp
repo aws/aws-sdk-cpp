@@ -89,6 +89,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StudioComponentStatusCode::NOT_SET:
+            return {};
           case StudioComponentStatusCode::ACTIVE_DIRECTORY_ALREADY_EXISTS:
             return "ACTIVE_DIRECTORY_ALREADY_EXISTS";
           case StudioComponentStatusCode::STUDIO_COMPONENT_CREATED:

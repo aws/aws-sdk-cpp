@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SavingsPlansDataType::NOT_SET:
+            return {};
           case SavingsPlansDataType::ATTRIBUTES:
             return "ATTRIBUTES";
           case SavingsPlansDataType::UTILIZATION:

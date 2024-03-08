@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ClientVpnAuthorizationRuleStatusCode::NOT_SET:
+            return {};
           case ClientVpnAuthorizationRuleStatusCode::authorizing:
             return "authorizing";
           case ClientVpnAuthorizationRuleStatusCode::active:

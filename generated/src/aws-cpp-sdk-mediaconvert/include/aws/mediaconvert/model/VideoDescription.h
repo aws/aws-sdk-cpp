@@ -158,8 +158,8 @@ namespace Model
      * object. The following lists the codec enum, settings object pairs. * AV1,
      * Av1Settings * AVC_INTRA, AvcIntraSettings * FRAME_CAPTURE, FrameCaptureSettings
      * * H_264, H264Settings * H_265, H265Settings * MPEG2, Mpeg2Settings * PRORES,
-     * ProresSettings * VC3, Vc3Settings * VP8, Vp8Settings * VP9, Vp9Settings * XAVC,
-     * XavcSettings
+     * ProresSettings * UNCOMPRESSED, UncompressedSettings * VC3, Vc3Settings * VP8,
+     * Vp8Settings * VP9, Vp9Settings * XAVC, XavcSettings
      */
     inline const VideoCodecSettings& GetCodecSettings() const{ return m_codecSettings; }
 
@@ -170,8 +170,8 @@ namespace Model
      * object. The following lists the codec enum, settings object pairs. * AV1,
      * Av1Settings * AVC_INTRA, AvcIntraSettings * FRAME_CAPTURE, FrameCaptureSettings
      * * H_264, H264Settings * H_265, H265Settings * MPEG2, Mpeg2Settings * PRORES,
-     * ProresSettings * VC3, Vc3Settings * VP8, Vp8Settings * VP9, Vp9Settings * XAVC,
-     * XavcSettings
+     * ProresSettings * UNCOMPRESSED, UncompressedSettings * VC3, Vc3Settings * VP8,
+     * Vp8Settings * VP9, Vp9Settings * XAVC, XavcSettings
      */
     inline bool CodecSettingsHasBeenSet() const { return m_codecSettingsHasBeenSet; }
 
@@ -182,8 +182,8 @@ namespace Model
      * object. The following lists the codec enum, settings object pairs. * AV1,
      * Av1Settings * AVC_INTRA, AvcIntraSettings * FRAME_CAPTURE, FrameCaptureSettings
      * * H_264, H264Settings * H_265, H265Settings * MPEG2, Mpeg2Settings * PRORES,
-     * ProresSettings * VC3, Vc3Settings * VP8, Vp8Settings * VP9, Vp9Settings * XAVC,
-     * XavcSettings
+     * ProresSettings * UNCOMPRESSED, UncompressedSettings * VC3, Vc3Settings * VP8,
+     * Vp8Settings * VP9, Vp9Settings * XAVC, XavcSettings
      */
     inline void SetCodecSettings(const VideoCodecSettings& value) { m_codecSettingsHasBeenSet = true; m_codecSettings = value; }
 
@@ -194,8 +194,8 @@ namespace Model
      * object. The following lists the codec enum, settings object pairs. * AV1,
      * Av1Settings * AVC_INTRA, AvcIntraSettings * FRAME_CAPTURE, FrameCaptureSettings
      * * H_264, H264Settings * H_265, H265Settings * MPEG2, Mpeg2Settings * PRORES,
-     * ProresSettings * VC3, Vc3Settings * VP8, Vp8Settings * VP9, Vp9Settings * XAVC,
-     * XavcSettings
+     * ProresSettings * UNCOMPRESSED, UncompressedSettings * VC3, Vc3Settings * VP8,
+     * Vp8Settings * VP9, Vp9Settings * XAVC, XavcSettings
      */
     inline void SetCodecSettings(VideoCodecSettings&& value) { m_codecSettingsHasBeenSet = true; m_codecSettings = std::move(value); }
 
@@ -206,8 +206,8 @@ namespace Model
      * object. The following lists the codec enum, settings object pairs. * AV1,
      * Av1Settings * AVC_INTRA, AvcIntraSettings * FRAME_CAPTURE, FrameCaptureSettings
      * * H_264, H264Settings * H_265, H265Settings * MPEG2, Mpeg2Settings * PRORES,
-     * ProresSettings * VC3, Vc3Settings * VP8, Vp8Settings * VP9, Vp9Settings * XAVC,
-     * XavcSettings
+     * ProresSettings * UNCOMPRESSED, UncompressedSettings * VC3, Vc3Settings * VP8,
+     * Vp8Settings * VP9, Vp9Settings * XAVC, XavcSettings
      */
     inline VideoDescription& WithCodecSettings(const VideoCodecSettings& value) { SetCodecSettings(value); return *this;}
 
@@ -218,8 +218,8 @@ namespace Model
      * object. The following lists the codec enum, settings object pairs. * AV1,
      * Av1Settings * AVC_INTRA, AvcIntraSettings * FRAME_CAPTURE, FrameCaptureSettings
      * * H_264, H264Settings * H_265, H265Settings * MPEG2, Mpeg2Settings * PRORES,
-     * ProresSettings * VC3, Vc3Settings * VP8, Vp8Settings * VP9, Vp9Settings * XAVC,
-     * XavcSettings
+     * ProresSettings * UNCOMPRESSED, UncompressedSettings * VC3, Vc3Settings * VP8,
+     * Vp8Settings * VP9, Vp9Settings * XAVC, XavcSettings
      */
     inline VideoDescription& WithCodecSettings(VideoCodecSettings&& value) { SetCodecSettings(std::move(value)); return *this;}
 
@@ -520,56 +520,44 @@ namespace Model
 
 
     /**
-     * Specify how the service handles outputs that have a different aspect ratio from
-     * the input aspect ratio. Choose Stretch to output to have the service stretch
-     * your video image to fit. Keep the setting Default to have the service letterbox
-     * your video instead. This setting overrides any value that you specify for the
-     * setting Selection placement in this output.
+     * Specify the video Scaling behavior when your output has a different resolution
+     * than your input. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/video-scaling.html
      */
     inline const ScalingBehavior& GetScalingBehavior() const{ return m_scalingBehavior; }
 
     /**
-     * Specify how the service handles outputs that have a different aspect ratio from
-     * the input aspect ratio. Choose Stretch to output to have the service stretch
-     * your video image to fit. Keep the setting Default to have the service letterbox
-     * your video instead. This setting overrides any value that you specify for the
-     * setting Selection placement in this output.
+     * Specify the video Scaling behavior when your output has a different resolution
+     * than your input. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/video-scaling.html
      */
     inline bool ScalingBehaviorHasBeenSet() const { return m_scalingBehaviorHasBeenSet; }
 
     /**
-     * Specify how the service handles outputs that have a different aspect ratio from
-     * the input aspect ratio. Choose Stretch to output to have the service stretch
-     * your video image to fit. Keep the setting Default to have the service letterbox
-     * your video instead. This setting overrides any value that you specify for the
-     * setting Selection placement in this output.
+     * Specify the video Scaling behavior when your output has a different resolution
+     * than your input. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/video-scaling.html
      */
     inline void SetScalingBehavior(const ScalingBehavior& value) { m_scalingBehaviorHasBeenSet = true; m_scalingBehavior = value; }
 
     /**
-     * Specify how the service handles outputs that have a different aspect ratio from
-     * the input aspect ratio. Choose Stretch to output to have the service stretch
-     * your video image to fit. Keep the setting Default to have the service letterbox
-     * your video instead. This setting overrides any value that you specify for the
-     * setting Selection placement in this output.
+     * Specify the video Scaling behavior when your output has a different resolution
+     * than your input. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/video-scaling.html
      */
     inline void SetScalingBehavior(ScalingBehavior&& value) { m_scalingBehaviorHasBeenSet = true; m_scalingBehavior = std::move(value); }
 
     /**
-     * Specify how the service handles outputs that have a different aspect ratio from
-     * the input aspect ratio. Choose Stretch to output to have the service stretch
-     * your video image to fit. Keep the setting Default to have the service letterbox
-     * your video instead. This setting overrides any value that you specify for the
-     * setting Selection placement in this output.
+     * Specify the video Scaling behavior when your output has a different resolution
+     * than your input. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/video-scaling.html
      */
     inline VideoDescription& WithScalingBehavior(const ScalingBehavior& value) { SetScalingBehavior(value); return *this;}
 
     /**
-     * Specify how the service handles outputs that have a different aspect ratio from
-     * the input aspect ratio. Choose Stretch to output to have the service stretch
-     * your video image to fit. Keep the setting Default to have the service letterbox
-     * your video instead. This setting overrides any value that you specify for the
-     * setting Selection placement in this output.
+     * Specify the video Scaling behavior when your output has a different resolution
+     * than your input. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/video-scaling.html
      */
     inline VideoDescription& WithScalingBehavior(ScalingBehavior&& value) { SetScalingBehavior(std::move(value)); return *this;}
 

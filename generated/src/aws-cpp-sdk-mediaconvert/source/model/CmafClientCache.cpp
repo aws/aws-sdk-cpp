@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CmafClientCache::NOT_SET:
+            return {};
           case CmafClientCache::DISABLED:
             return "DISABLED";
           case CmafClientCache::ENABLED:

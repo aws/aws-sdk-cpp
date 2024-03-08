@@ -84,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SourceType::NOT_SET:
+            return {};
           case SourceType::db_instance:
             return "db-instance";
           case SourceType::db_parameter_group:

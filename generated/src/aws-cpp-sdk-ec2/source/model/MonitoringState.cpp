@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MonitoringState::NOT_SET:
+            return {};
           case MonitoringState::disabled:
             return "disabled";
           case MonitoringState::disabling:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UseCaseType::NOT_SET:
+            return {};
           case UseCaseType::RULES_EVALUATION:
             return "RULES_EVALUATION";
           case UseCaseType::CONNECT_CAMPAIGNS:

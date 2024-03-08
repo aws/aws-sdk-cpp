@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ThroughputMode::NOT_SET:
+            return {};
           case ThroughputMode::PAY_PER_REQUEST:
             return "PAY_PER_REQUEST";
           case ThroughputMode::PROVISIONED:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FallbackResult::NOT_SET:
+            return {};
           case FallbackResult::ALLOW:
             return "ALLOW";
           case FallbackResult::DENY:

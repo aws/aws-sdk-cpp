@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AnalyticsUtteranceAttributeName::NOT_SET:
+            return {};
           case AnalyticsUtteranceAttributeName::LastUsedIntent:
             return "LastUsedIntent";
           default:

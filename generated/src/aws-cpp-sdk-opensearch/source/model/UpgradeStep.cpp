@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UpgradeStep::NOT_SET:
+            return {};
           case UpgradeStep::PRE_UPGRADE_CHECK:
             return "PRE_UPGRADE_CHECK";
           case UpgradeStep::SNAPSHOT:

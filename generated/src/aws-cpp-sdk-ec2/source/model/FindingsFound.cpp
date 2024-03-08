@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FindingsFound::NOT_SET:
+            return {};
           case FindingsFound::true_:
             return "true";
           case FindingsFound::false_:

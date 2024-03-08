@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ICD10CMAttributeType::NOT_SET:
+            return {};
           case ICD10CMAttributeType::ACUITY:
             return "ACUITY";
           case ICD10CMAttributeType::DIRECTION:

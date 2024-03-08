@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OversizeHandling::NOT_SET:
+            return {};
           case OversizeHandling::CONTINUE:
             return "CONTINUE";
           case OversizeHandling::MATCH:

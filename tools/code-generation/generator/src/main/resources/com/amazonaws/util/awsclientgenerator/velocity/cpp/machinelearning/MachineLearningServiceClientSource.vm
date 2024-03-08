@@ -35,8 +35,16 @@ using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
 
 #if(!$onlyGeneratedOperations)
-const char* ${className}::SERVICE_NAME = "${metadata.signingName}";
-const char* ${className}::ALLOCATION_TAG = "${className}";
+namespace Aws
+{
+  namespace ${metadata.namespace}
+  {
+    const char SERVICE_NAME[] = "${metadata.signingName}";
+    const char ALLOCATION_TAG[] = "${className}";
+  }
+}
+const char* ${className}::GetServiceName() {return SERVICE_NAME;}
+const char* ${className}::GetAllocationTag() {return ALLOCATION_TAG;}
 
 #parseOverrideOrDefault( "ServiceClientSourceInit_template" "com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientSourceInit.vm")
 #end

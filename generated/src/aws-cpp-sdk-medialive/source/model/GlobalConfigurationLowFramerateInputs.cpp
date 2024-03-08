@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case GlobalConfigurationLowFramerateInputs::NOT_SET:
+            return {};
           case GlobalConfigurationLowFramerateInputs::DISABLED:
             return "DISABLED";
           case GlobalConfigurationLowFramerateInputs::ENABLED:

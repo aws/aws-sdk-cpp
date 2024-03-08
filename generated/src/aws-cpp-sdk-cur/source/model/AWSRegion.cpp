@@ -179,6 +179,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AWSRegion::NOT_SET:
+            return {};
           case AWSRegion::af_south_1:
             return "af-south-1";
           case AWSRegion::ap_east_1:

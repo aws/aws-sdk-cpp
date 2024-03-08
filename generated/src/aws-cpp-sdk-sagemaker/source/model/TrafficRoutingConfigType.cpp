@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TrafficRoutingConfigType::NOT_SET:
+            return {};
           case TrafficRoutingConfigType::ALL_AT_ONCE:
             return "ALL_AT_ONCE";
           case TrafficRoutingConfigType::CANARY:

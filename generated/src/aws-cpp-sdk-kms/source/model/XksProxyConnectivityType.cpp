@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case XksProxyConnectivityType::NOT_SET:
+            return {};
           case XksProxyConnectivityType::PUBLIC_ENDPOINT:
             return "PUBLIC_ENDPOINT";
           case XksProxyConnectivityType::VPC_ENDPOINT_SERVICE:

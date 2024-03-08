@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ValidationSeverity::NOT_SET:
+            return {};
           case ValidationSeverity::error:
             return "error";
           case ValidationSeverity::warning:

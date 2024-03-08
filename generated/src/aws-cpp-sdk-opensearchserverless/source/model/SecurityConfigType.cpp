@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SecurityConfigType::NOT_SET:
+            return {};
           case SecurityConfigType::saml:
             return "saml";
           default:

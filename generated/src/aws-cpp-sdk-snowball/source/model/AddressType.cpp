@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AddressType::NOT_SET:
+            return {};
           case AddressType::CUST_PICKUP:
             return "CUST_PICKUP";
           case AddressType::AWS_SHIP:

@@ -23,14 +23,16 @@ namespace Model
 TargetHealthDescription::TargetHealthDescription() : 
     m_targetHasBeenSet(false),
     m_healthCheckPortHasBeenSet(false),
-    m_targetHealthHasBeenSet(false)
+    m_targetHealthHasBeenSet(false),
+    m_anomalyDetectionHasBeenSet(false)
 {
 }
 
 TargetHealthDescription::TargetHealthDescription(const XmlNode& xmlNode) : 
     m_targetHasBeenSet(false),
     m_healthCheckPortHasBeenSet(false),
-    m_targetHealthHasBeenSet(false)
+    m_targetHealthHasBeenSet(false),
+    m_anomalyDetectionHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -59,6 +61,12 @@ TargetHealthDescription& TargetHealthDescription::operator =(const XmlNode& xmlN
       m_targetHealth = targetHealthNode;
       m_targetHealthHasBeenSet = true;
     }
+    XmlNode anomalyDetectionNode = resultNode.FirstChild("AnomalyDetection");
+    if(!anomalyDetectionNode.IsNull())
+    {
+      m_anomalyDetection = anomalyDetectionNode;
+      m_anomalyDetectionHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -85,6 +93,13 @@ void TargetHealthDescription::OutputToStream(Aws::OStream& oStream, const char* 
       m_targetHealth.OutputToStream(oStream, targetHealthLocationAndMemberSs.str().c_str());
   }
 
+  if(m_anomalyDetectionHasBeenSet)
+  {
+      Aws::StringStream anomalyDetectionLocationAndMemberSs;
+      anomalyDetectionLocationAndMemberSs << location << index << locationValue << ".AnomalyDetection";
+      m_anomalyDetection.OutputToStream(oStream, anomalyDetectionLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void TargetHealthDescription::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -104,6 +119,12 @@ void TargetHealthDescription::OutputToStream(Aws::OStream& oStream, const char* 
       Aws::String targetHealthLocationAndMember(location);
       targetHealthLocationAndMember += ".TargetHealth";
       m_targetHealth.OutputToStream(oStream, targetHealthLocationAndMember.c_str());
+  }
+  if(m_anomalyDetectionHasBeenSet)
+  {
+      Aws::String anomalyDetectionLocationAndMember(location);
+      anomalyDetectionLocationAndMember += ".AnomalyDetection";
+      m_anomalyDetection.OutputToStream(oStream, anomalyDetectionLocationAndMember.c_str());
   }
 }
 

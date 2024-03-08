@@ -40,56 +40,80 @@ namespace Model
     /**
      * <p>The policy text content to add to the new policy. The text that you supply
      * must adhere to the rules of the policy type you specify in the <code>Type</code>
-     * parameter.</p>
+     * parameter. </p> <p>The maximum size of a policy document depends on the policy's
+     * type. For more information, see <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html#min-max-values">Maximum
+     * and minimum values</a> in the <i>Organizations User Guide</i>.</p>
      */
     inline const Aws::String& GetContent() const{ return m_content; }
 
     /**
      * <p>The policy text content to add to the new policy. The text that you supply
      * must adhere to the rules of the policy type you specify in the <code>Type</code>
-     * parameter.</p>
+     * parameter. </p> <p>The maximum size of a policy document depends on the policy's
+     * type. For more information, see <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html#min-max-values">Maximum
+     * and minimum values</a> in the <i>Organizations User Guide</i>.</p>
      */
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
 
     /**
      * <p>The policy text content to add to the new policy. The text that you supply
      * must adhere to the rules of the policy type you specify in the <code>Type</code>
-     * parameter.</p>
+     * parameter. </p> <p>The maximum size of a policy document depends on the policy's
+     * type. For more information, see <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html#min-max-values">Maximum
+     * and minimum values</a> in the <i>Organizations User Guide</i>.</p>
      */
     inline void SetContent(const Aws::String& value) { m_contentHasBeenSet = true; m_content = value; }
 
     /**
      * <p>The policy text content to add to the new policy. The text that you supply
      * must adhere to the rules of the policy type you specify in the <code>Type</code>
-     * parameter.</p>
+     * parameter. </p> <p>The maximum size of a policy document depends on the policy's
+     * type. For more information, see <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html#min-max-values">Maximum
+     * and minimum values</a> in the <i>Organizations User Guide</i>.</p>
      */
     inline void SetContent(Aws::String&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
 
     /**
      * <p>The policy text content to add to the new policy. The text that you supply
      * must adhere to the rules of the policy type you specify in the <code>Type</code>
-     * parameter.</p>
+     * parameter. </p> <p>The maximum size of a policy document depends on the policy's
+     * type. For more information, see <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html#min-max-values">Maximum
+     * and minimum values</a> in the <i>Organizations User Guide</i>.</p>
      */
     inline void SetContent(const char* value) { m_contentHasBeenSet = true; m_content.assign(value); }
 
     /**
      * <p>The policy text content to add to the new policy. The text that you supply
      * must adhere to the rules of the policy type you specify in the <code>Type</code>
-     * parameter.</p>
+     * parameter. </p> <p>The maximum size of a policy document depends on the policy's
+     * type. For more information, see <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html#min-max-values">Maximum
+     * and minimum values</a> in the <i>Organizations User Guide</i>.</p>
      */
     inline CreatePolicyRequest& WithContent(const Aws::String& value) { SetContent(value); return *this;}
 
     /**
      * <p>The policy text content to add to the new policy. The text that you supply
      * must adhere to the rules of the policy type you specify in the <code>Type</code>
-     * parameter.</p>
+     * parameter. </p> <p>The maximum size of a policy document depends on the policy's
+     * type. For more information, see <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html#min-max-values">Maximum
+     * and minimum values</a> in the <i>Organizations User Guide</i>.</p>
      */
     inline CreatePolicyRequest& WithContent(Aws::String&& value) { SetContent(std::move(value)); return *this;}
 
     /**
      * <p>The policy text content to add to the new policy. The text that you supply
      * must adhere to the rules of the policy type you specify in the <code>Type</code>
-     * parameter.</p>
+     * parameter. </p> <p>The maximum size of a policy document depends on the policy's
+     * type. For more information, see <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html#min-max-values">Maximum
+     * and minimum values</a> in the <i>Organizations User Guide</i>.</p>
      */
     inline CreatePolicyRequest& WithContent(const char* value) { SetContent(value); return *this;}
 

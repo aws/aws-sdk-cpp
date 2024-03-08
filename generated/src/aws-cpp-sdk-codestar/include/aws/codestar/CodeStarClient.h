@@ -51,8 +51,8 @@ namespace CodeStar
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef CodeStarClientConfiguration ClientConfigurationType;
       typedef CodeStarEndpointProvider EndpointProviderType;
@@ -62,14 +62,14 @@ namespace CodeStar
         * is not specified, it will be initialized to default values.
         */
         CodeStarClient(const Aws::CodeStar::CodeStarClientConfiguration& clientConfiguration = Aws::CodeStar::CodeStarClientConfiguration(),
-                       std::shared_ptr<CodeStarEndpointProviderBase> endpointProvider = Aws::MakeShared<CodeStarEndpointProvider>(ALLOCATION_TAG));
+                       std::shared_ptr<CodeStarEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         CodeStarClient(const Aws::Auth::AWSCredentials& credentials,
-                       std::shared_ptr<CodeStarEndpointProviderBase> endpointProvider = Aws::MakeShared<CodeStarEndpointProvider>(ALLOCATION_TAG),
+                       std::shared_ptr<CodeStarEndpointProviderBase> endpointProvider = nullptr,
                        const Aws::CodeStar::CodeStarClientConfiguration& clientConfiguration = Aws::CodeStar::CodeStarClientConfiguration());
 
        /**
@@ -77,7 +77,7 @@ namespace CodeStar
         * the default http client factory will be used
         */
         CodeStarClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                       std::shared_ptr<CodeStarEndpointProviderBase> endpointProvider = Aws::MakeShared<CodeStarEndpointProvider>(ALLOCATION_TAG),
+                       std::shared_ptr<CodeStarEndpointProviderBase> endpointProvider = nullptr,
                        const Aws::CodeStar::CodeStarClientConfiguration& clientConfiguration = Aws::CodeStar::CodeStarClientConfiguration());
 
 

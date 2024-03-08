@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ConfigRuleState::NOT_SET:
+            return {};
           case ConfigRuleState::ACTIVE:
             return "ACTIVE";
           case ConfigRuleState::DELETING:

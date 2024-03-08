@@ -28,9 +28,8 @@ namespace Model
    * Notification Service topic entered in an extension when invoked. Parameter
    * values are specified in an extension association. For more information about
    * extensions, see <a
-   * href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working
-   * with AppConfig extensions</a> in the <i>AppConfig User Guide</i>.</p><p><h3>See
-   * Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Extending
+   * workflows</a> in the <i>AppConfig User Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/Parameter">AWS
    * API Reference</a></p>
    */
@@ -104,6 +103,35 @@ namespace Model
      */
     inline Parameter& WithRequired(bool value) { SetRequired(value); return *this;}
 
+
+    /**
+     * <p>Indicates whether this parameter's value can be supplied at the extension's
+     * action point instead of during extension association. Dynamic parameters can't
+     * be marked <code>Required</code>.</p>
+     */
+    inline bool GetDynamic() const{ return m_dynamic; }
+
+    /**
+     * <p>Indicates whether this parameter's value can be supplied at the extension's
+     * action point instead of during extension association. Dynamic parameters can't
+     * be marked <code>Required</code>.</p>
+     */
+    inline bool DynamicHasBeenSet() const { return m_dynamicHasBeenSet; }
+
+    /**
+     * <p>Indicates whether this parameter's value can be supplied at the extension's
+     * action point instead of during extension association. Dynamic parameters can't
+     * be marked <code>Required</code>.</p>
+     */
+    inline void SetDynamic(bool value) { m_dynamicHasBeenSet = true; m_dynamic = value; }
+
+    /**
+     * <p>Indicates whether this parameter's value can be supplied at the extension's
+     * action point instead of during extension association. Dynamic parameters can't
+     * be marked <code>Required</code>.</p>
+     */
+    inline Parameter& WithDynamic(bool value) { SetDynamic(value); return *this;}
+
   private:
 
     Aws::String m_description;
@@ -111,6 +139,9 @@ namespace Model
 
     bool m_required;
     bool m_requiredHasBeenSet = false;
+
+    bool m_dynamic;
+    bool m_dynamicHasBeenSet = false;
   };
 
 } // namespace Model

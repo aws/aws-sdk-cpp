@@ -83,231 +83,231 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == SUBSCRIPTION_NOT_FOUND_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::SUBSCRIPTION_NOT_FOUND_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::SUBSCRIPTION_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == D_B_CLUSTER_NOT_FOUND_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::D_B_CLUSTER_NOT_FOUND_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::D_B_CLUSTER_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == SUBSCRIPTION_CATEGORY_NOT_FOUND_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::SUBSCRIPTION_CATEGORY_NOT_FOUND_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::SUBSCRIPTION_CATEGORY_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_D_B_SUBNET_GROUP_STATE_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::INVALID_D_B_SUBNET_GROUP_STATE_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::INVALID_D_B_SUBNET_GROUP_STATE_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == D_B_SUBNET_GROUP_QUOTA_EXCEEDED_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::D_B_SUBNET_GROUP_QUOTA_EXCEEDED_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::D_B_SUBNET_GROUP_QUOTA_EXCEEDED_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == D_B_INSTANCE_NOT_FOUND_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::D_B_INSTANCE_NOT_FOUND_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::D_B_INSTANCE_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == D_B_SUBNET_GROUP_DOES_NOT_COVER_ENOUGH_A_ZS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::D_B_SUBNET_GROUP_DOES_NOT_COVER_ENOUGH_A_ZS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::D_B_SUBNET_GROUP_DOES_NOT_COVER_ENOUGH_A_ZS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == D_B_UPGRADE_DEPENDENCY_FAILURE_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::D_B_UPGRADE_DEPENDENCY_FAILURE_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::D_B_UPGRADE_DEPENDENCY_FAILURE_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_D_B_SNAPSHOT_STATE_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::INVALID_D_B_SNAPSHOT_STATE_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::INVALID_D_B_SNAPSHOT_STATE_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == SHARED_SNAPSHOT_QUOTA_EXCEEDED_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::SHARED_SNAPSHOT_QUOTA_EXCEEDED_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::SHARED_SNAPSHOT_QUOTA_EXCEEDED_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_SUBNET_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::INVALID_SUBNET), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::INVALID_SUBNET), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == D_B_CLUSTER_PARAMETER_GROUP_NOT_FOUND_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::D_B_CLUSTER_PARAMETER_GROUP_NOT_FOUND_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::D_B_CLUSTER_PARAMETER_GROUP_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == D_B_PARAMETER_GROUP_QUOTA_EXCEEDED_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::D_B_PARAMETER_GROUP_QUOTA_EXCEEDED_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::D_B_PARAMETER_GROUP_QUOTA_EXCEEDED_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_EVENT_SUBSCRIPTION_STATE_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::INVALID_EVENT_SUBSCRIPTION_STATE_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::INVALID_EVENT_SUBSCRIPTION_STATE_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INSUFFICIENT_STORAGE_CLUSTER_CAPACITY_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::INSUFFICIENT_STORAGE_CLUSTER_CAPACITY_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::INSUFFICIENT_STORAGE_CLUSTER_CAPACITY_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == D_B_SUBNET_GROUP_NOT_FOUND_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::D_B_SUBNET_GROUP_NOT_FOUND_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::D_B_SUBNET_GROUP_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == D_B_SNAPSHOT_ALREADY_EXISTS_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::D_B_SNAPSHOT_ALREADY_EXISTS_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::D_B_SNAPSHOT_ALREADY_EXISTS_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == SNAPSHOT_QUOTA_EXCEEDED_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::SNAPSHOT_QUOTA_EXCEEDED_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::SNAPSHOT_QUOTA_EXCEEDED_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == SUBNET_ALREADY_IN_USE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::SUBNET_ALREADY_IN_USE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::SUBNET_ALREADY_IN_USE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == D_B_SUBNET_GROUP_ALREADY_EXISTS_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::D_B_SUBNET_GROUP_ALREADY_EXISTS_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::D_B_SUBNET_GROUP_ALREADY_EXISTS_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == EVENT_SUBSCRIPTION_QUOTA_EXCEEDED_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::EVENT_SUBSCRIPTION_QUOTA_EXCEEDED_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::EVENT_SUBSCRIPTION_QUOTA_EXCEEDED_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == D_B_INSTANCE_ALREADY_EXISTS_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::D_B_INSTANCE_ALREADY_EXISTS_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::D_B_INSTANCE_ALREADY_EXISTS_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_D_B_PARAMETER_GROUP_STATE_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::INVALID_D_B_PARAMETER_GROUP_STATE_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::INVALID_D_B_PARAMETER_GROUP_STATE_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == D_B_SECURITY_GROUP_NOT_FOUND_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::D_B_SECURITY_GROUP_NOT_FOUND_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::D_B_SECURITY_GROUP_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_D_B_CLUSTER_SNAPSHOT_STATE_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::INVALID_D_B_CLUSTER_SNAPSHOT_STATE_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::INVALID_D_B_CLUSTER_SNAPSHOT_STATE_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == GLOBAL_CLUSTER_NOT_FOUND_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::GLOBAL_CLUSTER_NOT_FOUND_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::GLOBAL_CLUSTER_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == D_B_CLUSTER_SNAPSHOT_ALREADY_EXISTS_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::D_B_CLUSTER_SNAPSHOT_ALREADY_EXISTS_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::D_B_CLUSTER_SNAPSHOT_ALREADY_EXISTS_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_D_B_SECURITY_GROUP_STATE_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::INVALID_D_B_SECURITY_GROUP_STATE_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::INVALID_D_B_SECURITY_GROUP_STATE_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == STORAGE_QUOTA_EXCEEDED_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::STORAGE_QUOTA_EXCEEDED_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::STORAGE_QUOTA_EXCEEDED_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_D_B_INSTANCE_STATE_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::INVALID_D_B_INSTANCE_STATE_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::INVALID_D_B_INSTANCE_STATE_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == D_B_SUBNET_QUOTA_EXCEEDED_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::D_B_SUBNET_QUOTA_EXCEEDED_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::D_B_SUBNET_QUOTA_EXCEEDED_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == D_B_CLUSTER_SNAPSHOT_NOT_FOUND_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::D_B_CLUSTER_SNAPSHOT_NOT_FOUND_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::D_B_CLUSTER_SNAPSHOT_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == D_B_CLUSTER_ALREADY_EXISTS_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::D_B_CLUSTER_ALREADY_EXISTS_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::D_B_CLUSTER_ALREADY_EXISTS_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == GLOBAL_CLUSTER_QUOTA_EXCEEDED_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::GLOBAL_CLUSTER_QUOTA_EXCEEDED_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::GLOBAL_CLUSTER_QUOTA_EXCEEDED_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == RESOURCE_NOT_FOUND_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::RESOURCE_NOT_FOUND_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::RESOURCE_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INSUFFICIENT_D_B_INSTANCE_CAPACITY_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::INSUFFICIENT_D_B_INSTANCE_CAPACITY_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::INSUFFICIENT_D_B_INSTANCE_CAPACITY_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == D_B_PARAMETER_GROUP_NOT_FOUND_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::D_B_PARAMETER_GROUP_NOT_FOUND_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::D_B_PARAMETER_GROUP_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INSTANCE_QUOTA_EXCEEDED_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::INSTANCE_QUOTA_EXCEEDED_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::INSTANCE_QUOTA_EXCEEDED_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == GLOBAL_CLUSTER_ALREADY_EXISTS_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::GLOBAL_CLUSTER_ALREADY_EXISTS_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::GLOBAL_CLUSTER_ALREADY_EXISTS_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_D_B_CLUSTER_STATE_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::INVALID_D_B_CLUSTER_STATE_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::INVALID_D_B_CLUSTER_STATE_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == SUBSCRIPTION_ALREADY_EXIST_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::SUBSCRIPTION_ALREADY_EXIST_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::SUBSCRIPTION_ALREADY_EXIST_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == D_B_SNAPSHOT_NOT_FOUND_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::D_B_SNAPSHOT_NOT_FOUND_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::D_B_SNAPSHOT_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == K_M_S_KEY_NOT_ACCESSIBLE_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::K_M_S_KEY_NOT_ACCESSIBLE_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::K_M_S_KEY_NOT_ACCESSIBLE_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == CERTIFICATE_NOT_FOUND_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::CERTIFICATE_NOT_FOUND_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::CERTIFICATE_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == D_B_PARAMETER_GROUP_ALREADY_EXISTS_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::D_B_PARAMETER_GROUP_ALREADY_EXISTS_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::D_B_PARAMETER_GROUP_ALREADY_EXISTS_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == S_N_S_NO_AUTHORIZATION_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::S_N_S_NO_AUTHORIZATION_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::S_N_S_NO_AUTHORIZATION_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_RESTORE_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::INVALID_RESTORE_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::INVALID_RESTORE_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == STORAGE_TYPE_NOT_SUPPORTED_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::STORAGE_TYPE_NOT_SUPPORTED_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::STORAGE_TYPE_NOT_SUPPORTED_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == S_N_S_TOPIC_ARN_NOT_FOUND_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::S_N_S_TOPIC_ARN_NOT_FOUND_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::S_N_S_TOPIC_ARN_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == S_N_S_INVALID_TOPIC_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::S_N_S_INVALID_TOPIC_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::S_N_S_INVALID_TOPIC_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_D_B_SUBNET_STATE_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::INVALID_D_B_SUBNET_STATE_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::INVALID_D_B_SUBNET_STATE_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_V_P_C_NETWORK_STATE_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::INVALID_V_P_C_NETWORK_STATE_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::INVALID_V_P_C_NETWORK_STATE_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == AUTHORIZATION_NOT_FOUND_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::AUTHORIZATION_NOT_FOUND_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::AUTHORIZATION_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == D_B_CLUSTER_QUOTA_EXCEEDED_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::D_B_CLUSTER_QUOTA_EXCEEDED_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::D_B_CLUSTER_QUOTA_EXCEEDED_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INSUFFICIENT_D_B_CLUSTER_CAPACITY_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::INSUFFICIENT_D_B_CLUSTER_CAPACITY_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::INSUFFICIENT_D_B_CLUSTER_CAPACITY_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == SOURCE_NOT_FOUND_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::SOURCE_NOT_FOUND_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::SOURCE_NOT_FOUND_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_GLOBAL_CLUSTER_STATE_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::INVALID_GLOBAL_CLUSTER_STATE_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DocDBErrors::INVALID_GLOBAL_CLUSTER_STATE_FAULT), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

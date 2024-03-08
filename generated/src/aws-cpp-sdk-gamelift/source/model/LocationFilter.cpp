@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LocationFilter::NOT_SET:
+            return {};
           case LocationFilter::AWS:
             return "AWS";
           case LocationFilter::CUSTOM:

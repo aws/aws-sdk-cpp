@@ -154,6 +154,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LifecycleState::NOT_SET:
+            return {};
           case LifecycleState::Pending:
             return "Pending";
           case LifecycleState::Pending_Wait:

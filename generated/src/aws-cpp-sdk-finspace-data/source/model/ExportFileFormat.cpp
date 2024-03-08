@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ExportFileFormat::NOT_SET:
+            return {};
           case ExportFileFormat::PARQUET:
             return "PARQUET";
           case ExportFileFormat::DELIMITED_TEXT:

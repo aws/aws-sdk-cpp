@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OwnershipType::NOT_SET:
+            return {};
           case OwnershipType::SELF:
             return "SELF";
           case OwnershipType::SHARED:

@@ -81,56 +81,48 @@ namespace Model
     /**
      * This represents the customer's source URL where stream is
 pulled from.
-
      */
     inline const Aws::String& GetUrl() const{ return m_url; }
 
     /**
      * This represents the customer's source URL where stream is
 pulled from.
-
      */
     inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
 
     /**
      * This represents the customer's source URL where stream is
 pulled from.
-
      */
     inline void SetUrl(const Aws::String& value) { m_urlHasBeenSet = true; m_url = value; }
 
     /**
      * This represents the customer's source URL where stream is
 pulled from.
-
      */
     inline void SetUrl(Aws::String&& value) { m_urlHasBeenSet = true; m_url = std::move(value); }
 
     /**
      * This represents the customer's source URL where stream is
 pulled from.
-
      */
     inline void SetUrl(const char* value) { m_urlHasBeenSet = true; m_url.assign(value); }
 
     /**
      * This represents the customer's source URL where stream is
 pulled from.
-
      */
     inline InputSourceRequest& WithUrl(const Aws::String& value) { SetUrl(value); return *this;}
 
     /**
      * This represents the customer's source URL where stream is
 pulled from.
-
      */
     inline InputSourceRequest& WithUrl(Aws::String&& value) { SetUrl(std::move(value)); return *this;}
 
     /**
      * This represents the customer's source URL where stream is
 pulled from.
-
      */
     inline InputSourceRequest& WithUrl(const char* value) { SetUrl(value); return *this;}
 

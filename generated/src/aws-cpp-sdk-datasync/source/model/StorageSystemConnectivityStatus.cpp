@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StorageSystemConnectivityStatus::NOT_SET:
+            return {};
           case StorageSystemConnectivityStatus::PASS:
             return "PASS";
           case StorageSystemConnectivityStatus::FAIL:

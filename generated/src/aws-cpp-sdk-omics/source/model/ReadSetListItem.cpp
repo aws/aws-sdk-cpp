@@ -35,7 +35,8 @@ ReadSetListItem::ReadSetListItem() :
     m_creationTimeHasBeenSet(false),
     m_statusMessageHasBeenSet(false),
     m_creationType(CreationType::NOT_SET),
-    m_creationTypeHasBeenSet(false)
+    m_creationTypeHasBeenSet(false),
+    m_etagHasBeenSet(false)
 {
 }
 
@@ -56,7 +57,8 @@ ReadSetListItem::ReadSetListItem(JsonView jsonValue) :
     m_creationTimeHasBeenSet(false),
     m_statusMessageHasBeenSet(false),
     m_creationType(CreationType::NOT_SET),
-    m_creationTypeHasBeenSet(false)
+    m_creationTypeHasBeenSet(false),
+    m_etagHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -161,6 +163,13 @@ ReadSetListItem& ReadSetListItem::operator =(JsonView jsonValue)
     m_creationTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("etag"))
+  {
+    m_etag = jsonValue.GetObject("etag");
+
+    m_etagHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -246,6 +255,12 @@ JsonValue ReadSetListItem::Jsonize() const
   if(m_creationTypeHasBeenSet)
   {
    payload.WithString("creationType", CreationTypeMapper::GetNameForCreationType(m_creationType));
+  }
+
+  if(m_etagHasBeenSet)
+  {
+   payload.WithObject("etag", m_etag.Jsonize());
+
   }
 
   return payload;

@@ -26,7 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>Details of the Studio Lifecycle Configuration.</p><p><h3>See Also:</h3>   <a
+   * <p>Details of the Amazon SageMaker Studio Lifecycle Configuration.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StudioLifecycleConfigDetails">AWS
    * API Reference</a></p>
    */
@@ -81,110 +82,110 @@ namespace Model
 
 
     /**
-     * <p>The name of the Studio Lifecycle Configuration.</p>
+     * <p>The name of the Amazon SageMaker Studio Lifecycle Configuration.</p>
      */
     inline const Aws::String& GetStudioLifecycleConfigName() const{ return m_studioLifecycleConfigName; }
 
     /**
-     * <p>The name of the Studio Lifecycle Configuration.</p>
+     * <p>The name of the Amazon SageMaker Studio Lifecycle Configuration.</p>
      */
     inline bool StudioLifecycleConfigNameHasBeenSet() const { return m_studioLifecycleConfigNameHasBeenSet; }
 
     /**
-     * <p>The name of the Studio Lifecycle Configuration.</p>
+     * <p>The name of the Amazon SageMaker Studio Lifecycle Configuration.</p>
      */
     inline void SetStudioLifecycleConfigName(const Aws::String& value) { m_studioLifecycleConfigNameHasBeenSet = true; m_studioLifecycleConfigName = value; }
 
     /**
-     * <p>The name of the Studio Lifecycle Configuration.</p>
+     * <p>The name of the Amazon SageMaker Studio Lifecycle Configuration.</p>
      */
     inline void SetStudioLifecycleConfigName(Aws::String&& value) { m_studioLifecycleConfigNameHasBeenSet = true; m_studioLifecycleConfigName = std::move(value); }
 
     /**
-     * <p>The name of the Studio Lifecycle Configuration.</p>
+     * <p>The name of the Amazon SageMaker Studio Lifecycle Configuration.</p>
      */
     inline void SetStudioLifecycleConfigName(const char* value) { m_studioLifecycleConfigNameHasBeenSet = true; m_studioLifecycleConfigName.assign(value); }
 
     /**
-     * <p>The name of the Studio Lifecycle Configuration.</p>
+     * <p>The name of the Amazon SageMaker Studio Lifecycle Configuration.</p>
      */
     inline StudioLifecycleConfigDetails& WithStudioLifecycleConfigName(const Aws::String& value) { SetStudioLifecycleConfigName(value); return *this;}
 
     /**
-     * <p>The name of the Studio Lifecycle Configuration.</p>
+     * <p>The name of the Amazon SageMaker Studio Lifecycle Configuration.</p>
      */
     inline StudioLifecycleConfigDetails& WithStudioLifecycleConfigName(Aws::String&& value) { SetStudioLifecycleConfigName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the Studio Lifecycle Configuration.</p>
+     * <p>The name of the Amazon SageMaker Studio Lifecycle Configuration.</p>
      */
     inline StudioLifecycleConfigDetails& WithStudioLifecycleConfigName(const char* value) { SetStudioLifecycleConfigName(value); return *this;}
 
 
     /**
-     * <p>The creation time of the Studio Lifecycle Configuration.</p>
+     * <p>The creation time of the Amazon SageMaker Studio Lifecycle Configuration.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
 
     /**
-     * <p>The creation time of the Studio Lifecycle Configuration.</p>
+     * <p>The creation time of the Amazon SageMaker Studio Lifecycle Configuration.</p>
      */
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
 
     /**
-     * <p>The creation time of the Studio Lifecycle Configuration.</p>
+     * <p>The creation time of the Amazon SageMaker Studio Lifecycle Configuration.</p>
      */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
-     * <p>The creation time of the Studio Lifecycle Configuration.</p>
+     * <p>The creation time of the Amazon SageMaker Studio Lifecycle Configuration.</p>
      */
     inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
 
     /**
-     * <p>The creation time of the Studio Lifecycle Configuration.</p>
+     * <p>The creation time of the Amazon SageMaker Studio Lifecycle Configuration.</p>
      */
     inline StudioLifecycleConfigDetails& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
 
     /**
-     * <p>The creation time of the Studio Lifecycle Configuration.</p>
+     * <p>The creation time of the Amazon SageMaker Studio Lifecycle Configuration.</p>
      */
     inline StudioLifecycleConfigDetails& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>This value is equivalent to CreationTime because Studio Lifecycle
-     * Configurations are immutable.</p>
+     * <p>This value is equivalent to CreationTime because Amazon SageMaker Studio
+     * Lifecycle Configurations are immutable.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
 
     /**
-     * <p>This value is equivalent to CreationTime because Studio Lifecycle
-     * Configurations are immutable.</p>
+     * <p>This value is equivalent to CreationTime because Amazon SageMaker Studio
+     * Lifecycle Configurations are immutable.</p>
      */
     inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }
 
     /**
-     * <p>This value is equivalent to CreationTime because Studio Lifecycle
-     * Configurations are immutable.</p>
+     * <p>This value is equivalent to CreationTime because Amazon SageMaker Studio
+     * Lifecycle Configurations are immutable.</p>
      */
     inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = value; }
 
     /**
-     * <p>This value is equivalent to CreationTime because Studio Lifecycle
-     * Configurations are immutable.</p>
+     * <p>This value is equivalent to CreationTime because Amazon SageMaker Studio
+     * Lifecycle Configurations are immutable.</p>
      */
     inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::move(value); }
 
     /**
-     * <p>This value is equivalent to CreationTime because Studio Lifecycle
-     * Configurations are immutable.</p>
+     * <p>This value is equivalent to CreationTime because Amazon SageMaker Studio
+     * Lifecycle Configurations are immutable.</p>
      */
     inline StudioLifecycleConfigDetails& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
 
     /**
-     * <p>This value is equivalent to CreationTime because Studio Lifecycle
-     * Configurations are immutable.</p>
+     * <p>This value is equivalent to CreationTime because Amazon SageMaker Studio
+     * Lifecycle Configurations are immutable.</p>
      */
     inline StudioLifecycleConfigDetails& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
 

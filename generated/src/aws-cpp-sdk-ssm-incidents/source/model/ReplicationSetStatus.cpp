@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReplicationSetStatus::NOT_SET:
+            return {};
           case ReplicationSetStatus::ACTIVE:
             return "ACTIVE";
           case ReplicationSetStatus::CREATING:

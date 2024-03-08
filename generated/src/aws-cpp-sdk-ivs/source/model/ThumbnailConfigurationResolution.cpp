@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ThumbnailConfigurationResolution::NOT_SET:
+            return {};
           case ThumbnailConfigurationResolution::FULL_HD:
             return "FULL_HD";
           case ThumbnailConfigurationResolution::HD:

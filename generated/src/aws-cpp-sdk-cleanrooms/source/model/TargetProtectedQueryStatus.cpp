@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TargetProtectedQueryStatus::NOT_SET:
+            return {};
           case TargetProtectedQueryStatus::CANCELLED:
             return "CANCELLED";
           default:

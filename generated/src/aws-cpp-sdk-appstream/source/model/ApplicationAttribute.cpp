@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ApplicationAttribute::NOT_SET:
+            return {};
           case ApplicationAttribute::LAUNCH_PARAMETERS:
             return "LAUNCH_PARAMETERS";
           case ApplicationAttribute::WORKING_DIRECTORY:

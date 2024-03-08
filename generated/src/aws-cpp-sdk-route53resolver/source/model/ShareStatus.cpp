@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ShareStatus::NOT_SET:
+            return {};
           case ShareStatus::NOT_SHARED:
             return "NOT_SHARED";
           case ShareStatus::SHARED_WITH_ME:

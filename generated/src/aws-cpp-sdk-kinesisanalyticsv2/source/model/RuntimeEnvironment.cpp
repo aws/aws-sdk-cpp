@@ -84,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RuntimeEnvironment::NOT_SET:
+            return {};
           case RuntimeEnvironment::SQL_1_0:
             return "SQL-1_0";
           case RuntimeEnvironment::FLINK_1_6:

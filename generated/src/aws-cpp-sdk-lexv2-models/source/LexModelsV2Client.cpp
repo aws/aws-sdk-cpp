@@ -28,6 +28,7 @@
 #include <aws/lexv2-models/model/CreateBotRequest.h>
 #include <aws/lexv2-models/model/CreateBotAliasRequest.h>
 #include <aws/lexv2-models/model/CreateBotLocaleRequest.h>
+#include <aws/lexv2-models/model/CreateBotReplicaRequest.h>
 #include <aws/lexv2-models/model/CreateBotVersionRequest.h>
 #include <aws/lexv2-models/model/CreateExportRequest.h>
 #include <aws/lexv2-models/model/CreateIntentRequest.h>
@@ -40,6 +41,7 @@
 #include <aws/lexv2-models/model/DeleteBotRequest.h>
 #include <aws/lexv2-models/model/DeleteBotAliasRequest.h>
 #include <aws/lexv2-models/model/DeleteBotLocaleRequest.h>
+#include <aws/lexv2-models/model/DeleteBotReplicaRequest.h>
 #include <aws/lexv2-models/model/DeleteBotVersionRequest.h>
 #include <aws/lexv2-models/model/DeleteCustomVocabularyRequest.h>
 #include <aws/lexv2-models/model/DeleteExportRequest.h>
@@ -55,6 +57,8 @@
 #include <aws/lexv2-models/model/DescribeBotAliasRequest.h>
 #include <aws/lexv2-models/model/DescribeBotLocaleRequest.h>
 #include <aws/lexv2-models/model/DescribeBotRecommendationRequest.h>
+#include <aws/lexv2-models/model/DescribeBotReplicaRequest.h>
+#include <aws/lexv2-models/model/DescribeBotResourceGenerationRequest.h>
 #include <aws/lexv2-models/model/DescribeBotVersionRequest.h>
 #include <aws/lexv2-models/model/DescribeCustomVocabularyMetadataRequest.h>
 #include <aws/lexv2-models/model/DescribeExportRequest.h>
@@ -67,11 +71,16 @@
 #include <aws/lexv2-models/model/DescribeTestSetRequest.h>
 #include <aws/lexv2-models/model/DescribeTestSetDiscrepancyReportRequest.h>
 #include <aws/lexv2-models/model/DescribeTestSetGenerationRequest.h>
+#include <aws/lexv2-models/model/GenerateBotElementRequest.h>
 #include <aws/lexv2-models/model/GetTestExecutionArtifactsUrlRequest.h>
 #include <aws/lexv2-models/model/ListAggregatedUtterancesRequest.h>
+#include <aws/lexv2-models/model/ListBotAliasReplicasRequest.h>
 #include <aws/lexv2-models/model/ListBotAliasesRequest.h>
 #include <aws/lexv2-models/model/ListBotLocalesRequest.h>
 #include <aws/lexv2-models/model/ListBotRecommendationsRequest.h>
+#include <aws/lexv2-models/model/ListBotReplicasRequest.h>
+#include <aws/lexv2-models/model/ListBotResourceGenerationsRequest.h>
+#include <aws/lexv2-models/model/ListBotVersionReplicasRequest.h>
 #include <aws/lexv2-models/model/ListBotVersionsRequest.h>
 #include <aws/lexv2-models/model/ListBotsRequest.h>
 #include <aws/lexv2-models/model/ListBuiltInIntentsRequest.h>
@@ -97,6 +106,7 @@
 #include <aws/lexv2-models/model/ListUtteranceMetricsRequest.h>
 #include <aws/lexv2-models/model/SearchAssociatedTranscriptsRequest.h>
 #include <aws/lexv2-models/model/StartBotRecommendationRequest.h>
+#include <aws/lexv2-models/model/StartBotResourceGenerationRequest.h>
 #include <aws/lexv2-models/model/StartImportRequest.h>
 #include <aws/lexv2-models/model/StartTestExecutionRequest.h>
 #include <aws/lexv2-models/model/StartTestSetGenerationRequest.h>
@@ -127,8 +137,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* LexModelsV2Client::SERVICE_NAME = "lex";
-const char* LexModelsV2Client::ALLOCATION_TAG = "LexModelsV2Client";
+namespace Aws
+{
+  namespace LexModelsV2
+  {
+    const char SERVICE_NAME[] = "lex";
+    const char ALLOCATION_TAG[] = "LexModelsV2Client";
+  }
+}
+const char* LexModelsV2Client::GetServiceName() {return SERVICE_NAME;}
+const char* LexModelsV2Client::GetAllocationTag() {return ALLOCATION_TAG;}
 
 LexModelsV2Client::LexModelsV2Client(const LexModelsV2::LexModelsV2ClientConfiguration& clientConfiguration,
                                      std::shared_ptr<LexModelsV2EndpointProviderBase> endpointProvider) :
@@ -140,7 +158,7 @@ LexModelsV2Client::LexModelsV2Client(const LexModelsV2::LexModelsV2ClientConfigu
             Aws::MakeShared<LexModelsV2ErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<LexModelsV2EndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -156,7 +174,7 @@ LexModelsV2Client::LexModelsV2Client(const AWSCredentials& credentials,
             Aws::MakeShared<LexModelsV2ErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<LexModelsV2EndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -172,7 +190,7 @@ LexModelsV2Client::LexModelsV2Client(const std::shared_ptr<AWSCredentialsProvide
             Aws::MakeShared<LexModelsV2ErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<LexModelsV2EndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -533,6 +551,40 @@ CreateBotLocaleOutcome LexModelsV2Client::CreateBotLocale(const CreateBotLocaleR
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBotVersion());
       endpointResolutionOutcome.GetResult().AddPathSegments("/botlocales/");
       return CreateBotLocaleOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+CreateBotReplicaOutcome LexModelsV2Client::CreateBotReplica(const CreateBotReplicaRequest& request) const
+{
+  AWS_OPERATION_GUARD(CreateBotReplica);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateBotReplica, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.BotIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateBotReplica", "Required field: BotId, is not set");
+    return CreateBotReplicaOutcome(Aws::Client::AWSError<LexModelsV2Errors>(LexModelsV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, CreateBotReplica, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, CreateBotReplica, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CreateBotReplica",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<CreateBotReplicaOutcome>(
+    [&]()-> CreateBotReplicaOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateBotReplica, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/bots/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBotId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/replicas/");
+      return CreateBotReplicaOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -993,6 +1045,46 @@ DeleteBotLocaleOutcome LexModelsV2Client::DeleteBotLocale(const DeleteBotLocaleR
       endpointResolutionOutcome.GetResult().AddPathSegments("/botlocales/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLocaleId());
       return DeleteBotLocaleOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+DeleteBotReplicaOutcome LexModelsV2Client::DeleteBotReplica(const DeleteBotReplicaRequest& request) const
+{
+  AWS_OPERATION_GUARD(DeleteBotReplica);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteBotReplica, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.BotIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteBotReplica", "Required field: BotId, is not set");
+    return DeleteBotReplicaOutcome(Aws::Client::AWSError<LexModelsV2Errors>(LexModelsV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotId]", false));
+  }
+  if (!request.ReplicaRegionHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteBotReplica", "Required field: ReplicaRegion, is not set");
+    return DeleteBotReplicaOutcome(Aws::Client::AWSError<LexModelsV2Errors>(LexModelsV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ReplicaRegion]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteBotReplica, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DeleteBotReplica, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteBotReplica",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DeleteBotReplicaOutcome>(
+    [&]()-> DeleteBotReplicaOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteBotReplica, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/bots/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBotId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/replicas/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetReplicaRegion());
+      return DeleteBotReplicaOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1636,6 +1728,100 @@ DescribeBotRecommendationOutcome LexModelsV2Client::DescribeBotRecommendation(co
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+DescribeBotReplicaOutcome LexModelsV2Client::DescribeBotReplica(const DescribeBotReplicaRequest& request) const
+{
+  AWS_OPERATION_GUARD(DescribeBotReplica);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeBotReplica, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.BotIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeBotReplica", "Required field: BotId, is not set");
+    return DescribeBotReplicaOutcome(Aws::Client::AWSError<LexModelsV2Errors>(LexModelsV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotId]", false));
+  }
+  if (!request.ReplicaRegionHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeBotReplica", "Required field: ReplicaRegion, is not set");
+    return DescribeBotReplicaOutcome(Aws::Client::AWSError<LexModelsV2Errors>(LexModelsV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ReplicaRegion]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DescribeBotReplica, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DescribeBotReplica, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DescribeBotReplica",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DescribeBotReplicaOutcome>(
+    [&]()-> DescribeBotReplicaOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeBotReplica, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/bots/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBotId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/replicas/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetReplicaRegion());
+      return DescribeBotReplicaOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+DescribeBotResourceGenerationOutcome LexModelsV2Client::DescribeBotResourceGeneration(const DescribeBotResourceGenerationRequest& request) const
+{
+  AWS_OPERATION_GUARD(DescribeBotResourceGeneration);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeBotResourceGeneration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.BotIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeBotResourceGeneration", "Required field: BotId, is not set");
+    return DescribeBotResourceGenerationOutcome(Aws::Client::AWSError<LexModelsV2Errors>(LexModelsV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotId]", false));
+  }
+  if (!request.BotVersionHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeBotResourceGeneration", "Required field: BotVersion, is not set");
+    return DescribeBotResourceGenerationOutcome(Aws::Client::AWSError<LexModelsV2Errors>(LexModelsV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotVersion]", false));
+  }
+  if (!request.LocaleIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeBotResourceGeneration", "Required field: LocaleId, is not set");
+    return DescribeBotResourceGenerationOutcome(Aws::Client::AWSError<LexModelsV2Errors>(LexModelsV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LocaleId]", false));
+  }
+  if (!request.GenerationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeBotResourceGeneration", "Required field: GenerationId, is not set");
+    return DescribeBotResourceGenerationOutcome(Aws::Client::AWSError<LexModelsV2Errors>(LexModelsV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GenerationId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DescribeBotResourceGeneration, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DescribeBotResourceGeneration, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DescribeBotResourceGeneration",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DescribeBotResourceGenerationOutcome>(
+    [&]()-> DescribeBotResourceGenerationOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeBotResourceGeneration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/bots/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBotId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/botversions/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBotVersion());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/botlocales/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLocaleId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/generations/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetGenerationId());
+      return DescribeBotResourceGenerationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 DescribeBotVersionOutcome LexModelsV2Client::DescribeBotVersion(const DescribeBotVersionRequest& request) const
 {
   AWS_OPERATION_GUARD(DescribeBotVersion);
@@ -2124,6 +2310,54 @@ DescribeTestSetGenerationOutcome LexModelsV2Client::DescribeTestSetGeneration(co
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+GenerateBotElementOutcome LexModelsV2Client::GenerateBotElement(const GenerateBotElementRequest& request) const
+{
+  AWS_OPERATION_GUARD(GenerateBotElement);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GenerateBotElement, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.BotIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GenerateBotElement", "Required field: BotId, is not set");
+    return GenerateBotElementOutcome(Aws::Client::AWSError<LexModelsV2Errors>(LexModelsV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotId]", false));
+  }
+  if (!request.BotVersionHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GenerateBotElement", "Required field: BotVersion, is not set");
+    return GenerateBotElementOutcome(Aws::Client::AWSError<LexModelsV2Errors>(LexModelsV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotVersion]", false));
+  }
+  if (!request.LocaleIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GenerateBotElement", "Required field: LocaleId, is not set");
+    return GenerateBotElementOutcome(Aws::Client::AWSError<LexModelsV2Errors>(LexModelsV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LocaleId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GenerateBotElement, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GenerateBotElement, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GenerateBotElement",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GenerateBotElementOutcome>(
+    [&]()-> GenerateBotElementOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GenerateBotElement, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/bots/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBotId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/botversions/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBotVersion());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/botlocales/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLocaleId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/generate");
+      return GenerateBotElementOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 GetTestExecutionArtifactsUrlOutcome LexModelsV2Client::GetTestExecutionArtifactsUrl(const GetTestExecutionArtifactsUrlRequest& request) const
 {
   AWS_OPERATION_GUARD(GetTestExecutionArtifactsUrl);
@@ -2186,6 +2420,47 @@ ListAggregatedUtterancesOutcome LexModelsV2Client::ListAggregatedUtterances(cons
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBotId());
       endpointResolutionOutcome.GetResult().AddPathSegments("/aggregatedutterances/");
       return ListAggregatedUtterancesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ListBotAliasReplicasOutcome LexModelsV2Client::ListBotAliasReplicas(const ListBotAliasReplicasRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListBotAliasReplicas);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListBotAliasReplicas, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.BotIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListBotAliasReplicas", "Required field: BotId, is not set");
+    return ListBotAliasReplicasOutcome(Aws::Client::AWSError<LexModelsV2Errors>(LexModelsV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotId]", false));
+  }
+  if (!request.ReplicaRegionHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListBotAliasReplicas", "Required field: ReplicaRegion, is not set");
+    return ListBotAliasReplicasOutcome(Aws::Client::AWSError<LexModelsV2Errors>(LexModelsV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ReplicaRegion]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListBotAliasReplicas, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListBotAliasReplicas, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListBotAliasReplicas",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListBotAliasReplicasOutcome>(
+    [&]()-> ListBotAliasReplicasOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListBotAliasReplicas, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/bots/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBotId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/replicas/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetReplicaRegion());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/botaliases/");
+      return ListBotAliasReplicasOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -2309,6 +2584,129 @@ ListBotRecommendationsOutcome LexModelsV2Client::ListBotRecommendations(const Li
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLocaleId());
       endpointResolutionOutcome.GetResult().AddPathSegments("/botrecommendations/");
       return ListBotRecommendationsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ListBotReplicasOutcome LexModelsV2Client::ListBotReplicas(const ListBotReplicasRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListBotReplicas);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListBotReplicas, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.BotIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListBotReplicas", "Required field: BotId, is not set");
+    return ListBotReplicasOutcome(Aws::Client::AWSError<LexModelsV2Errors>(LexModelsV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListBotReplicas, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListBotReplicas, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListBotReplicas",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListBotReplicasOutcome>(
+    [&]()-> ListBotReplicasOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListBotReplicas, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/bots/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBotId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/replicas/");
+      return ListBotReplicasOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ListBotResourceGenerationsOutcome LexModelsV2Client::ListBotResourceGenerations(const ListBotResourceGenerationsRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListBotResourceGenerations);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListBotResourceGenerations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.BotIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListBotResourceGenerations", "Required field: BotId, is not set");
+    return ListBotResourceGenerationsOutcome(Aws::Client::AWSError<LexModelsV2Errors>(LexModelsV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotId]", false));
+  }
+  if (!request.BotVersionHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListBotResourceGenerations", "Required field: BotVersion, is not set");
+    return ListBotResourceGenerationsOutcome(Aws::Client::AWSError<LexModelsV2Errors>(LexModelsV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotVersion]", false));
+  }
+  if (!request.LocaleIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListBotResourceGenerations", "Required field: LocaleId, is not set");
+    return ListBotResourceGenerationsOutcome(Aws::Client::AWSError<LexModelsV2Errors>(LexModelsV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LocaleId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListBotResourceGenerations, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListBotResourceGenerations, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListBotResourceGenerations",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListBotResourceGenerationsOutcome>(
+    [&]()-> ListBotResourceGenerationsOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListBotResourceGenerations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/bots/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBotId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/botversions/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBotVersion());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/botlocales/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLocaleId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/generations");
+      return ListBotResourceGenerationsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ListBotVersionReplicasOutcome LexModelsV2Client::ListBotVersionReplicas(const ListBotVersionReplicasRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListBotVersionReplicas);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListBotVersionReplicas, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.BotIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListBotVersionReplicas", "Required field: BotId, is not set");
+    return ListBotVersionReplicasOutcome(Aws::Client::AWSError<LexModelsV2Errors>(LexModelsV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotId]", false));
+  }
+  if (!request.ReplicaRegionHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListBotVersionReplicas", "Required field: ReplicaRegion, is not set");
+    return ListBotVersionReplicasOutcome(Aws::Client::AWSError<LexModelsV2Errors>(LexModelsV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ReplicaRegion]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListBotVersionReplicas, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListBotVersionReplicas, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListBotVersionReplicas",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListBotVersionReplicasOutcome>(
+    [&]()-> ListBotVersionReplicasOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListBotVersionReplicas, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/bots/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBotId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/replicas/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetReplicaRegion());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/botversions/");
+      return ListBotVersionReplicasOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -3242,6 +3640,54 @@ StartBotRecommendationOutcome LexModelsV2Client::StartBotRecommendation(const St
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLocaleId());
       endpointResolutionOutcome.GetResult().AddPathSegments("/botrecommendations/");
       return StartBotRecommendationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+StartBotResourceGenerationOutcome LexModelsV2Client::StartBotResourceGeneration(const StartBotResourceGenerationRequest& request) const
+{
+  AWS_OPERATION_GUARD(StartBotResourceGeneration);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartBotResourceGeneration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.BotIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("StartBotResourceGeneration", "Required field: BotId, is not set");
+    return StartBotResourceGenerationOutcome(Aws::Client::AWSError<LexModelsV2Errors>(LexModelsV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotId]", false));
+  }
+  if (!request.BotVersionHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("StartBotResourceGeneration", "Required field: BotVersion, is not set");
+    return StartBotResourceGenerationOutcome(Aws::Client::AWSError<LexModelsV2Errors>(LexModelsV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BotVersion]", false));
+  }
+  if (!request.LocaleIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("StartBotResourceGeneration", "Required field: LocaleId, is not set");
+    return StartBotResourceGenerationOutcome(Aws::Client::AWSError<LexModelsV2Errors>(LexModelsV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LocaleId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, StartBotResourceGeneration, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, StartBotResourceGeneration, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".StartBotResourceGeneration",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<StartBotResourceGenerationOutcome>(
+    [&]()-> StartBotResourceGenerationOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartBotResourceGeneration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/bots/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBotId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/botversions/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBotVersion());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/botlocales/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetLocaleId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/startgeneration");
+      return StartBotResourceGenerationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OrderEnum::NOT_SET:
+            return {};
           case OrderEnum::ascending:
             return "ascending";
           case OrderEnum::descending:

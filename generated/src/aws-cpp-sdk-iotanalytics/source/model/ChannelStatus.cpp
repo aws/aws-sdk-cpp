@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ChannelStatus::NOT_SET:
+            return {};
           case ChannelStatus::CREATING:
             return "CREATING";
           case ChannelStatus::ACTIVE:

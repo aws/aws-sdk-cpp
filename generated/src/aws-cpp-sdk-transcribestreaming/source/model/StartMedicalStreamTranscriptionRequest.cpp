@@ -50,7 +50,7 @@ Aws::Http::HeaderValueCollection StartMedicalStreamTranscriptionRequest::GetRequ
   Aws::Http::HeaderValueCollection headers;
   headers.emplace(Aws::Http::CONTENT_TYPE_HEADER, Aws::AMZN_EVENTSTREAM_CONTENT_TYPE);
   Aws::StringStream ss;
-  if(m_languageCodeHasBeenSet)
+  if(m_languageCodeHasBeenSet && m_languageCode != LanguageCode::NOT_SET)
   {
     headers.emplace("x-amzn-transcribe-language-code", LanguageCodeMapper::GetNameForLanguageCode(m_languageCode));
   }
@@ -62,7 +62,7 @@ Aws::Http::HeaderValueCollection StartMedicalStreamTranscriptionRequest::GetRequ
     ss.str("");
   }
 
-  if(m_mediaEncodingHasBeenSet)
+  if(m_mediaEncodingHasBeenSet && m_mediaEncoding != MediaEncoding::NOT_SET)
   {
     headers.emplace("x-amzn-transcribe-media-encoding", MediaEncodingMapper::GetNameForMediaEncoding(m_mediaEncoding));
   }
@@ -74,12 +74,12 @@ Aws::Http::HeaderValueCollection StartMedicalStreamTranscriptionRequest::GetRequ
     ss.str("");
   }
 
-  if(m_specialtyHasBeenSet)
+  if(m_specialtyHasBeenSet && m_specialty != Specialty::NOT_SET)
   {
     headers.emplace("x-amzn-transcribe-specialty", SpecialtyMapper::GetNameForSpecialty(m_specialty));
   }
 
-  if(m_typeHasBeenSet)
+  if(m_typeHasBeenSet && m_type != Type::NOT_SET)
   {
     headers.emplace("x-amzn-transcribe-type", TypeMapper::GetNameForType(m_type));
   }
@@ -112,7 +112,7 @@ Aws::Http::HeaderValueCollection StartMedicalStreamTranscriptionRequest::GetRequ
     ss.str("");
   }
 
-  if(m_contentIdentificationTypeHasBeenSet)
+  if(m_contentIdentificationTypeHasBeenSet && m_contentIdentificationType != MedicalContentIdentificationType::NOT_SET)
   {
     headers.emplace("x-amzn-transcribe-content-identification-type", MedicalContentIdentificationTypeMapper::GetNameForMedicalContentIdentificationType(m_contentIdentificationType));
   }

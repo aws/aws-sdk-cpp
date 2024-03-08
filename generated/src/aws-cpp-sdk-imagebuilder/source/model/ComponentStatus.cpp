@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ComponentStatus::NOT_SET:
+            return {};
           case ComponentStatus::DEPRECATED:
             return "DEPRECATED";
           default:

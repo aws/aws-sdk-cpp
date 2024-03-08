@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ServiceNetworkServiceAssociationStatus::NOT_SET:
+            return {};
           case ServiceNetworkServiceAssociationStatus::CREATE_IN_PROGRESS:
             return "CREATE_IN_PROGRESS";
           case ServiceNetworkServiceAssociationStatus::ACTIVE:

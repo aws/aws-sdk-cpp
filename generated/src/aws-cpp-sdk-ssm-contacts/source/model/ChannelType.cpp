@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ChannelType::NOT_SET:
+            return {};
           case ChannelType::SMS:
             return "SMS";
           case ChannelType::VOICE:

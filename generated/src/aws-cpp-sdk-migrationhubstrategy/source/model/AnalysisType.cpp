@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AnalysisType::NOT_SET:
+            return {};
           case AnalysisType::SOURCE_CODE_ANALYSIS:
             return "SOURCE_CODE_ANALYSIS";
           case AnalysisType::DATABASE_ANALYSIS:

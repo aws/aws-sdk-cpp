@@ -27,7 +27,9 @@ namespace Model
     DELETING,
     COPYING_IN_PROGRESS,
     COPYING_COMPLETED,
-    COPYING_FAILED
+    COPYING_FAILED,
+    DEPRECATED,
+    EXPIRED
   };
 
 namespace ProjectVersionStatusMapper

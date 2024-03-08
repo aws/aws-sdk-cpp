@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AvailabilityZoneOptInStatus::NOT_SET:
+            return {};
           case AvailabilityZoneOptInStatus::opt_in_not_required:
             return "opt-in-not-required";
           case AvailabilityZoneOptInStatus::opted_in:

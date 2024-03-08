@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DataSourceStatus::NOT_SET:
+            return {};
           case DataSourceStatus::CREATING:
             return "CREATING";
           case DataSourceStatus::DELETING:

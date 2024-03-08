@@ -44,7 +44,7 @@ CURL* CurlHandleContainer::AcquireCurlHandle()
         CheckAndGrowPool();
     }
 
-    CURL* handle = m_handleContainer.Acquire();
+    CURL* handle = m_handleContainer.TryAcquire();
     AWS_LOGSTREAM_DEBUG(CURL_HANDLE_CONTAINER_TAG, "Connection has been released. Continuing.");
     AWS_LOGSTREAM_DEBUG(CURL_HANDLE_CONTAINER_TAG, "Returning connection handle " << handle);
     return handle;

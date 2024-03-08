@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case WorkspaceBundleState::NOT_SET:
+            return {};
           case WorkspaceBundleState::AVAILABLE:
             return "AVAILABLE";
           case WorkspaceBundleState::PENDING:

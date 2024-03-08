@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TaskType::NOT_SET:
+            return {};
           case TaskType::EVALUATION:
             return "EVALUATION";
           case TaskType::LABELING_SET_GENERATION:

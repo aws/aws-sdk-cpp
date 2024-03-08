@@ -36,43 +36,43 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == INTERNAL_ERROR_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityErrors::INTERNAL_ERROR), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityErrors::INTERNAL_ERROR), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == EXTERNAL_SERVICE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityErrors::EXTERNAL_SERVICE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityErrors::EXTERNAL_SERVICE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_PARAMETER_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityErrors::INVALID_PARAMETER), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityErrors::INVALID_PARAMETER), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == NOT_AUTHORIZED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityErrors::NOT_AUTHORIZED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityErrors::NOT_AUTHORIZED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == RESOURCE_CONFLICT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityErrors::RESOURCE_CONFLICT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityErrors::RESOURCE_CONFLICT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityErrors::LIMIT_EXCEEDED), true);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
   }
   else if (hashCode == TOO_MANY_REQUESTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityErrors::TOO_MANY_REQUESTS), true);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityErrors::TOO_MANY_REQUESTS), RetryableType::RETRYABLE);
   }
   else if (hashCode == CONCURRENT_MODIFICATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityErrors::CONCURRENT_MODIFICATION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityErrors::CONCURRENT_MODIFICATION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_IDENTITY_POOL_CONFIGURATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityErrors::INVALID_IDENTITY_POOL_CONFIGURATION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityErrors::INVALID_IDENTITY_POOL_CONFIGURATION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == DEVELOPER_USER_ALREADY_REGISTERED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityErrors::DEVELOPER_USER_ALREADY_REGISTERED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CognitoIdentityErrors::DEVELOPER_USER_ALREADY_REGISTERED), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InstanceIdFilterOperator::NOT_SET:
+            return {};
           case InstanceIdFilterOperator::Eq:
             return "Eq";
           default:

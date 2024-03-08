@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ClusterState::NOT_SET:
+            return {};
           case ClusterState::ACTIVE:
             return "ACTIVE";
           case ClusterState::CREATING:

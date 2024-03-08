@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ErrorCode::NOT_SET:
+            return {};
           case ErrorCode::ClientError:
             return "ClientError";
           case ErrorCode::InternalError:

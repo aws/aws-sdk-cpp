@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DatabaseEngineType::NOT_SET:
+            return {};
           case DatabaseEngineType::RDS_AURORA_MYSQL:
             return "RDS_AURORA_MYSQL";
           case DatabaseEngineType::RDS_AURORA_POSTGRESQL:

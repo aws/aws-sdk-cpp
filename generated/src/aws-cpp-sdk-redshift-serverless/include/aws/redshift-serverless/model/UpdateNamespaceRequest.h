@@ -37,58 +37,123 @@ namespace Model
 
 
     /**
+     * <p>The ID of the Key Management Service (KMS) key used to encrypt and store the
+     * namespace's admin credentials secret. You can only use this parameter if
+     * <code>manageAdminPassword</code> is true.</p>
+     */
+    inline const Aws::String& GetAdminPasswordSecretKmsKeyId() const{ return m_adminPasswordSecretKmsKeyId; }
+
+    /**
+     * <p>The ID of the Key Management Service (KMS) key used to encrypt and store the
+     * namespace's admin credentials secret. You can only use this parameter if
+     * <code>manageAdminPassword</code> is true.</p>
+     */
+    inline bool AdminPasswordSecretKmsKeyIdHasBeenSet() const { return m_adminPasswordSecretKmsKeyIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Key Management Service (KMS) key used to encrypt and store the
+     * namespace's admin credentials secret. You can only use this parameter if
+     * <code>manageAdminPassword</code> is true.</p>
+     */
+    inline void SetAdminPasswordSecretKmsKeyId(const Aws::String& value) { m_adminPasswordSecretKmsKeyIdHasBeenSet = true; m_adminPasswordSecretKmsKeyId = value; }
+
+    /**
+     * <p>The ID of the Key Management Service (KMS) key used to encrypt and store the
+     * namespace's admin credentials secret. You can only use this parameter if
+     * <code>manageAdminPassword</code> is true.</p>
+     */
+    inline void SetAdminPasswordSecretKmsKeyId(Aws::String&& value) { m_adminPasswordSecretKmsKeyIdHasBeenSet = true; m_adminPasswordSecretKmsKeyId = std::move(value); }
+
+    /**
+     * <p>The ID of the Key Management Service (KMS) key used to encrypt and store the
+     * namespace's admin credentials secret. You can only use this parameter if
+     * <code>manageAdminPassword</code> is true.</p>
+     */
+    inline void SetAdminPasswordSecretKmsKeyId(const char* value) { m_adminPasswordSecretKmsKeyIdHasBeenSet = true; m_adminPasswordSecretKmsKeyId.assign(value); }
+
+    /**
+     * <p>The ID of the Key Management Service (KMS) key used to encrypt and store the
+     * namespace's admin credentials secret. You can only use this parameter if
+     * <code>manageAdminPassword</code> is true.</p>
+     */
+    inline UpdateNamespaceRequest& WithAdminPasswordSecretKmsKeyId(const Aws::String& value) { SetAdminPasswordSecretKmsKeyId(value); return *this;}
+
+    /**
+     * <p>The ID of the Key Management Service (KMS) key used to encrypt and store the
+     * namespace's admin credentials secret. You can only use this parameter if
+     * <code>manageAdminPassword</code> is true.</p>
+     */
+    inline UpdateNamespaceRequest& WithAdminPasswordSecretKmsKeyId(Aws::String&& value) { SetAdminPasswordSecretKmsKeyId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the Key Management Service (KMS) key used to encrypt and store the
+     * namespace's admin credentials secret. You can only use this parameter if
+     * <code>manageAdminPassword</code> is true.</p>
+     */
+    inline UpdateNamespaceRequest& WithAdminPasswordSecretKmsKeyId(const char* value) { SetAdminPasswordSecretKmsKeyId(value); return *this;}
+
+
+    /**
      * <p>The password of the administrator for the first database created in the
      * namespace. This parameter must be updated together with
-     * <code>adminUsername</code>.</p>
+     * <code>adminUsername</code>.</p> <p>You can't use <code>adminUserPassword</code>
+     * if <code>manageAdminPassword</code> is true. </p>
      */
     inline const Aws::String& GetAdminUserPassword() const{ return m_adminUserPassword; }
 
     /**
      * <p>The password of the administrator for the first database created in the
      * namespace. This parameter must be updated together with
-     * <code>adminUsername</code>.</p>
+     * <code>adminUsername</code>.</p> <p>You can't use <code>adminUserPassword</code>
+     * if <code>manageAdminPassword</code> is true. </p>
      */
     inline bool AdminUserPasswordHasBeenSet() const { return m_adminUserPasswordHasBeenSet; }
 
     /**
      * <p>The password of the administrator for the first database created in the
      * namespace. This parameter must be updated together with
-     * <code>adminUsername</code>.</p>
+     * <code>adminUsername</code>.</p> <p>You can't use <code>adminUserPassword</code>
+     * if <code>manageAdminPassword</code> is true. </p>
      */
     inline void SetAdminUserPassword(const Aws::String& value) { m_adminUserPasswordHasBeenSet = true; m_adminUserPassword = value; }
 
     /**
      * <p>The password of the administrator for the first database created in the
      * namespace. This parameter must be updated together with
-     * <code>adminUsername</code>.</p>
+     * <code>adminUsername</code>.</p> <p>You can't use <code>adminUserPassword</code>
+     * if <code>manageAdminPassword</code> is true. </p>
      */
     inline void SetAdminUserPassword(Aws::String&& value) { m_adminUserPasswordHasBeenSet = true; m_adminUserPassword = std::move(value); }
 
     /**
      * <p>The password of the administrator for the first database created in the
      * namespace. This parameter must be updated together with
-     * <code>adminUsername</code>.</p>
+     * <code>adminUsername</code>.</p> <p>You can't use <code>adminUserPassword</code>
+     * if <code>manageAdminPassword</code> is true. </p>
      */
     inline void SetAdminUserPassword(const char* value) { m_adminUserPasswordHasBeenSet = true; m_adminUserPassword.assign(value); }
 
     /**
      * <p>The password of the administrator for the first database created in the
      * namespace. This parameter must be updated together with
-     * <code>adminUsername</code>.</p>
+     * <code>adminUsername</code>.</p> <p>You can't use <code>adminUserPassword</code>
+     * if <code>manageAdminPassword</code> is true. </p>
      */
     inline UpdateNamespaceRequest& WithAdminUserPassword(const Aws::String& value) { SetAdminUserPassword(value); return *this;}
 
     /**
      * <p>The password of the administrator for the first database created in the
      * namespace. This parameter must be updated together with
-     * <code>adminUsername</code>.</p>
+     * <code>adminUsername</code>.</p> <p>You can't use <code>adminUserPassword</code>
+     * if <code>manageAdminPassword</code> is true. </p>
      */
     inline UpdateNamespaceRequest& WithAdminUserPassword(Aws::String&& value) { SetAdminUserPassword(std::move(value)); return *this;}
 
     /**
      * <p>The password of the administrator for the first database created in the
      * namespace. This parameter must be updated together with
-     * <code>adminUsername</code>.</p>
+     * <code>adminUsername</code>.</p> <p>You can't use <code>adminUserPassword</code>
+     * if <code>manageAdminPassword</code> is true. </p>
      */
     inline UpdateNamespaceRequest& WithAdminUserPassword(const char* value) { SetAdminUserPassword(value); return *this;}
 
@@ -369,6 +434,43 @@ namespace Model
 
 
     /**
+     * <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the
+     * namespace's admin credentials. You can't use <code>adminUserPassword</code> if
+     * <code>manageAdminPassword</code> is true. If <code>manageAdminPassword</code> is
+     * false or not set, Amazon Redshift uses <code>adminUserPassword</code> for the
+     * admin user account's password. </p>
+     */
+    inline bool GetManageAdminPassword() const{ return m_manageAdminPassword; }
+
+    /**
+     * <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the
+     * namespace's admin credentials. You can't use <code>adminUserPassword</code> if
+     * <code>manageAdminPassword</code> is true. If <code>manageAdminPassword</code> is
+     * false or not set, Amazon Redshift uses <code>adminUserPassword</code> for the
+     * admin user account's password. </p>
+     */
+    inline bool ManageAdminPasswordHasBeenSet() const { return m_manageAdminPasswordHasBeenSet; }
+
+    /**
+     * <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the
+     * namespace's admin credentials. You can't use <code>adminUserPassword</code> if
+     * <code>manageAdminPassword</code> is true. If <code>manageAdminPassword</code> is
+     * false or not set, Amazon Redshift uses <code>adminUserPassword</code> for the
+     * admin user account's password. </p>
+     */
+    inline void SetManageAdminPassword(bool value) { m_manageAdminPasswordHasBeenSet = true; m_manageAdminPassword = value; }
+
+    /**
+     * <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the
+     * namespace's admin credentials. You can't use <code>adminUserPassword</code> if
+     * <code>manageAdminPassword</code> is true. If <code>manageAdminPassword</code> is
+     * false or not set, Amazon Redshift uses <code>adminUserPassword</code> for the
+     * admin user account's password. </p>
+     */
+    inline UpdateNamespaceRequest& WithManageAdminPassword(bool value) { SetManageAdminPassword(value); return *this;}
+
+
+    /**
      * <p>The name of the namespace to update. You can't update the name of a namespace
      * once it is created.</p>
      */
@@ -418,6 +520,9 @@ namespace Model
 
   private:
 
+    Aws::String m_adminPasswordSecretKmsKeyId;
+    bool m_adminPasswordSecretKmsKeyIdHasBeenSet = false;
+
     Aws::String m_adminUserPassword;
     bool m_adminUserPasswordHasBeenSet = false;
 
@@ -435,6 +540,9 @@ namespace Model
 
     Aws::Vector<LogExport> m_logExports;
     bool m_logExportsHasBeenSet = false;
+
+    bool m_manageAdminPassword;
+    bool m_manageAdminPasswordHasBeenSet = false;
 
     Aws::String m_namespaceName;
     bool m_namespaceNameHasBeenSet = false;

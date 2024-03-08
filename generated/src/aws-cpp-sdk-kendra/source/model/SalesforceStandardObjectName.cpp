@@ -124,6 +124,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SalesforceStandardObjectName::NOT_SET:
+            return {};
           case SalesforceStandardObjectName::ACCOUNT:
             return "ACCOUNT";
           case SalesforceStandardObjectName::CAMPAIGN:

@@ -81,37 +81,37 @@ namespace Model
 
 
     /**
-     * <p>The time when the the field-level encryption profile summary was last
+     * <p>The time when the field-level encryption profile summary was last
      * updated.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
 
     /**
-     * <p>The time when the the field-level encryption profile summary was last
+     * <p>The time when the field-level encryption profile summary was last
      * updated.</p>
      */
     inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }
 
     /**
-     * <p>The time when the the field-level encryption profile summary was last
+     * <p>The time when the field-level encryption profile summary was last
      * updated.</p>
      */
     inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = value; }
 
     /**
-     * <p>The time when the the field-level encryption profile summary was last
+     * <p>The time when the field-level encryption profile summary was last
      * updated.</p>
      */
     inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::move(value); }
 
     /**
-     * <p>The time when the the field-level encryption profile summary was last
+     * <p>The time when the field-level encryption profile summary was last
      * updated.</p>
      */
     inline FieldLevelEncryptionProfileSummary& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
 
     /**
-     * <p>The time when the the field-level encryption profile summary was last
+     * <p>The time when the field-level encryption profile summary was last
      * updated.</p>
      */
     inline FieldLevelEncryptionProfileSummary& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}

@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HttpVersion::NOT_SET:
+            return {};
           case HttpVersion::http1_1:
             return "http1.1";
           case HttpVersion::http2:

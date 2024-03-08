@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TableOrientation::NOT_SET:
+            return {};
           case TableOrientation::VERTICAL:
             return "VERTICAL";
           case TableOrientation::HORIZONTAL:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case JSScript::NOT_SET:
+            return {};
           case JSScript::jsx:
             return "jsx";
           case JSScript::tsx:

@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CustomerGatewayAssociationState::NOT_SET:
+            return {};
           case CustomerGatewayAssociationState::PENDING:
             return "PENDING";
           case CustomerGatewayAssociationState::AVAILABLE:

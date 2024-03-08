@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResolverEndpointDirection::NOT_SET:
+            return {};
           case ResolverEndpointDirection::INBOUND:
             return "INBOUND";
           case ResolverEndpointDirection::OUTBOUND:

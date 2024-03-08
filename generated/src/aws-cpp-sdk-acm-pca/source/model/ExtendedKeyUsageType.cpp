@@ -84,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ExtendedKeyUsageType::NOT_SET:
+            return {};
           case ExtendedKeyUsageType::SERVER_AUTH:
             return "SERVER_AUTH";
           case ExtendedKeyUsageType::CLIENT_AUTH:

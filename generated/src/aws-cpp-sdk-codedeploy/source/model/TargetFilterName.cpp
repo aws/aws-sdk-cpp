@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TargetFilterName::NOT_SET:
+            return {};
           case TargetFilterName::TargetStatus:
             return "TargetStatus";
           case TargetFilterName::ServerInstanceLabel:

@@ -25,7 +25,8 @@ namespace Model
 
   /**
    * <p>The location of the training documents. This parameter is required in a
-   * request to create a native classifier model.</p><p><h3>See Also:</h3>   <a
+   * request to create a semi-structured document classification model.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DocumentClassifierDocuments">AWS
    * API Reference</a></p>
    */

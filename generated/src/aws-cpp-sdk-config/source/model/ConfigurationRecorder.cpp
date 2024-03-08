@@ -21,14 +21,16 @@ namespace Model
 ConfigurationRecorder::ConfigurationRecorder() : 
     m_nameHasBeenSet(false),
     m_roleARNHasBeenSet(false),
-    m_recordingGroupHasBeenSet(false)
+    m_recordingGroupHasBeenSet(false),
+    m_recordingModeHasBeenSet(false)
 {
 }
 
 ConfigurationRecorder::ConfigurationRecorder(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_roleARNHasBeenSet(false),
-    m_recordingGroupHasBeenSet(false)
+    m_recordingGroupHasBeenSet(false),
+    m_recordingModeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -56,6 +58,13 @@ ConfigurationRecorder& ConfigurationRecorder::operator =(JsonView jsonValue)
     m_recordingGroupHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("recordingMode"))
+  {
+    m_recordingMode = jsonValue.GetObject("recordingMode");
+
+    m_recordingModeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -78,6 +87,12 @@ JsonValue ConfigurationRecorder::Jsonize() const
   if(m_recordingGroupHasBeenSet)
   {
    payload.WithObject("recordingGroup", m_recordingGroup.Jsonize());
+
+  }
+
+  if(m_recordingModeHasBeenSet)
+  {
+   payload.WithObject("recordingMode", m_recordingMode.Jsonize());
 
   }
 

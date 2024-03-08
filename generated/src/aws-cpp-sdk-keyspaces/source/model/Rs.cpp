@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Rs::NOT_SET:
+            return {};
           case Rs::SINGLE_REGION:
             return "SINGLE_REGION";
           case Rs::MULTI_REGION:

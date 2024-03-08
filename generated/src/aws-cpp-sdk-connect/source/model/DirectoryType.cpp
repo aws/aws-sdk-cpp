@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DirectoryType::NOT_SET:
+            return {};
           case DirectoryType::SAML:
             return "SAML";
           case DirectoryType::CONNECT_MANAGED:

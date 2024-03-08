@@ -57,8 +57,8 @@ namespace GameLift
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef GameLiftClientConfiguration ClientConfigurationType;
       typedef GameLiftEndpointProvider EndpointProviderType;
@@ -68,14 +68,14 @@ namespace GameLift
         * is not specified, it will be initialized to default values.
         */
         GameLiftClient(const Aws::GameLift::GameLiftClientConfiguration& clientConfiguration = Aws::GameLift::GameLiftClientConfiguration(),
-                       std::shared_ptr<GameLiftEndpointProviderBase> endpointProvider = Aws::MakeShared<GameLiftEndpointProvider>(ALLOCATION_TAG));
+                       std::shared_ptr<GameLiftEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         GameLiftClient(const Aws::Auth::AWSCredentials& credentials,
-                       std::shared_ptr<GameLiftEndpointProviderBase> endpointProvider = Aws::MakeShared<GameLiftEndpointProvider>(ALLOCATION_TAG),
+                       std::shared_ptr<GameLiftEndpointProviderBase> endpointProvider = nullptr,
                        const Aws::GameLift::GameLiftClientConfiguration& clientConfiguration = Aws::GameLift::GameLiftClientConfiguration());
 
        /**
@@ -83,7 +83,7 @@ namespace GameLift
         * the default http client factory will be used
         */
         GameLiftClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                       std::shared_ptr<GameLiftEndpointProviderBase> endpointProvider = Aws::MakeShared<GameLiftEndpointProvider>(ALLOCATION_TAG),
+                       std::shared_ptr<GameLiftEndpointProviderBase> endpointProvider = nullptr,
                        const Aws::GameLift::GameLiftClientConfiguration& clientConfiguration = Aws::GameLift::GameLiftClientConfiguration());
 
 
@@ -334,7 +334,15 @@ namespace GameLift
          * successful, this operation creates a new Fleet resource and places it in
          * <code>NEW</code> status, which prompts Amazon GameLift to initiate the <a
          * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-all.html#fleets-creation-workflow">fleet
-         * creation workflow</a>.</p> <p> <b>Learn more</b> </p> <p> <a
+         * creation workflow</a>. You can track fleet creation by checking fleet status
+         * using <a>DescribeFleetAttributes</a> and
+         * <a>DescribeFleetLocationAttributes</a>/, or by monitoring fleet creation events
+         * using <a>DescribeFleetEvents</a>. </p> <p>When the fleet status changes to
+         * <code>ACTIVE</code>, you can enable automatic scaling with
+         * <a>PutScalingPolicy</a> and set capacity for the home Region with
+         * <a>UpdateFleetCapacity</a>. When the status of each remote location reaches
+         * <code>ACTIVE</code>, you can set capacity by location using
+         * <a>UpdateFleetCapacity</a>.</p> <p> <b>Learn more</b> </p> <p> <a
          * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
          * up fleets</a> </p> <p> <a
          * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-debug.html#fleets-creating-debug-creation">Debug
@@ -1142,7 +1150,7 @@ namespace GameLift
         /**
          * <p>Deletes a custom location.</p> <p>Before deleting a custom location, review
          * any fleets currently using the custom location and deregister the location if it
-         * is in use. For more information see, <a
+         * is in use. For more information, see <a
          * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DeregisterCompute.html">DeregisterCompute</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteLocation">AWS
@@ -3217,13 +3225,11 @@ namespace GameLift
 
         /**
          * <p>Retrieves all active game sessions that match a set of search criteria and
-         * sorts them into a specified order. </p> <p>This operation is not designed to be
-         * continually called to track game session status. This practice can cause you to
-         * exceed your API limit, which results in errors. Instead, you must configure
-         * configure an Amazon Simple Notification Service (SNS) topic to receive
-         * notifications from FlexMatch or queues. Continuously polling game session status
-         * with <code>DescribeGameSessions</code> should only be used for games in
-         * development with low game session usage. </p> <p>When searching for game
+         * sorts them into a specified order. </p> <p>This operation is not designed to
+         * continually track game session status because that practice can cause you to
+         * exceed your API limit and generate errors. Instead, configure an Amazon Simple
+         * Notification Service (Amazon SNS) topic to receive notifications from a
+         * matchmaker or game session placement queue.</p> <p>When searching for game
          * sessions, you specify exactly where you want to search and provide a search
          * filter expression, a sort expression, or both. A search request can search only
          * one fleet, but it can search all of a fleet's locations. </p> <p>This operation
@@ -3240,18 +3246,23 @@ namespace GameLift
          * <code>ACTIVE</code> status only. To retrieve information on game sessions in
          * other statuses, use <a
          * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeGameSessions.html">DescribeGameSessions</a>
-         * .</p> <p>You can search or sort by the following game session attributes:</p>
-         * <ul> <li> <p> <b>gameSessionId</b> -- A unique identifier for the game session.
-         * You can use either a <code>GameSessionId</code> or <code>GameSessionArn</code>
-         * value. </p> </li> <li> <p> <b>gameSessionName</b> -- Name assigned to a game
-         * session. Game session names do not need to be unique to a game session.</p>
-         * </li> <li> <p> <b>gameSessionProperties</b> -- Custom data defined in a game
-         * session's <code>GameProperty</code> parameter. <code>GameProperty</code> values
-         * are stored as key:value pairs; the filter expression must indicate the key and a
-         * string to search the data values for. For example, to search for game sessions
-         * with custom data containing the key:value pair "gameMode:brawl", specify the
-         * following: <code>gameSessionProperties.gameMode = "brawl"</code>. All custom
-         * data values are searched as strings.</p> </li> <li> <p> <b>maximumSessions</b>
+         * .</p> <p>To set search and sort criteria, create a filter expression using the
+         * following game session attributes. For game session search examples, see the
+         * Examples section of this topic.</p> <ul> <li> <p> <b>gameSessionId</b> -- A
+         * unique identifier for the game session. You can use either a
+         * <code>GameSessionId</code> or <code>GameSessionArn</code> value. </p> </li> <li>
+         * <p> <b>gameSessionName</b> -- Name assigned to a game session. Game session
+         * names do not need to be unique to a game session.</p> </li> <li> <p>
+         * <b>gameSessionProperties</b> -- A set of key-value pairs that can store custom
+         * data in a game session. For example: <code>{"Key": "difficulty", "Value":
+         * "novice"}</code>. The filter expression must specify the <a>GameProperty</a> --
+         * a <code>Key</code> and a string <code>Value</code> to search for the game
+         * sessions.</p> <p>For example, to search for the above key-value pair, specify
+         * the following search filter: <code>gameSessionProperties.difficulty =
+         * "novice"</code>. All game property values are searched as strings.</p> <p> For
+         * examples of searching game sessions, see the ones below, and also see <a
+         * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#game-properties-search">Search
+         * game sessions by game property</a>. </p> </li> <li> <p> <b>maximumSessions</b>
          * -- Maximum number of player sessions allowed for a game session.</p> </li> <li>
          * <p> <b>creationTimeMillis</b> -- Value indicating when a game session was
          * created. It is expressed in Unix time as milliseconds.</p> </li> <li> <p>

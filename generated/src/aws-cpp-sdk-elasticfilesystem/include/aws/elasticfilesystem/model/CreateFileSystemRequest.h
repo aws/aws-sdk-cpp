@@ -87,74 +87,86 @@ namespace Model
 
 
     /**
-     * <p>The performance mode of the file system. We recommend
-     * <code>generalPurpose</code> performance mode for most file systems. File systems
+     * <p>The Performance mode of the file system. We recommend
+     * <code>generalPurpose</code> performance mode for all file systems. File systems
      * using the <code>maxIO</code> performance mode can scale to higher levels of
      * aggregate throughput and operations per second with a tradeoff of slightly
      * higher latencies for most file operations. The performance mode can't be changed
-     * after the file system has been created.</p>  <p>The <code>maxIO</code>
-     * mode is not supported on file systems using One Zone storage classes.</p>
-     * 
+     * after the file system has been created. The <code>maxIO</code> mode is not
+     * supported on One Zone file systems.</p>  <p>Due to the higher
+     * per-operation latencies with Max I/O, we recommend using General Purpose
+     * performance mode for all file systems.</p>  <p>Default is
+     * <code>generalPurpose</code>.</p>
      */
     inline const PerformanceMode& GetPerformanceMode() const{ return m_performanceMode; }
 
     /**
-     * <p>The performance mode of the file system. We recommend
-     * <code>generalPurpose</code> performance mode for most file systems. File systems
+     * <p>The Performance mode of the file system. We recommend
+     * <code>generalPurpose</code> performance mode for all file systems. File systems
      * using the <code>maxIO</code> performance mode can scale to higher levels of
      * aggregate throughput and operations per second with a tradeoff of slightly
      * higher latencies for most file operations. The performance mode can't be changed
-     * after the file system has been created.</p>  <p>The <code>maxIO</code>
-     * mode is not supported on file systems using One Zone storage classes.</p>
-     * 
+     * after the file system has been created. The <code>maxIO</code> mode is not
+     * supported on One Zone file systems.</p>  <p>Due to the higher
+     * per-operation latencies with Max I/O, we recommend using General Purpose
+     * performance mode for all file systems.</p>  <p>Default is
+     * <code>generalPurpose</code>.</p>
      */
     inline bool PerformanceModeHasBeenSet() const { return m_performanceModeHasBeenSet; }
 
     /**
-     * <p>The performance mode of the file system. We recommend
-     * <code>generalPurpose</code> performance mode for most file systems. File systems
+     * <p>The Performance mode of the file system. We recommend
+     * <code>generalPurpose</code> performance mode for all file systems. File systems
      * using the <code>maxIO</code> performance mode can scale to higher levels of
      * aggregate throughput and operations per second with a tradeoff of slightly
      * higher latencies for most file operations. The performance mode can't be changed
-     * after the file system has been created.</p>  <p>The <code>maxIO</code>
-     * mode is not supported on file systems using One Zone storage classes.</p>
-     * 
+     * after the file system has been created. The <code>maxIO</code> mode is not
+     * supported on One Zone file systems.</p>  <p>Due to the higher
+     * per-operation latencies with Max I/O, we recommend using General Purpose
+     * performance mode for all file systems.</p>  <p>Default is
+     * <code>generalPurpose</code>.</p>
      */
     inline void SetPerformanceMode(const PerformanceMode& value) { m_performanceModeHasBeenSet = true; m_performanceMode = value; }
 
     /**
-     * <p>The performance mode of the file system. We recommend
-     * <code>generalPurpose</code> performance mode for most file systems. File systems
+     * <p>The Performance mode of the file system. We recommend
+     * <code>generalPurpose</code> performance mode for all file systems. File systems
      * using the <code>maxIO</code> performance mode can scale to higher levels of
      * aggregate throughput and operations per second with a tradeoff of slightly
      * higher latencies for most file operations. The performance mode can't be changed
-     * after the file system has been created.</p>  <p>The <code>maxIO</code>
-     * mode is not supported on file systems using One Zone storage classes.</p>
-     * 
+     * after the file system has been created. The <code>maxIO</code> mode is not
+     * supported on One Zone file systems.</p>  <p>Due to the higher
+     * per-operation latencies with Max I/O, we recommend using General Purpose
+     * performance mode for all file systems.</p>  <p>Default is
+     * <code>generalPurpose</code>.</p>
      */
     inline void SetPerformanceMode(PerformanceMode&& value) { m_performanceModeHasBeenSet = true; m_performanceMode = std::move(value); }
 
     /**
-     * <p>The performance mode of the file system. We recommend
-     * <code>generalPurpose</code> performance mode for most file systems. File systems
+     * <p>The Performance mode of the file system. We recommend
+     * <code>generalPurpose</code> performance mode for all file systems. File systems
      * using the <code>maxIO</code> performance mode can scale to higher levels of
      * aggregate throughput and operations per second with a tradeoff of slightly
      * higher latencies for most file operations. The performance mode can't be changed
-     * after the file system has been created.</p>  <p>The <code>maxIO</code>
-     * mode is not supported on file systems using One Zone storage classes.</p>
-     * 
+     * after the file system has been created. The <code>maxIO</code> mode is not
+     * supported on One Zone file systems.</p>  <p>Due to the higher
+     * per-operation latencies with Max I/O, we recommend using General Purpose
+     * performance mode for all file systems.</p>  <p>Default is
+     * <code>generalPurpose</code>.</p>
      */
     inline CreateFileSystemRequest& WithPerformanceMode(const PerformanceMode& value) { SetPerformanceMode(value); return *this;}
 
     /**
-     * <p>The performance mode of the file system. We recommend
-     * <code>generalPurpose</code> performance mode for most file systems. File systems
+     * <p>The Performance mode of the file system. We recommend
+     * <code>generalPurpose</code> performance mode for all file systems. File systems
      * using the <code>maxIO</code> performance mode can scale to higher levels of
      * aggregate throughput and operations per second with a tradeoff of slightly
      * higher latencies for most file operations. The performance mode can't be changed
-     * after the file system has been created.</p>  <p>The <code>maxIO</code>
-     * mode is not supported on file systems using One Zone storage classes.</p>
-     * 
+     * after the file system has been created. The <code>maxIO</code> mode is not
+     * supported on One Zone file systems.</p>  <p>Due to the higher
+     * per-operation latencies with Max I/O, we recommend using General Purpose
+     * performance mode for all file systems.</p>  <p>Default is
+     * <code>generalPurpose</code>.</p>
      */
     inline CreateFileSystemRequest& WithPerformanceMode(PerformanceMode&& value) { SetPerformanceMode(std::move(value)); return *this;}
 
@@ -362,9 +374,9 @@ namespace Model
      * <code>bursting</code>, <code>provisioned</code>, or <code>elastic</code>. If you
      * set <code>ThroughputMode</code> to <code>provisioned</code>, you must also set a
      * value for <code>ProvisionedThroughputInMibps</code>. After you create the file
-     * system, you can decrease your file system's throughput in Provisioned Throughput
-     * mode or change between the throughput modes, with certain time restrictions. For
-     * more information, see <a
+     * system, you can decrease your file system's Provisioned throughput or change
+     * between the throughput modes, with certain time restrictions. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#provisioned-throughput">Specifying
      * throughput with provisioned mode</a> in the <i>Amazon EFS User Guide</i>. </p>
      * <p>Default is <code>bursting</code>.</p>
@@ -376,9 +388,9 @@ namespace Model
      * <code>bursting</code>, <code>provisioned</code>, or <code>elastic</code>. If you
      * set <code>ThroughputMode</code> to <code>provisioned</code>, you must also set a
      * value for <code>ProvisionedThroughputInMibps</code>. After you create the file
-     * system, you can decrease your file system's throughput in Provisioned Throughput
-     * mode or change between the throughput modes, with certain time restrictions. For
-     * more information, see <a
+     * system, you can decrease your file system's Provisioned throughput or change
+     * between the throughput modes, with certain time restrictions. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#provisioned-throughput">Specifying
      * throughput with provisioned mode</a> in the <i>Amazon EFS User Guide</i>. </p>
      * <p>Default is <code>bursting</code>.</p>
@@ -390,9 +402,9 @@ namespace Model
      * <code>bursting</code>, <code>provisioned</code>, or <code>elastic</code>. If you
      * set <code>ThroughputMode</code> to <code>provisioned</code>, you must also set a
      * value for <code>ProvisionedThroughputInMibps</code>. After you create the file
-     * system, you can decrease your file system's throughput in Provisioned Throughput
-     * mode or change between the throughput modes, with certain time restrictions. For
-     * more information, see <a
+     * system, you can decrease your file system's Provisioned throughput or change
+     * between the throughput modes, with certain time restrictions. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#provisioned-throughput">Specifying
      * throughput with provisioned mode</a> in the <i>Amazon EFS User Guide</i>. </p>
      * <p>Default is <code>bursting</code>.</p>
@@ -404,9 +416,9 @@ namespace Model
      * <code>bursting</code>, <code>provisioned</code>, or <code>elastic</code>. If you
      * set <code>ThroughputMode</code> to <code>provisioned</code>, you must also set a
      * value for <code>ProvisionedThroughputInMibps</code>. After you create the file
-     * system, you can decrease your file system's throughput in Provisioned Throughput
-     * mode or change between the throughput modes, with certain time restrictions. For
-     * more information, see <a
+     * system, you can decrease your file system's Provisioned throughput or change
+     * between the throughput modes, with certain time restrictions. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#provisioned-throughput">Specifying
      * throughput with provisioned mode</a> in the <i>Amazon EFS User Guide</i>. </p>
      * <p>Default is <code>bursting</code>.</p>
@@ -418,9 +430,9 @@ namespace Model
      * <code>bursting</code>, <code>provisioned</code>, or <code>elastic</code>. If you
      * set <code>ThroughputMode</code> to <code>provisioned</code>, you must also set a
      * value for <code>ProvisionedThroughputInMibps</code>. After you create the file
-     * system, you can decrease your file system's throughput in Provisioned Throughput
-     * mode or change between the throughput modes, with certain time restrictions. For
-     * more information, see <a
+     * system, you can decrease your file system's Provisioned throughput or change
+     * between the throughput modes, with certain time restrictions. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#provisioned-throughput">Specifying
      * throughput with provisioned mode</a> in the <i>Amazon EFS User Guide</i>. </p>
      * <p>Default is <code>bursting</code>.</p>
@@ -432,9 +444,9 @@ namespace Model
      * <code>bursting</code>, <code>provisioned</code>, or <code>elastic</code>. If you
      * set <code>ThroughputMode</code> to <code>provisioned</code>, you must also set a
      * value for <code>ProvisionedThroughputInMibps</code>. After you create the file
-     * system, you can decrease your file system's throughput in Provisioned Throughput
-     * mode or change between the throughput modes, with certain time restrictions. For
-     * more information, see <a
+     * system, you can decrease your file system's Provisioned throughput or change
+     * between the throughput modes, with certain time restrictions. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#provisioned-throughput">Specifying
      * throughput with provisioned mode</a> in the <i>Amazon EFS User Guide</i>. </p>
      * <p>Default is <code>bursting</code>.</p>
@@ -443,44 +455,44 @@ namespace Model
 
 
     /**
-     * <p>The throughput, measured in MiB/s, that you want to provision for a file
-     * system that you're creating. Valid values are 1-1024. Required if
-     * <code>ThroughputMode</code> is set to <code>provisioned</code>. The upper limit
-     * for throughput is 1024 MiB/s. To increase this limit, contact Amazon Web
-     * Services Support. For more information, see <a
+     * <p>The throughput, measured in mebibytes per second (MiBps), that you want to
+     * provision for a file system that you're creating. Required if
+     * <code>ThroughputMode</code> is set to <code>provisioned</code>. Valid values are
+     * 1-3414 MiBps, with the upper limit depending on Region. To increase this limit,
+     * contact Amazon Web Services Support. For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon
      * EFS quotas that you can increase</a> in the <i>Amazon EFS User Guide</i>.</p>
      */
     inline double GetProvisionedThroughputInMibps() const{ return m_provisionedThroughputInMibps; }
 
     /**
-     * <p>The throughput, measured in MiB/s, that you want to provision for a file
-     * system that you're creating. Valid values are 1-1024. Required if
-     * <code>ThroughputMode</code> is set to <code>provisioned</code>. The upper limit
-     * for throughput is 1024 MiB/s. To increase this limit, contact Amazon Web
-     * Services Support. For more information, see <a
+     * <p>The throughput, measured in mebibytes per second (MiBps), that you want to
+     * provision for a file system that you're creating. Required if
+     * <code>ThroughputMode</code> is set to <code>provisioned</code>. Valid values are
+     * 1-3414 MiBps, with the upper limit depending on Region. To increase this limit,
+     * contact Amazon Web Services Support. For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon
      * EFS quotas that you can increase</a> in the <i>Amazon EFS User Guide</i>.</p>
      */
     inline bool ProvisionedThroughputInMibpsHasBeenSet() const { return m_provisionedThroughputInMibpsHasBeenSet; }
 
     /**
-     * <p>The throughput, measured in MiB/s, that you want to provision for a file
-     * system that you're creating. Valid values are 1-1024. Required if
-     * <code>ThroughputMode</code> is set to <code>provisioned</code>. The upper limit
-     * for throughput is 1024 MiB/s. To increase this limit, contact Amazon Web
-     * Services Support. For more information, see <a
+     * <p>The throughput, measured in mebibytes per second (MiBps), that you want to
+     * provision for a file system that you're creating. Required if
+     * <code>ThroughputMode</code> is set to <code>provisioned</code>. Valid values are
+     * 1-3414 MiBps, with the upper limit depending on Region. To increase this limit,
+     * contact Amazon Web Services Support. For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon
      * EFS quotas that you can increase</a> in the <i>Amazon EFS User Guide</i>.</p>
      */
     inline void SetProvisionedThroughputInMibps(double value) { m_provisionedThroughputInMibpsHasBeenSet = true; m_provisionedThroughputInMibps = value; }
 
     /**
-     * <p>The throughput, measured in MiB/s, that you want to provision for a file
-     * system that you're creating. Valid values are 1-1024. Required if
-     * <code>ThroughputMode</code> is set to <code>provisioned</code>. The upper limit
-     * for throughput is 1024 MiB/s. To increase this limit, contact Amazon Web
-     * Services Support. For more information, see <a
+     * <p>The throughput, measured in mebibytes per second (MiBps), that you want to
+     * provision for a file system that you're creating. Required if
+     * <code>ThroughputMode</code> is set to <code>provisioned</code>. Valid values are
+     * 1-3414 MiBps, with the upper limit depending on Region. To increase this limit,
+     * contact Amazon Web Services Support. For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon
      * EFS quotas that you can increase</a> in the <i>Amazon EFS User Guide</i>.</p>
      */
@@ -488,98 +500,98 @@ namespace Model
 
 
     /**
-     * <p>Used to create a file system that uses One Zone storage classes. It specifies
-     * the Amazon Web Services Availability Zone in which to create the file system.
-     * Use the format <code>us-east-1a</code> to specify the Availability Zone. For
-     * more information about One Zone storage classes, see <a
+     * <p>Used to create a One Zone file system. It specifies the Amazon Web Services
+     * Availability Zone in which to create the file system. Use the format
+     * <code>us-east-1a</code> to specify the Availability Zone. For more information
+     * about One Zone file systems, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS
      * storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>  <p>One Zone
-     * storage classes are not available in all Availability Zones in Amazon Web
-     * Services Regions where Amazon EFS is available.</p> 
+     * file systems are not available in all Availability Zones in Amazon Web Services
+     * Regions where Amazon EFS is available.</p> 
      */
     inline const Aws::String& GetAvailabilityZoneName() const{ return m_availabilityZoneName; }
 
     /**
-     * <p>Used to create a file system that uses One Zone storage classes. It specifies
-     * the Amazon Web Services Availability Zone in which to create the file system.
-     * Use the format <code>us-east-1a</code> to specify the Availability Zone. For
-     * more information about One Zone storage classes, see <a
+     * <p>Used to create a One Zone file system. It specifies the Amazon Web Services
+     * Availability Zone in which to create the file system. Use the format
+     * <code>us-east-1a</code> to specify the Availability Zone. For more information
+     * about One Zone file systems, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS
      * storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>  <p>One Zone
-     * storage classes are not available in all Availability Zones in Amazon Web
-     * Services Regions where Amazon EFS is available.</p> 
+     * file systems are not available in all Availability Zones in Amazon Web Services
+     * Regions where Amazon EFS is available.</p> 
      */
     inline bool AvailabilityZoneNameHasBeenSet() const { return m_availabilityZoneNameHasBeenSet; }
 
     /**
-     * <p>Used to create a file system that uses One Zone storage classes. It specifies
-     * the Amazon Web Services Availability Zone in which to create the file system.
-     * Use the format <code>us-east-1a</code> to specify the Availability Zone. For
-     * more information about One Zone storage classes, see <a
+     * <p>Used to create a One Zone file system. It specifies the Amazon Web Services
+     * Availability Zone in which to create the file system. Use the format
+     * <code>us-east-1a</code> to specify the Availability Zone. For more information
+     * about One Zone file systems, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS
      * storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>  <p>One Zone
-     * storage classes are not available in all Availability Zones in Amazon Web
-     * Services Regions where Amazon EFS is available.</p> 
+     * file systems are not available in all Availability Zones in Amazon Web Services
+     * Regions where Amazon EFS is available.</p> 
      */
     inline void SetAvailabilityZoneName(const Aws::String& value) { m_availabilityZoneNameHasBeenSet = true; m_availabilityZoneName = value; }
 
     /**
-     * <p>Used to create a file system that uses One Zone storage classes. It specifies
-     * the Amazon Web Services Availability Zone in which to create the file system.
-     * Use the format <code>us-east-1a</code> to specify the Availability Zone. For
-     * more information about One Zone storage classes, see <a
+     * <p>Used to create a One Zone file system. It specifies the Amazon Web Services
+     * Availability Zone in which to create the file system. Use the format
+     * <code>us-east-1a</code> to specify the Availability Zone. For more information
+     * about One Zone file systems, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS
      * storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>  <p>One Zone
-     * storage classes are not available in all Availability Zones in Amazon Web
-     * Services Regions where Amazon EFS is available.</p> 
+     * file systems are not available in all Availability Zones in Amazon Web Services
+     * Regions where Amazon EFS is available.</p> 
      */
     inline void SetAvailabilityZoneName(Aws::String&& value) { m_availabilityZoneNameHasBeenSet = true; m_availabilityZoneName = std::move(value); }
 
     /**
-     * <p>Used to create a file system that uses One Zone storage classes. It specifies
-     * the Amazon Web Services Availability Zone in which to create the file system.
-     * Use the format <code>us-east-1a</code> to specify the Availability Zone. For
-     * more information about One Zone storage classes, see <a
+     * <p>Used to create a One Zone file system. It specifies the Amazon Web Services
+     * Availability Zone in which to create the file system. Use the format
+     * <code>us-east-1a</code> to specify the Availability Zone. For more information
+     * about One Zone file systems, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS
      * storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>  <p>One Zone
-     * storage classes are not available in all Availability Zones in Amazon Web
-     * Services Regions where Amazon EFS is available.</p> 
+     * file systems are not available in all Availability Zones in Amazon Web Services
+     * Regions where Amazon EFS is available.</p> 
      */
     inline void SetAvailabilityZoneName(const char* value) { m_availabilityZoneNameHasBeenSet = true; m_availabilityZoneName.assign(value); }
 
     /**
-     * <p>Used to create a file system that uses One Zone storage classes. It specifies
-     * the Amazon Web Services Availability Zone in which to create the file system.
-     * Use the format <code>us-east-1a</code> to specify the Availability Zone. For
-     * more information about One Zone storage classes, see <a
+     * <p>Used to create a One Zone file system. It specifies the Amazon Web Services
+     * Availability Zone in which to create the file system. Use the format
+     * <code>us-east-1a</code> to specify the Availability Zone. For more information
+     * about One Zone file systems, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS
      * storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>  <p>One Zone
-     * storage classes are not available in all Availability Zones in Amazon Web
-     * Services Regions where Amazon EFS is available.</p> 
+     * file systems are not available in all Availability Zones in Amazon Web Services
+     * Regions where Amazon EFS is available.</p> 
      */
     inline CreateFileSystemRequest& WithAvailabilityZoneName(const Aws::String& value) { SetAvailabilityZoneName(value); return *this;}
 
     /**
-     * <p>Used to create a file system that uses One Zone storage classes. It specifies
-     * the Amazon Web Services Availability Zone in which to create the file system.
-     * Use the format <code>us-east-1a</code> to specify the Availability Zone. For
-     * more information about One Zone storage classes, see <a
+     * <p>Used to create a One Zone file system. It specifies the Amazon Web Services
+     * Availability Zone in which to create the file system. Use the format
+     * <code>us-east-1a</code> to specify the Availability Zone. For more information
+     * about One Zone file systems, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS
      * storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>  <p>One Zone
-     * storage classes are not available in all Availability Zones in Amazon Web
-     * Services Regions where Amazon EFS is available.</p> 
+     * file systems are not available in all Availability Zones in Amazon Web Services
+     * Regions where Amazon EFS is available.</p> 
      */
     inline CreateFileSystemRequest& WithAvailabilityZoneName(Aws::String&& value) { SetAvailabilityZoneName(std::move(value)); return *this;}
 
     /**
-     * <p>Used to create a file system that uses One Zone storage classes. It specifies
-     * the Amazon Web Services Availability Zone in which to create the file system.
-     * Use the format <code>us-east-1a</code> to specify the Availability Zone. For
-     * more information about One Zone storage classes, see <a
+     * <p>Used to create a One Zone file system. It specifies the Amazon Web Services
+     * Availability Zone in which to create the file system. Use the format
+     * <code>us-east-1a</code> to specify the Availability Zone. For more information
+     * about One Zone file systems, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html">Using EFS
      * storage classes</a> in the <i>Amazon EFS User Guide</i>.</p>  <p>One Zone
-     * storage classes are not available in all Availability Zones in Amazon Web
-     * Services Regions where Amazon EFS is available.</p> 
+     * file systems are not available in all Availability Zones in Amazon Web Services
+     * Regions where Amazon EFS is available.</p> 
      */
     inline CreateFileSystemRequest& WithAvailabilityZoneName(const char* value) { SetAvailabilityZoneName(value); return *this;}
 
@@ -587,8 +599,8 @@ namespace Model
     /**
      * <p>Specifies whether automatic backups are enabled on the file system that you
      * are creating. Set the value to <code>true</code> to enable automatic backups. If
-     * you are creating a file system that uses One Zone storage classes, automatic
-     * backups are enabled by default. For more information, see <a
+     * you are creating a One Zone file system, automatic backups are enabled by
+     * default. For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/awsbackup.html#automatic-backups">Automatic
      * backups</a> in the <i>Amazon EFS User Guide</i>.</p> <p>Default is
      * <code>false</code>. However, if you specify an
@@ -601,8 +613,8 @@ namespace Model
     /**
      * <p>Specifies whether automatic backups are enabled on the file system that you
      * are creating. Set the value to <code>true</code> to enable automatic backups. If
-     * you are creating a file system that uses One Zone storage classes, automatic
-     * backups are enabled by default. For more information, see <a
+     * you are creating a One Zone file system, automatic backups are enabled by
+     * default. For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/awsbackup.html#automatic-backups">Automatic
      * backups</a> in the <i>Amazon EFS User Guide</i>.</p> <p>Default is
      * <code>false</code>. However, if you specify an
@@ -615,8 +627,8 @@ namespace Model
     /**
      * <p>Specifies whether automatic backups are enabled on the file system that you
      * are creating. Set the value to <code>true</code> to enable automatic backups. If
-     * you are creating a file system that uses One Zone storage classes, automatic
-     * backups are enabled by default. For more information, see <a
+     * you are creating a One Zone file system, automatic backups are enabled by
+     * default. For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/awsbackup.html#automatic-backups">Automatic
      * backups</a> in the <i>Amazon EFS User Guide</i>.</p> <p>Default is
      * <code>false</code>. However, if you specify an
@@ -629,8 +641,8 @@ namespace Model
     /**
      * <p>Specifies whether automatic backups are enabled on the file system that you
      * are creating. Set the value to <code>true</code> to enable automatic backups. If
-     * you are creating a file system that uses One Zone storage classes, automatic
-     * backups are enabled by default. For more information, see <a
+     * you are creating a One Zone file system, automatic backups are enabled by
+     * default. For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/awsbackup.html#automatic-backups">Automatic
      * backups</a> in the <i>Amazon EFS User Guide</i>.</p> <p>Default is
      * <code>false</code>. However, if you specify an

@@ -109,6 +109,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BulkEmailStatus::NOT_SET:
+            return {};
           case BulkEmailStatus::Success:
             return "Success";
           case BulkEmailStatus::MessageRejected:

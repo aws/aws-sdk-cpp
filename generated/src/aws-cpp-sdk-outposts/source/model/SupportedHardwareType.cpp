@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SupportedHardwareType::NOT_SET:
+            return {};
           case SupportedHardwareType::RACK:
             return "RACK";
           case SupportedHardwareType::SERVER:

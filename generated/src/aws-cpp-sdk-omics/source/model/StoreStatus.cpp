@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StoreStatus::NOT_SET:
+            return {};
           case StoreStatus::CREATING:
             return "CREATING";
           case StoreStatus::UPDATING:

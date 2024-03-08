@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AuditTaskStatus::NOT_SET:
+            return {};
           case AuditTaskStatus::IN_PROGRESS:
             return "IN_PROGRESS";
           case AuditTaskStatus::COMPLETED:

@@ -1072,9 +1072,9 @@ namespace Model
     /**
      * <p>The entity that started the build. Valid values include:</p> <ul> <li> <p>If
      * CodePipeline started the build, the pipeline's name (for example,
-     * <code>codepipeline/my-demo-pipeline</code>).</p> </li> <li> <p>If an IAM user
-     * started the build, the user's name (for example, <code>MyUserName</code>).</p>
-     * </li> <li> <p>If the Jenkins plugin for CodeBuild started the build, the string
+     * <code>codepipeline/my-demo-pipeline</code>).</p> </li> <li> <p>If a user started
+     * the build, the user's name (for example, <code>MyUserName</code>).</p> </li>
+     * <li> <p>If the Jenkins plugin for CodeBuild started the build, the string
      * <code>CodeBuild-Jenkins-Plugin</code>.</p> </li> </ul>
      */
     inline const Aws::String& GetInitiator() const{ return m_initiator; }
@@ -1082,9 +1082,9 @@ namespace Model
     /**
      * <p>The entity that started the build. Valid values include:</p> <ul> <li> <p>If
      * CodePipeline started the build, the pipeline's name (for example,
-     * <code>codepipeline/my-demo-pipeline</code>).</p> </li> <li> <p>If an IAM user
-     * started the build, the user's name (for example, <code>MyUserName</code>).</p>
-     * </li> <li> <p>If the Jenkins plugin for CodeBuild started the build, the string
+     * <code>codepipeline/my-demo-pipeline</code>).</p> </li> <li> <p>If a user started
+     * the build, the user's name (for example, <code>MyUserName</code>).</p> </li>
+     * <li> <p>If the Jenkins plugin for CodeBuild started the build, the string
      * <code>CodeBuild-Jenkins-Plugin</code>.</p> </li> </ul>
      */
     inline bool InitiatorHasBeenSet() const { return m_initiatorHasBeenSet; }
@@ -1092,9 +1092,9 @@ namespace Model
     /**
      * <p>The entity that started the build. Valid values include:</p> <ul> <li> <p>If
      * CodePipeline started the build, the pipeline's name (for example,
-     * <code>codepipeline/my-demo-pipeline</code>).</p> </li> <li> <p>If an IAM user
-     * started the build, the user's name (for example, <code>MyUserName</code>).</p>
-     * </li> <li> <p>If the Jenkins plugin for CodeBuild started the build, the string
+     * <code>codepipeline/my-demo-pipeline</code>).</p> </li> <li> <p>If a user started
+     * the build, the user's name (for example, <code>MyUserName</code>).</p> </li>
+     * <li> <p>If the Jenkins plugin for CodeBuild started the build, the string
      * <code>CodeBuild-Jenkins-Plugin</code>.</p> </li> </ul>
      */
     inline void SetInitiator(const Aws::String& value) { m_initiatorHasBeenSet = true; m_initiator = value; }
@@ -1102,9 +1102,9 @@ namespace Model
     /**
      * <p>The entity that started the build. Valid values include:</p> <ul> <li> <p>If
      * CodePipeline started the build, the pipeline's name (for example,
-     * <code>codepipeline/my-demo-pipeline</code>).</p> </li> <li> <p>If an IAM user
-     * started the build, the user's name (for example, <code>MyUserName</code>).</p>
-     * </li> <li> <p>If the Jenkins plugin for CodeBuild started the build, the string
+     * <code>codepipeline/my-demo-pipeline</code>).</p> </li> <li> <p>If a user started
+     * the build, the user's name (for example, <code>MyUserName</code>).</p> </li>
+     * <li> <p>If the Jenkins plugin for CodeBuild started the build, the string
      * <code>CodeBuild-Jenkins-Plugin</code>.</p> </li> </ul>
      */
     inline void SetInitiator(Aws::String&& value) { m_initiatorHasBeenSet = true; m_initiator = std::move(value); }
@@ -1112,9 +1112,9 @@ namespace Model
     /**
      * <p>The entity that started the build. Valid values include:</p> <ul> <li> <p>If
      * CodePipeline started the build, the pipeline's name (for example,
-     * <code>codepipeline/my-demo-pipeline</code>).</p> </li> <li> <p>If an IAM user
-     * started the build, the user's name (for example, <code>MyUserName</code>).</p>
-     * </li> <li> <p>If the Jenkins plugin for CodeBuild started the build, the string
+     * <code>codepipeline/my-demo-pipeline</code>).</p> </li> <li> <p>If a user started
+     * the build, the user's name (for example, <code>MyUserName</code>).</p> </li>
+     * <li> <p>If the Jenkins plugin for CodeBuild started the build, the string
      * <code>CodeBuild-Jenkins-Plugin</code>.</p> </li> </ul>
      */
     inline void SetInitiator(const char* value) { m_initiatorHasBeenSet = true; m_initiator.assign(value); }
@@ -1122,9 +1122,9 @@ namespace Model
     /**
      * <p>The entity that started the build. Valid values include:</p> <ul> <li> <p>If
      * CodePipeline started the build, the pipeline's name (for example,
-     * <code>codepipeline/my-demo-pipeline</code>).</p> </li> <li> <p>If an IAM user
-     * started the build, the user's name (for example, <code>MyUserName</code>).</p>
-     * </li> <li> <p>If the Jenkins plugin for CodeBuild started the build, the string
+     * <code>codepipeline/my-demo-pipeline</code>).</p> </li> <li> <p>If a user started
+     * the build, the user's name (for example, <code>MyUserName</code>).</p> </li>
+     * <li> <p>If the Jenkins plugin for CodeBuild started the build, the string
      * <code>CodeBuild-Jenkins-Plugin</code>.</p> </li> </ul>
      */
     inline Build& WithInitiator(const Aws::String& value) { SetInitiator(value); return *this;}
@@ -1132,9 +1132,9 @@ namespace Model
     /**
      * <p>The entity that started the build. Valid values include:</p> <ul> <li> <p>If
      * CodePipeline started the build, the pipeline's name (for example,
-     * <code>codepipeline/my-demo-pipeline</code>).</p> </li> <li> <p>If an IAM user
-     * started the build, the user's name (for example, <code>MyUserName</code>).</p>
-     * </li> <li> <p>If the Jenkins plugin for CodeBuild started the build, the string
+     * <code>codepipeline/my-demo-pipeline</code>).</p> </li> <li> <p>If a user started
+     * the build, the user's name (for example, <code>MyUserName</code>).</p> </li>
+     * <li> <p>If the Jenkins plugin for CodeBuild started the build, the string
      * <code>CodeBuild-Jenkins-Plugin</code>.</p> </li> </ul>
      */
     inline Build& WithInitiator(Aws::String&& value) { SetInitiator(std::move(value)); return *this;}
@@ -1142,9 +1142,9 @@ namespace Model
     /**
      * <p>The entity that started the build. Valid values include:</p> <ul> <li> <p>If
      * CodePipeline started the build, the pipeline's name (for example,
-     * <code>codepipeline/my-demo-pipeline</code>).</p> </li> <li> <p>If an IAM user
-     * started the build, the user's name (for example, <code>MyUserName</code>).</p>
-     * </li> <li> <p>If the Jenkins plugin for CodeBuild started the build, the string
+     * <code>codepipeline/my-demo-pipeline</code>).</p> </li> <li> <p>If a user started
+     * the build, the user's name (for example, <code>MyUserName</code>).</p> </li>
+     * <li> <p>If the Jenkins plugin for CodeBuild started the build, the string
      * <code>CodeBuild-Jenkins-Plugin</code>.</p> </li> </ul>
      */
     inline Build& WithInitiator(const char* value) { SetInitiator(value); return *this;}

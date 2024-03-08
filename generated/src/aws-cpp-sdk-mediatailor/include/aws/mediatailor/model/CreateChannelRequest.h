@@ -12,6 +12,7 @@
 #include <aws/mediatailor/model/PlaybackMode.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/mediatailor/model/Tier.h>
+#include <aws/mediatailor/model/TimeShiftConfiguration.h>
 #include <aws/mediatailor/model/RequestOutputItem.h>
 #include <utility>
 
@@ -372,6 +373,43 @@ namespace Model
      */
     inline CreateChannelRequest& WithTier(Tier&& value) { SetTier(std::move(value)); return *this;}
 
+
+    /**
+     * <p> The time-shifted viewing configuration you want to associate to the channel.
+     * </p>
+     */
+    inline const TimeShiftConfiguration& GetTimeShiftConfiguration() const{ return m_timeShiftConfiguration; }
+
+    /**
+     * <p> The time-shifted viewing configuration you want to associate to the channel.
+     * </p>
+     */
+    inline bool TimeShiftConfigurationHasBeenSet() const { return m_timeShiftConfigurationHasBeenSet; }
+
+    /**
+     * <p> The time-shifted viewing configuration you want to associate to the channel.
+     * </p>
+     */
+    inline void SetTimeShiftConfiguration(const TimeShiftConfiguration& value) { m_timeShiftConfigurationHasBeenSet = true; m_timeShiftConfiguration = value; }
+
+    /**
+     * <p> The time-shifted viewing configuration you want to associate to the channel.
+     * </p>
+     */
+    inline void SetTimeShiftConfiguration(TimeShiftConfiguration&& value) { m_timeShiftConfigurationHasBeenSet = true; m_timeShiftConfiguration = std::move(value); }
+
+    /**
+     * <p> The time-shifted viewing configuration you want to associate to the channel.
+     * </p>
+     */
+    inline CreateChannelRequest& WithTimeShiftConfiguration(const TimeShiftConfiguration& value) { SetTimeShiftConfiguration(value); return *this;}
+
+    /**
+     * <p> The time-shifted viewing configuration you want to associate to the channel.
+     * </p>
+     */
+    inline CreateChannelRequest& WithTimeShiftConfiguration(TimeShiftConfiguration&& value) { SetTimeShiftConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_channelName;
@@ -391,6 +429,9 @@ namespace Model
 
     Tier m_tier;
     bool m_tierHasBeenSet = false;
+
+    TimeShiftConfiguration m_timeShiftConfiguration;
+    bool m_timeShiftConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

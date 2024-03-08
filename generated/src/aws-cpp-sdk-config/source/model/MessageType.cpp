@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MessageType::NOT_SET:
+            return {};
           case MessageType::ConfigurationItemChangeNotification:
             return "ConfigurationItemChangeNotification";
           case MessageType::ConfigurationSnapshotDeliveryCompleted:

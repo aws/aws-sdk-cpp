@@ -109,6 +109,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OperatorPropertiesKeys::NOT_SET:
+            return {};
           case OperatorPropertiesKeys::VALUE:
             return "VALUE";
           case OperatorPropertiesKeys::VALUES:

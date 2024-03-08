@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AttachmentHashType::NOT_SET:
+            return {};
           case AttachmentHashType::Sha256:
             return "Sha256";
           default:

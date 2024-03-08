@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AvailabilityMonitorTestStatus::NOT_SET:
+            return {};
           case AvailabilityMonitorTestStatus::COMPLETE:
             return "COMPLETE";
           case AvailabilityMonitorTestStatus::FAILED:

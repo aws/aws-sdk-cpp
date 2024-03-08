@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StrategyOnFullSize::NOT_SET:
+            return {};
           case StrategyOnFullSize::DELETE_OLDEST_MEDIA:
             return "DELETE_OLDEST_MEDIA";
           case StrategyOnFullSize::DENY_NEW_MEDIA:

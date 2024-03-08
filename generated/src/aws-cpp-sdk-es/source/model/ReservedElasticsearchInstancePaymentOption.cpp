@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReservedElasticsearchInstancePaymentOption::NOT_SET:
+            return {};
           case ReservedElasticsearchInstancePaymentOption::ALL_UPFRONT:
             return "ALL_UPFRONT";
           case ReservedElasticsearchInstancePaymentOption::PARTIAL_UPFRONT:

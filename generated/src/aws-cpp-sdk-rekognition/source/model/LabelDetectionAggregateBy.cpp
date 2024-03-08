@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LabelDetectionAggregateBy::NOT_SET:
+            return {};
           case LabelDetectionAggregateBy::TIMESTAMPS:
             return "TIMESTAMPS";
           case LabelDetectionAggregateBy::SEGMENTS:

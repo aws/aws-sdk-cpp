@@ -10,6 +10,8 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/dynamodb/model/S3SseAlgorithm.h>
 #include <aws/dynamodb/model/ExportFormat.h>
+#include <aws/dynamodb/model/ExportType.h>
+#include <aws/dynamodb/model/IncrementalExportSpecification.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -270,49 +272,57 @@ namespace Model
 
     /**
      * <p>The ID of the Amazon Web Services account that owns the bucket the export
-     * will be stored in.</p>
+     * will be stored in.</p>  <p>S3BucketOwner is a required parameter when
+     * exporting to a S3 bucket in another account.</p> 
      */
     inline const Aws::String& GetS3BucketOwner() const{ return m_s3BucketOwner; }
 
     /**
      * <p>The ID of the Amazon Web Services account that owns the bucket the export
-     * will be stored in.</p>
+     * will be stored in.</p>  <p>S3BucketOwner is a required parameter when
+     * exporting to a S3 bucket in another account.</p> 
      */
     inline bool S3BucketOwnerHasBeenSet() const { return m_s3BucketOwnerHasBeenSet; }
 
     /**
      * <p>The ID of the Amazon Web Services account that owns the bucket the export
-     * will be stored in.</p>
+     * will be stored in.</p>  <p>S3BucketOwner is a required parameter when
+     * exporting to a S3 bucket in another account.</p> 
      */
     inline void SetS3BucketOwner(const Aws::String& value) { m_s3BucketOwnerHasBeenSet = true; m_s3BucketOwner = value; }
 
     /**
      * <p>The ID of the Amazon Web Services account that owns the bucket the export
-     * will be stored in.</p>
+     * will be stored in.</p>  <p>S3BucketOwner is a required parameter when
+     * exporting to a S3 bucket in another account.</p> 
      */
     inline void SetS3BucketOwner(Aws::String&& value) { m_s3BucketOwnerHasBeenSet = true; m_s3BucketOwner = std::move(value); }
 
     /**
      * <p>The ID of the Amazon Web Services account that owns the bucket the export
-     * will be stored in.</p>
+     * will be stored in.</p>  <p>S3BucketOwner is a required parameter when
+     * exporting to a S3 bucket in another account.</p> 
      */
     inline void SetS3BucketOwner(const char* value) { m_s3BucketOwnerHasBeenSet = true; m_s3BucketOwner.assign(value); }
 
     /**
      * <p>The ID of the Amazon Web Services account that owns the bucket the export
-     * will be stored in.</p>
+     * will be stored in.</p>  <p>S3BucketOwner is a required parameter when
+     * exporting to a S3 bucket in another account.</p> 
      */
     inline ExportTableToPointInTimeRequest& WithS3BucketOwner(const Aws::String& value) { SetS3BucketOwner(value); return *this;}
 
     /**
      * <p>The ID of the Amazon Web Services account that owns the bucket the export
-     * will be stored in.</p>
+     * will be stored in.</p>  <p>S3BucketOwner is a required parameter when
+     * exporting to a S3 bucket in another account.</p> 
      */
     inline ExportTableToPointInTimeRequest& WithS3BucketOwner(Aws::String&& value) { SetS3BucketOwner(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the Amazon Web Services account that owns the bucket the export
-     * will be stored in.</p>
+     * will be stored in.</p>  <p>S3BucketOwner is a required parameter when
+     * exporting to a S3 bucket in another account.</p> 
      */
     inline ExportTableToPointInTimeRequest& WithS3BucketOwner(const char* value) { SetS3BucketOwner(value); return *this;}
 
@@ -506,6 +516,92 @@ namespace Model
      */
     inline ExportTableToPointInTimeRequest& WithExportFormat(ExportFormat&& value) { SetExportFormat(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Choice of whether to execute as a full export or incremental export. Valid
+     * values are FULL_EXPORT or INCREMENTAL_EXPORT. The default value is FULL_EXPORT.
+     * If INCREMENTAL_EXPORT is provided, the IncrementalExportSpecification must also
+     * be used.</p>
+     */
+    inline const ExportType& GetExportType() const{ return m_exportType; }
+
+    /**
+     * <p>Choice of whether to execute as a full export or incremental export. Valid
+     * values are FULL_EXPORT or INCREMENTAL_EXPORT. The default value is FULL_EXPORT.
+     * If INCREMENTAL_EXPORT is provided, the IncrementalExportSpecification must also
+     * be used.</p>
+     */
+    inline bool ExportTypeHasBeenSet() const { return m_exportTypeHasBeenSet; }
+
+    /**
+     * <p>Choice of whether to execute as a full export or incremental export. Valid
+     * values are FULL_EXPORT or INCREMENTAL_EXPORT. The default value is FULL_EXPORT.
+     * If INCREMENTAL_EXPORT is provided, the IncrementalExportSpecification must also
+     * be used.</p>
+     */
+    inline void SetExportType(const ExportType& value) { m_exportTypeHasBeenSet = true; m_exportType = value; }
+
+    /**
+     * <p>Choice of whether to execute as a full export or incremental export. Valid
+     * values are FULL_EXPORT or INCREMENTAL_EXPORT. The default value is FULL_EXPORT.
+     * If INCREMENTAL_EXPORT is provided, the IncrementalExportSpecification must also
+     * be used.</p>
+     */
+    inline void SetExportType(ExportType&& value) { m_exportTypeHasBeenSet = true; m_exportType = std::move(value); }
+
+    /**
+     * <p>Choice of whether to execute as a full export or incremental export. Valid
+     * values are FULL_EXPORT or INCREMENTAL_EXPORT. The default value is FULL_EXPORT.
+     * If INCREMENTAL_EXPORT is provided, the IncrementalExportSpecification must also
+     * be used.</p>
+     */
+    inline ExportTableToPointInTimeRequest& WithExportType(const ExportType& value) { SetExportType(value); return *this;}
+
+    /**
+     * <p>Choice of whether to execute as a full export or incremental export. Valid
+     * values are FULL_EXPORT or INCREMENTAL_EXPORT. The default value is FULL_EXPORT.
+     * If INCREMENTAL_EXPORT is provided, the IncrementalExportSpecification must also
+     * be used.</p>
+     */
+    inline ExportTableToPointInTimeRequest& WithExportType(ExportType&& value) { SetExportType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Optional object containing the parameters specific to an incremental
+     * export.</p>
+     */
+    inline const IncrementalExportSpecification& GetIncrementalExportSpecification() const{ return m_incrementalExportSpecification; }
+
+    /**
+     * <p>Optional object containing the parameters specific to an incremental
+     * export.</p>
+     */
+    inline bool IncrementalExportSpecificationHasBeenSet() const { return m_incrementalExportSpecificationHasBeenSet; }
+
+    /**
+     * <p>Optional object containing the parameters specific to an incremental
+     * export.</p>
+     */
+    inline void SetIncrementalExportSpecification(const IncrementalExportSpecification& value) { m_incrementalExportSpecificationHasBeenSet = true; m_incrementalExportSpecification = value; }
+
+    /**
+     * <p>Optional object containing the parameters specific to an incremental
+     * export.</p>
+     */
+    inline void SetIncrementalExportSpecification(IncrementalExportSpecification&& value) { m_incrementalExportSpecificationHasBeenSet = true; m_incrementalExportSpecification = std::move(value); }
+
+    /**
+     * <p>Optional object containing the parameters specific to an incremental
+     * export.</p>
+     */
+    inline ExportTableToPointInTimeRequest& WithIncrementalExportSpecification(const IncrementalExportSpecification& value) { SetIncrementalExportSpecification(value); return *this;}
+
+    /**
+     * <p>Optional object containing the parameters specific to an incremental
+     * export.</p>
+     */
+    inline ExportTableToPointInTimeRequest& WithIncrementalExportSpecification(IncrementalExportSpecification&& value) { SetIncrementalExportSpecification(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_tableArn;
@@ -534,6 +630,12 @@ namespace Model
 
     ExportFormat m_exportFormat;
     bool m_exportFormatHasBeenSet = false;
+
+    ExportType m_exportType;
+    bool m_exportTypeHasBeenSet = false;
+
+    IncrementalExportSpecification m_incrementalExportSpecification;
+    bool m_incrementalExportSpecificationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AutoRegistrationStatus::NOT_SET:
+            return {};
           case AutoRegistrationStatus::ENABLE:
             return "ENABLE";
           case AutoRegistrationStatus::DISABLE:

@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/accessanalyzer/model/AnalyzerStatus.h>
 #include <aws/accessanalyzer/model/StatusReason.h>
+#include <aws/accessanalyzer/model/AnalyzerConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -451,6 +452,43 @@ namespace Model
      */
     inline AnalyzerSummary& WithStatusReason(StatusReason&& value) { SetStatusReason(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies whether the analyzer is an external access or unused access
+     * analyzer.</p>
+     */
+    inline const AnalyzerConfiguration& GetConfiguration() const{ return m_configuration; }
+
+    /**
+     * <p>Specifies whether the analyzer is an external access or unused access
+     * analyzer.</p>
+     */
+    inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
+
+    /**
+     * <p>Specifies whether the analyzer is an external access or unused access
+     * analyzer.</p>
+     */
+    inline void SetConfiguration(const AnalyzerConfiguration& value) { m_configurationHasBeenSet = true; m_configuration = value; }
+
+    /**
+     * <p>Specifies whether the analyzer is an external access or unused access
+     * analyzer.</p>
+     */
+    inline void SetConfiguration(AnalyzerConfiguration&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
+
+    /**
+     * <p>Specifies whether the analyzer is an external access or unused access
+     * analyzer.</p>
+     */
+    inline AnalyzerSummary& WithConfiguration(const AnalyzerConfiguration& value) { SetConfiguration(value); return *this;}
+
+    /**
+     * <p>Specifies whether the analyzer is an external access or unused access
+     * analyzer.</p>
+     */
+    inline AnalyzerSummary& WithConfiguration(AnalyzerConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -479,6 +517,9 @@ namespace Model
 
     StatusReason m_statusReason;
     bool m_statusReasonHasBeenSet = false;
+
+    AnalyzerConfiguration m_configuration;
+    bool m_configurationHasBeenSet = false;
   };
 
 } // namespace Model

@@ -13,6 +13,9 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 RestoreFromSnapshotRequest::RestoreFromSnapshotRequest() : 
+    m_adminPasswordSecretKmsKeyIdHasBeenSet(false),
+    m_manageAdminPassword(false),
+    m_manageAdminPasswordHasBeenSet(false),
     m_namespaceNameHasBeenSet(false),
     m_ownerAccountHasBeenSet(false),
     m_snapshotArnHasBeenSet(false),
@@ -24,6 +27,18 @@ RestoreFromSnapshotRequest::RestoreFromSnapshotRequest() :
 Aws::String RestoreFromSnapshotRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_adminPasswordSecretKmsKeyIdHasBeenSet)
+  {
+   payload.WithString("adminPasswordSecretKmsKeyId", m_adminPasswordSecretKmsKeyId);
+
+  }
+
+  if(m_manageAdminPasswordHasBeenSet)
+  {
+   payload.WithBool("manageAdminPassword", m_manageAdminPassword);
+
+  }
 
   if(m_namespaceNameHasBeenSet)
   {

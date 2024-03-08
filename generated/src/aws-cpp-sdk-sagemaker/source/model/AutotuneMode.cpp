@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AutotuneMode::NOT_SET:
+            return {};
           case AutotuneMode::Enabled:
             return "Enabled";
           default:

@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Category::NOT_SET:
+            return {};
           case Category::REGISTERED:
             return "REGISTERED";
           case Category::ACTIVATED:

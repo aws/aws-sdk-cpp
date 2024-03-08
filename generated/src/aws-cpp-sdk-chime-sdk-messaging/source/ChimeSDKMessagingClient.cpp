@@ -86,8 +86,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* ChimeSDKMessagingClient::SERVICE_NAME = "chime";
-const char* ChimeSDKMessagingClient::ALLOCATION_TAG = "ChimeSDKMessagingClient";
+namespace Aws
+{
+  namespace ChimeSDKMessaging
+  {
+    const char SERVICE_NAME[] = "chime";
+    const char ALLOCATION_TAG[] = "ChimeSDKMessagingClient";
+  }
+}
+const char* ChimeSDKMessagingClient::GetServiceName() {return SERVICE_NAME;}
+const char* ChimeSDKMessagingClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 ChimeSDKMessagingClient::ChimeSDKMessagingClient(const ChimeSDKMessaging::ChimeSDKMessagingClientConfiguration& clientConfiguration,
                                                  std::shared_ptr<ChimeSDKMessagingEndpointProviderBase> endpointProvider) :
@@ -99,7 +107,7 @@ ChimeSDKMessagingClient::ChimeSDKMessagingClient(const ChimeSDKMessaging::ChimeS
             Aws::MakeShared<ChimeSDKMessagingErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ChimeSDKMessagingEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -115,7 +123,7 @@ ChimeSDKMessagingClient::ChimeSDKMessagingClient(const AWSCredentials& credentia
             Aws::MakeShared<ChimeSDKMessagingErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ChimeSDKMessagingEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -131,7 +139,7 @@ ChimeSDKMessagingClient::ChimeSDKMessagingClient(const std::shared_ptr<AWSCreden
             Aws::MakeShared<ChimeSDKMessagingErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ChimeSDKMessagingEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

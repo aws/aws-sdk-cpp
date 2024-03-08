@@ -84,97 +84,97 @@ namespace Model
 
 
     /**
-     * <p> The name for a branch. </p>
+     * <p>The name of the branch to use for the request. </p>
      */
     inline const Aws::String& GetBranchName() const{ return m_branchName; }
 
     /**
-     * <p> The name for a branch. </p>
+     * <p>The name of the branch to use for the request. </p>
      */
     inline bool BranchNameHasBeenSet() const { return m_branchNameHasBeenSet; }
 
     /**
-     * <p> The name for a branch. </p>
+     * <p>The name of the branch to use for the request. </p>
      */
     inline void SetBranchName(const Aws::String& value) { m_branchNameHasBeenSet = true; m_branchName = value; }
 
     /**
-     * <p> The name for a branch. </p>
+     * <p>The name of the branch to use for the request. </p>
      */
     inline void SetBranchName(Aws::String&& value) { m_branchNameHasBeenSet = true; m_branchName = std::move(value); }
 
     /**
-     * <p> The name for a branch. </p>
+     * <p>The name of the branch to use for the request. </p>
      */
     inline void SetBranchName(const char* value) { m_branchNameHasBeenSet = true; m_branchName.assign(value); }
 
     /**
-     * <p> The name for a branch. </p>
+     * <p>The name of the branch to use for the request. </p>
      */
     inline ListJobsRequest& WithBranchName(const Aws::String& value) { SetBranchName(value); return *this;}
 
     /**
-     * <p> The name for a branch. </p>
+     * <p>The name of the branch to use for the request. </p>
      */
     inline ListJobsRequest& WithBranchName(Aws::String&& value) { SetBranchName(std::move(value)); return *this;}
 
     /**
-     * <p> The name for a branch. </p>
+     * <p>The name of the branch to use for the request. </p>
      */
     inline ListJobsRequest& WithBranchName(const char* value) { SetBranchName(value); return *this;}
 
 
     /**
-     * <p> A pagination token. Set to null to start listing steps from the start. If a
+     * <p>A pagination token. Set to null to start listing steps from the start. If a
      * non-null pagination token is returned in a result, pass its value in here to
      * list more steps. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p> A pagination token. Set to null to start listing steps from the start. If a
+     * <p>A pagination token. Set to null to start listing steps from the start. If a
      * non-null pagination token is returned in a result, pass its value in here to
      * list more steps. </p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * <p> A pagination token. Set to null to start listing steps from the start. If a
+     * <p>A pagination token. Set to null to start listing steps from the start. If a
      * non-null pagination token is returned in a result, pass its value in here to
      * list more steps. </p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p> A pagination token. Set to null to start listing steps from the start. If a
+     * <p>A pagination token. Set to null to start listing steps from the start. If a
      * non-null pagination token is returned in a result, pass its value in here to
      * list more steps. </p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p> A pagination token. Set to null to start listing steps from the start. If a
+     * <p>A pagination token. Set to null to start listing steps from the start. If a
      * non-null pagination token is returned in a result, pass its value in here to
      * list more steps. </p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p> A pagination token. Set to null to start listing steps from the start. If a
+     * <p>A pagination token. Set to null to start listing steps from the start. If a
      * non-null pagination token is returned in a result, pass its value in here to
      * list more steps. </p>
      */
     inline ListJobsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p> A pagination token. Set to null to start listing steps from the start. If a
+     * <p>A pagination token. Set to null to start listing steps from the start. If a
      * non-null pagination token is returned in a result, pass its value in here to
      * list more steps. </p>
      */
     inline ListJobsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p> A pagination token. Set to null to start listing steps from the start. If a
+     * <p>A pagination token. Set to null to start listing steps from the start. If a
      * non-null pagination token is returned in a result, pass its value in here to
      * list more steps. </p>
      */
@@ -182,22 +182,22 @@ namespace Model
 
 
     /**
-     * <p> The maximum number of records to list in a single response. </p>
+     * <p>The maximum number of records to list in a single response. </p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p> The maximum number of records to list in a single response. </p>
+     * <p>The maximum number of records to list in a single response. </p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p> The maximum number of records to list in a single response. </p>
+     * <p>The maximum number of records to list in a single response. </p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p> The maximum number of records to list in a single response. </p>
+     * <p>The maximum number of records to list in a single response. </p>
      */
     inline ListJobsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

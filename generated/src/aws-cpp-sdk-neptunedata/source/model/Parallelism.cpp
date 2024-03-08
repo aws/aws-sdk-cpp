@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Parallelism::NOT_SET:
+            return {};
           case Parallelism::LOW:
             return "LOW";
           case Parallelism::MEDIUM:

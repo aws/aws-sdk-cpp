@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ImageBlockPublicAccessDisabledState::NOT_SET:
+            return {};
           case ImageBlockPublicAccessDisabledState::unblocked:
             return "unblocked";
           default:

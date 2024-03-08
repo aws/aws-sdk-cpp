@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PlatformType::NOT_SET:
+            return {};
           case PlatformType::DEBIAN:
             return "DEBIAN";
           case PlatformType::AMAZON_LINUX:

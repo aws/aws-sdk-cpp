@@ -202,26 +202,26 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates whether to apply the change immediately or during the
-     * next maintenance window for each instance associated with the option group.</p>
+     * <p>Specifies whether to apply the change immediately or during the next
+     * maintenance window for each instance associated with the option group.</p>
      */
     inline bool GetApplyImmediately() const{ return m_applyImmediately; }
 
     /**
-     * <p>A value that indicates whether to apply the change immediately or during the
-     * next maintenance window for each instance associated with the option group.</p>
+     * <p>Specifies whether to apply the change immediately or during the next
+     * maintenance window for each instance associated with the option group.</p>
      */
     inline bool ApplyImmediatelyHasBeenSet() const { return m_applyImmediatelyHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether to apply the change immediately or during the
-     * next maintenance window for each instance associated with the option group.</p>
+     * <p>Specifies whether to apply the change immediately or during the next
+     * maintenance window for each instance associated with the option group.</p>
      */
     inline void SetApplyImmediately(bool value) { m_applyImmediatelyHasBeenSet = true; m_applyImmediately = value; }
 
     /**
-     * <p>A value that indicates whether to apply the change immediately or during the
-     * next maintenance window for each instance associated with the option group.</p>
+     * <p>Specifies whether to apply the change immediately or during the next
+     * maintenance window for each instance associated with the option group.</p>
      */
     inline ModifyOptionGroupRequest& WithApplyImmediately(bool value) { SetApplyImmediately(value); return *this;}
 

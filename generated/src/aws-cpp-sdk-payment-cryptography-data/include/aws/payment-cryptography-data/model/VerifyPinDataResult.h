@@ -78,70 +78,56 @@ namespace Model
     /**
      * <p>The key check value (KCV) of the encryption key. The KCV is used to check if
      * all parties holding a given key have the same key or to detect that a key has
-     * changed. Amazon Web Services Payment Cryptography calculates the KCV by using
-     * standard algorithms, typically by encrypting 8 or 16 bytes or "00" or "01" and
-     * then truncating the result to the first 3 bytes, or 6 hex digits, of the
-     * resulting cryptogram.</p>
+     * changed.</p> <p>Amazon Web Services Payment Cryptography computes the KCV
+     * according to the CMAC specification.</p>
      */
     inline const Aws::String& GetEncryptionKeyCheckValue() const{ return m_encryptionKeyCheckValue; }
 
     /**
      * <p>The key check value (KCV) of the encryption key. The KCV is used to check if
      * all parties holding a given key have the same key or to detect that a key has
-     * changed. Amazon Web Services Payment Cryptography calculates the KCV by using
-     * standard algorithms, typically by encrypting 8 or 16 bytes or "00" or "01" and
-     * then truncating the result to the first 3 bytes, or 6 hex digits, of the
-     * resulting cryptogram.</p>
+     * changed.</p> <p>Amazon Web Services Payment Cryptography computes the KCV
+     * according to the CMAC specification.</p>
      */
     inline void SetEncryptionKeyCheckValue(const Aws::String& value) { m_encryptionKeyCheckValue = value; }
 
     /**
      * <p>The key check value (KCV) of the encryption key. The KCV is used to check if
      * all parties holding a given key have the same key or to detect that a key has
-     * changed. Amazon Web Services Payment Cryptography calculates the KCV by using
-     * standard algorithms, typically by encrypting 8 or 16 bytes or "00" or "01" and
-     * then truncating the result to the first 3 bytes, or 6 hex digits, of the
-     * resulting cryptogram.</p>
+     * changed.</p> <p>Amazon Web Services Payment Cryptography computes the KCV
+     * according to the CMAC specification.</p>
      */
     inline void SetEncryptionKeyCheckValue(Aws::String&& value) { m_encryptionKeyCheckValue = std::move(value); }
 
     /**
      * <p>The key check value (KCV) of the encryption key. The KCV is used to check if
      * all parties holding a given key have the same key or to detect that a key has
-     * changed. Amazon Web Services Payment Cryptography calculates the KCV by using
-     * standard algorithms, typically by encrypting 8 or 16 bytes or "00" or "01" and
-     * then truncating the result to the first 3 bytes, or 6 hex digits, of the
-     * resulting cryptogram.</p>
+     * changed.</p> <p>Amazon Web Services Payment Cryptography computes the KCV
+     * according to the CMAC specification.</p>
      */
     inline void SetEncryptionKeyCheckValue(const char* value) { m_encryptionKeyCheckValue.assign(value); }
 
     /**
      * <p>The key check value (KCV) of the encryption key. The KCV is used to check if
      * all parties holding a given key have the same key or to detect that a key has
-     * changed. Amazon Web Services Payment Cryptography calculates the KCV by using
-     * standard algorithms, typically by encrypting 8 or 16 bytes or "00" or "01" and
-     * then truncating the result to the first 3 bytes, or 6 hex digits, of the
-     * resulting cryptogram.</p>
+     * changed.</p> <p>Amazon Web Services Payment Cryptography computes the KCV
+     * according to the CMAC specification.</p>
      */
     inline VerifyPinDataResult& WithEncryptionKeyCheckValue(const Aws::String& value) { SetEncryptionKeyCheckValue(value); return *this;}
 
     /**
      * <p>The key check value (KCV) of the encryption key. The KCV is used to check if
      * all parties holding a given key have the same key or to detect that a key has
-     * changed. Amazon Web Services Payment Cryptography calculates the KCV by using
-     * standard algorithms, typically by encrypting 8 or 16 bytes or "00" or "01" and
-     * then truncating the result to the first 3 bytes, or 6 hex digits, of the
-     * resulting cryptogram.</p>
+     * changed.</p> <p>Amazon Web Services Payment Cryptography computes the KCV
+     * according to the CMAC specification.</p>
      */
     inline VerifyPinDataResult& WithEncryptionKeyCheckValue(Aws::String&& value) { SetEncryptionKeyCheckValue(std::move(value)); return *this;}
 
     /**
      * <p>The key check value (KCV) of the encryption key. The KCV is used to check if
      * all parties holding a given key have the same key or to detect that a key has
-     * changed. Amazon Web Services Payment Cryptography calculates the KCV by using
-     * standard algorithms, typically by encrypting 8 or 16 bytes or "00" or "01" and
-     * then truncating the result to the first 3 bytes, or 6 hex digits, of the
-     * resulting cryptogram.</p>
+     * changed.</p> <p>Amazon Web Services Payment Cryptography computes the KCV
+     * according to the CMAC specification.</p>
      */
     inline VerifyPinDataResult& WithEncryptionKeyCheckValue(const char* value) { SetEncryptionKeyCheckValue(value); return *this;}
 
@@ -192,70 +178,56 @@ namespace Model
     /**
      * <p>The key check value (KCV) of the encryption key. The KCV is used to check if
      * all parties holding a given key have the same key or to detect that a key has
-     * changed. Amazon Web Services Payment Cryptography calculates the KCV by using
-     * standard algorithms, typically by encrypting 8 or 16 bytes or "00" or "01" and
-     * then truncating the result to the first 3 bytes, or 6 hex digits, of the
-     * resulting cryptogram.</p>
+     * changed.</p> <p>Amazon Web Services Payment Cryptography computes the KCV
+     * according to the CMAC specification.</p>
      */
     inline const Aws::String& GetVerificationKeyCheckValue() const{ return m_verificationKeyCheckValue; }
 
     /**
      * <p>The key check value (KCV) of the encryption key. The KCV is used to check if
      * all parties holding a given key have the same key or to detect that a key has
-     * changed. Amazon Web Services Payment Cryptography calculates the KCV by using
-     * standard algorithms, typically by encrypting 8 or 16 bytes or "00" or "01" and
-     * then truncating the result to the first 3 bytes, or 6 hex digits, of the
-     * resulting cryptogram.</p>
+     * changed.</p> <p>Amazon Web Services Payment Cryptography computes the KCV
+     * according to the CMAC specification.</p>
      */
     inline void SetVerificationKeyCheckValue(const Aws::String& value) { m_verificationKeyCheckValue = value; }
 
     /**
      * <p>The key check value (KCV) of the encryption key. The KCV is used to check if
      * all parties holding a given key have the same key or to detect that a key has
-     * changed. Amazon Web Services Payment Cryptography calculates the KCV by using
-     * standard algorithms, typically by encrypting 8 or 16 bytes or "00" or "01" and
-     * then truncating the result to the first 3 bytes, or 6 hex digits, of the
-     * resulting cryptogram.</p>
+     * changed.</p> <p>Amazon Web Services Payment Cryptography computes the KCV
+     * according to the CMAC specification.</p>
      */
     inline void SetVerificationKeyCheckValue(Aws::String&& value) { m_verificationKeyCheckValue = std::move(value); }
 
     /**
      * <p>The key check value (KCV) of the encryption key. The KCV is used to check if
      * all parties holding a given key have the same key or to detect that a key has
-     * changed. Amazon Web Services Payment Cryptography calculates the KCV by using
-     * standard algorithms, typically by encrypting 8 or 16 bytes or "00" or "01" and
-     * then truncating the result to the first 3 bytes, or 6 hex digits, of the
-     * resulting cryptogram.</p>
+     * changed.</p> <p>Amazon Web Services Payment Cryptography computes the KCV
+     * according to the CMAC specification.</p>
      */
     inline void SetVerificationKeyCheckValue(const char* value) { m_verificationKeyCheckValue.assign(value); }
 
     /**
      * <p>The key check value (KCV) of the encryption key. The KCV is used to check if
      * all parties holding a given key have the same key or to detect that a key has
-     * changed. Amazon Web Services Payment Cryptography calculates the KCV by using
-     * standard algorithms, typically by encrypting 8 or 16 bytes or "00" or "01" and
-     * then truncating the result to the first 3 bytes, or 6 hex digits, of the
-     * resulting cryptogram.</p>
+     * changed.</p> <p>Amazon Web Services Payment Cryptography computes the KCV
+     * according to the CMAC specification.</p>
      */
     inline VerifyPinDataResult& WithVerificationKeyCheckValue(const Aws::String& value) { SetVerificationKeyCheckValue(value); return *this;}
 
     /**
      * <p>The key check value (KCV) of the encryption key. The KCV is used to check if
      * all parties holding a given key have the same key or to detect that a key has
-     * changed. Amazon Web Services Payment Cryptography calculates the KCV by using
-     * standard algorithms, typically by encrypting 8 or 16 bytes or "00" or "01" and
-     * then truncating the result to the first 3 bytes, or 6 hex digits, of the
-     * resulting cryptogram.</p>
+     * changed.</p> <p>Amazon Web Services Payment Cryptography computes the KCV
+     * according to the CMAC specification.</p>
      */
     inline VerifyPinDataResult& WithVerificationKeyCheckValue(Aws::String&& value) { SetVerificationKeyCheckValue(std::move(value)); return *this;}
 
     /**
      * <p>The key check value (KCV) of the encryption key. The KCV is used to check if
      * all parties holding a given key have the same key or to detect that a key has
-     * changed. Amazon Web Services Payment Cryptography calculates the KCV by using
-     * standard algorithms, typically by encrypting 8 or 16 bytes or "00" or "01" and
-     * then truncating the result to the first 3 bytes, or 6 hex digits, of the
-     * resulting cryptogram.</p>
+     * changed.</p> <p>Amazon Web Services Payment Cryptography computes the KCV
+     * according to the CMAC specification.</p>
      */
     inline VerifyPinDataResult& WithVerificationKeyCheckValue(const char* value) { SetVerificationKeyCheckValue(value); return *this;}
 

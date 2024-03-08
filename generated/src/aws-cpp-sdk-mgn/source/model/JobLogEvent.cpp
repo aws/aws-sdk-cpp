@@ -119,6 +119,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case JobLogEvent::NOT_SET:
+            return {};
           case JobLogEvent::JOB_START:
             return "JOB_START";
           case JobLogEvent::SERVER_SKIPPED:

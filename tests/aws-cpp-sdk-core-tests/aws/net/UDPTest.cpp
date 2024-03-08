@@ -5,7 +5,7 @@
 
 
 #include <aws/testing/AwsCppSdkGTestSuite.h>
-#include <aws/core/utils/threading/Executor.h>
+#include <aws/core/utils/threading/DefaultExecutor.h>
 #include <aws/core/utils/threading/Semaphore.h>
 #include <aws/core/net/SimpleUDP.h>
 #include <aws/core/utils/DateTime.h>

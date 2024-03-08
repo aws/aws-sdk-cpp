@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SettingAttribute::NOT_SET:
+            return {};
           case SettingAttribute::ALL:
             return "ALL";
           case SettingAttribute::IS_AWS_ORG_ENABLED:

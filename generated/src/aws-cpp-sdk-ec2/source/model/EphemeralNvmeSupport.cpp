@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EphemeralNvmeSupport::NOT_SET:
+            return {};
           case EphemeralNvmeSupport::unsupported:
             return "unsupported";
           case EphemeralNvmeSupport::supported:

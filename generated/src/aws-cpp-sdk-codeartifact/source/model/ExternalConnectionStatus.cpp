@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ExternalConnectionStatus::NOT_SET:
+            return {};
           case ExternalConnectionStatus::Available:
             return "Available";
           default:

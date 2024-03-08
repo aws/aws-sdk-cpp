@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResolverQueryLogConfigAssociationError::NOT_SET:
+            return {};
           case ResolverQueryLogConfigAssociationError::NONE:
             return "NONE";
           case ResolverQueryLogConfigAssociationError::DESTINATION_NOT_FOUND:

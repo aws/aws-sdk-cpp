@@ -39,7 +39,7 @@ namespace Model
      * current response. Use this value in the <code>NextToken</code> request parameter
      * in a subsequent call to the operation to get the next part of the output. You
      * should repeat this until the <code>NextToken</code> response element comes back
-     * as <code>null</code>.</p>
+     * as <code>null</code>. The pagination tokens expire after 24 hours.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
@@ -48,7 +48,7 @@ namespace Model
      * current response. Use this value in the <code>NextToken</code> request parameter
      * in a subsequent call to the operation to get the next part of the output. You
      * should repeat this until the <code>NextToken</code> response element comes back
-     * as <code>null</code>.</p>
+     * as <code>null</code>. The pagination tokens expire after 24 hours.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
@@ -57,7 +57,7 @@ namespace Model
      * current response. Use this value in the <code>NextToken</code> request parameter
      * in a subsequent call to the operation to get the next part of the output. You
      * should repeat this until the <code>NextToken</code> response element comes back
-     * as <code>null</code>.</p>
+     * as <code>null</code>. The pagination tokens expire after 24 hours.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
@@ -66,7 +66,7 @@ namespace Model
      * current response. Use this value in the <code>NextToken</code> request parameter
      * in a subsequent call to the operation to get the next part of the output. You
      * should repeat this until the <code>NextToken</code> response element comes back
-     * as <code>null</code>.</p>
+     * as <code>null</code>. The pagination tokens expire after 24 hours.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
@@ -75,7 +75,7 @@ namespace Model
      * current response. Use this value in the <code>NextToken</code> request parameter
      * in a subsequent call to the operation to get the next part of the output. You
      * should repeat this until the <code>NextToken</code> response element comes back
-     * as <code>null</code>.</p>
+     * as <code>null</code>. The pagination tokens expire after 24 hours.</p>
      */
     inline ListSupportedResourceTypesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
@@ -84,7 +84,7 @@ namespace Model
      * current response. Use this value in the <code>NextToken</code> request parameter
      * in a subsequent call to the operation to get the next part of the output. You
      * should repeat this until the <code>NextToken</code> response element comes back
-     * as <code>null</code>.</p>
+     * as <code>null</code>. The pagination tokens expire after 24 hours.</p>
      */
     inline ListSupportedResourceTypesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
@@ -93,7 +93,7 @@ namespace Model
      * current response. Use this value in the <code>NextToken</code> request parameter
      * in a subsequent call to the operation to get the next part of the output. You
      * should repeat this until the <code>NextToken</code> response element comes back
-     * as <code>null</code>.</p>
+     * as <code>null</code>. The pagination tokens expire after 24 hours.</p>
      */
     inline ListSupportedResourceTypesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

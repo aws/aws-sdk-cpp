@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AdvancedSecurityModeType::NOT_SET:
+            return {};
           case AdvancedSecurityModeType::OFF:
             return "OFF";
           case AdvancedSecurityModeType::AUDIT:

@@ -7,6 +7,7 @@
 #include <aws/ecr/ECR_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/ecr/model/UpstreamRegistry.h>
 #include <utility>
 
 namespace Aws
@@ -207,6 +208,129 @@ namespace Model
      */
     inline PullThroughCacheRule& WithRegistryId(const char* value) { SetRegistryId(value); return *this;}
 
+
+    /**
+     * <p>The ARN of the Secrets Manager secret associated with the pull through cache
+     * rule.</p>
+     */
+    inline const Aws::String& GetCredentialArn() const{ return m_credentialArn; }
+
+    /**
+     * <p>The ARN of the Secrets Manager secret associated with the pull through cache
+     * rule.</p>
+     */
+    inline bool CredentialArnHasBeenSet() const { return m_credentialArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the Secrets Manager secret associated with the pull through cache
+     * rule.</p>
+     */
+    inline void SetCredentialArn(const Aws::String& value) { m_credentialArnHasBeenSet = true; m_credentialArn = value; }
+
+    /**
+     * <p>The ARN of the Secrets Manager secret associated with the pull through cache
+     * rule.</p>
+     */
+    inline void SetCredentialArn(Aws::String&& value) { m_credentialArnHasBeenSet = true; m_credentialArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the Secrets Manager secret associated with the pull through cache
+     * rule.</p>
+     */
+    inline void SetCredentialArn(const char* value) { m_credentialArnHasBeenSet = true; m_credentialArn.assign(value); }
+
+    /**
+     * <p>The ARN of the Secrets Manager secret associated with the pull through cache
+     * rule.</p>
+     */
+    inline PullThroughCacheRule& WithCredentialArn(const Aws::String& value) { SetCredentialArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the Secrets Manager secret associated with the pull through cache
+     * rule.</p>
+     */
+    inline PullThroughCacheRule& WithCredentialArn(Aws::String&& value) { SetCredentialArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the Secrets Manager secret associated with the pull through cache
+     * rule.</p>
+     */
+    inline PullThroughCacheRule& WithCredentialArn(const char* value) { SetCredentialArn(value); return *this;}
+
+
+    /**
+     * <p>The name of the upstream source registry associated with the pull through
+     * cache rule.</p>
+     */
+    inline const UpstreamRegistry& GetUpstreamRegistry() const{ return m_upstreamRegistry; }
+
+    /**
+     * <p>The name of the upstream source registry associated with the pull through
+     * cache rule.</p>
+     */
+    inline bool UpstreamRegistryHasBeenSet() const { return m_upstreamRegistryHasBeenSet; }
+
+    /**
+     * <p>The name of the upstream source registry associated with the pull through
+     * cache rule.</p>
+     */
+    inline void SetUpstreamRegistry(const UpstreamRegistry& value) { m_upstreamRegistryHasBeenSet = true; m_upstreamRegistry = value; }
+
+    /**
+     * <p>The name of the upstream source registry associated with the pull through
+     * cache rule.</p>
+     */
+    inline void SetUpstreamRegistry(UpstreamRegistry&& value) { m_upstreamRegistryHasBeenSet = true; m_upstreamRegistry = std::move(value); }
+
+    /**
+     * <p>The name of the upstream source registry associated with the pull through
+     * cache rule.</p>
+     */
+    inline PullThroughCacheRule& WithUpstreamRegistry(const UpstreamRegistry& value) { SetUpstreamRegistry(value); return *this;}
+
+    /**
+     * <p>The name of the upstream source registry associated with the pull through
+     * cache rule.</p>
+     */
+    inline PullThroughCacheRule& WithUpstreamRegistry(UpstreamRegistry&& value) { SetUpstreamRegistry(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The date and time, in JavaScript date format, when the pull through cache
+     * rule was last updated.</p>
+     */
+    inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
+
+    /**
+     * <p>The date and time, in JavaScript date format, when the pull through cache
+     * rule was last updated.</p>
+     */
+    inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
+
+    /**
+     * <p>The date and time, in JavaScript date format, when the pull through cache
+     * rule was last updated.</p>
+     */
+    inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
+
+    /**
+     * <p>The date and time, in JavaScript date format, when the pull through cache
+     * rule was last updated.</p>
+     */
+    inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
+
+    /**
+     * <p>The date and time, in JavaScript date format, when the pull through cache
+     * rule was last updated.</p>
+     */
+    inline PullThroughCacheRule& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
+
+    /**
+     * <p>The date and time, in JavaScript date format, when the pull through cache
+     * rule was last updated.</p>
+     */
+    inline PullThroughCacheRule& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_ecrRepositoryPrefix;
@@ -220,6 +344,15 @@ namespace Model
 
     Aws::String m_registryId;
     bool m_registryIdHasBeenSet = false;
+
+    Aws::String m_credentialArn;
+    bool m_credentialArnHasBeenSet = false;
+
+    UpstreamRegistry m_upstreamRegistry;
+    bool m_upstreamRegistryHasBeenSet = false;
+
+    Aws::Utils::DateTime m_updatedAt;
+    bool m_updatedAtHasBeenSet = false;
   };
 
 } // namespace Model

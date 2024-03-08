@@ -81,9 +81,9 @@ namespace Model
 
 
     /**
-     * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
-     * </p> <ul> <li> <p> <b>Function name</b> – <code>MyFunction</code>.</p> </li>
-     * <li> <p> <b>Function ARN</b> –
+     * <p>The name or ARN of the Lambda function.</p> <p class="title"> <b>Name
+     * formats</b> </p> <ul> <li> <p> <b>Function name</b> –
+     * <code>MyFunction</code>.</p> </li> <li> <p> <b>Function ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
      * </li> <li> <p> <b>Version or Alias ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p>
@@ -95,9 +95,9 @@ namespace Model
     inline const Aws::String& GetFunctionName() const{ return m_functionName; }
 
     /**
-     * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
-     * </p> <ul> <li> <p> <b>Function name</b> – <code>MyFunction</code>.</p> </li>
-     * <li> <p> <b>Function ARN</b> –
+     * <p>The name or ARN of the Lambda function.</p> <p class="title"> <b>Name
+     * formats</b> </p> <ul> <li> <p> <b>Function name</b> –
+     * <code>MyFunction</code>.</p> </li> <li> <p> <b>Function ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
      * </li> <li> <p> <b>Version or Alias ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p>
@@ -109,9 +109,9 @@ namespace Model
     inline bool FunctionNameHasBeenSet() const { return m_functionNameHasBeenSet; }
 
     /**
-     * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
-     * </p> <ul> <li> <p> <b>Function name</b> – <code>MyFunction</code>.</p> </li>
-     * <li> <p> <b>Function ARN</b> –
+     * <p>The name or ARN of the Lambda function.</p> <p class="title"> <b>Name
+     * formats</b> </p> <ul> <li> <p> <b>Function name</b> –
+     * <code>MyFunction</code>.</p> </li> <li> <p> <b>Function ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
      * </li> <li> <p> <b>Version or Alias ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p>
@@ -123,9 +123,9 @@ namespace Model
     inline void SetFunctionName(const Aws::String& value) { m_functionNameHasBeenSet = true; m_functionName = value; }
 
     /**
-     * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
-     * </p> <ul> <li> <p> <b>Function name</b> – <code>MyFunction</code>.</p> </li>
-     * <li> <p> <b>Function ARN</b> –
+     * <p>The name or ARN of the Lambda function.</p> <p class="title"> <b>Name
+     * formats</b> </p> <ul> <li> <p> <b>Function name</b> –
+     * <code>MyFunction</code>.</p> </li> <li> <p> <b>Function ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
      * </li> <li> <p> <b>Version or Alias ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p>
@@ -137,9 +137,9 @@ namespace Model
     inline void SetFunctionName(Aws::String&& value) { m_functionNameHasBeenSet = true; m_functionName = std::move(value); }
 
     /**
-     * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
-     * </p> <ul> <li> <p> <b>Function name</b> – <code>MyFunction</code>.</p> </li>
-     * <li> <p> <b>Function ARN</b> –
+     * <p>The name or ARN of the Lambda function.</p> <p class="title"> <b>Name
+     * formats</b> </p> <ul> <li> <p> <b>Function name</b> –
+     * <code>MyFunction</code>.</p> </li> <li> <p> <b>Function ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
      * </li> <li> <p> <b>Version or Alias ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p>
@@ -151,9 +151,9 @@ namespace Model
     inline void SetFunctionName(const char* value) { m_functionNameHasBeenSet = true; m_functionName.assign(value); }
 
     /**
-     * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
-     * </p> <ul> <li> <p> <b>Function name</b> – <code>MyFunction</code>.</p> </li>
-     * <li> <p> <b>Function ARN</b> –
+     * <p>The name or ARN of the Lambda function.</p> <p class="title"> <b>Name
+     * formats</b> </p> <ul> <li> <p> <b>Function name</b> –
+     * <code>MyFunction</code>.</p> </li> <li> <p> <b>Function ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
      * </li> <li> <p> <b>Version or Alias ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p>
@@ -165,9 +165,9 @@ namespace Model
     inline UpdateEventSourceMappingRequest& WithFunctionName(const Aws::String& value) { SetFunctionName(value); return *this;}
 
     /**
-     * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
-     * </p> <ul> <li> <p> <b>Function name</b> – <code>MyFunction</code>.</p> </li>
-     * <li> <p> <b>Function ARN</b> –
+     * <p>The name or ARN of the Lambda function.</p> <p class="title"> <b>Name
+     * formats</b> </p> <ul> <li> <p> <b>Function name</b> –
+     * <code>MyFunction</code>.</p> </li> <li> <p> <b>Function ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
      * </li> <li> <p> <b>Version or Alias ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p>
@@ -179,9 +179,9 @@ namespace Model
     inline UpdateEventSourceMappingRequest& WithFunctionName(Aws::String&& value) { SetFunctionName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
-     * </p> <ul> <li> <p> <b>Function name</b> – <code>MyFunction</code>.</p> </li>
-     * <li> <p> <b>Function ARN</b> –
+     * <p>The name or ARN of the Lambda function.</p> <p class="title"> <b>Name
+     * formats</b> </p> <ul> <li> <p> <b>Function name</b> –
+     * <code>MyFunction</code>.</p> </li> <li> <p> <b>Function ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
      * </li> <li> <p> <b>Version or Alias ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p>
@@ -402,38 +402,44 @@ namespace Model
 
 
     /**
-     * <p>(Kinesis and DynamoDB Streams only) A standard Amazon SQS queue or standard
-     * Amazon SNS topic destination for discarded records.</p>
+     * <p>(Kinesis, DynamoDB Streams, Amazon MSK, and self-managed Kafka only) A
+     * configuration object that specifies the destination of an event after Lambda
+     * processes it.</p>
      */
     inline const DestinationConfig& GetDestinationConfig() const{ return m_destinationConfig; }
 
     /**
-     * <p>(Kinesis and DynamoDB Streams only) A standard Amazon SQS queue or standard
-     * Amazon SNS topic destination for discarded records.</p>
+     * <p>(Kinesis, DynamoDB Streams, Amazon MSK, and self-managed Kafka only) A
+     * configuration object that specifies the destination of an event after Lambda
+     * processes it.</p>
      */
     inline bool DestinationConfigHasBeenSet() const { return m_destinationConfigHasBeenSet; }
 
     /**
-     * <p>(Kinesis and DynamoDB Streams only) A standard Amazon SQS queue or standard
-     * Amazon SNS topic destination for discarded records.</p>
+     * <p>(Kinesis, DynamoDB Streams, Amazon MSK, and self-managed Kafka only) A
+     * configuration object that specifies the destination of an event after Lambda
+     * processes it.</p>
      */
     inline void SetDestinationConfig(const DestinationConfig& value) { m_destinationConfigHasBeenSet = true; m_destinationConfig = value; }
 
     /**
-     * <p>(Kinesis and DynamoDB Streams only) A standard Amazon SQS queue or standard
-     * Amazon SNS topic destination for discarded records.</p>
+     * <p>(Kinesis, DynamoDB Streams, Amazon MSK, and self-managed Kafka only) A
+     * configuration object that specifies the destination of an event after Lambda
+     * processes it.</p>
      */
     inline void SetDestinationConfig(DestinationConfig&& value) { m_destinationConfigHasBeenSet = true; m_destinationConfig = std::move(value); }
 
     /**
-     * <p>(Kinesis and DynamoDB Streams only) A standard Amazon SQS queue or standard
-     * Amazon SNS topic destination for discarded records.</p>
+     * <p>(Kinesis, DynamoDB Streams, Amazon MSK, and self-managed Kafka only) A
+     * configuration object that specifies the destination of an event after Lambda
+     * processes it.</p>
      */
     inline UpdateEventSourceMappingRequest& WithDestinationConfig(const DestinationConfig& value) { SetDestinationConfig(value); return *this;}
 
     /**
-     * <p>(Kinesis and DynamoDB Streams only) A standard Amazon SQS queue or standard
-     * Amazon SNS topic destination for discarded records.</p>
+     * <p>(Kinesis, DynamoDB Streams, Amazon MSK, and self-managed Kafka only) A
+     * configuration object that specifies the destination of an event after Lambda
+     * processes it.</p>
      */
     inline UpdateEventSourceMappingRequest& WithDestinationConfig(DestinationConfig&& value) { SetDestinationConfig(std::move(value)); return *this;}
 

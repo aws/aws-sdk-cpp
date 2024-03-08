@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DQStopJobOnFailureTiming::NOT_SET:
+            return {};
           case DQStopJobOnFailureTiming::Immediate:
             return "Immediate";
           case DQStopJobOnFailureTiming::AfterDataLoad:

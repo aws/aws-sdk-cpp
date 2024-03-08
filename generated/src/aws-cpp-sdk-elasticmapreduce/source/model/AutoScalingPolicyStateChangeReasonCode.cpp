@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AutoScalingPolicyStateChangeReasonCode::NOT_SET:
+            return {};
           case AutoScalingPolicyStateChangeReasonCode::USER_REQUEST:
             return "USER_REQUEST";
           case AutoScalingPolicyStateChangeReasonCode::PROVISION_FAILURE:

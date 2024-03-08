@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PhoneNumberProductType::NOT_SET:
+            return {};
           case PhoneNumberProductType::VoiceConnector:
             return "VoiceConnector";
           case PhoneNumberProductType::SipMediaApplicationDialIn:

@@ -25,7 +25,8 @@ Dashboard::Dashboard() :
     m_versionHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
     m_lastPublishedTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false)
+    m_lastUpdatedTimeHasBeenSet(false),
+    m_linkEntitiesHasBeenSet(false)
 {
 }
 
@@ -36,7 +37,8 @@ Dashboard::Dashboard(JsonView jsonValue) :
     m_versionHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
     m_lastPublishedTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false)
+    m_lastUpdatedTimeHasBeenSet(false),
+    m_linkEntitiesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -92,6 +94,16 @@ Dashboard& Dashboard::operator =(JsonView jsonValue)
     m_lastUpdatedTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("LinkEntities"))
+  {
+    Aws::Utils::Array<JsonView> linkEntitiesJsonList = jsonValue.GetArray("LinkEntities");
+    for(unsigned linkEntitiesIndex = 0; linkEntitiesIndex < linkEntitiesJsonList.GetLength(); ++linkEntitiesIndex)
+    {
+      m_linkEntities.push_back(linkEntitiesJsonList[linkEntitiesIndex].AsString());
+    }
+    m_linkEntitiesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -136,6 +148,17 @@ JsonValue Dashboard::Jsonize() const
   if(m_lastUpdatedTimeHasBeenSet)
   {
    payload.WithDouble("LastUpdatedTime", m_lastUpdatedTime.SecondsWithMSPrecision());
+  }
+
+  if(m_linkEntitiesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> linkEntitiesJsonList(m_linkEntities.size());
+   for(unsigned linkEntitiesIndex = 0; linkEntitiesIndex < linkEntitiesJsonList.GetLength(); ++linkEntitiesIndex)
+   {
+     linkEntitiesJsonList[linkEntitiesIndex].AsString(m_linkEntities[linkEntitiesIndex]);
+   }
+   payload.WithArray("LinkEntities", std::move(linkEntitiesJsonList));
+
   }
 
   return payload;

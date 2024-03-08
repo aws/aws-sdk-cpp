@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Ac3MetadataControl::NOT_SET:
+            return {};
           case Ac3MetadataControl::FOLLOW_INPUT:
             return "FOLLOW_INPUT";
           case Ac3MetadataControl::USE_CONFIGURED:

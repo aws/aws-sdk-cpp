@@ -121,73 +121,81 @@ namespace Model
 
     /**
      * <p>The type of database engine for the data provider. Valid values include
-     * <code>"aurora"</code>, <code>"aurora_postgresql"</code>, <code>"mysql"</code>,
-     * <code>"oracle"</code>, <code>"postgres"</code>, and <code>"sqlserver"</code>. A
-     * value of <code>"aurora"</code> represents Amazon Aurora MySQL-Compatible
-     * Edition.</p>
+     * <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"mysql"</code>,
+     * <code>"oracle"</code>, <code>"postgres"</code>, <code>"sqlserver"</code>,
+     * <code>redshift</code>, <code>mariadb</code>, <code>mongodb</code>, and
+     * <code>docdb</code>. A value of <code>"aurora"</code> represents Amazon Aurora
+     * MySQL-Compatible Edition.</p>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
 
     /**
      * <p>The type of database engine for the data provider. Valid values include
-     * <code>"aurora"</code>, <code>"aurora_postgresql"</code>, <code>"mysql"</code>,
-     * <code>"oracle"</code>, <code>"postgres"</code>, and <code>"sqlserver"</code>. A
-     * value of <code>"aurora"</code> represents Amazon Aurora MySQL-Compatible
-     * Edition.</p>
+     * <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"mysql"</code>,
+     * <code>"oracle"</code>, <code>"postgres"</code>, <code>"sqlserver"</code>,
+     * <code>redshift</code>, <code>mariadb</code>, <code>mongodb</code>, and
+     * <code>docdb</code>. A value of <code>"aurora"</code> represents Amazon Aurora
+     * MySQL-Compatible Edition.</p>
      */
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
 
     /**
      * <p>The type of database engine for the data provider. Valid values include
-     * <code>"aurora"</code>, <code>"aurora_postgresql"</code>, <code>"mysql"</code>,
-     * <code>"oracle"</code>, <code>"postgres"</code>, and <code>"sqlserver"</code>. A
-     * value of <code>"aurora"</code> represents Amazon Aurora MySQL-Compatible
-     * Edition.</p>
+     * <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"mysql"</code>,
+     * <code>"oracle"</code>, <code>"postgres"</code>, <code>"sqlserver"</code>,
+     * <code>redshift</code>, <code>mariadb</code>, <code>mongodb</code>, and
+     * <code>docdb</code>. A value of <code>"aurora"</code> represents Amazon Aurora
+     * MySQL-Compatible Edition.</p>
      */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
      * <p>The type of database engine for the data provider. Valid values include
-     * <code>"aurora"</code>, <code>"aurora_postgresql"</code>, <code>"mysql"</code>,
-     * <code>"oracle"</code>, <code>"postgres"</code>, and <code>"sqlserver"</code>. A
-     * value of <code>"aurora"</code> represents Amazon Aurora MySQL-Compatible
-     * Edition.</p>
+     * <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"mysql"</code>,
+     * <code>"oracle"</code>, <code>"postgres"</code>, <code>"sqlserver"</code>,
+     * <code>redshift</code>, <code>mariadb</code>, <code>mongodb</code>, and
+     * <code>docdb</code>. A value of <code>"aurora"</code> represents Amazon Aurora
+     * MySQL-Compatible Edition.</p>
      */
     inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
 
     /**
      * <p>The type of database engine for the data provider. Valid values include
-     * <code>"aurora"</code>, <code>"aurora_postgresql"</code>, <code>"mysql"</code>,
-     * <code>"oracle"</code>, <code>"postgres"</code>, and <code>"sqlserver"</code>. A
-     * value of <code>"aurora"</code> represents Amazon Aurora MySQL-Compatible
-     * Edition.</p>
+     * <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"mysql"</code>,
+     * <code>"oracle"</code>, <code>"postgres"</code>, <code>"sqlserver"</code>,
+     * <code>redshift</code>, <code>mariadb</code>, <code>mongodb</code>, and
+     * <code>docdb</code>. A value of <code>"aurora"</code> represents Amazon Aurora
+     * MySQL-Compatible Edition.</p>
      */
     inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
 
     /**
      * <p>The type of database engine for the data provider. Valid values include
-     * <code>"aurora"</code>, <code>"aurora_postgresql"</code>, <code>"mysql"</code>,
-     * <code>"oracle"</code>, <code>"postgres"</code>, and <code>"sqlserver"</code>. A
-     * value of <code>"aurora"</code> represents Amazon Aurora MySQL-Compatible
-     * Edition.</p>
+     * <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"mysql"</code>,
+     * <code>"oracle"</code>, <code>"postgres"</code>, <code>"sqlserver"</code>,
+     * <code>redshift</code>, <code>mariadb</code>, <code>mongodb</code>, and
+     * <code>docdb</code>. A value of <code>"aurora"</code> represents Amazon Aurora
+     * MySQL-Compatible Edition.</p>
      */
     inline CreateDataProviderRequest& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
 
     /**
      * <p>The type of database engine for the data provider. Valid values include
-     * <code>"aurora"</code>, <code>"aurora_postgresql"</code>, <code>"mysql"</code>,
-     * <code>"oracle"</code>, <code>"postgres"</code>, and <code>"sqlserver"</code>. A
-     * value of <code>"aurora"</code> represents Amazon Aurora MySQL-Compatible
-     * Edition.</p>
+     * <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"mysql"</code>,
+     * <code>"oracle"</code>, <code>"postgres"</code>, <code>"sqlserver"</code>,
+     * <code>redshift</code>, <code>mariadb</code>, <code>mongodb</code>, and
+     * <code>docdb</code>. A value of <code>"aurora"</code> represents Amazon Aurora
+     * MySQL-Compatible Edition.</p>
      */
     inline CreateDataProviderRequest& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
 
     /**
      * <p>The type of database engine for the data provider. Valid values include
-     * <code>"aurora"</code>, <code>"aurora_postgresql"</code>, <code>"mysql"</code>,
-     * <code>"oracle"</code>, <code>"postgres"</code>, and <code>"sqlserver"</code>. A
-     * value of <code>"aurora"</code> represents Amazon Aurora MySQL-Compatible
-     * Edition.</p>
+     * <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"mysql"</code>,
+     * <code>"oracle"</code>, <code>"postgres"</code>, <code>"sqlserver"</code>,
+     * <code>redshift</code>, <code>mariadb</code>, <code>mongodb</code>, and
+     * <code>docdb</code>. A value of <code>"aurora"</code> represents Amazon Aurora
+     * MySQL-Compatible Edition.</p>
      */
     inline CreateDataProviderRequest& WithEngine(const char* value) { SetEngine(value); return *this;}
 

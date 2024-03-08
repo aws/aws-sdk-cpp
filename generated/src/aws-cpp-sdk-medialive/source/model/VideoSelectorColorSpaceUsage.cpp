@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VideoSelectorColorSpaceUsage::NOT_SET:
+            return {};
           case VideoSelectorColorSpaceUsage::FALLBACK:
             return "FALLBACK";
           case VideoSelectorColorSpaceUsage::FORCE:

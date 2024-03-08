@@ -607,6 +607,43 @@ namespace Model
      */
     inline ActionDeclaration& WithNamespace(const char* value) { SetNamespace(value); return *this;}
 
+
+    /**
+     * <p>A timeout duration in minutes that can be applied against the ActionType’s
+     * default timeout value specified in <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/limits.html">Quotas
+     * for CodePipeline </a>. This attribute is available only to the manual approval
+     * ActionType.</p>
+     */
+    inline int GetTimeoutInMinutes() const{ return m_timeoutInMinutes; }
+
+    /**
+     * <p>A timeout duration in minutes that can be applied against the ActionType’s
+     * default timeout value specified in <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/limits.html">Quotas
+     * for CodePipeline </a>. This attribute is available only to the manual approval
+     * ActionType.</p>
+     */
+    inline bool TimeoutInMinutesHasBeenSet() const { return m_timeoutInMinutesHasBeenSet; }
+
+    /**
+     * <p>A timeout duration in minutes that can be applied against the ActionType’s
+     * default timeout value specified in <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/limits.html">Quotas
+     * for CodePipeline </a>. This attribute is available only to the manual approval
+     * ActionType.</p>
+     */
+    inline void SetTimeoutInMinutes(int value) { m_timeoutInMinutesHasBeenSet = true; m_timeoutInMinutes = value; }
+
+    /**
+     * <p>A timeout duration in minutes that can be applied against the ActionType’s
+     * default timeout value specified in <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/limits.html">Quotas
+     * for CodePipeline </a>. This attribute is available only to the manual approval
+     * ActionType.</p>
+     */
+    inline ActionDeclaration& WithTimeoutInMinutes(int value) { SetTimeoutInMinutes(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -635,6 +672,9 @@ namespace Model
 
     Aws::String m_namespace;
     bool m_namespaceHasBeenSet = false;
+
+    int m_timeoutInMinutes;
+    bool m_timeoutInMinutesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -39,8 +39,8 @@ namespace CloudFormation
   {
     public:
       typedef Aws::Client::AWSXMLClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef CloudFormationClientConfiguration ClientConfigurationType;
       typedef CloudFormationEndpointProvider EndpointProviderType;
@@ -50,14 +50,14 @@ namespace CloudFormation
         * is not specified, it will be initialized to default values.
         */
         CloudFormationClient(const Aws::CloudFormation::CloudFormationClientConfiguration& clientConfiguration = Aws::CloudFormation::CloudFormationClientConfiguration(),
-                             std::shared_ptr<CloudFormationEndpointProviderBase> endpointProvider = Aws::MakeShared<CloudFormationEndpointProvider>(ALLOCATION_TAG));
+                             std::shared_ptr<CloudFormationEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         CloudFormationClient(const Aws::Auth::AWSCredentials& credentials,
-                             std::shared_ptr<CloudFormationEndpointProviderBase> endpointProvider = Aws::MakeShared<CloudFormationEndpointProvider>(ALLOCATION_TAG),
+                             std::shared_ptr<CloudFormationEndpointProviderBase> endpointProvider = nullptr,
                              const Aws::CloudFormation::CloudFormationClientConfiguration& clientConfiguration = Aws::CloudFormation::CloudFormationClientConfiguration());
 
        /**
@@ -65,7 +65,7 @@ namespace CloudFormation
         * the default http client factory will be used
         */
         CloudFormationClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                             std::shared_ptr<CloudFormationEndpointProviderBase> endpointProvider = Aws::MakeShared<CloudFormationEndpointProvider>(ALLOCATION_TAG),
+                             std::shared_ptr<CloudFormationEndpointProviderBase> endpointProvider = nullptr,
                              const Aws::CloudFormation::CloudFormationClientConfiguration& clientConfiguration = Aws::CloudFormation::CloudFormationClientConfiguration());
 
 
@@ -133,9 +133,9 @@ namespace CloudFormation
          * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html">Using
          * public extensions</a> in the <i>CloudFormation User Guide</i>.</p> <p>Once you
          * have activated a public third-party extension in your account and Region, use <a
-         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>
-         * to specify configuration properties for the extension. For more information, see
-         * <a
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">
+         * <code>SetTypeConfiguration</code> </a> to specify configuration properties for
+         * the extension. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring
          * extensions at the account level</a> in the <i>CloudFormation User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -301,6 +301,33 @@ namespace CloudFormation
         void CreateChangeSetAsync(const CreateChangeSetRequestT& request, const CreateChangeSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CloudFormationClient::CreateChangeSet, request, handler, context);
+        }
+
+        /**
+         * <p>Creates a template from existing resources that are not already managed with
+         * CloudFormation. You can check the status of the template generation using the
+         * <code>DescribeGeneratedTemplate</code> API action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateGeneratedTemplate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateGeneratedTemplateOutcome CreateGeneratedTemplate(const Model::CreateGeneratedTemplateRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateGeneratedTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateGeneratedTemplateRequestT = Model::CreateGeneratedTemplateRequest>
+        Model::CreateGeneratedTemplateOutcomeCallable CreateGeneratedTemplateCallable(const CreateGeneratedTemplateRequestT& request) const
+        {
+            return SubmitCallable(&CloudFormationClient::CreateGeneratedTemplate, request);
+        }
+
+        /**
+         * An Async wrapper for CreateGeneratedTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateGeneratedTemplateRequestT = Model::CreateGeneratedTemplateRequest>
+        void CreateGeneratedTemplateAsync(const CreateGeneratedTemplateRequestT& request, const CreateGeneratedTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudFormationClient::CreateGeneratedTemplate, request, handler, context);
         }
 
         /**
@@ -475,6 +502,31 @@ namespace CloudFormation
         }
 
         /**
+         * <p>Deleted a generated template.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeleteGeneratedTemplate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteGeneratedTemplateOutcome DeleteGeneratedTemplate(const Model::DeleteGeneratedTemplateRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteGeneratedTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteGeneratedTemplateRequestT = Model::DeleteGeneratedTemplateRequest>
+        Model::DeleteGeneratedTemplateOutcomeCallable DeleteGeneratedTemplateCallable(const DeleteGeneratedTemplateRequestT& request) const
+        {
+            return SubmitCallable(&CloudFormationClient::DeleteGeneratedTemplate, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteGeneratedTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteGeneratedTemplateRequestT = Model::DeleteGeneratedTemplateRequest>
+        void DeleteGeneratedTemplateAsync(const DeleteGeneratedTemplateRequestT& request, const DeleteGeneratedTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudFormationClient::DeleteGeneratedTemplate, request, handler, context);
+        }
+
+        /**
          * <p>Deletes a specified stack. Once the call completes successfully, stack
          * deletion starts. Deleted stacks don't show up in the <a>DescribeStacks</a>
          * operation if the deletion has been completed successfully.</p><p><h3>See
@@ -567,8 +619,8 @@ namespace CloudFormation
          * extension. If you do deregister the default version of an extension, the
          * extension type itself is deregistered as well and marked as deprecated.</p>
          * <p>To view the deprecation status of an extension or extension version, use <a
-         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>.</p><p><h3>See
-         * Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">
+         * <code>DescribeType</code> </a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeregisterType">AWS
          * API Reference</a></p>
          */
@@ -627,8 +679,8 @@ namespace CloudFormation
          * CloudFormation will make if you execute the change set. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-changesets.html">Updating
-         * Stacks Using Change Sets</a> in the CloudFormation User Guide.</p><p><h3>See
-         * Also:</h3>   <a
+         * Stacks Using Change Sets</a> in the <i>CloudFormation User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeChangeSet">AWS
          * API Reference</a></p>
          */
@@ -680,6 +732,35 @@ namespace CloudFormation
         }
 
         /**
+         * <p>Describes a generated template. The output includes details about the
+         * progress of the creation of a generated template started by a
+         * <code>CreateGeneratedTemplate</code> API action or the update of a generated
+         * template started with an <code>UpdateGeneratedTemplate</code> API
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeGeneratedTemplate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeGeneratedTemplateOutcome DescribeGeneratedTemplate(const Model::DescribeGeneratedTemplateRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeGeneratedTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeGeneratedTemplateRequestT = Model::DescribeGeneratedTemplateRequest>
+        Model::DescribeGeneratedTemplateOutcomeCallable DescribeGeneratedTemplateCallable(const DescribeGeneratedTemplateRequestT& request) const
+        {
+            return SubmitCallable(&CloudFormationClient::DescribeGeneratedTemplate, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeGeneratedTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeGeneratedTemplateRequestT = Model::DescribeGeneratedTemplateRequest>
+        void DescribeGeneratedTemplateAsync(const DescribeGeneratedTemplateRequestT& request, const DescribeGeneratedTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudFormationClient::DescribeGeneratedTemplate, request, handler, context);
+        }
+
+        /**
          * <p>Retrieves information about the account's <code>OrganizationAccess</code>
          * status. This API can be called either by the management account or the delegated
          * administrator by using the <code>CallAs</code> parameter. This API can also be
@@ -714,8 +795,8 @@ namespace CloudFormation
          * publisher, <code>DescribePublisher</code> returns information about your own
          * publisher account.</p> <p>For more information about registering as a publisher,
          * see:</p> <ul> <li> <p> <a
-         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterPublisher.html">RegisterPublisher</a>
-         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterPublisher.html">
+         * <code>RegisterPublisher</code> </a> </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html">Publishing
          * extensions to make them available for public use</a> in the <i>CloudFormation
          * CLI User Guide</i> </p> </li> </ul><p><h3>See Also:</h3>   <a
@@ -740,6 +821,31 @@ namespace CloudFormation
         void DescribePublisherAsync(const DescribePublisherRequestT& request, const DescribePublisherResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CloudFormationClient::DescribePublisher, request, handler, context);
+        }
+
+        /**
+         * <p>Describes details of a resource scan.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeResourceScan">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeResourceScanOutcome DescribeResourceScan(const Model::DescribeResourceScanRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeResourceScan that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeResourceScanRequestT = Model::DescribeResourceScanRequest>
+        Model::DescribeResourceScanOutcomeCallable DescribeResourceScanCallable(const DescribeResourceScanRequestT& request) const
+        {
+            return SubmitCallable(&CloudFormationClient::DescribeResourceScan, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeResourceScan that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeResourceScanRequestT = Model::DescribeResourceScanRequest>
+        void DescribeResourceScanAsync(const DescribeResourceScanRequestT& request, const DescribeResourceScanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudFormationClient::DescribeResourceScan, request, handler, context);
         }
 
         /**
@@ -785,9 +891,9 @@ namespace CloudFormation
          * chronological order. For more information about a stack's event history, go to
          * <a
          * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/concept-stack.html">Stacks</a>
-         * in the CloudFormation User Guide.</p>  <p>You can list events for stacks
-         * that have failed to create or have been deleted by specifying the unique stack
-         * identifier (stack ID).</p> <p><h3>See Also:</h3>   <a
+         * in the <i>CloudFormation User Guide</i>.</p>  <p>You can list events for
+         * stacks that have failed to create or have been deleted by specifying the unique
+         * stack identifier (stack ID).</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStackEvents">AWS
          * API Reference</a></p>
          */
@@ -998,7 +1104,7 @@ namespace CloudFormation
         /**
          * <p>Returns the description for the specified stack; if no stack name was
          * specified, then it returns the description for all the stacks created.</p>
-         *  <p>If the stack doesn't exist, an <code>ValidationError</code> is
+         *  <p>If the stack doesn't exist, a <code>ValidationError</code> is
          * returned.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeStacks">AWS
          * API Reference</a></p>
@@ -1285,6 +1391,36 @@ namespace CloudFormation
         }
 
         /**
+         * <p>Retrieves a generated template. If the template is in an
+         * <code>InProgress</code> or <code>Pending</code> status then the template
+         * returned will be the template when the template was last in a
+         * <code>Complete</code> status. If the template has not yet been in a
+         * <code>Complete</code> status then an empty template will be
+         * returned.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/GetGeneratedTemplate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetGeneratedTemplateOutcome GetGeneratedTemplate(const Model::GetGeneratedTemplateRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetGeneratedTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetGeneratedTemplateRequestT = Model::GetGeneratedTemplateRequest>
+        Model::GetGeneratedTemplateOutcomeCallable GetGeneratedTemplateCallable(const GetGeneratedTemplateRequestT& request) const
+        {
+            return SubmitCallable(&CloudFormationClient::GetGeneratedTemplate, request);
+        }
+
+        /**
+         * An Async wrapper for GetGeneratedTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetGeneratedTemplateRequestT = Model::GetGeneratedTemplateRequest>
+        void GetGeneratedTemplateAsync(const GetGeneratedTemplateRequestT& request, const GetGeneratedTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudFormationClient::GetGeneratedTemplate, request, handler, context);
+        }
+
+        /**
          * <p>Returns the stack policy for a specified stack. If a stack doesn't have a
          * policy, a null value is returned.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/GetStackPolicy">AWS
@@ -1460,6 +1596,31 @@ namespace CloudFormation
         }
 
         /**
+         * <p>Lists your generated templates in this Region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListGeneratedTemplates">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListGeneratedTemplatesOutcome ListGeneratedTemplates(const Model::ListGeneratedTemplatesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListGeneratedTemplates that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListGeneratedTemplatesRequestT = Model::ListGeneratedTemplatesRequest>
+        Model::ListGeneratedTemplatesOutcomeCallable ListGeneratedTemplatesCallable(const ListGeneratedTemplatesRequestT& request) const
+        {
+            return SubmitCallable(&CloudFormationClient::ListGeneratedTemplates, request);
+        }
+
+        /**
+         * An Async wrapper for ListGeneratedTemplates that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListGeneratedTemplatesRequestT = Model::ListGeneratedTemplatesRequest>
+        void ListGeneratedTemplatesAsync(const ListGeneratedTemplatesRequestT& request, const ListGeneratedTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudFormationClient::ListGeneratedTemplates, request, handler, context);
+        }
+
+        /**
          * <p>Lists all stacks that are importing an exported output value. To modify or
          * remove an exported output value, first use this action to see which stacks are
          * using it. To see the exported output values in your account, see
@@ -1488,6 +1649,88 @@ namespace CloudFormation
         void ListImportsAsync(const ListImportsRequestT& request, const ListImportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CloudFormationClient::ListImports, request, handler, context);
+        }
+
+        /**
+         * <p>Lists the related resources for a list of resources from a resource scan. The
+         * response indicates whether each returned resource is already managed by
+         * CloudFormation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListResourceScanRelatedResources">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListResourceScanRelatedResourcesOutcome ListResourceScanRelatedResources(const Model::ListResourceScanRelatedResourcesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListResourceScanRelatedResources that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListResourceScanRelatedResourcesRequestT = Model::ListResourceScanRelatedResourcesRequest>
+        Model::ListResourceScanRelatedResourcesOutcomeCallable ListResourceScanRelatedResourcesCallable(const ListResourceScanRelatedResourcesRequestT& request) const
+        {
+            return SubmitCallable(&CloudFormationClient::ListResourceScanRelatedResources, request);
+        }
+
+        /**
+         * An Async wrapper for ListResourceScanRelatedResources that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListResourceScanRelatedResourcesRequestT = Model::ListResourceScanRelatedResourcesRequest>
+        void ListResourceScanRelatedResourcesAsync(const ListResourceScanRelatedResourcesRequestT& request, const ListResourceScanRelatedResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudFormationClient::ListResourceScanRelatedResources, request, handler, context);
+        }
+
+        /**
+         * <p>Lists the resources from a resource scan. The results can be filtered by
+         * resource identifier, resource type prefix, tag key, and tag value. Only
+         * resources that match all specified filters are returned. The response indicates
+         * whether each returned resource is already managed by
+         * CloudFormation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListResourceScanResources">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListResourceScanResourcesOutcome ListResourceScanResources(const Model::ListResourceScanResourcesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListResourceScanResources that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListResourceScanResourcesRequestT = Model::ListResourceScanResourcesRequest>
+        Model::ListResourceScanResourcesOutcomeCallable ListResourceScanResourcesCallable(const ListResourceScanResourcesRequestT& request) const
+        {
+            return SubmitCallable(&CloudFormationClient::ListResourceScanResources, request);
+        }
+
+        /**
+         * An Async wrapper for ListResourceScanResources that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListResourceScanResourcesRequestT = Model::ListResourceScanResourcesRequest>
+        void ListResourceScanResourcesAsync(const ListResourceScanResourcesRequestT& request, const ListResourceScanResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudFormationClient::ListResourceScanResources, request, handler, context);
+        }
+
+        /**
+         * <p>List the resource scans from newest to oldest. By default it will return up
+         * to 10 resource scans.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListResourceScans">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListResourceScansOutcome ListResourceScans(const Model::ListResourceScansRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListResourceScans that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListResourceScansRequestT = Model::ListResourceScansRequest>
+        Model::ListResourceScansOutcomeCallable ListResourceScansCallable(const ListResourceScansRequestT& request) const
+        {
+            return SubmitCallable(&CloudFormationClient::ListResourceScans, request);
+        }
+
+        /**
+         * An Async wrapper for ListResourceScans that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListResourceScansRequestT = Model::ListResourceScansRequest>
+        void ListResourceScansAsync(const ListResourceScansRequestT& request, const ListResourceScansResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudFormationClient::ListResourceScans, request, handler, context);
         }
 
         /**
@@ -1776,8 +2019,8 @@ namespace CloudFormation
          * extensions to make them available for public use</a> in the <i>CloudFormation
          * CLI User Guide</i>.</p> <p>To publish an extension, you must be registered as a
          * publisher with CloudFormation. For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterPublisher.html">RegisterPublisher</a>.</p><p><h3>See
-         * Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterPublisher.html">
+         * <code>RegisterPublisher</code> </a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/PublishType">AWS
          * API Reference</a></p>
          */
@@ -1873,15 +2116,15 @@ namespace CloudFormation
          * Resource Providers</a> in the <i>CloudFormation CLI User Guide</i>.</p> <p>You
          * can have a maximum of 50 resource extension versions registered at a time. This
          * maximum is per account and per Region. Use <a
-         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeregisterType.html">DeregisterType</a>
-         * to deregister specific extension versions if necessary.</p> <p>Once you have
-         * initiated a registration request using <a>RegisterType</a>, you can use
-         * <a>DescribeTypeRegistration</a> to monitor the progress of the registration
-         * request.</p> <p>Once you have registered a private extension in your account and
-         * Region, use <a
-         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>
-         * to specify configuration properties for the extension. For more information, see
-         * <a
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeregisterType.html">
+         * <code>DeregisterType</code> </a> to deregister specific extension versions if
+         * necessary.</p> <p>Once you have initiated a registration request using
+         * <a>RegisterType</a>, you can use <a>DescribeTypeRegistration</a> to monitor the
+         * progress of the registration request.</p> <p>Once you have registered a private
+         * extension in your account and Region, use <a
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">
+         * <code>SetTypeConfiguration</code> </a> to specify configuration properties for
+         * the extension. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring
          * extensions at the account level</a> in the <i>CloudFormation User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -1974,8 +2217,8 @@ namespace CloudFormation
          * <p>Specifies the configuration data for a registered CloudFormation extension,
          * in the given account and Region.</p> <p>To view the current configuration data
          * for an extension, refer to the <code>ConfigurationSchema</code> element of <a
-         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>.
-         * For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">
+         * <code>DescribeType</code> </a>. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring
          * extensions at the account level</a> in the <i>CloudFormation User Guide</i>.</p>
          *  <p>It's strongly recommended that you use dynamic references to
@@ -2066,6 +2309,33 @@ namespace CloudFormation
         }
 
         /**
+         * <p>Starts a scan of the resources in this account in this Region. You can the
+         * status of a scan using the <code>ListResourceScans</code> API
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/StartResourceScan">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartResourceScanOutcome StartResourceScan(const Model::StartResourceScanRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartResourceScan that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartResourceScanRequestT = Model::StartResourceScanRequest>
+        Model::StartResourceScanOutcomeCallable StartResourceScanCallable(const StartResourceScanRequestT& request) const
+        {
+            return SubmitCallable(&CloudFormationClient::StartResourceScan, request);
+        }
+
+        /**
+         * An Async wrapper for StartResourceScan that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartResourceScanRequestT = Model::StartResourceScanRequest>
+        void StartResourceScanAsync(const StartResourceScanRequestT& request, const StartResourceScanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudFormationClient::StartResourceScan, request, handler, context);
+        }
+
+        /**
          * <p>Stops an in-progress operation on a stack set and its associated stack
          * instances. StackSets will cancel all the unstarted stack instance deployments
          * and wait for those are in-progress to complete.</p><p><h3>See Also:</h3>   <a
@@ -2105,13 +2375,15 @@ namespace CloudFormation
          * default version of the extension in your account and Region for testing.</p>
          * <p>To perform testing, CloudFormation assumes the execution role specified when
          * the type was registered. For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
-         * <p>Once you've initiated testing on an extension using <code>TestType</code>,
-         * you can pass the returned <code>TypeVersionArn</code> into <a
-         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>
-         * to monitor the current test status and test status description for the
-         * extension.</p> <p>An extension must have a test status of <code>PASSED</code>
-         * before it can be published. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">
+         * <code>RegisterType</code> </a>.</p> <p>Once you've initiated testing on an
+         * extension using <code>TestType</code>, you can pass the returned
+         * <code>TypeVersionArn</code> into <a
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">
+         * <code>DescribeType</code> </a> to monitor the current test status and test
+         * status description for the extension.</p> <p>An extension must have a test
+         * status of <code>PASSED</code> before it can be published. For more information,
+         * see <a
          * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-publish.html">Publishing
          * extensions to make them available for public use</a> in the <i>CloudFormation
          * CLI User Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -2136,6 +2408,35 @@ namespace CloudFormation
         void TestTypeAsync(const TestTypeRequestT& request, const TestTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CloudFormationClient::TestType, request, handler, context);
+        }
+
+        /**
+         * <p>Updates a generated template. This can be used to change the name, add and
+         * remove resources, refresh resources, and change the <code>DeletionPolicy</code>
+         * and <code>UpdateReplacePolicy</code> settings. You can check the status of the
+         * update to the generated template using the
+         * <code>DescribeGeneratedTemplate</code> API action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/UpdateGeneratedTemplate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateGeneratedTemplateOutcome UpdateGeneratedTemplate(const Model::UpdateGeneratedTemplateRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateGeneratedTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateGeneratedTemplateRequestT = Model::UpdateGeneratedTemplateRequest>
+        Model::UpdateGeneratedTemplateOutcomeCallable UpdateGeneratedTemplateCallable(const UpdateGeneratedTemplateRequestT& request) const
+        {
+            return SubmitCallable(&CloudFormationClient::UpdateGeneratedTemplate, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateGeneratedTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateGeneratedTemplateRequestT = Model::UpdateGeneratedTemplateRequest>
+        void UpdateGeneratedTemplateAsync(const UpdateGeneratedTemplateRequestT& request, const UpdateGeneratedTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudFormationClient::UpdateGeneratedTemplate, request, handler, context);
         }
 
         /**
@@ -2176,20 +2477,20 @@ namespace CloudFormation
          * stack in a specific account and Region.</p> <p>You can only update stack
          * instances in Amazon Web Services Regions and accounts where they already exist;
          * to create additional stack instances, use <a
-         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateStackInstances.html">CreateStackInstances</a>.</p>
-         * <p>During stack set updates, any parameters overridden for a stack instance
-         * aren't updated, but retain their overridden value.</p> <p>You can only update
-         * the parameter <i>values</i> that are specified in the stack set; to add or
-         * delete a parameter itself, use <a
-         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a>
-         * to update the stack set template. If you add a parameter to a template, before
-         * you can override the parameter value specified in the stack set you must first
-         * use <a
-         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a>
-         * to update all stack instances with the updated template and parameter value
-         * specified in the stack set. Once a stack instance has been updated with the new
-         * parameter, you can then override the parameter value using
-         * <code>UpdateStackInstances</code>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateStackInstances.html">
+         * <code>CreateStackInstances</code> </a>.</p> <p>During stack set updates, any
+         * parameters overridden for a stack instance aren't updated, but retain their
+         * overridden value.</p> <p>You can only update the parameter <i>values</i> that
+         * are specified in the stack set; to add or delete a parameter itself, use <a
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">
+         * <code>UpdateStackSet</code> </a> to update the stack set template. If you add a
+         * parameter to a template, before you can override the parameter value specified
+         * in the stack set you must first use <a
+         * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">
+         * <code>UpdateStackSet</code> </a> to update all stack instances with the updated
+         * template and parameter value specified in the stack set. Once a stack instance
+         * has been updated with the new parameter, you can then override the parameter
+         * value using <code>UpdateStackInstances</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/UpdateStackInstances">AWS
          * API Reference</a></p>
          */

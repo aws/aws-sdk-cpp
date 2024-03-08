@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BehaviorOnMXFailure::NOT_SET:
+            return {};
           case BehaviorOnMXFailure::UseDefaultValue:
             return "UseDefaultValue";
           case BehaviorOnMXFailure::RejectMessage:

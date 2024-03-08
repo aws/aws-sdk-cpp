@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NamespaceFilterName::NOT_SET:
+            return {};
           case NamespaceFilterName::TYPE:
             return "TYPE";
           case NamespaceFilterName::NAME:

@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ConfluenceSpaceFieldName::NOT_SET:
+            return {};
           case ConfluenceSpaceFieldName::DISPLAY_URL:
             return "DISPLAY_URL";
           case ConfluenceSpaceFieldName::ITEM_TYPE:

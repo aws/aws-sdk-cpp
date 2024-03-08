@@ -32,7 +32,8 @@ namespace Model
 {
 
   /**
-   * <p>The details of an Amazon S3 bucket.</p><p><h3>See Also:</h3>   <a
+   * <p>The details of an Amazon Simple Storage Service (Amazon S3)
+   * bucket.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsS3BucketDetails">AWS
    * API Reference</a></p>
    */
@@ -289,32 +290,32 @@ namespace Model
 
 
     /**
-     * <p>The lifecycle configuration for objects in the S3 bucket.</p>
+     * <p>The lifecycle configuration for objects in the specified bucket.</p>
      */
     inline const AwsS3BucketBucketLifecycleConfigurationDetails& GetBucketLifecycleConfiguration() const{ return m_bucketLifecycleConfiguration; }
 
     /**
-     * <p>The lifecycle configuration for objects in the S3 bucket.</p>
+     * <p>The lifecycle configuration for objects in the specified bucket.</p>
      */
     inline bool BucketLifecycleConfigurationHasBeenSet() const { return m_bucketLifecycleConfigurationHasBeenSet; }
 
     /**
-     * <p>The lifecycle configuration for objects in the S3 bucket.</p>
+     * <p>The lifecycle configuration for objects in the specified bucket.</p>
      */
     inline void SetBucketLifecycleConfiguration(const AwsS3BucketBucketLifecycleConfigurationDetails& value) { m_bucketLifecycleConfigurationHasBeenSet = true; m_bucketLifecycleConfiguration = value; }
 
     /**
-     * <p>The lifecycle configuration for objects in the S3 bucket.</p>
+     * <p>The lifecycle configuration for objects in the specified bucket.</p>
      */
     inline void SetBucketLifecycleConfiguration(AwsS3BucketBucketLifecycleConfigurationDetails&& value) { m_bucketLifecycleConfigurationHasBeenSet = true; m_bucketLifecycleConfiguration = std::move(value); }
 
     /**
-     * <p>The lifecycle configuration for objects in the S3 bucket.</p>
+     * <p>The lifecycle configuration for objects in the specified bucket.</p>
      */
     inline AwsS3BucketDetails& WithBucketLifecycleConfiguration(const AwsS3BucketBucketLifecycleConfigurationDetails& value) { SetBucketLifecycleConfiguration(value); return *this;}
 
     /**
-     * <p>The lifecycle configuration for objects in the S3 bucket.</p>
+     * <p>The lifecycle configuration for objects in the specified bucket.</p>
      */
     inline AwsS3BucketDetails& WithBucketLifecycleConfiguration(AwsS3BucketBucketLifecycleConfigurationDetails&& value) { SetBucketLifecycleConfiguration(std::move(value)); return *this;}
 
@@ -523,39 +524,80 @@ namespace Model
 
     /**
      * <p> Specifies which rule Amazon S3 applies by default to every new object placed
-     * in the specified bucket. </p>
+     * in the bucket. </p>
      */
     inline const AwsS3BucketObjectLockConfiguration& GetObjectLockConfiguration() const{ return m_objectLockConfiguration; }
 
     /**
      * <p> Specifies which rule Amazon S3 applies by default to every new object placed
-     * in the specified bucket. </p>
+     * in the bucket. </p>
      */
     inline bool ObjectLockConfigurationHasBeenSet() const { return m_objectLockConfigurationHasBeenSet; }
 
     /**
      * <p> Specifies which rule Amazon S3 applies by default to every new object placed
-     * in the specified bucket. </p>
+     * in the bucket. </p>
      */
     inline void SetObjectLockConfiguration(const AwsS3BucketObjectLockConfiguration& value) { m_objectLockConfigurationHasBeenSet = true; m_objectLockConfiguration = value; }
 
     /**
      * <p> Specifies which rule Amazon S3 applies by default to every new object placed
-     * in the specified bucket. </p>
+     * in the bucket. </p>
      */
     inline void SetObjectLockConfiguration(AwsS3BucketObjectLockConfiguration&& value) { m_objectLockConfigurationHasBeenSet = true; m_objectLockConfiguration = std::move(value); }
 
     /**
      * <p> Specifies which rule Amazon S3 applies by default to every new object placed
-     * in the specified bucket. </p>
+     * in the bucket. </p>
      */
     inline AwsS3BucketDetails& WithObjectLockConfiguration(const AwsS3BucketObjectLockConfiguration& value) { SetObjectLockConfiguration(value); return *this;}
 
     /**
      * <p> Specifies which rule Amazon S3 applies by default to every new object placed
-     * in the specified bucket. </p>
+     * in the bucket. </p>
      */
     inline AwsS3BucketDetails& WithObjectLockConfiguration(AwsS3BucketObjectLockConfiguration&& value) { SetObjectLockConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p> The name of the bucket. </p>
+     */
+    inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p> The name of the bucket. </p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p> The name of the bucket. </p>
+     */
+    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    /**
+     * <p> The name of the bucket. </p>
+     */
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
+
+    /**
+     * <p> The name of the bucket. </p>
+     */
+    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
+
+    /**
+     * <p> The name of the bucket. </p>
+     */
+    inline AwsS3BucketDetails& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    /**
+     * <p> The name of the bucket. </p>
+     */
+    inline AwsS3BucketDetails& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
+
+    /**
+     * <p> The name of the bucket. </p>
+     */
+    inline AwsS3BucketDetails& WithName(const char* value) { SetName(value); return *this;}
 
   private:
 
@@ -597,6 +639,9 @@ namespace Model
 
     AwsS3BucketObjectLockConfiguration m_objectLockConfiguration;
     bool m_objectLockConfigurationHasBeenSet = false;
+
+    Aws::String m_name;
+    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Select::NOT_SET:
+            return {};
           case Select::ALL_ATTRIBUTES:
             return "ALL_ATTRIBUTES";
           case Select::ALL_PROJECTED_ATTRIBUTES:

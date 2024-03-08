@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AggregationType::NOT_SET:
+            return {};
           case AggregationType::None:
             return "None";
           case AggregationType::SingleFile:

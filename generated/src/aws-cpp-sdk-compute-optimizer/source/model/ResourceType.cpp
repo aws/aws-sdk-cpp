@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResourceType::NOT_SET:
+            return {};
           case ResourceType::Ec2Instance:
             return "Ec2Instance";
           case ResourceType::AutoScalingGroup:

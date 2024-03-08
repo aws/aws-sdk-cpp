@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReplicaMode::NOT_SET:
+            return {};
           case ReplicaMode::open_read_only:
             return "open-read-only";
           case ReplicaMode::mounted:

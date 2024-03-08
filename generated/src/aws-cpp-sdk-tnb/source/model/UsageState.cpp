@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UsageState::NOT_SET:
+            return {};
           case UsageState::IN_USE:
             return "IN_USE";
           case UsageState::NOT_IN_USE:

@@ -81,8 +81,8 @@ namespace ApplicationDiscoveryService
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef ApplicationDiscoveryServiceClientConfiguration ClientConfigurationType;
       typedef ApplicationDiscoveryServiceEndpointProvider EndpointProviderType;
@@ -92,14 +92,14 @@ namespace ApplicationDiscoveryService
         * is not specified, it will be initialized to default values.
         */
         ApplicationDiscoveryServiceClient(const Aws::ApplicationDiscoveryService::ApplicationDiscoveryServiceClientConfiguration& clientConfiguration = Aws::ApplicationDiscoveryService::ApplicationDiscoveryServiceClientConfiguration(),
-                                          std::shared_ptr<ApplicationDiscoveryServiceEndpointProviderBase> endpointProvider = Aws::MakeShared<ApplicationDiscoveryServiceEndpointProvider>(ALLOCATION_TAG));
+                                          std::shared_ptr<ApplicationDiscoveryServiceEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         ApplicationDiscoveryServiceClient(const Aws::Auth::AWSCredentials& credentials,
-                                          std::shared_ptr<ApplicationDiscoveryServiceEndpointProviderBase> endpointProvider = Aws::MakeShared<ApplicationDiscoveryServiceEndpointProvider>(ALLOCATION_TAG),
+                                          std::shared_ptr<ApplicationDiscoveryServiceEndpointProviderBase> endpointProvider = nullptr,
                                           const Aws::ApplicationDiscoveryService::ApplicationDiscoveryServiceClientConfiguration& clientConfiguration = Aws::ApplicationDiscoveryService::ApplicationDiscoveryServiceClientConfiguration());
 
        /**
@@ -107,7 +107,7 @@ namespace ApplicationDiscoveryService
         * the default http client factory will be used
         */
         ApplicationDiscoveryServiceClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                                          std::shared_ptr<ApplicationDiscoveryServiceEndpointProviderBase> endpointProvider = Aws::MakeShared<ApplicationDiscoveryServiceEndpointProvider>(ALLOCATION_TAG),
+                                          std::shared_ptr<ApplicationDiscoveryServiceEndpointProviderBase> endpointProvider = nullptr,
                                           const Aws::ApplicationDiscoveryService::ApplicationDiscoveryServiceClientConfiguration& clientConfiguration = Aws::ApplicationDiscoveryService::ApplicationDiscoveryServiceClientConfiguration());
 
 
@@ -159,6 +159,34 @@ namespace ApplicationDiscoveryService
         void AssociateConfigurationItemsToApplicationAsync(const AssociateConfigurationItemsToApplicationRequestT& request, const AssociateConfigurationItemsToApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ApplicationDiscoveryServiceClient::AssociateConfigurationItemsToApplication, request, handler, context);
+        }
+
+        /**
+         * <p> Deletes one or more agents or collectors as specified by ID. Deleting an
+         * agent or collector does not delete the previously discovered data. To delete the
+         * data collected, use <code>StartBatchDeleteConfigurationTask</code>.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/BatchDeleteAgents">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchDeleteAgentsOutcome BatchDeleteAgents(const Model::BatchDeleteAgentsRequest& request) const;
+
+        /**
+         * A Callable wrapper for BatchDeleteAgents that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename BatchDeleteAgentsRequestT = Model::BatchDeleteAgentsRequest>
+        Model::BatchDeleteAgentsOutcomeCallable BatchDeleteAgentsCallable(const BatchDeleteAgentsRequestT& request) const
+        {
+            return SubmitCallable(&ApplicationDiscoveryServiceClient::BatchDeleteAgents, request);
+        }
+
+        /**
+         * An Async wrapper for BatchDeleteAgents that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename BatchDeleteAgentsRequestT = Model::BatchDeleteAgentsRequest>
+        void BatchDeleteAgentsAsync(const BatchDeleteAgentsRequestT& request, const BatchDeleteAgentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ApplicationDiscoveryServiceClient::BatchDeleteAgents, request, handler, context);
         }
 
         /**
@@ -327,6 +355,32 @@ namespace ApplicationDiscoveryService
         void DescribeAgentsAsync(const DescribeAgentsRequestT& request, const DescribeAgentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ApplicationDiscoveryServiceClient::DescribeAgents, request, handler, context);
+        }
+
+        /**
+         * <p> Takes a unique deletion task identifier as input and returns metadata about
+         * a configuration deletion task.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeBatchDeleteConfigurationTask">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeBatchDeleteConfigurationTaskOutcome DescribeBatchDeleteConfigurationTask(const Model::DescribeBatchDeleteConfigurationTaskRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeBatchDeleteConfigurationTask that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeBatchDeleteConfigurationTaskRequestT = Model::DescribeBatchDeleteConfigurationTaskRequest>
+        Model::DescribeBatchDeleteConfigurationTaskOutcomeCallable DescribeBatchDeleteConfigurationTaskCallable(const DescribeBatchDeleteConfigurationTaskRequestT& request) const
+        {
+            return SubmitCallable(&ApplicationDiscoveryServiceClient::DescribeBatchDeleteConfigurationTask, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeBatchDeleteConfigurationTask that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeBatchDeleteConfigurationTaskRequestT = Model::DescribeBatchDeleteConfigurationTaskRequest>
+        void DescribeBatchDeleteConfigurationTaskAsync(const DescribeBatchDeleteConfigurationTaskRequestT& request, const DescribeBatchDeleteConfigurationTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ApplicationDiscoveryServiceClient::DescribeBatchDeleteConfigurationTask, request, handler, context);
         }
 
         /**
@@ -579,6 +633,33 @@ namespace ApplicationDiscoveryService
         void ListServerNeighborsAsync(const ListServerNeighborsRequestT& request, const ListServerNeighborsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ApplicationDiscoveryServiceClient::ListServerNeighbors, request, handler, context);
+        }
+
+        /**
+         * <p> Takes a list of configurationId as input and starts an asynchronous deletion
+         * task to remove the configurationItems. Returns a unique deletion task
+         * identifier. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/StartBatchDeleteConfigurationTask">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartBatchDeleteConfigurationTaskOutcome StartBatchDeleteConfigurationTask(const Model::StartBatchDeleteConfigurationTaskRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartBatchDeleteConfigurationTask that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartBatchDeleteConfigurationTaskRequestT = Model::StartBatchDeleteConfigurationTaskRequest>
+        Model::StartBatchDeleteConfigurationTaskOutcomeCallable StartBatchDeleteConfigurationTaskCallable(const StartBatchDeleteConfigurationTaskRequestT& request) const
+        {
+            return SubmitCallable(&ApplicationDiscoveryServiceClient::StartBatchDeleteConfigurationTask, request);
+        }
+
+        /**
+         * An Async wrapper for StartBatchDeleteConfigurationTask that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartBatchDeleteConfigurationTaskRequestT = Model::StartBatchDeleteConfigurationTaskRequest>
+        void StartBatchDeleteConfigurationTaskAsync(const StartBatchDeleteConfigurationTaskRequestT& request, const StartBatchDeleteConfigurationTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ApplicationDiscoveryServiceClient::StartBatchDeleteConfigurationTask, request, handler, context);
         }
 
         /**

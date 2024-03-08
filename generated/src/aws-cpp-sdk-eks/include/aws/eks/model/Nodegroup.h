@@ -134,42 +134,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the cluster that the managed node group resides in.</p>
+     * <p>The name of your cluster.</p>
      */
     inline const Aws::String& GetClusterName() const{ return m_clusterName; }
 
     /**
-     * <p>The name of the cluster that the managed node group resides in.</p>
+     * <p>The name of your cluster.</p>
      */
     inline bool ClusterNameHasBeenSet() const { return m_clusterNameHasBeenSet; }
 
     /**
-     * <p>The name of the cluster that the managed node group resides in.</p>
+     * <p>The name of your cluster.</p>
      */
     inline void SetClusterName(const Aws::String& value) { m_clusterNameHasBeenSet = true; m_clusterName = value; }
 
     /**
-     * <p>The name of the cluster that the managed node group resides in.</p>
+     * <p>The name of your cluster.</p>
      */
     inline void SetClusterName(Aws::String&& value) { m_clusterNameHasBeenSet = true; m_clusterName = std::move(value); }
 
     /**
-     * <p>The name of the cluster that the managed node group resides in.</p>
+     * <p>The name of your cluster.</p>
      */
     inline void SetClusterName(const char* value) { m_clusterNameHasBeenSet = true; m_clusterName.assign(value); }
 
     /**
-     * <p>The name of the cluster that the managed node group resides in.</p>
+     * <p>The name of your cluster.</p>
      */
     inline Nodegroup& WithClusterName(const Aws::String& value) { SetClusterName(value); return *this;}
 
     /**
-     * <p>The name of the cluster that the managed node group resides in.</p>
+     * <p>The name of your cluster.</p>
      */
     inline Nodegroup& WithClusterName(Aws::String&& value) { SetClusterName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the cluster that the managed node group resides in.</p>
+     * <p>The name of your cluster.</p>
      */
     inline Nodegroup& WithClusterName(const char* value) { SetClusterName(value); return *this;}
 
@@ -281,75 +281,63 @@ namespace Model
 
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the managed node group was
-     * created.</p>
+     * <p>The Unix epoch timestamp at object creation.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the managed node group was
-     * created.</p>
+     * <p>The Unix epoch timestamp at object creation.</p>
      */
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the managed node group was
-     * created.</p>
+     * <p>The Unix epoch timestamp at object creation.</p>
      */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the managed node group was
-     * created.</p>
+     * <p>The Unix epoch timestamp at object creation.</p>
      */
     inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the managed node group was
-     * created.</p>
+     * <p>The Unix epoch timestamp at object creation.</p>
      */
     inline Nodegroup& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the managed node group was
-     * created.</p>
+     * <p>The Unix epoch timestamp at object creation.</p>
      */
     inline Nodegroup& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the managed node group was last
-     * modified.</p>
+     * <p>The Unix epoch timestamp for the last modification to the object.</p>
      */
     inline const Aws::Utils::DateTime& GetModifiedAt() const{ return m_modifiedAt; }
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the managed node group was last
-     * modified.</p>
+     * <p>The Unix epoch timestamp for the last modification to the object.</p>
      */
     inline bool ModifiedAtHasBeenSet() const { return m_modifiedAtHasBeenSet; }
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the managed node group was last
-     * modified.</p>
+     * <p>The Unix epoch timestamp for the last modification to the object.</p>
      */
     inline void SetModifiedAt(const Aws::Utils::DateTime& value) { m_modifiedAtHasBeenSet = true; m_modifiedAt = value; }
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the managed node group was last
-     * modified.</p>
+     * <p>The Unix epoch timestamp for the last modification to the object.</p>
      */
     inline void SetModifiedAt(Aws::Utils::DateTime&& value) { m_modifiedAtHasBeenSet = true; m_modifiedAt = std::move(value); }
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the managed node group was last
-     * modified.</p>
+     * <p>The Unix epoch timestamp for the last modification to the object.</p>
      */
     inline Nodegroup& WithModifiedAt(const Aws::Utils::DateTime& value) { SetModifiedAt(value); return *this;}
 
     /**
-     * <p>The Unix epoch timestamp in seconds for when the managed node group was last
-     * modified.</p>
+     * <p>The Unix epoch timestamp for the last modification to the object.</p>
      */
     inline Nodegroup& WithModifiedAt(Aws::Utils::DateTime&& value) { SetModifiedAt(std::move(value)); return *this;}
 
@@ -730,93 +718,106 @@ namespace Model
 
 
     /**
-     * <p>The Kubernetes labels applied to the nodes in the node group.</p> 
-     * <p>Only labels that are applied with the Amazon EKS API are shown here. There
-     * may be other Kubernetes labels applied to the nodes in this group.</p> 
+     * <p>The Kubernetes <code>labels</code> applied to the nodes in the node
+     * group.</p>  <p>Only <code>labels</code> that are applied with the Amazon
+     * EKS API are shown here. There may be other Kubernetes <code>labels</code>
+     * applied to the nodes in this group.</p> 
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetLabels() const{ return m_labels; }
 
     /**
-     * <p>The Kubernetes labels applied to the nodes in the node group.</p> 
-     * <p>Only labels that are applied with the Amazon EKS API are shown here. There
-     * may be other Kubernetes labels applied to the nodes in this group.</p> 
+     * <p>The Kubernetes <code>labels</code> applied to the nodes in the node
+     * group.</p>  <p>Only <code>labels</code> that are applied with the Amazon
+     * EKS API are shown here. There may be other Kubernetes <code>labels</code>
+     * applied to the nodes in this group.</p> 
      */
     inline bool LabelsHasBeenSet() const { return m_labelsHasBeenSet; }
 
     /**
-     * <p>The Kubernetes labels applied to the nodes in the node group.</p> 
-     * <p>Only labels that are applied with the Amazon EKS API are shown here. There
-     * may be other Kubernetes labels applied to the nodes in this group.</p> 
+     * <p>The Kubernetes <code>labels</code> applied to the nodes in the node
+     * group.</p>  <p>Only <code>labels</code> that are applied with the Amazon
+     * EKS API are shown here. There may be other Kubernetes <code>labels</code>
+     * applied to the nodes in this group.</p> 
      */
     inline void SetLabels(const Aws::Map<Aws::String, Aws::String>& value) { m_labelsHasBeenSet = true; m_labels = value; }
 
     /**
-     * <p>The Kubernetes labels applied to the nodes in the node group.</p> 
-     * <p>Only labels that are applied with the Amazon EKS API are shown here. There
-     * may be other Kubernetes labels applied to the nodes in this group.</p> 
+     * <p>The Kubernetes <code>labels</code> applied to the nodes in the node
+     * group.</p>  <p>Only <code>labels</code> that are applied with the Amazon
+     * EKS API are shown here. There may be other Kubernetes <code>labels</code>
+     * applied to the nodes in this group.</p> 
      */
     inline void SetLabels(Aws::Map<Aws::String, Aws::String>&& value) { m_labelsHasBeenSet = true; m_labels = std::move(value); }
 
     /**
-     * <p>The Kubernetes labels applied to the nodes in the node group.</p> 
-     * <p>Only labels that are applied with the Amazon EKS API are shown here. There
-     * may be other Kubernetes labels applied to the nodes in this group.</p> 
+     * <p>The Kubernetes <code>labels</code> applied to the nodes in the node
+     * group.</p>  <p>Only <code>labels</code> that are applied with the Amazon
+     * EKS API are shown here. There may be other Kubernetes <code>labels</code>
+     * applied to the nodes in this group.</p> 
      */
     inline Nodegroup& WithLabels(const Aws::Map<Aws::String, Aws::String>& value) { SetLabels(value); return *this;}
 
     /**
-     * <p>The Kubernetes labels applied to the nodes in the node group.</p> 
-     * <p>Only labels that are applied with the Amazon EKS API are shown here. There
-     * may be other Kubernetes labels applied to the nodes in this group.</p> 
+     * <p>The Kubernetes <code>labels</code> applied to the nodes in the node
+     * group.</p>  <p>Only <code>labels</code> that are applied with the Amazon
+     * EKS API are shown here. There may be other Kubernetes <code>labels</code>
+     * applied to the nodes in this group.</p> 
      */
     inline Nodegroup& WithLabels(Aws::Map<Aws::String, Aws::String>&& value) { SetLabels(std::move(value)); return *this;}
 
     /**
-     * <p>The Kubernetes labels applied to the nodes in the node group.</p> 
-     * <p>Only labels that are applied with the Amazon EKS API are shown here. There
-     * may be other Kubernetes labels applied to the nodes in this group.</p> 
+     * <p>The Kubernetes <code>labels</code> applied to the nodes in the node
+     * group.</p>  <p>Only <code>labels</code> that are applied with the Amazon
+     * EKS API are shown here. There may be other Kubernetes <code>labels</code>
+     * applied to the nodes in this group.</p> 
      */
     inline Nodegroup& AddLabels(const Aws::String& key, const Aws::String& value) { m_labelsHasBeenSet = true; m_labels.emplace(key, value); return *this; }
 
     /**
-     * <p>The Kubernetes labels applied to the nodes in the node group.</p> 
-     * <p>Only labels that are applied with the Amazon EKS API are shown here. There
-     * may be other Kubernetes labels applied to the nodes in this group.</p> 
+     * <p>The Kubernetes <code>labels</code> applied to the nodes in the node
+     * group.</p>  <p>Only <code>labels</code> that are applied with the Amazon
+     * EKS API are shown here. There may be other Kubernetes <code>labels</code>
+     * applied to the nodes in this group.</p> 
      */
     inline Nodegroup& AddLabels(Aws::String&& key, const Aws::String& value) { m_labelsHasBeenSet = true; m_labels.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The Kubernetes labels applied to the nodes in the node group.</p> 
-     * <p>Only labels that are applied with the Amazon EKS API are shown here. There
-     * may be other Kubernetes labels applied to the nodes in this group.</p> 
+     * <p>The Kubernetes <code>labels</code> applied to the nodes in the node
+     * group.</p>  <p>Only <code>labels</code> that are applied with the Amazon
+     * EKS API are shown here. There may be other Kubernetes <code>labels</code>
+     * applied to the nodes in this group.</p> 
      */
     inline Nodegroup& AddLabels(const Aws::String& key, Aws::String&& value) { m_labelsHasBeenSet = true; m_labels.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The Kubernetes labels applied to the nodes in the node group.</p> 
-     * <p>Only labels that are applied with the Amazon EKS API are shown here. There
-     * may be other Kubernetes labels applied to the nodes in this group.</p> 
+     * <p>The Kubernetes <code>labels</code> applied to the nodes in the node
+     * group.</p>  <p>Only <code>labels</code> that are applied with the Amazon
+     * EKS API are shown here. There may be other Kubernetes <code>labels</code>
+     * applied to the nodes in this group.</p> 
      */
     inline Nodegroup& AddLabels(Aws::String&& key, Aws::String&& value) { m_labelsHasBeenSet = true; m_labels.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The Kubernetes labels applied to the nodes in the node group.</p> 
-     * <p>Only labels that are applied with the Amazon EKS API are shown here. There
-     * may be other Kubernetes labels applied to the nodes in this group.</p> 
+     * <p>The Kubernetes <code>labels</code> applied to the nodes in the node
+     * group.</p>  <p>Only <code>labels</code> that are applied with the Amazon
+     * EKS API are shown here. There may be other Kubernetes <code>labels</code>
+     * applied to the nodes in this group.</p> 
      */
     inline Nodegroup& AddLabels(const char* key, Aws::String&& value) { m_labelsHasBeenSet = true; m_labels.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The Kubernetes labels applied to the nodes in the node group.</p> 
-     * <p>Only labels that are applied with the Amazon EKS API are shown here. There
-     * may be other Kubernetes labels applied to the nodes in this group.</p> 
+     * <p>The Kubernetes <code>labels</code> applied to the nodes in the node
+     * group.</p>  <p>Only <code>labels</code> that are applied with the Amazon
+     * EKS API are shown here. There may be other Kubernetes <code>labels</code>
+     * applied to the nodes in this group.</p> 
      */
     inline Nodegroup& AddLabels(Aws::String&& key, const char* value) { m_labelsHasBeenSet = true; m_labels.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The Kubernetes labels applied to the nodes in the node group.</p> 
-     * <p>Only labels that are applied with the Amazon EKS API are shown here. There
-     * may be other Kubernetes labels applied to the nodes in this group.</p> 
+     * <p>The Kubernetes <code>labels</code> applied to the nodes in the node
+     * group.</p>  <p>Only <code>labels</code> that are applied with the Amazon
+     * EKS API are shown here. There may be other Kubernetes <code>labels</code>
+     * applied to the nodes in this group.</p> 
      */
     inline Nodegroup& AddLabels(const char* key, const char* value) { m_labelsHasBeenSet = true; m_labels.emplace(key, value); return *this; }
 
@@ -1082,106 +1083,93 @@ namespace Model
 
 
     /**
-     * <p>The metadata applied to the node group to assist with categorization and
-     * organization. Each tag consists of a key and an optional value. You define both.
-     * Node group tags do not propagate to any other resources associated with the node
-     * group, such as the Amazon EC2 instances or subnets. </p>
+     * <p>Metadata that assists with categorization and organization. Each tag consists
+     * of a key and an optional value. You define both. Tags don't propagate to any
+     * other cluster or Amazon Web Services resources.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>The metadata applied to the node group to assist with categorization and
-     * organization. Each tag consists of a key and an optional value. You define both.
-     * Node group tags do not propagate to any other resources associated with the node
-     * group, such as the Amazon EC2 instances or subnets. </p>
+     * <p>Metadata that assists with categorization and organization. Each tag consists
+     * of a key and an optional value. You define both. Tags don't propagate to any
+     * other cluster or Amazon Web Services resources.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>The metadata applied to the node group to assist with categorization and
-     * organization. Each tag consists of a key and an optional value. You define both.
-     * Node group tags do not propagate to any other resources associated with the node
-     * group, such as the Amazon EC2 instances or subnets. </p>
+     * <p>Metadata that assists with categorization and organization. Each tag consists
+     * of a key and an optional value. You define both. Tags don't propagate to any
+     * other cluster or Amazon Web Services resources.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>The metadata applied to the node group to assist with categorization and
-     * organization. Each tag consists of a key and an optional value. You define both.
-     * Node group tags do not propagate to any other resources associated with the node
-     * group, such as the Amazon EC2 instances or subnets. </p>
+     * <p>Metadata that assists with categorization and organization. Each tag consists
+     * of a key and an optional value. You define both. Tags don't propagate to any
+     * other cluster or Amazon Web Services resources.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>The metadata applied to the node group to assist with categorization and
-     * organization. Each tag consists of a key and an optional value. You define both.
-     * Node group tags do not propagate to any other resources associated with the node
-     * group, such as the Amazon EC2 instances or subnets. </p>
+     * <p>Metadata that assists with categorization and organization. Each tag consists
+     * of a key and an optional value. You define both. Tags don't propagate to any
+     * other cluster or Amazon Web Services resources.</p>
      */
     inline Nodegroup& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>The metadata applied to the node group to assist with categorization and
-     * organization. Each tag consists of a key and an optional value. You define both.
-     * Node group tags do not propagate to any other resources associated with the node
-     * group, such as the Amazon EC2 instances or subnets. </p>
+     * <p>Metadata that assists with categorization and organization. Each tag consists
+     * of a key and an optional value. You define both. Tags don't propagate to any
+     * other cluster or Amazon Web Services resources.</p>
      */
     inline Nodegroup& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>The metadata applied to the node group to assist with categorization and
-     * organization. Each tag consists of a key and an optional value. You define both.
-     * Node group tags do not propagate to any other resources associated with the node
-     * group, such as the Amazon EC2 instances or subnets. </p>
+     * <p>Metadata that assists with categorization and organization. Each tag consists
+     * of a key and an optional value. You define both. Tags don't propagate to any
+     * other cluster or Amazon Web Services resources.</p>
      */
     inline Nodegroup& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p>The metadata applied to the node group to assist with categorization and
-     * organization. Each tag consists of a key and an optional value. You define both.
-     * Node group tags do not propagate to any other resources associated with the node
-     * group, such as the Amazon EC2 instances or subnets. </p>
+     * <p>Metadata that assists with categorization and organization. Each tag consists
+     * of a key and an optional value. You define both. Tags don't propagate to any
+     * other cluster or Amazon Web Services resources.</p>
      */
     inline Nodegroup& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The metadata applied to the node group to assist with categorization and
-     * organization. Each tag consists of a key and an optional value. You define both.
-     * Node group tags do not propagate to any other resources associated with the node
-     * group, such as the Amazon EC2 instances or subnets. </p>
+     * <p>Metadata that assists with categorization and organization. Each tag consists
+     * of a key and an optional value. You define both. Tags don't propagate to any
+     * other cluster or Amazon Web Services resources.</p>
      */
     inline Nodegroup& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The metadata applied to the node group to assist with categorization and
-     * organization. Each tag consists of a key and an optional value. You define both.
-     * Node group tags do not propagate to any other resources associated with the node
-     * group, such as the Amazon EC2 instances or subnets. </p>
+     * <p>Metadata that assists with categorization and organization. Each tag consists
+     * of a key and an optional value. You define both. Tags don't propagate to any
+     * other cluster or Amazon Web Services resources.</p>
      */
     inline Nodegroup& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The metadata applied to the node group to assist with categorization and
-     * organization. Each tag consists of a key and an optional value. You define both.
-     * Node group tags do not propagate to any other resources associated with the node
-     * group, such as the Amazon EC2 instances or subnets. </p>
+     * <p>Metadata that assists with categorization and organization. Each tag consists
+     * of a key and an optional value. You define both. Tags don't propagate to any
+     * other cluster or Amazon Web Services resources.</p>
      */
     inline Nodegroup& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The metadata applied to the node group to assist with categorization and
-     * organization. Each tag consists of a key and an optional value. You define both.
-     * Node group tags do not propagate to any other resources associated with the node
-     * group, such as the Amazon EC2 instances or subnets. </p>
+     * <p>Metadata that assists with categorization and organization. Each tag consists
+     * of a key and an optional value. You define both. Tags don't propagate to any
+     * other cluster or Amazon Web Services resources.</p>
      */
     inline Nodegroup& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The metadata applied to the node group to assist with categorization and
-     * organization. Each tag consists of a key and an optional value. You define both.
-     * Node group tags do not propagate to any other resources associated with the node
-     * group, such as the Amazon EC2 instances or subnets. </p>
+     * <p>Metadata that assists with categorization and organization. Each tag consists
+     * of a key and an optional value. You define both. Tags don't propagate to any
+     * other cluster or Amazon Web Services resources.</p>
      */
     inline Nodegroup& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 

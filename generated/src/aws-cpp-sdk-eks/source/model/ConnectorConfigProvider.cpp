@@ -84,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ConnectorConfigProvider::NOT_SET:
+            return {};
           case ConnectorConfigProvider::EKS_ANYWHERE:
             return "EKS_ANYWHERE";
           case ConnectorConfigProvider::ANTHOS:

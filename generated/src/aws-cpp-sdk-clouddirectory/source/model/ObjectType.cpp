@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ObjectType::NOT_SET:
+            return {};
           case ObjectType::NODE:
             return "NODE";
           case ObjectType::LEAF_NODE:

@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ImportStatus::NOT_SET:
+            return {};
           case ImportStatus::INITIALIZING:
             return "INITIALIZING";
           case ImportStatus::IN_PROGRESS:

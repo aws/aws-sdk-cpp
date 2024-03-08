@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HealthEventImpactType::NOT_SET:
+            return {};
           case HealthEventImpactType::AVAILABILITY:
             return "AVAILABILITY";
           case HealthEventImpactType::PERFORMANCE:

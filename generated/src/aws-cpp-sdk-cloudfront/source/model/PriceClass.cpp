@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PriceClass::NOT_SET:
+            return {};
           case PriceClass::PriceClass_100:
             return "PriceClass_100";
           case PriceClass::PriceClass_200:

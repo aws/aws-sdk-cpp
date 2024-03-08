@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ArtifactType::NOT_SET:
+            return {};
           case ArtifactType::UDF:
             return "UDF";
           case ArtifactType::DEPENDENCY_JAR:

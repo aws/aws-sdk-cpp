@@ -48,6 +48,7 @@ enum class TextractErrors
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   BAD_DOCUMENT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONFLICT,
   DOCUMENT_TOO_LARGE,
   HUMAN_LOOP_QUOTA_EXCEEDED,
   IDEMPOTENT_PARAMETER_MISMATCH,
@@ -57,6 +58,7 @@ enum class TextractErrors
   INVALID_S3_OBJECT,
   LIMIT_EXCEEDED,
   PROVISIONED_THROUGHPUT_EXCEEDED,
+  SERVICE_QUOTA_EXCEEDED,
   UNSUPPORTED_DOCUMENT
 };
 

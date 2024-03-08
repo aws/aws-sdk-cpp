@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case KeyState::NOT_SET:
+            return {};
           case KeyState::Creating:
             return "Creating";
           case KeyState::Enabled:

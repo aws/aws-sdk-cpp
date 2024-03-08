@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MediaEncoding::NOT_SET:
+            return {};
           case MediaEncoding::pcm:
             return "pcm";
           case MediaEncoding::ogg_opus:

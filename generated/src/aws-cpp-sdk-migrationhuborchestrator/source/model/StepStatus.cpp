@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int AWAITING_DEPENDENCIES_HASH = HashingUtils::HashString("AWAITING_DEPENDENCIES");
+        static const int SKIPPED_HASH = HashingUtils::HashString("SKIPPED");
         static const int READY_HASH = HashingUtils::HashString("READY");
         static const int IN_PROGRESS_HASH = HashingUtils::HashString("IN_PROGRESS");
         static const int COMPLETED_HASH = HashingUtils::HashString("COMPLETED");
@@ -35,6 +36,10 @@ namespace Aws
           if (hashCode == AWAITING_DEPENDENCIES_HASH)
           {
             return StepStatus::AWAITING_DEPENDENCIES;
+          }
+          else if (hashCode == SKIPPED_HASH)
+          {
+            return StepStatus::SKIPPED;
           }
           else if (hashCode == READY_HASH)
           {
@@ -74,8 +79,12 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StepStatus::NOT_SET:
+            return {};
           case StepStatus::AWAITING_DEPENDENCIES:
             return "AWAITING_DEPENDENCIES";
+          case StepStatus::SKIPPED:
+            return "SKIPPED";
           case StepStatus::READY:
             return "READY";
           case StepStatus::IN_PROGRESS:

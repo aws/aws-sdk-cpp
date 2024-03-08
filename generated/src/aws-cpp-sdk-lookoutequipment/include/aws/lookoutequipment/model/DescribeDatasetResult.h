@@ -346,31 +346,31 @@ namespace Model
 
 
     /**
-     * <p> IngestedFilesSummary associated with the given dataset for the latest
+     * <p>IngestedFilesSummary associated with the given dataset for the latest
      * successful associated ingestion job id. </p>
      */
     inline const IngestedFilesSummary& GetIngestedFilesSummary() const{ return m_ingestedFilesSummary; }
 
     /**
-     * <p> IngestedFilesSummary associated with the given dataset for the latest
+     * <p>IngestedFilesSummary associated with the given dataset for the latest
      * successful associated ingestion job id. </p>
      */
     inline void SetIngestedFilesSummary(const IngestedFilesSummary& value) { m_ingestedFilesSummary = value; }
 
     /**
-     * <p> IngestedFilesSummary associated with the given dataset for the latest
+     * <p>IngestedFilesSummary associated with the given dataset for the latest
      * successful associated ingestion job id. </p>
      */
     inline void SetIngestedFilesSummary(IngestedFilesSummary&& value) { m_ingestedFilesSummary = std::move(value); }
 
     /**
-     * <p> IngestedFilesSummary associated with the given dataset for the latest
+     * <p>IngestedFilesSummary associated with the given dataset for the latest
      * successful associated ingestion job id. </p>
      */
     inline DescribeDatasetResult& WithIngestedFilesSummary(const IngestedFilesSummary& value) { SetIngestedFilesSummary(value); return *this;}
 
     /**
-     * <p> IngestedFilesSummary associated with the given dataset for the latest
+     * <p>IngestedFilesSummary associated with the given dataset for the latest
      * successful associated ingestion job id. </p>
      */
     inline DescribeDatasetResult& WithIngestedFilesSummary(IngestedFilesSummary&& value) { SetIngestedFilesSummary(std::move(value)); return *this;}

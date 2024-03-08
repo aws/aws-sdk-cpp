@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OpsItemDataType::NOT_SET:
+            return {};
           case OpsItemDataType::SearchableString:
             return "SearchableString";
           case OpsItemDataType::String:

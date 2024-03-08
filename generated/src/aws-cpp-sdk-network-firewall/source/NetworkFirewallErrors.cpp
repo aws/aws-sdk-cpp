@@ -35,39 +35,39 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == INSUFFICIENT_CAPACITY_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NetworkFirewallErrors::INSUFFICIENT_CAPACITY), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NetworkFirewallErrors::INSUFFICIENT_CAPACITY), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_TOKEN_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NetworkFirewallErrors::INVALID_TOKEN), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NetworkFirewallErrors::INVALID_TOKEN), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == RESOURCE_OWNER_CHECK_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NetworkFirewallErrors::RESOURCE_OWNER_CHECK), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NetworkFirewallErrors::RESOURCE_OWNER_CHECK), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NetworkFirewallErrors::LIMIT_EXCEEDED), true);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NetworkFirewallErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
   }
   else if (hashCode == UNSUPPORTED_OPERATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NetworkFirewallErrors::UNSUPPORTED_OPERATION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NetworkFirewallErrors::UNSUPPORTED_OPERATION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_RESOURCE_POLICY_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NetworkFirewallErrors::INVALID_RESOURCE_POLICY), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NetworkFirewallErrors::INVALID_RESOURCE_POLICY), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_OPERATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NetworkFirewallErrors::INVALID_OPERATION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NetworkFirewallErrors::INVALID_OPERATION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == LOG_DESTINATION_PERMISSION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NetworkFirewallErrors::LOG_DESTINATION_PERMISSION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NetworkFirewallErrors::LOG_DESTINATION_PERMISSION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_REQUEST_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(NetworkFirewallErrors::INVALID_REQUEST), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(NetworkFirewallErrors::INVALID_REQUEST), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

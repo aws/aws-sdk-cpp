@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InstanceFleetStateChangeReasonCode::NOT_SET:
+            return {};
           case InstanceFleetStateChangeReasonCode::INTERNAL_ERROR:
             return "INTERNAL_ERROR";
           case InstanceFleetStateChangeReasonCode::VALIDATION_ERROR:

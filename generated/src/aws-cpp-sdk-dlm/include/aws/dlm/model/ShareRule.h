@@ -26,8 +26,8 @@ namespace Model
 {
 
   /**
-   * <p> <b>[Snapshot policies only]</b> Specifies a rule for sharing snapshots
-   * across Amazon Web Services accounts.</p><p><h3>See Also:</h3>   <a
+   * <p> <b>[Custom snapshot policies only]</b> Specifies a rule for sharing
+   * snapshots across Amazon Web Services accounts.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/ShareRule">AWS API
    * Reference</a></p>
    */

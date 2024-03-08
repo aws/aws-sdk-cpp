@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ClarifyTextGranularity::NOT_SET:
+            return {};
           case ClarifyTextGranularity::token:
             return "token";
           case ClarifyTextGranularity::sentence:

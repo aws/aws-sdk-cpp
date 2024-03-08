@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ParentType::NOT_SET:
+            return {};
           case ParentType::ROOT:
             return "ROOT";
           case ParentType::ORGANIZATIONAL_UNIT:

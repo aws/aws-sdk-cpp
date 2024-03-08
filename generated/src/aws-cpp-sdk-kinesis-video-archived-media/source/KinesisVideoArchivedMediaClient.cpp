@@ -41,8 +41,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* KinesisVideoArchivedMediaClient::SERVICE_NAME = "kinesisvideo";
-const char* KinesisVideoArchivedMediaClient::ALLOCATION_TAG = "KinesisVideoArchivedMediaClient";
+namespace Aws
+{
+  namespace KinesisVideoArchivedMedia
+  {
+    const char SERVICE_NAME[] = "kinesisvideo";
+    const char ALLOCATION_TAG[] = "KinesisVideoArchivedMediaClient";
+  }
+}
+const char* KinesisVideoArchivedMediaClient::GetServiceName() {return SERVICE_NAME;}
+const char* KinesisVideoArchivedMediaClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 KinesisVideoArchivedMediaClient::KinesisVideoArchivedMediaClient(const KinesisVideoArchivedMedia::KinesisVideoArchivedMediaClientConfiguration& clientConfiguration,
                                                                  std::shared_ptr<KinesisVideoArchivedMediaEndpointProviderBase> endpointProvider) :
@@ -54,7 +62,7 @@ KinesisVideoArchivedMediaClient::KinesisVideoArchivedMediaClient(const KinesisVi
             Aws::MakeShared<KinesisVideoArchivedMediaErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<KinesisVideoArchivedMediaEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -70,7 +78,7 @@ KinesisVideoArchivedMediaClient::KinesisVideoArchivedMediaClient(const AWSCreden
             Aws::MakeShared<KinesisVideoArchivedMediaErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<KinesisVideoArchivedMediaEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -86,7 +94,7 @@ KinesisVideoArchivedMediaClient::KinesisVideoArchivedMediaClient(const std::shar
             Aws::MakeShared<KinesisVideoArchivedMediaErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<KinesisVideoArchivedMediaEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

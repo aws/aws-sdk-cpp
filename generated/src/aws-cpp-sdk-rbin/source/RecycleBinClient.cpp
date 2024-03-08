@@ -45,8 +45,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* RecycleBinClient::SERVICE_NAME = "rbin";
-const char* RecycleBinClient::ALLOCATION_TAG = "RecycleBinClient";
+namespace Aws
+{
+  namespace RecycleBin
+  {
+    const char SERVICE_NAME[] = "rbin";
+    const char ALLOCATION_TAG[] = "RecycleBinClient";
+  }
+}
+const char* RecycleBinClient::GetServiceName() {return SERVICE_NAME;}
+const char* RecycleBinClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 RecycleBinClient::RecycleBinClient(const RecycleBin::RecycleBinClientConfiguration& clientConfiguration,
                                    std::shared_ptr<RecycleBinEndpointProviderBase> endpointProvider) :
@@ -58,7 +66,7 @@ RecycleBinClient::RecycleBinClient(const RecycleBin::RecycleBinClientConfigurati
             Aws::MakeShared<RecycleBinErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<RecycleBinEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -74,7 +82,7 @@ RecycleBinClient::RecycleBinClient(const AWSCredentials& credentials,
             Aws::MakeShared<RecycleBinErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<RecycleBinEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -90,7 +98,7 @@ RecycleBinClient::RecycleBinClient(const std::shared_ptr<AWSCredentialsProvider>
             Aws::MakeShared<RecycleBinErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<RecycleBinEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

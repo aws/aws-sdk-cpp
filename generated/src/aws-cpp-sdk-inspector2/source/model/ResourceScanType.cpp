@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResourceScanType::NOT_SET:
+            return {};
           case ResourceScanType::EC2:
             return "EC2";
           case ResourceScanType::ECR:

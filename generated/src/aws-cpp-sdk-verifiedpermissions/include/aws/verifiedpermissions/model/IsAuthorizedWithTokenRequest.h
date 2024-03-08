@@ -90,64 +90,80 @@ namespace Model
     /**
      * <p>Specifies an identity token for the principal to be authorized. This token is
      * provided to you by the identity provider (IdP) associated with the specified
-     * identity source. You must specify either an <code>AccessToken</code> or an
-     * <code>IdentityToken</code>, or both.</p>
+     * identity source. You must specify either an <code>accessToken</code>, an
+     * <code>identityToken</code>, or both.</p> <p>Must be an ID token. Verified
+     * Permissions returns an error if the <code>token_use</code> claim in the
+     * submitted token isn't <code>id</code>.</p>
      */
     inline const Aws::String& GetIdentityToken() const{ return m_identityToken; }
 
     /**
      * <p>Specifies an identity token for the principal to be authorized. This token is
      * provided to you by the identity provider (IdP) associated with the specified
-     * identity source. You must specify either an <code>AccessToken</code> or an
-     * <code>IdentityToken</code>, or both.</p>
+     * identity source. You must specify either an <code>accessToken</code>, an
+     * <code>identityToken</code>, or both.</p> <p>Must be an ID token. Verified
+     * Permissions returns an error if the <code>token_use</code> claim in the
+     * submitted token isn't <code>id</code>.</p>
      */
     inline bool IdentityTokenHasBeenSet() const { return m_identityTokenHasBeenSet; }
 
     /**
      * <p>Specifies an identity token for the principal to be authorized. This token is
      * provided to you by the identity provider (IdP) associated with the specified
-     * identity source. You must specify either an <code>AccessToken</code> or an
-     * <code>IdentityToken</code>, or both.</p>
+     * identity source. You must specify either an <code>accessToken</code>, an
+     * <code>identityToken</code>, or both.</p> <p>Must be an ID token. Verified
+     * Permissions returns an error if the <code>token_use</code> claim in the
+     * submitted token isn't <code>id</code>.</p>
      */
     inline void SetIdentityToken(const Aws::String& value) { m_identityTokenHasBeenSet = true; m_identityToken = value; }
 
     /**
      * <p>Specifies an identity token for the principal to be authorized. This token is
      * provided to you by the identity provider (IdP) associated with the specified
-     * identity source. You must specify either an <code>AccessToken</code> or an
-     * <code>IdentityToken</code>, or both.</p>
+     * identity source. You must specify either an <code>accessToken</code>, an
+     * <code>identityToken</code>, or both.</p> <p>Must be an ID token. Verified
+     * Permissions returns an error if the <code>token_use</code> claim in the
+     * submitted token isn't <code>id</code>.</p>
      */
     inline void SetIdentityToken(Aws::String&& value) { m_identityTokenHasBeenSet = true; m_identityToken = std::move(value); }
 
     /**
      * <p>Specifies an identity token for the principal to be authorized. This token is
      * provided to you by the identity provider (IdP) associated with the specified
-     * identity source. You must specify either an <code>AccessToken</code> or an
-     * <code>IdentityToken</code>, or both.</p>
+     * identity source. You must specify either an <code>accessToken</code>, an
+     * <code>identityToken</code>, or both.</p> <p>Must be an ID token. Verified
+     * Permissions returns an error if the <code>token_use</code> claim in the
+     * submitted token isn't <code>id</code>.</p>
      */
     inline void SetIdentityToken(const char* value) { m_identityTokenHasBeenSet = true; m_identityToken.assign(value); }
 
     /**
      * <p>Specifies an identity token for the principal to be authorized. This token is
      * provided to you by the identity provider (IdP) associated with the specified
-     * identity source. You must specify either an <code>AccessToken</code> or an
-     * <code>IdentityToken</code>, or both.</p>
+     * identity source. You must specify either an <code>accessToken</code>, an
+     * <code>identityToken</code>, or both.</p> <p>Must be an ID token. Verified
+     * Permissions returns an error if the <code>token_use</code> claim in the
+     * submitted token isn't <code>id</code>.</p>
      */
     inline IsAuthorizedWithTokenRequest& WithIdentityToken(const Aws::String& value) { SetIdentityToken(value); return *this;}
 
     /**
      * <p>Specifies an identity token for the principal to be authorized. This token is
      * provided to you by the identity provider (IdP) associated with the specified
-     * identity source. You must specify either an <code>AccessToken</code> or an
-     * <code>IdentityToken</code>, or both.</p>
+     * identity source. You must specify either an <code>accessToken</code>, an
+     * <code>identityToken</code>, or both.</p> <p>Must be an ID token. Verified
+     * Permissions returns an error if the <code>token_use</code> claim in the
+     * submitted token isn't <code>id</code>.</p>
      */
     inline IsAuthorizedWithTokenRequest& WithIdentityToken(Aws::String&& value) { SetIdentityToken(std::move(value)); return *this;}
 
     /**
      * <p>Specifies an identity token for the principal to be authorized. This token is
      * provided to you by the identity provider (IdP) associated with the specified
-     * identity source. You must specify either an <code>AccessToken</code> or an
-     * <code>IdentityToken</code>, or both.</p>
+     * identity source. You must specify either an <code>accessToken</code>, an
+     * <code>identityToken</code>, or both.</p> <p>Must be an ID token. Verified
+     * Permissions returns an error if the <code>token_use</code> claim in the
+     * submitted token isn't <code>id</code>.</p>
      */
     inline IsAuthorizedWithTokenRequest& WithIdentityToken(const char* value) { SetIdentityToken(value); return *this;}
 
@@ -155,64 +171,80 @@ namespace Model
     /**
      * <p>Specifies an access token for the principal to be authorized. This token is
      * provided to you by the identity provider (IdP) associated with the specified
-     * identity source. You must specify either an <code>AccessToken</code>, or an
-     * <code>IdentityToken</code>, or both.</p>
+     * identity source. You must specify either an <code>accessToken</code>, an
+     * <code>identityToken</code>, or both.</p> <p>Must be an access token. Verified
+     * Permissions returns an error if the <code>token_use</code> claim in the
+     * submitted token isn't <code>access</code>.</p>
      */
     inline const Aws::String& GetAccessToken() const{ return m_accessToken; }
 
     /**
      * <p>Specifies an access token for the principal to be authorized. This token is
      * provided to you by the identity provider (IdP) associated with the specified
-     * identity source. You must specify either an <code>AccessToken</code>, or an
-     * <code>IdentityToken</code>, or both.</p>
+     * identity source. You must specify either an <code>accessToken</code>, an
+     * <code>identityToken</code>, or both.</p> <p>Must be an access token. Verified
+     * Permissions returns an error if the <code>token_use</code> claim in the
+     * submitted token isn't <code>access</code>.</p>
      */
     inline bool AccessTokenHasBeenSet() const { return m_accessTokenHasBeenSet; }
 
     /**
      * <p>Specifies an access token for the principal to be authorized. This token is
      * provided to you by the identity provider (IdP) associated with the specified
-     * identity source. You must specify either an <code>AccessToken</code>, or an
-     * <code>IdentityToken</code>, or both.</p>
+     * identity source. You must specify either an <code>accessToken</code>, an
+     * <code>identityToken</code>, or both.</p> <p>Must be an access token. Verified
+     * Permissions returns an error if the <code>token_use</code> claim in the
+     * submitted token isn't <code>access</code>.</p>
      */
     inline void SetAccessToken(const Aws::String& value) { m_accessTokenHasBeenSet = true; m_accessToken = value; }
 
     /**
      * <p>Specifies an access token for the principal to be authorized. This token is
      * provided to you by the identity provider (IdP) associated with the specified
-     * identity source. You must specify either an <code>AccessToken</code>, or an
-     * <code>IdentityToken</code>, or both.</p>
+     * identity source. You must specify either an <code>accessToken</code>, an
+     * <code>identityToken</code>, or both.</p> <p>Must be an access token. Verified
+     * Permissions returns an error if the <code>token_use</code> claim in the
+     * submitted token isn't <code>access</code>.</p>
      */
     inline void SetAccessToken(Aws::String&& value) { m_accessTokenHasBeenSet = true; m_accessToken = std::move(value); }
 
     /**
      * <p>Specifies an access token for the principal to be authorized. This token is
      * provided to you by the identity provider (IdP) associated with the specified
-     * identity source. You must specify either an <code>AccessToken</code>, or an
-     * <code>IdentityToken</code>, or both.</p>
+     * identity source. You must specify either an <code>accessToken</code>, an
+     * <code>identityToken</code>, or both.</p> <p>Must be an access token. Verified
+     * Permissions returns an error if the <code>token_use</code> claim in the
+     * submitted token isn't <code>access</code>.</p>
      */
     inline void SetAccessToken(const char* value) { m_accessTokenHasBeenSet = true; m_accessToken.assign(value); }
 
     /**
      * <p>Specifies an access token for the principal to be authorized. This token is
      * provided to you by the identity provider (IdP) associated with the specified
-     * identity source. You must specify either an <code>AccessToken</code>, or an
-     * <code>IdentityToken</code>, or both.</p>
+     * identity source. You must specify either an <code>accessToken</code>, an
+     * <code>identityToken</code>, or both.</p> <p>Must be an access token. Verified
+     * Permissions returns an error if the <code>token_use</code> claim in the
+     * submitted token isn't <code>access</code>.</p>
      */
     inline IsAuthorizedWithTokenRequest& WithAccessToken(const Aws::String& value) { SetAccessToken(value); return *this;}
 
     /**
      * <p>Specifies an access token for the principal to be authorized. This token is
      * provided to you by the identity provider (IdP) associated with the specified
-     * identity source. You must specify either an <code>AccessToken</code>, or an
-     * <code>IdentityToken</code>, or both.</p>
+     * identity source. You must specify either an <code>accessToken</code>, an
+     * <code>identityToken</code>, or both.</p> <p>Must be an access token. Verified
+     * Permissions returns an error if the <code>token_use</code> claim in the
+     * submitted token isn't <code>access</code>.</p>
      */
     inline IsAuthorizedWithTokenRequest& WithAccessToken(Aws::String&& value) { SetAccessToken(std::move(value)); return *this;}
 
     /**
      * <p>Specifies an access token for the principal to be authorized. This token is
      * provided to you by the identity provider (IdP) associated with the specified
-     * identity source. You must specify either an <code>AccessToken</code>, or an
-     * <code>IdentityToken</code>, or both.</p>
+     * identity source. You must specify either an <code>accessToken</code>, an
+     * <code>identityToken</code>, or both.</p> <p>Must be an access token. Verified
+     * Permissions returns an error if the <code>token_use</code> claim in the
+     * submitted token isn't <code>access</code>.</p>
      */
     inline IsAuthorizedWithTokenRequest& WithAccessToken(const char* value) { SetAccessToken(value); return *this;}
 

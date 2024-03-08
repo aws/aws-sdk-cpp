@@ -13,6 +13,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateNamespaceRequest::CreateNamespaceRequest() : 
+    m_adminPasswordSecretKmsKeyIdHasBeenSet(false),
     m_adminUserPasswordHasBeenSet(false),
     m_adminUsernameHasBeenSet(false),
     m_dbNameHasBeenSet(false),
@@ -20,7 +21,10 @@ CreateNamespaceRequest::CreateNamespaceRequest() :
     m_iamRolesHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
     m_logExportsHasBeenSet(false),
+    m_manageAdminPassword(false),
+    m_manageAdminPasswordHasBeenSet(false),
     m_namespaceNameHasBeenSet(false),
+    m_redshiftIdcApplicationArnHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -28,6 +32,12 @@ CreateNamespaceRequest::CreateNamespaceRequest() :
 Aws::String CreateNamespaceRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_adminPasswordSecretKmsKeyIdHasBeenSet)
+  {
+   payload.WithString("adminPasswordSecretKmsKeyId", m_adminPasswordSecretKmsKeyId);
+
+  }
 
   if(m_adminUserPasswordHasBeenSet)
   {
@@ -81,9 +91,21 @@ Aws::String CreateNamespaceRequest::SerializePayload() const
 
   }
 
+  if(m_manageAdminPasswordHasBeenSet)
+  {
+   payload.WithBool("manageAdminPassword", m_manageAdminPassword);
+
+  }
+
   if(m_namespaceNameHasBeenSet)
   {
    payload.WithString("namespaceName", m_namespaceName);
+
+  }
+
+  if(m_redshiftIdcApplicationArnHasBeenSet)
+  {
+   payload.WithString("redshiftIdcApplicationArn", m_redshiftIdcApplicationArn);
 
   }
 

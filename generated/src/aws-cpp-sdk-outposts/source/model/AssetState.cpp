@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AssetState::NOT_SET:
+            return {};
           case AssetState::ACTIVE:
             return "ACTIVE";
           case AssetState::RETIRING:

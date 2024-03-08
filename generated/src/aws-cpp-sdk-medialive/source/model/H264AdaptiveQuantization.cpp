@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case H264AdaptiveQuantization::NOT_SET:
+            return {};
           case H264AdaptiveQuantization::AUTO:
             return "AUTO";
           case H264AdaptiveQuantization::HIGH:

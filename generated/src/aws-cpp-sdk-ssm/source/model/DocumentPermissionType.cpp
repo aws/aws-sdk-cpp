@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DocumentPermissionType::NOT_SET:
+            return {};
           case DocumentPermissionType::Share:
             return "Share";
           default:

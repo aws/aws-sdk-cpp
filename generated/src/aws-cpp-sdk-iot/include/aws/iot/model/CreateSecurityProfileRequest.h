@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/iot/model/MetricsExportConfig.h>
 #include <aws/iot/model/Behavior.h>
 #include <aws/iot/model/AlertTargetType.h>
 #include <aws/iot/model/AlertTarget.h>
@@ -346,6 +347,37 @@ namespace Model
      */
     inline CreateSecurityProfileRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Specifies the MQTT topic and role ARN required for metric export.</p>
+     */
+    inline const MetricsExportConfig& GetMetricsExportConfig() const{ return m_metricsExportConfig; }
+
+    /**
+     * <p>Specifies the MQTT topic and role ARN required for metric export.</p>
+     */
+    inline bool MetricsExportConfigHasBeenSet() const { return m_metricsExportConfigHasBeenSet; }
+
+    /**
+     * <p>Specifies the MQTT topic and role ARN required for metric export.</p>
+     */
+    inline void SetMetricsExportConfig(const MetricsExportConfig& value) { m_metricsExportConfigHasBeenSet = true; m_metricsExportConfig = value; }
+
+    /**
+     * <p>Specifies the MQTT topic and role ARN required for metric export.</p>
+     */
+    inline void SetMetricsExportConfig(MetricsExportConfig&& value) { m_metricsExportConfigHasBeenSet = true; m_metricsExportConfig = std::move(value); }
+
+    /**
+     * <p>Specifies the MQTT topic and role ARN required for metric export.</p>
+     */
+    inline CreateSecurityProfileRequest& WithMetricsExportConfig(const MetricsExportConfig& value) { SetMetricsExportConfig(value); return *this;}
+
+    /**
+     * <p>Specifies the MQTT topic and role ARN required for metric export.</p>
+     */
+    inline CreateSecurityProfileRequest& WithMetricsExportConfig(MetricsExportConfig&& value) { SetMetricsExportConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_securityProfileName;
@@ -365,6 +397,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    MetricsExportConfig m_metricsExportConfig;
+    bool m_metricsExportConfigHasBeenSet = false;
   };
 
 } // namespace Model

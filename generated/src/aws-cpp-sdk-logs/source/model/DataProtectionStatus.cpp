@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DataProtectionStatus::NOT_SET:
+            return {};
           case DataProtectionStatus::ACTIVATED:
             return "ACTIVATED";
           case DataProtectionStatus::DELETED:

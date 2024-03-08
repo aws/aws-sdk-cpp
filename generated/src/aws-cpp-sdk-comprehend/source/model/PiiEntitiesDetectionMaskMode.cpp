@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PiiEntitiesDetectionMaskMode::NOT_SET:
+            return {};
           case PiiEntitiesDetectionMaskMode::MASK:
             return "MASK";
           case PiiEntitiesDetectionMaskMode::REPLACE_WITH_PII_ENTITY_TYPE:

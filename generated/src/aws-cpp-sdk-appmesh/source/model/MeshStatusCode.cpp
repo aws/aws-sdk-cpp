@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MeshStatusCode::NOT_SET:
+            return {};
           case MeshStatusCode::ACTIVE:
             return "ACTIVE";
           case MeshStatusCode::INACTIVE:

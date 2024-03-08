@@ -7,6 +7,7 @@
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/quicksight/model/CustomNarrativeOptions.h>
+#include <aws/quicksight/model/VisualInteractionOptions.h>
 #include <aws/quicksight/model/Computation.h>
 #include <utility>
 
@@ -110,6 +111,37 @@ namespace Model
      */
     inline InsightConfiguration& WithCustomNarrative(CustomNarrativeOptions&& value) { SetCustomNarrative(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The general visual interactions setup for a visual.</p>
+     */
+    inline const VisualInteractionOptions& GetInteractions() const{ return m_interactions; }
+
+    /**
+     * <p>The general visual interactions setup for a visual.</p>
+     */
+    inline bool InteractionsHasBeenSet() const { return m_interactionsHasBeenSet; }
+
+    /**
+     * <p>The general visual interactions setup for a visual.</p>
+     */
+    inline void SetInteractions(const VisualInteractionOptions& value) { m_interactionsHasBeenSet = true; m_interactions = value; }
+
+    /**
+     * <p>The general visual interactions setup for a visual.</p>
+     */
+    inline void SetInteractions(VisualInteractionOptions&& value) { m_interactionsHasBeenSet = true; m_interactions = std::move(value); }
+
+    /**
+     * <p>The general visual interactions setup for a visual.</p>
+     */
+    inline InsightConfiguration& WithInteractions(const VisualInteractionOptions& value) { SetInteractions(value); return *this;}
+
+    /**
+     * <p>The general visual interactions setup for a visual.</p>
+     */
+    inline InsightConfiguration& WithInteractions(VisualInteractionOptions&& value) { SetInteractions(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<Computation> m_computations;
@@ -117,6 +149,9 @@ namespace Model
 
     CustomNarrativeOptions m_customNarrative;
     bool m_customNarrativeHasBeenSet = false;
+
+    VisualInteractionOptions m_interactions;
+    bool m_interactionsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AggregatedSourceType::NOT_SET:
+            return {};
           case AggregatedSourceType::ACCOUNT:
             return "ACCOUNT";
           case AggregatedSourceType::ORGANIZATION:

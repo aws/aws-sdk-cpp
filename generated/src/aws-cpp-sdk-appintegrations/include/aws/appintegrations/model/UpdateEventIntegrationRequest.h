@@ -74,42 +74,42 @@ namespace Model
 
 
     /**
-     * <p>The description of the event inegration.</p>
+     * <p>The description of the event integration.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>The description of the event inegration.</p>
+     * <p>The description of the event integration.</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>The description of the event inegration.</p>
+     * <p>The description of the event integration.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>The description of the event inegration.</p>
+     * <p>The description of the event integration.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>The description of the event inegration.</p>
+     * <p>The description of the event integration.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>The description of the event inegration.</p>
+     * <p>The description of the event integration.</p>
      */
     inline UpdateEventIntegrationRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The description of the event inegration.</p>
+     * <p>The description of the event integration.</p>
      */
     inline UpdateEventIntegrationRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>The description of the event inegration.</p>
+     * <p>The description of the event integration.</p>
      */
     inline UpdateEventIntegrationRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 

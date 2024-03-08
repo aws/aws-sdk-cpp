@@ -7,6 +7,7 @@
 #include <aws/guardduty/GuardDuty_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/guardduty/model/ImpersonatedUser.h>
 #include <utility>
 
 namespace Aws
@@ -221,6 +222,37 @@ namespace Model
      */
     inline KubernetesUserDetails& AddSessionName(const char* value) { m_sessionNameHasBeenSet = true; m_sessionName.push_back(value); return *this; }
 
+
+    /**
+     * <p>Information about the impersonated user.</p>
+     */
+    inline const ImpersonatedUser& GetImpersonatedUser() const{ return m_impersonatedUser; }
+
+    /**
+     * <p>Information about the impersonated user.</p>
+     */
+    inline bool ImpersonatedUserHasBeenSet() const { return m_impersonatedUserHasBeenSet; }
+
+    /**
+     * <p>Information about the impersonated user.</p>
+     */
+    inline void SetImpersonatedUser(const ImpersonatedUser& value) { m_impersonatedUserHasBeenSet = true; m_impersonatedUser = value; }
+
+    /**
+     * <p>Information about the impersonated user.</p>
+     */
+    inline void SetImpersonatedUser(ImpersonatedUser&& value) { m_impersonatedUserHasBeenSet = true; m_impersonatedUser = std::move(value); }
+
+    /**
+     * <p>Information about the impersonated user.</p>
+     */
+    inline KubernetesUserDetails& WithImpersonatedUser(const ImpersonatedUser& value) { SetImpersonatedUser(value); return *this;}
+
+    /**
+     * <p>Information about the impersonated user.</p>
+     */
+    inline KubernetesUserDetails& WithImpersonatedUser(ImpersonatedUser&& value) { SetImpersonatedUser(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_username;
@@ -234,6 +266,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_sessionName;
     bool m_sessionNameHasBeenSet = false;
+
+    ImpersonatedUser m_impersonatedUser;
+    bool m_impersonatedUserHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,6 +12,7 @@
 #include <aws/connect/model/ChatMessage.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/connect/model/PersistentChat.h>
+#include <aws/connect/model/SegmentAttributeValue.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -97,7 +98,7 @@ namespace Model
 
     /**
      * <p>The identifier of the flow for initiating the chat. To see the ContactFlowId
-     * in the Amazon Connect console user interface, on the navigation menu go to
+     * in the Amazon Connect admin website, on the navigation menu go to
      * <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under
      * the name of the flow, choose <b>Show additional flow information</b>. The
      * ContactFlowId is the last part of the ARN, shown here in bold: </p>
@@ -108,7 +109,7 @@ namespace Model
 
     /**
      * <p>The identifier of the flow for initiating the chat. To see the ContactFlowId
-     * in the Amazon Connect console user interface, on the navigation menu go to
+     * in the Amazon Connect admin website, on the navigation menu go to
      * <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under
      * the name of the flow, choose <b>Show additional flow information</b>. The
      * ContactFlowId is the last part of the ARN, shown here in bold: </p>
@@ -119,7 +120,7 @@ namespace Model
 
     /**
      * <p>The identifier of the flow for initiating the chat. To see the ContactFlowId
-     * in the Amazon Connect console user interface, on the navigation menu go to
+     * in the Amazon Connect admin website, on the navigation menu go to
      * <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under
      * the name of the flow, choose <b>Show additional flow information</b>. The
      * ContactFlowId is the last part of the ARN, shown here in bold: </p>
@@ -130,7 +131,7 @@ namespace Model
 
     /**
      * <p>The identifier of the flow for initiating the chat. To see the ContactFlowId
-     * in the Amazon Connect console user interface, on the navigation menu go to
+     * in the Amazon Connect admin website, on the navigation menu go to
      * <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under
      * the name of the flow, choose <b>Show additional flow information</b>. The
      * ContactFlowId is the last part of the ARN, shown here in bold: </p>
@@ -141,7 +142,7 @@ namespace Model
 
     /**
      * <p>The identifier of the flow for initiating the chat. To see the ContactFlowId
-     * in the Amazon Connect console user interface, on the navigation menu go to
+     * in the Amazon Connect admin website, on the navigation menu go to
      * <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under
      * the name of the flow, choose <b>Show additional flow information</b>. The
      * ContactFlowId is the last part of the ARN, shown here in bold: </p>
@@ -152,7 +153,7 @@ namespace Model
 
     /**
      * <p>The identifier of the flow for initiating the chat. To see the ContactFlowId
-     * in the Amazon Connect console user interface, on the navigation menu go to
+     * in the Amazon Connect admin website, on the navigation menu go to
      * <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under
      * the name of the flow, choose <b>Show additional flow information</b>. The
      * ContactFlowId is the last part of the ARN, shown here in bold: </p>
@@ -163,7 +164,7 @@ namespace Model
 
     /**
      * <p>The identifier of the flow for initiating the chat. To see the ContactFlowId
-     * in the Amazon Connect console user interface, on the navigation menu go to
+     * in the Amazon Connect admin website, on the navigation menu go to
      * <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under
      * the name of the flow, choose <b>Show additional flow information</b>. The
      * ContactFlowId is the last part of the ARN, shown here in bold: </p>
@@ -174,7 +175,7 @@ namespace Model
 
     /**
      * <p>The identifier of the flow for initiating the chat. To see the ContactFlowId
-     * in the Amazon Connect console user interface, on the navigation menu go to
+     * in the Amazon Connect admin website, on the navigation menu go to
      * <b>Routing</b>, <b>Contact Flows</b>. Choose the flow. On the flow page, under
      * the name of the flow, choose <b>Show additional flow information</b>. The
      * ContactFlowId is the last part of the ARN, shown here in bold: </p>
@@ -752,6 +753,175 @@ namespace Model
      */
     inline StartChatContactRequest& WithRelatedContactId(const char* value) { SetRelatedContactId(value); return *this;}
 
+
+    /**
+     * <p>A set of system defined key-value pairs stored on individual contact segments
+     * using an attribute map. The attributes are standard Amazon Connect attributes.
+     * They can be accessed in flows.</p> <p>Attribute keys can include only
+     * alphanumeric, -, and _.</p> <p>This field can be used to show channel subtype,
+     * such as <code>connect:Guide</code>.</p>  <p>The types
+     * <code>application/vnd.amazonaws.connect.message.interactive</code> and
+     * <code>application/vnd.amazonaws.connect.message.interactive.response</code> must
+     * be present in the SupportedMessagingContentTypes field of this API in order to
+     * set <code>SegmentAttributes</code> as {<code> "connect:Subtype": {"valueString"
+     * : "connect:Guide" }}</code>.</p> 
+     */
+    inline const Aws::Map<Aws::String, SegmentAttributeValue>& GetSegmentAttributes() const{ return m_segmentAttributes; }
+
+    /**
+     * <p>A set of system defined key-value pairs stored on individual contact segments
+     * using an attribute map. The attributes are standard Amazon Connect attributes.
+     * They can be accessed in flows.</p> <p>Attribute keys can include only
+     * alphanumeric, -, and _.</p> <p>This field can be used to show channel subtype,
+     * such as <code>connect:Guide</code>.</p>  <p>The types
+     * <code>application/vnd.amazonaws.connect.message.interactive</code> and
+     * <code>application/vnd.amazonaws.connect.message.interactive.response</code> must
+     * be present in the SupportedMessagingContentTypes field of this API in order to
+     * set <code>SegmentAttributes</code> as {<code> "connect:Subtype": {"valueString"
+     * : "connect:Guide" }}</code>.</p> 
+     */
+    inline bool SegmentAttributesHasBeenSet() const { return m_segmentAttributesHasBeenSet; }
+
+    /**
+     * <p>A set of system defined key-value pairs stored on individual contact segments
+     * using an attribute map. The attributes are standard Amazon Connect attributes.
+     * They can be accessed in flows.</p> <p>Attribute keys can include only
+     * alphanumeric, -, and _.</p> <p>This field can be used to show channel subtype,
+     * such as <code>connect:Guide</code>.</p>  <p>The types
+     * <code>application/vnd.amazonaws.connect.message.interactive</code> and
+     * <code>application/vnd.amazonaws.connect.message.interactive.response</code> must
+     * be present in the SupportedMessagingContentTypes field of this API in order to
+     * set <code>SegmentAttributes</code> as {<code> "connect:Subtype": {"valueString"
+     * : "connect:Guide" }}</code>.</p> 
+     */
+    inline void SetSegmentAttributes(const Aws::Map<Aws::String, SegmentAttributeValue>& value) { m_segmentAttributesHasBeenSet = true; m_segmentAttributes = value; }
+
+    /**
+     * <p>A set of system defined key-value pairs stored on individual contact segments
+     * using an attribute map. The attributes are standard Amazon Connect attributes.
+     * They can be accessed in flows.</p> <p>Attribute keys can include only
+     * alphanumeric, -, and _.</p> <p>This field can be used to show channel subtype,
+     * such as <code>connect:Guide</code>.</p>  <p>The types
+     * <code>application/vnd.amazonaws.connect.message.interactive</code> and
+     * <code>application/vnd.amazonaws.connect.message.interactive.response</code> must
+     * be present in the SupportedMessagingContentTypes field of this API in order to
+     * set <code>SegmentAttributes</code> as {<code> "connect:Subtype": {"valueString"
+     * : "connect:Guide" }}</code>.</p> 
+     */
+    inline void SetSegmentAttributes(Aws::Map<Aws::String, SegmentAttributeValue>&& value) { m_segmentAttributesHasBeenSet = true; m_segmentAttributes = std::move(value); }
+
+    /**
+     * <p>A set of system defined key-value pairs stored on individual contact segments
+     * using an attribute map. The attributes are standard Amazon Connect attributes.
+     * They can be accessed in flows.</p> <p>Attribute keys can include only
+     * alphanumeric, -, and _.</p> <p>This field can be used to show channel subtype,
+     * such as <code>connect:Guide</code>.</p>  <p>The types
+     * <code>application/vnd.amazonaws.connect.message.interactive</code> and
+     * <code>application/vnd.amazonaws.connect.message.interactive.response</code> must
+     * be present in the SupportedMessagingContentTypes field of this API in order to
+     * set <code>SegmentAttributes</code> as {<code> "connect:Subtype": {"valueString"
+     * : "connect:Guide" }}</code>.</p> 
+     */
+    inline StartChatContactRequest& WithSegmentAttributes(const Aws::Map<Aws::String, SegmentAttributeValue>& value) { SetSegmentAttributes(value); return *this;}
+
+    /**
+     * <p>A set of system defined key-value pairs stored on individual contact segments
+     * using an attribute map. The attributes are standard Amazon Connect attributes.
+     * They can be accessed in flows.</p> <p>Attribute keys can include only
+     * alphanumeric, -, and _.</p> <p>This field can be used to show channel subtype,
+     * such as <code>connect:Guide</code>.</p>  <p>The types
+     * <code>application/vnd.amazonaws.connect.message.interactive</code> and
+     * <code>application/vnd.amazonaws.connect.message.interactive.response</code> must
+     * be present in the SupportedMessagingContentTypes field of this API in order to
+     * set <code>SegmentAttributes</code> as {<code> "connect:Subtype": {"valueString"
+     * : "connect:Guide" }}</code>.</p> 
+     */
+    inline StartChatContactRequest& WithSegmentAttributes(Aws::Map<Aws::String, SegmentAttributeValue>&& value) { SetSegmentAttributes(std::move(value)); return *this;}
+
+    /**
+     * <p>A set of system defined key-value pairs stored on individual contact segments
+     * using an attribute map. The attributes are standard Amazon Connect attributes.
+     * They can be accessed in flows.</p> <p>Attribute keys can include only
+     * alphanumeric, -, and _.</p> <p>This field can be used to show channel subtype,
+     * such as <code>connect:Guide</code>.</p>  <p>The types
+     * <code>application/vnd.amazonaws.connect.message.interactive</code> and
+     * <code>application/vnd.amazonaws.connect.message.interactive.response</code> must
+     * be present in the SupportedMessagingContentTypes field of this API in order to
+     * set <code>SegmentAttributes</code> as {<code> "connect:Subtype": {"valueString"
+     * : "connect:Guide" }}</code>.</p> 
+     */
+    inline StartChatContactRequest& AddSegmentAttributes(const Aws::String& key, const SegmentAttributeValue& value) { m_segmentAttributesHasBeenSet = true; m_segmentAttributes.emplace(key, value); return *this; }
+
+    /**
+     * <p>A set of system defined key-value pairs stored on individual contact segments
+     * using an attribute map. The attributes are standard Amazon Connect attributes.
+     * They can be accessed in flows.</p> <p>Attribute keys can include only
+     * alphanumeric, -, and _.</p> <p>This field can be used to show channel subtype,
+     * such as <code>connect:Guide</code>.</p>  <p>The types
+     * <code>application/vnd.amazonaws.connect.message.interactive</code> and
+     * <code>application/vnd.amazonaws.connect.message.interactive.response</code> must
+     * be present in the SupportedMessagingContentTypes field of this API in order to
+     * set <code>SegmentAttributes</code> as {<code> "connect:Subtype": {"valueString"
+     * : "connect:Guide" }}</code>.</p> 
+     */
+    inline StartChatContactRequest& AddSegmentAttributes(Aws::String&& key, const SegmentAttributeValue& value) { m_segmentAttributesHasBeenSet = true; m_segmentAttributes.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>A set of system defined key-value pairs stored on individual contact segments
+     * using an attribute map. The attributes are standard Amazon Connect attributes.
+     * They can be accessed in flows.</p> <p>Attribute keys can include only
+     * alphanumeric, -, and _.</p> <p>This field can be used to show channel subtype,
+     * such as <code>connect:Guide</code>.</p>  <p>The types
+     * <code>application/vnd.amazonaws.connect.message.interactive</code> and
+     * <code>application/vnd.amazonaws.connect.message.interactive.response</code> must
+     * be present in the SupportedMessagingContentTypes field of this API in order to
+     * set <code>SegmentAttributes</code> as {<code> "connect:Subtype": {"valueString"
+     * : "connect:Guide" }}</code>.</p> 
+     */
+    inline StartChatContactRequest& AddSegmentAttributes(const Aws::String& key, SegmentAttributeValue&& value) { m_segmentAttributesHasBeenSet = true; m_segmentAttributes.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A set of system defined key-value pairs stored on individual contact segments
+     * using an attribute map. The attributes are standard Amazon Connect attributes.
+     * They can be accessed in flows.</p> <p>Attribute keys can include only
+     * alphanumeric, -, and _.</p> <p>This field can be used to show channel subtype,
+     * such as <code>connect:Guide</code>.</p>  <p>The types
+     * <code>application/vnd.amazonaws.connect.message.interactive</code> and
+     * <code>application/vnd.amazonaws.connect.message.interactive.response</code> must
+     * be present in the SupportedMessagingContentTypes field of this API in order to
+     * set <code>SegmentAttributes</code> as {<code> "connect:Subtype": {"valueString"
+     * : "connect:Guide" }}</code>.</p> 
+     */
+    inline StartChatContactRequest& AddSegmentAttributes(Aws::String&& key, SegmentAttributeValue&& value) { m_segmentAttributesHasBeenSet = true; m_segmentAttributes.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>A set of system defined key-value pairs stored on individual contact segments
+     * using an attribute map. The attributes are standard Amazon Connect attributes.
+     * They can be accessed in flows.</p> <p>Attribute keys can include only
+     * alphanumeric, -, and _.</p> <p>This field can be used to show channel subtype,
+     * such as <code>connect:Guide</code>.</p>  <p>The types
+     * <code>application/vnd.amazonaws.connect.message.interactive</code> and
+     * <code>application/vnd.amazonaws.connect.message.interactive.response</code> must
+     * be present in the SupportedMessagingContentTypes field of this API in order to
+     * set <code>SegmentAttributes</code> as {<code> "connect:Subtype": {"valueString"
+     * : "connect:Guide" }}</code>.</p> 
+     */
+    inline StartChatContactRequest& AddSegmentAttributes(const char* key, SegmentAttributeValue&& value) { m_segmentAttributesHasBeenSet = true; m_segmentAttributes.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A set of system defined key-value pairs stored on individual contact segments
+     * using an attribute map. The attributes are standard Amazon Connect attributes.
+     * They can be accessed in flows.</p> <p>Attribute keys can include only
+     * alphanumeric, -, and _.</p> <p>This field can be used to show channel subtype,
+     * such as <code>connect:Guide</code>.</p>  <p>The types
+     * <code>application/vnd.amazonaws.connect.message.interactive</code> and
+     * <code>application/vnd.amazonaws.connect.message.interactive.response</code> must
+     * be present in the SupportedMessagingContentTypes field of this API in order to
+     * set <code>SegmentAttributes</code> as {<code> "connect:Subtype": {"valueString"
+     * : "connect:Guide" }}</code>.</p> 
+     */
+    inline StartChatContactRequest& AddSegmentAttributes(const char* key, const SegmentAttributeValue& value) { m_segmentAttributesHasBeenSet = true; m_segmentAttributes.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_instanceId;
@@ -783,6 +953,9 @@ namespace Model
 
     Aws::String m_relatedContactId;
     bool m_relatedContactIdHasBeenSet = false;
+
+    Aws::Map<Aws::String, SegmentAttributeValue> m_segmentAttributes;
+    bool m_segmentAttributesHasBeenSet = false;
   };
 
 } // namespace Model

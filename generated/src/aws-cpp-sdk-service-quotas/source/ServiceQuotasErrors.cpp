@@ -42,67 +42,67 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == RESOURCE_ALREADY_EXISTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ServiceQuotasErrors::RESOURCE_ALREADY_EXISTS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ServiceQuotasErrors::RESOURCE_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == ORGANIZATION_NOT_IN_ALL_FEATURES_MODE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ServiceQuotasErrors::ORGANIZATION_NOT_IN_ALL_FEATURES_MODE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ServiceQuotasErrors::ORGANIZATION_NOT_IN_ALL_FEATURES_MODE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == SERVICE_QUOTA_TEMPLATE_NOT_IN_USE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ServiceQuotasErrors::SERVICE_QUOTA_TEMPLATE_NOT_IN_USE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ServiceQuotasErrors::SERVICE_QUOTA_TEMPLATE_NOT_IN_USE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == DEPENDENCY_ACCESS_DENIED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ServiceQuotasErrors::DEPENDENCY_ACCESS_DENIED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ServiceQuotasErrors::DEPENDENCY_ACCESS_DENIED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == TEMPLATES_NOT_AVAILABLE_IN_REGION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ServiceQuotasErrors::TEMPLATES_NOT_AVAILABLE_IN_REGION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ServiceQuotasErrors::TEMPLATES_NOT_AVAILABLE_IN_REGION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_PAGINATION_TOKEN_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ServiceQuotasErrors::INVALID_PAGINATION_TOKEN), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ServiceQuotasErrors::INVALID_PAGINATION_TOKEN), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_RESOURCE_STATE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ServiceQuotasErrors::INVALID_RESOURCE_STATE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ServiceQuotasErrors::INVALID_RESOURCE_STATE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == NO_AVAILABLE_ORGANIZATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ServiceQuotasErrors::NO_AVAILABLE_ORGANIZATION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ServiceQuotasErrors::NO_AVAILABLE_ORGANIZATION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == TAG_POLICY_VIOLATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ServiceQuotasErrors::TAG_POLICY_VIOLATION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ServiceQuotasErrors::TAG_POLICY_VIOLATION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == A_W_S_SERVICE_ACCESS_NOT_ENABLED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ServiceQuotasErrors::A_W_S_SERVICE_ACCESS_NOT_ENABLED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ServiceQuotasErrors::A_W_S_SERVICE_ACCESS_NOT_ENABLED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == ILLEGAL_ARGUMENT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ServiceQuotasErrors::ILLEGAL_ARGUMENT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ServiceQuotasErrors::ILLEGAL_ARGUMENT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == TOO_MANY_TAGS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ServiceQuotasErrors::TOO_MANY_TAGS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ServiceQuotasErrors::TOO_MANY_TAGS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == TOO_MANY_REQUESTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ServiceQuotasErrors::TOO_MANY_REQUESTS), true);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ServiceQuotasErrors::TOO_MANY_REQUESTS), RetryableType::RETRYABLE);
   }
   else if (hashCode == QUOTA_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ServiceQuotasErrors::QUOTA_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ServiceQuotasErrors::QUOTA_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == SERVICE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ServiceQuotasErrors::SERVICE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ServiceQuotasErrors::SERVICE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == NO_SUCH_RESOURCE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ServiceQuotasErrors::NO_SUCH_RESOURCE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ServiceQuotasErrors::NO_SUCH_RESOURCE), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

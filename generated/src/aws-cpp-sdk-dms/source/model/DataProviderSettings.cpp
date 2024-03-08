@@ -19,24 +19,39 @@ namespace Model
 {
 
 DataProviderSettings::DataProviderSettings() : 
+    m_redshiftSettingsHasBeenSet(false),
     m_postgreSqlSettingsHasBeenSet(false),
     m_mySqlSettingsHasBeenSet(false),
     m_oracleSettingsHasBeenSet(false),
-    m_microsoftSqlServerSettingsHasBeenSet(false)
+    m_microsoftSqlServerSettingsHasBeenSet(false),
+    m_docDbSettingsHasBeenSet(false),
+    m_mariaDbSettingsHasBeenSet(false),
+    m_mongoDbSettingsHasBeenSet(false)
 {
 }
 
 DataProviderSettings::DataProviderSettings(JsonView jsonValue) : 
+    m_redshiftSettingsHasBeenSet(false),
     m_postgreSqlSettingsHasBeenSet(false),
     m_mySqlSettingsHasBeenSet(false),
     m_oracleSettingsHasBeenSet(false),
-    m_microsoftSqlServerSettingsHasBeenSet(false)
+    m_microsoftSqlServerSettingsHasBeenSet(false),
+    m_docDbSettingsHasBeenSet(false),
+    m_mariaDbSettingsHasBeenSet(false),
+    m_mongoDbSettingsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 DataProviderSettings& DataProviderSettings::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("RedshiftSettings"))
+  {
+    m_redshiftSettings = jsonValue.GetObject("RedshiftSettings");
+
+    m_redshiftSettingsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("PostgreSqlSettings"))
   {
     m_postgreSqlSettings = jsonValue.GetObject("PostgreSqlSettings");
@@ -65,12 +80,39 @@ DataProviderSettings& DataProviderSettings::operator =(JsonView jsonValue)
     m_microsoftSqlServerSettingsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DocDbSettings"))
+  {
+    m_docDbSettings = jsonValue.GetObject("DocDbSettings");
+
+    m_docDbSettingsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("MariaDbSettings"))
+  {
+    m_mariaDbSettings = jsonValue.GetObject("MariaDbSettings");
+
+    m_mariaDbSettingsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("MongoDbSettings"))
+  {
+    m_mongoDbSettings = jsonValue.GetObject("MongoDbSettings");
+
+    m_mongoDbSettingsHasBeenSet = true;
+  }
+
   return *this;
 }
 
 JsonValue DataProviderSettings::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_redshiftSettingsHasBeenSet)
+  {
+   payload.WithObject("RedshiftSettings", m_redshiftSettings.Jsonize());
+
+  }
 
   if(m_postgreSqlSettingsHasBeenSet)
   {
@@ -93,6 +135,24 @@ JsonValue DataProviderSettings::Jsonize() const
   if(m_microsoftSqlServerSettingsHasBeenSet)
   {
    payload.WithObject("MicrosoftSqlServerSettings", m_microsoftSqlServerSettings.Jsonize());
+
+  }
+
+  if(m_docDbSettingsHasBeenSet)
+  {
+   payload.WithObject("DocDbSettings", m_docDbSettings.Jsonize());
+
+  }
+
+  if(m_mariaDbSettingsHasBeenSet)
+  {
+   payload.WithObject("MariaDbSettings", m_mariaDbSettings.Jsonize());
+
+  }
+
+  if(m_mongoDbSettingsHasBeenSet)
+  {
+   payload.WithObject("MongoDbSettings", m_mongoDbSettings.Jsonize());
 
   }
 

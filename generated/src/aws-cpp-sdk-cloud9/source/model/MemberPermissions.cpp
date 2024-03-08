@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MemberPermissions::NOT_SET:
+            return {};
           case MemberPermissions::read_write:
             return "read-write";
           case MemberPermissions::read_only:

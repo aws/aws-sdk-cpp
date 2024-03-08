@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReplicaStatus::NOT_SET:
+            return {};
           case ReplicaStatus::CREATING:
             return "CREATING";
           case ReplicaStatus::CREATION_FAILED:

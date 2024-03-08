@@ -25,7 +25,9 @@ FileSystemSize::FileSystemSize() :
     m_valueInIA(0),
     m_valueInIAHasBeenSet(false),
     m_valueInStandard(0),
-    m_valueInStandardHasBeenSet(false)
+    m_valueInStandardHasBeenSet(false),
+    m_valueInArchive(0),
+    m_valueInArchiveHasBeenSet(false)
 {
 }
 
@@ -36,7 +38,9 @@ FileSystemSize::FileSystemSize(JsonView jsonValue) :
     m_valueInIA(0),
     m_valueInIAHasBeenSet(false),
     m_valueInStandard(0),
-    m_valueInStandardHasBeenSet(false)
+    m_valueInStandardHasBeenSet(false),
+    m_valueInArchive(0),
+    m_valueInArchiveHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -71,6 +75,13 @@ FileSystemSize& FileSystemSize::operator =(JsonView jsonValue)
     m_valueInStandardHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ValueInArchive"))
+  {
+    m_valueInArchive = jsonValue.GetInt64("ValueInArchive");
+
+    m_valueInArchiveHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -98,6 +109,12 @@ JsonValue FileSystemSize::Jsonize() const
   if(m_valueInStandardHasBeenSet)
   {
    payload.WithInt64("ValueInStandard", m_valueInStandard);
+
+  }
+
+  if(m_valueInArchiveHasBeenSet)
+  {
+   payload.WithInt64("ValueInArchive", m_valueInArchive);
 
   }
 

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case IncidentRecordStatus::NOT_SET:
+            return {};
           case IncidentRecordStatus::OPEN:
             return "OPEN";
           case IncidentRecordStatus::RESOLVED:

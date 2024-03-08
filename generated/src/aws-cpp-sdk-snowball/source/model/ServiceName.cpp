@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ServiceName::NOT_SET:
+            return {};
           case ServiceName::KUBERNETES:
             return "KUBERNETES";
           case ServiceName::EKS_ANYWHERE:

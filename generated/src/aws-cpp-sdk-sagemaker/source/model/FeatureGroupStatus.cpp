@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FeatureGroupStatus::NOT_SET:
+            return {};
           case FeatureGroupStatus::Creating:
             return "Creating";
           case FeatureGroupStatus::Created:

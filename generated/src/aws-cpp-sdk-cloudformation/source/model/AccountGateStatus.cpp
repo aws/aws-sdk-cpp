@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AccountGateStatus::NOT_SET:
+            return {};
           case AccountGateStatus::SUCCEEDED:
             return "SUCCEEDED";
           case AccountGateStatus::FAILED:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UsageLimitLimitType::NOT_SET:
+            return {};
           case UsageLimitLimitType::time:
             return "time";
           case UsageLimitLimitType::data_scanned:

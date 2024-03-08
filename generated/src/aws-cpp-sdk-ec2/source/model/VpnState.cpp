@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VpnState::NOT_SET:
+            return {};
           case VpnState::pending:
             return "pending";
           case VpnState::available:

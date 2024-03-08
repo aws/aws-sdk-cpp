@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case IpamPoolCidrState::NOT_SET:
+            return {};
           case IpamPoolCidrState::pending_provision:
             return "pending-provision";
           case IpamPoolCidrState::provisioned:

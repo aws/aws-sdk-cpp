@@ -125,6 +125,12 @@ GetReadSetMetadataResult& GetReadSetMetadataResult::operator =(const Aws::Amazon
 
   }
 
+  if(jsonValue.ValueExists("etag"))
+  {
+    m_etag = jsonValue.GetObject("etag");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

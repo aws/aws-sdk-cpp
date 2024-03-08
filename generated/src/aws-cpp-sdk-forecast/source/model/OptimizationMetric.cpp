@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OptimizationMetric::NOT_SET:
+            return {};
           case OptimizationMetric::WAPE:
             return "WAPE";
           case OptimizationMetric::RMSE:

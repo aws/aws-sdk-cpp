@@ -94,6 +94,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ScheduleActivityTaskFailedCause::NOT_SET:
+            return {};
           case ScheduleActivityTaskFailedCause::ACTIVITY_TYPE_DEPRECATED:
             return "ACTIVITY_TYPE_DEPRECATED";
           case ScheduleActivityTaskFailedCause::ACTIVITY_TYPE_DOES_NOT_EXIST:

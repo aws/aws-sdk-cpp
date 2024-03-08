@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ListUpdateMode::NOT_SET:
+            return {};
           case ListUpdateMode::REPLACE:
             return "REPLACE";
           case ListUpdateMode::APPEND:

@@ -59,8 +59,8 @@ namespace Support
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef SupportClientConfiguration ClientConfigurationType;
       typedef SupportEndpointProvider EndpointProviderType;
@@ -70,14 +70,14 @@ namespace Support
         * is not specified, it will be initialized to default values.
         */
         SupportClient(const Aws::Support::SupportClientConfiguration& clientConfiguration = Aws::Support::SupportClientConfiguration(),
-                      std::shared_ptr<SupportEndpointProviderBase> endpointProvider = Aws::MakeShared<SupportEndpointProvider>(ALLOCATION_TAG));
+                      std::shared_ptr<SupportEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         SupportClient(const Aws::Auth::AWSCredentials& credentials,
-                      std::shared_ptr<SupportEndpointProviderBase> endpointProvider = Aws::MakeShared<SupportEndpointProvider>(ALLOCATION_TAG),
+                      std::shared_ptr<SupportEndpointProviderBase> endpointProvider = nullptr,
                       const Aws::Support::SupportClientConfiguration& clientConfiguration = Aws::Support::SupportClientConfiguration());
 
        /**
@@ -85,7 +85,7 @@ namespace Support
         * the default http client factory will be used
         */
         SupportClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                      std::shared_ptr<SupportEndpointProviderBase> endpointProvider = Aws::MakeShared<SupportEndpointProvider>(ALLOCATION_TAG),
+                      std::shared_ptr<SupportEndpointProviderBase> endpointProvider = nullptr,
                       const Aws::Support::SupportClientConfiguration& clientConfiguration = Aws::Support::SupportClientConfiguration());
 
 

@@ -25,6 +25,7 @@ namespace Aws
         static const int CreationPolicy_HASH = HashingUtils::HashString("CreationPolicy");
         static const int UpdatePolicy_HASH = HashingUtils::HashString("UpdatePolicy");
         static const int DeletionPolicy_HASH = HashingUtils::HashString("DeletionPolicy");
+        static const int UpdateReplacePolicy_HASH = HashingUtils::HashString("UpdateReplacePolicy");
         static const int Tags_HASH = HashingUtils::HashString("Tags");
 
 
@@ -51,6 +52,10 @@ namespace Aws
           {
             return ResourceAttribute::DeletionPolicy;
           }
+          else if (hashCode == UpdateReplacePolicy_HASH)
+          {
+            return ResourceAttribute::UpdateReplacePolicy;
+          }
           else if (hashCode == Tags_HASH)
           {
             return ResourceAttribute::Tags;
@@ -69,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResourceAttribute::NOT_SET:
+            return {};
           case ResourceAttribute::Properties:
             return "Properties";
           case ResourceAttribute::Metadata:
@@ -79,6 +86,8 @@ namespace Aws
             return "UpdatePolicy";
           case ResourceAttribute::DeletionPolicy:
             return "DeletionPolicy";
+          case ResourceAttribute::UpdateReplacePolicy:
+            return "UpdateReplacePolicy";
           case ResourceAttribute::Tags:
             return "Tags";
           default:

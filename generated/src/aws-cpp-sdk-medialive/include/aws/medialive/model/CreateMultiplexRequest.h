@@ -160,56 +160,48 @@ namespace Model
     /**
      * Unique request ID. This prevents retries from creating multiple
 resources.
-
      */
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
     /**
      * Unique request ID. This prevents retries from creating multiple
 resources.
-
      */
     inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
 
     /**
      * Unique request ID. This prevents retries from creating multiple
 resources.
-
      */
     inline void SetRequestId(const Aws::String& value) { m_requestIdHasBeenSet = true; m_requestId = value; }
 
     /**
      * Unique request ID. This prevents retries from creating multiple
 resources.
-
      */
     inline void SetRequestId(Aws::String&& value) { m_requestIdHasBeenSet = true; m_requestId = std::move(value); }
 
     /**
      * Unique request ID. This prevents retries from creating multiple
 resources.
-
      */
     inline void SetRequestId(const char* value) { m_requestIdHasBeenSet = true; m_requestId.assign(value); }
 
     /**
      * Unique request ID. This prevents retries from creating multiple
 resources.
-
      */
     inline CreateMultiplexRequest& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
 
     /**
      * Unique request ID. This prevents retries from creating multiple
 resources.
-
      */
     inline CreateMultiplexRequest& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
 
     /**
      * Unique request ID. This prevents retries from creating multiple
 resources.
-
      */
     inline CreateMultiplexRequest& WithRequestId(const char* value) { SetRequestId(value); return *this;}
 

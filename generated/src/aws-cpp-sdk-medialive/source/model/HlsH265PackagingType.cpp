@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HlsH265PackagingType::NOT_SET:
+            return {};
           case HlsH265PackagingType::HEV1:
             return "HEV1";
           case HlsH265PackagingType::HVC1:

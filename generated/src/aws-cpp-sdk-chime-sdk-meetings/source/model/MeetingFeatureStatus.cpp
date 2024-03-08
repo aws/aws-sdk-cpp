@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MeetingFeatureStatus::NOT_SET:
+            return {};
           case MeetingFeatureStatus::AVAILABLE:
             return "AVAILABLE";
           case MeetingFeatureStatus::UNAVAILABLE:

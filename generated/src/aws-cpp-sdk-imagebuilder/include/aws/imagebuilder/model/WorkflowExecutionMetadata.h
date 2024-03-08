@@ -424,6 +424,55 @@ namespace Model
      */
     inline WorkflowExecutionMetadata& WithEndTime(const char* value) { SetEndTime(value); return *this;}
 
+
+    /**
+     * <p>The name of the test group that included the test workflow resource at
+     * runtime.</p>
+     */
+    inline const Aws::String& GetParallelGroup() const{ return m_parallelGroup; }
+
+    /**
+     * <p>The name of the test group that included the test workflow resource at
+     * runtime.</p>
+     */
+    inline bool ParallelGroupHasBeenSet() const { return m_parallelGroupHasBeenSet; }
+
+    /**
+     * <p>The name of the test group that included the test workflow resource at
+     * runtime.</p>
+     */
+    inline void SetParallelGroup(const Aws::String& value) { m_parallelGroupHasBeenSet = true; m_parallelGroup = value; }
+
+    /**
+     * <p>The name of the test group that included the test workflow resource at
+     * runtime.</p>
+     */
+    inline void SetParallelGroup(Aws::String&& value) { m_parallelGroupHasBeenSet = true; m_parallelGroup = std::move(value); }
+
+    /**
+     * <p>The name of the test group that included the test workflow resource at
+     * runtime.</p>
+     */
+    inline void SetParallelGroup(const char* value) { m_parallelGroupHasBeenSet = true; m_parallelGroup.assign(value); }
+
+    /**
+     * <p>The name of the test group that included the test workflow resource at
+     * runtime.</p>
+     */
+    inline WorkflowExecutionMetadata& WithParallelGroup(const Aws::String& value) { SetParallelGroup(value); return *this;}
+
+    /**
+     * <p>The name of the test group that included the test workflow resource at
+     * runtime.</p>
+     */
+    inline WorkflowExecutionMetadata& WithParallelGroup(Aws::String&& value) { SetParallelGroup(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the test group that included the test workflow resource at
+     * runtime.</p>
+     */
+    inline WorkflowExecutionMetadata& WithParallelGroup(const char* value) { SetParallelGroup(value); return *this;}
+
   private:
 
     Aws::String m_workflowBuildVersionArn;
@@ -458,6 +507,9 @@ namespace Model
 
     Aws::String m_endTime;
     bool m_endTimeHasBeenSet = false;
+
+    Aws::String m_parallelGroup;
+    bool m_parallelGroupHasBeenSet = false;
   };
 
 } // namespace Model

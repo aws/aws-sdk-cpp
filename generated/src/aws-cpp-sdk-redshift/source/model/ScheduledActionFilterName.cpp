@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ScheduledActionFilterName::NOT_SET:
+            return {};
           case ScheduledActionFilterName::cluster_identifier:
             return "cluster-identifier";
           case ScheduledActionFilterName::iam_role:

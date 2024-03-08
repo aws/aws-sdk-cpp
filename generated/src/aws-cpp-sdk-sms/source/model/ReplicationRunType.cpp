@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReplicationRunType::NOT_SET:
+            return {};
           case ReplicationRunType::ON_DEMAND:
             return "ON_DEMAND";
           case ReplicationRunType::AUTOMATIC:

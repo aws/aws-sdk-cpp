@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TsPtsOffset::NOT_SET:
+            return {};
           case TsPtsOffset::AUTO:
             return "AUTO";
           case TsPtsOffset::SECONDS:

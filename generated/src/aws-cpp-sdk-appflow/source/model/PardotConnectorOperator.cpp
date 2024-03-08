@@ -109,6 +109,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PardotConnectorOperator::NOT_SET:
+            return {};
           case PardotConnectorOperator::PROJECTION:
             return "PROJECTION";
           case PardotConnectorOperator::EQUAL_TO:

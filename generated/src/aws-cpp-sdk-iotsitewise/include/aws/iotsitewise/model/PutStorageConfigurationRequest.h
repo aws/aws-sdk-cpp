@@ -10,6 +10,8 @@
 #include <aws/iotsitewise/model/MultiLayerStorage.h>
 #include <aws/iotsitewise/model/DisassociatedDataStorageState.h>
 #include <aws/iotsitewise/model/RetentionPeriod.h>
+#include <aws/iotsitewise/model/WarmTierState.h>
+#include <aws/iotsitewise/model/WarmTierRetentionPeriod.h>
 #include <utility>
 
 namespace Aws
@@ -248,6 +250,86 @@ namespace Model
     
     inline PutStorageConfigurationRequest& WithRetentionPeriod(RetentionPeriod&& value) { SetRetentionPeriod(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A service managed storage tier optimized for analytical queries. It stores
+     * periodically uploaded, buffered and historical data ingested with the
+     * CreaeBulkImportJob API.</p>
+     */
+    inline const WarmTierState& GetWarmTier() const{ return m_warmTier; }
+
+    /**
+     * <p>A service managed storage tier optimized for analytical queries. It stores
+     * periodically uploaded, buffered and historical data ingested with the
+     * CreaeBulkImportJob API.</p>
+     */
+    inline bool WarmTierHasBeenSet() const { return m_warmTierHasBeenSet; }
+
+    /**
+     * <p>A service managed storage tier optimized for analytical queries. It stores
+     * periodically uploaded, buffered and historical data ingested with the
+     * CreaeBulkImportJob API.</p>
+     */
+    inline void SetWarmTier(const WarmTierState& value) { m_warmTierHasBeenSet = true; m_warmTier = value; }
+
+    /**
+     * <p>A service managed storage tier optimized for analytical queries. It stores
+     * periodically uploaded, buffered and historical data ingested with the
+     * CreaeBulkImportJob API.</p>
+     */
+    inline void SetWarmTier(WarmTierState&& value) { m_warmTierHasBeenSet = true; m_warmTier = std::move(value); }
+
+    /**
+     * <p>A service managed storage tier optimized for analytical queries. It stores
+     * periodically uploaded, buffered and historical data ingested with the
+     * CreaeBulkImportJob API.</p>
+     */
+    inline PutStorageConfigurationRequest& WithWarmTier(const WarmTierState& value) { SetWarmTier(value); return *this;}
+
+    /**
+     * <p>A service managed storage tier optimized for analytical queries. It stores
+     * periodically uploaded, buffered and historical data ingested with the
+     * CreaeBulkImportJob API.</p>
+     */
+    inline PutStorageConfigurationRequest& WithWarmTier(WarmTierState&& value) { SetWarmTier(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Set this period to specify how long your data is stored in the warm tier
+     * before it is deleted. You can set this only if cold tier is enabled.</p>
+     */
+    inline const WarmTierRetentionPeriod& GetWarmTierRetentionPeriod() const{ return m_warmTierRetentionPeriod; }
+
+    /**
+     * <p>Set this period to specify how long your data is stored in the warm tier
+     * before it is deleted. You can set this only if cold tier is enabled.</p>
+     */
+    inline bool WarmTierRetentionPeriodHasBeenSet() const { return m_warmTierRetentionPeriodHasBeenSet; }
+
+    /**
+     * <p>Set this period to specify how long your data is stored in the warm tier
+     * before it is deleted. You can set this only if cold tier is enabled.</p>
+     */
+    inline void SetWarmTierRetentionPeriod(const WarmTierRetentionPeriod& value) { m_warmTierRetentionPeriodHasBeenSet = true; m_warmTierRetentionPeriod = value; }
+
+    /**
+     * <p>Set this period to specify how long your data is stored in the warm tier
+     * before it is deleted. You can set this only if cold tier is enabled.</p>
+     */
+    inline void SetWarmTierRetentionPeriod(WarmTierRetentionPeriod&& value) { m_warmTierRetentionPeriodHasBeenSet = true; m_warmTierRetentionPeriod = std::move(value); }
+
+    /**
+     * <p>Set this period to specify how long your data is stored in the warm tier
+     * before it is deleted. You can set this only if cold tier is enabled.</p>
+     */
+    inline PutStorageConfigurationRequest& WithWarmTierRetentionPeriod(const WarmTierRetentionPeriod& value) { SetWarmTierRetentionPeriod(value); return *this;}
+
+    /**
+     * <p>Set this period to specify how long your data is stored in the warm tier
+     * before it is deleted. You can set this only if cold tier is enabled.</p>
+     */
+    inline PutStorageConfigurationRequest& WithWarmTierRetentionPeriod(WarmTierRetentionPeriod&& value) { SetWarmTierRetentionPeriod(std::move(value)); return *this;}
+
   private:
 
     StorageType m_storageType;
@@ -261,6 +343,12 @@ namespace Model
 
     RetentionPeriod m_retentionPeriod;
     bool m_retentionPeriodHasBeenSet = false;
+
+    WarmTierState m_warmTier;
+    bool m_warmTierHasBeenSet = false;
+
+    WarmTierRetentionPeriod m_warmTierRetentionPeriod;
+    bool m_warmTierRetentionPeriodHasBeenSet = false;
   };
 
 } // namespace Model

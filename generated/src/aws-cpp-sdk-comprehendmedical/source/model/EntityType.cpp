@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EntityType::NOT_SET:
+            return {};
           case EntityType::MEDICATION:
             return "MEDICATION";
           case EntityType::MEDICAL_CONDITION:

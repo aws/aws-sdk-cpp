@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Mpeg2TemporalAdaptiveQuantization::NOT_SET:
+            return {};
           case Mpeg2TemporalAdaptiveQuantization::DISABLED:
             return "DISABLED";
           case Mpeg2TemporalAdaptiveQuantization::ENABLED:

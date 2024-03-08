@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DeploymentWaitType::NOT_SET:
+            return {};
           case DeploymentWaitType::READY_WAIT:
             return "READY_WAIT";
           case DeploymentWaitType::TERMINATION_WAIT:

@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ServiceTypeOption::NOT_SET:
+            return {};
           case ServiceTypeOption::HTTP:
             return "HTTP";
           default:

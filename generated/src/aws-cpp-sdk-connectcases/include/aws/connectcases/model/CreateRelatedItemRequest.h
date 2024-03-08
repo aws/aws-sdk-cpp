@@ -8,6 +8,7 @@
 #include <aws/connectcases/ConnectCasesRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/connectcases/model/RelatedItemInputContent.h>
+#include <aws/connectcases/model/UserUnion.h>
 #include <aws/connectcases/model/RelatedItemType.h>
 #include <utility>
 
@@ -148,6 +149,37 @@ namespace Model
 
 
     /**
+     * <p>Represents the creator of the related item.</p>
+     */
+    inline const UserUnion& GetPerformedBy() const{ return m_performedBy; }
+
+    /**
+     * <p>Represents the creator of the related item.</p>
+     */
+    inline bool PerformedByHasBeenSet() const { return m_performedByHasBeenSet; }
+
+    /**
+     * <p>Represents the creator of the related item.</p>
+     */
+    inline void SetPerformedBy(const UserUnion& value) { m_performedByHasBeenSet = true; m_performedBy = value; }
+
+    /**
+     * <p>Represents the creator of the related item.</p>
+     */
+    inline void SetPerformedBy(UserUnion&& value) { m_performedByHasBeenSet = true; m_performedBy = std::move(value); }
+
+    /**
+     * <p>Represents the creator of the related item.</p>
+     */
+    inline CreateRelatedItemRequest& WithPerformedBy(const UserUnion& value) { SetPerformedBy(value); return *this;}
+
+    /**
+     * <p>Represents the creator of the related item.</p>
+     */
+    inline CreateRelatedItemRequest& WithPerformedBy(UserUnion&& value) { SetPerformedBy(std::move(value)); return *this;}
+
+
+    /**
      * <p>The type of a related item.</p>
      */
     inline const RelatedItemType& GetType() const{ return m_type; }
@@ -187,6 +219,9 @@ namespace Model
 
     Aws::String m_domainId;
     bool m_domainIdHasBeenSet = false;
+
+    UserUnion m_performedBy;
+    bool m_performedByHasBeenSet = false;
 
     RelatedItemType m_type;
     bool m_typeHasBeenSet = false;

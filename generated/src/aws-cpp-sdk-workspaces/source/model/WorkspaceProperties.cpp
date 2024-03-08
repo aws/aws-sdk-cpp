@@ -29,7 +29,9 @@ WorkspaceProperties::WorkspaceProperties() :
     m_userVolumeSizeGibHasBeenSet(false),
     m_computeTypeName(Compute::NOT_SET),
     m_computeTypeNameHasBeenSet(false),
-    m_protocolsHasBeenSet(false)
+    m_protocolsHasBeenSet(false),
+    m_operatingSystemName(OperatingSystemName::NOT_SET),
+    m_operatingSystemNameHasBeenSet(false)
 {
 }
 
@@ -44,7 +46,9 @@ WorkspaceProperties::WorkspaceProperties(JsonView jsonValue) :
     m_userVolumeSizeGibHasBeenSet(false),
     m_computeTypeName(Compute::NOT_SET),
     m_computeTypeNameHasBeenSet(false),
-    m_protocolsHasBeenSet(false)
+    m_protocolsHasBeenSet(false),
+    m_operatingSystemName(OperatingSystemName::NOT_SET),
+    m_operatingSystemNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -96,6 +100,13 @@ WorkspaceProperties& WorkspaceProperties::operator =(JsonView jsonValue)
     m_protocolsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("OperatingSystemName"))
+  {
+    m_operatingSystemName = OperatingSystemNameMapper::GetOperatingSystemNameForName(jsonValue.GetString("OperatingSystemName"));
+
+    m_operatingSystemNameHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -140,6 +151,11 @@ JsonValue WorkspaceProperties::Jsonize() const
    }
    payload.WithArray("Protocols", std::move(protocolsJsonList));
 
+  }
+
+  if(m_operatingSystemNameHasBeenSet)
+  {
+   payload.WithString("OperatingSystemName", OperatingSystemNameMapper::GetNameForOperatingSystemName(m_operatingSystemName));
   }
 
   return payload;

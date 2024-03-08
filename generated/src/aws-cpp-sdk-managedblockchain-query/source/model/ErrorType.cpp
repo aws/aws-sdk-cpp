@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ErrorType::NOT_SET:
+            return {};
           case ErrorType::VALIDATION_EXCEPTION:
             return "VALIDATION_EXCEPTION";
           case ErrorType::RESOURCE_NOT_FOUND_EXCEPTION:

@@ -24,7 +24,8 @@ ProcessorInfo::ProcessorInfo() :
     m_supportedArchitecturesHasBeenSet(false),
     m_sustainedClockSpeedInGhz(0.0),
     m_sustainedClockSpeedInGhzHasBeenSet(false),
-    m_supportedFeaturesHasBeenSet(false)
+    m_supportedFeaturesHasBeenSet(false),
+    m_manufacturerHasBeenSet(false)
 {
 }
 
@@ -32,7 +33,8 @@ ProcessorInfo::ProcessorInfo(const XmlNode& xmlNode) :
     m_supportedArchitecturesHasBeenSet(false),
     m_sustainedClockSpeedInGhz(0.0),
     m_sustainedClockSpeedInGhzHasBeenSet(false),
-    m_supportedFeaturesHasBeenSet(false)
+    m_supportedFeaturesHasBeenSet(false),
+    m_manufacturerHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -73,6 +75,12 @@ ProcessorInfo& ProcessorInfo::operator =(const XmlNode& xmlNode)
 
       m_supportedFeaturesHasBeenSet = true;
     }
+    XmlNode manufacturerNode = resultNode.FirstChild("manufacturer");
+    if(!manufacturerNode.IsNull())
+    {
+      m_manufacturer = Aws::Utils::Xml::DecodeEscapedXmlText(manufacturerNode.GetText());
+      m_manufacturerHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -103,6 +111,11 @@ void ProcessorInfo::OutputToStream(Aws::OStream& oStream, const char* location, 
       }
   }
 
+  if(m_manufacturerHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Manufacturer=" << StringUtils::URLEncode(m_manufacturer.c_str()) << "&";
+  }
+
 }
 
 void ProcessorInfo::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -126,6 +139,10 @@ void ProcessorInfo::OutputToStream(Aws::OStream& oStream, const char* location) 
       {
         oStream << location << ".SupportedFeatures." << supportedFeaturesIdx++ << "=" << SupportedAdditionalProcessorFeatureMapper::GetNameForSupportedAdditionalProcessorFeature(item) << "&";
       }
+  }
+  if(m_manufacturerHasBeenSet)
+  {
+      oStream << location << ".Manufacturer=" << StringUtils::URLEncode(m_manufacturer.c_str()) << "&";
   }
 }
 

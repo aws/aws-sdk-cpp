@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ProductSource::NOT_SET:
+            return {};
           case ProductSource::ACCOUNT:
             return "ACCOUNT";
           default:

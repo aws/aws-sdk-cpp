@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ScteMarkersSource::NOT_SET:
+            return {};
           case ScteMarkersSource::SEGMENTS:
             return "SEGMENTS";
           case ScteMarkersSource::MANIFEST:

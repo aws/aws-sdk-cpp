@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ConfigurationType::NOT_SET:
+            return {};
           case ConfigurationType::DEFAULT:
             return "DEFAULT";
           case ConfigurationType::CUSTOM:

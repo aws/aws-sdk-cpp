@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StatefulAction::NOT_SET:
+            return {};
           case StatefulAction::PASS:
             return "PASS";
           case StatefulAction::DROP:

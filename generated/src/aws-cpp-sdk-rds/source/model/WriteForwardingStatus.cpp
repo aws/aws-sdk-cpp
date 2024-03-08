@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case WriteForwardingStatus::NOT_SET:
+            return {};
           case WriteForwardingStatus::enabled:
             return "enabled";
           case WriteForwardingStatus::disabled:

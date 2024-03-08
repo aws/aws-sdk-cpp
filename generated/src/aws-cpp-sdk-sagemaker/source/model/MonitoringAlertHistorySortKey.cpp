@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MonitoringAlertHistorySortKey::NOT_SET:
+            return {};
           case MonitoringAlertHistorySortKey::CreationTime:
             return "CreationTime";
           case MonitoringAlertHistorySortKey::Status:

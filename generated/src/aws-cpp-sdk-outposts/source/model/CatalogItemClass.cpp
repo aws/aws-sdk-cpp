@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CatalogItemClass::NOT_SET:
+            return {};
           case CatalogItemClass::RACK:
             return "RACK";
           case CatalogItemClass::SERVER:

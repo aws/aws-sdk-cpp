@@ -42,6 +42,7 @@ CreateDBClusterRequest::CreateDBClusterRequest() :
     m_enableCloudwatchLogsExportsHasBeenSet(false),
     m_engineModeHasBeenSet(false),
     m_scalingConfigurationHasBeenSet(false),
+    m_rdsCustomClusterConfigurationHasBeenSet(false),
     m_deletionProtection(false),
     m_deletionProtectionHasBeenSet(false),
     m_globalClusterIdentifierHasBeenSet(false),
@@ -71,6 +72,8 @@ CreateDBClusterRequest::CreateDBClusterRequest() :
     m_performanceInsightsKMSKeyIdHasBeenSet(false),
     m_performanceInsightsRetentionPeriod(0),
     m_performanceInsightsRetentionPeriodHasBeenSet(false),
+    m_enableLimitlessDatabase(false),
+    m_enableLimitlessDatabaseHasBeenSet(false),
     m_serverlessV2ScalingConfigurationHasBeenSet(false),
     m_networkTypeHasBeenSet(false),
     m_dBSystemIdHasBeenSet(false),
@@ -79,6 +82,7 @@ CreateDBClusterRequest::CreateDBClusterRequest() :
     m_masterUserSecretKmsKeyIdHasBeenSet(false),
     m_enableLocalWriteForwarding(false),
     m_enableLocalWriteForwardingHasBeenSet(false),
+    m_cACertificateIdentifierHasBeenSet(false),
     m_sourceRegionHasBeenSet(false)
 {
 }
@@ -240,6 +244,11 @@ Aws::String CreateDBClusterRequest::SerializePayload() const
     m_scalingConfiguration.OutputToStream(ss, "ScalingConfiguration");
   }
 
+  if(m_rdsCustomClusterConfigurationHasBeenSet)
+  {
+    m_rdsCustomClusterConfiguration.OutputToStream(ss, "RdsCustomClusterConfiguration");
+  }
+
   if(m_deletionProtectionHasBeenSet)
   {
     ss << "DeletionProtection=" << std::boolalpha << m_deletionProtection << "&";
@@ -330,6 +339,11 @@ Aws::String CreateDBClusterRequest::SerializePayload() const
     ss << "PerformanceInsightsRetentionPeriod=" << m_performanceInsightsRetentionPeriod << "&";
   }
 
+  if(m_enableLimitlessDatabaseHasBeenSet)
+  {
+    ss << "EnableLimitlessDatabase=" << std::boolalpha << m_enableLimitlessDatabase << "&";
+  }
+
   if(m_serverlessV2ScalingConfigurationHasBeenSet)
   {
     m_serverlessV2ScalingConfiguration.OutputToStream(ss, "ServerlessV2ScalingConfiguration");
@@ -358,6 +372,11 @@ Aws::String CreateDBClusterRequest::SerializePayload() const
   if(m_enableLocalWriteForwardingHasBeenSet)
   {
     ss << "EnableLocalWriteForwarding=" << std::boolalpha << m_enableLocalWriteForwarding << "&";
+  }
+
+  if(m_cACertificateIdentifierHasBeenSet)
+  {
+    ss << "CACertificateIdentifier=" << StringUtils::URLEncode(m_cACertificateIdentifier.c_str()) << "&";
   }
 
   ss << "Version=2014-10-31";

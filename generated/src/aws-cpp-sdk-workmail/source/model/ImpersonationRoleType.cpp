@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ImpersonationRoleType::NOT_SET:
+            return {};
           case ImpersonationRoleType::FULL_ACCESS:
             return "FULL_ACCESS";
           case ImpersonationRoleType::READ_ONLY:

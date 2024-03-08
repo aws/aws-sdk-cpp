@@ -84,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReportGroupTrendFieldType::NOT_SET:
+            return {};
           case ReportGroupTrendFieldType::PASS_RATE:
             return "PASS_RATE";
           case ReportGroupTrendFieldType::DURATION:

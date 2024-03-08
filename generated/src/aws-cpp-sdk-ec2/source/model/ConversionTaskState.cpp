@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ConversionTaskState::NOT_SET:
+            return {};
           case ConversionTaskState::active:
             return "active";
           case ConversionTaskState::cancelling:

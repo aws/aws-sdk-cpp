@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Capability::NOT_SET:
+            return {};
           case Capability::Voice:
             return "Voice";
           case Capability::SMS:

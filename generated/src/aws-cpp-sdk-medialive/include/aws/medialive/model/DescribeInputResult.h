@@ -213,7 +213,6 @@ SINGLE_PIPELINE - You can
      * connect only one source to this input. If the ChannelClass is also 
      * SINGLE_PIPELINE, this value is valid. If the ChannelClass is STANDARD, this
      * value is not valid because the channel requires two sources in the input.
-
      */
     inline const InputClass& GetInputClass() const{ return m_inputClass; }
 
@@ -226,7 +225,6 @@ SINGLE_PIPELINE - You can
      * connect only one source to this input. If the ChannelClass is also 
      * SINGLE_PIPELINE, this value is valid. If the ChannelClass is STANDARD, this
      * value is not valid because the channel requires two sources in the input.
-
      */
     inline void SetInputClass(const InputClass& value) { m_inputClass = value; }
 
@@ -239,7 +237,6 @@ SINGLE_PIPELINE - You can
      * connect only one source to this input. If the ChannelClass is also 
      * SINGLE_PIPELINE, this value is valid. If the ChannelClass is STANDARD, this
      * value is not valid because the channel requires two sources in the input.
-
      */
     inline void SetInputClass(InputClass&& value) { m_inputClass = std::move(value); }
 
@@ -252,7 +249,6 @@ SINGLE_PIPELINE - You can
      * connect only one source to this input. If the ChannelClass is also 
      * SINGLE_PIPELINE, this value is valid. If the ChannelClass is STANDARD, this
      * value is not valid because the channel requires two sources in the input.
-
      */
     inline DescribeInputResult& WithInputClass(const InputClass& value) { SetInputClass(value); return *this;}
 
@@ -265,7 +261,6 @@ SINGLE_PIPELINE - You can
      * connect only one source to this input. If the ChannelClass is also 
      * SINGLE_PIPELINE, this value is valid. If the ChannelClass is STANDARD, this
      * value is not valid because the channel requires two sources in the input.
-
      */
     inline DescribeInputResult& WithInputClass(InputClass&& value) { SetInputClass(std::move(value)); return *this;}
 
@@ -352,7 +347,6 @@ SINGLE_PIPELINE - You can
      * URL's dynamically changes
 during input switch actions. Presently, this
      * functionality only works with MP4_FILE and TS_FILE inputs.
-
      */
     inline const InputSourceType& GetInputSourceType() const{ return m_inputSourceType; }
 
@@ -361,7 +355,6 @@ during input switch actions. Presently, this
      * URL's dynamically changes
 during input switch actions. Presently, this
      * functionality only works with MP4_FILE and TS_FILE inputs.
-
      */
     inline void SetInputSourceType(const InputSourceType& value) { m_inputSourceType = value; }
 
@@ -370,7 +363,6 @@ during input switch actions. Presently, this
      * URL's dynamically changes
 during input switch actions. Presently, this
      * functionality only works with MP4_FILE and TS_FILE inputs.
-
      */
     inline void SetInputSourceType(InputSourceType&& value) { m_inputSourceType = std::move(value); }
 
@@ -379,7 +371,6 @@ during input switch actions. Presently, this
      * URL's dynamically changes
 during input switch actions. Presently, this
      * functionality only works with MP4_FILE and TS_FILE inputs.
-
      */
     inline DescribeInputResult& WithInputSourceType(const InputSourceType& value) { SetInputSourceType(value); return *this;}
 
@@ -388,7 +379,6 @@ during input switch actions. Presently, this
      * URL's dynamically changes
 during input switch actions. Presently, this
      * functionality only works with MP4_FILE and TS_FILE inputs.
-
      */
     inline DescribeInputResult& WithInputSourceType(InputSourceType&& value) { SetInputSourceType(std::move(value)); return *this;}
 

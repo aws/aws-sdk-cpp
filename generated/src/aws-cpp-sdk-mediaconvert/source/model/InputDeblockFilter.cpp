@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InputDeblockFilter::NOT_SET:
+            return {};
           case InputDeblockFilter::ENABLED:
             return "ENABLED";
           case InputDeblockFilter::DISABLED:

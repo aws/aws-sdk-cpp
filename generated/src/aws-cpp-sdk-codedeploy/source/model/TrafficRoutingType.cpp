@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TrafficRoutingType::NOT_SET:
+            return {};
           case TrafficRoutingType::TimeBasedCanary:
             return "TimeBasedCanary";
           case TrafficRoutingType::TimeBasedLinear:

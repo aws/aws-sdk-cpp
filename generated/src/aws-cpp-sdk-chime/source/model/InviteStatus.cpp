@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InviteStatus::NOT_SET:
+            return {};
           case InviteStatus::Pending:
             return "Pending";
           case InviteStatus::Accepted:

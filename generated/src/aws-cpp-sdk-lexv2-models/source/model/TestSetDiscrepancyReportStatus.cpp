@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TestSetDiscrepancyReportStatus::NOT_SET:
+            return {};
           case TestSetDiscrepancyReportStatus::InProgress:
             return "InProgress";
           case TestSetDiscrepancyReportStatus::Completed:

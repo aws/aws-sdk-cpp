@@ -16,6 +16,7 @@
 #include <aws/lambda/model/ImageConfig.h>
 #include <aws/lambda/model/EphemeralStorage.h>
 #include <aws/lambda/model/SnapStart.h>
+#include <aws/lambda/model/LoggingConfig.h>
 #include <aws/lambda/model/FileSystemConfig.h>
 #include <utility>
 
@@ -43,9 +44,9 @@ namespace Model
 
 
     /**
-     * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
-     * </p> <ul> <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li>
-     * <li> <p> <b>Function ARN</b> –
+     * <p>The name or ARN of the Lambda function.</p> <p class="title"> <b>Name
+     * formats</b> </p> <ul> <li> <p> <b>Function name</b> –
+     * <code>my-function</code>.</p> </li> <li> <p> <b>Function ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
      * </li> <li> <p> <b>Partial ARN</b> –
      * <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>The length
@@ -55,9 +56,9 @@ namespace Model
     inline const Aws::String& GetFunctionName() const{ return m_functionName; }
 
     /**
-     * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
-     * </p> <ul> <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li>
-     * <li> <p> <b>Function ARN</b> –
+     * <p>The name or ARN of the Lambda function.</p> <p class="title"> <b>Name
+     * formats</b> </p> <ul> <li> <p> <b>Function name</b> –
+     * <code>my-function</code>.</p> </li> <li> <p> <b>Function ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
      * </li> <li> <p> <b>Partial ARN</b> –
      * <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>The length
@@ -67,9 +68,9 @@ namespace Model
     inline bool FunctionNameHasBeenSet() const { return m_functionNameHasBeenSet; }
 
     /**
-     * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
-     * </p> <ul> <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li>
-     * <li> <p> <b>Function ARN</b> –
+     * <p>The name or ARN of the Lambda function.</p> <p class="title"> <b>Name
+     * formats</b> </p> <ul> <li> <p> <b>Function name</b> –
+     * <code>my-function</code>.</p> </li> <li> <p> <b>Function ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
      * </li> <li> <p> <b>Partial ARN</b> –
      * <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>The length
@@ -79,9 +80,9 @@ namespace Model
     inline void SetFunctionName(const Aws::String& value) { m_functionNameHasBeenSet = true; m_functionName = value; }
 
     /**
-     * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
-     * </p> <ul> <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li>
-     * <li> <p> <b>Function ARN</b> –
+     * <p>The name or ARN of the Lambda function.</p> <p class="title"> <b>Name
+     * formats</b> </p> <ul> <li> <p> <b>Function name</b> –
+     * <code>my-function</code>.</p> </li> <li> <p> <b>Function ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
      * </li> <li> <p> <b>Partial ARN</b> –
      * <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>The length
@@ -91,9 +92,9 @@ namespace Model
     inline void SetFunctionName(Aws::String&& value) { m_functionNameHasBeenSet = true; m_functionName = std::move(value); }
 
     /**
-     * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
-     * </p> <ul> <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li>
-     * <li> <p> <b>Function ARN</b> –
+     * <p>The name or ARN of the Lambda function.</p> <p class="title"> <b>Name
+     * formats</b> </p> <ul> <li> <p> <b>Function name</b> –
+     * <code>my-function</code>.</p> </li> <li> <p> <b>Function ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
      * </li> <li> <p> <b>Partial ARN</b> –
      * <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>The length
@@ -103,9 +104,9 @@ namespace Model
     inline void SetFunctionName(const char* value) { m_functionNameHasBeenSet = true; m_functionName.assign(value); }
 
     /**
-     * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
-     * </p> <ul> <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li>
-     * <li> <p> <b>Function ARN</b> –
+     * <p>The name or ARN of the Lambda function.</p> <p class="title"> <b>Name
+     * formats</b> </p> <ul> <li> <p> <b>Function name</b> –
+     * <code>my-function</code>.</p> </li> <li> <p> <b>Function ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
      * </li> <li> <p> <b>Partial ARN</b> –
      * <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>The length
@@ -115,9 +116,9 @@ namespace Model
     inline UpdateFunctionConfigurationRequest& WithFunctionName(const Aws::String& value) { SetFunctionName(value); return *this;}
 
     /**
-     * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
-     * </p> <ul> <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li>
-     * <li> <p> <b>Function ARN</b> –
+     * <p>The name or ARN of the Lambda function.</p> <p class="title"> <b>Name
+     * formats</b> </p> <ul> <li> <p> <b>Function name</b> –
+     * <code>my-function</code>.</p> </li> <li> <p> <b>Function ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
      * </li> <li> <p> <b>Partial ARN</b> –
      * <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>The length
@@ -127,9 +128,9 @@ namespace Model
     inline UpdateFunctionConfigurationRequest& WithFunctionName(Aws::String&& value) { SetFunctionName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
-     * </p> <ul> <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li>
-     * <li> <p> <b>Function ARN</b> –
+     * <p>The name or ARN of the Lambda function.</p> <p class="title"> <b>Name
+     * formats</b> </p> <ul> <li> <p> <b>Function name</b> –
+     * <code>my-function</code>.</p> </li> <li> <p> <b>Function ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p>
      * </li> <li> <p> <b>Partial ARN</b> –
      * <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>The length
@@ -976,37 +977,55 @@ namespace Model
 
     /**
      * <p>The size of the function's <code>/tmp</code> directory in MB. The default
-     * value is 512, but can be any whole number between 512 and 10,240 MB.</p>
+     * value is 512, but can be any whole number between 512 and 10,240 MB. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-ephemeral-storage">Configuring
+     * ephemeral storage (console)</a>.</p>
      */
     inline const EphemeralStorage& GetEphemeralStorage() const{ return m_ephemeralStorage; }
 
     /**
      * <p>The size of the function's <code>/tmp</code> directory in MB. The default
-     * value is 512, but can be any whole number between 512 and 10,240 MB.</p>
+     * value is 512, but can be any whole number between 512 and 10,240 MB. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-ephemeral-storage">Configuring
+     * ephemeral storage (console)</a>.</p>
      */
     inline bool EphemeralStorageHasBeenSet() const { return m_ephemeralStorageHasBeenSet; }
 
     /**
      * <p>The size of the function's <code>/tmp</code> directory in MB. The default
-     * value is 512, but can be any whole number between 512 and 10,240 MB.</p>
+     * value is 512, but can be any whole number between 512 and 10,240 MB. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-ephemeral-storage">Configuring
+     * ephemeral storage (console)</a>.</p>
      */
     inline void SetEphemeralStorage(const EphemeralStorage& value) { m_ephemeralStorageHasBeenSet = true; m_ephemeralStorage = value; }
 
     /**
      * <p>The size of the function's <code>/tmp</code> directory in MB. The default
-     * value is 512, but can be any whole number between 512 and 10,240 MB.</p>
+     * value is 512, but can be any whole number between 512 and 10,240 MB. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-ephemeral-storage">Configuring
+     * ephemeral storage (console)</a>.</p>
      */
     inline void SetEphemeralStorage(EphemeralStorage&& value) { m_ephemeralStorageHasBeenSet = true; m_ephemeralStorage = std::move(value); }
 
     /**
      * <p>The size of the function's <code>/tmp</code> directory in MB. The default
-     * value is 512, but can be any whole number between 512 and 10,240 MB.</p>
+     * value is 512, but can be any whole number between 512 and 10,240 MB. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-ephemeral-storage">Configuring
+     * ephemeral storage (console)</a>.</p>
      */
     inline UpdateFunctionConfigurationRequest& WithEphemeralStorage(const EphemeralStorage& value) { SetEphemeralStorage(value); return *this;}
 
     /**
      * <p>The size of the function's <code>/tmp</code> directory in MB. The default
-     * value is 512, but can be any whole number between 512 and 10,240 MB.</p>
+     * value is 512, but can be any whole number between 512 and 10,240 MB. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-ephemeral-storage">Configuring
+     * ephemeral storage (console)</a>.</p>
      */
     inline UpdateFunctionConfigurationRequest& WithEphemeralStorage(EphemeralStorage&& value) { SetEphemeralStorage(std::move(value)); return *this;}
 
@@ -1052,6 +1071,37 @@ namespace Model
      * setting.</p>
      */
     inline UpdateFunctionConfigurationRequest& WithSnapStart(SnapStart&& value) { SetSnapStart(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The function's Amazon CloudWatch Logs configuration settings.</p>
+     */
+    inline const LoggingConfig& GetLoggingConfig() const{ return m_loggingConfig; }
+
+    /**
+     * <p>The function's Amazon CloudWatch Logs configuration settings.</p>
+     */
+    inline bool LoggingConfigHasBeenSet() const { return m_loggingConfigHasBeenSet; }
+
+    /**
+     * <p>The function's Amazon CloudWatch Logs configuration settings.</p>
+     */
+    inline void SetLoggingConfig(const LoggingConfig& value) { m_loggingConfigHasBeenSet = true; m_loggingConfig = value; }
+
+    /**
+     * <p>The function's Amazon CloudWatch Logs configuration settings.</p>
+     */
+    inline void SetLoggingConfig(LoggingConfig&& value) { m_loggingConfigHasBeenSet = true; m_loggingConfig = std::move(value); }
+
+    /**
+     * <p>The function's Amazon CloudWatch Logs configuration settings.</p>
+     */
+    inline UpdateFunctionConfigurationRequest& WithLoggingConfig(const LoggingConfig& value) { SetLoggingConfig(value); return *this;}
+
+    /**
+     * <p>The function's Amazon CloudWatch Logs configuration settings.</p>
+     */
+    inline UpdateFunctionConfigurationRequest& WithLoggingConfig(LoggingConfig&& value) { SetLoggingConfig(std::move(value)); return *this;}
 
   private:
 
@@ -1108,6 +1158,9 @@ namespace Model
 
     SnapStart m_snapStart;
     bool m_snapStartHasBeenSet = false;
+
+    LoggingConfig m_loggingConfig;
+    bool m_loggingConfigHasBeenSet = false;
   };
 
 } // namespace Model

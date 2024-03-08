@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InvalidParameterProblem::NOT_SET:
+            return {};
           case InvalidParameterProblem::Corrupted:
             return "Corrupted";
           case InvalidParameterProblem::Expired:

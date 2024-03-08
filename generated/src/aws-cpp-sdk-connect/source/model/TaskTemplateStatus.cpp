@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TaskTemplateStatus::NOT_SET:
+            return {};
           case TaskTemplateStatus::ACTIVE:
             return "ACTIVE";
           case TaskTemplateStatus::INACTIVE:

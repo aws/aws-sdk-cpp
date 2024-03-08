@@ -109,6 +109,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CaptionSourceType::NOT_SET:
+            return {};
           case CaptionSourceType::ANCILLARY:
             return "ANCILLARY";
           case CaptionSourceType::DVB_SUB:

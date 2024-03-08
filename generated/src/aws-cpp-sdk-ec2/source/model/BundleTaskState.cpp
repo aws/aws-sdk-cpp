@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BundleTaskState::NOT_SET:
+            return {};
           case BundleTaskState::pending:
             return "pending";
           case BundleTaskState::waiting_for_shutdown:

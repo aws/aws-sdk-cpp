@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ActivityStatus::NOT_SET:
+            return {};
           case ActivityStatus::error:
             return "error";
           case ActivityStatus::pending_fulfillment:

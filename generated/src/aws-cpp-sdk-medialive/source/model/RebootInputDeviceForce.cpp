@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RebootInputDeviceForce::NOT_SET:
+            return {};
           case RebootInputDeviceForce::NO:
             return "NO";
           case RebootInputDeviceForce::YES:

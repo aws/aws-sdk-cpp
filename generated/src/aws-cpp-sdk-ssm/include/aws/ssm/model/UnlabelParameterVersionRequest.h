@@ -37,49 +37,57 @@ namespace Model
 
     /**
      * <p>The name of the parameter from which you want to delete one or more
-     * labels.</p>
+     * labels.</p>  <p>You can't enter the Amazon Resource Name (ARN) for a
+     * parameter, only the parameter name itself.</p> 
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
      * <p>The name of the parameter from which you want to delete one or more
-     * labels.</p>
+     * labels.</p>  <p>You can't enter the Amazon Resource Name (ARN) for a
+     * parameter, only the parameter name itself.</p> 
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name of the parameter from which you want to delete one or more
-     * labels.</p>
+     * labels.</p>  <p>You can't enter the Amazon Resource Name (ARN) for a
+     * parameter, only the parameter name itself.</p> 
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
      * <p>The name of the parameter from which you want to delete one or more
-     * labels.</p>
+     * labels.</p>  <p>You can't enter the Amazon Resource Name (ARN) for a
+     * parameter, only the parameter name itself.</p> 
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the parameter from which you want to delete one or more
-     * labels.</p>
+     * labels.</p>  <p>You can't enter the Amazon Resource Name (ARN) for a
+     * parameter, only the parameter name itself.</p> 
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
      * <p>The name of the parameter from which you want to delete one or more
-     * labels.</p>
+     * labels.</p>  <p>You can't enter the Amazon Resource Name (ARN) for a
+     * parameter, only the parameter name itself.</p> 
      */
     inline UnlabelParameterVersionRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
      * <p>The name of the parameter from which you want to delete one or more
-     * labels.</p>
+     * labels.</p>  <p>You can't enter the Amazon Resource Name (ARN) for a
+     * parameter, only the parameter name itself.</p> 
      */
     inline UnlabelParameterVersionRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the parameter from which you want to delete one or more
-     * labels.</p>
+     * labels.</p>  <p>You can't enter the Amazon Resource Name (ARN) for a
+     * parameter, only the parameter name itself.</p> 
      */
     inline UnlabelParameterVersionRequest& WithName(const char* value) { SetName(value); return *this;}
 

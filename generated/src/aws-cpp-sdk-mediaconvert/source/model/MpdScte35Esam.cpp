@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MpdScte35Esam::NOT_SET:
+            return {};
           case MpdScte35Esam::INSERT:
             return "INSERT";
           case MpdScte35Esam::NONE:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RenderRecommendationType::NOT_SET:
+            return {};
           case RenderRecommendationType::Alarm:
             return "Alarm";
           case RenderRecommendationType::Sop:

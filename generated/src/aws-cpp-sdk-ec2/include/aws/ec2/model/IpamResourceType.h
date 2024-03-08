@@ -20,7 +20,8 @@ namespace Model
     subnet,
     eip,
     public_ipv4_pool,
-    ipv6_pool
+    ipv6_pool,
+    eni
   };
 
 namespace IpamResourceTypeMapper

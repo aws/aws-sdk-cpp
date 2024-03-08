@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ChoiceReason::NOT_SET:
+            return {};
           case ChoiceReason::OUT_OF_SCOPE:
             return "OUT_OF_SCOPE";
           case ChoiceReason::BUSINESS_PRIORITIES:

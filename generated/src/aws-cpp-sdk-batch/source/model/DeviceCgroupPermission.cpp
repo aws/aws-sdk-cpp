@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DeviceCgroupPermission::NOT_SET:
+            return {};
           case DeviceCgroupPermission::READ:
             return "READ";
           case DeviceCgroupPermission::WRITE:

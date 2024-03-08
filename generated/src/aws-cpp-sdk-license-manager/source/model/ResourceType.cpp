@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResourceType::NOT_SET:
+            return {};
           case ResourceType::EC2_INSTANCE:
             return "EC2_INSTANCE";
           case ResourceType::EC2_HOST:

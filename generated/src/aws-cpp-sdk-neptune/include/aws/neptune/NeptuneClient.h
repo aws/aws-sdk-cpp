@@ -40,8 +40,8 @@ namespace Neptune
   {
     public:
       typedef Aws::Client::AWSXMLClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef NeptuneClientConfiguration ClientConfigurationType;
       typedef NeptuneEndpointProvider EndpointProviderType;
@@ -51,14 +51,14 @@ namespace Neptune
         * is not specified, it will be initialized to default values.
         */
         NeptuneClient(const Aws::Neptune::NeptuneClientConfiguration& clientConfiguration = Aws::Neptune::NeptuneClientConfiguration(),
-                      std::shared_ptr<NeptuneEndpointProviderBase> endpointProvider = Aws::MakeShared<NeptuneEndpointProvider>(ALLOCATION_TAG));
+                      std::shared_ptr<NeptuneEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         NeptuneClient(const Aws::Auth::AWSCredentials& credentials,
-                      std::shared_ptr<NeptuneEndpointProviderBase> endpointProvider = Aws::MakeShared<NeptuneEndpointProvider>(ALLOCATION_TAG),
+                      std::shared_ptr<NeptuneEndpointProviderBase> endpointProvider = nullptr,
                       const Aws::Neptune::NeptuneClientConfiguration& clientConfiguration = Aws::Neptune::NeptuneClientConfiguration());
 
        /**
@@ -66,7 +66,7 @@ namespace Neptune
         * the default http client factory will be used
         */
         NeptuneClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                      std::shared_ptr<NeptuneEndpointProviderBase> endpointProvider = Aws::MakeShared<NeptuneEndpointProvider>(ALLOCATION_TAG),
+                      std::shared_ptr<NeptuneEndpointProviderBase> endpointProvider = nullptr,
                       const Aws::Neptune::NeptuneClientConfiguration& clientConfiguration = Aws::Neptune::NeptuneClientConfiguration());
 
 

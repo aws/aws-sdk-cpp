@@ -51,6 +51,10 @@ public class Operation {
     private boolean requiresServiceNameOverride;
     private String serviceNameOverride;
 
+    // For S3 Express
+    private boolean shouldUsePropertyBag;
+    private boolean shouldSkipChecksum;
+
     // For Host Prefix Injection.
     private boolean hasEndpointTrait;
     private Endpoint endpoint;

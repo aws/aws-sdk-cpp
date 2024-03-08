@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LakeFormationDataPermissionType::NOT_SET:
+            return {};
           case LakeFormationDataPermissionType::LFTagPolicy:
             return "LFTagPolicy";
           default:

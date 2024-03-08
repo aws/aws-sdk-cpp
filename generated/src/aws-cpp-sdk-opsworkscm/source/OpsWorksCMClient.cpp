@@ -54,8 +54,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* OpsWorksCMClient::SERVICE_NAME = "opsworks-cm";
-const char* OpsWorksCMClient::ALLOCATION_TAG = "OpsWorksCMClient";
+namespace Aws
+{
+  namespace OpsWorksCM
+  {
+    const char SERVICE_NAME[] = "opsworks-cm";
+    const char ALLOCATION_TAG[] = "OpsWorksCMClient";
+  }
+}
+const char* OpsWorksCMClient::GetServiceName() {return SERVICE_NAME;}
+const char* OpsWorksCMClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 OpsWorksCMClient::OpsWorksCMClient(const OpsWorksCM::OpsWorksCMClientConfiguration& clientConfiguration,
                                    std::shared_ptr<OpsWorksCMEndpointProviderBase> endpointProvider) :
@@ -67,7 +75,7 @@ OpsWorksCMClient::OpsWorksCMClient(const OpsWorksCM::OpsWorksCMClientConfigurati
             Aws::MakeShared<OpsWorksCMErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<OpsWorksCMEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -83,7 +91,7 @@ OpsWorksCMClient::OpsWorksCMClient(const AWSCredentials& credentials,
             Aws::MakeShared<OpsWorksCMErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<OpsWorksCMEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -99,7 +107,7 @@ OpsWorksCMClient::OpsWorksCMClient(const std::shared_ptr<AWSCredentialsProvider>
             Aws::MakeShared<OpsWorksCMErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<OpsWorksCMEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

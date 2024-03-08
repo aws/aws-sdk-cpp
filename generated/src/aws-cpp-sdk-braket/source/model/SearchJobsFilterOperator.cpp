@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SearchJobsFilterOperator::NOT_SET:
+            return {};
           case SearchJobsFilterOperator::LT:
             return "LT";
           case SearchJobsFilterOperator::LTE:

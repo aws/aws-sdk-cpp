@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DecimalReturnType::NOT_SET:
+            return {};
           case DecimalReturnType::STRING:
             return "STRING";
           case DecimalReturnType::DOUBLE_OR_LONG:

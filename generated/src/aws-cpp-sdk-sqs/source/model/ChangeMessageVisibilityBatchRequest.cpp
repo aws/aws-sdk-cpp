@@ -4,10 +4,12 @@
  */
 
 #include <aws/sqs/model/ChangeMessageVisibilityBatchRequest.h>
-#include <aws/core/utils/StringUtils.h>
-#include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+
+#include <utility>
 
 using namespace Aws::SQS::Model;
+using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 ChangeMessageVisibilityBatchRequest::ChangeMessageVisibilityBatchRequest() : 
@@ -18,29 +20,36 @@ ChangeMessageVisibilityBatchRequest::ChangeMessageVisibilityBatchRequest() :
 
 Aws::String ChangeMessageVisibilityBatchRequest::SerializePayload() const
 {
-  Aws::StringStream ss;
-  ss << "Action=ChangeMessageVisibilityBatch&";
+  JsonValue payload;
+
   if(m_queueUrlHasBeenSet)
   {
-    ss << "QueueUrl=" << StringUtils::URLEncode(m_queueUrl.c_str()) << "&";
+   payload.WithString("QueueUrl", m_queueUrl);
+
   }
 
   if(m_entriesHasBeenSet)
   {
-    unsigned entriesCount = 1;
-    for(auto& item : m_entries)
-    {
-      item.OutputToStream(ss, "ChangeMessageVisibilityBatchRequestEntry.", entriesCount, "");
-      entriesCount++;
-    }
+   Aws::Utils::Array<JsonValue> entriesJsonList(m_entries.size());
+   for(unsigned entriesIndex = 0; entriesIndex < entriesJsonList.GetLength(); ++entriesIndex)
+   {
+     entriesJsonList[entriesIndex].AsObject(m_entries[entriesIndex].Jsonize());
+   }
+   payload.WithArray("Entries", std::move(entriesJsonList));
+
   }
 
-  ss << "Version=2012-11-05";
-  return ss.str();
+  return payload.View().WriteReadable();
 }
 
-
-void  ChangeMessageVisibilityBatchRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+Aws::Http::HeaderValueCollection ChangeMessageVisibilityBatchRequest::GetRequestSpecificHeaders() const
 {
-  uri.SetQueryString(SerializePayload());
+  Aws::Http::HeaderValueCollection headers;
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AmazonSQS.ChangeMessageVisibilityBatch"));
+  return headers;
+
 }
+
+
+
+

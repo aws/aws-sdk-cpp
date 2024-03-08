@@ -99,6 +99,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ColumnDataType::NOT_SET:
+            return {};
           case ColumnDataType::STRING:
             return "STRING";
           case ColumnDataType::CHAR_:

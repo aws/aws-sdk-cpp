@@ -28,7 +28,7 @@ namespace Model
 {
 
   /**
-   * <p> <b>[All policy types]</b> Detailed information about a snapshot, AMI, or
+   * <p> <b>[Custom policies only]</b> Detailed information about a snapshot, AMI, or
    * event-based lifecycle policy.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/LifecyclePolicy">AWS
    * API Reference</a></p>
@@ -444,6 +444,39 @@ namespace Model
      */
     inline LifecyclePolicy& WithPolicyArn(const char* value) { SetPolicyArn(value); return *this;}
 
+
+    /**
+     * <p> <b>[Default policies only]</b> The type of default policy. Values
+     * include:</p> <ul> <li> <p> <code>VOLUME</code> - Default policy for EBS
+     * snapshots</p> </li> <li> <p> <code>INSTANCE</code> - Default policy for
+     * EBS-backed AMIs</p> </li> </ul>
+     */
+    inline bool GetDefaultPolicy() const{ return m_defaultPolicy; }
+
+    /**
+     * <p> <b>[Default policies only]</b> The type of default policy. Values
+     * include:</p> <ul> <li> <p> <code>VOLUME</code> - Default policy for EBS
+     * snapshots</p> </li> <li> <p> <code>INSTANCE</code> - Default policy for
+     * EBS-backed AMIs</p> </li> </ul>
+     */
+    inline bool DefaultPolicyHasBeenSet() const { return m_defaultPolicyHasBeenSet; }
+
+    /**
+     * <p> <b>[Default policies only]</b> The type of default policy. Values
+     * include:</p> <ul> <li> <p> <code>VOLUME</code> - Default policy for EBS
+     * snapshots</p> </li> <li> <p> <code>INSTANCE</code> - Default policy for
+     * EBS-backed AMIs</p> </li> </ul>
+     */
+    inline void SetDefaultPolicy(bool value) { m_defaultPolicyHasBeenSet = true; m_defaultPolicy = value; }
+
+    /**
+     * <p> <b>[Default policies only]</b> The type of default policy. Values
+     * include:</p> <ul> <li> <p> <code>VOLUME</code> - Default policy for EBS
+     * snapshots</p> </li> <li> <p> <code>INSTANCE</code> - Default policy for
+     * EBS-backed AMIs</p> </li> </ul>
+     */
+    inline LifecyclePolicy& WithDefaultPolicy(bool value) { SetDefaultPolicy(value); return *this;}
+
   private:
 
     Aws::String m_policyId;
@@ -475,6 +508,9 @@ namespace Model
 
     Aws::String m_policyArn;
     bool m_policyArnHasBeenSet = false;
+
+    bool m_defaultPolicy;
+    bool m_defaultPolicyHasBeenSet = false;
   };
 
 } // namespace Model

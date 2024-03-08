@@ -27,8 +27,8 @@ namespace DynamoDBStreams
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef DynamoDBStreamsClientConfiguration ClientConfigurationType;
       typedef DynamoDBStreamsEndpointProvider EndpointProviderType;
@@ -38,14 +38,14 @@ namespace DynamoDBStreams
         * is not specified, it will be initialized to default values.
         */
         DynamoDBStreamsClient(const Aws::DynamoDBStreams::DynamoDBStreamsClientConfiguration& clientConfiguration = Aws::DynamoDBStreams::DynamoDBStreamsClientConfiguration(),
-                              std::shared_ptr<DynamoDBStreamsEndpointProviderBase> endpointProvider = Aws::MakeShared<DynamoDBStreamsEndpointProvider>(ALLOCATION_TAG));
+                              std::shared_ptr<DynamoDBStreamsEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         DynamoDBStreamsClient(const Aws::Auth::AWSCredentials& credentials,
-                              std::shared_ptr<DynamoDBStreamsEndpointProviderBase> endpointProvider = Aws::MakeShared<DynamoDBStreamsEndpointProvider>(ALLOCATION_TAG),
+                              std::shared_ptr<DynamoDBStreamsEndpointProviderBase> endpointProvider = nullptr,
                               const Aws::DynamoDBStreams::DynamoDBStreamsClientConfiguration& clientConfiguration = Aws::DynamoDBStreams::DynamoDBStreamsClientConfiguration());
 
        /**
@@ -53,7 +53,7 @@ namespace DynamoDBStreams
         * the default http client factory will be used
         */
         DynamoDBStreamsClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                              std::shared_ptr<DynamoDBStreamsEndpointProviderBase> endpointProvider = Aws::MakeShared<DynamoDBStreamsEndpointProvider>(ALLOCATION_TAG),
+                              std::shared_ptr<DynamoDBStreamsEndpointProviderBase> endpointProvider = nullptr,
                               const Aws::DynamoDBStreams::DynamoDBStreamsClientConfiguration& clientConfiguration = Aws::DynamoDBStreams::DynamoDBStreamsClientConfiguration());
 
 

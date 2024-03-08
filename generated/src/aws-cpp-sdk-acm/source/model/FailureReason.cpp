@@ -124,6 +124,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FailureReason::NOT_SET:
+            return {};
           case FailureReason::NO_AVAILABLE_CONTACTS:
             return "NO_AVAILABLE_CONTACTS";
           case FailureReason::ADDITIONAL_VERIFICATION_REQUIRED:

@@ -51,8 +51,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* ElasticTranscoderClient::SERVICE_NAME = "elastictranscoder";
-const char* ElasticTranscoderClient::ALLOCATION_TAG = "ElasticTranscoderClient";
+namespace Aws
+{
+  namespace ElasticTranscoder
+  {
+    const char SERVICE_NAME[] = "elastictranscoder";
+    const char ALLOCATION_TAG[] = "ElasticTranscoderClient";
+  }
+}
+const char* ElasticTranscoderClient::GetServiceName() {return SERVICE_NAME;}
+const char* ElasticTranscoderClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 ElasticTranscoderClient::ElasticTranscoderClient(const ElasticTranscoder::ElasticTranscoderClientConfiguration& clientConfiguration,
                                                  std::shared_ptr<ElasticTranscoderEndpointProviderBase> endpointProvider) :
@@ -64,7 +72,7 @@ ElasticTranscoderClient::ElasticTranscoderClient(const ElasticTranscoder::Elasti
             Aws::MakeShared<ElasticTranscoderErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ElasticTranscoderEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -80,7 +88,7 @@ ElasticTranscoderClient::ElasticTranscoderClient(const AWSCredentials& credentia
             Aws::MakeShared<ElasticTranscoderErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ElasticTranscoderEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -96,7 +104,7 @@ ElasticTranscoderClient::ElasticTranscoderClient(const std::shared_ptr<AWSCreden
             Aws::MakeShared<ElasticTranscoderErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ElasticTranscoderEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

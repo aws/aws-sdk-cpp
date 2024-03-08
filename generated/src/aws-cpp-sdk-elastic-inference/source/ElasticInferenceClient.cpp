@@ -41,8 +41,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* ElasticInferenceClient::SERVICE_NAME = "elastic-inference";
-const char* ElasticInferenceClient::ALLOCATION_TAG = "ElasticInferenceClient";
+namespace Aws
+{
+  namespace ElasticInference
+  {
+    const char SERVICE_NAME[] = "elastic-inference";
+    const char ALLOCATION_TAG[] = "ElasticInferenceClient";
+  }
+}
+const char* ElasticInferenceClient::GetServiceName() {return SERVICE_NAME;}
+const char* ElasticInferenceClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 ElasticInferenceClient::ElasticInferenceClient(const ElasticInference::ElasticInferenceClientConfiguration& clientConfiguration,
                                                std::shared_ptr<ElasticInferenceEndpointProviderBase> endpointProvider) :
@@ -54,7 +62,7 @@ ElasticInferenceClient::ElasticInferenceClient(const ElasticInference::ElasticIn
             Aws::MakeShared<ElasticInferenceErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ElasticInferenceEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -70,7 +78,7 @@ ElasticInferenceClient::ElasticInferenceClient(const AWSCredentials& credentials
             Aws::MakeShared<ElasticInferenceErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ElasticInferenceEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -86,7 +94,7 @@ ElasticInferenceClient::ElasticInferenceClient(const std::shared_ptr<AWSCredenti
             Aws::MakeShared<ElasticInferenceErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ElasticInferenceEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

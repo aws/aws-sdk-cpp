@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MarketplaceSubscriptionOnboardingStatus::NOT_SET:
+            return {};
           case MarketplaceSubscriptionOnboardingStatus::NO_SUBSCRIPTION:
             return "NO_SUBSCRIPTION";
           case MarketplaceSubscriptionOnboardingStatus::NOT_COMPLETE:

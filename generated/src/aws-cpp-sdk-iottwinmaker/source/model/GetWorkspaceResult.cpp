@@ -47,6 +47,15 @@ GetWorkspaceResult& GetWorkspaceResult::operator =(const Aws::AmazonWebServiceRe
 
   }
 
+  if(jsonValue.ValueExists("linkedServices"))
+  {
+    Aws::Utils::Array<JsonView> linkedServicesJsonList = jsonValue.GetArray("linkedServices");
+    for(unsigned linkedServicesIndex = 0; linkedServicesIndex < linkedServicesJsonList.GetLength(); ++linkedServicesIndex)
+    {
+      m_linkedServices.push_back(linkedServicesJsonList[linkedServicesIndex].AsString());
+    }
+  }
+
   if(jsonValue.ValueExists("s3Location"))
   {
     m_s3Location = jsonValue.GetString("s3Location");

@@ -27,6 +27,7 @@ namespace Aws
         static const int FAILED_HASH = HashingUtils::HashString("FAILED");
         static const int ROLLBACK_IN_PROGRESS_HASH = HashingUtils::HashString("ROLLBACK_IN_PROGRESS");
         static const int ROLLBACK_COMPLETED_HASH = HashingUtils::HashString("ROLLBACK_COMPLETED");
+        static const int CANCELLED_HASH = HashingUtils::HashString("CANCELLED");
 
 
         WorkflowExecutionStatus GetWorkflowExecutionStatusForName(const Aws::String& name)
@@ -60,6 +61,10 @@ namespace Aws
           {
             return WorkflowExecutionStatus::ROLLBACK_COMPLETED;
           }
+          else if (hashCode == CANCELLED_HASH)
+          {
+            return WorkflowExecutionStatus::CANCELLED;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -74,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case WorkflowExecutionStatus::NOT_SET:
+            return {};
           case WorkflowExecutionStatus::PENDING:
             return "PENDING";
           case WorkflowExecutionStatus::SKIPPED:
@@ -88,6 +95,8 @@ namespace Aws
             return "ROLLBACK_IN_PROGRESS";
           case WorkflowExecutionStatus::ROLLBACK_COMPLETED:
             return "ROLLBACK_COMPLETED";
+          case WorkflowExecutionStatus::CANCELLED:
+            return "CANCELLED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

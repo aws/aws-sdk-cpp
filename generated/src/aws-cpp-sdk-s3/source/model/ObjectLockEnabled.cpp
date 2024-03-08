@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ObjectLockEnabled::NOT_SET:
+            return {};
           case ObjectLockEnabled::Enabled:
             return "Enabled";
           default:

@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InstanceOnboardingJobFailureCode::NOT_SET:
+            return {};
           case InstanceOnboardingJobFailureCode::EVENT_BRIDGE_ACCESS_DENIED:
             return "EVENT_BRIDGE_ACCESS_DENIED";
           case InstanceOnboardingJobFailureCode::EVENT_BRIDGE_MANAGED_RULE_LIMIT_EXCEEDED:

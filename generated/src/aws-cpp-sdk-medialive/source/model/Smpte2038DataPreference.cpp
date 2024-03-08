@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Smpte2038DataPreference::NOT_SET:
+            return {};
           case Smpte2038DataPreference::IGNORE:
             return "IGNORE";
           case Smpte2038DataPreference::PREFER:

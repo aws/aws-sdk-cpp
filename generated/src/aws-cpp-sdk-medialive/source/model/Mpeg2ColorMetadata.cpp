@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Mpeg2ColorMetadata::NOT_SET:
+            return {};
           case Mpeg2ColorMetadata::IGNORE:
             return "IGNORE";
           case Mpeg2ColorMetadata::INSERT:

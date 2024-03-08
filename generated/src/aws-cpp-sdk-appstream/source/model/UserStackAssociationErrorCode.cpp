@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UserStackAssociationErrorCode::NOT_SET:
+            return {};
           case UserStackAssociationErrorCode::STACK_NOT_FOUND:
             return "STACK_NOT_FOUND";
           case UserStackAssociationErrorCode::USER_NAME_NOT_FOUND:

@@ -91,7 +91,7 @@ namespace Model
      * statements, to transform request components before using them as custom
      * aggregation keys. If you specify one or more transformations to apply, WAF
      * performs all transformations on the specified content, starting from the lowest
-     * priority setting, and then uses the component contents. </p>
+     * priority setting, and then uses the transformed component contents. </p>
      */
     inline const Aws::Vector<TextTransformation>& GetTextTransformations() const{ return m_textTransformations; }
 
@@ -103,7 +103,7 @@ namespace Model
      * statements, to transform request components before using them as custom
      * aggregation keys. If you specify one or more transformations to apply, WAF
      * performs all transformations on the specified content, starting from the lowest
-     * priority setting, and then uses the component contents. </p>
+     * priority setting, and then uses the transformed component contents. </p>
      */
     inline bool TextTransformationsHasBeenSet() const { return m_textTransformationsHasBeenSet; }
 
@@ -115,7 +115,7 @@ namespace Model
      * statements, to transform request components before using them as custom
      * aggregation keys. If you specify one or more transformations to apply, WAF
      * performs all transformations on the specified content, starting from the lowest
-     * priority setting, and then uses the component contents. </p>
+     * priority setting, and then uses the transformed component contents. </p>
      */
     inline void SetTextTransformations(const Aws::Vector<TextTransformation>& value) { m_textTransformationsHasBeenSet = true; m_textTransformations = value; }
 
@@ -127,7 +127,7 @@ namespace Model
      * statements, to transform request components before using them as custom
      * aggregation keys. If you specify one or more transformations to apply, WAF
      * performs all transformations on the specified content, starting from the lowest
-     * priority setting, and then uses the component contents. </p>
+     * priority setting, and then uses the transformed component contents. </p>
      */
     inline void SetTextTransformations(Aws::Vector<TextTransformation>&& value) { m_textTransformationsHasBeenSet = true; m_textTransformations = std::move(value); }
 
@@ -139,7 +139,7 @@ namespace Model
      * statements, to transform request components before using them as custom
      * aggregation keys. If you specify one or more transformations to apply, WAF
      * performs all transformations on the specified content, starting from the lowest
-     * priority setting, and then uses the component contents. </p>
+     * priority setting, and then uses the transformed component contents. </p>
      */
     inline RateLimitCookie& WithTextTransformations(const Aws::Vector<TextTransformation>& value) { SetTextTransformations(value); return *this;}
 
@@ -151,7 +151,7 @@ namespace Model
      * statements, to transform request components before using them as custom
      * aggregation keys. If you specify one or more transformations to apply, WAF
      * performs all transformations on the specified content, starting from the lowest
-     * priority setting, and then uses the component contents. </p>
+     * priority setting, and then uses the transformed component contents. </p>
      */
     inline RateLimitCookie& WithTextTransformations(Aws::Vector<TextTransformation>&& value) { SetTextTransformations(std::move(value)); return *this;}
 
@@ -163,7 +163,7 @@ namespace Model
      * statements, to transform request components before using them as custom
      * aggregation keys. If you specify one or more transformations to apply, WAF
      * performs all transformations on the specified content, starting from the lowest
-     * priority setting, and then uses the component contents. </p>
+     * priority setting, and then uses the transformed component contents. </p>
      */
     inline RateLimitCookie& AddTextTransformations(const TextTransformation& value) { m_textTransformationsHasBeenSet = true; m_textTransformations.push_back(value); return *this; }
 
@@ -175,7 +175,7 @@ namespace Model
      * statements, to transform request components before using them as custom
      * aggregation keys. If you specify one or more transformations to apply, WAF
      * performs all transformations on the specified content, starting from the lowest
-     * priority setting, and then uses the component contents. </p>
+     * priority setting, and then uses the transformed component contents. </p>
      */
     inline RateLimitCookie& AddTextTransformations(TextTransformation&& value) { m_textTransformationsHasBeenSet = true; m_textTransformations.push_back(std::move(value)); return *this; }
 

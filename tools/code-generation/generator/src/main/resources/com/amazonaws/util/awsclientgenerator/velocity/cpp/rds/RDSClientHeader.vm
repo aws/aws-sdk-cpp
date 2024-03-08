@@ -29,9 +29,9 @@ namespace ${rootNamespace}
     class ${CppViewHelper.computeExportValue($metadata.classNamePrefix)} ${className}$finalClass : public Aws::Client::AWSXMLClient, public Aws::Client::ClientWithAsyncTemplateMethods<${className}>
     {
     public:
-    typedef Aws::Client::AWSXMLClient BASECLASS;
-    static const char* SERVICE_NAME;
-    static const char* ALLOCATION_TAG;
+        typedef Aws::Client::AWSXMLClient BASECLASS;
+        static const char* GetServiceName();
+        static const char* GetAllocationTag();
 
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderConfigTypeDeclarations.vm")
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderConstructors.vm")

@@ -23,6 +23,7 @@ namespace Aws
         static const int WINDOWS_HASH = HashingUtils::HashString("WINDOWS");
         static const int LINUX_HASH = HashingUtils::HashString("LINUX");
         static const int UNKNOWN_HASH = HashingUtils::HashString("UNKNOWN");
+        static const int MACOS_HASH = HashingUtils::HashString("MACOS");
 
 
         Ec2Platform GetEc2PlatformForName(const Aws::String& name)
@@ -40,6 +41,10 @@ namespace Aws
           {
             return Ec2Platform::UNKNOWN;
           }
+          else if (hashCode == MACOS_HASH)
+          {
+            return Ec2Platform::MACOS;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -54,12 +59,16 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Ec2Platform::NOT_SET:
+            return {};
           case Ec2Platform::WINDOWS:
             return "WINDOWS";
           case Ec2Platform::LINUX:
             return "LINUX";
           case Ec2Platform::UNKNOWN:
             return "UNKNOWN";
+          case Ec2Platform::MACOS:
+            return "MACOS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

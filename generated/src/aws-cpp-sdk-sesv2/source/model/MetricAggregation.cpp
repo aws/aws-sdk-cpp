@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MetricAggregation::NOT_SET:
+            return {};
           case MetricAggregation::RATE:
             return "RATE";
           case MetricAggregation::VOLUME:

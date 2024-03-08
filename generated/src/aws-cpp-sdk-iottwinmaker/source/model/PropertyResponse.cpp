@@ -20,13 +20,17 @@ namespace Model
 
 PropertyResponse::PropertyResponse() : 
     m_definitionHasBeenSet(false),
-    m_valueHasBeenSet(false)
+    m_valueHasBeenSet(false),
+    m_areAllPropertyValuesReturned(false),
+    m_areAllPropertyValuesReturnedHasBeenSet(false)
 {
 }
 
 PropertyResponse::PropertyResponse(JsonView jsonValue) : 
     m_definitionHasBeenSet(false),
-    m_valueHasBeenSet(false)
+    m_valueHasBeenSet(false),
+    m_areAllPropertyValuesReturned(false),
+    m_areAllPropertyValuesReturnedHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +51,13 @@ PropertyResponse& PropertyResponse::operator =(JsonView jsonValue)
     m_valueHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("areAllPropertyValuesReturned"))
+  {
+    m_areAllPropertyValuesReturned = jsonValue.GetBool("areAllPropertyValuesReturned");
+
+    m_areAllPropertyValuesReturnedHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +74,12 @@ JsonValue PropertyResponse::Jsonize() const
   if(m_valueHasBeenSet)
   {
    payload.WithObject("value", m_value.Jsonize());
+
+  }
+
+  if(m_areAllPropertyValuesReturnedHasBeenSet)
+  {
+   payload.WithBool("areAllPropertyValuesReturned", m_areAllPropertyValuesReturned);
 
   }
 

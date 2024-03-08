@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StorageMode::NOT_SET:
+            return {};
           case StorageMode::LOCAL:
             return "LOCAL";
           case StorageMode::TIERED:

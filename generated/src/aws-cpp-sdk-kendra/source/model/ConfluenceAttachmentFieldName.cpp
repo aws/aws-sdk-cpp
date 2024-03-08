@@ -94,6 +94,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ConfluenceAttachmentFieldName::NOT_SET:
+            return {};
           case ConfluenceAttachmentFieldName::AUTHOR:
             return "AUTHOR";
           case ConfluenceAttachmentFieldName::CONTENT_TYPE:

@@ -153,6 +153,63 @@ namespace Model
      */
     inline CodeRepository& WithCodeConfiguration(CodeConfiguration&& value) { SetCodeConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The path of the directory that stores source code and configuration files.
+     * The build and start commands also execute from here. The path is absolute from
+     * root and, if not specified, defaults to the repository root.</p>
+     */
+    inline const Aws::String& GetSourceDirectory() const{ return m_sourceDirectory; }
+
+    /**
+     * <p>The path of the directory that stores source code and configuration files.
+     * The build and start commands also execute from here. The path is absolute from
+     * root and, if not specified, defaults to the repository root.</p>
+     */
+    inline bool SourceDirectoryHasBeenSet() const { return m_sourceDirectoryHasBeenSet; }
+
+    /**
+     * <p>The path of the directory that stores source code and configuration files.
+     * The build and start commands also execute from here. The path is absolute from
+     * root and, if not specified, defaults to the repository root.</p>
+     */
+    inline void SetSourceDirectory(const Aws::String& value) { m_sourceDirectoryHasBeenSet = true; m_sourceDirectory = value; }
+
+    /**
+     * <p>The path of the directory that stores source code and configuration files.
+     * The build and start commands also execute from here. The path is absolute from
+     * root and, if not specified, defaults to the repository root.</p>
+     */
+    inline void SetSourceDirectory(Aws::String&& value) { m_sourceDirectoryHasBeenSet = true; m_sourceDirectory = std::move(value); }
+
+    /**
+     * <p>The path of the directory that stores source code and configuration files.
+     * The build and start commands also execute from here. The path is absolute from
+     * root and, if not specified, defaults to the repository root.</p>
+     */
+    inline void SetSourceDirectory(const char* value) { m_sourceDirectoryHasBeenSet = true; m_sourceDirectory.assign(value); }
+
+    /**
+     * <p>The path of the directory that stores source code and configuration files.
+     * The build and start commands also execute from here. The path is absolute from
+     * root and, if not specified, defaults to the repository root.</p>
+     */
+    inline CodeRepository& WithSourceDirectory(const Aws::String& value) { SetSourceDirectory(value); return *this;}
+
+    /**
+     * <p>The path of the directory that stores source code and configuration files.
+     * The build and start commands also execute from here. The path is absolute from
+     * root and, if not specified, defaults to the repository root.</p>
+     */
+    inline CodeRepository& WithSourceDirectory(Aws::String&& value) { SetSourceDirectory(std::move(value)); return *this;}
+
+    /**
+     * <p>The path of the directory that stores source code and configuration files.
+     * The build and start commands also execute from here. The path is absolute from
+     * root and, if not specified, defaults to the repository root.</p>
+     */
+    inline CodeRepository& WithSourceDirectory(const char* value) { SetSourceDirectory(value); return *this;}
+
   private:
 
     Aws::String m_repositoryUrl;
@@ -163,6 +220,9 @@ namespace Model
 
     CodeConfiguration m_codeConfiguration;
     bool m_codeConfigurationHasBeenSet = false;
+
+    Aws::String m_sourceDirectory;
+    bool m_sourceDirectoryHasBeenSet = false;
   };
 
 } // namespace Model

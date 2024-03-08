@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AnalyticsMetricStatistic::NOT_SET:
+            return {};
           case AnalyticsMetricStatistic::Sum:
             return "Sum";
           case AnalyticsMetricStatistic::Avg:

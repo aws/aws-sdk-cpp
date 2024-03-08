@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StorageClass::NOT_SET:
+            return {};
           case StorageClass::TEMPORAL:
             return "TEMPORAL";
           default:

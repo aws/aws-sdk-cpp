@@ -163,6 +163,31 @@ namespace Model
      */
     inline ModerationLabel& WithParentName(const char* value) { SetParentName(value); return *this;}
 
+
+    /**
+     * <p>The level of the moderation label with regard to its taxonomy, from 1 to
+     * 3.</p>
+     */
+    inline int GetTaxonomyLevel() const{ return m_taxonomyLevel; }
+
+    /**
+     * <p>The level of the moderation label with regard to its taxonomy, from 1 to
+     * 3.</p>
+     */
+    inline bool TaxonomyLevelHasBeenSet() const { return m_taxonomyLevelHasBeenSet; }
+
+    /**
+     * <p>The level of the moderation label with regard to its taxonomy, from 1 to
+     * 3.</p>
+     */
+    inline void SetTaxonomyLevel(int value) { m_taxonomyLevelHasBeenSet = true; m_taxonomyLevel = value; }
+
+    /**
+     * <p>The level of the moderation label with regard to its taxonomy, from 1 to
+     * 3.</p>
+     */
+    inline ModerationLabel& WithTaxonomyLevel(int value) { SetTaxonomyLevel(value); return *this;}
+
   private:
 
     double m_confidence;
@@ -173,6 +198,9 @@ namespace Model
 
     Aws::String m_parentName;
     bool m_parentNameHasBeenSet = false;
+
+    int m_taxonomyLevel;
+    bool m_taxonomyLevelHasBeenSet = false;
   };
 
 } // namespace Model

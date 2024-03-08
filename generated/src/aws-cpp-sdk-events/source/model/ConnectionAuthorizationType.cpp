@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ConnectionAuthorizationType::NOT_SET:
+            return {};
           case ConnectionAuthorizationType::BASIC:
             return "BASIC";
           case ConnectionAuthorizationType::OAUTH_CLIENT_CREDENTIALS:

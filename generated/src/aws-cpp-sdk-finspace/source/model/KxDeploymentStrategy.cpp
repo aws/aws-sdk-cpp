@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case KxDeploymentStrategy::NOT_SET:
+            return {};
           case KxDeploymentStrategy::NO_RESTART:
             return "NO_RESTART";
           case KxDeploymentStrategy::ROLLING:

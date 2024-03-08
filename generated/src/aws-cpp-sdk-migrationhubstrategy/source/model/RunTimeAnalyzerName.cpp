@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RunTimeAnalyzerName::NOT_SET:
+            return {};
           case RunTimeAnalyzerName::A2C_ANALYZER:
             return "A2C_ANALYZER";
           case RunTimeAnalyzerName::REHOST_ANALYZER:

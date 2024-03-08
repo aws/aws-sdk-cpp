@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LoggingConfigurationState::NOT_SET:
+            return {};
           case LoggingConfigurationState::CREATING:
             return "CREATING";
           case LoggingConfigurationState::CREATE_FAILED:

@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UserStatusType::NOT_SET:
+            return {};
           case UserStatusType::UNCONFIRMED:
             return "UNCONFIRMED";
           case UserStatusType::CONFIRMED:

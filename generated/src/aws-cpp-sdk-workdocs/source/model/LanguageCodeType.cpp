@@ -194,6 +194,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LanguageCodeType::NOT_SET:
+            return {};
           case LanguageCodeType::AR:
             return "AR";
           case LanguageCodeType::BG:

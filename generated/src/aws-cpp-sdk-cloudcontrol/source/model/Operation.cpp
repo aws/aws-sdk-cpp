@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Operation::NOT_SET:
+            return {};
           case Operation::CREATE:
             return "CREATE";
           case Operation::DELETE_:

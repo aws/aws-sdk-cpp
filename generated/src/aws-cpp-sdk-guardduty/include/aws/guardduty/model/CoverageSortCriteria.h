@@ -40,32 +40,50 @@ namespace Model
 
 
     /**
-     * <p>Represents the field name used to sort the coverage details.</p>
+     * <p>Represents the field name used to sort the coverage details.</p> 
+     * <p>Replace the enum value <code>CLUSTER_NAME</code> with
+     * <code>EKS_CLUSTER_NAME</code>. <code>CLUSTER_NAME</code> has been
+     * deprecated.</p> 
      */
     inline const CoverageSortKey& GetAttributeName() const{ return m_attributeName; }
 
     /**
-     * <p>Represents the field name used to sort the coverage details.</p>
+     * <p>Represents the field name used to sort the coverage details.</p> 
+     * <p>Replace the enum value <code>CLUSTER_NAME</code> with
+     * <code>EKS_CLUSTER_NAME</code>. <code>CLUSTER_NAME</code> has been
+     * deprecated.</p> 
      */
     inline bool AttributeNameHasBeenSet() const { return m_attributeNameHasBeenSet; }
 
     /**
-     * <p>Represents the field name used to sort the coverage details.</p>
+     * <p>Represents the field name used to sort the coverage details.</p> 
+     * <p>Replace the enum value <code>CLUSTER_NAME</code> with
+     * <code>EKS_CLUSTER_NAME</code>. <code>CLUSTER_NAME</code> has been
+     * deprecated.</p> 
      */
     inline void SetAttributeName(const CoverageSortKey& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
 
     /**
-     * <p>Represents the field name used to sort the coverage details.</p>
+     * <p>Represents the field name used to sort the coverage details.</p> 
+     * <p>Replace the enum value <code>CLUSTER_NAME</code> with
+     * <code>EKS_CLUSTER_NAME</code>. <code>CLUSTER_NAME</code> has been
+     * deprecated.</p> 
      */
     inline void SetAttributeName(CoverageSortKey&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::move(value); }
 
     /**
-     * <p>Represents the field name used to sort the coverage details.</p>
+     * <p>Represents the field name used to sort the coverage details.</p> 
+     * <p>Replace the enum value <code>CLUSTER_NAME</code> with
+     * <code>EKS_CLUSTER_NAME</code>. <code>CLUSTER_NAME</code> has been
+     * deprecated.</p> 
      */
     inline CoverageSortCriteria& WithAttributeName(const CoverageSortKey& value) { SetAttributeName(value); return *this;}
 
     /**
-     * <p>Represents the field name used to sort the coverage details.</p>
+     * <p>Represents the field name used to sort the coverage details.</p> 
+     * <p>Replace the enum value <code>CLUSTER_NAME</code> with
+     * <code>EKS_CLUSTER_NAME</code>. <code>CLUSTER_NAME</code> has been
+     * deprecated.</p> 
      */
     inline CoverageSortCriteria& WithAttributeName(CoverageSortKey&& value) { SetAttributeName(std::move(value)); return *this;}
 

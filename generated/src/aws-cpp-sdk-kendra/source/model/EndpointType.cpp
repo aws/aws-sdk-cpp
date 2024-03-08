@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EndpointType::NOT_SET:
+            return {};
           case EndpointType::HOME:
             return "HOME";
           default:

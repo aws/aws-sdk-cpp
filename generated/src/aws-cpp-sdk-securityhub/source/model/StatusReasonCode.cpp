@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StatusReasonCode::NOT_SET:
+            return {};
           case StatusReasonCode::NO_AVAILABLE_CONFIGURATION_RECORDER:
             return "NO_AVAILABLE_CONFIGURATION_RECORDER";
           case StatusReasonCode::INTERNAL_ERROR:

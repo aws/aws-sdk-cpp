@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StabilityStatus::NOT_SET:
+            return {};
           case StabilityStatus::STEADY_STATE:
             return "STEADY_STATE";
           case StabilityStatus::STABILIZING:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case IFrameOnlyPlaylistType::NOT_SET:
+            return {};
           case IFrameOnlyPlaylistType::DISABLED:
             return "DISABLED";
           case IFrameOnlyPlaylistType::STANDARD:

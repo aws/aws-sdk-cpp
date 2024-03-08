@@ -63,6 +63,12 @@ DescribeAppResult& DescribeAppResult::operator =(const Aws::AmazonWebServiceResu
 
   }
 
+  if(jsonValue.ValueExists("SpaceName"))
+  {
+    m_spaceName = jsonValue.GetString("SpaceName");
+
+  }
+
   if(jsonValue.ValueExists("Status"))
   {
     m_status = AppStatusMapper::GetAppStatusForName(jsonValue.GetString("Status"));
@@ -96,12 +102,6 @@ DescribeAppResult& DescribeAppResult::operator =(const Aws::AmazonWebServiceResu
   if(jsonValue.ValueExists("ResourceSpec"))
   {
     m_resourceSpec = jsonValue.GetObject("ResourceSpec");
-
-  }
-
-  if(jsonValue.ValueExists("SpaceName"))
-  {
-    m_spaceName = jsonValue.GetString("SpaceName");
 
   }
 

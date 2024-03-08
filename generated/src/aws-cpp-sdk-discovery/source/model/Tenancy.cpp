@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Tenancy::NOT_SET:
+            return {};
           case Tenancy::DEDICATED:
             return "DEDICATED";
           case Tenancy::SHARED:

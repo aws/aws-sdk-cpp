@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Duration::NOT_SET:
+            return {};
           case Duration::HR_24:
             return "HR_24";
           case Duration::DAY_7:

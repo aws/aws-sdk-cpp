@@ -99,6 +99,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ExtendedKeyUsageName::NOT_SET:
+            return {};
           case ExtendedKeyUsageName::TLS_WEB_SERVER_AUTHENTICATION:
             return "TLS_WEB_SERVER_AUTHENTICATION";
           case ExtendedKeyUsageName::TLS_WEB_CLIENT_AUTHENTICATION:

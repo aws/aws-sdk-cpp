@@ -19,7 +19,9 @@ CreateProjectVersionRequest::CreateProjectVersionRequest() :
     m_trainingDataHasBeenSet(false),
     m_testingDataHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
+    m_kmsKeyIdHasBeenSet(false),
+    m_versionDescriptionHasBeenSet(false),
+    m_featureConfigHasBeenSet(false)
 {
 }
 
@@ -71,6 +73,18 @@ Aws::String CreateProjectVersionRequest::SerializePayload() const
   if(m_kmsKeyIdHasBeenSet)
   {
    payload.WithString("KmsKeyId", m_kmsKeyId);
+
+  }
+
+  if(m_versionDescriptionHasBeenSet)
+  {
+   payload.WithString("VersionDescription", m_versionDescription);
+
+  }
+
+  if(m_featureConfigHasBeenSet)
+  {
+   payload.WithObject("FeatureConfig", m_featureConfig.Jsonize());
 
   }
 

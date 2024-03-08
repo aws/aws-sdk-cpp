@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MotionImageInsertionMode::NOT_SET:
+            return {};
           case MotionImageInsertionMode::MOV:
             return "MOV";
           case MotionImageInsertionMode::PNG:

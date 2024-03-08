@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TransformSortColumnType::NOT_SET:
+            return {};
           case TransformSortColumnType::NAME:
             return "NAME";
           case TransformSortColumnType::TRANSFORM_TYPE:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OrderFilterKeys::NOT_SET:
+            return {};
           case OrderFilterKeys::STATUS:
             return "STATUS";
           case OrderFilterKeys::NETWORK_SITE:

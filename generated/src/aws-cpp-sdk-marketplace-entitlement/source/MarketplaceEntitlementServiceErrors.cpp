@@ -28,11 +28,11 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == INVALID_PARAMETER_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(MarketplaceEntitlementServiceErrors::INVALID_PARAMETER), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(MarketplaceEntitlementServiceErrors::INVALID_PARAMETER), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INTERNAL_SERVICE_ERROR_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(MarketplaceEntitlementServiceErrors::INTERNAL_SERVICE_ERROR), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(MarketplaceEntitlementServiceErrors::INTERNAL_SERVICE_ERROR), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

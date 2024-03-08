@@ -102,6 +102,7 @@ namespace Aws
         static const int UpdateInstanceMetadataOptions_HASH = HashingUtils::HashString("UpdateInstanceMetadataOptions");
         static const int StartGUISession_HASH = HashingUtils::HashString("StartGUISession");
         static const int StopGUISession_HASH = HashingUtils::HashString("StopGUISession");
+        static const int SetupInstanceHttps_HASH = HashingUtils::HashString("SetupInstanceHttps");
 
 
         OperationType GetOperationTypeForName(const Aws::String& name)
@@ -435,6 +436,10 @@ namespace Aws
           {
             return OperationType::StopGUISession;
           }
+          else if (hashCode == SetupInstanceHttps_HASH)
+          {
+            return OperationType::SetupInstanceHttps;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -449,6 +454,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OperationType::NOT_SET:
+            return {};
           case OperationType::DeleteKnownHostKeys:
             return "DeleteKnownHostKeys";
           case OperationType::DeleteInstance:
@@ -613,6 +620,8 @@ namespace Aws
             return "StartGUISession";
           case OperationType::StopGUISession:
             return "StopGUISession";
+          case OperationType::SetupInstanceHttps:
+            return "SetupInstanceHttps";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

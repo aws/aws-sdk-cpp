@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NotificationSeverityLevel::NOT_SET:
+            return {};
           case NotificationSeverityLevel::none:
             return "none";
           case NotificationSeverityLevel::all:

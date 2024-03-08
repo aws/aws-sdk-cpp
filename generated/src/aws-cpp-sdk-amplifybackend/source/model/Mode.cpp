@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Mode::NOT_SET:
+            return {};
           case Mode::API_KEY:
             return "API_KEY";
           case Mode::AWS_IAM:

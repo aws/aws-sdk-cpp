@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BundleType::NOT_SET:
+            return {};
           case BundleType::tar:
             return "tar";
           case BundleType::tgz:

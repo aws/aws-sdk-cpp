@@ -21,7 +21,8 @@ DescribeChangeSetResult::DescribeChangeSetResult() :
     m_executionStatus(ExecutionStatus::NOT_SET),
     m_status(ChangeSetStatus::NOT_SET),
     m_includeNestedStacks(false),
-    m_onStackFailure(OnStackFailure::NOT_SET)
+    m_onStackFailure(OnStackFailure::NOT_SET),
+    m_importExistingResources(false)
 {
 }
 
@@ -29,7 +30,8 @@ DescribeChangeSetResult::DescribeChangeSetResult(const Aws::AmazonWebServiceResu
     m_executionStatus(ExecutionStatus::NOT_SET),
     m_status(ChangeSetStatus::NOT_SET),
     m_includeNestedStacks(false),
-    m_onStackFailure(OnStackFailure::NOT_SET)
+    m_onStackFailure(OnStackFailure::NOT_SET),
+    m_importExistingResources(false)
 {
   *this = result;
 }
@@ -175,6 +177,11 @@ DescribeChangeSetResult& DescribeChangeSetResult::operator =(const Aws::AmazonWe
     if(!onStackFailureNode.IsNull())
     {
       m_onStackFailure = OnStackFailureMapper::GetOnStackFailureForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(onStackFailureNode.GetText()).c_str()).c_str());
+    }
+    XmlNode importExistingResourcesNode = resultNode.FirstChild("ImportExistingResources");
+    if(!importExistingResourcesNode.IsNull())
+    {
+      m_importExistingResources = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(importExistingResourcesNode.GetText()).c_str()).c_str());
     }
   }
 

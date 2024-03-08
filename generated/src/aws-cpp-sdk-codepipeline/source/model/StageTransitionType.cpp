@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StageTransitionType::NOT_SET:
+            return {};
           case StageTransitionType::Inbound:
             return "Inbound";
           case StageTransitionType::Outbound:

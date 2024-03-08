@@ -21,7 +21,9 @@ namespace Model
     SH_FINDINGS,
     CLOUD_TRAIL_MGMT,
     LAMBDA_EXECUTION,
-    S3_DATA
+    S3_DATA,
+    EKS_AUDIT,
+    WAF
   };
 
 namespace AwsLogSourceNameMapper

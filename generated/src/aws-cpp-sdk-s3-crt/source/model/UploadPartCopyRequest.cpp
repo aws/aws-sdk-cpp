@@ -189,7 +189,7 @@ Aws::Http::HeaderValueCollection UploadPartCopyRequest::GetRequestSpecificHeader
     ss.str("");
   }
 
-  if(m_requestPayerHasBeenSet)
+  if(m_requestPayerHasBeenSet && m_requestPayer != RequestPayer::NOT_SET)
   {
     headers.emplace("x-amz-request-payer", RequestPayerMapper::GetNameForRequestPayer(m_requestPayer));
   }
@@ -214,6 +214,8 @@ Aws::Http::HeaderValueCollection UploadPartCopyRequest::GetRequestSpecificHeader
 UploadPartCopyRequest::EndpointParameters UploadPartCopyRequest::GetEndpointContextParams() const
 {
     EndpointParameters parameters;
+    // Static context parameters
+    parameters.emplace_back(Aws::String("DisableS3ExpressSessionAuth"), true, Aws::Endpoint::EndpointParameter::ParameterOrigin::STATIC_CONTEXT);
     // Operation context parameters
     if (BucketHasBeenSet()) {
         parameters.emplace_back(Aws::String("Bucket"), this->GetBucket(), Aws::Endpoint::EndpointParameter::ParameterOrigin::OPERATION_CONTEXT);

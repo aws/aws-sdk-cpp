@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ScanCriterionKey::NOT_SET:
+            return {};
           case ScanCriterionKey::EC2_INSTANCE_TAG:
             return "EC2_INSTANCE_TAG";
           default:

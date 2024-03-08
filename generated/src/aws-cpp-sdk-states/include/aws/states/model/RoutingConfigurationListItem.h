@@ -106,30 +106,26 @@ namespace Model
 
 
     /**
-     * <p>The percentage of traffic you want to route to the second state machine
-     * version. The sum of the weights in the routing configuration must be equal to
-     * 100.</p>
+     * <p>The percentage of traffic you want to route to a state machine version. The
+     * sum of the weights in the routing configuration must be equal to 100.</p>
      */
     inline int GetWeight() const{ return m_weight; }
 
     /**
-     * <p>The percentage of traffic you want to route to the second state machine
-     * version. The sum of the weights in the routing configuration must be equal to
-     * 100.</p>
+     * <p>The percentage of traffic you want to route to a state machine version. The
+     * sum of the weights in the routing configuration must be equal to 100.</p>
      */
     inline bool WeightHasBeenSet() const { return m_weightHasBeenSet; }
 
     /**
-     * <p>The percentage of traffic you want to route to the second state machine
-     * version. The sum of the weights in the routing configuration must be equal to
-     * 100.</p>
+     * <p>The percentage of traffic you want to route to a state machine version. The
+     * sum of the weights in the routing configuration must be equal to 100.</p>
      */
     inline void SetWeight(int value) { m_weightHasBeenSet = true; m_weight = value; }
 
     /**
-     * <p>The percentage of traffic you want to route to the second state machine
-     * version. The sum of the weights in the routing configuration must be equal to
-     * 100.</p>
+     * <p>The percentage of traffic you want to route to a state machine version. The
+     * sum of the weights in the routing configuration must be equal to 100.</p>
      */
     inline RoutingConfigurationListItem& WithWeight(int value) { SetWeight(value); return *this;}
 

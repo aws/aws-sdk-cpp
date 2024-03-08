@@ -21,7 +21,9 @@ CreateAnalysisRequest::CreateAnalysisRequest() :
     m_sourceEntityHasBeenSet(false),
     m_themeArnHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_definitionHasBeenSet(false)
+    m_definitionHasBeenSet(false),
+    m_validationStrategyHasBeenSet(false),
+    m_folderArnsHasBeenSet(false)
 {
 }
 
@@ -78,6 +80,23 @@ Aws::String CreateAnalysisRequest::SerializePayload() const
   if(m_definitionHasBeenSet)
   {
    payload.WithObject("Definition", m_definition.Jsonize());
+
+  }
+
+  if(m_validationStrategyHasBeenSet)
+  {
+   payload.WithObject("ValidationStrategy", m_validationStrategy.Jsonize());
+
+  }
+
+  if(m_folderArnsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> folderArnsJsonList(m_folderArns.size());
+   for(unsigned folderArnsIndex = 0; folderArnsIndex < folderArnsJsonList.GetLength(); ++folderArnsIndex)
+   {
+     folderArnsJsonList[folderArnsIndex].AsString(m_folderArns[folderArnsIndex]);
+   }
+   payload.WithArray("FolderArns", std::move(folderArnsJsonList));
 
   }
 

@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VpnStaticRouteSource::NOT_SET:
+            return {};
           case VpnStaticRouteSource::Static:
             return "Static";
           default:

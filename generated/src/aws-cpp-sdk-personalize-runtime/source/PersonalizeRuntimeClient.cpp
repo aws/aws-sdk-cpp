@@ -21,6 +21,7 @@
 #include <aws/personalize-runtime/PersonalizeRuntimeClient.h>
 #include <aws/personalize-runtime/PersonalizeRuntimeErrorMarshaller.h>
 #include <aws/personalize-runtime/PersonalizeRuntimeEndpointProvider.h>
+#include <aws/personalize-runtime/model/GetActionRecommendationsRequest.h>
 #include <aws/personalize-runtime/model/GetPersonalizedRankingRequest.h>
 #include <aws/personalize-runtime/model/GetRecommendationsRequest.h>
 
@@ -37,8 +38,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* PersonalizeRuntimeClient::SERVICE_NAME = "personalize";
-const char* PersonalizeRuntimeClient::ALLOCATION_TAG = "PersonalizeRuntimeClient";
+namespace Aws
+{
+  namespace PersonalizeRuntime
+  {
+    const char SERVICE_NAME[] = "personalize";
+    const char ALLOCATION_TAG[] = "PersonalizeRuntimeClient";
+  }
+}
+const char* PersonalizeRuntimeClient::GetServiceName() {return SERVICE_NAME;}
+const char* PersonalizeRuntimeClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 PersonalizeRuntimeClient::PersonalizeRuntimeClient(const PersonalizeRuntime::PersonalizeRuntimeClientConfiguration& clientConfiguration,
                                                    std::shared_ptr<PersonalizeRuntimeEndpointProviderBase> endpointProvider) :
@@ -50,7 +59,7 @@ PersonalizeRuntimeClient::PersonalizeRuntimeClient(const PersonalizeRuntime::Per
             Aws::MakeShared<PersonalizeRuntimeErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<PersonalizeRuntimeEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -66,7 +75,7 @@ PersonalizeRuntimeClient::PersonalizeRuntimeClient(const AWSCredentials& credent
             Aws::MakeShared<PersonalizeRuntimeErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<PersonalizeRuntimeEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -82,7 +91,7 @@ PersonalizeRuntimeClient::PersonalizeRuntimeClient(const std::shared_ptr<AWSCred
             Aws::MakeShared<PersonalizeRuntimeErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<PersonalizeRuntimeEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -154,6 +163,33 @@ void PersonalizeRuntimeClient::OverrideEndpoint(const Aws::String& endpoint)
 {
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->OverrideEndpoint(endpoint);
+}
+
+GetActionRecommendationsOutcome PersonalizeRuntimeClient::GetActionRecommendations(const GetActionRecommendationsRequest& request) const
+{
+  AWS_OPERATION_GUARD(GetActionRecommendations);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetActionRecommendations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetActionRecommendations, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetActionRecommendations, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetActionRecommendations",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetActionRecommendationsOutcome>(
+    [&]()-> GetActionRecommendationsOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetActionRecommendations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/action-recommendations");
+      return GetActionRecommendationsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
 GetPersonalizedRankingOutcome PersonalizeRuntimeClient::GetPersonalizedRanking(const GetPersonalizedRankingRequest& request) const

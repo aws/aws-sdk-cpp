@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RegistryAliasStatus::NOT_SET:
+            return {};
           case RegistryAliasStatus::ACTIVE:
             return "ACTIVE";
           case RegistryAliasStatus::PENDING:

@@ -28,8 +28,11 @@ namespace Model
    * <p>The configuration setting for the log types to be enabled for export to
    * CloudWatch Logs for a specific DB instance or DB cluster.</p> <p>The
    * <code>EnableLogTypes</code> and <code>DisableLogTypes</code> arrays determine
-   * which logs will be exported (or not exported) to CloudWatch Logs.</p><p><h3>See
-   * Also:</h3>   <a
+   * which logs will be exported (or not exported) to CloudWatch Logs.</p> <p>Valid
+   * log types are: <code>audit</code> (to publish audit logs) and
+   * <code>slowquery</code> (to publish slow-query logs). See <a
+   * href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html">Publishing
+   * Neptune logs to Amazon CloudWatch logs</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/CloudwatchLogsExportConfiguration">AWS
    * API Reference</a></p>
    */

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ParameterTier::NOT_SET:
+            return {};
           case ParameterTier::Standard:
             return "Standard";
           case ParameterTier::Advanced:

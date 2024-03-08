@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EcrScanFrequency::NOT_SET:
+            return {};
           case EcrScanFrequency::MANUAL:
             return "MANUAL";
           case EcrScanFrequency::SCAN_ON_PUSH:

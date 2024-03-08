@@ -84,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Compute::NOT_SET:
+            return {};
           case Compute::VALUE:
             return "VALUE";
           case Compute::STANDARD:

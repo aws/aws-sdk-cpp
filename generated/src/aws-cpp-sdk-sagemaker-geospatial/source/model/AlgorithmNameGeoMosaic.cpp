@@ -109,6 +109,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AlgorithmNameGeoMosaic::NOT_SET:
+            return {};
           case AlgorithmNameGeoMosaic::NEAR:
             return "NEAR";
           case AlgorithmNameGeoMosaic::BILINEAR:

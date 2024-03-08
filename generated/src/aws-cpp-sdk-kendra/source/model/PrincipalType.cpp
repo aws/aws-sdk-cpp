@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PrincipalType::NOT_SET:
+            return {};
           case PrincipalType::USER:
             return "USER";
           case PrincipalType::GROUP:

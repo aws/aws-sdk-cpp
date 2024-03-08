@@ -42,8 +42,8 @@ namespace EMRContainers
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef EMRContainersClientConfiguration ClientConfigurationType;
       typedef EMRContainersEndpointProvider EndpointProviderType;
@@ -53,14 +53,14 @@ namespace EMRContainers
         * is not specified, it will be initialized to default values.
         */
         EMRContainersClient(const Aws::EMRContainers::EMRContainersClientConfiguration& clientConfiguration = Aws::EMRContainers::EMRContainersClientConfiguration(),
-                            std::shared_ptr<EMRContainersEndpointProviderBase> endpointProvider = Aws::MakeShared<EMRContainersEndpointProvider>(ALLOCATION_TAG));
+                            std::shared_ptr<EMRContainersEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         EMRContainersClient(const Aws::Auth::AWSCredentials& credentials,
-                            std::shared_ptr<EMRContainersEndpointProviderBase> endpointProvider = Aws::MakeShared<EMRContainersEndpointProvider>(ALLOCATION_TAG),
+                            std::shared_ptr<EMRContainersEndpointProviderBase> endpointProvider = nullptr,
                             const Aws::EMRContainers::EMRContainersClientConfiguration& clientConfiguration = Aws::EMRContainers::EMRContainersClientConfiguration());
 
        /**
@@ -68,7 +68,7 @@ namespace EMRContainers
         * the default http client factory will be used
         */
         EMRContainersClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                            std::shared_ptr<EMRContainersEndpointProviderBase> endpointProvider = Aws::MakeShared<EMRContainersEndpointProvider>(ALLOCATION_TAG),
+                            std::shared_ptr<EMRContainersEndpointProviderBase> endpointProvider = nullptr,
                             const Aws::EMRContainers::EMRContainersClientConfiguration& clientConfiguration = Aws::EMRContainers::EMRContainersClientConfiguration());
 
 

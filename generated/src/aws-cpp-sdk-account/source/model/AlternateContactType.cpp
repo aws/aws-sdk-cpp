@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AlternateContactType::NOT_SET:
+            return {};
           case AlternateContactType::BILLING:
             return "BILLING";
           case AlternateContactType::OPERATIONS:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RuleBasedMatchingStatus::NOT_SET:
+            return {};
           case RuleBasedMatchingStatus::PENDING:
             return "PENDING";
           case RuleBasedMatchingStatus::IN_PROGRESS:

@@ -199,6 +199,30 @@ GetRunResult& GetRunResult::operator =(const Aws::AmazonWebServiceResult<JsonVal
 
   }
 
+  if(jsonValue.ValueExists("failureReason"))
+  {
+    m_failureReason = jsonValue.GetString("failureReason");
+
+  }
+
+  if(jsonValue.ValueExists("logLocation"))
+  {
+    m_logLocation = jsonValue.GetObject("logLocation");
+
+  }
+
+  if(jsonValue.ValueExists("uuid"))
+  {
+    m_uuid = jsonValue.GetString("uuid");
+
+  }
+
+  if(jsonValue.ValueExists("runOutputUri"))
+  {
+    m_runOutputUri = jsonValue.GetString("runOutputUri");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

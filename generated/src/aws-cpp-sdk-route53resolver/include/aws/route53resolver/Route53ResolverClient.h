@@ -50,8 +50,8 @@ namespace Route53Resolver
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef Route53ResolverClientConfiguration ClientConfigurationType;
       typedef Route53ResolverEndpointProvider EndpointProviderType;
@@ -61,14 +61,14 @@ namespace Route53Resolver
         * is not specified, it will be initialized to default values.
         */
         Route53ResolverClient(const Aws::Route53Resolver::Route53ResolverClientConfiguration& clientConfiguration = Aws::Route53Resolver::Route53ResolverClientConfiguration(),
-                              std::shared_ptr<Route53ResolverEndpointProviderBase> endpointProvider = Aws::MakeShared<Route53ResolverEndpointProvider>(ALLOCATION_TAG));
+                              std::shared_ptr<Route53ResolverEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         Route53ResolverClient(const Aws::Auth::AWSCredentials& credentials,
-                              std::shared_ptr<Route53ResolverEndpointProviderBase> endpointProvider = Aws::MakeShared<Route53ResolverEndpointProvider>(ALLOCATION_TAG),
+                              std::shared_ptr<Route53ResolverEndpointProviderBase> endpointProvider = nullptr,
                               const Aws::Route53Resolver::Route53ResolverClientConfiguration& clientConfiguration = Aws::Route53Resolver::Route53ResolverClientConfiguration());
 
        /**
@@ -76,7 +76,7 @@ namespace Route53Resolver
         * the default http client factory will be used
         */
         Route53ResolverClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                              std::shared_ptr<Route53ResolverEndpointProviderBase> endpointProvider = Aws::MakeShared<Route53ResolverEndpointProvider>(ALLOCATION_TAG),
+                              std::shared_ptr<Route53ResolverEndpointProviderBase> endpointProvider = nullptr,
                               const Aws::Route53Resolver::Route53ResolverClientConfiguration& clientConfiguration = Aws::Route53Resolver::Route53ResolverClientConfiguration());
 
 
@@ -307,7 +307,7 @@ namespace Route53Resolver
         }
 
         /**
-         * <p>Creates an Route 53 Resolver on an Outpost.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a Route 53 Resolver on an Outpost.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/CreateOutpostResolver">AWS
          * API Reference</a></p>
          */
@@ -1924,7 +1924,7 @@ namespace Route53Resolver
         }
 
         /**
-         * <p>Updates the name, or enpoint type for an inbound or an outbound Resolver
+         * <p>Updates the name, or endpoint type for an inbound or an outbound Resolver
          * endpoint. You can only update between IPV4 and DUALSTACK, IPV6 endpoint type
          * can't be updated to other type. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/UpdateResolverEndpoint">AWS

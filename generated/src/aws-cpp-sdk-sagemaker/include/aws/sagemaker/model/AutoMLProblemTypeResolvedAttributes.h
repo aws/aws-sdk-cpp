@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/model/TabularResolvedAttributes.h>
+#include <aws/sagemaker/model/TextGenerationResolvedAttributes.h>
 #include <utility>
 
 namespace Aws
@@ -24,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>The resolved attributes specific to the problem type of an AutoML job
+   * <p>Stores resolved attributes specific to the problem type of an AutoML job
    * V2.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AutoMLProblemTypeResolvedAttributes">AWS
    * API Reference</a></p>
@@ -39,45 +40,73 @@ namespace Model
 
 
     /**
-     * <p>Defines the resolved attributes for the <code>TABULAR</code> problem
-     * type.</p>
+     * <p>The resolved attributes for the tabular problem type.</p>
      */
     inline const TabularResolvedAttributes& GetTabularResolvedAttributes() const{ return m_tabularResolvedAttributes; }
 
     /**
-     * <p>Defines the resolved attributes for the <code>TABULAR</code> problem
-     * type.</p>
+     * <p>The resolved attributes for the tabular problem type.</p>
      */
     inline bool TabularResolvedAttributesHasBeenSet() const { return m_tabularResolvedAttributesHasBeenSet; }
 
     /**
-     * <p>Defines the resolved attributes for the <code>TABULAR</code> problem
-     * type.</p>
+     * <p>The resolved attributes for the tabular problem type.</p>
      */
     inline void SetTabularResolvedAttributes(const TabularResolvedAttributes& value) { m_tabularResolvedAttributesHasBeenSet = true; m_tabularResolvedAttributes = value; }
 
     /**
-     * <p>Defines the resolved attributes for the <code>TABULAR</code> problem
-     * type.</p>
+     * <p>The resolved attributes for the tabular problem type.</p>
      */
     inline void SetTabularResolvedAttributes(TabularResolvedAttributes&& value) { m_tabularResolvedAttributesHasBeenSet = true; m_tabularResolvedAttributes = std::move(value); }
 
     /**
-     * <p>Defines the resolved attributes for the <code>TABULAR</code> problem
-     * type.</p>
+     * <p>The resolved attributes for the tabular problem type.</p>
      */
     inline AutoMLProblemTypeResolvedAttributes& WithTabularResolvedAttributes(const TabularResolvedAttributes& value) { SetTabularResolvedAttributes(value); return *this;}
 
     /**
-     * <p>Defines the resolved attributes for the <code>TABULAR</code> problem
-     * type.</p>
+     * <p>The resolved attributes for the tabular problem type.</p>
      */
     inline AutoMLProblemTypeResolvedAttributes& WithTabularResolvedAttributes(TabularResolvedAttributes&& value) { SetTabularResolvedAttributes(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The resolved attributes for the text generation problem type.</p>
+     */
+    inline const TextGenerationResolvedAttributes& GetTextGenerationResolvedAttributes() const{ return m_textGenerationResolvedAttributes; }
+
+    /**
+     * <p>The resolved attributes for the text generation problem type.</p>
+     */
+    inline bool TextGenerationResolvedAttributesHasBeenSet() const { return m_textGenerationResolvedAttributesHasBeenSet; }
+
+    /**
+     * <p>The resolved attributes for the text generation problem type.</p>
+     */
+    inline void SetTextGenerationResolvedAttributes(const TextGenerationResolvedAttributes& value) { m_textGenerationResolvedAttributesHasBeenSet = true; m_textGenerationResolvedAttributes = value; }
+
+    /**
+     * <p>The resolved attributes for the text generation problem type.</p>
+     */
+    inline void SetTextGenerationResolvedAttributes(TextGenerationResolvedAttributes&& value) { m_textGenerationResolvedAttributesHasBeenSet = true; m_textGenerationResolvedAttributes = std::move(value); }
+
+    /**
+     * <p>The resolved attributes for the text generation problem type.</p>
+     */
+    inline AutoMLProblemTypeResolvedAttributes& WithTextGenerationResolvedAttributes(const TextGenerationResolvedAttributes& value) { SetTextGenerationResolvedAttributes(value); return *this;}
+
+    /**
+     * <p>The resolved attributes for the text generation problem type.</p>
+     */
+    inline AutoMLProblemTypeResolvedAttributes& WithTextGenerationResolvedAttributes(TextGenerationResolvedAttributes&& value) { SetTextGenerationResolvedAttributes(std::move(value)); return *this;}
 
   private:
 
     TabularResolvedAttributes m_tabularResolvedAttributes;
     bool m_tabularResolvedAttributesHasBeenSet = false;
+
+    TextGenerationResolvedAttributes m_textGenerationResolvedAttributes;
+    bool m_textGenerationResolvedAttributesHasBeenSet = false;
   };
 
 } // namespace Model

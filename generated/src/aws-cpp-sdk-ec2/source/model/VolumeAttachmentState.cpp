@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VolumeAttachmentState::NOT_SET:
+            return {};
           case VolumeAttachmentState::attaching:
             return "attaching";
           case VolumeAttachmentState::attached:

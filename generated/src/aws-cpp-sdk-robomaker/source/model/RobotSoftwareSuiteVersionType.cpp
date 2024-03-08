@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RobotSoftwareSuiteVersionType::NOT_SET:
+            return {};
           case RobotSoftwareSuiteVersionType::Kinetic:
             return "Kinetic";
           case RobotSoftwareSuiteVersionType::Melodic:

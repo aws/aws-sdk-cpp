@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TracingMode::NOT_SET:
+            return {};
           case TracingMode::Active:
             return "Active";
           case TracingMode::PassThrough:

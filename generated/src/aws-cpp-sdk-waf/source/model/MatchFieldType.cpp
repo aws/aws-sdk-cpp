@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MatchFieldType::NOT_SET:
+            return {};
           case MatchFieldType::URI:
             return "URI";
           case MatchFieldType::QUERY_STRING:

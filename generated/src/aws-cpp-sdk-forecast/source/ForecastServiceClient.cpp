@@ -98,8 +98,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* ForecastServiceClient::SERVICE_NAME = "forecast";
-const char* ForecastServiceClient::ALLOCATION_TAG = "ForecastServiceClient";
+namespace Aws
+{
+  namespace ForecastService
+  {
+    const char SERVICE_NAME[] = "forecast";
+    const char ALLOCATION_TAG[] = "ForecastServiceClient";
+  }
+}
+const char* ForecastServiceClient::GetServiceName() {return SERVICE_NAME;}
+const char* ForecastServiceClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 ForecastServiceClient::ForecastServiceClient(const ForecastService::ForecastServiceClientConfiguration& clientConfiguration,
                                              std::shared_ptr<ForecastServiceEndpointProviderBase> endpointProvider) :
@@ -111,7 +119,7 @@ ForecastServiceClient::ForecastServiceClient(const ForecastService::ForecastServ
             Aws::MakeShared<ForecastServiceErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ForecastServiceEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -127,7 +135,7 @@ ForecastServiceClient::ForecastServiceClient(const AWSCredentials& credentials,
             Aws::MakeShared<ForecastServiceErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ForecastServiceEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -143,7 +151,7 @@ ForecastServiceClient::ForecastServiceClient(const std::shared_ptr<AWSCredential
             Aws::MakeShared<ForecastServiceErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ForecastServiceEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

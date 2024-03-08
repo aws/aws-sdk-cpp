@@ -10,6 +10,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/healthlake/model/InputDataConfig.h>
 #include <aws/healthlake/model/OutputDataConfig.h>
+#include <aws/healthlake/model/JobProgressReport.h>
 #include <utility>
 
 namespace Aws
@@ -28,8 +29,9 @@ namespace Model
 {
 
   /**
-   * <p>Displays the properties of the import job, including the ID, Arn, Name, and
-   * the status of the data store.</p><p><h3>See Also:</h3>   <a
+   * <p>Displays the properties of the import job, including the ID, Arn, Name, the
+   * status of the job, and the progress report of the job.</p><p><h3>See Also:</h3> 
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/ImportJobProperties">AWS
    * API Reference</a></p>
    */
@@ -321,6 +323,43 @@ namespace Model
 
 
     /**
+     * <p>Displays the progress of the import job, including total resources scanned,
+     * total resources ingested, and total size of data ingested.</p>
+     */
+    inline const JobProgressReport& GetJobProgressReport() const{ return m_jobProgressReport; }
+
+    /**
+     * <p>Displays the progress of the import job, including total resources scanned,
+     * total resources ingested, and total size of data ingested.</p>
+     */
+    inline bool JobProgressReportHasBeenSet() const { return m_jobProgressReportHasBeenSet; }
+
+    /**
+     * <p>Displays the progress of the import job, including total resources scanned,
+     * total resources ingested, and total size of data ingested.</p>
+     */
+    inline void SetJobProgressReport(const JobProgressReport& value) { m_jobProgressReportHasBeenSet = true; m_jobProgressReport = value; }
+
+    /**
+     * <p>Displays the progress of the import job, including total resources scanned,
+     * total resources ingested, and total size of data ingested.</p>
+     */
+    inline void SetJobProgressReport(JobProgressReport&& value) { m_jobProgressReportHasBeenSet = true; m_jobProgressReport = std::move(value); }
+
+    /**
+     * <p>Displays the progress of the import job, including total resources scanned,
+     * total resources ingested, and total size of data ingested.</p>
+     */
+    inline ImportJobProperties& WithJobProgressReport(const JobProgressReport& value) { SetJobProgressReport(value); return *this;}
+
+    /**
+     * <p>Displays the progress of the import job, including total resources scanned,
+     * total resources ingested, and total size of data ingested.</p>
+     */
+    inline ImportJobProperties& WithJobProgressReport(JobProgressReport&& value) { SetJobProgressReport(std::move(value)); return *this;}
+
+
+    /**
      * <p>The Amazon Resource Name (ARN) that gives AWS HealthLake access to your input
      * data.</p>
      */
@@ -442,6 +481,9 @@ namespace Model
 
     OutputDataConfig m_jobOutputDataConfig;
     bool m_jobOutputDataConfigHasBeenSet = false;
+
+    JobProgressReport m_jobProgressReport;
+    bool m_jobProgressReportHasBeenSet = false;
 
     Aws::String m_dataAccessRoleArn;
     bool m_dataAccessRoleArnHasBeenSet = false;

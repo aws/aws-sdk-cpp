@@ -84,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EntityType::NOT_SET:
+            return {};
           case EntityType::PERSON:
             return "PERSON";
           case EntityType::LOCATION:

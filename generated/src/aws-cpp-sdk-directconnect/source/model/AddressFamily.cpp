@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AddressFamily::NOT_SET:
+            return {};
           case AddressFamily::ipv4:
             return "ipv4";
           case AddressFamily::ipv6:

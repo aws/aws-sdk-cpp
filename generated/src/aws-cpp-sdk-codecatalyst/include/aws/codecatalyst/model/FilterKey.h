@@ -16,7 +16,8 @@ namespace Model
   enum class FilterKey
   {
     NOT_SET,
-    hasAccessTo
+    hasAccessTo,
+    name
   };
 
 namespace FilterKeyMapper

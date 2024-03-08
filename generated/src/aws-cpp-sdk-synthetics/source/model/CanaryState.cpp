@@ -84,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CanaryState::NOT_SET:
+            return {};
           case CanaryState::CREATING:
             return "CREATING";
           case CanaryState::READY:

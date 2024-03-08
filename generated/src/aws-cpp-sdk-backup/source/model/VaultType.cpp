@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VaultType::NOT_SET:
+            return {};
           case VaultType::BACKUP_VAULT:
             return "BACKUP_VAULT";
           case VaultType::LOGICALLY_AIR_GAPPED_BACKUP_VAULT:

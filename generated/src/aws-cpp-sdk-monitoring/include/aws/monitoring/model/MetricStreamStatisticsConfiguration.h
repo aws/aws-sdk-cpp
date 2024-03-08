@@ -124,11 +124,11 @@ namespace Model
      * <p>The list of additional statistics that are to be streamed for the metrics
      * listed in the <code>IncludeMetrics</code> array in this structure. This list can
      * include as many as 20 statistics.</p> <p>If the <code>OutputFormat</code> for
-     * the stream is <code>opentelemetry0.7</code>, the only valid values are
-     * <code>p<i>??</i> </code> percentile statistics such as <code>p90</code>,
-     * <code>p99</code> and so on.</p> <p>If the <code>OutputFormat</code> for the
-     * stream is <code>json</code>, the valid values include the abbreviations for all
-     * of the statistics listed in <a
+     * the stream is <code>opentelemetry1.0</code> or <code>opentelemetry0.7</code>,
+     * the only valid values are <code>p<i>??</i> </code> percentile statistics such as
+     * <code>p90</code>, <code>p99</code> and so on.</p> <p>If the
+     * <code>OutputFormat</code> for the stream is <code>json</code>, the valid values
+     * include the abbreviations for all of the statistics listed in <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html">
      * CloudWatch statistics definitions</a>. For example, this includes <code>tm98,
      * </code> <code>wm90</code>, <code>PR(:300)</code>, and so on.</p>
@@ -139,11 +139,11 @@ namespace Model
      * <p>The list of additional statistics that are to be streamed for the metrics
      * listed in the <code>IncludeMetrics</code> array in this structure. This list can
      * include as many as 20 statistics.</p> <p>If the <code>OutputFormat</code> for
-     * the stream is <code>opentelemetry0.7</code>, the only valid values are
-     * <code>p<i>??</i> </code> percentile statistics such as <code>p90</code>,
-     * <code>p99</code> and so on.</p> <p>If the <code>OutputFormat</code> for the
-     * stream is <code>json</code>, the valid values include the abbreviations for all
-     * of the statistics listed in <a
+     * the stream is <code>opentelemetry1.0</code> or <code>opentelemetry0.7</code>,
+     * the only valid values are <code>p<i>??</i> </code> percentile statistics such as
+     * <code>p90</code>, <code>p99</code> and so on.</p> <p>If the
+     * <code>OutputFormat</code> for the stream is <code>json</code>, the valid values
+     * include the abbreviations for all of the statistics listed in <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html">
      * CloudWatch statistics definitions</a>. For example, this includes <code>tm98,
      * </code> <code>wm90</code>, <code>PR(:300)</code>, and so on.</p>
@@ -154,11 +154,11 @@ namespace Model
      * <p>The list of additional statistics that are to be streamed for the metrics
      * listed in the <code>IncludeMetrics</code> array in this structure. This list can
      * include as many as 20 statistics.</p> <p>If the <code>OutputFormat</code> for
-     * the stream is <code>opentelemetry0.7</code>, the only valid values are
-     * <code>p<i>??</i> </code> percentile statistics such as <code>p90</code>,
-     * <code>p99</code> and so on.</p> <p>If the <code>OutputFormat</code> for the
-     * stream is <code>json</code>, the valid values include the abbreviations for all
-     * of the statistics listed in <a
+     * the stream is <code>opentelemetry1.0</code> or <code>opentelemetry0.7</code>,
+     * the only valid values are <code>p<i>??</i> </code> percentile statistics such as
+     * <code>p90</code>, <code>p99</code> and so on.</p> <p>If the
+     * <code>OutputFormat</code> for the stream is <code>json</code>, the valid values
+     * include the abbreviations for all of the statistics listed in <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html">
      * CloudWatch statistics definitions</a>. For example, this includes <code>tm98,
      * </code> <code>wm90</code>, <code>PR(:300)</code>, and so on.</p>
@@ -169,11 +169,11 @@ namespace Model
      * <p>The list of additional statistics that are to be streamed for the metrics
      * listed in the <code>IncludeMetrics</code> array in this structure. This list can
      * include as many as 20 statistics.</p> <p>If the <code>OutputFormat</code> for
-     * the stream is <code>opentelemetry0.7</code>, the only valid values are
-     * <code>p<i>??</i> </code> percentile statistics such as <code>p90</code>,
-     * <code>p99</code> and so on.</p> <p>If the <code>OutputFormat</code> for the
-     * stream is <code>json</code>, the valid values include the abbreviations for all
-     * of the statistics listed in <a
+     * the stream is <code>opentelemetry1.0</code> or <code>opentelemetry0.7</code>,
+     * the only valid values are <code>p<i>??</i> </code> percentile statistics such as
+     * <code>p90</code>, <code>p99</code> and so on.</p> <p>If the
+     * <code>OutputFormat</code> for the stream is <code>json</code>, the valid values
+     * include the abbreviations for all of the statistics listed in <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html">
      * CloudWatch statistics definitions</a>. For example, this includes <code>tm98,
      * </code> <code>wm90</code>, <code>PR(:300)</code>, and so on.</p>
@@ -184,11 +184,11 @@ namespace Model
      * <p>The list of additional statistics that are to be streamed for the metrics
      * listed in the <code>IncludeMetrics</code> array in this structure. This list can
      * include as many as 20 statistics.</p> <p>If the <code>OutputFormat</code> for
-     * the stream is <code>opentelemetry0.7</code>, the only valid values are
-     * <code>p<i>??</i> </code> percentile statistics such as <code>p90</code>,
-     * <code>p99</code> and so on.</p> <p>If the <code>OutputFormat</code> for the
-     * stream is <code>json</code>, the valid values include the abbreviations for all
-     * of the statistics listed in <a
+     * the stream is <code>opentelemetry1.0</code> or <code>opentelemetry0.7</code>,
+     * the only valid values are <code>p<i>??</i> </code> percentile statistics such as
+     * <code>p90</code>, <code>p99</code> and so on.</p> <p>If the
+     * <code>OutputFormat</code> for the stream is <code>json</code>, the valid values
+     * include the abbreviations for all of the statistics listed in <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html">
      * CloudWatch statistics definitions</a>. For example, this includes <code>tm98,
      * </code> <code>wm90</code>, <code>PR(:300)</code>, and so on.</p>
@@ -199,11 +199,11 @@ namespace Model
      * <p>The list of additional statistics that are to be streamed for the metrics
      * listed in the <code>IncludeMetrics</code> array in this structure. This list can
      * include as many as 20 statistics.</p> <p>If the <code>OutputFormat</code> for
-     * the stream is <code>opentelemetry0.7</code>, the only valid values are
-     * <code>p<i>??</i> </code> percentile statistics such as <code>p90</code>,
-     * <code>p99</code> and so on.</p> <p>If the <code>OutputFormat</code> for the
-     * stream is <code>json</code>, the valid values include the abbreviations for all
-     * of the statistics listed in <a
+     * the stream is <code>opentelemetry1.0</code> or <code>opentelemetry0.7</code>,
+     * the only valid values are <code>p<i>??</i> </code> percentile statistics such as
+     * <code>p90</code>, <code>p99</code> and so on.</p> <p>If the
+     * <code>OutputFormat</code> for the stream is <code>json</code>, the valid values
+     * include the abbreviations for all of the statistics listed in <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html">
      * CloudWatch statistics definitions</a>. For example, this includes <code>tm98,
      * </code> <code>wm90</code>, <code>PR(:300)</code>, and so on.</p>
@@ -214,11 +214,11 @@ namespace Model
      * <p>The list of additional statistics that are to be streamed for the metrics
      * listed in the <code>IncludeMetrics</code> array in this structure. This list can
      * include as many as 20 statistics.</p> <p>If the <code>OutputFormat</code> for
-     * the stream is <code>opentelemetry0.7</code>, the only valid values are
-     * <code>p<i>??</i> </code> percentile statistics such as <code>p90</code>,
-     * <code>p99</code> and so on.</p> <p>If the <code>OutputFormat</code> for the
-     * stream is <code>json</code>, the valid values include the abbreviations for all
-     * of the statistics listed in <a
+     * the stream is <code>opentelemetry1.0</code> or <code>opentelemetry0.7</code>,
+     * the only valid values are <code>p<i>??</i> </code> percentile statistics such as
+     * <code>p90</code>, <code>p99</code> and so on.</p> <p>If the
+     * <code>OutputFormat</code> for the stream is <code>json</code>, the valid values
+     * include the abbreviations for all of the statistics listed in <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html">
      * CloudWatch statistics definitions</a>. For example, this includes <code>tm98,
      * </code> <code>wm90</code>, <code>PR(:300)</code>, and so on.</p>
@@ -229,11 +229,11 @@ namespace Model
      * <p>The list of additional statistics that are to be streamed for the metrics
      * listed in the <code>IncludeMetrics</code> array in this structure. This list can
      * include as many as 20 statistics.</p> <p>If the <code>OutputFormat</code> for
-     * the stream is <code>opentelemetry0.7</code>, the only valid values are
-     * <code>p<i>??</i> </code> percentile statistics such as <code>p90</code>,
-     * <code>p99</code> and so on.</p> <p>If the <code>OutputFormat</code> for the
-     * stream is <code>json</code>, the valid values include the abbreviations for all
-     * of the statistics listed in <a
+     * the stream is <code>opentelemetry1.0</code> or <code>opentelemetry0.7</code>,
+     * the only valid values are <code>p<i>??</i> </code> percentile statistics such as
+     * <code>p90</code>, <code>p99</code> and so on.</p> <p>If the
+     * <code>OutputFormat</code> for the stream is <code>json</code>, the valid values
+     * include the abbreviations for all of the statistics listed in <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html">
      * CloudWatch statistics definitions</a>. For example, this includes <code>tm98,
      * </code> <code>wm90</code>, <code>PR(:300)</code>, and so on.</p>
@@ -244,11 +244,11 @@ namespace Model
      * <p>The list of additional statistics that are to be streamed for the metrics
      * listed in the <code>IncludeMetrics</code> array in this structure. This list can
      * include as many as 20 statistics.</p> <p>If the <code>OutputFormat</code> for
-     * the stream is <code>opentelemetry0.7</code>, the only valid values are
-     * <code>p<i>??</i> </code> percentile statistics such as <code>p90</code>,
-     * <code>p99</code> and so on.</p> <p>If the <code>OutputFormat</code> for the
-     * stream is <code>json</code>, the valid values include the abbreviations for all
-     * of the statistics listed in <a
+     * the stream is <code>opentelemetry1.0</code> or <code>opentelemetry0.7</code>,
+     * the only valid values are <code>p<i>??</i> </code> percentile statistics such as
+     * <code>p90</code>, <code>p99</code> and so on.</p> <p>If the
+     * <code>OutputFormat</code> for the stream is <code>json</code>, the valid values
+     * include the abbreviations for all of the statistics listed in <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html">
      * CloudWatch statistics definitions</a>. For example, this includes <code>tm98,
      * </code> <code>wm90</code>, <code>PR(:300)</code>, and so on.</p>

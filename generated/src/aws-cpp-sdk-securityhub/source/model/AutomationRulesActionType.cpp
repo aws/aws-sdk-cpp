@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AutomationRulesActionType::NOT_SET:
+            return {};
           case AutomationRulesActionType::FINDING_FIELDS_UPDATE:
             return "FINDING_FIELDS_UPDATE";
           default:

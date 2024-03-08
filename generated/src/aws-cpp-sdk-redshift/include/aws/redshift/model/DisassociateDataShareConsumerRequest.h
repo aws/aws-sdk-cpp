@@ -37,50 +37,50 @@ namespace Model
   public:
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the datashare to remove association for.
-     * </p>
+     * <p>The Amazon Resource Name (ARN) of the datashare to remove association
+     * for.</p>
      */
     inline const Aws::String& GetDataShareArn() const{ return m_dataShareArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the datashare to remove association for.
-     * </p>
+     * <p>The Amazon Resource Name (ARN) of the datashare to remove association
+     * for.</p>
      */
     inline bool DataShareArnHasBeenSet() const { return m_dataShareArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the datashare to remove association for.
-     * </p>
+     * <p>The Amazon Resource Name (ARN) of the datashare to remove association
+     * for.</p>
      */
     inline void SetDataShareArn(const Aws::String& value) { m_dataShareArnHasBeenSet = true; m_dataShareArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the datashare to remove association for.
-     * </p>
+     * <p>The Amazon Resource Name (ARN) of the datashare to remove association
+     * for.</p>
      */
     inline void SetDataShareArn(Aws::String&& value) { m_dataShareArnHasBeenSet = true; m_dataShareArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the datashare to remove association for.
-     * </p>
+     * <p>The Amazon Resource Name (ARN) of the datashare to remove association
+     * for.</p>
      */
     inline void SetDataShareArn(const char* value) { m_dataShareArnHasBeenSet = true; m_dataShareArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the datashare to remove association for.
-     * </p>
+     * <p>The Amazon Resource Name (ARN) of the datashare to remove association
+     * for.</p>
      */
     inline DisassociateDataShareConsumerRequest& WithDataShareArn(const Aws::String& value) { SetDataShareArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the datashare to remove association for.
-     * </p>
+     * <p>The Amazon Resource Name (ARN) of the datashare to remove association
+     * for.</p>
      */
     inline DisassociateDataShareConsumerRequest& WithDataShareArn(Aws::String&& value) { SetDataShareArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the datashare to remove association for.
-     * </p>
+     * <p>The Amazon Resource Name (ARN) of the datashare to remove association
+     * for.</p>
      */
     inline DisassociateDataShareConsumerRequest& WithDataShareArn(const char* value) { SetDataShareArn(value); return *this;}
 
@@ -111,50 +111,50 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the consumer that association for the
-     * datashare is removed from.</p>
+     * <p>The Amazon Resource Name (ARN) of the consumer namespace that association for
+     * the datashare is removed from.</p>
      */
     inline const Aws::String& GetConsumerArn() const{ return m_consumerArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the consumer that association for the
-     * datashare is removed from.</p>
+     * <p>The Amazon Resource Name (ARN) of the consumer namespace that association for
+     * the datashare is removed from.</p>
      */
     inline bool ConsumerArnHasBeenSet() const { return m_consumerArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the consumer that association for the
-     * datashare is removed from.</p>
+     * <p>The Amazon Resource Name (ARN) of the consumer namespace that association for
+     * the datashare is removed from.</p>
      */
     inline void SetConsumerArn(const Aws::String& value) { m_consumerArnHasBeenSet = true; m_consumerArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the consumer that association for the
-     * datashare is removed from.</p>
+     * <p>The Amazon Resource Name (ARN) of the consumer namespace that association for
+     * the datashare is removed from.</p>
      */
     inline void SetConsumerArn(Aws::String&& value) { m_consumerArnHasBeenSet = true; m_consumerArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the consumer that association for the
-     * datashare is removed from.</p>
+     * <p>The Amazon Resource Name (ARN) of the consumer namespace that association for
+     * the datashare is removed from.</p>
      */
     inline void SetConsumerArn(const char* value) { m_consumerArnHasBeenSet = true; m_consumerArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the consumer that association for the
-     * datashare is removed from.</p>
+     * <p>The Amazon Resource Name (ARN) of the consumer namespace that association for
+     * the datashare is removed from.</p>
      */
     inline DisassociateDataShareConsumerRequest& WithConsumerArn(const Aws::String& value) { SetConsumerArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the consumer that association for the
-     * datashare is removed from.</p>
+     * <p>The Amazon Resource Name (ARN) of the consumer namespace that association for
+     * the datashare is removed from.</p>
      */
     inline DisassociateDataShareConsumerRequest& WithConsumerArn(Aws::String&& value) { SetConsumerArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the consumer that association for the
-     * datashare is removed from.</p>
+     * <p>The Amazon Resource Name (ARN) of the consumer namespace that association for
+     * the datashare is removed from.</p>
      */
     inline DisassociateDataShareConsumerRequest& WithConsumerArn(const char* value) { SetConsumerArn(value); return *this;}
 

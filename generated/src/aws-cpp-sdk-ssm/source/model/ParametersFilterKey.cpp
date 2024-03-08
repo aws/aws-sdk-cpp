@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ParametersFilterKey::NOT_SET:
+            return {};
           case ParametersFilterKey::Name:
             return "Name";
           case ParametersFilterKey::Type:

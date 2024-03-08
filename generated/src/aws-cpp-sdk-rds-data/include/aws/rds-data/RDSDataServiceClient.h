@@ -16,20 +16,21 @@ namespace Aws
 namespace RDSDataService
 {
   /**
-   * <p><fullname>Amazon RDS Data Service</fullname> <p>Amazon RDS provides an HTTP
-   * endpoint to run SQL statements on an Amazon Aurora Serverless v1 DB cluster. To
-   * run these statements, you work with the Data Service API.</p>  <p>The Data
-   * Service API isn't supported on Amazon Aurora Serverless v2 DB clusters.</p>
-   *  <p>For more information about the Data Service API, see <a
+   * <p><fullname>RDS Data API</fullname> <p>Amazon RDS provides an HTTP endpoint to
+   * run SQL statements on an Amazon Aurora DB cluster. To run these statements, you
+   * use the RDS Data API (Data API).</p> <p>Data API is available with the following
+   * types of Aurora databases:</p> <ul> <li> <p>Aurora PostgreSQL - Serverless v2,
+   * Serverless v1, and provisioned</p> </li> <li> <p>Aurora MySQL - Serverless v1
+   * only</p> </li> </ul> <p>For more information about the Data API, see <a
    * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
-   * the Data API</a> in the <i>Amazon Aurora User Guide</i>.</p></p>
+   * RDS Data API</a> in the <i>Amazon Aurora User Guide</i>.</p></p>
    */
   class AWS_RDSDATASERVICE_API RDSDataServiceClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<RDSDataServiceClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef RDSDataServiceClientConfiguration ClientConfigurationType;
       typedef RDSDataServiceEndpointProvider EndpointProviderType;
@@ -39,14 +40,14 @@ namespace RDSDataService
         * is not specified, it will be initialized to default values.
         */
         RDSDataServiceClient(const Aws::RDSDataService::RDSDataServiceClientConfiguration& clientConfiguration = Aws::RDSDataService::RDSDataServiceClientConfiguration(),
-                             std::shared_ptr<RDSDataServiceEndpointProviderBase> endpointProvider = Aws::MakeShared<RDSDataServiceEndpointProvider>(ALLOCATION_TAG));
+                             std::shared_ptr<RDSDataServiceEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         RDSDataServiceClient(const Aws::Auth::AWSCredentials& credentials,
-                             std::shared_ptr<RDSDataServiceEndpointProviderBase> endpointProvider = Aws::MakeShared<RDSDataServiceEndpointProvider>(ALLOCATION_TAG),
+                             std::shared_ptr<RDSDataServiceEndpointProviderBase> endpointProvider = nullptr,
                              const Aws::RDSDataService::RDSDataServiceClientConfiguration& clientConfiguration = Aws::RDSDataService::RDSDataServiceClientConfiguration());
 
        /**
@@ -54,7 +55,7 @@ namespace RDSDataService
         * the default http client factory will be used
         */
         RDSDataServiceClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                             std::shared_ptr<RDSDataServiceEndpointProviderBase> endpointProvider = Aws::MakeShared<RDSDataServiceEndpointProvider>(ALLOCATION_TAG),
+                             std::shared_ptr<RDSDataServiceEndpointProviderBase> endpointProvider = nullptr,
                              const Aws::RDSDataService::RDSDataServiceClientConfiguration& clientConfiguration = Aws::RDSDataService::RDSDataServiceClientConfiguration());
 
 

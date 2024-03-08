@@ -104,6 +104,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DeviceAttribute::NOT_SET:
+            return {};
           case DeviceAttribute::ARN:
             return "ARN";
           case DeviceAttribute::PLATFORM:

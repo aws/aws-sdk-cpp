@@ -119,7 +119,7 @@ namespace Model
      * <p>The client application domains that you want to use this API key for. </p>
      * <p>Example JSON: <code>"TokenDomains": ["abc.com", "store.abc.com"]</code> </p>
      * <p>Public suffixes aren't allowed. For example, you can't use
-     * <code>usa.gov</code> or <code>co.uk</code> as token domains.</p>
+     * <code>gov.au</code> or <code>co.uk</code> as token domains.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTokenDomains() const{ return m_tokenDomains; }
 
@@ -127,7 +127,7 @@ namespace Model
      * <p>The client application domains that you want to use this API key for. </p>
      * <p>Example JSON: <code>"TokenDomains": ["abc.com", "store.abc.com"]</code> </p>
      * <p>Public suffixes aren't allowed. For example, you can't use
-     * <code>usa.gov</code> or <code>co.uk</code> as token domains.</p>
+     * <code>gov.au</code> or <code>co.uk</code> as token domains.</p>
      */
     inline bool TokenDomainsHasBeenSet() const { return m_tokenDomainsHasBeenSet; }
 
@@ -135,7 +135,7 @@ namespace Model
      * <p>The client application domains that you want to use this API key for. </p>
      * <p>Example JSON: <code>"TokenDomains": ["abc.com", "store.abc.com"]</code> </p>
      * <p>Public suffixes aren't allowed. For example, you can't use
-     * <code>usa.gov</code> or <code>co.uk</code> as token domains.</p>
+     * <code>gov.au</code> or <code>co.uk</code> as token domains.</p>
      */
     inline void SetTokenDomains(const Aws::Vector<Aws::String>& value) { m_tokenDomainsHasBeenSet = true; m_tokenDomains = value; }
 
@@ -143,7 +143,7 @@ namespace Model
      * <p>The client application domains that you want to use this API key for. </p>
      * <p>Example JSON: <code>"TokenDomains": ["abc.com", "store.abc.com"]</code> </p>
      * <p>Public suffixes aren't allowed. For example, you can't use
-     * <code>usa.gov</code> or <code>co.uk</code> as token domains.</p>
+     * <code>gov.au</code> or <code>co.uk</code> as token domains.</p>
      */
     inline void SetTokenDomains(Aws::Vector<Aws::String>&& value) { m_tokenDomainsHasBeenSet = true; m_tokenDomains = std::move(value); }
 
@@ -151,7 +151,7 @@ namespace Model
      * <p>The client application domains that you want to use this API key for. </p>
      * <p>Example JSON: <code>"TokenDomains": ["abc.com", "store.abc.com"]</code> </p>
      * <p>Public suffixes aren't allowed. For example, you can't use
-     * <code>usa.gov</code> or <code>co.uk</code> as token domains.</p>
+     * <code>gov.au</code> or <code>co.uk</code> as token domains.</p>
      */
     inline CreateAPIKeyRequest& WithTokenDomains(const Aws::Vector<Aws::String>& value) { SetTokenDomains(value); return *this;}
 
@@ -159,7 +159,7 @@ namespace Model
      * <p>The client application domains that you want to use this API key for. </p>
      * <p>Example JSON: <code>"TokenDomains": ["abc.com", "store.abc.com"]</code> </p>
      * <p>Public suffixes aren't allowed. For example, you can't use
-     * <code>usa.gov</code> or <code>co.uk</code> as token domains.</p>
+     * <code>gov.au</code> or <code>co.uk</code> as token domains.</p>
      */
     inline CreateAPIKeyRequest& WithTokenDomains(Aws::Vector<Aws::String>&& value) { SetTokenDomains(std::move(value)); return *this;}
 
@@ -167,7 +167,7 @@ namespace Model
      * <p>The client application domains that you want to use this API key for. </p>
      * <p>Example JSON: <code>"TokenDomains": ["abc.com", "store.abc.com"]</code> </p>
      * <p>Public suffixes aren't allowed. For example, you can't use
-     * <code>usa.gov</code> or <code>co.uk</code> as token domains.</p>
+     * <code>gov.au</code> or <code>co.uk</code> as token domains.</p>
      */
     inline CreateAPIKeyRequest& AddTokenDomains(const Aws::String& value) { m_tokenDomainsHasBeenSet = true; m_tokenDomains.push_back(value); return *this; }
 
@@ -175,7 +175,7 @@ namespace Model
      * <p>The client application domains that you want to use this API key for. </p>
      * <p>Example JSON: <code>"TokenDomains": ["abc.com", "store.abc.com"]</code> </p>
      * <p>Public suffixes aren't allowed. For example, you can't use
-     * <code>usa.gov</code> or <code>co.uk</code> as token domains.</p>
+     * <code>gov.au</code> or <code>co.uk</code> as token domains.</p>
      */
     inline CreateAPIKeyRequest& AddTokenDomains(Aws::String&& value) { m_tokenDomainsHasBeenSet = true; m_tokenDomains.push_back(std::move(value)); return *this; }
 
@@ -183,7 +183,7 @@ namespace Model
      * <p>The client application domains that you want to use this API key for. </p>
      * <p>Example JSON: <code>"TokenDomains": ["abc.com", "store.abc.com"]</code> </p>
      * <p>Public suffixes aren't allowed. For example, you can't use
-     * <code>usa.gov</code> or <code>co.uk</code> as token domains.</p>
+     * <code>gov.au</code> or <code>co.uk</code> as token domains.</p>
      */
     inline CreateAPIKeyRequest& AddTokenDomains(const char* value) { m_tokenDomainsHasBeenSet = true; m_tokenDomains.push_back(value); return *this; }
 

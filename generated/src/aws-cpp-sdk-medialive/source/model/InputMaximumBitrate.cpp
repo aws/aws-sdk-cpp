@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InputMaximumBitrate::NOT_SET:
+            return {};
           case InputMaximumBitrate::MAX_10_MBPS:
             return "MAX_10_MBPS";
           case InputMaximumBitrate::MAX_20_MBPS:

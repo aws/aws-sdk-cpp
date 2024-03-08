@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DestinationType::NOT_SET:
+            return {};
           case DestinationType::S3:
             return "S3";
           default:

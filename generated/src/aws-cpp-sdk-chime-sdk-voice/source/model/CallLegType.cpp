@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CallLegType::NOT_SET:
+            return {};
           case CallLegType::Caller:
             return "Caller";
           case CallLegType::Callee:

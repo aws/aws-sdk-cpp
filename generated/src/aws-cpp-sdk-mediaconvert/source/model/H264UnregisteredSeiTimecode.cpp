@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case H264UnregisteredSeiTimecode::NOT_SET:
+            return {};
           case H264UnregisteredSeiTimecode::DISABLED:
             return "DISABLED";
           case H264UnregisteredSeiTimecode::ENABLED:

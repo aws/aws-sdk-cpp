@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DkimStatus::NOT_SET:
+            return {};
           case DkimStatus::PENDING:
             return "PENDING";
           case DkimStatus::SUCCESS:

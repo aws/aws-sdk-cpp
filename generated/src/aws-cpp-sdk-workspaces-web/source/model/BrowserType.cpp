@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BrowserType::NOT_SET:
+            return {};
           case BrowserType::Chrome:
             return "Chrome";
           default:

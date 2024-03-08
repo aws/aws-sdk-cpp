@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LaunchTemplateErrorCode::NOT_SET:
+            return {};
           case LaunchTemplateErrorCode::launchTemplateIdDoesNotExist:
             return "launchTemplateIdDoesNotExist";
           case LaunchTemplateErrorCode::launchTemplateIdMalformed:

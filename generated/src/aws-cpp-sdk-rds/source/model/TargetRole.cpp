@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TargetRole::NOT_SET:
+            return {};
           case TargetRole::READ_WRITE:
             return "READ_WRITE";
           case TargetRole::READ_ONLY:

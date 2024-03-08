@@ -139,6 +139,12 @@ DescribeTaskResult& DescribeTaskResult::operator =(const Aws::AmazonWebServiceRe
     }
   }
 
+  if(jsonValue.ValueExists("ManifestConfig"))
+  {
+    m_manifestConfig = jsonValue.GetObject("ManifestConfig");
+
+  }
+
   if(jsonValue.ValueExists("TaskReportConfig"))
   {
     m_taskReportConfig = jsonValue.GetObject("TaskReportConfig");

@@ -282,49 +282,57 @@ namespace Model
 
     /**
      * <p>The name of the container (as it appears in a container definition) to
-     * associate with the load balancer.</p>
+     * associate with the load balancer.</p> <p>You need to specify the container name
+     * when configuring the target group for an Amazon ECS load balancer.</p>
      */
     inline const Aws::String& GetContainerName() const{ return m_containerName; }
 
     /**
      * <p>The name of the container (as it appears in a container definition) to
-     * associate with the load balancer.</p>
+     * associate with the load balancer.</p> <p>You need to specify the container name
+     * when configuring the target group for an Amazon ECS load balancer.</p>
      */
     inline bool ContainerNameHasBeenSet() const { return m_containerNameHasBeenSet; }
 
     /**
      * <p>The name of the container (as it appears in a container definition) to
-     * associate with the load balancer.</p>
+     * associate with the load balancer.</p> <p>You need to specify the container name
+     * when configuring the target group for an Amazon ECS load balancer.</p>
      */
     inline void SetContainerName(const Aws::String& value) { m_containerNameHasBeenSet = true; m_containerName = value; }
 
     /**
      * <p>The name of the container (as it appears in a container definition) to
-     * associate with the load balancer.</p>
+     * associate with the load balancer.</p> <p>You need to specify the container name
+     * when configuring the target group for an Amazon ECS load balancer.</p>
      */
     inline void SetContainerName(Aws::String&& value) { m_containerNameHasBeenSet = true; m_containerName = std::move(value); }
 
     /**
      * <p>The name of the container (as it appears in a container definition) to
-     * associate with the load balancer.</p>
+     * associate with the load balancer.</p> <p>You need to specify the container name
+     * when configuring the target group for an Amazon ECS load balancer.</p>
      */
     inline void SetContainerName(const char* value) { m_containerNameHasBeenSet = true; m_containerName.assign(value); }
 
     /**
      * <p>The name of the container (as it appears in a container definition) to
-     * associate with the load balancer.</p>
+     * associate with the load balancer.</p> <p>You need to specify the container name
+     * when configuring the target group for an Amazon ECS load balancer.</p>
      */
     inline LoadBalancer& WithContainerName(const Aws::String& value) { SetContainerName(value); return *this;}
 
     /**
      * <p>The name of the container (as it appears in a container definition) to
-     * associate with the load balancer.</p>
+     * associate with the load balancer.</p> <p>You need to specify the container name
+     * when configuring the target group for an Amazon ECS load balancer.</p>
      */
     inline LoadBalancer& WithContainerName(Aws::String&& value) { SetContainerName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the container (as it appears in a container definition) to
-     * associate with the load balancer.</p>
+     * associate with the load balancer.</p> <p>You need to specify the container name
+     * when configuring the target group for an Amazon ECS load balancer.</p>
      */
     inline LoadBalancer& WithContainerName(const char* value) { SetContainerName(value); return *this;}
 

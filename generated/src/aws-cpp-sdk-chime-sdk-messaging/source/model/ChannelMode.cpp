@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ChannelMode::NOT_SET:
+            return {};
           case ChannelMode::UNRESTRICTED:
             return "UNRESTRICTED";
           case ChannelMode::RESTRICTED:

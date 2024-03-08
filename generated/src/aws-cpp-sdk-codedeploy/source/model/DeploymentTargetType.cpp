@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DeploymentTargetType::NOT_SET:
+            return {};
           case DeploymentTargetType::InstanceTarget:
             return "InstanceTarget";
           case DeploymentTargetType::LambdaTarget:

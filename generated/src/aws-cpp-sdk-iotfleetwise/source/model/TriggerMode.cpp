@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TriggerMode::NOT_SET:
+            return {};
           case TriggerMode::ALWAYS:
             return "ALWAYS";
           case TriggerMode::RISING_EDGE:

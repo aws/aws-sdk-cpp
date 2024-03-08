@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SheetControlListType::NOT_SET:
+            return {};
           case SheetControlListType::MULTI_SELECT:
             return "MULTI_SELECT";
           case SheetControlListType::SINGLE_SELECT:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AutoTuneDesiredState::NOT_SET:
+            return {};
           case AutoTuneDesiredState::ENABLED:
             return "ENABLED";
           case AutoTuneDesiredState::DISABLED:

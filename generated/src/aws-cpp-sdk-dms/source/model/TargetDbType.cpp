@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TargetDbType::NOT_SET:
+            return {};
           case TargetDbType::specific_database:
             return "specific-database";
           case TargetDbType::multiple_databases:

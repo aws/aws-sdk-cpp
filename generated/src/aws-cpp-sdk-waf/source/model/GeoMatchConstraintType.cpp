@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case GeoMatchConstraintType::NOT_SET:
+            return {};
           case GeoMatchConstraintType::Country:
             return "Country";
           default:

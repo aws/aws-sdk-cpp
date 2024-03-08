@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BatchPredictionFilterVariable::NOT_SET:
+            return {};
           case BatchPredictionFilterVariable::CreatedAt:
             return "CreatedAt";
           case BatchPredictionFilterVariable::LastUpdatedAt:

@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CampaignState::NOT_SET:
+            return {};
           case CampaignState::Initialized:
             return "Initialized";
           case CampaignState::Running:

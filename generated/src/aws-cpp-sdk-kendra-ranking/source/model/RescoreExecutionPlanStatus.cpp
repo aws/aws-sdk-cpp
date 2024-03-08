@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RescoreExecutionPlanStatus::NOT_SET:
+            return {};
           case RescoreExecutionPlanStatus::CREATING:
             return "CREATING";
           case RescoreExecutionPlanStatus::UPDATING:

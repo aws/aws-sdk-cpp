@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ValidationMode::NOT_SET:
+            return {};
           case ValidationMode::CHECK_ALL:
             return "CHECK_ALL";
           default:

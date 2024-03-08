@@ -99,6 +99,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ContextKeyTypeEnum::NOT_SET:
+            return {};
           case ContextKeyTypeEnum::string:
             return "string";
           case ContextKeyTypeEnum::stringList:

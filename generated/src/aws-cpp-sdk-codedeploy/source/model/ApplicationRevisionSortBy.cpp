@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ApplicationRevisionSortBy::NOT_SET:
+            return {};
           case ApplicationRevisionSortBy::registerTime:
             return "registerTime";
           case ApplicationRevisionSortBy::firstUsedTime:

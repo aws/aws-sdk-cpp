@@ -62,7 +62,7 @@ namespace Aws
           size_t requestMinCompressionSizeBytes = 10240;
         };
          /**
-         * This structure is used to provide initial configuration values to the default ClientConfiguration constructor for the following parameter(s):
+          * This structure is used to provide initial configuration values to the default ClientConfiguration constructor for the following parameter(s):
           * - disableIMDS
          */
         struct ClientConfigurationInitValues {
@@ -98,6 +98,11 @@ namespace Aws
              * @param shouldDisableIMDS whether or not to disable IMDS calls.
              */
             explicit ClientConfiguration(bool useSmartDefaults, const char* defaultMode = "legacy", bool shouldDisableIMDS = false);
+
+            /**
+             * Add virtual method to allow use of dynamic_cast under inheritance.
+             */
+            virtual ~ClientConfiguration() = default;
 
             /**
              * User Agent string user for http calls. This is filled in for you in the constructor. Don't override this unless you have a really good reason.
@@ -237,11 +242,25 @@ namespace Aws
              */
             Aws::String caPath;
             /**
+             * Same as caPath, but used when verifying an HTTPS proxy. 
+             * Used to set CURLOPT_PROXY_CAPATH in libcurl and proxy tls
+             * settings in crt HTTP client.
+             * Does nothing on windows.
+             */
+            Aws::String proxyCaPath;
+            /**
              * If you certificate file is different from the default, you can tell clients that
              * aren't using the default trust store where to find your ca file.
              * If you are on windows or apple, you likely don't want this.
              */
              Aws::String caFile;
+            /**
+             * Same as caFile, but used when verifying an HTTPS proxy. 
+             * Used to set CURLOPT_PROXY_CAINFO in libcurl and proxy tls
+             * settings in crt HTTP client.
+             * Does nothing on windows.
+             */
+            Aws::String proxyCaFile;
             /**
              * Rate Limiter implementation for outgoing bandwidth. Default is wide-open.
              */
@@ -331,6 +350,11 @@ namespace Aws
             Aws::Http::Version version = Http::Version::HTTP_VERSION_2TLS;
 
             /**
+             * Disable all internal IMDSV1 Calls
+             */
+            bool disableImdsV1 = false;
+
+            /**
              * A helper function to read config value from env variable or aws profile config
              */
             static Aws::String LoadConfigFromEnvOrProfile(const Aws::String& envKey,
@@ -356,7 +380,9 @@ namespace Aws
          * A helper function to compute a user agent
          * @return Aws::String with a user-agent
          */
-        AWS_CORE_API Aws::String ComputeUserAgentString();
+        AWS_CORE_API Aws::String ComputeUserAgentString(ClientConfiguration const * const pConfig = nullptr);
+
+        AWS_CORE_API Aws::String FilterUserAgentToken(char const * const token);
 
     } // namespace Client
 } // namespace Aws

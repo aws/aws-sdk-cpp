@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StackSetDriftDetectionStatus::NOT_SET:
+            return {};
           case StackSetDriftDetectionStatus::COMPLETED:
             return "COMPLETED";
           case StackSetDriftDetectionStatus::FAILED:

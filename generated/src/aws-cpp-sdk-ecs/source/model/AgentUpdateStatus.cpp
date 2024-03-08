@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AgentUpdateStatus::NOT_SET:
+            return {};
           case AgentUpdateStatus::PENDING:
             return "PENDING";
           case AgentUpdateStatus::STAGING:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case WebvttAccessibilitySubs::NOT_SET:
+            return {};
           case WebvttAccessibilitySubs::DISABLED:
             return "DISABLED";
           case WebvttAccessibilitySubs::ENABLED:

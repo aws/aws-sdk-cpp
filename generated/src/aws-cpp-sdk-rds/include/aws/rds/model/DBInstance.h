@@ -338,65 +338,65 @@ namespace Model
 
 
     /**
-     * <p>Contains the initial database name that you provided (if required) when you
-     * created the DB instance. This name is returned for the life of your DB instance.
-     * For an RDS for Oracle CDB instance, the name identifies the PDB rather than the
+     * <p>The initial database name that you provided (if required) when you created
+     * the DB instance. This name is returned for the life of your DB instance. For an
+     * RDS for Oracle CDB instance, the name identifies the PDB rather than the
      * CDB.</p>
      */
     inline const Aws::String& GetDBName() const{ return m_dBName; }
 
     /**
-     * <p>Contains the initial database name that you provided (if required) when you
-     * created the DB instance. This name is returned for the life of your DB instance.
-     * For an RDS for Oracle CDB instance, the name identifies the PDB rather than the
+     * <p>The initial database name that you provided (if required) when you created
+     * the DB instance. This name is returned for the life of your DB instance. For an
+     * RDS for Oracle CDB instance, the name identifies the PDB rather than the
      * CDB.</p>
      */
     inline bool DBNameHasBeenSet() const { return m_dBNameHasBeenSet; }
 
     /**
-     * <p>Contains the initial database name that you provided (if required) when you
-     * created the DB instance. This name is returned for the life of your DB instance.
-     * For an RDS for Oracle CDB instance, the name identifies the PDB rather than the
+     * <p>The initial database name that you provided (if required) when you created
+     * the DB instance. This name is returned for the life of your DB instance. For an
+     * RDS for Oracle CDB instance, the name identifies the PDB rather than the
      * CDB.</p>
      */
     inline void SetDBName(const Aws::String& value) { m_dBNameHasBeenSet = true; m_dBName = value; }
 
     /**
-     * <p>Contains the initial database name that you provided (if required) when you
-     * created the DB instance. This name is returned for the life of your DB instance.
-     * For an RDS for Oracle CDB instance, the name identifies the PDB rather than the
+     * <p>The initial database name that you provided (if required) when you created
+     * the DB instance. This name is returned for the life of your DB instance. For an
+     * RDS for Oracle CDB instance, the name identifies the PDB rather than the
      * CDB.</p>
      */
     inline void SetDBName(Aws::String&& value) { m_dBNameHasBeenSet = true; m_dBName = std::move(value); }
 
     /**
-     * <p>Contains the initial database name that you provided (if required) when you
-     * created the DB instance. This name is returned for the life of your DB instance.
-     * For an RDS for Oracle CDB instance, the name identifies the PDB rather than the
+     * <p>The initial database name that you provided (if required) when you created
+     * the DB instance. This name is returned for the life of your DB instance. For an
+     * RDS for Oracle CDB instance, the name identifies the PDB rather than the
      * CDB.</p>
      */
     inline void SetDBName(const char* value) { m_dBNameHasBeenSet = true; m_dBName.assign(value); }
 
     /**
-     * <p>Contains the initial database name that you provided (if required) when you
-     * created the DB instance. This name is returned for the life of your DB instance.
-     * For an RDS for Oracle CDB instance, the name identifies the PDB rather than the
+     * <p>The initial database name that you provided (if required) when you created
+     * the DB instance. This name is returned for the life of your DB instance. For an
+     * RDS for Oracle CDB instance, the name identifies the PDB rather than the
      * CDB.</p>
      */
     inline DBInstance& WithDBName(const Aws::String& value) { SetDBName(value); return *this;}
 
     /**
-     * <p>Contains the initial database name that you provided (if required) when you
-     * created the DB instance. This name is returned for the life of your DB instance.
-     * For an RDS for Oracle CDB instance, the name identifies the PDB rather than the
+     * <p>The initial database name that you provided (if required) when you created
+     * the DB instance. This name is returned for the life of your DB instance. For an
+     * RDS for Oracle CDB instance, the name identifies the PDB rather than the
      * CDB.</p>
      */
     inline DBInstance& WithDBName(Aws::String&& value) { SetDBName(std::move(value)); return *this;}
 
     /**
-     * <p>Contains the initial database name that you provided (if required) when you
-     * created the DB instance. This name is returned for the life of your DB instance.
-     * For an RDS for Oracle CDB instance, the name identifies the PDB rather than the
+     * <p>The initial database name that you provided (if required) when you created
+     * the DB instance. This name is returned for the life of your DB instance. For an
+     * RDS for Oracle CDB instance, the name identifies the PDB rather than the
      * CDB.</p>
      */
     inline DBInstance& WithDBName(const char* value) { SetDBName(value); return *this;}
@@ -3856,6 +3856,97 @@ namespace Model
      */
     inline DBInstance& WithPercentProgress(const char* value) { SetPercentProgress(value); return *this;}
 
+
+    /**
+     * <p>Indicates whether the DB instance has a dedicated log volume (DLV)
+     * enabled.</p>
+     */
+    inline bool GetDedicatedLogVolume() const{ return m_dedicatedLogVolume; }
+
+    /**
+     * <p>Indicates whether the DB instance has a dedicated log volume (DLV)
+     * enabled.</p>
+     */
+    inline bool DedicatedLogVolumeHasBeenSet() const { return m_dedicatedLogVolumeHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the DB instance has a dedicated log volume (DLV)
+     * enabled.</p>
+     */
+    inline void SetDedicatedLogVolume(bool value) { m_dedicatedLogVolumeHasBeenSet = true; m_dedicatedLogVolume = value; }
+
+    /**
+     * <p>Indicates whether the DB instance has a dedicated log volume (DLV)
+     * enabled.</p>
+     */
+    inline DBInstance& WithDedicatedLogVolume(bool value) { SetDedicatedLogVolume(value); return *this;}
+
+
+    /**
+     * <p>Indicates whether an upgrade is recommended for the storage file system
+     * configuration on the DB instance. To migrate to the preferred configuration, you
+     * can either create a blue/green deployment, or create a read replica from the DB
+     * instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.UpgradeFileSystem">Upgrading
+     * the storage file system for a DB instance</a>.</p>
+     */
+    inline bool GetIsStorageConfigUpgradeAvailable() const{ return m_isStorageConfigUpgradeAvailable; }
+
+    /**
+     * <p>Indicates whether an upgrade is recommended for the storage file system
+     * configuration on the DB instance. To migrate to the preferred configuration, you
+     * can either create a blue/green deployment, or create a read replica from the DB
+     * instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.UpgradeFileSystem">Upgrading
+     * the storage file system for a DB instance</a>.</p>
+     */
+    inline bool IsStorageConfigUpgradeAvailableHasBeenSet() const { return m_isStorageConfigUpgradeAvailableHasBeenSet; }
+
+    /**
+     * <p>Indicates whether an upgrade is recommended for the storage file system
+     * configuration on the DB instance. To migrate to the preferred configuration, you
+     * can either create a blue/green deployment, or create a read replica from the DB
+     * instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.UpgradeFileSystem">Upgrading
+     * the storage file system for a DB instance</a>.</p>
+     */
+    inline void SetIsStorageConfigUpgradeAvailable(bool value) { m_isStorageConfigUpgradeAvailableHasBeenSet = true; m_isStorageConfigUpgradeAvailable = value; }
+
+    /**
+     * <p>Indicates whether an upgrade is recommended for the storage file system
+     * configuration on the DB instance. To migrate to the preferred configuration, you
+     * can either create a blue/green deployment, or create a read replica from the DB
+     * instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.UpgradeFileSystem">Upgrading
+     * the storage file system for a DB instance</a>.</p>
+     */
+    inline DBInstance& WithIsStorageConfigUpgradeAvailable(bool value) { SetIsStorageConfigUpgradeAvailable(value); return *this;}
+
+
+    /**
+     * <p>Specifies whether the DB instance is in the multi-tenant configuration (TRUE)
+     * or the single-tenant configuration (FALSE).</p>
+     */
+    inline bool GetMultiTenant() const{ return m_multiTenant; }
+
+    /**
+     * <p>Specifies whether the DB instance is in the multi-tenant configuration (TRUE)
+     * or the single-tenant configuration (FALSE).</p>
+     */
+    inline bool MultiTenantHasBeenSet() const { return m_multiTenantHasBeenSet; }
+
+    /**
+     * <p>Specifies whether the DB instance is in the multi-tenant configuration (TRUE)
+     * or the single-tenant configuration (FALSE).</p>
+     */
+    inline void SetMultiTenant(bool value) { m_multiTenantHasBeenSet = true; m_multiTenant = value; }
+
+    /**
+     * <p>Specifies whether the DB instance is in the multi-tenant configuration (TRUE)
+     * or the single-tenant configuration (FALSE).</p>
+     */
+    inline DBInstance& WithMultiTenant(bool value) { SetMultiTenant(value); return *this;}
+
   private:
 
     Aws::String m_dBInstanceIdentifier;
@@ -4103,6 +4194,15 @@ namespace Model
 
     Aws::String m_percentProgress;
     bool m_percentProgressHasBeenSet = false;
+
+    bool m_dedicatedLogVolume;
+    bool m_dedicatedLogVolumeHasBeenSet = false;
+
+    bool m_isStorageConfigUpgradeAvailable;
+    bool m_isStorageConfigUpgradeAvailableHasBeenSet = false;
+
+    bool m_multiTenant;
+    bool m_multiTenantHasBeenSet = false;
   };
 
 } // namespace Model

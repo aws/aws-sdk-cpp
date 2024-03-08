@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ICD10CMTraitName::NOT_SET:
+            return {};
           case ICD10CMTraitName::NEGATION:
             return "NEGATION";
           case ICD10CMTraitName::DIAGNOSIS:

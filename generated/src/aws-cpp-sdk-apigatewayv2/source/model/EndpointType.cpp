@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EndpointType::NOT_SET:
+            return {};
           case EndpointType::REGIONAL:
             return "REGIONAL";
           case EndpointType::EDGE:

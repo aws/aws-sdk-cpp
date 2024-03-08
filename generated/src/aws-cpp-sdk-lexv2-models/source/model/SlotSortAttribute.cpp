@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SlotSortAttribute::NOT_SET:
+            return {};
           case SlotSortAttribute::SlotName:
             return "SlotName";
           case SlotSortAttribute::LastUpdatedDateTime:

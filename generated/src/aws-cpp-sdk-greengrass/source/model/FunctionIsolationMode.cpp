@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FunctionIsolationMode::NOT_SET:
+            return {};
           case FunctionIsolationMode::GreengrassContainer:
             return "GreengrassContainer";
           case FunctionIsolationMode::NoContainer:

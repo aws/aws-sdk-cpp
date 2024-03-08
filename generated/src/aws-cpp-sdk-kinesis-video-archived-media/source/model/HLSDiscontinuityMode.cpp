@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HLSDiscontinuityMode::NOT_SET:
+            return {};
           case HLSDiscontinuityMode::ALWAYS:
             return "ALWAYS";
           case HLSDiscontinuityMode::NEVER:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TransitGatewayRouteTableAnnouncementDirection::NOT_SET:
+            return {};
           case TransitGatewayRouteTableAnnouncementDirection::outgoing:
             return "outgoing";
           case TransitGatewayRouteTableAnnouncementDirection::incoming:

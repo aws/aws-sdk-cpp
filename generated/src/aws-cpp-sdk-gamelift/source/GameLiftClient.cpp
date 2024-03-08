@@ -139,8 +139,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* GameLiftClient::SERVICE_NAME = "gamelift";
-const char* GameLiftClient::ALLOCATION_TAG = "GameLiftClient";
+namespace Aws
+{
+  namespace GameLift
+  {
+    const char SERVICE_NAME[] = "gamelift";
+    const char ALLOCATION_TAG[] = "GameLiftClient";
+  }
+}
+const char* GameLiftClient::GetServiceName() {return SERVICE_NAME;}
+const char* GameLiftClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 GameLiftClient::GameLiftClient(const GameLift::GameLiftClientConfiguration& clientConfiguration,
                                std::shared_ptr<GameLiftEndpointProviderBase> endpointProvider) :
@@ -152,7 +160,7 @@ GameLiftClient::GameLiftClient(const GameLift::GameLiftClientConfiguration& clie
             Aws::MakeShared<GameLiftErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<GameLiftEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -168,7 +176,7 @@ GameLiftClient::GameLiftClient(const AWSCredentials& credentials,
             Aws::MakeShared<GameLiftErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<GameLiftEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -184,7 +192,7 @@ GameLiftClient::GameLiftClient(const std::shared_ptr<AWSCredentialsProvider>& cr
             Aws::MakeShared<GameLiftErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<GameLiftEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

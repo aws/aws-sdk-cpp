@@ -79,6 +79,47 @@ namespace Model
 
 
     /**
+     * <p>KMS Alias Name.</p>
+     */
+    inline const Aws::String& GetKmsAliasName() const{ return m_kmsAliasName; }
+
+    /**
+     * <p>KMS Alias Name.</p>
+     */
+    inline bool KmsAliasNameHasBeenSet() const { return m_kmsAliasNameHasBeenSet; }
+
+    /**
+     * <p>KMS Alias Name.</p>
+     */
+    inline void SetKmsAliasName(const Aws::String& value) { m_kmsAliasNameHasBeenSet = true; m_kmsAliasName = value; }
+
+    /**
+     * <p>KMS Alias Name.</p>
+     */
+    inline void SetKmsAliasName(Aws::String&& value) { m_kmsAliasNameHasBeenSet = true; m_kmsAliasName = std::move(value); }
+
+    /**
+     * <p>KMS Alias Name.</p>
+     */
+    inline void SetKmsAliasName(const char* value) { m_kmsAliasNameHasBeenSet = true; m_kmsAliasName.assign(value); }
+
+    /**
+     * <p>KMS Alias Name.</p>
+     */
+    inline KmsKey& WithKmsAliasName(const Aws::String& value) { SetKmsAliasName(value); return *this;}
+
+    /**
+     * <p>KMS Alias Name.</p>
+     */
+    inline KmsKey& WithKmsAliasName(Aws::String&& value) { SetKmsAliasName(std::move(value)); return *this;}
+
+    /**
+     * <p>KMS Alias Name.</p>
+     */
+    inline KmsKey& WithKmsAliasName(const char* value) { SetKmsAliasName(value); return *this;}
+
+
+    /**
      * <p>KMS Key Arn.</p>
      */
     inline const Aws::String& GetKmsKeyArn() const{ return m_kmsKeyArn; }
@@ -122,6 +163,9 @@ namespace Model
 
     Aws::String m_kmsAliasArn;
     bool m_kmsAliasArnHasBeenSet = false;
+
+    Aws::String m_kmsAliasName;
+    bool m_kmsAliasNameHasBeenSet = false;
 
     Aws::String m_kmsKeyArn;
     bool m_kmsKeyArnHasBeenSet = false;

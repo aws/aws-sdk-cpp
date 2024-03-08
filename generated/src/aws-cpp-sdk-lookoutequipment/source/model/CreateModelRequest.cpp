@@ -27,7 +27,8 @@ CreateModelRequest::CreateModelRequest() :
     m_dataPreProcessingConfigurationHasBeenSet(false),
     m_serverSideKmsKeyIdHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_offConditionHasBeenSet(false)
+    m_offConditionHasBeenSet(false),
+    m_modelDiagnosticsOutputConfigurationHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,12 @@ Aws::String CreateModelRequest::SerializePayload() const
   if(m_offConditionHasBeenSet)
   {
    payload.WithString("OffCondition", m_offCondition);
+
+  }
+
+  if(m_modelDiagnosticsOutputConfigurationHasBeenSet)
+  {
+   payload.WithObject("ModelDiagnosticsOutputConfiguration", m_modelDiagnosticsOutputConfiguration.Jsonize());
 
   }
 

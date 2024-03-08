@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ApplicationMode::NOT_SET:
+            return {};
           case ApplicationMode::STREAMING:
             return "STREAMING";
           case ApplicationMode::INTERACTIVE:

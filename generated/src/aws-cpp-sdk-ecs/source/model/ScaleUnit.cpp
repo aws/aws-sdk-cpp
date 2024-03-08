@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ScaleUnit::NOT_SET:
+            return {};
           case ScaleUnit::PERCENT:
             return "PERCENT";
           default:

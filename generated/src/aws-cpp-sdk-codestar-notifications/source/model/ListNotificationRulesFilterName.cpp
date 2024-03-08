@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ListNotificationRulesFilterName::NOT_SET:
+            return {};
           case ListNotificationRulesFilterName::EVENT_TYPE_ID:
             return "EVENT_TYPE_ID";
           case ListNotificationRulesFilterName::CREATED_BY:

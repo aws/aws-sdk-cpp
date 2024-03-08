@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BackfillErrorCode::NOT_SET:
+            return {};
           case BackfillErrorCode::ENCRYPTED_PARTITION_ERROR:
             return "ENCRYPTED_PARTITION_ERROR";
           case BackfillErrorCode::INTERNAL_ERROR:

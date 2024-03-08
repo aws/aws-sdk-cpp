@@ -79,8 +79,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* MediaTailorClient::SERVICE_NAME = "mediatailor";
-const char* MediaTailorClient::ALLOCATION_TAG = "MediaTailorClient";
+namespace Aws
+{
+  namespace MediaTailor
+  {
+    const char SERVICE_NAME[] = "mediatailor";
+    const char ALLOCATION_TAG[] = "MediaTailorClient";
+  }
+}
+const char* MediaTailorClient::GetServiceName() {return SERVICE_NAME;}
+const char* MediaTailorClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 MediaTailorClient::MediaTailorClient(const MediaTailor::MediaTailorClientConfiguration& clientConfiguration,
                                      std::shared_ptr<MediaTailorEndpointProviderBase> endpointProvider) :
@@ -92,7 +100,7 @@ MediaTailorClient::MediaTailorClient(const MediaTailor::MediaTailorClientConfigu
             Aws::MakeShared<MediaTailorErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<MediaTailorEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -108,7 +116,7 @@ MediaTailorClient::MediaTailorClient(const AWSCredentials& credentials,
             Aws::MakeShared<MediaTailorErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<MediaTailorEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -124,7 +132,7 @@ MediaTailorClient::MediaTailorClient(const std::shared_ptr<AWSCredentialsProvide
             Aws::MakeShared<MediaTailorErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<MediaTailorEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

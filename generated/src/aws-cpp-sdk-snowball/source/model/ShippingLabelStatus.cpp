@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ShippingLabelStatus::NOT_SET:
+            return {};
           case ShippingLabelStatus::InProgress:
             return "InProgress";
           case ShippingLabelStatus::TimedOut:

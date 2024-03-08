@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case JobErrorLimitName::NOT_SET:
+            return {};
           case JobErrorLimitName::Assets_per_revision:
             return "Assets per revision";
           case JobErrorLimitName::Asset_size_in_GB:

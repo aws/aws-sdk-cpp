@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LogUploadEnum::NOT_SET:
+            return {};
           case LogUploadEnum::ENABLED:
             return "ENABLED";
           case LogUploadEnum::DISABLED:

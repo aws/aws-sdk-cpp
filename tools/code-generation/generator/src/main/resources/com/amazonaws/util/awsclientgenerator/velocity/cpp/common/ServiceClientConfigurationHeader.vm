@@ -11,6 +11,9 @@
 #pragma once
 
 \#include <aws/${metadata.projectName}/${metadata.classNamePrefix}_EXPORTS.h>
+#if($serviceModel.metadata.serviceId == "S3")
+\#include <aws/${metadata.projectName}/S3ExpressIdentityProvider.h>
+#end
 \#include <aws/core/client/GenericClientConfiguration.h>
 #if($serviceModel.metadata.serviceId == "S3" || $serviceModel.metadata.serviceId == "S3 Control")
 \#include <aws/core/auth/signer/AWSAuthV4Signer.h>
@@ -78,6 +81,13 @@ namespace ${rootNamespace}
 #else
             Client::AWSAuthV4Signer::PayloadSigningPolicy payloadSigningPolicy = Client::AWSAuthV4Signer::PayloadSigningPolicy::Never;
 #end
+#end
+#if($serviceModel.metadata.serviceId == "S3")
+            bool disableS3ExpressAuth = false;
+            using IdentityProviderSupplier = std::function<std::shared_ptr<S3ExpressIdentityProvider> (const ${metadata.classNamePrefix}Client &)>;
+            IdentityProviderSupplier identityProviderSupplier = [](const ${metadata.classNamePrefix}Client &client) -> std::shared_ptr<S3ExpressIdentityProvider> {
+                return Aws::MakeShared<DefaultS3ExpressIdentityProvider>("${metadata.classNamePrefix}ClientConfiguration", client);
+            };
 #end
         private:
             void Load${serviceNamespace}SpecificConfig(const Aws::String& profileName);

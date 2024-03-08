@@ -27,8 +27,6 @@ namespace Model
 {
 
   /**
-   *  <p>Currently available in <b>limited preview only</b>. If you are
-   * interested in using this feature, contact your account manager.</p> 
    * <p>Information about an association between a branch network interface with a
    * trunk network interface.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/TrunkInterfaceAssociation">AWS

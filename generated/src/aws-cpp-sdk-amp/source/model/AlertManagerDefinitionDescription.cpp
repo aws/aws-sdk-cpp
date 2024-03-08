@@ -20,42 +20,35 @@ namespace Model
 {
 
 AlertManagerDefinitionDescription::AlertManagerDefinitionDescription() : 
-    m_statusHasBeenSet(false),
-    m_dataHasBeenSet(false),
     m_createdAtHasBeenSet(false),
-    m_modifiedAtHasBeenSet(false)
+    m_dataHasBeenSet(false),
+    m_modifiedAtHasBeenSet(false),
+    m_statusHasBeenSet(false)
 {
 }
 
 AlertManagerDefinitionDescription::AlertManagerDefinitionDescription(JsonView jsonValue) : 
-    m_statusHasBeenSet(false),
-    m_dataHasBeenSet(false),
     m_createdAtHasBeenSet(false),
-    m_modifiedAtHasBeenSet(false)
+    m_dataHasBeenSet(false),
+    m_modifiedAtHasBeenSet(false),
+    m_statusHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 AlertManagerDefinitionDescription& AlertManagerDefinitionDescription::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("status"))
+  if(jsonValue.ValueExists("createdAt"))
   {
-    m_status = jsonValue.GetObject("status");
+    m_createdAt = jsonValue.GetDouble("createdAt");
 
-    m_statusHasBeenSet = true;
+    m_createdAtHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("data"))
   {
     m_data = HashingUtils::Base64Decode(jsonValue.GetString("data"));
     m_dataHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("createdAt"))
-  {
-    m_createdAt = jsonValue.GetDouble("createdAt");
-
-    m_createdAtHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("modifiedAt"))
@@ -65,6 +58,13 @@ AlertManagerDefinitionDescription& AlertManagerDefinitionDescription::operator =
     m_modifiedAtHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("status"))
+  {
+    m_status = jsonValue.GetObject("status");
+
+    m_statusHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -72,10 +72,9 @@ JsonValue AlertManagerDefinitionDescription::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_statusHasBeenSet)
+  if(m_createdAtHasBeenSet)
   {
-   payload.WithObject("status", m_status.Jsonize());
-
+   payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
   }
 
   if(m_dataHasBeenSet)
@@ -83,14 +82,15 @@ JsonValue AlertManagerDefinitionDescription::Jsonize() const
    payload.WithString("data", HashingUtils::Base64Encode(m_data));
   }
 
-  if(m_createdAtHasBeenSet)
-  {
-   payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
-  }
-
   if(m_modifiedAtHasBeenSet)
   {
    payload.WithDouble("modifiedAt", m_modifiedAt.SecondsWithMSPrecision());
+  }
+
+  if(m_statusHasBeenSet)
+  {
+   payload.WithObject("status", m_status.Jsonize());
+
   }
 
   return payload;

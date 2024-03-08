@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AcceptCodeValidation::NOT_SET:
+            return {};
           case AcceptCodeValidation::IGNORE:
             return "IGNORE";
           case AcceptCodeValidation::ENFORCE:

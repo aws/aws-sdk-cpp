@@ -108,187 +108,187 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == UNSUPPORTED_A_P_I_ENDPOINT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::UNSUPPORTED_A_P_I_ENDPOINT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::UNSUPPORTED_A_P_I_ENDPOINT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == CONFLICT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::CONFLICT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::CONFLICT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == POLICY_TYPE_NOT_AVAILABLE_FOR_ORGANIZATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::POLICY_TYPE_NOT_AVAILABLE_FOR_ORGANIZATION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::POLICY_TYPE_NOT_AVAILABLE_FOR_ORGANIZATION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == A_W_S_ORGANIZATIONS_NOT_IN_USE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::A_W_S_ORGANIZATIONS_NOT_IN_USE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::A_W_S_ORGANIZATIONS_NOT_IN_USE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == DUPLICATE_POLICY_ATTACHMENT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::DUPLICATE_POLICY_ATTACHMENT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::DUPLICATE_POLICY_ATTACHMENT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == FINALIZING_ORGANIZATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::FINALIZING_ORGANIZATION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::FINALIZING_ORGANIZATION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == DESTINATION_PARENT_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::DESTINATION_PARENT_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::DESTINATION_PARENT_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == POLICY_CHANGES_IN_PROGRESS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::POLICY_CHANGES_IN_PROGRESS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::POLICY_CHANGES_IN_PROGRESS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == MASTER_CANNOT_LEAVE_ORGANIZATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::MASTER_CANNOT_LEAVE_ORGANIZATION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::MASTER_CANNOT_LEAVE_ORGANIZATION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == DUPLICATE_ACCOUNT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::DUPLICATE_ACCOUNT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::DUPLICATE_ACCOUNT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == CONCURRENT_MODIFICATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::CONCURRENT_MODIFICATION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::CONCURRENT_MODIFICATION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == HANDSHAKE_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::HANDSHAKE_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::HANDSHAKE_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == PARENT_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::PARENT_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::PARENT_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == MALFORMED_POLICY_DOCUMENT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::MALFORMED_POLICY_DOCUMENT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::MALFORMED_POLICY_DOCUMENT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == CHILD_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::CHILD_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::CHILD_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == HANDSHAKE_ALREADY_IN_STATE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::HANDSHAKE_ALREADY_IN_STATE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::HANDSHAKE_ALREADY_IN_STATE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == POLICY_TYPE_NOT_ENABLED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::POLICY_TYPE_NOT_ENABLED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::POLICY_TYPE_NOT_ENABLED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == ROOT_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::ROOT_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::ROOT_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == CONSTRAINT_VIOLATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::CONSTRAINT_VIOLATION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::CONSTRAINT_VIOLATION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == ORGANIZATIONAL_UNIT_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::ORGANIZATIONAL_UNIT_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::ORGANIZATIONAL_UNIT_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == HANDSHAKE_CONSTRAINT_VIOLATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::HANDSHAKE_CONSTRAINT_VIOLATION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::HANDSHAKE_CONSTRAINT_VIOLATION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == ACCOUNT_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::ACCOUNT_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::ACCOUNT_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == DUPLICATE_ORGANIZATIONAL_UNIT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::DUPLICATE_ORGANIZATIONAL_UNIT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::DUPLICATE_ORGANIZATIONAL_UNIT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == RESOURCE_POLICY_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::RESOURCE_POLICY_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::RESOURCE_POLICY_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == POLICY_TYPE_ALREADY_ENABLED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::POLICY_TYPE_ALREADY_ENABLED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::POLICY_TYPE_ALREADY_ENABLED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == DUPLICATE_HANDSHAKE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::DUPLICATE_HANDSHAKE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::DUPLICATE_HANDSHAKE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == TARGET_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::TARGET_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::TARGET_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == ORGANIZATIONAL_UNIT_NOT_EMPTY_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::ORGANIZATIONAL_UNIT_NOT_EMPTY), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::ORGANIZATIONAL_UNIT_NOT_EMPTY), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_HANDSHAKE_TRANSITION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::INVALID_HANDSHAKE_TRANSITION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::INVALID_HANDSHAKE_TRANSITION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_INPUT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::INVALID_INPUT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::INVALID_INPUT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == ORGANIZATION_NOT_EMPTY_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::ORGANIZATION_NOT_EMPTY), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::ORGANIZATION_NOT_EMPTY), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == ACCOUNT_NOT_REGISTERED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::ACCOUNT_NOT_REGISTERED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::ACCOUNT_NOT_REGISTERED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == ACCOUNT_ALREADY_REGISTERED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::ACCOUNT_ALREADY_REGISTERED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::ACCOUNT_ALREADY_REGISTERED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == POLICY_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::POLICY_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::POLICY_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == CREATE_ACCOUNT_STATUS_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::CREATE_ACCOUNT_STATUS_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::CREATE_ACCOUNT_STATUS_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == EFFECTIVE_POLICY_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::EFFECTIVE_POLICY_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::EFFECTIVE_POLICY_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == SOURCE_PARENT_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::SOURCE_PARENT_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::SOURCE_PARENT_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == ACCESS_DENIED_FOR_DEPENDENCY_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::ACCESS_DENIED_FOR_DEPENDENCY), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::ACCESS_DENIED_FOR_DEPENDENCY), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == TOO_MANY_REQUESTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::TOO_MANY_REQUESTS), true);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::TOO_MANY_REQUESTS), RetryableType::RETRYABLE);
   }
   else if (hashCode == DUPLICATE_POLICY_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::DUPLICATE_POLICY), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::DUPLICATE_POLICY), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == SERVICE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::SERVICE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::SERVICE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == POLICY_IN_USE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::POLICY_IN_USE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::POLICY_IN_USE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == POLICY_NOT_ATTACHED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::POLICY_NOT_ATTACHED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::POLICY_NOT_ATTACHED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == ACCOUNT_ALREADY_CLOSED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::ACCOUNT_ALREADY_CLOSED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::ACCOUNT_ALREADY_CLOSED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == ALREADY_IN_ORGANIZATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::ALREADY_IN_ORGANIZATION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::ALREADY_IN_ORGANIZATION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == ACCOUNT_OWNER_NOT_VERIFIED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::ACCOUNT_OWNER_NOT_VERIFIED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::ACCOUNT_OWNER_NOT_VERIFIED), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

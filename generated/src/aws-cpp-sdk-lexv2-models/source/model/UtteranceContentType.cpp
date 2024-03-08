@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UtteranceContentType::NOT_SET:
+            return {};
           case UtteranceContentType::PlainText:
             return "PlainText";
           case UtteranceContentType::CustomPayload:

@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case WirelessDeviceSidewalkStatus::NOT_SET:
+            return {};
           case WirelessDeviceSidewalkStatus::PROVISIONED:
             return "PROVISIONED";
           case WirelessDeviceSidewalkStatus::REGISTERED:

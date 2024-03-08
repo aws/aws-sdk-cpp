@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NielsenWatermarksDistributionTypes::NOT_SET:
+            return {};
           case NielsenWatermarksDistributionTypes::FINAL_DISTRIBUTOR:
             return "FINAL_DISTRIBUTOR";
           case NielsenWatermarksDistributionTypes::PROGRAM_CONTENT:

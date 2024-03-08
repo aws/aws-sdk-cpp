@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FileExistsBehavior::NOT_SET:
+            return {};
           case FileExistsBehavior::DISALLOW:
             return "DISALLOW";
           case FileExistsBehavior::OVERWRITE:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case JSTarget::NOT_SET:
+            return {};
           case JSTarget::es2015:
             return "es2015";
           case JSTarget::es2020:

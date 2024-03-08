@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ECSServiceMetricStatistic::NOT_SET:
+            return {};
           case ECSServiceMetricStatistic::Maximum:
             return "Maximum";
           case ECSServiceMetricStatistic::Average:

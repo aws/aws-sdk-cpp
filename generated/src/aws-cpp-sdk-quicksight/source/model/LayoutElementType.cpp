@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LayoutElementType::NOT_SET:
+            return {};
           case LayoutElementType::VISUAL:
             return "VISUAL";
           case LayoutElementType::FILTER_CONTROL:

@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SopServiceType::NOT_SET:
+            return {};
           case SopServiceType::SSM:
             return "SSM";
           default:

@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CrawlerHistoryState::NOT_SET:
+            return {};
           case CrawlerHistoryState::RUNNING:
             return "RUNNING";
           case CrawlerHistoryState::COMPLETED:

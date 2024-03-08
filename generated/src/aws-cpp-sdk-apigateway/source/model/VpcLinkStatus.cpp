@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VpcLinkStatus::NOT_SET:
+            return {};
           case VpcLinkStatus::AVAILABLE:
             return "AVAILABLE";
           case VpcLinkStatus::PENDING:

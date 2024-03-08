@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OnDemandProvisioningAllocationStrategy::NOT_SET:
+            return {};
           case OnDemandProvisioningAllocationStrategy::lowest_price:
             return "lowest-price";
           default:

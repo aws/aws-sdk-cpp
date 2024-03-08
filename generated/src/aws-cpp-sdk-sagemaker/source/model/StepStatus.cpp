@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StepStatus::NOT_SET:
+            return {};
           case StepStatus::Starting:
             return "Starting";
           case StepStatus::Executing:

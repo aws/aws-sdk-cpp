@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ConversationLogsInputModeFilter::NOT_SET:
+            return {};
           case ConversationLogsInputModeFilter::Speech:
             return "Speech";
           case ConversationLogsInputModeFilter::Text:

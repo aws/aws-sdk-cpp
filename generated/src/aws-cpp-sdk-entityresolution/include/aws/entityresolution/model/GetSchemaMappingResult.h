@@ -99,6 +99,22 @@ namespace Model
 
 
     /**
+     * <p>Specifies whether the schema mapping has been applied to a workflow.</p>
+     */
+    inline bool GetHasWorkflows() const{ return m_hasWorkflows; }
+
+    /**
+     * <p>Specifies whether the schema mapping has been applied to a workflow.</p>
+     */
+    inline void SetHasWorkflows(bool value) { m_hasWorkflows = value; }
+
+    /**
+     * <p>Specifies whether the schema mapping has been applied to a workflow.</p>
+     */
+    inline GetSchemaMappingResult& WithHasWorkflows(bool value) { SetHasWorkflows(value); return *this;}
+
+
+    /**
      * <p>A list of <code>MappedInputFields</code>. Each <code>MappedInputField</code>
      * corresponds to a column the source data table, and contains column name plus
      * additional information Venice uses for matching.</p>
@@ -340,6 +356,8 @@ namespace Model
     Aws::Utils::DateTime m_createdAt;
 
     Aws::String m_description;
+
+    bool m_hasWorkflows;
 
     Aws::Vector<SchemaInputAttribute> m_mappedInputFields;
 

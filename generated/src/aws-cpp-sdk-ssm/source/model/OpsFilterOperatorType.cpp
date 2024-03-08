@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OpsFilterOperatorType::NOT_SET:
+            return {};
           case OpsFilterOperatorType::Equal:
             return "Equal";
           case OpsFilterOperatorType::NotEqual:

@@ -248,6 +248,47 @@ namespace Model
      */
     inline RuleSummary& WithLockState(LockState&& value) { SetLockState(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the retention rule.</p>
+     */
+    inline const Aws::String& GetRuleArn() const{ return m_ruleArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the retention rule.</p>
+     */
+    inline bool RuleArnHasBeenSet() const { return m_ruleArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the retention rule.</p>
+     */
+    inline void SetRuleArn(const Aws::String& value) { m_ruleArnHasBeenSet = true; m_ruleArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the retention rule.</p>
+     */
+    inline void SetRuleArn(Aws::String&& value) { m_ruleArnHasBeenSet = true; m_ruleArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the retention rule.</p>
+     */
+    inline void SetRuleArn(const char* value) { m_ruleArnHasBeenSet = true; m_ruleArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the retention rule.</p>
+     */
+    inline RuleSummary& WithRuleArn(const Aws::String& value) { SetRuleArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the retention rule.</p>
+     */
+    inline RuleSummary& WithRuleArn(Aws::String&& value) { SetRuleArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the retention rule.</p>
+     */
+    inline RuleSummary& WithRuleArn(const char* value) { SetRuleArn(value); return *this;}
+
   private:
 
     Aws::String m_identifier;
@@ -261,6 +302,9 @@ namespace Model
 
     LockState m_lockState;
     bool m_lockStateHasBeenSet = false;
+
+    Aws::String m_ruleArn;
+    bool m_ruleArnHasBeenSet = false;
   };
 
 } // namespace Model

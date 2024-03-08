@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MfaTypesElement::NOT_SET:
+            return {};
           case MfaTypesElement::SMS:
             return "SMS";
           case MfaTypesElement::TOTP:

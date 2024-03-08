@@ -94,6 +94,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FindingType::NOT_SET:
+            return {};
           case FindingType::SensitiveData_S3Object_Multiple:
             return "SensitiveData:S3Object/Multiple";
           case FindingType::SensitiveData_S3Object_Financial:

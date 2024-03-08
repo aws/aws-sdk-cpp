@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Mp4MoovPlacement::NOT_SET:
+            return {};
           case Mp4MoovPlacement::PROGRESSIVE_DOWNLOAD:
             return "PROGRESSIVE_DOWNLOAD";
           case Mp4MoovPlacement::NORMAL:

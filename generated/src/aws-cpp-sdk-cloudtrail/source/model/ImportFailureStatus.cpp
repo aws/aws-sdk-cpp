@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ImportFailureStatus::NOT_SET:
+            return {};
           case ImportFailureStatus::FAILED:
             return "FAILED";
           case ImportFailureStatus::RETRY:

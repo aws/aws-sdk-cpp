@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AdditionalResultAttributeValueType::NOT_SET:
+            return {};
           case AdditionalResultAttributeValueType::TEXT_WITH_HIGHLIGHTS_VALUE:
             return "TEXT_WITH_HIGHLIGHTS_VALUE";
           default:

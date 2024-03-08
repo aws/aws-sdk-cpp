@@ -22,9 +22,13 @@ namespace Aws
 
         static const int JupyterServer_HASH = HashingUtils::HashString("JupyterServer");
         static const int KernelGateway_HASH = HashingUtils::HashString("KernelGateway");
+        static const int DetailedProfiler_HASH = HashingUtils::HashString("DetailedProfiler");
         static const int TensorBoard_HASH = HashingUtils::HashString("TensorBoard");
+        static const int CodeEditor_HASH = HashingUtils::HashString("CodeEditor");
+        static const int JupyterLab_HASH = HashingUtils::HashString("JupyterLab");
         static const int RStudioServerPro_HASH = HashingUtils::HashString("RStudioServerPro");
         static const int RSessionGateway_HASH = HashingUtils::HashString("RSessionGateway");
+        static const int Canvas_HASH = HashingUtils::HashString("Canvas");
 
 
         AppType GetAppTypeForName(const Aws::String& name)
@@ -38,9 +42,21 @@ namespace Aws
           {
             return AppType::KernelGateway;
           }
+          else if (hashCode == DetailedProfiler_HASH)
+          {
+            return AppType::DetailedProfiler;
+          }
           else if (hashCode == TensorBoard_HASH)
           {
             return AppType::TensorBoard;
+          }
+          else if (hashCode == CodeEditor_HASH)
+          {
+            return AppType::CodeEditor;
+          }
+          else if (hashCode == JupyterLab_HASH)
+          {
+            return AppType::JupyterLab;
           }
           else if (hashCode == RStudioServerPro_HASH)
           {
@@ -49,6 +65,10 @@ namespace Aws
           else if (hashCode == RSessionGateway_HASH)
           {
             return AppType::RSessionGateway;
+          }
+          else if (hashCode == Canvas_HASH)
+          {
+            return AppType::Canvas;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -64,16 +84,26 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AppType::NOT_SET:
+            return {};
           case AppType::JupyterServer:
             return "JupyterServer";
           case AppType::KernelGateway:
             return "KernelGateway";
+          case AppType::DetailedProfiler:
+            return "DetailedProfiler";
           case AppType::TensorBoard:
             return "TensorBoard";
+          case AppType::CodeEditor:
+            return "CodeEditor";
+          case AppType::JupyterLab:
+            return "JupyterLab";
           case AppType::RStudioServerPro:
             return "RStudioServerPro";
           case AppType::RSessionGateway:
             return "RSessionGateway";
+          case AppType::Canvas:
+            return "Canvas";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

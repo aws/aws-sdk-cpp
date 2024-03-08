@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LegalHoldStatus::NOT_SET:
+            return {};
           case LegalHoldStatus::CREATING:
             return "CREATING";
           case LegalHoldStatus::ACTIVE:

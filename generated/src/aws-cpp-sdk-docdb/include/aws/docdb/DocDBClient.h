@@ -26,8 +26,8 @@ namespace DocDB
   {
     public:
       typedef Aws::Client::AWSXMLClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef DocDBClientConfiguration ClientConfigurationType;
       typedef DocDBEndpointProvider EndpointProviderType;
@@ -37,14 +37,14 @@ namespace DocDB
         * is not specified, it will be initialized to default values.
         */
         DocDBClient(const Aws::DocDB::DocDBClientConfiguration& clientConfiguration = Aws::DocDB::DocDBClientConfiguration(),
-                    std::shared_ptr<DocDBEndpointProviderBase> endpointProvider = Aws::MakeShared<DocDBEndpointProvider>(ALLOCATION_TAG));
+                    std::shared_ptr<DocDBEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         DocDBClient(const Aws::Auth::AWSCredentials& credentials,
-                    std::shared_ptr<DocDBEndpointProviderBase> endpointProvider = Aws::MakeShared<DocDBEndpointProvider>(ALLOCATION_TAG),
+                    std::shared_ptr<DocDBEndpointProviderBase> endpointProvider = nullptr,
                     const Aws::DocDB::DocDBClientConfiguration& clientConfiguration = Aws::DocDB::DocDBClientConfiguration());
 
        /**
@@ -52,7 +52,7 @@ namespace DocDB
         * the default http client factory will be used
         */
         DocDBClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                    std::shared_ptr<DocDBEndpointProviderBase> endpointProvider = Aws::MakeShared<DocDBEndpointProvider>(ALLOCATION_TAG),
+                    std::shared_ptr<DocDBEndpointProviderBase> endpointProvider = nullptr,
                     const Aws::DocDB::DocDBClientConfiguration& clientConfiguration = Aws::DocDB::DocDBClientConfiguration());
 
 

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ObjectVersionIds::NOT_SET:
+            return {};
           case ObjectVersionIds::INCLUDE:
             return "INCLUDE";
           case ObjectVersionIds::NONE:

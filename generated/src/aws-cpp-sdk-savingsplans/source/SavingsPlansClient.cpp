@@ -44,8 +44,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* SavingsPlansClient::SERVICE_NAME = "savingsplans";
-const char* SavingsPlansClient::ALLOCATION_TAG = "SavingsPlansClient";
+namespace Aws
+{
+  namespace SavingsPlans
+  {
+    const char SERVICE_NAME[] = "savingsplans";
+    const char ALLOCATION_TAG[] = "SavingsPlansClient";
+  }
+}
+const char* SavingsPlansClient::GetServiceName() {return SERVICE_NAME;}
+const char* SavingsPlansClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 SavingsPlansClient::SavingsPlansClient(const SavingsPlans::SavingsPlansClientConfiguration& clientConfiguration,
                                        std::shared_ptr<SavingsPlansEndpointProviderBase> endpointProvider) :
@@ -57,7 +65,7 @@ SavingsPlansClient::SavingsPlansClient(const SavingsPlans::SavingsPlansClientCon
             Aws::MakeShared<SavingsPlansErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SavingsPlansEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -73,7 +81,7 @@ SavingsPlansClient::SavingsPlansClient(const AWSCredentials& credentials,
             Aws::MakeShared<SavingsPlansErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SavingsPlansEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -89,7 +97,7 @@ SavingsPlansClient::SavingsPlansClient(const std::shared_ptr<AWSCredentialsProvi
             Aws::MakeShared<SavingsPlansErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<SavingsPlansEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

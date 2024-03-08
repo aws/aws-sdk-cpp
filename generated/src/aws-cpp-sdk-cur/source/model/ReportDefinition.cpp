@@ -36,7 +36,8 @@ ReportDefinition::ReportDefinition() :
     m_refreshClosedReportsHasBeenSet(false),
     m_reportVersioning(ReportVersioning::NOT_SET),
     m_reportVersioningHasBeenSet(false),
-    m_billingViewArnHasBeenSet(false)
+    m_billingViewArnHasBeenSet(false),
+    m_reportStatusHasBeenSet(false)
 {
 }
 
@@ -58,7 +59,8 @@ ReportDefinition::ReportDefinition(JsonView jsonValue) :
     m_refreshClosedReportsHasBeenSet(false),
     m_reportVersioning(ReportVersioning::NOT_SET),
     m_reportVersioningHasBeenSet(false),
-    m_billingViewArnHasBeenSet(false)
+    m_billingViewArnHasBeenSet(false),
+    m_reportStatusHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -155,6 +157,13 @@ ReportDefinition& ReportDefinition::operator =(JsonView jsonValue)
     m_billingViewArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ReportStatus"))
+  {
+    m_reportStatus = jsonValue.GetObject("ReportStatus");
+
+    m_reportStatusHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -236,6 +245,12 @@ JsonValue ReportDefinition::Jsonize() const
   if(m_billingViewArnHasBeenSet)
   {
    payload.WithString("BillingViewArn", m_billingViewArn);
+
+  }
+
+  if(m_reportStatusHasBeenSet)
+  {
+   payload.WithObject("ReportStatus", m_reportStatus.Jsonize());
 
   }
 

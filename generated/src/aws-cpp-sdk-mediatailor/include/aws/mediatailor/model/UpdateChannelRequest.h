@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediatailor/model/SlateSource.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/mediatailor/model/TimeShiftConfiguration.h>
 #include <aws/mediatailor/model/RequestOutputItem.h>
 #include <utility>
 
@@ -165,6 +166,43 @@ namespace Model
      */
     inline UpdateChannelRequest& AddOutputs(RequestOutputItem&& value) { m_outputsHasBeenSet = true; m_outputs.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p> The time-shifted viewing configuration you want to associate to the channel.
+     * </p>
+     */
+    inline const TimeShiftConfiguration& GetTimeShiftConfiguration() const{ return m_timeShiftConfiguration; }
+
+    /**
+     * <p> The time-shifted viewing configuration you want to associate to the channel.
+     * </p>
+     */
+    inline bool TimeShiftConfigurationHasBeenSet() const { return m_timeShiftConfigurationHasBeenSet; }
+
+    /**
+     * <p> The time-shifted viewing configuration you want to associate to the channel.
+     * </p>
+     */
+    inline void SetTimeShiftConfiguration(const TimeShiftConfiguration& value) { m_timeShiftConfigurationHasBeenSet = true; m_timeShiftConfiguration = value; }
+
+    /**
+     * <p> The time-shifted viewing configuration you want to associate to the channel.
+     * </p>
+     */
+    inline void SetTimeShiftConfiguration(TimeShiftConfiguration&& value) { m_timeShiftConfigurationHasBeenSet = true; m_timeShiftConfiguration = std::move(value); }
+
+    /**
+     * <p> The time-shifted viewing configuration you want to associate to the channel.
+     * </p>
+     */
+    inline UpdateChannelRequest& WithTimeShiftConfiguration(const TimeShiftConfiguration& value) { SetTimeShiftConfiguration(value); return *this;}
+
+    /**
+     * <p> The time-shifted viewing configuration you want to associate to the channel.
+     * </p>
+     */
+    inline UpdateChannelRequest& WithTimeShiftConfiguration(TimeShiftConfiguration&& value) { SetTimeShiftConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_channelName;
@@ -175,6 +213,9 @@ namespace Model
 
     Aws::Vector<RequestOutputItem> m_outputs;
     bool m_outputsHasBeenSet = false;
+
+    TimeShiftConfiguration m_timeShiftConfiguration;
+    bool m_timeShiftConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

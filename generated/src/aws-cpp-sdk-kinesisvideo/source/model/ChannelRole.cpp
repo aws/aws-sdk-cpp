@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ChannelRole::NOT_SET:
+            return {};
           case ChannelRole::MASTER:
             return "MASTER";
           case ChannelRole::VIEWER:

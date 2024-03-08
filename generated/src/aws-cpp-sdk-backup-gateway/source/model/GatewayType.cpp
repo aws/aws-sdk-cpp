@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case GatewayType::NOT_SET:
+            return {};
           case GatewayType::BACKUP_VM:
             return "BACKUP_VM";
           default:

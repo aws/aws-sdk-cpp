@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AvailBlankingState::NOT_SET:
+            return {};
           case AvailBlankingState::DISABLED:
             return "DISABLED";
           case AvailBlankingState::ENABLED:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PatchSet::NOT_SET:
+            return {};
           case PatchSet::OS:
             return "OS";
           case PatchSet::APPLICATION:

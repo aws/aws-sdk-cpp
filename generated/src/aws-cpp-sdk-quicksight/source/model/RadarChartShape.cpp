@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RadarChartShape::NOT_SET:
+            return {};
           case RadarChartShape::CIRCLE:
             return "CIRCLE";
           case RadarChartShape::POLYGON:

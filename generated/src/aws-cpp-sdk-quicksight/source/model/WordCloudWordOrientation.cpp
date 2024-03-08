@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case WordCloudWordOrientation::NOT_SET:
+            return {};
           case WordCloudWordOrientation::HORIZONTAL:
             return "HORIZONTAL";
           case WordCloudWordOrientation::HORIZONTAL_AND_VERTICAL:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CmafManifestCompression::NOT_SET:
+            return {};
           case CmafManifestCompression::GZIP:
             return "GZIP";
           case CmafManifestCompression::NONE:

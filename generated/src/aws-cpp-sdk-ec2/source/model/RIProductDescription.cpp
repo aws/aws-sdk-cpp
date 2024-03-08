@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RIProductDescription::NOT_SET:
+            return {};
           case RIProductDescription::Linux_UNIX:
             return "Linux/UNIX";
           case RIProductDescription::Linux_UNIX_Amazon_VPC:

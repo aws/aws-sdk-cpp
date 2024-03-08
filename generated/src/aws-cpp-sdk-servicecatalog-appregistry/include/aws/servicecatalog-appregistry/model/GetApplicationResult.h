@@ -366,6 +366,67 @@ namespace Model
     inline GetApplicationResult& WithIntegrations(Integrations&& value) { SetIntegrations(std::move(value)); return *this;}
 
 
+    /**
+     * <p> A key-value pair that identifies an associated resource. </p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetApplicationTag() const{ return m_applicationTag; }
+
+    /**
+     * <p> A key-value pair that identifies an associated resource. </p>
+     */
+    inline void SetApplicationTag(const Aws::Map<Aws::String, Aws::String>& value) { m_applicationTag = value; }
+
+    /**
+     * <p> A key-value pair that identifies an associated resource. </p>
+     */
+    inline void SetApplicationTag(Aws::Map<Aws::String, Aws::String>&& value) { m_applicationTag = std::move(value); }
+
+    /**
+     * <p> A key-value pair that identifies an associated resource. </p>
+     */
+    inline GetApplicationResult& WithApplicationTag(const Aws::Map<Aws::String, Aws::String>& value) { SetApplicationTag(value); return *this;}
+
+    /**
+     * <p> A key-value pair that identifies an associated resource. </p>
+     */
+    inline GetApplicationResult& WithApplicationTag(Aws::Map<Aws::String, Aws::String>&& value) { SetApplicationTag(std::move(value)); return *this;}
+
+    /**
+     * <p> A key-value pair that identifies an associated resource. </p>
+     */
+    inline GetApplicationResult& AddApplicationTag(const Aws::String& key, const Aws::String& value) { m_applicationTag.emplace(key, value); return *this; }
+
+    /**
+     * <p> A key-value pair that identifies an associated resource. </p>
+     */
+    inline GetApplicationResult& AddApplicationTag(Aws::String&& key, const Aws::String& value) { m_applicationTag.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p> A key-value pair that identifies an associated resource. </p>
+     */
+    inline GetApplicationResult& AddApplicationTag(const Aws::String& key, Aws::String&& value) { m_applicationTag.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p> A key-value pair that identifies an associated resource. </p>
+     */
+    inline GetApplicationResult& AddApplicationTag(Aws::String&& key, Aws::String&& value) { m_applicationTag.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p> A key-value pair that identifies an associated resource. </p>
+     */
+    inline GetApplicationResult& AddApplicationTag(const char* key, Aws::String&& value) { m_applicationTag.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p> A key-value pair that identifies an associated resource. </p>
+     */
+    inline GetApplicationResult& AddApplicationTag(Aws::String&& key, const char* value) { m_applicationTag.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p> A key-value pair that identifies an associated resource. </p>
+     */
+    inline GetApplicationResult& AddApplicationTag(const char* key, const char* value) { m_applicationTag.emplace(key, value); return *this; }
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -406,6 +467,8 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_tags;
 
     Integrations m_integrations;
+
+    Aws::Map<Aws::String, Aws::String> m_applicationTag;
 
     Aws::String m_requestId;
   };

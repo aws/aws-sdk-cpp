@@ -48,8 +48,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* HealthLakeClient::SERVICE_NAME = "healthlake";
-const char* HealthLakeClient::ALLOCATION_TAG = "HealthLakeClient";
+namespace Aws
+{
+  namespace HealthLake
+  {
+    const char SERVICE_NAME[] = "healthlake";
+    const char ALLOCATION_TAG[] = "HealthLakeClient";
+  }
+}
+const char* HealthLakeClient::GetServiceName() {return SERVICE_NAME;}
+const char* HealthLakeClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 HealthLakeClient::HealthLakeClient(const HealthLake::HealthLakeClientConfiguration& clientConfiguration,
                                    std::shared_ptr<HealthLakeEndpointProviderBase> endpointProvider) :
@@ -61,7 +69,7 @@ HealthLakeClient::HealthLakeClient(const HealthLake::HealthLakeClientConfigurati
             Aws::MakeShared<HealthLakeErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<HealthLakeEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -77,7 +85,7 @@ HealthLakeClient::HealthLakeClient(const AWSCredentials& credentials,
             Aws::MakeShared<HealthLakeErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<HealthLakeEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -93,7 +101,7 @@ HealthLakeClient::HealthLakeClient(const std::shared_ptr<AWSCredentialsProvider>
             Aws::MakeShared<HealthLakeErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<HealthLakeEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

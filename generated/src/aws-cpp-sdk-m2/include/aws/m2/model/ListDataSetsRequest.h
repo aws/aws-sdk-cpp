@@ -109,6 +109,55 @@ namespace Model
 
 
     /**
+     * <p>Filter dataset name matching the specified pattern. Can use * and % as wild
+     * cards.</p>
+     */
+    inline const Aws::String& GetNameFilter() const{ return m_nameFilter; }
+
+    /**
+     * <p>Filter dataset name matching the specified pattern. Can use * and % as wild
+     * cards.</p>
+     */
+    inline bool NameFilterHasBeenSet() const { return m_nameFilterHasBeenSet; }
+
+    /**
+     * <p>Filter dataset name matching the specified pattern. Can use * and % as wild
+     * cards.</p>
+     */
+    inline void SetNameFilter(const Aws::String& value) { m_nameFilterHasBeenSet = true; m_nameFilter = value; }
+
+    /**
+     * <p>Filter dataset name matching the specified pattern. Can use * and % as wild
+     * cards.</p>
+     */
+    inline void SetNameFilter(Aws::String&& value) { m_nameFilterHasBeenSet = true; m_nameFilter = std::move(value); }
+
+    /**
+     * <p>Filter dataset name matching the specified pattern. Can use * and % as wild
+     * cards.</p>
+     */
+    inline void SetNameFilter(const char* value) { m_nameFilterHasBeenSet = true; m_nameFilter.assign(value); }
+
+    /**
+     * <p>Filter dataset name matching the specified pattern. Can use * and % as wild
+     * cards.</p>
+     */
+    inline ListDataSetsRequest& WithNameFilter(const Aws::String& value) { SetNameFilter(value); return *this;}
+
+    /**
+     * <p>Filter dataset name matching the specified pattern. Can use * and % as wild
+     * cards.</p>
+     */
+    inline ListDataSetsRequest& WithNameFilter(Aws::String&& value) { SetNameFilter(std::move(value)); return *this;}
+
+    /**
+     * <p>Filter dataset name matching the specified pattern. Can use * and % as wild
+     * cards.</p>
+     */
+    inline ListDataSetsRequest& WithNameFilter(const char* value) { SetNameFilter(value); return *this;}
+
+
+    /**
      * <p>A pagination token returned from a previous call to this operation. This
      * specifies the next item to return. To return to the beginning of the list,
      * exclude this parameter.</p>
@@ -220,6 +269,9 @@ namespace Model
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet = false;
+
+    Aws::String m_nameFilter;
+    bool m_nameFilterHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;

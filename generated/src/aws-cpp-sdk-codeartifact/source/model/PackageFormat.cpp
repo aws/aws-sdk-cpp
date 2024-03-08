@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PackageFormat::NOT_SET:
+            return {};
           case PackageFormat::npm:
             return "npm";
           case PackageFormat::pypi:

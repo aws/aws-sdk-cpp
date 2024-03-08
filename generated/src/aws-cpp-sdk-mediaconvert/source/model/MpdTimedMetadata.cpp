@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MpdTimedMetadata::NOT_SET:
+            return {};
           case MpdTimedMetadata::PASSTHROUGH:
             return "PASSTHROUGH";
           case MpdTimedMetadata::NONE:

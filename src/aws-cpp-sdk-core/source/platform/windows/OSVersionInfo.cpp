@@ -61,7 +61,7 @@ Aws::String ComputeOSVersionString()
     // then call VerQueryValue to obtain the \\StringFileInfo\\<lang><codepage>\\ProductVersion subblock of the file version information.
     //
     Aws::StringStream ss;
-    ss << "Windows/";
+    ss << "Windows";
 
     DWORD uselessParameter(0);
     static const char* FILE_TO_CHECK = "Kernel32.dll";
@@ -92,7 +92,7 @@ Aws::String ComputeOSVersionString()
 
             if (VerQueryValueA(blob, codePageSS.str().c_str(), &subBlock, &subBlockSize))
             {
-                ss << static_cast<const char*>(subBlock);
+                ss << "#" << static_cast<const char*>(subBlock);
                 versionFound = true;
             }
         }
@@ -100,33 +100,32 @@ Aws::String ComputeOSVersionString()
 
     Aws::Free(blob);
 
-    if (!versionFound)
-    {
-        ss << "Unknown Version";
-    }
+    return ss.str();
+}
 
-
-
+Aws::String ComputeOSVersionArch()
+{
     SYSTEM_INFO sysInfo;
     ZeroMemory(&sysInfo, sizeof(SYSTEM_INFO));
     GetSystemInfo(&sysInfo);
 
+    Aws::StringStream ss;
     switch (sysInfo.wProcessorArchitecture)
     {
         //PROCESSOR_ARCHITECTURE_AMD64
         case 0x09:
-            ss << " AMD64";
+            ss << "AMD64";
             break;
         //PROCESSOR_ARCHITECTURE_IA64
         case 0x06:
-            ss << " IA64";
+            ss << "IA64";
             break;
         //PROCESSOR_ARCHITECTURE_INTEL
         case 0x00:
-            ss << " x86";
+            ss << "x86";
             break;
         default:
-            ss << " Unknown Processor Architecture";
+            ss << "unknown";
             break;
      }
 

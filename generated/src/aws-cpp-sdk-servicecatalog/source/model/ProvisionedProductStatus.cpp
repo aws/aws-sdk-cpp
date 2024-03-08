@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ProvisionedProductStatus::NOT_SET:
+            return {};
           case ProvisionedProductStatus::AVAILABLE:
             return "AVAILABLE";
           case ProvisionedProductStatus::UNDER_CHANGE:

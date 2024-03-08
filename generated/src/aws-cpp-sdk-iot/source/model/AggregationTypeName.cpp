@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AggregationTypeName::NOT_SET:
+            return {};
           case AggregationTypeName::Statistics:
             return "Statistics";
           case AggregationTypeName::Percentiles:

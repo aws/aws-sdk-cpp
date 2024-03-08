@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case IpRouteStatusMsg::NOT_SET:
+            return {};
           case IpRouteStatusMsg::Adding:
             return "Adding";
           case IpRouteStatusMsg::Added:

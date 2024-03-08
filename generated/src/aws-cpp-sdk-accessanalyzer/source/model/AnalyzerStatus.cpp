@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AnalyzerStatus::NOT_SET:
+            return {};
           case AnalyzerStatus::ACTIVE:
             return "ACTIVE";
           case AnalyzerStatus::CREATING:

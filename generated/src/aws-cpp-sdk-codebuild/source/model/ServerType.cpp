@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ServerType::NOT_SET:
+            return {};
           case ServerType::GITHUB:
             return "GITHUB";
           case ServerType::BITBUCKET:

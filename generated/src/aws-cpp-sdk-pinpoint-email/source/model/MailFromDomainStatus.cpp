@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MailFromDomainStatus::NOT_SET:
+            return {};
           case MailFromDomainStatus::PENDING:
             return "PENDING";
           case MailFromDomainStatus::SUCCESS:

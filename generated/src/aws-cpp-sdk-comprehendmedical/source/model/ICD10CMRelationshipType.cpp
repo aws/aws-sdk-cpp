@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ICD10CMRelationshipType::NOT_SET:
+            return {};
           case ICD10CMRelationshipType::OVERLAP:
             return "OVERLAP";
           case ICD10CMRelationshipType::SYSTEM_ORGAN_SITE:

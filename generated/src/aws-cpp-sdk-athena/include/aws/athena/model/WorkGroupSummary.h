@@ -227,6 +227,55 @@ namespace Model
      */
     inline WorkGroupSummary& WithEngineVersion(EngineVersion&& value) { SetEngineVersion(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The ARN of the IAM Identity Center enabled application associated with the
+     * workgroup.</p>
+     */
+    inline const Aws::String& GetIdentityCenterApplicationArn() const{ return m_identityCenterApplicationArn; }
+
+    /**
+     * <p>The ARN of the IAM Identity Center enabled application associated with the
+     * workgroup.</p>
+     */
+    inline bool IdentityCenterApplicationArnHasBeenSet() const { return m_identityCenterApplicationArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the IAM Identity Center enabled application associated with the
+     * workgroup.</p>
+     */
+    inline void SetIdentityCenterApplicationArn(const Aws::String& value) { m_identityCenterApplicationArnHasBeenSet = true; m_identityCenterApplicationArn = value; }
+
+    /**
+     * <p>The ARN of the IAM Identity Center enabled application associated with the
+     * workgroup.</p>
+     */
+    inline void SetIdentityCenterApplicationArn(Aws::String&& value) { m_identityCenterApplicationArnHasBeenSet = true; m_identityCenterApplicationArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the IAM Identity Center enabled application associated with the
+     * workgroup.</p>
+     */
+    inline void SetIdentityCenterApplicationArn(const char* value) { m_identityCenterApplicationArnHasBeenSet = true; m_identityCenterApplicationArn.assign(value); }
+
+    /**
+     * <p>The ARN of the IAM Identity Center enabled application associated with the
+     * workgroup.</p>
+     */
+    inline WorkGroupSummary& WithIdentityCenterApplicationArn(const Aws::String& value) { SetIdentityCenterApplicationArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the IAM Identity Center enabled application associated with the
+     * workgroup.</p>
+     */
+    inline WorkGroupSummary& WithIdentityCenterApplicationArn(Aws::String&& value) { SetIdentityCenterApplicationArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the IAM Identity Center enabled application associated with the
+     * workgroup.</p>
+     */
+    inline WorkGroupSummary& WithIdentityCenterApplicationArn(const char* value) { SetIdentityCenterApplicationArn(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -243,6 +292,9 @@ namespace Model
 
     EngineVersion m_engineVersion;
     bool m_engineVersionHasBeenSet = false;
+
+    Aws::String m_identityCenterApplicationArn;
+    bool m_identityCenterApplicationArnHasBeenSet = false;
   };
 
 } // namespace Model

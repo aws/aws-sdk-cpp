@@ -21,7 +21,8 @@ CreateInstanceRequest::CreateInstanceRequest() :
     m_inboundCallsEnabled(false),
     m_inboundCallsEnabledHasBeenSet(false),
     m_outboundCallsEnabled(false),
-    m_outboundCallsEnabledHasBeenSet(false)
+    m_outboundCallsEnabledHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,17 @@ Aws::String CreateInstanceRequest::SerializePayload() const
   if(m_outboundCallsEnabledHasBeenSet)
   {
    payload.WithBool("OutboundCallsEnabled", m_outboundCallsEnabled);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("Tags", std::move(tagsJsonMap));
 
   }
 

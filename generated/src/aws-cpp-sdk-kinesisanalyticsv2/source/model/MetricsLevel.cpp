@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MetricsLevel::NOT_SET:
+            return {};
           case MetricsLevel::APPLICATION:
             return "APPLICATION";
           case MetricsLevel::TASK:

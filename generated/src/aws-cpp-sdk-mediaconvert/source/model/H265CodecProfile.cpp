@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case H265CodecProfile::NOT_SET:
+            return {};
           case H265CodecProfile::MAIN_MAIN:
             return "MAIN_MAIN";
           case H265CodecProfile::MAIN_HIGH:

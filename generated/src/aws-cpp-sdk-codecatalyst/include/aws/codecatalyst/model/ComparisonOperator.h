@@ -20,7 +20,8 @@ namespace Model
     GT,
     GE,
     LT,
-    LE
+    LE,
+    BEGINS_WITH
   };
 
 namespace ComparisonOperatorMapper

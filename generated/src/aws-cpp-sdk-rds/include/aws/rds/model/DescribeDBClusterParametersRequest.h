@@ -99,58 +99,58 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates to return only parameters for a specific source.
-     * Parameter sources can be <code>engine</code>, <code>service</code>, or
-     * <code>customer</code>.</p>
+     * <p>A specific source to return parameters for.</p> <p>Valid Values:</p> <ul>
+     * <li> <p> <code>customer</code> </p> </li> <li> <p> <code>engine</code> </p>
+     * </li> <li> <p> <code>service</code> </p> </li> </ul>
      */
     inline const Aws::String& GetSource() const{ return m_source; }
 
     /**
-     * <p>A value that indicates to return only parameters for a specific source.
-     * Parameter sources can be <code>engine</code>, <code>service</code>, or
-     * <code>customer</code>.</p>
+     * <p>A specific source to return parameters for.</p> <p>Valid Values:</p> <ul>
+     * <li> <p> <code>customer</code> </p> </li> <li> <p> <code>engine</code> </p>
+     * </li> <li> <p> <code>service</code> </p> </li> </ul>
      */
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
 
     /**
-     * <p>A value that indicates to return only parameters for a specific source.
-     * Parameter sources can be <code>engine</code>, <code>service</code>, or
-     * <code>customer</code>.</p>
+     * <p>A specific source to return parameters for.</p> <p>Valid Values:</p> <ul>
+     * <li> <p> <code>customer</code> </p> </li> <li> <p> <code>engine</code> </p>
+     * </li> <li> <p> <code>service</code> </p> </li> </ul>
      */
     inline void SetSource(const Aws::String& value) { m_sourceHasBeenSet = true; m_source = value; }
 
     /**
-     * <p>A value that indicates to return only parameters for a specific source.
-     * Parameter sources can be <code>engine</code>, <code>service</code>, or
-     * <code>customer</code>.</p>
+     * <p>A specific source to return parameters for.</p> <p>Valid Values:</p> <ul>
+     * <li> <p> <code>customer</code> </p> </li> <li> <p> <code>engine</code> </p>
+     * </li> <li> <p> <code>service</code> </p> </li> </ul>
      */
     inline void SetSource(Aws::String&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
 
     /**
-     * <p>A value that indicates to return only parameters for a specific source.
-     * Parameter sources can be <code>engine</code>, <code>service</code>, or
-     * <code>customer</code>.</p>
+     * <p>A specific source to return parameters for.</p> <p>Valid Values:</p> <ul>
+     * <li> <p> <code>customer</code> </p> </li> <li> <p> <code>engine</code> </p>
+     * </li> <li> <p> <code>service</code> </p> </li> </ul>
      */
     inline void SetSource(const char* value) { m_sourceHasBeenSet = true; m_source.assign(value); }
 
     /**
-     * <p>A value that indicates to return only parameters for a specific source.
-     * Parameter sources can be <code>engine</code>, <code>service</code>, or
-     * <code>customer</code>.</p>
+     * <p>A specific source to return parameters for.</p> <p>Valid Values:</p> <ul>
+     * <li> <p> <code>customer</code> </p> </li> <li> <p> <code>engine</code> </p>
+     * </li> <li> <p> <code>service</code> </p> </li> </ul>
      */
     inline DescribeDBClusterParametersRequest& WithSource(const Aws::String& value) { SetSource(value); return *this;}
 
     /**
-     * <p>A value that indicates to return only parameters for a specific source.
-     * Parameter sources can be <code>engine</code>, <code>service</code>, or
-     * <code>customer</code>.</p>
+     * <p>A specific source to return parameters for.</p> <p>Valid Values:</p> <ul>
+     * <li> <p> <code>customer</code> </p> </li> <li> <p> <code>engine</code> </p>
+     * </li> <li> <p> <code>service</code> </p> </li> </ul>
      */
     inline DescribeDBClusterParametersRequest& WithSource(Aws::String&& value) { SetSource(std::move(value)); return *this;}
 
     /**
-     * <p>A value that indicates to return only parameters for a specific source.
-     * Parameter sources can be <code>engine</code>, <code>service</code>, or
-     * <code>customer</code>.</p>
+     * <p>A specific source to return parameters for.</p> <p>Valid Values:</p> <ul>
+     * <li> <p> <code>customer</code> </p> </li> <li> <p> <code>engine</code> </p>
+     * </li> <li> <p> <code>service</code> </p> </li> </ul>
      */
     inline DescribeDBClusterParametersRequest& WithSource(const char* value) { SetSource(value); return *this;}
 

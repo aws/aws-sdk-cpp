@@ -28,6 +28,7 @@
 #include <aws/migrationhubstrategy/model/GetRecommendationReportDetailsResult.h>
 #include <aws/migrationhubstrategy/model/GetServerDetailsResult.h>
 #include <aws/migrationhubstrategy/model/GetServerStrategiesResult.h>
+#include <aws/migrationhubstrategy/model/ListAnalyzableServersResult.h>
 #include <aws/migrationhubstrategy/model/ListApplicationComponentsResult.h>
 #include <aws/migrationhubstrategy/model/ListCollectorsResult.h>
 #include <aws/migrationhubstrategy/model/ListImportFileTaskResult.h>
@@ -89,6 +90,7 @@ namespace Aws
       class GetRecommendationReportDetailsRequest;
       class GetServerDetailsRequest;
       class GetServerStrategiesRequest;
+      class ListAnalyzableServersRequest;
       class ListApplicationComponentsRequest;
       class ListCollectorsRequest;
       class ListImportFileTaskRequest;
@@ -113,6 +115,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetRecommendationReportDetailsResult, MigrationHubStrategyRecommendationsError> GetRecommendationReportDetailsOutcome;
       typedef Aws::Utils::Outcome<GetServerDetailsResult, MigrationHubStrategyRecommendationsError> GetServerDetailsOutcome;
       typedef Aws::Utils::Outcome<GetServerStrategiesResult, MigrationHubStrategyRecommendationsError> GetServerStrategiesOutcome;
+      typedef Aws::Utils::Outcome<ListAnalyzableServersResult, MigrationHubStrategyRecommendationsError> ListAnalyzableServersOutcome;
       typedef Aws::Utils::Outcome<ListApplicationComponentsResult, MigrationHubStrategyRecommendationsError> ListApplicationComponentsOutcome;
       typedef Aws::Utils::Outcome<ListCollectorsResult, MigrationHubStrategyRecommendationsError> ListCollectorsOutcome;
       typedef Aws::Utils::Outcome<ListImportFileTaskResult, MigrationHubStrategyRecommendationsError> ListImportFileTaskOutcome;
@@ -137,6 +140,7 @@ namespace Aws
       typedef std::future<GetRecommendationReportDetailsOutcome> GetRecommendationReportDetailsOutcomeCallable;
       typedef std::future<GetServerDetailsOutcome> GetServerDetailsOutcomeCallable;
       typedef std::future<GetServerStrategiesOutcome> GetServerStrategiesOutcomeCallable;
+      typedef std::future<ListAnalyzableServersOutcome> ListAnalyzableServersOutcomeCallable;
       typedef std::future<ListApplicationComponentsOutcome> ListApplicationComponentsOutcomeCallable;
       typedef std::future<ListCollectorsOutcome> ListCollectorsOutcomeCallable;
       typedef std::future<ListImportFileTaskOutcome> ListImportFileTaskOutcomeCallable;
@@ -164,6 +168,7 @@ namespace Aws
     typedef std::function<void(const MigrationHubStrategyRecommendationsClient*, const Model::GetRecommendationReportDetailsRequest&, const Model::GetRecommendationReportDetailsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRecommendationReportDetailsResponseReceivedHandler;
     typedef std::function<void(const MigrationHubStrategyRecommendationsClient*, const Model::GetServerDetailsRequest&, const Model::GetServerDetailsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetServerDetailsResponseReceivedHandler;
     typedef std::function<void(const MigrationHubStrategyRecommendationsClient*, const Model::GetServerStrategiesRequest&, const Model::GetServerStrategiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetServerStrategiesResponseReceivedHandler;
+    typedef std::function<void(const MigrationHubStrategyRecommendationsClient*, const Model::ListAnalyzableServersRequest&, const Model::ListAnalyzableServersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAnalyzableServersResponseReceivedHandler;
     typedef std::function<void(const MigrationHubStrategyRecommendationsClient*, const Model::ListApplicationComponentsRequest&, const Model::ListApplicationComponentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListApplicationComponentsResponseReceivedHandler;
     typedef std::function<void(const MigrationHubStrategyRecommendationsClient*, const Model::ListCollectorsRequest&, const Model::ListCollectorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCollectorsResponseReceivedHandler;
     typedef std::function<void(const MigrationHubStrategyRecommendationsClient*, const Model::ListImportFileTaskRequest&, const Model::ListImportFileTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListImportFileTaskResponseReceivedHandler;

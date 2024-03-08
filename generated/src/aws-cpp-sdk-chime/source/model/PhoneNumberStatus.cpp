@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PhoneNumberStatus::NOT_SET:
+            return {};
           case PhoneNumberStatus::AcquireInProgress:
             return "AcquireInProgress";
           case PhoneNumberStatus::AcquireFailed:

@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case IdentityProviderTypeType::NOT_SET:
+            return {};
           case IdentityProviderTypeType::SAML:
             return "SAML";
           case IdentityProviderTypeType::Facebook:

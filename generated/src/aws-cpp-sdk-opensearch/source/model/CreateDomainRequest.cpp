@@ -18,6 +18,8 @@ CreateDomainRequest::CreateDomainRequest() :
     m_clusterConfigHasBeenSet(false),
     m_eBSOptionsHasBeenSet(false),
     m_accessPoliciesHasBeenSet(false),
+    m_iPAddressType(IPAddressType::NOT_SET),
+    m_iPAddressTypeHasBeenSet(false),
     m_snapshotOptionsHasBeenSet(false),
     m_vPCOptionsHasBeenSet(false),
     m_cognitoOptionsHasBeenSet(false),
@@ -66,6 +68,11 @@ Aws::String CreateDomainRequest::SerializePayload() const
   {
    payload.WithString("AccessPolicies", m_accessPolicies);
 
+  }
+
+  if(m_iPAddressTypeHasBeenSet)
+  {
+   payload.WithString("IPAddressType", IPAddressTypeMapper::GetNameForIPAddressType(m_iPAddressType));
   }
 
   if(m_snapshotOptionsHasBeenSet)

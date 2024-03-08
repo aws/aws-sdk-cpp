@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ProtocolValue::NOT_SET:
+            return {};
           case ProtocolValue::gre:
             return "gre";
           default:

@@ -16,7 +16,8 @@ namespace Model
   enum class StageRetryMode
   {
     NOT_SET,
-    FAILED_ACTIONS
+    FAILED_ACTIONS,
+    ALL_ACTIONS
   };
 
 namespace StageRetryModeMapper

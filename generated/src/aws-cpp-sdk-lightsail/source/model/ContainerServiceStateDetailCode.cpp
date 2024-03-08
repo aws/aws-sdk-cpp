@@ -84,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ContainerServiceStateDetailCode::NOT_SET:
+            return {};
           case ContainerServiceStateDetailCode::CREATING_SYSTEM_RESOURCES:
             return "CREATING_SYSTEM_RESOURCES";
           case ContainerServiceStateDetailCode::CREATING_NETWORK_INFRASTRUCTURE:

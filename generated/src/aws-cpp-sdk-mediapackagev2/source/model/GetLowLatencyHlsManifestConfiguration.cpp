@@ -26,7 +26,8 @@ GetLowLatencyHlsManifestConfiguration::GetLowLatencyHlsManifestConfiguration() :
     m_manifestWindowSecondsHasBeenSet(false),
     m_programDateTimeIntervalSeconds(0),
     m_programDateTimeIntervalSecondsHasBeenSet(false),
-    m_scteHlsHasBeenSet(false)
+    m_scteHlsHasBeenSet(false),
+    m_filterConfigurationHasBeenSet(false)
 {
 }
 
@@ -38,7 +39,8 @@ GetLowLatencyHlsManifestConfiguration::GetLowLatencyHlsManifestConfiguration(Jso
     m_manifestWindowSecondsHasBeenSet(false),
     m_programDateTimeIntervalSeconds(0),
     m_programDateTimeIntervalSecondsHasBeenSet(false),
-    m_scteHlsHasBeenSet(false)
+    m_scteHlsHasBeenSet(false),
+    m_filterConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -87,6 +89,13 @@ GetLowLatencyHlsManifestConfiguration& GetLowLatencyHlsManifestConfiguration::op
     m_scteHlsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("FilterConfiguration"))
+  {
+    m_filterConfiguration = jsonValue.GetObject("FilterConfiguration");
+
+    m_filterConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -127,6 +136,12 @@ JsonValue GetLowLatencyHlsManifestConfiguration::Jsonize() const
   if(m_scteHlsHasBeenSet)
   {
    payload.WithObject("ScteHls", m_scteHls.Jsonize());
+
+  }
+
+  if(m_filterConfigurationHasBeenSet)
+  {
+   payload.WithObject("FilterConfiguration", m_filterConfiguration.Jsonize());
 
   }
 

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case GroupConfigurationStatus::NOT_SET:
+            return {};
           case GroupConfigurationStatus::UPDATING:
             return "UPDATING";
           case GroupConfigurationStatus::UPDATE_COMPLETE:

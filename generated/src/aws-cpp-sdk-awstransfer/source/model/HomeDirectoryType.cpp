@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HomeDirectoryType::NOT_SET:
+            return {};
           case HomeDirectoryType::PATH:
             return "PATH";
           case HomeDirectoryType::LOGICAL:

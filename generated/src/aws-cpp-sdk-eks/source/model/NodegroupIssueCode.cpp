@@ -204,6 +204,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NodegroupIssueCode::NOT_SET:
+            return {};
           case NodegroupIssueCode::AutoScalingGroupNotFound:
             return "AutoScalingGroupNotFound";
           case NodegroupIssueCode::AutoScalingGroupInvalidConfiguration:

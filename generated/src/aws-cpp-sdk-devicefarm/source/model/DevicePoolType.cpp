@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DevicePoolType::NOT_SET:
+            return {};
           case DevicePoolType::CURATED:
             return "CURATED";
           case DevicePoolType::PRIVATE_:

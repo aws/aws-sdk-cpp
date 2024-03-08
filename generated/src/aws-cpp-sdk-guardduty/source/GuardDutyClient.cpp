@@ -56,6 +56,7 @@
 #include <aws/guardduty/model/GetMalwareScanSettingsRequest.h>
 #include <aws/guardduty/model/GetMemberDetectorsRequest.h>
 #include <aws/guardduty/model/GetMembersRequest.h>
+#include <aws/guardduty/model/GetOrganizationStatisticsRequest.h>
 #include <aws/guardduty/model/GetRemainingFreeTrialDaysRequest.h>
 #include <aws/guardduty/model/GetThreatIntelSetRequest.h>
 #include <aws/guardduty/model/GetUsageStatisticsRequest.h>
@@ -100,8 +101,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* GuardDutyClient::SERVICE_NAME = "guardduty";
-const char* GuardDutyClient::ALLOCATION_TAG = "GuardDutyClient";
+namespace Aws
+{
+  namespace GuardDuty
+  {
+    const char SERVICE_NAME[] = "guardduty";
+    const char ALLOCATION_TAG[] = "GuardDutyClient";
+  }
+}
+const char* GuardDutyClient::GetServiceName() {return SERVICE_NAME;}
+const char* GuardDutyClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 GuardDutyClient::GuardDutyClient(const GuardDuty::GuardDutyClientConfiguration& clientConfiguration,
                                  std::shared_ptr<GuardDutyEndpointProviderBase> endpointProvider) :
@@ -113,7 +122,7 @@ GuardDutyClient::GuardDutyClient(const GuardDuty::GuardDutyClientConfiguration& 
             Aws::MakeShared<GuardDutyErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<GuardDutyEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -129,7 +138,7 @@ GuardDutyClient::GuardDutyClient(const AWSCredentials& credentials,
             Aws::MakeShared<GuardDutyErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<GuardDutyEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -145,7 +154,7 @@ GuardDutyClient::GuardDutyClient(const std::shared_ptr<AWSCredentialsProvider>& 
             Aws::MakeShared<GuardDutyErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<GuardDutyEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -1401,6 +1410,33 @@ GetMembersOutcome GuardDutyClient::GetMembers(const GetMembersRequest& request) 
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDetectorId());
       endpointResolutionOutcome.GetResult().AddPathSegments("/member/get");
       return GetMembersOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+GetOrganizationStatisticsOutcome GuardDutyClient::GetOrganizationStatistics(const GetOrganizationStatisticsRequest& request) const
+{
+  AWS_OPERATION_GUARD(GetOrganizationStatistics);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetOrganizationStatistics, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetOrganizationStatistics, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetOrganizationStatistics, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetOrganizationStatistics",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetOrganizationStatisticsOutcome>(
+    [&]()-> GetOrganizationStatisticsOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetOrganizationStatistics, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/organization/statistics");
+      return GetOrganizationStatisticsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

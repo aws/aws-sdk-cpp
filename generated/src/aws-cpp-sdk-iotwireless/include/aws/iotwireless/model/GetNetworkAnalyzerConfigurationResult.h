@@ -51,49 +51,49 @@ namespace Model
 
 
     /**
-     * <p>List of wireless gateway resources that have been added to the network
+     * <p>List of wireless device resources that have been added to the network
      * analyzer configuration.</p>
      */
     inline const Aws::Vector<Aws::String>& GetWirelessDevices() const{ return m_wirelessDevices; }
 
     /**
-     * <p>List of wireless gateway resources that have been added to the network
+     * <p>List of wireless device resources that have been added to the network
      * analyzer configuration.</p>
      */
     inline void SetWirelessDevices(const Aws::Vector<Aws::String>& value) { m_wirelessDevices = value; }
 
     /**
-     * <p>List of wireless gateway resources that have been added to the network
+     * <p>List of wireless device resources that have been added to the network
      * analyzer configuration.</p>
      */
     inline void SetWirelessDevices(Aws::Vector<Aws::String>&& value) { m_wirelessDevices = std::move(value); }
 
     /**
-     * <p>List of wireless gateway resources that have been added to the network
+     * <p>List of wireless device resources that have been added to the network
      * analyzer configuration.</p>
      */
     inline GetNetworkAnalyzerConfigurationResult& WithWirelessDevices(const Aws::Vector<Aws::String>& value) { SetWirelessDevices(value); return *this;}
 
     /**
-     * <p>List of wireless gateway resources that have been added to the network
+     * <p>List of wireless device resources that have been added to the network
      * analyzer configuration.</p>
      */
     inline GetNetworkAnalyzerConfigurationResult& WithWirelessDevices(Aws::Vector<Aws::String>&& value) { SetWirelessDevices(std::move(value)); return *this;}
 
     /**
-     * <p>List of wireless gateway resources that have been added to the network
+     * <p>List of wireless device resources that have been added to the network
      * analyzer configuration.</p>
      */
     inline GetNetworkAnalyzerConfigurationResult& AddWirelessDevices(const Aws::String& value) { m_wirelessDevices.push_back(value); return *this; }
 
     /**
-     * <p>List of wireless gateway resources that have been added to the network
+     * <p>List of wireless device resources that have been added to the network
      * analyzer configuration.</p>
      */
     inline GetNetworkAnalyzerConfigurationResult& AddWirelessDevices(Aws::String&& value) { m_wirelessDevices.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>List of wireless gateway resources that have been added to the network
+     * <p>List of wireless device resources that have been added to the network
      * analyzer configuration.</p>
      */
     inline GetNetworkAnalyzerConfigurationResult& AddWirelessDevices(const char* value) { m_wirelessDevices.push_back(value); return *this; }

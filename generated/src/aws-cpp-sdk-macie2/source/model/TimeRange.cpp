@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TimeRange::NOT_SET:
+            return {};
           case TimeRange::MONTH_TO_DATE:
             return "MONTH_TO_DATE";
           case TimeRange::PAST_30_DAYS:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ObjectOwnership::NOT_SET:
+            return {};
           case ObjectOwnership::BucketOwnerPreferred:
             return "BucketOwnerPreferred";
           case ObjectOwnership::ObjectWriter:

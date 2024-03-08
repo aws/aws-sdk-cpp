@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AssociationStatusCode::NOT_SET:
+            return {};
           case AssociationStatusCode::associating:
             return "associating";
           case AssociationStatusCode::associated:

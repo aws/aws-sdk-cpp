@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case WarmPoolStatus::NOT_SET:
+            return {};
           case WarmPoolStatus::PendingDelete:
             return "PendingDelete";
           default:

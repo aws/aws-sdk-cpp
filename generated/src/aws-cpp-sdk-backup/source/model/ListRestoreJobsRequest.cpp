@@ -20,12 +20,14 @@ ListRestoreJobsRequest::ListRestoreJobsRequest() :
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
     m_byAccountIdHasBeenSet(false),
+    m_byResourceTypeHasBeenSet(false),
     m_byCreatedBeforeHasBeenSet(false),
     m_byCreatedAfterHasBeenSet(false),
     m_byStatus(RestoreJobStatus::NOT_SET),
     m_byStatusHasBeenSet(false),
     m_byCompleteBeforeHasBeenSet(false),
-    m_byCompleteAfterHasBeenSet(false)
+    m_byCompleteAfterHasBeenSet(false),
+    m_byRestoreTestingPlanArnHasBeenSet(false)
 {
 }
 
@@ -55,6 +57,13 @@ void ListRestoreJobsRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_byAccountId;
       uri.AddQueryStringParameter("accountId", ss.str());
+      ss.str("");
+    }
+
+    if(m_byResourceTypeHasBeenSet)
+    {
+      ss << m_byResourceType;
+      uri.AddQueryStringParameter("resourceType", ss.str());
       ss.str("");
     }
 
@@ -90,6 +99,13 @@ void ListRestoreJobsRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_byCompleteAfter.ToGmtString(Aws::Utils::DateFormat::ISO_8601);
       uri.AddQueryStringParameter("completeAfter", ss.str());
+      ss.str("");
+    }
+
+    if(m_byRestoreTestingPlanArnHasBeenSet)
+    {
+      ss << m_byRestoreTestingPlanArn;
+      uri.AddQueryStringParameter("restoreTestingPlanArn", ss.str());
       ss.str("");
     }
 

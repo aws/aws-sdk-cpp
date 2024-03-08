@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case WorkspaceImageRequiredTenancy::NOT_SET:
+            return {};
           case WorkspaceImageRequiredTenancy::DEFAULT:
             return "DEFAULT";
           case WorkspaceImageRequiredTenancy::DEDICATED:

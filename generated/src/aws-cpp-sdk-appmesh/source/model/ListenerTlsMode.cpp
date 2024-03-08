@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ListenerTlsMode::NOT_SET:
+            return {};
           case ListenerTlsMode::STRICT:
             return "STRICT";
           case ListenerTlsMode::PERMISSIVE:

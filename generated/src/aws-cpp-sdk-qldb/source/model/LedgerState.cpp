@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LedgerState::NOT_SET:
+            return {};
           case LedgerState::CREATING:
             return "CREATING";
           case LedgerState::ACTIVE:

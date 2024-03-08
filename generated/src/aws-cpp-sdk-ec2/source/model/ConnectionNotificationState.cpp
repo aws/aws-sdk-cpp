@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ConnectionNotificationState::NOT_SET:
+            return {};
           case ConnectionNotificationState::Enabled:
             return "Enabled";
           case ConnectionNotificationState::Disabled:

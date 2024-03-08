@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/sesv2/SESV2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/sesv2/model/MessageHeader.h>
 #include <utility>
 
 namespace Aws
@@ -203,6 +205,47 @@ namespace Model
      */
     inline Template& WithTemplateData(const char* value) { SetTemplateData(value); return *this;}
 
+
+    /**
+     * <p>The list of message headers that will be added to the email message.</p>
+     */
+    inline const Aws::Vector<MessageHeader>& GetHeaders() const{ return m_headers; }
+
+    /**
+     * <p>The list of message headers that will be added to the email message.</p>
+     */
+    inline bool HeadersHasBeenSet() const { return m_headersHasBeenSet; }
+
+    /**
+     * <p>The list of message headers that will be added to the email message.</p>
+     */
+    inline void SetHeaders(const Aws::Vector<MessageHeader>& value) { m_headersHasBeenSet = true; m_headers = value; }
+
+    /**
+     * <p>The list of message headers that will be added to the email message.</p>
+     */
+    inline void SetHeaders(Aws::Vector<MessageHeader>&& value) { m_headersHasBeenSet = true; m_headers = std::move(value); }
+
+    /**
+     * <p>The list of message headers that will be added to the email message.</p>
+     */
+    inline Template& WithHeaders(const Aws::Vector<MessageHeader>& value) { SetHeaders(value); return *this;}
+
+    /**
+     * <p>The list of message headers that will be added to the email message.</p>
+     */
+    inline Template& WithHeaders(Aws::Vector<MessageHeader>&& value) { SetHeaders(std::move(value)); return *this;}
+
+    /**
+     * <p>The list of message headers that will be added to the email message.</p>
+     */
+    inline Template& AddHeaders(const MessageHeader& value) { m_headersHasBeenSet = true; m_headers.push_back(value); return *this; }
+
+    /**
+     * <p>The list of message headers that will be added to the email message.</p>
+     */
+    inline Template& AddHeaders(MessageHeader&& value) { m_headersHasBeenSet = true; m_headers.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_templateName;
@@ -213,6 +256,9 @@ namespace Model
 
     Aws::String m_templateData;
     bool m_templateDataHasBeenSet = false;
+
+    Aws::Vector<MessageHeader> m_headers;
+    bool m_headersHasBeenSet = false;
   };
 
 } // namespace Model

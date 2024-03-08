@@ -16,6 +16,7 @@ ListEndpointAccessRequest::ListEndpointAccessRequest() :
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
+    m_ownerAccountHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_workgroupNameHasBeenSet(false)
 {
@@ -34,6 +35,12 @@ Aws::String ListEndpointAccessRequest::SerializePayload() const
   if(m_nextTokenHasBeenSet)
   {
    payload.WithString("nextToken", m_nextToken);
+
+  }
+
+  if(m_ownerAccountHasBeenSet)
+  {
+   payload.WithString("ownerAccount", m_ownerAccount);
 
   }
 

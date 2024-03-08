@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FreeTrialInfoErrorCode::NOT_SET:
+            return {};
           case FreeTrialInfoErrorCode::ACCESS_DENIED:
             return "ACCESS_DENIED";
           case FreeTrialInfoErrorCode::INTERNAL_ERROR:

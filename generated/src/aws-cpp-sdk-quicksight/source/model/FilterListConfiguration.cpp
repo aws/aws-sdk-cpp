@@ -23,7 +23,9 @@ FilterListConfiguration::FilterListConfiguration() :
     m_matchOperatorHasBeenSet(false),
     m_categoryValuesHasBeenSet(false),
     m_selectAllOptions(CategoryFilterSelectAllOptions::NOT_SET),
-    m_selectAllOptionsHasBeenSet(false)
+    m_selectAllOptionsHasBeenSet(false),
+    m_nullOption(FilterNullOption::NOT_SET),
+    m_nullOptionHasBeenSet(false)
 {
 }
 
@@ -32,7 +34,9 @@ FilterListConfiguration::FilterListConfiguration(JsonView jsonValue) :
     m_matchOperatorHasBeenSet(false),
     m_categoryValuesHasBeenSet(false),
     m_selectAllOptions(CategoryFilterSelectAllOptions::NOT_SET),
-    m_selectAllOptionsHasBeenSet(false)
+    m_selectAllOptionsHasBeenSet(false),
+    m_nullOption(FilterNullOption::NOT_SET),
+    m_nullOptionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -63,6 +67,13 @@ FilterListConfiguration& FilterListConfiguration::operator =(JsonView jsonValue)
     m_selectAllOptionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("NullOption"))
+  {
+    m_nullOption = FilterNullOptionMapper::GetFilterNullOptionForName(jsonValue.GetString("NullOption"));
+
+    m_nullOptionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -89,6 +100,11 @@ JsonValue FilterListConfiguration::Jsonize() const
   if(m_selectAllOptionsHasBeenSet)
   {
    payload.WithString("SelectAllOptions", CategoryFilterSelectAllOptionsMapper::GetNameForCategoryFilterSelectAllOptions(m_selectAllOptions));
+  }
+
+  if(m_nullOptionHasBeenSet)
+  {
+   payload.WithString("NullOption", FilterNullOptionMapper::GetNameForFilterNullOption(m_nullOption));
   }
 
   return payload;

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AccessDeniedExceptionReason::NOT_SET:
+            return {};
           case AccessDeniedExceptionReason::UNAUTHORIZED_ACCOUNT:
             return "UNAUTHORIZED_ACCOUNT";
           case AccessDeniedExceptionReason::DEPENDENCY_ACCESS_DENIED:

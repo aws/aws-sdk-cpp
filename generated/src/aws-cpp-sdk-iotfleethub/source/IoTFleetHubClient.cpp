@@ -43,8 +43,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* IoTFleetHubClient::SERVICE_NAME = "iotfleethub";
-const char* IoTFleetHubClient::ALLOCATION_TAG = "IoTFleetHubClient";
+namespace Aws
+{
+  namespace IoTFleetHub
+  {
+    const char SERVICE_NAME[] = "iotfleethub";
+    const char ALLOCATION_TAG[] = "IoTFleetHubClient";
+  }
+}
+const char* IoTFleetHubClient::GetServiceName() {return SERVICE_NAME;}
+const char* IoTFleetHubClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 IoTFleetHubClient::IoTFleetHubClient(const IoTFleetHub::IoTFleetHubClientConfiguration& clientConfiguration,
                                      std::shared_ptr<IoTFleetHubEndpointProviderBase> endpointProvider) :
@@ -56,7 +64,7 @@ IoTFleetHubClient::IoTFleetHubClient(const IoTFleetHub::IoTFleetHubClientConfigu
             Aws::MakeShared<IoTFleetHubErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<IoTFleetHubEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -72,7 +80,7 @@ IoTFleetHubClient::IoTFleetHubClient(const AWSCredentials& credentials,
             Aws::MakeShared<IoTFleetHubErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<IoTFleetHubEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -88,7 +96,7 @@ IoTFleetHubClient::IoTFleetHubClient(const std::shared_ptr<AWSCredentialsProvide
             Aws::MakeShared<IoTFleetHubErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<IoTFleetHubEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

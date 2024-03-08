@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case WorldExportJobStatus::NOT_SET:
+            return {};
           case WorldExportJobStatus::Pending:
             return "Pending";
           case WorldExportJobStatus::Running:

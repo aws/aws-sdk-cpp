@@ -18,7 +18,10 @@ namespace Model
     NOT_SET,
     LIFETIME,
     DAYS_30,
-    DAYS_180
+    DAYS_180,
+    DAYS_14,
+    DAYS_60,
+    DAYS_90
   };
 
 namespace EcrRescanDurationMapper

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FlexibleTimeWindowMode::NOT_SET:
+            return {};
           case FlexibleTimeWindowMode::OFF:
             return "OFF";
           case FlexibleTimeWindowMode::FLEXIBLE:

@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DiscoveryJobStatus::NOT_SET:
+            return {};
           case DiscoveryJobStatus::RUNNING:
             return "RUNNING";
           case DiscoveryJobStatus::WARNING:

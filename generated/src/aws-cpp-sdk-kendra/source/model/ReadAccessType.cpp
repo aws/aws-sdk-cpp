@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReadAccessType::NOT_SET:
+            return {};
           case ReadAccessType::ALLOW:
             return "ALLOW";
           case ReadAccessType::DENY:

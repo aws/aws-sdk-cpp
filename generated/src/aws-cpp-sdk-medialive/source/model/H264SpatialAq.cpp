@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case H264SpatialAq::NOT_SET:
+            return {};
           case H264SpatialAq::DISABLED:
             return "DISABLED";
           case H264SpatialAq::ENABLED:

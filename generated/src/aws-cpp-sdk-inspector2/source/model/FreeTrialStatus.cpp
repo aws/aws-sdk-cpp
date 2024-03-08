@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FreeTrialStatus::NOT_SET:
+            return {};
           case FreeTrialStatus::ACTIVE:
             return "ACTIVE";
           case FreeTrialStatus::INACTIVE:

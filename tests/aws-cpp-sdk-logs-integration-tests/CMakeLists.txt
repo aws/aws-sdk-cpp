@@ -1,6 +1,9 @@
 add_project(aws-cpp-sdk-logs-integration-tests
     "Tests for the AWS CloudWatch Logs C++ SDK"
     aws-cpp-sdk-logs
+    aws-cpp-sdk-access-management
+    aws-cpp-sdk-iam
+    aws-cpp-sdk-cognito-identity
     testing-resources
     aws-cpp-sdk-core)
 

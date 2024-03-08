@@ -109,6 +109,47 @@ namespace Model
      */
     inline InvalidSignalDecoder& WithReason(SignalDecoderFailureReason&& value) { SetReason(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The possible cause for the invalid signal decoder.</p>
+     */
+    inline const Aws::String& GetHint() const{ return m_hint; }
+
+    /**
+     * <p>The possible cause for the invalid signal decoder.</p>
+     */
+    inline bool HintHasBeenSet() const { return m_hintHasBeenSet; }
+
+    /**
+     * <p>The possible cause for the invalid signal decoder.</p>
+     */
+    inline void SetHint(const Aws::String& value) { m_hintHasBeenSet = true; m_hint = value; }
+
+    /**
+     * <p>The possible cause for the invalid signal decoder.</p>
+     */
+    inline void SetHint(Aws::String&& value) { m_hintHasBeenSet = true; m_hint = std::move(value); }
+
+    /**
+     * <p>The possible cause for the invalid signal decoder.</p>
+     */
+    inline void SetHint(const char* value) { m_hintHasBeenSet = true; m_hint.assign(value); }
+
+    /**
+     * <p>The possible cause for the invalid signal decoder.</p>
+     */
+    inline InvalidSignalDecoder& WithHint(const Aws::String& value) { SetHint(value); return *this;}
+
+    /**
+     * <p>The possible cause for the invalid signal decoder.</p>
+     */
+    inline InvalidSignalDecoder& WithHint(Aws::String&& value) { SetHint(std::move(value)); return *this;}
+
+    /**
+     * <p>The possible cause for the invalid signal decoder.</p>
+     */
+    inline InvalidSignalDecoder& WithHint(const char* value) { SetHint(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -116,6 +157,9 @@ namespace Model
 
     SignalDecoderFailureReason m_reason;
     bool m_reasonHasBeenSet = false;
+
+    Aws::String m_hint;
+    bool m_hintHasBeenSet = false;
   };
 
 } // namespace Model

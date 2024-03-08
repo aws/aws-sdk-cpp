@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EnhancedMonitoring::NOT_SET:
+            return {};
           case EnhancedMonitoring::DEFAULT:
             return "DEFAULT";
           case EnhancedMonitoring::PER_BROKER:

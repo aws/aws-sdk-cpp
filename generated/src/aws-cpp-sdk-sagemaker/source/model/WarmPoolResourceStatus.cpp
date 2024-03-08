@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case WarmPoolResourceStatus::NOT_SET:
+            return {};
           case WarmPoolResourceStatus::Available:
             return "Available";
           case WarmPoolResourceStatus::Terminated:

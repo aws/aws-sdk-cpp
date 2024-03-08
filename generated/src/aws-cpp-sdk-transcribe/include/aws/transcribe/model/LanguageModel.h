@@ -210,7 +210,7 @@ namespace Model
      * and tuning data.</p> <p>For a list of supported languages and their associated
      * language codes, refer to the <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported
-     * languages</a> table. Note that U.S. English (<code>en-US</code>) is the only
+     * languages</a> table. Note that US English (<code>en-US</code>) is the only
      * language supported with Amazon Transcribe Medical.</p>
      */
     inline const CLMLanguageCode& GetLanguageCode() const{ return m_languageCode; }
@@ -222,7 +222,7 @@ namespace Model
      * and tuning data.</p> <p>For a list of supported languages and their associated
      * language codes, refer to the <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported
-     * languages</a> table. Note that U.S. English (<code>en-US</code>) is the only
+     * languages</a> table. Note that US English (<code>en-US</code>) is the only
      * language supported with Amazon Transcribe Medical.</p>
      */
     inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
@@ -234,7 +234,7 @@ namespace Model
      * and tuning data.</p> <p>For a list of supported languages and their associated
      * language codes, refer to the <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported
-     * languages</a> table. Note that U.S. English (<code>en-US</code>) is the only
+     * languages</a> table. Note that US English (<code>en-US</code>) is the only
      * language supported with Amazon Transcribe Medical.</p>
      */
     inline void SetLanguageCode(const CLMLanguageCode& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
@@ -246,7 +246,7 @@ namespace Model
      * and tuning data.</p> <p>For a list of supported languages and their associated
      * language codes, refer to the <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported
-     * languages</a> table. Note that U.S. English (<code>en-US</code>) is the only
+     * languages</a> table. Note that US English (<code>en-US</code>) is the only
      * language supported with Amazon Transcribe Medical.</p>
      */
     inline void SetLanguageCode(CLMLanguageCode&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
@@ -258,7 +258,7 @@ namespace Model
      * and tuning data.</p> <p>For a list of supported languages and their associated
      * language codes, refer to the <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported
-     * languages</a> table. Note that U.S. English (<code>en-US</code>) is the only
+     * languages</a> table. Note that US English (<code>en-US</code>) is the only
      * language supported with Amazon Transcribe Medical.</p>
      */
     inline LanguageModel& WithLanguageCode(const CLMLanguageCode& value) { SetLanguageCode(value); return *this;}
@@ -270,7 +270,7 @@ namespace Model
      * and tuning data.</p> <p>For a list of supported languages and their associated
      * language codes, refer to the <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported
-     * languages</a> table. Note that U.S. English (<code>en-US</code>) is the only
+     * languages</a> table. Note that US English (<code>en-US</code>) is the only
      * language supported with Amazon Transcribe Medical.</p>
      */
     inline LanguageModel& WithLanguageCode(CLMLanguageCode&& value) { SetLanguageCode(std::move(value)); return *this;}

@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Code::NOT_SET:
+            return {};
           case Code::ACCESS_DENIED_EXCEPTION:
             return "ACCESS_DENIED_EXCEPTION";
           case Code::INTERNAL_SERVER_EXCEPTION:

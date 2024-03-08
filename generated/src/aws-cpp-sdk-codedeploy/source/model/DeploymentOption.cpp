@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DeploymentOption::NOT_SET:
+            return {};
           case DeploymentOption::WITH_TRAFFIC_CONTROL:
             return "WITH_TRAFFIC_CONTROL";
           case DeploymentOption::WITHOUT_TRAFFIC_CONTROL:

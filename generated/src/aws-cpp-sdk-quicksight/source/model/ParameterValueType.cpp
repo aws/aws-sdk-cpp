@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ParameterValueType::NOT_SET:
+            return {};
           case ParameterValueType::MULTI_VALUED:
             return "MULTI_VALUED";
           case ParameterValueType::SINGLE_VALUED:

@@ -107,8 +107,8 @@ namespace Proton
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef ProtonClientConfiguration ClientConfigurationType;
       typedef ProtonEndpointProvider EndpointProviderType;
@@ -118,14 +118,14 @@ namespace Proton
         * is not specified, it will be initialized to default values.
         */
         ProtonClient(const Aws::Proton::ProtonClientConfiguration& clientConfiguration = Aws::Proton::ProtonClientConfiguration(),
-                     std::shared_ptr<ProtonEndpointProviderBase> endpointProvider = Aws::MakeShared<ProtonEndpointProvider>(ALLOCATION_TAG));
+                     std::shared_ptr<ProtonEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         ProtonClient(const Aws::Auth::AWSCredentials& credentials,
-                     std::shared_ptr<ProtonEndpointProviderBase> endpointProvider = Aws::MakeShared<ProtonEndpointProvider>(ALLOCATION_TAG),
+                     std::shared_ptr<ProtonEndpointProviderBase> endpointProvider = nullptr,
                      const Aws::Proton::ProtonClientConfiguration& clientConfiguration = Aws::Proton::ProtonClientConfiguration());
 
        /**
@@ -133,7 +133,7 @@ namespace Proton
         * the default http client factory will be used
         */
         ProtonClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                     std::shared_ptr<ProtonEndpointProviderBase> endpointProvider = Aws::MakeShared<ProtonEndpointProvider>(ALLOCATION_TAG),
+                     std::shared_ptr<ProtonEndpointProviderBase> endpointProvider = nullptr,
                      const Aws::Proton::ProtonClientConfiguration& clientConfiguration = Aws::Proton::ProtonClientConfiguration());
 
 

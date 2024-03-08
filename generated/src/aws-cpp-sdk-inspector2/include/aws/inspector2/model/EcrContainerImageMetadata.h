@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/inspector2/Inspector2_EXPORTS.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
@@ -37,6 +38,37 @@ namespace Model
     AWS_INSPECTOR2_API EcrContainerImageMetadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API EcrContainerImageMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>The date an image was last pulled at.</p>
+     */
+    inline const Aws::Utils::DateTime& GetImagePulledAt() const{ return m_imagePulledAt; }
+
+    /**
+     * <p>The date an image was last pulled at.</p>
+     */
+    inline bool ImagePulledAtHasBeenSet() const { return m_imagePulledAtHasBeenSet; }
+
+    /**
+     * <p>The date an image was last pulled at.</p>
+     */
+    inline void SetImagePulledAt(const Aws::Utils::DateTime& value) { m_imagePulledAtHasBeenSet = true; m_imagePulledAt = value; }
+
+    /**
+     * <p>The date an image was last pulled at.</p>
+     */
+    inline void SetImagePulledAt(Aws::Utils::DateTime&& value) { m_imagePulledAtHasBeenSet = true; m_imagePulledAt = std::move(value); }
+
+    /**
+     * <p>The date an image was last pulled at.</p>
+     */
+    inline EcrContainerImageMetadata& WithImagePulledAt(const Aws::Utils::DateTime& value) { SetImagePulledAt(value); return *this;}
+
+    /**
+     * <p>The date an image was last pulled at.</p>
+     */
+    inline EcrContainerImageMetadata& WithImagePulledAt(Aws::Utils::DateTime&& value) { SetImagePulledAt(std::move(value)); return *this;}
 
 
     /**
@@ -85,6 +117,9 @@ namespace Model
     inline EcrContainerImageMetadata& AddTags(const char* value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
   private:
+
+    Aws::Utils::DateTime m_imagePulledAt;
+    bool m_imagePulledAtHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;

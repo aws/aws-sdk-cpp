@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SNOMEDCTAttributeType::NOT_SET:
+            return {};
           case SNOMEDCTAttributeType::ACUITY:
             return "ACUITY";
           case SNOMEDCTAttributeType::QUALITY:

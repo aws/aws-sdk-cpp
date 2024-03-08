@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CallingNameStatus::NOT_SET:
+            return {};
           case CallingNameStatus::Unassigned:
             return "Unassigned";
           case CallingNameStatus::UpdateInProgress:

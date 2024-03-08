@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RobotSoftwareSuiteType::NOT_SET:
+            return {};
           case RobotSoftwareSuiteType::ROS:
             return "ROS";
           case RobotSoftwareSuiteType::ROS2:

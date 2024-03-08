@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Mode::NOT_SET:
+            return {};
           case Mode::OFF:
             return "OFF";
           case Mode::BEHIND_LIVE_EDGE:

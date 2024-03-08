@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/verifiedpermissions/VerifiedPermissions_EXPORTS.h>
 #include <aws/core/utils/DateTime.h>
-#include <aws/verifiedpermissions/model/IdentitySourceDetails.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/verifiedpermissions/model/ConfigurationDetail.h>
 #include <utility>
 
 namespace Aws
@@ -58,32 +58,6 @@ namespace Model
      * <p>The date and time that the identity source was originally created.</p>
      */
     inline GetIdentitySourceResult& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(std::move(value)); return *this;}
-
-
-    /**
-     * <p>A structure that describes the configuration of the identity source.</p>
-     */
-    inline const IdentitySourceDetails& GetDetails() const{ return m_details; }
-
-    /**
-     * <p>A structure that describes the configuration of the identity source.</p>
-     */
-    inline void SetDetails(const IdentitySourceDetails& value) { m_details = value; }
-
-    /**
-     * <p>A structure that describes the configuration of the identity source.</p>
-     */
-    inline void SetDetails(IdentitySourceDetails&& value) { m_details = std::move(value); }
-
-    /**
-     * <p>A structure that describes the configuration of the identity source.</p>
-     */
-    inline GetIdentitySourceResult& WithDetails(const IdentitySourceDetails& value) { SetDetails(value); return *this;}
-
-    /**
-     * <p>A structure that describes the configuration of the identity source.</p>
-     */
-    inline GetIdentitySourceResult& WithDetails(IdentitySourceDetails&& value) { SetDetails(std::move(value)); return *this;}
 
 
     /**
@@ -227,6 +201,32 @@ namespace Model
     inline GetIdentitySourceResult& WithPrincipalEntityType(const char* value) { SetPrincipalEntityType(value); return *this;}
 
 
+    /**
+     * <p>Contains configuration information about an identity source.</p>
+     */
+    inline const ConfigurationDetail& GetConfiguration() const{ return m_configuration; }
+
+    /**
+     * <p>Contains configuration information about an identity source.</p>
+     */
+    inline void SetConfiguration(const ConfigurationDetail& value) { m_configuration = value; }
+
+    /**
+     * <p>Contains configuration information about an identity source.</p>
+     */
+    inline void SetConfiguration(ConfigurationDetail&& value) { m_configuration = std::move(value); }
+
+    /**
+     * <p>Contains configuration information about an identity source.</p>
+     */
+    inline GetIdentitySourceResult& WithConfiguration(const ConfigurationDetail& value) { SetConfiguration(value); return *this;}
+
+    /**
+     * <p>Contains configuration information about an identity source.</p>
+     */
+    inline GetIdentitySourceResult& WithConfiguration(ConfigurationDetail&& value) { SetConfiguration(std::move(value)); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -252,8 +252,6 @@ namespace Model
 
     Aws::Utils::DateTime m_createdDate;
 
-    IdentitySourceDetails m_details;
-
     Aws::String m_identitySourceId;
 
     Aws::Utils::DateTime m_lastUpdatedDate;
@@ -261,6 +259,8 @@ namespace Model
     Aws::String m_policyStoreId;
 
     Aws::String m_principalEntityType;
+
+    ConfigurationDetail m_configuration;
 
     Aws::String m_requestId;
   };

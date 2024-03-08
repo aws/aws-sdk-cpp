@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LocationStatusType::NOT_SET:
+            return {};
           case LocationStatusType::DOCUMENTED:
             return "DOCUMENTED";
           case LocationStatusType::UNDOCUMENTED:

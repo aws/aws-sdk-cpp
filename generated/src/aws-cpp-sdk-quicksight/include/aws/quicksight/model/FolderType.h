@@ -16,7 +16,8 @@ namespace Model
   enum class FolderType
   {
     NOT_SET,
-    SHARED
+    SHARED,
+    RESTRICTED
   };
 
 namespace FolderTypeMapper

@@ -104,6 +104,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ChannelType::NOT_SET:
+            return {};
           case ChannelType::PUSH:
             return "PUSH";
           case ChannelType::GCM:

@@ -168,49 +168,57 @@ namespace Model
 
     /**
      * <p>Specify which monitoring actions the user is allowed to take. For example,
-     * whether the user is allowed to escalate from silent monitoring to barge.</p>
+     * whether the user is allowed to escalate from silent monitoring to barge.
+     * AllowedMonitorCapabilities is required if barge is enabled.</p>
      */
     inline const Aws::Vector<MonitorCapability>& GetAllowedMonitorCapabilities() const{ return m_allowedMonitorCapabilities; }
 
     /**
      * <p>Specify which monitoring actions the user is allowed to take. For example,
-     * whether the user is allowed to escalate from silent monitoring to barge.</p>
+     * whether the user is allowed to escalate from silent monitoring to barge.
+     * AllowedMonitorCapabilities is required if barge is enabled.</p>
      */
     inline bool AllowedMonitorCapabilitiesHasBeenSet() const { return m_allowedMonitorCapabilitiesHasBeenSet; }
 
     /**
      * <p>Specify which monitoring actions the user is allowed to take. For example,
-     * whether the user is allowed to escalate from silent monitoring to barge.</p>
+     * whether the user is allowed to escalate from silent monitoring to barge.
+     * AllowedMonitorCapabilities is required if barge is enabled.</p>
      */
     inline void SetAllowedMonitorCapabilities(const Aws::Vector<MonitorCapability>& value) { m_allowedMonitorCapabilitiesHasBeenSet = true; m_allowedMonitorCapabilities = value; }
 
     /**
      * <p>Specify which monitoring actions the user is allowed to take. For example,
-     * whether the user is allowed to escalate from silent monitoring to barge.</p>
+     * whether the user is allowed to escalate from silent monitoring to barge.
+     * AllowedMonitorCapabilities is required if barge is enabled.</p>
      */
     inline void SetAllowedMonitorCapabilities(Aws::Vector<MonitorCapability>&& value) { m_allowedMonitorCapabilitiesHasBeenSet = true; m_allowedMonitorCapabilities = std::move(value); }
 
     /**
      * <p>Specify which monitoring actions the user is allowed to take. For example,
-     * whether the user is allowed to escalate from silent monitoring to barge.</p>
+     * whether the user is allowed to escalate from silent monitoring to barge.
+     * AllowedMonitorCapabilities is required if barge is enabled.</p>
      */
     inline MonitorContactRequest& WithAllowedMonitorCapabilities(const Aws::Vector<MonitorCapability>& value) { SetAllowedMonitorCapabilities(value); return *this;}
 
     /**
      * <p>Specify which monitoring actions the user is allowed to take. For example,
-     * whether the user is allowed to escalate from silent monitoring to barge.</p>
+     * whether the user is allowed to escalate from silent monitoring to barge.
+     * AllowedMonitorCapabilities is required if barge is enabled.</p>
      */
     inline MonitorContactRequest& WithAllowedMonitorCapabilities(Aws::Vector<MonitorCapability>&& value) { SetAllowedMonitorCapabilities(std::move(value)); return *this;}
 
     /**
      * <p>Specify which monitoring actions the user is allowed to take. For example,
-     * whether the user is allowed to escalate from silent monitoring to barge.</p>
+     * whether the user is allowed to escalate from silent monitoring to barge.
+     * AllowedMonitorCapabilities is required if barge is enabled.</p>
      */
     inline MonitorContactRequest& AddAllowedMonitorCapabilities(const MonitorCapability& value) { m_allowedMonitorCapabilitiesHasBeenSet = true; m_allowedMonitorCapabilities.push_back(value); return *this; }
 
     /**
      * <p>Specify which monitoring actions the user is allowed to take. For example,
-     * whether the user is allowed to escalate from silent monitoring to barge.</p>
+     * whether the user is allowed to escalate from silent monitoring to barge.
+     * AllowedMonitorCapabilities is required if barge is enabled.</p>
      */
     inline MonitorContactRequest& AddAllowedMonitorCapabilities(MonitorCapability&& value) { m_allowedMonitorCapabilitiesHasBeenSet = true; m_allowedMonitorCapabilities.push_back(std::move(value)); return *this; }
 

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case GetCampaignStateBatchFailureCode::NOT_SET:
+            return {};
           case GetCampaignStateBatchFailureCode::ResourceNotFound:
             return "ResourceNotFound";
           case GetCampaignStateBatchFailureCode::UnknownError:

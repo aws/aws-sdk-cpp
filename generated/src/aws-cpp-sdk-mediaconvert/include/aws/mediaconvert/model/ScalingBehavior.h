@@ -17,7 +17,10 @@ namespace Model
   {
     NOT_SET,
     DEFAULT,
-    STRETCH_TO_OUTPUT
+    STRETCH_TO_OUTPUT,
+    FIT,
+    FIT_NO_UPSCALE,
+    FILL
   };
 
 namespace ScalingBehaviorMapper

@@ -36,8 +36,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* KinesisVideoMediaClient::SERVICE_NAME = "kinesisvideo";
-const char* KinesisVideoMediaClient::ALLOCATION_TAG = "KinesisVideoMediaClient";
+namespace Aws
+{
+  namespace KinesisVideoMedia
+  {
+    const char SERVICE_NAME[] = "kinesisvideo";
+    const char ALLOCATION_TAG[] = "KinesisVideoMediaClient";
+  }
+}
+const char* KinesisVideoMediaClient::GetServiceName() {return SERVICE_NAME;}
+const char* KinesisVideoMediaClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 KinesisVideoMediaClient::KinesisVideoMediaClient(const KinesisVideoMedia::KinesisVideoMediaClientConfiguration& clientConfiguration,
                                                  std::shared_ptr<KinesisVideoMediaEndpointProviderBase> endpointProvider) :
@@ -49,7 +57,7 @@ KinesisVideoMediaClient::KinesisVideoMediaClient(const KinesisVideoMedia::Kinesi
             Aws::MakeShared<KinesisVideoMediaErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<KinesisVideoMediaEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -65,7 +73,7 @@ KinesisVideoMediaClient::KinesisVideoMediaClient(const AWSCredentials& credentia
             Aws::MakeShared<KinesisVideoMediaErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<KinesisVideoMediaEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -81,7 +89,7 @@ KinesisVideoMediaClient::KinesisVideoMediaClient(const std::shared_ptr<AWSCreden
             Aws::MakeShared<KinesisVideoMediaErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<KinesisVideoMediaEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

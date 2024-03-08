@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NetworkInterfaceCreationType::NOT_SET:
+            return {};
           case NetworkInterfaceCreationType::efa:
             return "efa";
           case NetworkInterfaceCreationType::branch:

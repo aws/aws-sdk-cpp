@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ChoiceStatus::NOT_SET:
+            return {};
           case ChoiceStatus::SELECTED:
             return "SELECTED";
           case ChoiceStatus::NOT_APPLICABLE:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UsageLimitFeatureType::NOT_SET:
+            return {};
           case UsageLimitFeatureType::spectrum:
             return "spectrum";
           case UsageLimitFeatureType::concurrency_scaling:

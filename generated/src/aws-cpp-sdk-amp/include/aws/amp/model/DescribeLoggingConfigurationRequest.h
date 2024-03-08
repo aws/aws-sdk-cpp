@@ -17,7 +17,7 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input of a DescribeLoggingConfiguration
+   * <p>Represents the input of a <code>DescribeLoggingConfiguration</code>
    * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/amp-2020-08-01/DescribeLoggingConfigurationRequest">AWS
    * API Reference</a></p>
@@ -37,42 +37,42 @@ namespace Model
 
 
     /**
-     * <p>The ID of the workspace to vend logs to.</p>
+     * <p>The ID of the workspace to describe the logging configuration for.</p>
      */
     inline const Aws::String& GetWorkspaceId() const{ return m_workspaceId; }
 
     /**
-     * <p>The ID of the workspace to vend logs to.</p>
+     * <p>The ID of the workspace to describe the logging configuration for.</p>
      */
     inline bool WorkspaceIdHasBeenSet() const { return m_workspaceIdHasBeenSet; }
 
     /**
-     * <p>The ID of the workspace to vend logs to.</p>
+     * <p>The ID of the workspace to describe the logging configuration for.</p>
      */
     inline void SetWorkspaceId(const Aws::String& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = value; }
 
     /**
-     * <p>The ID of the workspace to vend logs to.</p>
+     * <p>The ID of the workspace to describe the logging configuration for.</p>
      */
     inline void SetWorkspaceId(Aws::String&& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = std::move(value); }
 
     /**
-     * <p>The ID of the workspace to vend logs to.</p>
+     * <p>The ID of the workspace to describe the logging configuration for.</p>
      */
     inline void SetWorkspaceId(const char* value) { m_workspaceIdHasBeenSet = true; m_workspaceId.assign(value); }
 
     /**
-     * <p>The ID of the workspace to vend logs to.</p>
+     * <p>The ID of the workspace to describe the logging configuration for.</p>
      */
     inline DescribeLoggingConfigurationRequest& WithWorkspaceId(const Aws::String& value) { SetWorkspaceId(value); return *this;}
 
     /**
-     * <p>The ID of the workspace to vend logs to.</p>
+     * <p>The ID of the workspace to describe the logging configuration for.</p>
      */
     inline DescribeLoggingConfigurationRequest& WithWorkspaceId(Aws::String&& value) { SetWorkspaceId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the workspace to vend logs to.</p>
+     * <p>The ID of the workspace to describe the logging configuration for.</p>
      */
     inline DescribeLoggingConfigurationRequest& WithWorkspaceId(const char* value) { SetWorkspaceId(value); return *this;}
 

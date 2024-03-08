@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Owner::NOT_SET:
+            return {};
           case Owner::AWS_MANAGED:
             return "AWS_MANAGED";
           case Owner::CUSTOM:

@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ExecutionResult::NOT_SET:
+            return {};
           case ExecutionResult::PENDING:
             return "PENDING";
           case ExecutionResult::PASSED:

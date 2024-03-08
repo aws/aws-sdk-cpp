@@ -20,6 +20,7 @@ namespace Model
 
 UsageStatistics::UsageStatistics() : 
     m_sumByAccountHasBeenSet(false),
+    m_topAccountsByFeatureHasBeenSet(false),
     m_sumByDataSourceHasBeenSet(false),
     m_sumByResourceHasBeenSet(false),
     m_topResourcesHasBeenSet(false),
@@ -29,6 +30,7 @@ UsageStatistics::UsageStatistics() :
 
 UsageStatistics::UsageStatistics(JsonView jsonValue) : 
     m_sumByAccountHasBeenSet(false),
+    m_topAccountsByFeatureHasBeenSet(false),
     m_sumByDataSourceHasBeenSet(false),
     m_sumByResourceHasBeenSet(false),
     m_topResourcesHasBeenSet(false),
@@ -47,6 +49,16 @@ UsageStatistics& UsageStatistics::operator =(JsonView jsonValue)
       m_sumByAccount.push_back(sumByAccountJsonList[sumByAccountIndex].AsObject());
     }
     m_sumByAccountHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("topAccountsByFeature"))
+  {
+    Aws::Utils::Array<JsonView> topAccountsByFeatureJsonList = jsonValue.GetArray("topAccountsByFeature");
+    for(unsigned topAccountsByFeatureIndex = 0; topAccountsByFeatureIndex < topAccountsByFeatureJsonList.GetLength(); ++topAccountsByFeatureIndex)
+    {
+      m_topAccountsByFeature.push_back(topAccountsByFeatureJsonList[topAccountsByFeatureIndex].AsObject());
+    }
+    m_topAccountsByFeatureHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("sumByDataSource"))
@@ -104,6 +116,17 @@ JsonValue UsageStatistics::Jsonize() const
      sumByAccountJsonList[sumByAccountIndex].AsObject(m_sumByAccount[sumByAccountIndex].Jsonize());
    }
    payload.WithArray("sumByAccount", std::move(sumByAccountJsonList));
+
+  }
+
+  if(m_topAccountsByFeatureHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> topAccountsByFeatureJsonList(m_topAccountsByFeature.size());
+   for(unsigned topAccountsByFeatureIndex = 0; topAccountsByFeatureIndex < topAccountsByFeatureJsonList.GetLength(); ++topAccountsByFeatureIndex)
+   {
+     topAccountsByFeatureJsonList[topAccountsByFeatureIndex].AsObject(m_topAccountsByFeature[topAccountsByFeatureIndex].Jsonize());
+   }
+   payload.WithArray("topAccountsByFeature", std::move(topAccountsByFeatureJsonList));
 
   }
 

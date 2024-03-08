@@ -55,10 +55,38 @@ namespace Model
      */
     inline SecurityContext& WithPrivileged(bool value) { SetPrivileged(value); return *this;}
 
+
+    /**
+     * <p>Whether or not a container or a Kubernetes pod is allowed to gain more
+     * privileges than its parent process.</p>
+     */
+    inline bool GetAllowPrivilegeEscalation() const{ return m_allowPrivilegeEscalation; }
+
+    /**
+     * <p>Whether or not a container or a Kubernetes pod is allowed to gain more
+     * privileges than its parent process.</p>
+     */
+    inline bool AllowPrivilegeEscalationHasBeenSet() const { return m_allowPrivilegeEscalationHasBeenSet; }
+
+    /**
+     * <p>Whether or not a container or a Kubernetes pod is allowed to gain more
+     * privileges than its parent process.</p>
+     */
+    inline void SetAllowPrivilegeEscalation(bool value) { m_allowPrivilegeEscalationHasBeenSet = true; m_allowPrivilegeEscalation = value; }
+
+    /**
+     * <p>Whether or not a container or a Kubernetes pod is allowed to gain more
+     * privileges than its parent process.</p>
+     */
+    inline SecurityContext& WithAllowPrivilegeEscalation(bool value) { SetAllowPrivilegeEscalation(value); return *this;}
+
   private:
 
     bool m_privileged;
     bool m_privilegedHasBeenSet = false;
+
+    bool m_allowPrivilegeEscalation;
+    bool m_allowPrivilegeEscalationHasBeenSet = false;
   };
 
 } // namespace Model

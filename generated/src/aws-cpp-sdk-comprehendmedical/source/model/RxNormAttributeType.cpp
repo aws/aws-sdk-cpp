@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RxNormAttributeType::NOT_SET:
+            return {};
           case RxNormAttributeType::DOSAGE:
             return "DOSAGE";
           case RxNormAttributeType::DURATION:

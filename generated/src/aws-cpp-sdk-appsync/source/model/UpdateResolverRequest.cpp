@@ -27,7 +27,9 @@ UpdateResolverRequest::UpdateResolverRequest() :
     m_maxBatchSize(0),
     m_maxBatchSizeHasBeenSet(false),
     m_runtimeHasBeenSet(false),
-    m_codeHasBeenSet(false)
+    m_codeHasBeenSet(false),
+    m_metricsConfig(ResolverLevelMetricsConfig::NOT_SET),
+    m_metricsConfigHasBeenSet(false)
 {
 }
 
@@ -92,6 +94,11 @@ Aws::String UpdateResolverRequest::SerializePayload() const
   {
    payload.WithString("code", m_code);
 
+  }
+
+  if(m_metricsConfigHasBeenSet)
+  {
+   payload.WithString("metricsConfig", ResolverLevelMetricsConfigMapper::GetNameForResolverLevelMetricsConfig(m_metricsConfig));
   }
 
   return payload.View().WriteReadable();

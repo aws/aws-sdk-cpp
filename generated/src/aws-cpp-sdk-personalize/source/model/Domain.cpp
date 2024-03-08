@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Domain::NOT_SET:
+            return {};
           case Domain::ECOMMERCE:
             return "ECOMMERCE";
           case Domain::VIDEO_ON_DEMAND:

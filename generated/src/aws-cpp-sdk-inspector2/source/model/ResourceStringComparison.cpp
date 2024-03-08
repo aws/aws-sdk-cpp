@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResourceStringComparison::NOT_SET:
+            return {};
           case ResourceStringComparison::EQUALS:
             return "EQUALS";
           case ResourceStringComparison::NOT_EQUALS:

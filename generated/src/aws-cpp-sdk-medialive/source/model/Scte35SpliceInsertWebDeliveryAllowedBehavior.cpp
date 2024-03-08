@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Scte35SpliceInsertWebDeliveryAllowedBehavior::NOT_SET:
+            return {};
           case Scte35SpliceInsertWebDeliveryAllowedBehavior::FOLLOW:
             return "FOLLOW";
           case Scte35SpliceInsertWebDeliveryAllowedBehavior::IGNORE:

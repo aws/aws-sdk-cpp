@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VoiceMessageBodyTextType::NOT_SET:
+            return {};
           case VoiceMessageBodyTextType::TEXT:
             return "TEXT";
           case VoiceMessageBodyTextType::SSML:

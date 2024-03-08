@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Mpeg2RateControlMode::NOT_SET:
+            return {};
           case Mpeg2RateControlMode::VBR:
             return "VBR";
           case Mpeg2RateControlMode::CBR:

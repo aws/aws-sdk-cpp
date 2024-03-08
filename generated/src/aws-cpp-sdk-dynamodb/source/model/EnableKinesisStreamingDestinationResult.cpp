@@ -49,6 +49,12 @@ EnableKinesisStreamingDestinationResult& EnableKinesisStreamingDestinationResult
 
   }
 
+  if(jsonValue.ValueExists("EnableKinesisStreamingConfiguration"))
+  {
+    m_enableKinesisStreamingConfiguration = jsonValue.GetObject("EnableKinesisStreamingConfiguration");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

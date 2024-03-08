@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SourceControlAuthStrategy::NOT_SET:
+            return {};
           case SourceControlAuthStrategy::PERSONAL_ACCESS_TOKEN:
             return "PERSONAL_ACCESS_TOKEN";
           case SourceControlAuthStrategy::AWS_SECRETS_MANAGER:

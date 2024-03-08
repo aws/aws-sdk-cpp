@@ -18,6 +18,7 @@ UpdateEntityRequest::UpdateEntityRequest() :
     m_entityNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_componentUpdatesHasBeenSet(false),
+    m_compositeComponentUpdatesHasBeenSet(false),
     m_parentEntityUpdateHasBeenSet(false)
 {
 }
@@ -46,6 +47,17 @@ Aws::String UpdateEntityRequest::SerializePayload() const
      componentUpdatesJsonMap.WithObject(componentUpdatesItem.first, componentUpdatesItem.second.Jsonize());
    }
    payload.WithObject("componentUpdates", std::move(componentUpdatesJsonMap));
+
+  }
+
+  if(m_compositeComponentUpdatesHasBeenSet)
+  {
+   JsonValue compositeComponentUpdatesJsonMap;
+   for(auto& compositeComponentUpdatesItem : m_compositeComponentUpdates)
+   {
+     compositeComponentUpdatesJsonMap.WithObject(compositeComponentUpdatesItem.first, compositeComponentUpdatesItem.second.Jsonize());
+   }
+   payload.WithObject("compositeComponentUpdates", std::move(compositeComponentUpdatesJsonMap));
 
   }
 

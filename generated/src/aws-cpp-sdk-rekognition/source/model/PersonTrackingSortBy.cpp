@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PersonTrackingSortBy::NOT_SET:
+            return {};
           case PersonTrackingSortBy::INDEX:
             return "INDEX";
           case PersonTrackingSortBy::TIMESTAMP:

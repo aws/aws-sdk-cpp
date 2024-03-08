@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/connect/model/MetricInterval.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/connect/model/MetricDataV2.h>
@@ -107,6 +108,37 @@ namespace Model
 
 
     /**
+     * <p>The interval period with the start and end time for the metrics.</p>
+     */
+    inline const MetricInterval& GetMetricInterval() const{ return m_metricInterval; }
+
+    /**
+     * <p>The interval period with the start and end time for the metrics.</p>
+     */
+    inline bool MetricIntervalHasBeenSet() const { return m_metricIntervalHasBeenSet; }
+
+    /**
+     * <p>The interval period with the start and end time for the metrics.</p>
+     */
+    inline void SetMetricInterval(const MetricInterval& value) { m_metricIntervalHasBeenSet = true; m_metricInterval = value; }
+
+    /**
+     * <p>The interval period with the start and end time for the metrics.</p>
+     */
+    inline void SetMetricInterval(MetricInterval&& value) { m_metricIntervalHasBeenSet = true; m_metricInterval = std::move(value); }
+
+    /**
+     * <p>The interval period with the start and end time for the metrics.</p>
+     */
+    inline MetricResultV2& WithMetricInterval(const MetricInterval& value) { SetMetricInterval(value); return *this;}
+
+    /**
+     * <p>The interval period with the start and end time for the metrics.</p>
+     */
+    inline MetricResultV2& WithMetricInterval(MetricInterval&& value) { SetMetricInterval(std::move(value)); return *this;}
+
+
+    /**
      * <p>The set of metrics.</p>
      */
     inline const Aws::Vector<MetricDataV2>& GetCollections() const{ return m_collections; }
@@ -150,6 +182,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_dimensions;
     bool m_dimensionsHasBeenSet = false;
+
+    MetricInterval m_metricInterval;
+    bool m_metricIntervalHasBeenSet = false;
 
     Aws::Vector<MetricDataV2> m_collections;
     bool m_collectionsHasBeenSet = false;

@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CommandPluginStatus::NOT_SET:
+            return {};
           case CommandPluginStatus::Pending:
             return "Pending";
           case CommandPluginStatus::InProgress:

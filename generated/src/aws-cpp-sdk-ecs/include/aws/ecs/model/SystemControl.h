@@ -31,18 +31,30 @@ namespace Model
    * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
    * <code>--sysctl</code> option to <a
    * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
-   * run</a>.</p> <p>We don't recommend that you specify network-related
-   * <code>systemControls</code> parameters for multiple containers in a single task.
-   * This task also uses either the <code>awsvpc</code> or <code>host</code> network
-   * mode. It does it for the following reasons.</p> <ul> <li> <p>For tasks that use
-   * the <code>awsvpc</code> network mode, if you set <code>systemControls</code> for
-   * any container, it applies to all containers in the task. If you set different
-   * <code>systemControls</code> for multiple containers in a single task, the
-   * container that's started last determines which <code>systemControls</code> take
-   * effect.</p> </li> <li> <p>For tasks that use the <code>host</code> network mode,
-   * the <code>systemControls</code> parameter applies to the container instance's
-   * kernel parameter and that of all containers of any tasks running on that
-   * container instance.</p> </li> </ul><p><h3>See Also:</h3>   <a
+   * run</a>. For example, you can configure <code>net.ipv4.tcp_keepalive_time</code>
+   * setting to maintain longer lived connections.</p> <p>We don't recommend that you
+   * specify network-related <code>systemControls</code> parameters for multiple
+   * containers in a single task that also uses either the <code>awsvpc</code> or
+   * <code>host</code> network mode. Doing this has the following disadvantages:</p>
+   * <ul> <li> <p>For tasks that use the <code>awsvpc</code> network mode including
+   * Fargate, if you set <code>systemControls</code> for any container, it applies to
+   * all containers in the task. If you set different <code>systemControls</code> for
+   * multiple containers in a single task, the container that's started last
+   * determines which <code>systemControls</code> take effect.</p> </li> <li> <p>For
+   * tasks that use the <code>host</code> network mode, the network namespace
+   * <code>systemControls</code> aren't supported.</p> </li> </ul> <p>If you're
+   * setting an IPC resource namespace to use for the containers in the task, the
+   * following conditions apply to your system controls. For more information, see <a
+   * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html#task_definition_ipcmode">IPC
+   * mode</a>.</p> <ul> <li> <p>For tasks that use the <code>host</code> IPC mode,
+   * IPC namespace <code>systemControls</code> aren't supported.</p> </li> <li>
+   * <p>For tasks that use the <code>task</code> IPC mode, IPC namespace
+   * <code>systemControls</code> values apply to all containers within a task.</p>
+   * </li> </ul>  <p>This parameter is not supported for Windows
+   * containers.</p>   <p>This parameter is only supported for tasks
+   * that are hosted on Fargate if the tasks are using platform version
+   * <code>1.4.0</code> or later (Linux). This isn't supported for Windows containers
+   * on Fargate.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/SystemControl">AWS
    * API Reference</a></p>
    */

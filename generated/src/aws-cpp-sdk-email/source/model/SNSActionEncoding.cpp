@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SNSActionEncoding::NOT_SET:
+            return {};
           case SNSActionEncoding::UTF_8:
             return "UTF-8";
           case SNSActionEncoding::Base64:

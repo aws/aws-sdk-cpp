@@ -150,6 +150,55 @@ namespace Model
      */
     inline KxDatabaseCacheConfiguration& AddDbPaths(const char* value) { m_dbPathsHasBeenSet = true; m_dbPaths.push_back(value); return *this; }
 
+
+    /**
+     * <p> The name of the dataview to be used for caching historical data on disk.
+     * </p>
+     */
+    inline const Aws::String& GetDataviewName() const{ return m_dataviewName; }
+
+    /**
+     * <p> The name of the dataview to be used for caching historical data on disk.
+     * </p>
+     */
+    inline bool DataviewNameHasBeenSet() const { return m_dataviewNameHasBeenSet; }
+
+    /**
+     * <p> The name of the dataview to be used for caching historical data on disk.
+     * </p>
+     */
+    inline void SetDataviewName(const Aws::String& value) { m_dataviewNameHasBeenSet = true; m_dataviewName = value; }
+
+    /**
+     * <p> The name of the dataview to be used for caching historical data on disk.
+     * </p>
+     */
+    inline void SetDataviewName(Aws::String&& value) { m_dataviewNameHasBeenSet = true; m_dataviewName = std::move(value); }
+
+    /**
+     * <p> The name of the dataview to be used for caching historical data on disk.
+     * </p>
+     */
+    inline void SetDataviewName(const char* value) { m_dataviewNameHasBeenSet = true; m_dataviewName.assign(value); }
+
+    /**
+     * <p> The name of the dataview to be used for caching historical data on disk.
+     * </p>
+     */
+    inline KxDatabaseCacheConfiguration& WithDataviewName(const Aws::String& value) { SetDataviewName(value); return *this;}
+
+    /**
+     * <p> The name of the dataview to be used for caching historical data on disk.
+     * </p>
+     */
+    inline KxDatabaseCacheConfiguration& WithDataviewName(Aws::String&& value) { SetDataviewName(std::move(value)); return *this;}
+
+    /**
+     * <p> The name of the dataview to be used for caching historical data on disk.
+     * </p>
+     */
+    inline KxDatabaseCacheConfiguration& WithDataviewName(const char* value) { SetDataviewName(value); return *this;}
+
   private:
 
     Aws::String m_cacheType;
@@ -157,6 +206,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_dbPaths;
     bool m_dbPathsHasBeenSet = false;
+
+    Aws::String m_dataviewName;
+    bool m_dataviewNameHasBeenSet = false;
   };
 
 } // namespace Model

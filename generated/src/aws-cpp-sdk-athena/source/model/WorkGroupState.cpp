@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case WorkGroupState::NOT_SET:
+            return {};
           case WorkGroupState::ENABLED:
             return "ENABLED";
           case WorkGroupState::DISABLED:

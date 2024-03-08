@@ -41,8 +41,8 @@ namespace AppRunner
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef AppRunnerClientConfiguration ClientConfigurationType;
       typedef AppRunnerEndpointProvider EndpointProviderType;
@@ -52,14 +52,14 @@ namespace AppRunner
         * is not specified, it will be initialized to default values.
         */
         AppRunnerClient(const Aws::AppRunner::AppRunnerClientConfiguration& clientConfiguration = Aws::AppRunner::AppRunnerClientConfiguration(),
-                        std::shared_ptr<AppRunnerEndpointProviderBase> endpointProvider = Aws::MakeShared<AppRunnerEndpointProvider>(ALLOCATION_TAG));
+                        std::shared_ptr<AppRunnerEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         AppRunnerClient(const Aws::Auth::AWSCredentials& credentials,
-                        std::shared_ptr<AppRunnerEndpointProviderBase> endpointProvider = Aws::MakeShared<AppRunnerEndpointProvider>(ALLOCATION_TAG),
+                        std::shared_ptr<AppRunnerEndpointProviderBase> endpointProvider = nullptr,
                         const Aws::AppRunner::AppRunnerClientConfiguration& clientConfiguration = Aws::AppRunner::AppRunnerClientConfiguration());
 
        /**
@@ -67,7 +67,7 @@ namespace AppRunner
         * the default http client factory will be used
         */
         AppRunnerClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                        std::shared_ptr<AppRunnerEndpointProviderBase> endpointProvider = Aws::MakeShared<AppRunnerEndpointProvider>(ALLOCATION_TAG),
+                        std::shared_ptr<AppRunnerEndpointProviderBase> endpointProvider = nullptr,
                         const Aws::AppRunner::AppRunnerClientConfiguration& clientConfiguration = Aws::AppRunner::AppRunnerClientConfiguration());
 
 

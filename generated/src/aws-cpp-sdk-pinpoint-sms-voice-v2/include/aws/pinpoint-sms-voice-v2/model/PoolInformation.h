@@ -264,6 +264,55 @@ namespace Model
 
 
     /**
+     * <p>An optional IAM Role Arn for a service to assume, to be able to post inbound
+     * SMS messages.</p>
+     */
+    inline const Aws::String& GetTwoWayChannelRole() const{ return m_twoWayChannelRole; }
+
+    /**
+     * <p>An optional IAM Role Arn for a service to assume, to be able to post inbound
+     * SMS messages.</p>
+     */
+    inline bool TwoWayChannelRoleHasBeenSet() const { return m_twoWayChannelRoleHasBeenSet; }
+
+    /**
+     * <p>An optional IAM Role Arn for a service to assume, to be able to post inbound
+     * SMS messages.</p>
+     */
+    inline void SetTwoWayChannelRole(const Aws::String& value) { m_twoWayChannelRoleHasBeenSet = true; m_twoWayChannelRole = value; }
+
+    /**
+     * <p>An optional IAM Role Arn for a service to assume, to be able to post inbound
+     * SMS messages.</p>
+     */
+    inline void SetTwoWayChannelRole(Aws::String&& value) { m_twoWayChannelRoleHasBeenSet = true; m_twoWayChannelRole = std::move(value); }
+
+    /**
+     * <p>An optional IAM Role Arn for a service to assume, to be able to post inbound
+     * SMS messages.</p>
+     */
+    inline void SetTwoWayChannelRole(const char* value) { m_twoWayChannelRoleHasBeenSet = true; m_twoWayChannelRole.assign(value); }
+
+    /**
+     * <p>An optional IAM Role Arn for a service to assume, to be able to post inbound
+     * SMS messages.</p>
+     */
+    inline PoolInformation& WithTwoWayChannelRole(const Aws::String& value) { SetTwoWayChannelRole(value); return *this;}
+
+    /**
+     * <p>An optional IAM Role Arn for a service to assume, to be able to post inbound
+     * SMS messages.</p>
+     */
+    inline PoolInformation& WithTwoWayChannelRole(Aws::String&& value) { SetTwoWayChannelRole(std::move(value)); return *this;}
+
+    /**
+     * <p>An optional IAM Role Arn for a service to assume, to be able to post inbound
+     * SMS messages.</p>
+     */
+    inline PoolInformation& WithTwoWayChannelRole(const char* value) { SetTwoWayChannelRole(value); return *this;}
+
+
+    /**
      * <p>When set to false, an end recipient sends a message that begins with HELP or
      * STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies
      * with a customizable message and adds the end recipient to the OptOutList. When
@@ -470,6 +519,9 @@ namespace Model
 
     Aws::String m_twoWayChannelArn;
     bool m_twoWayChannelArnHasBeenSet = false;
+
+    Aws::String m_twoWayChannelRole;
+    bool m_twoWayChannelRoleHasBeenSet = false;
 
     bool m_selfManagedOptOutsEnabled;
     bool m_selfManagedOptOutsEnabledHasBeenSet = false;

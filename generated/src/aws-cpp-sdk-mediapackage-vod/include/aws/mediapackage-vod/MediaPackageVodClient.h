@@ -22,8 +22,8 @@ namespace MediaPackageVod
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef MediaPackageVodClientConfiguration ClientConfigurationType;
       typedef MediaPackageVodEndpointProvider EndpointProviderType;
@@ -33,14 +33,14 @@ namespace MediaPackageVod
         * is not specified, it will be initialized to default values.
         */
         MediaPackageVodClient(const Aws::MediaPackageVod::MediaPackageVodClientConfiguration& clientConfiguration = Aws::MediaPackageVod::MediaPackageVodClientConfiguration(),
-                              std::shared_ptr<MediaPackageVodEndpointProviderBase> endpointProvider = Aws::MakeShared<MediaPackageVodEndpointProvider>(ALLOCATION_TAG));
+                              std::shared_ptr<MediaPackageVodEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         MediaPackageVodClient(const Aws::Auth::AWSCredentials& credentials,
-                              std::shared_ptr<MediaPackageVodEndpointProviderBase> endpointProvider = Aws::MakeShared<MediaPackageVodEndpointProvider>(ALLOCATION_TAG),
+                              std::shared_ptr<MediaPackageVodEndpointProviderBase> endpointProvider = nullptr,
                               const Aws::MediaPackageVod::MediaPackageVodClientConfiguration& clientConfiguration = Aws::MediaPackageVod::MediaPackageVodClientConfiguration());
 
        /**
@@ -48,7 +48,7 @@ namespace MediaPackageVod
         * the default http client factory will be used
         */
         MediaPackageVodClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                              std::shared_ptr<MediaPackageVodEndpointProviderBase> endpointProvider = Aws::MakeShared<MediaPackageVodEndpointProvider>(ALLOCATION_TAG),
+                              std::shared_ptr<MediaPackageVodEndpointProviderBase> endpointProvider = nullptr,
                               const Aws::MediaPackageVod::MediaPackageVodClientConfiguration& clientConfiguration = Aws::MediaPackageVod::MediaPackageVodClientConfiguration());
 
 

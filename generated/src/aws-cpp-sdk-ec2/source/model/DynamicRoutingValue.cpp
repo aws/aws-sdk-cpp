@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DynamicRoutingValue::NOT_SET:
+            return {};
           case DynamicRoutingValue::enable:
             return "enable";
           case DynamicRoutingValue::disable:

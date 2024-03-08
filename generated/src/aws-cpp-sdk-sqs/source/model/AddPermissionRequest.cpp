@@ -4,10 +4,12 @@
  */
 
 #include <aws/sqs/model/AddPermissionRequest.h>
-#include <aws/core/utils/StringUtils.h>
-#include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+
+#include <utility>
 
 using namespace Aws::SQS::Model;
+using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 AddPermissionRequest::AddPermissionRequest() : 
@@ -20,46 +22,53 @@ AddPermissionRequest::AddPermissionRequest() :
 
 Aws::String AddPermissionRequest::SerializePayload() const
 {
-  Aws::StringStream ss;
-  ss << "Action=AddPermission&";
+  JsonValue payload;
+
   if(m_queueUrlHasBeenSet)
   {
-    ss << "QueueUrl=" << StringUtils::URLEncode(m_queueUrl.c_str()) << "&";
+   payload.WithString("QueueUrl", m_queueUrl);
+
   }
 
   if(m_labelHasBeenSet)
   {
-    ss << "Label=" << StringUtils::URLEncode(m_label.c_str()) << "&";
+   payload.WithString("Label", m_label);
+
   }
 
   if(m_aWSAccountIdsHasBeenSet)
   {
-    unsigned aWSAccountIdsCount = 1;
-    for(auto& item : m_aWSAccountIds)
-    {
-      ss << "AWSAccountId." << aWSAccountIdsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      aWSAccountIdsCount++;
-    }
+   Aws::Utils::Array<JsonValue> aWSAccountIdsJsonList(m_aWSAccountIds.size());
+   for(unsigned aWSAccountIdsIndex = 0; aWSAccountIdsIndex < aWSAccountIdsJsonList.GetLength(); ++aWSAccountIdsIndex)
+   {
+     aWSAccountIdsJsonList[aWSAccountIdsIndex].AsString(m_aWSAccountIds[aWSAccountIdsIndex]);
+   }
+   payload.WithArray("AWSAccountIds", std::move(aWSAccountIdsJsonList));
+
   }
 
   if(m_actionsHasBeenSet)
   {
-    unsigned actionsCount = 1;
-    for(auto& item : m_actions)
-    {
-      ss << "ActionName." << actionsCount << "="
-          << StringUtils::URLEncode(item.c_str()) << "&";
-      actionsCount++;
-    }
+   Aws::Utils::Array<JsonValue> actionsJsonList(m_actions.size());
+   for(unsigned actionsIndex = 0; actionsIndex < actionsJsonList.GetLength(); ++actionsIndex)
+   {
+     actionsJsonList[actionsIndex].AsString(m_actions[actionsIndex]);
+   }
+   payload.WithArray("Actions", std::move(actionsJsonList));
+
   }
 
-  ss << "Version=2012-11-05";
-  return ss.str();
+  return payload.View().WriteReadable();
 }
 
-
-void  AddPermissionRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+Aws::Http::HeaderValueCollection AddPermissionRequest::GetRequestSpecificHeaders() const
 {
-  uri.SetQueryString(SerializePayload());
+  Aws::Http::HeaderValueCollection headers;
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AmazonSQS.AddPermission"));
+  return headers;
+
 }
+
+
+
+

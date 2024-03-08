@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DocumentThumbnailType::NOT_SET:
+            return {};
           case DocumentThumbnailType::SMALL:
             return "SMALL";
           case DocumentThumbnailType::SMALL_HQ:

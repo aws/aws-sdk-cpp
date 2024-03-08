@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ContainerCondition::NOT_SET:
+            return {};
           case ContainerCondition::START:
             return "START";
           case ContainerCondition::COMPLETE:

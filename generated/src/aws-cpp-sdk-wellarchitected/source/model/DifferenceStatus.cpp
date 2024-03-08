@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DifferenceStatus::NOT_SET:
+            return {};
           case DifferenceStatus::UPDATED:
             return "UPDATED";
           case DifferenceStatus::NEW_:

@@ -230,35 +230,40 @@ namespace Model
     /**
      * <p>Information about the encryption of data at rest in the ledger. This includes
      * the current status, the KMS key, and when the key became inaccessible (in the
-     * case of an error).</p>
+     * case of an error). If this parameter is undefined, the ledger uses an Amazon Web
+     * Services owned KMS key for encryption.</p>
      */
     inline const LedgerEncryptionDescription& GetEncryptionDescription() const{ return m_encryptionDescription; }
 
     /**
      * <p>Information about the encryption of data at rest in the ledger. This includes
      * the current status, the KMS key, and when the key became inaccessible (in the
-     * case of an error).</p>
+     * case of an error). If this parameter is undefined, the ledger uses an Amazon Web
+     * Services owned KMS key for encryption.</p>
      */
     inline void SetEncryptionDescription(const LedgerEncryptionDescription& value) { m_encryptionDescription = value; }
 
     /**
      * <p>Information about the encryption of data at rest in the ledger. This includes
      * the current status, the KMS key, and when the key became inaccessible (in the
-     * case of an error).</p>
+     * case of an error). If this parameter is undefined, the ledger uses an Amazon Web
+     * Services owned KMS key for encryption.</p>
      */
     inline void SetEncryptionDescription(LedgerEncryptionDescription&& value) { m_encryptionDescription = std::move(value); }
 
     /**
      * <p>Information about the encryption of data at rest in the ledger. This includes
      * the current status, the KMS key, and when the key became inaccessible (in the
-     * case of an error).</p>
+     * case of an error). If this parameter is undefined, the ledger uses an Amazon Web
+     * Services owned KMS key for encryption.</p>
      */
     inline DescribeLedgerResult& WithEncryptionDescription(const LedgerEncryptionDescription& value) { SetEncryptionDescription(value); return *this;}
 
     /**
      * <p>Information about the encryption of data at rest in the ledger. This includes
      * the current status, the KMS key, and when the key became inaccessible (in the
-     * case of an error).</p>
+     * case of an error). If this parameter is undefined, the ledger uses an Amazon Web
+     * Services owned KMS key for encryption.</p>
      */
     inline DescribeLedgerResult& WithEncryptionDescription(LedgerEncryptionDescription&& value) { SetEncryptionDescription(std::move(value)); return *this;}
 

@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TargetStorageTier::NOT_SET:
+            return {};
           case TargetStorageTier::archive:
             return "archive";
           default:

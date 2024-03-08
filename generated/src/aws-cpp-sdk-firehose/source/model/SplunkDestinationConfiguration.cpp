@@ -30,7 +30,8 @@ SplunkDestinationConfiguration::SplunkDestinationConfiguration() :
     m_s3BackupModeHasBeenSet(false),
     m_s3ConfigurationHasBeenSet(false),
     m_processingConfigurationHasBeenSet(false),
-    m_cloudWatchLoggingOptionsHasBeenSet(false)
+    m_cloudWatchLoggingOptionsHasBeenSet(false),
+    m_bufferingHintsHasBeenSet(false)
 {
 }
 
@@ -46,7 +47,8 @@ SplunkDestinationConfiguration::SplunkDestinationConfiguration(JsonView jsonValu
     m_s3BackupModeHasBeenSet(false),
     m_s3ConfigurationHasBeenSet(false),
     m_processingConfigurationHasBeenSet(false),
-    m_cloudWatchLoggingOptionsHasBeenSet(false)
+    m_cloudWatchLoggingOptionsHasBeenSet(false),
+    m_bufferingHintsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -116,6 +118,13 @@ SplunkDestinationConfiguration& SplunkDestinationConfiguration::operator =(JsonV
     m_cloudWatchLoggingOptionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("BufferingHints"))
+  {
+    m_bufferingHints = jsonValue.GetObject("BufferingHints");
+
+    m_bufferingHintsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -172,6 +181,12 @@ JsonValue SplunkDestinationConfiguration::Jsonize() const
   if(m_cloudWatchLoggingOptionsHasBeenSet)
   {
    payload.WithObject("CloudWatchLoggingOptions", m_cloudWatchLoggingOptions.Jsonize());
+
+  }
+
+  if(m_bufferingHintsHasBeenSet)
+  {
+   payload.WithObject("BufferingHints", m_bufferingHints.Jsonize());
 
   }
 

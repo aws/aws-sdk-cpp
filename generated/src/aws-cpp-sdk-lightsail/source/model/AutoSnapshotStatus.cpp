@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AutoSnapshotStatus::NOT_SET:
+            return {};
           case AutoSnapshotStatus::Success:
             return "Success";
           case AutoSnapshotStatus::Failed:

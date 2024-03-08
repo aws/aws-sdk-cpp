@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>List of filter keys that you can use for LIST, UPDATE, and DELETE requests to
-   * OpenSearch Serverless collections.</p><p><h3>See Also:</h3>   <a
+   * <p>A list of filter keys that you can use for LIST, UPDATE, and DELETE requests
+   * to OpenSearch Serverless collections.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/CollectionFilters">AWS
    * API Reference</a></p>
    */

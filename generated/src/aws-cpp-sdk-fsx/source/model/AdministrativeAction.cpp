@@ -32,7 +32,11 @@ AdministrativeAction::AdministrativeAction() :
     m_targetFileSystemValuesHasBeenSet(false),
     m_failureDetailsHasBeenSet(false),
     m_targetVolumeValuesHasBeenSet(false),
-    m_targetSnapshotValuesHasBeenSet(false)
+    m_targetSnapshotValuesHasBeenSet(false),
+    m_totalTransferBytes(0),
+    m_totalTransferBytesHasBeenSet(false),
+    m_remainingTransferBytes(0),
+    m_remainingTransferBytesHasBeenSet(false)
 {
 }
 
@@ -47,7 +51,11 @@ AdministrativeAction::AdministrativeAction(JsonView jsonValue) :
     m_targetFileSystemValuesHasBeenSet(false),
     m_failureDetailsHasBeenSet(false),
     m_targetVolumeValuesHasBeenSet(false),
-    m_targetSnapshotValuesHasBeenSet(false)
+    m_targetSnapshotValuesHasBeenSet(false),
+    m_totalTransferBytes(0),
+    m_totalTransferBytesHasBeenSet(false),
+    m_remainingTransferBytes(0),
+    m_remainingTransferBytesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -131,6 +139,20 @@ AdministrativeAction& AdministrativeAction::operator =(JsonView jsonValue)
     m_targetSnapshotValuesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TotalTransferBytes"))
+  {
+    m_totalTransferBytes = jsonValue.GetInt64("TotalTransferBytes");
+
+    m_totalTransferBytesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RemainingTransferBytes"))
+  {
+    m_remainingTransferBytes = jsonValue.GetInt64("RemainingTransferBytes");
+
+    m_remainingTransferBytesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -180,6 +202,18 @@ JsonValue AdministrativeAction::Jsonize() const
   if(m_targetSnapshotValuesHasBeenSet)
   {
    payload.WithObject("TargetSnapshotValues", m_targetSnapshotValues->Jsonize());
+
+  }
+
+  if(m_totalTransferBytesHasBeenSet)
+  {
+   payload.WithInt64("TotalTransferBytes", m_totalTransferBytes);
+
+  }
+
+  if(m_remainingTransferBytesHasBeenSet)
+  {
+   payload.WithInt64("RemainingTransferBytes", m_remainingTransferBytes);
 
   }
 

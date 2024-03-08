@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AudioDefaultSelection::NOT_SET:
+            return {};
           case AudioDefaultSelection::DEFAULT:
             return "DEFAULT";
           case AudioDefaultSelection::NOT_DEFAULT:

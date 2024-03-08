@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ServerType::NOT_SET:
+            return {};
           case ServerType::VIRTUAL_MACHINE:
             return "VIRTUAL_MACHINE";
           default:

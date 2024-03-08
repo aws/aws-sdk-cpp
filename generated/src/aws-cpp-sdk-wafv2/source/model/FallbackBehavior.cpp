@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FallbackBehavior::NOT_SET:
+            return {};
           case FallbackBehavior::MATCH:
             return "MATCH";
           case FallbackBehavior::NO_MATCH:

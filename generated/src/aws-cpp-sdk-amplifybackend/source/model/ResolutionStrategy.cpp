@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResolutionStrategy::NOT_SET:
+            return {};
           case ResolutionStrategy::OPTIMISTIC_CONCURRENCY:
             return "OPTIMISTIC_CONCURRENCY";
           case ResolutionStrategy::LAMBDA:

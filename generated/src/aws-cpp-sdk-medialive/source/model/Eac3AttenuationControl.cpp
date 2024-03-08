@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Eac3AttenuationControl::NOT_SET:
+            return {};
           case Eac3AttenuationControl::ATTENUATE_3_DB:
             return "ATTENUATE_3_DB";
           case Eac3AttenuationControl::NONE:

@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ScanningConfigurationFailureCode::NOT_SET:
+            return {};
           case ScanningConfigurationFailureCode::REPOSITORY_NOT_FOUND:
             return "REPOSITORY_NOT_FOUND";
           default:

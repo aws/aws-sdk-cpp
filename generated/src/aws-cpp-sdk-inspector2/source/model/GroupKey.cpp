@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case GroupKey::NOT_SET:
+            return {};
           case GroupKey::SCAN_STATUS_CODE:
             return "SCAN_STATUS_CODE";
           case GroupKey::SCAN_STATUS_REASON:

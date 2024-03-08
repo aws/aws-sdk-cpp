@@ -15,6 +15,7 @@
 #include <aws/batch/model/RetryStrategy.h>
 #include <aws/batch/model/JobTimeout.h>
 #include <aws/batch/model/EksPropertiesOverride.h>
+#include <aws/batch/model/EcsPropertiesOverride.h>
 #include <aws/batch/model/JobDependency.h>
 #include <utility>
 
@@ -220,8 +221,9 @@ namespace Model
      * <p>The scheduling priority for the job. This only affects jobs in job queues
      * with a fair share policy. Jobs with a higher scheduling priority are scheduled
      * before jobs with a lower scheduling priority. This overrides any scheduling
-     * priority in the job definition.</p> <p>The minimum supported value is 0 and the
-     * maximum supported value is 9999.</p>
+     * priority in the job definition and works only within a single share
+     * identifier.</p> <p>The minimum supported value is 0 and the maximum supported
+     * value is 9999.</p>
      */
     inline int GetSchedulingPriorityOverride() const{ return m_schedulingPriorityOverride; }
 
@@ -229,8 +231,9 @@ namespace Model
      * <p>The scheduling priority for the job. This only affects jobs in job queues
      * with a fair share policy. Jobs with a higher scheduling priority are scheduled
      * before jobs with a lower scheduling priority. This overrides any scheduling
-     * priority in the job definition.</p> <p>The minimum supported value is 0 and the
-     * maximum supported value is 9999.</p>
+     * priority in the job definition and works only within a single share
+     * identifier.</p> <p>The minimum supported value is 0 and the maximum supported
+     * value is 9999.</p>
      */
     inline bool SchedulingPriorityOverrideHasBeenSet() const { return m_schedulingPriorityOverrideHasBeenSet; }
 
@@ -238,8 +241,9 @@ namespace Model
      * <p>The scheduling priority for the job. This only affects jobs in job queues
      * with a fair share policy. Jobs with a higher scheduling priority are scheduled
      * before jobs with a lower scheduling priority. This overrides any scheduling
-     * priority in the job definition.</p> <p>The minimum supported value is 0 and the
-     * maximum supported value is 9999.</p>
+     * priority in the job definition and works only within a single share
+     * identifier.</p> <p>The minimum supported value is 0 and the maximum supported
+     * value is 9999.</p>
      */
     inline void SetSchedulingPriorityOverride(int value) { m_schedulingPriorityOverrideHasBeenSet = true; m_schedulingPriorityOverride = value; }
 
@@ -247,8 +251,9 @@ namespace Model
      * <p>The scheduling priority for the job. This only affects jobs in job queues
      * with a fair share policy. Jobs with a higher scheduling priority are scheduled
      * before jobs with a lower scheduling priority. This overrides any scheduling
-     * priority in the job definition.</p> <p>The minimum supported value is 0 and the
-     * maximum supported value is 9999.</p>
+     * priority in the job definition and works only within a single share
+     * identifier.</p> <p>The minimum supported value is 0 and the maximum supported
+     * value is 9999.</p>
      */
     inline SubmitJobRequest& WithSchedulingPriorityOverride(int value) { SetSchedulingPriorityOverride(value); return *this;}
 
@@ -600,9 +605,9 @@ namespace Model
 
 
     /**
-     * <p>An object with various properties that override the defaults for the job
-     * definition that specify the name of a container in the specified job definition
-     * and the overrides it should receive. You can override the default command for a
+     * <p>An object with properties that override the defaults for the job definition
+     * that specify the name of a container in the specified job definition and the
+     * overrides it should receive. You can override the default command for a
      * container, which is specified in the job definition or the Docker image, with a
      * <code>command</code> override. You can also override existing environment
      * variables on a container or add new environment variables to it with an
@@ -611,9 +616,9 @@ namespace Model
     inline const ContainerOverrides& GetContainerOverrides() const{ return m_containerOverrides; }
 
     /**
-     * <p>An object with various properties that override the defaults for the job
-     * definition that specify the name of a container in the specified job definition
-     * and the overrides it should receive. You can override the default command for a
+     * <p>An object with properties that override the defaults for the job definition
+     * that specify the name of a container in the specified job definition and the
+     * overrides it should receive. You can override the default command for a
      * container, which is specified in the job definition or the Docker image, with a
      * <code>command</code> override. You can also override existing environment
      * variables on a container or add new environment variables to it with an
@@ -622,9 +627,9 @@ namespace Model
     inline bool ContainerOverridesHasBeenSet() const { return m_containerOverridesHasBeenSet; }
 
     /**
-     * <p>An object with various properties that override the defaults for the job
-     * definition that specify the name of a container in the specified job definition
-     * and the overrides it should receive. You can override the default command for a
+     * <p>An object with properties that override the defaults for the job definition
+     * that specify the name of a container in the specified job definition and the
+     * overrides it should receive. You can override the default command for a
      * container, which is specified in the job definition or the Docker image, with a
      * <code>command</code> override. You can also override existing environment
      * variables on a container or add new environment variables to it with an
@@ -633,9 +638,9 @@ namespace Model
     inline void SetContainerOverrides(const ContainerOverrides& value) { m_containerOverridesHasBeenSet = true; m_containerOverrides = value; }
 
     /**
-     * <p>An object with various properties that override the defaults for the job
-     * definition that specify the name of a container in the specified job definition
-     * and the overrides it should receive. You can override the default command for a
+     * <p>An object with properties that override the defaults for the job definition
+     * that specify the name of a container in the specified job definition and the
+     * overrides it should receive. You can override the default command for a
      * container, which is specified in the job definition or the Docker image, with a
      * <code>command</code> override. You can also override existing environment
      * variables on a container or add new environment variables to it with an
@@ -644,9 +649,9 @@ namespace Model
     inline void SetContainerOverrides(ContainerOverrides&& value) { m_containerOverridesHasBeenSet = true; m_containerOverrides = std::move(value); }
 
     /**
-     * <p>An object with various properties that override the defaults for the job
-     * definition that specify the name of a container in the specified job definition
-     * and the overrides it should receive. You can override the default command for a
+     * <p>An object with properties that override the defaults for the job definition
+     * that specify the name of a container in the specified job definition and the
+     * overrides it should receive. You can override the default command for a
      * container, which is specified in the job definition or the Docker image, with a
      * <code>command</code> override. You can also override existing environment
      * variables on a container or add new environment variables to it with an
@@ -655,9 +660,9 @@ namespace Model
     inline SubmitJobRequest& WithContainerOverrides(const ContainerOverrides& value) { SetContainerOverrides(value); return *this;}
 
     /**
-     * <p>An object with various properties that override the defaults for the job
-     * definition that specify the name of a container in the specified job definition
-     * and the overrides it should receive. You can override the default command for a
+     * <p>An object with properties that override the defaults for the job definition
+     * that specify the name of a container in the specified job definition and the
+     * overrides it should receive. You can override the default command for a
      * container, which is specified in the job definition or the Docker image, with a
      * <code>command</code> override. You can also override existing environment
      * variables on a container or add new environment variables to it with an
@@ -1014,46 +1019,77 @@ namespace Model
 
 
     /**
-     * <p>An object that can only be specified for jobs that are run on Amazon EKS
-     * resources with various properties that override defaults for the job
-     * definition.</p>
+     * <p>An object, with properties that override defaults for the job definition, can
+     * only be specified for jobs that are run on Amazon EKS resources.</p>
      */
     inline const EksPropertiesOverride& GetEksPropertiesOverride() const{ return m_eksPropertiesOverride; }
 
     /**
-     * <p>An object that can only be specified for jobs that are run on Amazon EKS
-     * resources with various properties that override defaults for the job
-     * definition.</p>
+     * <p>An object, with properties that override defaults for the job definition, can
+     * only be specified for jobs that are run on Amazon EKS resources.</p>
      */
     inline bool EksPropertiesOverrideHasBeenSet() const { return m_eksPropertiesOverrideHasBeenSet; }
 
     /**
-     * <p>An object that can only be specified for jobs that are run on Amazon EKS
-     * resources with various properties that override defaults for the job
-     * definition.</p>
+     * <p>An object, with properties that override defaults for the job definition, can
+     * only be specified for jobs that are run on Amazon EKS resources.</p>
      */
     inline void SetEksPropertiesOverride(const EksPropertiesOverride& value) { m_eksPropertiesOverrideHasBeenSet = true; m_eksPropertiesOverride = value; }
 
     /**
-     * <p>An object that can only be specified for jobs that are run on Amazon EKS
-     * resources with various properties that override defaults for the job
-     * definition.</p>
+     * <p>An object, with properties that override defaults for the job definition, can
+     * only be specified for jobs that are run on Amazon EKS resources.</p>
      */
     inline void SetEksPropertiesOverride(EksPropertiesOverride&& value) { m_eksPropertiesOverrideHasBeenSet = true; m_eksPropertiesOverride = std::move(value); }
 
     /**
-     * <p>An object that can only be specified for jobs that are run on Amazon EKS
-     * resources with various properties that override defaults for the job
-     * definition.</p>
+     * <p>An object, with properties that override defaults for the job definition, can
+     * only be specified for jobs that are run on Amazon EKS resources.</p>
      */
     inline SubmitJobRequest& WithEksPropertiesOverride(const EksPropertiesOverride& value) { SetEksPropertiesOverride(value); return *this;}
 
     /**
-     * <p>An object that can only be specified for jobs that are run on Amazon EKS
-     * resources with various properties that override defaults for the job
-     * definition.</p>
+     * <p>An object, with properties that override defaults for the job definition, can
+     * only be specified for jobs that are run on Amazon EKS resources.</p>
      */
     inline SubmitJobRequest& WithEksPropertiesOverride(EksPropertiesOverride&& value) { SetEksPropertiesOverride(std::move(value)); return *this;}
+
+
+    /**
+     * <p>An object, with properties that override defaults for the job definition, can
+     * only be specified for jobs that are run on Amazon ECS resources.</p>
+     */
+    inline const EcsPropertiesOverride& GetEcsPropertiesOverride() const{ return m_ecsPropertiesOverride; }
+
+    /**
+     * <p>An object, with properties that override defaults for the job definition, can
+     * only be specified for jobs that are run on Amazon ECS resources.</p>
+     */
+    inline bool EcsPropertiesOverrideHasBeenSet() const { return m_ecsPropertiesOverrideHasBeenSet; }
+
+    /**
+     * <p>An object, with properties that override defaults for the job definition, can
+     * only be specified for jobs that are run on Amazon ECS resources.</p>
+     */
+    inline void SetEcsPropertiesOverride(const EcsPropertiesOverride& value) { m_ecsPropertiesOverrideHasBeenSet = true; m_ecsPropertiesOverride = value; }
+
+    /**
+     * <p>An object, with properties that override defaults for the job definition, can
+     * only be specified for jobs that are run on Amazon ECS resources.</p>
+     */
+    inline void SetEcsPropertiesOverride(EcsPropertiesOverride&& value) { m_ecsPropertiesOverrideHasBeenSet = true; m_ecsPropertiesOverride = std::move(value); }
+
+    /**
+     * <p>An object, with properties that override defaults for the job definition, can
+     * only be specified for jobs that are run on Amazon ECS resources.</p>
+     */
+    inline SubmitJobRequest& WithEcsPropertiesOverride(const EcsPropertiesOverride& value) { SetEcsPropertiesOverride(value); return *this;}
+
+    /**
+     * <p>An object, with properties that override defaults for the job definition, can
+     * only be specified for jobs that are run on Amazon ECS resources.</p>
+     */
+    inline SubmitJobRequest& WithEcsPropertiesOverride(EcsPropertiesOverride&& value) { SetEcsPropertiesOverride(std::move(value)); return *this;}
 
   private:
 
@@ -1101,6 +1137,9 @@ namespace Model
 
     EksPropertiesOverride m_eksPropertiesOverride;
     bool m_eksPropertiesOverrideHasBeenSet = false;
+
+    EcsPropertiesOverride m_ecsPropertiesOverride;
+    bool m_ecsPropertiesOverrideHasBeenSet = false;
   };
 
 } // namespace Model

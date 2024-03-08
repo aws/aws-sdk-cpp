@@ -681,44 +681,44 @@ namespace Model
 
 
     /**
-     * <p>The KMS key identifier (key ID, key alias, or key ARN). AppConfig uses this
-     * ID to encrypt the configuration data using a customer managed key. </p>
+     * <p>The Key Management Service key identifier (key ID, key alias, or key ARN)
+     * provided when the resource was created or updated.</p>
      */
     inline const Aws::String& GetKmsKeyIdentifier() const{ return m_kmsKeyIdentifier; }
 
     /**
-     * <p>The KMS key identifier (key ID, key alias, or key ARN). AppConfig uses this
-     * ID to encrypt the configuration data using a customer managed key. </p>
+     * <p>The Key Management Service key identifier (key ID, key alias, or key ARN)
+     * provided when the resource was created or updated.</p>
      */
     inline void SetKmsKeyIdentifier(const Aws::String& value) { m_kmsKeyIdentifier = value; }
 
     /**
-     * <p>The KMS key identifier (key ID, key alias, or key ARN). AppConfig uses this
-     * ID to encrypt the configuration data using a customer managed key. </p>
+     * <p>The Key Management Service key identifier (key ID, key alias, or key ARN)
+     * provided when the resource was created or updated.</p>
      */
     inline void SetKmsKeyIdentifier(Aws::String&& value) { m_kmsKeyIdentifier = std::move(value); }
 
     /**
-     * <p>The KMS key identifier (key ID, key alias, or key ARN). AppConfig uses this
-     * ID to encrypt the configuration data using a customer managed key. </p>
+     * <p>The Key Management Service key identifier (key ID, key alias, or key ARN)
+     * provided when the resource was created or updated.</p>
      */
     inline void SetKmsKeyIdentifier(const char* value) { m_kmsKeyIdentifier.assign(value); }
 
     /**
-     * <p>The KMS key identifier (key ID, key alias, or key ARN). AppConfig uses this
-     * ID to encrypt the configuration data using a customer managed key. </p>
+     * <p>The Key Management Service key identifier (key ID, key alias, or key ARN)
+     * provided when the resource was created or updated.</p>
      */
     inline StartDeploymentResult& WithKmsKeyIdentifier(const Aws::String& value) { SetKmsKeyIdentifier(value); return *this;}
 
     /**
-     * <p>The KMS key identifier (key ID, key alias, or key ARN). AppConfig uses this
-     * ID to encrypt the configuration data using a customer managed key. </p>
+     * <p>The Key Management Service key identifier (key ID, key alias, or key ARN)
+     * provided when the resource was created or updated.</p>
      */
     inline StartDeploymentResult& WithKmsKeyIdentifier(Aws::String&& value) { SetKmsKeyIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p>The KMS key identifier (key ID, key alias, or key ARN). AppConfig uses this
-     * ID to encrypt the configuration data using a customer managed key. </p>
+     * <p>The Key Management Service key identifier (key ID, key alias, or key ARN)
+     * provided when the resource was created or updated.</p>
      */
     inline StartDeploymentResult& WithKmsKeyIdentifier(const char* value) { SetKmsKeyIdentifier(value); return *this;}
 

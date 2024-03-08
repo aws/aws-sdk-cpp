@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SegmentReferenceResourceType::NOT_SET:
+            return {};
           case SegmentReferenceResourceType::EXPERIMENT:
             return "EXPERIMENT";
           case SegmentReferenceResourceType::LAUNCH:

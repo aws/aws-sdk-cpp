@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AlgorithmNameCloudRemoval::NOT_SET:
+            return {};
           case AlgorithmNameCloudRemoval::INTERPOLATION:
             return "INTERPOLATION";
           default:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RecordState::NOT_SET:
+            return {};
           case RecordState::Started:
             return "Started";
           case RecordState::Succeeded:

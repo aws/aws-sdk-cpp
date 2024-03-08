@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LicenseFinding::NOT_SET:
+            return {};
           case LicenseFinding::InsufficientMetrics:
             return "InsufficientMetrics";
           case LicenseFinding::Optimized:

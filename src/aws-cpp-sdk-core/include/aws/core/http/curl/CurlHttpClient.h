@@ -68,6 +68,8 @@ private:
     bool m_verifySSL = true;
     Aws::String m_caPath;
     Aws::String m_caFile;
+    Aws::String m_proxyCaPath;
+    Aws::String m_proxyCaFile;
     bool m_disableExpectHeader = false;
     bool m_allowRedirects = false;
     bool m_enableHttpClientTrace = false;

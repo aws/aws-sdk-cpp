@@ -129,25 +129,25 @@ namespace Model
 
     /**
      * <p>An optional integer that represents how many entries a paginated response
-     * contains. The maximum is 100.</p>
+     * contains.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
      * <p>An optional integer that represents how many entries a paginated response
-     * contains. The maximum is 100.</p>
+     * contains.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>An optional integer that represents how many entries a paginated response
-     * contains. The maximum is 100.</p>
+     * contains.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
      * <p>An optional integer that represents how many entries a paginated response
-     * contains. The maximum is 100.</p>
+     * contains.</p>
      */
     inline DescribeNotificationsForBudgetRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

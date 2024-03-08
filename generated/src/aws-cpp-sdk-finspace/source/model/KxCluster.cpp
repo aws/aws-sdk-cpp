@@ -27,6 +27,7 @@ KxCluster::KxCluster() :
     m_clusterTypeHasBeenSet(false),
     m_clusterDescriptionHasBeenSet(false),
     m_releaseLabelHasBeenSet(false),
+    m_volumesHasBeenSet(false),
     m_initializationScriptHasBeenSet(false),
     m_executionRoleHasBeenSet(false),
     m_azMode(KxAzMode::NOT_SET),
@@ -46,6 +47,7 @@ KxCluster::KxCluster(JsonView jsonValue) :
     m_clusterTypeHasBeenSet(false),
     m_clusterDescriptionHasBeenSet(false),
     m_releaseLabelHasBeenSet(false),
+    m_volumesHasBeenSet(false),
     m_initializationScriptHasBeenSet(false),
     m_executionRoleHasBeenSet(false),
     m_azMode(KxAzMode::NOT_SET),
@@ -99,6 +101,16 @@ KxCluster& KxCluster::operator =(JsonView jsonValue)
     m_releaseLabel = jsonValue.GetString("releaseLabel");
 
     m_releaseLabelHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("volumes"))
+  {
+    Aws::Utils::Array<JsonView> volumesJsonList = jsonValue.GetArray("volumes");
+    for(unsigned volumesIndex = 0; volumesIndex < volumesJsonList.GetLength(); ++volumesIndex)
+    {
+      m_volumes.push_back(volumesJsonList[volumesIndex].AsObject());
+    }
+    m_volumesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("initializationScript"))
@@ -181,6 +193,17 @@ JsonValue KxCluster::Jsonize() const
   if(m_releaseLabelHasBeenSet)
   {
    payload.WithString("releaseLabel", m_releaseLabel);
+
+  }
+
+  if(m_volumesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> volumesJsonList(m_volumes.size());
+   for(unsigned volumesIndex = 0; volumesIndex < volumesJsonList.GetLength(); ++volumesIndex)
+   {
+     volumesJsonList[volumesIndex].AsObject(m_volumes[volumesIndex].Jsonize());
+   }
+   payload.WithArray("volumes", std::move(volumesJsonList));
 
   }
 

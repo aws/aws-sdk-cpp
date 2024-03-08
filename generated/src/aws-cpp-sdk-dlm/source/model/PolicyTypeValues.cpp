@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PolicyTypeValues::NOT_SET:
+            return {};
           case PolicyTypeValues::EBS_SNAPSHOT_MANAGEMENT:
             return "EBS_SNAPSHOT_MANAGEMENT";
           case PolicyTypeValues::IMAGE_MANAGEMENT:

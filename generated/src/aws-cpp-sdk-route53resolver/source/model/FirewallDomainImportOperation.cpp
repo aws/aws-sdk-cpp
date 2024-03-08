@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FirewallDomainImportOperation::NOT_SET:
+            return {};
           case FirewallDomainImportOperation::REPLACE:
             return "REPLACE";
           default:

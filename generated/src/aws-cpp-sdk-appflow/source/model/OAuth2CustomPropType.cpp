@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OAuth2CustomPropType::NOT_SET:
+            return {};
           case OAuth2CustomPropType::TOKEN_URL:
             return "TOKEN_URL";
           case OAuth2CustomPropType::AUTH_URL:

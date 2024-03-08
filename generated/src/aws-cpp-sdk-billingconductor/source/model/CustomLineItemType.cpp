@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CustomLineItemType::NOT_SET:
+            return {};
           case CustomLineItemType::CREDIT:
             return "CREDIT";
           case CustomLineItemType::FEE:

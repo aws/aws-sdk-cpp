@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case IntentFilterName::NOT_SET:
+            return {};
           case IntentFilterName::IntentName:
             return "IntentName";
           default:

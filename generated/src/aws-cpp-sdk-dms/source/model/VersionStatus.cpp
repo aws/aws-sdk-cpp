@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VersionStatus::NOT_SET:
+            return {};
           case VersionStatus::UP_TO_DATE:
             return "UP_TO_DATE";
           case VersionStatus::OUTDATED:

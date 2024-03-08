@@ -43,37 +43,37 @@ namespace Model
 
 
     /**
-     * <p>The Lightsail resource type (e.g., <code>InstanceSnapshot</code> or
+     * <p>The Lightsail resource type (<code>InstanceSnapshot</code> or
      * <code>DiskSnapshot</code>).</p>
      */
     inline const ExportSnapshotRecordSourceType& GetResourceType() const{ return m_resourceType; }
 
     /**
-     * <p>The Lightsail resource type (e.g., <code>InstanceSnapshot</code> or
+     * <p>The Lightsail resource type (<code>InstanceSnapshot</code> or
      * <code>DiskSnapshot</code>).</p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
-     * <p>The Lightsail resource type (e.g., <code>InstanceSnapshot</code> or
+     * <p>The Lightsail resource type (<code>InstanceSnapshot</code> or
      * <code>DiskSnapshot</code>).</p>
      */
     inline void SetResourceType(const ExportSnapshotRecordSourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
-     * <p>The Lightsail resource type (e.g., <code>InstanceSnapshot</code> or
+     * <p>The Lightsail resource type (<code>InstanceSnapshot</code> or
      * <code>DiskSnapshot</code>).</p>
      */
     inline void SetResourceType(ExportSnapshotRecordSourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
-     * <p>The Lightsail resource type (e.g., <code>InstanceSnapshot</code> or
+     * <p>The Lightsail resource type (<code>InstanceSnapshot</code> or
      * <code>DiskSnapshot</code>).</p>
      */
     inline ExportSnapshotRecordSourceInfo& WithResourceType(const ExportSnapshotRecordSourceType& value) { SetResourceType(value); return *this;}
 
     /**
-     * <p>The Lightsail resource type (e.g., <code>InstanceSnapshot</code> or
+     * <p>The Lightsail resource type (<code>InstanceSnapshot</code> or
      * <code>DiskSnapshot</code>).</p>
      */
     inline ExportSnapshotRecordSourceInfo& WithResourceType(ExportSnapshotRecordSourceType&& value) { SetResourceType(std::move(value)); return *this;}

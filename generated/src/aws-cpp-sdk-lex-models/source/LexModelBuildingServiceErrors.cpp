@@ -47,27 +47,27 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == CONFLICT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LexModelBuildingServiceErrors::CONFLICT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LexModelBuildingServiceErrors::CONFLICT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LexModelBuildingServiceErrors::NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LexModelBuildingServiceErrors::NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == PRECONDITION_FAILED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LexModelBuildingServiceErrors::PRECONDITION_FAILED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LexModelBuildingServiceErrors::PRECONDITION_FAILED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LexModelBuildingServiceErrors::LIMIT_EXCEEDED), true);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LexModelBuildingServiceErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
   }
   else if (hashCode == RESOURCE_IN_USE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LexModelBuildingServiceErrors::RESOURCE_IN_USE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LexModelBuildingServiceErrors::RESOURCE_IN_USE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == BAD_REQUEST_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LexModelBuildingServiceErrors::BAD_REQUEST), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LexModelBuildingServiceErrors::BAD_REQUEST), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

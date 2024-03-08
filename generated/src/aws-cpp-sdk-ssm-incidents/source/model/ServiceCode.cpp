@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ServiceCode::NOT_SET:
+            return {};
           case ServiceCode::ssm_incidents:
             return "ssm-incidents";
           default:

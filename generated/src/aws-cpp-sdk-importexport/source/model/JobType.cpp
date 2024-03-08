@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case JobType::NOT_SET:
+            return {};
           case JobType::Import:
             return "Import";
           case JobType::Export:

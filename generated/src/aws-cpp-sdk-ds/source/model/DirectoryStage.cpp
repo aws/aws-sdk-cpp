@@ -94,6 +94,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DirectoryStage::NOT_SET:
+            return {};
           case DirectoryStage::Requested:
             return "Requested";
           case DirectoryStage::Creating:

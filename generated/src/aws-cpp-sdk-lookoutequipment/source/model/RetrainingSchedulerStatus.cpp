@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RetrainingSchedulerStatus::NOT_SET:
+            return {};
           case RetrainingSchedulerStatus::PENDING:
             return "PENDING";
           case RetrainingSchedulerStatus::RUNNING:

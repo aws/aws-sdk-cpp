@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TagStatus::NOT_SET:
+            return {};
           case TagStatus::TAGGED:
             return "TAGGED";
           case TagStatus::UNTAGGED:

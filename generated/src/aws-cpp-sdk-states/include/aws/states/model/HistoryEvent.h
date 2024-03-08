@@ -26,6 +26,7 @@
 #include <aws/states/model/ExecutionSucceededEventDetails.h>
 #include <aws/states/model/ExecutionAbortedEventDetails.h>
 #include <aws/states/model/ExecutionTimedOutEventDetails.h>
+#include <aws/states/model/ExecutionRedrivenEventDetails.h>
 #include <aws/states/model/MapStateStartedEventDetails.h>
 #include <aws/states/model/MapIterationEventDetails.h>
 #include <aws/states/model/LambdaFunctionFailedEventDetails.h>
@@ -38,6 +39,7 @@
 #include <aws/states/model/StateExitedEventDetails.h>
 #include <aws/states/model/MapRunStartedEventDetails.h>
 #include <aws/states/model/MapRunFailedEventDetails.h>
+#include <aws/states/model/MapRunRedrivenEventDetails.h>
 #include <utility>
 
 namespace Aws
@@ -650,6 +652,37 @@ namespace Model
 
 
     /**
+     * <p>Contains details about the redrive attempt of an execution.</p>
+     */
+    inline const ExecutionRedrivenEventDetails& GetExecutionRedrivenEventDetails() const{ return m_executionRedrivenEventDetails; }
+
+    /**
+     * <p>Contains details about the redrive attempt of an execution.</p>
+     */
+    inline bool ExecutionRedrivenEventDetailsHasBeenSet() const { return m_executionRedrivenEventDetailsHasBeenSet; }
+
+    /**
+     * <p>Contains details about the redrive attempt of an execution.</p>
+     */
+    inline void SetExecutionRedrivenEventDetails(const ExecutionRedrivenEventDetails& value) { m_executionRedrivenEventDetailsHasBeenSet = true; m_executionRedrivenEventDetails = value; }
+
+    /**
+     * <p>Contains details about the redrive attempt of an execution.</p>
+     */
+    inline void SetExecutionRedrivenEventDetails(ExecutionRedrivenEventDetails&& value) { m_executionRedrivenEventDetailsHasBeenSet = true; m_executionRedrivenEventDetails = std::move(value); }
+
+    /**
+     * <p>Contains details about the redrive attempt of an execution.</p>
+     */
+    inline HistoryEvent& WithExecutionRedrivenEventDetails(const ExecutionRedrivenEventDetails& value) { SetExecutionRedrivenEventDetails(value); return *this;}
+
+    /**
+     * <p>Contains details about the redrive attempt of an execution.</p>
+     */
+    inline HistoryEvent& WithExecutionRedrivenEventDetails(ExecutionRedrivenEventDetails&& value) { SetExecutionRedrivenEventDetails(std::move(value)); return *this;}
+
+
+    /**
      * <p>Contains details about Map state that was started.</p>
      */
     inline const MapStateStartedEventDetails& GetMapStateStartedEventDetails() const{ return m_mapStateStartedEventDetails; }
@@ -1065,6 +1098,37 @@ namespace Model
      */
     inline HistoryEvent& WithMapRunFailedEventDetails(MapRunFailedEventDetails&& value) { SetMapRunFailedEventDetails(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Contains details about the redrive attempt of a Map Run.</p>
+     */
+    inline const MapRunRedrivenEventDetails& GetMapRunRedrivenEventDetails() const{ return m_mapRunRedrivenEventDetails; }
+
+    /**
+     * <p>Contains details about the redrive attempt of a Map Run.</p>
+     */
+    inline bool MapRunRedrivenEventDetailsHasBeenSet() const { return m_mapRunRedrivenEventDetailsHasBeenSet; }
+
+    /**
+     * <p>Contains details about the redrive attempt of a Map Run.</p>
+     */
+    inline void SetMapRunRedrivenEventDetails(const MapRunRedrivenEventDetails& value) { m_mapRunRedrivenEventDetailsHasBeenSet = true; m_mapRunRedrivenEventDetails = value; }
+
+    /**
+     * <p>Contains details about the redrive attempt of a Map Run.</p>
+     */
+    inline void SetMapRunRedrivenEventDetails(MapRunRedrivenEventDetails&& value) { m_mapRunRedrivenEventDetailsHasBeenSet = true; m_mapRunRedrivenEventDetails = std::move(value); }
+
+    /**
+     * <p>Contains details about the redrive attempt of a Map Run.</p>
+     */
+    inline HistoryEvent& WithMapRunRedrivenEventDetails(const MapRunRedrivenEventDetails& value) { SetMapRunRedrivenEventDetails(value); return *this;}
+
+    /**
+     * <p>Contains details about the redrive attempt of a Map Run.</p>
+     */
+    inline HistoryEvent& WithMapRunRedrivenEventDetails(MapRunRedrivenEventDetails&& value) { SetMapRunRedrivenEventDetails(std::move(value)); return *this;}
+
   private:
 
     Aws::Utils::DateTime m_timestamp;
@@ -1136,6 +1200,9 @@ namespace Model
     ExecutionTimedOutEventDetails m_executionTimedOutEventDetails;
     bool m_executionTimedOutEventDetailsHasBeenSet = false;
 
+    ExecutionRedrivenEventDetails m_executionRedrivenEventDetails;
+    bool m_executionRedrivenEventDetailsHasBeenSet = false;
+
     MapStateStartedEventDetails m_mapStateStartedEventDetails;
     bool m_mapStateStartedEventDetailsHasBeenSet = false;
 
@@ -1180,6 +1247,9 @@ namespace Model
 
     MapRunFailedEventDetails m_mapRunFailedEventDetails;
     bool m_mapRunFailedEventDetailsHasBeenSet = false;
+
+    MapRunRedrivenEventDetails m_mapRunRedrivenEventDetails;
+    bool m_mapRunRedrivenEventDetailsHasBeenSet = false;
   };
 
 } // namespace Model

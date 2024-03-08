@@ -26,8 +26,8 @@ namespace EMR
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef EMRClientConfiguration ClientConfigurationType;
       typedef EMREndpointProvider EndpointProviderType;
@@ -37,14 +37,14 @@ namespace EMR
         * is not specified, it will be initialized to default values.
         */
         EMRClient(const Aws::EMR::EMRClientConfiguration& clientConfiguration = Aws::EMR::EMRClientConfiguration(),
-                  std::shared_ptr<EMREndpointProviderBase> endpointProvider = Aws::MakeShared<EMREndpointProvider>(ALLOCATION_TAG));
+                  std::shared_ptr<EMREndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         EMRClient(const Aws::Auth::AWSCredentials& credentials,
-                  std::shared_ptr<EMREndpointProviderBase> endpointProvider = Aws::MakeShared<EMREndpointProvider>(ALLOCATION_TAG),
+                  std::shared_ptr<EMREndpointProviderBase> endpointProvider = nullptr,
                   const Aws::EMR::EMRClientConfiguration& clientConfiguration = Aws::EMR::EMRClientConfiguration());
 
        /**
@@ -52,7 +52,7 @@ namespace EMR
         * the default http client factory will be used
         */
         EMRClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                  std::shared_ptr<EMREndpointProviderBase> endpointProvider = Aws::MakeShared<EMREndpointProvider>(ALLOCATION_TAG),
+                  std::shared_ptr<EMREndpointProviderBase> endpointProvider = nullptr,
                   const Aws::EMR::EMRClientConfiguration& clientConfiguration = Aws::EMR::EMRClientConfiguration());
 
 
@@ -1378,6 +1378,40 @@ namespace EMR
         }
 
         /**
+         * <p>You can use the <code>SetKeepJobFlowAliveWhenNoSteps</code> to configure a
+         * cluster (job flow) to terminate after the step execution, i.e., all your steps
+         * are executed. If you want a transient cluster that shuts down after the last of
+         * the current executing steps are completed, you can configure
+         * <code>SetKeepJobFlowAliveWhenNoSteps</code> to false. If you want a long running
+         * cluster, configure <code>SetKeepJobFlowAliveWhenNoSteps</code> to true.</p>
+         * <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/UsingEMR_TerminationProtection.html">Managing
+         * Cluster Termination</a> in the <i>Amazon EMR Management Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/SetKeepJobFlowAliveWhenNoSteps">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SetKeepJobFlowAliveWhenNoStepsOutcome SetKeepJobFlowAliveWhenNoSteps(const Model::SetKeepJobFlowAliveWhenNoStepsRequest& request) const;
+
+        /**
+         * A Callable wrapper for SetKeepJobFlowAliveWhenNoSteps that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename SetKeepJobFlowAliveWhenNoStepsRequestT = Model::SetKeepJobFlowAliveWhenNoStepsRequest>
+        Model::SetKeepJobFlowAliveWhenNoStepsOutcomeCallable SetKeepJobFlowAliveWhenNoStepsCallable(const SetKeepJobFlowAliveWhenNoStepsRequestT& request) const
+        {
+            return SubmitCallable(&EMRClient::SetKeepJobFlowAliveWhenNoSteps, request);
+        }
+
+        /**
+         * An Async wrapper for SetKeepJobFlowAliveWhenNoSteps that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename SetKeepJobFlowAliveWhenNoStepsRequestT = Model::SetKeepJobFlowAliveWhenNoStepsRequest>
+        void SetKeepJobFlowAliveWhenNoStepsAsync(const SetKeepJobFlowAliveWhenNoStepsRequestT& request, const SetKeepJobFlowAliveWhenNoStepsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EMRClient::SetKeepJobFlowAliveWhenNoSteps, request, handler, context);
+        }
+
+        /**
          * <p>SetTerminationProtection locks a cluster (job flow) so the Amazon EC2
          * instances in the cluster cannot be terminated by user intervention, an API call,
          * or in the event of a job-flow error. The cluster still terminates upon
@@ -1391,7 +1425,7 @@ namespace EMR
          * <code>SetTerminationProtection</code> to <code>true</code>, you must first
          * unlock the job flow by a subsequent call to
          * <code>SetTerminationProtection</code> in which you set the value to
-         * <code>false</code>. </p> <p> For more information, see<a
+         * <code>false</code>. </p> <p> For more information, see <a
          * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/UsingEMR_TerminationProtection.html">Managing
          * Cluster Termination</a> in the <i>Amazon EMR Management Guide</i>.
          * </p><p><h3>See Also:</h3>   <a
@@ -1416,6 +1450,44 @@ namespace EMR
         void SetTerminationProtectionAsync(const SetTerminationProtectionRequestT& request, const SetTerminationProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&EMRClient::SetTerminationProtection, request, handler, context);
+        }
+
+        /**
+         * <p>Specify whether to enable unhealthy node replacement, which lets Amazon EMR
+         * gracefully replace core nodes on a cluster if any nodes become unhealthy. For
+         * example, a node becomes unhealthy if disk usage is above 90%. If unhealthy node
+         * replacement is on and <code>TerminationProtected</code> are off, Amazon EMR
+         * immediately terminates the unhealthy core nodes. To use unhealthy node
+         * replacement and retain unhealthy core nodes, use to turn on termination
+         * protection. In such cases, Amazon EMR adds the unhealthy nodes to a denylist,
+         * reducing job interruptions and failures.</p> <p>If unhealthy node replacement is
+         * on, Amazon EMR notifies YARN and other applications on the cluster to stop
+         * scheduling tasks with these nodes, moves the data, and then terminates the
+         * nodes.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/UsingEMR_UnhealthyNodeReplacement.html">graceful
+         * node replacement</a> in the <i>Amazon EMR Management Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/SetUnhealthyNodeReplacement">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SetUnhealthyNodeReplacementOutcome SetUnhealthyNodeReplacement(const Model::SetUnhealthyNodeReplacementRequest& request) const;
+
+        /**
+         * A Callable wrapper for SetUnhealthyNodeReplacement that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename SetUnhealthyNodeReplacementRequestT = Model::SetUnhealthyNodeReplacementRequest>
+        Model::SetUnhealthyNodeReplacementOutcomeCallable SetUnhealthyNodeReplacementCallable(const SetUnhealthyNodeReplacementRequestT& request) const
+        {
+            return SubmitCallable(&EMRClient::SetUnhealthyNodeReplacement, request);
+        }
+
+        /**
+         * An Async wrapper for SetUnhealthyNodeReplacement that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename SetUnhealthyNodeReplacementRequestT = Model::SetUnhealthyNodeReplacementRequest>
+        void SetUnhealthyNodeReplacementAsync(const SetUnhealthyNodeReplacementRequestT& request, const SetUnhealthyNodeReplacementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EMRClient::SetUnhealthyNodeReplacement, request, handler, context);
         }
 
         /**

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ContainerStatus::NOT_SET:
+            return {};
           case ContainerStatus::ACTIVE:
             return "ACTIVE";
           case ContainerStatus::CREATING:

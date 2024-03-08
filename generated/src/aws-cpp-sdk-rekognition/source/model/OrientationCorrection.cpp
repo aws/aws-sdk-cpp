@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OrientationCorrection::NOT_SET:
+            return {};
           case OrientationCorrection::ROTATE_0:
             return "ROTATE_0";
           case OrientationCorrection::ROTATE_90:

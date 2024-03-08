@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DedicatedTenancySupportEnum::NOT_SET:
+            return {};
           case DedicatedTenancySupportEnum::ENABLED:
             return "ENABLED";
           default:

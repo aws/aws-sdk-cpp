@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DeliveryStreamEncryptionStatus::NOT_SET:
+            return {};
           case DeliveryStreamEncryptionStatus::ENABLED:
             return "ENABLED";
           case DeliveryStreamEncryptionStatus::ENABLING:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ChangeDirectionEnum::NOT_SET:
+            return {};
           case ChangeDirectionEnum::INCREASE:
             return "INCREASE";
           case ChangeDirectionEnum::DECREASE:

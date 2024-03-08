@@ -34,12 +34,14 @@ PhoneNumberInformation::PhoneNumberInformation() :
     m_twoWayEnabled(false),
     m_twoWayEnabledHasBeenSet(false),
     m_twoWayChannelArnHasBeenSet(false),
+    m_twoWayChannelRoleHasBeenSet(false),
     m_selfManagedOptOutsEnabled(false),
     m_selfManagedOptOutsEnabledHasBeenSet(false),
     m_optOutListNameHasBeenSet(false),
     m_deletionProtectionEnabled(false),
     m_deletionProtectionEnabledHasBeenSet(false),
     m_poolIdHasBeenSet(false),
+    m_registrationIdHasBeenSet(false),
     m_createdTimestampHasBeenSet(false)
 {
 }
@@ -60,12 +62,14 @@ PhoneNumberInformation::PhoneNumberInformation(JsonView jsonValue) :
     m_twoWayEnabled(false),
     m_twoWayEnabledHasBeenSet(false),
     m_twoWayChannelArnHasBeenSet(false),
+    m_twoWayChannelRoleHasBeenSet(false),
     m_selfManagedOptOutsEnabled(false),
     m_selfManagedOptOutsEnabledHasBeenSet(false),
     m_optOutListNameHasBeenSet(false),
     m_deletionProtectionEnabled(false),
     m_deletionProtectionEnabledHasBeenSet(false),
     m_poolIdHasBeenSet(false),
+    m_registrationIdHasBeenSet(false),
     m_createdTimestampHasBeenSet(false)
 {
   *this = jsonValue;
@@ -153,6 +157,13 @@ PhoneNumberInformation& PhoneNumberInformation::operator =(JsonView jsonValue)
     m_twoWayChannelArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TwoWayChannelRole"))
+  {
+    m_twoWayChannelRole = jsonValue.GetString("TwoWayChannelRole");
+
+    m_twoWayChannelRoleHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("SelfManagedOptOutsEnabled"))
   {
     m_selfManagedOptOutsEnabled = jsonValue.GetBool("SelfManagedOptOutsEnabled");
@@ -179,6 +190,13 @@ PhoneNumberInformation& PhoneNumberInformation::operator =(JsonView jsonValue)
     m_poolId = jsonValue.GetString("PoolId");
 
     m_poolIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RegistrationId"))
+  {
+    m_registrationId = jsonValue.GetString("RegistrationId");
+
+    m_registrationIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("CreatedTimestamp"))
@@ -263,6 +281,12 @@ JsonValue PhoneNumberInformation::Jsonize() const
 
   }
 
+  if(m_twoWayChannelRoleHasBeenSet)
+  {
+   payload.WithString("TwoWayChannelRole", m_twoWayChannelRole);
+
+  }
+
   if(m_selfManagedOptOutsEnabledHasBeenSet)
   {
    payload.WithBool("SelfManagedOptOutsEnabled", m_selfManagedOptOutsEnabled);
@@ -284,6 +308,12 @@ JsonValue PhoneNumberInformation::Jsonize() const
   if(m_poolIdHasBeenSet)
   {
    payload.WithString("PoolId", m_poolId);
+
+  }
+
+  if(m_registrationIdHasBeenSet)
+  {
+   payload.WithString("RegistrationId", m_registrationId);
 
   }
 

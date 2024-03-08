@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case IoTJobExecutionFailureType::NOT_SET:
+            return {};
           case IoTJobExecutionFailureType::FAILED:
             return "FAILED";
           case IoTJobExecutionFailureType::REJECTED:

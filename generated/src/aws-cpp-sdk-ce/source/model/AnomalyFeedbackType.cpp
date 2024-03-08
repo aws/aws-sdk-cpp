@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AnomalyFeedbackType::NOT_SET:
+            return {};
           case AnomalyFeedbackType::YES:
             return "YES";
           case AnomalyFeedbackType::NO:

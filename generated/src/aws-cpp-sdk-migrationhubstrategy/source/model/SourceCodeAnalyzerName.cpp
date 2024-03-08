@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SourceCodeAnalyzerName::NOT_SET:
+            return {};
           case SourceCodeAnalyzerName::CSHARP_ANALYZER:
             return "CSHARP_ANALYZER";
           case SourceCodeAnalyzerName::JAVA_ANALYZER:

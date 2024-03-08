@@ -166,49 +166,113 @@ namespace Model
 
     /**
      * <p>A container for elements related to a particular part. A response can contain
-     * zero or more <code>Parts</code> elements.</p>
+     * zero or more <code>Parts</code> elements.</p>  <ul> <li> <p> <b>General
+     * purpose buckets</b> - For <code>GetObjectAttributes</code>, if a additional
+     * checksum (including <code>x-amz-checksum-crc32</code>,
+     * <code>x-amz-checksum-crc32c</code>, <code>x-amz-checksum-sha1</code>, or
+     * <code>x-amz-checksum-sha256</code>) isn't applied to the object specified in the
+     * request, the response doesn't return <code>Part</code>.</p> </li> <li> <p>
+     * <b>Directory buckets</b> - For <code>GetObjectAttributes</code>, no matter
+     * whether a additional checksum is applied to the object specified in the request,
+     * the response returns <code>Part</code>.</p> </li> </ul> 
      */
     inline const Aws::Vector<ObjectPart>& GetParts() const{ return m_parts; }
 
     /**
      * <p>A container for elements related to a particular part. A response can contain
-     * zero or more <code>Parts</code> elements.</p>
+     * zero or more <code>Parts</code> elements.</p>  <ul> <li> <p> <b>General
+     * purpose buckets</b> - For <code>GetObjectAttributes</code>, if a additional
+     * checksum (including <code>x-amz-checksum-crc32</code>,
+     * <code>x-amz-checksum-crc32c</code>, <code>x-amz-checksum-sha1</code>, or
+     * <code>x-amz-checksum-sha256</code>) isn't applied to the object specified in the
+     * request, the response doesn't return <code>Part</code>.</p> </li> <li> <p>
+     * <b>Directory buckets</b> - For <code>GetObjectAttributes</code>, no matter
+     * whether a additional checksum is applied to the object specified in the request,
+     * the response returns <code>Part</code>.</p> </li> </ul> 
      */
     inline bool PartsHasBeenSet() const { return m_partsHasBeenSet; }
 
     /**
      * <p>A container for elements related to a particular part. A response can contain
-     * zero or more <code>Parts</code> elements.</p>
+     * zero or more <code>Parts</code> elements.</p>  <ul> <li> <p> <b>General
+     * purpose buckets</b> - For <code>GetObjectAttributes</code>, if a additional
+     * checksum (including <code>x-amz-checksum-crc32</code>,
+     * <code>x-amz-checksum-crc32c</code>, <code>x-amz-checksum-sha1</code>, or
+     * <code>x-amz-checksum-sha256</code>) isn't applied to the object specified in the
+     * request, the response doesn't return <code>Part</code>.</p> </li> <li> <p>
+     * <b>Directory buckets</b> - For <code>GetObjectAttributes</code>, no matter
+     * whether a additional checksum is applied to the object specified in the request,
+     * the response returns <code>Part</code>.</p> </li> </ul> 
      */
     inline void SetParts(const Aws::Vector<ObjectPart>& value) { m_partsHasBeenSet = true; m_parts = value; }
 
     /**
      * <p>A container for elements related to a particular part. A response can contain
-     * zero or more <code>Parts</code> elements.</p>
+     * zero or more <code>Parts</code> elements.</p>  <ul> <li> <p> <b>General
+     * purpose buckets</b> - For <code>GetObjectAttributes</code>, if a additional
+     * checksum (including <code>x-amz-checksum-crc32</code>,
+     * <code>x-amz-checksum-crc32c</code>, <code>x-amz-checksum-sha1</code>, or
+     * <code>x-amz-checksum-sha256</code>) isn't applied to the object specified in the
+     * request, the response doesn't return <code>Part</code>.</p> </li> <li> <p>
+     * <b>Directory buckets</b> - For <code>GetObjectAttributes</code>, no matter
+     * whether a additional checksum is applied to the object specified in the request,
+     * the response returns <code>Part</code>.</p> </li> </ul> 
      */
     inline void SetParts(Aws::Vector<ObjectPart>&& value) { m_partsHasBeenSet = true; m_parts = std::move(value); }
 
     /**
      * <p>A container for elements related to a particular part. A response can contain
-     * zero or more <code>Parts</code> elements.</p>
+     * zero or more <code>Parts</code> elements.</p>  <ul> <li> <p> <b>General
+     * purpose buckets</b> - For <code>GetObjectAttributes</code>, if a additional
+     * checksum (including <code>x-amz-checksum-crc32</code>,
+     * <code>x-amz-checksum-crc32c</code>, <code>x-amz-checksum-sha1</code>, or
+     * <code>x-amz-checksum-sha256</code>) isn't applied to the object specified in the
+     * request, the response doesn't return <code>Part</code>.</p> </li> <li> <p>
+     * <b>Directory buckets</b> - For <code>GetObjectAttributes</code>, no matter
+     * whether a additional checksum is applied to the object specified in the request,
+     * the response returns <code>Part</code>.</p> </li> </ul> 
      */
     inline GetObjectAttributesParts& WithParts(const Aws::Vector<ObjectPart>& value) { SetParts(value); return *this;}
 
     /**
      * <p>A container for elements related to a particular part. A response can contain
-     * zero or more <code>Parts</code> elements.</p>
+     * zero or more <code>Parts</code> elements.</p>  <ul> <li> <p> <b>General
+     * purpose buckets</b> - For <code>GetObjectAttributes</code>, if a additional
+     * checksum (including <code>x-amz-checksum-crc32</code>,
+     * <code>x-amz-checksum-crc32c</code>, <code>x-amz-checksum-sha1</code>, or
+     * <code>x-amz-checksum-sha256</code>) isn't applied to the object specified in the
+     * request, the response doesn't return <code>Part</code>.</p> </li> <li> <p>
+     * <b>Directory buckets</b> - For <code>GetObjectAttributes</code>, no matter
+     * whether a additional checksum is applied to the object specified in the request,
+     * the response returns <code>Part</code>.</p> </li> </ul> 
      */
     inline GetObjectAttributesParts& WithParts(Aws::Vector<ObjectPart>&& value) { SetParts(std::move(value)); return *this;}
 
     /**
      * <p>A container for elements related to a particular part. A response can contain
-     * zero or more <code>Parts</code> elements.</p>
+     * zero or more <code>Parts</code> elements.</p>  <ul> <li> <p> <b>General
+     * purpose buckets</b> - For <code>GetObjectAttributes</code>, if a additional
+     * checksum (including <code>x-amz-checksum-crc32</code>,
+     * <code>x-amz-checksum-crc32c</code>, <code>x-amz-checksum-sha1</code>, or
+     * <code>x-amz-checksum-sha256</code>) isn't applied to the object specified in the
+     * request, the response doesn't return <code>Part</code>.</p> </li> <li> <p>
+     * <b>Directory buckets</b> - For <code>GetObjectAttributes</code>, no matter
+     * whether a additional checksum is applied to the object specified in the request,
+     * the response returns <code>Part</code>.</p> </li> </ul> 
      */
     inline GetObjectAttributesParts& AddParts(const ObjectPart& value) { m_partsHasBeenSet = true; m_parts.push_back(value); return *this; }
 
     /**
      * <p>A container for elements related to a particular part. A response can contain
-     * zero or more <code>Parts</code> elements.</p>
+     * zero or more <code>Parts</code> elements.</p>  <ul> <li> <p> <b>General
+     * purpose buckets</b> - For <code>GetObjectAttributes</code>, if a additional
+     * checksum (including <code>x-amz-checksum-crc32</code>,
+     * <code>x-amz-checksum-crc32c</code>, <code>x-amz-checksum-sha1</code>, or
+     * <code>x-amz-checksum-sha256</code>) isn't applied to the object specified in the
+     * request, the response doesn't return <code>Part</code>.</p> </li> <li> <p>
+     * <b>Directory buckets</b> - For <code>GetObjectAttributes</code>, no matter
+     * whether a additional checksum is applied to the object specified in the request,
+     * the response returns <code>Part</code>.</p> </li> </ul> 
      */
     inline GetObjectAttributesParts& AddParts(ObjectPart&& value) { m_partsHasBeenSet = true; m_parts.push_back(std::move(value)); return *this; }
 

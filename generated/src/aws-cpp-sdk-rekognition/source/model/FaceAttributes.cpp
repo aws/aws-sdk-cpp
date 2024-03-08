@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FaceAttributes::NOT_SET:
+            return {};
           case FaceAttributes::DEFAULT:
             return "DEFAULT";
           case FaceAttributes::ALL:

@@ -80,42 +80,58 @@ namespace Model
 
 
     /**
-     * <p>The maximum length.</p>
+     * <p>The maximum length of a string attribute value. Must be a number less than or
+     * equal to <code>2^1023</code>, represented as a string with a length of 131072
+     * characters or fewer.</p>
      */
     inline const Aws::String& GetMaxLength() const{ return m_maxLength; }
 
     /**
-     * <p>The maximum length.</p>
+     * <p>The maximum length of a string attribute value. Must be a number less than or
+     * equal to <code>2^1023</code>, represented as a string with a length of 131072
+     * characters or fewer.</p>
      */
     inline bool MaxLengthHasBeenSet() const { return m_maxLengthHasBeenSet; }
 
     /**
-     * <p>The maximum length.</p>
+     * <p>The maximum length of a string attribute value. Must be a number less than or
+     * equal to <code>2^1023</code>, represented as a string with a length of 131072
+     * characters or fewer.</p>
      */
     inline void SetMaxLength(const Aws::String& value) { m_maxLengthHasBeenSet = true; m_maxLength = value; }
 
     /**
-     * <p>The maximum length.</p>
+     * <p>The maximum length of a string attribute value. Must be a number less than or
+     * equal to <code>2^1023</code>, represented as a string with a length of 131072
+     * characters or fewer.</p>
      */
     inline void SetMaxLength(Aws::String&& value) { m_maxLengthHasBeenSet = true; m_maxLength = std::move(value); }
 
     /**
-     * <p>The maximum length.</p>
+     * <p>The maximum length of a string attribute value. Must be a number less than or
+     * equal to <code>2^1023</code>, represented as a string with a length of 131072
+     * characters or fewer.</p>
      */
     inline void SetMaxLength(const char* value) { m_maxLengthHasBeenSet = true; m_maxLength.assign(value); }
 
     /**
-     * <p>The maximum length.</p>
+     * <p>The maximum length of a string attribute value. Must be a number less than or
+     * equal to <code>2^1023</code>, represented as a string with a length of 131072
+     * characters or fewer.</p>
      */
     inline StringAttributeConstraintsType& WithMaxLength(const Aws::String& value) { SetMaxLength(value); return *this;}
 
     /**
-     * <p>The maximum length.</p>
+     * <p>The maximum length of a string attribute value. Must be a number less than or
+     * equal to <code>2^1023</code>, represented as a string with a length of 131072
+     * characters or fewer.</p>
      */
     inline StringAttributeConstraintsType& WithMaxLength(Aws::String&& value) { SetMaxLength(std::move(value)); return *this;}
 
     /**
-     * <p>The maximum length.</p>
+     * <p>The maximum length of a string attribute value. Must be a number less than or
+     * equal to <code>2^1023</code>, represented as a string with a length of 131072
+     * characters or fewer.</p>
      */
     inline StringAttributeConstraintsType& WithMaxLength(const char* value) { SetMaxLength(value); return *this;}
 

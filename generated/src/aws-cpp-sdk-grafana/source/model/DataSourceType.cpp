@@ -84,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DataSourceType::NOT_SET:
+            return {};
           case DataSourceType::AMAZON_OPENSEARCH_SERVICE:
             return "AMAZON_OPENSEARCH_SERVICE";
           case DataSourceType::CLOUDWATCH:

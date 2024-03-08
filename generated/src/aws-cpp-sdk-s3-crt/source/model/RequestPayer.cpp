@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RequestPayer::NOT_SET:
+            return {};
           case RequestPayer::requester:
             return "requester";
           default:

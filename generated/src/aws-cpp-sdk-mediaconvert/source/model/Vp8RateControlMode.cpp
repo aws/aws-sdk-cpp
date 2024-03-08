@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Vp8RateControlMode::NOT_SET:
+            return {};
           case Vp8RateControlMode::VBR:
             return "VBR";
           default:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CostCategoryInheritedValueDimensionName::NOT_SET:
+            return {};
           case CostCategoryInheritedValueDimensionName::LINKED_ACCOUNT_NAME:
             return "LINKED_ACCOUNT_NAME";
           case CostCategoryInheritedValueDimensionName::TAG:

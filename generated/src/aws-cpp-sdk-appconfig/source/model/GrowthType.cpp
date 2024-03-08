@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case GrowthType::NOT_SET:
+            return {};
           case GrowthType::LINEAR:
             return "LINEAR";
           case GrowthType::EXPONENTIAL:

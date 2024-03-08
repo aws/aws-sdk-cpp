@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HlsTargetDurationCompatibilityMode::NOT_SET:
+            return {};
           case HlsTargetDurationCompatibilityMode::LEGACY:
             return "LEGACY";
           case HlsTargetDurationCompatibilityMode::SPEC_COMPLIANT:

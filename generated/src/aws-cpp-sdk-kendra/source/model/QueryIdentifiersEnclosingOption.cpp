@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case QueryIdentifiersEnclosingOption::NOT_SET:
+            return {};
           case QueryIdentifiersEnclosingOption::DOUBLE_QUOTES:
             return "DOUBLE_QUOTES";
           case QueryIdentifiersEnclosingOption::NONE:

@@ -31,23 +31,23 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == SESSION_EXPIRED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoSignalingChannelsErrors::SESSION_EXPIRED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoSignalingChannelsErrors::SESSION_EXPIRED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == NOT_AUTHORIZED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoSignalingChannelsErrors::NOT_AUTHORIZED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoSignalingChannelsErrors::NOT_AUTHORIZED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_CLIENT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoSignalingChannelsErrors::INVALID_CLIENT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoSignalingChannelsErrors::INVALID_CLIENT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == CLIENT_LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoSignalingChannelsErrors::CLIENT_LIMIT_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoSignalingChannelsErrors::CLIENT_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_ARGUMENT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoSignalingChannelsErrors::INVALID_ARGUMENT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoSignalingChannelsErrors::INVALID_ARGUMENT), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

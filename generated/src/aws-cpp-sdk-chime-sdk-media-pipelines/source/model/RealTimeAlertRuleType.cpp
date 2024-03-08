@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RealTimeAlertRuleType::NOT_SET:
+            return {};
           case RealTimeAlertRuleType::KeywordMatch:
             return "KeywordMatch";
           case RealTimeAlertRuleType::Sentiment:

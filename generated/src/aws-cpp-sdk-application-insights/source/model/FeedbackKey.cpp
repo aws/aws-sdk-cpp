@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FeedbackKey::NOT_SET:
+            return {};
           case FeedbackKey::INSIGHTS_FEEDBACK:
             return "INSIGHTS_FEEDBACK";
           default:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BlockType::NOT_SET:
+            return {};
           case BlockType::LINE:
             return "LINE";
           case BlockType::WORD:

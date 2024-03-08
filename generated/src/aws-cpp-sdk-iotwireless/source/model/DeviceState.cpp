@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DeviceState::NOT_SET:
+            return {};
           case DeviceState::Provisioned:
             return "Provisioned";
           case DeviceState::RegisteredNotSeen:

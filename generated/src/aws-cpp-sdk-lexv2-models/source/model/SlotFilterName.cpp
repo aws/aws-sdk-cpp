@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SlotFilterName::NOT_SET:
+            return {};
           case SlotFilterName::SlotName:
             return "SlotName";
           default:

@@ -13,6 +13,7 @@
 #include <aws/iottwinmaker/model/PropertyDefinitionResponse.h>
 #include <aws/iottwinmaker/model/FunctionResponse.h>
 #include <aws/iottwinmaker/model/PropertyGroupResponse.h>
+#include <aws/iottwinmaker/model/CompositeComponentTypeResponse.h>
 #include <utility>
 
 namespace Aws
@@ -629,6 +630,84 @@ namespace Model
     inline GetComponentTypeResult& WithComponentTypeName(const char* value) { SetComponentTypeName(value); return *this;}
 
 
+    /**
+     * <p>This is an object that maps strings to <code>compositeComponentTypes</code>
+     * of the <code>componentType</code>. <code>CompositeComponentType</code> is
+     * referenced by <code>componentTypeId</code>.</p>
+     */
+    inline const Aws::Map<Aws::String, CompositeComponentTypeResponse>& GetCompositeComponentTypes() const{ return m_compositeComponentTypes; }
+
+    /**
+     * <p>This is an object that maps strings to <code>compositeComponentTypes</code>
+     * of the <code>componentType</code>. <code>CompositeComponentType</code> is
+     * referenced by <code>componentTypeId</code>.</p>
+     */
+    inline void SetCompositeComponentTypes(const Aws::Map<Aws::String, CompositeComponentTypeResponse>& value) { m_compositeComponentTypes = value; }
+
+    /**
+     * <p>This is an object that maps strings to <code>compositeComponentTypes</code>
+     * of the <code>componentType</code>. <code>CompositeComponentType</code> is
+     * referenced by <code>componentTypeId</code>.</p>
+     */
+    inline void SetCompositeComponentTypes(Aws::Map<Aws::String, CompositeComponentTypeResponse>&& value) { m_compositeComponentTypes = std::move(value); }
+
+    /**
+     * <p>This is an object that maps strings to <code>compositeComponentTypes</code>
+     * of the <code>componentType</code>. <code>CompositeComponentType</code> is
+     * referenced by <code>componentTypeId</code>.</p>
+     */
+    inline GetComponentTypeResult& WithCompositeComponentTypes(const Aws::Map<Aws::String, CompositeComponentTypeResponse>& value) { SetCompositeComponentTypes(value); return *this;}
+
+    /**
+     * <p>This is an object that maps strings to <code>compositeComponentTypes</code>
+     * of the <code>componentType</code>. <code>CompositeComponentType</code> is
+     * referenced by <code>componentTypeId</code>.</p>
+     */
+    inline GetComponentTypeResult& WithCompositeComponentTypes(Aws::Map<Aws::String, CompositeComponentTypeResponse>&& value) { SetCompositeComponentTypes(std::move(value)); return *this;}
+
+    /**
+     * <p>This is an object that maps strings to <code>compositeComponentTypes</code>
+     * of the <code>componentType</code>. <code>CompositeComponentType</code> is
+     * referenced by <code>componentTypeId</code>.</p>
+     */
+    inline GetComponentTypeResult& AddCompositeComponentTypes(const Aws::String& key, const CompositeComponentTypeResponse& value) { m_compositeComponentTypes.emplace(key, value); return *this; }
+
+    /**
+     * <p>This is an object that maps strings to <code>compositeComponentTypes</code>
+     * of the <code>componentType</code>. <code>CompositeComponentType</code> is
+     * referenced by <code>componentTypeId</code>.</p>
+     */
+    inline GetComponentTypeResult& AddCompositeComponentTypes(Aws::String&& key, const CompositeComponentTypeResponse& value) { m_compositeComponentTypes.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>This is an object that maps strings to <code>compositeComponentTypes</code>
+     * of the <code>componentType</code>. <code>CompositeComponentType</code> is
+     * referenced by <code>componentTypeId</code>.</p>
+     */
+    inline GetComponentTypeResult& AddCompositeComponentTypes(const Aws::String& key, CompositeComponentTypeResponse&& value) { m_compositeComponentTypes.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>This is an object that maps strings to <code>compositeComponentTypes</code>
+     * of the <code>componentType</code>. <code>CompositeComponentType</code> is
+     * referenced by <code>componentTypeId</code>.</p>
+     */
+    inline GetComponentTypeResult& AddCompositeComponentTypes(Aws::String&& key, CompositeComponentTypeResponse&& value) { m_compositeComponentTypes.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>This is an object that maps strings to <code>compositeComponentTypes</code>
+     * of the <code>componentType</code>. <code>CompositeComponentType</code> is
+     * referenced by <code>componentTypeId</code>.</p>
+     */
+    inline GetComponentTypeResult& AddCompositeComponentTypes(const char* key, CompositeComponentTypeResponse&& value) { m_compositeComponentTypes.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>This is an object that maps strings to <code>compositeComponentTypes</code>
+     * of the <code>componentType</code>. <code>CompositeComponentType</code> is
+     * referenced by <code>componentTypeId</code>.</p>
+     */
+    inline GetComponentTypeResult& AddCompositeComponentTypes(const char* key, const CompositeComponentTypeResponse& value) { m_compositeComponentTypes.emplace(key, value); return *this; }
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -683,6 +762,8 @@ namespace Model
     Aws::String m_syncSource;
 
     Aws::String m_componentTypeName;
+
+    Aws::Map<Aws::String, CompositeComponentTypeResponse> m_compositeComponentTypes;
 
     Aws::String m_requestId;
   };

@@ -17,7 +17,13 @@ namespace Model
   {
     NOT_SET,
     HANA,
-    HANA_NODE
+    HANA_NODE,
+    ABAP,
+    ASCS,
+    DIALOG,
+    WEBDISP,
+    WD,
+    ERS
   };
 
 namespace ComponentTypeMapper

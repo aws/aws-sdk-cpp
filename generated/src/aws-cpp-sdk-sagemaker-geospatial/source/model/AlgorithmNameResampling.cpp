@@ -109,6 +109,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AlgorithmNameResampling::NOT_SET:
+            return {};
           case AlgorithmNameResampling::NEAR:
             return "NEAR";
           case AlgorithmNameResampling::BILINEAR:

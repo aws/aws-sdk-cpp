@@ -25,7 +25,8 @@ ECSServiceRecommendationOption::ECSServiceRecommendationOption() :
     m_cpuHasBeenSet(false),
     m_savingsOpportunityHasBeenSet(false),
     m_projectedUtilizationMetricsHasBeenSet(false),
-    m_containerRecommendationsHasBeenSet(false)
+    m_containerRecommendationsHasBeenSet(false),
+    m_savingsOpportunityAfterDiscountsHasBeenSet(false)
 {
 }
 
@@ -36,7 +37,8 @@ ECSServiceRecommendationOption::ECSServiceRecommendationOption(JsonView jsonValu
     m_cpuHasBeenSet(false),
     m_savingsOpportunityHasBeenSet(false),
     m_projectedUtilizationMetricsHasBeenSet(false),
-    m_containerRecommendationsHasBeenSet(false)
+    m_containerRecommendationsHasBeenSet(false),
+    m_savingsOpportunityAfterDiscountsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -84,6 +86,13 @@ ECSServiceRecommendationOption& ECSServiceRecommendationOption::operator =(JsonV
     m_containerRecommendationsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("savingsOpportunityAfterDiscounts"))
+  {
+    m_savingsOpportunityAfterDiscounts = jsonValue.GetObject("savingsOpportunityAfterDiscounts");
+
+    m_savingsOpportunityAfterDiscountsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -128,6 +137,12 @@ JsonValue ECSServiceRecommendationOption::Jsonize() const
      containerRecommendationsJsonList[containerRecommendationsIndex].AsObject(m_containerRecommendations[containerRecommendationsIndex].Jsonize());
    }
    payload.WithArray("containerRecommendations", std::move(containerRecommendationsJsonList));
+
+  }
+
+  if(m_savingsOpportunityAfterDiscountsHasBeenSet)
+  {
+   payload.WithObject("savingsOpportunityAfterDiscounts", m_savingsOpportunityAfterDiscounts.Jsonize());
 
   }
 

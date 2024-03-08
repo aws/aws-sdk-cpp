@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HostRole::NOT_SET:
+            return {};
           case HostRole::LEADER:
             return "LEADER";
           case HostRole::WORKER:

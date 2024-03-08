@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OriginTypeValue::NOT_SET:
+            return {};
           case OriginTypeValue::SOURCE:
             return "SOURCE";
           case OriginTypeValue::TARGET:

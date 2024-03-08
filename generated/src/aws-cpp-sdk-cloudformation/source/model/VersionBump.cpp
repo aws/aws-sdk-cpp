@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VersionBump::NOT_SET:
+            return {};
           case VersionBump::MAJOR:
             return "MAJOR";
           case VersionBump::MINOR:

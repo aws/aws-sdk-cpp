@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DiscoveryResourceType::NOT_SET:
+            return {};
           case DiscoveryResourceType::SVM:
             return "SVM";
           case DiscoveryResourceType::VOLUME:

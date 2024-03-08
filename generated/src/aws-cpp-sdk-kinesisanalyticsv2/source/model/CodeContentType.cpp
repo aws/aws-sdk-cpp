@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CodeContentType::NOT_SET:
+            return {};
           case CodeContentType::PLAINTEXT:
             return "PLAINTEXT";
           case CodeContentType::ZIPFILE:

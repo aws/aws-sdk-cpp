@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ProcessingJobStatus::NOT_SET:
+            return {};
           case ProcessingJobStatus::InProgress:
             return "InProgress";
           case ProcessingJobStatus::Completed:

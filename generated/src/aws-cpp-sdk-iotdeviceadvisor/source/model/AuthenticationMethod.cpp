@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AuthenticationMethod::NOT_SET:
+            return {};
           case AuthenticationMethod::X509ClientCertificate:
             return "X509ClientCertificate";
           case AuthenticationMethod::SignatureVersion4:

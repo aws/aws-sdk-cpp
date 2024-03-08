@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SNOMEDCTRelationshipType::NOT_SET:
+            return {};
           case SNOMEDCTRelationshipType::ACUITY:
             return "ACUITY";
           case SNOMEDCTRelationshipType::QUALITY:

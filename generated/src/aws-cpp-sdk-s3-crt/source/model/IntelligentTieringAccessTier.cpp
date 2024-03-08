@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case IntelligentTieringAccessTier::NOT_SET:
+            return {};
           case IntelligentTieringAccessTier::ARCHIVE_ACCESS:
             return "ARCHIVE_ACCESS";
           case IntelligentTieringAccessTier::DEEP_ARCHIVE_ACCESS:

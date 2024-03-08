@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ConnectionStatus::NOT_SET:
+            return {};
           case ConnectionStatus::CONNECTED:
             return "CONNECTED";
           case ConnectionStatus::DISCONNECTED:

@@ -172,7 +172,7 @@ namespace Model
     /**
      * <p>The amount of time, in seconds, to wait for a previous scale-out activity to
      * take effect. For more information and for default values, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html#target-tracking-cooldown">Define
+     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/target-tracking-scaling-policy-overview.html#target-tracking-cooldown">Define
      * cooldown periods</a> in the <i>Application Auto Scaling User Guide</i>.</p>
      */
     inline int GetScaleOutCooldown() const{ return m_scaleOutCooldown; }
@@ -180,7 +180,7 @@ namespace Model
     /**
      * <p>The amount of time, in seconds, to wait for a previous scale-out activity to
      * take effect. For more information and for default values, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html#target-tracking-cooldown">Define
+     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/target-tracking-scaling-policy-overview.html#target-tracking-cooldown">Define
      * cooldown periods</a> in the <i>Application Auto Scaling User Guide</i>.</p>
      */
     inline bool ScaleOutCooldownHasBeenSet() const { return m_scaleOutCooldownHasBeenSet; }
@@ -188,7 +188,7 @@ namespace Model
     /**
      * <p>The amount of time, in seconds, to wait for a previous scale-out activity to
      * take effect. For more information and for default values, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html#target-tracking-cooldown">Define
+     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/target-tracking-scaling-policy-overview.html#target-tracking-cooldown">Define
      * cooldown periods</a> in the <i>Application Auto Scaling User Guide</i>.</p>
      */
     inline void SetScaleOutCooldown(int value) { m_scaleOutCooldownHasBeenSet = true; m_scaleOutCooldown = value; }
@@ -196,7 +196,7 @@ namespace Model
     /**
      * <p>The amount of time, in seconds, to wait for a previous scale-out activity to
      * take effect. For more information and for default values, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html#target-tracking-cooldown">Define
+     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/target-tracking-scaling-policy-overview.html#target-tracking-cooldown">Define
      * cooldown periods</a> in the <i>Application Auto Scaling User Guide</i>.</p>
      */
     inline TargetTrackingScalingPolicyConfiguration& WithScaleOutCooldown(int value) { SetScaleOutCooldown(value); return *this;}
@@ -206,7 +206,7 @@ namespace Model
      * <p>The amount of time, in seconds, after a scale-in activity completes before
      * another scale-in activity can start. For more information and for default
      * values, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html#target-tracking-cooldown">Define
+     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/target-tracking-scaling-policy-overview.html#target-tracking-cooldown">Define
      * cooldown periods</a> in the <i>Application Auto Scaling User Guide</i>.</p>
      */
     inline int GetScaleInCooldown() const{ return m_scaleInCooldown; }
@@ -215,7 +215,7 @@ namespace Model
      * <p>The amount of time, in seconds, after a scale-in activity completes before
      * another scale-in activity can start. For more information and for default
      * values, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html#target-tracking-cooldown">Define
+     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/target-tracking-scaling-policy-overview.html#target-tracking-cooldown">Define
      * cooldown periods</a> in the <i>Application Auto Scaling User Guide</i>.</p>
      */
     inline bool ScaleInCooldownHasBeenSet() const { return m_scaleInCooldownHasBeenSet; }
@@ -224,7 +224,7 @@ namespace Model
      * <p>The amount of time, in seconds, after a scale-in activity completes before
      * another scale-in activity can start. For more information and for default
      * values, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html#target-tracking-cooldown">Define
+     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/target-tracking-scaling-policy-overview.html#target-tracking-cooldown">Define
      * cooldown periods</a> in the <i>Application Auto Scaling User Guide</i>.</p>
      */
     inline void SetScaleInCooldown(int value) { m_scaleInCooldownHasBeenSet = true; m_scaleInCooldown = value; }
@@ -233,7 +233,7 @@ namespace Model
      * <p>The amount of time, in seconds, after a scale-in activity completes before
      * another scale-in activity can start. For more information and for default
      * values, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html#target-tracking-cooldown">Define
+     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/target-tracking-scaling-policy-overview.html#target-tracking-cooldown">Define
      * cooldown periods</a> in the <i>Application Auto Scaling User Guide</i>.</p>
      */
     inline TargetTrackingScalingPolicyConfiguration& WithScaleInCooldown(int value) { SetScaleInCooldown(value); return *this;}

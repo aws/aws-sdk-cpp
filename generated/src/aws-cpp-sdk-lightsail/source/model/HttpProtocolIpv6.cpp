@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HttpProtocolIpv6::NOT_SET:
+            return {};
           case HttpProtocolIpv6::disabled:
             return "disabled";
           case HttpProtocolIpv6::enabled:

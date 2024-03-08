@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ProvisionedResourceEngine::NOT_SET:
+            return {};
           case ProvisionedResourceEngine::CLOUDFORMATION:
             return "CLOUDFORMATION";
           case ProvisionedResourceEngine::TERRAFORM:

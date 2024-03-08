@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RevisionLocationType::NOT_SET:
+            return {};
           case RevisionLocationType::S3:
             return "S3";
           case RevisionLocationType::GitHub:

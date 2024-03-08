@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ImageSetState::NOT_SET:
+            return {};
           case ImageSetState::ACTIVE:
             return "ACTIVE";
           case ImageSetState::LOCKED:

@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LicenseCountingType::NOT_SET:
+            return {};
           case LicenseCountingType::vCPU:
             return "vCPU";
           case LicenseCountingType::Instance:

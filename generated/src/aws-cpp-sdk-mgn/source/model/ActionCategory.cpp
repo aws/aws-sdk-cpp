@@ -89,6 +89,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ActionCategory::NOT_SET:
+            return {};
           case ActionCategory::DISASTER_RECOVERY:
             return "DISASTER_RECOVERY";
           case ActionCategory::OPERATING_SYSTEM:

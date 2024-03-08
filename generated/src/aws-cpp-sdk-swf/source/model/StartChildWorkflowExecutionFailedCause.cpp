@@ -94,6 +94,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StartChildWorkflowExecutionFailedCause::NOT_SET:
+            return {};
           case StartChildWorkflowExecutionFailedCause::WORKFLOW_TYPE_DOES_NOT_EXIST:
             return "WORKFLOW_TYPE_DOES_NOT_EXIST";
           case StartChildWorkflowExecutionFailedCause::WORKFLOW_TYPE_DEPRECATED:

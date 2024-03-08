@@ -339,6 +339,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ClarifyTextLanguage::NOT_SET:
+            return {};
           case ClarifyTextLanguage::af:
             return "af";
           case ClarifyTextLanguage::sq:

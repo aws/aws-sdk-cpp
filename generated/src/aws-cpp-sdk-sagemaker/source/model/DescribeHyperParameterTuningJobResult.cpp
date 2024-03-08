@@ -118,6 +118,12 @@ DescribeHyperParameterTuningJobResult& DescribeHyperParameterTuningJobResult::op
 
   }
 
+  if(jsonValue.ValueExists("Autotune"))
+  {
+    m_autotune = jsonValue.GetObject("Autotune");
+
+  }
+
   if(jsonValue.ValueExists("FailureReason"))
   {
     m_failureReason = jsonValue.GetString("FailureReason");
@@ -133,12 +139,6 @@ DescribeHyperParameterTuningJobResult& DescribeHyperParameterTuningJobResult::op
   if(jsonValue.ValueExists("ConsumedResources"))
   {
     m_consumedResources = jsonValue.GetObject("ConsumedResources");
-
-  }
-
-  if(jsonValue.ValueExists("Autotune"))
-  {
-    m_autotune = jsonValue.GetObject("Autotune");
 
   }
 

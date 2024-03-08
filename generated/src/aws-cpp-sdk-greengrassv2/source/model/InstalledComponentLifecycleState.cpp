@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InstalledComponentLifecycleState::NOT_SET:
+            return {};
           case InstalledComponentLifecycleState::NEW_:
             return "NEW";
           case InstalledComponentLifecycleState::INSTALLED:

@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AuditNotificationType::NOT_SET:
+            return {};
           case AuditNotificationType::SNS:
             return "SNS";
           default:

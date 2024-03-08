@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FindingSourceType::NOT_SET:
+            return {};
           case FindingSourceType::POLICY:
             return "POLICY";
           case FindingSourceType::BUCKET_ACL:

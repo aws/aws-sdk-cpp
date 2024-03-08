@@ -71,8 +71,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* NetworkFirewallClient::SERVICE_NAME = "network-firewall";
-const char* NetworkFirewallClient::ALLOCATION_TAG = "NetworkFirewallClient";
+namespace Aws
+{
+  namespace NetworkFirewall
+  {
+    const char SERVICE_NAME[] = "network-firewall";
+    const char ALLOCATION_TAG[] = "NetworkFirewallClient";
+  }
+}
+const char* NetworkFirewallClient::GetServiceName() {return SERVICE_NAME;}
+const char* NetworkFirewallClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 NetworkFirewallClient::NetworkFirewallClient(const NetworkFirewall::NetworkFirewallClientConfiguration& clientConfiguration,
                                              std::shared_ptr<NetworkFirewallEndpointProviderBase> endpointProvider) :
@@ -84,7 +92,7 @@ NetworkFirewallClient::NetworkFirewallClient(const NetworkFirewall::NetworkFirew
             Aws::MakeShared<NetworkFirewallErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<NetworkFirewallEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -100,7 +108,7 @@ NetworkFirewallClient::NetworkFirewallClient(const AWSCredentials& credentials,
             Aws::MakeShared<NetworkFirewallErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<NetworkFirewallEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -116,7 +124,7 @@ NetworkFirewallClient::NetworkFirewallClient(const std::shared_ptr<AWSCredential
             Aws::MakeShared<NetworkFirewallErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<NetworkFirewallEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

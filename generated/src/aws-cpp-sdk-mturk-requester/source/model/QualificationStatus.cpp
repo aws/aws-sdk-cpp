@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case QualificationStatus::NOT_SET:
+            return {};
           case QualificationStatus::Granted:
             return "Granted";
           case QualificationStatus::Revoked:

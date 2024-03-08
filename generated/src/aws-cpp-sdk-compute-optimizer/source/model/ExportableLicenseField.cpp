@@ -144,6 +144,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ExportableLicenseField::NOT_SET:
+            return {};
           case ExportableLicenseField::AccountId:
             return "AccountId";
           case ExportableLicenseField::ResourceArn:

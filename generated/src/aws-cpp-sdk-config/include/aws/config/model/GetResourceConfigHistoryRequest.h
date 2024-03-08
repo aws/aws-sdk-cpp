@@ -114,81 +114,87 @@ namespace Model
 
 
     /**
-     * <p>The time stamp that indicates a later time. If not specified, current time is
-     * taken.</p>
+     * <p>The chronologically latest time in the time range for which the history
+     * requested. If not specified, current time is taken.</p>
      */
     inline const Aws::Utils::DateTime& GetLaterTime() const{ return m_laterTime; }
 
     /**
-     * <p>The time stamp that indicates a later time. If not specified, current time is
-     * taken.</p>
+     * <p>The chronologically latest time in the time range for which the history
+     * requested. If not specified, current time is taken.</p>
      */
     inline bool LaterTimeHasBeenSet() const { return m_laterTimeHasBeenSet; }
 
     /**
-     * <p>The time stamp that indicates a later time. If not specified, current time is
-     * taken.</p>
+     * <p>The chronologically latest time in the time range for which the history
+     * requested. If not specified, current time is taken.</p>
      */
     inline void SetLaterTime(const Aws::Utils::DateTime& value) { m_laterTimeHasBeenSet = true; m_laterTime = value; }
 
     /**
-     * <p>The time stamp that indicates a later time. If not specified, current time is
-     * taken.</p>
+     * <p>The chronologically latest time in the time range for which the history
+     * requested. If not specified, current time is taken.</p>
      */
     inline void SetLaterTime(Aws::Utils::DateTime&& value) { m_laterTimeHasBeenSet = true; m_laterTime = std::move(value); }
 
     /**
-     * <p>The time stamp that indicates a later time. If not specified, current time is
-     * taken.</p>
+     * <p>The chronologically latest time in the time range for which the history
+     * requested. If not specified, current time is taken.</p>
      */
     inline GetResourceConfigHistoryRequest& WithLaterTime(const Aws::Utils::DateTime& value) { SetLaterTime(value); return *this;}
 
     /**
-     * <p>The time stamp that indicates a later time. If not specified, current time is
-     * taken.</p>
+     * <p>The chronologically latest time in the time range for which the history
+     * requested. If not specified, current time is taken.</p>
      */
     inline GetResourceConfigHistoryRequest& WithLaterTime(Aws::Utils::DateTime&& value) { SetLaterTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>The time stamp that indicates an earlier time. If not specified, the action
-     * returns paginated results that contain configuration items that start when the
-     * first configuration item was recorded.</p>
+     * <p>The chronologically earliest time in the time range for which the history
+     * requested. If not specified, the action returns paginated results that contain
+     * configuration items that start when the first configuration item was
+     * recorded.</p>
      */
     inline const Aws::Utils::DateTime& GetEarlierTime() const{ return m_earlierTime; }
 
     /**
-     * <p>The time stamp that indicates an earlier time. If not specified, the action
-     * returns paginated results that contain configuration items that start when the
-     * first configuration item was recorded.</p>
+     * <p>The chronologically earliest time in the time range for which the history
+     * requested. If not specified, the action returns paginated results that contain
+     * configuration items that start when the first configuration item was
+     * recorded.</p>
      */
     inline bool EarlierTimeHasBeenSet() const { return m_earlierTimeHasBeenSet; }
 
     /**
-     * <p>The time stamp that indicates an earlier time. If not specified, the action
-     * returns paginated results that contain configuration items that start when the
-     * first configuration item was recorded.</p>
+     * <p>The chronologically earliest time in the time range for which the history
+     * requested. If not specified, the action returns paginated results that contain
+     * configuration items that start when the first configuration item was
+     * recorded.</p>
      */
     inline void SetEarlierTime(const Aws::Utils::DateTime& value) { m_earlierTimeHasBeenSet = true; m_earlierTime = value; }
 
     /**
-     * <p>The time stamp that indicates an earlier time. If not specified, the action
-     * returns paginated results that contain configuration items that start when the
-     * first configuration item was recorded.</p>
+     * <p>The chronologically earliest time in the time range for which the history
+     * requested. If not specified, the action returns paginated results that contain
+     * configuration items that start when the first configuration item was
+     * recorded.</p>
      */
     inline void SetEarlierTime(Aws::Utils::DateTime&& value) { m_earlierTimeHasBeenSet = true; m_earlierTime = std::move(value); }
 
     /**
-     * <p>The time stamp that indicates an earlier time. If not specified, the action
-     * returns paginated results that contain configuration items that start when the
-     * first configuration item was recorded.</p>
+     * <p>The chronologically earliest time in the time range for which the history
+     * requested. If not specified, the action returns paginated results that contain
+     * configuration items that start when the first configuration item was
+     * recorded.</p>
      */
     inline GetResourceConfigHistoryRequest& WithEarlierTime(const Aws::Utils::DateTime& value) { SetEarlierTime(value); return *this;}
 
     /**
-     * <p>The time stamp that indicates an earlier time. If not specified, the action
-     * returns paginated results that contain configuration items that start when the
-     * first configuration item was recorded.</p>
+     * <p>The chronologically earliest time in the time range for which the history
+     * requested. If not specified, the action returns paginated results that contain
+     * configuration items that start when the first configuration item was
+     * recorded.</p>
      */
     inline GetResourceConfigHistoryRequest& WithEarlierTime(Aws::Utils::DateTime&& value) { SetEarlierTime(std::move(value)); return *this;}
 

@@ -38,8 +38,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* ApiGatewayManagementApiClient::SERVICE_NAME = "execute-api";
-const char* ApiGatewayManagementApiClient::ALLOCATION_TAG = "ApiGatewayManagementApiClient";
+namespace Aws
+{
+  namespace ApiGatewayManagementApi
+  {
+    const char SERVICE_NAME[] = "execute-api";
+    const char ALLOCATION_TAG[] = "ApiGatewayManagementApiClient";
+  }
+}
+const char* ApiGatewayManagementApiClient::GetServiceName() {return SERVICE_NAME;}
+const char* ApiGatewayManagementApiClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 ApiGatewayManagementApiClient::ApiGatewayManagementApiClient(const ApiGatewayManagementApi::ApiGatewayManagementApiClientConfiguration& clientConfiguration,
                                                              std::shared_ptr<ApiGatewayManagementApiEndpointProviderBase> endpointProvider) :
@@ -51,7 +59,7 @@ ApiGatewayManagementApiClient::ApiGatewayManagementApiClient(const ApiGatewayMan
             Aws::MakeShared<ApiGatewayManagementApiErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ApiGatewayManagementApiEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -67,7 +75,7 @@ ApiGatewayManagementApiClient::ApiGatewayManagementApiClient(const AWSCredential
             Aws::MakeShared<ApiGatewayManagementApiErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ApiGatewayManagementApiEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -83,7 +91,7 @@ ApiGatewayManagementApiClient::ApiGatewayManagementApiClient(const std::shared_p
             Aws::MakeShared<ApiGatewayManagementApiErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ApiGatewayManagementApiEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

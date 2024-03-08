@@ -39,42 +39,42 @@ namespace Model
 
 
     /**
-     * <p>The path of the disk (e.g., <code>/dev/xvdf</code>).</p>
+     * <p>The path of the disk (<code>/dev/xvdf</code>).</p>
      */
     inline const Aws::String& GetPath() const{ return m_path; }
 
     /**
-     * <p>The path of the disk (e.g., <code>/dev/xvdf</code>).</p>
+     * <p>The path of the disk (<code>/dev/xvdf</code>).</p>
      */
     inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
 
     /**
-     * <p>The path of the disk (e.g., <code>/dev/xvdf</code>).</p>
+     * <p>The path of the disk (<code>/dev/xvdf</code>).</p>
      */
     inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
 
     /**
-     * <p>The path of the disk (e.g., <code>/dev/xvdf</code>).</p>
+     * <p>The path of the disk (<code>/dev/xvdf</code>).</p>
      */
     inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
 
     /**
-     * <p>The path of the disk (e.g., <code>/dev/xvdf</code>).</p>
+     * <p>The path of the disk (<code>/dev/xvdf</code>).</p>
      */
     inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
 
     /**
-     * <p>The path of the disk (e.g., <code>/dev/xvdf</code>).</p>
+     * <p>The path of the disk (<code>/dev/xvdf</code>).</p>
      */
     inline AttachedDisk& WithPath(const Aws::String& value) { SetPath(value); return *this;}
 
     /**
-     * <p>The path of the disk (e.g., <code>/dev/xvdf</code>).</p>
+     * <p>The path of the disk (<code>/dev/xvdf</code>).</p>
      */
     inline AttachedDisk& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
 
     /**
-     * <p>The path of the disk (e.g., <code>/dev/xvdf</code>).</p>
+     * <p>The path of the disk (<code>/dev/xvdf</code>).</p>
      */
     inline AttachedDisk& WithPath(const char* value) { SetPath(value); return *this;}
 

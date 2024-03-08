@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Source::NOT_SET:
+            return {};
           case Source::S3:
             return "S3";
           case Source::DATA_CATALOG:

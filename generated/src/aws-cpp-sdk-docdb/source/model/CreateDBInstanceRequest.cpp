@@ -26,7 +26,8 @@ CreateDBInstanceRequest::CreateDBInstanceRequest() :
     m_promotionTierHasBeenSet(false),
     m_enablePerformanceInsights(false),
     m_enablePerformanceInsightsHasBeenSet(false),
-    m_performanceInsightsKMSKeyIdHasBeenSet(false)
+    m_performanceInsightsKMSKeyIdHasBeenSet(false),
+    m_cACertificateIdentifierHasBeenSet(false)
 {
 }
 
@@ -97,6 +98,11 @@ Aws::String CreateDBInstanceRequest::SerializePayload() const
   if(m_performanceInsightsKMSKeyIdHasBeenSet)
   {
     ss << "PerformanceInsightsKMSKeyId=" << StringUtils::URLEncode(m_performanceInsightsKMSKeyId.c_str()) << "&";
+  }
+
+  if(m_cACertificateIdentifierHasBeenSet)
+  {
+    ss << "CACertificateIdentifier=" << StringUtils::URLEncode(m_cACertificateIdentifier.c_str()) << "&";
   }
 
   ss << "Version=2014-10-31";

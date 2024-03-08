@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ModelMetadataFilterType::NOT_SET:
+            return {};
           case ModelMetadataFilterType::Domain:
             return "Domain";
           case ModelMetadataFilterType::Framework:

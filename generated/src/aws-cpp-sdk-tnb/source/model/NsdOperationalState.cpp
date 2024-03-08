@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NsdOperationalState::NOT_SET:
+            return {};
           case NsdOperationalState::ENABLED:
             return "ENABLED";
           case NsdOperationalState::DISABLED:

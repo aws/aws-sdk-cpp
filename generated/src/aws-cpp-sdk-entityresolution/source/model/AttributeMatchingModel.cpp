@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AttributeMatchingModel::NOT_SET:
+            return {};
           case AttributeMatchingModel::ONE_TO_ONE:
             return "ONE_TO_ONE";
           case AttributeMatchingModel::MANY_TO_MANY:

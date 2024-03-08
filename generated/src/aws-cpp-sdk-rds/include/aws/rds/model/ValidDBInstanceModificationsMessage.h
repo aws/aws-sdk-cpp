@@ -126,6 +126,31 @@ namespace Model
      */
     inline ValidDBInstanceModificationsMessage& AddValidProcessorFeatures(AvailableProcessorFeature&& value) { m_validProcessorFeaturesHasBeenSet = true; m_validProcessorFeatures.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Indicates whether a DB instance supports using a dedicated log volume
+     * (DLV).</p>
+     */
+    inline bool GetSupportsDedicatedLogVolume() const{ return m_supportsDedicatedLogVolume; }
+
+    /**
+     * <p>Indicates whether a DB instance supports using a dedicated log volume
+     * (DLV).</p>
+     */
+    inline bool SupportsDedicatedLogVolumeHasBeenSet() const { return m_supportsDedicatedLogVolumeHasBeenSet; }
+
+    /**
+     * <p>Indicates whether a DB instance supports using a dedicated log volume
+     * (DLV).</p>
+     */
+    inline void SetSupportsDedicatedLogVolume(bool value) { m_supportsDedicatedLogVolumeHasBeenSet = true; m_supportsDedicatedLogVolume = value; }
+
+    /**
+     * <p>Indicates whether a DB instance supports using a dedicated log volume
+     * (DLV).</p>
+     */
+    inline ValidDBInstanceModificationsMessage& WithSupportsDedicatedLogVolume(bool value) { SetSupportsDedicatedLogVolume(value); return *this;}
+
   private:
 
     Aws::Vector<ValidStorageOptions> m_storage;
@@ -133,6 +158,9 @@ namespace Model
 
     Aws::Vector<AvailableProcessorFeature> m_validProcessorFeatures;
     bool m_validProcessorFeaturesHasBeenSet = false;
+
+    bool m_supportsDedicatedLogVolume;
+    bool m_supportsDedicatedLogVolumeHasBeenSet = false;
   };
 
 } // namespace Model

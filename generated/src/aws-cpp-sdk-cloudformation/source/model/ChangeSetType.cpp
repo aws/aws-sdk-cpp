@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ChangeSetType::NOT_SET:
+            return {};
           case ChangeSetType::CREATE:
             return "CREATE";
           case ChangeSetType::UPDATE:

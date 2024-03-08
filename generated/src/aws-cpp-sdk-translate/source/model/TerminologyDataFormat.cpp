@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TerminologyDataFormat::NOT_SET:
+            return {};
           case TerminologyDataFormat::CSV:
             return "CSV";
           case TerminologyDataFormat::TMX:

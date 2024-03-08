@@ -85,6 +85,7 @@
 #include <aws/codecommit/model/UpdatePullRequestDescriptionResult.h>
 #include <aws/codecommit/model/UpdatePullRequestStatusResult.h>
 #include <aws/codecommit/model/UpdatePullRequestTitleResult.h>
+#include <aws/codecommit/model/UpdateRepositoryEncryptionKeyResult.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in CodeCommitClient header */
 
@@ -203,6 +204,7 @@ namespace Aws
       class UpdatePullRequestStatusRequest;
       class UpdatePullRequestTitleRequest;
       class UpdateRepositoryDescriptionRequest;
+      class UpdateRepositoryEncryptionKeyRequest;
       class UpdateRepositoryNameRequest;
       /* End of service model forward declarations required in CodeCommitClient header */
 
@@ -284,6 +286,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<UpdatePullRequestStatusResult, CodeCommitError> UpdatePullRequestStatusOutcome;
       typedef Aws::Utils::Outcome<UpdatePullRequestTitleResult, CodeCommitError> UpdatePullRequestTitleOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, CodeCommitError> UpdateRepositoryDescriptionOutcome;
+      typedef Aws::Utils::Outcome<UpdateRepositoryEncryptionKeyResult, CodeCommitError> UpdateRepositoryEncryptionKeyOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, CodeCommitError> UpdateRepositoryNameOutcome;
       /* End of service model Outcome class definitions */
 
@@ -365,6 +368,7 @@ namespace Aws
       typedef std::future<UpdatePullRequestStatusOutcome> UpdatePullRequestStatusOutcomeCallable;
       typedef std::future<UpdatePullRequestTitleOutcome> UpdatePullRequestTitleOutcomeCallable;
       typedef std::future<UpdateRepositoryDescriptionOutcome> UpdateRepositoryDescriptionOutcomeCallable;
+      typedef std::future<UpdateRepositoryEncryptionKeyOutcome> UpdateRepositoryEncryptionKeyOutcomeCallable;
       typedef std::future<UpdateRepositoryNameOutcome> UpdateRepositoryNameOutcomeCallable;
       /* End of service model Outcome callable definitions */
     } // namespace Model
@@ -449,6 +453,7 @@ namespace Aws
     typedef std::function<void(const CodeCommitClient*, const Model::UpdatePullRequestStatusRequest&, const Model::UpdatePullRequestStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePullRequestStatusResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::UpdatePullRequestTitleRequest&, const Model::UpdatePullRequestTitleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePullRequestTitleResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::UpdateRepositoryDescriptionRequest&, const Model::UpdateRepositoryDescriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRepositoryDescriptionResponseReceivedHandler;
+    typedef std::function<void(const CodeCommitClient*, const Model::UpdateRepositoryEncryptionKeyRequest&, const Model::UpdateRepositoryEncryptionKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRepositoryEncryptionKeyResponseReceivedHandler;
     typedef std::function<void(const CodeCommitClient*, const Model::UpdateRepositoryNameRequest&, const Model::UpdateRepositoryNameOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRepositoryNameResponseReceivedHandler;
     /* End of service model async handlers definitions */
   } // namespace CodeCommit

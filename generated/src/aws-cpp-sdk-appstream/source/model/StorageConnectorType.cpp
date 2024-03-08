@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StorageConnectorType::NOT_SET:
+            return {};
           case StorageConnectorType::HOMEFOLDERS:
             return "HOMEFOLDERS";
           case StorageConnectorType::GOOGLE_DRIVE:

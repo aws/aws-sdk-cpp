@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FixAvailable::NOT_SET:
+            return {};
           case FixAvailable::YES:
             return "YES";
           case FixAvailable::NO:

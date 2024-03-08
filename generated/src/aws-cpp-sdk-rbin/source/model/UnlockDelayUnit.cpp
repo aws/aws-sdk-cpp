@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UnlockDelayUnit::NOT_SET:
+            return {};
           case UnlockDelayUnit::DAYS:
             return "DAYS";
           default:

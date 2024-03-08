@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FailureCode::NOT_SET:
+            return {};
           case FailureCode::InvalidInput:
             return "InvalidInput";
           case FailureCode::RequestThrottled:

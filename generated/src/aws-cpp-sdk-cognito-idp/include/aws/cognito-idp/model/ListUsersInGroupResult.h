@@ -35,37 +35,37 @@ namespace Model
 
 
     /**
-     * <p>The users returned in the request to list users.</p>
+     * <p>A list of users in the group, and their attributes.</p>
      */
     inline const Aws::Vector<UserType>& GetUsers() const{ return m_users; }
 
     /**
-     * <p>The users returned in the request to list users.</p>
+     * <p>A list of users in the group, and their attributes.</p>
      */
     inline void SetUsers(const Aws::Vector<UserType>& value) { m_users = value; }
 
     /**
-     * <p>The users returned in the request to list users.</p>
+     * <p>A list of users in the group, and their attributes.</p>
      */
     inline void SetUsers(Aws::Vector<UserType>&& value) { m_users = std::move(value); }
 
     /**
-     * <p>The users returned in the request to list users.</p>
+     * <p>A list of users in the group, and their attributes.</p>
      */
     inline ListUsersInGroupResult& WithUsers(const Aws::Vector<UserType>& value) { SetUsers(value); return *this;}
 
     /**
-     * <p>The users returned in the request to list users.</p>
+     * <p>A list of users in the group, and their attributes.</p>
      */
     inline ListUsersInGroupResult& WithUsers(Aws::Vector<UserType>&& value) { SetUsers(std::move(value)); return *this;}
 
     /**
-     * <p>The users returned in the request to list users.</p>
+     * <p>A list of users in the group, and their attributes.</p>
      */
     inline ListUsersInGroupResult& AddUsers(const UserType& value) { m_users.push_back(value); return *this; }
 
     /**
-     * <p>The users returned in the request to list users.</p>
+     * <p>A list of users in the group, and their attributes.</p>
      */
     inline ListUsersInGroupResult& AddUsers(UserType&& value) { m_users.push_back(std::move(value)); return *this; }
 

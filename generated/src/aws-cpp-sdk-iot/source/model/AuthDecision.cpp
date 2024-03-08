@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AuthDecision::NOT_SET:
+            return {};
           case AuthDecision::ALLOWED:
             return "ALLOWED";
           case AuthDecision::EXPLICIT_DENY:

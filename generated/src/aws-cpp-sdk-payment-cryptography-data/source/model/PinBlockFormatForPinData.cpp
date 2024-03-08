@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PinBlockFormatForPinData::NOT_SET:
+            return {};
           case PinBlockFormatForPinData::ISO_FORMAT_0:
             return "ISO_FORMAT_0";
           case PinBlockFormatForPinData::ISO_FORMAT_3:

@@ -31,6 +31,7 @@ namespace Aws
         static const int FAILED_HASH = HashingUtils::HashString("FAILED");
         static const int DEPRECATED_HASH = HashingUtils::HashString("DEPRECATED");
         static const int DELETED_HASH = HashingUtils::HashString("DELETED");
+        static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
 
 
         ImageStatus GetImageStatusForName(const Aws::String& name)
@@ -80,6 +81,10 @@ namespace Aws
           {
             return ImageStatus::DELETED;
           }
+          else if (hashCode == DISABLED_HASH)
+          {
+            return ImageStatus::DISABLED;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -94,6 +99,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ImageStatus::NOT_SET:
+            return {};
           case ImageStatus::PENDING:
             return "PENDING";
           case ImageStatus::CREATING:
@@ -116,6 +123,8 @@ namespace Aws
             return "DEPRECATED";
           case ImageStatus::DELETED:
             return "DELETED";
+          case ImageStatus::DISABLED:
+            return "DISABLED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

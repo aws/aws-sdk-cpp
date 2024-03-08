@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NumericEqualityMatchOperator::NOT_SET:
+            return {};
           case NumericEqualityMatchOperator::EQUALS:
             return "EQUALS";
           case NumericEqualityMatchOperator::DOES_NOT_EQUAL:

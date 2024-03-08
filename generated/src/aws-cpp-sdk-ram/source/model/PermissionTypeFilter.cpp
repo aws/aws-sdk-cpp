@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PermissionTypeFilter::NOT_SET:
+            return {};
           case PermissionTypeFilter::ALL:
             return "ALL";
           case PermissionTypeFilter::AWS_MANAGED:

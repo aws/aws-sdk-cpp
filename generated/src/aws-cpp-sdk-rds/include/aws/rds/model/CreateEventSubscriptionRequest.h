@@ -92,57 +92,89 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the SNS topic created for event
-     * notification. The ARN is created by Amazon SNS when you create a topic and
-     * subscribe to it.</p>
+     * notification. SNS automatically creates the ARN when you create a topic and
+     * subscribe to it.</p>  <p>RDS doesn't support FIFO (first in, first out)
+     * topics. For more information, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">Message
+     * ordering and deduplication (FIFO topics)</a> in the <i>Amazon Simple
+     * Notification Service Developer Guide</i>.</p> 
      */
     inline const Aws::String& GetSnsTopicArn() const{ return m_snsTopicArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the SNS topic created for event
-     * notification. The ARN is created by Amazon SNS when you create a topic and
-     * subscribe to it.</p>
+     * notification. SNS automatically creates the ARN when you create a topic and
+     * subscribe to it.</p>  <p>RDS doesn't support FIFO (first in, first out)
+     * topics. For more information, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">Message
+     * ordering and deduplication (FIFO topics)</a> in the <i>Amazon Simple
+     * Notification Service Developer Guide</i>.</p> 
      */
     inline bool SnsTopicArnHasBeenSet() const { return m_snsTopicArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the SNS topic created for event
-     * notification. The ARN is created by Amazon SNS when you create a topic and
-     * subscribe to it.</p>
+     * notification. SNS automatically creates the ARN when you create a topic and
+     * subscribe to it.</p>  <p>RDS doesn't support FIFO (first in, first out)
+     * topics. For more information, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">Message
+     * ordering and deduplication (FIFO topics)</a> in the <i>Amazon Simple
+     * Notification Service Developer Guide</i>.</p> 
      */
     inline void SetSnsTopicArn(const Aws::String& value) { m_snsTopicArnHasBeenSet = true; m_snsTopicArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the SNS topic created for event
-     * notification. The ARN is created by Amazon SNS when you create a topic and
-     * subscribe to it.</p>
+     * notification. SNS automatically creates the ARN when you create a topic and
+     * subscribe to it.</p>  <p>RDS doesn't support FIFO (first in, first out)
+     * topics. For more information, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">Message
+     * ordering and deduplication (FIFO topics)</a> in the <i>Amazon Simple
+     * Notification Service Developer Guide</i>.</p> 
      */
     inline void SetSnsTopicArn(Aws::String&& value) { m_snsTopicArnHasBeenSet = true; m_snsTopicArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the SNS topic created for event
-     * notification. The ARN is created by Amazon SNS when you create a topic and
-     * subscribe to it.</p>
+     * notification. SNS automatically creates the ARN when you create a topic and
+     * subscribe to it.</p>  <p>RDS doesn't support FIFO (first in, first out)
+     * topics. For more information, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">Message
+     * ordering and deduplication (FIFO topics)</a> in the <i>Amazon Simple
+     * Notification Service Developer Guide</i>.</p> 
      */
     inline void SetSnsTopicArn(const char* value) { m_snsTopicArnHasBeenSet = true; m_snsTopicArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the SNS topic created for event
-     * notification. The ARN is created by Amazon SNS when you create a topic and
-     * subscribe to it.</p>
+     * notification. SNS automatically creates the ARN when you create a topic and
+     * subscribe to it.</p>  <p>RDS doesn't support FIFO (first in, first out)
+     * topics. For more information, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">Message
+     * ordering and deduplication (FIFO topics)</a> in the <i>Amazon Simple
+     * Notification Service Developer Guide</i>.</p> 
      */
     inline CreateEventSubscriptionRequest& WithSnsTopicArn(const Aws::String& value) { SetSnsTopicArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the SNS topic created for event
-     * notification. The ARN is created by Amazon SNS when you create a topic and
-     * subscribe to it.</p>
+     * notification. SNS automatically creates the ARN when you create a topic and
+     * subscribe to it.</p>  <p>RDS doesn't support FIFO (first in, first out)
+     * topics. For more information, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">Message
+     * ordering and deduplication (FIFO topics)</a> in the <i>Amazon Simple
+     * Notification Service Developer Guide</i>.</p> 
      */
     inline CreateEventSubscriptionRequest& WithSnsTopicArn(Aws::String&& value) { SetSnsTopicArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the SNS topic created for event
-     * notification. The ARN is created by Amazon SNS when you create a topic and
-     * subscribe to it.</p>
+     * notification. SNS automatically creates the ARN when you create a topic and
+     * subscribe to it.</p>  <p>RDS doesn't support FIFO (first in, first out)
+     * topics. For more information, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-fifo-topics.html">Message
+     * ordering and deduplication (FIFO topics)</a> in the <i>Amazon Simple
+     * Notification Service Developer Guide</i>.</p> 
      */
     inline CreateEventSubscriptionRequest& WithSnsTopicArn(const char* value) { SetSnsTopicArn(value); return *this;}
 
@@ -151,7 +183,7 @@ namespace Model
      * <p>The type of source that is generating the events. For example, if you want to
      * be notified of events generated by a DB instance, you set this parameter to
      * <code>db-instance</code>. For RDS Proxy events, specify <code>db-proxy</code>.
-     * If this value isn't specified, all events are returned.</p> <p>Valid values:
+     * If this value isn't specified, all events are returned.</p> <p>Valid Values:
      * <code>db-instance</code> | <code>db-cluster</code> |
      * <code>db-parameter-group</code> | <code>db-security-group</code> |
      * <code>db-snapshot</code> | <code>db-cluster-snapshot</code> |
@@ -163,7 +195,7 @@ namespace Model
      * <p>The type of source that is generating the events. For example, if you want to
      * be notified of events generated by a DB instance, you set this parameter to
      * <code>db-instance</code>. For RDS Proxy events, specify <code>db-proxy</code>.
-     * If this value isn't specified, all events are returned.</p> <p>Valid values:
+     * If this value isn't specified, all events are returned.</p> <p>Valid Values:
      * <code>db-instance</code> | <code>db-cluster</code> |
      * <code>db-parameter-group</code> | <code>db-security-group</code> |
      * <code>db-snapshot</code> | <code>db-cluster-snapshot</code> |
@@ -175,7 +207,7 @@ namespace Model
      * <p>The type of source that is generating the events. For example, if you want to
      * be notified of events generated by a DB instance, you set this parameter to
      * <code>db-instance</code>. For RDS Proxy events, specify <code>db-proxy</code>.
-     * If this value isn't specified, all events are returned.</p> <p>Valid values:
+     * If this value isn't specified, all events are returned.</p> <p>Valid Values:
      * <code>db-instance</code> | <code>db-cluster</code> |
      * <code>db-parameter-group</code> | <code>db-security-group</code> |
      * <code>db-snapshot</code> | <code>db-cluster-snapshot</code> |
@@ -187,7 +219,7 @@ namespace Model
      * <p>The type of source that is generating the events. For example, if you want to
      * be notified of events generated by a DB instance, you set this parameter to
      * <code>db-instance</code>. For RDS Proxy events, specify <code>db-proxy</code>.
-     * If this value isn't specified, all events are returned.</p> <p>Valid values:
+     * If this value isn't specified, all events are returned.</p> <p>Valid Values:
      * <code>db-instance</code> | <code>db-cluster</code> |
      * <code>db-parameter-group</code> | <code>db-security-group</code> |
      * <code>db-snapshot</code> | <code>db-cluster-snapshot</code> |
@@ -199,7 +231,7 @@ namespace Model
      * <p>The type of source that is generating the events. For example, if you want to
      * be notified of events generated by a DB instance, you set this parameter to
      * <code>db-instance</code>. For RDS Proxy events, specify <code>db-proxy</code>.
-     * If this value isn't specified, all events are returned.</p> <p>Valid values:
+     * If this value isn't specified, all events are returned.</p> <p>Valid Values:
      * <code>db-instance</code> | <code>db-cluster</code> |
      * <code>db-parameter-group</code> | <code>db-security-group</code> |
      * <code>db-snapshot</code> | <code>db-cluster-snapshot</code> |
@@ -211,7 +243,7 @@ namespace Model
      * <p>The type of source that is generating the events. For example, if you want to
      * be notified of events generated by a DB instance, you set this parameter to
      * <code>db-instance</code>. For RDS Proxy events, specify <code>db-proxy</code>.
-     * If this value isn't specified, all events are returned.</p> <p>Valid values:
+     * If this value isn't specified, all events are returned.</p> <p>Valid Values:
      * <code>db-instance</code> | <code>db-cluster</code> |
      * <code>db-parameter-group</code> | <code>db-security-group</code> |
      * <code>db-snapshot</code> | <code>db-cluster-snapshot</code> |
@@ -223,7 +255,7 @@ namespace Model
      * <p>The type of source that is generating the events. For example, if you want to
      * be notified of events generated by a DB instance, you set this parameter to
      * <code>db-instance</code>. For RDS Proxy events, specify <code>db-proxy</code>.
-     * If this value isn't specified, all events are returned.</p> <p>Valid values:
+     * If this value isn't specified, all events are returned.</p> <p>Valid Values:
      * <code>db-instance</code> | <code>db-cluster</code> |
      * <code>db-parameter-group</code> | <code>db-security-group</code> |
      * <code>db-snapshot</code> | <code>db-cluster-snapshot</code> |
@@ -235,7 +267,7 @@ namespace Model
      * <p>The type of source that is generating the events. For example, if you want to
      * be notified of events generated by a DB instance, you set this parameter to
      * <code>db-instance</code>. For RDS Proxy events, specify <code>db-proxy</code>.
-     * If this value isn't specified, all events are returned.</p> <p>Valid values:
+     * If this value isn't specified, all events are returned.</p> <p>Valid Values:
      * <code>db-instance</code> | <code>db-cluster</code> |
      * <code>db-parameter-group</code> | <code>db-security-group</code> |
      * <code>db-snapshot</code> | <code>db-cluster-snapshot</code> |
@@ -553,30 +585,26 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates whether to activate the subscription. If the event
-     * notification subscription isn't activated, the subscription is created but not
-     * active.</p>
+     * <p>Specifies whether to activate the subscription. If the event notification
+     * subscription isn't activated, the subscription is created but not active.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
 
     /**
-     * <p>A value that indicates whether to activate the subscription. If the event
-     * notification subscription isn't activated, the subscription is created but not
-     * active.</p>
+     * <p>Specifies whether to activate the subscription. If the event notification
+     * subscription isn't activated, the subscription is created but not active.</p>
      */
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether to activate the subscription. If the event
-     * notification subscription isn't activated, the subscription is created but not
-     * active.</p>
+     * <p>Specifies whether to activate the subscription. If the event notification
+     * subscription isn't activated, the subscription is created but not active.</p>
      */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
-     * <p>A value that indicates whether to activate the subscription. If the event
-     * notification subscription isn't activated, the subscription is created but not
-     * active.</p>
+     * <p>Specifies whether to activate the subscription. If the event notification
+     * subscription isn't activated, the subscription is created but not active.</p>
      */
     inline CreateEventSubscriptionRequest& WithEnabled(bool value) { SetEnabled(value); return *this;}
 

@@ -10,6 +10,7 @@
 #include <aws/transcribestreaming/TranscribeStreamingService_EXPORTS.h>
 #include <aws/transcribestreaming/TranscribeStreamingServiceErrors.h>
 
+#include <aws/transcribestreaming/model/StartStreamTranscriptionInitialResponse.h>
 #include <aws/transcribestreaming/model/TranscriptEvent.h>
 
 namespace Aws
@@ -20,12 +21,14 @@ namespace Model
 {
     enum class StartStreamTranscriptionEventType
     {
+        INITIAL_RESPONSE,
         TRANSCRIPTEVENT,
         UNKNOWN
     };
 
     class StartStreamTranscriptionHandler : public Aws::Utils::Event::EventStreamHandler
     {
+        typedef std::function<void(const StartStreamTranscriptionInitialResponse&)> StartStreamTranscriptionInitialResponseCallback;
         typedef std::function<void(const TranscriptEvent&)> TranscriptEventCallback;
         typedef std::function<void(const Aws::Client::AWSError<TranscribeStreamingServiceErrors>& error)> ErrorCallback;
 
@@ -35,6 +38,7 @@ namespace Model
 
         AWS_TRANSCRIBESTREAMINGSERVICE_API virtual void OnEvent() override;
 
+        inline void SetInitialResponseCallback(const StartStreamTranscriptionInitialResponseCallback& callback) { m_onInitialResponse = callback; }
         inline void SetTranscriptEventCallback(const TranscriptEventCallback& callback) { m_onTranscriptEvent = callback; }
         inline void SetOnErrorCallback(const ErrorCallback& callback) { m_onError = callback; }
 
@@ -43,6 +47,7 @@ namespace Model
         AWS_TRANSCRIBESTREAMINGSERVICE_API void HandleErrorInMessage();
         AWS_TRANSCRIBESTREAMINGSERVICE_API void MarshallError(const Aws::String& errorCode, const Aws::String& errorMessage);
 
+        StartStreamTranscriptionInitialResponseCallback m_onInitialResponse;
         TranscriptEventCallback m_onTranscriptEvent;
         ErrorCallback m_onError;
     };

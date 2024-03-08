@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LoadBalancerTypeEnum::NOT_SET:
+            return {};
           case LoadBalancerTypeEnum::application:
             return "application";
           case LoadBalancerTypeEnum::network:

@@ -264,6 +264,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case IngestionErrorType::NOT_SET:
+            return {};
           case IngestionErrorType::FAILURE_TO_ASSUME_ROLE:
             return "FAILURE_TO_ASSUME_ROLE";
           case IngestionErrorType::INGESTION_SUPERSEDED:

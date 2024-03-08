@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ArtifactsConcatenationState::NOT_SET:
+            return {};
           case ArtifactsConcatenationState::Enabled:
             return "Enabled";
           case ArtifactsConcatenationState::Disabled:

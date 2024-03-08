@@ -1009,6 +1009,47 @@ namespace Model
      */
     inline DeploymentGroupInfo& AddEcsServices(ECSService&& value) { m_ecsServicesHasBeenSet = true; m_ecsServices.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Indicates whether the deployment group was configured to have CodeDeploy
+     * install a termination hook into an Auto Scaling group.</p> <p>For more
+     * information about the termination hook, see <a
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html#integrations-aws-auto-scaling-behaviors">How
+     * Amazon EC2 Auto Scaling works with CodeDeploy</a> in the <i>CodeDeploy User
+     * Guide</i>.</p>
+     */
+    inline bool GetTerminationHookEnabled() const{ return m_terminationHookEnabled; }
+
+    /**
+     * <p>Indicates whether the deployment group was configured to have CodeDeploy
+     * install a termination hook into an Auto Scaling group.</p> <p>For more
+     * information about the termination hook, see <a
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html#integrations-aws-auto-scaling-behaviors">How
+     * Amazon EC2 Auto Scaling works with CodeDeploy</a> in the <i>CodeDeploy User
+     * Guide</i>.</p>
+     */
+    inline bool TerminationHookEnabledHasBeenSet() const { return m_terminationHookEnabledHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the deployment group was configured to have CodeDeploy
+     * install a termination hook into an Auto Scaling group.</p> <p>For more
+     * information about the termination hook, see <a
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html#integrations-aws-auto-scaling-behaviors">How
+     * Amazon EC2 Auto Scaling works with CodeDeploy</a> in the <i>CodeDeploy User
+     * Guide</i>.</p>
+     */
+    inline void SetTerminationHookEnabled(bool value) { m_terminationHookEnabledHasBeenSet = true; m_terminationHookEnabled = value; }
+
+    /**
+     * <p>Indicates whether the deployment group was configured to have CodeDeploy
+     * install a termination hook into an Auto Scaling group.</p> <p>For more
+     * information about the termination hook, see <a
+     * href="https://docs.aws.amazon.com/codedeploy/latest/userguide/integrations-aws-auto-scaling.html#integrations-aws-auto-scaling-behaviors">How
+     * Amazon EC2 Auto Scaling works with CodeDeploy</a> in the <i>CodeDeploy User
+     * Guide</i>.</p>
+     */
+    inline DeploymentGroupInfo& WithTerminationHookEnabled(bool value) { SetTerminationHookEnabled(value); return *this;}
+
   private:
 
     Aws::String m_applicationName;
@@ -1076,6 +1117,9 @@ namespace Model
 
     Aws::Vector<ECSService> m_ecsServices;
     bool m_ecsServicesHasBeenSet = false;
+
+    bool m_terminationHookEnabled;
+    bool m_terminationHookEnabledHasBeenSet = false;
   };
 
 } // namespace Model

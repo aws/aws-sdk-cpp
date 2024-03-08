@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AttachmentsSourceKey::NOT_SET:
+            return {};
           case AttachmentsSourceKey::SourceUrl:
             return "SourceUrl";
           case AttachmentsSourceKey::S3FileUrl:

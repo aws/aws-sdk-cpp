@@ -18,7 +18,9 @@ namespace Model
     NOT_SET,
     sender_id,
     iso_country_code,
-    message_type
+    message_type,
+    deletion_protection_enabled,
+    registered
   };
 
 namespace SenderIdFilterNameMapper

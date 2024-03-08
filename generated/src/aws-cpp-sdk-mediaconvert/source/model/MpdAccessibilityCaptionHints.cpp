@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MpdAccessibilityCaptionHints::NOT_SET:
+            return {};
           case MpdAccessibilityCaptionHints::INCLUDE:
             return "INCLUDE";
           case MpdAccessibilityCaptionHints::EXCLUDE:

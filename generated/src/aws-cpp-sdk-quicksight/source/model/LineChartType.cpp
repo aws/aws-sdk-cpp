@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LineChartType::NOT_SET:
+            return {};
           case LineChartType::LINE:
             return "LINE";
           case LineChartType::AREA:

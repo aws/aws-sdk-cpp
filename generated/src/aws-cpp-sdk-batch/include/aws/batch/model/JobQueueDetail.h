@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/batch/model/ComputeEnvironmentOrder.h>
+#include <aws/batch/model/JobStateTimeLimitAction.h>
 #include <utility>
 
 namespace Aws
@@ -331,9 +332,9 @@ namespace Model
      * associated with the same compute environment. Priority is determined in
      * descending order. For example, a job queue with a priority value of
      * <code>10</code> is given scheduling preference over a job queue with a priority
-     * value of <code>1</code>. All of the compute environments must be either EC2
-     * (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be
+     * value of <code>1</code>. All of the compute environments must be either Amazon
+     * EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or
+     * <code>FARGATE_SPOT</code>). Amazon EC2 and Fargate compute environments can't be
      * mixed.</p>
      */
     inline int GetPriority() const{ return m_priority; }
@@ -344,9 +345,9 @@ namespace Model
      * associated with the same compute environment. Priority is determined in
      * descending order. For example, a job queue with a priority value of
      * <code>10</code> is given scheduling preference over a job queue with a priority
-     * value of <code>1</code>. All of the compute environments must be either EC2
-     * (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be
+     * value of <code>1</code>. All of the compute environments must be either Amazon
+     * EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or
+     * <code>FARGATE_SPOT</code>). Amazon EC2 and Fargate compute environments can't be
      * mixed.</p>
      */
     inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
@@ -357,9 +358,9 @@ namespace Model
      * associated with the same compute environment. Priority is determined in
      * descending order. For example, a job queue with a priority value of
      * <code>10</code> is given scheduling preference over a job queue with a priority
-     * value of <code>1</code>. All of the compute environments must be either EC2
-     * (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be
+     * value of <code>1</code>. All of the compute environments must be either Amazon
+     * EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or
+     * <code>FARGATE_SPOT</code>). Amazon EC2 and Fargate compute environments can't be
      * mixed.</p>
      */
     inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
@@ -370,9 +371,9 @@ namespace Model
      * associated with the same compute environment. Priority is determined in
      * descending order. For example, a job queue with a priority value of
      * <code>10</code> is given scheduling preference over a job queue with a priority
-     * value of <code>1</code>. All of the compute environments must be either EC2
-     * (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or
-     * <code>FARGATE_SPOT</code>). EC2 and Fargate compute environments can't be
+     * value of <code>1</code>. All of the compute environments must be either Amazon
+     * EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or
+     * <code>FARGATE_SPOT</code>). Amazon EC2 and Fargate compute environments can't be
      * mixed.</p>
      */
     inline JobQueueDetail& WithPriority(int value) { SetPriority(value); return *this;}
@@ -526,6 +527,63 @@ namespace Model
      */
     inline JobQueueDetail& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The set of actions that Batch perform on jobs that remain at the head of the
+     * job queue in the specified state longer than specified times. Batch will perform
+     * each action after <code>maxTimeSeconds</code> has passed.</p>
+     */
+    inline const Aws::Vector<JobStateTimeLimitAction>& GetJobStateTimeLimitActions() const{ return m_jobStateTimeLimitActions; }
+
+    /**
+     * <p>The set of actions that Batch perform on jobs that remain at the head of the
+     * job queue in the specified state longer than specified times. Batch will perform
+     * each action after <code>maxTimeSeconds</code> has passed.</p>
+     */
+    inline bool JobStateTimeLimitActionsHasBeenSet() const { return m_jobStateTimeLimitActionsHasBeenSet; }
+
+    /**
+     * <p>The set of actions that Batch perform on jobs that remain at the head of the
+     * job queue in the specified state longer than specified times. Batch will perform
+     * each action after <code>maxTimeSeconds</code> has passed.</p>
+     */
+    inline void SetJobStateTimeLimitActions(const Aws::Vector<JobStateTimeLimitAction>& value) { m_jobStateTimeLimitActionsHasBeenSet = true; m_jobStateTimeLimitActions = value; }
+
+    /**
+     * <p>The set of actions that Batch perform on jobs that remain at the head of the
+     * job queue in the specified state longer than specified times. Batch will perform
+     * each action after <code>maxTimeSeconds</code> has passed.</p>
+     */
+    inline void SetJobStateTimeLimitActions(Aws::Vector<JobStateTimeLimitAction>&& value) { m_jobStateTimeLimitActionsHasBeenSet = true; m_jobStateTimeLimitActions = std::move(value); }
+
+    /**
+     * <p>The set of actions that Batch perform on jobs that remain at the head of the
+     * job queue in the specified state longer than specified times. Batch will perform
+     * each action after <code>maxTimeSeconds</code> has passed.</p>
+     */
+    inline JobQueueDetail& WithJobStateTimeLimitActions(const Aws::Vector<JobStateTimeLimitAction>& value) { SetJobStateTimeLimitActions(value); return *this;}
+
+    /**
+     * <p>The set of actions that Batch perform on jobs that remain at the head of the
+     * job queue in the specified state longer than specified times. Batch will perform
+     * each action after <code>maxTimeSeconds</code> has passed.</p>
+     */
+    inline JobQueueDetail& WithJobStateTimeLimitActions(Aws::Vector<JobStateTimeLimitAction>&& value) { SetJobStateTimeLimitActions(std::move(value)); return *this;}
+
+    /**
+     * <p>The set of actions that Batch perform on jobs that remain at the head of the
+     * job queue in the specified state longer than specified times. Batch will perform
+     * each action after <code>maxTimeSeconds</code> has passed.</p>
+     */
+    inline JobQueueDetail& AddJobStateTimeLimitActions(const JobStateTimeLimitAction& value) { m_jobStateTimeLimitActionsHasBeenSet = true; m_jobStateTimeLimitActions.push_back(value); return *this; }
+
+    /**
+     * <p>The set of actions that Batch perform on jobs that remain at the head of the
+     * job queue in the specified state longer than specified times. Batch will perform
+     * each action after <code>maxTimeSeconds</code> has passed.</p>
+     */
+    inline JobQueueDetail& AddJobStateTimeLimitActions(JobStateTimeLimitAction&& value) { m_jobStateTimeLimitActionsHasBeenSet = true; m_jobStateTimeLimitActions.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_jobQueueName;
@@ -554,6 +612,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    Aws::Vector<JobStateTimeLimitAction> m_jobStateTimeLimitActions;
+    bool m_jobStateTimeLimitActionsHasBeenSet = false;
   };
 
 } // namespace Model

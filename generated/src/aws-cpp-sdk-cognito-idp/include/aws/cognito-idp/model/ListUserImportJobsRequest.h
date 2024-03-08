@@ -109,58 +109,82 @@ namespace Model
 
 
     /**
-     * <p>An identifier that was returned from the previous call to
-     * <code>ListUserImportJobs</code>, which can be used to return the next set of
-     * import jobs in the list.</p>
+     * <p>This API operation returns a limited number of results. The pagination token
+     * is an identifier that you can present in an additional API request with the same
+     * parameters. When you include the pagination token, Amazon Cognito returns the
+     * next set of items after the current list. Subsequent requests return a new
+     * pagination token. By use of this token, you can paginate through the full list
+     * of items.</p>
      */
     inline const Aws::String& GetPaginationToken() const{ return m_paginationToken; }
 
     /**
-     * <p>An identifier that was returned from the previous call to
-     * <code>ListUserImportJobs</code>, which can be used to return the next set of
-     * import jobs in the list.</p>
+     * <p>This API operation returns a limited number of results. The pagination token
+     * is an identifier that you can present in an additional API request with the same
+     * parameters. When you include the pagination token, Amazon Cognito returns the
+     * next set of items after the current list. Subsequent requests return a new
+     * pagination token. By use of this token, you can paginate through the full list
+     * of items.</p>
      */
     inline bool PaginationTokenHasBeenSet() const { return m_paginationTokenHasBeenSet; }
 
     /**
-     * <p>An identifier that was returned from the previous call to
-     * <code>ListUserImportJobs</code>, which can be used to return the next set of
-     * import jobs in the list.</p>
+     * <p>This API operation returns a limited number of results. The pagination token
+     * is an identifier that you can present in an additional API request with the same
+     * parameters. When you include the pagination token, Amazon Cognito returns the
+     * next set of items after the current list. Subsequent requests return a new
+     * pagination token. By use of this token, you can paginate through the full list
+     * of items.</p>
      */
     inline void SetPaginationToken(const Aws::String& value) { m_paginationTokenHasBeenSet = true; m_paginationToken = value; }
 
     /**
-     * <p>An identifier that was returned from the previous call to
-     * <code>ListUserImportJobs</code>, which can be used to return the next set of
-     * import jobs in the list.</p>
+     * <p>This API operation returns a limited number of results. The pagination token
+     * is an identifier that you can present in an additional API request with the same
+     * parameters. When you include the pagination token, Amazon Cognito returns the
+     * next set of items after the current list. Subsequent requests return a new
+     * pagination token. By use of this token, you can paginate through the full list
+     * of items.</p>
      */
     inline void SetPaginationToken(Aws::String&& value) { m_paginationTokenHasBeenSet = true; m_paginationToken = std::move(value); }
 
     /**
-     * <p>An identifier that was returned from the previous call to
-     * <code>ListUserImportJobs</code>, which can be used to return the next set of
-     * import jobs in the list.</p>
+     * <p>This API operation returns a limited number of results. The pagination token
+     * is an identifier that you can present in an additional API request with the same
+     * parameters. When you include the pagination token, Amazon Cognito returns the
+     * next set of items after the current list. Subsequent requests return a new
+     * pagination token. By use of this token, you can paginate through the full list
+     * of items.</p>
      */
     inline void SetPaginationToken(const char* value) { m_paginationTokenHasBeenSet = true; m_paginationToken.assign(value); }
 
     /**
-     * <p>An identifier that was returned from the previous call to
-     * <code>ListUserImportJobs</code>, which can be used to return the next set of
-     * import jobs in the list.</p>
+     * <p>This API operation returns a limited number of results. The pagination token
+     * is an identifier that you can present in an additional API request with the same
+     * parameters. When you include the pagination token, Amazon Cognito returns the
+     * next set of items after the current list. Subsequent requests return a new
+     * pagination token. By use of this token, you can paginate through the full list
+     * of items.</p>
      */
     inline ListUserImportJobsRequest& WithPaginationToken(const Aws::String& value) { SetPaginationToken(value); return *this;}
 
     /**
-     * <p>An identifier that was returned from the previous call to
-     * <code>ListUserImportJobs</code>, which can be used to return the next set of
-     * import jobs in the list.</p>
+     * <p>This API operation returns a limited number of results. The pagination token
+     * is an identifier that you can present in an additional API request with the same
+     * parameters. When you include the pagination token, Amazon Cognito returns the
+     * next set of items after the current list. Subsequent requests return a new
+     * pagination token. By use of this token, you can paginate through the full list
+     * of items.</p>
      */
     inline ListUserImportJobsRequest& WithPaginationToken(Aws::String&& value) { SetPaginationToken(std::move(value)); return *this;}
 
     /**
-     * <p>An identifier that was returned from the previous call to
-     * <code>ListUserImportJobs</code>, which can be used to return the next set of
-     * import jobs in the list.</p>
+     * <p>This API operation returns a limited number of results. The pagination token
+     * is an identifier that you can present in an additional API request with the same
+     * parameters. When you include the pagination token, Amazon Cognito returns the
+     * next set of items after the current list. Subsequent requests return a new
+     * pagination token. By use of this token, you can paginate through the full list
+     * of items.</p>
      */
     inline ListUserImportJobsRequest& WithPaginationToken(const char* value) { SetPaginationToken(value); return *this;}
 

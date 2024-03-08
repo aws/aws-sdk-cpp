@@ -28,6 +28,7 @@ VideoCodecSettings::VideoCodecSettings() :
     m_h265SettingsHasBeenSet(false),
     m_mpeg2SettingsHasBeenSet(false),
     m_proresSettingsHasBeenSet(false),
+    m_uncompressedSettingsHasBeenSet(false),
     m_vc3SettingsHasBeenSet(false),
     m_vp8SettingsHasBeenSet(false),
     m_vp9SettingsHasBeenSet(false),
@@ -45,6 +46,7 @@ VideoCodecSettings::VideoCodecSettings(JsonView jsonValue) :
     m_h265SettingsHasBeenSet(false),
     m_mpeg2SettingsHasBeenSet(false),
     m_proresSettingsHasBeenSet(false),
+    m_uncompressedSettingsHasBeenSet(false),
     m_vc3SettingsHasBeenSet(false),
     m_vp8SettingsHasBeenSet(false),
     m_vp9SettingsHasBeenSet(false),
@@ -109,6 +111,13 @@ VideoCodecSettings& VideoCodecSettings::operator =(JsonView jsonValue)
     m_proresSettings = jsonValue.GetObject("proresSettings");
 
     m_proresSettingsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("uncompressedSettings"))
+  {
+    m_uncompressedSettings = jsonValue.GetObject("uncompressedSettings");
+
+    m_uncompressedSettingsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("vc3Settings"))
@@ -190,6 +199,12 @@ JsonValue VideoCodecSettings::Jsonize() const
   if(m_proresSettingsHasBeenSet)
   {
    payload.WithObject("proresSettings", m_proresSettings.Jsonize());
+
+  }
+
+  if(m_uncompressedSettingsHasBeenSet)
+  {
+   payload.WithObject("uncompressedSettings", m_uncompressedSettings.Jsonize());
 
   }
 

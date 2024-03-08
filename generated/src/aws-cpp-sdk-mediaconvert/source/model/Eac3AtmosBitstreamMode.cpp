@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Eac3AtmosBitstreamMode::NOT_SET:
+            return {};
           case Eac3AtmosBitstreamMode::COMPLETE_MAIN:
             return "COMPLETE_MAIN";
           default:

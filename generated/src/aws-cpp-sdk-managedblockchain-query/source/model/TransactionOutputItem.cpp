@@ -22,7 +22,9 @@ TransactionOutputItem::TransactionOutputItem() :
     m_transactionHashHasBeenSet(false),
     m_network(QueryNetwork::NOT_SET),
     m_networkHasBeenSet(false),
-    m_transactionTimestampHasBeenSet(false)
+    m_transactionTimestampHasBeenSet(false),
+    m_confirmationStatus(ConfirmationStatus::NOT_SET),
+    m_confirmationStatusHasBeenSet(false)
 {
 }
 
@@ -30,7 +32,9 @@ TransactionOutputItem::TransactionOutputItem(JsonView jsonValue) :
     m_transactionHashHasBeenSet(false),
     m_network(QueryNetwork::NOT_SET),
     m_networkHasBeenSet(false),
-    m_transactionTimestampHasBeenSet(false)
+    m_transactionTimestampHasBeenSet(false),
+    m_confirmationStatus(ConfirmationStatus::NOT_SET),
+    m_confirmationStatusHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -58,6 +62,13 @@ TransactionOutputItem& TransactionOutputItem::operator =(JsonView jsonValue)
     m_transactionTimestampHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("confirmationStatus"))
+  {
+    m_confirmationStatus = ConfirmationStatusMapper::GetConfirmationStatusForName(jsonValue.GetString("confirmationStatus"));
+
+    m_confirmationStatusHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -79,6 +90,11 @@ JsonValue TransactionOutputItem::Jsonize() const
   if(m_transactionTimestampHasBeenSet)
   {
    payload.WithDouble("transactionTimestamp", m_transactionTimestamp.SecondsWithMSPrecision());
+  }
+
+  if(m_confirmationStatusHasBeenSet)
+  {
+   payload.WithString("confirmationStatus", ConfirmationStatusMapper::GetNameForConfirmationStatus(m_confirmationStatus));
   }
 
   return payload;

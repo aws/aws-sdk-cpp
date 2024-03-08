@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ScanType::NOT_SET:
+            return {};
           case ScanType::Standard:
             return "Standard";
           case ScanType::Express:

@@ -27,8 +27,8 @@ namespace Model
 {
 
   /**
-   * <p>The details that define a findings aggregation based on an AWS Lambda
-   * function's layers.</p><p><h3>See Also:</h3>   <a
+   * <p>The details that define a findings aggregation based on an Amazon Web
+   * Services Lambda function's layers.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/LambdaLayerAggregation">AWS
    * API Reference</a></p>
    */
@@ -42,124 +42,140 @@ namespace Model
 
 
     /**
-     * <p>The names of the AWS Lambda functions associated with the layers.</p>
+     * <p>The names of the Amazon Web Services Lambda functions associated with the
+     * layers.</p>
      */
     inline const Aws::Vector<StringFilter>& GetFunctionNames() const{ return m_functionNames; }
 
     /**
-     * <p>The names of the AWS Lambda functions associated with the layers.</p>
+     * <p>The names of the Amazon Web Services Lambda functions associated with the
+     * layers.</p>
      */
     inline bool FunctionNamesHasBeenSet() const { return m_functionNamesHasBeenSet; }
 
     /**
-     * <p>The names of the AWS Lambda functions associated with the layers.</p>
+     * <p>The names of the Amazon Web Services Lambda functions associated with the
+     * layers.</p>
      */
     inline void SetFunctionNames(const Aws::Vector<StringFilter>& value) { m_functionNamesHasBeenSet = true; m_functionNames = value; }
 
     /**
-     * <p>The names of the AWS Lambda functions associated with the layers.</p>
+     * <p>The names of the Amazon Web Services Lambda functions associated with the
+     * layers.</p>
      */
     inline void SetFunctionNames(Aws::Vector<StringFilter>&& value) { m_functionNamesHasBeenSet = true; m_functionNames = std::move(value); }
 
     /**
-     * <p>The names of the AWS Lambda functions associated with the layers.</p>
+     * <p>The names of the Amazon Web Services Lambda functions associated with the
+     * layers.</p>
      */
     inline LambdaLayerAggregation& WithFunctionNames(const Aws::Vector<StringFilter>& value) { SetFunctionNames(value); return *this;}
 
     /**
-     * <p>The names of the AWS Lambda functions associated with the layers.</p>
+     * <p>The names of the Amazon Web Services Lambda functions associated with the
+     * layers.</p>
      */
     inline LambdaLayerAggregation& WithFunctionNames(Aws::Vector<StringFilter>&& value) { SetFunctionNames(std::move(value)); return *this;}
 
     /**
-     * <p>The names of the AWS Lambda functions associated with the layers.</p>
+     * <p>The names of the Amazon Web Services Lambda functions associated with the
+     * layers.</p>
      */
     inline LambdaLayerAggregation& AddFunctionNames(const StringFilter& value) { m_functionNamesHasBeenSet = true; m_functionNames.push_back(value); return *this; }
 
     /**
-     * <p>The names of the AWS Lambda functions associated with the layers.</p>
+     * <p>The names of the Amazon Web Services Lambda functions associated with the
+     * layers.</p>
      */
     inline LambdaLayerAggregation& AddFunctionNames(StringFilter&& value) { m_functionNamesHasBeenSet = true; m_functionNames.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Lambda function layer. </p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Lambda function
+     * layer. </p>
      */
     inline const Aws::Vector<StringFilter>& GetLayerArns() const{ return m_layerArns; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Lambda function layer. </p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Lambda function
+     * layer. </p>
      */
     inline bool LayerArnsHasBeenSet() const { return m_layerArnsHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Lambda function layer. </p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Lambda function
+     * layer. </p>
      */
     inline void SetLayerArns(const Aws::Vector<StringFilter>& value) { m_layerArnsHasBeenSet = true; m_layerArns = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Lambda function layer. </p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Lambda function
+     * layer. </p>
      */
     inline void SetLayerArns(Aws::Vector<StringFilter>&& value) { m_layerArnsHasBeenSet = true; m_layerArns = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Lambda function layer. </p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Lambda function
+     * layer. </p>
      */
     inline LambdaLayerAggregation& WithLayerArns(const Aws::Vector<StringFilter>& value) { SetLayerArns(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Lambda function layer. </p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Lambda function
+     * layer. </p>
      */
     inline LambdaLayerAggregation& WithLayerArns(Aws::Vector<StringFilter>&& value) { SetLayerArns(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Lambda function layer. </p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Lambda function
+     * layer. </p>
      */
     inline LambdaLayerAggregation& AddLayerArns(const StringFilter& value) { m_layerArnsHasBeenSet = true; m_layerArns.push_back(value); return *this; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Lambda function layer. </p>
+     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Lambda function
+     * layer. </p>
      */
     inline LambdaLayerAggregation& AddLayerArns(StringFilter&& value) { m_layerArnsHasBeenSet = true; m_layerArns.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The resource IDs for the AWS Lambda function layers.</p>
+     * <p>The resource IDs for the Amazon Web Services Lambda function layers.</p>
      */
     inline const Aws::Vector<StringFilter>& GetResourceIds() const{ return m_resourceIds; }
 
     /**
-     * <p>The resource IDs for the AWS Lambda function layers.</p>
+     * <p>The resource IDs for the Amazon Web Services Lambda function layers.</p>
      */
     inline bool ResourceIdsHasBeenSet() const { return m_resourceIdsHasBeenSet; }
 
     /**
-     * <p>The resource IDs for the AWS Lambda function layers.</p>
+     * <p>The resource IDs for the Amazon Web Services Lambda function layers.</p>
      */
     inline void SetResourceIds(const Aws::Vector<StringFilter>& value) { m_resourceIdsHasBeenSet = true; m_resourceIds = value; }
 
     /**
-     * <p>The resource IDs for the AWS Lambda function layers.</p>
+     * <p>The resource IDs for the Amazon Web Services Lambda function layers.</p>
      */
     inline void SetResourceIds(Aws::Vector<StringFilter>&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds = std::move(value); }
 
     /**
-     * <p>The resource IDs for the AWS Lambda function layers.</p>
+     * <p>The resource IDs for the Amazon Web Services Lambda function layers.</p>
      */
     inline LambdaLayerAggregation& WithResourceIds(const Aws::Vector<StringFilter>& value) { SetResourceIds(value); return *this;}
 
     /**
-     * <p>The resource IDs for the AWS Lambda function layers.</p>
+     * <p>The resource IDs for the Amazon Web Services Lambda function layers.</p>
      */
     inline LambdaLayerAggregation& WithResourceIds(Aws::Vector<StringFilter>&& value) { SetResourceIds(std::move(value)); return *this;}
 
     /**
-     * <p>The resource IDs for the AWS Lambda function layers.</p>
+     * <p>The resource IDs for the Amazon Web Services Lambda function layers.</p>
      */
     inline LambdaLayerAggregation& AddResourceIds(const StringFilter& value) { m_resourceIdsHasBeenSet = true; m_resourceIds.push_back(value); return *this; }
 
     /**
-     * <p>The resource IDs for the AWS Lambda function layers.</p>
+     * <p>The resource IDs for the Amazon Web Services Lambda function layers.</p>
      */
     inline LambdaLayerAggregation& AddResourceIds(StringFilter&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds.push_back(std::move(value)); return *this; }
 

@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EncodingName::NOT_SET:
+            return {};
           case EncodingName::jxsv:
             return "jxsv";
           case EncodingName::raw:

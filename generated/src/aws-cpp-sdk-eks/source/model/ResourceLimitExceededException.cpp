@@ -21,6 +21,7 @@ namespace Model
 ResourceLimitExceededException::ResourceLimitExceededException() : 
     m_clusterNameHasBeenSet(false),
     m_nodegroupNameHasBeenSet(false),
+    m_subscriptionIdHasBeenSet(false),
     m_messageHasBeenSet(false)
 {
 }
@@ -28,6 +29,7 @@ ResourceLimitExceededException::ResourceLimitExceededException() :
 ResourceLimitExceededException::ResourceLimitExceededException(JsonView jsonValue) : 
     m_clusterNameHasBeenSet(false),
     m_nodegroupNameHasBeenSet(false),
+    m_subscriptionIdHasBeenSet(false),
     m_messageHasBeenSet(false)
 {
   *this = jsonValue;
@@ -47,6 +49,13 @@ ResourceLimitExceededException& ResourceLimitExceededException::operator =(JsonV
     m_nodegroupName = jsonValue.GetString("nodegroupName");
 
     m_nodegroupNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("subscriptionId"))
+  {
+    m_subscriptionId = jsonValue.GetString("subscriptionId");
+
+    m_subscriptionIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("message"))
@@ -72,6 +81,12 @@ JsonValue ResourceLimitExceededException::Jsonize() const
   if(m_nodegroupNameHasBeenSet)
   {
    payload.WithString("nodegroupName", m_nodegroupName);
+
+  }
+
+  if(m_subscriptionIdHasBeenSet)
+  {
+   payload.WithString("subscriptionId", m_subscriptionId);
 
   }
 

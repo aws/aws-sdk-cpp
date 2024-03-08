@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FsxFileSystemType::NOT_SET:
+            return {};
           case FsxFileSystemType::WINDOWS:
             return "WINDOWS";
           default:

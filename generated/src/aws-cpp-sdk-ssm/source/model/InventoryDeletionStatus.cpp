@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InventoryDeletionStatus::NOT_SET:
+            return {};
           case InventoryDeletionStatus::InProgress:
             return "InProgress";
           case InventoryDeletionStatus::Complete:

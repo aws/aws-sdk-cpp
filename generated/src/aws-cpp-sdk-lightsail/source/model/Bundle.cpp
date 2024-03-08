@@ -37,7 +37,9 @@ Bundle::Bundle() :
     m_transferPerMonthInGb(0),
     m_transferPerMonthInGbHasBeenSet(false),
     m_supportedPlatformsHasBeenSet(false),
-    m_supportedAppCategoriesHasBeenSet(false)
+    m_supportedAppCategoriesHasBeenSet(false),
+    m_publicIpv4AddressCount(0),
+    m_publicIpv4AddressCountHasBeenSet(false)
 {
 }
 
@@ -60,7 +62,9 @@ Bundle::Bundle(JsonView jsonValue) :
     m_transferPerMonthInGb(0),
     m_transferPerMonthInGbHasBeenSet(false),
     m_supportedPlatformsHasBeenSet(false),
-    m_supportedAppCategoriesHasBeenSet(false)
+    m_supportedAppCategoriesHasBeenSet(false),
+    m_publicIpv4AddressCount(0),
+    m_publicIpv4AddressCountHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -157,6 +161,13 @@ Bundle& Bundle::operator =(JsonView jsonValue)
     m_supportedAppCategoriesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("publicIpv4AddressCount"))
+  {
+    m_publicIpv4AddressCount = jsonValue.GetInteger("publicIpv4AddressCount");
+
+    m_publicIpv4AddressCountHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -243,6 +254,12 @@ JsonValue Bundle::Jsonize() const
      supportedAppCategoriesJsonList[supportedAppCategoriesIndex].AsString(AppCategoryMapper::GetNameForAppCategory(m_supportedAppCategories[supportedAppCategoriesIndex]));
    }
    payload.WithArray("supportedAppCategories", std::move(supportedAppCategoriesJsonList));
+
+  }
+
+  if(m_publicIpv4AddressCountHasBeenSet)
+  {
+   payload.WithInteger("publicIpv4AddressCount", m_publicIpv4AddressCount);
 
   }
 

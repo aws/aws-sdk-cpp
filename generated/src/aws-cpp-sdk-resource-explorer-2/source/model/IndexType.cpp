@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case IndexType::NOT_SET:
+            return {};
           case IndexType::LOCAL:
             return "LOCAL";
           case IndexType::AGGREGATOR:

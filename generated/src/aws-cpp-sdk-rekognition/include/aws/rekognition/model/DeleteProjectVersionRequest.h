@@ -35,49 +35,49 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the model version that you want to
+     * <p>The Amazon Resource Name (ARN) of the project version that you want to
      * delete.</p>
      */
     inline const Aws::String& GetProjectVersionArn() const{ return m_projectVersionArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the model version that you want to
+     * <p>The Amazon Resource Name (ARN) of the project version that you want to
      * delete.</p>
      */
     inline bool ProjectVersionArnHasBeenSet() const { return m_projectVersionArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the model version that you want to
+     * <p>The Amazon Resource Name (ARN) of the project version that you want to
      * delete.</p>
      */
     inline void SetProjectVersionArn(const Aws::String& value) { m_projectVersionArnHasBeenSet = true; m_projectVersionArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the model version that you want to
+     * <p>The Amazon Resource Name (ARN) of the project version that you want to
      * delete.</p>
      */
     inline void SetProjectVersionArn(Aws::String&& value) { m_projectVersionArnHasBeenSet = true; m_projectVersionArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the model version that you want to
+     * <p>The Amazon Resource Name (ARN) of the project version that you want to
      * delete.</p>
      */
     inline void SetProjectVersionArn(const char* value) { m_projectVersionArnHasBeenSet = true; m_projectVersionArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the model version that you want to
+     * <p>The Amazon Resource Name (ARN) of the project version that you want to
      * delete.</p>
      */
     inline DeleteProjectVersionRequest& WithProjectVersionArn(const Aws::String& value) { SetProjectVersionArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the model version that you want to
+     * <p>The Amazon Resource Name (ARN) of the project version that you want to
      * delete.</p>
      */
     inline DeleteProjectVersionRequest& WithProjectVersionArn(Aws::String&& value) { SetProjectVersionArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the model version that you want to
+     * <p>The Amazon Resource Name (ARN) of the project version that you want to
      * delete.</p>
      */
     inline DeleteProjectVersionRequest& WithProjectVersionArn(const char* value) { SetProjectVersionArn(value); return *this;}

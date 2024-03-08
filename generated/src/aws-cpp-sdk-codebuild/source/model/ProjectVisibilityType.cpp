@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ProjectVisibilityType::NOT_SET:
+            return {};
           case ProjectVisibilityType::PUBLIC_READ:
             return "PUBLIC_READ";
           case ProjectVisibilityType::PRIVATE_:

@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ActionEnum::NOT_SET:
+            return {};
           case ActionEnum::CREATE:
             return "CREATE";
           case ActionEnum::UPDATE_METADATA:

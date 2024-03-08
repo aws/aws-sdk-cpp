@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SampleMode::NOT_SET:
+            return {};
           case SampleMode::FULL_DATASET:
             return "FULL_DATASET";
           case SampleMode::CUSTOM_ROWS:

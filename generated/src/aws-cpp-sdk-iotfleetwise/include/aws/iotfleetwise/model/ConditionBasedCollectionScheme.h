@@ -41,49 +41,49 @@ namespace Model
 
     /**
      * <p>The logical expression used to recognize what data to collect. For example,
-     * <code>$variable.Vehicle.OutsideAirTemperature &gt;= 105.0</code>.</p>
+     * <code>$variable.`Vehicle.OutsideAirTemperature` &gt;= 105.0</code>.</p>
      */
     inline const Aws::String& GetExpression() const{ return m_expression; }
 
     /**
      * <p>The logical expression used to recognize what data to collect. For example,
-     * <code>$variable.Vehicle.OutsideAirTemperature &gt;= 105.0</code>.</p>
+     * <code>$variable.`Vehicle.OutsideAirTemperature` &gt;= 105.0</code>.</p>
      */
     inline bool ExpressionHasBeenSet() const { return m_expressionHasBeenSet; }
 
     /**
      * <p>The logical expression used to recognize what data to collect. For example,
-     * <code>$variable.Vehicle.OutsideAirTemperature &gt;= 105.0</code>.</p>
+     * <code>$variable.`Vehicle.OutsideAirTemperature` &gt;= 105.0</code>.</p>
      */
     inline void SetExpression(const Aws::String& value) { m_expressionHasBeenSet = true; m_expression = value; }
 
     /**
      * <p>The logical expression used to recognize what data to collect. For example,
-     * <code>$variable.Vehicle.OutsideAirTemperature &gt;= 105.0</code>.</p>
+     * <code>$variable.`Vehicle.OutsideAirTemperature` &gt;= 105.0</code>.</p>
      */
     inline void SetExpression(Aws::String&& value) { m_expressionHasBeenSet = true; m_expression = std::move(value); }
 
     /**
      * <p>The logical expression used to recognize what data to collect. For example,
-     * <code>$variable.Vehicle.OutsideAirTemperature &gt;= 105.0</code>.</p>
+     * <code>$variable.`Vehicle.OutsideAirTemperature` &gt;= 105.0</code>.</p>
      */
     inline void SetExpression(const char* value) { m_expressionHasBeenSet = true; m_expression.assign(value); }
 
     /**
      * <p>The logical expression used to recognize what data to collect. For example,
-     * <code>$variable.Vehicle.OutsideAirTemperature &gt;= 105.0</code>.</p>
+     * <code>$variable.`Vehicle.OutsideAirTemperature` &gt;= 105.0</code>.</p>
      */
     inline ConditionBasedCollectionScheme& WithExpression(const Aws::String& value) { SetExpression(value); return *this;}
 
     /**
      * <p>The logical expression used to recognize what data to collect. For example,
-     * <code>$variable.Vehicle.OutsideAirTemperature &gt;= 105.0</code>.</p>
+     * <code>$variable.`Vehicle.OutsideAirTemperature` &gt;= 105.0</code>.</p>
      */
     inline ConditionBasedCollectionScheme& WithExpression(Aws::String&& value) { SetExpression(std::move(value)); return *this;}
 
     /**
      * <p>The logical expression used to recognize what data to collect. For example,
-     * <code>$variable.Vehicle.OutsideAirTemperature &gt;= 105.0</code>.</p>
+     * <code>$variable.`Vehicle.OutsideAirTemperature` &gt;= 105.0</code>.</p>
      */
     inline ConditionBasedCollectionScheme& WithExpression(const char* value) { SetExpression(value); return *this;}
 

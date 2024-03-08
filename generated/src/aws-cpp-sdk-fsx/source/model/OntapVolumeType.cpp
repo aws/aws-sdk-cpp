@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OntapVolumeType::NOT_SET:
+            return {};
           case OntapVolumeType::RW:
             return "RW";
           case OntapVolumeType::DP:

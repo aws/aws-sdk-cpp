@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InvitationType::NOT_SET:
+            return {};
           case InvitationType::INVITATION:
             return "INVITATION";
           case InvitationType::ORGANIZATION:

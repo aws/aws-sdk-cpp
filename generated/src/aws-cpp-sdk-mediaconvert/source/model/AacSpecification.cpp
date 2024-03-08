@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AacSpecification::NOT_SET:
+            return {};
           case AacSpecification::MPEG2:
             return "MPEG2";
           case AacSpecification::MPEG4:

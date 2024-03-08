@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AccessLevelFilterKey::NOT_SET:
+            return {};
           case AccessLevelFilterKey::Account:
             return "Account";
           case AccessLevelFilterKey::Role:

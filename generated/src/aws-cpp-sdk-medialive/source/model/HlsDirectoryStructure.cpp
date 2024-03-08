@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HlsDirectoryStructure::NOT_SET:
+            return {};
           case HlsDirectoryStructure::SINGLE_DIRECTORY:
             return "SINGLE_DIRECTORY";
           case HlsDirectoryStructure::SUBDIRECTORY_PER_STREAM:

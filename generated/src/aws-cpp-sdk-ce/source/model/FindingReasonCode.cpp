@@ -119,6 +119,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FindingReasonCode::NOT_SET:
+            return {};
           case FindingReasonCode::CPU_OVER_PROVISIONED:
             return "CPU_OVER_PROVISIONED";
           case FindingReasonCode::CPU_UNDER_PROVISIONED:

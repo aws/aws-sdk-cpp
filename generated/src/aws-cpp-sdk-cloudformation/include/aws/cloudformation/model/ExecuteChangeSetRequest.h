@@ -223,16 +223,19 @@ namespace Model
      * <p>Preserves the state of previously provisioned resources when an operation
      * fails. This parameter can't be specified when the <code>OnStackFailure</code>
      * parameter to the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html">CreateChangeSet</a>
-     * API operation was specified.</p> <ul> <li> <p> <code>True</code> - if the stack
-     * creation fails, do nothing. This is equivalent to specifying
-     * <code>DO_NOTHING</code> for the <code>OnStackFailure</code> parameter to the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html">CreateChangeSet</a>
-     * API operation.</p> </li> <li> <p> <code>False</code> - if the stack creation
-     * fails, roll back the stack. This is equivalent to specifying
-     * <code>ROLLBACK</code> for the <code>OnStackFailure</code> parameter to the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html">CreateChangeSet</a>
-     * API operation.</p> </li> </ul> <p>Default: <code>True</code> </p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html">
+     * <code>CreateChangeSet</code> </a> API operation was specified.</p> <ul> <li> <p>
+     * <code>True</code> - if the stack creation fails, do nothing. This is equivalent
+     * to specifying <code>DO_NOTHING</code> for the <code>OnStackFailure</code>
+     * parameter to the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html">
+     * <code>CreateChangeSet</code> </a> API operation.</p> </li> <li> <p>
+     * <code>False</code> - if the stack creation fails, roll back the stack. This is
+     * equivalent to specifying <code>ROLLBACK</code> for the
+     * <code>OnStackFailure</code> parameter to the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html">
+     * <code>CreateChangeSet</code> </a> API operation.</p> </li> </ul> <p>Default:
+     * <code>True</code> </p>
      */
     inline bool GetDisableRollback() const{ return m_disableRollback; }
 
@@ -240,16 +243,19 @@ namespace Model
      * <p>Preserves the state of previously provisioned resources when an operation
      * fails. This parameter can't be specified when the <code>OnStackFailure</code>
      * parameter to the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html">CreateChangeSet</a>
-     * API operation was specified.</p> <ul> <li> <p> <code>True</code> - if the stack
-     * creation fails, do nothing. This is equivalent to specifying
-     * <code>DO_NOTHING</code> for the <code>OnStackFailure</code> parameter to the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html">CreateChangeSet</a>
-     * API operation.</p> </li> <li> <p> <code>False</code> - if the stack creation
-     * fails, roll back the stack. This is equivalent to specifying
-     * <code>ROLLBACK</code> for the <code>OnStackFailure</code> parameter to the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html">CreateChangeSet</a>
-     * API operation.</p> </li> </ul> <p>Default: <code>True</code> </p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html">
+     * <code>CreateChangeSet</code> </a> API operation was specified.</p> <ul> <li> <p>
+     * <code>True</code> - if the stack creation fails, do nothing. This is equivalent
+     * to specifying <code>DO_NOTHING</code> for the <code>OnStackFailure</code>
+     * parameter to the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html">
+     * <code>CreateChangeSet</code> </a> API operation.</p> </li> <li> <p>
+     * <code>False</code> - if the stack creation fails, roll back the stack. This is
+     * equivalent to specifying <code>ROLLBACK</code> for the
+     * <code>OnStackFailure</code> parameter to the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html">
+     * <code>CreateChangeSet</code> </a> API operation.</p> </li> </ul> <p>Default:
+     * <code>True</code> </p>
      */
     inline bool DisableRollbackHasBeenSet() const { return m_disableRollbackHasBeenSet; }
 
@@ -257,16 +263,19 @@ namespace Model
      * <p>Preserves the state of previously provisioned resources when an operation
      * fails. This parameter can't be specified when the <code>OnStackFailure</code>
      * parameter to the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html">CreateChangeSet</a>
-     * API operation was specified.</p> <ul> <li> <p> <code>True</code> - if the stack
-     * creation fails, do nothing. This is equivalent to specifying
-     * <code>DO_NOTHING</code> for the <code>OnStackFailure</code> parameter to the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html">CreateChangeSet</a>
-     * API operation.</p> </li> <li> <p> <code>False</code> - if the stack creation
-     * fails, roll back the stack. This is equivalent to specifying
-     * <code>ROLLBACK</code> for the <code>OnStackFailure</code> parameter to the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html">CreateChangeSet</a>
-     * API operation.</p> </li> </ul> <p>Default: <code>True</code> </p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html">
+     * <code>CreateChangeSet</code> </a> API operation was specified.</p> <ul> <li> <p>
+     * <code>True</code> - if the stack creation fails, do nothing. This is equivalent
+     * to specifying <code>DO_NOTHING</code> for the <code>OnStackFailure</code>
+     * parameter to the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html">
+     * <code>CreateChangeSet</code> </a> API operation.</p> </li> <li> <p>
+     * <code>False</code> - if the stack creation fails, roll back the stack. This is
+     * equivalent to specifying <code>ROLLBACK</code> for the
+     * <code>OnStackFailure</code> parameter to the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html">
+     * <code>CreateChangeSet</code> </a> API operation.</p> </li> </ul> <p>Default:
+     * <code>True</code> </p>
      */
     inline void SetDisableRollback(bool value) { m_disableRollbackHasBeenSet = true; m_disableRollback = value; }
 
@@ -274,16 +283,19 @@ namespace Model
      * <p>Preserves the state of previously provisioned resources when an operation
      * fails. This parameter can't be specified when the <code>OnStackFailure</code>
      * parameter to the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html">CreateChangeSet</a>
-     * API operation was specified.</p> <ul> <li> <p> <code>True</code> - if the stack
-     * creation fails, do nothing. This is equivalent to specifying
-     * <code>DO_NOTHING</code> for the <code>OnStackFailure</code> parameter to the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html">CreateChangeSet</a>
-     * API operation.</p> </li> <li> <p> <code>False</code> - if the stack creation
-     * fails, roll back the stack. This is equivalent to specifying
-     * <code>ROLLBACK</code> for the <code>OnStackFailure</code> parameter to the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html">CreateChangeSet</a>
-     * API operation.</p> </li> </ul> <p>Default: <code>True</code> </p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html">
+     * <code>CreateChangeSet</code> </a> API operation was specified.</p> <ul> <li> <p>
+     * <code>True</code> - if the stack creation fails, do nothing. This is equivalent
+     * to specifying <code>DO_NOTHING</code> for the <code>OnStackFailure</code>
+     * parameter to the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html">
+     * <code>CreateChangeSet</code> </a> API operation.</p> </li> <li> <p>
+     * <code>False</code> - if the stack creation fails, roll back the stack. This is
+     * equivalent to specifying <code>ROLLBACK</code> for the
+     * <code>OnStackFailure</code> parameter to the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html">
+     * <code>CreateChangeSet</code> </a> API operation.</p> </li> </ul> <p>Default:
+     * <code>True</code> </p>
      */
     inline ExecuteChangeSetRequest& WithDisableRollback(bool value) { SetDisableRollback(value); return *this;}
 

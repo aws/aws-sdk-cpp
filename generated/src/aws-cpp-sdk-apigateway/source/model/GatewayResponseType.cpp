@@ -144,6 +144,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case GatewayResponseType::NOT_SET:
+            return {};
           case GatewayResponseType::DEFAULT_4XX:
             return "DEFAULT_4XX";
           case GatewayResponseType::DEFAULT_5XX:

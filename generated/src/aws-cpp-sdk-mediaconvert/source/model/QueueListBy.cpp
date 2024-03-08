@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case QueueListBy::NOT_SET:
+            return {};
           case QueueListBy::NAME:
             return "NAME";
           case QueueListBy::CREATION_DATE:

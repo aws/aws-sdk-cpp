@@ -339,6 +339,47 @@ namespace Model
      */
     inline ConnectPeer& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The subnet ARN for the Connect peer.</p>
+     */
+    inline const Aws::String& GetSubnetArn() const{ return m_subnetArn; }
+
+    /**
+     * <p>The subnet ARN for the Connect peer.</p>
+     */
+    inline bool SubnetArnHasBeenSet() const { return m_subnetArnHasBeenSet; }
+
+    /**
+     * <p>The subnet ARN for the Connect peer.</p>
+     */
+    inline void SetSubnetArn(const Aws::String& value) { m_subnetArnHasBeenSet = true; m_subnetArn = value; }
+
+    /**
+     * <p>The subnet ARN for the Connect peer.</p>
+     */
+    inline void SetSubnetArn(Aws::String&& value) { m_subnetArnHasBeenSet = true; m_subnetArn = std::move(value); }
+
+    /**
+     * <p>The subnet ARN for the Connect peer.</p>
+     */
+    inline void SetSubnetArn(const char* value) { m_subnetArnHasBeenSet = true; m_subnetArn.assign(value); }
+
+    /**
+     * <p>The subnet ARN for the Connect peer.</p>
+     */
+    inline ConnectPeer& WithSubnetArn(const Aws::String& value) { SetSubnetArn(value); return *this;}
+
+    /**
+     * <p>The subnet ARN for the Connect peer.</p>
+     */
+    inline ConnectPeer& WithSubnetArn(Aws::String&& value) { SetSubnetArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The subnet ARN for the Connect peer.</p>
+     */
+    inline ConnectPeer& WithSubnetArn(const char* value) { SetSubnetArn(value); return *this;}
+
   private:
 
     Aws::String m_coreNetworkId;
@@ -364,6 +405,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    Aws::String m_subnetArn;
+    bool m_subnetArnHasBeenSet = false;
   };
 
 } // namespace Model

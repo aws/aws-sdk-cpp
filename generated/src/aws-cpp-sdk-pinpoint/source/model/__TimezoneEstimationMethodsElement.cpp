@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case __TimezoneEstimationMethodsElement::NOT_SET:
+            return {};
           case __TimezoneEstimationMethodsElement::PHONE_NUMBER:
             return "PHONE_NUMBER";
           case __TimezoneEstimationMethodsElement::POSTAL_CODE:

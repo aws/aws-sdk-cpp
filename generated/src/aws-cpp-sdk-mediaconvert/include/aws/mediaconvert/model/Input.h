@@ -25,6 +25,7 @@
 #include <aws/mediaconvert/model/AudioSelector.h>
 #include <aws/mediaconvert/model/CaptionSelector.h>
 #include <aws/mediaconvert/model/InputClipping.h>
+#include <aws/mediaconvert/model/VideoOverlay.h>
 #include <utility>
 
 namespace Aws
@@ -1532,6 +1533,47 @@ namespace Model
 
 
     /**
+     * Contains an array of video overlays.
+     */
+    inline const Aws::Vector<VideoOverlay>& GetVideoOverlays() const{ return m_videoOverlays; }
+
+    /**
+     * Contains an array of video overlays.
+     */
+    inline bool VideoOverlaysHasBeenSet() const { return m_videoOverlaysHasBeenSet; }
+
+    /**
+     * Contains an array of video overlays.
+     */
+    inline void SetVideoOverlays(const Aws::Vector<VideoOverlay>& value) { m_videoOverlaysHasBeenSet = true; m_videoOverlays = value; }
+
+    /**
+     * Contains an array of video overlays.
+     */
+    inline void SetVideoOverlays(Aws::Vector<VideoOverlay>&& value) { m_videoOverlaysHasBeenSet = true; m_videoOverlays = std::move(value); }
+
+    /**
+     * Contains an array of video overlays.
+     */
+    inline Input& WithVideoOverlays(const Aws::Vector<VideoOverlay>& value) { SetVideoOverlays(value); return *this;}
+
+    /**
+     * Contains an array of video overlays.
+     */
+    inline Input& WithVideoOverlays(Aws::Vector<VideoOverlay>&& value) { SetVideoOverlays(std::move(value)); return *this;}
+
+    /**
+     * Contains an array of video overlays.
+     */
+    inline Input& AddVideoOverlays(const VideoOverlay& value) { m_videoOverlaysHasBeenSet = true; m_videoOverlays.push_back(value); return *this; }
+
+    /**
+     * Contains an array of video overlays.
+     */
+    inline Input& AddVideoOverlays(VideoOverlay&& value) { m_videoOverlaysHasBeenSet = true; m_videoOverlays.push_back(std::move(value)); return *this; }
+
+
+    /**
      * Input video selectors contain the video settings for the input. Each of your
      * inputs can have up to one video selector.
      */
@@ -1637,6 +1679,9 @@ namespace Model
 
     InputVideoGenerator m_videoGenerator;
     bool m_videoGeneratorHasBeenSet = false;
+
+    Aws::Vector<VideoOverlay> m_videoOverlays;
+    bool m_videoOverlaysHasBeenSet = false;
 
     VideoSelector m_videoSelector;
     bool m_videoSelectorHasBeenSet = false;

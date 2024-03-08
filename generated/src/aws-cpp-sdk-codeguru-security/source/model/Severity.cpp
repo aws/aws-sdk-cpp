@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Severity::NOT_SET:
+            return {};
           case Severity::Critical:
             return "Critical";
           case Severity::High:

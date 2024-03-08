@@ -27,7 +27,8 @@ UpdateServerRequest::UpdateServerRequest() :
     m_securityPolicyNameHasBeenSet(false),
     m_serverIdHasBeenSet(false),
     m_workflowDetailsHasBeenSet(false),
-    m_structuredLogDestinationsHasBeenSet(false)
+    m_structuredLogDestinationsHasBeenSet(false),
+    m_s3StorageOptionsHasBeenSet(false)
 {
 }
 
@@ -125,6 +126,12 @@ Aws::String UpdateServerRequest::SerializePayload() const
      structuredLogDestinationsJsonList[structuredLogDestinationsIndex].AsString(m_structuredLogDestinations[structuredLogDestinationsIndex]);
    }
    payload.WithArray("StructuredLogDestinations", std::move(structuredLogDestinationsJsonList));
+
+  }
+
+  if(m_s3StorageOptionsHasBeenSet)
+  {
+   payload.WithObject("S3StorageOptions", m_s3StorageOptions.Jsonize());
 
   }
 

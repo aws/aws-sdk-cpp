@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Origination::NOT_SET:
+            return {};
           case Origination::ALLOW:
             return "ALLOW";
           case Origination::DENY:

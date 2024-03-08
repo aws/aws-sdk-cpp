@@ -31,7 +31,9 @@ ScheduleActionSettings::ScheduleActionSettings() :
     m_scte35SpliceInsertSettingsHasBeenSet(false),
     m_scte35TimeSignalSettingsHasBeenSet(false),
     m_staticImageActivateSettingsHasBeenSet(false),
-    m_staticImageDeactivateSettingsHasBeenSet(false)
+    m_staticImageDeactivateSettingsHasBeenSet(false),
+    m_staticImageOutputActivateSettingsHasBeenSet(false),
+    m_staticImageOutputDeactivateSettingsHasBeenSet(false)
 {
 }
 
@@ -48,7 +50,9 @@ ScheduleActionSettings::ScheduleActionSettings(JsonView jsonValue) :
     m_scte35SpliceInsertSettingsHasBeenSet(false),
     m_scte35TimeSignalSettingsHasBeenSet(false),
     m_staticImageActivateSettingsHasBeenSet(false),
-    m_staticImageDeactivateSettingsHasBeenSet(false)
+    m_staticImageDeactivateSettingsHasBeenSet(false),
+    m_staticImageOutputActivateSettingsHasBeenSet(false),
+    m_staticImageOutputDeactivateSettingsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -146,6 +150,20 @@ ScheduleActionSettings& ScheduleActionSettings::operator =(JsonView jsonValue)
     m_staticImageDeactivateSettingsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("staticImageOutputActivateSettings"))
+  {
+    m_staticImageOutputActivateSettings = jsonValue.GetObject("staticImageOutputActivateSettings");
+
+    m_staticImageOutputActivateSettingsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("staticImageOutputDeactivateSettings"))
+  {
+    m_staticImageOutputDeactivateSettings = jsonValue.GetObject("staticImageOutputDeactivateSettings");
+
+    m_staticImageOutputDeactivateSettingsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -228,6 +246,18 @@ JsonValue ScheduleActionSettings::Jsonize() const
   if(m_staticImageDeactivateSettingsHasBeenSet)
   {
    payload.WithObject("staticImageDeactivateSettings", m_staticImageDeactivateSettings.Jsonize());
+
+  }
+
+  if(m_staticImageOutputActivateSettingsHasBeenSet)
+  {
+   payload.WithObject("staticImageOutputActivateSettings", m_staticImageOutputActivateSettings.Jsonize());
+
+  }
+
+  if(m_staticImageOutputDeactivateSettingsHasBeenSet)
+  {
+   payload.WithObject("staticImageOutputDeactivateSettings", m_staticImageOutputDeactivateSettings.Jsonize());
 
   }
 

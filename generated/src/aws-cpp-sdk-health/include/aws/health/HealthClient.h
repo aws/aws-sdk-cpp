@@ -69,8 +69,8 @@ namespace Health
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef HealthClientConfiguration ClientConfigurationType;
       typedef HealthEndpointProvider EndpointProviderType;
@@ -80,14 +80,14 @@ namespace Health
         * is not specified, it will be initialized to default values.
         */
         HealthClient(const Aws::Health::HealthClientConfiguration& clientConfiguration = Aws::Health::HealthClientConfiguration(),
-                     std::shared_ptr<HealthEndpointProviderBase> endpointProvider = Aws::MakeShared<HealthEndpointProvider>(ALLOCATION_TAG));
+                     std::shared_ptr<HealthEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         HealthClient(const Aws::Auth::AWSCredentials& credentials,
-                     std::shared_ptr<HealthEndpointProviderBase> endpointProvider = Aws::MakeShared<HealthEndpointProvider>(ALLOCATION_TAG),
+                     std::shared_ptr<HealthEndpointProviderBase> endpointProvider = nullptr,
                      const Aws::Health::HealthClientConfiguration& clientConfiguration = Aws::Health::HealthClientConfiguration());
 
        /**
@@ -95,7 +95,7 @@ namespace Health
         * the default http client factory will be used
         */
         HealthClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                     std::shared_ptr<HealthEndpointProviderBase> endpointProvider = Aws::MakeShared<HealthEndpointProvider>(ALLOCATION_TAG),
+                     std::shared_ptr<HealthEndpointProviderBase> endpointProvider = nullptr,
                      const Aws::Health::HealthClientConfiguration& clientConfiguration = Aws::Health::HealthClientConfiguration());
 
 

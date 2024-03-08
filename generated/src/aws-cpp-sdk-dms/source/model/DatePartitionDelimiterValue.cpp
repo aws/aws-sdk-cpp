@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DatePartitionDelimiterValue::NOT_SET:
+            return {};
           case DatePartitionDelimiterValue::SLASH:
             return "SLASH";
           case DatePartitionDelimiterValue::UNDERSCORE:

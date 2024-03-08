@@ -77,6 +77,12 @@ CreatePoolResult& CreatePoolResult::operator =(const Aws::AmazonWebServiceResult
 
   }
 
+  if(jsonValue.ValueExists("TwoWayChannelRole"))
+  {
+    m_twoWayChannelRole = jsonValue.GetString("TwoWayChannelRole");
+
+  }
+
   if(jsonValue.ValueExists("SelfManagedOptOutsEnabled"))
   {
     m_selfManagedOptOutsEnabled = jsonValue.GetBool("SelfManagedOptOutsEnabled");

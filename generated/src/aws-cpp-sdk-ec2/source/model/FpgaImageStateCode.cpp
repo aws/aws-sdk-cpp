@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FpgaImageStateCode::NOT_SET:
+            return {};
           case FpgaImageStateCode::pending:
             return "pending";
           case FpgaImageStateCode::failed:

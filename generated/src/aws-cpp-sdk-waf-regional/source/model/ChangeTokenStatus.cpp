@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ChangeTokenStatus::NOT_SET:
+            return {};
           case ChangeTokenStatus::PROVISIONED:
             return "PROVISIONED";
           case ChangeTokenStatus::PENDING:

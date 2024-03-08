@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DiscoveryIntegrationStatus::NOT_SET:
+            return {};
           case DiscoveryIntegrationStatus::ENABLED:
             return "ENABLED";
           case DiscoveryIntegrationStatus::DISABLED:

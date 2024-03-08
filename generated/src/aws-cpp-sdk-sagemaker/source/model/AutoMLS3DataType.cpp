@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AutoMLS3DataType::NOT_SET:
+            return {};
           case AutoMLS3DataType::ManifestFile:
             return "ManifestFile";
           case AutoMLS3DataType::S3Prefix:

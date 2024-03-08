@@ -82,6 +82,47 @@ namespace Model
 
 
     /**
+     * <p>The details for the init containers.</p>
+     */
+    inline const Aws::Vector<EksAttemptContainerDetail>& GetInitContainers() const{ return m_initContainers; }
+
+    /**
+     * <p>The details for the init containers.</p>
+     */
+    inline bool InitContainersHasBeenSet() const { return m_initContainersHasBeenSet; }
+
+    /**
+     * <p>The details for the init containers.</p>
+     */
+    inline void SetInitContainers(const Aws::Vector<EksAttemptContainerDetail>& value) { m_initContainersHasBeenSet = true; m_initContainers = value; }
+
+    /**
+     * <p>The details for the init containers.</p>
+     */
+    inline void SetInitContainers(Aws::Vector<EksAttemptContainerDetail>&& value) { m_initContainersHasBeenSet = true; m_initContainers = std::move(value); }
+
+    /**
+     * <p>The details for the init containers.</p>
+     */
+    inline EksAttemptDetail& WithInitContainers(const Aws::Vector<EksAttemptContainerDetail>& value) { SetInitContainers(value); return *this;}
+
+    /**
+     * <p>The details for the init containers.</p>
+     */
+    inline EksAttemptDetail& WithInitContainers(Aws::Vector<EksAttemptContainerDetail>&& value) { SetInitContainers(std::move(value)); return *this;}
+
+    /**
+     * <p>The details for the init containers.</p>
+     */
+    inline EksAttemptDetail& AddInitContainers(const EksAttemptContainerDetail& value) { m_initContainersHasBeenSet = true; m_initContainers.push_back(value); return *this; }
+
+    /**
+     * <p>The details for the init containers.</p>
+     */
+    inline EksAttemptDetail& AddInitContainers(EksAttemptContainerDetail&& value) { m_initContainersHasBeenSet = true; m_initContainers.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The name of the pod for this job attempt.</p>
      */
     inline const Aws::String& GetPodName() const{ return m_podName; }
@@ -273,6 +314,9 @@ namespace Model
 
     Aws::Vector<EksAttemptContainerDetail> m_containers;
     bool m_containersHasBeenSet = false;
+
+    Aws::Vector<EksAttemptContainerDetail> m_initContainers;
+    bool m_initContainersHasBeenSet = false;
 
     Aws::String m_podName;
     bool m_podNameHasBeenSet = false;

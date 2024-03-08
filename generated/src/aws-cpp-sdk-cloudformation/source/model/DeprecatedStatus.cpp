@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DeprecatedStatus::NOT_SET:
+            return {};
           case DeprecatedStatus::LIVE:
             return "LIVE";
           case DeprecatedStatus::DEPRECATED:

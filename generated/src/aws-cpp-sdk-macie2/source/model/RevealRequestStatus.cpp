@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RevealRequestStatus::NOT_SET:
+            return {};
           case RevealRequestStatus::SUCCESS:
             return "SUCCESS";
           case RevealRequestStatus::PROCESSING:

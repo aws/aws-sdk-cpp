@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AttachmentStatus::NOT_SET:
+            return {};
           case AttachmentStatus::attaching:
             return "attaching";
           case AttachmentStatus::attached:

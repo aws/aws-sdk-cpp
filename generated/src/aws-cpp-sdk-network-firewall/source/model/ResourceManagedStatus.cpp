@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResourceManagedStatus::NOT_SET:
+            return {};
           case ResourceManagedStatus::MANAGED:
             return "MANAGED";
           case ResourceManagedStatus::ACCOUNT:

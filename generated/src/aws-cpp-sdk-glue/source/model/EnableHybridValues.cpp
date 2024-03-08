@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EnableHybridValues::NOT_SET:
+            return {};
           case EnableHybridValues::TRUE:
             return "TRUE";
           case EnableHybridValues::FALSE:

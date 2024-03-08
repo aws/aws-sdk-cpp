@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AnalysisFilterAttribute::NOT_SET:
+            return {};
           case AnalysisFilterAttribute::QUICKSIGHT_USER:
             return "QUICKSIGHT_USER";
           case AnalysisFilterAttribute::QUICKSIGHT_VIEWER_OR_OWNER:

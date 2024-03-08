@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ScanDirection::NOT_SET:
+            return {};
           case ScanDirection::FORWARD:
             return "FORWARD";
           case ScanDirection::BACKWARD:

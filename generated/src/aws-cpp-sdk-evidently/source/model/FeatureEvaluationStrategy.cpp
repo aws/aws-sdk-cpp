@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FeatureEvaluationStrategy::NOT_SET:
+            return {};
           case FeatureEvaluationStrategy::ALL_RULES:
             return "ALL_RULES";
           case FeatureEvaluationStrategy::DEFAULT_VARIATION:

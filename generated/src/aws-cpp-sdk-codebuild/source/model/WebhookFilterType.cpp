@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case WebhookFilterType::NOT_SET:
+            return {};
           case WebhookFilterType::EVENT:
             return "EVENT";
           case WebhookFilterType::BASE_REF:

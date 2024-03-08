@@ -59,6 +59,10 @@
 #set($adderWithCopy = ";")
 #set($adderWithMove = ";")
 #set($inline = "$exportMacro ")
+#elseif($member.value.isChecksumMember())
+#set($getterBody = "{ return ${memberVariableName}; }")
+#set($setterWithCopy = " { ${required}${memberVariableName} = value; SetChecksumAlgorithm(ChecksumAlgorithm::${member.value.getChecksumEnumMember()}); }")
+#set($setterWithMove = " { ${required}${memberVariableName} = std::move(value); SetChecksumAlgorithm(ChecksumAlgorithm::${member.value.getChecksumEnumMember()}); }")
 #else
 #set($getterBody = "{ return ${memberVariableName}; }")
 #set($setterWithCopy = " { ${required}${memberVariableName} = value; }")
@@ -111,9 +115,13 @@
     ${inline}void Set${memberKeyWithFirstLetterCapitalized}(${moveType} value)${setterWithMove}
 
 #end
-#if($member.value.shape.string)
+#if($member.value.shape.string && !$member.value.isChecksumMember())
     $memberDocumentation
     ${inline}void Set${memberKeyWithFirstLetterCapitalized}(const char* value) { ${required}${memberVariableName}.assign(value); }
+
+#elseif($member.value.shape.string && $member.value.isChecksumMember())
+    $memberDocumentation
+    ${inline}void Set${memberKeyWithFirstLetterCapitalized}(const char* value) { ${required}${memberVariableName}.assign(value); SetChecksumAlgorithm(ChecksumAlgorithm::${member.value.getChecksumEnumMember()}); }
 
 #end
     $memberDocumentation

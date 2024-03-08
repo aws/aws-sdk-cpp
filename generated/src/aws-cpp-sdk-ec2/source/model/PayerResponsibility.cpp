@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PayerResponsibility::NOT_SET:
+            return {};
           case PayerResponsibility::ServiceOwner:
             return "ServiceOwner";
           default:

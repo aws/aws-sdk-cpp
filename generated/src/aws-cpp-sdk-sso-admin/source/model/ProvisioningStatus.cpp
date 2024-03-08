@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ProvisioningStatus::NOT_SET:
+            return {};
           case ProvisioningStatus::LATEST_PERMISSION_SET_PROVISIONED:
             return "LATEST_PERMISSION_SET_PROVISIONED";
           case ProvisioningStatus::LATEST_PERMISSION_SET_NOT_PROVISIONED:

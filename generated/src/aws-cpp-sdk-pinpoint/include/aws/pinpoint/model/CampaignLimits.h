@@ -102,7 +102,7 @@ namespace Model
     /**
      * <p>The maximum number of messages that a campaign can send each second. For an
      * application, this value specifies the default limit for the number of messages
-     * that campaigns can send each second. The minimum value is 50. The maximum value
+     * that campaigns can send each second. The minimum value is 1. The maximum value
      * is 20,000.</p>
      */
     inline int GetMessagesPerSecond() const{ return m_messagesPerSecond; }
@@ -110,7 +110,7 @@ namespace Model
     /**
      * <p>The maximum number of messages that a campaign can send each second. For an
      * application, this value specifies the default limit for the number of messages
-     * that campaigns can send each second. The minimum value is 50. The maximum value
+     * that campaigns can send each second. The minimum value is 1. The maximum value
      * is 20,000.</p>
      */
     inline bool MessagesPerSecondHasBeenSet() const { return m_messagesPerSecondHasBeenSet; }
@@ -118,7 +118,7 @@ namespace Model
     /**
      * <p>The maximum number of messages that a campaign can send each second. For an
      * application, this value specifies the default limit for the number of messages
-     * that campaigns can send each second. The minimum value is 50. The maximum value
+     * that campaigns can send each second. The minimum value is 1. The maximum value
      * is 20,000.</p>
      */
     inline void SetMessagesPerSecond(int value) { m_messagesPerSecondHasBeenSet = true; m_messagesPerSecond = value; }
@@ -126,7 +126,7 @@ namespace Model
     /**
      * <p>The maximum number of messages that a campaign can send each second. For an
      * application, this value specifies the default limit for the number of messages
-     * that campaigns can send each second. The minimum value is 50. The maximum value
+     * that campaigns can send each second. The minimum value is 1. The maximum value
      * is 20,000.</p>
      */
     inline CampaignLimits& WithMessagesPerSecond(int value) { SetMessagesPerSecond(value); return *this;}

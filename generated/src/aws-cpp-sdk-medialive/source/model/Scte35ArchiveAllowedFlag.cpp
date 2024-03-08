@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Scte35ArchiveAllowedFlag::NOT_SET:
+            return {};
           case Scte35ArchiveAllowedFlag::ARCHIVE_NOT_ALLOWED:
             return "ARCHIVE_NOT_ALLOWED";
           case Scte35ArchiveAllowedFlag::ARCHIVE_ALLOWED:

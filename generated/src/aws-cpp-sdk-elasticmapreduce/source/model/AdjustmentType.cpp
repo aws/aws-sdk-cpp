@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AdjustmentType::NOT_SET:
+            return {};
           case AdjustmentType::CHANGE_IN_CAPACITY:
             return "CHANGE_IN_CAPACITY";
           case AdjustmentType::PERCENT_CHANGE_IN_CAPACITY:

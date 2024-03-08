@@ -28,7 +28,9 @@ namespace Model
 
   /**
    * <p>Object representing any Kubernetes overrides to a job definition that's used
-   * in a <a>SubmitJob</a> API operation.</p><p><h3>See Also:</h3>   <a
+   * in a <a
+   * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_SubmitJob.html">SubmitJob</a>
+   * API operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/EksContainerOverride">AWS
    * API Reference</a></p>
    */
@@ -39,6 +41,55 @@ namespace Model
     AWS_BATCH_API EksContainerOverride(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API EksContainerOverride& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>A pointer to the container that you want to override. The name must match a
+     * unique container name that you wish to override.</p>
+     */
+    inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>A pointer to the container that you want to override. The name must match a
+     * unique container name that you wish to override.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>A pointer to the container that you want to override. The name must match a
+     * unique container name that you wish to override.</p>
+     */
+    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    /**
+     * <p>A pointer to the container that you want to override. The name must match a
+     * unique container name that you wish to override.</p>
+     */
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
+
+    /**
+     * <p>A pointer to the container that you want to override. The name must match a
+     * unique container name that you wish to override.</p>
+     */
+    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
+
+    /**
+     * <p>A pointer to the container that you want to override. The name must match a
+     * unique container name that you wish to override.</p>
+     */
+    inline EksContainerOverride& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    /**
+     * <p>A pointer to the container that you want to override. The name must match a
+     * unique container name that you wish to override.</p>
+     */
+    inline EksContainerOverride& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
+
+    /**
+     * <p>A pointer to the container that you want to override. The name must match a
+     * unique container name that you wish to override.</p>
+     */
+    inline EksContainerOverride& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
@@ -141,8 +192,8 @@ namespace Model
      * <p>The arguments to the entrypoint to send to the container that overrides the
      * default arguments from the Docker image or the job definition. For more
      * information, see <a
-     * href="https://docs.docker.com/engine/reference/builder/#cmd">CMD</a> in the
-     * <i>Dockerfile reference</i> and <a
+     * href="https://docs.docker.com/engine/reference/builder/#cmd">Dockerfile
+     * reference: CMD</a> and <a
      * href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">Define
      * a command an arguments for a pod</a> in the <i>Kubernetes documentation</i>.</p>
      */
@@ -152,8 +203,8 @@ namespace Model
      * <p>The arguments to the entrypoint to send to the container that overrides the
      * default arguments from the Docker image or the job definition. For more
      * information, see <a
-     * href="https://docs.docker.com/engine/reference/builder/#cmd">CMD</a> in the
-     * <i>Dockerfile reference</i> and <a
+     * href="https://docs.docker.com/engine/reference/builder/#cmd">Dockerfile
+     * reference: CMD</a> and <a
      * href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">Define
      * a command an arguments for a pod</a> in the <i>Kubernetes documentation</i>.</p>
      */
@@ -163,8 +214,8 @@ namespace Model
      * <p>The arguments to the entrypoint to send to the container that overrides the
      * default arguments from the Docker image or the job definition. For more
      * information, see <a
-     * href="https://docs.docker.com/engine/reference/builder/#cmd">CMD</a> in the
-     * <i>Dockerfile reference</i> and <a
+     * href="https://docs.docker.com/engine/reference/builder/#cmd">Dockerfile
+     * reference: CMD</a> and <a
      * href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">Define
      * a command an arguments for a pod</a> in the <i>Kubernetes documentation</i>.</p>
      */
@@ -174,8 +225,8 @@ namespace Model
      * <p>The arguments to the entrypoint to send to the container that overrides the
      * default arguments from the Docker image or the job definition. For more
      * information, see <a
-     * href="https://docs.docker.com/engine/reference/builder/#cmd">CMD</a> in the
-     * <i>Dockerfile reference</i> and <a
+     * href="https://docs.docker.com/engine/reference/builder/#cmd">Dockerfile
+     * reference: CMD</a> and <a
      * href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">Define
      * a command an arguments for a pod</a> in the <i>Kubernetes documentation</i>.</p>
      */
@@ -185,8 +236,8 @@ namespace Model
      * <p>The arguments to the entrypoint to send to the container that overrides the
      * default arguments from the Docker image or the job definition. For more
      * information, see <a
-     * href="https://docs.docker.com/engine/reference/builder/#cmd">CMD</a> in the
-     * <i>Dockerfile reference</i> and <a
+     * href="https://docs.docker.com/engine/reference/builder/#cmd">Dockerfile
+     * reference: CMD</a> and <a
      * href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">Define
      * a command an arguments for a pod</a> in the <i>Kubernetes documentation</i>.</p>
      */
@@ -196,8 +247,8 @@ namespace Model
      * <p>The arguments to the entrypoint to send to the container that overrides the
      * default arguments from the Docker image or the job definition. For more
      * information, see <a
-     * href="https://docs.docker.com/engine/reference/builder/#cmd">CMD</a> in the
-     * <i>Dockerfile reference</i> and <a
+     * href="https://docs.docker.com/engine/reference/builder/#cmd">Dockerfile
+     * reference: CMD</a> and <a
      * href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">Define
      * a command an arguments for a pod</a> in the <i>Kubernetes documentation</i>.</p>
      */
@@ -207,8 +258,8 @@ namespace Model
      * <p>The arguments to the entrypoint to send to the container that overrides the
      * default arguments from the Docker image or the job definition. For more
      * information, see <a
-     * href="https://docs.docker.com/engine/reference/builder/#cmd">CMD</a> in the
-     * <i>Dockerfile reference</i> and <a
+     * href="https://docs.docker.com/engine/reference/builder/#cmd">Dockerfile
+     * reference: CMD</a> and <a
      * href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">Define
      * a command an arguments for a pod</a> in the <i>Kubernetes documentation</i>.</p>
      */
@@ -218,8 +269,8 @@ namespace Model
      * <p>The arguments to the entrypoint to send to the container that overrides the
      * default arguments from the Docker image or the job definition. For more
      * information, see <a
-     * href="https://docs.docker.com/engine/reference/builder/#cmd">CMD</a> in the
-     * <i>Dockerfile reference</i> and <a
+     * href="https://docs.docker.com/engine/reference/builder/#cmd">Dockerfile
+     * reference: CMD</a> and <a
      * href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">Define
      * a command an arguments for a pod</a> in the <i>Kubernetes documentation</i>.</p>
      */
@@ -229,8 +280,8 @@ namespace Model
      * <p>The arguments to the entrypoint to send to the container that overrides the
      * default arguments from the Docker image or the job definition. For more
      * information, see <a
-     * href="https://docs.docker.com/engine/reference/builder/#cmd">CMD</a> in the
-     * <i>Dockerfile reference</i> and <a
+     * href="https://docs.docker.com/engine/reference/builder/#cmd">Dockerfile
+     * reference: CMD</a> and <a
      * href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">Define
      * a command an arguments for a pod</a> in the <i>Kubernetes documentation</i>.</p>
      */
@@ -385,6 +436,9 @@ namespace Model
     inline EksContainerOverride& WithResources(EksContainerResourceRequirements&& value) { SetResources(std::move(value)); return *this;}
 
   private:
+
+    Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_image;
     bool m_imageHasBeenSet = false;

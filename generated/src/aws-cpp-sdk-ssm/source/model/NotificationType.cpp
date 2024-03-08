@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NotificationType::NOT_SET:
+            return {};
           case NotificationType::Command:
             return "Command";
           case NotificationType::Invocation:

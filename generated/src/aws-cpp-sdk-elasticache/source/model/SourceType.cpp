@@ -25,6 +25,8 @@ namespace Aws
         static const int cache_security_group_HASH = HashingUtils::HashString("cache-security-group");
         static const int cache_subnet_group_HASH = HashingUtils::HashString("cache-subnet-group");
         static const int replication_group_HASH = HashingUtils::HashString("replication-group");
+        static const int serverless_cache_HASH = HashingUtils::HashString("serverless-cache");
+        static const int serverless_cache_snapshot_HASH = HashingUtils::HashString("serverless-cache-snapshot");
         static const int user_HASH = HashingUtils::HashString("user");
         static const int user_group_HASH = HashingUtils::HashString("user-group");
 
@@ -52,6 +54,14 @@ namespace Aws
           {
             return SourceType::replication_group;
           }
+          else if (hashCode == serverless_cache_HASH)
+          {
+            return SourceType::serverless_cache;
+          }
+          else if (hashCode == serverless_cache_snapshot_HASH)
+          {
+            return SourceType::serverless_cache_snapshot;
+          }
           else if (hashCode == user_HASH)
           {
             return SourceType::user;
@@ -74,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SourceType::NOT_SET:
+            return {};
           case SourceType::cache_cluster:
             return "cache-cluster";
           case SourceType::cache_parameter_group:
@@ -84,6 +96,10 @@ namespace Aws
             return "cache-subnet-group";
           case SourceType::replication_group:
             return "replication-group";
+          case SourceType::serverless_cache:
+            return "serverless-cache";
+          case SourceType::serverless_cache_snapshot:
+            return "serverless-cache-snapshot";
           case SourceType::user:
             return "user";
           case SourceType::user_group:

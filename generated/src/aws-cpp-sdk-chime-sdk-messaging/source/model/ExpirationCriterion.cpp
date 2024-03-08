@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ExpirationCriterion::NOT_SET:
+            return {};
           case ExpirationCriterion::CREATED_TIMESTAMP:
             return "CREATED_TIMESTAMP";
           case ExpirationCriterion::LAST_MESSAGE_TIMESTAMP:

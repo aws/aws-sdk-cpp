@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EphemerisStatus::NOT_SET:
+            return {};
           case EphemerisStatus::VALIDATING:
             return "VALIDATING";
           case EphemerisStatus::INVALID:

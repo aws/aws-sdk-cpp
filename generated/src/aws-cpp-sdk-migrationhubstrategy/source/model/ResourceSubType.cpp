@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResourceSubType::NOT_SET:
+            return {};
           case ResourceSubType::Database:
             return "Database";
           case ResourceSubType::Process:

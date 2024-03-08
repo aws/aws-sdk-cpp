@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AssociationComplianceSeverity::NOT_SET:
+            return {};
           case AssociationComplianceSeverity::CRITICAL:
             return "CRITICAL";
           case AssociationComplianceSeverity::HIGH:

@@ -27,8 +27,8 @@ namespace Model
   /**
    * <p>The system identified one of the following warnings while processing the
    * input document:</p> <ul> <li> <p>The document to classify is plain text, but the
-   * classifier is a native model.</p> </li> <li> <p>The document to classify is
-   * semi-structured, but the classifier is a plain-text model.</p> </li>
+   * classifier is a native document model.</p> </li> <li> <p>The document to
+   * classify is semi-structured, but the classifier is a plain-text model.</p> </li>
    * </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/WarningsListItem">AWS
    * API Reference</a></p>

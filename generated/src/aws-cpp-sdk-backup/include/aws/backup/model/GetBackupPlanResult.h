@@ -198,43 +198,43 @@ namespace Model
 
     /**
      * <p>A unique string that identifies the request and allows failed requests to be
-     * retried without the risk of running the operation twice.</p>
+     * retried without the risk of running the operation twice. </p>
      */
     inline const Aws::String& GetCreatorRequestId() const{ return m_creatorRequestId; }
 
     /**
      * <p>A unique string that identifies the request and allows failed requests to be
-     * retried without the risk of running the operation twice.</p>
+     * retried without the risk of running the operation twice. </p>
      */
     inline void SetCreatorRequestId(const Aws::String& value) { m_creatorRequestId = value; }
 
     /**
      * <p>A unique string that identifies the request and allows failed requests to be
-     * retried without the risk of running the operation twice.</p>
+     * retried without the risk of running the operation twice. </p>
      */
     inline void SetCreatorRequestId(Aws::String&& value) { m_creatorRequestId = std::move(value); }
 
     /**
      * <p>A unique string that identifies the request and allows failed requests to be
-     * retried without the risk of running the operation twice.</p>
+     * retried without the risk of running the operation twice. </p>
      */
     inline void SetCreatorRequestId(const char* value) { m_creatorRequestId.assign(value); }
 
     /**
      * <p>A unique string that identifies the request and allows failed requests to be
-     * retried without the risk of running the operation twice.</p>
+     * retried without the risk of running the operation twice. </p>
      */
     inline GetBackupPlanResult& WithCreatorRequestId(const Aws::String& value) { SetCreatorRequestId(value); return *this;}
 
     /**
      * <p>A unique string that identifies the request and allows failed requests to be
-     * retried without the risk of running the operation twice.</p>
+     * retried without the risk of running the operation twice. </p>
      */
     inline GetBackupPlanResult& WithCreatorRequestId(Aws::String&& value) { SetCreatorRequestId(std::move(value)); return *this;}
 
     /**
      * <p>A unique string that identifies the request and allows failed requests to be
-     * retried without the risk of running the operation twice.</p>
+     * retried without the risk of running the operation twice. </p>
      */
     inline GetBackupPlanResult& WithCreatorRequestId(const char* value) { SetCreatorRequestId(value); return *this;}
 

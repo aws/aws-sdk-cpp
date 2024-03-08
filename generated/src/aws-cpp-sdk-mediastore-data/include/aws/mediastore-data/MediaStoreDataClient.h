@@ -24,8 +24,8 @@ namespace MediaStoreData
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef MediaStoreDataClientConfiguration ClientConfigurationType;
       typedef MediaStoreDataEndpointProvider EndpointProviderType;
@@ -35,14 +35,14 @@ namespace MediaStoreData
         * is not specified, it will be initialized to default values.
         */
         MediaStoreDataClient(const Aws::MediaStoreData::MediaStoreDataClientConfiguration& clientConfiguration = Aws::MediaStoreData::MediaStoreDataClientConfiguration(),
-                             std::shared_ptr<MediaStoreDataEndpointProviderBase> endpointProvider = Aws::MakeShared<MediaStoreDataEndpointProvider>(ALLOCATION_TAG));
+                             std::shared_ptr<MediaStoreDataEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         MediaStoreDataClient(const Aws::Auth::AWSCredentials& credentials,
-                             std::shared_ptr<MediaStoreDataEndpointProviderBase> endpointProvider = Aws::MakeShared<MediaStoreDataEndpointProvider>(ALLOCATION_TAG),
+                             std::shared_ptr<MediaStoreDataEndpointProviderBase> endpointProvider = nullptr,
                              const Aws::MediaStoreData::MediaStoreDataClientConfiguration& clientConfiguration = Aws::MediaStoreData::MediaStoreDataClientConfiguration());
 
        /**
@@ -50,7 +50,7 @@ namespace MediaStoreData
         * the default http client factory will be used
         */
         MediaStoreDataClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                             std::shared_ptr<MediaStoreDataEndpointProviderBase> endpointProvider = Aws::MakeShared<MediaStoreDataEndpointProvider>(ALLOCATION_TAG),
+                             std::shared_ptr<MediaStoreDataEndpointProviderBase> endpointProvider = nullptr,
                              const Aws::MediaStoreData::MediaStoreDataClientConfiguration& clientConfiguration = Aws::MediaStoreData::MediaStoreDataClientConfiguration());
 
 

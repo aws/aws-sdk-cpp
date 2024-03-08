@@ -141,7 +141,9 @@ namespace Model
      * <p>The file type of the application revision. Must be one of the following:</p>
      * <ul> <li> <p> <code>tar</code>: A tar archive file.</p> </li> <li> <p>
      * <code>tgz</code>: A compressed tar archive file.</p> </li> <li> <p>
-     * <code>zip</code>: A zip archive file.</p> </li> </ul>
+     * <code>zip</code>: A zip archive file.</p> </li> <li> <p> <code>YAML</code>: A
+     * YAML-formatted file.</p> </li> <li> <p> <code>JSON</code>: A JSON-formatted
+     * file.</p> </li> </ul>
      */
     inline const BundleType& GetBundleType() const{ return m_bundleType; }
 
@@ -149,7 +151,9 @@ namespace Model
      * <p>The file type of the application revision. Must be one of the following:</p>
      * <ul> <li> <p> <code>tar</code>: A tar archive file.</p> </li> <li> <p>
      * <code>tgz</code>: A compressed tar archive file.</p> </li> <li> <p>
-     * <code>zip</code>: A zip archive file.</p> </li> </ul>
+     * <code>zip</code>: A zip archive file.</p> </li> <li> <p> <code>YAML</code>: A
+     * YAML-formatted file.</p> </li> <li> <p> <code>JSON</code>: A JSON-formatted
+     * file.</p> </li> </ul>
      */
     inline bool BundleTypeHasBeenSet() const { return m_bundleTypeHasBeenSet; }
 
@@ -157,7 +161,9 @@ namespace Model
      * <p>The file type of the application revision. Must be one of the following:</p>
      * <ul> <li> <p> <code>tar</code>: A tar archive file.</p> </li> <li> <p>
      * <code>tgz</code>: A compressed tar archive file.</p> </li> <li> <p>
-     * <code>zip</code>: A zip archive file.</p> </li> </ul>
+     * <code>zip</code>: A zip archive file.</p> </li> <li> <p> <code>YAML</code>: A
+     * YAML-formatted file.</p> </li> <li> <p> <code>JSON</code>: A JSON-formatted
+     * file.</p> </li> </ul>
      */
     inline void SetBundleType(const BundleType& value) { m_bundleTypeHasBeenSet = true; m_bundleType = value; }
 
@@ -165,7 +171,9 @@ namespace Model
      * <p>The file type of the application revision. Must be one of the following:</p>
      * <ul> <li> <p> <code>tar</code>: A tar archive file.</p> </li> <li> <p>
      * <code>tgz</code>: A compressed tar archive file.</p> </li> <li> <p>
-     * <code>zip</code>: A zip archive file.</p> </li> </ul>
+     * <code>zip</code>: A zip archive file.</p> </li> <li> <p> <code>YAML</code>: A
+     * YAML-formatted file.</p> </li> <li> <p> <code>JSON</code>: A JSON-formatted
+     * file.</p> </li> </ul>
      */
     inline void SetBundleType(BundleType&& value) { m_bundleTypeHasBeenSet = true; m_bundleType = std::move(value); }
 
@@ -173,7 +181,9 @@ namespace Model
      * <p>The file type of the application revision. Must be one of the following:</p>
      * <ul> <li> <p> <code>tar</code>: A tar archive file.</p> </li> <li> <p>
      * <code>tgz</code>: A compressed tar archive file.</p> </li> <li> <p>
-     * <code>zip</code>: A zip archive file.</p> </li> </ul>
+     * <code>zip</code>: A zip archive file.</p> </li> <li> <p> <code>YAML</code>: A
+     * YAML-formatted file.</p> </li> <li> <p> <code>JSON</code>: A JSON-formatted
+     * file.</p> </li> </ul>
      */
     inline S3Location& WithBundleType(const BundleType& value) { SetBundleType(value); return *this;}
 
@@ -181,7 +191,9 @@ namespace Model
      * <p>The file type of the application revision. Must be one of the following:</p>
      * <ul> <li> <p> <code>tar</code>: A tar archive file.</p> </li> <li> <p>
      * <code>tgz</code>: A compressed tar archive file.</p> </li> <li> <p>
-     * <code>zip</code>: A zip archive file.</p> </li> </ul>
+     * <code>zip</code>: A zip archive file.</p> </li> <li> <p> <code>YAML</code>: A
+     * YAML-formatted file.</p> </li> <li> <p> <code>JSON</code>: A JSON-formatted
+     * file.</p> </li> </ul>
      */
     inline S3Location& WithBundleType(BundleType&& value) { SetBundleType(std::move(value)); return *this;}
 

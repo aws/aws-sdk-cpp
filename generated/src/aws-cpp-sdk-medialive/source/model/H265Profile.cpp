@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case H265Profile::NOT_SET:
+            return {};
           case H265Profile::MAIN:
             return "MAIN";
           case H265Profile::MAIN_10BIT:

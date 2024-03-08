@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResourceCollectionType::NOT_SET:
+            return {};
           case ResourceCollectionType::SHARED_WITH_ME:
             return "SHARED_WITH_ME";
           default:

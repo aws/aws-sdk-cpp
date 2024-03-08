@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MessageAction::NOT_SET:
+            return {};
           case MessageAction::SUPPRESS:
             return "SUPPRESS";
           case MessageAction::RESEND:

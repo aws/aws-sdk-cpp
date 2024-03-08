@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RadiusAuthenticationProtocol::NOT_SET:
+            return {};
           case RadiusAuthenticationProtocol::PAP:
             return "PAP";
           case RadiusAuthenticationProtocol::CHAP:

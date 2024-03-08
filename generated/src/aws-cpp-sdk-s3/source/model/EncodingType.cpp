@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EncodingType::NOT_SET:
+            return {};
           case EncodingType::url:
             return "url";
           default:

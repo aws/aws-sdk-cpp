@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OpenCypherExplainMode::NOT_SET:
+            return {};
           case OpenCypherExplainMode::static_:
             return "static";
           case OpenCypherExplainMode::dynamic:

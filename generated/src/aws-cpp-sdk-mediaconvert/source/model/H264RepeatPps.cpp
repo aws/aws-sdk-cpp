@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case H264RepeatPps::NOT_SET:
+            return {};
           case H264RepeatPps::DISABLED:
             return "DISABLED";
           case H264RepeatPps::ENABLED:

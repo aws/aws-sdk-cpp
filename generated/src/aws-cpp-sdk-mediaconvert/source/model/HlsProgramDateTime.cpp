@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HlsProgramDateTime::NOT_SET:
+            return {};
           case HlsProgramDateTime::INCLUDE:
             return "INCLUDE";
           case HlsProgramDateTime::EXCLUDE:

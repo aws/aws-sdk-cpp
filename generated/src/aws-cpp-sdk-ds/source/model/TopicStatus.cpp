@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TopicStatus::NOT_SET:
+            return {};
           case TopicStatus::Registered:
             return "Registered";
           case TopicStatus::Topic_not_found:

@@ -139,6 +139,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InstanceRecommendationFindingReasonCode::NOT_SET:
+            return {};
           case InstanceRecommendationFindingReasonCode::CPUOverprovisioned:
             return "CPUOverprovisioned";
           case InstanceRecommendationFindingReasonCode::CPUUnderprovisioned:

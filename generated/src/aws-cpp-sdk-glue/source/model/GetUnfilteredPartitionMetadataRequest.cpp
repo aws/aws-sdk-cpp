@@ -13,18 +13,26 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 GetUnfilteredPartitionMetadataRequest::GetUnfilteredPartitionMetadataRequest() : 
+    m_regionHasBeenSet(false),
     m_catalogIdHasBeenSet(false),
     m_databaseNameHasBeenSet(false),
     m_tableNameHasBeenSet(false),
     m_partitionValuesHasBeenSet(false),
     m_auditContextHasBeenSet(false),
-    m_supportedPermissionTypesHasBeenSet(false)
+    m_supportedPermissionTypesHasBeenSet(false),
+    m_querySessionContextHasBeenSet(false)
 {
 }
 
 Aws::String GetUnfilteredPartitionMetadataRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_regionHasBeenSet)
+  {
+   payload.WithString("Region", m_region);
+
+  }
 
   if(m_catalogIdHasBeenSet)
   {
@@ -69,6 +77,12 @@ Aws::String GetUnfilteredPartitionMetadataRequest::SerializePayload() const
      supportedPermissionTypesJsonList[supportedPermissionTypesIndex].AsString(PermissionTypeMapper::GetNameForPermissionType(m_supportedPermissionTypes[supportedPermissionTypesIndex]));
    }
    payload.WithArray("SupportedPermissionTypes", std::move(supportedPermissionTypesJsonList));
+
+  }
+
+  if(m_querySessionContextHasBeenSet)
+  {
+   payload.WithObject("QuerySessionContext", m_querySessionContext.Jsonize());
 
   }
 

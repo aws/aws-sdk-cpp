@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CmafEncryptionMethod::NOT_SET:
+            return {};
           case CmafEncryptionMethod::CENC:
             return "CENC";
           case CmafEncryptionMethod::CBCS:

@@ -16,7 +16,9 @@ ModifyIpamRequest::ModifyIpamRequest() :
     m_ipamIdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_addOperatingRegionsHasBeenSet(false),
-    m_removeOperatingRegionsHasBeenSet(false)
+    m_removeOperatingRegionsHasBeenSet(false),
+    m_tier(IpamTier::NOT_SET),
+    m_tierHasBeenSet(false)
 {
 }
 
@@ -57,6 +59,11 @@ Aws::String ModifyIpamRequest::SerializePayload() const
       item.OutputToStream(ss, "RemoveOperatingRegion.", removeOperatingRegionsCount, "");
       removeOperatingRegionsCount++;
     }
+  }
+
+  if(m_tierHasBeenSet)
+  {
+    ss << "Tier=" << IpamTierMapper::GetNameForIpamTier(m_tier) << "&";
   }
 
   ss << "Version=2016-11-15";

@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CapacityProviderUpdateStatus::NOT_SET:
+            return {};
           case CapacityProviderUpdateStatus::DELETE_IN_PROGRESS:
             return "DELETE_IN_PROGRESS";
           case CapacityProviderUpdateStatus::DELETE_COMPLETE:

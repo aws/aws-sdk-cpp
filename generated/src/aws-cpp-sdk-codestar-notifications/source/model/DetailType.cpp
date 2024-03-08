@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DetailType::NOT_SET:
+            return {};
           case DetailType::BASIC:
             return "BASIC";
           case DetailType::FULL:

@@ -93,43 +93,43 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == CLIENT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(EKSErrors::CLIENT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(EKSErrors::CLIENT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(EKSErrors::NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(EKSErrors::NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_PARAMETER_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(EKSErrors::INVALID_PARAMETER), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(EKSErrors::INVALID_PARAMETER), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == RESOURCE_LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(EKSErrors::RESOURCE_LIMIT_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(EKSErrors::RESOURCE_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == UNSUPPORTED_AVAILABILITY_ZONE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(EKSErrors::UNSUPPORTED_AVAILABILITY_ZONE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(EKSErrors::UNSUPPORTED_AVAILABILITY_ZONE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == SERVER_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(EKSErrors::SERVER), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(EKSErrors::SERVER), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == RESOURCE_PROPAGATION_DELAY_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(EKSErrors::RESOURCE_PROPAGATION_DELAY), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(EKSErrors::RESOURCE_PROPAGATION_DELAY), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == RESOURCE_IN_USE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(EKSErrors::RESOURCE_IN_USE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(EKSErrors::RESOURCE_IN_USE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == BAD_REQUEST_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(EKSErrors::BAD_REQUEST), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(EKSErrors::BAD_REQUEST), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_REQUEST_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(EKSErrors::INVALID_REQUEST), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(EKSErrors::INVALID_REQUEST), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AllowsMultipleInstanceTypes::NOT_SET:
+            return {};
           case AllowsMultipleInstanceTypes::on:
             return "on";
           case AllowsMultipleInstanceTypes::off:

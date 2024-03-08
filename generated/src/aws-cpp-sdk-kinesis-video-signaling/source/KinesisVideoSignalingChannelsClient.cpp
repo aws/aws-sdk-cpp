@@ -37,8 +37,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* KinesisVideoSignalingChannelsClient::SERVICE_NAME = "kinesisvideo";
-const char* KinesisVideoSignalingChannelsClient::ALLOCATION_TAG = "KinesisVideoSignalingChannelsClient";
+namespace Aws
+{
+  namespace KinesisVideoSignalingChannels
+  {
+    const char SERVICE_NAME[] = "kinesisvideo";
+    const char ALLOCATION_TAG[] = "KinesisVideoSignalingChannelsClient";
+  }
+}
+const char* KinesisVideoSignalingChannelsClient::GetServiceName() {return SERVICE_NAME;}
+const char* KinesisVideoSignalingChannelsClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 KinesisVideoSignalingChannelsClient::KinesisVideoSignalingChannelsClient(const KinesisVideoSignalingChannels::KinesisVideoSignalingChannelsClientConfiguration& clientConfiguration,
                                                                          std::shared_ptr<KinesisVideoSignalingChannelsEndpointProviderBase> endpointProvider) :
@@ -50,7 +58,7 @@ KinesisVideoSignalingChannelsClient::KinesisVideoSignalingChannelsClient(const K
             Aws::MakeShared<KinesisVideoSignalingChannelsErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<KinesisVideoSignalingChannelsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -66,7 +74,7 @@ KinesisVideoSignalingChannelsClient::KinesisVideoSignalingChannelsClient(const A
             Aws::MakeShared<KinesisVideoSignalingChannelsErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<KinesisVideoSignalingChannelsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -82,7 +90,7 @@ KinesisVideoSignalingChannelsClient::KinesisVideoSignalingChannelsClient(const s
             Aws::MakeShared<KinesisVideoSignalingChannelsErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<KinesisVideoSignalingChannelsEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

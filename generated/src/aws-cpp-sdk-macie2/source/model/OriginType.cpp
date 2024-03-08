@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OriginType::NOT_SET:
+            return {};
           case OriginType::SENSITIVE_DATA_DISCOVERY_JOB:
             return "SENSITIVE_DATA_DISCOVERY_JOB";
           case OriginType::AUTOMATED_SENSITIVE_DATA_DISCOVERY:

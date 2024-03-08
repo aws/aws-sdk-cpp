@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AccountType::NOT_SET:
+            return {};
           case AccountType::Team:
             return "Team";
           case AccountType::EnterpriseDirectory:

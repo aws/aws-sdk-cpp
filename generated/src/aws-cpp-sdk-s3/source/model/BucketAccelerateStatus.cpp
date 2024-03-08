@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BucketAccelerateStatus::NOT_SET:
+            return {};
           case BucketAccelerateStatus::Enabled:
             return "Enabled";
           case BucketAccelerateStatus::Suspended:

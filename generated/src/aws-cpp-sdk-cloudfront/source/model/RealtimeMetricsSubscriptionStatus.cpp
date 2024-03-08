@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RealtimeMetricsSubscriptionStatus::NOT_SET:
+            return {};
           case RealtimeMetricsSubscriptionStatus::Enabled:
             return "Enabled";
           case RealtimeMetricsSubscriptionStatus::Disabled:

@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LocalGatewayRouteState::NOT_SET:
+            return {};
           case LocalGatewayRouteState::pending:
             return "pending";
           case LocalGatewayRouteState::active:

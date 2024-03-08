@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RStudioServerProAccessStatus::NOT_SET:
+            return {};
           case RStudioServerProAccessStatus::ENABLED:
             return "ENABLED";
           case RStudioServerProAccessStatus::DISABLED:

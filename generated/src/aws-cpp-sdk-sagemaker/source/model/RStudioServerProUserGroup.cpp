@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RStudioServerProUserGroup::NOT_SET:
+            return {};
           case RStudioServerProUserGroup::R_STUDIO_ADMIN:
             return "R_STUDIO_ADMIN";
           case RStudioServerProUserGroup::R_STUDIO_USER:

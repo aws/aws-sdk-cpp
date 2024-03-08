@@ -10,6 +10,8 @@
 #include <aws/imagebuilder/model/ImageTestsConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/imagebuilder/model/ImageScanningConfiguration.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/imagebuilder/model/WorkflowConfiguration.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -363,42 +365,66 @@ namespace Model
 
 
     /**
-     * <p>The idempotency token used to make this request idempotent.</p>
+     * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
+     * request. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
-     * <p>The idempotency token used to make this request idempotent.</p>
+     * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
+     * request. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
-     * <p>The idempotency token used to make this request idempotent.</p>
+     * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
+     * request. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
-     * <p>The idempotency token used to make this request idempotent.</p>
+     * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
+     * request. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
-     * <p>The idempotency token used to make this request idempotent.</p>
+     * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
+     * request. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
-     * <p>The idempotency token used to make this request idempotent.</p>
+     * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
+     * request. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
      */
     inline CreateImageRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
-     * <p>The idempotency token used to make this request idempotent.</p>
+     * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
+     * request. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
      */
     inline CreateImageRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
-     * <p>The idempotency token used to make this request idempotent.</p>
+     * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
+     * request. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
      */
     inline CreateImageRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
@@ -433,6 +459,96 @@ namespace Model
      */
     inline CreateImageRequest& WithImageScanningConfiguration(ImageScanningConfiguration&& value) { SetImageScanningConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Contains an array of workflow configuration objects.</p>
+     */
+    inline const Aws::Vector<WorkflowConfiguration>& GetWorkflows() const{ return m_workflows; }
+
+    /**
+     * <p>Contains an array of workflow configuration objects.</p>
+     */
+    inline bool WorkflowsHasBeenSet() const { return m_workflowsHasBeenSet; }
+
+    /**
+     * <p>Contains an array of workflow configuration objects.</p>
+     */
+    inline void SetWorkflows(const Aws::Vector<WorkflowConfiguration>& value) { m_workflowsHasBeenSet = true; m_workflows = value; }
+
+    /**
+     * <p>Contains an array of workflow configuration objects.</p>
+     */
+    inline void SetWorkflows(Aws::Vector<WorkflowConfiguration>&& value) { m_workflowsHasBeenSet = true; m_workflows = std::move(value); }
+
+    /**
+     * <p>Contains an array of workflow configuration objects.</p>
+     */
+    inline CreateImageRequest& WithWorkflows(const Aws::Vector<WorkflowConfiguration>& value) { SetWorkflows(value); return *this;}
+
+    /**
+     * <p>Contains an array of workflow configuration objects.</p>
+     */
+    inline CreateImageRequest& WithWorkflows(Aws::Vector<WorkflowConfiguration>&& value) { SetWorkflows(std::move(value)); return *this;}
+
+    /**
+     * <p>Contains an array of workflow configuration objects.</p>
+     */
+    inline CreateImageRequest& AddWorkflows(const WorkflowConfiguration& value) { m_workflowsHasBeenSet = true; m_workflows.push_back(value); return *this; }
+
+    /**
+     * <p>Contains an array of workflow configuration objects.</p>
+     */
+    inline CreateImageRequest& AddWorkflows(WorkflowConfiguration&& value) { m_workflowsHasBeenSet = true; m_workflows.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The name or Amazon Resource Name (ARN) for the IAM role you create that
+     * grants Image Builder access to perform workflow actions.</p>
+     */
+    inline const Aws::String& GetExecutionRole() const{ return m_executionRole; }
+
+    /**
+     * <p>The name or Amazon Resource Name (ARN) for the IAM role you create that
+     * grants Image Builder access to perform workflow actions.</p>
+     */
+    inline bool ExecutionRoleHasBeenSet() const { return m_executionRoleHasBeenSet; }
+
+    /**
+     * <p>The name or Amazon Resource Name (ARN) for the IAM role you create that
+     * grants Image Builder access to perform workflow actions.</p>
+     */
+    inline void SetExecutionRole(const Aws::String& value) { m_executionRoleHasBeenSet = true; m_executionRole = value; }
+
+    /**
+     * <p>The name or Amazon Resource Name (ARN) for the IAM role you create that
+     * grants Image Builder access to perform workflow actions.</p>
+     */
+    inline void SetExecutionRole(Aws::String&& value) { m_executionRoleHasBeenSet = true; m_executionRole = std::move(value); }
+
+    /**
+     * <p>The name or Amazon Resource Name (ARN) for the IAM role you create that
+     * grants Image Builder access to perform workflow actions.</p>
+     */
+    inline void SetExecutionRole(const char* value) { m_executionRoleHasBeenSet = true; m_executionRole.assign(value); }
+
+    /**
+     * <p>The name or Amazon Resource Name (ARN) for the IAM role you create that
+     * grants Image Builder access to perform workflow actions.</p>
+     */
+    inline CreateImageRequest& WithExecutionRole(const Aws::String& value) { SetExecutionRole(value); return *this;}
+
+    /**
+     * <p>The name or Amazon Resource Name (ARN) for the IAM role you create that
+     * grants Image Builder access to perform workflow actions.</p>
+     */
+    inline CreateImageRequest& WithExecutionRole(Aws::String&& value) { SetExecutionRole(std::move(value)); return *this;}
+
+    /**
+     * <p>The name or Amazon Resource Name (ARN) for the IAM role you create that
+     * grants Image Builder access to perform workflow actions.</p>
+     */
+    inline CreateImageRequest& WithExecutionRole(const char* value) { SetExecutionRole(value); return *this;}
+
   private:
 
     Aws::String m_imageRecipeArn;
@@ -461,6 +577,12 @@ namespace Model
 
     ImageScanningConfiguration m_imageScanningConfiguration;
     bool m_imageScanningConfigurationHasBeenSet = false;
+
+    Aws::Vector<WorkflowConfiguration> m_workflows;
+    bool m_workflowsHasBeenSet = false;
+
+    Aws::String m_executionRole;
+    bool m_executionRoleHasBeenSet = false;
   };
 
 } // namespace Model

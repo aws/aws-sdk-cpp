@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RequestStatus::NOT_SET:
+            return {};
           case RequestStatus::PENDING:
             return "PENDING";
           case RequestStatus::CASE_OPENED:

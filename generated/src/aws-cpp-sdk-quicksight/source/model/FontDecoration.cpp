@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FontDecoration::NOT_SET:
+            return {};
           case FontDecoration::UNDERLINE:
             return "UNDERLINE";
           case FontDecoration::NONE:

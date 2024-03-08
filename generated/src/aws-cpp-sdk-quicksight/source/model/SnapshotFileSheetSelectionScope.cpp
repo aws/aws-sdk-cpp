@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SnapshotFileSheetSelectionScope::NOT_SET:
+            return {};
           case SnapshotFileSheetSelectionScope::ALL_VISUALS:
             return "ALL_VISUALS";
           case SnapshotFileSheetSelectionScope::SELECTED_VISUALS:

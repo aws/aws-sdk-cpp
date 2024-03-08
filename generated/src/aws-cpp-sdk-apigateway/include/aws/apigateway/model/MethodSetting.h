@@ -134,25 +134,33 @@ namespace Model
 
     /**
      * <p>Specifies whether data trace logging is enabled for this method, which
-     * affects the log entries pushed to Amazon CloudWatch Logs.</p>
+     * affects the log entries pushed to Amazon CloudWatch Logs. This can be useful to
+     * troubleshoot APIs, but can result in logging sensitive data. We recommend that
+     * you don't enable this option for production APIs.</p>
      */
     inline bool GetDataTraceEnabled() const{ return m_dataTraceEnabled; }
 
     /**
      * <p>Specifies whether data trace logging is enabled for this method, which
-     * affects the log entries pushed to Amazon CloudWatch Logs.</p>
+     * affects the log entries pushed to Amazon CloudWatch Logs. This can be useful to
+     * troubleshoot APIs, but can result in logging sensitive data. We recommend that
+     * you don't enable this option for production APIs.</p>
      */
     inline bool DataTraceEnabledHasBeenSet() const { return m_dataTraceEnabledHasBeenSet; }
 
     /**
      * <p>Specifies whether data trace logging is enabled for this method, which
-     * affects the log entries pushed to Amazon CloudWatch Logs.</p>
+     * affects the log entries pushed to Amazon CloudWatch Logs. This can be useful to
+     * troubleshoot APIs, but can result in logging sensitive data. We recommend that
+     * you don't enable this option for production APIs.</p>
      */
     inline void SetDataTraceEnabled(bool value) { m_dataTraceEnabledHasBeenSet = true; m_dataTraceEnabled = value; }
 
     /**
      * <p>Specifies whether data trace logging is enabled for this method, which
-     * affects the log entries pushed to Amazon CloudWatch Logs.</p>
+     * affects the log entries pushed to Amazon CloudWatch Logs. This can be useful to
+     * troubleshoot APIs, but can result in logging sensitive data. We recommend that
+     * you don't enable this option for production APIs.</p>
      */
     inline MethodSetting& WithDataTraceEnabled(bool value) { SetDataTraceEnabled(value); return *this;}
 

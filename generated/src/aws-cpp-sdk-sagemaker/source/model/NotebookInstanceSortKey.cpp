@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NotebookInstanceSortKey::NOT_SET:
+            return {};
           case NotebookInstanceSortKey::Name:
             return "Name";
           case NotebookInstanceSortKey::CreationTime:

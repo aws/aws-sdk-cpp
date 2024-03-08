@@ -30,8 +30,8 @@ namespace AutoScaling
   {
     public:
       typedef Aws::Client::AWSXMLClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef AutoScalingClientConfiguration ClientConfigurationType;
       typedef AutoScalingEndpointProvider EndpointProviderType;
@@ -41,14 +41,14 @@ namespace AutoScaling
         * is not specified, it will be initialized to default values.
         */
         AutoScalingClient(const Aws::AutoScaling::AutoScalingClientConfiguration& clientConfiguration = Aws::AutoScaling::AutoScalingClientConfiguration(),
-                          std::shared_ptr<AutoScalingEndpointProviderBase> endpointProvider = Aws::MakeShared<AutoScalingEndpointProvider>(ALLOCATION_TAG));
+                          std::shared_ptr<AutoScalingEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         AutoScalingClient(const Aws::Auth::AWSCredentials& credentials,
-                          std::shared_ptr<AutoScalingEndpointProviderBase> endpointProvider = Aws::MakeShared<AutoScalingEndpointProvider>(ALLOCATION_TAG),
+                          std::shared_ptr<AutoScalingEndpointProviderBase> endpointProvider = nullptr,
                           const Aws::AutoScaling::AutoScalingClientConfiguration& clientConfiguration = Aws::AutoScaling::AutoScalingClientConfiguration());
 
        /**
@@ -56,7 +56,7 @@ namespace AutoScaling
         * the default http client factory will be used
         */
         AutoScalingClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                          std::shared_ptr<AutoScalingEndpointProviderBase> endpointProvider = Aws::MakeShared<AutoScalingEndpointProvider>(ALLOCATION_TAG),
+                          std::shared_ptr<AutoScalingEndpointProviderBase> endpointProvider = nullptr,
                           const Aws::AutoScaling::AutoScalingClientConfiguration& clientConfiguration = Aws::AutoScaling::AutoScalingClientConfiguration());
 
 
@@ -389,16 +389,11 @@ namespace AutoScaling
          * about updating this limit, see <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-quotas.html">Quotas
          * for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
-         * Guide</i>.</p> <p>For introductory exercises for creating an Auto Scaling group,
-         * see <a
-         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/GettingStartedTutorial.html">Getting
-         * started with Amazon EC2 Auto Scaling</a> and <a
-         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-register-lbs-with-asg.html">Tutorial:
-         * Set up a scaled and load-balanced application</a> in the <i>Amazon EC2 Auto
-         * Scaling User Guide</i>. For more information, see <a
-         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroup.html">Auto
-         * Scaling groups</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-         * <p>Every Auto Scaling group has three size properties
+         * Guide</i>.</p> <p>If you're new to Amazon EC2 Auto Scaling, see the introductory
+         * tutorials in <a
+         * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/get-started-with-ec2-auto-scaling.html">Get
+         * started with Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
+         * Guide</i>.</p> <p>Every Auto Scaling group has three size properties
          * (<code>DesiredCapacity</code>, <code>MaxSize</code>, and <code>MinSize</code>).
          * Usually, you set these sizes based on a specific number of instances. However,
          * if you configure a mixed instances policy that defines weights for the instance
@@ -879,7 +874,7 @@ namespace AutoScaling
 
         /**
          * <p>Gets information about the instance refreshes for the specified Auto Scaling
-         * group.</p> <p>This operation is part of the <a
+         * group from the previous six weeks.</p> <p>This operation is part of the <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">instance
          * refresh feature</a> in Amazon EC2 Auto Scaling, which helps you update instances
          * in your Auto Scaling group after you make configuration changes.</p> <p>To help
@@ -2133,11 +2128,7 @@ namespace AutoScaling
         }
 
         /**
-         * <p>Starts an instance refresh. During an instance refresh, Amazon EC2 Auto
-         * Scaling performs a rolling update of instances in an Auto Scaling group.
-         * Instances are terminated first and then replaced, which temporarily reduces the
-         * capacity available within your Auto Scaling group.</p> <p>This operation is part
-         * of the <a
+         * <p>Starts an instance refresh.</p> <p>This operation is part of the <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">instance
          * refresh feature</a> in Amazon EC2 Auto Scaling, which helps you update instances
          * in your Auto Scaling group. This feature is helpful, for example, when you have

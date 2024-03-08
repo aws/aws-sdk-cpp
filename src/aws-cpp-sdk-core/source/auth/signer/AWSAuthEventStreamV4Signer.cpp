@@ -188,12 +188,7 @@ bool AWSAuthEventStreamV4Signer::SignEventMessage(Event::Message& message, Aws::
     const auto nonSignatureHeadersHash = hashOutcome.GetResult();
     stringToSign << HashingUtils::HexEncode(nonSignatureHeadersHash) << Aws::Auth::AWSAuthHelper::NEWLINE;
 
-    if (message.GetEventPayload().empty())
-    {
-        AWS_LOGSTREAM_WARN(v4StreamingLogTag, "Attempting to sign an empty message (no payload and no headers). "
-                "It is unlikely that this is the intended behavior.");
-    }
-    else
+    if (!message.GetEventPayload().empty())
     {
         // use a preallocatedStreamBuf to avoid making a copy.
         // The Hashing API requires either Aws::String or IStream as input.
@@ -201,18 +196,27 @@ bool AWSAuthEventStreamV4Signer::SignEventMessage(Event::Message& message, Aws::
         Utils::Stream::PreallocatedStreamBuf streamBuf(message.GetEventPayload().data(), message.GetEventPayload().size());
         Aws::IOStream payload(&streamBuf);
         hashOutcome = m_hash.Calculate(payload);
+    }
+    else
+    {
+        // only a signature and a date will be in a frame
+        AWS_LOGSTREAM_INFO(v4StreamingLogTag, "Signing an event with an empty payload");
 
-        if (!hashOutcome.IsSuccess())
-        {
-            AWS_LOGSTREAM_ERROR(v4StreamingLogTag, "Failed to hash (sha256) non-signature headers.");
-            return false;
-        }
-        const auto payloadHash = hashOutcome.GetResult();
-        stringToSign << HashingUtils::HexEncode(payloadHash);
-        AWS_LOGSTREAM_DEBUG(v4StreamingLogTag, "Payload hash  - " << HashingUtils::HexEncode(payloadHash));
+        hashOutcome = m_hash.Calculate(""); // SHA256 of an empty buffer
     }
 
-    Aws::Utils::ByteBuffer finalSignatureDigest = GenerateSignature(m_credentialsProvider->GetAWSCredentials(), stringToSign.str(), simpleDate, m_region, m_serviceName);
+    if (!hashOutcome.IsSuccess())
+    {
+        AWS_LOGSTREAM_ERROR(v4StreamingLogTag, "Failed to hash (sha256) non-signature headers.");
+        return false;
+    }
+    const auto payloadHash = hashOutcome.GetResult();
+    stringToSign << HashingUtils::HexEncode(payloadHash);
+    AWS_LOGSTREAM_DEBUG(v4StreamingLogTag, "Payload hash  - " << HashingUtils::HexEncode(payloadHash));
+
+    Aws::String canonicalRequestString = stringToSign.str();
+    AWS_LOGSTREAM_TRACE(v4StreamingLogTag, "EventStream Event Canonical Request String: " << canonicalRequestString);
+    Aws::Utils::ByteBuffer finalSignatureDigest = GenerateSignature(m_credentialsProvider->GetAWSCredentials(), canonicalRequestString, simpleDate, m_region, m_serviceName);
     const auto finalSignature = HashingUtils::HexEncode(finalSignatureDigest);
     AWS_LOGSTREAM_DEBUG(v4StreamingLogTag, "Final computed signing hash: " << finalSignature);
     priorSignature = finalSignature;

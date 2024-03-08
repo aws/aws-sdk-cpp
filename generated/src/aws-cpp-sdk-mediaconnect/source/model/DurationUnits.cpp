@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DurationUnits::NOT_SET:
+            return {};
           case DurationUnits::MONTHS:
             return "MONTHS";
           default:

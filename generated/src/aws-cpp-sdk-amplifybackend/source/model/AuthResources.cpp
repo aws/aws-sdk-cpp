@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AuthResources::NOT_SET:
+            return {};
           case AuthResources::USER_POOL_ONLY:
             return "USER_POOL_ONLY";
           case AuthResources::IDENTITY_POOL_AND_USER_POOL:

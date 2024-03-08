@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TargetType::NOT_SET:
+            return {};
           case TargetType::container_instance:
             return "container-instance";
           default:

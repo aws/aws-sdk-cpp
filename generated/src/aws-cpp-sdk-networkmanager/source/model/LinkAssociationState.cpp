@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LinkAssociationState::NOT_SET:
+            return {};
           case LinkAssociationState::PENDING:
             return "PENDING";
           case LinkAssociationState::AVAILABLE:

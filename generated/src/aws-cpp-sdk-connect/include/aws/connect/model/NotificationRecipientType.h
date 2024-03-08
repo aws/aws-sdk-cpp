@@ -41,91 +41,91 @@ namespace Model
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }. Amazon Connect users
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }. Amazon Connect users
      * with the specified tags will be notified.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetUserTags() const{ return m_userTags; }
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }. Amazon Connect users
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }. Amazon Connect users
      * with the specified tags will be notified.</p>
      */
     inline bool UserTagsHasBeenSet() const { return m_userTagsHasBeenSet; }
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }. Amazon Connect users
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }. Amazon Connect users
      * with the specified tags will be notified.</p>
      */
     inline void SetUserTags(const Aws::Map<Aws::String, Aws::String>& value) { m_userTagsHasBeenSet = true; m_userTags = value; }
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }. Amazon Connect users
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }. Amazon Connect users
      * with the specified tags will be notified.</p>
      */
     inline void SetUserTags(Aws::Map<Aws::String, Aws::String>&& value) { m_userTagsHasBeenSet = true; m_userTags = std::move(value); }
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }. Amazon Connect users
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }. Amazon Connect users
      * with the specified tags will be notified.</p>
      */
     inline NotificationRecipientType& WithUserTags(const Aws::Map<Aws::String, Aws::String>& value) { SetUserTags(value); return *this;}
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }. Amazon Connect users
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }. Amazon Connect users
      * with the specified tags will be notified.</p>
      */
     inline NotificationRecipientType& WithUserTags(Aws::Map<Aws::String, Aws::String>&& value) { SetUserTags(std::move(value)); return *this;}
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }. Amazon Connect users
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }. Amazon Connect users
      * with the specified tags will be notified.</p>
      */
     inline NotificationRecipientType& AddUserTags(const Aws::String& key, const Aws::String& value) { m_userTagsHasBeenSet = true; m_userTags.emplace(key, value); return *this; }
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }. Amazon Connect users
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }. Amazon Connect users
      * with the specified tags will be notified.</p>
      */
     inline NotificationRecipientType& AddUserTags(Aws::String&& key, const Aws::String& value) { m_userTagsHasBeenSet = true; m_userTags.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }. Amazon Connect users
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }. Amazon Connect users
      * with the specified tags will be notified.</p>
      */
     inline NotificationRecipientType& AddUserTags(const Aws::String& key, Aws::String&& value) { m_userTagsHasBeenSet = true; m_userTags.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }. Amazon Connect users
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }. Amazon Connect users
      * with the specified tags will be notified.</p>
      */
     inline NotificationRecipientType& AddUserTags(Aws::String&& key, Aws::String&& value) { m_userTagsHasBeenSet = true; m_userTags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }. Amazon Connect users
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }. Amazon Connect users
      * with the specified tags will be notified.</p>
      */
     inline NotificationRecipientType& AddUserTags(const char* key, Aws::String&& value) { m_userTagsHasBeenSet = true; m_userTags.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }. Amazon Connect users
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }. Amazon Connect users
      * with the specified tags will be notified.</p>
      */
     inline NotificationRecipientType& AddUserTags(Aws::String&& key, const char* value) { m_userTagsHasBeenSet = true; m_userTags.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }. Amazon Connect users
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }. Amazon Connect users
      * with the specified tags will be notified.</p>
      */
     inline NotificationRecipientType& AddUserTags(const char* key, const char* value) { m_userTagsHasBeenSet = true; m_userTags.emplace(key, value); return *this; }

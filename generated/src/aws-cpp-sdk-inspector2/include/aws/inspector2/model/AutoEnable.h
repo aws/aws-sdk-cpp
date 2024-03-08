@@ -87,53 +87,57 @@ namespace Model
 
 
     /**
-     * <p>Represents whether AWS Lambda standard scans are automatically enabled for
-     * new members of your Amazon Inspector organization. </p>
+     * <p>Represents whether Amazon Web Services Lambda standard scans are
+     * automatically enabled for new members of your Amazon Inspector organization.
+     * </p>
      */
     inline bool GetLambda() const{ return m_lambda; }
 
     /**
-     * <p>Represents whether AWS Lambda standard scans are automatically enabled for
-     * new members of your Amazon Inspector organization. </p>
+     * <p>Represents whether Amazon Web Services Lambda standard scans are
+     * automatically enabled for new members of your Amazon Inspector organization.
+     * </p>
      */
     inline bool LambdaHasBeenSet() const { return m_lambdaHasBeenSet; }
 
     /**
-     * <p>Represents whether AWS Lambda standard scans are automatically enabled for
-     * new members of your Amazon Inspector organization. </p>
+     * <p>Represents whether Amazon Web Services Lambda standard scans are
+     * automatically enabled for new members of your Amazon Inspector organization.
+     * </p>
      */
     inline void SetLambda(bool value) { m_lambdaHasBeenSet = true; m_lambda = value; }
 
     /**
-     * <p>Represents whether AWS Lambda standard scans are automatically enabled for
-     * new members of your Amazon Inspector organization. </p>
+     * <p>Represents whether Amazon Web Services Lambda standard scans are
+     * automatically enabled for new members of your Amazon Inspector organization.
+     * </p>
      */
     inline AutoEnable& WithLambda(bool value) { SetLambda(value); return *this;}
 
 
     /**
-     * <p>Represents whether AWS Lambda code scans are automatically enabled for new
+     * <p>Represents whether Lambda code scans are automatically enabled for new
      * members of your Amazon Inspector organization. <pre><code> &lt;/p&gt;
      * </code></pre>
      */
     inline bool GetLambdaCode() const{ return m_lambdaCode; }
 
     /**
-     * <p>Represents whether AWS Lambda code scans are automatically enabled for new
+     * <p>Represents whether Lambda code scans are automatically enabled for new
      * members of your Amazon Inspector organization. <pre><code> &lt;/p&gt;
      * </code></pre>
      */
     inline bool LambdaCodeHasBeenSet() const { return m_lambdaCodeHasBeenSet; }
 
     /**
-     * <p>Represents whether AWS Lambda code scans are automatically enabled for new
+     * <p>Represents whether Lambda code scans are automatically enabled for new
      * members of your Amazon Inspector organization. <pre><code> &lt;/p&gt;
      * </code></pre>
      */
     inline void SetLambdaCode(bool value) { m_lambdaCodeHasBeenSet = true; m_lambdaCode = value; }
 
     /**
-     * <p>Represents whether AWS Lambda code scans are automatically enabled for new
+     * <p>Represents whether Lambda code scans are automatically enabled for new
      * members of your Amazon Inspector organization. <pre><code> &lt;/p&gt;
      * </code></pre>
      */

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BlockResponse::NOT_SET:
+            return {};
           case BlockResponse::NODATA:
             return "NODATA";
           case BlockResponse::NXDOMAIN:

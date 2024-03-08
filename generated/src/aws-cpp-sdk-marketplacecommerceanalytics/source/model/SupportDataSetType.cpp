@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SupportDataSetType::NOT_SET:
+            return {};
           case SupportDataSetType::customer_support_contacts_data:
             return "customer_support_contacts_data";
           case SupportDataSetType::test_customer_support_contacts_data:

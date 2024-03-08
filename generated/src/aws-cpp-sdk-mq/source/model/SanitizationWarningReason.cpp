@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SanitizationWarningReason::NOT_SET:
+            return {};
           case SanitizationWarningReason::DISALLOWED_ELEMENT_REMOVED:
             return "DISALLOWED_ELEMENT_REMOVED";
           case SanitizationWarningReason::DISALLOWED_ATTRIBUTE_REMOVED:

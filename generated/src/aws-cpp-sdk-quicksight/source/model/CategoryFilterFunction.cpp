@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CategoryFilterFunction::NOT_SET:
+            return {};
           case CategoryFilterFunction::EXACT:
             return "EXACT";
           case CategoryFilterFunction::CONTAINS:

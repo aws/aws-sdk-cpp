@@ -451,48 +451,44 @@ namespace Model
     /**
      * <p>Whether you want to conceal contact information from WHOIS queries. If you
      * specify <code>true</code>, WHOIS ("who is") queries return contact information
-     * either for Amazon Registrar (for .com, .net, and .org domains) or for our
-     * registrar associate, Gandi (for all other TLDs). If you specify
-     * <code>false</code>, WHOIS queries return the information that you entered for
-     * the admin contact.</p>  <p>You must specify the same privacy setting for
-     * the administrative, registrant, and technical contacts.</p>  <p>Default:
-     * <code>true</code> </p>
+     * either for Amazon Registrar or for our registrar associate, Gandi. If you
+     * specify <code>false</code>, WHOIS queries return the information that you
+     * entered for the admin contact.</p>  <p>You must specify the same privacy
+     * setting for the administrative, billing, registrant, and technical contacts.</p>
+     *  <p>Default: <code>true</code> </p>
      */
     inline bool GetPrivacyProtectAdminContact() const{ return m_privacyProtectAdminContact; }
 
     /**
      * <p>Whether you want to conceal contact information from WHOIS queries. If you
      * specify <code>true</code>, WHOIS ("who is") queries return contact information
-     * either for Amazon Registrar (for .com, .net, and .org domains) or for our
-     * registrar associate, Gandi (for all other TLDs). If you specify
-     * <code>false</code>, WHOIS queries return the information that you entered for
-     * the admin contact.</p>  <p>You must specify the same privacy setting for
-     * the administrative, registrant, and technical contacts.</p>  <p>Default:
-     * <code>true</code> </p>
+     * either for Amazon Registrar or for our registrar associate, Gandi. If you
+     * specify <code>false</code>, WHOIS queries return the information that you
+     * entered for the admin contact.</p>  <p>You must specify the same privacy
+     * setting for the administrative, billing, registrant, and technical contacts.</p>
+     *  <p>Default: <code>true</code> </p>
      */
     inline bool PrivacyProtectAdminContactHasBeenSet() const { return m_privacyProtectAdminContactHasBeenSet; }
 
     /**
      * <p>Whether you want to conceal contact information from WHOIS queries. If you
      * specify <code>true</code>, WHOIS ("who is") queries return contact information
-     * either for Amazon Registrar (for .com, .net, and .org domains) or for our
-     * registrar associate, Gandi (for all other TLDs). If you specify
-     * <code>false</code>, WHOIS queries return the information that you entered for
-     * the admin contact.</p>  <p>You must specify the same privacy setting for
-     * the administrative, registrant, and technical contacts.</p>  <p>Default:
-     * <code>true</code> </p>
+     * either for Amazon Registrar or for our registrar associate, Gandi. If you
+     * specify <code>false</code>, WHOIS queries return the information that you
+     * entered for the admin contact.</p>  <p>You must specify the same privacy
+     * setting for the administrative, billing, registrant, and technical contacts.</p>
+     *  <p>Default: <code>true</code> </p>
      */
     inline void SetPrivacyProtectAdminContact(bool value) { m_privacyProtectAdminContactHasBeenSet = true; m_privacyProtectAdminContact = value; }
 
     /**
      * <p>Whether you want to conceal contact information from WHOIS queries. If you
      * specify <code>true</code>, WHOIS ("who is") queries return contact information
-     * either for Amazon Registrar (for .com, .net, and .org domains) or for our
-     * registrar associate, Gandi (for all other TLDs). If you specify
-     * <code>false</code>, WHOIS queries return the information that you entered for
-     * the admin contact.</p>  <p>You must specify the same privacy setting for
-     * the administrative, registrant, and technical contacts.</p>  <p>Default:
-     * <code>true</code> </p>
+     * either for Amazon Registrar or for our registrar associate, Gandi. If you
+     * specify <code>false</code>, WHOIS queries return the information that you
+     * entered for the admin contact.</p>  <p>You must specify the same privacy
+     * setting for the administrative, billing, registrant, and technical contacts.</p>
+     *  <p>Default: <code>true</code> </p>
      */
     inline RegisterDomainRequest& WithPrivacyProtectAdminContact(bool value) { SetPrivacyProtectAdminContact(value); return *this;}
 
@@ -500,48 +496,44 @@ namespace Model
     /**
      * <p>Whether you want to conceal contact information from WHOIS queries. If you
      * specify <code>true</code>, WHOIS ("who is") queries return contact information
-     * either for Amazon Registrar (for .com, .net, and .org domains) or for our
-     * registrar associate, Gandi (for all other TLDs). If you specify
-     * <code>false</code>, WHOIS queries return the information that you entered for
-     * the registrant contact (the domain owner).</p>  <p>You must specify the
-     * same privacy setting for the administrative, registrant, and technical
-     * contacts.</p>  <p>Default: <code>true</code> </p>
+     * either for Amazon Registrar or for our registrar associate, Gandi. If you
+     * specify <code>false</code>, WHOIS queries return the information that you
+     * entered for the registrant contact (the domain owner).</p>  <p>You must
+     * specify the same privacy setting for the administrative, billing, registrant,
+     * and technical contacts.</p>  <p>Default: <code>true</code> </p>
      */
     inline bool GetPrivacyProtectRegistrantContact() const{ return m_privacyProtectRegistrantContact; }
 
     /**
      * <p>Whether you want to conceal contact information from WHOIS queries. If you
      * specify <code>true</code>, WHOIS ("who is") queries return contact information
-     * either for Amazon Registrar (for .com, .net, and .org domains) or for our
-     * registrar associate, Gandi (for all other TLDs). If you specify
-     * <code>false</code>, WHOIS queries return the information that you entered for
-     * the registrant contact (the domain owner).</p>  <p>You must specify the
-     * same privacy setting for the administrative, registrant, and technical
-     * contacts.</p>  <p>Default: <code>true</code> </p>
+     * either for Amazon Registrar or for our registrar associate, Gandi. If you
+     * specify <code>false</code>, WHOIS queries return the information that you
+     * entered for the registrant contact (the domain owner).</p>  <p>You must
+     * specify the same privacy setting for the administrative, billing, registrant,
+     * and technical contacts.</p>  <p>Default: <code>true</code> </p>
      */
     inline bool PrivacyProtectRegistrantContactHasBeenSet() const { return m_privacyProtectRegistrantContactHasBeenSet; }
 
     /**
      * <p>Whether you want to conceal contact information from WHOIS queries. If you
      * specify <code>true</code>, WHOIS ("who is") queries return contact information
-     * either for Amazon Registrar (for .com, .net, and .org domains) or for our
-     * registrar associate, Gandi (for all other TLDs). If you specify
-     * <code>false</code>, WHOIS queries return the information that you entered for
-     * the registrant contact (the domain owner).</p>  <p>You must specify the
-     * same privacy setting for the administrative, registrant, and technical
-     * contacts.</p>  <p>Default: <code>true</code> </p>
+     * either for Amazon Registrar or for our registrar associate, Gandi. If you
+     * specify <code>false</code>, WHOIS queries return the information that you
+     * entered for the registrant contact (the domain owner).</p>  <p>You must
+     * specify the same privacy setting for the administrative, billing, registrant,
+     * and technical contacts.</p>  <p>Default: <code>true</code> </p>
      */
     inline void SetPrivacyProtectRegistrantContact(bool value) { m_privacyProtectRegistrantContactHasBeenSet = true; m_privacyProtectRegistrantContact = value; }
 
     /**
      * <p>Whether you want to conceal contact information from WHOIS queries. If you
      * specify <code>true</code>, WHOIS ("who is") queries return contact information
-     * either for Amazon Registrar (for .com, .net, and .org domains) or for our
-     * registrar associate, Gandi (for all other TLDs). If you specify
-     * <code>false</code>, WHOIS queries return the information that you entered for
-     * the registrant contact (the domain owner).</p>  <p>You must specify the
-     * same privacy setting for the administrative, registrant, and technical
-     * contacts.</p>  <p>Default: <code>true</code> </p>
+     * either for Amazon Registrar or for our registrar associate, Gandi. If you
+     * specify <code>false</code>, WHOIS queries return the information that you
+     * entered for the registrant contact (the domain owner).</p>  <p>You must
+     * specify the same privacy setting for the administrative, billing, registrant,
+     * and technical contacts.</p>  <p>Default: <code>true</code> </p>
      */
     inline RegisterDomainRequest& WithPrivacyProtectRegistrantContact(bool value) { SetPrivacyProtectRegistrantContact(value); return *this;}
 
@@ -549,50 +541,134 @@ namespace Model
     /**
      * <p>Whether you want to conceal contact information from WHOIS queries. If you
      * specify <code>true</code>, WHOIS ("who is") queries return contact information
-     * either for Amazon Registrar (for .com, .net, and .org domains) or for our
-     * registrar associate, Gandi (for all other TLDs). If you specify
-     * <code>false</code>, WHOIS queries return the information that you entered for
-     * the technical contact.</p>  <p>You must specify the same privacy setting
-     * for the administrative, registrant, and technical contacts.</p> 
-     * <p>Default: <code>true</code> </p>
+     * either for Amazon Registrar or for our registrar associate, Gandi. If you
+     * specify <code>false</code>, WHOIS queries return the information that you
+     * entered for the technical contact.</p>  <p>You must specify the same
+     * privacy setting for the administrative, billing, registrant, and technical
+     * contacts.</p>  <p>Default: <code>true</code> </p>
      */
     inline bool GetPrivacyProtectTechContact() const{ return m_privacyProtectTechContact; }
 
     /**
      * <p>Whether you want to conceal contact information from WHOIS queries. If you
      * specify <code>true</code>, WHOIS ("who is") queries return contact information
-     * either for Amazon Registrar (for .com, .net, and .org domains) or for our
-     * registrar associate, Gandi (for all other TLDs). If you specify
-     * <code>false</code>, WHOIS queries return the information that you entered for
-     * the technical contact.</p>  <p>You must specify the same privacy setting
-     * for the administrative, registrant, and technical contacts.</p> 
-     * <p>Default: <code>true</code> </p>
+     * either for Amazon Registrar or for our registrar associate, Gandi. If you
+     * specify <code>false</code>, WHOIS queries return the information that you
+     * entered for the technical contact.</p>  <p>You must specify the same
+     * privacy setting for the administrative, billing, registrant, and technical
+     * contacts.</p>  <p>Default: <code>true</code> </p>
      */
     inline bool PrivacyProtectTechContactHasBeenSet() const { return m_privacyProtectTechContactHasBeenSet; }
 
     /**
      * <p>Whether you want to conceal contact information from WHOIS queries. If you
      * specify <code>true</code>, WHOIS ("who is") queries return contact information
-     * either for Amazon Registrar (for .com, .net, and .org domains) or for our
-     * registrar associate, Gandi (for all other TLDs). If you specify
-     * <code>false</code>, WHOIS queries return the information that you entered for
-     * the technical contact.</p>  <p>You must specify the same privacy setting
-     * for the administrative, registrant, and technical contacts.</p> 
-     * <p>Default: <code>true</code> </p>
+     * either for Amazon Registrar or for our registrar associate, Gandi. If you
+     * specify <code>false</code>, WHOIS queries return the information that you
+     * entered for the technical contact.</p>  <p>You must specify the same
+     * privacy setting for the administrative, billing, registrant, and technical
+     * contacts.</p>  <p>Default: <code>true</code> </p>
      */
     inline void SetPrivacyProtectTechContact(bool value) { m_privacyProtectTechContactHasBeenSet = true; m_privacyProtectTechContact = value; }
 
     /**
      * <p>Whether you want to conceal contact information from WHOIS queries. If you
      * specify <code>true</code>, WHOIS ("who is") queries return contact information
-     * either for Amazon Registrar (for .com, .net, and .org domains) or for our
-     * registrar associate, Gandi (for all other TLDs). If you specify
-     * <code>false</code>, WHOIS queries return the information that you entered for
-     * the technical contact.</p>  <p>You must specify the same privacy setting
-     * for the administrative, registrant, and technical contacts.</p> 
-     * <p>Default: <code>true</code> </p>
+     * either for Amazon Registrar or for our registrar associate, Gandi. If you
+     * specify <code>false</code>, WHOIS queries return the information that you
+     * entered for the technical contact.</p>  <p>You must specify the same
+     * privacy setting for the administrative, billing, registrant, and technical
+     * contacts.</p>  <p>Default: <code>true</code> </p>
      */
     inline RegisterDomainRequest& WithPrivacyProtectTechContact(bool value) { SetPrivacyProtectTechContact(value); return *this;}
+
+
+    /**
+     * <p>Provides detailed contact information. For information about the values that
+     * you specify for each element, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
+     */
+    inline const ContactDetail& GetBillingContact() const{ return m_billingContact; }
+
+    /**
+     * <p>Provides detailed contact information. For information about the values that
+     * you specify for each element, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
+     */
+    inline bool BillingContactHasBeenSet() const { return m_billingContactHasBeenSet; }
+
+    /**
+     * <p>Provides detailed contact information. For information about the values that
+     * you specify for each element, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
+     */
+    inline void SetBillingContact(const ContactDetail& value) { m_billingContactHasBeenSet = true; m_billingContact = value; }
+
+    /**
+     * <p>Provides detailed contact information. For information about the values that
+     * you specify for each element, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
+     */
+    inline void SetBillingContact(ContactDetail&& value) { m_billingContactHasBeenSet = true; m_billingContact = std::move(value); }
+
+    /**
+     * <p>Provides detailed contact information. For information about the values that
+     * you specify for each element, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
+     */
+    inline RegisterDomainRequest& WithBillingContact(const ContactDetail& value) { SetBillingContact(value); return *this;}
+
+    /**
+     * <p>Provides detailed contact information. For information about the values that
+     * you specify for each element, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.</p>
+     */
+    inline RegisterDomainRequest& WithBillingContact(ContactDetail&& value) { SetBillingContact(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Whether you want to conceal contact information from WHOIS queries. If you
+     * specify <code>true</code>, WHOIS ("who is") queries return contact information
+     * either for Amazon Registrar or for our registrar associate, Gandi. If you
+     * specify <code>false</code>, WHOIS queries return the information that you
+     * entered for the billing contact.</p>  <p>You must specify the same privacy
+     * setting for the administrative, billing, registrant, and technical contacts.</p>
+     * 
+     */
+    inline bool GetPrivacyProtectBillingContact() const{ return m_privacyProtectBillingContact; }
+
+    /**
+     * <p>Whether you want to conceal contact information from WHOIS queries. If you
+     * specify <code>true</code>, WHOIS ("who is") queries return contact information
+     * either for Amazon Registrar or for our registrar associate, Gandi. If you
+     * specify <code>false</code>, WHOIS queries return the information that you
+     * entered for the billing contact.</p>  <p>You must specify the same privacy
+     * setting for the administrative, billing, registrant, and technical contacts.</p>
+     * 
+     */
+    inline bool PrivacyProtectBillingContactHasBeenSet() const { return m_privacyProtectBillingContactHasBeenSet; }
+
+    /**
+     * <p>Whether you want to conceal contact information from WHOIS queries. If you
+     * specify <code>true</code>, WHOIS ("who is") queries return contact information
+     * either for Amazon Registrar or for our registrar associate, Gandi. If you
+     * specify <code>false</code>, WHOIS queries return the information that you
+     * entered for the billing contact.</p>  <p>You must specify the same privacy
+     * setting for the administrative, billing, registrant, and technical contacts.</p>
+     * 
+     */
+    inline void SetPrivacyProtectBillingContact(bool value) { m_privacyProtectBillingContactHasBeenSet = true; m_privacyProtectBillingContact = value; }
+
+    /**
+     * <p>Whether you want to conceal contact information from WHOIS queries. If you
+     * specify <code>true</code>, WHOIS ("who is") queries return contact information
+     * either for Amazon Registrar or for our registrar associate, Gandi. If you
+     * specify <code>false</code>, WHOIS queries return the information that you
+     * entered for the billing contact.</p>  <p>You must specify the same privacy
+     * setting for the administrative, billing, registrant, and technical contacts.</p>
+     * 
+     */
+    inline RegisterDomainRequest& WithPrivacyProtectBillingContact(bool value) { SetPrivacyProtectBillingContact(value); return *this;}
 
   private:
 
@@ -625,6 +701,12 @@ namespace Model
 
     bool m_privacyProtectTechContact;
     bool m_privacyProtectTechContactHasBeenSet = false;
+
+    ContactDetail m_billingContact;
+    bool m_billingContactHasBeenSet = false;
+
+    bool m_privacyProtectBillingContact;
+    bool m_privacyProtectBillingContactHasBeenSet = false;
   };
 
 } // namespace Model

@@ -402,6 +402,31 @@ namespace Model
 
 
     /**
+     * <p>Indicates whether Amazon EMR should gracefully replace core nodes that have
+     * degraded within the cluster.</p>
+     */
+    inline bool GetUnhealthyNodeReplacement() const{ return m_unhealthyNodeReplacement; }
+
+    /**
+     * <p>Indicates whether Amazon EMR should gracefully replace core nodes that have
+     * degraded within the cluster.</p>
+     */
+    inline bool UnhealthyNodeReplacementHasBeenSet() const { return m_unhealthyNodeReplacementHasBeenSet; }
+
+    /**
+     * <p>Indicates whether Amazon EMR should gracefully replace core nodes that have
+     * degraded within the cluster.</p>
+     */
+    inline void SetUnhealthyNodeReplacement(bool value) { m_unhealthyNodeReplacementHasBeenSet = true; m_unhealthyNodeReplacement = value; }
+
+    /**
+     * <p>Indicates whether Amazon EMR should gracefully replace core nodes that have
+     * degraded within the cluster.</p>
+     */
+    inline JobFlowInstancesConfig& WithUnhealthyNodeReplacement(bool value) { SetUnhealthyNodeReplacement(value); return *this;}
+
+
+    /**
      * <p>Applies only to Amazon EMR release versions earlier than 4.0. The Hadoop
      * version for the cluster. Valid inputs are "0.18" (no longer maintained), "0.20"
      * (no longer maintained), "0.20.205" (no longer maintained), "1.0.3", "2.2.0", or
@@ -928,6 +953,9 @@ namespace Model
 
     bool m_terminationProtected;
     bool m_terminationProtectedHasBeenSet = false;
+
+    bool m_unhealthyNodeReplacement;
+    bool m_unhealthyNodeReplacementHasBeenSet = false;
 
     Aws::String m_hadoopVersion;
     bool m_hadoopVersionHasBeenSet = false;

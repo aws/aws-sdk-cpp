@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SignInMethod::NOT_SET:
+            return {};
           case SignInMethod::EMAIL:
             return "EMAIL";
           case SignInMethod::EMAIL_AND_PHONE_NUMBER:

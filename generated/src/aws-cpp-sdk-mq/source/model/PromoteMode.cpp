@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PromoteMode::NOT_SET:
+            return {};
           case PromoteMode::SWITCHOVER:
             return "SWITCHOVER";
           case PromoteMode::FAILOVER:

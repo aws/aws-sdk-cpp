@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FunctionStage::NOT_SET:
+            return {};
           case FunctionStage::DEVELOPMENT:
             return "DEVELOPMENT";
           case FunctionStage::LIVE:

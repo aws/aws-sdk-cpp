@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CmfcAudioDuration::NOT_SET:
+            return {};
           case CmfcAudioDuration::DEFAULT_CODEC_DURATION:
             return "DEFAULT_CODEC_DURATION";
           case CmfcAudioDuration::MATCH_VIDEO_DURATION:

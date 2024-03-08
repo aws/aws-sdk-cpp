@@ -26,7 +26,12 @@ namespace Model
 
   /**
    * <p>A structure that encapsulates, or contains, the media storage configuration
-   * properties.</p><p><h3>See Also:</h3>   <a
+   * properties.</p> <ul> <li> <p>If <code>StorageStatus</code> is enabled, the data
+   * will be stored in the <code>StreamARN</code> provided. In order for WebRTC
+   * Ingestion to work, the stream must have data retention enabled.</p> </li> <li>
+   * <p>If <code>StorageStatus</code> is disabled, no data will be stored, and the
+   * <code>StreamARN</code> parameter will not be needed. </p> </li> </ul><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/MediaStorageConfiguration">AWS
    * API Reference</a></p>
    */
@@ -40,42 +45,42 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the stream </p>
+     * <p>The Amazon Resource Name (ARN) of the stream. </p>
      */
     inline const Aws::String& GetStreamARN() const{ return m_streamARN; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the stream </p>
+     * <p>The Amazon Resource Name (ARN) of the stream. </p>
      */
     inline bool StreamARNHasBeenSet() const { return m_streamARNHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the stream </p>
+     * <p>The Amazon Resource Name (ARN) of the stream. </p>
      */
     inline void SetStreamARN(const Aws::String& value) { m_streamARNHasBeenSet = true; m_streamARN = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the stream </p>
+     * <p>The Amazon Resource Name (ARN) of the stream. </p>
      */
     inline void SetStreamARN(Aws::String&& value) { m_streamARNHasBeenSet = true; m_streamARN = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the stream </p>
+     * <p>The Amazon Resource Name (ARN) of the stream. </p>
      */
     inline void SetStreamARN(const char* value) { m_streamARNHasBeenSet = true; m_streamARN.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the stream </p>
+     * <p>The Amazon Resource Name (ARN) of the stream. </p>
      */
     inline MediaStorageConfiguration& WithStreamARN(const Aws::String& value) { SetStreamARN(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the stream </p>
+     * <p>The Amazon Resource Name (ARN) of the stream. </p>
      */
     inline MediaStorageConfiguration& WithStreamARN(Aws::String&& value) { SetStreamARN(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the stream </p>
+     * <p>The Amazon Resource Name (ARN) of the stream. </p>
      */
     inline MediaStorageConfiguration& WithStreamARN(const char* value) { SetStreamARN(value); return *this;}
 

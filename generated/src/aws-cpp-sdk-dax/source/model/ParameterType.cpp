@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ParameterType::NOT_SET:
+            return {};
           case ParameterType::DEFAULT:
             return "DEFAULT";
           case ParameterType::NODE_TYPE_SPECIFIC:

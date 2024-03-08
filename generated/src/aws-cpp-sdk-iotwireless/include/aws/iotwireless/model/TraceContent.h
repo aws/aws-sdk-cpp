@@ -26,8 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>Trace content for your wireless gateway and wireless device
-   * resources.</p><p><h3>See Also:</h3>   <a
+   * <p>Trace content for your wireless devices, gateways, and multicast
+   * groups.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/TraceContent">AWS
    * API Reference</a></p>
    */

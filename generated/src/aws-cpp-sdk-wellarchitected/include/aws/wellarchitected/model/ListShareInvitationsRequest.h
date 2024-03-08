@@ -194,44 +194,101 @@ namespace Model
 
 
     /**
-     * <p>Profile name prefix.</p>
+     * <p>An optional string added to the beginning of each profile name returned in
+     * the results.</p>
      */
     inline const Aws::String& GetProfileNamePrefix() const{ return m_profileNamePrefix; }
 
     /**
-     * <p>Profile name prefix.</p>
+     * <p>An optional string added to the beginning of each profile name returned in
+     * the results.</p>
      */
     inline bool ProfileNamePrefixHasBeenSet() const { return m_profileNamePrefixHasBeenSet; }
 
     /**
-     * <p>Profile name prefix.</p>
+     * <p>An optional string added to the beginning of each profile name returned in
+     * the results.</p>
      */
     inline void SetProfileNamePrefix(const Aws::String& value) { m_profileNamePrefixHasBeenSet = true; m_profileNamePrefix = value; }
 
     /**
-     * <p>Profile name prefix.</p>
+     * <p>An optional string added to the beginning of each profile name returned in
+     * the results.</p>
      */
     inline void SetProfileNamePrefix(Aws::String&& value) { m_profileNamePrefixHasBeenSet = true; m_profileNamePrefix = std::move(value); }
 
     /**
-     * <p>Profile name prefix.</p>
+     * <p>An optional string added to the beginning of each profile name returned in
+     * the results.</p>
      */
     inline void SetProfileNamePrefix(const char* value) { m_profileNamePrefixHasBeenSet = true; m_profileNamePrefix.assign(value); }
 
     /**
-     * <p>Profile name prefix.</p>
+     * <p>An optional string added to the beginning of each profile name returned in
+     * the results.</p>
      */
     inline ListShareInvitationsRequest& WithProfileNamePrefix(const Aws::String& value) { SetProfileNamePrefix(value); return *this;}
 
     /**
-     * <p>Profile name prefix.</p>
+     * <p>An optional string added to the beginning of each profile name returned in
+     * the results.</p>
      */
     inline ListShareInvitationsRequest& WithProfileNamePrefix(Aws::String&& value) { SetProfileNamePrefix(std::move(value)); return *this;}
 
     /**
-     * <p>Profile name prefix.</p>
+     * <p>An optional string added to the beginning of each profile name returned in
+     * the results.</p>
      */
     inline ListShareInvitationsRequest& WithProfileNamePrefix(const char* value) { SetProfileNamePrefix(value); return *this;}
+
+
+    /**
+     * <p>An optional string added to the beginning of each review template name
+     * returned in the results.</p>
+     */
+    inline const Aws::String& GetTemplateNamePrefix() const{ return m_templateNamePrefix; }
+
+    /**
+     * <p>An optional string added to the beginning of each review template name
+     * returned in the results.</p>
+     */
+    inline bool TemplateNamePrefixHasBeenSet() const { return m_templateNamePrefixHasBeenSet; }
+
+    /**
+     * <p>An optional string added to the beginning of each review template name
+     * returned in the results.</p>
+     */
+    inline void SetTemplateNamePrefix(const Aws::String& value) { m_templateNamePrefixHasBeenSet = true; m_templateNamePrefix = value; }
+
+    /**
+     * <p>An optional string added to the beginning of each review template name
+     * returned in the results.</p>
+     */
+    inline void SetTemplateNamePrefix(Aws::String&& value) { m_templateNamePrefixHasBeenSet = true; m_templateNamePrefix = std::move(value); }
+
+    /**
+     * <p>An optional string added to the beginning of each review template name
+     * returned in the results.</p>
+     */
+    inline void SetTemplateNamePrefix(const char* value) { m_templateNamePrefixHasBeenSet = true; m_templateNamePrefix.assign(value); }
+
+    /**
+     * <p>An optional string added to the beginning of each review template name
+     * returned in the results.</p>
+     */
+    inline ListShareInvitationsRequest& WithTemplateNamePrefix(const Aws::String& value) { SetTemplateNamePrefix(value); return *this;}
+
+    /**
+     * <p>An optional string added to the beginning of each review template name
+     * returned in the results.</p>
+     */
+    inline ListShareInvitationsRequest& WithTemplateNamePrefix(Aws::String&& value) { SetTemplateNamePrefix(std::move(value)); return *this;}
+
+    /**
+     * <p>An optional string added to the beginning of each review template name
+     * returned in the results.</p>
+     */
+    inline ListShareInvitationsRequest& WithTemplateNamePrefix(const char* value) { SetTemplateNamePrefix(value); return *this;}
 
   private:
 
@@ -252,6 +309,9 @@ namespace Model
 
     Aws::String m_profileNamePrefix;
     bool m_profileNamePrefixHasBeenSet = false;
+
+    Aws::String m_templateNamePrefix;
+    bool m_templateNamePrefixHasBeenSet = false;
   };
 
 } // namespace Model

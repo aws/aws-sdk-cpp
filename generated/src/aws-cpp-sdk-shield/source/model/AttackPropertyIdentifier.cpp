@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AttackPropertyIdentifier::NOT_SET:
+            return {};
           case AttackPropertyIdentifier::DESTINATION_URL:
             return "DESTINATION_URL";
           case AttackPropertyIdentifier::REFERRER:

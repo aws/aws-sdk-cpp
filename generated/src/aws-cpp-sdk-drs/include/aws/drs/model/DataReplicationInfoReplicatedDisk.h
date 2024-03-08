@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/drs/Drs_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/drs/model/VolumeStatus.h>
 #include <utility>
 
 namespace Aws
@@ -161,6 +162,37 @@ namespace Model
      */
     inline DataReplicationInfoReplicatedDisk& WithTotalStorageBytes(long long value) { SetTotalStorageBytes(value); return *this;}
 
+
+    /**
+     * <p>The status of the volume.</p>
+     */
+    inline const VolumeStatus& GetVolumeStatus() const{ return m_volumeStatus; }
+
+    /**
+     * <p>The status of the volume.</p>
+     */
+    inline bool VolumeStatusHasBeenSet() const { return m_volumeStatusHasBeenSet; }
+
+    /**
+     * <p>The status of the volume.</p>
+     */
+    inline void SetVolumeStatus(const VolumeStatus& value) { m_volumeStatusHasBeenSet = true; m_volumeStatus = value; }
+
+    /**
+     * <p>The status of the volume.</p>
+     */
+    inline void SetVolumeStatus(VolumeStatus&& value) { m_volumeStatusHasBeenSet = true; m_volumeStatus = std::move(value); }
+
+    /**
+     * <p>The status of the volume.</p>
+     */
+    inline DataReplicationInfoReplicatedDisk& WithVolumeStatus(const VolumeStatus& value) { SetVolumeStatus(value); return *this;}
+
+    /**
+     * <p>The status of the volume.</p>
+     */
+    inline DataReplicationInfoReplicatedDisk& WithVolumeStatus(VolumeStatus&& value) { SetVolumeStatus(std::move(value)); return *this;}
+
   private:
 
     long long m_backloggedStorageBytes;
@@ -177,6 +209,9 @@ namespace Model
 
     long long m_totalStorageBytes;
     bool m_totalStorageBytesHasBeenSet = false;
+
+    VolumeStatus m_volumeStatus;
+    bool m_volumeStatusHasBeenSet = false;
   };
 
 } // namespace Model

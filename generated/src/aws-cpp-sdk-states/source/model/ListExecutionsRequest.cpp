@@ -19,7 +19,9 @@ ListExecutionsRequest::ListExecutionsRequest() :
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
-    m_mapRunArnHasBeenSet(false)
+    m_mapRunArnHasBeenSet(false),
+    m_redriveFilter(ExecutionRedriveFilter::NOT_SET),
+    m_redriveFilterHasBeenSet(false)
 {
 }
 
@@ -54,6 +56,11 @@ Aws::String ListExecutionsRequest::SerializePayload() const
   {
    payload.WithString("mapRunArn", m_mapRunArn);
 
+  }
+
+  if(m_redriveFilterHasBeenSet)
+  {
+   payload.WithString("redriveFilter", ExecutionRedriveFilterMapper::GetNameForExecutionRedriveFilter(m_redriveFilter));
   }
 
   return payload.View().WriteReadable();

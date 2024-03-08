@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case IntentSortAttribute::NOT_SET:
+            return {};
           case IntentSortAttribute::IntentName:
             return "IntentName";
           case IntentSortAttribute::LastUpdatedDateTime:

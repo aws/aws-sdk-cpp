@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ExperimentStatus::NOT_SET:
+            return {};
           case ExperimentStatus::CREATED:
             return "CREATED";
           case ExperimentStatus::UPDATING:

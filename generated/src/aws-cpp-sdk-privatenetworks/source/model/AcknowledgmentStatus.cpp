@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AcknowledgmentStatus::NOT_SET:
+            return {};
           case AcknowledgmentStatus::ACKNOWLEDGING:
             return "ACKNOWLEDGING";
           case AcknowledgmentStatus::ACKNOWLEDGED:

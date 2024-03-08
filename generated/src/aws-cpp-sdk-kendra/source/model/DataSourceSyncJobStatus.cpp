@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DataSourceSyncJobStatus::NOT_SET:
+            return {};
           case DataSourceSyncJobStatus::FAILED:
             return "FAILED";
           case DataSourceSyncJobStatus::SUCCEEDED:

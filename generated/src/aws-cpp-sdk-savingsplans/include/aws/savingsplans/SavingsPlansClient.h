@@ -27,8 +27,8 @@ namespace SavingsPlans
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef SavingsPlansClientConfiguration ClientConfigurationType;
       typedef SavingsPlansEndpointProvider EndpointProviderType;
@@ -38,14 +38,14 @@ namespace SavingsPlans
         * is not specified, it will be initialized to default values.
         */
         SavingsPlansClient(const Aws::SavingsPlans::SavingsPlansClientConfiguration& clientConfiguration = Aws::SavingsPlans::SavingsPlansClientConfiguration(),
-                           std::shared_ptr<SavingsPlansEndpointProviderBase> endpointProvider = Aws::MakeShared<SavingsPlansEndpointProvider>(ALLOCATION_TAG));
+                           std::shared_ptr<SavingsPlansEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         SavingsPlansClient(const Aws::Auth::AWSCredentials& credentials,
-                           std::shared_ptr<SavingsPlansEndpointProviderBase> endpointProvider = Aws::MakeShared<SavingsPlansEndpointProvider>(ALLOCATION_TAG),
+                           std::shared_ptr<SavingsPlansEndpointProviderBase> endpointProvider = nullptr,
                            const Aws::SavingsPlans::SavingsPlansClientConfiguration& clientConfiguration = Aws::SavingsPlans::SavingsPlansClientConfiguration());
 
        /**
@@ -53,7 +53,7 @@ namespace SavingsPlans
         * the default http client factory will be used
         */
         SavingsPlansClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                           std::shared_ptr<SavingsPlansEndpointProviderBase> endpointProvider = Aws::MakeShared<SavingsPlansEndpointProvider>(ALLOCATION_TAG),
+                           std::shared_ptr<SavingsPlansEndpointProviderBase> endpointProvider = nullptr,
                            const Aws::SavingsPlans::SavingsPlansClientConfiguration& clientConfiguration = Aws::SavingsPlans::SavingsPlansClientConfiguration());
 
 

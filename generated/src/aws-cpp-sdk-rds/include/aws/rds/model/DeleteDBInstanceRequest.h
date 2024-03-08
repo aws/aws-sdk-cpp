@@ -97,66 +97,62 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates whether to skip the creation of a final DB snapshot
-     * before deleting the instance. If you enable this parameter, RDS doesn't create a
-     * DB snapshot. If you don't enable this parameter, RDS creates a DB snapshot
-     * before the DB instance is deleted. By default, skip isn't enabled, and the DB
-     * snapshot is created.</p>  <p>If you don't enable this parameter, you must
-     * specify the <code>FinalDBSnapshotIdentifier</code> parameter.</p> 
-     * <p>When a DB instance is in a failure state and has a status of
-     * <code>failed</code>, <code>incompatible-restore</code>, or
-     * <code>incompatible-network</code>, RDS can delete the instance only if you
-     * enable this parameter.</p> <p>If you delete a read replica or an RDS Custom
-     * instance, you must enable this setting.</p> <p>This setting is required for RDS
-     * Custom.</p>
+     * <p>Specifies whether to skip the creation of a final DB snapshot before deleting
+     * the instance. If you enable this parameter, RDS doesn't create a DB snapshot. If
+     * you don't enable this parameter, RDS creates a DB snapshot before the DB
+     * instance is deleted. By default, skip isn't enabled, and the DB snapshot is
+     * created.</p>  <p>If you don't enable this parameter, you must specify the
+     * <code>FinalDBSnapshotIdentifier</code> parameter.</p>  <p>When a DB
+     * instance is in a failure state and has a status of <code>failed</code>,
+     * <code>incompatible-restore</code>, or <code>incompatible-network</code>, RDS can
+     * delete the instance only if you enable this parameter.</p> <p>If you delete a
+     * read replica or an RDS Custom instance, you must enable this setting.</p>
+     * <p>This setting is required for RDS Custom.</p>
      */
     inline bool GetSkipFinalSnapshot() const{ return m_skipFinalSnapshot; }
 
     /**
-     * <p>A value that indicates whether to skip the creation of a final DB snapshot
-     * before deleting the instance. If you enable this parameter, RDS doesn't create a
-     * DB snapshot. If you don't enable this parameter, RDS creates a DB snapshot
-     * before the DB instance is deleted. By default, skip isn't enabled, and the DB
-     * snapshot is created.</p>  <p>If you don't enable this parameter, you must
-     * specify the <code>FinalDBSnapshotIdentifier</code> parameter.</p> 
-     * <p>When a DB instance is in a failure state and has a status of
-     * <code>failed</code>, <code>incompatible-restore</code>, or
-     * <code>incompatible-network</code>, RDS can delete the instance only if you
-     * enable this parameter.</p> <p>If you delete a read replica or an RDS Custom
-     * instance, you must enable this setting.</p> <p>This setting is required for RDS
-     * Custom.</p>
+     * <p>Specifies whether to skip the creation of a final DB snapshot before deleting
+     * the instance. If you enable this parameter, RDS doesn't create a DB snapshot. If
+     * you don't enable this parameter, RDS creates a DB snapshot before the DB
+     * instance is deleted. By default, skip isn't enabled, and the DB snapshot is
+     * created.</p>  <p>If you don't enable this parameter, you must specify the
+     * <code>FinalDBSnapshotIdentifier</code> parameter.</p>  <p>When a DB
+     * instance is in a failure state and has a status of <code>failed</code>,
+     * <code>incompatible-restore</code>, or <code>incompatible-network</code>, RDS can
+     * delete the instance only if you enable this parameter.</p> <p>If you delete a
+     * read replica or an RDS Custom instance, you must enable this setting.</p>
+     * <p>This setting is required for RDS Custom.</p>
      */
     inline bool SkipFinalSnapshotHasBeenSet() const { return m_skipFinalSnapshotHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether to skip the creation of a final DB snapshot
-     * before deleting the instance. If you enable this parameter, RDS doesn't create a
-     * DB snapshot. If you don't enable this parameter, RDS creates a DB snapshot
-     * before the DB instance is deleted. By default, skip isn't enabled, and the DB
-     * snapshot is created.</p>  <p>If you don't enable this parameter, you must
-     * specify the <code>FinalDBSnapshotIdentifier</code> parameter.</p> 
-     * <p>When a DB instance is in a failure state and has a status of
-     * <code>failed</code>, <code>incompatible-restore</code>, or
-     * <code>incompatible-network</code>, RDS can delete the instance only if you
-     * enable this parameter.</p> <p>If you delete a read replica or an RDS Custom
-     * instance, you must enable this setting.</p> <p>This setting is required for RDS
-     * Custom.</p>
+     * <p>Specifies whether to skip the creation of a final DB snapshot before deleting
+     * the instance. If you enable this parameter, RDS doesn't create a DB snapshot. If
+     * you don't enable this parameter, RDS creates a DB snapshot before the DB
+     * instance is deleted. By default, skip isn't enabled, and the DB snapshot is
+     * created.</p>  <p>If you don't enable this parameter, you must specify the
+     * <code>FinalDBSnapshotIdentifier</code> parameter.</p>  <p>When a DB
+     * instance is in a failure state and has a status of <code>failed</code>,
+     * <code>incompatible-restore</code>, or <code>incompatible-network</code>, RDS can
+     * delete the instance only if you enable this parameter.</p> <p>If you delete a
+     * read replica or an RDS Custom instance, you must enable this setting.</p>
+     * <p>This setting is required for RDS Custom.</p>
      */
     inline void SetSkipFinalSnapshot(bool value) { m_skipFinalSnapshotHasBeenSet = true; m_skipFinalSnapshot = value; }
 
     /**
-     * <p>A value that indicates whether to skip the creation of a final DB snapshot
-     * before deleting the instance. If you enable this parameter, RDS doesn't create a
-     * DB snapshot. If you don't enable this parameter, RDS creates a DB snapshot
-     * before the DB instance is deleted. By default, skip isn't enabled, and the DB
-     * snapshot is created.</p>  <p>If you don't enable this parameter, you must
-     * specify the <code>FinalDBSnapshotIdentifier</code> parameter.</p> 
-     * <p>When a DB instance is in a failure state and has a status of
-     * <code>failed</code>, <code>incompatible-restore</code>, or
-     * <code>incompatible-network</code>, RDS can delete the instance only if you
-     * enable this parameter.</p> <p>If you delete a read replica or an RDS Custom
-     * instance, you must enable this setting.</p> <p>This setting is required for RDS
-     * Custom.</p>
+     * <p>Specifies whether to skip the creation of a final DB snapshot before deleting
+     * the instance. If you enable this parameter, RDS doesn't create a DB snapshot. If
+     * you don't enable this parameter, RDS creates a DB snapshot before the DB
+     * instance is deleted. By default, skip isn't enabled, and the DB snapshot is
+     * created.</p>  <p>If you don't enable this parameter, you must specify the
+     * <code>FinalDBSnapshotIdentifier</code> parameter.</p>  <p>When a DB
+     * instance is in a failure state and has a status of <code>failed</code>,
+     * <code>incompatible-restore</code>, or <code>incompatible-network</code>, RDS can
+     * delete the instance only if you enable this parameter.</p> <p>If you delete a
+     * read replica or an RDS Custom instance, you must enable this setting.</p>
+     * <p>This setting is required for RDS Custom.</p>
      */
     inline DeleteDBInstanceRequest& WithSkipFinalSnapshot(bool value) { SetSkipFinalSnapshot(value); return *this;}
 
@@ -259,30 +255,30 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates whether to remove automated backups immediately after
-     * the DB instance is deleted. This parameter isn't case-sensitive. The default is
-     * to remove automated backups immediately after the DB instance is deleted.</p>
+     * <p>Specifies whether to remove automated backups immediately after the DB
+     * instance is deleted. This parameter isn't case-sensitive. The default is to
+     * remove automated backups immediately after the DB instance is deleted.</p>
      */
     inline bool GetDeleteAutomatedBackups() const{ return m_deleteAutomatedBackups; }
 
     /**
-     * <p>A value that indicates whether to remove automated backups immediately after
-     * the DB instance is deleted. This parameter isn't case-sensitive. The default is
-     * to remove automated backups immediately after the DB instance is deleted.</p>
+     * <p>Specifies whether to remove automated backups immediately after the DB
+     * instance is deleted. This parameter isn't case-sensitive. The default is to
+     * remove automated backups immediately after the DB instance is deleted.</p>
      */
     inline bool DeleteAutomatedBackupsHasBeenSet() const { return m_deleteAutomatedBackupsHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether to remove automated backups immediately after
-     * the DB instance is deleted. This parameter isn't case-sensitive. The default is
-     * to remove automated backups immediately after the DB instance is deleted.</p>
+     * <p>Specifies whether to remove automated backups immediately after the DB
+     * instance is deleted. This parameter isn't case-sensitive. The default is to
+     * remove automated backups immediately after the DB instance is deleted.</p>
      */
     inline void SetDeleteAutomatedBackups(bool value) { m_deleteAutomatedBackupsHasBeenSet = true; m_deleteAutomatedBackups = value; }
 
     /**
-     * <p>A value that indicates whether to remove automated backups immediately after
-     * the DB instance is deleted. This parameter isn't case-sensitive. The default is
-     * to remove automated backups immediately after the DB instance is deleted.</p>
+     * <p>Specifies whether to remove automated backups immediately after the DB
+     * instance is deleted. This parameter isn't case-sensitive. The default is to
+     * remove automated backups immediately after the DB instance is deleted.</p>
      */
     inline DeleteDBInstanceRequest& WithDeleteAutomatedBackups(bool value) { SetDeleteAutomatedBackups(value); return *this;}
 

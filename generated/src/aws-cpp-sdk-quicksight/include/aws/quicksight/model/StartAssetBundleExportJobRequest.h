@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/quicksight/model/AssetBundleExportFormat.h>
 #include <aws/quicksight/model/AssetBundleCloudFormationOverridePropertyConfiguration.h>
+#include <aws/quicksight/model/AssetBundleExportJobValidationStrategy.h>
 #include <utility>
 
 namespace Aws
@@ -366,6 +367,129 @@ namespace Model
      */
     inline StartAssetBundleExportJobRequest& WithCloudFormationOverridePropertyConfiguration(AssetBundleCloudFormationOverridePropertyConfiguration&& value) { SetCloudFormationOverridePropertyConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A Boolean that determines whether all permissions for each resource ARN are
+     * exported with the job. If you set <code>IncludePermissions</code> to
+     * <code>TRUE</code>, any permissions associated with each resource are exported.
+     * </p>
+     */
+    inline bool GetIncludePermissions() const{ return m_includePermissions; }
+
+    /**
+     * <p>A Boolean that determines whether all permissions for each resource ARN are
+     * exported with the job. If you set <code>IncludePermissions</code> to
+     * <code>TRUE</code>, any permissions associated with each resource are exported.
+     * </p>
+     */
+    inline bool IncludePermissionsHasBeenSet() const { return m_includePermissionsHasBeenSet; }
+
+    /**
+     * <p>A Boolean that determines whether all permissions for each resource ARN are
+     * exported with the job. If you set <code>IncludePermissions</code> to
+     * <code>TRUE</code>, any permissions associated with each resource are exported.
+     * </p>
+     */
+    inline void SetIncludePermissions(bool value) { m_includePermissionsHasBeenSet = true; m_includePermissions = value; }
+
+    /**
+     * <p>A Boolean that determines whether all permissions for each resource ARN are
+     * exported with the job. If you set <code>IncludePermissions</code> to
+     * <code>TRUE</code>, any permissions associated with each resource are exported.
+     * </p>
+     */
+    inline StartAssetBundleExportJobRequest& WithIncludePermissions(bool value) { SetIncludePermissions(value); return *this;}
+
+
+    /**
+     * <p> A Boolean that determines whether all tags for each resource ARN are
+     * exported with the job. If you set <code>IncludeTags</code> to <code>TRUE</code>,
+     * any tags associated with each resource are exported.</p>
+     */
+    inline bool GetIncludeTags() const{ return m_includeTags; }
+
+    /**
+     * <p> A Boolean that determines whether all tags for each resource ARN are
+     * exported with the job. If you set <code>IncludeTags</code> to <code>TRUE</code>,
+     * any tags associated with each resource are exported.</p>
+     */
+    inline bool IncludeTagsHasBeenSet() const { return m_includeTagsHasBeenSet; }
+
+    /**
+     * <p> A Boolean that determines whether all tags for each resource ARN are
+     * exported with the job. If you set <code>IncludeTags</code> to <code>TRUE</code>,
+     * any tags associated with each resource are exported.</p>
+     */
+    inline void SetIncludeTags(bool value) { m_includeTagsHasBeenSet = true; m_includeTags = value; }
+
+    /**
+     * <p> A Boolean that determines whether all tags for each resource ARN are
+     * exported with the job. If you set <code>IncludeTags</code> to <code>TRUE</code>,
+     * any tags associated with each resource are exported.</p>
+     */
+    inline StartAssetBundleExportJobRequest& WithIncludeTags(bool value) { SetIncludeTags(value); return *this;}
+
+
+    /**
+     * <p>An optional parameter that determines which validation strategy to use for
+     * the export job. If <code>StrictModeForAllResources</code> is set to
+     * <code>TRUE</code>, strict validation for every error is enforced. If it is set
+     * to <code>FALSE</code>, validation is skipped for specific UI errors that are
+     * shown as warnings. The default value for <code>StrictModeForAllResources</code>
+     * is <code>FALSE</code>.</p>
+     */
+    inline const AssetBundleExportJobValidationStrategy& GetValidationStrategy() const{ return m_validationStrategy; }
+
+    /**
+     * <p>An optional parameter that determines which validation strategy to use for
+     * the export job. If <code>StrictModeForAllResources</code> is set to
+     * <code>TRUE</code>, strict validation for every error is enforced. If it is set
+     * to <code>FALSE</code>, validation is skipped for specific UI errors that are
+     * shown as warnings. The default value for <code>StrictModeForAllResources</code>
+     * is <code>FALSE</code>.</p>
+     */
+    inline bool ValidationStrategyHasBeenSet() const { return m_validationStrategyHasBeenSet; }
+
+    /**
+     * <p>An optional parameter that determines which validation strategy to use for
+     * the export job. If <code>StrictModeForAllResources</code> is set to
+     * <code>TRUE</code>, strict validation for every error is enforced. If it is set
+     * to <code>FALSE</code>, validation is skipped for specific UI errors that are
+     * shown as warnings. The default value for <code>StrictModeForAllResources</code>
+     * is <code>FALSE</code>.</p>
+     */
+    inline void SetValidationStrategy(const AssetBundleExportJobValidationStrategy& value) { m_validationStrategyHasBeenSet = true; m_validationStrategy = value; }
+
+    /**
+     * <p>An optional parameter that determines which validation strategy to use for
+     * the export job. If <code>StrictModeForAllResources</code> is set to
+     * <code>TRUE</code>, strict validation for every error is enforced. If it is set
+     * to <code>FALSE</code>, validation is skipped for specific UI errors that are
+     * shown as warnings. The default value for <code>StrictModeForAllResources</code>
+     * is <code>FALSE</code>.</p>
+     */
+    inline void SetValidationStrategy(AssetBundleExportJobValidationStrategy&& value) { m_validationStrategyHasBeenSet = true; m_validationStrategy = std::move(value); }
+
+    /**
+     * <p>An optional parameter that determines which validation strategy to use for
+     * the export job. If <code>StrictModeForAllResources</code> is set to
+     * <code>TRUE</code>, strict validation for every error is enforced. If it is set
+     * to <code>FALSE</code>, validation is skipped for specific UI errors that are
+     * shown as warnings. The default value for <code>StrictModeForAllResources</code>
+     * is <code>FALSE</code>.</p>
+     */
+    inline StartAssetBundleExportJobRequest& WithValidationStrategy(const AssetBundleExportJobValidationStrategy& value) { SetValidationStrategy(value); return *this;}
+
+    /**
+     * <p>An optional parameter that determines which validation strategy to use for
+     * the export job. If <code>StrictModeForAllResources</code> is set to
+     * <code>TRUE</code>, strict validation for every error is enforced. If it is set
+     * to <code>FALSE</code>, validation is skipped for specific UI errors that are
+     * shown as warnings. The default value for <code>StrictModeForAllResources</code>
+     * is <code>FALSE</code>.</p>
+     */
+    inline StartAssetBundleExportJobRequest& WithValidationStrategy(AssetBundleExportJobValidationStrategy&& value) { SetValidationStrategy(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_awsAccountId;
@@ -385,6 +509,15 @@ namespace Model
 
     AssetBundleCloudFormationOverridePropertyConfiguration m_cloudFormationOverridePropertyConfiguration;
     bool m_cloudFormationOverridePropertyConfigurationHasBeenSet = false;
+
+    bool m_includePermissions;
+    bool m_includePermissionsHasBeenSet = false;
+
+    bool m_includeTags;
+    bool m_includeTagsHasBeenSet = false;
+
+    AssetBundleExportJobValidationStrategy m_validationStrategy;
+    bool m_validationStrategyHasBeenSet = false;
   };
 
 } // namespace Model

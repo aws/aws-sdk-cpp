@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NfsVersion::NOT_SET:
+            return {};
           case NfsVersion::NFS3:
             return "NFS3";
           default:

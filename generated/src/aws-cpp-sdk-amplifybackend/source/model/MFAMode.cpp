@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MFAMode::NOT_SET:
+            return {};
           case MFAMode::ON:
             return "ON";
           case MFAMode::OFF:

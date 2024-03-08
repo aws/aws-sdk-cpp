@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DisassociatedDataStorageState::NOT_SET:
+            return {};
           case DisassociatedDataStorageState::ENABLED:
             return "ENABLED";
           case DisassociatedDataStorageState::DISABLED:

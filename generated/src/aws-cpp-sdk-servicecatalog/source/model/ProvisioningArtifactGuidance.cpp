@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ProvisioningArtifactGuidance::NOT_SET:
+            return {};
           case ProvisioningArtifactGuidance::DEFAULT:
             return "DEFAULT";
           case ProvisioningArtifactGuidance::DEPRECATED:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FullDocument::NOT_SET:
+            return {};
           case FullDocument::UpdateLookup:
             return "UpdateLookup";
           case FullDocument::Default:

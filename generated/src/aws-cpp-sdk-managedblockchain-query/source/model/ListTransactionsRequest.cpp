@@ -21,7 +21,8 @@ ListTransactionsRequest::ListTransactionsRequest() :
     m_sortHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
+    m_maxResultsHasBeenSet(false),
+    m_confirmationStatusFilterHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,12 @@ Aws::String ListTransactionsRequest::SerializePayload() const
   if(m_maxResultsHasBeenSet)
   {
    payload.WithInteger("maxResults", m_maxResults);
+
+  }
+
+  if(m_confirmationStatusFilterHasBeenSet)
+  {
+   payload.WithObject("confirmationStatusFilter", m_confirmationStatusFilter.Jsonize());
 
   }
 

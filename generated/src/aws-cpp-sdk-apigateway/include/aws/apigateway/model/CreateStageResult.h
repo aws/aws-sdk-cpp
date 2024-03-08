@@ -211,17 +211,23 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether a cache cluster is enabled for the stage.</p>
+     * <p>Specifies whether a cache cluster is enabled for the stage. To activate a
+     * method-level cache, set <code>CachingEnabled</code> to <code>true</code> for a
+     * method. </p>
      */
     inline bool GetCacheClusterEnabled() const{ return m_cacheClusterEnabled; }
 
     /**
-     * <p>Specifies whether a cache cluster is enabled for the stage.</p>
+     * <p>Specifies whether a cache cluster is enabled for the stage. To activate a
+     * method-level cache, set <code>CachingEnabled</code> to <code>true</code> for a
+     * method. </p>
      */
     inline void SetCacheClusterEnabled(bool value) { m_cacheClusterEnabled = value; }
 
     /**
-     * <p>Specifies whether a cache cluster is enabled for the stage.</p>
+     * <p>Specifies whether a cache cluster is enabled for the stage. To activate a
+     * method-level cache, set <code>CachingEnabled</code> to <code>true</code> for a
+     * method. </p>
      */
     inline CreateStageResult& WithCacheClusterEnabled(bool value) { SetCacheClusterEnabled(value); return *this;}
 

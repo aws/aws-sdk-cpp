@@ -99,6 +99,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MetricName::NOT_SET:
+            return {};
           case MetricName::ActivatingGameSessions:
             return "ActivatingGameSessions";
           case MetricName::ActiveGameSessions:

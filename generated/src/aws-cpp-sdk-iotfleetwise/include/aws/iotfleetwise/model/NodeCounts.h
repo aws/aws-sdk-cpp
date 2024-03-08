@@ -140,6 +140,48 @@ namespace Model
      */
     inline NodeCounts& WithTotalActuators(int value) { SetTotalActuators(value); return *this;}
 
+
+    /**
+     * <p>The total structure for the node.</p>
+     */
+    inline int GetTotalStructs() const{ return m_totalStructs; }
+
+    /**
+     * <p>The total structure for the node.</p>
+     */
+    inline bool TotalStructsHasBeenSet() const { return m_totalStructsHasBeenSet; }
+
+    /**
+     * <p>The total structure for the node.</p>
+     */
+    inline void SetTotalStructs(int value) { m_totalStructsHasBeenSet = true; m_totalStructs = value; }
+
+    /**
+     * <p>The total structure for the node.</p>
+     */
+    inline NodeCounts& WithTotalStructs(int value) { SetTotalStructs(value); return *this;}
+
+
+    /**
+     * <p>The total properties for the node.</p>
+     */
+    inline int GetTotalProperties() const{ return m_totalProperties; }
+
+    /**
+     * <p>The total properties for the node.</p>
+     */
+    inline bool TotalPropertiesHasBeenSet() const { return m_totalPropertiesHasBeenSet; }
+
+    /**
+     * <p>The total properties for the node.</p>
+     */
+    inline void SetTotalProperties(int value) { m_totalPropertiesHasBeenSet = true; m_totalProperties = value; }
+
+    /**
+     * <p>The total properties for the node.</p>
+     */
+    inline NodeCounts& WithTotalProperties(int value) { SetTotalProperties(value); return *this;}
+
   private:
 
     int m_totalNodes;
@@ -156,6 +198,12 @@ namespace Model
 
     int m_totalActuators;
     bool m_totalActuatorsHasBeenSet = false;
+
+    int m_totalStructs;
+    bool m_totalStructsHasBeenSet = false;
+
+    int m_totalProperties;
+    bool m_totalPropertiesHasBeenSet = false;
   };
 
 } // namespace Model

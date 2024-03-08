@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CapacityReservationPreference::NOT_SET:
+            return {};
           case CapacityReservationPreference::open:
             return "open";
           case CapacityReservationPreference::none:

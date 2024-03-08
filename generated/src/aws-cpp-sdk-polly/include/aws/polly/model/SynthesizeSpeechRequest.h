@@ -44,110 +44,140 @@ namespace Model
   public:
 
     /**
-     * <p>Specifies the engine (<code>standard</code> or <code>neural</code>) for
-     * Amazon Polly to use when processing input text for speech synthesis. For
-     * information on Amazon Polly voices and which voices are available in
-     * standard-only, NTTS-only, and both standard and NTTS formats, see <a
+     * <p>Specifies the engine (<code>standard</code>, <code>neural</code> or
+     * <code>long-form</code>) for Amazon Polly to use when processing input text for
+     * speech synthesis. For information on Amazon Polly voices and which voices are
+     * available for each engine, see <a
      * href="https://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Available
      * Voices</a>.</p> <p> <b>NTTS-only voices</b> </p> <p>When using NTTS-only voices
      * such as Kevin (en-US), this parameter is required and must be set to
      * <code>neural</code>. If the engine is not specified, or is set to
-     * <code>standard</code>, this will result in an error. </p> <p>Type: String</p>
-     * <p>Valid Values: <code>standard</code> | <code>neural</code> </p> <p>Required:
-     * Yes</p> <p> <b>Standard voices</b> </p> <p>For standard voices, this is not
-     * required; the engine parameter defaults to <code>standard</code>. If the engine
-     * is not specified, or is set to <code>standard</code> and an NTTS-only voice is
-     * selected, this will result in an error. </p>
+     * <code>standard</code>, this will result in an error. </p> <p> <b>long-form-only
+     * voices</b> </p> <p>When using long-form-only voices such as Danielle (en-US),
+     * this parameter is required and must be set to <code>long-form</code>. If the
+     * engine is not specified, or is set to <code>standard</code> or
+     * <code>neural</code>, this will result in an error. </p> <p>Type: String</p>
+     * <p>Valid Values: <code>standard</code> | <code>neural</code> |
+     * <code>long-form</code> </p> <p>Required: Yes</p> <p> <b>Standard voices</b> </p>
+     * <p>For standard voices, this is not required; the engine parameter defaults to
+     * <code>standard</code>. If the engine is not specified, or is set to
+     * <code>standard</code> and an NTTS-only voice is selected, this will result in an
+     * error. </p>
      */
     inline const Engine& GetEngine() const{ return m_engine; }
 
     /**
-     * <p>Specifies the engine (<code>standard</code> or <code>neural</code>) for
-     * Amazon Polly to use when processing input text for speech synthesis. For
-     * information on Amazon Polly voices and which voices are available in
-     * standard-only, NTTS-only, and both standard and NTTS formats, see <a
+     * <p>Specifies the engine (<code>standard</code>, <code>neural</code> or
+     * <code>long-form</code>) for Amazon Polly to use when processing input text for
+     * speech synthesis. For information on Amazon Polly voices and which voices are
+     * available for each engine, see <a
      * href="https://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Available
      * Voices</a>.</p> <p> <b>NTTS-only voices</b> </p> <p>When using NTTS-only voices
      * such as Kevin (en-US), this parameter is required and must be set to
      * <code>neural</code>. If the engine is not specified, or is set to
-     * <code>standard</code>, this will result in an error. </p> <p>Type: String</p>
-     * <p>Valid Values: <code>standard</code> | <code>neural</code> </p> <p>Required:
-     * Yes</p> <p> <b>Standard voices</b> </p> <p>For standard voices, this is not
-     * required; the engine parameter defaults to <code>standard</code>. If the engine
-     * is not specified, or is set to <code>standard</code> and an NTTS-only voice is
-     * selected, this will result in an error. </p>
+     * <code>standard</code>, this will result in an error. </p> <p> <b>long-form-only
+     * voices</b> </p> <p>When using long-form-only voices such as Danielle (en-US),
+     * this parameter is required and must be set to <code>long-form</code>. If the
+     * engine is not specified, or is set to <code>standard</code> or
+     * <code>neural</code>, this will result in an error. </p> <p>Type: String</p>
+     * <p>Valid Values: <code>standard</code> | <code>neural</code> |
+     * <code>long-form</code> </p> <p>Required: Yes</p> <p> <b>Standard voices</b> </p>
+     * <p>For standard voices, this is not required; the engine parameter defaults to
+     * <code>standard</code>. If the engine is not specified, or is set to
+     * <code>standard</code> and an NTTS-only voice is selected, this will result in an
+     * error. </p>
      */
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
 
     /**
-     * <p>Specifies the engine (<code>standard</code> or <code>neural</code>) for
-     * Amazon Polly to use when processing input text for speech synthesis. For
-     * information on Amazon Polly voices and which voices are available in
-     * standard-only, NTTS-only, and both standard and NTTS formats, see <a
+     * <p>Specifies the engine (<code>standard</code>, <code>neural</code> or
+     * <code>long-form</code>) for Amazon Polly to use when processing input text for
+     * speech synthesis. For information on Amazon Polly voices and which voices are
+     * available for each engine, see <a
      * href="https://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Available
      * Voices</a>.</p> <p> <b>NTTS-only voices</b> </p> <p>When using NTTS-only voices
      * such as Kevin (en-US), this parameter is required and must be set to
      * <code>neural</code>. If the engine is not specified, or is set to
-     * <code>standard</code>, this will result in an error. </p> <p>Type: String</p>
-     * <p>Valid Values: <code>standard</code> | <code>neural</code> </p> <p>Required:
-     * Yes</p> <p> <b>Standard voices</b> </p> <p>For standard voices, this is not
-     * required; the engine parameter defaults to <code>standard</code>. If the engine
-     * is not specified, or is set to <code>standard</code> and an NTTS-only voice is
-     * selected, this will result in an error. </p>
+     * <code>standard</code>, this will result in an error. </p> <p> <b>long-form-only
+     * voices</b> </p> <p>When using long-form-only voices such as Danielle (en-US),
+     * this parameter is required and must be set to <code>long-form</code>. If the
+     * engine is not specified, or is set to <code>standard</code> or
+     * <code>neural</code>, this will result in an error. </p> <p>Type: String</p>
+     * <p>Valid Values: <code>standard</code> | <code>neural</code> |
+     * <code>long-form</code> </p> <p>Required: Yes</p> <p> <b>Standard voices</b> </p>
+     * <p>For standard voices, this is not required; the engine parameter defaults to
+     * <code>standard</code>. If the engine is not specified, or is set to
+     * <code>standard</code> and an NTTS-only voice is selected, this will result in an
+     * error. </p>
      */
     inline void SetEngine(const Engine& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
-     * <p>Specifies the engine (<code>standard</code> or <code>neural</code>) for
-     * Amazon Polly to use when processing input text for speech synthesis. For
-     * information on Amazon Polly voices and which voices are available in
-     * standard-only, NTTS-only, and both standard and NTTS formats, see <a
+     * <p>Specifies the engine (<code>standard</code>, <code>neural</code> or
+     * <code>long-form</code>) for Amazon Polly to use when processing input text for
+     * speech synthesis. For information on Amazon Polly voices and which voices are
+     * available for each engine, see <a
      * href="https://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Available
      * Voices</a>.</p> <p> <b>NTTS-only voices</b> </p> <p>When using NTTS-only voices
      * such as Kevin (en-US), this parameter is required and must be set to
      * <code>neural</code>. If the engine is not specified, or is set to
-     * <code>standard</code>, this will result in an error. </p> <p>Type: String</p>
-     * <p>Valid Values: <code>standard</code> | <code>neural</code> </p> <p>Required:
-     * Yes</p> <p> <b>Standard voices</b> </p> <p>For standard voices, this is not
-     * required; the engine parameter defaults to <code>standard</code>. If the engine
-     * is not specified, or is set to <code>standard</code> and an NTTS-only voice is
-     * selected, this will result in an error. </p>
+     * <code>standard</code>, this will result in an error. </p> <p> <b>long-form-only
+     * voices</b> </p> <p>When using long-form-only voices such as Danielle (en-US),
+     * this parameter is required and must be set to <code>long-form</code>. If the
+     * engine is not specified, or is set to <code>standard</code> or
+     * <code>neural</code>, this will result in an error. </p> <p>Type: String</p>
+     * <p>Valid Values: <code>standard</code> | <code>neural</code> |
+     * <code>long-form</code> </p> <p>Required: Yes</p> <p> <b>Standard voices</b> </p>
+     * <p>For standard voices, this is not required; the engine parameter defaults to
+     * <code>standard</code>. If the engine is not specified, or is set to
+     * <code>standard</code> and an NTTS-only voice is selected, this will result in an
+     * error. </p>
      */
     inline void SetEngine(Engine&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
 
     /**
-     * <p>Specifies the engine (<code>standard</code> or <code>neural</code>) for
-     * Amazon Polly to use when processing input text for speech synthesis. For
-     * information on Amazon Polly voices and which voices are available in
-     * standard-only, NTTS-only, and both standard and NTTS formats, see <a
+     * <p>Specifies the engine (<code>standard</code>, <code>neural</code> or
+     * <code>long-form</code>) for Amazon Polly to use when processing input text for
+     * speech synthesis. For information on Amazon Polly voices and which voices are
+     * available for each engine, see <a
      * href="https://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Available
      * Voices</a>.</p> <p> <b>NTTS-only voices</b> </p> <p>When using NTTS-only voices
      * such as Kevin (en-US), this parameter is required and must be set to
      * <code>neural</code>. If the engine is not specified, or is set to
-     * <code>standard</code>, this will result in an error. </p> <p>Type: String</p>
-     * <p>Valid Values: <code>standard</code> | <code>neural</code> </p> <p>Required:
-     * Yes</p> <p> <b>Standard voices</b> </p> <p>For standard voices, this is not
-     * required; the engine parameter defaults to <code>standard</code>. If the engine
-     * is not specified, or is set to <code>standard</code> and an NTTS-only voice is
-     * selected, this will result in an error. </p>
+     * <code>standard</code>, this will result in an error. </p> <p> <b>long-form-only
+     * voices</b> </p> <p>When using long-form-only voices such as Danielle (en-US),
+     * this parameter is required and must be set to <code>long-form</code>. If the
+     * engine is not specified, or is set to <code>standard</code> or
+     * <code>neural</code>, this will result in an error. </p> <p>Type: String</p>
+     * <p>Valid Values: <code>standard</code> | <code>neural</code> |
+     * <code>long-form</code> </p> <p>Required: Yes</p> <p> <b>Standard voices</b> </p>
+     * <p>For standard voices, this is not required; the engine parameter defaults to
+     * <code>standard</code>. If the engine is not specified, or is set to
+     * <code>standard</code> and an NTTS-only voice is selected, this will result in an
+     * error. </p>
      */
     inline SynthesizeSpeechRequest& WithEngine(const Engine& value) { SetEngine(value); return *this;}
 
     /**
-     * <p>Specifies the engine (<code>standard</code> or <code>neural</code>) for
-     * Amazon Polly to use when processing input text for speech synthesis. For
-     * information on Amazon Polly voices and which voices are available in
-     * standard-only, NTTS-only, and both standard and NTTS formats, see <a
+     * <p>Specifies the engine (<code>standard</code>, <code>neural</code> or
+     * <code>long-form</code>) for Amazon Polly to use when processing input text for
+     * speech synthesis. For information on Amazon Polly voices and which voices are
+     * available for each engine, see <a
      * href="https://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Available
      * Voices</a>.</p> <p> <b>NTTS-only voices</b> </p> <p>When using NTTS-only voices
      * such as Kevin (en-US), this parameter is required and must be set to
      * <code>neural</code>. If the engine is not specified, or is set to
-     * <code>standard</code>, this will result in an error. </p> <p>Type: String</p>
-     * <p>Valid Values: <code>standard</code> | <code>neural</code> </p> <p>Required:
-     * Yes</p> <p> <b>Standard voices</b> </p> <p>For standard voices, this is not
-     * required; the engine parameter defaults to <code>standard</code>. If the engine
-     * is not specified, or is set to <code>standard</code> and an NTTS-only voice is
-     * selected, this will result in an error. </p>
+     * <code>standard</code>, this will result in an error. </p> <p> <b>long-form-only
+     * voices</b> </p> <p>When using long-form-only voices such as Danielle (en-US),
+     * this parameter is required and must be set to <code>long-form</code>. If the
+     * engine is not specified, or is set to <code>standard</code> or
+     * <code>neural</code>, this will result in an error. </p> <p>Type: String</p>
+     * <p>Valid Values: <code>standard</code> | <code>neural</code> |
+     * <code>long-form</code> </p> <p>Required: Yes</p> <p> <b>Standard voices</b> </p>
+     * <p>For standard voices, this is not required; the engine parameter defaults to
+     * <code>standard</code>. If the engine is not specified, or is set to
+     * <code>standard</code> and an NTTS-only voice is selected, this will result in an
+     * error. </p>
      */
     inline SynthesizeSpeechRequest& WithEngine(Engine&& value) { SetEngine(std::move(value)); return *this;}
 
@@ -365,72 +395,72 @@ namespace Model
     /**
      * <p>The audio frequency specified in Hz.</p> <p>The valid values for mp3 and
      * ogg_vorbis are "8000", "16000", "22050", and "24000". The default value for
-     * standard voices is "22050". The default value for neural voices is "24000".</p>
-     * <p>Valid values for pcm are "8000" and "16000" The default value is "16000".
-     * </p>
+     * standard voices is "22050". The default value for neural voices is "24000". The
+     * default value for long-form voices is "24000".</p> <p>Valid values for pcm are
+     * "8000" and "16000" The default value is "16000". </p>
      */
     inline const Aws::String& GetSampleRate() const{ return m_sampleRate; }
 
     /**
      * <p>The audio frequency specified in Hz.</p> <p>The valid values for mp3 and
      * ogg_vorbis are "8000", "16000", "22050", and "24000". The default value for
-     * standard voices is "22050". The default value for neural voices is "24000".</p>
-     * <p>Valid values for pcm are "8000" and "16000" The default value is "16000".
-     * </p>
+     * standard voices is "22050". The default value for neural voices is "24000". The
+     * default value for long-form voices is "24000".</p> <p>Valid values for pcm are
+     * "8000" and "16000" The default value is "16000". </p>
      */
     inline bool SampleRateHasBeenSet() const { return m_sampleRateHasBeenSet; }
 
     /**
      * <p>The audio frequency specified in Hz.</p> <p>The valid values for mp3 and
      * ogg_vorbis are "8000", "16000", "22050", and "24000". The default value for
-     * standard voices is "22050". The default value for neural voices is "24000".</p>
-     * <p>Valid values for pcm are "8000" and "16000" The default value is "16000".
-     * </p>
+     * standard voices is "22050". The default value for neural voices is "24000". The
+     * default value for long-form voices is "24000".</p> <p>Valid values for pcm are
+     * "8000" and "16000" The default value is "16000". </p>
      */
     inline void SetSampleRate(const Aws::String& value) { m_sampleRateHasBeenSet = true; m_sampleRate = value; }
 
     /**
      * <p>The audio frequency specified in Hz.</p> <p>The valid values for mp3 and
      * ogg_vorbis are "8000", "16000", "22050", and "24000". The default value for
-     * standard voices is "22050". The default value for neural voices is "24000".</p>
-     * <p>Valid values for pcm are "8000" and "16000" The default value is "16000".
-     * </p>
+     * standard voices is "22050". The default value for neural voices is "24000". The
+     * default value for long-form voices is "24000".</p> <p>Valid values for pcm are
+     * "8000" and "16000" The default value is "16000". </p>
      */
     inline void SetSampleRate(Aws::String&& value) { m_sampleRateHasBeenSet = true; m_sampleRate = std::move(value); }
 
     /**
      * <p>The audio frequency specified in Hz.</p> <p>The valid values for mp3 and
      * ogg_vorbis are "8000", "16000", "22050", and "24000". The default value for
-     * standard voices is "22050". The default value for neural voices is "24000".</p>
-     * <p>Valid values for pcm are "8000" and "16000" The default value is "16000".
-     * </p>
+     * standard voices is "22050". The default value for neural voices is "24000". The
+     * default value for long-form voices is "24000".</p> <p>Valid values for pcm are
+     * "8000" and "16000" The default value is "16000". </p>
      */
     inline void SetSampleRate(const char* value) { m_sampleRateHasBeenSet = true; m_sampleRate.assign(value); }
 
     /**
      * <p>The audio frequency specified in Hz.</p> <p>The valid values for mp3 and
      * ogg_vorbis are "8000", "16000", "22050", and "24000". The default value for
-     * standard voices is "22050". The default value for neural voices is "24000".</p>
-     * <p>Valid values for pcm are "8000" and "16000" The default value is "16000".
-     * </p>
+     * standard voices is "22050". The default value for neural voices is "24000". The
+     * default value for long-form voices is "24000".</p> <p>Valid values for pcm are
+     * "8000" and "16000" The default value is "16000". </p>
      */
     inline SynthesizeSpeechRequest& WithSampleRate(const Aws::String& value) { SetSampleRate(value); return *this;}
 
     /**
      * <p>The audio frequency specified in Hz.</p> <p>The valid values for mp3 and
      * ogg_vorbis are "8000", "16000", "22050", and "24000". The default value for
-     * standard voices is "22050". The default value for neural voices is "24000".</p>
-     * <p>Valid values for pcm are "8000" and "16000" The default value is "16000".
-     * </p>
+     * standard voices is "22050". The default value for neural voices is "24000". The
+     * default value for long-form voices is "24000".</p> <p>Valid values for pcm are
+     * "8000" and "16000" The default value is "16000". </p>
      */
     inline SynthesizeSpeechRequest& WithSampleRate(Aws::String&& value) { SetSampleRate(std::move(value)); return *this;}
 
     /**
      * <p>The audio frequency specified in Hz.</p> <p>The valid values for mp3 and
      * ogg_vorbis are "8000", "16000", "22050", and "24000". The default value for
-     * standard voices is "22050". The default value for neural voices is "24000".</p>
-     * <p>Valid values for pcm are "8000" and "16000" The default value is "16000".
-     * </p>
+     * standard voices is "22050". The default value for neural voices is "24000". The
+     * default value for long-form voices is "24000".</p> <p>Valid values for pcm are
+     * "8000" and "16000" The default value is "16000". </p>
      */
     inline SynthesizeSpeechRequest& WithSampleRate(const char* value) { SetSampleRate(value); return *this;}
 

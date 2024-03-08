@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SchedulingStrategy::NOT_SET:
+            return {};
           case SchedulingStrategy::REPLICA:
             return "REPLICA";
           case SchedulingStrategy::DAEMON:

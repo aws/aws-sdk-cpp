@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case WirelessGatewayEvent::NOT_SET:
+            return {};
           case WirelessGatewayEvent::CUPS_Request:
             return "CUPS_Request";
           case WirelessGatewayEvent::Certificate:

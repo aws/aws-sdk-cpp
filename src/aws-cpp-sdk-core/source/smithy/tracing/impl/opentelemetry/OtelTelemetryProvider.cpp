@@ -5,14 +5,11 @@
 #include <smithy/tracing/impl/opentelemetry/OtelTelemetryProvider.h>
 #include <smithy/tracing/impl/opentelemetry/OtelTracerProvider.h>
 #include <smithy/tracing/impl/opentelemetry/OtelMeterProvider.h>
-#include <opentelemetry/exporters/ostream/span_exporter_factory.h>
 #include <opentelemetry/exporters/ostream/span_exporter.h>
 #include <opentelemetry/exporters/ostream/metric_exporter.h>
 #include <opentelemetry/sdk/trace/simple_processor_factory.h>
 #include <opentelemetry/sdk/trace/tracer_context.h>
-#include <opentelemetry/sdk/trace/tracer_context_factory.h>
 #include <opentelemetry/sdk/trace/tracer_provider_factory.h>
-#include <opentelemetry/sdk/metrics/aggregation/histogram_aggregation.h>
 #include <opentelemetry/sdk/metrics/export/periodic_exporting_metric_reader.h>
 #include <opentelemetry/sdk/metrics/meter_provider.h>
 #include <opentelemetry/trace/provider.h>
@@ -35,7 +32,6 @@ Aws::UniquePtr<TelemetryProvider> OtelTelemetryProvider::CreateOtelProvider(
         [&]() -> void {
             //Init Tracing
             auto traceProcessor = opentelemetry::sdk::trace::SimpleSpanProcessorFactory::Create(std::move(spanExporter));
-            std::vector<std::unique_ptr<opentelemetry::sdk::trace::SpanProcessor>> traceProcessors;
             std::shared_ptr<opentelemetry::trace::TracerProvider> otelTracerProvider = opentelemetry::sdk::trace::TracerProviderFactory::Create(std::move(traceProcessor));
             opentelemetry::trace::Provider::SetTracerProvider(otelTracerProvider);
             //Init Metrics

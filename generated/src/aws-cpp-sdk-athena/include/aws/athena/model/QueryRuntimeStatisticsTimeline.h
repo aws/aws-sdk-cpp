@@ -66,6 +66,31 @@ namespace Model
 
 
     /**
+     * <p> The number of milliseconds that Athena spends on preprocessing before it
+     * submits the query to the engine. </p>
+     */
+    inline long long GetServicePreProcessingTimeInMillis() const{ return m_servicePreProcessingTimeInMillis; }
+
+    /**
+     * <p> The number of milliseconds that Athena spends on preprocessing before it
+     * submits the query to the engine. </p>
+     */
+    inline bool ServicePreProcessingTimeInMillisHasBeenSet() const { return m_servicePreProcessingTimeInMillisHasBeenSet; }
+
+    /**
+     * <p> The number of milliseconds that Athena spends on preprocessing before it
+     * submits the query to the engine. </p>
+     */
+    inline void SetServicePreProcessingTimeInMillis(long long value) { m_servicePreProcessingTimeInMillisHasBeenSet = true; m_servicePreProcessingTimeInMillis = value; }
+
+    /**
+     * <p> The number of milliseconds that Athena spends on preprocessing before it
+     * submits the query to the engine. </p>
+     */
+    inline QueryRuntimeStatisticsTimeline& WithServicePreProcessingTimeInMillis(long long value) { SetServicePreProcessingTimeInMillis(value); return *this;}
+
+
+    /**
      * <p>The number of milliseconds that Athena took to plan the query processing
      * flow. This includes the time spent retrieving table partitions from the data
      * source. Note that because the query engine performs the query planning, query
@@ -168,6 +193,9 @@ namespace Model
 
     long long m_queryQueueTimeInMillis;
     bool m_queryQueueTimeInMillisHasBeenSet = false;
+
+    long long m_servicePreProcessingTimeInMillis;
+    bool m_servicePreProcessingTimeInMillisHasBeenSet = false;
 
     long long m_queryPlanningTimeInMillis;
     bool m_queryPlanningTimeInMillisHasBeenSet = false;

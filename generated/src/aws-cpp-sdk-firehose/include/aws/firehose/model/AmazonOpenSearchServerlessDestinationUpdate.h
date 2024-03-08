@@ -44,58 +44,58 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data
-     * Firehose for calling the Serverless offering for Amazon OpenSearch Service
-     * Configuration API and for indexing documents.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Firehose for
+     * calling the Serverless offering for Amazon OpenSearch Service Configuration API
+     * and for indexing documents.</p>
      */
     inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data
-     * Firehose for calling the Serverless offering for Amazon OpenSearch Service
-     * Configuration API and for indexing documents.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Firehose for
+     * calling the Serverless offering for Amazon OpenSearch Service Configuration API
+     * and for indexing documents.</p>
      */
     inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data
-     * Firehose for calling the Serverless offering for Amazon OpenSearch Service
-     * Configuration API and for indexing documents.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Firehose for
+     * calling the Serverless offering for Amazon OpenSearch Service Configuration API
+     * and for indexing documents.</p>
      */
     inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data
-     * Firehose for calling the Serverless offering for Amazon OpenSearch Service
-     * Configuration API and for indexing documents.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Firehose for
+     * calling the Serverless offering for Amazon OpenSearch Service Configuration API
+     * and for indexing documents.</p>
      */
     inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data
-     * Firehose for calling the Serverless offering for Amazon OpenSearch Service
-     * Configuration API and for indexing documents.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Firehose for
+     * calling the Serverless offering for Amazon OpenSearch Service Configuration API
+     * and for indexing documents.</p>
      */
     inline void SetRoleARN(const char* value) { m_roleARNHasBeenSet = true; m_roleARN.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data
-     * Firehose for calling the Serverless offering for Amazon OpenSearch Service
-     * Configuration API and for indexing documents.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Firehose for
+     * calling the Serverless offering for Amazon OpenSearch Service Configuration API
+     * and for indexing documents.</p>
      */
     inline AmazonOpenSearchServerlessDestinationUpdate& WithRoleARN(const Aws::String& value) { SetRoleARN(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data
-     * Firehose for calling the Serverless offering for Amazon OpenSearch Service
-     * Configuration API and for indexing documents.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Firehose for
+     * calling the Serverless offering for Amazon OpenSearch Service Configuration API
+     * and for indexing documents.</p>
      */
     inline AmazonOpenSearchServerlessDestinationUpdate& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data
-     * Firehose for calling the Serverless offering for Amazon OpenSearch Service
-     * Configuration API and for indexing documents.</p>
+     * <p>The Amazon Resource Name (ARN) of the IAM role to be assumed by Firehose for
+     * calling the Serverless offering for Amazon OpenSearch Service Configuration API
+     * and for indexing documents.</p>
      */
     inline AmazonOpenSearchServerlessDestinationUpdate& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
 
@@ -228,44 +228,44 @@ namespace Model
 
 
     /**
-     * <p>The retry behavior in case Kinesis Data Firehose is unable to deliver
-     * documents to the Serverless offering for Amazon OpenSearch Service. The default
-     * value is 300 (5 minutes).</p>
+     * <p>The retry behavior in case Firehose is unable to deliver documents to the
+     * Serverless offering for Amazon OpenSearch Service. The default value is 300 (5
+     * minutes).</p>
      */
     inline const AmazonOpenSearchServerlessRetryOptions& GetRetryOptions() const{ return m_retryOptions; }
 
     /**
-     * <p>The retry behavior in case Kinesis Data Firehose is unable to deliver
-     * documents to the Serverless offering for Amazon OpenSearch Service. The default
-     * value is 300 (5 minutes).</p>
+     * <p>The retry behavior in case Firehose is unable to deliver documents to the
+     * Serverless offering for Amazon OpenSearch Service. The default value is 300 (5
+     * minutes).</p>
      */
     inline bool RetryOptionsHasBeenSet() const { return m_retryOptionsHasBeenSet; }
 
     /**
-     * <p>The retry behavior in case Kinesis Data Firehose is unable to deliver
-     * documents to the Serverless offering for Amazon OpenSearch Service. The default
-     * value is 300 (5 minutes).</p>
+     * <p>The retry behavior in case Firehose is unable to deliver documents to the
+     * Serverless offering for Amazon OpenSearch Service. The default value is 300 (5
+     * minutes).</p>
      */
     inline void SetRetryOptions(const AmazonOpenSearchServerlessRetryOptions& value) { m_retryOptionsHasBeenSet = true; m_retryOptions = value; }
 
     /**
-     * <p>The retry behavior in case Kinesis Data Firehose is unable to deliver
-     * documents to the Serverless offering for Amazon OpenSearch Service. The default
-     * value is 300 (5 minutes).</p>
+     * <p>The retry behavior in case Firehose is unable to deliver documents to the
+     * Serverless offering for Amazon OpenSearch Service. The default value is 300 (5
+     * minutes).</p>
      */
     inline void SetRetryOptions(AmazonOpenSearchServerlessRetryOptions&& value) { m_retryOptionsHasBeenSet = true; m_retryOptions = std::move(value); }
 
     /**
-     * <p>The retry behavior in case Kinesis Data Firehose is unable to deliver
-     * documents to the Serverless offering for Amazon OpenSearch Service. The default
-     * value is 300 (5 minutes).</p>
+     * <p>The retry behavior in case Firehose is unable to deliver documents to the
+     * Serverless offering for Amazon OpenSearch Service. The default value is 300 (5
+     * minutes).</p>
      */
     inline AmazonOpenSearchServerlessDestinationUpdate& WithRetryOptions(const AmazonOpenSearchServerlessRetryOptions& value) { SetRetryOptions(value); return *this;}
 
     /**
-     * <p>The retry behavior in case Kinesis Data Firehose is unable to deliver
-     * documents to the Serverless offering for Amazon OpenSearch Service. The default
-     * value is 300 (5 minutes).</p>
+     * <p>The retry behavior in case Firehose is unable to deliver documents to the
+     * Serverless offering for Amazon OpenSearch Service. The default value is 300 (5
+     * minutes).</p>
      */
     inline AmazonOpenSearchServerlessDestinationUpdate& WithRetryOptions(AmazonOpenSearchServerlessRetryOptions&& value) { SetRetryOptions(std::move(value)); return *this;}
 

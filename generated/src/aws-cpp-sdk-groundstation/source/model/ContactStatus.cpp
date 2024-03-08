@@ -104,6 +104,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ContactStatus::NOT_SET:
+            return {};
           case ContactStatus::AVAILABLE:
             return "AVAILABLE";
           case ContactStatus::AWS_CANCELLED:

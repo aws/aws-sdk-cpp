@@ -84,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CallAnalyticsLanguageCode::NOT_SET:
+            return {};
           case CallAnalyticsLanguageCode::en_US:
             return "en-US";
           case CallAnalyticsLanguageCode::en_GB:

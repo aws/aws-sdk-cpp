@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HlsKeyProviderType::NOT_SET:
+            return {};
           case HlsKeyProviderType::SPEKE:
             return "SPEKE";
           case HlsKeyProviderType::STATIC_KEY:

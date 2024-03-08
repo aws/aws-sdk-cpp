@@ -15,12 +15,12 @@ using namespace Aws::Utils;
 CreateAppRequest::CreateAppRequest() : 
     m_domainIdHasBeenSet(false),
     m_userProfileNameHasBeenSet(false),
+    m_spaceNameHasBeenSet(false),
     m_appType(AppType::NOT_SET),
     m_appTypeHasBeenSet(false),
     m_appNameHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_resourceSpecHasBeenSet(false),
-    m_spaceNameHasBeenSet(false)
+    m_resourceSpecHasBeenSet(false)
 {
 }
 
@@ -37,6 +37,12 @@ Aws::String CreateAppRequest::SerializePayload() const
   if(m_userProfileNameHasBeenSet)
   {
    payload.WithString("UserProfileName", m_userProfileName);
+
+  }
+
+  if(m_spaceNameHasBeenSet)
+  {
+   payload.WithString("SpaceName", m_spaceName);
 
   }
 
@@ -65,12 +71,6 @@ Aws::String CreateAppRequest::SerializePayload() const
   if(m_resourceSpecHasBeenSet)
   {
    payload.WithObject("ResourceSpec", m_resourceSpec.Jsonize());
-
-  }
-
-  if(m_spaceNameHasBeenSet)
-  {
-   payload.WithString("SpaceName", m_spaceName);
 
   }
 

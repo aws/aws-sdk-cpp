@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DataSource::NOT_SET:
+            return {};
           case DataSource::AGENT:
             return "AGENT";
           default:

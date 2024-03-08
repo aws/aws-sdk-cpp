@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResourceIdType::NOT_SET:
+            return {};
           case ResourceIdType::LONG_ID:
             return "LONG_ID";
           case ResourceIdType::SHORT_ID:

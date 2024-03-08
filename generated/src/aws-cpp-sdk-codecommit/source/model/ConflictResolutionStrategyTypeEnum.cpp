@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ConflictResolutionStrategyTypeEnum::NOT_SET:
+            return {};
           case ConflictResolutionStrategyTypeEnum::NONE:
             return "NONE";
           case ConflictResolutionStrategyTypeEnum::ACCEPT_SOURCE:

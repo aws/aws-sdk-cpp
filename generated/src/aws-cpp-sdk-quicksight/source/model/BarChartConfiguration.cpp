@@ -36,7 +36,8 @@ BarChartConfiguration::BarChartConfiguration() :
     m_dataLabelsHasBeenSet(false),
     m_tooltipHasBeenSet(false),
     m_referenceLinesHasBeenSet(false),
-    m_contributionAnalysisDefaultsHasBeenSet(false)
+    m_contributionAnalysisDefaultsHasBeenSet(false),
+    m_interactionsHasBeenSet(false)
 {
 }
 
@@ -58,7 +59,8 @@ BarChartConfiguration::BarChartConfiguration(JsonView jsonValue) :
     m_dataLabelsHasBeenSet(false),
     m_tooltipHasBeenSet(false),
     m_referenceLinesHasBeenSet(false),
-    m_contributionAnalysisDefaultsHasBeenSet(false)
+    m_contributionAnalysisDefaultsHasBeenSet(false),
+    m_interactionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -183,6 +185,13 @@ BarChartConfiguration& BarChartConfiguration::operator =(JsonView jsonValue)
     m_contributionAnalysisDefaultsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Interactions"))
+  {
+    m_interactions = jsonValue.GetObject("Interactions");
+
+    m_interactionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -291,6 +300,12 @@ JsonValue BarChartConfiguration::Jsonize() const
      contributionAnalysisDefaultsJsonList[contributionAnalysisDefaultsIndex].AsObject(m_contributionAnalysisDefaults[contributionAnalysisDefaultsIndex].Jsonize());
    }
    payload.WithArray("ContributionAnalysisDefaults", std::move(contributionAnalysisDefaultsJsonList));
+
+  }
+
+  if(m_interactionsHasBeenSet)
+  {
+   payload.WithObject("Interactions", m_interactions.Jsonize());
 
   }
 

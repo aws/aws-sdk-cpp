@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StorageTier::NOT_SET:
+            return {};
           case StorageTier::archive:
             return "archive";
           case StorageTier::standard:

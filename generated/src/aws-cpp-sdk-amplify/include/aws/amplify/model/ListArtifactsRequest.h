@@ -21,7 +21,7 @@ namespace Model
 {
 
   /**
-   * <p> Describes the request structure for the list artifacts request.
+   * <p>Describes the request structure for the list artifacts request.
    * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListArtifactsRequest">AWS
    * API Reference</a></p>
@@ -43,179 +43,179 @@ namespace Model
 
 
     /**
-     * <p> The unique ID for an Amplify app. </p>
+     * <p>The unique ID for an Amplify app. </p>
      */
     inline const Aws::String& GetAppId() const{ return m_appId; }
 
     /**
-     * <p> The unique ID for an Amplify app. </p>
+     * <p>The unique ID for an Amplify app. </p>
      */
     inline bool AppIdHasBeenSet() const { return m_appIdHasBeenSet; }
 
     /**
-     * <p> The unique ID for an Amplify app. </p>
+     * <p>The unique ID for an Amplify app. </p>
      */
     inline void SetAppId(const Aws::String& value) { m_appIdHasBeenSet = true; m_appId = value; }
 
     /**
-     * <p> The unique ID for an Amplify app. </p>
+     * <p>The unique ID for an Amplify app. </p>
      */
     inline void SetAppId(Aws::String&& value) { m_appIdHasBeenSet = true; m_appId = std::move(value); }
 
     /**
-     * <p> The unique ID for an Amplify app. </p>
+     * <p>The unique ID for an Amplify app. </p>
      */
     inline void SetAppId(const char* value) { m_appIdHasBeenSet = true; m_appId.assign(value); }
 
     /**
-     * <p> The unique ID for an Amplify app. </p>
+     * <p>The unique ID for an Amplify app. </p>
      */
     inline ListArtifactsRequest& WithAppId(const Aws::String& value) { SetAppId(value); return *this;}
 
     /**
-     * <p> The unique ID for an Amplify app. </p>
+     * <p>The unique ID for an Amplify app. </p>
      */
     inline ListArtifactsRequest& WithAppId(Aws::String&& value) { SetAppId(std::move(value)); return *this;}
 
     /**
-     * <p> The unique ID for an Amplify app. </p>
+     * <p>The unique ID for an Amplify app. </p>
      */
     inline ListArtifactsRequest& WithAppId(const char* value) { SetAppId(value); return *this;}
 
 
     /**
-     * <p> The name of a branch that is part of an Amplify app. </p>
+     * <p>The name of a branch that is part of an Amplify app. </p>
      */
     inline const Aws::String& GetBranchName() const{ return m_branchName; }
 
     /**
-     * <p> The name of a branch that is part of an Amplify app. </p>
+     * <p>The name of a branch that is part of an Amplify app. </p>
      */
     inline bool BranchNameHasBeenSet() const { return m_branchNameHasBeenSet; }
 
     /**
-     * <p> The name of a branch that is part of an Amplify app. </p>
+     * <p>The name of a branch that is part of an Amplify app. </p>
      */
     inline void SetBranchName(const Aws::String& value) { m_branchNameHasBeenSet = true; m_branchName = value; }
 
     /**
-     * <p> The name of a branch that is part of an Amplify app. </p>
+     * <p>The name of a branch that is part of an Amplify app. </p>
      */
     inline void SetBranchName(Aws::String&& value) { m_branchNameHasBeenSet = true; m_branchName = std::move(value); }
 
     /**
-     * <p> The name of a branch that is part of an Amplify app. </p>
+     * <p>The name of a branch that is part of an Amplify app. </p>
      */
     inline void SetBranchName(const char* value) { m_branchNameHasBeenSet = true; m_branchName.assign(value); }
 
     /**
-     * <p> The name of a branch that is part of an Amplify app. </p>
+     * <p>The name of a branch that is part of an Amplify app. </p>
      */
     inline ListArtifactsRequest& WithBranchName(const Aws::String& value) { SetBranchName(value); return *this;}
 
     /**
-     * <p> The name of a branch that is part of an Amplify app. </p>
+     * <p>The name of a branch that is part of an Amplify app. </p>
      */
     inline ListArtifactsRequest& WithBranchName(Aws::String&& value) { SetBranchName(std::move(value)); return *this;}
 
     /**
-     * <p> The name of a branch that is part of an Amplify app. </p>
+     * <p>The name of a branch that is part of an Amplify app. </p>
      */
     inline ListArtifactsRequest& WithBranchName(const char* value) { SetBranchName(value); return *this;}
 
 
     /**
-     * <p> The unique ID for a job. </p>
+     * <p>The unique ID for a job. </p>
      */
     inline const Aws::String& GetJobId() const{ return m_jobId; }
 
     /**
-     * <p> The unique ID for a job. </p>
+     * <p>The unique ID for a job. </p>
      */
     inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
 
     /**
-     * <p> The unique ID for a job. </p>
+     * <p>The unique ID for a job. </p>
      */
     inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
 
     /**
-     * <p> The unique ID for a job. </p>
+     * <p>The unique ID for a job. </p>
      */
     inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
 
     /**
-     * <p> The unique ID for a job. </p>
+     * <p>The unique ID for a job. </p>
      */
     inline void SetJobId(const char* value) { m_jobIdHasBeenSet = true; m_jobId.assign(value); }
 
     /**
-     * <p> The unique ID for a job. </p>
+     * <p>The unique ID for a job. </p>
      */
     inline ListArtifactsRequest& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
 
     /**
-     * <p> The unique ID for a job. </p>
+     * <p>The unique ID for a job. </p>
      */
     inline ListArtifactsRequest& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
 
     /**
-     * <p> The unique ID for a job. </p>
+     * <p>The unique ID for a job. </p>
      */
     inline ListArtifactsRequest& WithJobId(const char* value) { SetJobId(value); return *this;}
 
 
     /**
-     * <p> A pagination token. Set to null to start listing artifacts from start. If a
+     * <p>A pagination token. Set to null to start listing artifacts from start. If a
      * non-null pagination token is returned in a result, pass its value in here to
      * list more artifacts. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p> A pagination token. Set to null to start listing artifacts from start. If a
+     * <p>A pagination token. Set to null to start listing artifacts from start. If a
      * non-null pagination token is returned in a result, pass its value in here to
      * list more artifacts. </p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * <p> A pagination token. Set to null to start listing artifacts from start. If a
+     * <p>A pagination token. Set to null to start listing artifacts from start. If a
      * non-null pagination token is returned in a result, pass its value in here to
      * list more artifacts. </p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p> A pagination token. Set to null to start listing artifacts from start. If a
+     * <p>A pagination token. Set to null to start listing artifacts from start. If a
      * non-null pagination token is returned in a result, pass its value in here to
      * list more artifacts. </p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p> A pagination token. Set to null to start listing artifacts from start. If a
+     * <p>A pagination token. Set to null to start listing artifacts from start. If a
      * non-null pagination token is returned in a result, pass its value in here to
      * list more artifacts. </p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p> A pagination token. Set to null to start listing artifacts from start. If a
+     * <p>A pagination token. Set to null to start listing artifacts from start. If a
      * non-null pagination token is returned in a result, pass its value in here to
      * list more artifacts. </p>
      */
     inline ListArtifactsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p> A pagination token. Set to null to start listing artifacts from start. If a
+     * <p>A pagination token. Set to null to start listing artifacts from start. If a
      * non-null pagination token is returned in a result, pass its value in here to
      * list more artifacts. </p>
      */
     inline ListArtifactsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p> A pagination token. Set to null to start listing artifacts from start. If a
+     * <p>A pagination token. Set to null to start listing artifacts from start. If a
      * non-null pagination token is returned in a result, pass its value in here to
      * list more artifacts. </p>
      */
@@ -223,22 +223,22 @@ namespace Model
 
 
     /**
-     * <p> The maximum number of records to list in a single response. </p>
+     * <p>The maximum number of records to list in a single response. </p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p> The maximum number of records to list in a single response. </p>
+     * <p>The maximum number of records to list in a single response. </p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p> The maximum number of records to list in a single response. </p>
+     * <p>The maximum number of records to list in a single response. </p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p> The maximum number of records to list in a single response. </p>
+     * <p>The maximum number of records to list in a single response. </p>
      */
     inline ListArtifactsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RelativeDateType::NOT_SET:
+            return {};
           case RelativeDateType::PREVIOUS:
             return "PREVIOUS";
           case RelativeDateType::THIS:

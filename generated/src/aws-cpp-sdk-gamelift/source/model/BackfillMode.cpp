@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BackfillMode::NOT_SET:
+            return {};
           case BackfillMode::AUTOMATIC:
             return "AUTOMATIC";
           case BackfillMode::MANUAL:

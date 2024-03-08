@@ -1232,6 +1232,126 @@ namespace Model
      */
     inline BackupJob& WithResourceName(const char* value) { SetResourceName(value); return *this;}
 
+
+    /**
+     * <p>This is the date on which the backup job was initiated.</p>
+     */
+    inline const Aws::Utils::DateTime& GetInitiationDate() const{ return m_initiationDate; }
+
+    /**
+     * <p>This is the date on which the backup job was initiated.</p>
+     */
+    inline bool InitiationDateHasBeenSet() const { return m_initiationDateHasBeenSet; }
+
+    /**
+     * <p>This is the date on which the backup job was initiated.</p>
+     */
+    inline void SetInitiationDate(const Aws::Utils::DateTime& value) { m_initiationDateHasBeenSet = true; m_initiationDate = value; }
+
+    /**
+     * <p>This is the date on which the backup job was initiated.</p>
+     */
+    inline void SetInitiationDate(Aws::Utils::DateTime&& value) { m_initiationDateHasBeenSet = true; m_initiationDate = std::move(value); }
+
+    /**
+     * <p>This is the date on which the backup job was initiated.</p>
+     */
+    inline BackupJob& WithInitiationDate(const Aws::Utils::DateTime& value) { SetInitiationDate(value); return *this;}
+
+    /**
+     * <p>This is the date on which the backup job was initiated.</p>
+     */
+    inline BackupJob& WithInitiationDate(Aws::Utils::DateTime&& value) { SetInitiationDate(std::move(value)); return *this;}
+
+
+    /**
+     * <p>This parameter is the job count for the specified message category.</p>
+     * <p>Example strings may include <code>AccessDenied</code>, <code>SUCCESS</code>,
+     * <code>AGGREGATE_ALL</code>, and <code>INVALIDPARAMETERS</code>. See <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a>
+     * for a list of MessageCategory strings.</p> <p>The the value ANY returns count of
+     * all message categories.</p> <p> <code>AGGREGATE_ALL</code> aggregates job counts
+     * for all message categories and returns the sum.</p>
+     */
+    inline const Aws::String& GetMessageCategory() const{ return m_messageCategory; }
+
+    /**
+     * <p>This parameter is the job count for the specified message category.</p>
+     * <p>Example strings may include <code>AccessDenied</code>, <code>SUCCESS</code>,
+     * <code>AGGREGATE_ALL</code>, and <code>INVALIDPARAMETERS</code>. See <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a>
+     * for a list of MessageCategory strings.</p> <p>The the value ANY returns count of
+     * all message categories.</p> <p> <code>AGGREGATE_ALL</code> aggregates job counts
+     * for all message categories and returns the sum.</p>
+     */
+    inline bool MessageCategoryHasBeenSet() const { return m_messageCategoryHasBeenSet; }
+
+    /**
+     * <p>This parameter is the job count for the specified message category.</p>
+     * <p>Example strings may include <code>AccessDenied</code>, <code>SUCCESS</code>,
+     * <code>AGGREGATE_ALL</code>, and <code>INVALIDPARAMETERS</code>. See <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a>
+     * for a list of MessageCategory strings.</p> <p>The the value ANY returns count of
+     * all message categories.</p> <p> <code>AGGREGATE_ALL</code> aggregates job counts
+     * for all message categories and returns the sum.</p>
+     */
+    inline void SetMessageCategory(const Aws::String& value) { m_messageCategoryHasBeenSet = true; m_messageCategory = value; }
+
+    /**
+     * <p>This parameter is the job count for the specified message category.</p>
+     * <p>Example strings may include <code>AccessDenied</code>, <code>SUCCESS</code>,
+     * <code>AGGREGATE_ALL</code>, and <code>INVALIDPARAMETERS</code>. See <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a>
+     * for a list of MessageCategory strings.</p> <p>The the value ANY returns count of
+     * all message categories.</p> <p> <code>AGGREGATE_ALL</code> aggregates job counts
+     * for all message categories and returns the sum.</p>
+     */
+    inline void SetMessageCategory(Aws::String&& value) { m_messageCategoryHasBeenSet = true; m_messageCategory = std::move(value); }
+
+    /**
+     * <p>This parameter is the job count for the specified message category.</p>
+     * <p>Example strings may include <code>AccessDenied</code>, <code>SUCCESS</code>,
+     * <code>AGGREGATE_ALL</code>, and <code>INVALIDPARAMETERS</code>. See <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a>
+     * for a list of MessageCategory strings.</p> <p>The the value ANY returns count of
+     * all message categories.</p> <p> <code>AGGREGATE_ALL</code> aggregates job counts
+     * for all message categories and returns the sum.</p>
+     */
+    inline void SetMessageCategory(const char* value) { m_messageCategoryHasBeenSet = true; m_messageCategory.assign(value); }
+
+    /**
+     * <p>This parameter is the job count for the specified message category.</p>
+     * <p>Example strings may include <code>AccessDenied</code>, <code>SUCCESS</code>,
+     * <code>AGGREGATE_ALL</code>, and <code>INVALIDPARAMETERS</code>. See <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a>
+     * for a list of MessageCategory strings.</p> <p>The the value ANY returns count of
+     * all message categories.</p> <p> <code>AGGREGATE_ALL</code> aggregates job counts
+     * for all message categories and returns the sum.</p>
+     */
+    inline BackupJob& WithMessageCategory(const Aws::String& value) { SetMessageCategory(value); return *this;}
+
+    /**
+     * <p>This parameter is the job count for the specified message category.</p>
+     * <p>Example strings may include <code>AccessDenied</code>, <code>SUCCESS</code>,
+     * <code>AGGREGATE_ALL</code>, and <code>INVALIDPARAMETERS</code>. See <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a>
+     * for a list of MessageCategory strings.</p> <p>The the value ANY returns count of
+     * all message categories.</p> <p> <code>AGGREGATE_ALL</code> aggregates job counts
+     * for all message categories and returns the sum.</p>
+     */
+    inline BackupJob& WithMessageCategory(Aws::String&& value) { SetMessageCategory(std::move(value)); return *this;}
+
+    /**
+     * <p>This parameter is the job count for the specified message category.</p>
+     * <p>Example strings may include <code>AccessDenied</code>, <code>SUCCESS</code>,
+     * <code>AGGREGATE_ALL</code>, and <code>INVALIDPARAMETERS</code>. See <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a>
+     * for a list of MessageCategory strings.</p> <p>The the value ANY returns count of
+     * all message categories.</p> <p> <code>AGGREGATE_ALL</code> aggregates job counts
+     * for all message categories and returns the sum.</p>
+     */
+    inline BackupJob& WithMessageCategory(const char* value) { SetMessageCategory(value); return *this;}
+
   private:
 
     Aws::String m_accountId;
@@ -1302,6 +1422,12 @@ namespace Model
 
     Aws::String m_resourceName;
     bool m_resourceNameHasBeenSet = false;
+
+    Aws::Utils::DateTime m_initiationDate;
+    bool m_initiationDateHasBeenSet = false;
+
+    Aws::String m_messageCategory;
+    bool m_messageCategoryHasBeenSet = false;
   };
 
 } // namespace Model

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InputCodec::NOT_SET:
+            return {};
           case InputCodec::MPEG2:
             return "MPEG2";
           case InputCodec::AVC:

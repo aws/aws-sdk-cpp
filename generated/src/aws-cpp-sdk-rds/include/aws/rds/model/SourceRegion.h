@@ -164,26 +164,26 @@ namespace Model
 
 
     /**
-     * <p>Whether the source Amazon Web Services Region supports replicating automated
-     * backups to the current Amazon Web Services Region.</p>
+     * <p>Indicates whether the source Amazon Web Services Region supports replicating
+     * automated backups to the current Amazon Web Services Region.</p>
      */
     inline bool GetSupportsDBInstanceAutomatedBackupsReplication() const{ return m_supportsDBInstanceAutomatedBackupsReplication; }
 
     /**
-     * <p>Whether the source Amazon Web Services Region supports replicating automated
-     * backups to the current Amazon Web Services Region.</p>
+     * <p>Indicates whether the source Amazon Web Services Region supports replicating
+     * automated backups to the current Amazon Web Services Region.</p>
      */
     inline bool SupportsDBInstanceAutomatedBackupsReplicationHasBeenSet() const { return m_supportsDBInstanceAutomatedBackupsReplicationHasBeenSet; }
 
     /**
-     * <p>Whether the source Amazon Web Services Region supports replicating automated
-     * backups to the current Amazon Web Services Region.</p>
+     * <p>Indicates whether the source Amazon Web Services Region supports replicating
+     * automated backups to the current Amazon Web Services Region.</p>
      */
     inline void SetSupportsDBInstanceAutomatedBackupsReplication(bool value) { m_supportsDBInstanceAutomatedBackupsReplicationHasBeenSet = true; m_supportsDBInstanceAutomatedBackupsReplication = value; }
 
     /**
-     * <p>Whether the source Amazon Web Services Region supports replicating automated
-     * backups to the current Amazon Web Services Region.</p>
+     * <p>Indicates whether the source Amazon Web Services Region supports replicating
+     * automated backups to the current Amazon Web Services Region.</p>
      */
     inline SourceRegion& WithSupportsDBInstanceAutomatedBackupsReplication(bool value) { SetSupportsDBInstanceAutomatedBackupsReplication(value); return *this;}
 

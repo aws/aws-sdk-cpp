@@ -77,8 +77,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* FMSClient::SERVICE_NAME = "fms";
-const char* FMSClient::ALLOCATION_TAG = "FMSClient";
+namespace Aws
+{
+  namespace FMS
+  {
+    const char SERVICE_NAME[] = "fms";
+    const char ALLOCATION_TAG[] = "FMSClient";
+  }
+}
+const char* FMSClient::GetServiceName() {return SERVICE_NAME;}
+const char* FMSClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 FMSClient::FMSClient(const FMS::FMSClientConfiguration& clientConfiguration,
                      std::shared_ptr<FMSEndpointProviderBase> endpointProvider) :
@@ -90,7 +98,7 @@ FMSClient::FMSClient(const FMS::FMSClientConfiguration& clientConfiguration,
             Aws::MakeShared<FMSErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<FMSEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -106,7 +114,7 @@ FMSClient::FMSClient(const AWSCredentials& credentials,
             Aws::MakeShared<FMSErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<FMSEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -122,7 +130,7 @@ FMSClient::FMSClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsP
             Aws::MakeShared<FMSErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<FMSEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

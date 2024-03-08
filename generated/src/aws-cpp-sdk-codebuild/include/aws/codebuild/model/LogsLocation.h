@@ -123,42 +123,58 @@ namespace Model
 
 
     /**
-     * <p>The URL to an individual build log in CloudWatch Logs.</p>
+     * <p>The URL to an individual build log in CloudWatch Logs. The log stream is
+     * created during the PROVISIONING phase of a build and the <code>deeplink</code>
+     * will not be valid until it is created.</p>
      */
     inline const Aws::String& GetDeepLink() const{ return m_deepLink; }
 
     /**
-     * <p>The URL to an individual build log in CloudWatch Logs.</p>
+     * <p>The URL to an individual build log in CloudWatch Logs. The log stream is
+     * created during the PROVISIONING phase of a build and the <code>deeplink</code>
+     * will not be valid until it is created.</p>
      */
     inline bool DeepLinkHasBeenSet() const { return m_deepLinkHasBeenSet; }
 
     /**
-     * <p>The URL to an individual build log in CloudWatch Logs.</p>
+     * <p>The URL to an individual build log in CloudWatch Logs. The log stream is
+     * created during the PROVISIONING phase of a build and the <code>deeplink</code>
+     * will not be valid until it is created.</p>
      */
     inline void SetDeepLink(const Aws::String& value) { m_deepLinkHasBeenSet = true; m_deepLink = value; }
 
     /**
-     * <p>The URL to an individual build log in CloudWatch Logs.</p>
+     * <p>The URL to an individual build log in CloudWatch Logs. The log stream is
+     * created during the PROVISIONING phase of a build and the <code>deeplink</code>
+     * will not be valid until it is created.</p>
      */
     inline void SetDeepLink(Aws::String&& value) { m_deepLinkHasBeenSet = true; m_deepLink = std::move(value); }
 
     /**
-     * <p>The URL to an individual build log in CloudWatch Logs.</p>
+     * <p>The URL to an individual build log in CloudWatch Logs. The log stream is
+     * created during the PROVISIONING phase of a build and the <code>deeplink</code>
+     * will not be valid until it is created.</p>
      */
     inline void SetDeepLink(const char* value) { m_deepLinkHasBeenSet = true; m_deepLink.assign(value); }
 
     /**
-     * <p>The URL to an individual build log in CloudWatch Logs.</p>
+     * <p>The URL to an individual build log in CloudWatch Logs. The log stream is
+     * created during the PROVISIONING phase of a build and the <code>deeplink</code>
+     * will not be valid until it is created.</p>
      */
     inline LogsLocation& WithDeepLink(const Aws::String& value) { SetDeepLink(value); return *this;}
 
     /**
-     * <p>The URL to an individual build log in CloudWatch Logs.</p>
+     * <p>The URL to an individual build log in CloudWatch Logs. The log stream is
+     * created during the PROVISIONING phase of a build and the <code>deeplink</code>
+     * will not be valid until it is created.</p>
      */
     inline LogsLocation& WithDeepLink(Aws::String&& value) { SetDeepLink(std::move(value)); return *this;}
 
     /**
-     * <p>The URL to an individual build log in CloudWatch Logs.</p>
+     * <p>The URL to an individual build log in CloudWatch Logs. The log stream is
+     * created during the PROVISIONING phase of a build and the <code>deeplink</code>
+     * will not be valid until it is created.</p>
      */
     inline LogsLocation& WithDeepLink(const char* value) { SetDeepLink(value); return *this;}
 
@@ -205,74 +221,82 @@ namespace Model
 
 
     /**
-     * <p> The ARN of CloudWatch Logs for a build project. Its format is
+     * <p>The ARN of the CloudWatch Logs stream for a build execution. Its format is
      * <code>arn:${Partition}:logs:${Region}:${Account}:log-group:${LogGroupName}:log-stream:${LogStreamName}</code>.
-     * For more information, see <a
+     * The CloudWatch Logs stream is created during the PROVISIONING phase of a build
+     * and the ARN will not be valid until it is created. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatchlogs.html#amazoncloudwatchlogs-resources-for-iam-policies">Resources
-     * Defined by CloudWatch Logs</a>. </p>
+     * Defined by CloudWatch Logs</a>.</p>
      */
     inline const Aws::String& GetCloudWatchLogsArn() const{ return m_cloudWatchLogsArn; }
 
     /**
-     * <p> The ARN of CloudWatch Logs for a build project. Its format is
+     * <p>The ARN of the CloudWatch Logs stream for a build execution. Its format is
      * <code>arn:${Partition}:logs:${Region}:${Account}:log-group:${LogGroupName}:log-stream:${LogStreamName}</code>.
-     * For more information, see <a
+     * The CloudWatch Logs stream is created during the PROVISIONING phase of a build
+     * and the ARN will not be valid until it is created. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatchlogs.html#amazoncloudwatchlogs-resources-for-iam-policies">Resources
-     * Defined by CloudWatch Logs</a>. </p>
+     * Defined by CloudWatch Logs</a>.</p>
      */
     inline bool CloudWatchLogsArnHasBeenSet() const { return m_cloudWatchLogsArnHasBeenSet; }
 
     /**
-     * <p> The ARN of CloudWatch Logs for a build project. Its format is
+     * <p>The ARN of the CloudWatch Logs stream for a build execution. Its format is
      * <code>arn:${Partition}:logs:${Region}:${Account}:log-group:${LogGroupName}:log-stream:${LogStreamName}</code>.
-     * For more information, see <a
+     * The CloudWatch Logs stream is created during the PROVISIONING phase of a build
+     * and the ARN will not be valid until it is created. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatchlogs.html#amazoncloudwatchlogs-resources-for-iam-policies">Resources
-     * Defined by CloudWatch Logs</a>. </p>
+     * Defined by CloudWatch Logs</a>.</p>
      */
     inline void SetCloudWatchLogsArn(const Aws::String& value) { m_cloudWatchLogsArnHasBeenSet = true; m_cloudWatchLogsArn = value; }
 
     /**
-     * <p> The ARN of CloudWatch Logs for a build project. Its format is
+     * <p>The ARN of the CloudWatch Logs stream for a build execution. Its format is
      * <code>arn:${Partition}:logs:${Region}:${Account}:log-group:${LogGroupName}:log-stream:${LogStreamName}</code>.
-     * For more information, see <a
+     * The CloudWatch Logs stream is created during the PROVISIONING phase of a build
+     * and the ARN will not be valid until it is created. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatchlogs.html#amazoncloudwatchlogs-resources-for-iam-policies">Resources
-     * Defined by CloudWatch Logs</a>. </p>
+     * Defined by CloudWatch Logs</a>.</p>
      */
     inline void SetCloudWatchLogsArn(Aws::String&& value) { m_cloudWatchLogsArnHasBeenSet = true; m_cloudWatchLogsArn = std::move(value); }
 
     /**
-     * <p> The ARN of CloudWatch Logs for a build project. Its format is
+     * <p>The ARN of the CloudWatch Logs stream for a build execution. Its format is
      * <code>arn:${Partition}:logs:${Region}:${Account}:log-group:${LogGroupName}:log-stream:${LogStreamName}</code>.
-     * For more information, see <a
+     * The CloudWatch Logs stream is created during the PROVISIONING phase of a build
+     * and the ARN will not be valid until it is created. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatchlogs.html#amazoncloudwatchlogs-resources-for-iam-policies">Resources
-     * Defined by CloudWatch Logs</a>. </p>
+     * Defined by CloudWatch Logs</a>.</p>
      */
     inline void SetCloudWatchLogsArn(const char* value) { m_cloudWatchLogsArnHasBeenSet = true; m_cloudWatchLogsArn.assign(value); }
 
     /**
-     * <p> The ARN of CloudWatch Logs for a build project. Its format is
+     * <p>The ARN of the CloudWatch Logs stream for a build execution. Its format is
      * <code>arn:${Partition}:logs:${Region}:${Account}:log-group:${LogGroupName}:log-stream:${LogStreamName}</code>.
-     * For more information, see <a
+     * The CloudWatch Logs stream is created during the PROVISIONING phase of a build
+     * and the ARN will not be valid until it is created. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatchlogs.html#amazoncloudwatchlogs-resources-for-iam-policies">Resources
-     * Defined by CloudWatch Logs</a>. </p>
+     * Defined by CloudWatch Logs</a>.</p>
      */
     inline LogsLocation& WithCloudWatchLogsArn(const Aws::String& value) { SetCloudWatchLogsArn(value); return *this;}
 
     /**
-     * <p> The ARN of CloudWatch Logs for a build project. Its format is
+     * <p>The ARN of the CloudWatch Logs stream for a build execution. Its format is
      * <code>arn:${Partition}:logs:${Region}:${Account}:log-group:${LogGroupName}:log-stream:${LogStreamName}</code>.
-     * For more information, see <a
+     * The CloudWatch Logs stream is created during the PROVISIONING phase of a build
+     * and the ARN will not be valid until it is created. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatchlogs.html#amazoncloudwatchlogs-resources-for-iam-policies">Resources
-     * Defined by CloudWatch Logs</a>. </p>
+     * Defined by CloudWatch Logs</a>.</p>
      */
     inline LogsLocation& WithCloudWatchLogsArn(Aws::String&& value) { SetCloudWatchLogsArn(std::move(value)); return *this;}
 
     /**
-     * <p> The ARN of CloudWatch Logs for a build project. Its format is
+     * <p>The ARN of the CloudWatch Logs stream for a build execution. Its format is
      * <code>arn:${Partition}:logs:${Region}:${Account}:log-group:${LogGroupName}:log-stream:${LogStreamName}</code>.
-     * For more information, see <a
+     * The CloudWatch Logs stream is created during the PROVISIONING phase of a build
+     * and the ARN will not be valid until it is created. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatchlogs.html#amazoncloudwatchlogs-resources-for-iam-policies">Resources
-     * Defined by CloudWatch Logs</a>. </p>
+     * Defined by CloudWatch Logs</a>.</p>
      */
     inline LogsLocation& WithCloudWatchLogsArn(const char* value) { SetCloudWatchLogsArn(value); return *this;}
 

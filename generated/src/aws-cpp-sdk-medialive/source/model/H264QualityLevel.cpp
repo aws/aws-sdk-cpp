@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case H264QualityLevel::NOT_SET:
+            return {};
           case H264QualityLevel::ENHANCED_QUALITY:
             return "ENHANCED_QUALITY";
           case H264QualityLevel::STANDARD_QUALITY:

@@ -38,51 +38,51 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == PROJECT_CONFIGURATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeStarErrors::PROJECT_CONFIGURATION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeStarErrors::PROJECT_CONFIGURATION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == USER_PROFILE_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeStarErrors::USER_PROFILE_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeStarErrors::USER_PROFILE_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == PROJECT_CREATION_FAILED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeStarErrors::PROJECT_CREATION_FAILED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeStarErrors::PROJECT_CREATION_FAILED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeStarErrors::LIMIT_EXCEEDED), true);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeStarErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
   }
   else if (hashCode == PROJECT_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeStarErrors::PROJECT_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeStarErrors::PROJECT_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == TEAM_MEMBER_ALREADY_ASSOCIATED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeStarErrors::TEAM_MEMBER_ALREADY_ASSOCIATED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeStarErrors::TEAM_MEMBER_ALREADY_ASSOCIATED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == USER_PROFILE_ALREADY_EXISTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeStarErrors::USER_PROFILE_ALREADY_EXISTS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeStarErrors::USER_PROFILE_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == CONCURRENT_MODIFICATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeStarErrors::CONCURRENT_MODIFICATION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeStarErrors::CONCURRENT_MODIFICATION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == TEAM_MEMBER_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeStarErrors::TEAM_MEMBER_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeStarErrors::TEAM_MEMBER_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_SERVICE_ROLE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeStarErrors::INVALID_SERVICE_ROLE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeStarErrors::INVALID_SERVICE_ROLE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_NEXT_TOKEN_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeStarErrors::INVALID_NEXT_TOKEN), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeStarErrors::INVALID_NEXT_TOKEN), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == PROJECT_ALREADY_EXISTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeStarErrors::PROJECT_ALREADY_EXISTS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodeStarErrors::PROJECT_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

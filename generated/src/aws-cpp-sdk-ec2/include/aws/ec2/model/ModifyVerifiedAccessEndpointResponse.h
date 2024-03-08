@@ -34,27 +34,27 @@ namespace Model
 
 
     /**
-     * <p>The Verified Access endpoint details.</p>
+     * <p>Details about the Verified Access endpoint.</p>
      */
     inline const VerifiedAccessEndpoint& GetVerifiedAccessEndpoint() const{ return m_verifiedAccessEndpoint; }
 
     /**
-     * <p>The Verified Access endpoint details.</p>
+     * <p>Details about the Verified Access endpoint.</p>
      */
     inline void SetVerifiedAccessEndpoint(const VerifiedAccessEndpoint& value) { m_verifiedAccessEndpoint = value; }
 
     /**
-     * <p>The Verified Access endpoint details.</p>
+     * <p>Details about the Verified Access endpoint.</p>
      */
     inline void SetVerifiedAccessEndpoint(VerifiedAccessEndpoint&& value) { m_verifiedAccessEndpoint = std::move(value); }
 
     /**
-     * <p>The Verified Access endpoint details.</p>
+     * <p>Details about the Verified Access endpoint.</p>
      */
     inline ModifyVerifiedAccessEndpointResponse& WithVerifiedAccessEndpoint(const VerifiedAccessEndpoint& value) { SetVerifiedAccessEndpoint(value); return *this;}
 
     /**
-     * <p>The Verified Access endpoint details.</p>
+     * <p>Details about the Verified Access endpoint.</p>
      */
     inline ModifyVerifiedAccessEndpointResponse& WithVerifiedAccessEndpoint(VerifiedAccessEndpoint&& value) { SetVerifiedAccessEndpoint(std::move(value)); return *this;}
 

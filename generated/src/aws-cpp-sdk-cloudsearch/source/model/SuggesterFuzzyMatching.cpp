@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SuggesterFuzzyMatching::NOT_SET:
+            return {};
           case SuggesterFuzzyMatching::none:
             return "none";
           case SuggesterFuzzyMatching::low:

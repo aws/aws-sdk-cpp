@@ -15,6 +15,8 @@
 #include <aws/keyspaces/model/TimeToLive.h>
 #include <aws/keyspaces/model/Comment.h>
 #include <aws/keyspaces/model/ClientSideTimestamps.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/keyspaces/model/ReplicaSpecificationSummary.h>
 #include <utility>
 
 namespace Aws
@@ -409,6 +411,49 @@ namespace Model
     inline GetTableResult& WithClientSideTimestamps(ClientSideTimestamps&& value) { SetClientSideTimestamps(std::move(value)); return *this;}
 
 
+    /**
+     * <p>Returns the Amazon Web Services Region specific settings of all Regions a
+     * multi-Region table is replicated in.</p>
+     */
+    inline const Aws::Vector<ReplicaSpecificationSummary>& GetReplicaSpecifications() const{ return m_replicaSpecifications; }
+
+    /**
+     * <p>Returns the Amazon Web Services Region specific settings of all Regions a
+     * multi-Region table is replicated in.</p>
+     */
+    inline void SetReplicaSpecifications(const Aws::Vector<ReplicaSpecificationSummary>& value) { m_replicaSpecifications = value; }
+
+    /**
+     * <p>Returns the Amazon Web Services Region specific settings of all Regions a
+     * multi-Region table is replicated in.</p>
+     */
+    inline void SetReplicaSpecifications(Aws::Vector<ReplicaSpecificationSummary>&& value) { m_replicaSpecifications = std::move(value); }
+
+    /**
+     * <p>Returns the Amazon Web Services Region specific settings of all Regions a
+     * multi-Region table is replicated in.</p>
+     */
+    inline GetTableResult& WithReplicaSpecifications(const Aws::Vector<ReplicaSpecificationSummary>& value) { SetReplicaSpecifications(value); return *this;}
+
+    /**
+     * <p>Returns the Amazon Web Services Region specific settings of all Regions a
+     * multi-Region table is replicated in.</p>
+     */
+    inline GetTableResult& WithReplicaSpecifications(Aws::Vector<ReplicaSpecificationSummary>&& value) { SetReplicaSpecifications(std::move(value)); return *this;}
+
+    /**
+     * <p>Returns the Amazon Web Services Region specific settings of all Regions a
+     * multi-Region table is replicated in.</p>
+     */
+    inline GetTableResult& AddReplicaSpecifications(const ReplicaSpecificationSummary& value) { m_replicaSpecifications.push_back(value); return *this; }
+
+    /**
+     * <p>Returns the Amazon Web Services Region specific settings of all Regions a
+     * multi-Region table is replicated in.</p>
+     */
+    inline GetTableResult& AddReplicaSpecifications(ReplicaSpecificationSummary&& value) { m_replicaSpecifications.push_back(std::move(value)); return *this; }
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -457,6 +502,8 @@ namespace Model
     Comment m_comment;
 
     ClientSideTimestamps m_clientSideTimestamps;
+
+    Aws::Vector<ReplicaSpecificationSummary> m_replicaSpecifications;
 
     Aws::String m_requestId;
   };

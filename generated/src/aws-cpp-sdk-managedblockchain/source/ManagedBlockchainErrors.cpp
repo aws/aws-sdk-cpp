@@ -48,31 +48,31 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == RESOURCE_NOT_READY_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ManagedBlockchainErrors::RESOURCE_NOT_READY), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ManagedBlockchainErrors::RESOURCE_NOT_READY), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == RESOURCE_ALREADY_EXISTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ManagedBlockchainErrors::RESOURCE_ALREADY_EXISTS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ManagedBlockchainErrors::RESOURCE_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == RESOURCE_LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ManagedBlockchainErrors::RESOURCE_LIMIT_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ManagedBlockchainErrors::RESOURCE_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == TOO_MANY_TAGS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ManagedBlockchainErrors::TOO_MANY_TAGS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ManagedBlockchainErrors::TOO_MANY_TAGS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INTERNAL_SERVICE_ERROR_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ManagedBlockchainErrors::INTERNAL_SERVICE_ERROR), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ManagedBlockchainErrors::INTERNAL_SERVICE_ERROR), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == ILLEGAL_ACTION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ManagedBlockchainErrors::ILLEGAL_ACTION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ManagedBlockchainErrors::ILLEGAL_ACTION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_REQUEST_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ManagedBlockchainErrors::INVALID_REQUEST), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ManagedBlockchainErrors::INVALID_REQUEST), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

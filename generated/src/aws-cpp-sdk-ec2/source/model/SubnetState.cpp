@@ -22,6 +22,7 @@ namespace Aws
 
         static const int pending_HASH = HashingUtils::HashString("pending");
         static const int available_HASH = HashingUtils::HashString("available");
+        static const int unavailable_HASH = HashingUtils::HashString("unavailable");
 
 
         SubnetState GetSubnetStateForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == available_HASH)
           {
             return SubnetState::available;
+          }
+          else if (hashCode == unavailable_HASH)
+          {
+            return SubnetState::unavailable;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -49,10 +54,14 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SubnetState::NOT_SET:
+            return {};
           case SubnetState::pending:
             return "pending";
           case SubnetState::available:
             return "available";
+          case SubnetState::unavailable:
+            return "unavailable";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

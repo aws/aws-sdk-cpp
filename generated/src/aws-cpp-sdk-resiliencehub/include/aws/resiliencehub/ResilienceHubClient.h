@@ -28,8 +28,8 @@ namespace ResilienceHub
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef ResilienceHubClientConfiguration ClientConfigurationType;
       typedef ResilienceHubEndpointProvider EndpointProviderType;
@@ -39,14 +39,14 @@ namespace ResilienceHub
         * is not specified, it will be initialized to default values.
         */
         ResilienceHubClient(const Aws::ResilienceHub::ResilienceHubClientConfiguration& clientConfiguration = Aws::ResilienceHub::ResilienceHubClientConfiguration(),
-                            std::shared_ptr<ResilienceHubEndpointProviderBase> endpointProvider = Aws::MakeShared<ResilienceHubEndpointProvider>(ALLOCATION_TAG));
+                            std::shared_ptr<ResilienceHubEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         ResilienceHubClient(const Aws::Auth::AWSCredentials& credentials,
-                            std::shared_ptr<ResilienceHubEndpointProviderBase> endpointProvider = Aws::MakeShared<ResilienceHubEndpointProvider>(ALLOCATION_TAG),
+                            std::shared_ptr<ResilienceHubEndpointProviderBase> endpointProvider = nullptr,
                             const Aws::ResilienceHub::ResilienceHubClientConfiguration& clientConfiguration = Aws::ResilienceHub::ResilienceHubClientConfiguration());
 
        /**
@@ -54,7 +54,7 @@ namespace ResilienceHub
         * the default http client factory will be used
         */
         ResilienceHubClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                            std::shared_ptr<ResilienceHubEndpointProviderBase> endpointProvider = Aws::MakeShared<ResilienceHubEndpointProvider>(ALLOCATION_TAG),
+                            std::shared_ptr<ResilienceHubEndpointProviderBase> endpointProvider = nullptr,
                             const Aws::ResilienceHub::ResilienceHubClientConfiguration& clientConfiguration = Aws::ResilienceHub::ResilienceHubClientConfiguration());
 
 
@@ -83,9 +83,14 @@ namespace ResilienceHub
         virtual ~ResilienceHubClient();
 
         /**
-         * <p>Adds the resource mapping for the draft application version. You can also
-         * update an existing resource mapping to a new physical resource.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Adds the source of resource-maps to the draft version of an application.
+         * During assessment, Resilience Hub will use these resource-maps to resolve the
+         * latest physical ID for each resource in the application template. For more
+         * information about different types of resources suported by Resilience Hub and
+         * how to add them in your application, see <a
+         * href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/how-app-manage.html">Step
+         * 2: How is your application managed?</a> in the Resilience Hub User
+         * Guide.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/AddDraftAppVersionResourceMappings">AWS
          * API Reference</a></p>
          */
@@ -265,7 +270,14 @@ namespace ResilienceHub
         }
 
         /**
-         * <p>Creates a resiliency policy for an application.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a resiliency policy for an application.</p>  <p>Resilience Hub
+         * allows you to provide a value of zero for <code>rtoInSecs</code> and
+         * <code>rpoInSecs</code> of your resiliency policy. But, while assessing your
+         * application, the lowest possible assessment result is near zero. Hence, if you
+         * provide value zero for <code>rtoInSecs</code> and <code>rpoInSecs</code>, the
+         * estimated workload RTO and estimated workload RPO result will be near zero and
+         * the <b>Compliance status</b> for your application will be set to <b>Policy
+         * breached</b>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/CreateResiliencyPolicy">AWS
          * API Reference</a></p>
          */
@@ -1532,7 +1544,14 @@ namespace ResilienceHub
         }
 
         /**
-         * <p>Updates a resiliency policy.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates a resiliency policy.</p>  <p>Resilience Hub allows you to
+         * provide a value of zero for <code>rtoInSecs</code> and <code>rpoInSecs</code> of
+         * your resiliency policy. But, while assessing your application, the lowest
+         * possible assessment result is near zero. Hence, if you provide value zero for
+         * <code>rtoInSecs</code> and <code>rpoInSecs</code>, the estimated workload RTO
+         * and estimated workload RPO result will be near zero and the <b>Compliance
+         * status</b> for your application will be set to <b>Policy breached</b>.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/UpdateResiliencyPolicy">AWS
          * API Reference</a></p>
          */

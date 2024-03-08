@@ -253,65 +253,57 @@ namespace Model
 
     /**
      * <p>The <a>Rule</a> statements used to identify the web requests that you want to
-     * allow, block, or count. Each rule includes one top-level statement that WAF uses
-     * to identify matching web requests, and parameters that govern how WAF handles
-     * them. </p>
+     * manage. Each rule includes one top-level statement that WAF uses to identify
+     * matching web requests, and parameters that govern how WAF handles them. </p>
      */
     inline const Aws::Vector<Rule>& GetRules() const{ return m_rules; }
 
     /**
      * <p>The <a>Rule</a> statements used to identify the web requests that you want to
-     * allow, block, or count. Each rule includes one top-level statement that WAF uses
-     * to identify matching web requests, and parameters that govern how WAF handles
-     * them. </p>
+     * manage. Each rule includes one top-level statement that WAF uses to identify
+     * matching web requests, and parameters that govern how WAF handles them. </p>
      */
     inline bool RulesHasBeenSet() const { return m_rulesHasBeenSet; }
 
     /**
      * <p>The <a>Rule</a> statements used to identify the web requests that you want to
-     * allow, block, or count. Each rule includes one top-level statement that WAF uses
-     * to identify matching web requests, and parameters that govern how WAF handles
-     * them. </p>
+     * manage. Each rule includes one top-level statement that WAF uses to identify
+     * matching web requests, and parameters that govern how WAF handles them. </p>
      */
     inline void SetRules(const Aws::Vector<Rule>& value) { m_rulesHasBeenSet = true; m_rules = value; }
 
     /**
      * <p>The <a>Rule</a> statements used to identify the web requests that you want to
-     * allow, block, or count. Each rule includes one top-level statement that WAF uses
-     * to identify matching web requests, and parameters that govern how WAF handles
-     * them. </p>
+     * manage. Each rule includes one top-level statement that WAF uses to identify
+     * matching web requests, and parameters that govern how WAF handles them. </p>
      */
     inline void SetRules(Aws::Vector<Rule>&& value) { m_rulesHasBeenSet = true; m_rules = std::move(value); }
 
     /**
      * <p>The <a>Rule</a> statements used to identify the web requests that you want to
-     * allow, block, or count. Each rule includes one top-level statement that WAF uses
-     * to identify matching web requests, and parameters that govern how WAF handles
-     * them. </p>
+     * manage. Each rule includes one top-level statement that WAF uses to identify
+     * matching web requests, and parameters that govern how WAF handles them. </p>
      */
     inline CreateWebACLRequest& WithRules(const Aws::Vector<Rule>& value) { SetRules(value); return *this;}
 
     /**
      * <p>The <a>Rule</a> statements used to identify the web requests that you want to
-     * allow, block, or count. Each rule includes one top-level statement that WAF uses
-     * to identify matching web requests, and parameters that govern how WAF handles
-     * them. </p>
+     * manage. Each rule includes one top-level statement that WAF uses to identify
+     * matching web requests, and parameters that govern how WAF handles them. </p>
      */
     inline CreateWebACLRequest& WithRules(Aws::Vector<Rule>&& value) { SetRules(std::move(value)); return *this;}
 
     /**
      * <p>The <a>Rule</a> statements used to identify the web requests that you want to
-     * allow, block, or count. Each rule includes one top-level statement that WAF uses
-     * to identify matching web requests, and parameters that govern how WAF handles
-     * them. </p>
+     * manage. Each rule includes one top-level statement that WAF uses to identify
+     * matching web requests, and parameters that govern how WAF handles them. </p>
      */
     inline CreateWebACLRequest& AddRules(const Rule& value) { m_rulesHasBeenSet = true; m_rules.push_back(value); return *this; }
 
     /**
      * <p>The <a>Rule</a> statements used to identify the web requests that you want to
-     * allow, block, or count. Each rule includes one top-level statement that WAF uses
-     * to identify matching web requests, and parameters that govern how WAF handles
-     * them. </p>
+     * manage. Each rule includes one top-level statement that WAF uses to identify
+     * matching web requests, and parameters that govern how WAF handles them. </p>
      */
     inline CreateWebACLRequest& AddRules(Rule&& value) { m_rulesHasBeenSet = true; m_rules.push_back(std::move(value)); return *this; }
 
@@ -670,8 +662,8 @@ namespace Model
      * accepts the resource's host domain plus all domains in the token domain list,
      * including their prefixed subdomains.</p> <p>Example JSON: <code>"TokenDomains":
      * { "mywebsite.com", "myotherwebsite.com" }</code> </p> <p>Public suffixes aren't
-     * allowed. For example, you can't use <code>usa.gov</code> or <code>co.uk</code>
-     * as token domains.</p>
+     * allowed. For example, you can't use <code>gov.au</code> or <code>co.uk</code> as
+     * token domains.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTokenDomains() const{ return m_tokenDomains; }
 
@@ -684,8 +676,8 @@ namespace Model
      * accepts the resource's host domain plus all domains in the token domain list,
      * including their prefixed subdomains.</p> <p>Example JSON: <code>"TokenDomains":
      * { "mywebsite.com", "myotherwebsite.com" }</code> </p> <p>Public suffixes aren't
-     * allowed. For example, you can't use <code>usa.gov</code> or <code>co.uk</code>
-     * as token domains.</p>
+     * allowed. For example, you can't use <code>gov.au</code> or <code>co.uk</code> as
+     * token domains.</p>
      */
     inline bool TokenDomainsHasBeenSet() const { return m_tokenDomainsHasBeenSet; }
 
@@ -698,8 +690,8 @@ namespace Model
      * accepts the resource's host domain plus all domains in the token domain list,
      * including their prefixed subdomains.</p> <p>Example JSON: <code>"TokenDomains":
      * { "mywebsite.com", "myotherwebsite.com" }</code> </p> <p>Public suffixes aren't
-     * allowed. For example, you can't use <code>usa.gov</code> or <code>co.uk</code>
-     * as token domains.</p>
+     * allowed. For example, you can't use <code>gov.au</code> or <code>co.uk</code> as
+     * token domains.</p>
      */
     inline void SetTokenDomains(const Aws::Vector<Aws::String>& value) { m_tokenDomainsHasBeenSet = true; m_tokenDomains = value; }
 
@@ -712,8 +704,8 @@ namespace Model
      * accepts the resource's host domain plus all domains in the token domain list,
      * including their prefixed subdomains.</p> <p>Example JSON: <code>"TokenDomains":
      * { "mywebsite.com", "myotherwebsite.com" }</code> </p> <p>Public suffixes aren't
-     * allowed. For example, you can't use <code>usa.gov</code> or <code>co.uk</code>
-     * as token domains.</p>
+     * allowed. For example, you can't use <code>gov.au</code> or <code>co.uk</code> as
+     * token domains.</p>
      */
     inline void SetTokenDomains(Aws::Vector<Aws::String>&& value) { m_tokenDomainsHasBeenSet = true; m_tokenDomains = std::move(value); }
 
@@ -726,8 +718,8 @@ namespace Model
      * accepts the resource's host domain plus all domains in the token domain list,
      * including their prefixed subdomains.</p> <p>Example JSON: <code>"TokenDomains":
      * { "mywebsite.com", "myotherwebsite.com" }</code> </p> <p>Public suffixes aren't
-     * allowed. For example, you can't use <code>usa.gov</code> or <code>co.uk</code>
-     * as token domains.</p>
+     * allowed. For example, you can't use <code>gov.au</code> or <code>co.uk</code> as
+     * token domains.</p>
      */
     inline CreateWebACLRequest& WithTokenDomains(const Aws::Vector<Aws::String>& value) { SetTokenDomains(value); return *this;}
 
@@ -740,8 +732,8 @@ namespace Model
      * accepts the resource's host domain plus all domains in the token domain list,
      * including their prefixed subdomains.</p> <p>Example JSON: <code>"TokenDomains":
      * { "mywebsite.com", "myotherwebsite.com" }</code> </p> <p>Public suffixes aren't
-     * allowed. For example, you can't use <code>usa.gov</code> or <code>co.uk</code>
-     * as token domains.</p>
+     * allowed. For example, you can't use <code>gov.au</code> or <code>co.uk</code> as
+     * token domains.</p>
      */
     inline CreateWebACLRequest& WithTokenDomains(Aws::Vector<Aws::String>&& value) { SetTokenDomains(std::move(value)); return *this;}
 
@@ -754,8 +746,8 @@ namespace Model
      * accepts the resource's host domain plus all domains in the token domain list,
      * including their prefixed subdomains.</p> <p>Example JSON: <code>"TokenDomains":
      * { "mywebsite.com", "myotherwebsite.com" }</code> </p> <p>Public suffixes aren't
-     * allowed. For example, you can't use <code>usa.gov</code> or <code>co.uk</code>
-     * as token domains.</p>
+     * allowed. For example, you can't use <code>gov.au</code> or <code>co.uk</code> as
+     * token domains.</p>
      */
     inline CreateWebACLRequest& AddTokenDomains(const Aws::String& value) { m_tokenDomainsHasBeenSet = true; m_tokenDomains.push_back(value); return *this; }
 
@@ -768,8 +760,8 @@ namespace Model
      * accepts the resource's host domain plus all domains in the token domain list,
      * including their prefixed subdomains.</p> <p>Example JSON: <code>"TokenDomains":
      * { "mywebsite.com", "myotherwebsite.com" }</code> </p> <p>Public suffixes aren't
-     * allowed. For example, you can't use <code>usa.gov</code> or <code>co.uk</code>
-     * as token domains.</p>
+     * allowed. For example, you can't use <code>gov.au</code> or <code>co.uk</code> as
+     * token domains.</p>
      */
     inline CreateWebACLRequest& AddTokenDomains(Aws::String&& value) { m_tokenDomainsHasBeenSet = true; m_tokenDomains.push_back(std::move(value)); return *this; }
 
@@ -782,8 +774,8 @@ namespace Model
      * accepts the resource's host domain plus all domains in the token domain list,
      * including their prefixed subdomains.</p> <p>Example JSON: <code>"TokenDomains":
      * { "mywebsite.com", "myotherwebsite.com" }</code> </p> <p>Public suffixes aren't
-     * allowed. For example, you can't use <code>usa.gov</code> or <code>co.uk</code>
-     * as token domains.</p>
+     * allowed. For example, you can't use <code>gov.au</code> or <code>co.uk</code> as
+     * token domains.</p>
      */
     inline CreateWebACLRequest& AddTokenDomains(const char* value) { m_tokenDomainsHasBeenSet = true; m_tokenDomains.push_back(value); return *this; }
 
@@ -791,66 +783,84 @@ namespace Model
     /**
      * <p>Specifies custom configurations for the associations between the web ACL and
      * protected resources. </p> <p>Use this to customize the maximum size of the
-     * request body that your protected CloudFront distributions forward to WAF for
-     * inspection. The default is 16 KB (16,384 bytes). </p>  <p>You are charged
-     * additional fees when your protected resources forward body sizes that are larger
-     * than the default. For more information, see <a
-     * href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p> 
+     * request body that your protected resources forward to WAF for inspection. You
+     * can customize this setting for CloudFront, API Gateway, Amazon Cognito, App
+     * Runner, or Verified Access resources. The default setting is 16 KB (16,384
+     * bytes). </p>  <p>You are charged additional fees when your protected
+     * resources forward body sizes that are larger than the default. For more
+     * information, see <a href="http://aws.amazon.com/waf/pricing/">WAF
+     * Pricing</a>.</p>  <p>For Application Load Balancer and AppSync, the limit
+     * is fixed at 8 KB (8,192 bytes).</p>
      */
     inline const AssociationConfig& GetAssociationConfig() const{ return m_associationConfig; }
 
     /**
      * <p>Specifies custom configurations for the associations between the web ACL and
      * protected resources. </p> <p>Use this to customize the maximum size of the
-     * request body that your protected CloudFront distributions forward to WAF for
-     * inspection. The default is 16 KB (16,384 bytes). </p>  <p>You are charged
-     * additional fees when your protected resources forward body sizes that are larger
-     * than the default. For more information, see <a
-     * href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p> 
+     * request body that your protected resources forward to WAF for inspection. You
+     * can customize this setting for CloudFront, API Gateway, Amazon Cognito, App
+     * Runner, or Verified Access resources. The default setting is 16 KB (16,384
+     * bytes). </p>  <p>You are charged additional fees when your protected
+     * resources forward body sizes that are larger than the default. For more
+     * information, see <a href="http://aws.amazon.com/waf/pricing/">WAF
+     * Pricing</a>.</p>  <p>For Application Load Balancer and AppSync, the limit
+     * is fixed at 8 KB (8,192 bytes).</p>
      */
     inline bool AssociationConfigHasBeenSet() const { return m_associationConfigHasBeenSet; }
 
     /**
      * <p>Specifies custom configurations for the associations between the web ACL and
      * protected resources. </p> <p>Use this to customize the maximum size of the
-     * request body that your protected CloudFront distributions forward to WAF for
-     * inspection. The default is 16 KB (16,384 bytes). </p>  <p>You are charged
-     * additional fees when your protected resources forward body sizes that are larger
-     * than the default. For more information, see <a
-     * href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p> 
+     * request body that your protected resources forward to WAF for inspection. You
+     * can customize this setting for CloudFront, API Gateway, Amazon Cognito, App
+     * Runner, or Verified Access resources. The default setting is 16 KB (16,384
+     * bytes). </p>  <p>You are charged additional fees when your protected
+     * resources forward body sizes that are larger than the default. For more
+     * information, see <a href="http://aws.amazon.com/waf/pricing/">WAF
+     * Pricing</a>.</p>  <p>For Application Load Balancer and AppSync, the limit
+     * is fixed at 8 KB (8,192 bytes).</p>
      */
     inline void SetAssociationConfig(const AssociationConfig& value) { m_associationConfigHasBeenSet = true; m_associationConfig = value; }
 
     /**
      * <p>Specifies custom configurations for the associations between the web ACL and
      * protected resources. </p> <p>Use this to customize the maximum size of the
-     * request body that your protected CloudFront distributions forward to WAF for
-     * inspection. The default is 16 KB (16,384 bytes). </p>  <p>You are charged
-     * additional fees when your protected resources forward body sizes that are larger
-     * than the default. For more information, see <a
-     * href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p> 
+     * request body that your protected resources forward to WAF for inspection. You
+     * can customize this setting for CloudFront, API Gateway, Amazon Cognito, App
+     * Runner, or Verified Access resources. The default setting is 16 KB (16,384
+     * bytes). </p>  <p>You are charged additional fees when your protected
+     * resources forward body sizes that are larger than the default. For more
+     * information, see <a href="http://aws.amazon.com/waf/pricing/">WAF
+     * Pricing</a>.</p>  <p>For Application Load Balancer and AppSync, the limit
+     * is fixed at 8 KB (8,192 bytes).</p>
      */
     inline void SetAssociationConfig(AssociationConfig&& value) { m_associationConfigHasBeenSet = true; m_associationConfig = std::move(value); }
 
     /**
      * <p>Specifies custom configurations for the associations between the web ACL and
      * protected resources. </p> <p>Use this to customize the maximum size of the
-     * request body that your protected CloudFront distributions forward to WAF for
-     * inspection. The default is 16 KB (16,384 bytes). </p>  <p>You are charged
-     * additional fees when your protected resources forward body sizes that are larger
-     * than the default. For more information, see <a
-     * href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p> 
+     * request body that your protected resources forward to WAF for inspection. You
+     * can customize this setting for CloudFront, API Gateway, Amazon Cognito, App
+     * Runner, or Verified Access resources. The default setting is 16 KB (16,384
+     * bytes). </p>  <p>You are charged additional fees when your protected
+     * resources forward body sizes that are larger than the default. For more
+     * information, see <a href="http://aws.amazon.com/waf/pricing/">WAF
+     * Pricing</a>.</p>  <p>For Application Load Balancer and AppSync, the limit
+     * is fixed at 8 KB (8,192 bytes).</p>
      */
     inline CreateWebACLRequest& WithAssociationConfig(const AssociationConfig& value) { SetAssociationConfig(value); return *this;}
 
     /**
      * <p>Specifies custom configurations for the associations between the web ACL and
      * protected resources. </p> <p>Use this to customize the maximum size of the
-     * request body that your protected CloudFront distributions forward to WAF for
-     * inspection. The default is 16 KB (16,384 bytes). </p>  <p>You are charged
-     * additional fees when your protected resources forward body sizes that are larger
-     * than the default. For more information, see <a
-     * href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p> 
+     * request body that your protected resources forward to WAF for inspection. You
+     * can customize this setting for CloudFront, API Gateway, Amazon Cognito, App
+     * Runner, or Verified Access resources. The default setting is 16 KB (16,384
+     * bytes). </p>  <p>You are charged additional fees when your protected
+     * resources forward body sizes that are larger than the default. For more
+     * information, see <a href="http://aws.amazon.com/waf/pricing/">WAF
+     * Pricing</a>.</p>  <p>For Application Load Balancer and AppSync, the limit
+     * is fixed at 8 KB (8,192 bytes).</p>
      */
     inline CreateWebACLRequest& WithAssociationConfig(AssociationConfig&& value) { SetAssociationConfig(std::move(value)); return *this;}
 

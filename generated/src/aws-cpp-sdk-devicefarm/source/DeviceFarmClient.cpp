@@ -112,8 +112,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* DeviceFarmClient::SERVICE_NAME = "devicefarm";
-const char* DeviceFarmClient::ALLOCATION_TAG = "DeviceFarmClient";
+namespace Aws
+{
+  namespace DeviceFarm
+  {
+    const char SERVICE_NAME[] = "devicefarm";
+    const char ALLOCATION_TAG[] = "DeviceFarmClient";
+  }
+}
+const char* DeviceFarmClient::GetServiceName() {return SERVICE_NAME;}
+const char* DeviceFarmClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 DeviceFarmClient::DeviceFarmClient(const DeviceFarm::DeviceFarmClientConfiguration& clientConfiguration,
                                    std::shared_ptr<DeviceFarmEndpointProviderBase> endpointProvider) :
@@ -125,7 +133,7 @@ DeviceFarmClient::DeviceFarmClient(const DeviceFarm::DeviceFarmClientConfigurati
             Aws::MakeShared<DeviceFarmErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<DeviceFarmEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -141,7 +149,7 @@ DeviceFarmClient::DeviceFarmClient(const AWSCredentials& credentials,
             Aws::MakeShared<DeviceFarmErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<DeviceFarmEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -157,7 +165,7 @@ DeviceFarmClient::DeviceFarmClient(const std::shared_ptr<AWSCredentialsProvider>
             Aws::MakeShared<DeviceFarmErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<DeviceFarmEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

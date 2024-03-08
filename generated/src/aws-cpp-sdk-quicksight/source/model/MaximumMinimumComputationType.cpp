@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MaximumMinimumComputationType::NOT_SET:
+            return {};
           case MaximumMinimumComputationType::MAXIMUM:
             return "MAXIMUM";
           case MaximumMinimumComputationType::MINIMUM:

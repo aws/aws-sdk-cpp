@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OriginProtocolPolicyEnum::NOT_SET:
+            return {};
           case OriginProtocolPolicyEnum::http_only:
             return "http-only";
           case OriginProtocolPolicyEnum::https_only:

@@ -286,7 +286,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteTrafficDistributionGroup.html">DeleteTrafficDistributionGroup</a>
      * operation has failed.</p> </li> <li> <p> <code>UPDATE_IN_PROGRESS</code> means
      * the previous <a
-     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateTrafficDistributionGroup.html">UpdateTrafficDistributionGroup</a>
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateTrafficDistribution.html">UpdateTrafficDistribution</a>
      * operation is still in progress and has not yet completed.</p> </li> </ul>
      */
     inline const TrafficDistributionGroupStatus& GetStatus() const{ return m_status; }
@@ -309,7 +309,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteTrafficDistributionGroup.html">DeleteTrafficDistributionGroup</a>
      * operation has failed.</p> </li> <li> <p> <code>UPDATE_IN_PROGRESS</code> means
      * the previous <a
-     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateTrafficDistributionGroup.html">UpdateTrafficDistributionGroup</a>
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateTrafficDistribution.html">UpdateTrafficDistribution</a>
      * operation is still in progress and has not yet completed.</p> </li> </ul>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
@@ -332,7 +332,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteTrafficDistributionGroup.html">DeleteTrafficDistributionGroup</a>
      * operation has failed.</p> </li> <li> <p> <code>UPDATE_IN_PROGRESS</code> means
      * the previous <a
-     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateTrafficDistributionGroup.html">UpdateTrafficDistributionGroup</a>
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateTrafficDistribution.html">UpdateTrafficDistribution</a>
      * operation is still in progress and has not yet completed.</p> </li> </ul>
      */
     inline void SetStatus(const TrafficDistributionGroupStatus& value) { m_statusHasBeenSet = true; m_status = value; }
@@ -355,7 +355,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteTrafficDistributionGroup.html">DeleteTrafficDistributionGroup</a>
      * operation has failed.</p> </li> <li> <p> <code>UPDATE_IN_PROGRESS</code> means
      * the previous <a
-     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateTrafficDistributionGroup.html">UpdateTrafficDistributionGroup</a>
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateTrafficDistribution.html">UpdateTrafficDistribution</a>
      * operation is still in progress and has not yet completed.</p> </li> </ul>
      */
     inline void SetStatus(TrafficDistributionGroupStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
@@ -378,7 +378,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteTrafficDistributionGroup.html">DeleteTrafficDistributionGroup</a>
      * operation has failed.</p> </li> <li> <p> <code>UPDATE_IN_PROGRESS</code> means
      * the previous <a
-     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateTrafficDistributionGroup.html">UpdateTrafficDistributionGroup</a>
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateTrafficDistribution.html">UpdateTrafficDistribution</a>
      * operation is still in progress and has not yet completed.</p> </li> </ul>
      */
     inline TrafficDistributionGroup& WithStatus(const TrafficDistributionGroupStatus& value) { SetStatus(value); return *this;}
@@ -401,7 +401,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteTrafficDistributionGroup.html">DeleteTrafficDistributionGroup</a>
      * operation has failed.</p> </li> <li> <p> <code>UPDATE_IN_PROGRESS</code> means
      * the previous <a
-     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateTrafficDistributionGroup.html">UpdateTrafficDistributionGroup</a>
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateTrafficDistribution.html">UpdateTrafficDistribution</a>
      * operation is still in progress and has not yet completed.</p> </li> </ul>
      */
     inline TrafficDistributionGroup& WithStatus(TrafficDistributionGroupStatus&& value) { SetStatus(std::move(value)); return *this;}
@@ -409,79 +409,79 @@ namespace Model
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline TrafficDistributionGroup& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline TrafficDistributionGroup& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline TrafficDistributionGroup& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline TrafficDistributionGroup& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline TrafficDistributionGroup& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline TrafficDistributionGroup& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline TrafficDistributionGroup& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline TrafficDistributionGroup& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
+     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline TrafficDistributionGroup& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
@@ -491,7 +491,7 @@ namespace Model
      * instance replication. The default traffic distribution group cannot be deleted
      * by the <code>DeleteTrafficDistributionGroup</code> API. The default traffic
      * distribution group is deleted as part of the process for deleting a replica.</p>
-     *  <p>You can change the <code>SignInConfig</code> distribution only for a
+     *  <p>The <code>SignInConfig</code> distribution is available only on a
      * default <code>TrafficDistributionGroup</code> (see the <code>IsDefault</code>
      * parameter in the <a
      * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_TrafficDistributionGroup.html">TrafficDistributionGroup</a>
@@ -507,7 +507,7 @@ namespace Model
      * instance replication. The default traffic distribution group cannot be deleted
      * by the <code>DeleteTrafficDistributionGroup</code> API. The default traffic
      * distribution group is deleted as part of the process for deleting a replica.</p>
-     *  <p>You can change the <code>SignInConfig</code> distribution only for a
+     *  <p>The <code>SignInConfig</code> distribution is available only on a
      * default <code>TrafficDistributionGroup</code> (see the <code>IsDefault</code>
      * parameter in the <a
      * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_TrafficDistributionGroup.html">TrafficDistributionGroup</a>
@@ -523,7 +523,7 @@ namespace Model
      * instance replication. The default traffic distribution group cannot be deleted
      * by the <code>DeleteTrafficDistributionGroup</code> API. The default traffic
      * distribution group is deleted as part of the process for deleting a replica.</p>
-     *  <p>You can change the <code>SignInConfig</code> distribution only for a
+     *  <p>The <code>SignInConfig</code> distribution is available only on a
      * default <code>TrafficDistributionGroup</code> (see the <code>IsDefault</code>
      * parameter in the <a
      * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_TrafficDistributionGroup.html">TrafficDistributionGroup</a>
@@ -539,7 +539,7 @@ namespace Model
      * instance replication. The default traffic distribution group cannot be deleted
      * by the <code>DeleteTrafficDistributionGroup</code> API. The default traffic
      * distribution group is deleted as part of the process for deleting a replica.</p>
-     *  <p>You can change the <code>SignInConfig</code> distribution only for a
+     *  <p>The <code>SignInConfig</code> distribution is available only on a
      * default <code>TrafficDistributionGroup</code> (see the <code>IsDefault</code>
      * parameter in the <a
      * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_TrafficDistributionGroup.html">TrafficDistributionGroup</a>

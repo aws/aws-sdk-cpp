@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DestinationFileFormat::NOT_SET:
+            return {};
           case DestinationFileFormat::plain_text:
             return "plain-text";
           case DestinationFileFormat::parquet:

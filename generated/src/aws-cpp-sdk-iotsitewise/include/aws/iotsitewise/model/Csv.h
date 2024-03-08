@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>A .csv file.</p><p><h3>See Also:</h3>   <a
+   * <p>A .CSV file.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/Csv">AWS API
    * Reference</a></p>
    */

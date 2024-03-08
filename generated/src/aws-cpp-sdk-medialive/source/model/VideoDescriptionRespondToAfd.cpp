@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VideoDescriptionRespondToAfd::NOT_SET:
+            return {};
           case VideoDescriptionRespondToAfd::NONE:
             return "NONE";
           case VideoDescriptionRespondToAfd::PASSTHROUGH:

@@ -21,6 +21,7 @@ namespace Model
 SearchRelatedItemsResponseItem::SearchRelatedItemsResponseItem() : 
     m_associationTimeHasBeenSet(false),
     m_contentHasBeenSet(false),
+    m_performedByHasBeenSet(false),
     m_relatedItemIdHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_type(RelatedItemType::NOT_SET),
@@ -31,6 +32,7 @@ SearchRelatedItemsResponseItem::SearchRelatedItemsResponseItem() :
 SearchRelatedItemsResponseItem::SearchRelatedItemsResponseItem(JsonView jsonValue) : 
     m_associationTimeHasBeenSet(false),
     m_contentHasBeenSet(false),
+    m_performedByHasBeenSet(false),
     m_relatedItemIdHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_type(RelatedItemType::NOT_SET),
@@ -53,6 +55,13 @@ SearchRelatedItemsResponseItem& SearchRelatedItemsResponseItem::operator =(JsonV
     m_content = jsonValue.GetObject("content");
 
     m_contentHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("performedBy"))
+  {
+    m_performedBy = jsonValue.GetObject("performedBy");
+
+    m_performedByHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("relatedItemId"))
@@ -94,6 +103,12 @@ JsonValue SearchRelatedItemsResponseItem::Jsonize() const
   if(m_contentHasBeenSet)
   {
    payload.WithObject("content", m_content.Jsonize());
+
+  }
+
+  if(m_performedByHasBeenSet)
+  {
+   payload.WithObject("performedBy", m_performedBy.Jsonize());
 
   }
 

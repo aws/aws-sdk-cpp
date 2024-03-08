@@ -42,8 +42,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* LexRuntimeV2Client::SERVICE_NAME = "lex";
-const char* LexRuntimeV2Client::ALLOCATION_TAG = "LexRuntimeV2Client";
+namespace Aws
+{
+  namespace LexRuntimeV2
+  {
+    const char SERVICE_NAME[] = "lex";
+    const char ALLOCATION_TAG[] = "LexRuntimeV2Client";
+  }
+}
+const char* LexRuntimeV2Client::GetServiceName() {return SERVICE_NAME;}
+const char* LexRuntimeV2Client::GetAllocationTag() {return ALLOCATION_TAG;}
 
 LexRuntimeV2Client::LexRuntimeV2Client(const LexRuntimeV2::LexRuntimeV2ClientConfiguration& clientConfiguration,
                                        std::shared_ptr<LexRuntimeV2EndpointProviderBase> endpointProvider) :
@@ -55,7 +63,7 @@ LexRuntimeV2Client::LexRuntimeV2Client(const LexRuntimeV2::LexRuntimeV2ClientCon
             Aws::MakeShared<LexRuntimeV2ErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<LexRuntimeV2EndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -71,7 +79,7 @@ LexRuntimeV2Client::LexRuntimeV2Client(const AWSCredentials& credentials,
             Aws::MakeShared<LexRuntimeV2ErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<LexRuntimeV2EndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -87,7 +95,7 @@ LexRuntimeV2Client::LexRuntimeV2Client(const std::shared_ptr<AWSCredentialsProvi
             Aws::MakeShared<LexRuntimeV2ErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<LexRuntimeV2EndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

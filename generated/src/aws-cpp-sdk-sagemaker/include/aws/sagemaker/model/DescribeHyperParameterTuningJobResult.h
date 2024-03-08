@@ -15,9 +15,9 @@
 #include <aws/sagemaker/model/ObjectiveStatusCounters.h>
 #include <aws/sagemaker/model/HyperParameterTrainingJobSummary.h>
 #include <aws/sagemaker/model/HyperParameterTuningJobWarmStartConfig.h>
+#include <aws/sagemaker/model/Autotune.h>
 #include <aws/sagemaker/model/HyperParameterTuningJobCompletionDetails.h>
 #include <aws/sagemaker/model/HyperParameterTuningJobConsumedResources.h>
-#include <aws/sagemaker/model/Autotune.h>
 #include <utility>
 
 namespace Aws
@@ -244,32 +244,27 @@ namespace Model
 
 
     /**
-     * <p>The status of the tuning job: InProgress, Completed, Failed, Stopping, or
-     * Stopped.</p>
+     * <p>The status of the tuning job.</p>
      */
     inline const HyperParameterTuningJobStatus& GetHyperParameterTuningJobStatus() const{ return m_hyperParameterTuningJobStatus; }
 
     /**
-     * <p>The status of the tuning job: InProgress, Completed, Failed, Stopping, or
-     * Stopped.</p>
+     * <p>The status of the tuning job.</p>
      */
     inline void SetHyperParameterTuningJobStatus(const HyperParameterTuningJobStatus& value) { m_hyperParameterTuningJobStatus = value; }
 
     /**
-     * <p>The status of the tuning job: InProgress, Completed, Failed, Stopping, or
-     * Stopped.</p>
+     * <p>The status of the tuning job.</p>
      */
     inline void SetHyperParameterTuningJobStatus(HyperParameterTuningJobStatus&& value) { m_hyperParameterTuningJobStatus = std::move(value); }
 
     /**
-     * <p>The status of the tuning job: InProgress, Completed, Failed, Stopping, or
-     * Stopped.</p>
+     * <p>The status of the tuning job.</p>
      */
     inline DescribeHyperParameterTuningJobResult& WithHyperParameterTuningJobStatus(const HyperParameterTuningJobStatus& value) { SetHyperParameterTuningJobStatus(value); return *this;}
 
     /**
-     * <p>The status of the tuning job: InProgress, Completed, Failed, Stopping, or
-     * Stopped.</p>
+     * <p>The status of the tuning job.</p>
      */
     inline DescribeHyperParameterTuningJobResult& WithHyperParameterTuningJobStatus(HyperParameterTuningJobStatus&& value) { SetHyperParameterTuningJobStatus(std::move(value)); return *this;}
 
@@ -573,6 +568,37 @@ namespace Model
 
 
     /**
+     * <p>A flag to indicate if autotune is enabled for the hyperparameter tuning
+     * job.</p>
+     */
+    inline const Autotune& GetAutotune() const{ return m_autotune; }
+
+    /**
+     * <p>A flag to indicate if autotune is enabled for the hyperparameter tuning
+     * job.</p>
+     */
+    inline void SetAutotune(const Autotune& value) { m_autotune = value; }
+
+    /**
+     * <p>A flag to indicate if autotune is enabled for the hyperparameter tuning
+     * job.</p>
+     */
+    inline void SetAutotune(Autotune&& value) { m_autotune = std::move(value); }
+
+    /**
+     * <p>A flag to indicate if autotune is enabled for the hyperparameter tuning
+     * job.</p>
+     */
+    inline DescribeHyperParameterTuningJobResult& WithAutotune(const Autotune& value) { SetAutotune(value); return *this;}
+
+    /**
+     * <p>A flag to indicate if autotune is enabled for the hyperparameter tuning
+     * job.</p>
+     */
+    inline DescribeHyperParameterTuningJobResult& WithAutotune(Autotune&& value) { SetAutotune(std::move(value)); return *this;}
+
+
+    /**
      * <p>If the tuning job failed, the reason it failed.</p>
      */
     inline const Aws::String& GetFailureReason() const{ return m_failureReason; }
@@ -665,37 +691,6 @@ namespace Model
     inline DescribeHyperParameterTuningJobResult& WithConsumedResources(HyperParameterTuningJobConsumedResources&& value) { SetConsumedResources(std::move(value)); return *this;}
 
 
-    /**
-     * <p>A flag to indicate if autotune is enabled for the hyperparameter tuning
-     * job.</p>
-     */
-    inline const Autotune& GetAutotune() const{ return m_autotune; }
-
-    /**
-     * <p>A flag to indicate if autotune is enabled for the hyperparameter tuning
-     * job.</p>
-     */
-    inline void SetAutotune(const Autotune& value) { m_autotune = value; }
-
-    /**
-     * <p>A flag to indicate if autotune is enabled for the hyperparameter tuning
-     * job.</p>
-     */
-    inline void SetAutotune(Autotune&& value) { m_autotune = std::move(value); }
-
-    /**
-     * <p>A flag to indicate if autotune is enabled for the hyperparameter tuning
-     * job.</p>
-     */
-    inline DescribeHyperParameterTuningJobResult& WithAutotune(const Autotune& value) { SetAutotune(value); return *this;}
-
-    /**
-     * <p>A flag to indicate if autotune is enabled for the hyperparameter tuning
-     * job.</p>
-     */
-    inline DescribeHyperParameterTuningJobResult& WithAutotune(Autotune&& value) { SetAutotune(std::move(value)); return *this;}
-
-
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -747,13 +742,13 @@ namespace Model
 
     HyperParameterTuningJobWarmStartConfig m_warmStartConfig;
 
+    Autotune m_autotune;
+
     Aws::String m_failureReason;
 
     HyperParameterTuningJobCompletionDetails m_tuningJobCompletionDetails;
 
     HyperParameterTuningJobConsumedResources m_consumedResources;
-
-    Autotune m_autotune;
 
     Aws::String m_requestId;
   };

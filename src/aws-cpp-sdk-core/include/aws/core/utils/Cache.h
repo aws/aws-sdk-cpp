@@ -28,6 +28,12 @@ namespace Aws
             {
             }
 
+            struct Value
+            {
+                DateTime expiration;
+                TValue val;
+            };
+
             /**
              * Retrieves the value associated with the given key if exists and returns true. Otherwise, returns false.
              * @param key The of key of the entry to retrieve.
@@ -102,6 +108,38 @@ namespace Aws
                 m_entries.emplace(key, Value { expiration, std::forward<UValue>(val) });
             }
 
+            /**
+             * Will transform the underlying cache to have a updated Value from the result of a function.
+             *
+             * @param function A function that returns type value that will be inserted into the cache at the
+             *  specified key.
+             */
+            using TransformFunction = std::function<Value(const TKey &, Value &)>;
+            void Transform(TransformFunction function) {
+                for (auto it = m_entries.begin(); it != m_entries.end(); ++it) {
+                    it->second = function(it->first, it->second);
+                }
+            }
+
+            /**
+             * Will remove a entry from the map base on a function applied on the value of the entry. If true the
+             * entry will be remove from the cache.
+             *
+             * @param function The predicate that will determine if a value is removed.
+             */
+            using FilterFunction = std::function<bool(const TKey &, const Value&)>;
+            void Filter(FilterFunction function) {
+                auto it = m_entries.begin();
+                while (it != m_entries.end()) {
+                    auto shouldFilter = function(it->first, it->second);
+                    if (shouldFilter) {
+                        it = m_entries.erase(it);
+                    } else {
+                        ++it;
+                    }
+                }
+            }
+
         private:
 
             void Prune()
@@ -130,12 +168,6 @@ namespace Aws
                     m_entries.erase(mostExpiring);
                 }
             }
-
-            struct Value
-            {
-                DateTime expiration;
-                TValue val;
-            };
 
             Aws::Map<TKey, Value> m_entries;
             const size_t m_maxSize;

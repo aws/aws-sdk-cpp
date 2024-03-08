@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AllowedOperation::NOT_SET:
+            return {};
           case AllowedOperation::CreateGrant:
             return "CreateGrant";
           case AllowedOperation::CheckoutLicense:

@@ -21,14 +21,18 @@ namespace Model
 PolicyStoreItem::PolicyStoreItem() : 
     m_policyStoreIdHasBeenSet(false),
     m_arnHasBeenSet(false),
-    m_createdDateHasBeenSet(false)
+    m_createdDateHasBeenSet(false),
+    m_lastUpdatedDateHasBeenSet(false),
+    m_descriptionHasBeenSet(false)
 {
 }
 
 PolicyStoreItem::PolicyStoreItem(JsonView jsonValue) : 
     m_policyStoreIdHasBeenSet(false),
     m_arnHasBeenSet(false),
-    m_createdDateHasBeenSet(false)
+    m_createdDateHasBeenSet(false),
+    m_lastUpdatedDateHasBeenSet(false),
+    m_descriptionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -56,6 +60,20 @@ PolicyStoreItem& PolicyStoreItem::operator =(JsonView jsonValue)
     m_createdDateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("lastUpdatedDate"))
+  {
+    m_lastUpdatedDate = jsonValue.GetString("lastUpdatedDate");
+
+    m_lastUpdatedDateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("description"))
+  {
+    m_description = jsonValue.GetString("description");
+
+    m_descriptionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -78,6 +96,17 @@ JsonValue PolicyStoreItem::Jsonize() const
   if(m_createdDateHasBeenSet)
   {
    payload.WithString("createdDate", m_createdDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_lastUpdatedDateHasBeenSet)
+  {
+   payload.WithString("lastUpdatedDate", m_lastUpdatedDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_descriptionHasBeenSet)
+  {
+   payload.WithString("description", m_description);
+
   }
 
   return payload;

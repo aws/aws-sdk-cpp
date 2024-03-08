@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UploadStatus::NOT_SET:
+            return {};
           case UploadStatus::INITIALIZED:
             return "INITIALIZED";
           case UploadStatus::PROCESSING:

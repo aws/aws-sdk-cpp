@@ -37,50 +37,50 @@ namespace Model
   public:
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the datashare that producers are to
-     * authorize sharing for.</p>
+     * <p>The Amazon Resource Name (ARN) of the datashare namespace that producers are
+     * to authorize sharing for.</p>
      */
     inline const Aws::String& GetDataShareArn() const{ return m_dataShareArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the datashare that producers are to
-     * authorize sharing for.</p>
+     * <p>The Amazon Resource Name (ARN) of the datashare namespace that producers are
+     * to authorize sharing for.</p>
      */
     inline bool DataShareArnHasBeenSet() const { return m_dataShareArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the datashare that producers are to
-     * authorize sharing for.</p>
+     * <p>The Amazon Resource Name (ARN) of the datashare namespace that producers are
+     * to authorize sharing for.</p>
      */
     inline void SetDataShareArn(const Aws::String& value) { m_dataShareArnHasBeenSet = true; m_dataShareArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the datashare that producers are to
-     * authorize sharing for.</p>
+     * <p>The Amazon Resource Name (ARN) of the datashare namespace that producers are
+     * to authorize sharing for.</p>
      */
     inline void SetDataShareArn(Aws::String&& value) { m_dataShareArnHasBeenSet = true; m_dataShareArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the datashare that producers are to
-     * authorize sharing for.</p>
+     * <p>The Amazon Resource Name (ARN) of the datashare namespace that producers are
+     * to authorize sharing for.</p>
      */
     inline void SetDataShareArn(const char* value) { m_dataShareArnHasBeenSet = true; m_dataShareArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the datashare that producers are to
-     * authorize sharing for.</p>
+     * <p>The Amazon Resource Name (ARN) of the datashare namespace that producers are
+     * to authorize sharing for.</p>
      */
     inline AuthorizeDataShareRequest& WithDataShareArn(const Aws::String& value) { SetDataShareArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the datashare that producers are to
-     * authorize sharing for.</p>
+     * <p>The Amazon Resource Name (ARN) of the datashare namespace that producers are
+     * to authorize sharing for.</p>
      */
     inline AuthorizeDataShareRequest& WithDataShareArn(Aws::String&& value) { SetDataShareArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the datashare that producers are to
-     * authorize sharing for.</p>
+     * <p>The Amazon Resource Name (ARN) of the datashare namespace that producers are
+     * to authorize sharing for.</p>
      */
     inline AuthorizeDataShareRequest& WithDataShareArn(const char* value) { SetDataShareArn(value); return *this;}
 
@@ -141,6 +141,27 @@ namespace Model
      */
     inline AuthorizeDataShareRequest& WithConsumerIdentifier(const char* value) { SetConsumerIdentifier(value); return *this;}
 
+
+    /**
+     * <p>If set to true, allows write operations for a datashare.</p>
+     */
+    inline bool GetAllowWrites() const{ return m_allowWrites; }
+
+    /**
+     * <p>If set to true, allows write operations for a datashare.</p>
+     */
+    inline bool AllowWritesHasBeenSet() const { return m_allowWritesHasBeenSet; }
+
+    /**
+     * <p>If set to true, allows write operations for a datashare.</p>
+     */
+    inline void SetAllowWrites(bool value) { m_allowWritesHasBeenSet = true; m_allowWrites = value; }
+
+    /**
+     * <p>If set to true, allows write operations for a datashare.</p>
+     */
+    inline AuthorizeDataShareRequest& WithAllowWrites(bool value) { SetAllowWrites(value); return *this;}
+
   private:
 
     Aws::String m_dataShareArn;
@@ -148,6 +169,9 @@ namespace Model
 
     Aws::String m_consumerIdentifier;
     bool m_consumerIdentifierHasBeenSet = false;
+
+    bool m_allowWrites;
+    bool m_allowWritesHasBeenSet = false;
   };
 
 } // namespace Model

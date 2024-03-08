@@ -1633,42 +1633,98 @@ namespace Model
 
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>A list of previously acquired trusted context assertions in the format of a
+     * JSON array. The trusted context assertion is signed and encrypted by Amazon Web
+     * Services STS.</p> <p>The following is an example of a
+     * <code>ProvidedContext</code> value that includes a single trusted context
+     * assertion and the ARN of the context provider from which the trusted context
+     * assertion was generated.</p> <p>
+     * <code>[{"ProviderArn":"arn:aws:iam::aws:contextProvider/IdentityCenter","ContextAssertion":"trusted-context-assertion"}]</code>
+     * </p>
      */
     inline const Aws::Vector<ProvidedContext>& GetProvidedContexts() const{ return m_providedContexts; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>A list of previously acquired trusted context assertions in the format of a
+     * JSON array. The trusted context assertion is signed and encrypted by Amazon Web
+     * Services STS.</p> <p>The following is an example of a
+     * <code>ProvidedContext</code> value that includes a single trusted context
+     * assertion and the ARN of the context provider from which the trusted context
+     * assertion was generated.</p> <p>
+     * <code>[{"ProviderArn":"arn:aws:iam::aws:contextProvider/IdentityCenter","ContextAssertion":"trusted-context-assertion"}]</code>
+     * </p>
      */
     inline bool ProvidedContextsHasBeenSet() const { return m_providedContextsHasBeenSet; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>A list of previously acquired trusted context assertions in the format of a
+     * JSON array. The trusted context assertion is signed and encrypted by Amazon Web
+     * Services STS.</p> <p>The following is an example of a
+     * <code>ProvidedContext</code> value that includes a single trusted context
+     * assertion and the ARN of the context provider from which the trusted context
+     * assertion was generated.</p> <p>
+     * <code>[{"ProviderArn":"arn:aws:iam::aws:contextProvider/IdentityCenter","ContextAssertion":"trusted-context-assertion"}]</code>
+     * </p>
      */
     inline void SetProvidedContexts(const Aws::Vector<ProvidedContext>& value) { m_providedContextsHasBeenSet = true; m_providedContexts = value; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>A list of previously acquired trusted context assertions in the format of a
+     * JSON array. The trusted context assertion is signed and encrypted by Amazon Web
+     * Services STS.</p> <p>The following is an example of a
+     * <code>ProvidedContext</code> value that includes a single trusted context
+     * assertion and the ARN of the context provider from which the trusted context
+     * assertion was generated.</p> <p>
+     * <code>[{"ProviderArn":"arn:aws:iam::aws:contextProvider/IdentityCenter","ContextAssertion":"trusted-context-assertion"}]</code>
+     * </p>
      */
     inline void SetProvidedContexts(Aws::Vector<ProvidedContext>&& value) { m_providedContextsHasBeenSet = true; m_providedContexts = std::move(value); }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>A list of previously acquired trusted context assertions in the format of a
+     * JSON array. The trusted context assertion is signed and encrypted by Amazon Web
+     * Services STS.</p> <p>The following is an example of a
+     * <code>ProvidedContext</code> value that includes a single trusted context
+     * assertion and the ARN of the context provider from which the trusted context
+     * assertion was generated.</p> <p>
+     * <code>[{"ProviderArn":"arn:aws:iam::aws:contextProvider/IdentityCenter","ContextAssertion":"trusted-context-assertion"}]</code>
+     * </p>
      */
     inline AssumeRoleRequest& WithProvidedContexts(const Aws::Vector<ProvidedContext>& value) { SetProvidedContexts(value); return *this;}
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>A list of previously acquired trusted context assertions in the format of a
+     * JSON array. The trusted context assertion is signed and encrypted by Amazon Web
+     * Services STS.</p> <p>The following is an example of a
+     * <code>ProvidedContext</code> value that includes a single trusted context
+     * assertion and the ARN of the context provider from which the trusted context
+     * assertion was generated.</p> <p>
+     * <code>[{"ProviderArn":"arn:aws:iam::aws:contextProvider/IdentityCenter","ContextAssertion":"trusted-context-assertion"}]</code>
+     * </p>
      */
     inline AssumeRoleRequest& WithProvidedContexts(Aws::Vector<ProvidedContext>&& value) { SetProvidedContexts(std::move(value)); return *this;}
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>A list of previously acquired trusted context assertions in the format of a
+     * JSON array. The trusted context assertion is signed and encrypted by Amazon Web
+     * Services STS.</p> <p>The following is an example of a
+     * <code>ProvidedContext</code> value that includes a single trusted context
+     * assertion and the ARN of the context provider from which the trusted context
+     * assertion was generated.</p> <p>
+     * <code>[{"ProviderArn":"arn:aws:iam::aws:contextProvider/IdentityCenter","ContextAssertion":"trusted-context-assertion"}]</code>
+     * </p>
      */
     inline AssumeRoleRequest& AddProvidedContexts(const ProvidedContext& value) { m_providedContextsHasBeenSet = true; m_providedContexts.push_back(value); return *this; }
 
     /**
-     * <p>Reserved for future use.</p>
+     * <p>A list of previously acquired trusted context assertions in the format of a
+     * JSON array. The trusted context assertion is signed and encrypted by Amazon Web
+     * Services STS.</p> <p>The following is an example of a
+     * <code>ProvidedContext</code> value that includes a single trusted context
+     * assertion and the ARN of the context provider from which the trusted context
+     * assertion was generated.</p> <p>
+     * <code>[{"ProviderArn":"arn:aws:iam::aws:contextProvider/IdentityCenter","ContextAssertion":"trusted-context-assertion"}]</code>
+     * </p>
      */
     inline AssumeRoleRequest& AddProvidedContexts(ProvidedContext&& value) { m_providedContextsHasBeenSet = true; m_providedContexts.push_back(std::move(value)); return *this; }
 

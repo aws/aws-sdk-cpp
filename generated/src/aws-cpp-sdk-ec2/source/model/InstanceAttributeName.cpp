@@ -119,6 +119,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InstanceAttributeName::NOT_SET:
+            return {};
           case InstanceAttributeName::instanceType:
             return "instanceType";
           case InstanceAttributeName::kernel:

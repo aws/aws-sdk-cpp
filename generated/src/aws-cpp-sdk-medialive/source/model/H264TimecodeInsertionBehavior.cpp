@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case H264TimecodeInsertionBehavior::NOT_SET:
+            return {};
           case H264TimecodeInsertionBehavior::DISABLED:
             return "DISABLED";
           case H264TimecodeInsertionBehavior::PIC_TIMING_SEI:

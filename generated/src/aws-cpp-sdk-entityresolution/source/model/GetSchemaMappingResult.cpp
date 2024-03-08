@@ -17,11 +17,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetSchemaMappingResult::GetSchemaMappingResult()
+GetSchemaMappingResult::GetSchemaMappingResult() : 
+    m_hasWorkflows(false)
 {
 }
 
-GetSchemaMappingResult::GetSchemaMappingResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+GetSchemaMappingResult::GetSchemaMappingResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_hasWorkflows(false)
 {
   *this = result;
 }
@@ -38,6 +40,12 @@ GetSchemaMappingResult& GetSchemaMappingResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
+
+  }
+
+  if(jsonValue.ValueExists("hasWorkflows"))
+  {
+    m_hasWorkflows = jsonValue.GetBool("hasWorkflows");
 
   }
 

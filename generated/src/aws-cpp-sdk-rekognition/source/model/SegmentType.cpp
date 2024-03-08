@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SegmentType::NOT_SET:
+            return {};
           case SegmentType::TECHNICAL_CUE:
             return "TECHNICAL_CUE";
           case SegmentType::SHOT:

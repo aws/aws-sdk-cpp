@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PortProtocol::NOT_SET:
+            return {};
           case PortProtocol::http:
             return "http";
           case PortProtocol::tcp:

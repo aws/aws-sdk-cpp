@@ -65,8 +65,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* KinesisVideoClient::SERVICE_NAME = "kinesisvideo";
-const char* KinesisVideoClient::ALLOCATION_TAG = "KinesisVideoClient";
+namespace Aws
+{
+  namespace KinesisVideo
+  {
+    const char SERVICE_NAME[] = "kinesisvideo";
+    const char ALLOCATION_TAG[] = "KinesisVideoClient";
+  }
+}
+const char* KinesisVideoClient::GetServiceName() {return SERVICE_NAME;}
+const char* KinesisVideoClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 KinesisVideoClient::KinesisVideoClient(const KinesisVideo::KinesisVideoClientConfiguration& clientConfiguration,
                                        std::shared_ptr<KinesisVideoEndpointProviderBase> endpointProvider) :
@@ -78,7 +86,7 @@ KinesisVideoClient::KinesisVideoClient(const KinesisVideo::KinesisVideoClientCon
             Aws::MakeShared<KinesisVideoErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<KinesisVideoEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -94,7 +102,7 @@ KinesisVideoClient::KinesisVideoClient(const AWSCredentials& credentials,
             Aws::MakeShared<KinesisVideoErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<KinesisVideoEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -110,7 +118,7 @@ KinesisVideoClient::KinesisVideoClient(const std::shared_ptr<AWSCredentialsProvi
             Aws::MakeShared<KinesisVideoErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<KinesisVideoEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

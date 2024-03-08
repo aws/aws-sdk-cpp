@@ -36,27 +36,27 @@ namespace Model
 
 
     /**
-     * <p>A string repesenting the status of DNSSEC.</p>
+     * <p>A string representing the status of DNSSEC.</p>
      */
     inline const DNSSECStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>A string repesenting the status of DNSSEC.</p>
+     * <p>A string representing the status of DNSSEC.</p>
      */
     inline void SetStatus(const DNSSECStatus& value) { m_status = value; }
 
     /**
-     * <p>A string repesenting the status of DNSSEC.</p>
+     * <p>A string representing the status of DNSSEC.</p>
      */
     inline void SetStatus(DNSSECStatus&& value) { m_status = std::move(value); }
 
     /**
-     * <p>A string repesenting the status of DNSSEC.</p>
+     * <p>A string representing the status of DNSSEC.</p>
      */
     inline GetDNSSECResult& WithStatus(const DNSSECStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>A string repesenting the status of DNSSEC.</p>
+     * <p>A string representing the status of DNSSEC.</p>
      */
     inline GetDNSSECResult& WithStatus(DNSSECStatus&& value) { SetStatus(std::move(value)); return *this;}
 

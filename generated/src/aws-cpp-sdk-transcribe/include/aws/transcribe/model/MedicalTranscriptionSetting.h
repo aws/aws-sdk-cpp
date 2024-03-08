@@ -44,10 +44,8 @@ namespace Model
      * <p>Enables speaker partitioning (diarization) in your transcription output.
      * Speaker partitioning labels the speech from individual speakers in your media
      * file.</p> <p>If you enable <code>ShowSpeakerLabels</code> in your request, you
-     * must also include <code>MaxSpeakerLabels</code>.</p> <p>You can't include
-     * <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the
-     * same request. Including both parameters returns a
-     * <code>BadRequestException</code>.</p> <p>For more information, see <a
+     * must also include <code>MaxSpeakerLabels</code>.</p> <p>For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Partitioning
      * speakers (diarization)</a>.</p>
      */
@@ -57,10 +55,8 @@ namespace Model
      * <p>Enables speaker partitioning (diarization) in your transcription output.
      * Speaker partitioning labels the speech from individual speakers in your media
      * file.</p> <p>If you enable <code>ShowSpeakerLabels</code> in your request, you
-     * must also include <code>MaxSpeakerLabels</code>.</p> <p>You can't include
-     * <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the
-     * same request. Including both parameters returns a
-     * <code>BadRequestException</code>.</p> <p>For more information, see <a
+     * must also include <code>MaxSpeakerLabels</code>.</p> <p>For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Partitioning
      * speakers (diarization)</a>.</p>
      */
@@ -70,10 +66,8 @@ namespace Model
      * <p>Enables speaker partitioning (diarization) in your transcription output.
      * Speaker partitioning labels the speech from individual speakers in your media
      * file.</p> <p>If you enable <code>ShowSpeakerLabels</code> in your request, you
-     * must also include <code>MaxSpeakerLabels</code>.</p> <p>You can't include
-     * <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the
-     * same request. Including both parameters returns a
-     * <code>BadRequestException</code>.</p> <p>For more information, see <a
+     * must also include <code>MaxSpeakerLabels</code>.</p> <p>For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Partitioning
      * speakers (diarization)</a>.</p>
      */
@@ -83,10 +77,8 @@ namespace Model
      * <p>Enables speaker partitioning (diarization) in your transcription output.
      * Speaker partitioning labels the speech from individual speakers in your media
      * file.</p> <p>If you enable <code>ShowSpeakerLabels</code> in your request, you
-     * must also include <code>MaxSpeakerLabels</code>.</p> <p>You can't include
-     * <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the
-     * same request. Including both parameters returns a
-     * <code>BadRequestException</code>.</p> <p>For more information, see <a
+     * must also include <code>MaxSpeakerLabels</code>.</p> <p>For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Partitioning
      * speakers (diarization)</a>.</p>
      */
@@ -136,10 +128,7 @@ namespace Model
      * the output for each channel into one transcript.</p> <p>If you have
      * multi-channel audio and do not enable channel identification, your audio is
      * transcribed in a continuous manner and your transcript does not separate the
-     * speech by channel.</p> <p>You can't include both <code>ShowSpeakerLabels</code>
-     * and <code>ChannelIdentification</code> in the same request. Including both
-     * parameters returns a <code>BadRequestException</code>.</p> <p>For more
-     * information, see <a
+     * speech by channel.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/channel-id.html">Transcribing
      * multi-channel audio</a>.</p>
      */
@@ -151,10 +140,7 @@ namespace Model
      * the output for each channel into one transcript.</p> <p>If you have
      * multi-channel audio and do not enable channel identification, your audio is
      * transcribed in a continuous manner and your transcript does not separate the
-     * speech by channel.</p> <p>You can't include both <code>ShowSpeakerLabels</code>
-     * and <code>ChannelIdentification</code> in the same request. Including both
-     * parameters returns a <code>BadRequestException</code>.</p> <p>For more
-     * information, see <a
+     * speech by channel.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/channel-id.html">Transcribing
      * multi-channel audio</a>.</p>
      */
@@ -166,10 +152,7 @@ namespace Model
      * the output for each channel into one transcript.</p> <p>If you have
      * multi-channel audio and do not enable channel identification, your audio is
      * transcribed in a continuous manner and your transcript does not separate the
-     * speech by channel.</p> <p>You can't include both <code>ShowSpeakerLabels</code>
-     * and <code>ChannelIdentification</code> in the same request. Including both
-     * parameters returns a <code>BadRequestException</code>.</p> <p>For more
-     * information, see <a
+     * speech by channel.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/channel-id.html">Transcribing
      * multi-channel audio</a>.</p>
      */
@@ -181,10 +164,7 @@ namespace Model
      * the output for each channel into one transcript.</p> <p>If you have
      * multi-channel audio and do not enable channel identification, your audio is
      * transcribed in a continuous manner and your transcript does not separate the
-     * speech by channel.</p> <p>You can't include both <code>ShowSpeakerLabels</code>
-     * and <code>ChannelIdentification</code> in the same request. Including both
-     * parameters returns a <code>BadRequestException</code>.</p> <p>For more
-     * information, see <a
+     * speech by channel.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/channel-id.html">Transcribing
      * multi-channel audio</a>.</p>
      */
@@ -297,7 +277,7 @@ namespace Model
      * <p>The name of the custom vocabulary you want to use when processing your
      * medical transcription job. Custom vocabulary names are case sensitive.</p>
      * <p>The language of the specified custom vocabulary must match the language code
-     * that you specify in your transcription request. If the languages don't match,
+     * that you specify in your transcription request. If the languages do not match,
      * the custom vocabulary isn't applied. There are no errors or warnings associated
      * with a language mismatch. US English (<code>en-US</code>) is the only valid
      * language for Amazon Transcribe Medical.</p>
@@ -308,7 +288,7 @@ namespace Model
      * <p>The name of the custom vocabulary you want to use when processing your
      * medical transcription job. Custom vocabulary names are case sensitive.</p>
      * <p>The language of the specified custom vocabulary must match the language code
-     * that you specify in your transcription request. If the languages don't match,
+     * that you specify in your transcription request. If the languages do not match,
      * the custom vocabulary isn't applied. There are no errors or warnings associated
      * with a language mismatch. US English (<code>en-US</code>) is the only valid
      * language for Amazon Transcribe Medical.</p>
@@ -319,7 +299,7 @@ namespace Model
      * <p>The name of the custom vocabulary you want to use when processing your
      * medical transcription job. Custom vocabulary names are case sensitive.</p>
      * <p>The language of the specified custom vocabulary must match the language code
-     * that you specify in your transcription request. If the languages don't match,
+     * that you specify in your transcription request. If the languages do not match,
      * the custom vocabulary isn't applied. There are no errors or warnings associated
      * with a language mismatch. US English (<code>en-US</code>) is the only valid
      * language for Amazon Transcribe Medical.</p>
@@ -330,7 +310,7 @@ namespace Model
      * <p>The name of the custom vocabulary you want to use when processing your
      * medical transcription job. Custom vocabulary names are case sensitive.</p>
      * <p>The language of the specified custom vocabulary must match the language code
-     * that you specify in your transcription request. If the languages don't match,
+     * that you specify in your transcription request. If the languages do not match,
      * the custom vocabulary isn't applied. There are no errors or warnings associated
      * with a language mismatch. US English (<code>en-US</code>) is the only valid
      * language for Amazon Transcribe Medical.</p>
@@ -341,7 +321,7 @@ namespace Model
      * <p>The name of the custom vocabulary you want to use when processing your
      * medical transcription job. Custom vocabulary names are case sensitive.</p>
      * <p>The language of the specified custom vocabulary must match the language code
-     * that you specify in your transcription request. If the languages don't match,
+     * that you specify in your transcription request. If the languages do not match,
      * the custom vocabulary isn't applied. There are no errors or warnings associated
      * with a language mismatch. US English (<code>en-US</code>) is the only valid
      * language for Amazon Transcribe Medical.</p>
@@ -352,7 +332,7 @@ namespace Model
      * <p>The name of the custom vocabulary you want to use when processing your
      * medical transcription job. Custom vocabulary names are case sensitive.</p>
      * <p>The language of the specified custom vocabulary must match the language code
-     * that you specify in your transcription request. If the languages don't match,
+     * that you specify in your transcription request. If the languages do not match,
      * the custom vocabulary isn't applied. There are no errors or warnings associated
      * with a language mismatch. US English (<code>en-US</code>) is the only valid
      * language for Amazon Transcribe Medical.</p>
@@ -363,7 +343,7 @@ namespace Model
      * <p>The name of the custom vocabulary you want to use when processing your
      * medical transcription job. Custom vocabulary names are case sensitive.</p>
      * <p>The language of the specified custom vocabulary must match the language code
-     * that you specify in your transcription request. If the languages don't match,
+     * that you specify in your transcription request. If the languages do not match,
      * the custom vocabulary isn't applied. There are no errors or warnings associated
      * with a language mismatch. US English (<code>en-US</code>) is the only valid
      * language for Amazon Transcribe Medical.</p>
@@ -374,7 +354,7 @@ namespace Model
      * <p>The name of the custom vocabulary you want to use when processing your
      * medical transcription job. Custom vocabulary names are case sensitive.</p>
      * <p>The language of the specified custom vocabulary must match the language code
-     * that you specify in your transcription request. If the languages don't match,
+     * that you specify in your transcription request. If the languages do not match,
      * the custom vocabulary isn't applied. There are no errors or warnings associated
      * with a language mismatch. US English (<code>en-US</code>) is the only valid
      * language for Amazon Transcribe Medical.</p>

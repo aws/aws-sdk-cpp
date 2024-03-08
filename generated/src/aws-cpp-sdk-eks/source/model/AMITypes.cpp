@@ -32,6 +32,8 @@ namespace Aws
         static const int WINDOWS_FULL_2019_x86_64_HASH = HashingUtils::HashString("WINDOWS_FULL_2019_x86_64");
         static const int WINDOWS_CORE_2022_x86_64_HASH = HashingUtils::HashString("WINDOWS_CORE_2022_x86_64");
         static const int WINDOWS_FULL_2022_x86_64_HASH = HashingUtils::HashString("WINDOWS_FULL_2022_x86_64");
+        static const int AL2023_x86_64_STANDARD_HASH = HashingUtils::HashString("AL2023_x86_64_STANDARD");
+        static const int AL2023_ARM_64_STANDARD_HASH = HashingUtils::HashString("AL2023_ARM_64_STANDARD");
 
 
         AMITypes GetAMITypesForName(const Aws::String& name)
@@ -85,6 +87,14 @@ namespace Aws
           {
             return AMITypes::WINDOWS_FULL_2022_x86_64;
           }
+          else if (hashCode == AL2023_x86_64_STANDARD_HASH)
+          {
+            return AMITypes::AL2023_x86_64_STANDARD;
+          }
+          else if (hashCode == AL2023_ARM_64_STANDARD_HASH)
+          {
+            return AMITypes::AL2023_ARM_64_STANDARD;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -99,6 +109,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AMITypes::NOT_SET:
+            return {};
           case AMITypes::AL2_x86_64:
             return "AL2_x86_64";
           case AMITypes::AL2_x86_64_GPU:
@@ -123,6 +135,10 @@ namespace Aws
             return "WINDOWS_CORE_2022_x86_64";
           case AMITypes::WINDOWS_FULL_2022_x86_64:
             return "WINDOWS_FULL_2022_x86_64";
+          case AMITypes::AL2023_x86_64_STANDARD:
+            return "AL2023_x86_64_STANDARD";
+          case AMITypes::AL2023_ARM_64_STANDARD:
+            return "AL2023_ARM_64_STANDARD";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

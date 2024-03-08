@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PushNotificationType::NOT_SET:
+            return {};
           case PushNotificationType::DEFAULT:
             return "DEFAULT";
           case PushNotificationType::VOIP:

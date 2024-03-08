@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OriginAccessControlSigningProtocols::NOT_SET:
+            return {};
           case OriginAccessControlSigningProtocols::sigv4:
             return "sigv4";
           default:

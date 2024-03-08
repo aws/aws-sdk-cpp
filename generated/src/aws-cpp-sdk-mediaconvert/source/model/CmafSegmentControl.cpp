@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CmafSegmentControl::NOT_SET:
+            return {};
           case CmafSegmentControl::SINGLE_FILE:
             return "SINGLE_FILE";
           case CmafSegmentControl::SEGMENTED_FILES:

@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     AWS_CloudWatch_Metric,
     AWS_Logs_LogGroup,
-    AWS_XRay_Trace
+    AWS_XRay_Trace,
+    AWS_ApplicationInsights_Application
   };
 
 namespace ResourceTypeMapper

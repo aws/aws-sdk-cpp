@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StatusCode::NOT_SET:
+            return {};
           case StatusCode::InProgress:
             return "InProgress";
           case StatusCode::Succeeded:

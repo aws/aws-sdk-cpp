@@ -114,6 +114,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HandlerErrorCode::NOT_SET:
+            return {};
           case HandlerErrorCode::NotUpdatable:
             return "NotUpdatable";
           case HandlerErrorCode::InvalidRequest:

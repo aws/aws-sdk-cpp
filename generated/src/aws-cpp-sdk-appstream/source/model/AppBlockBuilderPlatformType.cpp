@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AppBlockBuilderPlatformType::NOT_SET:
+            return {};
           case AppBlockBuilderPlatformType::WINDOWS_SERVER_2019:
             return "WINDOWS_SERVER_2019";
           default:

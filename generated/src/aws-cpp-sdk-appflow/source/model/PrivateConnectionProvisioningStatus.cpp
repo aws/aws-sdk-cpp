@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PrivateConnectionProvisioningStatus::NOT_SET:
+            return {};
           case PrivateConnectionProvisioningStatus::FAILED:
             return "FAILED";
           case PrivateConnectionProvisioningStatus::PENDING:

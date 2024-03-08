@@ -55,8 +55,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* QLDBClient::SERVICE_NAME = "qldb";
-const char* QLDBClient::ALLOCATION_TAG = "QLDBClient";
+namespace Aws
+{
+  namespace QLDB
+  {
+    const char SERVICE_NAME[] = "qldb";
+    const char ALLOCATION_TAG[] = "QLDBClient";
+  }
+}
+const char* QLDBClient::GetServiceName() {return SERVICE_NAME;}
+const char* QLDBClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 QLDBClient::QLDBClient(const QLDB::QLDBClientConfiguration& clientConfiguration,
                        std::shared_ptr<QLDBEndpointProviderBase> endpointProvider) :
@@ -68,7 +76,7 @@ QLDBClient::QLDBClient(const QLDB::QLDBClientConfiguration& clientConfiguration,
             Aws::MakeShared<QLDBErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<QLDBEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -84,7 +92,7 @@ QLDBClient::QLDBClient(const AWSCredentials& credentials,
             Aws::MakeShared<QLDBErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<QLDBEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -100,7 +108,7 @@ QLDBClient::QLDBClient(const std::shared_ptr<AWSCredentialsProvider>& credential
             Aws::MakeShared<QLDBErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<QLDBEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MediaPipelineSourceType::NOT_SET:
+            return {};
           case MediaPipelineSourceType::ChimeSdkMeeting:
             return "ChimeSdkMeeting";
           default:

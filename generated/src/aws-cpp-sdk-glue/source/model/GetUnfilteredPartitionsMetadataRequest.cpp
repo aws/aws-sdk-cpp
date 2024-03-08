@@ -13,6 +13,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 GetUnfilteredPartitionsMetadataRequest::GetUnfilteredPartitionsMetadataRequest() : 
+    m_regionHasBeenSet(false),
     m_catalogIdHasBeenSet(false),
     m_databaseNameHasBeenSet(false),
     m_tableNameHasBeenSet(false),
@@ -22,13 +23,20 @@ GetUnfilteredPartitionsMetadataRequest::GetUnfilteredPartitionsMetadataRequest()
     m_nextTokenHasBeenSet(false),
     m_segmentHasBeenSet(false),
     m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
+    m_maxResultsHasBeenSet(false),
+    m_querySessionContextHasBeenSet(false)
 {
 }
 
 Aws::String GetUnfilteredPartitionsMetadataRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_regionHasBeenSet)
+  {
+   payload.WithString("Region", m_region);
+
+  }
 
   if(m_catalogIdHasBeenSet)
   {
@@ -86,6 +94,12 @@ Aws::String GetUnfilteredPartitionsMetadataRequest::SerializePayload() const
   if(m_maxResultsHasBeenSet)
   {
    payload.WithInteger("MaxResults", m_maxResults);
+
+  }
+
+  if(m_querySessionContextHasBeenSet)
+  {
+   payload.WithObject("QuerySessionContext", m_querySessionContext.Jsonize());
 
   }
 

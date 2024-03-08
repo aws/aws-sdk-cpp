@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResourceShareFeatureSet::NOT_SET:
+            return {};
           case ResourceShareFeatureSet::CREATED_FROM_POLICY:
             return "CREATED_FROM_POLICY";
           case ResourceShareFeatureSet::PROMOTING_TO_STANDARD:

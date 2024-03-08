@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FirewallStatusValue::NOT_SET:
+            return {};
           case FirewallStatusValue::PROVISIONING:
             return "PROVISIONING";
           case FirewallStatusValue::DELETING:

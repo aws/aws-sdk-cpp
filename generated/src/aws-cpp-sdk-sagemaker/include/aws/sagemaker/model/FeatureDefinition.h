@@ -7,6 +7,8 @@
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker/model/FeatureType.h>
+#include <aws/sagemaker/model/CollectionType.h>
+#include <aws/sagemaker/model/CollectionConfig.h>
 #include <utility>
 
 namespace Aws
@@ -134,6 +136,110 @@ namespace Model
      */
     inline FeatureDefinition& WithFeatureType(FeatureType&& value) { SetFeatureType(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A grouping of elements where each element within the collection must have the
+     * same feature type (<code>String</code>, <code>Integral</code>, or
+     * <code>Fractional</code>).</p> <ul> <li> <p> <code>List</code>: An ordered
+     * collection of elements.</p> </li> <li> <p> <code>Set</code>: An unordered
+     * collection of unique elements.</p> </li> <li> <p> <code>Vector</code>: A
+     * specialized list that represents a fixed-size array of elements. The vector
+     * dimension is determined by you. Must have elements with fractional feature
+     * types. </p> </li> </ul>
+     */
+    inline const CollectionType& GetCollectionType() const{ return m_collectionType; }
+
+    /**
+     * <p>A grouping of elements where each element within the collection must have the
+     * same feature type (<code>String</code>, <code>Integral</code>, or
+     * <code>Fractional</code>).</p> <ul> <li> <p> <code>List</code>: An ordered
+     * collection of elements.</p> </li> <li> <p> <code>Set</code>: An unordered
+     * collection of unique elements.</p> </li> <li> <p> <code>Vector</code>: A
+     * specialized list that represents a fixed-size array of elements. The vector
+     * dimension is determined by you. Must have elements with fractional feature
+     * types. </p> </li> </ul>
+     */
+    inline bool CollectionTypeHasBeenSet() const { return m_collectionTypeHasBeenSet; }
+
+    /**
+     * <p>A grouping of elements where each element within the collection must have the
+     * same feature type (<code>String</code>, <code>Integral</code>, or
+     * <code>Fractional</code>).</p> <ul> <li> <p> <code>List</code>: An ordered
+     * collection of elements.</p> </li> <li> <p> <code>Set</code>: An unordered
+     * collection of unique elements.</p> </li> <li> <p> <code>Vector</code>: A
+     * specialized list that represents a fixed-size array of elements. The vector
+     * dimension is determined by you. Must have elements with fractional feature
+     * types. </p> </li> </ul>
+     */
+    inline void SetCollectionType(const CollectionType& value) { m_collectionTypeHasBeenSet = true; m_collectionType = value; }
+
+    /**
+     * <p>A grouping of elements where each element within the collection must have the
+     * same feature type (<code>String</code>, <code>Integral</code>, or
+     * <code>Fractional</code>).</p> <ul> <li> <p> <code>List</code>: An ordered
+     * collection of elements.</p> </li> <li> <p> <code>Set</code>: An unordered
+     * collection of unique elements.</p> </li> <li> <p> <code>Vector</code>: A
+     * specialized list that represents a fixed-size array of elements. The vector
+     * dimension is determined by you. Must have elements with fractional feature
+     * types. </p> </li> </ul>
+     */
+    inline void SetCollectionType(CollectionType&& value) { m_collectionTypeHasBeenSet = true; m_collectionType = std::move(value); }
+
+    /**
+     * <p>A grouping of elements where each element within the collection must have the
+     * same feature type (<code>String</code>, <code>Integral</code>, or
+     * <code>Fractional</code>).</p> <ul> <li> <p> <code>List</code>: An ordered
+     * collection of elements.</p> </li> <li> <p> <code>Set</code>: An unordered
+     * collection of unique elements.</p> </li> <li> <p> <code>Vector</code>: A
+     * specialized list that represents a fixed-size array of elements. The vector
+     * dimension is determined by you. Must have elements with fractional feature
+     * types. </p> </li> </ul>
+     */
+    inline FeatureDefinition& WithCollectionType(const CollectionType& value) { SetCollectionType(value); return *this;}
+
+    /**
+     * <p>A grouping of elements where each element within the collection must have the
+     * same feature type (<code>String</code>, <code>Integral</code>, or
+     * <code>Fractional</code>).</p> <ul> <li> <p> <code>List</code>: An ordered
+     * collection of elements.</p> </li> <li> <p> <code>Set</code>: An unordered
+     * collection of unique elements.</p> </li> <li> <p> <code>Vector</code>: A
+     * specialized list that represents a fixed-size array of elements. The vector
+     * dimension is determined by you. Must have elements with fractional feature
+     * types. </p> </li> </ul>
+     */
+    inline FeatureDefinition& WithCollectionType(CollectionType&& value) { SetCollectionType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Configuration for your collection.</p>
+     */
+    inline const CollectionConfig& GetCollectionConfig() const{ return m_collectionConfig; }
+
+    /**
+     * <p>Configuration for your collection.</p>
+     */
+    inline bool CollectionConfigHasBeenSet() const { return m_collectionConfigHasBeenSet; }
+
+    /**
+     * <p>Configuration for your collection.</p>
+     */
+    inline void SetCollectionConfig(const CollectionConfig& value) { m_collectionConfigHasBeenSet = true; m_collectionConfig = value; }
+
+    /**
+     * <p>Configuration for your collection.</p>
+     */
+    inline void SetCollectionConfig(CollectionConfig&& value) { m_collectionConfigHasBeenSet = true; m_collectionConfig = std::move(value); }
+
+    /**
+     * <p>Configuration for your collection.</p>
+     */
+    inline FeatureDefinition& WithCollectionConfig(const CollectionConfig& value) { SetCollectionConfig(value); return *this;}
+
+    /**
+     * <p>Configuration for your collection.</p>
+     */
+    inline FeatureDefinition& WithCollectionConfig(CollectionConfig&& value) { SetCollectionConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_featureName;
@@ -141,6 +247,12 @@ namespace Model
 
     FeatureType m_featureType;
     bool m_featureTypeHasBeenSet = false;
+
+    CollectionType m_collectionType;
+    bool m_collectionTypeHasBeenSet = false;
+
+    CollectionConfig m_collectionConfig;
+    bool m_collectionConfigHasBeenSet = false;
   };
 
 } // namespace Model

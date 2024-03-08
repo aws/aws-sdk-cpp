@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/servicecatalog-appregistry/AppRegistry_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/servicecatalog-appregistry/model/AssociationOption.h>
 #include <utility>
 
 namespace Aws
@@ -111,6 +113,42 @@ namespace Model
     inline AssociateResourceResult& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
 
 
+    /**
+     * <p> Determines whether an application tag is applied or skipped. </p>
+     */
+    inline const Aws::Vector<AssociationOption>& GetOptions() const{ return m_options; }
+
+    /**
+     * <p> Determines whether an application tag is applied or skipped. </p>
+     */
+    inline void SetOptions(const Aws::Vector<AssociationOption>& value) { m_options = value; }
+
+    /**
+     * <p> Determines whether an application tag is applied or skipped. </p>
+     */
+    inline void SetOptions(Aws::Vector<AssociationOption>&& value) { m_options = std::move(value); }
+
+    /**
+     * <p> Determines whether an application tag is applied or skipped. </p>
+     */
+    inline AssociateResourceResult& WithOptions(const Aws::Vector<AssociationOption>& value) { SetOptions(value); return *this;}
+
+    /**
+     * <p> Determines whether an application tag is applied or skipped. </p>
+     */
+    inline AssociateResourceResult& WithOptions(Aws::Vector<AssociationOption>&& value) { SetOptions(std::move(value)); return *this;}
+
+    /**
+     * <p> Determines whether an application tag is applied or skipped. </p>
+     */
+    inline AssociateResourceResult& AddOptions(const AssociationOption& value) { m_options.push_back(value); return *this; }
+
+    /**
+     * <p> Determines whether an application tag is applied or skipped. </p>
+     */
+    inline AssociateResourceResult& AddOptions(AssociationOption&& value) { m_options.push_back(std::move(value)); return *this; }
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -137,6 +175,8 @@ namespace Model
     Aws::String m_applicationArn;
 
     Aws::String m_resourceArn;
+
+    Aws::Vector<AssociationOption> m_options;
 
     Aws::String m_requestId;
   };

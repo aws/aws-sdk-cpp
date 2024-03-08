@@ -208,6 +208,47 @@ namespace Model
 
 
     /**
+     * <p>The storage type for the DB cluster.</p>
+     */
+    inline const Aws::String& GetStorageType() const{ return m_storageType; }
+
+    /**
+     * <p>The storage type for the DB cluster.</p>
+     */
+    inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
+
+    /**
+     * <p>The storage type for the DB cluster.</p>
+     */
+    inline void SetStorageType(const Aws::String& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
+
+    /**
+     * <p>The storage type for the DB cluster.</p>
+     */
+    inline void SetStorageType(Aws::String&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
+
+    /**
+     * <p>The storage type for the DB cluster.</p>
+     */
+    inline void SetStorageType(const char* value) { m_storageTypeHasBeenSet = true; m_storageType.assign(value); }
+
+    /**
+     * <p>The storage type for the DB cluster.</p>
+     */
+    inline ClusterPendingModifiedValues& WithStorageType(const Aws::String& value) { SetStorageType(value); return *this;}
+
+    /**
+     * <p>The storage type for the DB cluster.</p>
+     */
+    inline ClusterPendingModifiedValues& WithStorageType(Aws::String&& value) { SetStorageType(std::move(value)); return *this;}
+
+    /**
+     * <p>The storage type for the DB cluster.</p>
+     */
+    inline ClusterPendingModifiedValues& WithStorageType(const char* value) { SetStorageType(value); return *this;}
+
+
+    /**
      * <p>The allocated storage size in gibibytes (GiB) for database engines. For
      * Neptune, <code>AllocatedStorage</code> always returns 1, because Neptune DB
      * cluster storage size isn't fixed, but instead automatically adjusts as
@@ -280,6 +321,9 @@ namespace Model
 
     int m_backupRetentionPeriod;
     bool m_backupRetentionPeriodHasBeenSet = false;
+
+    Aws::String m_storageType;
+    bool m_storageTypeHasBeenSet = false;
 
     int m_allocatedStorage;
     bool m_allocatedStorageHasBeenSet = false;

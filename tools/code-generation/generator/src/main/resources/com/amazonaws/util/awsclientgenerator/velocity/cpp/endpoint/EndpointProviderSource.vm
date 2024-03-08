@@ -79,6 +79,11 @@ namespace Endpoint
     if (!config.useVirtualAddressing) {
       SetBooleanParameter(AWS_S3_FORCE_PATH_STYLE, true);
     }
+
+    static const char* AWS_S3_DISABLE_EXPRESS_AUTH = "DisableS3ExpressSessionAuth";
+    if(config.disableS3ExpressAuth) {
+      SetBooleanParameter(AWS_S3_DISABLE_EXPRESS_AUTH, true);
+    }
 #end
 #if($serviceModel.metadata.serviceId == "S3 Control")
     static const char* AWS_S3_USE_ARN_REGION = "UseArnRegion";

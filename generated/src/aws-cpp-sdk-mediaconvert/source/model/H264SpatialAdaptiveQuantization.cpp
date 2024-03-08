@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case H264SpatialAdaptiveQuantization::NOT_SET:
+            return {};
           case H264SpatialAdaptiveQuantization::DISABLED:
             return "DISABLED";
           case H264SpatialAdaptiveQuantization::ENABLED:

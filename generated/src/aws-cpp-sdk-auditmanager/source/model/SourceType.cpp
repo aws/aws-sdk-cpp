@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SourceType::NOT_SET:
+            return {};
           case SourceType::AWS_Cloudtrail:
             return "AWS_Cloudtrail";
           case SourceType::AWS_Config:

@@ -84,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ExceptionResourceType::NOT_SET:
+            return {};
           case ExceptionResourceType::USER:
             return "USER";
           case ExceptionResourceType::GROUP:

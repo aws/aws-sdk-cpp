@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ModelOutputDataFormat::NOT_SET:
+            return {};
           case ModelOutputDataFormat::TEXT_CSV:
             return "TEXT_CSV";
           case ModelOutputDataFormat::APPLICATION_JSONLINES:

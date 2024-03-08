@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PiiEntitiesDetectionMode::NOT_SET:
+            return {};
           case PiiEntitiesDetectionMode::ONLY_REDACTION:
             return "ONLY_REDACTION";
           case PiiEntitiesDetectionMode::ONLY_OFFSETS:

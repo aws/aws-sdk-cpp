@@ -73,6 +73,12 @@ GetDecoderManifestResult& GetDecoderManifestResult::operator =(const Aws::Amazon
 
   }
 
+  if(jsonValue.ValueExists("message"))
+  {
+    m_message = jsonValue.GetString("message");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

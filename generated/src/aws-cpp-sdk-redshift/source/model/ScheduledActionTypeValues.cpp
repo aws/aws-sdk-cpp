@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ScheduledActionTypeValues::NOT_SET:
+            return {};
           case ScheduledActionTypeValues::ResizeCluster:
             return "ResizeCluster";
           case ScheduledActionTypeValues::PauseCluster:

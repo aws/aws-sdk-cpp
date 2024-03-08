@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ChannelMessagePersistenceType::NOT_SET:
+            return {};
           case ChannelMessagePersistenceType::PERSISTENT:
             return "PERSISTENT";
           case ChannelMessagePersistenceType::NON_PERSISTENT:

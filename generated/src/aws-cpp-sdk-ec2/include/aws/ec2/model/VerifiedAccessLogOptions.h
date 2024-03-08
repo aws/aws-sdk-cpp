@@ -136,71 +136,75 @@ namespace Model
 
 
     /**
-     * <p> The logging version to use. </p> <p>Valid values: <code>ocsf-0.1</code> |
+     * <p>The logging version.</p> <p>Valid values: <code>ocsf-0.1</code> |
      * <code>ocsf-1.0.0-rc.2</code> </p>
      */
     inline const Aws::String& GetLogVersion() const{ return m_logVersion; }
 
     /**
-     * <p> The logging version to use. </p> <p>Valid values: <code>ocsf-0.1</code> |
+     * <p>The logging version.</p> <p>Valid values: <code>ocsf-0.1</code> |
      * <code>ocsf-1.0.0-rc.2</code> </p>
      */
     inline bool LogVersionHasBeenSet() const { return m_logVersionHasBeenSet; }
 
     /**
-     * <p> The logging version to use. </p> <p>Valid values: <code>ocsf-0.1</code> |
+     * <p>The logging version.</p> <p>Valid values: <code>ocsf-0.1</code> |
      * <code>ocsf-1.0.0-rc.2</code> </p>
      */
     inline void SetLogVersion(const Aws::String& value) { m_logVersionHasBeenSet = true; m_logVersion = value; }
 
     /**
-     * <p> The logging version to use. </p> <p>Valid values: <code>ocsf-0.1</code> |
+     * <p>The logging version.</p> <p>Valid values: <code>ocsf-0.1</code> |
      * <code>ocsf-1.0.0-rc.2</code> </p>
      */
     inline void SetLogVersion(Aws::String&& value) { m_logVersionHasBeenSet = true; m_logVersion = std::move(value); }
 
     /**
-     * <p> The logging version to use. </p> <p>Valid values: <code>ocsf-0.1</code> |
+     * <p>The logging version.</p> <p>Valid values: <code>ocsf-0.1</code> |
      * <code>ocsf-1.0.0-rc.2</code> </p>
      */
     inline void SetLogVersion(const char* value) { m_logVersionHasBeenSet = true; m_logVersion.assign(value); }
 
     /**
-     * <p> The logging version to use. </p> <p>Valid values: <code>ocsf-0.1</code> |
+     * <p>The logging version.</p> <p>Valid values: <code>ocsf-0.1</code> |
      * <code>ocsf-1.0.0-rc.2</code> </p>
      */
     inline VerifiedAccessLogOptions& WithLogVersion(const Aws::String& value) { SetLogVersion(value); return *this;}
 
     /**
-     * <p> The logging version to use. </p> <p>Valid values: <code>ocsf-0.1</code> |
+     * <p>The logging version.</p> <p>Valid values: <code>ocsf-0.1</code> |
      * <code>ocsf-1.0.0-rc.2</code> </p>
      */
     inline VerifiedAccessLogOptions& WithLogVersion(Aws::String&& value) { SetLogVersion(std::move(value)); return *this;}
 
     /**
-     * <p> The logging version to use. </p> <p>Valid values: <code>ocsf-0.1</code> |
+     * <p>The logging version.</p> <p>Valid values: <code>ocsf-0.1</code> |
      * <code>ocsf-1.0.0-rc.2</code> </p>
      */
     inline VerifiedAccessLogOptions& WithLogVersion(const char* value) { SetLogVersion(value); return *this;}
 
 
     /**
-     * <p> Include trust data sent by trust providers into the logs. </p>
+     * <p>Indicates whether to include trust data sent by trust providers in the
+     * logs.</p>
      */
     inline bool GetIncludeTrustContext() const{ return m_includeTrustContext; }
 
     /**
-     * <p> Include trust data sent by trust providers into the logs. </p>
+     * <p>Indicates whether to include trust data sent by trust providers in the
+     * logs.</p>
      */
     inline bool IncludeTrustContextHasBeenSet() const { return m_includeTrustContextHasBeenSet; }
 
     /**
-     * <p> Include trust data sent by trust providers into the logs. </p>
+     * <p>Indicates whether to include trust data sent by trust providers in the
+     * logs.</p>
      */
     inline void SetIncludeTrustContext(bool value) { m_includeTrustContextHasBeenSet = true; m_includeTrustContext = value; }
 
     /**
-     * <p> Include trust data sent by trust providers into the logs. </p>
+     * <p>Indicates whether to include trust data sent by trust providers in the
+     * logs.</p>
      */
     inline VerifiedAccessLogOptions& WithIncludeTrustContext(bool value) { SetIncludeTrustContext(value); return *this;}
 

@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ListDevicesSortBy::NOT_SET:
+            return {};
           case ListDevicesSortBy::DEVICE_ID:
             return "DEVICE_ID";
           case ListDevicesSortBy::CREATED_TIME:

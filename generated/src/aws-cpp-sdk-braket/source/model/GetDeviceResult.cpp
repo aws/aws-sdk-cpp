@@ -51,6 +51,15 @@ GetDeviceResult& GetDeviceResult::operator =(const Aws::AmazonWebServiceResult<J
 
   }
 
+  if(jsonValue.ValueExists("deviceQueueInfo"))
+  {
+    Aws::Utils::Array<JsonView> deviceQueueInfoJsonList = jsonValue.GetArray("deviceQueueInfo");
+    for(unsigned deviceQueueInfoIndex = 0; deviceQueueInfoIndex < deviceQueueInfoJsonList.GetLength(); ++deviceQueueInfoIndex)
+    {
+      m_deviceQueueInfo.push_back(deviceQueueInfoJsonList[deviceQueueInfoIndex].AsObject());
+    }
+  }
+
   if(jsonValue.ValueExists("deviceStatus"))
   {
     m_deviceStatus = DeviceStatusMapper::GetDeviceStatusForName(jsonValue.GetString("deviceStatus"));

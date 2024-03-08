@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case JobType::NOT_SET:
+            return {};
           case JobType::TRAINING:
             return "TRAINING";
           case JobType::INFERENCE:

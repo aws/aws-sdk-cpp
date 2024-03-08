@@ -20,7 +20,8 @@ RegisterApplicationRequest::RegisterApplicationRequest() :
     m_sapInstanceNumberHasBeenSet(false),
     m_sidHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_credentialsHasBeenSet(false)
+    m_credentialsHasBeenSet(false),
+    m_databaseArnHasBeenSet(false)
 {
 }
 
@@ -81,6 +82,12 @@ Aws::String RegisterApplicationRequest::SerializePayload() const
      credentialsJsonList[credentialsIndex].AsObject(m_credentials[credentialsIndex].Jsonize());
    }
    payload.WithArray("Credentials", std::move(credentialsJsonList));
+
+  }
+
+  if(m_databaseArnHasBeenSet)
+  {
+   payload.WithString("DatabaseArn", m_databaseArn);
 
   }
 

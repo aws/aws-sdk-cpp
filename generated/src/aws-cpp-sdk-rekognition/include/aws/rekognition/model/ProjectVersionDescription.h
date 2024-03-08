@@ -13,6 +13,8 @@
 #include <aws/rekognition/model/TestingDataResult.h>
 #include <aws/rekognition/model/EvaluationResult.h>
 #include <aws/rekognition/model/GroundTruthManifest.h>
+#include <aws/rekognition/model/CustomizationFeature.h>
+#include <aws/rekognition/model/CustomizationFeatureConfig.h>
 #include <utility>
 
 namespace Aws
@@ -31,8 +33,8 @@ namespace Model
 {
 
   /**
-   * <p>A description of a version of an Amazon Rekognition Custom Labels
-   * model.</p><p><h3>See Also:</h3>   <a
+   * <p>A description of a version of a Amazon Rekognition project
+   * version.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ProjectVersionDescription">AWS
    * API Reference</a></p>
    */
@@ -46,42 +48,42 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the model version. </p>
+     * <p>The Amazon Resource Name (ARN) of the project version. </p>
      */
     inline const Aws::String& GetProjectVersionArn() const{ return m_projectVersionArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the model version. </p>
+     * <p>The Amazon Resource Name (ARN) of the project version. </p>
      */
     inline bool ProjectVersionArnHasBeenSet() const { return m_projectVersionArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the model version. </p>
+     * <p>The Amazon Resource Name (ARN) of the project version. </p>
      */
     inline void SetProjectVersionArn(const Aws::String& value) { m_projectVersionArnHasBeenSet = true; m_projectVersionArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the model version. </p>
+     * <p>The Amazon Resource Name (ARN) of the project version. </p>
      */
     inline void SetProjectVersionArn(Aws::String&& value) { m_projectVersionArnHasBeenSet = true; m_projectVersionArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the model version. </p>
+     * <p>The Amazon Resource Name (ARN) of the project version. </p>
      */
     inline void SetProjectVersionArn(const char* value) { m_projectVersionArnHasBeenSet = true; m_projectVersionArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the model version. </p>
+     * <p>The Amazon Resource Name (ARN) of the project version. </p>
      */
     inline ProjectVersionDescription& WithProjectVersionArn(const Aws::String& value) { SetProjectVersionArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the model version. </p>
+     * <p>The Amazon Resource Name (ARN) of the project version. </p>
      */
     inline ProjectVersionDescription& WithProjectVersionArn(Aws::String&& value) { SetProjectVersionArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the model version. </p>
+     * <p>The Amazon Resource Name (ARN) of the project version. </p>
      */
     inline ProjectVersionDescription& WithProjectVersionArn(const char* value) { SetProjectVersionArn(value); return *this;}
 
@@ -118,26 +120,30 @@ namespace Model
 
 
     /**
-     * <p>The minimum number of inference units used by the model. For more
-     * information, see <a>StartProjectVersion</a>.</p>
+     * <p>The minimum number of inference units used by the model. Applies only to
+     * Custom Labels projects. For more information, see
+     * <a>StartProjectVersion</a>.</p>
      */
     inline int GetMinInferenceUnits() const{ return m_minInferenceUnits; }
 
     /**
-     * <p>The minimum number of inference units used by the model. For more
-     * information, see <a>StartProjectVersion</a>.</p>
+     * <p>The minimum number of inference units used by the model. Applies only to
+     * Custom Labels projects. For more information, see
+     * <a>StartProjectVersion</a>.</p>
      */
     inline bool MinInferenceUnitsHasBeenSet() const { return m_minInferenceUnitsHasBeenSet; }
 
     /**
-     * <p>The minimum number of inference units used by the model. For more
-     * information, see <a>StartProjectVersion</a>.</p>
+     * <p>The minimum number of inference units used by the model. Applies only to
+     * Custom Labels projects. For more information, see
+     * <a>StartProjectVersion</a>.</p>
      */
     inline void SetMinInferenceUnits(int value) { m_minInferenceUnitsHasBeenSet = true; m_minInferenceUnits = value; }
 
     /**
-     * <p>The minimum number of inference units used by the model. For more
-     * information, see <a>StartProjectVersion</a>.</p>
+     * <p>The minimum number of inference units used by the model. Applies only to
+     * Custom Labels projects. For more information, see
+     * <a>StartProjectVersion</a>.</p>
      */
     inline ProjectVersionDescription& WithMinInferenceUnits(int value) { SetMinInferenceUnits(value); return *this;}
 
@@ -491,29 +497,29 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of inference units Amazon Rekognition Custom Labels uses
-     * to auto-scale the model. For more information, see
+     * <p>The maximum number of inference units Amazon Rekognition uses to auto-scale
+     * the model. Applies only to Custom Labels projects. For more information, see
      * <a>StartProjectVersion</a>.</p>
      */
     inline int GetMaxInferenceUnits() const{ return m_maxInferenceUnits; }
 
     /**
-     * <p>The maximum number of inference units Amazon Rekognition Custom Labels uses
-     * to auto-scale the model. For more information, see
+     * <p>The maximum number of inference units Amazon Rekognition uses to auto-scale
+     * the model. Applies only to Custom Labels projects. For more information, see
      * <a>StartProjectVersion</a>.</p>
      */
     inline bool MaxInferenceUnitsHasBeenSet() const { return m_maxInferenceUnitsHasBeenSet; }
 
     /**
-     * <p>The maximum number of inference units Amazon Rekognition Custom Labels uses
-     * to auto-scale the model. For more information, see
+     * <p>The maximum number of inference units Amazon Rekognition uses to auto-scale
+     * the model. Applies only to Custom Labels projects. For more information, see
      * <a>StartProjectVersion</a>.</p>
      */
     inline void SetMaxInferenceUnits(int value) { m_maxInferenceUnitsHasBeenSet = true; m_maxInferenceUnits = value; }
 
     /**
-     * <p>The maximum number of inference units Amazon Rekognition Custom Labels uses
-     * to auto-scale the model. For more information, see
+     * <p>The maximum number of inference units Amazon Rekognition uses to auto-scale
+     * the model. Applies only to Custom Labels projects. For more information, see
      * <a>StartProjectVersion</a>.</p>
      */
     inline ProjectVersionDescription& WithMaxInferenceUnits(int value) { SetMaxInferenceUnits(value); return *this;}
@@ -575,6 +581,150 @@ namespace Model
      */
     inline ProjectVersionDescription& WithSourceProjectVersionArn(const char* value) { SetSourceProjectVersionArn(value); return *this;}
 
+
+    /**
+     * <p>A user-provided description of the project version.</p>
+     */
+    inline const Aws::String& GetVersionDescription() const{ return m_versionDescription; }
+
+    /**
+     * <p>A user-provided description of the project version.</p>
+     */
+    inline bool VersionDescriptionHasBeenSet() const { return m_versionDescriptionHasBeenSet; }
+
+    /**
+     * <p>A user-provided description of the project version.</p>
+     */
+    inline void SetVersionDescription(const Aws::String& value) { m_versionDescriptionHasBeenSet = true; m_versionDescription = value; }
+
+    /**
+     * <p>A user-provided description of the project version.</p>
+     */
+    inline void SetVersionDescription(Aws::String&& value) { m_versionDescriptionHasBeenSet = true; m_versionDescription = std::move(value); }
+
+    /**
+     * <p>A user-provided description of the project version.</p>
+     */
+    inline void SetVersionDescription(const char* value) { m_versionDescriptionHasBeenSet = true; m_versionDescription.assign(value); }
+
+    /**
+     * <p>A user-provided description of the project version.</p>
+     */
+    inline ProjectVersionDescription& WithVersionDescription(const Aws::String& value) { SetVersionDescription(value); return *this;}
+
+    /**
+     * <p>A user-provided description of the project version.</p>
+     */
+    inline ProjectVersionDescription& WithVersionDescription(Aws::String&& value) { SetVersionDescription(std::move(value)); return *this;}
+
+    /**
+     * <p>A user-provided description of the project version.</p>
+     */
+    inline ProjectVersionDescription& WithVersionDescription(const char* value) { SetVersionDescription(value); return *this;}
+
+
+    /**
+     * <p>The feature that was customized.</p>
+     */
+    inline const CustomizationFeature& GetFeature() const{ return m_feature; }
+
+    /**
+     * <p>The feature that was customized.</p>
+     */
+    inline bool FeatureHasBeenSet() const { return m_featureHasBeenSet; }
+
+    /**
+     * <p>The feature that was customized.</p>
+     */
+    inline void SetFeature(const CustomizationFeature& value) { m_featureHasBeenSet = true; m_feature = value; }
+
+    /**
+     * <p>The feature that was customized.</p>
+     */
+    inline void SetFeature(CustomizationFeature&& value) { m_featureHasBeenSet = true; m_feature = std::move(value); }
+
+    /**
+     * <p>The feature that was customized.</p>
+     */
+    inline ProjectVersionDescription& WithFeature(const CustomizationFeature& value) { SetFeature(value); return *this;}
+
+    /**
+     * <p>The feature that was customized.</p>
+     */
+    inline ProjectVersionDescription& WithFeature(CustomizationFeature&& value) { SetFeature(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The base detection model version used to create the project version.</p>
+     */
+    inline const Aws::String& GetBaseModelVersion() const{ return m_baseModelVersion; }
+
+    /**
+     * <p>The base detection model version used to create the project version.</p>
+     */
+    inline bool BaseModelVersionHasBeenSet() const { return m_baseModelVersionHasBeenSet; }
+
+    /**
+     * <p>The base detection model version used to create the project version.</p>
+     */
+    inline void SetBaseModelVersion(const Aws::String& value) { m_baseModelVersionHasBeenSet = true; m_baseModelVersion = value; }
+
+    /**
+     * <p>The base detection model version used to create the project version.</p>
+     */
+    inline void SetBaseModelVersion(Aws::String&& value) { m_baseModelVersionHasBeenSet = true; m_baseModelVersion = std::move(value); }
+
+    /**
+     * <p>The base detection model version used to create the project version.</p>
+     */
+    inline void SetBaseModelVersion(const char* value) { m_baseModelVersionHasBeenSet = true; m_baseModelVersion.assign(value); }
+
+    /**
+     * <p>The base detection model version used to create the project version.</p>
+     */
+    inline ProjectVersionDescription& WithBaseModelVersion(const Aws::String& value) { SetBaseModelVersion(value); return *this;}
+
+    /**
+     * <p>The base detection model version used to create the project version.</p>
+     */
+    inline ProjectVersionDescription& WithBaseModelVersion(Aws::String&& value) { SetBaseModelVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>The base detection model version used to create the project version.</p>
+     */
+    inline ProjectVersionDescription& WithBaseModelVersion(const char* value) { SetBaseModelVersion(value); return *this;}
+
+
+    /**
+     * <p>Feature specific configuration that was applied during training.</p>
+     */
+    inline const CustomizationFeatureConfig& GetFeatureConfig() const{ return m_featureConfig; }
+
+    /**
+     * <p>Feature specific configuration that was applied during training.</p>
+     */
+    inline bool FeatureConfigHasBeenSet() const { return m_featureConfigHasBeenSet; }
+
+    /**
+     * <p>Feature specific configuration that was applied during training.</p>
+     */
+    inline void SetFeatureConfig(const CustomizationFeatureConfig& value) { m_featureConfigHasBeenSet = true; m_featureConfig = value; }
+
+    /**
+     * <p>Feature specific configuration that was applied during training.</p>
+     */
+    inline void SetFeatureConfig(CustomizationFeatureConfig&& value) { m_featureConfigHasBeenSet = true; m_featureConfig = std::move(value); }
+
+    /**
+     * <p>Feature specific configuration that was applied during training.</p>
+     */
+    inline ProjectVersionDescription& WithFeatureConfig(const CustomizationFeatureConfig& value) { SetFeatureConfig(value); return *this;}
+
+    /**
+     * <p>Feature specific configuration that was applied during training.</p>
+     */
+    inline ProjectVersionDescription& WithFeatureConfig(CustomizationFeatureConfig&& value) { SetFeatureConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_projectVersionArn;
@@ -621,6 +771,18 @@ namespace Model
 
     Aws::String m_sourceProjectVersionArn;
     bool m_sourceProjectVersionArnHasBeenSet = false;
+
+    Aws::String m_versionDescription;
+    bool m_versionDescriptionHasBeenSet = false;
+
+    CustomizationFeature m_feature;
+    bool m_featureHasBeenSet = false;
+
+    Aws::String m_baseModelVersion;
+    bool m_baseModelVersionHasBeenSet = false;
+
+    CustomizationFeatureConfig m_featureConfig;
+    bool m_featureConfigHasBeenSet = false;
   };
 
 } // namespace Model

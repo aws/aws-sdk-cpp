@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LagState::NOT_SET:
+            return {};
           case LagState::requested:
             return "requested";
           case LagState::pending:

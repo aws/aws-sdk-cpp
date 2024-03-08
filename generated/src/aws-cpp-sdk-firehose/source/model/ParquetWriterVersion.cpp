@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ParquetWriterVersion::NOT_SET:
+            return {};
           case ParquetWriterVersion::V1:
             return "V1";
           case ParquetWriterVersion::V2:

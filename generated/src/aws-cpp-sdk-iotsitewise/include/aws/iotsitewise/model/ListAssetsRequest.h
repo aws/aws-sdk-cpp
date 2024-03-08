@@ -107,57 +107,89 @@ namespace Model
 
     /**
      * <p>The ID of the asset model by which to filter the list of assets. This
-     * parameter is required if you choose <code>ALL</code> for
-     * <code>filter</code>.</p>
+     * parameter is required if you choose <code>ALL</code> for <code>filter</code>.
+     * This can be either the actual ID in UUID format, or else
+     * <code>externalId:</code> followed by the external ID, if it has one. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline const Aws::String& GetAssetModelId() const{ return m_assetModelId; }
 
     /**
      * <p>The ID of the asset model by which to filter the list of assets. This
-     * parameter is required if you choose <code>ALL</code> for
-     * <code>filter</code>.</p>
+     * parameter is required if you choose <code>ALL</code> for <code>filter</code>.
+     * This can be either the actual ID in UUID format, or else
+     * <code>externalId:</code> followed by the external ID, if it has one. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline bool AssetModelIdHasBeenSet() const { return m_assetModelIdHasBeenSet; }
 
     /**
      * <p>The ID of the asset model by which to filter the list of assets. This
-     * parameter is required if you choose <code>ALL</code> for
-     * <code>filter</code>.</p>
+     * parameter is required if you choose <code>ALL</code> for <code>filter</code>.
+     * This can be either the actual ID in UUID format, or else
+     * <code>externalId:</code> followed by the external ID, if it has one. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline void SetAssetModelId(const Aws::String& value) { m_assetModelIdHasBeenSet = true; m_assetModelId = value; }
 
     /**
      * <p>The ID of the asset model by which to filter the list of assets. This
-     * parameter is required if you choose <code>ALL</code> for
-     * <code>filter</code>.</p>
+     * parameter is required if you choose <code>ALL</code> for <code>filter</code>.
+     * This can be either the actual ID in UUID format, or else
+     * <code>externalId:</code> followed by the external ID, if it has one. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline void SetAssetModelId(Aws::String&& value) { m_assetModelIdHasBeenSet = true; m_assetModelId = std::move(value); }
 
     /**
      * <p>The ID of the asset model by which to filter the list of assets. This
-     * parameter is required if you choose <code>ALL</code> for
-     * <code>filter</code>.</p>
+     * parameter is required if you choose <code>ALL</code> for <code>filter</code>.
+     * This can be either the actual ID in UUID format, or else
+     * <code>externalId:</code> followed by the external ID, if it has one. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline void SetAssetModelId(const char* value) { m_assetModelIdHasBeenSet = true; m_assetModelId.assign(value); }
 
     /**
      * <p>The ID of the asset model by which to filter the list of assets. This
-     * parameter is required if you choose <code>ALL</code> for
-     * <code>filter</code>.</p>
+     * parameter is required if you choose <code>ALL</code> for <code>filter</code>.
+     * This can be either the actual ID in UUID format, or else
+     * <code>externalId:</code> followed by the external ID, if it has one. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline ListAssetsRequest& WithAssetModelId(const Aws::String& value) { SetAssetModelId(value); return *this;}
 
     /**
      * <p>The ID of the asset model by which to filter the list of assets. This
-     * parameter is required if you choose <code>ALL</code> for
-     * <code>filter</code>.</p>
+     * parameter is required if you choose <code>ALL</code> for <code>filter</code>.
+     * This can be either the actual ID in UUID format, or else
+     * <code>externalId:</code> followed by the external ID, if it has one. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline ListAssetsRequest& WithAssetModelId(Aws::String&& value) { SetAssetModelId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the asset model by which to filter the list of assets. This
-     * parameter is required if you choose <code>ALL</code> for
-     * <code>filter</code>.</p>
+     * parameter is required if you choose <code>ALL</code> for <code>filter</code>.
+     * This can be either the actual ID in UUID format, or else
+     * <code>externalId:</code> followed by the external ID, if it has one. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline ListAssetsRequest& WithAssetModelId(const char* value) { SetAssetModelId(value); return *this;}
 

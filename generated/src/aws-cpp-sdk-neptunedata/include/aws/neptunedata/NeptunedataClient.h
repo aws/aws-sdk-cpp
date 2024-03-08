@@ -10,6 +10,11 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/neptunedata/NeptunedataServiceClientModel.h>
+#include <aws/neptunedata/model/GetSparqlStatisticsRequest.h>
+#include <aws/neptunedata/model/GetPropertygraphStatisticsRequest.h>
+#include <aws/neptunedata/model/DeletePropertygraphStatisticsRequest.h>
+#include <aws/neptunedata/model/DeleteSparqlStatisticsRequest.h>
+#include <aws/neptunedata/model/GetEngineStatusRequest.h>
 
 namespace Aws
 {
@@ -27,8 +32,8 @@ namespace neptunedata
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef NeptunedataClientConfiguration ClientConfigurationType;
       typedef NeptunedataEndpointProvider EndpointProviderType;
@@ -38,14 +43,14 @@ namespace neptunedata
         * is not specified, it will be initialized to default values.
         */
         NeptunedataClient(const Aws::neptunedata::NeptunedataClientConfiguration& clientConfiguration = Aws::neptunedata::NeptunedataClientConfiguration(),
-                          std::shared_ptr<NeptunedataEndpointProviderBase> endpointProvider = Aws::MakeShared<NeptunedataEndpointProvider>(ALLOCATION_TAG));
+                          std::shared_ptr<NeptunedataEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         NeptunedataClient(const Aws::Auth::AWSCredentials& credentials,
-                          std::shared_ptr<NeptunedataEndpointProviderBase> endpointProvider = Aws::MakeShared<NeptunedataEndpointProvider>(ALLOCATION_TAG),
+                          std::shared_ptr<NeptunedataEndpointProviderBase> endpointProvider = nullptr,
                           const Aws::neptunedata::NeptunedataClientConfiguration& clientConfiguration = Aws::neptunedata::NeptunedataClientConfiguration());
 
        /**
@@ -53,7 +58,7 @@ namespace neptunedata
         * the default http client factory will be used
         */
         NeptunedataClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                          std::shared_ptr<NeptunedataEndpointProviderBase> endpointProvider = Aws::MakeShared<NeptunedataEndpointProvider>(ALLOCATION_TAG),
+                          std::shared_ptr<NeptunedataEndpointProviderBase> endpointProvider = nullptr,
                           const Aws::neptunedata::NeptunedataClientConfiguration& clientConfiguration = Aws::neptunedata::NeptunedataClientConfiguration());
 
 
@@ -84,7 +89,11 @@ namespace neptunedata
         /**
          * <p>Cancels a Gremlin query. See <a
          * href="https://docs.aws.amazon.com/neptune/latest/userguide/gremlin-api-status-cancel.html">Gremlin
-         * query cancellation</a> for more information.</p><p><h3>See Also:</h3>   <a
+         * query cancellation</a> for more information.</p> <p>When invoking this operation
+         * in a Neptune cluster that has IAM authentication enabled, the IAM user or role
+         * making the request must have a policy attached that allows the <a
+         * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#cancelquery">neptune-db:CancelQuery</a>
+         * IAM action in that cluster.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/CancelGremlinQuery">AWS
          * API Reference</a></p>
          */
@@ -109,10 +118,14 @@ namespace neptunedata
         }
 
         /**
-         * <p>Cancels a specified load job. This is an HTTP <code>DELETE</code>
-         * request.</p> <p>See <a
+         * <p>Cancels a specified load job. This is an HTTP <code>DELETE</code> request.
+         * See <a
          * href="https://docs.aws.amazon.com/neptune/latest/userguide/load-api-reference-status.htm">Neptune
-         * Loader Get-Status API</a> for more information.</p><p><h3>See Also:</h3>   <a
+         * Loader Get-Status API</a> for more information.</p> <p>When invoking this
+         * operation in a Neptune cluster that has IAM authentication enabled, the IAM user
+         * or role making the request must have a policy attached that allows the <a
+         * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#cancelloaderjob">neptune-db:CancelLoaderJob</a>
+         * IAM action in that cluster..</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/CancelLoaderJob">AWS
          * API Reference</a></p>
          */
@@ -139,7 +152,11 @@ namespace neptunedata
         /**
          * <p>Cancels a Neptune ML data processing job. See <a
          * href="https://docs.aws.amazon.com/neptune/latest/userguide/machine-learning-api-dataprocessing.html">The
-         * <code>dataprocessing</code> command</a>.</p><p><h3>See Also:</h3>   <a
+         * <code>dataprocessing</code> command</a>.</p> <p>When invoking this operation in
+         * a Neptune cluster that has IAM authentication enabled, the IAM user or role
+         * making the request must have a policy attached that allows the <a
+         * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#cancelmldataprocessingjob">neptune-db:CancelMLDataProcessingJob</a>
+         * IAM action in that cluster.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/CancelMLDataProcessingJob">AWS
          * API Reference</a></p>
          */
@@ -166,8 +183,11 @@ namespace neptunedata
         /**
          * <p>Cancels a Neptune ML model training job. See <a
          * href="https://docs.aws.amazon.com/neptune/latest/userguide/machine-learning-api-modeltraining.html">Model
-         * training using the <code>modeltraining</code> command</a>.</p><p><h3>See
-         * Also:</h3>   <a
+         * training using the <code>modeltraining</code> command</a>.</p> <p>When invoking
+         * this operation in a Neptune cluster that has IAM authentication enabled, the IAM
+         * user or role making the request must have a policy attached that allows the <a
+         * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#cancelmlmodeltrainingjob">neptune-db:CancelMLModelTrainingJob</a>
+         * IAM action in that cluster.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/CancelMLModelTrainingJob">AWS
          * API Reference</a></p>
          */
@@ -194,8 +214,11 @@ namespace neptunedata
         /**
          * <p>Cancels a specified model transform job. See <a
          * href="https://docs.aws.amazon.com/neptune/latest/userguide/machine-learning-model-transform.html">Use
-         * a trained model to generate new model artifacts</a>.</p><p><h3>See Also:</h3>  
-         * <a
+         * a trained model to generate new model artifacts</a>.</p> <p>When invoking this
+         * operation in a Neptune cluster that has IAM authentication enabled, the IAM user
+         * or role making the request must have a policy attached that allows the <a
+         * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#cancelmlmodeltransformjob">neptune-db:CancelMLModelTransformJob</a>
+         * IAM action in that cluster.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/CancelMLModelTransformJob">AWS
          * API Reference</a></p>
          */
@@ -222,8 +245,11 @@ namespace neptunedata
         /**
          * <p>Cancels a specified openCypher query. See <a
          * href="https://docs.aws.amazon.com/neptune/latest/userguide/access-graph-opencypher-status.html">Neptune
-         * openCypher status endpoint</a> for more information.</p><p><h3>See Also:</h3>  
-         * <a
+         * openCypher status endpoint</a> for more information.</p> <p>When invoking this
+         * operation in a Neptune cluster that has IAM authentication enabled, the IAM user
+         * or role making the request must have a policy attached that allows the <a
+         * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#cancelquery">neptune-db:CancelQuery</a>
+         * IAM action in that cluster.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/CancelOpenCypherQuery">AWS
          * API Reference</a></p>
          */
@@ -251,8 +277,11 @@ namespace neptunedata
          * <p>Creates a new Neptune ML inference endpoint that lets you query one specific
          * model that the model-training process constructed. See <a
          * href="https://docs.aws.amazon.com/neptune/latest/userguide/machine-learning-api-endpoints.html">Managing
-         * inference endpoints using the endpoints command</a>.</p><p><h3>See Also:</h3>  
-         * <a
+         * inference endpoints using the endpoints command</a>.</p> <p>When invoking this
+         * operation in a Neptune cluster that has IAM authentication enabled, the IAM user
+         * or role making the request must have a policy attached that allows the <a
+         * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#createmlendpoint">neptune-db:CreateMLEndpoint</a>
+         * IAM action in that cluster.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/CreateMLEndpoint">AWS
          * API Reference</a></p>
          */
@@ -279,8 +308,11 @@ namespace neptunedata
         /**
          * <p>Cancels the creation of a Neptune ML inference endpoint. See <a
          * href="https://docs.aws.amazon.com/neptune/latest/userguide/machine-learning-api-endpoints.html">Managing
-         * inference endpoints using the endpoints command</a>.</p><p><h3>See Also:</h3>  
-         * <a
+         * inference endpoints using the endpoints command</a>.</p> <p>When invoking this
+         * operation in a Neptune cluster that has IAM authentication enabled, the IAM user
+         * or role making the request must have a policy attached that allows the <a
+         * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#deletemlendpoint">neptune-db:DeleteMLEndpoint</a>
+         * IAM action in that cluster.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/DeleteMLEndpoint">AWS
          * API Reference</a></p>
          */
@@ -305,54 +337,64 @@ namespace neptunedata
         }
 
         /**
-         * <p>Deletes statistics for Gremlin and openCypher (property graph)
-         * data.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes statistics for Gremlin and openCypher (property graph) data.</p>
+         * <p>When invoking this operation in a Neptune cluster that has IAM authentication
+         * enabled, the IAM user or role making the request must have a policy attached
+         * that allows the <a
+         * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#deletestatistics">neptune-db:DeleteStatistics</a>
+         * IAM action in that cluster.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/DeletePropertygraphStatistics">AWS
          * API Reference</a></p>
          */
-        virtual Model::DeletePropertygraphStatisticsOutcome DeletePropertygraphStatistics() const;
+        virtual Model::DeletePropertygraphStatisticsOutcome DeletePropertygraphStatistics(const Model::DeletePropertygraphStatisticsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DeletePropertygraphStatistics that returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        template<typename = void>
-        Model::DeletePropertygraphStatisticsOutcomeCallable DeletePropertygraphStatisticsCallable() const
+        template<typename DeletePropertygraphStatisticsRequestT = Model::DeletePropertygraphStatisticsRequest>
+        Model::DeletePropertygraphStatisticsOutcomeCallable DeletePropertygraphStatisticsCallable(const DeletePropertygraphStatisticsRequestT& request = {}) const
         {
-            return SubmitCallable(&NeptunedataClient::DeletePropertygraphStatistics);
+            return SubmitCallable(&NeptunedataClient::DeletePropertygraphStatistics, request);
         }
 
         /**
          * An Async wrapper for DeletePropertygraphStatistics that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        template<typename = void>
-        void DeletePropertygraphStatisticsAsync(const DeletePropertygraphStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        template<typename DeletePropertygraphStatisticsRequestT = Model::DeletePropertygraphStatisticsRequest>
+        void DeletePropertygraphStatisticsAsync(const DeletePropertygraphStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DeletePropertygraphStatisticsRequestT& request = {}) const
         {
-            return SubmitAsync(&NeptunedataClient::DeletePropertygraphStatistics, handler, context);
+            return SubmitAsync(&NeptunedataClient::DeletePropertygraphStatistics, request, handler, context);
         }
+
         /**
-         * <p>Deletes SPARQL statistics</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes SPARQL statistics</p> <p>When invoking this operation in a Neptune
+         * cluster that has IAM authentication enabled, the IAM user or role making the
+         * request must have a policy attached that allows the <a
+         * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#deletestatistics">neptune-db:DeleteStatistics</a>
+         * IAM action in that cluster.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/DeleteSparqlStatistics">AWS
          * API Reference</a></p>
          */
-        virtual Model::DeleteSparqlStatisticsOutcome DeleteSparqlStatistics() const;
+        virtual Model::DeleteSparqlStatisticsOutcome DeleteSparqlStatistics(const Model::DeleteSparqlStatisticsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DeleteSparqlStatistics that returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        template<typename = void>
-        Model::DeleteSparqlStatisticsOutcomeCallable DeleteSparqlStatisticsCallable() const
+        template<typename DeleteSparqlStatisticsRequestT = Model::DeleteSparqlStatisticsRequest>
+        Model::DeleteSparqlStatisticsOutcomeCallable DeleteSparqlStatisticsCallable(const DeleteSparqlStatisticsRequestT& request = {}) const
         {
-            return SubmitCallable(&NeptunedataClient::DeleteSparqlStatistics);
+            return SubmitCallable(&NeptunedataClient::DeleteSparqlStatistics, request);
         }
 
         /**
          * An Async wrapper for DeleteSparqlStatistics that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        template<typename = void>
-        void DeleteSparqlStatisticsAsync(const DeleteSparqlStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        template<typename DeleteSparqlStatisticsRequestT = Model::DeleteSparqlStatisticsRequest>
+        void DeleteSparqlStatisticsAsync(const DeleteSparqlStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DeleteSparqlStatisticsRequestT& request = {}) const
         {
-            return SubmitAsync(&NeptunedataClient::DeleteSparqlStatistics, handler, context);
+            return SubmitAsync(&NeptunedataClient::DeleteSparqlStatistics, request, handler, context);
         }
+
         /**
          * <p>The fast reset REST API lets you reset a Neptune graph quicky and easily,
          * removing all of its data.</p> <p>Neptune fast reset is a two-step process. First
@@ -361,8 +403,11 @@ namespace neptunedata
          * include when calling <code>ExecuteFastReset</code> again with
          * <code>action</code> set to <code>performDatabaseReset</code>. See <a
          * href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-fast-reset.html">Empty
-         * an Amazon Neptune DB cluster using the fast reset API</a>.</p><p><h3>See
-         * Also:</h3>   <a
+         * an Amazon Neptune DB cluster using the fast reset API</a>.</p> <p>When invoking
+         * this operation in a Neptune cluster that has IAM authentication enabled, the IAM
+         * user or role making the request must have a policy attached that allows the <a
+         * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#resetdatabase">neptune-db:ResetDatabase</a>
+         * IAM action in that cluster.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/ExecuteFastReset">AWS
          * API Reference</a></p>
          */
@@ -397,7 +442,22 @@ namespace neptunedata
          * tune your query, as explained in <a
          * href="https://docs.aws.amazon.com/neptune/latest/userguide/gremlin-traversal-tuning.html">Tuning
          * Gremlin queries</a>. You can also use query hints to improve query execution
-         * plans.</p><p><h3>See Also:</h3>   <a
+         * plans.</p> <p>When invoking this operation in a Neptune cluster that has IAM
+         * authentication enabled, the IAM user or role making the request must have a
+         * policy attached that allows one of the following IAM actions in that cluster,
+         * depending on the query:</p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#readdataviaquery">neptune-db:ReadDataViaQuery</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#writedataviaquery">neptune-db:WriteDataViaQuery</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#deletedataviaquery">neptune-db:DeleteDataViaQuery</a>
+         * </p> </li> </ul> <p>Note that the <a
+         * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-data-condition-keys.html#iam-neptune-condition-keys">neptune-db:QueryLanguage:Gremlin</a>
+         * IAM condition key can be used in the policy document to restrict the use of
+         * Gremlin queries (see <a
+         * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-data-condition-keys.html">Condition
+         * keys available in Neptune IAM data-access policy statements</a>).</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/ExecuteGremlinExplainQuery">AWS
          * API Reference</a></p>
          */
@@ -425,7 +485,17 @@ namespace neptunedata
          * <p>Executes a Gremlin Profile query, which runs a specified traversal, collects
          * various metrics about the run, and produces a profile report as output. See <a
          * href="https://docs.aws.amazon.com/neptune/latest/userguide/gremlin-profile-api.html">Gremlin
-         * profile API in Neptune</a> for details.</p><p><h3>See Also:</h3>   <a
+         * profile API in Neptune</a> for details.</p> <p>When invoking this operation in a
+         * Neptune cluster that has IAM authentication enabled, the IAM user or role making
+         * the request must have a policy attached that allows the <a
+         * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#readdataviaquery">neptune-db:ReadDataViaQuery</a>
+         * IAM action in that cluster.</p> <p>Note that the <a
+         * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-data-condition-keys.html#iam-neptune-condition-keys">neptune-db:QueryLanguage:Gremlin</a>
+         * IAM condition key can be used in the policy document to restrict the use of
+         * Gremlin queries (see <a
+         * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-data-condition-keys.html">Condition
+         * keys available in Neptune IAM data-access policy statements</a>).</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/ExecuteGremlinProfileQuery">AWS
          * API Reference</a></p>
          */
@@ -456,7 +526,22 @@ namespace neptunedata
          * href="https://tinkerpop.apache.org/docs/current/reference/#graph">The Graph</a>
          * in the Apache TinkerPop3 documentation. More details can also be found in <a
          * href="https://docs.aws.amazon.com/neptune/latest/userguide/access-graph-gremlin.html">Accessing
-         * a Neptune graph with Gremlin</a>.</p><p><h3>See Also:</h3>   <a
+         * a Neptune graph with Gremlin</a>.</p> <p>When invoking this operation in a
+         * Neptune cluster that has IAM authentication enabled, the IAM user or role making
+         * the request must have a policy attached that enables one of the following IAM
+         * actions in that cluster, depending on the query:</p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#readdataviaquery">neptune-db:ReadDataViaQuery</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#writedataviaquery">neptune-db:WriteDataViaQuery</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#deletedataviaquery">neptune-db:DeleteDataViaQuery</a>
+         * </p> </li> </ul> <p>Note that the <a
+         * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-data-condition-keys.html#iam-neptune-condition-keys">neptune-db:QueryLanguage:Gremlin</a>
+         * IAM condition key can be used in the policy document to restrict the use of
+         * Gremlin queries (see <a
+         * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-data-condition-keys.html">Condition
+         * keys available in Neptune IAM data-access policy statements</a>).</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/ExecuteGremlinQuery">AWS
          * API Reference</a></p>
          */
@@ -483,8 +568,17 @@ namespace neptunedata
         /**
          * <p>Executes an openCypher <code>explain</code> request. See <a
          * href="https://docs.aws.amazon.com/neptune/latest/userguide/access-graph-opencypher-explain.html">The
-         * openCypher explain feature</a> for more information.</p><p><h3>See Also:</h3>  
-         * <a
+         * openCypher explain feature</a> for more information.</p> <p>When invoking this
+         * operation in a Neptune cluster that has IAM authentication enabled, the IAM user
+         * or role making the request must have a policy attached that allows the <a
+         * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#readdataviaquery">neptune-db:ReadDataViaQuery</a>
+         * IAM action in that cluster.</p> <p>Note that the <a
+         * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-data-condition-keys.html#iam-neptune-condition-keys">neptune-db:QueryLanguage:OpenCypher</a>
+         * IAM condition key can be used in the policy document to restrict the use of
+         * openCypher queries (see <a
+         * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-data-condition-keys.html">Condition
+         * keys available in Neptune IAM data-access policy statements</a>).</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/ExecuteOpenCypherExplainQuery">AWS
          * API Reference</a></p>
          */
@@ -519,7 +613,22 @@ namespace neptunedata
          * which to querying property graphs.</p> <p>The openCypher language was originally
          * developed by Neo4j, then open-sourced in 2015 and contributed to the <a
          * href="https://opencypher.org/">openCypher project</a> under an Apache 2
-         * open-source license.</p><p><h3>See Also:</h3>   <a
+         * open-source license.</p> <p>Note that when invoking this operation in a Neptune
+         * cluster that has IAM authentication enabled, the IAM user or role making the
+         * request must have a policy attached that allows one of the following IAM actions
+         * in that cluster, depending on the query:</p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#readdataviaquery">neptune-db:ReadDataViaQuery</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#writedataviaquery">neptune-db:WriteDataViaQuery</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#deletedataviaquery">neptune-db:DeleteDataViaQuery</a>
+         * </p> </li> </ul> <p>Note also that the <a
+         * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-data-condition-keys.html#iam-neptune-condition-keys">neptune-db:QueryLanguage:OpenCypher</a>
+         * IAM condition key can be used in the policy document to restrict the use of
+         * openCypher queries (see <a
+         * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-data-condition-keys.html">Condition
+         * keys available in Neptune IAM data-access policy statements</a>).</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/ExecuteOpenCypherQuery">AWS
          * API Reference</a></p>
          */
@@ -544,32 +653,46 @@ namespace neptunedata
         }
 
         /**
-         * <p>Check the status of the graph database on the host.</p><p><h3>See Also:</h3> 
-         * <a
+         * <p>Retrieves the status of the graph database on the host.</p> <p>When invoking
+         * this operation in a Neptune cluster that has IAM authentication enabled, the IAM
+         * user or role making the request must have a policy attached that allows the <a
+         * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#getenginestatus">neptune-db:GetEngineStatus</a>
+         * IAM action in that cluster.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/GetEngineStatus">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetEngineStatusOutcome GetEngineStatus() const;
+        virtual Model::GetEngineStatusOutcome GetEngineStatus(const Model::GetEngineStatusRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetEngineStatus that returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        template<typename = void>
-        Model::GetEngineStatusOutcomeCallable GetEngineStatusCallable() const
+        template<typename GetEngineStatusRequestT = Model::GetEngineStatusRequest>
+        Model::GetEngineStatusOutcomeCallable GetEngineStatusCallable(const GetEngineStatusRequestT& request = {}) const
         {
-            return SubmitCallable(&NeptunedataClient::GetEngineStatus);
+            return SubmitCallable(&NeptunedataClient::GetEngineStatus, request);
         }
 
         /**
          * An Async wrapper for GetEngineStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        template<typename = void>
-        void GetEngineStatusAsync(const GetEngineStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        template<typename GetEngineStatusRequestT = Model::GetEngineStatusRequest>
+        void GetEngineStatusAsync(const GetEngineStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetEngineStatusRequestT& request = {}) const
         {
-            return SubmitAsync(&NeptunedataClient::GetEngineStatus, handler, context);
+            return SubmitAsync(&NeptunedataClient::GetEngineStatus, request, handler, context);
         }
+
         /**
-         * <p>Gets the status of a specified Gremlin query.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets the status of a specified Gremlin query.</p> <p>When invoking this
+         * operation in a Neptune cluster that has IAM authentication enabled, the IAM user
+         * or role making the request must have a policy attached that allows the <a
+         * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#getquerystatus">neptune-db:GetQueryStatus</a>
+         * IAM action in that cluster.</p> <p>Note that the <a
+         * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-data-condition-keys.html#iam-neptune-condition-keys">neptune-db:QueryLanguage:Gremlin</a>
+         * IAM condition key can be used in the policy document to restrict the use of
+         * Gremlin queries (see <a
+         * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-data-condition-keys.html">Condition
+         * keys available in Neptune IAM data-access policy statements</a>).</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/GetGremlinQueryStatus">AWS
          * API Reference</a></p>
          */
@@ -598,7 +721,11 @@ namespace neptunedata
          * the most recent 1,024 bulk load jobs, and stores the last 10,000 error details
          * per job.</p> <p>See <a
          * href="https://docs.aws.amazon.com/neptune/latest/userguide/load-api-reference-status.htm">Neptune
-         * Loader Get-Status API</a> for more information.</p><p><h3>See Also:</h3>   <a
+         * Loader Get-Status API</a> for more information.</p> <p>When invoking this
+         * operation in a Neptune cluster that has IAM authentication enabled, the IAM user
+         * or role making the request must have a policy attached that allows the <a
+         * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#getloaderjobstatus">neptune-db:GetLoaderJobStatus</a>
+         * IAM action in that cluster..</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/GetLoaderJobStatus">AWS
          * API Reference</a></p>
          */
@@ -625,7 +752,11 @@ namespace neptunedata
         /**
          * <p>Retrieves information about a specified data processing job. See <a
          * href="https://docs.aws.amazon.com/neptune/latest/userguide/machine-learning-api-dataprocessing.html">The
-         * <code>dataprocessing</code> command</a>.</p><p><h3>See Also:</h3>   <a
+         * <code>dataprocessing</code> command</a>.</p> <p>When invoking this operation in
+         * a Neptune cluster that has IAM authentication enabled, the IAM user or role
+         * making the request must have a policy attached that allows the <a
+         * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#getmldataprocessingjobstatus">neptune-db:neptune-db:GetMLDataProcessingJobStatus</a>
+         * IAM action in that cluster.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/GetMLDataProcessingJob">AWS
          * API Reference</a></p>
          */
@@ -652,8 +783,11 @@ namespace neptunedata
         /**
          * <p>Retrieves details about an inference endpoint. See <a
          * href="https://docs.aws.amazon.com/neptune/latest/userguide/machine-learning-api-endpoints.html">Managing
-         * inference endpoints using the endpoints command</a>.</p><p><h3>See Also:</h3>  
-         * <a
+         * inference endpoints using the endpoints command</a>.</p> <p>When invoking this
+         * operation in a Neptune cluster that has IAM authentication enabled, the IAM user
+         * or role making the request must have a policy attached that allows the <a
+         * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#getmlendpointstatus">neptune-db:GetMLEndpointStatus</a>
+         * IAM action in that cluster.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/GetMLEndpoint">AWS
          * API Reference</a></p>
          */
@@ -680,8 +814,11 @@ namespace neptunedata
         /**
          * <p>Retrieves information about a Neptune ML model training job. See <a
          * href="https://docs.aws.amazon.com/neptune/latest/userguide/machine-learning-api-modeltraining.html">Model
-         * training using the <code>modeltraining</code> command</a>.</p><p><h3>See
-         * Also:</h3>   <a
+         * training using the <code>modeltraining</code> command</a>.</p> <p>When invoking
+         * this operation in a Neptune cluster that has IAM authentication enabled, the IAM
+         * user or role making the request must have a policy attached that allows the <a
+         * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#getmlmodeltrainingjobstatus">neptune-db:GetMLModelTrainingJobStatus</a>
+         * IAM action in that cluster.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/GetMLModelTrainingJob">AWS
          * API Reference</a></p>
          */
@@ -708,8 +845,11 @@ namespace neptunedata
         /**
          * <p>Gets information about a specified model transform job. See <a
          * href="https://docs.aws.amazon.com/neptune/latest/userguide/machine-learning-model-transform.html">Use
-         * a trained model to generate new model artifacts</a>.</p><p><h3>See Also:</h3>  
-         * <a
+         * a trained model to generate new model artifacts</a>.</p> <p>When invoking this
+         * operation in a Neptune cluster that has IAM authentication enabled, the IAM user
+         * or role making the request must have a policy attached that allows the <a
+         * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#getmlmodeltransformjobstatus">neptune-db:GetMLModelTransformJobStatus</a>
+         * IAM action in that cluster.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/GetMLModelTransformJob">AWS
          * API Reference</a></p>
          */
@@ -734,7 +874,16 @@ namespace neptunedata
         }
 
         /**
-         * <p>Retrieves the status of a specified openCypher query.</p><p><h3>See
+         * <p>Retrieves the status of a specified openCypher query.</p> <p>When invoking
+         * this operation in a Neptune cluster that has IAM authentication enabled, the IAM
+         * user or role making the request must have a policy attached that allows the <a
+         * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#getquerystatus">neptune-db:GetQueryStatus</a>
+         * IAM action in that cluster.</p> <p>Note that the <a
+         * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-data-condition-keys.html#iam-neptune-condition-keys">neptune-db:QueryLanguage:OpenCypher</a>
+         * IAM condition key can be used in the policy document to restrict the use of
+         * openCypher queries (see <a
+         * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-data-condition-keys.html">Condition
+         * keys available in Neptune IAM data-access policy statements</a>).</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/GetOpenCypherQueryStatus">AWS
          * API Reference</a></p>
@@ -760,30 +909,34 @@ namespace neptunedata
         }
 
         /**
-         * <p>Gets property graph statistics (Gremlin and openCypher).</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Gets property graph statistics (Gremlin and openCypher).</p> <p>When invoking
+         * this operation in a Neptune cluster that has IAM authentication enabled, the IAM
+         * user or role making the request must have a policy attached that allows the <a
+         * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#getstatisticsstatus">neptune-db:GetStatisticsStatus</a>
+         * IAM action in that cluster.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/GetPropertygraphStatistics">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetPropertygraphStatisticsOutcome GetPropertygraphStatistics() const;
+        virtual Model::GetPropertygraphStatisticsOutcome GetPropertygraphStatistics(const Model::GetPropertygraphStatisticsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetPropertygraphStatistics that returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        template<typename = void>
-        Model::GetPropertygraphStatisticsOutcomeCallable GetPropertygraphStatisticsCallable() const
+        template<typename GetPropertygraphStatisticsRequestT = Model::GetPropertygraphStatisticsRequest>
+        Model::GetPropertygraphStatisticsOutcomeCallable GetPropertygraphStatisticsCallable(const GetPropertygraphStatisticsRequestT& request = {}) const
         {
-            return SubmitCallable(&NeptunedataClient::GetPropertygraphStatistics);
+            return SubmitCallable(&NeptunedataClient::GetPropertygraphStatistics, request);
         }
 
         /**
          * An Async wrapper for GetPropertygraphStatistics that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        template<typename = void>
-        void GetPropertygraphStatisticsAsync(const GetPropertygraphStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        template<typename GetPropertygraphStatisticsRequestT = Model::GetPropertygraphStatisticsRequest>
+        void GetPropertygraphStatisticsAsync(const GetPropertygraphStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetPropertygraphStatisticsRequestT& request = {}) const
         {
-            return SubmitAsync(&NeptunedataClient::GetPropertygraphStatistics, handler, context);
+            return SubmitAsync(&NeptunedataClient::GetPropertygraphStatistics, request, handler, context);
         }
+
         /**
          * <p>Gets a stream for a property graph.</p> <p>With the Neptune Streams feature,
          * you can generate a complete sequence of change-log entries that record every
@@ -794,8 +947,23 @@ namespace neptunedata
          * href="https://docs.aws.amazon.com/neptune/latest/userguide/parameters.html#parameters-db-cluster-parameters-neptune_streams">neptune_streams</a>
          * DB cluster parameter to <code>1</code>.</p> <p>See <a
          * href="https://docs.aws.amazon.com/neptune/latest/userguide/streams.html">Capturing
-         * graph changes in real time using Neptune streams</a>.</p><p><h3>See Also:</h3>  
+         * graph changes in real time using Neptune streams</a>.</p> <p>When invoking this
+         * operation in a Neptune cluster that has IAM authentication enabled, the IAM user
+         * or role making the request must have a policy attached that allows the <a
+         * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#getstreamrecords">neptune-db:GetStreamRecords</a>
+         * IAM action in that cluster.</p> <p>When invoking this operation in a Neptune
+         * cluster that has IAM authentication enabled, the IAM user or role making the
+         * request must have a policy attached that enables one of the following IAM
+         * actions, depending on the query:</p> <p>Note that you can restrict
+         * property-graph queries using the following IAM context keys:</p> <ul> <li> <p>
          * <a
+         * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-data-condition-keys.html#iam-neptune-condition-keys">neptune-db:QueryLanguage:Gremlin</a>
+         * </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-data-condition-keys.html#iam-neptune-condition-keys">neptune-db:QueryLanguage:OpenCypher</a>
+         * </p> </li> </ul> <p>See <a
+         * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-data-condition-keys.html">Condition
+         * keys available in Neptune IAM data-access policy statements</a>).</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/GetPropertygraphStream">AWS
          * API Reference</a></p>
          */
@@ -820,7 +988,11 @@ namespace neptunedata
         }
 
         /**
-         * <p>Gets a graph summary for a property graph.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets a graph summary for a property graph.</p> <p>When invoking this
+         * operation in a Neptune cluster that has IAM authentication enabled, the IAM user
+         * or role making the request must have a policy attached that allows the <a
+         * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#getgraphsummary">neptune-db:GetGraphSummary</a>
+         * IAM action in that cluster.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/GetPropertygraphSummary">AWS
          * API Reference</a></p>
          */
@@ -845,7 +1017,11 @@ namespace neptunedata
         }
 
         /**
-         * <p>Gets a graph summary for an RDF graph.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets a graph summary for an RDF graph.</p> <p>When invoking this operation in
+         * a Neptune cluster that has IAM authentication enabled, the IAM user or role
+         * making the request must have a policy attached that allows the <a
+         * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#getgraphsummary">neptune-db:GetGraphSummary</a>
+         * IAM action in that cluster.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/GetRDFGraphSummary">AWS
          * API Reference</a></p>
          */
@@ -874,25 +1050,26 @@ namespace neptunedata
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/GetSparqlStatistics">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetSparqlStatisticsOutcome GetSparqlStatistics() const;
+        virtual Model::GetSparqlStatisticsOutcome GetSparqlStatistics(const Model::GetSparqlStatisticsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetSparqlStatistics that returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        template<typename = void>
-        Model::GetSparqlStatisticsOutcomeCallable GetSparqlStatisticsCallable() const
+        template<typename GetSparqlStatisticsRequestT = Model::GetSparqlStatisticsRequest>
+        Model::GetSparqlStatisticsOutcomeCallable GetSparqlStatisticsCallable(const GetSparqlStatisticsRequestT& request = {}) const
         {
-            return SubmitCallable(&NeptunedataClient::GetSparqlStatistics);
+            return SubmitCallable(&NeptunedataClient::GetSparqlStatistics, request);
         }
 
         /**
          * An Async wrapper for GetSparqlStatistics that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        template<typename = void>
-        void GetSparqlStatisticsAsync(const GetSparqlStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        template<typename GetSparqlStatisticsRequestT = Model::GetSparqlStatisticsRequest>
+        void GetSparqlStatisticsAsync(const GetSparqlStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetSparqlStatisticsRequestT& request = {}) const
         {
-            return SubmitAsync(&NeptunedataClient::GetSparqlStatistics, handler, context);
+            return SubmitAsync(&NeptunedataClient::GetSparqlStatistics, request, handler, context);
         }
+
         /**
          * <p>Gets a stream for an RDF graph.</p> <p>With the Neptune Streams feature, you
          * can generate a complete sequence of change-log entries that record every change
@@ -903,8 +1080,17 @@ namespace neptunedata
          * href="https://docs.aws.amazon.com/neptune/latest/userguide/parameters.html#parameters-db-cluster-parameters-neptune_streams">neptune_streams</a>
          * DB cluster parameter to <code>1</code>.</p> <p>See <a
          * href="https://docs.aws.amazon.com/neptune/latest/userguide/streams.html">Capturing
-         * graph changes in real time using Neptune streams</a>.</p><p><h3>See Also:</h3>  
-         * <a
+         * graph changes in real time using Neptune streams</a>.</p> <p>When invoking this
+         * operation in a Neptune cluster that has IAM authentication enabled, the IAM user
+         * or role making the request must have a policy attached that allows the <a
+         * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#getstreamrecords">neptune-db:GetStreamRecords</a>
+         * IAM action in that cluster.</p> <p>Note that the <a
+         * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-data-condition-keys.html#iam-neptune-condition-keys">neptune-db:QueryLanguage:Sparql</a>
+         * IAM condition key can be used in the policy document to restrict the use of
+         * SPARQL queries (see <a
+         * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-data-condition-keys.html">Condition
+         * keys available in Neptune IAM data-access policy statements</a>).</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/GetSparqlStream">AWS
          * API Reference</a></p>
          */
@@ -931,7 +1117,17 @@ namespace neptunedata
         /**
          * <p>Lists active Gremlin queries. See <a
          * href="https://docs.aws.amazon.com/neptune/latest/userguide/gremlin-api-status.html">Gremlin
-         * query status API</a> for details about the output.</p><p><h3>See Also:</h3>   <a
+         * query status API</a> for details about the output.</p> <p>When invoking this
+         * operation in a Neptune cluster that has IAM authentication enabled, the IAM user
+         * or role making the request must have a policy attached that allows the <a
+         * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#getquerystatus">neptune-db:GetQueryStatus</a>
+         * IAM action in that cluster.</p> <p>Note that the <a
+         * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-data-condition-keys.html#iam-neptune-condition-keys">neptune-db:QueryLanguage:Gremlin</a>
+         * IAM condition key can be used in the policy document to restrict the use of
+         * Gremlin queries (see <a
+         * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-data-condition-keys.html">Condition
+         * keys available in Neptune IAM data-access policy statements</a>).</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/ListGremlinQueries">AWS
          * API Reference</a></p>
          */
@@ -956,8 +1152,12 @@ namespace neptunedata
         }
 
         /**
-         * <p>Retrieves a list of the <code>loadIds</code> for all active loader
-         * jobs.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a list of the <code>loadIds</code> for all active loader jobs.</p>
+         * <p>When invoking this operation in a Neptune cluster that has IAM authentication
+         * enabled, the IAM user or role making the request must have a policy attached
+         * that allows the <a
+         * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#listloaderjobs">neptune-db:ListLoaderJobs</a>
+         * IAM action in that cluster..</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/ListLoaderJobs">AWS
          * API Reference</a></p>
          */
@@ -984,8 +1184,12 @@ namespace neptunedata
         /**
          * <p>Returns a list of Neptune ML data processing jobs. See <a
          * href="https://docs.aws.amazon.com/neptune/latest/userguide/machine-learning-api-dataprocessing.html#machine-learning-api-dataprocessing-list-jobs">Listing
-         * active data-processing jobs using the Neptune ML dataprocessing
-         * command</a>.</p><p><h3>See Also:</h3>   <a
+         * active data-processing jobs using the Neptune ML dataprocessing command</a>.</p>
+         * <p>When invoking this operation in a Neptune cluster that has IAM authentication
+         * enabled, the IAM user or role making the request must have a policy attached
+         * that allows the <a
+         * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#listmldataprocessingjobs">neptune-db:ListMLDataProcessingJobs</a>
+         * IAM action in that cluster.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/ListMLDataProcessingJobs">AWS
          * API Reference</a></p>
          */
@@ -1012,8 +1216,11 @@ namespace neptunedata
         /**
          * <p>Lists existing inference endpoints. See <a
          * href="https://docs.aws.amazon.com/neptune/latest/userguide/machine-learning-api-endpoints.html">Managing
-         * inference endpoints using the endpoints command</a>.</p><p><h3>See Also:</h3>  
-         * <a
+         * inference endpoints using the endpoints command</a>.</p> <p>When invoking this
+         * operation in a Neptune cluster that has IAM authentication enabled, the IAM user
+         * or role making the request must have a policy attached that allows the <a
+         * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#listmlendpoints">neptune-db:ListMLEndpoints</a>
+         * IAM action in that cluster.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/ListMLEndpoints">AWS
          * API Reference</a></p>
          */
@@ -1040,8 +1247,11 @@ namespace neptunedata
         /**
          * <p>Lists Neptune ML model-training jobs. See <a
          * href="https://docs.aws.amazon.com/neptune/latest/userguide/machine-learning-api-modeltraining.html">Model
-         * training using the <code>modeltraining</code> command</a>.</p><p><h3>See
-         * Also:</h3>   <a
+         * training using the <code>modeltraining</code> command</a>.</p> <p>When invoking
+         * this operation in a Neptune cluster that has IAM authentication enabled, the IAM
+         * user or role making the request must have a policy attached that allows the <a
+         * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#neptune-db:listmlmodeltrainingjobs">neptune-db:neptune-db:ListMLModelTrainingJobs</a>
+         * IAM action in that cluster.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/ListMLModelTrainingJobs">AWS
          * API Reference</a></p>
          */
@@ -1068,8 +1278,11 @@ namespace neptunedata
         /**
          * <p>Returns a list of model transform job IDs. See <a
          * href="https://docs.aws.amazon.com/neptune/latest/userguide/machine-learning-model-transform.html">Use
-         * a trained model to generate new model artifacts</a>.</p><p><h3>See Also:</h3>  
-         * <a
+         * a trained model to generate new model artifacts</a>.</p> <p>When invoking this
+         * operation in a Neptune cluster that has IAM authentication enabled, the IAM user
+         * or role making the request must have a policy attached that allows the <a
+         * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#listmlmodeltransformjobs">neptune-db:ListMLModelTransformJobs</a>
+         * IAM action in that cluster.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/ListMLModelTransformJobs">AWS
          * API Reference</a></p>
          */
@@ -1096,8 +1309,17 @@ namespace neptunedata
         /**
          * <p>Lists active openCypher queries. See <a
          * href="https://docs.aws.amazon.com/neptune/latest/userguide/access-graph-opencypher-status.html">Neptune
-         * openCypher status endpoint</a> for more information.</p><p><h3>See Also:</h3>  
-         * <a
+         * openCypher status endpoint</a> for more information.</p> <p>When invoking this
+         * operation in a Neptune cluster that has IAM authentication enabled, the IAM user
+         * or role making the request must have a policy attached that allows the <a
+         * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#getquerystatus">neptune-db:GetQueryStatus</a>
+         * IAM action in that cluster.</p> <p>Note that the <a
+         * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-data-condition-keys.html#iam-neptune-condition-keys">neptune-db:QueryLanguage:OpenCypher</a>
+         * IAM condition key can be used in the policy document to restrict the use of
+         * openCypher queries (see <a
+         * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-data-condition-keys.html">Condition
+         * keys available in Neptune IAM data-access policy statements</a>).</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/ListOpenCypherQueries">AWS
          * API Reference</a></p>
          */
@@ -1122,8 +1344,12 @@ namespace neptunedata
         }
 
         /**
-         * <p>Manages the generation and use of property graph statistics.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Manages the generation and use of property graph statistics.</p> <p>When
+         * invoking this operation in a Neptune cluster that has IAM authentication
+         * enabled, the IAM user or role making the request must have a policy attached
+         * that allows the <a
+         * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#managestatistics">neptune-db:ManageStatistics</a>
+         * IAM action in that cluster.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/ManagePropertygraphStatistics">AWS
          * API Reference</a></p>
          */
@@ -1148,8 +1374,11 @@ namespace neptunedata
         }
 
         /**
-         * <p>Manages the generation and use of RDF graph statistics.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Manages the generation and use of RDF graph statistics.</p> <p>When invoking
+         * this operation in a Neptune cluster that has IAM authentication enabled, the IAM
+         * user or role making the request must have a policy attached that allows the <a
+         * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#managestatistics">neptune-db:ManageStatistics</a>
+         * IAM action in that cluster.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/ManageSparqlStatistics">AWS
          * API Reference</a></p>
          */
@@ -1177,7 +1406,11 @@ namespace neptunedata
          * <p>Starts a Neptune bulk loader job to load data from an Amazon S3 bucket into a
          * Neptune DB instance. See <a
          * href="https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load.html">Using
-         * the Amazon Neptune Bulk Loader to Ingest Data</a>.</p><p><h3>See Also:</h3>   <a
+         * the Amazon Neptune Bulk Loader to Ingest Data</a>.</p> <p>When invoking this
+         * operation in a Neptune cluster that has IAM authentication enabled, the IAM user
+         * or role making the request must have a policy attached that allows the <a
+         * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#startloaderjob">neptune-db:StartLoaderJob</a>
+         * IAM action in that cluster.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/StartLoaderJob">AWS
          * API Reference</a></p>
          */
@@ -1205,7 +1438,11 @@ namespace neptunedata
          * <p>Creates a new Neptune ML data processing job for processing the graph data
          * exported from Neptune for training. See <a
          * href="https://docs.aws.amazon.com/neptune/latest/userguide/machine-learning-api-dataprocessing.html">The
-         * <code>dataprocessing</code> command</a>.</p><p><h3>See Also:</h3>   <a
+         * <code>dataprocessing</code> command</a>.</p> <p>When invoking this operation in
+         * a Neptune cluster that has IAM authentication enabled, the IAM user or role
+         * making the request must have a policy attached that allows the <a
+         * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#startmlmodeldataprocessingjob">neptune-db:StartMLModelDataProcessingJob</a>
+         * IAM action in that cluster.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/StartMLDataProcessingJob">AWS
          * API Reference</a></p>
          */
@@ -1232,8 +1469,11 @@ namespace neptunedata
         /**
          * <p>Creates a new Neptune ML model training job. See <a
          * href="https://docs.aws.amazon.com/neptune/latest/userguide/machine-learning-api-modeltraining.html">Model
-         * training using the <code>modeltraining</code> command</a>.</p><p><h3>See
-         * Also:</h3>   <a
+         * training using the <code>modeltraining</code> command</a>.</p> <p>When invoking
+         * this operation in a Neptune cluster that has IAM authentication enabled, the IAM
+         * user or role making the request must have a policy attached that allows the <a
+         * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#startmlmodeltrainingjob">neptune-db:StartMLModelTrainingJob</a>
+         * IAM action in that cluster.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/StartMLModelTrainingJob">AWS
          * API Reference</a></p>
          */
@@ -1260,8 +1500,11 @@ namespace neptunedata
         /**
          * <p>Creates a new model transform job. See <a
          * href="https://docs.aws.amazon.com/neptune/latest/userguide/machine-learning-model-transform.html">Use
-         * a trained model to generate new model artifacts</a>.</p><p><h3>See Also:</h3>  
-         * <a
+         * a trained model to generate new model artifacts</a>.</p> <p>When invoking this
+         * operation in a Neptune cluster that has IAM authentication enabled, the IAM user
+         * or role making the request must have a policy attached that allows the <a
+         * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#startmlmodeltransformjob">neptune-db:StartMLModelTransformJob</a>
+         * IAM action in that cluster.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptunedata-2023-08-01/StartMLModelTransformJob">AWS
          * API Reference</a></p>
          */

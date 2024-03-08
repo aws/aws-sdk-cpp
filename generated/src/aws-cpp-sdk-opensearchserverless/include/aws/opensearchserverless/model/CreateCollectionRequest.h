@@ -7,6 +7,7 @@
 #include <aws/opensearchserverless/OpenSearchServerless_EXPORTS.h>
 #include <aws/opensearchserverless/OpenSearchServerlessRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/opensearchserverless/model/StandbyReplicas.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/opensearchserverless/model/CollectionType.h>
 #include <aws/opensearchserverless/model/Tag.h>
@@ -162,6 +163,37 @@ namespace Model
 
 
     /**
+     * <p>Indicates whether standby replicas should be used for a collection.</p>
+     */
+    inline const StandbyReplicas& GetStandbyReplicas() const{ return m_standbyReplicas; }
+
+    /**
+     * <p>Indicates whether standby replicas should be used for a collection.</p>
+     */
+    inline bool StandbyReplicasHasBeenSet() const { return m_standbyReplicasHasBeenSet; }
+
+    /**
+     * <p>Indicates whether standby replicas should be used for a collection.</p>
+     */
+    inline void SetStandbyReplicas(const StandbyReplicas& value) { m_standbyReplicasHasBeenSet = true; m_standbyReplicas = value; }
+
+    /**
+     * <p>Indicates whether standby replicas should be used for a collection.</p>
+     */
+    inline void SetStandbyReplicas(StandbyReplicas&& value) { m_standbyReplicasHasBeenSet = true; m_standbyReplicas = std::move(value); }
+
+    /**
+     * <p>Indicates whether standby replicas should be used for a collection.</p>
+     */
+    inline CreateCollectionRequest& WithStandbyReplicas(const StandbyReplicas& value) { SetStandbyReplicas(value); return *this;}
+
+    /**
+     * <p>Indicates whether standby replicas should be used for a collection.</p>
+     */
+    inline CreateCollectionRequest& WithStandbyReplicas(StandbyReplicas&& value) { SetStandbyReplicas(std::move(value)); return *this;}
+
+
+    /**
      * <p>An arbitrary set of tags (key–value pairs) to associate with the OpenSearch
      * Serverless collection.</p>
      */
@@ -250,6 +282,9 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
+
+    StandbyReplicas m_standbyReplicas;
+    bool m_standbyReplicasHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;

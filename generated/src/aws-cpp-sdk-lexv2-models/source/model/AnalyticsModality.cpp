@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AnalyticsModality::NOT_SET:
+            return {};
           case AnalyticsModality::Speech:
             return "Speech";
           case AnalyticsModality::Text:

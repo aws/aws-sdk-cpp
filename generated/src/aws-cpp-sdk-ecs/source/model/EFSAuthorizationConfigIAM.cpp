@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EFSAuthorizationConfigIAM::NOT_SET:
+            return {};
           case EFSAuthorizationConfigIAM::ENABLED:
             return "ENABLED";
           case EFSAuthorizationConfigIAM::DISABLED:

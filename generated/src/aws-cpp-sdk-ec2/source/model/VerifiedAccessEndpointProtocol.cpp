@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VerifiedAccessEndpointProtocol::NOT_SET:
+            return {};
           case VerifiedAccessEndpointProtocol::http:
             return "http";
           case VerifiedAccessEndpointProtocol::https:

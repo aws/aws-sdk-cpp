@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ConnectionOAuthHttpMethod::NOT_SET:
+            return {};
           case ConnectionOAuthHttpMethod::GET_:
             return "GET";
           case ConnectionOAuthHttpMethod::POST:

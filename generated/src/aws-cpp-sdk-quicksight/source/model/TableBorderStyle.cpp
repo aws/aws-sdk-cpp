@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TableBorderStyle::NOT_SET:
+            return {};
           case TableBorderStyle::NONE:
             return "NONE";
           case TableBorderStyle::SOLID:

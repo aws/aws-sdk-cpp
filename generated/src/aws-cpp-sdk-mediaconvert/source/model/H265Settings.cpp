@@ -32,6 +32,8 @@ H265Settings::H265Settings() :
     m_codecProfileHasBeenSet(false),
     m_dynamicSubGop(H265DynamicSubGop::NOT_SET),
     m_dynamicSubGopHasBeenSet(false),
+    m_endOfStreamMarkers(H265EndOfStreamMarkers::NOT_SET),
+    m_endOfStreamMarkersHasBeenSet(false),
     m_flickerAdaptiveQuantization(H265FlickerAdaptiveQuantization::NOT_SET),
     m_flickerAdaptiveQuantizationHasBeenSet(false),
     m_framerateControl(H265FramerateControl::NOT_SET),
@@ -118,6 +120,8 @@ H265Settings::H265Settings(JsonView jsonValue) :
     m_codecProfileHasBeenSet(false),
     m_dynamicSubGop(H265DynamicSubGop::NOT_SET),
     m_dynamicSubGopHasBeenSet(false),
+    m_endOfStreamMarkers(H265EndOfStreamMarkers::NOT_SET),
+    m_endOfStreamMarkersHasBeenSet(false),
     m_flickerAdaptiveQuantization(H265FlickerAdaptiveQuantization::NOT_SET),
     m_flickerAdaptiveQuantizationHasBeenSet(false),
     m_framerateControl(H265FramerateControl::NOT_SET),
@@ -240,6 +244,13 @@ H265Settings& H265Settings::operator =(JsonView jsonValue)
     m_dynamicSubGop = H265DynamicSubGopMapper::GetH265DynamicSubGopForName(jsonValue.GetString("dynamicSubGop"));
 
     m_dynamicSubGopHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("endOfStreamMarkers"))
+  {
+    m_endOfStreamMarkers = H265EndOfStreamMarkersMapper::GetH265EndOfStreamMarkersForName(jsonValue.GetString("endOfStreamMarkers"));
+
+    m_endOfStreamMarkersHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("flickerAdaptiveQuantization"))
@@ -529,6 +540,11 @@ JsonValue H265Settings::Jsonize() const
   if(m_dynamicSubGopHasBeenSet)
   {
    payload.WithString("dynamicSubGop", H265DynamicSubGopMapper::GetNameForH265DynamicSubGop(m_dynamicSubGop));
+  }
+
+  if(m_endOfStreamMarkersHasBeenSet)
+  {
+   payload.WithString("endOfStreamMarkers", H265EndOfStreamMarkersMapper::GetNameForH265EndOfStreamMarkers(m_endOfStreamMarkers));
   }
 
   if(m_flickerAdaptiveQuantizationHasBeenSet)

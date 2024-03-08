@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AnalyticsIntentStageField::NOT_SET:
+            return {};
           case AnalyticsIntentStageField::IntentStageName:
             return "IntentStageName";
           case AnalyticsIntentStageField::SwitchedToIntent:

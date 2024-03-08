@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FeatureGroupSortBy::NOT_SET:
+            return {};
           case FeatureGroupSortBy::Name:
             return "Name";
           case FeatureGroupSortBy::FeatureGroupStatus:

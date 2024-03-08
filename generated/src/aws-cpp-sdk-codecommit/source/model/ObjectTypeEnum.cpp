@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ObjectTypeEnum::NOT_SET:
+            return {};
           case ObjectTypeEnum::FILE:
             return "FILE";
           case ObjectTypeEnum::DIRECTORY:

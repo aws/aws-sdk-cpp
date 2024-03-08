@@ -231,6 +231,31 @@ namespace Model
      */
     inline UpdateApplicationRequest& WithAutoConfigEnabled(bool value) { SetAutoConfigEnabled(value); return *this;}
 
+
+    /**
+     * <p>If set to true, the managed policies for SSM and CW will be attached to the
+     * instance roles if they are missing.</p>
+     */
+    inline bool GetAttachMissingPermission() const{ return m_attachMissingPermission; }
+
+    /**
+     * <p>If set to true, the managed policies for SSM and CW will be attached to the
+     * instance roles if they are missing.</p>
+     */
+    inline bool AttachMissingPermissionHasBeenSet() const { return m_attachMissingPermissionHasBeenSet; }
+
+    /**
+     * <p>If set to true, the managed policies for SSM and CW will be attached to the
+     * instance roles if they are missing.</p>
+     */
+    inline void SetAttachMissingPermission(bool value) { m_attachMissingPermissionHasBeenSet = true; m_attachMissingPermission = value; }
+
+    /**
+     * <p>If set to true, the managed policies for SSM and CW will be attached to the
+     * instance roles if they are missing.</p>
+     */
+    inline UpdateApplicationRequest& WithAttachMissingPermission(bool value) { SetAttachMissingPermission(value); return *this;}
+
   private:
 
     Aws::String m_resourceGroupName;
@@ -250,6 +275,9 @@ namespace Model
 
     bool m_autoConfigEnabled;
     bool m_autoConfigEnabledHasBeenSet = false;
+
+    bool m_attachMissingPermission;
+    bool m_attachMissingPermissionHasBeenSet = false;
   };
 
 } // namespace Model

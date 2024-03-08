@@ -84,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BatchJobExecutionStatus::NOT_SET:
+            return {};
           case BatchJobExecutionStatus::Submitting:
             return "Submitting";
           case BatchJobExecutionStatus::Holding:

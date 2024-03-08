@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PathPrefix::NOT_SET:
+            return {};
           case PathPrefix::EXECUTION_ID:
             return "EXECUTION_ID";
           case PathPrefix::SCHEMA_VERSION:

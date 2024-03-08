@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UserSortType::NOT_SET:
+            return {};
           case UserSortType::USER_NAME:
             return "USER_NAME";
           case UserSortType::FULL_NAME:

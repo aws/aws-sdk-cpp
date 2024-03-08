@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PutMetricsErrorCode::NOT_SET:
+            return {};
           case PutMetricsErrorCode::METRIC_LIMIT_EXCEEDED:
             return "METRIC_LIMIT_EXCEEDED";
           case PutMetricsErrorCode::INTERNAL_ERROR:

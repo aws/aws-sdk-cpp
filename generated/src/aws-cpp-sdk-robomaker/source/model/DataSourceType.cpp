@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DataSourceType::NOT_SET:
+            return {};
           case DataSourceType::Prefix:
             return "Prefix";
           case DataSourceType::Archive:

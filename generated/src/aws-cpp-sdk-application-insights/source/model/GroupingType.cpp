@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case GroupingType::NOT_SET:
+            return {};
           case GroupingType::ACCOUNT_BASED:
             return "ACCOUNT_BASED";
           default:

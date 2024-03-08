@@ -19,6 +19,7 @@ UpdateLaunchConfigurationRequest::UpdateLaunchConfigurationRequest() :
     m_copyTagsHasBeenSet(false),
     m_launchDisposition(LaunchDisposition::NOT_SET),
     m_launchDispositionHasBeenSet(false),
+    m_launchIntoInstancePropertiesHasBeenSet(false),
     m_licensingHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_postLaunchEnabled(false),
@@ -48,6 +49,12 @@ Aws::String UpdateLaunchConfigurationRequest::SerializePayload() const
   if(m_launchDispositionHasBeenSet)
   {
    payload.WithString("launchDisposition", LaunchDispositionMapper::GetNameForLaunchDisposition(m_launchDisposition));
+  }
+
+  if(m_launchIntoInstancePropertiesHasBeenSet)
+  {
+   payload.WithObject("launchIntoInstanceProperties", m_launchIntoInstanceProperties.Jsonize());
+
   }
 
   if(m_licensingHasBeenSet)

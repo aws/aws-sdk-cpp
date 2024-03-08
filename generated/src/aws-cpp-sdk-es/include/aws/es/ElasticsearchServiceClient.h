@@ -10,6 +10,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/es/ElasticsearchServiceServiceClientModel.h>
+#include <aws/es/model/DeleteElasticsearchServiceRoleRequest.h>
 
 namespace Aws
 {
@@ -34,8 +35,8 @@ namespace ElasticsearchService
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef ElasticsearchServiceClientConfiguration ClientConfigurationType;
       typedef ElasticsearchServiceEndpointProvider EndpointProviderType;
@@ -45,14 +46,14 @@ namespace ElasticsearchService
         * is not specified, it will be initialized to default values.
         */
         ElasticsearchServiceClient(const Aws::ElasticsearchService::ElasticsearchServiceClientConfiguration& clientConfiguration = Aws::ElasticsearchService::ElasticsearchServiceClientConfiguration(),
-                                   std::shared_ptr<ElasticsearchServiceEndpointProviderBase> endpointProvider = Aws::MakeShared<ElasticsearchServiceEndpointProvider>(ALLOCATION_TAG));
+                                   std::shared_ptr<ElasticsearchServiceEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         ElasticsearchServiceClient(const Aws::Auth::AWSCredentials& credentials,
-                                   std::shared_ptr<ElasticsearchServiceEndpointProviderBase> endpointProvider = Aws::MakeShared<ElasticsearchServiceEndpointProvider>(ALLOCATION_TAG),
+                                   std::shared_ptr<ElasticsearchServiceEndpointProviderBase> endpointProvider = nullptr,
                                    const Aws::ElasticsearchService::ElasticsearchServiceClientConfiguration& clientConfiguration = Aws::ElasticsearchService::ElasticsearchServiceClientConfiguration());
 
        /**
@@ -60,7 +61,7 @@ namespace ElasticsearchService
         * the default http client factory will be used
         */
         ElasticsearchServiceClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                                   std::shared_ptr<ElasticsearchServiceEndpointProviderBase> endpointProvider = Aws::MakeShared<ElasticsearchServiceEndpointProvider>(ALLOCATION_TAG),
+                                   std::shared_ptr<ElasticsearchServiceEndpointProviderBase> endpointProvider = nullptr,
                                    const Aws::ElasticsearchService::ElasticsearchServiceClientConfiguration& clientConfiguration = Aws::ElasticsearchService::ElasticsearchServiceClientConfiguration());
 
 
@@ -193,6 +194,32 @@ namespace ElasticsearchService
         void AuthorizeVpcEndpointAccessAsync(const AuthorizeVpcEndpointAccessRequestT& request, const AuthorizeVpcEndpointAccessResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ElasticsearchServiceClient::AuthorizeVpcEndpointAccess, request, handler, context);
+        }
+
+        /**
+         * <p>Cancels a pending configuration change on an Amazon OpenSearch Service
+         * domain.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/CancelDomainConfigChange">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CancelDomainConfigChangeOutcome CancelDomainConfigChange(const Model::CancelDomainConfigChangeRequest& request) const;
+
+        /**
+         * A Callable wrapper for CancelDomainConfigChange that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CancelDomainConfigChangeRequestT = Model::CancelDomainConfigChangeRequest>
+        Model::CancelDomainConfigChangeOutcomeCallable CancelDomainConfigChangeCallable(const CancelDomainConfigChangeRequestT& request) const
+        {
+            return SubmitCallable(&ElasticsearchServiceClient::CancelDomainConfigChange, request);
+        }
+
+        /**
+         * An Async wrapper for CancelDomainConfigChange that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CancelDomainConfigChangeRequestT = Model::CancelDomainConfigChangeRequest>
+        void CancelDomainConfigChangeAsync(const CancelDomainConfigChangeRequestT& request, const CancelDomainConfigChangeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ElasticsearchServiceClient::CancelDomainConfigChange, request, handler, context);
         }
 
         /**
@@ -365,25 +392,26 @@ namespace ElasticsearchService
          * href="http://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/DeleteElasticsearchServiceRole">AWS
          * API Reference</a></p>
          */
-        virtual Model::DeleteElasticsearchServiceRoleOutcome DeleteElasticsearchServiceRole() const;
+        virtual Model::DeleteElasticsearchServiceRoleOutcome DeleteElasticsearchServiceRole(const Model::DeleteElasticsearchServiceRoleRequest& request = {}) const;
 
         /**
          * A Callable wrapper for DeleteElasticsearchServiceRole that returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        template<typename = void>
-        Model::DeleteElasticsearchServiceRoleOutcomeCallable DeleteElasticsearchServiceRoleCallable() const
+        template<typename DeleteElasticsearchServiceRoleRequestT = Model::DeleteElasticsearchServiceRoleRequest>
+        Model::DeleteElasticsearchServiceRoleOutcomeCallable DeleteElasticsearchServiceRoleCallable(const DeleteElasticsearchServiceRoleRequestT& request = {}) const
         {
-            return SubmitCallable(&ElasticsearchServiceClient::DeleteElasticsearchServiceRole);
+            return SubmitCallable(&ElasticsearchServiceClient::DeleteElasticsearchServiceRole, request);
         }
 
         /**
          * An Async wrapper for DeleteElasticsearchServiceRole that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        template<typename = void>
-        void DeleteElasticsearchServiceRoleAsync(const DeleteElasticsearchServiceRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        template<typename DeleteElasticsearchServiceRoleRequestT = Model::DeleteElasticsearchServiceRoleRequest>
+        void DeleteElasticsearchServiceRoleAsync(const DeleteElasticsearchServiceRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const DeleteElasticsearchServiceRoleRequestT& request = {}) const
         {
-            return SubmitAsync(&ElasticsearchServiceClient::DeleteElasticsearchServiceRole, handler, context);
+            return SubmitAsync(&ElasticsearchServiceClient::DeleteElasticsearchServiceRole, request, handler, context);
         }
+
         /**
          * <p>Allows the destination domain owner to delete an existing inbound
          * cross-cluster search connection.</p><p><h3>See Also:</h3>   <a

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SuggestionType::NOT_SET:
+            return {};
           case SuggestionType::QUERY:
             return "QUERY";
           case SuggestionType::DOCUMENT_ATTRIBUTES:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Resource::NOT_SET:
+            return {};
           case Resource::FILE_SYSTEM:
             return "FILE_SYSTEM";
           case Resource::MOUNT_TARGET:

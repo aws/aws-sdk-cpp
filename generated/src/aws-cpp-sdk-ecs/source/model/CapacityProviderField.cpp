@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CapacityProviderField::NOT_SET:
+            return {};
           case CapacityProviderField::TAGS:
             return "TAGS";
           default:

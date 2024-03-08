@@ -36,56 +36,91 @@ namespace Model
     /**
      * <p>The HTTP return code of the request. If the request succeeded, the code is
      * 200. See <a
-     * href="docs.aws.amazon.comneptune/latest/userguide/neptune-dfe-statistics.html#neptune-dfe-statistics-errors">Common
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-dfe-statistics.html#neptune-dfe-statistics-errors">Common
      * error codes for DFE statistics request</a> for a list of common errors.</p>
+     * <p>When invoking this operation in a Neptune cluster that has IAM authentication
+     * enabled, the IAM user or role making the request must have a policy attached
+     * that allows the <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#getstatisticsstatus">neptune-db:GetStatisticsStatus</a>
+     * IAM action in that cluster.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
     /**
      * <p>The HTTP return code of the request. If the request succeeded, the code is
      * 200. See <a
-     * href="docs.aws.amazon.comneptune/latest/userguide/neptune-dfe-statistics.html#neptune-dfe-statistics-errors">Common
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-dfe-statistics.html#neptune-dfe-statistics-errors">Common
      * error codes for DFE statistics request</a> for a list of common errors.</p>
+     * <p>When invoking this operation in a Neptune cluster that has IAM authentication
+     * enabled, the IAM user or role making the request must have a policy attached
+     * that allows the <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#getstatisticsstatus">neptune-db:GetStatisticsStatus</a>
+     * IAM action in that cluster.</p>
      */
     inline void SetStatus(const Aws::String& value) { m_status = value; }
 
     /**
      * <p>The HTTP return code of the request. If the request succeeded, the code is
      * 200. See <a
-     * href="docs.aws.amazon.comneptune/latest/userguide/neptune-dfe-statistics.html#neptune-dfe-statistics-errors">Common
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-dfe-statistics.html#neptune-dfe-statistics-errors">Common
      * error codes for DFE statistics request</a> for a list of common errors.</p>
+     * <p>When invoking this operation in a Neptune cluster that has IAM authentication
+     * enabled, the IAM user or role making the request must have a policy attached
+     * that allows the <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#getstatisticsstatus">neptune-db:GetStatisticsStatus</a>
+     * IAM action in that cluster.</p>
      */
     inline void SetStatus(Aws::String&& value) { m_status = std::move(value); }
 
     /**
      * <p>The HTTP return code of the request. If the request succeeded, the code is
      * 200. See <a
-     * href="docs.aws.amazon.comneptune/latest/userguide/neptune-dfe-statistics.html#neptune-dfe-statistics-errors">Common
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-dfe-statistics.html#neptune-dfe-statistics-errors">Common
      * error codes for DFE statistics request</a> for a list of common errors.</p>
+     * <p>When invoking this operation in a Neptune cluster that has IAM authentication
+     * enabled, the IAM user or role making the request must have a policy attached
+     * that allows the <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#getstatisticsstatus">neptune-db:GetStatisticsStatus</a>
+     * IAM action in that cluster.</p>
      */
     inline void SetStatus(const char* value) { m_status.assign(value); }
 
     /**
      * <p>The HTTP return code of the request. If the request succeeded, the code is
      * 200. See <a
-     * href="docs.aws.amazon.comneptune/latest/userguide/neptune-dfe-statistics.html#neptune-dfe-statistics-errors">Common
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-dfe-statistics.html#neptune-dfe-statistics-errors">Common
      * error codes for DFE statistics request</a> for a list of common errors.</p>
+     * <p>When invoking this operation in a Neptune cluster that has IAM authentication
+     * enabled, the IAM user or role making the request must have a policy attached
+     * that allows the <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#getstatisticsstatus">neptune-db:GetStatisticsStatus</a>
+     * IAM action in that cluster.</p>
      */
     inline GetSparqlStatisticsResult& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
     /**
      * <p>The HTTP return code of the request. If the request succeeded, the code is
      * 200. See <a
-     * href="docs.aws.amazon.comneptune/latest/userguide/neptune-dfe-statistics.html#neptune-dfe-statistics-errors">Common
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-dfe-statistics.html#neptune-dfe-statistics-errors">Common
      * error codes for DFE statistics request</a> for a list of common errors.</p>
+     * <p>When invoking this operation in a Neptune cluster that has IAM authentication
+     * enabled, the IAM user or role making the request must have a policy attached
+     * that allows the <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#getstatisticsstatus">neptune-db:GetStatisticsStatus</a>
+     * IAM action in that cluster.</p>
      */
     inline GetSparqlStatisticsResult& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
      * <p>The HTTP return code of the request. If the request succeeded, the code is
      * 200. See <a
-     * href="docs.aws.amazon.comneptune/latest/userguide/neptune-dfe-statistics.html#neptune-dfe-statistics-errors">Common
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-dfe-statistics.html#neptune-dfe-statistics-errors">Common
      * error codes for DFE statistics request</a> for a list of common errors.</p>
+     * <p>When invoking this operation in a Neptune cluster that has IAM authentication
+     * enabled, the IAM user or role making the request must have a policy attached
+     * that allows the <a
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/iam-dp-actions.html#getstatisticsstatus">neptune-db:GetStatisticsStatus</a>
+     * IAM action in that cluster.</p>
      */
     inline GetSparqlStatisticsResult& WithStatus(const char* value) { SetStatus(value); return *this;}
 

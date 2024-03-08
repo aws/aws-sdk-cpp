@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ThumbnailState::NOT_SET:
+            return {};
           case ThumbnailState::AUTO:
             return "AUTO";
           case ThumbnailState::DISABLED:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AssignPublicIp::NOT_SET:
+            return {};
           case AssignPublicIp::ENABLED:
             return "ENABLED";
           case AssignPublicIp::DISABLED:

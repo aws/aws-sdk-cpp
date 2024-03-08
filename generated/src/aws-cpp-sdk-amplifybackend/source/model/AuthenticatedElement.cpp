@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AuthenticatedElement::NOT_SET:
+            return {};
           case AuthenticatedElement::READ:
             return "READ";
           case AuthenticatedElement::CREATE_AND_UPDATE:

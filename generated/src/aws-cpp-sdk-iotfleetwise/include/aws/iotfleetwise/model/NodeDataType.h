@@ -42,7 +42,9 @@ namespace Model
     DOUBLE_ARRAY,
     STRING_ARRAY,
     UNIX_TIMESTAMP_ARRAY,
-    UNKNOWN
+    UNKNOWN,
+    STRUCT,
+    STRUCT_ARRAY
   };
 
 namespace NodeDataTypeMapper

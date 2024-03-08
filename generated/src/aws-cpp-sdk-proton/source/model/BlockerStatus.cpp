@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BlockerStatus::NOT_SET:
+            return {};
           case BlockerStatus::ACTIVE:
             return "ACTIVE";
           case BlockerStatus::RESOLVED:

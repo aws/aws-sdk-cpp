@@ -160,47 +160,47 @@ namespace Model
 
 
     /**
-     * <p>The list of regions for which log sources are displayed.</p>
+     * <p>The list of Regions for which log sources are displayed.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRegions() const{ return m_regions; }
 
     /**
-     * <p>The list of regions for which log sources are displayed.</p>
+     * <p>The list of Regions for which log sources are displayed.</p>
      */
     inline bool RegionsHasBeenSet() const { return m_regionsHasBeenSet; }
 
     /**
-     * <p>The list of regions for which log sources are displayed.</p>
+     * <p>The list of Regions for which log sources are displayed.</p>
      */
     inline void SetRegions(const Aws::Vector<Aws::String>& value) { m_regionsHasBeenSet = true; m_regions = value; }
 
     /**
-     * <p>The list of regions for which log sources are displayed.</p>
+     * <p>The list of Regions for which log sources are displayed.</p>
      */
     inline void SetRegions(Aws::Vector<Aws::String>&& value) { m_regionsHasBeenSet = true; m_regions = std::move(value); }
 
     /**
-     * <p>The list of regions for which log sources are displayed.</p>
+     * <p>The list of Regions for which log sources are displayed.</p>
      */
     inline ListLogSourcesRequest& WithRegions(const Aws::Vector<Aws::String>& value) { SetRegions(value); return *this;}
 
     /**
-     * <p>The list of regions for which log sources are displayed.</p>
+     * <p>The list of Regions for which log sources are displayed.</p>
      */
     inline ListLogSourcesRequest& WithRegions(Aws::Vector<Aws::String>&& value) { SetRegions(std::move(value)); return *this;}
 
     /**
-     * <p>The list of regions for which log sources are displayed.</p>
+     * <p>The list of Regions for which log sources are displayed.</p>
      */
     inline ListLogSourcesRequest& AddRegions(const Aws::String& value) { m_regionsHasBeenSet = true; m_regions.push_back(value); return *this; }
 
     /**
-     * <p>The list of regions for which log sources are displayed.</p>
+     * <p>The list of Regions for which log sources are displayed.</p>
      */
     inline ListLogSourcesRequest& AddRegions(Aws::String&& value) { m_regionsHasBeenSet = true; m_regions.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The list of regions for which log sources are displayed.</p>
+     * <p>The list of Regions for which log sources are displayed.</p>
      */
     inline ListLogSourcesRequest& AddRegions(const char* value) { m_regionsHasBeenSet = true; m_regions.push_back(value); return *this; }
 

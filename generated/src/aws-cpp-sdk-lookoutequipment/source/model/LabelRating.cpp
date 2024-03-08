@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LabelRating::NOT_SET:
+            return {};
           case LabelRating::ANOMALY:
             return "ANOMALY";
           case LabelRating::NO_ANOMALY:

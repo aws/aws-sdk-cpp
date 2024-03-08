@@ -26,8 +26,8 @@ namespace GroundStation
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef GroundStationClientConfiguration ClientConfigurationType;
       typedef GroundStationEndpointProvider EndpointProviderType;
@@ -37,14 +37,14 @@ namespace GroundStation
         * is not specified, it will be initialized to default values.
         */
         GroundStationClient(const Aws::GroundStation::GroundStationClientConfiguration& clientConfiguration = Aws::GroundStation::GroundStationClientConfiguration(),
-                            std::shared_ptr<GroundStationEndpointProviderBase> endpointProvider = Aws::MakeShared<GroundStationEndpointProvider>(ALLOCATION_TAG));
+                            std::shared_ptr<GroundStationEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         GroundStationClient(const Aws::Auth::AWSCredentials& credentials,
-                            std::shared_ptr<GroundStationEndpointProviderBase> endpointProvider = Aws::MakeShared<GroundStationEndpointProvider>(ALLOCATION_TAG),
+                            std::shared_ptr<GroundStationEndpointProviderBase> endpointProvider = nullptr,
                             const Aws::GroundStation::GroundStationClientConfiguration& clientConfiguration = Aws::GroundStation::GroundStationClientConfiguration());
 
        /**
@@ -52,7 +52,7 @@ namespace GroundStation
         * the default http client factory will be used
         */
         GroundStationClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                            std::shared_ptr<GroundStationEndpointProviderBase> endpointProvider = Aws::MakeShared<GroundStationEndpointProvider>(ALLOCATION_TAG),
+                            std::shared_ptr<GroundStationEndpointProviderBase> endpointProvider = nullptr,
                             const Aws::GroundStation::GroundStationClientConfiguration& clientConfiguration = Aws::GroundStation::GroundStationClientConfiguration());
 
 

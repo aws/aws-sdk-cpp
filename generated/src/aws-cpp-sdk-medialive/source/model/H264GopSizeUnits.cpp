@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case H264GopSizeUnits::NOT_SET:
+            return {};
           case H264GopSizeUnits::FRAMES:
             return "FRAMES";
           case H264GopSizeUnits::SECONDS:

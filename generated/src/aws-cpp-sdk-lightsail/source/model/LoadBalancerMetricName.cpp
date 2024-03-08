@@ -99,6 +99,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LoadBalancerMetricName::NOT_SET:
+            return {};
           case LoadBalancerMetricName::ClientTLSNegotiationErrorCount:
             return "ClientTLSNegotiationErrorCount";
           case LoadBalancerMetricName::HealthyHostCount:

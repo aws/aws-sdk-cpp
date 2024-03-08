@@ -11,6 +11,8 @@
 #include <aws/iotsitewise/model/RetentionPeriod.h>
 #include <aws/iotsitewise/model/ConfigurationStatus.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/iotsitewise/model/WarmTierState.h>
+#include <aws/iotsitewise/model/WarmTierRetentionPeriod.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -192,32 +194,32 @@ namespace Model
 
 
     /**
-     * <p>How many days your data is kept in the hot tier. By default, your data is
-     * kept indefinitely in the hot tier.</p>
+     * <p>The number of days your data is kept in the hot tier. By default, your data
+     * is kept indefinitely in the hot tier.</p>
      */
     inline const RetentionPeriod& GetRetentionPeriod() const{ return m_retentionPeriod; }
 
     /**
-     * <p>How many days your data is kept in the hot tier. By default, your data is
-     * kept indefinitely in the hot tier.</p>
+     * <p>The number of days your data is kept in the hot tier. By default, your data
+     * is kept indefinitely in the hot tier.</p>
      */
     inline void SetRetentionPeriod(const RetentionPeriod& value) { m_retentionPeriod = value; }
 
     /**
-     * <p>How many days your data is kept in the hot tier. By default, your data is
-     * kept indefinitely in the hot tier.</p>
+     * <p>The number of days your data is kept in the hot tier. By default, your data
+     * is kept indefinitely in the hot tier.</p>
      */
     inline void SetRetentionPeriod(RetentionPeriod&& value) { m_retentionPeriod = std::move(value); }
 
     /**
-     * <p>How many days your data is kept in the hot tier. By default, your data is
-     * kept indefinitely in the hot tier.</p>
+     * <p>The number of days your data is kept in the hot tier. By default, your data
+     * is kept indefinitely in the hot tier.</p>
      */
     inline DescribeStorageConfigurationResult& WithRetentionPeriod(const RetentionPeriod& value) { SetRetentionPeriod(value); return *this;}
 
     /**
-     * <p>How many days your data is kept in the hot tier. By default, your data is
-     * kept indefinitely in the hot tier.</p>
+     * <p>The number of days your data is kept in the hot tier. By default, your data
+     * is kept indefinitely in the hot tier.</p>
      */
     inline DescribeStorageConfigurationResult& WithRetentionPeriod(RetentionPeriod&& value) { SetRetentionPeriod(std::move(value)); return *this;}
 
@@ -264,6 +266,73 @@ namespace Model
     inline DescribeStorageConfigurationResult& WithLastUpdateDate(Aws::Utils::DateTime&& value) { SetLastUpdateDate(std::move(value)); return *this;}
 
 
+    /**
+     * <p>A service managed storage tier optimized for analytical queries. It stores
+     * periodically uploaded, buffered and historical data ingested with the
+     * CreaeBulkImportJob API.</p>
+     */
+    inline const WarmTierState& GetWarmTier() const{ return m_warmTier; }
+
+    /**
+     * <p>A service managed storage tier optimized for analytical queries. It stores
+     * periodically uploaded, buffered and historical data ingested with the
+     * CreaeBulkImportJob API.</p>
+     */
+    inline void SetWarmTier(const WarmTierState& value) { m_warmTier = value; }
+
+    /**
+     * <p>A service managed storage tier optimized for analytical queries. It stores
+     * periodically uploaded, buffered and historical data ingested with the
+     * CreaeBulkImportJob API.</p>
+     */
+    inline void SetWarmTier(WarmTierState&& value) { m_warmTier = std::move(value); }
+
+    /**
+     * <p>A service managed storage tier optimized for analytical queries. It stores
+     * periodically uploaded, buffered and historical data ingested with the
+     * CreaeBulkImportJob API.</p>
+     */
+    inline DescribeStorageConfigurationResult& WithWarmTier(const WarmTierState& value) { SetWarmTier(value); return *this;}
+
+    /**
+     * <p>A service managed storage tier optimized for analytical queries. It stores
+     * periodically uploaded, buffered and historical data ingested with the
+     * CreaeBulkImportJob API.</p>
+     */
+    inline DescribeStorageConfigurationResult& WithWarmTier(WarmTierState&& value) { SetWarmTier(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Set this period to specify how long your data is stored in the warm tier
+     * before it is deleted. You can set this only if cold tier is enabled.</p>
+     */
+    inline const WarmTierRetentionPeriod& GetWarmTierRetentionPeriod() const{ return m_warmTierRetentionPeriod; }
+
+    /**
+     * <p>Set this period to specify how long your data is stored in the warm tier
+     * before it is deleted. You can set this only if cold tier is enabled.</p>
+     */
+    inline void SetWarmTierRetentionPeriod(const WarmTierRetentionPeriod& value) { m_warmTierRetentionPeriod = value; }
+
+    /**
+     * <p>Set this period to specify how long your data is stored in the warm tier
+     * before it is deleted. You can set this only if cold tier is enabled.</p>
+     */
+    inline void SetWarmTierRetentionPeriod(WarmTierRetentionPeriod&& value) { m_warmTierRetentionPeriod = std::move(value); }
+
+    /**
+     * <p>Set this period to specify how long your data is stored in the warm tier
+     * before it is deleted. You can set this only if cold tier is enabled.</p>
+     */
+    inline DescribeStorageConfigurationResult& WithWarmTierRetentionPeriod(const WarmTierRetentionPeriod& value) { SetWarmTierRetentionPeriod(value); return *this;}
+
+    /**
+     * <p>Set this period to specify how long your data is stored in the warm tier
+     * before it is deleted. You can set this only if cold tier is enabled.</p>
+     */
+    inline DescribeStorageConfigurationResult& WithWarmTierRetentionPeriod(WarmTierRetentionPeriod&& value) { SetWarmTierRetentionPeriod(std::move(value)); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -298,6 +367,10 @@ namespace Model
     ConfigurationStatus m_configurationStatus;
 
     Aws::Utils::DateTime m_lastUpdateDate;
+
+    WarmTierState m_warmTier;
+
+    WarmTierRetentionPeriod m_warmTierRetentionPeriod;
 
     Aws::String m_requestId;
   };

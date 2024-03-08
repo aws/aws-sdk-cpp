@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case KxSavedownStorageType::NOT_SET:
+            return {};
           case KxSavedownStorageType::SDS01:
             return "SDS01";
           default:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DocumentClassifierDataFormat::NOT_SET:
+            return {};
           case DocumentClassifierDataFormat::COMPREHEND_CSV:
             return "COMPREHEND_CSV";
           case DocumentClassifierDataFormat::AUGMENTED_MANIFEST:

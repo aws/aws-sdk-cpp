@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ConfigStatus::NOT_SET:
+            return {};
           case ConfigStatus::CREATING:
             return "CREATING";
           case ConfigStatus::DELETING:

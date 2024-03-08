@@ -50,99 +50,99 @@ namespace Model
 
 
     /**
-     * <p>The name the user gave the instance (e.g.,
-     * <code>Amazon_Linux-1GB-Ohio-1</code>).</p>
+     * <p>The name the user gave the instance
+     * (<code>Amazon_Linux-1GB-Ohio-1</code>).</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name the user gave the instance (e.g.,
-     * <code>Amazon_Linux-1GB-Ohio-1</code>).</p>
+     * <p>The name the user gave the instance
+     * (<code>Amazon_Linux-1GB-Ohio-1</code>).</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name the user gave the instance (e.g.,
-     * <code>Amazon_Linux-1GB-Ohio-1</code>).</p>
+     * <p>The name the user gave the instance
+     * (<code>Amazon_Linux-1GB-Ohio-1</code>).</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name the user gave the instance (e.g.,
-     * <code>Amazon_Linux-1GB-Ohio-1</code>).</p>
+     * <p>The name the user gave the instance
+     * (<code>Amazon_Linux-1GB-Ohio-1</code>).</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name the user gave the instance (e.g.,
-     * <code>Amazon_Linux-1GB-Ohio-1</code>).</p>
+     * <p>The name the user gave the instance
+     * (<code>Amazon_Linux-1GB-Ohio-1</code>).</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name the user gave the instance (e.g.,
-     * <code>Amazon_Linux-1GB-Ohio-1</code>).</p>
+     * <p>The name the user gave the instance
+     * (<code>Amazon_Linux-1GB-Ohio-1</code>).</p>
      */
     inline Instance& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name the user gave the instance (e.g.,
-     * <code>Amazon_Linux-1GB-Ohio-1</code>).</p>
+     * <p>The name the user gave the instance
+     * (<code>Amazon_Linux-1GB-Ohio-1</code>).</p>
      */
     inline Instance& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name the user gave the instance (e.g.,
-     * <code>Amazon_Linux-1GB-Ohio-1</code>).</p>
+     * <p>The name the user gave the instance
+     * (<code>Amazon_Linux-1GB-Ohio-1</code>).</p>
      */
     inline Instance& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the instance (e.g.,
-     * <code>arn:aws:lightsail:us-east-2:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</code>).</p>
+     * <p>The Amazon Resource Name (ARN) of the instance
+     * (<code>arn:aws:lightsail:us-east-2:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</code>).</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the instance (e.g.,
-     * <code>arn:aws:lightsail:us-east-2:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</code>).</p>
+     * <p>The Amazon Resource Name (ARN) of the instance
+     * (<code>arn:aws:lightsail:us-east-2:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</code>).</p>
      */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the instance (e.g.,
-     * <code>arn:aws:lightsail:us-east-2:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</code>).</p>
+     * <p>The Amazon Resource Name (ARN) of the instance
+     * (<code>arn:aws:lightsail:us-east-2:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</code>).</p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the instance (e.g.,
-     * <code>arn:aws:lightsail:us-east-2:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</code>).</p>
+     * <p>The Amazon Resource Name (ARN) of the instance
+     * (<code>arn:aws:lightsail:us-east-2:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</code>).</p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the instance (e.g.,
-     * <code>arn:aws:lightsail:us-east-2:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</code>).</p>
+     * <p>The Amazon Resource Name (ARN) of the instance
+     * (<code>arn:aws:lightsail:us-east-2:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</code>).</p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the instance (e.g.,
-     * <code>arn:aws:lightsail:us-east-2:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</code>).</p>
+     * <p>The Amazon Resource Name (ARN) of the instance
+     * (<code>arn:aws:lightsail:us-east-2:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</code>).</p>
      */
     inline Instance& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the instance (e.g.,
-     * <code>arn:aws:lightsail:us-east-2:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</code>).</p>
+     * <p>The Amazon Resource Name (ARN) of the instance
+     * (<code>arn:aws:lightsail:us-east-2:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</code>).</p>
      */
     inline Instance& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the instance (e.g.,
-     * <code>arn:aws:lightsail:us-east-2:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</code>).</p>
+     * <p>The Amazon Resource Name (ARN) of the instance
+     * (<code>arn:aws:lightsail:us-east-2:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</code>).</p>
      */
     inline Instance& WithArn(const char* value) { SetArn(value); return *this;}
 
@@ -205,38 +205,38 @@ namespace Model
 
 
     /**
-     * <p>The timestamp when the instance was created (e.g.,
-     * <code>1479734909.17</code>) in Unix time format.</p>
+     * <p>The timestamp when the instance was created (<code>1479734909.17</code>) in
+     * Unix time format.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
 
     /**
-     * <p>The timestamp when the instance was created (e.g.,
-     * <code>1479734909.17</code>) in Unix time format.</p>
+     * <p>The timestamp when the instance was created (<code>1479734909.17</code>) in
+     * Unix time format.</p>
      */
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
 
     /**
-     * <p>The timestamp when the instance was created (e.g.,
-     * <code>1479734909.17</code>) in Unix time format.</p>
+     * <p>The timestamp when the instance was created (<code>1479734909.17</code>) in
+     * Unix time format.</p>
      */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
-     * <p>The timestamp when the instance was created (e.g.,
-     * <code>1479734909.17</code>) in Unix time format.</p>
+     * <p>The timestamp when the instance was created (<code>1479734909.17</code>) in
+     * Unix time format.</p>
      */
     inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
 
     /**
-     * <p>The timestamp when the instance was created (e.g.,
-     * <code>1479734909.17</code>) in Unix time format.</p>
+     * <p>The timestamp when the instance was created (<code>1479734909.17</code>) in
+     * Unix time format.</p>
      */
     inline Instance& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
 
     /**
-     * <p>The timestamp when the instance was created (e.g.,
-     * <code>1479734909.17</code>) in Unix time format.</p>
+     * <p>The timestamp when the instance was created (<code>1479734909.17</code>) in
+     * Unix time format.</p>
      */
     inline Instance& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
@@ -369,124 +369,124 @@ namespace Model
 
 
     /**
-     * <p>The blueprint ID (e.g., <code>os_amlinux_2016_03</code>).</p>
+     * <p>The blueprint ID (<code>os_amlinux_2016_03</code>).</p>
      */
     inline const Aws::String& GetBlueprintId() const{ return m_blueprintId; }
 
     /**
-     * <p>The blueprint ID (e.g., <code>os_amlinux_2016_03</code>).</p>
+     * <p>The blueprint ID (<code>os_amlinux_2016_03</code>).</p>
      */
     inline bool BlueprintIdHasBeenSet() const { return m_blueprintIdHasBeenSet; }
 
     /**
-     * <p>The blueprint ID (e.g., <code>os_amlinux_2016_03</code>).</p>
+     * <p>The blueprint ID (<code>os_amlinux_2016_03</code>).</p>
      */
     inline void SetBlueprintId(const Aws::String& value) { m_blueprintIdHasBeenSet = true; m_blueprintId = value; }
 
     /**
-     * <p>The blueprint ID (e.g., <code>os_amlinux_2016_03</code>).</p>
+     * <p>The blueprint ID (<code>os_amlinux_2016_03</code>).</p>
      */
     inline void SetBlueprintId(Aws::String&& value) { m_blueprintIdHasBeenSet = true; m_blueprintId = std::move(value); }
 
     /**
-     * <p>The blueprint ID (e.g., <code>os_amlinux_2016_03</code>).</p>
+     * <p>The blueprint ID (<code>os_amlinux_2016_03</code>).</p>
      */
     inline void SetBlueprintId(const char* value) { m_blueprintIdHasBeenSet = true; m_blueprintId.assign(value); }
 
     /**
-     * <p>The blueprint ID (e.g., <code>os_amlinux_2016_03</code>).</p>
+     * <p>The blueprint ID (<code>os_amlinux_2016_03</code>).</p>
      */
     inline Instance& WithBlueprintId(const Aws::String& value) { SetBlueprintId(value); return *this;}
 
     /**
-     * <p>The blueprint ID (e.g., <code>os_amlinux_2016_03</code>).</p>
+     * <p>The blueprint ID (<code>os_amlinux_2016_03</code>).</p>
      */
     inline Instance& WithBlueprintId(Aws::String&& value) { SetBlueprintId(std::move(value)); return *this;}
 
     /**
-     * <p>The blueprint ID (e.g., <code>os_amlinux_2016_03</code>).</p>
+     * <p>The blueprint ID (<code>os_amlinux_2016_03</code>).</p>
      */
     inline Instance& WithBlueprintId(const char* value) { SetBlueprintId(value); return *this;}
 
 
     /**
-     * <p>The friendly name of the blueprint (e.g., <code>Amazon Linux</code>).</p>
+     * <p>The friendly name of the blueprint (<code>Amazon Linux</code>).</p>
      */
     inline const Aws::String& GetBlueprintName() const{ return m_blueprintName; }
 
     /**
-     * <p>The friendly name of the blueprint (e.g., <code>Amazon Linux</code>).</p>
+     * <p>The friendly name of the blueprint (<code>Amazon Linux</code>).</p>
      */
     inline bool BlueprintNameHasBeenSet() const { return m_blueprintNameHasBeenSet; }
 
     /**
-     * <p>The friendly name of the blueprint (e.g., <code>Amazon Linux</code>).</p>
+     * <p>The friendly name of the blueprint (<code>Amazon Linux</code>).</p>
      */
     inline void SetBlueprintName(const Aws::String& value) { m_blueprintNameHasBeenSet = true; m_blueprintName = value; }
 
     /**
-     * <p>The friendly name of the blueprint (e.g., <code>Amazon Linux</code>).</p>
+     * <p>The friendly name of the blueprint (<code>Amazon Linux</code>).</p>
      */
     inline void SetBlueprintName(Aws::String&& value) { m_blueprintNameHasBeenSet = true; m_blueprintName = std::move(value); }
 
     /**
-     * <p>The friendly name of the blueprint (e.g., <code>Amazon Linux</code>).</p>
+     * <p>The friendly name of the blueprint (<code>Amazon Linux</code>).</p>
      */
     inline void SetBlueprintName(const char* value) { m_blueprintNameHasBeenSet = true; m_blueprintName.assign(value); }
 
     /**
-     * <p>The friendly name of the blueprint (e.g., <code>Amazon Linux</code>).</p>
+     * <p>The friendly name of the blueprint (<code>Amazon Linux</code>).</p>
      */
     inline Instance& WithBlueprintName(const Aws::String& value) { SetBlueprintName(value); return *this;}
 
     /**
-     * <p>The friendly name of the blueprint (e.g., <code>Amazon Linux</code>).</p>
+     * <p>The friendly name of the blueprint (<code>Amazon Linux</code>).</p>
      */
     inline Instance& WithBlueprintName(Aws::String&& value) { SetBlueprintName(std::move(value)); return *this;}
 
     /**
-     * <p>The friendly name of the blueprint (e.g., <code>Amazon Linux</code>).</p>
+     * <p>The friendly name of the blueprint (<code>Amazon Linux</code>).</p>
      */
     inline Instance& WithBlueprintName(const char* value) { SetBlueprintName(value); return *this;}
 
 
     /**
-     * <p>The bundle for the instance (e.g., <code>micro_1_0</code>).</p>
+     * <p>The bundle for the instance (<code>micro_1_0</code>).</p>
      */
     inline const Aws::String& GetBundleId() const{ return m_bundleId; }
 
     /**
-     * <p>The bundle for the instance (e.g., <code>micro_1_0</code>).</p>
+     * <p>The bundle for the instance (<code>micro_1_0</code>).</p>
      */
     inline bool BundleIdHasBeenSet() const { return m_bundleIdHasBeenSet; }
 
     /**
-     * <p>The bundle for the instance (e.g., <code>micro_1_0</code>).</p>
+     * <p>The bundle for the instance (<code>micro_1_0</code>).</p>
      */
     inline void SetBundleId(const Aws::String& value) { m_bundleIdHasBeenSet = true; m_bundleId = value; }
 
     /**
-     * <p>The bundle for the instance (e.g., <code>micro_1_0</code>).</p>
+     * <p>The bundle for the instance (<code>micro_1_0</code>).</p>
      */
     inline void SetBundleId(Aws::String&& value) { m_bundleIdHasBeenSet = true; m_bundleId = std::move(value); }
 
     /**
-     * <p>The bundle for the instance (e.g., <code>micro_1_0</code>).</p>
+     * <p>The bundle for the instance (<code>micro_1_0</code>).</p>
      */
     inline void SetBundleId(const char* value) { m_bundleIdHasBeenSet = true; m_bundleId.assign(value); }
 
     /**
-     * <p>The bundle for the instance (e.g., <code>micro_1_0</code>).</p>
+     * <p>The bundle for the instance (<code>micro_1_0</code>).</p>
      */
     inline Instance& WithBundleId(const Aws::String& value) { SetBundleId(value); return *this;}
 
     /**
-     * <p>The bundle for the instance (e.g., <code>micro_1_0</code>).</p>
+     * <p>The bundle for the instance (<code>micro_1_0</code>).</p>
      */
     inline Instance& WithBundleId(Aws::String&& value) { SetBundleId(std::move(value)); return *this;}
 
     /**
-     * <p>The bundle for the instance (e.g., <code>micro_1_0</code>).</p>
+     * <p>The bundle for the instance (<code>micro_1_0</code>).</p>
      */
     inline Instance& WithBundleId(const char* value) { SetBundleId(value); return *this;}
 
@@ -797,136 +797,122 @@ namespace Model
 
 
     /**
-     * <p>The status code and the state (e.g., <code>running</code>) for the
-     * instance.</p>
+     * <p>The status code and the state (<code>running</code>) for the instance.</p>
      */
     inline const InstanceState& GetState() const{ return m_state; }
 
     /**
-     * <p>The status code and the state (e.g., <code>running</code>) for the
-     * instance.</p>
+     * <p>The status code and the state (<code>running</code>) for the instance.</p>
      */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
-     * <p>The status code and the state (e.g., <code>running</code>) for the
-     * instance.</p>
+     * <p>The status code and the state (<code>running</code>) for the instance.</p>
      */
     inline void SetState(const InstanceState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
-     * <p>The status code and the state (e.g., <code>running</code>) for the
-     * instance.</p>
+     * <p>The status code and the state (<code>running</code>) for the instance.</p>
      */
     inline void SetState(InstanceState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
-     * <p>The status code and the state (e.g., <code>running</code>) for the
-     * instance.</p>
+     * <p>The status code and the state (<code>running</code>) for the instance.</p>
      */
     inline Instance& WithState(const InstanceState& value) { SetState(value); return *this;}
 
     /**
-     * <p>The status code and the state (e.g., <code>running</code>) for the
-     * instance.</p>
+     * <p>The status code and the state (<code>running</code>) for the instance.</p>
      */
     inline Instance& WithState(InstanceState&& value) { SetState(std::move(value)); return *this;}
 
 
     /**
-     * <p>The user name for connecting to the instance (e.g.,
-     * <code>ec2-user</code>).</p>
+     * <p>The user name for connecting to the instance (<code>ec2-user</code>).</p>
      */
     inline const Aws::String& GetUsername() const{ return m_username; }
 
     /**
-     * <p>The user name for connecting to the instance (e.g.,
-     * <code>ec2-user</code>).</p>
+     * <p>The user name for connecting to the instance (<code>ec2-user</code>).</p>
      */
     inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
 
     /**
-     * <p>The user name for connecting to the instance (e.g.,
-     * <code>ec2-user</code>).</p>
+     * <p>The user name for connecting to the instance (<code>ec2-user</code>).</p>
      */
     inline void SetUsername(const Aws::String& value) { m_usernameHasBeenSet = true; m_username = value; }
 
     /**
-     * <p>The user name for connecting to the instance (e.g.,
-     * <code>ec2-user</code>).</p>
+     * <p>The user name for connecting to the instance (<code>ec2-user</code>).</p>
      */
     inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = std::move(value); }
 
     /**
-     * <p>The user name for connecting to the instance (e.g.,
-     * <code>ec2-user</code>).</p>
+     * <p>The user name for connecting to the instance (<code>ec2-user</code>).</p>
      */
     inline void SetUsername(const char* value) { m_usernameHasBeenSet = true; m_username.assign(value); }
 
     /**
-     * <p>The user name for connecting to the instance (e.g.,
-     * <code>ec2-user</code>).</p>
+     * <p>The user name for connecting to the instance (<code>ec2-user</code>).</p>
      */
     inline Instance& WithUsername(const Aws::String& value) { SetUsername(value); return *this;}
 
     /**
-     * <p>The user name for connecting to the instance (e.g.,
-     * <code>ec2-user</code>).</p>
+     * <p>The user name for connecting to the instance (<code>ec2-user</code>).</p>
      */
     inline Instance& WithUsername(Aws::String&& value) { SetUsername(std::move(value)); return *this;}
 
     /**
-     * <p>The user name for connecting to the instance (e.g.,
-     * <code>ec2-user</code>).</p>
+     * <p>The user name for connecting to the instance (<code>ec2-user</code>).</p>
      */
     inline Instance& WithUsername(const char* value) { SetUsername(value); return *this;}
 
 
     /**
-     * <p>The name of the SSH key being used to connect to the instance (e.g.,
-     * <code>LightsailDefaultKeyPair</code>).</p>
+     * <p>The name of the SSH key being used to connect to the instance
+     * (<code>LightsailDefaultKeyPair</code>).</p>
      */
     inline const Aws::String& GetSshKeyName() const{ return m_sshKeyName; }
 
     /**
-     * <p>The name of the SSH key being used to connect to the instance (e.g.,
-     * <code>LightsailDefaultKeyPair</code>).</p>
+     * <p>The name of the SSH key being used to connect to the instance
+     * (<code>LightsailDefaultKeyPair</code>).</p>
      */
     inline bool SshKeyNameHasBeenSet() const { return m_sshKeyNameHasBeenSet; }
 
     /**
-     * <p>The name of the SSH key being used to connect to the instance (e.g.,
-     * <code>LightsailDefaultKeyPair</code>).</p>
+     * <p>The name of the SSH key being used to connect to the instance
+     * (<code>LightsailDefaultKeyPair</code>).</p>
      */
     inline void SetSshKeyName(const Aws::String& value) { m_sshKeyNameHasBeenSet = true; m_sshKeyName = value; }
 
     /**
-     * <p>The name of the SSH key being used to connect to the instance (e.g.,
-     * <code>LightsailDefaultKeyPair</code>).</p>
+     * <p>The name of the SSH key being used to connect to the instance
+     * (<code>LightsailDefaultKeyPair</code>).</p>
      */
     inline void SetSshKeyName(Aws::String&& value) { m_sshKeyNameHasBeenSet = true; m_sshKeyName = std::move(value); }
 
     /**
-     * <p>The name of the SSH key being used to connect to the instance (e.g.,
-     * <code>LightsailDefaultKeyPair</code>).</p>
+     * <p>The name of the SSH key being used to connect to the instance
+     * (<code>LightsailDefaultKeyPair</code>).</p>
      */
     inline void SetSshKeyName(const char* value) { m_sshKeyNameHasBeenSet = true; m_sshKeyName.assign(value); }
 
     /**
-     * <p>The name of the SSH key being used to connect to the instance (e.g.,
-     * <code>LightsailDefaultKeyPair</code>).</p>
+     * <p>The name of the SSH key being used to connect to the instance
+     * (<code>LightsailDefaultKeyPair</code>).</p>
      */
     inline Instance& WithSshKeyName(const Aws::String& value) { SetSshKeyName(value); return *this;}
 
     /**
-     * <p>The name of the SSH key being used to connect to the instance (e.g.,
-     * <code>LightsailDefaultKeyPair</code>).</p>
+     * <p>The name of the SSH key being used to connect to the instance
+     * (<code>LightsailDefaultKeyPair</code>).</p>
      */
     inline Instance& WithSshKeyName(Aws::String&& value) { SetSshKeyName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the SSH key being used to connect to the instance (e.g.,
-     * <code>LightsailDefaultKeyPair</code>).</p>
+     * <p>The name of the SSH key being used to connect to the instance
+     * (<code>LightsailDefaultKeyPair</code>).</p>
      */
     inline Instance& WithSshKeyName(const char* value) { SetSshKeyName(value); return *this;}
 

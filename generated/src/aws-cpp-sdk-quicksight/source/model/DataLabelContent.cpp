@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DataLabelContent::NOT_SET:
+            return {};
           case DataLabelContent::VALUE:
             return "VALUE";
           case DataLabelContent::PERCENT:

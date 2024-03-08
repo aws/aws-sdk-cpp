@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UsageLimitBreachAction::NOT_SET:
+            return {};
           case UsageLimitBreachAction::log:
             return "log";
           case UsageLimitBreachAction::emit_metric:

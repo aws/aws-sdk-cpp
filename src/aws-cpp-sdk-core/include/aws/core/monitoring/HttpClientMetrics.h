@@ -73,7 +73,13 @@ namespace Aws
              * Request the SDK to have access to the download speed in bytes per
              * second for a request.
              */
+             DownloadSpeed,
              Throughput,
+
+             /**
+              * Upload speed of the request in bytes per second.
+              */
+             UploadSpeed,
 
             /**
              * Unknow Metrics Type

@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NumericQuestionPropertyAutomationLabel::NOT_SET:
+            return {};
           case NumericQuestionPropertyAutomationLabel::OVERALL_CUSTOMER_SENTIMENT_SCORE:
             return "OVERALL_CUSTOMER_SENTIMENT_SCORE";
           case NumericQuestionPropertyAutomationLabel::OVERALL_AGENT_SENTIMENT_SCORE:

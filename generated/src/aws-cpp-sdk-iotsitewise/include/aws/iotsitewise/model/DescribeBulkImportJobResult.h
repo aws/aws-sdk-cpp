@@ -111,7 +111,7 @@ namespace Model
 
 
     /**
-     * <p>The status of the bulk import job can be one of following values.</p> <ul>
+     * <p>The status of the bulk import job can be one of following values:</p> <ul>
      * <li> <p> <code>PENDING</code> – IoT SiteWise is waiting for the current bulk
      * import job to finish.</p> </li> <li> <p> <code>CANCELLED</code> – The bulk
      * import job has been canceled.</p> </li> <li> <p> <code>RUNNING</code> – IoT
@@ -128,7 +128,7 @@ namespace Model
     inline const JobStatus& GetJobStatus() const{ return m_jobStatus; }
 
     /**
-     * <p>The status of the bulk import job can be one of following values.</p> <ul>
+     * <p>The status of the bulk import job can be one of following values:</p> <ul>
      * <li> <p> <code>PENDING</code> – IoT SiteWise is waiting for the current bulk
      * import job to finish.</p> </li> <li> <p> <code>CANCELLED</code> – The bulk
      * import job has been canceled.</p> </li> <li> <p> <code>RUNNING</code> – IoT
@@ -145,7 +145,7 @@ namespace Model
     inline void SetJobStatus(const JobStatus& value) { m_jobStatus = value; }
 
     /**
-     * <p>The status of the bulk import job can be one of following values.</p> <ul>
+     * <p>The status of the bulk import job can be one of following values:</p> <ul>
      * <li> <p> <code>PENDING</code> – IoT SiteWise is waiting for the current bulk
      * import job to finish.</p> </li> <li> <p> <code>CANCELLED</code> – The bulk
      * import job has been canceled.</p> </li> <li> <p> <code>RUNNING</code> – IoT
@@ -162,7 +162,7 @@ namespace Model
     inline void SetJobStatus(JobStatus&& value) { m_jobStatus = std::move(value); }
 
     /**
-     * <p>The status of the bulk import job can be one of following values.</p> <ul>
+     * <p>The status of the bulk import job can be one of following values:</p> <ul>
      * <li> <p> <code>PENDING</code> – IoT SiteWise is waiting for the current bulk
      * import job to finish.</p> </li> <li> <p> <code>CANCELLED</code> – The bulk
      * import job has been canceled.</p> </li> <li> <p> <code>RUNNING</code> – IoT
@@ -179,7 +179,7 @@ namespace Model
     inline DescribeBulkImportJobResult& WithJobStatus(const JobStatus& value) { SetJobStatus(value); return *this;}
 
     /**
-     * <p>The status of the bulk import job can be one of following values.</p> <ul>
+     * <p>The status of the bulk import job can be one of following values:</p> <ul>
      * <li> <p> <code>PENDING</code> – IoT SiteWise is waiting for the current bulk
      * import job to finish.</p> </li> <li> <p> <code>CANCELLED</code> – The bulk
      * import job has been canceled.</p> </li> <li> <p> <code>RUNNING</code> – IoT
@@ -396,6 +396,47 @@ namespace Model
     inline DescribeBulkImportJobResult& WithJobLastUpdateDate(Aws::Utils::DateTime&& value) { SetJobLastUpdateDate(std::move(value)); return *this;}
 
 
+    /**
+     * <p>If set to true, ingest new data into IoT SiteWise storage. Measurements with
+     * notifications, metrics and transforms are computed. If set to false, historical
+     * data is ingested into IoT SiteWise as is.</p>
+     */
+    inline bool GetAdaptiveIngestion() const{ return m_adaptiveIngestion; }
+
+    /**
+     * <p>If set to true, ingest new data into IoT SiteWise storage. Measurements with
+     * notifications, metrics and transforms are computed. If set to false, historical
+     * data is ingested into IoT SiteWise as is.</p>
+     */
+    inline void SetAdaptiveIngestion(bool value) { m_adaptiveIngestion = value; }
+
+    /**
+     * <p>If set to true, ingest new data into IoT SiteWise storage. Measurements with
+     * notifications, metrics and transforms are computed. If set to false, historical
+     * data is ingested into IoT SiteWise as is.</p>
+     */
+    inline DescribeBulkImportJobResult& WithAdaptiveIngestion(bool value) { SetAdaptiveIngestion(value); return *this;}
+
+
+    /**
+     * <p>If set to true, your data files is deleted from S3, after ingestion into IoT
+     * SiteWise storage.</p>
+     */
+    inline bool GetDeleteFilesAfterImport() const{ return m_deleteFilesAfterImport; }
+
+    /**
+     * <p>If set to true, your data files is deleted from S3, after ingestion into IoT
+     * SiteWise storage.</p>
+     */
+    inline void SetDeleteFilesAfterImport(bool value) { m_deleteFilesAfterImport = value; }
+
+    /**
+     * <p>If set to true, your data files is deleted from S3, after ingestion into IoT
+     * SiteWise storage.</p>
+     */
+    inline DescribeBulkImportJobResult& WithDeleteFilesAfterImport(bool value) { SetDeleteFilesAfterImport(value); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -436,6 +477,10 @@ namespace Model
     Aws::Utils::DateTime m_jobCreationDate;
 
     Aws::Utils::DateTime m_jobLastUpdateDate;
+
+    bool m_adaptiveIngestion;
+
+    bool m_deleteFilesAfterImport;
 
     Aws::String m_requestId;
   };

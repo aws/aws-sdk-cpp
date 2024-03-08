@@ -15,10 +15,10 @@ using namespace Aws::Utils;
 DeleteAppRequest::DeleteAppRequest() : 
     m_domainIdHasBeenSet(false),
     m_userProfileNameHasBeenSet(false),
+    m_spaceNameHasBeenSet(false),
     m_appType(AppType::NOT_SET),
     m_appTypeHasBeenSet(false),
-    m_appNameHasBeenSet(false),
-    m_spaceNameHasBeenSet(false)
+    m_appNameHasBeenSet(false)
 {
 }
 
@@ -38,6 +38,12 @@ Aws::String DeleteAppRequest::SerializePayload() const
 
   }
 
+  if(m_spaceNameHasBeenSet)
+  {
+   payload.WithString("SpaceName", m_spaceName);
+
+  }
+
   if(m_appTypeHasBeenSet)
   {
    payload.WithString("AppType", AppTypeMapper::GetNameForAppType(m_appType));
@@ -46,12 +52,6 @@ Aws::String DeleteAppRequest::SerializePayload() const
   if(m_appNameHasBeenSet)
   {
    payload.WithString("AppName", m_appName);
-
-  }
-
-  if(m_spaceNameHasBeenSet)
-  {
-   payload.WithString("SpaceName", m_spaceName);
 
   }
 

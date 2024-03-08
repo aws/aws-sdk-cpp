@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AssetRelationshipType::NOT_SET:
+            return {};
           case AssetRelationshipType::HIERARCHY:
             return "HIERARCHY";
           default:

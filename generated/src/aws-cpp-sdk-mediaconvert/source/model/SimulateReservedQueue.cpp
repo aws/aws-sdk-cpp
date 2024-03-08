@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SimulateReservedQueue::NOT_SET:
+            return {};
           case SimulateReservedQueue::DISABLED:
             return "DISABLED";
           case SimulateReservedQueue::ENABLED:

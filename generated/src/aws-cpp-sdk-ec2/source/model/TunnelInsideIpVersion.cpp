@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TunnelInsideIpVersion::NOT_SET:
+            return {};
           case TunnelInsideIpVersion::ipv4:
             return "ipv4";
           case TunnelInsideIpVersion::ipv6:

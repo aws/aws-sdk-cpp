@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UdpTimedMetadataId3Frame::NOT_SET:
+            return {};
           case UdpTimedMetadataId3Frame::NONE:
             return "NONE";
           case UdpTimedMetadataId3Frame::PRIV:

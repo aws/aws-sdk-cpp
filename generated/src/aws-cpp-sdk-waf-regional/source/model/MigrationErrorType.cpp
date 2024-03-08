@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MigrationErrorType::NOT_SET:
+            return {};
           case MigrationErrorType::ENTITY_NOT_SUPPORTED:
             return "ENTITY_NOT_SUPPORTED";
           case MigrationErrorType::ENTITY_NOT_FOUND:

@@ -27,7 +27,11 @@ AssetBundleExportJobSummary::AssetBundleExportJobSummary() :
     m_includeAllDependencies(false),
     m_includeAllDependenciesHasBeenSet(false),
     m_exportFormat(AssetBundleExportFormat::NOT_SET),
-    m_exportFormatHasBeenSet(false)
+    m_exportFormatHasBeenSet(false),
+    m_includePermissions(false),
+    m_includePermissionsHasBeenSet(false),
+    m_includeTags(false),
+    m_includeTagsHasBeenSet(false)
 {
 }
 
@@ -40,7 +44,11 @@ AssetBundleExportJobSummary::AssetBundleExportJobSummary(JsonView jsonValue) :
     m_includeAllDependencies(false),
     m_includeAllDependenciesHasBeenSet(false),
     m_exportFormat(AssetBundleExportFormat::NOT_SET),
-    m_exportFormatHasBeenSet(false)
+    m_exportFormatHasBeenSet(false),
+    m_includePermissions(false),
+    m_includePermissionsHasBeenSet(false),
+    m_includeTags(false),
+    m_includeTagsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -89,6 +97,20 @@ AssetBundleExportJobSummary& AssetBundleExportJobSummary::operator =(JsonView js
     m_exportFormatHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("IncludePermissions"))
+  {
+    m_includePermissions = jsonValue.GetBool("IncludePermissions");
+
+    m_includePermissionsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("IncludeTags"))
+  {
+    m_includeTags = jsonValue.GetBool("IncludeTags");
+
+    m_includeTagsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -127,6 +149,18 @@ JsonValue AssetBundleExportJobSummary::Jsonize() const
   if(m_exportFormatHasBeenSet)
   {
    payload.WithString("ExportFormat", AssetBundleExportFormatMapper::GetNameForAssetBundleExportFormat(m_exportFormat));
+  }
+
+  if(m_includePermissionsHasBeenSet)
+  {
+   payload.WithBool("IncludePermissions", m_includePermissions);
+
+  }
+
+  if(m_includeTagsHasBeenSet)
+  {
+   payload.WithBool("IncludeTags", m_includeTags);
+
   }
 
   return payload;

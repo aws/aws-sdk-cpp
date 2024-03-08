@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>A group of fields that describe the current status of components that are no
-   * longer active.</p><p><h3>See Also:</h3>   <a
+   * <p>A group of fields that describe the current status of
+   * components.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ComponentState">AWS
    * API Reference</a></p>
    */

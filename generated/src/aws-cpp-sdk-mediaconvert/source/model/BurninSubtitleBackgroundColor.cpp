@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BurninSubtitleBackgroundColor::NOT_SET:
+            return {};
           case BurninSubtitleBackgroundColor::NONE:
             return "NONE";
           case BurninSubtitleBackgroundColor::BLACK:

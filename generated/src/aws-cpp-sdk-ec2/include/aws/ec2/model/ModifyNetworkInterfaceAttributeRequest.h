@@ -12,6 +12,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ec2/model/AttributeBooleanValue.h>
 #include <aws/ec2/model/EnaSrdSpecification.h>
+#include <aws/ec2/model/ConnectionTrackingSpecificationRequest.h>
 #include <utility>
 
 namespace Aws
@@ -432,6 +433,37 @@ namespace Model
      */
     inline ModifyNetworkInterfaceAttributeRequest& WithEnablePrimaryIpv6(bool value) { SetEnablePrimaryIpv6(value); return *this;}
 
+
+    /**
+     * <p>A connection tracking specification.</p>
+     */
+    inline const ConnectionTrackingSpecificationRequest& GetConnectionTrackingSpecification() const{ return m_connectionTrackingSpecification; }
+
+    /**
+     * <p>A connection tracking specification.</p>
+     */
+    inline bool ConnectionTrackingSpecificationHasBeenSet() const { return m_connectionTrackingSpecificationHasBeenSet; }
+
+    /**
+     * <p>A connection tracking specification.</p>
+     */
+    inline void SetConnectionTrackingSpecification(const ConnectionTrackingSpecificationRequest& value) { m_connectionTrackingSpecificationHasBeenSet = true; m_connectionTrackingSpecification = value; }
+
+    /**
+     * <p>A connection tracking specification.</p>
+     */
+    inline void SetConnectionTrackingSpecification(ConnectionTrackingSpecificationRequest&& value) { m_connectionTrackingSpecificationHasBeenSet = true; m_connectionTrackingSpecification = std::move(value); }
+
+    /**
+     * <p>A connection tracking specification.</p>
+     */
+    inline ModifyNetworkInterfaceAttributeRequest& WithConnectionTrackingSpecification(const ConnectionTrackingSpecificationRequest& value) { SetConnectionTrackingSpecification(value); return *this;}
+
+    /**
+     * <p>A connection tracking specification.</p>
+     */
+    inline ModifyNetworkInterfaceAttributeRequest& WithConnectionTrackingSpecification(ConnectionTrackingSpecificationRequest&& value) { SetConnectionTrackingSpecification(std::move(value)); return *this;}
+
   private:
 
     NetworkInterfaceAttachmentChanges m_attachment;
@@ -457,6 +489,9 @@ namespace Model
 
     bool m_enablePrimaryIpv6;
     bool m_enablePrimaryIpv6HasBeenSet = false;
+
+    ConnectionTrackingSpecificationRequest m_connectionTrackingSpecification;
+    bool m_connectionTrackingSpecificationHasBeenSet = false;
   };
 
 } // namespace Model

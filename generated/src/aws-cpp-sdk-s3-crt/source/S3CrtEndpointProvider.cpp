@@ -59,6 +59,14 @@ namespace Endpoint
   {
     return GetParameter("Accelerate");
   }
+  void S3CrtClientContextParameters::SetDisableS3ExpressSessionAuth(bool value)
+  {
+    return SetBooleanParameter(Aws::String("DisableS3ExpressSessionAuth"), value);
+  }
+  const S3CrtClientContextParameters::ClientContextParameters::EndpointParameter& S3CrtClientContextParameters::GetDisableS3ExpressSessionAuth() const
+  {
+    return GetParameter("DisableS3ExpressSessionAuth");
+  }
   void S3CrtBuiltInParameters::SetFromClientConfiguration(const S3CrtClientConfiguration& config)
   {
     SetFromClientConfiguration(static_cast<const S3CrtClientConfiguration::BaseClientConfigClass&>(config));
@@ -81,6 +89,11 @@ namespace Endpoint
     static const char* AWS_S3_FORCE_PATH_STYLE = "ForcePathStyle";
     if (!config.useVirtualAddressing) {
       SetBooleanParameter(AWS_S3_FORCE_PATH_STYLE, true);
+    }
+
+    static const char* AWS_S3_DISABLE_EXPRESS_AUTH = "DisableS3ExpressSessionAuth";
+    if(config.disableS3ExpressAuth) {
+      SetBooleanParameter(AWS_S3_DISABLE_EXPRESS_AUTH, true);
     }
   }
 } // namespace Endpoint

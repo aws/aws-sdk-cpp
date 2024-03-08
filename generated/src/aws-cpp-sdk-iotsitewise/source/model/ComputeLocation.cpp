@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ComputeLocation::NOT_SET:
+            return {};
           case ComputeLocation::EDGE:
             return "EDGE";
           case ComputeLocation::CLOUD:

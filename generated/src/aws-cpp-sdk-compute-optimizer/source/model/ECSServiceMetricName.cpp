@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ECSServiceMetricName::NOT_SET:
+            return {};
           case ECSServiceMetricName::Cpu:
             return "Cpu";
           case ECSServiceMetricName::Memory:

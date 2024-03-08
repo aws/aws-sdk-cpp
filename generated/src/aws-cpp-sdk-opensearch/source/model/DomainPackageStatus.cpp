@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DomainPackageStatus::NOT_SET:
+            return {};
           case DomainPackageStatus::ASSOCIATING:
             return "ASSOCIATING";
           case DomainPackageStatus::ASSOCIATION_FAILED:

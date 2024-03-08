@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TrafficMirrorSessionField::NOT_SET:
+            return {};
           case TrafficMirrorSessionField::packet_length:
             return "packet-length";
           case TrafficMirrorSessionField::description:

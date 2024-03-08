@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RangeMode::NOT_SET:
+            return {};
           case RangeMode::FIRST:
             return "FIRST";
           case RangeMode::LAST:

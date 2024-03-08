@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LogSubscription::NOT_SET:
+            return {};
           case LogSubscription::ENABLE:
             return "ENABLE";
           case LogSubscription::DISABLE:

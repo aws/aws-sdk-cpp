@@ -13,11 +13,13 @@
 #include <aws/quicksight/model/AxisDisplayOptions.h>
 #include <aws/quicksight/model/ChartAxisLabelOptions.h>
 #include <aws/quicksight/model/LineSeriesAxisDisplayOptions.h>
+#include <aws/quicksight/model/SingleAxisOptions.h>
 #include <aws/quicksight/model/LineChartDefaultSeriesSettings.h>
 #include <aws/quicksight/model/LegendOptions.h>
 #include <aws/quicksight/model/DataLabelOptions.h>
 #include <aws/quicksight/model/TooltipOptions.h>
 #include <aws/quicksight/model/VisualPalette.h>
+#include <aws/quicksight/model/VisualInteractionOptions.h>
 #include <aws/quicksight/model/ForecastConfiguration.h>
 #include <aws/quicksight/model/SeriesItem.h>
 #include <aws/quicksight/model/ReferenceLine.h>
@@ -410,6 +412,25 @@ namespace Model
     inline LineChartConfiguration& WithSecondaryYAxisLabelOptions(ChartAxisLabelOptions&& value) { SetSecondaryYAxisLabelOptions(std::move(value)); return *this;}
 
 
+    
+    inline const SingleAxisOptions& GetSingleAxisOptions() const{ return m_singleAxisOptions; }
+
+    
+    inline bool SingleAxisOptionsHasBeenSet() const { return m_singleAxisOptionsHasBeenSet; }
+
+    
+    inline void SetSingleAxisOptions(const SingleAxisOptions& value) { m_singleAxisOptionsHasBeenSet = true; m_singleAxisOptions = value; }
+
+    
+    inline void SetSingleAxisOptions(SingleAxisOptions&& value) { m_singleAxisOptionsHasBeenSet = true; m_singleAxisOptions = std::move(value); }
+
+    
+    inline LineChartConfiguration& WithSingleAxisOptions(const SingleAxisOptions& value) { SetSingleAxisOptions(value); return *this;}
+
+    
+    inline LineChartConfiguration& WithSingleAxisOptions(SingleAxisOptions&& value) { SetSingleAxisOptions(std::move(value)); return *this;}
+
+
     /**
      * <p>The options that determine the default presentation of all line series in
      * <code>LineChartVisual</code>.</p>
@@ -693,6 +714,37 @@ namespace Model
      */
     inline LineChartConfiguration& WithVisualPalette(VisualPalette&& value) { SetVisualPalette(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The general visual interactions setup for a visual.</p>
+     */
+    inline const VisualInteractionOptions& GetInteractions() const{ return m_interactions; }
+
+    /**
+     * <p>The general visual interactions setup for a visual.</p>
+     */
+    inline bool InteractionsHasBeenSet() const { return m_interactionsHasBeenSet; }
+
+    /**
+     * <p>The general visual interactions setup for a visual.</p>
+     */
+    inline void SetInteractions(const VisualInteractionOptions& value) { m_interactionsHasBeenSet = true; m_interactions = value; }
+
+    /**
+     * <p>The general visual interactions setup for a visual.</p>
+     */
+    inline void SetInteractions(VisualInteractionOptions&& value) { m_interactionsHasBeenSet = true; m_interactions = std::move(value); }
+
+    /**
+     * <p>The general visual interactions setup for a visual.</p>
+     */
+    inline LineChartConfiguration& WithInteractions(const VisualInteractionOptions& value) { SetInteractions(value); return *this;}
+
+    /**
+     * <p>The general visual interactions setup for a visual.</p>
+     */
+    inline LineChartConfiguration& WithInteractions(VisualInteractionOptions&& value) { SetInteractions(std::move(value)); return *this;}
+
   private:
 
     LineChartFieldWells m_fieldWells;
@@ -728,6 +780,9 @@ namespace Model
     ChartAxisLabelOptions m_secondaryYAxisLabelOptions;
     bool m_secondaryYAxisLabelOptionsHasBeenSet = false;
 
+    SingleAxisOptions m_singleAxisOptions;
+    bool m_singleAxisOptionsHasBeenSet = false;
+
     LineChartDefaultSeriesSettings m_defaultSeriesSettings;
     bool m_defaultSeriesSettingsHasBeenSet = false;
 
@@ -751,6 +806,9 @@ namespace Model
 
     VisualPalette m_visualPalette;
     bool m_visualPaletteHasBeenSet = false;
+
+    VisualInteractionOptions m_interactions;
+    bool m_interactionsHasBeenSet = false;
   };
 
 } // namespace Model

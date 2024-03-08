@@ -99,6 +99,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ChatItemType::NOT_SET:
+            return {};
           case ChatItemType::TYPING:
             return "TYPING";
           case ChatItemType::PARTICIPANT_JOINED:

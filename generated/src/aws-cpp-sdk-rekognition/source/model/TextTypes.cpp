@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TextTypes::NOT_SET:
+            return {};
           case TextTypes::LINE:
             return "LINE";
           case TextTypes::WORD:

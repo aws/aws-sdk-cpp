@@ -27,7 +27,8 @@ TreeMapConfiguration::TreeMapConfiguration() :
     m_colorScaleHasBeenSet(false),
     m_legendHasBeenSet(false),
     m_dataLabelsHasBeenSet(false),
-    m_tooltipHasBeenSet(false)
+    m_tooltipHasBeenSet(false),
+    m_interactionsHasBeenSet(false)
 {
 }
 
@@ -40,7 +41,8 @@ TreeMapConfiguration::TreeMapConfiguration(JsonView jsonValue) :
     m_colorScaleHasBeenSet(false),
     m_legendHasBeenSet(false),
     m_dataLabelsHasBeenSet(false),
-    m_tooltipHasBeenSet(false)
+    m_tooltipHasBeenSet(false),
+    m_interactionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -110,6 +112,13 @@ TreeMapConfiguration& TreeMapConfiguration::operator =(JsonView jsonValue)
     m_tooltipHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Interactions"))
+  {
+    m_interactions = jsonValue.GetObject("Interactions");
+
+    m_interactionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -168,6 +177,12 @@ JsonValue TreeMapConfiguration::Jsonize() const
   if(m_tooltipHasBeenSet)
   {
    payload.WithObject("Tooltip", m_tooltip.Jsonize());
+
+  }
+
+  if(m_interactionsHasBeenSet)
+  {
+   payload.WithObject("Interactions", m_interactions.Jsonize());
 
   }
 

@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DataSourceType::NOT_SET:
+            return {};
           case DataSourceType::AWS_LAMBDA:
             return "AWS_LAMBDA";
           case DataSourceType::AMAZON_DYNAMODB:

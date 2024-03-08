@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BusinessReportInterval::NOT_SET:
+            return {};
           case BusinessReportInterval::ONE_DAY:
             return "ONE_DAY";
           case BusinessReportInterval::ONE_WEEK:

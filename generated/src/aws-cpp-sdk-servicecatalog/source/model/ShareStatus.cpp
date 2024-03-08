@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ShareStatus::NOT_SET:
+            return {};
           case ShareStatus::NOT_STARTED:
             return "NOT_STARTED";
           case ShareStatus::IN_PROGRESS:

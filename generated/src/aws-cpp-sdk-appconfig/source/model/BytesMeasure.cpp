@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BytesMeasure::NOT_SET:
+            return {};
           case BytesMeasure::KILOBYTES:
             return "KILOBYTES";
           default:

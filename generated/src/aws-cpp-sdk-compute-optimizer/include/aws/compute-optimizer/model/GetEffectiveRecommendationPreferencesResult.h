@@ -7,7 +7,11 @@
 #include <aws/compute-optimizer/ComputeOptimizer_EXPORTS.h>
 #include <aws/compute-optimizer/model/EnhancedInfrastructureMetrics.h>
 #include <aws/compute-optimizer/model/ExternalMetricsPreference.h>
+#include <aws/compute-optimizer/model/LookBackPeriodPreference.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/compute-optimizer/model/UtilizationPreference.h>
+#include <aws/compute-optimizer/model/EffectivePreferredResource.h>
 #include <utility>
 
 namespace Aws
@@ -201,6 +205,215 @@ namespace Model
     inline GetEffectiveRecommendationPreferencesResult& WithExternalMetricsPreference(ExternalMetricsPreference&& value) { SetExternalMetricsPreference(std::move(value)); return *this;}
 
 
+    /**
+     * <p> The number of days the utilization metrics of the Amazon Web Services
+     * resource are analyzed. </p> <p>To validate that the preference is applied to
+     * your last generated set of recommendations, review the
+     * <code>effectiveRecommendationPreferences</code> value in the response of the
+     * GetAutoScalingGroupRecommendations or GetEC2InstanceRecommendations actions.</p>
+     */
+    inline const LookBackPeriodPreference& GetLookBackPeriod() const{ return m_lookBackPeriod; }
+
+    /**
+     * <p> The number of days the utilization metrics of the Amazon Web Services
+     * resource are analyzed. </p> <p>To validate that the preference is applied to
+     * your last generated set of recommendations, review the
+     * <code>effectiveRecommendationPreferences</code> value in the response of the
+     * GetAutoScalingGroupRecommendations or GetEC2InstanceRecommendations actions.</p>
+     */
+    inline void SetLookBackPeriod(const LookBackPeriodPreference& value) { m_lookBackPeriod = value; }
+
+    /**
+     * <p> The number of days the utilization metrics of the Amazon Web Services
+     * resource are analyzed. </p> <p>To validate that the preference is applied to
+     * your last generated set of recommendations, review the
+     * <code>effectiveRecommendationPreferences</code> value in the response of the
+     * GetAutoScalingGroupRecommendations or GetEC2InstanceRecommendations actions.</p>
+     */
+    inline void SetLookBackPeriod(LookBackPeriodPreference&& value) { m_lookBackPeriod = std::move(value); }
+
+    /**
+     * <p> The number of days the utilization metrics of the Amazon Web Services
+     * resource are analyzed. </p> <p>To validate that the preference is applied to
+     * your last generated set of recommendations, review the
+     * <code>effectiveRecommendationPreferences</code> value in the response of the
+     * GetAutoScalingGroupRecommendations or GetEC2InstanceRecommendations actions.</p>
+     */
+    inline GetEffectiveRecommendationPreferencesResult& WithLookBackPeriod(const LookBackPeriodPreference& value) { SetLookBackPeriod(value); return *this;}
+
+    /**
+     * <p> The number of days the utilization metrics of the Amazon Web Services
+     * resource are analyzed. </p> <p>To validate that the preference is applied to
+     * your last generated set of recommendations, review the
+     * <code>effectiveRecommendationPreferences</code> value in the response of the
+     * GetAutoScalingGroupRecommendations or GetEC2InstanceRecommendations actions.</p>
+     */
+    inline GetEffectiveRecommendationPreferencesResult& WithLookBackPeriod(LookBackPeriodPreference&& value) { SetLookBackPeriod(std::move(value)); return *this;}
+
+
+    /**
+     * <p> The resource’s CPU utilization threshold preferences, such as threshold and
+     * headroom, that were used to generate rightsizing recommendations. It considers
+     * all applicable preferences that you set at the resource, account, and
+     * organization level. </p> <p>To validate that the preference is applied to your
+     * last generated set of recommendations, review the
+     * <code>effectiveRecommendationPreferences</code> value in the response of the
+     * GetAutoScalingGroupRecommendations or GetEC2InstanceRecommendations actions.</p>
+     */
+    inline const Aws::Vector<UtilizationPreference>& GetUtilizationPreferences() const{ return m_utilizationPreferences; }
+
+    /**
+     * <p> The resource’s CPU utilization threshold preferences, such as threshold and
+     * headroom, that were used to generate rightsizing recommendations. It considers
+     * all applicable preferences that you set at the resource, account, and
+     * organization level. </p> <p>To validate that the preference is applied to your
+     * last generated set of recommendations, review the
+     * <code>effectiveRecommendationPreferences</code> value in the response of the
+     * GetAutoScalingGroupRecommendations or GetEC2InstanceRecommendations actions.</p>
+     */
+    inline void SetUtilizationPreferences(const Aws::Vector<UtilizationPreference>& value) { m_utilizationPreferences = value; }
+
+    /**
+     * <p> The resource’s CPU utilization threshold preferences, such as threshold and
+     * headroom, that were used to generate rightsizing recommendations. It considers
+     * all applicable preferences that you set at the resource, account, and
+     * organization level. </p> <p>To validate that the preference is applied to your
+     * last generated set of recommendations, review the
+     * <code>effectiveRecommendationPreferences</code> value in the response of the
+     * GetAutoScalingGroupRecommendations or GetEC2InstanceRecommendations actions.</p>
+     */
+    inline void SetUtilizationPreferences(Aws::Vector<UtilizationPreference>&& value) { m_utilizationPreferences = std::move(value); }
+
+    /**
+     * <p> The resource’s CPU utilization threshold preferences, such as threshold and
+     * headroom, that were used to generate rightsizing recommendations. It considers
+     * all applicable preferences that you set at the resource, account, and
+     * organization level. </p> <p>To validate that the preference is applied to your
+     * last generated set of recommendations, review the
+     * <code>effectiveRecommendationPreferences</code> value in the response of the
+     * GetAutoScalingGroupRecommendations or GetEC2InstanceRecommendations actions.</p>
+     */
+    inline GetEffectiveRecommendationPreferencesResult& WithUtilizationPreferences(const Aws::Vector<UtilizationPreference>& value) { SetUtilizationPreferences(value); return *this;}
+
+    /**
+     * <p> The resource’s CPU utilization threshold preferences, such as threshold and
+     * headroom, that were used to generate rightsizing recommendations. It considers
+     * all applicable preferences that you set at the resource, account, and
+     * organization level. </p> <p>To validate that the preference is applied to your
+     * last generated set of recommendations, review the
+     * <code>effectiveRecommendationPreferences</code> value in the response of the
+     * GetAutoScalingGroupRecommendations or GetEC2InstanceRecommendations actions.</p>
+     */
+    inline GetEffectiveRecommendationPreferencesResult& WithUtilizationPreferences(Aws::Vector<UtilizationPreference>&& value) { SetUtilizationPreferences(std::move(value)); return *this;}
+
+    /**
+     * <p> The resource’s CPU utilization threshold preferences, such as threshold and
+     * headroom, that were used to generate rightsizing recommendations. It considers
+     * all applicable preferences that you set at the resource, account, and
+     * organization level. </p> <p>To validate that the preference is applied to your
+     * last generated set of recommendations, review the
+     * <code>effectiveRecommendationPreferences</code> value in the response of the
+     * GetAutoScalingGroupRecommendations or GetEC2InstanceRecommendations actions.</p>
+     */
+    inline GetEffectiveRecommendationPreferencesResult& AddUtilizationPreferences(const UtilizationPreference& value) { m_utilizationPreferences.push_back(value); return *this; }
+
+    /**
+     * <p> The resource’s CPU utilization threshold preferences, such as threshold and
+     * headroom, that were used to generate rightsizing recommendations. It considers
+     * all applicable preferences that you set at the resource, account, and
+     * organization level. </p> <p>To validate that the preference is applied to your
+     * last generated set of recommendations, review the
+     * <code>effectiveRecommendationPreferences</code> value in the response of the
+     * GetAutoScalingGroupRecommendations or GetEC2InstanceRecommendations actions.</p>
+     */
+    inline GetEffectiveRecommendationPreferencesResult& AddUtilizationPreferences(UtilizationPreference&& value) { m_utilizationPreferences.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p> The resource type values that are considered as candidates when generating
+     * rightsizing recommendations. This object resolves any wildcard expressions and
+     * returns the effective list of candidate resource type values. It also considers
+     * all applicable preferences that you set at the resource, account, and
+     * organization level. </p> <p>To validate that the preference is applied to your
+     * last generated set of recommendations, review the
+     * <code>effectiveRecommendationPreferences</code> value in the response of the
+     * GetAutoScalingGroupRecommendations or GetEC2InstanceRecommendations actions.</p>
+     */
+    inline const Aws::Vector<EffectivePreferredResource>& GetPreferredResources() const{ return m_preferredResources; }
+
+    /**
+     * <p> The resource type values that are considered as candidates when generating
+     * rightsizing recommendations. This object resolves any wildcard expressions and
+     * returns the effective list of candidate resource type values. It also considers
+     * all applicable preferences that you set at the resource, account, and
+     * organization level. </p> <p>To validate that the preference is applied to your
+     * last generated set of recommendations, review the
+     * <code>effectiveRecommendationPreferences</code> value in the response of the
+     * GetAutoScalingGroupRecommendations or GetEC2InstanceRecommendations actions.</p>
+     */
+    inline void SetPreferredResources(const Aws::Vector<EffectivePreferredResource>& value) { m_preferredResources = value; }
+
+    /**
+     * <p> The resource type values that are considered as candidates when generating
+     * rightsizing recommendations. This object resolves any wildcard expressions and
+     * returns the effective list of candidate resource type values. It also considers
+     * all applicable preferences that you set at the resource, account, and
+     * organization level. </p> <p>To validate that the preference is applied to your
+     * last generated set of recommendations, review the
+     * <code>effectiveRecommendationPreferences</code> value in the response of the
+     * GetAutoScalingGroupRecommendations or GetEC2InstanceRecommendations actions.</p>
+     */
+    inline void SetPreferredResources(Aws::Vector<EffectivePreferredResource>&& value) { m_preferredResources = std::move(value); }
+
+    /**
+     * <p> The resource type values that are considered as candidates when generating
+     * rightsizing recommendations. This object resolves any wildcard expressions and
+     * returns the effective list of candidate resource type values. It also considers
+     * all applicable preferences that you set at the resource, account, and
+     * organization level. </p> <p>To validate that the preference is applied to your
+     * last generated set of recommendations, review the
+     * <code>effectiveRecommendationPreferences</code> value in the response of the
+     * GetAutoScalingGroupRecommendations or GetEC2InstanceRecommendations actions.</p>
+     */
+    inline GetEffectiveRecommendationPreferencesResult& WithPreferredResources(const Aws::Vector<EffectivePreferredResource>& value) { SetPreferredResources(value); return *this;}
+
+    /**
+     * <p> The resource type values that are considered as candidates when generating
+     * rightsizing recommendations. This object resolves any wildcard expressions and
+     * returns the effective list of candidate resource type values. It also considers
+     * all applicable preferences that you set at the resource, account, and
+     * organization level. </p> <p>To validate that the preference is applied to your
+     * last generated set of recommendations, review the
+     * <code>effectiveRecommendationPreferences</code> value in the response of the
+     * GetAutoScalingGroupRecommendations or GetEC2InstanceRecommendations actions.</p>
+     */
+    inline GetEffectiveRecommendationPreferencesResult& WithPreferredResources(Aws::Vector<EffectivePreferredResource>&& value) { SetPreferredResources(std::move(value)); return *this;}
+
+    /**
+     * <p> The resource type values that are considered as candidates when generating
+     * rightsizing recommendations. This object resolves any wildcard expressions and
+     * returns the effective list of candidate resource type values. It also considers
+     * all applicable preferences that you set at the resource, account, and
+     * organization level. </p> <p>To validate that the preference is applied to your
+     * last generated set of recommendations, review the
+     * <code>effectiveRecommendationPreferences</code> value in the response of the
+     * GetAutoScalingGroupRecommendations or GetEC2InstanceRecommendations actions.</p>
+     */
+    inline GetEffectiveRecommendationPreferencesResult& AddPreferredResources(const EffectivePreferredResource& value) { m_preferredResources.push_back(value); return *this; }
+
+    /**
+     * <p> The resource type values that are considered as candidates when generating
+     * rightsizing recommendations. This object resolves any wildcard expressions and
+     * returns the effective list of candidate resource type values. It also considers
+     * all applicable preferences that you set at the resource, account, and
+     * organization level. </p> <p>To validate that the preference is applied to your
+     * last generated set of recommendations, review the
+     * <code>effectiveRecommendationPreferences</code> value in the response of the
+     * GetAutoScalingGroupRecommendations or GetEC2InstanceRecommendations actions.</p>
+     */
+    inline GetEffectiveRecommendationPreferencesResult& AddPreferredResources(EffectivePreferredResource&& value) { m_preferredResources.push_back(std::move(value)); return *this; }
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -227,6 +440,12 @@ namespace Model
     EnhancedInfrastructureMetrics m_enhancedInfrastructureMetrics;
 
     ExternalMetricsPreference m_externalMetricsPreference;
+
+    LookBackPeriodPreference m_lookBackPeriod;
+
+    Aws::Vector<UtilizationPreference> m_utilizationPreferences;
+
+    Aws::Vector<EffectivePreferredResource> m_preferredResources;
 
     Aws::String m_requestId;
   };

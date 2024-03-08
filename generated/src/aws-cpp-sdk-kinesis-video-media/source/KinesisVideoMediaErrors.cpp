@@ -31,23 +31,23 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == INVALID_ENDPOINT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoMediaErrors::INVALID_ENDPOINT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoMediaErrors::INVALID_ENDPOINT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == CONNECTION_LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoMediaErrors::CONNECTION_LIMIT_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoMediaErrors::CONNECTION_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == NOT_AUTHORIZED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoMediaErrors::NOT_AUTHORIZED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoMediaErrors::NOT_AUTHORIZED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == CLIENT_LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoMediaErrors::CLIENT_LIMIT_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoMediaErrors::CLIENT_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_ARGUMENT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoMediaErrors::INVALID_ARGUMENT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoMediaErrors::INVALID_ARGUMENT), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

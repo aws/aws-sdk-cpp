@@ -47,7 +47,8 @@ enum class CloudWatchLogsErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  DATA_ALREADY_ACCEPTED= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONFLICT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  DATA_ALREADY_ACCEPTED,
   INVALID_OPERATION,
   INVALID_PARAMETER,
   INVALID_SEQUENCE_TOKEN,
@@ -55,6 +56,7 @@ enum class CloudWatchLogsErrors
   MALFORMED_QUERY,
   OPERATION_ABORTED,
   RESOURCE_ALREADY_EXISTS,
+  SERVICE_QUOTA_EXCEEDED,
   TOO_MANY_TAGS
 };
 

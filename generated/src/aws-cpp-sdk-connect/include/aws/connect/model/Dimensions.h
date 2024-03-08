@@ -8,6 +8,7 @@
 #include <aws/connect/model/QueueReference.h>
 #include <aws/connect/model/Channel.h>
 #include <aws/connect/model/RoutingProfileReference.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -120,6 +121,47 @@ namespace Model
     
     inline Dimensions& WithRoutingProfile(RoutingProfileReference&& value) { SetRoutingProfile(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The expression of a step in a routing criteria.</p>
+     */
+    inline const Aws::String& GetRoutingStepExpression() const{ return m_routingStepExpression; }
+
+    /**
+     * <p>The expression of a step in a routing criteria.</p>
+     */
+    inline bool RoutingStepExpressionHasBeenSet() const { return m_routingStepExpressionHasBeenSet; }
+
+    /**
+     * <p>The expression of a step in a routing criteria.</p>
+     */
+    inline void SetRoutingStepExpression(const Aws::String& value) { m_routingStepExpressionHasBeenSet = true; m_routingStepExpression = value; }
+
+    /**
+     * <p>The expression of a step in a routing criteria.</p>
+     */
+    inline void SetRoutingStepExpression(Aws::String&& value) { m_routingStepExpressionHasBeenSet = true; m_routingStepExpression = std::move(value); }
+
+    /**
+     * <p>The expression of a step in a routing criteria.</p>
+     */
+    inline void SetRoutingStepExpression(const char* value) { m_routingStepExpressionHasBeenSet = true; m_routingStepExpression.assign(value); }
+
+    /**
+     * <p>The expression of a step in a routing criteria.</p>
+     */
+    inline Dimensions& WithRoutingStepExpression(const Aws::String& value) { SetRoutingStepExpression(value); return *this;}
+
+    /**
+     * <p>The expression of a step in a routing criteria.</p>
+     */
+    inline Dimensions& WithRoutingStepExpression(Aws::String&& value) { SetRoutingStepExpression(std::move(value)); return *this;}
+
+    /**
+     * <p>The expression of a step in a routing criteria.</p>
+     */
+    inline Dimensions& WithRoutingStepExpression(const char* value) { SetRoutingStepExpression(value); return *this;}
+
   private:
 
     QueueReference m_queue;
@@ -130,6 +172,9 @@ namespace Model
 
     RoutingProfileReference m_routingProfile;
     bool m_routingProfileHasBeenSet = false;
+
+    Aws::String m_routingStepExpression;
+    bool m_routingStepExpressionHasBeenSet = false;
   };
 
 } // namespace Model

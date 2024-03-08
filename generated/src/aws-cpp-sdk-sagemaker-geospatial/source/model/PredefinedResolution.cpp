@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PredefinedResolution::NOT_SET:
+            return {};
           case PredefinedResolution::HIGHEST:
             return "HIGHEST";
           case PredefinedResolution::LOWEST:

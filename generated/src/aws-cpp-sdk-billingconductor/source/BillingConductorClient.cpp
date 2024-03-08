@@ -35,6 +35,7 @@
 #include <aws/billingconductor/model/DeletePricingRuleRequest.h>
 #include <aws/billingconductor/model/DisassociateAccountsRequest.h>
 #include <aws/billingconductor/model/DisassociatePricingRulesRequest.h>
+#include <aws/billingconductor/model/GetBillingGroupCostReportRequest.h>
 #include <aws/billingconductor/model/ListAccountAssociationsRequest.h>
 #include <aws/billingconductor/model/ListBillingGroupCostReportsRequest.h>
 #include <aws/billingconductor/model/ListBillingGroupsRequest.h>
@@ -66,8 +67,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* BillingConductorClient::SERVICE_NAME = "billingconductor";
-const char* BillingConductorClient::ALLOCATION_TAG = "BillingConductorClient";
+namespace Aws
+{
+  namespace BillingConductor
+  {
+    const char SERVICE_NAME[] = "billingconductor";
+    const char ALLOCATION_TAG[] = "BillingConductorClient";
+  }
+}
+const char* BillingConductorClient::GetServiceName() {return SERVICE_NAME;}
+const char* BillingConductorClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 BillingConductorClient::BillingConductorClient(const BillingConductor::BillingConductorClientConfiguration& clientConfiguration,
                                                std::shared_ptr<BillingConductorEndpointProviderBase> endpointProvider) :
@@ -79,7 +88,7 @@ BillingConductorClient::BillingConductorClient(const BillingConductor::BillingCo
             Aws::MakeShared<BillingConductorErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<BillingConductorEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -95,7 +104,7 @@ BillingConductorClient::BillingConductorClient(const AWSCredentials& credentials
             Aws::MakeShared<BillingConductorErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<BillingConductorEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -111,7 +120,7 @@ BillingConductorClient::BillingConductorClient(const std::shared_ptr<AWSCredenti
             Aws::MakeShared<BillingConductorErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<BillingConductorEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -557,6 +566,33 @@ DisassociatePricingRulesOutcome BillingConductorClient::DisassociatePricingRules
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DisassociatePricingRules, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
       endpointResolutionOutcome.GetResult().AddPathSegments("/disassociate-pricing-rules");
       return DisassociatePricingRulesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+GetBillingGroupCostReportOutcome BillingConductorClient::GetBillingGroupCostReport(const GetBillingGroupCostReportRequest& request) const
+{
+  AWS_OPERATION_GUARD(GetBillingGroupCostReport);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetBillingGroupCostReport, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetBillingGroupCostReport, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetBillingGroupCostReport, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetBillingGroupCostReport",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetBillingGroupCostReportOutcome>(
+    [&]()-> GetBillingGroupCostReportOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetBillingGroupCostReport, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/get-billing-group-cost-report");
+      return GetBillingGroupCostReportOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

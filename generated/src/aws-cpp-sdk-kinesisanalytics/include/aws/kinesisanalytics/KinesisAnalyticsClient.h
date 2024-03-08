@@ -29,8 +29,8 @@ namespace KinesisAnalytics
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef KinesisAnalyticsClientConfiguration ClientConfigurationType;
       typedef KinesisAnalyticsEndpointProvider EndpointProviderType;
@@ -40,14 +40,14 @@ namespace KinesisAnalytics
         * is not specified, it will be initialized to default values.
         */
         KinesisAnalyticsClient(const Aws::KinesisAnalytics::KinesisAnalyticsClientConfiguration& clientConfiguration = Aws::KinesisAnalytics::KinesisAnalyticsClientConfiguration(),
-                               std::shared_ptr<KinesisAnalyticsEndpointProviderBase> endpointProvider = Aws::MakeShared<KinesisAnalyticsEndpointProvider>(ALLOCATION_TAG));
+                               std::shared_ptr<KinesisAnalyticsEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         KinesisAnalyticsClient(const Aws::Auth::AWSCredentials& credentials,
-                               std::shared_ptr<KinesisAnalyticsEndpointProviderBase> endpointProvider = Aws::MakeShared<KinesisAnalyticsEndpointProvider>(ALLOCATION_TAG),
+                               std::shared_ptr<KinesisAnalyticsEndpointProviderBase> endpointProvider = nullptr,
                                const Aws::KinesisAnalytics::KinesisAnalyticsClientConfiguration& clientConfiguration = Aws::KinesisAnalytics::KinesisAnalyticsClientConfiguration());
 
        /**
@@ -55,7 +55,7 @@ namespace KinesisAnalytics
         * the default http client factory will be used
         */
         KinesisAnalyticsClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                               std::shared_ptr<KinesisAnalyticsEndpointProviderBase> endpointProvider = Aws::MakeShared<KinesisAnalyticsEndpointProvider>(ALLOCATION_TAG),
+                               std::shared_ptr<KinesisAnalyticsEndpointProviderBase> endpointProvider = nullptr,
                                const Aws::KinesisAnalytics::KinesisAnalyticsClientConfiguration& clientConfiguration = Aws::KinesisAnalytics::KinesisAnalyticsClientConfiguration());
 
 

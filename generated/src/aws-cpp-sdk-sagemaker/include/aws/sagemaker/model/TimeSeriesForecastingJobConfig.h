@@ -500,49 +500,49 @@ namespace Model
 
 
     /**
-     * <p>The collection of holidays featurization attributes used to incorporate
+     * <p>The collection of holiday featurization attributes used to incorporate
      * national holiday information into your forecasting model.</p>
      */
     inline const Aws::Vector<HolidayConfigAttributes>& GetHolidayConfig() const{ return m_holidayConfig; }
 
     /**
-     * <p>The collection of holidays featurization attributes used to incorporate
+     * <p>The collection of holiday featurization attributes used to incorporate
      * national holiday information into your forecasting model.</p>
      */
     inline bool HolidayConfigHasBeenSet() const { return m_holidayConfigHasBeenSet; }
 
     /**
-     * <p>The collection of holidays featurization attributes used to incorporate
+     * <p>The collection of holiday featurization attributes used to incorporate
      * national holiday information into your forecasting model.</p>
      */
     inline void SetHolidayConfig(const Aws::Vector<HolidayConfigAttributes>& value) { m_holidayConfigHasBeenSet = true; m_holidayConfig = value; }
 
     /**
-     * <p>The collection of holidays featurization attributes used to incorporate
+     * <p>The collection of holiday featurization attributes used to incorporate
      * national holiday information into your forecasting model.</p>
      */
     inline void SetHolidayConfig(Aws::Vector<HolidayConfigAttributes>&& value) { m_holidayConfigHasBeenSet = true; m_holidayConfig = std::move(value); }
 
     /**
-     * <p>The collection of holidays featurization attributes used to incorporate
+     * <p>The collection of holiday featurization attributes used to incorporate
      * national holiday information into your forecasting model.</p>
      */
     inline TimeSeriesForecastingJobConfig& WithHolidayConfig(const Aws::Vector<HolidayConfigAttributes>& value) { SetHolidayConfig(value); return *this;}
 
     /**
-     * <p>The collection of holidays featurization attributes used to incorporate
+     * <p>The collection of holiday featurization attributes used to incorporate
      * national holiday information into your forecasting model.</p>
      */
     inline TimeSeriesForecastingJobConfig& WithHolidayConfig(Aws::Vector<HolidayConfigAttributes>&& value) { SetHolidayConfig(std::move(value)); return *this;}
 
     /**
-     * <p>The collection of holidays featurization attributes used to incorporate
+     * <p>The collection of holiday featurization attributes used to incorporate
      * national holiday information into your forecasting model.</p>
      */
     inline TimeSeriesForecastingJobConfig& AddHolidayConfig(const HolidayConfigAttributes& value) { m_holidayConfigHasBeenSet = true; m_holidayConfig.push_back(value); return *this; }
 
     /**
-     * <p>The collection of holidays featurization attributes used to incorporate
+     * <p>The collection of holiday featurization attributes used to incorporate
      * national holiday information into your forecasting model.</p>
      */
     inline TimeSeriesForecastingJobConfig& AddHolidayConfig(HolidayConfigAttributes&& value) { m_holidayConfigHasBeenSet = true; m_holidayConfig.push_back(std::move(value)); return *this; }

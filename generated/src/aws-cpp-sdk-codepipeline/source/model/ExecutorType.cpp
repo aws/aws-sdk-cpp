@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ExecutorType::NOT_SET:
+            return {};
           case ExecutorType::JobWorker:
             return "JobWorker";
           case ExecutorType::Lambda:

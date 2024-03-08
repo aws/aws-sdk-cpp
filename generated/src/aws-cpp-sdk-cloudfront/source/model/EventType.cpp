@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EventType::NOT_SET:
+            return {};
           case EventType::viewer_request:
             return "viewer-request";
           case EventType::viewer_response:

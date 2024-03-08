@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RefreshInterval::NOT_SET:
+            return {};
           case RefreshInterval::MINUTE15:
             return "MINUTE15";
           case RefreshInterval::MINUTE30:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DimensionValueSource::NOT_SET:
+            return {};
           case DimensionValueSource::messageTag:
             return "messageTag";
           case DimensionValueSource::emailHeader:

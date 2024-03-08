@@ -79,54 +79,54 @@ namespace Model
     /**
      * <p>The destination to send the metrics to. Valid values are
      * <code>CloudWatch</code> and <code>Evidently</code>. If you specify
-     * <code>Evidently</code>, you must also specify the ARN of the CloudWatchEvidently
-     * experiment that will receive the metrics and an IAM role that has permission to
-     * write to the experiment.</p>
+     * <code>Evidently</code>, you must also specify the Amazon Resource Name (ARN) of
+     * the CloudWatchEvidently experiment that will receive the metrics and an IAM role
+     * that has permission to write to the experiment.</p>
      */
     inline const MetricDestination& GetDestination() const{ return m_destination; }
 
     /**
      * <p>The destination to send the metrics to. Valid values are
      * <code>CloudWatch</code> and <code>Evidently</code>. If you specify
-     * <code>Evidently</code>, you must also specify the ARN of the CloudWatchEvidently
-     * experiment that will receive the metrics and an IAM role that has permission to
-     * write to the experiment.</p>
+     * <code>Evidently</code>, you must also specify the Amazon Resource Name (ARN) of
+     * the CloudWatchEvidently experiment that will receive the metrics and an IAM role
+     * that has permission to write to the experiment.</p>
      */
     inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
 
     /**
      * <p>The destination to send the metrics to. Valid values are
      * <code>CloudWatch</code> and <code>Evidently</code>. If you specify
-     * <code>Evidently</code>, you must also specify the ARN of the CloudWatchEvidently
-     * experiment that will receive the metrics and an IAM role that has permission to
-     * write to the experiment.</p>
+     * <code>Evidently</code>, you must also specify the Amazon Resource Name (ARN) of
+     * the CloudWatchEvidently experiment that will receive the metrics and an IAM role
+     * that has permission to write to the experiment.</p>
      */
     inline void SetDestination(const MetricDestination& value) { m_destinationHasBeenSet = true; m_destination = value; }
 
     /**
      * <p>The destination to send the metrics to. Valid values are
      * <code>CloudWatch</code> and <code>Evidently</code>. If you specify
-     * <code>Evidently</code>, you must also specify the ARN of the CloudWatchEvidently
-     * experiment that will receive the metrics and an IAM role that has permission to
-     * write to the experiment.</p>
+     * <code>Evidently</code>, you must also specify the Amazon Resource Name (ARN) of
+     * the CloudWatchEvidently experiment that will receive the metrics and an IAM role
+     * that has permission to write to the experiment.</p>
      */
     inline void SetDestination(MetricDestination&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
 
     /**
      * <p>The destination to send the metrics to. Valid values are
      * <code>CloudWatch</code> and <code>Evidently</code>. If you specify
-     * <code>Evidently</code>, you must also specify the ARN of the CloudWatchEvidently
-     * experiment that will receive the metrics and an IAM role that has permission to
-     * write to the experiment.</p>
+     * <code>Evidently</code>, you must also specify the Amazon Resource Name (ARN) of
+     * the CloudWatchEvidently experiment that will receive the metrics and an IAM role
+     * that has permission to write to the experiment.</p>
      */
     inline BatchCreateRumMetricDefinitionsRequest& WithDestination(const MetricDestination& value) { SetDestination(value); return *this;}
 
     /**
      * <p>The destination to send the metrics to. Valid values are
      * <code>CloudWatch</code> and <code>Evidently</code>. If you specify
-     * <code>Evidently</code>, you must also specify the ARN of the CloudWatchEvidently
-     * experiment that will receive the metrics and an IAM role that has permission to
-     * write to the experiment.</p>
+     * <code>Evidently</code>, you must also specify the Amazon Resource Name (ARN) of
+     * the CloudWatchEvidently experiment that will receive the metrics and an IAM role
+     * that has permission to write to the experiment.</p>
      */
     inline BatchCreateRumMetricDefinitionsRequest& WithDestination(MetricDestination&& value) { SetDestination(std::move(value)); return *this;}
 

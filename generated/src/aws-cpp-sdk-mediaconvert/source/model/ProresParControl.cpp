@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ProresParControl::NOT_SET:
+            return {};
           case ProresParControl::INITIALIZE_FROM_SOURCE:
             return "INITIALIZE_FROM_SOURCE";
           case ProresParControl::SPECIFIED:

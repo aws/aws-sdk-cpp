@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ParticipantTimerType::NOT_SET:
+            return {};
           case ParticipantTimerType::IDLE:
             return "IDLE";
           case ParticipantTimerType::DISCONNECT_NONCUSTOMER:

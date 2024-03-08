@@ -23,7 +23,12 @@ SenderIdInformation::SenderIdInformation() :
     m_senderIdHasBeenSet(false),
     m_isoCountryCodeHasBeenSet(false),
     m_messageTypesHasBeenSet(false),
-    m_monthlyLeasingPriceHasBeenSet(false)
+    m_monthlyLeasingPriceHasBeenSet(false),
+    m_deletionProtectionEnabled(false),
+    m_deletionProtectionEnabledHasBeenSet(false),
+    m_registered(false),
+    m_registeredHasBeenSet(false),
+    m_registrationIdHasBeenSet(false)
 {
 }
 
@@ -32,7 +37,12 @@ SenderIdInformation::SenderIdInformation(JsonView jsonValue) :
     m_senderIdHasBeenSet(false),
     m_isoCountryCodeHasBeenSet(false),
     m_messageTypesHasBeenSet(false),
-    m_monthlyLeasingPriceHasBeenSet(false)
+    m_monthlyLeasingPriceHasBeenSet(false),
+    m_deletionProtectionEnabled(false),
+    m_deletionProtectionEnabledHasBeenSet(false),
+    m_registered(false),
+    m_registeredHasBeenSet(false),
+    m_registrationIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -77,6 +87,27 @@ SenderIdInformation& SenderIdInformation::operator =(JsonView jsonValue)
     m_monthlyLeasingPriceHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DeletionProtectionEnabled"))
+  {
+    m_deletionProtectionEnabled = jsonValue.GetBool("DeletionProtectionEnabled");
+
+    m_deletionProtectionEnabledHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Registered"))
+  {
+    m_registered = jsonValue.GetBool("Registered");
+
+    m_registeredHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RegistrationId"))
+  {
+    m_registrationId = jsonValue.GetString("RegistrationId");
+
+    m_registrationIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -116,6 +147,24 @@ JsonValue SenderIdInformation::Jsonize() const
   if(m_monthlyLeasingPriceHasBeenSet)
   {
    payload.WithString("MonthlyLeasingPrice", m_monthlyLeasingPrice);
+
+  }
+
+  if(m_deletionProtectionEnabledHasBeenSet)
+  {
+   payload.WithBool("DeletionProtectionEnabled", m_deletionProtectionEnabled);
+
+  }
+
+  if(m_registeredHasBeenSet)
+  {
+   payload.WithBool("Registered", m_registered);
+
+  }
+
+  if(m_registrationIdHasBeenSet)
+  {
+   payload.WithString("RegistrationId", m_registrationId);
 
   }
 

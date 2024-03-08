@@ -89,6 +89,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ProjectStatus::NOT_SET:
+            return {};
           case ProjectStatus::Pending:
             return "Pending";
           case ProjectStatus::CreateInProgress:

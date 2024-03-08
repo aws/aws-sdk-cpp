@@ -79,6 +79,55 @@ namespace Model
 
 
     /**
+     * <p>Specifies the unique S3 on Outposts ARN for use with Resource Access Manager
+     * (RAM).</p>
+     */
+    inline const Aws::String& GetS3OutpostArn() const{ return m_s3OutpostArn; }
+
+    /**
+     * <p>Specifies the unique S3 on Outposts ARN for use with Resource Access Manager
+     * (RAM).</p>
+     */
+    inline bool S3OutpostArnHasBeenSet() const { return m_s3OutpostArnHasBeenSet; }
+
+    /**
+     * <p>Specifies the unique S3 on Outposts ARN for use with Resource Access Manager
+     * (RAM).</p>
+     */
+    inline void SetS3OutpostArn(const Aws::String& value) { m_s3OutpostArnHasBeenSet = true; m_s3OutpostArn = value; }
+
+    /**
+     * <p>Specifies the unique S3 on Outposts ARN for use with Resource Access Manager
+     * (RAM).</p>
+     */
+    inline void SetS3OutpostArn(Aws::String&& value) { m_s3OutpostArnHasBeenSet = true; m_s3OutpostArn = std::move(value); }
+
+    /**
+     * <p>Specifies the unique S3 on Outposts ARN for use with Resource Access Manager
+     * (RAM).</p>
+     */
+    inline void SetS3OutpostArn(const char* value) { m_s3OutpostArnHasBeenSet = true; m_s3OutpostArn.assign(value); }
+
+    /**
+     * <p>Specifies the unique S3 on Outposts ARN for use with Resource Access Manager
+     * (RAM).</p>
+     */
+    inline Outpost& WithS3OutpostArn(const Aws::String& value) { SetS3OutpostArn(value); return *this;}
+
+    /**
+     * <p>Specifies the unique S3 on Outposts ARN for use with Resource Access Manager
+     * (RAM).</p>
+     */
+    inline Outpost& WithS3OutpostArn(Aws::String&& value) { SetS3OutpostArn(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies the unique S3 on Outposts ARN for use with Resource Access Manager
+     * (RAM).</p>
+     */
+    inline Outpost& WithS3OutpostArn(const char* value) { SetS3OutpostArn(value); return *this;}
+
+
+    /**
      * <p>Specifies the unique identifier for the outpost.</p>
      */
     inline const Aws::String& GetOutpostId() const{ return m_outpostId; }
@@ -192,6 +241,9 @@ namespace Model
 
     Aws::String m_outpostArn;
     bool m_outpostArnHasBeenSet = false;
+
+    Aws::String m_s3OutpostArn;
+    bool m_s3OutpostArnHasBeenSet = false;
 
     Aws::String m_outpostId;
     bool m_outpostIdHasBeenSet = false;

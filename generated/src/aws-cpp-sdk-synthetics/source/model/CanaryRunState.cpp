@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CanaryRunState::NOT_SET:
+            return {};
           case CanaryRunState::RUNNING:
             return "RUNNING";
           case CanaryRunState::PASSED:

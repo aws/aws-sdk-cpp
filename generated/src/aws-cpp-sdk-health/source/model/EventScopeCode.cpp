@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EventScopeCode::NOT_SET:
+            return {};
           case EventScopeCode::PUBLIC_:
             return "PUBLIC";
           case EventScopeCode::ACCOUNT_SPECIFIC:

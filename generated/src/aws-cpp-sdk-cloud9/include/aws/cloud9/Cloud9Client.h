@@ -47,8 +47,8 @@ namespace Cloud9
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef Cloud9ClientConfiguration ClientConfigurationType;
       typedef Cloud9EndpointProvider EndpointProviderType;
@@ -58,14 +58,14 @@ namespace Cloud9
         * is not specified, it will be initialized to default values.
         */
         Cloud9Client(const Aws::Cloud9::Cloud9ClientConfiguration& clientConfiguration = Aws::Cloud9::Cloud9ClientConfiguration(),
-                     std::shared_ptr<Cloud9EndpointProviderBase> endpointProvider = Aws::MakeShared<Cloud9EndpointProvider>(ALLOCATION_TAG));
+                     std::shared_ptr<Cloud9EndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         Cloud9Client(const Aws::Auth::AWSCredentials& credentials,
-                     std::shared_ptr<Cloud9EndpointProviderBase> endpointProvider = Aws::MakeShared<Cloud9EndpointProvider>(ALLOCATION_TAG),
+                     std::shared_ptr<Cloud9EndpointProviderBase> endpointProvider = nullptr,
                      const Aws::Cloud9::Cloud9ClientConfiguration& clientConfiguration = Aws::Cloud9::Cloud9ClientConfiguration());
 
        /**
@@ -73,7 +73,7 @@ namespace Cloud9
         * the default http client factory will be used
         */
         Cloud9Client(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                     std::shared_ptr<Cloud9EndpointProviderBase> endpointProvider = Aws::MakeShared<Cloud9EndpointProvider>(ALLOCATION_TAG),
+                     std::shared_ptr<Cloud9EndpointProviderBase> endpointProvider = nullptr,
                      const Aws::Cloud9::Cloud9ClientConfiguration& clientConfiguration = Aws::Cloud9::Cloud9ClientConfiguration());
 
 

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MailType::NOT_SET:
+            return {};
           case MailType::MARKETING:
             return "MARKETING";
           case MailType::TRANSACTIONAL:

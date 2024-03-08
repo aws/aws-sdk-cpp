@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LicenseModel::NOT_SET:
+            return {};
           case LicenseModel::LicenseIncluded:
             return "LicenseIncluded";
           case LicenseModel::BringYourOwnLicense:

@@ -26,7 +26,8 @@ namespace Model
     MPD,
     MXF,
     WEBM,
-    RAW
+    RAW,
+    Y4M
   };
 
 namespace ContainerTypeMapper

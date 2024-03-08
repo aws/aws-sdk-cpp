@@ -27,7 +27,7 @@ namespace Model
 {
 
   /**
-   * <p>Represents user interaction event information sent using the
+   * <p>Represents item interaction event information sent using the
    * <code>PutEvents</code> API.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-events-2018-03-22/Event">AWS
    * API Reference</a></p>
@@ -44,7 +44,7 @@ namespace Model
     /**
      * <p>An ID associated with the event. If an event ID is not provided, Amazon
      * Personalize generates a unique ID for the event. An event ID is not used as an
-     * input to the model. Amazon Personalize uses the event ID to distinquish unique
+     * input to the model. Amazon Personalize uses the event ID to distinguish unique
      * events. Any subsequent events after the first with the same event ID are not
      * used in model training.</p>
      */
@@ -53,7 +53,7 @@ namespace Model
     /**
      * <p>An ID associated with the event. If an event ID is not provided, Amazon
      * Personalize generates a unique ID for the event. An event ID is not used as an
-     * input to the model. Amazon Personalize uses the event ID to distinquish unique
+     * input to the model. Amazon Personalize uses the event ID to distinguish unique
      * events. Any subsequent events after the first with the same event ID are not
      * used in model training.</p>
      */
@@ -62,7 +62,7 @@ namespace Model
     /**
      * <p>An ID associated with the event. If an event ID is not provided, Amazon
      * Personalize generates a unique ID for the event. An event ID is not used as an
-     * input to the model. Amazon Personalize uses the event ID to distinquish unique
+     * input to the model. Amazon Personalize uses the event ID to distinguish unique
      * events. Any subsequent events after the first with the same event ID are not
      * used in model training.</p>
      */
@@ -71,7 +71,7 @@ namespace Model
     /**
      * <p>An ID associated with the event. If an event ID is not provided, Amazon
      * Personalize generates a unique ID for the event. An event ID is not used as an
-     * input to the model. Amazon Personalize uses the event ID to distinquish unique
+     * input to the model. Amazon Personalize uses the event ID to distinguish unique
      * events. Any subsequent events after the first with the same event ID are not
      * used in model training.</p>
      */
@@ -80,7 +80,7 @@ namespace Model
     /**
      * <p>An ID associated with the event. If an event ID is not provided, Amazon
      * Personalize generates a unique ID for the event. An event ID is not used as an
-     * input to the model. Amazon Personalize uses the event ID to distinquish unique
+     * input to the model. Amazon Personalize uses the event ID to distinguish unique
      * events. Any subsequent events after the first with the same event ID are not
      * used in model training.</p>
      */
@@ -89,7 +89,7 @@ namespace Model
     /**
      * <p>An ID associated with the event. If an event ID is not provided, Amazon
      * Personalize generates a unique ID for the event. An event ID is not used as an
-     * input to the model. Amazon Personalize uses the event ID to distinquish unique
+     * input to the model. Amazon Personalize uses the event ID to distinguish unique
      * events. Any subsequent events after the first with the same event ID are not
      * used in model training.</p>
      */
@@ -98,7 +98,7 @@ namespace Model
     /**
      * <p>An ID associated with the event. If an event ID is not provided, Amazon
      * Personalize generates a unique ID for the event. An event ID is not used as an
-     * input to the model. Amazon Personalize uses the event ID to distinquish unique
+     * input to the model. Amazon Personalize uses the event ID to distinguish unique
      * events. Any subsequent events after the first with the same event ID are not
      * used in model training.</p>
      */
@@ -107,7 +107,7 @@ namespace Model
     /**
      * <p>An ID associated with the event. If an event ID is not provided, Amazon
      * Personalize generates a unique ID for the event. An event ID is not used as an
-     * input to the model. Amazon Personalize uses the event ID to distinquish unique
+     * input to the model. Amazon Personalize uses the event ID to distinguish unique
      * events. Any subsequent events after the first with the same event ID are not
      * used in model training.</p>
      */
@@ -116,131 +116,131 @@ namespace Model
 
     /**
      * <p>The type of event, such as click or download. This property corresponds to
-     * the <code>EVENT_TYPE</code> field of your Interactions schema and depends on the
-     * types of events you are tracking.</p>
+     * the <code>EVENT_TYPE</code> field of your Item interactions dataset's schema and
+     * depends on the types of events you are tracking.</p>
      */
     inline const Aws::String& GetEventType() const{ return m_eventType; }
 
     /**
      * <p>The type of event, such as click or download. This property corresponds to
-     * the <code>EVENT_TYPE</code> field of your Interactions schema and depends on the
-     * types of events you are tracking.</p>
+     * the <code>EVENT_TYPE</code> field of your Item interactions dataset's schema and
+     * depends on the types of events you are tracking.</p>
      */
     inline bool EventTypeHasBeenSet() const { return m_eventTypeHasBeenSet; }
 
     /**
      * <p>The type of event, such as click or download. This property corresponds to
-     * the <code>EVENT_TYPE</code> field of your Interactions schema and depends on the
-     * types of events you are tracking.</p>
+     * the <code>EVENT_TYPE</code> field of your Item interactions dataset's schema and
+     * depends on the types of events you are tracking.</p>
      */
     inline void SetEventType(const Aws::String& value) { m_eventTypeHasBeenSet = true; m_eventType = value; }
 
     /**
      * <p>The type of event, such as click or download. This property corresponds to
-     * the <code>EVENT_TYPE</code> field of your Interactions schema and depends on the
-     * types of events you are tracking.</p>
+     * the <code>EVENT_TYPE</code> field of your Item interactions dataset's schema and
+     * depends on the types of events you are tracking.</p>
      */
     inline void SetEventType(Aws::String&& value) { m_eventTypeHasBeenSet = true; m_eventType = std::move(value); }
 
     /**
      * <p>The type of event, such as click or download. This property corresponds to
-     * the <code>EVENT_TYPE</code> field of your Interactions schema and depends on the
-     * types of events you are tracking.</p>
+     * the <code>EVENT_TYPE</code> field of your Item interactions dataset's schema and
+     * depends on the types of events you are tracking.</p>
      */
     inline void SetEventType(const char* value) { m_eventTypeHasBeenSet = true; m_eventType.assign(value); }
 
     /**
      * <p>The type of event, such as click or download. This property corresponds to
-     * the <code>EVENT_TYPE</code> field of your Interactions schema and depends on the
-     * types of events you are tracking.</p>
+     * the <code>EVENT_TYPE</code> field of your Item interactions dataset's schema and
+     * depends on the types of events you are tracking.</p>
      */
     inline Event& WithEventType(const Aws::String& value) { SetEventType(value); return *this;}
 
     /**
      * <p>The type of event, such as click or download. This property corresponds to
-     * the <code>EVENT_TYPE</code> field of your Interactions schema and depends on the
-     * types of events you are tracking.</p>
+     * the <code>EVENT_TYPE</code> field of your Item interactions dataset's schema and
+     * depends on the types of events you are tracking.</p>
      */
     inline Event& WithEventType(Aws::String&& value) { SetEventType(std::move(value)); return *this;}
 
     /**
      * <p>The type of event, such as click or download. This property corresponds to
-     * the <code>EVENT_TYPE</code> field of your Interactions schema and depends on the
-     * types of events you are tracking.</p>
+     * the <code>EVENT_TYPE</code> field of your Item interactions dataset's schema and
+     * depends on the types of events you are tracking.</p>
      */
     inline Event& WithEventType(const char* value) { SetEventType(value); return *this;}
 
 
     /**
      * <p>The event value that corresponds to the <code>EVENT_VALUE</code> field of the
-     * Interactions schema.</p>
+     * Item interactions schema.</p>
      */
     inline double GetEventValue() const{ return m_eventValue; }
 
     /**
      * <p>The event value that corresponds to the <code>EVENT_VALUE</code> field of the
-     * Interactions schema.</p>
+     * Item interactions schema.</p>
      */
     inline bool EventValueHasBeenSet() const { return m_eventValueHasBeenSet; }
 
     /**
      * <p>The event value that corresponds to the <code>EVENT_VALUE</code> field of the
-     * Interactions schema.</p>
+     * Item interactions schema.</p>
      */
     inline void SetEventValue(double value) { m_eventValueHasBeenSet = true; m_eventValue = value; }
 
     /**
      * <p>The event value that corresponds to the <code>EVENT_VALUE</code> field of the
-     * Interactions schema.</p>
+     * Item interactions schema.</p>
      */
     inline Event& WithEventValue(double value) { SetEventValue(value); return *this;}
 
 
     /**
      * <p>The item ID key that corresponds to the <code>ITEM_ID</code> field of the
-     * Interactions schema.</p>
+     * Item interactions dataset's schema.</p>
      */
     inline const Aws::String& GetItemId() const{ return m_itemId; }
 
     /**
      * <p>The item ID key that corresponds to the <code>ITEM_ID</code> field of the
-     * Interactions schema.</p>
+     * Item interactions dataset's schema.</p>
      */
     inline bool ItemIdHasBeenSet() const { return m_itemIdHasBeenSet; }
 
     /**
      * <p>The item ID key that corresponds to the <code>ITEM_ID</code> field of the
-     * Interactions schema.</p>
+     * Item interactions dataset's schema.</p>
      */
     inline void SetItemId(const Aws::String& value) { m_itemIdHasBeenSet = true; m_itemId = value; }
 
     /**
      * <p>The item ID key that corresponds to the <code>ITEM_ID</code> field of the
-     * Interactions schema.</p>
+     * Item interactions dataset's schema.</p>
      */
     inline void SetItemId(Aws::String&& value) { m_itemIdHasBeenSet = true; m_itemId = std::move(value); }
 
     /**
      * <p>The item ID key that corresponds to the <code>ITEM_ID</code> field of the
-     * Interactions schema.</p>
+     * Item interactions dataset's schema.</p>
      */
     inline void SetItemId(const char* value) { m_itemIdHasBeenSet = true; m_itemId.assign(value); }
 
     /**
      * <p>The item ID key that corresponds to the <code>ITEM_ID</code> field of the
-     * Interactions schema.</p>
+     * Item interactions dataset's schema.</p>
      */
     inline Event& WithItemId(const Aws::String& value) { SetItemId(value); return *this;}
 
     /**
      * <p>The item ID key that corresponds to the <code>ITEM_ID</code> field of the
-     * Interactions schema.</p>
+     * Item interactions dataset's schema.</p>
      */
     inline Event& WithItemId(Aws::String&& value) { SetItemId(std::move(value)); return *this;}
 
     /**
      * <p>The item ID key that corresponds to the <code>ITEM_ID</code> field of the
-     * Interactions schema.</p>
+     * Item interactions dataset's schema.</p>
      */
     inline Event& WithItemId(const char* value) { SetItemId(value); return *this;}
 
@@ -252,9 +252,13 @@ namespace Model
      * the number of movie ratings made by the user.</p> <p>Each item in the map
      * consists of a key-value pair. For example,</p> <p> <code>{"numberOfRatings":
      * "12"}</code> </p> <p>The keys use camel case names that match the fields in the
-     * Interactions schema. In the above example, the <code>numberOfRatings</code>
-     * would match the 'NUMBER_OF_RATINGS' field defined in the Interactions
-     * schema.</p>
+     * Item interactions dataset's schema. In the above example, the
+     * <code>numberOfRatings</code> would match the 'NUMBER_OF_RATINGS' field defined
+     * in the Item interactions dataset's schema.</p> <p> The following can't be
+     * included as a keyword for properties (case insensitive). </p> <ul> <li> <p>
+     * userId </p> </li> <li> <p> sessionId </p> </li> <li> <p>eventType</p> </li> <li>
+     * <p>timestamp</p> </li> <li> <p>recommendationId</p> </li> <li> <p>impression</p>
+     * </li> </ul>
      */
     inline const Aws::String& GetProperties() const{ return m_properties; }
 
@@ -265,9 +269,13 @@ namespace Model
      * the number of movie ratings made by the user.</p> <p>Each item in the map
      * consists of a key-value pair. For example,</p> <p> <code>{"numberOfRatings":
      * "12"}</code> </p> <p>The keys use camel case names that match the fields in the
-     * Interactions schema. In the above example, the <code>numberOfRatings</code>
-     * would match the 'NUMBER_OF_RATINGS' field defined in the Interactions
-     * schema.</p>
+     * Item interactions dataset's schema. In the above example, the
+     * <code>numberOfRatings</code> would match the 'NUMBER_OF_RATINGS' field defined
+     * in the Item interactions dataset's schema.</p> <p> The following can't be
+     * included as a keyword for properties (case insensitive). </p> <ul> <li> <p>
+     * userId </p> </li> <li> <p> sessionId </p> </li> <li> <p>eventType</p> </li> <li>
+     * <p>timestamp</p> </li> <li> <p>recommendationId</p> </li> <li> <p>impression</p>
+     * </li> </ul>
      */
     inline bool PropertiesHasBeenSet() const { return m_propertiesHasBeenSet; }
 
@@ -278,9 +286,13 @@ namespace Model
      * the number of movie ratings made by the user.</p> <p>Each item in the map
      * consists of a key-value pair. For example,</p> <p> <code>{"numberOfRatings":
      * "12"}</code> </p> <p>The keys use camel case names that match the fields in the
-     * Interactions schema. In the above example, the <code>numberOfRatings</code>
-     * would match the 'NUMBER_OF_RATINGS' field defined in the Interactions
-     * schema.</p>
+     * Item interactions dataset's schema. In the above example, the
+     * <code>numberOfRatings</code> would match the 'NUMBER_OF_RATINGS' field defined
+     * in the Item interactions dataset's schema.</p> <p> The following can't be
+     * included as a keyword for properties (case insensitive). </p> <ul> <li> <p>
+     * userId </p> </li> <li> <p> sessionId </p> </li> <li> <p>eventType</p> </li> <li>
+     * <p>timestamp</p> </li> <li> <p>recommendationId</p> </li> <li> <p>impression</p>
+     * </li> </ul>
      */
     inline void SetProperties(const Aws::String& value) { m_propertiesHasBeenSet = true; m_properties = value; }
 
@@ -291,9 +303,13 @@ namespace Model
      * the number of movie ratings made by the user.</p> <p>Each item in the map
      * consists of a key-value pair. For example,</p> <p> <code>{"numberOfRatings":
      * "12"}</code> </p> <p>The keys use camel case names that match the fields in the
-     * Interactions schema. In the above example, the <code>numberOfRatings</code>
-     * would match the 'NUMBER_OF_RATINGS' field defined in the Interactions
-     * schema.</p>
+     * Item interactions dataset's schema. In the above example, the
+     * <code>numberOfRatings</code> would match the 'NUMBER_OF_RATINGS' field defined
+     * in the Item interactions dataset's schema.</p> <p> The following can't be
+     * included as a keyword for properties (case insensitive). </p> <ul> <li> <p>
+     * userId </p> </li> <li> <p> sessionId </p> </li> <li> <p>eventType</p> </li> <li>
+     * <p>timestamp</p> </li> <li> <p>recommendationId</p> </li> <li> <p>impression</p>
+     * </li> </ul>
      */
     inline void SetProperties(Aws::String&& value) { m_propertiesHasBeenSet = true; m_properties = std::move(value); }
 
@@ -304,9 +320,13 @@ namespace Model
      * the number of movie ratings made by the user.</p> <p>Each item in the map
      * consists of a key-value pair. For example,</p> <p> <code>{"numberOfRatings":
      * "12"}</code> </p> <p>The keys use camel case names that match the fields in the
-     * Interactions schema. In the above example, the <code>numberOfRatings</code>
-     * would match the 'NUMBER_OF_RATINGS' field defined in the Interactions
-     * schema.</p>
+     * Item interactions dataset's schema. In the above example, the
+     * <code>numberOfRatings</code> would match the 'NUMBER_OF_RATINGS' field defined
+     * in the Item interactions dataset's schema.</p> <p> The following can't be
+     * included as a keyword for properties (case insensitive). </p> <ul> <li> <p>
+     * userId </p> </li> <li> <p> sessionId </p> </li> <li> <p>eventType</p> </li> <li>
+     * <p>timestamp</p> </li> <li> <p>recommendationId</p> </li> <li> <p>impression</p>
+     * </li> </ul>
      */
     inline void SetProperties(const char* value) { m_propertiesHasBeenSet = true; m_properties.assign(value); }
 
@@ -317,9 +337,13 @@ namespace Model
      * the number of movie ratings made by the user.</p> <p>Each item in the map
      * consists of a key-value pair. For example,</p> <p> <code>{"numberOfRatings":
      * "12"}</code> </p> <p>The keys use camel case names that match the fields in the
-     * Interactions schema. In the above example, the <code>numberOfRatings</code>
-     * would match the 'NUMBER_OF_RATINGS' field defined in the Interactions
-     * schema.</p>
+     * Item interactions dataset's schema. In the above example, the
+     * <code>numberOfRatings</code> would match the 'NUMBER_OF_RATINGS' field defined
+     * in the Item interactions dataset's schema.</p> <p> The following can't be
+     * included as a keyword for properties (case insensitive). </p> <ul> <li> <p>
+     * userId </p> </li> <li> <p> sessionId </p> </li> <li> <p>eventType</p> </li> <li>
+     * <p>timestamp</p> </li> <li> <p>recommendationId</p> </li> <li> <p>impression</p>
+     * </li> </ul>
      */
     inline Event& WithProperties(const Aws::String& value) { SetProperties(value); return *this;}
 
@@ -330,9 +354,13 @@ namespace Model
      * the number of movie ratings made by the user.</p> <p>Each item in the map
      * consists of a key-value pair. For example,</p> <p> <code>{"numberOfRatings":
      * "12"}</code> </p> <p>The keys use camel case names that match the fields in the
-     * Interactions schema. In the above example, the <code>numberOfRatings</code>
-     * would match the 'NUMBER_OF_RATINGS' field defined in the Interactions
-     * schema.</p>
+     * Item interactions dataset's schema. In the above example, the
+     * <code>numberOfRatings</code> would match the 'NUMBER_OF_RATINGS' field defined
+     * in the Item interactions dataset's schema.</p> <p> The following can't be
+     * included as a keyword for properties (case insensitive). </p> <ul> <li> <p>
+     * userId </p> </li> <li> <p> sessionId </p> </li> <li> <p>eventType</p> </li> <li>
+     * <p>timestamp</p> </li> <li> <p>recommendationId</p> </li> <li> <p>impression</p>
+     * </li> </ul>
      */
     inline Event& WithProperties(Aws::String&& value) { SetProperties(std::move(value)); return *this;}
 
@@ -343,9 +371,13 @@ namespace Model
      * the number of movie ratings made by the user.</p> <p>Each item in the map
      * consists of a key-value pair. For example,</p> <p> <code>{"numberOfRatings":
      * "12"}</code> </p> <p>The keys use camel case names that match the fields in the
-     * Interactions schema. In the above example, the <code>numberOfRatings</code>
-     * would match the 'NUMBER_OF_RATINGS' field defined in the Interactions
-     * schema.</p>
+     * Item interactions dataset's schema. In the above example, the
+     * <code>numberOfRatings</code> would match the 'NUMBER_OF_RATINGS' field defined
+     * in the Item interactions dataset's schema.</p> <p> The following can't be
+     * included as a keyword for properties (case insensitive). </p> <ul> <li> <p>
+     * userId </p> </li> <li> <p> sessionId </p> </li> <li> <p>eventType</p> </li> <li>
+     * <p>timestamp</p> </li> <li> <p>recommendationId</p> </li> <li> <p>impression</p>
+     * </li> </ul>
      */
     inline Event& WithProperties(const char* value) { SetProperties(value); return *this;}
 

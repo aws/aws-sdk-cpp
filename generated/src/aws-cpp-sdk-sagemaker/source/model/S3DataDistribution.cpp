@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case S3DataDistribution::NOT_SET:
+            return {};
           case S3DataDistribution::FullyReplicated:
             return "FullyReplicated";
           case S3DataDistribution::ShardedByS3Key:

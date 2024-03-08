@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DependentServiceName::NOT_SET:
+            return {};
           case DependentServiceName::AWSCONFIG:
             return "AWSCONFIG";
           case DependentServiceName::AWSWAF:

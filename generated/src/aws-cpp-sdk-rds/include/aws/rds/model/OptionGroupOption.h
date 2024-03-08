@@ -248,22 +248,22 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether the option requires a port.</p>
+     * <p>Indicates whether the option requires a port.</p>
      */
     inline bool GetPortRequired() const{ return m_portRequired; }
 
     /**
-     * <p>Specifies whether the option requires a port.</p>
+     * <p>Indicates whether the option requires a port.</p>
      */
     inline bool PortRequiredHasBeenSet() const { return m_portRequiredHasBeenSet; }
 
     /**
-     * <p>Specifies whether the option requires a port.</p>
+     * <p>Indicates whether the option requires a port.</p>
      */
     inline void SetPortRequired(bool value) { m_portRequiredHasBeenSet = true; m_portRequired = value; }
 
     /**
-     * <p>Specifies whether the option requires a port.</p>
+     * <p>Indicates whether the option requires a port.</p>
      */
     inline OptionGroupOption& WithPortRequired(bool value) { SetPortRequired(value); return *this;}
 
@@ -613,25 +613,25 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether the option can be copied across Amazon Web Services
+     * <p>Indicates whether the option can be copied across Amazon Web Services
      * accounts.</p>
      */
     inline bool GetCopyableCrossAccount() const{ return m_copyableCrossAccount; }
 
     /**
-     * <p>Specifies whether the option can be copied across Amazon Web Services
+     * <p>Indicates whether the option can be copied across Amazon Web Services
      * accounts.</p>
      */
     inline bool CopyableCrossAccountHasBeenSet() const { return m_copyableCrossAccountHasBeenSet; }
 
     /**
-     * <p>Specifies whether the option can be copied across Amazon Web Services
+     * <p>Indicates whether the option can be copied across Amazon Web Services
      * accounts.</p>
      */
     inline void SetCopyableCrossAccount(bool value) { m_copyableCrossAccountHasBeenSet = true; m_copyableCrossAccount = value; }
 
     /**
-     * <p>Specifies whether the option can be copied across Amazon Web Services
+     * <p>Indicates whether the option can be copied across Amazon Web Services
      * accounts.</p>
      */
     inline OptionGroupOption& WithCopyableCrossAccount(bool value) { SetCopyableCrossAccount(value); return *this;}

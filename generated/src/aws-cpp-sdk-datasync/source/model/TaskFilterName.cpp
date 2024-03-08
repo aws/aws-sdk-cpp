@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TaskFilterName::NOT_SET:
+            return {};
           case TaskFilterName::LocationId:
             return "LocationId";
           case TaskFilterName::CreationTime:

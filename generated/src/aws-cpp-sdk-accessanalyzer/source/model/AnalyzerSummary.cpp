@@ -29,7 +29,8 @@ AnalyzerSummary::AnalyzerSummary() :
     m_tagsHasBeenSet(false),
     m_status(AnalyzerStatus::NOT_SET),
     m_statusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false)
+    m_statusReasonHasBeenSet(false),
+    m_configurationHasBeenSet(false)
 {
 }
 
@@ -44,7 +45,8 @@ AnalyzerSummary::AnalyzerSummary(JsonView jsonValue) :
     m_tagsHasBeenSet(false),
     m_status(AnalyzerStatus::NOT_SET),
     m_statusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false)
+    m_statusReasonHasBeenSet(false),
+    m_configurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -117,6 +119,13 @@ AnalyzerSummary& AnalyzerSummary::operator =(JsonView jsonValue)
     m_statusReasonHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("configuration"))
+  {
+    m_configuration = jsonValue.GetObject("configuration");
+
+    m_configurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -176,6 +185,12 @@ JsonValue AnalyzerSummary::Jsonize() const
   if(m_statusReasonHasBeenSet)
   {
    payload.WithObject("statusReason", m_statusReason.Jsonize());
+
+  }
+
+  if(m_configurationHasBeenSet)
+  {
+   payload.WithObject("configuration", m_configuration.Jsonize());
 
   }
 

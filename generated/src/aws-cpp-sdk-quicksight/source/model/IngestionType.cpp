@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case IngestionType::NOT_SET:
+            return {};
           case IngestionType::INCREMENTAL_REFRESH:
             return "INCREMENTAL_REFRESH";
           case IngestionType::FULL_REFRESH:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StorageAccessLevel::NOT_SET:
+            return {};
           case StorageAccessLevel::public_:
             return "public";
           case StorageAccessLevel::protected_:

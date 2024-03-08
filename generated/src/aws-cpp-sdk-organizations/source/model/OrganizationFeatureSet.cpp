@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OrganizationFeatureSet::NOT_SET:
+            return {};
           case OrganizationFeatureSet::ALL:
             return "ALL";
           case OrganizationFeatureSet::CONSOLIDATED_BILLING:

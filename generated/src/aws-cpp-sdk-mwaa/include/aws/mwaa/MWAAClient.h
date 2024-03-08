@@ -43,21 +43,18 @@ namespace MWAA
    * href="https://docs.aws.amazon.com/mwaa/latest/API/API_CreateCliToken.html
    * ">CreateCliToken</a> </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/mwaa/latest/API/API_CreateWebLoginToken.html">CreateWebLoginToken</a>
-   * </p> </li> </ul> </li> <li> <p> <code>ops.airflow.{region}.amazonaws.com</code>
-   * - This endpoint is used to push environment metrics that track environment
-   * health.</p> <ul> <li> <p> <a
-   * href="https://docs.aws.amazon.com/mwaa/latest/API/API_PublishMetrics.html
-   * ">PublishMetrics</a> </p> </li> </ul> </li> </ul> <p> <b>Regions</b> </p> <p>For
-   * a list of regions that Amazon MWAA supports, see <a
-   * href="https://docs.aws.amazon.com/mwaa/latest/userguide/what-is-mwaa.html#regions-mwaa">Region
-   * availability</a> in the <i>Amazon MWAA User Guide</i>.</p></p>
+   * </p> </li> </ul> </li> </ul> <p> <b>Regions</b> </p> <p>For a list of supported
+   * regions, see <a
+   * href="https://docs.aws.amazon.com/general/latest/gr/mwaa.html">Amazon MWAA
+   * endpoints and quotas</a> in the <i>Amazon Web Services General
+   * Reference</i>.</p></p>
    */
   class AWS_MWAA_API MWAAClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<MWAAClient>
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef MWAAClientConfiguration ClientConfigurationType;
       typedef MWAAEndpointProvider EndpointProviderType;
@@ -67,14 +64,14 @@ namespace MWAA
         * is not specified, it will be initialized to default values.
         */
         MWAAClient(const Aws::MWAA::MWAAClientConfiguration& clientConfiguration = Aws::MWAA::MWAAClientConfiguration(),
-                   std::shared_ptr<MWAAEndpointProviderBase> endpointProvider = Aws::MakeShared<MWAAEndpointProvider>(ALLOCATION_TAG));
+                   std::shared_ptr<MWAAEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         MWAAClient(const Aws::Auth::AWSCredentials& credentials,
-                   std::shared_ptr<MWAAEndpointProviderBase> endpointProvider = Aws::MakeShared<MWAAEndpointProvider>(ALLOCATION_TAG),
+                   std::shared_ptr<MWAAEndpointProviderBase> endpointProvider = nullptr,
                    const Aws::MWAA::MWAAClientConfiguration& clientConfiguration = Aws::MWAA::MWAAClientConfiguration());
 
        /**
@@ -82,7 +79,7 @@ namespace MWAA
         * the default http client factory will be used
         */
         MWAAClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                   std::shared_ptr<MWAAEndpointProviderBase> endpointProvider = Aws::MakeShared<MWAAEndpointProvider>(ALLOCATION_TAG),
+                   std::shared_ptr<MWAAEndpointProviderBase> endpointProvider = nullptr,
                    const Aws::MWAA::MWAAClientConfiguration& clientConfiguration = Aws::MWAA::MWAAClientConfiguration());
 
 
@@ -293,32 +290,6 @@ namespace MWAA
         void ListTagsForResourceAsync(const ListTagsForResourceRequestT& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&MWAAClient::ListTagsForResource, request, handler, context);
-        }
-
-        /**
-         * <p> <b>Internal only</b>. Publishes environment health metrics to Amazon
-         * CloudWatch.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/mwaa-2020-07-01/PublishMetrics">AWS
-         * API Reference</a></p>
-         */
-        virtual Model::PublishMetricsOutcome PublishMetrics(const Model::PublishMetricsRequest& request) const;
-
-        /**
-         * A Callable wrapper for PublishMetrics that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        template<typename PublishMetricsRequestT = Model::PublishMetricsRequest>
-        Model::PublishMetricsOutcomeCallable PublishMetricsCallable(const PublishMetricsRequestT& request) const
-        {
-            return SubmitCallable(&MWAAClient::PublishMetrics, request);
-        }
-
-        /**
-         * An Async wrapper for PublishMetrics that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        template<typename PublishMetricsRequestT = Model::PublishMetricsRequest>
-        void PublishMetricsAsync(const PublishMetricsRequestT& request, const PublishMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
-        {
-            return SubmitAsync(&MWAAClient::PublishMetrics, request, handler, context);
         }
 
         /**

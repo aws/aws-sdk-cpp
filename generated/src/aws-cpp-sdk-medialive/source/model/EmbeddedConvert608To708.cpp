@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EmbeddedConvert608To708::NOT_SET:
+            return {};
           case EmbeddedConvert608To708::DISABLED:
             return "DISABLED";
           case EmbeddedConvert608To708::UPCONVERT:

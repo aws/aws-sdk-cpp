@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UsernameAttributeType::NOT_SET:
+            return {};
           case UsernameAttributeType::phone_number:
             return "phone_number";
           case UsernameAttributeType::email:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AdvancedInputFilterSharpen::NOT_SET:
+            return {};
           case AdvancedInputFilterSharpen::OFF:
             return "OFF";
           case AdvancedInputFilterSharpen::LOW:

@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VolumeLifecycle::NOT_SET:
+            return {};
           case VolumeLifecycle::CREATING:
             return "CREATING";
           case VolumeLifecycle::CREATED:

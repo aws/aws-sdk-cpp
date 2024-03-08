@@ -35,37 +35,37 @@ namespace Model
 
     /**
      * <p>Information about which fields will be present in the layout, the order of
-     * the fields, and a read-only attribute of the field. </p>
+     * the fields.</p>
      */
     inline const LayoutContent& GetContent() const{ return m_content; }
 
     /**
      * <p>Information about which fields will be present in the layout, the order of
-     * the fields, and a read-only attribute of the field. </p>
+     * the fields.</p>
      */
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
 
     /**
      * <p>Information about which fields will be present in the layout, the order of
-     * the fields, and a read-only attribute of the field. </p>
+     * the fields.</p>
      */
     inline void SetContent(const LayoutContent& value) { m_contentHasBeenSet = true; m_content = value; }
 
     /**
      * <p>Information about which fields will be present in the layout, the order of
-     * the fields, and a read-only attribute of the field. </p>
+     * the fields.</p>
      */
     inline void SetContent(LayoutContent&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
 
     /**
      * <p>Information about which fields will be present in the layout, the order of
-     * the fields, and a read-only attribute of the field. </p>
+     * the fields.</p>
      */
     inline UpdateLayoutRequest& WithContent(const LayoutContent& value) { SetContent(value); return *this;}
 
     /**
      * <p>Information about which fields will be present in the layout, the order of
-     * the fields, and a read-only attribute of the field. </p>
+     * the fields.</p>
      */
     inline UpdateLayoutRequest& WithContent(LayoutContent&& value) { SetContent(std::move(value)); return *this;}
 

@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ScalableDimension::NOT_SET:
+            return {};
           case ScalableDimension::autoscaling_autoScalingGroup_DesiredCapacity:
             return "autoscaling:autoScalingGroup:DesiredCapacity";
           case ScalableDimension::ecs_service_DesiredCount:

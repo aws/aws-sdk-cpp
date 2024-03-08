@@ -19,6 +19,7 @@ ListDataSetsRequest::ListDataSetsRequest() :
     m_applicationIdHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
+    m_nameFilterHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_prefixHasBeenSet(false)
 {
@@ -36,6 +37,13 @@ void ListDataSetsRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_maxResults;
       uri.AddQueryStringParameter("maxResults", ss.str());
+      ss.str("");
+    }
+
+    if(m_nameFilterHasBeenSet)
+    {
+      ss << m_nameFilter;
+      uri.AddQueryStringParameter("nameFilter", ss.str());
       ss.str("");
     }
 

@@ -26,7 +26,9 @@ ModifyDBInstanceRequest::ModifyDBInstanceRequest() :
     m_promotionTierHasBeenSet(false),
     m_enablePerformanceInsights(false),
     m_enablePerformanceInsightsHasBeenSet(false),
-    m_performanceInsightsKMSKeyIdHasBeenSet(false)
+    m_performanceInsightsKMSKeyIdHasBeenSet(false),
+    m_certificateRotationRestart(false),
+    m_certificateRotationRestartHasBeenSet(false)
 {
 }
 
@@ -87,6 +89,11 @@ Aws::String ModifyDBInstanceRequest::SerializePayload() const
   if(m_performanceInsightsKMSKeyIdHasBeenSet)
   {
     ss << "PerformanceInsightsKMSKeyId=" << StringUtils::URLEncode(m_performanceInsightsKMSKeyId.c_str()) << "&";
+  }
+
+  if(m_certificateRotationRestartHasBeenSet)
+  {
+    ss << "CertificateRotationRestart=" << std::boolalpha << m_certificateRotationRestart << "&";
   }
 
   ss << "Version=2014-10-31";

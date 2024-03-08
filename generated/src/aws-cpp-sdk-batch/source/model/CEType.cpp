@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CEType::NOT_SET:
+            return {};
           case CEType::MANAGED:
             return "MANAGED";
           case CEType::UNMANAGED:

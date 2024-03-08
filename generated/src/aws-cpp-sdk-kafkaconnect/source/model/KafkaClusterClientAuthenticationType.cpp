@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case KafkaClusterClientAuthenticationType::NOT_SET:
+            return {};
           case KafkaClusterClientAuthenticationType::NONE:
             return "NONE";
           case KafkaClusterClientAuthenticationType::IAM:

@@ -97,7 +97,8 @@ namespace Model
     SetResourceAccessForBucket,
     UpdateInstanceMetadataOptions,
     StartGUISession,
-    StopGUISession
+    StopGUISession,
+    SetupInstanceHttps
   };
 
 namespace OperationTypeMapper

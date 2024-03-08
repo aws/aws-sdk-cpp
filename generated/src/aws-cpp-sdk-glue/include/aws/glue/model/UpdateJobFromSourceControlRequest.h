@@ -86,73 +86,103 @@ namespace Model
 
 
     /**
-     * <p>The provider for the remote repository.</p>
+     * <p> The provider for the remote repository. Possible values: GITHUB,
+     * AWS_CODE_COMMIT, GITLAB, BITBUCKET. </p>
      */
     inline const SourceControlProvider& GetProvider() const{ return m_provider; }
 
     /**
-     * <p>The provider for the remote repository.</p>
+     * <p> The provider for the remote repository. Possible values: GITHUB,
+     * AWS_CODE_COMMIT, GITLAB, BITBUCKET. </p>
      */
     inline bool ProviderHasBeenSet() const { return m_providerHasBeenSet; }
 
     /**
-     * <p>The provider for the remote repository.</p>
+     * <p> The provider for the remote repository. Possible values: GITHUB,
+     * AWS_CODE_COMMIT, GITLAB, BITBUCKET. </p>
      */
     inline void SetProvider(const SourceControlProvider& value) { m_providerHasBeenSet = true; m_provider = value; }
 
     /**
-     * <p>The provider for the remote repository.</p>
+     * <p> The provider for the remote repository. Possible values: GITHUB,
+     * AWS_CODE_COMMIT, GITLAB, BITBUCKET. </p>
      */
     inline void SetProvider(SourceControlProvider&& value) { m_providerHasBeenSet = true; m_provider = std::move(value); }
 
     /**
-     * <p>The provider for the remote repository.</p>
+     * <p> The provider for the remote repository. Possible values: GITHUB,
+     * AWS_CODE_COMMIT, GITLAB, BITBUCKET. </p>
      */
     inline UpdateJobFromSourceControlRequest& WithProvider(const SourceControlProvider& value) { SetProvider(value); return *this;}
 
     /**
-     * <p>The provider for the remote repository.</p>
+     * <p> The provider for the remote repository. Possible values: GITHUB,
+     * AWS_CODE_COMMIT, GITLAB, BITBUCKET. </p>
      */
     inline UpdateJobFromSourceControlRequest& WithProvider(SourceControlProvider&& value) { SetProvider(std::move(value)); return *this;}
 
 
     /**
-     * <p>The name of the remote repository that contains the job artifacts.</p>
+     * <p>The name of the remote repository that contains the job artifacts. For
+     * BitBucket providers, <code>RepositoryName</code> should include
+     * <code>WorkspaceName</code>. Use the format
+     * <code>&lt;WorkspaceName&gt;/&lt;RepositoryName&gt;</code>. </p>
      */
     inline const Aws::String& GetRepositoryName() const{ return m_repositoryName; }
 
     /**
-     * <p>The name of the remote repository that contains the job artifacts.</p>
+     * <p>The name of the remote repository that contains the job artifacts. For
+     * BitBucket providers, <code>RepositoryName</code> should include
+     * <code>WorkspaceName</code>. Use the format
+     * <code>&lt;WorkspaceName&gt;/&lt;RepositoryName&gt;</code>. </p>
      */
     inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }
 
     /**
-     * <p>The name of the remote repository that contains the job artifacts.</p>
+     * <p>The name of the remote repository that contains the job artifacts. For
+     * BitBucket providers, <code>RepositoryName</code> should include
+     * <code>WorkspaceName</code>. Use the format
+     * <code>&lt;WorkspaceName&gt;/&lt;RepositoryName&gt;</code>. </p>
      */
     inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
 
     /**
-     * <p>The name of the remote repository that contains the job artifacts.</p>
+     * <p>The name of the remote repository that contains the job artifacts. For
+     * BitBucket providers, <code>RepositoryName</code> should include
+     * <code>WorkspaceName</code>. Use the format
+     * <code>&lt;WorkspaceName&gt;/&lt;RepositoryName&gt;</code>. </p>
      */
     inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::move(value); }
 
     /**
-     * <p>The name of the remote repository that contains the job artifacts.</p>
+     * <p>The name of the remote repository that contains the job artifacts. For
+     * BitBucket providers, <code>RepositoryName</code> should include
+     * <code>WorkspaceName</code>. Use the format
+     * <code>&lt;WorkspaceName&gt;/&lt;RepositoryName&gt;</code>. </p>
      */
     inline void SetRepositoryName(const char* value) { m_repositoryNameHasBeenSet = true; m_repositoryName.assign(value); }
 
     /**
-     * <p>The name of the remote repository that contains the job artifacts.</p>
+     * <p>The name of the remote repository that contains the job artifacts. For
+     * BitBucket providers, <code>RepositoryName</code> should include
+     * <code>WorkspaceName</code>. Use the format
+     * <code>&lt;WorkspaceName&gt;/&lt;RepositoryName&gt;</code>. </p>
      */
     inline UpdateJobFromSourceControlRequest& WithRepositoryName(const Aws::String& value) { SetRepositoryName(value); return *this;}
 
     /**
-     * <p>The name of the remote repository that contains the job artifacts.</p>
+     * <p>The name of the remote repository that contains the job artifacts. For
+     * BitBucket providers, <code>RepositoryName</code> should include
+     * <code>WorkspaceName</code>. Use the format
+     * <code>&lt;WorkspaceName&gt;/&lt;RepositoryName&gt;</code>. </p>
      */
     inline UpdateJobFromSourceControlRequest& WithRepositoryName(Aws::String&& value) { SetRepositoryName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the remote repository that contains the job artifacts.</p>
+     * <p>The name of the remote repository that contains the job artifacts. For
+     * BitBucket providers, <code>RepositoryName</code> should include
+     * <code>WorkspaceName</code>. Use the format
+     * <code>&lt;WorkspaceName&gt;/&lt;RepositoryName&gt;</code>. </p>
      */
     inline UpdateJobFromSourceControlRequest& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
 

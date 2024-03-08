@@ -4,13 +4,11 @@
  */
 
 #include <aws/sqs/model/SendMessageBatchRequestEntry.h>
-#include <aws/core/utils/xml/XmlSerializer.h>
-#include <aws/core/utils/StringUtils.h>
-#include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/json/JsonSerializer.h>
 
 #include <utility>
 
-using namespace Aws::Utils::Xml;
+using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 namespace Aws
@@ -32,7 +30,7 @@ SendMessageBatchRequestEntry::SendMessageBatchRequestEntry() :
 {
 }
 
-SendMessageBatchRequestEntry::SendMessageBatchRequestEntry(const XmlNode& xmlNode) : 
+SendMessageBatchRequestEntry::SendMessageBatchRequestEntry(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_messageBodyHasBeenSet(false),
     m_delaySeconds(0),
@@ -42,187 +40,126 @@ SendMessageBatchRequestEntry::SendMessageBatchRequestEntry(const XmlNode& xmlNod
     m_messageDeduplicationIdHasBeenSet(false),
     m_messageGroupIdHasBeenSet(false)
 {
-  *this = xmlNode;
+  *this = jsonValue;
 }
 
-SendMessageBatchRequestEntry& SendMessageBatchRequestEntry::operator =(const XmlNode& xmlNode)
+SendMessageBatchRequestEntry& SendMessageBatchRequestEntry::operator =(JsonView jsonValue)
 {
-  XmlNode resultNode = xmlNode;
-
-  if(!resultNode.IsNull())
+  if(jsonValue.ValueExists("Id"))
   {
-    XmlNode idNode = resultNode.FirstChild("Id");
-    if(!idNode.IsNull())
-    {
-      m_id = Aws::Utils::Xml::DecodeEscapedXmlText(idNode.GetText());
-      m_idHasBeenSet = true;
-    }
-    XmlNode messageBodyNode = resultNode.FirstChild("MessageBody");
-    if(!messageBodyNode.IsNull())
-    {
-      m_messageBody = Aws::Utils::Xml::DecodeEscapedXmlText(messageBodyNode.GetText());
-      m_messageBodyHasBeenSet = true;
-    }
-    XmlNode delaySecondsNode = resultNode.FirstChild("DelaySeconds");
-    if(!delaySecondsNode.IsNull())
-    {
-      m_delaySeconds = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(delaySecondsNode.GetText()).c_str()).c_str());
-      m_delaySecondsHasBeenSet = true;
-    }
-    XmlNode messageAttributesNode = resultNode.FirstChild("MessageAttribute");
-    if(!messageAttributesNode.IsNull())
-    {
-      XmlNode messageAttributeEntry = messageAttributesNode;
-      while(!messageAttributeEntry.IsNull())
-      {
-        XmlNode keyNode = messageAttributeEntry.FirstChild("Name");
-        XmlNode valueNode = messageAttributeEntry.FirstChild("Value");
-        m_messageAttributes[keyNode.GetText()] =
-            valueNode;
-        messageAttributeEntry = messageAttributeEntry.NextNode("MessageAttribute");
-      }
+    m_id = jsonValue.GetString("Id");
 
-      m_messageAttributesHasBeenSet = true;
-    }
-    XmlNode messageSystemAttributesNode = resultNode.FirstChild("MessageSystemAttribute");
-    if(!messageSystemAttributesNode.IsNull())
-    {
-      XmlNode messageSystemAttributeEntry = messageSystemAttributesNode;
-      while(!messageSystemAttributeEntry.IsNull())
-      {
-        XmlNode keyNode = messageSystemAttributeEntry.FirstChild("Name");
-        XmlNode valueNode = messageSystemAttributeEntry.FirstChild("Value");
-        m_messageSystemAttributes[MessageSystemAttributeNameForSendsMapper::GetMessageSystemAttributeNameForSendsForName(StringUtils::Trim(keyNode.GetText().c_str()))] =
-            valueNode;
-        messageSystemAttributeEntry = messageSystemAttributeEntry.NextNode("MessageSystemAttribute");
-      }
+    m_idHasBeenSet = true;
+  }
 
-      m_messageSystemAttributesHasBeenSet = true;
-    }
-    XmlNode messageDeduplicationIdNode = resultNode.FirstChild("MessageDeduplicationId");
-    if(!messageDeduplicationIdNode.IsNull())
+  if(jsonValue.ValueExists("MessageBody"))
+  {
+    m_messageBody = jsonValue.GetString("MessageBody");
+
+    m_messageBodyHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DelaySeconds"))
+  {
+    m_delaySeconds = jsonValue.GetInteger("DelaySeconds");
+
+    m_delaySecondsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("MessageAttributes"))
+  {
+    Aws::Map<Aws::String, JsonView> messageAttributesJsonMap = jsonValue.GetObject("MessageAttributes").GetAllObjects();
+    for(auto& messageAttributesItem : messageAttributesJsonMap)
     {
-      m_messageDeduplicationId = Aws::Utils::Xml::DecodeEscapedXmlText(messageDeduplicationIdNode.GetText());
-      m_messageDeduplicationIdHasBeenSet = true;
+      m_messageAttributes[messageAttributesItem.first] = messageAttributesItem.second.AsObject();
     }
-    XmlNode messageGroupIdNode = resultNode.FirstChild("MessageGroupId");
-    if(!messageGroupIdNode.IsNull())
+    m_messageAttributesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("MessageSystemAttributes"))
+  {
+    Aws::Map<Aws::String, JsonView> messageSystemAttributesJsonMap = jsonValue.GetObject("MessageSystemAttributes").GetAllObjects();
+    for(auto& messageSystemAttributesItem : messageSystemAttributesJsonMap)
     {
-      m_messageGroupId = Aws::Utils::Xml::DecodeEscapedXmlText(messageGroupIdNode.GetText());
-      m_messageGroupIdHasBeenSet = true;
+      m_messageSystemAttributes[MessageSystemAttributeNameForSendsMapper::GetMessageSystemAttributeNameForSendsForName(messageSystemAttributesItem.first)] = messageSystemAttributesItem.second.AsObject();
     }
+    m_messageSystemAttributesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("MessageDeduplicationId"))
+  {
+    m_messageDeduplicationId = jsonValue.GetString("MessageDeduplicationId");
+
+    m_messageDeduplicationIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("MessageGroupId"))
+  {
+    m_messageGroupId = jsonValue.GetString("MessageGroupId");
+
+    m_messageGroupIdHasBeenSet = true;
   }
 
   return *this;
 }
 
-void SendMessageBatchRequestEntry::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
+JsonValue SendMessageBatchRequestEntry::Jsonize() const
 {
+  JsonValue payload;
+
   if(m_idHasBeenSet)
   {
-      oStream << location << index << locationValue << ".Id=" << StringUtils::URLEncode(m_id.c_str()) << "&";
+   payload.WithString("Id", m_id);
+
   }
 
   if(m_messageBodyHasBeenSet)
   {
-      oStream << location << index << locationValue << ".MessageBody=" << StringUtils::URLEncode(m_messageBody.c_str()) << "&";
+   payload.WithString("MessageBody", m_messageBody);
+
   }
 
   if(m_delaySecondsHasBeenSet)
   {
-      oStream << location << index << locationValue << ".DelaySeconds=" << m_delaySeconds << "&";
+   payload.WithInteger("DelaySeconds", m_delaySeconds);
+
   }
 
   if(m_messageAttributesHasBeenSet)
   {
-      unsigned messageAttributesIdx = 1;
-      for(auto& item : m_messageAttributes)
-      {
-        oStream << location << index << locationValue << ".MessageAttribute." << messageAttributesIdx << ".Name="
-            << StringUtils::URLEncode(item.first.c_str()) << "&";
-        Aws::StringStream messageAttributesSs;
-        messageAttributesSs << location << index << locationValue << ".MessageAttribute." << messageAttributesIdx << ".Value";
-        item.second.OutputToStream(oStream, messageAttributesSs.str().c_str());
-        messageAttributesIdx++;
-      }
+   JsonValue messageAttributesJsonMap;
+   for(auto& messageAttributesItem : m_messageAttributes)
+   {
+     messageAttributesJsonMap.WithObject(messageAttributesItem.first, messageAttributesItem.second.Jsonize());
+   }
+   payload.WithObject("MessageAttributes", std::move(messageAttributesJsonMap));
+
   }
 
   if(m_messageSystemAttributesHasBeenSet)
   {
-      unsigned messageSystemAttributesIdx = 1;
-      for(auto& item : m_messageSystemAttributes)
-      {
-        oStream << location << index << locationValue << ".MessageSystemAttribute." << messageSystemAttributesIdx << ".Name="
-            << StringUtils::URLEncode(MessageSystemAttributeNameForSendsMapper::GetNameForMessageSystemAttributeNameForSends(item.first).c_str()) << "&";
-        Aws::StringStream messageSystemAttributesSs;
-        messageSystemAttributesSs << location << index << locationValue << ".MessageSystemAttribute." << messageSystemAttributesIdx << ".Value";
-        item.second.OutputToStream(oStream, messageSystemAttributesSs.str().c_str());
-        messageSystemAttributesIdx++;
-      }
+   JsonValue messageSystemAttributesJsonMap;
+   for(auto& messageSystemAttributesItem : m_messageSystemAttributes)
+   {
+     messageSystemAttributesJsonMap.WithObject(MessageSystemAttributeNameForSendsMapper::GetNameForMessageSystemAttributeNameForSends(messageSystemAttributesItem.first), messageSystemAttributesItem.second.Jsonize());
+   }
+   payload.WithObject("MessageSystemAttributes", std::move(messageSystemAttributesJsonMap));
+
   }
 
   if(m_messageDeduplicationIdHasBeenSet)
   {
-      oStream << location << index << locationValue << ".MessageDeduplicationId=" << StringUtils::URLEncode(m_messageDeduplicationId.c_str()) << "&";
+   payload.WithString("MessageDeduplicationId", m_messageDeduplicationId);
+
   }
 
   if(m_messageGroupIdHasBeenSet)
   {
-      oStream << location << index << locationValue << ".MessageGroupId=" << StringUtils::URLEncode(m_messageGroupId.c_str()) << "&";
-  }
-
-}
-
-void SendMessageBatchRequestEntry::OutputToStream(Aws::OStream& oStream, const char* location) const
-{
-  if(m_idHasBeenSet)
-  {
-      oStream << location << ".Id=" << StringUtils::URLEncode(m_id.c_str()) << "&";
-  }
-  if(m_messageBodyHasBeenSet)
-  {
-      oStream << location << ".MessageBody=" << StringUtils::URLEncode(m_messageBody.c_str()) << "&";
-  }
-  if(m_delaySecondsHasBeenSet)
-  {
-      oStream << location << ".DelaySeconds=" << m_delaySeconds << "&";
-  }
-  if(m_messageAttributesHasBeenSet)
-  {
-      unsigned messageAttributesIdx = 1;
-      for(auto& item : m_messageAttributes)
-      {
-        oStream << location << ".MessageAttribute."  << messageAttributesIdx << ".Name="
-            << StringUtils::URLEncode(item.first.c_str()) << "&";
-        Aws::StringStream messageAttributesSs;
-        messageAttributesSs << location << ".MessageAttribute." << messageAttributesIdx << ".Value";
-        item.second.OutputToStream(oStream, messageAttributesSs.str().c_str());
-        messageAttributesIdx++;
-      }
+   payload.WithString("MessageGroupId", m_messageGroupId);
 
   }
-  if(m_messageSystemAttributesHasBeenSet)
-  {
-      unsigned messageSystemAttributesIdx = 1;
-      for(auto& item : m_messageSystemAttributes)
-      {
-        oStream << location << ".MessageSystemAttribute."  << messageSystemAttributesIdx << ".Name="
-            << StringUtils::URLEncode(MessageSystemAttributeNameForSendsMapper::GetNameForMessageSystemAttributeNameForSends(item.first).c_str()) << "&";
-        Aws::StringStream messageSystemAttributesSs;
-        messageSystemAttributesSs << location << ".MessageSystemAttribute." << messageSystemAttributesIdx << ".Value";
-        item.second.OutputToStream(oStream, messageSystemAttributesSs.str().c_str());
-        messageSystemAttributesIdx++;
-      }
 
-  }
-  if(m_messageDeduplicationIdHasBeenSet)
-  {
-      oStream << location << ".MessageDeduplicationId=" << StringUtils::URLEncode(m_messageDeduplicationId.c_str()) << "&";
-  }
-  if(m_messageGroupIdHasBeenSet)
-  {
-      oStream << location << ".MessageGroupId=" << StringUtils::URLEncode(m_messageGroupId.c_str()) << "&";
-  }
+  return payload;
 }
 
 } // namespace Model

@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AccessDeniedExceptionReason::NOT_SET:
+            return {};
           case AccessDeniedExceptionReason::INSUFFICIENT_PERMISSIONS:
             return "INSUFFICIENT_PERMISSIONS";
           default:

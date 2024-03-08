@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EmbeddedTerminateCaptions::NOT_SET:
+            return {};
           case EmbeddedTerminateCaptions::END_OF_INPUT:
             return "END_OF_INPUT";
           case EmbeddedTerminateCaptions::DISABLED:

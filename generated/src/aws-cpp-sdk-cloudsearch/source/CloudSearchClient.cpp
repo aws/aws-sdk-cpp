@@ -62,8 +62,16 @@ using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
 
-const char* CloudSearchClient::SERVICE_NAME = "cloudsearch";
-const char* CloudSearchClient::ALLOCATION_TAG = "CloudSearchClient";
+namespace Aws
+{
+  namespace CloudSearch
+  {
+    const char SERVICE_NAME[] = "cloudsearch";
+    const char ALLOCATION_TAG[] = "CloudSearchClient";
+  }
+}
+const char* CloudSearchClient::GetServiceName() {return SERVICE_NAME;}
+const char* CloudSearchClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 CloudSearchClient::CloudSearchClient(const CloudSearch::CloudSearchClientConfiguration& clientConfiguration,
                                      std::shared_ptr<CloudSearchEndpointProviderBase> endpointProvider) :
@@ -75,7 +83,7 @@ CloudSearchClient::CloudSearchClient(const CloudSearch::CloudSearchClientConfigu
             Aws::MakeShared<CloudSearchErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CloudSearchEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -91,7 +99,7 @@ CloudSearchClient::CloudSearchClient(const AWSCredentials& credentials,
             Aws::MakeShared<CloudSearchErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CloudSearchEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -107,7 +115,7 @@ CloudSearchClient::CloudSearchClient(const std::shared_ptr<AWSCredentialsProvide
             Aws::MakeShared<CloudSearchErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<CloudSearchEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

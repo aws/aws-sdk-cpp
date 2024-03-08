@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AssetBundleImportFailureAction::NOT_SET:
+            return {};
           case AssetBundleImportFailureAction::DO_NOTHING:
             return "DO_NOTHING";
           case AssetBundleImportFailureAction::ROLLBACK:

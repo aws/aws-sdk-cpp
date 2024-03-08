@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AuthMode::NOT_SET:
+            return {};
           case AuthMode::SSO:
             return "SSO";
           case AuthMode::IAM:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ChannelProtocol::NOT_SET:
+            return {};
           case ChannelProtocol::WSS:
             return "WSS";
           case ChannelProtocol::HTTPS:

@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RealtimeEndpointStatus::NOT_SET:
+            return {};
           case RealtimeEndpointStatus::NONE:
             return "NONE";
           case RealtimeEndpointStatus::READY:

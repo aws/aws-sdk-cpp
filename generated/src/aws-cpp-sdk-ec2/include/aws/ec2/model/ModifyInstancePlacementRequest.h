@@ -39,32 +39,44 @@ namespace Model
   public:
 
     /**
-     * <p>The affinity setting for the instance.</p>
+     * <p>The affinity setting for the instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-affinity">Host
+     * affinity</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline const Affinity& GetAffinity() const{ return m_affinity; }
 
     /**
-     * <p>The affinity setting for the instance.</p>
+     * <p>The affinity setting for the instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-affinity">Host
+     * affinity</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline bool AffinityHasBeenSet() const { return m_affinityHasBeenSet; }
 
     /**
-     * <p>The affinity setting for the instance.</p>
+     * <p>The affinity setting for the instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-affinity">Host
+     * affinity</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline void SetAffinity(const Affinity& value) { m_affinityHasBeenSet = true; m_affinity = value; }
 
     /**
-     * <p>The affinity setting for the instance.</p>
+     * <p>The affinity setting for the instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-affinity">Host
+     * affinity</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline void SetAffinity(Affinity&& value) { m_affinityHasBeenSet = true; m_affinity = std::move(value); }
 
     /**
-     * <p>The affinity setting for the instance.</p>
+     * <p>The affinity setting for the instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-affinity">Host
+     * affinity</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline ModifyInstancePlacementRequest& WithAffinity(const Affinity& value) { SetAffinity(value); return *this;}
 
     /**
-     * <p>The affinity setting for the instance.</p>
+     * <p>The affinity setting for the instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/how-dedicated-hosts-work.html#dedicated-hosts-affinity">Host
+     * affinity</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
     inline ModifyInstancePlacementRequest& WithAffinity(Affinity&& value) { SetAffinity(std::move(value)); return *this;}
 

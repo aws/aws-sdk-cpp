@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Eac3LfeControl::NOT_SET:
+            return {};
           case Eac3LfeControl::LFE:
             return "LFE";
           case Eac3LfeControl::NO_LFE:

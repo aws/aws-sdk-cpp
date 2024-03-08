@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EventTypeValues::NOT_SET:
+            return {};
           case EventTypeValues::shareSnapshot:
             return "shareSnapshot";
           default:

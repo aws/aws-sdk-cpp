@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TimeOrdering::NOT_SET:
+            return {};
           case TimeOrdering::ASCENDING:
             return "ASCENDING";
           case TimeOrdering::DESCENDING:

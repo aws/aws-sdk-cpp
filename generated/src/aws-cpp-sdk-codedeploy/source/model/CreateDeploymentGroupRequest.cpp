@@ -31,7 +31,9 @@ CreateDeploymentGroupRequest::CreateDeploymentGroupRequest() :
     m_ec2TagSetHasBeenSet(false),
     m_ecsServicesHasBeenSet(false),
     m_onPremisesTagSetHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_terminationHookEnabled(false),
+    m_terminationHookEnabledHasBeenSet(false)
 {
 }
 
@@ -173,6 +175,12 @@ Aws::String CreateDeploymentGroupRequest::SerializePayload() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_terminationHookEnabledHasBeenSet)
+  {
+   payload.WithBool("terminationHookEnabled", m_terminationHookEnabled);
 
   }
 

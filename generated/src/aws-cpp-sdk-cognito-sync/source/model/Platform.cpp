@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Platform::NOT_SET:
+            return {};
           case Platform::APNS:
             return "APNS";
           case Platform::APNS_SANDBOX:

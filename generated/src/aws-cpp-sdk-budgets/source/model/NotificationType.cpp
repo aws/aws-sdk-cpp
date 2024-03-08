@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NotificationType::NOT_SET:
+            return {};
           case NotificationType::ACTUAL:
             return "ACTUAL";
           case NotificationType::FORECASTED:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ModelPromoteMode::NOT_SET:
+            return {};
           case ModelPromoteMode::MANAGED:
             return "MANAGED";
           case ModelPromoteMode::MANUAL:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DetailStatus::NOT_SET:
+            return {};
           case DetailStatus::AVAILABLE:
             return "AVAILABLE";
           case DetailStatus::PROCESSING:

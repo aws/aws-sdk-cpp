@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UnsuccessfulInstanceCreditSpecificationErrorCode::NOT_SET:
+            return {};
           case UnsuccessfulInstanceCreditSpecificationErrorCode::InvalidInstanceID_Malformed:
             return "InvalidInstanceID.Malformed";
           case UnsuccessfulInstanceCreditSpecificationErrorCode::InvalidInstanceID_NotFound:

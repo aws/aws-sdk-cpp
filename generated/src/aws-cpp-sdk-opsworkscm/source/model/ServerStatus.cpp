@@ -104,6 +104,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ServerStatus::NOT_SET:
+            return {};
           case ServerStatus::BACKING_UP:
             return "BACKING_UP";
           case ServerStatus::CONNECTION_LOST:

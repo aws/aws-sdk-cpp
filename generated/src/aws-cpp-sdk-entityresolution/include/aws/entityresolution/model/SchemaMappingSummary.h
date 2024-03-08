@@ -71,6 +71,27 @@ namespace Model
 
 
     /**
+     * <p>Specifies whether the schema mapping has been applied to a workflow.</p>
+     */
+    inline bool GetHasWorkflows() const{ return m_hasWorkflows; }
+
+    /**
+     * <p>Specifies whether the schema mapping has been applied to a workflow.</p>
+     */
+    inline bool HasWorkflowsHasBeenSet() const { return m_hasWorkflowsHasBeenSet; }
+
+    /**
+     * <p>Specifies whether the schema mapping has been applied to a workflow.</p>
+     */
+    inline void SetHasWorkflows(bool value) { m_hasWorkflowsHasBeenSet = true; m_hasWorkflows = value; }
+
+    /**
+     * <p>Specifies whether the schema mapping has been applied to a workflow.</p>
+     */
+    inline SchemaMappingSummary& WithHasWorkflows(bool value) { SetHasWorkflows(value); return *this;}
+
+
+    /**
      * <p>The ARN (Amazon Resource Name) that Entity Resolution generated for the
      * <code>SchemaMapping</code>.</p>
      */
@@ -194,6 +215,9 @@ namespace Model
 
     Aws::Utils::DateTime m_createdAt;
     bool m_createdAtHasBeenSet = false;
+
+    bool m_hasWorkflows;
+    bool m_hasWorkflowsHasBeenSet = false;
 
     Aws::String m_schemaArn;
     bool m_schemaArnHasBeenSet = false;

@@ -89,6 +89,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TargetDatabaseEngine::NOT_SET:
+            return {};
           case TargetDatabaseEngine::None_specified:
             return "None specified";
           case TargetDatabaseEngine::Amazon_Aurora:

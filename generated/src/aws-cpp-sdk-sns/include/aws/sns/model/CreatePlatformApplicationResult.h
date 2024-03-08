@@ -39,37 +39,37 @@ namespace Model
 
 
     /**
-     * <p>PlatformApplicationArn is returned.</p>
+     * <p> <code>PlatformApplicationArn</code> is returned.</p>
      */
     inline const Aws::String& GetPlatformApplicationArn() const{ return m_platformApplicationArn; }
 
     /**
-     * <p>PlatformApplicationArn is returned.</p>
+     * <p> <code>PlatformApplicationArn</code> is returned.</p>
      */
     inline void SetPlatformApplicationArn(const Aws::String& value) { m_platformApplicationArn = value; }
 
     /**
-     * <p>PlatformApplicationArn is returned.</p>
+     * <p> <code>PlatformApplicationArn</code> is returned.</p>
      */
     inline void SetPlatformApplicationArn(Aws::String&& value) { m_platformApplicationArn = std::move(value); }
 
     /**
-     * <p>PlatformApplicationArn is returned.</p>
+     * <p> <code>PlatformApplicationArn</code> is returned.</p>
      */
     inline void SetPlatformApplicationArn(const char* value) { m_platformApplicationArn.assign(value); }
 
     /**
-     * <p>PlatformApplicationArn is returned.</p>
+     * <p> <code>PlatformApplicationArn</code> is returned.</p>
      */
     inline CreatePlatformApplicationResult& WithPlatformApplicationArn(const Aws::String& value) { SetPlatformApplicationArn(value); return *this;}
 
     /**
-     * <p>PlatformApplicationArn is returned.</p>
+     * <p> <code>PlatformApplicationArn</code> is returned.</p>
      */
     inline CreatePlatformApplicationResult& WithPlatformApplicationArn(Aws::String&& value) { SetPlatformApplicationArn(std::move(value)); return *this;}
 
     /**
-     * <p>PlatformApplicationArn is returned.</p>
+     * <p> <code>PlatformApplicationArn</code> is returned.</p>
      */
     inline CreatePlatformApplicationResult& WithPlatformApplicationArn(const char* value) { SetPlatformApplicationArn(value); return *this;}
 

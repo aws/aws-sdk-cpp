@@ -15,6 +15,7 @@
 #include <aws/batch/model/JobTimeout.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/batch/model/EksProperties.h>
+#include <aws/batch/model/EcsProperties.h>
 #include <aws/batch/model/PlatformCapability.h>
 #include <utility>
 
@@ -107,8 +108,12 @@ namespace Model
      * jobs, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating
      * a multi-node parallel job definition</a> in the <i>Batch User Guide</i>.</p>
-     *  <p>If the job is run on Fargate resources, then <code>multinode</code>
-     * isn't supported.</p> 
+     * <ul> <li> <p>If the value is <code>container</code>, then one of the following
+     * is required: <code>containerProperties</code>, <code>ecsProperties</code>, or
+     * <code>eksProperties</code>.</p> </li> <li> <p>If the value is
+     * <code>multinode</code>, then <code>nodeProperties</code> is required.</p> </li>
+     * </ul>  <p>If the job is run on Fargate resources, then
+     * <code>multinode</code> isn't supported.</p> 
      */
     inline const JobDefinitionType& GetType() const{ return m_type; }
 
@@ -117,8 +122,12 @@ namespace Model
      * jobs, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating
      * a multi-node parallel job definition</a> in the <i>Batch User Guide</i>.</p>
-     *  <p>If the job is run on Fargate resources, then <code>multinode</code>
-     * isn't supported.</p> 
+     * <ul> <li> <p>If the value is <code>container</code>, then one of the following
+     * is required: <code>containerProperties</code>, <code>ecsProperties</code>, or
+     * <code>eksProperties</code>.</p> </li> <li> <p>If the value is
+     * <code>multinode</code>, then <code>nodeProperties</code> is required.</p> </li>
+     * </ul>  <p>If the job is run on Fargate resources, then
+     * <code>multinode</code> isn't supported.</p> 
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
@@ -127,8 +136,12 @@ namespace Model
      * jobs, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating
      * a multi-node parallel job definition</a> in the <i>Batch User Guide</i>.</p>
-     *  <p>If the job is run on Fargate resources, then <code>multinode</code>
-     * isn't supported.</p> 
+     * <ul> <li> <p>If the value is <code>container</code>, then one of the following
+     * is required: <code>containerProperties</code>, <code>ecsProperties</code>, or
+     * <code>eksProperties</code>.</p> </li> <li> <p>If the value is
+     * <code>multinode</code>, then <code>nodeProperties</code> is required.</p> </li>
+     * </ul>  <p>If the job is run on Fargate resources, then
+     * <code>multinode</code> isn't supported.</p> 
      */
     inline void SetType(const JobDefinitionType& value) { m_typeHasBeenSet = true; m_type = value; }
 
@@ -137,8 +150,12 @@ namespace Model
      * jobs, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating
      * a multi-node parallel job definition</a> in the <i>Batch User Guide</i>.</p>
-     *  <p>If the job is run on Fargate resources, then <code>multinode</code>
-     * isn't supported.</p> 
+     * <ul> <li> <p>If the value is <code>container</code>, then one of the following
+     * is required: <code>containerProperties</code>, <code>ecsProperties</code>, or
+     * <code>eksProperties</code>.</p> </li> <li> <p>If the value is
+     * <code>multinode</code>, then <code>nodeProperties</code> is required.</p> </li>
+     * </ul>  <p>If the job is run on Fargate resources, then
+     * <code>multinode</code> isn't supported.</p> 
      */
     inline void SetType(JobDefinitionType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
@@ -147,8 +164,12 @@ namespace Model
      * jobs, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating
      * a multi-node parallel job definition</a> in the <i>Batch User Guide</i>.</p>
-     *  <p>If the job is run on Fargate resources, then <code>multinode</code>
-     * isn't supported.</p> 
+     * <ul> <li> <p>If the value is <code>container</code>, then one of the following
+     * is required: <code>containerProperties</code>, <code>ecsProperties</code>, or
+     * <code>eksProperties</code>.</p> </li> <li> <p>If the value is
+     * <code>multinode</code>, then <code>nodeProperties</code> is required.</p> </li>
+     * </ul>  <p>If the job is run on Fargate resources, then
+     * <code>multinode</code> isn't supported.</p> 
      */
     inline RegisterJobDefinitionRequest& WithType(const JobDefinitionType& value) { SetType(value); return *this;}
 
@@ -157,8 +178,12 @@ namespace Model
      * jobs, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-job-def.html">Creating
      * a multi-node parallel job definition</a> in the <i>Batch User Guide</i>.</p>
-     *  <p>If the job is run on Fargate resources, then <code>multinode</code>
-     * isn't supported.</p> 
+     * <ul> <li> <p>If the value is <code>container</code>, then one of the following
+     * is required: <code>containerProperties</code>, <code>ecsProperties</code>, or
+     * <code>eksProperties</code>.</p> </li> <li> <p>If the value is
+     * <code>multinode</code>, then <code>nodeProperties</code> is required.</p> </li>
+     * </ul>  <p>If the job is run on Fargate resources, then
+     * <code>multinode</code> isn't supported.</p> 
      */
     inline RegisterJobDefinitionRequest& WithType(JobDefinitionType&& value) { SetType(std::move(value)); return *this;}
 
@@ -306,66 +331,66 @@ namespace Model
 
 
     /**
-     * <p>An object with various properties specific to Amazon ECS based single-node
+     * <p>An object with properties specific to Amazon ECS-based single-node
      * container-based jobs. If the job definition's <code>type</code> parameter is
      * <code>container</code>, then you must specify either
      * <code>containerProperties</code> or <code>nodeProperties</code>. This must not
-     * be specified for Amazon EKS based job definitions.</p>  <p>If the job runs
+     * be specified for Amazon EKS-based job definitions.</p>  <p>If the job runs
      * on Fargate resources, then you must not specify <code>nodeProperties</code>; use
      * only <code>containerProperties</code>.</p> 
      */
     inline const ContainerProperties& GetContainerProperties() const{ return m_containerProperties; }
 
     /**
-     * <p>An object with various properties specific to Amazon ECS based single-node
+     * <p>An object with properties specific to Amazon ECS-based single-node
      * container-based jobs. If the job definition's <code>type</code> parameter is
      * <code>container</code>, then you must specify either
      * <code>containerProperties</code> or <code>nodeProperties</code>. This must not
-     * be specified for Amazon EKS based job definitions.</p>  <p>If the job runs
+     * be specified for Amazon EKS-based job definitions.</p>  <p>If the job runs
      * on Fargate resources, then you must not specify <code>nodeProperties</code>; use
      * only <code>containerProperties</code>.</p> 
      */
     inline bool ContainerPropertiesHasBeenSet() const { return m_containerPropertiesHasBeenSet; }
 
     /**
-     * <p>An object with various properties specific to Amazon ECS based single-node
+     * <p>An object with properties specific to Amazon ECS-based single-node
      * container-based jobs. If the job definition's <code>type</code> parameter is
      * <code>container</code>, then you must specify either
      * <code>containerProperties</code> or <code>nodeProperties</code>. This must not
-     * be specified for Amazon EKS based job definitions.</p>  <p>If the job runs
+     * be specified for Amazon EKS-based job definitions.</p>  <p>If the job runs
      * on Fargate resources, then you must not specify <code>nodeProperties</code>; use
      * only <code>containerProperties</code>.</p> 
      */
     inline void SetContainerProperties(const ContainerProperties& value) { m_containerPropertiesHasBeenSet = true; m_containerProperties = value; }
 
     /**
-     * <p>An object with various properties specific to Amazon ECS based single-node
+     * <p>An object with properties specific to Amazon ECS-based single-node
      * container-based jobs. If the job definition's <code>type</code> parameter is
      * <code>container</code>, then you must specify either
      * <code>containerProperties</code> or <code>nodeProperties</code>. This must not
-     * be specified for Amazon EKS based job definitions.</p>  <p>If the job runs
+     * be specified for Amazon EKS-based job definitions.</p>  <p>If the job runs
      * on Fargate resources, then you must not specify <code>nodeProperties</code>; use
      * only <code>containerProperties</code>.</p> 
      */
     inline void SetContainerProperties(ContainerProperties&& value) { m_containerPropertiesHasBeenSet = true; m_containerProperties = std::move(value); }
 
     /**
-     * <p>An object with various properties specific to Amazon ECS based single-node
+     * <p>An object with properties specific to Amazon ECS-based single-node
      * container-based jobs. If the job definition's <code>type</code> parameter is
      * <code>container</code>, then you must specify either
      * <code>containerProperties</code> or <code>nodeProperties</code>. This must not
-     * be specified for Amazon EKS based job definitions.</p>  <p>If the job runs
+     * be specified for Amazon EKS-based job definitions.</p>  <p>If the job runs
      * on Fargate resources, then you must not specify <code>nodeProperties</code>; use
      * only <code>containerProperties</code>.</p> 
      */
     inline RegisterJobDefinitionRequest& WithContainerProperties(const ContainerProperties& value) { SetContainerProperties(value); return *this;}
 
     /**
-     * <p>An object with various properties specific to Amazon ECS based single-node
+     * <p>An object with properties specific to Amazon ECS-based single-node
      * container-based jobs. If the job definition's <code>type</code> parameter is
      * <code>container</code>, then you must specify either
      * <code>containerProperties</code> or <code>nodeProperties</code>. This must not
-     * be specified for Amazon EKS based job definitions.</p>  <p>If the job runs
+     * be specified for Amazon EKS-based job definitions.</p>  <p>If the job runs
      * on Fargate resources, then you must not specify <code>nodeProperties</code>; use
      * only <code>containerProperties</code>.</p> 
      */
@@ -373,92 +398,80 @@ namespace Model
 
 
     /**
-     * <p>An object with various properties specific to multi-node parallel jobs. If
-     * you specify node properties for a job, it becomes a multi-node parallel job. For
+     * <p>An object with properties specific to multi-node parallel jobs. If you
+     * specify node properties for a job, it becomes a multi-node parallel job. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node
-     * Parallel Jobs</a> in the <i>Batch User Guide</i>. If the job definition's
-     * <code>type</code> parameter is <code>container</code>, then you must specify
-     * either <code>containerProperties</code> or <code>nodeProperties</code>.</p>
-     *  <p>If the job runs on Fargate resources, then you must not specify
-     * <code>nodeProperties</code>; use <code>containerProperties</code> instead.</p>
-     *   <p>If the job runs on Amazon EKS resources, then you must not
-     * specify <code>nodeProperties</code>.</p> 
+     * Parallel Jobs</a> in the <i>Batch User Guide</i>.</p>  <p>If the job runs
+     * on Fargate resources, then you must not specify <code>nodeProperties</code>; use
+     * <code>containerProperties</code> instead.</p>   <p>If the job runs
+     * on Amazon EKS resources, then you must not specify
+     * <code>nodeProperties</code>.</p> 
      */
     inline const NodeProperties& GetNodeProperties() const{ return m_nodeProperties; }
 
     /**
-     * <p>An object with various properties specific to multi-node parallel jobs. If
-     * you specify node properties for a job, it becomes a multi-node parallel job. For
+     * <p>An object with properties specific to multi-node parallel jobs. If you
+     * specify node properties for a job, it becomes a multi-node parallel job. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node
-     * Parallel Jobs</a> in the <i>Batch User Guide</i>. If the job definition's
-     * <code>type</code> parameter is <code>container</code>, then you must specify
-     * either <code>containerProperties</code> or <code>nodeProperties</code>.</p>
-     *  <p>If the job runs on Fargate resources, then you must not specify
-     * <code>nodeProperties</code>; use <code>containerProperties</code> instead.</p>
-     *   <p>If the job runs on Amazon EKS resources, then you must not
-     * specify <code>nodeProperties</code>.</p> 
+     * Parallel Jobs</a> in the <i>Batch User Guide</i>.</p>  <p>If the job runs
+     * on Fargate resources, then you must not specify <code>nodeProperties</code>; use
+     * <code>containerProperties</code> instead.</p>   <p>If the job runs
+     * on Amazon EKS resources, then you must not specify
+     * <code>nodeProperties</code>.</p> 
      */
     inline bool NodePropertiesHasBeenSet() const { return m_nodePropertiesHasBeenSet; }
 
     /**
-     * <p>An object with various properties specific to multi-node parallel jobs. If
-     * you specify node properties for a job, it becomes a multi-node parallel job. For
+     * <p>An object with properties specific to multi-node parallel jobs. If you
+     * specify node properties for a job, it becomes a multi-node parallel job. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node
-     * Parallel Jobs</a> in the <i>Batch User Guide</i>. If the job definition's
-     * <code>type</code> parameter is <code>container</code>, then you must specify
-     * either <code>containerProperties</code> or <code>nodeProperties</code>.</p>
-     *  <p>If the job runs on Fargate resources, then you must not specify
-     * <code>nodeProperties</code>; use <code>containerProperties</code> instead.</p>
-     *   <p>If the job runs on Amazon EKS resources, then you must not
-     * specify <code>nodeProperties</code>.</p> 
+     * Parallel Jobs</a> in the <i>Batch User Guide</i>.</p>  <p>If the job runs
+     * on Fargate resources, then you must not specify <code>nodeProperties</code>; use
+     * <code>containerProperties</code> instead.</p>   <p>If the job runs
+     * on Amazon EKS resources, then you must not specify
+     * <code>nodeProperties</code>.</p> 
      */
     inline void SetNodeProperties(const NodeProperties& value) { m_nodePropertiesHasBeenSet = true; m_nodeProperties = value; }
 
     /**
-     * <p>An object with various properties specific to multi-node parallel jobs. If
-     * you specify node properties for a job, it becomes a multi-node parallel job. For
+     * <p>An object with properties specific to multi-node parallel jobs. If you
+     * specify node properties for a job, it becomes a multi-node parallel job. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node
-     * Parallel Jobs</a> in the <i>Batch User Guide</i>. If the job definition's
-     * <code>type</code> parameter is <code>container</code>, then you must specify
-     * either <code>containerProperties</code> or <code>nodeProperties</code>.</p>
-     *  <p>If the job runs on Fargate resources, then you must not specify
-     * <code>nodeProperties</code>; use <code>containerProperties</code> instead.</p>
-     *   <p>If the job runs on Amazon EKS resources, then you must not
-     * specify <code>nodeProperties</code>.</p> 
+     * Parallel Jobs</a> in the <i>Batch User Guide</i>.</p>  <p>If the job runs
+     * on Fargate resources, then you must not specify <code>nodeProperties</code>; use
+     * <code>containerProperties</code> instead.</p>   <p>If the job runs
+     * on Amazon EKS resources, then you must not specify
+     * <code>nodeProperties</code>.</p> 
      */
     inline void SetNodeProperties(NodeProperties&& value) { m_nodePropertiesHasBeenSet = true; m_nodeProperties = std::move(value); }
 
     /**
-     * <p>An object with various properties specific to multi-node parallel jobs. If
-     * you specify node properties for a job, it becomes a multi-node parallel job. For
+     * <p>An object with properties specific to multi-node parallel jobs. If you
+     * specify node properties for a job, it becomes a multi-node parallel job. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node
-     * Parallel Jobs</a> in the <i>Batch User Guide</i>. If the job definition's
-     * <code>type</code> parameter is <code>container</code>, then you must specify
-     * either <code>containerProperties</code> or <code>nodeProperties</code>.</p>
-     *  <p>If the job runs on Fargate resources, then you must not specify
-     * <code>nodeProperties</code>; use <code>containerProperties</code> instead.</p>
-     *   <p>If the job runs on Amazon EKS resources, then you must not
-     * specify <code>nodeProperties</code>.</p> 
+     * Parallel Jobs</a> in the <i>Batch User Guide</i>.</p>  <p>If the job runs
+     * on Fargate resources, then you must not specify <code>nodeProperties</code>; use
+     * <code>containerProperties</code> instead.</p>   <p>If the job runs
+     * on Amazon EKS resources, then you must not specify
+     * <code>nodeProperties</code>.</p> 
      */
     inline RegisterJobDefinitionRequest& WithNodeProperties(const NodeProperties& value) { SetNodeProperties(value); return *this;}
 
     /**
-     * <p>An object with various properties specific to multi-node parallel jobs. If
-     * you specify node properties for a job, it becomes a multi-node parallel job. For
+     * <p>An object with properties specific to multi-node parallel jobs. If you
+     * specify node properties for a job, it becomes a multi-node parallel job. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/batch/latest/userguide/multi-node-parallel-jobs.html">Multi-node
-     * Parallel Jobs</a> in the <i>Batch User Guide</i>. If the job definition's
-     * <code>type</code> parameter is <code>container</code>, then you must specify
-     * either <code>containerProperties</code> or <code>nodeProperties</code>.</p>
-     *  <p>If the job runs on Fargate resources, then you must not specify
-     * <code>nodeProperties</code>; use <code>containerProperties</code> instead.</p>
-     *   <p>If the job runs on Amazon EKS resources, then you must not
-     * specify <code>nodeProperties</code>.</p> 
+     * Parallel Jobs</a> in the <i>Batch User Guide</i>.</p>  <p>If the job runs
+     * on Fargate resources, then you must not specify <code>nodeProperties</code>; use
+     * <code>containerProperties</code> instead.</p>   <p>If the job runs
+     * on Amazon EKS resources, then you must not specify
+     * <code>nodeProperties</code>.</p> 
      */
     inline RegisterJobDefinitionRequest& WithNodeProperties(NodeProperties&& value) { SetNodeProperties(std::move(value)); return *this;}
 
@@ -826,40 +839,77 @@ namespace Model
 
 
     /**
-     * <p>An object with various properties that are specific to Amazon EKS based jobs.
-     * This must not be specified for Amazon ECS based job definitions.</p>
+     * <p>An object with properties that are specific to Amazon EKS-based jobs. This
+     * must not be specified for Amazon ECS based job definitions.</p>
      */
     inline const EksProperties& GetEksProperties() const{ return m_eksProperties; }
 
     /**
-     * <p>An object with various properties that are specific to Amazon EKS based jobs.
-     * This must not be specified for Amazon ECS based job definitions.</p>
+     * <p>An object with properties that are specific to Amazon EKS-based jobs. This
+     * must not be specified for Amazon ECS based job definitions.</p>
      */
     inline bool EksPropertiesHasBeenSet() const { return m_eksPropertiesHasBeenSet; }
 
     /**
-     * <p>An object with various properties that are specific to Amazon EKS based jobs.
-     * This must not be specified for Amazon ECS based job definitions.</p>
+     * <p>An object with properties that are specific to Amazon EKS-based jobs. This
+     * must not be specified for Amazon ECS based job definitions.</p>
      */
     inline void SetEksProperties(const EksProperties& value) { m_eksPropertiesHasBeenSet = true; m_eksProperties = value; }
 
     /**
-     * <p>An object with various properties that are specific to Amazon EKS based jobs.
-     * This must not be specified for Amazon ECS based job definitions.</p>
+     * <p>An object with properties that are specific to Amazon EKS-based jobs. This
+     * must not be specified for Amazon ECS based job definitions.</p>
      */
     inline void SetEksProperties(EksProperties&& value) { m_eksPropertiesHasBeenSet = true; m_eksProperties = std::move(value); }
 
     /**
-     * <p>An object with various properties that are specific to Amazon EKS based jobs.
-     * This must not be specified for Amazon ECS based job definitions.</p>
+     * <p>An object with properties that are specific to Amazon EKS-based jobs. This
+     * must not be specified for Amazon ECS based job definitions.</p>
      */
     inline RegisterJobDefinitionRequest& WithEksProperties(const EksProperties& value) { SetEksProperties(value); return *this;}
 
     /**
-     * <p>An object with various properties that are specific to Amazon EKS based jobs.
-     * This must not be specified for Amazon ECS based job definitions.</p>
+     * <p>An object with properties that are specific to Amazon EKS-based jobs. This
+     * must not be specified for Amazon ECS based job definitions.</p>
      */
     inline RegisterJobDefinitionRequest& WithEksProperties(EksProperties&& value) { SetEksProperties(std::move(value)); return *this;}
+
+
+    /**
+     * <p>An object with properties that are specific to Amazon ECS-based jobs. This
+     * must not be specified for Amazon EKS-based job definitions.</p>
+     */
+    inline const EcsProperties& GetEcsProperties() const{ return m_ecsProperties; }
+
+    /**
+     * <p>An object with properties that are specific to Amazon ECS-based jobs. This
+     * must not be specified for Amazon EKS-based job definitions.</p>
+     */
+    inline bool EcsPropertiesHasBeenSet() const { return m_ecsPropertiesHasBeenSet; }
+
+    /**
+     * <p>An object with properties that are specific to Amazon ECS-based jobs. This
+     * must not be specified for Amazon EKS-based job definitions.</p>
+     */
+    inline void SetEcsProperties(const EcsProperties& value) { m_ecsPropertiesHasBeenSet = true; m_ecsProperties = value; }
+
+    /**
+     * <p>An object with properties that are specific to Amazon ECS-based jobs. This
+     * must not be specified for Amazon EKS-based job definitions.</p>
+     */
+    inline void SetEcsProperties(EcsProperties&& value) { m_ecsPropertiesHasBeenSet = true; m_ecsProperties = std::move(value); }
+
+    /**
+     * <p>An object with properties that are specific to Amazon ECS-based jobs. This
+     * must not be specified for Amazon EKS-based job definitions.</p>
+     */
+    inline RegisterJobDefinitionRequest& WithEcsProperties(const EcsProperties& value) { SetEcsProperties(value); return *this;}
+
+    /**
+     * <p>An object with properties that are specific to Amazon ECS-based jobs. This
+     * must not be specified for Amazon EKS-based job definitions.</p>
+     */
+    inline RegisterJobDefinitionRequest& WithEcsProperties(EcsProperties&& value) { SetEcsProperties(std::move(value)); return *this;}
 
   private:
 
@@ -898,6 +948,9 @@ namespace Model
 
     EksProperties m_eksProperties;
     bool m_eksPropertiesHasBeenSet = false;
+
+    EcsProperties m_ecsProperties;
+    bool m_ecsPropertiesHasBeenSet = false;
   };
 
 } // namespace Model

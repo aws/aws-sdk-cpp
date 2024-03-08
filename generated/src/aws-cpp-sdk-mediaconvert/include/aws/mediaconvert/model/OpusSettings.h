@@ -95,25 +95,25 @@ namespace Model
 
 
     /**
-     * Optional. Sample rate in hz. Valid values are 16000, 24000, and 48000. The
+     * Optional. Sample rate in Hz. Valid values are 16000, 24000, and 48000. The
      * default value is 48000.
      */
     inline int GetSampleRate() const{ return m_sampleRate; }
 
     /**
-     * Optional. Sample rate in hz. Valid values are 16000, 24000, and 48000. The
+     * Optional. Sample rate in Hz. Valid values are 16000, 24000, and 48000. The
      * default value is 48000.
      */
     inline bool SampleRateHasBeenSet() const { return m_sampleRateHasBeenSet; }
 
     /**
-     * Optional. Sample rate in hz. Valid values are 16000, 24000, and 48000. The
+     * Optional. Sample rate in Hz. Valid values are 16000, 24000, and 48000. The
      * default value is 48000.
      */
     inline void SetSampleRate(int value) { m_sampleRateHasBeenSet = true; m_sampleRate = value; }
 
     /**
-     * Optional. Sample rate in hz. Valid values are 16000, 24000, and 48000. The
+     * Optional. Sample rate in Hz. Valid values are 16000, 24000, and 48000. The
      * default value is 48000.
      */
     inline OpusSettings& WithSampleRate(int value) { SetSampleRate(value); return *this;}

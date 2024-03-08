@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case __AdTriggersElement::NOT_SET:
+            return {};
           case __AdTriggersElement::SPLICE_INSERT:
             return "SPLICE_INSERT";
           case __AdTriggersElement::BREAK:

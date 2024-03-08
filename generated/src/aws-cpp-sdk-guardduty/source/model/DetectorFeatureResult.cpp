@@ -29,6 +29,7 @@ namespace Aws
         static const int RDS_LOGIN_EVENTS_HASH = HashingUtils::HashString("RDS_LOGIN_EVENTS");
         static const int EKS_RUNTIME_MONITORING_HASH = HashingUtils::HashString("EKS_RUNTIME_MONITORING");
         static const int LAMBDA_NETWORK_LOGS_HASH = HashingUtils::HashString("LAMBDA_NETWORK_LOGS");
+        static const int RUNTIME_MONITORING_HASH = HashingUtils::HashString("RUNTIME_MONITORING");
 
 
         DetectorFeatureResult GetDetectorFeatureResultForName(const Aws::String& name)
@@ -70,6 +71,10 @@ namespace Aws
           {
             return DetectorFeatureResult::LAMBDA_NETWORK_LOGS;
           }
+          else if (hashCode == RUNTIME_MONITORING_HASH)
+          {
+            return DetectorFeatureResult::RUNTIME_MONITORING;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -84,6 +89,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DetectorFeatureResult::NOT_SET:
+            return {};
           case DetectorFeatureResult::FLOW_LOGS:
             return "FLOW_LOGS";
           case DetectorFeatureResult::CLOUD_TRAIL:
@@ -102,6 +109,8 @@ namespace Aws
             return "EKS_RUNTIME_MONITORING";
           case DetectorFeatureResult::LAMBDA_NETWORK_LOGS:
             return "LAMBDA_NETWORK_LOGS";
+          case DetectorFeatureResult::RUNTIME_MONITORING:
+            return "RUNTIME_MONITORING";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

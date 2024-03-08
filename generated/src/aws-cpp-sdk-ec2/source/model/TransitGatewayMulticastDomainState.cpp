@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TransitGatewayMulticastDomainState::NOT_SET:
+            return {};
           case TransitGatewayMulticastDomainState::pending:
             return "pending";
           case TransitGatewayMulticastDomainState::available:

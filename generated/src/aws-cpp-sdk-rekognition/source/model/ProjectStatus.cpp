@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ProjectStatus::NOT_SET:
+            return {};
           case ProjectStatus::CREATING:
             return "CREATING";
           case ProjectStatus::CREATED:

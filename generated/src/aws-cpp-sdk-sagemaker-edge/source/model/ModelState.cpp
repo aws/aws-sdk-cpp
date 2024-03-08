@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ModelState::NOT_SET:
+            return {};
           case ModelState::DEPLOY:
             return "DEPLOY";
           case ModelState::UNDEPLOY:

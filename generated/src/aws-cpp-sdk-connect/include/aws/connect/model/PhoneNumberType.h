@@ -21,7 +21,8 @@ namespace Model
     UIFN,
     SHARED,
     THIRD_PARTY_TF,
-    THIRD_PARTY_DID
+    THIRD_PARTY_DID,
+    SHORT_CODE
   };
 
 namespace PhoneNumberTypeMapper

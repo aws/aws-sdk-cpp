@@ -22,8 +22,8 @@ namespace Model
 {
 
   /**
-   * <p>How many days your data is kept in the hot tier. By default, your data is
-   * kept indefinitely in the hot tier.</p><p><h3>See Also:</h3>   <a
+   * <p>The number of days your data is kept in the hot tier. By default, your data
+   * is kept indefinitely in the hot tier.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/RetentionPeriod">AWS
    * API Reference</a></p>
    */

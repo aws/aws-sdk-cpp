@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MessageSystemAttributeNameForSends::NOT_SET:
+            return {};
           case MessageSystemAttributeNameForSends::AWSTraceHeader:
             return "AWSTraceHeader";
           default:

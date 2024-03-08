@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SyncResourceType::NOT_SET:
+            return {};
           case SyncResourceType::ENTITY:
             return "ENTITY";
           case SyncResourceType::COMPONENT_TYPE:

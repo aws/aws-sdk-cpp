@@ -90,6 +90,12 @@ DescribeFeatureGroupResult& DescribeFeatureGroupResult::operator =(const Aws::Am
 
   }
 
+  if(jsonValue.ValueExists("ThroughputConfig"))
+  {
+    m_throughputConfig = jsonValue.GetObject("ThroughputConfig");
+
+  }
+
   if(jsonValue.ValueExists("RoleArn"))
   {
     m_roleArn = jsonValue.GetString("RoleArn");

@@ -38,42 +38,74 @@ namespace Model
 
 
     /**
-     * <p>The ID of the asset model to update.</p>
+     * <p>The ID of the asset model to update. This can be either the actual ID in UUID
+     * format, or else <code>externalId:</code> followed by the external ID, if it has
+     * one. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline const Aws::String& GetAssetModelId() const{ return m_assetModelId; }
 
     /**
-     * <p>The ID of the asset model to update.</p>
+     * <p>The ID of the asset model to update. This can be either the actual ID in UUID
+     * format, or else <code>externalId:</code> followed by the external ID, if it has
+     * one. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline bool AssetModelIdHasBeenSet() const { return m_assetModelIdHasBeenSet; }
 
     /**
-     * <p>The ID of the asset model to update.</p>
+     * <p>The ID of the asset model to update. This can be either the actual ID in UUID
+     * format, or else <code>externalId:</code> followed by the external ID, if it has
+     * one. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline void SetAssetModelId(const Aws::String& value) { m_assetModelIdHasBeenSet = true; m_assetModelId = value; }
 
     /**
-     * <p>The ID of the asset model to update.</p>
+     * <p>The ID of the asset model to update. This can be either the actual ID in UUID
+     * format, or else <code>externalId:</code> followed by the external ID, if it has
+     * one. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline void SetAssetModelId(Aws::String&& value) { m_assetModelIdHasBeenSet = true; m_assetModelId = std::move(value); }
 
     /**
-     * <p>The ID of the asset model to update.</p>
+     * <p>The ID of the asset model to update. This can be either the actual ID in UUID
+     * format, or else <code>externalId:</code> followed by the external ID, if it has
+     * one. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline void SetAssetModelId(const char* value) { m_assetModelIdHasBeenSet = true; m_assetModelId.assign(value); }
 
     /**
-     * <p>The ID of the asset model to update.</p>
+     * <p>The ID of the asset model to update. This can be either the actual ID in UUID
+     * format, or else <code>externalId:</code> followed by the external ID, if it has
+     * one. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline UpdateAssetModelRequest& WithAssetModelId(const Aws::String& value) { SetAssetModelId(value); return *this;}
 
     /**
-     * <p>The ID of the asset model to update.</p>
+     * <p>The ID of the asset model to update. This can be either the actual ID in UUID
+     * format, or else <code>externalId:</code> followed by the external ID, if it has
+     * one. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline UpdateAssetModelRequest& WithAssetModelId(Aws::String&& value) { SetAssetModelId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the asset model to update.</p>
+     * <p>The ID of the asset model to update. This can be either the actual ID in UUID
+     * format, or else <code>externalId:</code> followed by the external ID, if it has
+     * one. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline UpdateAssetModelRequest& WithAssetModelId(const char* value) { SetAssetModelId(value); return *this;}
 
@@ -347,66 +379,98 @@ namespace Model
 
 
     /**
-     * <p>The composite asset models that are part of this asset model. Composite asset
-     * models are asset models that contain specific properties. Each composite model
-     * has a type that defines the properties that the composite model supports. Use
-     * composite asset models to define alarms on this asset model.</p>
+     * <p>The composite models that are part of this asset model. It groups properties
+     * (such as attributes, measurements, transforms, and metrics) and child composite
+     * models that model parts of your industrial equipment. Each composite model has a
+     * type that defines the properties that the composite model supports. Use
+     * composite models to define alarms on this asset model.</p>  <p>When
+     * creating custom composite models, you need to use <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModelCompositeModel.html">CreateAssetModelCompositeModel</a>.
+     * For more information, see &lt;LINK&gt;.</p> 
      */
     inline const Aws::Vector<AssetModelCompositeModel>& GetAssetModelCompositeModels() const{ return m_assetModelCompositeModels; }
 
     /**
-     * <p>The composite asset models that are part of this asset model. Composite asset
-     * models are asset models that contain specific properties. Each composite model
-     * has a type that defines the properties that the composite model supports. Use
-     * composite asset models to define alarms on this asset model.</p>
+     * <p>The composite models that are part of this asset model. It groups properties
+     * (such as attributes, measurements, transforms, and metrics) and child composite
+     * models that model parts of your industrial equipment. Each composite model has a
+     * type that defines the properties that the composite model supports. Use
+     * composite models to define alarms on this asset model.</p>  <p>When
+     * creating custom composite models, you need to use <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModelCompositeModel.html">CreateAssetModelCompositeModel</a>.
+     * For more information, see &lt;LINK&gt;.</p> 
      */
     inline bool AssetModelCompositeModelsHasBeenSet() const { return m_assetModelCompositeModelsHasBeenSet; }
 
     /**
-     * <p>The composite asset models that are part of this asset model. Composite asset
-     * models are asset models that contain specific properties. Each composite model
-     * has a type that defines the properties that the composite model supports. Use
-     * composite asset models to define alarms on this asset model.</p>
+     * <p>The composite models that are part of this asset model. It groups properties
+     * (such as attributes, measurements, transforms, and metrics) and child composite
+     * models that model parts of your industrial equipment. Each composite model has a
+     * type that defines the properties that the composite model supports. Use
+     * composite models to define alarms on this asset model.</p>  <p>When
+     * creating custom composite models, you need to use <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModelCompositeModel.html">CreateAssetModelCompositeModel</a>.
+     * For more information, see &lt;LINK&gt;.</p> 
      */
     inline void SetAssetModelCompositeModels(const Aws::Vector<AssetModelCompositeModel>& value) { m_assetModelCompositeModelsHasBeenSet = true; m_assetModelCompositeModels = value; }
 
     /**
-     * <p>The composite asset models that are part of this asset model. Composite asset
-     * models are asset models that contain specific properties. Each composite model
-     * has a type that defines the properties that the composite model supports. Use
-     * composite asset models to define alarms on this asset model.</p>
+     * <p>The composite models that are part of this asset model. It groups properties
+     * (such as attributes, measurements, transforms, and metrics) and child composite
+     * models that model parts of your industrial equipment. Each composite model has a
+     * type that defines the properties that the composite model supports. Use
+     * composite models to define alarms on this asset model.</p>  <p>When
+     * creating custom composite models, you need to use <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModelCompositeModel.html">CreateAssetModelCompositeModel</a>.
+     * For more information, see &lt;LINK&gt;.</p> 
      */
     inline void SetAssetModelCompositeModels(Aws::Vector<AssetModelCompositeModel>&& value) { m_assetModelCompositeModelsHasBeenSet = true; m_assetModelCompositeModels = std::move(value); }
 
     /**
-     * <p>The composite asset models that are part of this asset model. Composite asset
-     * models are asset models that contain specific properties. Each composite model
-     * has a type that defines the properties that the composite model supports. Use
-     * composite asset models to define alarms on this asset model.</p>
+     * <p>The composite models that are part of this asset model. It groups properties
+     * (such as attributes, measurements, transforms, and metrics) and child composite
+     * models that model parts of your industrial equipment. Each composite model has a
+     * type that defines the properties that the composite model supports. Use
+     * composite models to define alarms on this asset model.</p>  <p>When
+     * creating custom composite models, you need to use <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModelCompositeModel.html">CreateAssetModelCompositeModel</a>.
+     * For more information, see &lt;LINK&gt;.</p> 
      */
     inline UpdateAssetModelRequest& WithAssetModelCompositeModels(const Aws::Vector<AssetModelCompositeModel>& value) { SetAssetModelCompositeModels(value); return *this;}
 
     /**
-     * <p>The composite asset models that are part of this asset model. Composite asset
-     * models are asset models that contain specific properties. Each composite model
-     * has a type that defines the properties that the composite model supports. Use
-     * composite asset models to define alarms on this asset model.</p>
+     * <p>The composite models that are part of this asset model. It groups properties
+     * (such as attributes, measurements, transforms, and metrics) and child composite
+     * models that model parts of your industrial equipment. Each composite model has a
+     * type that defines the properties that the composite model supports. Use
+     * composite models to define alarms on this asset model.</p>  <p>When
+     * creating custom composite models, you need to use <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModelCompositeModel.html">CreateAssetModelCompositeModel</a>.
+     * For more information, see &lt;LINK&gt;.</p> 
      */
     inline UpdateAssetModelRequest& WithAssetModelCompositeModels(Aws::Vector<AssetModelCompositeModel>&& value) { SetAssetModelCompositeModels(std::move(value)); return *this;}
 
     /**
-     * <p>The composite asset models that are part of this asset model. Composite asset
-     * models are asset models that contain specific properties. Each composite model
-     * has a type that defines the properties that the composite model supports. Use
-     * composite asset models to define alarms on this asset model.</p>
+     * <p>The composite models that are part of this asset model. It groups properties
+     * (such as attributes, measurements, transforms, and metrics) and child composite
+     * models that model parts of your industrial equipment. Each composite model has a
+     * type that defines the properties that the composite model supports. Use
+     * composite models to define alarms on this asset model.</p>  <p>When
+     * creating custom composite models, you need to use <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModelCompositeModel.html">CreateAssetModelCompositeModel</a>.
+     * For more information, see &lt;LINK&gt;.</p> 
      */
     inline UpdateAssetModelRequest& AddAssetModelCompositeModels(const AssetModelCompositeModel& value) { m_assetModelCompositeModelsHasBeenSet = true; m_assetModelCompositeModels.push_back(value); return *this; }
 
     /**
-     * <p>The composite asset models that are part of this asset model. Composite asset
-     * models are asset models that contain specific properties. Each composite model
-     * has a type that defines the properties that the composite model supports. Use
-     * composite asset models to define alarms on this asset model.</p>
+     * <p>The composite models that are part of this asset model. It groups properties
+     * (such as attributes, measurements, transforms, and metrics) and child composite
+     * models that model parts of your industrial equipment. Each composite model has a
+     * type that defines the properties that the composite model supports. Use
+     * composite models to define alarms on this asset model.</p>  <p>When
+     * creating custom composite models, you need to use <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModelCompositeModel.html">CreateAssetModelCompositeModel</a>.
+     * For more information, see &lt;LINK&gt;.</p> 
      */
     inline UpdateAssetModelRequest& AddAssetModelCompositeModels(AssetModelCompositeModel&& value) { m_assetModelCompositeModelsHasBeenSet = true; m_assetModelCompositeModels.push_back(std::move(value)); return *this; }
 
@@ -467,6 +531,79 @@ namespace Model
      */
     inline UpdateAssetModelRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
+
+    /**
+     * <p>An external ID to assign to the asset model. The asset model must not already
+     * have an external ID. The external ID must be unique within your Amazon Web
+     * Services account. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline const Aws::String& GetAssetModelExternalId() const{ return m_assetModelExternalId; }
+
+    /**
+     * <p>An external ID to assign to the asset model. The asset model must not already
+     * have an external ID. The external ID must be unique within your Amazon Web
+     * Services account. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline bool AssetModelExternalIdHasBeenSet() const { return m_assetModelExternalIdHasBeenSet; }
+
+    /**
+     * <p>An external ID to assign to the asset model. The asset model must not already
+     * have an external ID. The external ID must be unique within your Amazon Web
+     * Services account. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline void SetAssetModelExternalId(const Aws::String& value) { m_assetModelExternalIdHasBeenSet = true; m_assetModelExternalId = value; }
+
+    /**
+     * <p>An external ID to assign to the asset model. The asset model must not already
+     * have an external ID. The external ID must be unique within your Amazon Web
+     * Services account. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline void SetAssetModelExternalId(Aws::String&& value) { m_assetModelExternalIdHasBeenSet = true; m_assetModelExternalId = std::move(value); }
+
+    /**
+     * <p>An external ID to assign to the asset model. The asset model must not already
+     * have an external ID. The external ID must be unique within your Amazon Web
+     * Services account. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline void SetAssetModelExternalId(const char* value) { m_assetModelExternalIdHasBeenSet = true; m_assetModelExternalId.assign(value); }
+
+    /**
+     * <p>An external ID to assign to the asset model. The asset model must not already
+     * have an external ID. The external ID must be unique within your Amazon Web
+     * Services account. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline UpdateAssetModelRequest& WithAssetModelExternalId(const Aws::String& value) { SetAssetModelExternalId(value); return *this;}
+
+    /**
+     * <p>An external ID to assign to the asset model. The asset model must not already
+     * have an external ID. The external ID must be unique within your Amazon Web
+     * Services account. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline UpdateAssetModelRequest& WithAssetModelExternalId(Aws::String&& value) { SetAssetModelExternalId(std::move(value)); return *this;}
+
+    /**
+     * <p>An external ID to assign to the asset model. The asset model must not already
+     * have an external ID. The external ID must be unique within your Amazon Web
+     * Services account. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline UpdateAssetModelRequest& WithAssetModelExternalId(const char* value) { SetAssetModelExternalId(value); return *this;}
+
   private:
 
     Aws::String m_assetModelId;
@@ -489,6 +626,9 @@ namespace Model
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet = false;
+
+    Aws::String m_assetModelExternalId;
+    bool m_assetModelExternalIdHasBeenSet = false;
   };
 
 } // namespace Model

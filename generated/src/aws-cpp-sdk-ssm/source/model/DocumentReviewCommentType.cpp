@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DocumentReviewCommentType::NOT_SET:
+            return {};
           case DocumentReviewCommentType::Comment:
             return "Comment";
           default:

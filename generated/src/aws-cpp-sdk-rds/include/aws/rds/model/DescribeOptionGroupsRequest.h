@@ -226,12 +226,13 @@ namespace Model
 
 
     /**
-     * <p>Filters the list of option groups to only include groups associated with a
-     * specific database engine.</p> <p>Valid Values:</p> <ul> <li> <p>
-     * <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
-     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li>
-     * <li> <p> <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code>
-     * </p> </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <p>A filter to only include option groups associated with this database
+     * engine.</p> <p>Valid Values:</p> <ul> <li> <p> <code>db2-ae</code> </p> </li>
+     * <li> <p> <code>db2-se</code> </p> </li> <li> <p> <code>mariadb</code> </p> </li>
+     * <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code> </p>
+     * </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
      * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
      * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
      * <code>sqlserver-web</code> </p> </li> </ul>
@@ -239,12 +240,13 @@ namespace Model
     inline const Aws::String& GetEngineName() const{ return m_engineName; }
 
     /**
-     * <p>Filters the list of option groups to only include groups associated with a
-     * specific database engine.</p> <p>Valid Values:</p> <ul> <li> <p>
-     * <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
-     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li>
-     * <li> <p> <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code>
-     * </p> </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <p>A filter to only include option groups associated with this database
+     * engine.</p> <p>Valid Values:</p> <ul> <li> <p> <code>db2-ae</code> </p> </li>
+     * <li> <p> <code>db2-se</code> </p> </li> <li> <p> <code>mariadb</code> </p> </li>
+     * <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code> </p>
+     * </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
      * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
      * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
      * <code>sqlserver-web</code> </p> </li> </ul>
@@ -252,12 +254,13 @@ namespace Model
     inline bool EngineNameHasBeenSet() const { return m_engineNameHasBeenSet; }
 
     /**
-     * <p>Filters the list of option groups to only include groups associated with a
-     * specific database engine.</p> <p>Valid Values:</p> <ul> <li> <p>
-     * <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
-     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li>
-     * <li> <p> <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code>
-     * </p> </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <p>A filter to only include option groups associated with this database
+     * engine.</p> <p>Valid Values:</p> <ul> <li> <p> <code>db2-ae</code> </p> </li>
+     * <li> <p> <code>db2-se</code> </p> </li> <li> <p> <code>mariadb</code> </p> </li>
+     * <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code> </p>
+     * </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
      * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
      * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
      * <code>sqlserver-web</code> </p> </li> </ul>
@@ -265,12 +268,13 @@ namespace Model
     inline void SetEngineName(const Aws::String& value) { m_engineNameHasBeenSet = true; m_engineName = value; }
 
     /**
-     * <p>Filters the list of option groups to only include groups associated with a
-     * specific database engine.</p> <p>Valid Values:</p> <ul> <li> <p>
-     * <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
-     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li>
-     * <li> <p> <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code>
-     * </p> </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <p>A filter to only include option groups associated with this database
+     * engine.</p> <p>Valid Values:</p> <ul> <li> <p> <code>db2-ae</code> </p> </li>
+     * <li> <p> <code>db2-se</code> </p> </li> <li> <p> <code>mariadb</code> </p> </li>
+     * <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code> </p>
+     * </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
      * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
      * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
      * <code>sqlserver-web</code> </p> </li> </ul>
@@ -278,12 +282,13 @@ namespace Model
     inline void SetEngineName(Aws::String&& value) { m_engineNameHasBeenSet = true; m_engineName = std::move(value); }
 
     /**
-     * <p>Filters the list of option groups to only include groups associated with a
-     * specific database engine.</p> <p>Valid Values:</p> <ul> <li> <p>
-     * <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
-     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li>
-     * <li> <p> <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code>
-     * </p> </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <p>A filter to only include option groups associated with this database
+     * engine.</p> <p>Valid Values:</p> <ul> <li> <p> <code>db2-ae</code> </p> </li>
+     * <li> <p> <code>db2-se</code> </p> </li> <li> <p> <code>mariadb</code> </p> </li>
+     * <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code> </p>
+     * </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
      * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
      * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
      * <code>sqlserver-web</code> </p> </li> </ul>
@@ -291,12 +296,13 @@ namespace Model
     inline void SetEngineName(const char* value) { m_engineNameHasBeenSet = true; m_engineName.assign(value); }
 
     /**
-     * <p>Filters the list of option groups to only include groups associated with a
-     * specific database engine.</p> <p>Valid Values:</p> <ul> <li> <p>
-     * <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
-     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li>
-     * <li> <p> <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code>
-     * </p> </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <p>A filter to only include option groups associated with this database
+     * engine.</p> <p>Valid Values:</p> <ul> <li> <p> <code>db2-ae</code> </p> </li>
+     * <li> <p> <code>db2-se</code> </p> </li> <li> <p> <code>mariadb</code> </p> </li>
+     * <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code> </p>
+     * </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
      * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
      * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
      * <code>sqlserver-web</code> </p> </li> </ul>
@@ -304,12 +310,13 @@ namespace Model
     inline DescribeOptionGroupsRequest& WithEngineName(const Aws::String& value) { SetEngineName(value); return *this;}
 
     /**
-     * <p>Filters the list of option groups to only include groups associated with a
-     * specific database engine.</p> <p>Valid Values:</p> <ul> <li> <p>
-     * <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
-     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li>
-     * <li> <p> <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code>
-     * </p> </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <p>A filter to only include option groups associated with this database
+     * engine.</p> <p>Valid Values:</p> <ul> <li> <p> <code>db2-ae</code> </p> </li>
+     * <li> <p> <code>db2-se</code> </p> </li> <li> <p> <code>mariadb</code> </p> </li>
+     * <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code> </p>
+     * </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
      * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
      * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
      * <code>sqlserver-web</code> </p> </li> </ul>
@@ -317,12 +324,13 @@ namespace Model
     inline DescribeOptionGroupsRequest& WithEngineName(Aws::String&& value) { SetEngineName(std::move(value)); return *this;}
 
     /**
-     * <p>Filters the list of option groups to only include groups associated with a
-     * specific database engine.</p> <p>Valid Values:</p> <ul> <li> <p>
-     * <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code> </p> </li> <li> <p>
-     * <code>oracle-ee</code> </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li>
-     * <li> <p> <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code>
-     * </p> </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
+     * <p>A filter to only include option groups associated with this database
+     * engine.</p> <p>Valid Values:</p> <ul> <li> <p> <code>db2-ae</code> </p> </li>
+     * <li> <p> <code>db2-se</code> </p> </li> <li> <p> <code>mariadb</code> </p> </li>
+     * <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code> </p>
+     * </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
+     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
+     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
      * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
      * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
      * <code>sqlserver-web</code> </p> </li> </ul>

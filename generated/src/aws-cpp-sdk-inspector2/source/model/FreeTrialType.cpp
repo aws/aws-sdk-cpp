@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FreeTrialType::NOT_SET:
+            return {};
           case FreeTrialType::EC2:
             return "EC2";
           case FreeTrialType::ECR:

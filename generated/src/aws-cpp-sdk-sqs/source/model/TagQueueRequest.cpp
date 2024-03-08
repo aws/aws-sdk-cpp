@@ -4,10 +4,12 @@
  */
 
 #include <aws/sqs/model/TagQueueRequest.h>
-#include <aws/core/utils/StringUtils.h>
-#include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+
+#include <utility>
 
 using namespace Aws::SQS::Model;
+using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 TagQueueRequest::TagQueueRequest() : 
@@ -18,32 +20,36 @@ TagQueueRequest::TagQueueRequest() :
 
 Aws::String TagQueueRequest::SerializePayload() const
 {
-  Aws::StringStream ss;
-  ss << "Action=TagQueue&";
+  JsonValue payload;
+
   if(m_queueUrlHasBeenSet)
   {
-    ss << "QueueUrl=" << StringUtils::URLEncode(m_queueUrl.c_str()) << "&";
+   payload.WithString("QueueUrl", m_queueUrl);
+
   }
 
   if(m_tagsHasBeenSet)
   {
-    unsigned tagsCount = 1;
-    for(auto& item : m_tags)
-    {
-      ss << "Tag." << tagsCount << ".Key="
-          << StringUtils::URLEncode(item.first.c_str()) << "&";
-      ss << "Tag." << tagsCount << ".Value="
-          << StringUtils::URLEncode(item.second.c_str()) << "&";
-      tagsCount++;
-    }
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("Tags", std::move(tagsJsonMap));
+
   }
 
-  ss << "Version=2012-11-05";
-  return ss.str();
+  return payload.View().WriteReadable();
 }
 
-
-void  TagQueueRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+Aws::Http::HeaderValueCollection TagQueueRequest::GetRequestSpecificHeaders() const
 {
-  uri.SetQueryString(SerializePayload());
+  Aws::Http::HeaderValueCollection headers;
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AmazonSQS.TagQueue"));
+  return headers;
+
 }
+
+
+
+

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PositionFiltering::NOT_SET:
+            return {};
           case PositionFiltering::TimeBased:
             return "TimeBased";
           case PositionFiltering::DistanceBased:

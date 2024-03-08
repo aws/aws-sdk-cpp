@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DvbSubDestinationAlignment::NOT_SET:
+            return {};
           case DvbSubDestinationAlignment::CENTERED:
             return "CENTERED";
           case DvbSubDestinationAlignment::LEFT:

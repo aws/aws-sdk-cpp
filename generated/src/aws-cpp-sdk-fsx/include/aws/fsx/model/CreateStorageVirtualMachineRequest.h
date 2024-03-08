@@ -42,7 +42,7 @@ namespace Model
     /**
      * <p>Describes the self-managed Microsoft Active Directory to which you want to
      * join the SVM. Joining an Active Directory provides user authentication and
-     * access control for SMB clients, including Microsoft Windows and macOS client
+     * access control for SMB clients, including Microsoft Windows and macOS clients
      * accessing the file system.</p>
      */
     inline const CreateSvmActiveDirectoryConfiguration& GetActiveDirectoryConfiguration() const{ return m_activeDirectoryConfiguration; }
@@ -50,7 +50,7 @@ namespace Model
     /**
      * <p>Describes the self-managed Microsoft Active Directory to which you want to
      * join the SVM. Joining an Active Directory provides user authentication and
-     * access control for SMB clients, including Microsoft Windows and macOS client
+     * access control for SMB clients, including Microsoft Windows and macOS clients
      * accessing the file system.</p>
      */
     inline bool ActiveDirectoryConfigurationHasBeenSet() const { return m_activeDirectoryConfigurationHasBeenSet; }
@@ -58,7 +58,7 @@ namespace Model
     /**
      * <p>Describes the self-managed Microsoft Active Directory to which you want to
      * join the SVM. Joining an Active Directory provides user authentication and
-     * access control for SMB clients, including Microsoft Windows and macOS client
+     * access control for SMB clients, including Microsoft Windows and macOS clients
      * accessing the file system.</p>
      */
     inline void SetActiveDirectoryConfiguration(const CreateSvmActiveDirectoryConfiguration& value) { m_activeDirectoryConfigurationHasBeenSet = true; m_activeDirectoryConfiguration = value; }
@@ -66,7 +66,7 @@ namespace Model
     /**
      * <p>Describes the self-managed Microsoft Active Directory to which you want to
      * join the SVM. Joining an Active Directory provides user authentication and
-     * access control for SMB clients, including Microsoft Windows and macOS client
+     * access control for SMB clients, including Microsoft Windows and macOS clients
      * accessing the file system.</p>
      */
     inline void SetActiveDirectoryConfiguration(CreateSvmActiveDirectoryConfiguration&& value) { m_activeDirectoryConfigurationHasBeenSet = true; m_activeDirectoryConfiguration = std::move(value); }
@@ -74,7 +74,7 @@ namespace Model
     /**
      * <p>Describes the self-managed Microsoft Active Directory to which you want to
      * join the SVM. Joining an Active Directory provides user authentication and
-     * access control for SMB clients, including Microsoft Windows and macOS client
+     * access control for SMB clients, including Microsoft Windows and macOS clients
      * accessing the file system.</p>
      */
     inline CreateStorageVirtualMachineRequest& WithActiveDirectoryConfiguration(const CreateSvmActiveDirectoryConfiguration& value) { SetActiveDirectoryConfiguration(value); return *this;}
@@ -82,7 +82,7 @@ namespace Model
     /**
      * <p>Describes the self-managed Microsoft Active Directory to which you want to
      * join the SVM. Joining an Active Directory provides user authentication and
-     * access control for SMB clients, including Microsoft Windows and macOS client
+     * access control for SMB clients, including Microsoft Windows and macOS clients
      * accessing the file system.</p>
      */
     inline CreateStorageVirtualMachineRequest& WithActiveDirectoryConfiguration(CreateSvmActiveDirectoryConfiguration&& value) { SetActiveDirectoryConfiguration(std::move(value)); return *this;}
@@ -266,11 +266,13 @@ namespace Model
      * following values:</p> <ul> <li> <p> <code>UNIX</code> if the file system is
      * managed by a UNIX administrator, the majority of users are NFS clients, and an
      * application accessing the data uses a UNIX user as the service account.</p>
-     * </li> <li> <p> <code>NTFS</code> if the file system is managed by a Windows
-     * administrator, the majority of users are SMB clients, and an application
-     * accessing the data uses a Windows user as the service account.</p> </li> <li>
-     * <p> <code>MIXED</code> if the file system is managed by both UNIX and Windows
-     * administrators and users consist of both NFS and SMB clients.</p> </li> </ul>
+     * </li> <li> <p> <code>NTFS</code> if the file system is managed by a Microsoft
+     * Windows administrator, the majority of users are SMB clients, and an application
+     * accessing the data uses a Microsoft Windows user as the service account.</p>
+     * </li> <li> <p> <code>MIXED</code> This is an advanced setting. For more
+     * information, see <a
+     * href="fsx/latest/ONTAPGuide/volume-security-style.html">Volume security
+     * style</a> in the Amazon FSx for NetApp ONTAP User Guide.</p> </li> </ul> <p/>
      */
     inline const StorageVirtualMachineRootVolumeSecurityStyle& GetRootVolumeSecurityStyle() const{ return m_rootVolumeSecurityStyle; }
 
@@ -279,11 +281,13 @@ namespace Model
      * following values:</p> <ul> <li> <p> <code>UNIX</code> if the file system is
      * managed by a UNIX administrator, the majority of users are NFS clients, and an
      * application accessing the data uses a UNIX user as the service account.</p>
-     * </li> <li> <p> <code>NTFS</code> if the file system is managed by a Windows
-     * administrator, the majority of users are SMB clients, and an application
-     * accessing the data uses a Windows user as the service account.</p> </li> <li>
-     * <p> <code>MIXED</code> if the file system is managed by both UNIX and Windows
-     * administrators and users consist of both NFS and SMB clients.</p> </li> </ul>
+     * </li> <li> <p> <code>NTFS</code> if the file system is managed by a Microsoft
+     * Windows administrator, the majority of users are SMB clients, and an application
+     * accessing the data uses a Microsoft Windows user as the service account.</p>
+     * </li> <li> <p> <code>MIXED</code> This is an advanced setting. For more
+     * information, see <a
+     * href="fsx/latest/ONTAPGuide/volume-security-style.html">Volume security
+     * style</a> in the Amazon FSx for NetApp ONTAP User Guide.</p> </li> </ul> <p/>
      */
     inline bool RootVolumeSecurityStyleHasBeenSet() const { return m_rootVolumeSecurityStyleHasBeenSet; }
 
@@ -292,11 +296,13 @@ namespace Model
      * following values:</p> <ul> <li> <p> <code>UNIX</code> if the file system is
      * managed by a UNIX administrator, the majority of users are NFS clients, and an
      * application accessing the data uses a UNIX user as the service account.</p>
-     * </li> <li> <p> <code>NTFS</code> if the file system is managed by a Windows
-     * administrator, the majority of users are SMB clients, and an application
-     * accessing the data uses a Windows user as the service account.</p> </li> <li>
-     * <p> <code>MIXED</code> if the file system is managed by both UNIX and Windows
-     * administrators and users consist of both NFS and SMB clients.</p> </li> </ul>
+     * </li> <li> <p> <code>NTFS</code> if the file system is managed by a Microsoft
+     * Windows administrator, the majority of users are SMB clients, and an application
+     * accessing the data uses a Microsoft Windows user as the service account.</p>
+     * </li> <li> <p> <code>MIXED</code> This is an advanced setting. For more
+     * information, see <a
+     * href="fsx/latest/ONTAPGuide/volume-security-style.html">Volume security
+     * style</a> in the Amazon FSx for NetApp ONTAP User Guide.</p> </li> </ul> <p/>
      */
     inline void SetRootVolumeSecurityStyle(const StorageVirtualMachineRootVolumeSecurityStyle& value) { m_rootVolumeSecurityStyleHasBeenSet = true; m_rootVolumeSecurityStyle = value; }
 
@@ -305,11 +311,13 @@ namespace Model
      * following values:</p> <ul> <li> <p> <code>UNIX</code> if the file system is
      * managed by a UNIX administrator, the majority of users are NFS clients, and an
      * application accessing the data uses a UNIX user as the service account.</p>
-     * </li> <li> <p> <code>NTFS</code> if the file system is managed by a Windows
-     * administrator, the majority of users are SMB clients, and an application
-     * accessing the data uses a Windows user as the service account.</p> </li> <li>
-     * <p> <code>MIXED</code> if the file system is managed by both UNIX and Windows
-     * administrators and users consist of both NFS and SMB clients.</p> </li> </ul>
+     * </li> <li> <p> <code>NTFS</code> if the file system is managed by a Microsoft
+     * Windows administrator, the majority of users are SMB clients, and an application
+     * accessing the data uses a Microsoft Windows user as the service account.</p>
+     * </li> <li> <p> <code>MIXED</code> This is an advanced setting. For more
+     * information, see <a
+     * href="fsx/latest/ONTAPGuide/volume-security-style.html">Volume security
+     * style</a> in the Amazon FSx for NetApp ONTAP User Guide.</p> </li> </ul> <p/>
      */
     inline void SetRootVolumeSecurityStyle(StorageVirtualMachineRootVolumeSecurityStyle&& value) { m_rootVolumeSecurityStyleHasBeenSet = true; m_rootVolumeSecurityStyle = std::move(value); }
 
@@ -318,11 +326,13 @@ namespace Model
      * following values:</p> <ul> <li> <p> <code>UNIX</code> if the file system is
      * managed by a UNIX administrator, the majority of users are NFS clients, and an
      * application accessing the data uses a UNIX user as the service account.</p>
-     * </li> <li> <p> <code>NTFS</code> if the file system is managed by a Windows
-     * administrator, the majority of users are SMB clients, and an application
-     * accessing the data uses a Windows user as the service account.</p> </li> <li>
-     * <p> <code>MIXED</code> if the file system is managed by both UNIX and Windows
-     * administrators and users consist of both NFS and SMB clients.</p> </li> </ul>
+     * </li> <li> <p> <code>NTFS</code> if the file system is managed by a Microsoft
+     * Windows administrator, the majority of users are SMB clients, and an application
+     * accessing the data uses a Microsoft Windows user as the service account.</p>
+     * </li> <li> <p> <code>MIXED</code> This is an advanced setting. For more
+     * information, see <a
+     * href="fsx/latest/ONTAPGuide/volume-security-style.html">Volume security
+     * style</a> in the Amazon FSx for NetApp ONTAP User Guide.</p> </li> </ul> <p/>
      */
     inline CreateStorageVirtualMachineRequest& WithRootVolumeSecurityStyle(const StorageVirtualMachineRootVolumeSecurityStyle& value) { SetRootVolumeSecurityStyle(value); return *this;}
 
@@ -331,11 +341,13 @@ namespace Model
      * following values:</p> <ul> <li> <p> <code>UNIX</code> if the file system is
      * managed by a UNIX administrator, the majority of users are NFS clients, and an
      * application accessing the data uses a UNIX user as the service account.</p>
-     * </li> <li> <p> <code>NTFS</code> if the file system is managed by a Windows
-     * administrator, the majority of users are SMB clients, and an application
-     * accessing the data uses a Windows user as the service account.</p> </li> <li>
-     * <p> <code>MIXED</code> if the file system is managed by both UNIX and Windows
-     * administrators and users consist of both NFS and SMB clients.</p> </li> </ul>
+     * </li> <li> <p> <code>NTFS</code> if the file system is managed by a Microsoft
+     * Windows administrator, the majority of users are SMB clients, and an application
+     * accessing the data uses a Microsoft Windows user as the service account.</p>
+     * </li> <li> <p> <code>MIXED</code> This is an advanced setting. For more
+     * information, see <a
+     * href="fsx/latest/ONTAPGuide/volume-security-style.html">Volume security
+     * style</a> in the Amazon FSx for NetApp ONTAP User Guide.</p> </li> </ul> <p/>
      */
     inline CreateStorageVirtualMachineRequest& WithRootVolumeSecurityStyle(StorageVirtualMachineRootVolumeSecurityStyle&& value) { SetRootVolumeSecurityStyle(std::move(value)); return *this;}
 

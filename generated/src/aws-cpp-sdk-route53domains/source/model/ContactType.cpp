@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ContactType::NOT_SET:
+            return {};
           case ContactType::PERSON:
             return "PERSON";
           case ContactType::COMPANY:

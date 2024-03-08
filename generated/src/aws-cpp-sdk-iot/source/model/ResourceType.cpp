@@ -84,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResourceType::NOT_SET:
+            return {};
           case ResourceType::DEVICE_CERTIFICATE:
             return "DEVICE_CERTIFICATE";
           case ResourceType::CA_CERTIFICATE:

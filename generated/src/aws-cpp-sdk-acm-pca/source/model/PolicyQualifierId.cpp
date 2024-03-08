@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PolicyQualifierId::NOT_SET:
+            return {};
           case PolicyQualifierId::CPS:
             return "CPS";
           default:

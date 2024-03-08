@@ -626,8 +626,8 @@ namespace Model
      * following triggers, but it doesn't provide the ClientMetadata value as
      * input:</p> <ul> <li> <p>Post authentication</p> </li> <li> <p>Custom message</p>
      * </li> <li> <p>Pre token generation</p> </li> <li> <p>Create auth challenge</p>
-     * </li> <li> <p>Define auth challenge</p> </li> <li> <p>Verify auth challenge</p>
-     * </li> </ul> <p>For more information, see <a
+     * </li> <li> <p>Define auth challenge</p> </li> </ul> <p>For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">
      * Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon
      * Cognito Developer Guide</i>.</p>  <p>When you use the ClientMetadata
@@ -659,8 +659,8 @@ namespace Model
      * following triggers, but it doesn't provide the ClientMetadata value as
      * input:</p> <ul> <li> <p>Post authentication</p> </li> <li> <p>Custom message</p>
      * </li> <li> <p>Pre token generation</p> </li> <li> <p>Create auth challenge</p>
-     * </li> <li> <p>Define auth challenge</p> </li> <li> <p>Verify auth challenge</p>
-     * </li> </ul> <p>For more information, see <a
+     * </li> <li> <p>Define auth challenge</p> </li> </ul> <p>For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">
      * Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon
      * Cognito Developer Guide</i>.</p>  <p>When you use the ClientMetadata
@@ -692,8 +692,8 @@ namespace Model
      * following triggers, but it doesn't provide the ClientMetadata value as
      * input:</p> <ul> <li> <p>Post authentication</p> </li> <li> <p>Custom message</p>
      * </li> <li> <p>Pre token generation</p> </li> <li> <p>Create auth challenge</p>
-     * </li> <li> <p>Define auth challenge</p> </li> <li> <p>Verify auth challenge</p>
-     * </li> </ul> <p>For more information, see <a
+     * </li> <li> <p>Define auth challenge</p> </li> </ul> <p>For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">
      * Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon
      * Cognito Developer Guide</i>.</p>  <p>When you use the ClientMetadata
@@ -725,8 +725,8 @@ namespace Model
      * following triggers, but it doesn't provide the ClientMetadata value as
      * input:</p> <ul> <li> <p>Post authentication</p> </li> <li> <p>Custom message</p>
      * </li> <li> <p>Pre token generation</p> </li> <li> <p>Create auth challenge</p>
-     * </li> <li> <p>Define auth challenge</p> </li> <li> <p>Verify auth challenge</p>
-     * </li> </ul> <p>For more information, see <a
+     * </li> <li> <p>Define auth challenge</p> </li> </ul> <p>For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">
      * Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon
      * Cognito Developer Guide</i>.</p>  <p>When you use the ClientMetadata
@@ -758,8 +758,8 @@ namespace Model
      * following triggers, but it doesn't provide the ClientMetadata value as
      * input:</p> <ul> <li> <p>Post authentication</p> </li> <li> <p>Custom message</p>
      * </li> <li> <p>Pre token generation</p> </li> <li> <p>Create auth challenge</p>
-     * </li> <li> <p>Define auth challenge</p> </li> <li> <p>Verify auth challenge</p>
-     * </li> </ul> <p>For more information, see <a
+     * </li> <li> <p>Define auth challenge</p> </li> </ul> <p>For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">
      * Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon
      * Cognito Developer Guide</i>.</p>  <p>When you use the ClientMetadata
@@ -791,8 +791,8 @@ namespace Model
      * following triggers, but it doesn't provide the ClientMetadata value as
      * input:</p> <ul> <li> <p>Post authentication</p> </li> <li> <p>Custom message</p>
      * </li> <li> <p>Pre token generation</p> </li> <li> <p>Create auth challenge</p>
-     * </li> <li> <p>Define auth challenge</p> </li> <li> <p>Verify auth challenge</p>
-     * </li> </ul> <p>For more information, see <a
+     * </li> <li> <p>Define auth challenge</p> </li> </ul> <p>For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">
      * Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon
      * Cognito Developer Guide</i>.</p>  <p>When you use the ClientMetadata
@@ -824,8 +824,8 @@ namespace Model
      * following triggers, but it doesn't provide the ClientMetadata value as
      * input:</p> <ul> <li> <p>Post authentication</p> </li> <li> <p>Custom message</p>
      * </li> <li> <p>Pre token generation</p> </li> <li> <p>Create auth challenge</p>
-     * </li> <li> <p>Define auth challenge</p> </li> <li> <p>Verify auth challenge</p>
-     * </li> </ul> <p>For more information, see <a
+     * </li> <li> <p>Define auth challenge</p> </li> </ul> <p>For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">
      * Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon
      * Cognito Developer Guide</i>.</p>  <p>When you use the ClientMetadata
@@ -857,8 +857,8 @@ namespace Model
      * following triggers, but it doesn't provide the ClientMetadata value as
      * input:</p> <ul> <li> <p>Post authentication</p> </li> <li> <p>Custom message</p>
      * </li> <li> <p>Pre token generation</p> </li> <li> <p>Create auth challenge</p>
-     * </li> <li> <p>Define auth challenge</p> </li> <li> <p>Verify auth challenge</p>
-     * </li> </ul> <p>For more information, see <a
+     * </li> <li> <p>Define auth challenge</p> </li> </ul> <p>For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">
      * Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon
      * Cognito Developer Guide</i>.</p>  <p>When you use the ClientMetadata
@@ -890,8 +890,8 @@ namespace Model
      * following triggers, but it doesn't provide the ClientMetadata value as
      * input:</p> <ul> <li> <p>Post authentication</p> </li> <li> <p>Custom message</p>
      * </li> <li> <p>Pre token generation</p> </li> <li> <p>Create auth challenge</p>
-     * </li> <li> <p>Define auth challenge</p> </li> <li> <p>Verify auth challenge</p>
-     * </li> </ul> <p>For more information, see <a
+     * </li> <li> <p>Define auth challenge</p> </li> </ul> <p>For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">
      * Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon
      * Cognito Developer Guide</i>.</p>  <p>When you use the ClientMetadata
@@ -923,8 +923,8 @@ namespace Model
      * following triggers, but it doesn't provide the ClientMetadata value as
      * input:</p> <ul> <li> <p>Post authentication</p> </li> <li> <p>Custom message</p>
      * </li> <li> <p>Pre token generation</p> </li> <li> <p>Create auth challenge</p>
-     * </li> <li> <p>Define auth challenge</p> </li> <li> <p>Verify auth challenge</p>
-     * </li> </ul> <p>For more information, see <a
+     * </li> <li> <p>Define auth challenge</p> </li> </ul> <p>For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">
      * Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon
      * Cognito Developer Guide</i>.</p>  <p>When you use the ClientMetadata
@@ -956,8 +956,8 @@ namespace Model
      * following triggers, but it doesn't provide the ClientMetadata value as
      * input:</p> <ul> <li> <p>Post authentication</p> </li> <li> <p>Custom message</p>
      * </li> <li> <p>Pre token generation</p> </li> <li> <p>Create auth challenge</p>
-     * </li> <li> <p>Define auth challenge</p> </li> <li> <p>Verify auth challenge</p>
-     * </li> </ul> <p>For more information, see <a
+     * </li> <li> <p>Define auth challenge</p> </li> </ul> <p>For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">
      * Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon
      * Cognito Developer Guide</i>.</p>  <p>When you use the ClientMetadata
@@ -989,8 +989,8 @@ namespace Model
      * following triggers, but it doesn't provide the ClientMetadata value as
      * input:</p> <ul> <li> <p>Post authentication</p> </li> <li> <p>Custom message</p>
      * </li> <li> <p>Pre token generation</p> </li> <li> <p>Create auth challenge</p>
-     * </li> <li> <p>Define auth challenge</p> </li> <li> <p>Verify auth challenge</p>
-     * </li> </ul> <p>For more information, see <a
+     * </li> <li> <p>Define auth challenge</p> </li> </ul> <p>For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">
      * Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon
      * Cognito Developer Guide</i>.</p>  <p>When you use the ClientMetadata
@@ -1022,8 +1022,8 @@ namespace Model
      * following triggers, but it doesn't provide the ClientMetadata value as
      * input:</p> <ul> <li> <p>Post authentication</p> </li> <li> <p>Custom message</p>
      * </li> <li> <p>Pre token generation</p> </li> <li> <p>Create auth challenge</p>
-     * </li> <li> <p>Define auth challenge</p> </li> <li> <p>Verify auth challenge</p>
-     * </li> </ul> <p>For more information, see <a
+     * </li> <li> <p>Define auth challenge</p> </li> </ul> <p>For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html">
      * Customizing user pool Workflows with Lambda Triggers</a> in the <i>Amazon
      * Cognito Developer Guide</i>.</p>  <p>When you use the ClientMetadata

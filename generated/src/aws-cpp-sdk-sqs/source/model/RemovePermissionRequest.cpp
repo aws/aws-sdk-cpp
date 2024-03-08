@@ -4,10 +4,12 @@
  */
 
 #include <aws/sqs/model/RemovePermissionRequest.h>
-#include <aws/core/utils/StringUtils.h>
-#include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+
+#include <utility>
 
 using namespace Aws::SQS::Model;
+using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 RemovePermissionRequest::RemovePermissionRequest() : 
@@ -18,24 +20,31 @@ RemovePermissionRequest::RemovePermissionRequest() :
 
 Aws::String RemovePermissionRequest::SerializePayload() const
 {
-  Aws::StringStream ss;
-  ss << "Action=RemovePermission&";
+  JsonValue payload;
+
   if(m_queueUrlHasBeenSet)
   {
-    ss << "QueueUrl=" << StringUtils::URLEncode(m_queueUrl.c_str()) << "&";
+   payload.WithString("QueueUrl", m_queueUrl);
+
   }
 
   if(m_labelHasBeenSet)
   {
-    ss << "Label=" << StringUtils::URLEncode(m_label.c_str()) << "&";
+   payload.WithString("Label", m_label);
+
   }
 
-  ss << "Version=2012-11-05";
-  return ss.str();
+  return payload.View().WriteReadable();
 }
 
-
-void  RemovePermissionRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
+Aws::Http::HeaderValueCollection RemovePermissionRequest::GetRequestSpecificHeaders() const
 {
-  uri.SetQueryString(SerializePayload());
+  Aws::Http::HeaderValueCollection headers;
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AmazonSQS.RemovePermission"));
+  return headers;
+
 }
+
+
+
+

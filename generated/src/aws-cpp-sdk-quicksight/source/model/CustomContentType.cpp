@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CustomContentType::NOT_SET:
+            return {};
           case CustomContentType::IMAGE:
             return "IMAGE";
           case CustomContentType::OTHER_EMBEDDED_CONTENT:

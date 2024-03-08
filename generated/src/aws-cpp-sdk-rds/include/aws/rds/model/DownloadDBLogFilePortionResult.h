@@ -119,19 +119,19 @@ namespace Model
 
 
     /**
-     * <p>Boolean value that if true, indicates there is more data to be
+     * <p>A Boolean value that, if true, indicates there is more data to be
      * downloaded.</p>
      */
     inline bool GetAdditionalDataPending() const{ return m_additionalDataPending; }
 
     /**
-     * <p>Boolean value that if true, indicates there is more data to be
+     * <p>A Boolean value that, if true, indicates there is more data to be
      * downloaded.</p>
      */
     inline void SetAdditionalDataPending(bool value) { m_additionalDataPending = value; }
 
     /**
-     * <p>Boolean value that if true, indicates there is more data to be
+     * <p>A Boolean value that, if true, indicates there is more data to be
      * downloaded.</p>
      */
     inline DownloadDBLogFilePortionResult& WithAdditionalDataPending(bool value) { SetAdditionalDataPending(value); return *this;}

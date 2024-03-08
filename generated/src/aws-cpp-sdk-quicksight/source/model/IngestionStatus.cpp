@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case IngestionStatus::NOT_SET:
+            return {};
           case IngestionStatus::INITIALIZED:
             return "INITIALIZED";
           case IngestionStatus::QUEUED:

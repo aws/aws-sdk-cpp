@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DatastoreStatus::NOT_SET:
+            return {};
           case DatastoreStatus::CREATING:
             return "CREATING";
           case DatastoreStatus::ACTIVE:

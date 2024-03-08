@@ -30,11 +30,9 @@ namespace Model
 {
 
   /**
-   * <p>A collection of attributes that are applied to all active Security
-   * Hub-aggregated findings and that result in a subset of findings that are
-   * included in this insight.</p> <p>You can filter by up to 10 finding attributes.
-   * For each attribute, you can provide up to 20 filter values.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>A collection of filters that are applied to all active findings aggregated by
+   * Security Hub.</p> <p>You can filter by up to ten finding attributes. For each
+   * attribute, you can provide up to 20 filter values.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsSecurityFindingFilters">AWS
    * API Reference</a></p>
    */
@@ -105,42 +103,42 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Web Services account ID that a finding is generated in.</p>
+     * <p>The Amazon Web Services account ID in which a finding is generated.</p>
      */
     inline const Aws::Vector<StringFilter>& GetAwsAccountId() const{ return m_awsAccountId; }
 
     /**
-     * <p>The Amazon Web Services account ID that a finding is generated in.</p>
+     * <p>The Amazon Web Services account ID in which a finding is generated.</p>
      */
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
 
     /**
-     * <p>The Amazon Web Services account ID that a finding is generated in.</p>
+     * <p>The Amazon Web Services account ID in which a finding is generated.</p>
      */
     inline void SetAwsAccountId(const Aws::Vector<StringFilter>& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
 
     /**
-     * <p>The Amazon Web Services account ID that a finding is generated in.</p>
+     * <p>The Amazon Web Services account ID in which a finding is generated.</p>
      */
     inline void SetAwsAccountId(Aws::Vector<StringFilter>&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
 
     /**
-     * <p>The Amazon Web Services account ID that a finding is generated in.</p>
+     * <p>The Amazon Web Services account ID in which a finding is generated.</p>
      */
     inline AwsSecurityFindingFilters& WithAwsAccountId(const Aws::Vector<StringFilter>& value) { SetAwsAccountId(value); return *this;}
 
     /**
-     * <p>The Amazon Web Services account ID that a finding is generated in.</p>
+     * <p>The Amazon Web Services account ID in which a finding is generated.</p>
      */
     inline AwsSecurityFindingFilters& WithAwsAccountId(Aws::Vector<StringFilter>&& value) { SetAwsAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Web Services account ID that a finding is generated in.</p>
+     * <p>The Amazon Web Services account ID in which a finding is generated.</p>
      */
     inline AwsSecurityFindingFilters& AddAwsAccountId(const StringFilter& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.push_back(value); return *this; }
 
     /**
-     * <p>The Amazon Web Services account ID that a finding is generated in.</p>
+     * <p>The Amazon Web Services account ID in which a finding is generated.</p>
      */
     inline AwsSecurityFindingFilters& AddAwsAccountId(StringFilter&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.push_back(std::move(value)); return *this; }
 
@@ -4779,6 +4777,333 @@ namespace Model
      */
     inline AwsSecurityFindingFilters& AddComplianceAssociatedStandardsId(StringFilter&& value) { m_complianceAssociatedStandardsIdHasBeenSet = true; m_complianceAssociatedStandardsId.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p> Indicates whether a software vulnerability in your environment has a known
+     * exploit. You can filter findings by this field only if you use Security Hub and
+     * Amazon Inspector. </p>
+     */
+    inline const Aws::Vector<StringFilter>& GetVulnerabilitiesExploitAvailable() const{ return m_vulnerabilitiesExploitAvailable; }
+
+    /**
+     * <p> Indicates whether a software vulnerability in your environment has a known
+     * exploit. You can filter findings by this field only if you use Security Hub and
+     * Amazon Inspector. </p>
+     */
+    inline bool VulnerabilitiesExploitAvailableHasBeenSet() const { return m_vulnerabilitiesExploitAvailableHasBeenSet; }
+
+    /**
+     * <p> Indicates whether a software vulnerability in your environment has a known
+     * exploit. You can filter findings by this field only if you use Security Hub and
+     * Amazon Inspector. </p>
+     */
+    inline void SetVulnerabilitiesExploitAvailable(const Aws::Vector<StringFilter>& value) { m_vulnerabilitiesExploitAvailableHasBeenSet = true; m_vulnerabilitiesExploitAvailable = value; }
+
+    /**
+     * <p> Indicates whether a software vulnerability in your environment has a known
+     * exploit. You can filter findings by this field only if you use Security Hub and
+     * Amazon Inspector. </p>
+     */
+    inline void SetVulnerabilitiesExploitAvailable(Aws::Vector<StringFilter>&& value) { m_vulnerabilitiesExploitAvailableHasBeenSet = true; m_vulnerabilitiesExploitAvailable = std::move(value); }
+
+    /**
+     * <p> Indicates whether a software vulnerability in your environment has a known
+     * exploit. You can filter findings by this field only if you use Security Hub and
+     * Amazon Inspector. </p>
+     */
+    inline AwsSecurityFindingFilters& WithVulnerabilitiesExploitAvailable(const Aws::Vector<StringFilter>& value) { SetVulnerabilitiesExploitAvailable(value); return *this;}
+
+    /**
+     * <p> Indicates whether a software vulnerability in your environment has a known
+     * exploit. You can filter findings by this field only if you use Security Hub and
+     * Amazon Inspector. </p>
+     */
+    inline AwsSecurityFindingFilters& WithVulnerabilitiesExploitAvailable(Aws::Vector<StringFilter>&& value) { SetVulnerabilitiesExploitAvailable(std::move(value)); return *this;}
+
+    /**
+     * <p> Indicates whether a software vulnerability in your environment has a known
+     * exploit. You can filter findings by this field only if you use Security Hub and
+     * Amazon Inspector. </p>
+     */
+    inline AwsSecurityFindingFilters& AddVulnerabilitiesExploitAvailable(const StringFilter& value) { m_vulnerabilitiesExploitAvailableHasBeenSet = true; m_vulnerabilitiesExploitAvailable.push_back(value); return *this; }
+
+    /**
+     * <p> Indicates whether a software vulnerability in your environment has a known
+     * exploit. You can filter findings by this field only if you use Security Hub and
+     * Amazon Inspector. </p>
+     */
+    inline AwsSecurityFindingFilters& AddVulnerabilitiesExploitAvailable(StringFilter&& value) { m_vulnerabilitiesExploitAvailableHasBeenSet = true; m_vulnerabilitiesExploitAvailable.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p> Indicates whether a vulnerability is fixed in a newer version of the
+     * affected software packages. You can filter findings by this field only if you
+     * use Security Hub and Amazon Inspector. </p>
+     */
+    inline const Aws::Vector<StringFilter>& GetVulnerabilitiesFixAvailable() const{ return m_vulnerabilitiesFixAvailable; }
+
+    /**
+     * <p> Indicates whether a vulnerability is fixed in a newer version of the
+     * affected software packages. You can filter findings by this field only if you
+     * use Security Hub and Amazon Inspector. </p>
+     */
+    inline bool VulnerabilitiesFixAvailableHasBeenSet() const { return m_vulnerabilitiesFixAvailableHasBeenSet; }
+
+    /**
+     * <p> Indicates whether a vulnerability is fixed in a newer version of the
+     * affected software packages. You can filter findings by this field only if you
+     * use Security Hub and Amazon Inspector. </p>
+     */
+    inline void SetVulnerabilitiesFixAvailable(const Aws::Vector<StringFilter>& value) { m_vulnerabilitiesFixAvailableHasBeenSet = true; m_vulnerabilitiesFixAvailable = value; }
+
+    /**
+     * <p> Indicates whether a vulnerability is fixed in a newer version of the
+     * affected software packages. You can filter findings by this field only if you
+     * use Security Hub and Amazon Inspector. </p>
+     */
+    inline void SetVulnerabilitiesFixAvailable(Aws::Vector<StringFilter>&& value) { m_vulnerabilitiesFixAvailableHasBeenSet = true; m_vulnerabilitiesFixAvailable = std::move(value); }
+
+    /**
+     * <p> Indicates whether a vulnerability is fixed in a newer version of the
+     * affected software packages. You can filter findings by this field only if you
+     * use Security Hub and Amazon Inspector. </p>
+     */
+    inline AwsSecurityFindingFilters& WithVulnerabilitiesFixAvailable(const Aws::Vector<StringFilter>& value) { SetVulnerabilitiesFixAvailable(value); return *this;}
+
+    /**
+     * <p> Indicates whether a vulnerability is fixed in a newer version of the
+     * affected software packages. You can filter findings by this field only if you
+     * use Security Hub and Amazon Inspector. </p>
+     */
+    inline AwsSecurityFindingFilters& WithVulnerabilitiesFixAvailable(Aws::Vector<StringFilter>&& value) { SetVulnerabilitiesFixAvailable(std::move(value)); return *this;}
+
+    /**
+     * <p> Indicates whether a vulnerability is fixed in a newer version of the
+     * affected software packages. You can filter findings by this field only if you
+     * use Security Hub and Amazon Inspector. </p>
+     */
+    inline AwsSecurityFindingFilters& AddVulnerabilitiesFixAvailable(const StringFilter& value) { m_vulnerabilitiesFixAvailableHasBeenSet = true; m_vulnerabilitiesFixAvailable.push_back(value); return *this; }
+
+    /**
+     * <p> Indicates whether a vulnerability is fixed in a newer version of the
+     * affected software packages. You can filter findings by this field only if you
+     * use Security Hub and Amazon Inspector. </p>
+     */
+    inline AwsSecurityFindingFilters& AddVulnerabilitiesFixAvailable(StringFilter&& value) { m_vulnerabilitiesFixAvailableHasBeenSet = true; m_vulnerabilitiesFixAvailable.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p> The name of a security control parameter. </p>
+     */
+    inline const Aws::Vector<StringFilter>& GetComplianceSecurityControlParametersName() const{ return m_complianceSecurityControlParametersName; }
+
+    /**
+     * <p> The name of a security control parameter. </p>
+     */
+    inline bool ComplianceSecurityControlParametersNameHasBeenSet() const { return m_complianceSecurityControlParametersNameHasBeenSet; }
+
+    /**
+     * <p> The name of a security control parameter. </p>
+     */
+    inline void SetComplianceSecurityControlParametersName(const Aws::Vector<StringFilter>& value) { m_complianceSecurityControlParametersNameHasBeenSet = true; m_complianceSecurityControlParametersName = value; }
+
+    /**
+     * <p> The name of a security control parameter. </p>
+     */
+    inline void SetComplianceSecurityControlParametersName(Aws::Vector<StringFilter>&& value) { m_complianceSecurityControlParametersNameHasBeenSet = true; m_complianceSecurityControlParametersName = std::move(value); }
+
+    /**
+     * <p> The name of a security control parameter. </p>
+     */
+    inline AwsSecurityFindingFilters& WithComplianceSecurityControlParametersName(const Aws::Vector<StringFilter>& value) { SetComplianceSecurityControlParametersName(value); return *this;}
+
+    /**
+     * <p> The name of a security control parameter. </p>
+     */
+    inline AwsSecurityFindingFilters& WithComplianceSecurityControlParametersName(Aws::Vector<StringFilter>&& value) { SetComplianceSecurityControlParametersName(std::move(value)); return *this;}
+
+    /**
+     * <p> The name of a security control parameter. </p>
+     */
+    inline AwsSecurityFindingFilters& AddComplianceSecurityControlParametersName(const StringFilter& value) { m_complianceSecurityControlParametersNameHasBeenSet = true; m_complianceSecurityControlParametersName.push_back(value); return *this; }
+
+    /**
+     * <p> The name of a security control parameter. </p>
+     */
+    inline AwsSecurityFindingFilters& AddComplianceSecurityControlParametersName(StringFilter&& value) { m_complianceSecurityControlParametersNameHasBeenSet = true; m_complianceSecurityControlParametersName.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p> The current value of a security control parameter. </p>
+     */
+    inline const Aws::Vector<StringFilter>& GetComplianceSecurityControlParametersValue() const{ return m_complianceSecurityControlParametersValue; }
+
+    /**
+     * <p> The current value of a security control parameter. </p>
+     */
+    inline bool ComplianceSecurityControlParametersValueHasBeenSet() const { return m_complianceSecurityControlParametersValueHasBeenSet; }
+
+    /**
+     * <p> The current value of a security control parameter. </p>
+     */
+    inline void SetComplianceSecurityControlParametersValue(const Aws::Vector<StringFilter>& value) { m_complianceSecurityControlParametersValueHasBeenSet = true; m_complianceSecurityControlParametersValue = value; }
+
+    /**
+     * <p> The current value of a security control parameter. </p>
+     */
+    inline void SetComplianceSecurityControlParametersValue(Aws::Vector<StringFilter>&& value) { m_complianceSecurityControlParametersValueHasBeenSet = true; m_complianceSecurityControlParametersValue = std::move(value); }
+
+    /**
+     * <p> The current value of a security control parameter. </p>
+     */
+    inline AwsSecurityFindingFilters& WithComplianceSecurityControlParametersValue(const Aws::Vector<StringFilter>& value) { SetComplianceSecurityControlParametersValue(value); return *this;}
+
+    /**
+     * <p> The current value of a security control parameter. </p>
+     */
+    inline AwsSecurityFindingFilters& WithComplianceSecurityControlParametersValue(Aws::Vector<StringFilter>&& value) { SetComplianceSecurityControlParametersValue(std::move(value)); return *this;}
+
+    /**
+     * <p> The current value of a security control parameter. </p>
+     */
+    inline AwsSecurityFindingFilters& AddComplianceSecurityControlParametersValue(const StringFilter& value) { m_complianceSecurityControlParametersValueHasBeenSet = true; m_complianceSecurityControlParametersValue.push_back(value); return *this; }
+
+    /**
+     * <p> The current value of a security control parameter. </p>
+     */
+    inline AwsSecurityFindingFilters& AddComplianceSecurityControlParametersValue(StringFilter&& value) { m_complianceSecurityControlParametersValueHasBeenSet = true; m_complianceSecurityControlParametersValue.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The name of the Amazon Web Services account in which a finding is
+     * generated.</p>
+     */
+    inline const Aws::Vector<StringFilter>& GetAwsAccountName() const{ return m_awsAccountName; }
+
+    /**
+     * <p>The name of the Amazon Web Services account in which a finding is
+     * generated.</p>
+     */
+    inline bool AwsAccountNameHasBeenSet() const { return m_awsAccountNameHasBeenSet; }
+
+    /**
+     * <p>The name of the Amazon Web Services account in which a finding is
+     * generated.</p>
+     */
+    inline void SetAwsAccountName(const Aws::Vector<StringFilter>& value) { m_awsAccountNameHasBeenSet = true; m_awsAccountName = value; }
+
+    /**
+     * <p>The name of the Amazon Web Services account in which a finding is
+     * generated.</p>
+     */
+    inline void SetAwsAccountName(Aws::Vector<StringFilter>&& value) { m_awsAccountNameHasBeenSet = true; m_awsAccountName = std::move(value); }
+
+    /**
+     * <p>The name of the Amazon Web Services account in which a finding is
+     * generated.</p>
+     */
+    inline AwsSecurityFindingFilters& WithAwsAccountName(const Aws::Vector<StringFilter>& value) { SetAwsAccountName(value); return *this;}
+
+    /**
+     * <p>The name of the Amazon Web Services account in which a finding is
+     * generated.</p>
+     */
+    inline AwsSecurityFindingFilters& WithAwsAccountName(Aws::Vector<StringFilter>&& value) { SetAwsAccountName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the Amazon Web Services account in which a finding is
+     * generated.</p>
+     */
+    inline AwsSecurityFindingFilters& AddAwsAccountName(const StringFilter& value) { m_awsAccountNameHasBeenSet = true; m_awsAccountName.push_back(value); return *this; }
+
+    /**
+     * <p>The name of the Amazon Web Services account in which a finding is
+     * generated.</p>
+     */
+    inline AwsSecurityFindingFilters& AddAwsAccountName(StringFilter&& value) { m_awsAccountNameHasBeenSet = true; m_awsAccountName.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p> The name of the application that is related to a finding. </p>
+     */
+    inline const Aws::Vector<StringFilter>& GetResourceApplicationName() const{ return m_resourceApplicationName; }
+
+    /**
+     * <p> The name of the application that is related to a finding. </p>
+     */
+    inline bool ResourceApplicationNameHasBeenSet() const { return m_resourceApplicationNameHasBeenSet; }
+
+    /**
+     * <p> The name of the application that is related to a finding. </p>
+     */
+    inline void SetResourceApplicationName(const Aws::Vector<StringFilter>& value) { m_resourceApplicationNameHasBeenSet = true; m_resourceApplicationName = value; }
+
+    /**
+     * <p> The name of the application that is related to a finding. </p>
+     */
+    inline void SetResourceApplicationName(Aws::Vector<StringFilter>&& value) { m_resourceApplicationNameHasBeenSet = true; m_resourceApplicationName = std::move(value); }
+
+    /**
+     * <p> The name of the application that is related to a finding. </p>
+     */
+    inline AwsSecurityFindingFilters& WithResourceApplicationName(const Aws::Vector<StringFilter>& value) { SetResourceApplicationName(value); return *this;}
+
+    /**
+     * <p> The name of the application that is related to a finding. </p>
+     */
+    inline AwsSecurityFindingFilters& WithResourceApplicationName(Aws::Vector<StringFilter>&& value) { SetResourceApplicationName(std::move(value)); return *this;}
+
+    /**
+     * <p> The name of the application that is related to a finding. </p>
+     */
+    inline AwsSecurityFindingFilters& AddResourceApplicationName(const StringFilter& value) { m_resourceApplicationNameHasBeenSet = true; m_resourceApplicationName.push_back(value); return *this; }
+
+    /**
+     * <p> The name of the application that is related to a finding. </p>
+     */
+    inline AwsSecurityFindingFilters& AddResourceApplicationName(StringFilter&& value) { m_resourceApplicationNameHasBeenSet = true; m_resourceApplicationName.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p> The ARN of the application that is related to a finding. </p>
+     */
+    inline const Aws::Vector<StringFilter>& GetResourceApplicationArn() const{ return m_resourceApplicationArn; }
+
+    /**
+     * <p> The ARN of the application that is related to a finding. </p>
+     */
+    inline bool ResourceApplicationArnHasBeenSet() const { return m_resourceApplicationArnHasBeenSet; }
+
+    /**
+     * <p> The ARN of the application that is related to a finding. </p>
+     */
+    inline void SetResourceApplicationArn(const Aws::Vector<StringFilter>& value) { m_resourceApplicationArnHasBeenSet = true; m_resourceApplicationArn = value; }
+
+    /**
+     * <p> The ARN of the application that is related to a finding. </p>
+     */
+    inline void SetResourceApplicationArn(Aws::Vector<StringFilter>&& value) { m_resourceApplicationArnHasBeenSet = true; m_resourceApplicationArn = std::move(value); }
+
+    /**
+     * <p> The ARN of the application that is related to a finding. </p>
+     */
+    inline AwsSecurityFindingFilters& WithResourceApplicationArn(const Aws::Vector<StringFilter>& value) { SetResourceApplicationArn(value); return *this;}
+
+    /**
+     * <p> The ARN of the application that is related to a finding. </p>
+     */
+    inline AwsSecurityFindingFilters& WithResourceApplicationArn(Aws::Vector<StringFilter>&& value) { SetResourceApplicationArn(std::move(value)); return *this;}
+
+    /**
+     * <p> The ARN of the application that is related to a finding. </p>
+     */
+    inline AwsSecurityFindingFilters& AddResourceApplicationArn(const StringFilter& value) { m_resourceApplicationArnHasBeenSet = true; m_resourceApplicationArn.push_back(value); return *this; }
+
+    /**
+     * <p> The ARN of the application that is related to a finding. </p>
+     */
+    inline AwsSecurityFindingFilters& AddResourceApplicationArn(StringFilter&& value) { m_resourceApplicationArnHasBeenSet = true; m_resourceApplicationArn.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::Vector<StringFilter> m_productArn;
@@ -5059,6 +5384,27 @@ namespace Model
 
     Aws::Vector<StringFilter> m_complianceAssociatedStandardsId;
     bool m_complianceAssociatedStandardsIdHasBeenSet = false;
+
+    Aws::Vector<StringFilter> m_vulnerabilitiesExploitAvailable;
+    bool m_vulnerabilitiesExploitAvailableHasBeenSet = false;
+
+    Aws::Vector<StringFilter> m_vulnerabilitiesFixAvailable;
+    bool m_vulnerabilitiesFixAvailableHasBeenSet = false;
+
+    Aws::Vector<StringFilter> m_complianceSecurityControlParametersName;
+    bool m_complianceSecurityControlParametersNameHasBeenSet = false;
+
+    Aws::Vector<StringFilter> m_complianceSecurityControlParametersValue;
+    bool m_complianceSecurityControlParametersValueHasBeenSet = false;
+
+    Aws::Vector<StringFilter> m_awsAccountName;
+    bool m_awsAccountNameHasBeenSet = false;
+
+    Aws::Vector<StringFilter> m_resourceApplicationName;
+    bool m_resourceApplicationNameHasBeenSet = false;
+
+    Aws::Vector<StringFilter> m_resourceApplicationArn;
+    bool m_resourceApplicationArnHasBeenSet = false;
   };
 
 } // namespace Model

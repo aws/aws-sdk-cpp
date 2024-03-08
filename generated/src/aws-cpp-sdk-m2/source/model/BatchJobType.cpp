@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BatchJobType::NOT_SET:
+            return {};
           case BatchJobType::VSE:
             return "VSE";
           case BatchJobType::JES2:

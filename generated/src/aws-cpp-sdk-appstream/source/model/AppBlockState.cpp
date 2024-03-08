@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AppBlockState::NOT_SET:
+            return {};
           case AppBlockState::INACTIVE:
             return "INACTIVE";
           case AppBlockState::ACTIVE:

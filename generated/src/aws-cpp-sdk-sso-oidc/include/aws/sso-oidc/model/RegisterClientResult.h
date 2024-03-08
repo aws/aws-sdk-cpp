@@ -157,73 +157,73 @@ namespace Model
 
 
     /**
-     * <p>The endpoint where the client can request authorization.</p>
+     * <p>An endpoint that the client can use to request authorization.</p>
      */
     inline const Aws::String& GetAuthorizationEndpoint() const{ return m_authorizationEndpoint; }
 
     /**
-     * <p>The endpoint where the client can request authorization.</p>
+     * <p>An endpoint that the client can use to request authorization.</p>
      */
     inline void SetAuthorizationEndpoint(const Aws::String& value) { m_authorizationEndpoint = value; }
 
     /**
-     * <p>The endpoint where the client can request authorization.</p>
+     * <p>An endpoint that the client can use to request authorization.</p>
      */
     inline void SetAuthorizationEndpoint(Aws::String&& value) { m_authorizationEndpoint = std::move(value); }
 
     /**
-     * <p>The endpoint where the client can request authorization.</p>
+     * <p>An endpoint that the client can use to request authorization.</p>
      */
     inline void SetAuthorizationEndpoint(const char* value) { m_authorizationEndpoint.assign(value); }
 
     /**
-     * <p>The endpoint where the client can request authorization.</p>
+     * <p>An endpoint that the client can use to request authorization.</p>
      */
     inline RegisterClientResult& WithAuthorizationEndpoint(const Aws::String& value) { SetAuthorizationEndpoint(value); return *this;}
 
     /**
-     * <p>The endpoint where the client can request authorization.</p>
+     * <p>An endpoint that the client can use to request authorization.</p>
      */
     inline RegisterClientResult& WithAuthorizationEndpoint(Aws::String&& value) { SetAuthorizationEndpoint(std::move(value)); return *this;}
 
     /**
-     * <p>The endpoint where the client can request authorization.</p>
+     * <p>An endpoint that the client can use to request authorization.</p>
      */
     inline RegisterClientResult& WithAuthorizationEndpoint(const char* value) { SetAuthorizationEndpoint(value); return *this;}
 
 
     /**
-     * <p>The endpoint where the client can get an access token.</p>
+     * <p>An endpoint that the client can use to create tokens.</p>
      */
     inline const Aws::String& GetTokenEndpoint() const{ return m_tokenEndpoint; }
 
     /**
-     * <p>The endpoint where the client can get an access token.</p>
+     * <p>An endpoint that the client can use to create tokens.</p>
      */
     inline void SetTokenEndpoint(const Aws::String& value) { m_tokenEndpoint = value; }
 
     /**
-     * <p>The endpoint where the client can get an access token.</p>
+     * <p>An endpoint that the client can use to create tokens.</p>
      */
     inline void SetTokenEndpoint(Aws::String&& value) { m_tokenEndpoint = std::move(value); }
 
     /**
-     * <p>The endpoint where the client can get an access token.</p>
+     * <p>An endpoint that the client can use to create tokens.</p>
      */
     inline void SetTokenEndpoint(const char* value) { m_tokenEndpoint.assign(value); }
 
     /**
-     * <p>The endpoint where the client can get an access token.</p>
+     * <p>An endpoint that the client can use to create tokens.</p>
      */
     inline RegisterClientResult& WithTokenEndpoint(const Aws::String& value) { SetTokenEndpoint(value); return *this;}
 
     /**
-     * <p>The endpoint where the client can get an access token.</p>
+     * <p>An endpoint that the client can use to create tokens.</p>
      */
     inline RegisterClientResult& WithTokenEndpoint(Aws::String&& value) { SetTokenEndpoint(std::move(value)); return *this;}
 
     /**
-     * <p>The endpoint where the client can get an access token.</p>
+     * <p>An endpoint that the client can use to create tokens.</p>
      */
     inline RegisterClientResult& WithTokenEndpoint(const char* value) { SetTokenEndpoint(value); return *this;}
 

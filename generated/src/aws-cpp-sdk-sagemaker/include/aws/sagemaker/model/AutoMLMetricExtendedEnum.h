@@ -34,7 +34,14 @@ namespace Model
     MAPE,
     MASE,
     WAPE,
-    AverageWeightedQuantileLoss
+    AverageWeightedQuantileLoss,
+    Rouge1,
+    Rouge2,
+    RougeL,
+    RougeLSum,
+    Perplexity,
+    ValidationLoss,
+    TrainingLoss
   };
 
 namespace AutoMLMetricExtendedEnumMapper

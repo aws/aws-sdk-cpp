@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case M2tsPcrControl::NOT_SET:
+            return {};
           case M2tsPcrControl::PCR_EVERY_PES_PACKET:
             return "PCR_EVERY_PES_PACKET";
           case M2tsPcrControl::CONFIGURED_PCR_PERIOD:

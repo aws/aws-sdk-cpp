@@ -29,8 +29,8 @@ namespace WorkLink
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef WorkLinkClientConfiguration ClientConfigurationType;
       typedef WorkLinkEndpointProvider EndpointProviderType;
@@ -40,14 +40,14 @@ namespace WorkLink
         * is not specified, it will be initialized to default values.
         */
         WorkLinkClient(const Aws::WorkLink::WorkLinkClientConfiguration& clientConfiguration = Aws::WorkLink::WorkLinkClientConfiguration(),
-                       std::shared_ptr<WorkLinkEndpointProviderBase> endpointProvider = Aws::MakeShared<WorkLinkEndpointProvider>(ALLOCATION_TAG));
+                       std::shared_ptr<WorkLinkEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         WorkLinkClient(const Aws::Auth::AWSCredentials& credentials,
-                       std::shared_ptr<WorkLinkEndpointProviderBase> endpointProvider = Aws::MakeShared<WorkLinkEndpointProvider>(ALLOCATION_TAG),
+                       std::shared_ptr<WorkLinkEndpointProviderBase> endpointProvider = nullptr,
                        const Aws::WorkLink::WorkLinkClientConfiguration& clientConfiguration = Aws::WorkLink::WorkLinkClientConfiguration());
 
        /**
@@ -55,7 +55,7 @@ namespace WorkLink
         * the default http client factory will be used
         */
         WorkLinkClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                       std::shared_ptr<WorkLinkEndpointProviderBase> endpointProvider = Aws::MakeShared<WorkLinkEndpointProvider>(ALLOCATION_TAG),
+                       std::shared_ptr<WorkLinkEndpointProviderBase> endpointProvider = nullptr,
                        const Aws::WorkLink::WorkLinkClientConfiguration& clientConfiguration = Aws::WorkLink::WorkLinkClientConfiguration());
 
 

@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FastSnapshotRestoreStateCode::NOT_SET:
+            return {};
           case FastSnapshotRestoreStateCode::enabling:
             return "enabling";
           case FastSnapshotRestoreStateCode::optimizing:

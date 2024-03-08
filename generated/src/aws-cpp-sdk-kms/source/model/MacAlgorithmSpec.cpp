@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MacAlgorithmSpec::NOT_SET:
+            return {};
           case MacAlgorithmSpec::HMAC_SHA_224:
             return "HMAC_SHA_224";
           case MacAlgorithmSpec::HMAC_SHA_256:

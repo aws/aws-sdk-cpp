@@ -18,7 +18,8 @@ GetPersonalizedRankingRequest::GetPersonalizedRankingRequest() :
     m_userIdHasBeenSet(false),
     m_contextHasBeenSet(false),
     m_filterArnHasBeenSet(false),
-    m_filterValuesHasBeenSet(false)
+    m_filterValuesHasBeenSet(false),
+    m_metadataColumnsHasBeenSet(false)
 {
 }
 
@@ -74,6 +75,22 @@ Aws::String GetPersonalizedRankingRequest::SerializePayload() const
      filterValuesJsonMap.WithString(filterValuesItem.first, filterValuesItem.second);
    }
    payload.WithObject("filterValues", std::move(filterValuesJsonMap));
+
+  }
+
+  if(m_metadataColumnsHasBeenSet)
+  {
+   JsonValue metadataColumnsJsonMap;
+   for(auto& metadataColumnsItem : m_metadataColumns)
+   {
+     Aws::Utils::Array<JsonValue> columnNamesListJsonList(metadataColumnsItem.second.size());
+     for(unsigned columnNamesListIndex = 0; columnNamesListIndex < columnNamesListJsonList.GetLength(); ++columnNamesListIndex)
+     {
+       columnNamesListJsonList[columnNamesListIndex].AsString(metadataColumnsItem.second[columnNamesListIndex]);
+     }
+     metadataColumnsJsonMap.WithArray(metadataColumnsItem.first, std::move(columnNamesListJsonList));
+   }
+   payload.WithObject("metadataColumns", std::move(metadataColumnsJsonMap));
 
   }
 

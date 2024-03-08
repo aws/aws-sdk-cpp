@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ApprovalState::NOT_SET:
+            return {};
           case ApprovalState::APPROVE:
             return "APPROVE";
           case ApprovalState::REVOKE:

@@ -32,7 +32,8 @@ AwsEcsTaskDefinitionDetails::AwsEcsTaskDefinitionDetails() :
     m_proxyConfigurationHasBeenSet(false),
     m_requiresCompatibilitiesHasBeenSet(false),
     m_taskRoleArnHasBeenSet(false),
-    m_volumesHasBeenSet(false)
+    m_volumesHasBeenSet(false),
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -50,7 +51,8 @@ AwsEcsTaskDefinitionDetails::AwsEcsTaskDefinitionDetails(JsonView jsonValue) :
     m_proxyConfigurationHasBeenSet(false),
     m_requiresCompatibilitiesHasBeenSet(false),
     m_taskRoleArnHasBeenSet(false),
-    m_volumesHasBeenSet(false)
+    m_volumesHasBeenSet(false),
+    m_statusHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -170,6 +172,13 @@ AwsEcsTaskDefinitionDetails& AwsEcsTaskDefinitionDetails::operator =(JsonView js
     m_volumesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Status"))
+  {
+    m_status = jsonValue.GetString("Status");
+
+    m_statusHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -283,6 +292,12 @@ JsonValue AwsEcsTaskDefinitionDetails::Jsonize() const
      volumesJsonList[volumesIndex].AsObject(m_volumes[volumesIndex].Jsonize());
    }
    payload.WithArray("Volumes", std::move(volumesJsonList));
+
+  }
+
+  if(m_statusHasBeenSet)
+  {
+   payload.WithString("Status", m_status);
 
   }
 

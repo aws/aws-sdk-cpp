@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DeviceStatus::NOT_SET:
+            return {};
           case DeviceStatus::AWAITING_PROVISIONING:
             return "AWAITING_PROVISIONING";
           case DeviceStatus::PENDING:

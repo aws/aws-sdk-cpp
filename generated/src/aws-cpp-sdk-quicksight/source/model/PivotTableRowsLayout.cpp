@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PivotTableRowsLayout::NOT_SET:
+            return {};
           case PivotTableRowsLayout::TABULAR:
             return "TABULAR";
           case PivotTableRowsLayout::HIERARCHY:

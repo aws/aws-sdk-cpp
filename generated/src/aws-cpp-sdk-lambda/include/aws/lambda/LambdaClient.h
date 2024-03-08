@@ -73,8 +73,8 @@ namespace Lambda
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef LambdaClientConfiguration ClientConfigurationType;
       typedef LambdaEndpointProvider EndpointProviderType;
@@ -84,14 +84,14 @@ namespace Lambda
         * is not specified, it will be initialized to default values.
         */
         LambdaClient(const Aws::Lambda::LambdaClientConfiguration& clientConfiguration = Aws::Lambda::LambdaClientConfiguration(),
-                     std::shared_ptr<LambdaEndpointProviderBase> endpointProvider = Aws::MakeShared<LambdaEndpointProvider>(ALLOCATION_TAG));
+                     std::shared_ptr<LambdaEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         LambdaClient(const Aws::Auth::AWSCredentials& credentials,
-                     std::shared_ptr<LambdaEndpointProviderBase> endpointProvider = Aws::MakeShared<LambdaEndpointProvider>(ALLOCATION_TAG),
+                     std::shared_ptr<LambdaEndpointProviderBase> endpointProvider = nullptr,
                      const Aws::Lambda::LambdaClientConfiguration& clientConfiguration = Aws::Lambda::LambdaClientConfiguration());
 
        /**
@@ -99,7 +99,7 @@ namespace Lambda
         * the default http client factory will be used
         */
         LambdaClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                     std::shared_ptr<LambdaEndpointProviderBase> endpointProvider = Aws::MakeShared<LambdaEndpointProvider>(ALLOCATION_TAG),
+                     std::shared_ptr<LambdaEndpointProviderBase> endpointProvider = nullptr,
                      const Aws::Lambda::LambdaClientConfiguration& clientConfiguration = Aws::Lambda::LambdaClientConfiguration());
 
 
@@ -1151,8 +1151,12 @@ namespace Lambda
 
         /**
          * <p>Invokes a Lambda function. You can invoke a function synchronously (and wait
-         * for the response), or asynchronously. To invoke a function asynchronously, set
-         * <code>InvocationType</code> to <code>Event</code>.</p> <p>For <a
+         * for the response), or asynchronously. By default, Lambda invokes your function
+         * synchronously (i.e. the<code>InvocationType</code> is
+         * <code>RequestResponse</code>). To invoke a function asynchronously, set
+         * <code>InvocationType</code> to <code>Event</code>. Lambda passes the
+         * <code>ClientContext</code> object to your function for synchronous invocations
+         * only.</p> <p>For <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-sync.html">synchronous
          * invocation</a>, details about the function response, including errors, are
          * included in the response body and headers. For either invocation type, you can

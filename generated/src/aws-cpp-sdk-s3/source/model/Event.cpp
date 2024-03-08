@@ -174,6 +174,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Event::NOT_SET:
+            return {};
           case Event::s3_ReducedRedundancyLostObject:
             return "s3:ReducedRedundancyLostObject";
           case Event::s3_ObjectCreated:

@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AnalyticsUtteranceSortByName::NOT_SET:
+            return {};
           case AnalyticsUtteranceSortByName::UtteranceTimestamp:
             return "UtteranceTimestamp";
           default:

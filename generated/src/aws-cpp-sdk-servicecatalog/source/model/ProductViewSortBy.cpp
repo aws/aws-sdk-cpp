@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ProductViewSortBy::NOT_SET:
+            return {};
           case ProductViewSortBy::Title:
             return "Title";
           case ProductViewSortBy::VersionCount:

@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SourceCodeVersionType::NOT_SET:
+            return {};
           case SourceCodeVersionType::BRANCH:
             return "BRANCH";
           default:

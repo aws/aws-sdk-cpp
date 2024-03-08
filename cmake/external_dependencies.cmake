@@ -83,20 +83,28 @@ if(NOT NO_HTTP_CLIENT AND NOT USE_CRT_HTTP_CLIENT)
             include(FindCURL)
             if(NOT CURL_FOUND)
                 message(FATAL_ERROR "Could not find curl")
-            else()
-                message(STATUS "  Curl include directory: ${CURL_INCLUDE_DIRS}")
-                message(STATUS "  Curl library: ${CURL_LIBRARIES}")
             endif()
-            List(APPEND EXTERNAL_DEPS_INCLUDE_DIRS ${CURL_INCLUDE_DIRS})
+
+            # When built from source using cmake, curl does not include
+            # CURL_INCLUDE_DIRS or CURL_INCLUDE_DIRS so we need to use
+            # find_package to fix it
+            if ("${CURL_INCLUDE_DIRS}" STREQUAL "" AND "${CURL_LIBRARIES}" STREQUAL "")
+                message(STATUS "Could not find curl include or library path, falling back to find with config.")
+                find_package(CURL)
+                set(CURL_LIBRARIES CURL::libcurl)
+            else ()
+                message(STATUS "  Curl include directory: ${CURL_INCLUDE_DIRS}")
+                List(APPEND EXTERNAL_DEPS_INCLUDE_DIRS ${CURL_INCLUDE_DIRS})
+                set(CLIENT_LIBS ${CURL_LIBRARIES})
+            endif ()
+            set(CLIENT_LIBS_ABSTRACT_NAME curl)
+            message(STATUS "  Curl target link: ${CURL_LIBRARIES}")
         endif()
 
         if(TEST_CERT_PATH)
             message(STATUS "Setting curl cert path to ${TEST_CERT_PATH}")
             add_definitions(-DTEST_CERT_PATH="\"${TEST_CERT_PATH}\"")
         endif()
-
-        set(CLIENT_LIBS ${CURL_LIBRARIES})
-        set(CLIENT_LIBS_ABSTRACT_NAME curl)
     elseif(ENABLE_WINDOWS_CLIENT)
         add_definitions(-DENABLE_WINDOWS_CLIENT)
 
@@ -128,6 +136,12 @@ endif()
 
 # Open telemetry client
 if (BUILD_OPTEL)
+    find_package(opentelemetry-cpp CONFIG REQUIRED)
+endif ()
+if (BUILD_OPTEL_OTLP_BENCHMARKS)
+    find_package(Protobuf REQUIRED)
+    find_package(CURL REQUIRED)
+    find_package(nlohmann_json REQUIRED)
     find_package(opentelemetry-cpp CONFIG REQUIRED)
 endif ()
 

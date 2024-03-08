@@ -23,6 +23,7 @@
 #include <aws/elasticache/model/BatchApplyUpdateActionResult.h>
 #include <aws/elasticache/model/BatchStopUpdateActionResult.h>
 #include <aws/elasticache/model/CompleteMigrationResult.h>
+#include <aws/elasticache/model/CopyServerlessCacheSnapshotResult.h>
 #include <aws/elasticache/model/CopySnapshotResult.h>
 #include <aws/elasticache/model/CreateCacheClusterResult.h>
 #include <aws/elasticache/model/CreateCacheParameterGroupResult.h>
@@ -30,6 +31,8 @@
 #include <aws/elasticache/model/CreateCacheSubnetGroupResult.h>
 #include <aws/elasticache/model/CreateGlobalReplicationGroupResult.h>
 #include <aws/elasticache/model/CreateReplicationGroupResult.h>
+#include <aws/elasticache/model/CreateServerlessCacheResult.h>
+#include <aws/elasticache/model/CreateServerlessCacheSnapshotResult.h>
 #include <aws/elasticache/model/CreateSnapshotResult.h>
 #include <aws/elasticache/model/CreateUserResult.h>
 #include <aws/elasticache/model/CreateUserGroupResult.h>
@@ -38,6 +41,8 @@
 #include <aws/elasticache/model/DeleteCacheClusterResult.h>
 #include <aws/elasticache/model/DeleteGlobalReplicationGroupResult.h>
 #include <aws/elasticache/model/DeleteReplicationGroupResult.h>
+#include <aws/elasticache/model/DeleteServerlessCacheResult.h>
+#include <aws/elasticache/model/DeleteServerlessCacheSnapshotResult.h>
 #include <aws/elasticache/model/DeleteSnapshotResult.h>
 #include <aws/elasticache/model/DeleteUserResult.h>
 #include <aws/elasticache/model/DeleteUserGroupResult.h>
@@ -53,12 +58,15 @@
 #include <aws/elasticache/model/DescribeReplicationGroupsResult.h>
 #include <aws/elasticache/model/DescribeReservedCacheNodesResult.h>
 #include <aws/elasticache/model/DescribeReservedCacheNodesOfferingsResult.h>
+#include <aws/elasticache/model/DescribeServerlessCacheSnapshotsResult.h>
+#include <aws/elasticache/model/DescribeServerlessCachesResult.h>
 #include <aws/elasticache/model/DescribeServiceUpdatesResult.h>
 #include <aws/elasticache/model/DescribeSnapshotsResult.h>
 #include <aws/elasticache/model/DescribeUpdateActionsResult.h>
 #include <aws/elasticache/model/DescribeUserGroupsResult.h>
 #include <aws/elasticache/model/DescribeUsersResult.h>
 #include <aws/elasticache/model/DisassociateGlobalReplicationGroupResult.h>
+#include <aws/elasticache/model/ExportServerlessCacheSnapshotResult.h>
 #include <aws/elasticache/model/FailoverGlobalReplicationGroupResult.h>
 #include <aws/elasticache/model/IncreaseNodeGroupsInGlobalReplicationGroupResult.h>
 #include <aws/elasticache/model/IncreaseReplicaCountResult.h>
@@ -70,6 +78,7 @@
 #include <aws/elasticache/model/ModifyGlobalReplicationGroupResult.h>
 #include <aws/elasticache/model/ModifyReplicationGroupResult.h>
 #include <aws/elasticache/model/ModifyReplicationGroupShardConfigurationResult.h>
+#include <aws/elasticache/model/ModifyServerlessCacheResult.h>
 #include <aws/elasticache/model/ModifyUserResult.h>
 #include <aws/elasticache/model/ModifyUserGroupResult.h>
 #include <aws/elasticache/model/PurchaseReservedCacheNodesOfferingResult.h>
@@ -127,6 +136,7 @@ namespace Aws
       class BatchApplyUpdateActionRequest;
       class BatchStopUpdateActionRequest;
       class CompleteMigrationRequest;
+      class CopyServerlessCacheSnapshotRequest;
       class CopySnapshotRequest;
       class CreateCacheClusterRequest;
       class CreateCacheParameterGroupRequest;
@@ -134,6 +144,8 @@ namespace Aws
       class CreateCacheSubnetGroupRequest;
       class CreateGlobalReplicationGroupRequest;
       class CreateReplicationGroupRequest;
+      class CreateServerlessCacheRequest;
+      class CreateServerlessCacheSnapshotRequest;
       class CreateSnapshotRequest;
       class CreateUserRequest;
       class CreateUserGroupRequest;
@@ -145,6 +157,8 @@ namespace Aws
       class DeleteCacheSubnetGroupRequest;
       class DeleteGlobalReplicationGroupRequest;
       class DeleteReplicationGroupRequest;
+      class DeleteServerlessCacheRequest;
+      class DeleteServerlessCacheSnapshotRequest;
       class DeleteSnapshotRequest;
       class DeleteUserRequest;
       class DeleteUserGroupRequest;
@@ -160,12 +174,15 @@ namespace Aws
       class DescribeReplicationGroupsRequest;
       class DescribeReservedCacheNodesRequest;
       class DescribeReservedCacheNodesOfferingsRequest;
+      class DescribeServerlessCacheSnapshotsRequest;
+      class DescribeServerlessCachesRequest;
       class DescribeServiceUpdatesRequest;
       class DescribeSnapshotsRequest;
       class DescribeUpdateActionsRequest;
       class DescribeUserGroupsRequest;
       class DescribeUsersRequest;
       class DisassociateGlobalReplicationGroupRequest;
+      class ExportServerlessCacheSnapshotRequest;
       class FailoverGlobalReplicationGroupRequest;
       class IncreaseNodeGroupsInGlobalReplicationGroupRequest;
       class IncreaseReplicaCountRequest;
@@ -177,6 +194,7 @@ namespace Aws
       class ModifyGlobalReplicationGroupRequest;
       class ModifyReplicationGroupRequest;
       class ModifyReplicationGroupShardConfigurationRequest;
+      class ModifyServerlessCacheRequest;
       class ModifyUserRequest;
       class ModifyUserGroupRequest;
       class PurchaseReservedCacheNodesOfferingRequest;
@@ -196,6 +214,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<BatchApplyUpdateActionResult, ElastiCacheError> BatchApplyUpdateActionOutcome;
       typedef Aws::Utils::Outcome<BatchStopUpdateActionResult, ElastiCacheError> BatchStopUpdateActionOutcome;
       typedef Aws::Utils::Outcome<CompleteMigrationResult, ElastiCacheError> CompleteMigrationOutcome;
+      typedef Aws::Utils::Outcome<CopyServerlessCacheSnapshotResult, ElastiCacheError> CopyServerlessCacheSnapshotOutcome;
       typedef Aws::Utils::Outcome<CopySnapshotResult, ElastiCacheError> CopySnapshotOutcome;
       typedef Aws::Utils::Outcome<CreateCacheClusterResult, ElastiCacheError> CreateCacheClusterOutcome;
       typedef Aws::Utils::Outcome<CreateCacheParameterGroupResult, ElastiCacheError> CreateCacheParameterGroupOutcome;
@@ -203,6 +222,8 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreateCacheSubnetGroupResult, ElastiCacheError> CreateCacheSubnetGroupOutcome;
       typedef Aws::Utils::Outcome<CreateGlobalReplicationGroupResult, ElastiCacheError> CreateGlobalReplicationGroupOutcome;
       typedef Aws::Utils::Outcome<CreateReplicationGroupResult, ElastiCacheError> CreateReplicationGroupOutcome;
+      typedef Aws::Utils::Outcome<CreateServerlessCacheResult, ElastiCacheError> CreateServerlessCacheOutcome;
+      typedef Aws::Utils::Outcome<CreateServerlessCacheSnapshotResult, ElastiCacheError> CreateServerlessCacheSnapshotOutcome;
       typedef Aws::Utils::Outcome<CreateSnapshotResult, ElastiCacheError> CreateSnapshotOutcome;
       typedef Aws::Utils::Outcome<CreateUserResult, ElastiCacheError> CreateUserOutcome;
       typedef Aws::Utils::Outcome<CreateUserGroupResult, ElastiCacheError> CreateUserGroupOutcome;
@@ -214,6 +235,8 @@ namespace Aws
       typedef Aws::Utils::Outcome<Aws::NoResult, ElastiCacheError> DeleteCacheSubnetGroupOutcome;
       typedef Aws::Utils::Outcome<DeleteGlobalReplicationGroupResult, ElastiCacheError> DeleteGlobalReplicationGroupOutcome;
       typedef Aws::Utils::Outcome<DeleteReplicationGroupResult, ElastiCacheError> DeleteReplicationGroupOutcome;
+      typedef Aws::Utils::Outcome<DeleteServerlessCacheResult, ElastiCacheError> DeleteServerlessCacheOutcome;
+      typedef Aws::Utils::Outcome<DeleteServerlessCacheSnapshotResult, ElastiCacheError> DeleteServerlessCacheSnapshotOutcome;
       typedef Aws::Utils::Outcome<DeleteSnapshotResult, ElastiCacheError> DeleteSnapshotOutcome;
       typedef Aws::Utils::Outcome<DeleteUserResult, ElastiCacheError> DeleteUserOutcome;
       typedef Aws::Utils::Outcome<DeleteUserGroupResult, ElastiCacheError> DeleteUserGroupOutcome;
@@ -229,12 +252,15 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeReplicationGroupsResult, ElastiCacheError> DescribeReplicationGroupsOutcome;
       typedef Aws::Utils::Outcome<DescribeReservedCacheNodesResult, ElastiCacheError> DescribeReservedCacheNodesOutcome;
       typedef Aws::Utils::Outcome<DescribeReservedCacheNodesOfferingsResult, ElastiCacheError> DescribeReservedCacheNodesOfferingsOutcome;
+      typedef Aws::Utils::Outcome<DescribeServerlessCacheSnapshotsResult, ElastiCacheError> DescribeServerlessCacheSnapshotsOutcome;
+      typedef Aws::Utils::Outcome<DescribeServerlessCachesResult, ElastiCacheError> DescribeServerlessCachesOutcome;
       typedef Aws::Utils::Outcome<DescribeServiceUpdatesResult, ElastiCacheError> DescribeServiceUpdatesOutcome;
       typedef Aws::Utils::Outcome<DescribeSnapshotsResult, ElastiCacheError> DescribeSnapshotsOutcome;
       typedef Aws::Utils::Outcome<DescribeUpdateActionsResult, ElastiCacheError> DescribeUpdateActionsOutcome;
       typedef Aws::Utils::Outcome<DescribeUserGroupsResult, ElastiCacheError> DescribeUserGroupsOutcome;
       typedef Aws::Utils::Outcome<DescribeUsersResult, ElastiCacheError> DescribeUsersOutcome;
       typedef Aws::Utils::Outcome<DisassociateGlobalReplicationGroupResult, ElastiCacheError> DisassociateGlobalReplicationGroupOutcome;
+      typedef Aws::Utils::Outcome<ExportServerlessCacheSnapshotResult, ElastiCacheError> ExportServerlessCacheSnapshotOutcome;
       typedef Aws::Utils::Outcome<FailoverGlobalReplicationGroupResult, ElastiCacheError> FailoverGlobalReplicationGroupOutcome;
       typedef Aws::Utils::Outcome<IncreaseNodeGroupsInGlobalReplicationGroupResult, ElastiCacheError> IncreaseNodeGroupsInGlobalReplicationGroupOutcome;
       typedef Aws::Utils::Outcome<IncreaseReplicaCountResult, ElastiCacheError> IncreaseReplicaCountOutcome;
@@ -246,6 +272,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ModifyGlobalReplicationGroupResult, ElastiCacheError> ModifyGlobalReplicationGroupOutcome;
       typedef Aws::Utils::Outcome<ModifyReplicationGroupResult, ElastiCacheError> ModifyReplicationGroupOutcome;
       typedef Aws::Utils::Outcome<ModifyReplicationGroupShardConfigurationResult, ElastiCacheError> ModifyReplicationGroupShardConfigurationOutcome;
+      typedef Aws::Utils::Outcome<ModifyServerlessCacheResult, ElastiCacheError> ModifyServerlessCacheOutcome;
       typedef Aws::Utils::Outcome<ModifyUserResult, ElastiCacheError> ModifyUserOutcome;
       typedef Aws::Utils::Outcome<ModifyUserGroupResult, ElastiCacheError> ModifyUserGroupOutcome;
       typedef Aws::Utils::Outcome<PurchaseReservedCacheNodesOfferingResult, ElastiCacheError> PurchaseReservedCacheNodesOfferingOutcome;
@@ -265,6 +292,7 @@ namespace Aws
       typedef std::future<BatchApplyUpdateActionOutcome> BatchApplyUpdateActionOutcomeCallable;
       typedef std::future<BatchStopUpdateActionOutcome> BatchStopUpdateActionOutcomeCallable;
       typedef std::future<CompleteMigrationOutcome> CompleteMigrationOutcomeCallable;
+      typedef std::future<CopyServerlessCacheSnapshotOutcome> CopyServerlessCacheSnapshotOutcomeCallable;
       typedef std::future<CopySnapshotOutcome> CopySnapshotOutcomeCallable;
       typedef std::future<CreateCacheClusterOutcome> CreateCacheClusterOutcomeCallable;
       typedef std::future<CreateCacheParameterGroupOutcome> CreateCacheParameterGroupOutcomeCallable;
@@ -272,6 +300,8 @@ namespace Aws
       typedef std::future<CreateCacheSubnetGroupOutcome> CreateCacheSubnetGroupOutcomeCallable;
       typedef std::future<CreateGlobalReplicationGroupOutcome> CreateGlobalReplicationGroupOutcomeCallable;
       typedef std::future<CreateReplicationGroupOutcome> CreateReplicationGroupOutcomeCallable;
+      typedef std::future<CreateServerlessCacheOutcome> CreateServerlessCacheOutcomeCallable;
+      typedef std::future<CreateServerlessCacheSnapshotOutcome> CreateServerlessCacheSnapshotOutcomeCallable;
       typedef std::future<CreateSnapshotOutcome> CreateSnapshotOutcomeCallable;
       typedef std::future<CreateUserOutcome> CreateUserOutcomeCallable;
       typedef std::future<CreateUserGroupOutcome> CreateUserGroupOutcomeCallable;
@@ -283,6 +313,8 @@ namespace Aws
       typedef std::future<DeleteCacheSubnetGroupOutcome> DeleteCacheSubnetGroupOutcomeCallable;
       typedef std::future<DeleteGlobalReplicationGroupOutcome> DeleteGlobalReplicationGroupOutcomeCallable;
       typedef std::future<DeleteReplicationGroupOutcome> DeleteReplicationGroupOutcomeCallable;
+      typedef std::future<DeleteServerlessCacheOutcome> DeleteServerlessCacheOutcomeCallable;
+      typedef std::future<DeleteServerlessCacheSnapshotOutcome> DeleteServerlessCacheSnapshotOutcomeCallable;
       typedef std::future<DeleteSnapshotOutcome> DeleteSnapshotOutcomeCallable;
       typedef std::future<DeleteUserOutcome> DeleteUserOutcomeCallable;
       typedef std::future<DeleteUserGroupOutcome> DeleteUserGroupOutcomeCallable;
@@ -298,12 +330,15 @@ namespace Aws
       typedef std::future<DescribeReplicationGroupsOutcome> DescribeReplicationGroupsOutcomeCallable;
       typedef std::future<DescribeReservedCacheNodesOutcome> DescribeReservedCacheNodesOutcomeCallable;
       typedef std::future<DescribeReservedCacheNodesOfferingsOutcome> DescribeReservedCacheNodesOfferingsOutcomeCallable;
+      typedef std::future<DescribeServerlessCacheSnapshotsOutcome> DescribeServerlessCacheSnapshotsOutcomeCallable;
+      typedef std::future<DescribeServerlessCachesOutcome> DescribeServerlessCachesOutcomeCallable;
       typedef std::future<DescribeServiceUpdatesOutcome> DescribeServiceUpdatesOutcomeCallable;
       typedef std::future<DescribeSnapshotsOutcome> DescribeSnapshotsOutcomeCallable;
       typedef std::future<DescribeUpdateActionsOutcome> DescribeUpdateActionsOutcomeCallable;
       typedef std::future<DescribeUserGroupsOutcome> DescribeUserGroupsOutcomeCallable;
       typedef std::future<DescribeUsersOutcome> DescribeUsersOutcomeCallable;
       typedef std::future<DisassociateGlobalReplicationGroupOutcome> DisassociateGlobalReplicationGroupOutcomeCallable;
+      typedef std::future<ExportServerlessCacheSnapshotOutcome> ExportServerlessCacheSnapshotOutcomeCallable;
       typedef std::future<FailoverGlobalReplicationGroupOutcome> FailoverGlobalReplicationGroupOutcomeCallable;
       typedef std::future<IncreaseNodeGroupsInGlobalReplicationGroupOutcome> IncreaseNodeGroupsInGlobalReplicationGroupOutcomeCallable;
       typedef std::future<IncreaseReplicaCountOutcome> IncreaseReplicaCountOutcomeCallable;
@@ -315,6 +350,7 @@ namespace Aws
       typedef std::future<ModifyGlobalReplicationGroupOutcome> ModifyGlobalReplicationGroupOutcomeCallable;
       typedef std::future<ModifyReplicationGroupOutcome> ModifyReplicationGroupOutcomeCallable;
       typedef std::future<ModifyReplicationGroupShardConfigurationOutcome> ModifyReplicationGroupShardConfigurationOutcomeCallable;
+      typedef std::future<ModifyServerlessCacheOutcome> ModifyServerlessCacheOutcomeCallable;
       typedef std::future<ModifyUserOutcome> ModifyUserOutcomeCallable;
       typedef std::future<ModifyUserGroupOutcome> ModifyUserGroupOutcomeCallable;
       typedef std::future<PurchaseReservedCacheNodesOfferingOutcome> PurchaseReservedCacheNodesOfferingOutcomeCallable;
@@ -337,6 +373,7 @@ namespace Aws
     typedef std::function<void(const ElastiCacheClient*, const Model::BatchApplyUpdateActionRequest&, const Model::BatchApplyUpdateActionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchApplyUpdateActionResponseReceivedHandler;
     typedef std::function<void(const ElastiCacheClient*, const Model::BatchStopUpdateActionRequest&, const Model::BatchStopUpdateActionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchStopUpdateActionResponseReceivedHandler;
     typedef std::function<void(const ElastiCacheClient*, const Model::CompleteMigrationRequest&, const Model::CompleteMigrationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CompleteMigrationResponseReceivedHandler;
+    typedef std::function<void(const ElastiCacheClient*, const Model::CopyServerlessCacheSnapshotRequest&, const Model::CopyServerlessCacheSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CopyServerlessCacheSnapshotResponseReceivedHandler;
     typedef std::function<void(const ElastiCacheClient*, const Model::CopySnapshotRequest&, const Model::CopySnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CopySnapshotResponseReceivedHandler;
     typedef std::function<void(const ElastiCacheClient*, const Model::CreateCacheClusterRequest&, const Model::CreateCacheClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCacheClusterResponseReceivedHandler;
     typedef std::function<void(const ElastiCacheClient*, const Model::CreateCacheParameterGroupRequest&, const Model::CreateCacheParameterGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCacheParameterGroupResponseReceivedHandler;
@@ -344,6 +381,8 @@ namespace Aws
     typedef std::function<void(const ElastiCacheClient*, const Model::CreateCacheSubnetGroupRequest&, const Model::CreateCacheSubnetGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCacheSubnetGroupResponseReceivedHandler;
     typedef std::function<void(const ElastiCacheClient*, const Model::CreateGlobalReplicationGroupRequest&, const Model::CreateGlobalReplicationGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateGlobalReplicationGroupResponseReceivedHandler;
     typedef std::function<void(const ElastiCacheClient*, const Model::CreateReplicationGroupRequest&, const Model::CreateReplicationGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateReplicationGroupResponseReceivedHandler;
+    typedef std::function<void(const ElastiCacheClient*, const Model::CreateServerlessCacheRequest&, const Model::CreateServerlessCacheOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateServerlessCacheResponseReceivedHandler;
+    typedef std::function<void(const ElastiCacheClient*, const Model::CreateServerlessCacheSnapshotRequest&, const Model::CreateServerlessCacheSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateServerlessCacheSnapshotResponseReceivedHandler;
     typedef std::function<void(const ElastiCacheClient*, const Model::CreateSnapshotRequest&, const Model::CreateSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSnapshotResponseReceivedHandler;
     typedef std::function<void(const ElastiCacheClient*, const Model::CreateUserRequest&, const Model::CreateUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateUserResponseReceivedHandler;
     typedef std::function<void(const ElastiCacheClient*, const Model::CreateUserGroupRequest&, const Model::CreateUserGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateUserGroupResponseReceivedHandler;
@@ -355,6 +394,8 @@ namespace Aws
     typedef std::function<void(const ElastiCacheClient*, const Model::DeleteCacheSubnetGroupRequest&, const Model::DeleteCacheSubnetGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCacheSubnetGroupResponseReceivedHandler;
     typedef std::function<void(const ElastiCacheClient*, const Model::DeleteGlobalReplicationGroupRequest&, const Model::DeleteGlobalReplicationGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteGlobalReplicationGroupResponseReceivedHandler;
     typedef std::function<void(const ElastiCacheClient*, const Model::DeleteReplicationGroupRequest&, const Model::DeleteReplicationGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteReplicationGroupResponseReceivedHandler;
+    typedef std::function<void(const ElastiCacheClient*, const Model::DeleteServerlessCacheRequest&, const Model::DeleteServerlessCacheOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteServerlessCacheResponseReceivedHandler;
+    typedef std::function<void(const ElastiCacheClient*, const Model::DeleteServerlessCacheSnapshotRequest&, const Model::DeleteServerlessCacheSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteServerlessCacheSnapshotResponseReceivedHandler;
     typedef std::function<void(const ElastiCacheClient*, const Model::DeleteSnapshotRequest&, const Model::DeleteSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSnapshotResponseReceivedHandler;
     typedef std::function<void(const ElastiCacheClient*, const Model::DeleteUserRequest&, const Model::DeleteUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteUserResponseReceivedHandler;
     typedef std::function<void(const ElastiCacheClient*, const Model::DeleteUserGroupRequest&, const Model::DeleteUserGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteUserGroupResponseReceivedHandler;
@@ -370,12 +411,15 @@ namespace Aws
     typedef std::function<void(const ElastiCacheClient*, const Model::DescribeReplicationGroupsRequest&, const Model::DescribeReplicationGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeReplicationGroupsResponseReceivedHandler;
     typedef std::function<void(const ElastiCacheClient*, const Model::DescribeReservedCacheNodesRequest&, const Model::DescribeReservedCacheNodesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeReservedCacheNodesResponseReceivedHandler;
     typedef std::function<void(const ElastiCacheClient*, const Model::DescribeReservedCacheNodesOfferingsRequest&, const Model::DescribeReservedCacheNodesOfferingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeReservedCacheNodesOfferingsResponseReceivedHandler;
+    typedef std::function<void(const ElastiCacheClient*, const Model::DescribeServerlessCacheSnapshotsRequest&, const Model::DescribeServerlessCacheSnapshotsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeServerlessCacheSnapshotsResponseReceivedHandler;
+    typedef std::function<void(const ElastiCacheClient*, const Model::DescribeServerlessCachesRequest&, const Model::DescribeServerlessCachesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeServerlessCachesResponseReceivedHandler;
     typedef std::function<void(const ElastiCacheClient*, const Model::DescribeServiceUpdatesRequest&, const Model::DescribeServiceUpdatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeServiceUpdatesResponseReceivedHandler;
     typedef std::function<void(const ElastiCacheClient*, const Model::DescribeSnapshotsRequest&, const Model::DescribeSnapshotsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSnapshotsResponseReceivedHandler;
     typedef std::function<void(const ElastiCacheClient*, const Model::DescribeUpdateActionsRequest&, const Model::DescribeUpdateActionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeUpdateActionsResponseReceivedHandler;
     typedef std::function<void(const ElastiCacheClient*, const Model::DescribeUserGroupsRequest&, const Model::DescribeUserGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeUserGroupsResponseReceivedHandler;
     typedef std::function<void(const ElastiCacheClient*, const Model::DescribeUsersRequest&, const Model::DescribeUsersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeUsersResponseReceivedHandler;
     typedef std::function<void(const ElastiCacheClient*, const Model::DisassociateGlobalReplicationGroupRequest&, const Model::DisassociateGlobalReplicationGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateGlobalReplicationGroupResponseReceivedHandler;
+    typedef std::function<void(const ElastiCacheClient*, const Model::ExportServerlessCacheSnapshotRequest&, const Model::ExportServerlessCacheSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExportServerlessCacheSnapshotResponseReceivedHandler;
     typedef std::function<void(const ElastiCacheClient*, const Model::FailoverGlobalReplicationGroupRequest&, const Model::FailoverGlobalReplicationGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > FailoverGlobalReplicationGroupResponseReceivedHandler;
     typedef std::function<void(const ElastiCacheClient*, const Model::IncreaseNodeGroupsInGlobalReplicationGroupRequest&, const Model::IncreaseNodeGroupsInGlobalReplicationGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > IncreaseNodeGroupsInGlobalReplicationGroupResponseReceivedHandler;
     typedef std::function<void(const ElastiCacheClient*, const Model::IncreaseReplicaCountRequest&, const Model::IncreaseReplicaCountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > IncreaseReplicaCountResponseReceivedHandler;
@@ -387,6 +431,7 @@ namespace Aws
     typedef std::function<void(const ElastiCacheClient*, const Model::ModifyGlobalReplicationGroupRequest&, const Model::ModifyGlobalReplicationGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyGlobalReplicationGroupResponseReceivedHandler;
     typedef std::function<void(const ElastiCacheClient*, const Model::ModifyReplicationGroupRequest&, const Model::ModifyReplicationGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyReplicationGroupResponseReceivedHandler;
     typedef std::function<void(const ElastiCacheClient*, const Model::ModifyReplicationGroupShardConfigurationRequest&, const Model::ModifyReplicationGroupShardConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyReplicationGroupShardConfigurationResponseReceivedHandler;
+    typedef std::function<void(const ElastiCacheClient*, const Model::ModifyServerlessCacheRequest&, const Model::ModifyServerlessCacheOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyServerlessCacheResponseReceivedHandler;
     typedef std::function<void(const ElastiCacheClient*, const Model::ModifyUserRequest&, const Model::ModifyUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyUserResponseReceivedHandler;
     typedef std::function<void(const ElastiCacheClient*, const Model::ModifyUserGroupRequest&, const Model::ModifyUserGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyUserGroupResponseReceivedHandler;
     typedef std::function<void(const ElastiCacheClient*, const Model::PurchaseReservedCacheNodesOfferingRequest&, const Model::PurchaseReservedCacheNodesOfferingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PurchaseReservedCacheNodesOfferingResponseReceivedHandler;

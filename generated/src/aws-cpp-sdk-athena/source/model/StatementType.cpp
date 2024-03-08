@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StatementType::NOT_SET:
+            return {};
           case StatementType::DDL:
             return "DDL";
           case StatementType::DML:

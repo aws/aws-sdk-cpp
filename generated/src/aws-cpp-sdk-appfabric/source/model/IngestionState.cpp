@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case IngestionState::NOT_SET:
+            return {};
           case IngestionState::enabled:
             return "enabled";
           case IngestionState::disabled:

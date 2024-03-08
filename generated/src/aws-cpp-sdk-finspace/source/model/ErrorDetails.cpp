@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ErrorDetails::NOT_SET:
+            return {};
           case ErrorDetails::The_inputs_to_this_request_are_invalid:
             return "The inputs to this request are invalid.";
           case ErrorDetails::Service_limits_have_been_exceeded:

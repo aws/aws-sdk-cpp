@@ -22,8 +22,8 @@ namespace RoboMaker
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef RoboMakerClientConfiguration ClientConfigurationType;
       typedef RoboMakerEndpointProvider EndpointProviderType;
@@ -33,14 +33,14 @@ namespace RoboMaker
         * is not specified, it will be initialized to default values.
         */
         RoboMakerClient(const Aws::RoboMaker::RoboMakerClientConfiguration& clientConfiguration = Aws::RoboMaker::RoboMakerClientConfiguration(),
-                        std::shared_ptr<RoboMakerEndpointProviderBase> endpointProvider = Aws::MakeShared<RoboMakerEndpointProvider>(ALLOCATION_TAG));
+                        std::shared_ptr<RoboMakerEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         RoboMakerClient(const Aws::Auth::AWSCredentials& credentials,
-                        std::shared_ptr<RoboMakerEndpointProviderBase> endpointProvider = Aws::MakeShared<RoboMakerEndpointProvider>(ALLOCATION_TAG),
+                        std::shared_ptr<RoboMakerEndpointProviderBase> endpointProvider = nullptr,
                         const Aws::RoboMaker::RoboMakerClientConfiguration& clientConfiguration = Aws::RoboMaker::RoboMakerClientConfiguration());
 
        /**
@@ -48,7 +48,7 @@ namespace RoboMaker
         * the default http client factory will be used
         */
         RoboMakerClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                        std::shared_ptr<RoboMakerEndpointProviderBase> endpointProvider = Aws::MakeShared<RoboMakerEndpointProvider>(ALLOCATION_TAG),
+                        std::shared_ptr<RoboMakerEndpointProviderBase> endpointProvider = nullptr,
                         const Aws::RoboMaker::RoboMakerClientConfiguration& clientConfiguration = Aws::RoboMaker::RoboMakerClientConfiguration());
 
 

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SingleSelectQuestionRuleCategoryAutomationCondition::NOT_SET:
+            return {};
           case SingleSelectQuestionRuleCategoryAutomationCondition::PRESENT:
             return "PRESENT";
           case SingleSelectQuestionRuleCategoryAutomationCondition::NOT_PRESENT:

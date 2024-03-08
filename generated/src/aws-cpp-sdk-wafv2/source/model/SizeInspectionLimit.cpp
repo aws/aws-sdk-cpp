@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SizeInspectionLimit::NOT_SET:
+            return {};
           case SizeInspectionLimit::KB_16:
             return "KB_16";
           case SizeInspectionLimit::KB_32:

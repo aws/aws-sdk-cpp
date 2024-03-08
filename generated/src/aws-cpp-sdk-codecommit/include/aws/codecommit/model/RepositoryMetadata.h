@@ -427,6 +427,55 @@ namespace Model
      */
     inline RepositoryMetadata& WithArn(const char* value) { SetArn(value); return *this;}
 
+
+    /**
+     * <p>The ID of the Key Management Service encryption key used to encrypt and
+     * decrypt the repository.</p>
+     */
+    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+
+    /**
+     * <p>The ID of the Key Management Service encryption key used to encrypt and
+     * decrypt the repository.</p>
+     */
+    inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Key Management Service encryption key used to encrypt and
+     * decrypt the repository.</p>
+     */
+    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
+
+    /**
+     * <p>The ID of the Key Management Service encryption key used to encrypt and
+     * decrypt the repository.</p>
+     */
+    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
+
+    /**
+     * <p>The ID of the Key Management Service encryption key used to encrypt and
+     * decrypt the repository.</p>
+     */
+    inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
+
+    /**
+     * <p>The ID of the Key Management Service encryption key used to encrypt and
+     * decrypt the repository.</p>
+     */
+    inline RepositoryMetadata& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
+
+    /**
+     * <p>The ID of the Key Management Service encryption key used to encrypt and
+     * decrypt the repository.</p>
+     */
+    inline RepositoryMetadata& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the Key Management Service encryption key used to encrypt and
+     * decrypt the repository.</p>
+     */
+    inline RepositoryMetadata& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+
   private:
 
     Aws::String m_accountId;
@@ -458,6 +507,9 @@ namespace Model
 
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
+
+    Aws::String m_kmsKeyId;
+    bool m_kmsKeyIdHasBeenSet = false;
   };
 
 } // namespace Model

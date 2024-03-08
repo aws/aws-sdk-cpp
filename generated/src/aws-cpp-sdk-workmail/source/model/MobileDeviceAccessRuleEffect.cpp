@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MobileDeviceAccessRuleEffect::NOT_SET:
+            return {};
           case MobileDeviceAccessRuleEffect::ALLOW:
             return "ALLOW";
           case MobileDeviceAccessRuleEffect::DENY:

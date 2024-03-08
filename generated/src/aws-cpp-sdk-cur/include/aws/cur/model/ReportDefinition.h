@@ -12,6 +12,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/cur/model/AWSRegion.h>
 #include <aws/cur/model/ReportVersioning.h>
+#include <aws/cur/model/ReportStatus.h>
 #include <aws/cur/model/SchemaElement.h>
 #include <aws/cur/model/AdditionalArtifact.h>
 #include <utility>
@@ -32,9 +33,10 @@ namespace Model
 {
 
   /**
-   * <p>The definition of AWS Cost and Usage Report. You can specify the report name,
-   * time unit, report format, compression format, S3 bucket, additional artifacts,
-   * and schema elements in the definition. </p><p><h3>See Also:</h3>   <a
+   * <p>The definition of Amazon Web Services Cost and Usage Report. You can specify
+   * the report name, time unit, report format, compression format, S3 bucket,
+   * additional artifacts, and schema elements in the definition. </p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/ReportDefinition">AWS
    * API Reference</a></p>
    */
@@ -363,52 +365,123 @@ namespace Model
 
 
     /**
-     * <p> The Amazon resource name of the billing view. You can get this value by
-     * using the billing view service public APIs. </p>
+     * <p> The Amazon resource name of the billing view. The
+     * <code>BillingViewArn</code> is needed to create Amazon Web Services Cost and
+     * Usage Report for each billing group maintained in the Amazon Web Services
+     * Billing Conductor service. The <code>BillingViewArn</code> for a billing group
+     * can be constructed as:
+     * <code>arn:aws:billing::payer-account-id:billingview/billing-group-primary-account-id</code>
+     * </p>
      */
     inline const Aws::String& GetBillingViewArn() const{ return m_billingViewArn; }
 
     /**
-     * <p> The Amazon resource name of the billing view. You can get this value by
-     * using the billing view service public APIs. </p>
+     * <p> The Amazon resource name of the billing view. The
+     * <code>BillingViewArn</code> is needed to create Amazon Web Services Cost and
+     * Usage Report for each billing group maintained in the Amazon Web Services
+     * Billing Conductor service. The <code>BillingViewArn</code> for a billing group
+     * can be constructed as:
+     * <code>arn:aws:billing::payer-account-id:billingview/billing-group-primary-account-id</code>
+     * </p>
      */
     inline bool BillingViewArnHasBeenSet() const { return m_billingViewArnHasBeenSet; }
 
     /**
-     * <p> The Amazon resource name of the billing view. You can get this value by
-     * using the billing view service public APIs. </p>
+     * <p> The Amazon resource name of the billing view. The
+     * <code>BillingViewArn</code> is needed to create Amazon Web Services Cost and
+     * Usage Report for each billing group maintained in the Amazon Web Services
+     * Billing Conductor service. The <code>BillingViewArn</code> for a billing group
+     * can be constructed as:
+     * <code>arn:aws:billing::payer-account-id:billingview/billing-group-primary-account-id</code>
+     * </p>
      */
     inline void SetBillingViewArn(const Aws::String& value) { m_billingViewArnHasBeenSet = true; m_billingViewArn = value; }
 
     /**
-     * <p> The Amazon resource name of the billing view. You can get this value by
-     * using the billing view service public APIs. </p>
+     * <p> The Amazon resource name of the billing view. The
+     * <code>BillingViewArn</code> is needed to create Amazon Web Services Cost and
+     * Usage Report for each billing group maintained in the Amazon Web Services
+     * Billing Conductor service. The <code>BillingViewArn</code> for a billing group
+     * can be constructed as:
+     * <code>arn:aws:billing::payer-account-id:billingview/billing-group-primary-account-id</code>
+     * </p>
      */
     inline void SetBillingViewArn(Aws::String&& value) { m_billingViewArnHasBeenSet = true; m_billingViewArn = std::move(value); }
 
     /**
-     * <p> The Amazon resource name of the billing view. You can get this value by
-     * using the billing view service public APIs. </p>
+     * <p> The Amazon resource name of the billing view. The
+     * <code>BillingViewArn</code> is needed to create Amazon Web Services Cost and
+     * Usage Report for each billing group maintained in the Amazon Web Services
+     * Billing Conductor service. The <code>BillingViewArn</code> for a billing group
+     * can be constructed as:
+     * <code>arn:aws:billing::payer-account-id:billingview/billing-group-primary-account-id</code>
+     * </p>
      */
     inline void SetBillingViewArn(const char* value) { m_billingViewArnHasBeenSet = true; m_billingViewArn.assign(value); }
 
     /**
-     * <p> The Amazon resource name of the billing view. You can get this value by
-     * using the billing view service public APIs. </p>
+     * <p> The Amazon resource name of the billing view. The
+     * <code>BillingViewArn</code> is needed to create Amazon Web Services Cost and
+     * Usage Report for each billing group maintained in the Amazon Web Services
+     * Billing Conductor service. The <code>BillingViewArn</code> for a billing group
+     * can be constructed as:
+     * <code>arn:aws:billing::payer-account-id:billingview/billing-group-primary-account-id</code>
+     * </p>
      */
     inline ReportDefinition& WithBillingViewArn(const Aws::String& value) { SetBillingViewArn(value); return *this;}
 
     /**
-     * <p> The Amazon resource name of the billing view. You can get this value by
-     * using the billing view service public APIs. </p>
+     * <p> The Amazon resource name of the billing view. The
+     * <code>BillingViewArn</code> is needed to create Amazon Web Services Cost and
+     * Usage Report for each billing group maintained in the Amazon Web Services
+     * Billing Conductor service. The <code>BillingViewArn</code> for a billing group
+     * can be constructed as:
+     * <code>arn:aws:billing::payer-account-id:billingview/billing-group-primary-account-id</code>
+     * </p>
      */
     inline ReportDefinition& WithBillingViewArn(Aws::String&& value) { SetBillingViewArn(std::move(value)); return *this;}
 
     /**
-     * <p> The Amazon resource name of the billing view. You can get this value by
-     * using the billing view service public APIs. </p>
+     * <p> The Amazon resource name of the billing view. The
+     * <code>BillingViewArn</code> is needed to create Amazon Web Services Cost and
+     * Usage Report for each billing group maintained in the Amazon Web Services
+     * Billing Conductor service. The <code>BillingViewArn</code> for a billing group
+     * can be constructed as:
+     * <code>arn:aws:billing::payer-account-id:billingview/billing-group-primary-account-id</code>
+     * </p>
      */
     inline ReportDefinition& WithBillingViewArn(const char* value) { SetBillingViewArn(value); return *this;}
+
+
+    /**
+     * <p>The status of the report.</p>
+     */
+    inline const ReportStatus& GetReportStatus() const{ return m_reportStatus; }
+
+    /**
+     * <p>The status of the report.</p>
+     */
+    inline bool ReportStatusHasBeenSet() const { return m_reportStatusHasBeenSet; }
+
+    /**
+     * <p>The status of the report.</p>
+     */
+    inline void SetReportStatus(const ReportStatus& value) { m_reportStatusHasBeenSet = true; m_reportStatus = value; }
+
+    /**
+     * <p>The status of the report.</p>
+     */
+    inline void SetReportStatus(ReportStatus&& value) { m_reportStatusHasBeenSet = true; m_reportStatus = std::move(value); }
+
+    /**
+     * <p>The status of the report.</p>
+     */
+    inline ReportDefinition& WithReportStatus(const ReportStatus& value) { SetReportStatus(value); return *this;}
+
+    /**
+     * <p>The status of the report.</p>
+     */
+    inline ReportDefinition& WithReportStatus(ReportStatus&& value) { SetReportStatus(std::move(value)); return *this;}
 
   private:
 
@@ -447,6 +520,9 @@ namespace Model
 
     Aws::String m_billingViewArn;
     bool m_billingViewArnHasBeenSet = false;
+
+    ReportStatus m_reportStatus;
+    bool m_reportStatusHasBeenSet = false;
   };
 
 } // namespace Model

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RehydrationType::NOT_SET:
+            return {};
           case RehydrationType::ENTIRE_PAST_SESSION:
             return "ENTIRE_PAST_SESSION";
           case RehydrationType::FROM_SEGMENT:

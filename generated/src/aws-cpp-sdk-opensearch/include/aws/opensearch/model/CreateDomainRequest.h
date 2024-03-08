@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/opensearch/model/ClusterConfig.h>
 #include <aws/opensearch/model/EBSOptions.h>
+#include <aws/opensearch/model/IPAddressType.h>
 #include <aws/opensearch/model/SnapshotOptions.h>
 #include <aws/opensearch/model/VPCOptions.h>
 #include <aws/opensearch/model/CognitoOptions.h>
@@ -294,6 +295,55 @@ namespace Model
      * policies for the new domain.</p>
      */
     inline CreateDomainRequest& WithAccessPolicies(const char* value) { SetAccessPolicies(value); return *this;}
+
+
+    /**
+     * <p>Specify either dual stack or IPv4 as your IP address type. Dual stack allows
+     * you to share domain resources across IPv4 and IPv6 address types, and is the
+     * recommended option. If you set your IP address type to dual stack, you can't
+     * change your address type later.</p>
+     */
+    inline const IPAddressType& GetIPAddressType() const{ return m_iPAddressType; }
+
+    /**
+     * <p>Specify either dual stack or IPv4 as your IP address type. Dual stack allows
+     * you to share domain resources across IPv4 and IPv6 address types, and is the
+     * recommended option. If you set your IP address type to dual stack, you can't
+     * change your address type later.</p>
+     */
+    inline bool IPAddressTypeHasBeenSet() const { return m_iPAddressTypeHasBeenSet; }
+
+    /**
+     * <p>Specify either dual stack or IPv4 as your IP address type. Dual stack allows
+     * you to share domain resources across IPv4 and IPv6 address types, and is the
+     * recommended option. If you set your IP address type to dual stack, you can't
+     * change your address type later.</p>
+     */
+    inline void SetIPAddressType(const IPAddressType& value) { m_iPAddressTypeHasBeenSet = true; m_iPAddressType = value; }
+
+    /**
+     * <p>Specify either dual stack or IPv4 as your IP address type. Dual stack allows
+     * you to share domain resources across IPv4 and IPv6 address types, and is the
+     * recommended option. If you set your IP address type to dual stack, you can't
+     * change your address type later.</p>
+     */
+    inline void SetIPAddressType(IPAddressType&& value) { m_iPAddressTypeHasBeenSet = true; m_iPAddressType = std::move(value); }
+
+    /**
+     * <p>Specify either dual stack or IPv4 as your IP address type. Dual stack allows
+     * you to share domain resources across IPv4 and IPv6 address types, and is the
+     * recommended option. If you set your IP address type to dual stack, you can't
+     * change your address type later.</p>
+     */
+    inline CreateDomainRequest& WithIPAddressType(const IPAddressType& value) { SetIPAddressType(value); return *this;}
+
+    /**
+     * <p>Specify either dual stack or IPv4 as your IP address type. Dual stack allows
+     * you to share domain resources across IPv4 and IPv6 address types, and is the
+     * recommended option. If you set your IP address type to dual stack, you can't
+     * change your address type later.</p>
+     */
+    inline CreateDomainRequest& WithIPAddressType(IPAddressType&& value) { SetIPAddressType(std::move(value)); return *this;}
 
 
     /**
@@ -1117,6 +1167,9 @@ namespace Model
 
     Aws::String m_accessPolicies;
     bool m_accessPoliciesHasBeenSet = false;
+
+    IPAddressType m_iPAddressType;
+    bool m_iPAddressTypeHasBeenSet = false;
 
     SnapshotOptions m_snapshotOptions;
     bool m_snapshotOptionsHasBeenSet = false;

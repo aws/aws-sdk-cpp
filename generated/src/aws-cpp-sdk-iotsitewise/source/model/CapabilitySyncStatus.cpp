@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CapabilitySyncStatus::NOT_SET:
+            return {};
           case CapabilitySyncStatus::IN_SYNC:
             return "IN_SYNC";
           case CapabilitySyncStatus::OUT_OF_SYNC:

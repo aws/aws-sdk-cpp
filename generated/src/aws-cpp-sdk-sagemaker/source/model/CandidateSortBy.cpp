@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CandidateSortBy::NOT_SET:
+            return {};
           case CandidateSortBy::CreationTime:
             return "CreationTime";
           case CandidateSortBy::Status:

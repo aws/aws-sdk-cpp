@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PortalStatus::NOT_SET:
+            return {};
           case PortalStatus::Incomplete:
             return "Incomplete";
           case PortalStatus::Pending:

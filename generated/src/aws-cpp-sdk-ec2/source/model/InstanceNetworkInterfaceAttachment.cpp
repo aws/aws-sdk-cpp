@@ -30,7 +30,8 @@ InstanceNetworkInterfaceAttachment::InstanceNetworkInterfaceAttachment() :
     m_status(AttachmentStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_networkCardIndex(0),
-    m_networkCardIndexHasBeenSet(false)
+    m_networkCardIndexHasBeenSet(false),
+    m_enaSrdSpecificationHasBeenSet(false)
 {
 }
 
@@ -44,7 +45,8 @@ InstanceNetworkInterfaceAttachment::InstanceNetworkInterfaceAttachment(const Xml
     m_status(AttachmentStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_networkCardIndex(0),
-    m_networkCardIndexHasBeenSet(false)
+    m_networkCardIndexHasBeenSet(false),
+    m_enaSrdSpecificationHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -91,6 +93,12 @@ InstanceNetworkInterfaceAttachment& InstanceNetworkInterfaceAttachment::operator
       m_networkCardIndex = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(networkCardIndexNode.GetText()).c_str()).c_str());
       m_networkCardIndexHasBeenSet = true;
     }
+    XmlNode enaSrdSpecificationNode = resultNode.FirstChild("enaSrdSpecification");
+    if(!enaSrdSpecificationNode.IsNull())
+    {
+      m_enaSrdSpecification = enaSrdSpecificationNode;
+      m_enaSrdSpecificationHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -128,6 +136,13 @@ void InstanceNetworkInterfaceAttachment::OutputToStream(Aws::OStream& oStream, c
       oStream << location << index << locationValue << ".NetworkCardIndex=" << m_networkCardIndex << "&";
   }
 
+  if(m_enaSrdSpecificationHasBeenSet)
+  {
+      Aws::StringStream enaSrdSpecificationLocationAndMemberSs;
+      enaSrdSpecificationLocationAndMemberSs << location << index << locationValue << ".EnaSrdSpecification";
+      m_enaSrdSpecification.OutputToStream(oStream, enaSrdSpecificationLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void InstanceNetworkInterfaceAttachment::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -155,6 +170,12 @@ void InstanceNetworkInterfaceAttachment::OutputToStream(Aws::OStream& oStream, c
   if(m_networkCardIndexHasBeenSet)
   {
       oStream << location << ".NetworkCardIndex=" << m_networkCardIndex << "&";
+  }
+  if(m_enaSrdSpecificationHasBeenSet)
+  {
+      Aws::String enaSrdSpecificationLocationAndMember(location);
+      enaSrdSpecificationLocationAndMember += ".EnaSrdSpecification";
+      m_enaSrdSpecification.OutputToStream(oStream, enaSrdSpecificationLocationAndMember.c_str());
   }
 }
 

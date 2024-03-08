@@ -74,6 +74,8 @@
 #include <aws/glue/model/Recipe.h>
 #include <aws/glue/model/SnowflakeSource.h>
 #include <aws/glue/model/SnowflakeTarget.h>
+#include <aws/glue/model/ConnectorDataSource.h>
+#include <aws/glue/model/ConnectorDataTarget.h>
 #include <utility>
 
 namespace Aws
@@ -2449,6 +2451,68 @@ namespace Model
      */
     inline CodeGenConfigurationNode& WithSnowflakeTarget(SnowflakeTarget&& value) { SetSnowflakeTarget(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies a source generated with standard connection options.</p>
+     */
+    inline const ConnectorDataSource& GetConnectorDataSource() const{ return m_connectorDataSource; }
+
+    /**
+     * <p>Specifies a source generated with standard connection options.</p>
+     */
+    inline bool ConnectorDataSourceHasBeenSet() const { return m_connectorDataSourceHasBeenSet; }
+
+    /**
+     * <p>Specifies a source generated with standard connection options.</p>
+     */
+    inline void SetConnectorDataSource(const ConnectorDataSource& value) { m_connectorDataSourceHasBeenSet = true; m_connectorDataSource = value; }
+
+    /**
+     * <p>Specifies a source generated with standard connection options.</p>
+     */
+    inline void SetConnectorDataSource(ConnectorDataSource&& value) { m_connectorDataSourceHasBeenSet = true; m_connectorDataSource = std::move(value); }
+
+    /**
+     * <p>Specifies a source generated with standard connection options.</p>
+     */
+    inline CodeGenConfigurationNode& WithConnectorDataSource(const ConnectorDataSource& value) { SetConnectorDataSource(value); return *this;}
+
+    /**
+     * <p>Specifies a source generated with standard connection options.</p>
+     */
+    inline CodeGenConfigurationNode& WithConnectorDataSource(ConnectorDataSource&& value) { SetConnectorDataSource(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Specifies a target generated with standard connection options.</p>
+     */
+    inline const ConnectorDataTarget& GetConnectorDataTarget() const{ return m_connectorDataTarget; }
+
+    /**
+     * <p>Specifies a target generated with standard connection options.</p>
+     */
+    inline bool ConnectorDataTargetHasBeenSet() const { return m_connectorDataTargetHasBeenSet; }
+
+    /**
+     * <p>Specifies a target generated with standard connection options.</p>
+     */
+    inline void SetConnectorDataTarget(const ConnectorDataTarget& value) { m_connectorDataTargetHasBeenSet = true; m_connectorDataTarget = value; }
+
+    /**
+     * <p>Specifies a target generated with standard connection options.</p>
+     */
+    inline void SetConnectorDataTarget(ConnectorDataTarget&& value) { m_connectorDataTargetHasBeenSet = true; m_connectorDataTarget = std::move(value); }
+
+    /**
+     * <p>Specifies a target generated with standard connection options.</p>
+     */
+    inline CodeGenConfigurationNode& WithConnectorDataTarget(const ConnectorDataTarget& value) { SetConnectorDataTarget(value); return *this;}
+
+    /**
+     * <p>Specifies a target generated with standard connection options.</p>
+     */
+    inline CodeGenConfigurationNode& WithConnectorDataTarget(ConnectorDataTarget&& value) { SetConnectorDataTarget(std::move(value)); return *this;}
+
   private:
 
     AthenaConnectorSource m_athenaConnectorSource;
@@ -2657,6 +2721,12 @@ namespace Model
 
     SnowflakeTarget m_snowflakeTarget;
     bool m_snowflakeTargetHasBeenSet = false;
+
+    ConnectorDataSource m_connectorDataSource;
+    bool m_connectorDataSourceHasBeenSet = false;
+
+    ConnectorDataTarget m_connectorDataTarget;
+    bool m_connectorDataTargetHasBeenSet = false;
   };
 
 } // namespace Model

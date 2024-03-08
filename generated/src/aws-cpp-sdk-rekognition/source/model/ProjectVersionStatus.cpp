@@ -32,6 +32,8 @@ namespace Aws
         static const int COPYING_IN_PROGRESS_HASH = HashingUtils::HashString("COPYING_IN_PROGRESS");
         static const int COPYING_COMPLETED_HASH = HashingUtils::HashString("COPYING_COMPLETED");
         static const int COPYING_FAILED_HASH = HashingUtils::HashString("COPYING_FAILED");
+        static const int DEPRECATED_HASH = HashingUtils::HashString("DEPRECATED");
+        static const int EXPIRED_HASH = HashingUtils::HashString("EXPIRED");
 
 
         ProjectVersionStatus GetProjectVersionStatusForName(const Aws::String& name)
@@ -85,6 +87,14 @@ namespace Aws
           {
             return ProjectVersionStatus::COPYING_FAILED;
           }
+          else if (hashCode == DEPRECATED_HASH)
+          {
+            return ProjectVersionStatus::DEPRECATED;
+          }
+          else if (hashCode == EXPIRED_HASH)
+          {
+            return ProjectVersionStatus::EXPIRED;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -99,6 +109,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ProjectVersionStatus::NOT_SET:
+            return {};
           case ProjectVersionStatus::TRAINING_IN_PROGRESS:
             return "TRAINING_IN_PROGRESS";
           case ProjectVersionStatus::TRAINING_COMPLETED:
@@ -123,6 +135,10 @@ namespace Aws
             return "COPYING_COMPLETED";
           case ProjectVersionStatus::COPYING_FAILED:
             return "COPYING_FAILED";
+          case ProjectVersionStatus::DEPRECATED:
+            return "DEPRECATED";
+          case ProjectVersionStatus::EXPIRED:
+            return "EXPIRED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

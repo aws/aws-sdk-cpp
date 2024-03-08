@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResourceTypeValues::NOT_SET:
+            return {};
           case ResourceTypeValues::VOLUME:
             return "VOLUME";
           case ResourceTypeValues::INSTANCE:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HyperParameterTuningJobWarmStartType::NOT_SET:
+            return {};
           case HyperParameterTuningJobWarmStartType::IdenticalDataAndAlgorithm:
             return "IdenticalDataAndAlgorithm";
           case HyperParameterTuningJobWarmStartType::TransferLearning:

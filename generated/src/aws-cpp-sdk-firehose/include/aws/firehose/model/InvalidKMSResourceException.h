@@ -24,12 +24,11 @@ namespace Model
 {
 
   /**
-   * <p>Kinesis Data Firehose throws this exception when an attempt to put records or
-   * to start or stop delivery stream encryption fails. This happens when the KMS
-   * service throws one of the following exception types:
-   * <code>AccessDeniedException</code>, <code>InvalidStateException</code>,
-   * <code>DisabledException</code>, or <code>NotFoundException</code>.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Firehose throws this exception when an attempt to put records or to start or
+   * stop delivery stream encryption fails. This happens when the KMS service throws
+   * one of the following exception types: <code>AccessDeniedException</code>,
+   * <code>InvalidStateException</code>, <code>DisabledException</code>, or
+   * <code>NotFoundException</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/InvalidKMSResourceException">AWS
    * API Reference</a></p>
    */

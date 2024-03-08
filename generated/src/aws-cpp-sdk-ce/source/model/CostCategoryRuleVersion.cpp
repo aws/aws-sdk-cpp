@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CostCategoryRuleVersion::NOT_SET:
+            return {};
           case CostCategoryRuleVersion::CostCategoryExpression_v1:
             return "CostCategoryExpression.v1";
           default:

@@ -37,8 +37,8 @@ namespace EMRServerless
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef EMRServerlessClientConfiguration ClientConfigurationType;
       typedef EMRServerlessEndpointProvider EndpointProviderType;
@@ -48,14 +48,14 @@ namespace EMRServerless
         * is not specified, it will be initialized to default values.
         */
         EMRServerlessClient(const Aws::EMRServerless::EMRServerlessClientConfiguration& clientConfiguration = Aws::EMRServerless::EMRServerlessClientConfiguration(),
-                            std::shared_ptr<EMRServerlessEndpointProviderBase> endpointProvider = Aws::MakeShared<EMRServerlessEndpointProvider>(ALLOCATION_TAG));
+                            std::shared_ptr<EMRServerlessEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         EMRServerlessClient(const Aws::Auth::AWSCredentials& credentials,
-                            std::shared_ptr<EMRServerlessEndpointProviderBase> endpointProvider = Aws::MakeShared<EMRServerlessEndpointProvider>(ALLOCATION_TAG),
+                            std::shared_ptr<EMRServerlessEndpointProviderBase> endpointProvider = nullptr,
                             const Aws::EMRServerless::EMRServerlessClientConfiguration& clientConfiguration = Aws::EMRServerless::EMRServerlessClientConfiguration());
 
        /**
@@ -63,7 +63,7 @@ namespace EMRServerless
         * the default http client factory will be used
         */
         EMRServerlessClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                            std::shared_ptr<EMRServerlessEndpointProviderBase> endpointProvider = Aws::MakeShared<EMRServerlessEndpointProvider>(ALLOCATION_TAG),
+                            std::shared_ptr<EMRServerlessEndpointProviderBase> endpointProvider = nullptr,
                             const Aws::EMRServerless::EMRServerlessClientConfiguration& clientConfiguration = Aws::EMRServerless::EMRServerlessClientConfiguration());
 
 

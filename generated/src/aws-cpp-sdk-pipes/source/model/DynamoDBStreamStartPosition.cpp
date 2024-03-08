@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DynamoDBStreamStartPosition::NOT_SET:
+            return {};
           case DynamoDBStreamStartPosition::TRIM_HORIZON:
             return "TRIM_HORIZON";
           case DynamoDBStreamStartPosition::LATEST:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResourceType::NOT_SET:
+            return {};
           case ResourceType::CFN_STACK:
             return "CFN_STACK";
           case ResourceType::RESOURCE_TAG_VALUE:

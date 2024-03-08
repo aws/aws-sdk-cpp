@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AlphaBehavior::NOT_SET:
+            return {};
           case AlphaBehavior::DISCARD:
             return "DISCARD";
           case AlphaBehavior::REMAP_TO_LUMA:

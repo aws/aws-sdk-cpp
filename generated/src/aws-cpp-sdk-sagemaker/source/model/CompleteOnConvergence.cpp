@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CompleteOnConvergence::NOT_SET:
+            return {};
           case CompleteOnConvergence::Disabled:
             return "Disabled";
           case CompleteOnConvergence::Enabled:

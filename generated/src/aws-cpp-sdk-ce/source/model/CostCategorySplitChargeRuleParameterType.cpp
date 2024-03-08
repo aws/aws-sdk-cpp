@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CostCategorySplitChargeRuleParameterType::NOT_SET:
+            return {};
           case CostCategorySplitChargeRuleParameterType::ALLOCATION_PERCENTAGES:
             return "ALLOCATION_PERCENTAGES";
           default:

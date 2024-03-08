@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TableTotalsScrollStatus::NOT_SET:
+            return {};
           case TableTotalsScrollStatus::PINNED:
             return "PINNED";
           case TableTotalsScrollStatus::SCROLLED:

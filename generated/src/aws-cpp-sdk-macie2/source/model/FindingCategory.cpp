@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FindingCategory::NOT_SET:
+            return {};
           case FindingCategory::CLASSIFICATION:
             return "CLASSIFICATION";
           case FindingCategory::POLICY:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LFPermission::NOT_SET:
+            return {};
           case LFPermission::DESCRIBE:
             return "DESCRIBE";
           case LFPermission::SELECT:

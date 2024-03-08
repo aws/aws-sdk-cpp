@@ -26,7 +26,8 @@ UpdateFirewallRuleRequest::UpdateFirewallRuleRequest() :
     m_blockOverrideDnsTypeHasBeenSet(false),
     m_blockOverrideTtl(0),
     m_blockOverrideTtlHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_qtypeHasBeenSet(false)
 {
 }
 
@@ -82,6 +83,12 @@ Aws::String UpdateFirewallRuleRequest::SerializePayload() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("Name", m_name);
+
+  }
+
+  if(m_qtypeHasBeenSet)
+  {
+   payload.WithString("Qtype", m_qtype);
 
   }
 

@@ -122,58 +122,90 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the cluster the snapshot was created from. This parameter
-     * is required if your IAM user has a policy containing a snapshot resource element
-     * that specifies anything other than * for the cluster name.</p>
+     * <p>The identifier of the cluster the snapshot was created from.</p> <ul> <li>
+     * <p> <i>If the snapshot to access doesn't exist and the associated IAM policy
+     * doesn't allow access to all (*) snapshots</i> - This parameter is required.
+     * Otherwise, permissions aren't available to check if the snapshot exists.</p>
+     * </li> <li> <p> <i>If the snapshot to access exists</i> - This parameter isn't
+     * required. Redshift can retrieve the cluster identifier and use it to validate
+     * snapshot authorization.</p> </li> </ul>
      */
     inline const Aws::String& GetSnapshotClusterIdentifier() const{ return m_snapshotClusterIdentifier; }
 
     /**
-     * <p>The identifier of the cluster the snapshot was created from. This parameter
-     * is required if your IAM user has a policy containing a snapshot resource element
-     * that specifies anything other than * for the cluster name.</p>
+     * <p>The identifier of the cluster the snapshot was created from.</p> <ul> <li>
+     * <p> <i>If the snapshot to access doesn't exist and the associated IAM policy
+     * doesn't allow access to all (*) snapshots</i> - This parameter is required.
+     * Otherwise, permissions aren't available to check if the snapshot exists.</p>
+     * </li> <li> <p> <i>If the snapshot to access exists</i> - This parameter isn't
+     * required. Redshift can retrieve the cluster identifier and use it to validate
+     * snapshot authorization.</p> </li> </ul>
      */
     inline bool SnapshotClusterIdentifierHasBeenSet() const { return m_snapshotClusterIdentifierHasBeenSet; }
 
     /**
-     * <p>The identifier of the cluster the snapshot was created from. This parameter
-     * is required if your IAM user has a policy containing a snapshot resource element
-     * that specifies anything other than * for the cluster name.</p>
+     * <p>The identifier of the cluster the snapshot was created from.</p> <ul> <li>
+     * <p> <i>If the snapshot to access doesn't exist and the associated IAM policy
+     * doesn't allow access to all (*) snapshots</i> - This parameter is required.
+     * Otherwise, permissions aren't available to check if the snapshot exists.</p>
+     * </li> <li> <p> <i>If the snapshot to access exists</i> - This parameter isn't
+     * required. Redshift can retrieve the cluster identifier and use it to validate
+     * snapshot authorization.</p> </li> </ul>
      */
     inline void SetSnapshotClusterIdentifier(const Aws::String& value) { m_snapshotClusterIdentifierHasBeenSet = true; m_snapshotClusterIdentifier = value; }
 
     /**
-     * <p>The identifier of the cluster the snapshot was created from. This parameter
-     * is required if your IAM user has a policy containing a snapshot resource element
-     * that specifies anything other than * for the cluster name.</p>
+     * <p>The identifier of the cluster the snapshot was created from.</p> <ul> <li>
+     * <p> <i>If the snapshot to access doesn't exist and the associated IAM policy
+     * doesn't allow access to all (*) snapshots</i> - This parameter is required.
+     * Otherwise, permissions aren't available to check if the snapshot exists.</p>
+     * </li> <li> <p> <i>If the snapshot to access exists</i> - This parameter isn't
+     * required. Redshift can retrieve the cluster identifier and use it to validate
+     * snapshot authorization.</p> </li> </ul>
      */
     inline void SetSnapshotClusterIdentifier(Aws::String&& value) { m_snapshotClusterIdentifierHasBeenSet = true; m_snapshotClusterIdentifier = std::move(value); }
 
     /**
-     * <p>The identifier of the cluster the snapshot was created from. This parameter
-     * is required if your IAM user has a policy containing a snapshot resource element
-     * that specifies anything other than * for the cluster name.</p>
+     * <p>The identifier of the cluster the snapshot was created from.</p> <ul> <li>
+     * <p> <i>If the snapshot to access doesn't exist and the associated IAM policy
+     * doesn't allow access to all (*) snapshots</i> - This parameter is required.
+     * Otherwise, permissions aren't available to check if the snapshot exists.</p>
+     * </li> <li> <p> <i>If the snapshot to access exists</i> - This parameter isn't
+     * required. Redshift can retrieve the cluster identifier and use it to validate
+     * snapshot authorization.</p> </li> </ul>
      */
     inline void SetSnapshotClusterIdentifier(const char* value) { m_snapshotClusterIdentifierHasBeenSet = true; m_snapshotClusterIdentifier.assign(value); }
 
     /**
-     * <p>The identifier of the cluster the snapshot was created from. This parameter
-     * is required if your IAM user has a policy containing a snapshot resource element
-     * that specifies anything other than * for the cluster name.</p>
+     * <p>The identifier of the cluster the snapshot was created from.</p> <ul> <li>
+     * <p> <i>If the snapshot to access doesn't exist and the associated IAM policy
+     * doesn't allow access to all (*) snapshots</i> - This parameter is required.
+     * Otherwise, permissions aren't available to check if the snapshot exists.</p>
+     * </li> <li> <p> <i>If the snapshot to access exists</i> - This parameter isn't
+     * required. Redshift can retrieve the cluster identifier and use it to validate
+     * snapshot authorization.</p> </li> </ul>
      */
     inline AuthorizeSnapshotAccessRequest& WithSnapshotClusterIdentifier(const Aws::String& value) { SetSnapshotClusterIdentifier(value); return *this;}
 
     /**
-     * <p>The identifier of the cluster the snapshot was created from. This parameter
-     * is required if your IAM user has a policy containing a snapshot resource element
-     * that specifies anything other than * for the cluster name.</p>
+     * <p>The identifier of the cluster the snapshot was created from.</p> <ul> <li>
+     * <p> <i>If the snapshot to access doesn't exist and the associated IAM policy
+     * doesn't allow access to all (*) snapshots</i> - This parameter is required.
+     * Otherwise, permissions aren't available to check if the snapshot exists.</p>
+     * </li> <li> <p> <i>If the snapshot to access exists</i> - This parameter isn't
+     * required. Redshift can retrieve the cluster identifier and use it to validate
+     * snapshot authorization.</p> </li> </ul>
      */
     inline AuthorizeSnapshotAccessRequest& WithSnapshotClusterIdentifier(Aws::String&& value) { SetSnapshotClusterIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the cluster the snapshot was created from. This parameter
-     * is required if your IAM user has a policy containing a snapshot resource element
-     * that specifies anything other than * for the cluster name.</p>
+     * <p>The identifier of the cluster the snapshot was created from.</p> <ul> <li>
+     * <p> <i>If the snapshot to access doesn't exist and the associated IAM policy
+     * doesn't allow access to all (*) snapshots</i> - This parameter is required.
+     * Otherwise, permissions aren't available to check if the snapshot exists.</p>
+     * </li> <li> <p> <i>If the snapshot to access exists</i> - This parameter isn't
+     * required. Redshift can retrieve the cluster identifier and use it to validate
+     * snapshot authorization.</p> </li> </ul>
      */
     inline AuthorizeSnapshotAccessRequest& WithSnapshotClusterIdentifier(const char* value) { SetSnapshotClusterIdentifier(value); return *this;}
 

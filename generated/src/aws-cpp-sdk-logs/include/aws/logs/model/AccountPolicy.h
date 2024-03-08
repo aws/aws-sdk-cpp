@@ -214,6 +214,47 @@ namespace Model
 
 
     /**
+     * <p>The log group selection criteria for this subscription filter policy.</p>
+     */
+    inline const Aws::String& GetSelectionCriteria() const{ return m_selectionCriteria; }
+
+    /**
+     * <p>The log group selection criteria for this subscription filter policy.</p>
+     */
+    inline bool SelectionCriteriaHasBeenSet() const { return m_selectionCriteriaHasBeenSet; }
+
+    /**
+     * <p>The log group selection criteria for this subscription filter policy.</p>
+     */
+    inline void SetSelectionCriteria(const Aws::String& value) { m_selectionCriteriaHasBeenSet = true; m_selectionCriteria = value; }
+
+    /**
+     * <p>The log group selection criteria for this subscription filter policy.</p>
+     */
+    inline void SetSelectionCriteria(Aws::String&& value) { m_selectionCriteriaHasBeenSet = true; m_selectionCriteria = std::move(value); }
+
+    /**
+     * <p>The log group selection criteria for this subscription filter policy.</p>
+     */
+    inline void SetSelectionCriteria(const char* value) { m_selectionCriteriaHasBeenSet = true; m_selectionCriteria.assign(value); }
+
+    /**
+     * <p>The log group selection criteria for this subscription filter policy.</p>
+     */
+    inline AccountPolicy& WithSelectionCriteria(const Aws::String& value) { SetSelectionCriteria(value); return *this;}
+
+    /**
+     * <p>The log group selection criteria for this subscription filter policy.</p>
+     */
+    inline AccountPolicy& WithSelectionCriteria(Aws::String&& value) { SetSelectionCriteria(std::move(value)); return *this;}
+
+    /**
+     * <p>The log group selection criteria for this subscription filter policy.</p>
+     */
+    inline AccountPolicy& WithSelectionCriteria(const char* value) { SetSelectionCriteria(value); return *this;}
+
+
+    /**
      * <p>The Amazon Web Services account ID that the policy applies to.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
@@ -269,6 +310,9 @@ namespace Model
 
     Scope m_scope;
     bool m_scopeHasBeenSet = false;
+
+    Aws::String m_selectionCriteria;
+    bool m_selectionCriteriaHasBeenSet = false;
 
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet = false;

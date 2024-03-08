@@ -23,7 +23,7 @@ namespace Model
 
   /**
    * <p>Configuration settings for creating and managing pre-provisioned snapshots
-   * for a fast-launch enabled Windows AMI.</p><p><h3>See Also:</h3>   <a
+   * for a Windows fast launch enabled AMI.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/FastLaunchSnapshotConfigurationRequest">AWS
    * API Reference</a></p>
    */
@@ -39,26 +39,26 @@ namespace Model
 
 
     /**
-     * <p>The number of pre-provisioned snapshots to keep on hand for a fast-launch
-     * enabled Windows AMI.</p>
+     * <p>The number of pre-provisioned snapshots to keep on hand for a Windows fast
+     * launch enabled AMI.</p>
      */
     inline int GetTargetResourceCount() const{ return m_targetResourceCount; }
 
     /**
-     * <p>The number of pre-provisioned snapshots to keep on hand for a fast-launch
-     * enabled Windows AMI.</p>
+     * <p>The number of pre-provisioned snapshots to keep on hand for a Windows fast
+     * launch enabled AMI.</p>
      */
     inline bool TargetResourceCountHasBeenSet() const { return m_targetResourceCountHasBeenSet; }
 
     /**
-     * <p>The number of pre-provisioned snapshots to keep on hand for a fast-launch
-     * enabled Windows AMI.</p>
+     * <p>The number of pre-provisioned snapshots to keep on hand for a Windows fast
+     * launch enabled AMI.</p>
      */
     inline void SetTargetResourceCount(int value) { m_targetResourceCountHasBeenSet = true; m_targetResourceCount = value; }
 
     /**
-     * <p>The number of pre-provisioned snapshots to keep on hand for a fast-launch
-     * enabled Windows AMI.</p>
+     * <p>The number of pre-provisioned snapshots to keep on hand for a Windows fast
+     * launch enabled AMI.</p>
      */
     inline FastLaunchSnapshotConfigurationRequest& WithTargetResourceCount(int value) { SetTargetResourceCount(value); return *this;}
 

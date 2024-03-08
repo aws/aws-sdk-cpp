@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LayerAvailability::NOT_SET:
+            return {};
           case LayerAvailability::AVAILABLE:
             return "AVAILABLE";
           case LayerAvailability::UNAVAILABLE:

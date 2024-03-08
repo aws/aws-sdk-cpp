@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ParallelDataStatus::NOT_SET:
+            return {};
           case ParallelDataStatus::CREATING:
             return "CREATING";
           case ParallelDataStatus::UPDATING:

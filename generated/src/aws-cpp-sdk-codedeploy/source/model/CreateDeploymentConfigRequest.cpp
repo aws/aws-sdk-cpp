@@ -17,7 +17,8 @@ CreateDeploymentConfigRequest::CreateDeploymentConfigRequest() :
     m_minimumHealthyHostsHasBeenSet(false),
     m_trafficRoutingConfigHasBeenSet(false),
     m_computePlatform(ComputePlatform::NOT_SET),
-    m_computePlatformHasBeenSet(false)
+    m_computePlatformHasBeenSet(false),
+    m_zonalConfigHasBeenSet(false)
 {
 }
 
@@ -46,6 +47,12 @@ Aws::String CreateDeploymentConfigRequest::SerializePayload() const
   if(m_computePlatformHasBeenSet)
   {
    payload.WithString("computePlatform", ComputePlatformMapper::GetNameForComputePlatform(m_computePlatform));
+  }
+
+  if(m_zonalConfigHasBeenSet)
+  {
+   payload.WithObject("zonalConfig", m_zonalConfig.Jsonize());
+
   }
 
   return payload.View().WriteReadable();

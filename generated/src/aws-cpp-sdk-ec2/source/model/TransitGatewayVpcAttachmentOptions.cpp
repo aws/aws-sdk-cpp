@@ -23,6 +23,8 @@ namespace Model
 TransitGatewayVpcAttachmentOptions::TransitGatewayVpcAttachmentOptions() : 
     m_dnsSupport(DnsSupportValue::NOT_SET),
     m_dnsSupportHasBeenSet(false),
+    m_securityGroupReferencingSupport(SecurityGroupReferencingSupportValue::NOT_SET),
+    m_securityGroupReferencingSupportHasBeenSet(false),
     m_ipv6Support(Ipv6SupportValue::NOT_SET),
     m_ipv6SupportHasBeenSet(false),
     m_applianceModeSupport(ApplianceModeSupportValue::NOT_SET),
@@ -33,6 +35,8 @@ TransitGatewayVpcAttachmentOptions::TransitGatewayVpcAttachmentOptions() :
 TransitGatewayVpcAttachmentOptions::TransitGatewayVpcAttachmentOptions(const XmlNode& xmlNode) : 
     m_dnsSupport(DnsSupportValue::NOT_SET),
     m_dnsSupportHasBeenSet(false),
+    m_securityGroupReferencingSupport(SecurityGroupReferencingSupportValue::NOT_SET),
+    m_securityGroupReferencingSupportHasBeenSet(false),
     m_ipv6Support(Ipv6SupportValue::NOT_SET),
     m_ipv6SupportHasBeenSet(false),
     m_applianceModeSupport(ApplianceModeSupportValue::NOT_SET),
@@ -52,6 +56,12 @@ TransitGatewayVpcAttachmentOptions& TransitGatewayVpcAttachmentOptions::operator
     {
       m_dnsSupport = DnsSupportValueMapper::GetDnsSupportValueForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dnsSupportNode.GetText()).c_str()).c_str());
       m_dnsSupportHasBeenSet = true;
+    }
+    XmlNode securityGroupReferencingSupportNode = resultNode.FirstChild("securityGroupReferencingSupport");
+    if(!securityGroupReferencingSupportNode.IsNull())
+    {
+      m_securityGroupReferencingSupport = SecurityGroupReferencingSupportValueMapper::GetSecurityGroupReferencingSupportValueForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(securityGroupReferencingSupportNode.GetText()).c_str()).c_str());
+      m_securityGroupReferencingSupportHasBeenSet = true;
     }
     XmlNode ipv6SupportNode = resultNode.FirstChild("ipv6Support");
     if(!ipv6SupportNode.IsNull())
@@ -77,6 +87,11 @@ void TransitGatewayVpcAttachmentOptions::OutputToStream(Aws::OStream& oStream, c
       oStream << location << index << locationValue << ".DnsSupport=" << DnsSupportValueMapper::GetNameForDnsSupportValue(m_dnsSupport) << "&";
   }
 
+  if(m_securityGroupReferencingSupportHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SecurityGroupReferencingSupport=" << SecurityGroupReferencingSupportValueMapper::GetNameForSecurityGroupReferencingSupportValue(m_securityGroupReferencingSupport) << "&";
+  }
+
   if(m_ipv6SupportHasBeenSet)
   {
       oStream << location << index << locationValue << ".Ipv6Support=" << Ipv6SupportValueMapper::GetNameForIpv6SupportValue(m_ipv6Support) << "&";
@@ -94,6 +109,10 @@ void TransitGatewayVpcAttachmentOptions::OutputToStream(Aws::OStream& oStream, c
   if(m_dnsSupportHasBeenSet)
   {
       oStream << location << ".DnsSupport=" << DnsSupportValueMapper::GetNameForDnsSupportValue(m_dnsSupport) << "&";
+  }
+  if(m_securityGroupReferencingSupportHasBeenSet)
+  {
+      oStream << location << ".SecurityGroupReferencingSupport=" << SecurityGroupReferencingSupportValueMapper::GetNameForSecurityGroupReferencingSupportValue(m_securityGroupReferencingSupport) << "&";
   }
   if(m_ipv6SupportHasBeenSet)
   {

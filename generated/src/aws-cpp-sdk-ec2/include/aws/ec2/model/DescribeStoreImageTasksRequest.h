@@ -131,7 +131,10 @@ namespace Model
      * certain state (<code>InProgress</code> | <code>Completed</code> |
      * <code>Failed</code>)</p> </li> <li> <p> <code>bucket</code> - Returns task
      * information for tasks that targeted a specific bucket. For the filter value,
-     * specify the bucket name.</p> </li> </ul>
+     * specify the bucket name.</p> </li> </ul>  <p>When you specify the
+     * <code>ImageIds</code> parameter, any filters that you specify are ignored. To
+     * use the filters, you must remove the <code>ImageIds</code> parameter.</p>
+     * 
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
@@ -140,7 +143,10 @@ namespace Model
      * certain state (<code>InProgress</code> | <code>Completed</code> |
      * <code>Failed</code>)</p> </li> <li> <p> <code>bucket</code> - Returns task
      * information for tasks that targeted a specific bucket. For the filter value,
-     * specify the bucket name.</p> </li> </ul>
+     * specify the bucket name.</p> </li> </ul>  <p>When you specify the
+     * <code>ImageIds</code> parameter, any filters that you specify are ignored. To
+     * use the filters, you must remove the <code>ImageIds</code> parameter.</p>
+     * 
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
@@ -149,7 +155,10 @@ namespace Model
      * certain state (<code>InProgress</code> | <code>Completed</code> |
      * <code>Failed</code>)</p> </li> <li> <p> <code>bucket</code> - Returns task
      * information for tasks that targeted a specific bucket. For the filter value,
-     * specify the bucket name.</p> </li> </ul>
+     * specify the bucket name.</p> </li> </ul>  <p>When you specify the
+     * <code>ImageIds</code> parameter, any filters that you specify are ignored. To
+     * use the filters, you must remove the <code>ImageIds</code> parameter.</p>
+     * 
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
@@ -158,7 +167,10 @@ namespace Model
      * certain state (<code>InProgress</code> | <code>Completed</code> |
      * <code>Failed</code>)</p> </li> <li> <p> <code>bucket</code> - Returns task
      * information for tasks that targeted a specific bucket. For the filter value,
-     * specify the bucket name.</p> </li> </ul>
+     * specify the bucket name.</p> </li> </ul>  <p>When you specify the
+     * <code>ImageIds</code> parameter, any filters that you specify are ignored. To
+     * use the filters, you must remove the <code>ImageIds</code> parameter.</p>
+     * 
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
@@ -167,7 +179,10 @@ namespace Model
      * certain state (<code>InProgress</code> | <code>Completed</code> |
      * <code>Failed</code>)</p> </li> <li> <p> <code>bucket</code> - Returns task
      * information for tasks that targeted a specific bucket. For the filter value,
-     * specify the bucket name.</p> </li> </ul>
+     * specify the bucket name.</p> </li> </ul>  <p>When you specify the
+     * <code>ImageIds</code> parameter, any filters that you specify are ignored. To
+     * use the filters, you must remove the <code>ImageIds</code> parameter.</p>
+     * 
      */
     inline DescribeStoreImageTasksRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
@@ -176,7 +191,10 @@ namespace Model
      * certain state (<code>InProgress</code> | <code>Completed</code> |
      * <code>Failed</code>)</p> </li> <li> <p> <code>bucket</code> - Returns task
      * information for tasks that targeted a specific bucket. For the filter value,
-     * specify the bucket name.</p> </li> </ul>
+     * specify the bucket name.</p> </li> </ul>  <p>When you specify the
+     * <code>ImageIds</code> parameter, any filters that you specify are ignored. To
+     * use the filters, you must remove the <code>ImageIds</code> parameter.</p>
+     * 
      */
     inline DescribeStoreImageTasksRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
@@ -185,7 +203,10 @@ namespace Model
      * certain state (<code>InProgress</code> | <code>Completed</code> |
      * <code>Failed</code>)</p> </li> <li> <p> <code>bucket</code> - Returns task
      * information for tasks that targeted a specific bucket. For the filter value,
-     * specify the bucket name.</p> </li> </ul>
+     * specify the bucket name.</p> </li> </ul>  <p>When you specify the
+     * <code>ImageIds</code> parameter, any filters that you specify are ignored. To
+     * use the filters, you must remove the <code>ImageIds</code> parameter.</p>
+     * 
      */
     inline DescribeStoreImageTasksRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
@@ -194,7 +215,10 @@ namespace Model
      * certain state (<code>InProgress</code> | <code>Completed</code> |
      * <code>Failed</code>)</p> </li> <li> <p> <code>bucket</code> - Returns task
      * information for tasks that targeted a specific bucket. For the filter value,
-     * specify the bucket name.</p> </li> </ul>
+     * specify the bucket name.</p> </li> </ul>  <p>When you specify the
+     * <code>ImageIds</code> parameter, any filters that you specify are ignored. To
+     * use the filters, you must remove the <code>ImageIds</code> parameter.</p>
+     * 
      */
     inline DescribeStoreImageTasksRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
@@ -253,7 +277,7 @@ namespace Model
      * of items, make another request with the token returned in the output. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
-     * <p>You cannot specify this parameter and the <code>ImageIDs</code> parameter in
+     * <p>You cannot specify this parameter and the <code>ImageIds</code> parameter in
      * the same call.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
@@ -263,7 +287,7 @@ namespace Model
      * of items, make another request with the token returned in the output. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
-     * <p>You cannot specify this parameter and the <code>ImageIDs</code> parameter in
+     * <p>You cannot specify this parameter and the <code>ImageIds</code> parameter in
      * the same call.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
@@ -273,7 +297,7 @@ namespace Model
      * of items, make another request with the token returned in the output. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
-     * <p>You cannot specify this parameter and the <code>ImageIDs</code> parameter in
+     * <p>You cannot specify this parameter and the <code>ImageIds</code> parameter in
      * the same call.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
@@ -283,7 +307,7 @@ namespace Model
      * of items, make another request with the token returned in the output. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
-     * <p>You cannot specify this parameter and the <code>ImageIDs</code> parameter in
+     * <p>You cannot specify this parameter and the <code>ImageIds</code> parameter in
      * the same call.</p>
      */
     inline DescribeStoreImageTasksRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}

@@ -243,6 +243,72 @@ namespace Model
      */
     inline MapRunItemCounts& WithResultsWritten(long long value) { SetResultsWritten(value); return *this;}
 
+
+    /**
+     * <p>The number of <code>FAILED</code>, <code>ABORTED</code>, or
+     * <code>TIMED_OUT</code> items in child workflow executions that cannot be
+     * redriven because the execution status of those child workflows is terminal. For
+     * example, child workflows with an execution status of <code>FAILED</code>,
+     * <code>ABORTED</code>, or <code>TIMED_OUT</code> and a <code>redriveStatus</code>
+     * of <code>NOT_REDRIVABLE</code>.</p>
+     */
+    inline long long GetFailuresNotRedrivable() const{ return m_failuresNotRedrivable; }
+
+    /**
+     * <p>The number of <code>FAILED</code>, <code>ABORTED</code>, or
+     * <code>TIMED_OUT</code> items in child workflow executions that cannot be
+     * redriven because the execution status of those child workflows is terminal. For
+     * example, child workflows with an execution status of <code>FAILED</code>,
+     * <code>ABORTED</code>, or <code>TIMED_OUT</code> and a <code>redriveStatus</code>
+     * of <code>NOT_REDRIVABLE</code>.</p>
+     */
+    inline bool FailuresNotRedrivableHasBeenSet() const { return m_failuresNotRedrivableHasBeenSet; }
+
+    /**
+     * <p>The number of <code>FAILED</code>, <code>ABORTED</code>, or
+     * <code>TIMED_OUT</code> items in child workflow executions that cannot be
+     * redriven because the execution status of those child workflows is terminal. For
+     * example, child workflows with an execution status of <code>FAILED</code>,
+     * <code>ABORTED</code>, or <code>TIMED_OUT</code> and a <code>redriveStatus</code>
+     * of <code>NOT_REDRIVABLE</code>.</p>
+     */
+    inline void SetFailuresNotRedrivable(long long value) { m_failuresNotRedrivableHasBeenSet = true; m_failuresNotRedrivable = value; }
+
+    /**
+     * <p>The number of <code>FAILED</code>, <code>ABORTED</code>, or
+     * <code>TIMED_OUT</code> items in child workflow executions that cannot be
+     * redriven because the execution status of those child workflows is terminal. For
+     * example, child workflows with an execution status of <code>FAILED</code>,
+     * <code>ABORTED</code>, or <code>TIMED_OUT</code> and a <code>redriveStatus</code>
+     * of <code>NOT_REDRIVABLE</code>.</p>
+     */
+    inline MapRunItemCounts& WithFailuresNotRedrivable(long long value) { SetFailuresNotRedrivable(value); return *this;}
+
+
+    /**
+     * <p>The number of unsuccessful items in child workflow executions currently
+     * waiting to be redriven.</p>
+     */
+    inline long long GetPendingRedrive() const{ return m_pendingRedrive; }
+
+    /**
+     * <p>The number of unsuccessful items in child workflow executions currently
+     * waiting to be redriven.</p>
+     */
+    inline bool PendingRedriveHasBeenSet() const { return m_pendingRedriveHasBeenSet; }
+
+    /**
+     * <p>The number of unsuccessful items in child workflow executions currently
+     * waiting to be redriven.</p>
+     */
+    inline void SetPendingRedrive(long long value) { m_pendingRedriveHasBeenSet = true; m_pendingRedrive = value; }
+
+    /**
+     * <p>The number of unsuccessful items in child workflow executions currently
+     * waiting to be redriven.</p>
+     */
+    inline MapRunItemCounts& WithPendingRedrive(long long value) { SetPendingRedrive(value); return *this;}
+
   private:
 
     long long m_pending;
@@ -268,6 +334,12 @@ namespace Model
 
     long long m_resultsWritten;
     bool m_resultsWrittenHasBeenSet = false;
+
+    long long m_failuresNotRedrivable;
+    bool m_failuresNotRedrivableHasBeenSet = false;
+
+    long long m_pendingRedrive;
+    bool m_pendingRedriveHasBeenSet = false;
   };
 
 } // namespace Model

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SavingsPlanOfferingFilterAttribute::NOT_SET:
+            return {};
           case SavingsPlanOfferingFilterAttribute::region:
             return "region";
           case SavingsPlanOfferingFilterAttribute::instanceFamily:

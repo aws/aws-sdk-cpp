@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ThrottleReason::NOT_SET:
+            return {};
           case ThrottleReason::CONCURRENT_QUERY_LIMIT_EXCEEDED:
             return "CONCURRENT_QUERY_LIMIT_EXCEEDED";
           default:

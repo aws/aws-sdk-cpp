@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Mode::NOT_SET:
+            return {};
           case Mode::ENABLED:
             return "ENABLED";
           case Mode::LEARN_ONLY:

@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TargetVisualOptions::NOT_SET:
+            return {};
           case TargetVisualOptions::ALL_VISUALS:
             return "ALL_VISUALS";
           default:

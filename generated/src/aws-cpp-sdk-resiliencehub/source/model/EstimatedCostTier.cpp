@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EstimatedCostTier::NOT_SET:
+            return {};
           case EstimatedCostTier::L1:
             return "L1";
           case EstimatedCostTier::L2:

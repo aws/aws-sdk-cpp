@@ -50,6 +50,21 @@ DetectModerationLabelsResult& DetectModerationLabelsResult::operator =(const Aws
 
   }
 
+  if(jsonValue.ValueExists("ProjectVersion"))
+  {
+    m_projectVersion = jsonValue.GetString("ProjectVersion");
+
+  }
+
+  if(jsonValue.ValueExists("ContentTypes"))
+  {
+    Aws::Utils::Array<JsonView> contentTypesJsonList = jsonValue.GetArray("ContentTypes");
+    for(unsigned contentTypesIndex = 0; contentTypesIndex < contentTypesJsonList.GetLength(); ++contentTypesIndex)
+    {
+      m_contentTypes.push_back(contentTypesJsonList[contentTypesIndex].AsObject());
+    }
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

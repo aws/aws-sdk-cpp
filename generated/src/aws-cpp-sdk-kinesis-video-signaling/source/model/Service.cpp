@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Service::NOT_SET:
+            return {};
           case Service::TURN:
             return "TURN";
           default:

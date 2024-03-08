@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReplicationConfigurationDefaultLargeStagingDiskType::NOT_SET:
+            return {};
           case ReplicationConfigurationDefaultLargeStagingDiskType::GP2:
             return "GP2";
           case ReplicationConfigurationDefaultLargeStagingDiskType::ST1:

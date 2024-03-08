@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EvaluationFormSingleSelectQuestionDisplayMode::NOT_SET:
+            return {};
           case EvaluationFormSingleSelectQuestionDisplayMode::DROPDOWN:
             return "DROPDOWN";
           case EvaluationFormSingleSelectQuestionDisplayMode::RADIO:

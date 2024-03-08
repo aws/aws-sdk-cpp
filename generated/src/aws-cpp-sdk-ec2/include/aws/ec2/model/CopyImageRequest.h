@@ -7,6 +7,8 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/model/TagSpecification.h>
 #include <utility>
 
 namespace Aws
@@ -624,6 +626,111 @@ namespace Model
      */
     inline CopyImageRequest& WithCopyImageTags(bool value) { SetCopyImageTags(value); return *this;}
 
+
+    /**
+     * <p>The tags to apply to the new AMI and new snapshots. You can tag the AMI, the
+     * snapshots, or both.</p> <ul> <li> <p>To tag the new AMI, the value for
+     * <code>ResourceType</code> must be <code>image</code>.</p> </li> <li> <p>To tag
+     * the new snapshots, the value for <code>ResourceType</code> must be
+     * <code>snapshot</code>. The same tag is applied to all the new snapshots.</p>
+     * </li> </ul> <p>If you specify other values for <code>ResourceType</code>, the
+     * request fails.</p> <p>To tag an AMI or snapshot after it has been created, see
+     * <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
+     */
+    inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
+
+    /**
+     * <p>The tags to apply to the new AMI and new snapshots. You can tag the AMI, the
+     * snapshots, or both.</p> <ul> <li> <p>To tag the new AMI, the value for
+     * <code>ResourceType</code> must be <code>image</code>.</p> </li> <li> <p>To tag
+     * the new snapshots, the value for <code>ResourceType</code> must be
+     * <code>snapshot</code>. The same tag is applied to all the new snapshots.</p>
+     * </li> </ul> <p>If you specify other values for <code>ResourceType</code>, the
+     * request fails.</p> <p>To tag an AMI or snapshot after it has been created, see
+     * <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
+     */
+    inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
+
+    /**
+     * <p>The tags to apply to the new AMI and new snapshots. You can tag the AMI, the
+     * snapshots, or both.</p> <ul> <li> <p>To tag the new AMI, the value for
+     * <code>ResourceType</code> must be <code>image</code>.</p> </li> <li> <p>To tag
+     * the new snapshots, the value for <code>ResourceType</code> must be
+     * <code>snapshot</code>. The same tag is applied to all the new snapshots.</p>
+     * </li> </ul> <p>If you specify other values for <code>ResourceType</code>, the
+     * request fails.</p> <p>To tag an AMI or snapshot after it has been created, see
+     * <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
+     */
+    inline void SetTagSpecifications(const Aws::Vector<TagSpecification>& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = value; }
+
+    /**
+     * <p>The tags to apply to the new AMI and new snapshots. You can tag the AMI, the
+     * snapshots, or both.</p> <ul> <li> <p>To tag the new AMI, the value for
+     * <code>ResourceType</code> must be <code>image</code>.</p> </li> <li> <p>To tag
+     * the new snapshots, the value for <code>ResourceType</code> must be
+     * <code>snapshot</code>. The same tag is applied to all the new snapshots.</p>
+     * </li> </ul> <p>If you specify other values for <code>ResourceType</code>, the
+     * request fails.</p> <p>To tag an AMI or snapshot after it has been created, see
+     * <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
+     */
+    inline void SetTagSpecifications(Aws::Vector<TagSpecification>&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::move(value); }
+
+    /**
+     * <p>The tags to apply to the new AMI and new snapshots. You can tag the AMI, the
+     * snapshots, or both.</p> <ul> <li> <p>To tag the new AMI, the value for
+     * <code>ResourceType</code> must be <code>image</code>.</p> </li> <li> <p>To tag
+     * the new snapshots, the value for <code>ResourceType</code> must be
+     * <code>snapshot</code>. The same tag is applied to all the new snapshots.</p>
+     * </li> </ul> <p>If you specify other values for <code>ResourceType</code>, the
+     * request fails.</p> <p>To tag an AMI or snapshot after it has been created, see
+     * <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
+     */
+    inline CopyImageRequest& WithTagSpecifications(const Aws::Vector<TagSpecification>& value) { SetTagSpecifications(value); return *this;}
+
+    /**
+     * <p>The tags to apply to the new AMI and new snapshots. You can tag the AMI, the
+     * snapshots, or both.</p> <ul> <li> <p>To tag the new AMI, the value for
+     * <code>ResourceType</code> must be <code>image</code>.</p> </li> <li> <p>To tag
+     * the new snapshots, the value for <code>ResourceType</code> must be
+     * <code>snapshot</code>. The same tag is applied to all the new snapshots.</p>
+     * </li> </ul> <p>If you specify other values for <code>ResourceType</code>, the
+     * request fails.</p> <p>To tag an AMI or snapshot after it has been created, see
+     * <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
+     */
+    inline CopyImageRequest& WithTagSpecifications(Aws::Vector<TagSpecification>&& value) { SetTagSpecifications(std::move(value)); return *this;}
+
+    /**
+     * <p>The tags to apply to the new AMI and new snapshots. You can tag the AMI, the
+     * snapshots, or both.</p> <ul> <li> <p>To tag the new AMI, the value for
+     * <code>ResourceType</code> must be <code>image</code>.</p> </li> <li> <p>To tag
+     * the new snapshots, the value for <code>ResourceType</code> must be
+     * <code>snapshot</code>. The same tag is applied to all the new snapshots.</p>
+     * </li> </ul> <p>If you specify other values for <code>ResourceType</code>, the
+     * request fails.</p> <p>To tag an AMI or snapshot after it has been created, see
+     * <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
+     */
+    inline CopyImageRequest& AddTagSpecifications(const TagSpecification& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(value); return *this; }
+
+    /**
+     * <p>The tags to apply to the new AMI and new snapshots. You can tag the AMI, the
+     * snapshots, or both.</p> <ul> <li> <p>To tag the new AMI, the value for
+     * <code>ResourceType</code> must be <code>image</code>.</p> </li> <li> <p>To tag
+     * the new snapshots, the value for <code>ResourceType</code> must be
+     * <code>snapshot</code>. The same tag is applied to all the new snapshots.</p>
+     * </li> </ul> <p>If you specify other values for <code>ResourceType</code>, the
+     * request fails.</p> <p>To tag an AMI or snapshot after it has been created, see
+     * <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
+     */
+    inline CopyImageRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_clientToken;
@@ -655,6 +762,9 @@ namespace Model
 
     bool m_copyImageTags;
     bool m_copyImageTagsHasBeenSet = false;
+
+    Aws::Vector<TagSpecification> m_tagSpecifications;
+    bool m_tagSpecificationsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HashAlgorithm::NOT_SET:
+            return {};
           case HashAlgorithm::MD5:
             return "MD5";
           case HashAlgorithm::SHA_1:

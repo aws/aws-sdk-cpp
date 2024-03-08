@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AppBlockBuilderStateChangeReasonCode::NOT_SET:
+            return {};
           case AppBlockBuilderStateChangeReasonCode::INTERNAL_ERROR:
             return "INTERNAL_ERROR";
           default:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TrafficType::NOT_SET:
+            return {};
           case TrafficType::PHASES:
             return "PHASES";
           case TrafficType::STAIRS:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BotLocaleFilterOperator::NOT_SET:
+            return {};
           case BotLocaleFilterOperator::CO:
             return "CO";
           case BotLocaleFilterOperator::EQ:

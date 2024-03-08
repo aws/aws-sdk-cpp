@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MapMatchScope::NOT_SET:
+            return {};
           case MapMatchScope::ALL:
             return "ALL";
           case MapMatchScope::KEY:

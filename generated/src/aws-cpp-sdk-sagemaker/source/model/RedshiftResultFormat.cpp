@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RedshiftResultFormat::NOT_SET:
+            return {};
           case RedshiftResultFormat::PARQUET:
             return "PARQUET";
           case RedshiftResultFormat::CSV:

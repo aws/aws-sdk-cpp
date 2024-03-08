@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OrchestrationType::NOT_SET:
+            return {};
           case OrchestrationType::ECS:
             return "ECS";
           case OrchestrationType::EKS:

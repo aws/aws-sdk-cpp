@@ -94,6 +94,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ConditionOperator::NOT_SET:
+            return {};
           case ConditionOperator::GreaterThan:
             return "GreaterThan";
           case ConditionOperator::GreaterThanOrEquals:

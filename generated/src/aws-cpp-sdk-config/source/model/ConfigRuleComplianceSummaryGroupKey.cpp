@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ConfigRuleComplianceSummaryGroupKey::NOT_SET:
+            return {};
           case ConfigRuleComplianceSummaryGroupKey::ACCOUNT_ID:
             return "ACCOUNT_ID";
           case ConfigRuleComplianceSummaryGroupKey::AWS_REGION:

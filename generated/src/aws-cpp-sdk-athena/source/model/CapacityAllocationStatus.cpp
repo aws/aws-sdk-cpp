@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CapacityAllocationStatus::NOT_SET:
+            return {};
           case CapacityAllocationStatus::PENDING:
             return "PENDING";
           case CapacityAllocationStatus::SUCCEEDED:

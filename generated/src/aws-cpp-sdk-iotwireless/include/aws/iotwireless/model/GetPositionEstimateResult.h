@@ -39,17 +39,25 @@ namespace Model
 
     /**
      * <p>The position information of the resource, displayed as a JSON payload. The
-     * payload uses the GeoJSON format, which a format that's used to encode geographic
-     * data structures. For more information, see <a
-     * href="https://geojson.org/">GeoJSON</a>.</p>
+     * payload is of type blob and uses the <a href="https://geojson.org/">GeoJSON</a>
+     * format, which a format that's used to encode geographic data structures. A
+     * sample payload contains the timestamp information, the WGS84 coordinates of the
+     * location, and the accuracy and confidence level. For more information and
+     * examples, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/location-resolve-console.html">Resolve
+     * device location (console)</a>.</p>
      */
     inline Aws::IOStream& GetGeoJsonPayload() const { return m_geoJsonPayload.GetUnderlyingStream(); }
 
     /**
      * <p>The position information of the resource, displayed as a JSON payload. The
-     * payload uses the GeoJSON format, which a format that's used to encode geographic
-     * data structures. For more information, see <a
-     * href="https://geojson.org/">GeoJSON</a>.</p>
+     * payload is of type blob and uses the <a href="https://geojson.org/">GeoJSON</a>
+     * format, which a format that's used to encode geographic data structures. A
+     * sample payload contains the timestamp information, the WGS84 coordinates of the
+     * location, and the accuracy and confidence level. For more information and
+     * examples, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/location-resolve-console.html">Resolve
+     * device location (console)</a>.</p>
      */
     inline void ReplaceBody(Aws::IOStream* body) { m_geoJsonPayload = Aws::Utils::Stream::ResponseStream(body); }
 

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TestCaseScenarioType::NOT_SET:
+            return {};
           case TestCaseScenarioType::Advanced:
             return "Advanced";
           case TestCaseScenarioType::Basic:

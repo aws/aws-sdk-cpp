@@ -48,7 +48,9 @@ Stack::Stack() :
     m_rootIdHasBeenSet(false),
     m_driftInformationHasBeenSet(false),
     m_retainExceptOnCreate(false),
-    m_retainExceptOnCreateHasBeenSet(false)
+    m_retainExceptOnCreateHasBeenSet(false),
+    m_detailedStatus(DetailedStatus::NOT_SET),
+    m_detailedStatusHasBeenSet(false)
 {
 }
 
@@ -80,7 +82,9 @@ Stack::Stack(const XmlNode& xmlNode) :
     m_rootIdHasBeenSet(false),
     m_driftInformationHasBeenSet(false),
     m_retainExceptOnCreate(false),
-    m_retainExceptOnCreateHasBeenSet(false)
+    m_retainExceptOnCreateHasBeenSet(false),
+    m_detailedStatus(DetailedStatus::NOT_SET),
+    m_detailedStatusHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -259,6 +263,12 @@ Stack& Stack::operator =(const XmlNode& xmlNode)
       m_retainExceptOnCreate = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(retainExceptOnCreateNode.GetText()).c_str()).c_str());
       m_retainExceptOnCreateHasBeenSet = true;
     }
+    XmlNode detailedStatusNode = resultNode.FirstChild("DetailedStatus");
+    if(!detailedStatusNode.IsNull())
+    {
+      m_detailedStatus = DetailedStatusMapper::GetDetailedStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(detailedStatusNode.GetText()).c_str()).c_str());
+      m_detailedStatusHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -411,6 +421,11 @@ void Stack::OutputToStream(Aws::OStream& oStream, const char* location, unsigned
       oStream << location << index << locationValue << ".RetainExceptOnCreate=" << std::boolalpha << m_retainExceptOnCreate << "&";
   }
 
+  if(m_detailedStatusHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DetailedStatus=" << DetailedStatusMapper::GetNameForDetailedStatus(m_detailedStatus) << "&";
+  }
+
 }
 
 void Stack::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -536,6 +551,10 @@ void Stack::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_retainExceptOnCreateHasBeenSet)
   {
       oStream << location << ".RetainExceptOnCreate=" << std::boolalpha << m_retainExceptOnCreate << "&";
+  }
+  if(m_detailedStatusHasBeenSet)
+  {
+      oStream << location << ".DetailedStatus=" << DetailedStatusMapper::GetNameForDetailedStatus(m_detailedStatus) << "&";
   }
 }
 

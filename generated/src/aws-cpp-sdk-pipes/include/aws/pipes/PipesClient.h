@@ -27,8 +27,8 @@ namespace Pipes
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef PipesClientConfiguration ClientConfigurationType;
       typedef PipesEndpointProvider EndpointProviderType;
@@ -38,14 +38,14 @@ namespace Pipes
         * is not specified, it will be initialized to default values.
         */
         PipesClient(const Aws::Pipes::PipesClientConfiguration& clientConfiguration = Aws::Pipes::PipesClientConfiguration(),
-                    std::shared_ptr<PipesEndpointProviderBase> endpointProvider = Aws::MakeShared<PipesEndpointProvider>(ALLOCATION_TAG));
+                    std::shared_ptr<PipesEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         PipesClient(const Aws::Auth::AWSCredentials& credentials,
-                    std::shared_ptr<PipesEndpointProviderBase> endpointProvider = Aws::MakeShared<PipesEndpointProvider>(ALLOCATION_TAG),
+                    std::shared_ptr<PipesEndpointProviderBase> endpointProvider = nullptr,
                     const Aws::Pipes::PipesClientConfiguration& clientConfiguration = Aws::Pipes::PipesClientConfiguration());
 
        /**
@@ -53,7 +53,7 @@ namespace Pipes
         * the default http client factory will be used
         */
         PipesClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                    std::shared_ptr<PipesEndpointProviderBase> endpointProvider = Aws::MakeShared<PipesEndpointProvider>(ALLOCATION_TAG),
+                    std::shared_ptr<PipesEndpointProviderBase> endpointProvider = nullptr,
                     const Aws::Pipes::PipesClientConfiguration& clientConfiguration = Aws::Pipes::PipesClientConfiguration());
 
 
@@ -331,15 +331,18 @@ namespace Pipes
         }
 
         /**
-         * <p>Update an existing pipe. When you call <code>UpdatePipe</code>, only the
-         * fields that are included in the request are changed, the rest are unchanged. The
-         * exception to this is if you modify any Amazon Web Services-service specific
-         * fields in the <code>SourceParameters</code>, <code>EnrichmentParameters</code>,
-         * or <code>TargetParameters</code> objects. The fields in these objects are
-         * updated atomically as one and override existing values. This is by design and
-         * means that if you don't specify an optional field in one of these Parameters
-         * objects, that field will be set to its system-default value after the
-         * update.</p> <p>For more information about pipes, see <a
+         * <p>Update an existing pipe. When you call <code>UpdatePipe</code>, EventBridge
+         * only the updates fields you have specified in the request; the rest remain
+         * unchanged. The exception to this is if you modify any Amazon Web
+         * Services-service specific fields in the <code>SourceParameters</code>,
+         * <code>EnrichmentParameters</code>, or <code>TargetParameters</code> objects. For
+         * example, <code>DynamoDBStreamParameters</code> or
+         * <code>EventBridgeEventBusParameters</code>. EventBridge updates the fields in
+         * these objects atomically as one and overrides existing values. This is by
+         * design, and means that if you don't specify an optional field in one of these
+         * <code>Parameters</code> objects, EventBridge sets that field to its
+         * system-default value during the update.</p> <p>For more information about pipes,
+         * see <a
          * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes.html">
          * Amazon EventBridge Pipes</a> in the Amazon EventBridge User Guide.</p><p><h3>See
          * Also:</h3>   <a

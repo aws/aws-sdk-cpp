@@ -46,42 +46,50 @@ namespace Model
 
 
     /**
-     * <p>The valid storage types for your DB instance. For example: gp2, gp3, io1.</p>
+     * <p>The valid storage types for your DB instance. For example: gp2, gp3, io1,
+     * io2.</p>
      */
     inline const Aws::String& GetStorageType() const{ return m_storageType; }
 
     /**
-     * <p>The valid storage types for your DB instance. For example: gp2, gp3, io1.</p>
+     * <p>The valid storage types for your DB instance. For example: gp2, gp3, io1,
+     * io2.</p>
      */
     inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
 
     /**
-     * <p>The valid storage types for your DB instance. For example: gp2, gp3, io1.</p>
+     * <p>The valid storage types for your DB instance. For example: gp2, gp3, io1,
+     * io2.</p>
      */
     inline void SetStorageType(const Aws::String& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
 
     /**
-     * <p>The valid storage types for your DB instance. For example: gp2, gp3, io1.</p>
+     * <p>The valid storage types for your DB instance. For example: gp2, gp3, io1,
+     * io2.</p>
      */
     inline void SetStorageType(Aws::String&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
 
     /**
-     * <p>The valid storage types for your DB instance. For example: gp2, gp3, io1.</p>
+     * <p>The valid storage types for your DB instance. For example: gp2, gp3, io1,
+     * io2.</p>
      */
     inline void SetStorageType(const char* value) { m_storageTypeHasBeenSet = true; m_storageType.assign(value); }
 
     /**
-     * <p>The valid storage types for your DB instance. For example: gp2, gp3, io1.</p>
+     * <p>The valid storage types for your DB instance. For example: gp2, gp3, io1,
+     * io2.</p>
      */
     inline ValidStorageOptions& WithStorageType(const Aws::String& value) { SetStorageType(value); return *this;}
 
     /**
-     * <p>The valid storage types for your DB instance. For example: gp2, gp3, io1.</p>
+     * <p>The valid storage types for your DB instance. For example: gp2, gp3, io1,
+     * io2.</p>
      */
     inline ValidStorageOptions& WithStorageType(Aws::String&& value) { SetStorageType(std::move(value)); return *this;}
 
     /**
-     * <p>The valid storage types for your DB instance. For example: gp2, gp3, io1.</p>
+     * <p>The valid storage types for your DB instance. For example: gp2, gp3, io1,
+     * io2.</p>
      */
     inline ValidStorageOptions& WithStorageType(const char* value) { SetStorageType(value); return *this;}
 
@@ -234,26 +242,26 @@ namespace Model
 
 
     /**
-     * <p>Whether or not Amazon RDS can automatically scale storage for DB instances
-     * that use the new instance class.</p>
+     * <p>Indicates whether or not Amazon RDS can automatically scale storage for DB
+     * instances that use the new instance class.</p>
      */
     inline bool GetSupportsStorageAutoscaling() const{ return m_supportsStorageAutoscaling; }
 
     /**
-     * <p>Whether or not Amazon RDS can automatically scale storage for DB instances
-     * that use the new instance class.</p>
+     * <p>Indicates whether or not Amazon RDS can automatically scale storage for DB
+     * instances that use the new instance class.</p>
      */
     inline bool SupportsStorageAutoscalingHasBeenSet() const { return m_supportsStorageAutoscalingHasBeenSet; }
 
     /**
-     * <p>Whether or not Amazon RDS can automatically scale storage for DB instances
-     * that use the new instance class.</p>
+     * <p>Indicates whether or not Amazon RDS can automatically scale storage for DB
+     * instances that use the new instance class.</p>
      */
     inline void SetSupportsStorageAutoscaling(bool value) { m_supportsStorageAutoscalingHasBeenSet = true; m_supportsStorageAutoscaling = value; }
 
     /**
-     * <p>Whether or not Amazon RDS can automatically scale storage for DB instances
-     * that use the new instance class.</p>
+     * <p>Indicates whether or not Amazon RDS can automatically scale storage for DB
+     * instances that use the new instance class.</p>
      */
     inline ValidStorageOptions& WithSupportsStorageAutoscaling(bool value) { SetSupportsStorageAutoscaling(value); return *this;}
 

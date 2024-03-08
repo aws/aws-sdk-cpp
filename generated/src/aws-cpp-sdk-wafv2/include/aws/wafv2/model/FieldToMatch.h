@@ -16,6 +16,7 @@
 #include <aws/wafv2/model/Headers.h>
 #include <aws/wafv2/model/Cookies.h>
 #include <aws/wafv2/model/HeaderOrder.h>
+#include <aws/wafv2/model/JA3Fingerprint.h>
 #include <utility>
 
 namespace Aws
@@ -34,7 +35,9 @@ namespace Model
 {
 
   /**
-   * <p>The part of the web request that you want WAF to inspect. Include the single
+   * <p>Specifies a web request component to be used in a rule match statement or in
+   * a logging configuration. </p> <ul> <li> <p>In a rule statement, this is the part
+   * of the web request that you want WAF to inspect. Include the single
    * <code>FieldToMatch</code> type that you want to inspect, with additional
    * specifications as needed, according to the type. You specify a single request
    * component in <code>FieldToMatch</code> for each rule statement that requires it.
@@ -42,8 +45,17 @@ namespace Model
    * statement for each component.</p> <p>Example JSON for a <code>QueryString</code>
    * field to match: </p> <p> <code> "FieldToMatch": { "QueryString": {} }</code>
    * </p> <p>Example JSON for a <code>Method</code> field to match specification:</p>
-   * <p> <code> "FieldToMatch": { "Method": { "Name": "DELETE" } }</code>
-   * </p><p><h3>See Also:</h3>   <a
+   * <p> <code> "FieldToMatch": { "Method": { "Name": "DELETE" } }</code> </p> </li>
+   * <li> <p>In a logging configuration, this is used in the
+   * <code>RedactedFields</code> property to specify a field to redact from the
+   * logging records. For this use case, note the following: </p> <ul> <li> <p>Even
+   * though all <code>FieldToMatch</code> settings are available, the only valid
+   * settings for field redaction are <code>UriPath</code>, <code>QueryString</code>,
+   * <code>SingleHeader</code>, and <code>Method</code>.</p> </li> <li> <p>In this
+   * documentation, the descriptions of the individual fields talk about specifying
+   * the web request component to inspect, but for field redaction, you are
+   * specifying the component type to redact from the logs. </p> </li> </ul> </li>
+   * </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/FieldToMatch">AWS
    * API Reference</a></p>
    */
@@ -269,11 +281,15 @@ namespace Model
      * <p>Inspect the request body as plain text. The request body immediately follows
      * the request headers. This is the part of a request that contains any additional
      * data that you want to send to your web server as the HTTP request body, such as
-     * data from a form. </p> <p>A limited amount of the request body is forwarded to
-     * WAF for inspection by the underlying host service. For regional resources, the
-     * limit is 8 KB (8,192 bytes) and for CloudFront distributions, the limit is 16 KB
-     * (16,384 bytes). For CloudFront distributions, you can increase the limit in the
-     * web ACL's <code>AssociationConfig</code>, for additional processing fees. </p>
+     * data from a form. </p> <p>WAF does not support inspecting the entire contents of
+     * the web request body if the body exceeds the limit for the resource type. When a
+     * web request body is larger than the limit, the underlying host service only
+     * forwards the contents that are within the limit to WAF for inspection. </p> <ul>
+     * <li> <p>For Application Load Balancer and AppSync, the limit is fixed at 8 KB
+     * (8,192 bytes).</p> </li> <li> <p>For CloudFront, API Gateway, Amazon Cognito,
+     * App Runner, and Verified Access, the default limit is 16 KB (16,384 bytes), and
+     * you can increase the limit for each resource type in the web ACL
+     * <code>AssociationConfig</code>, for additional processing fees. </p> </li> </ul>
      * <p>For information about how to handle oversized request bodies, see the
      * <code>Body</code> object configuration. </p>
      */
@@ -283,11 +299,15 @@ namespace Model
      * <p>Inspect the request body as plain text. The request body immediately follows
      * the request headers. This is the part of a request that contains any additional
      * data that you want to send to your web server as the HTTP request body, such as
-     * data from a form. </p> <p>A limited amount of the request body is forwarded to
-     * WAF for inspection by the underlying host service. For regional resources, the
-     * limit is 8 KB (8,192 bytes) and for CloudFront distributions, the limit is 16 KB
-     * (16,384 bytes). For CloudFront distributions, you can increase the limit in the
-     * web ACL's <code>AssociationConfig</code>, for additional processing fees. </p>
+     * data from a form. </p> <p>WAF does not support inspecting the entire contents of
+     * the web request body if the body exceeds the limit for the resource type. When a
+     * web request body is larger than the limit, the underlying host service only
+     * forwards the contents that are within the limit to WAF for inspection. </p> <ul>
+     * <li> <p>For Application Load Balancer and AppSync, the limit is fixed at 8 KB
+     * (8,192 bytes).</p> </li> <li> <p>For CloudFront, API Gateway, Amazon Cognito,
+     * App Runner, and Verified Access, the default limit is 16 KB (16,384 bytes), and
+     * you can increase the limit for each resource type in the web ACL
+     * <code>AssociationConfig</code>, for additional processing fees. </p> </li> </ul>
      * <p>For information about how to handle oversized request bodies, see the
      * <code>Body</code> object configuration. </p>
      */
@@ -297,11 +317,15 @@ namespace Model
      * <p>Inspect the request body as plain text. The request body immediately follows
      * the request headers. This is the part of a request that contains any additional
      * data that you want to send to your web server as the HTTP request body, such as
-     * data from a form. </p> <p>A limited amount of the request body is forwarded to
-     * WAF for inspection by the underlying host service. For regional resources, the
-     * limit is 8 KB (8,192 bytes) and for CloudFront distributions, the limit is 16 KB
-     * (16,384 bytes). For CloudFront distributions, you can increase the limit in the
-     * web ACL's <code>AssociationConfig</code>, for additional processing fees. </p>
+     * data from a form. </p> <p>WAF does not support inspecting the entire contents of
+     * the web request body if the body exceeds the limit for the resource type. When a
+     * web request body is larger than the limit, the underlying host service only
+     * forwards the contents that are within the limit to WAF for inspection. </p> <ul>
+     * <li> <p>For Application Load Balancer and AppSync, the limit is fixed at 8 KB
+     * (8,192 bytes).</p> </li> <li> <p>For CloudFront, API Gateway, Amazon Cognito,
+     * App Runner, and Verified Access, the default limit is 16 KB (16,384 bytes), and
+     * you can increase the limit for each resource type in the web ACL
+     * <code>AssociationConfig</code>, for additional processing fees. </p> </li> </ul>
      * <p>For information about how to handle oversized request bodies, see the
      * <code>Body</code> object configuration. </p>
      */
@@ -311,11 +335,15 @@ namespace Model
      * <p>Inspect the request body as plain text. The request body immediately follows
      * the request headers. This is the part of a request that contains any additional
      * data that you want to send to your web server as the HTTP request body, such as
-     * data from a form. </p> <p>A limited amount of the request body is forwarded to
-     * WAF for inspection by the underlying host service. For regional resources, the
-     * limit is 8 KB (8,192 bytes) and for CloudFront distributions, the limit is 16 KB
-     * (16,384 bytes). For CloudFront distributions, you can increase the limit in the
-     * web ACL's <code>AssociationConfig</code>, for additional processing fees. </p>
+     * data from a form. </p> <p>WAF does not support inspecting the entire contents of
+     * the web request body if the body exceeds the limit for the resource type. When a
+     * web request body is larger than the limit, the underlying host service only
+     * forwards the contents that are within the limit to WAF for inspection. </p> <ul>
+     * <li> <p>For Application Load Balancer and AppSync, the limit is fixed at 8 KB
+     * (8,192 bytes).</p> </li> <li> <p>For CloudFront, API Gateway, Amazon Cognito,
+     * App Runner, and Verified Access, the default limit is 16 KB (16,384 bytes), and
+     * you can increase the limit for each resource type in the web ACL
+     * <code>AssociationConfig</code>, for additional processing fees. </p> </li> </ul>
      * <p>For information about how to handle oversized request bodies, see the
      * <code>Body</code> object configuration. </p>
      */
@@ -325,11 +353,15 @@ namespace Model
      * <p>Inspect the request body as plain text. The request body immediately follows
      * the request headers. This is the part of a request that contains any additional
      * data that you want to send to your web server as the HTTP request body, such as
-     * data from a form. </p> <p>A limited amount of the request body is forwarded to
-     * WAF for inspection by the underlying host service. For regional resources, the
-     * limit is 8 KB (8,192 bytes) and for CloudFront distributions, the limit is 16 KB
-     * (16,384 bytes). For CloudFront distributions, you can increase the limit in the
-     * web ACL's <code>AssociationConfig</code>, for additional processing fees. </p>
+     * data from a form. </p> <p>WAF does not support inspecting the entire contents of
+     * the web request body if the body exceeds the limit for the resource type. When a
+     * web request body is larger than the limit, the underlying host service only
+     * forwards the contents that are within the limit to WAF for inspection. </p> <ul>
+     * <li> <p>For Application Load Balancer and AppSync, the limit is fixed at 8 KB
+     * (8,192 bytes).</p> </li> <li> <p>For CloudFront, API Gateway, Amazon Cognito,
+     * App Runner, and Verified Access, the default limit is 16 KB (16,384 bytes), and
+     * you can increase the limit for each resource type in the web ACL
+     * <code>AssociationConfig</code>, for additional processing fees. </p> </li> </ul>
      * <p>For information about how to handle oversized request bodies, see the
      * <code>Body</code> object configuration. </p>
      */
@@ -339,11 +371,15 @@ namespace Model
      * <p>Inspect the request body as plain text. The request body immediately follows
      * the request headers. This is the part of a request that contains any additional
      * data that you want to send to your web server as the HTTP request body, such as
-     * data from a form. </p> <p>A limited amount of the request body is forwarded to
-     * WAF for inspection by the underlying host service. For regional resources, the
-     * limit is 8 KB (8,192 bytes) and for CloudFront distributions, the limit is 16 KB
-     * (16,384 bytes). For CloudFront distributions, you can increase the limit in the
-     * web ACL's <code>AssociationConfig</code>, for additional processing fees. </p>
+     * data from a form. </p> <p>WAF does not support inspecting the entire contents of
+     * the web request body if the body exceeds the limit for the resource type. When a
+     * web request body is larger than the limit, the underlying host service only
+     * forwards the contents that are within the limit to WAF for inspection. </p> <ul>
+     * <li> <p>For Application Load Balancer and AppSync, the limit is fixed at 8 KB
+     * (8,192 bytes).</p> </li> <li> <p>For CloudFront, API Gateway, Amazon Cognito,
+     * App Runner, and Verified Access, the default limit is 16 KB (16,384 bytes), and
+     * you can increase the limit for each resource type in the web ACL
+     * <code>AssociationConfig</code>, for additional processing fees. </p> </li> </ul>
      * <p>For information about how to handle oversized request bodies, see the
      * <code>Body</code> object configuration. </p>
      */
@@ -391,11 +427,15 @@ namespace Model
      * <p>Inspect the request body as JSON. The request body immediately follows the
      * request headers. This is the part of a request that contains any additional data
      * that you want to send to your web server as the HTTP request body, such as data
-     * from a form. </p> <p>A limited amount of the request body is forwarded to WAF
-     * for inspection by the underlying host service. For regional resources, the limit
-     * is 8 KB (8,192 bytes) and for CloudFront distributions, the limit is 16 KB
-     * (16,384 bytes). For CloudFront distributions, you can increase the limit in the
-     * web ACL's <code>AssociationConfig</code>, for additional processing fees. </p>
+     * from a form. </p> <p>WAF does not support inspecting the entire contents of the
+     * web request body if the body exceeds the limit for the resource type. When a web
+     * request body is larger than the limit, the underlying host service only forwards
+     * the contents that are within the limit to WAF for inspection. </p> <ul> <li>
+     * <p>For Application Load Balancer and AppSync, the limit is fixed at 8 KB (8,192
+     * bytes).</p> </li> <li> <p>For CloudFront, API Gateway, Amazon Cognito, App
+     * Runner, and Verified Access, the default limit is 16 KB (16,384 bytes), and you
+     * can increase the limit for each resource type in the web ACL
+     * <code>AssociationConfig</code>, for additional processing fees. </p> </li> </ul>
      * <p>For information about how to handle oversized request bodies, see the
      * <code>JsonBody</code> object configuration. </p>
      */
@@ -405,11 +445,15 @@ namespace Model
      * <p>Inspect the request body as JSON. The request body immediately follows the
      * request headers. This is the part of a request that contains any additional data
      * that you want to send to your web server as the HTTP request body, such as data
-     * from a form. </p> <p>A limited amount of the request body is forwarded to WAF
-     * for inspection by the underlying host service. For regional resources, the limit
-     * is 8 KB (8,192 bytes) and for CloudFront distributions, the limit is 16 KB
-     * (16,384 bytes). For CloudFront distributions, you can increase the limit in the
-     * web ACL's <code>AssociationConfig</code>, for additional processing fees. </p>
+     * from a form. </p> <p>WAF does not support inspecting the entire contents of the
+     * web request body if the body exceeds the limit for the resource type. When a web
+     * request body is larger than the limit, the underlying host service only forwards
+     * the contents that are within the limit to WAF for inspection. </p> <ul> <li>
+     * <p>For Application Load Balancer and AppSync, the limit is fixed at 8 KB (8,192
+     * bytes).</p> </li> <li> <p>For CloudFront, API Gateway, Amazon Cognito, App
+     * Runner, and Verified Access, the default limit is 16 KB (16,384 bytes), and you
+     * can increase the limit for each resource type in the web ACL
+     * <code>AssociationConfig</code>, for additional processing fees. </p> </li> </ul>
      * <p>For information about how to handle oversized request bodies, see the
      * <code>JsonBody</code> object configuration. </p>
      */
@@ -419,11 +463,15 @@ namespace Model
      * <p>Inspect the request body as JSON. The request body immediately follows the
      * request headers. This is the part of a request that contains any additional data
      * that you want to send to your web server as the HTTP request body, such as data
-     * from a form. </p> <p>A limited amount of the request body is forwarded to WAF
-     * for inspection by the underlying host service. For regional resources, the limit
-     * is 8 KB (8,192 bytes) and for CloudFront distributions, the limit is 16 KB
-     * (16,384 bytes). For CloudFront distributions, you can increase the limit in the
-     * web ACL's <code>AssociationConfig</code>, for additional processing fees. </p>
+     * from a form. </p> <p>WAF does not support inspecting the entire contents of the
+     * web request body if the body exceeds the limit for the resource type. When a web
+     * request body is larger than the limit, the underlying host service only forwards
+     * the contents that are within the limit to WAF for inspection. </p> <ul> <li>
+     * <p>For Application Load Balancer and AppSync, the limit is fixed at 8 KB (8,192
+     * bytes).</p> </li> <li> <p>For CloudFront, API Gateway, Amazon Cognito, App
+     * Runner, and Verified Access, the default limit is 16 KB (16,384 bytes), and you
+     * can increase the limit for each resource type in the web ACL
+     * <code>AssociationConfig</code>, for additional processing fees. </p> </li> </ul>
      * <p>For information about how to handle oversized request bodies, see the
      * <code>JsonBody</code> object configuration. </p>
      */
@@ -433,11 +481,15 @@ namespace Model
      * <p>Inspect the request body as JSON. The request body immediately follows the
      * request headers. This is the part of a request that contains any additional data
      * that you want to send to your web server as the HTTP request body, such as data
-     * from a form. </p> <p>A limited amount of the request body is forwarded to WAF
-     * for inspection by the underlying host service. For regional resources, the limit
-     * is 8 KB (8,192 bytes) and for CloudFront distributions, the limit is 16 KB
-     * (16,384 bytes). For CloudFront distributions, you can increase the limit in the
-     * web ACL's <code>AssociationConfig</code>, for additional processing fees. </p>
+     * from a form. </p> <p>WAF does not support inspecting the entire contents of the
+     * web request body if the body exceeds the limit for the resource type. When a web
+     * request body is larger than the limit, the underlying host service only forwards
+     * the contents that are within the limit to WAF for inspection. </p> <ul> <li>
+     * <p>For Application Load Balancer and AppSync, the limit is fixed at 8 KB (8,192
+     * bytes).</p> </li> <li> <p>For CloudFront, API Gateway, Amazon Cognito, App
+     * Runner, and Verified Access, the default limit is 16 KB (16,384 bytes), and you
+     * can increase the limit for each resource type in the web ACL
+     * <code>AssociationConfig</code>, for additional processing fees. </p> </li> </ul>
      * <p>For information about how to handle oversized request bodies, see the
      * <code>JsonBody</code> object configuration. </p>
      */
@@ -447,11 +499,15 @@ namespace Model
      * <p>Inspect the request body as JSON. The request body immediately follows the
      * request headers. This is the part of a request that contains any additional data
      * that you want to send to your web server as the HTTP request body, such as data
-     * from a form. </p> <p>A limited amount of the request body is forwarded to WAF
-     * for inspection by the underlying host service. For regional resources, the limit
-     * is 8 KB (8,192 bytes) and for CloudFront distributions, the limit is 16 KB
-     * (16,384 bytes). For CloudFront distributions, you can increase the limit in the
-     * web ACL's <code>AssociationConfig</code>, for additional processing fees. </p>
+     * from a form. </p> <p>WAF does not support inspecting the entire contents of the
+     * web request body if the body exceeds the limit for the resource type. When a web
+     * request body is larger than the limit, the underlying host service only forwards
+     * the contents that are within the limit to WAF for inspection. </p> <ul> <li>
+     * <p>For Application Load Balancer and AppSync, the limit is fixed at 8 KB (8,192
+     * bytes).</p> </li> <li> <p>For CloudFront, API Gateway, Amazon Cognito, App
+     * Runner, and Verified Access, the default limit is 16 KB (16,384 bytes), and you
+     * can increase the limit for each resource type in the web ACL
+     * <code>AssociationConfig</code>, for additional processing fees. </p> </li> </ul>
      * <p>For information about how to handle oversized request bodies, see the
      * <code>JsonBody</code> object configuration. </p>
      */
@@ -461,11 +517,15 @@ namespace Model
      * <p>Inspect the request body as JSON. The request body immediately follows the
      * request headers. This is the part of a request that contains any additional data
      * that you want to send to your web server as the HTTP request body, such as data
-     * from a form. </p> <p>A limited amount of the request body is forwarded to WAF
-     * for inspection by the underlying host service. For regional resources, the limit
-     * is 8 KB (8,192 bytes) and for CloudFront distributions, the limit is 16 KB
-     * (16,384 bytes). For CloudFront distributions, you can increase the limit in the
-     * web ACL's <code>AssociationConfig</code>, for additional processing fees. </p>
+     * from a form. </p> <p>WAF does not support inspecting the entire contents of the
+     * web request body if the body exceeds the limit for the resource type. When a web
+     * request body is larger than the limit, the underlying host service only forwards
+     * the contents that are within the limit to WAF for inspection. </p> <ul> <li>
+     * <p>For Application Load Balancer and AppSync, the limit is fixed at 8 KB (8,192
+     * bytes).</p> </li> <li> <p>For CloudFront, API Gateway, Amazon Cognito, App
+     * Runner, and Verified Access, the default limit is 16 KB (16,384 bytes), and you
+     * can increase the limit for each resource type in the web ACL
+     * <code>AssociationConfig</code>, for additional processing fees. </p> </li> </ul>
      * <p>For information about how to handle oversized request bodies, see the
      * <code>JsonBody</code> object configuration. </p>
      */
@@ -678,6 +738,121 @@ namespace Model
      */
     inline FieldToMatch& WithHeaderOrder(HeaderOrder&& value) { SetHeaderOrder(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Match against the request's JA3 fingerprint. The JA3 fingerprint is a
+     * 32-character hash derived from the TLS Client Hello of an incoming request. This
+     * fingerprint serves as a unique identifier for the client's TLS configuration.
+     * WAF calculates and logs this fingerprint for each request that has enough TLS
+     * Client Hello information for the calculation. Almost all web requests include
+     * this information.</p>  <p>You can use this choice only with a string match
+     * <code>ByteMatchStatement</code> with the <code>PositionalConstraint</code> set
+     * to <code>EXACTLY</code>. </p>  <p>You can obtain the JA3 fingerprint for
+     * client requests from the web ACL logs. If WAF is able to calculate the
+     * fingerprint, it includes it in the logs. For information about the logging
+     * fields, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log
+     * fields</a> in the <i>WAF Developer Guide</i>. </p> <p>Provide the JA3
+     * fingerprint string from the logs in your string match statement specification,
+     * to match with any future requests that have the same TLS configuration.</p>
+     */
+    inline const JA3Fingerprint& GetJA3Fingerprint() const{ return m_jA3Fingerprint; }
+
+    /**
+     * <p>Match against the request's JA3 fingerprint. The JA3 fingerprint is a
+     * 32-character hash derived from the TLS Client Hello of an incoming request. This
+     * fingerprint serves as a unique identifier for the client's TLS configuration.
+     * WAF calculates and logs this fingerprint for each request that has enough TLS
+     * Client Hello information for the calculation. Almost all web requests include
+     * this information.</p>  <p>You can use this choice only with a string match
+     * <code>ByteMatchStatement</code> with the <code>PositionalConstraint</code> set
+     * to <code>EXACTLY</code>. </p>  <p>You can obtain the JA3 fingerprint for
+     * client requests from the web ACL logs. If WAF is able to calculate the
+     * fingerprint, it includes it in the logs. For information about the logging
+     * fields, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log
+     * fields</a> in the <i>WAF Developer Guide</i>. </p> <p>Provide the JA3
+     * fingerprint string from the logs in your string match statement specification,
+     * to match with any future requests that have the same TLS configuration.</p>
+     */
+    inline bool JA3FingerprintHasBeenSet() const { return m_jA3FingerprintHasBeenSet; }
+
+    /**
+     * <p>Match against the request's JA3 fingerprint. The JA3 fingerprint is a
+     * 32-character hash derived from the TLS Client Hello of an incoming request. This
+     * fingerprint serves as a unique identifier for the client's TLS configuration.
+     * WAF calculates and logs this fingerprint for each request that has enough TLS
+     * Client Hello information for the calculation. Almost all web requests include
+     * this information.</p>  <p>You can use this choice only with a string match
+     * <code>ByteMatchStatement</code> with the <code>PositionalConstraint</code> set
+     * to <code>EXACTLY</code>. </p>  <p>You can obtain the JA3 fingerprint for
+     * client requests from the web ACL logs. If WAF is able to calculate the
+     * fingerprint, it includes it in the logs. For information about the logging
+     * fields, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log
+     * fields</a> in the <i>WAF Developer Guide</i>. </p> <p>Provide the JA3
+     * fingerprint string from the logs in your string match statement specification,
+     * to match with any future requests that have the same TLS configuration.</p>
+     */
+    inline void SetJA3Fingerprint(const JA3Fingerprint& value) { m_jA3FingerprintHasBeenSet = true; m_jA3Fingerprint = value; }
+
+    /**
+     * <p>Match against the request's JA3 fingerprint. The JA3 fingerprint is a
+     * 32-character hash derived from the TLS Client Hello of an incoming request. This
+     * fingerprint serves as a unique identifier for the client's TLS configuration.
+     * WAF calculates and logs this fingerprint for each request that has enough TLS
+     * Client Hello information for the calculation. Almost all web requests include
+     * this information.</p>  <p>You can use this choice only with a string match
+     * <code>ByteMatchStatement</code> with the <code>PositionalConstraint</code> set
+     * to <code>EXACTLY</code>. </p>  <p>You can obtain the JA3 fingerprint for
+     * client requests from the web ACL logs. If WAF is able to calculate the
+     * fingerprint, it includes it in the logs. For information about the logging
+     * fields, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log
+     * fields</a> in the <i>WAF Developer Guide</i>. </p> <p>Provide the JA3
+     * fingerprint string from the logs in your string match statement specification,
+     * to match with any future requests that have the same TLS configuration.</p>
+     */
+    inline void SetJA3Fingerprint(JA3Fingerprint&& value) { m_jA3FingerprintHasBeenSet = true; m_jA3Fingerprint = std::move(value); }
+
+    /**
+     * <p>Match against the request's JA3 fingerprint. The JA3 fingerprint is a
+     * 32-character hash derived from the TLS Client Hello of an incoming request. This
+     * fingerprint serves as a unique identifier for the client's TLS configuration.
+     * WAF calculates and logs this fingerprint for each request that has enough TLS
+     * Client Hello information for the calculation. Almost all web requests include
+     * this information.</p>  <p>You can use this choice only with a string match
+     * <code>ByteMatchStatement</code> with the <code>PositionalConstraint</code> set
+     * to <code>EXACTLY</code>. </p>  <p>You can obtain the JA3 fingerprint for
+     * client requests from the web ACL logs. If WAF is able to calculate the
+     * fingerprint, it includes it in the logs. For information about the logging
+     * fields, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log
+     * fields</a> in the <i>WAF Developer Guide</i>. </p> <p>Provide the JA3
+     * fingerprint string from the logs in your string match statement specification,
+     * to match with any future requests that have the same TLS configuration.</p>
+     */
+    inline FieldToMatch& WithJA3Fingerprint(const JA3Fingerprint& value) { SetJA3Fingerprint(value); return *this;}
+
+    /**
+     * <p>Match against the request's JA3 fingerprint. The JA3 fingerprint is a
+     * 32-character hash derived from the TLS Client Hello of an incoming request. This
+     * fingerprint serves as a unique identifier for the client's TLS configuration.
+     * WAF calculates and logs this fingerprint for each request that has enough TLS
+     * Client Hello information for the calculation. Almost all web requests include
+     * this information.</p>  <p>You can use this choice only with a string match
+     * <code>ByteMatchStatement</code> with the <code>PositionalConstraint</code> set
+     * to <code>EXACTLY</code>. </p>  <p>You can obtain the JA3 fingerprint for
+     * client requests from the web ACL logs. If WAF is able to calculate the
+     * fingerprint, it includes it in the logs. For information about the logging
+     * fields, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/logging-fields.html">Log
+     * fields</a> in the <i>WAF Developer Guide</i>. </p> <p>Provide the JA3
+     * fingerprint string from the logs in your string match statement specification,
+     * to match with any future requests that have the same TLS configuration.</p>
+     */
+    inline FieldToMatch& WithJA3Fingerprint(JA3Fingerprint&& value) { SetJA3Fingerprint(std::move(value)); return *this;}
+
   private:
 
     SingleHeader m_singleHeader;
@@ -712,6 +887,9 @@ namespace Model
 
     HeaderOrder m_headerOrder;
     bool m_headerOrderHasBeenSet = false;
+
+    JA3Fingerprint m_jA3Fingerprint;
+    bool m_jA3FingerprintHasBeenSet = false;
   };
 
 } // namespace Model

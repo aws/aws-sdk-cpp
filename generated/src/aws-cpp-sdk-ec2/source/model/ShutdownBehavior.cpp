@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ShutdownBehavior::NOT_SET:
+            return {};
           case ShutdownBehavior::stop:
             return "stop";
           case ShutdownBehavior::terminate:

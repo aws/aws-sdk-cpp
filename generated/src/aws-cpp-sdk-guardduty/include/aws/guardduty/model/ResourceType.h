@@ -16,7 +16,9 @@ namespace Model
   enum class ResourceType
   {
     NOT_SET,
-    EKS
+    EKS,
+    ECS,
+    EC2
   };
 
 namespace ResourceTypeMapper

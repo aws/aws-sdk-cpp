@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InputFilterEnable::NOT_SET:
+            return {};
           case InputFilterEnable::AUTO:
             return "AUTO";
           case InputFilterEnable::DISABLE:

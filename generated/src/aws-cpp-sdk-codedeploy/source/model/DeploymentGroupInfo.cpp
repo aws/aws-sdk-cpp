@@ -42,7 +42,9 @@ DeploymentGroupInfo::DeploymentGroupInfo() :
     m_onPremisesTagSetHasBeenSet(false),
     m_computePlatform(ComputePlatform::NOT_SET),
     m_computePlatformHasBeenSet(false),
-    m_ecsServicesHasBeenSet(false)
+    m_ecsServicesHasBeenSet(false),
+    m_terminationHookEnabled(false),
+    m_terminationHookEnabledHasBeenSet(false)
 {
 }
 
@@ -70,7 +72,9 @@ DeploymentGroupInfo::DeploymentGroupInfo(JsonView jsonValue) :
     m_onPremisesTagSetHasBeenSet(false),
     m_computePlatform(ComputePlatform::NOT_SET),
     m_computePlatformHasBeenSet(false),
-    m_ecsServicesHasBeenSet(false)
+    m_ecsServicesHasBeenSet(false),
+    m_terminationHookEnabled(false),
+    m_terminationHookEnabledHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -246,6 +250,13 @@ DeploymentGroupInfo& DeploymentGroupInfo::operator =(JsonView jsonValue)
     m_ecsServicesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("terminationHookEnabled"))
+  {
+    m_terminationHookEnabled = jsonValue.GetBool("terminationHookEnabled");
+
+    m_terminationHookEnabledHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -405,6 +416,12 @@ JsonValue DeploymentGroupInfo::Jsonize() const
      ecsServicesJsonList[ecsServicesIndex].AsObject(m_ecsServices[ecsServicesIndex].Jsonize());
    }
    payload.WithArray("ecsServices", std::move(ecsServicesJsonList));
+
+  }
+
+  if(m_terminationHookEnabledHasBeenSet)
+  {
+   payload.WithBool("terminationHookEnabled", m_terminationHookEnabled);
 
   }
 

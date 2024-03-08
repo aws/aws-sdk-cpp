@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OfferingType::NOT_SET:
+            return {};
           case OfferingType::RECURRING:
             return "RECURRING";
           default:

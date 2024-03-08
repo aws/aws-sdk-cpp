@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case S3CannedAcl::NOT_SET:
+            return {};
           case S3CannedAcl::AUTHENTICATED_READ:
             return "AUTHENTICATED_READ";
           case S3CannedAcl::BUCKET_OWNER_FULL_CONTROL:

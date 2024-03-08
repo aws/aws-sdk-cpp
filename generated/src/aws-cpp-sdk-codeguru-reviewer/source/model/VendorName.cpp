@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VendorName::NOT_SET:
+            return {};
           case VendorName::GitHub:
             return "GitHub";
           case VendorName::GitLab:

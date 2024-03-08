@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/opensearchserverless/OpenSearchServerless_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/opensearchserverless/model/StandbyReplicas.h>
 #include <aws/opensearchserverless/model/CollectionStatus.h>
 #include <aws/opensearchserverless/model/CollectionType.h>
 #include <utility>
@@ -386,6 +387,37 @@ namespace Model
 
 
     /**
+     * <p>Details about an OpenSearch Serverless collection.</p>
+     */
+    inline const StandbyReplicas& GetStandbyReplicas() const{ return m_standbyReplicas; }
+
+    /**
+     * <p>Details about an OpenSearch Serverless collection.</p>
+     */
+    inline bool StandbyReplicasHasBeenSet() const { return m_standbyReplicasHasBeenSet; }
+
+    /**
+     * <p>Details about an OpenSearch Serverless collection.</p>
+     */
+    inline void SetStandbyReplicas(const StandbyReplicas& value) { m_standbyReplicasHasBeenSet = true; m_standbyReplicas = value; }
+
+    /**
+     * <p>Details about an OpenSearch Serverless collection.</p>
+     */
+    inline void SetStandbyReplicas(StandbyReplicas&& value) { m_standbyReplicasHasBeenSet = true; m_standbyReplicas = std::move(value); }
+
+    /**
+     * <p>Details about an OpenSearch Serverless collection.</p>
+     */
+    inline CollectionDetail& WithStandbyReplicas(const StandbyReplicas& value) { SetStandbyReplicas(value); return *this;}
+
+    /**
+     * <p>Details about an OpenSearch Serverless collection.</p>
+     */
+    inline CollectionDetail& WithStandbyReplicas(StandbyReplicas&& value) { SetStandbyReplicas(std::move(value)); return *this;}
+
+
+    /**
      * <p>The current status of the collection.</p>
      */
     inline const CollectionStatus& GetStatus() const{ return m_status; }
@@ -474,6 +506,9 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
+
+    StandbyReplicas m_standbyReplicas;
+    bool m_standbyReplicasHasBeenSet = false;
 
     CollectionStatus m_status;
     bool m_statusHasBeenSet = false;

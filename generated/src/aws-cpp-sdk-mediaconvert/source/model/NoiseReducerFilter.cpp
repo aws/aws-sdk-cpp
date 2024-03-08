@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NoiseReducerFilter::NOT_SET:
+            return {};
           case NoiseReducerFilter::BILATERAL:
             return "BILATERAL";
           case NoiseReducerFilter::MEAN:

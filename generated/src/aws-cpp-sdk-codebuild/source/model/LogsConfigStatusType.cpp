@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LogsConfigStatusType::NOT_SET:
+            return {};
           case LogsConfigStatusType::ENABLED:
             return "ENABLED";
           case LogsConfigStatusType::DISABLED:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ParticipantRole::NOT_SET:
+            return {};
           case ParticipantRole::AGENT:
             return "AGENT";
           case ParticipantRole::CUSTOMER:

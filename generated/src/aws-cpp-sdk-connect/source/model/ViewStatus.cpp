@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ViewStatus::NOT_SET:
+            return {};
           case ViewStatus::PUBLISHED:
             return "PUBLISHED";
           case ViewStatus::SAVED:

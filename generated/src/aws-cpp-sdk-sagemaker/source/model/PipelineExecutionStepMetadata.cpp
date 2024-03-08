@@ -28,9 +28,9 @@ PipelineExecutionStepMetadata::PipelineExecutionStepMetadata() :
     m_conditionHasBeenSet(false),
     m_callbackHasBeenSet(false),
     m_lambdaHasBeenSet(false),
+    m_eMRHasBeenSet(false),
     m_qualityCheckHasBeenSet(false),
     m_clarifyCheckHasBeenSet(false),
-    m_eMRHasBeenSet(false),
     m_failHasBeenSet(false),
     m_autoMLJobHasBeenSet(false)
 {
@@ -46,9 +46,9 @@ PipelineExecutionStepMetadata::PipelineExecutionStepMetadata(JsonView jsonValue)
     m_conditionHasBeenSet(false),
     m_callbackHasBeenSet(false),
     m_lambdaHasBeenSet(false),
+    m_eMRHasBeenSet(false),
     m_qualityCheckHasBeenSet(false),
     m_clarifyCheckHasBeenSet(false),
-    m_eMRHasBeenSet(false),
     m_failHasBeenSet(false),
     m_autoMLJobHasBeenSet(false)
 {
@@ -120,6 +120,13 @@ PipelineExecutionStepMetadata& PipelineExecutionStepMetadata::operator =(JsonVie
     m_lambdaHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("EMR"))
+  {
+    m_eMR = jsonValue.GetObject("EMR");
+
+    m_eMRHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("QualityCheck"))
   {
     m_qualityCheck = jsonValue.GetObject("QualityCheck");
@@ -132,13 +139,6 @@ PipelineExecutionStepMetadata& PipelineExecutionStepMetadata::operator =(JsonVie
     m_clarifyCheck = jsonValue.GetObject("ClarifyCheck");
 
     m_clarifyCheckHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("EMR"))
-  {
-    m_eMR = jsonValue.GetObject("EMR");
-
-    m_eMRHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Fail"))
@@ -216,6 +216,12 @@ JsonValue PipelineExecutionStepMetadata::Jsonize() const
 
   }
 
+  if(m_eMRHasBeenSet)
+  {
+   payload.WithObject("EMR", m_eMR.Jsonize());
+
+  }
+
   if(m_qualityCheckHasBeenSet)
   {
    payload.WithObject("QualityCheck", m_qualityCheck.Jsonize());
@@ -225,12 +231,6 @@ JsonValue PipelineExecutionStepMetadata::Jsonize() const
   if(m_clarifyCheckHasBeenSet)
   {
    payload.WithObject("ClarifyCheck", m_clarifyCheck.Jsonize());
-
-  }
-
-  if(m_eMRHasBeenSet)
-  {
-   payload.WithObject("EMR", m_eMR.Jsonize());
 
   }
 

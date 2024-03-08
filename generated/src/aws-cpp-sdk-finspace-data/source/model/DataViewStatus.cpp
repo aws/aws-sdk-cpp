@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DataViewStatus::NOT_SET:
+            return {};
           case DataViewStatus::RUNNING:
             return "RUNNING";
           case DataViewStatus::STARTING:

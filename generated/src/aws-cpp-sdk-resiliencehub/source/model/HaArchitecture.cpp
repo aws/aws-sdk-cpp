@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HaArchitecture::NOT_SET:
+            return {};
           case HaArchitecture::MultiSite:
             return "MultiSite";
           case HaArchitecture::WarmStandby:

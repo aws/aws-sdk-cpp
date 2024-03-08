@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RecommendationTriggerType::NOT_SET:
+            return {};
           case RecommendationTriggerType::QUERY:
             return "QUERY";
           default:

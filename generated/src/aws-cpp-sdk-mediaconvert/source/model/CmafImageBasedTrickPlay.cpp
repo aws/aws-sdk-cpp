@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CmafImageBasedTrickPlay::NOT_SET:
+            return {};
           case CmafImageBasedTrickPlay::NONE:
             return "NONE";
           case CmafImageBasedTrickPlay::THUMBNAIL:

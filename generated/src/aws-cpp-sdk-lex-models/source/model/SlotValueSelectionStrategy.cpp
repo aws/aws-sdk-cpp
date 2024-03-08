@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SlotValueSelectionStrategy::NOT_SET:
+            return {};
           case SlotValueSelectionStrategy::ORIGINAL_VALUE:
             return "ORIGINAL_VALUE";
           case SlotValueSelectionStrategy::TOP_RESOLUTION:

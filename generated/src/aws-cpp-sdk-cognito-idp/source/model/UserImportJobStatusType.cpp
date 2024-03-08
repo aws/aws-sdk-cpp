@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UserImportJobStatusType::NOT_SET:
+            return {};
           case UserImportJobStatusType::Created:
             return "Created";
           case UserImportJobStatusType::Pending:

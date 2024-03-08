@@ -407,22 +407,22 @@ namespace Model
 
 
     /**
-     * <p>Indicates if the reservation applies to Multi-AZ deployments.</p>
+     * <p>Indicates whether the reservation applies to Multi-AZ deployments.</p>
      */
     inline bool GetMultiAZ() const{ return m_multiAZ; }
 
     /**
-     * <p>Indicates if the reservation applies to Multi-AZ deployments.</p>
+     * <p>Indicates whether the reservation applies to Multi-AZ deployments.</p>
      */
     inline bool MultiAZHasBeenSet() const { return m_multiAZHasBeenSet; }
 
     /**
-     * <p>Indicates if the reservation applies to Multi-AZ deployments.</p>
+     * <p>Indicates whether the reservation applies to Multi-AZ deployments.</p>
      */
     inline void SetMultiAZ(bool value) { m_multiAZHasBeenSet = true; m_multiAZ = value; }
 
     /**
-     * <p>Indicates if the reservation applies to Multi-AZ deployments.</p>
+     * <p>Indicates whether the reservation applies to Multi-AZ deployments.</p>
      */
     inline ReservedDBInstance& WithMultiAZ(bool value) { SetMultiAZ(value); return *this;}
 

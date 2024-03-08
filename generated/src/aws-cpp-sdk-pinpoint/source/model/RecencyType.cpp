@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RecencyType::NOT_SET:
+            return {};
           case RecencyType::ACTIVE:
             return "ACTIVE";
           case RecencyType::INACTIVE:

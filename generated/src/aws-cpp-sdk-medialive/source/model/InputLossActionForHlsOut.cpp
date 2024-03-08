@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InputLossActionForHlsOut::NOT_SET:
+            return {};
           case InputLossActionForHlsOut::EMIT_OUTPUT:
             return "EMIT_OUTPUT";
           case InputLossActionForHlsOut::PAUSE_OUTPUT:

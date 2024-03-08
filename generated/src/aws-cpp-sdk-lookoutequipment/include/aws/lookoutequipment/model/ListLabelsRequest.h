@@ -36,42 +36,42 @@ namespace Model
 
 
     /**
-     * <p> Retruns the name of the label group. </p>
+     * <p> Returns the name of the label group. </p>
      */
     inline const Aws::String& GetLabelGroupName() const{ return m_labelGroupName; }
 
     /**
-     * <p> Retruns the name of the label group. </p>
+     * <p> Returns the name of the label group. </p>
      */
     inline bool LabelGroupNameHasBeenSet() const { return m_labelGroupNameHasBeenSet; }
 
     /**
-     * <p> Retruns the name of the label group. </p>
+     * <p> Returns the name of the label group. </p>
      */
     inline void SetLabelGroupName(const Aws::String& value) { m_labelGroupNameHasBeenSet = true; m_labelGroupName = value; }
 
     /**
-     * <p> Retruns the name of the label group. </p>
+     * <p> Returns the name of the label group. </p>
      */
     inline void SetLabelGroupName(Aws::String&& value) { m_labelGroupNameHasBeenSet = true; m_labelGroupName = std::move(value); }
 
     /**
-     * <p> Retruns the name of the label group. </p>
+     * <p> Returns the name of the label group. </p>
      */
     inline void SetLabelGroupName(const char* value) { m_labelGroupNameHasBeenSet = true; m_labelGroupName.assign(value); }
 
     /**
-     * <p> Retruns the name of the label group. </p>
+     * <p> Returns the name of the label group. </p>
      */
     inline ListLabelsRequest& WithLabelGroupName(const Aws::String& value) { SetLabelGroupName(value); return *this;}
 
     /**
-     * <p> Retruns the name of the label group. </p>
+     * <p> Returns the name of the label group. </p>
      */
     inline ListLabelsRequest& WithLabelGroupName(Aws::String&& value) { SetLabelGroupName(std::move(value)); return *this;}
 
     /**
-     * <p> Retruns the name of the label group. </p>
+     * <p> Returns the name of the label group. </p>
      */
     inline ListLabelsRequest& WithLabelGroupName(const char* value) { SetLabelGroupName(value); return *this;}
 

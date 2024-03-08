@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DomainType::NOT_SET:
+            return {};
           case DomainType::vpc:
             return "vpc";
           case DomainType::standard:

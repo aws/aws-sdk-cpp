@@ -114,6 +114,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ApiCacheType::NOT_SET:
+            return {};
           case ApiCacheType::T2_SMALL:
             return "T2_SMALL";
           case ApiCacheType::T2_MEDIUM:

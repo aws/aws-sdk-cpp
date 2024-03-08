@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OSVersion::NOT_SET:
+            return {};
           case OSVersion::SERVER_2012:
             return "SERVER_2012";
           case OSVersion::SERVER_2019:

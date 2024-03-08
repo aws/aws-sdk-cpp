@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ExecutionStatus::NOT_SET:
+            return {};
           case ExecutionStatus::UNAVAILABLE:
             return "UNAVAILABLE";
           case ExecutionStatus::AVAILABLE:

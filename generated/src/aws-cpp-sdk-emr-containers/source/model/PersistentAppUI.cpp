@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PersistentAppUI::NOT_SET:
+            return {};
           case PersistentAppUI::ENABLED:
             return "ENABLED";
           case PersistentAppUI::DISABLED:

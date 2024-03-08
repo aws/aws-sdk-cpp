@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RecentlyActive::NOT_SET:
+            return {};
           case RecentlyActive::PT3H:
             return "PT3H";
           default:

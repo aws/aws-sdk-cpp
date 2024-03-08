@@ -49,9 +49,9 @@ namespace Model
      * job is launched on.</p>  <p>GPUs aren't available for jobs that are
      * running on Fargate resources.</p>  </dd> <dt>type="MEMORY"</dt> <dd>
      * <p>The memory hard limit (in MiB) present to the container. This parameter is
-     * supported for jobs that are running on EC2 resources. If your container attempts
-     * to exceed the memory specified, the container is terminated. This parameter maps
-     * to <code>Memory</code> in the <a
+     * supported for jobs that are running on Amazon EC2 resources. If your container
+     * attempts to exceed the memory specified, the container is terminated. This
+     * parameter maps to <code>Memory</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
@@ -96,9 +96,9 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      * <code>--cpu-shares</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU
-     * is equivalent to 1,024 CPU shares. For EC2 resources, you must specify at least
-     * one vCPU. This is required but can be specified in several places; it must be
-     * specified for each node at least once.</p> <p>The default for the Fargate
+     * is equivalent to 1,024 CPU shares. For Amazon EC2 resources, you must specify at
+     * least one vCPU. This is required but can be specified in several places; it must
+     * be specified for each node at least once.</p> <p>The default for the Fargate
      * On-Demand vCPU resource count quota is 6 vCPUs. For more information about
      * Fargate quotas, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/ecs-service.html#service-quotas-fargate">Fargate
@@ -131,9 +131,9 @@ namespace Model
      * job is launched on.</p>  <p>GPUs aren't available for jobs that are
      * running on Fargate resources.</p>  </dd> <dt>type="MEMORY"</dt> <dd>
      * <p>The memory hard limit (in MiB) present to the container. This parameter is
-     * supported for jobs that are running on EC2 resources. If your container attempts
-     * to exceed the memory specified, the container is terminated. This parameter maps
-     * to <code>Memory</code> in the <a
+     * supported for jobs that are running on Amazon EC2 resources. If your container
+     * attempts to exceed the memory specified, the container is terminated. This
+     * parameter maps to <code>Memory</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
@@ -178,9 +178,9 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      * <code>--cpu-shares</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU
-     * is equivalent to 1,024 CPU shares. For EC2 resources, you must specify at least
-     * one vCPU. This is required but can be specified in several places; it must be
-     * specified for each node at least once.</p> <p>The default for the Fargate
+     * is equivalent to 1,024 CPU shares. For Amazon EC2 resources, you must specify at
+     * least one vCPU. This is required but can be specified in several places; it must
+     * be specified for each node at least once.</p> <p>The default for the Fargate
      * On-Demand vCPU resource count quota is 6 vCPUs. For more information about
      * Fargate quotas, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/ecs-service.html#service-quotas-fargate">Fargate
@@ -213,9 +213,9 @@ namespace Model
      * job is launched on.</p>  <p>GPUs aren't available for jobs that are
      * running on Fargate resources.</p>  </dd> <dt>type="MEMORY"</dt> <dd>
      * <p>The memory hard limit (in MiB) present to the container. This parameter is
-     * supported for jobs that are running on EC2 resources. If your container attempts
-     * to exceed the memory specified, the container is terminated. This parameter maps
-     * to <code>Memory</code> in the <a
+     * supported for jobs that are running on Amazon EC2 resources. If your container
+     * attempts to exceed the memory specified, the container is terminated. This
+     * parameter maps to <code>Memory</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
@@ -260,9 +260,9 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      * <code>--cpu-shares</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU
-     * is equivalent to 1,024 CPU shares. For EC2 resources, you must specify at least
-     * one vCPU. This is required but can be specified in several places; it must be
-     * specified for each node at least once.</p> <p>The default for the Fargate
+     * is equivalent to 1,024 CPU shares. For Amazon EC2 resources, you must specify at
+     * least one vCPU. This is required but can be specified in several places; it must
+     * be specified for each node at least once.</p> <p>The default for the Fargate
      * On-Demand vCPU resource count quota is 6 vCPUs. For more information about
      * Fargate quotas, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/ecs-service.html#service-quotas-fargate">Fargate
@@ -295,9 +295,9 @@ namespace Model
      * job is launched on.</p>  <p>GPUs aren't available for jobs that are
      * running on Fargate resources.</p>  </dd> <dt>type="MEMORY"</dt> <dd>
      * <p>The memory hard limit (in MiB) present to the container. This parameter is
-     * supported for jobs that are running on EC2 resources. If your container attempts
-     * to exceed the memory specified, the container is terminated. This parameter maps
-     * to <code>Memory</code> in the <a
+     * supported for jobs that are running on Amazon EC2 resources. If your container
+     * attempts to exceed the memory specified, the container is terminated. This
+     * parameter maps to <code>Memory</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
@@ -342,9 +342,9 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      * <code>--cpu-shares</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU
-     * is equivalent to 1,024 CPU shares. For EC2 resources, you must specify at least
-     * one vCPU. This is required but can be specified in several places; it must be
-     * specified for each node at least once.</p> <p>The default for the Fargate
+     * is equivalent to 1,024 CPU shares. For Amazon EC2 resources, you must specify at
+     * least one vCPU. This is required but can be specified in several places; it must
+     * be specified for each node at least once.</p> <p>The default for the Fargate
      * On-Demand vCPU resource count quota is 6 vCPUs. For more information about
      * Fargate quotas, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/ecs-service.html#service-quotas-fargate">Fargate
@@ -377,9 +377,9 @@ namespace Model
      * job is launched on.</p>  <p>GPUs aren't available for jobs that are
      * running on Fargate resources.</p>  </dd> <dt>type="MEMORY"</dt> <dd>
      * <p>The memory hard limit (in MiB) present to the container. This parameter is
-     * supported for jobs that are running on EC2 resources. If your container attempts
-     * to exceed the memory specified, the container is terminated. This parameter maps
-     * to <code>Memory</code> in the <a
+     * supported for jobs that are running on Amazon EC2 resources. If your container
+     * attempts to exceed the memory specified, the container is terminated. This
+     * parameter maps to <code>Memory</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
@@ -424,9 +424,9 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      * <code>--cpu-shares</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU
-     * is equivalent to 1,024 CPU shares. For EC2 resources, you must specify at least
-     * one vCPU. This is required but can be specified in several places; it must be
-     * specified for each node at least once.</p> <p>The default for the Fargate
+     * is equivalent to 1,024 CPU shares. For Amazon EC2 resources, you must specify at
+     * least one vCPU. This is required but can be specified in several places; it must
+     * be specified for each node at least once.</p> <p>The default for the Fargate
      * On-Demand vCPU resource count quota is 6 vCPUs. For more information about
      * Fargate quotas, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/ecs-service.html#service-quotas-fargate">Fargate
@@ -459,9 +459,9 @@ namespace Model
      * job is launched on.</p>  <p>GPUs aren't available for jobs that are
      * running on Fargate resources.</p>  </dd> <dt>type="MEMORY"</dt> <dd>
      * <p>The memory hard limit (in MiB) present to the container. This parameter is
-     * supported for jobs that are running on EC2 resources. If your container attempts
-     * to exceed the memory specified, the container is terminated. This parameter maps
-     * to <code>Memory</code> in the <a
+     * supported for jobs that are running on Amazon EC2 resources. If your container
+     * attempts to exceed the memory specified, the container is terminated. This
+     * parameter maps to <code>Memory</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
@@ -506,9 +506,9 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      * <code>--cpu-shares</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU
-     * is equivalent to 1,024 CPU shares. For EC2 resources, you must specify at least
-     * one vCPU. This is required but can be specified in several places; it must be
-     * specified for each node at least once.</p> <p>The default for the Fargate
+     * is equivalent to 1,024 CPU shares. For Amazon EC2 resources, you must specify at
+     * least one vCPU. This is required but can be specified in several places; it must
+     * be specified for each node at least once.</p> <p>The default for the Fargate
      * On-Demand vCPU resource count quota is 6 vCPUs. For more information about
      * Fargate quotas, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/ecs-service.html#service-quotas-fargate">Fargate
@@ -541,9 +541,9 @@ namespace Model
      * job is launched on.</p>  <p>GPUs aren't available for jobs that are
      * running on Fargate resources.</p>  </dd> <dt>type="MEMORY"</dt> <dd>
      * <p>The memory hard limit (in MiB) present to the container. This parameter is
-     * supported for jobs that are running on EC2 resources. If your container attempts
-     * to exceed the memory specified, the container is terminated. This parameter maps
-     * to <code>Memory</code> in the <a
+     * supported for jobs that are running on Amazon EC2 resources. If your container
+     * attempts to exceed the memory specified, the container is terminated. This
+     * parameter maps to <code>Memory</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
@@ -588,9 +588,9 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      * <code>--cpu-shares</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU
-     * is equivalent to 1,024 CPU shares. For EC2 resources, you must specify at least
-     * one vCPU. This is required but can be specified in several places; it must be
-     * specified for each node at least once.</p> <p>The default for the Fargate
+     * is equivalent to 1,024 CPU shares. For Amazon EC2 resources, you must specify at
+     * least one vCPU. This is required but can be specified in several places; it must
+     * be specified for each node at least once.</p> <p>The default for the Fargate
      * On-Demand vCPU resource count quota is 6 vCPUs. For more information about
      * Fargate quotas, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/ecs-service.html#service-quotas-fargate">Fargate
@@ -623,9 +623,9 @@ namespace Model
      * job is launched on.</p>  <p>GPUs aren't available for jobs that are
      * running on Fargate resources.</p>  </dd> <dt>type="MEMORY"</dt> <dd>
      * <p>The memory hard limit (in MiB) present to the container. This parameter is
-     * supported for jobs that are running on EC2 resources. If your container attempts
-     * to exceed the memory specified, the container is terminated. This parameter maps
-     * to <code>Memory</code> in the <a
+     * supported for jobs that are running on Amazon EC2 resources. If your container
+     * attempts to exceed the memory specified, the container is terminated. This
+     * parameter maps to <code>Memory</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a
      * container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
@@ -670,9 +670,9 @@ namespace Model
      * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
      * <code>--cpu-shares</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU
-     * is equivalent to 1,024 CPU shares. For EC2 resources, you must specify at least
-     * one vCPU. This is required but can be specified in several places; it must be
-     * specified for each node at least once.</p> <p>The default for the Fargate
+     * is equivalent to 1,024 CPU shares. For Amazon EC2 resources, you must specify at
+     * least one vCPU. This is required but can be specified in several places; it must
+     * be specified for each node at least once.</p> <p>The default for the Fargate
      * On-Demand vCPU resource count quota is 6 vCPUs. For more information about
      * Fargate quotas, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/ecs-service.html#service-quotas-fargate">Fargate

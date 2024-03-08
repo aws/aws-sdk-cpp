@@ -167,36 +167,40 @@ namespace Model
     /**
      * <p>The Unix timestamp (in milliseconds) for when the job was created. For
      * non-array jobs and parent array jobs, this is when the job entered the
-     * <code>SUBMITTED</code> state (at the time <a>SubmitJob</a> was called). For
-     * array child jobs, this is when the child job was spawned by its parent and
-     * entered the <code>PENDING</code> state.</p>
+     * <code>SUBMITTED</code> state (at the time <a
+     * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_SubmitJob.html">SubmitJob</a>
+     * was called). For array child jobs, this is when the child job was spawned by its
+     * parent and entered the <code>PENDING</code> state.</p>
      */
     inline long long GetCreatedAt() const{ return m_createdAt; }
 
     /**
      * <p>The Unix timestamp (in milliseconds) for when the job was created. For
      * non-array jobs and parent array jobs, this is when the job entered the
-     * <code>SUBMITTED</code> state (at the time <a>SubmitJob</a> was called). For
-     * array child jobs, this is when the child job was spawned by its parent and
-     * entered the <code>PENDING</code> state.</p>
+     * <code>SUBMITTED</code> state (at the time <a
+     * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_SubmitJob.html">SubmitJob</a>
+     * was called). For array child jobs, this is when the child job was spawned by its
+     * parent and entered the <code>PENDING</code> state.</p>
      */
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
 
     /**
      * <p>The Unix timestamp (in milliseconds) for when the job was created. For
      * non-array jobs and parent array jobs, this is when the job entered the
-     * <code>SUBMITTED</code> state (at the time <a>SubmitJob</a> was called). For
-     * array child jobs, this is when the child job was spawned by its parent and
-     * entered the <code>PENDING</code> state.</p>
+     * <code>SUBMITTED</code> state (at the time <a
+     * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_SubmitJob.html">SubmitJob</a>
+     * was called). For array child jobs, this is when the child job was spawned by its
+     * parent and entered the <code>PENDING</code> state.</p>
      */
     inline void SetCreatedAt(long long value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
      * <p>The Unix timestamp (in milliseconds) for when the job was created. For
      * non-array jobs and parent array jobs, this is when the job entered the
-     * <code>SUBMITTED</code> state (at the time <a>SubmitJob</a> was called). For
-     * array child jobs, this is when the child job was spawned by its parent and
-     * entered the <code>PENDING</code> state.</p>
+     * <code>SUBMITTED</code> state (at the time <a
+     * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_SubmitJob.html">SubmitJob</a>
+     * was called). For array child jobs, this is when the child job was spawned by its
+     * parent and entered the <code>PENDING</code> state.</p>
      */
     inline JobSummary& WithCreatedAt(long long value) { SetCreatedAt(value); return *this;}
 

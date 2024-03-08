@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SkillType::NOT_SET:
+            return {};
           case SkillType::PUBLIC_:
             return "PUBLIC";
           case SkillType::PRIVATE_:

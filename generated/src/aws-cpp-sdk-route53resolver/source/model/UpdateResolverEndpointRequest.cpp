@@ -17,7 +17,8 @@ UpdateResolverEndpointRequest::UpdateResolverEndpointRequest() :
     m_nameHasBeenSet(false),
     m_resolverEndpointType(ResolverEndpointType::NOT_SET),
     m_resolverEndpointTypeHasBeenSet(false),
-    m_updateIpAddressesHasBeenSet(false)
+    m_updateIpAddressesHasBeenSet(false),
+    m_protocolsHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,17 @@ Aws::String UpdateResolverEndpointRequest::SerializePayload() const
      updateIpAddressesJsonList[updateIpAddressesIndex].AsObject(m_updateIpAddresses[updateIpAddressesIndex].Jsonize());
    }
    payload.WithArray("UpdateIpAddresses", std::move(updateIpAddressesJsonList));
+
+  }
+
+  if(m_protocolsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> protocolsJsonList(m_protocols.size());
+   for(unsigned protocolsIndex = 0; protocolsIndex < protocolsJsonList.GetLength(); ++protocolsIndex)
+   {
+     protocolsJsonList[protocolsIndex].AsString(ProtocolMapper::GetNameForProtocol(m_protocols[protocolsIndex]));
+   }
+   payload.WithArray("Protocols", std::move(protocolsJsonList));
 
   }
 

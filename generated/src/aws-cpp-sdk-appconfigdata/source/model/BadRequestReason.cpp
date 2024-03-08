@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BadRequestReason::NOT_SET:
+            return {};
           case BadRequestReason::InvalidParameters:
             return "InvalidParameters";
           default:

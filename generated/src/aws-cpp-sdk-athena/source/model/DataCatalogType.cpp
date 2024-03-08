@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DataCatalogType::NOT_SET:
+            return {};
           case DataCatalogType::LAMBDA:
             return "LAMBDA";
           case DataCatalogType::GLUE:

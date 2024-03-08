@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EncryptionOption::NOT_SET:
+            return {};
           case EncryptionOption::AWS_OWNED_CMK:
             return "AWS_OWNED_CMK";
           case EncryptionOption::CUSTOMER_MANAGED_CMK:

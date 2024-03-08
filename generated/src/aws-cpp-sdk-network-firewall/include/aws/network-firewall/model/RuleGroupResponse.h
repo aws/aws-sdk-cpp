@@ -13,6 +13,7 @@
 #include <aws/network-firewall/model/SourceMetadata.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/network-firewall/model/Tag.h>
+#include <aws/network-firewall/model/AnalysisResult.h>
 #include <utility>
 
 namespace Aws
@@ -643,6 +644,103 @@ namespace Model
      */
     inline RuleGroupResponse& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The list of analysis results for <code>AnalyzeRuleGroup</code>. If you set
+     * <code>AnalyzeRuleGroup</code> to <code>TRUE</code> in <a>CreateRuleGroup</a>,
+     * <a>UpdateRuleGroup</a>, or <a>DescribeRuleGroup</a>, Network Firewall analyzes
+     * the rule group and identifies the rules that might adversely effect your
+     * firewall's functionality. For example, if Network Firewall detects a rule that's
+     * routing traffic asymmetrically, which impacts the service's ability to properly
+     * process traffic, the service includes the rule in the list of analysis
+     * results.</p>
+     */
+    inline const Aws::Vector<AnalysisResult>& GetAnalysisResults() const{ return m_analysisResults; }
+
+    /**
+     * <p>The list of analysis results for <code>AnalyzeRuleGroup</code>. If you set
+     * <code>AnalyzeRuleGroup</code> to <code>TRUE</code> in <a>CreateRuleGroup</a>,
+     * <a>UpdateRuleGroup</a>, or <a>DescribeRuleGroup</a>, Network Firewall analyzes
+     * the rule group and identifies the rules that might adversely effect your
+     * firewall's functionality. For example, if Network Firewall detects a rule that's
+     * routing traffic asymmetrically, which impacts the service's ability to properly
+     * process traffic, the service includes the rule in the list of analysis
+     * results.</p>
+     */
+    inline bool AnalysisResultsHasBeenSet() const { return m_analysisResultsHasBeenSet; }
+
+    /**
+     * <p>The list of analysis results for <code>AnalyzeRuleGroup</code>. If you set
+     * <code>AnalyzeRuleGroup</code> to <code>TRUE</code> in <a>CreateRuleGroup</a>,
+     * <a>UpdateRuleGroup</a>, or <a>DescribeRuleGroup</a>, Network Firewall analyzes
+     * the rule group and identifies the rules that might adversely effect your
+     * firewall's functionality. For example, if Network Firewall detects a rule that's
+     * routing traffic asymmetrically, which impacts the service's ability to properly
+     * process traffic, the service includes the rule in the list of analysis
+     * results.</p>
+     */
+    inline void SetAnalysisResults(const Aws::Vector<AnalysisResult>& value) { m_analysisResultsHasBeenSet = true; m_analysisResults = value; }
+
+    /**
+     * <p>The list of analysis results for <code>AnalyzeRuleGroup</code>. If you set
+     * <code>AnalyzeRuleGroup</code> to <code>TRUE</code> in <a>CreateRuleGroup</a>,
+     * <a>UpdateRuleGroup</a>, or <a>DescribeRuleGroup</a>, Network Firewall analyzes
+     * the rule group and identifies the rules that might adversely effect your
+     * firewall's functionality. For example, if Network Firewall detects a rule that's
+     * routing traffic asymmetrically, which impacts the service's ability to properly
+     * process traffic, the service includes the rule in the list of analysis
+     * results.</p>
+     */
+    inline void SetAnalysisResults(Aws::Vector<AnalysisResult>&& value) { m_analysisResultsHasBeenSet = true; m_analysisResults = std::move(value); }
+
+    /**
+     * <p>The list of analysis results for <code>AnalyzeRuleGroup</code>. If you set
+     * <code>AnalyzeRuleGroup</code> to <code>TRUE</code> in <a>CreateRuleGroup</a>,
+     * <a>UpdateRuleGroup</a>, or <a>DescribeRuleGroup</a>, Network Firewall analyzes
+     * the rule group and identifies the rules that might adversely effect your
+     * firewall's functionality. For example, if Network Firewall detects a rule that's
+     * routing traffic asymmetrically, which impacts the service's ability to properly
+     * process traffic, the service includes the rule in the list of analysis
+     * results.</p>
+     */
+    inline RuleGroupResponse& WithAnalysisResults(const Aws::Vector<AnalysisResult>& value) { SetAnalysisResults(value); return *this;}
+
+    /**
+     * <p>The list of analysis results for <code>AnalyzeRuleGroup</code>. If you set
+     * <code>AnalyzeRuleGroup</code> to <code>TRUE</code> in <a>CreateRuleGroup</a>,
+     * <a>UpdateRuleGroup</a>, or <a>DescribeRuleGroup</a>, Network Firewall analyzes
+     * the rule group and identifies the rules that might adversely effect your
+     * firewall's functionality. For example, if Network Firewall detects a rule that's
+     * routing traffic asymmetrically, which impacts the service's ability to properly
+     * process traffic, the service includes the rule in the list of analysis
+     * results.</p>
+     */
+    inline RuleGroupResponse& WithAnalysisResults(Aws::Vector<AnalysisResult>&& value) { SetAnalysisResults(std::move(value)); return *this;}
+
+    /**
+     * <p>The list of analysis results for <code>AnalyzeRuleGroup</code>. If you set
+     * <code>AnalyzeRuleGroup</code> to <code>TRUE</code> in <a>CreateRuleGroup</a>,
+     * <a>UpdateRuleGroup</a>, or <a>DescribeRuleGroup</a>, Network Firewall analyzes
+     * the rule group and identifies the rules that might adversely effect your
+     * firewall's functionality. For example, if Network Firewall detects a rule that's
+     * routing traffic asymmetrically, which impacts the service's ability to properly
+     * process traffic, the service includes the rule in the list of analysis
+     * results.</p>
+     */
+    inline RuleGroupResponse& AddAnalysisResults(const AnalysisResult& value) { m_analysisResultsHasBeenSet = true; m_analysisResults.push_back(value); return *this; }
+
+    /**
+     * <p>The list of analysis results for <code>AnalyzeRuleGroup</code>. If you set
+     * <code>AnalyzeRuleGroup</code> to <code>TRUE</code> in <a>CreateRuleGroup</a>,
+     * <a>UpdateRuleGroup</a>, or <a>DescribeRuleGroup</a>, Network Firewall analyzes
+     * the rule group and identifies the rules that might adversely effect your
+     * firewall's functionality. For example, if Network Firewall detects a rule that's
+     * routing traffic asymmetrically, which impacts the service's ability to properly
+     * process traffic, the service includes the rule in the list of analysis
+     * results.</p>
+     */
+    inline RuleGroupResponse& AddAnalysisResults(AnalysisResult&& value) { m_analysisResultsHasBeenSet = true; m_analysisResults.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_ruleGroupArn;
@@ -686,6 +784,9 @@ namespace Model
 
     Aws::Utils::DateTime m_lastModifiedTime;
     bool m_lastModifiedTimeHasBeenSet = false;
+
+    Aws::Vector<AnalysisResult> m_analysisResults;
+    bool m_analysisResultsHasBeenSet = false;
   };
 
 } // namespace Model

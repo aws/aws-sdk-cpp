@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     Deploying,
     Succeeded,
-    Failed
+    Failed,
+    Updating_Deployment
   };
 
 namespace DeploymentLifecycleMapper

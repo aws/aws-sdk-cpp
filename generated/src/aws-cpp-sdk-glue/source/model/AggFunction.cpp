@@ -114,6 +114,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AggFunction::NOT_SET:
+            return {};
           case AggFunction::avg:
             return "avg";
           case AggFunction::countDistinct:

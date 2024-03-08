@@ -26,7 +26,7 @@ namespace Amplify
 namespace Model
 {
   /**
-   * <p> The result structure for the delete app request. </p><p><h3>See Also:</h3>  
+   * <p>The result structure for the delete app request. </p><p><h3>See Also:</h3>  
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/DeleteAppResult">AWS
    * API Reference</a></p>

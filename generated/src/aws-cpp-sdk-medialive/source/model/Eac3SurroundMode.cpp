@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Eac3SurroundMode::NOT_SET:
+            return {};
           case Eac3SurroundMode::DISABLED:
             return "DISABLED";
           case Eac3SurroundMode::ENABLED:

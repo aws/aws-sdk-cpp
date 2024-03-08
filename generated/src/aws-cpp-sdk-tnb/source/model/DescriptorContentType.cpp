@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DescriptorContentType::NOT_SET:
+            return {};
           case DescriptorContentType::text_plain:
             return "text/plain";
           default:

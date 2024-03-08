@@ -36,6 +36,7 @@
 #include <aws/m2/model/GetDataSetImportTaskRequest.h>
 #include <aws/m2/model/GetDeploymentRequest.h>
 #include <aws/m2/model/GetEnvironmentRequest.h>
+#include <aws/m2/model/GetSignedBluinsightsUrlRequest.h>
 #include <aws/m2/model/ListApplicationVersionsRequest.h>
 #include <aws/m2/model/ListApplicationsRequest.h>
 #include <aws/m2/model/ListBatchJobDefinitionsRequest.h>
@@ -67,8 +68,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* MainframeModernizationClient::SERVICE_NAME = "m2";
-const char* MainframeModernizationClient::ALLOCATION_TAG = "MainframeModernizationClient";
+namespace Aws
+{
+  namespace MainframeModernization
+  {
+    const char SERVICE_NAME[] = "m2";
+    const char ALLOCATION_TAG[] = "MainframeModernizationClient";
+  }
+}
+const char* MainframeModernizationClient::GetServiceName() {return SERVICE_NAME;}
+const char* MainframeModernizationClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 MainframeModernizationClient::MainframeModernizationClient(const MainframeModernization::MainframeModernizationClientConfiguration& clientConfiguration,
                                                            std::shared_ptr<MainframeModernizationEndpointProviderBase> endpointProvider) :
@@ -80,7 +89,7 @@ MainframeModernizationClient::MainframeModernizationClient(const MainframeModern
             Aws::MakeShared<MainframeModernizationErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<MainframeModernizationEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -96,7 +105,7 @@ MainframeModernizationClient::MainframeModernizationClient(const AWSCredentials&
             Aws::MakeShared<MainframeModernizationErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<MainframeModernizationEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -112,7 +121,7 @@ MainframeModernizationClient::MainframeModernizationClient(const std::shared_ptr
             Aws::MakeShared<MainframeModernizationErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<MainframeModernizationEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -721,33 +730,31 @@ GetEnvironmentOutcome MainframeModernizationClient::GetEnvironment(const GetEnvi
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
-GetSignedBluinsightsUrlOutcome MainframeModernizationClient::GetSignedBluinsightsUrl() const
+GetSignedBluinsightsUrlOutcome MainframeModernizationClient::GetSignedBluinsightsUrl(const GetSignedBluinsightsUrlRequest& request) const
 {
-AWS_OPERATION_GUARD(GetSignedBluinsightsUrl);
+  AWS_OPERATION_GUARD(GetSignedBluinsightsUrl);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSignedBluinsightsUrl, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetSignedBluinsightsUrl, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
   auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
   AWS_OPERATION_CHECK_PTR(meter, GetSignedBluinsightsUrl, CoreErrors, CoreErrors::NOT_INITIALIZED);
   auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetSignedBluinsightsUrl",
-    {{ TracingUtils::SMITHY_METHOD_DIMENSION, "GetSignedBluinsightsUrl" }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
     smithy::components::tracing::SpanKind::CLIENT);
   return TracingUtils::MakeCallWithTiming<GetSignedBluinsightsUrlOutcome>(
     [&]()-> GetSignedBluinsightsUrlOutcome {
-
-        AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSignedBluinsightsUrl, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-        const Aws::Vector<Aws::Endpoint::EndpointParameter> staticEndpointParameters;
-        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
-            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(staticEndpointParameters); },
-            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
-            *meter,
-            {{TracingUtils::SMITHY_METHOD_DIMENSION, "GetSignedBluinsightsUrl"}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetSignedBluinsightsUrl, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetSignedBluinsightsUrl, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
       endpointResolutionOutcome.GetResult().AddPathSegments("/signed-bi-url");
-      return GetSignedBluinsightsUrlOutcome(MakeRequest(endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, "GetSignedBluinsightsUrl"));
+      return GetSignedBluinsightsUrlOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
-    {{TracingUtils::SMITHY_METHOD_DIMENSION, "GetSignedBluinsightsUrl"}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
 ListApplicationVersionsOutcome MainframeModernizationClient::ListApplicationVersions(const ListApplicationVersionsRequest& request) const

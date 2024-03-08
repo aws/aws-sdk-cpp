@@ -78,6 +78,27 @@ namespace Model
     
     inline AudioLogSetting& WithDestination(AudioLogDestination&& value) { SetDestination(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The option to enable selective conversation log capture for audio.</p>
+     */
+    inline bool GetSelectiveLoggingEnabled() const{ return m_selectiveLoggingEnabled; }
+
+    /**
+     * <p>The option to enable selective conversation log capture for audio.</p>
+     */
+    inline bool SelectiveLoggingEnabledHasBeenSet() const { return m_selectiveLoggingEnabledHasBeenSet; }
+
+    /**
+     * <p>The option to enable selective conversation log capture for audio.</p>
+     */
+    inline void SetSelectiveLoggingEnabled(bool value) { m_selectiveLoggingEnabledHasBeenSet = true; m_selectiveLoggingEnabled = value; }
+
+    /**
+     * <p>The option to enable selective conversation log capture for audio.</p>
+     */
+    inline AudioLogSetting& WithSelectiveLoggingEnabled(bool value) { SetSelectiveLoggingEnabled(value); return *this;}
+
   private:
 
     bool m_enabled;
@@ -85,6 +106,9 @@ namespace Model
 
     AudioLogDestination m_destination;
     bool m_destinationHasBeenSet = false;
+
+    bool m_selectiveLoggingEnabled;
+    bool m_selectiveLoggingEnabledHasBeenSet = false;
   };
 
 } // namespace Model

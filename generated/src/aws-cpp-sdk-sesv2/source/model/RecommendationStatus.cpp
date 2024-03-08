@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RecommendationStatus::NOT_SET:
+            return {};
           case RecommendationStatus::OPEN:
             return "OPEN";
           case RecommendationStatus::FIXED:

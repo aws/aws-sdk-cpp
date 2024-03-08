@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ContentModerationAggregateBy::NOT_SET:
+            return {};
           case ContentModerationAggregateBy::TIMESTAMPS:
             return "TIMESTAMPS";
           case ContentModerationAggregateBy::SEGMENTS:

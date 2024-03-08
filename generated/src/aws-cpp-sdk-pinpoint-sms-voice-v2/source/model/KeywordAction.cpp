@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case KeywordAction::NOT_SET:
+            return {};
           case KeywordAction::AUTOMATIC_RESPONSE:
             return "AUTOMATIC_RESPONSE";
           case KeywordAction::OPT_OUT:

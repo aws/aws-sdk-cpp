@@ -33,7 +33,8 @@ CodegenJob::CodegenJob() :
     m_assetHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_createdAtHasBeenSet(false),
-    m_modifiedAtHasBeenSet(false)
+    m_modifiedAtHasBeenSet(false),
+    m_dependenciesHasBeenSet(false)
 {
 }
 
@@ -52,7 +53,8 @@ CodegenJob::CodegenJob(JsonView jsonValue) :
     m_assetHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_createdAtHasBeenSet(false),
-    m_modifiedAtHasBeenSet(false)
+    m_modifiedAtHasBeenSet(false),
+    m_dependenciesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -153,6 +155,16 @@ CodegenJob& CodegenJob::operator =(JsonView jsonValue)
     m_modifiedAtHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("dependencies"))
+  {
+    Aws::Utils::Array<JsonView> dependenciesJsonList = jsonValue.GetArray("dependencies");
+    for(unsigned dependenciesIndex = 0; dependenciesIndex < dependenciesJsonList.GetLength(); ++dependenciesIndex)
+    {
+      m_dependencies.push_back(dependenciesJsonList[dependenciesIndex].AsObject());
+    }
+    m_dependenciesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -238,6 +250,17 @@ JsonValue CodegenJob::Jsonize() const
   if(m_modifiedAtHasBeenSet)
   {
    payload.WithString("modifiedAt", m_modifiedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_dependenciesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> dependenciesJsonList(m_dependencies.size());
+   for(unsigned dependenciesIndex = 0; dependenciesIndex < dependenciesJsonList.GetLength(); ++dependenciesIndex)
+   {
+     dependenciesJsonList[dependenciesIndex].AsObject(m_dependencies[dependenciesIndex].Jsonize());
+   }
+   payload.WithArray("dependencies", std::move(dependenciesJsonList));
+
   }
 
   return payload;

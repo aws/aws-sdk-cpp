@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LaunchProfilePlatform::NOT_SET:
+            return {};
           case LaunchProfilePlatform::LINUX:
             return "LINUX";
           case LaunchProfilePlatform::WINDOWS:

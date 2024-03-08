@@ -19,7 +19,8 @@ namespace Model
     CLOUD_FORMATION_TEMPLATE,
     MARKETPLACE,
     TERRAFORM_OPEN_SOURCE,
-    TERRAFORM_CLOUD
+    TERRAFORM_CLOUD,
+    EXTERNAL
   };
 
 namespace ProductTypeMapper

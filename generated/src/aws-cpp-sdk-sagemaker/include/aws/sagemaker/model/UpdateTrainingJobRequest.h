@@ -10,6 +10,7 @@
 #include <aws/sagemaker/model/ProfilerConfigForUpdate.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/model/ResourceConfigForUpdate.h>
+#include <aws/sagemaker/model/RemoteDebugConfigForUpdate.h>
 #include <aws/sagemaker/model/ProfilerRuleConfiguration.h>
 #include <utility>
 
@@ -209,6 +210,73 @@ namespace Model
      */
     inline UpdateTrainingJobRequest& WithResourceConfig(ResourceConfigForUpdate&& value) { SetResourceConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Configuration for remote debugging while the training job is running. You can
+     * update the remote debugging configuration when the <code>SecondaryStatus</code>
+     * of the job is <code>Downloading</code> or <code>Training</code>.To learn more
+     * about the remote debugging functionality of SageMaker, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-remote-debugging.html">Access
+     * a training container through Amazon Web Services Systems Manager (SSM) for
+     * remote debugging</a>.</p>
+     */
+    inline const RemoteDebugConfigForUpdate& GetRemoteDebugConfig() const{ return m_remoteDebugConfig; }
+
+    /**
+     * <p>Configuration for remote debugging while the training job is running. You can
+     * update the remote debugging configuration when the <code>SecondaryStatus</code>
+     * of the job is <code>Downloading</code> or <code>Training</code>.To learn more
+     * about the remote debugging functionality of SageMaker, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-remote-debugging.html">Access
+     * a training container through Amazon Web Services Systems Manager (SSM) for
+     * remote debugging</a>.</p>
+     */
+    inline bool RemoteDebugConfigHasBeenSet() const { return m_remoteDebugConfigHasBeenSet; }
+
+    /**
+     * <p>Configuration for remote debugging while the training job is running. You can
+     * update the remote debugging configuration when the <code>SecondaryStatus</code>
+     * of the job is <code>Downloading</code> or <code>Training</code>.To learn more
+     * about the remote debugging functionality of SageMaker, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-remote-debugging.html">Access
+     * a training container through Amazon Web Services Systems Manager (SSM) for
+     * remote debugging</a>.</p>
+     */
+    inline void SetRemoteDebugConfig(const RemoteDebugConfigForUpdate& value) { m_remoteDebugConfigHasBeenSet = true; m_remoteDebugConfig = value; }
+
+    /**
+     * <p>Configuration for remote debugging while the training job is running. You can
+     * update the remote debugging configuration when the <code>SecondaryStatus</code>
+     * of the job is <code>Downloading</code> or <code>Training</code>.To learn more
+     * about the remote debugging functionality of SageMaker, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-remote-debugging.html">Access
+     * a training container through Amazon Web Services Systems Manager (SSM) for
+     * remote debugging</a>.</p>
+     */
+    inline void SetRemoteDebugConfig(RemoteDebugConfigForUpdate&& value) { m_remoteDebugConfigHasBeenSet = true; m_remoteDebugConfig = std::move(value); }
+
+    /**
+     * <p>Configuration for remote debugging while the training job is running. You can
+     * update the remote debugging configuration when the <code>SecondaryStatus</code>
+     * of the job is <code>Downloading</code> or <code>Training</code>.To learn more
+     * about the remote debugging functionality of SageMaker, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-remote-debugging.html">Access
+     * a training container through Amazon Web Services Systems Manager (SSM) for
+     * remote debugging</a>.</p>
+     */
+    inline UpdateTrainingJobRequest& WithRemoteDebugConfig(const RemoteDebugConfigForUpdate& value) { SetRemoteDebugConfig(value); return *this;}
+
+    /**
+     * <p>Configuration for remote debugging while the training job is running. You can
+     * update the remote debugging configuration when the <code>SecondaryStatus</code>
+     * of the job is <code>Downloading</code> or <code>Training</code>.To learn more
+     * about the remote debugging functionality of SageMaker, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-remote-debugging.html">Access
+     * a training container through Amazon Web Services Systems Manager (SSM) for
+     * remote debugging</a>.</p>
+     */
+    inline UpdateTrainingJobRequest& WithRemoteDebugConfig(RemoteDebugConfigForUpdate&& value) { SetRemoteDebugConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_trainingJobName;
@@ -222,6 +290,9 @@ namespace Model
 
     ResourceConfigForUpdate m_resourceConfig;
     bool m_resourceConfigHasBeenSet = false;
+
+    RemoteDebugConfigForUpdate m_remoteDebugConfig;
+    bool m_remoteDebugConfigHasBeenSet = false;
   };
 
 } // namespace Model

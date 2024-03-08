@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AppSortKey::NOT_SET:
+            return {};
           case AppSortKey::CreationTime:
             return "CreationTime";
           default:

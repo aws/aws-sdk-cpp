@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OrderBy::NOT_SET:
+            return {};
           case OrderBy::LogStreamName:
             return "LogStreamName";
           case OrderBy::LastEventTime:

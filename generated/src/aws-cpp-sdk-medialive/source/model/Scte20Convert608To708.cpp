@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Scte20Convert608To708::NOT_SET:
+            return {};
           case Scte20Convert608To708::DISABLED:
             return "DISABLED";
           case Scte20Convert608To708::UPCONVERT:

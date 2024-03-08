@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AssistantType::NOT_SET:
+            return {};
           case AssistantType::AGENT:
             return "AGENT";
           default:

@@ -101,8 +101,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* LambdaClient::SERVICE_NAME = "lambda";
-const char* LambdaClient::ALLOCATION_TAG = "LambdaClient";
+namespace Aws
+{
+  namespace Lambda
+  {
+    const char SERVICE_NAME[] = "lambda";
+    const char ALLOCATION_TAG[] = "LambdaClient";
+  }
+}
+const char* LambdaClient::GetServiceName() {return SERVICE_NAME;}
+const char* LambdaClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 LambdaClient::LambdaClient(const Lambda::LambdaClientConfiguration& clientConfiguration,
                            std::shared_ptr<LambdaEndpointProviderBase> endpointProvider) :
@@ -114,7 +122,7 @@ LambdaClient::LambdaClient(const Lambda::LambdaClientConfiguration& clientConfig
             Aws::MakeShared<LambdaErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<LambdaEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -130,7 +138,7 @@ LambdaClient::LambdaClient(const AWSCredentials& credentials,
             Aws::MakeShared<LambdaErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<LambdaEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -146,7 +154,7 @@ LambdaClient::LambdaClient(const std::shared_ptr<AWSCredentialsProvider>& creden
             Aws::MakeShared<LambdaErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<LambdaEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

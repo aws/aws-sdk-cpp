@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ClientMode::NOT_SET:
+            return {};
           case ClientMode::SOURCE:
             return "SOURCE";
           case ClientMode::DESTINATION:

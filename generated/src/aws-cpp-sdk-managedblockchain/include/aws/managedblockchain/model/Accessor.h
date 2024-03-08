@@ -10,6 +10,7 @@
 #include <aws/managedblockchain/model/AccessorStatus.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/managedblockchain/model/AccessorNetworkType.h>
 #include <utility>
 
 namespace Aws
@@ -120,66 +121,58 @@ namespace Model
 
 
     /**
-     * <p>The billing token is a property of the accessor. Use this token to make
-     * Ethereum API calls to your Ethereum node. The billing token is used to track
-     * your accessor object for billing Ethereum API requests made to your Ethereum
-     * nodes.</p>
+     * <p>The billing token is a property of the Accessor. Use this token to when
+     * making calls to the blockchain network. The billing token is used to track your
+     * accessor token for billing requests.</p>
      */
     inline const Aws::String& GetBillingToken() const{ return m_billingToken; }
 
     /**
-     * <p>The billing token is a property of the accessor. Use this token to make
-     * Ethereum API calls to your Ethereum node. The billing token is used to track
-     * your accessor object for billing Ethereum API requests made to your Ethereum
-     * nodes.</p>
+     * <p>The billing token is a property of the Accessor. Use this token to when
+     * making calls to the blockchain network. The billing token is used to track your
+     * accessor token for billing requests.</p>
      */
     inline bool BillingTokenHasBeenSet() const { return m_billingTokenHasBeenSet; }
 
     /**
-     * <p>The billing token is a property of the accessor. Use this token to make
-     * Ethereum API calls to your Ethereum node. The billing token is used to track
-     * your accessor object for billing Ethereum API requests made to your Ethereum
-     * nodes.</p>
+     * <p>The billing token is a property of the Accessor. Use this token to when
+     * making calls to the blockchain network. The billing token is used to track your
+     * accessor token for billing requests.</p>
      */
     inline void SetBillingToken(const Aws::String& value) { m_billingTokenHasBeenSet = true; m_billingToken = value; }
 
     /**
-     * <p>The billing token is a property of the accessor. Use this token to make
-     * Ethereum API calls to your Ethereum node. The billing token is used to track
-     * your accessor object for billing Ethereum API requests made to your Ethereum
-     * nodes.</p>
+     * <p>The billing token is a property of the Accessor. Use this token to when
+     * making calls to the blockchain network. The billing token is used to track your
+     * accessor token for billing requests.</p>
      */
     inline void SetBillingToken(Aws::String&& value) { m_billingTokenHasBeenSet = true; m_billingToken = std::move(value); }
 
     /**
-     * <p>The billing token is a property of the accessor. Use this token to make
-     * Ethereum API calls to your Ethereum node. The billing token is used to track
-     * your accessor object for billing Ethereum API requests made to your Ethereum
-     * nodes.</p>
+     * <p>The billing token is a property of the Accessor. Use this token to when
+     * making calls to the blockchain network. The billing token is used to track your
+     * accessor token for billing requests.</p>
      */
     inline void SetBillingToken(const char* value) { m_billingTokenHasBeenSet = true; m_billingToken.assign(value); }
 
     /**
-     * <p>The billing token is a property of the accessor. Use this token to make
-     * Ethereum API calls to your Ethereum node. The billing token is used to track
-     * your accessor object for billing Ethereum API requests made to your Ethereum
-     * nodes.</p>
+     * <p>The billing token is a property of the Accessor. Use this token to when
+     * making calls to the blockchain network. The billing token is used to track your
+     * accessor token for billing requests.</p>
      */
     inline Accessor& WithBillingToken(const Aws::String& value) { SetBillingToken(value); return *this;}
 
     /**
-     * <p>The billing token is a property of the accessor. Use this token to make
-     * Ethereum API calls to your Ethereum node. The billing token is used to track
-     * your accessor object for billing Ethereum API requests made to your Ethereum
-     * nodes.</p>
+     * <p>The billing token is a property of the Accessor. Use this token to when
+     * making calls to the blockchain network. The billing token is used to track your
+     * accessor token for billing requests.</p>
      */
     inline Accessor& WithBillingToken(Aws::String&& value) { SetBillingToken(std::move(value)); return *this;}
 
     /**
-     * <p>The billing token is a property of the accessor. Use this token to make
-     * Ethereum API calls to your Ethereum node. The billing token is used to track
-     * your accessor object for billing Ethereum API requests made to your Ethereum
-     * nodes.</p>
+     * <p>The billing token is a property of the Accessor. Use this token to when
+     * making calls to the blockchain network. The billing token is used to track your
+     * accessor token for billing requests.</p>
      */
     inline Accessor& WithBillingToken(const char* value) { SetBillingToken(value); return *this;}
 
@@ -475,6 +468,37 @@ namespace Model
      */
     inline Accessor& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The blockchain network that the Accessor token is created for.</p>
+     */
+    inline const AccessorNetworkType& GetNetworkType() const{ return m_networkType; }
+
+    /**
+     * <p>The blockchain network that the Accessor token is created for.</p>
+     */
+    inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
+
+    /**
+     * <p>The blockchain network that the Accessor token is created for.</p>
+     */
+    inline void SetNetworkType(const AccessorNetworkType& value) { m_networkTypeHasBeenSet = true; m_networkType = value; }
+
+    /**
+     * <p>The blockchain network that the Accessor token is created for.</p>
+     */
+    inline void SetNetworkType(AccessorNetworkType&& value) { m_networkTypeHasBeenSet = true; m_networkType = std::move(value); }
+
+    /**
+     * <p>The blockchain network that the Accessor token is created for.</p>
+     */
+    inline Accessor& WithNetworkType(const AccessorNetworkType& value) { SetNetworkType(value); return *this;}
+
+    /**
+     * <p>The blockchain network that the Accessor token is created for.</p>
+     */
+    inline Accessor& WithNetworkType(AccessorNetworkType&& value) { SetNetworkType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -497,6 +521,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    AccessorNetworkType m_networkType;
+    bool m_networkTypeHasBeenSet = false;
   };
 
 } // namespace Model

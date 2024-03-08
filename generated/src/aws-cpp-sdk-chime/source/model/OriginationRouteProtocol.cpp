@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OriginationRouteProtocol::NOT_SET:
+            return {};
           case OriginationRouteProtocol::TCP:
             return "TCP";
           case OriginationRouteProtocol::UDP:

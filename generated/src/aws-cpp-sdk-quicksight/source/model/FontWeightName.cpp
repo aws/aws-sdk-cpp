@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FontWeightName::NOT_SET:
+            return {};
           case FontWeightName::NORMAL:
             return "NORMAL";
           case FontWeightName::BOLD:

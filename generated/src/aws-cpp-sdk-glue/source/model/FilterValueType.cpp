@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FilterValueType::NOT_SET:
+            return {};
           case FilterValueType::COLUMNEXTRACTED:
             return "COLUMNEXTRACTED";
           case FilterValueType::CONSTANT:

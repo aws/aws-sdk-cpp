@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BackintMode::NOT_SET:
+            return {};
           case BackintMode::AWSBackup:
             return "AWSBackup";
           default:

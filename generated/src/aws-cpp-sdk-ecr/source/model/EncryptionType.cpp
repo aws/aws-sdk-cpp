@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EncryptionType::NOT_SET:
+            return {};
           case EncryptionType::AES256:
             return "AES256";
           case EncryptionType::KMS:

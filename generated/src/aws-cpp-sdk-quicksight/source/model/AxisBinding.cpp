@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AxisBinding::NOT_SET:
+            return {};
           case AxisBinding::PRIMARY_YAXIS:
             return "PRIMARY_YAXIS";
           case AxisBinding::SECONDARY_YAXIS:

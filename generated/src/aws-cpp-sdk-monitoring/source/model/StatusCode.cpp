@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StatusCode::NOT_SET:
+            return {};
           case StatusCode::Complete:
             return "Complete";
           case StatusCode::InternalError:

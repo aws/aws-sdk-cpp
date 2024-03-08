@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RepositoryTriggerEventEnum::NOT_SET:
+            return {};
           case RepositoryTriggerEventEnum::all:
             return "all";
           case RepositoryTriggerEventEnum::updateReference:

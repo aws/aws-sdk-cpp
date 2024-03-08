@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SubnetCidrBlockStateCode::NOT_SET:
+            return {};
           case SubnetCidrBlockStateCode::associating:
             return "associating";
           case SubnetCidrBlockStateCode::associated:

@@ -16,7 +16,9 @@ AssociateServiceActionWithProvisioningArtifactRequest::AssociateServiceActionWit
     m_productIdHasBeenSet(false),
     m_provisioningArtifactIdHasBeenSet(false),
     m_serviceActionIdHasBeenSet(false),
-    m_acceptLanguageHasBeenSet(false)
+    m_acceptLanguageHasBeenSet(false),
+    m_idempotencyToken(Aws::Utils::UUID::PseudoRandomUUID()),
+    m_idempotencyTokenHasBeenSet(true)
 {
 }
 
@@ -45,6 +47,12 @@ Aws::String AssociateServiceActionWithProvisioningArtifactRequest::SerializePayl
   if(m_acceptLanguageHasBeenSet)
   {
    payload.WithString("AcceptLanguage", m_acceptLanguage);
+
+  }
+
+  if(m_idempotencyTokenHasBeenSet)
+  {
+   payload.WithString("IdempotencyToken", m_idempotencyToken);
 
   }
 

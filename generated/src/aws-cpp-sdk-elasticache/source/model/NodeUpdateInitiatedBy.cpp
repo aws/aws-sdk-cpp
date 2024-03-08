@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NodeUpdateInitiatedBy::NOT_SET:
+            return {};
           case NodeUpdateInitiatedBy::system:
             return "system";
           case NodeUpdateInitiatedBy::customer:

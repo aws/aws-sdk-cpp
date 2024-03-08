@@ -10,6 +10,7 @@
 #include <aws/iot/model/AuthorizerConfig.h>
 #include <aws/iot/model/DomainConfigurationStatus.h>
 #include <aws/iot/model/TlsConfig.h>
+#include <aws/iot/model/ServerCertificateConfig.h>
 #include <utility>
 
 namespace Aws
@@ -189,6 +190,37 @@ namespace Model
      */
     inline UpdateDomainConfigurationRequest& WithTlsConfig(TlsConfig&& value) { SetTlsConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The server certificate configuration.</p>
+     */
+    inline const ServerCertificateConfig& GetServerCertificateConfig() const{ return m_serverCertificateConfig; }
+
+    /**
+     * <p>The server certificate configuration.</p>
+     */
+    inline bool ServerCertificateConfigHasBeenSet() const { return m_serverCertificateConfigHasBeenSet; }
+
+    /**
+     * <p>The server certificate configuration.</p>
+     */
+    inline void SetServerCertificateConfig(const ServerCertificateConfig& value) { m_serverCertificateConfigHasBeenSet = true; m_serverCertificateConfig = value; }
+
+    /**
+     * <p>The server certificate configuration.</p>
+     */
+    inline void SetServerCertificateConfig(ServerCertificateConfig&& value) { m_serverCertificateConfigHasBeenSet = true; m_serverCertificateConfig = std::move(value); }
+
+    /**
+     * <p>The server certificate configuration.</p>
+     */
+    inline UpdateDomainConfigurationRequest& WithServerCertificateConfig(const ServerCertificateConfig& value) { SetServerCertificateConfig(value); return *this;}
+
+    /**
+     * <p>The server certificate configuration.</p>
+     */
+    inline UpdateDomainConfigurationRequest& WithServerCertificateConfig(ServerCertificateConfig&& value) { SetServerCertificateConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_domainConfigurationName;
@@ -205,6 +237,9 @@ namespace Model
 
     TlsConfig m_tlsConfig;
     bool m_tlsConfigHasBeenSet = false;
+
+    ServerCertificateConfig m_serverCertificateConfig;
+    bool m_serverCertificateConfigHasBeenSet = false;
   };
 
 } // namespace Model

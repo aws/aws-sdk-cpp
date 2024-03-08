@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RedirectActionStatusCodeEnum::NOT_SET:
+            return {};
           case RedirectActionStatusCodeEnum::HTTP_301:
             return "HTTP_301";
           case RedirectActionStatusCodeEnum::HTTP_302:

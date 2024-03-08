@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StreamingImageState::NOT_SET:
+            return {};
           case StreamingImageState::CREATE_IN_PROGRESS:
             return "CREATE_IN_PROGRESS";
           case StreamingImageState::READY:

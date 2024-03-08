@@ -630,6 +630,18 @@
       ],
       "documentation":"<p>RunJobFlow creates and starts running a new cluster (job flow). The cluster runs the steps specified. After the steps complete, the cluster stops and the HDFS partition is lost. To prevent loss of data, configure the last step of the job flow to store results in Amazon S3. If the <a>JobFlowInstancesConfig</a> <code>KeepJobFlowAliveWhenNoSteps</code> parameter is set to <code>TRUE</code>, the cluster transitions to the WAITING state rather than shutting down after the steps have completed. </p> <p>For additional protection, you can set the <a>JobFlowInstancesConfig</a> <code>TerminationProtected</code> parameter to <code>TRUE</code> to lock the cluster and prevent it from being terminated by API call, user intervention, or in the event of a job flow error.</p> <p>A maximum of 256 steps are allowed in each job flow.</p> <p>If your cluster is long-running (such as a Hive data warehouse) or complex, you may require more than 256 steps to process your data. You can bypass the 256-step limitation in various ways, including using the SSH shell to connect to the master node and submitting queries directly to the software running on the master node, such as Hive and Hadoop.</p> <p>For long-running clusters, we recommend that you periodically store your results.</p> <note> <p>The instance fleets configuration is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x versions. The RunJobFlow request can contain InstanceFleets parameters or InstanceGroups parameters, but not both.</p> </note>"
     },
+    "SetKeepJobFlowAliveWhenNoSteps":{
+      "name":"SetKeepJobFlowAliveWhenNoSteps",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"SetKeepJobFlowAliveWhenNoStepsInput"},
+      "errors":[
+        {"shape":"InternalServerError"}
+      ],
+      "documentation":"<p>You can use the <code>SetKeepJobFlowAliveWhenNoSteps</code> to configure a cluster (job flow) to terminate after the step execution, i.e., all your steps are executed. If you want a transient cluster that shuts down after the last of the current executing steps are completed, you can configure <code>SetKeepJobFlowAliveWhenNoSteps</code> to false. If you want a long running cluster, configure <code>SetKeepJobFlowAliveWhenNoSteps</code> to true.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/emr/latest/ManagementGuide/UsingEMR_TerminationProtection.html\">Managing Cluster Termination</a> in the <i>Amazon EMR Management Guide</i>.</p>"
+    },
     "SetTerminationProtection":{
       "name":"SetTerminationProtection",
       "http":{
@@ -640,7 +652,19 @@
       "errors":[
         {"shape":"InternalServerError"}
       ],
-      "documentation":"<p>SetTerminationProtection locks a cluster (job flow) so the Amazon EC2 instances in the cluster cannot be terminated by user intervention, an API call, or in the event of a job-flow error. The cluster still terminates upon successful completion of the job flow. Calling <code>SetTerminationProtection</code> on a cluster is similar to calling the Amazon EC2 <code>DisableAPITermination</code> API on all Amazon EC2 instances in a cluster.</p> <p> <code>SetTerminationProtection</code> is used to prevent accidental termination of a cluster and to ensure that in the event of an error, the instances persist so that you can recover any data stored in their ephemeral instance storage.</p> <p> To terminate a cluster that has been locked by setting <code>SetTerminationProtection</code> to <code>true</code>, you must first unlock the job flow by a subsequent call to <code>SetTerminationProtection</code> in which you set the value to <code>false</code>. </p> <p> For more information, see<a href=\"https://docs.aws.amazon.com/emr/latest/ManagementGuide/UsingEMR_TerminationProtection.html\">Managing Cluster Termination</a> in the <i>Amazon EMR Management Guide</i>. </p>"
+      "documentation":"<p>SetTerminationProtection locks a cluster (job flow) so the Amazon EC2 instances in the cluster cannot be terminated by user intervention, an API call, or in the event of a job-flow error. The cluster still terminates upon successful completion of the job flow. Calling <code>SetTerminationProtection</code> on a cluster is similar to calling the Amazon EC2 <code>DisableAPITermination</code> API on all Amazon EC2 instances in a cluster.</p> <p> <code>SetTerminationProtection</code> is used to prevent accidental termination of a cluster and to ensure that in the event of an error, the instances persist so that you can recover any data stored in their ephemeral instance storage.</p> <p> To terminate a cluster that has been locked by setting <code>SetTerminationProtection</code> to <code>true</code>, you must first unlock the job flow by a subsequent call to <code>SetTerminationProtection</code> in which you set the value to <code>false</code>. </p> <p> For more information, see <a href=\"https://docs.aws.amazon.com/emr/latest/ManagementGuide/UsingEMR_TerminationProtection.html\">Managing Cluster Termination</a> in the <i>Amazon EMR Management Guide</i>. </p>"
+    },
+    "SetUnhealthyNodeReplacement":{
+      "name":"SetUnhealthyNodeReplacement",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"SetUnhealthyNodeReplacementInput"},
+      "errors":[
+        {"shape":"InternalServerError"}
+      ],
+      "documentation":"<p>Specify whether to enable unhealthy node replacement, which lets Amazon EMR gracefully replace core nodes on a cluster if any nodes become unhealthy. For example, a node becomes unhealthy if disk usage is above 90%. If unhealthy node replacement is on and <code>TerminationProtected</code> are off, Amazon EMR immediately terminates the unhealthy core nodes. To use unhealthy node replacement and retain unhealthy core nodes, use to turn on termination protection. In such cases, Amazon EMR adds the unhealthy nodes to a denylist, reducing job interruptions and failures.</p> <p>If unhealthy node replacement is on, Amazon EMR notifies YARN and other applications on the cluster to stop scheduling tasks with these nodes, moves the data, and then terminates the nodes.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/emr/latest/ManagementGuide/UsingEMR_UnhealthyNodeReplacement.html\">graceful node replacement</a> in the <i>Amazon EMR Management Guide</i>.</p>"
     },
     "SetVisibleToAllUsers":{
       "name":"SetVisibleToAllUsers",
@@ -1226,6 +1250,10 @@
           "shape":"Boolean",
           "documentation":"<p>Indicates whether Amazon EMR will lock the cluster to prevent the Amazon EC2 instances from being terminated by an API call or user intervention, or in the event of a cluster error.</p>"
         },
+        "UnhealthyNodeReplacement":{
+          "shape":"BooleanObject",
+          "documentation":"<p>Indicates whether Amazon EMR should gracefully replace Amazon EC2 core instances that have degraded within the cluster.</p>"
+        },
         "VisibleToAllUsers":{
           "shape":"Boolean",
           "documentation":"<p>Indicates whether the cluster is visible to IAM principals in the Amazon Web Services account associated with the cluster. When <code>true</code>, IAM principals in the Amazon Web Services account can perform Amazon EMR cluster actions on the cluster that their IAM policies allow. When <code>false</code>, only the IAM principal that created the cluster and the Amazon Web Services account root user can perform Amazon EMR actions, regardless of IAM permissions policies attached to other IAM principals.</p> <p>The default value is <code>true</code> if a value is not provided when creating a cluster using the Amazon EMR API <a>RunJobFlow</a> command, the CLI <a href=\"https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html\">create-cluster</a> command, or the Amazon Web Services Management Console.</p>"
@@ -1301,6 +1329,14 @@
         "OSReleaseLabel":{
           "shape":"String",
           "documentation":"<p>The Amazon Linux release specified in a cluster launch RunJobFlow request. If no Amazon Linux release was specified, the default Amazon Linux release is shown in the response.</p>"
+        },
+        "EbsRootVolumeIops":{
+          "shape":"Integer",
+          "documentation":"<p>The IOPS, of the Amazon EBS root device volume of the Linux AMI that is used for each Amazon EC2 instance. Available in Amazon EMR releases 6.15.0 and later.</p>"
+        },
+        "EbsRootVolumeThroughput":{
+          "shape":"Integer",
+          "documentation":"<p>The throughput, in MiB/s, of the Amazon EBS root device volume of the Linux AMI that is used for each Amazon EC2 instance. Available in Amazon EMR releases 6.15.0 and later.</p>"
         }
       },
       "documentation":"<p>The detailed description of the cluster.</p>"
@@ -1613,6 +1649,22 @@
         "Tags":{
           "shape":"TagList",
           "documentation":"<p>A list of tags to associate with the Amazon EMR Studio. Tags are user-defined key-value pairs that consist of a required key string with a maximum of 128 characters, and an optional value string with a maximum of 256 characters.</p>"
+        },
+        "TrustedIdentityPropagationEnabled":{
+          "shape":"BooleanObject",
+          "documentation":"<p> A Boolean indicating whether to enable Trusted identity propagation for the Studio. The default value is <code>false</code>. </p>"
+        },
+        "IdcUserAssignment":{
+          "shape":"IdcUserAssignment",
+          "documentation":"<p> Specifies whether IAM Identity Center user assignment is <code>REQUIRED</code> or <code>OPTIONAL</code>. If the value is set to <code>REQUIRED</code>, users must be explicitly assigned to the Studio application to access the Studio. </p>"
+        },
+        "IdcInstanceArn":{
+          "shape":"ArnType",
+          "documentation":"<p> The ARN of the IAM Identity Center instance to create the Studio application. </p>"
+        },
+        "EncryptionKeyArn":{
+          "shape":"XmlString",
+          "documentation":"<p>The KMS key identifier (ARN) used to encrypt Amazon EMR Studio workspace and notebook files when backed up to Amazon S3.</p>"
         }
       }
     },
@@ -2158,10 +2210,7 @@
     },
     "GetClusterSessionCredentialsInput":{
       "type":"structure",
-      "required":[
-        "ClusterId",
-        "ExecutionRoleArn"
-      ],
+      "required":["ClusterId"],
       "members":{
         "ClusterId":{
           "shape":"XmlStringMaxLen256",
@@ -2289,6 +2338,13 @@
       "max":2048,
       "min":20,
       "pattern":"^arn:(aws[a-zA-Z0-9-]*):iam::(\\d{12})?:(role((\\u002F)|(\\u002F[\\u0021-\\u007F]+\\u002F))[\\w+=,.@-]+)$"
+    },
+    "IdcUserAssignment":{
+      "type":"string",
+      "enum":[
+        "REQUIRED",
+        "OPTIONAL"
+      ]
     },
     "IdentityType":{
       "type":"string",
@@ -3319,6 +3375,10 @@
           "shape":"Boolean",
           "documentation":"<p>Specifies whether to lock the cluster to prevent the Amazon EC2 instances from being terminated by API call, user intervention, or in the event of a job-flow error.</p>"
         },
+        "UnhealthyNodeReplacement":{
+          "shape":"BooleanObject",
+          "documentation":"<p>Indicates whether Amazon EMR should gracefully replace core nodes that have degraded within the cluster.</p>"
+        },
         "HadoopVersion":{
           "shape":"XmlStringMaxLen256",
           "documentation":"<p>Applies only to Amazon EMR release versions earlier than 4.0. The Hadoop version for the cluster. Valid inputs are \"0.18\" (no longer maintained), \"0.20\" (no longer maintained), \"0.20.205\" (no longer maintained), \"1.0.3\", \"2.2.0\", or \"2.4.0\". If you do not set this value, the default of 0.18 is used, unless the <code>AmiVersion</code> parameter is set in the RunJobFlow call, in which case the default version of Hadoop for that AMI version is used.</p>"
@@ -3409,6 +3469,10 @@
         "TerminationProtected":{
           "shape":"Boolean",
           "documentation":"<p>Specifies whether the Amazon EC2 instances in the cluster are protected from termination by API calls, user intervention, or in the event of a job-flow error.</p>"
+        },
+        "UnhealthyNodeReplacement":{
+          "shape":"BooleanObject",
+          "documentation":"<p>Indicates whether Amazon EMR should gracefully replace core nodes that have degraded within the cluster.</p>"
         },
         "HadoopVersion":{
           "shape":"XmlStringMaxLen256",
@@ -4607,6 +4671,14 @@
         "OSReleaseLabel":{
           "shape":"XmlStringMaxLen256",
           "documentation":"<p>Specifies a particular Amazon Linux release for all nodes in a cluster launch RunJobFlow request. If a release is not specified, Amazon EMR uses the latest validated Amazon Linux release for cluster launch.</p>"
+        },
+        "EbsRootVolumeIops":{
+          "shape":"Integer",
+          "documentation":"<p>The IOPS, of the Amazon EBS root device volume of the Linux AMI that is used for each Amazon EC2 instance. Available in Amazon EMR releases 6.15.0 and later.</p>"
+        },
+        "EbsRootVolumeThroughput":{
+          "shape":"Integer",
+          "documentation":"<p>The throughput, in MiB/s, of the Amazon EBS root device volume of the Linux AMI that is used for each Amazon EC2 instance. Available in Amazon EMR releases 6.15.0 and later.</p>"
         }
       },
       "documentation":"<p> Input to the <a>RunJobFlow</a> operation. </p>"
@@ -4812,6 +4884,23 @@
       "type":"list",
       "member":{"shape":"SessionMappingSummary"}
     },
+    "SetKeepJobFlowAliveWhenNoStepsInput":{
+      "type":"structure",
+      "required":[
+        "JobFlowIds",
+        "KeepJobFlowAliveWhenNoSteps"
+      ],
+      "members":{
+        "JobFlowIds":{
+          "shape":"XmlStringList",
+          "documentation":"<p>A list of strings that uniquely identify the clusters to protect. This identifier is returned by <a href=\"https://docs.aws.amazon.com/emr/latest/APIReference/API_RunJobFlow.html\">RunJobFlow</a> and can also be obtained from <a href=\"https://docs.aws.amazon.com/emr/latest/APIReference/API_DescribeJobFlows.html\">DescribeJobFlows</a>.</p>"
+        },
+        "KeepJobFlowAliveWhenNoSteps":{
+          "shape":"Boolean",
+          "documentation":"<p>A Boolean that indicates whether to terminate the cluster after all steps are executed.</p>"
+        }
+      }
+    },
     "SetTerminationProtectionInput":{
       "type":"structure",
       "required":[
@@ -4829,6 +4918,23 @@
         }
       },
       "documentation":"<p> The input argument to the <a>TerminationProtection</a> operation. </p>"
+    },
+    "SetUnhealthyNodeReplacementInput":{
+      "type":"structure",
+      "required":[
+        "JobFlowIds",
+        "UnhealthyNodeReplacement"
+      ],
+      "members":{
+        "JobFlowIds":{
+          "shape":"XmlStringList",
+          "documentation":"<p>The list of strings that uniquely identify the clusters for which to turn on unhealthy node replacement. You can get these identifiers by running the <a>RunJobFlow</a> or the <a>DescribeJobFlows</a> operations.</p>"
+        },
+        "UnhealthyNodeReplacement":{
+          "shape":"BooleanObject",
+          "documentation":"<p>Indicates whether to turn on or turn off graceful unhealthy node replacement.</p>"
+        }
+      }
     },
     "SetVisibleToAllUsersInput":{
       "type":"structure",
@@ -4929,7 +5035,7 @@
         },
         "AllocationStrategy":{
           "shape":"SpotProvisioningAllocationStrategy",
-          "documentation":"<p> Specifies the strategy to use in launching Spot Instance fleets. Currently, the only option is capacity-optimized (the default), which launches instances from Spot Instance pools with optimal capacity for the number of instances that are launching. </p>"
+          "documentation":"<p>Specifies one of the following strategies to launch Spot Instance fleets: <code>price-capacity-optimized</code>, <code>capacity-optimized</code>, <code>lowest-price</code>, or <code>diversified</code>. For more information on the provisioning strategies, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-allocation-strategy.html\">Allocation strategies for Spot Instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p> <note> <p>When you launch a Spot Instance fleet with the old console, it automatically launches with the <code>capacity-optimized</code> strategy. You can't change the allocation strategy from the old console.</p> </note>"
         }
       },
       "documentation":"<p>The launch specification for Spot Instances in the instance fleet, which determines the defined duration, provisioning timeout behavior, and allocation strategy.</p> <note> <p>The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x versions. Spot Instance allocation strategy is available in Amazon EMR releases 5.12.1 and later.</p> </note> <note> <p>Spot Instances with a defined duration (also known as Spot blocks) are no longer available to new customers from July 1, 2021. For customers who have previously used the feature, we will continue to support Spot Instances with a defined duration until December 31, 2022. </p> </note>"
@@ -5354,6 +5460,22 @@
         "Tags":{
           "shape":"TagList",
           "documentation":"<p>A list of tags associated with the Amazon EMR Studio.</p>"
+        },
+        "IdcInstanceArn":{
+          "shape":"ArnType",
+          "documentation":"<p> The ARN of the IAM Identity Center instance the Studio application belongs to. </p>"
+        },
+        "TrustedIdentityPropagationEnabled":{
+          "shape":"BooleanObject",
+          "documentation":"<p> Indicates whether the Studio has Trusted identity propagation enabled. The default value is <code>false</code>. </p>"
+        },
+        "IdcUserAssignment":{
+          "shape":"IdcUserAssignment",
+          "documentation":"<p> Indicates whether the Studio has <code>REQUIRED</code> or <code>OPTIONAL</code> IAM Identity Center user assignment. If the value is set to <code>REQUIRED</code>, users must be explicitly assigned to the Studio application to access the Studio. </p>"
+        },
+        "EncryptionKeyArn":{
+          "shape":"XmlString",
+          "documentation":"<p>The KMS key identifier (ARN) used to encrypt Amazon EMR Studio workspace and notebook files when backed up to Amazon S3.</p>"
         }
       },
       "documentation":"<p>Details for an Amazon EMR Studio including ID, creation time, name, and so on.</p>"
@@ -5390,7 +5512,7 @@
           "documentation":"<p>The time when the Amazon EMR Studio was created.</p>"
         }
       },
-      "documentation":"<p>Details for an Amazon EMR Studio, including ID, Name, VPC, and Description. The details do not include subnets, IAM roles, security groups, or tags associated with the Studio.</p>"
+      "documentation":"<p>Details for an Amazon EMR Studio, including ID, Name, VPC, and Description. To fetch additional details such as subnets, IAM roles, security groups, and tags for the Studio, use the <a>DescribeStudio</a> API.</p>"
     },
     "StudioSummaryList":{
       "type":"list",
@@ -5560,6 +5682,10 @@
         "DefaultS3Location":{
           "shape":"XmlString",
           "documentation":"<p>The Amazon S3 location to back up Workspaces and notebook files for the Amazon EMR Studio.</p>"
+        },
+        "EncryptionKeyArn":{
+          "shape":"XmlString",
+          "documentation":"<p>The KMS key identifier (ARN) used to encrypt Amazon EMR Studio workspace and notebook files when backed up to Amazon S3.</p>"
         }
       }
     },

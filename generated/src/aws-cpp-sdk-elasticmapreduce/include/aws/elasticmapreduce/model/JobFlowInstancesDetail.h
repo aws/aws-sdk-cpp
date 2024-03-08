@@ -512,6 +512,31 @@ namespace Model
 
 
     /**
+     * <p>Indicates whether Amazon EMR should gracefully replace core nodes that have
+     * degraded within the cluster.</p>
+     */
+    inline bool GetUnhealthyNodeReplacement() const{ return m_unhealthyNodeReplacement; }
+
+    /**
+     * <p>Indicates whether Amazon EMR should gracefully replace core nodes that have
+     * degraded within the cluster.</p>
+     */
+    inline bool UnhealthyNodeReplacementHasBeenSet() const { return m_unhealthyNodeReplacementHasBeenSet; }
+
+    /**
+     * <p>Indicates whether Amazon EMR should gracefully replace core nodes that have
+     * degraded within the cluster.</p>
+     */
+    inline void SetUnhealthyNodeReplacement(bool value) { m_unhealthyNodeReplacementHasBeenSet = true; m_unhealthyNodeReplacement = value; }
+
+    /**
+     * <p>Indicates whether Amazon EMR should gracefully replace core nodes that have
+     * degraded within the cluster.</p>
+     */
+    inline JobFlowInstancesDetail& WithUnhealthyNodeReplacement(bool value) { SetUnhealthyNodeReplacement(value); return *this;}
+
+
+    /**
      * <p>The Hadoop version for the cluster.</p>
      */
     inline const Aws::String& GetHadoopVersion() const{ return m_hadoopVersion; }
@@ -588,6 +613,9 @@ namespace Model
 
     bool m_terminationProtected;
     bool m_terminationProtectedHasBeenSet = false;
+
+    bool m_unhealthyNodeReplacement;
+    bool m_unhealthyNodeReplacementHasBeenSet = false;
 
     Aws::String m_hadoopVersion;
     bool m_hadoopVersionHasBeenSet = false;

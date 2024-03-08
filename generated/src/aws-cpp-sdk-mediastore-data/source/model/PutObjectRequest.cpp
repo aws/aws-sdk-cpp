@@ -38,12 +38,12 @@ Aws::Http::HeaderValueCollection PutObjectRequest::GetRequestSpecificHeaders() c
     ss.str("");
   }
 
-  if(m_storageClassHasBeenSet)
+  if(m_storageClassHasBeenSet && m_storageClass != StorageClass::NOT_SET)
   {
     headers.emplace("x-amz-storage-class", StorageClassMapper::GetNameForStorageClass(m_storageClass));
   }
 
-  if(m_uploadAvailabilityHasBeenSet)
+  if(m_uploadAvailabilityHasBeenSet && m_uploadAvailability != UploadAvailability::NOT_SET)
   {
     headers.emplace("x-amz-upload-availability", UploadAvailabilityMapper::GetNameForUploadAvailability(m_uploadAvailability));
   }

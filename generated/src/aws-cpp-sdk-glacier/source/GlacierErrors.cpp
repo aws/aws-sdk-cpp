@@ -87,19 +87,19 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == INSUFFICIENT_CAPACITY_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(GlacierErrors::INSUFFICIENT_CAPACITY), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(GlacierErrors::INSUFFICIENT_CAPACITY), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(GlacierErrors::LIMIT_EXCEEDED), true);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(GlacierErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
   }
   else if (hashCode == POLICY_ENFORCED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(GlacierErrors::POLICY_ENFORCED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(GlacierErrors::POLICY_ENFORCED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == MISSING_PARAMETER_VALUE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(GlacierErrors::MISSING_PARAMETER_VALUE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(GlacierErrors::MISSING_PARAMETER_VALUE), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

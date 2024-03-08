@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AutoScalingPolicyState::NOT_SET:
+            return {};
           case AutoScalingPolicyState::PENDING:
             return "PENDING";
           case AutoScalingPolicyState::ATTACHING:

@@ -38,107 +38,91 @@ namespace Model
 
 
     /**
-     * <p>An Amazon Resource Name (ARN) that references the datashare that is owned by
-     * a specific namespace of the producer cluster. A datashare ARN is in the
-     * <code>arn:aws:redshift:{region}:{account-id}:{datashare}:{namespace-guid}/{datashare-name}</code>
-     * format.</p>
+     * <p>The Amazon Resource Name (ARN) of the datashare that the consumer is to
+     * use.</p>
      */
     inline const Aws::String& GetDataShareArn() const{ return m_dataShareArn; }
 
     /**
-     * <p>An Amazon Resource Name (ARN) that references the datashare that is owned by
-     * a specific namespace of the producer cluster. A datashare ARN is in the
-     * <code>arn:aws:redshift:{region}:{account-id}:{datashare}:{namespace-guid}/{datashare-name}</code>
-     * format.</p>
+     * <p>The Amazon Resource Name (ARN) of the datashare that the consumer is to
+     * use.</p>
      */
     inline bool DataShareArnHasBeenSet() const { return m_dataShareArnHasBeenSet; }
 
     /**
-     * <p>An Amazon Resource Name (ARN) that references the datashare that is owned by
-     * a specific namespace of the producer cluster. A datashare ARN is in the
-     * <code>arn:aws:redshift:{region}:{account-id}:{datashare}:{namespace-guid}/{datashare-name}</code>
-     * format.</p>
+     * <p>The Amazon Resource Name (ARN) of the datashare that the consumer is to
+     * use.</p>
      */
     inline void SetDataShareArn(const Aws::String& value) { m_dataShareArnHasBeenSet = true; m_dataShareArn = value; }
 
     /**
-     * <p>An Amazon Resource Name (ARN) that references the datashare that is owned by
-     * a specific namespace of the producer cluster. A datashare ARN is in the
-     * <code>arn:aws:redshift:{region}:{account-id}:{datashare}:{namespace-guid}/{datashare-name}</code>
-     * format.</p>
+     * <p>The Amazon Resource Name (ARN) of the datashare that the consumer is to
+     * use.</p>
      */
     inline void SetDataShareArn(Aws::String&& value) { m_dataShareArnHasBeenSet = true; m_dataShareArn = std::move(value); }
 
     /**
-     * <p>An Amazon Resource Name (ARN) that references the datashare that is owned by
-     * a specific namespace of the producer cluster. A datashare ARN is in the
-     * <code>arn:aws:redshift:{region}:{account-id}:{datashare}:{namespace-guid}/{datashare-name}</code>
-     * format.</p>
+     * <p>The Amazon Resource Name (ARN) of the datashare that the consumer is to
+     * use.</p>
      */
     inline void SetDataShareArn(const char* value) { m_dataShareArnHasBeenSet = true; m_dataShareArn.assign(value); }
 
     /**
-     * <p>An Amazon Resource Name (ARN) that references the datashare that is owned by
-     * a specific namespace of the producer cluster. A datashare ARN is in the
-     * <code>arn:aws:redshift:{region}:{account-id}:{datashare}:{namespace-guid}/{datashare-name}</code>
-     * format.</p>
+     * <p>The Amazon Resource Name (ARN) of the datashare that the consumer is to
+     * use.</p>
      */
     inline DataShare& WithDataShareArn(const Aws::String& value) { SetDataShareArn(value); return *this;}
 
     /**
-     * <p>An Amazon Resource Name (ARN) that references the datashare that is owned by
-     * a specific namespace of the producer cluster. A datashare ARN is in the
-     * <code>arn:aws:redshift:{region}:{account-id}:{datashare}:{namespace-guid}/{datashare-name}</code>
-     * format.</p>
+     * <p>The Amazon Resource Name (ARN) of the datashare that the consumer is to
+     * use.</p>
      */
     inline DataShare& WithDataShareArn(Aws::String&& value) { SetDataShareArn(std::move(value)); return *this;}
 
     /**
-     * <p>An Amazon Resource Name (ARN) that references the datashare that is owned by
-     * a specific namespace of the producer cluster. A datashare ARN is in the
-     * <code>arn:aws:redshift:{region}:{account-id}:{datashare}:{namespace-guid}/{datashare-name}</code>
-     * format.</p>
+     * <p>The Amazon Resource Name (ARN) of the datashare that the consumer is to
+     * use.</p>
      */
     inline DataShare& WithDataShareArn(const char* value) { SetDataShareArn(value); return *this;}
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the producer.</p>
+     * <p>The Amazon Resource Name (ARN) of the producer namespace.</p>
      */
     inline const Aws::String& GetProducerArn() const{ return m_producerArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the producer.</p>
+     * <p>The Amazon Resource Name (ARN) of the producer namespace.</p>
      */
     inline bool ProducerArnHasBeenSet() const { return m_producerArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the producer.</p>
+     * <p>The Amazon Resource Name (ARN) of the producer namespace.</p>
      */
     inline void SetProducerArn(const Aws::String& value) { m_producerArnHasBeenSet = true; m_producerArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the producer.</p>
+     * <p>The Amazon Resource Name (ARN) of the producer namespace.</p>
      */
     inline void SetProducerArn(Aws::String&& value) { m_producerArnHasBeenSet = true; m_producerArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the producer.</p>
+     * <p>The Amazon Resource Name (ARN) of the producer namespace.</p>
      */
     inline void SetProducerArn(const char* value) { m_producerArnHasBeenSet = true; m_producerArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the producer.</p>
+     * <p>The Amazon Resource Name (ARN) of the producer namespace.</p>
      */
     inline DataShare& WithProducerArn(const Aws::String& value) { SetProducerArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the producer.</p>
+     * <p>The Amazon Resource Name (ARN) of the producer namespace.</p>
      */
     inline DataShare& WithProducerArn(Aws::String&& value) { SetProducerArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the producer.</p>
+     * <p>The Amazon Resource Name (ARN) of the producer namespace.</p>
      */
     inline DataShare& WithProducerArn(const char* value) { SetProducerArn(value); return *this;}
 

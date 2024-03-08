@@ -22,8 +22,12 @@ Environment::Environment() :
     m_airflowConfigurationOptionsHasBeenSet(false),
     m_airflowVersionHasBeenSet(false),
     m_arnHasBeenSet(false),
+    m_celeryExecutorQueueHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_dagS3PathHasBeenSet(false),
+    m_databaseVpcEndpointServiceHasBeenSet(false),
+    m_endpointManagement(EndpointManagement::NOT_SET),
+    m_endpointManagementHasBeenSet(false),
     m_environmentClassHasBeenSet(false),
     m_executionRoleArnHasBeenSet(false),
     m_kmsKeyHasBeenSet(false),
@@ -51,6 +55,7 @@ Environment::Environment() :
     m_webserverAccessMode(WebserverAccessMode::NOT_SET),
     m_webserverAccessModeHasBeenSet(false),
     m_webserverUrlHasBeenSet(false),
+    m_webserverVpcEndpointServiceHasBeenSet(false),
     m_weeklyMaintenanceWindowStartHasBeenSet(false)
 {
 }
@@ -59,8 +64,12 @@ Environment::Environment(JsonView jsonValue) :
     m_airflowConfigurationOptionsHasBeenSet(false),
     m_airflowVersionHasBeenSet(false),
     m_arnHasBeenSet(false),
+    m_celeryExecutorQueueHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_dagS3PathHasBeenSet(false),
+    m_databaseVpcEndpointServiceHasBeenSet(false),
+    m_endpointManagement(EndpointManagement::NOT_SET),
+    m_endpointManagementHasBeenSet(false),
     m_environmentClassHasBeenSet(false),
     m_executionRoleArnHasBeenSet(false),
     m_kmsKeyHasBeenSet(false),
@@ -88,6 +97,7 @@ Environment::Environment(JsonView jsonValue) :
     m_webserverAccessMode(WebserverAccessMode::NOT_SET),
     m_webserverAccessModeHasBeenSet(false),
     m_webserverUrlHasBeenSet(false),
+    m_webserverVpcEndpointServiceHasBeenSet(false),
     m_weeklyMaintenanceWindowStartHasBeenSet(false)
 {
   *this = jsonValue;
@@ -119,6 +129,13 @@ Environment& Environment::operator =(JsonView jsonValue)
     m_arnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CeleryExecutorQueue"))
+  {
+    m_celeryExecutorQueue = jsonValue.GetString("CeleryExecutorQueue");
+
+    m_celeryExecutorQueueHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetDouble("CreatedAt");
@@ -131,6 +148,20 @@ Environment& Environment::operator =(JsonView jsonValue)
     m_dagS3Path = jsonValue.GetString("DagS3Path");
 
     m_dagS3PathHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DatabaseVpcEndpointService"))
+  {
+    m_databaseVpcEndpointService = jsonValue.GetString("DatabaseVpcEndpointService");
+
+    m_databaseVpcEndpointServiceHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("EndpointManagement"))
+  {
+    m_endpointManagement = EndpointManagementMapper::GetEndpointManagementForName(jsonValue.GetString("EndpointManagement"));
+
+    m_endpointManagementHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("EnvironmentClass"))
@@ -290,6 +321,13 @@ Environment& Environment::operator =(JsonView jsonValue)
     m_webserverUrlHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("WebserverVpcEndpointService"))
+  {
+    m_webserverVpcEndpointService = jsonValue.GetString("WebserverVpcEndpointService");
+
+    m_webserverVpcEndpointServiceHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("WeeklyMaintenanceWindowStart"))
   {
     m_weeklyMaintenanceWindowStart = jsonValue.GetString("WeeklyMaintenanceWindowStart");
@@ -327,6 +365,12 @@ JsonValue Environment::Jsonize() const
 
   }
 
+  if(m_celeryExecutorQueueHasBeenSet)
+  {
+   payload.WithString("CeleryExecutorQueue", m_celeryExecutorQueue);
+
+  }
+
   if(m_createdAtHasBeenSet)
   {
    payload.WithDouble("CreatedAt", m_createdAt.SecondsWithMSPrecision());
@@ -336,6 +380,17 @@ JsonValue Environment::Jsonize() const
   {
    payload.WithString("DagS3Path", m_dagS3Path);
 
+  }
+
+  if(m_databaseVpcEndpointServiceHasBeenSet)
+  {
+   payload.WithString("DatabaseVpcEndpointService", m_databaseVpcEndpointService);
+
+  }
+
+  if(m_endpointManagementHasBeenSet)
+  {
+   payload.WithString("EndpointManagement", EndpointManagementMapper::GetNameForEndpointManagement(m_endpointManagement));
   }
 
   if(m_environmentClassHasBeenSet)
@@ -470,6 +525,12 @@ JsonValue Environment::Jsonize() const
   if(m_webserverUrlHasBeenSet)
   {
    payload.WithString("WebserverUrl", m_webserverUrl);
+
+  }
+
+  if(m_webserverVpcEndpointServiceHasBeenSet)
+  {
+   payload.WithString("WebserverVpcEndpointService", m_webserverVpcEndpointService);
 
   }
 

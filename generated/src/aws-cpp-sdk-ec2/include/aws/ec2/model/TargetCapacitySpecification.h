@@ -56,26 +56,22 @@ namespace Model
 
 
     /**
-     * <p>The number of units to request, filled using
-     * <code>DefaultTargetCapacityType</code>.</p>
+     * <p>The number of units to request, filled the default target capacity type.</p>
      */
     inline int GetTotalTargetCapacity() const{ return m_totalTargetCapacity; }
 
     /**
-     * <p>The number of units to request, filled using
-     * <code>DefaultTargetCapacityType</code>.</p>
+     * <p>The number of units to request, filled the default target capacity type.</p>
      */
     inline bool TotalTargetCapacityHasBeenSet() const { return m_totalTargetCapacityHasBeenSet; }
 
     /**
-     * <p>The number of units to request, filled using
-     * <code>DefaultTargetCapacityType</code>.</p>
+     * <p>The number of units to request, filled the default target capacity type.</p>
      */
     inline void SetTotalTargetCapacity(int value) { m_totalTargetCapacityHasBeenSet = true; m_totalTargetCapacity = value; }
 
     /**
-     * <p>The number of units to request, filled using
-     * <code>DefaultTargetCapacityType</code>.</p>
+     * <p>The number of units to request, filled the default target capacity type.</p>
      */
     inline TargetCapacitySpecification& WithTotalTargetCapacity(int value) { SetTotalTargetCapacity(value); return *this;}
 
@@ -131,81 +127,63 @@ namespace Model
 
 
     /**
-     * <p>The default <code>TotalTargetCapacity</code>, which is either
-     * <code>Spot</code> or <code>On-Demand</code>.</p>
+     * <p>The default target capacity type.</p>
      */
     inline const DefaultTargetCapacityType& GetDefaultTargetCapacityType() const{ return m_defaultTargetCapacityType; }
 
     /**
-     * <p>The default <code>TotalTargetCapacity</code>, which is either
-     * <code>Spot</code> or <code>On-Demand</code>.</p>
+     * <p>The default target capacity type.</p>
      */
     inline bool DefaultTargetCapacityTypeHasBeenSet() const { return m_defaultTargetCapacityTypeHasBeenSet; }
 
     /**
-     * <p>The default <code>TotalTargetCapacity</code>, which is either
-     * <code>Spot</code> or <code>On-Demand</code>.</p>
+     * <p>The default target capacity type.</p>
      */
     inline void SetDefaultTargetCapacityType(const DefaultTargetCapacityType& value) { m_defaultTargetCapacityTypeHasBeenSet = true; m_defaultTargetCapacityType = value; }
 
     /**
-     * <p>The default <code>TotalTargetCapacity</code>, which is either
-     * <code>Spot</code> or <code>On-Demand</code>.</p>
+     * <p>The default target capacity type.</p>
      */
     inline void SetDefaultTargetCapacityType(DefaultTargetCapacityType&& value) { m_defaultTargetCapacityTypeHasBeenSet = true; m_defaultTargetCapacityType = std::move(value); }
 
     /**
-     * <p>The default <code>TotalTargetCapacity</code>, which is either
-     * <code>Spot</code> or <code>On-Demand</code>.</p>
+     * <p>The default target capacity type.</p>
      */
     inline TargetCapacitySpecification& WithDefaultTargetCapacityType(const DefaultTargetCapacityType& value) { SetDefaultTargetCapacityType(value); return *this;}
 
     /**
-     * <p>The default <code>TotalTargetCapacity</code>, which is either
-     * <code>Spot</code> or <code>On-Demand</code>.</p>
+     * <p>The default target capacity type.</p>
      */
     inline TargetCapacitySpecification& WithDefaultTargetCapacityType(DefaultTargetCapacityType&& value) { SetDefaultTargetCapacityType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The unit for the target capacity. <code>TargetCapacityUnitType</code> can
-     * only be specified when <code>InstanceRequirements</code> is specified.</p>
-     * <p>Default: <code>units</code> (translates to number of instances)</p>
+     * <p>The unit for the target capacity.</p>
      */
     inline const TargetCapacityUnitType& GetTargetCapacityUnitType() const{ return m_targetCapacityUnitType; }
 
     /**
-     * <p>The unit for the target capacity. <code>TargetCapacityUnitType</code> can
-     * only be specified when <code>InstanceRequirements</code> is specified.</p>
-     * <p>Default: <code>units</code> (translates to number of instances)</p>
+     * <p>The unit for the target capacity.</p>
      */
     inline bool TargetCapacityUnitTypeHasBeenSet() const { return m_targetCapacityUnitTypeHasBeenSet; }
 
     /**
-     * <p>The unit for the target capacity. <code>TargetCapacityUnitType</code> can
-     * only be specified when <code>InstanceRequirements</code> is specified.</p>
-     * <p>Default: <code>units</code> (translates to number of instances)</p>
+     * <p>The unit for the target capacity.</p>
      */
     inline void SetTargetCapacityUnitType(const TargetCapacityUnitType& value) { m_targetCapacityUnitTypeHasBeenSet = true; m_targetCapacityUnitType = value; }
 
     /**
-     * <p>The unit for the target capacity. <code>TargetCapacityUnitType</code> can
-     * only be specified when <code>InstanceRequirements</code> is specified.</p>
-     * <p>Default: <code>units</code> (translates to number of instances)</p>
+     * <p>The unit for the target capacity.</p>
      */
     inline void SetTargetCapacityUnitType(TargetCapacityUnitType&& value) { m_targetCapacityUnitTypeHasBeenSet = true; m_targetCapacityUnitType = std::move(value); }
 
     /**
-     * <p>The unit for the target capacity. <code>TargetCapacityUnitType</code> can
-     * only be specified when <code>InstanceRequirements</code> is specified.</p>
-     * <p>Default: <code>units</code> (translates to number of instances)</p>
+     * <p>The unit for the target capacity.</p>
      */
     inline TargetCapacitySpecification& WithTargetCapacityUnitType(const TargetCapacityUnitType& value) { SetTargetCapacityUnitType(value); return *this;}
 
     /**
-     * <p>The unit for the target capacity. <code>TargetCapacityUnitType</code> can
-     * only be specified when <code>InstanceRequirements</code> is specified.</p>
-     * <p>Default: <code>units</code> (translates to number of instances)</p>
+     * <p>The unit for the target capacity.</p>
      */
     inline TargetCapacitySpecification& WithTargetCapacityUnitType(TargetCapacityUnitType&& value) { SetTargetCapacityUnitType(std::move(value)); return *this;}
 

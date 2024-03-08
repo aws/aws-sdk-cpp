@@ -38,7 +38,10 @@ ConfigurationItem::ConfigurationItem() :
     m_relatedEventsHasBeenSet(false),
     m_relationshipsHasBeenSet(false),
     m_configurationHasBeenSet(false),
-    m_supplementaryConfigurationHasBeenSet(false)
+    m_supplementaryConfigurationHasBeenSet(false),
+    m_recordingFrequency(RecordingFrequency::NOT_SET),
+    m_recordingFrequencyHasBeenSet(false),
+    m_configurationItemDeliveryTimeHasBeenSet(false)
 {
 }
 
@@ -62,7 +65,10 @@ ConfigurationItem::ConfigurationItem(JsonView jsonValue) :
     m_relatedEventsHasBeenSet(false),
     m_relationshipsHasBeenSet(false),
     m_configurationHasBeenSet(false),
-    m_supplementaryConfigurationHasBeenSet(false)
+    m_supplementaryConfigurationHasBeenSet(false),
+    m_recordingFrequency(RecordingFrequency::NOT_SET),
+    m_recordingFrequencyHasBeenSet(false),
+    m_configurationItemDeliveryTimeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -207,6 +213,20 @@ ConfigurationItem& ConfigurationItem::operator =(JsonView jsonValue)
     m_supplementaryConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("recordingFrequency"))
+  {
+    m_recordingFrequency = RecordingFrequencyMapper::GetRecordingFrequencyForName(jsonValue.GetString("recordingFrequency"));
+
+    m_recordingFrequencyHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("configurationItemDeliveryTime"))
+  {
+    m_configurationItemDeliveryTime = jsonValue.GetDouble("configurationItemDeliveryTime");
+
+    m_configurationItemDeliveryTimeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -336,6 +356,16 @@ JsonValue ConfigurationItem::Jsonize() const
    }
    payload.WithObject("supplementaryConfiguration", std::move(supplementaryConfigurationJsonMap));
 
+  }
+
+  if(m_recordingFrequencyHasBeenSet)
+  {
+   payload.WithString("recordingFrequency", RecordingFrequencyMapper::GetNameForRecordingFrequency(m_recordingFrequency));
+  }
+
+  if(m_configurationItemDeliveryTimeHasBeenSet)
+  {
+   payload.WithDouble("configurationItemDeliveryTime", m_configurationItemDeliveryTime.SecondsWithMSPrecision());
   }
 
   return payload;

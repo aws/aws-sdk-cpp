@@ -25,7 +25,9 @@ Resilience::Resilience() :
     m_hsrOperationMode(OperationMode::NOT_SET),
     m_hsrOperationModeHasBeenSet(false),
     m_clusterStatus(ClusterStatus::NOT_SET),
-    m_clusterStatusHasBeenSet(false)
+    m_clusterStatusHasBeenSet(false),
+    m_enqueueReplication(false),
+    m_enqueueReplicationHasBeenSet(false)
 {
 }
 
@@ -36,7 +38,9 @@ Resilience::Resilience(JsonView jsonValue) :
     m_hsrOperationMode(OperationMode::NOT_SET),
     m_hsrOperationModeHasBeenSet(false),
     m_clusterStatus(ClusterStatus::NOT_SET),
-    m_clusterStatusHasBeenSet(false)
+    m_clusterStatusHasBeenSet(false),
+    m_enqueueReplication(false),
+    m_enqueueReplicationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -71,6 +75,13 @@ Resilience& Resilience::operator =(JsonView jsonValue)
     m_clusterStatusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("EnqueueReplication"))
+  {
+    m_enqueueReplication = jsonValue.GetBool("EnqueueReplication");
+
+    m_enqueueReplicationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -97,6 +108,12 @@ JsonValue Resilience::Jsonize() const
   if(m_clusterStatusHasBeenSet)
   {
    payload.WithString("ClusterStatus", ClusterStatusMapper::GetNameForClusterStatus(m_clusterStatus));
+  }
+
+  if(m_enqueueReplicationHasBeenSet)
+  {
+   payload.WithBool("EnqueueReplication", m_enqueueReplication);
+
   }
 
   return payload;

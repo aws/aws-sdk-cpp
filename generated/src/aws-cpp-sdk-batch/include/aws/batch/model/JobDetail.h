@@ -16,6 +16,7 @@
 #include <aws/batch/model/ArrayPropertiesDetail.h>
 #include <aws/batch/model/JobTimeout.h>
 #include <aws/batch/model/EksPropertiesDetail.h>
+#include <aws/batch/model/EcsPropertiesDetail.h>
 #include <aws/batch/model/AttemptDetail.h>
 #include <aws/batch/model/JobDependency.h>
 #include <aws/batch/model/PlatformCapability.h>
@@ -391,49 +392,129 @@ namespace Model
 
     /**
      * <p>A short, human-readable string to provide more details for the current status
-     * of the job.</p>
+     * of the job.</p> <ul> <li> <p>
+     * <code>CAPACITY:INSUFFICIENT_INSTANCE_CAPACITY</code> - All compute environments
+     * have insufficient capacity to service the job.</p> </li> <li> <p>
+     * <code>MISCONFIGURATION:COMPUTE_ENVIRONMENT_MAX_RESOURCE</code> - All compute
+     * environments have a <code>maxVcpu</code> setting that is smaller than the job
+     * requirements.</p> </li> <li> <p>
+     * <code>MISCONFIGURATION:JOB_RESOURCE_REQUIREMENT</code> - All compute
+     * environments have no connected instances that meet the job requirements.</p>
+     * </li> <li> <p> <code>MISCONFIGURATION:SERVICE_ROLE_PERMISSIONS</code> - All
+     * compute environments have problems with the service role permissions.</p> </li>
+     * </ul>
      */
     inline const Aws::String& GetStatusReason() const{ return m_statusReason; }
 
     /**
      * <p>A short, human-readable string to provide more details for the current status
-     * of the job.</p>
+     * of the job.</p> <ul> <li> <p>
+     * <code>CAPACITY:INSUFFICIENT_INSTANCE_CAPACITY</code> - All compute environments
+     * have insufficient capacity to service the job.</p> </li> <li> <p>
+     * <code>MISCONFIGURATION:COMPUTE_ENVIRONMENT_MAX_RESOURCE</code> - All compute
+     * environments have a <code>maxVcpu</code> setting that is smaller than the job
+     * requirements.</p> </li> <li> <p>
+     * <code>MISCONFIGURATION:JOB_RESOURCE_REQUIREMENT</code> - All compute
+     * environments have no connected instances that meet the job requirements.</p>
+     * </li> <li> <p> <code>MISCONFIGURATION:SERVICE_ROLE_PERMISSIONS</code> - All
+     * compute environments have problems with the service role permissions.</p> </li>
+     * </ul>
      */
     inline bool StatusReasonHasBeenSet() const { return m_statusReasonHasBeenSet; }
 
     /**
      * <p>A short, human-readable string to provide more details for the current status
-     * of the job.</p>
+     * of the job.</p> <ul> <li> <p>
+     * <code>CAPACITY:INSUFFICIENT_INSTANCE_CAPACITY</code> - All compute environments
+     * have insufficient capacity to service the job.</p> </li> <li> <p>
+     * <code>MISCONFIGURATION:COMPUTE_ENVIRONMENT_MAX_RESOURCE</code> - All compute
+     * environments have a <code>maxVcpu</code> setting that is smaller than the job
+     * requirements.</p> </li> <li> <p>
+     * <code>MISCONFIGURATION:JOB_RESOURCE_REQUIREMENT</code> - All compute
+     * environments have no connected instances that meet the job requirements.</p>
+     * </li> <li> <p> <code>MISCONFIGURATION:SERVICE_ROLE_PERMISSIONS</code> - All
+     * compute environments have problems with the service role permissions.</p> </li>
+     * </ul>
      */
     inline void SetStatusReason(const Aws::String& value) { m_statusReasonHasBeenSet = true; m_statusReason = value; }
 
     /**
      * <p>A short, human-readable string to provide more details for the current status
-     * of the job.</p>
+     * of the job.</p> <ul> <li> <p>
+     * <code>CAPACITY:INSUFFICIENT_INSTANCE_CAPACITY</code> - All compute environments
+     * have insufficient capacity to service the job.</p> </li> <li> <p>
+     * <code>MISCONFIGURATION:COMPUTE_ENVIRONMENT_MAX_RESOURCE</code> - All compute
+     * environments have a <code>maxVcpu</code> setting that is smaller than the job
+     * requirements.</p> </li> <li> <p>
+     * <code>MISCONFIGURATION:JOB_RESOURCE_REQUIREMENT</code> - All compute
+     * environments have no connected instances that meet the job requirements.</p>
+     * </li> <li> <p> <code>MISCONFIGURATION:SERVICE_ROLE_PERMISSIONS</code> - All
+     * compute environments have problems with the service role permissions.</p> </li>
+     * </ul>
      */
     inline void SetStatusReason(Aws::String&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::move(value); }
 
     /**
      * <p>A short, human-readable string to provide more details for the current status
-     * of the job.</p>
+     * of the job.</p> <ul> <li> <p>
+     * <code>CAPACITY:INSUFFICIENT_INSTANCE_CAPACITY</code> - All compute environments
+     * have insufficient capacity to service the job.</p> </li> <li> <p>
+     * <code>MISCONFIGURATION:COMPUTE_ENVIRONMENT_MAX_RESOURCE</code> - All compute
+     * environments have a <code>maxVcpu</code> setting that is smaller than the job
+     * requirements.</p> </li> <li> <p>
+     * <code>MISCONFIGURATION:JOB_RESOURCE_REQUIREMENT</code> - All compute
+     * environments have no connected instances that meet the job requirements.</p>
+     * </li> <li> <p> <code>MISCONFIGURATION:SERVICE_ROLE_PERMISSIONS</code> - All
+     * compute environments have problems with the service role permissions.</p> </li>
+     * </ul>
      */
     inline void SetStatusReason(const char* value) { m_statusReasonHasBeenSet = true; m_statusReason.assign(value); }
 
     /**
      * <p>A short, human-readable string to provide more details for the current status
-     * of the job.</p>
+     * of the job.</p> <ul> <li> <p>
+     * <code>CAPACITY:INSUFFICIENT_INSTANCE_CAPACITY</code> - All compute environments
+     * have insufficient capacity to service the job.</p> </li> <li> <p>
+     * <code>MISCONFIGURATION:COMPUTE_ENVIRONMENT_MAX_RESOURCE</code> - All compute
+     * environments have a <code>maxVcpu</code> setting that is smaller than the job
+     * requirements.</p> </li> <li> <p>
+     * <code>MISCONFIGURATION:JOB_RESOURCE_REQUIREMENT</code> - All compute
+     * environments have no connected instances that meet the job requirements.</p>
+     * </li> <li> <p> <code>MISCONFIGURATION:SERVICE_ROLE_PERMISSIONS</code> - All
+     * compute environments have problems with the service role permissions.</p> </li>
+     * </ul>
      */
     inline JobDetail& WithStatusReason(const Aws::String& value) { SetStatusReason(value); return *this;}
 
     /**
      * <p>A short, human-readable string to provide more details for the current status
-     * of the job.</p>
+     * of the job.</p> <ul> <li> <p>
+     * <code>CAPACITY:INSUFFICIENT_INSTANCE_CAPACITY</code> - All compute environments
+     * have insufficient capacity to service the job.</p> </li> <li> <p>
+     * <code>MISCONFIGURATION:COMPUTE_ENVIRONMENT_MAX_RESOURCE</code> - All compute
+     * environments have a <code>maxVcpu</code> setting that is smaller than the job
+     * requirements.</p> </li> <li> <p>
+     * <code>MISCONFIGURATION:JOB_RESOURCE_REQUIREMENT</code> - All compute
+     * environments have no connected instances that meet the job requirements.</p>
+     * </li> <li> <p> <code>MISCONFIGURATION:SERVICE_ROLE_PERMISSIONS</code> - All
+     * compute environments have problems with the service role permissions.</p> </li>
+     * </ul>
      */
     inline JobDetail& WithStatusReason(Aws::String&& value) { SetStatusReason(std::move(value)); return *this;}
 
     /**
      * <p>A short, human-readable string to provide more details for the current status
-     * of the job.</p>
+     * of the job.</p> <ul> <li> <p>
+     * <code>CAPACITY:INSUFFICIENT_INSTANCE_CAPACITY</code> - All compute environments
+     * have insufficient capacity to service the job.</p> </li> <li> <p>
+     * <code>MISCONFIGURATION:COMPUTE_ENVIRONMENT_MAX_RESOURCE</code> - All compute
+     * environments have a <code>maxVcpu</code> setting that is smaller than the job
+     * requirements.</p> </li> <li> <p>
+     * <code>MISCONFIGURATION:JOB_RESOURCE_REQUIREMENT</code> - All compute
+     * environments have no connected instances that meet the job requirements.</p>
+     * </li> <li> <p> <code>MISCONFIGURATION:SERVICE_ROLE_PERMISSIONS</code> - All
+     * compute environments have problems with the service role permissions.</p> </li>
+     * </ul>
      */
     inline JobDetail& WithStatusReason(const char* value) { SetStatusReason(value); return *this;}
 
@@ -441,7 +522,8 @@ namespace Model
     /**
      * <p>The Unix timestamp (in milliseconds) for when the job was created. For
      * non-array jobs and parent array jobs, this is when the job entered the
-     * <code>SUBMITTED</code> state. This is specifically at the time <a>SubmitJob</a>
+     * <code>SUBMITTED</code> state. This is specifically at the time <a
+     * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_SubmitJob.html">SubmitJob</a>
      * was called. For array child jobs, this is when the child job was spawned by its
      * parent and entered the <code>PENDING</code> state.</p>
      */
@@ -450,7 +532,8 @@ namespace Model
     /**
      * <p>The Unix timestamp (in milliseconds) for when the job was created. For
      * non-array jobs and parent array jobs, this is when the job entered the
-     * <code>SUBMITTED</code> state. This is specifically at the time <a>SubmitJob</a>
+     * <code>SUBMITTED</code> state. This is specifically at the time <a
+     * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_SubmitJob.html">SubmitJob</a>
      * was called. For array child jobs, this is when the child job was spawned by its
      * parent and entered the <code>PENDING</code> state.</p>
      */
@@ -459,7 +542,8 @@ namespace Model
     /**
      * <p>The Unix timestamp (in milliseconds) for when the job was created. For
      * non-array jobs and parent array jobs, this is when the job entered the
-     * <code>SUBMITTED</code> state. This is specifically at the time <a>SubmitJob</a>
+     * <code>SUBMITTED</code> state. This is specifically at the time <a
+     * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_SubmitJob.html">SubmitJob</a>
      * was called. For array child jobs, this is when the child job was spawned by its
      * parent and entered the <code>PENDING</code> state.</p>
      */
@@ -468,7 +552,8 @@ namespace Model
     /**
      * <p>The Unix timestamp (in milliseconds) for when the job was created. For
      * non-array jobs and parent array jobs, this is when the job entered the
-     * <code>SUBMITTED</code> state. This is specifically at the time <a>SubmitJob</a>
+     * <code>SUBMITTED</code> state. This is specifically at the time <a
+     * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_SubmitJob.html">SubmitJob</a>
      * was called. For array child jobs, this is when the child job was spawned by its
      * parent and entered the <code>PENDING</code> state.</p>
      */
@@ -509,32 +594,28 @@ namespace Model
     /**
      * <p>The Unix timestamp (in milliseconds) for when the job was started. More
      * specifically, it's when the job transitioned from the <code>STARTING</code>
-     * state to the <code>RUNNING</code> state. This parameter isn't provided for child
-     * jobs of array jobs or multi-node parallel jobs.</p>
+     * state to the <code>RUNNING</code> state. </p>
      */
     inline long long GetStartedAt() const{ return m_startedAt; }
 
     /**
      * <p>The Unix timestamp (in milliseconds) for when the job was started. More
      * specifically, it's when the job transitioned from the <code>STARTING</code>
-     * state to the <code>RUNNING</code> state. This parameter isn't provided for child
-     * jobs of array jobs or multi-node parallel jobs.</p>
+     * state to the <code>RUNNING</code> state. </p>
      */
     inline bool StartedAtHasBeenSet() const { return m_startedAtHasBeenSet; }
 
     /**
      * <p>The Unix timestamp (in milliseconds) for when the job was started. More
      * specifically, it's when the job transitioned from the <code>STARTING</code>
-     * state to the <code>RUNNING</code> state. This parameter isn't provided for child
-     * jobs of array jobs or multi-node parallel jobs.</p>
+     * state to the <code>RUNNING</code> state. </p>
      */
     inline void SetStartedAt(long long value) { m_startedAtHasBeenSet = true; m_startedAt = value; }
 
     /**
      * <p>The Unix timestamp (in milliseconds) for when the job was started. More
      * specifically, it's when the job transitioned from the <code>STARTING</code>
-     * state to the <code>RUNNING</code> state. This parameter isn't provided for child
-     * jobs of array jobs or multi-node parallel jobs.</p>
+     * state to the <code>RUNNING</code> state. </p>
      */
     inline JobDetail& WithStartedAt(long long value) { SetStartedAt(value); return *this;}
 
@@ -744,37 +825,43 @@ namespace Model
 
     /**
      * <p>An object that represents the details for the container that's associated
-     * with the job.</p>
+     * with the job. If the details are for a multiple-container job, this object will
+     * be empty. </p>
      */
     inline const ContainerDetail& GetContainer() const{ return m_container; }
 
     /**
      * <p>An object that represents the details for the container that's associated
-     * with the job.</p>
+     * with the job. If the details are for a multiple-container job, this object will
+     * be empty. </p>
      */
     inline bool ContainerHasBeenSet() const { return m_containerHasBeenSet; }
 
     /**
      * <p>An object that represents the details for the container that's associated
-     * with the job.</p>
+     * with the job. If the details are for a multiple-container job, this object will
+     * be empty. </p>
      */
     inline void SetContainer(const ContainerDetail& value) { m_containerHasBeenSet = true; m_container = value; }
 
     /**
      * <p>An object that represents the details for the container that's associated
-     * with the job.</p>
+     * with the job. If the details are for a multiple-container job, this object will
+     * be empty. </p>
      */
     inline void SetContainer(ContainerDetail&& value) { m_containerHasBeenSet = true; m_container = std::move(value); }
 
     /**
      * <p>An object that represents the details for the container that's associated
-     * with the job.</p>
+     * with the job. If the details are for a multiple-container job, this object will
+     * be empty. </p>
      */
     inline JobDetail& WithContainer(const ContainerDetail& value) { SetContainer(value); return *this;}
 
     /**
      * <p>An object that represents the details for the container that's associated
-     * with the job.</p>
+     * with the job. If the details are for a multiple-container job, this object will
+     * be empty. </p>
      */
     inline JobDetail& WithContainer(ContainerDetail&& value) { SetContainer(std::move(value)); return *this;}
 
@@ -1087,43 +1174,37 @@ namespace Model
 
     /**
      * <p>An object with various properties that are specific to Amazon EKS based jobs.
-     * Only one of <code>container</code>, <code>eksProperties</code>, or
-     * <code>nodeDetails</code> is specified.</p>
+     * </p>
      */
     inline const EksPropertiesDetail& GetEksProperties() const{ return m_eksProperties; }
 
     /**
      * <p>An object with various properties that are specific to Amazon EKS based jobs.
-     * Only one of <code>container</code>, <code>eksProperties</code>, or
-     * <code>nodeDetails</code> is specified.</p>
+     * </p>
      */
     inline bool EksPropertiesHasBeenSet() const { return m_eksPropertiesHasBeenSet; }
 
     /**
      * <p>An object with various properties that are specific to Amazon EKS based jobs.
-     * Only one of <code>container</code>, <code>eksProperties</code>, or
-     * <code>nodeDetails</code> is specified.</p>
+     * </p>
      */
     inline void SetEksProperties(const EksPropertiesDetail& value) { m_eksPropertiesHasBeenSet = true; m_eksProperties = value; }
 
     /**
      * <p>An object with various properties that are specific to Amazon EKS based jobs.
-     * Only one of <code>container</code>, <code>eksProperties</code>, or
-     * <code>nodeDetails</code> is specified.</p>
+     * </p>
      */
     inline void SetEksProperties(EksPropertiesDetail&& value) { m_eksPropertiesHasBeenSet = true; m_eksProperties = std::move(value); }
 
     /**
      * <p>An object with various properties that are specific to Amazon EKS based jobs.
-     * Only one of <code>container</code>, <code>eksProperties</code>, or
-     * <code>nodeDetails</code> is specified.</p>
+     * </p>
      */
     inline JobDetail& WithEksProperties(const EksPropertiesDetail& value) { SetEksProperties(value); return *this;}
 
     /**
      * <p>An object with various properties that are specific to Amazon EKS based jobs.
-     * Only one of <code>container</code>, <code>eksProperties</code>, or
-     * <code>nodeDetails</code> is specified.</p>
+     * </p>
      */
     inline JobDetail& WithEksProperties(EksPropertiesDetail&& value) { SetEksProperties(std::move(value)); return *this;}
 
@@ -1167,6 +1248,37 @@ namespace Model
      * <p>A list of job attempts that are associated with this job.</p>
      */
     inline JobDetail& AddEksAttempts(EksAttemptDetail&& value) { m_eksAttemptsHasBeenSet = true; m_eksAttempts.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>An object with properties that are specific to Amazon ECS-based jobs. </p>
+     */
+    inline const EcsPropertiesDetail& GetEcsProperties() const{ return m_ecsProperties; }
+
+    /**
+     * <p>An object with properties that are specific to Amazon ECS-based jobs. </p>
+     */
+    inline bool EcsPropertiesHasBeenSet() const { return m_ecsPropertiesHasBeenSet; }
+
+    /**
+     * <p>An object with properties that are specific to Amazon ECS-based jobs. </p>
+     */
+    inline void SetEcsProperties(const EcsPropertiesDetail& value) { m_ecsPropertiesHasBeenSet = true; m_ecsProperties = value; }
+
+    /**
+     * <p>An object with properties that are specific to Amazon ECS-based jobs. </p>
+     */
+    inline void SetEcsProperties(EcsPropertiesDetail&& value) { m_ecsPropertiesHasBeenSet = true; m_ecsProperties = std::move(value); }
+
+    /**
+     * <p>An object with properties that are specific to Amazon ECS-based jobs. </p>
+     */
+    inline JobDetail& WithEcsProperties(const EcsPropertiesDetail& value) { SetEcsProperties(value); return *this;}
+
+    /**
+     * <p>An object with properties that are specific to Amazon ECS-based jobs. </p>
+     */
+    inline JobDetail& WithEcsProperties(EcsPropertiesDetail&& value) { SetEcsProperties(std::move(value)); return *this;}
 
 
     /**
@@ -1289,6 +1401,9 @@ namespace Model
 
     Aws::Vector<EksAttemptDetail> m_eksAttempts;
     bool m_eksAttemptsHasBeenSet = false;
+
+    EcsPropertiesDetail m_ecsProperties;
+    bool m_ecsPropertiesHasBeenSet = false;
 
     bool m_isCancelled;
     bool m_isCancelledHasBeenSet = false;

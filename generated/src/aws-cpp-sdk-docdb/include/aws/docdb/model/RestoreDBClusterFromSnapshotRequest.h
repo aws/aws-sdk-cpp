@@ -832,6 +832,79 @@ namespace Model
      */
     inline RestoreDBClusterFromSnapshotRequest& WithDBClusterParameterGroupName(const char* value) { SetDBClusterParameterGroupName(value); return *this;}
 
+
+    /**
+     * <p>The storage type to associate with the DB cluster.</p> <p>For information on
+     * storage types for Amazon DocumentDB clusters, see Cluster storage configurations
+     * in the <i>Amazon DocumentDB Developer Guide</i>.</p> <p>Valid values for storage
+     * type - <code>standard | iopt1</code> </p> <p>Default value is <code>standard
+     * </code> </p>
+     */
+    inline const Aws::String& GetStorageType() const{ return m_storageType; }
+
+    /**
+     * <p>The storage type to associate with the DB cluster.</p> <p>For information on
+     * storage types for Amazon DocumentDB clusters, see Cluster storage configurations
+     * in the <i>Amazon DocumentDB Developer Guide</i>.</p> <p>Valid values for storage
+     * type - <code>standard | iopt1</code> </p> <p>Default value is <code>standard
+     * </code> </p>
+     */
+    inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
+
+    /**
+     * <p>The storage type to associate with the DB cluster.</p> <p>For information on
+     * storage types for Amazon DocumentDB clusters, see Cluster storage configurations
+     * in the <i>Amazon DocumentDB Developer Guide</i>.</p> <p>Valid values for storage
+     * type - <code>standard | iopt1</code> </p> <p>Default value is <code>standard
+     * </code> </p>
+     */
+    inline void SetStorageType(const Aws::String& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
+
+    /**
+     * <p>The storage type to associate with the DB cluster.</p> <p>For information on
+     * storage types for Amazon DocumentDB clusters, see Cluster storage configurations
+     * in the <i>Amazon DocumentDB Developer Guide</i>.</p> <p>Valid values for storage
+     * type - <code>standard | iopt1</code> </p> <p>Default value is <code>standard
+     * </code> </p>
+     */
+    inline void SetStorageType(Aws::String&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
+
+    /**
+     * <p>The storage type to associate with the DB cluster.</p> <p>For information on
+     * storage types for Amazon DocumentDB clusters, see Cluster storage configurations
+     * in the <i>Amazon DocumentDB Developer Guide</i>.</p> <p>Valid values for storage
+     * type - <code>standard | iopt1</code> </p> <p>Default value is <code>standard
+     * </code> </p>
+     */
+    inline void SetStorageType(const char* value) { m_storageTypeHasBeenSet = true; m_storageType.assign(value); }
+
+    /**
+     * <p>The storage type to associate with the DB cluster.</p> <p>For information on
+     * storage types for Amazon DocumentDB clusters, see Cluster storage configurations
+     * in the <i>Amazon DocumentDB Developer Guide</i>.</p> <p>Valid values for storage
+     * type - <code>standard | iopt1</code> </p> <p>Default value is <code>standard
+     * </code> </p>
+     */
+    inline RestoreDBClusterFromSnapshotRequest& WithStorageType(const Aws::String& value) { SetStorageType(value); return *this;}
+
+    /**
+     * <p>The storage type to associate with the DB cluster.</p> <p>For information on
+     * storage types for Amazon DocumentDB clusters, see Cluster storage configurations
+     * in the <i>Amazon DocumentDB Developer Guide</i>.</p> <p>Valid values for storage
+     * type - <code>standard | iopt1</code> </p> <p>Default value is <code>standard
+     * </code> </p>
+     */
+    inline RestoreDBClusterFromSnapshotRequest& WithStorageType(Aws::String&& value) { SetStorageType(std::move(value)); return *this;}
+
+    /**
+     * <p>The storage type to associate with the DB cluster.</p> <p>For information on
+     * storage types for Amazon DocumentDB clusters, see Cluster storage configurations
+     * in the <i>Amazon DocumentDB Developer Guide</i>.</p> <p>Valid values for storage
+     * type - <code>standard | iopt1</code> </p> <p>Default value is <code>standard
+     * </code> </p>
+     */
+    inline RestoreDBClusterFromSnapshotRequest& WithStorageType(const char* value) { SetStorageType(value); return *this;}
+
   private:
 
     Aws::Vector<Aws::String> m_availabilityZones;
@@ -872,6 +945,9 @@ namespace Model
 
     Aws::String m_dBClusterParameterGroupName;
     bool m_dBClusterParameterGroupNameHasBeenSet = false;
+
+    Aws::String m_storageType;
+    bool m_storageTypeHasBeenSet = false;
   };
 
 } // namespace Model

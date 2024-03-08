@@ -3,6 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+#if 0 // Outdated
+
 #include <gtest/gtest.h>
 #include <aws/testing/AwsTestHelpers.h>
 #include <aws/testing/ProxyConfig.h>
@@ -259,3 +261,5 @@ TEST_F(CloudfrontOperationTest, TestCreateAndDeleteDistribution)
     auto deleteDistributionOutcome = cloudFrontClient->DeleteDistribution2015_04_17(deleteDistributionRequest);
     AWS_ASSERT_SUCCESS(deleteDistributionOutcome);
 }
+
+#endif

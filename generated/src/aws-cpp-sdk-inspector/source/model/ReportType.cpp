@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReportType::NOT_SET:
+            return {};
           case ReportType::FINDING:
             return "FINDING";
           case ReportType::FULL:

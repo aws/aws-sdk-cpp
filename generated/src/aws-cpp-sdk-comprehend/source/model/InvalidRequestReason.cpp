@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InvalidRequestReason::NOT_SET:
+            return {};
           case InvalidRequestReason::INVALID_DOCUMENT:
             return "INVALID_DOCUMENT";
           default:

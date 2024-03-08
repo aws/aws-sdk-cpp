@@ -8,6 +8,7 @@
 #include <aws/workspaces/WorkSpacesRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/workspaces/model/WorkspaceProperties.h>
+#include <aws/workspaces/model/DataReplication.h>
 #include <utility>
 
 namespace Aws
@@ -106,6 +107,37 @@ namespace Model
      */
     inline ModifyWorkspacePropertiesRequest& WithWorkspaceProperties(WorkspaceProperties&& value) { SetWorkspaceProperties(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Indicates the data replication status.</p>
+     */
+    inline const DataReplication& GetDataReplication() const{ return m_dataReplication; }
+
+    /**
+     * <p>Indicates the data replication status.</p>
+     */
+    inline bool DataReplicationHasBeenSet() const { return m_dataReplicationHasBeenSet; }
+
+    /**
+     * <p>Indicates the data replication status.</p>
+     */
+    inline void SetDataReplication(const DataReplication& value) { m_dataReplicationHasBeenSet = true; m_dataReplication = value; }
+
+    /**
+     * <p>Indicates the data replication status.</p>
+     */
+    inline void SetDataReplication(DataReplication&& value) { m_dataReplicationHasBeenSet = true; m_dataReplication = std::move(value); }
+
+    /**
+     * <p>Indicates the data replication status.</p>
+     */
+    inline ModifyWorkspacePropertiesRequest& WithDataReplication(const DataReplication& value) { SetDataReplication(value); return *this;}
+
+    /**
+     * <p>Indicates the data replication status.</p>
+     */
+    inline ModifyWorkspacePropertiesRequest& WithDataReplication(DataReplication&& value) { SetDataReplication(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_workspaceId;
@@ -113,6 +145,9 @@ namespace Model
 
     WorkspaceProperties m_workspaceProperties;
     bool m_workspacePropertiesHasBeenSet = false;
+
+    DataReplication m_dataReplication;
+    bool m_dataReplicationHasBeenSet = false;
   };
 
 } // namespace Model

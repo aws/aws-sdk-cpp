@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AggregatedUtterancesFilterName::NOT_SET:
+            return {};
           case AggregatedUtterancesFilterName::Utterance:
             return "Utterance";
           default:

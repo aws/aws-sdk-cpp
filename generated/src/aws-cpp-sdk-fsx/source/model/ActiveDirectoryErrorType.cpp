@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ActiveDirectoryErrorType::NOT_SET:
+            return {};
           case ActiveDirectoryErrorType::DOMAIN_NOT_FOUND:
             return "DOMAIN_NOT_FOUND";
           case ActiveDirectoryErrorType::INCOMPATIBLE_DOMAIN_MODE:

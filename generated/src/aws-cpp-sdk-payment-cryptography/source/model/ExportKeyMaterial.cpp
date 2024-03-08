@@ -19,12 +19,14 @@ namespace Model
 {
 
 ExportKeyMaterial::ExportKeyMaterial() : 
+    m_keyCryptogramHasBeenSet(false),
     m_tr31KeyBlockHasBeenSet(false),
     m_tr34KeyBlockHasBeenSet(false)
 {
 }
 
 ExportKeyMaterial::ExportKeyMaterial(JsonView jsonValue) : 
+    m_keyCryptogramHasBeenSet(false),
     m_tr31KeyBlockHasBeenSet(false),
     m_tr34KeyBlockHasBeenSet(false)
 {
@@ -33,6 +35,13 @@ ExportKeyMaterial::ExportKeyMaterial(JsonView jsonValue) :
 
 ExportKeyMaterial& ExportKeyMaterial::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("KeyCryptogram"))
+  {
+    m_keyCryptogram = jsonValue.GetObject("KeyCryptogram");
+
+    m_keyCryptogramHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Tr31KeyBlock"))
   {
     m_tr31KeyBlock = jsonValue.GetObject("Tr31KeyBlock");
@@ -53,6 +62,12 @@ ExportKeyMaterial& ExportKeyMaterial::operator =(JsonView jsonValue)
 JsonValue ExportKeyMaterial::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_keyCryptogramHasBeenSet)
+  {
+   payload.WithObject("KeyCryptogram", m_keyCryptogram.Jsonize());
+
+  }
 
   if(m_tr31KeyBlockHasBeenSet)
   {

@@ -130,135 +130,135 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == INCOMPATIBLE_PARAMETER_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::INCOMPATIBLE_PARAMETER), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::INCOMPATIBLE_PARAMETER), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == SNAPSHOT_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::SNAPSHOT_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::SNAPSHOT_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == DATA_REPOSITORY_ASSOCIATION_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::DATA_REPOSITORY_ASSOCIATION_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::DATA_REPOSITORY_ASSOCIATION_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == ACTIVE_DIRECTORY_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::ACTIVE_DIRECTORY), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::ACTIVE_DIRECTORY), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == FILE_SYSTEM_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::FILE_SYSTEM_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::FILE_SYSTEM_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_DATA_REPOSITORY_TYPE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::INVALID_DATA_REPOSITORY_TYPE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::INVALID_DATA_REPOSITORY_TYPE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_NETWORK_SETTINGS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::INVALID_NETWORK_SETTINGS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::INVALID_NETWORK_SETTINGS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_SOURCE_KMS_KEY_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::INVALID_SOURCE_KMS_KEY), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::INVALID_SOURCE_KMS_KEY), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_IMPORT_PATH_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::INVALID_IMPORT_PATH), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::INVALID_IMPORT_PATH), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == SOURCE_BACKUP_UNAVAILABLE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::SOURCE_BACKUP_UNAVAILABLE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::SOURCE_BACKUP_UNAVAILABLE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == BACKUP_BEING_COPIED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::BACKUP_BEING_COPIED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::BACKUP_BEING_COPIED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_PER_UNIT_STORAGE_THROUGHPUT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::INVALID_PER_UNIT_STORAGE_THROUGHPUT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::INVALID_PER_UNIT_STORAGE_THROUGHPUT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_REGION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::INVALID_REGION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::INVALID_REGION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_EXPORT_PATH_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::INVALID_EXPORT_PATH), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::INVALID_EXPORT_PATH), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == BACKUP_IN_PROGRESS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::BACKUP_IN_PROGRESS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::BACKUP_IN_PROGRESS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == BACKUP_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::BACKUP_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::BACKUP_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == DATA_REPOSITORY_TASK_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::DATA_REPOSITORY_TASK_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::DATA_REPOSITORY_TASK_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == MISSING_FILE_CACHE_CONFIGURATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::MISSING_FILE_CACHE_CONFIGURATION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::MISSING_FILE_CACHE_CONFIGURATION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == BACKUP_RESTORING_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::BACKUP_RESTORING), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::BACKUP_RESTORING), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INCOMPATIBLE_REGION_FOR_MULTI_A_Z_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::INCOMPATIBLE_REGION_FOR_MULTI_A_Z), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::INCOMPATIBLE_REGION_FOR_MULTI_A_Z), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == SERVICE_LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::SERVICE_LIMIT_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::SERVICE_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == UNSUPPORTED_OPERATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::UNSUPPORTED_OPERATION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::UNSUPPORTED_OPERATION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == DATA_REPOSITORY_TASK_ENDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::DATA_REPOSITORY_TASK_ENDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::DATA_REPOSITORY_TASK_ENDED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == NOT_SERVICE_RESOURCE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::NOT_SERVICE_RESOURCE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::NOT_SERVICE_RESOURCE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_DESTINATION_KMS_KEY_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::INVALID_DESTINATION_KMS_KEY), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::INVALID_DESTINATION_KMS_KEY), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == RESOURCE_DOES_NOT_SUPPORT_TAGGING_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::RESOURCE_DOES_NOT_SUPPORT_TAGGING), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::RESOURCE_DOES_NOT_SUPPORT_TAGGING), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == DATA_REPOSITORY_TASK_EXECUTING_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::DATA_REPOSITORY_TASK_EXECUTING), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::DATA_REPOSITORY_TASK_EXECUTING), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == STORAGE_VIRTUAL_MACHINE_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::STORAGE_VIRTUAL_MACHINE_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::STORAGE_VIRTUAL_MACHINE_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == FILE_CACHE_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::FILE_CACHE_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::FILE_CACHE_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == VOLUME_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::VOLUME_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::VOLUME_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == MISSING_VOLUME_CONFIGURATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::MISSING_VOLUME_CONFIGURATION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::MISSING_VOLUME_CONFIGURATION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == BAD_REQUEST_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::BAD_REQUEST), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::BAD_REQUEST), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == MISSING_FILE_SYSTEM_CONFIGURATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::MISSING_FILE_SYSTEM_CONFIGURATION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::MISSING_FILE_SYSTEM_CONFIGURATION), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

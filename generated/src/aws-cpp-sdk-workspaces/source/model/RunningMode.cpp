@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RunningMode::NOT_SET:
+            return {};
           case RunningMode::AUTO_STOP:
             return "AUTO_STOP";
           case RunningMode::ALWAYS_ON:

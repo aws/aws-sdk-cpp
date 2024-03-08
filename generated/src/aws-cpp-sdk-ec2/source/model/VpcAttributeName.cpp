@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VpcAttributeName::NOT_SET:
+            return {};
           case VpcAttributeName::enableDnsSupport:
             return "enableDnsSupport";
           case VpcAttributeName::enableDnsHostnames:

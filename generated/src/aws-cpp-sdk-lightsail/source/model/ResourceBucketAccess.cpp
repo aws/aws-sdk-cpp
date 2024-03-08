@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResourceBucketAccess::NOT_SET:
+            return {};
           case ResourceBucketAccess::allow:
             return "allow";
           case ResourceBucketAccess::deny:

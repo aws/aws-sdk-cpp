@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case IntentState::NOT_SET:
+            return {};
           case IntentState::Failed:
             return "Failed";
           case IntentState::Fulfilled:

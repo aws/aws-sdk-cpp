@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HorizontalTilePosition::NOT_SET:
+            return {};
           case HorizontalTilePosition::Top:
             return "Top";
           case HorizontalTilePosition::Bottom:

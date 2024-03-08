@@ -350,7 +350,7 @@ namespace Model
      * which the Amazon Web Services side of the VPN connection performs an IKE rekey.
      * The exact time of the rekey is randomly selected based on the value for
      * <code>RekeyFuzzPercentage</code>.</p> <p>Constraints: A value between 60 and
-     * half of <code>Phase2LifetimeSeconds</code>.</p> <p>Default: <code>540</code>
+     * half of <code>Phase2LifetimeSeconds</code>.</p> <p>Default: <code>270</code>
      * </p>
      */
     inline int GetRekeyMarginTimeSeconds() const{ return m_rekeyMarginTimeSeconds; }
@@ -360,7 +360,7 @@ namespace Model
      * which the Amazon Web Services side of the VPN connection performs an IKE rekey.
      * The exact time of the rekey is randomly selected based on the value for
      * <code>RekeyFuzzPercentage</code>.</p> <p>Constraints: A value between 60 and
-     * half of <code>Phase2LifetimeSeconds</code>.</p> <p>Default: <code>540</code>
+     * half of <code>Phase2LifetimeSeconds</code>.</p> <p>Default: <code>270</code>
      * </p>
      */
     inline bool RekeyMarginTimeSecondsHasBeenSet() const { return m_rekeyMarginTimeSecondsHasBeenSet; }
@@ -370,7 +370,7 @@ namespace Model
      * which the Amazon Web Services side of the VPN connection performs an IKE rekey.
      * The exact time of the rekey is randomly selected based on the value for
      * <code>RekeyFuzzPercentage</code>.</p> <p>Constraints: A value between 60 and
-     * half of <code>Phase2LifetimeSeconds</code>.</p> <p>Default: <code>540</code>
+     * half of <code>Phase2LifetimeSeconds</code>.</p> <p>Default: <code>270</code>
      * </p>
      */
     inline void SetRekeyMarginTimeSeconds(int value) { m_rekeyMarginTimeSecondsHasBeenSet = true; m_rekeyMarginTimeSeconds = value; }
@@ -380,7 +380,7 @@ namespace Model
      * which the Amazon Web Services side of the VPN connection performs an IKE rekey.
      * The exact time of the rekey is randomly selected based on the value for
      * <code>RekeyFuzzPercentage</code>.</p> <p>Constraints: A value between 60 and
-     * half of <code>Phase2LifetimeSeconds</code>.</p> <p>Default: <code>540</code>
+     * half of <code>Phase2LifetimeSeconds</code>.</p> <p>Default: <code>270</code>
      * </p>
      */
     inline VpnTunnelOptionsSpecification& WithRekeyMarginTimeSeconds(int value) { SetRekeyMarginTimeSeconds(value); return *this;}

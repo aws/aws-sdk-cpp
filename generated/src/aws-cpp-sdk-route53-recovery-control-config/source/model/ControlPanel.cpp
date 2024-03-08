@@ -27,7 +27,8 @@ ControlPanel::ControlPanel() :
     m_routingControlCount(0),
     m_routingControlCountHasBeenSet(false),
     m_status(Status::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_ownerHasBeenSet(false)
 {
 }
 
@@ -40,7 +41,8 @@ ControlPanel::ControlPanel(JsonView jsonValue) :
     m_routingControlCount(0),
     m_routingControlCountHasBeenSet(false),
     m_status(Status::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_ownerHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -89,6 +91,13 @@ ControlPanel& ControlPanel::operator =(JsonView jsonValue)
     m_statusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Owner"))
+  {
+    m_owner = jsonValue.GetString("Owner");
+
+    m_ownerHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -129,6 +138,12 @@ JsonValue ControlPanel::Jsonize() const
   if(m_statusHasBeenSet)
   {
    payload.WithString("Status", StatusMapper::GetNameForStatus(m_status));
+  }
+
+  if(m_ownerHasBeenSet)
+  {
+   payload.WithString("Owner", m_owner);
+
   }
 
   return payload;

@@ -155,6 +155,20 @@
       ],
       "documentation":"<p>Retrieves the cost anomaly subscription objects for your account. You can filter using a list of cost anomaly monitor Amazon Resource Names (ARNs). </p>"
     },
+    "GetApproximateUsageRecords":{
+      "name":"GetApproximateUsageRecords",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"GetApproximateUsageRecordsRequest"},
+      "output":{"shape":"GetApproximateUsageRecordsResponse"},
+      "errors":[
+        {"shape":"LimitExceededException"},
+        {"shape":"DataUnavailableException"}
+      ],
+      "documentation":"<p>Retrieves estimated usage records for hourly granularity or resource-level data at daily granularity.</p>"
+    },
     "GetCostAndUsage":{
       "name":"GetCostAndUsage",
       "http":{
@@ -779,6 +793,18 @@
     "AnomalySubscriptions":{
       "type":"list",
       "member":{"shape":"AnomalySubscription"}
+    },
+    "ApproximateUsageRecordsPerService":{
+      "type":"map",
+      "key":{"shape":"GenericString"},
+      "value":{"shape":"NonNegativeLong"}
+    },
+    "ApproximationDimension":{
+      "type":"string",
+      "enum":[
+        "SERVICE",
+        "RESOURCE"
+      ]
     },
     "Arn":{
       "type":"string",
@@ -1671,7 +1697,7 @@
           "documentation":"<p>Determines whether the recommended reservation is size flexible.</p>"
         }
       },
-      "documentation":"<p>Details about the Amazon EC2 instances that Amazon Web Services recommends that you purchase.</p>"
+      "documentation":"<p>Details about the Amazon EC2 reservations that Amazon Web Services recommends that you purchase.</p>"
     },
     "EC2ResourceDetails":{
       "type":"structure",
@@ -1779,7 +1805,7 @@
           "documentation":"<p>Determines whether the recommended reservation is size flexible.</p>"
         }
       },
-      "documentation":"<p>Details about the Amazon OpenSearch Service instances that Amazon Web Services recommends that you purchase.</p>"
+      "documentation":"<p>Details about the Amazon OpenSearch Service reservations that Amazon Web Services recommends that you purchase.</p>"
     },
     "ElastiCacheInstanceDetails":{
       "type":"structure",
@@ -1809,7 +1835,7 @@
           "documentation":"<p>Determines whether the recommended reservation is size flexible.</p>"
         }
       },
-      "documentation":"<p>Details about the Amazon ElastiCache instances that Amazon Web Services recommends that you purchase.</p>"
+      "documentation":"<p>Details about the Amazon ElastiCache reservations that Amazon Web Services recommends that you purchase.</p>"
     },
     "Entity":{"type":"string"},
     "ErrorMessage":{"type":"string"},
@@ -2060,6 +2086,44 @@
         "NextPageToken":{
           "shape":"NextPageToken",
           "documentation":"<p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>"
+        }
+      }
+    },
+    "GetApproximateUsageRecordsRequest":{
+      "type":"structure",
+      "required":[
+        "Granularity",
+        "ApproximationDimension"
+      ],
+      "members":{
+        "Granularity":{
+          "shape":"Granularity",
+          "documentation":"<p>How granular you want the data to be. You can enable data at hourly or daily granularity.</p>"
+        },
+        "Services":{
+          "shape":"UsageServices",
+          "documentation":"<p>The service metadata for the service or services you want to query. If not specified, all elements are returned.</p>"
+        },
+        "ApproximationDimension":{
+          "shape":"ApproximationDimension",
+          "documentation":"<p>The service to evaluate for the usage records. You can choose resource-level data at daily granularity, or hourly granularity with or without resource-level data.</p>"
+        }
+      }
+    },
+    "GetApproximateUsageRecordsResponse":{
+      "type":"structure",
+      "members":{
+        "Services":{
+          "shape":"ApproximateUsageRecordsPerService",
+          "documentation":"<p>The service metadata for the service or services in the response.</p>"
+        },
+        "TotalRecords":{
+          "shape":"NonNegativeLong",
+          "documentation":"<p>The total number of usage records for all services in the services list.</p>"
+        },
+        "LookbackPeriod":{
+          "shape":"DateInterval",
+          "documentation":"<p>The lookback period that's used for the estimation.</p>"
         }
       }
     },
@@ -2968,26 +3032,30 @@
       "members":{
         "EC2InstanceDetails":{
           "shape":"EC2InstanceDetails",
-          "documentation":"<p>The Amazon EC2 instances that Amazon Web Services recommends that you purchase.</p>"
+          "documentation":"<p>The Amazon EC2 reservations that Amazon Web Services recommends that you purchase.</p>"
         },
         "RDSInstanceDetails":{
           "shape":"RDSInstanceDetails",
-          "documentation":"<p>The Amazon RDS instances that Amazon Web Services recommends that you purchase.</p>"
+          "documentation":"<p>The Amazon RDS reservations that Amazon Web Services recommends that you purchase.</p>"
         },
         "RedshiftInstanceDetails":{
           "shape":"RedshiftInstanceDetails",
-          "documentation":"<p>The Amazon Redshift instances that Amazon Web Services recommends that you purchase.</p>"
+          "documentation":"<p>The Amazon Redshift reservations that Amazon Web Services recommends that you purchase.</p>"
         },
         "ElastiCacheInstanceDetails":{
           "shape":"ElastiCacheInstanceDetails",
-          "documentation":"<p>The ElastiCache instances that Amazon Web Services recommends that you purchase.</p>"
+          "documentation":"<p>The ElastiCache reservations that Amazon Web Services recommends that you purchase.</p>"
         },
         "ESInstanceDetails":{
           "shape":"ESInstanceDetails",
-          "documentation":"<p>The Amazon OpenSearch Service instances that Amazon Web Services recommends that you purchase.</p>"
+          "documentation":"<p>The Amazon OpenSearch Service reservations that Amazon Web Services recommends that you purchase.</p>"
+        },
+        "MemoryDBInstanceDetails":{
+          "shape":"MemoryDBInstanceDetails",
+          "documentation":"<p>The MemoryDB reservations that Amazon Web Services recommends that you purchase.</p>"
         }
       },
-      "documentation":"<p>Details about the instances that Amazon Web Services recommends that you purchase.</p>"
+      "documentation":"<p>Details about the reservations that Amazon Web Services recommends that you purchase.</p>"
     },
     "InvalidNextTokenException":{
       "type":"structure",
@@ -3162,6 +3230,32 @@
       "type":"integer",
       "min":1
     },
+    "MemoryDBInstanceDetails":{
+      "type":"structure",
+      "members":{
+        "Family":{
+          "shape":"GenericString",
+          "documentation":"<p>The instance family of the recommended reservation.</p>"
+        },
+        "NodeType":{
+          "shape":"GenericString",
+          "documentation":"<p>The node type of the recommended reservation.</p>"
+        },
+        "Region":{
+          "shape":"GenericString",
+          "documentation":"<p>The Amazon Web Services Region of the recommended reservation.</p>"
+        },
+        "CurrentGeneration":{
+          "shape":"GenericBoolean",
+          "documentation":"<p>Determines whether the recommendation is for a current generation instance.</p>"
+        },
+        "SizeFlexEligible":{
+          "shape":"GenericBoolean",
+          "documentation":"<p>Determines whether the recommended reservation is size flexible.</p>"
+        }
+      },
+      "documentation":"<p>Details about the MemoryDB reservations that Amazon Web Services recommends that you purchase.</p>"
+    },
     "Metric":{
       "type":"string",
       "enum":[
@@ -3265,6 +3359,10 @@
     },
     "NonNegativeInteger":{
       "type":"integer",
+      "min":0
+    },
+    "NonNegativeLong":{
+      "type":"long",
       "min":0
     },
     "NullableNonNegativeDouble":{
@@ -3393,7 +3491,7 @@
           "documentation":"<p>Determines whether the recommended reservation is size flexible.</p>"
         }
       },
-      "documentation":"<p>Details about the Amazon RDS instances that Amazon Web Services recommends that you purchase.</p>"
+      "documentation":"<p>Details about the Amazon RDS reservations that Amazon Web Services recommends that you purchase.</p>"
     },
     "RICostForUnusedHours":{"type":"string"},
     "RealizedSavings":{"type":"string"},
@@ -3583,7 +3681,7 @@
           "documentation":"<p>Determines whether the recommended reservation is size flexible.</p>"
         }
       },
-      "documentation":"<p>Details about the Amazon Redshift instances that Amazon Web Services recommends that you purchase.</p>"
+      "documentation":"<p>Details about the Amazon Redshift reservations that Amazon Web Services recommends that you purchase.</p>"
     },
     "RequestChangedException":{
       "type":"structure",
@@ -3730,7 +3828,7 @@
         },
         "InstanceDetails":{
           "shape":"InstanceDetails",
-          "documentation":"<p>Details about the instances that Amazon Web Services recommends that you purchase.</p>"
+          "documentation":"<p>Details about the reservations that Amazon Web Services recommends that you purchase.</p>"
         },
         "RecommendedNumberOfInstancesToPurchase":{
           "shape":"GenericString",
@@ -4964,6 +5062,10 @@
           "documentation":"<p>The Cost Category's effective start date. It can only be a billing start date (first day of the month).</p>"
         }
       }
+    },
+    "UsageServices":{
+      "type":"list",
+      "member":{"shape":"GenericString"}
     },
     "UtilizationByTime":{
       "type":"structure",

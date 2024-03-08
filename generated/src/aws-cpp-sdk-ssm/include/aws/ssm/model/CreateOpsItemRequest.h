@@ -42,42 +42,58 @@ namespace Model
 
 
     /**
-     * <p>Information about the OpsItem. </p>
+     * <p>User-defined text that contains information about the OpsItem, in Markdown
+     * format. </p>  <p>Provide enough information so that users viewing this
+     * OpsItem for the first time understand the issue. </p> 
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>Information about the OpsItem. </p>
+     * <p>User-defined text that contains information about the OpsItem, in Markdown
+     * format. </p>  <p>Provide enough information so that users viewing this
+     * OpsItem for the first time understand the issue. </p> 
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>Information about the OpsItem. </p>
+     * <p>User-defined text that contains information about the OpsItem, in Markdown
+     * format. </p>  <p>Provide enough information so that users viewing this
+     * OpsItem for the first time understand the issue. </p> 
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>Information about the OpsItem. </p>
+     * <p>User-defined text that contains information about the OpsItem, in Markdown
+     * format. </p>  <p>Provide enough information so that users viewing this
+     * OpsItem for the first time understand the issue. </p> 
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>Information about the OpsItem. </p>
+     * <p>User-defined text that contains information about the OpsItem, in Markdown
+     * format. </p>  <p>Provide enough information so that users viewing this
+     * OpsItem for the first time understand the issue. </p> 
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>Information about the OpsItem. </p>
+     * <p>User-defined text that contains information about the OpsItem, in Markdown
+     * format. </p>  <p>Provide enough information so that users viewing this
+     * OpsItem for the first time understand the issue. </p> 
      */
     inline CreateOpsItemRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>Information about the OpsItem. </p>
+     * <p>User-defined text that contains information about the OpsItem, in Markdown
+     * format. </p>  <p>Provide enough information so that users viewing this
+     * OpsItem for the first time understand the issue. </p> 
      */
     inline CreateOpsItemRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>Information about the OpsItem. </p>
+     * <p>User-defined text that contains information about the OpsItem, in Markdown
+     * format. </p>  <p>Provide enough information so that users viewing this
+     * OpsItem for the first time understand the issue. </p> 
      */
     inline CreateOpsItemRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
@@ -88,7 +104,7 @@ namespace Model
      * OpsItem is used for default OpsItems created by OpsCenter. </p> </li> <li> <p>
      * <code>/aws/changerequest</code> </p> <p>This type of OpsItem is used by Change
      * Manager for reviewing and approving or rejecting change requests. </p> </li>
-     * <li> <p> <code>/aws/insights</code> </p> <p>This type of OpsItem is used by
+     * <li> <p> <code>/aws/insight</code> </p> <p>This type of OpsItem is used by
      * OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li> </ul>
      */
     inline const Aws::String& GetOpsItemType() const{ return m_opsItemType; }
@@ -99,7 +115,7 @@ namespace Model
      * OpsItem is used for default OpsItems created by OpsCenter. </p> </li> <li> <p>
      * <code>/aws/changerequest</code> </p> <p>This type of OpsItem is used by Change
      * Manager for reviewing and approving or rejecting change requests. </p> </li>
-     * <li> <p> <code>/aws/insights</code> </p> <p>This type of OpsItem is used by
+     * <li> <p> <code>/aws/insight</code> </p> <p>This type of OpsItem is used by
      * OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li> </ul>
      */
     inline bool OpsItemTypeHasBeenSet() const { return m_opsItemTypeHasBeenSet; }
@@ -110,7 +126,7 @@ namespace Model
      * OpsItem is used for default OpsItems created by OpsCenter. </p> </li> <li> <p>
      * <code>/aws/changerequest</code> </p> <p>This type of OpsItem is used by Change
      * Manager for reviewing and approving or rejecting change requests. </p> </li>
-     * <li> <p> <code>/aws/insights</code> </p> <p>This type of OpsItem is used by
+     * <li> <p> <code>/aws/insight</code> </p> <p>This type of OpsItem is used by
      * OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li> </ul>
      */
     inline void SetOpsItemType(const Aws::String& value) { m_opsItemTypeHasBeenSet = true; m_opsItemType = value; }
@@ -121,7 +137,7 @@ namespace Model
      * OpsItem is used for default OpsItems created by OpsCenter. </p> </li> <li> <p>
      * <code>/aws/changerequest</code> </p> <p>This type of OpsItem is used by Change
      * Manager for reviewing and approving or rejecting change requests. </p> </li>
-     * <li> <p> <code>/aws/insights</code> </p> <p>This type of OpsItem is used by
+     * <li> <p> <code>/aws/insight</code> </p> <p>This type of OpsItem is used by
      * OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li> </ul>
      */
     inline void SetOpsItemType(Aws::String&& value) { m_opsItemTypeHasBeenSet = true; m_opsItemType = std::move(value); }
@@ -132,7 +148,7 @@ namespace Model
      * OpsItem is used for default OpsItems created by OpsCenter. </p> </li> <li> <p>
      * <code>/aws/changerequest</code> </p> <p>This type of OpsItem is used by Change
      * Manager for reviewing and approving or rejecting change requests. </p> </li>
-     * <li> <p> <code>/aws/insights</code> </p> <p>This type of OpsItem is used by
+     * <li> <p> <code>/aws/insight</code> </p> <p>This type of OpsItem is used by
      * OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li> </ul>
      */
     inline void SetOpsItemType(const char* value) { m_opsItemTypeHasBeenSet = true; m_opsItemType.assign(value); }
@@ -143,7 +159,7 @@ namespace Model
      * OpsItem is used for default OpsItems created by OpsCenter. </p> </li> <li> <p>
      * <code>/aws/changerequest</code> </p> <p>This type of OpsItem is used by Change
      * Manager for reviewing and approving or rejecting change requests. </p> </li>
-     * <li> <p> <code>/aws/insights</code> </p> <p>This type of OpsItem is used by
+     * <li> <p> <code>/aws/insight</code> </p> <p>This type of OpsItem is used by
      * OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li> </ul>
      */
     inline CreateOpsItemRequest& WithOpsItemType(const Aws::String& value) { SetOpsItemType(value); return *this;}
@@ -154,7 +170,7 @@ namespace Model
      * OpsItem is used for default OpsItems created by OpsCenter. </p> </li> <li> <p>
      * <code>/aws/changerequest</code> </p> <p>This type of OpsItem is used by Change
      * Manager for reviewing and approving or rejecting change requests. </p> </li>
-     * <li> <p> <code>/aws/insights</code> </p> <p>This type of OpsItem is used by
+     * <li> <p> <code>/aws/insight</code> </p> <p>This type of OpsItem is used by
      * OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li> </ul>
      */
     inline CreateOpsItemRequest& WithOpsItemType(Aws::String&& value) { SetOpsItemType(std::move(value)); return *this;}
@@ -165,7 +181,7 @@ namespace Model
      * OpsItem is used for default OpsItems created by OpsCenter. </p> </li> <li> <p>
      * <code>/aws/changerequest</code> </p> <p>This type of OpsItem is used by Change
      * Manager for reviewing and approving or rejecting change requests. </p> </li>
-     * <li> <p> <code>/aws/insights</code> </p> <p>This type of OpsItem is used by
+     * <li> <p> <code>/aws/insight</code> </p> <p>This type of OpsItem is used by
      * OpsCenter for aggregating and reporting on duplicate OpsItems. </p> </li> </ul>
      */
     inline CreateOpsItemRequest& WithOpsItemType(const char* value) { SetOpsItemType(value); return *this;}

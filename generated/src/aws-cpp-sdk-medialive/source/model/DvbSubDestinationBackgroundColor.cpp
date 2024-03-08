@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DvbSubDestinationBackgroundColor::NOT_SET:
+            return {};
           case DvbSubDestinationBackgroundColor::BLACK:
             return "BLACK";
           case DvbSubDestinationBackgroundColor::NONE:

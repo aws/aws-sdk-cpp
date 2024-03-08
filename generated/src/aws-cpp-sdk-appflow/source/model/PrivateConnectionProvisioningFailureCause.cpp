@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PrivateConnectionProvisioningFailureCause::NOT_SET:
+            return {};
           case PrivateConnectionProvisioningFailureCause::CONNECTOR_AUTHENTICATION:
             return "CONNECTOR_AUTHENTICATION";
           case PrivateConnectionProvisioningFailureCause::CONNECTOR_SERVER:

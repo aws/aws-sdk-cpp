@@ -94,6 +94,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ApplicationLifecycle::NOT_SET:
+            return {};
           case ApplicationLifecycle::Creating:
             return "Creating";
           case ApplicationLifecycle::Created:

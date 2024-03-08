@@ -286,12 +286,11 @@ namespace Model
      * <p>Insufficient capacity error from EC2 while launching instances, retrying!</p>
      * </li> <li> <p>Launched instance was unhealthy, replacing it!</p> </li> <li>
      * <p>Preparing the instances for training.</p> </li> </ul> </dd> <dt>Training</dt>
-     * <dd> <ul> <li> <p>Downloading the training image.</p> </li> <li> <p>Training
-     * image download completed. Training in progress.</p> </li> </ul> </dd> </dl>
-     *  <p>Status messages are subject to change. Therefore, we recommend
-     * not including them in code that programmatically initiates actions. For
-     * examples, don't use status messages in if statements.</p>  <p>To
-     * have an overview of your training job's progress, view
+     * <dd> <ul> <li> <p>Training image download completed. Training in progress.</p>
+     * </li> </ul> </dd> </dl>  <p>Status messages are subject to change.
+     * Therefore, we recommend not including them in code that programmatically
+     * initiates actions. For examples, don't use status messages in if statements.</p>
+     *  <p>To have an overview of your training job's progress, view
      * <code>TrainingJobStatus</code> and <code>SecondaryStatus</code> in <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeTrainingJob.html">DescribeTrainingJob</a>,
      * and <code>StatusMessage</code> together. For example, at the start of a training
@@ -310,12 +309,11 @@ namespace Model
      * <p>Insufficient capacity error from EC2 while launching instances, retrying!</p>
      * </li> <li> <p>Launched instance was unhealthy, replacing it!</p> </li> <li>
      * <p>Preparing the instances for training.</p> </li> </ul> </dd> <dt>Training</dt>
-     * <dd> <ul> <li> <p>Downloading the training image.</p> </li> <li> <p>Training
-     * image download completed. Training in progress.</p> </li> </ul> </dd> </dl>
-     *  <p>Status messages are subject to change. Therefore, we recommend
-     * not including them in code that programmatically initiates actions. For
-     * examples, don't use status messages in if statements.</p>  <p>To
-     * have an overview of your training job's progress, view
+     * <dd> <ul> <li> <p>Training image download completed. Training in progress.</p>
+     * </li> </ul> </dd> </dl>  <p>Status messages are subject to change.
+     * Therefore, we recommend not including them in code that programmatically
+     * initiates actions. For examples, don't use status messages in if statements.</p>
+     *  <p>To have an overview of your training job's progress, view
      * <code>TrainingJobStatus</code> and <code>SecondaryStatus</code> in <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeTrainingJob.html">DescribeTrainingJob</a>,
      * and <code>StatusMessage</code> together. For example, at the start of a training
@@ -334,12 +332,11 @@ namespace Model
      * <p>Insufficient capacity error from EC2 while launching instances, retrying!</p>
      * </li> <li> <p>Launched instance was unhealthy, replacing it!</p> </li> <li>
      * <p>Preparing the instances for training.</p> </li> </ul> </dd> <dt>Training</dt>
-     * <dd> <ul> <li> <p>Downloading the training image.</p> </li> <li> <p>Training
-     * image download completed. Training in progress.</p> </li> </ul> </dd> </dl>
-     *  <p>Status messages are subject to change. Therefore, we recommend
-     * not including them in code that programmatically initiates actions. For
-     * examples, don't use status messages in if statements.</p>  <p>To
-     * have an overview of your training job's progress, view
+     * <dd> <ul> <li> <p>Training image download completed. Training in progress.</p>
+     * </li> </ul> </dd> </dl>  <p>Status messages are subject to change.
+     * Therefore, we recommend not including them in code that programmatically
+     * initiates actions. For examples, don't use status messages in if statements.</p>
+     *  <p>To have an overview of your training job's progress, view
      * <code>TrainingJobStatus</code> and <code>SecondaryStatus</code> in <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeTrainingJob.html">DescribeTrainingJob</a>,
      * and <code>StatusMessage</code> together. For example, at the start of a training
@@ -358,12 +355,11 @@ namespace Model
      * <p>Insufficient capacity error from EC2 while launching instances, retrying!</p>
      * </li> <li> <p>Launched instance was unhealthy, replacing it!</p> </li> <li>
      * <p>Preparing the instances for training.</p> </li> </ul> </dd> <dt>Training</dt>
-     * <dd> <ul> <li> <p>Downloading the training image.</p> </li> <li> <p>Training
-     * image download completed. Training in progress.</p> </li> </ul> </dd> </dl>
-     *  <p>Status messages are subject to change. Therefore, we recommend
-     * not including them in code that programmatically initiates actions. For
-     * examples, don't use status messages in if statements.</p>  <p>To
-     * have an overview of your training job's progress, view
+     * <dd> <ul> <li> <p>Training image download completed. Training in progress.</p>
+     * </li> </ul> </dd> </dl>  <p>Status messages are subject to change.
+     * Therefore, we recommend not including them in code that programmatically
+     * initiates actions. For examples, don't use status messages in if statements.</p>
+     *  <p>To have an overview of your training job's progress, view
      * <code>TrainingJobStatus</code> and <code>SecondaryStatus</code> in <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeTrainingJob.html">DescribeTrainingJob</a>,
      * and <code>StatusMessage</code> together. For example, at the start of a training
@@ -382,12 +378,11 @@ namespace Model
      * <p>Insufficient capacity error from EC2 while launching instances, retrying!</p>
      * </li> <li> <p>Launched instance was unhealthy, replacing it!</p> </li> <li>
      * <p>Preparing the instances for training.</p> </li> </ul> </dd> <dt>Training</dt>
-     * <dd> <ul> <li> <p>Downloading the training image.</p> </li> <li> <p>Training
-     * image download completed. Training in progress.</p> </li> </ul> </dd> </dl>
-     *  <p>Status messages are subject to change. Therefore, we recommend
-     * not including them in code that programmatically initiates actions. For
-     * examples, don't use status messages in if statements.</p>  <p>To
-     * have an overview of your training job's progress, view
+     * <dd> <ul> <li> <p>Training image download completed. Training in progress.</p>
+     * </li> </ul> </dd> </dl>  <p>Status messages are subject to change.
+     * Therefore, we recommend not including them in code that programmatically
+     * initiates actions. For examples, don't use status messages in if statements.</p>
+     *  <p>To have an overview of your training job's progress, view
      * <code>TrainingJobStatus</code> and <code>SecondaryStatus</code> in <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeTrainingJob.html">DescribeTrainingJob</a>,
      * and <code>StatusMessage</code> together. For example, at the start of a training
@@ -406,12 +401,11 @@ namespace Model
      * <p>Insufficient capacity error from EC2 while launching instances, retrying!</p>
      * </li> <li> <p>Launched instance was unhealthy, replacing it!</p> </li> <li>
      * <p>Preparing the instances for training.</p> </li> </ul> </dd> <dt>Training</dt>
-     * <dd> <ul> <li> <p>Downloading the training image.</p> </li> <li> <p>Training
-     * image download completed. Training in progress.</p> </li> </ul> </dd> </dl>
-     *  <p>Status messages are subject to change. Therefore, we recommend
-     * not including them in code that programmatically initiates actions. For
-     * examples, don't use status messages in if statements.</p>  <p>To
-     * have an overview of your training job's progress, view
+     * <dd> <ul> <li> <p>Training image download completed. Training in progress.</p>
+     * </li> </ul> </dd> </dl>  <p>Status messages are subject to change.
+     * Therefore, we recommend not including them in code that programmatically
+     * initiates actions. For examples, don't use status messages in if statements.</p>
+     *  <p>To have an overview of your training job's progress, view
      * <code>TrainingJobStatus</code> and <code>SecondaryStatus</code> in <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeTrainingJob.html">DescribeTrainingJob</a>,
      * and <code>StatusMessage</code> together. For example, at the start of a training
@@ -430,12 +424,11 @@ namespace Model
      * <p>Insufficient capacity error from EC2 while launching instances, retrying!</p>
      * </li> <li> <p>Launched instance was unhealthy, replacing it!</p> </li> <li>
      * <p>Preparing the instances for training.</p> </li> </ul> </dd> <dt>Training</dt>
-     * <dd> <ul> <li> <p>Downloading the training image.</p> </li> <li> <p>Training
-     * image download completed. Training in progress.</p> </li> </ul> </dd> </dl>
-     *  <p>Status messages are subject to change. Therefore, we recommend
-     * not including them in code that programmatically initiates actions. For
-     * examples, don't use status messages in if statements.</p>  <p>To
-     * have an overview of your training job's progress, view
+     * <dd> <ul> <li> <p>Training image download completed. Training in progress.</p>
+     * </li> </ul> </dd> </dl>  <p>Status messages are subject to change.
+     * Therefore, we recommend not including them in code that programmatically
+     * initiates actions. For examples, don't use status messages in if statements.</p>
+     *  <p>To have an overview of your training job's progress, view
      * <code>TrainingJobStatus</code> and <code>SecondaryStatus</code> in <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeTrainingJob.html">DescribeTrainingJob</a>,
      * and <code>StatusMessage</code> together. For example, at the start of a training
@@ -454,12 +447,11 @@ namespace Model
      * <p>Insufficient capacity error from EC2 while launching instances, retrying!</p>
      * </li> <li> <p>Launched instance was unhealthy, replacing it!</p> </li> <li>
      * <p>Preparing the instances for training.</p> </li> </ul> </dd> <dt>Training</dt>
-     * <dd> <ul> <li> <p>Downloading the training image.</p> </li> <li> <p>Training
-     * image download completed. Training in progress.</p> </li> </ul> </dd> </dl>
-     *  <p>Status messages are subject to change. Therefore, we recommend
-     * not including them in code that programmatically initiates actions. For
-     * examples, don't use status messages in if statements.</p>  <p>To
-     * have an overview of your training job's progress, view
+     * <dd> <ul> <li> <p>Training image download completed. Training in progress.</p>
+     * </li> </ul> </dd> </dl>  <p>Status messages are subject to change.
+     * Therefore, we recommend not including them in code that programmatically
+     * initiates actions. For examples, don't use status messages in if statements.</p>
+     *  <p>To have an overview of your training job's progress, view
      * <code>TrainingJobStatus</code> and <code>SecondaryStatus</code> in <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeTrainingJob.html">DescribeTrainingJob</a>,
      * and <code>StatusMessage</code> together. For example, at the start of a training

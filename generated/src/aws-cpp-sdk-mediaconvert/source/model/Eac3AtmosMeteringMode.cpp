@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Eac3AtmosMeteringMode::NOT_SET:
+            return {};
           case Eac3AtmosMeteringMode::LEQ_A:
             return "LEQ_A";
           case Eac3AtmosMeteringMode::ITU_BS_1770_1:

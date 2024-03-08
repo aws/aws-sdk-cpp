@@ -151,6 +151,87 @@ namespace Model
      */
     inline AssetHierarchy& WithName(const char* value) { SetName(value); return *this;}
 
+
+    /**
+     * <p>The external ID of the hierarchy, if it has one. When you update an asset
+     * hierarchy, you may assign an external ID if it doesn't already have one. You
+     * can't change the external ID of an asset hierarchy that already has one. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline const Aws::String& GetExternalId() const{ return m_externalId; }
+
+    /**
+     * <p>The external ID of the hierarchy, if it has one. When you update an asset
+     * hierarchy, you may assign an external ID if it doesn't already have one. You
+     * can't change the external ID of an asset hierarchy that already has one. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline bool ExternalIdHasBeenSet() const { return m_externalIdHasBeenSet; }
+
+    /**
+     * <p>The external ID of the hierarchy, if it has one. When you update an asset
+     * hierarchy, you may assign an external ID if it doesn't already have one. You
+     * can't change the external ID of an asset hierarchy that already has one. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline void SetExternalId(const Aws::String& value) { m_externalIdHasBeenSet = true; m_externalId = value; }
+
+    /**
+     * <p>The external ID of the hierarchy, if it has one. When you update an asset
+     * hierarchy, you may assign an external ID if it doesn't already have one. You
+     * can't change the external ID of an asset hierarchy that already has one. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline void SetExternalId(Aws::String&& value) { m_externalIdHasBeenSet = true; m_externalId = std::move(value); }
+
+    /**
+     * <p>The external ID of the hierarchy, if it has one. When you update an asset
+     * hierarchy, you may assign an external ID if it doesn't already have one. You
+     * can't change the external ID of an asset hierarchy that already has one. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline void SetExternalId(const char* value) { m_externalIdHasBeenSet = true; m_externalId.assign(value); }
+
+    /**
+     * <p>The external ID of the hierarchy, if it has one. When you update an asset
+     * hierarchy, you may assign an external ID if it doesn't already have one. You
+     * can't change the external ID of an asset hierarchy that already has one. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline AssetHierarchy& WithExternalId(const Aws::String& value) { SetExternalId(value); return *this;}
+
+    /**
+     * <p>The external ID of the hierarchy, if it has one. When you update an asset
+     * hierarchy, you may assign an external ID if it doesn't already have one. You
+     * can't change the external ID of an asset hierarchy that already has one. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline AssetHierarchy& WithExternalId(Aws::String&& value) { SetExternalId(std::move(value)); return *this;}
+
+    /**
+     * <p>The external ID of the hierarchy, if it has one. When you update an asset
+     * hierarchy, you may assign an external ID if it doesn't already have one. You
+     * can't change the external ID of an asset hierarchy that already has one. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+     * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
+     */
+    inline AssetHierarchy& WithExternalId(const char* value) { SetExternalId(value); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -158,6 +239,9 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
+
+    Aws::String m_externalId;
+    bool m_externalIdHasBeenSet = false;
   };
 
 } // namespace Model

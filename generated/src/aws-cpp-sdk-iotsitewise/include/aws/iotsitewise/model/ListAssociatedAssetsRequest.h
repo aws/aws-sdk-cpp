@@ -40,49 +40,86 @@ namespace Model
 
 
     /**
-     * <p>The ID of the asset to query.</p>
+     * <p>The ID of the asset to query. This can be either the actual ID in UUID
+     * format, or else <code>externalId:</code> followed by the external ID, if it has
+     * one. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline const Aws::String& GetAssetId() const{ return m_assetId; }
 
     /**
-     * <p>The ID of the asset to query.</p>
+     * <p>The ID of the asset to query. This can be either the actual ID in UUID
+     * format, or else <code>externalId:</code> followed by the external ID, if it has
+     * one. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline bool AssetIdHasBeenSet() const { return m_assetIdHasBeenSet; }
 
     /**
-     * <p>The ID of the asset to query.</p>
+     * <p>The ID of the asset to query. This can be either the actual ID in UUID
+     * format, or else <code>externalId:</code> followed by the external ID, if it has
+     * one. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline void SetAssetId(const Aws::String& value) { m_assetIdHasBeenSet = true; m_assetId = value; }
 
     /**
-     * <p>The ID of the asset to query.</p>
+     * <p>The ID of the asset to query. This can be either the actual ID in UUID
+     * format, or else <code>externalId:</code> followed by the external ID, if it has
+     * one. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline void SetAssetId(Aws::String&& value) { m_assetIdHasBeenSet = true; m_assetId = std::move(value); }
 
     /**
-     * <p>The ID of the asset to query.</p>
+     * <p>The ID of the asset to query. This can be either the actual ID in UUID
+     * format, or else <code>externalId:</code> followed by the external ID, if it has
+     * one. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline void SetAssetId(const char* value) { m_assetIdHasBeenSet = true; m_assetId.assign(value); }
 
     /**
-     * <p>The ID of the asset to query.</p>
+     * <p>The ID of the asset to query. This can be either the actual ID in UUID
+     * format, or else <code>externalId:</code> followed by the external ID, if it has
+     * one. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline ListAssociatedAssetsRequest& WithAssetId(const Aws::String& value) { SetAssetId(value); return *this;}
 
     /**
-     * <p>The ID of the asset to query.</p>
+     * <p>The ID of the asset to query. This can be either the actual ID in UUID
+     * format, or else <code>externalId:</code> followed by the external ID, if it has
+     * one. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline ListAssociatedAssetsRequest& WithAssetId(Aws::String&& value) { SetAssetId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the asset to query.</p>
+     * <p>The ID of the asset to query. This can be either the actual ID in UUID
+     * format, or else <code>externalId:</code> followed by the external ID, if it has
+     * one. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
     inline ListAssociatedAssetsRequest& WithAssetId(const char* value) { SetAssetId(value); return *this;}
 
 
     /**
-     * <p>The ID of the hierarchy by which child assets are associated to the asset. To
-     * find a hierarchy ID, use the <a
+     * <p>The ID of the hierarchy by which child assets are associated to the asset.
+     * (This can be either the actual ID in UUID format, or else
+     * <code>externalId:</code> followed by the external ID, if it has one. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.) To find a
+     * hierarchy ID, use the <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAsset.html">DescribeAsset</a>
      * or <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetModel.html">DescribeAssetModel</a>
@@ -94,8 +131,13 @@ namespace Model
     inline const Aws::String& GetHierarchyId() const{ return m_hierarchyId; }
 
     /**
-     * <p>The ID of the hierarchy by which child assets are associated to the asset. To
-     * find a hierarchy ID, use the <a
+     * <p>The ID of the hierarchy by which child assets are associated to the asset.
+     * (This can be either the actual ID in UUID format, or else
+     * <code>externalId:</code> followed by the external ID, if it has one. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.) To find a
+     * hierarchy ID, use the <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAsset.html">DescribeAsset</a>
      * or <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetModel.html">DescribeAssetModel</a>
@@ -107,8 +149,13 @@ namespace Model
     inline bool HierarchyIdHasBeenSet() const { return m_hierarchyIdHasBeenSet; }
 
     /**
-     * <p>The ID of the hierarchy by which child assets are associated to the asset. To
-     * find a hierarchy ID, use the <a
+     * <p>The ID of the hierarchy by which child assets are associated to the asset.
+     * (This can be either the actual ID in UUID format, or else
+     * <code>externalId:</code> followed by the external ID, if it has one. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.) To find a
+     * hierarchy ID, use the <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAsset.html">DescribeAsset</a>
      * or <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetModel.html">DescribeAssetModel</a>
@@ -120,8 +167,13 @@ namespace Model
     inline void SetHierarchyId(const Aws::String& value) { m_hierarchyIdHasBeenSet = true; m_hierarchyId = value; }
 
     /**
-     * <p>The ID of the hierarchy by which child assets are associated to the asset. To
-     * find a hierarchy ID, use the <a
+     * <p>The ID of the hierarchy by which child assets are associated to the asset.
+     * (This can be either the actual ID in UUID format, or else
+     * <code>externalId:</code> followed by the external ID, if it has one. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.) To find a
+     * hierarchy ID, use the <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAsset.html">DescribeAsset</a>
      * or <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetModel.html">DescribeAssetModel</a>
@@ -133,8 +185,13 @@ namespace Model
     inline void SetHierarchyId(Aws::String&& value) { m_hierarchyIdHasBeenSet = true; m_hierarchyId = std::move(value); }
 
     /**
-     * <p>The ID of the hierarchy by which child assets are associated to the asset. To
-     * find a hierarchy ID, use the <a
+     * <p>The ID of the hierarchy by which child assets are associated to the asset.
+     * (This can be either the actual ID in UUID format, or else
+     * <code>externalId:</code> followed by the external ID, if it has one. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.) To find a
+     * hierarchy ID, use the <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAsset.html">DescribeAsset</a>
      * or <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetModel.html">DescribeAssetModel</a>
@@ -146,8 +203,13 @@ namespace Model
     inline void SetHierarchyId(const char* value) { m_hierarchyIdHasBeenSet = true; m_hierarchyId.assign(value); }
 
     /**
-     * <p>The ID of the hierarchy by which child assets are associated to the asset. To
-     * find a hierarchy ID, use the <a
+     * <p>The ID of the hierarchy by which child assets are associated to the asset.
+     * (This can be either the actual ID in UUID format, or else
+     * <code>externalId:</code> followed by the external ID, if it has one. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.) To find a
+     * hierarchy ID, use the <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAsset.html">DescribeAsset</a>
      * or <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetModel.html">DescribeAssetModel</a>
@@ -159,8 +221,13 @@ namespace Model
     inline ListAssociatedAssetsRequest& WithHierarchyId(const Aws::String& value) { SetHierarchyId(value); return *this;}
 
     /**
-     * <p>The ID of the hierarchy by which child assets are associated to the asset. To
-     * find a hierarchy ID, use the <a
+     * <p>The ID of the hierarchy by which child assets are associated to the asset.
+     * (This can be either the actual ID in UUID format, or else
+     * <code>externalId:</code> followed by the external ID, if it has one. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.) To find a
+     * hierarchy ID, use the <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAsset.html">DescribeAsset</a>
      * or <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetModel.html">DescribeAssetModel</a>
@@ -172,8 +239,13 @@ namespace Model
     inline ListAssociatedAssetsRequest& WithHierarchyId(Aws::String&& value) { SetHierarchyId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the hierarchy by which child assets are associated to the asset. To
-     * find a hierarchy ID, use the <a
+     * <p>The ID of the hierarchy by which child assets are associated to the asset.
+     * (This can be either the actual ID in UUID format, or else
+     * <code>externalId:</code> followed by the external ID, if it has one. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+     * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.) To find a
+     * hierarchy ID, use the <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAsset.html">DescribeAsset</a>
      * or <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetModel.html">DescribeAssetModel</a>

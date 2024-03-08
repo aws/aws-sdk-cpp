@@ -9,6 +9,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/gamelift/model/PlayerSessionCreationPolicy.h>
 #include <aws/gamelift/model/ProtectionPolicy.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/gamelift/model/GameProperty.h>
 #include <utility>
 
 namespace Aws
@@ -242,6 +244,95 @@ namespace Model
      */
     inline UpdateGameSessionRequest& WithProtectionPolicy(ProtectionPolicy&& value) { SetProtectionPolicy(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A set of key-value pairs that can store custom data in a game session. For
+     * example: <code>{"Key": "difficulty", "Value": "novice"}</code>. You can use this
+     * parameter to modify game properties in an active game session. This action adds
+     * new properties and modifies existing properties. There is no way to delete
+     * properties. For an example, see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#game-properties-update">Update
+     * the value of a game property</a>. </p>
+     */
+    inline const Aws::Vector<GameProperty>& GetGameProperties() const{ return m_gameProperties; }
+
+    /**
+     * <p>A set of key-value pairs that can store custom data in a game session. For
+     * example: <code>{"Key": "difficulty", "Value": "novice"}</code>. You can use this
+     * parameter to modify game properties in an active game session. This action adds
+     * new properties and modifies existing properties. There is no way to delete
+     * properties. For an example, see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#game-properties-update">Update
+     * the value of a game property</a>. </p>
+     */
+    inline bool GamePropertiesHasBeenSet() const { return m_gamePropertiesHasBeenSet; }
+
+    /**
+     * <p>A set of key-value pairs that can store custom data in a game session. For
+     * example: <code>{"Key": "difficulty", "Value": "novice"}</code>. You can use this
+     * parameter to modify game properties in an active game session. This action adds
+     * new properties and modifies existing properties. There is no way to delete
+     * properties. For an example, see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#game-properties-update">Update
+     * the value of a game property</a>. </p>
+     */
+    inline void SetGameProperties(const Aws::Vector<GameProperty>& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties = value; }
+
+    /**
+     * <p>A set of key-value pairs that can store custom data in a game session. For
+     * example: <code>{"Key": "difficulty", "Value": "novice"}</code>. You can use this
+     * parameter to modify game properties in an active game session. This action adds
+     * new properties and modifies existing properties. There is no way to delete
+     * properties. For an example, see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#game-properties-update">Update
+     * the value of a game property</a>. </p>
+     */
+    inline void SetGameProperties(Aws::Vector<GameProperty>&& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties = std::move(value); }
+
+    /**
+     * <p>A set of key-value pairs that can store custom data in a game session. For
+     * example: <code>{"Key": "difficulty", "Value": "novice"}</code>. You can use this
+     * parameter to modify game properties in an active game session. This action adds
+     * new properties and modifies existing properties. There is no way to delete
+     * properties. For an example, see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#game-properties-update">Update
+     * the value of a game property</a>. </p>
+     */
+    inline UpdateGameSessionRequest& WithGameProperties(const Aws::Vector<GameProperty>& value) { SetGameProperties(value); return *this;}
+
+    /**
+     * <p>A set of key-value pairs that can store custom data in a game session. For
+     * example: <code>{"Key": "difficulty", "Value": "novice"}</code>. You can use this
+     * parameter to modify game properties in an active game session. This action adds
+     * new properties and modifies existing properties. There is no way to delete
+     * properties. For an example, see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#game-properties-update">Update
+     * the value of a game property</a>. </p>
+     */
+    inline UpdateGameSessionRequest& WithGameProperties(Aws::Vector<GameProperty>&& value) { SetGameProperties(std::move(value)); return *this;}
+
+    /**
+     * <p>A set of key-value pairs that can store custom data in a game session. For
+     * example: <code>{"Key": "difficulty", "Value": "novice"}</code>. You can use this
+     * parameter to modify game properties in an active game session. This action adds
+     * new properties and modifies existing properties. There is no way to delete
+     * properties. For an example, see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#game-properties-update">Update
+     * the value of a game property</a>. </p>
+     */
+    inline UpdateGameSessionRequest& AddGameProperties(const GameProperty& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties.push_back(value); return *this; }
+
+    /**
+     * <p>A set of key-value pairs that can store custom data in a game session. For
+     * example: <code>{"Key": "difficulty", "Value": "novice"}</code>. You can use this
+     * parameter to modify game properties in an active game session. This action adds
+     * new properties and modifies existing properties. There is no way to delete
+     * properties. For an example, see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#game-properties-update">Update
+     * the value of a game property</a>. </p>
+     */
+    inline UpdateGameSessionRequest& AddGameProperties(GameProperty&& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_gameSessionId;
@@ -258,6 +349,9 @@ namespace Model
 
     ProtectionPolicy m_protectionPolicy;
     bool m_protectionPolicyHasBeenSet = false;
+
+    Aws::Vector<GameProperty> m_gameProperties;
+    bool m_gamePropertiesHasBeenSet = false;
   };
 
 } // namespace Model

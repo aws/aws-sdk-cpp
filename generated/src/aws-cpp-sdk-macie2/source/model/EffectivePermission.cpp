@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EffectivePermission::NOT_SET:
+            return {};
           case EffectivePermission::PUBLIC_:
             return "PUBLIC";
           case EffectivePermission::NOT_PUBLIC:

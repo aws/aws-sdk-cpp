@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ConsistencyLevel::NOT_SET:
+            return {};
           case ConsistencyLevel::SERIALIZABLE:
             return "SERIALIZABLE";
           case ConsistencyLevel::EVENTUAL:

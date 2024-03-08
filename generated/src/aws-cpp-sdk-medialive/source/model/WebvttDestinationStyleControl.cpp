@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case WebvttDestinationStyleControl::NOT_SET:
+            return {};
           case WebvttDestinationStyleControl::NO_STYLE_DATA:
             return "NO_STYLE_DATA";
           case WebvttDestinationStyleControl::PASSTHROUGH:

@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EnvironmentHealthAttribute::NOT_SET:
+            return {};
           case EnvironmentHealthAttribute::Status:
             return "Status";
           case EnvironmentHealthAttribute::Color:

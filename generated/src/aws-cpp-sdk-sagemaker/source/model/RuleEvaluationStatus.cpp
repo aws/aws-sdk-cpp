@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RuleEvaluationStatus::NOT_SET:
+            return {};
           case RuleEvaluationStatus::InProgress:
             return "InProgress";
           case RuleEvaluationStatus::NoIssuesFound:

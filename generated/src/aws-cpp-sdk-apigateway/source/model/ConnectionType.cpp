@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ConnectionType::NOT_SET:
+            return {};
           case ConnectionType::INTERNET:
             return "INTERNET";
           case ConnectionType::VPC_LINK:

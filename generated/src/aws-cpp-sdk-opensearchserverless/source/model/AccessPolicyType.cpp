@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AccessPolicyType::NOT_SET:
+            return {};
           case AccessPolicyType::data:
             return "data";
           default:

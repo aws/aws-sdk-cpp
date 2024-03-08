@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case GlobalEndpointTokenVersion::NOT_SET:
+            return {};
           case GlobalEndpointTokenVersion::v1Token:
             return "v1Token";
           case GlobalEndpointTokenVersion::v2Token:

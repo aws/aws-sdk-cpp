@@ -26,7 +26,11 @@ PipelineExecution::PipelineExecution() :
     m_status(PipelineExecutionStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_statusSummaryHasBeenSet(false),
-    m_artifactRevisionsHasBeenSet(false)
+    m_artifactRevisionsHasBeenSet(false),
+    m_variablesHasBeenSet(false),
+    m_triggerHasBeenSet(false),
+    m_executionMode(ExecutionMode::NOT_SET),
+    m_executionModeHasBeenSet(false)
 {
 }
 
@@ -38,7 +42,11 @@ PipelineExecution::PipelineExecution(JsonView jsonValue) :
     m_status(PipelineExecutionStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_statusSummaryHasBeenSet(false),
-    m_artifactRevisionsHasBeenSet(false)
+    m_artifactRevisionsHasBeenSet(false),
+    m_variablesHasBeenSet(false),
+    m_triggerHasBeenSet(false),
+    m_executionMode(ExecutionMode::NOT_SET),
+    m_executionModeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -90,6 +98,30 @@ PipelineExecution& PipelineExecution::operator =(JsonView jsonValue)
     m_artifactRevisionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("variables"))
+  {
+    Aws::Utils::Array<JsonView> variablesJsonList = jsonValue.GetArray("variables");
+    for(unsigned variablesIndex = 0; variablesIndex < variablesJsonList.GetLength(); ++variablesIndex)
+    {
+      m_variables.push_back(variablesJsonList[variablesIndex].AsObject());
+    }
+    m_variablesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("trigger"))
+  {
+    m_trigger = jsonValue.GetObject("trigger");
+
+    m_triggerHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("executionMode"))
+  {
+    m_executionMode = ExecutionModeMapper::GetExecutionModeForName(jsonValue.GetString("executionMode"));
+
+    m_executionModeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -135,6 +167,28 @@ JsonValue PipelineExecution::Jsonize() const
    }
    payload.WithArray("artifactRevisions", std::move(artifactRevisionsJsonList));
 
+  }
+
+  if(m_variablesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> variablesJsonList(m_variables.size());
+   for(unsigned variablesIndex = 0; variablesIndex < variablesJsonList.GetLength(); ++variablesIndex)
+   {
+     variablesJsonList[variablesIndex].AsObject(m_variables[variablesIndex].Jsonize());
+   }
+   payload.WithArray("variables", std::move(variablesJsonList));
+
+  }
+
+  if(m_triggerHasBeenSet)
+  {
+   payload.WithObject("trigger", m_trigger.Jsonize());
+
+  }
+
+  if(m_executionModeHasBeenSet)
+  {
+   payload.WithString("executionMode", ExecutionModeMapper::GetNameForExecutionMode(m_executionMode));
   }
 
   return payload;

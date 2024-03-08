@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ConfigFileState::NOT_SET:
+            return {};
           case ConfigFileState::Present:
             return "Present";
           case ConfigFileState::Absent:

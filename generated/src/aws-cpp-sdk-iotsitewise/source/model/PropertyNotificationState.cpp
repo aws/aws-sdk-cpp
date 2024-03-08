@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PropertyNotificationState::NOT_SET:
+            return {};
           case PropertyNotificationState::ENABLED:
             return "ENABLED";
           case PropertyNotificationState::DISABLED:

@@ -110,7 +110,8 @@ namespace Model
      * <p>Valid JSON text passed to the enrichment. In this case, nothing from the
      * event itself is passed to the enrichment. For more information, see <a
      * href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation
-     * (JSON) Data Interchange Format</a>.</p>
+     * (JSON) Data Interchange Format</a>.</p> <p>To remove an input template, specify
+     * an empty string.</p>
      */
     inline const Aws::String& GetInputTemplate() const{ return m_inputTemplate; }
 
@@ -118,7 +119,8 @@ namespace Model
      * <p>Valid JSON text passed to the enrichment. In this case, nothing from the
      * event itself is passed to the enrichment. For more information, see <a
      * href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation
-     * (JSON) Data Interchange Format</a>.</p>
+     * (JSON) Data Interchange Format</a>.</p> <p>To remove an input template, specify
+     * an empty string.</p>
      */
     inline bool InputTemplateHasBeenSet() const { return m_inputTemplateHasBeenSet; }
 
@@ -126,7 +128,8 @@ namespace Model
      * <p>Valid JSON text passed to the enrichment. In this case, nothing from the
      * event itself is passed to the enrichment. For more information, see <a
      * href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation
-     * (JSON) Data Interchange Format</a>.</p>
+     * (JSON) Data Interchange Format</a>.</p> <p>To remove an input template, specify
+     * an empty string.</p>
      */
     inline void SetInputTemplate(const Aws::String& value) { m_inputTemplateHasBeenSet = true; m_inputTemplate = value; }
 
@@ -134,7 +137,8 @@ namespace Model
      * <p>Valid JSON text passed to the enrichment. In this case, nothing from the
      * event itself is passed to the enrichment. For more information, see <a
      * href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation
-     * (JSON) Data Interchange Format</a>.</p>
+     * (JSON) Data Interchange Format</a>.</p> <p>To remove an input template, specify
+     * an empty string.</p>
      */
     inline void SetInputTemplate(Aws::String&& value) { m_inputTemplateHasBeenSet = true; m_inputTemplate = std::move(value); }
 
@@ -142,7 +146,8 @@ namespace Model
      * <p>Valid JSON text passed to the enrichment. In this case, nothing from the
      * event itself is passed to the enrichment. For more information, see <a
      * href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation
-     * (JSON) Data Interchange Format</a>.</p>
+     * (JSON) Data Interchange Format</a>.</p> <p>To remove an input template, specify
+     * an empty string.</p>
      */
     inline void SetInputTemplate(const char* value) { m_inputTemplateHasBeenSet = true; m_inputTemplate.assign(value); }
 
@@ -150,7 +155,8 @@ namespace Model
      * <p>Valid JSON text passed to the enrichment. In this case, nothing from the
      * event itself is passed to the enrichment. For more information, see <a
      * href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation
-     * (JSON) Data Interchange Format</a>.</p>
+     * (JSON) Data Interchange Format</a>.</p> <p>To remove an input template, specify
+     * an empty string.</p>
      */
     inline PipeEnrichmentParameters& WithInputTemplate(const Aws::String& value) { SetInputTemplate(value); return *this;}
 
@@ -158,7 +164,8 @@ namespace Model
      * <p>Valid JSON text passed to the enrichment. In this case, nothing from the
      * event itself is passed to the enrichment. For more information, see <a
      * href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation
-     * (JSON) Data Interchange Format</a>.</p>
+     * (JSON) Data Interchange Format</a>.</p> <p>To remove an input template, specify
+     * an empty string.</p>
      */
     inline PipeEnrichmentParameters& WithInputTemplate(Aws::String&& value) { SetInputTemplate(std::move(value)); return *this;}
 
@@ -166,7 +173,8 @@ namespace Model
      * <p>Valid JSON text passed to the enrichment. In this case, nothing from the
      * event itself is passed to the enrichment. For more information, see <a
      * href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation
-     * (JSON) Data Interchange Format</a>.</p>
+     * (JSON) Data Interchange Format</a>.</p> <p>To remove an input template, specify
+     * an empty string.</p>
      */
     inline PipeEnrichmentParameters& WithInputTemplate(const char* value) { SetInputTemplate(value); return *this;}
 

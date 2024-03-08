@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResourceNotFoundExceptionReason::NOT_SET:
+            return {};
           case ResourceNotFoundExceptionReason::RULE_NOT_FOUND:
             return "RULE_NOT_FOUND";
           default:

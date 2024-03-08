@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResizeOption::NOT_SET:
+            return {};
           case ResizeOption::FIXED:
             return "FIXED";
           case ResizeOption::RESPONSIVE:

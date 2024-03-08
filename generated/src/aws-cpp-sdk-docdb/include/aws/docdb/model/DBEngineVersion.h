@@ -374,6 +374,131 @@ namespace Model
      */
     inline DBEngineVersion& WithSupportsLogExportsToCloudwatchLogs(bool value) { SetSupportsLogExportsToCloudwatchLogs(value); return *this;}
 
+
+    /**
+     * <p>A list of the supported CA certificate identifiers.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/ca_cert_rotation.html">Updating
+     * Your Amazon DocumentDB TLS Certificates</a> and <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/security.encryption.ssl.html">
+     * Encrypting Data in Transit</a> in the <i>Amazon DocumentDB Developer
+     * Guide</i>.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetSupportedCACertificateIdentifiers() const{ return m_supportedCACertificateIdentifiers; }
+
+    /**
+     * <p>A list of the supported CA certificate identifiers.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/ca_cert_rotation.html">Updating
+     * Your Amazon DocumentDB TLS Certificates</a> and <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/security.encryption.ssl.html">
+     * Encrypting Data in Transit</a> in the <i>Amazon DocumentDB Developer
+     * Guide</i>.</p>
+     */
+    inline bool SupportedCACertificateIdentifiersHasBeenSet() const { return m_supportedCACertificateIdentifiersHasBeenSet; }
+
+    /**
+     * <p>A list of the supported CA certificate identifiers.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/ca_cert_rotation.html">Updating
+     * Your Amazon DocumentDB TLS Certificates</a> and <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/security.encryption.ssl.html">
+     * Encrypting Data in Transit</a> in the <i>Amazon DocumentDB Developer
+     * Guide</i>.</p>
+     */
+    inline void SetSupportedCACertificateIdentifiers(const Aws::Vector<Aws::String>& value) { m_supportedCACertificateIdentifiersHasBeenSet = true; m_supportedCACertificateIdentifiers = value; }
+
+    /**
+     * <p>A list of the supported CA certificate identifiers.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/ca_cert_rotation.html">Updating
+     * Your Amazon DocumentDB TLS Certificates</a> and <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/security.encryption.ssl.html">
+     * Encrypting Data in Transit</a> in the <i>Amazon DocumentDB Developer
+     * Guide</i>.</p>
+     */
+    inline void SetSupportedCACertificateIdentifiers(Aws::Vector<Aws::String>&& value) { m_supportedCACertificateIdentifiersHasBeenSet = true; m_supportedCACertificateIdentifiers = std::move(value); }
+
+    /**
+     * <p>A list of the supported CA certificate identifiers.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/ca_cert_rotation.html">Updating
+     * Your Amazon DocumentDB TLS Certificates</a> and <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/security.encryption.ssl.html">
+     * Encrypting Data in Transit</a> in the <i>Amazon DocumentDB Developer
+     * Guide</i>.</p>
+     */
+    inline DBEngineVersion& WithSupportedCACertificateIdentifiers(const Aws::Vector<Aws::String>& value) { SetSupportedCACertificateIdentifiers(value); return *this;}
+
+    /**
+     * <p>A list of the supported CA certificate identifiers.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/ca_cert_rotation.html">Updating
+     * Your Amazon DocumentDB TLS Certificates</a> and <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/security.encryption.ssl.html">
+     * Encrypting Data in Transit</a> in the <i>Amazon DocumentDB Developer
+     * Guide</i>.</p>
+     */
+    inline DBEngineVersion& WithSupportedCACertificateIdentifiers(Aws::Vector<Aws::String>&& value) { SetSupportedCACertificateIdentifiers(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of the supported CA certificate identifiers.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/ca_cert_rotation.html">Updating
+     * Your Amazon DocumentDB TLS Certificates</a> and <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/security.encryption.ssl.html">
+     * Encrypting Data in Transit</a> in the <i>Amazon DocumentDB Developer
+     * Guide</i>.</p>
+     */
+    inline DBEngineVersion& AddSupportedCACertificateIdentifiers(const Aws::String& value) { m_supportedCACertificateIdentifiersHasBeenSet = true; m_supportedCACertificateIdentifiers.push_back(value); return *this; }
+
+    /**
+     * <p>A list of the supported CA certificate identifiers.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/ca_cert_rotation.html">Updating
+     * Your Amazon DocumentDB TLS Certificates</a> and <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/security.encryption.ssl.html">
+     * Encrypting Data in Transit</a> in the <i>Amazon DocumentDB Developer
+     * Guide</i>.</p>
+     */
+    inline DBEngineVersion& AddSupportedCACertificateIdentifiers(Aws::String&& value) { m_supportedCACertificateIdentifiersHasBeenSet = true; m_supportedCACertificateIdentifiers.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>A list of the supported CA certificate identifiers.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/ca_cert_rotation.html">Updating
+     * Your Amazon DocumentDB TLS Certificates</a> and <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/security.encryption.ssl.html">
+     * Encrypting Data in Transit</a> in the <i>Amazon DocumentDB Developer
+     * Guide</i>.</p>
+     */
+    inline DBEngineVersion& AddSupportedCACertificateIdentifiers(const char* value) { m_supportedCACertificateIdentifiersHasBeenSet = true; m_supportedCACertificateIdentifiers.push_back(value); return *this; }
+
+
+    /**
+     * <p>Indicates whether the engine version supports rotating the server certificate
+     * without rebooting the DB instance.</p>
+     */
+    inline bool GetSupportsCertificateRotationWithoutRestart() const{ return m_supportsCertificateRotationWithoutRestart; }
+
+    /**
+     * <p>Indicates whether the engine version supports rotating the server certificate
+     * without rebooting the DB instance.</p>
+     */
+    inline bool SupportsCertificateRotationWithoutRestartHasBeenSet() const { return m_supportsCertificateRotationWithoutRestartHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the engine version supports rotating the server certificate
+     * without rebooting the DB instance.</p>
+     */
+    inline void SetSupportsCertificateRotationWithoutRestart(bool value) { m_supportsCertificateRotationWithoutRestartHasBeenSet = true; m_supportsCertificateRotationWithoutRestart = value; }
+
+    /**
+     * <p>Indicates whether the engine version supports rotating the server certificate
+     * without rebooting the DB instance.</p>
+     */
+    inline DBEngineVersion& WithSupportsCertificateRotationWithoutRestart(bool value) { SetSupportsCertificateRotationWithoutRestart(value); return *this;}
+
   private:
 
     Aws::String m_engine;
@@ -399,6 +524,12 @@ namespace Model
 
     bool m_supportsLogExportsToCloudwatchLogs;
     bool m_supportsLogExportsToCloudwatchLogsHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_supportedCACertificateIdentifiers;
+    bool m_supportedCACertificateIdentifiersHasBeenSet = false;
+
+    bool m_supportsCertificateRotationWithoutRestart;
+    bool m_supportsCertificateRotationWithoutRestartHasBeenSet = false;
   };
 
 } // namespace Model

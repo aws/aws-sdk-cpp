@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AutoImportPolicyType::NOT_SET:
+            return {};
           case AutoImportPolicyType::NONE:
             return "NONE";
           case AutoImportPolicyType::NEW_:

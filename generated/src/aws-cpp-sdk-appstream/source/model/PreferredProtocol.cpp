@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PreferredProtocol::NOT_SET:
+            return {};
           case PreferredProtocol::TCP:
             return "TCP";
           case PreferredProtocol::UDP:

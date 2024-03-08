@@ -75,7 +75,13 @@ namespace Model
     UtilizationMetricsGpuPercentageMaximum,
     UtilizationMetricsGpuMemoryPercentageMaximum,
     RecommendationOptionsProjectedUtilizationMetricsGpuPercentageMaximum,
-    RecommendationOptionsProjectedUtilizationMetricsGpuMemoryPercentageMaximum
+    RecommendationOptionsProjectedUtilizationMetricsGpuMemoryPercentageMaximum,
+    EffectiveRecommendationPreferencesSavingsEstimationMode,
+    RecommendationOptionsSavingsOpportunityAfterDiscountsPercentage,
+    RecommendationOptionsEstimatedMonthlySavingsCurrencyAfterDiscounts,
+    RecommendationOptionsEstimatedMonthlySavingsValueAfterDiscounts,
+    EffectiveRecommendationPreferencesPreferredResources,
+    EffectiveRecommendationPreferencesLookBackPeriod
   };
 
 namespace ExportableAutoScalingGroupFieldMapper

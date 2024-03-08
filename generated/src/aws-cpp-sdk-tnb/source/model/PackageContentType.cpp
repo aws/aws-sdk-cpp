@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PackageContentType::NOT_SET:
+            return {};
           case PackageContentType::application_zip:
             return "application/zip";
           default:

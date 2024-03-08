@@ -107,86 +107,62 @@ namespace Model
 
 
     /**
-     * <p>Information including the signing profile ARN and the signing job ID. Clients
-     * use metadata to signature records, for example, as annotations added to the
-     * signature manifest inside an OCI registry.</p>
+     * <p>Information including the signing profile ARN and the signing job ID.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetMetadata() const{ return m_metadata; }
 
     /**
-     * <p>Information including the signing profile ARN and the signing job ID. Clients
-     * use metadata to signature records, for example, as annotations added to the
-     * signature manifest inside an OCI registry.</p>
+     * <p>Information including the signing profile ARN and the signing job ID.</p>
      */
     inline void SetMetadata(const Aws::Map<Aws::String, Aws::String>& value) { m_metadata = value; }
 
     /**
-     * <p>Information including the signing profile ARN and the signing job ID. Clients
-     * use metadata to signature records, for example, as annotations added to the
-     * signature manifest inside an OCI registry.</p>
+     * <p>Information including the signing profile ARN and the signing job ID.</p>
      */
     inline void SetMetadata(Aws::Map<Aws::String, Aws::String>&& value) { m_metadata = std::move(value); }
 
     /**
-     * <p>Information including the signing profile ARN and the signing job ID. Clients
-     * use metadata to signature records, for example, as annotations added to the
-     * signature manifest inside an OCI registry.</p>
+     * <p>Information including the signing profile ARN and the signing job ID.</p>
      */
     inline SignPayloadResult& WithMetadata(const Aws::Map<Aws::String, Aws::String>& value) { SetMetadata(value); return *this;}
 
     /**
-     * <p>Information including the signing profile ARN and the signing job ID. Clients
-     * use metadata to signature records, for example, as annotations added to the
-     * signature manifest inside an OCI registry.</p>
+     * <p>Information including the signing profile ARN and the signing job ID.</p>
      */
     inline SignPayloadResult& WithMetadata(Aws::Map<Aws::String, Aws::String>&& value) { SetMetadata(std::move(value)); return *this;}
 
     /**
-     * <p>Information including the signing profile ARN and the signing job ID. Clients
-     * use metadata to signature records, for example, as annotations added to the
-     * signature manifest inside an OCI registry.</p>
+     * <p>Information including the signing profile ARN and the signing job ID.</p>
      */
     inline SignPayloadResult& AddMetadata(const Aws::String& key, const Aws::String& value) { m_metadata.emplace(key, value); return *this; }
 
     /**
-     * <p>Information including the signing profile ARN and the signing job ID. Clients
-     * use metadata to signature records, for example, as annotations added to the
-     * signature manifest inside an OCI registry.</p>
+     * <p>Information including the signing profile ARN and the signing job ID.</p>
      */
     inline SignPayloadResult& AddMetadata(Aws::String&& key, const Aws::String& value) { m_metadata.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Information including the signing profile ARN and the signing job ID. Clients
-     * use metadata to signature records, for example, as annotations added to the
-     * signature manifest inside an OCI registry.</p>
+     * <p>Information including the signing profile ARN and the signing job ID.</p>
      */
     inline SignPayloadResult& AddMetadata(const Aws::String& key, Aws::String&& value) { m_metadata.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Information including the signing profile ARN and the signing job ID. Clients
-     * use metadata to signature records, for example, as annotations added to the
-     * signature manifest inside an OCI registry.</p>
+     * <p>Information including the signing profile ARN and the signing job ID.</p>
      */
     inline SignPayloadResult& AddMetadata(Aws::String&& key, Aws::String&& value) { m_metadata.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>Information including the signing profile ARN and the signing job ID. Clients
-     * use metadata to signature records, for example, as annotations added to the
-     * signature manifest inside an OCI registry.</p>
+     * <p>Information including the signing profile ARN and the signing job ID.</p>
      */
     inline SignPayloadResult& AddMetadata(const char* key, Aws::String&& value) { m_metadata.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Information including the signing profile ARN and the signing job ID. Clients
-     * use metadata to signature records, for example, as annotations added to the
-     * signature manifest inside an OCI registry.</p>
+     * <p>Information including the signing profile ARN and the signing job ID.</p>
      */
     inline SignPayloadResult& AddMetadata(Aws::String&& key, const char* value) { m_metadata.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Information including the signing profile ARN and the signing job ID. Clients
-     * use metadata to signature records, for example, as annotations added to the
-     * signature manifest inside an OCI registry.</p>
+     * <p>Information including the signing profile ARN and the signing job ID.</p>
      */
     inline SignPayloadResult& AddMetadata(const char* key, const char* value) { m_metadata.emplace(key, value); return *this; }
 

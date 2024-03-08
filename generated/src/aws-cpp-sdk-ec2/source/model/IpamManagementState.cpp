@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case IpamManagementState::NOT_SET:
+            return {};
           case IpamManagementState::managed:
             return "managed";
           case IpamManagementState::unmanaged:

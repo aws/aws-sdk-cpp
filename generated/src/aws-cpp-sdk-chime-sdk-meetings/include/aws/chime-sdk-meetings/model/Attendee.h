@@ -206,22 +206,32 @@ namespace Model
      *  <p>You use the capabilities with a set of values that control what the
      * capabilities can do, such as <code>SendReceive</code> data. For more information
      * about those values, see .</p>  <p>When using capabilities, be aware of
-     * these corner cases:</p> <ul> <li> <p>You can't set <code>content</code>
-     * capabilities to <code>SendReceive</code> or <code>Receive</code> unless you also
-     * set <code>video</code> capabilities to <code>SendReceive</code> or
-     * <code>Receive</code>. If you don't set the <code>video</code> capability to
-     * receive, the response will contain an HTTP 400 Bad Request status code. However,
-     * you can set your <code>video</code> capability to receive and you set your
-     * <code>content</code> capability to not receive.</p> </li> <li> <p>When you
-     * change an <code>audio</code> capability from <code>None</code> or
-     * <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if
-     * the attendee left their microphone unmuted, audio will flow from the attendee to
-     * the other meeting participants.</p> </li> <li> <p>When you change a
-     * <code>video</code> or <code>content</code> capability from <code>None</code> or
-     * <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if
-     * the attendee turned on their video or content streams, remote attendees can
-     * receive those streams, but only after media renegotiation between the client and
-     * the Amazon Chime back-end server.</p> </li> </ul>
+     * these corner cases:</p> <ul> <li> <p>If you specify
+     * <code>MeetingFeatures:Video:MaxResolution:None</code> when you create a meeting,
+     * all API requests that include <code>SendReceive</code>, <code>Send</code>, or
+     * <code>Receive</code> for <code>AttendeeCapabilities:Video</code> will be
+     * rejected with <code>ValidationError 400</code>.</p> </li> <li> <p>If you specify
+     * <code>MeetingFeatures:Content:MaxResolution:None</code> when you create a
+     * meeting, all API requests that include <code>SendReceive</code>,
+     * <code>Send</code>, or <code>Receive</code> for
+     * <code>AttendeeCapabilities:Content</code> will be rejected with
+     * <code>ValidationError 400</code>.</p> </li> <li> <p>You can't set
+     * <code>content</code> capabilities to <code>SendReceive</code> or
+     * <code>Receive</code> unless you also set <code>video</code> capabilities to
+     * <code>SendReceive</code> or <code>Receive</code>. If you don't set the
+     * <code>video</code> capability to receive, the response will contain an HTTP 400
+     * Bad Request status code. However, you can set your <code>video</code> capability
+     * to receive and you set your <code>content</code> capability to not receive.</p>
+     * </li> <li> <p>When you change an <code>audio</code> capability from
+     * <code>None</code> or <code>Receive</code> to <code>Send</code> or
+     * <code>SendReceive</code> , and if the attendee left their microphone unmuted,
+     * audio will flow from the attendee to the other meeting participants.</p> </li>
+     * <li> <p>When you change a <code>video</code> or <code>content</code> capability
+     * from <code>None</code> or <code>Receive</code> to <code>Send</code> or
+     * <code>SendReceive</code> , and if the attendee turned on their video or content
+     * streams, remote attendees can receive those streams, but only after media
+     * renegotiation between the client and the Amazon Chime back-end server.</p> </li>
+     * </ul>
      */
     inline const AttendeeCapabilities& GetCapabilities() const{ return m_capabilities; }
 
@@ -230,22 +240,32 @@ namespace Model
      *  <p>You use the capabilities with a set of values that control what the
      * capabilities can do, such as <code>SendReceive</code> data. For more information
      * about those values, see .</p>  <p>When using capabilities, be aware of
-     * these corner cases:</p> <ul> <li> <p>You can't set <code>content</code>
-     * capabilities to <code>SendReceive</code> or <code>Receive</code> unless you also
-     * set <code>video</code> capabilities to <code>SendReceive</code> or
-     * <code>Receive</code>. If you don't set the <code>video</code> capability to
-     * receive, the response will contain an HTTP 400 Bad Request status code. However,
-     * you can set your <code>video</code> capability to receive and you set your
-     * <code>content</code> capability to not receive.</p> </li> <li> <p>When you
-     * change an <code>audio</code> capability from <code>None</code> or
-     * <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if
-     * the attendee left their microphone unmuted, audio will flow from the attendee to
-     * the other meeting participants.</p> </li> <li> <p>When you change a
-     * <code>video</code> or <code>content</code> capability from <code>None</code> or
-     * <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if
-     * the attendee turned on their video or content streams, remote attendees can
-     * receive those streams, but only after media renegotiation between the client and
-     * the Amazon Chime back-end server.</p> </li> </ul>
+     * these corner cases:</p> <ul> <li> <p>If you specify
+     * <code>MeetingFeatures:Video:MaxResolution:None</code> when you create a meeting,
+     * all API requests that include <code>SendReceive</code>, <code>Send</code>, or
+     * <code>Receive</code> for <code>AttendeeCapabilities:Video</code> will be
+     * rejected with <code>ValidationError 400</code>.</p> </li> <li> <p>If you specify
+     * <code>MeetingFeatures:Content:MaxResolution:None</code> when you create a
+     * meeting, all API requests that include <code>SendReceive</code>,
+     * <code>Send</code>, or <code>Receive</code> for
+     * <code>AttendeeCapabilities:Content</code> will be rejected with
+     * <code>ValidationError 400</code>.</p> </li> <li> <p>You can't set
+     * <code>content</code> capabilities to <code>SendReceive</code> or
+     * <code>Receive</code> unless you also set <code>video</code> capabilities to
+     * <code>SendReceive</code> or <code>Receive</code>. If you don't set the
+     * <code>video</code> capability to receive, the response will contain an HTTP 400
+     * Bad Request status code. However, you can set your <code>video</code> capability
+     * to receive and you set your <code>content</code> capability to not receive.</p>
+     * </li> <li> <p>When you change an <code>audio</code> capability from
+     * <code>None</code> or <code>Receive</code> to <code>Send</code> or
+     * <code>SendReceive</code> , and if the attendee left their microphone unmuted,
+     * audio will flow from the attendee to the other meeting participants.</p> </li>
+     * <li> <p>When you change a <code>video</code> or <code>content</code> capability
+     * from <code>None</code> or <code>Receive</code> to <code>Send</code> or
+     * <code>SendReceive</code> , and if the attendee turned on their video or content
+     * streams, remote attendees can receive those streams, but only after media
+     * renegotiation between the client and the Amazon Chime back-end server.</p> </li>
+     * </ul>
      */
     inline bool CapabilitiesHasBeenSet() const { return m_capabilitiesHasBeenSet; }
 
@@ -254,22 +274,32 @@ namespace Model
      *  <p>You use the capabilities with a set of values that control what the
      * capabilities can do, such as <code>SendReceive</code> data. For more information
      * about those values, see .</p>  <p>When using capabilities, be aware of
-     * these corner cases:</p> <ul> <li> <p>You can't set <code>content</code>
-     * capabilities to <code>SendReceive</code> or <code>Receive</code> unless you also
-     * set <code>video</code> capabilities to <code>SendReceive</code> or
-     * <code>Receive</code>. If you don't set the <code>video</code> capability to
-     * receive, the response will contain an HTTP 400 Bad Request status code. However,
-     * you can set your <code>video</code> capability to receive and you set your
-     * <code>content</code> capability to not receive.</p> </li> <li> <p>When you
-     * change an <code>audio</code> capability from <code>None</code> or
-     * <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if
-     * the attendee left their microphone unmuted, audio will flow from the attendee to
-     * the other meeting participants.</p> </li> <li> <p>When you change a
-     * <code>video</code> or <code>content</code> capability from <code>None</code> or
-     * <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if
-     * the attendee turned on their video or content streams, remote attendees can
-     * receive those streams, but only after media renegotiation between the client and
-     * the Amazon Chime back-end server.</p> </li> </ul>
+     * these corner cases:</p> <ul> <li> <p>If you specify
+     * <code>MeetingFeatures:Video:MaxResolution:None</code> when you create a meeting,
+     * all API requests that include <code>SendReceive</code>, <code>Send</code>, or
+     * <code>Receive</code> for <code>AttendeeCapabilities:Video</code> will be
+     * rejected with <code>ValidationError 400</code>.</p> </li> <li> <p>If you specify
+     * <code>MeetingFeatures:Content:MaxResolution:None</code> when you create a
+     * meeting, all API requests that include <code>SendReceive</code>,
+     * <code>Send</code>, or <code>Receive</code> for
+     * <code>AttendeeCapabilities:Content</code> will be rejected with
+     * <code>ValidationError 400</code>.</p> </li> <li> <p>You can't set
+     * <code>content</code> capabilities to <code>SendReceive</code> or
+     * <code>Receive</code> unless you also set <code>video</code> capabilities to
+     * <code>SendReceive</code> or <code>Receive</code>. If you don't set the
+     * <code>video</code> capability to receive, the response will contain an HTTP 400
+     * Bad Request status code. However, you can set your <code>video</code> capability
+     * to receive and you set your <code>content</code> capability to not receive.</p>
+     * </li> <li> <p>When you change an <code>audio</code> capability from
+     * <code>None</code> or <code>Receive</code> to <code>Send</code> or
+     * <code>SendReceive</code> , and if the attendee left their microphone unmuted,
+     * audio will flow from the attendee to the other meeting participants.</p> </li>
+     * <li> <p>When you change a <code>video</code> or <code>content</code> capability
+     * from <code>None</code> or <code>Receive</code> to <code>Send</code> or
+     * <code>SendReceive</code> , and if the attendee turned on their video or content
+     * streams, remote attendees can receive those streams, but only after media
+     * renegotiation between the client and the Amazon Chime back-end server.</p> </li>
+     * </ul>
      */
     inline void SetCapabilities(const AttendeeCapabilities& value) { m_capabilitiesHasBeenSet = true; m_capabilities = value; }
 
@@ -278,22 +308,32 @@ namespace Model
      *  <p>You use the capabilities with a set of values that control what the
      * capabilities can do, such as <code>SendReceive</code> data. For more information
      * about those values, see .</p>  <p>When using capabilities, be aware of
-     * these corner cases:</p> <ul> <li> <p>You can't set <code>content</code>
-     * capabilities to <code>SendReceive</code> or <code>Receive</code> unless you also
-     * set <code>video</code> capabilities to <code>SendReceive</code> or
-     * <code>Receive</code>. If you don't set the <code>video</code> capability to
-     * receive, the response will contain an HTTP 400 Bad Request status code. However,
-     * you can set your <code>video</code> capability to receive and you set your
-     * <code>content</code> capability to not receive.</p> </li> <li> <p>When you
-     * change an <code>audio</code> capability from <code>None</code> or
-     * <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if
-     * the attendee left their microphone unmuted, audio will flow from the attendee to
-     * the other meeting participants.</p> </li> <li> <p>When you change a
-     * <code>video</code> or <code>content</code> capability from <code>None</code> or
-     * <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if
-     * the attendee turned on their video or content streams, remote attendees can
-     * receive those streams, but only after media renegotiation between the client and
-     * the Amazon Chime back-end server.</p> </li> </ul>
+     * these corner cases:</p> <ul> <li> <p>If you specify
+     * <code>MeetingFeatures:Video:MaxResolution:None</code> when you create a meeting,
+     * all API requests that include <code>SendReceive</code>, <code>Send</code>, or
+     * <code>Receive</code> for <code>AttendeeCapabilities:Video</code> will be
+     * rejected with <code>ValidationError 400</code>.</p> </li> <li> <p>If you specify
+     * <code>MeetingFeatures:Content:MaxResolution:None</code> when you create a
+     * meeting, all API requests that include <code>SendReceive</code>,
+     * <code>Send</code>, or <code>Receive</code> for
+     * <code>AttendeeCapabilities:Content</code> will be rejected with
+     * <code>ValidationError 400</code>.</p> </li> <li> <p>You can't set
+     * <code>content</code> capabilities to <code>SendReceive</code> or
+     * <code>Receive</code> unless you also set <code>video</code> capabilities to
+     * <code>SendReceive</code> or <code>Receive</code>. If you don't set the
+     * <code>video</code> capability to receive, the response will contain an HTTP 400
+     * Bad Request status code. However, you can set your <code>video</code> capability
+     * to receive and you set your <code>content</code> capability to not receive.</p>
+     * </li> <li> <p>When you change an <code>audio</code> capability from
+     * <code>None</code> or <code>Receive</code> to <code>Send</code> or
+     * <code>SendReceive</code> , and if the attendee left their microphone unmuted,
+     * audio will flow from the attendee to the other meeting participants.</p> </li>
+     * <li> <p>When you change a <code>video</code> or <code>content</code> capability
+     * from <code>None</code> or <code>Receive</code> to <code>Send</code> or
+     * <code>SendReceive</code> , and if the attendee turned on their video or content
+     * streams, remote attendees can receive those streams, but only after media
+     * renegotiation between the client and the Amazon Chime back-end server.</p> </li>
+     * </ul>
      */
     inline void SetCapabilities(AttendeeCapabilities&& value) { m_capabilitiesHasBeenSet = true; m_capabilities = std::move(value); }
 
@@ -302,22 +342,32 @@ namespace Model
      *  <p>You use the capabilities with a set of values that control what the
      * capabilities can do, such as <code>SendReceive</code> data. For more information
      * about those values, see .</p>  <p>When using capabilities, be aware of
-     * these corner cases:</p> <ul> <li> <p>You can't set <code>content</code>
-     * capabilities to <code>SendReceive</code> or <code>Receive</code> unless you also
-     * set <code>video</code> capabilities to <code>SendReceive</code> or
-     * <code>Receive</code>. If you don't set the <code>video</code> capability to
-     * receive, the response will contain an HTTP 400 Bad Request status code. However,
-     * you can set your <code>video</code> capability to receive and you set your
-     * <code>content</code> capability to not receive.</p> </li> <li> <p>When you
-     * change an <code>audio</code> capability from <code>None</code> or
-     * <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if
-     * the attendee left their microphone unmuted, audio will flow from the attendee to
-     * the other meeting participants.</p> </li> <li> <p>When you change a
-     * <code>video</code> or <code>content</code> capability from <code>None</code> or
-     * <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if
-     * the attendee turned on their video or content streams, remote attendees can
-     * receive those streams, but only after media renegotiation between the client and
-     * the Amazon Chime back-end server.</p> </li> </ul>
+     * these corner cases:</p> <ul> <li> <p>If you specify
+     * <code>MeetingFeatures:Video:MaxResolution:None</code> when you create a meeting,
+     * all API requests that include <code>SendReceive</code>, <code>Send</code>, or
+     * <code>Receive</code> for <code>AttendeeCapabilities:Video</code> will be
+     * rejected with <code>ValidationError 400</code>.</p> </li> <li> <p>If you specify
+     * <code>MeetingFeatures:Content:MaxResolution:None</code> when you create a
+     * meeting, all API requests that include <code>SendReceive</code>,
+     * <code>Send</code>, or <code>Receive</code> for
+     * <code>AttendeeCapabilities:Content</code> will be rejected with
+     * <code>ValidationError 400</code>.</p> </li> <li> <p>You can't set
+     * <code>content</code> capabilities to <code>SendReceive</code> or
+     * <code>Receive</code> unless you also set <code>video</code> capabilities to
+     * <code>SendReceive</code> or <code>Receive</code>. If you don't set the
+     * <code>video</code> capability to receive, the response will contain an HTTP 400
+     * Bad Request status code. However, you can set your <code>video</code> capability
+     * to receive and you set your <code>content</code> capability to not receive.</p>
+     * </li> <li> <p>When you change an <code>audio</code> capability from
+     * <code>None</code> or <code>Receive</code> to <code>Send</code> or
+     * <code>SendReceive</code> , and if the attendee left their microphone unmuted,
+     * audio will flow from the attendee to the other meeting participants.</p> </li>
+     * <li> <p>When you change a <code>video</code> or <code>content</code> capability
+     * from <code>None</code> or <code>Receive</code> to <code>Send</code> or
+     * <code>SendReceive</code> , and if the attendee turned on their video or content
+     * streams, remote attendees can receive those streams, but only after media
+     * renegotiation between the client and the Amazon Chime back-end server.</p> </li>
+     * </ul>
      */
     inline Attendee& WithCapabilities(const AttendeeCapabilities& value) { SetCapabilities(value); return *this;}
 
@@ -326,22 +376,32 @@ namespace Model
      *  <p>You use the capabilities with a set of values that control what the
      * capabilities can do, such as <code>SendReceive</code> data. For more information
      * about those values, see .</p>  <p>When using capabilities, be aware of
-     * these corner cases:</p> <ul> <li> <p>You can't set <code>content</code>
-     * capabilities to <code>SendReceive</code> or <code>Receive</code> unless you also
-     * set <code>video</code> capabilities to <code>SendReceive</code> or
-     * <code>Receive</code>. If you don't set the <code>video</code> capability to
-     * receive, the response will contain an HTTP 400 Bad Request status code. However,
-     * you can set your <code>video</code> capability to receive and you set your
-     * <code>content</code> capability to not receive.</p> </li> <li> <p>When you
-     * change an <code>audio</code> capability from <code>None</code> or
-     * <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if
-     * the attendee left their microphone unmuted, audio will flow from the attendee to
-     * the other meeting participants.</p> </li> <li> <p>When you change a
-     * <code>video</code> or <code>content</code> capability from <code>None</code> or
-     * <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if
-     * the attendee turned on their video or content streams, remote attendees can
-     * receive those streams, but only after media renegotiation between the client and
-     * the Amazon Chime back-end server.</p> </li> </ul>
+     * these corner cases:</p> <ul> <li> <p>If you specify
+     * <code>MeetingFeatures:Video:MaxResolution:None</code> when you create a meeting,
+     * all API requests that include <code>SendReceive</code>, <code>Send</code>, or
+     * <code>Receive</code> for <code>AttendeeCapabilities:Video</code> will be
+     * rejected with <code>ValidationError 400</code>.</p> </li> <li> <p>If you specify
+     * <code>MeetingFeatures:Content:MaxResolution:None</code> when you create a
+     * meeting, all API requests that include <code>SendReceive</code>,
+     * <code>Send</code>, or <code>Receive</code> for
+     * <code>AttendeeCapabilities:Content</code> will be rejected with
+     * <code>ValidationError 400</code>.</p> </li> <li> <p>You can't set
+     * <code>content</code> capabilities to <code>SendReceive</code> or
+     * <code>Receive</code> unless you also set <code>video</code> capabilities to
+     * <code>SendReceive</code> or <code>Receive</code>. If you don't set the
+     * <code>video</code> capability to receive, the response will contain an HTTP 400
+     * Bad Request status code. However, you can set your <code>video</code> capability
+     * to receive and you set your <code>content</code> capability to not receive.</p>
+     * </li> <li> <p>When you change an <code>audio</code> capability from
+     * <code>None</code> or <code>Receive</code> to <code>Send</code> or
+     * <code>SendReceive</code> , and if the attendee left their microphone unmuted,
+     * audio will flow from the attendee to the other meeting participants.</p> </li>
+     * <li> <p>When you change a <code>video</code> or <code>content</code> capability
+     * from <code>None</code> or <code>Receive</code> to <code>Send</code> or
+     * <code>SendReceive</code> , and if the attendee turned on their video or content
+     * streams, remote attendees can receive those streams, but only after media
+     * renegotiation between the client and the Amazon Chime back-end server.</p> </li>
+     * </ul>
      */
     inline Attendee& WithCapabilities(AttendeeCapabilities&& value) { SetCapabilities(std::move(value)); return *this;}
 

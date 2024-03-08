@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FormActionType::NOT_SET:
+            return {};
           case FormActionType::create:
             return "create";
           case FormActionType::update:

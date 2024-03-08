@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NotebookInstanceStatus::NOT_SET:
+            return {};
           case NotebookInstanceStatus::Pending:
             return "Pending";
           case NotebookInstanceStatus::InService:

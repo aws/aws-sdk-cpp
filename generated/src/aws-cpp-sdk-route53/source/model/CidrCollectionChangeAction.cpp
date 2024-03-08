@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CidrCollectionChangeAction::NOT_SET:
+            return {};
           case CidrCollectionChangeAction::PUT:
             return "PUT";
           case CidrCollectionChangeAction::DELETE_IF_EXISTS:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ArtifactsType::NOT_SET:
+            return {};
           case ArtifactsType::CODEPIPELINE:
             return "CODEPIPELINE";
           case ArtifactsType::S3:

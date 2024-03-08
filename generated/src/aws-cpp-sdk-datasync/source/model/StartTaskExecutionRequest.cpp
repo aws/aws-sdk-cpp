@@ -17,8 +17,9 @@ StartTaskExecutionRequest::StartTaskExecutionRequest() :
     m_overrideOptionsHasBeenSet(false),
     m_includesHasBeenSet(false),
     m_excludesHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_taskReportConfigHasBeenSet(false)
+    m_manifestConfigHasBeenSet(false),
+    m_taskReportConfigHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -60,6 +61,18 @@ Aws::String StartTaskExecutionRequest::SerializePayload() const
 
   }
 
+  if(m_manifestConfigHasBeenSet)
+  {
+   payload.WithObject("ManifestConfig", m_manifestConfig.Jsonize());
+
+  }
+
+  if(m_taskReportConfigHasBeenSet)
+  {
+   payload.WithObject("TaskReportConfig", m_taskReportConfig.Jsonize());
+
+  }
+
   if(m_tagsHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
@@ -68,12 +81,6 @@ Aws::String StartTaskExecutionRequest::SerializePayload() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
-
-  }
-
-  if(m_taskReportConfigHasBeenSet)
-  {
-   payload.WithObject("TaskReportConfig", m_taskReportConfig.Jsonize());
 
   }
 

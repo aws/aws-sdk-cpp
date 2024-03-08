@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PartitionIndexStatus::NOT_SET:
+            return {};
           case PartitionIndexStatus::CREATING:
             return "CREATING";
           case PartitionIndexStatus::ACTIVE:

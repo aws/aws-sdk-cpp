@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PeeringState::NOT_SET:
+            return {};
           case PeeringState::CREATING:
             return "CREATING";
           case PeeringState::FAILED:

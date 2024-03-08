@@ -21,6 +21,7 @@ namespace Model
 DataSetImportTask::DataSetImportTask() : 
     m_status(DataSetTaskLifecycle::NOT_SET),
     m_statusHasBeenSet(false),
+    m_statusReasonHasBeenSet(false),
     m_summaryHasBeenSet(false),
     m_taskIdHasBeenSet(false)
 {
@@ -29,6 +30,7 @@ DataSetImportTask::DataSetImportTask() :
 DataSetImportTask::DataSetImportTask(JsonView jsonValue) : 
     m_status(DataSetTaskLifecycle::NOT_SET),
     m_statusHasBeenSet(false),
+    m_statusReasonHasBeenSet(false),
     m_summaryHasBeenSet(false),
     m_taskIdHasBeenSet(false)
 {
@@ -42,6 +44,13 @@ DataSetImportTask& DataSetImportTask::operator =(JsonView jsonValue)
     m_status = DataSetTaskLifecycleMapper::GetDataSetTaskLifecycleForName(jsonValue.GetString("status"));
 
     m_statusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("statusReason"))
+  {
+    m_statusReason = jsonValue.GetString("statusReason");
+
+    m_statusReasonHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("summary"))
@@ -68,6 +77,12 @@ JsonValue DataSetImportTask::Jsonize() const
   if(m_statusHasBeenSet)
   {
    payload.WithString("status", DataSetTaskLifecycleMapper::GetNameForDataSetTaskLifecycle(m_status));
+  }
+
+  if(m_statusReasonHasBeenSet)
+  {
+   payload.WithString("statusReason", m_statusReason);
+
   }
 
   if(m_summaryHasBeenSet)

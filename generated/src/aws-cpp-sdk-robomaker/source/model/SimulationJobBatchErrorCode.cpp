@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SimulationJobBatchErrorCode::NOT_SET:
+            return {};
           case SimulationJobBatchErrorCode::InternalServiceError:
             return "InternalServiceError";
           default:

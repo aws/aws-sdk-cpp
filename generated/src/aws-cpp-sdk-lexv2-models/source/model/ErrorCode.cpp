@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ErrorCode::NOT_SET:
+            return {};
           case ErrorCode::DUPLICATE_INPUT:
             return "DUPLICATE_INPUT";
           case ErrorCode::RESOURCE_DOES_NOT_EXIST:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AgentStatusType::NOT_SET:
+            return {};
           case AgentStatusType::ROUTABLE:
             return "ROUTABLE";
           case AgentStatusType::CUSTOM:

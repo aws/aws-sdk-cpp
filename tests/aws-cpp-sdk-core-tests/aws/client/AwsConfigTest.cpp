@@ -27,7 +27,7 @@ protected:
     SaveEnvironmentVariable("AWS_DEFAULT_REGION");
     SaveEnvironmentVariable("AWS_REGION");
     SaveEnvironmentVariable("AWS_EC2_METADATA_SERVICE_ENDPOINT");
-    SaveEnvironmentVariable("USE_REQUEST_COMPRESSION");
+    SaveEnvironmentVariable("DISABLE_REQUEST_COMPRESSION");
 
     Aws::StringStream ss;
     ss << Aws::Auth::GetConfigProfileFilename() + "_blah" << std::this_thread::get_id();
@@ -38,7 +38,7 @@ protected:
     Aws::Environment::UnSetEnv("AWS_DEFAULT_REGION");
     Aws::Environment::UnSetEnv("AWS_REGION");
     Aws::Environment::UnSetEnv("AWS_EC2_METADATA_SERVICE_ENDPOINT");
-    Aws::Environment::UnSetEnv("USE_REQUEST_COMPRESSION");
+    Aws::Environment::UnSetEnv("DISABLE_REQUEST_COMPRESSION");
 
     auto profileDirectory = Aws::Auth::ProfileConfigFileAWSCredentialsProvider::GetProfileDirectory();
     Aws::FileSystem::CreateDirectoryIfNotExists(profileDirectory.c_str());
@@ -139,7 +139,7 @@ TEST_F(AWSConfigTestSuite, TestNoEnvNoConfigSetsUseRequestCompressionToTrue){
 
 TEST_F(AWSConfigTestSuite, TestEnvToFalseAndNoConfigSetsUseRequestCompressionToFalse){
   //Set Env variable
-  Aws::Environment::SetEnv("USE_REQUEST_COMPRESSION", "DISABLE", 1/*overwrite*/);
+  Aws::Environment::SetEnv("DISABLE_REQUEST_COMPRESSION", "true", 1/*overwrite*/);
   // create an empty config file
   Aws::OFStream configFileNew(m_configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
 
@@ -157,11 +157,11 @@ TEST_F(AWSConfigTestSuite, TestEnvToFalseAndNoConfigSetsUseRequestCompressionToF
 
 TEST_F(AWSConfigTestSuite, TestEnvToTrueAndConfigSetToFalseSetsUseRequestCompressionToTrue){
   //Set Env variable
-  Aws::Environment::SetEnv("USE_REQUEST_COMPRESSION", "ENABLE", 1/*overwrite*/);
+  Aws::Environment::SetEnv("DISABLE_REQUEST_COMPRESSION", "false", 1/*overwrite*/);
   // create an empty config file
   Aws::OFStream configFileNew(m_configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
   configFileNew << "[profile Dijkstra]" << std::endl;  // profile keyword is mandatory per specification
-  configFileNew << "use_request_compression = enable" << std::endl;
+  configFileNew << "disable_request_compression = false" << std::endl;
 
   configFileNew.flush();
   configFileNew.close();
@@ -179,7 +179,7 @@ TEST_F(AWSConfigTestSuite, TestNoEnvAndConfigSetToFalseSetsUseRequestCompression
   // create an empty config file
   Aws::OFStream configFileNew(m_configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
   configFileNew << "[profile default]" << std::endl;  // profile keyword is mandatory per specification
-  configFileNew << "use_request_compression = disable" << std::endl;
+  configFileNew << "disable_request_compression = true" << std::endl;
 
   configFileNew.flush();
   configFileNew.close();

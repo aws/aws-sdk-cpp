@@ -27,8 +27,10 @@ namespace Model
    * classes must be restored before they can be retrieved. For more information
    * about these storage classes and how to work with archived objects, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/archived-objects.html">
-   * Working with archived objects</a> in the <i>Amazon S3 User
-   * Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * Working with archived objects</a> in the <i>Amazon S3 User Guide</i>.</p> 
+   * <p>This functionality is not supported for directory buckets. Only the S3
+   * Express One Zone storage class is supported by directory buckets to store
+   * objects.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/RestoreStatus">AWS
    * API Reference</a></p>
    */

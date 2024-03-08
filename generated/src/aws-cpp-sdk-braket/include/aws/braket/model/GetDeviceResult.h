@@ -6,8 +6,10 @@
 #pragma once
 #include <aws/braket/Braket_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/braket/model/DeviceStatus.h>
 #include <aws/braket/model/DeviceType.h>
+#include <aws/braket/model/DeviceQueueInfo.h>
 #include <utility>
 
 namespace Aws
@@ -143,6 +145,42 @@ namespace Model
 
 
     /**
+     * <p>List of information about tasks and jobs queued on a device.</p>
+     */
+    inline const Aws::Vector<DeviceQueueInfo>& GetDeviceQueueInfo() const{ return m_deviceQueueInfo; }
+
+    /**
+     * <p>List of information about tasks and jobs queued on a device.</p>
+     */
+    inline void SetDeviceQueueInfo(const Aws::Vector<DeviceQueueInfo>& value) { m_deviceQueueInfo = value; }
+
+    /**
+     * <p>List of information about tasks and jobs queued on a device.</p>
+     */
+    inline void SetDeviceQueueInfo(Aws::Vector<DeviceQueueInfo>&& value) { m_deviceQueueInfo = std::move(value); }
+
+    /**
+     * <p>List of information about tasks and jobs queued on a device.</p>
+     */
+    inline GetDeviceResult& WithDeviceQueueInfo(const Aws::Vector<DeviceQueueInfo>& value) { SetDeviceQueueInfo(value); return *this;}
+
+    /**
+     * <p>List of information about tasks and jobs queued on a device.</p>
+     */
+    inline GetDeviceResult& WithDeviceQueueInfo(Aws::Vector<DeviceQueueInfo>&& value) { SetDeviceQueueInfo(std::move(value)); return *this;}
+
+    /**
+     * <p>List of information about tasks and jobs queued on a device.</p>
+     */
+    inline GetDeviceResult& AddDeviceQueueInfo(const DeviceQueueInfo& value) { m_deviceQueueInfo.push_back(value); return *this; }
+
+    /**
+     * <p>List of information about tasks and jobs queued on a device.</p>
+     */
+    inline GetDeviceResult& AddDeviceQueueInfo(DeviceQueueInfo&& value) { m_deviceQueueInfo.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The status of the device.</p>
      */
     inline const DeviceStatus& GetDeviceStatus() const{ return m_deviceStatus; }
@@ -258,6 +296,8 @@ namespace Model
     Aws::String m_deviceCapabilities;
 
     Aws::String m_deviceName;
+
+    Aws::Vector<DeviceQueueInfo> m_deviceQueueInfo;
 
     DeviceStatus m_deviceStatus;
 

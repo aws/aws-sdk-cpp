@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RuleType::NOT_SET:
+            return {};
           case RuleType::MIN_TOP_RENDITION_SIZE:
             return "MIN_TOP_RENDITION_SIZE";
           case RuleType::MIN_BOTTOM_RENDITION_SIZE:

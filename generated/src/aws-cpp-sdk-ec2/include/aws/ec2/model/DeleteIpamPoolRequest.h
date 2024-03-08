@@ -109,6 +109,43 @@ namespace Model
      */
     inline DeleteIpamPoolRequest& WithIpamPoolId(const char* value) { SetIpamPoolId(value); return *this;}
 
+
+    /**
+     * <p>Enables you to quickly delete an IPAM pool and all resources within that
+     * pool, including provisioned CIDRs, allocations, and other pools.</p> 
+     * <p>You can only use this option to delete pools in the private scope or pools in
+     * the public scope with a source resource. A source resource is a resource used to
+     * provision CIDRs to a resource planning pool.</p> 
+     */
+    inline bool GetCascade() const{ return m_cascade; }
+
+    /**
+     * <p>Enables you to quickly delete an IPAM pool and all resources within that
+     * pool, including provisioned CIDRs, allocations, and other pools.</p> 
+     * <p>You can only use this option to delete pools in the private scope or pools in
+     * the public scope with a source resource. A source resource is a resource used to
+     * provision CIDRs to a resource planning pool.</p> 
+     */
+    inline bool CascadeHasBeenSet() const { return m_cascadeHasBeenSet; }
+
+    /**
+     * <p>Enables you to quickly delete an IPAM pool and all resources within that
+     * pool, including provisioned CIDRs, allocations, and other pools.</p> 
+     * <p>You can only use this option to delete pools in the private scope or pools in
+     * the public scope with a source resource. A source resource is a resource used to
+     * provision CIDRs to a resource planning pool.</p> 
+     */
+    inline void SetCascade(bool value) { m_cascadeHasBeenSet = true; m_cascade = value; }
+
+    /**
+     * <p>Enables you to quickly delete an IPAM pool and all resources within that
+     * pool, including provisioned CIDRs, allocations, and other pools.</p> 
+     * <p>You can only use this option to delete pools in the private scope or pools in
+     * the public scope with a source resource. A source resource is a resource used to
+     * provision CIDRs to a resource planning pool.</p> 
+     */
+    inline DeleteIpamPoolRequest& WithCascade(bool value) { SetCascade(value); return *this;}
+
   private:
 
     bool m_dryRun;
@@ -116,6 +153,9 @@ namespace Model
 
     Aws::String m_ipamPoolId;
     bool m_ipamPoolIdHasBeenSet = false;
+
+    bool m_cascade;
+    bool m_cascadeHasBeenSet = false;
   };
 
 } // namespace Model

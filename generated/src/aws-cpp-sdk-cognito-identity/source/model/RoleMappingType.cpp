@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RoleMappingType::NOT_SET:
+            return {};
           case RoleMappingType::Token:
             return "Token";
           case RoleMappingType::Rules:

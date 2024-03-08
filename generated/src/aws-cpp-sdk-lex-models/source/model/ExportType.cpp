@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ExportType::NOT_SET:
+            return {};
           case ExportType::ALEXA_SKILLS_KIT:
             return "ALEXA_SKILLS_KIT";
           case ExportType::LEX:

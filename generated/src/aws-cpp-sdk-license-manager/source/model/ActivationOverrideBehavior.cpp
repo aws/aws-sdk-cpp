@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ActivationOverrideBehavior::NOT_SET:
+            return {};
           case ActivationOverrideBehavior::DISTRIBUTED_GRANTS_ONLY:
             return "DISTRIBUTED_GRANTS_ONLY";
           case ActivationOverrideBehavior::ALL_GRANTS_PERMITTED_BY_ISSUER:

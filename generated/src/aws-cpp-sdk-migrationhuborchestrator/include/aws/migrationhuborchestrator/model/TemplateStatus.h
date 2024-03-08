@@ -16,7 +16,11 @@ namespace Model
   enum class TemplateStatus
   {
     NOT_SET,
-    CREATED
+    CREATED,
+    READY,
+    PENDING_CREATION,
+    CREATING,
+    CREATION_FAILED
   };
 
 namespace TemplateStatusMapper

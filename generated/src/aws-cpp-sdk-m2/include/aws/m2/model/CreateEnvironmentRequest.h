@@ -393,57 +393,81 @@ namespace Model
 
 
     /**
-     * <p>Configures the maintenance window you want for the runtime environment. If
-     * you do not provide a value, a random system-generated value will be
+     * <p>Configures the maintenance window that you want for the runtime environment.
+     * The maintenance window must have the format <code>ddd:hh24:mi-ddd:hh24:mi</code>
+     * and must be less than 24 hours. The following two examples are valid maintenance
+     * windows: <code>sun:23:45-mon:00:15</code> or <code>sat:01:00-sat:03:00</code>.
+     * </p> <p>If you do not provide a value, a random system-generated value will be
      * assigned.</p>
      */
     inline const Aws::String& GetPreferredMaintenanceWindow() const{ return m_preferredMaintenanceWindow; }
 
     /**
-     * <p>Configures the maintenance window you want for the runtime environment. If
-     * you do not provide a value, a random system-generated value will be
+     * <p>Configures the maintenance window that you want for the runtime environment.
+     * The maintenance window must have the format <code>ddd:hh24:mi-ddd:hh24:mi</code>
+     * and must be less than 24 hours. The following two examples are valid maintenance
+     * windows: <code>sun:23:45-mon:00:15</code> or <code>sat:01:00-sat:03:00</code>.
+     * </p> <p>If you do not provide a value, a random system-generated value will be
      * assigned.</p>
      */
     inline bool PreferredMaintenanceWindowHasBeenSet() const { return m_preferredMaintenanceWindowHasBeenSet; }
 
     /**
-     * <p>Configures the maintenance window you want for the runtime environment. If
-     * you do not provide a value, a random system-generated value will be
+     * <p>Configures the maintenance window that you want for the runtime environment.
+     * The maintenance window must have the format <code>ddd:hh24:mi-ddd:hh24:mi</code>
+     * and must be less than 24 hours. The following two examples are valid maintenance
+     * windows: <code>sun:23:45-mon:00:15</code> or <code>sat:01:00-sat:03:00</code>.
+     * </p> <p>If you do not provide a value, a random system-generated value will be
      * assigned.</p>
      */
     inline void SetPreferredMaintenanceWindow(const Aws::String& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = value; }
 
     /**
-     * <p>Configures the maintenance window you want for the runtime environment. If
-     * you do not provide a value, a random system-generated value will be
+     * <p>Configures the maintenance window that you want for the runtime environment.
+     * The maintenance window must have the format <code>ddd:hh24:mi-ddd:hh24:mi</code>
+     * and must be less than 24 hours. The following two examples are valid maintenance
+     * windows: <code>sun:23:45-mon:00:15</code> or <code>sat:01:00-sat:03:00</code>.
+     * </p> <p>If you do not provide a value, a random system-generated value will be
      * assigned.</p>
      */
     inline void SetPreferredMaintenanceWindow(Aws::String&& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = std::move(value); }
 
     /**
-     * <p>Configures the maintenance window you want for the runtime environment. If
-     * you do not provide a value, a random system-generated value will be
+     * <p>Configures the maintenance window that you want for the runtime environment.
+     * The maintenance window must have the format <code>ddd:hh24:mi-ddd:hh24:mi</code>
+     * and must be less than 24 hours. The following two examples are valid maintenance
+     * windows: <code>sun:23:45-mon:00:15</code> or <code>sat:01:00-sat:03:00</code>.
+     * </p> <p>If you do not provide a value, a random system-generated value will be
      * assigned.</p>
      */
     inline void SetPreferredMaintenanceWindow(const char* value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow.assign(value); }
 
     /**
-     * <p>Configures the maintenance window you want for the runtime environment. If
-     * you do not provide a value, a random system-generated value will be
+     * <p>Configures the maintenance window that you want for the runtime environment.
+     * The maintenance window must have the format <code>ddd:hh24:mi-ddd:hh24:mi</code>
+     * and must be less than 24 hours. The following two examples are valid maintenance
+     * windows: <code>sun:23:45-mon:00:15</code> or <code>sat:01:00-sat:03:00</code>.
+     * </p> <p>If you do not provide a value, a random system-generated value will be
      * assigned.</p>
      */
     inline CreateEnvironmentRequest& WithPreferredMaintenanceWindow(const Aws::String& value) { SetPreferredMaintenanceWindow(value); return *this;}
 
     /**
-     * <p>Configures the maintenance window you want for the runtime environment. If
-     * you do not provide a value, a random system-generated value will be
+     * <p>Configures the maintenance window that you want for the runtime environment.
+     * The maintenance window must have the format <code>ddd:hh24:mi-ddd:hh24:mi</code>
+     * and must be less than 24 hours. The following two examples are valid maintenance
+     * windows: <code>sun:23:45-mon:00:15</code> or <code>sat:01:00-sat:03:00</code>.
+     * </p> <p>If you do not provide a value, a random system-generated value will be
      * assigned.</p>
      */
     inline CreateEnvironmentRequest& WithPreferredMaintenanceWindow(Aws::String&& value) { SetPreferredMaintenanceWindow(std::move(value)); return *this;}
 
     /**
-     * <p>Configures the maintenance window you want for the runtime environment. If
-     * you do not provide a value, a random system-generated value will be
+     * <p>Configures the maintenance window that you want for the runtime environment.
+     * The maintenance window must have the format <code>ddd:hh24:mi-ddd:hh24:mi</code>
+     * and must be less than 24 hours. The following two examples are valid maintenance
+     * windows: <code>sun:23:45-mon:00:15</code> or <code>sat:01:00-sat:03:00</code>.
+     * </p> <p>If you do not provide a value, a random system-generated value will be
      * assigned.</p>
      */
     inline CreateEnvironmentRequest& WithPreferredMaintenanceWindow(const char* value) { SetPreferredMaintenanceWindow(value); return *this;}

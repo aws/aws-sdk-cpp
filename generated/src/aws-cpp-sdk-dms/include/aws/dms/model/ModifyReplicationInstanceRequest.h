@@ -510,14 +510,7 @@ namespace Model
      * result if these factors apply: </p> <ul> <li> <p>This parameter is set to
      * <code>true</code> during the maintenance window.</p> </li> <li> <p>A newer minor
      * version is available. </p> </li> <li> <p>DMS has enabled automatic patching for
-     * the given engine version. </p> </li> </ul> <p>When
-     * <code>AutoMinorVersionUpgrade</code> is enabled, DMS uses the current default
-     * engine version when you modify a replication instance. For example, if you set
-     * <code>EngineVersion</code> to a lower version number than the current default
-     * version, DMS uses the default version.</p> <p>If
-     * <code>AutoMinorVersionUpgrade</code> <i>isn’t</i> enabled when you modify a
-     * replication instance, DMS uses the engine version specified by the
-     * <code>EngineVersion</code> parameter.</p>
+     * the given engine version. </p> </li> </ul>
      */
     inline bool GetAutoMinorVersionUpgrade() const{ return m_autoMinorVersionUpgrade; }
 
@@ -529,14 +522,7 @@ namespace Model
      * result if these factors apply: </p> <ul> <li> <p>This parameter is set to
      * <code>true</code> during the maintenance window.</p> </li> <li> <p>A newer minor
      * version is available. </p> </li> <li> <p>DMS has enabled automatic patching for
-     * the given engine version. </p> </li> </ul> <p>When
-     * <code>AutoMinorVersionUpgrade</code> is enabled, DMS uses the current default
-     * engine version when you modify a replication instance. For example, if you set
-     * <code>EngineVersion</code> to a lower version number than the current default
-     * version, DMS uses the default version.</p> <p>If
-     * <code>AutoMinorVersionUpgrade</code> <i>isn’t</i> enabled when you modify a
-     * replication instance, DMS uses the engine version specified by the
-     * <code>EngineVersion</code> parameter.</p>
+     * the given engine version. </p> </li> </ul>
      */
     inline bool AutoMinorVersionUpgradeHasBeenSet() const { return m_autoMinorVersionUpgradeHasBeenSet; }
 
@@ -548,14 +534,7 @@ namespace Model
      * result if these factors apply: </p> <ul> <li> <p>This parameter is set to
      * <code>true</code> during the maintenance window.</p> </li> <li> <p>A newer minor
      * version is available. </p> </li> <li> <p>DMS has enabled automatic patching for
-     * the given engine version. </p> </li> </ul> <p>When
-     * <code>AutoMinorVersionUpgrade</code> is enabled, DMS uses the current default
-     * engine version when you modify a replication instance. For example, if you set
-     * <code>EngineVersion</code> to a lower version number than the current default
-     * version, DMS uses the default version.</p> <p>If
-     * <code>AutoMinorVersionUpgrade</code> <i>isn’t</i> enabled when you modify a
-     * replication instance, DMS uses the engine version specified by the
-     * <code>EngineVersion</code> parameter.</p>
+     * the given engine version. </p> </li> </ul>
      */
     inline void SetAutoMinorVersionUpgrade(bool value) { m_autoMinorVersionUpgradeHasBeenSet = true; m_autoMinorVersionUpgrade = value; }
 
@@ -567,14 +546,7 @@ namespace Model
      * result if these factors apply: </p> <ul> <li> <p>This parameter is set to
      * <code>true</code> during the maintenance window.</p> </li> <li> <p>A newer minor
      * version is available. </p> </li> <li> <p>DMS has enabled automatic patching for
-     * the given engine version. </p> </li> </ul> <p>When
-     * <code>AutoMinorVersionUpgrade</code> is enabled, DMS uses the current default
-     * engine version when you modify a replication instance. For example, if you set
-     * <code>EngineVersion</code> to a lower version number than the current default
-     * version, DMS uses the default version.</p> <p>If
-     * <code>AutoMinorVersionUpgrade</code> <i>isn’t</i> enabled when you modify a
-     * replication instance, DMS uses the engine version specified by the
-     * <code>EngineVersion</code> parameter.</p>
+     * the given engine version. </p> </li> </ul>
      */
     inline ModifyReplicationInstanceRequest& WithAutoMinorVersionUpgrade(bool value) { SetAutoMinorVersionUpgrade(value); return *this;}
 

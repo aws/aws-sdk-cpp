@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DeviceStatus::NOT_SET:
+            return {};
           case DeviceStatus::ONLINE:
             return "ONLINE";
           case DeviceStatus::OFFLINE:

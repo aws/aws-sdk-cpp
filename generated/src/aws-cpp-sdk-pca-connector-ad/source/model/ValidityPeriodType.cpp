@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ValidityPeriodType::NOT_SET:
+            return {};
           case ValidityPeriodType::HOURS:
             return "HOURS";
           case ValidityPeriodType::DAYS:

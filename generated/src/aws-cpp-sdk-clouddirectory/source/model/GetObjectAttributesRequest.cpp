@@ -64,7 +64,7 @@ Aws::Http::HeaderValueCollection GetObjectAttributesRequest::GetRequestSpecificH
     ss.str("");
   }
 
-  if(m_consistencyLevelHasBeenSet)
+  if(m_consistencyLevelHasBeenSet && m_consistencyLevel != ConsistencyLevel::NOT_SET)
   {
     headers.emplace("x-amz-consistency-level", ConsistencyLevelMapper::GetNameForConsistencyLevel(m_consistencyLevel));
   }

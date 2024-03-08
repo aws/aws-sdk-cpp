@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StreamProcessorStatus::NOT_SET:
+            return {};
           case StreamProcessorStatus::STOPPED:
             return "STOPPED";
           case StreamProcessorStatus::STARTING:

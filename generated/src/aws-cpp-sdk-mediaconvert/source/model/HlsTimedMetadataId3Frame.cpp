@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HlsTimedMetadataId3Frame::NOT_SET:
+            return {};
           case HlsTimedMetadataId3Frame::NONE:
             return "NONE";
           case HlsTimedMetadataId3Frame::PRIV:

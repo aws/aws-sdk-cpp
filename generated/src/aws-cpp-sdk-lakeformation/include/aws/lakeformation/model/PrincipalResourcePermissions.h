@@ -9,6 +9,8 @@
 #include <aws/lakeformation/model/Resource.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/lakeformation/model/DetailsMap.h>
+#include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lakeformation/model/Permission.h>
 #include <utility>
 
@@ -236,6 +238,78 @@ namespace Model
      */
     inline PrincipalResourcePermissions& WithAdditionalDetails(DetailsMap&& value) { SetAdditionalDetails(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The date and time when the resource was last updated.</p>
+     */
+    inline const Aws::Utils::DateTime& GetLastUpdated() const{ return m_lastUpdated; }
+
+    /**
+     * <p>The date and time when the resource was last updated.</p>
+     */
+    inline bool LastUpdatedHasBeenSet() const { return m_lastUpdatedHasBeenSet; }
+
+    /**
+     * <p>The date and time when the resource was last updated.</p>
+     */
+    inline void SetLastUpdated(const Aws::Utils::DateTime& value) { m_lastUpdatedHasBeenSet = true; m_lastUpdated = value; }
+
+    /**
+     * <p>The date and time when the resource was last updated.</p>
+     */
+    inline void SetLastUpdated(Aws::Utils::DateTime&& value) { m_lastUpdatedHasBeenSet = true; m_lastUpdated = std::move(value); }
+
+    /**
+     * <p>The date and time when the resource was last updated.</p>
+     */
+    inline PrincipalResourcePermissions& WithLastUpdated(const Aws::Utils::DateTime& value) { SetLastUpdated(value); return *this;}
+
+    /**
+     * <p>The date and time when the resource was last updated.</p>
+     */
+    inline PrincipalResourcePermissions& WithLastUpdated(Aws::Utils::DateTime&& value) { SetLastUpdated(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The user who updated the record.</p>
+     */
+    inline const Aws::String& GetLastUpdatedBy() const{ return m_lastUpdatedBy; }
+
+    /**
+     * <p>The user who updated the record.</p>
+     */
+    inline bool LastUpdatedByHasBeenSet() const { return m_lastUpdatedByHasBeenSet; }
+
+    /**
+     * <p>The user who updated the record.</p>
+     */
+    inline void SetLastUpdatedBy(const Aws::String& value) { m_lastUpdatedByHasBeenSet = true; m_lastUpdatedBy = value; }
+
+    /**
+     * <p>The user who updated the record.</p>
+     */
+    inline void SetLastUpdatedBy(Aws::String&& value) { m_lastUpdatedByHasBeenSet = true; m_lastUpdatedBy = std::move(value); }
+
+    /**
+     * <p>The user who updated the record.</p>
+     */
+    inline void SetLastUpdatedBy(const char* value) { m_lastUpdatedByHasBeenSet = true; m_lastUpdatedBy.assign(value); }
+
+    /**
+     * <p>The user who updated the record.</p>
+     */
+    inline PrincipalResourcePermissions& WithLastUpdatedBy(const Aws::String& value) { SetLastUpdatedBy(value); return *this;}
+
+    /**
+     * <p>The user who updated the record.</p>
+     */
+    inline PrincipalResourcePermissions& WithLastUpdatedBy(Aws::String&& value) { SetLastUpdatedBy(std::move(value)); return *this;}
+
+    /**
+     * <p>The user who updated the record.</p>
+     */
+    inline PrincipalResourcePermissions& WithLastUpdatedBy(const char* value) { SetLastUpdatedBy(value); return *this;}
+
   private:
 
     DataLakePrincipal m_principal;
@@ -252,6 +326,12 @@ namespace Model
 
     DetailsMap m_additionalDetails;
     bool m_additionalDetailsHasBeenSet = false;
+
+    Aws::Utils::DateTime m_lastUpdated;
+    bool m_lastUpdatedHasBeenSet = false;
+
+    Aws::String m_lastUpdatedBy;
+    bool m_lastUpdatedByHasBeenSet = false;
   };
 
 } // namespace Model

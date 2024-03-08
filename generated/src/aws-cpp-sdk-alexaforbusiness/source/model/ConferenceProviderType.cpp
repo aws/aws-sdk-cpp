@@ -89,6 +89,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ConferenceProviderType::NOT_SET:
+            return {};
           case ConferenceProviderType::CHIME:
             return "CHIME";
           case ConferenceProviderType::BLUEJEANS:

@@ -16,28 +16,63 @@ namespace Aws
 namespace SecurityHub
 {
   /**
-   * <p>Security Hub provides you with a comprehensive view of the security state of
-   * your Amazon Web Services environment and resources. It also provides you with
-   * the readiness status of your environment based on controls from supported
-   * security standards. Security Hub collects security data from Amazon Web Services
-   * accounts, services, and integrated third-party products and helps you analyze
-   * security trends in your environment to identify the highest priority security
-   * issues. For more information about Security Hub, see the <a
+   * <p>Security Hub provides you with a comprehensive view of your security state in
+   * Amazon Web Services and helps you assess your Amazon Web Services environment
+   * against security industry standards and best practices.</p> <p>Security Hub
+   * collects security data across Amazon Web Services accounts, Amazon Web Services,
+   * and supported third-party products and helps you analyze your security trends
+   * and identify the highest priority security issues.</p> <p>To help you manage the
+   * security state of your organization, Security Hub supports multiple security
+   * standards. These include the Amazon Web Services Foundational Security Best
+   * Practices (FSBP) standard developed by Amazon Web Services, and external
+   * compliance frameworks such as the Center for Internet Security (CIS), the
+   * Payment Card Industry Data Security Standard (PCI DSS), and the National
+   * Institute of Standards and Technology (NIST). Each standard includes several
+   * security controls, each of which represents a security best practice. Security
+   * Hub runs checks against security controls and generates control findings to help
+   * you assess your compliance against security best practices.</p> <p>In addition
+   * to generating control findings, Security Hub also receives findings from other
+   * Amazon Web Services, such as Amazon GuardDuty and Amazon Inspector, and
+   * supported third-party products. This gives you a single pane of glass into a
+   * variety of security-related issues. You can also send Security Hub findings to
+   * other Amazon Web Services and supported third-party products.</p> <p>Security
+   * Hub offers automation features that help you triage and remediate security
+   * issues. For example, you can use automation rules to automatically update
+   * critical findings when a security check fails. You can also leverage the
+   * integration with Amazon EventBridge to trigger automatic responses to specific
+   * findings.</p> <p>This guide, the <i>Security Hub API Reference</i>, provides
+   * information about the Security Hub API. This includes supported resources, HTTP
+   * methods, parameters, and schemas. If you're new to Security Hub, you might find
+   * it helpful to also review the <a
    * href="https://docs.aws.amazon.com/securityhub/latest/userguide/what-is-securityhub.html">
-   * <i>Security Hub User Guide</i> </a>.</p> <p>When you use operations in the
-   * Security Hub API, the requests are executed only in the Amazon Web Services
-   * Region that is currently active or in the specific Amazon Web Services Region
-   * that you specify in your request. Any configuration or settings change that
-   * results from the operation is applied only to that Region. To make the same
-   * change in other Regions, run the same command for each Region in which you want
-   * to apply the change.</p> <p>For example, if your Region is set to
-   * <code>us-west-2</code>, when you use <code>CreateMembers</code> to add a member
-   * account to Security Hub, the association of the member account with the
-   * administrator account is created only in the <code>us-west-2</code> Region.
-   * Security Hub must be enabled for the member account in the same Region that the
-   * invitation was sent from.</p> <p>The following throttling limits apply to using
-   * Security Hub API operations.</p> <ul> <li> <p> <code>BatchEnableStandards</code>
-   * - <code>RateLimit</code> of 1 request per second. <code>BurstLimit</code> of 1
+   * <i>Security Hub User Guide</i> </a>. The user guide explains key concepts and
+   * provides procedures that demonstrate how to use Security Hub features. It also
+   * provides information about topics such as integrating Security Hub with other
+   * Amazon Web Services.</p> <p>In addition to interacting with Security Hub by
+   * making calls to the Security Hub API, you can use a current version of an Amazon
+   * Web Services command line tool or SDK. Amazon Web Services provides tools and
+   * SDKs that consist of libraries and sample code for various languages and
+   * platforms, such as PowerShell, Java, Go, Python, C++, and .NET. These tools and
+   * SDKs provide convenient, programmatic access to Security Hub and other Amazon
+   * Web Services . They also handle tasks such as signing requests, managing errors,
+   * and retrying requests automatically. For information about installing and using
+   * the Amazon Web Services tools and SDKs, see <a
+   * href="http://aws.amazon.com/developer/tools/">Tools to Build on Amazon Web
+   * Services</a>.</p> <p>With the exception of operations that are related to
+   * central configuration, Security Hub API requests are executed only in the Amazon
+   * Web Services Region that is currently active or in the specific Amazon Web
+   * Services Region that you specify in your request. Any configuration or settings
+   * change that results from the operation is applied only to that Region. To make
+   * the same change in other Regions, call the same API operation in each Region in
+   * which you want to apply the change. When you use central configuration, API
+   * requests for enabling Security Hub, standards, and controls are executed in the
+   * home Region and all linked Regions. For a list of central configuration
+   * operations, see the <a
+   * href="https://docs.aws.amazon.com/securityhub/latest/userguide/central-configuration-intro.html#central-configuration-concepts">Central
+   * configuration terms and concepts</a> section of the <i>Security Hub User
+   * Guide</i>.</p> <p>The following throttling limits apply to Security Hub API
+   * operations.</p> <ul> <li> <p> <code>BatchEnableStandards</code> -
+   * <code>RateLimit</code> of 1 request per second. <code>BurstLimit</code> of 1
    * request per second.</p> </li> <li> <p> <code>GetFindings</code> -
    * <code>RateLimit</code> of 3 requests per second. <code>BurstLimit</code> of 6
    * requests per second.</p> </li> <li> <p> <code>BatchImportFindings</code> -
@@ -54,8 +89,8 @@ namespace SecurityHub
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef SecurityHubClientConfiguration ClientConfigurationType;
       typedef SecurityHubEndpointProvider EndpointProviderType;
@@ -65,14 +100,14 @@ namespace SecurityHub
         * is not specified, it will be initialized to default values.
         */
         SecurityHubClient(const Aws::SecurityHub::SecurityHubClientConfiguration& clientConfiguration = Aws::SecurityHub::SecurityHubClientConfiguration(),
-                          std::shared_ptr<SecurityHubEndpointProviderBase> endpointProvider = Aws::MakeShared<SecurityHubEndpointProvider>(ALLOCATION_TAG));
+                          std::shared_ptr<SecurityHubEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         SecurityHubClient(const Aws::Auth::AWSCredentials& credentials,
-                          std::shared_ptr<SecurityHubEndpointProviderBase> endpointProvider = Aws::MakeShared<SecurityHubEndpointProvider>(ALLOCATION_TAG),
+                          std::shared_ptr<SecurityHubEndpointProviderBase> endpointProvider = nullptr,
                           const Aws::SecurityHub::SecurityHubClientConfiguration& clientConfiguration = Aws::SecurityHub::SecurityHubClientConfiguration());
 
        /**
@@ -80,7 +115,7 @@ namespace SecurityHub
         * the default http client factory will be used
         */
         SecurityHubClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                          std::shared_ptr<SecurityHubEndpointProviderBase> endpointProvider = Aws::MakeShared<SecurityHubEndpointProvider>(ALLOCATION_TAG),
+                          std::shared_ptr<SecurityHubEndpointProviderBase> endpointProvider = nullptr,
                           const Aws::SecurityHub::SecurityHubClientConfiguration& clientConfiguration = Aws::SecurityHub::SecurityHubClientConfiguration());
 
 
@@ -246,6 +281,35 @@ namespace SecurityHub
         void BatchGetAutomationRulesAsync(const BatchGetAutomationRulesRequestT& request, const BatchGetAutomationRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SecurityHubClient::BatchGetAutomationRules, request, handler, context);
+        }
+
+        /**
+         * <p> Returns associations between an Security Hub configuration and a batch of
+         * target accounts, organizational units, or the root. Only the Security Hub
+         * delegated administrator can invoke this operation from the home Region. A
+         * configuration can refer to a configuration policy or to a self-managed
+         * configuration. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchGetConfigurationPolicyAssociations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchGetConfigurationPolicyAssociationsOutcome BatchGetConfigurationPolicyAssociations(const Model::BatchGetConfigurationPolicyAssociationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for BatchGetConfigurationPolicyAssociations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename BatchGetConfigurationPolicyAssociationsRequestT = Model::BatchGetConfigurationPolicyAssociationsRequest>
+        Model::BatchGetConfigurationPolicyAssociationsOutcomeCallable BatchGetConfigurationPolicyAssociationsCallable(const BatchGetConfigurationPolicyAssociationsRequestT& request) const
+        {
+            return SubmitCallable(&SecurityHubClient::BatchGetConfigurationPolicyAssociations, request);
+        }
+
+        /**
+         * An Async wrapper for BatchGetConfigurationPolicyAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename BatchGetConfigurationPolicyAssociationsRequestT = Model::BatchGetConfigurationPolicyAssociationsRequest>
+        void BatchGetConfigurationPolicyAssociationsAsync(const BatchGetConfigurationPolicyAssociationsRequestT& request, const BatchGetConfigurationPolicyAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SecurityHubClient::BatchGetConfigurationPolicyAssociations, request, handler, context);
         }
 
         /**
@@ -502,6 +566,33 @@ namespace SecurityHub
         }
 
         /**
+         * <p> Creates a configuration policy with the defined configuration. Only the
+         * Security Hub delegated administrator can invoke this operation from the home
+         * Region. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CreateConfigurationPolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateConfigurationPolicyOutcome CreateConfigurationPolicy(const Model::CreateConfigurationPolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateConfigurationPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateConfigurationPolicyRequestT = Model::CreateConfigurationPolicyRequest>
+        Model::CreateConfigurationPolicyOutcomeCallable CreateConfigurationPolicyCallable(const CreateConfigurationPolicyRequestT& request) const
+        {
+            return SubmitCallable(&SecurityHubClient::CreateConfigurationPolicy, request);
+        }
+
+        /**
+         * An Async wrapper for CreateConfigurationPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateConfigurationPolicyRequestT = Model::CreateConfigurationPolicyRequest>
+        void CreateConfigurationPolicyAsync(const CreateConfigurationPolicyRequestT& request, const CreateConfigurationPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SecurityHubClient::CreateConfigurationPolicy, request, handler, context);
+        }
+
+        /**
          * <p>Used to enable finding aggregation. Must be called from the aggregation
          * Region.</p> <p>For more details about cross-Region replication, see <a
          * href="https://docs.aws.amazon.com/securityhub/latest/userguide/finding-aggregation.html">Configuring
@@ -666,6 +757,36 @@ namespace SecurityHub
         void DeleteActionTargetAsync(const DeleteActionTargetRequestT& request, const DeleteActionTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SecurityHubClient::DeleteActionTarget, request, handler, context);
+        }
+
+        /**
+         * <p> Deletes a configuration policy. Only the Security Hub delegated
+         * administrator can invoke this operation from the home Region. For the deletion
+         * to succeed, you must first disassociate a configuration policy from target
+         * accounts, organizational units, or the root by invoking the
+         * <code>StartConfigurationPolicyDisassociation</code> operation. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DeleteConfigurationPolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteConfigurationPolicyOutcome DeleteConfigurationPolicy(const Model::DeleteConfigurationPolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteConfigurationPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteConfigurationPolicyRequestT = Model::DeleteConfigurationPolicyRequest>
+        Model::DeleteConfigurationPolicyOutcomeCallable DeleteConfigurationPolicyCallable(const DeleteConfigurationPolicyRequestT& request) const
+        {
+            return SubmitCallable(&SecurityHubClient::DeleteConfigurationPolicy, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteConfigurationPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteConfigurationPolicyRequestT = Model::DeleteConfigurationPolicyRequest>
+        void DeleteConfigurationPolicyAsync(const DeleteConfigurationPolicyRequestT& request, const DeleteConfigurationPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SecurityHubClient::DeleteConfigurationPolicy, request, handler, context);
         }
 
         /**
@@ -835,9 +956,9 @@ namespace SecurityHub
         }
 
         /**
-         * <p>Returns information about the Organizations configuration for Security Hub.
-         * Can only be called from a Security Hub administrator account.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns information about the way your organization is configured in Security
+         * Hub. Only the Security Hub administrator account can invoke this
+         * operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DescribeOrganizationConfiguration">AWS
          * API Reference</a></p>
          */
@@ -1212,6 +1333,61 @@ namespace SecurityHub
         }
 
         /**
+         * <p> Provides information about a configuration policy. Only the Security Hub
+         * delegated administrator can invoke this operation from the home Region.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetConfigurationPolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetConfigurationPolicyOutcome GetConfigurationPolicy(const Model::GetConfigurationPolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetConfigurationPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetConfigurationPolicyRequestT = Model::GetConfigurationPolicyRequest>
+        Model::GetConfigurationPolicyOutcomeCallable GetConfigurationPolicyCallable(const GetConfigurationPolicyRequestT& request) const
+        {
+            return SubmitCallable(&SecurityHubClient::GetConfigurationPolicy, request);
+        }
+
+        /**
+         * An Async wrapper for GetConfigurationPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetConfigurationPolicyRequestT = Model::GetConfigurationPolicyRequest>
+        void GetConfigurationPolicyAsync(const GetConfigurationPolicyRequestT& request, const GetConfigurationPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SecurityHubClient::GetConfigurationPolicy, request, handler, context);
+        }
+
+        /**
+         * <p> Returns the association between a configuration and a target account,
+         * organizational unit, or the root. The configuration can be a configuration
+         * policy or self-managed behavior. Only the Security Hub delegated administrator
+         * can invoke this operation from the home Region. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetConfigurationPolicyAssociation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetConfigurationPolicyAssociationOutcome GetConfigurationPolicyAssociation(const Model::GetConfigurationPolicyAssociationRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetConfigurationPolicyAssociation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetConfigurationPolicyAssociationRequestT = Model::GetConfigurationPolicyAssociationRequest>
+        Model::GetConfigurationPolicyAssociationOutcomeCallable GetConfigurationPolicyAssociationCallable(const GetConfigurationPolicyAssociationRequestT& request) const
+        {
+            return SubmitCallable(&SecurityHubClient::GetConfigurationPolicyAssociation, request);
+        }
+
+        /**
+         * An Async wrapper for GetConfigurationPolicyAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetConfigurationPolicyAssociationRequestT = Model::GetConfigurationPolicyAssociationRequest>
+        void GetConfigurationPolicyAssociationAsync(const GetConfigurationPolicyAssociationRequestT& request, const GetConfigurationPolicyAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SecurityHubClient::GetConfigurationPolicyAssociation, request, handler, context);
+        }
+
+        /**
          * <p>Returns a list of the standards that are currently enabled.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetEnabledStandards">AWS
@@ -1429,6 +1605,33 @@ namespace SecurityHub
         }
 
         /**
+         * <p> Retrieves the definition of a security control. The definition includes the
+         * control title, description, Region availability, parameter definitions, and
+         * other details. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetSecurityControlDefinition">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetSecurityControlDefinitionOutcome GetSecurityControlDefinition(const Model::GetSecurityControlDefinitionRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetSecurityControlDefinition that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetSecurityControlDefinitionRequestT = Model::GetSecurityControlDefinitionRequest>
+        Model::GetSecurityControlDefinitionOutcomeCallable GetSecurityControlDefinitionCallable(const GetSecurityControlDefinitionRequestT& request) const
+        {
+            return SubmitCallable(&SecurityHubClient::GetSecurityControlDefinition, request);
+        }
+
+        /**
+         * An Async wrapper for GetSecurityControlDefinition that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetSecurityControlDefinitionRequestT = Model::GetSecurityControlDefinitionRequest>
+        void GetSecurityControlDefinitionAsync(const GetSecurityControlDefinitionRequestT& request, const GetSecurityControlDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SecurityHubClient::GetSecurityControlDefinition, request, handler, context);
+        }
+
+        /**
          * <p>Invites other Amazon Web Services accounts to become member accounts for the
          * Security Hub administrator account that the invitation is sent from.</p> <p>This
          * operation is only used to invite accounts that do not belong to an organization.
@@ -1485,6 +1688,61 @@ namespace SecurityHub
         void ListAutomationRulesAsync(const ListAutomationRulesRequestT& request, const ListAutomationRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SecurityHubClient::ListAutomationRules, request, handler, context);
+        }
+
+        /**
+         * <p> Lists the configuration policies that the Security Hub delegated
+         * administrator has created for your organization. Only the delegated
+         * administrator can invoke this operation from the home Region. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListConfigurationPolicies">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListConfigurationPoliciesOutcome ListConfigurationPolicies(const Model::ListConfigurationPoliciesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListConfigurationPolicies that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListConfigurationPoliciesRequestT = Model::ListConfigurationPoliciesRequest>
+        Model::ListConfigurationPoliciesOutcomeCallable ListConfigurationPoliciesCallable(const ListConfigurationPoliciesRequestT& request) const
+        {
+            return SubmitCallable(&SecurityHubClient::ListConfigurationPolicies, request);
+        }
+
+        /**
+         * An Async wrapper for ListConfigurationPolicies that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListConfigurationPoliciesRequestT = Model::ListConfigurationPoliciesRequest>
+        void ListConfigurationPoliciesAsync(const ListConfigurationPoliciesRequestT& request, const ListConfigurationPoliciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SecurityHubClient::ListConfigurationPolicies, request, handler, context);
+        }
+
+        /**
+         * <p> Provides information about the associations for your configuration policies
+         * and self-managed behavior. Only the Security Hub delegated administrator can
+         * invoke this operation from the home Region. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListConfigurationPolicyAssociations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListConfigurationPolicyAssociationsOutcome ListConfigurationPolicyAssociations(const Model::ListConfigurationPolicyAssociationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListConfigurationPolicyAssociations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListConfigurationPolicyAssociationsRequestT = Model::ListConfigurationPolicyAssociationsRequest>
+        Model::ListConfigurationPolicyAssociationsOutcomeCallable ListConfigurationPolicyAssociationsCallable(const ListConfigurationPolicyAssociationsRequestT& request) const
+        {
+            return SubmitCallable(&SecurityHubClient::ListConfigurationPolicyAssociations, request);
+        }
+
+        /**
+         * An Async wrapper for ListConfigurationPolicyAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListConfigurationPolicyAssociationsRequestT = Model::ListConfigurationPolicyAssociationsRequest>
+        void ListConfigurationPolicyAssociationsAsync(const ListConfigurationPolicyAssociationsRequestT& request, const ListConfigurationPolicyAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SecurityHubClient::ListConfigurationPolicyAssociations, request, handler, context);
         }
 
         /**
@@ -1701,6 +1959,65 @@ namespace SecurityHub
         }
 
         /**
+         * <p> Associates a target account, organizational unit, or the root with a
+         * specified configuration. The target can be associated with a configuration
+         * policy or self-managed behavior. Only the Security Hub delegated administrator
+         * can invoke this operation from the home Region. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/StartConfigurationPolicyAssociation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartConfigurationPolicyAssociationOutcome StartConfigurationPolicyAssociation(const Model::StartConfigurationPolicyAssociationRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartConfigurationPolicyAssociation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartConfigurationPolicyAssociationRequestT = Model::StartConfigurationPolicyAssociationRequest>
+        Model::StartConfigurationPolicyAssociationOutcomeCallable StartConfigurationPolicyAssociationCallable(const StartConfigurationPolicyAssociationRequestT& request) const
+        {
+            return SubmitCallable(&SecurityHubClient::StartConfigurationPolicyAssociation, request);
+        }
+
+        /**
+         * An Async wrapper for StartConfigurationPolicyAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartConfigurationPolicyAssociationRequestT = Model::StartConfigurationPolicyAssociationRequest>
+        void StartConfigurationPolicyAssociationAsync(const StartConfigurationPolicyAssociationRequestT& request, const StartConfigurationPolicyAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SecurityHubClient::StartConfigurationPolicyAssociation, request, handler, context);
+        }
+
+        /**
+         * <p> Disassociates a target account, organizational unit, or the root from a
+         * specified configuration. When you disassociate a configuration from its target,
+         * the target inherits the configuration of the closest parent. If there’s no
+         * configuration to inherit, the target retains its settings but becomes a
+         * self-managed account. A target can be disassociated from a configuration policy
+         * or self-managed behavior. Only the Security Hub delegated administrator can
+         * invoke this operation from the home Region. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/StartConfigurationPolicyDisassociation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartConfigurationPolicyDisassociationOutcome StartConfigurationPolicyDisassociation(const Model::StartConfigurationPolicyDisassociationRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartConfigurationPolicyDisassociation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartConfigurationPolicyDisassociationRequestT = Model::StartConfigurationPolicyDisassociationRequest>
+        Model::StartConfigurationPolicyDisassociationOutcomeCallable StartConfigurationPolicyDisassociationCallable(const StartConfigurationPolicyDisassociationRequestT& request) const
+        {
+            return SubmitCallable(&SecurityHubClient::StartConfigurationPolicyDisassociation, request);
+        }
+
+        /**
+         * An Async wrapper for StartConfigurationPolicyDisassociation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartConfigurationPolicyDisassociationRequestT = Model::StartConfigurationPolicyDisassociationRequest>
+        void StartConfigurationPolicyDisassociationAsync(const StartConfigurationPolicyDisassociationRequestT& request, const StartConfigurationPolicyDisassociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SecurityHubClient::StartConfigurationPolicyDisassociation, request, handler, context);
+        }
+
+        /**
          * <p>Adds one or more tags to a resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/TagResource">AWS
          * API Reference</a></p>
@@ -1774,6 +2091,33 @@ namespace SecurityHub
         void UpdateActionTargetAsync(const UpdateActionTargetRequestT& request, const UpdateActionTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SecurityHubClient::UpdateActionTarget, request, handler, context);
+        }
+
+        /**
+         * <p> Updates a configuration policy. Only the Security Hub delegated
+         * administrator can invoke this operation from the home Region. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateConfigurationPolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateConfigurationPolicyOutcome UpdateConfigurationPolicy(const Model::UpdateConfigurationPolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateConfigurationPolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateConfigurationPolicyRequestT = Model::UpdateConfigurationPolicyRequest>
+        Model::UpdateConfigurationPolicyOutcomeCallable UpdateConfigurationPolicyCallable(const UpdateConfigurationPolicyRequestT& request) const
+        {
+            return SubmitCallable(&SecurityHubClient::UpdateConfigurationPolicy, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateConfigurationPolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateConfigurationPolicyRequestT = Model::UpdateConfigurationPolicyRequest>
+        void UpdateConfigurationPolicyAsync(const UpdateConfigurationPolicyRequestT& request, const UpdateConfigurationPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SecurityHubClient::UpdateConfigurationPolicy, request, handler, context);
         }
 
         /**
@@ -1862,8 +2206,9 @@ namespace SecurityHub
         }
 
         /**
-         * <p>Used to update the configuration related to Organizations. Can only be called
-         * from a Security Hub administrator account.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the configuration of your organization in Security Hub. Only the
+         * Security Hub administrator account can invoke this operation.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateOrganizationConfiguration">AWS
          * API Reference</a></p>
          */
@@ -1885,6 +2230,31 @@ namespace SecurityHub
         void UpdateOrganizationConfigurationAsync(const UpdateOrganizationConfigurationRequestT& request, const UpdateOrganizationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SecurityHubClient::UpdateOrganizationConfiguration, request, handler, context);
+        }
+
+        /**
+         * <p> Updates the properties of a security control. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateSecurityControl">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateSecurityControlOutcome UpdateSecurityControl(const Model::UpdateSecurityControlRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateSecurityControl that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateSecurityControlRequestT = Model::UpdateSecurityControlRequest>
+        Model::UpdateSecurityControlOutcomeCallable UpdateSecurityControlCallable(const UpdateSecurityControlRequestT& request) const
+        {
+            return SubmitCallable(&SecurityHubClient::UpdateSecurityControl, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateSecurityControl that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateSecurityControlRequestT = Model::UpdateSecurityControlRequest>
+        void UpdateSecurityControlAsync(const UpdateSecurityControlRequestT& request, const UpdateSecurityControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SecurityHubClient::UpdateSecurityControl, request, handler, context);
         }
 
         /**

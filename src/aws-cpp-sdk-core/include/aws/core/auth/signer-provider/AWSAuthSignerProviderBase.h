@@ -21,12 +21,14 @@ namespace Aws
     namespace Auth
     {
         class AWSCredentialsProvider;
+        class DefaultAWSCredentialsProviderChain;
 
         class AWS_CORE_API AWSAuthSignerProvider
         {
         public:
             virtual std::shared_ptr<Aws::Client::AWSAuthSigner> GetSigner(const Aws::String& signerName) const = 0;
             virtual void AddSigner(std::shared_ptr<Aws::Client::AWSAuthSigner>& signer) = 0;
+            virtual std::shared_ptr<AWSCredentialsProvider> GetCredentialsProvider() const;
             virtual ~AWSAuthSignerProvider() = default;
         };
     }

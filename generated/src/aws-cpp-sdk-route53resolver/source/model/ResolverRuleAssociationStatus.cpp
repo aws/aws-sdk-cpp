@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResolverRuleAssociationStatus::NOT_SET:
+            return {};
           case ResolverRuleAssociationStatus::CREATING:
             return "CREATING";
           case ResolverRuleAssociationStatus::COMPLETE:

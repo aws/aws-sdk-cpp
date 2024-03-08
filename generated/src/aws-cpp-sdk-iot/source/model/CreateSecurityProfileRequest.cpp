@@ -18,7 +18,8 @@ CreateSecurityProfileRequest::CreateSecurityProfileRequest() :
     m_behaviorsHasBeenSet(false),
     m_alertTargetsHasBeenSet(false),
     m_additionalMetricsToRetainV2HasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_metricsExportConfigHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,12 @@ Aws::String CreateSecurityProfileRequest::SerializePayload() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_metricsExportConfigHasBeenSet)
+  {
+   payload.WithObject("metricsExportConfig", m_metricsExportConfig.Jsonize());
 
   }
 

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LookbackPeriodInDays::NOT_SET:
+            return {};
           case LookbackPeriodInDays::SEVEN_DAYS:
             return "SEVEN_DAYS";
           case LookbackPeriodInDays::THIRTY_DAYS:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case H264DynamicSubGop::NOT_SET:
+            return {};
           case H264DynamicSubGop::ADAPTIVE:
             return "ADAPTIVE";
           case H264DynamicSubGop::STATIC_:

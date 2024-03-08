@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EndpointStatusReason::NOT_SET:
+            return {};
           case EndpointStatusReason::INVALID_DEVICE_TOKEN:
             return "INVALID_DEVICE_TOKEN";
           case EndpointStatusReason::INVALID_PINPOINT_ARN:

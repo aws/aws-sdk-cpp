@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/quicksight/model/TopicUserExperienceVersion.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/quicksight/model/DatasetMetadata.h>
 #include <utility>
@@ -123,6 +124,37 @@ namespace Model
 
 
     /**
+     * <p>The user experience version of a topic.</p>
+     */
+    inline const TopicUserExperienceVersion& GetUserExperienceVersion() const{ return m_userExperienceVersion; }
+
+    /**
+     * <p>The user experience version of a topic.</p>
+     */
+    inline bool UserExperienceVersionHasBeenSet() const { return m_userExperienceVersionHasBeenSet; }
+
+    /**
+     * <p>The user experience version of a topic.</p>
+     */
+    inline void SetUserExperienceVersion(const TopicUserExperienceVersion& value) { m_userExperienceVersionHasBeenSet = true; m_userExperienceVersion = value; }
+
+    /**
+     * <p>The user experience version of a topic.</p>
+     */
+    inline void SetUserExperienceVersion(TopicUserExperienceVersion&& value) { m_userExperienceVersionHasBeenSet = true; m_userExperienceVersion = std::move(value); }
+
+    /**
+     * <p>The user experience version of a topic.</p>
+     */
+    inline TopicDetails& WithUserExperienceVersion(const TopicUserExperienceVersion& value) { SetUserExperienceVersion(value); return *this;}
+
+    /**
+     * <p>The user experience version of a topic.</p>
+     */
+    inline TopicDetails& WithUserExperienceVersion(TopicUserExperienceVersion&& value) { SetUserExperienceVersion(std::move(value)); return *this;}
+
+
+    /**
      * <p>The data sets that the topic is associated with.</p>
      */
     inline const Aws::Vector<DatasetMetadata>& GetDataSets() const{ return m_dataSets; }
@@ -169,6 +201,9 @@ namespace Model
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
+
+    TopicUserExperienceVersion m_userExperienceVersion;
+    bool m_userExperienceVersionHasBeenSet = false;
 
     Aws::Vector<DatasetMetadata> m_dataSets;
     bool m_dataSetsHasBeenSet = false;

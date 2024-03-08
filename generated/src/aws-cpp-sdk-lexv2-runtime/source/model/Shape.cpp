@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Shape::NOT_SET:
+            return {};
           case Shape::Scalar:
             return "Scalar";
           case Shape::List:

@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CoverageResourceType::NOT_SET:
+            return {};
           case CoverageResourceType::AWS_EC2_INSTANCE:
             return "AWS_EC2_INSTANCE";
           case CoverageResourceType::AWS_ECR_CONTAINER_IMAGE:

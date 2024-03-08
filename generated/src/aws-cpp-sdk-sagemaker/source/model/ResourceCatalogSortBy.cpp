@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResourceCatalogSortBy::NOT_SET:
+            return {};
           case ResourceCatalogSortBy::CreationTime:
             return "CreationTime";
           default:

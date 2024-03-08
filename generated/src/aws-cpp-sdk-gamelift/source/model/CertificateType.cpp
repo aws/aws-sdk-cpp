@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CertificateType::NOT_SET:
+            return {};
           case CertificateType::DISABLED:
             return "DISABLED";
           case CertificateType::GENERATED:

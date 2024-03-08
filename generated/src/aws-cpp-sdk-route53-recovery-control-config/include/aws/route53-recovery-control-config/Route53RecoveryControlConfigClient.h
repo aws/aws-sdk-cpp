@@ -23,8 +23,8 @@ namespace Route53RecoveryControlConfig
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef Route53RecoveryControlConfigClientConfiguration ClientConfigurationType;
       typedef Route53RecoveryControlConfigEndpointProvider EndpointProviderType;
@@ -34,14 +34,14 @@ namespace Route53RecoveryControlConfig
         * is not specified, it will be initialized to default values.
         */
         Route53RecoveryControlConfigClient(const Aws::Route53RecoveryControlConfig::Route53RecoveryControlConfigClientConfiguration& clientConfiguration = Aws::Route53RecoveryControlConfig::Route53RecoveryControlConfigClientConfiguration(),
-                                           std::shared_ptr<Route53RecoveryControlConfigEndpointProviderBase> endpointProvider = Aws::MakeShared<Route53RecoveryControlConfigEndpointProvider>(ALLOCATION_TAG));
+                                           std::shared_ptr<Route53RecoveryControlConfigEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         Route53RecoveryControlConfigClient(const Aws::Auth::AWSCredentials& credentials,
-                                           std::shared_ptr<Route53RecoveryControlConfigEndpointProviderBase> endpointProvider = Aws::MakeShared<Route53RecoveryControlConfigEndpointProvider>(ALLOCATION_TAG),
+                                           std::shared_ptr<Route53RecoveryControlConfigEndpointProviderBase> endpointProvider = nullptr,
                                            const Aws::Route53RecoveryControlConfig::Route53RecoveryControlConfigClientConfiguration& clientConfiguration = Aws::Route53RecoveryControlConfig::Route53RecoveryControlConfigClientConfiguration());
 
        /**
@@ -49,7 +49,7 @@ namespace Route53RecoveryControlConfig
         * the default http client factory will be used
         */
         Route53RecoveryControlConfigClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                                           std::shared_ptr<Route53RecoveryControlConfigEndpointProviderBase> endpointProvider = Aws::MakeShared<Route53RecoveryControlConfigEndpointProvider>(ALLOCATION_TAG),
+                                           std::shared_ptr<Route53RecoveryControlConfigEndpointProviderBase> endpointProvider = nullptr,
                                            const Aws::Route53RecoveryControlConfig::Route53RecoveryControlConfigClientConfiguration& clientConfiguration = Aws::Route53RecoveryControlConfig::Route53RecoveryControlConfigClientConfiguration());
 
 
@@ -411,6 +411,32 @@ namespace Route53RecoveryControlConfig
         void DescribeSafetyRuleAsync(const DescribeSafetyRuleRequestT& request, const DescribeSafetyRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&Route53RecoveryControlConfigClient::DescribeSafetyRule, request, handler, context);
+        }
+
+        /**
+         * <p>Get information about the resource policy for a cluster.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/route53-recovery-control-config-2020-11-02/GetResourcePolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetResourcePolicyOutcome GetResourcePolicy(const Model::GetResourcePolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetResourcePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetResourcePolicyRequestT = Model::GetResourcePolicyRequest>
+        Model::GetResourcePolicyOutcomeCallable GetResourcePolicyCallable(const GetResourcePolicyRequestT& request) const
+        {
+            return SubmitCallable(&Route53RecoveryControlConfigClient::GetResourcePolicy, request);
+        }
+
+        /**
+         * An Async wrapper for GetResourcePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetResourcePolicyRequestT = Model::GetResourcePolicyRequest>
+        void GetResourcePolicyAsync(const GetResourcePolicyRequestT& request, const GetResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&Route53RecoveryControlConfigClient::GetResourcePolicy, request, handler, context);
         }
 
         /**

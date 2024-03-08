@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OriginRequestPolicyQueryStringBehavior::NOT_SET:
+            return {};
           case OriginRequestPolicyQueryStringBehavior::none:
             return "none";
           case OriginRequestPolicyQueryStringBehavior::whitelist:

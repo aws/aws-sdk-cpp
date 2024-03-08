@@ -20,12 +20,14 @@ namespace Model
 
 KmsKey::KmsKey() : 
     m_kmsAliasArnHasBeenSet(false),
+    m_kmsAliasNameHasBeenSet(false),
     m_kmsKeyArnHasBeenSet(false)
 {
 }
 
 KmsKey::KmsKey(JsonView jsonValue) : 
     m_kmsAliasArnHasBeenSet(false),
+    m_kmsAliasNameHasBeenSet(false),
     m_kmsKeyArnHasBeenSet(false)
 {
   *this = jsonValue;
@@ -38,6 +40,13 @@ KmsKey& KmsKey::operator =(JsonView jsonValue)
     m_kmsAliasArn = jsonValue.GetString("kmsAliasArn");
 
     m_kmsAliasArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("kmsAliasName"))
+  {
+    m_kmsAliasName = jsonValue.GetString("kmsAliasName");
+
+    m_kmsAliasNameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("kmsKeyArn"))
@@ -57,6 +66,12 @@ JsonValue KmsKey::Jsonize() const
   if(m_kmsAliasArnHasBeenSet)
   {
    payload.WithString("kmsAliasArn", m_kmsAliasArn);
+
+  }
+
+  if(m_kmsAliasNameHasBeenSet)
+  {
+   payload.WithString("kmsAliasName", m_kmsAliasName);
 
   }
 

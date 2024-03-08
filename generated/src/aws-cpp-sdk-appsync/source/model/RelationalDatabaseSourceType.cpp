@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RelationalDatabaseSourceType::NOT_SET:
+            return {};
           case RelationalDatabaseSourceType::RDS_HTTP_ENDPOINT:
             return "RDS_HTTP_ENDPOINT";
           default:

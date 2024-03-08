@@ -377,6 +377,88 @@ namespace Model
      */
     inline ShareInvitationSummary& WithProfileArn(const char* value) { SetProfileArn(value); return *this;}
 
+
+    /**
+     * <p>The name of the review template.</p>
+     */
+    inline const Aws::String& GetTemplateName() const{ return m_templateName; }
+
+    /**
+     * <p>The name of the review template.</p>
+     */
+    inline bool TemplateNameHasBeenSet() const { return m_templateNameHasBeenSet; }
+
+    /**
+     * <p>The name of the review template.</p>
+     */
+    inline void SetTemplateName(const Aws::String& value) { m_templateNameHasBeenSet = true; m_templateName = value; }
+
+    /**
+     * <p>The name of the review template.</p>
+     */
+    inline void SetTemplateName(Aws::String&& value) { m_templateNameHasBeenSet = true; m_templateName = std::move(value); }
+
+    /**
+     * <p>The name of the review template.</p>
+     */
+    inline void SetTemplateName(const char* value) { m_templateNameHasBeenSet = true; m_templateName.assign(value); }
+
+    /**
+     * <p>The name of the review template.</p>
+     */
+    inline ShareInvitationSummary& WithTemplateName(const Aws::String& value) { SetTemplateName(value); return *this;}
+
+    /**
+     * <p>The name of the review template.</p>
+     */
+    inline ShareInvitationSummary& WithTemplateName(Aws::String&& value) { SetTemplateName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the review template.</p>
+     */
+    inline ShareInvitationSummary& WithTemplateName(const char* value) { SetTemplateName(value); return *this;}
+
+
+    /**
+     * <p>The review template ARN.</p>
+     */
+    inline const Aws::String& GetTemplateArn() const{ return m_templateArn; }
+
+    /**
+     * <p>The review template ARN.</p>
+     */
+    inline bool TemplateArnHasBeenSet() const { return m_templateArnHasBeenSet; }
+
+    /**
+     * <p>The review template ARN.</p>
+     */
+    inline void SetTemplateArn(const Aws::String& value) { m_templateArnHasBeenSet = true; m_templateArn = value; }
+
+    /**
+     * <p>The review template ARN.</p>
+     */
+    inline void SetTemplateArn(Aws::String&& value) { m_templateArnHasBeenSet = true; m_templateArn = std::move(value); }
+
+    /**
+     * <p>The review template ARN.</p>
+     */
+    inline void SetTemplateArn(const char* value) { m_templateArnHasBeenSet = true; m_templateArn.assign(value); }
+
+    /**
+     * <p>The review template ARN.</p>
+     */
+    inline ShareInvitationSummary& WithTemplateArn(const Aws::String& value) { SetTemplateArn(value); return *this;}
+
+    /**
+     * <p>The review template ARN.</p>
+     */
+    inline ShareInvitationSummary& WithTemplateArn(Aws::String&& value) { SetTemplateArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The review template ARN.</p>
+     */
+    inline ShareInvitationSummary& WithTemplateArn(const char* value) { SetTemplateArn(value); return *this;}
+
   private:
 
     Aws::String m_shareInvitationId;
@@ -411,6 +493,12 @@ namespace Model
 
     Aws::String m_profileArn;
     bool m_profileArnHasBeenSet = false;
+
+    Aws::String m_templateName;
+    bool m_templateNameHasBeenSet = false;
+
+    Aws::String m_templateArn;
+    bool m_templateArnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HLSPlaybackMode::NOT_SET:
+            return {};
           case HLSPlaybackMode::LIVE:
             return "LIVE";
           case HLSPlaybackMode::LIVE_REPLAY:

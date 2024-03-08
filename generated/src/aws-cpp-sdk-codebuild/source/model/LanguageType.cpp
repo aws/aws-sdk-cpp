@@ -89,6 +89,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LanguageType::NOT_SET:
+            return {};
           case LanguageType::JAVA:
             return "JAVA";
           case LanguageType::PYTHON:

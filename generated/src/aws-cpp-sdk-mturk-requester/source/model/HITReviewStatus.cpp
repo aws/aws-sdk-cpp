@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HITReviewStatus::NOT_SET:
+            return {};
           case HITReviewStatus::NotReviewed:
             return "NotReviewed";
           case HITReviewStatus::MarkedForReview:

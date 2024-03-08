@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ConditionOutcome::NOT_SET:
+            return {};
           case ConditionOutcome::True:
             return "True";
           case ConditionOutcome::False:

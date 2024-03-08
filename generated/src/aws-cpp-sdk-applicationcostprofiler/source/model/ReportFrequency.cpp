@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReportFrequency::NOT_SET:
+            return {};
           case ReportFrequency::MONTHLY:
             return "MONTHLY";
           case ReportFrequency::DAILY:

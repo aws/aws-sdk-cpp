@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AudioArtifactsConcatenationState::NOT_SET:
+            return {};
           case AudioArtifactsConcatenationState::Enabled:
             return "Enabled";
           default:

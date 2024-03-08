@@ -154,6 +154,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VocabularyLanguageCode::NOT_SET:
+            return {};
           case VocabularyLanguageCode::ar_AE:
             return "ar-AE";
           case VocabularyLanguageCode::de_CH:

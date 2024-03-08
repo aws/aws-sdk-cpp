@@ -21,6 +21,8 @@ namespace Model
 TopicDetails::TopicDetails() : 
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_userExperienceVersion(TopicUserExperienceVersion::NOT_SET),
+    m_userExperienceVersionHasBeenSet(false),
     m_dataSetsHasBeenSet(false)
 {
 }
@@ -28,6 +30,8 @@ TopicDetails::TopicDetails() :
 TopicDetails::TopicDetails(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_userExperienceVersion(TopicUserExperienceVersion::NOT_SET),
+    m_userExperienceVersionHasBeenSet(false),
     m_dataSetsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -47,6 +51,13 @@ TopicDetails& TopicDetails::operator =(JsonView jsonValue)
     m_description = jsonValue.GetString("Description");
 
     m_descriptionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("UserExperienceVersion"))
+  {
+    m_userExperienceVersion = TopicUserExperienceVersionMapper::GetTopicUserExperienceVersionForName(jsonValue.GetString("UserExperienceVersion"));
+
+    m_userExperienceVersionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("DataSets"))
@@ -76,6 +87,11 @@ JsonValue TopicDetails::Jsonize() const
   {
    payload.WithString("Description", m_description);
 
+  }
+
+  if(m_userExperienceVersionHasBeenSet)
+  {
+   payload.WithString("UserExperienceVersion", TopicUserExperienceVersionMapper::GetNameForTopicUserExperienceVersion(m_userExperienceVersion));
   }
 
   if(m_dataSetsHasBeenSet)

@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SourceType::NOT_SET:
+            return {};
           case SourceType::replication_instance:
             return "replication-instance";
           default:

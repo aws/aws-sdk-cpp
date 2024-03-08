@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker/model/ModelDataSource.h>
 #include <utility>
 
 namespace Aws
@@ -114,6 +115,43 @@ namespace Model
 
 
     /**
+     * <p>Specifies the location of ML model data to deploy during endpoint
+     * creation.</p>
+     */
+    inline const ModelDataSource& GetModelDataSource() const{ return m_modelDataSource; }
+
+    /**
+     * <p>Specifies the location of ML model data to deploy during endpoint
+     * creation.</p>
+     */
+    inline bool ModelDataSourceHasBeenSet() const { return m_modelDataSourceHasBeenSet; }
+
+    /**
+     * <p>Specifies the location of ML model data to deploy during endpoint
+     * creation.</p>
+     */
+    inline void SetModelDataSource(const ModelDataSource& value) { m_modelDataSourceHasBeenSet = true; m_modelDataSource = value; }
+
+    /**
+     * <p>Specifies the location of ML model data to deploy during endpoint
+     * creation.</p>
+     */
+    inline void SetModelDataSource(ModelDataSource&& value) { m_modelDataSourceHasBeenSet = true; m_modelDataSource = std::move(value); }
+
+    /**
+     * <p>Specifies the location of ML model data to deploy during endpoint
+     * creation.</p>
+     */
+    inline SourceAlgorithm& WithModelDataSource(const ModelDataSource& value) { SetModelDataSource(value); return *this;}
+
+    /**
+     * <p>Specifies the location of ML model data to deploy during endpoint
+     * creation.</p>
+     */
+    inline SourceAlgorithm& WithModelDataSource(ModelDataSource&& value) { SetModelDataSource(std::move(value)); return *this;}
+
+
+    /**
      * <p>The name of an algorithm that was used to create the model package. The
      * algorithm must be either an algorithm resource in your SageMaker account or an
      * algorithm in Amazon Web Services Marketplace that you are subscribed to.</p>
@@ -173,6 +211,9 @@ namespace Model
 
     Aws::String m_modelDataUrl;
     bool m_modelDataUrlHasBeenSet = false;
+
+    ModelDataSource m_modelDataSource;
+    bool m_modelDataSourceHasBeenSet = false;
 
     Aws::String m_algorithmName;
     bool m_algorithmNameHasBeenSet = false;

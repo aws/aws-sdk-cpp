@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ConsumerStatus::NOT_SET:
+            return {};
           case ConsumerStatus::CREATING:
             return "CREATING";
           case ConsumerStatus::DELETING:

@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ImageStatus::NOT_SET:
+            return {};
           case ImageStatus::CREATING:
             return "CREATING";
           case ImageStatus::CREATED:

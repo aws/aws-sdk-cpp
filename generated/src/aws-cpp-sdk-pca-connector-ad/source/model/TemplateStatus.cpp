@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TemplateStatus::NOT_SET:
+            return {};
           case TemplateStatus::ACTIVE:
             return "ACTIVE";
           case TemplateStatus::DELETING:

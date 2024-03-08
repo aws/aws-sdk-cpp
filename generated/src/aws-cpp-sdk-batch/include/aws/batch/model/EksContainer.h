@@ -438,8 +438,8 @@ namespace Model
      * expanded. For example, <code>$$(VAR_NAME)</code> is passed as
      * <code>$(VAR_NAME)</code> whether or not the <code>VAR_NAME</code> environment
      * variable exists. For more information, see <a
-     * href="https://docs.docker.com/engine/reference/builder/#cmd">CMD</a> in the
-     * <i>Dockerfile reference</i> and <a
+     * href="https://docs.docker.com/engine/reference/builder/#cmd">Dockerfile
+     * reference: CMD</a> and <a
      * href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">Define
      * a command and arguments for a pod</a> in the <i>Kubernetes
      * documentation</i>.</p>
@@ -462,8 +462,8 @@ namespace Model
      * expanded. For example, <code>$$(VAR_NAME)</code> is passed as
      * <code>$(VAR_NAME)</code> whether or not the <code>VAR_NAME</code> environment
      * variable exists. For more information, see <a
-     * href="https://docs.docker.com/engine/reference/builder/#cmd">CMD</a> in the
-     * <i>Dockerfile reference</i> and <a
+     * href="https://docs.docker.com/engine/reference/builder/#cmd">Dockerfile
+     * reference: CMD</a> and <a
      * href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">Define
      * a command and arguments for a pod</a> in the <i>Kubernetes
      * documentation</i>.</p>
@@ -486,8 +486,8 @@ namespace Model
      * expanded. For example, <code>$$(VAR_NAME)</code> is passed as
      * <code>$(VAR_NAME)</code> whether or not the <code>VAR_NAME</code> environment
      * variable exists. For more information, see <a
-     * href="https://docs.docker.com/engine/reference/builder/#cmd">CMD</a> in the
-     * <i>Dockerfile reference</i> and <a
+     * href="https://docs.docker.com/engine/reference/builder/#cmd">Dockerfile
+     * reference: CMD</a> and <a
      * href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">Define
      * a command and arguments for a pod</a> in the <i>Kubernetes
      * documentation</i>.</p>
@@ -510,8 +510,8 @@ namespace Model
      * expanded. For example, <code>$$(VAR_NAME)</code> is passed as
      * <code>$(VAR_NAME)</code> whether or not the <code>VAR_NAME</code> environment
      * variable exists. For more information, see <a
-     * href="https://docs.docker.com/engine/reference/builder/#cmd">CMD</a> in the
-     * <i>Dockerfile reference</i> and <a
+     * href="https://docs.docker.com/engine/reference/builder/#cmd">Dockerfile
+     * reference: CMD</a> and <a
      * href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">Define
      * a command and arguments for a pod</a> in the <i>Kubernetes
      * documentation</i>.</p>
@@ -534,8 +534,8 @@ namespace Model
      * expanded. For example, <code>$$(VAR_NAME)</code> is passed as
      * <code>$(VAR_NAME)</code> whether or not the <code>VAR_NAME</code> environment
      * variable exists. For more information, see <a
-     * href="https://docs.docker.com/engine/reference/builder/#cmd">CMD</a> in the
-     * <i>Dockerfile reference</i> and <a
+     * href="https://docs.docker.com/engine/reference/builder/#cmd">Dockerfile
+     * reference: CMD</a> and <a
      * href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">Define
      * a command and arguments for a pod</a> in the <i>Kubernetes
      * documentation</i>.</p>
@@ -558,8 +558,8 @@ namespace Model
      * expanded. For example, <code>$$(VAR_NAME)</code> is passed as
      * <code>$(VAR_NAME)</code> whether or not the <code>VAR_NAME</code> environment
      * variable exists. For more information, see <a
-     * href="https://docs.docker.com/engine/reference/builder/#cmd">CMD</a> in the
-     * <i>Dockerfile reference</i> and <a
+     * href="https://docs.docker.com/engine/reference/builder/#cmd">Dockerfile
+     * reference: CMD</a> and <a
      * href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">Define
      * a command and arguments for a pod</a> in the <i>Kubernetes
      * documentation</i>.</p>
@@ -582,8 +582,8 @@ namespace Model
      * expanded. For example, <code>$$(VAR_NAME)</code> is passed as
      * <code>$(VAR_NAME)</code> whether or not the <code>VAR_NAME</code> environment
      * variable exists. For more information, see <a
-     * href="https://docs.docker.com/engine/reference/builder/#cmd">CMD</a> in the
-     * <i>Dockerfile reference</i> and <a
+     * href="https://docs.docker.com/engine/reference/builder/#cmd">Dockerfile
+     * reference: CMD</a> and <a
      * href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">Define
      * a command and arguments for a pod</a> in the <i>Kubernetes
      * documentation</i>.</p>
@@ -606,8 +606,8 @@ namespace Model
      * expanded. For example, <code>$$(VAR_NAME)</code> is passed as
      * <code>$(VAR_NAME)</code> whether or not the <code>VAR_NAME</code> environment
      * variable exists. For more information, see <a
-     * href="https://docs.docker.com/engine/reference/builder/#cmd">CMD</a> in the
-     * <i>Dockerfile reference</i> and <a
+     * href="https://docs.docker.com/engine/reference/builder/#cmd">Dockerfile
+     * reference: CMD</a> and <a
      * href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">Define
      * a command and arguments for a pod</a> in the <i>Kubernetes
      * documentation</i>.</p>
@@ -630,8 +630,8 @@ namespace Model
      * expanded. For example, <code>$$(VAR_NAME)</code> is passed as
      * <code>$(VAR_NAME)</code> whether or not the <code>VAR_NAME</code> environment
      * variable exists. For more information, see <a
-     * href="https://docs.docker.com/engine/reference/builder/#cmd">CMD</a> in the
-     * <i>Dockerfile reference</i> and <a
+     * href="https://docs.docker.com/engine/reference/builder/#cmd">Dockerfile
+     * reference: CMD</a> and <a
      * href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">Define
      * a command and arguments for a pod</a> in the <i>Kubernetes
      * documentation</i>.</p>

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NielsenSourceWatermarkStatusType::NOT_SET:
+            return {};
           case NielsenSourceWatermarkStatusType::CLEAN:
             return "CLEAN";
           case NielsenSourceWatermarkStatusType::WATERMARKED:

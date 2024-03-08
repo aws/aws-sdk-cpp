@@ -27,6 +27,7 @@ namespace Aws
         static const int ogg_HASH = HashingUtils::HashString("ogg");
         static const int amr_HASH = HashingUtils::HashString("amr");
         static const int webm_HASH = HashingUtils::HashString("webm");
+        static const int m4a_HASH = HashingUtils::HashString("m4a");
 
 
         MediaFormat GetMediaFormatForName(const Aws::String& name)
@@ -60,6 +61,10 @@ namespace Aws
           {
             return MediaFormat::webm;
           }
+          else if (hashCode == m4a_HASH)
+          {
+            return MediaFormat::m4a;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -74,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MediaFormat::NOT_SET:
+            return {};
           case MediaFormat::mp3:
             return "mp3";
           case MediaFormat::mp4:
@@ -88,6 +95,8 @@ namespace Aws
             return "amr";
           case MediaFormat::webm:
             return "webm";
+          case MediaFormat::m4a:
+            return "m4a";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -53,8 +53,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* MediaPackageClient::SERVICE_NAME = "mediapackage";
-const char* MediaPackageClient::ALLOCATION_TAG = "MediaPackageClient";
+namespace Aws
+{
+  namespace MediaPackage
+  {
+    const char SERVICE_NAME[] = "mediapackage";
+    const char ALLOCATION_TAG[] = "MediaPackageClient";
+  }
+}
+const char* MediaPackageClient::GetServiceName() {return SERVICE_NAME;}
+const char* MediaPackageClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 MediaPackageClient::MediaPackageClient(const MediaPackage::MediaPackageClientConfiguration& clientConfiguration,
                                        std::shared_ptr<MediaPackageEndpointProviderBase> endpointProvider) :
@@ -66,7 +74,7 @@ MediaPackageClient::MediaPackageClient(const MediaPackage::MediaPackageClientCon
             Aws::MakeShared<MediaPackageErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<MediaPackageEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -82,7 +90,7 @@ MediaPackageClient::MediaPackageClient(const AWSCredentials& credentials,
             Aws::MakeShared<MediaPackageErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<MediaPackageEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -98,7 +106,7 @@ MediaPackageClient::MediaPackageClient(const std::shared_ptr<AWSCredentialsProvi
             Aws::MakeShared<MediaPackageErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<MediaPackageEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

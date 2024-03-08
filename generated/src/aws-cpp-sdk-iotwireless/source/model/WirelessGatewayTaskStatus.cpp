@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case WirelessGatewayTaskStatus::NOT_SET:
+            return {};
           case WirelessGatewayTaskStatus::PENDING:
             return "PENDING";
           case WirelessGatewayTaskStatus::IN_PROGRESS:

@@ -34,44 +34,44 @@ namespace Model
 
 
     /**
-     * <p>The ID of the asset model. You can use this ID when you call other IoT
-     * SiteWise APIs.</p>
+     * <p>The ID of the asset model, in UUID format. You can use this ID when you call
+     * other IoT SiteWise API operations.</p>
      */
     inline const Aws::String& GetAssetModelId() const{ return m_assetModelId; }
 
     /**
-     * <p>The ID of the asset model. You can use this ID when you call other IoT
-     * SiteWise APIs.</p>
+     * <p>The ID of the asset model, in UUID format. You can use this ID when you call
+     * other IoT SiteWise API operations.</p>
      */
     inline void SetAssetModelId(const Aws::String& value) { m_assetModelId = value; }
 
     /**
-     * <p>The ID of the asset model. You can use this ID when you call other IoT
-     * SiteWise APIs.</p>
+     * <p>The ID of the asset model, in UUID format. You can use this ID when you call
+     * other IoT SiteWise API operations.</p>
      */
     inline void SetAssetModelId(Aws::String&& value) { m_assetModelId = std::move(value); }
 
     /**
-     * <p>The ID of the asset model. You can use this ID when you call other IoT
-     * SiteWise APIs.</p>
+     * <p>The ID of the asset model, in UUID format. You can use this ID when you call
+     * other IoT SiteWise API operations.</p>
      */
     inline void SetAssetModelId(const char* value) { m_assetModelId.assign(value); }
 
     /**
-     * <p>The ID of the asset model. You can use this ID when you call other IoT
-     * SiteWise APIs.</p>
+     * <p>The ID of the asset model, in UUID format. You can use this ID when you call
+     * other IoT SiteWise API operations.</p>
      */
     inline CreateAssetModelResult& WithAssetModelId(const Aws::String& value) { SetAssetModelId(value); return *this;}
 
     /**
-     * <p>The ID of the asset model. You can use this ID when you call other IoT
-     * SiteWise APIs.</p>
+     * <p>The ID of the asset model, in UUID format. You can use this ID when you call
+     * other IoT SiteWise API operations.</p>
      */
     inline CreateAssetModelResult& WithAssetModelId(Aws::String&& value) { SetAssetModelId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the asset model. You can use this ID when you call other IoT
-     * SiteWise APIs.</p>
+     * <p>The ID of the asset model, in UUID format. You can use this ID when you call
+     * other IoT SiteWise API operations.</p>
      */
     inline CreateAssetModelResult& WithAssetModelId(const char* value) { SetAssetModelId(value); return *this;}
 

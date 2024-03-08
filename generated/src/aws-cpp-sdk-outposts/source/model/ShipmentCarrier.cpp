@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ShipmentCarrier::NOT_SET:
+            return {};
           case ShipmentCarrier::DHL:
             return "DHL";
           case ShipmentCarrier::DBS:

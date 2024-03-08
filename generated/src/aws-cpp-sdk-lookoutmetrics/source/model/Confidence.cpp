@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Confidence::NOT_SET:
+            return {};
           case Confidence::HIGH:
             return "HIGH";
           case Confidence::LOW:

@@ -20,7 +20,8 @@ namespace Model
     ACTIVE,
     DISABLING,
     DISABLED,
-    ENABLE_FAILED
+    ENABLE_FAILED,
+    UPDATING
   };
 
 namespace DestinationStatusMapper

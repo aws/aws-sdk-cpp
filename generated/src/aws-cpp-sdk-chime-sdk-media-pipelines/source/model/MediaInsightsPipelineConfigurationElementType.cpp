@@ -84,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MediaInsightsPipelineConfigurationElementType::NOT_SET:
+            return {};
           case MediaInsightsPipelineConfigurationElementType::AmazonTranscribeCallAnalyticsProcessor:
             return "AmazonTranscribeCallAnalyticsProcessor";
           case MediaInsightsPipelineConfigurationElementType::VoiceAnalyticsProcessor:

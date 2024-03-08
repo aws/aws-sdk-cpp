@@ -236,58 +236,58 @@ namespace Model
 
 
     /**
-     * <p>This specifies the Amazon S3 location where the test annotations for an
-     * entity recognizer are located. The URI must be in the same Amazon Web Services
-     * Region as the API endpoint that you are calling. </p>
+     * <p>This specifies the Amazon S3 location that contains the test annotations for
+     * the document classifier. The URI must be in the same Amazon Web Services Region
+     * as the API endpoint that you are calling. </p>
      */
     inline const Aws::String& GetTestS3Uri() const{ return m_testS3Uri; }
 
     /**
-     * <p>This specifies the Amazon S3 location where the test annotations for an
-     * entity recognizer are located. The URI must be in the same Amazon Web Services
-     * Region as the API endpoint that you are calling. </p>
+     * <p>This specifies the Amazon S3 location that contains the test annotations for
+     * the document classifier. The URI must be in the same Amazon Web Services Region
+     * as the API endpoint that you are calling. </p>
      */
     inline bool TestS3UriHasBeenSet() const { return m_testS3UriHasBeenSet; }
 
     /**
-     * <p>This specifies the Amazon S3 location where the test annotations for an
-     * entity recognizer are located. The URI must be in the same Amazon Web Services
-     * Region as the API endpoint that you are calling. </p>
+     * <p>This specifies the Amazon S3 location that contains the test annotations for
+     * the document classifier. The URI must be in the same Amazon Web Services Region
+     * as the API endpoint that you are calling. </p>
      */
     inline void SetTestS3Uri(const Aws::String& value) { m_testS3UriHasBeenSet = true; m_testS3Uri = value; }
 
     /**
-     * <p>This specifies the Amazon S3 location where the test annotations for an
-     * entity recognizer are located. The URI must be in the same Amazon Web Services
-     * Region as the API endpoint that you are calling. </p>
+     * <p>This specifies the Amazon S3 location that contains the test annotations for
+     * the document classifier. The URI must be in the same Amazon Web Services Region
+     * as the API endpoint that you are calling. </p>
      */
     inline void SetTestS3Uri(Aws::String&& value) { m_testS3UriHasBeenSet = true; m_testS3Uri = std::move(value); }
 
     /**
-     * <p>This specifies the Amazon S3 location where the test annotations for an
-     * entity recognizer are located. The URI must be in the same Amazon Web Services
-     * Region as the API endpoint that you are calling. </p>
+     * <p>This specifies the Amazon S3 location that contains the test annotations for
+     * the document classifier. The URI must be in the same Amazon Web Services Region
+     * as the API endpoint that you are calling. </p>
      */
     inline void SetTestS3Uri(const char* value) { m_testS3UriHasBeenSet = true; m_testS3Uri.assign(value); }
 
     /**
-     * <p>This specifies the Amazon S3 location where the test annotations for an
-     * entity recognizer are located. The URI must be in the same Amazon Web Services
-     * Region as the API endpoint that you are calling. </p>
+     * <p>This specifies the Amazon S3 location that contains the test annotations for
+     * the document classifier. The URI must be in the same Amazon Web Services Region
+     * as the API endpoint that you are calling. </p>
      */
     inline DocumentClassifierInputDataConfig& WithTestS3Uri(const Aws::String& value) { SetTestS3Uri(value); return *this;}
 
     /**
-     * <p>This specifies the Amazon S3 location where the test annotations for an
-     * entity recognizer are located. The URI must be in the same Amazon Web Services
-     * Region as the API endpoint that you are calling. </p>
+     * <p>This specifies the Amazon S3 location that contains the test annotations for
+     * the document classifier. The URI must be in the same Amazon Web Services Region
+     * as the API endpoint that you are calling. </p>
      */
     inline DocumentClassifierInputDataConfig& WithTestS3Uri(Aws::String&& value) { SetTestS3Uri(std::move(value)); return *this;}
 
     /**
-     * <p>This specifies the Amazon S3 location where the test annotations for an
-     * entity recognizer are located. The URI must be in the same Amazon Web Services
-     * Region as the API endpoint that you are calling. </p>
+     * <p>This specifies the Amazon S3 location that contains the test annotations for
+     * the document classifier. The URI must be in the same Amazon Web Services Region
+     * as the API endpoint that you are calling. </p>
      */
     inline DocumentClassifierInputDataConfig& WithTestS3Uri(const char* value) { SetTestS3Uri(value); return *this;}
 
@@ -449,79 +449,79 @@ namespace Model
     /**
      * <p>The type of input documents for training the model. Provide plain-text
      * documents to create a plain-text model, and provide semi-structured documents to
-     * create a native model.</p>
+     * create a native document model.</p>
      */
     inline const DocumentClassifierDocumentTypeFormat& GetDocumentType() const{ return m_documentType; }
 
     /**
      * <p>The type of input documents for training the model. Provide plain-text
      * documents to create a plain-text model, and provide semi-structured documents to
-     * create a native model.</p>
+     * create a native document model.</p>
      */
     inline bool DocumentTypeHasBeenSet() const { return m_documentTypeHasBeenSet; }
 
     /**
      * <p>The type of input documents for training the model. Provide plain-text
      * documents to create a plain-text model, and provide semi-structured documents to
-     * create a native model.</p>
+     * create a native document model.</p>
      */
     inline void SetDocumentType(const DocumentClassifierDocumentTypeFormat& value) { m_documentTypeHasBeenSet = true; m_documentType = value; }
 
     /**
      * <p>The type of input documents for training the model. Provide plain-text
      * documents to create a plain-text model, and provide semi-structured documents to
-     * create a native model.</p>
+     * create a native document model.</p>
      */
     inline void SetDocumentType(DocumentClassifierDocumentTypeFormat&& value) { m_documentTypeHasBeenSet = true; m_documentType = std::move(value); }
 
     /**
      * <p>The type of input documents for training the model. Provide plain-text
      * documents to create a plain-text model, and provide semi-structured documents to
-     * create a native model.</p>
+     * create a native document model.</p>
      */
     inline DocumentClassifierInputDataConfig& WithDocumentType(const DocumentClassifierDocumentTypeFormat& value) { SetDocumentType(value); return *this;}
 
     /**
      * <p>The type of input documents for training the model. Provide plain-text
      * documents to create a plain-text model, and provide semi-structured documents to
-     * create a native model.</p>
+     * create a native document model.</p>
      */
     inline DocumentClassifierInputDataConfig& WithDocumentType(DocumentClassifierDocumentTypeFormat&& value) { SetDocumentType(std::move(value)); return *this;}
 
 
     /**
      * <p>The S3 location of the training documents. This parameter is required in a
-     * request to create a native classifier model.</p>
+     * request to create a native document model.</p>
      */
     inline const DocumentClassifierDocuments& GetDocuments() const{ return m_documents; }
 
     /**
      * <p>The S3 location of the training documents. This parameter is required in a
-     * request to create a native classifier model.</p>
+     * request to create a native document model.</p>
      */
     inline bool DocumentsHasBeenSet() const { return m_documentsHasBeenSet; }
 
     /**
      * <p>The S3 location of the training documents. This parameter is required in a
-     * request to create a native classifier model.</p>
+     * request to create a native document model.</p>
      */
     inline void SetDocuments(const DocumentClassifierDocuments& value) { m_documentsHasBeenSet = true; m_documents = value; }
 
     /**
      * <p>The S3 location of the training documents. This parameter is required in a
-     * request to create a native classifier model.</p>
+     * request to create a native document model.</p>
      */
     inline void SetDocuments(DocumentClassifierDocuments&& value) { m_documentsHasBeenSet = true; m_documents = std::move(value); }
 
     /**
      * <p>The S3 location of the training documents. This parameter is required in a
-     * request to create a native classifier model.</p>
+     * request to create a native document model.</p>
      */
     inline DocumentClassifierInputDataConfig& WithDocuments(const DocumentClassifierDocuments& value) { SetDocuments(value); return *this;}
 
     /**
      * <p>The S3 location of the training documents. This parameter is required in a
-     * request to create a native classifier model.</p>
+     * request to create a native document model.</p>
      */
     inline DocumentClassifierInputDataConfig& WithDocuments(DocumentClassifierDocuments&& value) { SetDocuments(std::move(value)); return *this;}
 

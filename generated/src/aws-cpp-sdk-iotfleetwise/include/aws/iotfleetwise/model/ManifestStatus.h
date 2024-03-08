@@ -17,7 +17,9 @@ namespace Model
   {
     NOT_SET,
     ACTIVE,
-    DRAFT
+    DRAFT,
+    INVALID,
+    VALIDATING
   };
 
 namespace ManifestStatusMapper

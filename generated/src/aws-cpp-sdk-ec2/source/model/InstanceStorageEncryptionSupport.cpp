@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InstanceStorageEncryptionSupport::NOT_SET:
+            return {};
           case InstanceStorageEncryptionSupport::unsupported:
             return "unsupported";
           case InstanceStorageEncryptionSupport::required:

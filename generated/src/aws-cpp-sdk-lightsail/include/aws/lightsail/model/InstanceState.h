@@ -60,50 +60,42 @@ namespace Model
 
 
     /**
-     * <p>The state of the instance (e.g., <code>running</code> or
-     * <code>pending</code>).</p>
+     * <p>The state of the instance (<code>running</code> or <code>pending</code>).</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The state of the instance (e.g., <code>running</code> or
-     * <code>pending</code>).</p>
+     * <p>The state of the instance (<code>running</code> or <code>pending</code>).</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The state of the instance (e.g., <code>running</code> or
-     * <code>pending</code>).</p>
+     * <p>The state of the instance (<code>running</code> or <code>pending</code>).</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The state of the instance (e.g., <code>running</code> or
-     * <code>pending</code>).</p>
+     * <p>The state of the instance (<code>running</code> or <code>pending</code>).</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The state of the instance (e.g., <code>running</code> or
-     * <code>pending</code>).</p>
+     * <p>The state of the instance (<code>running</code> or <code>pending</code>).</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The state of the instance (e.g., <code>running</code> or
-     * <code>pending</code>).</p>
+     * <p>The state of the instance (<code>running</code> or <code>pending</code>).</p>
      */
     inline InstanceState& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The state of the instance (e.g., <code>running</code> or
-     * <code>pending</code>).</p>
+     * <p>The state of the instance (<code>running</code> or <code>pending</code>).</p>
      */
     inline InstanceState& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The state of the instance (e.g., <code>running</code> or
-     * <code>pending</code>).</p>
+     * <p>The state of the instance (<code>running</code> or <code>pending</code>).</p>
      */
     inline InstanceState& WithName(const char* value) { SetName(value); return *this;}
 

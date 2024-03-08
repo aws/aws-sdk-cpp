@@ -57,8 +57,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* LookoutforVisionClient::SERVICE_NAME = "lookoutvision";
-const char* LookoutforVisionClient::ALLOCATION_TAG = "LookoutforVisionClient";
+namespace Aws
+{
+  namespace LookoutforVision
+  {
+    const char SERVICE_NAME[] = "lookoutvision";
+    const char ALLOCATION_TAG[] = "LookoutforVisionClient";
+  }
+}
+const char* LookoutforVisionClient::GetServiceName() {return SERVICE_NAME;}
+const char* LookoutforVisionClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 LookoutforVisionClient::LookoutforVisionClient(const LookoutforVision::LookoutforVisionClientConfiguration& clientConfiguration,
                                                std::shared_ptr<LookoutforVisionEndpointProviderBase> endpointProvider) :
@@ -70,7 +78,7 @@ LookoutforVisionClient::LookoutforVisionClient(const LookoutforVision::Lookoutfo
             Aws::MakeShared<LookoutforVisionErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<LookoutforVisionEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -86,7 +94,7 @@ LookoutforVisionClient::LookoutforVisionClient(const AWSCredentials& credentials
             Aws::MakeShared<LookoutforVisionErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<LookoutforVisionEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -102,7 +110,7 @@ LookoutforVisionClient::LookoutforVisionClient(const std::shared_ptr<AWSCredenti
             Aws::MakeShared<LookoutforVisionErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<LookoutforVisionEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

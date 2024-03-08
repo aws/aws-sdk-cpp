@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AuditFindingSeverity::NOT_SET:
+            return {};
           case AuditFindingSeverity::CRITICAL:
             return "CRITICAL";
           case AuditFindingSeverity::HIGH:

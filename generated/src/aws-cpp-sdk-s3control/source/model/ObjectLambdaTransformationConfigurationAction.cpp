@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ObjectLambdaTransformationConfigurationAction::NOT_SET:
+            return {};
           case ObjectLambdaTransformationConfigurationAction::GetObject:
             return "GetObject";
           case ObjectLambdaTransformationConfigurationAction::HeadObject:

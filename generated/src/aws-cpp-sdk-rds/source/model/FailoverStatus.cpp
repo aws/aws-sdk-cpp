@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FailoverStatus::NOT_SET:
+            return {};
           case FailoverStatus::pending:
             return "pending";
           case FailoverStatus::failing_over:

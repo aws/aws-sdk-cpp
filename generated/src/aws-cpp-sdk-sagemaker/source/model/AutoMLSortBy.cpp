@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AutoMLSortBy::NOT_SET:
+            return {};
           case AutoMLSortBy::Name:
             return "Name";
           case AutoMLSortBy::CreationTime:

@@ -24,9 +24,11 @@ namespace Model
 {
 
   /**
-   * <p>Contains a description of an evaluation error.</p> <p>This data type is used
-   * as a request parameter in the <a
-   * href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_IsAuthorized.html">IsAuthorized</a>
+   * <p>Contains a description of an evaluation error.</p> <p>This data type is a
+   * response parameter of the <a
+   * href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_IsAuthorized.html">IsAuthorized</a>,
+   * <a
+   * href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_BatchIsAuthorized.html">BatchIsAuthorized</a>,
    * and <a
    * href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_IsAuthorizedWithToken.html">IsAuthorizedWithToken</a>
    * operations.</p><p><h3>See Also:</h3>   <a

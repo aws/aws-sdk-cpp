@@ -89,6 +89,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TaskType::NOT_SET:
+            return {};
           case TaskType::Arithmetic:
             return "Arithmetic";
           case TaskType::Filter:

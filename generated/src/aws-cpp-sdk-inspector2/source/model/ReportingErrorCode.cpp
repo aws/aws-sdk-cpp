@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReportingErrorCode::NOT_SET:
+            return {};
           case ReportingErrorCode::INTERNAL_ERROR:
             return "INTERNAL_ERROR";
           case ReportingErrorCode::INVALID_PERMISSIONS:

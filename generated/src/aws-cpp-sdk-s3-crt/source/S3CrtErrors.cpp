@@ -42,35 +42,35 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == NO_SUCH_UPLOAD_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(S3CrtErrors::NO_SUCH_UPLOAD), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(S3CrtErrors::NO_SUCH_UPLOAD), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == BUCKET_ALREADY_OWNED_BY_YOU_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(S3CrtErrors::BUCKET_ALREADY_OWNED_BY_YOU), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(S3CrtErrors::BUCKET_ALREADY_OWNED_BY_YOU), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == OBJECT_ALREADY_IN_ACTIVE_TIER_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(S3CrtErrors::OBJECT_ALREADY_IN_ACTIVE_TIER), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(S3CrtErrors::OBJECT_ALREADY_IN_ACTIVE_TIER), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == NO_SUCH_BUCKET_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(S3CrtErrors::NO_SUCH_BUCKET), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(S3CrtErrors::NO_SUCH_BUCKET), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == NO_SUCH_KEY_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(S3CrtErrors::NO_SUCH_KEY), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(S3CrtErrors::NO_SUCH_KEY), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == OBJECT_NOT_IN_ACTIVE_TIER_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(S3CrtErrors::OBJECT_NOT_IN_ACTIVE_TIER), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(S3CrtErrors::OBJECT_NOT_IN_ACTIVE_TIER), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == BUCKET_ALREADY_EXISTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(S3CrtErrors::BUCKET_ALREADY_EXISTS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(S3CrtErrors::BUCKET_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_OBJECT_STATE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(S3CrtErrors::INVALID_OBJECT_STATE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(S3CrtErrors::INVALID_OBJECT_STATE), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

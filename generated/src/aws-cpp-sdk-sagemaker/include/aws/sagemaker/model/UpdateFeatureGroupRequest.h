@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/model/OnlineStoreConfigUpdate.h>
+#include <aws/sagemaker/model/ThroughputConfigUpdate.h>
 #include <aws/sagemaker/model/FeatureDefinition.h>
 #include <utility>
 
@@ -181,6 +182,25 @@ namespace Model
      */
     inline UpdateFeatureGroupRequest& WithOnlineStoreConfig(OnlineStoreConfigUpdate&& value) { SetOnlineStoreConfig(std::move(value)); return *this;}
 
+
+    
+    inline const ThroughputConfigUpdate& GetThroughputConfig() const{ return m_throughputConfig; }
+
+    
+    inline bool ThroughputConfigHasBeenSet() const { return m_throughputConfigHasBeenSet; }
+
+    
+    inline void SetThroughputConfig(const ThroughputConfigUpdate& value) { m_throughputConfigHasBeenSet = true; m_throughputConfig = value; }
+
+    
+    inline void SetThroughputConfig(ThroughputConfigUpdate&& value) { m_throughputConfigHasBeenSet = true; m_throughputConfig = std::move(value); }
+
+    
+    inline UpdateFeatureGroupRequest& WithThroughputConfig(const ThroughputConfigUpdate& value) { SetThroughputConfig(value); return *this;}
+
+    
+    inline UpdateFeatureGroupRequest& WithThroughputConfig(ThroughputConfigUpdate&& value) { SetThroughputConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_featureGroupName;
@@ -191,6 +211,9 @@ namespace Model
 
     OnlineStoreConfigUpdate m_onlineStoreConfig;
     bool m_onlineStoreConfigHasBeenSet = false;
+
+    ThroughputConfigUpdate m_throughputConfig;
+    bool m_throughputConfigHasBeenSet = false;
   };
 
 } // namespace Model

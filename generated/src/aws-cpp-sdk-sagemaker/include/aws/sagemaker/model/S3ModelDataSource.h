@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker/model/S3ModelDataType.h>
 #include <aws/sagemaker/model/ModelCompressionType.h>
+#include <aws/sagemaker/model/ModelAccessConfig.h>
 #include <utility>
 
 namespace Aws
@@ -418,6 +419,61 @@ namespace Model
      */
     inline S3ModelDataSource& WithCompressionType(ModelCompressionType&& value) { SetCompressionType(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies the access configuration file for the ML model. You can explicitly
+     * accept the model end-user license agreement (EULA) within the
+     * <code>ModelAccessConfig</code>. You are responsible for reviewing and complying
+     * with any applicable license terms and making sure they are acceptable for your
+     * use case before downloading or using a model.</p>
+     */
+    inline const ModelAccessConfig& GetModelAccessConfig() const{ return m_modelAccessConfig; }
+
+    /**
+     * <p>Specifies the access configuration file for the ML model. You can explicitly
+     * accept the model end-user license agreement (EULA) within the
+     * <code>ModelAccessConfig</code>. You are responsible for reviewing and complying
+     * with any applicable license terms and making sure they are acceptable for your
+     * use case before downloading or using a model.</p>
+     */
+    inline bool ModelAccessConfigHasBeenSet() const { return m_modelAccessConfigHasBeenSet; }
+
+    /**
+     * <p>Specifies the access configuration file for the ML model. You can explicitly
+     * accept the model end-user license agreement (EULA) within the
+     * <code>ModelAccessConfig</code>. You are responsible for reviewing and complying
+     * with any applicable license terms and making sure they are acceptable for your
+     * use case before downloading or using a model.</p>
+     */
+    inline void SetModelAccessConfig(const ModelAccessConfig& value) { m_modelAccessConfigHasBeenSet = true; m_modelAccessConfig = value; }
+
+    /**
+     * <p>Specifies the access configuration file for the ML model. You can explicitly
+     * accept the model end-user license agreement (EULA) within the
+     * <code>ModelAccessConfig</code>. You are responsible for reviewing and complying
+     * with any applicable license terms and making sure they are acceptable for your
+     * use case before downloading or using a model.</p>
+     */
+    inline void SetModelAccessConfig(ModelAccessConfig&& value) { m_modelAccessConfigHasBeenSet = true; m_modelAccessConfig = std::move(value); }
+
+    /**
+     * <p>Specifies the access configuration file for the ML model. You can explicitly
+     * accept the model end-user license agreement (EULA) within the
+     * <code>ModelAccessConfig</code>. You are responsible for reviewing and complying
+     * with any applicable license terms and making sure they are acceptable for your
+     * use case before downloading or using a model.</p>
+     */
+    inline S3ModelDataSource& WithModelAccessConfig(const ModelAccessConfig& value) { SetModelAccessConfig(value); return *this;}
+
+    /**
+     * <p>Specifies the access configuration file for the ML model. You can explicitly
+     * accept the model end-user license agreement (EULA) within the
+     * <code>ModelAccessConfig</code>. You are responsible for reviewing and complying
+     * with any applicable license terms and making sure they are acceptable for your
+     * use case before downloading or using a model.</p>
+     */
+    inline S3ModelDataSource& WithModelAccessConfig(ModelAccessConfig&& value) { SetModelAccessConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_s3Uri;
@@ -428,6 +484,9 @@ namespace Model
 
     ModelCompressionType m_compressionType;
     bool m_compressionTypeHasBeenSet = false;
+
+    ModelAccessConfig m_modelAccessConfig;
+    bool m_modelAccessConfigHasBeenSet = false;
   };
 
 } // namespace Model

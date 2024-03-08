@@ -36,7 +36,7 @@ namespace Model
     /**
      * <p>The HTTP return code of the request. If the request succeeded, the code is
      * 200. See <a
-     * href="docs.aws.amazon.comneptune/latest/userguide/neptune-dfe-statistics.html#neptune-dfe-statistics-errors">Common
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-dfe-statistics.html#neptune-dfe-statistics-errors">Common
      * error codes for DFE statistics request</a> for a list of common errors.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
@@ -44,7 +44,7 @@ namespace Model
     /**
      * <p>The HTTP return code of the request. If the request succeeded, the code is
      * 200. See <a
-     * href="docs.aws.amazon.comneptune/latest/userguide/neptune-dfe-statistics.html#neptune-dfe-statistics-errors">Common
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-dfe-statistics.html#neptune-dfe-statistics-errors">Common
      * error codes for DFE statistics request</a> for a list of common errors.</p>
      */
     inline void SetStatus(const Aws::String& value) { m_status = value; }
@@ -52,7 +52,7 @@ namespace Model
     /**
      * <p>The HTTP return code of the request. If the request succeeded, the code is
      * 200. See <a
-     * href="docs.aws.amazon.comneptune/latest/userguide/neptune-dfe-statistics.html#neptune-dfe-statistics-errors">Common
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-dfe-statistics.html#neptune-dfe-statistics-errors">Common
      * error codes for DFE statistics request</a> for a list of common errors.</p>
      */
     inline void SetStatus(Aws::String&& value) { m_status = std::move(value); }
@@ -60,7 +60,7 @@ namespace Model
     /**
      * <p>The HTTP return code of the request. If the request succeeded, the code is
      * 200. See <a
-     * href="docs.aws.amazon.comneptune/latest/userguide/neptune-dfe-statistics.html#neptune-dfe-statistics-errors">Common
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-dfe-statistics.html#neptune-dfe-statistics-errors">Common
      * error codes for DFE statistics request</a> for a list of common errors.</p>
      */
     inline void SetStatus(const char* value) { m_status.assign(value); }
@@ -68,7 +68,7 @@ namespace Model
     /**
      * <p>The HTTP return code of the request. If the request succeeded, the code is
      * 200. See <a
-     * href="docs.aws.amazon.comneptune/latest/userguide/neptune-dfe-statistics.html#neptune-dfe-statistics-errors">Common
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-dfe-statistics.html#neptune-dfe-statistics-errors">Common
      * error codes for DFE statistics request</a> for a list of common errors.</p>
      */
     inline GetPropertygraphStatisticsResult& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
@@ -76,7 +76,7 @@ namespace Model
     /**
      * <p>The HTTP return code of the request. If the request succeeded, the code is
      * 200. See <a
-     * href="docs.aws.amazon.comneptune/latest/userguide/neptune-dfe-statistics.html#neptune-dfe-statistics-errors">Common
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-dfe-statistics.html#neptune-dfe-statistics-errors">Common
      * error codes for DFE statistics request</a> for a list of common errors.</p>
      */
     inline GetPropertygraphStatisticsResult& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
@@ -84,7 +84,7 @@ namespace Model
     /**
      * <p>The HTTP return code of the request. If the request succeeded, the code is
      * 200. See <a
-     * href="docs.aws.amazon.comneptune/latest/userguide/neptune-dfe-statistics.html#neptune-dfe-statistics-errors">Common
+     * href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-dfe-statistics.html#neptune-dfe-statistics-errors">Common
      * error codes for DFE statistics request</a> for a list of common errors.</p>
      */
     inline GetPropertygraphStatisticsResult& WithStatus(const char* value) { SetStatus(value); return *this;}

@@ -77,8 +77,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* LexModelBuildingServiceClient::SERVICE_NAME = "lex";
-const char* LexModelBuildingServiceClient::ALLOCATION_TAG = "LexModelBuildingServiceClient";
+namespace Aws
+{
+  namespace LexModelBuildingService
+  {
+    const char SERVICE_NAME[] = "lex";
+    const char ALLOCATION_TAG[] = "LexModelBuildingServiceClient";
+  }
+}
+const char* LexModelBuildingServiceClient::GetServiceName() {return SERVICE_NAME;}
+const char* LexModelBuildingServiceClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 LexModelBuildingServiceClient::LexModelBuildingServiceClient(const LexModelBuildingService::LexModelBuildingServiceClientConfiguration& clientConfiguration,
                                                              std::shared_ptr<LexModelBuildingServiceEndpointProviderBase> endpointProvider) :
@@ -90,7 +98,7 @@ LexModelBuildingServiceClient::LexModelBuildingServiceClient(const LexModelBuild
             Aws::MakeShared<LexModelBuildingServiceErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<LexModelBuildingServiceEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -106,7 +114,7 @@ LexModelBuildingServiceClient::LexModelBuildingServiceClient(const AWSCredential
             Aws::MakeShared<LexModelBuildingServiceErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<LexModelBuildingServiceEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -122,7 +130,7 @@ LexModelBuildingServiceClient::LexModelBuildingServiceClient(const std::shared_p
             Aws::MakeShared<LexModelBuildingServiceErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<LexModelBuildingServiceEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

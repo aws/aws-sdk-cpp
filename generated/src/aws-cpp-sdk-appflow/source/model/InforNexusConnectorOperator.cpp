@@ -114,6 +114,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InforNexusConnectorOperator::NOT_SET:
+            return {};
           case InforNexusConnectorOperator::PROJECTION:
             return "PROJECTION";
           case InforNexusConnectorOperator::BETWEEN:

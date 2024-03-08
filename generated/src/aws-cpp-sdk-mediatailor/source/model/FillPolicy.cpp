@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FillPolicy::NOT_SET:
+            return {};
           case FillPolicy::FULL_AVAIL_ONLY:
             return "FULL_AVAIL_ONLY";
           case FillPolicy::PARTIAL_AVAIL:

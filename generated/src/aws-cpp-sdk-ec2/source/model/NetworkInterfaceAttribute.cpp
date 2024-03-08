@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NetworkInterfaceAttribute::NOT_SET:
+            return {};
           case NetworkInterfaceAttribute::description:
             return "description";
           case NetworkInterfaceAttribute::groupSet:

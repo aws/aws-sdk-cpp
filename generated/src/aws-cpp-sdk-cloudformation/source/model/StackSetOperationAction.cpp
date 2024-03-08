@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StackSetOperationAction::NOT_SET:
+            return {};
           case StackSetOperationAction::CREATE:
             return "CREATE";
           case StackSetOperationAction::UPDATE:

@@ -27,7 +27,8 @@ AssetSummary::AssetSummary() :
     m_lastUpdateDateHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_hierarchiesHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_externalIdHasBeenSet(false)
 {
 }
 
@@ -40,7 +41,8 @@ AssetSummary::AssetSummary(JsonView jsonValue) :
     m_lastUpdateDateHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_hierarchiesHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_externalIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -113,6 +115,13 @@ AssetSummary& AssetSummary::operator =(JsonView jsonValue)
     m_descriptionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("externalId"))
+  {
+    m_externalId = jsonValue.GetString("externalId");
+
+    m_externalIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -174,6 +183,12 @@ JsonValue AssetSummary::Jsonize() const
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("description", m_description);
+
+  }
+
+  if(m_externalIdHasBeenSet)
+  {
+   payload.WithString("externalId", m_externalId);
 
   }
 

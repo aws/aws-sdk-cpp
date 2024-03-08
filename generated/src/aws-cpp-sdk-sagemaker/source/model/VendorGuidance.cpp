@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VendorGuidance::NOT_SET:
+            return {};
           case VendorGuidance::NOT_PROVIDED:
             return "NOT_PROVIDED";
           case VendorGuidance::STABLE:

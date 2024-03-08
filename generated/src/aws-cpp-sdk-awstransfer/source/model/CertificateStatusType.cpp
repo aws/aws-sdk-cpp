@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CertificateStatusType::NOT_SET:
+            return {};
           case CertificateStatusType::ACTIVE:
             return "ACTIVE";
           case CertificateStatusType::PENDING_ROTATION:

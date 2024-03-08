@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     CLONE,
-    FULL_COPY
+    FULL_COPY,
+    INCREMENTAL_COPY
   };
 
 namespace OpenZFSCopyStrategyMapper

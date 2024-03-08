@@ -28,7 +28,9 @@ ActionDeclaration::ActionDeclaration() :
     m_inputArtifactsHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_regionHasBeenSet(false),
-    m_namespaceHasBeenSet(false)
+    m_namespaceHasBeenSet(false),
+    m_timeoutInMinutes(0),
+    m_timeoutInMinutesHasBeenSet(false)
 {
 }
 
@@ -42,7 +44,9 @@ ActionDeclaration::ActionDeclaration(JsonView jsonValue) :
     m_inputArtifactsHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_regionHasBeenSet(false),
-    m_namespaceHasBeenSet(false)
+    m_namespaceHasBeenSet(false),
+    m_timeoutInMinutes(0),
+    m_timeoutInMinutesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -121,6 +125,13 @@ ActionDeclaration& ActionDeclaration::operator =(JsonView jsonValue)
     m_namespaceHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("timeoutInMinutes"))
+  {
+    m_timeoutInMinutes = jsonValue.GetInteger("timeoutInMinutes");
+
+    m_timeoutInMinutesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -194,6 +205,12 @@ JsonValue ActionDeclaration::Jsonize() const
   if(m_namespaceHasBeenSet)
   {
    payload.WithString("namespace", m_namespace);
+
+  }
+
+  if(m_timeoutInMinutesHasBeenSet)
+  {
+   payload.WithInteger("timeoutInMinutes", m_timeoutInMinutes);
 
   }
 

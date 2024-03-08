@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case S3GranteeTypeIdentifier::NOT_SET:
+            return {};
           case S3GranteeTypeIdentifier::id:
             return "id";
           case S3GranteeTypeIdentifier::emailAddress:

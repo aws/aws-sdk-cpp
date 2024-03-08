@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SmbVersion::NOT_SET:
+            return {};
           case SmbVersion::AUTOMATIC:
             return "AUTOMATIC";
           case SmbVersion::SMB2:

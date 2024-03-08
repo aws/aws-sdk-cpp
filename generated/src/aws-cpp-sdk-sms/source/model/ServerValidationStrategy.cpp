@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ServerValidationStrategy::NOT_SET:
+            return {};
           case ServerValidationStrategy::USERDATA:
             return "USERDATA";
           default:

@@ -19,6 +19,7 @@ namespace Model
 {
 
 ImportKeyMaterial::ImportKeyMaterial() : 
+    m_keyCryptogramHasBeenSet(false),
     m_rootCertificatePublicKeyHasBeenSet(false),
     m_tr31KeyBlockHasBeenSet(false),
     m_tr34KeyBlockHasBeenSet(false),
@@ -27,6 +28,7 @@ ImportKeyMaterial::ImportKeyMaterial() :
 }
 
 ImportKeyMaterial::ImportKeyMaterial(JsonView jsonValue) : 
+    m_keyCryptogramHasBeenSet(false),
     m_rootCertificatePublicKeyHasBeenSet(false),
     m_tr31KeyBlockHasBeenSet(false),
     m_tr34KeyBlockHasBeenSet(false),
@@ -37,6 +39,13 @@ ImportKeyMaterial::ImportKeyMaterial(JsonView jsonValue) :
 
 ImportKeyMaterial& ImportKeyMaterial::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("KeyCryptogram"))
+  {
+    m_keyCryptogram = jsonValue.GetObject("KeyCryptogram");
+
+    m_keyCryptogramHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("RootCertificatePublicKey"))
   {
     m_rootCertificatePublicKey = jsonValue.GetObject("RootCertificatePublicKey");
@@ -71,6 +80,12 @@ ImportKeyMaterial& ImportKeyMaterial::operator =(JsonView jsonValue)
 JsonValue ImportKeyMaterial::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_keyCryptogramHasBeenSet)
+  {
+   payload.WithObject("KeyCryptogram", m_keyCryptogram.Jsonize());
+
+  }
 
   if(m_rootCertificatePublicKeyHasBeenSet)
   {

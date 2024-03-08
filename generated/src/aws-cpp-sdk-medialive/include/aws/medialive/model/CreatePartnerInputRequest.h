@@ -82,7 +82,6 @@ namespace Model
      * Unique identifier of the request to ensure the request is handled
 exactly once
      * in case of retries.
-
      */
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -90,7 +89,6 @@ exactly once
      * Unique identifier of the request to ensure the request is handled
 exactly once
      * in case of retries.
-
      */
     inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
 
@@ -98,7 +96,6 @@ exactly once
      * Unique identifier of the request to ensure the request is handled
 exactly once
      * in case of retries.
-
      */
     inline void SetRequestId(const Aws::String& value) { m_requestIdHasBeenSet = true; m_requestId = value; }
 
@@ -106,7 +103,6 @@ exactly once
      * Unique identifier of the request to ensure the request is handled
 exactly once
      * in case of retries.
-
      */
     inline void SetRequestId(Aws::String&& value) { m_requestIdHasBeenSet = true; m_requestId = std::move(value); }
 
@@ -114,7 +110,6 @@ exactly once
      * Unique identifier of the request to ensure the request is handled
 exactly once
      * in case of retries.
-
      */
     inline void SetRequestId(const char* value) { m_requestIdHasBeenSet = true; m_requestId.assign(value); }
 
@@ -122,7 +117,6 @@ exactly once
      * Unique identifier of the request to ensure the request is handled
 exactly once
      * in case of retries.
-
      */
     inline CreatePartnerInputRequest& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
 
@@ -130,7 +124,6 @@ exactly once
      * Unique identifier of the request to ensure the request is handled
 exactly once
      * in case of retries.
-
      */
     inline CreatePartnerInputRequest& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
 
@@ -138,7 +131,6 @@ exactly once
      * Unique identifier of the request to ensure the request is handled
 exactly once
      * in case of retries.
-
      */
     inline CreatePartnerInputRequest& WithRequestId(const char* value) { SetRequestId(value); return *this;}
 

@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReservationResourceType::NOT_SET:
+            return {};
           case ReservationResourceType::INPUT:
             return "INPUT";
           case ReservationResourceType::OUTPUT:

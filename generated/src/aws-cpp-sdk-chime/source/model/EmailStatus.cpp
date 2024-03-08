@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EmailStatus::NOT_SET:
+            return {};
           case EmailStatus::NotSent:
             return "NotSent";
           case EmailStatus::Sent:

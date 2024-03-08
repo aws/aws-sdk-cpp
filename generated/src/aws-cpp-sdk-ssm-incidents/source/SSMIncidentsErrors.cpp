@@ -7,8 +7,8 @@
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/ssm-incidents/SSMIncidentsErrors.h>
 #include <aws/ssm-incidents/model/ConflictException.h>
-#include <aws/ssm-incidents/model/ServiceQuotaExceededException.h>
 #include <aws/ssm-incidents/model/ThrottlingException.h>
+#include <aws/ssm-incidents/model/ServiceQuotaExceededException.h>
 #include <aws/ssm-incidents/model/ResourceNotFoundException.h>
 
 using namespace Aws::Client;
@@ -26,16 +26,16 @@ template<> AWS_SSMINCIDENTS_API ConflictException SSMIncidentsError::GetModeledE
   return ConflictException(this->GetJsonPayload().View());
 }
 
-template<> AWS_SSMINCIDENTS_API ServiceQuotaExceededException SSMIncidentsError::GetModeledError()
-{
-  assert(this->GetErrorType() == SSMIncidentsErrors::SERVICE_QUOTA_EXCEEDED);
-  return ServiceQuotaExceededException(this->GetJsonPayload().View());
-}
-
 template<> AWS_SSMINCIDENTS_API ThrottlingException SSMIncidentsError::GetModeledError()
 {
   assert(this->GetErrorType() == SSMIncidentsErrors::THROTTLING);
   return ThrottlingException(this->GetJsonPayload().View());
+}
+
+template<> AWS_SSMINCIDENTS_API ServiceQuotaExceededException SSMIncidentsError::GetModeledError()
+{
+  assert(this->GetErrorType() == SSMIncidentsErrors::SERVICE_QUOTA_EXCEEDED);
+  return ServiceQuotaExceededException(this->GetJsonPayload().View());
 }
 
 template<> AWS_SSMINCIDENTS_API ResourceNotFoundException SSMIncidentsError::GetModeledError()
@@ -58,15 +58,15 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == CONFLICT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMIncidentsErrors::CONFLICT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMIncidentsErrors::CONFLICT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == SERVICE_QUOTA_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMIncidentsErrors::SERVICE_QUOTA_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMIncidentsErrors::SERVICE_QUOTA_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INTERNAL_SERVER_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMIncidentsErrors::INTERNAL_SERVER), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMIncidentsErrors::INTERNAL_SERVER), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

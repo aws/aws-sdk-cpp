@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EventNotificationPartnerType::NOT_SET:
+            return {};
           case EventNotificationPartnerType::Sidewalk:
             return "Sidewalk";
           default:

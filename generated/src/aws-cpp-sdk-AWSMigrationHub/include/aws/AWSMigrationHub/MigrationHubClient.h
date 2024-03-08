@@ -27,8 +27,8 @@ namespace MigrationHub
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef MigrationHubClientConfiguration ClientConfigurationType;
       typedef MigrationHubEndpointProvider EndpointProviderType;
@@ -38,14 +38,14 @@ namespace MigrationHub
         * is not specified, it will be initialized to default values.
         */
         MigrationHubClient(const Aws::MigrationHub::MigrationHubClientConfiguration& clientConfiguration = Aws::MigrationHub::MigrationHubClientConfiguration(),
-                           std::shared_ptr<MigrationHubEndpointProviderBase> endpointProvider = Aws::MakeShared<MigrationHubEndpointProvider>(ALLOCATION_TAG));
+                           std::shared_ptr<MigrationHubEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         MigrationHubClient(const Aws::Auth::AWSCredentials& credentials,
-                           std::shared_ptr<MigrationHubEndpointProviderBase> endpointProvider = Aws::MakeShared<MigrationHubEndpointProvider>(ALLOCATION_TAG),
+                           std::shared_ptr<MigrationHubEndpointProviderBase> endpointProvider = nullptr,
                            const Aws::MigrationHub::MigrationHubClientConfiguration& clientConfiguration = Aws::MigrationHub::MigrationHubClientConfiguration());
 
        /**
@@ -53,7 +53,7 @@ namespace MigrationHub
         * the default http client factory will be used
         */
         MigrationHubClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                           std::shared_ptr<MigrationHubEndpointProviderBase> endpointProvider = Aws::MakeShared<MigrationHubEndpointProvider>(ALLOCATION_TAG),
+                           std::shared_ptr<MigrationHubEndpointProviderBase> endpointProvider = nullptr,
                            const Aws::MigrationHub::MigrationHubClientConfiguration& clientConfiguration = Aws::MigrationHub::MigrationHubClientConfiguration());
 
 

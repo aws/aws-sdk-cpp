@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TestGridSessionStatus::NOT_SET:
+            return {};
           case TestGridSessionStatus::ACTIVE:
             return "ACTIVE";
           case TestGridSessionStatus::CLOSED:

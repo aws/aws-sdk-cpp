@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EngineWorkflowStatus::NOT_SET:
+            return {};
           case EngineWorkflowStatus::SUCCEEDED:
             return "SUCCEEDED";
           case EngineWorkflowStatus::FAILED:

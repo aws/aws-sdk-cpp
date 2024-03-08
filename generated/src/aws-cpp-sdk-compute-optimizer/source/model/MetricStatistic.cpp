@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MetricStatistic::NOT_SET:
+            return {};
           case MetricStatistic::Maximum:
             return "Maximum";
           case MetricStatistic::Average:

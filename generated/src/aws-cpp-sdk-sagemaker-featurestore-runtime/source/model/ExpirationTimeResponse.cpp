@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ExpirationTimeResponse::NOT_SET:
+            return {};
           case ExpirationTimeResponse::Enabled:
             return "Enabled";
           case ExpirationTimeResponse::Disabled:

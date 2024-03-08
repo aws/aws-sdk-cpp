@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SharedResourceSortByType::NOT_SET:
+            return {};
           case SharedResourceSortByType::ARN:
             return "ARN";
           case SharedResourceSortByType::MODIFIED_TIME:

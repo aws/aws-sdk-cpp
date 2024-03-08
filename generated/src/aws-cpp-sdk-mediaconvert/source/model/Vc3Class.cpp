@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Vc3Class::NOT_SET:
+            return {};
           case Vc3Class::CLASS_145_8BIT:
             return "CLASS_145_8BIT";
           case Vc3Class::CLASS_220_8BIT:

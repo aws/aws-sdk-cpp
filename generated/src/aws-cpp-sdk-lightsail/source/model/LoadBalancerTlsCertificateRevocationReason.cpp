@@ -89,6 +89,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LoadBalancerTlsCertificateRevocationReason::NOT_SET:
+            return {};
           case LoadBalancerTlsCertificateRevocationReason::UNSPECIFIED:
             return "UNSPECIFIED";
           case LoadBalancerTlsCertificateRevocationReason::KEY_COMPROMISE:

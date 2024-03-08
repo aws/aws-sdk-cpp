@@ -85,8 +85,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* KMSClient::SERVICE_NAME = "kms";
-const char* KMSClient::ALLOCATION_TAG = "KMSClient";
+namespace Aws
+{
+  namespace KMS
+  {
+    const char SERVICE_NAME[] = "kms";
+    const char ALLOCATION_TAG[] = "KMSClient";
+  }
+}
+const char* KMSClient::GetServiceName() {return SERVICE_NAME;}
+const char* KMSClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 KMSClient::KMSClient(const KMS::KMSClientConfiguration& clientConfiguration,
                      std::shared_ptr<KMSEndpointProviderBase> endpointProvider) :
@@ -98,7 +106,7 @@ KMSClient::KMSClient(const KMS::KMSClientConfiguration& clientConfiguration,
             Aws::MakeShared<KMSErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<KMSEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -114,7 +122,7 @@ KMSClient::KMSClient(const AWSCredentials& credentials,
             Aws::MakeShared<KMSErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<KMSEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -130,7 +138,7 @@ KMSClient::KMSClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsP
             Aws::MakeShared<KMSErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<KMSEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

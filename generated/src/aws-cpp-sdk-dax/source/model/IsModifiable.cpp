@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case IsModifiable::NOT_SET:
+            return {};
           case IsModifiable::TRUE:
             return "TRUE";
           case IsModifiable::FALSE:

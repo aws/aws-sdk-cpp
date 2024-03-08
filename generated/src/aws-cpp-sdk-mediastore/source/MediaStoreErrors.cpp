@@ -31,23 +31,23 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == CONTAINER_IN_USE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(MediaStoreErrors::CONTAINER_IN_USE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(MediaStoreErrors::CONTAINER_IN_USE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == CORS_POLICY_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(MediaStoreErrors::CORS_POLICY_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(MediaStoreErrors::CORS_POLICY_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(MediaStoreErrors::LIMIT_EXCEEDED), true);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(MediaStoreErrors::LIMIT_EXCEEDED), RetryableType::RETRYABLE);
   }
   else if (hashCode == CONTAINER_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(MediaStoreErrors::CONTAINER_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(MediaStoreErrors::CONTAINER_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == POLICY_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(MediaStoreErrors::POLICY_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(MediaStoreErrors::POLICY_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

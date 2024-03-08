@@ -18,7 +18,7 @@ public class EndpointTest {
     public void testParseHostPrefixParts() {
         Endpoint endpoint = new Endpoint();
         
-        endpoint.setHostPrefix("abc{var1}-{var2}.{var3}12.3{var4}{var5}");
+        endpoint.setHostPrefix("abc{Var1}-{var2}.{var3}12.3{var4}{var5}");
         List<String> parts = endpoint.getHostPrefixParts();
         assertEquals(6, parts.size());
         assertEquals("abc", parts.get(0));
@@ -30,16 +30,16 @@ public class EndpointTest {
 
         List<String> members = endpoint.getMemberReferences();
         assertEquals(5, members.size());
-        assertEquals("var1", members.get(0));
+        assertEquals("Var1", members.get(0));
         assertEquals("var2", members.get(1));
         assertEquals("var3", members.get(2));
         assertEquals("var4", members.get(3));
         assertEquals("var5", members.get(4));
 
-        String hostPrefix = "\"abc\" + request.Getvar1() + \"-\" + request.Getvar2() + \".\" + request.Getvar3() + \"12.3\" + request.Getvar4() + \"\" + request.Getvar5() + \"\"";
+        String hostPrefix = "\"abc\" + request.GetVar1() + \"-\" + request.GetVar2() + \".\" + request.GetVar3() + \"12.3\" + request.GetVar4() + \"\" + request.GetVar5() + \"\"";
         assertEquals(hostPrefix, endpoint.constructHostPrefixString("request"));
 
-        endpoint.setHostPrefix("{var1}-{var2}.{var3}123{var4}{var5}");
+        endpoint.setHostPrefix("{Var1}-{var2}.{var3}123{var4}{var5}");
         parts = endpoint.getHostPrefixParts();
         assertEquals(6, parts.size());
         assertEquals("", parts.get(0)); // before {var1}
@@ -51,16 +51,16 @@ public class EndpointTest {
 
         members = endpoint.getMemberReferences();
         assertEquals(5, members.size());
-        assertEquals("var1", members.get(0));
+        assertEquals("Var1", members.get(0));
         assertEquals("var2", members.get(1));
         assertEquals("var3", members.get(2));
         assertEquals("var4", members.get(3));
         assertEquals("var5", members.get(4));
 
-        hostPrefix = "\"\" + request.Getvar1() + \"-\" + request.Getvar2() + \".\" + request.Getvar3() + \"123\" + request.Getvar4() + \"\" + request.Getvar5() + \"\"";
+        hostPrefix = "\"\" + request.GetVar1() + \"-\" + request.GetVar2() + \".\" + request.GetVar3() + \"123\" + request.GetVar4() + \"\" + request.GetVar5() + \"\"";
         assertEquals(hostPrefix, endpoint.constructHostPrefixString("request"));
 
-        endpoint.setHostPrefix("{var1}-{var2}.{var3}123{var4}{var5}abc");
+        endpoint.setHostPrefix("{Var1}-{var2}.{var3}123{var4}{var5}abc");
         parts = endpoint.getHostPrefixParts();
         assertEquals(6, parts.size());
         assertEquals("", parts.get(0));
@@ -72,13 +72,13 @@ public class EndpointTest {
 
         members = endpoint.getMemberReferences();
         assertEquals(5, members.size());
-        assertEquals("var1", members.get(0));
+        assertEquals("Var1", members.get(0));
         assertEquals("var2", members.get(1));
         assertEquals("var3", members.get(2));
         assertEquals("var4", members.get(3));
         assertEquals("var5", members.get(4));
 
-        hostPrefix = "\"\" + request.Getvar1() + \"-\" + request.Getvar2() + \".\" + request.Getvar3() + \"123\" + request.Getvar4() + \"\" + request.Getvar5() + \"abc\"";
+        hostPrefix = "\"\" + request.GetVar1() + \"-\" + request.GetVar2() + \".\" + request.GetVar3() + \"123\" + request.GetVar4() + \"\" + request.GetVar5() + \"abc\"";
         assertEquals(hostPrefix, endpoint.constructHostPrefixString("request"));
     }
 }

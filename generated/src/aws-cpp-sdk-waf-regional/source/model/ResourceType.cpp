@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResourceType::NOT_SET:
+            return {};
           case ResourceType::APPLICATION_LOAD_BALANCER:
             return "APPLICATION_LOAD_BALANCER";
           case ResourceType::API_GATEWAY:

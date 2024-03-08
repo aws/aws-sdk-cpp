@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SegmentTemplateFormat::NOT_SET:
+            return {};
           case SegmentTemplateFormat::NUMBER_WITH_TIMELINE:
             return "NUMBER_WITH_TIMELINE";
           case SegmentTemplateFormat::TIME_WITH_TIMELINE:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InputSourceType::NOT_SET:
+            return {};
           case InputSourceType::STATIC_:
             return "STATIC";
           case InputSourceType::DYNAMIC:

@@ -48,6 +48,9 @@ enum class GlueErrors
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   ALREADY_EXISTS= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  COLUMN_STATISTICS_TASK_NOT_RUNNING,
+  COLUMN_STATISTICS_TASK_RUNNING,
+  COLUMN_STATISTICS_TASK_STOPPING,
   CONCURRENT_MODIFICATION,
   CONCURRENT_RUNS_EXCEEDED,
   CONDITION_CHECK_FAILURE,

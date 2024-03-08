@@ -48,11 +48,25 @@ Aws::String ComputeOSVersionString()
     if(success >= 0)
     {
         Aws::StringStream ss;
-        ss << name.sysname << "/" << name.release << " " << name.machine;
+        ss << name.sysname << "/" << name.release;
         return ss.str();
     }
 
-    return "non-windows/unknown";
+    return "other";
+}
+
+Aws::String ComputeOSVersionArch()
+{
+    utsname name;
+    int32_t success = uname(&name);
+    if(success >= 0)
+    {
+        Aws::StringStream ss;
+        ss << name.machine;
+        return ss.str();
+    }
+
+    return "";
 }
 
 } // namespace OSVersionInfo

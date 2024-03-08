@@ -25,7 +25,7 @@ namespace Model
 
   /**
    * <p>A JSON string that contains a list of Insights types that are logged on a
-   * trail.</p><p><h3>See Also:</h3>   <a
+   * trail or event data store.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/InsightSelector">AWS
    * API Reference</a></p>
    */
@@ -39,7 +39,7 @@ namespace Model
 
 
     /**
-     * <p>The type of Insights events to log on a trail.
+     * <p>The type of Insights events to log on a trail or event data store.
      * <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are valid
      * Insight types.</p> <p>The <code>ApiCallRateInsight</code> Insights type analyzes
      * write-only management API calls that are aggregated per minute against a
@@ -50,7 +50,7 @@ namespace Model
     inline const InsightType& GetInsightType() const{ return m_insightType; }
 
     /**
-     * <p>The type of Insights events to log on a trail.
+     * <p>The type of Insights events to log on a trail or event data store.
      * <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are valid
      * Insight types.</p> <p>The <code>ApiCallRateInsight</code> Insights type analyzes
      * write-only management API calls that are aggregated per minute against a
@@ -61,7 +61,7 @@ namespace Model
     inline bool InsightTypeHasBeenSet() const { return m_insightTypeHasBeenSet; }
 
     /**
-     * <p>The type of Insights events to log on a trail.
+     * <p>The type of Insights events to log on a trail or event data store.
      * <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are valid
      * Insight types.</p> <p>The <code>ApiCallRateInsight</code> Insights type analyzes
      * write-only management API calls that are aggregated per minute against a
@@ -72,7 +72,7 @@ namespace Model
     inline void SetInsightType(const InsightType& value) { m_insightTypeHasBeenSet = true; m_insightType = value; }
 
     /**
-     * <p>The type of Insights events to log on a trail.
+     * <p>The type of Insights events to log on a trail or event data store.
      * <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are valid
      * Insight types.</p> <p>The <code>ApiCallRateInsight</code> Insights type analyzes
      * write-only management API calls that are aggregated per minute against a
@@ -83,7 +83,7 @@ namespace Model
     inline void SetInsightType(InsightType&& value) { m_insightTypeHasBeenSet = true; m_insightType = std::move(value); }
 
     /**
-     * <p>The type of Insights events to log on a trail.
+     * <p>The type of Insights events to log on a trail or event data store.
      * <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are valid
      * Insight types.</p> <p>The <code>ApiCallRateInsight</code> Insights type analyzes
      * write-only management API calls that are aggregated per minute against a
@@ -94,7 +94,7 @@ namespace Model
     inline InsightSelector& WithInsightType(const InsightType& value) { SetInsightType(value); return *this;}
 
     /**
-     * <p>The type of Insights events to log on a trail.
+     * <p>The type of Insights events to log on a trail or event data store.
      * <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are valid
      * Insight types.</p> <p>The <code>ApiCallRateInsight</code> Insights type analyzes
      * write-only management API calls that are aggregated per minute against a

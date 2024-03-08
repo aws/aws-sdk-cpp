@@ -40,8 +40,8 @@ namespace SNS
   {
     public:
       typedef Aws::Client::AWSXMLClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef SNSClientConfiguration ClientConfigurationType;
       typedef SNSEndpointProvider EndpointProviderType;
@@ -51,14 +51,14 @@ namespace SNS
         * is not specified, it will be initialized to default values.
         */
         SNSClient(const Aws::SNS::SNSClientConfiguration& clientConfiguration = Aws::SNS::SNSClientConfiguration(),
-                  std::shared_ptr<SNSEndpointProviderBase> endpointProvider = Aws::MakeShared<SNSEndpointProvider>(ALLOCATION_TAG));
+                  std::shared_ptr<SNSEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         SNSClient(const Aws::Auth::AWSCredentials& credentials,
-                  std::shared_ptr<SNSEndpointProviderBase> endpointProvider = Aws::MakeShared<SNSEndpointProvider>(ALLOCATION_TAG),
+                  std::shared_ptr<SNSEndpointProviderBase> endpointProvider = nullptr,
                   const Aws::SNS::SNSClientConfiguration& clientConfiguration = Aws::SNS::SNSClientConfiguration());
 
        /**
@@ -66,7 +66,7 @@ namespace SNS
         * the default http client factory will be used
         */
         SNSClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                  std::shared_ptr<SNSEndpointProviderBase> endpointProvider = Aws::MakeShared<SNSEndpointProvider>(ALLOCATION_TAG),
+                  std::shared_ptr<SNSEndpointProviderBase> endpointProvider = nullptr,
                   const Aws::SNS::SNSClientConfiguration& clientConfiguration = Aws::SNS::SNSClientConfiguration());
 
 
@@ -209,9 +209,15 @@ namespace SNS
          * <code>APNS_SANDBOX</code> using token credentials,
          * <code>PlatformPrincipal</code> is <code>signing key ID</code> and
          * <code>PlatformCredential</code> is <code>signing key</code>.</p> </li> <li>
-         * <p>For <code>GCM</code> (Firebase Cloud Messaging), there is no
-         * <code>PlatformPrincipal</code> and the <code>PlatformCredential</code> is
-         * <code>API key</code>.</p> </li> <li> <p>For <code>MPNS</code>,
+         * <p>For GCM (Firebase Cloud Messaging) using key credentials, there is no
+         * <code>PlatformPrincipal</code>. The <code>PlatformCredential</code> is <code>API
+         * key</code>.</p> </li> <li> <p>For GCM (Firebase Cloud Messaging) using token
+         * credentials, there is no <code>PlatformPrincipal</code>. The
+         * <code>PlatformCredential</code> is a JSON formatted private key file. When using
+         * the Amazon Web Services CLI, the file must be in string format and special
+         * characters must be ignored. To format the file correctly, Amazon SNS recommends
+         * using the following command: <code>SERVICE_JSON=`jq @json &lt;&lt;&lt; cat
+         * service.json`</code>.</p> </li> <li> <p>For <code>MPNS</code>,
          * <code>PlatformPrincipal</code> is <code>TLS certificate</code> and
          * <code>PlatformCredential</code> is <code>private key</code>.</p> </li> <li>
          * <p>For <code>WNS</code>, <code>PlatformPrincipal</code> is <code>Package
@@ -1282,7 +1288,7 @@ namespace SNS
          * Services account, the endpoint owner must run the
          * <code>ConfirmSubscription</code> action to confirm the subscription.</p> <p>You
          * call the <code>ConfirmSubscription</code> action with the token from the
-         * subscription response. Confirmation tokens are valid for three days.</p> <p>This
+         * subscription response. Confirmation tokens are valid for two days.</p> <p>This
          * action is throttled at 100 transactions per second (TPS).</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Subscribe">AWS API

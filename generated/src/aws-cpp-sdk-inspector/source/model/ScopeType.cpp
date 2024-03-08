@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ScopeType::NOT_SET:
+            return {};
           case ScopeType::INSTANCE_ID:
             return "INSTANCE_ID";
           case ScopeType::RULES_PACKAGE_ARN:

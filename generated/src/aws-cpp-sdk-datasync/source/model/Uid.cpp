@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Uid::NOT_SET:
+            return {};
           case Uid::NONE:
             return "NONE";
           case Uid::INT_VALUE:

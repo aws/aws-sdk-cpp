@@ -34,8 +34,8 @@ namespace MigrationHubRefactorSpaces
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef MigrationHubRefactorSpacesClientConfiguration ClientConfigurationType;
       typedef MigrationHubRefactorSpacesEndpointProvider EndpointProviderType;
@@ -45,14 +45,14 @@ namespace MigrationHubRefactorSpaces
         * is not specified, it will be initialized to default values.
         */
         MigrationHubRefactorSpacesClient(const Aws::MigrationHubRefactorSpaces::MigrationHubRefactorSpacesClientConfiguration& clientConfiguration = Aws::MigrationHubRefactorSpaces::MigrationHubRefactorSpacesClientConfiguration(),
-                                         std::shared_ptr<MigrationHubRefactorSpacesEndpointProviderBase> endpointProvider = Aws::MakeShared<MigrationHubRefactorSpacesEndpointProvider>(ALLOCATION_TAG));
+                                         std::shared_ptr<MigrationHubRefactorSpacesEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         MigrationHubRefactorSpacesClient(const Aws::Auth::AWSCredentials& credentials,
-                                         std::shared_ptr<MigrationHubRefactorSpacesEndpointProviderBase> endpointProvider = Aws::MakeShared<MigrationHubRefactorSpacesEndpointProvider>(ALLOCATION_TAG),
+                                         std::shared_ptr<MigrationHubRefactorSpacesEndpointProviderBase> endpointProvider = nullptr,
                                          const Aws::MigrationHubRefactorSpaces::MigrationHubRefactorSpacesClientConfiguration& clientConfiguration = Aws::MigrationHubRefactorSpaces::MigrationHubRefactorSpacesClientConfiguration());
 
        /**
@@ -60,7 +60,7 @@ namespace MigrationHubRefactorSpaces
         * the default http client factory will be used
         */
         MigrationHubRefactorSpacesClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                                         std::shared_ptr<MigrationHubRefactorSpacesEndpointProviderBase> endpointProvider = Aws::MakeShared<MigrationHubRefactorSpacesEndpointProvider>(ALLOCATION_TAG),
+                                         std::shared_ptr<MigrationHubRefactorSpacesEndpointProviderBase> endpointProvider = nullptr,
                                          const Aws::MigrationHubRefactorSpaces::MigrationHubRefactorSpacesClientConfiguration& clientConfiguration = Aws::MigrationHubRefactorSpaces::MigrationHubRefactorSpacesClientConfiguration());
 
 

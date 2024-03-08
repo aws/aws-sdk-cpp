@@ -18,7 +18,8 @@ UpdateSecurityProfileRequest::UpdateSecurityProfileRequest() :
     m_securityProfileIdHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
     m_allowedAccessControlTagsHasBeenSet(false),
-    m_tagRestrictedResourcesHasBeenSet(false)
+    m_tagRestrictedResourcesHasBeenSet(false),
+    m_applicationsHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,17 @@ Aws::String UpdateSecurityProfileRequest::SerializePayload() const
      tagRestrictedResourcesJsonList[tagRestrictedResourcesIndex].AsString(m_tagRestrictedResources[tagRestrictedResourcesIndex]);
    }
    payload.WithArray("TagRestrictedResources", std::move(tagRestrictedResourcesJsonList));
+
+  }
+
+  if(m_applicationsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> applicationsJsonList(m_applications.size());
+   for(unsigned applicationsIndex = 0; applicationsIndex < applicationsJsonList.GetLength(); ++applicationsIndex)
+   {
+     applicationsJsonList[applicationsIndex].AsObject(m_applications[applicationsIndex].Jsonize());
+   }
+   payload.WithArray("Applications", std::move(applicationsJsonList));
 
   }
 

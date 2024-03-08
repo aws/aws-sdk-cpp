@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InvokeMode::NOT_SET:
+            return {};
           case InvokeMode::BUFFERED:
             return "BUFFERED";
           case InvokeMode::RESPONSE_STREAM:

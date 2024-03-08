@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TargetInstanceTypeRightSizingMethod::NOT_SET:
+            return {};
           case TargetInstanceTypeRightSizingMethod::NONE:
             return "NONE";
           case TargetInstanceTypeRightSizingMethod::BASIC:

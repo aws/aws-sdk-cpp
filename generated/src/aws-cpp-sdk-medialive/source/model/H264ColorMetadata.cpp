@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case H264ColorMetadata::NOT_SET:
+            return {};
           case H264ColorMetadata::IGNORE:
             return "IGNORE";
           case H264ColorMetadata::INSERT:

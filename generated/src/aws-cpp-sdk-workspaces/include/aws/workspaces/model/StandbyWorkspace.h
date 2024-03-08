@@ -7,6 +7,7 @@
 #include <aws/workspaces/WorkSpaces_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/workspaces/model/DataReplication.h>
 #include <aws/workspaces/model/Tag.h>
 #include <utility>
 
@@ -202,6 +203,43 @@ namespace Model
      */
     inline StandbyWorkspace& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Indicates whether data replication is enabled, and if enabled, the type of
+     * data replication.</p>
+     */
+    inline const DataReplication& GetDataReplication() const{ return m_dataReplication; }
+
+    /**
+     * <p>Indicates whether data replication is enabled, and if enabled, the type of
+     * data replication.</p>
+     */
+    inline bool DataReplicationHasBeenSet() const { return m_dataReplicationHasBeenSet; }
+
+    /**
+     * <p>Indicates whether data replication is enabled, and if enabled, the type of
+     * data replication.</p>
+     */
+    inline void SetDataReplication(const DataReplication& value) { m_dataReplicationHasBeenSet = true; m_dataReplication = value; }
+
+    /**
+     * <p>Indicates whether data replication is enabled, and if enabled, the type of
+     * data replication.</p>
+     */
+    inline void SetDataReplication(DataReplication&& value) { m_dataReplicationHasBeenSet = true; m_dataReplication = std::move(value); }
+
+    /**
+     * <p>Indicates whether data replication is enabled, and if enabled, the type of
+     * data replication.</p>
+     */
+    inline StandbyWorkspace& WithDataReplication(const DataReplication& value) { SetDataReplication(value); return *this;}
+
+    /**
+     * <p>Indicates whether data replication is enabled, and if enabled, the type of
+     * data replication.</p>
+     */
+    inline StandbyWorkspace& WithDataReplication(DataReplication&& value) { SetDataReplication(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_primaryWorkspaceId;
@@ -215,6 +253,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    DataReplication m_dataReplication;
+    bool m_dataReplicationHasBeenSet = false;
   };
 
 } // namespace Model

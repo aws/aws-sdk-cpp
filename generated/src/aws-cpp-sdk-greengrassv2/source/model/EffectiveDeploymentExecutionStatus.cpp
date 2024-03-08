@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EffectiveDeploymentExecutionStatus::NOT_SET:
+            return {};
           case EffectiveDeploymentExecutionStatus::IN_PROGRESS:
             return "IN_PROGRESS";
           case EffectiveDeploymentExecutionStatus::QUEUED:

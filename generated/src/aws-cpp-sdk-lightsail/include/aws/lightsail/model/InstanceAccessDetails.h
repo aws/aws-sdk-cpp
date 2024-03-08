@@ -7,9 +7,9 @@
 #include <aws/lightsail/Lightsail_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/lightsail/model/PasswordData.h>
 #include <aws/lightsail/model/InstanceAccessProtocol.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/lightsail/model/HostKeyAttributes.h>
 #include <utility>
 
@@ -45,56 +45,56 @@ namespace Model
 
     /**
      * <p>For SSH access, the public key to use when accessing your instance For
-     * OpenSSH clients (e.g., command line SSH), you should save this value to
+     * OpenSSH clients (command line SSH), you should save this value to
      * <code>tempkey-cert.pub</code>.</p>
      */
     inline const Aws::String& GetCertKey() const{ return m_certKey; }
 
     /**
      * <p>For SSH access, the public key to use when accessing your instance For
-     * OpenSSH clients (e.g., command line SSH), you should save this value to
+     * OpenSSH clients (command line SSH), you should save this value to
      * <code>tempkey-cert.pub</code>.</p>
      */
     inline bool CertKeyHasBeenSet() const { return m_certKeyHasBeenSet; }
 
     /**
      * <p>For SSH access, the public key to use when accessing your instance For
-     * OpenSSH clients (e.g., command line SSH), you should save this value to
+     * OpenSSH clients (command line SSH), you should save this value to
      * <code>tempkey-cert.pub</code>.</p>
      */
     inline void SetCertKey(const Aws::String& value) { m_certKeyHasBeenSet = true; m_certKey = value; }
 
     /**
      * <p>For SSH access, the public key to use when accessing your instance For
-     * OpenSSH clients (e.g., command line SSH), you should save this value to
+     * OpenSSH clients (command line SSH), you should save this value to
      * <code>tempkey-cert.pub</code>.</p>
      */
     inline void SetCertKey(Aws::String&& value) { m_certKeyHasBeenSet = true; m_certKey = std::move(value); }
 
     /**
      * <p>For SSH access, the public key to use when accessing your instance For
-     * OpenSSH clients (e.g., command line SSH), you should save this value to
+     * OpenSSH clients (command line SSH), you should save this value to
      * <code>tempkey-cert.pub</code>.</p>
      */
     inline void SetCertKey(const char* value) { m_certKeyHasBeenSet = true; m_certKey.assign(value); }
 
     /**
      * <p>For SSH access, the public key to use when accessing your instance For
-     * OpenSSH clients (e.g., command line SSH), you should save this value to
+     * OpenSSH clients (command line SSH), you should save this value to
      * <code>tempkey-cert.pub</code>.</p>
      */
     inline InstanceAccessDetails& WithCertKey(const Aws::String& value) { SetCertKey(value); return *this;}
 
     /**
      * <p>For SSH access, the public key to use when accessing your instance For
-     * OpenSSH clients (e.g., command line SSH), you should save this value to
+     * OpenSSH clients (command line SSH), you should save this value to
      * <code>tempkey-cert.pub</code>.</p>
      */
     inline InstanceAccessDetails& WithCertKey(Aws::String&& value) { SetCertKey(std::move(value)); return *this;}
 
     /**
      * <p>For SSH access, the public key to use when accessing your instance For
-     * OpenSSH clients (e.g., command line SSH), you should save this value to
+     * OpenSSH clients (command line SSH), you should save this value to
      * <code>tempkey-cert.pub</code>.</p>
      */
     inline InstanceAccessDetails& WithCertKey(const char* value) { SetCertKey(value); return *this;}
@@ -170,6 +170,52 @@ namespace Model
      * <p>The public IP address of the Amazon Lightsail instance.</p>
      */
     inline InstanceAccessDetails& WithIpAddress(const char* value) { SetIpAddress(value); return *this;}
+
+
+    /**
+     * <p>The IPv6 address of the Amazon Lightsail instance.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetIpv6Addresses() const{ return m_ipv6Addresses; }
+
+    /**
+     * <p>The IPv6 address of the Amazon Lightsail instance.</p>
+     */
+    inline bool Ipv6AddressesHasBeenSet() const { return m_ipv6AddressesHasBeenSet; }
+
+    /**
+     * <p>The IPv6 address of the Amazon Lightsail instance.</p>
+     */
+    inline void SetIpv6Addresses(const Aws::Vector<Aws::String>& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses = value; }
+
+    /**
+     * <p>The IPv6 address of the Amazon Lightsail instance.</p>
+     */
+    inline void SetIpv6Addresses(Aws::Vector<Aws::String>&& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses = std::move(value); }
+
+    /**
+     * <p>The IPv6 address of the Amazon Lightsail instance.</p>
+     */
+    inline InstanceAccessDetails& WithIpv6Addresses(const Aws::Vector<Aws::String>& value) { SetIpv6Addresses(value); return *this;}
+
+    /**
+     * <p>The IPv6 address of the Amazon Lightsail instance.</p>
+     */
+    inline InstanceAccessDetails& WithIpv6Addresses(Aws::Vector<Aws::String>&& value) { SetIpv6Addresses(std::move(value)); return *this;}
+
+    /**
+     * <p>The IPv6 address of the Amazon Lightsail instance.</p>
+     */
+    inline InstanceAccessDetails& AddIpv6Addresses(const Aws::String& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses.push_back(value); return *this; }
+
+    /**
+     * <p>The IPv6 address of the Amazon Lightsail instance.</p>
+     */
+    inline InstanceAccessDetails& AddIpv6Addresses(Aws::String&& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The IPv6 address of the Amazon Lightsail instance.</p>
+     */
+    inline InstanceAccessDetails& AddIpv6Addresses(const char* value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses.push_back(value); return *this; }
 
 
     /**
@@ -333,50 +379,50 @@ namespace Model
 
 
     /**
-     * <p>For SSH access, the temporary private key. For OpenSSH clients (e.g., command
-     * line SSH), you should save this value to <code>tempkey</code>).</p>
+     * <p>For SSH access, the temporary private key. For OpenSSH clients (command line
+     * SSH), you should save this value to <code>tempkey</code>).</p>
      */
     inline const Aws::String& GetPrivateKey() const{ return m_privateKey; }
 
     /**
-     * <p>For SSH access, the temporary private key. For OpenSSH clients (e.g., command
-     * line SSH), you should save this value to <code>tempkey</code>).</p>
+     * <p>For SSH access, the temporary private key. For OpenSSH clients (command line
+     * SSH), you should save this value to <code>tempkey</code>).</p>
      */
     inline bool PrivateKeyHasBeenSet() const { return m_privateKeyHasBeenSet; }
 
     /**
-     * <p>For SSH access, the temporary private key. For OpenSSH clients (e.g., command
-     * line SSH), you should save this value to <code>tempkey</code>).</p>
+     * <p>For SSH access, the temporary private key. For OpenSSH clients (command line
+     * SSH), you should save this value to <code>tempkey</code>).</p>
      */
     inline void SetPrivateKey(const Aws::String& value) { m_privateKeyHasBeenSet = true; m_privateKey = value; }
 
     /**
-     * <p>For SSH access, the temporary private key. For OpenSSH clients (e.g., command
-     * line SSH), you should save this value to <code>tempkey</code>).</p>
+     * <p>For SSH access, the temporary private key. For OpenSSH clients (command line
+     * SSH), you should save this value to <code>tempkey</code>).</p>
      */
     inline void SetPrivateKey(Aws::String&& value) { m_privateKeyHasBeenSet = true; m_privateKey = std::move(value); }
 
     /**
-     * <p>For SSH access, the temporary private key. For OpenSSH clients (e.g., command
-     * line SSH), you should save this value to <code>tempkey</code>).</p>
+     * <p>For SSH access, the temporary private key. For OpenSSH clients (command line
+     * SSH), you should save this value to <code>tempkey</code>).</p>
      */
     inline void SetPrivateKey(const char* value) { m_privateKeyHasBeenSet = true; m_privateKey.assign(value); }
 
     /**
-     * <p>For SSH access, the temporary private key. For OpenSSH clients (e.g., command
-     * line SSH), you should save this value to <code>tempkey</code>).</p>
+     * <p>For SSH access, the temporary private key. For OpenSSH clients (command line
+     * SSH), you should save this value to <code>tempkey</code>).</p>
      */
     inline InstanceAccessDetails& WithPrivateKey(const Aws::String& value) { SetPrivateKey(value); return *this;}
 
     /**
-     * <p>For SSH access, the temporary private key. For OpenSSH clients (e.g., command
-     * line SSH), you should save this value to <code>tempkey</code>).</p>
+     * <p>For SSH access, the temporary private key. For OpenSSH clients (command line
+     * SSH), you should save this value to <code>tempkey</code>).</p>
      */
     inline InstanceAccessDetails& WithPrivateKey(Aws::String&& value) { SetPrivateKey(std::move(value)); return *this;}
 
     /**
-     * <p>For SSH access, the temporary private key. For OpenSSH clients (e.g., command
-     * line SSH), you should save this value to <code>tempkey</code>).</p>
+     * <p>For SSH access, the temporary private key. For OpenSSH clients (command line
+     * SSH), you should save this value to <code>tempkey</code>).</p>
      */
     inline InstanceAccessDetails& WithPrivateKey(const char* value) { SetPrivateKey(value); return *this;}
 
@@ -544,6 +590,9 @@ namespace Model
 
     Aws::String m_ipAddress;
     bool m_ipAddressHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_ipv6Addresses;
+    bool m_ipv6AddressesHasBeenSet = false;
 
     Aws::String m_password;
     bool m_passwordHasBeenSet = false;

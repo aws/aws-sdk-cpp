@@ -22,7 +22,9 @@ UpdateTableRequest::UpdateTableRequest() :
     m_ttlHasBeenSet(false),
     m_defaultTimeToLive(0),
     m_defaultTimeToLiveHasBeenSet(false),
-    m_clientSideTimestampsHasBeenSet(false)
+    m_clientSideTimestampsHasBeenSet(false),
+    m_autoScalingSpecificationHasBeenSet(false),
+    m_replicaSpecificationsHasBeenSet(false)
 {
 }
 
@@ -86,6 +88,23 @@ Aws::String UpdateTableRequest::SerializePayload() const
   if(m_clientSideTimestampsHasBeenSet)
   {
    payload.WithObject("clientSideTimestamps", m_clientSideTimestamps.Jsonize());
+
+  }
+
+  if(m_autoScalingSpecificationHasBeenSet)
+  {
+   payload.WithObject("autoScalingSpecification", m_autoScalingSpecification.Jsonize());
+
+  }
+
+  if(m_replicaSpecificationsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> replicaSpecificationsJsonList(m_replicaSpecifications.size());
+   for(unsigned replicaSpecificationsIndex = 0; replicaSpecificationsIndex < replicaSpecificationsJsonList.GetLength(); ++replicaSpecificationsIndex)
+   {
+     replicaSpecificationsJsonList[replicaSpecificationsIndex].AsObject(m_replicaSpecifications[replicaSpecificationsIndex].Jsonize());
+   }
+   payload.WithArray("replicaSpecifications", std::move(replicaSpecificationsJsonList));
 
   }
 

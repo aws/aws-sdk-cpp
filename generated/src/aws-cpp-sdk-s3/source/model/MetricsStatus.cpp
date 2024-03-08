@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MetricsStatus::NOT_SET:
+            return {};
           case MetricsStatus::Enabled:
             return "Enabled";
           case MetricsStatus::Disabled:

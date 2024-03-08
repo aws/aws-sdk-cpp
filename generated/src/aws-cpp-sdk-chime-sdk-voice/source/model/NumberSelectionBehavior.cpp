@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NumberSelectionBehavior::NOT_SET:
+            return {};
           case NumberSelectionBehavior::PreferSticky:
             return "PreferSticky";
           case NumberSelectionBehavior::AvoidSticky:

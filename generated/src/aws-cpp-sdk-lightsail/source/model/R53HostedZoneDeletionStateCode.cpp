@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case R53HostedZoneDeletionStateCode::NOT_SET:
+            return {};
           case R53HostedZoneDeletionStateCode::SUCCEEDED:
             return "SUCCEEDED";
           case R53HostedZoneDeletionStateCode::PENDING:

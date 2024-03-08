@@ -46,12 +46,12 @@ Aws::Http::HeaderValueCollection InvokeWithResponseStreamRequest::GetRequestSpec
 {
   Aws::Http::HeaderValueCollection headers;
   Aws::StringStream ss;
-  if(m_invocationTypeHasBeenSet)
+  if(m_invocationTypeHasBeenSet && m_invocationType != ResponseStreamingInvocationType::NOT_SET)
   {
     headers.emplace("x-amz-invocation-type", ResponseStreamingInvocationTypeMapper::GetNameForResponseStreamingInvocationType(m_invocationType));
   }
 
-  if(m_logTypeHasBeenSet)
+  if(m_logTypeHasBeenSet && m_logType != LogType::NOT_SET)
   {
     headers.emplace("x-amz-log-type", LogTypeMapper::GetNameForLogType(m_logType));
   }

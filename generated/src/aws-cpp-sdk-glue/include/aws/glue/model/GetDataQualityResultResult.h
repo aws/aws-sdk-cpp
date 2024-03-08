@@ -10,6 +10,8 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/glue/model/DataQualityRuleResult.h>
+#include <aws/glue/model/DataQualityAnalyzerResult.h>
+#include <aws/glue/model/DataQualityObservation.h>
 #include <utility>
 
 namespace Aws
@@ -418,6 +420,92 @@ namespace Model
     inline GetDataQualityResultResult& AddRuleResults(DataQualityRuleResult&& value) { m_ruleResults.push_back(std::move(value)); return *this; }
 
 
+    /**
+     * <p>A list of <code>DataQualityAnalyzerResult</code> objects representing the
+     * results for each analyzer. </p>
+     */
+    inline const Aws::Vector<DataQualityAnalyzerResult>& GetAnalyzerResults() const{ return m_analyzerResults; }
+
+    /**
+     * <p>A list of <code>DataQualityAnalyzerResult</code> objects representing the
+     * results for each analyzer. </p>
+     */
+    inline void SetAnalyzerResults(const Aws::Vector<DataQualityAnalyzerResult>& value) { m_analyzerResults = value; }
+
+    /**
+     * <p>A list of <code>DataQualityAnalyzerResult</code> objects representing the
+     * results for each analyzer. </p>
+     */
+    inline void SetAnalyzerResults(Aws::Vector<DataQualityAnalyzerResult>&& value) { m_analyzerResults = std::move(value); }
+
+    /**
+     * <p>A list of <code>DataQualityAnalyzerResult</code> objects representing the
+     * results for each analyzer. </p>
+     */
+    inline GetDataQualityResultResult& WithAnalyzerResults(const Aws::Vector<DataQualityAnalyzerResult>& value) { SetAnalyzerResults(value); return *this;}
+
+    /**
+     * <p>A list of <code>DataQualityAnalyzerResult</code> objects representing the
+     * results for each analyzer. </p>
+     */
+    inline GetDataQualityResultResult& WithAnalyzerResults(Aws::Vector<DataQualityAnalyzerResult>&& value) { SetAnalyzerResults(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of <code>DataQualityAnalyzerResult</code> objects representing the
+     * results for each analyzer. </p>
+     */
+    inline GetDataQualityResultResult& AddAnalyzerResults(const DataQualityAnalyzerResult& value) { m_analyzerResults.push_back(value); return *this; }
+
+    /**
+     * <p>A list of <code>DataQualityAnalyzerResult</code> objects representing the
+     * results for each analyzer. </p>
+     */
+    inline GetDataQualityResultResult& AddAnalyzerResults(DataQualityAnalyzerResult&& value) { m_analyzerResults.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>A list of <code>DataQualityObservation</code> objects representing the
+     * observations generated after evaluating the rules and analyzers. </p>
+     */
+    inline const Aws::Vector<DataQualityObservation>& GetObservations() const{ return m_observations; }
+
+    /**
+     * <p>A list of <code>DataQualityObservation</code> objects representing the
+     * observations generated after evaluating the rules and analyzers. </p>
+     */
+    inline void SetObservations(const Aws::Vector<DataQualityObservation>& value) { m_observations = value; }
+
+    /**
+     * <p>A list of <code>DataQualityObservation</code> objects representing the
+     * observations generated after evaluating the rules and analyzers. </p>
+     */
+    inline void SetObservations(Aws::Vector<DataQualityObservation>&& value) { m_observations = std::move(value); }
+
+    /**
+     * <p>A list of <code>DataQualityObservation</code> objects representing the
+     * observations generated after evaluating the rules and analyzers. </p>
+     */
+    inline GetDataQualityResultResult& WithObservations(const Aws::Vector<DataQualityObservation>& value) { SetObservations(value); return *this;}
+
+    /**
+     * <p>A list of <code>DataQualityObservation</code> objects representing the
+     * observations generated after evaluating the rules and analyzers. </p>
+     */
+    inline GetDataQualityResultResult& WithObservations(Aws::Vector<DataQualityObservation>&& value) { SetObservations(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of <code>DataQualityObservation</code> objects representing the
+     * observations generated after evaluating the rules and analyzers. </p>
+     */
+    inline GetDataQualityResultResult& AddObservations(const DataQualityObservation& value) { m_observations.push_back(value); return *this; }
+
+    /**
+     * <p>A list of <code>DataQualityObservation</code> objects representing the
+     * observations generated after evaluating the rules and analyzers. </p>
+     */
+    inline GetDataQualityResultResult& AddObservations(DataQualityObservation&& value) { m_observations.push_back(std::move(value)); return *this; }
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -462,6 +550,10 @@ namespace Model
     Aws::String m_rulesetEvaluationRunId;
 
     Aws::Vector<DataQualityRuleResult> m_ruleResults;
+
+    Aws::Vector<DataQualityAnalyzerResult> m_analyzerResults;
+
+    Aws::Vector<DataQualityObservation> m_observations;
 
     Aws::String m_requestId;
   };

@@ -36,43 +36,43 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == LIMIT_EXCEEDED_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SWFErrors::LIMIT_EXCEEDED_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SWFErrors::LIMIT_EXCEEDED_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == OPERATION_NOT_PERMITTED_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SWFErrors::OPERATION_NOT_PERMITTED_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SWFErrors::OPERATION_NOT_PERMITTED_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == UNKNOWN_RESOURCE_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SWFErrors::UNKNOWN_RESOURCE_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SWFErrors::UNKNOWN_RESOURCE_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == TYPE_DEPRECATED_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SWFErrors::TYPE_DEPRECATED_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SWFErrors::TYPE_DEPRECATED_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == DEFAULT_UNDEFINED_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SWFErrors::DEFAULT_UNDEFINED_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SWFErrors::DEFAULT_UNDEFINED_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == DOMAIN_DEPRECATED_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SWFErrors::DOMAIN_DEPRECATED_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SWFErrors::DOMAIN_DEPRECATED_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == TYPE_ALREADY_EXISTS_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SWFErrors::TYPE_ALREADY_EXISTS_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SWFErrors::TYPE_ALREADY_EXISTS_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == TOO_MANY_TAGS_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SWFErrors::TOO_MANY_TAGS_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SWFErrors::TOO_MANY_TAGS_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == DOMAIN_ALREADY_EXISTS_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SWFErrors::DOMAIN_ALREADY_EXISTS_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SWFErrors::DOMAIN_ALREADY_EXISTS_FAULT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == WORKFLOW_EXECUTION_ALREADY_STARTED_FAULT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SWFErrors::WORKFLOW_EXECUTION_ALREADY_STARTED_FAULT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SWFErrors::WORKFLOW_EXECUTION_ALREADY_STARTED_FAULT), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

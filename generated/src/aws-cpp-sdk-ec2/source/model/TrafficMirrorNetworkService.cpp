@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TrafficMirrorNetworkService::NOT_SET:
+            return {};
           case TrafficMirrorNetworkService::amazon_dns:
             return "amazon-dns";
           default:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CmafTargetDurationCompatibilityMode::NOT_SET:
+            return {};
           case CmafTargetDurationCompatibilityMode::LEGACY:
             return "LEGACY";
           case CmafTargetDurationCompatibilityMode::SPEC_COMPLIANT:

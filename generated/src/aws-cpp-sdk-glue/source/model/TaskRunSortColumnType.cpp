@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TaskRunSortColumnType::NOT_SET:
+            return {};
           case TaskRunSortColumnType::TASK_RUN_TYPE:
             return "TASK_RUN_TYPE";
           case TaskRunSortColumnType::STATUS:

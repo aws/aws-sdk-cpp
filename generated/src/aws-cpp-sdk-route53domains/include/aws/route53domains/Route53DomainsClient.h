@@ -23,8 +23,8 @@ namespace Route53Domains
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef Route53DomainsClientConfiguration ClientConfigurationType;
       typedef Route53DomainsEndpointProvider EndpointProviderType;
@@ -34,14 +34,14 @@ namespace Route53Domains
         * is not specified, it will be initialized to default values.
         */
         Route53DomainsClient(const Aws::Route53Domains::Route53DomainsClientConfiguration& clientConfiguration = Aws::Route53Domains::Route53DomainsClientConfiguration(),
-                             std::shared_ptr<Route53DomainsEndpointProviderBase> endpointProvider = Aws::MakeShared<Route53DomainsEndpointProvider>(ALLOCATION_TAG));
+                             std::shared_ptr<Route53DomainsEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         Route53DomainsClient(const Aws::Auth::AWSCredentials& credentials,
-                             std::shared_ptr<Route53DomainsEndpointProviderBase> endpointProvider = Aws::MakeShared<Route53DomainsEndpointProvider>(ALLOCATION_TAG),
+                             std::shared_ptr<Route53DomainsEndpointProviderBase> endpointProvider = nullptr,
                              const Aws::Route53Domains::Route53DomainsClientConfiguration& clientConfiguration = Aws::Route53Domains::Route53DomainsClientConfiguration());
 
        /**
@@ -49,7 +49,7 @@ namespace Route53Domains
         * the default http client factory will be used
         */
         Route53DomainsClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                             std::shared_ptr<Route53DomainsEndpointProviderBase> endpointProvider = Aws::MakeShared<Route53DomainsEndpointProvider>(ALLOCATION_TAG),
+                             std::shared_ptr<Route53DomainsEndpointProviderBase> endpointProvider = nullptr,
                              const Aws::Route53Domains::Route53DomainsClientConfiguration& clientConfiguration = Aws::Route53Domains::Route53DomainsClientConfiguration());
 
 
@@ -910,13 +910,19 @@ namespace Route53Domains
          * domain registrar, see <a
          * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-transfer-from-route-53.html">Transferring
          * a Domain from Amazon Route 53 to Another Registrar</a> in the <i>Amazon Route 53
-         * Developer Guide</i>.</p> </li> </ul> <p>If the registrar for your domain is also
-         * the DNS service provider for the domain, we highly recommend that you transfer
-         * your DNS service to Route 53 or to another DNS service provider before you
-         * transfer your registration. Some registrars provide free DNS service when you
-         * purchase a domain registration. When you transfer the registration, the previous
-         * registrar will not renew your domain registration and could end your DNS service
-         * at any time.</p>  <p>If the registrar for your domain is also the DNS
+         * Developer Guide</i>.</p> </li> </ul>  <p>During the transfer of any
+         * country code top-level domains (ccTLDs) to Route 53, except for .cc and .tv,
+         * updates to the owner contact are ignored and the owner contact data from the
+         * registry is used. You can update the owner contact after the transfer is
+         * complete. For more information, see <a
+         * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_UpdateDomainContact.html">UpdateDomainContact</a>.</p>
+         *  <p>If the registrar for your domain is also the DNS service
+         * provider for the domain, we highly recommend that you transfer your DNS service
+         * to Route 53 or to another DNS service provider before you transfer your
+         * registration. Some registrars provide free DNS service when you purchase a
+         * domain registration. When you transfer the registration, the previous registrar
+         * will not renew your domain registration and could end your DNS service at any
+         * time.</p>  <p>If the registrar for your domain is also the DNS
          * service provider for the domain and you don't transfer DNS service to another
          * provider, your website, email, and the web applications associated with the
          * domain might become unavailable.</p>  <p>If the transfer is

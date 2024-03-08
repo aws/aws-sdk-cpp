@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DeleteBehavior::NOT_SET:
+            return {};
           case DeleteBehavior::LOG:
             return "LOG";
           case DeleteBehavior::DELETE_FROM_DATABASE:

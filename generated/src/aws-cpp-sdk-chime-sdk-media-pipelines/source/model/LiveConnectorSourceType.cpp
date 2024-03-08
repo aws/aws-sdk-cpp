@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LiveConnectorSourceType::NOT_SET:
+            return {};
           case LiveConnectorSourceType::ChimeSdkMeeting:
             return "ChimeSdkMeeting";
           default:

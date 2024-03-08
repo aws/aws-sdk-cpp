@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SalesforceDataTransferApi::NOT_SET:
+            return {};
           case SalesforceDataTransferApi::AUTOMATIC:
             return "AUTOMATIC";
           case SalesforceDataTransferApi::BULKV2:

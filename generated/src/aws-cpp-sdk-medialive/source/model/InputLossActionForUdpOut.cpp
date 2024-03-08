@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case InputLossActionForUdpOut::NOT_SET:
+            return {};
           case InputLossActionForUdpOut::DROP_PROGRAM:
             return "DROP_PROGRAM";
           case InputLossActionForUdpOut::DROP_TS:

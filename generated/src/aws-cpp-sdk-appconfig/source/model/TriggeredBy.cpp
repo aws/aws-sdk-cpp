@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TriggeredBy::NOT_SET:
+            return {};
           case TriggeredBy::USER:
             return "USER";
           case TriggeredBy::APPCONFIG:

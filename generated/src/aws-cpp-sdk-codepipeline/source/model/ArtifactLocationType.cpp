@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ArtifactLocationType::NOT_SET:
+            return {};
           case ArtifactLocationType::S3:
             return "S3";
           default:

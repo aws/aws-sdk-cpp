@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TileOrder::NOT_SET:
+            return {};
           case TileOrder::JoinSequence:
             return "JoinSequence";
           case TileOrder::SpeakerSequence:

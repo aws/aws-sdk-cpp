@@ -40,42 +40,50 @@ namespace Model
 
 
     /**
-     * <p>Prefix for profile name.</p>
+     * <p>An optional string added to the beginning of each profile name returned in
+     * the results.</p>
      */
     inline const Aws::String& GetProfileNamePrefix() const{ return m_profileNamePrefix; }
 
     /**
-     * <p>Prefix for profile name.</p>
+     * <p>An optional string added to the beginning of each profile name returned in
+     * the results.</p>
      */
     inline bool ProfileNamePrefixHasBeenSet() const { return m_profileNamePrefixHasBeenSet; }
 
     /**
-     * <p>Prefix for profile name.</p>
+     * <p>An optional string added to the beginning of each profile name returned in
+     * the results.</p>
      */
     inline void SetProfileNamePrefix(const Aws::String& value) { m_profileNamePrefixHasBeenSet = true; m_profileNamePrefix = value; }
 
     /**
-     * <p>Prefix for profile name.</p>
+     * <p>An optional string added to the beginning of each profile name returned in
+     * the results.</p>
      */
     inline void SetProfileNamePrefix(Aws::String&& value) { m_profileNamePrefixHasBeenSet = true; m_profileNamePrefix = std::move(value); }
 
     /**
-     * <p>Prefix for profile name.</p>
+     * <p>An optional string added to the beginning of each profile name returned in
+     * the results.</p>
      */
     inline void SetProfileNamePrefix(const char* value) { m_profileNamePrefixHasBeenSet = true; m_profileNamePrefix.assign(value); }
 
     /**
-     * <p>Prefix for profile name.</p>
+     * <p>An optional string added to the beginning of each profile name returned in
+     * the results.</p>
      */
     inline ListProfilesRequest& WithProfileNamePrefix(const Aws::String& value) { SetProfileNamePrefix(value); return *this;}
 
     /**
-     * <p>Prefix for profile name.</p>
+     * <p>An optional string added to the beginning of each profile name returned in
+     * the results.</p>
      */
     inline ListProfilesRequest& WithProfileNamePrefix(Aws::String&& value) { SetProfileNamePrefix(std::move(value)); return *this;}
 
     /**
-     * <p>Prefix for profile name.</p>
+     * <p>An optional string added to the beginning of each profile name returned in
+     * the results.</p>
      */
     inline ListProfilesRequest& WithProfileNamePrefix(const char* value) { SetProfileNamePrefix(value); return *this;}
 

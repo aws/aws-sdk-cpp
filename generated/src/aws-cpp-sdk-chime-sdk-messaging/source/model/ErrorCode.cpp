@@ -114,6 +114,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ErrorCode::NOT_SET:
+            return {};
           case ErrorCode::BadRequest:
             return "BadRequest";
           case ErrorCode::Conflict:

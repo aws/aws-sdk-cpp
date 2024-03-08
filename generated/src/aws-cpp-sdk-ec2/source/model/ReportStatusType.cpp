@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReportStatusType::NOT_SET:
+            return {};
           case ReportStatusType::ok:
             return "ok";
           case ReportStatusType::impaired:

@@ -38,113 +38,113 @@ namespace Model
 
 
     /**
-     * <p>The unique Lightsail disk name (e.g., <code>my-disk</code>).</p>
+     * <p>The unique Lightsail disk name (<code>my-disk</code>).</p>
      */
     inline const Aws::String& GetDiskName() const{ return m_diskName; }
 
     /**
-     * <p>The unique Lightsail disk name (e.g., <code>my-disk</code>).</p>
+     * <p>The unique Lightsail disk name (<code>my-disk</code>).</p>
      */
     inline bool DiskNameHasBeenSet() const { return m_diskNameHasBeenSet; }
 
     /**
-     * <p>The unique Lightsail disk name (e.g., <code>my-disk</code>).</p>
+     * <p>The unique Lightsail disk name (<code>my-disk</code>).</p>
      */
     inline void SetDiskName(const Aws::String& value) { m_diskNameHasBeenSet = true; m_diskName = value; }
 
     /**
-     * <p>The unique Lightsail disk name (e.g., <code>my-disk</code>).</p>
+     * <p>The unique Lightsail disk name (<code>my-disk</code>).</p>
      */
     inline void SetDiskName(Aws::String&& value) { m_diskNameHasBeenSet = true; m_diskName = std::move(value); }
 
     /**
-     * <p>The unique Lightsail disk name (e.g., <code>my-disk</code>).</p>
+     * <p>The unique Lightsail disk name (<code>my-disk</code>).</p>
      */
     inline void SetDiskName(const char* value) { m_diskNameHasBeenSet = true; m_diskName.assign(value); }
 
     /**
-     * <p>The unique Lightsail disk name (e.g., <code>my-disk</code>).</p>
+     * <p>The unique Lightsail disk name (<code>my-disk</code>).</p>
      */
     inline CreateDiskFromSnapshotRequest& WithDiskName(const Aws::String& value) { SetDiskName(value); return *this;}
 
     /**
-     * <p>The unique Lightsail disk name (e.g., <code>my-disk</code>).</p>
+     * <p>The unique Lightsail disk name (<code>my-disk</code>).</p>
      */
     inline CreateDiskFromSnapshotRequest& WithDiskName(Aws::String&& value) { SetDiskName(std::move(value)); return *this;}
 
     /**
-     * <p>The unique Lightsail disk name (e.g., <code>my-disk</code>).</p>
+     * <p>The unique Lightsail disk name (<code>my-disk</code>).</p>
      */
     inline CreateDiskFromSnapshotRequest& WithDiskName(const char* value) { SetDiskName(value); return *this;}
 
 
     /**
-     * <p>The name of the disk snapshot (e.g., <code>my-snapshot</code>) from which to
-     * create the new storage disk.</p> <p>Constraint:</p> <ul> <li> <p>This parameter
-     * cannot be defined together with the <code>source disk name</code> parameter. The
+     * <p>The name of the disk snapshot (<code>my-snapshot</code>) from which to create
+     * the new storage disk.</p> <p>Constraint:</p> <ul> <li> <p>This parameter cannot
+     * be defined together with the <code>source disk name</code> parameter. The
      * <code>disk snapshot name</code> and <code>source disk name</code> parameters are
      * mutually exclusive.</p> </li> </ul>
      */
     inline const Aws::String& GetDiskSnapshotName() const{ return m_diskSnapshotName; }
 
     /**
-     * <p>The name of the disk snapshot (e.g., <code>my-snapshot</code>) from which to
-     * create the new storage disk.</p> <p>Constraint:</p> <ul> <li> <p>This parameter
-     * cannot be defined together with the <code>source disk name</code> parameter. The
+     * <p>The name of the disk snapshot (<code>my-snapshot</code>) from which to create
+     * the new storage disk.</p> <p>Constraint:</p> <ul> <li> <p>This parameter cannot
+     * be defined together with the <code>source disk name</code> parameter. The
      * <code>disk snapshot name</code> and <code>source disk name</code> parameters are
      * mutually exclusive.</p> </li> </ul>
      */
     inline bool DiskSnapshotNameHasBeenSet() const { return m_diskSnapshotNameHasBeenSet; }
 
     /**
-     * <p>The name of the disk snapshot (e.g., <code>my-snapshot</code>) from which to
-     * create the new storage disk.</p> <p>Constraint:</p> <ul> <li> <p>This parameter
-     * cannot be defined together with the <code>source disk name</code> parameter. The
+     * <p>The name of the disk snapshot (<code>my-snapshot</code>) from which to create
+     * the new storage disk.</p> <p>Constraint:</p> <ul> <li> <p>This parameter cannot
+     * be defined together with the <code>source disk name</code> parameter. The
      * <code>disk snapshot name</code> and <code>source disk name</code> parameters are
      * mutually exclusive.</p> </li> </ul>
      */
     inline void SetDiskSnapshotName(const Aws::String& value) { m_diskSnapshotNameHasBeenSet = true; m_diskSnapshotName = value; }
 
     /**
-     * <p>The name of the disk snapshot (e.g., <code>my-snapshot</code>) from which to
-     * create the new storage disk.</p> <p>Constraint:</p> <ul> <li> <p>This parameter
-     * cannot be defined together with the <code>source disk name</code> parameter. The
+     * <p>The name of the disk snapshot (<code>my-snapshot</code>) from which to create
+     * the new storage disk.</p> <p>Constraint:</p> <ul> <li> <p>This parameter cannot
+     * be defined together with the <code>source disk name</code> parameter. The
      * <code>disk snapshot name</code> and <code>source disk name</code> parameters are
      * mutually exclusive.</p> </li> </ul>
      */
     inline void SetDiskSnapshotName(Aws::String&& value) { m_diskSnapshotNameHasBeenSet = true; m_diskSnapshotName = std::move(value); }
 
     /**
-     * <p>The name of the disk snapshot (e.g., <code>my-snapshot</code>) from which to
-     * create the new storage disk.</p> <p>Constraint:</p> <ul> <li> <p>This parameter
-     * cannot be defined together with the <code>source disk name</code> parameter. The
+     * <p>The name of the disk snapshot (<code>my-snapshot</code>) from which to create
+     * the new storage disk.</p> <p>Constraint:</p> <ul> <li> <p>This parameter cannot
+     * be defined together with the <code>source disk name</code> parameter. The
      * <code>disk snapshot name</code> and <code>source disk name</code> parameters are
      * mutually exclusive.</p> </li> </ul>
      */
     inline void SetDiskSnapshotName(const char* value) { m_diskSnapshotNameHasBeenSet = true; m_diskSnapshotName.assign(value); }
 
     /**
-     * <p>The name of the disk snapshot (e.g., <code>my-snapshot</code>) from which to
-     * create the new storage disk.</p> <p>Constraint:</p> <ul> <li> <p>This parameter
-     * cannot be defined together with the <code>source disk name</code> parameter. The
+     * <p>The name of the disk snapshot (<code>my-snapshot</code>) from which to create
+     * the new storage disk.</p> <p>Constraint:</p> <ul> <li> <p>This parameter cannot
+     * be defined together with the <code>source disk name</code> parameter. The
      * <code>disk snapshot name</code> and <code>source disk name</code> parameters are
      * mutually exclusive.</p> </li> </ul>
      */
     inline CreateDiskFromSnapshotRequest& WithDiskSnapshotName(const Aws::String& value) { SetDiskSnapshotName(value); return *this;}
 
     /**
-     * <p>The name of the disk snapshot (e.g., <code>my-snapshot</code>) from which to
-     * create the new storage disk.</p> <p>Constraint:</p> <ul> <li> <p>This parameter
-     * cannot be defined together with the <code>source disk name</code> parameter. The
+     * <p>The name of the disk snapshot (<code>my-snapshot</code>) from which to create
+     * the new storage disk.</p> <p>Constraint:</p> <ul> <li> <p>This parameter cannot
+     * be defined together with the <code>source disk name</code> parameter. The
      * <code>disk snapshot name</code> and <code>source disk name</code> parameters are
      * mutually exclusive.</p> </li> </ul>
      */
     inline CreateDiskFromSnapshotRequest& WithDiskSnapshotName(Aws::String&& value) { SetDiskSnapshotName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the disk snapshot (e.g., <code>my-snapshot</code>) from which to
-     * create the new storage disk.</p> <p>Constraint:</p> <ul> <li> <p>This parameter
-     * cannot be defined together with the <code>source disk name</code> parameter. The
+     * <p>The name of the disk snapshot (<code>my-snapshot</code>) from which to create
+     * the new storage disk.</p> <p>Constraint:</p> <ul> <li> <p>This parameter cannot
+     * be defined together with the <code>source disk name</code> parameter. The
      * <code>disk snapshot name</code> and <code>source disk name</code> parameters are
      * mutually exclusive.</p> </li> </ul>
      */
@@ -152,64 +152,64 @@ namespace Model
 
 
     /**
-     * <p>The Availability Zone where you want to create the disk (e.g.,
-     * <code>us-east-2a</code>). Choose the same Availability Zone as the Lightsail
+     * <p>The Availability Zone where you want to create the disk
+     * (<code>us-east-2a</code>). Choose the same Availability Zone as the Lightsail
      * instance where you want to create the disk.</p> <p>Use the GetRegions operation
      * to list the Availability Zones where Lightsail is currently available.</p>
      */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
 
     /**
-     * <p>The Availability Zone where you want to create the disk (e.g.,
-     * <code>us-east-2a</code>). Choose the same Availability Zone as the Lightsail
+     * <p>The Availability Zone where you want to create the disk
+     * (<code>us-east-2a</code>). Choose the same Availability Zone as the Lightsail
      * instance where you want to create the disk.</p> <p>Use the GetRegions operation
      * to list the Availability Zones where Lightsail is currently available.</p>
      */
     inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
 
     /**
-     * <p>The Availability Zone where you want to create the disk (e.g.,
-     * <code>us-east-2a</code>). Choose the same Availability Zone as the Lightsail
+     * <p>The Availability Zone where you want to create the disk
+     * (<code>us-east-2a</code>). Choose the same Availability Zone as the Lightsail
      * instance where you want to create the disk.</p> <p>Use the GetRegions operation
      * to list the Availability Zones where Lightsail is currently available.</p>
      */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /**
-     * <p>The Availability Zone where you want to create the disk (e.g.,
-     * <code>us-east-2a</code>). Choose the same Availability Zone as the Lightsail
+     * <p>The Availability Zone where you want to create the disk
+     * (<code>us-east-2a</code>). Choose the same Availability Zone as the Lightsail
      * instance where you want to create the disk.</p> <p>Use the GetRegions operation
      * to list the Availability Zones where Lightsail is currently available.</p>
      */
     inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
 
     /**
-     * <p>The Availability Zone where you want to create the disk (e.g.,
-     * <code>us-east-2a</code>). Choose the same Availability Zone as the Lightsail
+     * <p>The Availability Zone where you want to create the disk
+     * (<code>us-east-2a</code>). Choose the same Availability Zone as the Lightsail
      * instance where you want to create the disk.</p> <p>Use the GetRegions operation
      * to list the Availability Zones where Lightsail is currently available.</p>
      */
     inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
 
     /**
-     * <p>The Availability Zone where you want to create the disk (e.g.,
-     * <code>us-east-2a</code>). Choose the same Availability Zone as the Lightsail
+     * <p>The Availability Zone where you want to create the disk
+     * (<code>us-east-2a</code>). Choose the same Availability Zone as the Lightsail
      * instance where you want to create the disk.</p> <p>Use the GetRegions operation
      * to list the Availability Zones where Lightsail is currently available.</p>
      */
     inline CreateDiskFromSnapshotRequest& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
 
     /**
-     * <p>The Availability Zone where you want to create the disk (e.g.,
-     * <code>us-east-2a</code>). Choose the same Availability Zone as the Lightsail
+     * <p>The Availability Zone where you want to create the disk
+     * (<code>us-east-2a</code>). Choose the same Availability Zone as the Lightsail
      * instance where you want to create the disk.</p> <p>Use the GetRegions operation
      * to list the Availability Zones where Lightsail is currently available.</p>
      */
     inline CreateDiskFromSnapshotRequest& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
 
     /**
-     * <p>The Availability Zone where you want to create the disk (e.g.,
-     * <code>us-east-2a</code>). Choose the same Availability Zone as the Lightsail
+     * <p>The Availability Zone where you want to create the disk
+     * (<code>us-east-2a</code>). Choose the same Availability Zone as the Lightsail
      * instance where you want to create the disk.</p> <p>Use the GetRegions operation
      * to list the Availability Zones where Lightsail is currently available.</p>
      */
@@ -217,22 +217,22 @@ namespace Model
 
 
     /**
-     * <p>The size of the disk in GB (e.g., <code>32</code>).</p>
+     * <p>The size of the disk in GB (<code>32</code>).</p>
      */
     inline int GetSizeInGb() const{ return m_sizeInGb; }
 
     /**
-     * <p>The size of the disk in GB (e.g., <code>32</code>).</p>
+     * <p>The size of the disk in GB (<code>32</code>).</p>
      */
     inline bool SizeInGbHasBeenSet() const { return m_sizeInGbHasBeenSet; }
 
     /**
-     * <p>The size of the disk in GB (e.g., <code>32</code>).</p>
+     * <p>The size of the disk in GB (<code>32</code>).</p>
      */
     inline void SetSizeInGb(int value) { m_sizeInGbHasBeenSet = true; m_sizeInGb = value; }
 
     /**
-     * <p>The size of the disk in GB (e.g., <code>32</code>).</p>
+     * <p>The size of the disk in GB (<code>32</code>).</p>
      */
     inline CreateDiskFromSnapshotRequest& WithSizeInGb(int value) { SetSizeInGb(value); return *this;}
 

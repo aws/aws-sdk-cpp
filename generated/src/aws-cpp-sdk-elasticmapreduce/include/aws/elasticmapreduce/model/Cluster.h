@@ -585,6 +585,31 @@ namespace Model
 
 
     /**
+     * <p>Indicates whether Amazon EMR should gracefully replace Amazon EC2 core
+     * instances that have degraded within the cluster.</p>
+     */
+    inline bool GetUnhealthyNodeReplacement() const{ return m_unhealthyNodeReplacement; }
+
+    /**
+     * <p>Indicates whether Amazon EMR should gracefully replace Amazon EC2 core
+     * instances that have degraded within the cluster.</p>
+     */
+    inline bool UnhealthyNodeReplacementHasBeenSet() const { return m_unhealthyNodeReplacementHasBeenSet; }
+
+    /**
+     * <p>Indicates whether Amazon EMR should gracefully replace Amazon EC2 core
+     * instances that have degraded within the cluster.</p>
+     */
+    inline void SetUnhealthyNodeReplacement(bool value) { m_unhealthyNodeReplacementHasBeenSet = true; m_unhealthyNodeReplacement = value; }
+
+    /**
+     * <p>Indicates whether Amazon EMR should gracefully replace Amazon EC2 core
+     * instances that have degraded within the cluster.</p>
+     */
+    inline Cluster& WithUnhealthyNodeReplacement(bool value) { SetUnhealthyNodeReplacement(value); return *this;}
+
+
+    /**
      * <p>Indicates whether the cluster is visible to IAM principals in the Amazon Web
      * Services account associated with the cluster. When <code>true</code>, IAM
      * principals in the Amazon Web Services account can perform Amazon EMR cluster
@@ -1502,6 +1527,64 @@ namespace Model
      */
     inline Cluster& WithOSReleaseLabel(const char* value) { SetOSReleaseLabel(value); return *this;}
 
+
+    /**
+     * <p>The IOPS, of the Amazon EBS root device volume of the Linux AMI that is used
+     * for each Amazon EC2 instance. Available in Amazon EMR releases 6.15.0 and
+     * later.</p>
+     */
+    inline int GetEbsRootVolumeIops() const{ return m_ebsRootVolumeIops; }
+
+    /**
+     * <p>The IOPS, of the Amazon EBS root device volume of the Linux AMI that is used
+     * for each Amazon EC2 instance. Available in Amazon EMR releases 6.15.0 and
+     * later.</p>
+     */
+    inline bool EbsRootVolumeIopsHasBeenSet() const { return m_ebsRootVolumeIopsHasBeenSet; }
+
+    /**
+     * <p>The IOPS, of the Amazon EBS root device volume of the Linux AMI that is used
+     * for each Amazon EC2 instance. Available in Amazon EMR releases 6.15.0 and
+     * later.</p>
+     */
+    inline void SetEbsRootVolumeIops(int value) { m_ebsRootVolumeIopsHasBeenSet = true; m_ebsRootVolumeIops = value; }
+
+    /**
+     * <p>The IOPS, of the Amazon EBS root device volume of the Linux AMI that is used
+     * for each Amazon EC2 instance. Available in Amazon EMR releases 6.15.0 and
+     * later.</p>
+     */
+    inline Cluster& WithEbsRootVolumeIops(int value) { SetEbsRootVolumeIops(value); return *this;}
+
+
+    /**
+     * <p>The throughput, in MiB/s, of the Amazon EBS root device volume of the Linux
+     * AMI that is used for each Amazon EC2 instance. Available in Amazon EMR releases
+     * 6.15.0 and later.</p>
+     */
+    inline int GetEbsRootVolumeThroughput() const{ return m_ebsRootVolumeThroughput; }
+
+    /**
+     * <p>The throughput, in MiB/s, of the Amazon EBS root device volume of the Linux
+     * AMI that is used for each Amazon EC2 instance. Available in Amazon EMR releases
+     * 6.15.0 and later.</p>
+     */
+    inline bool EbsRootVolumeThroughputHasBeenSet() const { return m_ebsRootVolumeThroughputHasBeenSet; }
+
+    /**
+     * <p>The throughput, in MiB/s, of the Amazon EBS root device volume of the Linux
+     * AMI that is used for each Amazon EC2 instance. Available in Amazon EMR releases
+     * 6.15.0 and later.</p>
+     */
+    inline void SetEbsRootVolumeThroughput(int value) { m_ebsRootVolumeThroughputHasBeenSet = true; m_ebsRootVolumeThroughput = value; }
+
+    /**
+     * <p>The throughput, in MiB/s, of the Amazon EBS root device volume of the Linux
+     * AMI that is used for each Amazon EC2 instance. Available in Amazon EMR releases
+     * 6.15.0 and later.</p>
+     */
+    inline Cluster& WithEbsRootVolumeThroughput(int value) { SetEbsRootVolumeThroughput(value); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -1539,6 +1622,9 @@ namespace Model
 
     bool m_terminationProtected;
     bool m_terminationProtectedHasBeenSet = false;
+
+    bool m_unhealthyNodeReplacement;
+    bool m_unhealthyNodeReplacementHasBeenSet = false;
 
     bool m_visibleToAllUsers;
     bool m_visibleToAllUsersHasBeenSet = false;
@@ -1596,6 +1682,12 @@ namespace Model
 
     Aws::String m_oSReleaseLabel;
     bool m_oSReleaseLabelHasBeenSet = false;
+
+    int m_ebsRootVolumeIops;
+    bool m_ebsRootVolumeIopsHasBeenSet = false;
+
+    int m_ebsRootVolumeThroughput;
+    bool m_ebsRootVolumeThroughputHasBeenSet = false;
   };
 
 } // namespace Model

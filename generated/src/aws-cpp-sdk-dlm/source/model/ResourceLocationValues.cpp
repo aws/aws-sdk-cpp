@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResourceLocationValues::NOT_SET:
+            return {};
           case ResourceLocationValues::CLOUD:
             return "CLOUD";
           case ResourceLocationValues::OUTPOST:

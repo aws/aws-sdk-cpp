@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PolicyType::NOT_SET:
+            return {};
           case PolicyType::STATIC_:
             return "STATIC";
           case PolicyType::TEMPLATE_LINKED:

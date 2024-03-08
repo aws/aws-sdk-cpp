@@ -18,6 +18,9 @@
 #include <aws/core/config/AWSProfileConfigLoader.h>
 #include <aws/core/utils/logging/LogMacros.h>
 
+#include <aws/crt/Config.h>
+
+
 namespace Aws
 {
 namespace Auth
@@ -28,24 +31,89 @@ namespace Client
 {
 
 static const char* CLIENT_CONFIG_TAG = "ClientConfiguration";
-static const char* USE_REQUEST_COMPRESSION_ENV_VAR = "USE_REQUEST_COMPRESSION";
-static const char* USE_REQUEST_COMPRESSION_CONFIG_VAR = "use_request_compression";
+static const char* DISABLE_REQUEST_COMPRESSION_ENV_VAR = "DISABLE_REQUEST_COMPRESSION";
+static const char* DISABLE_REQUEST_COMPRESSION_CONFIG_VAR = "disable_request_compression";
 static const char* REQUEST_MIN_COMPRESSION_SIZE_BYTES_ENV_VAR = "REQUEST_MIN_COMPRESSION_SIZE_BYTES";
 static const char* REQUEST_MIN_COMPRESSION_SIZE_BYTES_CONFIG_VAR = "request_min_compression_size_bytes";
+static const char* AWS_EXECUTION_ENV = "AWS_EXECUTION_ENV";
+static const char* DISABLE_IMDSV1_CONFIG_VAR = "AWS_EC2_METADATA_V1_DISABLED";
+static const char* DISABLE_IMDSV1_ENV_VAR = "ec2_metadata_v1_disabled";
 
-Aws::String ComputeUserAgentString()
+Aws::String FilterUserAgentToken(char const * const source)
 {
+  // Tokens are short textual identifiers that do not include whitespace or delimiters.
+  Aws::String copy;
+  if(!source)
+    return copy;
+  size_t sourceLength = std::min(strlen(source), (size_t) 256); // 256 is arbitrary here
+  copy.resize(sourceLength);
+
+  // "/" is not listed as a valid char per spec, however, it appears to be not replaced.
+  static const char TOKEN_ALLOWED_CHARACTERS[] = R"(!#$%&'*+-.^_`|~ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890)" R"(/)";
+  static const size_t TOKEN_ALLOWED_CHARACTERS_SZ = sizeof(TOKEN_ALLOWED_CHARACTERS) - 1;
+  // replace not allowed with '-', except ' ' to be replaced with '_'
+  std::transform(source, source + sourceLength, copy.begin(),
+                 [](unsigned char c) -> unsigned char
+                 {
+                    if (c == ' ')
+                      return '_';
+                    if(std::find(TOKEN_ALLOWED_CHARACTERS,
+                                 TOKEN_ALLOWED_CHARACTERS + TOKEN_ALLOWED_CHARACTERS_SZ,
+                                 c) == TOKEN_ALLOWED_CHARACTERS + TOKEN_ALLOWED_CHARACTERS_SZ)
+                    {
+                      return '-';
+                    }
+                    return c;
+                 });
+
+  return copy;
+}
+
+Aws::String ComputeUserAgentString(ClientConfiguration const * const pConfig)
+{
+  if (pConfig && !pConfig->userAgent.empty())
+  {
+    AWS_LOGSTREAM_INFO(CLIENT_CONFIG_TAG, "User agent is overridden in the config: " << pConfig->userAgent);
+    return pConfig->userAgent;
+  }
   Aws::StringStream ss;
-  ss << "aws-sdk-cpp/" << Version::GetVersionString() << " "
+  ss << "aws-sdk-cpp/" << FilterUserAgentToken(Version::GetVersionString()) << " "
+     << "ua/2.0 "
+     << "md/aws-crt#" << FilterUserAgentToken(AWS_CRT_CPP_VERSION) << " "
+     << "os/" << FilterUserAgentToken(Aws::OSVersionInfo::ComputeOSVersionString().c_str());
+  Aws::String arch = Aws::OSVersionInfo::ComputeOSVersionArch();
+  if(!arch.empty())
+  {
+    ss << " md/arch#" << FilterUserAgentToken(arch.c_str());
+  }
+  ss << " lang/c++#" << FilterUserAgentToken(Version::GetCPPStandard()) << " "
+     << "md/" << FilterUserAgentToken(Version::GetCompilerVersionString());
+  if (pConfig && pConfig->retryStrategy && pConfig->retryStrategy->GetStrategyName())
+  {
+    ss << " cfg/retry-mode#" << FilterUserAgentToken(pConfig->retryStrategy->GetStrategyName());
+  }
+
 #if defined(AWS_USER_AGENT_CUSTOMIZATION)
 #define XSTR(V) STR(V)
 #define STR(V) #V
-     << XSTR(AWS_USER_AGENT_CUSTOMIZATION) << " "
+  ss << FilterUserAgentToken(" " XSTR(AWS_USER_AGENT_CUSTOMIZATION));
 #undef STR
 #undef XSTR
 #endif
-     << Aws::OSVersionInfo::ComputeOSVersionString() << " "
-     << Version::GetCompilerVersionString();
+
+  Aws::String awsExecEnv = Aws::Environment::GetEnv(AWS_EXECUTION_ENV);
+  if(!awsExecEnv.empty())
+  {
+    ss << " exec-env/" << FilterUserAgentToken(awsExecEnv.c_str());
+  }
+
+  const Aws::String& profile = pConfig ? pConfig->profileName : "default";
+  Aws::String appId = ClientConfiguration::LoadConfigFromEnvOrProfile("AWS_SDK_UA_APP_ID", profile, "sdk_ua_app_id", {}, "");
+  if(!appId.empty())
+  {
+    ss << " app/" << appId;
+  }
+
   return ss.str();
 }
 
@@ -75,15 +143,15 @@ void setLegacyClientConfigurationParameters(ClientConfiguration& clientConfig)
     clientConfig.enableHttpClientTrace = false;
     clientConfig.profileName = Aws::Auth::GetConfigProfileName();
 
-    Aws::String useCompressionConfig = clientConfig.LoadConfigFromEnvOrProfile(
-        USE_REQUEST_COMPRESSION_ENV_VAR,
+    Aws::String disableCompressionConfig = clientConfig.LoadConfigFromEnvOrProfile(
+        DISABLE_REQUEST_COMPRESSION_ENV_VAR,
         Aws::Auth::GetConfigProfileName(),
-        USE_REQUEST_COMPRESSION_CONFIG_VAR,
-        {"ENABLE", "DISABLE", "enable", "disable"},
-        "ENABLE"
+        DISABLE_REQUEST_COMPRESSION_CONFIG_VAR,
+        {"TRUE", "FALSE", "true", "false"},
+        "false"
         );
 
-    if (Aws::Utils::StringUtils::ToLower(useCompressionConfig.c_str())  == "disable") {
+    if (Aws::Utils::StringUtils::ToLower(disableCompressionConfig.c_str())  == "true") {
       clientConfig.requestCompressionConfig.useRequestCompression = Aws::Client::UseRequestCompression::DISABLE;
       AWS_LOGSTREAM_DEBUG(CLIENT_CONFIG_TAG, "Request Compression disabled");
     } else {
@@ -140,6 +208,18 @@ void setLegacyClientConfigurationParameters(ClientConfiguration& clientConfig)
     }
 }
 
+void setConfigFromEnvOrProfile(ClientConfiguration &config)
+{
+    Aws::String disableIMDSv1 = ClientConfiguration::LoadConfigFromEnvOrProfile(DISABLE_IMDSV1_ENV_VAR,
+        config.profileName,
+        DISABLE_IMDSV1_CONFIG_VAR,
+        {"true", "false"},
+        "false");
+    if (disableIMDSv1 == "true") {
+        config.disableImdsV1 = true;
+    }
+}
+
 ClientConfiguration::ClientConfiguration()
 {
     this->disableIMDS = false;
@@ -161,6 +241,7 @@ ClientConfiguration::ClientConfiguration()
         return;
     }
     region = Aws::String(Aws::Region::US_EAST_1);
+    setConfigFromEnvOrProfile(*this);
 }
 
 ClientConfiguration::ClientConfiguration(const ClientConfigurationInitValues &configuration)
@@ -184,6 +265,7 @@ ClientConfiguration::ClientConfiguration(const ClientConfigurationInitValues &co
         return;
     }
     region = Aws::String(Aws::Region::US_EAST_1);
+    setConfigFromEnvOrProfile(*this);
 }
 
 ClientConfiguration::ClientConfiguration(const char* profile, bool shouldDisableIMDS)
@@ -230,6 +312,7 @@ ClientConfiguration::ClientConfiguration(const char* profile, bool shouldDisable
     }
 
     AWS_LOGSTREAM_WARN(CLIENT_CONFIG_TAG, "User specified profile: [" << profile << "] is not found, will use the SDK resolved one.");
+    setConfigFromEnvOrProfile(*this);
 }
 
 ClientConfiguration::ClientConfiguration(bool /*useSmartDefaults*/, const char* defaultMode, bool shouldDisableIMDS)
@@ -258,6 +341,7 @@ ClientConfiguration::ClientConfiguration(bool /*useSmartDefaults*/, const char* 
     }
 
     Aws::Config::Defaults::SetSmartDefaultsConfigurationParameters(*this, defaultMode, hasEc2MetadataRegion, ec2MetadataRegion);
+    setConfigFromEnvOrProfile(*this);
 }
 
 std::shared_ptr<RetryStrategy> InitRetryStrategy(Aws::String retryMode)

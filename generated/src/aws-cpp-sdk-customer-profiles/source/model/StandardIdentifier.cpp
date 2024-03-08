@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StandardIdentifier::NOT_SET:
+            return {};
           case StandardIdentifier::PROFILE:
             return "PROFILE";
           case StandardIdentifier::ASSET:

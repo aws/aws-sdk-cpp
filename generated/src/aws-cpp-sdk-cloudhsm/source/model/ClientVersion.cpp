@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ClientVersion::NOT_SET:
+            return {};
           case ClientVersion::_5_1:
             return "5.1";
           case ClientVersion::_5_3:

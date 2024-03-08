@@ -159,6 +159,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DeploymentJobErrorCode::NOT_SET:
+            return {};
           case DeploymentJobErrorCode::ResourceNotFound:
             return "ResourceNotFound";
           case DeploymentJobErrorCode::EnvironmentSetupError:

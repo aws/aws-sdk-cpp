@@ -22,7 +22,9 @@ ProtectedResource::ProtectedResource() :
     m_resourceArnHasBeenSet(false),
     m_resourceTypeHasBeenSet(false),
     m_lastBackupTimeHasBeenSet(false),
-    m_resourceNameHasBeenSet(false)
+    m_resourceNameHasBeenSet(false),
+    m_lastBackupVaultArnHasBeenSet(false),
+    m_lastRecoveryPointArnHasBeenSet(false)
 {
 }
 
@@ -30,7 +32,9 @@ ProtectedResource::ProtectedResource(JsonView jsonValue) :
     m_resourceArnHasBeenSet(false),
     m_resourceTypeHasBeenSet(false),
     m_lastBackupTimeHasBeenSet(false),
-    m_resourceNameHasBeenSet(false)
+    m_resourceNameHasBeenSet(false),
+    m_lastBackupVaultArnHasBeenSet(false),
+    m_lastRecoveryPointArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -65,6 +69,20 @@ ProtectedResource& ProtectedResource::operator =(JsonView jsonValue)
     m_resourceNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("LastBackupVaultArn"))
+  {
+    m_lastBackupVaultArn = jsonValue.GetString("LastBackupVaultArn");
+
+    m_lastBackupVaultArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LastRecoveryPointArn"))
+  {
+    m_lastRecoveryPointArn = jsonValue.GetString("LastRecoveryPointArn");
+
+    m_lastRecoveryPointArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -92,6 +110,18 @@ JsonValue ProtectedResource::Jsonize() const
   if(m_resourceNameHasBeenSet)
   {
    payload.WithString("ResourceName", m_resourceName);
+
+  }
+
+  if(m_lastBackupVaultArnHasBeenSet)
+  {
+   payload.WithString("LastBackupVaultArn", m_lastBackupVaultArn);
+
+  }
+
+  if(m_lastRecoveryPointArnHasBeenSet)
+  {
+   payload.WithString("LastRecoveryPointArn", m_lastRecoveryPointArn);
 
   }
 

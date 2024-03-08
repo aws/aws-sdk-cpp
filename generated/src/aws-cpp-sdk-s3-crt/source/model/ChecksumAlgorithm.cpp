@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ChecksumAlgorithm::NOT_SET:
+            return {};
           case ChecksumAlgorithm::CRC32:
             return "CRC32";
           case ChecksumAlgorithm::CRC32C:

@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UpdateTargetsOperatingSystem::NOT_SET:
+            return {};
           case UpdateTargetsOperatingSystem::ubuntu:
             return "ubuntu";
           case UpdateTargetsOperatingSystem::raspbian:

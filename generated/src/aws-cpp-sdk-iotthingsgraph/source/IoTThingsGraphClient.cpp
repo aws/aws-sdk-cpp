@@ -35,8 +35,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* IoTThingsGraphClient::SERVICE_NAME = "iotthingsgraph";
-const char* IoTThingsGraphClient::ALLOCATION_TAG = "IoTThingsGraphClient";
+namespace Aws
+{
+  namespace IoTThingsGraph
+  {
+    const char SERVICE_NAME[] = "iotthingsgraph";
+    const char ALLOCATION_TAG[] = "IoTThingsGraphClient";
+  }
+}
+const char* IoTThingsGraphClient::GetServiceName() {return SERVICE_NAME;}
+const char* IoTThingsGraphClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 IoTThingsGraphClient::IoTThingsGraphClient(const IoTThingsGraph::IoTThingsGraphClientConfiguration& clientConfiguration,
                                            std::shared_ptr<IoTThingsGraphEndpointProviderBase> endpointProvider) :
@@ -48,7 +56,7 @@ IoTThingsGraphClient::IoTThingsGraphClient(const IoTThingsGraph::IoTThingsGraphC
             Aws::MakeShared<IoTThingsGraphErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<IoTThingsGraphEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -64,7 +72,7 @@ IoTThingsGraphClient::IoTThingsGraphClient(const AWSCredentials& credentials,
             Aws::MakeShared<IoTThingsGraphErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<IoTThingsGraphEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -80,7 +88,7 @@ IoTThingsGraphClient::IoTThingsGraphClient(const std::shared_ptr<AWSCredentialsP
             Aws::MakeShared<IoTThingsGraphErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<IoTThingsGraphEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

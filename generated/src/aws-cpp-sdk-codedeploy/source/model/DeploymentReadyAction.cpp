@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DeploymentReadyAction::NOT_SET:
+            return {};
           case DeploymentReadyAction::CONTINUE_DEPLOYMENT:
             return "CONTINUE_DEPLOYMENT";
           case DeploymentReadyAction::STOP_DEPLOYMENT:

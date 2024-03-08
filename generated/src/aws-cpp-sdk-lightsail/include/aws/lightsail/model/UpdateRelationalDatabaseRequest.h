@@ -523,6 +523,79 @@ namespace Model
      */
     inline UpdateRelationalDatabaseRequest& WithCaCertificateIdentifier(const char* value) { SetCaCertificateIdentifier(value); return *this;}
 
+
+    /**
+     * <p>This parameter is used to update the major version of the database. Enter the
+     * <code>blueprintId</code> for the major version that you want to update to.</p>
+     * <p>Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabaseBlueprints.html">GetRelationalDatabaseBlueprints</a>
+     * action to get a list of available blueprint IDs.</p>
+     */
+    inline const Aws::String& GetRelationalDatabaseBlueprintId() const{ return m_relationalDatabaseBlueprintId; }
+
+    /**
+     * <p>This parameter is used to update the major version of the database. Enter the
+     * <code>blueprintId</code> for the major version that you want to update to.</p>
+     * <p>Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabaseBlueprints.html">GetRelationalDatabaseBlueprints</a>
+     * action to get a list of available blueprint IDs.</p>
+     */
+    inline bool RelationalDatabaseBlueprintIdHasBeenSet() const { return m_relationalDatabaseBlueprintIdHasBeenSet; }
+
+    /**
+     * <p>This parameter is used to update the major version of the database. Enter the
+     * <code>blueprintId</code> for the major version that you want to update to.</p>
+     * <p>Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabaseBlueprints.html">GetRelationalDatabaseBlueprints</a>
+     * action to get a list of available blueprint IDs.</p>
+     */
+    inline void SetRelationalDatabaseBlueprintId(const Aws::String& value) { m_relationalDatabaseBlueprintIdHasBeenSet = true; m_relationalDatabaseBlueprintId = value; }
+
+    /**
+     * <p>This parameter is used to update the major version of the database. Enter the
+     * <code>blueprintId</code> for the major version that you want to update to.</p>
+     * <p>Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabaseBlueprints.html">GetRelationalDatabaseBlueprints</a>
+     * action to get a list of available blueprint IDs.</p>
+     */
+    inline void SetRelationalDatabaseBlueprintId(Aws::String&& value) { m_relationalDatabaseBlueprintIdHasBeenSet = true; m_relationalDatabaseBlueprintId = std::move(value); }
+
+    /**
+     * <p>This parameter is used to update the major version of the database. Enter the
+     * <code>blueprintId</code> for the major version that you want to update to.</p>
+     * <p>Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabaseBlueprints.html">GetRelationalDatabaseBlueprints</a>
+     * action to get a list of available blueprint IDs.</p>
+     */
+    inline void SetRelationalDatabaseBlueprintId(const char* value) { m_relationalDatabaseBlueprintIdHasBeenSet = true; m_relationalDatabaseBlueprintId.assign(value); }
+
+    /**
+     * <p>This parameter is used to update the major version of the database. Enter the
+     * <code>blueprintId</code> for the major version that you want to update to.</p>
+     * <p>Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabaseBlueprints.html">GetRelationalDatabaseBlueprints</a>
+     * action to get a list of available blueprint IDs.</p>
+     */
+    inline UpdateRelationalDatabaseRequest& WithRelationalDatabaseBlueprintId(const Aws::String& value) { SetRelationalDatabaseBlueprintId(value); return *this;}
+
+    /**
+     * <p>This parameter is used to update the major version of the database. Enter the
+     * <code>blueprintId</code> for the major version that you want to update to.</p>
+     * <p>Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabaseBlueprints.html">GetRelationalDatabaseBlueprints</a>
+     * action to get a list of available blueprint IDs.</p>
+     */
+    inline UpdateRelationalDatabaseRequest& WithRelationalDatabaseBlueprintId(Aws::String&& value) { SetRelationalDatabaseBlueprintId(std::move(value)); return *this;}
+
+    /**
+     * <p>This parameter is used to update the major version of the database. Enter the
+     * <code>blueprintId</code> for the major version that you want to update to.</p>
+     * <p>Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRelationalDatabaseBlueprints.html">GetRelationalDatabaseBlueprints</a>
+     * action to get a list of available blueprint IDs.</p>
+     */
+    inline UpdateRelationalDatabaseRequest& WithRelationalDatabaseBlueprintId(const char* value) { SetRelationalDatabaseBlueprintId(value); return *this;}
+
   private:
 
     Aws::String m_relationalDatabaseName;
@@ -554,6 +627,9 @@ namespace Model
 
     Aws::String m_caCertificateIdentifier;
     bool m_caCertificateIdentifierHasBeenSet = false;
+
+    Aws::String m_relationalDatabaseBlueprintId;
+    bool m_relationalDatabaseBlueprintIdHasBeenSet = false;
   };
 
 } // namespace Model

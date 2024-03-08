@@ -9,6 +9,7 @@
 #include <aws/elasticmapreduce/model/AuthMode.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/elasticmapreduce/model/IdcUserAssignment.h>
 #include <aws/elasticmapreduce/model/Tag.h>
 #include <utility>
 
@@ -801,6 +802,178 @@ namespace Model
      */
     inline Studio& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p> The ARN of the IAM Identity Center instance the Studio application belongs
+     * to. </p>
+     */
+    inline const Aws::String& GetIdcInstanceArn() const{ return m_idcInstanceArn; }
+
+    /**
+     * <p> The ARN of the IAM Identity Center instance the Studio application belongs
+     * to. </p>
+     */
+    inline bool IdcInstanceArnHasBeenSet() const { return m_idcInstanceArnHasBeenSet; }
+
+    /**
+     * <p> The ARN of the IAM Identity Center instance the Studio application belongs
+     * to. </p>
+     */
+    inline void SetIdcInstanceArn(const Aws::String& value) { m_idcInstanceArnHasBeenSet = true; m_idcInstanceArn = value; }
+
+    /**
+     * <p> The ARN of the IAM Identity Center instance the Studio application belongs
+     * to. </p>
+     */
+    inline void SetIdcInstanceArn(Aws::String&& value) { m_idcInstanceArnHasBeenSet = true; m_idcInstanceArn = std::move(value); }
+
+    /**
+     * <p> The ARN of the IAM Identity Center instance the Studio application belongs
+     * to. </p>
+     */
+    inline void SetIdcInstanceArn(const char* value) { m_idcInstanceArnHasBeenSet = true; m_idcInstanceArn.assign(value); }
+
+    /**
+     * <p> The ARN of the IAM Identity Center instance the Studio application belongs
+     * to. </p>
+     */
+    inline Studio& WithIdcInstanceArn(const Aws::String& value) { SetIdcInstanceArn(value); return *this;}
+
+    /**
+     * <p> The ARN of the IAM Identity Center instance the Studio application belongs
+     * to. </p>
+     */
+    inline Studio& WithIdcInstanceArn(Aws::String&& value) { SetIdcInstanceArn(std::move(value)); return *this;}
+
+    /**
+     * <p> The ARN of the IAM Identity Center instance the Studio application belongs
+     * to. </p>
+     */
+    inline Studio& WithIdcInstanceArn(const char* value) { SetIdcInstanceArn(value); return *this;}
+
+
+    /**
+     * <p> Indicates whether the Studio has Trusted identity propagation enabled. The
+     * default value is <code>false</code>. </p>
+     */
+    inline bool GetTrustedIdentityPropagationEnabled() const{ return m_trustedIdentityPropagationEnabled; }
+
+    /**
+     * <p> Indicates whether the Studio has Trusted identity propagation enabled. The
+     * default value is <code>false</code>. </p>
+     */
+    inline bool TrustedIdentityPropagationEnabledHasBeenSet() const { return m_trustedIdentityPropagationEnabledHasBeenSet; }
+
+    /**
+     * <p> Indicates whether the Studio has Trusted identity propagation enabled. The
+     * default value is <code>false</code>. </p>
+     */
+    inline void SetTrustedIdentityPropagationEnabled(bool value) { m_trustedIdentityPropagationEnabledHasBeenSet = true; m_trustedIdentityPropagationEnabled = value; }
+
+    /**
+     * <p> Indicates whether the Studio has Trusted identity propagation enabled. The
+     * default value is <code>false</code>. </p>
+     */
+    inline Studio& WithTrustedIdentityPropagationEnabled(bool value) { SetTrustedIdentityPropagationEnabled(value); return *this;}
+
+
+    /**
+     * <p> Indicates whether the Studio has <code>REQUIRED</code> or
+     * <code>OPTIONAL</code> IAM Identity Center user assignment. If the value is set
+     * to <code>REQUIRED</code>, users must be explicitly assigned to the Studio
+     * application to access the Studio. </p>
+     */
+    inline const IdcUserAssignment& GetIdcUserAssignment() const{ return m_idcUserAssignment; }
+
+    /**
+     * <p> Indicates whether the Studio has <code>REQUIRED</code> or
+     * <code>OPTIONAL</code> IAM Identity Center user assignment. If the value is set
+     * to <code>REQUIRED</code>, users must be explicitly assigned to the Studio
+     * application to access the Studio. </p>
+     */
+    inline bool IdcUserAssignmentHasBeenSet() const { return m_idcUserAssignmentHasBeenSet; }
+
+    /**
+     * <p> Indicates whether the Studio has <code>REQUIRED</code> or
+     * <code>OPTIONAL</code> IAM Identity Center user assignment. If the value is set
+     * to <code>REQUIRED</code>, users must be explicitly assigned to the Studio
+     * application to access the Studio. </p>
+     */
+    inline void SetIdcUserAssignment(const IdcUserAssignment& value) { m_idcUserAssignmentHasBeenSet = true; m_idcUserAssignment = value; }
+
+    /**
+     * <p> Indicates whether the Studio has <code>REQUIRED</code> or
+     * <code>OPTIONAL</code> IAM Identity Center user assignment. If the value is set
+     * to <code>REQUIRED</code>, users must be explicitly assigned to the Studio
+     * application to access the Studio. </p>
+     */
+    inline void SetIdcUserAssignment(IdcUserAssignment&& value) { m_idcUserAssignmentHasBeenSet = true; m_idcUserAssignment = std::move(value); }
+
+    /**
+     * <p> Indicates whether the Studio has <code>REQUIRED</code> or
+     * <code>OPTIONAL</code> IAM Identity Center user assignment. If the value is set
+     * to <code>REQUIRED</code>, users must be explicitly assigned to the Studio
+     * application to access the Studio. </p>
+     */
+    inline Studio& WithIdcUserAssignment(const IdcUserAssignment& value) { SetIdcUserAssignment(value); return *this;}
+
+    /**
+     * <p> Indicates whether the Studio has <code>REQUIRED</code> or
+     * <code>OPTIONAL</code> IAM Identity Center user assignment. If the value is set
+     * to <code>REQUIRED</code>, users must be explicitly assigned to the Studio
+     * application to access the Studio. </p>
+     */
+    inline Studio& WithIdcUserAssignment(IdcUserAssignment&& value) { SetIdcUserAssignment(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The KMS key identifier (ARN) used to encrypt Amazon EMR Studio workspace and
+     * notebook files when backed up to Amazon S3.</p>
+     */
+    inline const Aws::String& GetEncryptionKeyArn() const{ return m_encryptionKeyArn; }
+
+    /**
+     * <p>The KMS key identifier (ARN) used to encrypt Amazon EMR Studio workspace and
+     * notebook files when backed up to Amazon S3.</p>
+     */
+    inline bool EncryptionKeyArnHasBeenSet() const { return m_encryptionKeyArnHasBeenSet; }
+
+    /**
+     * <p>The KMS key identifier (ARN) used to encrypt Amazon EMR Studio workspace and
+     * notebook files when backed up to Amazon S3.</p>
+     */
+    inline void SetEncryptionKeyArn(const Aws::String& value) { m_encryptionKeyArnHasBeenSet = true; m_encryptionKeyArn = value; }
+
+    /**
+     * <p>The KMS key identifier (ARN) used to encrypt Amazon EMR Studio workspace and
+     * notebook files when backed up to Amazon S3.</p>
+     */
+    inline void SetEncryptionKeyArn(Aws::String&& value) { m_encryptionKeyArnHasBeenSet = true; m_encryptionKeyArn = std::move(value); }
+
+    /**
+     * <p>The KMS key identifier (ARN) used to encrypt Amazon EMR Studio workspace and
+     * notebook files when backed up to Amazon S3.</p>
+     */
+    inline void SetEncryptionKeyArn(const char* value) { m_encryptionKeyArnHasBeenSet = true; m_encryptionKeyArn.assign(value); }
+
+    /**
+     * <p>The KMS key identifier (ARN) used to encrypt Amazon EMR Studio workspace and
+     * notebook files when backed up to Amazon S3.</p>
+     */
+    inline Studio& WithEncryptionKeyArn(const Aws::String& value) { SetEncryptionKeyArn(value); return *this;}
+
+    /**
+     * <p>The KMS key identifier (ARN) used to encrypt Amazon EMR Studio workspace and
+     * notebook files when backed up to Amazon S3.</p>
+     */
+    inline Studio& WithEncryptionKeyArn(Aws::String&& value) { SetEncryptionKeyArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The KMS key identifier (ARN) used to encrypt Amazon EMR Studio workspace and
+     * notebook files when backed up to Amazon S3.</p>
+     */
+    inline Studio& WithEncryptionKeyArn(const char* value) { SetEncryptionKeyArn(value); return *this;}
+
   private:
 
     Aws::String m_studioId;
@@ -853,6 +1026,18 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    Aws::String m_idcInstanceArn;
+    bool m_idcInstanceArnHasBeenSet = false;
+
+    bool m_trustedIdentityPropagationEnabled;
+    bool m_trustedIdentityPropagationEnabledHasBeenSet = false;
+
+    IdcUserAssignment m_idcUserAssignment;
+    bool m_idcUserAssignmentHasBeenSet = false;
+
+    Aws::String m_encryptionKeyArn;
+    bool m_encryptionKeyArnHasBeenSet = false;
   };
 
 } // namespace Model

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ECSServiceRecommendationFilterName::NOT_SET:
+            return {};
           case ECSServiceRecommendationFilterName::Finding:
             return "Finding";
           case ECSServiceRecommendationFilterName::FindingReasonCode:

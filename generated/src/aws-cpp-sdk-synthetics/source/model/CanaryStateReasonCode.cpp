@@ -99,6 +99,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CanaryStateReasonCode::NOT_SET:
+            return {};
           case CanaryStateReasonCode::INVALID_PERMISSIONS:
             return "INVALID_PERMISSIONS";
           case CanaryStateReasonCode::CREATE_PENDING:

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AllowsUnencryptedObjectUploads::NOT_SET:
+            return {};
           case AllowsUnencryptedObjectUploads::TRUE:
             return "TRUE";
           case AllowsUnencryptedObjectUploads::FALSE:

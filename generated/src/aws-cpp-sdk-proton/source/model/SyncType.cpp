@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SyncType::NOT_SET:
+            return {};
           case SyncType::TEMPLATE_SYNC:
             return "TEMPLATE_SYNC";
           case SyncType::SERVICE_SYNC:

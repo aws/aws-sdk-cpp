@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ActionStatus::NOT_SET:
+            return {};
           case ActionStatus::Unknown:
             return "Unknown";
           case ActionStatus::InProgress:

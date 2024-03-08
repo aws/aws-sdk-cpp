@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StreamingImageEncryptionConfigurationKeyType::NOT_SET:
+            return {};
           case StreamingImageEncryptionConfigurationKeyType::CUSTOMER_MANAGED_KEY:
             return "CUSTOMER_MANAGED_KEY";
           default:

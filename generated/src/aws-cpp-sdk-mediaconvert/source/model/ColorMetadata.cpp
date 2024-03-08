@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ColorMetadata::NOT_SET:
+            return {};
           case ColorMetadata::IGNORE:
             return "IGNORE";
           case ColorMetadata::INSERT:

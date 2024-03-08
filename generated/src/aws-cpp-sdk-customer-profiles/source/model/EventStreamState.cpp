@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EventStreamState::NOT_SET:
+            return {};
           case EventStreamState::RUNNING:
             return "RUNNING";
           case EventStreamState::STOPPED:

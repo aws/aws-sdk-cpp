@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ProfileNotificationType::NOT_SET:
+            return {};
           case ProfileNotificationType::PROFILE_ANSWERS_UPDATED:
             return "PROFILE_ANSWERS_UPDATED";
           case ProfileNotificationType::PROFILE_DELETED:

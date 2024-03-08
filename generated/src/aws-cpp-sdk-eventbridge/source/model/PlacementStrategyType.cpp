@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PlacementStrategyType::NOT_SET:
+            return {};
           case PlacementStrategyType::random:
             return "random";
           case PlacementStrategyType::spread:

@@ -38,109 +38,109 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the HDFS cluster location.</p>
+     * <p>The ARN of the HDFS location.</p>
      */
     inline const Aws::String& GetLocationArn() const{ return m_locationArn; }
 
     /**
-     * <p>The ARN of the HDFS cluster location.</p>
+     * <p>The ARN of the HDFS location.</p>
      */
     inline void SetLocationArn(const Aws::String& value) { m_locationArn = value; }
 
     /**
-     * <p>The ARN of the HDFS cluster location.</p>
+     * <p>The ARN of the HDFS location.</p>
      */
     inline void SetLocationArn(Aws::String&& value) { m_locationArn = std::move(value); }
 
     /**
-     * <p>The ARN of the HDFS cluster location.</p>
+     * <p>The ARN of the HDFS location.</p>
      */
     inline void SetLocationArn(const char* value) { m_locationArn.assign(value); }
 
     /**
-     * <p>The ARN of the HDFS cluster location.</p>
+     * <p>The ARN of the HDFS location.</p>
      */
     inline DescribeLocationHdfsResult& WithLocationArn(const Aws::String& value) { SetLocationArn(value); return *this;}
 
     /**
-     * <p>The ARN of the HDFS cluster location.</p>
+     * <p>The ARN of the HDFS location.</p>
      */
     inline DescribeLocationHdfsResult& WithLocationArn(Aws::String&& value) { SetLocationArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the HDFS cluster location.</p>
+     * <p>The ARN of the HDFS location.</p>
      */
     inline DescribeLocationHdfsResult& WithLocationArn(const char* value) { SetLocationArn(value); return *this;}
 
 
     /**
-     * <p>The URI of the HDFS cluster location.</p>
+     * <p>The URI of the HDFS location.</p>
      */
     inline const Aws::String& GetLocationUri() const{ return m_locationUri; }
 
     /**
-     * <p>The URI of the HDFS cluster location.</p>
+     * <p>The URI of the HDFS location.</p>
      */
     inline void SetLocationUri(const Aws::String& value) { m_locationUri = value; }
 
     /**
-     * <p>The URI of the HDFS cluster location.</p>
+     * <p>The URI of the HDFS location.</p>
      */
     inline void SetLocationUri(Aws::String&& value) { m_locationUri = std::move(value); }
 
     /**
-     * <p>The URI of the HDFS cluster location.</p>
+     * <p>The URI of the HDFS location.</p>
      */
     inline void SetLocationUri(const char* value) { m_locationUri.assign(value); }
 
     /**
-     * <p>The URI of the HDFS cluster location.</p>
+     * <p>The URI of the HDFS location.</p>
      */
     inline DescribeLocationHdfsResult& WithLocationUri(const Aws::String& value) { SetLocationUri(value); return *this;}
 
     /**
-     * <p>The URI of the HDFS cluster location.</p>
+     * <p>The URI of the HDFS location.</p>
      */
     inline DescribeLocationHdfsResult& WithLocationUri(Aws::String&& value) { SetLocationUri(std::move(value)); return *this;}
 
     /**
-     * <p>The URI of the HDFS cluster location.</p>
+     * <p>The URI of the HDFS location.</p>
      */
     inline DescribeLocationHdfsResult& WithLocationUri(const char* value) { SetLocationUri(value); return *this;}
 
 
     /**
-     * <p>The NameNode that manage the HDFS namespace. </p>
+     * <p>The NameNode that manages the HDFS namespace. </p>
      */
     inline const Aws::Vector<HdfsNameNode>& GetNameNodes() const{ return m_nameNodes; }
 
     /**
-     * <p>The NameNode that manage the HDFS namespace. </p>
+     * <p>The NameNode that manages the HDFS namespace. </p>
      */
     inline void SetNameNodes(const Aws::Vector<HdfsNameNode>& value) { m_nameNodes = value; }
 
     /**
-     * <p>The NameNode that manage the HDFS namespace. </p>
+     * <p>The NameNode that manages the HDFS namespace. </p>
      */
     inline void SetNameNodes(Aws::Vector<HdfsNameNode>&& value) { m_nameNodes = std::move(value); }
 
     /**
-     * <p>The NameNode that manage the HDFS namespace. </p>
+     * <p>The NameNode that manages the HDFS namespace. </p>
      */
     inline DescribeLocationHdfsResult& WithNameNodes(const Aws::Vector<HdfsNameNode>& value) { SetNameNodes(value); return *this;}
 
     /**
-     * <p>The NameNode that manage the HDFS namespace. </p>
+     * <p>The NameNode that manages the HDFS namespace. </p>
      */
     inline DescribeLocationHdfsResult& WithNameNodes(Aws::Vector<HdfsNameNode>&& value) { SetNameNodes(std::move(value)); return *this;}
 
     /**
-     * <p>The NameNode that manage the HDFS namespace. </p>
+     * <p>The NameNode that manages the HDFS namespace. </p>
      */
     inline DescribeLocationHdfsResult& AddNameNodes(const HdfsNameNode& value) { m_nameNodes.push_back(value); return *this; }
 
     /**
-     * <p>The NameNode that manage the HDFS namespace. </p>
+     * <p>The NameNode that manages the HDFS namespace. </p>
      */
     inline DescribeLocationHdfsResult& AddNameNodes(HdfsNameNode&& value) { m_nameNodes.push_back(std::move(value)); return *this; }
 
@@ -217,37 +217,37 @@ namespace Model
 
 
     /**
-     * <p>The Quality of Protection (QOP) configuration specifies the Remote Procedure
-     * Call (RPC) and data transfer protection settings configured on the Hadoop
-     * Distributed File System (HDFS) cluster. </p>
+     * <p>The Quality of Protection (QOP) configuration, which specifies the Remote
+     * Procedure Call (RPC) and data transfer protection settings configured on the
+     * HDFS cluster. </p>
      */
     inline const QopConfiguration& GetQopConfiguration() const{ return m_qopConfiguration; }
 
     /**
-     * <p>The Quality of Protection (QOP) configuration specifies the Remote Procedure
-     * Call (RPC) and data transfer protection settings configured on the Hadoop
-     * Distributed File System (HDFS) cluster. </p>
+     * <p>The Quality of Protection (QOP) configuration, which specifies the Remote
+     * Procedure Call (RPC) and data transfer protection settings configured on the
+     * HDFS cluster. </p>
      */
     inline void SetQopConfiguration(const QopConfiguration& value) { m_qopConfiguration = value; }
 
     /**
-     * <p>The Quality of Protection (QOP) configuration specifies the Remote Procedure
-     * Call (RPC) and data transfer protection settings configured on the Hadoop
-     * Distributed File System (HDFS) cluster. </p>
+     * <p>The Quality of Protection (QOP) configuration, which specifies the Remote
+     * Procedure Call (RPC) and data transfer protection settings configured on the
+     * HDFS cluster. </p>
      */
     inline void SetQopConfiguration(QopConfiguration&& value) { m_qopConfiguration = std::move(value); }
 
     /**
-     * <p>The Quality of Protection (QOP) configuration specifies the Remote Procedure
-     * Call (RPC) and data transfer protection settings configured on the Hadoop
-     * Distributed File System (HDFS) cluster. </p>
+     * <p>The Quality of Protection (QOP) configuration, which specifies the Remote
+     * Procedure Call (RPC) and data transfer protection settings configured on the
+     * HDFS cluster. </p>
      */
     inline DescribeLocationHdfsResult& WithQopConfiguration(const QopConfiguration& value) { SetQopConfiguration(value); return *this;}
 
     /**
-     * <p>The Quality of Protection (QOP) configuration specifies the Remote Procedure
-     * Call (RPC) and data transfer protection settings configured on the Hadoop
-     * Distributed File System (HDFS) cluster. </p>
+     * <p>The Quality of Protection (QOP) configuration, which specifies the Remote
+     * Procedure Call (RPC) and data transfer protection settings configured on the
+     * HDFS cluster. </p>
      */
     inline DescribeLocationHdfsResult& WithQopConfiguration(QopConfiguration&& value) { SetQopConfiguration(std::move(value)); return *this;}
 
@@ -279,49 +279,49 @@ namespace Model
 
 
     /**
-     * <p>The user name used to identify the client on the host operating system. This
+     * <p>The user name to identify the client on the host operating system. This
      * parameter is used if the <code>AuthenticationType</code> is defined as
      * <code>SIMPLE</code>.</p>
      */
     inline const Aws::String& GetSimpleUser() const{ return m_simpleUser; }
 
     /**
-     * <p>The user name used to identify the client on the host operating system. This
+     * <p>The user name to identify the client on the host operating system. This
      * parameter is used if the <code>AuthenticationType</code> is defined as
      * <code>SIMPLE</code>.</p>
      */
     inline void SetSimpleUser(const Aws::String& value) { m_simpleUser = value; }
 
     /**
-     * <p>The user name used to identify the client on the host operating system. This
+     * <p>The user name to identify the client on the host operating system. This
      * parameter is used if the <code>AuthenticationType</code> is defined as
      * <code>SIMPLE</code>.</p>
      */
     inline void SetSimpleUser(Aws::String&& value) { m_simpleUser = std::move(value); }
 
     /**
-     * <p>The user name used to identify the client on the host operating system. This
+     * <p>The user name to identify the client on the host operating system. This
      * parameter is used if the <code>AuthenticationType</code> is defined as
      * <code>SIMPLE</code>.</p>
      */
     inline void SetSimpleUser(const char* value) { m_simpleUser.assign(value); }
 
     /**
-     * <p>The user name used to identify the client on the host operating system. This
+     * <p>The user name to identify the client on the host operating system. This
      * parameter is used if the <code>AuthenticationType</code> is defined as
      * <code>SIMPLE</code>.</p>
      */
     inline DescribeLocationHdfsResult& WithSimpleUser(const Aws::String& value) { SetSimpleUser(value); return *this;}
 
     /**
-     * <p>The user name used to identify the client on the host operating system. This
+     * <p>The user name to identify the client on the host operating system. This
      * parameter is used if the <code>AuthenticationType</code> is defined as
      * <code>SIMPLE</code>.</p>
      */
     inline DescribeLocationHdfsResult& WithSimpleUser(Aws::String&& value) { SetSimpleUser(std::move(value)); return *this;}
 
     /**
-     * <p>The user name used to identify the client on the host operating system. This
+     * <p>The user name to identify the client on the host operating system. This
      * parameter is used if the <code>AuthenticationType</code> is defined as
      * <code>SIMPLE</code>.</p>
      */
@@ -379,42 +379,42 @@ namespace Model
 
 
     /**
-     * <p>The ARNs of the agents that are used to connect to the HDFS cluster. </p>
+     * <p>The ARNs of the DataSync agents that can connect with your HDFS cluster.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAgentArns() const{ return m_agentArns; }
 
     /**
-     * <p>The ARNs of the agents that are used to connect to the HDFS cluster. </p>
+     * <p>The ARNs of the DataSync agents that can connect with your HDFS cluster.</p>
      */
     inline void SetAgentArns(const Aws::Vector<Aws::String>& value) { m_agentArns = value; }
 
     /**
-     * <p>The ARNs of the agents that are used to connect to the HDFS cluster. </p>
+     * <p>The ARNs of the DataSync agents that can connect with your HDFS cluster.</p>
      */
     inline void SetAgentArns(Aws::Vector<Aws::String>&& value) { m_agentArns = std::move(value); }
 
     /**
-     * <p>The ARNs of the agents that are used to connect to the HDFS cluster. </p>
+     * <p>The ARNs of the DataSync agents that can connect with your HDFS cluster.</p>
      */
     inline DescribeLocationHdfsResult& WithAgentArns(const Aws::Vector<Aws::String>& value) { SetAgentArns(value); return *this;}
 
     /**
-     * <p>The ARNs of the agents that are used to connect to the HDFS cluster. </p>
+     * <p>The ARNs of the DataSync agents that can connect with your HDFS cluster.</p>
      */
     inline DescribeLocationHdfsResult& WithAgentArns(Aws::Vector<Aws::String>&& value) { SetAgentArns(std::move(value)); return *this;}
 
     /**
-     * <p>The ARNs of the agents that are used to connect to the HDFS cluster. </p>
+     * <p>The ARNs of the DataSync agents that can connect with your HDFS cluster.</p>
      */
     inline DescribeLocationHdfsResult& AddAgentArns(const Aws::String& value) { m_agentArns.push_back(value); return *this; }
 
     /**
-     * <p>The ARNs of the agents that are used to connect to the HDFS cluster. </p>
+     * <p>The ARNs of the DataSync agents that can connect with your HDFS cluster.</p>
      */
     inline DescribeLocationHdfsResult& AddAgentArns(Aws::String&& value) { m_agentArns.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The ARNs of the agents that are used to connect to the HDFS cluster. </p>
+     * <p>The ARNs of the DataSync agents that can connect with your HDFS cluster.</p>
      */
     inline DescribeLocationHdfsResult& AddAgentArns(const char* value) { m_agentArns.push_back(value); return *this; }
 

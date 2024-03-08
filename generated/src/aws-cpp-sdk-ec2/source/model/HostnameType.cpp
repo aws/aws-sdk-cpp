@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HostnameType::NOT_SET:
+            return {};
           case HostnameType::ip_name:
             return "ip-name";
           case HostnameType::resource_name:

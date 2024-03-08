@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VolumeRetentionMode::NOT_SET:
+            return {};
           case VolumeRetentionMode::RETAIN:
             return "RETAIN";
           case VolumeRetentionMode::DELETE_:

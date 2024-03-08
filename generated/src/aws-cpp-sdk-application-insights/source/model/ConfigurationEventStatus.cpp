@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ConfigurationEventStatus::NOT_SET:
+            return {};
           case ConfigurationEventStatus::INFO:
             return "INFO";
           case ConfigurationEventStatus::WARN:

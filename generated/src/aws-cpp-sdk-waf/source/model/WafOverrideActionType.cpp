@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case WafOverrideActionType::NOT_SET:
+            return {};
           case WafOverrideActionType::NONE:
             return "NONE";
           case WafOverrideActionType::COUNT:

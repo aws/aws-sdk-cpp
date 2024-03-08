@@ -273,82 +273,82 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Names (ARNs) for the Amazon QuickSight resources that the
-     * user is authorized to access during the lifetime of the session. If you choose
-     * <code>Dashboard</code> embedding experience, pass the list of dashboard ARNs in
-     * the account that you want the user to be able to view. Currently, you can pass
-     * up to 25 dashboard ARNs in each API call.</p>
+     * user is authorized to access during the lifetime of the session.</p> <p>If you
+     * choose <code>Dashboard</code> embedding experience, pass the list of dashboard
+     * ARNs in the account that you want the user to be able to view.</p> <p>Currently,
+     * you can pass up to 25 dashboard ARNs in each API call.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAuthorizedResourceArns() const{ return m_authorizedResourceArns; }
 
     /**
      * <p>The Amazon Resource Names (ARNs) for the Amazon QuickSight resources that the
-     * user is authorized to access during the lifetime of the session. If you choose
-     * <code>Dashboard</code> embedding experience, pass the list of dashboard ARNs in
-     * the account that you want the user to be able to view. Currently, you can pass
-     * up to 25 dashboard ARNs in each API call.</p>
+     * user is authorized to access during the lifetime of the session.</p> <p>If you
+     * choose <code>Dashboard</code> embedding experience, pass the list of dashboard
+     * ARNs in the account that you want the user to be able to view.</p> <p>Currently,
+     * you can pass up to 25 dashboard ARNs in each API call.</p>
      */
     inline bool AuthorizedResourceArnsHasBeenSet() const { return m_authorizedResourceArnsHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Names (ARNs) for the Amazon QuickSight resources that the
-     * user is authorized to access during the lifetime of the session. If you choose
-     * <code>Dashboard</code> embedding experience, pass the list of dashboard ARNs in
-     * the account that you want the user to be able to view. Currently, you can pass
-     * up to 25 dashboard ARNs in each API call.</p>
+     * user is authorized to access during the lifetime of the session.</p> <p>If you
+     * choose <code>Dashboard</code> embedding experience, pass the list of dashboard
+     * ARNs in the account that you want the user to be able to view.</p> <p>Currently,
+     * you can pass up to 25 dashboard ARNs in each API call.</p>
      */
     inline void SetAuthorizedResourceArns(const Aws::Vector<Aws::String>& value) { m_authorizedResourceArnsHasBeenSet = true; m_authorizedResourceArns = value; }
 
     /**
      * <p>The Amazon Resource Names (ARNs) for the Amazon QuickSight resources that the
-     * user is authorized to access during the lifetime of the session. If you choose
-     * <code>Dashboard</code> embedding experience, pass the list of dashboard ARNs in
-     * the account that you want the user to be able to view. Currently, you can pass
-     * up to 25 dashboard ARNs in each API call.</p>
+     * user is authorized to access during the lifetime of the session.</p> <p>If you
+     * choose <code>Dashboard</code> embedding experience, pass the list of dashboard
+     * ARNs in the account that you want the user to be able to view.</p> <p>Currently,
+     * you can pass up to 25 dashboard ARNs in each API call.</p>
      */
     inline void SetAuthorizedResourceArns(Aws::Vector<Aws::String>&& value) { m_authorizedResourceArnsHasBeenSet = true; m_authorizedResourceArns = std::move(value); }
 
     /**
      * <p>The Amazon Resource Names (ARNs) for the Amazon QuickSight resources that the
-     * user is authorized to access during the lifetime of the session. If you choose
-     * <code>Dashboard</code> embedding experience, pass the list of dashboard ARNs in
-     * the account that you want the user to be able to view. Currently, you can pass
-     * up to 25 dashboard ARNs in each API call.</p>
+     * user is authorized to access during the lifetime of the session.</p> <p>If you
+     * choose <code>Dashboard</code> embedding experience, pass the list of dashboard
+     * ARNs in the account that you want the user to be able to view.</p> <p>Currently,
+     * you can pass up to 25 dashboard ARNs in each API call.</p>
      */
     inline GenerateEmbedUrlForAnonymousUserRequest& WithAuthorizedResourceArns(const Aws::Vector<Aws::String>& value) { SetAuthorizedResourceArns(value); return *this;}
 
     /**
      * <p>The Amazon Resource Names (ARNs) for the Amazon QuickSight resources that the
-     * user is authorized to access during the lifetime of the session. If you choose
-     * <code>Dashboard</code> embedding experience, pass the list of dashboard ARNs in
-     * the account that you want the user to be able to view. Currently, you can pass
-     * up to 25 dashboard ARNs in each API call.</p>
+     * user is authorized to access during the lifetime of the session.</p> <p>If you
+     * choose <code>Dashboard</code> embedding experience, pass the list of dashboard
+     * ARNs in the account that you want the user to be able to view.</p> <p>Currently,
+     * you can pass up to 25 dashboard ARNs in each API call.</p>
      */
     inline GenerateEmbedUrlForAnonymousUserRequest& WithAuthorizedResourceArns(Aws::Vector<Aws::String>&& value) { SetAuthorizedResourceArns(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Names (ARNs) for the Amazon QuickSight resources that the
-     * user is authorized to access during the lifetime of the session. If you choose
-     * <code>Dashboard</code> embedding experience, pass the list of dashboard ARNs in
-     * the account that you want the user to be able to view. Currently, you can pass
-     * up to 25 dashboard ARNs in each API call.</p>
+     * user is authorized to access during the lifetime of the session.</p> <p>If you
+     * choose <code>Dashboard</code> embedding experience, pass the list of dashboard
+     * ARNs in the account that you want the user to be able to view.</p> <p>Currently,
+     * you can pass up to 25 dashboard ARNs in each API call.</p>
      */
     inline GenerateEmbedUrlForAnonymousUserRequest& AddAuthorizedResourceArns(const Aws::String& value) { m_authorizedResourceArnsHasBeenSet = true; m_authorizedResourceArns.push_back(value); return *this; }
 
     /**
      * <p>The Amazon Resource Names (ARNs) for the Amazon QuickSight resources that the
-     * user is authorized to access during the lifetime of the session. If you choose
-     * <code>Dashboard</code> embedding experience, pass the list of dashboard ARNs in
-     * the account that you want the user to be able to view. Currently, you can pass
-     * up to 25 dashboard ARNs in each API call.</p>
+     * user is authorized to access during the lifetime of the session.</p> <p>If you
+     * choose <code>Dashboard</code> embedding experience, pass the list of dashboard
+     * ARNs in the account that you want the user to be able to view.</p> <p>Currently,
+     * you can pass up to 25 dashboard ARNs in each API call.</p>
      */
     inline GenerateEmbedUrlForAnonymousUserRequest& AddAuthorizedResourceArns(Aws::String&& value) { m_authorizedResourceArnsHasBeenSet = true; m_authorizedResourceArns.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The Amazon Resource Names (ARNs) for the Amazon QuickSight resources that the
-     * user is authorized to access during the lifetime of the session. If you choose
-     * <code>Dashboard</code> embedding experience, pass the list of dashboard ARNs in
-     * the account that you want the user to be able to view. Currently, you can pass
-     * up to 25 dashboard ARNs in each API call.</p>
+     * user is authorized to access during the lifetime of the session.</p> <p>If you
+     * choose <code>Dashboard</code> embedding experience, pass the list of dashboard
+     * ARNs in the account that you want the user to be able to view.</p> <p>Currently,
+     * you can pass up to 25 dashboard ARNs in each API call.</p>
      */
     inline GenerateEmbedUrlForAnonymousUserRequest& AddAuthorizedResourceArns(const char* value) { m_authorizedResourceArnsHasBeenSet = true; m_authorizedResourceArns.push_back(value); return *this; }
 

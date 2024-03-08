@@ -94,6 +94,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RouteAnalysisCompletionReasonCode::NOT_SET:
+            return {};
           case RouteAnalysisCompletionReasonCode::TRANSIT_GATEWAY_ATTACHMENT_NOT_FOUND:
             return "TRANSIT_GATEWAY_ATTACHMENT_NOT_FOUND";
           case RouteAnalysisCompletionReasonCode::TRANSIT_GATEWAY_ATTACHMENT_NOT_IN_TRANSIT_GATEWAY:

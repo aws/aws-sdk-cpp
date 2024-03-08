@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AcceleratorName::NOT_SET:
+            return {};
           case AcceleratorName::a100:
             return "a100";
           case AcceleratorName::v100:

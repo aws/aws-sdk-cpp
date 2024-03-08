@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AudioLanguageSelectionPolicy::NOT_SET:
+            return {};
           case AudioLanguageSelectionPolicy::LOOSE:
             return "LOOSE";
           case AudioLanguageSelectionPolicy::STRICT:

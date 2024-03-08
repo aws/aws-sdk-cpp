@@ -89,6 +89,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AnalysisErrorType::NOT_SET:
+            return {};
           case AnalysisErrorType::ACCESS_DENIED:
             return "ACCESS_DENIED";
           case AnalysisErrorType::SOURCE_NOT_FOUND:

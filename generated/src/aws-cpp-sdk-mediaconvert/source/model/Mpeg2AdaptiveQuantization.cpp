@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Mpeg2AdaptiveQuantization::NOT_SET:
+            return {};
           case Mpeg2AdaptiveQuantization::OFF:
             return "OFF";
           case Mpeg2AdaptiveQuantization::LOW:

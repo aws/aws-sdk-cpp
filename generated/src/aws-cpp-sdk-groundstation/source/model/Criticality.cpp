@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Criticality::NOT_SET:
+            return {};
           case Criticality::PREFERRED:
             return "PREFERRED";
           case Criticality::REMOVED:

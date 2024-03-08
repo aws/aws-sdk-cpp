@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StateEnum::NOT_SET:
+            return {};
           case StateEnum::CREATED:
             return "CREATED";
           case StateEnum::DELETING:

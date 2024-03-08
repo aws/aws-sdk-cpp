@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FormatConfigKey::NOT_SET:
+            return {};
           case FormatConfigKey::JPEGQuality:
             return "JPEGQuality";
           default:

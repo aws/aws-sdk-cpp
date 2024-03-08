@@ -23,6 +23,7 @@ namespace Aws
         static const int initial_HASH = HashingUtils::HashString("initial");
         static const int healthy_HASH = HashingUtils::HashString("healthy");
         static const int unhealthy_HASH = HashingUtils::HashString("unhealthy");
+        static const int unhealthy_draining_HASH = HashingUtils::HashString("unhealthy.draining");
         static const int unused_HASH = HashingUtils::HashString("unused");
         static const int draining_HASH = HashingUtils::HashString("draining");
         static const int unavailable_HASH = HashingUtils::HashString("unavailable");
@@ -42,6 +43,10 @@ namespace Aws
           else if (hashCode == unhealthy_HASH)
           {
             return TargetHealthStateEnum::unhealthy;
+          }
+          else if (hashCode == unhealthy_draining_HASH)
+          {
+            return TargetHealthStateEnum::unhealthy_draining;
           }
           else if (hashCode == unused_HASH)
           {
@@ -69,12 +74,16 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TargetHealthStateEnum::NOT_SET:
+            return {};
           case TargetHealthStateEnum::initial:
             return "initial";
           case TargetHealthStateEnum::healthy:
             return "healthy";
           case TargetHealthStateEnum::unhealthy:
             return "unhealthy";
+          case TargetHealthStateEnum::unhealthy_draining:
+            return "unhealthy.draining";
           case TargetHealthStateEnum::unused:
             return "unused";
           case TargetHealthStateEnum::draining:

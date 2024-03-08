@@ -36,8 +36,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* KinesisVideoWebRTCStorageClient::SERVICE_NAME = "kinesisvideo";
-const char* KinesisVideoWebRTCStorageClient::ALLOCATION_TAG = "KinesisVideoWebRTCStorageClient";
+namespace Aws
+{
+  namespace KinesisVideoWebRTCStorage
+  {
+    const char SERVICE_NAME[] = "kinesisvideo";
+    const char ALLOCATION_TAG[] = "KinesisVideoWebRTCStorageClient";
+  }
+}
+const char* KinesisVideoWebRTCStorageClient::GetServiceName() {return SERVICE_NAME;}
+const char* KinesisVideoWebRTCStorageClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 KinesisVideoWebRTCStorageClient::KinesisVideoWebRTCStorageClient(const KinesisVideoWebRTCStorage::KinesisVideoWebRTCStorageClientConfiguration& clientConfiguration,
                                                                  std::shared_ptr<KinesisVideoWebRTCStorageEndpointProviderBase> endpointProvider) :
@@ -49,7 +57,7 @@ KinesisVideoWebRTCStorageClient::KinesisVideoWebRTCStorageClient(const KinesisVi
             Aws::MakeShared<KinesisVideoWebRTCStorageErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<KinesisVideoWebRTCStorageEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -65,7 +73,7 @@ KinesisVideoWebRTCStorageClient::KinesisVideoWebRTCStorageClient(const AWSCreden
             Aws::MakeShared<KinesisVideoWebRTCStorageErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<KinesisVideoWebRTCStorageEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -81,7 +89,7 @@ KinesisVideoWebRTCStorageClient::KinesisVideoWebRTCStorageClient(const std::shar
             Aws::MakeShared<KinesisVideoWebRTCStorageErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<KinesisVideoWebRTCStorageEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

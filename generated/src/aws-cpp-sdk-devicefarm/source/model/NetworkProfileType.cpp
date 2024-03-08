@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NetworkProfileType::NOT_SET:
+            return {};
           case NetworkProfileType::CURATED:
             return "CURATED";
           case NetworkProfileType::PRIVATE_:

@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ExportTaskStatusCode::NOT_SET:
+            return {};
           case ExportTaskStatusCode::CANCELLED:
             return "CANCELLED";
           case ExportTaskStatusCode::COMPLETED:

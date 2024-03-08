@@ -18,6 +18,8 @@
 #include <aws/medialive/model/Scte35TimeSignalScheduleActionSettings.h>
 #include <aws/medialive/model/StaticImageActivateScheduleActionSettings.h>
 #include <aws/medialive/model/StaticImageDeactivateScheduleActionSettings.h>
+#include <aws/medialive/model/StaticImageOutputActivateScheduleActionSettings.h>
+#include <aws/medialive/model/StaticImageOutputDeactivateScheduleActionSettings.h>
 #include <utility>
 
 namespace Aws
@@ -451,6 +453,68 @@ namespace Model
      */
     inline ScheduleActionSettings& WithStaticImageDeactivateSettings(StaticImageDeactivateScheduleActionSettings&& value) { SetStaticImageDeactivateSettings(std::move(value)); return *this;}
 
+
+    /**
+     * Action to activate a static image overlay in one or more specified outputs
+     */
+    inline const StaticImageOutputActivateScheduleActionSettings& GetStaticImageOutputActivateSettings() const{ return m_staticImageOutputActivateSettings; }
+
+    /**
+     * Action to activate a static image overlay in one or more specified outputs
+     */
+    inline bool StaticImageOutputActivateSettingsHasBeenSet() const { return m_staticImageOutputActivateSettingsHasBeenSet; }
+
+    /**
+     * Action to activate a static image overlay in one or more specified outputs
+     */
+    inline void SetStaticImageOutputActivateSettings(const StaticImageOutputActivateScheduleActionSettings& value) { m_staticImageOutputActivateSettingsHasBeenSet = true; m_staticImageOutputActivateSettings = value; }
+
+    /**
+     * Action to activate a static image overlay in one or more specified outputs
+     */
+    inline void SetStaticImageOutputActivateSettings(StaticImageOutputActivateScheduleActionSettings&& value) { m_staticImageOutputActivateSettingsHasBeenSet = true; m_staticImageOutputActivateSettings = std::move(value); }
+
+    /**
+     * Action to activate a static image overlay in one or more specified outputs
+     */
+    inline ScheduleActionSettings& WithStaticImageOutputActivateSettings(const StaticImageOutputActivateScheduleActionSettings& value) { SetStaticImageOutputActivateSettings(value); return *this;}
+
+    /**
+     * Action to activate a static image overlay in one or more specified outputs
+     */
+    inline ScheduleActionSettings& WithStaticImageOutputActivateSettings(StaticImageOutputActivateScheduleActionSettings&& value) { SetStaticImageOutputActivateSettings(std::move(value)); return *this;}
+
+
+    /**
+     * Action to deactivate a static image overlay in one or more specified outputs
+     */
+    inline const StaticImageOutputDeactivateScheduleActionSettings& GetStaticImageOutputDeactivateSettings() const{ return m_staticImageOutputDeactivateSettings; }
+
+    /**
+     * Action to deactivate a static image overlay in one or more specified outputs
+     */
+    inline bool StaticImageOutputDeactivateSettingsHasBeenSet() const { return m_staticImageOutputDeactivateSettingsHasBeenSet; }
+
+    /**
+     * Action to deactivate a static image overlay in one or more specified outputs
+     */
+    inline void SetStaticImageOutputDeactivateSettings(const StaticImageOutputDeactivateScheduleActionSettings& value) { m_staticImageOutputDeactivateSettingsHasBeenSet = true; m_staticImageOutputDeactivateSettings = value; }
+
+    /**
+     * Action to deactivate a static image overlay in one or more specified outputs
+     */
+    inline void SetStaticImageOutputDeactivateSettings(StaticImageOutputDeactivateScheduleActionSettings&& value) { m_staticImageOutputDeactivateSettingsHasBeenSet = true; m_staticImageOutputDeactivateSettings = std::move(value); }
+
+    /**
+     * Action to deactivate a static image overlay in one or more specified outputs
+     */
+    inline ScheduleActionSettings& WithStaticImageOutputDeactivateSettings(const StaticImageOutputDeactivateScheduleActionSettings& value) { SetStaticImageOutputDeactivateSettings(value); return *this;}
+
+    /**
+     * Action to deactivate a static image overlay in one or more specified outputs
+     */
+    inline ScheduleActionSettings& WithStaticImageOutputDeactivateSettings(StaticImageOutputDeactivateScheduleActionSettings&& value) { SetStaticImageOutputDeactivateSettings(std::move(value)); return *this;}
+
   private:
 
     HlsId3SegmentTaggingScheduleActionSettings m_hlsId3SegmentTaggingSettings;
@@ -491,6 +555,12 @@ namespace Model
 
     StaticImageDeactivateScheduleActionSettings m_staticImageDeactivateSettings;
     bool m_staticImageDeactivateSettingsHasBeenSet = false;
+
+    StaticImageOutputActivateScheduleActionSettings m_staticImageOutputActivateSettings;
+    bool m_staticImageOutputActivateSettingsHasBeenSet = false;
+
+    StaticImageOutputDeactivateScheduleActionSettings m_staticImageOutputDeactivateSettings;
+    bool m_staticImageOutputDeactivateSettingsHasBeenSet = false;
   };
 
 } // namespace Model

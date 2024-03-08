@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SnapshotStatus::NOT_SET:
+            return {};
           case SnapshotStatus::AVAILABLE:
             return "AVAILABLE";
           case SnapshotStatus::CREATING:

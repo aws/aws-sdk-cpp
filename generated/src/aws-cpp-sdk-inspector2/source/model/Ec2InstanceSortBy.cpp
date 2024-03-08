@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Ec2InstanceSortBy::NOT_SET:
+            return {};
           case Ec2InstanceSortBy::NETWORK_FINDINGS:
             return "NETWORK_FINDINGS";
           case Ec2InstanceSortBy::CRITICAL:

@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ServiceStatus::NOT_SET:
+            return {};
           case ServiceStatus::CREATE_FAILED:
             return "CREATE_FAILED";
           case ServiceStatus::RUNNING:

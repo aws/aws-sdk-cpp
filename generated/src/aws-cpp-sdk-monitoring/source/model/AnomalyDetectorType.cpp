@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AnomalyDetectorType::NOT_SET:
+            return {};
           case AnomalyDetectorType::SINGLE_METRIC:
             return "SINGLE_METRIC";
           case AnomalyDetectorType::METRIC_MATH:

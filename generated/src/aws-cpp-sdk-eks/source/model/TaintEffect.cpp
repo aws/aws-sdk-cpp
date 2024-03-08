@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TaintEffect::NOT_SET:
+            return {};
           case TaintEffect::NO_SCHEDULE:
             return "NO_SCHEDULE";
           case TaintEffect::NO_EXECUTE:

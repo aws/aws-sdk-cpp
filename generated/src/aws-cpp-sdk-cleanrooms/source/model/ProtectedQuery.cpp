@@ -29,7 +29,8 @@ ProtectedQuery::ProtectedQuery() :
     m_resultConfigurationHasBeenSet(false),
     m_statisticsHasBeenSet(false),
     m_resultHasBeenSet(false),
-    m_errorHasBeenSet(false)
+    m_errorHasBeenSet(false),
+    m_differentialPrivacyHasBeenSet(false)
 {
 }
 
@@ -44,7 +45,8 @@ ProtectedQuery::ProtectedQuery(JsonView jsonValue) :
     m_resultConfigurationHasBeenSet(false),
     m_statisticsHasBeenSet(false),
     m_resultHasBeenSet(false),
-    m_errorHasBeenSet(false)
+    m_errorHasBeenSet(false),
+    m_differentialPrivacyHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -121,6 +123,13 @@ ProtectedQuery& ProtectedQuery::operator =(JsonView jsonValue)
     m_errorHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("differentialPrivacy"))
+  {
+    m_differentialPrivacy = jsonValue.GetObject("differentialPrivacy");
+
+    m_differentialPrivacyHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -183,6 +192,12 @@ JsonValue ProtectedQuery::Jsonize() const
   if(m_errorHasBeenSet)
   {
    payload.WithObject("error", m_error.Jsonize());
+
+  }
+
+  if(m_differentialPrivacyHasBeenSet)
+  {
+   payload.WithObject("differentialPrivacy", m_differentialPrivacy.Jsonize());
 
   }
 

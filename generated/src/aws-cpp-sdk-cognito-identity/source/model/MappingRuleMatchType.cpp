@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MappingRuleMatchType::NOT_SET:
+            return {};
           case MappingRuleMatchType::Equals:
             return "Equals";
           case MappingRuleMatchType::Contains:

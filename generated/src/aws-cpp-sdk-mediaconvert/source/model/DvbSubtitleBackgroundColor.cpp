@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DvbSubtitleBackgroundColor::NOT_SET:
+            return {};
           case DvbSubtitleBackgroundColor::NONE:
             return "NONE";
           case DvbSubtitleBackgroundColor::BLACK:

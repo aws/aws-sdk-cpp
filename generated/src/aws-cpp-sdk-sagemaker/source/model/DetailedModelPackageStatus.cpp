@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DetailedModelPackageStatus::NOT_SET:
+            return {};
           case DetailedModelPackageStatus::NotStarted:
             return "NotStarted";
           case DetailedModelPackageStatus::InProgress:

@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VideoSelectorColorSpace::NOT_SET:
+            return {};
           case VideoSelectorColorSpace::FOLLOW:
             return "FOLLOW";
           case VideoSelectorColorSpace::HDR10:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HlsRedundantManifest::NOT_SET:
+            return {};
           case HlsRedundantManifest::DISABLED:
             return "DISABLED";
           case HlsRedundantManifest::ENABLED:

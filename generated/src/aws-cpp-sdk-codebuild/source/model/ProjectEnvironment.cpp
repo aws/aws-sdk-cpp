@@ -24,6 +24,7 @@ ProjectEnvironment::ProjectEnvironment() :
     m_imageHasBeenSet(false),
     m_computeType(ComputeType::NOT_SET),
     m_computeTypeHasBeenSet(false),
+    m_fleetHasBeenSet(false),
     m_environmentVariablesHasBeenSet(false),
     m_privilegedMode(false),
     m_privilegedModeHasBeenSet(false),
@@ -40,6 +41,7 @@ ProjectEnvironment::ProjectEnvironment(JsonView jsonValue) :
     m_imageHasBeenSet(false),
     m_computeType(ComputeType::NOT_SET),
     m_computeTypeHasBeenSet(false),
+    m_fleetHasBeenSet(false),
     m_environmentVariablesHasBeenSet(false),
     m_privilegedMode(false),
     m_privilegedModeHasBeenSet(false),
@@ -72,6 +74,13 @@ ProjectEnvironment& ProjectEnvironment::operator =(JsonView jsonValue)
     m_computeType = ComputeTypeMapper::GetComputeTypeForName(jsonValue.GetString("computeType"));
 
     m_computeTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("fleet"))
+  {
+    m_fleet = jsonValue.GetObject("fleet");
+
+    m_fleetHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("environmentVariables"))
@@ -133,6 +142,12 @@ JsonValue ProjectEnvironment::Jsonize() const
   if(m_computeTypeHasBeenSet)
   {
    payload.WithString("computeType", ComputeTypeMapper::GetNameForComputeType(m_computeType));
+  }
+
+  if(m_fleetHasBeenSet)
+  {
+   payload.WithObject("fleet", m_fleet.Jsonize());
+
   }
 
   if(m_environmentVariablesHasBeenSet)

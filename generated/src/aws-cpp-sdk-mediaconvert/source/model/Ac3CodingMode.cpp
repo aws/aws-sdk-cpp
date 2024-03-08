@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Ac3CodingMode::NOT_SET:
+            return {};
           case Ac3CodingMode::CODING_MODE_1_0:
             return "CODING_MODE_1_0";
           case Ac3CodingMode::CODING_MODE_1_1:

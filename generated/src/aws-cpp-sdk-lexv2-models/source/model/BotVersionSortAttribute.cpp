@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BotVersionSortAttribute::NOT_SET:
+            return {};
           case BotVersionSortAttribute::BotVersion:
             return "BotVersion";
           default:

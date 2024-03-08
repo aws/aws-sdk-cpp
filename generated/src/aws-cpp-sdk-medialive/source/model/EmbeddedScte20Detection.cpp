@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EmbeddedScte20Detection::NOT_SET:
+            return {};
           case EmbeddedScte20Detection::AUTO:
             return "AUTO";
           case EmbeddedScte20Detection::OFF:

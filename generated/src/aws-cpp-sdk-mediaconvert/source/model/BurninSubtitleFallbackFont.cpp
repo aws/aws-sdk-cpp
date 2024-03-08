@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BurninSubtitleFallbackFont::NOT_SET:
+            return {};
           case BurninSubtitleFallbackFont::BEST_MATCH:
             return "BEST_MATCH";
           case BurninSubtitleFallbackFont::MONOSPACED_SANSSERIF:

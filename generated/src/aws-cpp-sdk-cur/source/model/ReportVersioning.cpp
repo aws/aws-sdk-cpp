@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReportVersioning::NOT_SET:
+            return {};
           case ReportVersioning::CREATE_NEW_REPORT:
             return "CREATE_NEW_REPORT";
           case ReportVersioning::OVERWRITE_REPORT:

@@ -139,6 +139,22 @@ namespace Model
 
 
     /**
+     * <p>File size of the dataset.</p>
+     */
+    inline long long GetFileSize() const{ return m_fileSize; }
+
+    /**
+     * <p>File size of the dataset.</p>
+     */
+    inline void SetFileSize(long long value) { m_fileSize = value; }
+
+    /**
+     * <p>File size of the dataset.</p>
+     */
+    inline GetDataSetDetailsResult& WithFileSize(long long value) { SetFileSize(value); return *this;}
+
+
+    /**
      * <p>The last time the data set was referenced.</p>
      */
     inline const Aws::Utils::DateTime& GetLastReferencedTime() const{ return m_lastReferencedTime; }
@@ -272,6 +288,8 @@ namespace Model
     Aws::String m_dataSetName;
 
     DatasetDetailOrgAttributes m_dataSetOrg;
+
+    long long m_fileSize;
 
     Aws::Utils::DateTime m_lastReferencedTime;
 

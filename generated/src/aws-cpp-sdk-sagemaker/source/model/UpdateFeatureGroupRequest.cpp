@@ -15,7 +15,8 @@ using namespace Aws::Utils;
 UpdateFeatureGroupRequest::UpdateFeatureGroupRequest() : 
     m_featureGroupNameHasBeenSet(false),
     m_featureAdditionsHasBeenSet(false),
-    m_onlineStoreConfigHasBeenSet(false)
+    m_onlineStoreConfigHasBeenSet(false),
+    m_throughputConfigHasBeenSet(false)
 {
 }
 
@@ -43,6 +44,12 @@ Aws::String UpdateFeatureGroupRequest::SerializePayload() const
   if(m_onlineStoreConfigHasBeenSet)
   {
    payload.WithObject("OnlineStoreConfig", m_onlineStoreConfig.Jsonize());
+
+  }
+
+  if(m_throughputConfigHasBeenSet)
+  {
+   payload.WithObject("ThroughputConfig", m_throughputConfig.Jsonize());
 
   }
 

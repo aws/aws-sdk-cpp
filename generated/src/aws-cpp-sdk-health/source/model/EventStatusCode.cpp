@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EventStatusCode::NOT_SET:
+            return {};
           case EventStatusCode::open:
             return "open";
           case EventStatusCode::closed:

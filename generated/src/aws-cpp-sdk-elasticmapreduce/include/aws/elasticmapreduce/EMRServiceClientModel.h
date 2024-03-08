@@ -147,7 +147,9 @@ namespace Aws
       class RemoveManagedScalingPolicyRequest;
       class RemoveTagsRequest;
       class RunJobFlowRequest;
+      class SetKeepJobFlowAliveWhenNoStepsRequest;
       class SetTerminationProtectionRequest;
+      class SetUnhealthyNodeReplacementRequest;
       class SetVisibleToAllUsersRequest;
       class StartNotebookExecutionRequest;
       class StopNotebookExecutionRequest;
@@ -203,7 +205,9 @@ namespace Aws
       typedef Aws::Utils::Outcome<RemoveManagedScalingPolicyResult, EMRError> RemoveManagedScalingPolicyOutcome;
       typedef Aws::Utils::Outcome<RemoveTagsResult, EMRError> RemoveTagsOutcome;
       typedef Aws::Utils::Outcome<RunJobFlowResult, EMRError> RunJobFlowOutcome;
+      typedef Aws::Utils::Outcome<Aws::NoResult, EMRError> SetKeepJobFlowAliveWhenNoStepsOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, EMRError> SetTerminationProtectionOutcome;
+      typedef Aws::Utils::Outcome<Aws::NoResult, EMRError> SetUnhealthyNodeReplacementOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, EMRError> SetVisibleToAllUsersOutcome;
       typedef Aws::Utils::Outcome<StartNotebookExecutionResult, EMRError> StartNotebookExecutionOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, EMRError> StopNotebookExecutionOutcome;
@@ -259,7 +263,9 @@ namespace Aws
       typedef std::future<RemoveManagedScalingPolicyOutcome> RemoveManagedScalingPolicyOutcomeCallable;
       typedef std::future<RemoveTagsOutcome> RemoveTagsOutcomeCallable;
       typedef std::future<RunJobFlowOutcome> RunJobFlowOutcomeCallable;
+      typedef std::future<SetKeepJobFlowAliveWhenNoStepsOutcome> SetKeepJobFlowAliveWhenNoStepsOutcomeCallable;
       typedef std::future<SetTerminationProtectionOutcome> SetTerminationProtectionOutcomeCallable;
+      typedef std::future<SetUnhealthyNodeReplacementOutcome> SetUnhealthyNodeReplacementOutcomeCallable;
       typedef std::future<SetVisibleToAllUsersOutcome> SetVisibleToAllUsersOutcomeCallable;
       typedef std::future<StartNotebookExecutionOutcome> StartNotebookExecutionOutcomeCallable;
       typedef std::future<StopNotebookExecutionOutcome> StopNotebookExecutionOutcomeCallable;
@@ -318,7 +324,9 @@ namespace Aws
     typedef std::function<void(const EMRClient*, const Model::RemoveManagedScalingPolicyRequest&, const Model::RemoveManagedScalingPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveManagedScalingPolicyResponseReceivedHandler;
     typedef std::function<void(const EMRClient*, const Model::RemoveTagsRequest&, const Model::RemoveTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveTagsResponseReceivedHandler;
     typedef std::function<void(const EMRClient*, const Model::RunJobFlowRequest&, const Model::RunJobFlowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RunJobFlowResponseReceivedHandler;
+    typedef std::function<void(const EMRClient*, const Model::SetKeepJobFlowAliveWhenNoStepsRequest&, const Model::SetKeepJobFlowAliveWhenNoStepsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetKeepJobFlowAliveWhenNoStepsResponseReceivedHandler;
     typedef std::function<void(const EMRClient*, const Model::SetTerminationProtectionRequest&, const Model::SetTerminationProtectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetTerminationProtectionResponseReceivedHandler;
+    typedef std::function<void(const EMRClient*, const Model::SetUnhealthyNodeReplacementRequest&, const Model::SetUnhealthyNodeReplacementOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetUnhealthyNodeReplacementResponseReceivedHandler;
     typedef std::function<void(const EMRClient*, const Model::SetVisibleToAllUsersRequest&, const Model::SetVisibleToAllUsersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetVisibleToAllUsersResponseReceivedHandler;
     typedef std::function<void(const EMRClient*, const Model::StartNotebookExecutionRequest&, const Model::StartNotebookExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartNotebookExecutionResponseReceivedHandler;
     typedef std::function<void(const EMRClient*, const Model::StopNotebookExecutionRequest&, const Model::StopNotebookExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopNotebookExecutionResponseReceivedHandler;

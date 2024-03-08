@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PolicyEvaluationDecisionType::NOT_SET:
+            return {};
           case PolicyEvaluationDecisionType::allowed:
             return "allowed";
           case PolicyEvaluationDecisionType::explicitDeny:

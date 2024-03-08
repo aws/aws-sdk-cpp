@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HostEnvironment::NOT_SET:
+            return {};
           case HostEnvironment::VMWARE:
             return "VMWARE";
           case HostEnvironment::HYPER_V:

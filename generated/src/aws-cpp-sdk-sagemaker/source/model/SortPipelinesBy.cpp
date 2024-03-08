@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SortPipelinesBy::NOT_SET:
+            return {};
           case SortPipelinesBy::Name:
             return "Name";
           case SortPipelinesBy::CreationTime:

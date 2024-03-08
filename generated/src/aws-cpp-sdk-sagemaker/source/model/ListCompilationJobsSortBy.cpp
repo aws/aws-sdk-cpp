@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ListCompilationJobsSortBy::NOT_SET:
+            return {};
           case ListCompilationJobsSortBy::Name:
             return "Name";
           case ListCompilationJobsSortBy::CreationTime:

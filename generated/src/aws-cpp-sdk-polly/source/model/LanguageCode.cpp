@@ -234,6 +234,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LanguageCode::NOT_SET:
+            return {};
           case LanguageCode::arb:
             return "arb";
           case LanguageCode::cmn_CN:

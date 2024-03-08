@@ -27,7 +27,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == TOO_MANY_TAGS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(RolesAnywhereErrors::TOO_MANY_TAGS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RolesAnywhereErrors::TOO_MANY_TAGS), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

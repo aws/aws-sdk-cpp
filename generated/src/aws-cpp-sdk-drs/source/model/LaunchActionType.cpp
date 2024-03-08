@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LaunchActionType::NOT_SET:
+            return {};
           case LaunchActionType::SSM_AUTOMATION:
             return "SSM_AUTOMATION";
           case LaunchActionType::SSM_COMMAND:

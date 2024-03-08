@@ -34,27 +34,27 @@ namespace Model
 
 
     /**
-     * <p>Returns information about a the restored Elastic DocumentDB cluster.</p>
+     * <p>Returns information about a the restored elastic cluster.</p>
      */
     inline const Cluster& GetCluster() const{ return m_cluster; }
 
     /**
-     * <p>Returns information about a the restored Elastic DocumentDB cluster.</p>
+     * <p>Returns information about a the restored elastic cluster.</p>
      */
     inline void SetCluster(const Cluster& value) { m_cluster = value; }
 
     /**
-     * <p>Returns information about a the restored Elastic DocumentDB cluster.</p>
+     * <p>Returns information about a the restored elastic cluster.</p>
      */
     inline void SetCluster(Cluster&& value) { m_cluster = std::move(value); }
 
     /**
-     * <p>Returns information about a the restored Elastic DocumentDB cluster.</p>
+     * <p>Returns information about a the restored elastic cluster.</p>
      */
     inline RestoreClusterFromSnapshotResult& WithCluster(const Cluster& value) { SetCluster(value); return *this;}
 
     /**
-     * <p>Returns information about a the restored Elastic DocumentDB cluster.</p>
+     * <p>Returns information about a the restored elastic cluster.</p>
      */
     inline RestoreClusterFromSnapshotResult& WithCluster(Cluster&& value) { SetCluster(std::move(value)); return *this;}
 

@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SourceConnectorType::NOT_SET:
+            return {};
           case SourceConnectorType::Salesforce:
             return "Salesforce";
           case SourceConnectorType::Marketo:

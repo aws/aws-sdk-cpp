@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ToxicityCategory::NOT_SET:
+            return {};
           case ToxicityCategory::ALL:
             return "ALL";
           default:

@@ -7,7 +7,9 @@
 #include <aws/braket/Braket_EXPORTS.h>
 #include <aws/braket/BraketRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/braket/model/Association.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -73,6 +75,47 @@ namespace Model
      * <p>The action associated with the task.</p>
      */
     inline CreateQuantumTaskRequest& WithAction(const char* value) { SetAction(value); return *this;}
+
+
+    /**
+     * <p>The list of Amazon Braket resources associated with the quantum task.</p>
+     */
+    inline const Aws::Vector<Association>& GetAssociations() const{ return m_associations; }
+
+    /**
+     * <p>The list of Amazon Braket resources associated with the quantum task.</p>
+     */
+    inline bool AssociationsHasBeenSet() const { return m_associationsHasBeenSet; }
+
+    /**
+     * <p>The list of Amazon Braket resources associated with the quantum task.</p>
+     */
+    inline void SetAssociations(const Aws::Vector<Association>& value) { m_associationsHasBeenSet = true; m_associations = value; }
+
+    /**
+     * <p>The list of Amazon Braket resources associated with the quantum task.</p>
+     */
+    inline void SetAssociations(Aws::Vector<Association>&& value) { m_associationsHasBeenSet = true; m_associations = std::move(value); }
+
+    /**
+     * <p>The list of Amazon Braket resources associated with the quantum task.</p>
+     */
+    inline CreateQuantumTaskRequest& WithAssociations(const Aws::Vector<Association>& value) { SetAssociations(value); return *this;}
+
+    /**
+     * <p>The list of Amazon Braket resources associated with the quantum task.</p>
+     */
+    inline CreateQuantumTaskRequest& WithAssociations(Aws::Vector<Association>&& value) { SetAssociations(std::move(value)); return *this;}
+
+    /**
+     * <p>The list of Amazon Braket resources associated with the quantum task.</p>
+     */
+    inline CreateQuantumTaskRequest& AddAssociations(const Association& value) { m_associationsHasBeenSet = true; m_associations.push_back(value); return *this; }
+
+    /**
+     * <p>The list of Amazon Braket resources associated with the quantum task.</p>
+     */
+    inline CreateQuantumTaskRequest& AddAssociations(Association&& value) { m_associationsHasBeenSet = true; m_associations.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -427,6 +470,9 @@ namespace Model
 
     Aws::String m_action;
     bool m_actionHasBeenSet = false;
+
+    Aws::Vector<Association> m_associations;
+    bool m_associationsHasBeenSet = false;
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet = false;

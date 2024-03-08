@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Eac3AtmosDialogueIntelligence::NOT_SET:
+            return {};
           case Eac3AtmosDialogueIntelligence::ENABLED:
             return "ENABLED";
           case Eac3AtmosDialogueIntelligence::DISABLED:

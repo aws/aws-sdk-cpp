@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PublisherStatus::NOT_SET:
+            return {};
           case PublisherStatus::VERIFIED:
             return "VERIFIED";
           case PublisherStatus::UNVERIFIED:

@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case UnlimitedSupportedInstanceFamily::NOT_SET:
+            return {};
           case UnlimitedSupportedInstanceFamily::t2:
             return "t2";
           case UnlimitedSupportedInstanceFamily::t3:

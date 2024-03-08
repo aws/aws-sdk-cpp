@@ -179,6 +179,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OpsItemFilterKey::NOT_SET:
+            return {};
           case OpsItemFilterKey::Status:
             return "Status";
           case OpsItemFilterKey::CreatedBy:

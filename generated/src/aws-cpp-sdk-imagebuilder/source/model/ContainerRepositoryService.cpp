@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ContainerRepositoryService::NOT_SET:
+            return {};
           case ContainerRepositoryService::ECR:
             return "ECR";
           default:

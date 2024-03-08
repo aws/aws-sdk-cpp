@@ -10,6 +10,7 @@
 #include <aws/amplify/model/Stage.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/amplify/model/Backend.h>
 #include <utility>
 
 namespace Aws
@@ -1144,6 +1145,25 @@ namespace Model
      */
     inline Branch& WithBackendEnvironmentArn(const char* value) { SetBackendEnvironmentArn(value); return *this;}
 
+
+    
+    inline const Backend& GetBackend() const{ return m_backend; }
+
+    
+    inline bool BackendHasBeenSet() const { return m_backendHasBeenSet; }
+
+    
+    inline void SetBackend(const Backend& value) { m_backendHasBeenSet = true; m_backend = value; }
+
+    
+    inline void SetBackend(Backend&& value) { m_backendHasBeenSet = true; m_backend = std::move(value); }
+
+    
+    inline Branch& WithBackend(const Backend& value) { SetBackend(value); return *this;}
+
+    
+    inline Branch& WithBackend(Backend&& value) { SetBackend(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_branchArn;
@@ -1226,6 +1246,9 @@ namespace Model
 
     Aws::String m_backendEnvironmentArn;
     bool m_backendEnvironmentArnHasBeenSet = false;
+
+    Backend m_backend;
+    bool m_backendHasBeenSet = false;
   };
 
 } // namespace Model

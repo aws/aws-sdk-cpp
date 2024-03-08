@@ -7,6 +7,7 @@
 #include <aws/payment-cryptography-data/PaymentCryptographyData_EXPORTS.h>
 #include <aws/payment-cryptography-data/model/AsymmetricEncryptionAttributes.h>
 #include <aws/payment-cryptography-data/model/DukptEncryptionAttributes.h>
+#include <aws/payment-cryptography-data/model/EmvEncryptionAttributes.h>
 #include <aws/payment-cryptography-data/model/SymmetricEncryptionAttributes.h>
 #include <utility>
 
@@ -79,6 +80,37 @@ namespace Model
 
 
     /**
+     * <p>Parameters for plaintext encryption using EMV keys.</p>
+     */
+    inline const EmvEncryptionAttributes& GetEmv() const{ return m_emv; }
+
+    /**
+     * <p>Parameters for plaintext encryption using EMV keys.</p>
+     */
+    inline bool EmvHasBeenSet() const { return m_emvHasBeenSet; }
+
+    /**
+     * <p>Parameters for plaintext encryption using EMV keys.</p>
+     */
+    inline void SetEmv(const EmvEncryptionAttributes& value) { m_emvHasBeenSet = true; m_emv = value; }
+
+    /**
+     * <p>Parameters for plaintext encryption using EMV keys.</p>
+     */
+    inline void SetEmv(EmvEncryptionAttributes&& value) { m_emvHasBeenSet = true; m_emv = std::move(value); }
+
+    /**
+     * <p>Parameters for plaintext encryption using EMV keys.</p>
+     */
+    inline EncryptionDecryptionAttributes& WithEmv(const EmvEncryptionAttributes& value) { SetEmv(value); return *this;}
+
+    /**
+     * <p>Parameters for plaintext encryption using EMV keys.</p>
+     */
+    inline EncryptionDecryptionAttributes& WithEmv(EmvEncryptionAttributes&& value) { SetEmv(std::move(value)); return *this;}
+
+
+    /**
      * <p>Parameters that are required to perform encryption and decryption using
      * symmetric keys.</p>
      */
@@ -121,6 +153,9 @@ namespace Model
 
     DukptEncryptionAttributes m_dukpt;
     bool m_dukptHasBeenSet = false;
+
+    EmvEncryptionAttributes m_emv;
+    bool m_emvHasBeenSet = false;
 
     SymmetricEncryptionAttributes m_symmetric;
     bool m_symmetricHasBeenSet = false;

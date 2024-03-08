@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DeletionProtectionType::NOT_SET:
+            return {};
           case DeletionProtectionType::ACTIVE:
             return "ACTIVE";
           case DeletionProtectionType::INACTIVE:

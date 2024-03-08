@@ -6,11 +6,12 @@
 #pragma once
 #include <aws/location/LocationService_EXPORTS.h>
 #include <aws/location/LocationServiceRequest.h>
+#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/location/model/CalculateRouteCarModeOptions.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/location/model/DistanceUnit.h>
+#include <aws/location/model/OptimizationMode.h>
 #include <aws/location/model/TravelMode.h>
 #include <aws/location/model/CalculateRouteTruckModeOptions.h>
 #include <utility>
@@ -42,6 +43,55 @@ namespace Model
     AWS_LOCATIONSERVICE_API Aws::String SerializePayload() const override;
 
     AWS_LOCATIONSERVICE_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+
+
+    /**
+     * <p>Specifies the desired time of arrival. Uses the given time to calculate the
+     * route. Otherwise, the best time of day to travel with the best traffic
+     * conditions is used to calculate the route.</p>  <p>ArrivalTime is not
+     * supported Esri.</p> 
+     */
+    inline const Aws::Utils::DateTime& GetArrivalTime() const{ return m_arrivalTime; }
+
+    /**
+     * <p>Specifies the desired time of arrival. Uses the given time to calculate the
+     * route. Otherwise, the best time of day to travel with the best traffic
+     * conditions is used to calculate the route.</p>  <p>ArrivalTime is not
+     * supported Esri.</p> 
+     */
+    inline bool ArrivalTimeHasBeenSet() const { return m_arrivalTimeHasBeenSet; }
+
+    /**
+     * <p>Specifies the desired time of arrival. Uses the given time to calculate the
+     * route. Otherwise, the best time of day to travel with the best traffic
+     * conditions is used to calculate the route.</p>  <p>ArrivalTime is not
+     * supported Esri.</p> 
+     */
+    inline void SetArrivalTime(const Aws::Utils::DateTime& value) { m_arrivalTimeHasBeenSet = true; m_arrivalTime = value; }
+
+    /**
+     * <p>Specifies the desired time of arrival. Uses the given time to calculate the
+     * route. Otherwise, the best time of day to travel with the best traffic
+     * conditions is used to calculate the route.</p>  <p>ArrivalTime is not
+     * supported Esri.</p> 
+     */
+    inline void SetArrivalTime(Aws::Utils::DateTime&& value) { m_arrivalTimeHasBeenSet = true; m_arrivalTime = std::move(value); }
+
+    /**
+     * <p>Specifies the desired time of arrival. Uses the given time to calculate the
+     * route. Otherwise, the best time of day to travel with the best traffic
+     * conditions is used to calculate the route.</p>  <p>ArrivalTime is not
+     * supported Esri.</p> 
+     */
+    inline CalculateRouteRequest& WithArrivalTime(const Aws::Utils::DateTime& value) { SetArrivalTime(value); return *this;}
+
+    /**
+     * <p>Specifies the desired time of arrival. Uses the given time to calculate the
+     * route. Otherwise, the best time of day to travel with the best traffic
+     * conditions is used to calculate the route.</p>  <p>ArrivalTime is not
+     * supported Esri.</p> 
+     */
+    inline CalculateRouteRequest& WithArrivalTime(Aws::Utils::DateTime&& value) { SetArrivalTime(std::move(value)); return *this;}
 
 
     /**
@@ -282,9 +332,7 @@ namespace Model
     /**
      * <p>Specifies the desired time of departure. Uses the given time to calculate the
      * route. Otherwise, the best time of day to travel with the best traffic
-     * conditions is used to calculate the route.</p>  <p>Setting a departure
-     * time in the past returns a <code>400 ValidationException</code> error.</p>
-     *  <ul> <li> <p>In <a
+     * conditions is used to calculate the route.</p> <ul> <li> <p>In <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
      * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. For example,
      * <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li> </ul>
@@ -294,9 +342,7 @@ namespace Model
     /**
      * <p>Specifies the desired time of departure. Uses the given time to calculate the
      * route. Otherwise, the best time of day to travel with the best traffic
-     * conditions is used to calculate the route.</p>  <p>Setting a departure
-     * time in the past returns a <code>400 ValidationException</code> error.</p>
-     *  <ul> <li> <p>In <a
+     * conditions is used to calculate the route.</p> <ul> <li> <p>In <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
      * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. For example,
      * <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li> </ul>
@@ -306,9 +352,7 @@ namespace Model
     /**
      * <p>Specifies the desired time of departure. Uses the given time to calculate the
      * route. Otherwise, the best time of day to travel with the best traffic
-     * conditions is used to calculate the route.</p>  <p>Setting a departure
-     * time in the past returns a <code>400 ValidationException</code> error.</p>
-     *  <ul> <li> <p>In <a
+     * conditions is used to calculate the route.</p> <ul> <li> <p>In <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
      * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. For example,
      * <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li> </ul>
@@ -318,9 +362,7 @@ namespace Model
     /**
      * <p>Specifies the desired time of departure. Uses the given time to calculate the
      * route. Otherwise, the best time of day to travel with the best traffic
-     * conditions is used to calculate the route.</p>  <p>Setting a departure
-     * time in the past returns a <code>400 ValidationException</code> error.</p>
-     *  <ul> <li> <p>In <a
+     * conditions is used to calculate the route.</p> <ul> <li> <p>In <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
      * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. For example,
      * <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li> </ul>
@@ -330,9 +372,7 @@ namespace Model
     /**
      * <p>Specifies the desired time of departure. Uses the given time to calculate the
      * route. Otherwise, the best time of day to travel with the best traffic
-     * conditions is used to calculate the route.</p>  <p>Setting a departure
-     * time in the past returns a <code>400 ValidationException</code> error.</p>
-     *  <ul> <li> <p>In <a
+     * conditions is used to calculate the route.</p> <ul> <li> <p>In <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
      * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. For example,
      * <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li> </ul>
@@ -342,9 +382,7 @@ namespace Model
     /**
      * <p>Specifies the desired time of departure. Uses the given time to calculate the
      * route. Otherwise, the best time of day to travel with the best traffic
-     * conditions is used to calculate the route.</p>  <p>Setting a departure
-     * time in the past returns a <code>400 ValidationException</code> error.</p>
-     *  <ul> <li> <p>In <a
+     * conditions is used to calculate the route.</p> <ul> <li> <p>In <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
      * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. For example,
      * <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li> </ul>
@@ -565,6 +603,37 @@ namespace Model
      * key</a> to authorize the request.</p>
      */
     inline CalculateRouteRequest& WithKey(const char* value) { SetKey(value); return *this;}
+
+
+    /**
+     * <p>Specifies the distance to optimize for when calculating a route.</p>
+     */
+    inline const OptimizationMode& GetOptimizeFor() const{ return m_optimizeFor; }
+
+    /**
+     * <p>Specifies the distance to optimize for when calculating a route.</p>
+     */
+    inline bool OptimizeForHasBeenSet() const { return m_optimizeForHasBeenSet; }
+
+    /**
+     * <p>Specifies the distance to optimize for when calculating a route.</p>
+     */
+    inline void SetOptimizeFor(const OptimizationMode& value) { m_optimizeForHasBeenSet = true; m_optimizeFor = value; }
+
+    /**
+     * <p>Specifies the distance to optimize for when calculating a route.</p>
+     */
+    inline void SetOptimizeFor(OptimizationMode&& value) { m_optimizeForHasBeenSet = true; m_optimizeFor = std::move(value); }
+
+    /**
+     * <p>Specifies the distance to optimize for when calculating a route.</p>
+     */
+    inline CalculateRouteRequest& WithOptimizeFor(const OptimizationMode& value) { SetOptimizeFor(value); return *this;}
+
+    /**
+     * <p>Specifies the distance to optimize for when calculating a route.</p>
+     */
+    inline CalculateRouteRequest& WithOptimizeFor(OptimizationMode&& value) { SetOptimizeFor(std::move(value)); return *this;}
 
 
     /**
@@ -869,6 +938,9 @@ namespace Model
 
   private:
 
+    Aws::Utils::DateTime m_arrivalTime;
+    bool m_arrivalTimeHasBeenSet = false;
+
     Aws::String m_calculatorName;
     bool m_calculatorNameHasBeenSet = false;
 
@@ -895,6 +967,9 @@ namespace Model
 
     Aws::String m_key;
     bool m_keyHasBeenSet = false;
+
+    OptimizationMode m_optimizeFor;
+    bool m_optimizeForHasBeenSet = false;
 
     TravelMode m_travelMode;
     bool m_travelModeHasBeenSet = false;

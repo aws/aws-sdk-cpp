@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ArcThickness::NOT_SET:
+            return {};
           case ArcThickness::SMALL:
             return "SMALL";
           case ArcThickness::MEDIUM:

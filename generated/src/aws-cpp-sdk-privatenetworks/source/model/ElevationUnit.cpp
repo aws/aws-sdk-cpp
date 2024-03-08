@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ElevationUnit::NOT_SET:
+            return {};
           case ElevationUnit::FEET:
             return "FEET";
           default:

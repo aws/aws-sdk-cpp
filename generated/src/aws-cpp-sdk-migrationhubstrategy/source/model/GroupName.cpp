@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case GroupName::NOT_SET:
+            return {};
           case GroupName::ExternalId:
             return "ExternalId";
           case GroupName::ExternalSourceType:

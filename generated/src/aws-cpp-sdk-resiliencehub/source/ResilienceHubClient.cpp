@@ -89,8 +89,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* ResilienceHubClient::SERVICE_NAME = "resiliencehub";
-const char* ResilienceHubClient::ALLOCATION_TAG = "ResilienceHubClient";
+namespace Aws
+{
+  namespace ResilienceHub
+  {
+    const char SERVICE_NAME[] = "resiliencehub";
+    const char ALLOCATION_TAG[] = "ResilienceHubClient";
+  }
+}
+const char* ResilienceHubClient::GetServiceName() {return SERVICE_NAME;}
+const char* ResilienceHubClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 ResilienceHubClient::ResilienceHubClient(const ResilienceHub::ResilienceHubClientConfiguration& clientConfiguration,
                                          std::shared_ptr<ResilienceHubEndpointProviderBase> endpointProvider) :
@@ -102,7 +110,7 @@ ResilienceHubClient::ResilienceHubClient(const ResilienceHub::ResilienceHubClien
             Aws::MakeShared<ResilienceHubErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ResilienceHubEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -118,7 +126,7 @@ ResilienceHubClient::ResilienceHubClient(const AWSCredentials& credentials,
             Aws::MakeShared<ResilienceHubErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ResilienceHubEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -134,7 +142,7 @@ ResilienceHubClient::ResilienceHubClient(const std::shared_ptr<AWSCredentialsPro
             Aws::MakeShared<ResilienceHubErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ResilienceHubEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

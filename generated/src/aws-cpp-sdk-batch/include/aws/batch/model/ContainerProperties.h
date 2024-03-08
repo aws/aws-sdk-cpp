@@ -13,6 +13,7 @@
 #include <aws/batch/model/FargatePlatformConfiguration.h>
 #include <aws/batch/model/EphemeralStorage.h>
 #include <aws/batch/model/RuntimePlatform.h>
+#include <aws/batch/model/RepositoryCredentials.h>
 #include <aws/batch/model/Volume.h>
 #include <aws/batch/model/KeyValuePair.h>
 #include <aws/batch/model/MountPoint.h>
@@ -53,9 +54,9 @@ namespace Model
 
 
     /**
-     * <p>The image used to start a container. This string is passed directly to the
-     * Docker daemon. Images in the Docker Hub registry are available by default. Other
-     * repositories are specified with <code>
+     * <p>Required. The image used to start a container. This string is passed directly
+     * to the Docker daemon. Images in the Docker Hub registry are available by
+     * default. Other repositories are specified with <code>
      * <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. It can be 255 characters
      * long. It can contain uppercase and lowercase letters, numbers, hyphens (-),
      * underscores (_), colons (:), periods (.), forward slashes (/), and number signs
@@ -85,9 +86,9 @@ namespace Model
     inline const Aws::String& GetImage() const{ return m_image; }
 
     /**
-     * <p>The image used to start a container. This string is passed directly to the
-     * Docker daemon. Images in the Docker Hub registry are available by default. Other
-     * repositories are specified with <code>
+     * <p>Required. The image used to start a container. This string is passed directly
+     * to the Docker daemon. Images in the Docker Hub registry are available by
+     * default. Other repositories are specified with <code>
      * <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. It can be 255 characters
      * long. It can contain uppercase and lowercase letters, numbers, hyphens (-),
      * underscores (_), colons (:), periods (.), forward slashes (/), and number signs
@@ -117,9 +118,9 @@ namespace Model
     inline bool ImageHasBeenSet() const { return m_imageHasBeenSet; }
 
     /**
-     * <p>The image used to start a container. This string is passed directly to the
-     * Docker daemon. Images in the Docker Hub registry are available by default. Other
-     * repositories are specified with <code>
+     * <p>Required. The image used to start a container. This string is passed directly
+     * to the Docker daemon. Images in the Docker Hub registry are available by
+     * default. Other repositories are specified with <code>
      * <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. It can be 255 characters
      * long. It can contain uppercase and lowercase letters, numbers, hyphens (-),
      * underscores (_), colons (:), periods (.), forward slashes (/), and number signs
@@ -149,9 +150,9 @@ namespace Model
     inline void SetImage(const Aws::String& value) { m_imageHasBeenSet = true; m_image = value; }
 
     /**
-     * <p>The image used to start a container. This string is passed directly to the
-     * Docker daemon. Images in the Docker Hub registry are available by default. Other
-     * repositories are specified with <code>
+     * <p>Required. The image used to start a container. This string is passed directly
+     * to the Docker daemon. Images in the Docker Hub registry are available by
+     * default. Other repositories are specified with <code>
      * <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. It can be 255 characters
      * long. It can contain uppercase and lowercase letters, numbers, hyphens (-),
      * underscores (_), colons (:), periods (.), forward slashes (/), and number signs
@@ -181,9 +182,9 @@ namespace Model
     inline void SetImage(Aws::String&& value) { m_imageHasBeenSet = true; m_image = std::move(value); }
 
     /**
-     * <p>The image used to start a container. This string is passed directly to the
-     * Docker daemon. Images in the Docker Hub registry are available by default. Other
-     * repositories are specified with <code>
+     * <p>Required. The image used to start a container. This string is passed directly
+     * to the Docker daemon. Images in the Docker Hub registry are available by
+     * default. Other repositories are specified with <code>
      * <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. It can be 255 characters
      * long. It can contain uppercase and lowercase letters, numbers, hyphens (-),
      * underscores (_), colons (:), periods (.), forward slashes (/), and number signs
@@ -213,9 +214,9 @@ namespace Model
     inline void SetImage(const char* value) { m_imageHasBeenSet = true; m_image.assign(value); }
 
     /**
-     * <p>The image used to start a container. This string is passed directly to the
-     * Docker daemon. Images in the Docker Hub registry are available by default. Other
-     * repositories are specified with <code>
+     * <p>Required. The image used to start a container. This string is passed directly
+     * to the Docker daemon. Images in the Docker Hub registry are available by
+     * default. Other repositories are specified with <code>
      * <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. It can be 255 characters
      * long. It can contain uppercase and lowercase letters, numbers, hyphens (-),
      * underscores (_), colons (:), periods (.), forward slashes (/), and number signs
@@ -245,9 +246,9 @@ namespace Model
     inline ContainerProperties& WithImage(const Aws::String& value) { SetImage(value); return *this;}
 
     /**
-     * <p>The image used to start a container. This string is passed directly to the
-     * Docker daemon. Images in the Docker Hub registry are available by default. Other
-     * repositories are specified with <code>
+     * <p>Required. The image used to start a container. This string is passed directly
+     * to the Docker daemon. Images in the Docker Hub registry are available by
+     * default. Other repositories are specified with <code>
      * <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. It can be 255 characters
      * long. It can contain uppercase and lowercase letters, numbers, hyphens (-),
      * underscores (_), colons (:), periods (.), forward slashes (/), and number signs
@@ -277,9 +278,9 @@ namespace Model
     inline ContainerProperties& WithImage(Aws::String&& value) { SetImage(std::move(value)); return *this;}
 
     /**
-     * <p>The image used to start a container. This string is passed directly to the
-     * Docker daemon. Images in the Docker Hub registry are available by default. Other
-     * repositories are specified with <code>
+     * <p>Required. The image used to start a container. This string is passed directly
+     * to the Docker daemon. Images in the Docker Hub registry are available by
+     * default. Other repositories are specified with <code>
      * <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. It can be 255 characters
      * long. It can contain uppercase and lowercase letters, numbers, hyphens (-),
      * underscores (_), colons (:), periods (.), forward slashes (/), and number signs
@@ -1296,16 +1297,17 @@ namespace Model
      * log drivers, see <a
      * href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging
      * drivers</a> in the Docker documentation.</p>  <p>Batch currently supports
-     * a subset of the logging drivers available to the Docker daemon (shown in the
-     * <a>LogConfiguration</a> data type).</p>  <p>This parameter requires
-     * version 1.18 of the Docker Remote API or greater on your container instance. To
-     * check the Docker Remote API version on your container instance, log in to your
-     * container instance and run the following command: <code>sudo docker version |
-     * grep "Server API version"</code> </p>  <p>The Amazon ECS container agent
-     * running on a container instance must register the logging drivers available on
-     * that instance with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment
-     * variable before containers placed on that instance can use these log
-     * configuration options. For more information, see <a
+     * a subset of the logging drivers available to the Docker daemon (shown in the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties-logconfiguration.html">LogConfiguration</a>
+     * data type).</p>  <p>This parameter requires version 1.18 of the Docker
+     * Remote API or greater on your container instance. To check the Docker Remote API
+     * version on your container instance, log in to your container instance and run
+     * the following command: <code>sudo docker version | grep "Server API
+     * version"</code> </p>  <p>The Amazon ECS container agent running on a
+     * container instance must register the logging drivers available on that instance
+     * with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before
+     * containers placed on that instance can use these log configuration options. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
      * ECS container agent configuration</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p> 
@@ -1329,16 +1331,17 @@ namespace Model
      * log drivers, see <a
      * href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging
      * drivers</a> in the Docker documentation.</p>  <p>Batch currently supports
-     * a subset of the logging drivers available to the Docker daemon (shown in the
-     * <a>LogConfiguration</a> data type).</p>  <p>This parameter requires
-     * version 1.18 of the Docker Remote API or greater on your container instance. To
-     * check the Docker Remote API version on your container instance, log in to your
-     * container instance and run the following command: <code>sudo docker version |
-     * grep "Server API version"</code> </p>  <p>The Amazon ECS container agent
-     * running on a container instance must register the logging drivers available on
-     * that instance with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment
-     * variable before containers placed on that instance can use these log
-     * configuration options. For more information, see <a
+     * a subset of the logging drivers available to the Docker daemon (shown in the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties-logconfiguration.html">LogConfiguration</a>
+     * data type).</p>  <p>This parameter requires version 1.18 of the Docker
+     * Remote API or greater on your container instance. To check the Docker Remote API
+     * version on your container instance, log in to your container instance and run
+     * the following command: <code>sudo docker version | grep "Server API
+     * version"</code> </p>  <p>The Amazon ECS container agent running on a
+     * container instance must register the logging drivers available on that instance
+     * with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before
+     * containers placed on that instance can use these log configuration options. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
      * ECS container agent configuration</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p> 
@@ -1362,16 +1365,17 @@ namespace Model
      * log drivers, see <a
      * href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging
      * drivers</a> in the Docker documentation.</p>  <p>Batch currently supports
-     * a subset of the logging drivers available to the Docker daemon (shown in the
-     * <a>LogConfiguration</a> data type).</p>  <p>This parameter requires
-     * version 1.18 of the Docker Remote API or greater on your container instance. To
-     * check the Docker Remote API version on your container instance, log in to your
-     * container instance and run the following command: <code>sudo docker version |
-     * grep "Server API version"</code> </p>  <p>The Amazon ECS container agent
-     * running on a container instance must register the logging drivers available on
-     * that instance with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment
-     * variable before containers placed on that instance can use these log
-     * configuration options. For more information, see <a
+     * a subset of the logging drivers available to the Docker daemon (shown in the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties-logconfiguration.html">LogConfiguration</a>
+     * data type).</p>  <p>This parameter requires version 1.18 of the Docker
+     * Remote API or greater on your container instance. To check the Docker Remote API
+     * version on your container instance, log in to your container instance and run
+     * the following command: <code>sudo docker version | grep "Server API
+     * version"</code> </p>  <p>The Amazon ECS container agent running on a
+     * container instance must register the logging drivers available on that instance
+     * with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before
+     * containers placed on that instance can use these log configuration options. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
      * ECS container agent configuration</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p> 
@@ -1395,16 +1399,17 @@ namespace Model
      * log drivers, see <a
      * href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging
      * drivers</a> in the Docker documentation.</p>  <p>Batch currently supports
-     * a subset of the logging drivers available to the Docker daemon (shown in the
-     * <a>LogConfiguration</a> data type).</p>  <p>This parameter requires
-     * version 1.18 of the Docker Remote API or greater on your container instance. To
-     * check the Docker Remote API version on your container instance, log in to your
-     * container instance and run the following command: <code>sudo docker version |
-     * grep "Server API version"</code> </p>  <p>The Amazon ECS container agent
-     * running on a container instance must register the logging drivers available on
-     * that instance with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment
-     * variable before containers placed on that instance can use these log
-     * configuration options. For more information, see <a
+     * a subset of the logging drivers available to the Docker daemon (shown in the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties-logconfiguration.html">LogConfiguration</a>
+     * data type).</p>  <p>This parameter requires version 1.18 of the Docker
+     * Remote API or greater on your container instance. To check the Docker Remote API
+     * version on your container instance, log in to your container instance and run
+     * the following command: <code>sudo docker version | grep "Server API
+     * version"</code> </p>  <p>The Amazon ECS container agent running on a
+     * container instance must register the logging drivers available on that instance
+     * with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before
+     * containers placed on that instance can use these log configuration options. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
      * ECS container agent configuration</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p> 
@@ -1428,16 +1433,17 @@ namespace Model
      * log drivers, see <a
      * href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging
      * drivers</a> in the Docker documentation.</p>  <p>Batch currently supports
-     * a subset of the logging drivers available to the Docker daemon (shown in the
-     * <a>LogConfiguration</a> data type).</p>  <p>This parameter requires
-     * version 1.18 of the Docker Remote API or greater on your container instance. To
-     * check the Docker Remote API version on your container instance, log in to your
-     * container instance and run the following command: <code>sudo docker version |
-     * grep "Server API version"</code> </p>  <p>The Amazon ECS container agent
-     * running on a container instance must register the logging drivers available on
-     * that instance with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment
-     * variable before containers placed on that instance can use these log
-     * configuration options. For more information, see <a
+     * a subset of the logging drivers available to the Docker daemon (shown in the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties-logconfiguration.html">LogConfiguration</a>
+     * data type).</p>  <p>This parameter requires version 1.18 of the Docker
+     * Remote API or greater on your container instance. To check the Docker Remote API
+     * version on your container instance, log in to your container instance and run
+     * the following command: <code>sudo docker version | grep "Server API
+     * version"</code> </p>  <p>The Amazon ECS container agent running on a
+     * container instance must register the logging drivers available on that instance
+     * with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before
+     * containers placed on that instance can use these log configuration options. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
      * ECS container agent configuration</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p> 
@@ -1461,16 +1467,17 @@ namespace Model
      * log drivers, see <a
      * href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging
      * drivers</a> in the Docker documentation.</p>  <p>Batch currently supports
-     * a subset of the logging drivers available to the Docker daemon (shown in the
-     * <a>LogConfiguration</a> data type).</p>  <p>This parameter requires
-     * version 1.18 of the Docker Remote API or greater on your container instance. To
-     * check the Docker Remote API version on your container instance, log in to your
-     * container instance and run the following command: <code>sudo docker version |
-     * grep "Server API version"</code> </p>  <p>The Amazon ECS container agent
-     * running on a container instance must register the logging drivers available on
-     * that instance with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment
-     * variable before containers placed on that instance can use these log
-     * configuration options. For more information, see <a
+     * a subset of the logging drivers available to the Docker daemon (shown in the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties-logconfiguration.html">LogConfiguration</a>
+     * data type).</p>  <p>This parameter requires version 1.18 of the Docker
+     * Remote API or greater on your container instance. To check the Docker Remote API
+     * version on your container instance, log in to your container instance and run
+     * the following command: <code>sudo docker version | grep "Server API
+     * version"</code> </p>  <p>The Amazon ECS container agent running on a
+     * container instance must register the logging drivers available on that instance
+     * with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before
+     * containers placed on that instance can use these log configuration options. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
      * ECS container agent configuration</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p> 
@@ -1537,74 +1544,86 @@ namespace Model
 
     /**
      * <p>The network configuration for jobs that are running on Fargate resources.
-     * Jobs that are running on EC2 resources must not specify this parameter.</p>
+     * Jobs that are running on Amazon EC2 resources must not specify this
+     * parameter.</p>
      */
     inline const NetworkConfiguration& GetNetworkConfiguration() const{ return m_networkConfiguration; }
 
     /**
      * <p>The network configuration for jobs that are running on Fargate resources.
-     * Jobs that are running on EC2 resources must not specify this parameter.</p>
+     * Jobs that are running on Amazon EC2 resources must not specify this
+     * parameter.</p>
      */
     inline bool NetworkConfigurationHasBeenSet() const { return m_networkConfigurationHasBeenSet; }
 
     /**
      * <p>The network configuration for jobs that are running on Fargate resources.
-     * Jobs that are running on EC2 resources must not specify this parameter.</p>
+     * Jobs that are running on Amazon EC2 resources must not specify this
+     * parameter.</p>
      */
     inline void SetNetworkConfiguration(const NetworkConfiguration& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = value; }
 
     /**
      * <p>The network configuration for jobs that are running on Fargate resources.
-     * Jobs that are running on EC2 resources must not specify this parameter.</p>
+     * Jobs that are running on Amazon EC2 resources must not specify this
+     * parameter.</p>
      */
     inline void SetNetworkConfiguration(NetworkConfiguration&& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = std::move(value); }
 
     /**
      * <p>The network configuration for jobs that are running on Fargate resources.
-     * Jobs that are running on EC2 resources must not specify this parameter.</p>
+     * Jobs that are running on Amazon EC2 resources must not specify this
+     * parameter.</p>
      */
     inline ContainerProperties& WithNetworkConfiguration(const NetworkConfiguration& value) { SetNetworkConfiguration(value); return *this;}
 
     /**
      * <p>The network configuration for jobs that are running on Fargate resources.
-     * Jobs that are running on EC2 resources must not specify this parameter.</p>
+     * Jobs that are running on Amazon EC2 resources must not specify this
+     * parameter.</p>
      */
     inline ContainerProperties& WithNetworkConfiguration(NetworkConfiguration&& value) { SetNetworkConfiguration(std::move(value)); return *this;}
 
 
     /**
      * <p>The platform configuration for jobs that are running on Fargate resources.
-     * Jobs that are running on EC2 resources must not specify this parameter.</p>
+     * Jobs that are running on Amazon EC2 resources must not specify this
+     * parameter.</p>
      */
     inline const FargatePlatformConfiguration& GetFargatePlatformConfiguration() const{ return m_fargatePlatformConfiguration; }
 
     /**
      * <p>The platform configuration for jobs that are running on Fargate resources.
-     * Jobs that are running on EC2 resources must not specify this parameter.</p>
+     * Jobs that are running on Amazon EC2 resources must not specify this
+     * parameter.</p>
      */
     inline bool FargatePlatformConfigurationHasBeenSet() const { return m_fargatePlatformConfigurationHasBeenSet; }
 
     /**
      * <p>The platform configuration for jobs that are running on Fargate resources.
-     * Jobs that are running on EC2 resources must not specify this parameter.</p>
+     * Jobs that are running on Amazon EC2 resources must not specify this
+     * parameter.</p>
      */
     inline void SetFargatePlatformConfiguration(const FargatePlatformConfiguration& value) { m_fargatePlatformConfigurationHasBeenSet = true; m_fargatePlatformConfiguration = value; }
 
     /**
      * <p>The platform configuration for jobs that are running on Fargate resources.
-     * Jobs that are running on EC2 resources must not specify this parameter.</p>
+     * Jobs that are running on Amazon EC2 resources must not specify this
+     * parameter.</p>
      */
     inline void SetFargatePlatformConfiguration(FargatePlatformConfiguration&& value) { m_fargatePlatformConfigurationHasBeenSet = true; m_fargatePlatformConfiguration = std::move(value); }
 
     /**
      * <p>The platform configuration for jobs that are running on Fargate resources.
-     * Jobs that are running on EC2 resources must not specify this parameter.</p>
+     * Jobs that are running on Amazon EC2 resources must not specify this
+     * parameter.</p>
      */
     inline ContainerProperties& WithFargatePlatformConfiguration(const FargatePlatformConfiguration& value) { SetFargatePlatformConfiguration(value); return *this;}
 
     /**
      * <p>The platform configuration for jobs that are running on Fargate resources.
-     * Jobs that are running on EC2 resources must not specify this parameter.</p>
+     * Jobs that are running on Amazon EC2 resources must not specify this
+     * parameter.</p>
      */
     inline ContainerProperties& WithFargatePlatformConfiguration(FargatePlatformConfiguration&& value) { SetFargatePlatformConfiguration(std::move(value)); return *this;}
 
@@ -1652,23 +1671,72 @@ namespace Model
     inline ContainerProperties& WithEphemeralStorage(EphemeralStorage&& value) { SetEphemeralStorage(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>An object that represents the compute environment architecture for Batch jobs
+     * on Fargate.</p>
+     */
     inline const RuntimePlatform& GetRuntimePlatform() const{ return m_runtimePlatform; }
 
-    
+    /**
+     * <p>An object that represents the compute environment architecture for Batch jobs
+     * on Fargate.</p>
+     */
     inline bool RuntimePlatformHasBeenSet() const { return m_runtimePlatformHasBeenSet; }
 
-    
+    /**
+     * <p>An object that represents the compute environment architecture for Batch jobs
+     * on Fargate.</p>
+     */
     inline void SetRuntimePlatform(const RuntimePlatform& value) { m_runtimePlatformHasBeenSet = true; m_runtimePlatform = value; }
 
-    
+    /**
+     * <p>An object that represents the compute environment architecture for Batch jobs
+     * on Fargate.</p>
+     */
     inline void SetRuntimePlatform(RuntimePlatform&& value) { m_runtimePlatformHasBeenSet = true; m_runtimePlatform = std::move(value); }
 
-    
+    /**
+     * <p>An object that represents the compute environment architecture for Batch jobs
+     * on Fargate.</p>
+     */
     inline ContainerProperties& WithRuntimePlatform(const RuntimePlatform& value) { SetRuntimePlatform(value); return *this;}
 
-    
+    /**
+     * <p>An object that represents the compute environment architecture for Batch jobs
+     * on Fargate.</p>
+     */
     inline ContainerProperties& WithRuntimePlatform(RuntimePlatform&& value) { SetRuntimePlatform(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The private repository authentication credentials to use.</p>
+     */
+    inline const RepositoryCredentials& GetRepositoryCredentials() const{ return m_repositoryCredentials; }
+
+    /**
+     * <p>The private repository authentication credentials to use.</p>
+     */
+    inline bool RepositoryCredentialsHasBeenSet() const { return m_repositoryCredentialsHasBeenSet; }
+
+    /**
+     * <p>The private repository authentication credentials to use.</p>
+     */
+    inline void SetRepositoryCredentials(const RepositoryCredentials& value) { m_repositoryCredentialsHasBeenSet = true; m_repositoryCredentials = value; }
+
+    /**
+     * <p>The private repository authentication credentials to use.</p>
+     */
+    inline void SetRepositoryCredentials(RepositoryCredentials&& value) { m_repositoryCredentialsHasBeenSet = true; m_repositoryCredentials = std::move(value); }
+
+    /**
+     * <p>The private repository authentication credentials to use.</p>
+     */
+    inline ContainerProperties& WithRepositoryCredentials(const RepositoryCredentials& value) { SetRepositoryCredentials(value); return *this;}
+
+    /**
+     * <p>The private repository authentication credentials to use.</p>
+     */
+    inline ContainerProperties& WithRepositoryCredentials(RepositoryCredentials&& value) { SetRepositoryCredentials(std::move(value)); return *this;}
 
   private:
 
@@ -1731,6 +1799,9 @@ namespace Model
 
     RuntimePlatform m_runtimePlatform;
     bool m_runtimePlatformHasBeenSet = false;
+
+    RepositoryCredentials m_repositoryCredentials;
+    bool m_repositoryCredentialsHasBeenSet = false;
   };
 
 } // namespace Model

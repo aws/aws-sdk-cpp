@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HyperParameterTuningJobSortByOptions::NOT_SET:
+            return {};
           case HyperParameterTuningJobSortByOptions::Name:
             return "Name";
           case HyperParameterTuningJobSortByOptions::Status:

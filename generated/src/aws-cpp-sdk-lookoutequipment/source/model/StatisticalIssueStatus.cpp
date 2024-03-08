@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case StatisticalIssueStatus::NOT_SET:
+            return {};
           case StatisticalIssueStatus::POTENTIAL_ISSUE_DETECTED:
             return "POTENTIAL_ISSUE_DETECTED";
           case StatisticalIssueStatus::NO_ISSUE_DETECTED:

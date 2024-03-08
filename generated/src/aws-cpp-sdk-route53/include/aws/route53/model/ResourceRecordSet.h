@@ -13,6 +13,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/route53/model/AliasTarget.h>
 #include <aws/route53/model/CidrRoutingConfig.h>
+#include <aws/route53/model/GeoProximityLocation.h>
 #include <aws/route53/model/ResourceRecord.h>
 #include <utility>
 
@@ -71,11 +72,6 @@ namespace Model
      * other than the leftmost label in a domain name, DNS treats it as an * character
      * (ASCII 42), not as a wildcard.</p>  <p>You can't use the * wildcard
      * for resource records sets that have a type of NS.</p>  </li> </ul>
-     * <p>You can use the * wildcard as the leftmost label in a domain name, for
-     * example, <code>*.example.com</code>. You can't use an * for one of the middle
-     * labels, for example, <code>marketing.*.example.com</code>. In addition, the *
-     * must replace the entire label; for example, you can't specify
-     * <code>prod*.example.com</code>.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
@@ -104,11 +100,6 @@ namespace Model
      * other than the leftmost label in a domain name, DNS treats it as an * character
      * (ASCII 42), not as a wildcard.</p>  <p>You can't use the * wildcard
      * for resource records sets that have a type of NS.</p>  </li> </ul>
-     * <p>You can use the * wildcard as the leftmost label in a domain name, for
-     * example, <code>*.example.com</code>. You can't use an * for one of the middle
-     * labels, for example, <code>marketing.*.example.com</code>. In addition, the *
-     * must replace the entire label; for example, you can't specify
-     * <code>prod*.example.com</code>.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
@@ -137,11 +128,6 @@ namespace Model
      * other than the leftmost label in a domain name, DNS treats it as an * character
      * (ASCII 42), not as a wildcard.</p>  <p>You can't use the * wildcard
      * for resource records sets that have a type of NS.</p>  </li> </ul>
-     * <p>You can use the * wildcard as the leftmost label in a domain name, for
-     * example, <code>*.example.com</code>. You can't use an * for one of the middle
-     * labels, for example, <code>marketing.*.example.com</code>. In addition, the *
-     * must replace the entire label; for example, you can't specify
-     * <code>prod*.example.com</code>.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
@@ -170,11 +156,6 @@ namespace Model
      * other than the leftmost label in a domain name, DNS treats it as an * character
      * (ASCII 42), not as a wildcard.</p>  <p>You can't use the * wildcard
      * for resource records sets that have a type of NS.</p>  </li> </ul>
-     * <p>You can use the * wildcard as the leftmost label in a domain name, for
-     * example, <code>*.example.com</code>. You can't use an * for one of the middle
-     * labels, for example, <code>marketing.*.example.com</code>. In addition, the *
-     * must replace the entire label; for example, you can't specify
-     * <code>prod*.example.com</code>.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
@@ -203,11 +184,6 @@ namespace Model
      * other than the leftmost label in a domain name, DNS treats it as an * character
      * (ASCII 42), not as a wildcard.</p>  <p>You can't use the * wildcard
      * for resource records sets that have a type of NS.</p>  </li> </ul>
-     * <p>You can use the * wildcard as the leftmost label in a domain name, for
-     * example, <code>*.example.com</code>. You can't use an * for one of the middle
-     * labels, for example, <code>marketing.*.example.com</code>. In addition, the *
-     * must replace the entire label; for example, you can't specify
-     * <code>prod*.example.com</code>.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
@@ -236,11 +212,6 @@ namespace Model
      * other than the leftmost label in a domain name, DNS treats it as an * character
      * (ASCII 42), not as a wildcard.</p>  <p>You can't use the * wildcard
      * for resource records sets that have a type of NS.</p>  </li> </ul>
-     * <p>You can use the * wildcard as the leftmost label in a domain name, for
-     * example, <code>*.example.com</code>. You can't use an * for one of the middle
-     * labels, for example, <code>marketing.*.example.com</code>. In addition, the *
-     * must replace the entire label; for example, you can't specify
-     * <code>prod*.example.com</code>.</p>
      */
     inline ResourceRecordSet& WithName(const Aws::String& value) { SetName(value); return *this;}
 
@@ -269,11 +240,6 @@ namespace Model
      * other than the leftmost label in a domain name, DNS treats it as an * character
      * (ASCII 42), not as a wildcard.</p>  <p>You can't use the * wildcard
      * for resource records sets that have a type of NS.</p>  </li> </ul>
-     * <p>You can use the * wildcard as the leftmost label in a domain name, for
-     * example, <code>*.example.com</code>. You can't use an * for one of the middle
-     * labels, for example, <code>marketing.*.example.com</code>. In addition, the *
-     * must replace the entire label; for example, you can't specify
-     * <code>prod*.example.com</code>.</p>
      */
     inline ResourceRecordSet& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
@@ -302,11 +268,6 @@ namespace Model
      * other than the leftmost label in a domain name, DNS treats it as an * character
      * (ASCII 42), not as a wildcard.</p>  <p>You can't use the * wildcard
      * for resource records sets that have a type of NS.</p>  </li> </ul>
-     * <p>You can use the * wildcard as the leftmost label in a domain name, for
-     * example, <code>*.example.com</code>. You can't use an * for one of the middle
-     * labels, for example, <code>marketing.*.example.com</code>. In addition, the *
-     * must replace the entire label; for example, you can't specify
-     * <code>prod*.example.com</code>.</p>
      */
     inline ResourceRecordSet& WithName(const char* value) { SetName(value); return *this;}
 
@@ -965,29 +926,27 @@ namespace Model
      * origin of the query. For example, if you want all queries from Africa to be
      * routed to a web server with an IP address of <code>192.0.2.111</code>, create a
      * resource record set with a <code>Type</code> of <code>A</code> and a
-     * <code>ContinentCode</code> of <code>AF</code>.</p>  <p>Although creating
-     * geolocation and geolocation alias resource record sets in a private hosted zone
-     * is allowed, it's not supported.</p>  <p>If you create separate resource
-     * record sets for overlapping geographic regions (for example, one resource record
-     * set for a continent and one for a country on the same continent), priority goes
-     * to the smallest geographic region. This allows you to route most queries for a
-     * continent to one resource and to route queries for a country on that continent
-     * to a different resource.</p> <p>You can't create two geolocation resource record
-     * sets that specify the same geographic location.</p> <p>The value <code>*</code>
-     * in the <code>CountryCode</code> element matches all geographic locations that
-     * aren't specified in other geolocation resource record sets that have the same
-     * values for the <code>Name</code> and <code>Type</code> elements.</p> 
-     * <p>Geolocation works by mapping IP addresses to locations. However, some IP
-     * addresses aren't mapped to geographic locations, so even if you create
-     * geolocation resource record sets that cover all seven continents, Route 53 will
-     * receive some DNS queries from locations that it can't identify. We recommend
-     * that you create a resource record set for which the value of
-     * <code>CountryCode</code> is <code>*</code>. Two groups of queries are routed to
-     * the resource that you specify in this record: queries that come from locations
-     * for which you haven't created geolocation resource record sets and queries from
-     * IP addresses that aren't mapped to a location. If you don't create a
-     * <code>*</code> resource record set, Route 53 returns a "no answer" response for
-     * queries from those locations.</p>  <p>You can't create
+     * <code>ContinentCode</code> of <code>AF</code>.</p> <p>If you create separate
+     * resource record sets for overlapping geographic regions (for example, one
+     * resource record set for a continent and one for a country on the same
+     * continent), priority goes to the smallest geographic region. This allows you to
+     * route most queries for a continent to one resource and to route queries for a
+     * country on that continent to a different resource.</p> <p>You can't create two
+     * geolocation resource record sets that specify the same geographic location.</p>
+     * <p>The value <code>*</code> in the <code>CountryCode</code> element matches all
+     * geographic locations that aren't specified in other geolocation resource record
+     * sets that have the same values for the <code>Name</code> and <code>Type</code>
+     * elements.</p>  <p>Geolocation works by mapping IP addresses to
+     * locations. However, some IP addresses aren't mapped to geographic locations, so
+     * even if you create geolocation resource record sets that cover all seven
+     * continents, Route 53 will receive some DNS queries from locations that it can't
+     * identify. We recommend that you create a resource record set for which the value
+     * of <code>CountryCode</code> is <code>*</code>. Two groups of queries are routed
+     * to the resource that you specify in this record: queries that come from
+     * locations for which you haven't created geolocation resource record sets and
+     * queries from IP addresses that aren't mapped to a location. If you don't create
+     * a <code>*</code> resource record set, Route 53 returns a "no answer" response
+     * for queries from those locations.</p>  <p>You can't create
      * non-geolocation resource record sets that have the same values for the
      * <code>Name</code> and <code>Type</code> elements as geolocation resource record
      * sets.</p>
@@ -1000,29 +959,27 @@ namespace Model
      * origin of the query. For example, if you want all queries from Africa to be
      * routed to a web server with an IP address of <code>192.0.2.111</code>, create a
      * resource record set with a <code>Type</code> of <code>A</code> and a
-     * <code>ContinentCode</code> of <code>AF</code>.</p>  <p>Although creating
-     * geolocation and geolocation alias resource record sets in a private hosted zone
-     * is allowed, it's not supported.</p>  <p>If you create separate resource
-     * record sets for overlapping geographic regions (for example, one resource record
-     * set for a continent and one for a country on the same continent), priority goes
-     * to the smallest geographic region. This allows you to route most queries for a
-     * continent to one resource and to route queries for a country on that continent
-     * to a different resource.</p> <p>You can't create two geolocation resource record
-     * sets that specify the same geographic location.</p> <p>The value <code>*</code>
-     * in the <code>CountryCode</code> element matches all geographic locations that
-     * aren't specified in other geolocation resource record sets that have the same
-     * values for the <code>Name</code> and <code>Type</code> elements.</p> 
-     * <p>Geolocation works by mapping IP addresses to locations. However, some IP
-     * addresses aren't mapped to geographic locations, so even if you create
-     * geolocation resource record sets that cover all seven continents, Route 53 will
-     * receive some DNS queries from locations that it can't identify. We recommend
-     * that you create a resource record set for which the value of
-     * <code>CountryCode</code> is <code>*</code>. Two groups of queries are routed to
-     * the resource that you specify in this record: queries that come from locations
-     * for which you haven't created geolocation resource record sets and queries from
-     * IP addresses that aren't mapped to a location. If you don't create a
-     * <code>*</code> resource record set, Route 53 returns a "no answer" response for
-     * queries from those locations.</p>  <p>You can't create
+     * <code>ContinentCode</code> of <code>AF</code>.</p> <p>If you create separate
+     * resource record sets for overlapping geographic regions (for example, one
+     * resource record set for a continent and one for a country on the same
+     * continent), priority goes to the smallest geographic region. This allows you to
+     * route most queries for a continent to one resource and to route queries for a
+     * country on that continent to a different resource.</p> <p>You can't create two
+     * geolocation resource record sets that specify the same geographic location.</p>
+     * <p>The value <code>*</code> in the <code>CountryCode</code> element matches all
+     * geographic locations that aren't specified in other geolocation resource record
+     * sets that have the same values for the <code>Name</code> and <code>Type</code>
+     * elements.</p>  <p>Geolocation works by mapping IP addresses to
+     * locations. However, some IP addresses aren't mapped to geographic locations, so
+     * even if you create geolocation resource record sets that cover all seven
+     * continents, Route 53 will receive some DNS queries from locations that it can't
+     * identify. We recommend that you create a resource record set for which the value
+     * of <code>CountryCode</code> is <code>*</code>. Two groups of queries are routed
+     * to the resource that you specify in this record: queries that come from
+     * locations for which you haven't created geolocation resource record sets and
+     * queries from IP addresses that aren't mapped to a location. If you don't create
+     * a <code>*</code> resource record set, Route 53 returns a "no answer" response
+     * for queries from those locations.</p>  <p>You can't create
      * non-geolocation resource record sets that have the same values for the
      * <code>Name</code> and <code>Type</code> elements as geolocation resource record
      * sets.</p>
@@ -1035,29 +992,27 @@ namespace Model
      * origin of the query. For example, if you want all queries from Africa to be
      * routed to a web server with an IP address of <code>192.0.2.111</code>, create a
      * resource record set with a <code>Type</code> of <code>A</code> and a
-     * <code>ContinentCode</code> of <code>AF</code>.</p>  <p>Although creating
-     * geolocation and geolocation alias resource record sets in a private hosted zone
-     * is allowed, it's not supported.</p>  <p>If you create separate resource
-     * record sets for overlapping geographic regions (for example, one resource record
-     * set for a continent and one for a country on the same continent), priority goes
-     * to the smallest geographic region. This allows you to route most queries for a
-     * continent to one resource and to route queries for a country on that continent
-     * to a different resource.</p> <p>You can't create two geolocation resource record
-     * sets that specify the same geographic location.</p> <p>The value <code>*</code>
-     * in the <code>CountryCode</code> element matches all geographic locations that
-     * aren't specified in other geolocation resource record sets that have the same
-     * values for the <code>Name</code> and <code>Type</code> elements.</p> 
-     * <p>Geolocation works by mapping IP addresses to locations. However, some IP
-     * addresses aren't mapped to geographic locations, so even if you create
-     * geolocation resource record sets that cover all seven continents, Route 53 will
-     * receive some DNS queries from locations that it can't identify. We recommend
-     * that you create a resource record set for which the value of
-     * <code>CountryCode</code> is <code>*</code>. Two groups of queries are routed to
-     * the resource that you specify in this record: queries that come from locations
-     * for which you haven't created geolocation resource record sets and queries from
-     * IP addresses that aren't mapped to a location. If you don't create a
-     * <code>*</code> resource record set, Route 53 returns a "no answer" response for
-     * queries from those locations.</p>  <p>You can't create
+     * <code>ContinentCode</code> of <code>AF</code>.</p> <p>If you create separate
+     * resource record sets for overlapping geographic regions (for example, one
+     * resource record set for a continent and one for a country on the same
+     * continent), priority goes to the smallest geographic region. This allows you to
+     * route most queries for a continent to one resource and to route queries for a
+     * country on that continent to a different resource.</p> <p>You can't create two
+     * geolocation resource record sets that specify the same geographic location.</p>
+     * <p>The value <code>*</code> in the <code>CountryCode</code> element matches all
+     * geographic locations that aren't specified in other geolocation resource record
+     * sets that have the same values for the <code>Name</code> and <code>Type</code>
+     * elements.</p>  <p>Geolocation works by mapping IP addresses to
+     * locations. However, some IP addresses aren't mapped to geographic locations, so
+     * even if you create geolocation resource record sets that cover all seven
+     * continents, Route 53 will receive some DNS queries from locations that it can't
+     * identify. We recommend that you create a resource record set for which the value
+     * of <code>CountryCode</code> is <code>*</code>. Two groups of queries are routed
+     * to the resource that you specify in this record: queries that come from
+     * locations for which you haven't created geolocation resource record sets and
+     * queries from IP addresses that aren't mapped to a location. If you don't create
+     * a <code>*</code> resource record set, Route 53 returns a "no answer" response
+     * for queries from those locations.</p>  <p>You can't create
      * non-geolocation resource record sets that have the same values for the
      * <code>Name</code> and <code>Type</code> elements as geolocation resource record
      * sets.</p>
@@ -1070,29 +1025,27 @@ namespace Model
      * origin of the query. For example, if you want all queries from Africa to be
      * routed to a web server with an IP address of <code>192.0.2.111</code>, create a
      * resource record set with a <code>Type</code> of <code>A</code> and a
-     * <code>ContinentCode</code> of <code>AF</code>.</p>  <p>Although creating
-     * geolocation and geolocation alias resource record sets in a private hosted zone
-     * is allowed, it's not supported.</p>  <p>If you create separate resource
-     * record sets for overlapping geographic regions (for example, one resource record
-     * set for a continent and one for a country on the same continent), priority goes
-     * to the smallest geographic region. This allows you to route most queries for a
-     * continent to one resource and to route queries for a country on that continent
-     * to a different resource.</p> <p>You can't create two geolocation resource record
-     * sets that specify the same geographic location.</p> <p>The value <code>*</code>
-     * in the <code>CountryCode</code> element matches all geographic locations that
-     * aren't specified in other geolocation resource record sets that have the same
-     * values for the <code>Name</code> and <code>Type</code> elements.</p> 
-     * <p>Geolocation works by mapping IP addresses to locations. However, some IP
-     * addresses aren't mapped to geographic locations, so even if you create
-     * geolocation resource record sets that cover all seven continents, Route 53 will
-     * receive some DNS queries from locations that it can't identify. We recommend
-     * that you create a resource record set for which the value of
-     * <code>CountryCode</code> is <code>*</code>. Two groups of queries are routed to
-     * the resource that you specify in this record: queries that come from locations
-     * for which you haven't created geolocation resource record sets and queries from
-     * IP addresses that aren't mapped to a location. If you don't create a
-     * <code>*</code> resource record set, Route 53 returns a "no answer" response for
-     * queries from those locations.</p>  <p>You can't create
+     * <code>ContinentCode</code> of <code>AF</code>.</p> <p>If you create separate
+     * resource record sets for overlapping geographic regions (for example, one
+     * resource record set for a continent and one for a country on the same
+     * continent), priority goes to the smallest geographic region. This allows you to
+     * route most queries for a continent to one resource and to route queries for a
+     * country on that continent to a different resource.</p> <p>You can't create two
+     * geolocation resource record sets that specify the same geographic location.</p>
+     * <p>The value <code>*</code> in the <code>CountryCode</code> element matches all
+     * geographic locations that aren't specified in other geolocation resource record
+     * sets that have the same values for the <code>Name</code> and <code>Type</code>
+     * elements.</p>  <p>Geolocation works by mapping IP addresses to
+     * locations. However, some IP addresses aren't mapped to geographic locations, so
+     * even if you create geolocation resource record sets that cover all seven
+     * continents, Route 53 will receive some DNS queries from locations that it can't
+     * identify. We recommend that you create a resource record set for which the value
+     * of <code>CountryCode</code> is <code>*</code>. Two groups of queries are routed
+     * to the resource that you specify in this record: queries that come from
+     * locations for which you haven't created geolocation resource record sets and
+     * queries from IP addresses that aren't mapped to a location. If you don't create
+     * a <code>*</code> resource record set, Route 53 returns a "no answer" response
+     * for queries from those locations.</p>  <p>You can't create
      * non-geolocation resource record sets that have the same values for the
      * <code>Name</code> and <code>Type</code> elements as geolocation resource record
      * sets.</p>
@@ -1105,29 +1058,27 @@ namespace Model
      * origin of the query. For example, if you want all queries from Africa to be
      * routed to a web server with an IP address of <code>192.0.2.111</code>, create a
      * resource record set with a <code>Type</code> of <code>A</code> and a
-     * <code>ContinentCode</code> of <code>AF</code>.</p>  <p>Although creating
-     * geolocation and geolocation alias resource record sets in a private hosted zone
-     * is allowed, it's not supported.</p>  <p>If you create separate resource
-     * record sets for overlapping geographic regions (for example, one resource record
-     * set for a continent and one for a country on the same continent), priority goes
-     * to the smallest geographic region. This allows you to route most queries for a
-     * continent to one resource and to route queries for a country on that continent
-     * to a different resource.</p> <p>You can't create two geolocation resource record
-     * sets that specify the same geographic location.</p> <p>The value <code>*</code>
-     * in the <code>CountryCode</code> element matches all geographic locations that
-     * aren't specified in other geolocation resource record sets that have the same
-     * values for the <code>Name</code> and <code>Type</code> elements.</p> 
-     * <p>Geolocation works by mapping IP addresses to locations. However, some IP
-     * addresses aren't mapped to geographic locations, so even if you create
-     * geolocation resource record sets that cover all seven continents, Route 53 will
-     * receive some DNS queries from locations that it can't identify. We recommend
-     * that you create a resource record set for which the value of
-     * <code>CountryCode</code> is <code>*</code>. Two groups of queries are routed to
-     * the resource that you specify in this record: queries that come from locations
-     * for which you haven't created geolocation resource record sets and queries from
-     * IP addresses that aren't mapped to a location. If you don't create a
-     * <code>*</code> resource record set, Route 53 returns a "no answer" response for
-     * queries from those locations.</p>  <p>You can't create
+     * <code>ContinentCode</code> of <code>AF</code>.</p> <p>If you create separate
+     * resource record sets for overlapping geographic regions (for example, one
+     * resource record set for a continent and one for a country on the same
+     * continent), priority goes to the smallest geographic region. This allows you to
+     * route most queries for a continent to one resource and to route queries for a
+     * country on that continent to a different resource.</p> <p>You can't create two
+     * geolocation resource record sets that specify the same geographic location.</p>
+     * <p>The value <code>*</code> in the <code>CountryCode</code> element matches all
+     * geographic locations that aren't specified in other geolocation resource record
+     * sets that have the same values for the <code>Name</code> and <code>Type</code>
+     * elements.</p>  <p>Geolocation works by mapping IP addresses to
+     * locations. However, some IP addresses aren't mapped to geographic locations, so
+     * even if you create geolocation resource record sets that cover all seven
+     * continents, Route 53 will receive some DNS queries from locations that it can't
+     * identify. We recommend that you create a resource record set for which the value
+     * of <code>CountryCode</code> is <code>*</code>. Two groups of queries are routed
+     * to the resource that you specify in this record: queries that come from
+     * locations for which you haven't created geolocation resource record sets and
+     * queries from IP addresses that aren't mapped to a location. If you don't create
+     * a <code>*</code> resource record set, Route 53 returns a "no answer" response
+     * for queries from those locations.</p>  <p>You can't create
      * non-geolocation resource record sets that have the same values for the
      * <code>Name</code> and <code>Type</code> elements as geolocation resource record
      * sets.</p>
@@ -1140,29 +1091,27 @@ namespace Model
      * origin of the query. For example, if you want all queries from Africa to be
      * routed to a web server with an IP address of <code>192.0.2.111</code>, create a
      * resource record set with a <code>Type</code> of <code>A</code> and a
-     * <code>ContinentCode</code> of <code>AF</code>.</p>  <p>Although creating
-     * geolocation and geolocation alias resource record sets in a private hosted zone
-     * is allowed, it's not supported.</p>  <p>If you create separate resource
-     * record sets for overlapping geographic regions (for example, one resource record
-     * set for a continent and one for a country on the same continent), priority goes
-     * to the smallest geographic region. This allows you to route most queries for a
-     * continent to one resource and to route queries for a country on that continent
-     * to a different resource.</p> <p>You can't create two geolocation resource record
-     * sets that specify the same geographic location.</p> <p>The value <code>*</code>
-     * in the <code>CountryCode</code> element matches all geographic locations that
-     * aren't specified in other geolocation resource record sets that have the same
-     * values for the <code>Name</code> and <code>Type</code> elements.</p> 
-     * <p>Geolocation works by mapping IP addresses to locations. However, some IP
-     * addresses aren't mapped to geographic locations, so even if you create
-     * geolocation resource record sets that cover all seven continents, Route 53 will
-     * receive some DNS queries from locations that it can't identify. We recommend
-     * that you create a resource record set for which the value of
-     * <code>CountryCode</code> is <code>*</code>. Two groups of queries are routed to
-     * the resource that you specify in this record: queries that come from locations
-     * for which you haven't created geolocation resource record sets and queries from
-     * IP addresses that aren't mapped to a location. If you don't create a
-     * <code>*</code> resource record set, Route 53 returns a "no answer" response for
-     * queries from those locations.</p>  <p>You can't create
+     * <code>ContinentCode</code> of <code>AF</code>.</p> <p>If you create separate
+     * resource record sets for overlapping geographic regions (for example, one
+     * resource record set for a continent and one for a country on the same
+     * continent), priority goes to the smallest geographic region. This allows you to
+     * route most queries for a continent to one resource and to route queries for a
+     * country on that continent to a different resource.</p> <p>You can't create two
+     * geolocation resource record sets that specify the same geographic location.</p>
+     * <p>The value <code>*</code> in the <code>CountryCode</code> element matches all
+     * geographic locations that aren't specified in other geolocation resource record
+     * sets that have the same values for the <code>Name</code> and <code>Type</code>
+     * elements.</p>  <p>Geolocation works by mapping IP addresses to
+     * locations. However, some IP addresses aren't mapped to geographic locations, so
+     * even if you create geolocation resource record sets that cover all seven
+     * continents, Route 53 will receive some DNS queries from locations that it can't
+     * identify. We recommend that you create a resource record set for which the value
+     * of <code>CountryCode</code> is <code>*</code>. Two groups of queries are routed
+     * to the resource that you specify in this record: queries that come from
+     * locations for which you haven't created geolocation resource record sets and
+     * queries from IP addresses that aren't mapped to a location. If you don't create
+     * a <code>*</code> resource record set, Route 53 returns a "no answer" response
+     * for queries from those locations.</p>  <p>You can't create
      * non-geolocation resource record sets that have the same values for the
      * <code>Name</code> and <code>Type</code> elements as geolocation resource record
      * sets.</p>
@@ -2459,6 +2408,49 @@ namespace Model
     
     inline ResourceRecordSet& WithCidrRoutingConfig(CidrRoutingConfig&& value) { SetCidrRoutingConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p> <i> GeoproximityLocation resource record sets only:</i> A complex type that
+     * lets you control how Route 53 responds to DNS queries based on the geographic
+     * origin of the query and your resources. </p>
+     */
+    inline const GeoProximityLocation& GetGeoProximityLocation() const{ return m_geoProximityLocation; }
+
+    /**
+     * <p> <i> GeoproximityLocation resource record sets only:</i> A complex type that
+     * lets you control how Route 53 responds to DNS queries based on the geographic
+     * origin of the query and your resources. </p>
+     */
+    inline bool GeoProximityLocationHasBeenSet() const { return m_geoProximityLocationHasBeenSet; }
+
+    /**
+     * <p> <i> GeoproximityLocation resource record sets only:</i> A complex type that
+     * lets you control how Route 53 responds to DNS queries based on the geographic
+     * origin of the query and your resources. </p>
+     */
+    inline void SetGeoProximityLocation(const GeoProximityLocation& value) { m_geoProximityLocationHasBeenSet = true; m_geoProximityLocation = value; }
+
+    /**
+     * <p> <i> GeoproximityLocation resource record sets only:</i> A complex type that
+     * lets you control how Route 53 responds to DNS queries based on the geographic
+     * origin of the query and your resources. </p>
+     */
+    inline void SetGeoProximityLocation(GeoProximityLocation&& value) { m_geoProximityLocationHasBeenSet = true; m_geoProximityLocation = std::move(value); }
+
+    /**
+     * <p> <i> GeoproximityLocation resource record sets only:</i> A complex type that
+     * lets you control how Route 53 responds to DNS queries based on the geographic
+     * origin of the query and your resources. </p>
+     */
+    inline ResourceRecordSet& WithGeoProximityLocation(const GeoProximityLocation& value) { SetGeoProximityLocation(value); return *this;}
+
+    /**
+     * <p> <i> GeoproximityLocation resource record sets only:</i> A complex type that
+     * lets you control how Route 53 responds to DNS queries based on the geographic
+     * origin of the query and your resources. </p>
+     */
+    inline ResourceRecordSet& WithGeoProximityLocation(GeoProximityLocation&& value) { SetGeoProximityLocation(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -2502,6 +2494,9 @@ namespace Model
 
     CidrRoutingConfig m_cidrRoutingConfig;
     bool m_cidrRoutingConfigHasBeenSet = false;
+
+    GeoProximityLocation m_geoProximityLocation;
+    bool m_geoProximityLocationHasBeenSet = false;
   };
 
 } // namespace Model

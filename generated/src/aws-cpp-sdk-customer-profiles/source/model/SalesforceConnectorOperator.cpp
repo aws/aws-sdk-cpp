@@ -144,6 +144,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SalesforceConnectorOperator::NOT_SET:
+            return {};
           case SalesforceConnectorOperator::PROJECTION:
             return "PROJECTION";
           case SalesforceConnectorOperator::LESS_THAN:

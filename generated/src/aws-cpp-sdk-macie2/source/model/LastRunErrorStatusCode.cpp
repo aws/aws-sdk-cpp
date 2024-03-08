@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LastRunErrorStatusCode::NOT_SET:
+            return {};
           case LastRunErrorStatusCode::NONE:
             return "NONE";
           case LastRunErrorStatusCode::ERROR_:

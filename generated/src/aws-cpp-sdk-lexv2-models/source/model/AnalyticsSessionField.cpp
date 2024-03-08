@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AnalyticsSessionField::NOT_SET:
+            return {};
           case AnalyticsSessionField::ConversationEndState:
             return "ConversationEndState";
           case AnalyticsSessionField::LocaleId:

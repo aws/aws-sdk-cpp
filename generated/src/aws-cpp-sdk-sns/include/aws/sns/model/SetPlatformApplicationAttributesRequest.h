@@ -18,8 +18,8 @@ namespace Model
 {
 
   /**
-   * <p>Input for SetPlatformApplicationAttributes action.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>Input for <code>SetPlatformApplicationAttributes</code> action.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/SetPlatformApplicationAttributesInput">AWS
    * API Reference</a></p>
    */
@@ -42,42 +42,50 @@ namespace Model
   public:
 
     /**
-     * <p>PlatformApplicationArn for SetPlatformApplicationAttributes action.</p>
+     * <p> <code>PlatformApplicationArn</code> for
+     * <code>SetPlatformApplicationAttributes</code> action.</p>
      */
     inline const Aws::String& GetPlatformApplicationArn() const{ return m_platformApplicationArn; }
 
     /**
-     * <p>PlatformApplicationArn for SetPlatformApplicationAttributes action.</p>
+     * <p> <code>PlatformApplicationArn</code> for
+     * <code>SetPlatformApplicationAttributes</code> action.</p>
      */
     inline bool PlatformApplicationArnHasBeenSet() const { return m_platformApplicationArnHasBeenSet; }
 
     /**
-     * <p>PlatformApplicationArn for SetPlatformApplicationAttributes action.</p>
+     * <p> <code>PlatformApplicationArn</code> for
+     * <code>SetPlatformApplicationAttributes</code> action.</p>
      */
     inline void SetPlatformApplicationArn(const Aws::String& value) { m_platformApplicationArnHasBeenSet = true; m_platformApplicationArn = value; }
 
     /**
-     * <p>PlatformApplicationArn for SetPlatformApplicationAttributes action.</p>
+     * <p> <code>PlatformApplicationArn</code> for
+     * <code>SetPlatformApplicationAttributes</code> action.</p>
      */
     inline void SetPlatformApplicationArn(Aws::String&& value) { m_platformApplicationArnHasBeenSet = true; m_platformApplicationArn = std::move(value); }
 
     /**
-     * <p>PlatformApplicationArn for SetPlatformApplicationAttributes action.</p>
+     * <p> <code>PlatformApplicationArn</code> for
+     * <code>SetPlatformApplicationAttributes</code> action.</p>
      */
     inline void SetPlatformApplicationArn(const char* value) { m_platformApplicationArnHasBeenSet = true; m_platformApplicationArn.assign(value); }
 
     /**
-     * <p>PlatformApplicationArn for SetPlatformApplicationAttributes action.</p>
+     * <p> <code>PlatformApplicationArn</code> for
+     * <code>SetPlatformApplicationAttributes</code> action.</p>
      */
     inline SetPlatformApplicationAttributesRequest& WithPlatformApplicationArn(const Aws::String& value) { SetPlatformApplicationArn(value); return *this;}
 
     /**
-     * <p>PlatformApplicationArn for SetPlatformApplicationAttributes action.</p>
+     * <p> <code>PlatformApplicationArn</code> for
+     * <code>SetPlatformApplicationAttributes</code> action.</p>
      */
     inline SetPlatformApplicationAttributesRequest& WithPlatformApplicationArn(Aws::String&& value) { SetPlatformApplicationArn(std::move(value)); return *this;}
 
     /**
-     * <p>PlatformApplicationArn for SetPlatformApplicationAttributes action.</p>
+     * <p> <code>PlatformApplicationArn</code> for
+     * <code>SetPlatformApplicationAttributes</code> action.</p>
      */
     inline SetPlatformApplicationAttributesRequest& WithPlatformApplicationArn(const char* value) { SetPlatformApplicationArn(value); return *this;}
 
@@ -90,17 +98,25 @@ namespace Model
      * Services using certificate credentials, <code>PlatformCredential</code> is
      * private key.</p> </li> <li> <p>For Apple Services using token credentials,
      * <code>PlatformCredential</code> is signing key.</p> </li> <li> <p>For GCM
-     * (Firebase Cloud Messaging), <code>PlatformCredential</code> is API key. </p>
-     * </li> </ul> </li> </ul> <ul> <li> <p> <code>PlatformPrincipal</code> – The
-     * principal received from the notification service.</p> <ul> <li> <p>For ADM,
-     * <code>PlatformPrincipal</code>is client id.</p> </li> <li> <p>For Apple Services
-     * using certificate credentials, <code>PlatformPrincipal</code> is SSL
-     * certificate.</p> </li> <li> <p>For Apple Services using token credentials,
-     * <code>PlatformPrincipal</code> is signing key ID.</p> </li> <li> <p>For GCM
-     * (Firebase Cloud Messaging), there is no <code>PlatformPrincipal</code>. </p>
-     * </li> </ul> </li> </ul> <ul> <li> <p> <code>EventEndpointCreated</code> – Topic
-     * ARN to which <code>EndpointCreated</code> event notifications are sent.</p>
-     * </li> <li> <p> <code>EventEndpointDeleted</code> – Topic ARN to which
+     * (Firebase Cloud Messaging) using key credentials, there is no
+     * <code>PlatformPrincipal</code>. The <code>PlatformCredential</code> is <code>API
+     * key</code>.</p> </li> <li> <p>For GCM (Firebase Cloud Messaging) using token
+     * credentials, there is no <code>PlatformPrincipal</code>. The
+     * <code>PlatformCredential</code> is a JSON formatted private key file. When using
+     * the Amazon Web Services CLI, the file must be in string format and special
+     * characters must be ignored. To format the file correctly, Amazon SNS recommends
+     * using the following command: <code>SERVICE_JSON=`jq @json &lt;&lt;&lt; cat
+     * service.json`</code>.</p> </li> </ul> </li> </ul> <ul> <li> <p>
+     * <code>PlatformPrincipal</code> – The principal received from the notification
+     * service.</p> <ul> <li> <p>For ADM, <code>PlatformPrincipal</code>is client
+     * id.</p> </li> <li> <p>For Apple Services using certificate credentials,
+     * <code>PlatformPrincipal</code> is SSL certificate.</p> </li> <li> <p>For Apple
+     * Services using token credentials, <code>PlatformPrincipal</code> is signing key
+     * ID.</p> </li> <li> <p>For GCM (Firebase Cloud Messaging), there is no
+     * <code>PlatformPrincipal</code>. </p> </li> </ul> </li> </ul> <ul> <li> <p>
+     * <code>EventEndpointCreated</code> – Topic ARN to which
+     * <code>EndpointCreated</code> event notifications are sent.</p> </li> <li> <p>
+     * <code>EventEndpointDeleted</code> – Topic ARN to which
      * <code>EndpointDeleted</code> event notifications are sent.</p> </li> <li> <p>
      * <code>EventEndpointUpdated</code> – Topic ARN to which
      * <code>EndpointUpdate</code> event notifications are sent.</p> </li> <li> <p>
@@ -128,17 +144,25 @@ namespace Model
      * Services using certificate credentials, <code>PlatformCredential</code> is
      * private key.</p> </li> <li> <p>For Apple Services using token credentials,
      * <code>PlatformCredential</code> is signing key.</p> </li> <li> <p>For GCM
-     * (Firebase Cloud Messaging), <code>PlatformCredential</code> is API key. </p>
-     * </li> </ul> </li> </ul> <ul> <li> <p> <code>PlatformPrincipal</code> – The
-     * principal received from the notification service.</p> <ul> <li> <p>For ADM,
-     * <code>PlatformPrincipal</code>is client id.</p> </li> <li> <p>For Apple Services
-     * using certificate credentials, <code>PlatformPrincipal</code> is SSL
-     * certificate.</p> </li> <li> <p>For Apple Services using token credentials,
-     * <code>PlatformPrincipal</code> is signing key ID.</p> </li> <li> <p>For GCM
-     * (Firebase Cloud Messaging), there is no <code>PlatformPrincipal</code>. </p>
-     * </li> </ul> </li> </ul> <ul> <li> <p> <code>EventEndpointCreated</code> – Topic
-     * ARN to which <code>EndpointCreated</code> event notifications are sent.</p>
-     * </li> <li> <p> <code>EventEndpointDeleted</code> – Topic ARN to which
+     * (Firebase Cloud Messaging) using key credentials, there is no
+     * <code>PlatformPrincipal</code>. The <code>PlatformCredential</code> is <code>API
+     * key</code>.</p> </li> <li> <p>For GCM (Firebase Cloud Messaging) using token
+     * credentials, there is no <code>PlatformPrincipal</code>. The
+     * <code>PlatformCredential</code> is a JSON formatted private key file. When using
+     * the Amazon Web Services CLI, the file must be in string format and special
+     * characters must be ignored. To format the file correctly, Amazon SNS recommends
+     * using the following command: <code>SERVICE_JSON=`jq @json &lt;&lt;&lt; cat
+     * service.json`</code>.</p> </li> </ul> </li> </ul> <ul> <li> <p>
+     * <code>PlatformPrincipal</code> – The principal received from the notification
+     * service.</p> <ul> <li> <p>For ADM, <code>PlatformPrincipal</code>is client
+     * id.</p> </li> <li> <p>For Apple Services using certificate credentials,
+     * <code>PlatformPrincipal</code> is SSL certificate.</p> </li> <li> <p>For Apple
+     * Services using token credentials, <code>PlatformPrincipal</code> is signing key
+     * ID.</p> </li> <li> <p>For GCM (Firebase Cloud Messaging), there is no
+     * <code>PlatformPrincipal</code>. </p> </li> </ul> </li> </ul> <ul> <li> <p>
+     * <code>EventEndpointCreated</code> – Topic ARN to which
+     * <code>EndpointCreated</code> event notifications are sent.</p> </li> <li> <p>
+     * <code>EventEndpointDeleted</code> – Topic ARN to which
      * <code>EndpointDeleted</code> event notifications are sent.</p> </li> <li> <p>
      * <code>EventEndpointUpdated</code> – Topic ARN to which
      * <code>EndpointUpdate</code> event notifications are sent.</p> </li> <li> <p>
@@ -166,17 +190,25 @@ namespace Model
      * Services using certificate credentials, <code>PlatformCredential</code> is
      * private key.</p> </li> <li> <p>For Apple Services using token credentials,
      * <code>PlatformCredential</code> is signing key.</p> </li> <li> <p>For GCM
-     * (Firebase Cloud Messaging), <code>PlatformCredential</code> is API key. </p>
-     * </li> </ul> </li> </ul> <ul> <li> <p> <code>PlatformPrincipal</code> – The
-     * principal received from the notification service.</p> <ul> <li> <p>For ADM,
-     * <code>PlatformPrincipal</code>is client id.</p> </li> <li> <p>For Apple Services
-     * using certificate credentials, <code>PlatformPrincipal</code> is SSL
-     * certificate.</p> </li> <li> <p>For Apple Services using token credentials,
-     * <code>PlatformPrincipal</code> is signing key ID.</p> </li> <li> <p>For GCM
-     * (Firebase Cloud Messaging), there is no <code>PlatformPrincipal</code>. </p>
-     * </li> </ul> </li> </ul> <ul> <li> <p> <code>EventEndpointCreated</code> – Topic
-     * ARN to which <code>EndpointCreated</code> event notifications are sent.</p>
-     * </li> <li> <p> <code>EventEndpointDeleted</code> – Topic ARN to which
+     * (Firebase Cloud Messaging) using key credentials, there is no
+     * <code>PlatformPrincipal</code>. The <code>PlatformCredential</code> is <code>API
+     * key</code>.</p> </li> <li> <p>For GCM (Firebase Cloud Messaging) using token
+     * credentials, there is no <code>PlatformPrincipal</code>. The
+     * <code>PlatformCredential</code> is a JSON formatted private key file. When using
+     * the Amazon Web Services CLI, the file must be in string format and special
+     * characters must be ignored. To format the file correctly, Amazon SNS recommends
+     * using the following command: <code>SERVICE_JSON=`jq @json &lt;&lt;&lt; cat
+     * service.json`</code>.</p> </li> </ul> </li> </ul> <ul> <li> <p>
+     * <code>PlatformPrincipal</code> – The principal received from the notification
+     * service.</p> <ul> <li> <p>For ADM, <code>PlatformPrincipal</code>is client
+     * id.</p> </li> <li> <p>For Apple Services using certificate credentials,
+     * <code>PlatformPrincipal</code> is SSL certificate.</p> </li> <li> <p>For Apple
+     * Services using token credentials, <code>PlatformPrincipal</code> is signing key
+     * ID.</p> </li> <li> <p>For GCM (Firebase Cloud Messaging), there is no
+     * <code>PlatformPrincipal</code>. </p> </li> </ul> </li> </ul> <ul> <li> <p>
+     * <code>EventEndpointCreated</code> – Topic ARN to which
+     * <code>EndpointCreated</code> event notifications are sent.</p> </li> <li> <p>
+     * <code>EventEndpointDeleted</code> – Topic ARN to which
      * <code>EndpointDeleted</code> event notifications are sent.</p> </li> <li> <p>
      * <code>EventEndpointUpdated</code> – Topic ARN to which
      * <code>EndpointUpdate</code> event notifications are sent.</p> </li> <li> <p>
@@ -204,17 +236,25 @@ namespace Model
      * Services using certificate credentials, <code>PlatformCredential</code> is
      * private key.</p> </li> <li> <p>For Apple Services using token credentials,
      * <code>PlatformCredential</code> is signing key.</p> </li> <li> <p>For GCM
-     * (Firebase Cloud Messaging), <code>PlatformCredential</code> is API key. </p>
-     * </li> </ul> </li> </ul> <ul> <li> <p> <code>PlatformPrincipal</code> – The
-     * principal received from the notification service.</p> <ul> <li> <p>For ADM,
-     * <code>PlatformPrincipal</code>is client id.</p> </li> <li> <p>For Apple Services
-     * using certificate credentials, <code>PlatformPrincipal</code> is SSL
-     * certificate.</p> </li> <li> <p>For Apple Services using token credentials,
-     * <code>PlatformPrincipal</code> is signing key ID.</p> </li> <li> <p>For GCM
-     * (Firebase Cloud Messaging), there is no <code>PlatformPrincipal</code>. </p>
-     * </li> </ul> </li> </ul> <ul> <li> <p> <code>EventEndpointCreated</code> – Topic
-     * ARN to which <code>EndpointCreated</code> event notifications are sent.</p>
-     * </li> <li> <p> <code>EventEndpointDeleted</code> – Topic ARN to which
+     * (Firebase Cloud Messaging) using key credentials, there is no
+     * <code>PlatformPrincipal</code>. The <code>PlatformCredential</code> is <code>API
+     * key</code>.</p> </li> <li> <p>For GCM (Firebase Cloud Messaging) using token
+     * credentials, there is no <code>PlatformPrincipal</code>. The
+     * <code>PlatformCredential</code> is a JSON formatted private key file. When using
+     * the Amazon Web Services CLI, the file must be in string format and special
+     * characters must be ignored. To format the file correctly, Amazon SNS recommends
+     * using the following command: <code>SERVICE_JSON=`jq @json &lt;&lt;&lt; cat
+     * service.json`</code>.</p> </li> </ul> </li> </ul> <ul> <li> <p>
+     * <code>PlatformPrincipal</code> – The principal received from the notification
+     * service.</p> <ul> <li> <p>For ADM, <code>PlatformPrincipal</code>is client
+     * id.</p> </li> <li> <p>For Apple Services using certificate credentials,
+     * <code>PlatformPrincipal</code> is SSL certificate.</p> </li> <li> <p>For Apple
+     * Services using token credentials, <code>PlatformPrincipal</code> is signing key
+     * ID.</p> </li> <li> <p>For GCM (Firebase Cloud Messaging), there is no
+     * <code>PlatformPrincipal</code>. </p> </li> </ul> </li> </ul> <ul> <li> <p>
+     * <code>EventEndpointCreated</code> – Topic ARN to which
+     * <code>EndpointCreated</code> event notifications are sent.</p> </li> <li> <p>
+     * <code>EventEndpointDeleted</code> – Topic ARN to which
      * <code>EndpointDeleted</code> event notifications are sent.</p> </li> <li> <p>
      * <code>EventEndpointUpdated</code> – Topic ARN to which
      * <code>EndpointUpdate</code> event notifications are sent.</p> </li> <li> <p>
@@ -242,17 +282,25 @@ namespace Model
      * Services using certificate credentials, <code>PlatformCredential</code> is
      * private key.</p> </li> <li> <p>For Apple Services using token credentials,
      * <code>PlatformCredential</code> is signing key.</p> </li> <li> <p>For GCM
-     * (Firebase Cloud Messaging), <code>PlatformCredential</code> is API key. </p>
-     * </li> </ul> </li> </ul> <ul> <li> <p> <code>PlatformPrincipal</code> – The
-     * principal received from the notification service.</p> <ul> <li> <p>For ADM,
-     * <code>PlatformPrincipal</code>is client id.</p> </li> <li> <p>For Apple Services
-     * using certificate credentials, <code>PlatformPrincipal</code> is SSL
-     * certificate.</p> </li> <li> <p>For Apple Services using token credentials,
-     * <code>PlatformPrincipal</code> is signing key ID.</p> </li> <li> <p>For GCM
-     * (Firebase Cloud Messaging), there is no <code>PlatformPrincipal</code>. </p>
-     * </li> </ul> </li> </ul> <ul> <li> <p> <code>EventEndpointCreated</code> – Topic
-     * ARN to which <code>EndpointCreated</code> event notifications are sent.</p>
-     * </li> <li> <p> <code>EventEndpointDeleted</code> – Topic ARN to which
+     * (Firebase Cloud Messaging) using key credentials, there is no
+     * <code>PlatformPrincipal</code>. The <code>PlatformCredential</code> is <code>API
+     * key</code>.</p> </li> <li> <p>For GCM (Firebase Cloud Messaging) using token
+     * credentials, there is no <code>PlatformPrincipal</code>. The
+     * <code>PlatformCredential</code> is a JSON formatted private key file. When using
+     * the Amazon Web Services CLI, the file must be in string format and special
+     * characters must be ignored. To format the file correctly, Amazon SNS recommends
+     * using the following command: <code>SERVICE_JSON=`jq @json &lt;&lt;&lt; cat
+     * service.json`</code>.</p> </li> </ul> </li> </ul> <ul> <li> <p>
+     * <code>PlatformPrincipal</code> – The principal received from the notification
+     * service.</p> <ul> <li> <p>For ADM, <code>PlatformPrincipal</code>is client
+     * id.</p> </li> <li> <p>For Apple Services using certificate credentials,
+     * <code>PlatformPrincipal</code> is SSL certificate.</p> </li> <li> <p>For Apple
+     * Services using token credentials, <code>PlatformPrincipal</code> is signing key
+     * ID.</p> </li> <li> <p>For GCM (Firebase Cloud Messaging), there is no
+     * <code>PlatformPrincipal</code>. </p> </li> </ul> </li> </ul> <ul> <li> <p>
+     * <code>EventEndpointCreated</code> – Topic ARN to which
+     * <code>EndpointCreated</code> event notifications are sent.</p> </li> <li> <p>
+     * <code>EventEndpointDeleted</code> – Topic ARN to which
      * <code>EndpointDeleted</code> event notifications are sent.</p> </li> <li> <p>
      * <code>EventEndpointUpdated</code> – Topic ARN to which
      * <code>EndpointUpdate</code> event notifications are sent.</p> </li> <li> <p>
@@ -280,17 +328,25 @@ namespace Model
      * Services using certificate credentials, <code>PlatformCredential</code> is
      * private key.</p> </li> <li> <p>For Apple Services using token credentials,
      * <code>PlatformCredential</code> is signing key.</p> </li> <li> <p>For GCM
-     * (Firebase Cloud Messaging), <code>PlatformCredential</code> is API key. </p>
-     * </li> </ul> </li> </ul> <ul> <li> <p> <code>PlatformPrincipal</code> – The
-     * principal received from the notification service.</p> <ul> <li> <p>For ADM,
-     * <code>PlatformPrincipal</code>is client id.</p> </li> <li> <p>For Apple Services
-     * using certificate credentials, <code>PlatformPrincipal</code> is SSL
-     * certificate.</p> </li> <li> <p>For Apple Services using token credentials,
-     * <code>PlatformPrincipal</code> is signing key ID.</p> </li> <li> <p>For GCM
-     * (Firebase Cloud Messaging), there is no <code>PlatformPrincipal</code>. </p>
-     * </li> </ul> </li> </ul> <ul> <li> <p> <code>EventEndpointCreated</code> – Topic
-     * ARN to which <code>EndpointCreated</code> event notifications are sent.</p>
-     * </li> <li> <p> <code>EventEndpointDeleted</code> – Topic ARN to which
+     * (Firebase Cloud Messaging) using key credentials, there is no
+     * <code>PlatformPrincipal</code>. The <code>PlatformCredential</code> is <code>API
+     * key</code>.</p> </li> <li> <p>For GCM (Firebase Cloud Messaging) using token
+     * credentials, there is no <code>PlatformPrincipal</code>. The
+     * <code>PlatformCredential</code> is a JSON formatted private key file. When using
+     * the Amazon Web Services CLI, the file must be in string format and special
+     * characters must be ignored. To format the file correctly, Amazon SNS recommends
+     * using the following command: <code>SERVICE_JSON=`jq @json &lt;&lt;&lt; cat
+     * service.json`</code>.</p> </li> </ul> </li> </ul> <ul> <li> <p>
+     * <code>PlatformPrincipal</code> – The principal received from the notification
+     * service.</p> <ul> <li> <p>For ADM, <code>PlatformPrincipal</code>is client
+     * id.</p> </li> <li> <p>For Apple Services using certificate credentials,
+     * <code>PlatformPrincipal</code> is SSL certificate.</p> </li> <li> <p>For Apple
+     * Services using token credentials, <code>PlatformPrincipal</code> is signing key
+     * ID.</p> </li> <li> <p>For GCM (Firebase Cloud Messaging), there is no
+     * <code>PlatformPrincipal</code>. </p> </li> </ul> </li> </ul> <ul> <li> <p>
+     * <code>EventEndpointCreated</code> – Topic ARN to which
+     * <code>EndpointCreated</code> event notifications are sent.</p> </li> <li> <p>
+     * <code>EventEndpointDeleted</code> – Topic ARN to which
      * <code>EndpointDeleted</code> event notifications are sent.</p> </li> <li> <p>
      * <code>EventEndpointUpdated</code> – Topic ARN to which
      * <code>EndpointUpdate</code> event notifications are sent.</p> </li> <li> <p>
@@ -318,17 +374,25 @@ namespace Model
      * Services using certificate credentials, <code>PlatformCredential</code> is
      * private key.</p> </li> <li> <p>For Apple Services using token credentials,
      * <code>PlatformCredential</code> is signing key.</p> </li> <li> <p>For GCM
-     * (Firebase Cloud Messaging), <code>PlatformCredential</code> is API key. </p>
-     * </li> </ul> </li> </ul> <ul> <li> <p> <code>PlatformPrincipal</code> – The
-     * principal received from the notification service.</p> <ul> <li> <p>For ADM,
-     * <code>PlatformPrincipal</code>is client id.</p> </li> <li> <p>For Apple Services
-     * using certificate credentials, <code>PlatformPrincipal</code> is SSL
-     * certificate.</p> </li> <li> <p>For Apple Services using token credentials,
-     * <code>PlatformPrincipal</code> is signing key ID.</p> </li> <li> <p>For GCM
-     * (Firebase Cloud Messaging), there is no <code>PlatformPrincipal</code>. </p>
-     * </li> </ul> </li> </ul> <ul> <li> <p> <code>EventEndpointCreated</code> – Topic
-     * ARN to which <code>EndpointCreated</code> event notifications are sent.</p>
-     * </li> <li> <p> <code>EventEndpointDeleted</code> – Topic ARN to which
+     * (Firebase Cloud Messaging) using key credentials, there is no
+     * <code>PlatformPrincipal</code>. The <code>PlatformCredential</code> is <code>API
+     * key</code>.</p> </li> <li> <p>For GCM (Firebase Cloud Messaging) using token
+     * credentials, there is no <code>PlatformPrincipal</code>. The
+     * <code>PlatformCredential</code> is a JSON formatted private key file. When using
+     * the Amazon Web Services CLI, the file must be in string format and special
+     * characters must be ignored. To format the file correctly, Amazon SNS recommends
+     * using the following command: <code>SERVICE_JSON=`jq @json &lt;&lt;&lt; cat
+     * service.json`</code>.</p> </li> </ul> </li> </ul> <ul> <li> <p>
+     * <code>PlatformPrincipal</code> – The principal received from the notification
+     * service.</p> <ul> <li> <p>For ADM, <code>PlatformPrincipal</code>is client
+     * id.</p> </li> <li> <p>For Apple Services using certificate credentials,
+     * <code>PlatformPrincipal</code> is SSL certificate.</p> </li> <li> <p>For Apple
+     * Services using token credentials, <code>PlatformPrincipal</code> is signing key
+     * ID.</p> </li> <li> <p>For GCM (Firebase Cloud Messaging), there is no
+     * <code>PlatformPrincipal</code>. </p> </li> </ul> </li> </ul> <ul> <li> <p>
+     * <code>EventEndpointCreated</code> – Topic ARN to which
+     * <code>EndpointCreated</code> event notifications are sent.</p> </li> <li> <p>
+     * <code>EventEndpointDeleted</code> – Topic ARN to which
      * <code>EndpointDeleted</code> event notifications are sent.</p> </li> <li> <p>
      * <code>EventEndpointUpdated</code> – Topic ARN to which
      * <code>EndpointUpdate</code> event notifications are sent.</p> </li> <li> <p>
@@ -356,17 +420,25 @@ namespace Model
      * Services using certificate credentials, <code>PlatformCredential</code> is
      * private key.</p> </li> <li> <p>For Apple Services using token credentials,
      * <code>PlatformCredential</code> is signing key.</p> </li> <li> <p>For GCM
-     * (Firebase Cloud Messaging), <code>PlatformCredential</code> is API key. </p>
-     * </li> </ul> </li> </ul> <ul> <li> <p> <code>PlatformPrincipal</code> – The
-     * principal received from the notification service.</p> <ul> <li> <p>For ADM,
-     * <code>PlatformPrincipal</code>is client id.</p> </li> <li> <p>For Apple Services
-     * using certificate credentials, <code>PlatformPrincipal</code> is SSL
-     * certificate.</p> </li> <li> <p>For Apple Services using token credentials,
-     * <code>PlatformPrincipal</code> is signing key ID.</p> </li> <li> <p>For GCM
-     * (Firebase Cloud Messaging), there is no <code>PlatformPrincipal</code>. </p>
-     * </li> </ul> </li> </ul> <ul> <li> <p> <code>EventEndpointCreated</code> – Topic
-     * ARN to which <code>EndpointCreated</code> event notifications are sent.</p>
-     * </li> <li> <p> <code>EventEndpointDeleted</code> – Topic ARN to which
+     * (Firebase Cloud Messaging) using key credentials, there is no
+     * <code>PlatformPrincipal</code>. The <code>PlatformCredential</code> is <code>API
+     * key</code>.</p> </li> <li> <p>For GCM (Firebase Cloud Messaging) using token
+     * credentials, there is no <code>PlatformPrincipal</code>. The
+     * <code>PlatformCredential</code> is a JSON formatted private key file. When using
+     * the Amazon Web Services CLI, the file must be in string format and special
+     * characters must be ignored. To format the file correctly, Amazon SNS recommends
+     * using the following command: <code>SERVICE_JSON=`jq @json &lt;&lt;&lt; cat
+     * service.json`</code>.</p> </li> </ul> </li> </ul> <ul> <li> <p>
+     * <code>PlatformPrincipal</code> – The principal received from the notification
+     * service.</p> <ul> <li> <p>For ADM, <code>PlatformPrincipal</code>is client
+     * id.</p> </li> <li> <p>For Apple Services using certificate credentials,
+     * <code>PlatformPrincipal</code> is SSL certificate.</p> </li> <li> <p>For Apple
+     * Services using token credentials, <code>PlatformPrincipal</code> is signing key
+     * ID.</p> </li> <li> <p>For GCM (Firebase Cloud Messaging), there is no
+     * <code>PlatformPrincipal</code>. </p> </li> </ul> </li> </ul> <ul> <li> <p>
+     * <code>EventEndpointCreated</code> – Topic ARN to which
+     * <code>EndpointCreated</code> event notifications are sent.</p> </li> <li> <p>
+     * <code>EventEndpointDeleted</code> – Topic ARN to which
      * <code>EndpointDeleted</code> event notifications are sent.</p> </li> <li> <p>
      * <code>EventEndpointUpdated</code> – Topic ARN to which
      * <code>EndpointUpdate</code> event notifications are sent.</p> </li> <li> <p>
@@ -394,17 +466,25 @@ namespace Model
      * Services using certificate credentials, <code>PlatformCredential</code> is
      * private key.</p> </li> <li> <p>For Apple Services using token credentials,
      * <code>PlatformCredential</code> is signing key.</p> </li> <li> <p>For GCM
-     * (Firebase Cloud Messaging), <code>PlatformCredential</code> is API key. </p>
-     * </li> </ul> </li> </ul> <ul> <li> <p> <code>PlatformPrincipal</code> – The
-     * principal received from the notification service.</p> <ul> <li> <p>For ADM,
-     * <code>PlatformPrincipal</code>is client id.</p> </li> <li> <p>For Apple Services
-     * using certificate credentials, <code>PlatformPrincipal</code> is SSL
-     * certificate.</p> </li> <li> <p>For Apple Services using token credentials,
-     * <code>PlatformPrincipal</code> is signing key ID.</p> </li> <li> <p>For GCM
-     * (Firebase Cloud Messaging), there is no <code>PlatformPrincipal</code>. </p>
-     * </li> </ul> </li> </ul> <ul> <li> <p> <code>EventEndpointCreated</code> – Topic
-     * ARN to which <code>EndpointCreated</code> event notifications are sent.</p>
-     * </li> <li> <p> <code>EventEndpointDeleted</code> – Topic ARN to which
+     * (Firebase Cloud Messaging) using key credentials, there is no
+     * <code>PlatformPrincipal</code>. The <code>PlatformCredential</code> is <code>API
+     * key</code>.</p> </li> <li> <p>For GCM (Firebase Cloud Messaging) using token
+     * credentials, there is no <code>PlatformPrincipal</code>. The
+     * <code>PlatformCredential</code> is a JSON formatted private key file. When using
+     * the Amazon Web Services CLI, the file must be in string format and special
+     * characters must be ignored. To format the file correctly, Amazon SNS recommends
+     * using the following command: <code>SERVICE_JSON=`jq @json &lt;&lt;&lt; cat
+     * service.json`</code>.</p> </li> </ul> </li> </ul> <ul> <li> <p>
+     * <code>PlatformPrincipal</code> – The principal received from the notification
+     * service.</p> <ul> <li> <p>For ADM, <code>PlatformPrincipal</code>is client
+     * id.</p> </li> <li> <p>For Apple Services using certificate credentials,
+     * <code>PlatformPrincipal</code> is SSL certificate.</p> </li> <li> <p>For Apple
+     * Services using token credentials, <code>PlatformPrincipal</code> is signing key
+     * ID.</p> </li> <li> <p>For GCM (Firebase Cloud Messaging), there is no
+     * <code>PlatformPrincipal</code>. </p> </li> </ul> </li> </ul> <ul> <li> <p>
+     * <code>EventEndpointCreated</code> – Topic ARN to which
+     * <code>EndpointCreated</code> event notifications are sent.</p> </li> <li> <p>
+     * <code>EventEndpointDeleted</code> – Topic ARN to which
      * <code>EndpointDeleted</code> event notifications are sent.</p> </li> <li> <p>
      * <code>EventEndpointUpdated</code> – Topic ARN to which
      * <code>EndpointUpdate</code> event notifications are sent.</p> </li> <li> <p>
@@ -432,17 +512,25 @@ namespace Model
      * Services using certificate credentials, <code>PlatformCredential</code> is
      * private key.</p> </li> <li> <p>For Apple Services using token credentials,
      * <code>PlatformCredential</code> is signing key.</p> </li> <li> <p>For GCM
-     * (Firebase Cloud Messaging), <code>PlatformCredential</code> is API key. </p>
-     * </li> </ul> </li> </ul> <ul> <li> <p> <code>PlatformPrincipal</code> – The
-     * principal received from the notification service.</p> <ul> <li> <p>For ADM,
-     * <code>PlatformPrincipal</code>is client id.</p> </li> <li> <p>For Apple Services
-     * using certificate credentials, <code>PlatformPrincipal</code> is SSL
-     * certificate.</p> </li> <li> <p>For Apple Services using token credentials,
-     * <code>PlatformPrincipal</code> is signing key ID.</p> </li> <li> <p>For GCM
-     * (Firebase Cloud Messaging), there is no <code>PlatformPrincipal</code>. </p>
-     * </li> </ul> </li> </ul> <ul> <li> <p> <code>EventEndpointCreated</code> – Topic
-     * ARN to which <code>EndpointCreated</code> event notifications are sent.</p>
-     * </li> <li> <p> <code>EventEndpointDeleted</code> – Topic ARN to which
+     * (Firebase Cloud Messaging) using key credentials, there is no
+     * <code>PlatformPrincipal</code>. The <code>PlatformCredential</code> is <code>API
+     * key</code>.</p> </li> <li> <p>For GCM (Firebase Cloud Messaging) using token
+     * credentials, there is no <code>PlatformPrincipal</code>. The
+     * <code>PlatformCredential</code> is a JSON formatted private key file. When using
+     * the Amazon Web Services CLI, the file must be in string format and special
+     * characters must be ignored. To format the file correctly, Amazon SNS recommends
+     * using the following command: <code>SERVICE_JSON=`jq @json &lt;&lt;&lt; cat
+     * service.json`</code>.</p> </li> </ul> </li> </ul> <ul> <li> <p>
+     * <code>PlatformPrincipal</code> – The principal received from the notification
+     * service.</p> <ul> <li> <p>For ADM, <code>PlatformPrincipal</code>is client
+     * id.</p> </li> <li> <p>For Apple Services using certificate credentials,
+     * <code>PlatformPrincipal</code> is SSL certificate.</p> </li> <li> <p>For Apple
+     * Services using token credentials, <code>PlatformPrincipal</code> is signing key
+     * ID.</p> </li> <li> <p>For GCM (Firebase Cloud Messaging), there is no
+     * <code>PlatformPrincipal</code>. </p> </li> </ul> </li> </ul> <ul> <li> <p>
+     * <code>EventEndpointCreated</code> – Topic ARN to which
+     * <code>EndpointCreated</code> event notifications are sent.</p> </li> <li> <p>
+     * <code>EventEndpointDeleted</code> – Topic ARN to which
      * <code>EndpointDeleted</code> event notifications are sent.</p> </li> <li> <p>
      * <code>EventEndpointUpdated</code> – Topic ARN to which
      * <code>EndpointUpdate</code> event notifications are sent.</p> </li> <li> <p>
@@ -470,17 +558,25 @@ namespace Model
      * Services using certificate credentials, <code>PlatformCredential</code> is
      * private key.</p> </li> <li> <p>For Apple Services using token credentials,
      * <code>PlatformCredential</code> is signing key.</p> </li> <li> <p>For GCM
-     * (Firebase Cloud Messaging), <code>PlatformCredential</code> is API key. </p>
-     * </li> </ul> </li> </ul> <ul> <li> <p> <code>PlatformPrincipal</code> – The
-     * principal received from the notification service.</p> <ul> <li> <p>For ADM,
-     * <code>PlatformPrincipal</code>is client id.</p> </li> <li> <p>For Apple Services
-     * using certificate credentials, <code>PlatformPrincipal</code> is SSL
-     * certificate.</p> </li> <li> <p>For Apple Services using token credentials,
-     * <code>PlatformPrincipal</code> is signing key ID.</p> </li> <li> <p>For GCM
-     * (Firebase Cloud Messaging), there is no <code>PlatformPrincipal</code>. </p>
-     * </li> </ul> </li> </ul> <ul> <li> <p> <code>EventEndpointCreated</code> – Topic
-     * ARN to which <code>EndpointCreated</code> event notifications are sent.</p>
-     * </li> <li> <p> <code>EventEndpointDeleted</code> – Topic ARN to which
+     * (Firebase Cloud Messaging) using key credentials, there is no
+     * <code>PlatformPrincipal</code>. The <code>PlatformCredential</code> is <code>API
+     * key</code>.</p> </li> <li> <p>For GCM (Firebase Cloud Messaging) using token
+     * credentials, there is no <code>PlatformPrincipal</code>. The
+     * <code>PlatformCredential</code> is a JSON formatted private key file. When using
+     * the Amazon Web Services CLI, the file must be in string format and special
+     * characters must be ignored. To format the file correctly, Amazon SNS recommends
+     * using the following command: <code>SERVICE_JSON=`jq @json &lt;&lt;&lt; cat
+     * service.json`</code>.</p> </li> </ul> </li> </ul> <ul> <li> <p>
+     * <code>PlatformPrincipal</code> – The principal received from the notification
+     * service.</p> <ul> <li> <p>For ADM, <code>PlatformPrincipal</code>is client
+     * id.</p> </li> <li> <p>For Apple Services using certificate credentials,
+     * <code>PlatformPrincipal</code> is SSL certificate.</p> </li> <li> <p>For Apple
+     * Services using token credentials, <code>PlatformPrincipal</code> is signing key
+     * ID.</p> </li> <li> <p>For GCM (Firebase Cloud Messaging), there is no
+     * <code>PlatformPrincipal</code>. </p> </li> </ul> </li> </ul> <ul> <li> <p>
+     * <code>EventEndpointCreated</code> – Topic ARN to which
+     * <code>EndpointCreated</code> event notifications are sent.</p> </li> <li> <p>
+     * <code>EventEndpointDeleted</code> – Topic ARN to which
      * <code>EndpointDeleted</code> event notifications are sent.</p> </li> <li> <p>
      * <code>EventEndpointUpdated</code> – Topic ARN to which
      * <code>EndpointUpdate</code> event notifications are sent.</p> </li> <li> <p>
@@ -508,17 +604,25 @@ namespace Model
      * Services using certificate credentials, <code>PlatformCredential</code> is
      * private key.</p> </li> <li> <p>For Apple Services using token credentials,
      * <code>PlatformCredential</code> is signing key.</p> </li> <li> <p>For GCM
-     * (Firebase Cloud Messaging), <code>PlatformCredential</code> is API key. </p>
-     * </li> </ul> </li> </ul> <ul> <li> <p> <code>PlatformPrincipal</code> – The
-     * principal received from the notification service.</p> <ul> <li> <p>For ADM,
-     * <code>PlatformPrincipal</code>is client id.</p> </li> <li> <p>For Apple Services
-     * using certificate credentials, <code>PlatformPrincipal</code> is SSL
-     * certificate.</p> </li> <li> <p>For Apple Services using token credentials,
-     * <code>PlatformPrincipal</code> is signing key ID.</p> </li> <li> <p>For GCM
-     * (Firebase Cloud Messaging), there is no <code>PlatformPrincipal</code>. </p>
-     * </li> </ul> </li> </ul> <ul> <li> <p> <code>EventEndpointCreated</code> – Topic
-     * ARN to which <code>EndpointCreated</code> event notifications are sent.</p>
-     * </li> <li> <p> <code>EventEndpointDeleted</code> – Topic ARN to which
+     * (Firebase Cloud Messaging) using key credentials, there is no
+     * <code>PlatformPrincipal</code>. The <code>PlatformCredential</code> is <code>API
+     * key</code>.</p> </li> <li> <p>For GCM (Firebase Cloud Messaging) using token
+     * credentials, there is no <code>PlatformPrincipal</code>. The
+     * <code>PlatformCredential</code> is a JSON formatted private key file. When using
+     * the Amazon Web Services CLI, the file must be in string format and special
+     * characters must be ignored. To format the file correctly, Amazon SNS recommends
+     * using the following command: <code>SERVICE_JSON=`jq @json &lt;&lt;&lt; cat
+     * service.json`</code>.</p> </li> </ul> </li> </ul> <ul> <li> <p>
+     * <code>PlatformPrincipal</code> – The principal received from the notification
+     * service.</p> <ul> <li> <p>For ADM, <code>PlatformPrincipal</code>is client
+     * id.</p> </li> <li> <p>For Apple Services using certificate credentials,
+     * <code>PlatformPrincipal</code> is SSL certificate.</p> </li> <li> <p>For Apple
+     * Services using token credentials, <code>PlatformPrincipal</code> is signing key
+     * ID.</p> </li> <li> <p>For GCM (Firebase Cloud Messaging), there is no
+     * <code>PlatformPrincipal</code>. </p> </li> </ul> </li> </ul> <ul> <li> <p>
+     * <code>EventEndpointCreated</code> – Topic ARN to which
+     * <code>EndpointCreated</code> event notifications are sent.</p> </li> <li> <p>
+     * <code>EventEndpointDeleted</code> – Topic ARN to which
      * <code>EndpointDeleted</code> event notifications are sent.</p> </li> <li> <p>
      * <code>EventEndpointUpdated</code> – Topic ARN to which
      * <code>EndpointUpdate</code> event notifications are sent.</p> </li> <li> <p>
@@ -546,17 +650,25 @@ namespace Model
      * Services using certificate credentials, <code>PlatformCredential</code> is
      * private key.</p> </li> <li> <p>For Apple Services using token credentials,
      * <code>PlatformCredential</code> is signing key.</p> </li> <li> <p>For GCM
-     * (Firebase Cloud Messaging), <code>PlatformCredential</code> is API key. </p>
-     * </li> </ul> </li> </ul> <ul> <li> <p> <code>PlatformPrincipal</code> – The
-     * principal received from the notification service.</p> <ul> <li> <p>For ADM,
-     * <code>PlatformPrincipal</code>is client id.</p> </li> <li> <p>For Apple Services
-     * using certificate credentials, <code>PlatformPrincipal</code> is SSL
-     * certificate.</p> </li> <li> <p>For Apple Services using token credentials,
-     * <code>PlatformPrincipal</code> is signing key ID.</p> </li> <li> <p>For GCM
-     * (Firebase Cloud Messaging), there is no <code>PlatformPrincipal</code>. </p>
-     * </li> </ul> </li> </ul> <ul> <li> <p> <code>EventEndpointCreated</code> – Topic
-     * ARN to which <code>EndpointCreated</code> event notifications are sent.</p>
-     * </li> <li> <p> <code>EventEndpointDeleted</code> – Topic ARN to which
+     * (Firebase Cloud Messaging) using key credentials, there is no
+     * <code>PlatformPrincipal</code>. The <code>PlatformCredential</code> is <code>API
+     * key</code>.</p> </li> <li> <p>For GCM (Firebase Cloud Messaging) using token
+     * credentials, there is no <code>PlatformPrincipal</code>. The
+     * <code>PlatformCredential</code> is a JSON formatted private key file. When using
+     * the Amazon Web Services CLI, the file must be in string format and special
+     * characters must be ignored. To format the file correctly, Amazon SNS recommends
+     * using the following command: <code>SERVICE_JSON=`jq @json &lt;&lt;&lt; cat
+     * service.json`</code>.</p> </li> </ul> </li> </ul> <ul> <li> <p>
+     * <code>PlatformPrincipal</code> – The principal received from the notification
+     * service.</p> <ul> <li> <p>For ADM, <code>PlatformPrincipal</code>is client
+     * id.</p> </li> <li> <p>For Apple Services using certificate credentials,
+     * <code>PlatformPrincipal</code> is SSL certificate.</p> </li> <li> <p>For Apple
+     * Services using token credentials, <code>PlatformPrincipal</code> is signing key
+     * ID.</p> </li> <li> <p>For GCM (Firebase Cloud Messaging), there is no
+     * <code>PlatformPrincipal</code>. </p> </li> </ul> </li> </ul> <ul> <li> <p>
+     * <code>EventEndpointCreated</code> – Topic ARN to which
+     * <code>EndpointCreated</code> event notifications are sent.</p> </li> <li> <p>
+     * <code>EventEndpointDeleted</code> – Topic ARN to which
      * <code>EndpointDeleted</code> event notifications are sent.</p> </li> <li> <p>
      * <code>EventEndpointUpdated</code> – Topic ARN to which
      * <code>EndpointUpdate</code> event notifications are sent.</p> </li> <li> <p>

@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RenderingEngineType::NOT_SET:
+            return {};
           case RenderingEngineType::OGRE:
             return "OGRE";
           default:

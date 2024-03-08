@@ -12,6 +12,12 @@ function(compute_links lib)
         message(FATAL_ERROR "Circular dependency for library '${lib}'")
     endif()
 
+    #check if target is an alias and use that
+    get_property(aliased_target TARGET "${lib}" PROPERTY ALIASED_TARGET)
+    if(NOT "${aliased_target}" STREQUAL "")
+        set(lib "${aliased_target}")
+    endif()
+
     #interface libraries cannot be set
     get_target_property(target_type ${lib} TYPE)
     if ("INTERFACE_LIBRARY"  STREQUAL ${target_type})

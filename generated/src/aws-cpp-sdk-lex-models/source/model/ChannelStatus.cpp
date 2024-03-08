@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ChannelStatus::NOT_SET:
+            return {};
           case ChannelStatus::IN_PROGRESS:
             return "IN_PROGRESS";
           case ChannelStatus::CREATED:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DashIsoVideoCompositionOffsets::NOT_SET:
+            return {};
           case DashIsoVideoCompositionOffsets::SIGNED:
             return "SIGNED";
           case DashIsoVideoCompositionOffsets::UNSIGNED:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case XavcFlickerAdaptiveQuantization::NOT_SET:
+            return {};
           case XavcFlickerAdaptiveQuantization::DISABLED:
             return "DISABLED";
           case XavcFlickerAdaptiveQuantization::ENABLED:

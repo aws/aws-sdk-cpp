@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ValidationExceptionReason::NOT_SET:
+            return {};
           case ValidationExceptionReason::invalidRegionOptTarget:
             return "invalidRegionOptTarget";
           case ValidationExceptionReason::fieldValidationFailed:

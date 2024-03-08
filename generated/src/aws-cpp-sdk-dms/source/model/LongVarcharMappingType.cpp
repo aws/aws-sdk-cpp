@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LongVarcharMappingType::NOT_SET:
+            return {};
           case LongVarcharMappingType::wstring:
             return "wstring";
           case LongVarcharMappingType::clob:

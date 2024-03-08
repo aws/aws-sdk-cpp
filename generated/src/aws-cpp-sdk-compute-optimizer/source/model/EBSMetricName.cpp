@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case EBSMetricName::NOT_SET:
+            return {};
           case EBSMetricName::VolumeReadOpsPerSecond:
             return "VolumeReadOpsPerSecond";
           case EBSMetricName::VolumeWriteOpsPerSecond:

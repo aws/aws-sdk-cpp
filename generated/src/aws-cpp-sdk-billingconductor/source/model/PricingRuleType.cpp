@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PricingRuleType::NOT_SET:
+            return {};
           case PricingRuleType::MARKUP:
             return "MARKUP";
           case PricingRuleType::DISCOUNT:

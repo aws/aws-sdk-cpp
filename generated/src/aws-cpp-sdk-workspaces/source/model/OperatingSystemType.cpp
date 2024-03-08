@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OperatingSystemType::NOT_SET:
+            return {};
           case OperatingSystemType::WINDOWS:
             return "WINDOWS";
           case OperatingSystemType::LINUX:

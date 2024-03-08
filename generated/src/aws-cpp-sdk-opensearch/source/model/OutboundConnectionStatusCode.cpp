@@ -89,6 +89,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OutboundConnectionStatusCode::NOT_SET:
+            return {};
           case OutboundConnectionStatusCode::VALIDATING:
             return "VALIDATING";
           case OutboundConnectionStatusCode::VALIDATION_FAILED:

@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Eac3StereoDownmix::NOT_SET:
+            return {};
           case Eac3StereoDownmix::DPL2:
             return "DPL2";
           case Eac3StereoDownmix::LO_RO:

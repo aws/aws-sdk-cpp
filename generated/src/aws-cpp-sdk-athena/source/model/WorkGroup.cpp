@@ -24,7 +24,8 @@ WorkGroup::WorkGroup() :
     m_stateHasBeenSet(false),
     m_configurationHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_creationTimeHasBeenSet(false)
+    m_creationTimeHasBeenSet(false),
+    m_identityCenterApplicationArnHasBeenSet(false)
 {
 }
 
@@ -34,7 +35,8 @@ WorkGroup::WorkGroup(JsonView jsonValue) :
     m_stateHasBeenSet(false),
     m_configurationHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_creationTimeHasBeenSet(false)
+    m_creationTimeHasBeenSet(false),
+    m_identityCenterApplicationArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -76,6 +78,13 @@ WorkGroup& WorkGroup::operator =(JsonView jsonValue)
     m_creationTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("IdentityCenterApplicationArn"))
+  {
+    m_identityCenterApplicationArn = jsonValue.GetString("IdentityCenterApplicationArn");
+
+    m_identityCenterApplicationArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -109,6 +118,12 @@ JsonValue WorkGroup::Jsonize() const
   if(m_creationTimeHasBeenSet)
   {
    payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
+  }
+
+  if(m_identityCenterApplicationArnHasBeenSet)
+  {
+   payload.WithString("IdentityCenterApplicationArn", m_identityCenterApplicationArn);
+
   }
 
   return payload;

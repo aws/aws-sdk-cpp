@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DsnAction::NOT_SET:
+            return {};
           case DsnAction::failed:
             return "failed";
           case DsnAction::delayed:

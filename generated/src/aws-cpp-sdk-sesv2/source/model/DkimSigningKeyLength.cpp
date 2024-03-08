@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DkimSigningKeyLength::NOT_SET:
+            return {};
           case DkimSigningKeyLength::RSA_1024_BIT:
             return "RSA_1024_BIT";
           case DkimSigningKeyLength::RSA_2048_BIT:

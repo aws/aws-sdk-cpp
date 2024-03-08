@@ -14,6 +14,7 @@ using namespace Aws::Utils;
 
 ListPhoneNumbersV2Request::ListPhoneNumbersV2Request() : 
     m_targetArnHasBeenSet(false),
+    m_instanceIdHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
@@ -30,6 +31,12 @@ Aws::String ListPhoneNumbersV2Request::SerializePayload() const
   if(m_targetArnHasBeenSet)
   {
    payload.WithString("TargetArn", m_targetArn);
+
+  }
+
+  if(m_instanceIdHasBeenSet)
+  {
+   payload.WithString("InstanceId", m_instanceId);
 
   }
 

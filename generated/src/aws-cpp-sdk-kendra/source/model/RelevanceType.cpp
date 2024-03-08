@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RelevanceType::NOT_SET:
+            return {};
           case RelevanceType::RELEVANT:
             return "RELEVANT";
           case RelevanceType::NOT_RELEVANT:

@@ -36,6 +36,7 @@
 #include <aws/ssm/model/DeleteDocumentResult.h>
 #include <aws/ssm/model/DeleteInventoryResult.h>
 #include <aws/ssm/model/DeleteMaintenanceWindowResult.h>
+#include <aws/ssm/model/DeleteOpsItemResult.h>
 #include <aws/ssm/model/DeleteOpsMetadataResult.h>
 #include <aws/ssm/model/DeleteParameterResult.h>
 #include <aws/ssm/model/DeleteParametersResult.h>
@@ -214,6 +215,7 @@ namespace Aws
       class DeleteDocumentRequest;
       class DeleteInventoryRequest;
       class DeleteMaintenanceWindowRequest;
+      class DeleteOpsItemRequest;
       class DeleteOpsMetadataRequest;
       class DeleteParameterRequest;
       class DeleteParametersRequest;
@@ -355,6 +357,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DeleteDocumentResult, SSMError> DeleteDocumentOutcome;
       typedef Aws::Utils::Outcome<DeleteInventoryResult, SSMError> DeleteInventoryOutcome;
       typedef Aws::Utils::Outcome<DeleteMaintenanceWindowResult, SSMError> DeleteMaintenanceWindowOutcome;
+      typedef Aws::Utils::Outcome<DeleteOpsItemResult, SSMError> DeleteOpsItemOutcome;
       typedef Aws::Utils::Outcome<DeleteOpsMetadataResult, SSMError> DeleteOpsMetadataOutcome;
       typedef Aws::Utils::Outcome<DeleteParameterResult, SSMError> DeleteParameterOutcome;
       typedef Aws::Utils::Outcome<DeleteParametersResult, SSMError> DeleteParametersOutcome;
@@ -496,6 +499,7 @@ namespace Aws
       typedef std::future<DeleteDocumentOutcome> DeleteDocumentOutcomeCallable;
       typedef std::future<DeleteInventoryOutcome> DeleteInventoryOutcomeCallable;
       typedef std::future<DeleteMaintenanceWindowOutcome> DeleteMaintenanceWindowOutcomeCallable;
+      typedef std::future<DeleteOpsItemOutcome> DeleteOpsItemOutcomeCallable;
       typedef std::future<DeleteOpsMetadataOutcome> DeleteOpsMetadataOutcomeCallable;
       typedef std::future<DeleteParameterOutcome> DeleteParameterOutcomeCallable;
       typedef std::future<DeleteParametersOutcome> DeleteParametersOutcomeCallable;
@@ -640,6 +644,7 @@ namespace Aws
     typedef std::function<void(const SSMClient*, const Model::DeleteDocumentRequest&, const Model::DeleteDocumentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDocumentResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::DeleteInventoryRequest&, const Model::DeleteInventoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteInventoryResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::DeleteMaintenanceWindowRequest&, const Model::DeleteMaintenanceWindowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteMaintenanceWindowResponseReceivedHandler;
+    typedef std::function<void(const SSMClient*, const Model::DeleteOpsItemRequest&, const Model::DeleteOpsItemOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteOpsItemResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::DeleteOpsMetadataRequest&, const Model::DeleteOpsMetadataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteOpsMetadataResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::DeleteParameterRequest&, const Model::DeleteParameterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteParameterResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::DeleteParametersRequest&, const Model::DeleteParametersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteParametersResponseReceivedHandler;

@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CustomVocabularyStatus::NOT_SET:
+            return {};
           case CustomVocabularyStatus::Ready:
             return "Ready";
           case CustomVocabularyStatus::Deleting:

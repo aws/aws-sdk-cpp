@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ConfigurationSyncState::NOT_SET:
+            return {};
           case ConfigurationSyncState::PENDING:
             return "PENDING";
           case ConfigurationSyncState::IN_SYNC:

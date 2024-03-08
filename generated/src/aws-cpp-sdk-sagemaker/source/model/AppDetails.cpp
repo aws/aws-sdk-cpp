@@ -21,26 +21,28 @@ namespace Model
 AppDetails::AppDetails() : 
     m_domainIdHasBeenSet(false),
     m_userProfileNameHasBeenSet(false),
+    m_spaceNameHasBeenSet(false),
     m_appType(AppType::NOT_SET),
     m_appTypeHasBeenSet(false),
     m_appNameHasBeenSet(false),
     m_status(AppStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
-    m_spaceNameHasBeenSet(false)
+    m_resourceSpecHasBeenSet(false)
 {
 }
 
 AppDetails::AppDetails(JsonView jsonValue) : 
     m_domainIdHasBeenSet(false),
     m_userProfileNameHasBeenSet(false),
+    m_spaceNameHasBeenSet(false),
     m_appType(AppType::NOT_SET),
     m_appTypeHasBeenSet(false),
     m_appNameHasBeenSet(false),
     m_status(AppStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
-    m_spaceNameHasBeenSet(false)
+    m_resourceSpecHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -59,6 +61,13 @@ AppDetails& AppDetails::operator =(JsonView jsonValue)
     m_userProfileName = jsonValue.GetString("UserProfileName");
 
     m_userProfileNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SpaceName"))
+  {
+    m_spaceName = jsonValue.GetString("SpaceName");
+
+    m_spaceNameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("AppType"))
@@ -89,11 +98,11 @@ AppDetails& AppDetails::operator =(JsonView jsonValue)
     m_creationTimeHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("SpaceName"))
+  if(jsonValue.ValueExists("ResourceSpec"))
   {
-    m_spaceName = jsonValue.GetString("SpaceName");
+    m_resourceSpec = jsonValue.GetObject("ResourceSpec");
 
-    m_spaceNameHasBeenSet = true;
+    m_resourceSpecHasBeenSet = true;
   }
 
   return *this;
@@ -112,6 +121,12 @@ JsonValue AppDetails::Jsonize() const
   if(m_userProfileNameHasBeenSet)
   {
    payload.WithString("UserProfileName", m_userProfileName);
+
+  }
+
+  if(m_spaceNameHasBeenSet)
+  {
+   payload.WithString("SpaceName", m_spaceName);
 
   }
 
@@ -136,9 +151,9 @@ JsonValue AppDetails::Jsonize() const
    payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
   }
 
-  if(m_spaceNameHasBeenSet)
+  if(m_resourceSpecHasBeenSet)
   {
-   payload.WithString("SpaceName", m_spaceName);
+   payload.WithObject("ResourceSpec", m_resourceSpec.Jsonize());
 
   }
 

@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NamespaceStatus::NOT_SET:
+            return {};
           case NamespaceStatus::CREATED:
             return "CREATED";
           case NamespaceStatus::CREATING:

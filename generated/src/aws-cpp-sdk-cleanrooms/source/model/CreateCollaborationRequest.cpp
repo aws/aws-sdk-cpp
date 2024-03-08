@@ -21,7 +21,8 @@ CreateCollaborationRequest::CreateCollaborationRequest() :
     m_dataEncryptionMetadataHasBeenSet(false),
     m_queryLogStatus(CollaborationQueryLogStatus::NOT_SET),
     m_queryLogStatusHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_creatorPaymentConfigurationHasBeenSet(false)
 {
 }
 
@@ -88,6 +89,12 @@ Aws::String CreateCollaborationRequest::SerializePayload() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_creatorPaymentConfigurationHasBeenSet)
+  {
+   payload.WithObject("creatorPaymentConfiguration", m_creatorPaymentConfiguration.Jsonize());
 
   }
 

@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MapComparison::NOT_SET:
+            return {};
           case MapComparison::EQUALS:
             return "EQUALS";
           default:

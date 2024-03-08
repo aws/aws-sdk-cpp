@@ -7,6 +7,7 @@
 #include <aws/personalize/Personalize_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/personalize/model/BatchInferenceJobMode.h>
 #include <utility>
 
 namespace Aws
@@ -325,6 +326,37 @@ namespace Model
      */
     inline BatchInferenceJobSummary& WithSolutionVersionArn(const char* value) { SetSolutionVersionArn(value); return *this;}
 
+
+    /**
+     * <p>The job's mode.</p>
+     */
+    inline const BatchInferenceJobMode& GetBatchInferenceJobMode() const{ return m_batchInferenceJobMode; }
+
+    /**
+     * <p>The job's mode.</p>
+     */
+    inline bool BatchInferenceJobModeHasBeenSet() const { return m_batchInferenceJobModeHasBeenSet; }
+
+    /**
+     * <p>The job's mode.</p>
+     */
+    inline void SetBatchInferenceJobMode(const BatchInferenceJobMode& value) { m_batchInferenceJobModeHasBeenSet = true; m_batchInferenceJobMode = value; }
+
+    /**
+     * <p>The job's mode.</p>
+     */
+    inline void SetBatchInferenceJobMode(BatchInferenceJobMode&& value) { m_batchInferenceJobModeHasBeenSet = true; m_batchInferenceJobMode = std::move(value); }
+
+    /**
+     * <p>The job's mode.</p>
+     */
+    inline BatchInferenceJobSummary& WithBatchInferenceJobMode(const BatchInferenceJobMode& value) { SetBatchInferenceJobMode(value); return *this;}
+
+    /**
+     * <p>The job's mode.</p>
+     */
+    inline BatchInferenceJobSummary& WithBatchInferenceJobMode(BatchInferenceJobMode&& value) { SetBatchInferenceJobMode(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_batchInferenceJobArn;
@@ -347,6 +379,9 @@ namespace Model
 
     Aws::String m_solutionVersionArn;
     bool m_solutionVersionArnHasBeenSet = false;
+
+    BatchInferenceJobMode m_batchInferenceJobMode;
+    bool m_batchInferenceJobModeHasBeenSet = false;
   };
 
 } // namespace Model

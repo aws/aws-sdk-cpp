@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DisruptionType::NOT_SET:
+            return {};
           case DisruptionType::Software:
             return "Software";
           case DisruptionType::Hardware:

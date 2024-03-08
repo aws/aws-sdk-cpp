@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HandshakeState::NOT_SET:
+            return {};
           case HandshakeState::REQUESTED:
             return "REQUESTED";
           case HandshakeState::OPEN:

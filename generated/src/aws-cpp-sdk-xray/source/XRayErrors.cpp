@@ -49,35 +49,35 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == MALFORMED_POLICY_DOCUMENT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(XRayErrors::MALFORMED_POLICY_DOCUMENT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(XRayErrors::MALFORMED_POLICY_DOCUMENT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == TOO_MANY_TAGS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(XRayErrors::TOO_MANY_TAGS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(XRayErrors::TOO_MANY_TAGS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == LOCKOUT_PREVENTION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(XRayErrors::LOCKOUT_PREVENTION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(XRayErrors::LOCKOUT_PREVENTION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == POLICY_SIZE_LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(XRayErrors::POLICY_SIZE_LIMIT_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(XRayErrors::POLICY_SIZE_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_POLICY_REVISION_ID_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(XRayErrors::INVALID_POLICY_REVISION_ID), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(XRayErrors::INVALID_POLICY_REVISION_ID), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == RULE_LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(XRayErrors::RULE_LIMIT_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(XRayErrors::RULE_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == POLICY_COUNT_LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(XRayErrors::POLICY_COUNT_LIMIT_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(XRayErrors::POLICY_COUNT_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_REQUEST_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(XRayErrors::INVALID_REQUEST), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(XRayErrors::INVALID_REQUEST), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

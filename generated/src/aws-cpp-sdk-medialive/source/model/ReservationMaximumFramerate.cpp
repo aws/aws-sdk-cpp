@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ReservationMaximumFramerate::NOT_SET:
+            return {};
           case ReservationMaximumFramerate::MAX_30_FPS:
             return "MAX_30_FPS";
           case ReservationMaximumFramerate::MAX_60_FPS:

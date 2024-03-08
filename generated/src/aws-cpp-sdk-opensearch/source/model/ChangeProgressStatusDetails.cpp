@@ -27,7 +27,12 @@ ChangeProgressStatusDetails::ChangeProgressStatusDetails() :
     m_completedPropertiesHasBeenSet(false),
     m_totalNumberOfStages(0),
     m_totalNumberOfStagesHasBeenSet(false),
-    m_changeProgressStagesHasBeenSet(false)
+    m_changeProgressStagesHasBeenSet(false),
+    m_lastUpdatedTimeHasBeenSet(false),
+    m_configChangeStatus(ConfigChangeStatus::NOT_SET),
+    m_configChangeStatusHasBeenSet(false),
+    m_initiatedBy(InitiatedBy::NOT_SET),
+    m_initiatedByHasBeenSet(false)
 {
 }
 
@@ -40,7 +45,12 @@ ChangeProgressStatusDetails::ChangeProgressStatusDetails(JsonView jsonValue) :
     m_completedPropertiesHasBeenSet(false),
     m_totalNumberOfStages(0),
     m_totalNumberOfStagesHasBeenSet(false),
-    m_changeProgressStagesHasBeenSet(false)
+    m_changeProgressStagesHasBeenSet(false),
+    m_lastUpdatedTimeHasBeenSet(false),
+    m_configChangeStatus(ConfigChangeStatus::NOT_SET),
+    m_configChangeStatusHasBeenSet(false),
+    m_initiatedBy(InitiatedBy::NOT_SET),
+    m_initiatedByHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -105,6 +115,27 @@ ChangeProgressStatusDetails& ChangeProgressStatusDetails::operator =(JsonView js
     m_changeProgressStagesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("LastUpdatedTime"))
+  {
+    m_lastUpdatedTime = jsonValue.GetDouble("LastUpdatedTime");
+
+    m_lastUpdatedTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ConfigChangeStatus"))
+  {
+    m_configChangeStatus = ConfigChangeStatusMapper::GetConfigChangeStatusForName(jsonValue.GetString("ConfigChangeStatus"));
+
+    m_configChangeStatusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("InitiatedBy"))
+  {
+    m_initiatedBy = InitiatedByMapper::GetInitiatedByForName(jsonValue.GetString("InitiatedBy"));
+
+    m_initiatedByHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -165,6 +196,21 @@ JsonValue ChangeProgressStatusDetails::Jsonize() const
    }
    payload.WithArray("ChangeProgressStages", std::move(changeProgressStagesJsonList));
 
+  }
+
+  if(m_lastUpdatedTimeHasBeenSet)
+  {
+   payload.WithDouble("LastUpdatedTime", m_lastUpdatedTime.SecondsWithMSPrecision());
+  }
+
+  if(m_configChangeStatusHasBeenSet)
+  {
+   payload.WithString("ConfigChangeStatus", ConfigChangeStatusMapper::GetNameForConfigChangeStatus(m_configChangeStatus));
+  }
+
+  if(m_initiatedByHasBeenSet)
+  {
+   payload.WithString("InitiatedBy", InitiatedByMapper::GetNameForInitiatedBy(m_initiatedBy));
   }
 
   return payload;

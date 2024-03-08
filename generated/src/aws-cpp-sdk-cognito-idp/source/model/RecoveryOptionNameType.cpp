@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RecoveryOptionNameType::NOT_SET:
+            return {};
           case RecoveryOptionNameType::verified_email:
             return "verified_email";
           case RecoveryOptionNameType::verified_phone_number:

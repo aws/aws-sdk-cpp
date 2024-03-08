@@ -121,42 +121,42 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the IAM user to associate with the on-premises instance.</p>
+     * <p>The ARN of the user to associate with the on-premises instance.</p>
      */
     inline const Aws::String& GetIamUserArn() const{ return m_iamUserArn; }
 
     /**
-     * <p>The ARN of the IAM user to associate with the on-premises instance.</p>
+     * <p>The ARN of the user to associate with the on-premises instance.</p>
      */
     inline bool IamUserArnHasBeenSet() const { return m_iamUserArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the IAM user to associate with the on-premises instance.</p>
+     * <p>The ARN of the user to associate with the on-premises instance.</p>
      */
     inline void SetIamUserArn(const Aws::String& value) { m_iamUserArnHasBeenSet = true; m_iamUserArn = value; }
 
     /**
-     * <p>The ARN of the IAM user to associate with the on-premises instance.</p>
+     * <p>The ARN of the user to associate with the on-premises instance.</p>
      */
     inline void SetIamUserArn(Aws::String&& value) { m_iamUserArnHasBeenSet = true; m_iamUserArn = std::move(value); }
 
     /**
-     * <p>The ARN of the IAM user to associate with the on-premises instance.</p>
+     * <p>The ARN of the user to associate with the on-premises instance.</p>
      */
     inline void SetIamUserArn(const char* value) { m_iamUserArnHasBeenSet = true; m_iamUserArn.assign(value); }
 
     /**
-     * <p>The ARN of the IAM user to associate with the on-premises instance.</p>
+     * <p>The ARN of the user to associate with the on-premises instance.</p>
      */
     inline RegisterOnPremisesInstanceRequest& WithIamUserArn(const Aws::String& value) { SetIamUserArn(value); return *this;}
 
     /**
-     * <p>The ARN of the IAM user to associate with the on-premises instance.</p>
+     * <p>The ARN of the user to associate with the on-premises instance.</p>
      */
     inline RegisterOnPremisesInstanceRequest& WithIamUserArn(Aws::String&& value) { SetIamUserArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the IAM user to associate with the on-premises instance.</p>
+     * <p>The ARN of the user to associate with the on-premises instance.</p>
      */
     inline RegisterOnPremisesInstanceRequest& WithIamUserArn(const char* value) { SetIamUserArn(value); return *this;}
 

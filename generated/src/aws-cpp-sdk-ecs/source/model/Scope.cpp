@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Scope::NOT_SET:
+            return {};
           case Scope::task:
             return "task";
           case Scope::shared:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TranscodePreset::NOT_SET:
+            return {};
           case TranscodePreset::HIGHER_BANDWIDTH_DELIVERY:
             return "HIGHER_BANDWIDTH_DELIVERY";
           case TranscodePreset::CONSTRAINED_BANDWIDTH_DELIVERY:

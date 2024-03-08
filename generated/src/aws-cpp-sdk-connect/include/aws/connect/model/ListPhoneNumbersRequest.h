@@ -99,42 +99,82 @@ namespace Model
 
 
     /**
-     * <p>The type of phone number.</p>
+     * <p>The type of phone number.</p>  <p>We recommend using <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbersV2.html">ListPhoneNumbersV2</a>
+     * to return phone number types. While ListPhoneNumbers returns number types
+     * <code>UIFN</code>, <code>SHARED</code>, <code>THIRD_PARTY_TF</code>, and
+     * <code>THIRD_PARTY_DID</code>, it incorrectly lists them as
+     * <code>TOLL_FREE</code> or <code>DID</code>. </p> 
      */
     inline const Aws::Vector<PhoneNumberType>& GetPhoneNumberTypes() const{ return m_phoneNumberTypes; }
 
     /**
-     * <p>The type of phone number.</p>
+     * <p>The type of phone number.</p>  <p>We recommend using <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbersV2.html">ListPhoneNumbersV2</a>
+     * to return phone number types. While ListPhoneNumbers returns number types
+     * <code>UIFN</code>, <code>SHARED</code>, <code>THIRD_PARTY_TF</code>, and
+     * <code>THIRD_PARTY_DID</code>, it incorrectly lists them as
+     * <code>TOLL_FREE</code> or <code>DID</code>. </p> 
      */
     inline bool PhoneNumberTypesHasBeenSet() const { return m_phoneNumberTypesHasBeenSet; }
 
     /**
-     * <p>The type of phone number.</p>
+     * <p>The type of phone number.</p>  <p>We recommend using <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbersV2.html">ListPhoneNumbersV2</a>
+     * to return phone number types. While ListPhoneNumbers returns number types
+     * <code>UIFN</code>, <code>SHARED</code>, <code>THIRD_PARTY_TF</code>, and
+     * <code>THIRD_PARTY_DID</code>, it incorrectly lists them as
+     * <code>TOLL_FREE</code> or <code>DID</code>. </p> 
      */
     inline void SetPhoneNumberTypes(const Aws::Vector<PhoneNumberType>& value) { m_phoneNumberTypesHasBeenSet = true; m_phoneNumberTypes = value; }
 
     /**
-     * <p>The type of phone number.</p>
+     * <p>The type of phone number.</p>  <p>We recommend using <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbersV2.html">ListPhoneNumbersV2</a>
+     * to return phone number types. While ListPhoneNumbers returns number types
+     * <code>UIFN</code>, <code>SHARED</code>, <code>THIRD_PARTY_TF</code>, and
+     * <code>THIRD_PARTY_DID</code>, it incorrectly lists them as
+     * <code>TOLL_FREE</code> or <code>DID</code>. </p> 
      */
     inline void SetPhoneNumberTypes(Aws::Vector<PhoneNumberType>&& value) { m_phoneNumberTypesHasBeenSet = true; m_phoneNumberTypes = std::move(value); }
 
     /**
-     * <p>The type of phone number.</p>
+     * <p>The type of phone number.</p>  <p>We recommend using <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbersV2.html">ListPhoneNumbersV2</a>
+     * to return phone number types. While ListPhoneNumbers returns number types
+     * <code>UIFN</code>, <code>SHARED</code>, <code>THIRD_PARTY_TF</code>, and
+     * <code>THIRD_PARTY_DID</code>, it incorrectly lists them as
+     * <code>TOLL_FREE</code> or <code>DID</code>. </p> 
      */
     inline ListPhoneNumbersRequest& WithPhoneNumberTypes(const Aws::Vector<PhoneNumberType>& value) { SetPhoneNumberTypes(value); return *this;}
 
     /**
-     * <p>The type of phone number.</p>
+     * <p>The type of phone number.</p>  <p>We recommend using <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbersV2.html">ListPhoneNumbersV2</a>
+     * to return phone number types. While ListPhoneNumbers returns number types
+     * <code>UIFN</code>, <code>SHARED</code>, <code>THIRD_PARTY_TF</code>, and
+     * <code>THIRD_PARTY_DID</code>, it incorrectly lists them as
+     * <code>TOLL_FREE</code> or <code>DID</code>. </p> 
      */
     inline ListPhoneNumbersRequest& WithPhoneNumberTypes(Aws::Vector<PhoneNumberType>&& value) { SetPhoneNumberTypes(std::move(value)); return *this;}
 
     /**
-     * <p>The type of phone number.</p>
+     * <p>The type of phone number.</p>  <p>We recommend using <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbersV2.html">ListPhoneNumbersV2</a>
+     * to return phone number types. While ListPhoneNumbers returns number types
+     * <code>UIFN</code>, <code>SHARED</code>, <code>THIRD_PARTY_TF</code>, and
+     * <code>THIRD_PARTY_DID</code>, it incorrectly lists them as
+     * <code>TOLL_FREE</code> or <code>DID</code>. </p> 
      */
     inline ListPhoneNumbersRequest& AddPhoneNumberTypes(const PhoneNumberType& value) { m_phoneNumberTypesHasBeenSet = true; m_phoneNumberTypes.push_back(value); return *this; }
 
     /**
-     * <p>The type of phone number.</p>
+     * <p>The type of phone number.</p>  <p>We recommend using <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbersV2.html">ListPhoneNumbersV2</a>
+     * to return phone number types. While ListPhoneNumbers returns number types
+     * <code>UIFN</code>, <code>SHARED</code>, <code>THIRD_PARTY_TF</code>, and
+     * <code>THIRD_PARTY_DID</code>, it incorrectly lists them as
+     * <code>TOLL_FREE</code> or <code>DID</code>. </p> 
      */
     inline ListPhoneNumbersRequest& AddPhoneNumberTypes(PhoneNumberType&& value) { m_phoneNumberTypesHasBeenSet = true; m_phoneNumberTypes.push_back(std::move(value)); return *this; }
 

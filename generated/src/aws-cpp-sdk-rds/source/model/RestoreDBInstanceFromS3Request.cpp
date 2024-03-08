@@ -76,7 +76,9 @@ RestoreDBInstanceFromS3Request::RestoreDBInstanceFromS3Request() :
     m_storageThroughputHasBeenSet(false),
     m_manageMasterUserPassword(false),
     m_manageMasterUserPasswordHasBeenSet(false),
-    m_masterUserSecretKmsKeyIdHasBeenSet(false)
+    m_masterUserSecretKmsKeyIdHasBeenSet(false),
+    m_dedicatedLogVolume(false),
+    m_dedicatedLogVolumeHasBeenSet(false)
 {
 }
 
@@ -350,6 +352,11 @@ Aws::String RestoreDBInstanceFromS3Request::SerializePayload() const
   if(m_masterUserSecretKmsKeyIdHasBeenSet)
   {
     ss << "MasterUserSecretKmsKeyId=" << StringUtils::URLEncode(m_masterUserSecretKmsKeyId.c_str()) << "&";
+  }
+
+  if(m_dedicatedLogVolumeHasBeenSet)
+  {
+    ss << "DedicatedLogVolume=" << std::boolalpha << m_dedicatedLogVolume << "&";
   }
 
   ss << "Version=2014-10-31";

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case GroupBy::NOT_SET:
+            return {};
           case GroupBy::ALL:
             return "ALL";
           case GroupBy::YEARLY:

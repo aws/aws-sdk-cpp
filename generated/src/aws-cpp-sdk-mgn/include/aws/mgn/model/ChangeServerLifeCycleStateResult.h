@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/mgn/Mgn_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mgn/model/SourceServerConnectorAction.h>
 #include <aws/mgn/model/DataReplicationInfo.h>
 #include <aws/mgn/model/LaunchedInstance.h>
 #include <aws/mgn/model/LifeCycle.h>
@@ -108,6 +109,32 @@ namespace Model
      * <p>Source server ARN.</p>
      */
     inline ChangeServerLifeCycleStateResult& WithArn(const char* value) { SetArn(value); return *this;}
+
+
+    /**
+     * <p>Source Server connector action.</p>
+     */
+    inline const SourceServerConnectorAction& GetConnectorAction() const{ return m_connectorAction; }
+
+    /**
+     * <p>Source Server connector action.</p>
+     */
+    inline void SetConnectorAction(const SourceServerConnectorAction& value) { m_connectorAction = value; }
+
+    /**
+     * <p>Source Server connector action.</p>
+     */
+    inline void SetConnectorAction(SourceServerConnectorAction&& value) { m_connectorAction = std::move(value); }
+
+    /**
+     * <p>Source Server connector action.</p>
+     */
+    inline ChangeServerLifeCycleStateResult& WithConnectorAction(const SourceServerConnectorAction& value) { SetConnectorAction(value); return *this;}
+
+    /**
+     * <p>Source Server connector action.</p>
+     */
+    inline ChangeServerLifeCycleStateResult& WithConnectorAction(SourceServerConnectorAction&& value) { SetConnectorAction(std::move(value)); return *this;}
 
 
     /**
@@ -487,6 +514,8 @@ namespace Model
     Aws::String m_applicationID;
 
     Aws::String m_arn;
+
+    SourceServerConnectorAction m_connectorAction;
 
     DataReplicationInfo m_dataReplicationInfo;
 

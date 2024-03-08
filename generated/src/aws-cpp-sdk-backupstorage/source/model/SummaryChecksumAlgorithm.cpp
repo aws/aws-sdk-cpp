@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SummaryChecksumAlgorithm::NOT_SET:
+            return {};
           case SummaryChecksumAlgorithm::SUMMARY:
             return "SUMMARY";
           default:

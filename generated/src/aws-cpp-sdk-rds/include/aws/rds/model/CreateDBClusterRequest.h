@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/rds/model/ScalingConfiguration.h>
+#include <aws/rds/model/RdsCustomClusterConfiguration.h>
 #include <aws/rds/model/ServerlessV2ScalingConfiguration.h>
 #include <aws/rds/model/Tag.h>
 #include <utility>
@@ -284,80 +285,88 @@ namespace Model
     /**
      * <p>The identifier for this DB cluster. This parameter is stored as a lowercase
      * string.</p> <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB
-     * clusters</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 letters,
-     * numbers, or hyphens.</p> </li> <li> <p>First character must be a letter.</p>
-     * </li> <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
-     * </li> </ul> <p>Example: <code>my-cluster1</code> </p>
+     * clusters</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 (for
+     * Aurora DB clusters) or 1 to 52 (for Multi-AZ DB clusters) letters, numbers, or
+     * hyphens.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
+     * <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li> </ul>
+     * <p>Example: <code>my-cluster1</code> </p>
      */
     inline const Aws::String& GetDBClusterIdentifier() const{ return m_dBClusterIdentifier; }
 
     /**
      * <p>The identifier for this DB cluster. This parameter is stored as a lowercase
      * string.</p> <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB
-     * clusters</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 letters,
-     * numbers, or hyphens.</p> </li> <li> <p>First character must be a letter.</p>
-     * </li> <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
-     * </li> </ul> <p>Example: <code>my-cluster1</code> </p>
+     * clusters</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 (for
+     * Aurora DB clusters) or 1 to 52 (for Multi-AZ DB clusters) letters, numbers, or
+     * hyphens.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
+     * <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li> </ul>
+     * <p>Example: <code>my-cluster1</code> </p>
      */
     inline bool DBClusterIdentifierHasBeenSet() const { return m_dBClusterIdentifierHasBeenSet; }
 
     /**
      * <p>The identifier for this DB cluster. This parameter is stored as a lowercase
      * string.</p> <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB
-     * clusters</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 letters,
-     * numbers, or hyphens.</p> </li> <li> <p>First character must be a letter.</p>
-     * </li> <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
-     * </li> </ul> <p>Example: <code>my-cluster1</code> </p>
+     * clusters</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 (for
+     * Aurora DB clusters) or 1 to 52 (for Multi-AZ DB clusters) letters, numbers, or
+     * hyphens.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
+     * <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li> </ul>
+     * <p>Example: <code>my-cluster1</code> </p>
      */
     inline void SetDBClusterIdentifier(const Aws::String& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = value; }
 
     /**
      * <p>The identifier for this DB cluster. This parameter is stored as a lowercase
      * string.</p> <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB
-     * clusters</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 letters,
-     * numbers, or hyphens.</p> </li> <li> <p>First character must be a letter.</p>
-     * </li> <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
-     * </li> </ul> <p>Example: <code>my-cluster1</code> </p>
+     * clusters</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 (for
+     * Aurora DB clusters) or 1 to 52 (for Multi-AZ DB clusters) letters, numbers, or
+     * hyphens.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
+     * <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li> </ul>
+     * <p>Example: <code>my-cluster1</code> </p>
      */
     inline void SetDBClusterIdentifier(Aws::String&& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = std::move(value); }
 
     /**
      * <p>The identifier for this DB cluster. This parameter is stored as a lowercase
      * string.</p> <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB
-     * clusters</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 letters,
-     * numbers, or hyphens.</p> </li> <li> <p>First character must be a letter.</p>
-     * </li> <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
-     * </li> </ul> <p>Example: <code>my-cluster1</code> </p>
+     * clusters</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 (for
+     * Aurora DB clusters) or 1 to 52 (for Multi-AZ DB clusters) letters, numbers, or
+     * hyphens.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
+     * <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li> </ul>
+     * <p>Example: <code>my-cluster1</code> </p>
      */
     inline void SetDBClusterIdentifier(const char* value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier.assign(value); }
 
     /**
      * <p>The identifier for this DB cluster. This parameter is stored as a lowercase
      * string.</p> <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB
-     * clusters</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 letters,
-     * numbers, or hyphens.</p> </li> <li> <p>First character must be a letter.</p>
-     * </li> <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
-     * </li> </ul> <p>Example: <code>my-cluster1</code> </p>
+     * clusters</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 (for
+     * Aurora DB clusters) or 1 to 52 (for Multi-AZ DB clusters) letters, numbers, or
+     * hyphens.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
+     * <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li> </ul>
+     * <p>Example: <code>my-cluster1</code> </p>
      */
     inline CreateDBClusterRequest& WithDBClusterIdentifier(const Aws::String& value) { SetDBClusterIdentifier(value); return *this;}
 
     /**
      * <p>The identifier for this DB cluster. This parameter is stored as a lowercase
      * string.</p> <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB
-     * clusters</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 letters,
-     * numbers, or hyphens.</p> </li> <li> <p>First character must be a letter.</p>
-     * </li> <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
-     * </li> </ul> <p>Example: <code>my-cluster1</code> </p>
+     * clusters</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 (for
+     * Aurora DB clusters) or 1 to 52 (for Multi-AZ DB clusters) letters, numbers, or
+     * hyphens.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
+     * <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li> </ul>
+     * <p>Example: <code>my-cluster1</code> </p>
      */
     inline CreateDBClusterRequest& WithDBClusterIdentifier(Aws::String&& value) { SetDBClusterIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The identifier for this DB cluster. This parameter is stored as a lowercase
      * string.</p> <p>Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB
-     * clusters</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 letters,
-     * numbers, or hyphens.</p> </li> <li> <p>First character must be a letter.</p>
-     * </li> <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
-     * </li> </ul> <p>Example: <code>my-cluster1</code> </p>
+     * clusters</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 (for
+     * Aurora DB clusters) or 1 to 52 (for Multi-AZ DB clusters) letters, numbers, or
+     * hyphens.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
+     * <p>Can't end with a hyphen or contain two consecutive hyphens.</p> </li> </ul>
+     * <p>Example: <code>my-cluster1</code> </p>
      */
     inline CreateDBClusterRequest& WithDBClusterIdentifier(const char* value) { SetDBClusterIdentifier(value); return *this;}
 
@@ -2435,6 +2444,37 @@ namespace Model
 
 
     /**
+     * <p>Reserved for future use.</p>
+     */
+    inline const RdsCustomClusterConfiguration& GetRdsCustomClusterConfiguration() const{ return m_rdsCustomClusterConfiguration; }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline bool RdsCustomClusterConfigurationHasBeenSet() const { return m_rdsCustomClusterConfigurationHasBeenSet; }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline void SetRdsCustomClusterConfiguration(const RdsCustomClusterConfiguration& value) { m_rdsCustomClusterConfigurationHasBeenSet = true; m_rdsCustomClusterConfiguration = value; }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline void SetRdsCustomClusterConfiguration(RdsCustomClusterConfiguration&& value) { m_rdsCustomClusterConfigurationHasBeenSet = true; m_rdsCustomClusterConfiguration = std::move(value); }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline CreateDBClusterRequest& WithRdsCustomClusterConfiguration(const RdsCustomClusterConfiguration& value) { SetRdsCustomClusterConfiguration(value); return *this;}
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline CreateDBClusterRequest& WithRdsCustomClusterConfiguration(RdsCustomClusterConfiguration&& value) { SetRdsCustomClusterConfiguration(std::move(value)); return *this;}
+
+
+    /**
      * <p>Specifies whether the DB cluster has deletion protection enabled. The
      * database can't be deleted when deletion protection is enabled. By default,
      * deletion protection isn't enabled.</p> <p>Valid for Cluster Type: Aurora DB
@@ -2525,54 +2565,62 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether to enable the HTTP endpoint for an Aurora Serverless v1 DB
-     * cluster. By default, the HTTP endpoint is disabled.</p> <p>When enabled, the
-     * HTTP endpoint provides a connectionless web service API for running SQL queries
-     * on the Aurora Serverless v1 DB cluster. You can also query your database from
-     * inside the RDS console with the query editor.</p> <p>For more information, see
-     * <a
+     * <p>Specifies whether to enable the HTTP endpoint for the DB cluster. By default,
+     * the HTTP endpoint isn't enabled.</p> <p>When enabled, the HTTP endpoint provides
+     * a connectionless web service API (RDS Data API) for running SQL queries on the
+     * DB cluster. You can also query your database from inside the RDS console with
+     * the RDS query editor.</p> <p>RDS Data API is supported with the following DB
+     * clusters:</p> <ul> <li> <p>Aurora PostgreSQL Serverless v2 and provisioned</p>
+     * </li> <li> <p>Aurora PostgreSQL and Aurora MySQL Serverless v1</p> </li> </ul>
+     * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
-     * the Data API for Aurora Serverless v1</a> in the <i>Amazon Aurora User
-     * Guide</i>.</p> <p>Valid for Cluster Type: Aurora DB clusters only</p>
+     * RDS Data API</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>Valid for
+     * Cluster Type: Aurora DB clusters only</p>
      */
     inline bool GetEnableHttpEndpoint() const{ return m_enableHttpEndpoint; }
 
     /**
-     * <p>Specifies whether to enable the HTTP endpoint for an Aurora Serverless v1 DB
-     * cluster. By default, the HTTP endpoint is disabled.</p> <p>When enabled, the
-     * HTTP endpoint provides a connectionless web service API for running SQL queries
-     * on the Aurora Serverless v1 DB cluster. You can also query your database from
-     * inside the RDS console with the query editor.</p> <p>For more information, see
-     * <a
+     * <p>Specifies whether to enable the HTTP endpoint for the DB cluster. By default,
+     * the HTTP endpoint isn't enabled.</p> <p>When enabled, the HTTP endpoint provides
+     * a connectionless web service API (RDS Data API) for running SQL queries on the
+     * DB cluster. You can also query your database from inside the RDS console with
+     * the RDS query editor.</p> <p>RDS Data API is supported with the following DB
+     * clusters:</p> <ul> <li> <p>Aurora PostgreSQL Serverless v2 and provisioned</p>
+     * </li> <li> <p>Aurora PostgreSQL and Aurora MySQL Serverless v1</p> </li> </ul>
+     * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
-     * the Data API for Aurora Serverless v1</a> in the <i>Amazon Aurora User
-     * Guide</i>.</p> <p>Valid for Cluster Type: Aurora DB clusters only</p>
+     * RDS Data API</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>Valid for
+     * Cluster Type: Aurora DB clusters only</p>
      */
     inline bool EnableHttpEndpointHasBeenSet() const { return m_enableHttpEndpointHasBeenSet; }
 
     /**
-     * <p>Specifies whether to enable the HTTP endpoint for an Aurora Serverless v1 DB
-     * cluster. By default, the HTTP endpoint is disabled.</p> <p>When enabled, the
-     * HTTP endpoint provides a connectionless web service API for running SQL queries
-     * on the Aurora Serverless v1 DB cluster. You can also query your database from
-     * inside the RDS console with the query editor.</p> <p>For more information, see
-     * <a
+     * <p>Specifies whether to enable the HTTP endpoint for the DB cluster. By default,
+     * the HTTP endpoint isn't enabled.</p> <p>When enabled, the HTTP endpoint provides
+     * a connectionless web service API (RDS Data API) for running SQL queries on the
+     * DB cluster. You can also query your database from inside the RDS console with
+     * the RDS query editor.</p> <p>RDS Data API is supported with the following DB
+     * clusters:</p> <ul> <li> <p>Aurora PostgreSQL Serverless v2 and provisioned</p>
+     * </li> <li> <p>Aurora PostgreSQL and Aurora MySQL Serverless v1</p> </li> </ul>
+     * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
-     * the Data API for Aurora Serverless v1</a> in the <i>Amazon Aurora User
-     * Guide</i>.</p> <p>Valid for Cluster Type: Aurora DB clusters only</p>
+     * RDS Data API</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>Valid for
+     * Cluster Type: Aurora DB clusters only</p>
      */
     inline void SetEnableHttpEndpoint(bool value) { m_enableHttpEndpointHasBeenSet = true; m_enableHttpEndpoint = value; }
 
     /**
-     * <p>Specifies whether to enable the HTTP endpoint for an Aurora Serverless v1 DB
-     * cluster. By default, the HTTP endpoint is disabled.</p> <p>When enabled, the
-     * HTTP endpoint provides a connectionless web service API for running SQL queries
-     * on the Aurora Serverless v1 DB cluster. You can also query your database from
-     * inside the RDS console with the query editor.</p> <p>For more information, see
-     * <a
+     * <p>Specifies whether to enable the HTTP endpoint for the DB cluster. By default,
+     * the HTTP endpoint isn't enabled.</p> <p>When enabled, the HTTP endpoint provides
+     * a connectionless web service API (RDS Data API) for running SQL queries on the
+     * DB cluster. You can also query your database from inside the RDS console with
+     * the RDS query editor.</p> <p>RDS Data API is supported with the following DB
+     * clusters:</p> <ul> <li> <p>Aurora PostgreSQL Serverless v2 and provisioned</p>
+     * </li> <li> <p>Aurora PostgreSQL and Aurora MySQL Serverless v1</p> </li> </ul>
+     * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using
-     * the Data API for Aurora Serverless v1</a> in the <i>Amazon Aurora User
-     * Guide</i>.</p> <p>Valid for Cluster Type: Aurora DB clusters only</p>
+     * RDS Data API</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>Valid for
+     * Cluster Type: Aurora DB clusters only</p>
      */
     inline CreateDBClusterRequest& WithEnableHttpEndpoint(bool value) { SetEnableHttpEndpoint(value); return *this;}
 
@@ -2947,12 +2995,12 @@ namespace Model
      * for the <code>Iops</code> parameter is required.</p> <p>Valid for Cluster Type:
      * Aurora DB clusters and Multi-AZ DB clusters</p> <p>Valid Values:</p> <ul> <li>
      * <p>Aurora DB clusters - <code>aurora | aurora-iopt1</code> </p> </li> <li>
-     * <p>Multi-AZ DB clusters - <code>io1</code> </p> </li> </ul> <p>Default:</p> <ul>
-     * <li> <p>Aurora DB clusters - <code>aurora</code> </p> </li> <li> <p>Multi-AZ DB
-     * clusters - <code>io1</code> </p> </li> </ul>  <p>When you create an Aurora
-     * DB cluster with the storage type set to <code>aurora-iopt1</code>, the storage
-     * type is returned in the response. The storage type isn't returned when you set
-     * it to <code>aurora</code>.</p> 
+     * <p>Multi-AZ DB clusters - <code>io1 | io2 | gp3</code> </p> </li> </ul>
+     * <p>Default:</p> <ul> <li> <p>Aurora DB clusters - <code>aurora</code> </p> </li>
+     * <li> <p>Multi-AZ DB clusters - <code>io1</code> </p> </li> </ul>  <p>When
+     * you create an Aurora DB cluster with the storage type set to
+     * <code>aurora-iopt1</code>, the storage type is returned in the response. The
+     * storage type isn't returned when you set it to <code>aurora</code>.</p> 
      */
     inline const Aws::String& GetStorageType() const{ return m_storageType; }
 
@@ -2968,12 +3016,12 @@ namespace Model
      * for the <code>Iops</code> parameter is required.</p> <p>Valid for Cluster Type:
      * Aurora DB clusters and Multi-AZ DB clusters</p> <p>Valid Values:</p> <ul> <li>
      * <p>Aurora DB clusters - <code>aurora | aurora-iopt1</code> </p> </li> <li>
-     * <p>Multi-AZ DB clusters - <code>io1</code> </p> </li> </ul> <p>Default:</p> <ul>
-     * <li> <p>Aurora DB clusters - <code>aurora</code> </p> </li> <li> <p>Multi-AZ DB
-     * clusters - <code>io1</code> </p> </li> </ul>  <p>When you create an Aurora
-     * DB cluster with the storage type set to <code>aurora-iopt1</code>, the storage
-     * type is returned in the response. The storage type isn't returned when you set
-     * it to <code>aurora</code>.</p> 
+     * <p>Multi-AZ DB clusters - <code>io1 | io2 | gp3</code> </p> </li> </ul>
+     * <p>Default:</p> <ul> <li> <p>Aurora DB clusters - <code>aurora</code> </p> </li>
+     * <li> <p>Multi-AZ DB clusters - <code>io1</code> </p> </li> </ul>  <p>When
+     * you create an Aurora DB cluster with the storage type set to
+     * <code>aurora-iopt1</code>, the storage type is returned in the response. The
+     * storage type isn't returned when you set it to <code>aurora</code>.</p> 
      */
     inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
 
@@ -2989,12 +3037,12 @@ namespace Model
      * for the <code>Iops</code> parameter is required.</p> <p>Valid for Cluster Type:
      * Aurora DB clusters and Multi-AZ DB clusters</p> <p>Valid Values:</p> <ul> <li>
      * <p>Aurora DB clusters - <code>aurora | aurora-iopt1</code> </p> </li> <li>
-     * <p>Multi-AZ DB clusters - <code>io1</code> </p> </li> </ul> <p>Default:</p> <ul>
-     * <li> <p>Aurora DB clusters - <code>aurora</code> </p> </li> <li> <p>Multi-AZ DB
-     * clusters - <code>io1</code> </p> </li> </ul>  <p>When you create an Aurora
-     * DB cluster with the storage type set to <code>aurora-iopt1</code>, the storage
-     * type is returned in the response. The storage type isn't returned when you set
-     * it to <code>aurora</code>.</p> 
+     * <p>Multi-AZ DB clusters - <code>io1 | io2 | gp3</code> </p> </li> </ul>
+     * <p>Default:</p> <ul> <li> <p>Aurora DB clusters - <code>aurora</code> </p> </li>
+     * <li> <p>Multi-AZ DB clusters - <code>io1</code> </p> </li> </ul>  <p>When
+     * you create an Aurora DB cluster with the storage type set to
+     * <code>aurora-iopt1</code>, the storage type is returned in the response. The
+     * storage type isn't returned when you set it to <code>aurora</code>.</p> 
      */
     inline void SetStorageType(const Aws::String& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
 
@@ -3010,12 +3058,12 @@ namespace Model
      * for the <code>Iops</code> parameter is required.</p> <p>Valid for Cluster Type:
      * Aurora DB clusters and Multi-AZ DB clusters</p> <p>Valid Values:</p> <ul> <li>
      * <p>Aurora DB clusters - <code>aurora | aurora-iopt1</code> </p> </li> <li>
-     * <p>Multi-AZ DB clusters - <code>io1</code> </p> </li> </ul> <p>Default:</p> <ul>
-     * <li> <p>Aurora DB clusters - <code>aurora</code> </p> </li> <li> <p>Multi-AZ DB
-     * clusters - <code>io1</code> </p> </li> </ul>  <p>When you create an Aurora
-     * DB cluster with the storage type set to <code>aurora-iopt1</code>, the storage
-     * type is returned in the response. The storage type isn't returned when you set
-     * it to <code>aurora</code>.</p> 
+     * <p>Multi-AZ DB clusters - <code>io1 | io2 | gp3</code> </p> </li> </ul>
+     * <p>Default:</p> <ul> <li> <p>Aurora DB clusters - <code>aurora</code> </p> </li>
+     * <li> <p>Multi-AZ DB clusters - <code>io1</code> </p> </li> </ul>  <p>When
+     * you create an Aurora DB cluster with the storage type set to
+     * <code>aurora-iopt1</code>, the storage type is returned in the response. The
+     * storage type isn't returned when you set it to <code>aurora</code>.</p> 
      */
     inline void SetStorageType(Aws::String&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
 
@@ -3031,12 +3079,12 @@ namespace Model
      * for the <code>Iops</code> parameter is required.</p> <p>Valid for Cluster Type:
      * Aurora DB clusters and Multi-AZ DB clusters</p> <p>Valid Values:</p> <ul> <li>
      * <p>Aurora DB clusters - <code>aurora | aurora-iopt1</code> </p> </li> <li>
-     * <p>Multi-AZ DB clusters - <code>io1</code> </p> </li> </ul> <p>Default:</p> <ul>
-     * <li> <p>Aurora DB clusters - <code>aurora</code> </p> </li> <li> <p>Multi-AZ DB
-     * clusters - <code>io1</code> </p> </li> </ul>  <p>When you create an Aurora
-     * DB cluster with the storage type set to <code>aurora-iopt1</code>, the storage
-     * type is returned in the response. The storage type isn't returned when you set
-     * it to <code>aurora</code>.</p> 
+     * <p>Multi-AZ DB clusters - <code>io1 | io2 | gp3</code> </p> </li> </ul>
+     * <p>Default:</p> <ul> <li> <p>Aurora DB clusters - <code>aurora</code> </p> </li>
+     * <li> <p>Multi-AZ DB clusters - <code>io1</code> </p> </li> </ul>  <p>When
+     * you create an Aurora DB cluster with the storage type set to
+     * <code>aurora-iopt1</code>, the storage type is returned in the response. The
+     * storage type isn't returned when you set it to <code>aurora</code>.</p> 
      */
     inline void SetStorageType(const char* value) { m_storageTypeHasBeenSet = true; m_storageType.assign(value); }
 
@@ -3052,12 +3100,12 @@ namespace Model
      * for the <code>Iops</code> parameter is required.</p> <p>Valid for Cluster Type:
      * Aurora DB clusters and Multi-AZ DB clusters</p> <p>Valid Values:</p> <ul> <li>
      * <p>Aurora DB clusters - <code>aurora | aurora-iopt1</code> </p> </li> <li>
-     * <p>Multi-AZ DB clusters - <code>io1</code> </p> </li> </ul> <p>Default:</p> <ul>
-     * <li> <p>Aurora DB clusters - <code>aurora</code> </p> </li> <li> <p>Multi-AZ DB
-     * clusters - <code>io1</code> </p> </li> </ul>  <p>When you create an Aurora
-     * DB cluster with the storage type set to <code>aurora-iopt1</code>, the storage
-     * type is returned in the response. The storage type isn't returned when you set
-     * it to <code>aurora</code>.</p> 
+     * <p>Multi-AZ DB clusters - <code>io1 | io2 | gp3</code> </p> </li> </ul>
+     * <p>Default:</p> <ul> <li> <p>Aurora DB clusters - <code>aurora</code> </p> </li>
+     * <li> <p>Multi-AZ DB clusters - <code>io1</code> </p> </li> </ul>  <p>When
+     * you create an Aurora DB cluster with the storage type set to
+     * <code>aurora-iopt1</code>, the storage type is returned in the response. The
+     * storage type isn't returned when you set it to <code>aurora</code>.</p> 
      */
     inline CreateDBClusterRequest& WithStorageType(const Aws::String& value) { SetStorageType(value); return *this;}
 
@@ -3073,12 +3121,12 @@ namespace Model
      * for the <code>Iops</code> parameter is required.</p> <p>Valid for Cluster Type:
      * Aurora DB clusters and Multi-AZ DB clusters</p> <p>Valid Values:</p> <ul> <li>
      * <p>Aurora DB clusters - <code>aurora | aurora-iopt1</code> </p> </li> <li>
-     * <p>Multi-AZ DB clusters - <code>io1</code> </p> </li> </ul> <p>Default:</p> <ul>
-     * <li> <p>Aurora DB clusters - <code>aurora</code> </p> </li> <li> <p>Multi-AZ DB
-     * clusters - <code>io1</code> </p> </li> </ul>  <p>When you create an Aurora
-     * DB cluster with the storage type set to <code>aurora-iopt1</code>, the storage
-     * type is returned in the response. The storage type isn't returned when you set
-     * it to <code>aurora</code>.</p> 
+     * <p>Multi-AZ DB clusters - <code>io1 | io2 | gp3</code> </p> </li> </ul>
+     * <p>Default:</p> <ul> <li> <p>Aurora DB clusters - <code>aurora</code> </p> </li>
+     * <li> <p>Multi-AZ DB clusters - <code>io1</code> </p> </li> </ul>  <p>When
+     * you create an Aurora DB cluster with the storage type set to
+     * <code>aurora-iopt1</code>, the storage type is returned in the response. The
+     * storage type isn't returned when you set it to <code>aurora</code>.</p> 
      */
     inline CreateDBClusterRequest& WithStorageType(Aws::String&& value) { SetStorageType(std::move(value)); return *this;}
 
@@ -3094,12 +3142,12 @@ namespace Model
      * for the <code>Iops</code> parameter is required.</p> <p>Valid for Cluster Type:
      * Aurora DB clusters and Multi-AZ DB clusters</p> <p>Valid Values:</p> <ul> <li>
      * <p>Aurora DB clusters - <code>aurora | aurora-iopt1</code> </p> </li> <li>
-     * <p>Multi-AZ DB clusters - <code>io1</code> </p> </li> </ul> <p>Default:</p> <ul>
-     * <li> <p>Aurora DB clusters - <code>aurora</code> </p> </li> <li> <p>Multi-AZ DB
-     * clusters - <code>io1</code> </p> </li> </ul>  <p>When you create an Aurora
-     * DB cluster with the storage type set to <code>aurora-iopt1</code>, the storage
-     * type is returned in the response. The storage type isn't returned when you set
-     * it to <code>aurora</code>.</p> 
+     * <p>Multi-AZ DB clusters - <code>io1 | io2 | gp3</code> </p> </li> </ul>
+     * <p>Default:</p> <ul> <li> <p>Aurora DB clusters - <code>aurora</code> </p> </li>
+     * <li> <p>Multi-AZ DB clusters - <code>io1</code> </p> </li> </ul>  <p>When
+     * you create an Aurora DB cluster with the storage type set to
+     * <code>aurora-iopt1</code>, the storage type is returned in the response. The
+     * storage type isn't returned when you set it to <code>aurora</code>.</p> 
      */
     inline CreateDBClusterRequest& WithStorageType(const char* value) { SetStorageType(value); return *this;}
 
@@ -3628,6 +3676,35 @@ namespace Model
     inline CreateDBClusterRequest& WithPerformanceInsightsRetentionPeriod(int value) { SetPerformanceInsightsRetentionPeriod(value); return *this;}
 
 
+    /**
+     * <p>Specifies whether to enable Aurora Limitless Database. You must enable Aurora
+     * Limitless Database to create a DB shard group.</p> <p>Valid for: Aurora DB
+     * clusters only</p>
+     */
+    inline bool GetEnableLimitlessDatabase() const{ return m_enableLimitlessDatabase; }
+
+    /**
+     * <p>Specifies whether to enable Aurora Limitless Database. You must enable Aurora
+     * Limitless Database to create a DB shard group.</p> <p>Valid for: Aurora DB
+     * clusters only</p>
+     */
+    inline bool EnableLimitlessDatabaseHasBeenSet() const { return m_enableLimitlessDatabaseHasBeenSet; }
+
+    /**
+     * <p>Specifies whether to enable Aurora Limitless Database. You must enable Aurora
+     * Limitless Database to create a DB shard group.</p> <p>Valid for: Aurora DB
+     * clusters only</p>
+     */
+    inline void SetEnableLimitlessDatabase(bool value) { m_enableLimitlessDatabaseHasBeenSet = true; m_enableLimitlessDatabase = value; }
+
+    /**
+     * <p>Specifies whether to enable Aurora Limitless Database. You must enable Aurora
+     * Limitless Database to create a DB shard group.</p> <p>Valid for: Aurora DB
+     * clusters only</p>
+     */
+    inline CreateDBClusterRequest& WithEnableLimitlessDatabase(bool value) { SetEnableLimitlessDatabase(value); return *this;}
+
+
     
     inline const ServerlessV2ScalingConfiguration& GetServerlessV2ScalingConfiguration() const{ return m_serverlessV2ScalingConfiguration; }
 
@@ -4029,6 +4106,79 @@ namespace Model
 
 
     /**
+     * <p>The CA certificate identifier to use for the DB cluster's server
+     * certificate.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using
+     * SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User
+     * Guide</i>.</p> <p>Valid for Cluster Type: Multi-AZ DB clusters</p>
+     */
+    inline const Aws::String& GetCACertificateIdentifier() const{ return m_cACertificateIdentifier; }
+
+    /**
+     * <p>The CA certificate identifier to use for the DB cluster's server
+     * certificate.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using
+     * SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User
+     * Guide</i>.</p> <p>Valid for Cluster Type: Multi-AZ DB clusters</p>
+     */
+    inline bool CACertificateIdentifierHasBeenSet() const { return m_cACertificateIdentifierHasBeenSet; }
+
+    /**
+     * <p>The CA certificate identifier to use for the DB cluster's server
+     * certificate.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using
+     * SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User
+     * Guide</i>.</p> <p>Valid for Cluster Type: Multi-AZ DB clusters</p>
+     */
+    inline void SetCACertificateIdentifier(const Aws::String& value) { m_cACertificateIdentifierHasBeenSet = true; m_cACertificateIdentifier = value; }
+
+    /**
+     * <p>The CA certificate identifier to use for the DB cluster's server
+     * certificate.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using
+     * SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User
+     * Guide</i>.</p> <p>Valid for Cluster Type: Multi-AZ DB clusters</p>
+     */
+    inline void SetCACertificateIdentifier(Aws::String&& value) { m_cACertificateIdentifierHasBeenSet = true; m_cACertificateIdentifier = std::move(value); }
+
+    /**
+     * <p>The CA certificate identifier to use for the DB cluster's server
+     * certificate.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using
+     * SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User
+     * Guide</i>.</p> <p>Valid for Cluster Type: Multi-AZ DB clusters</p>
+     */
+    inline void SetCACertificateIdentifier(const char* value) { m_cACertificateIdentifierHasBeenSet = true; m_cACertificateIdentifier.assign(value); }
+
+    /**
+     * <p>The CA certificate identifier to use for the DB cluster's server
+     * certificate.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using
+     * SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User
+     * Guide</i>.</p> <p>Valid for Cluster Type: Multi-AZ DB clusters</p>
+     */
+    inline CreateDBClusterRequest& WithCACertificateIdentifier(const Aws::String& value) { SetCACertificateIdentifier(value); return *this;}
+
+    /**
+     * <p>The CA certificate identifier to use for the DB cluster's server
+     * certificate.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using
+     * SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User
+     * Guide</i>.</p> <p>Valid for Cluster Type: Multi-AZ DB clusters</p>
+     */
+    inline CreateDBClusterRequest& WithCACertificateIdentifier(Aws::String&& value) { SetCACertificateIdentifier(std::move(value)); return *this;}
+
+    /**
+     * <p>The CA certificate identifier to use for the DB cluster's server
+     * certificate.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using
+     * SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User
+     * Guide</i>.</p> <p>Valid for Cluster Type: Multi-AZ DB clusters</p>
+     */
+    inline CreateDBClusterRequest& WithCACertificateIdentifier(const char* value) { SetCACertificateIdentifier(value); return *this;}
+
+
+    /**
      * If SourceRegion is specified, SDKs will generate pre-signed URLs and populate the pre-signed URL field.
      */
     inline const Aws::String& GetSourceRegion() const{ return m_sourceRegion; }
@@ -4148,6 +4298,9 @@ namespace Model
     ScalingConfiguration m_scalingConfiguration;
     bool m_scalingConfigurationHasBeenSet = false;
 
+    RdsCustomClusterConfiguration m_rdsCustomClusterConfiguration;
+    bool m_rdsCustomClusterConfigurationHasBeenSet = false;
+
     bool m_deletionProtection;
     bool m_deletionProtectionHasBeenSet = false;
 
@@ -4202,6 +4355,9 @@ namespace Model
     int m_performanceInsightsRetentionPeriod;
     bool m_performanceInsightsRetentionPeriodHasBeenSet = false;
 
+    bool m_enableLimitlessDatabase;
+    bool m_enableLimitlessDatabaseHasBeenSet = false;
+
     ServerlessV2ScalingConfiguration m_serverlessV2ScalingConfiguration;
     bool m_serverlessV2ScalingConfigurationHasBeenSet = false;
 
@@ -4219,6 +4375,9 @@ namespace Model
 
     bool m_enableLocalWriteForwarding;
     bool m_enableLocalWriteForwardingHasBeenSet = false;
+
+    Aws::String m_cACertificateIdentifier;
+    bool m_cACertificateIdentifierHasBeenSet = false;
 
     Aws::String m_sourceRegion;
     bool m_sourceRegionHasBeenSet = false;

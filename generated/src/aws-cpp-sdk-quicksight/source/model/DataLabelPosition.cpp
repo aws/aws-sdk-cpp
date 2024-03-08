@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DataLabelPosition::NOT_SET:
+            return {};
           case DataLabelPosition::INSIDE:
             return "INSIDE";
           case DataLabelPosition::OUTSIDE:

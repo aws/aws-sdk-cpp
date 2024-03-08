@@ -177,7 +177,7 @@ namespace Model
      * megabytes per second&#x2028; (MB/s). Valid values depend on the DeploymentType
      * you choose, as follows:</p> <ul> <li> <p>For <code>MULTI_AZ_1</code> and
      * <code>SINGLE_AZ_2</code>, valid values are 160, 320, 640, 1280, 2560, 3840,
-     * 5120, 7680, or 10240 MBps.</p> </li> <li> <p>For <code>SINGLE_AZ_1</code>, valid
+     * 5120, 7680, or 10240 MB/s.</p> </li> <li> <p>For <code>SINGLE_AZ_1</code>, valid
      * values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.</p> </li> </ul>
      */
     inline int GetThroughputCapacity() const{ return m_throughputCapacity; }
@@ -187,7 +187,7 @@ namespace Model
      * megabytes per second&#x2028; (MB/s). Valid values depend on the DeploymentType
      * you choose, as follows:</p> <ul> <li> <p>For <code>MULTI_AZ_1</code> and
      * <code>SINGLE_AZ_2</code>, valid values are 160, 320, 640, 1280, 2560, 3840,
-     * 5120, 7680, or 10240 MBps.</p> </li> <li> <p>For <code>SINGLE_AZ_1</code>, valid
+     * 5120, 7680, or 10240 MB/s.</p> </li> <li> <p>For <code>SINGLE_AZ_1</code>, valid
      * values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.</p> </li> </ul>
      */
     inline bool ThroughputCapacityHasBeenSet() const { return m_throughputCapacityHasBeenSet; }
@@ -197,7 +197,7 @@ namespace Model
      * megabytes per second&#x2028; (MB/s). Valid values depend on the DeploymentType
      * you choose, as follows:</p> <ul> <li> <p>For <code>MULTI_AZ_1</code> and
      * <code>SINGLE_AZ_2</code>, valid values are 160, 320, 640, 1280, 2560, 3840,
-     * 5120, 7680, or 10240 MBps.</p> </li> <li> <p>For <code>SINGLE_AZ_1</code>, valid
+     * 5120, 7680, or 10240 MB/s.</p> </li> <li> <p>For <code>SINGLE_AZ_1</code>, valid
      * values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.</p> </li> </ul>
      */
     inline void SetThroughputCapacity(int value) { m_throughputCapacityHasBeenSet = true; m_throughputCapacity = value; }
@@ -207,7 +207,7 @@ namespace Model
      * megabytes per second&#x2028; (MB/s). Valid values depend on the DeploymentType
      * you choose, as follows:</p> <ul> <li> <p>For <code>MULTI_AZ_1</code> and
      * <code>SINGLE_AZ_2</code>, valid values are 160, 320, 640, 1280, 2560, 3840,
-     * 5120, 7680, or 10240 MBps.</p> </li> <li> <p>For <code>SINGLE_AZ_1</code>, valid
+     * 5120, 7680, or 10240 MB/s.</p> </li> <li> <p>For <code>SINGLE_AZ_1</code>, valid
      * values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.</p> </li> </ul>
      */
     inline UpdateFileSystemOpenZFSConfiguration& WithThroughputCapacity(int value) { SetThroughputCapacity(value); return *this;}

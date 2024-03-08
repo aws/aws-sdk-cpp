@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ServiceName::NOT_SET:
+            return {};
           case ServiceName::S3:
             return "S3";
           default:

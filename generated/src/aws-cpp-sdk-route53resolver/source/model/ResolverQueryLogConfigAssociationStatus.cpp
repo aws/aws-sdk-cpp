@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResolverQueryLogConfigAssociationStatus::NOT_SET:
+            return {};
           case ResolverQueryLogConfigAssociationStatus::CREATING:
             return "CREATING";
           case ResolverQueryLogConfigAssociationStatus::ACTIVE:

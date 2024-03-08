@@ -319,26 +319,22 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates whether to show only those reservations that support
-     * Multi-AZ.</p>
+     * <p>Specifies whether to show only those reservations that support Multi-AZ.</p>
      */
     inline bool GetMultiAZ() const{ return m_multiAZ; }
 
     /**
-     * <p>A value that indicates whether to show only those reservations that support
-     * Multi-AZ.</p>
+     * <p>Specifies whether to show only those reservations that support Multi-AZ.</p>
      */
     inline bool MultiAZHasBeenSet() const { return m_multiAZHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether to show only those reservations that support
-     * Multi-AZ.</p>
+     * <p>Specifies whether to show only those reservations that support Multi-AZ.</p>
      */
     inline void SetMultiAZ(bool value) { m_multiAZHasBeenSet = true; m_multiAZ = value; }
 
     /**
-     * <p>A value that indicates whether to show only those reservations that support
-     * Multi-AZ.</p>
+     * <p>Specifies whether to show only those reservations that support Multi-AZ.</p>
      */
     inline DescribeReservedDBInstancesOfferingsRequest& WithMultiAZ(bool value) { SetMultiAZ(value); return *this;}
 

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SnapshotFileFormatType::NOT_SET:
+            return {};
           case SnapshotFileFormatType::CSV:
             return "CSV";
           case SnapshotFileFormatType::PDF:

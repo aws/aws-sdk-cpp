@@ -71,6 +71,7 @@ namespace Aws
                 m_logsProcessed--;
                 if(m_logsProcessed == 0 && m_stopLogging)
                 {
+                    std::unique_lock<std::mutex> lock(m_stopMutex);
                     m_stopSignal.notify_all();
                 }
             }

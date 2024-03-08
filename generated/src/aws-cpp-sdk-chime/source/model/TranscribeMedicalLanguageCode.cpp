@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TranscribeMedicalLanguageCode::NOT_SET:
+            return {};
           case TranscribeMedicalLanguageCode::en_US:
             return "en-US";
           default:

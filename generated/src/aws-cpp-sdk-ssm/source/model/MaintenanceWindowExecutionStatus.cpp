@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MaintenanceWindowExecutionStatus::NOT_SET:
+            return {};
           case MaintenanceWindowExecutionStatus::PENDING:
             return "PENDING";
           case MaintenanceWindowExecutionStatus::IN_PROGRESS:

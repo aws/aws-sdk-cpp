@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RouteTableType::NOT_SET:
+            return {};
           case RouteTableType::TRANSIT_GATEWAY_ROUTE_TABLE:
             return "TRANSIT_GATEWAY_ROUTE_TABLE";
           case RouteTableType::CORE_NETWORK_SEGMENT:

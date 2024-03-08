@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Any overrides that are applied to the signing configuration of a code signing
+   * <p>Any overrides that are applied to the signing configuration of a signing
    * platform.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/SigningPlatformOverrides">AWS
    * API Reference</a></p>

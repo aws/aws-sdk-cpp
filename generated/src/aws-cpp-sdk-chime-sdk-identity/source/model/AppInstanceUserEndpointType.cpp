@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AppInstanceUserEndpointType::NOT_SET:
+            return {};
           case AppInstanceUserEndpointType::APNS:
             return "APNS";
           case AppInstanceUserEndpointType::APNS_SANDBOX:

@@ -74,6 +74,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ActiveDirectoryStatus::NOT_SET:
+            return {};
           case ActiveDirectoryStatus::ACCESS_DENIED:
             return "ACCESS_DENIED";
           case ActiveDirectoryStatus::DETACHED:

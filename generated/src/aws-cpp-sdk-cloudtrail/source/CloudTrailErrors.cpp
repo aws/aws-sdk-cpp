@@ -62,6 +62,7 @@ static const int CHANNEL_A_R_N_INVALID_HASH = HashingUtils::HashString("ChannelA
 static const int INVALID_TOKEN_HASH = HashingUtils::HashString("InvalidTokenException");
 static const int INSUFFICIENT_DEPENDENCY_SERVICE_ACCESS_PERMISSION_HASH = HashingUtils::HashString("InsufficientDependencyServiceAccessPermissionException");
 static const int EVENT_DATA_STORE_TERMINATION_PROTECTED_HASH = HashingUtils::HashString("EventDataStoreTerminationProtectedException");
+static const int CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("ConcurrentModificationException");
 static const int EVENT_DATA_STORE_MAX_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("EventDataStoreMaxLimitExceededException");
 static const int INSUFFICIENT_SNS_TOPIC_POLICY_HASH = HashingUtils::HashString("InsufficientSnsTopicPolicyException");
 static const int INVALID_CLOUD_WATCH_LOGS_ROLE_ARN_HASH = HashingUtils::HashString("InvalidCloudWatchLogsRoleArnException");
@@ -89,6 +90,7 @@ static const int INVALID_EVENT_DATA_STORE_CATEGORY_HASH = HashingUtils::HashStri
 static const int ACCOUNT_NOT_REGISTERED_HASH = HashingUtils::HashString("AccountNotRegisteredException");
 static const int INVALID_CLOUD_WATCH_LOGS_LOG_GROUP_ARN_HASH = HashingUtils::HashString("InvalidCloudWatchLogsLogGroupArnException");
 static const int S3_BUCKET_DOES_NOT_EXIST_HASH = HashingUtils::HashString("S3BucketDoesNotExistException");
+static const int EVENT_DATA_STORE_FEDERATION_ENABLED_HASH = HashingUtils::HashString("EventDataStoreFederationEnabledException");
 static const int KMS_HASH = HashingUtils::HashString("KmsException");
 static const int INVALID_SOURCE_HASH = HashingUtils::HashString("InvalidSourceException");
 static const int INVALID_EVENT_CATEGORY_HASH = HashingUtils::HashString("InvalidEventCategoryException");
@@ -103,311 +105,319 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == TRAIL_ALREADY_EXISTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::TRAIL_ALREADY_EXISTS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::TRAIL_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == CANNOT_DELEGATE_MANAGEMENT_ACCOUNT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::CANNOT_DELEGATE_MANAGEMENT_ACCOUNT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::CANNOT_DELEGATE_MANAGEMENT_ACCOUNT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == NO_MANAGEMENT_ACCOUNT_S_L_R_EXISTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::NO_MANAGEMENT_ACCOUNT_S_L_R_EXISTS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::NO_MANAGEMENT_ACCOUNT_S_L_R_EXISTS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == KMS_KEY_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::KMS_KEY_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::KMS_KEY_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_MAX_RESULTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INVALID_MAX_RESULTS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INVALID_MAX_RESULTS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == TAGS_LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::TAGS_LIMIT_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::TAGS_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == CLOUD_TRAIL_ACCESS_NOT_ENABLED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::CLOUD_TRAIL_ACCESS_NOT_ENABLED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::CLOUD_TRAIL_ACCESS_NOT_ENABLED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == CLOUD_WATCH_LOGS_DELIVERY_UNAVAILABLE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::CLOUD_WATCH_LOGS_DELIVERY_UNAVAILABLE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::CLOUD_WATCH_LOGS_DELIVERY_UNAVAILABLE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_NEXT_TOKEN_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INVALID_NEXT_TOKEN), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INVALID_NEXT_TOKEN), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_TRAIL_NAME_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INVALID_TRAIL_NAME), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INVALID_TRAIL_NAME), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == ORGANIZATIONS_NOT_IN_USE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::ORGANIZATIONS_NOT_IN_USE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::ORGANIZATIONS_NOT_IN_USE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_SNS_TOPIC_NAME_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INVALID_SNS_TOPIC_NAME), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INVALID_SNS_TOPIC_NAME), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == TRAIL_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::TRAIL_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::TRAIL_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == NOT_ORGANIZATION_MASTER_ACCOUNT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::NOT_ORGANIZATION_MASTER_ACCOUNT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::NOT_ORGANIZATION_MASTER_ACCOUNT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_TAG_PARAMETER_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INVALID_TAG_PARAMETER), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INVALID_TAG_PARAMETER), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INACTIVE_QUERY_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INACTIVE_QUERY), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INACTIVE_QUERY), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == CHANNEL_EXISTS_FOR_E_D_S_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::CHANNEL_EXISTS_FOR_E_D_S), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::CHANNEL_EXISTS_FOR_E_D_S), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INSUFFICIENT_ENCRYPTION_POLICY_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INSUFFICIENT_ENCRYPTION_POLICY), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INSUFFICIENT_ENCRYPTION_POLICY), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_IMPORT_SOURCE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INVALID_IMPORT_SOURCE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INVALID_IMPORT_SOURCE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == CLOUD_TRAIL_INVALID_CLIENT_TOKEN_ID_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::CLOUD_TRAIL_INVALID_CLIENT_TOKEN_ID), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::CLOUD_TRAIL_INVALID_CLIENT_TOKEN_ID), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_INSIGHT_SELECTORS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INVALID_INSIGHT_SELECTORS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INVALID_INSIGHT_SELECTORS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == ACCOUNT_HAS_ONGOING_IMPORT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::ACCOUNT_HAS_ONGOING_IMPORT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::ACCOUNT_HAS_ONGOING_IMPORT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INSUFFICIENT_S3_BUCKET_POLICY_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INSUFFICIENT_S3_BUCKET_POLICY), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INSUFFICIENT_S3_BUCKET_POLICY), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == EVENT_DATA_STORE_HAS_ONGOING_IMPORT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::EVENT_DATA_STORE_HAS_ONGOING_IMPORT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::EVENT_DATA_STORE_HAS_ONGOING_IMPORT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == EVENT_DATA_STORE_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::EVENT_DATA_STORE_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::EVENT_DATA_STORE_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_LOOKUP_ATTRIBUTES_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INVALID_LOOKUP_ATTRIBUTES), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INVALID_LOOKUP_ATTRIBUTES), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == ACCOUNT_REGISTERED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::ACCOUNT_REGISTERED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::ACCOUNT_REGISTERED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == DELEGATED_ADMIN_ACCOUNT_LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::DELEGATED_ADMIN_ACCOUNT_LIMIT_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::DELEGATED_ADMIN_ACCOUNT_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_DATE_RANGE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INVALID_DATE_RANGE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INVALID_DATE_RANGE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == MAXIMUM_NUMBER_OF_TRAILS_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::MAXIMUM_NUMBER_OF_TRAILS_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::MAXIMUM_NUMBER_OF_TRAILS_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_S3_PREFIX_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INVALID_S3_PREFIX), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INVALID_S3_PREFIX), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == RESOURCE_TYPE_NOT_SUPPORTED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::RESOURCE_TYPE_NOT_SUPPORTED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::RESOURCE_TYPE_NOT_SUPPORTED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == CHANNEL_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::CHANNEL_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::CHANNEL_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INSIGHT_NOT_ENABLED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INSIGHT_NOT_ENABLED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INSIGHT_NOT_ENABLED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == CHANNEL_MAX_LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::CHANNEL_MAX_LIMIT_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::CHANNEL_MAX_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == KMS_KEY_DISABLED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::KMS_KEY_DISABLED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::KMS_KEY_DISABLED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_S3_BUCKET_NAME_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INVALID_S3_BUCKET_NAME), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INVALID_S3_BUCKET_NAME), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_HOME_REGION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INVALID_HOME_REGION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INVALID_HOME_REGION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == NOT_ORGANIZATION_MANAGEMENT_ACCOUNT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::NOT_ORGANIZATION_MANAGEMENT_ACCOUNT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::NOT_ORGANIZATION_MANAGEMENT_ACCOUNT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == CONFLICT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::CONFLICT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::CONFLICT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == CHANNEL_A_R_N_INVALID_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::CHANNEL_A_R_N_INVALID), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::CHANNEL_A_R_N_INVALID), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_TOKEN_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INVALID_TOKEN), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INVALID_TOKEN), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INSUFFICIENT_DEPENDENCY_SERVICE_ACCESS_PERMISSION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INSUFFICIENT_DEPENDENCY_SERVICE_ACCESS_PERMISSION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INSUFFICIENT_DEPENDENCY_SERVICE_ACCESS_PERMISSION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == EVENT_DATA_STORE_TERMINATION_PROTECTED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::EVENT_DATA_STORE_TERMINATION_PROTECTED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::EVENT_DATA_STORE_TERMINATION_PROTECTED), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == CONCURRENT_MODIFICATION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::CONCURRENT_MODIFICATION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == EVENT_DATA_STORE_MAX_LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::EVENT_DATA_STORE_MAX_LIMIT_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::EVENT_DATA_STORE_MAX_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INSUFFICIENT_SNS_TOPIC_POLICY_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INSUFFICIENT_SNS_TOPIC_POLICY), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INSUFFICIENT_SNS_TOPIC_POLICY), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_CLOUD_WATCH_LOGS_ROLE_ARN_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INVALID_CLOUD_WATCH_LOGS_ROLE_ARN), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INVALID_CLOUD_WATCH_LOGS_ROLE_ARN), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == MAX_CONCURRENT_QUERIES_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::MAX_CONCURRENT_QUERIES), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::MAX_CONCURRENT_QUERIES), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == CHANNEL_ALREADY_EXISTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::CHANNEL_ALREADY_EXISTS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::CHANNEL_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_QUERY_STATEMENT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INVALID_QUERY_STATEMENT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INVALID_QUERY_STATEMENT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_KMS_KEY_ID_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INVALID_KMS_KEY_ID), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INVALID_KMS_KEY_ID), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == EVENT_DATA_STORE_A_R_N_INVALID_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::EVENT_DATA_STORE_A_R_N_INVALID), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::EVENT_DATA_STORE_A_R_N_INVALID), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == RESOURCE_A_R_N_NOT_VALID_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::RESOURCE_A_R_N_NOT_VALID), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::RESOURCE_A_R_N_NOT_VALID), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_PARAMETER_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INVALID_PARAMETER), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INVALID_PARAMETER), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == RESOURCE_POLICY_NOT_VALID_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::RESOURCE_POLICY_NOT_VALID), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::RESOURCE_POLICY_NOT_VALID), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == UNSUPPORTED_OPERATION_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::UNSUPPORTED_OPERATION), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::UNSUPPORTED_OPERATION), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_EVENT_SELECTORS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INVALID_EVENT_SELECTORS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INVALID_EVENT_SELECTORS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_TIME_RANGE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INVALID_TIME_RANGE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INVALID_TIME_RANGE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == QUERY_ID_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::QUERY_ID_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::QUERY_ID_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == OPERATION_NOT_PERMITTED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::OPERATION_NOT_PERMITTED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::OPERATION_NOT_PERMITTED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == ACCOUNT_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::ACCOUNT_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::ACCOUNT_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_EVENT_DATA_STORE_STATUS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INVALID_EVENT_DATA_STORE_STATUS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INVALID_EVENT_DATA_STORE_STATUS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == TRAIL_NOT_PROVIDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::TRAIL_NOT_PROVIDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::TRAIL_NOT_PROVIDED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == RESOURCE_POLICY_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::RESOURCE_POLICY_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::RESOURCE_POLICY_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_QUERY_STATUS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INVALID_QUERY_STATUS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INVALID_QUERY_STATUS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INACTIVE_EVENT_DATA_STORE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INACTIVE_EVENT_DATA_STORE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INACTIVE_EVENT_DATA_STORE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == ORGANIZATION_NOT_IN_ALL_FEATURES_MODE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::ORGANIZATION_NOT_IN_ALL_FEATURES_MODE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::ORGANIZATION_NOT_IN_ALL_FEATURES_MODE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_EVENT_DATA_STORE_CATEGORY_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INVALID_EVENT_DATA_STORE_CATEGORY), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INVALID_EVENT_DATA_STORE_CATEGORY), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == ACCOUNT_NOT_REGISTERED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::ACCOUNT_NOT_REGISTERED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::ACCOUNT_NOT_REGISTERED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_CLOUD_WATCH_LOGS_LOG_GROUP_ARN_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INVALID_CLOUD_WATCH_LOGS_LOG_GROUP_ARN), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INVALID_CLOUD_WATCH_LOGS_LOG_GROUP_ARN), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == S3_BUCKET_DOES_NOT_EXIST_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::S3_BUCKET_DOES_NOT_EXIST), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::S3_BUCKET_DOES_NOT_EXIST), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == EVENT_DATA_STORE_FEDERATION_ENABLED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::EVENT_DATA_STORE_FEDERATION_ENABLED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == KMS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::KMS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::KMS), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_SOURCE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INVALID_SOURCE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INVALID_SOURCE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INVALID_EVENT_CATEGORY_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INVALID_EVENT_CATEGORY), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INVALID_EVENT_CATEGORY), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == CLOUD_TRAIL_A_R_N_INVALID_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::CLOUD_TRAIL_A_R_N_INVALID), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::CLOUD_TRAIL_A_R_N_INVALID), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == IMPORT_NOT_FOUND_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::IMPORT_NOT_FOUND), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::IMPORT_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == EVENT_DATA_STORE_ALREADY_EXISTS_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::EVENT_DATA_STORE_ALREADY_EXISTS), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::EVENT_DATA_STORE_ALREADY_EXISTS), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

@@ -84,6 +84,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ClusterState::NOT_SET:
+            return {};
           case ClusterState::CREATE_IN_PROGRESS:
             return "CREATE_IN_PROGRESS";
           case ClusterState::UNINITIALIZED:

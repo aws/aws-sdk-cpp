@@ -40,42 +40,42 @@ namespace Model
 
 
     /**
-     * <p>The ID of the power (e.g., <code>nano-1</code>).</p>
+     * <p>The ID of the power (<code>nano-1</code>).</p>
      */
     inline const Aws::String& GetPowerId() const{ return m_powerId; }
 
     /**
-     * <p>The ID of the power (e.g., <code>nano-1</code>).</p>
+     * <p>The ID of the power (<code>nano-1</code>).</p>
      */
     inline bool PowerIdHasBeenSet() const { return m_powerIdHasBeenSet; }
 
     /**
-     * <p>The ID of the power (e.g., <code>nano-1</code>).</p>
+     * <p>The ID of the power (<code>nano-1</code>).</p>
      */
     inline void SetPowerId(const Aws::String& value) { m_powerIdHasBeenSet = true; m_powerId = value; }
 
     /**
-     * <p>The ID of the power (e.g., <code>nano-1</code>).</p>
+     * <p>The ID of the power (<code>nano-1</code>).</p>
      */
     inline void SetPowerId(Aws::String&& value) { m_powerIdHasBeenSet = true; m_powerId = std::move(value); }
 
     /**
-     * <p>The ID of the power (e.g., <code>nano-1</code>).</p>
+     * <p>The ID of the power (<code>nano-1</code>).</p>
      */
     inline void SetPowerId(const char* value) { m_powerIdHasBeenSet = true; m_powerId.assign(value); }
 
     /**
-     * <p>The ID of the power (e.g., <code>nano-1</code>).</p>
+     * <p>The ID of the power (<code>nano-1</code>).</p>
      */
     inline ContainerServicePower& WithPowerId(const Aws::String& value) { SetPowerId(value); return *this;}
 
     /**
-     * <p>The ID of the power (e.g., <code>nano-1</code>).</p>
+     * <p>The ID of the power (<code>nano-1</code>).</p>
      */
     inline ContainerServicePower& WithPowerId(Aws::String&& value) { SetPowerId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the power (e.g., <code>nano-1</code>).</p>
+     * <p>The ID of the power (<code>nano-1</code>).</p>
      */
     inline ContainerServicePower& WithPowerId(const char* value) { SetPowerId(value); return *this;}
 
@@ -144,42 +144,42 @@ namespace Model
 
 
     /**
-     * <p>The friendly name of the power (e.g., <code>nano</code>).</p>
+     * <p>The friendly name of the power (<code>nano</code>).</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The friendly name of the power (e.g., <code>nano</code>).</p>
+     * <p>The friendly name of the power (<code>nano</code>).</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The friendly name of the power (e.g., <code>nano</code>).</p>
+     * <p>The friendly name of the power (<code>nano</code>).</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The friendly name of the power (e.g., <code>nano</code>).</p>
+     * <p>The friendly name of the power (<code>nano</code>).</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The friendly name of the power (e.g., <code>nano</code>).</p>
+     * <p>The friendly name of the power (<code>nano</code>).</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The friendly name of the power (e.g., <code>nano</code>).</p>
+     * <p>The friendly name of the power (<code>nano</code>).</p>
      */
     inline ContainerServicePower& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The friendly name of the power (e.g., <code>nano</code>).</p>
+     * <p>The friendly name of the power (<code>nano</code>).</p>
      */
     inline ContainerServicePower& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The friendly name of the power (e.g., <code>nano</code>).</p>
+     * <p>The friendly name of the power (<code>nano</code>).</p>
      */
     inline ContainerServicePower& WithName(const char* value) { SetName(value); return *this;}
 

@@ -7,6 +7,7 @@
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/sagemaker/model/AdditionalS3DataSource.h>
 #include <aws/sagemaker/model/HyperParameterSpecification.h>
 #include <aws/sagemaker/model/TrainingInstanceType.h>
 #include <aws/sagemaker/model/MetricDefinition.h>
@@ -411,6 +412,37 @@ namespace Model
      */
     inline TrainingSpecification& AddSupportedTuningJobObjectiveMetrics(HyperParameterTuningJobObjective&& value) { m_supportedTuningJobObjectiveMetricsHasBeenSet = true; m_supportedTuningJobObjectiveMetrics.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The additional data source used during the training job.</p>
+     */
+    inline const AdditionalS3DataSource& GetAdditionalS3DataSource() const{ return m_additionalS3DataSource; }
+
+    /**
+     * <p>The additional data source used during the training job.</p>
+     */
+    inline bool AdditionalS3DataSourceHasBeenSet() const { return m_additionalS3DataSourceHasBeenSet; }
+
+    /**
+     * <p>The additional data source used during the training job.</p>
+     */
+    inline void SetAdditionalS3DataSource(const AdditionalS3DataSource& value) { m_additionalS3DataSourceHasBeenSet = true; m_additionalS3DataSource = value; }
+
+    /**
+     * <p>The additional data source used during the training job.</p>
+     */
+    inline void SetAdditionalS3DataSource(AdditionalS3DataSource&& value) { m_additionalS3DataSourceHasBeenSet = true; m_additionalS3DataSource = std::move(value); }
+
+    /**
+     * <p>The additional data source used during the training job.</p>
+     */
+    inline TrainingSpecification& WithAdditionalS3DataSource(const AdditionalS3DataSource& value) { SetAdditionalS3DataSource(value); return *this;}
+
+    /**
+     * <p>The additional data source used during the training job.</p>
+     */
+    inline TrainingSpecification& WithAdditionalS3DataSource(AdditionalS3DataSource&& value) { SetAdditionalS3DataSource(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_trainingImage;
@@ -436,6 +468,9 @@ namespace Model
 
     Aws::Vector<HyperParameterTuningJobObjective> m_supportedTuningJobObjectiveMetrics;
     bool m_supportedTuningJobObjectiveMetricsHasBeenSet = false;
+
+    AdditionalS3DataSource m_additionalS3DataSource;
+    bool m_additionalS3DataSourceHasBeenSet = false;
   };
 
 } // namespace Model

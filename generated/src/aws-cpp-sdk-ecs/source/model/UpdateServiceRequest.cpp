@@ -36,7 +36,8 @@ UpdateServiceRequest::UpdateServiceRequest() :
     m_propagateTags(PropagateTags::NOT_SET),
     m_propagateTagsHasBeenSet(false),
     m_serviceRegistriesHasBeenSet(false),
-    m_serviceConnectConfigurationHasBeenSet(false)
+    m_serviceConnectConfigurationHasBeenSet(false),
+    m_volumeConfigurationsHasBeenSet(false)
 {
 }
 
@@ -173,6 +174,17 @@ Aws::String UpdateServiceRequest::SerializePayload() const
   if(m_serviceConnectConfigurationHasBeenSet)
   {
    payload.WithObject("serviceConnectConfiguration", m_serviceConnectConfiguration.Jsonize());
+
+  }
+
+  if(m_volumeConfigurationsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> volumeConfigurationsJsonList(m_volumeConfigurations.size());
+   for(unsigned volumeConfigurationsIndex = 0; volumeConfigurationsIndex < volumeConfigurationsJsonList.GetLength(); ++volumeConfigurationsIndex)
+   {
+     volumeConfigurationsJsonList[volumeConfigurationsIndex].AsObject(m_volumeConfigurations[volumeConfigurationsIndex].Jsonize());
+   }
+   payload.WithArray("volumeConfigurations", std::move(volumeConfigurationsJsonList));
 
   }
 

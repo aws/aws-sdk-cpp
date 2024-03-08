@@ -74,6 +74,47 @@ namespace Model
 
 
     /**
+     * <p>Filters the channel list to match the specified policy.</p>
+     */
+    inline const Aws::String& GetFilterByPlaybackRestrictionPolicyArn() const{ return m_filterByPlaybackRestrictionPolicyArn; }
+
+    /**
+     * <p>Filters the channel list to match the specified policy.</p>
+     */
+    inline bool FilterByPlaybackRestrictionPolicyArnHasBeenSet() const { return m_filterByPlaybackRestrictionPolicyArnHasBeenSet; }
+
+    /**
+     * <p>Filters the channel list to match the specified policy.</p>
+     */
+    inline void SetFilterByPlaybackRestrictionPolicyArn(const Aws::String& value) { m_filterByPlaybackRestrictionPolicyArnHasBeenSet = true; m_filterByPlaybackRestrictionPolicyArn = value; }
+
+    /**
+     * <p>Filters the channel list to match the specified policy.</p>
+     */
+    inline void SetFilterByPlaybackRestrictionPolicyArn(Aws::String&& value) { m_filterByPlaybackRestrictionPolicyArnHasBeenSet = true; m_filterByPlaybackRestrictionPolicyArn = std::move(value); }
+
+    /**
+     * <p>Filters the channel list to match the specified policy.</p>
+     */
+    inline void SetFilterByPlaybackRestrictionPolicyArn(const char* value) { m_filterByPlaybackRestrictionPolicyArnHasBeenSet = true; m_filterByPlaybackRestrictionPolicyArn.assign(value); }
+
+    /**
+     * <p>Filters the channel list to match the specified policy.</p>
+     */
+    inline ListChannelsRequest& WithFilterByPlaybackRestrictionPolicyArn(const Aws::String& value) { SetFilterByPlaybackRestrictionPolicyArn(value); return *this;}
+
+    /**
+     * <p>Filters the channel list to match the specified policy.</p>
+     */
+    inline ListChannelsRequest& WithFilterByPlaybackRestrictionPolicyArn(Aws::String&& value) { SetFilterByPlaybackRestrictionPolicyArn(std::move(value)); return *this;}
+
+    /**
+     * <p>Filters the channel list to match the specified policy.</p>
+     */
+    inline ListChannelsRequest& WithFilterByPlaybackRestrictionPolicyArn(const char* value) { SetFilterByPlaybackRestrictionPolicyArn(value); return *this;}
+
+
+    /**
      * <p>Filters the channel list to match the specified recording-configuration
      * ARN.</p>
      */
@@ -195,6 +236,9 @@ namespace Model
 
     Aws::String m_filterByName;
     bool m_filterByNameHasBeenSet = false;
+
+    Aws::String m_filterByPlaybackRestrictionPolicyArn;
+    bool m_filterByPlaybackRestrictionPolicyArnHasBeenSet = false;
 
     Aws::String m_filterByRecordingConfigurationArn;
     bool m_filterByRecordingConfigurationArnHasBeenSet = false;

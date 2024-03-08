@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DnsSupportValue::NOT_SET:
+            return {};
           case DnsSupportValue::enable:
             return "enable";
           case DnsSupportValue::disable:

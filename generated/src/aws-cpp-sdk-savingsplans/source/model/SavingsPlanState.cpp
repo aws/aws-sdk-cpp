@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SavingsPlanState::NOT_SET:
+            return {};
           case SavingsPlanState::payment_pending:
             return "payment-pending";
           case SavingsPlanState::payment_failed:

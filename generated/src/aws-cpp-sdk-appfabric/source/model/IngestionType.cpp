@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case IngestionType::NOT_SET:
+            return {};
           case IngestionType::auditLog:
             return "auditLog";
           default:

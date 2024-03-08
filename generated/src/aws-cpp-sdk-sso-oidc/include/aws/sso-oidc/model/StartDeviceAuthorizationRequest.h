@@ -139,58 +139,74 @@ namespace Model
 
 
     /**
-     * <p>The URL for the AWS access portal. For more information, see <a
+     * <p>The URL for the Amazon Web Services access portal. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using
-     * the AWS access portal</a> in the <i>IAM Identity Center User Guide</i>.</p>
+     * the Amazon Web Services access portal</a> in the <i>IAM Identity Center User
+     * Guide</i>.</p>
      */
     inline const Aws::String& GetStartUrl() const{ return m_startUrl; }
 
     /**
-     * <p>The URL for the AWS access portal. For more information, see <a
+     * <p>The URL for the Amazon Web Services access portal. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using
-     * the AWS access portal</a> in the <i>IAM Identity Center User Guide</i>.</p>
+     * the Amazon Web Services access portal</a> in the <i>IAM Identity Center User
+     * Guide</i>.</p>
      */
     inline bool StartUrlHasBeenSet() const { return m_startUrlHasBeenSet; }
 
     /**
-     * <p>The URL for the AWS access portal. For more information, see <a
+     * <p>The URL for the Amazon Web Services access portal. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using
-     * the AWS access portal</a> in the <i>IAM Identity Center User Guide</i>.</p>
+     * the Amazon Web Services access portal</a> in the <i>IAM Identity Center User
+     * Guide</i>.</p>
      */
     inline void SetStartUrl(const Aws::String& value) { m_startUrlHasBeenSet = true; m_startUrl = value; }
 
     /**
-     * <p>The URL for the AWS access portal. For more information, see <a
+     * <p>The URL for the Amazon Web Services access portal. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using
-     * the AWS access portal</a> in the <i>IAM Identity Center User Guide</i>.</p>
+     * the Amazon Web Services access portal</a> in the <i>IAM Identity Center User
+     * Guide</i>.</p>
      */
     inline void SetStartUrl(Aws::String&& value) { m_startUrlHasBeenSet = true; m_startUrl = std::move(value); }
 
     /**
-     * <p>The URL for the AWS access portal. For more information, see <a
+     * <p>The URL for the Amazon Web Services access portal. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using
-     * the AWS access portal</a> in the <i>IAM Identity Center User Guide</i>.</p>
+     * the Amazon Web Services access portal</a> in the <i>IAM Identity Center User
+     * Guide</i>.</p>
      */
     inline void SetStartUrl(const char* value) { m_startUrlHasBeenSet = true; m_startUrl.assign(value); }
 
     /**
-     * <p>The URL for the AWS access portal. For more information, see <a
+     * <p>The URL for the Amazon Web Services access portal. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using
-     * the AWS access portal</a> in the <i>IAM Identity Center User Guide</i>.</p>
+     * the Amazon Web Services access portal</a> in the <i>IAM Identity Center User
+     * Guide</i>.</p>
      */
     inline StartDeviceAuthorizationRequest& WithStartUrl(const Aws::String& value) { SetStartUrl(value); return *this;}
 
     /**
-     * <p>The URL for the AWS access portal. For more information, see <a
+     * <p>The URL for the Amazon Web Services access portal. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using
-     * the AWS access portal</a> in the <i>IAM Identity Center User Guide</i>.</p>
+     * the Amazon Web Services access portal</a> in the <i>IAM Identity Center User
+     * Guide</i>.</p>
      */
     inline StartDeviceAuthorizationRequest& WithStartUrl(Aws::String&& value) { SetStartUrl(std::move(value)); return *this;}
 
     /**
-     * <p>The URL for the AWS access portal. For more information, see <a
+     * <p>The URL for the Amazon Web Services access portal. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/using-the-portal.html">Using
-     * the AWS access portal</a> in the <i>IAM Identity Center User Guide</i>.</p>
+     * the Amazon Web Services access portal</a> in the <i>IAM Identity Center User
+     * Guide</i>.</p>
      */
     inline StartDeviceAuthorizationRequest& WithStartUrl(const char* value) { SetStartUrl(value); return *this;}
 

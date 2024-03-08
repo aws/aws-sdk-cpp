@@ -74,8 +74,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* MTurkClient::SERVICE_NAME = "mturk-requester";
-const char* MTurkClient::ALLOCATION_TAG = "MTurkClient";
+namespace Aws
+{
+  namespace MTurk
+  {
+    const char SERVICE_NAME[] = "mturk-requester";
+    const char ALLOCATION_TAG[] = "MTurkClient";
+  }
+}
+const char* MTurkClient::GetServiceName() {return SERVICE_NAME;}
+const char* MTurkClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 MTurkClient::MTurkClient(const MTurk::MTurkClientConfiguration& clientConfiguration,
                          std::shared_ptr<MTurkEndpointProviderBase> endpointProvider) :
@@ -87,7 +95,7 @@ MTurkClient::MTurkClient(const MTurk::MTurkClientConfiguration& clientConfigurat
             Aws::MakeShared<MTurkErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<MTurkEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -103,7 +111,7 @@ MTurkClient::MTurkClient(const AWSCredentials& credentials,
             Aws::MakeShared<MTurkErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<MTurkEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -119,7 +127,7 @@ MTurkClient::MTurkClient(const std::shared_ptr<AWSCredentialsProvider>& credenti
             Aws::MakeShared<MTurkErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<MTurkEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

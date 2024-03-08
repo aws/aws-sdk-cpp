@@ -16,7 +16,8 @@ namespace Model
   enum class PipelineStatus
   {
     NOT_SET,
-    Active
+    Active,
+    Deleting
   };
 
 namespace PipelineStatusMapper

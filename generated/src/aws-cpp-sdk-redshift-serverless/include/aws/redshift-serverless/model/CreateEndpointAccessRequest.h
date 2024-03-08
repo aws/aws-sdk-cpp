@@ -93,6 +93,55 @@ namespace Model
 
 
     /**
+     * <p>The owner Amazon Web Services account for the Amazon Redshift Serverless
+     * workgroup.</p>
+     */
+    inline const Aws::String& GetOwnerAccount() const{ return m_ownerAccount; }
+
+    /**
+     * <p>The owner Amazon Web Services account for the Amazon Redshift Serverless
+     * workgroup.</p>
+     */
+    inline bool OwnerAccountHasBeenSet() const { return m_ownerAccountHasBeenSet; }
+
+    /**
+     * <p>The owner Amazon Web Services account for the Amazon Redshift Serverless
+     * workgroup.</p>
+     */
+    inline void SetOwnerAccount(const Aws::String& value) { m_ownerAccountHasBeenSet = true; m_ownerAccount = value; }
+
+    /**
+     * <p>The owner Amazon Web Services account for the Amazon Redshift Serverless
+     * workgroup.</p>
+     */
+    inline void SetOwnerAccount(Aws::String&& value) { m_ownerAccountHasBeenSet = true; m_ownerAccount = std::move(value); }
+
+    /**
+     * <p>The owner Amazon Web Services account for the Amazon Redshift Serverless
+     * workgroup.</p>
+     */
+    inline void SetOwnerAccount(const char* value) { m_ownerAccountHasBeenSet = true; m_ownerAccount.assign(value); }
+
+    /**
+     * <p>The owner Amazon Web Services account for the Amazon Redshift Serverless
+     * workgroup.</p>
+     */
+    inline CreateEndpointAccessRequest& WithOwnerAccount(const Aws::String& value) { SetOwnerAccount(value); return *this;}
+
+    /**
+     * <p>The owner Amazon Web Services account for the Amazon Redshift Serverless
+     * workgroup.</p>
+     */
+    inline CreateEndpointAccessRequest& WithOwnerAccount(Aws::String&& value) { SetOwnerAccount(std::move(value)); return *this;}
+
+    /**
+     * <p>The owner Amazon Web Services account for the Amazon Redshift Serverless
+     * workgroup.</p>
+     */
+    inline CreateEndpointAccessRequest& WithOwnerAccount(const char* value) { SetOwnerAccount(value); return *this;}
+
+
+    /**
      * <p>The unique identifers of subnets from which Amazon Redshift Serverless
      * chooses one to deploy a VPC endpoint.</p>
      */
@@ -255,6 +304,9 @@ namespace Model
 
     Aws::String m_endpointName;
     bool m_endpointNameHasBeenSet = false;
+
+    Aws::String m_ownerAccount;
+    bool m_ownerAccountHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subnetIds;
     bool m_subnetIdsHasBeenSet = false;

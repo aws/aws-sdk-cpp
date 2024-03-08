@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case GroupFilterOperator::NOT_SET:
+            return {};
           case GroupFilterOperator::StartsWith:
             return "StartsWith";
           default:

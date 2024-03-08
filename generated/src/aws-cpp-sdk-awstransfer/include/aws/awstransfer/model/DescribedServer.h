@@ -15,6 +15,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/awstransfer/model/State.h>
 #include <aws/awstransfer/model/WorkflowDetails.h>
+#include <aws/awstransfer/model/S3StorageOptions.h>
 #include <aws/awstransfer/model/Protocol.h>
 #include <aws/awstransfer/model/Tag.h>
 #include <utility>
@@ -1513,6 +1514,149 @@ namespace Model
      */
     inline DescribedServer& AddStructuredLogDestinations(const char* value) { m_structuredLogDestinationsHasBeenSet = true; m_structuredLogDestinations.push_back(value); return *this; }
 
+
+    /**
+     * <p>Specifies whether or not performance for your Amazon S3 directories is
+     * optimized. This is disabled by default.</p> <p>By default, home directory
+     * mappings have a <code>TYPE</code> of <code>DIRECTORY</code>. If you enable this
+     * option, you would then need to explicitly set the
+     * <code>HomeDirectoryMapEntry</code> <code>Type</code> to <code>FILE</code> if you
+     * want a mapping to have a file target.</p>
+     */
+    inline const S3StorageOptions& GetS3StorageOptions() const{ return m_s3StorageOptions; }
+
+    /**
+     * <p>Specifies whether or not performance for your Amazon S3 directories is
+     * optimized. This is disabled by default.</p> <p>By default, home directory
+     * mappings have a <code>TYPE</code> of <code>DIRECTORY</code>. If you enable this
+     * option, you would then need to explicitly set the
+     * <code>HomeDirectoryMapEntry</code> <code>Type</code> to <code>FILE</code> if you
+     * want a mapping to have a file target.</p>
+     */
+    inline bool S3StorageOptionsHasBeenSet() const { return m_s3StorageOptionsHasBeenSet; }
+
+    /**
+     * <p>Specifies whether or not performance for your Amazon S3 directories is
+     * optimized. This is disabled by default.</p> <p>By default, home directory
+     * mappings have a <code>TYPE</code> of <code>DIRECTORY</code>. If you enable this
+     * option, you would then need to explicitly set the
+     * <code>HomeDirectoryMapEntry</code> <code>Type</code> to <code>FILE</code> if you
+     * want a mapping to have a file target.</p>
+     */
+    inline void SetS3StorageOptions(const S3StorageOptions& value) { m_s3StorageOptionsHasBeenSet = true; m_s3StorageOptions = value; }
+
+    /**
+     * <p>Specifies whether or not performance for your Amazon S3 directories is
+     * optimized. This is disabled by default.</p> <p>By default, home directory
+     * mappings have a <code>TYPE</code> of <code>DIRECTORY</code>. If you enable this
+     * option, you would then need to explicitly set the
+     * <code>HomeDirectoryMapEntry</code> <code>Type</code> to <code>FILE</code> if you
+     * want a mapping to have a file target.</p>
+     */
+    inline void SetS3StorageOptions(S3StorageOptions&& value) { m_s3StorageOptionsHasBeenSet = true; m_s3StorageOptions = std::move(value); }
+
+    /**
+     * <p>Specifies whether or not performance for your Amazon S3 directories is
+     * optimized. This is disabled by default.</p> <p>By default, home directory
+     * mappings have a <code>TYPE</code> of <code>DIRECTORY</code>. If you enable this
+     * option, you would then need to explicitly set the
+     * <code>HomeDirectoryMapEntry</code> <code>Type</code> to <code>FILE</code> if you
+     * want a mapping to have a file target.</p>
+     */
+    inline DescribedServer& WithS3StorageOptions(const S3StorageOptions& value) { SetS3StorageOptions(value); return *this;}
+
+    /**
+     * <p>Specifies whether or not performance for your Amazon S3 directories is
+     * optimized. This is disabled by default.</p> <p>By default, home directory
+     * mappings have a <code>TYPE</code> of <code>DIRECTORY</code>. If you enable this
+     * option, you would then need to explicitly set the
+     * <code>HomeDirectoryMapEntry</code> <code>Type</code> to <code>FILE</code> if you
+     * want a mapping to have a file target.</p>
+     */
+    inline DescribedServer& WithS3StorageOptions(S3StorageOptions&& value) { SetS3StorageOptions(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The list of egress IP addresses of this server. These IP addresses are only
+     * relevant for servers that use the AS2 protocol. They are used for sending
+     * asynchronous MDNs.</p> <p>These IP addresses are assigned automatically when you
+     * create an AS2 server. Additionally, if you update an existing server and add the
+     * AS2 protocol, static IP addresses are assigned as well.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetAs2ServiceManagedEgressIpAddresses() const{ return m_as2ServiceManagedEgressIpAddresses; }
+
+    /**
+     * <p>The list of egress IP addresses of this server. These IP addresses are only
+     * relevant for servers that use the AS2 protocol. They are used for sending
+     * asynchronous MDNs.</p> <p>These IP addresses are assigned automatically when you
+     * create an AS2 server. Additionally, if you update an existing server and add the
+     * AS2 protocol, static IP addresses are assigned as well.</p>
+     */
+    inline bool As2ServiceManagedEgressIpAddressesHasBeenSet() const { return m_as2ServiceManagedEgressIpAddressesHasBeenSet; }
+
+    /**
+     * <p>The list of egress IP addresses of this server. These IP addresses are only
+     * relevant for servers that use the AS2 protocol. They are used for sending
+     * asynchronous MDNs.</p> <p>These IP addresses are assigned automatically when you
+     * create an AS2 server. Additionally, if you update an existing server and add the
+     * AS2 protocol, static IP addresses are assigned as well.</p>
+     */
+    inline void SetAs2ServiceManagedEgressIpAddresses(const Aws::Vector<Aws::String>& value) { m_as2ServiceManagedEgressIpAddressesHasBeenSet = true; m_as2ServiceManagedEgressIpAddresses = value; }
+
+    /**
+     * <p>The list of egress IP addresses of this server. These IP addresses are only
+     * relevant for servers that use the AS2 protocol. They are used for sending
+     * asynchronous MDNs.</p> <p>These IP addresses are assigned automatically when you
+     * create an AS2 server. Additionally, if you update an existing server and add the
+     * AS2 protocol, static IP addresses are assigned as well.</p>
+     */
+    inline void SetAs2ServiceManagedEgressIpAddresses(Aws::Vector<Aws::String>&& value) { m_as2ServiceManagedEgressIpAddressesHasBeenSet = true; m_as2ServiceManagedEgressIpAddresses = std::move(value); }
+
+    /**
+     * <p>The list of egress IP addresses of this server. These IP addresses are only
+     * relevant for servers that use the AS2 protocol. They are used for sending
+     * asynchronous MDNs.</p> <p>These IP addresses are assigned automatically when you
+     * create an AS2 server. Additionally, if you update an existing server and add the
+     * AS2 protocol, static IP addresses are assigned as well.</p>
+     */
+    inline DescribedServer& WithAs2ServiceManagedEgressIpAddresses(const Aws::Vector<Aws::String>& value) { SetAs2ServiceManagedEgressIpAddresses(value); return *this;}
+
+    /**
+     * <p>The list of egress IP addresses of this server. These IP addresses are only
+     * relevant for servers that use the AS2 protocol. They are used for sending
+     * asynchronous MDNs.</p> <p>These IP addresses are assigned automatically when you
+     * create an AS2 server. Additionally, if you update an existing server and add the
+     * AS2 protocol, static IP addresses are assigned as well.</p>
+     */
+    inline DescribedServer& WithAs2ServiceManagedEgressIpAddresses(Aws::Vector<Aws::String>&& value) { SetAs2ServiceManagedEgressIpAddresses(std::move(value)); return *this;}
+
+    /**
+     * <p>The list of egress IP addresses of this server. These IP addresses are only
+     * relevant for servers that use the AS2 protocol. They are used for sending
+     * asynchronous MDNs.</p> <p>These IP addresses are assigned automatically when you
+     * create an AS2 server. Additionally, if you update an existing server and add the
+     * AS2 protocol, static IP addresses are assigned as well.</p>
+     */
+    inline DescribedServer& AddAs2ServiceManagedEgressIpAddresses(const Aws::String& value) { m_as2ServiceManagedEgressIpAddressesHasBeenSet = true; m_as2ServiceManagedEgressIpAddresses.push_back(value); return *this; }
+
+    /**
+     * <p>The list of egress IP addresses of this server. These IP addresses are only
+     * relevant for servers that use the AS2 protocol. They are used for sending
+     * asynchronous MDNs.</p> <p>These IP addresses are assigned automatically when you
+     * create an AS2 server. Additionally, if you update an existing server and add the
+     * AS2 protocol, static IP addresses are assigned as well.</p>
+     */
+    inline DescribedServer& AddAs2ServiceManagedEgressIpAddresses(Aws::String&& value) { m_as2ServiceManagedEgressIpAddressesHasBeenSet = true; m_as2ServiceManagedEgressIpAddresses.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The list of egress IP addresses of this server. These IP addresses are only
+     * relevant for servers that use the AS2 protocol. They are used for sending
+     * asynchronous MDNs.</p> <p>These IP addresses are assigned automatically when you
+     * create an AS2 server. Additionally, if you update an existing server and add the
+     * AS2 protocol, static IP addresses are assigned as well.</p>
+     */
+    inline DescribedServer& AddAs2ServiceManagedEgressIpAddresses(const char* value) { m_as2ServiceManagedEgressIpAddressesHasBeenSet = true; m_as2ServiceManagedEgressIpAddresses.push_back(value); return *this; }
+
   private:
 
     Aws::String m_arn;
@@ -1574,6 +1718,12 @@ namespace Model
 
     Aws::Vector<Aws::String> m_structuredLogDestinations;
     bool m_structuredLogDestinationsHasBeenSet = false;
+
+    S3StorageOptions m_s3StorageOptions;
+    bool m_s3StorageOptionsHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_as2ServiceManagedEgressIpAddresses;
+    bool m_as2ServiceManagedEgressIpAddressesHasBeenSet = false;
   };
 
 } // namespace Model

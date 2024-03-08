@@ -8,6 +8,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/kafkaconnect/model/WorkerConfigurationRevisionSummary.h>
+#include <aws/kafkaconnect/model/WorkerConfigurationState.h>
 #include <utility>
 
 namespace Aws
@@ -223,6 +224,37 @@ namespace Model
      */
     inline WorkerConfigurationSummary& WithWorkerConfigurationArn(const char* value) { SetWorkerConfigurationArn(value); return *this;}
 
+
+    /**
+     * <p>The state of the worker configuration.</p>
+     */
+    inline const WorkerConfigurationState& GetWorkerConfigurationState() const{ return m_workerConfigurationState; }
+
+    /**
+     * <p>The state of the worker configuration.</p>
+     */
+    inline bool WorkerConfigurationStateHasBeenSet() const { return m_workerConfigurationStateHasBeenSet; }
+
+    /**
+     * <p>The state of the worker configuration.</p>
+     */
+    inline void SetWorkerConfigurationState(const WorkerConfigurationState& value) { m_workerConfigurationStateHasBeenSet = true; m_workerConfigurationState = value; }
+
+    /**
+     * <p>The state of the worker configuration.</p>
+     */
+    inline void SetWorkerConfigurationState(WorkerConfigurationState&& value) { m_workerConfigurationStateHasBeenSet = true; m_workerConfigurationState = std::move(value); }
+
+    /**
+     * <p>The state of the worker configuration.</p>
+     */
+    inline WorkerConfigurationSummary& WithWorkerConfigurationState(const WorkerConfigurationState& value) { SetWorkerConfigurationState(value); return *this;}
+
+    /**
+     * <p>The state of the worker configuration.</p>
+     */
+    inline WorkerConfigurationSummary& WithWorkerConfigurationState(WorkerConfigurationState&& value) { SetWorkerConfigurationState(std::move(value)); return *this;}
+
   private:
 
     Aws::Utils::DateTime m_creationTime;
@@ -239,6 +271,9 @@ namespace Model
 
     Aws::String m_workerConfigurationArn;
     bool m_workerConfigurationArnHasBeenSet = false;
+
+    WorkerConfigurationState m_workerConfigurationState;
+    bool m_workerConfigurationStateHasBeenSet = false;
   };
 
 } // namespace Model

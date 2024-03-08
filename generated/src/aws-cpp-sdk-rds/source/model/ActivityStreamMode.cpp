@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ActivityStreamMode::NOT_SET:
+            return {};
           case ActivityStreamMode::sync:
             return "sync";
           case ActivityStreamMode::async:

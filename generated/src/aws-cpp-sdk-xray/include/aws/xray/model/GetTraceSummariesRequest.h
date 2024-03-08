@@ -98,38 +98,38 @@ namespace Model
 
 
     /**
-     * <p>A parameter to indicate whether to query trace summaries by TraceId or Event
-     * time.</p>
+     * <p>A parameter to indicate whether to query trace summaries by TraceId, Event
+     * (trace update time), or Service (segment end time).</p>
      */
     inline const TimeRangeType& GetTimeRangeType() const{ return m_timeRangeType; }
 
     /**
-     * <p>A parameter to indicate whether to query trace summaries by TraceId or Event
-     * time.</p>
+     * <p>A parameter to indicate whether to query trace summaries by TraceId, Event
+     * (trace update time), or Service (segment end time).</p>
      */
     inline bool TimeRangeTypeHasBeenSet() const { return m_timeRangeTypeHasBeenSet; }
 
     /**
-     * <p>A parameter to indicate whether to query trace summaries by TraceId or Event
-     * time.</p>
+     * <p>A parameter to indicate whether to query trace summaries by TraceId, Event
+     * (trace update time), or Service (segment end time).</p>
      */
     inline void SetTimeRangeType(const TimeRangeType& value) { m_timeRangeTypeHasBeenSet = true; m_timeRangeType = value; }
 
     /**
-     * <p>A parameter to indicate whether to query trace summaries by TraceId or Event
-     * time.</p>
+     * <p>A parameter to indicate whether to query trace summaries by TraceId, Event
+     * (trace update time), or Service (segment end time).</p>
      */
     inline void SetTimeRangeType(TimeRangeType&& value) { m_timeRangeTypeHasBeenSet = true; m_timeRangeType = std::move(value); }
 
     /**
-     * <p>A parameter to indicate whether to query trace summaries by TraceId or Event
-     * time.</p>
+     * <p>A parameter to indicate whether to query trace summaries by TraceId, Event
+     * (trace update time), or Service (segment end time).</p>
      */
     inline GetTraceSummariesRequest& WithTimeRangeType(const TimeRangeType& value) { SetTimeRangeType(value); return *this;}
 
     /**
-     * <p>A parameter to indicate whether to query trace summaries by TraceId or Event
-     * time.</p>
+     * <p>A parameter to indicate whether to query trace summaries by TraceId, Event
+     * (trace update time), or Service (segment end time).</p>
      */
     inline GetTraceSummariesRequest& WithTimeRangeType(TimeRangeType&& value) { SetTimeRangeType(std::move(value)); return *this;}
 

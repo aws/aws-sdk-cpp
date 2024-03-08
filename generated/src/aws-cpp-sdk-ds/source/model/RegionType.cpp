@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RegionType::NOT_SET:
+            return {};
           case RegionType::Primary:
             return "Primary";
           case RegionType::Additional:

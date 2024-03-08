@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Mpeg2CodecLevel::NOT_SET:
+            return {};
           case Mpeg2CodecLevel::AUTO:
             return "AUTO";
           case Mpeg2CodecLevel::LOW:

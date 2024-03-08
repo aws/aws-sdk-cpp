@@ -48,8 +48,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* PIClient::SERVICE_NAME = "pi";
-const char* PIClient::ALLOCATION_TAG = "PIClient";
+namespace Aws
+{
+  namespace PI
+  {
+    const char SERVICE_NAME[] = "pi";
+    const char ALLOCATION_TAG[] = "PIClient";
+  }
+}
+const char* PIClient::GetServiceName() {return SERVICE_NAME;}
+const char* PIClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 PIClient::PIClient(const PI::PIClientConfiguration& clientConfiguration,
                    std::shared_ptr<PIEndpointProviderBase> endpointProvider) :
@@ -61,7 +69,7 @@ PIClient::PIClient(const PI::PIClientConfiguration& clientConfiguration,
             Aws::MakeShared<PIErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<PIEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -77,7 +85,7 @@ PIClient::PIClient(const AWSCredentials& credentials,
             Aws::MakeShared<PIErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<PIEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -93,7 +101,7 @@ PIClient::PIClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsPro
             Aws::MakeShared<PIErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<PIEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

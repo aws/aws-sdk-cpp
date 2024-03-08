@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CategoricalAggregationFunction::NOT_SET:
+            return {};
           case CategoricalAggregationFunction::COUNT:
             return "COUNT";
           case CategoricalAggregationFunction::DISTINCT_COUNT:

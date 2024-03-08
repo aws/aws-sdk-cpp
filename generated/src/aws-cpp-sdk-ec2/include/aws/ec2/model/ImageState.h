@@ -22,7 +22,8 @@ namespace Model
     deregistered,
     transient,
     failed,
-    error
+    error,
+    disabled
   };
 
 namespace ImageStateMapper

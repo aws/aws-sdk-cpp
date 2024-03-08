@@ -337,6 +337,63 @@ namespace Model
      */
     inline DecoderManifestSummary& WithLastModificationTime(Aws::Utils::DateTime&& value) { SetLastModificationTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The detailed message for the decoder manifest. When a decoder manifest is in
+     * an <code>INVALID</code> status, the message contains detailed reason and help
+     * information.</p>
+     */
+    inline const Aws::String& GetMessage() const{ return m_message; }
+
+    /**
+     * <p>The detailed message for the decoder manifest. When a decoder manifest is in
+     * an <code>INVALID</code> status, the message contains detailed reason and help
+     * information.</p>
+     */
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
+
+    /**
+     * <p>The detailed message for the decoder manifest. When a decoder manifest is in
+     * an <code>INVALID</code> status, the message contains detailed reason and help
+     * information.</p>
+     */
+    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
+
+    /**
+     * <p>The detailed message for the decoder manifest. When a decoder manifest is in
+     * an <code>INVALID</code> status, the message contains detailed reason and help
+     * information.</p>
+     */
+    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
+
+    /**
+     * <p>The detailed message for the decoder manifest. When a decoder manifest is in
+     * an <code>INVALID</code> status, the message contains detailed reason and help
+     * information.</p>
+     */
+    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
+
+    /**
+     * <p>The detailed message for the decoder manifest. When a decoder manifest is in
+     * an <code>INVALID</code> status, the message contains detailed reason and help
+     * information.</p>
+     */
+    inline DecoderManifestSummary& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
+
+    /**
+     * <p>The detailed message for the decoder manifest. When a decoder manifest is in
+     * an <code>INVALID</code> status, the message contains detailed reason and help
+     * information.</p>
+     */
+    inline DecoderManifestSummary& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
+
+    /**
+     * <p>The detailed message for the decoder manifest. When a decoder manifest is in
+     * an <code>INVALID</code> status, the message contains detailed reason and help
+     * information.</p>
+     */
+    inline DecoderManifestSummary& WithMessage(const char* value) { SetMessage(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -359,6 +416,9 @@ namespace Model
 
     Aws::Utils::DateTime m_lastModificationTime;
     bool m_lastModificationTimeHasBeenSet = false;
+
+    Aws::String m_message;
+    bool m_messageHasBeenSet = false;
   };
 
 } // namespace Model

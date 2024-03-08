@@ -116,6 +116,7 @@ namespace Aws
             {
                 case HttpResponseCode::INTERNAL_SERVER_ERROR:
                 case HttpResponseCode::SERVICE_UNAVAILABLE:
+                case HttpResponseCode::BAD_GATEWAY:
                 case HttpResponseCode::TOO_MANY_REQUESTS:
                 case HttpResponseCode::BANDWIDTH_LIMIT_EXCEEDED:
                 case HttpResponseCode::REQUEST_TIMEOUT:

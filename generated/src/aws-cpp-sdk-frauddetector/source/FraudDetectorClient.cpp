@@ -108,8 +108,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* FraudDetectorClient::SERVICE_NAME = "frauddetector";
-const char* FraudDetectorClient::ALLOCATION_TAG = "FraudDetectorClient";
+namespace Aws
+{
+  namespace FraudDetector
+  {
+    const char SERVICE_NAME[] = "frauddetector";
+    const char ALLOCATION_TAG[] = "FraudDetectorClient";
+  }
+}
+const char* FraudDetectorClient::GetServiceName() {return SERVICE_NAME;}
+const char* FraudDetectorClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 FraudDetectorClient::FraudDetectorClient(const FraudDetector::FraudDetectorClientConfiguration& clientConfiguration,
                                          std::shared_ptr<FraudDetectorEndpointProviderBase> endpointProvider) :
@@ -121,7 +129,7 @@ FraudDetectorClient::FraudDetectorClient(const FraudDetector::FraudDetectorClien
             Aws::MakeShared<FraudDetectorErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<FraudDetectorEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -137,7 +145,7 @@ FraudDetectorClient::FraudDetectorClient(const AWSCredentials& credentials,
             Aws::MakeShared<FraudDetectorErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<FraudDetectorEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -153,7 +161,7 @@ FraudDetectorClient::FraudDetectorClient(const std::shared_ptr<AWSCredentialsPro
             Aws::MakeShared<FraudDetectorErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<FraudDetectorEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

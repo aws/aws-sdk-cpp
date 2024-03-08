@@ -131,101 +131,108 @@ namespace Model
 
 
     /**
-     * <p>Represents the current state of the dialog between the user and the bot.</p>
-     * <p>Use this to determine the progress of the conversation and what the next
-     * action may be.</p>
+     * <p>A base-64-encoded gzipped field that represents the current state of the
+     * dialog between the user and the bot. Use this to determine the progress of the
+     * conversation and what the next action may be.</p>
      */
     inline const Aws::String& GetSessionState() const{ return m_sessionState; }
 
     /**
-     * <p>Represents the current state of the dialog between the user and the bot.</p>
-     * <p>Use this to determine the progress of the conversation and what the next
-     * action may be.</p>
+     * <p>A base-64-encoded gzipped field that represents the current state of the
+     * dialog between the user and the bot. Use this to determine the progress of the
+     * conversation and what the next action may be.</p>
      */
     inline void SetSessionState(const Aws::String& value) { m_sessionState = value; }
 
     /**
-     * <p>Represents the current state of the dialog between the user and the bot.</p>
-     * <p>Use this to determine the progress of the conversation and what the next
-     * action may be.</p>
+     * <p>A base-64-encoded gzipped field that represents the current state of the
+     * dialog between the user and the bot. Use this to determine the progress of the
+     * conversation and what the next action may be.</p>
      */
     inline void SetSessionState(Aws::String&& value) { m_sessionState = std::move(value); }
 
     /**
-     * <p>Represents the current state of the dialog between the user and the bot.</p>
-     * <p>Use this to determine the progress of the conversation and what the next
-     * action may be.</p>
+     * <p>A base-64-encoded gzipped field that represents the current state of the
+     * dialog between the user and the bot. Use this to determine the progress of the
+     * conversation and what the next action may be.</p>
      */
     inline void SetSessionState(const char* value) { m_sessionState.assign(value); }
 
     /**
-     * <p>Represents the current state of the dialog between the user and the bot.</p>
-     * <p>Use this to determine the progress of the conversation and what the next
-     * action may be.</p>
+     * <p>A base-64-encoded gzipped field that represents the current state of the
+     * dialog between the user and the bot. Use this to determine the progress of the
+     * conversation and what the next action may be.</p>
      */
     inline PutSessionResult& WithSessionState(const Aws::String& value) { SetSessionState(value); return *this;}
 
     /**
-     * <p>Represents the current state of the dialog between the user and the bot.</p>
-     * <p>Use this to determine the progress of the conversation and what the next
-     * action may be.</p>
+     * <p>A base-64-encoded gzipped field that represents the current state of the
+     * dialog between the user and the bot. Use this to determine the progress of the
+     * conversation and what the next action may be.</p>
      */
     inline PutSessionResult& WithSessionState(Aws::String&& value) { SetSessionState(std::move(value)); return *this;}
 
     /**
-     * <p>Represents the current state of the dialog between the user and the bot.</p>
-     * <p>Use this to determine the progress of the conversation and what the next
-     * action may be.</p>
+     * <p>A base-64-encoded gzipped field that represents the current state of the
+     * dialog between the user and the bot. Use this to determine the progress of the
+     * conversation and what the next action may be.</p>
      */
     inline PutSessionResult& WithSessionState(const char* value) { SetSessionState(value); return *this;}
 
 
     /**
-     * <p>Request-specific information passed between the client application and Amazon
-     * Lex V2. These are the same as the <code>requestAttribute</code> parameter in the
-     * call to the <code>PutSession</code> operation.</p>
+     * <p>A base-64-encoded gzipped field that provides request-specific information
+     * passed between the client application and Amazon Lex V2. These are the same as
+     * the <code>requestAttribute</code> parameter in the call to the
+     * <code>PutSession</code> operation.</p>
      */
     inline const Aws::String& GetRequestAttributes() const{ return m_requestAttributes; }
 
     /**
-     * <p>Request-specific information passed between the client application and Amazon
-     * Lex V2. These are the same as the <code>requestAttribute</code> parameter in the
-     * call to the <code>PutSession</code> operation.</p>
+     * <p>A base-64-encoded gzipped field that provides request-specific information
+     * passed between the client application and Amazon Lex V2. These are the same as
+     * the <code>requestAttribute</code> parameter in the call to the
+     * <code>PutSession</code> operation.</p>
      */
     inline void SetRequestAttributes(const Aws::String& value) { m_requestAttributes = value; }
 
     /**
-     * <p>Request-specific information passed between the client application and Amazon
-     * Lex V2. These are the same as the <code>requestAttribute</code> parameter in the
-     * call to the <code>PutSession</code> operation.</p>
+     * <p>A base-64-encoded gzipped field that provides request-specific information
+     * passed between the client application and Amazon Lex V2. These are the same as
+     * the <code>requestAttribute</code> parameter in the call to the
+     * <code>PutSession</code> operation.</p>
      */
     inline void SetRequestAttributes(Aws::String&& value) { m_requestAttributes = std::move(value); }
 
     /**
-     * <p>Request-specific information passed between the client application and Amazon
-     * Lex V2. These are the same as the <code>requestAttribute</code> parameter in the
-     * call to the <code>PutSession</code> operation.</p>
+     * <p>A base-64-encoded gzipped field that provides request-specific information
+     * passed between the client application and Amazon Lex V2. These are the same as
+     * the <code>requestAttribute</code> parameter in the call to the
+     * <code>PutSession</code> operation.</p>
      */
     inline void SetRequestAttributes(const char* value) { m_requestAttributes.assign(value); }
 
     /**
-     * <p>Request-specific information passed between the client application and Amazon
-     * Lex V2. These are the same as the <code>requestAttribute</code> parameter in the
-     * call to the <code>PutSession</code> operation.</p>
+     * <p>A base-64-encoded gzipped field that provides request-specific information
+     * passed between the client application and Amazon Lex V2. These are the same as
+     * the <code>requestAttribute</code> parameter in the call to the
+     * <code>PutSession</code> operation.</p>
      */
     inline PutSessionResult& WithRequestAttributes(const Aws::String& value) { SetRequestAttributes(value); return *this;}
 
     /**
-     * <p>Request-specific information passed between the client application and Amazon
-     * Lex V2. These are the same as the <code>requestAttribute</code> parameter in the
-     * call to the <code>PutSession</code> operation.</p>
+     * <p>A base-64-encoded gzipped field that provides request-specific information
+     * passed between the client application and Amazon Lex V2. These are the same as
+     * the <code>requestAttribute</code> parameter in the call to the
+     * <code>PutSession</code> operation.</p>
      */
     inline PutSessionResult& WithRequestAttributes(Aws::String&& value) { SetRequestAttributes(std::move(value)); return *this;}
 
     /**
-     * <p>Request-specific information passed between the client application and Amazon
-     * Lex V2. These are the same as the <code>requestAttribute</code> parameter in the
-     * call to the <code>PutSession</code> operation.</p>
+     * <p>A base-64-encoded gzipped field that provides request-specific information
+     * passed between the client application and Amazon Lex V2. These are the same as
+     * the <code>requestAttribute</code> parameter in the call to the
+     * <code>PutSession</code> operation.</p>
      */
     inline PutSessionResult& WithRequestAttributes(const char* value) { SetRequestAttributes(value); return *this;}
 

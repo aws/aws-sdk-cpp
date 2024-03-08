@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CacheClusterSize::NOT_SET:
+            return {};
           case CacheClusterSize::_0_5:
             return "0.5";
           case CacheClusterSize::_1_6:

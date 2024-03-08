@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ScheduledBy::NOT_SET:
+            return {};
           case ScheduledBy::CUSTOMER:
             return "CUSTOMER";
           case ScheduledBy::SYSTEM:

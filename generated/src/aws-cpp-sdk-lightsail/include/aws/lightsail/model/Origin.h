@@ -86,32 +86,32 @@ namespace Model
 
 
     /**
-     * <p>The resource type of the origin resource (e.g., <i>Instance</i>).</p>
+     * <p>The resource type of the origin resource (<i>Instance</i>).</p>
      */
     inline const ResourceType& GetResourceType() const{ return m_resourceType; }
 
     /**
-     * <p>The resource type of the origin resource (e.g., <i>Instance</i>).</p>
+     * <p>The resource type of the origin resource (<i>Instance</i>).</p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
-     * <p>The resource type of the origin resource (e.g., <i>Instance</i>).</p>
+     * <p>The resource type of the origin resource (<i>Instance</i>).</p>
      */
     inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
-     * <p>The resource type of the origin resource (e.g., <i>Instance</i>).</p>
+     * <p>The resource type of the origin resource (<i>Instance</i>).</p>
      */
     inline void SetResourceType(ResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
-     * <p>The resource type of the origin resource (e.g., <i>Instance</i>).</p>
+     * <p>The resource type of the origin resource (<i>Instance</i>).</p>
      */
     inline Origin& WithResourceType(const ResourceType& value) { SetResourceType(value); return *this;}
 
     /**
-     * <p>The resource type of the origin resource (e.g., <i>Instance</i>).</p>
+     * <p>The resource type of the origin resource (<i>Instance</i>).</p>
      */
     inline Origin& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
 

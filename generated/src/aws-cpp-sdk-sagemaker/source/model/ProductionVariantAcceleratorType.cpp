@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ProductionVariantAcceleratorType::NOT_SET:
+            return {};
           case ProductionVariantAcceleratorType::ml_eia1_medium:
             return "ml.eia1.medium";
           case ProductionVariantAcceleratorType::ml_eia1_large:

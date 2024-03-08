@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ValidationExceptionReason::NOT_SET:
+            return {};
           case ValidationExceptionReason::FIELD_VALIDATION_FAILED:
             return "FIELD_VALIDATION_FAILED";
           case ValidationExceptionReason::INVALID_CONFIGURATION:

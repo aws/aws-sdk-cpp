@@ -428,25 +428,25 @@ namespace Model
 
 
     /**
-     * <p>A Boolean value indicating if the subscription is enabled. True indicates the
+     * <p>Specifies whether the subscription is enabled. True indicates the
      * subscription is enabled.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
 
     /**
-     * <p>A Boolean value indicating if the subscription is enabled. True indicates the
+     * <p>Specifies whether the subscription is enabled. True indicates the
      * subscription is enabled.</p>
      */
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
 
     /**
-     * <p>A Boolean value indicating if the subscription is enabled. True indicates the
+     * <p>Specifies whether the subscription is enabled. True indicates the
      * subscription is enabled.</p>
      */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
-     * <p>A Boolean value indicating if the subscription is enabled. True indicates the
+     * <p>Specifies whether the subscription is enabled. True indicates the
      * subscription is enabled.</p>
      */
     inline EventSubscription& WithEnabled(bool value) { SetEnabled(value); return *this;}

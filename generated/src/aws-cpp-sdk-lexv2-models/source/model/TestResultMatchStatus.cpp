@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TestResultMatchStatus::NOT_SET:
+            return {};
           case TestResultMatchStatus::Matched:
             return "Matched";
           case TestResultMatchStatus::Mismatched:

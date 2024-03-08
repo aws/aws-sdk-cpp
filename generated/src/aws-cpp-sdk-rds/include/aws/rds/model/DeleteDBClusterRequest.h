@@ -97,45 +97,45 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates whether to skip the creation of a final DB cluster
-     * snapshot before the DB cluster is deleted. If skip is specified, no DB cluster
-     * snapshot is created. If skip isn't specified, a DB cluster snapshot is created
-     * before the DB cluster is deleted. By default, skip isn't specified, and the DB
-     * cluster snapshot is created. By default, this parameter is disabled.</p> 
-     * <p>You must specify a <code>FinalDBSnapshotIdentifier</code> parameter if
+     * <p>Specifies whether to skip the creation of a final DB cluster snapshot before
+     * the DB cluster is deleted. If skip is specified, no DB cluster snapshot is
+     * created. If skip isn't specified, a DB cluster snapshot is created before the DB
+     * cluster is deleted. By default, skip isn't specified, and the DB cluster
+     * snapshot is created. By default, this parameter is disabled.</p>  <p>You
+     * must specify a <code>FinalDBSnapshotIdentifier</code> parameter if
      * <code>SkipFinalSnapshot</code> is disabled.</p> 
      */
     inline bool GetSkipFinalSnapshot() const{ return m_skipFinalSnapshot; }
 
     /**
-     * <p>A value that indicates whether to skip the creation of a final DB cluster
-     * snapshot before the DB cluster is deleted. If skip is specified, no DB cluster
-     * snapshot is created. If skip isn't specified, a DB cluster snapshot is created
-     * before the DB cluster is deleted. By default, skip isn't specified, and the DB
-     * cluster snapshot is created. By default, this parameter is disabled.</p> 
-     * <p>You must specify a <code>FinalDBSnapshotIdentifier</code> parameter if
+     * <p>Specifies whether to skip the creation of a final DB cluster snapshot before
+     * the DB cluster is deleted. If skip is specified, no DB cluster snapshot is
+     * created. If skip isn't specified, a DB cluster snapshot is created before the DB
+     * cluster is deleted. By default, skip isn't specified, and the DB cluster
+     * snapshot is created. By default, this parameter is disabled.</p>  <p>You
+     * must specify a <code>FinalDBSnapshotIdentifier</code> parameter if
      * <code>SkipFinalSnapshot</code> is disabled.</p> 
      */
     inline bool SkipFinalSnapshotHasBeenSet() const { return m_skipFinalSnapshotHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether to skip the creation of a final DB cluster
-     * snapshot before the DB cluster is deleted. If skip is specified, no DB cluster
-     * snapshot is created. If skip isn't specified, a DB cluster snapshot is created
-     * before the DB cluster is deleted. By default, skip isn't specified, and the DB
-     * cluster snapshot is created. By default, this parameter is disabled.</p> 
-     * <p>You must specify a <code>FinalDBSnapshotIdentifier</code> parameter if
+     * <p>Specifies whether to skip the creation of a final DB cluster snapshot before
+     * the DB cluster is deleted. If skip is specified, no DB cluster snapshot is
+     * created. If skip isn't specified, a DB cluster snapshot is created before the DB
+     * cluster is deleted. By default, skip isn't specified, and the DB cluster
+     * snapshot is created. By default, this parameter is disabled.</p>  <p>You
+     * must specify a <code>FinalDBSnapshotIdentifier</code> parameter if
      * <code>SkipFinalSnapshot</code> is disabled.</p> 
      */
     inline void SetSkipFinalSnapshot(bool value) { m_skipFinalSnapshotHasBeenSet = true; m_skipFinalSnapshot = value; }
 
     /**
-     * <p>A value that indicates whether to skip the creation of a final DB cluster
-     * snapshot before the DB cluster is deleted. If skip is specified, no DB cluster
-     * snapshot is created. If skip isn't specified, a DB cluster snapshot is created
-     * before the DB cluster is deleted. By default, skip isn't specified, and the DB
-     * cluster snapshot is created. By default, this parameter is disabled.</p> 
-     * <p>You must specify a <code>FinalDBSnapshotIdentifier</code> parameter if
+     * <p>Specifies whether to skip the creation of a final DB cluster snapshot before
+     * the DB cluster is deleted. If skip is specified, no DB cluster snapshot is
+     * created. If skip isn't specified, a DB cluster snapshot is created before the DB
+     * cluster is deleted. By default, skip isn't specified, and the DB cluster
+     * snapshot is created. By default, this parameter is disabled.</p>  <p>You
+     * must specify a <code>FinalDBSnapshotIdentifier</code> parameter if
      * <code>SkipFinalSnapshot</code> is disabled.</p> 
      */
     inline DeleteDBClusterRequest& WithSkipFinalSnapshot(bool value) { SetSkipFinalSnapshot(value); return *this;}
@@ -231,30 +231,30 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates whether to remove automated backups immediately after
-     * the DB cluster is deleted. This parameter isn't case-sensitive. The default is
-     * to remove automated backups immediately after the DB cluster is deleted.</p>
+     * <p>Specifies whether to remove automated backups immediately after the DB
+     * cluster is deleted. This parameter isn't case-sensitive. The default is to
+     * remove automated backups immediately after the DB cluster is deleted.</p>
      */
     inline bool GetDeleteAutomatedBackups() const{ return m_deleteAutomatedBackups; }
 
     /**
-     * <p>A value that indicates whether to remove automated backups immediately after
-     * the DB cluster is deleted. This parameter isn't case-sensitive. The default is
-     * to remove automated backups immediately after the DB cluster is deleted.</p>
+     * <p>Specifies whether to remove automated backups immediately after the DB
+     * cluster is deleted. This parameter isn't case-sensitive. The default is to
+     * remove automated backups immediately after the DB cluster is deleted.</p>
      */
     inline bool DeleteAutomatedBackupsHasBeenSet() const { return m_deleteAutomatedBackupsHasBeenSet; }
 
     /**
-     * <p>A value that indicates whether to remove automated backups immediately after
-     * the DB cluster is deleted. This parameter isn't case-sensitive. The default is
-     * to remove automated backups immediately after the DB cluster is deleted.</p>
+     * <p>Specifies whether to remove automated backups immediately after the DB
+     * cluster is deleted. This parameter isn't case-sensitive. The default is to
+     * remove automated backups immediately after the DB cluster is deleted.</p>
      */
     inline void SetDeleteAutomatedBackups(bool value) { m_deleteAutomatedBackupsHasBeenSet = true; m_deleteAutomatedBackups = value; }
 
     /**
-     * <p>A value that indicates whether to remove automated backups immediately after
-     * the DB cluster is deleted. This parameter isn't case-sensitive. The default is
-     * to remove automated backups immediately after the DB cluster is deleted.</p>
+     * <p>Specifies whether to remove automated backups immediately after the DB
+     * cluster is deleted. This parameter isn't case-sensitive. The default is to
+     * remove automated backups immediately after the DB cluster is deleted.</p>
      */
     inline DeleteDBClusterRequest& WithDeleteAutomatedBackups(bool value) { SetDeleteAutomatedBackups(value); return *this;}
 

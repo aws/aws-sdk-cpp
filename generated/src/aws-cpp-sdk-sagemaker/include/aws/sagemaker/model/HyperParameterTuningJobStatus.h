@@ -20,7 +20,9 @@ namespace Model
     InProgress,
     Failed,
     Stopped,
-    Stopping
+    Stopping,
+    Deleting,
+    DeleteFailed
   };
 
 namespace HyperParameterTuningJobStatusMapper

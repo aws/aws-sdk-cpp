@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ServiceType::NOT_SET:
+            return {};
           case ServiceType::DATA:
             return "DATA";
           case ServiceType::CREDENTIAL_PROVIDER:

@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DiscoveryResourceFilter::NOT_SET:
+            return {};
           case DiscoveryResourceFilter::SVM:
             return "SVM";
           default:

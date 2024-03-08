@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SheetContentType::NOT_SET:
+            return {};
           case SheetContentType::PAGINATED:
             return "PAGINATED";
           case SheetContentType::INTERACTIVE:

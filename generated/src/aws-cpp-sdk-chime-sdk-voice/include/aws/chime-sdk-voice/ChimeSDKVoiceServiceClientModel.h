@@ -160,8 +160,10 @@ namespace Aws
       class DeleteVoiceProfileDomainRequest;
       class DisassociatePhoneNumbersFromVoiceConnectorRequest;
       class DisassociatePhoneNumbersFromVoiceConnectorGroupRequest;
+      class GetGlobalSettingsRequest;
       class GetPhoneNumberRequest;
       class GetPhoneNumberOrderRequest;
+      class GetPhoneNumberSettingsRequest;
       class GetProxySessionRequest;
       class GetSipMediaApplicationRequest;
       class GetSipMediaApplicationAlexaSkillConfigurationRequest;
@@ -180,6 +182,7 @@ namespace Aws
       class GetVoiceProfileRequest;
       class GetVoiceProfileDomainRequest;
       class GetVoiceToneAnalysisTaskRequest;
+      class ListAvailableVoiceConnectorRegionsRequest;
       class ListPhoneNumberOrdersRequest;
       class ListPhoneNumbersRequest;
       class ListProxySessionsRequest;
@@ -448,10 +451,10 @@ namespace Aws
     typedef std::function<void(const ChimeSDKVoiceClient*, const Model::DeleteVoiceProfileDomainRequest&, const Model::DeleteVoiceProfileDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVoiceProfileDomainResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKVoiceClient*, const Model::DisassociatePhoneNumbersFromVoiceConnectorRequest&, const Model::DisassociatePhoneNumbersFromVoiceConnectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociatePhoneNumbersFromVoiceConnectorResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKVoiceClient*, const Model::DisassociatePhoneNumbersFromVoiceConnectorGroupRequest&, const Model::DisassociatePhoneNumbersFromVoiceConnectorGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociatePhoneNumbersFromVoiceConnectorGroupResponseReceivedHandler;
-    typedef std::function<void(const ChimeSDKVoiceClient*, const Model::GetGlobalSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetGlobalSettingsResponseReceivedHandler;
+    typedef std::function<void(const ChimeSDKVoiceClient*, const Model::GetGlobalSettingsRequest&, const Model::GetGlobalSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetGlobalSettingsResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKVoiceClient*, const Model::GetPhoneNumberRequest&, const Model::GetPhoneNumberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPhoneNumberResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKVoiceClient*, const Model::GetPhoneNumberOrderRequest&, const Model::GetPhoneNumberOrderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPhoneNumberOrderResponseReceivedHandler;
-    typedef std::function<void(const ChimeSDKVoiceClient*, const Model::GetPhoneNumberSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPhoneNumberSettingsResponseReceivedHandler;
+    typedef std::function<void(const ChimeSDKVoiceClient*, const Model::GetPhoneNumberSettingsRequest&, const Model::GetPhoneNumberSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPhoneNumberSettingsResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKVoiceClient*, const Model::GetProxySessionRequest&, const Model::GetProxySessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetProxySessionResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKVoiceClient*, const Model::GetSipMediaApplicationRequest&, const Model::GetSipMediaApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSipMediaApplicationResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKVoiceClient*, const Model::GetSipMediaApplicationAlexaSkillConfigurationRequest&, const Model::GetSipMediaApplicationAlexaSkillConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSipMediaApplicationAlexaSkillConfigurationResponseReceivedHandler;
@@ -470,7 +473,7 @@ namespace Aws
     typedef std::function<void(const ChimeSDKVoiceClient*, const Model::GetVoiceProfileRequest&, const Model::GetVoiceProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetVoiceProfileResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKVoiceClient*, const Model::GetVoiceProfileDomainRequest&, const Model::GetVoiceProfileDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetVoiceProfileDomainResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKVoiceClient*, const Model::GetVoiceToneAnalysisTaskRequest&, const Model::GetVoiceToneAnalysisTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetVoiceToneAnalysisTaskResponseReceivedHandler;
-    typedef std::function<void(const ChimeSDKVoiceClient*, const Model::ListAvailableVoiceConnectorRegionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAvailableVoiceConnectorRegionsResponseReceivedHandler;
+    typedef std::function<void(const ChimeSDKVoiceClient*, const Model::ListAvailableVoiceConnectorRegionsRequest&, const Model::ListAvailableVoiceConnectorRegionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAvailableVoiceConnectorRegionsResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKVoiceClient*, const Model::ListPhoneNumberOrdersRequest&, const Model::ListPhoneNumberOrdersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPhoneNumberOrdersResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKVoiceClient*, const Model::ListPhoneNumbersRequest&, const Model::ListPhoneNumbersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPhoneNumbersResponseReceivedHandler;
     typedef std::function<void(const ChimeSDKVoiceClient*, const Model::ListProxySessionsRequest&, const Model::ListProxySessionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProxySessionsResponseReceivedHandler;

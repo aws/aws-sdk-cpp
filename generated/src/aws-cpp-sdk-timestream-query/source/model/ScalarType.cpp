@@ -94,6 +94,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ScalarType::NOT_SET:
+            return {};
           case ScalarType::VARCHAR:
             return "VARCHAR";
           case ScalarType::BOOLEAN:

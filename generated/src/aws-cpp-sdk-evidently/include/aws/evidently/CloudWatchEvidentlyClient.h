@@ -31,8 +31,8 @@ namespace CloudWatchEvidently
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef CloudWatchEvidentlyClientConfiguration ClientConfigurationType;
       typedef CloudWatchEvidentlyEndpointProvider EndpointProviderType;
@@ -42,14 +42,14 @@ namespace CloudWatchEvidently
         * is not specified, it will be initialized to default values.
         */
         CloudWatchEvidentlyClient(const Aws::CloudWatchEvidently::CloudWatchEvidentlyClientConfiguration& clientConfiguration = Aws::CloudWatchEvidently::CloudWatchEvidentlyClientConfiguration(),
-                                  std::shared_ptr<CloudWatchEvidentlyEndpointProviderBase> endpointProvider = Aws::MakeShared<CloudWatchEvidentlyEndpointProvider>(ALLOCATION_TAG));
+                                  std::shared_ptr<CloudWatchEvidentlyEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         CloudWatchEvidentlyClient(const Aws::Auth::AWSCredentials& credentials,
-                                  std::shared_ptr<CloudWatchEvidentlyEndpointProviderBase> endpointProvider = Aws::MakeShared<CloudWatchEvidentlyEndpointProvider>(ALLOCATION_TAG),
+                                  std::shared_ptr<CloudWatchEvidentlyEndpointProviderBase> endpointProvider = nullptr,
                                   const Aws::CloudWatchEvidently::CloudWatchEvidentlyClientConfiguration& clientConfiguration = Aws::CloudWatchEvidently::CloudWatchEvidentlyClientConfiguration());
 
        /**
@@ -57,7 +57,7 @@ namespace CloudWatchEvidently
         * the default http client factory will be used
         */
         CloudWatchEvidentlyClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                                  std::shared_ptr<CloudWatchEvidentlyEndpointProviderBase> endpointProvider = Aws::MakeShared<CloudWatchEvidentlyEndpointProvider>(ALLOCATION_TAG),
+                                  std::shared_ptr<CloudWatchEvidentlyEndpointProviderBase> endpointProvider = nullptr,
                                   const Aws::CloudWatchEvidently::CloudWatchEvidentlyClientConfiguration& clientConfiguration = Aws::CloudWatchEvidently::CloudWatchEvidentlyClientConfiguration());
 
 

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MaintenanceWindowTaskCutoffBehavior::NOT_SET:
+            return {};
           case MaintenanceWindowTaskCutoffBehavior::CONTINUE_TASK:
             return "CONTINUE_TASK";
           case MaintenanceWindowTaskCutoffBehavior::CANCEL_TASK:

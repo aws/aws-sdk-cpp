@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RecommendationType::NOT_SET:
+            return {};
           case RecommendationType::KNOWLEDGE_CONTENT:
             return "KNOWLEDGE_CONTENT";
           default:

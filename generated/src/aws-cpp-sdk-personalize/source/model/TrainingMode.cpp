@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TrainingMode::NOT_SET:
+            return {};
           case TrainingMode::FULL:
             return "FULL";
           case TrainingMode::UPDATE:

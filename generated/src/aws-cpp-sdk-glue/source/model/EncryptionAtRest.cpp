@@ -21,14 +21,16 @@ namespace Model
 EncryptionAtRest::EncryptionAtRest() : 
     m_catalogEncryptionMode(CatalogEncryptionMode::NOT_SET),
     m_catalogEncryptionModeHasBeenSet(false),
-    m_sseAwsKmsKeyIdHasBeenSet(false)
+    m_sseAwsKmsKeyIdHasBeenSet(false),
+    m_catalogEncryptionServiceRoleHasBeenSet(false)
 {
 }
 
 EncryptionAtRest::EncryptionAtRest(JsonView jsonValue) : 
     m_catalogEncryptionMode(CatalogEncryptionMode::NOT_SET),
     m_catalogEncryptionModeHasBeenSet(false),
-    m_sseAwsKmsKeyIdHasBeenSet(false)
+    m_sseAwsKmsKeyIdHasBeenSet(false),
+    m_catalogEncryptionServiceRoleHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -49,6 +51,13 @@ EncryptionAtRest& EncryptionAtRest::operator =(JsonView jsonValue)
     m_sseAwsKmsKeyIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CatalogEncryptionServiceRole"))
+  {
+    m_catalogEncryptionServiceRole = jsonValue.GetString("CatalogEncryptionServiceRole");
+
+    m_catalogEncryptionServiceRoleHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -64,6 +73,12 @@ JsonValue EncryptionAtRest::Jsonize() const
   if(m_sseAwsKmsKeyIdHasBeenSet)
   {
    payload.WithString("SseAwsKmsKeyId", m_sseAwsKmsKeyId);
+
+  }
+
+  if(m_catalogEncryptionServiceRoleHasBeenSet)
+  {
+   payload.WithString("CatalogEncryptionServiceRole", m_catalogEncryptionServiceRole);
 
   }
 

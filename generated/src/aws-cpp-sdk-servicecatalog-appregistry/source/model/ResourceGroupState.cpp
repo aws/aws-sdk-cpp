@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResourceGroupState::NOT_SET:
+            return {};
           case ResourceGroupState::CREATING:
             return "CREATING";
           case ResourceGroupState::CREATE_COMPLETE:

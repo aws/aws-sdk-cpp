@@ -40,9 +40,9 @@ namespace Model
      * want to retrieve. For example, to get the list of applicable Amazon EC2 price
      * lists, use <code>AmazonEC2</code>. For a full list of service codes containing
      * On-Demand and Reserved Instance (RI) pricing, use the <a
-     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_DescribeServices.html#awscostmanagement-pricing_DescribeServices-request-FormatVersion">
-     * <code>DescribeServices</code> </a> API.</p> <p>To retrieve the Compute Savings
-     * Plan price lists, use <code>ComputeSavingsPlans</code>. To retrieve Machine
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_DescribeServices.html#awscostmanagement-pricing_DescribeServices-request-FormatVersion">DescribeServices</a>
+     * API.</p> <p>To retrieve the Reserved Instance and Compute Savings Plan price
+     * lists, use <code>ComputeSavingsPlans</code>. </p> <p>To retrieve Machine
      * Learning Savings Plans price lists, use
      * <code>MachineLearningSavingsPlans</code>. </p>
      */
@@ -53,9 +53,9 @@ namespace Model
      * want to retrieve. For example, to get the list of applicable Amazon EC2 price
      * lists, use <code>AmazonEC2</code>. For a full list of service codes containing
      * On-Demand and Reserved Instance (RI) pricing, use the <a
-     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_DescribeServices.html#awscostmanagement-pricing_DescribeServices-request-FormatVersion">
-     * <code>DescribeServices</code> </a> API.</p> <p>To retrieve the Compute Savings
-     * Plan price lists, use <code>ComputeSavingsPlans</code>. To retrieve Machine
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_DescribeServices.html#awscostmanagement-pricing_DescribeServices-request-FormatVersion">DescribeServices</a>
+     * API.</p> <p>To retrieve the Reserved Instance and Compute Savings Plan price
+     * lists, use <code>ComputeSavingsPlans</code>. </p> <p>To retrieve Machine
      * Learning Savings Plans price lists, use
      * <code>MachineLearningSavingsPlans</code>. </p>
      */
@@ -66,9 +66,9 @@ namespace Model
      * want to retrieve. For example, to get the list of applicable Amazon EC2 price
      * lists, use <code>AmazonEC2</code>. For a full list of service codes containing
      * On-Demand and Reserved Instance (RI) pricing, use the <a
-     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_DescribeServices.html#awscostmanagement-pricing_DescribeServices-request-FormatVersion">
-     * <code>DescribeServices</code> </a> API.</p> <p>To retrieve the Compute Savings
-     * Plan price lists, use <code>ComputeSavingsPlans</code>. To retrieve Machine
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_DescribeServices.html#awscostmanagement-pricing_DescribeServices-request-FormatVersion">DescribeServices</a>
+     * API.</p> <p>To retrieve the Reserved Instance and Compute Savings Plan price
+     * lists, use <code>ComputeSavingsPlans</code>. </p> <p>To retrieve Machine
      * Learning Savings Plans price lists, use
      * <code>MachineLearningSavingsPlans</code>. </p>
      */
@@ -79,9 +79,9 @@ namespace Model
      * want to retrieve. For example, to get the list of applicable Amazon EC2 price
      * lists, use <code>AmazonEC2</code>. For a full list of service codes containing
      * On-Demand and Reserved Instance (RI) pricing, use the <a
-     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_DescribeServices.html#awscostmanagement-pricing_DescribeServices-request-FormatVersion">
-     * <code>DescribeServices</code> </a> API.</p> <p>To retrieve the Compute Savings
-     * Plan price lists, use <code>ComputeSavingsPlans</code>. To retrieve Machine
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_DescribeServices.html#awscostmanagement-pricing_DescribeServices-request-FormatVersion">DescribeServices</a>
+     * API.</p> <p>To retrieve the Reserved Instance and Compute Savings Plan price
+     * lists, use <code>ComputeSavingsPlans</code>. </p> <p>To retrieve Machine
      * Learning Savings Plans price lists, use
      * <code>MachineLearningSavingsPlans</code>. </p>
      */
@@ -92,9 +92,9 @@ namespace Model
      * want to retrieve. For example, to get the list of applicable Amazon EC2 price
      * lists, use <code>AmazonEC2</code>. For a full list of service codes containing
      * On-Demand and Reserved Instance (RI) pricing, use the <a
-     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_DescribeServices.html#awscostmanagement-pricing_DescribeServices-request-FormatVersion">
-     * <code>DescribeServices</code> </a> API.</p> <p>To retrieve the Compute Savings
-     * Plan price lists, use <code>ComputeSavingsPlans</code>. To retrieve Machine
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_DescribeServices.html#awscostmanagement-pricing_DescribeServices-request-FormatVersion">DescribeServices</a>
+     * API.</p> <p>To retrieve the Reserved Instance and Compute Savings Plan price
+     * lists, use <code>ComputeSavingsPlans</code>. </p> <p>To retrieve Machine
      * Learning Savings Plans price lists, use
      * <code>MachineLearningSavingsPlans</code>. </p>
      */
@@ -105,9 +105,9 @@ namespace Model
      * want to retrieve. For example, to get the list of applicable Amazon EC2 price
      * lists, use <code>AmazonEC2</code>. For a full list of service codes containing
      * On-Demand and Reserved Instance (RI) pricing, use the <a
-     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_DescribeServices.html#awscostmanagement-pricing_DescribeServices-request-FormatVersion">
-     * <code>DescribeServices</code> </a> API.</p> <p>To retrieve the Compute Savings
-     * Plan price lists, use <code>ComputeSavingsPlans</code>. To retrieve Machine
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_DescribeServices.html#awscostmanagement-pricing_DescribeServices-request-FormatVersion">DescribeServices</a>
+     * API.</p> <p>To retrieve the Reserved Instance and Compute Savings Plan price
+     * lists, use <code>ComputeSavingsPlans</code>. </p> <p>To retrieve Machine
      * Learning Savings Plans price lists, use
      * <code>MachineLearningSavingsPlans</code>. </p>
      */
@@ -118,9 +118,9 @@ namespace Model
      * want to retrieve. For example, to get the list of applicable Amazon EC2 price
      * lists, use <code>AmazonEC2</code>. For a full list of service codes containing
      * On-Demand and Reserved Instance (RI) pricing, use the <a
-     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_DescribeServices.html#awscostmanagement-pricing_DescribeServices-request-FormatVersion">
-     * <code>DescribeServices</code> </a> API.</p> <p>To retrieve the Compute Savings
-     * Plan price lists, use <code>ComputeSavingsPlans</code>. To retrieve Machine
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_DescribeServices.html#awscostmanagement-pricing_DescribeServices-request-FormatVersion">DescribeServices</a>
+     * API.</p> <p>To retrieve the Reserved Instance and Compute Savings Plan price
+     * lists, use <code>ComputeSavingsPlans</code>. </p> <p>To retrieve Machine
      * Learning Savings Plans price lists, use
      * <code>MachineLearningSavingsPlans</code>. </p>
      */
@@ -131,9 +131,9 @@ namespace Model
      * want to retrieve. For example, to get the list of applicable Amazon EC2 price
      * lists, use <code>AmazonEC2</code>. For a full list of service codes containing
      * On-Demand and Reserved Instance (RI) pricing, use the <a
-     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_DescribeServices.html#awscostmanagement-pricing_DescribeServices-request-FormatVersion">
-     * <code>DescribeServices</code> </a> API.</p> <p>To retrieve the Compute Savings
-     * Plan price lists, use <code>ComputeSavingsPlans</code>. To retrieve Machine
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_DescribeServices.html#awscostmanagement-pricing_DescribeServices-request-FormatVersion">DescribeServices</a>
+     * API.</p> <p>To retrieve the Reserved Instance and Compute Savings Plan price
+     * lists, use <code>ComputeSavingsPlans</code>. </p> <p>To retrieve Machine
      * Learning Savings Plans price lists, use
      * <code>MachineLearningSavingsPlans</code>. </p>
      */
@@ -177,8 +177,8 @@ namespace Model
      * Region, use <code>us-east-1</code>. If nothing is specified, you retrieve price
      * lists for all applicable Regions. The available <code>RegionCode</code> list can
      * be retrieved from <a
-     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_GetAttributeValues.html">
-     * <code>GetAttributeValues</code> </a> API.</p>
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_GetAttributeValues.html">GetAttributeValues</a>
+     * API.</p>
      */
     inline const Aws::String& GetRegionCode() const{ return m_regionCode; }
 
@@ -188,8 +188,8 @@ namespace Model
      * Region, use <code>us-east-1</code>. If nothing is specified, you retrieve price
      * lists for all applicable Regions. The available <code>RegionCode</code> list can
      * be retrieved from <a
-     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_GetAttributeValues.html">
-     * <code>GetAttributeValues</code> </a> API.</p>
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_GetAttributeValues.html">GetAttributeValues</a>
+     * API.</p>
      */
     inline bool RegionCodeHasBeenSet() const { return m_regionCodeHasBeenSet; }
 
@@ -199,8 +199,8 @@ namespace Model
      * Region, use <code>us-east-1</code>. If nothing is specified, you retrieve price
      * lists for all applicable Regions. The available <code>RegionCode</code> list can
      * be retrieved from <a
-     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_GetAttributeValues.html">
-     * <code>GetAttributeValues</code> </a> API.</p>
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_GetAttributeValues.html">GetAttributeValues</a>
+     * API.</p>
      */
     inline void SetRegionCode(const Aws::String& value) { m_regionCodeHasBeenSet = true; m_regionCode = value; }
 
@@ -210,8 +210,8 @@ namespace Model
      * Region, use <code>us-east-1</code>. If nothing is specified, you retrieve price
      * lists for all applicable Regions. The available <code>RegionCode</code> list can
      * be retrieved from <a
-     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_GetAttributeValues.html">
-     * <code>GetAttributeValues</code> </a> API.</p>
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_GetAttributeValues.html">GetAttributeValues</a>
+     * API.</p>
      */
     inline void SetRegionCode(Aws::String&& value) { m_regionCodeHasBeenSet = true; m_regionCode = std::move(value); }
 
@@ -221,8 +221,8 @@ namespace Model
      * Region, use <code>us-east-1</code>. If nothing is specified, you retrieve price
      * lists for all applicable Regions. The available <code>RegionCode</code> list can
      * be retrieved from <a
-     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_GetAttributeValues.html">
-     * <code>GetAttributeValues</code> </a> API.</p>
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_GetAttributeValues.html">GetAttributeValues</a>
+     * API.</p>
      */
     inline void SetRegionCode(const char* value) { m_regionCodeHasBeenSet = true; m_regionCode.assign(value); }
 
@@ -232,8 +232,8 @@ namespace Model
      * Region, use <code>us-east-1</code>. If nothing is specified, you retrieve price
      * lists for all applicable Regions. The available <code>RegionCode</code> list can
      * be retrieved from <a
-     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_GetAttributeValues.html">
-     * <code>GetAttributeValues</code> </a> API.</p>
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_GetAttributeValues.html">GetAttributeValues</a>
+     * API.</p>
      */
     inline ListPriceListsRequest& WithRegionCode(const Aws::String& value) { SetRegionCode(value); return *this;}
 
@@ -243,8 +243,8 @@ namespace Model
      * Region, use <code>us-east-1</code>. If nothing is specified, you retrieve price
      * lists for all applicable Regions. The available <code>RegionCode</code> list can
      * be retrieved from <a
-     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_GetAttributeValues.html">
-     * <code>GetAttributeValues</code> </a> API.</p>
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_GetAttributeValues.html">GetAttributeValues</a>
+     * API.</p>
      */
     inline ListPriceListsRequest& WithRegionCode(Aws::String&& value) { SetRegionCode(std::move(value)); return *this;}
 
@@ -254,8 +254,8 @@ namespace Model
      * Region, use <code>us-east-1</code>. If nothing is specified, you retrieve price
      * lists for all applicable Regions. The available <code>RegionCode</code> list can
      * be retrieved from <a
-     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_GetAttributeValues.html">
-     * <code>GetAttributeValues</code> </a> API.</p>
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_GetAttributeValues.html">GetAttributeValues</a>
+     * API.</p>
      */
     inline ListPriceListsRequest& WithRegionCode(const char* value) { SetRegionCode(value); return *this;}
 

@@ -20,6 +20,8 @@ namespace Model
 
 MatchingWorkflowSummary::MatchingWorkflowSummary() : 
     m_createdAtHasBeenSet(false),
+    m_resolutionType(ResolutionType::NOT_SET),
+    m_resolutionTypeHasBeenSet(false),
     m_updatedAtHasBeenSet(false),
     m_workflowArnHasBeenSet(false),
     m_workflowNameHasBeenSet(false)
@@ -28,6 +30,8 @@ MatchingWorkflowSummary::MatchingWorkflowSummary() :
 
 MatchingWorkflowSummary::MatchingWorkflowSummary(JsonView jsonValue) : 
     m_createdAtHasBeenSet(false),
+    m_resolutionType(ResolutionType::NOT_SET),
+    m_resolutionTypeHasBeenSet(false),
     m_updatedAtHasBeenSet(false),
     m_workflowArnHasBeenSet(false),
     m_workflowNameHasBeenSet(false)
@@ -42,6 +46,13 @@ MatchingWorkflowSummary& MatchingWorkflowSummary::operator =(JsonView jsonValue)
     m_createdAt = jsonValue.GetDouble("createdAt");
 
     m_createdAtHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("resolutionType"))
+  {
+    m_resolutionType = ResolutionTypeMapper::GetResolutionTypeForName(jsonValue.GetString("resolutionType"));
+
+    m_resolutionTypeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("updatedAt"))
@@ -75,6 +86,11 @@ JsonValue MatchingWorkflowSummary::Jsonize() const
   if(m_createdAtHasBeenSet)
   {
    payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
+  }
+
+  if(m_resolutionTypeHasBeenSet)
+  {
+   payload.WithString("resolutionType", ResolutionTypeMapper::GetNameForResolutionType(m_resolutionType));
   }
 
   if(m_updatedAtHasBeenSet)

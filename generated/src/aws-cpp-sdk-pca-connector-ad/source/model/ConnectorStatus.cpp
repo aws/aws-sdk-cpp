@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ConnectorStatus::NOT_SET:
+            return {};
           case ConnectorStatus::CREATING:
             return "CREATING";
           case ConnectorStatus::ACTIVE:

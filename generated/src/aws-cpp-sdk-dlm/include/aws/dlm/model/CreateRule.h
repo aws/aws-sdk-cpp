@@ -9,6 +9,7 @@
 #include <aws/dlm/model/IntervalUnitValues.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/dlm/model/Script.h>
 #include <utility>
 
 namespace Aws
@@ -27,11 +28,12 @@ namespace Model
 {
 
   /**
-   * <p> <b>[Snapshot and AMI policies only]</b> Specifies when the policy should
-   * create snapshots or AMIs.</p>  <ul> <li> <p>You must specify either
+   * <p> <b>[Custom snapshot and AMI policies only]</b> Specifies when the policy
+   * should create snapshots or AMIs.</p>  <ul> <li> <p>You must specify either
    * <b>CronExpression</b>, or <b>Interval</b>, <b>IntervalUnit</b>, and
-   * <b>Times</b>.</p> </li> <li> <p>If you need to specify an <a>ArchiveRule</a> for
-   * the schedule, then you must specify a creation frequency of at least 28
+   * <b>Times</b>.</p> </li> <li> <p>If you need to specify an <a
+   * href="https://docs.aws.amazon.com/dlm/latest/APIReference/API_ArchiveRule.html">ArchiveRule</a>
+   * for the schedule, then you must specify a creation frequency of at least 28
    * days.</p> </li> </ul> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/dlm-2018-01-12/CreateRule">AWS API
    * Reference</a></p>
@@ -46,80 +48,80 @@ namespace Model
 
 
     /**
-     * <p> <b>[Snapshot policies only]</b> Specifies the destination for snapshots
-     * created by the policy. To create snapshots in the same Region as the source
-     * resource, specify <code>CLOUD</code>. To create snapshots on the same Outpost as
-     * the source resource, specify <code>OUTPOST_LOCAL</code>. If you omit this
-     * parameter, <code>CLOUD</code> is used by default.</p> <p>If the policy targets
-     * resources in an Amazon Web Services Region, then you must create snapshots in
-     * the same Region as the source resource. If the policy targets resources on an
-     * Outpost, then you can create snapshots on the same Outpost as the source
-     * resource, or in the Region of that Outpost.</p>
+     * <p> <b>[Custom snapshot policies only]</b> Specifies the destination for
+     * snapshots created by the policy. To create snapshots in the same Region as the
+     * source resource, specify <code>CLOUD</code>. To create snapshots on the same
+     * Outpost as the source resource, specify <code>OUTPOST_LOCAL</code>. If you omit
+     * this parameter, <code>CLOUD</code> is used by default.</p> <p>If the policy
+     * targets resources in an Amazon Web Services Region, then you must create
+     * snapshots in the same Region as the source resource. If the policy targets
+     * resources on an Outpost, then you can create snapshots on the same Outpost as
+     * the source resource, or in the Region of that Outpost.</p>
      */
     inline const LocationValues& GetLocation() const{ return m_location; }
 
     /**
-     * <p> <b>[Snapshot policies only]</b> Specifies the destination for snapshots
-     * created by the policy. To create snapshots in the same Region as the source
-     * resource, specify <code>CLOUD</code>. To create snapshots on the same Outpost as
-     * the source resource, specify <code>OUTPOST_LOCAL</code>. If you omit this
-     * parameter, <code>CLOUD</code> is used by default.</p> <p>If the policy targets
-     * resources in an Amazon Web Services Region, then you must create snapshots in
-     * the same Region as the source resource. If the policy targets resources on an
-     * Outpost, then you can create snapshots on the same Outpost as the source
-     * resource, or in the Region of that Outpost.</p>
+     * <p> <b>[Custom snapshot policies only]</b> Specifies the destination for
+     * snapshots created by the policy. To create snapshots in the same Region as the
+     * source resource, specify <code>CLOUD</code>. To create snapshots on the same
+     * Outpost as the source resource, specify <code>OUTPOST_LOCAL</code>. If you omit
+     * this parameter, <code>CLOUD</code> is used by default.</p> <p>If the policy
+     * targets resources in an Amazon Web Services Region, then you must create
+     * snapshots in the same Region as the source resource. If the policy targets
+     * resources on an Outpost, then you can create snapshots on the same Outpost as
+     * the source resource, or in the Region of that Outpost.</p>
      */
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
 
     /**
-     * <p> <b>[Snapshot policies only]</b> Specifies the destination for snapshots
-     * created by the policy. To create snapshots in the same Region as the source
-     * resource, specify <code>CLOUD</code>. To create snapshots on the same Outpost as
-     * the source resource, specify <code>OUTPOST_LOCAL</code>. If you omit this
-     * parameter, <code>CLOUD</code> is used by default.</p> <p>If the policy targets
-     * resources in an Amazon Web Services Region, then you must create snapshots in
-     * the same Region as the source resource. If the policy targets resources on an
-     * Outpost, then you can create snapshots on the same Outpost as the source
-     * resource, or in the Region of that Outpost.</p>
+     * <p> <b>[Custom snapshot policies only]</b> Specifies the destination for
+     * snapshots created by the policy. To create snapshots in the same Region as the
+     * source resource, specify <code>CLOUD</code>. To create snapshots on the same
+     * Outpost as the source resource, specify <code>OUTPOST_LOCAL</code>. If you omit
+     * this parameter, <code>CLOUD</code> is used by default.</p> <p>If the policy
+     * targets resources in an Amazon Web Services Region, then you must create
+     * snapshots in the same Region as the source resource. If the policy targets
+     * resources on an Outpost, then you can create snapshots on the same Outpost as
+     * the source resource, or in the Region of that Outpost.</p>
      */
     inline void SetLocation(const LocationValues& value) { m_locationHasBeenSet = true; m_location = value; }
 
     /**
-     * <p> <b>[Snapshot policies only]</b> Specifies the destination for snapshots
-     * created by the policy. To create snapshots in the same Region as the source
-     * resource, specify <code>CLOUD</code>. To create snapshots on the same Outpost as
-     * the source resource, specify <code>OUTPOST_LOCAL</code>. If you omit this
-     * parameter, <code>CLOUD</code> is used by default.</p> <p>If the policy targets
-     * resources in an Amazon Web Services Region, then you must create snapshots in
-     * the same Region as the source resource. If the policy targets resources on an
-     * Outpost, then you can create snapshots on the same Outpost as the source
-     * resource, or in the Region of that Outpost.</p>
+     * <p> <b>[Custom snapshot policies only]</b> Specifies the destination for
+     * snapshots created by the policy. To create snapshots in the same Region as the
+     * source resource, specify <code>CLOUD</code>. To create snapshots on the same
+     * Outpost as the source resource, specify <code>OUTPOST_LOCAL</code>. If you omit
+     * this parameter, <code>CLOUD</code> is used by default.</p> <p>If the policy
+     * targets resources in an Amazon Web Services Region, then you must create
+     * snapshots in the same Region as the source resource. If the policy targets
+     * resources on an Outpost, then you can create snapshots on the same Outpost as
+     * the source resource, or in the Region of that Outpost.</p>
      */
     inline void SetLocation(LocationValues&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
 
     /**
-     * <p> <b>[Snapshot policies only]</b> Specifies the destination for snapshots
-     * created by the policy. To create snapshots in the same Region as the source
-     * resource, specify <code>CLOUD</code>. To create snapshots on the same Outpost as
-     * the source resource, specify <code>OUTPOST_LOCAL</code>. If you omit this
-     * parameter, <code>CLOUD</code> is used by default.</p> <p>If the policy targets
-     * resources in an Amazon Web Services Region, then you must create snapshots in
-     * the same Region as the source resource. If the policy targets resources on an
-     * Outpost, then you can create snapshots on the same Outpost as the source
-     * resource, or in the Region of that Outpost.</p>
+     * <p> <b>[Custom snapshot policies only]</b> Specifies the destination for
+     * snapshots created by the policy. To create snapshots in the same Region as the
+     * source resource, specify <code>CLOUD</code>. To create snapshots on the same
+     * Outpost as the source resource, specify <code>OUTPOST_LOCAL</code>. If you omit
+     * this parameter, <code>CLOUD</code> is used by default.</p> <p>If the policy
+     * targets resources in an Amazon Web Services Region, then you must create
+     * snapshots in the same Region as the source resource. If the policy targets
+     * resources on an Outpost, then you can create snapshots on the same Outpost as
+     * the source resource, or in the Region of that Outpost.</p>
      */
     inline CreateRule& WithLocation(const LocationValues& value) { SetLocation(value); return *this;}
 
     /**
-     * <p> <b>[Snapshot policies only]</b> Specifies the destination for snapshots
-     * created by the policy. To create snapshots in the same Region as the source
-     * resource, specify <code>CLOUD</code>. To create snapshots on the same Outpost as
-     * the source resource, specify <code>OUTPOST_LOCAL</code>. If you omit this
-     * parameter, <code>CLOUD</code> is used by default.</p> <p>If the policy targets
-     * resources in an Amazon Web Services Region, then you must create snapshots in
-     * the same Region as the source resource. If the policy targets resources on an
-     * Outpost, then you can create snapshots on the same Outpost as the source
-     * resource, or in the Region of that Outpost.</p>
+     * <p> <b>[Custom snapshot policies only]</b> Specifies the destination for
+     * snapshots created by the policy. To create snapshots in the same Region as the
+     * source resource, specify <code>CLOUD</code>. To create snapshots on the same
+     * Outpost as the source resource, specify <code>OUTPOST_LOCAL</code>. If you omit
+     * this parameter, <code>CLOUD</code> is used by default.</p> <p>If the policy
+     * targets resources in an Amazon Web Services Region, then you must create
+     * snapshots in the same Region as the source resource. If the policy targets
+     * resources on an Outpost, then you can create snapshots on the same Outpost as
+     * the source resource, or in the Region of that Outpost.</p>
      */
     inline CreateRule& WithLocation(LocationValues&& value) { SetLocation(std::move(value)); return *this;}
 
@@ -317,6 +319,95 @@ namespace Model
      */
     inline CreateRule& WithCronExpression(const char* value) { SetCronExpression(value); return *this;}
 
+
+    /**
+     * <p> <b>[Custom snapshot policies that target instances only]</b> Specifies pre
+     * and/or post scripts for a snapshot lifecycle policy that targets instances. This
+     * is useful for creating application-consistent snapshots, or for performing
+     * specific administrative tasks before or after Amazon Data Lifecycle Manager
+     * initiates snapshot creation.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/automate-app-consistent-backups.html">Automating
+     * application-consistent snapshots with pre and post scripts</a>.</p>
+     */
+    inline const Aws::Vector<Script>& GetScripts() const{ return m_scripts; }
+
+    /**
+     * <p> <b>[Custom snapshot policies that target instances only]</b> Specifies pre
+     * and/or post scripts for a snapshot lifecycle policy that targets instances. This
+     * is useful for creating application-consistent snapshots, or for performing
+     * specific administrative tasks before or after Amazon Data Lifecycle Manager
+     * initiates snapshot creation.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/automate-app-consistent-backups.html">Automating
+     * application-consistent snapshots with pre and post scripts</a>.</p>
+     */
+    inline bool ScriptsHasBeenSet() const { return m_scriptsHasBeenSet; }
+
+    /**
+     * <p> <b>[Custom snapshot policies that target instances only]</b> Specifies pre
+     * and/or post scripts for a snapshot lifecycle policy that targets instances. This
+     * is useful for creating application-consistent snapshots, or for performing
+     * specific administrative tasks before or after Amazon Data Lifecycle Manager
+     * initiates snapshot creation.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/automate-app-consistent-backups.html">Automating
+     * application-consistent snapshots with pre and post scripts</a>.</p>
+     */
+    inline void SetScripts(const Aws::Vector<Script>& value) { m_scriptsHasBeenSet = true; m_scripts = value; }
+
+    /**
+     * <p> <b>[Custom snapshot policies that target instances only]</b> Specifies pre
+     * and/or post scripts for a snapshot lifecycle policy that targets instances. This
+     * is useful for creating application-consistent snapshots, or for performing
+     * specific administrative tasks before or after Amazon Data Lifecycle Manager
+     * initiates snapshot creation.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/automate-app-consistent-backups.html">Automating
+     * application-consistent snapshots with pre and post scripts</a>.</p>
+     */
+    inline void SetScripts(Aws::Vector<Script>&& value) { m_scriptsHasBeenSet = true; m_scripts = std::move(value); }
+
+    /**
+     * <p> <b>[Custom snapshot policies that target instances only]</b> Specifies pre
+     * and/or post scripts for a snapshot lifecycle policy that targets instances. This
+     * is useful for creating application-consistent snapshots, or for performing
+     * specific administrative tasks before or after Amazon Data Lifecycle Manager
+     * initiates snapshot creation.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/automate-app-consistent-backups.html">Automating
+     * application-consistent snapshots with pre and post scripts</a>.</p>
+     */
+    inline CreateRule& WithScripts(const Aws::Vector<Script>& value) { SetScripts(value); return *this;}
+
+    /**
+     * <p> <b>[Custom snapshot policies that target instances only]</b> Specifies pre
+     * and/or post scripts for a snapshot lifecycle policy that targets instances. This
+     * is useful for creating application-consistent snapshots, or for performing
+     * specific administrative tasks before or after Amazon Data Lifecycle Manager
+     * initiates snapshot creation.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/automate-app-consistent-backups.html">Automating
+     * application-consistent snapshots with pre and post scripts</a>.</p>
+     */
+    inline CreateRule& WithScripts(Aws::Vector<Script>&& value) { SetScripts(std::move(value)); return *this;}
+
+    /**
+     * <p> <b>[Custom snapshot policies that target instances only]</b> Specifies pre
+     * and/or post scripts for a snapshot lifecycle policy that targets instances. This
+     * is useful for creating application-consistent snapshots, or for performing
+     * specific administrative tasks before or after Amazon Data Lifecycle Manager
+     * initiates snapshot creation.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/automate-app-consistent-backups.html">Automating
+     * application-consistent snapshots with pre and post scripts</a>.</p>
+     */
+    inline CreateRule& AddScripts(const Script& value) { m_scriptsHasBeenSet = true; m_scripts.push_back(value); return *this; }
+
+    /**
+     * <p> <b>[Custom snapshot policies that target instances only]</b> Specifies pre
+     * and/or post scripts for a snapshot lifecycle policy that targets instances. This
+     * is useful for creating application-consistent snapshots, or for performing
+     * specific administrative tasks before or after Amazon Data Lifecycle Manager
+     * initiates snapshot creation.</p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/automate-app-consistent-backups.html">Automating
+     * application-consistent snapshots with pre and post scripts</a>.</p>
+     */
+    inline CreateRule& AddScripts(Script&& value) { m_scriptsHasBeenSet = true; m_scripts.push_back(std::move(value)); return *this; }
+
   private:
 
     LocationValues m_location;
@@ -333,6 +424,9 @@ namespace Model
 
     Aws::String m_cronExpression;
     bool m_cronExpressionHasBeenSet = false;
+
+    Aws::Vector<Script> m_scripts;
+    bool m_scriptsHasBeenSet = false;
   };
 
 } // namespace Model

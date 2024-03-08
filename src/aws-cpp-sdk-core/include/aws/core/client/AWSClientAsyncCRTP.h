@@ -47,7 +47,7 @@ namespace Client
            m_operationsProcessed(0)
         {
             AwsServiceClientT* pThis = static_cast<AwsServiceClientT*>(this);
-            Aws::Utils::ComponentRegistry::RegisterComponent(AwsServiceClientT::SERVICE_NAME,
+            Aws::Utils::ComponentRegistry::RegisterComponent(AwsServiceClientT::GetServiceName(),
                                                              pThis,
                                                              &AwsServiceClientT::ShutdownSdkClient);
 
@@ -58,7 +58,7 @@ namespace Client
            m_operationsProcessed(0)
         {
             AwsServiceClientT* pThis = static_cast<AwsServiceClientT*>(this);
-            Aws::Utils::ComponentRegistry::RegisterComponent(AwsServiceClientT::SERVICE_NAME,
+            Aws::Utils::ComponentRegistry::RegisterComponent(AwsServiceClientT::GetServiceName(),
                                                              pThis,
                                                              &AwsServiceClientT::ShutdownSdkClient);
         }
@@ -88,7 +88,7 @@ namespace Client
         static void ShutdownSdkClient(void* pThis, int64_t timeoutMs = -1)
         {
             AwsServiceClientT* pClient = reinterpret_cast<AwsServiceClientT*>(pThis);
-            AWS_CHECK_PTR(AwsServiceClientT::SERVICE_NAME, pClient);
+            AWS_CHECK_PTR(AwsServiceClientT::GetServiceName(), pClient);
             if(!pClient->m_isInitialized)
             {
                 return;
@@ -165,7 +165,7 @@ namespace Client
             -> std::future<decltype((static_cast<const AwsServiceClientT*>(nullptr)->*operationFunc)(request))>
         {
             const AwsServiceClientT* clientThis = static_cast<const AwsServiceClientT*>(this);
-            return Aws::Client::MakeCallableOperation(AwsServiceClientT::ALLOCATION_TAG, operationFunc, clientThis, request, clientThis->m_executor.get());
+            return Aws::Client::MakeCallableOperation(AwsServiceClientT::GetAllocationTag(), operationFunc, clientThis, request, clientThis->m_executor.get());
         }
 
         /**
@@ -178,7 +178,7 @@ namespace Client
             -> std::future<decltype((static_cast<const AwsServiceClientT*>(nullptr)->*operationFunc)(request))>
         {
             const AwsServiceClientT* clientThis = static_cast<const AwsServiceClientT*>(this);
-            return Aws::Client::MakeCallableStreamingOperation(AwsServiceClientT::ALLOCATION_TAG, operationFunc, clientThis, request, clientThis->m_executor.get());
+            return Aws::Client::MakeCallableStreamingOperation(AwsServiceClientT::GetAllocationTag(), operationFunc, clientThis, request, clientThis->m_executor.get());
         }
 
         /**
@@ -191,7 +191,7 @@ namespace Client
             -> std::future<decltype((static_cast<const AwsServiceClientT*>(nullptr)->*operationFunc)())>
         {
             const AwsServiceClientT* clientThis = static_cast<const AwsServiceClientT*>(this);
-            return Aws::Client::MakeCallableOperation(AwsServiceClientT::ALLOCATION_TAG, operationFunc, clientThis, clientThis->m_executor.get());
+            return Aws::Client::MakeCallableOperation(AwsServiceClientT::GetAllocationTag(), operationFunc, clientThis, clientThis->m_executor.get());
         }
     protected:
         std::atomic<bool> m_isInitialized;

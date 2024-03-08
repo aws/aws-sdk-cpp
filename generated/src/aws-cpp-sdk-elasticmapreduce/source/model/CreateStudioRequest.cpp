@@ -26,7 +26,13 @@ CreateStudioRequest::CreateStudioRequest() :
     m_defaultS3LocationHasBeenSet(false),
     m_idpAuthUrlHasBeenSet(false),
     m_idpRelayStateParameterNameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_trustedIdentityPropagationEnabled(false),
+    m_trustedIdentityPropagationEnabledHasBeenSet(false),
+    m_idcUserAssignment(IdcUserAssignment::NOT_SET),
+    m_idcUserAssignmentHasBeenSet(false),
+    m_idcInstanceArnHasBeenSet(false),
+    m_encryptionKeyArnHasBeenSet(false)
 {
 }
 
@@ -118,6 +124,29 @@ Aws::String CreateStudioRequest::SerializePayload() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_trustedIdentityPropagationEnabledHasBeenSet)
+  {
+   payload.WithBool("TrustedIdentityPropagationEnabled", m_trustedIdentityPropagationEnabled);
+
+  }
+
+  if(m_idcUserAssignmentHasBeenSet)
+  {
+   payload.WithString("IdcUserAssignment", IdcUserAssignmentMapper::GetNameForIdcUserAssignment(m_idcUserAssignment));
+  }
+
+  if(m_idcInstanceArnHasBeenSet)
+  {
+   payload.WithString("IdcInstanceArn", m_idcInstanceArn);
+
+  }
+
+  if(m_encryptionKeyArnHasBeenSet)
+  {
+   payload.WithString("EncryptionKeyArn", m_encryptionKeyArn);
 
   }
 

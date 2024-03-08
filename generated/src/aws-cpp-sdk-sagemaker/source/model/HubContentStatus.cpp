@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case HubContentStatus::NOT_SET:
+            return {};
           case HubContentStatus::Available:
             return "Available";
           case HubContentStatus::Importing:

@@ -125,8 +125,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* StorageGatewayClient::SERVICE_NAME = "storagegateway";
-const char* StorageGatewayClient::ALLOCATION_TAG = "StorageGatewayClient";
+namespace Aws
+{
+  namespace StorageGateway
+  {
+    const char SERVICE_NAME[] = "storagegateway";
+    const char ALLOCATION_TAG[] = "StorageGatewayClient";
+  }
+}
+const char* StorageGatewayClient::GetServiceName() {return SERVICE_NAME;}
+const char* StorageGatewayClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 StorageGatewayClient::StorageGatewayClient(const StorageGateway::StorageGatewayClientConfiguration& clientConfiguration,
                                            std::shared_ptr<StorageGatewayEndpointProviderBase> endpointProvider) :
@@ -138,7 +146,7 @@ StorageGatewayClient::StorageGatewayClient(const StorageGateway::StorageGatewayC
             Aws::MakeShared<StorageGatewayErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<StorageGatewayEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -154,7 +162,7 @@ StorageGatewayClient::StorageGatewayClient(const AWSCredentials& credentials,
             Aws::MakeShared<StorageGatewayErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<StorageGatewayEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -170,7 +178,7 @@ StorageGatewayClient::StorageGatewayClient(const std::shared_ptr<AWSCredentialsP
             Aws::MakeShared<StorageGatewayErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<StorageGatewayEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

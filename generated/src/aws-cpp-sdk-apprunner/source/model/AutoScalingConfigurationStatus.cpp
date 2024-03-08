@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AutoScalingConfigurationStatus::NOT_SET:
+            return {};
           case AutoScalingConfigurationStatus::ACTIVE:
             return "ACTIVE";
           case AutoScalingConfigurationStatus::INACTIVE:

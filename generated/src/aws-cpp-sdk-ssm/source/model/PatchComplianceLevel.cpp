@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case PatchComplianceLevel::NOT_SET:
+            return {};
           case PatchComplianceLevel::CRITICAL:
             return "CRITICAL";
           case PatchComplianceLevel::HIGH:

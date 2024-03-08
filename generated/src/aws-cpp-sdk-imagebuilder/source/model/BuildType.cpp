@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case BuildType::NOT_SET:
+            return {};
           case BuildType::USER_INITIATED:
             return "USER_INITIATED";
           case BuildType::SCHEDULED:

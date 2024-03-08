@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ListEdgePackagingJobsSortBy::NOT_SET:
+            return {};
           case ListEdgePackagingJobsSortBy::NAME:
             return "NAME";
           case ListEdgePackagingJobsSortBy::MODEL_NAME:

@@ -79,6 +79,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SourceAccessType::NOT_SET:
+            return {};
           case SourceAccessType::BASIC_AUTH:
             return "BASIC_AUTH";
           case SourceAccessType::VPC_SUBNET:

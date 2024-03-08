@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case GameSessionStatus::NOT_SET:
+            return {};
           case GameSessionStatus::ACTIVE:
             return "ACTIVE";
           case GameSessionStatus::ACTIVATING:

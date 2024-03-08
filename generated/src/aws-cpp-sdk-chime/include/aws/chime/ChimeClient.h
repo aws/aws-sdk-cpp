@@ -10,6 +10,8 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/chime/ChimeServiceClientModel.h>
+#include <aws/chime/model/GetPhoneNumberSettingsRequest.h>
+#include <aws/chime/model/GetGlobalSettingsRequest.h>
 
 namespace Aws
 {
@@ -63,8 +65,8 @@ namespace Chime
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef ChimeClientConfiguration ClientConfigurationType;
       typedef ChimeEndpointProvider EndpointProviderType;
@@ -74,14 +76,14 @@ namespace Chime
         * is not specified, it will be initialized to default values.
         */
         ChimeClient(const Aws::Chime::ChimeClientConfiguration& clientConfiguration = Aws::Chime::ChimeClientConfiguration(),
-                    std::shared_ptr<ChimeEndpointProviderBase> endpointProvider = Aws::MakeShared<ChimeEndpointProvider>(ALLOCATION_TAG));
+                    std::shared_ptr<ChimeEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         ChimeClient(const Aws::Auth::AWSCredentials& credentials,
-                    std::shared_ptr<ChimeEndpointProviderBase> endpointProvider = Aws::MakeShared<ChimeEndpointProvider>(ALLOCATION_TAG),
+                    std::shared_ptr<ChimeEndpointProviderBase> endpointProvider = nullptr,
                     const Aws::Chime::ChimeClientConfiguration& clientConfiguration = Aws::Chime::ChimeClientConfiguration());
 
        /**
@@ -89,7 +91,7 @@ namespace Chime
         * the default http client factory will be used
         */
         ChimeClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                    std::shared_ptr<ChimeEndpointProviderBase> endpointProvider = Aws::MakeShared<ChimeEndpointProvider>(ALLOCATION_TAG),
+                    std::shared_ptr<ChimeEndpointProviderBase> endpointProvider = nullptr,
                     const Aws::Chime::ChimeClientConfiguration& clientConfiguration = Aws::Chime::ChimeClientConfiguration());
 
 
@@ -862,25 +864,26 @@ namespace Chime
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetGlobalSettings">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetGlobalSettingsOutcome GetGlobalSettings() const;
+        virtual Model::GetGlobalSettingsOutcome GetGlobalSettings(const Model::GetGlobalSettingsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetGlobalSettings that returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        template<typename = void>
-        Model::GetGlobalSettingsOutcomeCallable GetGlobalSettingsCallable() const
+        template<typename GetGlobalSettingsRequestT = Model::GetGlobalSettingsRequest>
+        Model::GetGlobalSettingsOutcomeCallable GetGlobalSettingsCallable(const GetGlobalSettingsRequestT& request = {}) const
         {
-            return SubmitCallable(&ChimeClient::GetGlobalSettings);
+            return SubmitCallable(&ChimeClient::GetGlobalSettings, request);
         }
 
         /**
          * An Async wrapper for GetGlobalSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        template<typename = void>
-        void GetGlobalSettingsAsync(const GetGlobalSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        template<typename GetGlobalSettingsRequestT = Model::GetGlobalSettingsRequest>
+        void GetGlobalSettingsAsync(const GetGlobalSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetGlobalSettingsRequestT& request = {}) const
         {
-            return SubmitAsync(&ChimeClient::GetGlobalSettings, handler, context);
+            return SubmitAsync(&ChimeClient::GetGlobalSettings, request, handler, context);
         }
+
         /**
          * <p>Retrieves details for the specified phone number ID, such as associations,
          * capabilities, and product type.</p><p><h3>See Also:</h3>   <a
@@ -940,25 +943,26 @@ namespace Chime
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetPhoneNumberSettings">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetPhoneNumberSettingsOutcome GetPhoneNumberSettings() const;
+        virtual Model::GetPhoneNumberSettingsOutcome GetPhoneNumberSettings(const Model::GetPhoneNumberSettingsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetPhoneNumberSettings that returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        template<typename = void>
-        Model::GetPhoneNumberSettingsOutcomeCallable GetPhoneNumberSettingsCallable() const
+        template<typename GetPhoneNumberSettingsRequestT = Model::GetPhoneNumberSettingsRequest>
+        Model::GetPhoneNumberSettingsOutcomeCallable GetPhoneNumberSettingsCallable(const GetPhoneNumberSettingsRequestT& request = {}) const
         {
-            return SubmitCallable(&ChimeClient::GetPhoneNumberSettings);
+            return SubmitCallable(&ChimeClient::GetPhoneNumberSettings, request);
         }
 
         /**
          * An Async wrapper for GetPhoneNumberSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        template<typename = void>
-        void GetPhoneNumberSettingsAsync(const GetPhoneNumberSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        template<typename GetPhoneNumberSettingsRequestT = Model::GetPhoneNumberSettingsRequest>
+        void GetPhoneNumberSettingsAsync(const GetPhoneNumberSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetPhoneNumberSettingsRequestT& request = {}) const
         {
-            return SubmitAsync(&ChimeClient::GetPhoneNumberSettings, handler, context);
+            return SubmitAsync(&ChimeClient::GetPhoneNumberSettings, request, handler, context);
         }
+
         /**
          * <p> Gets the retention settings for the specified Amazon Chime Enterprise
          * account. For more information about retention settings, see <a

@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AacCodecProfile::NOT_SET:
+            return {};
           case AacCodecProfile::LC:
             return "LC";
           case AacCodecProfile::HEV1:

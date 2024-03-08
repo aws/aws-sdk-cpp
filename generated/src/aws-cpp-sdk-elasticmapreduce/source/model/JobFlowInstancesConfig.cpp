@@ -31,6 +31,8 @@ JobFlowInstancesConfig::JobFlowInstancesConfig() :
     m_keepJobFlowAliveWhenNoStepsHasBeenSet(false),
     m_terminationProtected(false),
     m_terminationProtectedHasBeenSet(false),
+    m_unhealthyNodeReplacement(false),
+    m_unhealthyNodeReplacementHasBeenSet(false),
     m_hadoopVersionHasBeenSet(false),
     m_ec2SubnetIdHasBeenSet(false),
     m_ec2SubnetIdsHasBeenSet(false),
@@ -55,6 +57,8 @@ JobFlowInstancesConfig::JobFlowInstancesConfig(JsonView jsonValue) :
     m_keepJobFlowAliveWhenNoStepsHasBeenSet(false),
     m_terminationProtected(false),
     m_terminationProtectedHasBeenSet(false),
+    m_unhealthyNodeReplacement(false),
+    m_unhealthyNodeReplacementHasBeenSet(false),
     m_hadoopVersionHasBeenSet(false),
     m_ec2SubnetIdHasBeenSet(false),
     m_ec2SubnetIdsHasBeenSet(false),
@@ -136,6 +140,13 @@ JobFlowInstancesConfig& JobFlowInstancesConfig::operator =(JsonView jsonValue)
     m_terminationProtected = jsonValue.GetBool("TerminationProtected");
 
     m_terminationProtectedHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("UnhealthyNodeReplacement"))
+  {
+    m_unhealthyNodeReplacement = jsonValue.GetBool("UnhealthyNodeReplacement");
+
+    m_unhealthyNodeReplacementHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("HadoopVersion"))
@@ -271,6 +282,12 @@ JsonValue JobFlowInstancesConfig::Jsonize() const
   if(m_terminationProtectedHasBeenSet)
   {
    payload.WithBool("TerminationProtected", m_terminationProtected);
+
+  }
+
+  if(m_unhealthyNodeReplacementHasBeenSet)
+  {
+   payload.WithBool("UnhealthyNodeReplacement", m_unhealthyNodeReplacement);
 
   }
 

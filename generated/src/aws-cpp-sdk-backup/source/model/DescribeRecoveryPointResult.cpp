@@ -22,7 +22,8 @@ DescribeRecoveryPointResult::DescribeRecoveryPointResult() :
     m_backupSizeInBytes(0),
     m_isEncrypted(false),
     m_storageClass(StorageClass::NOT_SET),
-    m_isParent(false)
+    m_isParent(false),
+    m_vaultType(VaultType::NOT_SET)
 {
 }
 
@@ -31,7 +32,8 @@ DescribeRecoveryPointResult::DescribeRecoveryPointResult(const Aws::AmazonWebSer
     m_backupSizeInBytes(0),
     m_isEncrypted(false),
     m_storageClass(StorageClass::NOT_SET),
-    m_isParent(false)
+    m_isParent(false),
+    m_vaultType(VaultType::NOT_SET)
 {
   *this = result;
 }
@@ -174,6 +176,12 @@ DescribeRecoveryPointResult& DescribeRecoveryPointResult::operator =(const Aws::
   if(jsonValue.ValueExists("ResourceName"))
   {
     m_resourceName = jsonValue.GetString("ResourceName");
+
+  }
+
+  if(jsonValue.ValueExists("VaultType"))
+  {
+    m_vaultType = VaultTypeMapper::GetVaultTypeForName(jsonValue.GetString("VaultType"));
 
   }
 

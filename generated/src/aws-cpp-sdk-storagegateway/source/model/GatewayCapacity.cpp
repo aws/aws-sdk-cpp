@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case GatewayCapacity::NOT_SET:
+            return {};
           case GatewayCapacity::Small:
             return "Small";
           case GatewayCapacity::Medium:

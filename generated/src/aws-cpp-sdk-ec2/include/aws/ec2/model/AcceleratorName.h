@@ -17,14 +17,17 @@ namespace Model
   {
     NOT_SET,
     a100,
-    v100,
+    inferentia,
+    k520,
     k80,
-    t4,
     m60,
     radeon_pro_v520,
+    t4,
     vu9p,
-    inferentia,
-    k520
+    v100,
+    a10g,
+    h100,
+    t4g
   };
 
 namespace AcceleratorNameMapper

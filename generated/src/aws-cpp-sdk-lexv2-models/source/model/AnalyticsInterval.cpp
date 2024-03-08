@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AnalyticsInterval::NOT_SET:
+            return {};
           case AnalyticsInterval::OneHour:
             return "OneHour";
           case AnalyticsInterval::OneDay:

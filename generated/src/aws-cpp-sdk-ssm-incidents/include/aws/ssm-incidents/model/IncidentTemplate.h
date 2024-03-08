@@ -42,71 +42,159 @@ namespace Model
 
 
     /**
-     * <p>Used to stop Incident Manager from creating multiple incident records for the
-     * same incident. </p>
+     * <p>The string Incident Manager uses to prevent the same root cause from creating
+     * multiple incidents in the same account.</p> <p>A deduplication string is a term
+     * or phrase the system uses to check for duplicate incidents. If you specify a
+     * deduplication string, Incident Manager searches for open incidents that contain
+     * the same string in the <code>dedupeString</code> field when it creates the
+     * incident. If a duplicate is detected, Incident Manager deduplicates the newer
+     * incident into the existing incident.</p>  <p>By default, Incident Manager
+     * automatically deduplicates multiple incidents created by the same Amazon
+     * CloudWatch alarm or Amazon EventBridge event. You don't have to enter your own
+     * deduplication string to prevent duplication for these resource types.</p>
+     * 
      */
     inline const Aws::String& GetDedupeString() const{ return m_dedupeString; }
 
     /**
-     * <p>Used to stop Incident Manager from creating multiple incident records for the
-     * same incident. </p>
+     * <p>The string Incident Manager uses to prevent the same root cause from creating
+     * multiple incidents in the same account.</p> <p>A deduplication string is a term
+     * or phrase the system uses to check for duplicate incidents. If you specify a
+     * deduplication string, Incident Manager searches for open incidents that contain
+     * the same string in the <code>dedupeString</code> field when it creates the
+     * incident. If a duplicate is detected, Incident Manager deduplicates the newer
+     * incident into the existing incident.</p>  <p>By default, Incident Manager
+     * automatically deduplicates multiple incidents created by the same Amazon
+     * CloudWatch alarm or Amazon EventBridge event. You don't have to enter your own
+     * deduplication string to prevent duplication for these resource types.</p>
+     * 
      */
     inline bool DedupeStringHasBeenSet() const { return m_dedupeStringHasBeenSet; }
 
     /**
-     * <p>Used to stop Incident Manager from creating multiple incident records for the
-     * same incident. </p>
+     * <p>The string Incident Manager uses to prevent the same root cause from creating
+     * multiple incidents in the same account.</p> <p>A deduplication string is a term
+     * or phrase the system uses to check for duplicate incidents. If you specify a
+     * deduplication string, Incident Manager searches for open incidents that contain
+     * the same string in the <code>dedupeString</code> field when it creates the
+     * incident. If a duplicate is detected, Incident Manager deduplicates the newer
+     * incident into the existing incident.</p>  <p>By default, Incident Manager
+     * automatically deduplicates multiple incidents created by the same Amazon
+     * CloudWatch alarm or Amazon EventBridge event. You don't have to enter your own
+     * deduplication string to prevent duplication for these resource types.</p>
+     * 
      */
     inline void SetDedupeString(const Aws::String& value) { m_dedupeStringHasBeenSet = true; m_dedupeString = value; }
 
     /**
-     * <p>Used to stop Incident Manager from creating multiple incident records for the
-     * same incident. </p>
+     * <p>The string Incident Manager uses to prevent the same root cause from creating
+     * multiple incidents in the same account.</p> <p>A deduplication string is a term
+     * or phrase the system uses to check for duplicate incidents. If you specify a
+     * deduplication string, Incident Manager searches for open incidents that contain
+     * the same string in the <code>dedupeString</code> field when it creates the
+     * incident. If a duplicate is detected, Incident Manager deduplicates the newer
+     * incident into the existing incident.</p>  <p>By default, Incident Manager
+     * automatically deduplicates multiple incidents created by the same Amazon
+     * CloudWatch alarm or Amazon EventBridge event. You don't have to enter your own
+     * deduplication string to prevent duplication for these resource types.</p>
+     * 
      */
     inline void SetDedupeString(Aws::String&& value) { m_dedupeStringHasBeenSet = true; m_dedupeString = std::move(value); }
 
     /**
-     * <p>Used to stop Incident Manager from creating multiple incident records for the
-     * same incident. </p>
+     * <p>The string Incident Manager uses to prevent the same root cause from creating
+     * multiple incidents in the same account.</p> <p>A deduplication string is a term
+     * or phrase the system uses to check for duplicate incidents. If you specify a
+     * deduplication string, Incident Manager searches for open incidents that contain
+     * the same string in the <code>dedupeString</code> field when it creates the
+     * incident. If a duplicate is detected, Incident Manager deduplicates the newer
+     * incident into the existing incident.</p>  <p>By default, Incident Manager
+     * automatically deduplicates multiple incidents created by the same Amazon
+     * CloudWatch alarm or Amazon EventBridge event. You don't have to enter your own
+     * deduplication string to prevent duplication for these resource types.</p>
+     * 
      */
     inline void SetDedupeString(const char* value) { m_dedupeStringHasBeenSet = true; m_dedupeString.assign(value); }
 
     /**
-     * <p>Used to stop Incident Manager from creating multiple incident records for the
-     * same incident. </p>
+     * <p>The string Incident Manager uses to prevent the same root cause from creating
+     * multiple incidents in the same account.</p> <p>A deduplication string is a term
+     * or phrase the system uses to check for duplicate incidents. If you specify a
+     * deduplication string, Incident Manager searches for open incidents that contain
+     * the same string in the <code>dedupeString</code> field when it creates the
+     * incident. If a duplicate is detected, Incident Manager deduplicates the newer
+     * incident into the existing incident.</p>  <p>By default, Incident Manager
+     * automatically deduplicates multiple incidents created by the same Amazon
+     * CloudWatch alarm or Amazon EventBridge event. You don't have to enter your own
+     * deduplication string to prevent duplication for these resource types.</p>
+     * 
      */
     inline IncidentTemplate& WithDedupeString(const Aws::String& value) { SetDedupeString(value); return *this;}
 
     /**
-     * <p>Used to stop Incident Manager from creating multiple incident records for the
-     * same incident. </p>
+     * <p>The string Incident Manager uses to prevent the same root cause from creating
+     * multiple incidents in the same account.</p> <p>A deduplication string is a term
+     * or phrase the system uses to check for duplicate incidents. If you specify a
+     * deduplication string, Incident Manager searches for open incidents that contain
+     * the same string in the <code>dedupeString</code> field when it creates the
+     * incident. If a duplicate is detected, Incident Manager deduplicates the newer
+     * incident into the existing incident.</p>  <p>By default, Incident Manager
+     * automatically deduplicates multiple incidents created by the same Amazon
+     * CloudWatch alarm or Amazon EventBridge event. You don't have to enter your own
+     * deduplication string to prevent duplication for these resource types.</p>
+     * 
      */
     inline IncidentTemplate& WithDedupeString(Aws::String&& value) { SetDedupeString(std::move(value)); return *this;}
 
     /**
-     * <p>Used to stop Incident Manager from creating multiple incident records for the
-     * same incident. </p>
+     * <p>The string Incident Manager uses to prevent the same root cause from creating
+     * multiple incidents in the same account.</p> <p>A deduplication string is a term
+     * or phrase the system uses to check for duplicate incidents. If you specify a
+     * deduplication string, Incident Manager searches for open incidents that contain
+     * the same string in the <code>dedupeString</code> field when it creates the
+     * incident. If a duplicate is detected, Incident Manager deduplicates the newer
+     * incident into the existing incident.</p>  <p>By default, Incident Manager
+     * automatically deduplicates multiple incidents created by the same Amazon
+     * CloudWatch alarm or Amazon EventBridge event. You don't have to enter your own
+     * deduplication string to prevent duplication for these resource types.</p>
+     * 
      */
     inline IncidentTemplate& WithDedupeString(const char* value) { SetDedupeString(value); return *this;}
 
 
     /**
-     * <p>The impact of the incident on your customers and applications. </p>
+     * <p>The impact of the incident on your customers and applications.</p> <p
+     * class="title"> <b>Supported impact codes</b> </p> <ul> <li> <p> <code>1</code> -
+     * Critical</p> </li> <li> <p> <code>2</code> - High</p> </li> <li> <p>
+     * <code>3</code> - Medium</p> </li> <li> <p> <code>4</code> - Low</p> </li> <li>
+     * <p> <code>5</code> - No Impact</p> </li> </ul>
      */
     inline int GetImpact() const{ return m_impact; }
 
     /**
-     * <p>The impact of the incident on your customers and applications. </p>
+     * <p>The impact of the incident on your customers and applications.</p> <p
+     * class="title"> <b>Supported impact codes</b> </p> <ul> <li> <p> <code>1</code> -
+     * Critical</p> </li> <li> <p> <code>2</code> - High</p> </li> <li> <p>
+     * <code>3</code> - Medium</p> </li> <li> <p> <code>4</code> - Low</p> </li> <li>
+     * <p> <code>5</code> - No Impact</p> </li> </ul>
      */
     inline bool ImpactHasBeenSet() const { return m_impactHasBeenSet; }
 
     /**
-     * <p>The impact of the incident on your customers and applications. </p>
+     * <p>The impact of the incident on your customers and applications.</p> <p
+     * class="title"> <b>Supported impact codes</b> </p> <ul> <li> <p> <code>1</code> -
+     * Critical</p> </li> <li> <p> <code>2</code> - High</p> </li> <li> <p>
+     * <code>3</code> - Medium</p> </li> <li> <p> <code>4</code> - Low</p> </li> <li>
+     * <p> <code>5</code> - No Impact</p> </li> </ul>
      */
     inline void SetImpact(int value) { m_impactHasBeenSet = true; m_impact = value; }
 
     /**
-     * <p>The impact of the incident on your customers and applications. </p>
+     * <p>The impact of the incident on your customers and applications.</p> <p
+     * class="title"> <b>Supported impact codes</b> </p> <ul> <li> <p> <code>1</code> -
+     * Critical</p> </li> <li> <p> <code>2</code> - High</p> </li> <li> <p>
+     * <code>3</code> - Medium</p> </li> <li> <p> <code>4</code> - Low</p> </li> <li>
+     * <p> <code>5</code> - No Impact</p> </li> </ul>
      */
     inline IncidentTemplate& WithImpact(int value) { SetImpact(value); return *this;}
 

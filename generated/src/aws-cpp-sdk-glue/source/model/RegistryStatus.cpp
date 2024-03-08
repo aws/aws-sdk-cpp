@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case RegistryStatus::NOT_SET:
+            return {};
           case RegistryStatus::AVAILABLE:
             return "AVAILABLE";
           case RegistryStatus::DELETING:

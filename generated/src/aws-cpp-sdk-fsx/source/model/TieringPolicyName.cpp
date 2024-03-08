@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TieringPolicyName::NOT_SET:
+            return {};
           case TieringPolicyName::SNAPSHOT_ONLY:
             return "SNAPSHOT_ONLY";
           case TieringPolicyName::AUTO:

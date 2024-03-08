@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case Split::NOT_SET:
+            return {};
           case Split::TRAIN:
             return "TRAIN";
           case Split::TEST:

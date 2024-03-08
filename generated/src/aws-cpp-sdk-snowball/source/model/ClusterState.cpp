@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ClusterState::NOT_SET:
+            return {};
           case ClusterState::AwaitingQuorum:
             return "AwaitingQuorum";
           case ClusterState::Pending:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case LambdaFunctionMetricName::NOT_SET:
+            return {};
           case LambdaFunctionMetricName::Duration:
             return "Duration";
           case LambdaFunctionMetricName::Memory:

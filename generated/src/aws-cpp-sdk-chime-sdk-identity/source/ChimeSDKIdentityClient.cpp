@@ -65,8 +65,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* ChimeSDKIdentityClient::SERVICE_NAME = "chime";
-const char* ChimeSDKIdentityClient::ALLOCATION_TAG = "ChimeSDKIdentityClient";
+namespace Aws
+{
+  namespace ChimeSDKIdentity
+  {
+    const char SERVICE_NAME[] = "chime";
+    const char ALLOCATION_TAG[] = "ChimeSDKIdentityClient";
+  }
+}
+const char* ChimeSDKIdentityClient::GetServiceName() {return SERVICE_NAME;}
+const char* ChimeSDKIdentityClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 ChimeSDKIdentityClient::ChimeSDKIdentityClient(const ChimeSDKIdentity::ChimeSDKIdentityClientConfiguration& clientConfiguration,
                                                std::shared_ptr<ChimeSDKIdentityEndpointProviderBase> endpointProvider) :
@@ -78,7 +86,7 @@ ChimeSDKIdentityClient::ChimeSDKIdentityClient(const ChimeSDKIdentity::ChimeSDKI
             Aws::MakeShared<ChimeSDKIdentityErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ChimeSDKIdentityEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -94,7 +102,7 @@ ChimeSDKIdentityClient::ChimeSDKIdentityClient(const AWSCredentials& credentials
             Aws::MakeShared<ChimeSDKIdentityErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ChimeSDKIdentityEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -110,7 +118,7 @@ ChimeSDKIdentityClient::ChimeSDKIdentityClient(const std::shared_ptr<AWSCredenti
             Aws::MakeShared<ChimeSDKIdentityErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<ChimeSDKIdentityEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

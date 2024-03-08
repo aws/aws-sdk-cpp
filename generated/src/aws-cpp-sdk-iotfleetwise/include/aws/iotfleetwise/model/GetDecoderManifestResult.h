@@ -283,6 +283,56 @@ namespace Model
     inline GetDecoderManifestResult& WithLastModificationTime(Aws::Utils::DateTime&& value) { SetLastModificationTime(std::move(value)); return *this;}
 
 
+    /**
+     * <p>The detailed message for the decoder manifest. When a decoder manifest is in
+     * an <code>INVALID</code> status, the message contains detailed reason and help
+     * information.</p>
+     */
+    inline const Aws::String& GetMessage() const{ return m_message; }
+
+    /**
+     * <p>The detailed message for the decoder manifest. When a decoder manifest is in
+     * an <code>INVALID</code> status, the message contains detailed reason and help
+     * information.</p>
+     */
+    inline void SetMessage(const Aws::String& value) { m_message = value; }
+
+    /**
+     * <p>The detailed message for the decoder manifest. When a decoder manifest is in
+     * an <code>INVALID</code> status, the message contains detailed reason and help
+     * information.</p>
+     */
+    inline void SetMessage(Aws::String&& value) { m_message = std::move(value); }
+
+    /**
+     * <p>The detailed message for the decoder manifest. When a decoder manifest is in
+     * an <code>INVALID</code> status, the message contains detailed reason and help
+     * information.</p>
+     */
+    inline void SetMessage(const char* value) { m_message.assign(value); }
+
+    /**
+     * <p>The detailed message for the decoder manifest. When a decoder manifest is in
+     * an <code>INVALID</code> status, the message contains detailed reason and help
+     * information.</p>
+     */
+    inline GetDecoderManifestResult& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
+
+    /**
+     * <p>The detailed message for the decoder manifest. When a decoder manifest is in
+     * an <code>INVALID</code> status, the message contains detailed reason and help
+     * information.</p>
+     */
+    inline GetDecoderManifestResult& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
+
+    /**
+     * <p>The detailed message for the decoder manifest. When a decoder manifest is in
+     * an <code>INVALID</code> status, the message contains detailed reason and help
+     * information.</p>
+     */
+    inline GetDecoderManifestResult& WithMessage(const char* value) { SetMessage(value); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -319,6 +369,8 @@ namespace Model
     Aws::Utils::DateTime m_creationTime;
 
     Aws::Utils::DateTime m_lastModificationTime;
+
+    Aws::String m_message;
 
     Aws::String m_requestId;
   };

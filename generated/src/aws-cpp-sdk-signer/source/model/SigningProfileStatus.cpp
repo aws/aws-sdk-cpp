@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SigningProfileStatus::NOT_SET:
+            return {};
           case SigningProfileStatus::Active:
             return "Active";
           case SigningProfileStatus::Canceled:

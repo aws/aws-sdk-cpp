@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AnalyticsFilterOperator::NOT_SET:
+            return {};
           case AnalyticsFilterOperator::EQ:
             return "EQ";
           case AnalyticsFilterOperator::GT:

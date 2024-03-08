@@ -69,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case FlywheelIterationStatus::NOT_SET:
+            return {};
           case FlywheelIterationStatus::TRAINING:
             return "TRAINING";
           case FlywheelIterationStatus::EVALUATING:

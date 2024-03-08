@@ -104,72 +104,72 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether this workspace uses SAML 2.0, IAM Identity Center
-     * (successor to Single Sign-On), or both to authenticate users for using the
-     * Grafana console within a workspace. For more information, see <a
+     * <p>Specifies whether this workspace uses SAML 2.0, IAM Identity Center, or both
+     * to authenticate users for using the Grafana console within a workspace. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User
      * authentication in Amazon Managed Grafana</a>.</p>
      */
     inline const Aws::Vector<AuthenticationProviderTypes>& GetAuthenticationProviders() const{ return m_authenticationProviders; }
 
     /**
-     * <p>Specifies whether this workspace uses SAML 2.0, IAM Identity Center
-     * (successor to Single Sign-On), or both to authenticate users for using the
-     * Grafana console within a workspace. For more information, see <a
+     * <p>Specifies whether this workspace uses SAML 2.0, IAM Identity Center, or both
+     * to authenticate users for using the Grafana console within a workspace. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User
      * authentication in Amazon Managed Grafana</a>.</p>
      */
     inline bool AuthenticationProvidersHasBeenSet() const { return m_authenticationProvidersHasBeenSet; }
 
     /**
-     * <p>Specifies whether this workspace uses SAML 2.0, IAM Identity Center
-     * (successor to Single Sign-On), or both to authenticate users for using the
-     * Grafana console within a workspace. For more information, see <a
+     * <p>Specifies whether this workspace uses SAML 2.0, IAM Identity Center, or both
+     * to authenticate users for using the Grafana console within a workspace. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User
      * authentication in Amazon Managed Grafana</a>.</p>
      */
     inline void SetAuthenticationProviders(const Aws::Vector<AuthenticationProviderTypes>& value) { m_authenticationProvidersHasBeenSet = true; m_authenticationProviders = value; }
 
     /**
-     * <p>Specifies whether this workspace uses SAML 2.0, IAM Identity Center
-     * (successor to Single Sign-On), or both to authenticate users for using the
-     * Grafana console within a workspace. For more information, see <a
+     * <p>Specifies whether this workspace uses SAML 2.0, IAM Identity Center, or both
+     * to authenticate users for using the Grafana console within a workspace. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User
      * authentication in Amazon Managed Grafana</a>.</p>
      */
     inline void SetAuthenticationProviders(Aws::Vector<AuthenticationProviderTypes>&& value) { m_authenticationProvidersHasBeenSet = true; m_authenticationProviders = std::move(value); }
 
     /**
-     * <p>Specifies whether this workspace uses SAML 2.0, IAM Identity Center
-     * (successor to Single Sign-On), or both to authenticate users for using the
-     * Grafana console within a workspace. For more information, see <a
+     * <p>Specifies whether this workspace uses SAML 2.0, IAM Identity Center, or both
+     * to authenticate users for using the Grafana console within a workspace. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User
      * authentication in Amazon Managed Grafana</a>.</p>
      */
     inline CreateWorkspaceRequest& WithAuthenticationProviders(const Aws::Vector<AuthenticationProviderTypes>& value) { SetAuthenticationProviders(value); return *this;}
 
     /**
-     * <p>Specifies whether this workspace uses SAML 2.0, IAM Identity Center
-     * (successor to Single Sign-On), or both to authenticate users for using the
-     * Grafana console within a workspace. For more information, see <a
+     * <p>Specifies whether this workspace uses SAML 2.0, IAM Identity Center, or both
+     * to authenticate users for using the Grafana console within a workspace. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User
      * authentication in Amazon Managed Grafana</a>.</p>
      */
     inline CreateWorkspaceRequest& WithAuthenticationProviders(Aws::Vector<AuthenticationProviderTypes>&& value) { SetAuthenticationProviders(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies whether this workspace uses SAML 2.0, IAM Identity Center
-     * (successor to Single Sign-On), or both to authenticate users for using the
-     * Grafana console within a workspace. For more information, see <a
+     * <p>Specifies whether this workspace uses SAML 2.0, IAM Identity Center, or both
+     * to authenticate users for using the Grafana console within a workspace. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User
      * authentication in Amazon Managed Grafana</a>.</p>
      */
     inline CreateWorkspaceRequest& AddAuthenticationProviders(const AuthenticationProviderTypes& value) { m_authenticationProvidersHasBeenSet = true; m_authenticationProviders.push_back(value); return *this; }
 
     /**
-     * <p>Specifies whether this workspace uses SAML 2.0, IAM Identity Center
-     * (successor to Single Sign-On), or both to authenticate users for using the
-     * Grafana console within a workspace. For more information, see <a
+     * <p>Specifies whether this workspace uses SAML 2.0, IAM Identity Center, or both
+     * to authenticate users for using the Grafana console within a workspace. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User
      * authentication in Amazon Managed Grafana</a>.</p>
      */
@@ -291,58 +291,58 @@ namespace Model
 
 
     /**
-     * <p>Specifies the version of Grafana to support in the new workspace.</p> <p>To
-     * get a list of supported version, use the <code>ListVersions</code>
-     * operation.</p>
+     * <p>Specifies the version of Grafana to support in the new workspace. If not
+     * specified, defaults to the latest version (for example, 9.4).</p> <p>To get a
+     * list of supported versions, use the <code>ListVersions</code> operation.</p>
      */
     inline const Aws::String& GetGrafanaVersion() const{ return m_grafanaVersion; }
 
     /**
-     * <p>Specifies the version of Grafana to support in the new workspace.</p> <p>To
-     * get a list of supported version, use the <code>ListVersions</code>
-     * operation.</p>
+     * <p>Specifies the version of Grafana to support in the new workspace. If not
+     * specified, defaults to the latest version (for example, 9.4).</p> <p>To get a
+     * list of supported versions, use the <code>ListVersions</code> operation.</p>
      */
     inline bool GrafanaVersionHasBeenSet() const { return m_grafanaVersionHasBeenSet; }
 
     /**
-     * <p>Specifies the version of Grafana to support in the new workspace.</p> <p>To
-     * get a list of supported version, use the <code>ListVersions</code>
-     * operation.</p>
+     * <p>Specifies the version of Grafana to support in the new workspace. If not
+     * specified, defaults to the latest version (for example, 9.4).</p> <p>To get a
+     * list of supported versions, use the <code>ListVersions</code> operation.</p>
      */
     inline void SetGrafanaVersion(const Aws::String& value) { m_grafanaVersionHasBeenSet = true; m_grafanaVersion = value; }
 
     /**
-     * <p>Specifies the version of Grafana to support in the new workspace.</p> <p>To
-     * get a list of supported version, use the <code>ListVersions</code>
-     * operation.</p>
+     * <p>Specifies the version of Grafana to support in the new workspace. If not
+     * specified, defaults to the latest version (for example, 9.4).</p> <p>To get a
+     * list of supported versions, use the <code>ListVersions</code> operation.</p>
      */
     inline void SetGrafanaVersion(Aws::String&& value) { m_grafanaVersionHasBeenSet = true; m_grafanaVersion = std::move(value); }
 
     /**
-     * <p>Specifies the version of Grafana to support in the new workspace.</p> <p>To
-     * get a list of supported version, use the <code>ListVersions</code>
-     * operation.</p>
+     * <p>Specifies the version of Grafana to support in the new workspace. If not
+     * specified, defaults to the latest version (for example, 9.4).</p> <p>To get a
+     * list of supported versions, use the <code>ListVersions</code> operation.</p>
      */
     inline void SetGrafanaVersion(const char* value) { m_grafanaVersionHasBeenSet = true; m_grafanaVersion.assign(value); }
 
     /**
-     * <p>Specifies the version of Grafana to support in the new workspace.</p> <p>To
-     * get a list of supported version, use the <code>ListVersions</code>
-     * operation.</p>
+     * <p>Specifies the version of Grafana to support in the new workspace. If not
+     * specified, defaults to the latest version (for example, 9.4).</p> <p>To get a
+     * list of supported versions, use the <code>ListVersions</code> operation.</p>
      */
     inline CreateWorkspaceRequest& WithGrafanaVersion(const Aws::String& value) { SetGrafanaVersion(value); return *this;}
 
     /**
-     * <p>Specifies the version of Grafana to support in the new workspace.</p> <p>To
-     * get a list of supported version, use the <code>ListVersions</code>
-     * operation.</p>
+     * <p>Specifies the version of Grafana to support in the new workspace. If not
+     * specified, defaults to the latest version (for example, 9.4).</p> <p>To get a
+     * list of supported versions, use the <code>ListVersions</code> operation.</p>
      */
     inline CreateWorkspaceRequest& WithGrafanaVersion(Aws::String&& value) { SetGrafanaVersion(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the version of Grafana to support in the new workspace.</p> <p>To
-     * get a list of supported version, use the <code>ListVersions</code>
-     * operation.</p>
+     * <p>Specifies the version of Grafana to support in the new workspace. If not
+     * specified, defaults to the latest version (for example, 9.4).</p> <p>To get a
+     * list of supported versions, use the <code>ListVersions</code> operation.</p>
      */
     inline CreateWorkspaceRequest& WithGrafanaVersion(const char* value) { SetGrafanaVersion(value); return *this;}
 

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DestinationCountryParameterKey::NOT_SET:
+            return {};
           case DestinationCountryParameterKey::IN_TEMPLATE_ID:
             return "IN_TEMPLATE_ID";
           case DestinationCountryParameterKey::IN_ENTITY_ID:

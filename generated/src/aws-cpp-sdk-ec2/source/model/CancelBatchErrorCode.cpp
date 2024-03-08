@@ -59,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CancelBatchErrorCode::NOT_SET:
+            return {};
           case CancelBatchErrorCode::fleetRequestIdDoesNotExist:
             return "fleetRequestIdDoesNotExist";
           case CancelBatchErrorCode::fleetRequestIdMalformed:

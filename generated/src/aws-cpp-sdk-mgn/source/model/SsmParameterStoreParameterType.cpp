@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case SsmParameterStoreParameterType::NOT_SET:
+            return {};
           case SsmParameterStoreParameterType::STRING:
             return "STRING";
           default:

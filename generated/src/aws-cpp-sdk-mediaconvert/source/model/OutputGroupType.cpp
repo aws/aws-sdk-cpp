@@ -64,6 +64,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OutputGroupType::NOT_SET:
+            return {};
           case OutputGroupType::HLS_GROUP_SETTINGS:
             return "HLS_GROUP_SETTINGS";
           case OutputGroupType::DASH_ISO_GROUP_SETTINGS:

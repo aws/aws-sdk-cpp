@@ -10,6 +10,7 @@
 #include <aws/core/client/AWSClientAsyncCRTP.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/resource-groups/ResourceGroupsServiceClientModel.h>
+#include <aws/resource-groups/model/GetAccountSettingsRequest.h>
 
 namespace Aws
 {
@@ -46,8 +47,8 @@ namespace ResourceGroups
   {
     public:
       typedef Aws::Client::AWSJsonClient BASECLASS;
-      static const char* SERVICE_NAME;
-      static const char* ALLOCATION_TAG;
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
 
       typedef ResourceGroupsClientConfiguration ClientConfigurationType;
       typedef ResourceGroupsEndpointProvider EndpointProviderType;
@@ -57,14 +58,14 @@ namespace ResourceGroups
         * is not specified, it will be initialized to default values.
         */
         ResourceGroupsClient(const Aws::ResourceGroups::ResourceGroupsClientConfiguration& clientConfiguration = Aws::ResourceGroups::ResourceGroupsClientConfiguration(),
-                             std::shared_ptr<ResourceGroupsEndpointProviderBase> endpointProvider = Aws::MakeShared<ResourceGroupsEndpointProvider>(ALLOCATION_TAG));
+                             std::shared_ptr<ResourceGroupsEndpointProviderBase> endpointProvider = nullptr);
 
        /**
         * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
         */
         ResourceGroupsClient(const Aws::Auth::AWSCredentials& credentials,
-                             std::shared_ptr<ResourceGroupsEndpointProviderBase> endpointProvider = Aws::MakeShared<ResourceGroupsEndpointProvider>(ALLOCATION_TAG),
+                             std::shared_ptr<ResourceGroupsEndpointProviderBase> endpointProvider = nullptr,
                              const Aws::ResourceGroups::ResourceGroupsClientConfiguration& clientConfiguration = Aws::ResourceGroups::ResourceGroupsClientConfiguration());
 
        /**
@@ -72,7 +73,7 @@ namespace ResourceGroups
         * the default http client factory will be used
         */
         ResourceGroupsClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
-                             std::shared_ptr<ResourceGroupsEndpointProviderBase> endpointProvider = Aws::MakeShared<ResourceGroupsEndpointProvider>(ALLOCATION_TAG),
+                             std::shared_ptr<ResourceGroupsEndpointProviderBase> endpointProvider = nullptr,
                              const Aws::ResourceGroups::ResourceGroupsClientConfiguration& clientConfiguration = Aws::ResourceGroups::ResourceGroupsClientConfiguration());
 
 
@@ -172,25 +173,26 @@ namespace ResourceGroups
          * href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/GetAccountSettings">AWS
          * API Reference</a></p>
          */
-        virtual Model::GetAccountSettingsOutcome GetAccountSettings() const;
+        virtual Model::GetAccountSettingsOutcome GetAccountSettings(const Model::GetAccountSettingsRequest& request = {}) const;
 
         /**
          * A Callable wrapper for GetAccountSettings that returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        template<typename = void>
-        Model::GetAccountSettingsOutcomeCallable GetAccountSettingsCallable() const
+        template<typename GetAccountSettingsRequestT = Model::GetAccountSettingsRequest>
+        Model::GetAccountSettingsOutcomeCallable GetAccountSettingsCallable(const GetAccountSettingsRequestT& request = {}) const
         {
-            return SubmitCallable(&ResourceGroupsClient::GetAccountSettings);
+            return SubmitCallable(&ResourceGroupsClient::GetAccountSettings, request);
         }
 
         /**
          * An Async wrapper for GetAccountSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        template<typename = void>
-        void GetAccountSettingsAsync(const GetAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        template<typename GetAccountSettingsRequestT = Model::GetAccountSettingsRequest>
+        void GetAccountSettingsAsync(const GetAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr, const GetAccountSettingsRequestT& request = {}) const
         {
-            return SubmitAsync(&ResourceGroupsClient::GetAccountSettings, handler, context);
+            return SubmitAsync(&ResourceGroupsClient::GetAccountSettings, request, handler, context);
         }
+
         /**
          * <p>Returns information about a specified resource group.</p> <p> <b>Minimum
          * permissions</b> </p> <p>To run this command, you must have the following

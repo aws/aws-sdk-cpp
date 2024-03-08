@@ -39,7 +39,7 @@ namespace Model
      * <p>The identifier of the traffic distribution group. This can be the ID or the
      * ARN if the API is being called in the Region where the traffic distribution
      * group was created. The ARN must be provided if the call is from the replicated
-     * Region.</p>
+     * Region. </p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
@@ -47,7 +47,7 @@ namespace Model
      * <p>The identifier of the traffic distribution group. This can be the ID or the
      * ARN if the API is being called in the Region where the traffic distribution
      * group was created. The ARN must be provided if the call is from the replicated
-     * Region.</p>
+     * Region. </p>
      */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
@@ -55,7 +55,7 @@ namespace Model
      * <p>The identifier of the traffic distribution group. This can be the ID or the
      * ARN if the API is being called in the Region where the traffic distribution
      * group was created. The ARN must be provided if the call is from the replicated
-     * Region.</p>
+     * Region. </p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
@@ -63,7 +63,7 @@ namespace Model
      * <p>The identifier of the traffic distribution group. This can be the ID or the
      * ARN if the API is being called in the Region where the traffic distribution
      * group was created. The ARN must be provided if the call is from the replicated
-     * Region.</p>
+     * Region. </p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
@@ -71,7 +71,7 @@ namespace Model
      * <p>The identifier of the traffic distribution group. This can be the ID or the
      * ARN if the API is being called in the Region where the traffic distribution
      * group was created. The ARN must be provided if the call is from the replicated
-     * Region.</p>
+     * Region. </p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
@@ -79,7 +79,7 @@ namespace Model
      * <p>The identifier of the traffic distribution group. This can be the ID or the
      * ARN if the API is being called in the Region where the traffic distribution
      * group was created. The ARN must be provided if the call is from the replicated
-     * Region.</p>
+     * Region. </p>
      */
     inline UpdateTrafficDistributionRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
 
@@ -87,7 +87,7 @@ namespace Model
      * <p>The identifier of the traffic distribution group. This can be the ID or the
      * ARN if the API is being called in the Region where the traffic distribution
      * group was created. The ARN must be provided if the call is from the replicated
-     * Region.</p>
+     * Region. </p>
      */
     inline UpdateTrafficDistributionRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
@@ -95,7 +95,7 @@ namespace Model
      * <p>The identifier of the traffic distribution group. This can be the ID or the
      * ARN if the API is being called in the Region where the traffic distribution
      * group was created. The ARN must be provided if the call is from the replicated
-     * Region.</p>
+     * Region. </p>
      */
     inline UpdateTrafficDistributionRequest& WithId(const char* value) { SetId(value); return *this;}
 
@@ -132,38 +132,38 @@ namespace Model
 
 
     /**
-     * <p>The distribution of allowing signing in to the instance and its
-     * replica(s).</p>
+     * <p>The distribution that determines which Amazon Web Services Regions should be
+     * used to sign in agents in to both the instance and its replica(s).</p>
      */
     inline const SignInConfig& GetSignInConfig() const{ return m_signInConfig; }
 
     /**
-     * <p>The distribution of allowing signing in to the instance and its
-     * replica(s).</p>
+     * <p>The distribution that determines which Amazon Web Services Regions should be
+     * used to sign in agents in to both the instance and its replica(s).</p>
      */
     inline bool SignInConfigHasBeenSet() const { return m_signInConfigHasBeenSet; }
 
     /**
-     * <p>The distribution of allowing signing in to the instance and its
-     * replica(s).</p>
+     * <p>The distribution that determines which Amazon Web Services Regions should be
+     * used to sign in agents in to both the instance and its replica(s).</p>
      */
     inline void SetSignInConfig(const SignInConfig& value) { m_signInConfigHasBeenSet = true; m_signInConfig = value; }
 
     /**
-     * <p>The distribution of allowing signing in to the instance and its
-     * replica(s).</p>
+     * <p>The distribution that determines which Amazon Web Services Regions should be
+     * used to sign in agents in to both the instance and its replica(s).</p>
      */
     inline void SetSignInConfig(SignInConfig&& value) { m_signInConfigHasBeenSet = true; m_signInConfig = std::move(value); }
 
     /**
-     * <p>The distribution of allowing signing in to the instance and its
-     * replica(s).</p>
+     * <p>The distribution that determines which Amazon Web Services Regions should be
+     * used to sign in agents in to both the instance and its replica(s).</p>
      */
     inline UpdateTrafficDistributionRequest& WithSignInConfig(const SignInConfig& value) { SetSignInConfig(value); return *this;}
 
     /**
-     * <p>The distribution of allowing signing in to the instance and its
-     * replica(s).</p>
+     * <p>The distribution that determines which Amazon Web Services Regions should be
+     * used to sign in agents in to both the instance and its replica(s).</p>
      */
     inline UpdateTrafficDistributionRequest& WithSignInConfig(SignInConfig&& value) { SetSignInConfig(std::move(value)); return *this;}
 

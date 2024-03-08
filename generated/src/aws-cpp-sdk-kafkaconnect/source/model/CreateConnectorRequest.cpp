@@ -24,6 +24,7 @@ CreateConnectorRequest::CreateConnectorRequest() :
     m_logDeliveryHasBeenSet(false),
     m_pluginsHasBeenSet(false),
     m_serviceExecutionRoleArnHasBeenSet(false),
+    m_tagsHasBeenSet(false),
     m_workerConfigurationHasBeenSet(false)
 {
 }
@@ -105,6 +106,17 @@ Aws::String CreateConnectorRequest::SerializePayload() const
   if(m_serviceExecutionRoleArnHasBeenSet)
   {
    payload.WithString("serviceExecutionRoleArn", m_serviceExecutionRoleArn);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
 
   }
 

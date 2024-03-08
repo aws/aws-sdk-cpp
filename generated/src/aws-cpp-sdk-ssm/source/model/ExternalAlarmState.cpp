@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ExternalAlarmState::NOT_SET:
+            return {};
           case ExternalAlarmState::UNKNOWN:
             return "UNKNOWN";
           case ExternalAlarmState::ALARM:

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MFADelete::NOT_SET:
+            return {};
           case MFADelete::Enabled:
             return "Enabled";
           case MFADelete::Disabled:

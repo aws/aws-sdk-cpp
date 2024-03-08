@@ -293,38 +293,38 @@ namespace Model
 
 
     /**
-     * <p>The language of the input documents. Currently, English is the only valid
-     * language.</p>
+     * <p>The language of the input documents. Enter the language code for English (en)
+     * or Spanish (es).</p>
      */
     inline const LanguageCode& GetLanguageCode() const{ return m_languageCode; }
 
     /**
-     * <p>The language of the input documents. Currently, English is the only valid
-     * language.</p>
+     * <p>The language of the input documents. Enter the language code for English (en)
+     * or Spanish (es).</p>
      */
     inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
 
     /**
-     * <p>The language of the input documents. Currently, English is the only valid
-     * language.</p>
+     * <p>The language of the input documents. Enter the language code for English (en)
+     * or Spanish (es).</p>
      */
     inline void SetLanguageCode(const LanguageCode& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
 
     /**
-     * <p>The language of the input documents. Currently, English is the only valid
-     * language.</p>
+     * <p>The language of the input documents. Enter the language code for English (en)
+     * or Spanish (es).</p>
      */
     inline void SetLanguageCode(LanguageCode&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
 
     /**
-     * <p>The language of the input documents. Currently, English is the only valid
-     * language.</p>
+     * <p>The language of the input documents. Enter the language code for English (en)
+     * or Spanish (es).</p>
      */
     inline StartPiiEntitiesDetectionJobRequest& WithLanguageCode(const LanguageCode& value) { SetLanguageCode(value); return *this;}
 
     /**
-     * <p>The language of the input documents. Currently, English is the only valid
-     * language.</p>
+     * <p>The language of the input documents. Enter the language code for English (en)
+     * or Spanish (es).</p>
      */
     inline StartPiiEntitiesDetectionJobRequest& WithLanguageCode(LanguageCode&& value) { SetLanguageCode(std::move(value)); return *this;}
 

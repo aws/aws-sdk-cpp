@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case CertificateDomainValidationStatus::NOT_SET:
+            return {};
           case CertificateDomainValidationStatus::PENDING_VALIDATION:
             return "PENDING_VALIDATION";
           case CertificateDomainValidationStatus::FAILED:

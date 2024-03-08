@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case DirectorySize::NOT_SET:
+            return {};
           case DirectorySize::Small:
             return "Small";
           case DirectorySize::Large:

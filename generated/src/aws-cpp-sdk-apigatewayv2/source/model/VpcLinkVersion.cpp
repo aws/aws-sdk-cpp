@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case VpcLinkVersion::NOT_SET:
+            return {};
           case VpcLinkVersion::V2:
             return "V2";
           default:

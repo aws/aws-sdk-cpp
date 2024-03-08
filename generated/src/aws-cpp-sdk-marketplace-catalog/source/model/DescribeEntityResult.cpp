@@ -59,6 +59,12 @@ DescribeEntityResult& DescribeEntityResult::operator =(const Aws::AmazonWebServi
 
   }
 
+  if(jsonValue.ValueExists("DetailsDocument"))
+  {
+    m_detailsDocument = jsonValue.GetObject("DetailsDocument");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

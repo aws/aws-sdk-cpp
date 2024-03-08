@@ -123,42 +123,42 @@ namespace Model
 
 
     /**
-     * <p>The cluster that the configuration is associated to.</p>
+     * <p>The name of your cluster.</p>
      */
     inline const Aws::String& GetClusterName() const{ return m_clusterName; }
 
     /**
-     * <p>The cluster that the configuration is associated to.</p>
+     * <p>The name of your cluster.</p>
      */
     inline bool ClusterNameHasBeenSet() const { return m_clusterNameHasBeenSet; }
 
     /**
-     * <p>The cluster that the configuration is associated to.</p>
+     * <p>The name of your cluster.</p>
      */
     inline void SetClusterName(const Aws::String& value) { m_clusterNameHasBeenSet = true; m_clusterName = value; }
 
     /**
-     * <p>The cluster that the configuration is associated to.</p>
+     * <p>The name of your cluster.</p>
      */
     inline void SetClusterName(Aws::String&& value) { m_clusterNameHasBeenSet = true; m_clusterName = std::move(value); }
 
     /**
-     * <p>The cluster that the configuration is associated to.</p>
+     * <p>The name of your cluster.</p>
      */
     inline void SetClusterName(const char* value) { m_clusterNameHasBeenSet = true; m_clusterName.assign(value); }
 
     /**
-     * <p>The cluster that the configuration is associated to.</p>
+     * <p>The name of your cluster.</p>
      */
     inline OidcIdentityProviderConfig& WithClusterName(const Aws::String& value) { SetClusterName(value); return *this;}
 
     /**
-     * <p>The cluster that the configuration is associated to.</p>
+     * <p>The name of your cluster.</p>
      */
     inline OidcIdentityProviderConfig& WithClusterName(Aws::String&& value) { SetClusterName(std::move(value)); return *this;}
 
     /**
-     * <p>The cluster that the configuration is associated to.</p>
+     * <p>The name of your cluster.</p>
      */
     inline OidcIdentityProviderConfig& WithClusterName(const char* value) { SetClusterName(value); return *this;}
 
@@ -558,93 +558,93 @@ namespace Model
 
 
     /**
-     * <p>The metadata to apply to the provider configuration to assist with
-     * categorization and organization. Each tag consists of a key and an optional
-     * value. You define both.</p>
+     * <p>Metadata that assists with categorization and organization. Each tag consists
+     * of a key and an optional value. You define both. Tags don't propagate to any
+     * other cluster or Amazon Web Services resources.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>The metadata to apply to the provider configuration to assist with
-     * categorization and organization. Each tag consists of a key and an optional
-     * value. You define both.</p>
+     * <p>Metadata that assists with categorization and organization. Each tag consists
+     * of a key and an optional value. You define both. Tags don't propagate to any
+     * other cluster or Amazon Web Services resources.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>The metadata to apply to the provider configuration to assist with
-     * categorization and organization. Each tag consists of a key and an optional
-     * value. You define both.</p>
+     * <p>Metadata that assists with categorization and organization. Each tag consists
+     * of a key and an optional value. You define both. Tags don't propagate to any
+     * other cluster or Amazon Web Services resources.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>The metadata to apply to the provider configuration to assist with
-     * categorization and organization. Each tag consists of a key and an optional
-     * value. You define both.</p>
+     * <p>Metadata that assists with categorization and organization. Each tag consists
+     * of a key and an optional value. You define both. Tags don't propagate to any
+     * other cluster or Amazon Web Services resources.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>The metadata to apply to the provider configuration to assist with
-     * categorization and organization. Each tag consists of a key and an optional
-     * value. You define both.</p>
+     * <p>Metadata that assists with categorization and organization. Each tag consists
+     * of a key and an optional value. You define both. Tags don't propagate to any
+     * other cluster or Amazon Web Services resources.</p>
      */
     inline OidcIdentityProviderConfig& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>The metadata to apply to the provider configuration to assist with
-     * categorization and organization. Each tag consists of a key and an optional
-     * value. You define both.</p>
+     * <p>Metadata that assists with categorization and organization. Each tag consists
+     * of a key and an optional value. You define both. Tags don't propagate to any
+     * other cluster or Amazon Web Services resources.</p>
      */
     inline OidcIdentityProviderConfig& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>The metadata to apply to the provider configuration to assist with
-     * categorization and organization. Each tag consists of a key and an optional
-     * value. You define both.</p>
+     * <p>Metadata that assists with categorization and organization. Each tag consists
+     * of a key and an optional value. You define both. Tags don't propagate to any
+     * other cluster or Amazon Web Services resources.</p>
      */
     inline OidcIdentityProviderConfig& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p>The metadata to apply to the provider configuration to assist with
-     * categorization and organization. Each tag consists of a key and an optional
-     * value. You define both.</p>
+     * <p>Metadata that assists with categorization and organization. Each tag consists
+     * of a key and an optional value. You define both. Tags don't propagate to any
+     * other cluster or Amazon Web Services resources.</p>
      */
     inline OidcIdentityProviderConfig& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The metadata to apply to the provider configuration to assist with
-     * categorization and organization. Each tag consists of a key and an optional
-     * value. You define both.</p>
+     * <p>Metadata that assists with categorization and organization. Each tag consists
+     * of a key and an optional value. You define both. Tags don't propagate to any
+     * other cluster or Amazon Web Services resources.</p>
      */
     inline OidcIdentityProviderConfig& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The metadata to apply to the provider configuration to assist with
-     * categorization and organization. Each tag consists of a key and an optional
-     * value. You define both.</p>
+     * <p>Metadata that assists with categorization and organization. Each tag consists
+     * of a key and an optional value. You define both. Tags don't propagate to any
+     * other cluster or Amazon Web Services resources.</p>
      */
     inline OidcIdentityProviderConfig& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The metadata to apply to the provider configuration to assist with
-     * categorization and organization. Each tag consists of a key and an optional
-     * value. You define both.</p>
+     * <p>Metadata that assists with categorization and organization. Each tag consists
+     * of a key and an optional value. You define both. Tags don't propagate to any
+     * other cluster or Amazon Web Services resources.</p>
      */
     inline OidcIdentityProviderConfig& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The metadata to apply to the provider configuration to assist with
-     * categorization and organization. Each tag consists of a key and an optional
-     * value. You define both.</p>
+     * <p>Metadata that assists with categorization and organization. Each tag consists
+     * of a key and an optional value. You define both. Tags don't propagate to any
+     * other cluster or Amazon Web Services resources.</p>
      */
     inline OidcIdentityProviderConfig& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The metadata to apply to the provider configuration to assist with
-     * categorization and organization. Each tag consists of a key and an optional
-     * value. You define both.</p>
+     * <p>Metadata that assists with categorization and organization. Each tag consists
+     * of a key and an optional value. You define both. Tags don't propagate to any
+     * other cluster or Amazon Web Services resources.</p>
      */
     inline OidcIdentityProviderConfig& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 

@@ -44,6 +44,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TransitionToPrimaryStorageClassRules::NOT_SET:
+            return {};
           case TransitionToPrimaryStorageClassRules::AFTER_1_ACCESS:
             return "AFTER_1_ACCESS";
           default:

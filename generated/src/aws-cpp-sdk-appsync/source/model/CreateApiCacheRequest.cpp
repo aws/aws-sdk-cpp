@@ -23,7 +23,9 @@ CreateApiCacheRequest::CreateApiCacheRequest() :
     m_apiCachingBehavior(ApiCachingBehavior::NOT_SET),
     m_apiCachingBehaviorHasBeenSet(false),
     m_type(ApiCacheType::NOT_SET),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_healthMetricsConfig(CacheHealthMetricsConfig::NOT_SET),
+    m_healthMetricsConfigHasBeenSet(false)
 {
 }
 
@@ -57,6 +59,11 @@ Aws::String CreateApiCacheRequest::SerializePayload() const
   if(m_typeHasBeenSet)
   {
    payload.WithString("type", ApiCacheTypeMapper::GetNameForApiCacheType(m_type));
+  }
+
+  if(m_healthMetricsConfigHasBeenSet)
+  {
+   payload.WithString("healthMetricsConfig", CacheHealthMetricsConfigMapper::GetNameForCacheHealthMetricsConfig(m_healthMetricsConfig));
   }
 
   return payload.View().WriteReadable();

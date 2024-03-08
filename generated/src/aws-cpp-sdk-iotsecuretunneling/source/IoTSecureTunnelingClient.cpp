@@ -43,8 +43,16 @@ using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* IoTSecureTunnelingClient::SERVICE_NAME = "IoTSecuredTunneling";
-const char* IoTSecureTunnelingClient::ALLOCATION_TAG = "IoTSecureTunnelingClient";
+namespace Aws
+{
+  namespace IoTSecureTunneling
+  {
+    const char SERVICE_NAME[] = "IoTSecuredTunneling";
+    const char ALLOCATION_TAG[] = "IoTSecureTunnelingClient";
+  }
+}
+const char* IoTSecureTunnelingClient::GetServiceName() {return SERVICE_NAME;}
+const char* IoTSecureTunnelingClient::GetAllocationTag() {return ALLOCATION_TAG;}
 
 IoTSecureTunnelingClient::IoTSecureTunnelingClient(const IoTSecureTunneling::IoTSecureTunnelingClientConfiguration& clientConfiguration,
                                                    std::shared_ptr<IoTSecureTunnelingEndpointProviderBase> endpointProvider) :
@@ -56,7 +64,7 @@ IoTSecureTunnelingClient::IoTSecureTunnelingClient(const IoTSecureTunneling::IoT
             Aws::MakeShared<IoTSecureTunnelingErrorMarshaller>(ALLOCATION_TAG)),
   m_clientConfiguration(clientConfiguration),
   m_executor(clientConfiguration.executor),
-  m_endpointProvider(std::move(endpointProvider))
+  m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<IoTSecureTunnelingEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -72,7 +80,7 @@ IoTSecureTunnelingClient::IoTSecureTunnelingClient(const AWSCredentials& credent
             Aws::MakeShared<IoTSecureTunnelingErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<IoTSecureTunnelingEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }
@@ -88,7 +96,7 @@ IoTSecureTunnelingClient::IoTSecureTunnelingClient(const std::shared_ptr<AWSCred
             Aws::MakeShared<IoTSecureTunnelingErrorMarshaller>(ALLOCATION_TAG)),
     m_clientConfiguration(clientConfiguration),
     m_executor(clientConfiguration.executor),
-    m_endpointProvider(std::move(endpointProvider))
+    m_endpointProvider(endpointProvider ? std::move(endpointProvider) : Aws::MakeShared<IoTSecureTunnelingEndpointProvider>(ALLOCATION_TAG))
 {
   init(m_clientConfiguration);
 }

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ResourceShareType::NOT_SET:
+            return {};
           case ResourceShareType::FOREIGN:
             return "FOREIGN";
           case ResourceShareType::ALL:

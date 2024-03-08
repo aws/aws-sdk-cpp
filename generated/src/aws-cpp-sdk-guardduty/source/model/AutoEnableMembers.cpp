@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case AutoEnableMembers::NOT_SET:
+            return {};
           case AutoEnableMembers::NEW_:
             return "NEW";
           case AutoEnableMembers::ALL:

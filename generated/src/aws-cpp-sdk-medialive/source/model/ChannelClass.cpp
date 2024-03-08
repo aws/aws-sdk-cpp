@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case ChannelClass::NOT_SET:
+            return {};
           case ChannelClass::STANDARD:
             return "STANDARD";
           case ChannelClass::SINGLE_PIPELINE:

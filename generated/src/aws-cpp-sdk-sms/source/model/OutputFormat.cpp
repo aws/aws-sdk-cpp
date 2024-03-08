@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case OutputFormat::NOT_SET:
+            return {};
           case OutputFormat::JSON:
             return "JSON";
           case OutputFormat::YAML:

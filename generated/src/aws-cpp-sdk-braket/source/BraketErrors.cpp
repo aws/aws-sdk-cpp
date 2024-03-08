@@ -31,23 +31,23 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 
   if (hashCode == CONFLICT_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(BraketErrors::CONFLICT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(BraketErrors::CONFLICT), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == DEVICE_RETIRED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(BraketErrors::DEVICE_RETIRED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(BraketErrors::DEVICE_RETIRED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == SERVICE_QUOTA_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(BraketErrors::SERVICE_QUOTA_EXCEEDED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(BraketErrors::SERVICE_QUOTA_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == DEVICE_OFFLINE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(BraketErrors::DEVICE_OFFLINE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(BraketErrors::DEVICE_OFFLINE), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == INTERNAL_SERVICE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(BraketErrors::INTERNAL_SERVICE), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(BraketErrors::INTERNAL_SERVICE), RetryableType::NOT_RETRYABLE);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

@@ -49,6 +49,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case MinimumHealthyHostsType::NOT_SET:
+            return {};
           case MinimumHealthyHostsType::HOST_COUNT:
             return "HOST_COUNT";
           case MinimumHealthyHostsType::FLEET_PERCENT:

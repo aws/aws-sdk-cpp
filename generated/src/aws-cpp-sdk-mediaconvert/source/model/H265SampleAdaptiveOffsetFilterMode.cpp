@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case H265SampleAdaptiveOffsetFilterMode::NOT_SET:
+            return {};
           case H265SampleAdaptiveOffsetFilterMode::DEFAULT:
             return "DEFAULT";
           case H265SampleAdaptiveOffsetFilterMode::ADAPTIVE:

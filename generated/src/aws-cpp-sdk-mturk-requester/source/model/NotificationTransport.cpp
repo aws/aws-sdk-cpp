@@ -54,6 +54,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case NotificationTransport::NOT_SET:
+            return {};
           case NotificationTransport::Email:
             return "Email";
           case NotificationTransport::SQS:
