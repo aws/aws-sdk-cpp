@@ -19,43 +19,29 @@ namespace Model
 {
 
 OrchestrationTrace::OrchestrationTrace() : 
-    m_rationaleHasBeenSet(false),
     m_invocationInputHasBeenSet(false),
+    m_modelInvocationInputHasBeenSet(false),
     m_observationHasBeenSet(false),
-    m_modelInvocationInputHasBeenSet(false)
+    m_rationaleHasBeenSet(false)
 {
 }
 
 OrchestrationTrace::OrchestrationTrace(JsonView jsonValue) : 
-    m_rationaleHasBeenSet(false),
     m_invocationInputHasBeenSet(false),
+    m_modelInvocationInputHasBeenSet(false),
     m_observationHasBeenSet(false),
-    m_modelInvocationInputHasBeenSet(false)
+    m_rationaleHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 OrchestrationTrace& OrchestrationTrace::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("rationale"))
-  {
-    m_rationale = jsonValue.GetObject("rationale");
-
-    m_rationaleHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("invocationInput"))
   {
     m_invocationInput = jsonValue.GetObject("invocationInput");
 
     m_invocationInputHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("observation"))
-  {
-    m_observation = jsonValue.GetObject("observation");
-
-    m_observationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("modelInvocationInput"))
@@ -65,6 +51,20 @@ OrchestrationTrace& OrchestrationTrace::operator =(JsonView jsonValue)
     m_modelInvocationInputHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("observation"))
+  {
+    m_observation = jsonValue.GetObject("observation");
+
+    m_observationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("rationale"))
+  {
+    m_rationale = jsonValue.GetObject("rationale");
+
+    m_rationaleHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -72,15 +72,15 @@ JsonValue OrchestrationTrace::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_rationaleHasBeenSet)
-  {
-   payload.WithObject("rationale", m_rationale.Jsonize());
-
-  }
-
   if(m_invocationInputHasBeenSet)
   {
    payload.WithObject("invocationInput", m_invocationInput.Jsonize());
+
+  }
+
+  if(m_modelInvocationInputHasBeenSet)
+  {
+   payload.WithObject("modelInvocationInput", m_modelInvocationInput.Jsonize());
 
   }
 
@@ -90,9 +90,9 @@ JsonValue OrchestrationTrace::Jsonize() const
 
   }
 
-  if(m_modelInvocationInputHasBeenSet)
+  if(m_rationaleHasBeenSet)
   {
-   payload.WithObject("modelInvocationInput", m_modelInvocationInput.Jsonize());
+   payload.WithObject("rationale", m_rationale.Jsonize());
 
   }
 

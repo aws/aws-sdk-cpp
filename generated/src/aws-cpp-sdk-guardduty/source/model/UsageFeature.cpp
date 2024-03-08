@@ -31,6 +31,8 @@ namespace Aws
         static const int EKS_RUNTIME_MONITORING_HASH = HashingUtils::HashString("EKS_RUNTIME_MONITORING");
         static const int FARGATE_RUNTIME_MONITORING_HASH = HashingUtils::HashString("FARGATE_RUNTIME_MONITORING");
         static const int EC2_RUNTIME_MONITORING_HASH = HashingUtils::HashString("EC2_RUNTIME_MONITORING");
+        static const int RDS_DBI_PROTECTION_PROVISIONED_HASH = HashingUtils::HashString("RDS_DBI_PROTECTION_PROVISIONED");
+        static const int RDS_DBI_PROTECTION_SERVERLESS_HASH = HashingUtils::HashString("RDS_DBI_PROTECTION_SERVERLESS");
 
 
         UsageFeature GetUsageFeatureForName(const Aws::String& name)
@@ -80,6 +82,14 @@ namespace Aws
           {
             return UsageFeature::EC2_RUNTIME_MONITORING;
           }
+          else if (hashCode == RDS_DBI_PROTECTION_PROVISIONED_HASH)
+          {
+            return UsageFeature::RDS_DBI_PROTECTION_PROVISIONED;
+          }
+          else if (hashCode == RDS_DBI_PROTECTION_SERVERLESS_HASH)
+          {
+            return UsageFeature::RDS_DBI_PROTECTION_SERVERLESS;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -118,6 +128,10 @@ namespace Aws
             return "FARGATE_RUNTIME_MONITORING";
           case UsageFeature::EC2_RUNTIME_MONITORING:
             return "EC2_RUNTIME_MONITORING";
+          case UsageFeature::RDS_DBI_PROTECTION_PROVISIONED:
+            return "RDS_DBI_PROTECTION_PROVISIONED";
+          case UsageFeature::RDS_DBI_PROTECTION_SERVERLESS:
+            return "RDS_DBI_PROTECTION_SERVERLESS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

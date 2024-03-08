@@ -71,42 +71,74 @@ namespace Model
 
 
     /**
-     * <p>Specifies a value for the specified AttributeKey.</p>
+     * <p>Specifies a value for the specified <code>AttributeKey</code>.</p> <p>The
+     * maximum length for the <code>AttributeValue</code> is 2000 characters. The
+     * following characters ('<code>_</code>', '<code> </code>', '<code>,</code>',
+     * '<code>\\n</code>') count as two characters towards the 2000 character
+     * limit.</p>
      */
     inline const Aws::String& GetAttributeValue() const{ return m_attributeValue; }
 
     /**
-     * <p>Specifies a value for the specified AttributeKey.</p>
+     * <p>Specifies a value for the specified <code>AttributeKey</code>.</p> <p>The
+     * maximum length for the <code>AttributeValue</code> is 2000 characters. The
+     * following characters ('<code>_</code>', '<code> </code>', '<code>,</code>',
+     * '<code>\\n</code>') count as two characters towards the 2000 character
+     * limit.</p>
      */
     inline bool AttributeValueHasBeenSet() const { return m_attributeValueHasBeenSet; }
 
     /**
-     * <p>Specifies a value for the specified AttributeKey.</p>
+     * <p>Specifies a value for the specified <code>AttributeKey</code>.</p> <p>The
+     * maximum length for the <code>AttributeValue</code> is 2000 characters. The
+     * following characters ('<code>_</code>', '<code> </code>', '<code>,</code>',
+     * '<code>\\n</code>') count as two characters towards the 2000 character
+     * limit.</p>
      */
     inline void SetAttributeValue(const Aws::String& value) { m_attributeValueHasBeenSet = true; m_attributeValue = value; }
 
     /**
-     * <p>Specifies a value for the specified AttributeKey.</p>
+     * <p>Specifies a value for the specified <code>AttributeKey</code>.</p> <p>The
+     * maximum length for the <code>AttributeValue</code> is 2000 characters. The
+     * following characters ('<code>_</code>', '<code> </code>', '<code>,</code>',
+     * '<code>\\n</code>') count as two characters towards the 2000 character
+     * limit.</p>
      */
     inline void SetAttributeValue(Aws::String&& value) { m_attributeValueHasBeenSet = true; m_attributeValue = std::move(value); }
 
     /**
-     * <p>Specifies a value for the specified AttributeKey.</p>
+     * <p>Specifies a value for the specified <code>AttributeKey</code>.</p> <p>The
+     * maximum length for the <code>AttributeValue</code> is 2000 characters. The
+     * following characters ('<code>_</code>', '<code> </code>', '<code>,</code>',
+     * '<code>\\n</code>') count as two characters towards the 2000 character
+     * limit.</p>
      */
     inline void SetAttributeValue(const char* value) { m_attributeValueHasBeenSet = true; m_attributeValue.assign(value); }
 
     /**
-     * <p>Specifies a value for the specified AttributeKey.</p>
+     * <p>Specifies a value for the specified <code>AttributeKey</code>.</p> <p>The
+     * maximum length for the <code>AttributeValue</code> is 2000 characters. The
+     * following characters ('<code>_</code>', '<code> </code>', '<code>,</code>',
+     * '<code>\\n</code>') count as two characters towards the 2000 character
+     * limit.</p>
      */
     inline LookupAttribute& WithAttributeValue(const Aws::String& value) { SetAttributeValue(value); return *this;}
 
     /**
-     * <p>Specifies a value for the specified AttributeKey.</p>
+     * <p>Specifies a value for the specified <code>AttributeKey</code>.</p> <p>The
+     * maximum length for the <code>AttributeValue</code> is 2000 characters. The
+     * following characters ('<code>_</code>', '<code> </code>', '<code>,</code>',
+     * '<code>\\n</code>') count as two characters towards the 2000 character
+     * limit.</p>
      */
     inline LookupAttribute& WithAttributeValue(Aws::String&& value) { SetAttributeValue(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies a value for the specified AttributeKey.</p>
+     * <p>Specifies a value for the specified <code>AttributeKey</code>.</p> <p>The
+     * maximum length for the <code>AttributeValue</code> is 2000 characters. The
+     * following characters ('<code>_</code>', '<code> </code>', '<code>,</code>',
+     * '<code>\\n</code>') count as two characters towards the 2000 character
+     * limit.</p>
      */
     inline LookupAttribute& WithAttributeValue(const char* value) { SetAttributeValue(value); return *this;}
 

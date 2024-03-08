@@ -25,7 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Retrieved reference</p><p><h3>See Also:</h3>   <a
+   * <p>Contains metadata about a sources cited for the generated
+   * response.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/RetrievedReference">AWS
    * API Reference</a></p>
    */
@@ -38,41 +39,65 @@ namespace Model
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    
+    /**
+     * <p>Contains the cited text from the data source.</p>
+     */
     inline const RetrievalResultContent& GetContent() const{ return m_content; }
 
-    
+    /**
+     * <p>Contains the cited text from the data source.</p>
+     */
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
 
-    
+    /**
+     * <p>Contains the cited text from the data source.</p>
+     */
     inline void SetContent(const RetrievalResultContent& value) { m_contentHasBeenSet = true; m_content = value; }
 
-    
+    /**
+     * <p>Contains the cited text from the data source.</p>
+     */
     inline void SetContent(RetrievalResultContent&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
 
-    
+    /**
+     * <p>Contains the cited text from the data source.</p>
+     */
     inline RetrievedReference& WithContent(const RetrievalResultContent& value) { SetContent(value); return *this;}
 
-    
+    /**
+     * <p>Contains the cited text from the data source.</p>
+     */
     inline RetrievedReference& WithContent(RetrievalResultContent&& value) { SetContent(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>Contains information about the location of the data source.</p>
+     */
     inline const RetrievalResultLocation& GetLocation() const{ return m_location; }
 
-    
+    /**
+     * <p>Contains information about the location of the data source.</p>
+     */
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
 
-    
+    /**
+     * <p>Contains information about the location of the data source.</p>
+     */
     inline void SetLocation(const RetrievalResultLocation& value) { m_locationHasBeenSet = true; m_location = value; }
 
-    
+    /**
+     * <p>Contains information about the location of the data source.</p>
+     */
     inline void SetLocation(RetrievalResultLocation&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
 
-    
+    /**
+     * <p>Contains information about the location of the data source.</p>
+     */
     inline RetrievedReference& WithLocation(const RetrievalResultLocation& value) { SetLocation(value); return *this;}
 
-    
+    /**
+     * <p>Contains information about the location of the data source.</p>
+     */
     inline RetrievedReference& WithLocation(RetrievalResultLocation&& value) { SetLocation(std::move(value)); return *this;}
 
   private:

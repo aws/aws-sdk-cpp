@@ -20,19 +20,19 @@ namespace Model
 
 ActionGroupInvocationInput::ActionGroupInvocationInput() : 
     m_actionGroupNameHasBeenSet(false),
-    m_verbHasBeenSet(false),
     m_apiPathHasBeenSet(false),
     m_parametersHasBeenSet(false),
-    m_requestBodyHasBeenSet(false)
+    m_requestBodyHasBeenSet(false),
+    m_verbHasBeenSet(false)
 {
 }
 
 ActionGroupInvocationInput::ActionGroupInvocationInput(JsonView jsonValue) : 
     m_actionGroupNameHasBeenSet(false),
-    m_verbHasBeenSet(false),
     m_apiPathHasBeenSet(false),
     m_parametersHasBeenSet(false),
-    m_requestBodyHasBeenSet(false)
+    m_requestBodyHasBeenSet(false),
+    m_verbHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -44,13 +44,6 @@ ActionGroupInvocationInput& ActionGroupInvocationInput::operator =(JsonView json
     m_actionGroupName = jsonValue.GetString("actionGroupName");
 
     m_actionGroupNameHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("verb"))
-  {
-    m_verb = jsonValue.GetString("verb");
-
-    m_verbHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("apiPath"))
@@ -77,6 +70,13 @@ ActionGroupInvocationInput& ActionGroupInvocationInput::operator =(JsonView json
     m_requestBodyHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("verb"))
+  {
+    m_verb = jsonValue.GetString("verb");
+
+    m_verbHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -87,12 +87,6 @@ JsonValue ActionGroupInvocationInput::Jsonize() const
   if(m_actionGroupNameHasBeenSet)
   {
    payload.WithString("actionGroupName", m_actionGroupName);
-
-  }
-
-  if(m_verbHasBeenSet)
-  {
-   payload.WithString("verb", m_verb);
 
   }
 
@@ -116,6 +110,12 @@ JsonValue ActionGroupInvocationInput::Jsonize() const
   if(m_requestBodyHasBeenSet)
   {
    payload.WithObject("requestBody", m_requestBody.Jsonize());
+
+  }
+
+  if(m_verbHasBeenSet)
+  {
+   payload.WithString("verb", m_verb);
 
   }
 

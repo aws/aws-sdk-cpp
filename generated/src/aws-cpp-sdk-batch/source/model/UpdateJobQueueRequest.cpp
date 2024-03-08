@@ -19,7 +19,8 @@ UpdateJobQueueRequest::UpdateJobQueueRequest() :
     m_schedulingPolicyArnHasBeenSet(false),
     m_priority(0),
     m_priorityHasBeenSet(false),
-    m_computeEnvironmentOrderHasBeenSet(false)
+    m_computeEnvironmentOrderHasBeenSet(false),
+    m_jobStateTimeLimitActionsHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,17 @@ Aws::String UpdateJobQueueRequest::SerializePayload() const
      computeEnvironmentOrderJsonList[computeEnvironmentOrderIndex].AsObject(m_computeEnvironmentOrder[computeEnvironmentOrderIndex].Jsonize());
    }
    payload.WithArray("computeEnvironmentOrder", std::move(computeEnvironmentOrderJsonList));
+
+  }
+
+  if(m_jobStateTimeLimitActionsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> jobStateTimeLimitActionsJsonList(m_jobStateTimeLimitActions.size());
+   for(unsigned jobStateTimeLimitActionsIndex = 0; jobStateTimeLimitActionsIndex < jobStateTimeLimitActionsJsonList.GetLength(); ++jobStateTimeLimitActionsIndex)
+   {
+     jobStateTimeLimitActionsJsonList[jobStateTimeLimitActionsIndex].AsObject(m_jobStateTimeLimitActions[jobStateTimeLimitActionsIndex].Jsonize());
+   }
+   payload.WithArray("jobStateTimeLimitActions", std::move(jobStateTimeLimitActionsJsonList));
 
   }
 

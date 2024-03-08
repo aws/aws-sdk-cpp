@@ -24,7 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Configures common parameters of the session.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains configuration about the session with the knowledge
+   * base.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/RetrieveAndGenerateSessionConfiguration">AWS
    * API Reference</a></p>
    */
@@ -38,42 +39,42 @@ namespace Model
 
 
     /**
-     * <p>The KMS key arn to encrypt the customer data of the session.</p>
+     * <p>The ARN of the KMS key encrypting the session.</p>
      */
     inline const Aws::String& GetKmsKeyArn() const{ return m_kmsKeyArn; }
 
     /**
-     * <p>The KMS key arn to encrypt the customer data of the session.</p>
+     * <p>The ARN of the KMS key encrypting the session.</p>
      */
     inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
 
     /**
-     * <p>The KMS key arn to encrypt the customer data of the session.</p>
+     * <p>The ARN of the KMS key encrypting the session.</p>
      */
     inline void SetKmsKeyArn(const Aws::String& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = value; }
 
     /**
-     * <p>The KMS key arn to encrypt the customer data of the session.</p>
+     * <p>The ARN of the KMS key encrypting the session.</p>
      */
     inline void SetKmsKeyArn(Aws::String&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::move(value); }
 
     /**
-     * <p>The KMS key arn to encrypt the customer data of the session.</p>
+     * <p>The ARN of the KMS key encrypting the session.</p>
      */
     inline void SetKmsKeyArn(const char* value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn.assign(value); }
 
     /**
-     * <p>The KMS key arn to encrypt the customer data of the session.</p>
+     * <p>The ARN of the KMS key encrypting the session.</p>
      */
     inline RetrieveAndGenerateSessionConfiguration& WithKmsKeyArn(const Aws::String& value) { SetKmsKeyArn(value); return *this;}
 
     /**
-     * <p>The KMS key arn to encrypt the customer data of the session.</p>
+     * <p>The ARN of the KMS key encrypting the session.</p>
      */
     inline RetrieveAndGenerateSessionConfiguration& WithKmsKeyArn(Aws::String&& value) { SetKmsKeyArn(std::move(value)); return *this;}
 
     /**
-     * <p>The KMS key arn to encrypt the customer data of the session.</p>
+     * <p>The ARN of the KMS key encrypting the session.</p>
      */
     inline RetrieveAndGenerateSessionConfiguration& WithKmsKeyArn(const char* value) { SetKmsKeyArn(value); return *this;}
 

@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Configurations for retrieval and generation for knowledge base.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Contains details about the resource being queried.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/KnowledgeBaseRetrieveAndGenerateConfiguration">AWS
    * API Reference</a></p>
    */
@@ -39,72 +39,130 @@ namespace Model
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    
+    /**
+     * <p>The unique identifier of the knowledge base that is queried and the
+     * foundation model used for generation.</p>
+     */
     inline const Aws::String& GetKnowledgeBaseId() const{ return m_knowledgeBaseId; }
 
-    
+    /**
+     * <p>The unique identifier of the knowledge base that is queried and the
+     * foundation model used for generation.</p>
+     */
     inline bool KnowledgeBaseIdHasBeenSet() const { return m_knowledgeBaseIdHasBeenSet; }
 
-    
+    /**
+     * <p>The unique identifier of the knowledge base that is queried and the
+     * foundation model used for generation.</p>
+     */
     inline void SetKnowledgeBaseId(const Aws::String& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = value; }
 
-    
+    /**
+     * <p>The unique identifier of the knowledge base that is queried and the
+     * foundation model used for generation.</p>
+     */
     inline void SetKnowledgeBaseId(Aws::String&& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = std::move(value); }
 
-    
+    /**
+     * <p>The unique identifier of the knowledge base that is queried and the
+     * foundation model used for generation.</p>
+     */
     inline void SetKnowledgeBaseId(const char* value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId.assign(value); }
 
-    
+    /**
+     * <p>The unique identifier of the knowledge base that is queried and the
+     * foundation model used for generation.</p>
+     */
     inline KnowledgeBaseRetrieveAndGenerateConfiguration& WithKnowledgeBaseId(const Aws::String& value) { SetKnowledgeBaseId(value); return *this;}
 
-    
+    /**
+     * <p>The unique identifier of the knowledge base that is queried and the
+     * foundation model used for generation.</p>
+     */
     inline KnowledgeBaseRetrieveAndGenerateConfiguration& WithKnowledgeBaseId(Aws::String&& value) { SetKnowledgeBaseId(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The unique identifier of the knowledge base that is queried and the
+     * foundation model used for generation.</p>
+     */
     inline KnowledgeBaseRetrieveAndGenerateConfiguration& WithKnowledgeBaseId(const char* value) { SetKnowledgeBaseId(value); return *this;}
 
 
-    
+    /**
+     * <p>The ARN of the foundation model used to generate a response.</p>
+     */
     inline const Aws::String& GetModelArn() const{ return m_modelArn; }
 
-    
+    /**
+     * <p>The ARN of the foundation model used to generate a response.</p>
+     */
     inline bool ModelArnHasBeenSet() const { return m_modelArnHasBeenSet; }
 
-    
+    /**
+     * <p>The ARN of the foundation model used to generate a response.</p>
+     */
     inline void SetModelArn(const Aws::String& value) { m_modelArnHasBeenSet = true; m_modelArn = value; }
 
-    
+    /**
+     * <p>The ARN of the foundation model used to generate a response.</p>
+     */
     inline void SetModelArn(Aws::String&& value) { m_modelArnHasBeenSet = true; m_modelArn = std::move(value); }
 
-    
+    /**
+     * <p>The ARN of the foundation model used to generate a response.</p>
+     */
     inline void SetModelArn(const char* value) { m_modelArnHasBeenSet = true; m_modelArn.assign(value); }
 
-    
+    /**
+     * <p>The ARN of the foundation model used to generate a response.</p>
+     */
     inline KnowledgeBaseRetrieveAndGenerateConfiguration& WithModelArn(const Aws::String& value) { SetModelArn(value); return *this;}
 
-    
+    /**
+     * <p>The ARN of the foundation model used to generate a response.</p>
+     */
     inline KnowledgeBaseRetrieveAndGenerateConfiguration& WithModelArn(Aws::String&& value) { SetModelArn(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The ARN of the foundation model used to generate a response.</p>
+     */
     inline KnowledgeBaseRetrieveAndGenerateConfiguration& WithModelArn(const char* value) { SetModelArn(value); return *this;}
 
 
-    
+    /**
+     * <p>Contains configurations for how to retrieve and return the knowledge base
+     * query.</p>
+     */
     inline const KnowledgeBaseRetrievalConfiguration& GetRetrievalConfiguration() const{ return m_retrievalConfiguration; }
 
-    
+    /**
+     * <p>Contains configurations for how to retrieve and return the knowledge base
+     * query.</p>
+     */
     inline bool RetrievalConfigurationHasBeenSet() const { return m_retrievalConfigurationHasBeenSet; }
 
-    
+    /**
+     * <p>Contains configurations for how to retrieve and return the knowledge base
+     * query.</p>
+     */
     inline void SetRetrievalConfiguration(const KnowledgeBaseRetrievalConfiguration& value) { m_retrievalConfigurationHasBeenSet = true; m_retrievalConfiguration = value; }
 
-    
+    /**
+     * <p>Contains configurations for how to retrieve and return the knowledge base
+     * query.</p>
+     */
     inline void SetRetrievalConfiguration(KnowledgeBaseRetrievalConfiguration&& value) { m_retrievalConfigurationHasBeenSet = true; m_retrievalConfiguration = std::move(value); }
 
-    
+    /**
+     * <p>Contains configurations for how to retrieve and return the knowledge base
+     * query.</p>
+     */
     inline KnowledgeBaseRetrieveAndGenerateConfiguration& WithRetrievalConfiguration(const KnowledgeBaseRetrievalConfiguration& value) { SetRetrievalConfiguration(value); return *this;}
 
-    
+    /**
+     * <p>Contains configurations for how to retrieve and return the knowledge base
+     * query.</p>
+     */
     inline KnowledgeBaseRetrieveAndGenerateConfiguration& WithRetrievalConfiguration(KnowledgeBaseRetrievalConfiguration&& value) { SetRetrievalConfiguration(std::move(value)); return *this;}
 
   private:

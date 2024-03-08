@@ -24,7 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Generate response part</p><p><h3>See Also:</h3>   <a
+   * <p>Contains metadata about a part of the generated response that is accompanied
+   * by a citation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/GeneratedResponsePart">AWS
    * API Reference</a></p>
    */
@@ -37,22 +38,40 @@ namespace Model
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    
+    /**
+     * <p>Contains metadata about a textual part of the generated response that is
+     * accompanied by a citation.</p>
+     */
     inline const TextResponsePart& GetTextResponsePart() const{ return m_textResponsePart; }
 
-    
+    /**
+     * <p>Contains metadata about a textual part of the generated response that is
+     * accompanied by a citation.</p>
+     */
     inline bool TextResponsePartHasBeenSet() const { return m_textResponsePartHasBeenSet; }
 
-    
+    /**
+     * <p>Contains metadata about a textual part of the generated response that is
+     * accompanied by a citation.</p>
+     */
     inline void SetTextResponsePart(const TextResponsePart& value) { m_textResponsePartHasBeenSet = true; m_textResponsePart = value; }
 
-    
+    /**
+     * <p>Contains metadata about a textual part of the generated response that is
+     * accompanied by a citation.</p>
+     */
     inline void SetTextResponsePart(TextResponsePart&& value) { m_textResponsePartHasBeenSet = true; m_textResponsePart = std::move(value); }
 
-    
+    /**
+     * <p>Contains metadata about a textual part of the generated response that is
+     * accompanied by a citation.</p>
+     */
     inline GeneratedResponsePart& WithTextResponsePart(const TextResponsePart& value) { SetTextResponsePart(value); return *this;}
 
-    
+    /**
+     * <p>Contains metadata about a textual part of the generated response that is
+     * accompanied by a citation.</p>
+     */
     inline GeneratedResponsePart& WithTextResponsePart(TextResponsePart&& value) { SetTextResponsePart(std::move(value)); return *this;}
 
   private:

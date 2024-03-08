@@ -319,16 +319,16 @@ namespace Model
     /**
      * <p>A filter string of the form "<i>AttributeName</i> <i>Filter-Type</i>
      * "<i>AttributeValue</i>"". Quotation marks within the filter string must be
-     * escaped using the backslash (\) character. For example,
-     * "<code>family_name</code> = \"Reddy\"".</p> <ul> <li> <p> <i>AttributeName</i>:
+     * escaped using the backslash (<code>\</code>) character. For example,
+     * <code>"family_name = \"Reddy\""</code>.</p> <ul> <li> <p> <i>AttributeName</i>:
      * The name of the attribute to search for. You can only search for one attribute
-     * at a time.</p> </li> <li> <p> <i>Filter-Type</i>: For an exact match, use =, for
-     * example, "<code>given_name</code> = \"Jon\"". For a prefix ("starts with")
-     * match, use ^=, for example, "<code>given_name</code> ^= \"Jon\"". </p> </li>
-     * <li> <p> <i>AttributeValue</i>: The attribute value that must be matched for
-     * each user.</p> </li> </ul> <p>If the filter string is empty,
-     * <code>ListUsers</code> returns all users in the user pool.</p> <p>You can only
-     * search for the following standard attributes:</p> <ul> <li> <p>
+     * at a time.</p> </li> <li> <p> <i>Filter-Type</i>: For an exact match, use
+     * <code>=</code>, for example, "<code>given_name = \"Jon\"</code>". For a prefix
+     * ("starts with") match, use <code>^=</code>, for example, "<code>given_name ^=
+     * \"Jon\"</code>". </p> </li> <li> <p> <i>AttributeValue</i>: The attribute value
+     * that must be matched for each user.</p> </li> </ul> <p>If the filter string is
+     * empty, <code>ListUsers</code> returns all users in the user pool.</p> <p>You can
+     * only search for the following standard attributes:</p> <ul> <li> <p>
      * <code>username</code> (case-sensitive)</p> </li> <li> <p> <code>email</code>
      * </p> </li> <li> <p> <code>phone_number</code> </p> </li> <li> <p>
      * <code>name</code> </p> </li> <li> <p> <code>given_name</code> </p> </li> <li>
@@ -360,16 +360,16 @@ namespace Model
     /**
      * <p>A filter string of the form "<i>AttributeName</i> <i>Filter-Type</i>
      * "<i>AttributeValue</i>"". Quotation marks within the filter string must be
-     * escaped using the backslash (\) character. For example,
-     * "<code>family_name</code> = \"Reddy\"".</p> <ul> <li> <p> <i>AttributeName</i>:
+     * escaped using the backslash (<code>\</code>) character. For example,
+     * <code>"family_name = \"Reddy\""</code>.</p> <ul> <li> <p> <i>AttributeName</i>:
      * The name of the attribute to search for. You can only search for one attribute
-     * at a time.</p> </li> <li> <p> <i>Filter-Type</i>: For an exact match, use =, for
-     * example, "<code>given_name</code> = \"Jon\"". For a prefix ("starts with")
-     * match, use ^=, for example, "<code>given_name</code> ^= \"Jon\"". </p> </li>
-     * <li> <p> <i>AttributeValue</i>: The attribute value that must be matched for
-     * each user.</p> </li> </ul> <p>If the filter string is empty,
-     * <code>ListUsers</code> returns all users in the user pool.</p> <p>You can only
-     * search for the following standard attributes:</p> <ul> <li> <p>
+     * at a time.</p> </li> <li> <p> <i>Filter-Type</i>: For an exact match, use
+     * <code>=</code>, for example, "<code>given_name = \"Jon\"</code>". For a prefix
+     * ("starts with") match, use <code>^=</code>, for example, "<code>given_name ^=
+     * \"Jon\"</code>". </p> </li> <li> <p> <i>AttributeValue</i>: The attribute value
+     * that must be matched for each user.</p> </li> </ul> <p>If the filter string is
+     * empty, <code>ListUsers</code> returns all users in the user pool.</p> <p>You can
+     * only search for the following standard attributes:</p> <ul> <li> <p>
      * <code>username</code> (case-sensitive)</p> </li> <li> <p> <code>email</code>
      * </p> </li> <li> <p> <code>phone_number</code> </p> </li> <li> <p>
      * <code>name</code> </p> </li> <li> <p> <code>given_name</code> </p> </li> <li>
@@ -401,16 +401,16 @@ namespace Model
     /**
      * <p>A filter string of the form "<i>AttributeName</i> <i>Filter-Type</i>
      * "<i>AttributeValue</i>"". Quotation marks within the filter string must be
-     * escaped using the backslash (\) character. For example,
-     * "<code>family_name</code> = \"Reddy\"".</p> <ul> <li> <p> <i>AttributeName</i>:
+     * escaped using the backslash (<code>\</code>) character. For example,
+     * <code>"family_name = \"Reddy\""</code>.</p> <ul> <li> <p> <i>AttributeName</i>:
      * The name of the attribute to search for. You can only search for one attribute
-     * at a time.</p> </li> <li> <p> <i>Filter-Type</i>: For an exact match, use =, for
-     * example, "<code>given_name</code> = \"Jon\"". For a prefix ("starts with")
-     * match, use ^=, for example, "<code>given_name</code> ^= \"Jon\"". </p> </li>
-     * <li> <p> <i>AttributeValue</i>: The attribute value that must be matched for
-     * each user.</p> </li> </ul> <p>If the filter string is empty,
-     * <code>ListUsers</code> returns all users in the user pool.</p> <p>You can only
-     * search for the following standard attributes:</p> <ul> <li> <p>
+     * at a time.</p> </li> <li> <p> <i>Filter-Type</i>: For an exact match, use
+     * <code>=</code>, for example, "<code>given_name = \"Jon\"</code>". For a prefix
+     * ("starts with") match, use <code>^=</code>, for example, "<code>given_name ^=
+     * \"Jon\"</code>". </p> </li> <li> <p> <i>AttributeValue</i>: The attribute value
+     * that must be matched for each user.</p> </li> </ul> <p>If the filter string is
+     * empty, <code>ListUsers</code> returns all users in the user pool.</p> <p>You can
+     * only search for the following standard attributes:</p> <ul> <li> <p>
      * <code>username</code> (case-sensitive)</p> </li> <li> <p> <code>email</code>
      * </p> </li> <li> <p> <code>phone_number</code> </p> </li> <li> <p>
      * <code>name</code> </p> </li> <li> <p> <code>given_name</code> </p> </li> <li>
@@ -442,16 +442,16 @@ namespace Model
     /**
      * <p>A filter string of the form "<i>AttributeName</i> <i>Filter-Type</i>
      * "<i>AttributeValue</i>"". Quotation marks within the filter string must be
-     * escaped using the backslash (\) character. For example,
-     * "<code>family_name</code> = \"Reddy\"".</p> <ul> <li> <p> <i>AttributeName</i>:
+     * escaped using the backslash (<code>\</code>) character. For example,
+     * <code>"family_name = \"Reddy\""</code>.</p> <ul> <li> <p> <i>AttributeName</i>:
      * The name of the attribute to search for. You can only search for one attribute
-     * at a time.</p> </li> <li> <p> <i>Filter-Type</i>: For an exact match, use =, for
-     * example, "<code>given_name</code> = \"Jon\"". For a prefix ("starts with")
-     * match, use ^=, for example, "<code>given_name</code> ^= \"Jon\"". </p> </li>
-     * <li> <p> <i>AttributeValue</i>: The attribute value that must be matched for
-     * each user.</p> </li> </ul> <p>If the filter string is empty,
-     * <code>ListUsers</code> returns all users in the user pool.</p> <p>You can only
-     * search for the following standard attributes:</p> <ul> <li> <p>
+     * at a time.</p> </li> <li> <p> <i>Filter-Type</i>: For an exact match, use
+     * <code>=</code>, for example, "<code>given_name = \"Jon\"</code>". For a prefix
+     * ("starts with") match, use <code>^=</code>, for example, "<code>given_name ^=
+     * \"Jon\"</code>". </p> </li> <li> <p> <i>AttributeValue</i>: The attribute value
+     * that must be matched for each user.</p> </li> </ul> <p>If the filter string is
+     * empty, <code>ListUsers</code> returns all users in the user pool.</p> <p>You can
+     * only search for the following standard attributes:</p> <ul> <li> <p>
      * <code>username</code> (case-sensitive)</p> </li> <li> <p> <code>email</code>
      * </p> </li> <li> <p> <code>phone_number</code> </p> </li> <li> <p>
      * <code>name</code> </p> </li> <li> <p> <code>given_name</code> </p> </li> <li>
@@ -483,16 +483,16 @@ namespace Model
     /**
      * <p>A filter string of the form "<i>AttributeName</i> <i>Filter-Type</i>
      * "<i>AttributeValue</i>"". Quotation marks within the filter string must be
-     * escaped using the backslash (\) character. For example,
-     * "<code>family_name</code> = \"Reddy\"".</p> <ul> <li> <p> <i>AttributeName</i>:
+     * escaped using the backslash (<code>\</code>) character. For example,
+     * <code>"family_name = \"Reddy\""</code>.</p> <ul> <li> <p> <i>AttributeName</i>:
      * The name of the attribute to search for. You can only search for one attribute
-     * at a time.</p> </li> <li> <p> <i>Filter-Type</i>: For an exact match, use =, for
-     * example, "<code>given_name</code> = \"Jon\"". For a prefix ("starts with")
-     * match, use ^=, for example, "<code>given_name</code> ^= \"Jon\"". </p> </li>
-     * <li> <p> <i>AttributeValue</i>: The attribute value that must be matched for
-     * each user.</p> </li> </ul> <p>If the filter string is empty,
-     * <code>ListUsers</code> returns all users in the user pool.</p> <p>You can only
-     * search for the following standard attributes:</p> <ul> <li> <p>
+     * at a time.</p> </li> <li> <p> <i>Filter-Type</i>: For an exact match, use
+     * <code>=</code>, for example, "<code>given_name = \"Jon\"</code>". For a prefix
+     * ("starts with") match, use <code>^=</code>, for example, "<code>given_name ^=
+     * \"Jon\"</code>". </p> </li> <li> <p> <i>AttributeValue</i>: The attribute value
+     * that must be matched for each user.</p> </li> </ul> <p>If the filter string is
+     * empty, <code>ListUsers</code> returns all users in the user pool.</p> <p>You can
+     * only search for the following standard attributes:</p> <ul> <li> <p>
      * <code>username</code> (case-sensitive)</p> </li> <li> <p> <code>email</code>
      * </p> </li> <li> <p> <code>phone_number</code> </p> </li> <li> <p>
      * <code>name</code> </p> </li> <li> <p> <code>given_name</code> </p> </li> <li>
@@ -524,16 +524,16 @@ namespace Model
     /**
      * <p>A filter string of the form "<i>AttributeName</i> <i>Filter-Type</i>
      * "<i>AttributeValue</i>"". Quotation marks within the filter string must be
-     * escaped using the backslash (\) character. For example,
-     * "<code>family_name</code> = \"Reddy\"".</p> <ul> <li> <p> <i>AttributeName</i>:
+     * escaped using the backslash (<code>\</code>) character. For example,
+     * <code>"family_name = \"Reddy\""</code>.</p> <ul> <li> <p> <i>AttributeName</i>:
      * The name of the attribute to search for. You can only search for one attribute
-     * at a time.</p> </li> <li> <p> <i>Filter-Type</i>: For an exact match, use =, for
-     * example, "<code>given_name</code> = \"Jon\"". For a prefix ("starts with")
-     * match, use ^=, for example, "<code>given_name</code> ^= \"Jon\"". </p> </li>
-     * <li> <p> <i>AttributeValue</i>: The attribute value that must be matched for
-     * each user.</p> </li> </ul> <p>If the filter string is empty,
-     * <code>ListUsers</code> returns all users in the user pool.</p> <p>You can only
-     * search for the following standard attributes:</p> <ul> <li> <p>
+     * at a time.</p> </li> <li> <p> <i>Filter-Type</i>: For an exact match, use
+     * <code>=</code>, for example, "<code>given_name = \"Jon\"</code>". For a prefix
+     * ("starts with") match, use <code>^=</code>, for example, "<code>given_name ^=
+     * \"Jon\"</code>". </p> </li> <li> <p> <i>AttributeValue</i>: The attribute value
+     * that must be matched for each user.</p> </li> </ul> <p>If the filter string is
+     * empty, <code>ListUsers</code> returns all users in the user pool.</p> <p>You can
+     * only search for the following standard attributes:</p> <ul> <li> <p>
      * <code>username</code> (case-sensitive)</p> </li> <li> <p> <code>email</code>
      * </p> </li> <li> <p> <code>phone_number</code> </p> </li> <li> <p>
      * <code>name</code> </p> </li> <li> <p> <code>given_name</code> </p> </li> <li>
@@ -565,16 +565,16 @@ namespace Model
     /**
      * <p>A filter string of the form "<i>AttributeName</i> <i>Filter-Type</i>
      * "<i>AttributeValue</i>"". Quotation marks within the filter string must be
-     * escaped using the backslash (\) character. For example,
-     * "<code>family_name</code> = \"Reddy\"".</p> <ul> <li> <p> <i>AttributeName</i>:
+     * escaped using the backslash (<code>\</code>) character. For example,
+     * <code>"family_name = \"Reddy\""</code>.</p> <ul> <li> <p> <i>AttributeName</i>:
      * The name of the attribute to search for. You can only search for one attribute
-     * at a time.</p> </li> <li> <p> <i>Filter-Type</i>: For an exact match, use =, for
-     * example, "<code>given_name</code> = \"Jon\"". For a prefix ("starts with")
-     * match, use ^=, for example, "<code>given_name</code> ^= \"Jon\"". </p> </li>
-     * <li> <p> <i>AttributeValue</i>: The attribute value that must be matched for
-     * each user.</p> </li> </ul> <p>If the filter string is empty,
-     * <code>ListUsers</code> returns all users in the user pool.</p> <p>You can only
-     * search for the following standard attributes:</p> <ul> <li> <p>
+     * at a time.</p> </li> <li> <p> <i>Filter-Type</i>: For an exact match, use
+     * <code>=</code>, for example, "<code>given_name = \"Jon\"</code>". For a prefix
+     * ("starts with") match, use <code>^=</code>, for example, "<code>given_name ^=
+     * \"Jon\"</code>". </p> </li> <li> <p> <i>AttributeValue</i>: The attribute value
+     * that must be matched for each user.</p> </li> </ul> <p>If the filter string is
+     * empty, <code>ListUsers</code> returns all users in the user pool.</p> <p>You can
+     * only search for the following standard attributes:</p> <ul> <li> <p>
      * <code>username</code> (case-sensitive)</p> </li> <li> <p> <code>email</code>
      * </p> </li> <li> <p> <code>phone_number</code> </p> </li> <li> <p>
      * <code>name</code> </p> </li> <li> <p> <code>given_name</code> </p> </li> <li>
@@ -606,16 +606,16 @@ namespace Model
     /**
      * <p>A filter string of the form "<i>AttributeName</i> <i>Filter-Type</i>
      * "<i>AttributeValue</i>"". Quotation marks within the filter string must be
-     * escaped using the backslash (\) character. For example,
-     * "<code>family_name</code> = \"Reddy\"".</p> <ul> <li> <p> <i>AttributeName</i>:
+     * escaped using the backslash (<code>\</code>) character. For example,
+     * <code>"family_name = \"Reddy\""</code>.</p> <ul> <li> <p> <i>AttributeName</i>:
      * The name of the attribute to search for. You can only search for one attribute
-     * at a time.</p> </li> <li> <p> <i>Filter-Type</i>: For an exact match, use =, for
-     * example, "<code>given_name</code> = \"Jon\"". For a prefix ("starts with")
-     * match, use ^=, for example, "<code>given_name</code> ^= \"Jon\"". </p> </li>
-     * <li> <p> <i>AttributeValue</i>: The attribute value that must be matched for
-     * each user.</p> </li> </ul> <p>If the filter string is empty,
-     * <code>ListUsers</code> returns all users in the user pool.</p> <p>You can only
-     * search for the following standard attributes:</p> <ul> <li> <p>
+     * at a time.</p> </li> <li> <p> <i>Filter-Type</i>: For an exact match, use
+     * <code>=</code>, for example, "<code>given_name = \"Jon\"</code>". For a prefix
+     * ("starts with") match, use <code>^=</code>, for example, "<code>given_name ^=
+     * \"Jon\"</code>". </p> </li> <li> <p> <i>AttributeValue</i>: The attribute value
+     * that must be matched for each user.</p> </li> </ul> <p>If the filter string is
+     * empty, <code>ListUsers</code> returns all users in the user pool.</p> <p>You can
+     * only search for the following standard attributes:</p> <ul> <li> <p>
      * <code>username</code> (case-sensitive)</p> </li> <li> <p> <code>email</code>
      * </p> </li> <li> <p> <code>phone_number</code> </p> </li> <li> <p>
      * <code>name</code> </p> </li> <li> <p> <code>given_name</code> </p> </li> <li>

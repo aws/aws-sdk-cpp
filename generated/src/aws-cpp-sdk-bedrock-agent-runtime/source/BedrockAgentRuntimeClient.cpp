@@ -170,15 +170,15 @@ InvokeAgentOutcome BedrockAgentRuntimeClient::InvokeAgent(InvokeAgentRequest& re
 {
   AWS_OPERATION_GUARD(InvokeAgent);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, InvokeAgent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  if (!request.AgentIdHasBeenSet())
-  {
-    AWS_LOGSTREAM_ERROR("InvokeAgent", "Required field: AgentId, is not set");
-    return InvokeAgentOutcome(Aws::Client::AWSError<BedrockAgentRuntimeErrors>(BedrockAgentRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AgentId]", false));
-  }
   if (!request.AgentAliasIdHasBeenSet())
   {
     AWS_LOGSTREAM_ERROR("InvokeAgent", "Required field: AgentAliasId, is not set");
     return InvokeAgentOutcome(Aws::Client::AWSError<BedrockAgentRuntimeErrors>(BedrockAgentRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AgentAliasId]", false));
+  }
+  if (!request.AgentIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("InvokeAgent", "Required field: AgentId, is not set");
+    return InvokeAgentOutcome(Aws::Client::AWSError<BedrockAgentRuntimeErrors>(BedrockAgentRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AgentId]", false));
   }
   if (!request.SessionIdHasBeenSet())
   {

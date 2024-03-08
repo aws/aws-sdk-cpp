@@ -25,7 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Input to lambda used in action group</p><p><h3>See Also:</h3>   <a
+   * <p>Contains details about the results from looking up the knowledge
+   * base.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/KnowledgeBaseLookupOutput">AWS
    * API Reference</a></p>
    */
@@ -38,28 +39,44 @@ namespace Model
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    
+    /**
+     * <p>Contains metadata about the sources cited for the generated response.</p>
+     */
     inline const Aws::Vector<RetrievedReference>& GetRetrievedReferences() const{ return m_retrievedReferences; }
 
-    
+    /**
+     * <p>Contains metadata about the sources cited for the generated response.</p>
+     */
     inline bool RetrievedReferencesHasBeenSet() const { return m_retrievedReferencesHasBeenSet; }
 
-    
+    /**
+     * <p>Contains metadata about the sources cited for the generated response.</p>
+     */
     inline void SetRetrievedReferences(const Aws::Vector<RetrievedReference>& value) { m_retrievedReferencesHasBeenSet = true; m_retrievedReferences = value; }
 
-    
+    /**
+     * <p>Contains metadata about the sources cited for the generated response.</p>
+     */
     inline void SetRetrievedReferences(Aws::Vector<RetrievedReference>&& value) { m_retrievedReferencesHasBeenSet = true; m_retrievedReferences = std::move(value); }
 
-    
+    /**
+     * <p>Contains metadata about the sources cited for the generated response.</p>
+     */
     inline KnowledgeBaseLookupOutput& WithRetrievedReferences(const Aws::Vector<RetrievedReference>& value) { SetRetrievedReferences(value); return *this;}
 
-    
+    /**
+     * <p>Contains metadata about the sources cited for the generated response.</p>
+     */
     inline KnowledgeBaseLookupOutput& WithRetrievedReferences(Aws::Vector<RetrievedReference>&& value) { SetRetrievedReferences(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>Contains metadata about the sources cited for the generated response.</p>
+     */
     inline KnowledgeBaseLookupOutput& AddRetrievedReferences(const RetrievedReference& value) { m_retrievedReferencesHasBeenSet = true; m_retrievedReferences.push_back(value); return *this; }
 
-    
+    /**
+     * <p>Contains metadata about the sources cited for the generated response.</p>
+     */
     inline KnowledgeBaseLookupOutput& AddRetrievedReferences(RetrievedReference&& value) { m_retrievedReferencesHasBeenSet = true; m_retrievedReferences.push_back(std::move(value)); return *this; }
 
   private:

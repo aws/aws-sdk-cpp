@@ -19,30 +19,20 @@ namespace Model
 {
 
 SessionState::SessionState() : 
-    m_sessionAttributesHasBeenSet(false),
-    m_promptSessionAttributesHasBeenSet(false)
+    m_promptSessionAttributesHasBeenSet(false),
+    m_sessionAttributesHasBeenSet(false)
 {
 }
 
 SessionState::SessionState(JsonView jsonValue) : 
-    m_sessionAttributesHasBeenSet(false),
-    m_promptSessionAttributesHasBeenSet(false)
+    m_promptSessionAttributesHasBeenSet(false),
+    m_sessionAttributesHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 SessionState& SessionState::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("sessionAttributes"))
-  {
-    Aws::Map<Aws::String, JsonView> sessionAttributesJsonMap = jsonValue.GetObject("sessionAttributes").GetAllObjects();
-    for(auto& sessionAttributesItem : sessionAttributesJsonMap)
-    {
-      m_sessionAttributes[sessionAttributesItem.first] = sessionAttributesItem.second.AsString();
-    }
-    m_sessionAttributesHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("promptSessionAttributes"))
   {
     Aws::Map<Aws::String, JsonView> promptSessionAttributesJsonMap = jsonValue.GetObject("promptSessionAttributes").GetAllObjects();
@@ -53,23 +43,22 @@ SessionState& SessionState::operator =(JsonView jsonValue)
     m_promptSessionAttributesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("sessionAttributes"))
+  {
+    Aws::Map<Aws::String, JsonView> sessionAttributesJsonMap = jsonValue.GetObject("sessionAttributes").GetAllObjects();
+    for(auto& sessionAttributesItem : sessionAttributesJsonMap)
+    {
+      m_sessionAttributes[sessionAttributesItem.first] = sessionAttributesItem.second.AsString();
+    }
+    m_sessionAttributesHasBeenSet = true;
+  }
+
   return *this;
 }
 
 JsonValue SessionState::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_sessionAttributesHasBeenSet)
-  {
-   JsonValue sessionAttributesJsonMap;
-   for(auto& sessionAttributesItem : m_sessionAttributes)
-   {
-     sessionAttributesJsonMap.WithString(sessionAttributesItem.first, sessionAttributesItem.second);
-   }
-   payload.WithObject("sessionAttributes", std::move(sessionAttributesJsonMap));
-
-  }
 
   if(m_promptSessionAttributesHasBeenSet)
   {
@@ -79,6 +68,17 @@ JsonValue SessionState::Jsonize() const
      promptSessionAttributesJsonMap.WithString(promptSessionAttributesItem.first, promptSessionAttributesItem.second);
    }
    payload.WithObject("promptSessionAttributes", std::move(promptSessionAttributesJsonMap));
+
+  }
+
+  if(m_sessionAttributesHasBeenSet)
+  {
+   JsonValue sessionAttributesJsonMap;
+   for(auto& sessionAttributesItem : m_sessionAttributes)
+   {
+     sessionAttributesJsonMap.WithString(sessionAttributesItem.first, sessionAttributesItem.second);
+   }
+   payload.WithObject("sessionAttributes", std::move(sessionAttributesJsonMap));
 
   }
 

@@ -842,17 +842,21 @@ namespace CognitoIdentityProvider
 
         /**
          * <p>Resets the specified user's password in a user pool as an administrator.
-         * Works on any user.</p>  <p>This action might generate an SMS text message.
-         * Starting June 1, 2021, US telecom carriers require you to register an
-         * origination phone number before you can send SMS messages to US phone numbers.
-         * If you use SMS text messages in Amazon Cognito, you must register a phone number
-         * with <a href="https://console.aws.amazon.com/pinpoint/home/">Amazon
-         * Pinpoint</a>. Amazon Cognito uses the registered number automatically.
-         * Otherwise, Amazon Cognito users who must receive SMS messages might not be able
-         * to sign up, activate their accounts, or sign in.</p> <p>If you have never used
-         * SMS text messages with Amazon Cognito or any other Amazon Web Service, Amazon
-         * Simple Notification Service might place your account in the SMS sandbox. In <i>
-         * <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
+         * Works on any user.</p> <p>To use this API operation, your user pool must have
+         * self-service account recovery configured. Use <a
+         * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminSetUserPassword.html">AdminSetUserPassword</a>
+         * if you manage passwords as an administrator.</p>  <p>This action might
+         * generate an SMS text message. Starting June 1, 2021, US telecom carriers require
+         * you to register an origination phone number before you can send SMS messages to
+         * US phone numbers. If you use SMS text messages in Amazon Cognito, you must
+         * register a phone number with <a
+         * href="https://console.aws.amazon.com/pinpoint/home/">Amazon Pinpoint</a>. Amazon
+         * Cognito uses the registered number automatically. Otherwise, Amazon Cognito
+         * users who must receive SMS messages might not be able to sign up, activate their
+         * accounts, or sign in.</p> <p>If you have never used SMS text messages with
+         * Amazon Cognito or any other Amazon Web Service, Amazon Simple Notification
+         * Service might place your account in the SMS sandbox. In <i> <a
+         * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox
          * mode</a> </i>, you can send messages only to verified phone numbers. After you
          * test your app while in the sandbox environment, you can move out of the sandbox
          * and into production. For more information, see <a
@@ -2193,7 +2197,10 @@ namespace CognitoIdentityProvider
          * </p> <p>If neither a verified phone number nor a verified email exists, this API
          * returns <code>InvalidParameterException</code>. If your app client has a client
          * secret and you don't provide a <code>SECRET_HASH</code> parameter, this API
-         * returns <code>NotAuthorizedException</code>.</p>  <p>Amazon Cognito
+         * returns <code>NotAuthorizedException</code>.</p> <p>To use this API operation,
+         * your user pool must have self-service account recovery configured. Use <a
+         * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminSetUserPassword.html">AdminSetUserPassword</a>
+         * if you manage passwords as an administrator.</p>  <p>Amazon Cognito
          * doesn't evaluate Identity and Access Management (IAM) policies in requests for
          * this API operation. For this operation, you can't use IAM credentials to
          * authorize requests, and you can't grant IAM permissions in policies. For more

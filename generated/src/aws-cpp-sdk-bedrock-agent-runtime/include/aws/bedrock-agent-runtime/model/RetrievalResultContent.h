@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Content of a retrieval result.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains the cited text from the data source.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/RetrievalResultContent">AWS
    * API Reference</a></p>
    */
@@ -38,42 +38,42 @@ namespace Model
 
 
     /**
-     * <p>Content of a retrieval result in text</p>
+     * <p>The cited text from the data source.</p>
      */
     inline const Aws::String& GetText() const{ return m_text; }
 
     /**
-     * <p>Content of a retrieval result in text</p>
+     * <p>The cited text from the data source.</p>
      */
     inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
 
     /**
-     * <p>Content of a retrieval result in text</p>
+     * <p>The cited text from the data source.</p>
      */
     inline void SetText(const Aws::String& value) { m_textHasBeenSet = true; m_text = value; }
 
     /**
-     * <p>Content of a retrieval result in text</p>
+     * <p>The cited text from the data source.</p>
      */
     inline void SetText(Aws::String&& value) { m_textHasBeenSet = true; m_text = std::move(value); }
 
     /**
-     * <p>Content of a retrieval result in text</p>
+     * <p>The cited text from the data source.</p>
      */
     inline void SetText(const char* value) { m_textHasBeenSet = true; m_text.assign(value); }
 
     /**
-     * <p>Content of a retrieval result in text</p>
+     * <p>The cited text from the data source.</p>
      */
     inline RetrievalResultContent& WithText(const Aws::String& value) { SetText(value); return *this;}
 
     /**
-     * <p>Content of a retrieval result in text</p>
+     * <p>The cited text from the data source.</p>
      */
     inline RetrievalResultContent& WithText(Aws::String&& value) { SetText(std::move(value)); return *this;}
 
     /**
-     * <p>Content of a retrieval result in text</p>
+     * <p>The cited text from the data source.</p>
      */
     inline RetrievalResultContent& WithText(const char* value) { SetText(value); return *this;}
 

@@ -29,6 +29,12 @@ RetrieveResult::RetrieveResult(const Aws::AmazonWebServiceResult<JsonValue>& res
 RetrieveResult& RetrieveResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("nextToken"))
+  {
+    m_nextToken = jsonValue.GetString("nextToken");
+
+  }
+
   if(jsonValue.ValueExists("retrievalResults"))
   {
     Aws::Utils::Array<JsonView> retrievalResultsJsonList = jsonValue.GetArray("retrievalResults");
@@ -36,12 +42,6 @@ RetrieveResult& RetrieveResult::operator =(const Aws::AmazonWebServiceResult<Jso
     {
       m_retrievalResults.push_back(retrievalResultsJsonList[retrievalResultsIndex].AsObject());
     }
-  }
-
-  if(jsonValue.ValueExists("nextToken"))
-  {
-    m_nextToken = jsonValue.GetString("nextToken");
-
   }
 
 

@@ -13,22 +13,16 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 RetrieveAndGenerateRequest::RetrieveAndGenerateRequest() : 
-    m_sessionIdHasBeenSet(false),
     m_inputHasBeenSet(false),
     m_retrieveAndGenerateConfigurationHasBeenSet(false),
-    m_sessionConfigurationHasBeenSet(false)
+    m_sessionConfigurationHasBeenSet(false),
+    m_sessionIdHasBeenSet(false)
 {
 }
 
 Aws::String RetrieveAndGenerateRequest::SerializePayload() const
 {
   JsonValue payload;
-
-  if(m_sessionIdHasBeenSet)
-  {
-   payload.WithString("sessionId", m_sessionId);
-
-  }
 
   if(m_inputHasBeenSet)
   {
@@ -45,6 +39,12 @@ Aws::String RetrieveAndGenerateRequest::SerializePayload() const
   if(m_sessionConfigurationHasBeenSet)
   {
    payload.WithObject("sessionConfiguration", m_sessionConfiguration.Jsonize());
+
+  }
+
+  if(m_sessionIdHasBeenSet)
+  {
+   payload.WithString("sessionId", m_sessionId);
 
   }
 

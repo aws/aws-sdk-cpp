@@ -19,57 +19,36 @@ namespace Model
 {
 
 ModelInvocationInput::ModelInvocationInput() : 
-    m_traceIdHasBeenSet(false),
-    m_textHasBeenSet(false),
-    m_type(PromptType::NOT_SET),
-    m_typeHasBeenSet(false),
     m_inferenceConfigurationHasBeenSet(false),
     m_overrideLambdaHasBeenSet(false),
+    m_parserMode(CreationMode::NOT_SET),
+    m_parserModeHasBeenSet(false),
     m_promptCreationMode(CreationMode::NOT_SET),
     m_promptCreationModeHasBeenSet(false),
-    m_parserMode(CreationMode::NOT_SET),
-    m_parserModeHasBeenSet(false)
+    m_textHasBeenSet(false),
+    m_traceIdHasBeenSet(false),
+    m_type(PromptType::NOT_SET),
+    m_typeHasBeenSet(false)
 {
 }
 
 ModelInvocationInput::ModelInvocationInput(JsonView jsonValue) : 
-    m_traceIdHasBeenSet(false),
-    m_textHasBeenSet(false),
-    m_type(PromptType::NOT_SET),
-    m_typeHasBeenSet(false),
     m_inferenceConfigurationHasBeenSet(false),
     m_overrideLambdaHasBeenSet(false),
+    m_parserMode(CreationMode::NOT_SET),
+    m_parserModeHasBeenSet(false),
     m_promptCreationMode(CreationMode::NOT_SET),
     m_promptCreationModeHasBeenSet(false),
-    m_parserMode(CreationMode::NOT_SET),
-    m_parserModeHasBeenSet(false)
+    m_textHasBeenSet(false),
+    m_traceIdHasBeenSet(false),
+    m_type(PromptType::NOT_SET),
+    m_typeHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 ModelInvocationInput& ModelInvocationInput::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("traceId"))
-  {
-    m_traceId = jsonValue.GetString("traceId");
-
-    m_traceIdHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("text"))
-  {
-    m_text = jsonValue.GetString("text");
-
-    m_textHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("type"))
-  {
-    m_type = PromptTypeMapper::GetPromptTypeForName(jsonValue.GetString("type"));
-
-    m_typeHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("inferenceConfiguration"))
   {
     m_inferenceConfiguration = jsonValue.GetObject("inferenceConfiguration");
@@ -84,6 +63,13 @@ ModelInvocationInput& ModelInvocationInput::operator =(JsonView jsonValue)
     m_overrideLambdaHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("parserMode"))
+  {
+    m_parserMode = CreationModeMapper::GetCreationModeForName(jsonValue.GetString("parserMode"));
+
+    m_parserModeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("promptCreationMode"))
   {
     m_promptCreationMode = CreationModeMapper::GetCreationModeForName(jsonValue.GetString("promptCreationMode"));
@@ -91,11 +77,25 @@ ModelInvocationInput& ModelInvocationInput::operator =(JsonView jsonValue)
     m_promptCreationModeHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("parserMode"))
+  if(jsonValue.ValueExists("text"))
   {
-    m_parserMode = CreationModeMapper::GetCreationModeForName(jsonValue.GetString("parserMode"));
+    m_text = jsonValue.GetString("text");
 
-    m_parserModeHasBeenSet = true;
+    m_textHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("traceId"))
+  {
+    m_traceId = jsonValue.GetString("traceId");
+
+    m_traceIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("type"))
+  {
+    m_type = PromptTypeMapper::GetPromptTypeForName(jsonValue.GetString("type"));
+
+    m_typeHasBeenSet = true;
   }
 
   return *this;
@@ -104,23 +104,6 @@ ModelInvocationInput& ModelInvocationInput::operator =(JsonView jsonValue)
 JsonValue ModelInvocationInput::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_traceIdHasBeenSet)
-  {
-   payload.WithString("traceId", m_traceId);
-
-  }
-
-  if(m_textHasBeenSet)
-  {
-   payload.WithString("text", m_text);
-
-  }
-
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", PromptTypeMapper::GetNameForPromptType(m_type));
-  }
 
   if(m_inferenceConfigurationHasBeenSet)
   {
@@ -134,14 +117,31 @@ JsonValue ModelInvocationInput::Jsonize() const
 
   }
 
+  if(m_parserModeHasBeenSet)
+  {
+   payload.WithString("parserMode", CreationModeMapper::GetNameForCreationMode(m_parserMode));
+  }
+
   if(m_promptCreationModeHasBeenSet)
   {
    payload.WithString("promptCreationMode", CreationModeMapper::GetNameForCreationMode(m_promptCreationMode));
   }
 
-  if(m_parserModeHasBeenSet)
+  if(m_textHasBeenSet)
   {
-   payload.WithString("parserMode", CreationModeMapper::GetNameForCreationMode(m_parserMode));
+   payload.WithString("text", m_text);
+
+  }
+
+  if(m_traceIdHasBeenSet)
+  {
+   payload.WithString("traceId", m_traceId);
+
+  }
+
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("type", PromptTypeMapper::GetNameForPromptType(m_type));
   }
 
   return payload;

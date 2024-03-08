@@ -19,29 +19,29 @@ namespace Model
 {
 
 Trace::Trace() : 
-    m_preProcessingTraceHasBeenSet(false),
+    m_failureTraceHasBeenSet(false),
     m_orchestrationTraceHasBeenSet(false),
     m_postProcessingTraceHasBeenSet(false),
-    m_failureTraceHasBeenSet(false)
+    m_preProcessingTraceHasBeenSet(false)
 {
 }
 
 Trace::Trace(JsonView jsonValue) : 
-    m_preProcessingTraceHasBeenSet(false),
+    m_failureTraceHasBeenSet(false),
     m_orchestrationTraceHasBeenSet(false),
     m_postProcessingTraceHasBeenSet(false),
-    m_failureTraceHasBeenSet(false)
+    m_preProcessingTraceHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 Trace& Trace::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("preProcessingTrace"))
+  if(jsonValue.ValueExists("failureTrace"))
   {
-    m_preProcessingTrace = jsonValue.GetObject("preProcessingTrace");
+    m_failureTrace = jsonValue.GetObject("failureTrace");
 
-    m_preProcessingTraceHasBeenSet = true;
+    m_failureTraceHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("orchestrationTrace"))
@@ -58,11 +58,11 @@ Trace& Trace::operator =(JsonView jsonValue)
     m_postProcessingTraceHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("failureTrace"))
+  if(jsonValue.ValueExists("preProcessingTrace"))
   {
-    m_failureTrace = jsonValue.GetObject("failureTrace");
+    m_preProcessingTrace = jsonValue.GetObject("preProcessingTrace");
 
-    m_failureTraceHasBeenSet = true;
+    m_preProcessingTraceHasBeenSet = true;
   }
 
   return *this;
@@ -72,9 +72,9 @@ JsonValue Trace::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_preProcessingTraceHasBeenSet)
+  if(m_failureTraceHasBeenSet)
   {
-   payload.WithObject("preProcessingTrace", m_preProcessingTrace.Jsonize());
+   payload.WithObject("failureTrace", m_failureTrace.Jsonize());
 
   }
 
@@ -90,9 +90,9 @@ JsonValue Trace::Jsonize() const
 
   }
 
-  if(m_failureTraceHasBeenSet)
+  if(m_preProcessingTraceHasBeenSet)
   {
-   payload.WithObject("failureTrace", m_failureTrace.Jsonize());
+   payload.WithObject("preProcessingTrace", m_preProcessingTrace.Jsonize());
 
   }
 

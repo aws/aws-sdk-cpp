@@ -19,32 +19,32 @@ namespace Model
 {
 
 FailureTrace::FailureTrace() : 
-    m_traceIdHasBeenSet(false),
-    m_failureReasonHasBeenSet(false)
+    m_failureReasonHasBeenSet(false),
+    m_traceIdHasBeenSet(false)
 {
 }
 
 FailureTrace::FailureTrace(JsonView jsonValue) : 
-    m_traceIdHasBeenSet(false),
-    m_failureReasonHasBeenSet(false)
+    m_failureReasonHasBeenSet(false),
+    m_traceIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 FailureTrace& FailureTrace::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("traceId"))
-  {
-    m_traceId = jsonValue.GetString("traceId");
-
-    m_traceIdHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("failureReason"))
   {
     m_failureReason = jsonValue.GetString("failureReason");
 
     m_failureReasonHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("traceId"))
+  {
+    m_traceId = jsonValue.GetString("traceId");
+
+    m_traceIdHasBeenSet = true;
   }
 
   return *this;
@@ -54,15 +54,15 @@ JsonValue FailureTrace::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_traceIdHasBeenSet)
-  {
-   payload.WithString("traceId", m_traceId);
-
-  }
-
   if(m_failureReasonHasBeenSet)
   {
    payload.WithString("failureReason", m_failureReason);
+
+  }
+
+  if(m_traceIdHasBeenSet)
+  {
+   payload.WithString("traceId", m_traceId);
 
   }
 

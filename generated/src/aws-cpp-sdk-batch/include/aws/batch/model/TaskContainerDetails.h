@@ -319,7 +319,7 @@ namespace Model
      * of the task are stopped. If the <code>essential</code> parameter of a container
      * is marked as false, its failure doesn't affect the rest of the containers in a
      * task. If this parameter is omitted, a container is assumed to be essential.</p>
-     * <p>All tasks must have at least one essential container. If you have an
+     * <p>All jobs must have at least one essential container. If you have an
      * application that's composed of multiple containers, group containers that are
      * used for a common purpose into components, and separate the different components
      * into multiple task definitions. For more information, see <a
@@ -335,7 +335,7 @@ namespace Model
      * of the task are stopped. If the <code>essential</code> parameter of a container
      * is marked as false, its failure doesn't affect the rest of the containers in a
      * task. If this parameter is omitted, a container is assumed to be essential.</p>
-     * <p>All tasks must have at least one essential container. If you have an
+     * <p>All jobs must have at least one essential container. If you have an
      * application that's composed of multiple containers, group containers that are
      * used for a common purpose into components, and separate the different components
      * into multiple task definitions. For more information, see <a
@@ -351,7 +351,7 @@ namespace Model
      * of the task are stopped. If the <code>essential</code> parameter of a container
      * is marked as false, its failure doesn't affect the rest of the containers in a
      * task. If this parameter is omitted, a container is assumed to be essential.</p>
-     * <p>All tasks must have at least one essential container. If you have an
+     * <p>All jobs must have at least one essential container. If you have an
      * application that's composed of multiple containers, group containers that are
      * used for a common purpose into components, and separate the different components
      * into multiple task definitions. For more information, see <a
@@ -367,7 +367,7 @@ namespace Model
      * of the task are stopped. If the <code>essential</code> parameter of a container
      * is marked as false, its failure doesn't affect the rest of the containers in a
      * task. If this parameter is omitted, a container is assumed to be essential.</p>
-     * <p>All tasks must have at least one essential container. If you have an
+     * <p>All jobs must have at least one essential container. If you have an
      * application that's composed of multiple containers, group containers that are
      * used for a common purpose into components, and separate the different components
      * into multiple task definitions. For more information, see <a

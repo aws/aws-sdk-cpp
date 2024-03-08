@@ -26,8 +26,13 @@ namespace Model
 
   /**
    * <p>Contains the details for an SFTP connector object. The connector object is
-   * used for transferring files to and from a partner's SFTP server.</p><p><h3>See
-   * Also:</h3>   <a
+   * used for transferring files to and from a partner's SFTP server.</p> 
+   * <p>Because the <code>SftpConnectorConfig</code> data type is used for both
+   * creating and updating SFTP connectors, its parameters,
+   * <code>TrustedHostKeys</code> and <code>UserSecretId</code> are marked as not
+   * required. This is a bit misleading, as they are not required when you are
+   * updating an existing SFTP connector, but <i>are required</i> when you are
+   * creating a new SFTP connector.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/SftpConnectorConfig">AWS
    * API Reference</a></p>
    */
@@ -111,7 +116,14 @@ namespace Model
      * <p>For ECDSA keys, the <code>&lt;key type&gt;</code> string is either
      * <code>ecdsa-sha2-nistp256</code>, <code>ecdsa-sha2-nistp384</code>, or
      * <code>ecdsa-sha2-nistp521</code>, depending on the size of the key you
-     * generated.</p> </li> </ul>
+     * generated.</p> </li> </ul> <p>Run this command to retrieve the SFTP server host
+     * key, where your SFTP server name is <code>ftp.host.com</code>.</p> <p>
+     * <code>ssh-keyscan ftp.host.com</code> </p> <p>This prints the public host key to
+     * standard output.</p> <p> <code>ftp.host.com ssh-rsa
+     * AAAAB3Nza...&lt;long-string-for-public-key</code> </p> <p>Copy and paste this
+     * string into the <code>TrustedHostKeys</code> field for the
+     * <code>create-connector</code> command or into the <b>Trusted host keys</b> field
+     * in the console.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTrustedHostKeys() const{ return m_trustedHostKeys; }
 
@@ -129,7 +141,14 @@ namespace Model
      * <p>For ECDSA keys, the <code>&lt;key type&gt;</code> string is either
      * <code>ecdsa-sha2-nistp256</code>, <code>ecdsa-sha2-nistp384</code>, or
      * <code>ecdsa-sha2-nistp521</code>, depending on the size of the key you
-     * generated.</p> </li> </ul>
+     * generated.</p> </li> </ul> <p>Run this command to retrieve the SFTP server host
+     * key, where your SFTP server name is <code>ftp.host.com</code>.</p> <p>
+     * <code>ssh-keyscan ftp.host.com</code> </p> <p>This prints the public host key to
+     * standard output.</p> <p> <code>ftp.host.com ssh-rsa
+     * AAAAB3Nza...&lt;long-string-for-public-key</code> </p> <p>Copy and paste this
+     * string into the <code>TrustedHostKeys</code> field for the
+     * <code>create-connector</code> command or into the <b>Trusted host keys</b> field
+     * in the console.</p>
      */
     inline bool TrustedHostKeysHasBeenSet() const { return m_trustedHostKeysHasBeenSet; }
 
@@ -147,7 +166,14 @@ namespace Model
      * <p>For ECDSA keys, the <code>&lt;key type&gt;</code> string is either
      * <code>ecdsa-sha2-nistp256</code>, <code>ecdsa-sha2-nistp384</code>, or
      * <code>ecdsa-sha2-nistp521</code>, depending on the size of the key you
-     * generated.</p> </li> </ul>
+     * generated.</p> </li> </ul> <p>Run this command to retrieve the SFTP server host
+     * key, where your SFTP server name is <code>ftp.host.com</code>.</p> <p>
+     * <code>ssh-keyscan ftp.host.com</code> </p> <p>This prints the public host key to
+     * standard output.</p> <p> <code>ftp.host.com ssh-rsa
+     * AAAAB3Nza...&lt;long-string-for-public-key</code> </p> <p>Copy and paste this
+     * string into the <code>TrustedHostKeys</code> field for the
+     * <code>create-connector</code> command or into the <b>Trusted host keys</b> field
+     * in the console.</p>
      */
     inline void SetTrustedHostKeys(const Aws::Vector<Aws::String>& value) { m_trustedHostKeysHasBeenSet = true; m_trustedHostKeys = value; }
 
@@ -165,7 +191,14 @@ namespace Model
      * <p>For ECDSA keys, the <code>&lt;key type&gt;</code> string is either
      * <code>ecdsa-sha2-nistp256</code>, <code>ecdsa-sha2-nistp384</code>, or
      * <code>ecdsa-sha2-nistp521</code>, depending on the size of the key you
-     * generated.</p> </li> </ul>
+     * generated.</p> </li> </ul> <p>Run this command to retrieve the SFTP server host
+     * key, where your SFTP server name is <code>ftp.host.com</code>.</p> <p>
+     * <code>ssh-keyscan ftp.host.com</code> </p> <p>This prints the public host key to
+     * standard output.</p> <p> <code>ftp.host.com ssh-rsa
+     * AAAAB3Nza...&lt;long-string-for-public-key</code> </p> <p>Copy and paste this
+     * string into the <code>TrustedHostKeys</code> field for the
+     * <code>create-connector</code> command or into the <b>Trusted host keys</b> field
+     * in the console.</p>
      */
     inline void SetTrustedHostKeys(Aws::Vector<Aws::String>&& value) { m_trustedHostKeysHasBeenSet = true; m_trustedHostKeys = std::move(value); }
 
@@ -183,7 +216,14 @@ namespace Model
      * <p>For ECDSA keys, the <code>&lt;key type&gt;</code> string is either
      * <code>ecdsa-sha2-nistp256</code>, <code>ecdsa-sha2-nistp384</code>, or
      * <code>ecdsa-sha2-nistp521</code>, depending on the size of the key you
-     * generated.</p> </li> </ul>
+     * generated.</p> </li> </ul> <p>Run this command to retrieve the SFTP server host
+     * key, where your SFTP server name is <code>ftp.host.com</code>.</p> <p>
+     * <code>ssh-keyscan ftp.host.com</code> </p> <p>This prints the public host key to
+     * standard output.</p> <p> <code>ftp.host.com ssh-rsa
+     * AAAAB3Nza...&lt;long-string-for-public-key</code> </p> <p>Copy and paste this
+     * string into the <code>TrustedHostKeys</code> field for the
+     * <code>create-connector</code> command or into the <b>Trusted host keys</b> field
+     * in the console.</p>
      */
     inline SftpConnectorConfig& WithTrustedHostKeys(const Aws::Vector<Aws::String>& value) { SetTrustedHostKeys(value); return *this;}
 
@@ -201,7 +241,14 @@ namespace Model
      * <p>For ECDSA keys, the <code>&lt;key type&gt;</code> string is either
      * <code>ecdsa-sha2-nistp256</code>, <code>ecdsa-sha2-nistp384</code>, or
      * <code>ecdsa-sha2-nistp521</code>, depending on the size of the key you
-     * generated.</p> </li> </ul>
+     * generated.</p> </li> </ul> <p>Run this command to retrieve the SFTP server host
+     * key, where your SFTP server name is <code>ftp.host.com</code>.</p> <p>
+     * <code>ssh-keyscan ftp.host.com</code> </p> <p>This prints the public host key to
+     * standard output.</p> <p> <code>ftp.host.com ssh-rsa
+     * AAAAB3Nza...&lt;long-string-for-public-key</code> </p> <p>Copy and paste this
+     * string into the <code>TrustedHostKeys</code> field for the
+     * <code>create-connector</code> command or into the <b>Trusted host keys</b> field
+     * in the console.</p>
      */
     inline SftpConnectorConfig& WithTrustedHostKeys(Aws::Vector<Aws::String>&& value) { SetTrustedHostKeys(std::move(value)); return *this;}
 
@@ -219,7 +266,14 @@ namespace Model
      * <p>For ECDSA keys, the <code>&lt;key type&gt;</code> string is either
      * <code>ecdsa-sha2-nistp256</code>, <code>ecdsa-sha2-nistp384</code>, or
      * <code>ecdsa-sha2-nistp521</code>, depending on the size of the key you
-     * generated.</p> </li> </ul>
+     * generated.</p> </li> </ul> <p>Run this command to retrieve the SFTP server host
+     * key, where your SFTP server name is <code>ftp.host.com</code>.</p> <p>
+     * <code>ssh-keyscan ftp.host.com</code> </p> <p>This prints the public host key to
+     * standard output.</p> <p> <code>ftp.host.com ssh-rsa
+     * AAAAB3Nza...&lt;long-string-for-public-key</code> </p> <p>Copy and paste this
+     * string into the <code>TrustedHostKeys</code> field for the
+     * <code>create-connector</code> command or into the <b>Trusted host keys</b> field
+     * in the console.</p>
      */
     inline SftpConnectorConfig& AddTrustedHostKeys(const Aws::String& value) { m_trustedHostKeysHasBeenSet = true; m_trustedHostKeys.push_back(value); return *this; }
 
@@ -237,7 +291,14 @@ namespace Model
      * <p>For ECDSA keys, the <code>&lt;key type&gt;</code> string is either
      * <code>ecdsa-sha2-nistp256</code>, <code>ecdsa-sha2-nistp384</code>, or
      * <code>ecdsa-sha2-nistp521</code>, depending on the size of the key you
-     * generated.</p> </li> </ul>
+     * generated.</p> </li> </ul> <p>Run this command to retrieve the SFTP server host
+     * key, where your SFTP server name is <code>ftp.host.com</code>.</p> <p>
+     * <code>ssh-keyscan ftp.host.com</code> </p> <p>This prints the public host key to
+     * standard output.</p> <p> <code>ftp.host.com ssh-rsa
+     * AAAAB3Nza...&lt;long-string-for-public-key</code> </p> <p>Copy and paste this
+     * string into the <code>TrustedHostKeys</code> field for the
+     * <code>create-connector</code> command or into the <b>Trusted host keys</b> field
+     * in the console.</p>
      */
     inline SftpConnectorConfig& AddTrustedHostKeys(Aws::String&& value) { m_trustedHostKeysHasBeenSet = true; m_trustedHostKeys.push_back(std::move(value)); return *this; }
 
@@ -255,7 +316,14 @@ namespace Model
      * <p>For ECDSA keys, the <code>&lt;key type&gt;</code> string is either
      * <code>ecdsa-sha2-nistp256</code>, <code>ecdsa-sha2-nistp384</code>, or
      * <code>ecdsa-sha2-nistp521</code>, depending on the size of the key you
-     * generated.</p> </li> </ul>
+     * generated.</p> </li> </ul> <p>Run this command to retrieve the SFTP server host
+     * key, where your SFTP server name is <code>ftp.host.com</code>.</p> <p>
+     * <code>ssh-keyscan ftp.host.com</code> </p> <p>This prints the public host key to
+     * standard output.</p> <p> <code>ftp.host.com ssh-rsa
+     * AAAAB3Nza...&lt;long-string-for-public-key</code> </p> <p>Copy and paste this
+     * string into the <code>TrustedHostKeys</code> field for the
+     * <code>create-connector</code> command or into the <b>Trusted host keys</b> field
+     * in the console.</p>
      */
     inline SftpConnectorConfig& AddTrustedHostKeys(const char* value) { m_trustedHostKeysHasBeenSet = true; m_trustedHostKeys.push_back(value); return *this; }
 

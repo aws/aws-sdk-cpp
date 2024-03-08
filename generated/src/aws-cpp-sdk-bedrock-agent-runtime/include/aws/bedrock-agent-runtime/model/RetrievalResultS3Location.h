@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>The S3 location of a retrieval result.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains the S3 location of the data source.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/RetrievalResultS3Location">AWS
    * API Reference</a></p>
    */
@@ -38,42 +38,42 @@ namespace Model
 
 
     /**
-     * <p>URI of S3 location</p>
+     * <p>The S3 URI of the data source.</p>
      */
     inline const Aws::String& GetUri() const{ return m_uri; }
 
     /**
-     * <p>URI of S3 location</p>
+     * <p>The S3 URI of the data source.</p>
      */
     inline bool UriHasBeenSet() const { return m_uriHasBeenSet; }
 
     /**
-     * <p>URI of S3 location</p>
+     * <p>The S3 URI of the data source.</p>
      */
     inline void SetUri(const Aws::String& value) { m_uriHasBeenSet = true; m_uri = value; }
 
     /**
-     * <p>URI of S3 location</p>
+     * <p>The S3 URI of the data source.</p>
      */
     inline void SetUri(Aws::String&& value) { m_uriHasBeenSet = true; m_uri = std::move(value); }
 
     /**
-     * <p>URI of S3 location</p>
+     * <p>The S3 URI of the data source.</p>
      */
     inline void SetUri(const char* value) { m_uriHasBeenSet = true; m_uri.assign(value); }
 
     /**
-     * <p>URI of S3 location</p>
+     * <p>The S3 URI of the data source.</p>
      */
     inline RetrievalResultS3Location& WithUri(const Aws::String& value) { SetUri(value); return *this;}
 
     /**
-     * <p>URI of S3 location</p>
+     * <p>The S3 URI of the data source.</p>
      */
     inline RetrievalResultS3Location& WithUri(Aws::String&& value) { SetUri(std::move(value)); return *this;}
 
     /**
-     * <p>URI of S3 location</p>
+     * <p>The S3 URI of the data source.</p>
      */
     inline RetrievalResultS3Location& WithUri(const char* value) { SetUri(value); return *this;}
 

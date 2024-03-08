@@ -80,6 +80,7 @@ namespace Model
      * <ul> <li> <p> <code>AWS::DynamoDB::Table</code> </p> </li> <li> <p>
      * <code>AWS::Lambda::Function</code> </p> </li> <li> <p>
      * <code>AWS::S3::Object</code> </p> </li> <li> <p>
+     * <code>AWS::AppConfig::Configuration</code> </p> </li> <li> <p>
      * <code>AWS::B2BI::Transformer</code> </p> </li> <li> <p>
      * <code>AWS::Bedrock::AgentAlias</code> </p> </li> <li> <p>
      * <code>AWS::Bedrock::KnowledgeBase</code> </p> </li> <li> <p>
@@ -94,7 +95,13 @@ namespace Model
      * <code>AWS::EMRWAL::Workspace</code> </p> </li> <li> <p>
      * <code>AWS::FinSpace::Environment</code> </p> </li> <li> <p>
      * <code>AWS::Glue::Table</code> </p> </li> <li> <p>
+     * <code>AWS::GreengrassV2::ComponentVersion</code> </p> </li> <li> <p>
+     * <code>AWS::GreengrassV2::Deployment</code> </p> </li> <li> <p>
      * <code>AWS::GuardDuty::Detector</code> </p> </li> <li> <p>
+     * <code>AWS::IoT::Certificate</code> </p> </li> <li> <p>
+     * <code>AWS::IoT::Thing</code> </p> </li> <li> <p>
+     * <code>AWS::IoTSiteWise::Asset</code> </p> </li> <li> <p>
+     * <code>AWS::IoTSiteWise::TimeSeries</code> </p> </li> <li> <p>
      * <code>AWS::IoTTwinMaker::Entity</code> </p> </li> <li> <p>
      * <code>AWS::IoTTwinMaker::Workspace</code> </p> </li> <li> <p>
      * <code>AWS::KendraRanking::ExecutionPlan</code> </p> </li> <li> <p>
@@ -109,6 +116,9 @@ namespace Model
      * <code>AWS::QBusiness::Index</code> </p> </li> <li> <p>
      * <code>AWS::QBusiness::WebExperience</code> </p> </li> <li> <p>
      * <code>AWS::RDS::DBCluster</code> </p> </li> <li> <p>
+     * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
+     * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
+     * <code>AWS::S3Outposts::Object</code> </p> </li> <li> <p>
      * <code>AWS::SageMaker::Endpoint</code> </p> </li> <li> <p>
      * <code>AWS::SageMaker::ExperimentTrialComponent</code> </p> </li> <li> <p>
      * <code>AWS::SageMaker::FeatureGroup</code> </p> </li> <li> <p>
@@ -116,10 +126,8 @@ namespace Model
      * <code>AWS::ServiceDiscovery::Service</code> </p> </li> <li> <p>
      * <code>AWS::SCN::Instance</code> </p> </li> <li> <p>
      * <code>AWS::SNS::PlatformEndpoint</code> </p> </li> <li> <p>
-     * <code>AWS::SNS::Topic</code> </p> </li> <li> <p> <code>AWS::SQS::Queue</code>
-     * </p> </li> <li> <p> <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
-     * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
-     * <code>AWS::S3Outposts::Object</code> </p> </li> <li> <p>
+     * <code>AWS::SNS::Topic</code> </p> </li> <li> <p> <code>AWS::SWF::Domain</code>
+     * </p> </li> <li> <p> <code>AWS::SQS::Queue</code> </p> </li> <li> <p>
      * <code>AWS::SSMMessages::ControlChannel</code> </p> </li> <li> <p>
      * <code>AWS::ThinClient::Device</code> </p> </li> <li> <p>
      * <code>AWS::ThinClient::Environment</code> </p> </li> <li> <p>
@@ -150,6 +158,11 @@ namespace Model
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:lambda:&lt;region&gt;:&lt;account_ID&gt;:function:&lt;function_name&gt;</code>
+     * </p> </li> </ul> <p>When resources.type equals
+     * <code>AWS::AppConfig::Configuration</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:appconfig:&lt;region&gt;:&lt;account_ID&gt;:application/&lt;application_ID&gt;/environment/&lt;environment_ID&gt;/configuration/&lt;configuration_profile_ID&gt;</code>
      * </p> </li> </ul> <p>When resources.type equals
      * <code>AWS::B2BI::Transformer</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
@@ -221,10 +234,40 @@ namespace Model
      * <p>
      * <code>arn:&lt;partition&gt;:glue:&lt;region&gt;:&lt;account_ID&gt;:table/&lt;database_name&gt;/&lt;table_name&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::GreengrassV2::ComponentVersion</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:greengrass:&lt;region&gt;:&lt;account_ID&gt;:components/&lt;component_name&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::GreengrassV2::Deployment</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:greengrass:&lt;region&gt;:&lt;account_ID&gt;:deployments/&lt;deployment_ID</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::GuardDuty::Detector</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:guardduty:&lt;region&gt;:&lt;account_ID&gt;:detector/&lt;detector_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::IoT::Certificate</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:iot:&lt;region&gt;:&lt;account_ID&gt;:cert/&lt;certificate_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::IoT::Thing</code>, and the operator is set to <code>Equals</code> or
+     * <code>NotEquals</code>, the ARN must be in the following format:</p> <ul> <li>
+     * <p>
+     * <code>arn:&lt;partition&gt;:iot:&lt;region&gt;:&lt;account_ID&gt;:thing/&lt;thing_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::IoTSiteWise::Asset</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:iotsitewise:&lt;region&gt;:&lt;account_ID&gt;:asset/&lt;asset_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::IoTSiteWise::TimeSeries</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:iotsitewise:&lt;region&gt;:&lt;account_ID&gt;:timeseries/&lt;timeseries_ID&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::IoTTwinMaker::Entity</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
@@ -296,6 +339,26 @@ namespace Model
      * <li> <p>
      * <code>arn:&lt;partition&gt;:rds:&lt;region&gt;:&lt;account_ID&gt;:cluster/&lt;cluster_name&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::S3::AccessPoint</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in one of the
+     * following formats. To log events on all objects in an S3 access point, we
+     * recommend that you use only the access point ARN, don’t include the object path,
+     * and use the <code>StartsWith</code> or <code>NotStartsWith</code> operators.</p>
+     * <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:s3:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;</code>
+     * </p> </li> <li> <p>
+     * <code>arn:&lt;partition&gt;:s3:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;/object/&lt;object_path&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::S3ObjectLambda::AccessPoint</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:s3-object-lambda:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::S3Outposts::Object</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:s3-outposts:&lt;region&gt;:&lt;account_ID&gt;:&lt;object_path&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::SageMaker::Endpoint</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
@@ -336,30 +399,15 @@ namespace Model
      * <p>
      * <code>arn:&lt;partition&gt;:sns:&lt;region&gt;:&lt;account_ID&gt;:&lt;topic_name&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::SWF::Domain</code>, and the operator is set to <code>Equals</code> or
+     * <code>NotEquals</code>, the ARN must be in the following format:</p> <ul> <li>
+     * <p>
+     * <code>arn:&lt;partition&gt;:swf:&lt;region&gt;:&lt;account_ID&gt;:domain/&lt;domain_name&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::SQS::Queue</code>, and the operator is set to <code>Equals</code> or
      * <code>NotEquals</code>, the ARN must be in the following format:</p> <ul> <li>
      * <p>
      * <code>arn:&lt;partition&gt;:sqs:&lt;region&gt;:&lt;account_ID&gt;:&lt;queue_name&gt;</code>
-     * </p> </li> </ul> <p>When <code>resources.type</code> equals
-     * <code>AWS::S3::AccessPoint</code>, and the operator is set to
-     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in one of the
-     * following formats. To log events on all objects in an S3 access point, we
-     * recommend that you use only the access point ARN, don��t include the object
-     * path, and use the <code>StartsWith</code> or <code>NotStartsWith</code>
-     * operators.</p> <ul> <li> <p>
-     * <code>arn:&lt;partition&gt;:s3:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;</code>
-     * </p> </li> <li> <p>
-     * <code>arn:&lt;partition&gt;:s3:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;/object/&lt;object_path&gt;</code>
-     * </p> </li> </ul> <p>When <code>resources.type</code> equals
-     * <code>AWS::S3ObjectLambda::AccessPoint</code>, and the operator is set to
-     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
-     * format:</p> <ul> <li> <p>
-     * <code>arn:&lt;partition&gt;:s3-object-lambda:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;</code>
-     * </p> </li> </ul> <p>When <code>resources.type</code> equals
-     * <code>AWS::S3Outposts::Object</code>, and the operator is set to
-     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
-     * format:</p> <ul> <li> <p>
-     * <code>arn:&lt;partition&gt;:s3-outposts:&lt;region&gt;:&lt;account_ID&gt;:&lt;object_path&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::SSMMessages::ControlChannel</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
@@ -435,6 +483,7 @@ namespace Model
      * <ul> <li> <p> <code>AWS::DynamoDB::Table</code> </p> </li> <li> <p>
      * <code>AWS::Lambda::Function</code> </p> </li> <li> <p>
      * <code>AWS::S3::Object</code> </p> </li> <li> <p>
+     * <code>AWS::AppConfig::Configuration</code> </p> </li> <li> <p>
      * <code>AWS::B2BI::Transformer</code> </p> </li> <li> <p>
      * <code>AWS::Bedrock::AgentAlias</code> </p> </li> <li> <p>
      * <code>AWS::Bedrock::KnowledgeBase</code> </p> </li> <li> <p>
@@ -449,7 +498,13 @@ namespace Model
      * <code>AWS::EMRWAL::Workspace</code> </p> </li> <li> <p>
      * <code>AWS::FinSpace::Environment</code> </p> </li> <li> <p>
      * <code>AWS::Glue::Table</code> </p> </li> <li> <p>
+     * <code>AWS::GreengrassV2::ComponentVersion</code> </p> </li> <li> <p>
+     * <code>AWS::GreengrassV2::Deployment</code> </p> </li> <li> <p>
      * <code>AWS::GuardDuty::Detector</code> </p> </li> <li> <p>
+     * <code>AWS::IoT::Certificate</code> </p> </li> <li> <p>
+     * <code>AWS::IoT::Thing</code> </p> </li> <li> <p>
+     * <code>AWS::IoTSiteWise::Asset</code> </p> </li> <li> <p>
+     * <code>AWS::IoTSiteWise::TimeSeries</code> </p> </li> <li> <p>
      * <code>AWS::IoTTwinMaker::Entity</code> </p> </li> <li> <p>
      * <code>AWS::IoTTwinMaker::Workspace</code> </p> </li> <li> <p>
      * <code>AWS::KendraRanking::ExecutionPlan</code> </p> </li> <li> <p>
@@ -464,6 +519,9 @@ namespace Model
      * <code>AWS::QBusiness::Index</code> </p> </li> <li> <p>
      * <code>AWS::QBusiness::WebExperience</code> </p> </li> <li> <p>
      * <code>AWS::RDS::DBCluster</code> </p> </li> <li> <p>
+     * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
+     * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
+     * <code>AWS::S3Outposts::Object</code> </p> </li> <li> <p>
      * <code>AWS::SageMaker::Endpoint</code> </p> </li> <li> <p>
      * <code>AWS::SageMaker::ExperimentTrialComponent</code> </p> </li> <li> <p>
      * <code>AWS::SageMaker::FeatureGroup</code> </p> </li> <li> <p>
@@ -471,10 +529,8 @@ namespace Model
      * <code>AWS::ServiceDiscovery::Service</code> </p> </li> <li> <p>
      * <code>AWS::SCN::Instance</code> </p> </li> <li> <p>
      * <code>AWS::SNS::PlatformEndpoint</code> </p> </li> <li> <p>
-     * <code>AWS::SNS::Topic</code> </p> </li> <li> <p> <code>AWS::SQS::Queue</code>
-     * </p> </li> <li> <p> <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
-     * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
-     * <code>AWS::S3Outposts::Object</code> </p> </li> <li> <p>
+     * <code>AWS::SNS::Topic</code> </p> </li> <li> <p> <code>AWS::SWF::Domain</code>
+     * </p> </li> <li> <p> <code>AWS::SQS::Queue</code> </p> </li> <li> <p>
      * <code>AWS::SSMMessages::ControlChannel</code> </p> </li> <li> <p>
      * <code>AWS::ThinClient::Device</code> </p> </li> <li> <p>
      * <code>AWS::ThinClient::Environment</code> </p> </li> <li> <p>
@@ -505,6 +561,11 @@ namespace Model
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:lambda:&lt;region&gt;:&lt;account_ID&gt;:function:&lt;function_name&gt;</code>
+     * </p> </li> </ul> <p>When resources.type equals
+     * <code>AWS::AppConfig::Configuration</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:appconfig:&lt;region&gt;:&lt;account_ID&gt;:application/&lt;application_ID&gt;/environment/&lt;environment_ID&gt;/configuration/&lt;configuration_profile_ID&gt;</code>
      * </p> </li> </ul> <p>When resources.type equals
      * <code>AWS::B2BI::Transformer</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
@@ -576,10 +637,40 @@ namespace Model
      * <p>
      * <code>arn:&lt;partition&gt;:glue:&lt;region&gt;:&lt;account_ID&gt;:table/&lt;database_name&gt;/&lt;table_name&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::GreengrassV2::ComponentVersion</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:greengrass:&lt;region&gt;:&lt;account_ID&gt;:components/&lt;component_name&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::GreengrassV2::Deployment</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:greengrass:&lt;region&gt;:&lt;account_ID&gt;:deployments/&lt;deployment_ID</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::GuardDuty::Detector</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:guardduty:&lt;region&gt;:&lt;account_ID&gt;:detector/&lt;detector_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::IoT::Certificate</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:iot:&lt;region&gt;:&lt;account_ID&gt;:cert/&lt;certificate_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::IoT::Thing</code>, and the operator is set to <code>Equals</code> or
+     * <code>NotEquals</code>, the ARN must be in the following format:</p> <ul> <li>
+     * <p>
+     * <code>arn:&lt;partition&gt;:iot:&lt;region&gt;:&lt;account_ID&gt;:thing/&lt;thing_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::IoTSiteWise::Asset</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:iotsitewise:&lt;region&gt;:&lt;account_ID&gt;:asset/&lt;asset_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::IoTSiteWise::TimeSeries</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:iotsitewise:&lt;region&gt;:&lt;account_ID&gt;:timeseries/&lt;timeseries_ID&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::IoTTwinMaker::Entity</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
@@ -651,6 +742,26 @@ namespace Model
      * <li> <p>
      * <code>arn:&lt;partition&gt;:rds:&lt;region&gt;:&lt;account_ID&gt;:cluster/&lt;cluster_name&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::S3::AccessPoint</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in one of the
+     * following formats. To log events on all objects in an S3 access point, we
+     * recommend that you use only the access point ARN, don’t include the object path,
+     * and use the <code>StartsWith</code> or <code>NotStartsWith</code> operators.</p>
+     * <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:s3:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;</code>
+     * </p> </li> <li> <p>
+     * <code>arn:&lt;partition&gt;:s3:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;/object/&lt;object_path&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::S3ObjectLambda::AccessPoint</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:s3-object-lambda:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::S3Outposts::Object</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:s3-outposts:&lt;region&gt;:&lt;account_ID&gt;:&lt;object_path&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::SageMaker::Endpoint</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
@@ -691,30 +802,15 @@ namespace Model
      * <p>
      * <code>arn:&lt;partition&gt;:sns:&lt;region&gt;:&lt;account_ID&gt;:&lt;topic_name&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::SWF::Domain</code>, and the operator is set to <code>Equals</code> or
+     * <code>NotEquals</code>, the ARN must be in the following format:</p> <ul> <li>
+     * <p>
+     * <code>arn:&lt;partition&gt;:swf:&lt;region&gt;:&lt;account_ID&gt;:domain/&lt;domain_name&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::SQS::Queue</code>, and the operator is set to <code>Equals</code> or
      * <code>NotEquals</code>, the ARN must be in the following format:</p> <ul> <li>
      * <p>
      * <code>arn:&lt;partition&gt;:sqs:&lt;region&gt;:&lt;account_ID&gt;:&lt;queue_name&gt;</code>
-     * </p> </li> </ul> <p>When <code>resources.type</code> equals
-     * <code>AWS::S3::AccessPoint</code>, and the operator is set to
-     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in one of the
-     * following formats. To log events on all objects in an S3 access point, we
-     * recommend that you use only the access point ARN, don��t include the object
-     * path, and use the <code>StartsWith</code> or <code>NotStartsWith</code>
-     * operators.</p> <ul> <li> <p>
-     * <code>arn:&lt;partition&gt;:s3:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;</code>
-     * </p> </li> <li> <p>
-     * <code>arn:&lt;partition&gt;:s3:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;/object/&lt;object_path&gt;</code>
-     * </p> </li> </ul> <p>When <code>resources.type</code> equals
-     * <code>AWS::S3ObjectLambda::AccessPoint</code>, and the operator is set to
-     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
-     * format:</p> <ul> <li> <p>
-     * <code>arn:&lt;partition&gt;:s3-object-lambda:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;</code>
-     * </p> </li> </ul> <p>When <code>resources.type</code> equals
-     * <code>AWS::S3Outposts::Object</code>, and the operator is set to
-     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
-     * format:</p> <ul> <li> <p>
-     * <code>arn:&lt;partition&gt;:s3-outposts:&lt;region&gt;:&lt;account_ID&gt;:&lt;object_path&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::SSMMessages::ControlChannel</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
@@ -790,6 +886,7 @@ namespace Model
      * <ul> <li> <p> <code>AWS::DynamoDB::Table</code> </p> </li> <li> <p>
      * <code>AWS::Lambda::Function</code> </p> </li> <li> <p>
      * <code>AWS::S3::Object</code> </p> </li> <li> <p>
+     * <code>AWS::AppConfig::Configuration</code> </p> </li> <li> <p>
      * <code>AWS::B2BI::Transformer</code> </p> </li> <li> <p>
      * <code>AWS::Bedrock::AgentAlias</code> </p> </li> <li> <p>
      * <code>AWS::Bedrock::KnowledgeBase</code> </p> </li> <li> <p>
@@ -804,7 +901,13 @@ namespace Model
      * <code>AWS::EMRWAL::Workspace</code> </p> </li> <li> <p>
      * <code>AWS::FinSpace::Environment</code> </p> </li> <li> <p>
      * <code>AWS::Glue::Table</code> </p> </li> <li> <p>
+     * <code>AWS::GreengrassV2::ComponentVersion</code> </p> </li> <li> <p>
+     * <code>AWS::GreengrassV2::Deployment</code> </p> </li> <li> <p>
      * <code>AWS::GuardDuty::Detector</code> </p> </li> <li> <p>
+     * <code>AWS::IoT::Certificate</code> </p> </li> <li> <p>
+     * <code>AWS::IoT::Thing</code> </p> </li> <li> <p>
+     * <code>AWS::IoTSiteWise::Asset</code> </p> </li> <li> <p>
+     * <code>AWS::IoTSiteWise::TimeSeries</code> </p> </li> <li> <p>
      * <code>AWS::IoTTwinMaker::Entity</code> </p> </li> <li> <p>
      * <code>AWS::IoTTwinMaker::Workspace</code> </p> </li> <li> <p>
      * <code>AWS::KendraRanking::ExecutionPlan</code> </p> </li> <li> <p>
@@ -819,6 +922,9 @@ namespace Model
      * <code>AWS::QBusiness::Index</code> </p> </li> <li> <p>
      * <code>AWS::QBusiness::WebExperience</code> </p> </li> <li> <p>
      * <code>AWS::RDS::DBCluster</code> </p> </li> <li> <p>
+     * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
+     * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
+     * <code>AWS::S3Outposts::Object</code> </p> </li> <li> <p>
      * <code>AWS::SageMaker::Endpoint</code> </p> </li> <li> <p>
      * <code>AWS::SageMaker::ExperimentTrialComponent</code> </p> </li> <li> <p>
      * <code>AWS::SageMaker::FeatureGroup</code> </p> </li> <li> <p>
@@ -826,10 +932,8 @@ namespace Model
      * <code>AWS::ServiceDiscovery::Service</code> </p> </li> <li> <p>
      * <code>AWS::SCN::Instance</code> </p> </li> <li> <p>
      * <code>AWS::SNS::PlatformEndpoint</code> </p> </li> <li> <p>
-     * <code>AWS::SNS::Topic</code> </p> </li> <li> <p> <code>AWS::SQS::Queue</code>
-     * </p> </li> <li> <p> <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
-     * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
-     * <code>AWS::S3Outposts::Object</code> </p> </li> <li> <p>
+     * <code>AWS::SNS::Topic</code> </p> </li> <li> <p> <code>AWS::SWF::Domain</code>
+     * </p> </li> <li> <p> <code>AWS::SQS::Queue</code> </p> </li> <li> <p>
      * <code>AWS::SSMMessages::ControlChannel</code> </p> </li> <li> <p>
      * <code>AWS::ThinClient::Device</code> </p> </li> <li> <p>
      * <code>AWS::ThinClient::Environment</code> </p> </li> <li> <p>
@@ -860,6 +964,11 @@ namespace Model
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:lambda:&lt;region&gt;:&lt;account_ID&gt;:function:&lt;function_name&gt;</code>
+     * </p> </li> </ul> <p>When resources.type equals
+     * <code>AWS::AppConfig::Configuration</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:appconfig:&lt;region&gt;:&lt;account_ID&gt;:application/&lt;application_ID&gt;/environment/&lt;environment_ID&gt;/configuration/&lt;configuration_profile_ID&gt;</code>
      * </p> </li> </ul> <p>When resources.type equals
      * <code>AWS::B2BI::Transformer</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
@@ -931,10 +1040,40 @@ namespace Model
      * <p>
      * <code>arn:&lt;partition&gt;:glue:&lt;region&gt;:&lt;account_ID&gt;:table/&lt;database_name&gt;/&lt;table_name&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::GreengrassV2::ComponentVersion</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:greengrass:&lt;region&gt;:&lt;account_ID&gt;:components/&lt;component_name&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::GreengrassV2::Deployment</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:greengrass:&lt;region&gt;:&lt;account_ID&gt;:deployments/&lt;deployment_ID</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::GuardDuty::Detector</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:guardduty:&lt;region&gt;:&lt;account_ID&gt;:detector/&lt;detector_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::IoT::Certificate</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:iot:&lt;region&gt;:&lt;account_ID&gt;:cert/&lt;certificate_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::IoT::Thing</code>, and the operator is set to <code>Equals</code> or
+     * <code>NotEquals</code>, the ARN must be in the following format:</p> <ul> <li>
+     * <p>
+     * <code>arn:&lt;partition&gt;:iot:&lt;region&gt;:&lt;account_ID&gt;:thing/&lt;thing_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::IoTSiteWise::Asset</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:iotsitewise:&lt;region&gt;:&lt;account_ID&gt;:asset/&lt;asset_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::IoTSiteWise::TimeSeries</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:iotsitewise:&lt;region&gt;:&lt;account_ID&gt;:timeseries/&lt;timeseries_ID&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::IoTTwinMaker::Entity</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
@@ -1006,6 +1145,26 @@ namespace Model
      * <li> <p>
      * <code>arn:&lt;partition&gt;:rds:&lt;region&gt;:&lt;account_ID&gt;:cluster/&lt;cluster_name&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::S3::AccessPoint</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in one of the
+     * following formats. To log events on all objects in an S3 access point, we
+     * recommend that you use only the access point ARN, don’t include the object path,
+     * and use the <code>StartsWith</code> or <code>NotStartsWith</code> operators.</p>
+     * <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:s3:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;</code>
+     * </p> </li> <li> <p>
+     * <code>arn:&lt;partition&gt;:s3:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;/object/&lt;object_path&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::S3ObjectLambda::AccessPoint</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:s3-object-lambda:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::S3Outposts::Object</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:s3-outposts:&lt;region&gt;:&lt;account_ID&gt;:&lt;object_path&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::SageMaker::Endpoint</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
@@ -1046,30 +1205,15 @@ namespace Model
      * <p>
      * <code>arn:&lt;partition&gt;:sns:&lt;region&gt;:&lt;account_ID&gt;:&lt;topic_name&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::SWF::Domain</code>, and the operator is set to <code>Equals</code> or
+     * <code>NotEquals</code>, the ARN must be in the following format:</p> <ul> <li>
+     * <p>
+     * <code>arn:&lt;partition&gt;:swf:&lt;region&gt;:&lt;account_ID&gt;:domain/&lt;domain_name&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::SQS::Queue</code>, and the operator is set to <code>Equals</code> or
      * <code>NotEquals</code>, the ARN must be in the following format:</p> <ul> <li>
      * <p>
      * <code>arn:&lt;partition&gt;:sqs:&lt;region&gt;:&lt;account_ID&gt;:&lt;queue_name&gt;</code>
-     * </p> </li> </ul> <p>When <code>resources.type</code> equals
-     * <code>AWS::S3::AccessPoint</code>, and the operator is set to
-     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in one of the
-     * following formats. To log events on all objects in an S3 access point, we
-     * recommend that you use only the access point ARN, don��t include the object
-     * path, and use the <code>StartsWith</code> or <code>NotStartsWith</code>
-     * operators.</p> <ul> <li> <p>
-     * <code>arn:&lt;partition&gt;:s3:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;</code>
-     * </p> </li> <li> <p>
-     * <code>arn:&lt;partition&gt;:s3:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;/object/&lt;object_path&gt;</code>
-     * </p> </li> </ul> <p>When <code>resources.type</code> equals
-     * <code>AWS::S3ObjectLambda::AccessPoint</code>, and the operator is set to
-     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
-     * format:</p> <ul> <li> <p>
-     * <code>arn:&lt;partition&gt;:s3-object-lambda:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;</code>
-     * </p> </li> </ul> <p>When <code>resources.type</code> equals
-     * <code>AWS::S3Outposts::Object</code>, and the operator is set to
-     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
-     * format:</p> <ul> <li> <p>
-     * <code>arn:&lt;partition&gt;:s3-outposts:&lt;region&gt;:&lt;account_ID&gt;:&lt;object_path&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::SSMMessages::ControlChannel</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
@@ -1145,6 +1289,7 @@ namespace Model
      * <ul> <li> <p> <code>AWS::DynamoDB::Table</code> </p> </li> <li> <p>
      * <code>AWS::Lambda::Function</code> </p> </li> <li> <p>
      * <code>AWS::S3::Object</code> </p> </li> <li> <p>
+     * <code>AWS::AppConfig::Configuration</code> </p> </li> <li> <p>
      * <code>AWS::B2BI::Transformer</code> </p> </li> <li> <p>
      * <code>AWS::Bedrock::AgentAlias</code> </p> </li> <li> <p>
      * <code>AWS::Bedrock::KnowledgeBase</code> </p> </li> <li> <p>
@@ -1159,7 +1304,13 @@ namespace Model
      * <code>AWS::EMRWAL::Workspace</code> </p> </li> <li> <p>
      * <code>AWS::FinSpace::Environment</code> </p> </li> <li> <p>
      * <code>AWS::Glue::Table</code> </p> </li> <li> <p>
+     * <code>AWS::GreengrassV2::ComponentVersion</code> </p> </li> <li> <p>
+     * <code>AWS::GreengrassV2::Deployment</code> </p> </li> <li> <p>
      * <code>AWS::GuardDuty::Detector</code> </p> </li> <li> <p>
+     * <code>AWS::IoT::Certificate</code> </p> </li> <li> <p>
+     * <code>AWS::IoT::Thing</code> </p> </li> <li> <p>
+     * <code>AWS::IoTSiteWise::Asset</code> </p> </li> <li> <p>
+     * <code>AWS::IoTSiteWise::TimeSeries</code> </p> </li> <li> <p>
      * <code>AWS::IoTTwinMaker::Entity</code> </p> </li> <li> <p>
      * <code>AWS::IoTTwinMaker::Workspace</code> </p> </li> <li> <p>
      * <code>AWS::KendraRanking::ExecutionPlan</code> </p> </li> <li> <p>
@@ -1174,6 +1325,9 @@ namespace Model
      * <code>AWS::QBusiness::Index</code> </p> </li> <li> <p>
      * <code>AWS::QBusiness::WebExperience</code> </p> </li> <li> <p>
      * <code>AWS::RDS::DBCluster</code> </p> </li> <li> <p>
+     * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
+     * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
+     * <code>AWS::S3Outposts::Object</code> </p> </li> <li> <p>
      * <code>AWS::SageMaker::Endpoint</code> </p> </li> <li> <p>
      * <code>AWS::SageMaker::ExperimentTrialComponent</code> </p> </li> <li> <p>
      * <code>AWS::SageMaker::FeatureGroup</code> </p> </li> <li> <p>
@@ -1181,10 +1335,8 @@ namespace Model
      * <code>AWS::ServiceDiscovery::Service</code> </p> </li> <li> <p>
      * <code>AWS::SCN::Instance</code> </p> </li> <li> <p>
      * <code>AWS::SNS::PlatformEndpoint</code> </p> </li> <li> <p>
-     * <code>AWS::SNS::Topic</code> </p> </li> <li> <p> <code>AWS::SQS::Queue</code>
-     * </p> </li> <li> <p> <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
-     * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
-     * <code>AWS::S3Outposts::Object</code> </p> </li> <li> <p>
+     * <code>AWS::SNS::Topic</code> </p> </li> <li> <p> <code>AWS::SWF::Domain</code>
+     * </p> </li> <li> <p> <code>AWS::SQS::Queue</code> </p> </li> <li> <p>
      * <code>AWS::SSMMessages::ControlChannel</code> </p> </li> <li> <p>
      * <code>AWS::ThinClient::Device</code> </p> </li> <li> <p>
      * <code>AWS::ThinClient::Environment</code> </p> </li> <li> <p>
@@ -1215,6 +1367,11 @@ namespace Model
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:lambda:&lt;region&gt;:&lt;account_ID&gt;:function:&lt;function_name&gt;</code>
+     * </p> </li> </ul> <p>When resources.type equals
+     * <code>AWS::AppConfig::Configuration</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:appconfig:&lt;region&gt;:&lt;account_ID&gt;:application/&lt;application_ID&gt;/environment/&lt;environment_ID&gt;/configuration/&lt;configuration_profile_ID&gt;</code>
      * </p> </li> </ul> <p>When resources.type equals
      * <code>AWS::B2BI::Transformer</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
@@ -1286,10 +1443,40 @@ namespace Model
      * <p>
      * <code>arn:&lt;partition&gt;:glue:&lt;region&gt;:&lt;account_ID&gt;:table/&lt;database_name&gt;/&lt;table_name&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::GreengrassV2::ComponentVersion</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:greengrass:&lt;region&gt;:&lt;account_ID&gt;:components/&lt;component_name&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::GreengrassV2::Deployment</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:greengrass:&lt;region&gt;:&lt;account_ID&gt;:deployments/&lt;deployment_ID</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::GuardDuty::Detector</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:guardduty:&lt;region&gt;:&lt;account_ID&gt;:detector/&lt;detector_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::IoT::Certificate</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:iot:&lt;region&gt;:&lt;account_ID&gt;:cert/&lt;certificate_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::IoT::Thing</code>, and the operator is set to <code>Equals</code> or
+     * <code>NotEquals</code>, the ARN must be in the following format:</p> <ul> <li>
+     * <p>
+     * <code>arn:&lt;partition&gt;:iot:&lt;region&gt;:&lt;account_ID&gt;:thing/&lt;thing_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::IoTSiteWise::Asset</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:iotsitewise:&lt;region&gt;:&lt;account_ID&gt;:asset/&lt;asset_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::IoTSiteWise::TimeSeries</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:iotsitewise:&lt;region&gt;:&lt;account_ID&gt;:timeseries/&lt;timeseries_ID&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::IoTTwinMaker::Entity</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
@@ -1361,6 +1548,26 @@ namespace Model
      * <li> <p>
      * <code>arn:&lt;partition&gt;:rds:&lt;region&gt;:&lt;account_ID&gt;:cluster/&lt;cluster_name&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::S3::AccessPoint</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in one of the
+     * following formats. To log events on all objects in an S3 access point, we
+     * recommend that you use only the access point ARN, don’t include the object path,
+     * and use the <code>StartsWith</code> or <code>NotStartsWith</code> operators.</p>
+     * <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:s3:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;</code>
+     * </p> </li> <li> <p>
+     * <code>arn:&lt;partition&gt;:s3:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;/object/&lt;object_path&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::S3ObjectLambda::AccessPoint</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:s3-object-lambda:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::S3Outposts::Object</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:s3-outposts:&lt;region&gt;:&lt;account_ID&gt;:&lt;object_path&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::SageMaker::Endpoint</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
@@ -1401,30 +1608,15 @@ namespace Model
      * <p>
      * <code>arn:&lt;partition&gt;:sns:&lt;region&gt;:&lt;account_ID&gt;:&lt;topic_name&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::SWF::Domain</code>, and the operator is set to <code>Equals</code> or
+     * <code>NotEquals</code>, the ARN must be in the following format:</p> <ul> <li>
+     * <p>
+     * <code>arn:&lt;partition&gt;:swf:&lt;region&gt;:&lt;account_ID&gt;:domain/&lt;domain_name&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::SQS::Queue</code>, and the operator is set to <code>Equals</code> or
      * <code>NotEquals</code>, the ARN must be in the following format:</p> <ul> <li>
      * <p>
      * <code>arn:&lt;partition&gt;:sqs:&lt;region&gt;:&lt;account_ID&gt;:&lt;queue_name&gt;</code>
-     * </p> </li> </ul> <p>When <code>resources.type</code> equals
-     * <code>AWS::S3::AccessPoint</code>, and the operator is set to
-     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in one of the
-     * following formats. To log events on all objects in an S3 access point, we
-     * recommend that you use only the access point ARN, don��t include the object
-     * path, and use the <code>StartsWith</code> or <code>NotStartsWith</code>
-     * operators.</p> <ul> <li> <p>
-     * <code>arn:&lt;partition&gt;:s3:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;</code>
-     * </p> </li> <li> <p>
-     * <code>arn:&lt;partition&gt;:s3:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;/object/&lt;object_path&gt;</code>
-     * </p> </li> </ul> <p>When <code>resources.type</code> equals
-     * <code>AWS::S3ObjectLambda::AccessPoint</code>, and the operator is set to
-     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
-     * format:</p> <ul> <li> <p>
-     * <code>arn:&lt;partition&gt;:s3-object-lambda:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;</code>
-     * </p> </li> </ul> <p>When <code>resources.type</code> equals
-     * <code>AWS::S3Outposts::Object</code>, and the operator is set to
-     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
-     * format:</p> <ul> <li> <p>
-     * <code>arn:&lt;partition&gt;:s3-outposts:&lt;region&gt;:&lt;account_ID&gt;:&lt;object_path&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::SSMMessages::ControlChannel</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
@@ -1500,6 +1692,7 @@ namespace Model
      * <ul> <li> <p> <code>AWS::DynamoDB::Table</code> </p> </li> <li> <p>
      * <code>AWS::Lambda::Function</code> </p> </li> <li> <p>
      * <code>AWS::S3::Object</code> </p> </li> <li> <p>
+     * <code>AWS::AppConfig::Configuration</code> </p> </li> <li> <p>
      * <code>AWS::B2BI::Transformer</code> </p> </li> <li> <p>
      * <code>AWS::Bedrock::AgentAlias</code> </p> </li> <li> <p>
      * <code>AWS::Bedrock::KnowledgeBase</code> </p> </li> <li> <p>
@@ -1514,7 +1707,13 @@ namespace Model
      * <code>AWS::EMRWAL::Workspace</code> </p> </li> <li> <p>
      * <code>AWS::FinSpace::Environment</code> </p> </li> <li> <p>
      * <code>AWS::Glue::Table</code> </p> </li> <li> <p>
+     * <code>AWS::GreengrassV2::ComponentVersion</code> </p> </li> <li> <p>
+     * <code>AWS::GreengrassV2::Deployment</code> </p> </li> <li> <p>
      * <code>AWS::GuardDuty::Detector</code> </p> </li> <li> <p>
+     * <code>AWS::IoT::Certificate</code> </p> </li> <li> <p>
+     * <code>AWS::IoT::Thing</code> </p> </li> <li> <p>
+     * <code>AWS::IoTSiteWise::Asset</code> </p> </li> <li> <p>
+     * <code>AWS::IoTSiteWise::TimeSeries</code> </p> </li> <li> <p>
      * <code>AWS::IoTTwinMaker::Entity</code> </p> </li> <li> <p>
      * <code>AWS::IoTTwinMaker::Workspace</code> </p> </li> <li> <p>
      * <code>AWS::KendraRanking::ExecutionPlan</code> </p> </li> <li> <p>
@@ -1529,6 +1728,9 @@ namespace Model
      * <code>AWS::QBusiness::Index</code> </p> </li> <li> <p>
      * <code>AWS::QBusiness::WebExperience</code> </p> </li> <li> <p>
      * <code>AWS::RDS::DBCluster</code> </p> </li> <li> <p>
+     * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
+     * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
+     * <code>AWS::S3Outposts::Object</code> </p> </li> <li> <p>
      * <code>AWS::SageMaker::Endpoint</code> </p> </li> <li> <p>
      * <code>AWS::SageMaker::ExperimentTrialComponent</code> </p> </li> <li> <p>
      * <code>AWS::SageMaker::FeatureGroup</code> </p> </li> <li> <p>
@@ -1536,10 +1738,8 @@ namespace Model
      * <code>AWS::ServiceDiscovery::Service</code> </p> </li> <li> <p>
      * <code>AWS::SCN::Instance</code> </p> </li> <li> <p>
      * <code>AWS::SNS::PlatformEndpoint</code> </p> </li> <li> <p>
-     * <code>AWS::SNS::Topic</code> </p> </li> <li> <p> <code>AWS::SQS::Queue</code>
-     * </p> </li> <li> <p> <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
-     * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
-     * <code>AWS::S3Outposts::Object</code> </p> </li> <li> <p>
+     * <code>AWS::SNS::Topic</code> </p> </li> <li> <p> <code>AWS::SWF::Domain</code>
+     * </p> </li> <li> <p> <code>AWS::SQS::Queue</code> </p> </li> <li> <p>
      * <code>AWS::SSMMessages::ControlChannel</code> </p> </li> <li> <p>
      * <code>AWS::ThinClient::Device</code> </p> </li> <li> <p>
      * <code>AWS::ThinClient::Environment</code> </p> </li> <li> <p>
@@ -1570,6 +1770,11 @@ namespace Model
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:lambda:&lt;region&gt;:&lt;account_ID&gt;:function:&lt;function_name&gt;</code>
+     * </p> </li> </ul> <p>When resources.type equals
+     * <code>AWS::AppConfig::Configuration</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:appconfig:&lt;region&gt;:&lt;account_ID&gt;:application/&lt;application_ID&gt;/environment/&lt;environment_ID&gt;/configuration/&lt;configuration_profile_ID&gt;</code>
      * </p> </li> </ul> <p>When resources.type equals
      * <code>AWS::B2BI::Transformer</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
@@ -1641,10 +1846,40 @@ namespace Model
      * <p>
      * <code>arn:&lt;partition&gt;:glue:&lt;region&gt;:&lt;account_ID&gt;:table/&lt;database_name&gt;/&lt;table_name&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::GreengrassV2::ComponentVersion</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:greengrass:&lt;region&gt;:&lt;account_ID&gt;:components/&lt;component_name&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::GreengrassV2::Deployment</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:greengrass:&lt;region&gt;:&lt;account_ID&gt;:deployments/&lt;deployment_ID</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::GuardDuty::Detector</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:guardduty:&lt;region&gt;:&lt;account_ID&gt;:detector/&lt;detector_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::IoT::Certificate</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:iot:&lt;region&gt;:&lt;account_ID&gt;:cert/&lt;certificate_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::IoT::Thing</code>, and the operator is set to <code>Equals</code> or
+     * <code>NotEquals</code>, the ARN must be in the following format:</p> <ul> <li>
+     * <p>
+     * <code>arn:&lt;partition&gt;:iot:&lt;region&gt;:&lt;account_ID&gt;:thing/&lt;thing_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::IoTSiteWise::Asset</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:iotsitewise:&lt;region&gt;:&lt;account_ID&gt;:asset/&lt;asset_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::IoTSiteWise::TimeSeries</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:iotsitewise:&lt;region&gt;:&lt;account_ID&gt;:timeseries/&lt;timeseries_ID&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::IoTTwinMaker::Entity</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
@@ -1716,6 +1951,26 @@ namespace Model
      * <li> <p>
      * <code>arn:&lt;partition&gt;:rds:&lt;region&gt;:&lt;account_ID&gt;:cluster/&lt;cluster_name&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::S3::AccessPoint</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in one of the
+     * following formats. To log events on all objects in an S3 access point, we
+     * recommend that you use only the access point ARN, don’t include the object path,
+     * and use the <code>StartsWith</code> or <code>NotStartsWith</code> operators.</p>
+     * <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:s3:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;</code>
+     * </p> </li> <li> <p>
+     * <code>arn:&lt;partition&gt;:s3:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;/object/&lt;object_path&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::S3ObjectLambda::AccessPoint</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:s3-object-lambda:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::S3Outposts::Object</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:s3-outposts:&lt;region&gt;:&lt;account_ID&gt;:&lt;object_path&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::SageMaker::Endpoint</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
@@ -1756,30 +2011,15 @@ namespace Model
      * <p>
      * <code>arn:&lt;partition&gt;:sns:&lt;region&gt;:&lt;account_ID&gt;:&lt;topic_name&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::SWF::Domain</code>, and the operator is set to <code>Equals</code> or
+     * <code>NotEquals</code>, the ARN must be in the following format:</p> <ul> <li>
+     * <p>
+     * <code>arn:&lt;partition&gt;:swf:&lt;region&gt;:&lt;account_ID&gt;:domain/&lt;domain_name&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::SQS::Queue</code>, and the operator is set to <code>Equals</code> or
      * <code>NotEquals</code>, the ARN must be in the following format:</p> <ul> <li>
      * <p>
      * <code>arn:&lt;partition&gt;:sqs:&lt;region&gt;:&lt;account_ID&gt;:&lt;queue_name&gt;</code>
-     * </p> </li> </ul> <p>When <code>resources.type</code> equals
-     * <code>AWS::S3::AccessPoint</code>, and the operator is set to
-     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in one of the
-     * following formats. To log events on all objects in an S3 access point, we
-     * recommend that you use only the access point ARN, don��t include the object
-     * path, and use the <code>StartsWith</code> or <code>NotStartsWith</code>
-     * operators.</p> <ul> <li> <p>
-     * <code>arn:&lt;partition&gt;:s3:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;</code>
-     * </p> </li> <li> <p>
-     * <code>arn:&lt;partition&gt;:s3:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;/object/&lt;object_path&gt;</code>
-     * </p> </li> </ul> <p>When <code>resources.type</code> equals
-     * <code>AWS::S3ObjectLambda::AccessPoint</code>, and the operator is set to
-     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
-     * format:</p> <ul> <li> <p>
-     * <code>arn:&lt;partition&gt;:s3-object-lambda:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;</code>
-     * </p> </li> </ul> <p>When <code>resources.type</code> equals
-     * <code>AWS::S3Outposts::Object</code>, and the operator is set to
-     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
-     * format:</p> <ul> <li> <p>
-     * <code>arn:&lt;partition&gt;:s3-outposts:&lt;region&gt;:&lt;account_ID&gt;:&lt;object_path&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::SSMMessages::ControlChannel</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
@@ -1855,6 +2095,7 @@ namespace Model
      * <ul> <li> <p> <code>AWS::DynamoDB::Table</code> </p> </li> <li> <p>
      * <code>AWS::Lambda::Function</code> </p> </li> <li> <p>
      * <code>AWS::S3::Object</code> </p> </li> <li> <p>
+     * <code>AWS::AppConfig::Configuration</code> </p> </li> <li> <p>
      * <code>AWS::B2BI::Transformer</code> </p> </li> <li> <p>
      * <code>AWS::Bedrock::AgentAlias</code> </p> </li> <li> <p>
      * <code>AWS::Bedrock::KnowledgeBase</code> </p> </li> <li> <p>
@@ -1869,7 +2110,13 @@ namespace Model
      * <code>AWS::EMRWAL::Workspace</code> </p> </li> <li> <p>
      * <code>AWS::FinSpace::Environment</code> </p> </li> <li> <p>
      * <code>AWS::Glue::Table</code> </p> </li> <li> <p>
+     * <code>AWS::GreengrassV2::ComponentVersion</code> </p> </li> <li> <p>
+     * <code>AWS::GreengrassV2::Deployment</code> </p> </li> <li> <p>
      * <code>AWS::GuardDuty::Detector</code> </p> </li> <li> <p>
+     * <code>AWS::IoT::Certificate</code> </p> </li> <li> <p>
+     * <code>AWS::IoT::Thing</code> </p> </li> <li> <p>
+     * <code>AWS::IoTSiteWise::Asset</code> </p> </li> <li> <p>
+     * <code>AWS::IoTSiteWise::TimeSeries</code> </p> </li> <li> <p>
      * <code>AWS::IoTTwinMaker::Entity</code> </p> </li> <li> <p>
      * <code>AWS::IoTTwinMaker::Workspace</code> </p> </li> <li> <p>
      * <code>AWS::KendraRanking::ExecutionPlan</code> </p> </li> <li> <p>
@@ -1884,6 +2131,9 @@ namespace Model
      * <code>AWS::QBusiness::Index</code> </p> </li> <li> <p>
      * <code>AWS::QBusiness::WebExperience</code> </p> </li> <li> <p>
      * <code>AWS::RDS::DBCluster</code> </p> </li> <li> <p>
+     * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
+     * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
+     * <code>AWS::S3Outposts::Object</code> </p> </li> <li> <p>
      * <code>AWS::SageMaker::Endpoint</code> </p> </li> <li> <p>
      * <code>AWS::SageMaker::ExperimentTrialComponent</code> </p> </li> <li> <p>
      * <code>AWS::SageMaker::FeatureGroup</code> </p> </li> <li> <p>
@@ -1891,10 +2141,8 @@ namespace Model
      * <code>AWS::ServiceDiscovery::Service</code> </p> </li> <li> <p>
      * <code>AWS::SCN::Instance</code> </p> </li> <li> <p>
      * <code>AWS::SNS::PlatformEndpoint</code> </p> </li> <li> <p>
-     * <code>AWS::SNS::Topic</code> </p> </li> <li> <p> <code>AWS::SQS::Queue</code>
-     * </p> </li> <li> <p> <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
-     * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
-     * <code>AWS::S3Outposts::Object</code> </p> </li> <li> <p>
+     * <code>AWS::SNS::Topic</code> </p> </li> <li> <p> <code>AWS::SWF::Domain</code>
+     * </p> </li> <li> <p> <code>AWS::SQS::Queue</code> </p> </li> <li> <p>
      * <code>AWS::SSMMessages::ControlChannel</code> </p> </li> <li> <p>
      * <code>AWS::ThinClient::Device</code> </p> </li> <li> <p>
      * <code>AWS::ThinClient::Environment</code> </p> </li> <li> <p>
@@ -1925,6 +2173,11 @@ namespace Model
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:lambda:&lt;region&gt;:&lt;account_ID&gt;:function:&lt;function_name&gt;</code>
+     * </p> </li> </ul> <p>When resources.type equals
+     * <code>AWS::AppConfig::Configuration</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:appconfig:&lt;region&gt;:&lt;account_ID&gt;:application/&lt;application_ID&gt;/environment/&lt;environment_ID&gt;/configuration/&lt;configuration_profile_ID&gt;</code>
      * </p> </li> </ul> <p>When resources.type equals
      * <code>AWS::B2BI::Transformer</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
@@ -1996,10 +2249,40 @@ namespace Model
      * <p>
      * <code>arn:&lt;partition&gt;:glue:&lt;region&gt;:&lt;account_ID&gt;:table/&lt;database_name&gt;/&lt;table_name&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::GreengrassV2::ComponentVersion</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:greengrass:&lt;region&gt;:&lt;account_ID&gt;:components/&lt;component_name&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::GreengrassV2::Deployment</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:greengrass:&lt;region&gt;:&lt;account_ID&gt;:deployments/&lt;deployment_ID</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::GuardDuty::Detector</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:guardduty:&lt;region&gt;:&lt;account_ID&gt;:detector/&lt;detector_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::IoT::Certificate</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:iot:&lt;region&gt;:&lt;account_ID&gt;:cert/&lt;certificate_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::IoT::Thing</code>, and the operator is set to <code>Equals</code> or
+     * <code>NotEquals</code>, the ARN must be in the following format:</p> <ul> <li>
+     * <p>
+     * <code>arn:&lt;partition&gt;:iot:&lt;region&gt;:&lt;account_ID&gt;:thing/&lt;thing_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::IoTSiteWise::Asset</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:iotsitewise:&lt;region&gt;:&lt;account_ID&gt;:asset/&lt;asset_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::IoTSiteWise::TimeSeries</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:iotsitewise:&lt;region&gt;:&lt;account_ID&gt;:timeseries/&lt;timeseries_ID&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::IoTTwinMaker::Entity</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
@@ -2071,6 +2354,26 @@ namespace Model
      * <li> <p>
      * <code>arn:&lt;partition&gt;:rds:&lt;region&gt;:&lt;account_ID&gt;:cluster/&lt;cluster_name&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::S3::AccessPoint</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in one of the
+     * following formats. To log events on all objects in an S3 access point, we
+     * recommend that you use only the access point ARN, don’t include the object path,
+     * and use the <code>StartsWith</code> or <code>NotStartsWith</code> operators.</p>
+     * <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:s3:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;</code>
+     * </p> </li> <li> <p>
+     * <code>arn:&lt;partition&gt;:s3:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;/object/&lt;object_path&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::S3ObjectLambda::AccessPoint</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:s3-object-lambda:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::S3Outposts::Object</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:s3-outposts:&lt;region&gt;:&lt;account_ID&gt;:&lt;object_path&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::SageMaker::Endpoint</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
@@ -2111,30 +2414,15 @@ namespace Model
      * <p>
      * <code>arn:&lt;partition&gt;:sns:&lt;region&gt;:&lt;account_ID&gt;:&lt;topic_name&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::SWF::Domain</code>, and the operator is set to <code>Equals</code> or
+     * <code>NotEquals</code>, the ARN must be in the following format:</p> <ul> <li>
+     * <p>
+     * <code>arn:&lt;partition&gt;:swf:&lt;region&gt;:&lt;account_ID&gt;:domain/&lt;domain_name&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::SQS::Queue</code>, and the operator is set to <code>Equals</code> or
      * <code>NotEquals</code>, the ARN must be in the following format:</p> <ul> <li>
      * <p>
      * <code>arn:&lt;partition&gt;:sqs:&lt;region&gt;:&lt;account_ID&gt;:&lt;queue_name&gt;</code>
-     * </p> </li> </ul> <p>When <code>resources.type</code> equals
-     * <code>AWS::S3::AccessPoint</code>, and the operator is set to
-     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in one of the
-     * following formats. To log events on all objects in an S3 access point, we
-     * recommend that you use only the access point ARN, don��t include the object
-     * path, and use the <code>StartsWith</code> or <code>NotStartsWith</code>
-     * operators.</p> <ul> <li> <p>
-     * <code>arn:&lt;partition&gt;:s3:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;</code>
-     * </p> </li> <li> <p>
-     * <code>arn:&lt;partition&gt;:s3:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;/object/&lt;object_path&gt;</code>
-     * </p> </li> </ul> <p>When <code>resources.type</code> equals
-     * <code>AWS::S3ObjectLambda::AccessPoint</code>, and the operator is set to
-     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
-     * format:</p> <ul> <li> <p>
-     * <code>arn:&lt;partition&gt;:s3-object-lambda:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;</code>
-     * </p> </li> </ul> <p>When <code>resources.type</code> equals
-     * <code>AWS::S3Outposts::Object</code>, and the operator is set to
-     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
-     * format:</p> <ul> <li> <p>
-     * <code>arn:&lt;partition&gt;:s3-outposts:&lt;region&gt;:&lt;account_ID&gt;:&lt;object_path&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::SSMMessages::ControlChannel</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
@@ -2210,6 +2498,7 @@ namespace Model
      * <ul> <li> <p> <code>AWS::DynamoDB::Table</code> </p> </li> <li> <p>
      * <code>AWS::Lambda::Function</code> </p> </li> <li> <p>
      * <code>AWS::S3::Object</code> </p> </li> <li> <p>
+     * <code>AWS::AppConfig::Configuration</code> </p> </li> <li> <p>
      * <code>AWS::B2BI::Transformer</code> </p> </li> <li> <p>
      * <code>AWS::Bedrock::AgentAlias</code> </p> </li> <li> <p>
      * <code>AWS::Bedrock::KnowledgeBase</code> </p> </li> <li> <p>
@@ -2224,7 +2513,13 @@ namespace Model
      * <code>AWS::EMRWAL::Workspace</code> </p> </li> <li> <p>
      * <code>AWS::FinSpace::Environment</code> </p> </li> <li> <p>
      * <code>AWS::Glue::Table</code> </p> </li> <li> <p>
+     * <code>AWS::GreengrassV2::ComponentVersion</code> </p> </li> <li> <p>
+     * <code>AWS::GreengrassV2::Deployment</code> </p> </li> <li> <p>
      * <code>AWS::GuardDuty::Detector</code> </p> </li> <li> <p>
+     * <code>AWS::IoT::Certificate</code> </p> </li> <li> <p>
+     * <code>AWS::IoT::Thing</code> </p> </li> <li> <p>
+     * <code>AWS::IoTSiteWise::Asset</code> </p> </li> <li> <p>
+     * <code>AWS::IoTSiteWise::TimeSeries</code> </p> </li> <li> <p>
      * <code>AWS::IoTTwinMaker::Entity</code> </p> </li> <li> <p>
      * <code>AWS::IoTTwinMaker::Workspace</code> </p> </li> <li> <p>
      * <code>AWS::KendraRanking::ExecutionPlan</code> </p> </li> <li> <p>
@@ -2239,6 +2534,9 @@ namespace Model
      * <code>AWS::QBusiness::Index</code> </p> </li> <li> <p>
      * <code>AWS::QBusiness::WebExperience</code> </p> </li> <li> <p>
      * <code>AWS::RDS::DBCluster</code> </p> </li> <li> <p>
+     * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
+     * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
+     * <code>AWS::S3Outposts::Object</code> </p> </li> <li> <p>
      * <code>AWS::SageMaker::Endpoint</code> </p> </li> <li> <p>
      * <code>AWS::SageMaker::ExperimentTrialComponent</code> </p> </li> <li> <p>
      * <code>AWS::SageMaker::FeatureGroup</code> </p> </li> <li> <p>
@@ -2246,10 +2544,8 @@ namespace Model
      * <code>AWS::ServiceDiscovery::Service</code> </p> </li> <li> <p>
      * <code>AWS::SCN::Instance</code> </p> </li> <li> <p>
      * <code>AWS::SNS::PlatformEndpoint</code> </p> </li> <li> <p>
-     * <code>AWS::SNS::Topic</code> </p> </li> <li> <p> <code>AWS::SQS::Queue</code>
-     * </p> </li> <li> <p> <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
-     * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
-     * <code>AWS::S3Outposts::Object</code> </p> </li> <li> <p>
+     * <code>AWS::SNS::Topic</code> </p> </li> <li> <p> <code>AWS::SWF::Domain</code>
+     * </p> </li> <li> <p> <code>AWS::SQS::Queue</code> </p> </li> <li> <p>
      * <code>AWS::SSMMessages::ControlChannel</code> </p> </li> <li> <p>
      * <code>AWS::ThinClient::Device</code> </p> </li> <li> <p>
      * <code>AWS::ThinClient::Environment</code> </p> </li> <li> <p>
@@ -2280,6 +2576,11 @@ namespace Model
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:lambda:&lt;region&gt;:&lt;account_ID&gt;:function:&lt;function_name&gt;</code>
+     * </p> </li> </ul> <p>When resources.type equals
+     * <code>AWS::AppConfig::Configuration</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:appconfig:&lt;region&gt;:&lt;account_ID&gt;:application/&lt;application_ID&gt;/environment/&lt;environment_ID&gt;/configuration/&lt;configuration_profile_ID&gt;</code>
      * </p> </li> </ul> <p>When resources.type equals
      * <code>AWS::B2BI::Transformer</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
@@ -2351,10 +2652,40 @@ namespace Model
      * <p>
      * <code>arn:&lt;partition&gt;:glue:&lt;region&gt;:&lt;account_ID&gt;:table/&lt;database_name&gt;/&lt;table_name&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::GreengrassV2::ComponentVersion</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:greengrass:&lt;region&gt;:&lt;account_ID&gt;:components/&lt;component_name&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::GreengrassV2::Deployment</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:greengrass:&lt;region&gt;:&lt;account_ID&gt;:deployments/&lt;deployment_ID</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::GuardDuty::Detector</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:guardduty:&lt;region&gt;:&lt;account_ID&gt;:detector/&lt;detector_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::IoT::Certificate</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:iot:&lt;region&gt;:&lt;account_ID&gt;:cert/&lt;certificate_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::IoT::Thing</code>, and the operator is set to <code>Equals</code> or
+     * <code>NotEquals</code>, the ARN must be in the following format:</p> <ul> <li>
+     * <p>
+     * <code>arn:&lt;partition&gt;:iot:&lt;region&gt;:&lt;account_ID&gt;:thing/&lt;thing_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::IoTSiteWise::Asset</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:iotsitewise:&lt;region&gt;:&lt;account_ID&gt;:asset/&lt;asset_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::IoTSiteWise::TimeSeries</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:iotsitewise:&lt;region&gt;:&lt;account_ID&gt;:timeseries/&lt;timeseries_ID&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::IoTTwinMaker::Entity</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
@@ -2426,6 +2757,26 @@ namespace Model
      * <li> <p>
      * <code>arn:&lt;partition&gt;:rds:&lt;region&gt;:&lt;account_ID&gt;:cluster/&lt;cluster_name&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::S3::AccessPoint</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in one of the
+     * following formats. To log events on all objects in an S3 access point, we
+     * recommend that you use only the access point ARN, don’t include the object path,
+     * and use the <code>StartsWith</code> or <code>NotStartsWith</code> operators.</p>
+     * <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:s3:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;</code>
+     * </p> </li> <li> <p>
+     * <code>arn:&lt;partition&gt;:s3:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;/object/&lt;object_path&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::S3ObjectLambda::AccessPoint</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:s3-object-lambda:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::S3Outposts::Object</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:s3-outposts:&lt;region&gt;:&lt;account_ID&gt;:&lt;object_path&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::SageMaker::Endpoint</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
@@ -2466,30 +2817,15 @@ namespace Model
      * <p>
      * <code>arn:&lt;partition&gt;:sns:&lt;region&gt;:&lt;account_ID&gt;:&lt;topic_name&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::SWF::Domain</code>, and the operator is set to <code>Equals</code> or
+     * <code>NotEquals</code>, the ARN must be in the following format:</p> <ul> <li>
+     * <p>
+     * <code>arn:&lt;partition&gt;:swf:&lt;region&gt;:&lt;account_ID&gt;:domain/&lt;domain_name&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::SQS::Queue</code>, and the operator is set to <code>Equals</code> or
      * <code>NotEquals</code>, the ARN must be in the following format:</p> <ul> <li>
      * <p>
      * <code>arn:&lt;partition&gt;:sqs:&lt;region&gt;:&lt;account_ID&gt;:&lt;queue_name&gt;</code>
-     * </p> </li> </ul> <p>When <code>resources.type</code> equals
-     * <code>AWS::S3::AccessPoint</code>, and the operator is set to
-     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in one of the
-     * following formats. To log events on all objects in an S3 access point, we
-     * recommend that you use only the access point ARN, don��t include the object
-     * path, and use the <code>StartsWith</code> or <code>NotStartsWith</code>
-     * operators.</p> <ul> <li> <p>
-     * <code>arn:&lt;partition&gt;:s3:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;</code>
-     * </p> </li> <li> <p>
-     * <code>arn:&lt;partition&gt;:s3:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;/object/&lt;object_path&gt;</code>
-     * </p> </li> </ul> <p>When <code>resources.type</code> equals
-     * <code>AWS::S3ObjectLambda::AccessPoint</code>, and the operator is set to
-     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
-     * format:</p> <ul> <li> <p>
-     * <code>arn:&lt;partition&gt;:s3-object-lambda:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;</code>
-     * </p> </li> </ul> <p>When <code>resources.type</code> equals
-     * <code>AWS::S3Outposts::Object</code>, and the operator is set to
-     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
-     * format:</p> <ul> <li> <p>
-     * <code>arn:&lt;partition&gt;:s3-outposts:&lt;region&gt;:&lt;account_ID&gt;:&lt;object_path&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::SSMMessages::ControlChannel</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
@@ -2565,6 +2901,7 @@ namespace Model
      * <ul> <li> <p> <code>AWS::DynamoDB::Table</code> </p> </li> <li> <p>
      * <code>AWS::Lambda::Function</code> </p> </li> <li> <p>
      * <code>AWS::S3::Object</code> </p> </li> <li> <p>
+     * <code>AWS::AppConfig::Configuration</code> </p> </li> <li> <p>
      * <code>AWS::B2BI::Transformer</code> </p> </li> <li> <p>
      * <code>AWS::Bedrock::AgentAlias</code> </p> </li> <li> <p>
      * <code>AWS::Bedrock::KnowledgeBase</code> </p> </li> <li> <p>
@@ -2579,7 +2916,13 @@ namespace Model
      * <code>AWS::EMRWAL::Workspace</code> </p> </li> <li> <p>
      * <code>AWS::FinSpace::Environment</code> </p> </li> <li> <p>
      * <code>AWS::Glue::Table</code> </p> </li> <li> <p>
+     * <code>AWS::GreengrassV2::ComponentVersion</code> </p> </li> <li> <p>
+     * <code>AWS::GreengrassV2::Deployment</code> </p> </li> <li> <p>
      * <code>AWS::GuardDuty::Detector</code> </p> </li> <li> <p>
+     * <code>AWS::IoT::Certificate</code> </p> </li> <li> <p>
+     * <code>AWS::IoT::Thing</code> </p> </li> <li> <p>
+     * <code>AWS::IoTSiteWise::Asset</code> </p> </li> <li> <p>
+     * <code>AWS::IoTSiteWise::TimeSeries</code> </p> </li> <li> <p>
      * <code>AWS::IoTTwinMaker::Entity</code> </p> </li> <li> <p>
      * <code>AWS::IoTTwinMaker::Workspace</code> </p> </li> <li> <p>
      * <code>AWS::KendraRanking::ExecutionPlan</code> </p> </li> <li> <p>
@@ -2594,6 +2937,9 @@ namespace Model
      * <code>AWS::QBusiness::Index</code> </p> </li> <li> <p>
      * <code>AWS::QBusiness::WebExperience</code> </p> </li> <li> <p>
      * <code>AWS::RDS::DBCluster</code> </p> </li> <li> <p>
+     * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
+     * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
+     * <code>AWS::S3Outposts::Object</code> </p> </li> <li> <p>
      * <code>AWS::SageMaker::Endpoint</code> </p> </li> <li> <p>
      * <code>AWS::SageMaker::ExperimentTrialComponent</code> </p> </li> <li> <p>
      * <code>AWS::SageMaker::FeatureGroup</code> </p> </li> <li> <p>
@@ -2601,10 +2947,8 @@ namespace Model
      * <code>AWS::ServiceDiscovery::Service</code> </p> </li> <li> <p>
      * <code>AWS::SCN::Instance</code> </p> </li> <li> <p>
      * <code>AWS::SNS::PlatformEndpoint</code> </p> </li> <li> <p>
-     * <code>AWS::SNS::Topic</code> </p> </li> <li> <p> <code>AWS::SQS::Queue</code>
-     * </p> </li> <li> <p> <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
-     * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
-     * <code>AWS::S3Outposts::Object</code> </p> </li> <li> <p>
+     * <code>AWS::SNS::Topic</code> </p> </li> <li> <p> <code>AWS::SWF::Domain</code>
+     * </p> </li> <li> <p> <code>AWS::SQS::Queue</code> </p> </li> <li> <p>
      * <code>AWS::SSMMessages::ControlChannel</code> </p> </li> <li> <p>
      * <code>AWS::ThinClient::Device</code> </p> </li> <li> <p>
      * <code>AWS::ThinClient::Environment</code> </p> </li> <li> <p>
@@ -2635,6 +2979,11 @@ namespace Model
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:lambda:&lt;region&gt;:&lt;account_ID&gt;:function:&lt;function_name&gt;</code>
+     * </p> </li> </ul> <p>When resources.type equals
+     * <code>AWS::AppConfig::Configuration</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:appconfig:&lt;region&gt;:&lt;account_ID&gt;:application/&lt;application_ID&gt;/environment/&lt;environment_ID&gt;/configuration/&lt;configuration_profile_ID&gt;</code>
      * </p> </li> </ul> <p>When resources.type equals
      * <code>AWS::B2BI::Transformer</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
@@ -2706,10 +3055,40 @@ namespace Model
      * <p>
      * <code>arn:&lt;partition&gt;:glue:&lt;region&gt;:&lt;account_ID&gt;:table/&lt;database_name&gt;/&lt;table_name&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::GreengrassV2::ComponentVersion</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:greengrass:&lt;region&gt;:&lt;account_ID&gt;:components/&lt;component_name&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::GreengrassV2::Deployment</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:greengrass:&lt;region&gt;:&lt;account_ID&gt;:deployments/&lt;deployment_ID</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::GuardDuty::Detector</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:guardduty:&lt;region&gt;:&lt;account_ID&gt;:detector/&lt;detector_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::IoT::Certificate</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:iot:&lt;region&gt;:&lt;account_ID&gt;:cert/&lt;certificate_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::IoT::Thing</code>, and the operator is set to <code>Equals</code> or
+     * <code>NotEquals</code>, the ARN must be in the following format:</p> <ul> <li>
+     * <p>
+     * <code>arn:&lt;partition&gt;:iot:&lt;region&gt;:&lt;account_ID&gt;:thing/&lt;thing_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::IoTSiteWise::Asset</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:iotsitewise:&lt;region&gt;:&lt;account_ID&gt;:asset/&lt;asset_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::IoTSiteWise::TimeSeries</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:iotsitewise:&lt;region&gt;:&lt;account_ID&gt;:timeseries/&lt;timeseries_ID&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::IoTTwinMaker::Entity</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
@@ -2781,6 +3160,26 @@ namespace Model
      * <li> <p>
      * <code>arn:&lt;partition&gt;:rds:&lt;region&gt;:&lt;account_ID&gt;:cluster/&lt;cluster_name&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::S3::AccessPoint</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in one of the
+     * following formats. To log events on all objects in an S3 access point, we
+     * recommend that you use only the access point ARN, don’t include the object path,
+     * and use the <code>StartsWith</code> or <code>NotStartsWith</code> operators.</p>
+     * <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:s3:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;</code>
+     * </p> </li> <li> <p>
+     * <code>arn:&lt;partition&gt;:s3:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;/object/&lt;object_path&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::S3ObjectLambda::AccessPoint</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:s3-object-lambda:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::S3Outposts::Object</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:s3-outposts:&lt;region&gt;:&lt;account_ID&gt;:&lt;object_path&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::SageMaker::Endpoint</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
@@ -2821,30 +3220,15 @@ namespace Model
      * <p>
      * <code>arn:&lt;partition&gt;:sns:&lt;region&gt;:&lt;account_ID&gt;:&lt;topic_name&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::SWF::Domain</code>, and the operator is set to <code>Equals</code> or
+     * <code>NotEquals</code>, the ARN must be in the following format:</p> <ul> <li>
+     * <p>
+     * <code>arn:&lt;partition&gt;:swf:&lt;region&gt;:&lt;account_ID&gt;:domain/&lt;domain_name&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::SQS::Queue</code>, and the operator is set to <code>Equals</code> or
      * <code>NotEquals</code>, the ARN must be in the following format:</p> <ul> <li>
      * <p>
      * <code>arn:&lt;partition&gt;:sqs:&lt;region&gt;:&lt;account_ID&gt;:&lt;queue_name&gt;</code>
-     * </p> </li> </ul> <p>When <code>resources.type</code> equals
-     * <code>AWS::S3::AccessPoint</code>, and the operator is set to
-     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in one of the
-     * following formats. To log events on all objects in an S3 access point, we
-     * recommend that you use only the access point ARN, don��t include the object
-     * path, and use the <code>StartsWith</code> or <code>NotStartsWith</code>
-     * operators.</p> <ul> <li> <p>
-     * <code>arn:&lt;partition&gt;:s3:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;</code>
-     * </p> </li> <li> <p>
-     * <code>arn:&lt;partition&gt;:s3:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;/object/&lt;object_path&gt;</code>
-     * </p> </li> </ul> <p>When <code>resources.type</code> equals
-     * <code>AWS::S3ObjectLambda::AccessPoint</code>, and the operator is set to
-     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
-     * format:</p> <ul> <li> <p>
-     * <code>arn:&lt;partition&gt;:s3-object-lambda:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;</code>
-     * </p> </li> </ul> <p>When <code>resources.type</code> equals
-     * <code>AWS::S3Outposts::Object</code>, and the operator is set to
-     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
-     * format:</p> <ul> <li> <p>
-     * <code>arn:&lt;partition&gt;:s3-outposts:&lt;region&gt;:&lt;account_ID&gt;:&lt;object_path&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::SSMMessages::ControlChannel</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
