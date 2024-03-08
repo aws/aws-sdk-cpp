@@ -16,7 +16,8 @@ namespace Aws
 namespace BedrockAgentRuntime
 {
   /**
-   * <p>Amazon Bedrock Agent</p>
+   * <p>Contains APIs related to model invocation and querying of knowledge
+   * bases.</p>
    */
   class AWS_BEDROCKAGENTRUNTIME_API BedrockAgentRuntimeClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<BedrockAgentRuntimeClient>
   {
@@ -77,8 +78,24 @@ namespace BedrockAgentRuntime
         virtual ~BedrockAgentRuntimeClient();
 
         /**
-         * <p>Invokes the specified Bedrock model to run inference using the input provided
-         * in the request body.</p><p><h3>See Also:</h3>   <a
+         * <p>Sends a prompt for the agent to process and respond to.</p>  <p>The CLI
+         * doesn't support <code>InvokeAgent</code>.</p>  <ul> <li> <p>To continue
+         * the same conversation with an agent, use the same <code>sessionId</code> value
+         * in the request.</p> </li> <li> <p>To activate trace enablement, turn
+         * <code>enableTrace</code> to <code>true</code>. Trace enablement helps you follow
+         * the agent's reasoning process that led it to the information it processed, the
+         * actions it took, and the final result it yielded. For more information, see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-test.html#trace-events">Trace
+         * enablement</a>.</p> </li> <li> <p>End a conversation by setting
+         * <code>endSession</code> to <code>true</code>.</p> </li> <li> <p>Include
+         * attributes for the session or prompt in the <code>sessionState</code>
+         * object.</p> </li> </ul> <p>The response is returned in the <code>bytes</code>
+         * field of the <code>chunk</code> object.</p> <ul> <li> <p>The
+         * <code>attribution</code> object contains citations for parts of the
+         * response.</p> </li> <li> <p>If you set <code>enableTrace</code> to
+         * <code>true</code> in the request, you can trace the agent's steps and reasoning
+         * process that led it to the response.</p> </li> <li> <p>Errors are also surfaced
+         * in the response.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/InvokeAgent">AWS
          * API Reference</a></p>
          */
@@ -103,7 +120,8 @@ namespace BedrockAgentRuntime
         }
 
         /**
-         * <p>Retrieve from knowledge base.</p><p><h3>See Also:</h3>   <a
+         * <p>Queries a knowledge base and retrieves information from it.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/Retrieve">AWS
          * API Reference</a></p>
          */
@@ -128,7 +146,13 @@ namespace BedrockAgentRuntime
         }
 
         /**
-         * <p>RetrieveAndGenerate API</p><p><h3>See Also:</h3>   <a
+         * <p>Queries a knowledge base and generates responses based on the retrieved
+         * results. The response cites up to five sources but only selects the ones that
+         * are relevant to the query.</p>  <p>The <code>numberOfResults</code> field
+         * is currently unsupported for <code>RetrieveAndGenerate</code>. Don't include it
+         * in the <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_KnowledgeBaseVectorSearchConfiguration.html">vectorSearchConfiguration</a>
+         * object.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/RetrieveAndGenerate">AWS
          * API Reference</a></p>
          */

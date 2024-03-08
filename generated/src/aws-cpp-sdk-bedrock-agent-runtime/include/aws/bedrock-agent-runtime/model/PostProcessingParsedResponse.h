@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Trace Part which contains information if preprocessing was
-   * successful</p><p><h3>See Also:</h3>   <a
+   * <p>Details about the response from the Lambda parsing of the output from the
+   * post-processing step.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/PostProcessingParsedResponse">AWS
    * API Reference</a></p>
    */
@@ -38,28 +38,44 @@ namespace Model
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    
+    /**
+     * <p>The text returned by the parser.</p>
+     */
     inline const Aws::String& GetText() const{ return m_text; }
 
-    
+    /**
+     * <p>The text returned by the parser.</p>
+     */
     inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
 
-    
+    /**
+     * <p>The text returned by the parser.</p>
+     */
     inline void SetText(const Aws::String& value) { m_textHasBeenSet = true; m_text = value; }
 
-    
+    /**
+     * <p>The text returned by the parser.</p>
+     */
     inline void SetText(Aws::String&& value) { m_textHasBeenSet = true; m_text = std::move(value); }
 
-    
+    /**
+     * <p>The text returned by the parser.</p>
+     */
     inline void SetText(const char* value) { m_textHasBeenSet = true; m_text.assign(value); }
 
-    
+    /**
+     * <p>The text returned by the parser.</p>
+     */
     inline PostProcessingParsedResponse& WithText(const Aws::String& value) { SetText(value); return *this;}
 
-    
+    /**
+     * <p>The text returned by the parser.</p>
+     */
     inline PostProcessingParsedResponse& WithText(Aws::String&& value) { SetText(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The text returned by the parser.</p>
+     */
     inline PostProcessingParsedResponse& WithText(const char* value) { SetText(value); return *this;}
 
   private:

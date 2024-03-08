@@ -87,7 +87,8 @@ namespace Model
      * <p>The username of the user that you want to query or modify. The value of this
      * parameter is typically your user's username, but it can be any of their alias
      * attributes. If <code>username</code> isn't an alias attribute in your user pool,
-     * you can also use their <code>sub</code> in this request.</p>
+     * this value must be the <code>sub</code> of a local user or the username of a
+     * user from a third-party IdP.</p>
      */
     inline const Aws::String& GetUsername() const{ return m_username; }
 
@@ -95,7 +96,8 @@ namespace Model
      * <p>The username of the user that you want to query or modify. The value of this
      * parameter is typically your user's username, but it can be any of their alias
      * attributes. If <code>username</code> isn't an alias attribute in your user pool,
-     * you can also use their <code>sub</code> in this request.</p>
+     * this value must be the <code>sub</code> of a local user or the username of a
+     * user from a third-party IdP.</p>
      */
     inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
 
@@ -103,7 +105,8 @@ namespace Model
      * <p>The username of the user that you want to query or modify. The value of this
      * parameter is typically your user's username, but it can be any of their alias
      * attributes. If <code>username</code> isn't an alias attribute in your user pool,
-     * you can also use their <code>sub</code> in this request.</p>
+     * this value must be the <code>sub</code> of a local user or the username of a
+     * user from a third-party IdP.</p>
      */
     inline void SetUsername(const Aws::String& value) { m_usernameHasBeenSet = true; m_username = value; }
 
@@ -111,7 +114,8 @@ namespace Model
      * <p>The username of the user that you want to query or modify. The value of this
      * parameter is typically your user's username, but it can be any of their alias
      * attributes. If <code>username</code> isn't an alias attribute in your user pool,
-     * you can also use their <code>sub</code> in this request.</p>
+     * this value must be the <code>sub</code> of a local user or the username of a
+     * user from a third-party IdP.</p>
      */
     inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = std::move(value); }
 
@@ -119,7 +123,8 @@ namespace Model
      * <p>The username of the user that you want to query or modify. The value of this
      * parameter is typically your user's username, but it can be any of their alias
      * attributes. If <code>username</code> isn't an alias attribute in your user pool,
-     * you can also use their <code>sub</code> in this request.</p>
+     * this value must be the <code>sub</code> of a local user or the username of a
+     * user from a third-party IdP.</p>
      */
     inline void SetUsername(const char* value) { m_usernameHasBeenSet = true; m_username.assign(value); }
 
@@ -127,7 +132,8 @@ namespace Model
      * <p>The username of the user that you want to query or modify. The value of this
      * parameter is typically your user's username, but it can be any of their alias
      * attributes. If <code>username</code> isn't an alias attribute in your user pool,
-     * you can also use their <code>sub</code> in this request.</p>
+     * this value must be the <code>sub</code> of a local user or the username of a
+     * user from a third-party IdP.</p>
      */
     inline AdminSetUserPasswordRequest& WithUsername(const Aws::String& value) { SetUsername(value); return *this;}
 
@@ -135,7 +141,8 @@ namespace Model
      * <p>The username of the user that you want to query or modify. The value of this
      * parameter is typically your user's username, but it can be any of their alias
      * attributes. If <code>username</code> isn't an alias attribute in your user pool,
-     * you can also use their <code>sub</code> in this request.</p>
+     * this value must be the <code>sub</code> of a local user or the username of a
+     * user from a third-party IdP.</p>
      */
     inline AdminSetUserPasswordRequest& WithUsername(Aws::String&& value) { SetUsername(std::move(value)); return *this;}
 
@@ -143,7 +150,8 @@ namespace Model
      * <p>The username of the user that you want to query or modify. The value of this
      * parameter is typically your user's username, but it can be any of their alias
      * attributes. If <code>username</code> isn't an alias attribute in your user pool,
-     * you can also use their <code>sub</code> in this request.</p>
+     * this value must be the <code>sub</code> of a local user or the username of a
+     * user from a third-party IdP.</p>
      */
     inline AdminSetUserPasswordRequest& WithUsername(const char* value) { SetUsername(value); return *this;}
 

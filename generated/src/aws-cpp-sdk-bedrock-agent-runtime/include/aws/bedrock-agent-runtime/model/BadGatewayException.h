@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>This exception is thrown when a request fails due to dependency like Lambda,
-   * Bedrock, STS resource</p><p><h3>See Also:</h3>   <a
+   * <p>There was an issue with a dependency due to a server issue. Retry your
+   * request.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/BadGatewayException">AWS
    * API Reference</a></p>
    */
@@ -63,28 +63,52 @@ namespace Model
     inline BadGatewayException& WithMessage(const char* value) { SetMessage(value); return *this;}
 
 
-    
+    /**
+     * <p>The name of the dependency that caused the issue, such as Amazon Bedrock,
+     * Lambda, or STS.</p>
+     */
     inline const Aws::String& GetResourceName() const{ return m_resourceName; }
 
-    
+    /**
+     * <p>The name of the dependency that caused the issue, such as Amazon Bedrock,
+     * Lambda, or STS.</p>
+     */
     inline bool ResourceNameHasBeenSet() const { return m_resourceNameHasBeenSet; }
 
-    
+    /**
+     * <p>The name of the dependency that caused the issue, such as Amazon Bedrock,
+     * Lambda, or STS.</p>
+     */
     inline void SetResourceName(const Aws::String& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
 
-    
+    /**
+     * <p>The name of the dependency that caused the issue, such as Amazon Bedrock,
+     * Lambda, or STS.</p>
+     */
     inline void SetResourceName(Aws::String&& value) { m_resourceNameHasBeenSet = true; m_resourceName = std::move(value); }
 
-    
+    /**
+     * <p>The name of the dependency that caused the issue, such as Amazon Bedrock,
+     * Lambda, or STS.</p>
+     */
     inline void SetResourceName(const char* value) { m_resourceNameHasBeenSet = true; m_resourceName.assign(value); }
 
-    
+    /**
+     * <p>The name of the dependency that caused the issue, such as Amazon Bedrock,
+     * Lambda, or STS.</p>
+     */
     inline BadGatewayException& WithResourceName(const Aws::String& value) { SetResourceName(value); return *this;}
 
-    
+    /**
+     * <p>The name of the dependency that caused the issue, such as Amazon Bedrock,
+     * Lambda, or STS.</p>
+     */
     inline BadGatewayException& WithResourceName(Aws::String&& value) { SetResourceName(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The name of the dependency that caused the issue, such as Amazon Bedrock,
+     * Lambda, or STS.</p>
+     */
     inline BadGatewayException& WithResourceName(const char* value) { SetResourceName(value); return *this;}
 
   private:

@@ -13,15 +13,15 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 InvokeAgentRequest::InvokeAgentRequest() : 
-    m_sessionStateHasBeenSet(false),
-    m_agentIdHasBeenSet(false),
     m_agentAliasIdHasBeenSet(false),
-    m_sessionIdHasBeenSet(false),
-    m_endSession(false),
-    m_endSessionHasBeenSet(false),
+    m_agentIdHasBeenSet(false),
     m_enableTrace(false),
     m_enableTraceHasBeenSet(false),
+    m_endSession(false),
+    m_endSessionHasBeenSet(false),
     m_inputTextHasBeenSet(false),
+    m_sessionIdHasBeenSet(false),
+    m_sessionStateHasBeenSet(false),
     m_handler(), m_decoder(Aws::Utils::Event::EventStreamDecoder(&m_handler))
 {
 }
@@ -30,9 +30,9 @@ Aws::String InvokeAgentRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_sessionStateHasBeenSet)
+  if(m_enableTraceHasBeenSet)
   {
-   payload.WithObject("sessionState", m_sessionState.Jsonize());
+   payload.WithBool("enableTrace", m_enableTrace);
 
   }
 
@@ -42,15 +42,15 @@ Aws::String InvokeAgentRequest::SerializePayload() const
 
   }
 
-  if(m_enableTraceHasBeenSet)
-  {
-   payload.WithBool("enableTrace", m_enableTrace);
-
-  }
-
   if(m_inputTextHasBeenSet)
   {
    payload.WithString("inputText", m_inputText);
+
+  }
+
+  if(m_sessionStateHasBeenSet)
+  {
+   payload.WithObject("sessionState", m_sessionState.Jsonize());
 
   }
 

@@ -19,34 +19,34 @@ namespace Model
 {
 
 RetrievalResultLocation::RetrievalResultLocation() : 
+    m_s3LocationHasBeenSet(false),
     m_type(RetrievalResultLocationType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_s3LocationHasBeenSet(false)
+    m_typeHasBeenSet(false)
 {
 }
 
 RetrievalResultLocation::RetrievalResultLocation(JsonView jsonValue) : 
+    m_s3LocationHasBeenSet(false),
     m_type(RetrievalResultLocationType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_s3LocationHasBeenSet(false)
+    m_typeHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 RetrievalResultLocation& RetrievalResultLocation::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("type"))
-  {
-    m_type = RetrievalResultLocationTypeMapper::GetRetrievalResultLocationTypeForName(jsonValue.GetString("type"));
-
-    m_typeHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("s3Location"))
   {
     m_s3Location = jsonValue.GetObject("s3Location");
 
     m_s3LocationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("type"))
+  {
+    m_type = RetrievalResultLocationTypeMapper::GetRetrievalResultLocationTypeForName(jsonValue.GetString("type"));
+
+    m_typeHasBeenSet = true;
   }
 
   return *this;
@@ -56,15 +56,15 @@ JsonValue RetrievalResultLocation::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", RetrievalResultLocationTypeMapper::GetNameForRetrievalResultLocationType(m_type));
-  }
-
   if(m_s3LocationHasBeenSet)
   {
    payload.WithObject("s3Location", m_s3Location.Jsonize());
 
+  }
+
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("type", RetrievalResultLocationTypeMapper::GetNameForRetrievalResultLocationType(m_type));
   }
 
   return payload;

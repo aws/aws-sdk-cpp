@@ -207,44 +207,62 @@ namespace Model
 
 
     /**
-     * <p>The algorithm that is used to encrypt the file.</p>  <p>You can only
-     * specify <code>NONE</code> if the URL for your connector uses HTTPS. This ensures
-     * that no traffic is sent in clear text.</p> 
+     * <p>The algorithm that is used to encrypt the file.</p> <p>Note the
+     * following:</p> <ul> <li> <p>Do not use the <code>DES_EDE3_CBC</code> algorithm
+     * unless you must support a legacy client that requires it, as it is a weak
+     * encryption algorithm.</p> </li> <li> <p>You can only specify <code>NONE</code>
+     * if the URL for your connector uses HTTPS. Using HTTPS ensures that no traffic is
+     * sent in clear text.</p> </li> </ul>
      */
     inline const EncryptionAlg& GetEncryptionAlgorithm() const{ return m_encryptionAlgorithm; }
 
     /**
-     * <p>The algorithm that is used to encrypt the file.</p>  <p>You can only
-     * specify <code>NONE</code> if the URL for your connector uses HTTPS. This ensures
-     * that no traffic is sent in clear text.</p> 
+     * <p>The algorithm that is used to encrypt the file.</p> <p>Note the
+     * following:</p> <ul> <li> <p>Do not use the <code>DES_EDE3_CBC</code> algorithm
+     * unless you must support a legacy client that requires it, as it is a weak
+     * encryption algorithm.</p> </li> <li> <p>You can only specify <code>NONE</code>
+     * if the URL for your connector uses HTTPS. Using HTTPS ensures that no traffic is
+     * sent in clear text.</p> </li> </ul>
      */
     inline bool EncryptionAlgorithmHasBeenSet() const { return m_encryptionAlgorithmHasBeenSet; }
 
     /**
-     * <p>The algorithm that is used to encrypt the file.</p>  <p>You can only
-     * specify <code>NONE</code> if the URL for your connector uses HTTPS. This ensures
-     * that no traffic is sent in clear text.</p> 
+     * <p>The algorithm that is used to encrypt the file.</p> <p>Note the
+     * following:</p> <ul> <li> <p>Do not use the <code>DES_EDE3_CBC</code> algorithm
+     * unless you must support a legacy client that requires it, as it is a weak
+     * encryption algorithm.</p> </li> <li> <p>You can only specify <code>NONE</code>
+     * if the URL for your connector uses HTTPS. Using HTTPS ensures that no traffic is
+     * sent in clear text.</p> </li> </ul>
      */
     inline void SetEncryptionAlgorithm(const EncryptionAlg& value) { m_encryptionAlgorithmHasBeenSet = true; m_encryptionAlgorithm = value; }
 
     /**
-     * <p>The algorithm that is used to encrypt the file.</p>  <p>You can only
-     * specify <code>NONE</code> if the URL for your connector uses HTTPS. This ensures
-     * that no traffic is sent in clear text.</p> 
+     * <p>The algorithm that is used to encrypt the file.</p> <p>Note the
+     * following:</p> <ul> <li> <p>Do not use the <code>DES_EDE3_CBC</code> algorithm
+     * unless you must support a legacy client that requires it, as it is a weak
+     * encryption algorithm.</p> </li> <li> <p>You can only specify <code>NONE</code>
+     * if the URL for your connector uses HTTPS. Using HTTPS ensures that no traffic is
+     * sent in clear text.</p> </li> </ul>
      */
     inline void SetEncryptionAlgorithm(EncryptionAlg&& value) { m_encryptionAlgorithmHasBeenSet = true; m_encryptionAlgorithm = std::move(value); }
 
     /**
-     * <p>The algorithm that is used to encrypt the file.</p>  <p>You can only
-     * specify <code>NONE</code> if the URL for your connector uses HTTPS. This ensures
-     * that no traffic is sent in clear text.</p> 
+     * <p>The algorithm that is used to encrypt the file.</p> <p>Note the
+     * following:</p> <ul> <li> <p>Do not use the <code>DES_EDE3_CBC</code> algorithm
+     * unless you must support a legacy client that requires it, as it is a weak
+     * encryption algorithm.</p> </li> <li> <p>You can only specify <code>NONE</code>
+     * if the URL for your connector uses HTTPS. Using HTTPS ensures that no traffic is
+     * sent in clear text.</p> </li> </ul>
      */
     inline As2ConnectorConfig& WithEncryptionAlgorithm(const EncryptionAlg& value) { SetEncryptionAlgorithm(value); return *this;}
 
     /**
-     * <p>The algorithm that is used to encrypt the file.</p>  <p>You can only
-     * specify <code>NONE</code> if the URL for your connector uses HTTPS. This ensures
-     * that no traffic is sent in clear text.</p> 
+     * <p>The algorithm that is used to encrypt the file.</p> <p>Note the
+     * following:</p> <ul> <li> <p>Do not use the <code>DES_EDE3_CBC</code> algorithm
+     * unless you must support a legacy client that requires it, as it is a weak
+     * encryption algorithm.</p> </li> <li> <p>You can only specify <code>NONE</code>
+     * if the URL for your connector uses HTTPS. Using HTTPS ensures that no traffic is
+     * sent in clear text.</p> </li> </ul>
      */
     inline As2ConnectorConfig& WithEncryptionAlgorithm(EncryptionAlg&& value) { SetEncryptionAlgorithm(std::move(value)); return *this;}
 

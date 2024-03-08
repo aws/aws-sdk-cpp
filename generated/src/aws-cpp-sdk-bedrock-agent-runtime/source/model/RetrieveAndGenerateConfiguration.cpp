@@ -19,34 +19,34 @@ namespace Model
 {
 
 RetrieveAndGenerateConfiguration::RetrieveAndGenerateConfiguration() : 
+    m_knowledgeBaseConfigurationHasBeenSet(false),
     m_type(RetrieveAndGenerateType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_knowledgeBaseConfigurationHasBeenSet(false)
+    m_typeHasBeenSet(false)
 {
 }
 
 RetrieveAndGenerateConfiguration::RetrieveAndGenerateConfiguration(JsonView jsonValue) : 
+    m_knowledgeBaseConfigurationHasBeenSet(false),
     m_type(RetrieveAndGenerateType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_knowledgeBaseConfigurationHasBeenSet(false)
+    m_typeHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 RetrieveAndGenerateConfiguration& RetrieveAndGenerateConfiguration::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("type"))
-  {
-    m_type = RetrieveAndGenerateTypeMapper::GetRetrieveAndGenerateTypeForName(jsonValue.GetString("type"));
-
-    m_typeHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("knowledgeBaseConfiguration"))
   {
     m_knowledgeBaseConfiguration = jsonValue.GetObject("knowledgeBaseConfiguration");
 
     m_knowledgeBaseConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("type"))
+  {
+    m_type = RetrieveAndGenerateTypeMapper::GetRetrieveAndGenerateTypeForName(jsonValue.GetString("type"));
+
+    m_typeHasBeenSet = true;
   }
 
   return *this;
@@ -56,15 +56,15 @@ JsonValue RetrieveAndGenerateConfiguration::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", RetrieveAndGenerateTypeMapper::GetNameForRetrieveAndGenerateType(m_type));
-  }
-
   if(m_knowledgeBaseConfigurationHasBeenSet)
   {
    payload.WithObject("knowledgeBaseConfiguration", m_knowledgeBaseConfiguration.Jsonize());
 
+  }
+
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("type", RetrieveAndGenerateTypeMapper::GetNameForRetrieveAndGenerateType(m_type));
   }
 
   return payload;

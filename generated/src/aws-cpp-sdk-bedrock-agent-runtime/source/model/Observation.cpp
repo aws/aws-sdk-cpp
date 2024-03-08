@@ -19,30 +19,58 @@ namespace Model
 {
 
 Observation::Observation() : 
+    m_actionGroupInvocationOutputHasBeenSet(false),
+    m_finalResponseHasBeenSet(false),
+    m_knowledgeBaseLookupOutputHasBeenSet(false),
+    m_repromptResponseHasBeenSet(false),
     m_traceIdHasBeenSet(false),
     m_type(Type::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_actionGroupInvocationOutputHasBeenSet(false),
-    m_knowledgeBaseLookupOutputHasBeenSet(false),
-    m_finalResponseHasBeenSet(false),
-    m_repromptResponseHasBeenSet(false)
+    m_typeHasBeenSet(false)
 {
 }
 
 Observation::Observation(JsonView jsonValue) : 
+    m_actionGroupInvocationOutputHasBeenSet(false),
+    m_finalResponseHasBeenSet(false),
+    m_knowledgeBaseLookupOutputHasBeenSet(false),
+    m_repromptResponseHasBeenSet(false),
     m_traceIdHasBeenSet(false),
     m_type(Type::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_actionGroupInvocationOutputHasBeenSet(false),
-    m_knowledgeBaseLookupOutputHasBeenSet(false),
-    m_finalResponseHasBeenSet(false),
-    m_repromptResponseHasBeenSet(false)
+    m_typeHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 Observation& Observation::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("actionGroupInvocationOutput"))
+  {
+    m_actionGroupInvocationOutput = jsonValue.GetObject("actionGroupInvocationOutput");
+
+    m_actionGroupInvocationOutputHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("finalResponse"))
+  {
+    m_finalResponse = jsonValue.GetObject("finalResponse");
+
+    m_finalResponseHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("knowledgeBaseLookupOutput"))
+  {
+    m_knowledgeBaseLookupOutput = jsonValue.GetObject("knowledgeBaseLookupOutput");
+
+    m_knowledgeBaseLookupOutputHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("repromptResponse"))
+  {
+    m_repromptResponse = jsonValue.GetObject("repromptResponse");
+
+    m_repromptResponseHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("traceId"))
   {
     m_traceId = jsonValue.GetString("traceId");
@@ -57,40 +85,36 @@ Observation& Observation::operator =(JsonView jsonValue)
     m_typeHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("actionGroupInvocationOutput"))
-  {
-    m_actionGroupInvocationOutput = jsonValue.GetObject("actionGroupInvocationOutput");
-
-    m_actionGroupInvocationOutputHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("knowledgeBaseLookupOutput"))
-  {
-    m_knowledgeBaseLookupOutput = jsonValue.GetObject("knowledgeBaseLookupOutput");
-
-    m_knowledgeBaseLookupOutputHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("finalResponse"))
-  {
-    m_finalResponse = jsonValue.GetObject("finalResponse");
-
-    m_finalResponseHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("repromptResponse"))
-  {
-    m_repromptResponse = jsonValue.GetObject("repromptResponse");
-
-    m_repromptResponseHasBeenSet = true;
-  }
-
   return *this;
 }
 
 JsonValue Observation::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_actionGroupInvocationOutputHasBeenSet)
+  {
+   payload.WithObject("actionGroupInvocationOutput", m_actionGroupInvocationOutput.Jsonize());
+
+  }
+
+  if(m_finalResponseHasBeenSet)
+  {
+   payload.WithObject("finalResponse", m_finalResponse.Jsonize());
+
+  }
+
+  if(m_knowledgeBaseLookupOutputHasBeenSet)
+  {
+   payload.WithObject("knowledgeBaseLookupOutput", m_knowledgeBaseLookupOutput.Jsonize());
+
+  }
+
+  if(m_repromptResponseHasBeenSet)
+  {
+   payload.WithObject("repromptResponse", m_repromptResponse.Jsonize());
+
+  }
 
   if(m_traceIdHasBeenSet)
   {
@@ -101,30 +125,6 @@ JsonValue Observation::Jsonize() const
   if(m_typeHasBeenSet)
   {
    payload.WithString("type", TypeMapper::GetNameForType(m_type));
-  }
-
-  if(m_actionGroupInvocationOutputHasBeenSet)
-  {
-   payload.WithObject("actionGroupInvocationOutput", m_actionGroupInvocationOutput.Jsonize());
-
-  }
-
-  if(m_knowledgeBaseLookupOutputHasBeenSet)
-  {
-   payload.WithObject("knowledgeBaseLookupOutput", m_knowledgeBaseLookupOutput.Jsonize());
-
-  }
-
-  if(m_finalResponseHasBeenSet)
-  {
-   payload.WithObject("finalResponse", m_finalResponse.Jsonize());
-
-  }
-
-  if(m_repromptResponseHasBeenSet)
-  {
-   payload.WithObject("repromptResponse", m_repromptResponse.Jsonize());
-
   }
 
   return payload;

@@ -24,8 +24,12 @@ namespace Model
 {
 
   /**
-   * <p>Search parameters for retrieving from knowledge base.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Contains details about how the results should be returned.</p> <p>This data
+   * type is used in the following API operations:</p> <ul> <li> <p> <a
+   * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_Retrieve.html#API_agent-runtime_Retrieve_RequestSyntax">Retrieve
+   * request body</a> </p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_RetrieveAndGenerate.html#API_agent-runtime_RetrieveAndGenerate_RequestSyntax">RetrieveAndGenerate
+   * request body</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/KnowledgeBaseRetrievalConfiguration">AWS
    * API Reference</a></p>
    */
@@ -38,22 +42,40 @@ namespace Model
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    
+    /**
+     * <p>Contains details about how the results from the vector search should be
+     * returned.</p>
+     */
     inline const KnowledgeBaseVectorSearchConfiguration& GetVectorSearchConfiguration() const{ return m_vectorSearchConfiguration; }
 
-    
+    /**
+     * <p>Contains details about how the results from the vector search should be
+     * returned.</p>
+     */
     inline bool VectorSearchConfigurationHasBeenSet() const { return m_vectorSearchConfigurationHasBeenSet; }
 
-    
+    /**
+     * <p>Contains details about how the results from the vector search should be
+     * returned.</p>
+     */
     inline void SetVectorSearchConfiguration(const KnowledgeBaseVectorSearchConfiguration& value) { m_vectorSearchConfigurationHasBeenSet = true; m_vectorSearchConfiguration = value; }
 
-    
+    /**
+     * <p>Contains details about how the results from the vector search should be
+     * returned.</p>
+     */
     inline void SetVectorSearchConfiguration(KnowledgeBaseVectorSearchConfiguration&& value) { m_vectorSearchConfigurationHasBeenSet = true; m_vectorSearchConfiguration = std::move(value); }
 
-    
+    /**
+     * <p>Contains details about how the results from the vector search should be
+     * returned.</p>
+     */
     inline KnowledgeBaseRetrievalConfiguration& WithVectorSearchConfiguration(const KnowledgeBaseVectorSearchConfiguration& value) { SetVectorSearchConfiguration(value); return *this;}
 
-    
+    /**
+     * <p>Contains details about how the results from the vector search should be
+     * returned.</p>
+     */
     inline KnowledgeBaseRetrievalConfiguration& WithVectorSearchConfiguration(KnowledgeBaseVectorSearchConfiguration&& value) { SetVectorSearchConfiguration(std::move(value)); return *this;}
 
   private:

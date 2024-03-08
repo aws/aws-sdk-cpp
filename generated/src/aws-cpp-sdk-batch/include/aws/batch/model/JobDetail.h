@@ -392,49 +392,129 @@ namespace Model
 
     /**
      * <p>A short, human-readable string to provide more details for the current status
-     * of the job.</p>
+     * of the job.</p> <ul> <li> <p>
+     * <code>CAPACITY:INSUFFICIENT_INSTANCE_CAPACITY</code> - All compute environments
+     * have insufficient capacity to service the job.</p> </li> <li> <p>
+     * <code>MISCONFIGURATION:COMPUTE_ENVIRONMENT_MAX_RESOURCE</code> - All compute
+     * environments have a <code>maxVcpu</code> setting that is smaller than the job
+     * requirements.</p> </li> <li> <p>
+     * <code>MISCONFIGURATION:JOB_RESOURCE_REQUIREMENT</code> - All compute
+     * environments have no connected instances that meet the job requirements.</p>
+     * </li> <li> <p> <code>MISCONFIGURATION:SERVICE_ROLE_PERMISSIONS</code> - All
+     * compute environments have problems with the service role permissions.</p> </li>
+     * </ul>
      */
     inline const Aws::String& GetStatusReason() const{ return m_statusReason; }
 
     /**
      * <p>A short, human-readable string to provide more details for the current status
-     * of the job.</p>
+     * of the job.</p> <ul> <li> <p>
+     * <code>CAPACITY:INSUFFICIENT_INSTANCE_CAPACITY</code> - All compute environments
+     * have insufficient capacity to service the job.</p> </li> <li> <p>
+     * <code>MISCONFIGURATION:COMPUTE_ENVIRONMENT_MAX_RESOURCE</code> - All compute
+     * environments have a <code>maxVcpu</code> setting that is smaller than the job
+     * requirements.</p> </li> <li> <p>
+     * <code>MISCONFIGURATION:JOB_RESOURCE_REQUIREMENT</code> - All compute
+     * environments have no connected instances that meet the job requirements.</p>
+     * </li> <li> <p> <code>MISCONFIGURATION:SERVICE_ROLE_PERMISSIONS</code> - All
+     * compute environments have problems with the service role permissions.</p> </li>
+     * </ul>
      */
     inline bool StatusReasonHasBeenSet() const { return m_statusReasonHasBeenSet; }
 
     /**
      * <p>A short, human-readable string to provide more details for the current status
-     * of the job.</p>
+     * of the job.</p> <ul> <li> <p>
+     * <code>CAPACITY:INSUFFICIENT_INSTANCE_CAPACITY</code> - All compute environments
+     * have insufficient capacity to service the job.</p> </li> <li> <p>
+     * <code>MISCONFIGURATION:COMPUTE_ENVIRONMENT_MAX_RESOURCE</code> - All compute
+     * environments have a <code>maxVcpu</code> setting that is smaller than the job
+     * requirements.</p> </li> <li> <p>
+     * <code>MISCONFIGURATION:JOB_RESOURCE_REQUIREMENT</code> - All compute
+     * environments have no connected instances that meet the job requirements.</p>
+     * </li> <li> <p> <code>MISCONFIGURATION:SERVICE_ROLE_PERMISSIONS</code> - All
+     * compute environments have problems with the service role permissions.</p> </li>
+     * </ul>
      */
     inline void SetStatusReason(const Aws::String& value) { m_statusReasonHasBeenSet = true; m_statusReason = value; }
 
     /**
      * <p>A short, human-readable string to provide more details for the current status
-     * of the job.</p>
+     * of the job.</p> <ul> <li> <p>
+     * <code>CAPACITY:INSUFFICIENT_INSTANCE_CAPACITY</code> - All compute environments
+     * have insufficient capacity to service the job.</p> </li> <li> <p>
+     * <code>MISCONFIGURATION:COMPUTE_ENVIRONMENT_MAX_RESOURCE</code> - All compute
+     * environments have a <code>maxVcpu</code> setting that is smaller than the job
+     * requirements.</p> </li> <li> <p>
+     * <code>MISCONFIGURATION:JOB_RESOURCE_REQUIREMENT</code> - All compute
+     * environments have no connected instances that meet the job requirements.</p>
+     * </li> <li> <p> <code>MISCONFIGURATION:SERVICE_ROLE_PERMISSIONS</code> - All
+     * compute environments have problems with the service role permissions.</p> </li>
+     * </ul>
      */
     inline void SetStatusReason(Aws::String&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::move(value); }
 
     /**
      * <p>A short, human-readable string to provide more details for the current status
-     * of the job.</p>
+     * of the job.</p> <ul> <li> <p>
+     * <code>CAPACITY:INSUFFICIENT_INSTANCE_CAPACITY</code> - All compute environments
+     * have insufficient capacity to service the job.</p> </li> <li> <p>
+     * <code>MISCONFIGURATION:COMPUTE_ENVIRONMENT_MAX_RESOURCE</code> - All compute
+     * environments have a <code>maxVcpu</code> setting that is smaller than the job
+     * requirements.</p> </li> <li> <p>
+     * <code>MISCONFIGURATION:JOB_RESOURCE_REQUIREMENT</code> - All compute
+     * environments have no connected instances that meet the job requirements.</p>
+     * </li> <li> <p> <code>MISCONFIGURATION:SERVICE_ROLE_PERMISSIONS</code> - All
+     * compute environments have problems with the service role permissions.</p> </li>
+     * </ul>
      */
     inline void SetStatusReason(const char* value) { m_statusReasonHasBeenSet = true; m_statusReason.assign(value); }
 
     /**
      * <p>A short, human-readable string to provide more details for the current status
-     * of the job.</p>
+     * of the job.</p> <ul> <li> <p>
+     * <code>CAPACITY:INSUFFICIENT_INSTANCE_CAPACITY</code> - All compute environments
+     * have insufficient capacity to service the job.</p> </li> <li> <p>
+     * <code>MISCONFIGURATION:COMPUTE_ENVIRONMENT_MAX_RESOURCE</code> - All compute
+     * environments have a <code>maxVcpu</code> setting that is smaller than the job
+     * requirements.</p> </li> <li> <p>
+     * <code>MISCONFIGURATION:JOB_RESOURCE_REQUIREMENT</code> - All compute
+     * environments have no connected instances that meet the job requirements.</p>
+     * </li> <li> <p> <code>MISCONFIGURATION:SERVICE_ROLE_PERMISSIONS</code> - All
+     * compute environments have problems with the service role permissions.</p> </li>
+     * </ul>
      */
     inline JobDetail& WithStatusReason(const Aws::String& value) { SetStatusReason(value); return *this;}
 
     /**
      * <p>A short, human-readable string to provide more details for the current status
-     * of the job.</p>
+     * of the job.</p> <ul> <li> <p>
+     * <code>CAPACITY:INSUFFICIENT_INSTANCE_CAPACITY</code> - All compute environments
+     * have insufficient capacity to service the job.</p> </li> <li> <p>
+     * <code>MISCONFIGURATION:COMPUTE_ENVIRONMENT_MAX_RESOURCE</code> - All compute
+     * environments have a <code>maxVcpu</code> setting that is smaller than the job
+     * requirements.</p> </li> <li> <p>
+     * <code>MISCONFIGURATION:JOB_RESOURCE_REQUIREMENT</code> - All compute
+     * environments have no connected instances that meet the job requirements.</p>
+     * </li> <li> <p> <code>MISCONFIGURATION:SERVICE_ROLE_PERMISSIONS</code> - All
+     * compute environments have problems with the service role permissions.</p> </li>
+     * </ul>
      */
     inline JobDetail& WithStatusReason(Aws::String&& value) { SetStatusReason(std::move(value)); return *this;}
 
     /**
      * <p>A short, human-readable string to provide more details for the current status
-     * of the job.</p>
+     * of the job.</p> <ul> <li> <p>
+     * <code>CAPACITY:INSUFFICIENT_INSTANCE_CAPACITY</code> - All compute environments
+     * have insufficient capacity to service the job.</p> </li> <li> <p>
+     * <code>MISCONFIGURATION:COMPUTE_ENVIRONMENT_MAX_RESOURCE</code> - All compute
+     * environments have a <code>maxVcpu</code> setting that is smaller than the job
+     * requirements.</p> </li> <li> <p>
+     * <code>MISCONFIGURATION:JOB_RESOURCE_REQUIREMENT</code> - All compute
+     * environments have no connected instances that meet the job requirements.</p>
+     * </li> <li> <p> <code>MISCONFIGURATION:SERVICE_ROLE_PERMISSIONS</code> - All
+     * compute environments have problems with the service role permissions.</p> </li>
+     * </ul>
      */
     inline JobDetail& WithStatusReason(const char* value) { SetStatusReason(value); return *this;}
 

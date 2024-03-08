@@ -19,32 +19,32 @@ namespace Model
 {
 
 PostProcessingModelInvocationOutput::PostProcessingModelInvocationOutput() : 
-    m_traceIdHasBeenSet(false),
-    m_parsedResponseHasBeenSet(false)
+    m_parsedResponseHasBeenSet(false),
+    m_traceIdHasBeenSet(false)
 {
 }
 
 PostProcessingModelInvocationOutput::PostProcessingModelInvocationOutput(JsonView jsonValue) : 
-    m_traceIdHasBeenSet(false),
-    m_parsedResponseHasBeenSet(false)
+    m_parsedResponseHasBeenSet(false),
+    m_traceIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 PostProcessingModelInvocationOutput& PostProcessingModelInvocationOutput::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("traceId"))
-  {
-    m_traceId = jsonValue.GetString("traceId");
-
-    m_traceIdHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("parsedResponse"))
   {
     m_parsedResponse = jsonValue.GetObject("parsedResponse");
 
     m_parsedResponseHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("traceId"))
+  {
+    m_traceId = jsonValue.GetString("traceId");
+
+    m_traceIdHasBeenSet = true;
   }
 
   return *this;
@@ -54,15 +54,15 @@ JsonValue PostProcessingModelInvocationOutput::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_traceIdHasBeenSet)
-  {
-   payload.WithString("traceId", m_traceId);
-
-  }
-
   if(m_parsedResponseHasBeenSet)
   {
    payload.WithObject("parsedResponse", m_parsedResponse.Jsonize());
+
+  }
+
+  if(m_traceIdHasBeenSet)
+  {
+   payload.WithString("traceId", m_traceId);
 
   }
 
