@@ -105,7 +105,7 @@ DynamoDBClient::DynamoDBClient(const DynamoDB::DynamoDBClientConfiguration& clie
                                std::shared_ptr<DynamoDBEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<DynamoDBErrorMarshaller>(ALLOCATION_TAG)),
@@ -152,7 +152,7 @@ DynamoDBClient::DynamoDBClient(const std::shared_ptr<AWSCredentialsProvider>& cr
   DynamoDBClient::DynamoDBClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<DynamoDBErrorMarshaller>(ALLOCATION_TAG)),

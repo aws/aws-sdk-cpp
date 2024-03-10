@@ -76,7 +76,7 @@ AppFabricClient::AppFabricClient(const AppFabric::AppFabricClientConfiguration& 
                                  std::shared_ptr<AppFabricEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<AppFabricErrorMarshaller>(ALLOCATION_TAG)),
@@ -123,7 +123,7 @@ AppFabricClient::AppFabricClient(const std::shared_ptr<AWSCredentialsProvider>& 
   AppFabricClient::AppFabricClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<AppFabricErrorMarshaller>(ALLOCATION_TAG)),

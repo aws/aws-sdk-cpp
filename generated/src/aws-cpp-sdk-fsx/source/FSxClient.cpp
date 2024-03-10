@@ -95,7 +95,7 @@ FSxClient::FSxClient(const FSx::FSxClientConfiguration& clientConfiguration,
                      std::shared_ptr<FSxEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<FSxErrorMarshaller>(ALLOCATION_TAG)),
@@ -142,7 +142,7 @@ FSxClient::FSxClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsP
   FSxClient::FSxClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<FSxErrorMarshaller>(ALLOCATION_TAG)),

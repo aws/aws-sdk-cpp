@@ -70,7 +70,7 @@ IoTRoboRunnerClient::IoTRoboRunnerClient(const IoTRoboRunner::IoTRoboRunnerClien
                                          std::shared_ptr<IoTRoboRunnerEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<IoTRoboRunnerErrorMarshaller>(ALLOCATION_TAG)),
@@ -117,7 +117,7 @@ IoTRoboRunnerClient::IoTRoboRunnerClient(const std::shared_ptr<AWSCredentialsPro
   IoTRoboRunnerClient::IoTRoboRunnerClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<IoTRoboRunnerErrorMarshaller>(ALLOCATION_TAG)),

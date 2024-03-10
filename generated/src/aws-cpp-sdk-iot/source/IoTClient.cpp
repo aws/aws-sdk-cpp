@@ -150,7 +150,7 @@ IoTClient::IoTClient(const IoT::IoTClientConfiguration& clientConfiguration,
                      std::shared_ptr<IoTEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<IoTErrorMarshaller>(ALLOCATION_TAG)),
@@ -197,7 +197,7 @@ IoTClient::IoTClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsP
   IoTClient::IoTClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<IoTErrorMarshaller>(ALLOCATION_TAG)),

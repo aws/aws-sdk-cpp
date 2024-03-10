@@ -78,7 +78,7 @@ MachineLearningClient::MachineLearningClient(const MachineLearning::MachineLearn
                                              std::shared_ptr<MachineLearningEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<MachineLearningErrorMarshaller>(ALLOCATION_TAG)),
@@ -125,7 +125,7 @@ MachineLearningClient::MachineLearningClient(const std::shared_ptr<AWSCredential
   MachineLearningClient::MachineLearningClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<MachineLearningErrorMarshaller>(ALLOCATION_TAG)),

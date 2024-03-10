@@ -106,7 +106,7 @@ EKSClient::EKSClient(const EKS::EKSClientConfiguration& clientConfiguration,
                      std::shared_ptr<EKSEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<EKSErrorMarshaller>(ALLOCATION_TAG)),
@@ -153,7 +153,7 @@ EKSClient::EKSClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsP
   EKSClient::EKSClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<EKSErrorMarshaller>(ALLOCATION_TAG)),

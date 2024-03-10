@@ -56,7 +56,7 @@ CloudFrontKeyValueStoreClient::CloudFrontKeyValueStoreClient(const CloudFrontKey
                                                              std::shared_ptr<CloudFrontKeyValueStoreEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
-                                                                  Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                                                  GetDefaultCredentialsProviderChain(),
                                                                   SERVICE_NAME,
                                                                   Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<CloudFrontKeyValueStoreErrorMarshaller>(ALLOCATION_TAG)),
@@ -103,7 +103,7 @@ CloudFrontKeyValueStoreClient::CloudFrontKeyValueStoreClient(const std::shared_p
   CloudFrontKeyValueStoreClient::CloudFrontKeyValueStoreClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
-                                                                  Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                                                  GetDefaultCredentialsProviderChain(),
                                                                   SERVICE_NAME,
                                                                   Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<CloudFrontKeyValueStoreErrorMarshaller>(ALLOCATION_TAG)),

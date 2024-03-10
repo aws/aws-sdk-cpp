@@ -69,7 +69,7 @@ ManagedGrafanaClient::ManagedGrafanaClient(const ManagedGrafana::ManagedGrafanaC
                                            std::shared_ptr<ManagedGrafanaEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<ManagedGrafanaErrorMarshaller>(ALLOCATION_TAG)),
@@ -116,7 +116,7 @@ ManagedGrafanaClient::ManagedGrafanaClient(const std::shared_ptr<AWSCredentialsP
   ManagedGrafanaClient::ManagedGrafanaClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<ManagedGrafanaErrorMarshaller>(ALLOCATION_TAG)),

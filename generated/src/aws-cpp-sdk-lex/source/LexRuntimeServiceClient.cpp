@@ -55,7 +55,7 @@ LexRuntimeServiceClient::LexRuntimeServiceClient(const LexRuntimeService::LexRun
                                                  std::shared_ptr<LexRuntimeServiceEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
-                                                                  Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                                                  GetDefaultCredentialsProviderChain(),
                                                                   SERVICE_NAME,
                                                                   Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<LexRuntimeServiceErrorMarshaller>(ALLOCATION_TAG)),
@@ -102,7 +102,7 @@ LexRuntimeServiceClient::LexRuntimeServiceClient(const std::shared_ptr<AWSCreden
   LexRuntimeServiceClient::LexRuntimeServiceClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
-                                                                  Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                                                  GetDefaultCredentialsProviderChain(),
                                                                   SERVICE_NAME,
                                                                   Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<LexRuntimeServiceErrorMarshaller>(ALLOCATION_TAG)),

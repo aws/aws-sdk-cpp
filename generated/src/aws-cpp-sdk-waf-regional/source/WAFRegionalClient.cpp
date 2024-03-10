@@ -131,7 +131,7 @@ WAFRegionalClient::WAFRegionalClient(const WAFRegional::WAFRegionalClientConfigu
                                      std::shared_ptr<WAFRegionalEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<WAFRegionalErrorMarshaller>(ALLOCATION_TAG)),
@@ -178,7 +178,7 @@ WAFRegionalClient::WAFRegionalClient(const std::shared_ptr<AWSCredentialsProvide
   WAFRegionalClient::WAFRegionalClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<WAFRegionalErrorMarshaller>(ALLOCATION_TAG)),

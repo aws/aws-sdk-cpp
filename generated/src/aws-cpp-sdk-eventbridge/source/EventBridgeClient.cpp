@@ -106,7 +106,7 @@ EventBridgeClient::EventBridgeClient(const EventBridge::EventBridgeClientConfigu
                                      std::shared_ptr<EventBridgeEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
-                                                                  Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                                                  GetDefaultCredentialsProviderChain(),
                                                                   SERVICE_NAME,
                                                                   Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<EventBridgeErrorMarshaller>(ALLOCATION_TAG)),
@@ -153,7 +153,7 @@ EventBridgeClient::EventBridgeClient(const std::shared_ptr<AWSCredentialsProvide
   EventBridgeClient::EventBridgeClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<Aws::Auth::DefaultAuthSignerProvider>(ALLOCATION_TAG,
-                                                                  Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                                                  GetDefaultCredentialsProviderChain(),
                                                                   SERVICE_NAME,
                                                                   Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<EventBridgeErrorMarshaller>(ALLOCATION_TAG)),

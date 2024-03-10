@@ -90,7 +90,7 @@ QConnectClient::QConnectClient(const QConnect::QConnectClientConfiguration& clie
                                std::shared_ptr<QConnectEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<QConnectErrorMarshaller>(ALLOCATION_TAG)),
@@ -137,7 +137,7 @@ QConnectClient::QConnectClient(const std::shared_ptr<AWSCredentialsProvider>& cr
   QConnectClient::QConnectClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<QConnectErrorMarshaller>(ALLOCATION_TAG)),

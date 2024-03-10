@@ -74,7 +74,7 @@ BatchClient::BatchClient(const Batch::BatchClientConfiguration& clientConfigurat
                          std::shared_ptr<BatchEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<BatchErrorMarshaller>(ALLOCATION_TAG)),
@@ -121,7 +121,7 @@ BatchClient::BatchClient(const std::shared_ptr<AWSCredentialsProvider>& credenti
   BatchClient::BatchClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<BatchErrorMarshaller>(ALLOCATION_TAG)),

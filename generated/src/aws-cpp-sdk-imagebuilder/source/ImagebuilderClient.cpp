@@ -123,7 +123,7 @@ ImagebuilderClient::ImagebuilderClient(const imagebuilder::ImagebuilderClientCon
                                        std::shared_ptr<ImagebuilderEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<ImagebuilderErrorMarshaller>(ALLOCATION_TAG)),
@@ -170,7 +170,7 @@ ImagebuilderClient::ImagebuilderClient(const std::shared_ptr<AWSCredentialsProvi
   ImagebuilderClient::ImagebuilderClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<ImagebuilderErrorMarshaller>(ALLOCATION_TAG)),

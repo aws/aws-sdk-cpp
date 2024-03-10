@@ -69,7 +69,7 @@ IdentityStoreClient::IdentityStoreClient(const IdentityStore::IdentityStoreClien
                                          std::shared_ptr<IdentityStoreEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<IdentityStoreErrorMarshaller>(ALLOCATION_TAG)),
@@ -116,7 +116,7 @@ IdentityStoreClient::IdentityStoreClient(const std::shared_ptr<AWSCredentialsPro
   IdentityStoreClient::IdentityStoreClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<IdentityStoreErrorMarshaller>(ALLOCATION_TAG)),

@@ -150,7 +150,7 @@ GlueClient::GlueClient(const Glue::GlueClientConfiguration& clientConfiguration,
                        std::shared_ptr<GlueEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<GlueErrorMarshaller>(ALLOCATION_TAG)),
@@ -197,7 +197,7 @@ GlueClient::GlueClient(const std::shared_ptr<AWSCredentialsProvider>& credential
   GlueClient::GlueClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<GlueErrorMarshaller>(ALLOCATION_TAG)),

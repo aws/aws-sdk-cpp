@@ -68,5 +68,14 @@ namespace Aws
             DefaultAWSCredentialsProviderChain(const DefaultAWSCredentialsProviderChain& chain);
         };
 
+        /**
+        * Configures the default credentials provider chain
+        */
+        AWS_CORE_API void SetDefaultCredentialsProviderChain(const std::shared_ptr<AWSCredentialsProviderChain> &credentialsProviderChain);
+
+        /**
+        * Get currently configured credentials provider chain instance.
+        */
+        AWS_CORE_API std::shared_ptr<AWSCredentialsProviderChain> &GetDefaultCredentialsProviderChain();
     } // namespace Auth
 } // namespace Aws

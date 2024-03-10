@@ -69,7 +69,7 @@ SignerClient::SignerClient(const signer::SignerClientConfiguration& clientConfig
                            std::shared_ptr<SignerEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<SignerErrorMarshaller>(ALLOCATION_TAG)),
@@ -116,7 +116,7 @@ SignerClient::SignerClient(const std::shared_ptr<AWSCredentialsProvider>& creden
   SignerClient::SignerClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<SignerErrorMarshaller>(ALLOCATION_TAG)),

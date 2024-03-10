@@ -14,6 +14,8 @@
 using namespace Aws::Auth;
 using namespace Aws::Utils::Threading;
 
+static std::shared_ptr<AWSCredentialsProviderChain> ConfiguredAWSCredentialsProviderChain(nullptr);
+
 static const char AWS_EC2_METADATA_DISABLED[] = "AWS_EC2_METADATA_DISABLED";
 static const char DefaultCredentialsProviderChainTag[] = "DefaultAWSCredentialsProviderChain";
 
@@ -89,4 +91,14 @@ DefaultAWSCredentialsProviderChain::DefaultAWSCredentialsProviderChain(const Def
     for (const auto& provider: chain.GetProviders()) {
         AddProvider(provider);
     }
+}
+
+std::shared_ptr<AWSCredentialsProviderChain>& Aws::Auth::GetDefaultCredentialsProviderChain()
+{
+    static std::shared_ptr<AWSCredentialsProviderChain> s_CredentialsProviderChain(nullptr);
+    return s_CredentialsProviderChain;
+}
+
+void Aws::Auth::SetDefaultCredentialsProviderChain(const std::shared_ptr<AWSCredentialsProviderChain>& credentialsProviderChain) {
+    Aws::Auth::GetDefaultCredentialsProviderChain() = credentialsProviderChain;
 }

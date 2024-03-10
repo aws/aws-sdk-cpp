@@ -94,7 +94,7 @@ GlueDataBrewClient::GlueDataBrewClient(const GlueDataBrew::GlueDataBrewClientCon
                                        std::shared_ptr<GlueDataBrewEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<GlueDataBrewErrorMarshaller>(ALLOCATION_TAG)),
@@ -141,7 +141,7 @@ GlueDataBrewClient::GlueDataBrewClient(const std::shared_ptr<AWSCredentialsProvi
   GlueDataBrewClient::GlueDataBrewClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<GlueDataBrewErrorMarshaller>(ALLOCATION_TAG)),

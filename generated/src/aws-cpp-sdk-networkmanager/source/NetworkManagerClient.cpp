@@ -135,7 +135,7 @@ NetworkManagerClient::NetworkManagerClient(const NetworkManager::NetworkManagerC
                                            std::shared_ptr<NetworkManagerEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<NetworkManagerErrorMarshaller>(ALLOCATION_TAG)),
@@ -182,7 +182,7 @@ NetworkManagerClient::NetworkManagerClient(const std::shared_ptr<AWSCredentialsP
   NetworkManagerClient::NetworkManagerClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<NetworkManagerErrorMarshaller>(ALLOCATION_TAG)),

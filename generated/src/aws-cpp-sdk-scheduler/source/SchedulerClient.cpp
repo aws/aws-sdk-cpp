@@ -62,7 +62,7 @@ SchedulerClient::SchedulerClient(const Scheduler::SchedulerClientConfiguration& 
                                  std::shared_ptr<SchedulerEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<SchedulerErrorMarshaller>(ALLOCATION_TAG)),
@@ -109,7 +109,7 @@ SchedulerClient::SchedulerClient(const std::shared_ptr<AWSCredentialsProvider>& 
   SchedulerClient::SchedulerClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<SchedulerErrorMarshaller>(ALLOCATION_TAG)),

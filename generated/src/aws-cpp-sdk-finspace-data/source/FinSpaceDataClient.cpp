@@ -50,7 +50,7 @@ FinSpaceDataClient::FinSpaceDataClient(const FinSpaceData::FinSpaceDataClientCon
                                        std::shared_ptr<FinSpaceDataEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<FinSpaceDataErrorMarshaller>(ALLOCATION_TAG)),
@@ -97,7 +97,7 @@ FinSpaceDataClient::FinSpaceDataClient(const std::shared_ptr<AWSCredentialsProvi
   FinSpaceDataClient::FinSpaceDataClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<FinSpaceDataErrorMarshaller>(ALLOCATION_TAG)),

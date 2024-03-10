@@ -54,7 +54,7 @@ SSOClient::SSOClient(const SSO::SSOClientConfiguration& clientConfiguration,
                      std::shared_ptr<SSOEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<SSOErrorMarshaller>(ALLOCATION_TAG)),
@@ -101,7 +101,7 @@ SSOClient::SSOClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsP
   SSOClient::SSOClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<SSOErrorMarshaller>(ALLOCATION_TAG)),

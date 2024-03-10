@@ -86,7 +86,7 @@ SFNClient::SFNClient(const SFN::SFNClientConfiguration& clientConfiguration,
                      std::shared_ptr<SFNEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<SFNErrorMarshaller>(ALLOCATION_TAG)),
@@ -133,7 +133,7 @@ SFNClient::SFNClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsP
   SFNClient::SFNClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<SFNErrorMarshaller>(ALLOCATION_TAG)),

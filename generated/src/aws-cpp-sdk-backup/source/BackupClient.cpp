@@ -141,7 +141,7 @@ BackupClient::BackupClient(const Backup::BackupClientConfiguration& clientConfig
                            std::shared_ptr<BackupEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<BackupErrorMarshaller>(ALLOCATION_TAG)),
@@ -188,7 +188,7 @@ BackupClient::BackupClient(const std::shared_ptr<AWSCredentialsProvider>& creden
   BackupClient::BackupClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<BackupErrorMarshaller>(ALLOCATION_TAG)),

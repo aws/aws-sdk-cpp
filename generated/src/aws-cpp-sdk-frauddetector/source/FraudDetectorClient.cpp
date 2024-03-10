@@ -123,7 +123,7 @@ FraudDetectorClient::FraudDetectorClient(const FraudDetector::FraudDetectorClien
                                          std::shared_ptr<FraudDetectorEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<FraudDetectorErrorMarshaller>(ALLOCATION_TAG)),
@@ -170,7 +170,7 @@ FraudDetectorClient::FraudDetectorClient(const std::shared_ptr<AWSCredentialsPro
   FraudDetectorClient::FraudDetectorClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<FraudDetectorErrorMarshaller>(ALLOCATION_TAG)),

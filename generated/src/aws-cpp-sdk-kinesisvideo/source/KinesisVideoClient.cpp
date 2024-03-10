@@ -80,7 +80,7 @@ KinesisVideoClient::KinesisVideoClient(const KinesisVideo::KinesisVideoClientCon
                                        std::shared_ptr<KinesisVideoEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<KinesisVideoErrorMarshaller>(ALLOCATION_TAG)),
@@ -127,7 +127,7 @@ KinesisVideoClient::KinesisVideoClient(const std::shared_ptr<AWSCredentialsProvi
   KinesisVideoClient::KinesisVideoClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<KinesisVideoErrorMarshaller>(ALLOCATION_TAG)),

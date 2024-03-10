@@ -58,7 +58,7 @@ LaunchWizardClient::LaunchWizardClient(const LaunchWizard::LaunchWizardClientCon
                                        std::shared_ptr<LaunchWizardEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<LaunchWizardErrorMarshaller>(ALLOCATION_TAG)),
@@ -105,7 +105,7 @@ LaunchWizardClient::LaunchWizardClient(const std::shared_ptr<AWSCredentialsProvi
   LaunchWizardClient::LaunchWizardClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<LaunchWizardErrorMarshaller>(ALLOCATION_TAG)),

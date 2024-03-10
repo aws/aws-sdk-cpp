@@ -69,7 +69,7 @@ ServiceQuotasClient::ServiceQuotasClient(const ServiceQuotas::ServiceQuotasClien
                                          std::shared_ptr<ServiceQuotasEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<ServiceQuotasErrorMarshaller>(ALLOCATION_TAG)),
@@ -116,7 +116,7 @@ ServiceQuotasClient::ServiceQuotasClient(const std::shared_ptr<AWSCredentialsPro
   ServiceQuotasClient::ServiceQuotasClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<ServiceQuotasErrorMarshaller>(ALLOCATION_TAG)),

@@ -79,7 +79,7 @@ VoiceIDClient::VoiceIDClient(const VoiceID::VoiceIDClientConfiguration& clientCo
                              std::shared_ptr<VoiceIDEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<VoiceIDErrorMarshaller>(ALLOCATION_TAG)),
@@ -126,7 +126,7 @@ VoiceIDClient::VoiceIDClient(const std::shared_ptr<AWSCredentialsProvider>& cred
   VoiceIDClient::VoiceIDClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<VoiceIDErrorMarshaller>(ALLOCATION_TAG)),

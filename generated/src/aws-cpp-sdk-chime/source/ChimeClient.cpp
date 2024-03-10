@@ -112,7 +112,7 @@ ChimeClient::ChimeClient(const Chime::ChimeClientConfiguration& clientConfigurat
                          std::shared_ptr<ChimeEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<ChimeErrorMarshaller>(ALLOCATION_TAG)),
@@ -159,7 +159,7 @@ ChimeClient::ChimeClient(const std::shared_ptr<AWSCredentialsProvider>& credenti
   ChimeClient::ChimeClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<ChimeErrorMarshaller>(ALLOCATION_TAG)),

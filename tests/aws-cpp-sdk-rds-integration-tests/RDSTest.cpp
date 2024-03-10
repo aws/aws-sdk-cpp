@@ -57,7 +57,7 @@ namespace
     class MockAWSClient : public AWSClient
     {
     public:
-        MockAWSClient() : AWSClient(ClientConfiguration(), Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+        MockAWSClient() : AWSClient(ClientConfiguration(), Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, GetDefaultCredentialsProviderChain(),
             "rds", Aws::Region::US_EAST_1), Aws::MakeShared<XmlErrorMarshaller>(ALLOCATION_TAG)) {}
         MockAWSClient(const Aws::Client::ClientConfiguration& configuration, const std::shared_ptr<Aws::Client::AWSAuthSigner>& signer) :
             AWSClient(configuration, signer, Aws::MakeShared<XmlErrorMarshaller>(ALLOCATION_TAG)) {}

@@ -69,7 +69,7 @@ TranslateClient::TranslateClient(const Translate::TranslateClientConfiguration& 
                                  std::shared_ptr<TranslateEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<TranslateErrorMarshaller>(ALLOCATION_TAG)),
@@ -116,7 +116,7 @@ TranslateClient::TranslateClient(const std::shared_ptr<AWSCredentialsProvider>& 
   TranslateClient::TranslateClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<TranslateErrorMarshaller>(ALLOCATION_TAG)),

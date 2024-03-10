@@ -112,7 +112,7 @@ AuditManagerClient::AuditManagerClient(const AuditManager::AuditManagerClientCon
                                        std::shared_ptr<AuditManagerEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<AuditManagerErrorMarshaller>(ALLOCATION_TAG)),
@@ -159,7 +159,7 @@ AuditManagerClient::AuditManagerClient(const std::shared_ptr<AWSCredentialsProvi
   AuditManagerClient::AuditManagerClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<AuditManagerErrorMarshaller>(ALLOCATION_TAG)),

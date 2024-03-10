@@ -55,7 +55,7 @@ PricingClient::PricingClient(const Pricing::PricingClientConfiguration& clientCo
                              std::shared_ptr<PricingEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<PricingErrorMarshaller>(ALLOCATION_TAG)),
@@ -102,7 +102,7 @@ PricingClient::PricingClient(const std::shared_ptr<AWSCredentialsProvider>& cred
   PricingClient::PricingClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<PricingErrorMarshaller>(ALLOCATION_TAG)),

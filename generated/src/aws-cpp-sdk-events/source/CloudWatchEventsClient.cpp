@@ -101,7 +101,7 @@ CloudWatchEventsClient::CloudWatchEventsClient(const CloudWatchEvents::CloudWatc
                                                std::shared_ptr<CloudWatchEventsEndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<CloudWatchEventsErrorMarshaller>(ALLOCATION_TAG)),
@@ -148,7 +148,7 @@ CloudWatchEventsClient::CloudWatchEventsClient(const std::shared_ptr<AWSCredenti
   CloudWatchEventsClient::CloudWatchEventsClient(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<CloudWatchEventsErrorMarshaller>(ALLOCATION_TAG)),

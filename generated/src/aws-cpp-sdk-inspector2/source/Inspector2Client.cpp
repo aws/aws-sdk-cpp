@@ -109,7 +109,7 @@ Inspector2Client::Inspector2Client(const Inspector2::Inspector2ClientConfigurati
                                    std::shared_ptr<Inspector2EndpointProviderBase> endpointProvider) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<Inspector2ErrorMarshaller>(ALLOCATION_TAG)),
@@ -156,7 +156,7 @@ Inspector2Client::Inspector2Client(const std::shared_ptr<AWSCredentialsProvider>
   Inspector2Client::Inspector2Client(const Client::ClientConfiguration& clientConfiguration) :
   BASECLASS(clientConfiguration,
             Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG,
-                                             Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
+                                             GetDefaultCredentialsProviderChain(),
                                              SERVICE_NAME,
                                              Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
             Aws::MakeShared<Inspector2ErrorMarshaller>(ALLOCATION_TAG)),
