@@ -36,6 +36,14 @@ namespace Aws
                     AWS_UNREFERENCED_PARAM(formatStr);
                 }
 
+                virtual void vaLog(LogLevel logLevel, const char* tag, const char* formatStr, va_list args) override
+                {
+                    AWS_UNREFERENCED_PARAM(logLevel);
+                    AWS_UNREFERENCED_PARAM(tag);
+                    AWS_UNREFERENCED_PARAM(formatStr);
+                    AWS_UNREFERENCED_PARAM(args);
+                }
+
                 virtual void LogStream(LogLevel logLevel, const char* tag, const Aws::OStringStream &messageStream) override
                 {
                     AWS_UNREFERENCED_PARAM(logLevel);

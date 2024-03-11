@@ -37,6 +37,10 @@ namespace Aws
                  */
                 virtual void Log(LogLevel logLevel, const char* tag, const char* formatStr, ...) = 0;
                 /**
+                 * va_list overload for Log, avoid using this as well.
+                 */
+                virtual void vaLog(LogLevel logLevel, const char* tag, const char* formatStr, va_list args) = 0;
+                /**
                 * Writes the stream to the output stream.
                 */
                 virtual void LogStream(LogLevel logLevel, const char* tag, const Aws::OStringStream &messageStream) = 0;
