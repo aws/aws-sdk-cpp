@@ -887,14 +887,19 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(const std::shared_ptr<
         }
 
 #if LIBCURL_VERSION_NUM >= 0x073700 // 7.55.0
-        ret = curl_easy_getinfo(connectionHandle, CURLINFO_APPCONNECT_TIME_T, &timep); // Ssl Latency
+        curl_off_t AppConnectT;
+        ret = curl_easy_getinfo(connectionHandle, CURLINFO_APPCONNECT_TIME_T, &AppConnectT); // Ssl Latency
+        if (ret == CURLE_OK)
+        {
+            request->AddRequestMetric(GetHttpClientMetricNameByType(HttpClientMetricsType::SslLatency), AppConnectT * 1000);
+        }
 #else
         ret = curl_easy_getinfo(connectionHandle, CURLINFO_APPCONNECT_TIME, &timep); // Ssl Latency
-#endif
         if (ret == CURLE_OK)
         {
             request->AddRequestMetric(GetHttpClientMetricNameByType(HttpClientMetricsType::SslLatency), static_cast<int64_t>(timep * 1000));
         }
+#endif
 
         curl_off_t speed;
 #if LIBCURL_VERSION_NUM >= 0x073700 // 7.55.0
