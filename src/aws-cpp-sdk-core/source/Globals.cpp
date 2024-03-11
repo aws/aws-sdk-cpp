@@ -7,6 +7,7 @@
 #include <aws/crt/io/TlsOptions.h>
 #include <aws/crt/io/Bootstrap.h>
 #include <aws/core/Globals.h>
+#include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 #include <aws/auth/auth.h>
@@ -47,6 +48,10 @@ namespace Aws
     void InitializeCrt()
     {
         g_apiHandle = Aws::New<Aws::Crt::ApiHandle>(TAG, Aws::get_aws_allocator());
+        AWS_FATAL_ASSERT(g_apiHandle);
+        auto crtVersion = g_apiHandle->GetCrtVersion();
+        AWS_LOGSTREAM_INFO(TAG, "Initialized AWS-CRT-CPP with version "
+                << crtVersion.major << "." << crtVersion.minor << "." << crtVersion.patch);
     }
 
     void CleanupCrt()

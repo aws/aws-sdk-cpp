@@ -57,23 +57,10 @@ public:
 
     ~MockCRTLogSystem()
     {
-        // make sure that MockCRTLogSystem::m_localLogs is not freed before MockCRTLogSystem::Log finishes
-        m_stopLogging = true;
-
-        // Allow all other threads running Log(...) to return
-        std::unique_lock<std::mutex> lock(m_stopMutex);
-        m_stopSignal.wait_for(lock,
-                              std::chrono::milliseconds(200),
-                              [&](){ return m_logsProcessed.load() == 0; });
     }
 
     void Log(LogLevel logLevel, const char* subjectName, const char* formatStr, va_list args) override
     {
-        if (m_stopLogging)
-        {
-            return;
-        }
-        m_logsProcessed++;
         va_list tmp_args;
         va_copy(tmp_args, args);
     #ifdef _WIN32
@@ -104,11 +91,6 @@ public:
             *m_localLogs << outputBuff.GetUnderlyingData() << std::endl;
         }
         Logging::GetLogSystem()->LogStream(logLevel, subjectName, logStream);
-        m_logsProcessed--;
-        if(m_logsProcessed == 0 && m_stopLogging)
-        {
-            m_stopSignal.notify_all();
-        }
     }
 
 private:
