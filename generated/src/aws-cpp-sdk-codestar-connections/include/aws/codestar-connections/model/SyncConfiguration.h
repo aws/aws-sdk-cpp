@@ -8,6 +8,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/codestar-connections/model/ProviderType.h>
 #include <aws/codestar-connections/model/SyncConfigurationType.h>
+#include <aws/codestar-connections/model/PublishDeploymentStatus.h>
+#include <aws/codestar-connections/model/TriggerResourceUpdateOn.h>
 #include <utility>
 
 namespace Aws
@@ -442,6 +444,74 @@ namespace Model
      */
     inline SyncConfiguration& WithSyncType(SyncConfigurationType&& value) { SetSyncType(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Whether to enable or disable publishing of deployment status to source
+     * providers.</p>
+     */
+    inline const PublishDeploymentStatus& GetPublishDeploymentStatus() const{ return m_publishDeploymentStatus; }
+
+    /**
+     * <p>Whether to enable or disable publishing of deployment status to source
+     * providers.</p>
+     */
+    inline bool PublishDeploymentStatusHasBeenSet() const { return m_publishDeploymentStatusHasBeenSet; }
+
+    /**
+     * <p>Whether to enable or disable publishing of deployment status to source
+     * providers.</p>
+     */
+    inline void SetPublishDeploymentStatus(const PublishDeploymentStatus& value) { m_publishDeploymentStatusHasBeenSet = true; m_publishDeploymentStatus = value; }
+
+    /**
+     * <p>Whether to enable or disable publishing of deployment status to source
+     * providers.</p>
+     */
+    inline void SetPublishDeploymentStatus(PublishDeploymentStatus&& value) { m_publishDeploymentStatusHasBeenSet = true; m_publishDeploymentStatus = std::move(value); }
+
+    /**
+     * <p>Whether to enable or disable publishing of deployment status to source
+     * providers.</p>
+     */
+    inline SyncConfiguration& WithPublishDeploymentStatus(const PublishDeploymentStatus& value) { SetPublishDeploymentStatus(value); return *this;}
+
+    /**
+     * <p>Whether to enable or disable publishing of deployment status to source
+     * providers.</p>
+     */
+    inline SyncConfiguration& WithPublishDeploymentStatus(PublishDeploymentStatus&& value) { SetPublishDeploymentStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>When to trigger Git sync to begin the stack update.</p>
+     */
+    inline const TriggerResourceUpdateOn& GetTriggerResourceUpdateOn() const{ return m_triggerResourceUpdateOn; }
+
+    /**
+     * <p>When to trigger Git sync to begin the stack update.</p>
+     */
+    inline bool TriggerResourceUpdateOnHasBeenSet() const { return m_triggerResourceUpdateOnHasBeenSet; }
+
+    /**
+     * <p>When to trigger Git sync to begin the stack update.</p>
+     */
+    inline void SetTriggerResourceUpdateOn(const TriggerResourceUpdateOn& value) { m_triggerResourceUpdateOnHasBeenSet = true; m_triggerResourceUpdateOn = value; }
+
+    /**
+     * <p>When to trigger Git sync to begin the stack update.</p>
+     */
+    inline void SetTriggerResourceUpdateOn(TriggerResourceUpdateOn&& value) { m_triggerResourceUpdateOnHasBeenSet = true; m_triggerResourceUpdateOn = std::move(value); }
+
+    /**
+     * <p>When to trigger Git sync to begin the stack update.</p>
+     */
+    inline SyncConfiguration& WithTriggerResourceUpdateOn(const TriggerResourceUpdateOn& value) { SetTriggerResourceUpdateOn(value); return *this;}
+
+    /**
+     * <p>When to trigger Git sync to begin the stack update.</p>
+     */
+    inline SyncConfiguration& WithTriggerResourceUpdateOn(TriggerResourceUpdateOn&& value) { SetTriggerResourceUpdateOn(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_branch;
@@ -470,6 +540,12 @@ namespace Model
 
     SyncConfigurationType m_syncType;
     bool m_syncTypeHasBeenSet = false;
+
+    PublishDeploymentStatus m_publishDeploymentStatus;
+    bool m_publishDeploymentStatusHasBeenSet = false;
+
+    TriggerResourceUpdateOn m_triggerResourceUpdateOn;
+    bool m_triggerResourceUpdateOnHasBeenSet = false;
   };
 
 } // namespace Model

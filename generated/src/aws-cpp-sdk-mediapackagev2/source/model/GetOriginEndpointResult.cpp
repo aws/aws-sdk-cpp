@@ -111,6 +111,12 @@ GetOriginEndpointResult& GetOriginEndpointResult::operator =(const Aws::AmazonWe
     }
   }
 
+  if(jsonValue.ValueExists("ETag"))
+  {
+    m_eTag = jsonValue.GetString("ETag");
+
+  }
+
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();

@@ -283,6 +283,49 @@ namespace Model
 
 
     /**
+     * <p>The current Entity Tag (ETag) associated with this resource. The entity tag
+     * can be used to safely make concurrent updates to the resource.</p>
+     */
+    inline const Aws::String& GetETag() const{ return m_eTag; }
+
+    /**
+     * <p>The current Entity Tag (ETag) associated with this resource. The entity tag
+     * can be used to safely make concurrent updates to the resource.</p>
+     */
+    inline void SetETag(const Aws::String& value) { m_eTag = value; }
+
+    /**
+     * <p>The current Entity Tag (ETag) associated with this resource. The entity tag
+     * can be used to safely make concurrent updates to the resource.</p>
+     */
+    inline void SetETag(Aws::String&& value) { m_eTag = std::move(value); }
+
+    /**
+     * <p>The current Entity Tag (ETag) associated with this resource. The entity tag
+     * can be used to safely make concurrent updates to the resource.</p>
+     */
+    inline void SetETag(const char* value) { m_eTag.assign(value); }
+
+    /**
+     * <p>The current Entity Tag (ETag) associated with this resource. The entity tag
+     * can be used to safely make concurrent updates to the resource.</p>
+     */
+    inline UpdateChannelResult& WithETag(const Aws::String& value) { SetETag(value); return *this;}
+
+    /**
+     * <p>The current Entity Tag (ETag) associated with this resource. The entity tag
+     * can be used to safely make concurrent updates to the resource.</p>
+     */
+    inline UpdateChannelResult& WithETag(Aws::String&& value) { SetETag(std::move(value)); return *this;}
+
+    /**
+     * <p>The current Entity Tag (ETag) associated with this resource. The entity tag
+     * can be used to safely make concurrent updates to the resource.</p>
+     */
+    inline UpdateChannelResult& WithETag(const char* value) { SetETag(value); return *this;}
+
+
+    /**
      * <p>The comma-separated list of tag key:value pairs assigned to the channel.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
@@ -379,6 +422,8 @@ namespace Model
     Aws::String m_description;
 
     Aws::Vector<IngestEndpoint> m_ingestEndpoints;
+
+    Aws::String m_eTag;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
 

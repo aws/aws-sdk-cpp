@@ -59,6 +59,12 @@ CreateChannelGroupResult& CreateChannelGroupResult::operator =(const Aws::Amazon
 
   }
 
+  if(jsonValue.ValueExists("ETag"))
+  {
+    m_eTag = jsonValue.GetString("ETag");
+
+  }
+
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");

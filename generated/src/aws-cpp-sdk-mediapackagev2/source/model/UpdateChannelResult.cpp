@@ -74,6 +74,12 @@ UpdateChannelResult& UpdateChannelResult::operator =(const Aws::AmazonWebService
     }
   }
 
+  if(jsonValue.ValueExists("ETag"))
+  {
+    m_eTag = jsonValue.GetString("ETag");
+
+  }
+
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();

@@ -5,6 +5,7 @@
 
 #include <aws/mediapackagev2/model/UpdateOriginEndpointRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
@@ -23,7 +24,8 @@ UpdateOriginEndpointRequest::UpdateOriginEndpointRequest() :
     m_startoverWindowSeconds(0),
     m_startoverWindowSecondsHasBeenSet(false),
     m_hlsManifestsHasBeenSet(false),
-    m_lowLatencyHlsManifestsHasBeenSet(false)
+    m_lowLatencyHlsManifestsHasBeenSet(false),
+    m_eTagHasBeenSet(false)
 {
 }
 
@@ -77,6 +79,21 @@ Aws::String UpdateOriginEndpointRequest::SerializePayload() const
   }
 
   return payload.View().WriteReadable();
+}
+
+Aws::Http::HeaderValueCollection UpdateOriginEndpointRequest::GetRequestSpecificHeaders() const
+{
+  Aws::Http::HeaderValueCollection headers;
+  Aws::StringStream ss;
+  if(m_eTagHasBeenSet)
+  {
+    ss << m_eTag;
+    headers.emplace("x-amzn-update-if-match",  ss.str());
+    ss.str("");
+  }
+
+  return headers;
+
 }
 
 

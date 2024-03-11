@@ -591,74 +591,74 @@ namespace Model
 
 
     /**
-     * <p>If no subnet IDs are given and your VPC is in SFO, then ElastiCache will
-     * select 2 default subnets across AZs in your VPC. For all other Regions, if no
-     * subnet IDs are given then ElastiCache will select 3 default subnets across AZs
-     * in your default VPC.</p>
+     * <p>If no subnet IDs are given and your VPC is in us-west-1, then ElastiCache
+     * will select 2 default subnets across AZs in your VPC. For all other Regions, if
+     * no subnet IDs are given then ElastiCache will select 3 default subnets across
+     * AZs in your default VPC.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
 
     /**
-     * <p>If no subnet IDs are given and your VPC is in SFO, then ElastiCache will
-     * select 2 default subnets across AZs in your VPC. For all other Regions, if no
-     * subnet IDs are given then ElastiCache will select 3 default subnets across AZs
-     * in your default VPC.</p>
+     * <p>If no subnet IDs are given and your VPC is in us-west-1, then ElastiCache
+     * will select 2 default subnets across AZs in your VPC. For all other Regions, if
+     * no subnet IDs are given then ElastiCache will select 3 default subnets across
+     * AZs in your default VPC.</p>
      */
     inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
 
     /**
-     * <p>If no subnet IDs are given and your VPC is in SFO, then ElastiCache will
-     * select 2 default subnets across AZs in your VPC. For all other Regions, if no
-     * subnet IDs are given then ElastiCache will select 3 default subnets across AZs
-     * in your default VPC.</p>
+     * <p>If no subnet IDs are given and your VPC is in us-west-1, then ElastiCache
+     * will select 2 default subnets across AZs in your VPC. For all other Regions, if
+     * no subnet IDs are given then ElastiCache will select 3 default subnets across
+     * AZs in your default VPC.</p>
      */
     inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
 
     /**
-     * <p>If no subnet IDs are given and your VPC is in SFO, then ElastiCache will
-     * select 2 default subnets across AZs in your VPC. For all other Regions, if no
-     * subnet IDs are given then ElastiCache will select 3 default subnets across AZs
-     * in your default VPC.</p>
+     * <p>If no subnet IDs are given and your VPC is in us-west-1, then ElastiCache
+     * will select 2 default subnets across AZs in your VPC. For all other Regions, if
+     * no subnet IDs are given then ElastiCache will select 3 default subnets across
+     * AZs in your default VPC.</p>
      */
     inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::move(value); }
 
     /**
-     * <p>If no subnet IDs are given and your VPC is in SFO, then ElastiCache will
-     * select 2 default subnets across AZs in your VPC. For all other Regions, if no
-     * subnet IDs are given then ElastiCache will select 3 default subnets across AZs
-     * in your default VPC.</p>
+     * <p>If no subnet IDs are given and your VPC is in us-west-1, then ElastiCache
+     * will select 2 default subnets across AZs in your VPC. For all other Regions, if
+     * no subnet IDs are given then ElastiCache will select 3 default subnets across
+     * AZs in your default VPC.</p>
      */
     inline ServerlessCache& WithSubnetIds(const Aws::Vector<Aws::String>& value) { SetSubnetIds(value); return *this;}
 
     /**
-     * <p>If no subnet IDs are given and your VPC is in SFO, then ElastiCache will
-     * select 2 default subnets across AZs in your VPC. For all other Regions, if no
-     * subnet IDs are given then ElastiCache will select 3 default subnets across AZs
-     * in your default VPC.</p>
+     * <p>If no subnet IDs are given and your VPC is in us-west-1, then ElastiCache
+     * will select 2 default subnets across AZs in your VPC. For all other Regions, if
+     * no subnet IDs are given then ElastiCache will select 3 default subnets across
+     * AZs in your default VPC.</p>
      */
     inline ServerlessCache& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(std::move(value)); return *this;}
 
     /**
-     * <p>If no subnet IDs are given and your VPC is in SFO, then ElastiCache will
-     * select 2 default subnets across AZs in your VPC. For all other Regions, if no
-     * subnet IDs are given then ElastiCache will select 3 default subnets across AZs
-     * in your default VPC.</p>
+     * <p>If no subnet IDs are given and your VPC is in us-west-1, then ElastiCache
+     * will select 2 default subnets across AZs in your VPC. For all other Regions, if
+     * no subnet IDs are given then ElastiCache will select 3 default subnets across
+     * AZs in your default VPC.</p>
      */
     inline ServerlessCache& AddSubnetIds(const Aws::String& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
     /**
-     * <p>If no subnet IDs are given and your VPC is in SFO, then ElastiCache will
-     * select 2 default subnets across AZs in your VPC. For all other Regions, if no
-     * subnet IDs are given then ElastiCache will select 3 default subnets across AZs
-     * in your default VPC.</p>
+     * <p>If no subnet IDs are given and your VPC is in us-west-1, then ElastiCache
+     * will select 2 default subnets across AZs in your VPC. For all other Regions, if
+     * no subnet IDs are given then ElastiCache will select 3 default subnets across
+     * AZs in your default VPC.</p>
      */
     inline ServerlessCache& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>If no subnet IDs are given and your VPC is in SFO, then ElastiCache will
-     * select 2 default subnets across AZs in your VPC. For all other Regions, if no
-     * subnet IDs are given then ElastiCache will select 3 default subnets across AZs
-     * in your default VPC.</p>
+     * <p>If no subnet IDs are given and your VPC is in us-west-1, then ElastiCache
+     * will select 2 default subnets across AZs in your VPC. For all other Regions, if
+     * no subnet IDs are given then ElastiCache will select 3 default subnets across
+     * AZs in your default VPC.</p>
      */
     inline ServerlessCache& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
