@@ -465,6 +465,49 @@ namespace Model
 
 
     /**
+     * <p>The current Entity Tag (ETag) associated with this resource. The entity tag
+     * can be used to safely make concurrent updates to the resource.</p>
+     */
+    inline const Aws::String& GetETag() const{ return m_eTag; }
+
+    /**
+     * <p>The current Entity Tag (ETag) associated with this resource. The entity tag
+     * can be used to safely make concurrent updates to the resource.</p>
+     */
+    inline void SetETag(const Aws::String& value) { m_eTag = value; }
+
+    /**
+     * <p>The current Entity Tag (ETag) associated with this resource. The entity tag
+     * can be used to safely make concurrent updates to the resource.</p>
+     */
+    inline void SetETag(Aws::String&& value) { m_eTag = std::move(value); }
+
+    /**
+     * <p>The current Entity Tag (ETag) associated with this resource. The entity tag
+     * can be used to safely make concurrent updates to the resource.</p>
+     */
+    inline void SetETag(const char* value) { m_eTag.assign(value); }
+
+    /**
+     * <p>The current Entity Tag (ETag) associated with this resource. The entity tag
+     * can be used to safely make concurrent updates to the resource.</p>
+     */
+    inline UpdateOriginEndpointResult& WithETag(const Aws::String& value) { SetETag(value); return *this;}
+
+    /**
+     * <p>The current Entity Tag (ETag) associated with this resource. The entity tag
+     * can be used to safely make concurrent updates to the resource.</p>
+     */
+    inline UpdateOriginEndpointResult& WithETag(Aws::String&& value) { SetETag(std::move(value)); return *this;}
+
+    /**
+     * <p>The current Entity Tag (ETag) associated with this resource. The entity tag
+     * can be used to safely make concurrent updates to the resource.</p>
+     */
+    inline UpdateOriginEndpointResult& WithETag(const char* value) { SetETag(value); return *this;}
+
+
+    /**
      * <p>The comma-separated list of tag key:value pairs assigned to the origin
      * endpoint.</p>
      */
@@ -583,6 +626,8 @@ namespace Model
     Aws::Vector<GetHlsManifestConfiguration> m_hlsManifests;
 
     Aws::Vector<GetLowLatencyHlsManifestConfiguration> m_lowLatencyHlsManifests;
+
+    Aws::String m_eTag;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
 

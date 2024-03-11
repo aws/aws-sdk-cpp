@@ -25,7 +25,7 @@ namespace Model
 
   /**
    * <p>Represents the information required for client programs to connect to a cache
-   * node.</p><p><h3>See Also:</h3>   <a
+   * node. This value is read-only.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/Endpoint">AWS
    * API Reference</a></p>
    */

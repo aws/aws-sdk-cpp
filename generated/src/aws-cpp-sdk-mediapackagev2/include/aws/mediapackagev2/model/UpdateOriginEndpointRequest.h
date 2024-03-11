@@ -36,6 +36,8 @@ namespace Model
 
     AWS_MEDIAPACKAGEV2_API Aws::String SerializePayload() const override;
 
+    AWS_MEDIAPACKAGEV2_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
 
     /**
      * <p>The name that describes the channel group. The name is the primary identifier
@@ -451,6 +453,63 @@ namespace Model
      */
     inline UpdateOriginEndpointRequest& AddLowLatencyHlsManifests(CreateLowLatencyHlsManifestConfiguration&& value) { m_lowLatencyHlsManifestsHasBeenSet = true; m_lowLatencyHlsManifests.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The expected current Entity Tag (ETag) for the resource. If the specified
+     * ETag does not match the resource's current entity tag, the update request will
+     * be rejected.</p>
+     */
+    inline const Aws::String& GetETag() const{ return m_eTag; }
+
+    /**
+     * <p>The expected current Entity Tag (ETag) for the resource. If the specified
+     * ETag does not match the resource's current entity tag, the update request will
+     * be rejected.</p>
+     */
+    inline bool ETagHasBeenSet() const { return m_eTagHasBeenSet; }
+
+    /**
+     * <p>The expected current Entity Tag (ETag) for the resource. If the specified
+     * ETag does not match the resource's current entity tag, the update request will
+     * be rejected.</p>
+     */
+    inline void SetETag(const Aws::String& value) { m_eTagHasBeenSet = true; m_eTag = value; }
+
+    /**
+     * <p>The expected current Entity Tag (ETag) for the resource. If the specified
+     * ETag does not match the resource's current entity tag, the update request will
+     * be rejected.</p>
+     */
+    inline void SetETag(Aws::String&& value) { m_eTagHasBeenSet = true; m_eTag = std::move(value); }
+
+    /**
+     * <p>The expected current Entity Tag (ETag) for the resource. If the specified
+     * ETag does not match the resource's current entity tag, the update request will
+     * be rejected.</p>
+     */
+    inline void SetETag(const char* value) { m_eTagHasBeenSet = true; m_eTag.assign(value); }
+
+    /**
+     * <p>The expected current Entity Tag (ETag) for the resource. If the specified
+     * ETag does not match the resource's current entity tag, the update request will
+     * be rejected.</p>
+     */
+    inline UpdateOriginEndpointRequest& WithETag(const Aws::String& value) { SetETag(value); return *this;}
+
+    /**
+     * <p>The expected current Entity Tag (ETag) for the resource. If the specified
+     * ETag does not match the resource's current entity tag, the update request will
+     * be rejected.</p>
+     */
+    inline UpdateOriginEndpointRequest& WithETag(Aws::String&& value) { SetETag(std::move(value)); return *this;}
+
+    /**
+     * <p>The expected current Entity Tag (ETag) for the resource. If the specified
+     * ETag does not match the resource's current entity tag, the update request will
+     * be rejected.</p>
+     */
+    inline UpdateOriginEndpointRequest& WithETag(const char* value) { SetETag(value); return *this;}
+
   private:
 
     Aws::String m_channelGroupName;
@@ -479,6 +538,9 @@ namespace Model
 
     Aws::Vector<CreateLowLatencyHlsManifestConfiguration> m_lowLatencyHlsManifests;
     bool m_lowLatencyHlsManifestsHasBeenSet = false;
+
+    Aws::String m_eTag;
+    bool m_eTagHasBeenSet = false;
   };
 
 } // namespace Model

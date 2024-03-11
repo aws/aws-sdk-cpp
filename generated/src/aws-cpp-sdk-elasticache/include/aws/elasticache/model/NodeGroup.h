@@ -198,32 +198,38 @@ namespace Model
 
 
     /**
-     * <p>The endpoint of the replica nodes in this node group (shard).</p>
+     * <p>The endpoint of the replica nodes in this node group (shard). This value is
+     * read-only.</p>
      */
     inline const Endpoint& GetReaderEndpoint() const{ return m_readerEndpoint; }
 
     /**
-     * <p>The endpoint of the replica nodes in this node group (shard).</p>
+     * <p>The endpoint of the replica nodes in this node group (shard). This value is
+     * read-only.</p>
      */
     inline bool ReaderEndpointHasBeenSet() const { return m_readerEndpointHasBeenSet; }
 
     /**
-     * <p>The endpoint of the replica nodes in this node group (shard).</p>
+     * <p>The endpoint of the replica nodes in this node group (shard). This value is
+     * read-only.</p>
      */
     inline void SetReaderEndpoint(const Endpoint& value) { m_readerEndpointHasBeenSet = true; m_readerEndpoint = value; }
 
     /**
-     * <p>The endpoint of the replica nodes in this node group (shard).</p>
+     * <p>The endpoint of the replica nodes in this node group (shard). This value is
+     * read-only.</p>
      */
     inline void SetReaderEndpoint(Endpoint&& value) { m_readerEndpointHasBeenSet = true; m_readerEndpoint = std::move(value); }
 
     /**
-     * <p>The endpoint of the replica nodes in this node group (shard).</p>
+     * <p>The endpoint of the replica nodes in this node group (shard). This value is
+     * read-only.</p>
      */
     inline NodeGroup& WithReaderEndpoint(const Endpoint& value) { SetReaderEndpoint(value); return *this;}
 
     /**
-     * <p>The endpoint of the replica nodes in this node group (shard).</p>
+     * <p>The endpoint of the replica nodes in this node group (shard). This value is
+     * read-only.</p>
      */
     inline NodeGroup& WithReaderEndpoint(Endpoint&& value) { SetReaderEndpoint(std::move(value)); return *this;}
 

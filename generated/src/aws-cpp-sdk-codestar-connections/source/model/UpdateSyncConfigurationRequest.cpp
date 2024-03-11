@@ -19,7 +19,11 @@ UpdateSyncConfigurationRequest::UpdateSyncConfigurationRequest() :
     m_resourceNameHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_syncType(SyncConfigurationType::NOT_SET),
-    m_syncTypeHasBeenSet(false)
+    m_syncTypeHasBeenSet(false),
+    m_publishDeploymentStatus(PublishDeploymentStatus::NOT_SET),
+    m_publishDeploymentStatusHasBeenSet(false),
+    m_triggerResourceUpdateOn(TriggerResourceUpdateOn::NOT_SET),
+    m_triggerResourceUpdateOnHasBeenSet(false)
 {
 }
 
@@ -60,6 +64,16 @@ Aws::String UpdateSyncConfigurationRequest::SerializePayload() const
   if(m_syncTypeHasBeenSet)
   {
    payload.WithString("SyncType", SyncConfigurationTypeMapper::GetNameForSyncConfigurationType(m_syncType));
+  }
+
+  if(m_publishDeploymentStatusHasBeenSet)
+  {
+   payload.WithString("PublishDeploymentStatus", PublishDeploymentStatusMapper::GetNameForPublishDeploymentStatus(m_publishDeploymentStatus));
+  }
+
+  if(m_triggerResourceUpdateOnHasBeenSet)
+  {
+   payload.WithString("TriggerResourceUpdateOn", TriggerResourceUpdateOnMapper::GetNameForTriggerResourceUpdateOn(m_triggerResourceUpdateOn));
   }
 
   return payload.View().WriteReadable();
