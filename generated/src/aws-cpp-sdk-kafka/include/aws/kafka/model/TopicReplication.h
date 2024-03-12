@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/kafka/Kafka_EXPORTS.h>
+#include <aws/kafka/model/ReplicationStartingPosition.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
@@ -107,6 +108,43 @@ namespace Model
      * <p>Whether to periodically check for new topics and partitions.</p>
      */
     inline TopicReplication& WithDetectAndCopyNewTopics(bool value) { SetDetectAndCopyNewTopics(value); return *this;}
+
+
+    /**
+     * <p>Configuration for specifying the position in the topics to start replicating
+     * from.</p>
+     */
+    inline const ReplicationStartingPosition& GetStartingPosition() const{ return m_startingPosition; }
+
+    /**
+     * <p>Configuration for specifying the position in the topics to start replicating
+     * from.</p>
+     */
+    inline bool StartingPositionHasBeenSet() const { return m_startingPositionHasBeenSet; }
+
+    /**
+     * <p>Configuration for specifying the position in the topics to start replicating
+     * from.</p>
+     */
+    inline void SetStartingPosition(const ReplicationStartingPosition& value) { m_startingPositionHasBeenSet = true; m_startingPosition = value; }
+
+    /**
+     * <p>Configuration for specifying the position in the topics to start replicating
+     * from.</p>
+     */
+    inline void SetStartingPosition(ReplicationStartingPosition&& value) { m_startingPositionHasBeenSet = true; m_startingPosition = std::move(value); }
+
+    /**
+     * <p>Configuration for specifying the position in the topics to start replicating
+     * from.</p>
+     */
+    inline TopicReplication& WithStartingPosition(const ReplicationStartingPosition& value) { SetStartingPosition(value); return *this;}
+
+    /**
+     * <p>Configuration for specifying the position in the topics to start replicating
+     * from.</p>
+     */
+    inline TopicReplication& WithStartingPosition(ReplicationStartingPosition&& value) { SetStartingPosition(std::move(value)); return *this;}
 
 
     /**
@@ -219,6 +257,9 @@ namespace Model
 
     bool m_detectAndCopyNewTopics;
     bool m_detectAndCopyNewTopicsHasBeenSet = false;
+
+    ReplicationStartingPosition m_startingPosition;
+    bool m_startingPositionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_topicsToExclude;
     bool m_topicsToExcludeHasBeenSet = false;

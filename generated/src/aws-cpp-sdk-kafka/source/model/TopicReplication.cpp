@@ -25,6 +25,7 @@ TopicReplication::TopicReplication() :
     m_copyTopicConfigurationsHasBeenSet(false),
     m_detectAndCopyNewTopics(false),
     m_detectAndCopyNewTopicsHasBeenSet(false),
+    m_startingPositionHasBeenSet(false),
     m_topicsToExcludeHasBeenSet(false),
     m_topicsToReplicateHasBeenSet(false)
 {
@@ -37,6 +38,7 @@ TopicReplication::TopicReplication(JsonView jsonValue) :
     m_copyTopicConfigurationsHasBeenSet(false),
     m_detectAndCopyNewTopics(false),
     m_detectAndCopyNewTopicsHasBeenSet(false),
+    m_startingPositionHasBeenSet(false),
     m_topicsToExcludeHasBeenSet(false),
     m_topicsToReplicateHasBeenSet(false)
 {
@@ -64,6 +66,13 @@ TopicReplication& TopicReplication::operator =(JsonView jsonValue)
     m_detectAndCopyNewTopics = jsonValue.GetBool("detectAndCopyNewTopics");
 
     m_detectAndCopyNewTopicsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("startingPosition"))
+  {
+    m_startingPosition = jsonValue.GetObject("startingPosition");
+
+    m_startingPositionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("topicsToExclude"))
@@ -108,6 +117,12 @@ JsonValue TopicReplication::Jsonize() const
   if(m_detectAndCopyNewTopicsHasBeenSet)
   {
    payload.WithBool("detectAndCopyNewTopics", m_detectAndCopyNewTopics);
+
+  }
+
+  if(m_startingPositionHasBeenSet)
+  {
+   payload.WithObject("startingPosition", m_startingPosition.Jsonize());
 
   }
 

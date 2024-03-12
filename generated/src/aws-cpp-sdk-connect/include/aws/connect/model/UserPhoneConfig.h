@@ -92,30 +92,46 @@ namespace Model
 
 
     /**
-     * <p>The After Call Work (ACW) timeout setting, in seconds.</p>  <p>When
-     * returned by a <code>SearchUsers</code> call,
-     * <code>AfterContactWorkTimeLimit</code> is returned in milliseconds. </p> 
+     * <p>The After Call Work (ACW) timeout setting, in seconds. This parameter has a
+     * minimum value of 0 and a maximum value of 2,000,000 seconds (24 days). Enter 0
+     * if you don't want to allocate a specific amount of ACW time. It essentially
+     * means an indefinite amount of time. When the conversation ends, ACW starts; the
+     * agent must choose Close contact to end ACW. </p>  <p>When returned by a
+     * <code>SearchUsers</code> call, <code>AfterContactWorkTimeLimit</code> is
+     * returned in milliseconds. </p> 
      */
     inline int GetAfterContactWorkTimeLimit() const{ return m_afterContactWorkTimeLimit; }
 
     /**
-     * <p>The After Call Work (ACW) timeout setting, in seconds.</p>  <p>When
-     * returned by a <code>SearchUsers</code> call,
-     * <code>AfterContactWorkTimeLimit</code> is returned in milliseconds. </p> 
+     * <p>The After Call Work (ACW) timeout setting, in seconds. This parameter has a
+     * minimum value of 0 and a maximum value of 2,000,000 seconds (24 days). Enter 0
+     * if you don't want to allocate a specific amount of ACW time. It essentially
+     * means an indefinite amount of time. When the conversation ends, ACW starts; the
+     * agent must choose Close contact to end ACW. </p>  <p>When returned by a
+     * <code>SearchUsers</code> call, <code>AfterContactWorkTimeLimit</code> is
+     * returned in milliseconds. </p> 
      */
     inline bool AfterContactWorkTimeLimitHasBeenSet() const { return m_afterContactWorkTimeLimitHasBeenSet; }
 
     /**
-     * <p>The After Call Work (ACW) timeout setting, in seconds.</p>  <p>When
-     * returned by a <code>SearchUsers</code> call,
-     * <code>AfterContactWorkTimeLimit</code> is returned in milliseconds. </p> 
+     * <p>The After Call Work (ACW) timeout setting, in seconds. This parameter has a
+     * minimum value of 0 and a maximum value of 2,000,000 seconds (24 days). Enter 0
+     * if you don't want to allocate a specific amount of ACW time. It essentially
+     * means an indefinite amount of time. When the conversation ends, ACW starts; the
+     * agent must choose Close contact to end ACW. </p>  <p>When returned by a
+     * <code>SearchUsers</code> call, <code>AfterContactWorkTimeLimit</code> is
+     * returned in milliseconds. </p> 
      */
     inline void SetAfterContactWorkTimeLimit(int value) { m_afterContactWorkTimeLimitHasBeenSet = true; m_afterContactWorkTimeLimit = value; }
 
     /**
-     * <p>The After Call Work (ACW) timeout setting, in seconds.</p>  <p>When
-     * returned by a <code>SearchUsers</code> call,
-     * <code>AfterContactWorkTimeLimit</code> is returned in milliseconds. </p> 
+     * <p>The After Call Work (ACW) timeout setting, in seconds. This parameter has a
+     * minimum value of 0 and a maximum value of 2,000,000 seconds (24 days). Enter 0
+     * if you don't want to allocate a specific amount of ACW time. It essentially
+     * means an indefinite amount of time. When the conversation ends, ACW starts; the
+     * agent must choose Close contact to end ACW. </p>  <p>When returned by a
+     * <code>SearchUsers</code> call, <code>AfterContactWorkTimeLimit</code> is
+     * returned in milliseconds. </p> 
      */
     inline UserPhoneConfig& WithAfterContactWorkTimeLimit(int value) { SetAfterContactWorkTimeLimit(value); return *this;}
 

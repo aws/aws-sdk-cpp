@@ -17,27 +17,11 @@ namespace Aws
 namespace EC2
 {
   /**
-   * <fullname>Amazon Elastic Compute Cloud</fullname> <p>Amazon Elastic Compute
-   * Cloud (Amazon EC2) provides secure and resizable computing capacity in the
-   * Amazon Web Services Cloud. Using Amazon EC2 eliminates the need to invest in
-   * hardware up front, so you can develop and deploy applications faster. Amazon
-   * Virtual Private Cloud (Amazon VPC) enables you to provision a logically isolated
-   * section of the Amazon Web Services Cloud where you can launch Amazon Web
-   * Services resources in a virtual network that you've defined. Amazon Elastic
-   * Block Store (Amazon EBS) provides block level storage volumes for use with EC2
-   * instances. EBS volumes are highly available and reliable storage volumes that
-   * can be attached to any running instance and used like a hard drive.</p> <p>To
-   * learn more, see the following resources:</p> <ul> <li> <p>Amazon EC2: <a
-   * href="http://aws.amazon.com/ec2">Amazon EC2 product page</a>, <a
-   * href="https://docs.aws.amazon.com/ec2/index.html">Amazon EC2 documentation</a>
-   * </p> </li> <li> <p>Amazon EBS: <a href="http://aws.amazon.com/ebs">Amazon EBS
-   * product page</a>, <a href="https://docs.aws.amazon.com/ebs/index.html">Amazon
-   * EBS documentation</a> </p> </li> <li> <p>Amazon VPC: <a
-   * href="http://aws.amazon.com/vpc">Amazon VPC product page</a>, <a
-   * href="https://docs.aws.amazon.com/vpc/index.html">Amazon VPC documentation</a>
-   * </p> </li> <li> <p>VPN: <a href="http://aws.amazon.com/vpn">VPN product
-   * page</a>, <a href="https://docs.aws.amazon.com/vpn/index.html">VPN
-   * documentation</a> </p> </li> </ul>
+   * <fullname>Amazon Elastic Compute Cloud</fullname> <p>You can access the features
+   * of Amazon Elastic Compute Cloud (Amazon EC2) programmatically. For more
+   * information, see the <a
+   * href="https://docs.aws.amazon.com/ec2/latest/devguide">Amazon EC2 Developer
+   * Guide</a>.</p>
    */
   class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient, public Aws::Client::ClientWithAsyncTemplateMethods<EC2Client>
   {
@@ -1215,11 +1199,10 @@ namespace EC2
          * instance with the specified device name.</p> <p>Encrypted EBS volumes must be
          * attached to instances that support Amazon EBS encryption. For more information,
          * see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-         * EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-         * <p>After you attach an EBS volume, you must make it available. For more
-         * information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-using-volumes.html">Make
+         * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html">Amazon
+         * EBS encryption</a> in the <i>Amazon EBS User Guide</i>.</p> <p>After you attach
+         * an EBS volume, you must make it available. For more information, see <a
+         * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-using-volumes.html">Make
          * an EBS volume available for use</a>.</p> <p>If a volume has an Amazon Web
          * Services Marketplace product code:</p> <ul> <li> <p>The volume can be attached
          * only to a stopped instance.</p> </li> <li> <p>Amazon Web Services Marketplace
@@ -1228,9 +1211,9 @@ namespace EC2
          * operating system of the instance must support the product. For example, you
          * can't detach a volume from a Windows instance and attach it to a Linux
          * instance.</p> </li> </ul> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html">Attach
-         * an Amazon EBS volume to an instance</a> in the <i>Amazon Elastic Compute Cloud
-         * User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-attaching-volume.html">Attach
+         * an Amazon EBS volume to an instance</a> in the <i>Amazon EBS User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachVolume">AWS
          * API Reference</a></p>
          */
@@ -1312,25 +1295,26 @@ namespace EC2
         }
 
         /**
-         * <p>Adds the specified outbound (egress) rules to a security group for use with a
-         * VPC.</p> <p>An outbound rule permits instances to send traffic to the specified
-         * IPv4 or IPv6 CIDR address ranges, or to the instances that are associated with
-         * the specified source security groups. When specifying an outbound rule for your
-         * security group in a VPC, the <code>IpPermissions</code> must include a
-         * destination for the traffic.</p> <p>You specify a protocol for each rule (for
-         * example, TCP). For the TCP and UDP protocols, you must also specify the
-         * destination port or port range. For the ICMP protocol, you must also specify the
-         * ICMP type and code. You can use -1 for the type or code to mean all types or all
-         * codes.</p> <p>Rule changes are propagated to affected instances as quickly as
-         * possible. However, a small delay might occur.</p> <p>For information about VPC
-         * security group quotas, see <a
+         * <p>Adds the specified outbound (egress) rules to a security group.</p> <p>An
+         * outbound rule permits instances to send traffic to the specified IPv4 or IPv6
+         * address ranges, the IP address ranges specified by a prefix list, or the
+         * instances that are associated with a source security group. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/vpc/latest/userguide/security-group-rules.html">Security
+         * group rules</a>.</p> <p>You must specify exactly one of the following
+         * destinations: an IPv4 or IPv6 address range, a prefix list, or a security group.
+         * You must specify a protocol for each rule (for example, TCP). If the protocol is
+         * TCP or UDP, you must also specify a port or port range. If the protocol is ICMP
+         * or ICMPv6, you must also specify the ICMP type and code.</p> <p>Rule changes are
+         * propagated to instances associated with the security group as quickly as
+         * possible. However, a small delay might occur.</p> <p>For examples of rules that
+         * you can add to security groups for specific access scenarios, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-rules-reference.html">Security
+         * group rules for different use cases</a> in the <i>Amazon EC2 User Guide</i>.</p>
+         * <p>For information about security group quotas, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon
-         * VPC quotas</a>.</p>  <p>If you want to reference a security group across
-         * VPCs attached to a transit gateway using the <a
-         * href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-transit-gateways.html#create-tgw">security
-         * group referencing feature</a>, note that you can only reference security groups
-         * for ingress rules. You cannot reference a security group for egress rules.</p>
-         * <p><h3>See Also:</h3>   <a
+         * VPC quotas</a> in the <i>Amazon VPC User Guide</i>.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AuthorizeSecurityGroupEgress">AWS
          * API Reference</a></p>
          */
@@ -1357,17 +1341,24 @@ namespace EC2
         /**
          * <p>Adds the specified inbound (ingress) rules to a security group.</p> <p>An
          * inbound rule permits instances to receive traffic from the specified IPv4 or
-         * IPv6 CIDR address range, or from the instances that are associated with the
-         * specified destination security groups. When specifying an inbound rule for your
-         * security group in a VPC, the <code>IpPermissions</code> must include a source
-         * for the traffic.</p> <p>You specify a protocol for each rule (for example, TCP).
-         * For TCP and UDP, you must also specify the destination port or port range. For
-         * ICMP/ICMPv6, you must also specify the ICMP/ICMPv6 type and code. You can use -1
-         * to mean all types or all codes.</p> <p>Rule changes are propagated to instances
-         * within the security group as quickly as possible. However, a small delay might
-         * occur.</p> <p>For more information about VPC security group quotas, see <a
+         * IPv6 address range, the IP address ranges that are specified by a prefix list,
+         * or the instances that are associated with a destination security group. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/vpc/latest/userguide/security-group-rules.html">Security
+         * group rules</a>.</p> <p>You must specify exactly one of the following sources:
+         * an IPv4 or IPv6 address range, a prefix list, or a security group. You must
+         * specify a protocol for each rule (for example, TCP). If the protocol is TCP or
+         * UDP, you must also specify a port or port range. If the protocol is ICMP or
+         * ICMPv6, you must also specify the ICMP/ICMPv6 type and code.</p> <p>Rule changes
+         * are propagated to instances associated with the security group as quickly as
+         * possible. However, a small delay might occur.</p> <p>For examples of rules that
+         * you can add to security groups for specific access scenarios, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-rules-reference.html">Security
+         * group rules for different use cases</a> in the <i>Amazon EC2 User Guide</i>.</p>
+         * <p>For more information about security group quotas, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon
-         * VPC quotas</a>.</p><p><h3>See Also:</h3>   <a
+         * VPC quotas</a> in the <i>Amazon VPC User Guide</i>.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AuthorizeSecurityGroupIngress">AWS
          * API Reference</a></p>
          */
@@ -1783,8 +1774,8 @@ namespace EC2
          * encrypted by default using the default encryption key for the Region, or a
          * different key that you specify in the request using <b>KmsKeyId</b>. Outposts do
          * not support unencrypted snapshots. For more information, <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami">
-         * Amazon EBS local snapshots on Outposts</a> in the <i>Amazon EC2 User
+         * href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#ami">
+         * Amazon EBS local snapshots on Outposts</a> in the <i>Amazon EBS User
          * Guide</i>.</p> <p>For more information about the prerequisites and limits when
          * copying an AMI, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html">Copy
@@ -1828,14 +1819,14 @@ namespace EC2
          * using the default encryption key for the Region, or a different key that you
          * specify in the request using <b>KmsKeyId</b>. Outposts do not support
          * unencrypted snapshots. For more information, <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami">
-         * Amazon EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute
-         * Cloud User Guide</i>.</p> <p>Snapshots created by copying another snapshot have
-         * an arbitrary volume ID that should not be used for any purpose.</p> <p>For more
+         * href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#ami">
+         * Amazon EBS local snapshots on Outposts</a> in the <i>Amazon EBS User
+         * Guide</i>.</p> <p>Snapshots created by copying another snapshot have an
+         * arbitrary volume ID that should not be used for any purpose.</p> <p>For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-copy-snapshot.html">Copy
-         * an Amazon EBS snapshot</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-copy-snapshot.html">Copy
+         * an Amazon EBS snapshot</a> in the <i>Amazon EBS User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CopySnapshot">AWS
          * API Reference</a></p>
          */
@@ -2172,43 +2163,43 @@ namespace EC2
         }
 
         /**
-         * <p>Creates a set of DHCP options for your VPC. After creating the set, you must
-         * associate it with the VPC, causing all existing and new instances that you
-         * launch in the VPC to use this set of DHCP options. The following are the
-         * individual DHCP options you can specify. For more information about the options,
-         * see <a href="http://www.ietf.org/rfc/rfc2132.txt">RFC 2132</a>.</p> <ul> <li>
-         * <p> <code>domain-name-servers</code> - The IP addresses of up to four domain
-         * name servers, or AmazonProvidedDNS. The default DHCP option set specifies
-         * AmazonProvidedDNS. If specifying more than one domain name server, specify the
-         * IP addresses in a single parameter, separated by commas. To have your instance
-         * receive a custom DNS hostname as specified in <code>domain-name</code>, you must
-         * set <code>domain-name-servers</code> to a custom DNS server.</p> </li> <li> <p>
+         * <p>Creates a custom set of DHCP options. After you create a DHCP option set, you
+         * associate it with a VPC. After you associate a DHCP option set with a VPC, all
+         * existing and newly launched instances in the VPC use this set of DHCP
+         * options.</p> <p>The following are the individual DHCP options you can specify.
+         * For more information, see <a
+         * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
+         * options sets</a> in the <i>Amazon VPC User Guide</i>.</p> <ul> <li> <p>
          * <code>domain-name</code> - If you're using AmazonProvidedDNS in
          * <code>us-east-1</code>, specify <code>ec2.internal</code>. If you're using
-         * AmazonProvidedDNS in another Region, specify
-         * <code>region.compute.internal</code> (for example,
-         * <code>ap-northeast-1.compute.internal</code>). Otherwise, specify a domain name
-         * (for example, <code>ExampleCompany.com</code>). This value is used to complete
-         * unqualified DNS hostnames. <b>Important</b>: Some Linux operating systems accept
-         * multiple domain names separated by spaces. However, Windows and other Linux
-         * operating systems treat the value as a single domain, which results in
-         * unexpected behavior. If your DHCP options set is associated with a VPC that has
-         * instances with multiple operating systems, specify only one domain name.</p>
-         * </li> <li> <p> <code>ntp-servers</code> - The IP addresses of up to four Network
-         * Time Protocol (NTP) servers.</p> </li> <li> <p>
+         * AmazonProvidedDNS in any other Region, specify
+         * <code>region.compute.internal</code>. Otherwise, specify a custom domain name.
+         * This value is used to complete unqualified DNS hostnames.</p> <p>Some Linux
+         * operating systems accept multiple domain names separated by spaces. However,
+         * Windows and other Linux operating systems treat the value as a single domain,
+         * which results in unexpected behavior. If your DHCP option set is associated with
+         * a VPC that has instances running operating systems that treat the value as a
+         * single domain, specify only one domain name.</p> </li> <li> <p>
+         * <code>domain-name-servers</code> - The IP addresses of up to four DNS servers,
+         * or AmazonProvidedDNS. To specify multiple domain name servers in a single
+         * parameter, separate the IP addresses using commas. To have your instances
+         * receive custom DNS hostnames as specified in <code>domain-name</code>, you must
+         * specify a custom DNS server.</p> </li> <li> <p> <code>ntp-servers</code> - The
+         * IP addresses of up to eight Network Time Protocol (NTP) servers (four IPv4
+         * addresses and four IPv6 addresses).</p> </li> <li> <p>
          * <code>netbios-name-servers</code> - The IP addresses of up to four NetBIOS name
          * servers.</p> </li> <li> <p> <code>netbios-node-type</code> - The NetBIOS node
-         * type (1, 2, 4, or 8). We recommend that you specify 2 (broadcast and multicast
-         * are not currently supported). For more information about these node types, see
-         * <a href="http://www.ietf.org/rfc/rfc2132.txt">RFC 2132</a>.</p> </li> </ul>
-         * <p>Your VPC automatically starts out with a set of DHCP options that includes
-         * only a DNS server that we provide (AmazonProvidedDNS). If you create a set of
-         * options, and if your VPC has an internet gateway, make sure to set the
-         * <code>domain-name-servers</code> option either to <code>AmazonProvidedDNS</code>
-         * or to a domain name server of your choice. For more information, see <a
-         * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
-         * options sets</a> in the <i>Amazon VPC User Guide</i>.</p><p><h3>See Also:</h3>  
-         * <a
+         * type (1, 2, 4, or 8). We recommend that you specify 2. Broadcast and multicast
+         * are not supported. For more information about NetBIOS node types, see <a
+         * href="http://www.ietf.org/rfc/rfc2132.txt">RFC 2132</a>.</p> </li> <li> <p>
+         * <code>ipv6-preferred-lease-time</code> - A value (in seconds, minutes, hours, or
+         * years) for how frequently a running instance with an IPv6 assigned to it goes
+         * through DHCPv6 lease renewal. Acceptable values are between 140 and 2147483647
+         * seconds (approximately 68 years). If no value is entered, the default lease time
+         * is 140 seconds. If you use long-term addressing for EC2 instances, you can
+         * increase the lease time and avoid frequent lease renewal requests. Lease renewal
+         * typically occurs when half of the lease time has elapsed.</p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateDhcpOptions">AWS
          * API Reference</a></p>
          */
@@ -3442,11 +3433,11 @@ namespace EC2
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tag
          * your Amazon EC2 resources</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AmazonEBS.html">Amazon
+         * href="https://docs.aws.amazon.com/ebs/latest/userguide/what-is-ebs.html">Amazon
          * Elastic Block Store</a> and <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-         * EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html">Amazon
+         * EBS encryption</a> in the <i>Amazon EBS User Guide</i>.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateSnapshot">AWS
          * API Reference</a></p>
          */
@@ -4241,15 +4232,15 @@ namespace EC2
          * Encrypted volumes must be attached to instances that support Amazon EBS
          * encryption. Volumes that are created from encrypted snapshots are also
          * automatically encrypted. For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-         * EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-         * <p>You can tag your volumes during creation. For more information, see <a
+         * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html">Amazon
+         * EBS encryption</a> in the <i>Amazon EBS User Guide</i>.</p> <p>You can tag your
+         * volumes during creation. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tag
          * your Amazon EC2 resources</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-volume.html">Create
-         * an Amazon EBS volume</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-creating-volume.html">Create
+         * an Amazon EBS volume</a> in the <i>Amazon EBS User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVolume">AWS
          * API Reference</a></p>
          */
@@ -5684,9 +5675,9 @@ namespace EC2
          * cannot delete a snapshot of the root device of an EBS volume used by a
          * registered AMI. You must first de-register the AMI before you can delete the
          * snapshot.</p> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-snapshot.html">Delete
-         * an Amazon EBS snapshot</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-deleting-snapshot.html">Delete
+         * an Amazon EBS snapshot</a> in the <i>Amazon EBS User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteSnapshot">AWS
          * API Reference</a></p>
          */
@@ -6312,9 +6303,9 @@ namespace EC2
          * <code>available</code> state (not attached to an instance).</p> <p>The volume
          * can remain in the <code>deleting</code> state for several minutes.</p> <p>For
          * more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-volume.html">Delete
-         * an Amazon EBS volume</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-deleting-volume.html">Delete
+         * an Amazon EBS volume</a> in the <i>Amazon EBS User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVolume">AWS
          * API Reference</a></p>
          */
@@ -6824,8 +6815,10 @@ namespace EC2
          * <p> <code>vpc-max-elastic-ips</code>: The maximum number of Elastic IP addresses
          * that you can allocate.</p> </li> <li> <p>
          * <code>vpc-max-security-groups-per-interface</code>: The maximum number of
-         * security groups that you can assign to a network interface.</p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * security groups that you can assign to a network interface.</p> </li> </ul>
+         *  <p>The order of the elements in the response, including those within
+         * nested structures, might vary. Applications should not assume the elements
+         * appear in a particular order.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAccountAttributes">AWS
          * API Reference</a></p>
          */
@@ -6989,8 +6982,10 @@ namespace EC2
          * more information about Availability Zones, Local Zones, and Wavelength Zones,
          * see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">Regions
-         * and zones</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * and zones</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> 
+         * <p>The order of the elements in the response, including those within nested
+         * structures, might vary. Applications should not assume the elements appear in a
+         * particular order.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAvailabilityZones">AWS
          * API Reference</a></p>
          */
@@ -9397,7 +9392,10 @@ namespace EC2
          * enabling and disabling Regions for your account, see <a
          * href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html">Managing
          * Amazon Web Services Regions</a> in the <i>Amazon Web Services General
-         * Reference</i>.</p><p><h3>See Also:</h3>   <a
+         * Reference</i>.</p>  <p>The order of the elements in the response,
+         * including those within nested structures, might vary. Applications should not
+         * assume the elements appear in a particular order.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeRegions">AWS
          * API Reference</a></p>
          */
@@ -9682,9 +9680,9 @@ namespace EC2
         }
 
         /**
-         * <p>Describes the VPCs on the other side of a VPC peering connection or the VPCs
-         * attached to a transit gateway that are referencing the security groups you've
-         * specified in this request.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the VPCs on the other side of a VPC peering connection that are
+         * referencing the security groups you've specified in this request.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSecurityGroupReferences">AWS
          * API Reference</a></p>
          */
@@ -9764,9 +9762,9 @@ namespace EC2
          * <p>Describes the specified attribute of the specified snapshot. You can specify
          * only one attribute at a time.</p> <p>For more information about EBS snapshots,
          * see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html">Amazon
-         * EBS snapshots</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-snapshots.html">Amazon
+         * EBS snapshots</a> in the <i>Amazon EBS User Guide</i>.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSnapshotAttribute">AWS
          * API Reference</a></p>
          */
@@ -9851,9 +9849,9 @@ namespace EC2
          * <p>To get the state of fast snapshot restores for a snapshot, use
          * <a>DescribeFastSnapshotRestores</a>.</p> <p>For more information about EBS
          * snapshots, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html">Amazon
-         * EBS snapshots</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-snapshots.html">Amazon
+         * EBS snapshots</a> in the <i>Amazon EBS User Guide</i>.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeSnapshots">AWS
          * API Reference</a></p>
          */
@@ -10064,12 +10062,9 @@ namespace EC2
         /**
          * <p>Describes the stale security group rules for security groups in a specified
          * VPC. Rules are stale when they reference a deleted security group in the same
-         * VPC, peered VPC, or in separate VPCs attached to a transit gateway (with <a
-         * href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-transit-gateways.html#create-tgw">security
-         * group referencing support</a> enabled). Rules can also be stale if they
-         * reference a security group in a peer VPC for which the VPC peering connection
-         * has been deleted or if they reference a security group in a VPC that has been
-         * detached from a transit gateway.</p><p><h3>See Also:</h3>   <a
+         * VPC or peered VPC. Rules can also be stale if they reference a security group in
+         * a peer VPC for which the VPC peering connection has been deleted.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeStaleSecurityGroups">AWS
          * API Reference</a></p>
          */
@@ -10164,7 +10159,9 @@ namespace EC2
          * information about tags, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tag
          * your Amazon EC2 resources</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Guide</i>.</p>  <p>The order of the elements in the response, including
+         * those within nested structures, might vary. Applications should not assume the
+         * elements appear in a particular order.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTags">AWS
          * API Reference</a></p>
          */
@@ -10688,9 +10685,9 @@ namespace EC2
          * <p>Describes the specified attribute of the specified volume. You can specify
          * only one attribute at a time.</p> <p>For more information about EBS volumes, see
          * <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html">Amazon
-         * EBS volumes</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volumes.html">Amazon
+         * EBS volumes</a> in the <i>Amazon EBS User Guide</i>.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVolumeAttribute">AWS
          * API Reference</a></p>
          */
@@ -10731,11 +10728,11 @@ namespace EC2
          * <code>impaired</code>. If the status is <code>insufficient-data</code>, then the
          * checks might still be taking place on your volume at the time. We recommend that
          * you retry the request. For more information about volume status, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-status.html">Monitor
-         * the status of your volumes</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p> <p> <i>Events</i>: Reflect the cause of a volume status and might
-         * require you to take action. For example, if your volume returns an
-         * <code>impaired</code> status, then the volume event might be
+         * href="https://docs.aws.amazon.com/ebs/latest/userguide/monitoring-volume-status.html">Monitor
+         * the status of your volumes</a> in the <i>Amazon EBS User Guide</i>.</p> <p>
+         * <i>Events</i>: Reflect the cause of a volume status and might require you to
+         * take action. For example, if your volume returns an <code>impaired</code>
+         * status, then the volume event might be
          * <code>potential-data-inconsistency</code>. This means that your volume has been
          * affected by an issue with the underlying host, has all I/O operations disabled,
          * and might have inconsistent data.</p> <p> <i>Actions</i>: Reflect the actions
@@ -10747,7 +10744,10 @@ namespace EC2
          * check the volume for data consistency.</p> <p>Volume status is based on the
          * volume status checks, and does not reflect the volume state. Therefore, volume
          * status does not indicate volumes in the <code>error</code> state (for example,
-         * when a volume is incapable of accepting I/O.)</p><p><h3>See Also:</h3>   <a
+         * when a volume is incapable of accepting I/O.)</p>  <p>The order of the
+         * elements in the response, including those within nested structures, might vary.
+         * Applications should not assume the elements appear in a particular order.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVolumeStatus">AWS
          * API Reference</a></p>
          */
@@ -10777,9 +10777,11 @@ namespace EC2
          * to make the list more manageable. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
          * <p>For more information about EBS volumes, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumes.html">Amazon
-         * EBS volumes</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volumes.html">Amazon
+         * EBS volumes</a> in the <i>Amazon EBS User Guide</i>.</p>  <p>The order of
+         * the elements in the response, including those within nested structures, might
+         * vary. Applications should not assume the elements appear in a particular
+         * order.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVolumes">AWS
          * API Reference</a></p>
          */
@@ -10812,9 +10814,9 @@ namespace EC2
          * information about CloudWatch Events, see the <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/">Amazon
          * CloudWatch Events User Guide</a>. For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-modifications.html">Monitor
-         * the progress of volume modifications</a> in the <i>Amazon Elastic Compute Cloud
-         * User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/ebs/latest/userguide/monitoring-volume-modifications.html">Monitor
+         * the progress of volume modifications</a> in the <i>Amazon EBS User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVolumesModifications">AWS
          * API Reference</a></p>
          */
@@ -11312,9 +11314,9 @@ namespace EC2
          * in the <code>UnsupportedOperationException</code> exception with the
          * <code>Unable to detach volume attached to ECS tasks</code> error message.</p>
          * <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-detaching-volume.html">Detach
-         * an Amazon EBS volume</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-detaching-volume.html">Detach
+         * an Amazon EBS volume</a> in the <i>Amazon EBS User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachVolume">AWS
          * API Reference</a></p>
          */
@@ -11429,9 +11431,9 @@ namespace EC2
          * encrypted volumes by enabling encryption when you create each volume.</p>
          * <p>Disabling encryption by default does not change the encryption status of your
          * existing volumes.</p> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-         * EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html">Amazon
+         * EBS encryption</a> in the <i>Amazon EBS User Guide</i>.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableEbsEncryptionByDefault">AWS
          * API Reference</a></p>
          */
@@ -11679,9 +11681,9 @@ namespace EC2
          * <code>block-all-sharing</code> mode, and you disable block public access, all
          * snapshots that were previously publicly shared are no longer treated as private
          * and they become publicly accessible again.</p> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-public-access-snapshots.html">
-         * Block public access for snapshots</a> in the <i>Amazon Elastic Compute Cloud
-         * User Guide</i> .</p> <p/><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/ebs/latest/userguide/block-public-access-snapshots.html">
+         * Block public access for snapshots</a> in the <i>Amazon EBS User Guide</i> .</p>
+         * <p/><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableSnapshotBlockPublicAccess">AWS
          * API Reference</a></p>
          */
@@ -12302,15 +12304,15 @@ namespace EC2
          * <p>After you enable encryption by default, the EBS volumes that you create are
          * always encrypted, either using the default KMS key or the KMS key that you
          * specified when you created each volume. For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-         * EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-         * <p>You can specify the default KMS key for encryption by default using
+         * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html">Amazon
+         * EBS encryption</a> in the <i>Amazon EBS User Guide</i>.</p> <p>You can specify
+         * the default KMS key for encryption by default using
          * <a>ModifyEbsDefaultKmsKeyId</a> or <a>ResetEbsDefaultKmsKeyId</a>.</p>
          * <p>Enabling encryption by default has no effect on the encryption status of your
          * existing volumes.</p> <p>After you enable encryption by default, you can no
          * longer launch instances using instance types that do not support encryption. For
          * more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
+         * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption-requirements.html#ebs-encryption_supported_instances">Supported
          * instance types</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableEbsEncryptionByDefault">AWS
          * API Reference</a></p>
@@ -12375,9 +12377,9 @@ namespace EC2
          * fast snapshot restores, use <a>DescribeFastSnapshotRestores</a>. To disable fast
          * snapshot restores, use <a>DisableFastSnapshotRestores</a>.</p> <p>For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-fast-snapshot-restore.html">Amazon
-         * EBS fast snapshot restore</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-fast-snapshot-restore.html">Amazon
+         * EBS fast snapshot restore</a> in the <i>Amazon EBS User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableFastSnapshotRestores">AWS
          * API Reference</a></p>
          */
@@ -12598,9 +12600,9 @@ namespace EC2
          * <code>block-new-sharing</code>, all snapshots that were previously publicly
          * shared are no longer treated as private and they become publicly accessible
          * again.</p> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-public-access-snapshots.html">
-         * Block public access for snapshots</a> in the <i>Amazon Elastic Compute Cloud
-         * User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/ebs/latest/userguide/block-public-access-snapshots.html">
+         * Block public access for snapshots</a> in the <i>Amazon EBS User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableSnapshotBlockPublicAccess">AWS
          * API Reference</a></p>
          */
@@ -13114,9 +13116,9 @@ namespace EC2
          * in this Region. You can change the default KMS key for encryption by default
          * using <a>ModifyEbsDefaultKmsKeyId</a> or <a>ResetEbsDefaultKmsKeyId</a>.</p>
          * <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-         * EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html">Amazon
+         * EBS encryption</a> in the <i>Amazon EBS User Guide</i>.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetEbsDefaultKmsKeyId">AWS
          * API Reference</a></p>
          */
@@ -13143,9 +13145,9 @@ namespace EC2
         /**
          * <p>Describes whether EBS encryption by default is enabled for your account in
          * the current Region.</p> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-         * EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html">Amazon
+         * EBS encryption</a> in the <i>Amazon EBS User Guide</i>.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetEbsEncryptionByDefault">AWS
          * API Reference</a></p>
          */
@@ -13837,9 +13839,9 @@ namespace EC2
         /**
          * <p>Gets the current state of <i>block public access for snapshots</i> setting
          * for the account and Region.</p> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-public-access-snapshots.html">
-         * Block public access for snapshots</a> in the <i>Amazon Elastic Compute Cloud
-         * User Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/ebs/latest/userguide/block-public-access-snapshots.html">
+         * Block public access for snapshots</a> in the <i>Amazon EBS User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetSnapshotBlockPublicAccessState">AWS
          * API Reference</a></p>
          */
@@ -14728,9 +14730,9 @@ namespace EC2
          * Amazon EBS does not support asymmetric KMS keys.</p> <p>If you delete or disable
          * the customer managed KMS key that you specified for use with encryption by
          * default, your instances will fail to launch.</p> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-         * EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html">Amazon
+         * EBS encryption</a> in the <i>Amazon EBS User Guide</i>.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyEbsDefaultKmsKeyId">AWS
          * API Reference</a></p>
          */
@@ -15595,9 +15597,9 @@ namespace EC2
          * Marketplace product codes cannot be made public. Snapshots encrypted with your
          * default KMS key cannot be shared with other accounts.</p> <p>For more
          * information about modifying snapshot permissions, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html">Share
-         * a snapshot</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-modifying-snapshot-permissions.html">Share
+         * a snapshot</a> in the <i>Amazon EBS User Guide</i>.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifySnapshotAttribute">AWS
          * API Reference</a></p>
          */
@@ -15626,9 +15628,9 @@ namespace EC2
          * to a full snapshot that includes all of the blocks of data that were written to
          * the volume at the time the snapshot was created, and moved from the standard
          * tier to the archive tier. For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshot-archive.html">Archive
-         * Amazon EBS snapshots</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshot-archive.html">Archive
+         * Amazon EBS snapshots</a> in the <i>Amazon EBS User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifySnapshotTier">AWS
          * API Reference</a></p>
          */
@@ -16088,23 +16090,19 @@ namespace EC2
          * current-generation EC2 instance type, you might be able to apply these changes
          * without stopping the instance or detaching the volume from it. For more
          * information about modifying EBS volumes, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modify-volume.html">Amazon
-         * EBS Elastic Volumes</a> (Linux instances) or <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-modify-volume.html">Amazon
-         * EBS Elastic Volumes</a> (Windows instances).</p> <p>When you complete a resize
-         * operation on your volume, you need to extend the volume's file-system size to
-         * take advantage of the new storage capacity. For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#recognize-expanded-volume-linux">Extend
-         * a Linux file system</a> or <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html#recognize-expanded-volume-windows">Extend
-         * a Windows file system</a>.</p> <p> You can use CloudWatch Events to check the
-         * status of a modification to an EBS volume. For information about CloudWatch
-         * Events, see the <a
-         * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/">Amazon
+         * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-modify-volume.html">Amazon
+         * EBS Elastic Volumes</a> in the <i>Amazon EBS User Guide</i>.</p> <p>When you
+         * complete a resize operation on your volume, you need to extend the volume's
+         * file-system size to take advantage of the new storage capacity. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/ebs/latest/userguide/recognize-expanded-volume-linux.html">Extend
+         * the file system</a>.</p> <p> You can use CloudWatch Events to check the status
+         * of a modification to an EBS volume. For information about CloudWatch Events, see
+         * the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/">Amazon
          * CloudWatch Events User Guide</a>. You can also track the status of a
          * modification using <a>DescribeVolumesModifications</a>. For information about
          * tracking status changes using either method, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-modifications.html">Monitor
+         * href="https://docs.aws.amazon.com/ebs/latest/userguide/monitoring-volume-modifications.html">Monitor
          * the progress of volume modifications</a>.</p> <p>With previous-generation
          * instance types, resizing an EBS volume might require detaching and reattaching
          * the volume or stopping and restarting the instance.</p> <p>After modifying a
@@ -17678,9 +17676,9 @@ namespace EC2
          * default KMS key to the Amazon Web Services managed KMS key, you can continue to
          * encrypt by a customer managed KMS key by specifying it when you create the
          * volume. For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-         * EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html">Amazon
+         * EBS encryption</a> in the <i>Amazon EBS User Guide</i>.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetEbsDefaultKmsKeyId">AWS
          * API Reference</a></p>
          */
@@ -17820,9 +17818,9 @@ namespace EC2
         /**
          * <p>Resets permission settings for the specified snapshot.</p> <p>For more
          * information about modifying snapshot permissions, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html">Share
-         * a snapshot</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-modifying-snapshot-permissions.html">Share
+         * a snapshot</a> in the <i>Amazon EBS User Guide</i>.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetSnapshotAttribute">AWS
          * API Reference</a></p>
          */
@@ -17930,8 +17928,8 @@ namespace EC2
 
         /**
          * <p>Restores a snapshot from the Recycle Bin. For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin-working-with-snaps.html#recycle-bin-restore-snaps">Restore
-         * snapshots from the Recycle Bin</a> in the <i>Amazon Elastic Compute Cloud User
+         * href="https://docs.aws.amazon.com/ebs/latest/userguide/recycle-bin-working-with-snaps.html#recycle-bin-restore-snaps">Restore
+         * snapshots from the Recycle Bin</a> in the <i>Amazon EBS User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RestoreSnapshotFromRecycleBin">AWS
          * API Reference</a></p>
@@ -17960,12 +17958,11 @@ namespace EC2
          * <p>Restores an archived Amazon EBS snapshot for use temporarily or permanently,
          * or modifies the restore period or restore type for a snapshot that was
          * previously temporarily restored.</p> <p>For more information see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/working-with-snapshot-archiving.html#restore-archived-snapshot">
+         * href="https://docs.aws.amazon.com/ebs/latest/userguide/working-with-snapshot-archiving.html#restore-archived-snapshot">
          * Restore an archived snapshot</a> and <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/working-with-snapshot-archiving.html#modify-temp-restore-period">
+         * href="https://docs.aws.amazon.com/ebs/latest/userguide/working-with-snapshot-archiving.html#modify-temp-restore-period">
          * modify the restore period or restore type for a temporarily restored
-         * snapshot</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * snapshot</a> in the <i>Amazon EBS User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RestoreSnapshotTier">AWS
          * API Reference</a></p>
          */

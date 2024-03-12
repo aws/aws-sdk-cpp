@@ -181,7 +181,7 @@ namespace Model
 
 
     /**
-     * <p>The document version you want to associate with the target(s). Can be a
+     * <p>The document version you want to associate with the targets. Can be a
      * specific version or the default version.</p>  <p>State Manager
      * doesn't support running associations that use a new version of a document if
      * that document is shared from another account. State Manager always runs the
@@ -194,7 +194,7 @@ namespace Model
     inline const Aws::String& GetDocumentVersion() const{ return m_documentVersion; }
 
     /**
-     * <p>The document version you want to associate with the target(s). Can be a
+     * <p>The document version you want to associate with the targets. Can be a
      * specific version or the default version.</p>  <p>State Manager
      * doesn't support running associations that use a new version of a document if
      * that document is shared from another account. State Manager always runs the
@@ -207,7 +207,7 @@ namespace Model
     inline bool DocumentVersionHasBeenSet() const { return m_documentVersionHasBeenSet; }
 
     /**
-     * <p>The document version you want to associate with the target(s). Can be a
+     * <p>The document version you want to associate with the targets. Can be a
      * specific version or the default version.</p>  <p>State Manager
      * doesn't support running associations that use a new version of a document if
      * that document is shared from another account. State Manager always runs the
@@ -220,7 +220,7 @@ namespace Model
     inline void SetDocumentVersion(const Aws::String& value) { m_documentVersionHasBeenSet = true; m_documentVersion = value; }
 
     /**
-     * <p>The document version you want to associate with the target(s). Can be a
+     * <p>The document version you want to associate with the targets. Can be a
      * specific version or the default version.</p>  <p>State Manager
      * doesn't support running associations that use a new version of a document if
      * that document is shared from another account. State Manager always runs the
@@ -233,7 +233,7 @@ namespace Model
     inline void SetDocumentVersion(Aws::String&& value) { m_documentVersionHasBeenSet = true; m_documentVersion = std::move(value); }
 
     /**
-     * <p>The document version you want to associate with the target(s). Can be a
+     * <p>The document version you want to associate with the targets. Can be a
      * specific version or the default version.</p>  <p>State Manager
      * doesn't support running associations that use a new version of a document if
      * that document is shared from another account. State Manager always runs the
@@ -246,7 +246,7 @@ namespace Model
     inline void SetDocumentVersion(const char* value) { m_documentVersionHasBeenSet = true; m_documentVersion.assign(value); }
 
     /**
-     * <p>The document version you want to associate with the target(s). Can be a
+     * <p>The document version you want to associate with the targets. Can be a
      * specific version or the default version.</p>  <p>State Manager
      * doesn't support running associations that use a new version of a document if
      * that document is shared from another account. State Manager always runs the
@@ -259,7 +259,7 @@ namespace Model
     inline CreateAssociationRequest& WithDocumentVersion(const Aws::String& value) { SetDocumentVersion(value); return *this;}
 
     /**
-     * <p>The document version you want to associate with the target(s). Can be a
+     * <p>The document version you want to associate with the targets. Can be a
      * specific version or the default version.</p>  <p>State Manager
      * doesn't support running associations that use a new version of a document if
      * that document is shared from another account. State Manager always runs the
@@ -272,7 +272,7 @@ namespace Model
     inline CreateAssociationRequest& WithDocumentVersion(Aws::String&& value) { SetDocumentVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The document version you want to associate with the target(s). Can be a
+     * <p>The document version you want to associate with the targets. Can be a
      * specific version or the default version.</p>  <p>State Manager
      * doesn't support running associations that use a new version of a document if
      * that document is shared from another account. State Manager always runs the
@@ -466,9 +466,9 @@ namespace Model
      * Amazon Web Services account by specifying the <code>InstanceIds</code> key with
      * a value of <code>*</code>. For more information about choosing targets for an
      * association, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html">Using
-     * targets and rate controls with State Manager associations</a> in the <i>Amazon
-     * Web Services Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html">About
+     * targets and rate controls in State Manager associations</a> in the <i>Amazon Web
+     * Services Systems Manager User Guide</i>.</p>
      */
     inline const Aws::Vector<Target>& GetTargets() const{ return m_targets; }
 
@@ -479,9 +479,9 @@ namespace Model
      * Amazon Web Services account by specifying the <code>InstanceIds</code> key with
      * a value of <code>*</code>. For more information about choosing targets for an
      * association, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html">Using
-     * targets and rate controls with State Manager associations</a> in the <i>Amazon
-     * Web Services Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html">About
+     * targets and rate controls in State Manager associations</a> in the <i>Amazon Web
+     * Services Systems Manager User Guide</i>.</p>
      */
     inline bool TargetsHasBeenSet() const { return m_targetsHasBeenSet; }
 
@@ -492,9 +492,9 @@ namespace Model
      * Amazon Web Services account by specifying the <code>InstanceIds</code> key with
      * a value of <code>*</code>. For more information about choosing targets for an
      * association, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html">Using
-     * targets and rate controls with State Manager associations</a> in the <i>Amazon
-     * Web Services Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html">About
+     * targets and rate controls in State Manager associations</a> in the <i>Amazon Web
+     * Services Systems Manager User Guide</i>.</p>
      */
     inline void SetTargets(const Aws::Vector<Target>& value) { m_targetsHasBeenSet = true; m_targets = value; }
 
@@ -505,9 +505,9 @@ namespace Model
      * Amazon Web Services account by specifying the <code>InstanceIds</code> key with
      * a value of <code>*</code>. For more information about choosing targets for an
      * association, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html">Using
-     * targets and rate controls with State Manager associations</a> in the <i>Amazon
-     * Web Services Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html">About
+     * targets and rate controls in State Manager associations</a> in the <i>Amazon Web
+     * Services Systems Manager User Guide</i>.</p>
      */
     inline void SetTargets(Aws::Vector<Target>&& value) { m_targetsHasBeenSet = true; m_targets = std::move(value); }
 
@@ -518,9 +518,9 @@ namespace Model
      * Amazon Web Services account by specifying the <code>InstanceIds</code> key with
      * a value of <code>*</code>. For more information about choosing targets for an
      * association, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html">Using
-     * targets and rate controls with State Manager associations</a> in the <i>Amazon
-     * Web Services Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html">About
+     * targets and rate controls in State Manager associations</a> in the <i>Amazon Web
+     * Services Systems Manager User Guide</i>.</p>
      */
     inline CreateAssociationRequest& WithTargets(const Aws::Vector<Target>& value) { SetTargets(value); return *this;}
 
@@ -531,9 +531,9 @@ namespace Model
      * Amazon Web Services account by specifying the <code>InstanceIds</code> key with
      * a value of <code>*</code>. For more information about choosing targets for an
      * association, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html">Using
-     * targets and rate controls with State Manager associations</a> in the <i>Amazon
-     * Web Services Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html">About
+     * targets and rate controls in State Manager associations</a> in the <i>Amazon Web
+     * Services Systems Manager User Guide</i>.</p>
      */
     inline CreateAssociationRequest& WithTargets(Aws::Vector<Target>&& value) { SetTargets(std::move(value)); return *this;}
 
@@ -544,9 +544,9 @@ namespace Model
      * Amazon Web Services account by specifying the <code>InstanceIds</code> key with
      * a value of <code>*</code>. For more information about choosing targets for an
      * association, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html">Using
-     * targets and rate controls with State Manager associations</a> in the <i>Amazon
-     * Web Services Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html">About
+     * targets and rate controls in State Manager associations</a> in the <i>Amazon Web
+     * Services Systems Manager User Guide</i>.</p>
      */
     inline CreateAssociationRequest& AddTargets(const Target& value) { m_targetsHasBeenSet = true; m_targets.push_back(value); return *this; }
 
@@ -557,50 +557,50 @@ namespace Model
      * Amazon Web Services account by specifying the <code>InstanceIds</code> key with
      * a value of <code>*</code>. For more information about choosing targets for an
      * association, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html">Using
-     * targets and rate controls with State Manager associations</a> in the <i>Amazon
-     * Web Services Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html">About
+     * targets and rate controls in State Manager associations</a> in the <i>Amazon Web
+     * Services Systems Manager User Guide</i>.</p>
      */
     inline CreateAssociationRequest& AddTargets(Target&& value) { m_targetsHasBeenSet = true; m_targets.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>A cron expression when the association will be applied to the target(s).</p>
+     * <p>A cron expression when the association will be applied to the targets.</p>
      */
     inline const Aws::String& GetScheduleExpression() const{ return m_scheduleExpression; }
 
     /**
-     * <p>A cron expression when the association will be applied to the target(s).</p>
+     * <p>A cron expression when the association will be applied to the targets.</p>
      */
     inline bool ScheduleExpressionHasBeenSet() const { return m_scheduleExpressionHasBeenSet; }
 
     /**
-     * <p>A cron expression when the association will be applied to the target(s).</p>
+     * <p>A cron expression when the association will be applied to the targets.</p>
      */
     inline void SetScheduleExpression(const Aws::String& value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression = value; }
 
     /**
-     * <p>A cron expression when the association will be applied to the target(s).</p>
+     * <p>A cron expression when the association will be applied to the targets.</p>
      */
     inline void SetScheduleExpression(Aws::String&& value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression = std::move(value); }
 
     /**
-     * <p>A cron expression when the association will be applied to the target(s).</p>
+     * <p>A cron expression when the association will be applied to the targets.</p>
      */
     inline void SetScheduleExpression(const char* value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression.assign(value); }
 
     /**
-     * <p>A cron expression when the association will be applied to the target(s).</p>
+     * <p>A cron expression when the association will be applied to the targets.</p>
      */
     inline CreateAssociationRequest& WithScheduleExpression(const Aws::String& value) { SetScheduleExpression(value); return *this;}
 
     /**
-     * <p>A cron expression when the association will be applied to the target(s).</p>
+     * <p>A cron expression when the association will be applied to the targets.</p>
      */
     inline CreateAssociationRequest& WithScheduleExpression(Aws::String&& value) { SetScheduleExpression(std::move(value)); return *this;}
 
     /**
-     * <p>A cron expression when the association will be applied to the target(s).</p>
+     * <p>A cron expression when the association will be applied to the targets.</p>
      */
     inline CreateAssociationRequest& WithScheduleExpression(const char* value) { SetScheduleExpression(value); return *this;}
 

@@ -94,11 +94,11 @@ namespace Model
      * encryption state to <code>true</code> depends on the volume origin (new or from
      * a snapshot), starting encryption state, ownership, and whether encryption by
      * default is enabled. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-by-default">Encryption
-     * by default</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>Encrypted Amazon EBS volumes must be attached to instances that support
-     * Amazon EBS encryption. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/work-with-ebs-encr.html#encryption-by-default">Encryption
+     * by default</a> in the <i>Amazon EBS User Guide</i>.</p> <p>Encrypted Amazon EBS
+     * volumes must be attached to instances that support Amazon EBS encryption. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption-requirements.html#ebs-encryption_supported_instances">Supported
      * instance types</a>.</p>
      */
     inline bool GetEncrypted() const{ return m_encrypted; }
@@ -108,11 +108,11 @@ namespace Model
      * encryption state to <code>true</code> depends on the volume origin (new or from
      * a snapshot), starting encryption state, ownership, and whether encryption by
      * default is enabled. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-by-default">Encryption
-     * by default</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>Encrypted Amazon EBS volumes must be attached to instances that support
-     * Amazon EBS encryption. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/work-with-ebs-encr.html#encryption-by-default">Encryption
+     * by default</a> in the <i>Amazon EBS User Guide</i>.</p> <p>Encrypted Amazon EBS
+     * volumes must be attached to instances that support Amazon EBS encryption. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption-requirements.html#ebs-encryption_supported_instances">Supported
      * instance types</a>.</p>
      */
     inline bool EncryptedHasBeenSet() const { return m_encryptedHasBeenSet; }
@@ -122,11 +122,11 @@ namespace Model
      * encryption state to <code>true</code> depends on the volume origin (new or from
      * a snapshot), starting encryption state, ownership, and whether encryption by
      * default is enabled. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-by-default">Encryption
-     * by default</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>Encrypted Amazon EBS volumes must be attached to instances that support
-     * Amazon EBS encryption. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/work-with-ebs-encr.html#encryption-by-default">Encryption
+     * by default</a> in the <i>Amazon EBS User Guide</i>.</p> <p>Encrypted Amazon EBS
+     * volumes must be attached to instances that support Amazon EBS encryption. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption-requirements.html#ebs-encryption_supported_instances">Supported
      * instance types</a>.</p>
      */
     inline void SetEncrypted(bool value) { m_encryptedHasBeenSet = true; m_encrypted = value; }
@@ -136,11 +136,11 @@ namespace Model
      * encryption state to <code>true</code> depends on the volume origin (new or from
      * a snapshot), starting encryption state, ownership, and whether encryption by
      * default is enabled. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-by-default">Encryption
-     * by default</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>Encrypted Amazon EBS volumes must be attached to instances that support
-     * Amazon EBS encryption. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/work-with-ebs-encr.html#encryption-by-default">Encryption
+     * by default</a> in the <i>Amazon EBS User Guide</i>.</p> <p>Encrypted Amazon EBS
+     * volumes must be attached to instances that support Amazon EBS encryption. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption-requirements.html#ebs-encryption_supported_instances">Supported
      * instance types</a>.</p>
      */
     inline CreateVolumeRequest& WithEncrypted(bool value) { SetEncrypted(value); return *this;}
@@ -512,9 +512,9 @@ namespace Model
      * </ul>  <p>Throughput Optimized HDD (<code>st1</code>) and Cold HDD
      * (<code>sc1</code>) volumes can't be used as boot volumes.</p> 
      * <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-     * EBS volume types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>Default: <code>gp2</code> </p>
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html">Amazon
+     * EBS volume types</a> in the <i>Amazon EBS User Guide</i>.</p> <p>Default:
+     * <code>gp2</code> </p>
      */
     inline const VolumeType& GetVolumeType() const{ return m_volumeType; }
 
@@ -527,9 +527,9 @@ namespace Model
      * </ul>  <p>Throughput Optimized HDD (<code>st1</code>) and Cold HDD
      * (<code>sc1</code>) volumes can't be used as boot volumes.</p> 
      * <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-     * EBS volume types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>Default: <code>gp2</code> </p>
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html">Amazon
+     * EBS volume types</a> in the <i>Amazon EBS User Guide</i>.</p> <p>Default:
+     * <code>gp2</code> </p>
      */
     inline bool VolumeTypeHasBeenSet() const { return m_volumeTypeHasBeenSet; }
 
@@ -542,9 +542,9 @@ namespace Model
      * </ul>  <p>Throughput Optimized HDD (<code>st1</code>) and Cold HDD
      * (<code>sc1</code>) volumes can't be used as boot volumes.</p> 
      * <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-     * EBS volume types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>Default: <code>gp2</code> </p>
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html">Amazon
+     * EBS volume types</a> in the <i>Amazon EBS User Guide</i>.</p> <p>Default:
+     * <code>gp2</code> </p>
      */
     inline void SetVolumeType(const VolumeType& value) { m_volumeTypeHasBeenSet = true; m_volumeType = value; }
 
@@ -557,9 +557,9 @@ namespace Model
      * </ul>  <p>Throughput Optimized HDD (<code>st1</code>) and Cold HDD
      * (<code>sc1</code>) volumes can't be used as boot volumes.</p> 
      * <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-     * EBS volume types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>Default: <code>gp2</code> </p>
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html">Amazon
+     * EBS volume types</a> in the <i>Amazon EBS User Guide</i>.</p> <p>Default:
+     * <code>gp2</code> </p>
      */
     inline void SetVolumeType(VolumeType&& value) { m_volumeTypeHasBeenSet = true; m_volumeType = std::move(value); }
 
@@ -572,9 +572,9 @@ namespace Model
      * </ul>  <p>Throughput Optimized HDD (<code>st1</code>) and Cold HDD
      * (<code>sc1</code>) volumes can't be used as boot volumes.</p> 
      * <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-     * EBS volume types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>Default: <code>gp2</code> </p>
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html">Amazon
+     * EBS volume types</a> in the <i>Amazon EBS User Guide</i>.</p> <p>Default:
+     * <code>gp2</code> </p>
      */
     inline CreateVolumeRequest& WithVolumeType(const VolumeType& value) { SetVolumeType(value); return *this;}
 
@@ -587,9 +587,9 @@ namespace Model
      * </ul>  <p>Throughput Optimized HDD (<code>st1</code>) and Cold HDD
      * (<code>sc1</code>) volumes can't be used as boot volumes.</p> 
      * <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-     * EBS volume types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>Default: <code>gp2</code> </p>
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html">Amazon
+     * EBS volume types</a> in the <i>Amazon EBS User Guide</i>.</p> <p>Default:
+     * <code>gp2</code> </p>
      */
     inline CreateVolumeRequest& WithVolumeType(VolumeType&& value) { SetVolumeType(std::move(value)); return *this;}
 
@@ -675,9 +675,8 @@ namespace Model
      * built on the Nitro System</a> in the same Availability Zone. This parameter is
      * supported with <code>io1</code> and <code>io2</code> volumes only. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volumes-multi.html">
-     * Amazon EBS Multi-Attach</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volumes-multi.html">
+     * Amazon EBS Multi-Attach</a> in the <i>Amazon EBS User Guide</i>.</p>
      */
     inline bool GetMultiAttachEnabled() const{ return m_multiAttachEnabled; }
 
@@ -688,9 +687,8 @@ namespace Model
      * built on the Nitro System</a> in the same Availability Zone. This parameter is
      * supported with <code>io1</code> and <code>io2</code> volumes only. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volumes-multi.html">
-     * Amazon EBS Multi-Attach</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volumes-multi.html">
+     * Amazon EBS Multi-Attach</a> in the <i>Amazon EBS User Guide</i>.</p>
      */
     inline bool MultiAttachEnabledHasBeenSet() const { return m_multiAttachEnabledHasBeenSet; }
 
@@ -701,9 +699,8 @@ namespace Model
      * built on the Nitro System</a> in the same Availability Zone. This parameter is
      * supported with <code>io1</code> and <code>io2</code> volumes only. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volumes-multi.html">
-     * Amazon EBS Multi-Attach</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volumes-multi.html">
+     * Amazon EBS Multi-Attach</a> in the <i>Amazon EBS User Guide</i>.</p>
      */
     inline void SetMultiAttachEnabled(bool value) { m_multiAttachEnabledHasBeenSet = true; m_multiAttachEnabled = value; }
 
@@ -714,9 +711,8 @@ namespace Model
      * built on the Nitro System</a> in the same Availability Zone. This parameter is
      * supported with <code>io1</code> and <code>io2</code> volumes only. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volumes-multi.html">
-     * Amazon EBS Multi-Attach</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volumes-multi.html">
+     * Amazon EBS Multi-Attach</a> in the <i>Amazon EBS User Guide</i>.</p>
      */
     inline CreateVolumeRequest& WithMultiAttachEnabled(bool value) { SetMultiAttachEnabled(value); return *this;}
 

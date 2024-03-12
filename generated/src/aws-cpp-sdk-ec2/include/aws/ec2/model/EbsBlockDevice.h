@@ -242,43 +242,43 @@ namespace Model
 
     /**
      * <p>The volume type. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-     * EBS volume types</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html">Amazon
+     * EBS volume types</a> in the <i>Amazon EBS User Guide</i>.</p>
      */
     inline const VolumeType& GetVolumeType() const{ return m_volumeType; }
 
     /**
      * <p>The volume type. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-     * EBS volume types</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html">Amazon
+     * EBS volume types</a> in the <i>Amazon EBS User Guide</i>.</p>
      */
     inline bool VolumeTypeHasBeenSet() const { return m_volumeTypeHasBeenSet; }
 
     /**
      * <p>The volume type. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-     * EBS volume types</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html">Amazon
+     * EBS volume types</a> in the <i>Amazon EBS User Guide</i>.</p>
      */
     inline void SetVolumeType(const VolumeType& value) { m_volumeTypeHasBeenSet = true; m_volumeType = value; }
 
     /**
      * <p>The volume type. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-     * EBS volume types</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html">Amazon
+     * EBS volume types</a> in the <i>Amazon EBS User Guide</i>.</p>
      */
     inline void SetVolumeType(VolumeType&& value) { m_volumeTypeHasBeenSet = true; m_volumeType = std::move(value); }
 
     /**
      * <p>The volume type. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-     * EBS volume types</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html">Amazon
+     * EBS volume types</a> in the <i>Amazon EBS User Guide</i>.</p>
      */
     inline EbsBlockDevice& WithVolumeType(const VolumeType& value) { SetVolumeType(value); return *this;}
 
     /**
      * <p>The volume type. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-     * EBS volume types</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html">Amazon
+     * EBS volume types</a> in the <i>Amazon EBS User Guide</i>.</p>
      */
     inline EbsBlockDevice& WithVolumeType(VolumeType&& value) { SetVolumeType(std::move(value)); return *this;}
 
@@ -472,12 +472,12 @@ namespace Model
      * state to <code>true</code> depends on the volume origin (new or from a
      * snapshot), starting encryption state, ownership, and whether encryption by
      * default is enabled. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-parameters">Amazon
-     * EBS encryption</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>In no case can
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html#encryption-parameters">Amazon
+     * EBS encryption</a> in the <i>Amazon EBS User Guide</i>.</p> <p>In no case can
      * you remove encryption from an encrypted volume.</p> <p>Encrypted volumes can
      * only be attached to instances that support Amazon EBS encryption. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption-requirements.html#ebs-encryption_supported_instances">Supported
      * instance types</a>.</p> <p>This parameter is not returned by
      * <a>DescribeImageAttribute</a>.</p> <p>For <a>CreateImage</a> and
      * <a>RegisterImage</a>, whether you can include this parameter, and the allowed
@@ -508,12 +508,12 @@ namespace Model
      * state to <code>true</code> depends on the volume origin (new or from a
      * snapshot), starting encryption state, ownership, and whether encryption by
      * default is enabled. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-parameters">Amazon
-     * EBS encryption</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>In no case can
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html#encryption-parameters">Amazon
+     * EBS encryption</a> in the <i>Amazon EBS User Guide</i>.</p> <p>In no case can
      * you remove encryption from an encrypted volume.</p> <p>Encrypted volumes can
      * only be attached to instances that support Amazon EBS encryption. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption-requirements.html#ebs-encryption_supported_instances">Supported
      * instance types</a>.</p> <p>This parameter is not returned by
      * <a>DescribeImageAttribute</a>.</p> <p>For <a>CreateImage</a> and
      * <a>RegisterImage</a>, whether you can include this parameter, and the allowed
@@ -544,12 +544,12 @@ namespace Model
      * state to <code>true</code> depends on the volume origin (new or from a
      * snapshot), starting encryption state, ownership, and whether encryption by
      * default is enabled. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-parameters">Amazon
-     * EBS encryption</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>In no case can
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html#encryption-parameters">Amazon
+     * EBS encryption</a> in the <i>Amazon EBS User Guide</i>.</p> <p>In no case can
      * you remove encryption from an encrypted volume.</p> <p>Encrypted volumes can
      * only be attached to instances that support Amazon EBS encryption. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption-requirements.html#ebs-encryption_supported_instances">Supported
      * instance types</a>.</p> <p>This parameter is not returned by
      * <a>DescribeImageAttribute</a>.</p> <p>For <a>CreateImage</a> and
      * <a>RegisterImage</a>, whether you can include this parameter, and the allowed
@@ -580,12 +580,12 @@ namespace Model
      * state to <code>true</code> depends on the volume origin (new or from a
      * snapshot), starting encryption state, ownership, and whether encryption by
      * default is enabled. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-parameters">Amazon
-     * EBS encryption</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>In no case can
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html#encryption-parameters">Amazon
+     * EBS encryption</a> in the <i>Amazon EBS User Guide</i>.</p> <p>In no case can
      * you remove encryption from an encrypted volume.</p> <p>Encrypted volumes can
      * only be attached to instances that support Amazon EBS encryption. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances">Supported
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption-requirements.html#ebs-encryption_supported_instances">Supported
      * instance types</a>.</p> <p>This parameter is not returned by
      * <a>DescribeImageAttribute</a>.</p> <p>For <a>CreateImage</a> and
      * <a>RegisterImage</a>, whether you can include this parameter, and the allowed

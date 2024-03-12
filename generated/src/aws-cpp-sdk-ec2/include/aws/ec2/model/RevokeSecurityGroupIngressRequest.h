@@ -89,29 +89,25 @@ namespace Model
 
     /**
      * <p>If the protocol is TCP or UDP, this is the start of the port range. If the
-     * protocol is ICMP, this is the type number. A value of -1 indicates all ICMP
-     * types.</p>
+     * protocol is ICMP, this is the ICMP type or -1 (all ICMP types).</p>
      */
     inline int GetFromPort() const{ return m_fromPort; }
 
     /**
      * <p>If the protocol is TCP or UDP, this is the start of the port range. If the
-     * protocol is ICMP, this is the type number. A value of -1 indicates all ICMP
-     * types.</p>
+     * protocol is ICMP, this is the ICMP type or -1 (all ICMP types).</p>
      */
     inline bool FromPortHasBeenSet() const { return m_fromPortHasBeenSet; }
 
     /**
      * <p>If the protocol is TCP or UDP, this is the start of the port range. If the
-     * protocol is ICMP, this is the type number. A value of -1 indicates all ICMP
-     * types.</p>
+     * protocol is ICMP, this is the ICMP type or -1 (all ICMP types).</p>
      */
     inline void SetFromPort(int value) { m_fromPortHasBeenSet = true; m_fromPort = value; }
 
     /**
      * <p>If the protocol is TCP or UDP, this is the start of the port range. If the
-     * protocol is ICMP, this is the type number. A value of -1 indicates all ICMP
-     * types.</p>
+     * protocol is ICMP, this is the ICMP type or -1 (all ICMP types).</p>
      */
     inline RevokeSecurityGroupIngressRequest& WithFromPort(int value) { SetFromPort(value); return *this;}
 
@@ -444,25 +440,25 @@ namespace Model
 
     /**
      * <p>If the protocol is TCP or UDP, this is the end of the port range. If the
-     * protocol is ICMP, this is the code. A value of -1 indicates all ICMP codes.</p>
+     * protocol is ICMP, this is the ICMP code or -1 (all ICMP codes).</p>
      */
     inline int GetToPort() const{ return m_toPort; }
 
     /**
      * <p>If the protocol is TCP or UDP, this is the end of the port range. If the
-     * protocol is ICMP, this is the code. A value of -1 indicates all ICMP codes.</p>
+     * protocol is ICMP, this is the ICMP code or -1 (all ICMP codes).</p>
      */
     inline bool ToPortHasBeenSet() const { return m_toPortHasBeenSet; }
 
     /**
      * <p>If the protocol is TCP or UDP, this is the end of the port range. If the
-     * protocol is ICMP, this is the code. A value of -1 indicates all ICMP codes.</p>
+     * protocol is ICMP, this is the ICMP code or -1 (all ICMP codes).</p>
      */
     inline void SetToPort(int value) { m_toPortHasBeenSet = true; m_toPort = value; }
 
     /**
      * <p>If the protocol is TCP or UDP, this is the end of the port range. If the
-     * protocol is ICMP, this is the code. A value of -1 indicates all ICMP codes.</p>
+     * protocol is ICMP, this is the ICMP code or -1 (all ICMP codes).</p>
      */
     inline RevokeSecurityGroupIngressRequest& WithToPort(int value) { SetToPort(value); return *this;}
 

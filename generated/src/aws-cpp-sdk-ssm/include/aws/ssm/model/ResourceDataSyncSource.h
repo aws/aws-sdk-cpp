@@ -220,9 +220,9 @@ namespace Model
      * selected Amazon Web Services Regions for all Amazon Web Services accounts in
      * your organization (or in the selected organization units). For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resouce-data-sync-multiple-accounts-and-regions.html">About
-     * multiple account and Region resource data syncs</a> in the <i>Amazon Web
-     * Services Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resource-data-sync.html">Setting
+     * up Systems Manager Explorer to display data from multiple accounts and
+     * Regions</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
      */
     inline bool GetEnableAllOpsDataSources() const{ return m_enableAllOpsDataSources; }
 
@@ -232,9 +232,9 @@ namespace Model
      * selected Amazon Web Services Regions for all Amazon Web Services accounts in
      * your organization (or in the selected organization units). For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resouce-data-sync-multiple-accounts-and-regions.html">About
-     * multiple account and Region resource data syncs</a> in the <i>Amazon Web
-     * Services Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resource-data-sync.html">Setting
+     * up Systems Manager Explorer to display data from multiple accounts and
+     * Regions</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
      */
     inline bool EnableAllOpsDataSourcesHasBeenSet() const { return m_enableAllOpsDataSourcesHasBeenSet; }
 
@@ -244,9 +244,9 @@ namespace Model
      * selected Amazon Web Services Regions for all Amazon Web Services accounts in
      * your organization (or in the selected organization units). For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resouce-data-sync-multiple-accounts-and-regions.html">About
-     * multiple account and Region resource data syncs</a> in the <i>Amazon Web
-     * Services Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resource-data-sync.html">Setting
+     * up Systems Manager Explorer to display data from multiple accounts and
+     * Regions</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
      */
     inline void SetEnableAllOpsDataSources(bool value) { m_enableAllOpsDataSourcesHasBeenSet = true; m_enableAllOpsDataSources = value; }
 
@@ -256,9 +256,9 @@ namespace Model
      * selected Amazon Web Services Regions for all Amazon Web Services accounts in
      * your organization (or in the selected organization units). For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resouce-data-sync-multiple-accounts-and-regions.html">About
-     * multiple account and Region resource data syncs</a> in the <i>Amazon Web
-     * Services Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resource-data-sync.html">Setting
+     * up Systems Manager Explorer to display data from multiple accounts and
+     * Regions</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
      */
     inline ResourceDataSyncSource& WithEnableAllOpsDataSources(bool value) { SetEnableAllOpsDataSources(value); return *this;}
 

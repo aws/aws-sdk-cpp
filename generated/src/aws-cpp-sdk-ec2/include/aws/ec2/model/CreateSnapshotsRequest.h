@@ -128,9 +128,9 @@ namespace Model
      * from an instance on an Outpost and store the snapshots on an Outpost, specify
      * the ARN of the destination Outpost. The snapshots must be created on the same
      * Outpost as the instance.</p> </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#create-multivol-snapshot">
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#create-multivol-snapshot">
      * Create multi-volume local snapshots from instances on an Outpost</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * <i>Amazon EBS User Guide</i>.</p>
      */
     inline const Aws::String& GetOutpostArn() const{ return m_outpostArn; }
 
@@ -144,9 +144,9 @@ namespace Model
      * from an instance on an Outpost and store the snapshots on an Outpost, specify
      * the ARN of the destination Outpost. The snapshots must be created on the same
      * Outpost as the instance.</p> </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#create-multivol-snapshot">
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#create-multivol-snapshot">
      * Create multi-volume local snapshots from instances on an Outpost</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * <i>Amazon EBS User Guide</i>.</p>
      */
     inline bool OutpostArnHasBeenSet() const { return m_outpostArnHasBeenSet; }
 
@@ -160,9 +160,9 @@ namespace Model
      * from an instance on an Outpost and store the snapshots on an Outpost, specify
      * the ARN of the destination Outpost. The snapshots must be created on the same
      * Outpost as the instance.</p> </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#create-multivol-snapshot">
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#create-multivol-snapshot">
      * Create multi-volume local snapshots from instances on an Outpost</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * <i>Amazon EBS User Guide</i>.</p>
      */
     inline void SetOutpostArn(const Aws::String& value) { m_outpostArnHasBeenSet = true; m_outpostArn = value; }
 
@@ -176,9 +176,9 @@ namespace Model
      * from an instance on an Outpost and store the snapshots on an Outpost, specify
      * the ARN of the destination Outpost. The snapshots must be created on the same
      * Outpost as the instance.</p> </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#create-multivol-snapshot">
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#create-multivol-snapshot">
      * Create multi-volume local snapshots from instances on an Outpost</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * <i>Amazon EBS User Guide</i>.</p>
      */
     inline void SetOutpostArn(Aws::String&& value) { m_outpostArnHasBeenSet = true; m_outpostArn = std::move(value); }
 
@@ -192,9 +192,9 @@ namespace Model
      * from an instance on an Outpost and store the snapshots on an Outpost, specify
      * the ARN of the destination Outpost. The snapshots must be created on the same
      * Outpost as the instance.</p> </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#create-multivol-snapshot">
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#create-multivol-snapshot">
      * Create multi-volume local snapshots from instances on an Outpost</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * <i>Amazon EBS User Guide</i>.</p>
      */
     inline void SetOutpostArn(const char* value) { m_outpostArnHasBeenSet = true; m_outpostArn.assign(value); }
 
@@ -208,9 +208,9 @@ namespace Model
      * from an instance on an Outpost and store the snapshots on an Outpost, specify
      * the ARN of the destination Outpost. The snapshots must be created on the same
      * Outpost as the instance.</p> </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#create-multivol-snapshot">
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#create-multivol-snapshot">
      * Create multi-volume local snapshots from instances on an Outpost</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * <i>Amazon EBS User Guide</i>.</p>
      */
     inline CreateSnapshotsRequest& WithOutpostArn(const Aws::String& value) { SetOutpostArn(value); return *this;}
 
@@ -224,9 +224,9 @@ namespace Model
      * from an instance on an Outpost and store the snapshots on an Outpost, specify
      * the ARN of the destination Outpost. The snapshots must be created on the same
      * Outpost as the instance.</p> </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#create-multivol-snapshot">
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#create-multivol-snapshot">
      * Create multi-volume local snapshots from instances on an Outpost</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * <i>Amazon EBS User Guide</i>.</p>
      */
     inline CreateSnapshotsRequest& WithOutpostArn(Aws::String&& value) { SetOutpostArn(std::move(value)); return *this;}
 
@@ -240,9 +240,9 @@ namespace Model
      * from an instance on an Outpost and store the snapshots on an Outpost, specify
      * the ARN of the destination Outpost. The snapshots must be created on the same
      * Outpost as the instance.</p> </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#create-multivol-snapshot">
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#create-multivol-snapshot">
      * Create multi-volume local snapshots from instances on an Outpost</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * <i>Amazon EBS User Guide</i>.</p>
      */
     inline CreateSnapshotsRequest& WithOutpostArn(const char* value) { SetOutpostArn(value); return *this;}
 

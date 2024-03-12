@@ -174,28 +174,32 @@ namespace Model
     /**
      * <p>The desired HTTP PUT response hop limit for instance metadata requests. The
      * larger the number, the further instance metadata requests can travel.</p>
-     * <p>Default: 1</p> <p>Possible values: Integers from 1 to 64</p>
+     * <p>Default: <code>1</code> </p> <p>Possible values: Integers from <code>1</code>
+     * to <code>64</code> </p>
      */
     inline int GetHttpPutResponseHopLimit() const{ return m_httpPutResponseHopLimit; }
 
     /**
      * <p>The desired HTTP PUT response hop limit for instance metadata requests. The
      * larger the number, the further instance metadata requests can travel.</p>
-     * <p>Default: 1</p> <p>Possible values: Integers from 1 to 64</p>
+     * <p>Default: <code>1</code> </p> <p>Possible values: Integers from <code>1</code>
+     * to <code>64</code> </p>
      */
     inline bool HttpPutResponseHopLimitHasBeenSet() const { return m_httpPutResponseHopLimitHasBeenSet; }
 
     /**
      * <p>The desired HTTP PUT response hop limit for instance metadata requests. The
      * larger the number, the further instance metadata requests can travel.</p>
-     * <p>Default: 1</p> <p>Possible values: Integers from 1 to 64</p>
+     * <p>Default: <code>1</code> </p> <p>Possible values: Integers from <code>1</code>
+     * to <code>64</code> </p>
      */
     inline void SetHttpPutResponseHopLimit(int value) { m_httpPutResponseHopLimitHasBeenSet = true; m_httpPutResponseHopLimit = value; }
 
     /**
      * <p>The desired HTTP PUT response hop limit for instance metadata requests. The
      * larger the number, the further instance metadata requests can travel.</p>
-     * <p>Default: 1</p> <p>Possible values: Integers from 1 to 64</p>
+     * <p>Default: <code>1</code> </p> <p>Possible values: Integers from <code>1</code>
+     * to <code>64</code> </p>
      */
     inline InstanceMetadataOptionsResponse& WithHttpPutResponseHopLimit(int value) { SetHttpPutResponseHopLimit(value); return *this;}
 
@@ -245,37 +249,37 @@ namespace Model
 
     /**
      * <p>Indicates whether the IPv6 endpoint for the instance metadata service is
-     * enabled or disabled.</p>
+     * enabled or disabled.</p> <p>Default: <code>disabled</code> </p>
      */
     inline const InstanceMetadataProtocolState& GetHttpProtocolIpv6() const{ return m_httpProtocolIpv6; }
 
     /**
      * <p>Indicates whether the IPv6 endpoint for the instance metadata service is
-     * enabled or disabled.</p>
+     * enabled or disabled.</p> <p>Default: <code>disabled</code> </p>
      */
     inline bool HttpProtocolIpv6HasBeenSet() const { return m_httpProtocolIpv6HasBeenSet; }
 
     /**
      * <p>Indicates whether the IPv6 endpoint for the instance metadata service is
-     * enabled or disabled.</p>
+     * enabled or disabled.</p> <p>Default: <code>disabled</code> </p>
      */
     inline void SetHttpProtocolIpv6(const InstanceMetadataProtocolState& value) { m_httpProtocolIpv6HasBeenSet = true; m_httpProtocolIpv6 = value; }
 
     /**
      * <p>Indicates whether the IPv6 endpoint for the instance metadata service is
-     * enabled or disabled.</p>
+     * enabled or disabled.</p> <p>Default: <code>disabled</code> </p>
      */
     inline void SetHttpProtocolIpv6(InstanceMetadataProtocolState&& value) { m_httpProtocolIpv6HasBeenSet = true; m_httpProtocolIpv6 = std::move(value); }
 
     /**
      * <p>Indicates whether the IPv6 endpoint for the instance metadata service is
-     * enabled or disabled.</p>
+     * enabled or disabled.</p> <p>Default: <code>disabled</code> </p>
      */
     inline InstanceMetadataOptionsResponse& WithHttpProtocolIpv6(const InstanceMetadataProtocolState& value) { SetHttpProtocolIpv6(value); return *this;}
 
     /**
      * <p>Indicates whether the IPv6 endpoint for the instance metadata service is
-     * enabled or disabled.</p>
+     * enabled or disabled.</p> <p>Default: <code>disabled</code> </p>
      */
     inline InstanceMetadataOptionsResponse& WithHttpProtocolIpv6(InstanceMetadataProtocolState&& value) { SetHttpProtocolIpv6(std::move(value)); return *this;}
 

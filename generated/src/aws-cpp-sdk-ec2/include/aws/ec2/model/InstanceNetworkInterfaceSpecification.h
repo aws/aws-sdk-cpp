@@ -51,12 +51,11 @@ namespace Model
      * in a VPC. The public IP address can only be assigned to a network interface for
      * eth0, and can only be assigned to a new network interface, not an existing one.
      * You cannot specify more than one network interface in the request. If launching
-     * into a default subnet, the default value is <code>true</code>.</p> <p>Starting
-     * on February 1, 2024, Amazon Web Services will charge for all public IPv4
-     * addresses, including public IPv4 addresses associated with running instances and
-     * Elastic IP addresses. For more information, see the <i>Public IPv4 Address</i>
-     * tab on the <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing
-     * page</a>.</p>
+     * into a default subnet, the default value is <code>true</code>.</p> <p>Amazon Web
+     * Services charges for all public IPv4 addresses, including public IPv4 addresses
+     * associated with running instances and Elastic IP addresses. For more
+     * information, see the <i>Public IPv4 Address</i> tab on the <a
+     * href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing page</a>.</p>
      */
     inline bool GetAssociatePublicIpAddress() const{ return m_associatePublicIpAddress; }
 
@@ -65,12 +64,11 @@ namespace Model
      * in a VPC. The public IP address can only be assigned to a network interface for
      * eth0, and can only be assigned to a new network interface, not an existing one.
      * You cannot specify more than one network interface in the request. If launching
-     * into a default subnet, the default value is <code>true</code>.</p> <p>Starting
-     * on February 1, 2024, Amazon Web Services will charge for all public IPv4
-     * addresses, including public IPv4 addresses associated with running instances and
-     * Elastic IP addresses. For more information, see the <i>Public IPv4 Address</i>
-     * tab on the <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing
-     * page</a>.</p>
+     * into a default subnet, the default value is <code>true</code>.</p> <p>Amazon Web
+     * Services charges for all public IPv4 addresses, including public IPv4 addresses
+     * associated with running instances and Elastic IP addresses. For more
+     * information, see the <i>Public IPv4 Address</i> tab on the <a
+     * href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing page</a>.</p>
      */
     inline bool AssociatePublicIpAddressHasBeenSet() const { return m_associatePublicIpAddressHasBeenSet; }
 
@@ -79,12 +77,11 @@ namespace Model
      * in a VPC. The public IP address can only be assigned to a network interface for
      * eth0, and can only be assigned to a new network interface, not an existing one.
      * You cannot specify more than one network interface in the request. If launching
-     * into a default subnet, the default value is <code>true</code>.</p> <p>Starting
-     * on February 1, 2024, Amazon Web Services will charge for all public IPv4
-     * addresses, including public IPv4 addresses associated with running instances and
-     * Elastic IP addresses. For more information, see the <i>Public IPv4 Address</i>
-     * tab on the <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing
-     * page</a>.</p>
+     * into a default subnet, the default value is <code>true</code>.</p> <p>Amazon Web
+     * Services charges for all public IPv4 addresses, including public IPv4 addresses
+     * associated with running instances and Elastic IP addresses. For more
+     * information, see the <i>Public IPv4 Address</i> tab on the <a
+     * href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing page</a>.</p>
      */
     inline void SetAssociatePublicIpAddress(bool value) { m_associatePublicIpAddressHasBeenSet = true; m_associatePublicIpAddress = value; }
 
@@ -93,12 +90,11 @@ namespace Model
      * in a VPC. The public IP address can only be assigned to a network interface for
      * eth0, and can only be assigned to a new network interface, not an existing one.
      * You cannot specify more than one network interface in the request. If launching
-     * into a default subnet, the default value is <code>true</code>.</p> <p>Starting
-     * on February 1, 2024, Amazon Web Services will charge for all public IPv4
-     * addresses, including public IPv4 addresses associated with running instances and
-     * Elastic IP addresses. For more information, see the <i>Public IPv4 Address</i>
-     * tab on the <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing
-     * page</a>.</p>
+     * into a default subnet, the default value is <code>true</code>.</p> <p>Amazon Web
+     * Services charges for all public IPv4 addresses, including public IPv4 addresses
+     * associated with running instances and Elastic IP addresses. For more
+     * information, see the <i>Public IPv4 Address</i> tab on the <a
+     * href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing page</a>.</p>
      */
     inline InstanceNetworkInterfaceSpecification& WithAssociatePublicIpAddress(bool value) { SetAssociatePublicIpAddress(value); return *this;}
 

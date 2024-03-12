@@ -24,8 +24,11 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about the identity of a user.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>Contains information about the identity of a user.</p>  <p>For Amazon
+   * Connect instances that are created with the <code>EXISTING_DIRECTORY</code>
+   * identity management type, <code>FirstName</code>, <code>LastName</code>, and
+   * <code>Email</code> cannot be updated from within Amazon Connect because they are
+   * managed by the directory.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UserIdentityInfo">AWS
    * API Reference</a></p>
    */

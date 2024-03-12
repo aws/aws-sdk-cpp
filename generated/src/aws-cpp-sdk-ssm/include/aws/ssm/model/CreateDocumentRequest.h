@@ -47,11 +47,11 @@ namespace Model
      * your new document in an external JSON or YAML file and referencing the file in a
      * command.</p> <p>For examples, see the following topics in the <i>Amazon Web
      * Services Systems Manager User Guide</i>.</p> <ul> <li> <p> <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create
-     * an SSM document (Amazon Web Services API)</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create
-     * an SSM document (Amazon Web Services CLI)</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-using.html#create-ssm-console">Create
+     * an SSM document (console)</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-using.html#create-ssm-document-cli">Create
+     * an SSM document (command line)</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-using.html#create-ssm-document-api">Create
      * an SSM document (API)</a> </p> </li> </ul>
      */
     inline const Aws::String& GetContent() const{ return m_content; }
@@ -63,11 +63,11 @@ namespace Model
      * your new document in an external JSON or YAML file and referencing the file in a
      * command.</p> <p>For examples, see the following topics in the <i>Amazon Web
      * Services Systems Manager User Guide</i>.</p> <ul> <li> <p> <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create
-     * an SSM document (Amazon Web Services API)</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create
-     * an SSM document (Amazon Web Services CLI)</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-using.html#create-ssm-console">Create
+     * an SSM document (console)</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-using.html#create-ssm-document-cli">Create
+     * an SSM document (command line)</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-using.html#create-ssm-document-api">Create
      * an SSM document (API)</a> </p> </li> </ul>
      */
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
@@ -79,11 +79,11 @@ namespace Model
      * your new document in an external JSON or YAML file and referencing the file in a
      * command.</p> <p>For examples, see the following topics in the <i>Amazon Web
      * Services Systems Manager User Guide</i>.</p> <ul> <li> <p> <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create
-     * an SSM document (Amazon Web Services API)</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create
-     * an SSM document (Amazon Web Services CLI)</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-using.html#create-ssm-console">Create
+     * an SSM document (console)</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-using.html#create-ssm-document-cli">Create
+     * an SSM document (command line)</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-using.html#create-ssm-document-api">Create
      * an SSM document (API)</a> </p> </li> </ul>
      */
     inline void SetContent(const Aws::String& value) { m_contentHasBeenSet = true; m_content = value; }
@@ -95,11 +95,11 @@ namespace Model
      * your new document in an external JSON or YAML file and referencing the file in a
      * command.</p> <p>For examples, see the following topics in the <i>Amazon Web
      * Services Systems Manager User Guide</i>.</p> <ul> <li> <p> <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create
-     * an SSM document (Amazon Web Services API)</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create
-     * an SSM document (Amazon Web Services CLI)</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-using.html#create-ssm-console">Create
+     * an SSM document (console)</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-using.html#create-ssm-document-cli">Create
+     * an SSM document (command line)</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-using.html#create-ssm-document-api">Create
      * an SSM document (API)</a> </p> </li> </ul>
      */
     inline void SetContent(Aws::String&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
@@ -111,11 +111,11 @@ namespace Model
      * your new document in an external JSON or YAML file and referencing the file in a
      * command.</p> <p>For examples, see the following topics in the <i>Amazon Web
      * Services Systems Manager User Guide</i>.</p> <ul> <li> <p> <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create
-     * an SSM document (Amazon Web Services API)</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create
-     * an SSM document (Amazon Web Services CLI)</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-using.html#create-ssm-console">Create
+     * an SSM document (console)</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-using.html#create-ssm-document-cli">Create
+     * an SSM document (command line)</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-using.html#create-ssm-document-api">Create
      * an SSM document (API)</a> </p> </li> </ul>
      */
     inline void SetContent(const char* value) { m_contentHasBeenSet = true; m_content.assign(value); }
@@ -127,11 +127,11 @@ namespace Model
      * your new document in an external JSON or YAML file and referencing the file in a
      * command.</p> <p>For examples, see the following topics in the <i>Amazon Web
      * Services Systems Manager User Guide</i>.</p> <ul> <li> <p> <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create
-     * an SSM document (Amazon Web Services API)</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create
-     * an SSM document (Amazon Web Services CLI)</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-using.html#create-ssm-console">Create
+     * an SSM document (console)</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-using.html#create-ssm-document-cli">Create
+     * an SSM document (command line)</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-using.html#create-ssm-document-api">Create
      * an SSM document (API)</a> </p> </li> </ul>
      */
     inline CreateDocumentRequest& WithContent(const Aws::String& value) { SetContent(value); return *this;}
@@ -143,11 +143,11 @@ namespace Model
      * your new document in an external JSON or YAML file and referencing the file in a
      * command.</p> <p>For examples, see the following topics in the <i>Amazon Web
      * Services Systems Manager User Guide</i>.</p> <ul> <li> <p> <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create
-     * an SSM document (Amazon Web Services API)</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create
-     * an SSM document (Amazon Web Services CLI)</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-using.html#create-ssm-console">Create
+     * an SSM document (console)</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-using.html#create-ssm-document-cli">Create
+     * an SSM document (command line)</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-using.html#create-ssm-document-api">Create
      * an SSM document (API)</a> </p> </li> </ul>
      */
     inline CreateDocumentRequest& WithContent(Aws::String&& value) { SetContent(std::move(value)); return *this;}
@@ -159,11 +159,11 @@ namespace Model
      * your new document in an external JSON or YAML file and referencing the file in a
      * command.</p> <p>For examples, see the following topics in the <i>Amazon Web
      * Services Systems Manager User Guide</i>.</p> <ul> <li> <p> <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create
-     * an SSM document (Amazon Web Services API)</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create
-     * an SSM document (Amazon Web Services CLI)</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-using.html#create-ssm-console">Create
+     * an SSM document (console)</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-using.html#create-ssm-document-cli">Create
+     * an SSM document (command line)</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-using.html#create-ssm-document-api">Create
      * an SSM document (API)</a> </p> </li> </ul>
      */
     inline CreateDocumentRequest& WithContent(const char* value) { SetContent(value); return *this;}

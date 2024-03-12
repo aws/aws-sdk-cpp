@@ -141,66 +141,74 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the IAM role that allows Amazon EC2 to publish flow logs to a
-     * CloudWatch Logs log group in your account.</p> <p>This parameter is required if
-     * the destination type is <code>cloud-watch-logs</code> and unsupported
-     * otherwise.</p>
+     * <p>The ARN of the IAM role that allows Amazon EC2 to publish flow logs to the
+     * log destination.</p> <p>This parameter is required if the destination type is
+     * <code>cloud-watch-logs</code>, or if the destination type is
+     * <code>kinesis-data-firehose</code> and the delivery stream and the resources to
+     * monitor are in different accounts.</p>
      */
     inline const Aws::String& GetDeliverLogsPermissionArn() const{ return m_deliverLogsPermissionArn; }
 
     /**
-     * <p>The ARN of the IAM role that allows Amazon EC2 to publish flow logs to a
-     * CloudWatch Logs log group in your account.</p> <p>This parameter is required if
-     * the destination type is <code>cloud-watch-logs</code> and unsupported
-     * otherwise.</p>
+     * <p>The ARN of the IAM role that allows Amazon EC2 to publish flow logs to the
+     * log destination.</p> <p>This parameter is required if the destination type is
+     * <code>cloud-watch-logs</code>, or if the destination type is
+     * <code>kinesis-data-firehose</code> and the delivery stream and the resources to
+     * monitor are in different accounts.</p>
      */
     inline bool DeliverLogsPermissionArnHasBeenSet() const { return m_deliverLogsPermissionArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the IAM role that allows Amazon EC2 to publish flow logs to a
-     * CloudWatch Logs log group in your account.</p> <p>This parameter is required if
-     * the destination type is <code>cloud-watch-logs</code> and unsupported
-     * otherwise.</p>
+     * <p>The ARN of the IAM role that allows Amazon EC2 to publish flow logs to the
+     * log destination.</p> <p>This parameter is required if the destination type is
+     * <code>cloud-watch-logs</code>, or if the destination type is
+     * <code>kinesis-data-firehose</code> and the delivery stream and the resources to
+     * monitor are in different accounts.</p>
      */
     inline void SetDeliverLogsPermissionArn(const Aws::String& value) { m_deliverLogsPermissionArnHasBeenSet = true; m_deliverLogsPermissionArn = value; }
 
     /**
-     * <p>The ARN of the IAM role that allows Amazon EC2 to publish flow logs to a
-     * CloudWatch Logs log group in your account.</p> <p>This parameter is required if
-     * the destination type is <code>cloud-watch-logs</code> and unsupported
-     * otherwise.</p>
+     * <p>The ARN of the IAM role that allows Amazon EC2 to publish flow logs to the
+     * log destination.</p> <p>This parameter is required if the destination type is
+     * <code>cloud-watch-logs</code>, or if the destination type is
+     * <code>kinesis-data-firehose</code> and the delivery stream and the resources to
+     * monitor are in different accounts.</p>
      */
     inline void SetDeliverLogsPermissionArn(Aws::String&& value) { m_deliverLogsPermissionArnHasBeenSet = true; m_deliverLogsPermissionArn = std::move(value); }
 
     /**
-     * <p>The ARN of the IAM role that allows Amazon EC2 to publish flow logs to a
-     * CloudWatch Logs log group in your account.</p> <p>This parameter is required if
-     * the destination type is <code>cloud-watch-logs</code> and unsupported
-     * otherwise.</p>
+     * <p>The ARN of the IAM role that allows Amazon EC2 to publish flow logs to the
+     * log destination.</p> <p>This parameter is required if the destination type is
+     * <code>cloud-watch-logs</code>, or if the destination type is
+     * <code>kinesis-data-firehose</code> and the delivery stream and the resources to
+     * monitor are in different accounts.</p>
      */
     inline void SetDeliverLogsPermissionArn(const char* value) { m_deliverLogsPermissionArnHasBeenSet = true; m_deliverLogsPermissionArn.assign(value); }
 
     /**
-     * <p>The ARN of the IAM role that allows Amazon EC2 to publish flow logs to a
-     * CloudWatch Logs log group in your account.</p> <p>This parameter is required if
-     * the destination type is <code>cloud-watch-logs</code> and unsupported
-     * otherwise.</p>
+     * <p>The ARN of the IAM role that allows Amazon EC2 to publish flow logs to the
+     * log destination.</p> <p>This parameter is required if the destination type is
+     * <code>cloud-watch-logs</code>, or if the destination type is
+     * <code>kinesis-data-firehose</code> and the delivery stream and the resources to
+     * monitor are in different accounts.</p>
      */
     inline CreateFlowLogsRequest& WithDeliverLogsPermissionArn(const Aws::String& value) { SetDeliverLogsPermissionArn(value); return *this;}
 
     /**
-     * <p>The ARN of the IAM role that allows Amazon EC2 to publish flow logs to a
-     * CloudWatch Logs log group in your account.</p> <p>This parameter is required if
-     * the destination type is <code>cloud-watch-logs</code> and unsupported
-     * otherwise.</p>
+     * <p>The ARN of the IAM role that allows Amazon EC2 to publish flow logs to the
+     * log destination.</p> <p>This parameter is required if the destination type is
+     * <code>cloud-watch-logs</code>, or if the destination type is
+     * <code>kinesis-data-firehose</code> and the delivery stream and the resources to
+     * monitor are in different accounts.</p>
      */
     inline CreateFlowLogsRequest& WithDeliverLogsPermissionArn(Aws::String&& value) { SetDeliverLogsPermissionArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the IAM role that allows Amazon EC2 to publish flow logs to a
-     * CloudWatch Logs log group in your account.</p> <p>This parameter is required if
-     * the destination type is <code>cloud-watch-logs</code> and unsupported
-     * otherwise.</p>
+     * <p>The ARN of the IAM role that allows Amazon EC2 to publish flow logs to the
+     * log destination.</p> <p>This parameter is required if the destination type is
+     * <code>cloud-watch-logs</code>, or if the destination type is
+     * <code>kinesis-data-firehose</code> and the delivery stream and the resources to
+     * monitor are in different accounts.</p>
      */
     inline CreateFlowLogsRequest& WithDeliverLogsPermissionArn(const char* value) { SetDeliverLogsPermissionArn(value); return *this;}
 

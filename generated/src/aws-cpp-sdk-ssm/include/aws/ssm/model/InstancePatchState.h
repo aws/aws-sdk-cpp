@@ -231,7 +231,7 @@ namespace Model
      * default patch baseline.</p> <p>For more information about the
      * <code>InstallOverrideList</code> parameter, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html">About
-     * the <code>AWS-RunPatchBaseline</code> </a> SSM document in the <i>Amazon Web
+     * the <code>AWS-RunPatchBaseline SSM document</code> </a> in the <i>Amazon Web
      * Services Systems Manager User Guide</i>.</p>
      */
     inline const Aws::String& GetInstallOverrideList() const{ return m_installOverrideList; }
@@ -244,7 +244,7 @@ namespace Model
      * default patch baseline.</p> <p>For more information about the
      * <code>InstallOverrideList</code> parameter, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html">About
-     * the <code>AWS-RunPatchBaseline</code> </a> SSM document in the <i>Amazon Web
+     * the <code>AWS-RunPatchBaseline SSM document</code> </a> in the <i>Amazon Web
      * Services Systems Manager User Guide</i>.</p>
      */
     inline bool InstallOverrideListHasBeenSet() const { return m_installOverrideListHasBeenSet; }
@@ -257,7 +257,7 @@ namespace Model
      * default patch baseline.</p> <p>For more information about the
      * <code>InstallOverrideList</code> parameter, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html">About
-     * the <code>AWS-RunPatchBaseline</code> </a> SSM document in the <i>Amazon Web
+     * the <code>AWS-RunPatchBaseline SSM document</code> </a> in the <i>Amazon Web
      * Services Systems Manager User Guide</i>.</p>
      */
     inline void SetInstallOverrideList(const Aws::String& value) { m_installOverrideListHasBeenSet = true; m_installOverrideList = value; }
@@ -270,7 +270,7 @@ namespace Model
      * default patch baseline.</p> <p>For more information about the
      * <code>InstallOverrideList</code> parameter, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html">About
-     * the <code>AWS-RunPatchBaseline</code> </a> SSM document in the <i>Amazon Web
+     * the <code>AWS-RunPatchBaseline SSM document</code> </a> in the <i>Amazon Web
      * Services Systems Manager User Guide</i>.</p>
      */
     inline void SetInstallOverrideList(Aws::String&& value) { m_installOverrideListHasBeenSet = true; m_installOverrideList = std::move(value); }
@@ -283,7 +283,7 @@ namespace Model
      * default patch baseline.</p> <p>For more information about the
      * <code>InstallOverrideList</code> parameter, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html">About
-     * the <code>AWS-RunPatchBaseline</code> </a> SSM document in the <i>Amazon Web
+     * the <code>AWS-RunPatchBaseline SSM document</code> </a> in the <i>Amazon Web
      * Services Systems Manager User Guide</i>.</p>
      */
     inline void SetInstallOverrideList(const char* value) { m_installOverrideListHasBeenSet = true; m_installOverrideList.assign(value); }
@@ -296,7 +296,7 @@ namespace Model
      * default patch baseline.</p> <p>For more information about the
      * <code>InstallOverrideList</code> parameter, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html">About
-     * the <code>AWS-RunPatchBaseline</code> </a> SSM document in the <i>Amazon Web
+     * the <code>AWS-RunPatchBaseline SSM document</code> </a> in the <i>Amazon Web
      * Services Systems Manager User Guide</i>.</p>
      */
     inline InstancePatchState& WithInstallOverrideList(const Aws::String& value) { SetInstallOverrideList(value); return *this;}
@@ -309,7 +309,7 @@ namespace Model
      * default patch baseline.</p> <p>For more information about the
      * <code>InstallOverrideList</code> parameter, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html">About
-     * the <code>AWS-RunPatchBaseline</code> </a> SSM document in the <i>Amazon Web
+     * the <code>AWS-RunPatchBaseline SSM document</code> </a> in the <i>Amazon Web
      * Services Systems Manager User Guide</i>.</p>
      */
     inline InstancePatchState& WithInstallOverrideList(Aws::String&& value) { SetInstallOverrideList(std::move(value)); return *this;}
@@ -322,7 +322,7 @@ namespace Model
      * default patch baseline.</p> <p>For more information about the
      * <code>InstallOverrideList</code> parameter, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html">About
-     * the <code>AWS-RunPatchBaseline</code> </a> SSM document in the <i>Amazon Web
+     * the <code>AWS-RunPatchBaseline SSM document</code> </a> in the <i>Amazon Web
      * Services Systems Manager User Guide</i>.</p>
      */
     inline InstancePatchState& WithInstallOverrideList(const char* value) { SetInstallOverrideList(value); return *this;}

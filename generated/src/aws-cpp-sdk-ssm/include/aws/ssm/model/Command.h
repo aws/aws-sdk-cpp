@@ -938,8 +938,8 @@ namespace Model
      * the same time. You can specify a number of managed nodes, such as 10, or a
      * percentage of nodes, such as 10%. The default value is 50. For more information
      * about how to use <code>MaxConcurrency</code>, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
-     * commands using Systems Manager Run Command</a> in the <i>Amazon Web Services
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Amazon
+     * Web Services Systems Manager Run Command</a> in the <i>Amazon Web Services
      * Systems Manager User Guide</i>.</p>
      */
     inline const Aws::String& GetMaxConcurrency() const{ return m_maxConcurrency; }
@@ -949,8 +949,8 @@ namespace Model
      * the same time. You can specify a number of managed nodes, such as 10, or a
      * percentage of nodes, such as 10%. The default value is 50. For more information
      * about how to use <code>MaxConcurrency</code>, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
-     * commands using Systems Manager Run Command</a> in the <i>Amazon Web Services
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Amazon
+     * Web Services Systems Manager Run Command</a> in the <i>Amazon Web Services
      * Systems Manager User Guide</i>.</p>
      */
     inline bool MaxConcurrencyHasBeenSet() const { return m_maxConcurrencyHasBeenSet; }
@@ -960,8 +960,8 @@ namespace Model
      * the same time. You can specify a number of managed nodes, such as 10, or a
      * percentage of nodes, such as 10%. The default value is 50. For more information
      * about how to use <code>MaxConcurrency</code>, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
-     * commands using Systems Manager Run Command</a> in the <i>Amazon Web Services
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Amazon
+     * Web Services Systems Manager Run Command</a> in the <i>Amazon Web Services
      * Systems Manager User Guide</i>.</p>
      */
     inline void SetMaxConcurrency(const Aws::String& value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency = value; }
@@ -971,8 +971,8 @@ namespace Model
      * the same time. You can specify a number of managed nodes, such as 10, or a
      * percentage of nodes, such as 10%. The default value is 50. For more information
      * about how to use <code>MaxConcurrency</code>, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
-     * commands using Systems Manager Run Command</a> in the <i>Amazon Web Services
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Amazon
+     * Web Services Systems Manager Run Command</a> in the <i>Amazon Web Services
      * Systems Manager User Guide</i>.</p>
      */
     inline void SetMaxConcurrency(Aws::String&& value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency = std::move(value); }
@@ -982,8 +982,8 @@ namespace Model
      * the same time. You can specify a number of managed nodes, such as 10, or a
      * percentage of nodes, such as 10%. The default value is 50. For more information
      * about how to use <code>MaxConcurrency</code>, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
-     * commands using Systems Manager Run Command</a> in the <i>Amazon Web Services
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Amazon
+     * Web Services Systems Manager Run Command</a> in the <i>Amazon Web Services
      * Systems Manager User Guide</i>.</p>
      */
     inline void SetMaxConcurrency(const char* value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency.assign(value); }
@@ -993,8 +993,8 @@ namespace Model
      * the same time. You can specify a number of managed nodes, such as 10, or a
      * percentage of nodes, such as 10%. The default value is 50. For more information
      * about how to use <code>MaxConcurrency</code>, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
-     * commands using Systems Manager Run Command</a> in the <i>Amazon Web Services
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Amazon
+     * Web Services Systems Manager Run Command</a> in the <i>Amazon Web Services
      * Systems Manager User Guide</i>.</p>
      */
     inline Command& WithMaxConcurrency(const Aws::String& value) { SetMaxConcurrency(value); return *this;}
@@ -1004,8 +1004,8 @@ namespace Model
      * the same time. You can specify a number of managed nodes, such as 10, or a
      * percentage of nodes, such as 10%. The default value is 50. For more information
      * about how to use <code>MaxConcurrency</code>, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
-     * commands using Systems Manager Run Command</a> in the <i>Amazon Web Services
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Amazon
+     * Web Services Systems Manager Run Command</a> in the <i>Amazon Web Services
      * Systems Manager User Guide</i>.</p>
      */
     inline Command& WithMaxConcurrency(Aws::String&& value) { SetMaxConcurrency(std::move(value)); return *this;}
@@ -1015,8 +1015,8 @@ namespace Model
      * the same time. You can specify a number of managed nodes, such as 10, or a
      * percentage of nodes, such as 10%. The default value is 50. For more information
      * about how to use <code>MaxConcurrency</code>, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
-     * commands using Systems Manager Run Command</a> in the <i>Amazon Web Services
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Amazon
+     * Web Services Systems Manager Run Command</a> in the <i>Amazon Web Services
      * Systems Manager User Guide</i>.</p>
      */
     inline Command& WithMaxConcurrency(const char* value) { SetMaxConcurrency(value); return *this;}
@@ -1027,8 +1027,8 @@ namespace Model
      * command to additional targets. You can specify a number of errors, such as 10,
      * or a percentage or errors, such as 10%. The default value is <code>0</code>. For
      * more information about how to use <code>MaxErrors</code>, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
-     * commands using Systems Manager Run Command</a> in the <i>Amazon Web Services
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Amazon
+     * Web Services Systems Manager Run Command</a> in the <i>Amazon Web Services
      * Systems Manager User Guide</i>.</p>
      */
     inline const Aws::String& GetMaxErrors() const{ return m_maxErrors; }
@@ -1038,8 +1038,8 @@ namespace Model
      * command to additional targets. You can specify a number of errors, such as 10,
      * or a percentage or errors, such as 10%. The default value is <code>0</code>. For
      * more information about how to use <code>MaxErrors</code>, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
-     * commands using Systems Manager Run Command</a> in the <i>Amazon Web Services
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Amazon
+     * Web Services Systems Manager Run Command</a> in the <i>Amazon Web Services
      * Systems Manager User Guide</i>.</p>
      */
     inline bool MaxErrorsHasBeenSet() const { return m_maxErrorsHasBeenSet; }
@@ -1049,8 +1049,8 @@ namespace Model
      * command to additional targets. You can specify a number of errors, such as 10,
      * or a percentage or errors, such as 10%. The default value is <code>0</code>. For
      * more information about how to use <code>MaxErrors</code>, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
-     * commands using Systems Manager Run Command</a> in the <i>Amazon Web Services
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Amazon
+     * Web Services Systems Manager Run Command</a> in the <i>Amazon Web Services
      * Systems Manager User Guide</i>.</p>
      */
     inline void SetMaxErrors(const Aws::String& value) { m_maxErrorsHasBeenSet = true; m_maxErrors = value; }
@@ -1060,8 +1060,8 @@ namespace Model
      * command to additional targets. You can specify a number of errors, such as 10,
      * or a percentage or errors, such as 10%. The default value is <code>0</code>. For
      * more information about how to use <code>MaxErrors</code>, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
-     * commands using Systems Manager Run Command</a> in the <i>Amazon Web Services
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Amazon
+     * Web Services Systems Manager Run Command</a> in the <i>Amazon Web Services
      * Systems Manager User Guide</i>.</p>
      */
     inline void SetMaxErrors(Aws::String&& value) { m_maxErrorsHasBeenSet = true; m_maxErrors = std::move(value); }
@@ -1071,8 +1071,8 @@ namespace Model
      * command to additional targets. You can specify a number of errors, such as 10,
      * or a percentage or errors, such as 10%. The default value is <code>0</code>. For
      * more information about how to use <code>MaxErrors</code>, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
-     * commands using Systems Manager Run Command</a> in the <i>Amazon Web Services
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Amazon
+     * Web Services Systems Manager Run Command</a> in the <i>Amazon Web Services
      * Systems Manager User Guide</i>.</p>
      */
     inline void SetMaxErrors(const char* value) { m_maxErrorsHasBeenSet = true; m_maxErrors.assign(value); }
@@ -1082,8 +1082,8 @@ namespace Model
      * command to additional targets. You can specify a number of errors, such as 10,
      * or a percentage or errors, such as 10%. The default value is <code>0</code>. For
      * more information about how to use <code>MaxErrors</code>, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
-     * commands using Systems Manager Run Command</a> in the <i>Amazon Web Services
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Amazon
+     * Web Services Systems Manager Run Command</a> in the <i>Amazon Web Services
      * Systems Manager User Guide</i>.</p>
      */
     inline Command& WithMaxErrors(const Aws::String& value) { SetMaxErrors(value); return *this;}
@@ -1093,8 +1093,8 @@ namespace Model
      * command to additional targets. You can specify a number of errors, such as 10,
      * or a percentage or errors, such as 10%. The default value is <code>0</code>. For
      * more information about how to use <code>MaxErrors</code>, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
-     * commands using Systems Manager Run Command</a> in the <i>Amazon Web Services
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Amazon
+     * Web Services Systems Manager Run Command</a> in the <i>Amazon Web Services
      * Systems Manager User Guide</i>.</p>
      */
     inline Command& WithMaxErrors(Aws::String&& value) { SetMaxErrors(std::move(value)); return *this;}
@@ -1104,8 +1104,8 @@ namespace Model
      * command to additional targets. You can specify a number of errors, such as 10,
      * or a percentage or errors, such as 10%. The default value is <code>0</code>. For
      * more information about how to use <code>MaxErrors</code>, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
-     * commands using Systems Manager Run Command</a> in the <i>Amazon Web Services
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Amazon
+     * Web Services Systems Manager Run Command</a> in the <i>Amazon Web Services
      * Systems Manager User Guide</i>.</p>
      */
     inline Command& WithMaxErrors(const char* value) { SetMaxErrors(value); return *this;}

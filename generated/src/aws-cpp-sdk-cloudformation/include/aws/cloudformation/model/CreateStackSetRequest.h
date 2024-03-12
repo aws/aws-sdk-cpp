@@ -163,8 +163,9 @@ namespace Model
      * <p>The structure that contains the template body, with a minimum length of 1
      * byte and a maximum length of 51,200 bytes. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
-     * specify either the TemplateBody or the TemplateURL parameter, but not both.</p>
+     * Anatomy</a> in the <i>CloudFormation User Guide</i>.</p> <p>Conditional: You
+     * must specify either the TemplateBody or the TemplateURL parameter, but not
+     * both.</p>
      */
     inline const Aws::String& GetTemplateBody() const{ return m_templateBody; }
 
@@ -172,8 +173,9 @@ namespace Model
      * <p>The structure that contains the template body, with a minimum length of 1
      * byte and a maximum length of 51,200 bytes. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
-     * specify either the TemplateBody or the TemplateURL parameter, but not both.</p>
+     * Anatomy</a> in the <i>CloudFormation User Guide</i>.</p> <p>Conditional: You
+     * must specify either the TemplateBody or the TemplateURL parameter, but not
+     * both.</p>
      */
     inline bool TemplateBodyHasBeenSet() const { return m_templateBodyHasBeenSet; }
 
@@ -181,8 +183,9 @@ namespace Model
      * <p>The structure that contains the template body, with a minimum length of 1
      * byte and a maximum length of 51,200 bytes. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
-     * specify either the TemplateBody or the TemplateURL parameter, but not both.</p>
+     * Anatomy</a> in the <i>CloudFormation User Guide</i>.</p> <p>Conditional: You
+     * must specify either the TemplateBody or the TemplateURL parameter, but not
+     * both.</p>
      */
     inline void SetTemplateBody(const Aws::String& value) { m_templateBodyHasBeenSet = true; m_templateBody = value; }
 
@@ -190,8 +193,9 @@ namespace Model
      * <p>The structure that contains the template body, with a minimum length of 1
      * byte and a maximum length of 51,200 bytes. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
-     * specify either the TemplateBody or the TemplateURL parameter, but not both.</p>
+     * Anatomy</a> in the <i>CloudFormation User Guide</i>.</p> <p>Conditional: You
+     * must specify either the TemplateBody or the TemplateURL parameter, but not
+     * both.</p>
      */
     inline void SetTemplateBody(Aws::String&& value) { m_templateBodyHasBeenSet = true; m_templateBody = std::move(value); }
 
@@ -199,8 +203,9 @@ namespace Model
      * <p>The structure that contains the template body, with a minimum length of 1
      * byte and a maximum length of 51,200 bytes. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
-     * specify either the TemplateBody or the TemplateURL parameter, but not both.</p>
+     * Anatomy</a> in the <i>CloudFormation User Guide</i>.</p> <p>Conditional: You
+     * must specify either the TemplateBody or the TemplateURL parameter, but not
+     * both.</p>
      */
     inline void SetTemplateBody(const char* value) { m_templateBodyHasBeenSet = true; m_templateBody.assign(value); }
 
@@ -208,8 +213,9 @@ namespace Model
      * <p>The structure that contains the template body, with a minimum length of 1
      * byte and a maximum length of 51,200 bytes. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
-     * specify either the TemplateBody or the TemplateURL parameter, but not both.</p>
+     * Anatomy</a> in the <i>CloudFormation User Guide</i>.</p> <p>Conditional: You
+     * must specify either the TemplateBody or the TemplateURL parameter, but not
+     * both.</p>
      */
     inline CreateStackSetRequest& WithTemplateBody(const Aws::String& value) { SetTemplateBody(value); return *this;}
 
@@ -217,8 +223,9 @@ namespace Model
      * <p>The structure that contains the template body, with a minimum length of 1
      * byte and a maximum length of 51,200 bytes. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
-     * specify either the TemplateBody or the TemplateURL parameter, but not both.</p>
+     * Anatomy</a> in the <i>CloudFormation User Guide</i>.</p> <p>Conditional: You
+     * must specify either the TemplateBody or the TemplateURL parameter, but not
+     * both.</p>
      */
     inline CreateStackSetRequest& WithTemplateBody(Aws::String&& value) { SetTemplateBody(std::move(value)); return *this;}
 
@@ -226,8 +233,9 @@ namespace Model
      * <p>The structure that contains the template body, with a minimum length of 1
      * byte and a maximum length of 51,200 bytes. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
-     * specify either the TemplateBody or the TemplateURL parameter, but not both.</p>
+     * Anatomy</a> in the <i>CloudFormation User Guide</i>.</p> <p>Conditional: You
+     * must specify either the TemplateBody or the TemplateURL parameter, but not
+     * both.</p>
      */
     inline CreateStackSetRequest& WithTemplateBody(const char* value) { SetTemplateBody(value); return *this;}
 
@@ -237,8 +245,9 @@ namespace Model
      * to a template (maximum size: 460,800 bytes) that's located in an Amazon S3
      * bucket or a Systems Manager document. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
-     * specify either the TemplateBody or the TemplateURL parameter, but not both.</p>
+     * Anatomy</a> in the <i>CloudFormation User Guide</i>.</p> <p>Conditional: You
+     * must specify either the TemplateBody or the TemplateURL parameter, but not
+     * both.</p>
      */
     inline const Aws::String& GetTemplateURL() const{ return m_templateURL; }
 
@@ -247,8 +256,9 @@ namespace Model
      * to a template (maximum size: 460,800 bytes) that's located in an Amazon S3
      * bucket or a Systems Manager document. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
-     * specify either the TemplateBody or the TemplateURL parameter, but not both.</p>
+     * Anatomy</a> in the <i>CloudFormation User Guide</i>.</p> <p>Conditional: You
+     * must specify either the TemplateBody or the TemplateURL parameter, but not
+     * both.</p>
      */
     inline bool TemplateURLHasBeenSet() const { return m_templateURLHasBeenSet; }
 
@@ -257,8 +267,9 @@ namespace Model
      * to a template (maximum size: 460,800 bytes) that's located in an Amazon S3
      * bucket or a Systems Manager document. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
-     * specify either the TemplateBody or the TemplateURL parameter, but not both.</p>
+     * Anatomy</a> in the <i>CloudFormation User Guide</i>.</p> <p>Conditional: You
+     * must specify either the TemplateBody or the TemplateURL parameter, but not
+     * both.</p>
      */
     inline void SetTemplateURL(const Aws::String& value) { m_templateURLHasBeenSet = true; m_templateURL = value; }
 
@@ -267,8 +278,9 @@ namespace Model
      * to a template (maximum size: 460,800 bytes) that's located in an Amazon S3
      * bucket or a Systems Manager document. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
-     * specify either the TemplateBody or the TemplateURL parameter, but not both.</p>
+     * Anatomy</a> in the <i>CloudFormation User Guide</i>.</p> <p>Conditional: You
+     * must specify either the TemplateBody or the TemplateURL parameter, but not
+     * both.</p>
      */
     inline void SetTemplateURL(Aws::String&& value) { m_templateURLHasBeenSet = true; m_templateURL = std::move(value); }
 
@@ -277,8 +289,9 @@ namespace Model
      * to a template (maximum size: 460,800 bytes) that's located in an Amazon S3
      * bucket or a Systems Manager document. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
-     * specify either the TemplateBody or the TemplateURL parameter, but not both.</p>
+     * Anatomy</a> in the <i>CloudFormation User Guide</i>.</p> <p>Conditional: You
+     * must specify either the TemplateBody or the TemplateURL parameter, but not
+     * both.</p>
      */
     inline void SetTemplateURL(const char* value) { m_templateURLHasBeenSet = true; m_templateURL.assign(value); }
 
@@ -287,8 +300,9 @@ namespace Model
      * to a template (maximum size: 460,800 bytes) that's located in an Amazon S3
      * bucket or a Systems Manager document. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
-     * specify either the TemplateBody or the TemplateURL parameter, but not both.</p>
+     * Anatomy</a> in the <i>CloudFormation User Guide</i>.</p> <p>Conditional: You
+     * must specify either the TemplateBody or the TemplateURL parameter, but not
+     * both.</p>
      */
     inline CreateStackSetRequest& WithTemplateURL(const Aws::String& value) { SetTemplateURL(value); return *this;}
 
@@ -297,8 +311,9 @@ namespace Model
      * to a template (maximum size: 460,800 bytes) that's located in an Amazon S3
      * bucket or a Systems Manager document. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
-     * specify either the TemplateBody or the TemplateURL parameter, but not both.</p>
+     * Anatomy</a> in the <i>CloudFormation User Guide</i>.</p> <p>Conditional: You
+     * must specify either the TemplateBody or the TemplateURL parameter, but not
+     * both.</p>
      */
     inline CreateStackSetRequest& WithTemplateURL(Aws::String&& value) { SetTemplateURL(std::move(value)); return *this;}
 
@@ -307,8 +322,9 @@ namespace Model
      * to a template (maximum size: 460,800 bytes) that's located in an Amazon S3
      * bucket or a Systems Manager document. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-     * Anatomy</a> in the CloudFormation User Guide.</p> <p>Conditional: You must
-     * specify either the TemplateBody or the TemplateURL parameter, but not both.</p>
+     * Anatomy</a> in the <i>CloudFormation User Guide</i>.</p> <p>Conditional: You
+     * must specify either the TemplateBody or the TemplateURL parameter, but not
+     * both.</p>
      */
     inline CreateStackSetRequest& WithTemplateURL(const char* value) { SetTemplateURL(value); return *this;}
 

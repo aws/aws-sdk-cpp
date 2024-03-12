@@ -125,7 +125,7 @@ namespace Model
     /**
      * <p>The ID of the VPC peering connection (if applicable). For more information
      * about security group referencing for peering connections, see <a
-     * href="https://docs.aws.amazon.com/peering/vpc-peering-security-groups.html">Update
+     * href="https://docs.aws.amazon.com/vpc/latest/peering/vpc-peering-security-groups.html">Update
      * your security groups to reference peer security groups</a> in the <i>VPC Peering
      * Guide</i>.</p>
      */
@@ -134,7 +134,7 @@ namespace Model
     /**
      * <p>The ID of the VPC peering connection (if applicable). For more information
      * about security group referencing for peering connections, see <a
-     * href="https://docs.aws.amazon.com/peering/vpc-peering-security-groups.html">Update
+     * href="https://docs.aws.amazon.com/vpc/latest/peering/vpc-peering-security-groups.html">Update
      * your security groups to reference peer security groups</a> in the <i>VPC Peering
      * Guide</i>.</p>
      */
@@ -143,7 +143,7 @@ namespace Model
     /**
      * <p>The ID of the VPC peering connection (if applicable). For more information
      * about security group referencing for peering connections, see <a
-     * href="https://docs.aws.amazon.com/peering/vpc-peering-security-groups.html">Update
+     * href="https://docs.aws.amazon.com/vpc/latest/peering/vpc-peering-security-groups.html">Update
      * your security groups to reference peer security groups</a> in the <i>VPC Peering
      * Guide</i>.</p>
      */
@@ -152,7 +152,7 @@ namespace Model
     /**
      * <p>The ID of the VPC peering connection (if applicable). For more information
      * about security group referencing for peering connections, see <a
-     * href="https://docs.aws.amazon.com/peering/vpc-peering-security-groups.html">Update
+     * href="https://docs.aws.amazon.com/vpc/latest/peering/vpc-peering-security-groups.html">Update
      * your security groups to reference peer security groups</a> in the <i>VPC Peering
      * Guide</i>.</p>
      */
@@ -161,7 +161,7 @@ namespace Model
     /**
      * <p>The ID of the VPC peering connection (if applicable). For more information
      * about security group referencing for peering connections, see <a
-     * href="https://docs.aws.amazon.com/peering/vpc-peering-security-groups.html">Update
+     * href="https://docs.aws.amazon.com/vpc/latest/peering/vpc-peering-security-groups.html">Update
      * your security groups to reference peer security groups</a> in the <i>VPC Peering
      * Guide</i>.</p>
      */
@@ -170,7 +170,7 @@ namespace Model
     /**
      * <p>The ID of the VPC peering connection (if applicable). For more information
      * about security group referencing for peering connections, see <a
-     * href="https://docs.aws.amazon.com/peering/vpc-peering-security-groups.html">Update
+     * href="https://docs.aws.amazon.com/vpc/latest/peering/vpc-peering-security-groups.html">Update
      * your security groups to reference peer security groups</a> in the <i>VPC Peering
      * Guide</i>.</p>
      */
@@ -179,7 +179,7 @@ namespace Model
     /**
      * <p>The ID of the VPC peering connection (if applicable). For more information
      * about security group referencing for peering connections, see <a
-     * href="https://docs.aws.amazon.com/peering/vpc-peering-security-groups.html">Update
+     * href="https://docs.aws.amazon.com/vpc/latest/peering/vpc-peering-security-groups.html">Update
      * your security groups to reference peer security groups</a> in the <i>VPC Peering
      * Guide</i>.</p>
      */
@@ -188,7 +188,7 @@ namespace Model
     /**
      * <p>The ID of the VPC peering connection (if applicable). For more information
      * about security group referencing for peering connections, see <a
-     * href="https://docs.aws.amazon.com/peering/vpc-peering-security-groups.html">Update
+     * href="https://docs.aws.amazon.com/vpc/latest/peering/vpc-peering-security-groups.html">Update
      * your security groups to reference peer security groups</a> in the <i>VPC Peering
      * Guide</i>.</p>
      */
@@ -196,74 +196,50 @@ namespace Model
 
 
     /**
-     * <p>The ID of the transit gateway (if applicable). For more information about
-     * security group referencing for transit gateways, see <a
-     * href="https://docs.aws.amazon.com/tgw/tgw-vpc-attachments.html#create-vpc-attachment">Create
-     * a transit gateway attachment to a VPC</a> in the <i>Amazon Web Services Transit
-     * Gateway Guide</i>.</p>
+     *  <p>This parameter is in preview and may not be available for your
+     * account.</p>  <p>The ID of the transit gateway (if applicable).</p>
      */
     inline const Aws::String& GetTransitGatewayId() const{ return m_transitGatewayId; }
 
     /**
-     * <p>The ID of the transit gateway (if applicable). For more information about
-     * security group referencing for transit gateways, see <a
-     * href="https://docs.aws.amazon.com/tgw/tgw-vpc-attachments.html#create-vpc-attachment">Create
-     * a transit gateway attachment to a VPC</a> in the <i>Amazon Web Services Transit
-     * Gateway Guide</i>.</p>
+     *  <p>This parameter is in preview and may not be available for your
+     * account.</p>  <p>The ID of the transit gateway (if applicable).</p>
      */
     inline bool TransitGatewayIdHasBeenSet() const { return m_transitGatewayIdHasBeenSet; }
 
     /**
-     * <p>The ID of the transit gateway (if applicable). For more information about
-     * security group referencing for transit gateways, see <a
-     * href="https://docs.aws.amazon.com/tgw/tgw-vpc-attachments.html#create-vpc-attachment">Create
-     * a transit gateway attachment to a VPC</a> in the <i>Amazon Web Services Transit
-     * Gateway Guide</i>.</p>
+     *  <p>This parameter is in preview and may not be available for your
+     * account.</p>  <p>The ID of the transit gateway (if applicable).</p>
      */
     inline void SetTransitGatewayId(const Aws::String& value) { m_transitGatewayIdHasBeenSet = true; m_transitGatewayId = value; }
 
     /**
-     * <p>The ID of the transit gateway (if applicable). For more information about
-     * security group referencing for transit gateways, see <a
-     * href="https://docs.aws.amazon.com/tgw/tgw-vpc-attachments.html#create-vpc-attachment">Create
-     * a transit gateway attachment to a VPC</a> in the <i>Amazon Web Services Transit
-     * Gateway Guide</i>.</p>
+     *  <p>This parameter is in preview and may not be available for your
+     * account.</p>  <p>The ID of the transit gateway (if applicable).</p>
      */
     inline void SetTransitGatewayId(Aws::String&& value) { m_transitGatewayIdHasBeenSet = true; m_transitGatewayId = std::move(value); }
 
     /**
-     * <p>The ID of the transit gateway (if applicable). For more information about
-     * security group referencing for transit gateways, see <a
-     * href="https://docs.aws.amazon.com/tgw/tgw-vpc-attachments.html#create-vpc-attachment">Create
-     * a transit gateway attachment to a VPC</a> in the <i>Amazon Web Services Transit
-     * Gateway Guide</i>.</p>
+     *  <p>This parameter is in preview and may not be available for your
+     * account.</p>  <p>The ID of the transit gateway (if applicable).</p>
      */
     inline void SetTransitGatewayId(const char* value) { m_transitGatewayIdHasBeenSet = true; m_transitGatewayId.assign(value); }
 
     /**
-     * <p>The ID of the transit gateway (if applicable). For more information about
-     * security group referencing for transit gateways, see <a
-     * href="https://docs.aws.amazon.com/tgw/tgw-vpc-attachments.html#create-vpc-attachment">Create
-     * a transit gateway attachment to a VPC</a> in the <i>Amazon Web Services Transit
-     * Gateway Guide</i>.</p>
+     *  <p>This parameter is in preview and may not be available for your
+     * account.</p>  <p>The ID of the transit gateway (if applicable).</p>
      */
     inline SecurityGroupReference& WithTransitGatewayId(const Aws::String& value) { SetTransitGatewayId(value); return *this;}
 
     /**
-     * <p>The ID of the transit gateway (if applicable). For more information about
-     * security group referencing for transit gateways, see <a
-     * href="https://docs.aws.amazon.com/tgw/tgw-vpc-attachments.html#create-vpc-attachment">Create
-     * a transit gateway attachment to a VPC</a> in the <i>Amazon Web Services Transit
-     * Gateway Guide</i>.</p>
+     *  <p>This parameter is in preview and may not be available for your
+     * account.</p>  <p>The ID of the transit gateway (if applicable).</p>
      */
     inline SecurityGroupReference& WithTransitGatewayId(Aws::String&& value) { SetTransitGatewayId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the transit gateway (if applicable). For more information about
-     * security group referencing for transit gateways, see <a
-     * href="https://docs.aws.amazon.com/tgw/tgw-vpc-attachments.html#create-vpc-attachment">Create
-     * a transit gateway attachment to a VPC</a> in the <i>Amazon Web Services Transit
-     * Gateway Guide</i>.</p>
+     *  <p>This parameter is in preview and may not be available for your
+     * account.</p>  <p>The ID of the transit gateway (if applicable).</p>
      */
     inline SecurityGroupReference& WithTransitGatewayId(const char* value) { SetTransitGatewayId(value); return *this;}
 

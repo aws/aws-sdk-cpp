@@ -45,8 +45,8 @@ namespace Model
      * <p>The name of the SSM document to run. This can be a public document or a
      * custom document. To run a shared document belonging to another account, specify
      * the document ARN. For more information about how to use shared documents, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using
-     * shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-ssm-sharing.html">Sharing
+     * SSM documents</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.</p>
      */
     inline const Aws::String& GetDocumentName() const{ return m_documentName; }
@@ -55,8 +55,8 @@ namespace Model
      * <p>The name of the SSM document to run. This can be a public document or a
      * custom document. To run a shared document belonging to another account, specify
      * the document ARN. For more information about how to use shared documents, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using
-     * shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-ssm-sharing.html">Sharing
+     * SSM documents</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.</p>
      */
     inline bool DocumentNameHasBeenSet() const { return m_documentNameHasBeenSet; }
@@ -65,8 +65,8 @@ namespace Model
      * <p>The name of the SSM document to run. This can be a public document or a
      * custom document. To run a shared document belonging to another account, specify
      * the document ARN. For more information about how to use shared documents, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using
-     * shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-ssm-sharing.html">Sharing
+     * SSM documents</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.</p>
      */
     inline void SetDocumentName(const Aws::String& value) { m_documentNameHasBeenSet = true; m_documentName = value; }
@@ -75,8 +75,8 @@ namespace Model
      * <p>The name of the SSM document to run. This can be a public document or a
      * custom document. To run a shared document belonging to another account, specify
      * the document ARN. For more information about how to use shared documents, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using
-     * shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-ssm-sharing.html">Sharing
+     * SSM documents</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.</p>
      */
     inline void SetDocumentName(Aws::String&& value) { m_documentNameHasBeenSet = true; m_documentName = std::move(value); }
@@ -85,8 +85,8 @@ namespace Model
      * <p>The name of the SSM document to run. This can be a public document or a
      * custom document. To run a shared document belonging to another account, specify
      * the document ARN. For more information about how to use shared documents, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using
-     * shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-ssm-sharing.html">Sharing
+     * SSM documents</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.</p>
      */
     inline void SetDocumentName(const char* value) { m_documentNameHasBeenSet = true; m_documentName.assign(value); }
@@ -95,8 +95,8 @@ namespace Model
      * <p>The name of the SSM document to run. This can be a public document or a
      * custom document. To run a shared document belonging to another account, specify
      * the document ARN. For more information about how to use shared documents, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using
-     * shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-ssm-sharing.html">Sharing
+     * SSM documents</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.</p>
      */
     inline StartAutomationExecutionRequest& WithDocumentName(const Aws::String& value) { SetDocumentName(value); return *this;}
@@ -105,8 +105,8 @@ namespace Model
      * <p>The name of the SSM document to run. This can be a public document or a
      * custom document. To run a shared document belonging to another account, specify
      * the document ARN. For more information about how to use shared documents, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using
-     * shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-ssm-sharing.html">Sharing
+     * SSM documents</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.</p>
      */
     inline StartAutomationExecutionRequest& WithDocumentName(Aws::String&& value) { SetDocumentName(std::move(value)); return *this;}
@@ -115,8 +115,8 @@ namespace Model
      * <p>The name of the SSM document to run. This can be a public document or a
      * custom document. To run a shared document belonging to another account, specify
      * the document ARN. For more information about how to use shared documents, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using
-     * shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-ssm-sharing.html">Sharing
+     * SSM documents</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.</p>
      */
     inline StartAutomationExecutionRequest& WithDocumentName(const char* value) { SetDocumentName(value); return *this;}
