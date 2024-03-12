@@ -153,13 +153,13 @@ namespace Model
      * permissions] For automatic deployments that require a sequence of operations,
      * the operation is queued to be performed. For more information, see the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes">stack
-     * set operation status codes</a> in the CloudFormation User Guide.</p> </li> <li>
-     * <p> <code>RUNNING</code>: The operation is currently being performed.</p> </li>
-     * <li> <p> <code>STOPPED</code>: The user has canceled the operation.</p> </li>
-     * <li> <p> <code>STOPPING</code>: The operation is in the process of stopping, at
-     * user request.</p> </li> <li> <p> <code>SUCCEEDED</code>: The operation completed
-     * creating or updating all the specified stacks without exceeding the failure
-     * tolerance for the operation.</p> </li> </ul>
+     * set operation status codes</a> in the <i>CloudFormation User Guide</i>.</p>
+     * </li> <li> <p> <code>RUNNING</code>: The operation is currently being
+     * performed.</p> </li> <li> <p> <code>STOPPED</code>: The user has canceled the
+     * operation.</p> </li> <li> <p> <code>STOPPING</code>: The operation is in the
+     * process of stopping, at user request.</p> </li> <li> <p> <code>SUCCEEDED</code>:
+     * The operation completed creating or updating all the specified stacks without
+     * exceeding the failure tolerance for the operation.</p> </li> </ul>
      */
     inline const StackSetOperationStatus& GetStatus() const{ return m_status; }
 
@@ -175,13 +175,13 @@ namespace Model
      * permissions] For automatic deployments that require a sequence of operations,
      * the operation is queued to be performed. For more information, see the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes">stack
-     * set operation status codes</a> in the CloudFormation User Guide.</p> </li> <li>
-     * <p> <code>RUNNING</code>: The operation is currently being performed.</p> </li>
-     * <li> <p> <code>STOPPED</code>: The user has canceled the operation.</p> </li>
-     * <li> <p> <code>STOPPING</code>: The operation is in the process of stopping, at
-     * user request.</p> </li> <li> <p> <code>SUCCEEDED</code>: The operation completed
-     * creating or updating all the specified stacks without exceeding the failure
-     * tolerance for the operation.</p> </li> </ul>
+     * set operation status codes</a> in the <i>CloudFormation User Guide</i>.</p>
+     * </li> <li> <p> <code>RUNNING</code>: The operation is currently being
+     * performed.</p> </li> <li> <p> <code>STOPPED</code>: The user has canceled the
+     * operation.</p> </li> <li> <p> <code>STOPPING</code>: The operation is in the
+     * process of stopping, at user request.</p> </li> <li> <p> <code>SUCCEEDED</code>:
+     * The operation completed creating or updating all the specified stacks without
+     * exceeding the failure tolerance for the operation.</p> </li> </ul>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
@@ -197,13 +197,13 @@ namespace Model
      * permissions] For automatic deployments that require a sequence of operations,
      * the operation is queued to be performed. For more information, see the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes">stack
-     * set operation status codes</a> in the CloudFormation User Guide.</p> </li> <li>
-     * <p> <code>RUNNING</code>: The operation is currently being performed.</p> </li>
-     * <li> <p> <code>STOPPED</code>: The user has canceled the operation.</p> </li>
-     * <li> <p> <code>STOPPING</code>: The operation is in the process of stopping, at
-     * user request.</p> </li> <li> <p> <code>SUCCEEDED</code>: The operation completed
-     * creating or updating all the specified stacks without exceeding the failure
-     * tolerance for the operation.</p> </li> </ul>
+     * set operation status codes</a> in the <i>CloudFormation User Guide</i>.</p>
+     * </li> <li> <p> <code>RUNNING</code>: The operation is currently being
+     * performed.</p> </li> <li> <p> <code>STOPPED</code>: The user has canceled the
+     * operation.</p> </li> <li> <p> <code>STOPPING</code>: The operation is in the
+     * process of stopping, at user request.</p> </li> <li> <p> <code>SUCCEEDED</code>:
+     * The operation completed creating or updating all the specified stacks without
+     * exceeding the failure tolerance for the operation.</p> </li> </ul>
      */
     inline void SetStatus(const StackSetOperationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
@@ -219,13 +219,13 @@ namespace Model
      * permissions] For automatic deployments that require a sequence of operations,
      * the operation is queued to be performed. For more information, see the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes">stack
-     * set operation status codes</a> in the CloudFormation User Guide.</p> </li> <li>
-     * <p> <code>RUNNING</code>: The operation is currently being performed.</p> </li>
-     * <li> <p> <code>STOPPED</code>: The user has canceled the operation.</p> </li>
-     * <li> <p> <code>STOPPING</code>: The operation is in the process of stopping, at
-     * user request.</p> </li> <li> <p> <code>SUCCEEDED</code>: The operation completed
-     * creating or updating all the specified stacks without exceeding the failure
-     * tolerance for the operation.</p> </li> </ul>
+     * set operation status codes</a> in the <i>CloudFormation User Guide</i>.</p>
+     * </li> <li> <p> <code>RUNNING</code>: The operation is currently being
+     * performed.</p> </li> <li> <p> <code>STOPPED</code>: The user has canceled the
+     * operation.</p> </li> <li> <p> <code>STOPPING</code>: The operation is in the
+     * process of stopping, at user request.</p> </li> <li> <p> <code>SUCCEEDED</code>:
+     * The operation completed creating or updating all the specified stacks without
+     * exceeding the failure tolerance for the operation.</p> </li> </ul>
      */
     inline void SetStatus(StackSetOperationStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
@@ -241,13 +241,13 @@ namespace Model
      * permissions] For automatic deployments that require a sequence of operations,
      * the operation is queued to be performed. For more information, see the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes">stack
-     * set operation status codes</a> in the CloudFormation User Guide.</p> </li> <li>
-     * <p> <code>RUNNING</code>: The operation is currently being performed.</p> </li>
-     * <li> <p> <code>STOPPED</code>: The user has canceled the operation.</p> </li>
-     * <li> <p> <code>STOPPING</code>: The operation is in the process of stopping, at
-     * user request.</p> </li> <li> <p> <code>SUCCEEDED</code>: The operation completed
-     * creating or updating all the specified stacks without exceeding the failure
-     * tolerance for the operation.</p> </li> </ul>
+     * set operation status codes</a> in the <i>CloudFormation User Guide</i>.</p>
+     * </li> <li> <p> <code>RUNNING</code>: The operation is currently being
+     * performed.</p> </li> <li> <p> <code>STOPPED</code>: The user has canceled the
+     * operation.</p> </li> <li> <p> <code>STOPPING</code>: The operation is in the
+     * process of stopping, at user request.</p> </li> <li> <p> <code>SUCCEEDED</code>:
+     * The operation completed creating or updating all the specified stacks without
+     * exceeding the failure tolerance for the operation.</p> </li> </ul>
      */
     inline StackSetOperationSummary& WithStatus(const StackSetOperationStatus& value) { SetStatus(value); return *this;}
 
@@ -263,13 +263,13 @@ namespace Model
      * permissions] For automatic deployments that require a sequence of operations,
      * the operation is queued to be performed. For more information, see the <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes">stack
-     * set operation status codes</a> in the CloudFormation User Guide.</p> </li> <li>
-     * <p> <code>RUNNING</code>: The operation is currently being performed.</p> </li>
-     * <li> <p> <code>STOPPED</code>: The user has canceled the operation.</p> </li>
-     * <li> <p> <code>STOPPING</code>: The operation is in the process of stopping, at
-     * user request.</p> </li> <li> <p> <code>SUCCEEDED</code>: The operation completed
-     * creating or updating all the specified stacks without exceeding the failure
-     * tolerance for the operation.</p> </li> </ul>
+     * set operation status codes</a> in the <i>CloudFormation User Guide</i>.</p>
+     * </li> <li> <p> <code>RUNNING</code>: The operation is currently being
+     * performed.</p> </li> <li> <p> <code>STOPPED</code>: The user has canceled the
+     * operation.</p> </li> <li> <p> <code>STOPPING</code>: The operation is in the
+     * process of stopping, at user request.</p> </li> <li> <p> <code>SUCCEEDED</code>:
+     * The operation completed creating or updating all the specified stacks without
+     * exceeding the failure tolerance for the operation.</p> </li> </ul>
      */
     inline StackSetOperationSummary& WithStatus(StackSetOperationStatus&& value) { SetStatus(std::move(value)); return *this;}
 

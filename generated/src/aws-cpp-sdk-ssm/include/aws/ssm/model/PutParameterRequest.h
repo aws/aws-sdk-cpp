@@ -772,27 +772,27 @@ namespace Model
      * configured to use parameter policies. You can create a maximum of 100,000
      * advanced parameters for each Region in an Amazon Web Services account. Advanced
      * parameters incur a charge. For more information, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html">Standard
-     * and advanced parameter tiers</a> in the <i>Amazon Web Services Systems Manager
-     * User Guide</i>.</p> <p>You can change a standard parameter to an advanced
-     * parameter any time. But you can't revert an advanced parameter to a standard
-     * parameter. Reverting an advanced parameter to a standard parameter would result
-     * in data loss because the system would truncate the size of the parameter from 8
-     * KB to 4 KB. Reverting would also remove any policies attached to the parameter.
-     * Lastly, advanced parameters use a different form of encryption than standard
-     * parameters. </p> <p>If you no longer need an advanced parameter, or if you no
-     * longer want to incur charges for an advanced parameter, you must delete it and
-     * recreate it as a new standard parameter. </p> <p> <b>Using the Default Tier
-     * Configuration</b> </p> <p>In <code>PutParameter</code> requests, you can specify
-     * the tier to create the parameter in. Whenever you specify a tier in the request,
-     * Parameter Store creates or updates the parameter according to that request.
-     * However, if you don't specify a tier in a request, Parameter Store assigns the
-     * tier based on the current Parameter Store default tier configuration.</p> <p>The
-     * default tier when you begin using Parameter Store is the standard-parameter
-     * tier. If you use the advanced-parameter tier, you can specify one of the
-     * following as the default:</p> <ul> <li> <p> <b>Advanced</b>: With this option,
-     * Parameter Store evaluates all requests as advanced parameters. </p> </li> <li>
-     * <p> <b>Intelligent-Tiering</b>: With this option, Parameter Store evaluates each
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html">Managing
+     * parameter tiers</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p> <p>You can change a standard parameter to an advanced parameter
+     * any time. But you can't revert an advanced parameter to a standard parameter.
+     * Reverting an advanced parameter to a standard parameter would result in data
+     * loss because the system would truncate the size of the parameter from 8 KB to 4
+     * KB. Reverting would also remove any policies attached to the parameter. Lastly,
+     * advanced parameters use a different form of encryption than standard parameters.
+     * </p> <p>If you no longer need an advanced parameter, or if you no longer want to
+     * incur charges for an advanced parameter, you must delete it and recreate it as a
+     * new standard parameter. </p> <p> <b>Using the Default Tier Configuration</b>
+     * </p> <p>In <code>PutParameter</code> requests, you can specify the tier to
+     * create the parameter in. Whenever you specify a tier in the request, Parameter
+     * Store creates or updates the parameter according to that request. However, if
+     * you don't specify a tier in a request, Parameter Store assigns the tier based on
+     * the current Parameter Store default tier configuration.</p> <p>The default tier
+     * when you begin using Parameter Store is the standard-parameter tier. If you use
+     * the advanced-parameter tier, you can specify one of the following as the
+     * default:</p> <ul> <li> <p> <b>Advanced</b>: With this option, Parameter Store
+     * evaluates all requests as advanced parameters. </p> </li> <li> <p>
+     * <b>Intelligent-Tiering</b>: With this option, Parameter Store evaluates each
      * request to determine if the parameter is standard or advanced. </p> <p>If the
      * request doesn't include any options that require an advanced parameter, the
      * parameter is created in the standard-parameter tier. If one or more options
@@ -806,7 +806,7 @@ namespace Model
      * exist in your Amazon Web Services account in the current Amazon Web Services
      * Region.</p> </li> </ul> <p>For more information about configuring the default
      * tier option, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html#ps-default-tier">Specifying
      * a default parameter tier</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.</p>
      */
@@ -822,27 +822,27 @@ namespace Model
      * configured to use parameter policies. You can create a maximum of 100,000
      * advanced parameters for each Region in an Amazon Web Services account. Advanced
      * parameters incur a charge. For more information, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html">Standard
-     * and advanced parameter tiers</a> in the <i>Amazon Web Services Systems Manager
-     * User Guide</i>.</p> <p>You can change a standard parameter to an advanced
-     * parameter any time. But you can't revert an advanced parameter to a standard
-     * parameter. Reverting an advanced parameter to a standard parameter would result
-     * in data loss because the system would truncate the size of the parameter from 8
-     * KB to 4 KB. Reverting would also remove any policies attached to the parameter.
-     * Lastly, advanced parameters use a different form of encryption than standard
-     * parameters. </p> <p>If you no longer need an advanced parameter, or if you no
-     * longer want to incur charges for an advanced parameter, you must delete it and
-     * recreate it as a new standard parameter. </p> <p> <b>Using the Default Tier
-     * Configuration</b> </p> <p>In <code>PutParameter</code> requests, you can specify
-     * the tier to create the parameter in. Whenever you specify a tier in the request,
-     * Parameter Store creates or updates the parameter according to that request.
-     * However, if you don't specify a tier in a request, Parameter Store assigns the
-     * tier based on the current Parameter Store default tier configuration.</p> <p>The
-     * default tier when you begin using Parameter Store is the standard-parameter
-     * tier. If you use the advanced-parameter tier, you can specify one of the
-     * following as the default:</p> <ul> <li> <p> <b>Advanced</b>: With this option,
-     * Parameter Store evaluates all requests as advanced parameters. </p> </li> <li>
-     * <p> <b>Intelligent-Tiering</b>: With this option, Parameter Store evaluates each
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html">Managing
+     * parameter tiers</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p> <p>You can change a standard parameter to an advanced parameter
+     * any time. But you can't revert an advanced parameter to a standard parameter.
+     * Reverting an advanced parameter to a standard parameter would result in data
+     * loss because the system would truncate the size of the parameter from 8 KB to 4
+     * KB. Reverting would also remove any policies attached to the parameter. Lastly,
+     * advanced parameters use a different form of encryption than standard parameters.
+     * </p> <p>If you no longer need an advanced parameter, or if you no longer want to
+     * incur charges for an advanced parameter, you must delete it and recreate it as a
+     * new standard parameter. </p> <p> <b>Using the Default Tier Configuration</b>
+     * </p> <p>In <code>PutParameter</code> requests, you can specify the tier to
+     * create the parameter in. Whenever you specify a tier in the request, Parameter
+     * Store creates or updates the parameter according to that request. However, if
+     * you don't specify a tier in a request, Parameter Store assigns the tier based on
+     * the current Parameter Store default tier configuration.</p> <p>The default tier
+     * when you begin using Parameter Store is the standard-parameter tier. If you use
+     * the advanced-parameter tier, you can specify one of the following as the
+     * default:</p> <ul> <li> <p> <b>Advanced</b>: With this option, Parameter Store
+     * evaluates all requests as advanced parameters. </p> </li> <li> <p>
+     * <b>Intelligent-Tiering</b>: With this option, Parameter Store evaluates each
      * request to determine if the parameter is standard or advanced. </p> <p>If the
      * request doesn't include any options that require an advanced parameter, the
      * parameter is created in the standard-parameter tier. If one or more options
@@ -856,7 +856,7 @@ namespace Model
      * exist in your Amazon Web Services account in the current Amazon Web Services
      * Region.</p> </li> </ul> <p>For more information about configuring the default
      * tier option, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html#ps-default-tier">Specifying
      * a default parameter tier</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.</p>
      */
@@ -872,27 +872,27 @@ namespace Model
      * configured to use parameter policies. You can create a maximum of 100,000
      * advanced parameters for each Region in an Amazon Web Services account. Advanced
      * parameters incur a charge. For more information, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html">Standard
-     * and advanced parameter tiers</a> in the <i>Amazon Web Services Systems Manager
-     * User Guide</i>.</p> <p>You can change a standard parameter to an advanced
-     * parameter any time. But you can't revert an advanced parameter to a standard
-     * parameter. Reverting an advanced parameter to a standard parameter would result
-     * in data loss because the system would truncate the size of the parameter from 8
-     * KB to 4 KB. Reverting would also remove any policies attached to the parameter.
-     * Lastly, advanced parameters use a different form of encryption than standard
-     * parameters. </p> <p>If you no longer need an advanced parameter, or if you no
-     * longer want to incur charges for an advanced parameter, you must delete it and
-     * recreate it as a new standard parameter. </p> <p> <b>Using the Default Tier
-     * Configuration</b> </p> <p>In <code>PutParameter</code> requests, you can specify
-     * the tier to create the parameter in. Whenever you specify a tier in the request,
-     * Parameter Store creates or updates the parameter according to that request.
-     * However, if you don't specify a tier in a request, Parameter Store assigns the
-     * tier based on the current Parameter Store default tier configuration.</p> <p>The
-     * default tier when you begin using Parameter Store is the standard-parameter
-     * tier. If you use the advanced-parameter tier, you can specify one of the
-     * following as the default:</p> <ul> <li> <p> <b>Advanced</b>: With this option,
-     * Parameter Store evaluates all requests as advanced parameters. </p> </li> <li>
-     * <p> <b>Intelligent-Tiering</b>: With this option, Parameter Store evaluates each
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html">Managing
+     * parameter tiers</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p> <p>You can change a standard parameter to an advanced parameter
+     * any time. But you can't revert an advanced parameter to a standard parameter.
+     * Reverting an advanced parameter to a standard parameter would result in data
+     * loss because the system would truncate the size of the parameter from 8 KB to 4
+     * KB. Reverting would also remove any policies attached to the parameter. Lastly,
+     * advanced parameters use a different form of encryption than standard parameters.
+     * </p> <p>If you no longer need an advanced parameter, or if you no longer want to
+     * incur charges for an advanced parameter, you must delete it and recreate it as a
+     * new standard parameter. </p> <p> <b>Using the Default Tier Configuration</b>
+     * </p> <p>In <code>PutParameter</code> requests, you can specify the tier to
+     * create the parameter in. Whenever you specify a tier in the request, Parameter
+     * Store creates or updates the parameter according to that request. However, if
+     * you don't specify a tier in a request, Parameter Store assigns the tier based on
+     * the current Parameter Store default tier configuration.</p> <p>The default tier
+     * when you begin using Parameter Store is the standard-parameter tier. If you use
+     * the advanced-parameter tier, you can specify one of the following as the
+     * default:</p> <ul> <li> <p> <b>Advanced</b>: With this option, Parameter Store
+     * evaluates all requests as advanced parameters. </p> </li> <li> <p>
+     * <b>Intelligent-Tiering</b>: With this option, Parameter Store evaluates each
      * request to determine if the parameter is standard or advanced. </p> <p>If the
      * request doesn't include any options that require an advanced parameter, the
      * parameter is created in the standard-parameter tier. If one or more options
@@ -906,7 +906,7 @@ namespace Model
      * exist in your Amazon Web Services account in the current Amazon Web Services
      * Region.</p> </li> </ul> <p>For more information about configuring the default
      * tier option, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html#ps-default-tier">Specifying
      * a default parameter tier</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.</p>
      */
@@ -922,27 +922,27 @@ namespace Model
      * configured to use parameter policies. You can create a maximum of 100,000
      * advanced parameters for each Region in an Amazon Web Services account. Advanced
      * parameters incur a charge. For more information, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html">Standard
-     * and advanced parameter tiers</a> in the <i>Amazon Web Services Systems Manager
-     * User Guide</i>.</p> <p>You can change a standard parameter to an advanced
-     * parameter any time. But you can't revert an advanced parameter to a standard
-     * parameter. Reverting an advanced parameter to a standard parameter would result
-     * in data loss because the system would truncate the size of the parameter from 8
-     * KB to 4 KB. Reverting would also remove any policies attached to the parameter.
-     * Lastly, advanced parameters use a different form of encryption than standard
-     * parameters. </p> <p>If you no longer need an advanced parameter, or if you no
-     * longer want to incur charges for an advanced parameter, you must delete it and
-     * recreate it as a new standard parameter. </p> <p> <b>Using the Default Tier
-     * Configuration</b> </p> <p>In <code>PutParameter</code> requests, you can specify
-     * the tier to create the parameter in. Whenever you specify a tier in the request,
-     * Parameter Store creates or updates the parameter according to that request.
-     * However, if you don't specify a tier in a request, Parameter Store assigns the
-     * tier based on the current Parameter Store default tier configuration.</p> <p>The
-     * default tier when you begin using Parameter Store is the standard-parameter
-     * tier. If you use the advanced-parameter tier, you can specify one of the
-     * following as the default:</p> <ul> <li> <p> <b>Advanced</b>: With this option,
-     * Parameter Store evaluates all requests as advanced parameters. </p> </li> <li>
-     * <p> <b>Intelligent-Tiering</b>: With this option, Parameter Store evaluates each
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html">Managing
+     * parameter tiers</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p> <p>You can change a standard parameter to an advanced parameter
+     * any time. But you can't revert an advanced parameter to a standard parameter.
+     * Reverting an advanced parameter to a standard parameter would result in data
+     * loss because the system would truncate the size of the parameter from 8 KB to 4
+     * KB. Reverting would also remove any policies attached to the parameter. Lastly,
+     * advanced parameters use a different form of encryption than standard parameters.
+     * </p> <p>If you no longer need an advanced parameter, or if you no longer want to
+     * incur charges for an advanced parameter, you must delete it and recreate it as a
+     * new standard parameter. </p> <p> <b>Using the Default Tier Configuration</b>
+     * </p> <p>In <code>PutParameter</code> requests, you can specify the tier to
+     * create the parameter in. Whenever you specify a tier in the request, Parameter
+     * Store creates or updates the parameter according to that request. However, if
+     * you don't specify a tier in a request, Parameter Store assigns the tier based on
+     * the current Parameter Store default tier configuration.</p> <p>The default tier
+     * when you begin using Parameter Store is the standard-parameter tier. If you use
+     * the advanced-parameter tier, you can specify one of the following as the
+     * default:</p> <ul> <li> <p> <b>Advanced</b>: With this option, Parameter Store
+     * evaluates all requests as advanced parameters. </p> </li> <li> <p>
+     * <b>Intelligent-Tiering</b>: With this option, Parameter Store evaluates each
      * request to determine if the parameter is standard or advanced. </p> <p>If the
      * request doesn't include any options that require an advanced parameter, the
      * parameter is created in the standard-parameter tier. If one or more options
@@ -956,7 +956,7 @@ namespace Model
      * exist in your Amazon Web Services account in the current Amazon Web Services
      * Region.</p> </li> </ul> <p>For more information about configuring the default
      * tier option, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html#ps-default-tier">Specifying
      * a default parameter tier</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.</p>
      */
@@ -972,27 +972,27 @@ namespace Model
      * configured to use parameter policies. You can create a maximum of 100,000
      * advanced parameters for each Region in an Amazon Web Services account. Advanced
      * parameters incur a charge. For more information, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html">Standard
-     * and advanced parameter tiers</a> in the <i>Amazon Web Services Systems Manager
-     * User Guide</i>.</p> <p>You can change a standard parameter to an advanced
-     * parameter any time. But you can't revert an advanced parameter to a standard
-     * parameter. Reverting an advanced parameter to a standard parameter would result
-     * in data loss because the system would truncate the size of the parameter from 8
-     * KB to 4 KB. Reverting would also remove any policies attached to the parameter.
-     * Lastly, advanced parameters use a different form of encryption than standard
-     * parameters. </p> <p>If you no longer need an advanced parameter, or if you no
-     * longer want to incur charges for an advanced parameter, you must delete it and
-     * recreate it as a new standard parameter. </p> <p> <b>Using the Default Tier
-     * Configuration</b> </p> <p>In <code>PutParameter</code> requests, you can specify
-     * the tier to create the parameter in. Whenever you specify a tier in the request,
-     * Parameter Store creates or updates the parameter according to that request.
-     * However, if you don't specify a tier in a request, Parameter Store assigns the
-     * tier based on the current Parameter Store default tier configuration.</p> <p>The
-     * default tier when you begin using Parameter Store is the standard-parameter
-     * tier. If you use the advanced-parameter tier, you can specify one of the
-     * following as the default:</p> <ul> <li> <p> <b>Advanced</b>: With this option,
-     * Parameter Store evaluates all requests as advanced parameters. </p> </li> <li>
-     * <p> <b>Intelligent-Tiering</b>: With this option, Parameter Store evaluates each
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html">Managing
+     * parameter tiers</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p> <p>You can change a standard parameter to an advanced parameter
+     * any time. But you can't revert an advanced parameter to a standard parameter.
+     * Reverting an advanced parameter to a standard parameter would result in data
+     * loss because the system would truncate the size of the parameter from 8 KB to 4
+     * KB. Reverting would also remove any policies attached to the parameter. Lastly,
+     * advanced parameters use a different form of encryption than standard parameters.
+     * </p> <p>If you no longer need an advanced parameter, or if you no longer want to
+     * incur charges for an advanced parameter, you must delete it and recreate it as a
+     * new standard parameter. </p> <p> <b>Using the Default Tier Configuration</b>
+     * </p> <p>In <code>PutParameter</code> requests, you can specify the tier to
+     * create the parameter in. Whenever you specify a tier in the request, Parameter
+     * Store creates or updates the parameter according to that request. However, if
+     * you don't specify a tier in a request, Parameter Store assigns the tier based on
+     * the current Parameter Store default tier configuration.</p> <p>The default tier
+     * when you begin using Parameter Store is the standard-parameter tier. If you use
+     * the advanced-parameter tier, you can specify one of the following as the
+     * default:</p> <ul> <li> <p> <b>Advanced</b>: With this option, Parameter Store
+     * evaluates all requests as advanced parameters. </p> </li> <li> <p>
+     * <b>Intelligent-Tiering</b>: With this option, Parameter Store evaluates each
      * request to determine if the parameter is standard or advanced. </p> <p>If the
      * request doesn't include any options that require an advanced parameter, the
      * parameter is created in the standard-parameter tier. If one or more options
@@ -1006,7 +1006,7 @@ namespace Model
      * exist in your Amazon Web Services account in the current Amazon Web Services
      * Region.</p> </li> </ul> <p>For more information about configuring the default
      * tier option, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html#ps-default-tier">Specifying
      * a default parameter tier</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.</p>
      */
@@ -1022,27 +1022,27 @@ namespace Model
      * configured to use parameter policies. You can create a maximum of 100,000
      * advanced parameters for each Region in an Amazon Web Services account. Advanced
      * parameters incur a charge. For more information, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html">Standard
-     * and advanced parameter tiers</a> in the <i>Amazon Web Services Systems Manager
-     * User Guide</i>.</p> <p>You can change a standard parameter to an advanced
-     * parameter any time. But you can't revert an advanced parameter to a standard
-     * parameter. Reverting an advanced parameter to a standard parameter would result
-     * in data loss because the system would truncate the size of the parameter from 8
-     * KB to 4 KB. Reverting would also remove any policies attached to the parameter.
-     * Lastly, advanced parameters use a different form of encryption than standard
-     * parameters. </p> <p>If you no longer need an advanced parameter, or if you no
-     * longer want to incur charges for an advanced parameter, you must delete it and
-     * recreate it as a new standard parameter. </p> <p> <b>Using the Default Tier
-     * Configuration</b> </p> <p>In <code>PutParameter</code> requests, you can specify
-     * the tier to create the parameter in. Whenever you specify a tier in the request,
-     * Parameter Store creates or updates the parameter according to that request.
-     * However, if you don't specify a tier in a request, Parameter Store assigns the
-     * tier based on the current Parameter Store default tier configuration.</p> <p>The
-     * default tier when you begin using Parameter Store is the standard-parameter
-     * tier. If you use the advanced-parameter tier, you can specify one of the
-     * following as the default:</p> <ul> <li> <p> <b>Advanced</b>: With this option,
-     * Parameter Store evaluates all requests as advanced parameters. </p> </li> <li>
-     * <p> <b>Intelligent-Tiering</b>: With this option, Parameter Store evaluates each
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html">Managing
+     * parameter tiers</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p> <p>You can change a standard parameter to an advanced parameter
+     * any time. But you can't revert an advanced parameter to a standard parameter.
+     * Reverting an advanced parameter to a standard parameter would result in data
+     * loss because the system would truncate the size of the parameter from 8 KB to 4
+     * KB. Reverting would also remove any policies attached to the parameter. Lastly,
+     * advanced parameters use a different form of encryption than standard parameters.
+     * </p> <p>If you no longer need an advanced parameter, or if you no longer want to
+     * incur charges for an advanced parameter, you must delete it and recreate it as a
+     * new standard parameter. </p> <p> <b>Using the Default Tier Configuration</b>
+     * </p> <p>In <code>PutParameter</code> requests, you can specify the tier to
+     * create the parameter in. Whenever you specify a tier in the request, Parameter
+     * Store creates or updates the parameter according to that request. However, if
+     * you don't specify a tier in a request, Parameter Store assigns the tier based on
+     * the current Parameter Store default tier configuration.</p> <p>The default tier
+     * when you begin using Parameter Store is the standard-parameter tier. If you use
+     * the advanced-parameter tier, you can specify one of the following as the
+     * default:</p> <ul> <li> <p> <b>Advanced</b>: With this option, Parameter Store
+     * evaluates all requests as advanced parameters. </p> </li> <li> <p>
+     * <b>Intelligent-Tiering</b>: With this option, Parameter Store evaluates each
      * request to determine if the parameter is standard or advanced. </p> <p>If the
      * request doesn't include any options that require an advanced parameter, the
      * parameter is created in the standard-parameter tier. If one or more options
@@ -1056,7 +1056,7 @@ namespace Model
      * exist in your Amazon Web Services account in the current Amazon Web Services
      * Region.</p> </li> </ul> <p>For more information about configuring the default
      * tier option, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html#ps-default-tier">Specifying
      * a default parameter tier</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.</p>
      */
@@ -1265,7 +1265,7 @@ namespace Model
      * up notifications or trigger actions based on Parameter Store events</a>. For
      * more information about AMI format validation , see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
-     * parameter support for Amazon Machine Image (AMI) IDs</a>. </p> 
+     * parameter support for Amazon Machine Image IDs</a>. </p> 
      */
     inline const Aws::String& GetDataType() const{ return m_dataType; }
 
@@ -1294,7 +1294,7 @@ namespace Model
      * up notifications or trigger actions based on Parameter Store events</a>. For
      * more information about AMI format validation , see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
-     * parameter support for Amazon Machine Image (AMI) IDs</a>. </p> 
+     * parameter support for Amazon Machine Image IDs</a>. </p> 
      */
     inline bool DataTypeHasBeenSet() const { return m_dataTypeHasBeenSet; }
 
@@ -1323,7 +1323,7 @@ namespace Model
      * up notifications or trigger actions based on Parameter Store events</a>. For
      * more information about AMI format validation , see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
-     * parameter support for Amazon Machine Image (AMI) IDs</a>. </p> 
+     * parameter support for Amazon Machine Image IDs</a>. </p> 
      */
     inline void SetDataType(const Aws::String& value) { m_dataTypeHasBeenSet = true; m_dataType = value; }
 
@@ -1352,7 +1352,7 @@ namespace Model
      * up notifications or trigger actions based on Parameter Store events</a>. For
      * more information about AMI format validation , see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
-     * parameter support for Amazon Machine Image (AMI) IDs</a>. </p> 
+     * parameter support for Amazon Machine Image IDs</a>. </p> 
      */
     inline void SetDataType(Aws::String&& value) { m_dataTypeHasBeenSet = true; m_dataType = std::move(value); }
 
@@ -1381,7 +1381,7 @@ namespace Model
      * up notifications or trigger actions based on Parameter Store events</a>. For
      * more information about AMI format validation , see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
-     * parameter support for Amazon Machine Image (AMI) IDs</a>. </p> 
+     * parameter support for Amazon Machine Image IDs</a>. </p> 
      */
     inline void SetDataType(const char* value) { m_dataTypeHasBeenSet = true; m_dataType.assign(value); }
 
@@ -1410,7 +1410,7 @@ namespace Model
      * up notifications or trigger actions based on Parameter Store events</a>. For
      * more information about AMI format validation , see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
-     * parameter support for Amazon Machine Image (AMI) IDs</a>. </p> 
+     * parameter support for Amazon Machine Image IDs</a>. </p> 
      */
     inline PutParameterRequest& WithDataType(const Aws::String& value) { SetDataType(value); return *this;}
 
@@ -1439,7 +1439,7 @@ namespace Model
      * up notifications or trigger actions based on Parameter Store events</a>. For
      * more information about AMI format validation , see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
-     * parameter support for Amazon Machine Image (AMI) IDs</a>. </p> 
+     * parameter support for Amazon Machine Image IDs</a>. </p> 
      */
     inline PutParameterRequest& WithDataType(Aws::String&& value) { SetDataType(std::move(value)); return *this;}
 
@@ -1468,7 +1468,7 @@ namespace Model
      * up notifications or trigger actions based on Parameter Store events</a>. For
      * more information about AMI format validation , see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
-     * parameter support for Amazon Machine Image (AMI) IDs</a>. </p> 
+     * parameter support for Amazon Machine Image IDs</a>. </p> 
      */
     inline PutParameterRequest& WithDataType(const char* value) { SetDataType(value); return *this;}
 

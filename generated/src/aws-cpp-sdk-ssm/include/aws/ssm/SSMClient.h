@@ -122,7 +122,7 @@ namespace SSM
          * you add. Tags don't have any semantic meaning to and are interpreted strictly as
          * a string of characters.</p> <p>For more information about using tags with Amazon
          * Elastic Compute Cloud (Amazon EC2) instances, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tag
          * your Amazon EC2 resources</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/AddTagsToResource">AWS
@@ -239,11 +239,11 @@ namespace SSM
          * environment. For more information about requirements for managing on-premises
          * machines using Systems Manager, see <a
          * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances.html">Setting
-         * up Amazon Web Services Systems Manager for hybrid environments</a> in the
-         * <i>Amazon Web Services Systems Manager User Guide</i>. </p>  <p>Amazon
-         * Elastic Compute Cloud (Amazon EC2) instances, edge devices, and on-premises
-         * servers and VMs that are configured for Systems Manager are all called
-         * <i>managed nodes</i>.</p> <p><h3>See Also:</h3>   <a
+         * up Amazon Web Services Systems Manager for hybrid and multicloud
+         * environments</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+         * </p>  <p>Amazon Elastic Compute Cloud (Amazon EC2) instances, edge
+         * devices, and on-premises servers and VMs that are configured for Systems Manager
+         * are all called <i>managed nodes</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateActivation">AWS
          * API Reference</a></p>
          */
@@ -861,7 +861,7 @@ namespace SSM
          * (OpsItems).</p> </li> <li> <p> <code>Parameter</code> - The resource policy is
          * used to share a parameter with other accounts using Resource Access Manager
          * (RAM). For more information about cross-account sharing of parameters, see <a
-         * href="systems-manager/latest/userguide/parameter-store-shared-parameters.html">Working
+         * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-shared-parameters.html">Working
          * with shared parameters</a> in the <i>Amazon Web Services Systems Manager User
          * Guide</i>.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteResourcePolicy">AWS
@@ -1233,7 +1233,7 @@ namespace SSM
         }
 
         /**
-         * <p>All associations for the managed node(s).</p><p><h3>See Also:</h3>   <a
+         * <p>All associations for the managed nodes.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeEffectiveInstanceAssociations">AWS
          * API Reference</a></p>
          */
@@ -1285,7 +1285,7 @@ namespace SSM
         }
 
         /**
-         * <p>The status of the associations for the managed node(s).</p><p><h3>See
+         * <p>The status of the associations for the managed nodes.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstanceAssociationsStatus">AWS
          * API Reference</a></p>
@@ -1674,9 +1674,9 @@ namespace SSM
          * Services Systems Manager OpsCenter to view, investigate, and remediate
          * operational issues impacting the performance and health of their Amazon Web
          * Services resources. For more information, see <a
-         * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">OpsCenter</a>
-         * in the <i>Amazon Web Services Systems Manager User Guide</i>. </p><p><h3>See
-         * Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">Amazon
+         * Web Services Systems Manager OpsCenter</a> in the <i>Amazon Web Services Systems
+         * Manager User Guide</i>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeOpsItems">AWS
          * API Reference</a></p>
          */
@@ -2329,9 +2329,9 @@ namespace SSM
          * Services Systems Manager OpsCenter to view, investigate, and remediate
          * operational issues impacting the performance and health of their Amazon Web
          * Services resources. For more information, see <a
-         * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">OpsCenter</a>
-         * in the <i>Amazon Web Services Systems Manager User Guide</i>. </p><p><h3>See
-         * Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">Amazon
+         * Web Services Systems Manager OpsCenter</a> in the <i>Amazon Web Services Systems
+         * Manager User Guide</i>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetOpsItem">AWS API
          * Reference</a></p>
          */
@@ -3185,7 +3185,7 @@ namespace SSM
          * <code>InstancesWithFailedPatches</code>.</p> </li> <li> <p>PatchGroup: The name
          * of a patch group.</p> </li> <li> <p>InstalledTime: The time the association,
          * patch, or custom compliance item was applied to the resource. Specify the time
-         * by using the following format: yyyy-MM-dd'T'HH:mm:ss'Z'</p> </li>
+         * by using the following format: <code>yyyy-MM-dd'T'HH:mm:ss'Z'</code> </p> </li>
          * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutComplianceItems">AWS
          * API Reference</a></p>
@@ -3273,18 +3273,17 @@ namespace SSM
          * used to share a parameter with other accounts using Resource Access Manager
          * (RAM). </p> <p>To share a parameter, it must be in the advanced parameter tier.
          * For information about parameter tiers, see <a
-         * href="https://docs.aws.amazon.com/parameter-store-
-         * advanced-parameters.html">Managing parameter tiers</a>. For information about
-         * changing an existing standard parameter to an advanced parameter, see <a
-         * href="https://docs.aws.amazon.com/parameter-store-advanced-parameters.html#parameter-
-         * store-advanced-parameters-enabling">Changing a standard parameter to an advanced
-         * parameter</a>.</p> <p>To share a <code>SecureString</code> parameter, it must be
-         * encrypted with a customer managed key, and you must share the key separately
-         * through Key Management Service. Amazon Web Services managed keys cannot be
-         * shared. Parameters encrypted with the default Amazon Web Services managed key
-         * can be updated to use a customer managed key instead. For KMS key definitions,
-         * see <a
-         * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-mgmt">KMS
+         * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html">Managing
+         * parameter tiers</a>. For information about changing an existing standard
+         * parameter to an advanced parameter, see <a
+         * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html#parameter-store-advanced-parameters-enabling">Changing
+         * a standard parameter to an advanced parameter</a>.</p> <p>To share a
+         * <code>SecureString</code> parameter, it must be encrypted with a customer
+         * managed key, and you must share the key separately through Key Management
+         * Service. Amazon Web Services managed keys cannot be shared. Parameters encrypted
+         * with the default Amazon Web Services managed key can be updated to use a
+         * customer managed key instead. For KMS key definitions, see <a
+         * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">KMS
          * concepts</a> in the <i>Key Management Service Developer Guide</i>.</p>
          *  <p>While you can share a parameter using the Systems Manager
          * <code>PutResourcePolicy</code> operation, we recommend using Resource Access
@@ -4072,9 +4071,9 @@ namespace SSM
          * Services Systems Manager OpsCenter to view, investigate, and remediate
          * operational issues impacting the performance and health of their Amazon Web
          * Services resources. For more information, see <a
-         * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">OpsCenter</a>
-         * in the <i>Amazon Web Services Systems Manager User Guide</i>. </p><p><h3>See
-         * Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">Amazon
+         * Web Services Systems Manager OpsCenter</a> in the <i>Amazon Web Services Systems
+         * Manager User Guide</i>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateOpsItem">AWS
          * API Reference</a></p>
          */

@@ -162,49 +162,49 @@ namespace Model
 
     /**
      * <p>The target EBS volume type of the volume. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-     * EBS volume types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>Default: The existing type is retained.</p>
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html">Amazon
+     * EBS volume types</a> in the <i>Amazon EBS User Guide</i>.</p> <p>Default: The
+     * existing type is retained.</p>
      */
     inline const VolumeType& GetVolumeType() const{ return m_volumeType; }
 
     /**
      * <p>The target EBS volume type of the volume. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-     * EBS volume types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>Default: The existing type is retained.</p>
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html">Amazon
+     * EBS volume types</a> in the <i>Amazon EBS User Guide</i>.</p> <p>Default: The
+     * existing type is retained.</p>
      */
     inline bool VolumeTypeHasBeenSet() const { return m_volumeTypeHasBeenSet; }
 
     /**
      * <p>The target EBS volume type of the volume. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-     * EBS volume types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>Default: The existing type is retained.</p>
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html">Amazon
+     * EBS volume types</a> in the <i>Amazon EBS User Guide</i>.</p> <p>Default: The
+     * existing type is retained.</p>
      */
     inline void SetVolumeType(const VolumeType& value) { m_volumeTypeHasBeenSet = true; m_volumeType = value; }
 
     /**
      * <p>The target EBS volume type of the volume. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-     * EBS volume types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>Default: The existing type is retained.</p>
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html">Amazon
+     * EBS volume types</a> in the <i>Amazon EBS User Guide</i>.</p> <p>Default: The
+     * existing type is retained.</p>
      */
     inline void SetVolumeType(VolumeType&& value) { m_volumeTypeHasBeenSet = true; m_volumeType = std::move(value); }
 
     /**
      * <p>The target EBS volume type of the volume. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-     * EBS volume types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>Default: The existing type is retained.</p>
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html">Amazon
+     * EBS volume types</a> in the <i>Amazon EBS User Guide</i>.</p> <p>Default: The
+     * existing type is retained.</p>
      */
     inline ModifyVolumeRequest& WithVolumeType(const VolumeType& value) { SetVolumeType(value); return *this;}
 
     /**
      * <p>The target EBS volume type of the volume. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
-     * EBS volume types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>Default: The existing type is retained.</p>
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html">Amazon
+     * EBS volume types</a> in the <i>Amazon EBS User Guide</i>.</p> <p>Default: The
+     * existing type is retained.</p>
      */
     inline ModifyVolumeRequest& WithVolumeType(VolumeType&& value) { SetVolumeType(std::move(value)); return *this;}
 
@@ -314,9 +314,8 @@ namespace Model
      * Nitro-based instances</a> in the same Availability Zone. This parameter is
      * supported with <code>io1</code> and <code>io2</code> volumes only. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volumes-multi.html">
-     * Amazon EBS Multi-Attach</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volumes-multi.html">
+     * Amazon EBS Multi-Attach</a> in the <i>Amazon EBS User Guide</i>.</p>
      */
     inline bool GetMultiAttachEnabled() const{ return m_multiAttachEnabled; }
 
@@ -327,9 +326,8 @@ namespace Model
      * Nitro-based instances</a> in the same Availability Zone. This parameter is
      * supported with <code>io1</code> and <code>io2</code> volumes only. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volumes-multi.html">
-     * Amazon EBS Multi-Attach</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volumes-multi.html">
+     * Amazon EBS Multi-Attach</a> in the <i>Amazon EBS User Guide</i>.</p>
      */
     inline bool MultiAttachEnabledHasBeenSet() const { return m_multiAttachEnabledHasBeenSet; }
 
@@ -340,9 +338,8 @@ namespace Model
      * Nitro-based instances</a> in the same Availability Zone. This parameter is
      * supported with <code>io1</code> and <code>io2</code> volumes only. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volumes-multi.html">
-     * Amazon EBS Multi-Attach</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volumes-multi.html">
+     * Amazon EBS Multi-Attach</a> in the <i>Amazon EBS User Guide</i>.</p>
      */
     inline void SetMultiAttachEnabled(bool value) { m_multiAttachEnabledHasBeenSet = true; m_multiAttachEnabled = value; }
 
@@ -353,9 +350,8 @@ namespace Model
      * Nitro-based instances</a> in the same Availability Zone. This parameter is
      * supported with <code>io1</code> and <code>io2</code> volumes only. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volumes-multi.html">
-     * Amazon EBS Multi-Attach</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volumes-multi.html">
+     * Amazon EBS Multi-Attach</a> in the <i>Amazon EBS User Guide</i>.</p>
      */
     inline ModifyVolumeRequest& WithMultiAttachEnabled(bool value) { SetMultiAttachEnabled(value); return *this;}
 

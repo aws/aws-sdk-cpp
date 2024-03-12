@@ -40,7 +40,10 @@ namespace Model
      * <p>The user name for the account. For instances not using SAML for identity
      * management, the user name can include up to 20 characters. If you are using SAML
      * for identity management, the user name can include up to 64 characters from
-     * [a-zA-Z0-9_-.\@]+.</p>
+     * [a-zA-Z0-9_-.\@]+.</p> <p>Username can include @ only if used in an email
+     * format. For example:</p> <ul> <li> <p>Correct: testuser</p> </li> <li>
+     * <p>Correct: testuser@example.com</p> </li> <li> <p>Incorrect:
+     * testuser@example</p> </li> </ul>
      */
     inline const Aws::String& GetUsername() const{ return m_username; }
 
@@ -48,7 +51,10 @@ namespace Model
      * <p>The user name for the account. For instances not using SAML for identity
      * management, the user name can include up to 20 characters. If you are using SAML
      * for identity management, the user name can include up to 64 characters from
-     * [a-zA-Z0-9_-.\@]+.</p>
+     * [a-zA-Z0-9_-.\@]+.</p> <p>Username can include @ only if used in an email
+     * format. For example:</p> <ul> <li> <p>Correct: testuser</p> </li> <li>
+     * <p>Correct: testuser@example.com</p> </li> <li> <p>Incorrect:
+     * testuser@example</p> </li> </ul>
      */
     inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
 
@@ -56,7 +62,10 @@ namespace Model
      * <p>The user name for the account. For instances not using SAML for identity
      * management, the user name can include up to 20 characters. If you are using SAML
      * for identity management, the user name can include up to 64 characters from
-     * [a-zA-Z0-9_-.\@]+.</p>
+     * [a-zA-Z0-9_-.\@]+.</p> <p>Username can include @ only if used in an email
+     * format. For example:</p> <ul> <li> <p>Correct: testuser</p> </li> <li>
+     * <p>Correct: testuser@example.com</p> </li> <li> <p>Incorrect:
+     * testuser@example</p> </li> </ul>
      */
     inline void SetUsername(const Aws::String& value) { m_usernameHasBeenSet = true; m_username = value; }
 
@@ -64,7 +73,10 @@ namespace Model
      * <p>The user name for the account. For instances not using SAML for identity
      * management, the user name can include up to 20 characters. If you are using SAML
      * for identity management, the user name can include up to 64 characters from
-     * [a-zA-Z0-9_-.\@]+.</p>
+     * [a-zA-Z0-9_-.\@]+.</p> <p>Username can include @ only if used in an email
+     * format. For example:</p> <ul> <li> <p>Correct: testuser</p> </li> <li>
+     * <p>Correct: testuser@example.com</p> </li> <li> <p>Incorrect:
+     * testuser@example</p> </li> </ul>
      */
     inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = std::move(value); }
 
@@ -72,7 +84,10 @@ namespace Model
      * <p>The user name for the account. For instances not using SAML for identity
      * management, the user name can include up to 20 characters. If you are using SAML
      * for identity management, the user name can include up to 64 characters from
-     * [a-zA-Z0-9_-.\@]+.</p>
+     * [a-zA-Z0-9_-.\@]+.</p> <p>Username can include @ only if used in an email
+     * format. For example:</p> <ul> <li> <p>Correct: testuser</p> </li> <li>
+     * <p>Correct: testuser@example.com</p> </li> <li> <p>Incorrect:
+     * testuser@example</p> </li> </ul>
      */
     inline void SetUsername(const char* value) { m_usernameHasBeenSet = true; m_username.assign(value); }
 
@@ -80,7 +95,10 @@ namespace Model
      * <p>The user name for the account. For instances not using SAML for identity
      * management, the user name can include up to 20 characters. If you are using SAML
      * for identity management, the user name can include up to 64 characters from
-     * [a-zA-Z0-9_-.\@]+.</p>
+     * [a-zA-Z0-9_-.\@]+.</p> <p>Username can include @ only if used in an email
+     * format. For example:</p> <ul> <li> <p>Correct: testuser</p> </li> <li>
+     * <p>Correct: testuser@example.com</p> </li> <li> <p>Incorrect:
+     * testuser@example</p> </li> </ul>
      */
     inline CreateUserRequest& WithUsername(const Aws::String& value) { SetUsername(value); return *this;}
 
@@ -88,7 +106,10 @@ namespace Model
      * <p>The user name for the account. For instances not using SAML for identity
      * management, the user name can include up to 20 characters. If you are using SAML
      * for identity management, the user name can include up to 64 characters from
-     * [a-zA-Z0-9_-.\@]+.</p>
+     * [a-zA-Z0-9_-.\@]+.</p> <p>Username can include @ only if used in an email
+     * format. For example:</p> <ul> <li> <p>Correct: testuser</p> </li> <li>
+     * <p>Correct: testuser@example.com</p> </li> <li> <p>Incorrect:
+     * testuser@example</p> </li> </ul>
      */
     inline CreateUserRequest& WithUsername(Aws::String&& value) { SetUsername(std::move(value)); return *this;}
 
@@ -96,7 +117,10 @@ namespace Model
      * <p>The user name for the account. For instances not using SAML for identity
      * management, the user name can include up to 20 characters. If you are using SAML
      * for identity management, the user name can include up to 64 characters from
-     * [a-zA-Z0-9_-.\@]+.</p>
+     * [a-zA-Z0-9_-.\@]+.</p> <p>Username can include @ only if used in an email
+     * format. For example:</p> <ul> <li> <p>Correct: testuser</p> </li> <li>
+     * <p>Correct: testuser@example.com</p> </li> <li> <p>Incorrect:
+     * testuser@example</p> </li> </ul>
      */
     inline CreateUserRequest& WithUsername(const char* value) { SetUsername(value); return *this;}
 

@@ -433,12 +433,12 @@ namespace Model
      * patches list is installed only if it is a dependency of another package. It is
      * considered compliant with the patch baseline, and its status is reported as
      * <code>InstalledOther</code>. This is the default action if no option is
-     * specified.</p> </li> <li> <p> <b> <code>BLOCK</code> </b>: Packages in the
-     * <code>RejectedPatches</code> list, and packages that include them as
-     * dependencies, aren't installed under any circumstances. If a package was
-     * installed before it was added to the <code>Rejected</code> patches list, it is
-     * considered non-compliant with the patch baseline, and its status is reported as
-     * <code>InstalledRejected</code>.</p> </li> </ul>
+     * specified.</p> </li> <li> <p> <b>BLOCK</b>: Packages in the <b>Rejected
+     * patches</b> list, and packages that include them as dependencies, aren't
+     * installed by Patch Manager under any circumstances. If a package was installed
+     * before it was added to the <b>Rejected patches</b> list, or is installed outside
+     * of Patch Manager afterward, it's considered noncompliant with the patch baseline
+     * and its status is reported as <i>InstalledRejected</i>.</p> </li> </ul>
      */
     inline const PatchAction& GetRejectedPatchesAction() const{ return m_rejectedPatchesAction; }
 
@@ -449,12 +449,12 @@ namespace Model
      * patches list is installed only if it is a dependency of another package. It is
      * considered compliant with the patch baseline, and its status is reported as
      * <code>InstalledOther</code>. This is the default action if no option is
-     * specified.</p> </li> <li> <p> <b> <code>BLOCK</code> </b>: Packages in the
-     * <code>RejectedPatches</code> list, and packages that include them as
-     * dependencies, aren't installed under any circumstances. If a package was
-     * installed before it was added to the <code>Rejected</code> patches list, it is
-     * considered non-compliant with the patch baseline, and its status is reported as
-     * <code>InstalledRejected</code>.</p> </li> </ul>
+     * specified.</p> </li> <li> <p> <b>BLOCK</b>: Packages in the <b>Rejected
+     * patches</b> list, and packages that include them as dependencies, aren't
+     * installed by Patch Manager under any circumstances. If a package was installed
+     * before it was added to the <b>Rejected patches</b> list, or is installed outside
+     * of Patch Manager afterward, it's considered noncompliant with the patch baseline
+     * and its status is reported as <i>InstalledRejected</i>.</p> </li> </ul>
      */
     inline bool RejectedPatchesActionHasBeenSet() const { return m_rejectedPatchesActionHasBeenSet; }
 
@@ -465,12 +465,12 @@ namespace Model
      * patches list is installed only if it is a dependency of another package. It is
      * considered compliant with the patch baseline, and its status is reported as
      * <code>InstalledOther</code>. This is the default action if no option is
-     * specified.</p> </li> <li> <p> <b> <code>BLOCK</code> </b>: Packages in the
-     * <code>RejectedPatches</code> list, and packages that include them as
-     * dependencies, aren't installed under any circumstances. If a package was
-     * installed before it was added to the <code>Rejected</code> patches list, it is
-     * considered non-compliant with the patch baseline, and its status is reported as
-     * <code>InstalledRejected</code>.</p> </li> </ul>
+     * specified.</p> </li> <li> <p> <b>BLOCK</b>: Packages in the <b>Rejected
+     * patches</b> list, and packages that include them as dependencies, aren't
+     * installed by Patch Manager under any circumstances. If a package was installed
+     * before it was added to the <b>Rejected patches</b> list, or is installed outside
+     * of Patch Manager afterward, it's considered noncompliant with the patch baseline
+     * and its status is reported as <i>InstalledRejected</i>.</p> </li> </ul>
      */
     inline void SetRejectedPatchesAction(const PatchAction& value) { m_rejectedPatchesActionHasBeenSet = true; m_rejectedPatchesAction = value; }
 
@@ -481,12 +481,12 @@ namespace Model
      * patches list is installed only if it is a dependency of another package. It is
      * considered compliant with the patch baseline, and its status is reported as
      * <code>InstalledOther</code>. This is the default action if no option is
-     * specified.</p> </li> <li> <p> <b> <code>BLOCK</code> </b>: Packages in the
-     * <code>RejectedPatches</code> list, and packages that include them as
-     * dependencies, aren't installed under any circumstances. If a package was
-     * installed before it was added to the <code>Rejected</code> patches list, it is
-     * considered non-compliant with the patch baseline, and its status is reported as
-     * <code>InstalledRejected</code>.</p> </li> </ul>
+     * specified.</p> </li> <li> <p> <b>BLOCK</b>: Packages in the <b>Rejected
+     * patches</b> list, and packages that include them as dependencies, aren't
+     * installed by Patch Manager under any circumstances. If a package was installed
+     * before it was added to the <b>Rejected patches</b> list, or is installed outside
+     * of Patch Manager afterward, it's considered noncompliant with the patch baseline
+     * and its status is reported as <i>InstalledRejected</i>.</p> </li> </ul>
      */
     inline void SetRejectedPatchesAction(PatchAction&& value) { m_rejectedPatchesActionHasBeenSet = true; m_rejectedPatchesAction = std::move(value); }
 
@@ -497,12 +497,12 @@ namespace Model
      * patches list is installed only if it is a dependency of another package. It is
      * considered compliant with the patch baseline, and its status is reported as
      * <code>InstalledOther</code>. This is the default action if no option is
-     * specified.</p> </li> <li> <p> <b> <code>BLOCK</code> </b>: Packages in the
-     * <code>RejectedPatches</code> list, and packages that include them as
-     * dependencies, aren't installed under any circumstances. If a package was
-     * installed before it was added to the <code>Rejected</code> patches list, it is
-     * considered non-compliant with the patch baseline, and its status is reported as
-     * <code>InstalledRejected</code>.</p> </li> </ul>
+     * specified.</p> </li> <li> <p> <b>BLOCK</b>: Packages in the <b>Rejected
+     * patches</b> list, and packages that include them as dependencies, aren't
+     * installed by Patch Manager under any circumstances. If a package was installed
+     * before it was added to the <b>Rejected patches</b> list, or is installed outside
+     * of Patch Manager afterward, it's considered noncompliant with the patch baseline
+     * and its status is reported as <i>InstalledRejected</i>.</p> </li> </ul>
      */
     inline UpdatePatchBaselineRequest& WithRejectedPatchesAction(const PatchAction& value) { SetRejectedPatchesAction(value); return *this;}
 
@@ -513,12 +513,12 @@ namespace Model
      * patches list is installed only if it is a dependency of another package. It is
      * considered compliant with the patch baseline, and its status is reported as
      * <code>InstalledOther</code>. This is the default action if no option is
-     * specified.</p> </li> <li> <p> <b> <code>BLOCK</code> </b>: Packages in the
-     * <code>RejectedPatches</code> list, and packages that include them as
-     * dependencies, aren't installed under any circumstances. If a package was
-     * installed before it was added to the <code>Rejected</code> patches list, it is
-     * considered non-compliant with the patch baseline, and its status is reported as
-     * <code>InstalledRejected</code>.</p> </li> </ul>
+     * specified.</p> </li> <li> <p> <b>BLOCK</b>: Packages in the <b>Rejected
+     * patches</b> list, and packages that include them as dependencies, aren't
+     * installed by Patch Manager under any circumstances. If a package was installed
+     * before it was added to the <b>Rejected patches</b> list, or is installed outside
+     * of Patch Manager afterward, it's considered noncompliant with the patch baseline
+     * and its status is reported as <i>InstalledRejected</i>.</p> </li> </ul>
      */
     inline UpdatePatchBaselineRequest& WithRejectedPatchesAction(PatchAction&& value) { SetRejectedPatchesAction(std::move(value)); return *this;}
 

@@ -270,13 +270,10 @@ namespace Model
      * service-linked role. If no service-linked role for Systems Manager exists in
      * your account, it is created when you run
      * <code>RegisterTaskWithMaintenanceWindow</code>.</p> <p>For more information, see
-     * the following topics in the in the <i>Amazon Web Services Systems Manager User
-     * Guide</i>:</p> <ul> <li> <p> <a
+     * <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions">Using
-     * service-linked roles for Systems Manager</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role">Should
-     * I use a service-linked role or a custom service role to run maintenance window
-     * tasks? </a> </p> </li> </ul>
+     * service-linked roles for Systems Manager</a> in the in the <i>Amazon Web
+     * Services Systems Manager User Guide</i>:</p>
      */
     inline const Aws::String& GetServiceRoleArn() const{ return m_serviceRoleArn; }
 
@@ -287,13 +284,10 @@ namespace Model
      * service-linked role. If no service-linked role for Systems Manager exists in
      * your account, it is created when you run
      * <code>RegisterTaskWithMaintenanceWindow</code>.</p> <p>For more information, see
-     * the following topics in the in the <i>Amazon Web Services Systems Manager User
-     * Guide</i>:</p> <ul> <li> <p> <a
+     * <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions">Using
-     * service-linked roles for Systems Manager</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role">Should
-     * I use a service-linked role or a custom service role to run maintenance window
-     * tasks? </a> </p> </li> </ul>
+     * service-linked roles for Systems Manager</a> in the in the <i>Amazon Web
+     * Services Systems Manager User Guide</i>:</p>
      */
     inline bool ServiceRoleArnHasBeenSet() const { return m_serviceRoleArnHasBeenSet; }
 
@@ -304,13 +298,10 @@ namespace Model
      * service-linked role. If no service-linked role for Systems Manager exists in
      * your account, it is created when you run
      * <code>RegisterTaskWithMaintenanceWindow</code>.</p> <p>For more information, see
-     * the following topics in the in the <i>Amazon Web Services Systems Manager User
-     * Guide</i>:</p> <ul> <li> <p> <a
+     * <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions">Using
-     * service-linked roles for Systems Manager</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role">Should
-     * I use a service-linked role or a custom service role to run maintenance window
-     * tasks? </a> </p> </li> </ul>
+     * service-linked roles for Systems Manager</a> in the in the <i>Amazon Web
+     * Services Systems Manager User Guide</i>:</p>
      */
     inline void SetServiceRoleArn(const Aws::String& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = value; }
 
@@ -321,13 +312,10 @@ namespace Model
      * service-linked role. If no service-linked role for Systems Manager exists in
      * your account, it is created when you run
      * <code>RegisterTaskWithMaintenanceWindow</code>.</p> <p>For more information, see
-     * the following topics in the in the <i>Amazon Web Services Systems Manager User
-     * Guide</i>:</p> <ul> <li> <p> <a
+     * <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions">Using
-     * service-linked roles for Systems Manager</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role">Should
-     * I use a service-linked role or a custom service role to run maintenance window
-     * tasks? </a> </p> </li> </ul>
+     * service-linked roles for Systems Manager</a> in the in the <i>Amazon Web
+     * Services Systems Manager User Guide</i>:</p>
      */
     inline void SetServiceRoleArn(Aws::String&& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = std::move(value); }
 
@@ -338,13 +326,10 @@ namespace Model
      * service-linked role. If no service-linked role for Systems Manager exists in
      * your account, it is created when you run
      * <code>RegisterTaskWithMaintenanceWindow</code>.</p> <p>For more information, see
-     * the following topics in the in the <i>Amazon Web Services Systems Manager User
-     * Guide</i>:</p> <ul> <li> <p> <a
+     * <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions">Using
-     * service-linked roles for Systems Manager</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role">Should
-     * I use a service-linked role or a custom service role to run maintenance window
-     * tasks? </a> </p> </li> </ul>
+     * service-linked roles for Systems Manager</a> in the in the <i>Amazon Web
+     * Services Systems Manager User Guide</i>:</p>
      */
     inline void SetServiceRoleArn(const char* value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn.assign(value); }
 
@@ -355,13 +340,10 @@ namespace Model
      * service-linked role. If no service-linked role for Systems Manager exists in
      * your account, it is created when you run
      * <code>RegisterTaskWithMaintenanceWindow</code>.</p> <p>For more information, see
-     * the following topics in the in the <i>Amazon Web Services Systems Manager User
-     * Guide</i>:</p> <ul> <li> <p> <a
+     * <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions">Using
-     * service-linked roles for Systems Manager</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role">Should
-     * I use a service-linked role or a custom service role to run maintenance window
-     * tasks? </a> </p> </li> </ul>
+     * service-linked roles for Systems Manager</a> in the in the <i>Amazon Web
+     * Services Systems Manager User Guide</i>:</p>
      */
     inline RegisterTaskWithMaintenanceWindowRequest& WithServiceRoleArn(const Aws::String& value) { SetServiceRoleArn(value); return *this;}
 
@@ -372,13 +354,10 @@ namespace Model
      * service-linked role. If no service-linked role for Systems Manager exists in
      * your account, it is created when you run
      * <code>RegisterTaskWithMaintenanceWindow</code>.</p> <p>For more information, see
-     * the following topics in the in the <i>Amazon Web Services Systems Manager User
-     * Guide</i>:</p> <ul> <li> <p> <a
+     * <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions">Using
-     * service-linked roles for Systems Manager</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role">Should
-     * I use a service-linked role or a custom service role to run maintenance window
-     * tasks? </a> </p> </li> </ul>
+     * service-linked roles for Systems Manager</a> in the in the <i>Amazon Web
+     * Services Systems Manager User Guide</i>:</p>
      */
     inline RegisterTaskWithMaintenanceWindowRequest& WithServiceRoleArn(Aws::String&& value) { SetServiceRoleArn(std::move(value)); return *this;}
 
@@ -389,13 +368,10 @@ namespace Model
      * service-linked role. If no service-linked role for Systems Manager exists in
      * your account, it is created when you run
      * <code>RegisterTaskWithMaintenanceWindow</code>.</p> <p>For more information, see
-     * the following topics in the in the <i>Amazon Web Services Systems Manager User
-     * Guide</i>:</p> <ul> <li> <p> <a
+     * <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions">Using
-     * service-linked roles for Systems Manager</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role">Should
-     * I use a service-linked role or a custom service role to run maintenance window
-     * tasks? </a> </p> </li> </ul>
+     * service-linked roles for Systems Manager</a> in the in the <i>Amazon Web
+     * Services Systems Manager User Guide</i>:</p>
      */
     inline RegisterTaskWithMaintenanceWindowRequest& WithServiceRoleArn(const char* value) { SetServiceRoleArn(value); return *this;}
 

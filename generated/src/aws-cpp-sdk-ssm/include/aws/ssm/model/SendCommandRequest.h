@@ -50,9 +50,9 @@ namespace Model
      * accepts tag key-value pairs to identify the managed nodes to send commands to,
      * you can a send command to tens, hundreds, or thousands of nodes at once.</p>
      * <p>For more information about how to use targets, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using
-     * targets and rate controls to send commands to a fleet</a> in the <i>Amazon Web
-     * Services Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Run
+     * commands at scale</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetInstanceIds() const{ return m_instanceIds; }
 
@@ -65,9 +65,9 @@ namespace Model
      * accepts tag key-value pairs to identify the managed nodes to send commands to,
      * you can a send command to tens, hundreds, or thousands of nodes at once.</p>
      * <p>For more information about how to use targets, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using
-     * targets and rate controls to send commands to a fleet</a> in the <i>Amazon Web
-     * Services Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Run
+     * commands at scale</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline bool InstanceIdsHasBeenSet() const { return m_instanceIdsHasBeenSet; }
 
@@ -80,9 +80,9 @@ namespace Model
      * accepts tag key-value pairs to identify the managed nodes to send commands to,
      * you can a send command to tens, hundreds, or thousands of nodes at once.</p>
      * <p>For more information about how to use targets, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using
-     * targets and rate controls to send commands to a fleet</a> in the <i>Amazon Web
-     * Services Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Run
+     * commands at scale</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline void SetInstanceIds(const Aws::Vector<Aws::String>& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = value; }
 
@@ -95,9 +95,9 @@ namespace Model
      * accepts tag key-value pairs to identify the managed nodes to send commands to,
      * you can a send command to tens, hundreds, or thousands of nodes at once.</p>
      * <p>For more information about how to use targets, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using
-     * targets and rate controls to send commands to a fleet</a> in the <i>Amazon Web
-     * Services Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Run
+     * commands at scale</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline void SetInstanceIds(Aws::Vector<Aws::String>&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = std::move(value); }
 
@@ -110,9 +110,9 @@ namespace Model
      * accepts tag key-value pairs to identify the managed nodes to send commands to,
      * you can a send command to tens, hundreds, or thousands of nodes at once.</p>
      * <p>For more information about how to use targets, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using
-     * targets and rate controls to send commands to a fleet</a> in the <i>Amazon Web
-     * Services Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Run
+     * commands at scale</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline SendCommandRequest& WithInstanceIds(const Aws::Vector<Aws::String>& value) { SetInstanceIds(value); return *this;}
 
@@ -125,9 +125,9 @@ namespace Model
      * accepts tag key-value pairs to identify the managed nodes to send commands to,
      * you can a send command to tens, hundreds, or thousands of nodes at once.</p>
      * <p>For more information about how to use targets, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using
-     * targets and rate controls to send commands to a fleet</a> in the <i>Amazon Web
-     * Services Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Run
+     * commands at scale</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline SendCommandRequest& WithInstanceIds(Aws::Vector<Aws::String>&& value) { SetInstanceIds(std::move(value)); return *this;}
 
@@ -140,9 +140,9 @@ namespace Model
      * accepts tag key-value pairs to identify the managed nodes to send commands to,
      * you can a send command to tens, hundreds, or thousands of nodes at once.</p>
      * <p>For more information about how to use targets, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using
-     * targets and rate controls to send commands to a fleet</a> in the <i>Amazon Web
-     * Services Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Run
+     * commands at scale</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline SendCommandRequest& AddInstanceIds(const Aws::String& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
 
@@ -155,9 +155,9 @@ namespace Model
      * accepts tag key-value pairs to identify the managed nodes to send commands to,
      * you can a send command to tens, hundreds, or thousands of nodes at once.</p>
      * <p>For more information about how to use targets, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using
-     * targets and rate controls to send commands to a fleet</a> in the <i>Amazon Web
-     * Services Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Run
+     * commands at scale</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline SendCommandRequest& AddInstanceIds(Aws::String&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(std::move(value)); return *this; }
 
@@ -170,9 +170,9 @@ namespace Model
      * accepts tag key-value pairs to identify the managed nodes to send commands to,
      * you can a send command to tens, hundreds, or thousands of nodes at once.</p>
      * <p>For more information about how to use targets, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using
-     * targets and rate controls to send commands to a fleet</a> in the <i>Amazon Web
-     * Services Systems Manager User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Run
+     * commands at scale</a> in the <i>Amazon Web Services Systems Manager User
+     * Guide</i>.</p>
      */
     inline SendCommandRequest& AddInstanceIds(const char* value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
 
@@ -186,8 +186,8 @@ namespace Model
      * at once.</p> <p>To send a command to a smaller number of managed nodes, you can
      * use the <code>InstanceIds</code> option instead.</p> <p>For more information
      * about how to use targets, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
-     * commands to a fleet</a> in the <i>Amazon Web Services Systems Manager User
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Run
+     * commands at scale</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.</p>
      */
     inline const Aws::Vector<Target>& GetTargets() const{ return m_targets; }
@@ -201,8 +201,8 @@ namespace Model
      * at once.</p> <p>To send a command to a smaller number of managed nodes, you can
      * use the <code>InstanceIds</code> option instead.</p> <p>For more information
      * about how to use targets, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
-     * commands to a fleet</a> in the <i>Amazon Web Services Systems Manager User
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Run
+     * commands at scale</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.</p>
      */
     inline bool TargetsHasBeenSet() const { return m_targetsHasBeenSet; }
@@ -216,8 +216,8 @@ namespace Model
      * at once.</p> <p>To send a command to a smaller number of managed nodes, you can
      * use the <code>InstanceIds</code> option instead.</p> <p>For more information
      * about how to use targets, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
-     * commands to a fleet</a> in the <i>Amazon Web Services Systems Manager User
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Run
+     * commands at scale</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.</p>
      */
     inline void SetTargets(const Aws::Vector<Target>& value) { m_targetsHasBeenSet = true; m_targets = value; }
@@ -231,8 +231,8 @@ namespace Model
      * at once.</p> <p>To send a command to a smaller number of managed nodes, you can
      * use the <code>InstanceIds</code> option instead.</p> <p>For more information
      * about how to use targets, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
-     * commands to a fleet</a> in the <i>Amazon Web Services Systems Manager User
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Run
+     * commands at scale</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.</p>
      */
     inline void SetTargets(Aws::Vector<Target>&& value) { m_targetsHasBeenSet = true; m_targets = std::move(value); }
@@ -246,8 +246,8 @@ namespace Model
      * at once.</p> <p>To send a command to a smaller number of managed nodes, you can
      * use the <code>InstanceIds</code> option instead.</p> <p>For more information
      * about how to use targets, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
-     * commands to a fleet</a> in the <i>Amazon Web Services Systems Manager User
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Run
+     * commands at scale</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.</p>
      */
     inline SendCommandRequest& WithTargets(const Aws::Vector<Target>& value) { SetTargets(value); return *this;}
@@ -261,8 +261,8 @@ namespace Model
      * at once.</p> <p>To send a command to a smaller number of managed nodes, you can
      * use the <code>InstanceIds</code> option instead.</p> <p>For more information
      * about how to use targets, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
-     * commands to a fleet</a> in the <i>Amazon Web Services Systems Manager User
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Run
+     * commands at scale</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.</p>
      */
     inline SendCommandRequest& WithTargets(Aws::Vector<Target>&& value) { SetTargets(std::move(value)); return *this;}
@@ -276,8 +276,8 @@ namespace Model
      * at once.</p> <p>To send a command to a smaller number of managed nodes, you can
      * use the <code>InstanceIds</code> option instead.</p> <p>For more information
      * about how to use targets, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
-     * commands to a fleet</a> in the <i>Amazon Web Services Systems Manager User
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Run
+     * commands at scale</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.</p>
      */
     inline SendCommandRequest& AddTargets(const Target& value) { m_targetsHasBeenSet = true; m_targets.push_back(value); return *this; }
@@ -291,8 +291,8 @@ namespace Model
      * at once.</p> <p>To send a command to a smaller number of managed nodes, you can
      * use the <code>InstanceIds</code> option instead.</p> <p>For more information
      * about how to use targets, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
-     * commands to a fleet</a> in the <i>Amazon Web Services Systems Manager User
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Run
+     * commands at scale</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.</p>
      */
     inline SendCommandRequest& AddTargets(Target&& value) { m_targetsHasBeenSet = true; m_targets.push_back(std::move(value)); return *this; }
@@ -303,8 +303,8 @@ namespace Model
      * to run. This can be a public document or a custom document. To run a shared
      * document belonging to another account, specify the document Amazon Resource Name
      * (ARN). For more information about how to use shared documents, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using
-     * shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Sharing
+     * SSM documents</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.</p>  <p>If you specify a document name or ARN that hasn't been
      * shared with your account, you receive an <code>InvalidDocument</code> error.
      * </p> 
@@ -316,8 +316,8 @@ namespace Model
      * to run. This can be a public document or a custom document. To run a shared
      * document belonging to another account, specify the document Amazon Resource Name
      * (ARN). For more information about how to use shared documents, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using
-     * shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Sharing
+     * SSM documents</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.</p>  <p>If you specify a document name or ARN that hasn't been
      * shared with your account, you receive an <code>InvalidDocument</code> error.
      * </p> 
@@ -329,8 +329,8 @@ namespace Model
      * to run. This can be a public document or a custom document. To run a shared
      * document belonging to another account, specify the document Amazon Resource Name
      * (ARN). For more information about how to use shared documents, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using
-     * shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Sharing
+     * SSM documents</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.</p>  <p>If you specify a document name or ARN that hasn't been
      * shared with your account, you receive an <code>InvalidDocument</code> error.
      * </p> 
@@ -342,8 +342,8 @@ namespace Model
      * to run. This can be a public document or a custom document. To run a shared
      * document belonging to another account, specify the document Amazon Resource Name
      * (ARN). For more information about how to use shared documents, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using
-     * shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Sharing
+     * SSM documents</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.</p>  <p>If you specify a document name or ARN that hasn't been
      * shared with your account, you receive an <code>InvalidDocument</code> error.
      * </p> 
@@ -355,8 +355,8 @@ namespace Model
      * to run. This can be a public document or a custom document. To run a shared
      * document belonging to another account, specify the document Amazon Resource Name
      * (ARN). For more information about how to use shared documents, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using
-     * shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Sharing
+     * SSM documents</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.</p>  <p>If you specify a document name or ARN that hasn't been
      * shared with your account, you receive an <code>InvalidDocument</code> error.
      * </p> 
@@ -368,8 +368,8 @@ namespace Model
      * to run. This can be a public document or a custom document. To run a shared
      * document belonging to another account, specify the document Amazon Resource Name
      * (ARN). For more information about how to use shared documents, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using
-     * shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Sharing
+     * SSM documents</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.</p>  <p>If you specify a document name or ARN that hasn't been
      * shared with your account, you receive an <code>InvalidDocument</code> error.
      * </p> 
@@ -381,8 +381,8 @@ namespace Model
      * to run. This can be a public document or a custom document. To run a shared
      * document belonging to another account, specify the document Amazon Resource Name
      * (ARN). For more information about how to use shared documents, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using
-     * shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Sharing
+     * SSM documents</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.</p>  <p>If you specify a document name or ARN that hasn't been
      * shared with your account, you receive an <code>InvalidDocument</code> error.
      * </p> 
@@ -394,8 +394,8 @@ namespace Model
      * to run. This can be a public document or a custom document. To run a shared
      * document belonging to another account, specify the document Amazon Resource Name
      * (ARN). For more information about how to use shared documents, see <a
-     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using
-     * shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Sharing
+     * SSM documents</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.</p>  <p>If you specify a document name or ARN that hasn't been
      * shared with your account, you receive an <code>InvalidDocument</code> error.
      * </p> 

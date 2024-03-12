@@ -150,42 +150,60 @@ namespace Model
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/about-contact-states.html">state
-     * of the contact</a>.</p>
+     * of the contact</a>.</p>  <p>When <code>AgentContactState</code> is set to
+     * <code>CONNECTED_ONHOLD</code>, <code>StateStartTimestamp</code> is not changed.
+     * Instead, <code>StateStartTimestamp</code> reflects the time the contact was
+     * <code>CONNECTED</code> to the agent.</p> 
      */
     inline const ContactState& GetAgentContactState() const{ return m_agentContactState; }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/about-contact-states.html">state
-     * of the contact</a>.</p>
+     * of the contact</a>.</p>  <p>When <code>AgentContactState</code> is set to
+     * <code>CONNECTED_ONHOLD</code>, <code>StateStartTimestamp</code> is not changed.
+     * Instead, <code>StateStartTimestamp</code> reflects the time the contact was
+     * <code>CONNECTED</code> to the agent.</p> 
      */
     inline bool AgentContactStateHasBeenSet() const { return m_agentContactStateHasBeenSet; }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/about-contact-states.html">state
-     * of the contact</a>.</p>
+     * of the contact</a>.</p>  <p>When <code>AgentContactState</code> is set to
+     * <code>CONNECTED_ONHOLD</code>, <code>StateStartTimestamp</code> is not changed.
+     * Instead, <code>StateStartTimestamp</code> reflects the time the contact was
+     * <code>CONNECTED</code> to the agent.</p> 
      */
     inline void SetAgentContactState(const ContactState& value) { m_agentContactStateHasBeenSet = true; m_agentContactState = value; }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/about-contact-states.html">state
-     * of the contact</a>.</p>
+     * of the contact</a>.</p>  <p>When <code>AgentContactState</code> is set to
+     * <code>CONNECTED_ONHOLD</code>, <code>StateStartTimestamp</code> is not changed.
+     * Instead, <code>StateStartTimestamp</code> reflects the time the contact was
+     * <code>CONNECTED</code> to the agent.</p> 
      */
     inline void SetAgentContactState(ContactState&& value) { m_agentContactStateHasBeenSet = true; m_agentContactState = std::move(value); }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/about-contact-states.html">state
-     * of the contact</a>.</p>
+     * of the contact</a>.</p>  <p>When <code>AgentContactState</code> is set to
+     * <code>CONNECTED_ONHOLD</code>, <code>StateStartTimestamp</code> is not changed.
+     * Instead, <code>StateStartTimestamp</code> reflects the time the contact was
+     * <code>CONNECTED</code> to the agent.</p> 
      */
     inline AgentContactReference& WithAgentContactState(const ContactState& value) { SetAgentContactState(value); return *this;}
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/about-contact-states.html">state
-     * of the contact</a>.</p>
+     * of the contact</a>.</p>  <p>When <code>AgentContactState</code> is set to
+     * <code>CONNECTED_ONHOLD</code>, <code>StateStartTimestamp</code> is not changed.
+     * Instead, <code>StateStartTimestamp</code> reflects the time the contact was
+     * <code>CONNECTED</code> to the agent.</p> 
      */
     inline AgentContactReference& WithAgentContactState(ContactState&& value) { SetAgentContactState(std::move(value)); return *this;}
 

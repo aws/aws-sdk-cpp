@@ -42,89 +42,89 @@ namespace Model
 
 
     /**
-     * <p>The start of the port range for the TCP and UDP protocols, or an ICMP type
-     * number. A value of -1 indicates all ICMP types. </p>
+     * <p>If the protocol is TCP or UDP, this is the start of the port range. If the
+     * protocol is ICMP or ICMPv6, this is the ICMP type or -1 (all ICMP types).</p>
      */
     inline int GetFromPort() const{ return m_fromPort; }
 
     /**
-     * <p>The start of the port range for the TCP and UDP protocols, or an ICMP type
-     * number. A value of -1 indicates all ICMP types. </p>
+     * <p>If the protocol is TCP or UDP, this is the start of the port range. If the
+     * protocol is ICMP or ICMPv6, this is the ICMP type or -1 (all ICMP types).</p>
      */
     inline bool FromPortHasBeenSet() const { return m_fromPortHasBeenSet; }
 
     /**
-     * <p>The start of the port range for the TCP and UDP protocols, or an ICMP type
-     * number. A value of -1 indicates all ICMP types. </p>
+     * <p>If the protocol is TCP or UDP, this is the start of the port range. If the
+     * protocol is ICMP or ICMPv6, this is the ICMP type or -1 (all ICMP types).</p>
      */
     inline void SetFromPort(int value) { m_fromPortHasBeenSet = true; m_fromPort = value; }
 
     /**
-     * <p>The start of the port range for the TCP and UDP protocols, or an ICMP type
-     * number. A value of -1 indicates all ICMP types. </p>
+     * <p>If the protocol is TCP or UDP, this is the start of the port range. If the
+     * protocol is ICMP or ICMPv6, this is the ICMP type or -1 (all ICMP types).</p>
      */
     inline StaleIpPermission& WithFromPort(int value) { SetFromPort(value); return *this;}
 
 
     /**
-     * <p>The IP protocol name (for <code>tcp</code>, <code>udp</code>, and
-     * <code>icmp</code>) or number (see <a
+     * <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>,
+     * <code>icmpv6</code>) or number (see <a
      * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
      * Numbers)</a>.</p>
      */
     inline const Aws::String& GetIpProtocol() const{ return m_ipProtocol; }
 
     /**
-     * <p>The IP protocol name (for <code>tcp</code>, <code>udp</code>, and
-     * <code>icmp</code>) or number (see <a
+     * <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>,
+     * <code>icmpv6</code>) or number (see <a
      * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
      * Numbers)</a>.</p>
      */
     inline bool IpProtocolHasBeenSet() const { return m_ipProtocolHasBeenSet; }
 
     /**
-     * <p>The IP protocol name (for <code>tcp</code>, <code>udp</code>, and
-     * <code>icmp</code>) or number (see <a
+     * <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>,
+     * <code>icmpv6</code>) or number (see <a
      * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
      * Numbers)</a>.</p>
      */
     inline void SetIpProtocol(const Aws::String& value) { m_ipProtocolHasBeenSet = true; m_ipProtocol = value; }
 
     /**
-     * <p>The IP protocol name (for <code>tcp</code>, <code>udp</code>, and
-     * <code>icmp</code>) or number (see <a
+     * <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>,
+     * <code>icmpv6</code>) or number (see <a
      * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
      * Numbers)</a>.</p>
      */
     inline void SetIpProtocol(Aws::String&& value) { m_ipProtocolHasBeenSet = true; m_ipProtocol = std::move(value); }
 
     /**
-     * <p>The IP protocol name (for <code>tcp</code>, <code>udp</code>, and
-     * <code>icmp</code>) or number (see <a
+     * <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>,
+     * <code>icmpv6</code>) or number (see <a
      * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
      * Numbers)</a>.</p>
      */
     inline void SetIpProtocol(const char* value) { m_ipProtocolHasBeenSet = true; m_ipProtocol.assign(value); }
 
     /**
-     * <p>The IP protocol name (for <code>tcp</code>, <code>udp</code>, and
-     * <code>icmp</code>) or number (see <a
+     * <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>,
+     * <code>icmpv6</code>) or number (see <a
      * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
      * Numbers)</a>.</p>
      */
     inline StaleIpPermission& WithIpProtocol(const Aws::String& value) { SetIpProtocol(value); return *this;}
 
     /**
-     * <p>The IP protocol name (for <code>tcp</code>, <code>udp</code>, and
-     * <code>icmp</code>) or number (see <a
+     * <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>,
+     * <code>icmpv6</code>) or number (see <a
      * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
      * Numbers)</a>.</p>
      */
     inline StaleIpPermission& WithIpProtocol(Aws::String&& value) { SetIpProtocol(std::move(value)); return *this;}
 
     /**
-     * <p>The IP protocol name (for <code>tcp</code>, <code>udp</code>, and
-     * <code>icmp</code>) or number (see <a
+     * <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>,
+     * <code>icmpv6</code>) or number (see <a
      * href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
      * Numbers)</a>.</p>
      */
@@ -224,26 +224,26 @@ namespace Model
 
 
     /**
-     * <p>The end of the port range for the TCP and UDP protocols, or an ICMP type
-     * number. A value of <code>-1</code> indicates all ICMP types. </p>
+     * <p>If the protocol is TCP or UDP, this is the end of the port range. If the
+     * protocol is ICMP or ICMPv6, this is the ICMP code or -1 (all ICMP codes).</p>
      */
     inline int GetToPort() const{ return m_toPort; }
 
     /**
-     * <p>The end of the port range for the TCP and UDP protocols, or an ICMP type
-     * number. A value of <code>-1</code> indicates all ICMP types. </p>
+     * <p>If the protocol is TCP or UDP, this is the end of the port range. If the
+     * protocol is ICMP or ICMPv6, this is the ICMP code or -1 (all ICMP codes).</p>
      */
     inline bool ToPortHasBeenSet() const { return m_toPortHasBeenSet; }
 
     /**
-     * <p>The end of the port range for the TCP and UDP protocols, or an ICMP type
-     * number. A value of <code>-1</code> indicates all ICMP types. </p>
+     * <p>If the protocol is TCP or UDP, this is the end of the port range. If the
+     * protocol is ICMP or ICMPv6, this is the ICMP code or -1 (all ICMP codes).</p>
      */
     inline void SetToPort(int value) { m_toPortHasBeenSet = true; m_toPort = value; }
 
     /**
-     * <p>The end of the port range for the TCP and UDP protocols, or an ICMP type
-     * number. A value of <code>-1</code> indicates all ICMP types. </p>
+     * <p>If the protocol is TCP or UDP, this is the end of the port range. If the
+     * protocol is ICMP or ICMPv6, this is the ICMP code or -1 (all ICMP codes).</p>
      */
     inline StaleIpPermission& WithToPort(int value) { SetToPort(value); return *this;}
 

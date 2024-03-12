@@ -29,9 +29,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes a set of permissions for a security group rule.</p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/IpPermission">AWS
+   * <p>Describes the permissions for a security group rule.</p><p><h3>See Also:</h3>
+   * <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/IpPermission">AWS
    * API Reference</a></p>
    */
   class IpPermission
@@ -47,33 +46,25 @@ namespace Model
 
     /**
      * <p>If the protocol is TCP or UDP, this is the start of the port range. If the
-     * protocol is ICMP or ICMPv6, this is the type number. A value of -1 indicates all
-     * ICMP/ICMPv6 types. If you specify all ICMP/ICMPv6 types, you must specify all
-     * ICMP/ICMPv6 codes.</p>
+     * protocol is ICMP or ICMPv6, this is the ICMP type or -1 (all ICMP types).</p>
      */
     inline int GetFromPort() const{ return m_fromPort; }
 
     /**
      * <p>If the protocol is TCP or UDP, this is the start of the port range. If the
-     * protocol is ICMP or ICMPv6, this is the type number. A value of -1 indicates all
-     * ICMP/ICMPv6 types. If you specify all ICMP/ICMPv6 types, you must specify all
-     * ICMP/ICMPv6 codes.</p>
+     * protocol is ICMP or ICMPv6, this is the ICMP type or -1 (all ICMP types).</p>
      */
     inline bool FromPortHasBeenSet() const { return m_fromPortHasBeenSet; }
 
     /**
      * <p>If the protocol is TCP or UDP, this is the start of the port range. If the
-     * protocol is ICMP or ICMPv6, this is the type number. A value of -1 indicates all
-     * ICMP/ICMPv6 types. If you specify all ICMP/ICMPv6 types, you must specify all
-     * ICMP/ICMPv6 codes.</p>
+     * protocol is ICMP or ICMPv6, this is the ICMP type or -1 (all ICMP types).</p>
      */
     inline void SetFromPort(int value) { m_fromPortHasBeenSet = true; m_fromPort = value; }
 
     /**
      * <p>If the protocol is TCP or UDP, this is the start of the port range. If the
-     * protocol is ICMP or ICMPv6, this is the type number. A value of -1 indicates all
-     * ICMP/ICMPv6 types. If you specify all ICMP/ICMPv6 types, you must specify all
-     * ICMP/ICMPv6 codes.</p>
+     * protocol is ICMP or ICMPv6, this is the ICMP type or -1 (all ICMP types).</p>
      */
     inline IpPermission& WithFromPort(int value) { SetFromPort(value); return *this;}
 
@@ -192,83 +183,83 @@ namespace Model
 
 
     /**
-     * <p>The IPv4 ranges.</p>
+     * <p>The IPv4 address ranges.</p>
      */
     inline const Aws::Vector<IpRange>& GetIpRanges() const{ return m_ipRanges; }
 
     /**
-     * <p>The IPv4 ranges.</p>
+     * <p>The IPv4 address ranges.</p>
      */
     inline bool IpRangesHasBeenSet() const { return m_ipRangesHasBeenSet; }
 
     /**
-     * <p>The IPv4 ranges.</p>
+     * <p>The IPv4 address ranges.</p>
      */
     inline void SetIpRanges(const Aws::Vector<IpRange>& value) { m_ipRangesHasBeenSet = true; m_ipRanges = value; }
 
     /**
-     * <p>The IPv4 ranges.</p>
+     * <p>The IPv4 address ranges.</p>
      */
     inline void SetIpRanges(Aws::Vector<IpRange>&& value) { m_ipRangesHasBeenSet = true; m_ipRanges = std::move(value); }
 
     /**
-     * <p>The IPv4 ranges.</p>
+     * <p>The IPv4 address ranges.</p>
      */
     inline IpPermission& WithIpRanges(const Aws::Vector<IpRange>& value) { SetIpRanges(value); return *this;}
 
     /**
-     * <p>The IPv4 ranges.</p>
+     * <p>The IPv4 address ranges.</p>
      */
     inline IpPermission& WithIpRanges(Aws::Vector<IpRange>&& value) { SetIpRanges(std::move(value)); return *this;}
 
     /**
-     * <p>The IPv4 ranges.</p>
+     * <p>The IPv4 address ranges.</p>
      */
     inline IpPermission& AddIpRanges(const IpRange& value) { m_ipRangesHasBeenSet = true; m_ipRanges.push_back(value); return *this; }
 
     /**
-     * <p>The IPv4 ranges.</p>
+     * <p>The IPv4 address ranges.</p>
      */
     inline IpPermission& AddIpRanges(IpRange&& value) { m_ipRangesHasBeenSet = true; m_ipRanges.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The IPv6 ranges.</p>
+     * <p>The IPv6 address ranges.</p>
      */
     inline const Aws::Vector<Ipv6Range>& GetIpv6Ranges() const{ return m_ipv6Ranges; }
 
     /**
-     * <p>The IPv6 ranges.</p>
+     * <p>The IPv6 address ranges.</p>
      */
     inline bool Ipv6RangesHasBeenSet() const { return m_ipv6RangesHasBeenSet; }
 
     /**
-     * <p>The IPv6 ranges.</p>
+     * <p>The IPv6 address ranges.</p>
      */
     inline void SetIpv6Ranges(const Aws::Vector<Ipv6Range>& value) { m_ipv6RangesHasBeenSet = true; m_ipv6Ranges = value; }
 
     /**
-     * <p>The IPv6 ranges.</p>
+     * <p>The IPv6 address ranges.</p>
      */
     inline void SetIpv6Ranges(Aws::Vector<Ipv6Range>&& value) { m_ipv6RangesHasBeenSet = true; m_ipv6Ranges = std::move(value); }
 
     /**
-     * <p>The IPv6 ranges.</p>
+     * <p>The IPv6 address ranges.</p>
      */
     inline IpPermission& WithIpv6Ranges(const Aws::Vector<Ipv6Range>& value) { SetIpv6Ranges(value); return *this;}
 
     /**
-     * <p>The IPv6 ranges.</p>
+     * <p>The IPv6 address ranges.</p>
      */
     inline IpPermission& WithIpv6Ranges(Aws::Vector<Ipv6Range>&& value) { SetIpv6Ranges(std::move(value)); return *this;}
 
     /**
-     * <p>The IPv6 ranges.</p>
+     * <p>The IPv6 address ranges.</p>
      */
     inline IpPermission& AddIpv6Ranges(const Ipv6Range& value) { m_ipv6RangesHasBeenSet = true; m_ipv6Ranges.push_back(value); return *this; }
 
     /**
-     * <p>The IPv6 ranges.</p>
+     * <p>The IPv6 address ranges.</p>
      */
     inline IpPermission& AddIpv6Ranges(Ipv6Range&& value) { m_ipv6RangesHasBeenSet = true; m_ipv6Ranges.push_back(std::move(value)); return *this; }
 
@@ -316,33 +307,33 @@ namespace Model
 
     /**
      * <p>If the protocol is TCP or UDP, this is the end of the port range. If the
-     * protocol is ICMP or ICMPv6, this is the code. A value of -1 indicates all
-     * ICMP/ICMPv6 codes. If you specify all ICMP/ICMPv6 types, you must specify all
-     * ICMP/ICMPv6 codes.</p>
+     * protocol is ICMP or ICMPv6, this is the ICMP code or -1 (all ICMP codes). If the
+     * start port is -1 (all ICMP types), then the end port must be -1 (all ICMP
+     * codes).</p>
      */
     inline int GetToPort() const{ return m_toPort; }
 
     /**
      * <p>If the protocol is TCP or UDP, this is the end of the port range. If the
-     * protocol is ICMP or ICMPv6, this is the code. A value of -1 indicates all
-     * ICMP/ICMPv6 codes. If you specify all ICMP/ICMPv6 types, you must specify all
-     * ICMP/ICMPv6 codes.</p>
+     * protocol is ICMP or ICMPv6, this is the ICMP code or -1 (all ICMP codes). If the
+     * start port is -1 (all ICMP types), then the end port must be -1 (all ICMP
+     * codes).</p>
      */
     inline bool ToPortHasBeenSet() const { return m_toPortHasBeenSet; }
 
     /**
      * <p>If the protocol is TCP or UDP, this is the end of the port range. If the
-     * protocol is ICMP or ICMPv6, this is the code. A value of -1 indicates all
-     * ICMP/ICMPv6 codes. If you specify all ICMP/ICMPv6 types, you must specify all
-     * ICMP/ICMPv6 codes.</p>
+     * protocol is ICMP or ICMPv6, this is the ICMP code or -1 (all ICMP codes). If the
+     * start port is -1 (all ICMP types), then the end port must be -1 (all ICMP
+     * codes).</p>
      */
     inline void SetToPort(int value) { m_toPortHasBeenSet = true; m_toPort = value; }
 
     /**
      * <p>If the protocol is TCP or UDP, this is the end of the port range. If the
-     * protocol is ICMP or ICMPv6, this is the code. A value of -1 indicates all
-     * ICMP/ICMPv6 codes. If you specify all ICMP/ICMPv6 types, you must specify all
-     * ICMP/ICMPv6 codes.</p>
+     * protocol is ICMP or ICMPv6, this is the ICMP code or -1 (all ICMP codes). If the
+     * start port is -1 (all ICMP types), then the end port must be -1 (all ICMP
+     * codes).</p>
      */
     inline IpPermission& WithToPort(int value) { SetToPort(value); return *this;}
 

@@ -181,7 +181,7 @@ namespace Model
      * <p>A summary of the call execution that includes an execution ID, the type of
      * execution (for example, <code>Command</code>), and the date/time of the
      * execution using a datetime object that is saved in the following format:
-     * yyyy-MM-dd'T'HH:mm:ss'Z'.</p>
+     * <code>yyyy-MM-dd'T'HH:mm:ss'Z'</code> </p>
      */
     inline const ComplianceExecutionSummary& GetExecutionSummary() const{ return m_executionSummary; }
 
@@ -189,7 +189,7 @@ namespace Model
      * <p>A summary of the call execution that includes an execution ID, the type of
      * execution (for example, <code>Command</code>), and the date/time of the
      * execution using a datetime object that is saved in the following format:
-     * yyyy-MM-dd'T'HH:mm:ss'Z'.</p>
+     * <code>yyyy-MM-dd'T'HH:mm:ss'Z'</code> </p>
      */
     inline bool ExecutionSummaryHasBeenSet() const { return m_executionSummaryHasBeenSet; }
 
@@ -197,7 +197,7 @@ namespace Model
      * <p>A summary of the call execution that includes an execution ID, the type of
      * execution (for example, <code>Command</code>), and the date/time of the
      * execution using a datetime object that is saved in the following format:
-     * yyyy-MM-dd'T'HH:mm:ss'Z'.</p>
+     * <code>yyyy-MM-dd'T'HH:mm:ss'Z'</code> </p>
      */
     inline void SetExecutionSummary(const ComplianceExecutionSummary& value) { m_executionSummaryHasBeenSet = true; m_executionSummary = value; }
 
@@ -205,7 +205,7 @@ namespace Model
      * <p>A summary of the call execution that includes an execution ID, the type of
      * execution (for example, <code>Command</code>), and the date/time of the
      * execution using a datetime object that is saved in the following format:
-     * yyyy-MM-dd'T'HH:mm:ss'Z'.</p>
+     * <code>yyyy-MM-dd'T'HH:mm:ss'Z'</code> </p>
      */
     inline void SetExecutionSummary(ComplianceExecutionSummary&& value) { m_executionSummaryHasBeenSet = true; m_executionSummary = std::move(value); }
 
@@ -213,7 +213,7 @@ namespace Model
      * <p>A summary of the call execution that includes an execution ID, the type of
      * execution (for example, <code>Command</code>), and the date/time of the
      * execution using a datetime object that is saved in the following format:
-     * yyyy-MM-dd'T'HH:mm:ss'Z'.</p>
+     * <code>yyyy-MM-dd'T'HH:mm:ss'Z'</code> </p>
      */
     inline PutComplianceItemsRequest& WithExecutionSummary(const ComplianceExecutionSummary& value) { SetExecutionSummary(value); return *this;}
 
@@ -221,7 +221,7 @@ namespace Model
      * <p>A summary of the call execution that includes an execution ID, the type of
      * execution (for example, <code>Command</code>), and the date/time of the
      * execution using a datetime object that is saved in the following format:
-     * yyyy-MM-dd'T'HH:mm:ss'Z'.</p>
+     * <code>yyyy-MM-dd'T'HH:mm:ss'Z'</code> </p>
      */
     inline PutComplianceItemsRequest& WithExecutionSummary(ComplianceExecutionSummary&& value) { SetExecutionSummary(std::move(value)); return *this;}
 

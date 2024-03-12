@@ -89,9 +89,9 @@ namespace Model
      * Outpost and store the snapshot on an Outpost, specify the ARN of the destination
      * Outpost. The snapshot must be created on the same Outpost as the volume.</p>
      * </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#create-snapshot">Create
-     * local snapshots from volumes on an Outpost</a> in the <i>Amazon Elastic Compute
-     * Cloud User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#create-snapshot">Create
+     * local snapshots from volumes on an Outpost</a> in the <i>Amazon EBS User
+     * Guide</i>.</p>
      */
     inline const Aws::String& GetOutpostArn() const{ return m_outpostArn; }
 
@@ -105,9 +105,9 @@ namespace Model
      * Outpost and store the snapshot on an Outpost, specify the ARN of the destination
      * Outpost. The snapshot must be created on the same Outpost as the volume.</p>
      * </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#create-snapshot">Create
-     * local snapshots from volumes on an Outpost</a> in the <i>Amazon Elastic Compute
-     * Cloud User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#create-snapshot">Create
+     * local snapshots from volumes on an Outpost</a> in the <i>Amazon EBS User
+     * Guide</i>.</p>
      */
     inline bool OutpostArnHasBeenSet() const { return m_outpostArnHasBeenSet; }
 
@@ -121,9 +121,9 @@ namespace Model
      * Outpost and store the snapshot on an Outpost, specify the ARN of the destination
      * Outpost. The snapshot must be created on the same Outpost as the volume.</p>
      * </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#create-snapshot">Create
-     * local snapshots from volumes on an Outpost</a> in the <i>Amazon Elastic Compute
-     * Cloud User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#create-snapshot">Create
+     * local snapshots from volumes on an Outpost</a> in the <i>Amazon EBS User
+     * Guide</i>.</p>
      */
     inline void SetOutpostArn(const Aws::String& value) { m_outpostArnHasBeenSet = true; m_outpostArn = value; }
 
@@ -137,9 +137,9 @@ namespace Model
      * Outpost and store the snapshot on an Outpost, specify the ARN of the destination
      * Outpost. The snapshot must be created on the same Outpost as the volume.</p>
      * </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#create-snapshot">Create
-     * local snapshots from volumes on an Outpost</a> in the <i>Amazon Elastic Compute
-     * Cloud User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#create-snapshot">Create
+     * local snapshots from volumes on an Outpost</a> in the <i>Amazon EBS User
+     * Guide</i>.</p>
      */
     inline void SetOutpostArn(Aws::String&& value) { m_outpostArnHasBeenSet = true; m_outpostArn = std::move(value); }
 
@@ -153,9 +153,9 @@ namespace Model
      * Outpost and store the snapshot on an Outpost, specify the ARN of the destination
      * Outpost. The snapshot must be created on the same Outpost as the volume.</p>
      * </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#create-snapshot">Create
-     * local snapshots from volumes on an Outpost</a> in the <i>Amazon Elastic Compute
-     * Cloud User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#create-snapshot">Create
+     * local snapshots from volumes on an Outpost</a> in the <i>Amazon EBS User
+     * Guide</i>.</p>
      */
     inline void SetOutpostArn(const char* value) { m_outpostArnHasBeenSet = true; m_outpostArn.assign(value); }
 
@@ -169,9 +169,9 @@ namespace Model
      * Outpost and store the snapshot on an Outpost, specify the ARN of the destination
      * Outpost. The snapshot must be created on the same Outpost as the volume.</p>
      * </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#create-snapshot">Create
-     * local snapshots from volumes on an Outpost</a> in the <i>Amazon Elastic Compute
-     * Cloud User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#create-snapshot">Create
+     * local snapshots from volumes on an Outpost</a> in the <i>Amazon EBS User
+     * Guide</i>.</p>
      */
     inline CreateSnapshotRequest& WithOutpostArn(const Aws::String& value) { SetOutpostArn(value); return *this;}
 
@@ -185,9 +185,9 @@ namespace Model
      * Outpost and store the snapshot on an Outpost, specify the ARN of the destination
      * Outpost. The snapshot must be created on the same Outpost as the volume.</p>
      * </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#create-snapshot">Create
-     * local snapshots from volumes on an Outpost</a> in the <i>Amazon Elastic Compute
-     * Cloud User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#create-snapshot">Create
+     * local snapshots from volumes on an Outpost</a> in the <i>Amazon EBS User
+     * Guide</i>.</p>
      */
     inline CreateSnapshotRequest& WithOutpostArn(Aws::String&& value) { SetOutpostArn(std::move(value)); return *this;}
 
@@ -201,9 +201,9 @@ namespace Model
      * Outpost and store the snapshot on an Outpost, specify the ARN of the destination
      * Outpost. The snapshot must be created on the same Outpost as the volume.</p>
      * </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#create-snapshot">Create
-     * local snapshots from volumes on an Outpost</a> in the <i>Amazon Elastic Compute
-     * Cloud User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#create-snapshot">Create
+     * local snapshots from volumes on an Outpost</a> in the <i>Amazon EBS User
+     * Guide</i>.</p>
      */
     inline CreateSnapshotRequest& WithOutpostArn(const char* value) { SetOutpostArn(value); return *this;}
 

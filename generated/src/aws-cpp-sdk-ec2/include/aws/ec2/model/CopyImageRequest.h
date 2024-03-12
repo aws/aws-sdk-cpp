@@ -153,8 +153,8 @@ namespace Model
      * create an unencrypted copy of an encrypted snapshot. The default KMS key for
      * Amazon EBS is used unless you specify a non-default Key Management Service (KMS)
      * KMS key using <code>KmsKeyId</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-     * EBS encryption</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html">Amazon
+     * EBS encryption</a> in the <i>Amazon EBS User Guide</i>.</p>
      */
     inline bool GetEncrypted() const{ return m_encrypted; }
 
@@ -164,8 +164,8 @@ namespace Model
      * create an unencrypted copy of an encrypted snapshot. The default KMS key for
      * Amazon EBS is used unless you specify a non-default Key Management Service (KMS)
      * KMS key using <code>KmsKeyId</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-     * EBS encryption</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html">Amazon
+     * EBS encryption</a> in the <i>Amazon EBS User Guide</i>.</p>
      */
     inline bool EncryptedHasBeenSet() const { return m_encryptedHasBeenSet; }
 
@@ -175,8 +175,8 @@ namespace Model
      * create an unencrypted copy of an encrypted snapshot. The default KMS key for
      * Amazon EBS is used unless you specify a non-default Key Management Service (KMS)
      * KMS key using <code>KmsKeyId</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-     * EBS encryption</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html">Amazon
+     * EBS encryption</a> in the <i>Amazon EBS User Guide</i>.</p>
      */
     inline void SetEncrypted(bool value) { m_encryptedHasBeenSet = true; m_encrypted = value; }
 
@@ -186,8 +186,8 @@ namespace Model
      * create an unencrypted copy of an encrypted snapshot. The default KMS key for
      * Amazon EBS is used unless you specify a non-default Key Management Service (KMS)
      * KMS key using <code>KmsKeyId</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-     * EBS encryption</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html">Amazon
+     * EBS encryption</a> in the <i>Amazon EBS User Guide</i>.</p>
      */
     inline CopyImageRequest& WithEncrypted(bool value) { SetEncrypted(value); return *this;}
 
@@ -466,9 +466,9 @@ namespace Model
      * an Outpost. The AMI must be in the Region of the destination Outpost. You cannot
      * copy an AMI from an Outpost to a Region, from one Outpost to another, or within
      * the same Outpost.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#copy-amis">
-     * Copy AMIs from an Amazon Web Services Region to an Outpost</a> in the <i>Amazon
-     * EC2 User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#copy-amis">Copy
+     * AMIs from an Amazon Web Services Region to an Outpost</a> in the <i>Amazon EBS
+     * User Guide</i>.</p>
      */
     inline const Aws::String& GetDestinationOutpostArn() const{ return m_destinationOutpostArn; }
 
@@ -478,9 +478,9 @@ namespace Model
      * an Outpost. The AMI must be in the Region of the destination Outpost. You cannot
      * copy an AMI from an Outpost to a Region, from one Outpost to another, or within
      * the same Outpost.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#copy-amis">
-     * Copy AMIs from an Amazon Web Services Region to an Outpost</a> in the <i>Amazon
-     * EC2 User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#copy-amis">Copy
+     * AMIs from an Amazon Web Services Region to an Outpost</a> in the <i>Amazon EBS
+     * User Guide</i>.</p>
      */
     inline bool DestinationOutpostArnHasBeenSet() const { return m_destinationOutpostArnHasBeenSet; }
 
@@ -490,9 +490,9 @@ namespace Model
      * an Outpost. The AMI must be in the Region of the destination Outpost. You cannot
      * copy an AMI from an Outpost to a Region, from one Outpost to another, or within
      * the same Outpost.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#copy-amis">
-     * Copy AMIs from an Amazon Web Services Region to an Outpost</a> in the <i>Amazon
-     * EC2 User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#copy-amis">Copy
+     * AMIs from an Amazon Web Services Region to an Outpost</a> in the <i>Amazon EBS
+     * User Guide</i>.</p>
      */
     inline void SetDestinationOutpostArn(const Aws::String& value) { m_destinationOutpostArnHasBeenSet = true; m_destinationOutpostArn = value; }
 
@@ -502,9 +502,9 @@ namespace Model
      * an Outpost. The AMI must be in the Region of the destination Outpost. You cannot
      * copy an AMI from an Outpost to a Region, from one Outpost to another, or within
      * the same Outpost.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#copy-amis">
-     * Copy AMIs from an Amazon Web Services Region to an Outpost</a> in the <i>Amazon
-     * EC2 User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#copy-amis">Copy
+     * AMIs from an Amazon Web Services Region to an Outpost</a> in the <i>Amazon EBS
+     * User Guide</i>.</p>
      */
     inline void SetDestinationOutpostArn(Aws::String&& value) { m_destinationOutpostArnHasBeenSet = true; m_destinationOutpostArn = std::move(value); }
 
@@ -514,9 +514,9 @@ namespace Model
      * an Outpost. The AMI must be in the Region of the destination Outpost. You cannot
      * copy an AMI from an Outpost to a Region, from one Outpost to another, or within
      * the same Outpost.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#copy-amis">
-     * Copy AMIs from an Amazon Web Services Region to an Outpost</a> in the <i>Amazon
-     * EC2 User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#copy-amis">Copy
+     * AMIs from an Amazon Web Services Region to an Outpost</a> in the <i>Amazon EBS
+     * User Guide</i>.</p>
      */
     inline void SetDestinationOutpostArn(const char* value) { m_destinationOutpostArnHasBeenSet = true; m_destinationOutpostArn.assign(value); }
 
@@ -526,9 +526,9 @@ namespace Model
      * an Outpost. The AMI must be in the Region of the destination Outpost. You cannot
      * copy an AMI from an Outpost to a Region, from one Outpost to another, or within
      * the same Outpost.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#copy-amis">
-     * Copy AMIs from an Amazon Web Services Region to an Outpost</a> in the <i>Amazon
-     * EC2 User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#copy-amis">Copy
+     * AMIs from an Amazon Web Services Region to an Outpost</a> in the <i>Amazon EBS
+     * User Guide</i>.</p>
      */
     inline CopyImageRequest& WithDestinationOutpostArn(const Aws::String& value) { SetDestinationOutpostArn(value); return *this;}
 
@@ -538,9 +538,9 @@ namespace Model
      * an Outpost. The AMI must be in the Region of the destination Outpost. You cannot
      * copy an AMI from an Outpost to a Region, from one Outpost to another, or within
      * the same Outpost.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#copy-amis">
-     * Copy AMIs from an Amazon Web Services Region to an Outpost</a> in the <i>Amazon
-     * EC2 User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#copy-amis">Copy
+     * AMIs from an Amazon Web Services Region to an Outpost</a> in the <i>Amazon EBS
+     * User Guide</i>.</p>
      */
     inline CopyImageRequest& WithDestinationOutpostArn(Aws::String&& value) { SetDestinationOutpostArn(std::move(value)); return *this;}
 
@@ -550,9 +550,9 @@ namespace Model
      * an Outpost. The AMI must be in the Region of the destination Outpost. You cannot
      * copy an AMI from an Outpost to a Region, from one Outpost to another, or within
      * the same Outpost.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#copy-amis">
-     * Copy AMIs from an Amazon Web Services Region to an Outpost</a> in the <i>Amazon
-     * EC2 User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#copy-amis">Copy
+     * AMIs from an Amazon Web Services Region to an Outpost</a> in the <i>Amazon EBS
+     * User Guide</i>.</p>
      */
     inline CopyImageRequest& WithDestinationOutpostArn(const char* value) { SetDestinationOutpostArn(value); return *this;}
 

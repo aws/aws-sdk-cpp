@@ -86,9 +86,9 @@ namespace Model
      * Outpost. You cannot copy a snapshot from an Outpost to a Region, from one
      * Outpost to another, or within the same Outpost.</p> <p>For more information, see
      * <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#copy-snapshots">
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#copy-snapshots">
      * Copy snapshots from an Amazon Web Services Region to an Outpost</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * <i>Amazon EBS User Guide</i>.</p>
      */
     inline const Aws::String& GetDestinationOutpostArn() const{ return m_destinationOutpostArn; }
 
@@ -99,9 +99,9 @@ namespace Model
      * Outpost. You cannot copy a snapshot from an Outpost to a Region, from one
      * Outpost to another, or within the same Outpost.</p> <p>For more information, see
      * <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#copy-snapshots">
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#copy-snapshots">
      * Copy snapshots from an Amazon Web Services Region to an Outpost</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * <i>Amazon EBS User Guide</i>.</p>
      */
     inline bool DestinationOutpostArnHasBeenSet() const { return m_destinationOutpostArnHasBeenSet; }
 
@@ -112,9 +112,9 @@ namespace Model
      * Outpost. You cannot copy a snapshot from an Outpost to a Region, from one
      * Outpost to another, or within the same Outpost.</p> <p>For more information, see
      * <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#copy-snapshots">
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#copy-snapshots">
      * Copy snapshots from an Amazon Web Services Region to an Outpost</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * <i>Amazon EBS User Guide</i>.</p>
      */
     inline void SetDestinationOutpostArn(const Aws::String& value) { m_destinationOutpostArnHasBeenSet = true; m_destinationOutpostArn = value; }
 
@@ -125,9 +125,9 @@ namespace Model
      * Outpost. You cannot copy a snapshot from an Outpost to a Region, from one
      * Outpost to another, or within the same Outpost.</p> <p>For more information, see
      * <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#copy-snapshots">
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#copy-snapshots">
      * Copy snapshots from an Amazon Web Services Region to an Outpost</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * <i>Amazon EBS User Guide</i>.</p>
      */
     inline void SetDestinationOutpostArn(Aws::String&& value) { m_destinationOutpostArnHasBeenSet = true; m_destinationOutpostArn = std::move(value); }
 
@@ -138,9 +138,9 @@ namespace Model
      * Outpost. You cannot copy a snapshot from an Outpost to a Region, from one
      * Outpost to another, or within the same Outpost.</p> <p>For more information, see
      * <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#copy-snapshots">
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#copy-snapshots">
      * Copy snapshots from an Amazon Web Services Region to an Outpost</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * <i>Amazon EBS User Guide</i>.</p>
      */
     inline void SetDestinationOutpostArn(const char* value) { m_destinationOutpostArnHasBeenSet = true; m_destinationOutpostArn.assign(value); }
 
@@ -151,9 +151,9 @@ namespace Model
      * Outpost. You cannot copy a snapshot from an Outpost to a Region, from one
      * Outpost to another, or within the same Outpost.</p> <p>For more information, see
      * <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#copy-snapshots">
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#copy-snapshots">
      * Copy snapshots from an Amazon Web Services Region to an Outpost</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * <i>Amazon EBS User Guide</i>.</p>
      */
     inline CopySnapshotRequest& WithDestinationOutpostArn(const Aws::String& value) { SetDestinationOutpostArn(value); return *this;}
 
@@ -164,9 +164,9 @@ namespace Model
      * Outpost. You cannot copy a snapshot from an Outpost to a Region, from one
      * Outpost to another, or within the same Outpost.</p> <p>For more information, see
      * <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#copy-snapshots">
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#copy-snapshots">
      * Copy snapshots from an Amazon Web Services Region to an Outpost</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * <i>Amazon EBS User Guide</i>.</p>
      */
     inline CopySnapshotRequest& WithDestinationOutpostArn(Aws::String&& value) { SetDestinationOutpostArn(std::move(value)); return *this;}
 
@@ -177,9 +177,9 @@ namespace Model
      * Outpost. You cannot copy a snapshot from an Outpost to a Region, from one
      * Outpost to another, or within the same Outpost.</p> <p>For more information, see
      * <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#copy-snapshots">
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#copy-snapshots">
      * Copy snapshots from an Amazon Web Services Region to an Outpost</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * <i>Amazon EBS User Guide</i>.</p>
      */
     inline CopySnapshotRequest& WithDestinationOutpostArn(const char* value) { SetDestinationOutpostArn(value); return *this;}
 
@@ -287,8 +287,8 @@ namespace Model
      * Encrypted snapshots are encrypted, even if you omit this parameter and
      * encryption by default is not enabled. You cannot set this parameter to false.
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-     * EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html">Amazon
+     * EBS encryption</a> in the <i>Amazon EBS User Guide</i>.</p>
      */
     inline bool GetEncrypted() const{ return m_encrypted; }
 
@@ -298,8 +298,8 @@ namespace Model
      * Encrypted snapshots are encrypted, even if you omit this parameter and
      * encryption by default is not enabled. You cannot set this parameter to false.
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-     * EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html">Amazon
+     * EBS encryption</a> in the <i>Amazon EBS User Guide</i>.</p>
      */
     inline bool EncryptedHasBeenSet() const { return m_encryptedHasBeenSet; }
 
@@ -309,8 +309,8 @@ namespace Model
      * Encrypted snapshots are encrypted, even if you omit this parameter and
      * encryption by default is not enabled. You cannot set this parameter to false.
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-     * EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html">Amazon
+     * EBS encryption</a> in the <i>Amazon EBS User Guide</i>.</p>
      */
     inline void SetEncrypted(bool value) { m_encryptedHasBeenSet = true; m_encrypted = value; }
 
@@ -320,8 +320,8 @@ namespace Model
      * Encrypted snapshots are encrypted, even if you omit this parameter and
      * encryption by default is not enabled. You cannot set this parameter to false.
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-     * EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html">Amazon
+     * EBS encryption</a> in the <i>Amazon EBS User Guide</i>.</p>
      */
     inline CopySnapshotRequest& WithEncrypted(bool value) { SetEncrypted(value); return *this;}
 

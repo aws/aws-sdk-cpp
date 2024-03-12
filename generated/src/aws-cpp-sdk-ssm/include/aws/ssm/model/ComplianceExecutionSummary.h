@@ -28,7 +28,7 @@ namespace Model
    * <p>A summary of the call execution that includes an execution ID, the type of
    * execution (for example, <code>Command</code>), and the date/time of the
    * execution using a datetime object that is saved in the following format:
-   * yyyy-MM-dd'T'HH:mm:ss'Z'.</p><p><h3>See Also:</h3>   <a
+   * <code>yyyy-MM-dd'T'HH:mm:ss'Z'</code> </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ComplianceExecutionSummary">AWS
    * API Reference</a></p>
    */
@@ -43,37 +43,37 @@ namespace Model
 
     /**
      * <p>The time the execution ran as a datetime object that is saved in the
-     * following format: yyyy-MM-dd'T'HH:mm:ss'Z'.</p>
+     * following format: <code>yyyy-MM-dd'T'HH:mm:ss'Z'</code> </p>
      */
     inline const Aws::Utils::DateTime& GetExecutionTime() const{ return m_executionTime; }
 
     /**
      * <p>The time the execution ran as a datetime object that is saved in the
-     * following format: yyyy-MM-dd'T'HH:mm:ss'Z'.</p>
+     * following format: <code>yyyy-MM-dd'T'HH:mm:ss'Z'</code> </p>
      */
     inline bool ExecutionTimeHasBeenSet() const { return m_executionTimeHasBeenSet; }
 
     /**
      * <p>The time the execution ran as a datetime object that is saved in the
-     * following format: yyyy-MM-dd'T'HH:mm:ss'Z'.</p>
+     * following format: <code>yyyy-MM-dd'T'HH:mm:ss'Z'</code> </p>
      */
     inline void SetExecutionTime(const Aws::Utils::DateTime& value) { m_executionTimeHasBeenSet = true; m_executionTime = value; }
 
     /**
      * <p>The time the execution ran as a datetime object that is saved in the
-     * following format: yyyy-MM-dd'T'HH:mm:ss'Z'.</p>
+     * following format: <code>yyyy-MM-dd'T'HH:mm:ss'Z'</code> </p>
      */
     inline void SetExecutionTime(Aws::Utils::DateTime&& value) { m_executionTimeHasBeenSet = true; m_executionTime = std::move(value); }
 
     /**
      * <p>The time the execution ran as a datetime object that is saved in the
-     * following format: yyyy-MM-dd'T'HH:mm:ss'Z'.</p>
+     * following format: <code>yyyy-MM-dd'T'HH:mm:ss'Z'</code> </p>
      */
     inline ComplianceExecutionSummary& WithExecutionTime(const Aws::Utils::DateTime& value) { SetExecutionTime(value); return *this;}
 
     /**
      * <p>The time the execution ran as a datetime object that is saved in the
-     * following format: yyyy-MM-dd'T'HH:mm:ss'Z'.</p>
+     * following format: <code>yyyy-MM-dd'T'HH:mm:ss'Z'</code> </p>
      */
     inline ComplianceExecutionSummary& WithExecutionTime(Aws::Utils::DateTime&& value) { SetExecutionTime(std::move(value)); return *this;}
 

@@ -335,32 +335,38 @@ namespace Model
 
 
     /**
-     * <p>The initial message to be sent to the newly created chat.</p>
+     * <p>The initial message to be sent to the newly created chat. If you have a Lex
+     * bot in your flow, the initial message is not delivered to the Lex bot.</p>
      */
     inline const ChatMessage& GetInitialMessage() const{ return m_initialMessage; }
 
     /**
-     * <p>The initial message to be sent to the newly created chat.</p>
+     * <p>The initial message to be sent to the newly created chat. If you have a Lex
+     * bot in your flow, the initial message is not delivered to the Lex bot.</p>
      */
     inline bool InitialMessageHasBeenSet() const { return m_initialMessageHasBeenSet; }
 
     /**
-     * <p>The initial message to be sent to the newly created chat.</p>
+     * <p>The initial message to be sent to the newly created chat. If you have a Lex
+     * bot in your flow, the initial message is not delivered to the Lex bot.</p>
      */
     inline void SetInitialMessage(const ChatMessage& value) { m_initialMessageHasBeenSet = true; m_initialMessage = value; }
 
     /**
-     * <p>The initial message to be sent to the newly created chat.</p>
+     * <p>The initial message to be sent to the newly created chat. If you have a Lex
+     * bot in your flow, the initial message is not delivered to the Lex bot.</p>
      */
     inline void SetInitialMessage(ChatMessage&& value) { m_initialMessageHasBeenSet = true; m_initialMessage = std::move(value); }
 
     /**
-     * <p>The initial message to be sent to the newly created chat.</p>
+     * <p>The initial message to be sent to the newly created chat. If you have a Lex
+     * bot in your flow, the initial message is not delivered to the Lex bot.</p>
      */
     inline StartChatContactRequest& WithInitialMessage(const ChatMessage& value) { SetInitialMessage(value); return *this;}
 
     /**
-     * <p>The initial message to be sent to the newly created chat.</p>
+     * <p>The initial message to be sent to the newly created chat. If you have a Lex
+     * bot in your flow, the initial message is not delivered to the Lex bot.</p>
      */
     inline StartChatContactRequest& WithInitialMessage(ChatMessage&& value) { SetInitialMessage(std::move(value)); return *this;}
 

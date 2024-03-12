@@ -335,8 +335,7 @@ namespace Model
      * instance metadata. Set to <code>disabled</code> to turn off access to instance
      * tags from the instance metadata. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS">Work
-     * with instance tags using the instance metadata</a>.</p> <p>Default:
-     * <code>disabled</code> </p>
+     * with instance tags using the instance metadata</a>.</p>
      */
     inline const InstanceMetadataTagsState& GetInstanceMetadataTags() const{ return m_instanceMetadataTags; }
 
@@ -345,8 +344,7 @@ namespace Model
      * instance metadata. Set to <code>disabled</code> to turn off access to instance
      * tags from the instance metadata. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS">Work
-     * with instance tags using the instance metadata</a>.</p> <p>Default:
-     * <code>disabled</code> </p>
+     * with instance tags using the instance metadata</a>.</p>
      */
     inline bool InstanceMetadataTagsHasBeenSet() const { return m_instanceMetadataTagsHasBeenSet; }
 
@@ -355,8 +353,7 @@ namespace Model
      * instance metadata. Set to <code>disabled</code> to turn off access to instance
      * tags from the instance metadata. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS">Work
-     * with instance tags using the instance metadata</a>.</p> <p>Default:
-     * <code>disabled</code> </p>
+     * with instance tags using the instance metadata</a>.</p>
      */
     inline void SetInstanceMetadataTags(const InstanceMetadataTagsState& value) { m_instanceMetadataTagsHasBeenSet = true; m_instanceMetadataTags = value; }
 
@@ -365,8 +362,7 @@ namespace Model
      * instance metadata. Set to <code>disabled</code> to turn off access to instance
      * tags from the instance metadata. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS">Work
-     * with instance tags using the instance metadata</a>.</p> <p>Default:
-     * <code>disabled</code> </p>
+     * with instance tags using the instance metadata</a>.</p>
      */
     inline void SetInstanceMetadataTags(InstanceMetadataTagsState&& value) { m_instanceMetadataTagsHasBeenSet = true; m_instanceMetadataTags = std::move(value); }
 
@@ -375,8 +371,7 @@ namespace Model
      * instance metadata. Set to <code>disabled</code> to turn off access to instance
      * tags from the instance metadata. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS">Work
-     * with instance tags using the instance metadata</a>.</p> <p>Default:
-     * <code>disabled</code> </p>
+     * with instance tags using the instance metadata</a>.</p>
      */
     inline ModifyInstanceMetadataOptionsRequest& WithInstanceMetadataTags(const InstanceMetadataTagsState& value) { SetInstanceMetadataTags(value); return *this;}
 
@@ -385,8 +380,7 @@ namespace Model
      * instance metadata. Set to <code>disabled</code> to turn off access to instance
      * tags from the instance metadata. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#work-with-tags-in-IMDS">Work
-     * with instance tags using the instance metadata</a>.</p> <p>Default:
-     * <code>disabled</code> </p>
+     * with instance tags using the instance metadata</a>.</p>
      */
     inline ModifyInstanceMetadataOptionsRequest& WithInstanceMetadataTags(InstanceMetadataTagsState&& value) { SetInstanceMetadataTags(std::move(value)); return *this;}
 

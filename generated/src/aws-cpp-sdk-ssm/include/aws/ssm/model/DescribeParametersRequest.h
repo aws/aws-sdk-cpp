@@ -206,7 +206,7 @@ namespace Model
      * promoted to a standard Resource Share using the RAM <a
      * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>
      * API operation.</p> <p>For more information about sharing parameters, see <a
-     * href="systems-manager/latest/userguide/parameter-store-shared-parameters.html">Working
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-shared-parameters.html">Working
      * with shared parameters</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.</p> 
      */
@@ -221,7 +221,7 @@ namespace Model
      * promoted to a standard Resource Share using the RAM <a
      * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>
      * API operation.</p> <p>For more information about sharing parameters, see <a
-     * href="systems-manager/latest/userguide/parameter-store-shared-parameters.html">Working
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-shared-parameters.html">Working
      * with shared parameters</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.</p> 
      */
@@ -236,7 +236,7 @@ namespace Model
      * promoted to a standard Resource Share using the RAM <a
      * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>
      * API operation.</p> <p>For more information about sharing parameters, see <a
-     * href="systems-manager/latest/userguide/parameter-store-shared-parameters.html">Working
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-shared-parameters.html">Working
      * with shared parameters</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.</p> 
      */
@@ -251,7 +251,7 @@ namespace Model
      * promoted to a standard Resource Share using the RAM <a
      * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>
      * API operation.</p> <p>For more information about sharing parameters, see <a
-     * href="systems-manager/latest/userguide/parameter-store-shared-parameters.html">Working
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-shared-parameters.html">Working
      * with shared parameters</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.</p> 
      */
