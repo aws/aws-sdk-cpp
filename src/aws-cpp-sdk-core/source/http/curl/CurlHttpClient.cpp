@@ -887,41 +887,37 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(const std::shared_ptr<
         }
 
 #if LIBCURL_VERSION_NUM >= 0x073700 // 7.55.0
-        curl_off_t AppConnectT;
-        ret = curl_easy_getinfo(connectionHandle, CURLINFO_APPCONNECT_TIME_T, &AppConnectT); // Ssl Latency
-        if (ret == CURLE_OK)
-        {
-            request->AddRequestMetric(GetHttpClientMetricNameByType(HttpClientMetricsType::SslLatency), AppConnectT * 1000);
-        }
+        curl_off_t metric;
+        ret = curl_easy_getinfo(connectionHandle, CURLINFO_APPCONNECT_TIME_T, &metric); // Ssl Latency
 #else
-        ret = curl_easy_getinfo(connectionHandle, CURLINFO_APPCONNECT_TIME, &timep); // Ssl Latency
-        if (ret == CURLE_OK)
-        {
-            request->AddRequestMetric(GetHttpClientMetricNameByType(HttpClientMetricsType::SslLatency), static_cast<int64_t>(timep * 1000));
-        }
+        double metric;
+        ret = curl_easy_getinfo(connectionHandle, CURLINFO_APPCONNECT_TIME, &metric); // Ssl Latency
 #endif
+        if (ret == CURLE_OK)
+        {
+            request->AddRequestMetric(GetHttpClientMetricNameByType(HttpClientMetricsType::SslLatency), static_cast<int64_t>(metric * 1000));
+        }
 
-        curl_off_t speed;
 #if LIBCURL_VERSION_NUM >= 0x073700 // 7.55.0
-        ret = curl_easy_getinfo(connectionHandle, CURLINFO_SPEED_DOWNLOAD_T, &speed); // throughput
+        ret = curl_easy_getinfo(connectionHandle, CURLINFO_SPEED_DOWNLOAD_T, &metric); // throughput
 #else
-        ret = curl_easy_getinfo(connectionHandle, CURLINFO_SPEED_DOWNLOAD, &speed); // throughput
+        ret = curl_easy_getinfo(connectionHandle, CURLINFO_SPEED_DOWNLOAD, &metric); // throughput
 #endif
         if (ret == CURLE_OK)
         {
             //Record two metric names to preserve backwards compat
-            request->AddRequestMetric(GetHttpClientMetricNameByType(HttpClientMetricsType::Throughput), static_cast<int64_t>(speed));
-            request->AddRequestMetric(GetHttpClientMetricNameByType(HttpClientMetricsType::DownloadSpeed), static_cast<int64_t>(speed));
+            request->AddRequestMetric(GetHttpClientMetricNameByType(HttpClientMetricsType::Throughput), static_cast<int64_t>(metric));
+            request->AddRequestMetric(GetHttpClientMetricNameByType(HttpClientMetricsType::DownloadSpeed), static_cast<int64_t>(metric));
         }
 
 #if LIBCURL_VERSION_NUM >= 0x073700 // 7.55.0
-        ret = curl_easy_getinfo(connectionHandle, CURLINFO_SPEED_UPLOAD_T, &speed); // Upload Speed
+        ret = curl_easy_getinfo(connectionHandle, CURLINFO_SPEED_UPLOAD_T, &metric); // Upload Speed
 #else
-        ret = curl_easy_getinfo(connectionHandle, CURLINFO_SPEED_UPLOAD, &speed); // Upload Speed
+        ret = curl_easy_getinfo(connectionHandle, CURLINFO_SPEED_UPLOAD, &metric); // Upload Speed
 #endif
         if (ret == CURLE_OK)
         {
-            request->AddRequestMetric(GetHttpClientMetricNameByType(HttpClientMetricsType::UploadSpeed), static_cast<int64_t>(speed));
+            request->AddRequestMetric(GetHttpClientMetricNameByType(HttpClientMetricsType::UploadSpeed), static_cast<int64_t>(metric));
         }
 
         const char* ip = nullptr;
