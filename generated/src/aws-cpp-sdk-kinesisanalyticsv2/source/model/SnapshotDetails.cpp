@@ -24,7 +24,9 @@ SnapshotDetails::SnapshotDetails() :
     m_snapshotStatusHasBeenSet(false),
     m_applicationVersionId(0),
     m_applicationVersionIdHasBeenSet(false),
-    m_snapshotCreationTimestampHasBeenSet(false)
+    m_snapshotCreationTimestampHasBeenSet(false),
+    m_runtimeEnvironment(RuntimeEnvironment::NOT_SET),
+    m_runtimeEnvironmentHasBeenSet(false)
 {
 }
 
@@ -34,7 +36,9 @@ SnapshotDetails::SnapshotDetails(JsonView jsonValue) :
     m_snapshotStatusHasBeenSet(false),
     m_applicationVersionId(0),
     m_applicationVersionIdHasBeenSet(false),
-    m_snapshotCreationTimestampHasBeenSet(false)
+    m_snapshotCreationTimestampHasBeenSet(false),
+    m_runtimeEnvironment(RuntimeEnvironment::NOT_SET),
+    m_runtimeEnvironmentHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -69,6 +73,13 @@ SnapshotDetails& SnapshotDetails::operator =(JsonView jsonValue)
     m_snapshotCreationTimestampHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("RuntimeEnvironment"))
+  {
+    m_runtimeEnvironment = RuntimeEnvironmentMapper::GetRuntimeEnvironmentForName(jsonValue.GetString("RuntimeEnvironment"));
+
+    m_runtimeEnvironmentHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -96,6 +107,11 @@ JsonValue SnapshotDetails::Jsonize() const
   if(m_snapshotCreationTimestampHasBeenSet)
   {
    payload.WithDouble("SnapshotCreationTimestamp", m_snapshotCreationTimestamp.SecondsWithMSPrecision());
+  }
+
+  if(m_runtimeEnvironmentHasBeenSet)
+  {
+   payload.WithString("RuntimeEnvironment", RuntimeEnvironmentMapper::GetNameForRuntimeEnvironment(m_runtimeEnvironment));
   }
 
   return payload;

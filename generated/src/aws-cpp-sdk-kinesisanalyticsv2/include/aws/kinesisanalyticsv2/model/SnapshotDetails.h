@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/kinesisanalyticsv2/model/SnapshotStatus.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/kinesisanalyticsv2/model/RuntimeEnvironment.h>
 #include <utility>
 
 namespace Aws
@@ -163,6 +164,37 @@ namespace Model
      */
     inline SnapshotDetails& WithSnapshotCreationTimestamp(Aws::Utils::DateTime&& value) { SetSnapshotCreationTimestamp(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The Flink Runtime for the application snapshot.</p>
+     */
+    inline const RuntimeEnvironment& GetRuntimeEnvironment() const{ return m_runtimeEnvironment; }
+
+    /**
+     * <p>The Flink Runtime for the application snapshot.</p>
+     */
+    inline bool RuntimeEnvironmentHasBeenSet() const { return m_runtimeEnvironmentHasBeenSet; }
+
+    /**
+     * <p>The Flink Runtime for the application snapshot.</p>
+     */
+    inline void SetRuntimeEnvironment(const RuntimeEnvironment& value) { m_runtimeEnvironmentHasBeenSet = true; m_runtimeEnvironment = value; }
+
+    /**
+     * <p>The Flink Runtime for the application snapshot.</p>
+     */
+    inline void SetRuntimeEnvironment(RuntimeEnvironment&& value) { m_runtimeEnvironmentHasBeenSet = true; m_runtimeEnvironment = std::move(value); }
+
+    /**
+     * <p>The Flink Runtime for the application snapshot.</p>
+     */
+    inline SnapshotDetails& WithRuntimeEnvironment(const RuntimeEnvironment& value) { SetRuntimeEnvironment(value); return *this;}
+
+    /**
+     * <p>The Flink Runtime for the application snapshot.</p>
+     */
+    inline SnapshotDetails& WithRuntimeEnvironment(RuntimeEnvironment&& value) { SetRuntimeEnvironment(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_snapshotName;
@@ -176,6 +208,9 @@ namespace Model
 
     Aws::Utils::DateTime m_snapshotCreationTimestamp;
     bool m_snapshotCreationTimestampHasBeenSet = false;
+
+    RuntimeEnvironment m_runtimeEnvironment;
+    bool m_runtimeEnvironmentHasBeenSet = false;
   };
 
 } // namespace Model

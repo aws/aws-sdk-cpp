@@ -114,112 +114,112 @@ namespace Model
 
 
     /**
-     * <p>Describes updates to a Flink-based Kinesis Data Analytics application's
+     * <p>Describes updates to a Managed Service for Apache Flink application's
      * configuration.</p>
      */
     inline const FlinkApplicationConfigurationUpdate& GetFlinkApplicationConfigurationUpdate() const{ return m_flinkApplicationConfigurationUpdate; }
 
     /**
-     * <p>Describes updates to a Flink-based Kinesis Data Analytics application's
+     * <p>Describes updates to a Managed Service for Apache Flink application's
      * configuration.</p>
      */
     inline bool FlinkApplicationConfigurationUpdateHasBeenSet() const { return m_flinkApplicationConfigurationUpdateHasBeenSet; }
 
     /**
-     * <p>Describes updates to a Flink-based Kinesis Data Analytics application's
+     * <p>Describes updates to a Managed Service for Apache Flink application's
      * configuration.</p>
      */
     inline void SetFlinkApplicationConfigurationUpdate(const FlinkApplicationConfigurationUpdate& value) { m_flinkApplicationConfigurationUpdateHasBeenSet = true; m_flinkApplicationConfigurationUpdate = value; }
 
     /**
-     * <p>Describes updates to a Flink-based Kinesis Data Analytics application's
+     * <p>Describes updates to a Managed Service for Apache Flink application's
      * configuration.</p>
      */
     inline void SetFlinkApplicationConfigurationUpdate(FlinkApplicationConfigurationUpdate&& value) { m_flinkApplicationConfigurationUpdateHasBeenSet = true; m_flinkApplicationConfigurationUpdate = std::move(value); }
 
     /**
-     * <p>Describes updates to a Flink-based Kinesis Data Analytics application's
+     * <p>Describes updates to a Managed Service for Apache Flink application's
      * configuration.</p>
      */
     inline ApplicationConfigurationUpdate& WithFlinkApplicationConfigurationUpdate(const FlinkApplicationConfigurationUpdate& value) { SetFlinkApplicationConfigurationUpdate(value); return *this;}
 
     /**
-     * <p>Describes updates to a Flink-based Kinesis Data Analytics application's
+     * <p>Describes updates to a Managed Service for Apache Flink application's
      * configuration.</p>
      */
     inline ApplicationConfigurationUpdate& WithFlinkApplicationConfigurationUpdate(FlinkApplicationConfigurationUpdate&& value) { SetFlinkApplicationConfigurationUpdate(std::move(value)); return *this;}
 
 
     /**
-     * <p>Describes updates to the environment properties for a Flink-based Kinesis
-     * Data Analytics application.</p>
+     * <p>Describes updates to the environment properties for a Managed Service for
+     * Apache Flink application.</p>
      */
     inline const EnvironmentPropertyUpdates& GetEnvironmentPropertyUpdates() const{ return m_environmentPropertyUpdates; }
 
     /**
-     * <p>Describes updates to the environment properties for a Flink-based Kinesis
-     * Data Analytics application.</p>
+     * <p>Describes updates to the environment properties for a Managed Service for
+     * Apache Flink application.</p>
      */
     inline bool EnvironmentPropertyUpdatesHasBeenSet() const { return m_environmentPropertyUpdatesHasBeenSet; }
 
     /**
-     * <p>Describes updates to the environment properties for a Flink-based Kinesis
-     * Data Analytics application.</p>
+     * <p>Describes updates to the environment properties for a Managed Service for
+     * Apache Flink application.</p>
      */
     inline void SetEnvironmentPropertyUpdates(const EnvironmentPropertyUpdates& value) { m_environmentPropertyUpdatesHasBeenSet = true; m_environmentPropertyUpdates = value; }
 
     /**
-     * <p>Describes updates to the environment properties for a Flink-based Kinesis
-     * Data Analytics application.</p>
+     * <p>Describes updates to the environment properties for a Managed Service for
+     * Apache Flink application.</p>
      */
     inline void SetEnvironmentPropertyUpdates(EnvironmentPropertyUpdates&& value) { m_environmentPropertyUpdatesHasBeenSet = true; m_environmentPropertyUpdates = std::move(value); }
 
     /**
-     * <p>Describes updates to the environment properties for a Flink-based Kinesis
-     * Data Analytics application.</p>
+     * <p>Describes updates to the environment properties for a Managed Service for
+     * Apache Flink application.</p>
      */
     inline ApplicationConfigurationUpdate& WithEnvironmentPropertyUpdates(const EnvironmentPropertyUpdates& value) { SetEnvironmentPropertyUpdates(value); return *this;}
 
     /**
-     * <p>Describes updates to the environment properties for a Flink-based Kinesis
-     * Data Analytics application.</p>
+     * <p>Describes updates to the environment properties for a Managed Service for
+     * Apache Flink application.</p>
      */
     inline ApplicationConfigurationUpdate& WithEnvironmentPropertyUpdates(EnvironmentPropertyUpdates&& value) { SetEnvironmentPropertyUpdates(std::move(value)); return *this;}
 
 
     /**
-     * <p>Describes whether snapshots are enabled for a Flink-based Kinesis Data
-     * Analytics application.</p>
+     * <p>Describes whether snapshots are enabled for a Managed Service for Apache
+     * Flink application.</p>
      */
     inline const ApplicationSnapshotConfigurationUpdate& GetApplicationSnapshotConfigurationUpdate() const{ return m_applicationSnapshotConfigurationUpdate; }
 
     /**
-     * <p>Describes whether snapshots are enabled for a Flink-based Kinesis Data
-     * Analytics application.</p>
+     * <p>Describes whether snapshots are enabled for a Managed Service for Apache
+     * Flink application.</p>
      */
     inline bool ApplicationSnapshotConfigurationUpdateHasBeenSet() const { return m_applicationSnapshotConfigurationUpdateHasBeenSet; }
 
     /**
-     * <p>Describes whether snapshots are enabled for a Flink-based Kinesis Data
-     * Analytics application.</p>
+     * <p>Describes whether snapshots are enabled for a Managed Service for Apache
+     * Flink application.</p>
      */
     inline void SetApplicationSnapshotConfigurationUpdate(const ApplicationSnapshotConfigurationUpdate& value) { m_applicationSnapshotConfigurationUpdateHasBeenSet = true; m_applicationSnapshotConfigurationUpdate = value; }
 
     /**
-     * <p>Describes whether snapshots are enabled for a Flink-based Kinesis Data
-     * Analytics application.</p>
+     * <p>Describes whether snapshots are enabled for a Managed Service for Apache
+     * Flink application.</p>
      */
     inline void SetApplicationSnapshotConfigurationUpdate(ApplicationSnapshotConfigurationUpdate&& value) { m_applicationSnapshotConfigurationUpdateHasBeenSet = true; m_applicationSnapshotConfigurationUpdate = std::move(value); }
 
     /**
-     * <p>Describes whether snapshots are enabled for a Flink-based Kinesis Data
-     * Analytics application.</p>
+     * <p>Describes whether snapshots are enabled for a Managed Service for Apache
+     * Flink application.</p>
      */
     inline ApplicationConfigurationUpdate& WithApplicationSnapshotConfigurationUpdate(const ApplicationSnapshotConfigurationUpdate& value) { SetApplicationSnapshotConfigurationUpdate(value); return *this;}
 
     /**
-     * <p>Describes whether snapshots are enabled for a Flink-based Kinesis Data
-     * Analytics application.</p>
+     * <p>Describes whether snapshots are enabled for a Managed Service for Apache
+     * Flink application.</p>
      */
     inline ApplicationConfigurationUpdate& WithApplicationSnapshotConfigurationUpdate(ApplicationSnapshotConfigurationUpdate&& value) { SetApplicationSnapshotConfigurationUpdate(std::move(value)); return *this;}
 
@@ -274,32 +274,38 @@ namespace Model
 
 
     /**
-     * <p>Updates to the configuration of a Kinesis Data Analytics Studio notebook.</p>
+     * <p>Updates to the configuration of a Managed Service for Apache Flink Studio
+     * notebook.</p>
      */
     inline const ZeppelinApplicationConfigurationUpdate& GetZeppelinApplicationConfigurationUpdate() const{ return m_zeppelinApplicationConfigurationUpdate; }
 
     /**
-     * <p>Updates to the configuration of a Kinesis Data Analytics Studio notebook.</p>
+     * <p>Updates to the configuration of a Managed Service for Apache Flink Studio
+     * notebook.</p>
      */
     inline bool ZeppelinApplicationConfigurationUpdateHasBeenSet() const { return m_zeppelinApplicationConfigurationUpdateHasBeenSet; }
 
     /**
-     * <p>Updates to the configuration of a Kinesis Data Analytics Studio notebook.</p>
+     * <p>Updates to the configuration of a Managed Service for Apache Flink Studio
+     * notebook.</p>
      */
     inline void SetZeppelinApplicationConfigurationUpdate(const ZeppelinApplicationConfigurationUpdate& value) { m_zeppelinApplicationConfigurationUpdateHasBeenSet = true; m_zeppelinApplicationConfigurationUpdate = value; }
 
     /**
-     * <p>Updates to the configuration of a Kinesis Data Analytics Studio notebook.</p>
+     * <p>Updates to the configuration of a Managed Service for Apache Flink Studio
+     * notebook.</p>
      */
     inline void SetZeppelinApplicationConfigurationUpdate(ZeppelinApplicationConfigurationUpdate&& value) { m_zeppelinApplicationConfigurationUpdateHasBeenSet = true; m_zeppelinApplicationConfigurationUpdate = std::move(value); }
 
     /**
-     * <p>Updates to the configuration of a Kinesis Data Analytics Studio notebook.</p>
+     * <p>Updates to the configuration of a Managed Service for Apache Flink Studio
+     * notebook.</p>
      */
     inline ApplicationConfigurationUpdate& WithZeppelinApplicationConfigurationUpdate(const ZeppelinApplicationConfigurationUpdate& value) { SetZeppelinApplicationConfigurationUpdate(value); return *this;}
 
     /**
-     * <p>Updates to the configuration of a Kinesis Data Analytics Studio notebook.</p>
+     * <p>Updates to the configuration of a Managed Service for Apache Flink Studio
+     * notebook.</p>
      */
     inline ApplicationConfigurationUpdate& WithZeppelinApplicationConfigurationUpdate(ZeppelinApplicationConfigurationUpdate&& value) { SetZeppelinApplicationConfigurationUpdate(std::move(value)); return *this;}
 

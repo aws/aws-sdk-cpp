@@ -207,44 +207,44 @@ namespace Model
 
 
     /**
-     * <p>For a Kinesis Data Analytics for Apache Flink application, the mode is
-     * <code>STREAMING</code>. For a Kinesis Data Analytics Studio notebook, it is
-     * <code>INTERACTIVE</code>.</p>
+     * <p>For a Managed Service for Apache Flink application, the mode is
+     * <code>STREAMING</code>. For a Managed Service for Apache Flink Studio notebook,
+     * it is <code>INTERACTIVE</code>.</p>
      */
     inline const ApplicationMode& GetApplicationMode() const{ return m_applicationMode; }
 
     /**
-     * <p>For a Kinesis Data Analytics for Apache Flink application, the mode is
-     * <code>STREAMING</code>. For a Kinesis Data Analytics Studio notebook, it is
-     * <code>INTERACTIVE</code>.</p>
+     * <p>For a Managed Service for Apache Flink application, the mode is
+     * <code>STREAMING</code>. For a Managed Service for Apache Flink Studio notebook,
+     * it is <code>INTERACTIVE</code>.</p>
      */
     inline bool ApplicationModeHasBeenSet() const { return m_applicationModeHasBeenSet; }
 
     /**
-     * <p>For a Kinesis Data Analytics for Apache Flink application, the mode is
-     * <code>STREAMING</code>. For a Kinesis Data Analytics Studio notebook, it is
-     * <code>INTERACTIVE</code>.</p>
+     * <p>For a Managed Service for Apache Flink application, the mode is
+     * <code>STREAMING</code>. For a Managed Service for Apache Flink Studio notebook,
+     * it is <code>INTERACTIVE</code>.</p>
      */
     inline void SetApplicationMode(const ApplicationMode& value) { m_applicationModeHasBeenSet = true; m_applicationMode = value; }
 
     /**
-     * <p>For a Kinesis Data Analytics for Apache Flink application, the mode is
-     * <code>STREAMING</code>. For a Kinesis Data Analytics Studio notebook, it is
-     * <code>INTERACTIVE</code>.</p>
+     * <p>For a Managed Service for Apache Flink application, the mode is
+     * <code>STREAMING</code>. For a Managed Service for Apache Flink Studio notebook,
+     * it is <code>INTERACTIVE</code>.</p>
      */
     inline void SetApplicationMode(ApplicationMode&& value) { m_applicationModeHasBeenSet = true; m_applicationMode = std::move(value); }
 
     /**
-     * <p>For a Kinesis Data Analytics for Apache Flink application, the mode is
-     * <code>STREAMING</code>. For a Kinesis Data Analytics Studio notebook, it is
-     * <code>INTERACTIVE</code>.</p>
+     * <p>For a Managed Service for Apache Flink application, the mode is
+     * <code>STREAMING</code>. For a Managed Service for Apache Flink Studio notebook,
+     * it is <code>INTERACTIVE</code>.</p>
      */
     inline ApplicationSummary& WithApplicationMode(const ApplicationMode& value) { SetApplicationMode(value); return *this;}
 
     /**
-     * <p>For a Kinesis Data Analytics for Apache Flink application, the mode is
-     * <code>STREAMING</code>. For a Kinesis Data Analytics Studio notebook, it is
-     * <code>INTERACTIVE</code>.</p>
+     * <p>For a Managed Service for Apache Flink application, the mode is
+     * <code>STREAMING</code>. For a Managed Service for Apache Flink Studio notebook,
+     * it is <code>INTERACTIVE</code>.</p>
      */
     inline ApplicationSummary& WithApplicationMode(ApplicationMode&& value) { SetApplicationMode(std::move(value)); return *this;}
 

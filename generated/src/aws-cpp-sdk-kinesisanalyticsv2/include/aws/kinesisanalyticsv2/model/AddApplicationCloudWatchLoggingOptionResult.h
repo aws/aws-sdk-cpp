@@ -71,66 +71,66 @@ namespace Model
 
 
     /**
-     * <p>The new version ID of the Kinesis Data Analytics application. Kinesis Data
-     * Analytics updates the <code>ApplicationVersionId</code> each time you change the
-     * CloudWatch logging options. </p>
+     * <p>The new version ID of the SQL-based Kinesis Data Analytics application.
+     * Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time
+     * you change the CloudWatch logging options. </p>
      */
     inline long long GetApplicationVersionId() const{ return m_applicationVersionId; }
 
     /**
-     * <p>The new version ID of the Kinesis Data Analytics application. Kinesis Data
-     * Analytics updates the <code>ApplicationVersionId</code> each time you change the
-     * CloudWatch logging options. </p>
+     * <p>The new version ID of the SQL-based Kinesis Data Analytics application.
+     * Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time
+     * you change the CloudWatch logging options. </p>
      */
     inline void SetApplicationVersionId(long long value) { m_applicationVersionId = value; }
 
     /**
-     * <p>The new version ID of the Kinesis Data Analytics application. Kinesis Data
-     * Analytics updates the <code>ApplicationVersionId</code> each time you change the
-     * CloudWatch logging options. </p>
+     * <p>The new version ID of the SQL-based Kinesis Data Analytics application.
+     * Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time
+     * you change the CloudWatch logging options. </p>
      */
     inline AddApplicationCloudWatchLoggingOptionResult& WithApplicationVersionId(long long value) { SetApplicationVersionId(value); return *this;}
 
 
     /**
-     * <p>The descriptions of the current CloudWatch logging options for the Kinesis
-     * Data Analytics application.</p>
+     * <p>The descriptions of the current CloudWatch logging options for the SQL-based
+     * Kinesis Data Analytics application.</p>
      */
     inline const Aws::Vector<CloudWatchLoggingOptionDescription>& GetCloudWatchLoggingOptionDescriptions() const{ return m_cloudWatchLoggingOptionDescriptions; }
 
     /**
-     * <p>The descriptions of the current CloudWatch logging options for the Kinesis
-     * Data Analytics application.</p>
+     * <p>The descriptions of the current CloudWatch logging options for the SQL-based
+     * Kinesis Data Analytics application.</p>
      */
     inline void SetCloudWatchLoggingOptionDescriptions(const Aws::Vector<CloudWatchLoggingOptionDescription>& value) { m_cloudWatchLoggingOptionDescriptions = value; }
 
     /**
-     * <p>The descriptions of the current CloudWatch logging options for the Kinesis
-     * Data Analytics application.</p>
+     * <p>The descriptions of the current CloudWatch logging options for the SQL-based
+     * Kinesis Data Analytics application.</p>
      */
     inline void SetCloudWatchLoggingOptionDescriptions(Aws::Vector<CloudWatchLoggingOptionDescription>&& value) { m_cloudWatchLoggingOptionDescriptions = std::move(value); }
 
     /**
-     * <p>The descriptions of the current CloudWatch logging options for the Kinesis
-     * Data Analytics application.</p>
+     * <p>The descriptions of the current CloudWatch logging options for the SQL-based
+     * Kinesis Data Analytics application.</p>
      */
     inline AddApplicationCloudWatchLoggingOptionResult& WithCloudWatchLoggingOptionDescriptions(const Aws::Vector<CloudWatchLoggingOptionDescription>& value) { SetCloudWatchLoggingOptionDescriptions(value); return *this;}
 
     /**
-     * <p>The descriptions of the current CloudWatch logging options for the Kinesis
-     * Data Analytics application.</p>
+     * <p>The descriptions of the current CloudWatch logging options for the SQL-based
+     * Kinesis Data Analytics application.</p>
      */
     inline AddApplicationCloudWatchLoggingOptionResult& WithCloudWatchLoggingOptionDescriptions(Aws::Vector<CloudWatchLoggingOptionDescription>&& value) { SetCloudWatchLoggingOptionDescriptions(std::move(value)); return *this;}
 
     /**
-     * <p>The descriptions of the current CloudWatch logging options for the Kinesis
-     * Data Analytics application.</p>
+     * <p>The descriptions of the current CloudWatch logging options for the SQL-based
+     * Kinesis Data Analytics application.</p>
      */
     inline AddApplicationCloudWatchLoggingOptionResult& AddCloudWatchLoggingOptionDescriptions(const CloudWatchLoggingOptionDescription& value) { m_cloudWatchLoggingOptionDescriptions.push_back(value); return *this; }
 
     /**
-     * <p>The descriptions of the current CloudWatch logging options for the Kinesis
-     * Data Analytics application.</p>
+     * <p>The descriptions of the current CloudWatch logging options for the SQL-based
+     * Kinesis Data Analytics application.</p>
      */
     inline AddApplicationCloudWatchLoggingOptionResult& AddCloudWatchLoggingOptionDescriptions(CloudWatchLoggingOptionDescription&& value) { m_cloudWatchLoggingOptionDescriptions.push_back(std::move(value)); return *this; }
 

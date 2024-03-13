@@ -10,6 +10,7 @@
 #include <aws/kinesisanalyticsv2/model/ApplicationConfigurationUpdate.h>
 #include <aws/kinesisanalyticsv2/model/RunConfigurationUpdate.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/kinesisanalyticsv2/model/RuntimeEnvironment.h>
 #include <aws/kinesisanalyticsv2/model/CloudWatchLoggingOptionUpdate.h>
 #include <utility>
 
@@ -360,6 +361,61 @@ namespace Model
      */
     inline UpdateApplicationRequest& WithConditionalToken(const char* value) { SetConditionalToken(value); return *this;}
 
+
+    /**
+     * <p>Updates the Managed Service for Apache Flink runtime environment used to run
+     * your code. To avoid issues you must:</p> <ul> <li> <p>Ensure your new jar and
+     * dependencies are compatible with the new runtime selected.</p> </li> <li>
+     * <p>Ensure your new code's state is compatible with the snapshot from which your
+     * application will start</p> </li> </ul>
+     */
+    inline const RuntimeEnvironment& GetRuntimeEnvironmentUpdate() const{ return m_runtimeEnvironmentUpdate; }
+
+    /**
+     * <p>Updates the Managed Service for Apache Flink runtime environment used to run
+     * your code. To avoid issues you must:</p> <ul> <li> <p>Ensure your new jar and
+     * dependencies are compatible with the new runtime selected.</p> </li> <li>
+     * <p>Ensure your new code's state is compatible with the snapshot from which your
+     * application will start</p> </li> </ul>
+     */
+    inline bool RuntimeEnvironmentUpdateHasBeenSet() const { return m_runtimeEnvironmentUpdateHasBeenSet; }
+
+    /**
+     * <p>Updates the Managed Service for Apache Flink runtime environment used to run
+     * your code. To avoid issues you must:</p> <ul> <li> <p>Ensure your new jar and
+     * dependencies are compatible with the new runtime selected.</p> </li> <li>
+     * <p>Ensure your new code's state is compatible with the snapshot from which your
+     * application will start</p> </li> </ul>
+     */
+    inline void SetRuntimeEnvironmentUpdate(const RuntimeEnvironment& value) { m_runtimeEnvironmentUpdateHasBeenSet = true; m_runtimeEnvironmentUpdate = value; }
+
+    /**
+     * <p>Updates the Managed Service for Apache Flink runtime environment used to run
+     * your code. To avoid issues you must:</p> <ul> <li> <p>Ensure your new jar and
+     * dependencies are compatible with the new runtime selected.</p> </li> <li>
+     * <p>Ensure your new code's state is compatible with the snapshot from which your
+     * application will start</p> </li> </ul>
+     */
+    inline void SetRuntimeEnvironmentUpdate(RuntimeEnvironment&& value) { m_runtimeEnvironmentUpdateHasBeenSet = true; m_runtimeEnvironmentUpdate = std::move(value); }
+
+    /**
+     * <p>Updates the Managed Service for Apache Flink runtime environment used to run
+     * your code. To avoid issues you must:</p> <ul> <li> <p>Ensure your new jar and
+     * dependencies are compatible with the new runtime selected.</p> </li> <li>
+     * <p>Ensure your new code's state is compatible with the snapshot from which your
+     * application will start</p> </li> </ul>
+     */
+    inline UpdateApplicationRequest& WithRuntimeEnvironmentUpdate(const RuntimeEnvironment& value) { SetRuntimeEnvironmentUpdate(value); return *this;}
+
+    /**
+     * <p>Updates the Managed Service for Apache Flink runtime environment used to run
+     * your code. To avoid issues you must:</p> <ul> <li> <p>Ensure your new jar and
+     * dependencies are compatible with the new runtime selected.</p> </li> <li>
+     * <p>Ensure your new code's state is compatible with the snapshot from which your
+     * application will start</p> </li> </ul>
+     */
+    inline UpdateApplicationRequest& WithRuntimeEnvironmentUpdate(RuntimeEnvironment&& value) { SetRuntimeEnvironmentUpdate(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_applicationName;
@@ -382,6 +438,9 @@ namespace Model
 
     Aws::String m_conditionalToken;
     bool m_conditionalTokenHasBeenSet = false;
+
+    RuntimeEnvironment m_runtimeEnvironmentUpdate;
+    bool m_runtimeEnvironmentUpdateHasBeenSet = false;
   };
 
 } // namespace Model

@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes the updates to the starting parameters for a Kinesis Data Analytics
-   * application.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes the updates to the starting parameters for a Managed Service for
+   * Apache Flink application.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/RunConfigurationUpdate">AWS
    * API Reference</a></p>
    */
@@ -40,37 +40,37 @@ namespace Model
 
 
     /**
-     * <p>Describes the starting parameters for a Flink-based Kinesis Data Analytics
+     * <p>Describes the starting parameters for a Managed Service for Apache Flink
      * application.</p>
      */
     inline const FlinkRunConfiguration& GetFlinkRunConfiguration() const{ return m_flinkRunConfiguration; }
 
     /**
-     * <p>Describes the starting parameters for a Flink-based Kinesis Data Analytics
+     * <p>Describes the starting parameters for a Managed Service for Apache Flink
      * application.</p>
      */
     inline bool FlinkRunConfigurationHasBeenSet() const { return m_flinkRunConfigurationHasBeenSet; }
 
     /**
-     * <p>Describes the starting parameters for a Flink-based Kinesis Data Analytics
+     * <p>Describes the starting parameters for a Managed Service for Apache Flink
      * application.</p>
      */
     inline void SetFlinkRunConfiguration(const FlinkRunConfiguration& value) { m_flinkRunConfigurationHasBeenSet = true; m_flinkRunConfiguration = value; }
 
     /**
-     * <p>Describes the starting parameters for a Flink-based Kinesis Data Analytics
+     * <p>Describes the starting parameters for a Managed Service for Apache Flink
      * application.</p>
      */
     inline void SetFlinkRunConfiguration(FlinkRunConfiguration&& value) { m_flinkRunConfigurationHasBeenSet = true; m_flinkRunConfiguration = std::move(value); }
 
     /**
-     * <p>Describes the starting parameters for a Flink-based Kinesis Data Analytics
+     * <p>Describes the starting parameters for a Managed Service for Apache Flink
      * application.</p>
      */
     inline RunConfigurationUpdate& WithFlinkRunConfiguration(const FlinkRunConfiguration& value) { SetFlinkRunConfiguration(value); return *this;}
 
     /**
-     * <p>Describes the starting parameters for a Flink-based Kinesis Data Analytics
+     * <p>Describes the starting parameters for a Managed Service for Apache Flink
      * application.</p>
      */
     inline RunConfigurationUpdate& WithFlinkRunConfiguration(FlinkRunConfiguration&& value) { SetFlinkRunConfiguration(std::move(value)); return *this;}

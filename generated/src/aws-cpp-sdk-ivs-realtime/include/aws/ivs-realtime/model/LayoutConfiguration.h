@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/ivs-realtime/Ivsrealtime_EXPORTS.h>
 #include <aws/ivs-realtime/model/GridConfiguration.h>
+#include <aws/ivs-realtime/model/PipConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -68,10 +69,44 @@ namespace Model
      */
     inline LayoutConfiguration& WithGrid(GridConfiguration&& value) { SetGrid(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Configuration related to PiP layout.</p>
+     */
+    inline const PipConfiguration& GetPip() const{ return m_pip; }
+
+    /**
+     * <p>Configuration related to PiP layout.</p>
+     */
+    inline bool PipHasBeenSet() const { return m_pipHasBeenSet; }
+
+    /**
+     * <p>Configuration related to PiP layout.</p>
+     */
+    inline void SetPip(const PipConfiguration& value) { m_pipHasBeenSet = true; m_pip = value; }
+
+    /**
+     * <p>Configuration related to PiP layout.</p>
+     */
+    inline void SetPip(PipConfiguration&& value) { m_pipHasBeenSet = true; m_pip = std::move(value); }
+
+    /**
+     * <p>Configuration related to PiP layout.</p>
+     */
+    inline LayoutConfiguration& WithPip(const PipConfiguration& value) { SetPip(value); return *this;}
+
+    /**
+     * <p>Configuration related to PiP layout.</p>
+     */
+    inline LayoutConfiguration& WithPip(PipConfiguration&& value) { SetPip(std::move(value)); return *this;}
+
   private:
 
     GridConfiguration m_grid;
     bool m_gridHasBeenSet = false;
+
+    PipConfiguration m_pip;
+    bool m_pipHasBeenSet = false;
   };
 
 } // namespace Model

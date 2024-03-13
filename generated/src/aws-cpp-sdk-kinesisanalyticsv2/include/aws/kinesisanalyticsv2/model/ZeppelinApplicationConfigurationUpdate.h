@@ -28,7 +28,7 @@ namespace Model
 {
 
   /**
-   * <p>Updates to the configuration of Kinesis Data Analytics Studio
+   * <p>Updates to the configuration of Managed Service for Apache Flink Studio
    * notebook.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ZeppelinApplicationConfigurationUpdate">AWS
    * API Reference</a></p>
@@ -43,75 +43,75 @@ namespace Model
 
 
     /**
-     * <p>Updates to the monitoring configuration of a Kinesis Data Analytics Studio
-     * notebook.</p>
+     * <p>Updates to the monitoring configuration of a Managed Service for Apache Flink
+     * Studio notebook.</p>
      */
     inline const ZeppelinMonitoringConfigurationUpdate& GetMonitoringConfigurationUpdate() const{ return m_monitoringConfigurationUpdate; }
 
     /**
-     * <p>Updates to the monitoring configuration of a Kinesis Data Analytics Studio
-     * notebook.</p>
+     * <p>Updates to the monitoring configuration of a Managed Service for Apache Flink
+     * Studio notebook.</p>
      */
     inline bool MonitoringConfigurationUpdateHasBeenSet() const { return m_monitoringConfigurationUpdateHasBeenSet; }
 
     /**
-     * <p>Updates to the monitoring configuration of a Kinesis Data Analytics Studio
-     * notebook.</p>
+     * <p>Updates to the monitoring configuration of a Managed Service for Apache Flink
+     * Studio notebook.</p>
      */
     inline void SetMonitoringConfigurationUpdate(const ZeppelinMonitoringConfigurationUpdate& value) { m_monitoringConfigurationUpdateHasBeenSet = true; m_monitoringConfigurationUpdate = value; }
 
     /**
-     * <p>Updates to the monitoring configuration of a Kinesis Data Analytics Studio
-     * notebook.</p>
+     * <p>Updates to the monitoring configuration of a Managed Service for Apache Flink
+     * Studio notebook.</p>
      */
     inline void SetMonitoringConfigurationUpdate(ZeppelinMonitoringConfigurationUpdate&& value) { m_monitoringConfigurationUpdateHasBeenSet = true; m_monitoringConfigurationUpdate = std::move(value); }
 
     /**
-     * <p>Updates to the monitoring configuration of a Kinesis Data Analytics Studio
-     * notebook.</p>
+     * <p>Updates to the monitoring configuration of a Managed Service for Apache Flink
+     * Studio notebook.</p>
      */
     inline ZeppelinApplicationConfigurationUpdate& WithMonitoringConfigurationUpdate(const ZeppelinMonitoringConfigurationUpdate& value) { SetMonitoringConfigurationUpdate(value); return *this;}
 
     /**
-     * <p>Updates to the monitoring configuration of a Kinesis Data Analytics Studio
-     * notebook.</p>
+     * <p>Updates to the monitoring configuration of a Managed Service for Apache Flink
+     * Studio notebook.</p>
      */
     inline ZeppelinApplicationConfigurationUpdate& WithMonitoringConfigurationUpdate(ZeppelinMonitoringConfigurationUpdate&& value) { SetMonitoringConfigurationUpdate(std::move(value)); return *this;}
 
 
     /**
      * <p>Updates to the configuration of the Amazon Glue Data Catalog that is
-     * associated with the Kinesis Data Analytics Studio notebook.</p>
+     * associated with the Managed Service for Apache Flink Studio notebook.</p>
      */
     inline const CatalogConfigurationUpdate& GetCatalogConfigurationUpdate() const{ return m_catalogConfigurationUpdate; }
 
     /**
      * <p>Updates to the configuration of the Amazon Glue Data Catalog that is
-     * associated with the Kinesis Data Analytics Studio notebook.</p>
+     * associated with the Managed Service for Apache Flink Studio notebook.</p>
      */
     inline bool CatalogConfigurationUpdateHasBeenSet() const { return m_catalogConfigurationUpdateHasBeenSet; }
 
     /**
      * <p>Updates to the configuration of the Amazon Glue Data Catalog that is
-     * associated with the Kinesis Data Analytics Studio notebook.</p>
+     * associated with the Managed Service for Apache Flink Studio notebook.</p>
      */
     inline void SetCatalogConfigurationUpdate(const CatalogConfigurationUpdate& value) { m_catalogConfigurationUpdateHasBeenSet = true; m_catalogConfigurationUpdate = value; }
 
     /**
      * <p>Updates to the configuration of the Amazon Glue Data Catalog that is
-     * associated with the Kinesis Data Analytics Studio notebook.</p>
+     * associated with the Managed Service for Apache Flink Studio notebook.</p>
      */
     inline void SetCatalogConfigurationUpdate(CatalogConfigurationUpdate&& value) { m_catalogConfigurationUpdateHasBeenSet = true; m_catalogConfigurationUpdate = std::move(value); }
 
     /**
      * <p>Updates to the configuration of the Amazon Glue Data Catalog that is
-     * associated with the Kinesis Data Analytics Studio notebook.</p>
+     * associated with the Managed Service for Apache Flink Studio notebook.</p>
      */
     inline ZeppelinApplicationConfigurationUpdate& WithCatalogConfigurationUpdate(const CatalogConfigurationUpdate& value) { SetCatalogConfigurationUpdate(value); return *this;}
 
     /**
      * <p>Updates to the configuration of the Amazon Glue Data Catalog that is
-     * associated with the Kinesis Data Analytics Studio notebook.</p>
+     * associated with the Managed Service for Apache Flink Studio notebook.</p>
      */
     inline ZeppelinApplicationConfigurationUpdate& WithCatalogConfigurationUpdate(CatalogConfigurationUpdate&& value) { SetCatalogConfigurationUpdate(std::move(value)); return *this;}
 

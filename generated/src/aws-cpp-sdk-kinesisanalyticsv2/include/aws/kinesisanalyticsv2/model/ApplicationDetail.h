@@ -282,26 +282,30 @@ namespace Model
 
 
     /**
-     * <p>Provides the current application version. Kinesis Data Analytics updates the
-     * <code>ApplicationVersionId</code> each time you update the application.</p>
+     * <p>Provides the current application version. Managed Service for Apache Flink
+     * updates the <code>ApplicationVersionId</code> each time you update the
+     * application.</p>
      */
     inline long long GetApplicationVersionId() const{ return m_applicationVersionId; }
 
     /**
-     * <p>Provides the current application version. Kinesis Data Analytics updates the
-     * <code>ApplicationVersionId</code> each time you update the application.</p>
+     * <p>Provides the current application version. Managed Service for Apache Flink
+     * updates the <code>ApplicationVersionId</code> each time you update the
+     * application.</p>
      */
     inline bool ApplicationVersionIdHasBeenSet() const { return m_applicationVersionIdHasBeenSet; }
 
     /**
-     * <p>Provides the current application version. Kinesis Data Analytics updates the
-     * <code>ApplicationVersionId</code> each time you update the application.</p>
+     * <p>Provides the current application version. Managed Service for Apache Flink
+     * updates the <code>ApplicationVersionId</code> each time you update the
+     * application.</p>
      */
     inline void SetApplicationVersionId(long long value) { m_applicationVersionIdHasBeenSet = true; m_applicationVersionId = value; }
 
     /**
-     * <p>Provides the current application version. Kinesis Data Analytics updates the
-     * <code>ApplicationVersionId</code> each time you update the application.</p>
+     * <p>Provides the current application version. Managed Service for Apache Flink
+     * updates the <code>ApplicationVersionId</code> each time you update the
+     * application.</p>
      */
     inline ApplicationDetail& WithApplicationVersionId(long long value) { SetApplicationVersionId(value); return *this;}
 
@@ -370,37 +374,37 @@ namespace Model
 
     /**
      * <p>Describes details about the application code and starting parameters for a
-     * Kinesis Data Analytics application.</p>
+     * Managed Service for Apache Flink application.</p>
      */
     inline const ApplicationConfigurationDescription& GetApplicationConfigurationDescription() const{ return m_applicationConfigurationDescription; }
 
     /**
      * <p>Describes details about the application code and starting parameters for a
-     * Kinesis Data Analytics application.</p>
+     * Managed Service for Apache Flink application.</p>
      */
     inline bool ApplicationConfigurationDescriptionHasBeenSet() const { return m_applicationConfigurationDescriptionHasBeenSet; }
 
     /**
      * <p>Describes details about the application code and starting parameters for a
-     * Kinesis Data Analytics application.</p>
+     * Managed Service for Apache Flink application.</p>
      */
     inline void SetApplicationConfigurationDescription(const ApplicationConfigurationDescription& value) { m_applicationConfigurationDescriptionHasBeenSet = true; m_applicationConfigurationDescription = value; }
 
     /**
      * <p>Describes details about the application code and starting parameters for a
-     * Kinesis Data Analytics application.</p>
+     * Managed Service for Apache Flink application.</p>
      */
     inline void SetApplicationConfigurationDescription(ApplicationConfigurationDescription&& value) { m_applicationConfigurationDescriptionHasBeenSet = true; m_applicationConfigurationDescription = std::move(value); }
 
     /**
      * <p>Describes details about the application code and starting parameters for a
-     * Kinesis Data Analytics application.</p>
+     * Managed Service for Apache Flink application.</p>
      */
     inline ApplicationDetail& WithApplicationConfigurationDescription(const ApplicationConfigurationDescription& value) { SetApplicationConfigurationDescription(value); return *this;}
 
     /**
      * <p>Describes details about the application code and starting parameters for a
-     * Kinesis Data Analytics application.</p>
+     * Managed Service for Apache Flink application.</p>
      */
     inline ApplicationDetail& WithApplicationConfigurationDescription(ApplicationConfigurationDescription&& value) { SetApplicationConfigurationDescription(std::move(value)); return *this;}
 
@@ -590,44 +594,44 @@ namespace Model
 
 
     /**
-     * <p>To create a Kinesis Data Analytics Studio notebook, you must set the mode to
-     * <code>INTERACTIVE</code>. However, for a Kinesis Data Analytics for Apache Flink
-     * application, the mode is optional.</p>
+     * <p>To create a Managed Service for Apache Flink Studio notebook, you must set
+     * the mode to <code>INTERACTIVE</code>. However, for a Managed Service for Apache
+     * Flink application, the mode is optional.</p>
      */
     inline const ApplicationMode& GetApplicationMode() const{ return m_applicationMode; }
 
     /**
-     * <p>To create a Kinesis Data Analytics Studio notebook, you must set the mode to
-     * <code>INTERACTIVE</code>. However, for a Kinesis Data Analytics for Apache Flink
-     * application, the mode is optional.</p>
+     * <p>To create a Managed Service for Apache Flink Studio notebook, you must set
+     * the mode to <code>INTERACTIVE</code>. However, for a Managed Service for Apache
+     * Flink application, the mode is optional.</p>
      */
     inline bool ApplicationModeHasBeenSet() const { return m_applicationModeHasBeenSet; }
 
     /**
-     * <p>To create a Kinesis Data Analytics Studio notebook, you must set the mode to
-     * <code>INTERACTIVE</code>. However, for a Kinesis Data Analytics for Apache Flink
-     * application, the mode is optional.</p>
+     * <p>To create a Managed Service for Apache Flink Studio notebook, you must set
+     * the mode to <code>INTERACTIVE</code>. However, for a Managed Service for Apache
+     * Flink application, the mode is optional.</p>
      */
     inline void SetApplicationMode(const ApplicationMode& value) { m_applicationModeHasBeenSet = true; m_applicationMode = value; }
 
     /**
-     * <p>To create a Kinesis Data Analytics Studio notebook, you must set the mode to
-     * <code>INTERACTIVE</code>. However, for a Kinesis Data Analytics for Apache Flink
-     * application, the mode is optional.</p>
+     * <p>To create a Managed Service for Apache Flink Studio notebook, you must set
+     * the mode to <code>INTERACTIVE</code>. However, for a Managed Service for Apache
+     * Flink application, the mode is optional.</p>
      */
     inline void SetApplicationMode(ApplicationMode&& value) { m_applicationModeHasBeenSet = true; m_applicationMode = std::move(value); }
 
     /**
-     * <p>To create a Kinesis Data Analytics Studio notebook, you must set the mode to
-     * <code>INTERACTIVE</code>. However, for a Kinesis Data Analytics for Apache Flink
-     * application, the mode is optional.</p>
+     * <p>To create a Managed Service for Apache Flink Studio notebook, you must set
+     * the mode to <code>INTERACTIVE</code>. However, for a Managed Service for Apache
+     * Flink application, the mode is optional.</p>
      */
     inline ApplicationDetail& WithApplicationMode(const ApplicationMode& value) { SetApplicationMode(value); return *this;}
 
     /**
-     * <p>To create a Kinesis Data Analytics Studio notebook, you must set the mode to
-     * <code>INTERACTIVE</code>. However, for a Kinesis Data Analytics for Apache Flink
-     * application, the mode is optional.</p>
+     * <p>To create a Managed Service for Apache Flink Studio notebook, you must set
+     * the mode to <code>INTERACTIVE</code>. However, for a Managed Service for Apache
+     * Flink application, the mode is optional.</p>
      */
     inline ApplicationDetail& WithApplicationMode(ApplicationMode&& value) { SetApplicationMode(std::move(value)); return *this;}
 

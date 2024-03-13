@@ -76,26 +76,26 @@ namespace Model
 
 
     /**
-     * <p>Displays verbose information about a Kinesis Data Analytics application,
-     * including the application's job plan.</p>
+     * <p>Displays verbose information about a Managed Service for Apache Flink
+     * application, including the application's job plan.</p>
      */
     inline bool GetIncludeAdditionalDetails() const{ return m_includeAdditionalDetails; }
 
     /**
-     * <p>Displays verbose information about a Kinesis Data Analytics application,
-     * including the application's job plan.</p>
+     * <p>Displays verbose information about a Managed Service for Apache Flink
+     * application, including the application's job plan.</p>
      */
     inline bool IncludeAdditionalDetailsHasBeenSet() const { return m_includeAdditionalDetailsHasBeenSet; }
 
     /**
-     * <p>Displays verbose information about a Kinesis Data Analytics application,
-     * including the application's job plan.</p>
+     * <p>Displays verbose information about a Managed Service for Apache Flink
+     * application, including the application's job plan.</p>
      */
     inline void SetIncludeAdditionalDetails(bool value) { m_includeAdditionalDetailsHasBeenSet = true; m_includeAdditionalDetails = value; }
 
     /**
-     * <p>Displays verbose information about a Kinesis Data Analytics application,
-     * including the application's job plan.</p>
+     * <p>Displays verbose information about a Managed Service for Apache Flink
+     * application, including the application's job plan.</p>
      */
     inline DescribeApplicationRequest& WithIncludeAdditionalDetails(bool value) { SetIncludeAdditionalDetails(value); return *this;}
 

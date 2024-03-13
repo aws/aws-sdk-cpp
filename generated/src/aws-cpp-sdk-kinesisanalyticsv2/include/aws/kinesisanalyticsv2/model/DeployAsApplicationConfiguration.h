@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>The information required to deploy a Kinesis Data Analytics Studio notebook
-   * as an application with durable state.</p><p><h3>See Also:</h3>   <a
+   * <p>The information required to deploy a Managed Service for Apache Flink Studio
+   * notebook as an application with durable state.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DeployAsApplicationConfiguration">AWS
    * API Reference</a></p>
    */

@@ -77,8 +77,8 @@ namespace Model
 
 
     /**
-     * <p>The version ID of the Kinesis Data Analytics application. You must provide
-     * the <code>CurrentApplicationVersionId</code> or the
+     * <p>The version ID of the SQL-based Kinesis Data Analytics application. You must
+     * provide the <code>CurrentApplicationVersionId</code> or the
      * <code>ConditionalToken</code>.You can retrieve the application version ID using
      * <a>DescribeApplication</a>. For better concurrency support, use the
      * <code>ConditionalToken</code> parameter instead of
@@ -87,8 +87,8 @@ namespace Model
     inline long long GetCurrentApplicationVersionId() const{ return m_currentApplicationVersionId; }
 
     /**
-     * <p>The version ID of the Kinesis Data Analytics application. You must provide
-     * the <code>CurrentApplicationVersionId</code> or the
+     * <p>The version ID of the SQL-based Kinesis Data Analytics application. You must
+     * provide the <code>CurrentApplicationVersionId</code> or the
      * <code>ConditionalToken</code>.You can retrieve the application version ID using
      * <a>DescribeApplication</a>. For better concurrency support, use the
      * <code>ConditionalToken</code> parameter instead of
@@ -97,8 +97,8 @@ namespace Model
     inline bool CurrentApplicationVersionIdHasBeenSet() const { return m_currentApplicationVersionIdHasBeenSet; }
 
     /**
-     * <p>The version ID of the Kinesis Data Analytics application. You must provide
-     * the <code>CurrentApplicationVersionId</code> or the
+     * <p>The version ID of the SQL-based Kinesis Data Analytics application. You must
+     * provide the <code>CurrentApplicationVersionId</code> or the
      * <code>ConditionalToken</code>.You can retrieve the application version ID using
      * <a>DescribeApplication</a>. For better concurrency support, use the
      * <code>ConditionalToken</code> parameter instead of
@@ -107,8 +107,8 @@ namespace Model
     inline void SetCurrentApplicationVersionId(long long value) { m_currentApplicationVersionIdHasBeenSet = true; m_currentApplicationVersionId = value; }
 
     /**
-     * <p>The version ID of the Kinesis Data Analytics application. You must provide
-     * the <code>CurrentApplicationVersionId</code> or the
+     * <p>The version ID of the SQL-based Kinesis Data Analytics application. You must
+     * provide the <code>CurrentApplicationVersionId</code> or the
      * <code>ConditionalToken</code>.You can retrieve the application version ID using
      * <a>DescribeApplication</a>. For better concurrency support, use the
      * <code>ConditionalToken</code> parameter instead of

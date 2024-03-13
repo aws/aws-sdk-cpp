@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes updates to the checkpointing parameters for a Flink-based Kinesis
-   * Data Analytics application.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes updates to the checkpointing parameters for a Managed Service for
+   * Apache Flink application.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/CheckpointConfigurationUpdate">AWS
    * API Reference</a></p>
    */
@@ -40,7 +40,7 @@ namespace Model
 
     /**
      * <p>Describes updates to whether the application uses the default checkpointing
-     * behavior of Kinesis Data Analytics. You must set this property to
+     * behavior of Managed Service for Apache Flink. You must set this property to
      * <code>CUSTOM</code> in order to set the <code>CheckpointingEnabled</code>,
      * <code>CheckpointInterval</code>, or <code>MinPauseBetweenCheckpoints</code>
      * parameters. </p>  <p>If this value is set to <code>DEFAULT</code>, the
@@ -53,7 +53,7 @@ namespace Model
 
     /**
      * <p>Describes updates to whether the application uses the default checkpointing
-     * behavior of Kinesis Data Analytics. You must set this property to
+     * behavior of Managed Service for Apache Flink. You must set this property to
      * <code>CUSTOM</code> in order to set the <code>CheckpointingEnabled</code>,
      * <code>CheckpointInterval</code>, or <code>MinPauseBetweenCheckpoints</code>
      * parameters. </p>  <p>If this value is set to <code>DEFAULT</code>, the
@@ -66,7 +66,7 @@ namespace Model
 
     /**
      * <p>Describes updates to whether the application uses the default checkpointing
-     * behavior of Kinesis Data Analytics. You must set this property to
+     * behavior of Managed Service for Apache Flink. You must set this property to
      * <code>CUSTOM</code> in order to set the <code>CheckpointingEnabled</code>,
      * <code>CheckpointInterval</code>, or <code>MinPauseBetweenCheckpoints</code>
      * parameters. </p>  <p>If this value is set to <code>DEFAULT</code>, the
@@ -79,7 +79,7 @@ namespace Model
 
     /**
      * <p>Describes updates to whether the application uses the default checkpointing
-     * behavior of Kinesis Data Analytics. You must set this property to
+     * behavior of Managed Service for Apache Flink. You must set this property to
      * <code>CUSTOM</code> in order to set the <code>CheckpointingEnabled</code>,
      * <code>CheckpointInterval</code>, or <code>MinPauseBetweenCheckpoints</code>
      * parameters. </p>  <p>If this value is set to <code>DEFAULT</code>, the
@@ -92,7 +92,7 @@ namespace Model
 
     /**
      * <p>Describes updates to whether the application uses the default checkpointing
-     * behavior of Kinesis Data Analytics. You must set this property to
+     * behavior of Managed Service for Apache Flink. You must set this property to
      * <code>CUSTOM</code> in order to set the <code>CheckpointingEnabled</code>,
      * <code>CheckpointInterval</code>, or <code>MinPauseBetweenCheckpoints</code>
      * parameters. </p>  <p>If this value is set to <code>DEFAULT</code>, the
@@ -105,7 +105,7 @@ namespace Model
 
     /**
      * <p>Describes updates to whether the application uses the default checkpointing
-     * behavior of Kinesis Data Analytics. You must set this property to
+     * behavior of Managed Service for Apache Flink. You must set this property to
      * <code>CUSTOM</code> in order to set the <code>CheckpointingEnabled</code>,
      * <code>CheckpointInterval</code>, or <code>MinPauseBetweenCheckpoints</code>
      * parameters. </p>  <p>If this value is set to <code>DEFAULT</code>, the
