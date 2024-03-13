@@ -70,20 +70,20 @@ namespace Model
 
 
     /**
-     * <p>Provides the current application version. Kinesis Data Analytics updates the
-     * ApplicationVersionId each time you update the application.</p>
+     * <p>Provides the current application version. Managed Service for Apache Flink
+     * updates the ApplicationVersionId each time you update the application.</p>
      */
     inline long long GetApplicationVersionId() const{ return m_applicationVersionId; }
 
     /**
-     * <p>Provides the current application version. Kinesis Data Analytics updates the
-     * ApplicationVersionId each time you update the application.</p>
+     * <p>Provides the current application version. Managed Service for Apache Flink
+     * updates the ApplicationVersionId each time you update the application.</p>
      */
     inline void SetApplicationVersionId(long long value) { m_applicationVersionId = value; }
 
     /**
-     * <p>Provides the current application version. Kinesis Data Analytics updates the
-     * ApplicationVersionId each time you update the application.</p>
+     * <p>Provides the current application version. Managed Service for Apache Flink
+     * updates the ApplicationVersionId each time you update the application.</p>
      */
     inline AddApplicationVpcConfigurationResult& WithApplicationVersionId(long long value) { SetApplicationVersionId(value); return *this;}
 

@@ -44,9 +44,9 @@ namespace Model
 
 
     /**
-     * <p>Describes whether the application uses Kinesis Data Analytics' default
-     * checkpointing behavior. You must set this property to <code>CUSTOM</code> in
-     * order to set the <code>CheckpointingEnabled</code>,
+     * <p>Describes whether the application uses Managed Service for Apache Flink'
+     * default checkpointing behavior. You must set this property to
+     * <code>CUSTOM</code> in order to set the <code>CheckpointingEnabled</code>,
      * <code>CheckpointInterval</code>, or <code>MinPauseBetweenCheckpoints</code>
      * parameters.</p>  <p>If this value is set to <code>DEFAULT</code>, the
      * application will use the following values, even if they are set to other values
@@ -57,9 +57,9 @@ namespace Model
     inline const ConfigurationType& GetConfigurationType() const{ return m_configurationType; }
 
     /**
-     * <p>Describes whether the application uses Kinesis Data Analytics' default
-     * checkpointing behavior. You must set this property to <code>CUSTOM</code> in
-     * order to set the <code>CheckpointingEnabled</code>,
+     * <p>Describes whether the application uses Managed Service for Apache Flink'
+     * default checkpointing behavior. You must set this property to
+     * <code>CUSTOM</code> in order to set the <code>CheckpointingEnabled</code>,
      * <code>CheckpointInterval</code>, or <code>MinPauseBetweenCheckpoints</code>
      * parameters.</p>  <p>If this value is set to <code>DEFAULT</code>, the
      * application will use the following values, even if they are set to other values
@@ -70,9 +70,9 @@ namespace Model
     inline bool ConfigurationTypeHasBeenSet() const { return m_configurationTypeHasBeenSet; }
 
     /**
-     * <p>Describes whether the application uses Kinesis Data Analytics' default
-     * checkpointing behavior. You must set this property to <code>CUSTOM</code> in
-     * order to set the <code>CheckpointingEnabled</code>,
+     * <p>Describes whether the application uses Managed Service for Apache Flink'
+     * default checkpointing behavior. You must set this property to
+     * <code>CUSTOM</code> in order to set the <code>CheckpointingEnabled</code>,
      * <code>CheckpointInterval</code>, or <code>MinPauseBetweenCheckpoints</code>
      * parameters.</p>  <p>If this value is set to <code>DEFAULT</code>, the
      * application will use the following values, even if they are set to other values
@@ -83,9 +83,9 @@ namespace Model
     inline void SetConfigurationType(const ConfigurationType& value) { m_configurationTypeHasBeenSet = true; m_configurationType = value; }
 
     /**
-     * <p>Describes whether the application uses Kinesis Data Analytics' default
-     * checkpointing behavior. You must set this property to <code>CUSTOM</code> in
-     * order to set the <code>CheckpointingEnabled</code>,
+     * <p>Describes whether the application uses Managed Service for Apache Flink'
+     * default checkpointing behavior. You must set this property to
+     * <code>CUSTOM</code> in order to set the <code>CheckpointingEnabled</code>,
      * <code>CheckpointInterval</code>, or <code>MinPauseBetweenCheckpoints</code>
      * parameters.</p>  <p>If this value is set to <code>DEFAULT</code>, the
      * application will use the following values, even if they are set to other values
@@ -96,9 +96,9 @@ namespace Model
     inline void SetConfigurationType(ConfigurationType&& value) { m_configurationTypeHasBeenSet = true; m_configurationType = std::move(value); }
 
     /**
-     * <p>Describes whether the application uses Kinesis Data Analytics' default
-     * checkpointing behavior. You must set this property to <code>CUSTOM</code> in
-     * order to set the <code>CheckpointingEnabled</code>,
+     * <p>Describes whether the application uses Managed Service for Apache Flink'
+     * default checkpointing behavior. You must set this property to
+     * <code>CUSTOM</code> in order to set the <code>CheckpointingEnabled</code>,
      * <code>CheckpointInterval</code>, or <code>MinPauseBetweenCheckpoints</code>
      * parameters.</p>  <p>If this value is set to <code>DEFAULT</code>, the
      * application will use the following values, even if they are set to other values
@@ -109,9 +109,9 @@ namespace Model
     inline CheckpointConfiguration& WithConfigurationType(const ConfigurationType& value) { SetConfigurationType(value); return *this;}
 
     /**
-     * <p>Describes whether the application uses Kinesis Data Analytics' default
-     * checkpointing behavior. You must set this property to <code>CUSTOM</code> in
-     * order to set the <code>CheckpointingEnabled</code>,
+     * <p>Describes whether the application uses Managed Service for Apache Flink'
+     * default checkpointing behavior. You must set this property to
+     * <code>CUSTOM</code> in order to set the <code>CheckpointingEnabled</code>,
      * <code>CheckpointInterval</code>, or <code>MinPauseBetweenCheckpoints</code>
      * parameters.</p>  <p>If this value is set to <code>DEFAULT</code>, the
      * application will use the following values, even if they are set to other values
@@ -123,8 +123,8 @@ namespace Model
 
 
     /**
-     * <p>Describes whether checkpointing is enabled for a Flink-based Kinesis Data
-     * Analytics application.</p>  <p>If
+     * <p>Describes whether checkpointing is enabled for a Managed Service for Apache
+     * Flink application.</p>  <p>If
      * <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>,
      * the application will use a <code>CheckpointingEnabled</code> value of
      * <code>true</code>, even if this value is set to another value using this API or
@@ -133,8 +133,8 @@ namespace Model
     inline bool GetCheckpointingEnabled() const{ return m_checkpointingEnabled; }
 
     /**
-     * <p>Describes whether checkpointing is enabled for a Flink-based Kinesis Data
-     * Analytics application.</p>  <p>If
+     * <p>Describes whether checkpointing is enabled for a Managed Service for Apache
+     * Flink application.</p>  <p>If
      * <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>,
      * the application will use a <code>CheckpointingEnabled</code> value of
      * <code>true</code>, even if this value is set to another value using this API or
@@ -143,8 +143,8 @@ namespace Model
     inline bool CheckpointingEnabledHasBeenSet() const { return m_checkpointingEnabledHasBeenSet; }
 
     /**
-     * <p>Describes whether checkpointing is enabled for a Flink-based Kinesis Data
-     * Analytics application.</p>  <p>If
+     * <p>Describes whether checkpointing is enabled for a Managed Service for Apache
+     * Flink application.</p>  <p>If
      * <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>,
      * the application will use a <code>CheckpointingEnabled</code> value of
      * <code>true</code>, even if this value is set to another value using this API or
@@ -153,8 +153,8 @@ namespace Model
     inline void SetCheckpointingEnabled(bool value) { m_checkpointingEnabledHasBeenSet = true; m_checkpointingEnabled = value; }
 
     /**
-     * <p>Describes whether checkpointing is enabled for a Flink-based Kinesis Data
-     * Analytics application.</p>  <p>If
+     * <p>Describes whether checkpointing is enabled for a Managed Service for Apache
+     * Flink application.</p>  <p>If
      * <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>,
      * the application will use a <code>CheckpointingEnabled</code> value of
      * <code>true</code>, even if this value is set to another value using this API or

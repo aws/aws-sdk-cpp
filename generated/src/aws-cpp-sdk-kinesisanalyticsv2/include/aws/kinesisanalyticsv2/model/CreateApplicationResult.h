@@ -34,32 +34,37 @@ namespace Model
 
 
     /**
-     * <p>In response to your <code>CreateApplication</code> request, Kinesis Data
-     * Analytics returns a response with details of the application it created.</p>
+     * <p>In response to your <code>CreateApplication</code> request, Managed Service
+     * for Apache Flink returns a response with details of the application it
+     * created.</p>
      */
     inline const ApplicationDetail& GetApplicationDetail() const{ return m_applicationDetail; }
 
     /**
-     * <p>In response to your <code>CreateApplication</code> request, Kinesis Data
-     * Analytics returns a response with details of the application it created.</p>
+     * <p>In response to your <code>CreateApplication</code> request, Managed Service
+     * for Apache Flink returns a response with details of the application it
+     * created.</p>
      */
     inline void SetApplicationDetail(const ApplicationDetail& value) { m_applicationDetail = value; }
 
     /**
-     * <p>In response to your <code>CreateApplication</code> request, Kinesis Data
-     * Analytics returns a response with details of the application it created.</p>
+     * <p>In response to your <code>CreateApplication</code> request, Managed Service
+     * for Apache Flink returns a response with details of the application it
+     * created.</p>
      */
     inline void SetApplicationDetail(ApplicationDetail&& value) { m_applicationDetail = std::move(value); }
 
     /**
-     * <p>In response to your <code>CreateApplication</code> request, Kinesis Data
-     * Analytics returns a response with details of the application it created.</p>
+     * <p>In response to your <code>CreateApplication</code> request, Managed Service
+     * for Apache Flink returns a response with details of the application it
+     * created.</p>
      */
     inline CreateApplicationResult& WithApplicationDetail(const ApplicationDetail& value) { SetApplicationDetail(value); return *this;}
 
     /**
-     * <p>In response to your <code>CreateApplication</code> request, Kinesis Data
-     * Analytics returns a response with details of the application it created.</p>
+     * <p>In response to your <code>CreateApplication</code> request, Managed Service
+     * for Apache Flink returns a response with details of the application it
+     * created.</p>
      */
     inline CreateApplicationResult& WithApplicationDetail(ApplicationDetail&& value) { SetApplicationDetail(std::move(value)); return *this;}
 

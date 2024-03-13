@@ -77,38 +77,38 @@ namespace Model
 
 
     /**
-     * <p>Identifies the run configuration (start parameters) of a Kinesis Data
-     * Analytics application.</p>
+     * <p>Identifies the run configuration (start parameters) of a Managed Service for
+     * Apache Flink application.</p>
      */
     inline const RunConfiguration& GetRunConfiguration() const{ return m_runConfiguration; }
 
     /**
-     * <p>Identifies the run configuration (start parameters) of a Kinesis Data
-     * Analytics application.</p>
+     * <p>Identifies the run configuration (start parameters) of a Managed Service for
+     * Apache Flink application.</p>
      */
     inline bool RunConfigurationHasBeenSet() const { return m_runConfigurationHasBeenSet; }
 
     /**
-     * <p>Identifies the run configuration (start parameters) of a Kinesis Data
-     * Analytics application.</p>
+     * <p>Identifies the run configuration (start parameters) of a Managed Service for
+     * Apache Flink application.</p>
      */
     inline void SetRunConfiguration(const RunConfiguration& value) { m_runConfigurationHasBeenSet = true; m_runConfiguration = value; }
 
     /**
-     * <p>Identifies the run configuration (start parameters) of a Kinesis Data
-     * Analytics application.</p>
+     * <p>Identifies the run configuration (start parameters) of a Managed Service for
+     * Apache Flink application.</p>
      */
     inline void SetRunConfiguration(RunConfiguration&& value) { m_runConfigurationHasBeenSet = true; m_runConfiguration = std::move(value); }
 
     /**
-     * <p>Identifies the run configuration (start parameters) of a Kinesis Data
-     * Analytics application.</p>
+     * <p>Identifies the run configuration (start parameters) of a Managed Service for
+     * Apache Flink application.</p>
      */
     inline StartApplicationRequest& WithRunConfiguration(const RunConfiguration& value) { SetRunConfiguration(value); return *this;}
 
     /**
-     * <p>Identifies the run configuration (start parameters) of a Kinesis Data
-     * Analytics application.</p>
+     * <p>Identifies the run configuration (start parameters) of a Managed Service for
+     * Apache Flink application.</p>
      */
     inline StartApplicationRequest& WithRunConfiguration(RunConfiguration&& value) { SetRunConfiguration(std::move(value)); return *this;}
 

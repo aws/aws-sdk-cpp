@@ -22,8 +22,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes updates to whether snapshots are enabled for a Flink-based Kinesis
-   * Data Analytics application.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes updates to whether snapshots are enabled for a Managed Service for
+   * Apache Flink application.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ApplicationSnapshotConfigurationUpdate">AWS
    * API Reference</a></p>
    */

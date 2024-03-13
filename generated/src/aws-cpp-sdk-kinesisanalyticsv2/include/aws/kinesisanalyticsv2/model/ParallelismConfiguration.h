@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes parameters for how a Flink-based Kinesis Data Analytics application
+   * <p>Describes parameters for how a Managed Service for Apache Flink application
    * executes multiple tasks simultaneously. For more information about parallelism,
    * see <a
    * href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/dev/parallel.html">Parallel
@@ -45,7 +45,7 @@ namespace Model
 
     /**
      * <p>Describes whether the application uses the default parallelism for the
-     * Kinesis Data Analytics service. You must set this property to
+     * Managed Service for Apache Flink service. You must set this property to
      * <code>CUSTOM</code> in order to change your application's
      * <code>AutoScalingEnabled</code>, <code>Parallelism</code>, or
      * <code>ParallelismPerKPU</code> properties.</p>
@@ -54,7 +54,7 @@ namespace Model
 
     /**
      * <p>Describes whether the application uses the default parallelism for the
-     * Kinesis Data Analytics service. You must set this property to
+     * Managed Service for Apache Flink service. You must set this property to
      * <code>CUSTOM</code> in order to change your application's
      * <code>AutoScalingEnabled</code>, <code>Parallelism</code>, or
      * <code>ParallelismPerKPU</code> properties.</p>
@@ -63,7 +63,7 @@ namespace Model
 
     /**
      * <p>Describes whether the application uses the default parallelism for the
-     * Kinesis Data Analytics service. You must set this property to
+     * Managed Service for Apache Flink service. You must set this property to
      * <code>CUSTOM</code> in order to change your application's
      * <code>AutoScalingEnabled</code>, <code>Parallelism</code>, or
      * <code>ParallelismPerKPU</code> properties.</p>
@@ -72,7 +72,7 @@ namespace Model
 
     /**
      * <p>Describes whether the application uses the default parallelism for the
-     * Kinesis Data Analytics service. You must set this property to
+     * Managed Service for Apache Flink service. You must set this property to
      * <code>CUSTOM</code> in order to change your application's
      * <code>AutoScalingEnabled</code>, <code>Parallelism</code>, or
      * <code>ParallelismPerKPU</code> properties.</p>
@@ -81,7 +81,7 @@ namespace Model
 
     /**
      * <p>Describes whether the application uses the default parallelism for the
-     * Kinesis Data Analytics service. You must set this property to
+     * Managed Service for Apache Flink service. You must set this property to
      * <code>CUSTOM</code> in order to change your application's
      * <code>AutoScalingEnabled</code>, <code>Parallelism</code>, or
      * <code>ParallelismPerKPU</code> properties.</p>
@@ -90,7 +90,7 @@ namespace Model
 
     /**
      * <p>Describes whether the application uses the default parallelism for the
-     * Kinesis Data Analytics service. You must set this property to
+     * Managed Service for Apache Flink service. You must set this property to
      * <code>CUSTOM</code> in order to change your application's
      * <code>AutoScalingEnabled</code>, <code>Parallelism</code>, or
      * <code>ParallelismPerKPU</code> properties.</p>
@@ -99,9 +99,9 @@ namespace Model
 
 
     /**
-     * <p>Describes the initial number of parallel tasks that a Flink-based Kinesis
-     * Data Analytics application can perform. If <code>AutoScalingEnabled</code> is
-     * set to True, Kinesis Data Analytics increases the
+     * <p>Describes the initial number of parallel tasks that a Managed Service for
+     * Apache Flink application can perform. If <code>AutoScalingEnabled</code> is set
+     * to True, Managed Service for Apache Flink increases the
      * <code>CurrentParallelism</code> value in response to application load. The
      * service can increase the <code>CurrentParallelism</code> value up to the maximum
      * parallelism, which is <code>ParalellismPerKPU</code> times the maximum KPUs for
@@ -113,9 +113,9 @@ namespace Model
     inline int GetParallelism() const{ return m_parallelism; }
 
     /**
-     * <p>Describes the initial number of parallel tasks that a Flink-based Kinesis
-     * Data Analytics application can perform. If <code>AutoScalingEnabled</code> is
-     * set to True, Kinesis Data Analytics increases the
+     * <p>Describes the initial number of parallel tasks that a Managed Service for
+     * Apache Flink application can perform. If <code>AutoScalingEnabled</code> is set
+     * to True, Managed Service for Apache Flink increases the
      * <code>CurrentParallelism</code> value in response to application load. The
      * service can increase the <code>CurrentParallelism</code> value up to the maximum
      * parallelism, which is <code>ParalellismPerKPU</code> times the maximum KPUs for
@@ -127,9 +127,9 @@ namespace Model
     inline bool ParallelismHasBeenSet() const { return m_parallelismHasBeenSet; }
 
     /**
-     * <p>Describes the initial number of parallel tasks that a Flink-based Kinesis
-     * Data Analytics application can perform. If <code>AutoScalingEnabled</code> is
-     * set to True, Kinesis Data Analytics increases the
+     * <p>Describes the initial number of parallel tasks that a Managed Service for
+     * Apache Flink application can perform. If <code>AutoScalingEnabled</code> is set
+     * to True, Managed Service for Apache Flink increases the
      * <code>CurrentParallelism</code> value in response to application load. The
      * service can increase the <code>CurrentParallelism</code> value up to the maximum
      * parallelism, which is <code>ParalellismPerKPU</code> times the maximum KPUs for
@@ -141,9 +141,9 @@ namespace Model
     inline void SetParallelism(int value) { m_parallelismHasBeenSet = true; m_parallelism = value; }
 
     /**
-     * <p>Describes the initial number of parallel tasks that a Flink-based Kinesis
-     * Data Analytics application can perform. If <code>AutoScalingEnabled</code> is
-     * set to True, Kinesis Data Analytics increases the
+     * <p>Describes the initial number of parallel tasks that a Managed Service for
+     * Apache Flink application can perform. If <code>AutoScalingEnabled</code> is set
+     * to True, Managed Service for Apache Flink increases the
      * <code>CurrentParallelism</code> value in response to application load. The
      * service can increase the <code>CurrentParallelism</code> value up to the maximum
      * parallelism, which is <code>ParalellismPerKPU</code> times the maximum KPUs for
@@ -156,63 +156,63 @@ namespace Model
 
 
     /**
-     * <p>Describes the number of parallel tasks that a Flink-based Kinesis Data
-     * Analytics application can perform per Kinesis Processing Unit (KPU) used by the
+     * <p>Describes the number of parallel tasks that a Managed Service for Apache
+     * Flink application can perform per Kinesis Processing Unit (KPU) used by the
      * application. For more information about KPUs, see <a
-     * href="http://aws.amazon.com/kinesis/data-analytics/pricing/">Amazon Kinesis Data
-     * Analytics Pricing</a>.</p>
+     * href="http://aws.amazon.com/kinesis/data-analytics/pricing/">Amazon Managed
+     * Service for Apache Flink Pricing</a>.</p>
      */
     inline int GetParallelismPerKPU() const{ return m_parallelismPerKPU; }
 
     /**
-     * <p>Describes the number of parallel tasks that a Flink-based Kinesis Data
-     * Analytics application can perform per Kinesis Processing Unit (KPU) used by the
+     * <p>Describes the number of parallel tasks that a Managed Service for Apache
+     * Flink application can perform per Kinesis Processing Unit (KPU) used by the
      * application. For more information about KPUs, see <a
-     * href="http://aws.amazon.com/kinesis/data-analytics/pricing/">Amazon Kinesis Data
-     * Analytics Pricing</a>.</p>
+     * href="http://aws.amazon.com/kinesis/data-analytics/pricing/">Amazon Managed
+     * Service for Apache Flink Pricing</a>.</p>
      */
     inline bool ParallelismPerKPUHasBeenSet() const { return m_parallelismPerKPUHasBeenSet; }
 
     /**
-     * <p>Describes the number of parallel tasks that a Flink-based Kinesis Data
-     * Analytics application can perform per Kinesis Processing Unit (KPU) used by the
+     * <p>Describes the number of parallel tasks that a Managed Service for Apache
+     * Flink application can perform per Kinesis Processing Unit (KPU) used by the
      * application. For more information about KPUs, see <a
-     * href="http://aws.amazon.com/kinesis/data-analytics/pricing/">Amazon Kinesis Data
-     * Analytics Pricing</a>.</p>
+     * href="http://aws.amazon.com/kinesis/data-analytics/pricing/">Amazon Managed
+     * Service for Apache Flink Pricing</a>.</p>
      */
     inline void SetParallelismPerKPU(int value) { m_parallelismPerKPUHasBeenSet = true; m_parallelismPerKPU = value; }
 
     /**
-     * <p>Describes the number of parallel tasks that a Flink-based Kinesis Data
-     * Analytics application can perform per Kinesis Processing Unit (KPU) used by the
+     * <p>Describes the number of parallel tasks that a Managed Service for Apache
+     * Flink application can perform per Kinesis Processing Unit (KPU) used by the
      * application. For more information about KPUs, see <a
-     * href="http://aws.amazon.com/kinesis/data-analytics/pricing/">Amazon Kinesis Data
-     * Analytics Pricing</a>.</p>
+     * href="http://aws.amazon.com/kinesis/data-analytics/pricing/">Amazon Managed
+     * Service for Apache Flink Pricing</a>.</p>
      */
     inline ParallelismConfiguration& WithParallelismPerKPU(int value) { SetParallelismPerKPU(value); return *this;}
 
 
     /**
-     * <p>Describes whether the Kinesis Data Analytics service can increase the
-     * parallelism of the application in response to increased throughput.</p>
+     * <p>Describes whether the Managed Service for Apache Flink service can increase
+     * the parallelism of the application in response to increased throughput.</p>
      */
     inline bool GetAutoScalingEnabled() const{ return m_autoScalingEnabled; }
 
     /**
-     * <p>Describes whether the Kinesis Data Analytics service can increase the
-     * parallelism of the application in response to increased throughput.</p>
+     * <p>Describes whether the Managed Service for Apache Flink service can increase
+     * the parallelism of the application in response to increased throughput.</p>
      */
     inline bool AutoScalingEnabledHasBeenSet() const { return m_autoScalingEnabledHasBeenSet; }
 
     /**
-     * <p>Describes whether the Kinesis Data Analytics service can increase the
-     * parallelism of the application in response to increased throughput.</p>
+     * <p>Describes whether the Managed Service for Apache Flink service can increase
+     * the parallelism of the application in response to increased throughput.</p>
      */
     inline void SetAutoScalingEnabled(bool value) { m_autoScalingEnabledHasBeenSet = true; m_autoScalingEnabled = value; }
 
     /**
-     * <p>Describes whether the Kinesis Data Analytics service can increase the
-     * parallelism of the application in response to increased throughput.</p>
+     * <p>Describes whether the Managed Service for Apache Flink service can increase
+     * the parallelism of the application in response to increased throughput.</p>
      */
     inline ParallelismConfiguration& WithAutoScalingEnabled(bool value) { SetAutoScalingEnabled(value); return *this;}
 

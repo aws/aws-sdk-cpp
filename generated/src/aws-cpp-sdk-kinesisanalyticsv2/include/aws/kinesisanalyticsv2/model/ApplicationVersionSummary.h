@@ -38,26 +38,26 @@ namespace Model
 
 
     /**
-     * <p>The ID of the application version. Kinesis Data Analytics updates the
-     * <code>ApplicationVersionId</code> each time you update the application.</p>
+     * <p>The ID of the application version. Managed Service for Apache Flink updates
+     * the <code>ApplicationVersionId</code> each time you update the application.</p>
      */
     inline long long GetApplicationVersionId() const{ return m_applicationVersionId; }
 
     /**
-     * <p>The ID of the application version. Kinesis Data Analytics updates the
-     * <code>ApplicationVersionId</code> each time you update the application.</p>
+     * <p>The ID of the application version. Managed Service for Apache Flink updates
+     * the <code>ApplicationVersionId</code> each time you update the application.</p>
      */
     inline bool ApplicationVersionIdHasBeenSet() const { return m_applicationVersionIdHasBeenSet; }
 
     /**
-     * <p>The ID of the application version. Kinesis Data Analytics updates the
-     * <code>ApplicationVersionId</code> each time you update the application.</p>
+     * <p>The ID of the application version. Managed Service for Apache Flink updates
+     * the <code>ApplicationVersionId</code> each time you update the application.</p>
      */
     inline void SetApplicationVersionId(long long value) { m_applicationVersionIdHasBeenSet = true; m_applicationVersionId = value; }
 
     /**
-     * <p>The ID of the application version. Kinesis Data Analytics updates the
-     * <code>ApplicationVersionId</code> each time you update the application.</p>
+     * <p>The ID of the application version. Managed Service for Apache Flink updates
+     * the <code>ApplicationVersionId</code> each time you update the application.</p>
      */
     inline ApplicationVersionSummary& WithApplicationVersionId(long long value) { SetApplicationVersionId(value); return *this;}
 

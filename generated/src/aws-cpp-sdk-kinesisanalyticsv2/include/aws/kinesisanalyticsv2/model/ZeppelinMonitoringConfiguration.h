@@ -25,8 +25,8 @@ namespace Model
 
   /**
    * <p>Describes configuration parameters for Amazon CloudWatch logging for a
-   * Kinesis Data Analytics Studio notebook. For more information about CloudWatch
-   * logging, see <a
+   * Managed Service for Apache Flink Studio notebook. For more information about
+   * CloudWatch logging, see <a
    * href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/monitoring-overview.html">Monitoring</a>.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ZeppelinMonitoringConfiguration">AWS

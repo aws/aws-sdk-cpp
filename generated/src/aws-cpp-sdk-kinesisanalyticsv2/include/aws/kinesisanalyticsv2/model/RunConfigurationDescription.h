@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes the starting properties for a Kinesis Data Analytics
+   * <p>Describes the starting properties for a Managed Service for Apache Flink
    * application.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/RunConfigurationDescription">AWS
    * API Reference</a></p>

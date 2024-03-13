@@ -16,10 +16,12 @@ namespace Aws
 namespace KinesisAnalyticsV2
 {
   /**
-   * <p>Amazon Kinesis Data Analytics is a fully managed service that you can use to
-   * process and analyze streaming data using Java, SQL, or Scala. The service
-   * enables you to quickly author and run Java, SQL, or Scala code against streaming
-   * sources to perform time series analytics, feed real-time dashboards, and create
+   *  <p>Amazon Managed Service for Apache Flink was previously known as Amazon
+   * Kinesis Data Analytics for Apache Flink.</p>  <p>Amazon Managed Service
+   * for Apache Flink is a fully managed service that you can use to process and
+   * analyze streaming data using Java, Python, SQL, or Scala. The service enables
+   * you to quickly author and run Java, SQL, or Scala code against streaming sources
+   * to perform time series analytics, feed real-time dashboards, and create
    * real-time metrics.</p>
    */
   class AWS_KINESISANALYTICSV2_API KinesisAnalyticsV2Client : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<KinesisAnalyticsV2Client>
@@ -238,12 +240,12 @@ namespace KinesisAnalyticsV2
         /**
          * <p>Adds a Virtual Private Cloud (VPC) configuration to the application.
          * Applications can use VPCs to store and access resources securely.</p> <p>Note
-         * the following about VPC configurations for Kinesis Data Analytics
+         * the following about VPC configurations for Managed Service for Apache Flink
          * applications:</p> <ul> <li> <p>VPC configurations are not supported for SQL
-         * applications.</p> </li> <li> <p>When a VPC is added to a Kinesis Data Analytics
-         * application, the application can no longer be accessed from the Internet
-         * directly. To enable Internet access to the application, add an Internet gateway
-         * to your VPC.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * applications.</p> </li> <li> <p>When a VPC is added to a Managed Service for
+         * Apache Flink application, the application can no longer be accessed from the
+         * Internet directly. To enable Internet access to the application, add an Internet
+         * gateway to your VPC.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/AddApplicationVpcConfiguration">AWS
          * API Reference</a></p>
          */
@@ -268,8 +270,8 @@ namespace KinesisAnalyticsV2
         }
 
         /**
-         * <p>Creates a Kinesis Data Analytics application. For information about creating
-         * a Kinesis Data Analytics application, see <a
+         * <p>Creates a Managed Service for Apache Flink application. For information about
+         * creating a Managed Service for Apache Flink application, see <a
          * href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/getting-started.html">Creating
          * an Application</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/CreateApplication">AWS
@@ -358,8 +360,8 @@ namespace KinesisAnalyticsV2
         }
 
         /**
-         * <p>Deletes the specified application. Kinesis Data Analytics halts application
-         * execution and deletes the application.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified application. Managed Service for Apache Flink halts
+         * application execution and deletes the application.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DeleteApplication">AWS
          * API Reference</a></p>
          */
@@ -384,8 +386,8 @@ namespace KinesisAnalyticsV2
         }
 
         /**
-         * <p>Deletes an Amazon CloudWatch log stream from an Kinesis Data Analytics
-         * application. </p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an Amazon CloudWatch log stream from an SQL-based Kinesis Data
+         * Analytics application. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DeleteApplicationCloudWatchLoggingOption">AWS
          * API Reference</a></p>
          */
@@ -518,7 +520,7 @@ namespace KinesisAnalyticsV2
         }
 
         /**
-         * <p>Removes a VPC configuration from a Kinesis Data Analytics
+         * <p>Removes a VPC configuration from a Managed Service for Apache Flink
          * application.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DeleteApplicationVpcConfiguration">AWS
          * API Reference</a></p>
@@ -544,9 +546,10 @@ namespace KinesisAnalyticsV2
         }
 
         /**
-         * <p>Returns information about a specific Kinesis Data Analytics application.</p>
-         * <p>If you want to retrieve a list of all applications in your account, use the
-         * <a>ListApplications</a> operation.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns information about a specific Managed Service for Apache Flink
+         * application.</p> <p>If you want to retrieve a list of all applications in your
+         * account, use the <a>ListApplications</a> operation.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DescribeApplication">AWS
          * API Reference</a></p>
          */
@@ -600,8 +603,8 @@ namespace KinesisAnalyticsV2
          * <p>Provides a detailed description of a specified version of the application. To
          * see a list of all the versions of an application, invoke the
          * <a>ListApplicationVersions</a> operation.</p>  <p>This operation is
-         * supported only for Amazon Kinesis Data Analytics for Apache Flink.</p>
-         * <p><h3>See Also:</h3>   <a
+         * supported only for Managed Service for Apache Flink.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DescribeApplicationVersion">AWS
          * API Reference</a></p>
          */
@@ -689,8 +692,8 @@ namespace KinesisAnalyticsV2
          * were rolled back. The response also includes a summary of the configuration
          * associated with each version.</p> <p>To get the complete description of a
          * specific application version, invoke the <a>DescribeApplicationVersion</a>
-         * operation.</p>  <p>This operation is supported only for Amazon Kinesis
-         * Data Analytics for Apache Flink.</p> <p><h3>See Also:</h3>   <a
+         * operation.</p>  <p>This operation is supported only for Managed Service
+         * for Apache Flink.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ListApplicationVersions">AWS
          * API Reference</a></p>
          */
@@ -715,11 +718,11 @@ namespace KinesisAnalyticsV2
         }
 
         /**
-         * <p>Returns a list of Kinesis Data Analytics applications in your account. For
-         * each application, the response includes the application name, Amazon Resource
-         * Name (ARN), and status. </p> <p>If you want detailed information about a
-         * specific application, use <a>DescribeApplication</a>.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Returns a list of Managed Service for Apache Flink applications in your
+         * account. For each application, the response includes the application name,
+         * Amazon Resource Name (ARN), and status. </p> <p>If you want detailed information
+         * about a specific application, use <a>DescribeApplication</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ListApplications">AWS
          * API Reference</a></p>
          */
@@ -777,8 +780,8 @@ namespace KinesisAnalyticsV2
          * roll back an application only if it is in the <code>UPDATING</code> or
          * <code>AUTOSCALING</code> status.</p> <p>When you rollback an application, it
          * loads state data from the last successful snapshot. If the application has no
-         * snapshots, Kinesis Data Analytics rejects the rollback request.</p> <p>This
-         * action is not supported for Kinesis Data Analytics for SQL
+         * snapshots, Managed Service for Apache Flink rejects the rollback request.</p>
+         * <p>This action is not supported for Managed Service for Apache Flink for SQL
          * applications.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/RollbackApplication">AWS
          * API Reference</a></p>
@@ -804,8 +807,8 @@ namespace KinesisAnalyticsV2
         }
 
         /**
-         * <p>Starts the specified Kinesis Data Analytics application. After creating an
-         * application, you must exclusively call this operation to start your
+         * <p>Starts the specified Managed Service for Apache Flink application. After
+         * creating an application, you must exclusively call this operation to start your
          * application.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/StartApplication">AWS
          * API Reference</a></p>
@@ -834,9 +837,9 @@ namespace KinesisAnalyticsV2
          * <p>Stops the application from processing data. You can stop an application only
          * if it is in the running status, unless you set the <code>Force</code> parameter
          * to <code>true</code>.</p> <p>You can use the <a>DescribeApplication</a>
-         * operation to find the application status. </p> <p>Kinesis Data Analytics takes a
-         * snapshot when the application is stopped, unless <code>Force</code> is set to
-         * <code>true</code>.</p><p><h3>See Also:</h3>   <a
+         * operation to find the application status. </p> <p>Managed Service for Apache
+         * Flink takes a snapshot when the application is stopped, unless
+         * <code>Force</code> is set to <code>true</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/StopApplication">AWS
          * API Reference</a></p>
          */
@@ -861,9 +864,10 @@ namespace KinesisAnalyticsV2
         }
 
         /**
-         * <p>Adds one or more key-value tags to a Kinesis Data Analytics application. Note
-         * that the maximum number of application tags includes system tags. The maximum
-         * number of user-defined application tags is 50. For more information, see <a
+         * <p>Adds one or more key-value tags to a Managed Service for Apache Flink
+         * application. Note that the maximum number of application tags includes system
+         * tags. The maximum number of user-defined application tags is 50. For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html">Using
          * Tagging</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/TagResource">AWS
@@ -890,8 +894,8 @@ namespace KinesisAnalyticsV2
         }
 
         /**
-         * <p>Removes one or more tags from a Kinesis Data Analytics application. For more
-         * information, see <a
+         * <p>Removes one or more tags from a Managed Service for Apache Flink application.
+         * For more information, see <a
          * href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html">Using
          * Tagging</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/UntagResource">AWS
@@ -918,13 +922,11 @@ namespace KinesisAnalyticsV2
         }
 
         /**
-         * <p>Updates an existing Kinesis Data Analytics application. Using this operation,
-         * you can update application code, input configuration, and output configuration.
-         * </p> <p>Kinesis Data Analytics updates the <code>ApplicationVersionId</code>
-         * each time you update your application. </p>  <p>You cannot update the
-         * <code>RuntimeEnvironment</code> of an existing application. If you need to
-         * update an application's <code>RuntimeEnvironment</code>, you must delete the
-         * application and create it again.</p> <p><h3>See Also:</h3>   <a
+         * <p>Updates an existing Managed Service for Apache Flink application. Using this
+         * operation, you can update application code, input configuration, and output
+         * configuration. </p> <p>Managed Service for Apache Flink updates the
+         * <code>ApplicationVersionId</code> each time you update your application.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/UpdateApplication">AWS
          * API Reference</a></p>
          */
@@ -949,7 +951,7 @@ namespace KinesisAnalyticsV2
         }
 
         /**
-         * <p>Updates the maintenance configuration of the Kinesis Data Analytics
+         * <p>Updates the maintenance configuration of the Managed Service for Apache Flink
          * application. </p> <p>You can invoke this operation on an application that is in
          * one of the two following states: <code>READY</code> or <code>RUNNING</code>. If
          * you invoke it when the application is in a state other than these two states, it
@@ -963,9 +965,9 @@ namespace KinesisAnalyticsV2
          * process instead.</p> <p>To see the current maintenance configuration of your
          * application, invoke the <a>DescribeApplication</a> operation.</p> <p>For
          * information about application maintenance, see <a
-         * href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/maintenance.html">Kinesis
-         * Data Analytics for Apache Flink Maintenance</a>.</p>  <p>This operation is
-         * supported only for Amazon Kinesis Data Analytics for Apache Flink.</p>
+         * href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/maintenance.html">Managed
+         * Service for Apache Flink for Apache Flink Maintenance</a>.</p>  <p>This
+         * operation is supported only for Managed Service for Apache Flink.</p>
          * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/UpdateApplicationMaintenanceConfiguration">AWS
          * API Reference</a></p>

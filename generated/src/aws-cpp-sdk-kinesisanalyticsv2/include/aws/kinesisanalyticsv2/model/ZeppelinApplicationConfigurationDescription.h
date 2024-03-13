@@ -28,8 +28,8 @@ namespace Model
 {
 
   /**
-   * <p>The configuration of a Kinesis Data Analytics Studio notebook.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>The configuration of a Managed Service for Apache Flink Studio
+   * notebook.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ZeppelinApplicationConfigurationDescription">AWS
    * API Reference</a></p>
    */
@@ -43,106 +43,112 @@ namespace Model
 
 
     /**
-     * <p>The monitoring configuration of a Kinesis Data Analytics Studio notebook.</p>
+     * <p>The monitoring configuration of a Managed Service for Apache Flink Studio
+     * notebook.</p>
      */
     inline const ZeppelinMonitoringConfigurationDescription& GetMonitoringConfigurationDescription() const{ return m_monitoringConfigurationDescription; }
 
     /**
-     * <p>The monitoring configuration of a Kinesis Data Analytics Studio notebook.</p>
+     * <p>The monitoring configuration of a Managed Service for Apache Flink Studio
+     * notebook.</p>
      */
     inline bool MonitoringConfigurationDescriptionHasBeenSet() const { return m_monitoringConfigurationDescriptionHasBeenSet; }
 
     /**
-     * <p>The monitoring configuration of a Kinesis Data Analytics Studio notebook.</p>
+     * <p>The monitoring configuration of a Managed Service for Apache Flink Studio
+     * notebook.</p>
      */
     inline void SetMonitoringConfigurationDescription(const ZeppelinMonitoringConfigurationDescription& value) { m_monitoringConfigurationDescriptionHasBeenSet = true; m_monitoringConfigurationDescription = value; }
 
     /**
-     * <p>The monitoring configuration of a Kinesis Data Analytics Studio notebook.</p>
+     * <p>The monitoring configuration of a Managed Service for Apache Flink Studio
+     * notebook.</p>
      */
     inline void SetMonitoringConfigurationDescription(ZeppelinMonitoringConfigurationDescription&& value) { m_monitoringConfigurationDescriptionHasBeenSet = true; m_monitoringConfigurationDescription = std::move(value); }
 
     /**
-     * <p>The monitoring configuration of a Kinesis Data Analytics Studio notebook.</p>
+     * <p>The monitoring configuration of a Managed Service for Apache Flink Studio
+     * notebook.</p>
      */
     inline ZeppelinApplicationConfigurationDescription& WithMonitoringConfigurationDescription(const ZeppelinMonitoringConfigurationDescription& value) { SetMonitoringConfigurationDescription(value); return *this;}
 
     /**
-     * <p>The monitoring configuration of a Kinesis Data Analytics Studio notebook.</p>
+     * <p>The monitoring configuration of a Managed Service for Apache Flink Studio
+     * notebook.</p>
      */
     inline ZeppelinApplicationConfigurationDescription& WithMonitoringConfigurationDescription(ZeppelinMonitoringConfigurationDescription&& value) { SetMonitoringConfigurationDescription(std::move(value)); return *this;}
 
 
     /**
-     * <p>The Amazon Glue Data Catalog that is associated with the Kinesis Data
-     * Analytics Studio notebook.</p>
+     * <p>The Amazon Glue Data Catalog that is associated with the Managed Service for
+     * Apache Flink Studio notebook.</p>
      */
     inline const CatalogConfigurationDescription& GetCatalogConfigurationDescription() const{ return m_catalogConfigurationDescription; }
 
     /**
-     * <p>The Amazon Glue Data Catalog that is associated with the Kinesis Data
-     * Analytics Studio notebook.</p>
+     * <p>The Amazon Glue Data Catalog that is associated with the Managed Service for
+     * Apache Flink Studio notebook.</p>
      */
     inline bool CatalogConfigurationDescriptionHasBeenSet() const { return m_catalogConfigurationDescriptionHasBeenSet; }
 
     /**
-     * <p>The Amazon Glue Data Catalog that is associated with the Kinesis Data
-     * Analytics Studio notebook.</p>
+     * <p>The Amazon Glue Data Catalog that is associated with the Managed Service for
+     * Apache Flink Studio notebook.</p>
      */
     inline void SetCatalogConfigurationDescription(const CatalogConfigurationDescription& value) { m_catalogConfigurationDescriptionHasBeenSet = true; m_catalogConfigurationDescription = value; }
 
     /**
-     * <p>The Amazon Glue Data Catalog that is associated with the Kinesis Data
-     * Analytics Studio notebook.</p>
+     * <p>The Amazon Glue Data Catalog that is associated with the Managed Service for
+     * Apache Flink Studio notebook.</p>
      */
     inline void SetCatalogConfigurationDescription(CatalogConfigurationDescription&& value) { m_catalogConfigurationDescriptionHasBeenSet = true; m_catalogConfigurationDescription = std::move(value); }
 
     /**
-     * <p>The Amazon Glue Data Catalog that is associated with the Kinesis Data
-     * Analytics Studio notebook.</p>
+     * <p>The Amazon Glue Data Catalog that is associated with the Managed Service for
+     * Apache Flink Studio notebook.</p>
      */
     inline ZeppelinApplicationConfigurationDescription& WithCatalogConfigurationDescription(const CatalogConfigurationDescription& value) { SetCatalogConfigurationDescription(value); return *this;}
 
     /**
-     * <p>The Amazon Glue Data Catalog that is associated with the Kinesis Data
-     * Analytics Studio notebook.</p>
+     * <p>The Amazon Glue Data Catalog that is associated with the Managed Service for
+     * Apache Flink Studio notebook.</p>
      */
     inline ZeppelinApplicationConfigurationDescription& WithCatalogConfigurationDescription(CatalogConfigurationDescription&& value) { SetCatalogConfigurationDescription(std::move(value)); return *this;}
 
 
     /**
-     * <p>The parameters required to deploy a Kinesis Data Analytics Studio notebook as
-     * an application with durable state.</p>
+     * <p>The parameters required to deploy a Managed Service for Apache Flink Studio
+     * notebook as an application with durable state.</p>
      */
     inline const DeployAsApplicationConfigurationDescription& GetDeployAsApplicationConfigurationDescription() const{ return m_deployAsApplicationConfigurationDescription; }
 
     /**
-     * <p>The parameters required to deploy a Kinesis Data Analytics Studio notebook as
-     * an application with durable state.</p>
+     * <p>The parameters required to deploy a Managed Service for Apache Flink Studio
+     * notebook as an application with durable state.</p>
      */
     inline bool DeployAsApplicationConfigurationDescriptionHasBeenSet() const { return m_deployAsApplicationConfigurationDescriptionHasBeenSet; }
 
     /**
-     * <p>The parameters required to deploy a Kinesis Data Analytics Studio notebook as
-     * an application with durable state.</p>
+     * <p>The parameters required to deploy a Managed Service for Apache Flink Studio
+     * notebook as an application with durable state.</p>
      */
     inline void SetDeployAsApplicationConfigurationDescription(const DeployAsApplicationConfigurationDescription& value) { m_deployAsApplicationConfigurationDescriptionHasBeenSet = true; m_deployAsApplicationConfigurationDescription = value; }
 
     /**
-     * <p>The parameters required to deploy a Kinesis Data Analytics Studio notebook as
-     * an application with durable state.</p>
+     * <p>The parameters required to deploy a Managed Service for Apache Flink Studio
+     * notebook as an application with durable state.</p>
      */
     inline void SetDeployAsApplicationConfigurationDescription(DeployAsApplicationConfigurationDescription&& value) { m_deployAsApplicationConfigurationDescriptionHasBeenSet = true; m_deployAsApplicationConfigurationDescription = std::move(value); }
 
     /**
-     * <p>The parameters required to deploy a Kinesis Data Analytics Studio notebook as
-     * an application with durable state.</p>
+     * <p>The parameters required to deploy a Managed Service for Apache Flink Studio
+     * notebook as an application with durable state.</p>
      */
     inline ZeppelinApplicationConfigurationDescription& WithDeployAsApplicationConfigurationDescription(const DeployAsApplicationConfigurationDescription& value) { SetDeployAsApplicationConfigurationDescription(value); return *this;}
 
     /**
-     * <p>The parameters required to deploy a Kinesis Data Analytics Studio notebook as
-     * an application with durable state.</p>
+     * <p>The parameters required to deploy a Managed Service for Apache Flink Studio
+     * notebook as an application with durable state.</p>
      */
     inline ZeppelinApplicationConfigurationDescription& WithDeployAsApplicationConfigurationDescription(DeployAsApplicationConfigurationDescription&& value) { SetDeployAsApplicationConfigurationDescription(std::move(value)); return *this;}
 

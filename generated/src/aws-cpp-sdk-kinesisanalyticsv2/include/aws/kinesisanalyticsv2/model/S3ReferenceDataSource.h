@@ -25,10 +25,10 @@ namespace Model
 
   /**
    * <p>For a SQL-based Kinesis Data Analytics application, identifies the Amazon S3
-   * bucket and object that contains the reference data.</p> <p>A Kinesis Data
-   * Analytics application loads reference data only once. If the data changes, you
-   * call the <a>UpdateApplication</a> operation to trigger reloading of data into
-   * your application. </p><p><h3>See Also:</h3>   <a
+   * bucket and object that contains the reference data.</p> <p>A SQL-based Kinesis
+   * Data Analytics application loads reference data only once. If the data changes,
+   * you call the <a>UpdateApplication</a> operation to trigger reloading of data
+   * into your application. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/S3ReferenceDataSource">AWS
    * API Reference</a></p>
    */

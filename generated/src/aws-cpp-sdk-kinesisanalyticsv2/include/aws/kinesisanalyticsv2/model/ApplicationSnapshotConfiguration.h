@@ -22,8 +22,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes whether snapshots are enabled for a Flink-based Kinesis Data
-   * Analytics application.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes whether snapshots are enabled for a Managed Service for Apache
+   * Flink application.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ApplicationSnapshotConfiguration">AWS
    * API Reference</a></p>
    */
@@ -37,26 +37,26 @@ namespace Model
 
 
     /**
-     * <p>Describes whether snapshots are enabled for a Flink-based Kinesis Data
-     * Analytics application.</p>
+     * <p>Describes whether snapshots are enabled for a Managed Service for Apache
+     * Flink application.</p>
      */
     inline bool GetSnapshotsEnabled() const{ return m_snapshotsEnabled; }
 
     /**
-     * <p>Describes whether snapshots are enabled for a Flink-based Kinesis Data
-     * Analytics application.</p>
+     * <p>Describes whether snapshots are enabled for a Managed Service for Apache
+     * Flink application.</p>
      */
     inline bool SnapshotsEnabledHasBeenSet() const { return m_snapshotsEnabledHasBeenSet; }
 
     /**
-     * <p>Describes whether snapshots are enabled for a Flink-based Kinesis Data
-     * Analytics application.</p>
+     * <p>Describes whether snapshots are enabled for a Managed Service for Apache
+     * Flink application.</p>
      */
     inline void SetSnapshotsEnabled(bool value) { m_snapshotsEnabledHasBeenSet = true; m_snapshotsEnabled = value; }
 
     /**
-     * <p>Describes whether snapshots are enabled for a Flink-based Kinesis Data
-     * Analytics application.</p>
+     * <p>Describes whether snapshots are enabled for a Managed Service for Apache
+     * Flink application.</p>
      */
     inline ApplicationSnapshotConfiguration& WithSnapshotsEnabled(bool value) { SetSnapshotsEnabled(value); return *this;}
 

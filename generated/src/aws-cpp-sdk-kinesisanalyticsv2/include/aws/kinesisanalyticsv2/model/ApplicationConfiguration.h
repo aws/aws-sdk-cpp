@@ -31,7 +31,7 @@ namespace Model
 {
 
   /**
-   * <p>Specifies the creation parameters for a Kinesis Data Analytics
+   * <p>Specifies the creation parameters for a Managed Service for Apache Flink
    * application.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ApplicationConfiguration">AWS
    * API Reference</a></p>
@@ -83,149 +83,149 @@ namespace Model
 
 
     /**
-     * <p>The creation and update parameters for a Flink-based Kinesis Data Analytics
+     * <p>The creation and update parameters for a Managed Service for Apache Flink
      * application.</p>
      */
     inline const FlinkApplicationConfiguration& GetFlinkApplicationConfiguration() const{ return m_flinkApplicationConfiguration; }
 
     /**
-     * <p>The creation and update parameters for a Flink-based Kinesis Data Analytics
+     * <p>The creation and update parameters for a Managed Service for Apache Flink
      * application.</p>
      */
     inline bool FlinkApplicationConfigurationHasBeenSet() const { return m_flinkApplicationConfigurationHasBeenSet; }
 
     /**
-     * <p>The creation and update parameters for a Flink-based Kinesis Data Analytics
+     * <p>The creation and update parameters for a Managed Service for Apache Flink
      * application.</p>
      */
     inline void SetFlinkApplicationConfiguration(const FlinkApplicationConfiguration& value) { m_flinkApplicationConfigurationHasBeenSet = true; m_flinkApplicationConfiguration = value; }
 
     /**
-     * <p>The creation and update parameters for a Flink-based Kinesis Data Analytics
+     * <p>The creation and update parameters for a Managed Service for Apache Flink
      * application.</p>
      */
     inline void SetFlinkApplicationConfiguration(FlinkApplicationConfiguration&& value) { m_flinkApplicationConfigurationHasBeenSet = true; m_flinkApplicationConfiguration = std::move(value); }
 
     /**
-     * <p>The creation and update parameters for a Flink-based Kinesis Data Analytics
+     * <p>The creation and update parameters for a Managed Service for Apache Flink
      * application.</p>
      */
     inline ApplicationConfiguration& WithFlinkApplicationConfiguration(const FlinkApplicationConfiguration& value) { SetFlinkApplicationConfiguration(value); return *this;}
 
     /**
-     * <p>The creation and update parameters for a Flink-based Kinesis Data Analytics
+     * <p>The creation and update parameters for a Managed Service for Apache Flink
      * application.</p>
      */
     inline ApplicationConfiguration& WithFlinkApplicationConfiguration(FlinkApplicationConfiguration&& value) { SetFlinkApplicationConfiguration(std::move(value)); return *this;}
 
 
     /**
-     * <p>Describes execution properties for a Flink-based Kinesis Data Analytics
+     * <p>Describes execution properties for a Managed Service for Apache Flink
      * application.</p>
      */
     inline const EnvironmentProperties& GetEnvironmentProperties() const{ return m_environmentProperties; }
 
     /**
-     * <p>Describes execution properties for a Flink-based Kinesis Data Analytics
+     * <p>Describes execution properties for a Managed Service for Apache Flink
      * application.</p>
      */
     inline bool EnvironmentPropertiesHasBeenSet() const { return m_environmentPropertiesHasBeenSet; }
 
     /**
-     * <p>Describes execution properties for a Flink-based Kinesis Data Analytics
+     * <p>Describes execution properties for a Managed Service for Apache Flink
      * application.</p>
      */
     inline void SetEnvironmentProperties(const EnvironmentProperties& value) { m_environmentPropertiesHasBeenSet = true; m_environmentProperties = value; }
 
     /**
-     * <p>Describes execution properties for a Flink-based Kinesis Data Analytics
+     * <p>Describes execution properties for a Managed Service for Apache Flink
      * application.</p>
      */
     inline void SetEnvironmentProperties(EnvironmentProperties&& value) { m_environmentPropertiesHasBeenSet = true; m_environmentProperties = std::move(value); }
 
     /**
-     * <p>Describes execution properties for a Flink-based Kinesis Data Analytics
+     * <p>Describes execution properties for a Managed Service for Apache Flink
      * application.</p>
      */
     inline ApplicationConfiguration& WithEnvironmentProperties(const EnvironmentProperties& value) { SetEnvironmentProperties(value); return *this;}
 
     /**
-     * <p>Describes execution properties for a Flink-based Kinesis Data Analytics
+     * <p>Describes execution properties for a Managed Service for Apache Flink
      * application.</p>
      */
     inline ApplicationConfiguration& WithEnvironmentProperties(EnvironmentProperties&& value) { SetEnvironmentProperties(std::move(value)); return *this;}
 
 
     /**
-     * <p>The code location and type parameters for a Flink-based Kinesis Data
-     * Analytics application.</p>
+     * <p>The code location and type parameters for a Managed Service for Apache Flink
+     * application.</p>
      */
     inline const ApplicationCodeConfiguration& GetApplicationCodeConfiguration() const{ return m_applicationCodeConfiguration; }
 
     /**
-     * <p>The code location and type parameters for a Flink-based Kinesis Data
-     * Analytics application.</p>
+     * <p>The code location and type parameters for a Managed Service for Apache Flink
+     * application.</p>
      */
     inline bool ApplicationCodeConfigurationHasBeenSet() const { return m_applicationCodeConfigurationHasBeenSet; }
 
     /**
-     * <p>The code location and type parameters for a Flink-based Kinesis Data
-     * Analytics application.</p>
+     * <p>The code location and type parameters for a Managed Service for Apache Flink
+     * application.</p>
      */
     inline void SetApplicationCodeConfiguration(const ApplicationCodeConfiguration& value) { m_applicationCodeConfigurationHasBeenSet = true; m_applicationCodeConfiguration = value; }
 
     /**
-     * <p>The code location and type parameters for a Flink-based Kinesis Data
-     * Analytics application.</p>
+     * <p>The code location and type parameters for a Managed Service for Apache Flink
+     * application.</p>
      */
     inline void SetApplicationCodeConfiguration(ApplicationCodeConfiguration&& value) { m_applicationCodeConfigurationHasBeenSet = true; m_applicationCodeConfiguration = std::move(value); }
 
     /**
-     * <p>The code location and type parameters for a Flink-based Kinesis Data
-     * Analytics application.</p>
+     * <p>The code location and type parameters for a Managed Service for Apache Flink
+     * application.</p>
      */
     inline ApplicationConfiguration& WithApplicationCodeConfiguration(const ApplicationCodeConfiguration& value) { SetApplicationCodeConfiguration(value); return *this;}
 
     /**
-     * <p>The code location and type parameters for a Flink-based Kinesis Data
-     * Analytics application.</p>
+     * <p>The code location and type parameters for a Managed Service for Apache Flink
+     * application.</p>
      */
     inline ApplicationConfiguration& WithApplicationCodeConfiguration(ApplicationCodeConfiguration&& value) { SetApplicationCodeConfiguration(std::move(value)); return *this;}
 
 
     /**
-     * <p>Describes whether snapshots are enabled for a Flink-based Kinesis Data
-     * Analytics application.</p>
+     * <p>Describes whether snapshots are enabled for a Managed Service for Apache
+     * Flink application.</p>
      */
     inline const ApplicationSnapshotConfiguration& GetApplicationSnapshotConfiguration() const{ return m_applicationSnapshotConfiguration; }
 
     /**
-     * <p>Describes whether snapshots are enabled for a Flink-based Kinesis Data
-     * Analytics application.</p>
+     * <p>Describes whether snapshots are enabled for a Managed Service for Apache
+     * Flink application.</p>
      */
     inline bool ApplicationSnapshotConfigurationHasBeenSet() const { return m_applicationSnapshotConfigurationHasBeenSet; }
 
     /**
-     * <p>Describes whether snapshots are enabled for a Flink-based Kinesis Data
-     * Analytics application.</p>
+     * <p>Describes whether snapshots are enabled for a Managed Service for Apache
+     * Flink application.</p>
      */
     inline void SetApplicationSnapshotConfiguration(const ApplicationSnapshotConfiguration& value) { m_applicationSnapshotConfigurationHasBeenSet = true; m_applicationSnapshotConfiguration = value; }
 
     /**
-     * <p>Describes whether snapshots are enabled for a Flink-based Kinesis Data
-     * Analytics application.</p>
+     * <p>Describes whether snapshots are enabled for a Managed Service for Apache
+     * Flink application.</p>
      */
     inline void SetApplicationSnapshotConfiguration(ApplicationSnapshotConfiguration&& value) { m_applicationSnapshotConfigurationHasBeenSet = true; m_applicationSnapshotConfiguration = std::move(value); }
 
     /**
-     * <p>Describes whether snapshots are enabled for a Flink-based Kinesis Data
-     * Analytics application.</p>
+     * <p>Describes whether snapshots are enabled for a Managed Service for Apache
+     * Flink application.</p>
      */
     inline ApplicationConfiguration& WithApplicationSnapshotConfiguration(const ApplicationSnapshotConfiguration& value) { SetApplicationSnapshotConfiguration(value); return *this;}
 
     /**
-     * <p>Describes whether snapshots are enabled for a Flink-based Kinesis Data
-     * Analytics application.</p>
+     * <p>Describes whether snapshots are enabled for a Managed Service for Apache
+     * Flink application.</p>
      */
     inline ApplicationConfiguration& WithApplicationSnapshotConfiguration(ApplicationSnapshotConfiguration&& value) { SetApplicationSnapshotConfiguration(std::move(value)); return *this;}
 
@@ -280,37 +280,37 @@ namespace Model
 
 
     /**
-     * <p>The configuration parameters for a Kinesis Data Analytics Studio
+     * <p>The configuration parameters for a Managed Service for Apache Flink Studio
      * notebook.</p>
      */
     inline const ZeppelinApplicationConfiguration& GetZeppelinApplicationConfiguration() const{ return m_zeppelinApplicationConfiguration; }
 
     /**
-     * <p>The configuration parameters for a Kinesis Data Analytics Studio
+     * <p>The configuration parameters for a Managed Service for Apache Flink Studio
      * notebook.</p>
      */
     inline bool ZeppelinApplicationConfigurationHasBeenSet() const { return m_zeppelinApplicationConfigurationHasBeenSet; }
 
     /**
-     * <p>The configuration parameters for a Kinesis Data Analytics Studio
+     * <p>The configuration parameters for a Managed Service for Apache Flink Studio
      * notebook.</p>
      */
     inline void SetZeppelinApplicationConfiguration(const ZeppelinApplicationConfiguration& value) { m_zeppelinApplicationConfigurationHasBeenSet = true; m_zeppelinApplicationConfiguration = value; }
 
     /**
-     * <p>The configuration parameters for a Kinesis Data Analytics Studio
+     * <p>The configuration parameters for a Managed Service for Apache Flink Studio
      * notebook.</p>
      */
     inline void SetZeppelinApplicationConfiguration(ZeppelinApplicationConfiguration&& value) { m_zeppelinApplicationConfigurationHasBeenSet = true; m_zeppelinApplicationConfiguration = std::move(value); }
 
     /**
-     * <p>The configuration parameters for a Kinesis Data Analytics Studio
+     * <p>The configuration parameters for a Managed Service for Apache Flink Studio
      * notebook.</p>
      */
     inline ApplicationConfiguration& WithZeppelinApplicationConfiguration(const ZeppelinApplicationConfiguration& value) { SetZeppelinApplicationConfiguration(value); return *this;}
 
     /**
-     * <p>The configuration parameters for a Kinesis Data Analytics Studio
+     * <p>The configuration parameters for a Managed Service for Apache Flink Studio
      * notebook.</p>
      */
     inline ApplicationConfiguration& WithZeppelinApplicationConfiguration(ZeppelinApplicationConfiguration&& value) { SetZeppelinApplicationConfiguration(std::move(value)); return *this;}

@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>The monitoring configuration for Apache Zeppelin within a Kinesis Data
-   * Analytics Studio notebook.</p><p><h3>See Also:</h3>   <a
+   * <p>The monitoring configuration for Apache Zeppelin within a Managed Service for
+   * Apache Flink Studio notebook.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ZeppelinMonitoringConfigurationDescription">AWS
    * API Reference</a></p>
    */

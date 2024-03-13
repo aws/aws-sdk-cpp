@@ -121,37 +121,37 @@ namespace Model
 
     /**
      * <p>The point at which you want Kinesis Data Analytics to start reading records
-     * from the specified streaming source discovery purposes.</p>
+     * from the specified streaming source for discovery purposes.</p>
      */
     inline const InputStartingPositionConfiguration& GetInputStartingPositionConfiguration() const{ return m_inputStartingPositionConfiguration; }
 
     /**
      * <p>The point at which you want Kinesis Data Analytics to start reading records
-     * from the specified streaming source discovery purposes.</p>
+     * from the specified streaming source for discovery purposes.</p>
      */
     inline bool InputStartingPositionConfigurationHasBeenSet() const { return m_inputStartingPositionConfigurationHasBeenSet; }
 
     /**
      * <p>The point at which you want Kinesis Data Analytics to start reading records
-     * from the specified streaming source discovery purposes.</p>
+     * from the specified streaming source for discovery purposes.</p>
      */
     inline void SetInputStartingPositionConfiguration(const InputStartingPositionConfiguration& value) { m_inputStartingPositionConfigurationHasBeenSet = true; m_inputStartingPositionConfiguration = value; }
 
     /**
      * <p>The point at which you want Kinesis Data Analytics to start reading records
-     * from the specified streaming source discovery purposes.</p>
+     * from the specified streaming source for discovery purposes.</p>
      */
     inline void SetInputStartingPositionConfiguration(InputStartingPositionConfiguration&& value) { m_inputStartingPositionConfigurationHasBeenSet = true; m_inputStartingPositionConfiguration = std::move(value); }
 
     /**
      * <p>The point at which you want Kinesis Data Analytics to start reading records
-     * from the specified streaming source discovery purposes.</p>
+     * from the specified streaming source for discovery purposes.</p>
      */
     inline DiscoverInputSchemaRequest& WithInputStartingPositionConfiguration(const InputStartingPositionConfiguration& value) { SetInputStartingPositionConfiguration(value); return *this;}
 
     /**
      * <p>The point at which you want Kinesis Data Analytics to start reading records
-     * from the specified streaming source discovery purposes.</p>
+     * from the specified streaming source for discovery purposes.</p>
      */
     inline DiscoverInputSchemaRequest& WithInputStartingPositionConfiguration(InputStartingPositionConfiguration&& value) { SetInputStartingPositionConfiguration(std::move(value)); return *this;}
 

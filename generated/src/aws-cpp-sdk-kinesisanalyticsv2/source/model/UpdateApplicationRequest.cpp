@@ -20,7 +20,9 @@ UpdateApplicationRequest::UpdateApplicationRequest() :
     m_serviceExecutionRoleUpdateHasBeenSet(false),
     m_runConfigurationUpdateHasBeenSet(false),
     m_cloudWatchLoggingOptionUpdatesHasBeenSet(false),
-    m_conditionalTokenHasBeenSet(false)
+    m_conditionalTokenHasBeenSet(false),
+    m_runtimeEnvironmentUpdate(RuntimeEnvironment::NOT_SET),
+    m_runtimeEnvironmentUpdateHasBeenSet(false)
 {
 }
 
@@ -73,6 +75,11 @@ Aws::String UpdateApplicationRequest::SerializePayload() const
   {
    payload.WithString("ConditionalToken", m_conditionalToken);
 
+  }
+
+  if(m_runtimeEnvironmentUpdateHasBeenSet)
+  {
+   payload.WithString("RuntimeEnvironmentUpdate", RuntimeEnvironmentMapper::GetNameForRuntimeEnvironment(m_runtimeEnvironmentUpdate));
   }
 
   return payload.View().WriteReadable();

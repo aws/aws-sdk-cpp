@@ -33,37 +33,37 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the Kinesis Data Analytics application.</p>
+     * <p>The ARN of the Managed Service for Apache Flink application.</p>
      */
     inline const Aws::String& GetApplicationARN() const{ return m_applicationARN; }
 
     /**
-     * <p>The ARN of the Kinesis Data Analytics application.</p>
+     * <p>The ARN of the Managed Service for Apache Flink application.</p>
      */
     inline void SetApplicationARN(const Aws::String& value) { m_applicationARN = value; }
 
     /**
-     * <p>The ARN of the Kinesis Data Analytics application.</p>
+     * <p>The ARN of the Managed Service for Apache Flink application.</p>
      */
     inline void SetApplicationARN(Aws::String&& value) { m_applicationARN = std::move(value); }
 
     /**
-     * <p>The ARN of the Kinesis Data Analytics application.</p>
+     * <p>The ARN of the Managed Service for Apache Flink application.</p>
      */
     inline void SetApplicationARN(const char* value) { m_applicationARN.assign(value); }
 
     /**
-     * <p>The ARN of the Kinesis Data Analytics application.</p>
+     * <p>The ARN of the Managed Service for Apache Flink application.</p>
      */
     inline DeleteApplicationVpcConfigurationResult& WithApplicationARN(const Aws::String& value) { SetApplicationARN(value); return *this;}
 
     /**
-     * <p>The ARN of the Kinesis Data Analytics application.</p>
+     * <p>The ARN of the Managed Service for Apache Flink application.</p>
      */
     inline DeleteApplicationVpcConfigurationResult& WithApplicationARN(Aws::String&& value) { SetApplicationARN(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the Kinesis Data Analytics application.</p>
+     * <p>The ARN of the Managed Service for Apache Flink application.</p>
      */
     inline DeleteApplicationVpcConfigurationResult& WithApplicationARN(const char* value) { SetApplicationARN(value); return *this;}
 

@@ -25,7 +25,7 @@ namespace Model
 
   /**
    * <p>Updates to the configuration of the Glue Data Catalog that you use for SQL
-   * queries that you write in a Kinesis Data Analytics Studio
+   * queries that you write in a Managed Service for Apache Flink Studio
    * notebook.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/GlueDataCatalogConfigurationUpdate">AWS
    * API Reference</a></p>
