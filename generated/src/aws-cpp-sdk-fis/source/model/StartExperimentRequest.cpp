@@ -16,6 +16,7 @@ StartExperimentRequest::StartExperimentRequest() :
     m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_experimentTemplateIdHasBeenSet(false),
+    m_experimentOptionsHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -33,6 +34,12 @@ Aws::String StartExperimentRequest::SerializePayload() const
   if(m_experimentTemplateIdHasBeenSet)
   {
    payload.WithString("experimentTemplateId", m_experimentTemplateId);
+
+  }
+
+  if(m_experimentOptionsHasBeenSet)
+  {
+   payload.WithObject("experimentOptions", m_experimentOptions.Jsonize());
 
   }
 

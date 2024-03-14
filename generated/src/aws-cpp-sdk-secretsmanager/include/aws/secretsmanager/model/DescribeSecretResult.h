@@ -463,7 +463,10 @@ namespace Model
      * isn't configured for rotation or rotation has been disabled, Secrets Manager
      * returns null. If rotation fails, Secrets Manager retries the entire rotation
      * process multiple times. If rotation is unsuccessful, this date may be in the
-     * past.</p>
+     * past.</p> <p>This date represents the latest date that rotation will occur, but
+     * it is not an approximate rotation date. In some cases, for example if you turn
+     * off automatic rotation and then turn it back on, the next rotation may occur
+     * much sooner than this date.</p>
      */
     inline const Aws::Utils::DateTime& GetNextRotationDate() const{ return m_nextRotationDate; }
 
@@ -472,7 +475,10 @@ namespace Model
      * isn't configured for rotation or rotation has been disabled, Secrets Manager
      * returns null. If rotation fails, Secrets Manager retries the entire rotation
      * process multiple times. If rotation is unsuccessful, this date may be in the
-     * past.</p>
+     * past.</p> <p>This date represents the latest date that rotation will occur, but
+     * it is not an approximate rotation date. In some cases, for example if you turn
+     * off automatic rotation and then turn it back on, the next rotation may occur
+     * much sooner than this date.</p>
      */
     inline void SetNextRotationDate(const Aws::Utils::DateTime& value) { m_nextRotationDate = value; }
 
@@ -481,7 +487,10 @@ namespace Model
      * isn't configured for rotation or rotation has been disabled, Secrets Manager
      * returns null. If rotation fails, Secrets Manager retries the entire rotation
      * process multiple times. If rotation is unsuccessful, this date may be in the
-     * past.</p>
+     * past.</p> <p>This date represents the latest date that rotation will occur, but
+     * it is not an approximate rotation date. In some cases, for example if you turn
+     * off automatic rotation and then turn it back on, the next rotation may occur
+     * much sooner than this date.</p>
      */
     inline void SetNextRotationDate(Aws::Utils::DateTime&& value) { m_nextRotationDate = std::move(value); }
 
@@ -490,7 +499,10 @@ namespace Model
      * isn't configured for rotation or rotation has been disabled, Secrets Manager
      * returns null. If rotation fails, Secrets Manager retries the entire rotation
      * process multiple times. If rotation is unsuccessful, this date may be in the
-     * past.</p>
+     * past.</p> <p>This date represents the latest date that rotation will occur, but
+     * it is not an approximate rotation date. In some cases, for example if you turn
+     * off automatic rotation and then turn it back on, the next rotation may occur
+     * much sooner than this date.</p>
      */
     inline DescribeSecretResult& WithNextRotationDate(const Aws::Utils::DateTime& value) { SetNextRotationDate(value); return *this;}
 
@@ -499,7 +511,10 @@ namespace Model
      * isn't configured for rotation or rotation has been disabled, Secrets Manager
      * returns null. If rotation fails, Secrets Manager retries the entire rotation
      * process multiple times. If rotation is unsuccessful, this date may be in the
-     * past.</p>
+     * past.</p> <p>This date represents the latest date that rotation will occur, but
+     * it is not an approximate rotation date. In some cases, for example if you turn
+     * off automatic rotation and then turn it back on, the next rotation may occur
+     * much sooner than this date.</p>
      */
     inline DescribeSecretResult& WithNextRotationDate(Aws::Utils::DateTime&& value) { SetNextRotationDate(std::move(value)); return *this;}
 

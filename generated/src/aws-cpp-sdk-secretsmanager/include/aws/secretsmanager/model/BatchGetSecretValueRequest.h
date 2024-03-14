@@ -145,7 +145,8 @@ namespace Model
      * results available, in the response, Secrets Manager includes
      * <code>NextToken</code>. To get the next results, call
      * <code>BatchGetSecretValue</code> again with the value from
-     * <code>NextToken</code>.</p>
+     * <code>NextToken</code>. To use this parameter, you must also use the
+     * <code>Filters</code> parameter.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
@@ -154,7 +155,8 @@ namespace Model
      * results available, in the response, Secrets Manager includes
      * <code>NextToken</code>. To get the next results, call
      * <code>BatchGetSecretValue</code> again with the value from
-     * <code>NextToken</code>.</p>
+     * <code>NextToken</code>. To use this parameter, you must also use the
+     * <code>Filters</code> parameter.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
@@ -163,7 +165,8 @@ namespace Model
      * results available, in the response, Secrets Manager includes
      * <code>NextToken</code>. To get the next results, call
      * <code>BatchGetSecretValue</code> again with the value from
-     * <code>NextToken</code>.</p>
+     * <code>NextToken</code>. To use this parameter, you must also use the
+     * <code>Filters</code> parameter.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
@@ -172,7 +175,8 @@ namespace Model
      * results available, in the response, Secrets Manager includes
      * <code>NextToken</code>. To get the next results, call
      * <code>BatchGetSecretValue</code> again with the value from
-     * <code>NextToken</code>.</p>
+     * <code>NextToken</code>. To use this parameter, you must also use the
+     * <code>Filters</code> parameter.</p>
      */
     inline BatchGetSecretValueRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

@@ -408,12 +408,9 @@ namespace SecretsManager
          * for can support. By default, Secrets Manager uses uppercase and lowercase
          * letters, numbers, and the following characters in passwords:
          * <code>!\"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\\]^_`{|}~</code> </p> <p>Secrets
-         * Manager generates a CloudTrail log entry when you call this action. Do not
-         * include sensitive information in request parameters because it might be logged.
-         * For more information, see <a
-         * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieve-ct-entries.html">Logging
-         * Secrets Manager events with CloudTrail</a>.</p> <p> <b>Required permissions:
-         * </b> <code>secretsmanager:GetRandomPassword</code>. For more information, see <a
+         * Manager generates a CloudTrail log entry when you call this action.</p> <p>
+         * <b>Required permissions: </b> <code>secretsmanager:GetRandomPassword</code>. For
+         * more information, see <a
          * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
          * IAM policy actions for Secrets Manager</a> and <a
          * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication

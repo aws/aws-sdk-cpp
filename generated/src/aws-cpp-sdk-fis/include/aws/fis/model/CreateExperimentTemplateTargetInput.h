@@ -31,8 +31,7 @@ namespace Model
    * Resource Name (ARN) or at least one resource tag. You cannot specify both ARNs
    * and tags.</p> <p>For more information, see <a
    * href="https://docs.aws.amazon.com/fis/latest/userguide/targets.html">Targets</a>
-   * in the <i>Fault Injection Simulator User Guide</i>.</p><p><h3>See Also:</h3>  
-   * <a
+   * in the <i>Fault Injection Service User Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/CreateExperimentTemplateTargetInput">AWS
    * API Reference</a></p>
    */

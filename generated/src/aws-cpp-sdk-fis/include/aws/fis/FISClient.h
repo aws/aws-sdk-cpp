@@ -16,11 +16,11 @@ namespace Aws
 namespace FIS
 {
   /**
-   * <p>Fault Injection Simulator is a managed service that enables you to perform
+   * <p>Fault Injection Service is a managed service that enables you to perform
    * fault injection experiments on your Amazon Web Services workloads. For more
    * information, see the <a
-   * href="https://docs.aws.amazon.com/fis/latest/userguide/">Fault Injection
-   * Simulator User Guide</a>.</p>
+   * href="https://docs.aws.amazon.com/fis/latest/userguide/">Fault Injection Service
+   * User Guide</a>.</p>
    */
   class AWS_FIS_API FISClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<FISClient>
   {
@@ -92,7 +92,7 @@ namespace FIS
          * the experiment is automatically stopped. You can define a stop condition as a
          * CloudWatch alarm.</p> </li> </ul> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/fis/latest/userguide/experiment-templates.html">experiment
-         * templates</a> in the <i>Fault Injection Simulator User Guide</i>.</p><p><h3>See
+         * templates</a> in the <i>Fault Injection Service User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/CreateExperimentTemplate">AWS
          * API Reference</a></p>
@@ -123,7 +123,7 @@ namespace FIS
          * <code>experimentOptions</code> is set to <code>multi-account</code>. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/fis/latest/userguide/experiment-options.html">experiment
-         * options</a> in the <i>Fault Injection Simulator User Guide</i>. </p><p><h3>See
+         * options</a> in the <i>Fault Injection Service User Guide</i>. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/CreateTargetAccountConfiguration">AWS
          * API Reference</a></p>

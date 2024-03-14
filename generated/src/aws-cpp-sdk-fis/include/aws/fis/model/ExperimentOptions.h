@@ -7,6 +7,7 @@
 #include <aws/fis/FIS_EXPORTS.h>
 #include <aws/fis/model/AccountTargeting.h>
 #include <aws/fis/model/EmptyTargetResolutionMode.h>
+#include <aws/fis/model/ActionsMode.h>
 #include <utility>
 
 namespace Aws
@@ -99,6 +100,43 @@ namespace Model
      */
     inline ExperimentOptions& WithEmptyTargetResolutionMode(EmptyTargetResolutionMode&& value) { SetEmptyTargetResolutionMode(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The actions mode of the experiment that is set from the StartExperiment API
+     * command.</p>
+     */
+    inline const ActionsMode& GetActionsMode() const{ return m_actionsMode; }
+
+    /**
+     * <p>The actions mode of the experiment that is set from the StartExperiment API
+     * command.</p>
+     */
+    inline bool ActionsModeHasBeenSet() const { return m_actionsModeHasBeenSet; }
+
+    /**
+     * <p>The actions mode of the experiment that is set from the StartExperiment API
+     * command.</p>
+     */
+    inline void SetActionsMode(const ActionsMode& value) { m_actionsModeHasBeenSet = true; m_actionsMode = value; }
+
+    /**
+     * <p>The actions mode of the experiment that is set from the StartExperiment API
+     * command.</p>
+     */
+    inline void SetActionsMode(ActionsMode&& value) { m_actionsModeHasBeenSet = true; m_actionsMode = std::move(value); }
+
+    /**
+     * <p>The actions mode of the experiment that is set from the StartExperiment API
+     * command.</p>
+     */
+    inline ExperimentOptions& WithActionsMode(const ActionsMode& value) { SetActionsMode(value); return *this;}
+
+    /**
+     * <p>The actions mode of the experiment that is set from the StartExperiment API
+     * command.</p>
+     */
+    inline ExperimentOptions& WithActionsMode(ActionsMode&& value) { SetActionsMode(std::move(value)); return *this;}
+
   private:
 
     AccountTargeting m_accountTargeting;
@@ -106,6 +144,9 @@ namespace Model
 
     EmptyTargetResolutionMode m_emptyTargetResolutionMode;
     bool m_emptyTargetResolutionModeHasBeenSet = false;
+
+    ActionsMode m_actionsMode;
+    bool m_actionsModeHasBeenSet = false;
   };
 
 } // namespace Model

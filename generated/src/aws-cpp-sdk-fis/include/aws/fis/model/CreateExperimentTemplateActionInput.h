@@ -29,8 +29,7 @@ namespace Model
    * <p>Specifies an action for an experiment template.</p> <p>For more information,
    * see <a
    * href="https://docs.aws.amazon.com/fis/latest/userguide/actions.html">Actions</a>
-   * in the <i>Fault Injection Simulator User Guide</i>.</p><p><h3>See Also:</h3>  
-   * <a
+   * in the <i>Fault Injection Service User Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/CreateExperimentTemplateActionInput">AWS
    * API Reference</a></p>
    */

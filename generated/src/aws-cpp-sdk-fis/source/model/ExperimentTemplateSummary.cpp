@@ -20,6 +20,7 @@ namespace Model
 
 ExperimentTemplateSummary::ExperimentTemplateSummary() : 
     m_idHasBeenSet(false),
+    m_arnHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
     m_lastUpdateTimeHasBeenSet(false),
@@ -29,6 +30,7 @@ ExperimentTemplateSummary::ExperimentTemplateSummary() :
 
 ExperimentTemplateSummary::ExperimentTemplateSummary(JsonView jsonValue) : 
     m_idHasBeenSet(false),
+    m_arnHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
     m_lastUpdateTimeHasBeenSet(false),
@@ -44,6 +46,13 @@ ExperimentTemplateSummary& ExperimentTemplateSummary::operator =(JsonView jsonVa
     m_id = jsonValue.GetString("id");
 
     m_idHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("arn"))
+  {
+    m_arn = jsonValue.GetString("arn");
+
+    m_arnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("description"))
@@ -87,6 +96,12 @@ JsonValue ExperimentTemplateSummary::Jsonize() const
   if(m_idHasBeenSet)
   {
    payload.WithString("id", m_id);
+
+  }
+
+  if(m_arnHasBeenSet)
+  {
+   payload.WithString("arn", m_arn);
 
   }
 

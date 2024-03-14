@@ -66,35 +66,39 @@ namespace Model
      * </dd> <dt>Amazon RDS Custom for SQL Server</dt> <dd> <p>Not applicable. Must be
      * null.</p> </dd> <dt>RDS for Db2</dt> <dd> <p>The name of the database to create
      * when the DB instance is created. If this parameter isn't specified, no database
-     * is created in the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain
-     * 1 to 64 letters or numbers.</p> </li> <li> <p>Must begin with a letter.
+     * is created in the DB instance. In some cases, we recommend that you don't add a
+     * database name. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-db-instance-prereqs.html#db2-prereqs-additional-considerations">Additional
+     * considerations</a> in the <i>Amazon RDS User Guide</i>.</p> <p>Constraints:</p>
+     * <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p> </li> <li> <p>Must
+     * begin with a letter. Subsequent characters can be letters, underscores, or
+     * digits (0-9).</p> </li> <li> <p>Can't be a word reserved by the specified
+     * database engine.</p> </li> </ul> </dd> <dt>RDS for MariaDB</dt> <dd> <p>The name
+     * of the database to create when the DB instance is created. If this parameter
+     * isn't specified, no database is created in the DB instance.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p>
+     * </li> <li> <p>Must begin with a letter. Subsequent characters can be letters,
+     * underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word reserved by the
+     * specified database engine.</p> </li> </ul> </dd> <dt>RDS for MySQL</dt> <dd>
+     * <p>The name of the database to create when the DB instance is created. If this
+     * parameter isn't specified, no database is created in the DB instance.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p>
+     * </li> <li> <p>Must begin with a letter. Subsequent characters can be letters,
+     * underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word reserved by the
+     * specified database engine.</p> </li> </ul> </dd> <dt>RDS for Oracle</dt> <dd>
+     * <p>The Oracle System ID (SID) of the created DB instance. If you don't specify a
+     * value, the default value is <code>ORCL</code>. You can't specify the string
+     * <code>null</code>, or any other reserved word, for <code>DBName</code>.</p>
+     * <p>Default: <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't be
+     * longer than 8 characters.</p> </li> </ul> </dd> <dt>RDS for PostgreSQL</dt> <dd>
+     * <p>The name of the database to create when the DB instance is created. If this
+     * parameter isn't specified, a database named <code>postgres</code> is created in
+     * the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 63
+     * letters, numbers, or underscores.</p> </li> <li> <p>Must begin with a letter.
      * Subsequent characters can be letters, underscores, or digits (0-9).</p> </li>
      * <li> <p>Can't be a word reserved by the specified database engine.</p> </li>
-     * </ul> </dd> <dt>RDS for MariaDB</dt> <dd> <p>The name of the database to create
-     * when the DB instance is created. If this parameter isn't specified, no database
-     * is created in the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain
-     * 1 to 64 letters or numbers.</p> </li> <li> <p>Must begin with a letter.
-     * Subsequent characters can be letters, underscores, or digits (0-9).</p> </li>
-     * <li> <p>Can't be a word reserved by the specified database engine.</p> </li>
-     * </ul> </dd> <dt>RDS for MySQL</dt> <dd> <p>The name of the database to create
-     * when the DB instance is created. If this parameter isn't specified, no database
-     * is created in the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain
-     * 1 to 64 letters or numbers.</p> </li> <li> <p>Must begin with a letter.
-     * Subsequent characters can be letters, underscores, or digits (0-9).</p> </li>
-     * <li> <p>Can't be a word reserved by the specified database engine.</p> </li>
-     * </ul> </dd> <dt>RDS for Oracle</dt> <dd> <p>The Oracle System ID (SID) of the
-     * created DB instance. If you don't specify a value, the default value is
-     * <code>ORCL</code>. You can't specify the string <code>null</code>, or any other
-     * reserved word, for <code>DBName</code>.</p> <p>Default: <code>ORCL</code> </p>
-     * <p>Constraints:</p> <ul> <li> <p>Can't be longer than 8 characters.</p> </li>
-     * </ul> </dd> <dt>RDS for PostgreSQL</dt> <dd> <p>The name of the database to
-     * create when the DB instance is created. If this parameter isn't specified, a
-     * database named <code>postgres</code> is created in the DB instance.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 63 letters, numbers, or
-     * underscores.</p> </li> <li> <p>Must begin with a letter. Subsequent characters
-     * can be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word
-     * reserved by the specified database engine.</p> </li> </ul> </dd> <dt>RDS for SQL
-     * Server</dt> <dd> <p>Not applicable. Must be null.</p> </dd> </dl>
+     * </ul> </dd> <dt>RDS for SQL Server</dt> <dd> <p>Not applicable. Must be
+     * null.</p> </dd> </dl>
      */
     inline const Aws::String& GetDBName() const{ return m_dBName; }
 
@@ -122,35 +126,39 @@ namespace Model
      * </dd> <dt>Amazon RDS Custom for SQL Server</dt> <dd> <p>Not applicable. Must be
      * null.</p> </dd> <dt>RDS for Db2</dt> <dd> <p>The name of the database to create
      * when the DB instance is created. If this parameter isn't specified, no database
-     * is created in the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain
-     * 1 to 64 letters or numbers.</p> </li> <li> <p>Must begin with a letter.
+     * is created in the DB instance. In some cases, we recommend that you don't add a
+     * database name. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-db-instance-prereqs.html#db2-prereqs-additional-considerations">Additional
+     * considerations</a> in the <i>Amazon RDS User Guide</i>.</p> <p>Constraints:</p>
+     * <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p> </li> <li> <p>Must
+     * begin with a letter. Subsequent characters can be letters, underscores, or
+     * digits (0-9).</p> </li> <li> <p>Can't be a word reserved by the specified
+     * database engine.</p> </li> </ul> </dd> <dt>RDS for MariaDB</dt> <dd> <p>The name
+     * of the database to create when the DB instance is created. If this parameter
+     * isn't specified, no database is created in the DB instance.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p>
+     * </li> <li> <p>Must begin with a letter. Subsequent characters can be letters,
+     * underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word reserved by the
+     * specified database engine.</p> </li> </ul> </dd> <dt>RDS for MySQL</dt> <dd>
+     * <p>The name of the database to create when the DB instance is created. If this
+     * parameter isn't specified, no database is created in the DB instance.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p>
+     * </li> <li> <p>Must begin with a letter. Subsequent characters can be letters,
+     * underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word reserved by the
+     * specified database engine.</p> </li> </ul> </dd> <dt>RDS for Oracle</dt> <dd>
+     * <p>The Oracle System ID (SID) of the created DB instance. If you don't specify a
+     * value, the default value is <code>ORCL</code>. You can't specify the string
+     * <code>null</code>, or any other reserved word, for <code>DBName</code>.</p>
+     * <p>Default: <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't be
+     * longer than 8 characters.</p> </li> </ul> </dd> <dt>RDS for PostgreSQL</dt> <dd>
+     * <p>The name of the database to create when the DB instance is created. If this
+     * parameter isn't specified, a database named <code>postgres</code> is created in
+     * the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 63
+     * letters, numbers, or underscores.</p> </li> <li> <p>Must begin with a letter.
      * Subsequent characters can be letters, underscores, or digits (0-9).</p> </li>
      * <li> <p>Can't be a word reserved by the specified database engine.</p> </li>
-     * </ul> </dd> <dt>RDS for MariaDB</dt> <dd> <p>The name of the database to create
-     * when the DB instance is created. If this parameter isn't specified, no database
-     * is created in the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain
-     * 1 to 64 letters or numbers.</p> </li> <li> <p>Must begin with a letter.
-     * Subsequent characters can be letters, underscores, or digits (0-9).</p> </li>
-     * <li> <p>Can't be a word reserved by the specified database engine.</p> </li>
-     * </ul> </dd> <dt>RDS for MySQL</dt> <dd> <p>The name of the database to create
-     * when the DB instance is created. If this parameter isn't specified, no database
-     * is created in the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain
-     * 1 to 64 letters or numbers.</p> </li> <li> <p>Must begin with a letter.
-     * Subsequent characters can be letters, underscores, or digits (0-9).</p> </li>
-     * <li> <p>Can't be a word reserved by the specified database engine.</p> </li>
-     * </ul> </dd> <dt>RDS for Oracle</dt> <dd> <p>The Oracle System ID (SID) of the
-     * created DB instance. If you don't specify a value, the default value is
-     * <code>ORCL</code>. You can't specify the string <code>null</code>, or any other
-     * reserved word, for <code>DBName</code>.</p> <p>Default: <code>ORCL</code> </p>
-     * <p>Constraints:</p> <ul> <li> <p>Can't be longer than 8 characters.</p> </li>
-     * </ul> </dd> <dt>RDS for PostgreSQL</dt> <dd> <p>The name of the database to
-     * create when the DB instance is created. If this parameter isn't specified, a
-     * database named <code>postgres</code> is created in the DB instance.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 63 letters, numbers, or
-     * underscores.</p> </li> <li> <p>Must begin with a letter. Subsequent characters
-     * can be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word
-     * reserved by the specified database engine.</p> </li> </ul> </dd> <dt>RDS for SQL
-     * Server</dt> <dd> <p>Not applicable. Must be null.</p> </dd> </dl>
+     * </ul> </dd> <dt>RDS for SQL Server</dt> <dd> <p>Not applicable. Must be
+     * null.</p> </dd> </dl>
      */
     inline bool DBNameHasBeenSet() const { return m_dBNameHasBeenSet; }
 
@@ -178,35 +186,39 @@ namespace Model
      * </dd> <dt>Amazon RDS Custom for SQL Server</dt> <dd> <p>Not applicable. Must be
      * null.</p> </dd> <dt>RDS for Db2</dt> <dd> <p>The name of the database to create
      * when the DB instance is created. If this parameter isn't specified, no database
-     * is created in the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain
-     * 1 to 64 letters or numbers.</p> </li> <li> <p>Must begin with a letter.
+     * is created in the DB instance. In some cases, we recommend that you don't add a
+     * database name. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-db-instance-prereqs.html#db2-prereqs-additional-considerations">Additional
+     * considerations</a> in the <i>Amazon RDS User Guide</i>.</p> <p>Constraints:</p>
+     * <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p> </li> <li> <p>Must
+     * begin with a letter. Subsequent characters can be letters, underscores, or
+     * digits (0-9).</p> </li> <li> <p>Can't be a word reserved by the specified
+     * database engine.</p> </li> </ul> </dd> <dt>RDS for MariaDB</dt> <dd> <p>The name
+     * of the database to create when the DB instance is created. If this parameter
+     * isn't specified, no database is created in the DB instance.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p>
+     * </li> <li> <p>Must begin with a letter. Subsequent characters can be letters,
+     * underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word reserved by the
+     * specified database engine.</p> </li> </ul> </dd> <dt>RDS for MySQL</dt> <dd>
+     * <p>The name of the database to create when the DB instance is created. If this
+     * parameter isn't specified, no database is created in the DB instance.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p>
+     * </li> <li> <p>Must begin with a letter. Subsequent characters can be letters,
+     * underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word reserved by the
+     * specified database engine.</p> </li> </ul> </dd> <dt>RDS for Oracle</dt> <dd>
+     * <p>The Oracle System ID (SID) of the created DB instance. If you don't specify a
+     * value, the default value is <code>ORCL</code>. You can't specify the string
+     * <code>null</code>, or any other reserved word, for <code>DBName</code>.</p>
+     * <p>Default: <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't be
+     * longer than 8 characters.</p> </li> </ul> </dd> <dt>RDS for PostgreSQL</dt> <dd>
+     * <p>The name of the database to create when the DB instance is created. If this
+     * parameter isn't specified, a database named <code>postgres</code> is created in
+     * the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 63
+     * letters, numbers, or underscores.</p> </li> <li> <p>Must begin with a letter.
      * Subsequent characters can be letters, underscores, or digits (0-9).</p> </li>
      * <li> <p>Can't be a word reserved by the specified database engine.</p> </li>
-     * </ul> </dd> <dt>RDS for MariaDB</dt> <dd> <p>The name of the database to create
-     * when the DB instance is created. If this parameter isn't specified, no database
-     * is created in the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain
-     * 1 to 64 letters or numbers.</p> </li> <li> <p>Must begin with a letter.
-     * Subsequent characters can be letters, underscores, or digits (0-9).</p> </li>
-     * <li> <p>Can't be a word reserved by the specified database engine.</p> </li>
-     * </ul> </dd> <dt>RDS for MySQL</dt> <dd> <p>The name of the database to create
-     * when the DB instance is created. If this parameter isn't specified, no database
-     * is created in the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain
-     * 1 to 64 letters or numbers.</p> </li> <li> <p>Must begin with a letter.
-     * Subsequent characters can be letters, underscores, or digits (0-9).</p> </li>
-     * <li> <p>Can't be a word reserved by the specified database engine.</p> </li>
-     * </ul> </dd> <dt>RDS for Oracle</dt> <dd> <p>The Oracle System ID (SID) of the
-     * created DB instance. If you don't specify a value, the default value is
-     * <code>ORCL</code>. You can't specify the string <code>null</code>, or any other
-     * reserved word, for <code>DBName</code>.</p> <p>Default: <code>ORCL</code> </p>
-     * <p>Constraints:</p> <ul> <li> <p>Can't be longer than 8 characters.</p> </li>
-     * </ul> </dd> <dt>RDS for PostgreSQL</dt> <dd> <p>The name of the database to
-     * create when the DB instance is created. If this parameter isn't specified, a
-     * database named <code>postgres</code> is created in the DB instance.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 63 letters, numbers, or
-     * underscores.</p> </li> <li> <p>Must begin with a letter. Subsequent characters
-     * can be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word
-     * reserved by the specified database engine.</p> </li> </ul> </dd> <dt>RDS for SQL
-     * Server</dt> <dd> <p>Not applicable. Must be null.</p> </dd> </dl>
+     * </ul> </dd> <dt>RDS for SQL Server</dt> <dd> <p>Not applicable. Must be
+     * null.</p> </dd> </dl>
      */
     inline void SetDBName(const Aws::String& value) { m_dBNameHasBeenSet = true; m_dBName = value; }
 
@@ -234,35 +246,39 @@ namespace Model
      * </dd> <dt>Amazon RDS Custom for SQL Server</dt> <dd> <p>Not applicable. Must be
      * null.</p> </dd> <dt>RDS for Db2</dt> <dd> <p>The name of the database to create
      * when the DB instance is created. If this parameter isn't specified, no database
-     * is created in the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain
-     * 1 to 64 letters or numbers.</p> </li> <li> <p>Must begin with a letter.
+     * is created in the DB instance. In some cases, we recommend that you don't add a
+     * database name. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-db-instance-prereqs.html#db2-prereqs-additional-considerations">Additional
+     * considerations</a> in the <i>Amazon RDS User Guide</i>.</p> <p>Constraints:</p>
+     * <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p> </li> <li> <p>Must
+     * begin with a letter. Subsequent characters can be letters, underscores, or
+     * digits (0-9).</p> </li> <li> <p>Can't be a word reserved by the specified
+     * database engine.</p> </li> </ul> </dd> <dt>RDS for MariaDB</dt> <dd> <p>The name
+     * of the database to create when the DB instance is created. If this parameter
+     * isn't specified, no database is created in the DB instance.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p>
+     * </li> <li> <p>Must begin with a letter. Subsequent characters can be letters,
+     * underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word reserved by the
+     * specified database engine.</p> </li> </ul> </dd> <dt>RDS for MySQL</dt> <dd>
+     * <p>The name of the database to create when the DB instance is created. If this
+     * parameter isn't specified, no database is created in the DB instance.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p>
+     * </li> <li> <p>Must begin with a letter. Subsequent characters can be letters,
+     * underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word reserved by the
+     * specified database engine.</p> </li> </ul> </dd> <dt>RDS for Oracle</dt> <dd>
+     * <p>The Oracle System ID (SID) of the created DB instance. If you don't specify a
+     * value, the default value is <code>ORCL</code>. You can't specify the string
+     * <code>null</code>, or any other reserved word, for <code>DBName</code>.</p>
+     * <p>Default: <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't be
+     * longer than 8 characters.</p> </li> </ul> </dd> <dt>RDS for PostgreSQL</dt> <dd>
+     * <p>The name of the database to create when the DB instance is created. If this
+     * parameter isn't specified, a database named <code>postgres</code> is created in
+     * the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 63
+     * letters, numbers, or underscores.</p> </li> <li> <p>Must begin with a letter.
      * Subsequent characters can be letters, underscores, or digits (0-9).</p> </li>
      * <li> <p>Can't be a word reserved by the specified database engine.</p> </li>
-     * </ul> </dd> <dt>RDS for MariaDB</dt> <dd> <p>The name of the database to create
-     * when the DB instance is created. If this parameter isn't specified, no database
-     * is created in the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain
-     * 1 to 64 letters or numbers.</p> </li> <li> <p>Must begin with a letter.
-     * Subsequent characters can be letters, underscores, or digits (0-9).</p> </li>
-     * <li> <p>Can't be a word reserved by the specified database engine.</p> </li>
-     * </ul> </dd> <dt>RDS for MySQL</dt> <dd> <p>The name of the database to create
-     * when the DB instance is created. If this parameter isn't specified, no database
-     * is created in the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain
-     * 1 to 64 letters or numbers.</p> </li> <li> <p>Must begin with a letter.
-     * Subsequent characters can be letters, underscores, or digits (0-9).</p> </li>
-     * <li> <p>Can't be a word reserved by the specified database engine.</p> </li>
-     * </ul> </dd> <dt>RDS for Oracle</dt> <dd> <p>The Oracle System ID (SID) of the
-     * created DB instance. If you don't specify a value, the default value is
-     * <code>ORCL</code>. You can't specify the string <code>null</code>, or any other
-     * reserved word, for <code>DBName</code>.</p> <p>Default: <code>ORCL</code> </p>
-     * <p>Constraints:</p> <ul> <li> <p>Can't be longer than 8 characters.</p> </li>
-     * </ul> </dd> <dt>RDS for PostgreSQL</dt> <dd> <p>The name of the database to
-     * create when the DB instance is created. If this parameter isn't specified, a
-     * database named <code>postgres</code> is created in the DB instance.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 63 letters, numbers, or
-     * underscores.</p> </li> <li> <p>Must begin with a letter. Subsequent characters
-     * can be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word
-     * reserved by the specified database engine.</p> </li> </ul> </dd> <dt>RDS for SQL
-     * Server</dt> <dd> <p>Not applicable. Must be null.</p> </dd> </dl>
+     * </ul> </dd> <dt>RDS for SQL Server</dt> <dd> <p>Not applicable. Must be
+     * null.</p> </dd> </dl>
      */
     inline void SetDBName(Aws::String&& value) { m_dBNameHasBeenSet = true; m_dBName = std::move(value); }
 
@@ -290,35 +306,39 @@ namespace Model
      * </dd> <dt>Amazon RDS Custom for SQL Server</dt> <dd> <p>Not applicable. Must be
      * null.</p> </dd> <dt>RDS for Db2</dt> <dd> <p>The name of the database to create
      * when the DB instance is created. If this parameter isn't specified, no database
-     * is created in the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain
-     * 1 to 64 letters or numbers.</p> </li> <li> <p>Must begin with a letter.
+     * is created in the DB instance. In some cases, we recommend that you don't add a
+     * database name. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-db-instance-prereqs.html#db2-prereqs-additional-considerations">Additional
+     * considerations</a> in the <i>Amazon RDS User Guide</i>.</p> <p>Constraints:</p>
+     * <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p> </li> <li> <p>Must
+     * begin with a letter. Subsequent characters can be letters, underscores, or
+     * digits (0-9).</p> </li> <li> <p>Can't be a word reserved by the specified
+     * database engine.</p> </li> </ul> </dd> <dt>RDS for MariaDB</dt> <dd> <p>The name
+     * of the database to create when the DB instance is created. If this parameter
+     * isn't specified, no database is created in the DB instance.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p>
+     * </li> <li> <p>Must begin with a letter. Subsequent characters can be letters,
+     * underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word reserved by the
+     * specified database engine.</p> </li> </ul> </dd> <dt>RDS for MySQL</dt> <dd>
+     * <p>The name of the database to create when the DB instance is created. If this
+     * parameter isn't specified, no database is created in the DB instance.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p>
+     * </li> <li> <p>Must begin with a letter. Subsequent characters can be letters,
+     * underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word reserved by the
+     * specified database engine.</p> </li> </ul> </dd> <dt>RDS for Oracle</dt> <dd>
+     * <p>The Oracle System ID (SID) of the created DB instance. If you don't specify a
+     * value, the default value is <code>ORCL</code>. You can't specify the string
+     * <code>null</code>, or any other reserved word, for <code>DBName</code>.</p>
+     * <p>Default: <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't be
+     * longer than 8 characters.</p> </li> </ul> </dd> <dt>RDS for PostgreSQL</dt> <dd>
+     * <p>The name of the database to create when the DB instance is created. If this
+     * parameter isn't specified, a database named <code>postgres</code> is created in
+     * the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 63
+     * letters, numbers, or underscores.</p> </li> <li> <p>Must begin with a letter.
      * Subsequent characters can be letters, underscores, or digits (0-9).</p> </li>
      * <li> <p>Can't be a word reserved by the specified database engine.</p> </li>
-     * </ul> </dd> <dt>RDS for MariaDB</dt> <dd> <p>The name of the database to create
-     * when the DB instance is created. If this parameter isn't specified, no database
-     * is created in the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain
-     * 1 to 64 letters or numbers.</p> </li> <li> <p>Must begin with a letter.
-     * Subsequent characters can be letters, underscores, or digits (0-9).</p> </li>
-     * <li> <p>Can't be a word reserved by the specified database engine.</p> </li>
-     * </ul> </dd> <dt>RDS for MySQL</dt> <dd> <p>The name of the database to create
-     * when the DB instance is created. If this parameter isn't specified, no database
-     * is created in the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain
-     * 1 to 64 letters or numbers.</p> </li> <li> <p>Must begin with a letter.
-     * Subsequent characters can be letters, underscores, or digits (0-9).</p> </li>
-     * <li> <p>Can't be a word reserved by the specified database engine.</p> </li>
-     * </ul> </dd> <dt>RDS for Oracle</dt> <dd> <p>The Oracle System ID (SID) of the
-     * created DB instance. If you don't specify a value, the default value is
-     * <code>ORCL</code>. You can't specify the string <code>null</code>, or any other
-     * reserved word, for <code>DBName</code>.</p> <p>Default: <code>ORCL</code> </p>
-     * <p>Constraints:</p> <ul> <li> <p>Can't be longer than 8 characters.</p> </li>
-     * </ul> </dd> <dt>RDS for PostgreSQL</dt> <dd> <p>The name of the database to
-     * create when the DB instance is created. If this parameter isn't specified, a
-     * database named <code>postgres</code> is created in the DB instance.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 63 letters, numbers, or
-     * underscores.</p> </li> <li> <p>Must begin with a letter. Subsequent characters
-     * can be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word
-     * reserved by the specified database engine.</p> </li> </ul> </dd> <dt>RDS for SQL
-     * Server</dt> <dd> <p>Not applicable. Must be null.</p> </dd> </dl>
+     * </ul> </dd> <dt>RDS for SQL Server</dt> <dd> <p>Not applicable. Must be
+     * null.</p> </dd> </dl>
      */
     inline void SetDBName(const char* value) { m_dBNameHasBeenSet = true; m_dBName.assign(value); }
 
@@ -346,35 +366,39 @@ namespace Model
      * </dd> <dt>Amazon RDS Custom for SQL Server</dt> <dd> <p>Not applicable. Must be
      * null.</p> </dd> <dt>RDS for Db2</dt> <dd> <p>The name of the database to create
      * when the DB instance is created. If this parameter isn't specified, no database
-     * is created in the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain
-     * 1 to 64 letters or numbers.</p> </li> <li> <p>Must begin with a letter.
+     * is created in the DB instance. In some cases, we recommend that you don't add a
+     * database name. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-db-instance-prereqs.html#db2-prereqs-additional-considerations">Additional
+     * considerations</a> in the <i>Amazon RDS User Guide</i>.</p> <p>Constraints:</p>
+     * <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p> </li> <li> <p>Must
+     * begin with a letter. Subsequent characters can be letters, underscores, or
+     * digits (0-9).</p> </li> <li> <p>Can't be a word reserved by the specified
+     * database engine.</p> </li> </ul> </dd> <dt>RDS for MariaDB</dt> <dd> <p>The name
+     * of the database to create when the DB instance is created. If this parameter
+     * isn't specified, no database is created in the DB instance.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p>
+     * </li> <li> <p>Must begin with a letter. Subsequent characters can be letters,
+     * underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word reserved by the
+     * specified database engine.</p> </li> </ul> </dd> <dt>RDS for MySQL</dt> <dd>
+     * <p>The name of the database to create when the DB instance is created. If this
+     * parameter isn't specified, no database is created in the DB instance.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p>
+     * </li> <li> <p>Must begin with a letter. Subsequent characters can be letters,
+     * underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word reserved by the
+     * specified database engine.</p> </li> </ul> </dd> <dt>RDS for Oracle</dt> <dd>
+     * <p>The Oracle System ID (SID) of the created DB instance. If you don't specify a
+     * value, the default value is <code>ORCL</code>. You can't specify the string
+     * <code>null</code>, or any other reserved word, for <code>DBName</code>.</p>
+     * <p>Default: <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't be
+     * longer than 8 characters.</p> </li> </ul> </dd> <dt>RDS for PostgreSQL</dt> <dd>
+     * <p>The name of the database to create when the DB instance is created. If this
+     * parameter isn't specified, a database named <code>postgres</code> is created in
+     * the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 63
+     * letters, numbers, or underscores.</p> </li> <li> <p>Must begin with a letter.
      * Subsequent characters can be letters, underscores, or digits (0-9).</p> </li>
      * <li> <p>Can't be a word reserved by the specified database engine.</p> </li>
-     * </ul> </dd> <dt>RDS for MariaDB</dt> <dd> <p>The name of the database to create
-     * when the DB instance is created. If this parameter isn't specified, no database
-     * is created in the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain
-     * 1 to 64 letters or numbers.</p> </li> <li> <p>Must begin with a letter.
-     * Subsequent characters can be letters, underscores, or digits (0-9).</p> </li>
-     * <li> <p>Can't be a word reserved by the specified database engine.</p> </li>
-     * </ul> </dd> <dt>RDS for MySQL</dt> <dd> <p>The name of the database to create
-     * when the DB instance is created. If this parameter isn't specified, no database
-     * is created in the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain
-     * 1 to 64 letters or numbers.</p> </li> <li> <p>Must begin with a letter.
-     * Subsequent characters can be letters, underscores, or digits (0-9).</p> </li>
-     * <li> <p>Can't be a word reserved by the specified database engine.</p> </li>
-     * </ul> </dd> <dt>RDS for Oracle</dt> <dd> <p>The Oracle System ID (SID) of the
-     * created DB instance. If you don't specify a value, the default value is
-     * <code>ORCL</code>. You can't specify the string <code>null</code>, or any other
-     * reserved word, for <code>DBName</code>.</p> <p>Default: <code>ORCL</code> </p>
-     * <p>Constraints:</p> <ul> <li> <p>Can't be longer than 8 characters.</p> </li>
-     * </ul> </dd> <dt>RDS for PostgreSQL</dt> <dd> <p>The name of the database to
-     * create when the DB instance is created. If this parameter isn't specified, a
-     * database named <code>postgres</code> is created in the DB instance.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 63 letters, numbers, or
-     * underscores.</p> </li> <li> <p>Must begin with a letter. Subsequent characters
-     * can be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word
-     * reserved by the specified database engine.</p> </li> </ul> </dd> <dt>RDS for SQL
-     * Server</dt> <dd> <p>Not applicable. Must be null.</p> </dd> </dl>
+     * </ul> </dd> <dt>RDS for SQL Server</dt> <dd> <p>Not applicable. Must be
+     * null.</p> </dd> </dl>
      */
     inline CreateDBInstanceRequest& WithDBName(const Aws::String& value) { SetDBName(value); return *this;}
 
@@ -402,35 +426,39 @@ namespace Model
      * </dd> <dt>Amazon RDS Custom for SQL Server</dt> <dd> <p>Not applicable. Must be
      * null.</p> </dd> <dt>RDS for Db2</dt> <dd> <p>The name of the database to create
      * when the DB instance is created. If this parameter isn't specified, no database
-     * is created in the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain
-     * 1 to 64 letters or numbers.</p> </li> <li> <p>Must begin with a letter.
+     * is created in the DB instance. In some cases, we recommend that you don't add a
+     * database name. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-db-instance-prereqs.html#db2-prereqs-additional-considerations">Additional
+     * considerations</a> in the <i>Amazon RDS User Guide</i>.</p> <p>Constraints:</p>
+     * <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p> </li> <li> <p>Must
+     * begin with a letter. Subsequent characters can be letters, underscores, or
+     * digits (0-9).</p> </li> <li> <p>Can't be a word reserved by the specified
+     * database engine.</p> </li> </ul> </dd> <dt>RDS for MariaDB</dt> <dd> <p>The name
+     * of the database to create when the DB instance is created. If this parameter
+     * isn't specified, no database is created in the DB instance.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p>
+     * </li> <li> <p>Must begin with a letter. Subsequent characters can be letters,
+     * underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word reserved by the
+     * specified database engine.</p> </li> </ul> </dd> <dt>RDS for MySQL</dt> <dd>
+     * <p>The name of the database to create when the DB instance is created. If this
+     * parameter isn't specified, no database is created in the DB instance.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p>
+     * </li> <li> <p>Must begin with a letter. Subsequent characters can be letters,
+     * underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word reserved by the
+     * specified database engine.</p> </li> </ul> </dd> <dt>RDS for Oracle</dt> <dd>
+     * <p>The Oracle System ID (SID) of the created DB instance. If you don't specify a
+     * value, the default value is <code>ORCL</code>. You can't specify the string
+     * <code>null</code>, or any other reserved word, for <code>DBName</code>.</p>
+     * <p>Default: <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't be
+     * longer than 8 characters.</p> </li> </ul> </dd> <dt>RDS for PostgreSQL</dt> <dd>
+     * <p>The name of the database to create when the DB instance is created. If this
+     * parameter isn't specified, a database named <code>postgres</code> is created in
+     * the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 63
+     * letters, numbers, or underscores.</p> </li> <li> <p>Must begin with a letter.
      * Subsequent characters can be letters, underscores, or digits (0-9).</p> </li>
      * <li> <p>Can't be a word reserved by the specified database engine.</p> </li>
-     * </ul> </dd> <dt>RDS for MariaDB</dt> <dd> <p>The name of the database to create
-     * when the DB instance is created. If this parameter isn't specified, no database
-     * is created in the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain
-     * 1 to 64 letters or numbers.</p> </li> <li> <p>Must begin with a letter.
-     * Subsequent characters can be letters, underscores, or digits (0-9).</p> </li>
-     * <li> <p>Can't be a word reserved by the specified database engine.</p> </li>
-     * </ul> </dd> <dt>RDS for MySQL</dt> <dd> <p>The name of the database to create
-     * when the DB instance is created. If this parameter isn't specified, no database
-     * is created in the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain
-     * 1 to 64 letters or numbers.</p> </li> <li> <p>Must begin with a letter.
-     * Subsequent characters can be letters, underscores, or digits (0-9).</p> </li>
-     * <li> <p>Can't be a word reserved by the specified database engine.</p> </li>
-     * </ul> </dd> <dt>RDS for Oracle</dt> <dd> <p>The Oracle System ID (SID) of the
-     * created DB instance. If you don't specify a value, the default value is
-     * <code>ORCL</code>. You can't specify the string <code>null</code>, or any other
-     * reserved word, for <code>DBName</code>.</p> <p>Default: <code>ORCL</code> </p>
-     * <p>Constraints:</p> <ul> <li> <p>Can't be longer than 8 characters.</p> </li>
-     * </ul> </dd> <dt>RDS for PostgreSQL</dt> <dd> <p>The name of the database to
-     * create when the DB instance is created. If this parameter isn't specified, a
-     * database named <code>postgres</code> is created in the DB instance.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 63 letters, numbers, or
-     * underscores.</p> </li> <li> <p>Must begin with a letter. Subsequent characters
-     * can be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word
-     * reserved by the specified database engine.</p> </li> </ul> </dd> <dt>RDS for SQL
-     * Server</dt> <dd> <p>Not applicable. Must be null.</p> </dd> </dl>
+     * </ul> </dd> <dt>RDS for SQL Server</dt> <dd> <p>Not applicable. Must be
+     * null.</p> </dd> </dl>
      */
     inline CreateDBInstanceRequest& WithDBName(Aws::String&& value) { SetDBName(std::move(value)); return *this;}
 
@@ -458,35 +486,39 @@ namespace Model
      * </dd> <dt>Amazon RDS Custom for SQL Server</dt> <dd> <p>Not applicable. Must be
      * null.</p> </dd> <dt>RDS for Db2</dt> <dd> <p>The name of the database to create
      * when the DB instance is created. If this parameter isn't specified, no database
-     * is created in the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain
-     * 1 to 64 letters or numbers.</p> </li> <li> <p>Must begin with a letter.
+     * is created in the DB instance. In some cases, we recommend that you don't add a
+     * database name. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-db-instance-prereqs.html#db2-prereqs-additional-considerations">Additional
+     * considerations</a> in the <i>Amazon RDS User Guide</i>.</p> <p>Constraints:</p>
+     * <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p> </li> <li> <p>Must
+     * begin with a letter. Subsequent characters can be letters, underscores, or
+     * digits (0-9).</p> </li> <li> <p>Can't be a word reserved by the specified
+     * database engine.</p> </li> </ul> </dd> <dt>RDS for MariaDB</dt> <dd> <p>The name
+     * of the database to create when the DB instance is created. If this parameter
+     * isn't specified, no database is created in the DB instance.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p>
+     * </li> <li> <p>Must begin with a letter. Subsequent characters can be letters,
+     * underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word reserved by the
+     * specified database engine.</p> </li> </ul> </dd> <dt>RDS for MySQL</dt> <dd>
+     * <p>The name of the database to create when the DB instance is created. If this
+     * parameter isn't specified, no database is created in the DB instance.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 64 letters or numbers.</p>
+     * </li> <li> <p>Must begin with a letter. Subsequent characters can be letters,
+     * underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word reserved by the
+     * specified database engine.</p> </li> </ul> </dd> <dt>RDS for Oracle</dt> <dd>
+     * <p>The Oracle System ID (SID) of the created DB instance. If you don't specify a
+     * value, the default value is <code>ORCL</code>. You can't specify the string
+     * <code>null</code>, or any other reserved word, for <code>DBName</code>.</p>
+     * <p>Default: <code>ORCL</code> </p> <p>Constraints:</p> <ul> <li> <p>Can't be
+     * longer than 8 characters.</p> </li> </ul> </dd> <dt>RDS for PostgreSQL</dt> <dd>
+     * <p>The name of the database to create when the DB instance is created. If this
+     * parameter isn't specified, a database named <code>postgres</code> is created in
+     * the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 63
+     * letters, numbers, or underscores.</p> </li> <li> <p>Must begin with a letter.
      * Subsequent characters can be letters, underscores, or digits (0-9).</p> </li>
      * <li> <p>Can't be a word reserved by the specified database engine.</p> </li>
-     * </ul> </dd> <dt>RDS for MariaDB</dt> <dd> <p>The name of the database to create
-     * when the DB instance is created. If this parameter isn't specified, no database
-     * is created in the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain
-     * 1 to 64 letters or numbers.</p> </li> <li> <p>Must begin with a letter.
-     * Subsequent characters can be letters, underscores, or digits (0-9).</p> </li>
-     * <li> <p>Can't be a word reserved by the specified database engine.</p> </li>
-     * </ul> </dd> <dt>RDS for MySQL</dt> <dd> <p>The name of the database to create
-     * when the DB instance is created. If this parameter isn't specified, no database
-     * is created in the DB instance.</p> <p>Constraints:</p> <ul> <li> <p>Must contain
-     * 1 to 64 letters or numbers.</p> </li> <li> <p>Must begin with a letter.
-     * Subsequent characters can be letters, underscores, or digits (0-9).</p> </li>
-     * <li> <p>Can't be a word reserved by the specified database engine.</p> </li>
-     * </ul> </dd> <dt>RDS for Oracle</dt> <dd> <p>The Oracle System ID (SID) of the
-     * created DB instance. If you don't specify a value, the default value is
-     * <code>ORCL</code>. You can't specify the string <code>null</code>, or any other
-     * reserved word, for <code>DBName</code>.</p> <p>Default: <code>ORCL</code> </p>
-     * <p>Constraints:</p> <ul> <li> <p>Can't be longer than 8 characters.</p> </li>
-     * </ul> </dd> <dt>RDS for PostgreSQL</dt> <dd> <p>The name of the database to
-     * create when the DB instance is created. If this parameter isn't specified, a
-     * database named <code>postgres</code> is created in the DB instance.</p>
-     * <p>Constraints:</p> <ul> <li> <p>Must contain 1 to 63 letters, numbers, or
-     * underscores.</p> </li> <li> <p>Must begin with a letter. Subsequent characters
-     * can be letters, underscores, or digits (0-9).</p> </li> <li> <p>Can't be a word
-     * reserved by the specified database engine.</p> </li> </ul> </dd> <dt>RDS for SQL
-     * Server</dt> <dd> <p>Not applicable. Must be null.</p> </dd> </dl>
+     * </ul> </dd> <dt>RDS for SQL Server</dt> <dd> <p>Not applicable. Must be
+     * null.</p> </dd> </dl>
      */
     inline CreateDBInstanceRequest& WithDBName(const char* value) { SetDBName(value); return *this;}
 

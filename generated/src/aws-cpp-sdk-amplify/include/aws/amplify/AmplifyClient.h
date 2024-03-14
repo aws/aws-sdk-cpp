@@ -109,8 +109,12 @@ namespace Amplify
         }
 
         /**
-         * <p>Creates a new backend environment for an Amplify app. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates a new backend environment for an Amplify app. </p> <p>This API is
+         * available only to Amplify Gen 1 applications where the backend is created using
+         * Amplify Studio or the Amplify command line interface (CLI). This API isn’t
+         * available to applications created using the Amplify Gen 2 public preview. When
+         * you deploy an application with Amplify Gen 2, you provision the app's backend
+         * infrastructure using Typescript code.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/CreateBackendEnvironment">AWS
          * API Reference</a></p>
          */
@@ -267,8 +271,12 @@ namespace Amplify
         }
 
         /**
-         * <p>Deletes a backend environment for an Amplify app. </p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Deletes a backend environment for an Amplify app. </p> <p>This API is
+         * available only to Amplify Gen 1 applications where the backend was created using
+         * Amplify Studio or the Amplify command line interface (CLI). This API isn’t
+         * available to applications created using the Amplify Gen 2 public preview. When
+         * you deploy an application with Amplify Gen 2, you provision the app's backend
+         * infrastructure using Typescript code.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/DeleteBackendEnvironment">AWS
          * API Reference</a></p>
          */
@@ -472,8 +480,12 @@ namespace Amplify
         }
 
         /**
-         * <p>Returns a backend environment for an Amplify app. </p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Returns a backend environment for an Amplify app. </p> <p>This API is
+         * available only to Amplify Gen 1 applications where the backend was created using
+         * Amplify Studio or the Amplify command line interface (CLI). This API isn’t
+         * available to applications created using the Amplify Gen 2 public preview. When
+         * you deploy an application with Amplify Gen 2, you provision the app's backend
+         * infrastructure using Typescript code.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GetBackendEnvironment">AWS
          * API Reference</a></p>
          */
@@ -651,8 +663,12 @@ namespace Amplify
         }
 
         /**
-         * <p>Lists the backend environments for an Amplify app. </p><p><h3>See Also:</h3> 
-         * <a
+         * <p>Lists the backend environments for an Amplify app. </p> <p>This API is
+         * available only to Amplify Gen 1 applications where the backend was created using
+         * Amplify Studio or the Amplify command line interface (CLI). This API isn’t
+         * available to applications created using the Amplify Gen 2 public preview. When
+         * you deploy an application with Amplify Gen 2, you provision the app's backend
+         * infrastructure using Typescript code.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListBackendEnvironments">AWS
          * API Reference</a></p>
          */
