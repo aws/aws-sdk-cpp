@@ -530,8 +530,11 @@ void CurlHttpClient::InitGlobalState()
 
 void CurlHttpClient::CleanupGlobalState()
 {
-    curl_global_cleanup();
-    isInit = false;
+    if (isInit)
+    {
+        curl_global_cleanup();
+        isInit = false;
+    }
 }
 
 Aws::String CurlInfoTypeToString(curl_infotype type)
