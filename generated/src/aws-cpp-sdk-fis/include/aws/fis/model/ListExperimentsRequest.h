@@ -107,6 +107,47 @@ namespace Model
      */
     inline ListExperimentsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
+    /**
+     * <p>The ID of the experiment template.</p>
+     */
+    inline const Aws::String& GetExperimentTemplateId() const{ return m_experimentTemplateId; }
+
+    /**
+     * <p>The ID of the experiment template.</p>
+     */
+    inline bool ExperimentTemplateIdHasBeenSet() const { return m_experimentTemplateIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the experiment template.</p>
+     */
+    inline void SetExperimentTemplateId(const Aws::String& value) { m_experimentTemplateIdHasBeenSet = true; m_experimentTemplateId = value; }
+
+    /**
+     * <p>The ID of the experiment template.</p>
+     */
+    inline void SetExperimentTemplateId(Aws::String&& value) { m_experimentTemplateIdHasBeenSet = true; m_experimentTemplateId = std::move(value); }
+
+    /**
+     * <p>The ID of the experiment template.</p>
+     */
+    inline void SetExperimentTemplateId(const char* value) { m_experimentTemplateIdHasBeenSet = true; m_experimentTemplateId.assign(value); }
+
+    /**
+     * <p>The ID of the experiment template.</p>
+     */
+    inline ListExperimentsRequest& WithExperimentTemplateId(const Aws::String& value) { SetExperimentTemplateId(value); return *this;}
+
+    /**
+     * <p>The ID of the experiment template.</p>
+     */
+    inline ListExperimentsRequest& WithExperimentTemplateId(Aws::String&& value) { SetExperimentTemplateId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the experiment template.</p>
+     */
+    inline ListExperimentsRequest& WithExperimentTemplateId(const char* value) { SetExperimentTemplateId(value); return *this;}
+
   private:
 
     int m_maxResults;
@@ -114,6 +155,9 @@ namespace Model
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
+
+    Aws::String m_experimentTemplateId;
+    bool m_experimentTemplateIdHasBeenSet = false;
   };
 
 } // namespace Model

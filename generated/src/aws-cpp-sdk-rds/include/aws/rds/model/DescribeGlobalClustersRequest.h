@@ -104,42 +104,74 @@ namespace Model
 
 
     /**
-     * <p>This parameter isn't currently supported.</p>
+     * <p>A filter that specifies one or more global database clusters to describe.
+     * This parameter is case-sensitive.</p> <p>Currently, the only supported filter is
+     * <code>region</code>.</p> <p>If used, the request returns information about any
+     * global cluster with at least one member (primary or secondary) in the specified
+     * Amazon Web Services Regions.</p>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>This parameter isn't currently supported.</p>
+     * <p>A filter that specifies one or more global database clusters to describe.
+     * This parameter is case-sensitive.</p> <p>Currently, the only supported filter is
+     * <code>region</code>.</p> <p>If used, the request returns information about any
+     * global cluster with at least one member (primary or secondary) in the specified
+     * Amazon Web Services Regions.</p>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
-     * <p>This parameter isn't currently supported.</p>
+     * <p>A filter that specifies one or more global database clusters to describe.
+     * This parameter is case-sensitive.</p> <p>Currently, the only supported filter is
+     * <code>region</code>.</p> <p>If used, the request returns information about any
+     * global cluster with at least one member (primary or secondary) in the specified
+     * Amazon Web Services Regions.</p>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>This parameter isn't currently supported.</p>
+     * <p>A filter that specifies one or more global database clusters to describe.
+     * This parameter is case-sensitive.</p> <p>Currently, the only supported filter is
+     * <code>region</code>.</p> <p>If used, the request returns information about any
+     * global cluster with at least one member (primary or secondary) in the specified
+     * Amazon Web Services Regions.</p>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>This parameter isn't currently supported.</p>
+     * <p>A filter that specifies one or more global database clusters to describe.
+     * This parameter is case-sensitive.</p> <p>Currently, the only supported filter is
+     * <code>region</code>.</p> <p>If used, the request returns information about any
+     * global cluster with at least one member (primary or secondary) in the specified
+     * Amazon Web Services Regions.</p>
      */
     inline DescribeGlobalClustersRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>This parameter isn't currently supported.</p>
+     * <p>A filter that specifies one or more global database clusters to describe.
+     * This parameter is case-sensitive.</p> <p>Currently, the only supported filter is
+     * <code>region</code>.</p> <p>If used, the request returns information about any
+     * global cluster with at least one member (primary or secondary) in the specified
+     * Amazon Web Services Regions.</p>
      */
     inline DescribeGlobalClustersRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p>This parameter isn't currently supported.</p>
+     * <p>A filter that specifies one or more global database clusters to describe.
+     * This parameter is case-sensitive.</p> <p>Currently, the only supported filter is
+     * <code>region</code>.</p> <p>If used, the request returns information about any
+     * global cluster with at least one member (primary or secondary) in the specified
+     * Amazon Web Services Regions.</p>
      */
     inline DescribeGlobalClustersRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>This parameter isn't currently supported.</p>
+     * <p>A filter that specifies one or more global database clusters to describe.
+     * This parameter is case-sensitive.</p> <p>Currently, the only supported filter is
+     * <code>region</code>.</p> <p>If used, the request returns information about any
+     * global cluster with at least one member (primary or secondary) in the specified
+     * Amazon Web Services Regions.</p>
      */
     inline DescribeGlobalClustersRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

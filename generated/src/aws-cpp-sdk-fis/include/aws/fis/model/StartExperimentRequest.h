@@ -7,6 +7,7 @@
 #include <aws/fis/FIS_EXPORTS.h>
 #include <aws/fis/FISRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/fis/model/StartExperimentExperimentOptionsInput.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -125,6 +126,37 @@ namespace Model
 
 
     /**
+     * <p>The experiment options for running the experiment.</p>
+     */
+    inline const StartExperimentExperimentOptionsInput& GetExperimentOptions() const{ return m_experimentOptions; }
+
+    /**
+     * <p>The experiment options for running the experiment.</p>
+     */
+    inline bool ExperimentOptionsHasBeenSet() const { return m_experimentOptionsHasBeenSet; }
+
+    /**
+     * <p>The experiment options for running the experiment.</p>
+     */
+    inline void SetExperimentOptions(const StartExperimentExperimentOptionsInput& value) { m_experimentOptionsHasBeenSet = true; m_experimentOptions = value; }
+
+    /**
+     * <p>The experiment options for running the experiment.</p>
+     */
+    inline void SetExperimentOptions(StartExperimentExperimentOptionsInput&& value) { m_experimentOptionsHasBeenSet = true; m_experimentOptions = std::move(value); }
+
+    /**
+     * <p>The experiment options for running the experiment.</p>
+     */
+    inline StartExperimentRequest& WithExperimentOptions(const StartExperimentExperimentOptionsInput& value) { SetExperimentOptions(value); return *this;}
+
+    /**
+     * <p>The experiment options for running the experiment.</p>
+     */
+    inline StartExperimentRequest& WithExperimentOptions(StartExperimentExperimentOptionsInput&& value) { SetExperimentOptions(std::move(value)); return *this;}
+
+
+    /**
      * <p>The tags to apply to the experiment.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
@@ -196,6 +228,9 @@ namespace Model
 
     Aws::String m_experimentTemplateId;
     bool m_experimentTemplateIdHasBeenSet = false;
+
+    StartExperimentExperimentOptionsInput m_experimentOptions;
+    bool m_experimentOptionsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;

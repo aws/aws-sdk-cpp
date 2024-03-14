@@ -29,7 +29,7 @@ namespace Model
   /**
    * <p>Describes an action. For more information, see <a
    * href="https://docs.aws.amazon.com/fis/latest/userguide/fis-actions-reference.html">FIS
-   * actions</a> in the <i>Fault Injection Simulator User Guide</i>.</p><p><h3>See
+   * actions</a> in the <i>Fault Injection Service User Guide</i>.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/fis-2020-12-01/Action">AWS API
    * Reference</a></p>
@@ -82,6 +82,47 @@ namespace Model
      * <p>The ID of the action.</p>
      */
     inline Action& WithId(const char* value) { SetId(value); return *this;}
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the action.</p>
+     */
+    inline const Aws::String& GetArn() const{ return m_arn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the action.</p>
+     */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the action.</p>
+     */
+    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the action.</p>
+     */
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the action.</p>
+     */
+    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the action.</p>
+     */
+    inline Action& WithArn(const Aws::String& value) { SetArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the action.</p>
+     */
+    inline Action& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the action.</p>
+     */
+    inline Action& WithArn(const char* value) { SetArn(value); return *this;}
 
 
     /**
@@ -316,6 +357,9 @@ namespace Model
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;
+
+    Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;

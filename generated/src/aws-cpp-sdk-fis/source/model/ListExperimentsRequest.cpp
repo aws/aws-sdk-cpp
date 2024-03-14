@@ -18,7 +18,8 @@ using namespace Aws::Http;
 ListExperimentsRequest::ListExperimentsRequest() : 
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+    m_nextTokenHasBeenSet(false),
+    m_experimentTemplateIdHasBeenSet(false)
 {
 }
 
@@ -41,6 +42,13 @@ void ListExperimentsRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_nextToken;
       uri.AddQueryStringParameter("nextToken", ss.str());
+      ss.str("");
+    }
+
+    if(m_experimentTemplateIdHasBeenSet)
+    {
+      ss << m_experimentTemplateId;
+      uri.AddQueryStringParameter("experimentTemplateId", ss.str());
       ss.str("");
     }
 

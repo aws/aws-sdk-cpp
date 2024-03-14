@@ -9,6 +9,7 @@
 #include <aws/fis/model/ExperimentState.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/fis/model/ExperimentOptions.h>
 #include <utility>
 
 namespace Aws
@@ -79,6 +80,47 @@ namespace Model
      * <p>The ID of the experiment.</p>
      */
     inline ExperimentSummary& WithId(const char* value) { SetId(value); return *this;}
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the experiment.</p>
+     */
+    inline const Aws::String& GetArn() const{ return m_arn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the experiment.</p>
+     */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the experiment.</p>
+     */
+    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the experiment.</p>
+     */
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the experiment.</p>
+     */
+    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the experiment.</p>
+     */
+    inline ExperimentSummary& WithArn(const Aws::String& value) { SetArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the experiment.</p>
+     */
+    inline ExperimentSummary& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the experiment.</p>
+     */
+    inline ExperimentSummary& WithArn(const char* value) { SetArn(value); return *this;}
 
 
     /**
@@ -249,10 +291,44 @@ namespace Model
      */
     inline ExperimentSummary& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The experiment options for the experiment.</p>
+     */
+    inline const ExperimentOptions& GetExperimentOptions() const{ return m_experimentOptions; }
+
+    /**
+     * <p>The experiment options for the experiment.</p>
+     */
+    inline bool ExperimentOptionsHasBeenSet() const { return m_experimentOptionsHasBeenSet; }
+
+    /**
+     * <p>The experiment options for the experiment.</p>
+     */
+    inline void SetExperimentOptions(const ExperimentOptions& value) { m_experimentOptionsHasBeenSet = true; m_experimentOptions = value; }
+
+    /**
+     * <p>The experiment options for the experiment.</p>
+     */
+    inline void SetExperimentOptions(ExperimentOptions&& value) { m_experimentOptionsHasBeenSet = true; m_experimentOptions = std::move(value); }
+
+    /**
+     * <p>The experiment options for the experiment.</p>
+     */
+    inline ExperimentSummary& WithExperimentOptions(const ExperimentOptions& value) { SetExperimentOptions(value); return *this;}
+
+    /**
+     * <p>The experiment options for the experiment.</p>
+     */
+    inline ExperimentSummary& WithExperimentOptions(ExperimentOptions&& value) { SetExperimentOptions(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;
+
+    Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_experimentTemplateId;
     bool m_experimentTemplateIdHasBeenSet = false;
@@ -265,6 +341,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    ExperimentOptions m_experimentOptions;
+    bool m_experimentOptionsHasBeenSet = false;
   };
 
 } // namespace Model
