@@ -79,9 +79,13 @@ namespace Aws
                  */
                 NOT_SET,
                 /**
-                 * Includes empty entries in the vector returned by Split()
+                 * Deprecated use INCLUDE_EMPTY_SEGMENTS instead.
                  */
-                INCLUDE_EMPTY_ENTRIES
+                INCLUDE_EMPTY_ENTRIES,
+                /**
+                 * Include delimiters as empty segments in the split string
+                 */
+                INCLUDE_EMPTY_SEGMENTS,
             };
 
             /**
@@ -115,6 +119,13 @@ namespace Aws
              * @param option, if INCLUDE_EMPTY_ENTRIES, includes empty entries in the result, otherwise removes empty entries.
              */
             static Aws::Vector<Aws::String> Split(const Aws::String& toSplit, char splitOn, size_t numOfTargetParts, SplitOptions option);
+
+            /**
+             * Splits a string on delimeter, keeping the delimiter in the string as a empty space.
+             * @param toSplit, the original string to split
+             * @param splitOn, the delimiter you want to use.
+             */
+            static Aws::Vector<Aws::String> SplitWithSpaces(const Aws::String& toSplit, char splitOn);
 
             /**
             * Splits a string on new line characters.

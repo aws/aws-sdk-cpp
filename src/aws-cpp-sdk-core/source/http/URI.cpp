@@ -27,6 +27,9 @@ const char* SEPARATOR = "://";
 bool s_compliantRfc3986Encoding = false;
 void SetCompliantRfc3986Encoding(bool compliant) { s_compliantRfc3986Encoding = compliant; }
 
+bool s_preservePathSeparators = false;
+void SetPreservePathSeparators(bool preservePathSeparators) { s_preservePathSeparators = preservePathSeparators; }
+
 Aws::String urlEncodeSegment(const Aws::String& segment, bool rfcEncoded = false)
 {
     // consolidates legacy escaping logic into one local method
