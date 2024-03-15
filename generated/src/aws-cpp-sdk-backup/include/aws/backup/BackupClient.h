@@ -2273,9 +2273,9 @@ namespace Backup
         /**
          * <p>Attempts to cancel a job to create a one-time backup of a resource.</p>
          * <p>This action is not supported for the following services: Amazon FSx for
-         * Windows File Server, Amazon FSx for Lustre, FSx for ONTAP , Amazon FSx for
-         * OpenZFS, Amazon DocumentDB (with MongoDB compatibility), Amazon RDS, Amazon
-         * Aurora, and Amazon Neptune.</p><p><h3>See Also:</h3>   <a
+         * Windows File Server, Amazon FSx for Lustre, Amazon FSx for NetApp ONTAP , Amazon
+         * FSx for OpenZFS, Amazon DocumentDB (with MongoDB compatibility), Amazon RDS,
+         * Amazon Aurora, and Amazon Neptune.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/StopBackupJob">AWS
          * API Reference</a></p>
          */

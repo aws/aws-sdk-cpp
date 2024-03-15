@@ -53,7 +53,7 @@ namespace Model
      * </code>. Virtual-hosted-style requests aren't supported. Directory bucket names
      * must be unique in the chosen Availability Zone. Bucket names must also follow
      * the format <code> <i>bucket_base_name</i>--<i>az_id</i>--x-s3</code> (for
-     * example, <code> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</code>). For
+     * example, <code> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</code>). For
      * information about bucket naming restrictions, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory
      * bucket naming rules</a> in the <i>Amazon S3 User Guide</i> </p>
@@ -68,7 +68,7 @@ namespace Model
      * </code>. Virtual-hosted-style requests aren't supported. Directory bucket names
      * must be unique in the chosen Availability Zone. Bucket names must also follow
      * the format <code> <i>bucket_base_name</i>--<i>az_id</i>--x-s3</code> (for
-     * example, <code> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</code>). For
+     * example, <code> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</code>). For
      * information about bucket naming restrictions, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory
      * bucket naming rules</a> in the <i>Amazon S3 User Guide</i> </p>
@@ -83,7 +83,7 @@ namespace Model
      * </code>. Virtual-hosted-style requests aren't supported. Directory bucket names
      * must be unique in the chosen Availability Zone. Bucket names must also follow
      * the format <code> <i>bucket_base_name</i>--<i>az_id</i>--x-s3</code> (for
-     * example, <code> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</code>). For
+     * example, <code> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</code>). For
      * information about bucket naming restrictions, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory
      * bucket naming rules</a> in the <i>Amazon S3 User Guide</i> </p>
@@ -98,7 +98,7 @@ namespace Model
      * </code>. Virtual-hosted-style requests aren't supported. Directory bucket names
      * must be unique in the chosen Availability Zone. Bucket names must also follow
      * the format <code> <i>bucket_base_name</i>--<i>az_id</i>--x-s3</code> (for
-     * example, <code> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</code>). For
+     * example, <code> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</code>). For
      * information about bucket naming restrictions, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory
      * bucket naming rules</a> in the <i>Amazon S3 User Guide</i> </p>
@@ -113,7 +113,7 @@ namespace Model
      * </code>. Virtual-hosted-style requests aren't supported. Directory bucket names
      * must be unique in the chosen Availability Zone. Bucket names must also follow
      * the format <code> <i>bucket_base_name</i>--<i>az_id</i>--x-s3</code> (for
-     * example, <code> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</code>). For
+     * example, <code> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</code>). For
      * information about bucket naming restrictions, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory
      * bucket naming rules</a> in the <i>Amazon S3 User Guide</i> </p>
@@ -128,7 +128,7 @@ namespace Model
      * </code>. Virtual-hosted-style requests aren't supported. Directory bucket names
      * must be unique in the chosen Availability Zone. Bucket names must also follow
      * the format <code> <i>bucket_base_name</i>--<i>az_id</i>--x-s3</code> (for
-     * example, <code> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</code>). For
+     * example, <code> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</code>). For
      * information about bucket naming restrictions, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory
      * bucket naming rules</a> in the <i>Amazon S3 User Guide</i> </p>
@@ -143,7 +143,7 @@ namespace Model
      * </code>. Virtual-hosted-style requests aren't supported. Directory bucket names
      * must be unique in the chosen Availability Zone. Bucket names must also follow
      * the format <code> <i>bucket_base_name</i>--<i>az_id</i>--x-s3</code> (for
-     * example, <code> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</code>). For
+     * example, <code> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</code>). For
      * information about bucket naming restrictions, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory
      * bucket naming rules</a> in the <i>Amazon S3 User Guide</i> </p>
@@ -158,7 +158,7 @@ namespace Model
      * </code>. Virtual-hosted-style requests aren't supported. Directory bucket names
      * must be unique in the chosen Availability Zone. Bucket names must also follow
      * the format <code> <i>bucket_base_name</i>--<i>az_id</i>--x-s3</code> (for
-     * example, <code> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</code>). For
+     * example, <code> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</code>). For
      * information about bucket naming restrictions, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory
      * bucket naming rules</a> in the <i>Amazon S3 User Guide</i> </p>

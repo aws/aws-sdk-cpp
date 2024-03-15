@@ -289,23 +289,20 @@ namespace Model
 
 
     /**
-     * <p>When a list is truncated, this element specifies the last part in the list,
-     * as well as the value to use for the part-number-marker request parameter in a
-     * subsequent request.</p>
+     * <p>Specifies the part after which listing should begin. Only parts with higher
+     * part numbers will be listed.</p>
      */
     inline int GetPartNumberMarker() const{ return m_partNumberMarker; }
 
     /**
-     * <p>When a list is truncated, this element specifies the last part in the list,
-     * as well as the value to use for the part-number-marker request parameter in a
-     * subsequent request.</p>
+     * <p>Specifies the part after which listing should begin. Only parts with higher
+     * part numbers will be listed.</p>
      */
     inline void SetPartNumberMarker(int value) { m_partNumberMarker = value; }
 
     /**
-     * <p>When a list is truncated, this element specifies the last part in the list,
-     * as well as the value to use for the part-number-marker request parameter in a
-     * subsequent request.</p>
+     * <p>Specifies the part after which listing should begin. Only parts with higher
+     * part numbers will be listed.</p>
      */
     inline ListPartsResult& WithPartNumberMarker(int value) { SetPartNumberMarker(value); return *this;}
 

@@ -42,9 +42,9 @@ namespace Model
      * program is updated between snapshots to remove stateful parameters, and state
      * data in the snapshot no longer corresponds to valid application data. For more
      * information, see <a
-     * href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/ops/state/savepoints.html#allowing-non-restored-state">
+     * href="https://nightlies.apache.org/flink/flink-docs-release-1.18/docs/ops/state/savepoints/#allowing-non-restored-state">
      * Allowing Non-Restored State</a> in the <a
-     * href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache Flink
+     * href="https://nightlies.apache.org/flink/flink-docs-release-1.18/">Apache Flink
      * documentation</a>.</p>  <p>This value defaults to <code>false</code>. If
      * you update your application without specifying this parameter,
      * <code>AllowNonRestoredState</code> will be set to <code>false</code>, even if it
@@ -58,9 +58,9 @@ namespace Model
      * program is updated between snapshots to remove stateful parameters, and state
      * data in the snapshot no longer corresponds to valid application data. For more
      * information, see <a
-     * href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/ops/state/savepoints.html#allowing-non-restored-state">
+     * href="https://nightlies.apache.org/flink/flink-docs-release-1.18/docs/ops/state/savepoints/#allowing-non-restored-state">
      * Allowing Non-Restored State</a> in the <a
-     * href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache Flink
+     * href="https://nightlies.apache.org/flink/flink-docs-release-1.18/">Apache Flink
      * documentation</a>.</p>  <p>This value defaults to <code>false</code>. If
      * you update your application without specifying this parameter,
      * <code>AllowNonRestoredState</code> will be set to <code>false</code>, even if it
@@ -74,9 +74,9 @@ namespace Model
      * program is updated between snapshots to remove stateful parameters, and state
      * data in the snapshot no longer corresponds to valid application data. For more
      * information, see <a
-     * href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/ops/state/savepoints.html#allowing-non-restored-state">
+     * href="https://nightlies.apache.org/flink/flink-docs-release-1.18/docs/ops/state/savepoints/#allowing-non-restored-state">
      * Allowing Non-Restored State</a> in the <a
-     * href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache Flink
+     * href="https://nightlies.apache.org/flink/flink-docs-release-1.18/">Apache Flink
      * documentation</a>.</p>  <p>This value defaults to <code>false</code>. If
      * you update your application without specifying this parameter,
      * <code>AllowNonRestoredState</code> will be set to <code>false</code>, even if it
@@ -90,9 +90,9 @@ namespace Model
      * program is updated between snapshots to remove stateful parameters, and state
      * data in the snapshot no longer corresponds to valid application data. For more
      * information, see <a
-     * href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/ops/state/savepoints.html#allowing-non-restored-state">
+     * href="https://nightlies.apache.org/flink/flink-docs-release-1.18/docs/ops/state/savepoints/#allowing-non-restored-state">
      * Allowing Non-Restored State</a> in the <a
-     * href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache Flink
+     * href="https://nightlies.apache.org/flink/flink-docs-release-1.18/">Apache Flink
      * documentation</a>.</p>  <p>This value defaults to <code>false</code>. If
      * you update your application without specifying this parameter,
      * <code>AllowNonRestoredState</code> will be set to <code>false</code>, even if it

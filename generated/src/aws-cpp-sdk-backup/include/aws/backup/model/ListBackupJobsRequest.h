@@ -176,32 +176,80 @@ namespace Model
 
 
     /**
-     * <p>Returns only backup jobs that are in the specified state.</p>
+     * <p>Returns only backup jobs that are in the specified state.</p> <p>
+     * <code>Completed with issues</code> is a status found only in the Backup console.
+     * For API, this status refers to jobs with a state of <code>COMPLETED</code> and a
+     * <code>MessageCategory</code> with a value other than <code>SUCCESS</code>; that
+     * is, the status is completed but comes with a status message.</p> <p>To obtain
+     * the job count for <code>Completed with issues</code>, run two GET requests, and
+     * subtract the second, smaller number:</p> <p>GET
+     * /backup-jobs/?state=COMPLETED</p> <p>GET
+     * /backup-jobs/?messageCategory=SUCCESS&amp;state=COMPLETED</p>
      */
     inline const BackupJobState& GetByState() const{ return m_byState; }
 
     /**
-     * <p>Returns only backup jobs that are in the specified state.</p>
+     * <p>Returns only backup jobs that are in the specified state.</p> <p>
+     * <code>Completed with issues</code> is a status found only in the Backup console.
+     * For API, this status refers to jobs with a state of <code>COMPLETED</code> and a
+     * <code>MessageCategory</code> with a value other than <code>SUCCESS</code>; that
+     * is, the status is completed but comes with a status message.</p> <p>To obtain
+     * the job count for <code>Completed with issues</code>, run two GET requests, and
+     * subtract the second, smaller number:</p> <p>GET
+     * /backup-jobs/?state=COMPLETED</p> <p>GET
+     * /backup-jobs/?messageCategory=SUCCESS&amp;state=COMPLETED</p>
      */
     inline bool ByStateHasBeenSet() const { return m_byStateHasBeenSet; }
 
     /**
-     * <p>Returns only backup jobs that are in the specified state.</p>
+     * <p>Returns only backup jobs that are in the specified state.</p> <p>
+     * <code>Completed with issues</code> is a status found only in the Backup console.
+     * For API, this status refers to jobs with a state of <code>COMPLETED</code> and a
+     * <code>MessageCategory</code> with a value other than <code>SUCCESS</code>; that
+     * is, the status is completed but comes with a status message.</p> <p>To obtain
+     * the job count for <code>Completed with issues</code>, run two GET requests, and
+     * subtract the second, smaller number:</p> <p>GET
+     * /backup-jobs/?state=COMPLETED</p> <p>GET
+     * /backup-jobs/?messageCategory=SUCCESS&amp;state=COMPLETED</p>
      */
     inline void SetByState(const BackupJobState& value) { m_byStateHasBeenSet = true; m_byState = value; }
 
     /**
-     * <p>Returns only backup jobs that are in the specified state.</p>
+     * <p>Returns only backup jobs that are in the specified state.</p> <p>
+     * <code>Completed with issues</code> is a status found only in the Backup console.
+     * For API, this status refers to jobs with a state of <code>COMPLETED</code> and a
+     * <code>MessageCategory</code> with a value other than <code>SUCCESS</code>; that
+     * is, the status is completed but comes with a status message.</p> <p>To obtain
+     * the job count for <code>Completed with issues</code>, run two GET requests, and
+     * subtract the second, smaller number:</p> <p>GET
+     * /backup-jobs/?state=COMPLETED</p> <p>GET
+     * /backup-jobs/?messageCategory=SUCCESS&amp;state=COMPLETED</p>
      */
     inline void SetByState(BackupJobState&& value) { m_byStateHasBeenSet = true; m_byState = std::move(value); }
 
     /**
-     * <p>Returns only backup jobs that are in the specified state.</p>
+     * <p>Returns only backup jobs that are in the specified state.</p> <p>
+     * <code>Completed with issues</code> is a status found only in the Backup console.
+     * For API, this status refers to jobs with a state of <code>COMPLETED</code> and a
+     * <code>MessageCategory</code> with a value other than <code>SUCCESS</code>; that
+     * is, the status is completed but comes with a status message.</p> <p>To obtain
+     * the job count for <code>Completed with issues</code>, run two GET requests, and
+     * subtract the second, smaller number:</p> <p>GET
+     * /backup-jobs/?state=COMPLETED</p> <p>GET
+     * /backup-jobs/?messageCategory=SUCCESS&amp;state=COMPLETED</p>
      */
     inline ListBackupJobsRequest& WithByState(const BackupJobState& value) { SetByState(value); return *this;}
 
     /**
-     * <p>Returns only backup jobs that are in the specified state.</p>
+     * <p>Returns only backup jobs that are in the specified state.</p> <p>
+     * <code>Completed with issues</code> is a status found only in the Backup console.
+     * For API, this status refers to jobs with a state of <code>COMPLETED</code> and a
+     * <code>MessageCategory</code> with a value other than <code>SUCCESS</code>; that
+     * is, the status is completed but comes with a status message.</p> <p>To obtain
+     * the job count for <code>Completed with issues</code>, run two GET requests, and
+     * subtract the second, smaller number:</p> <p>GET
+     * /backup-jobs/?state=COMPLETED</p> <p>GET
+     * /backup-jobs/?messageCategory=SUCCESS&amp;state=COMPLETED</p>
      */
     inline ListBackupJobsRequest& WithByState(BackupJobState&& value) { SetByState(std::move(value)); return *this;}
 

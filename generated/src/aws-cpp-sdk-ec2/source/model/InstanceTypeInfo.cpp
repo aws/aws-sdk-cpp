@@ -59,7 +59,9 @@ InstanceTypeInfo::InstanceTypeInfo() :
     m_nitroEnclavesSupportHasBeenSet(false),
     m_nitroTpmSupport(NitroTpmSupport::NOT_SET),
     m_nitroTpmSupportHasBeenSet(false),
-    m_nitroTpmInfoHasBeenSet(false)
+    m_nitroTpmInfoHasBeenSet(false),
+    m_mediaAcceleratorInfoHasBeenSet(false),
+    m_neuronInfoHasBeenSet(false)
 {
 }
 
@@ -102,7 +104,9 @@ InstanceTypeInfo::InstanceTypeInfo(const XmlNode& xmlNode) :
     m_nitroEnclavesSupportHasBeenSet(false),
     m_nitroTpmSupport(NitroTpmSupport::NOT_SET),
     m_nitroTpmSupportHasBeenSet(false),
-    m_nitroTpmInfoHasBeenSet(false)
+    m_nitroTpmInfoHasBeenSet(false),
+    m_mediaAcceleratorInfoHasBeenSet(false),
+    m_neuronInfoHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -299,6 +303,18 @@ InstanceTypeInfo& InstanceTypeInfo::operator =(const XmlNode& xmlNode)
       m_nitroTpmInfo = nitroTpmInfoNode;
       m_nitroTpmInfoHasBeenSet = true;
     }
+    XmlNode mediaAcceleratorInfoNode = resultNode.FirstChild("mediaAcceleratorInfo");
+    if(!mediaAcceleratorInfoNode.IsNull())
+    {
+      m_mediaAcceleratorInfo = mediaAcceleratorInfoNode;
+      m_mediaAcceleratorInfoHasBeenSet = true;
+    }
+    XmlNode neuronInfoNode = resultNode.FirstChild("neuronInfo");
+    if(!neuronInfoNode.IsNull())
+    {
+      m_neuronInfo = neuronInfoNode;
+      m_neuronInfoHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -479,6 +495,20 @@ void InstanceTypeInfo::OutputToStream(Aws::OStream& oStream, const char* locatio
       m_nitroTpmInfo.OutputToStream(oStream, nitroTpmInfoLocationAndMemberSs.str().c_str());
   }
 
+  if(m_mediaAcceleratorInfoHasBeenSet)
+  {
+      Aws::StringStream mediaAcceleratorInfoLocationAndMemberSs;
+      mediaAcceleratorInfoLocationAndMemberSs << location << index << locationValue << ".MediaAcceleratorInfo";
+      m_mediaAcceleratorInfo.OutputToStream(oStream, mediaAcceleratorInfoLocationAndMemberSs.str().c_str());
+  }
+
+  if(m_neuronInfoHasBeenSet)
+  {
+      Aws::StringStream neuronInfoLocationAndMemberSs;
+      neuronInfoLocationAndMemberSs << location << index << locationValue << ".NeuronInfo";
+      m_neuronInfo.OutputToStream(oStream, neuronInfoLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void InstanceTypeInfo::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -628,6 +658,18 @@ void InstanceTypeInfo::OutputToStream(Aws::OStream& oStream, const char* locatio
       Aws::String nitroTpmInfoLocationAndMember(location);
       nitroTpmInfoLocationAndMember += ".NitroTpmInfo";
       m_nitroTpmInfo.OutputToStream(oStream, nitroTpmInfoLocationAndMember.c_str());
+  }
+  if(m_mediaAcceleratorInfoHasBeenSet)
+  {
+      Aws::String mediaAcceleratorInfoLocationAndMember(location);
+      mediaAcceleratorInfoLocationAndMember += ".MediaAcceleratorInfo";
+      m_mediaAcceleratorInfo.OutputToStream(oStream, mediaAcceleratorInfoLocationAndMember.c_str());
+  }
+  if(m_neuronInfoHasBeenSet)
+  {
+      Aws::String neuronInfoLocationAndMember(location);
+      neuronInfoLocationAndMember += ".NeuronInfo";
+      m_neuronInfo.OutputToStream(oStream, neuronInfoLocationAndMember.c_str());
   }
 }
 

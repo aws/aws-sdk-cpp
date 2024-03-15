@@ -429,6 +429,119 @@ namespace Model
      */
     inline UpdateSecurityProfileRequest& AddApplications(Application&& value) { m_applicationsHasBeenSet = true; m_applications.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The list of resources that a security profile applies hierarchy restrictions
+     * to in Amazon Connect. Following are acceptable ResourceNames:
+     * <code>User</code>.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetHierarchyRestrictedResources() const{ return m_hierarchyRestrictedResources; }
+
+    /**
+     * <p>The list of resources that a security profile applies hierarchy restrictions
+     * to in Amazon Connect. Following are acceptable ResourceNames:
+     * <code>User</code>.</p>
+     */
+    inline bool HierarchyRestrictedResourcesHasBeenSet() const { return m_hierarchyRestrictedResourcesHasBeenSet; }
+
+    /**
+     * <p>The list of resources that a security profile applies hierarchy restrictions
+     * to in Amazon Connect. Following are acceptable ResourceNames:
+     * <code>User</code>.</p>
+     */
+    inline void SetHierarchyRestrictedResources(const Aws::Vector<Aws::String>& value) { m_hierarchyRestrictedResourcesHasBeenSet = true; m_hierarchyRestrictedResources = value; }
+
+    /**
+     * <p>The list of resources that a security profile applies hierarchy restrictions
+     * to in Amazon Connect. Following are acceptable ResourceNames:
+     * <code>User</code>.</p>
+     */
+    inline void SetHierarchyRestrictedResources(Aws::Vector<Aws::String>&& value) { m_hierarchyRestrictedResourcesHasBeenSet = true; m_hierarchyRestrictedResources = std::move(value); }
+
+    /**
+     * <p>The list of resources that a security profile applies hierarchy restrictions
+     * to in Amazon Connect. Following are acceptable ResourceNames:
+     * <code>User</code>.</p>
+     */
+    inline UpdateSecurityProfileRequest& WithHierarchyRestrictedResources(const Aws::Vector<Aws::String>& value) { SetHierarchyRestrictedResources(value); return *this;}
+
+    /**
+     * <p>The list of resources that a security profile applies hierarchy restrictions
+     * to in Amazon Connect. Following are acceptable ResourceNames:
+     * <code>User</code>.</p>
+     */
+    inline UpdateSecurityProfileRequest& WithHierarchyRestrictedResources(Aws::Vector<Aws::String>&& value) { SetHierarchyRestrictedResources(std::move(value)); return *this;}
+
+    /**
+     * <p>The list of resources that a security profile applies hierarchy restrictions
+     * to in Amazon Connect. Following are acceptable ResourceNames:
+     * <code>User</code>.</p>
+     */
+    inline UpdateSecurityProfileRequest& AddHierarchyRestrictedResources(const Aws::String& value) { m_hierarchyRestrictedResourcesHasBeenSet = true; m_hierarchyRestrictedResources.push_back(value); return *this; }
+
+    /**
+     * <p>The list of resources that a security profile applies hierarchy restrictions
+     * to in Amazon Connect. Following are acceptable ResourceNames:
+     * <code>User</code>.</p>
+     */
+    inline UpdateSecurityProfileRequest& AddHierarchyRestrictedResources(Aws::String&& value) { m_hierarchyRestrictedResourcesHasBeenSet = true; m_hierarchyRestrictedResources.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The list of resources that a security profile applies hierarchy restrictions
+     * to in Amazon Connect. Following are acceptable ResourceNames:
+     * <code>User</code>.</p>
+     */
+    inline UpdateSecurityProfileRequest& AddHierarchyRestrictedResources(const char* value) { m_hierarchyRestrictedResourcesHasBeenSet = true; m_hierarchyRestrictedResources.push_back(value); return *this; }
+
+
+    /**
+     * <p>The identifier of the hierarchy group that a security profile uses to
+     * restrict access to resources in Amazon Connect.</p>
+     */
+    inline const Aws::String& GetAllowedAccessControlHierarchyGroupId() const{ return m_allowedAccessControlHierarchyGroupId; }
+
+    /**
+     * <p>The identifier of the hierarchy group that a security profile uses to
+     * restrict access to resources in Amazon Connect.</p>
+     */
+    inline bool AllowedAccessControlHierarchyGroupIdHasBeenSet() const { return m_allowedAccessControlHierarchyGroupIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the hierarchy group that a security profile uses to
+     * restrict access to resources in Amazon Connect.</p>
+     */
+    inline void SetAllowedAccessControlHierarchyGroupId(const Aws::String& value) { m_allowedAccessControlHierarchyGroupIdHasBeenSet = true; m_allowedAccessControlHierarchyGroupId = value; }
+
+    /**
+     * <p>The identifier of the hierarchy group that a security profile uses to
+     * restrict access to resources in Amazon Connect.</p>
+     */
+    inline void SetAllowedAccessControlHierarchyGroupId(Aws::String&& value) { m_allowedAccessControlHierarchyGroupIdHasBeenSet = true; m_allowedAccessControlHierarchyGroupId = std::move(value); }
+
+    /**
+     * <p>The identifier of the hierarchy group that a security profile uses to
+     * restrict access to resources in Amazon Connect.</p>
+     */
+    inline void SetAllowedAccessControlHierarchyGroupId(const char* value) { m_allowedAccessControlHierarchyGroupIdHasBeenSet = true; m_allowedAccessControlHierarchyGroupId.assign(value); }
+
+    /**
+     * <p>The identifier of the hierarchy group that a security profile uses to
+     * restrict access to resources in Amazon Connect.</p>
+     */
+    inline UpdateSecurityProfileRequest& WithAllowedAccessControlHierarchyGroupId(const Aws::String& value) { SetAllowedAccessControlHierarchyGroupId(value); return *this;}
+
+    /**
+     * <p>The identifier of the hierarchy group that a security profile uses to
+     * restrict access to resources in Amazon Connect.</p>
+     */
+    inline UpdateSecurityProfileRequest& WithAllowedAccessControlHierarchyGroupId(Aws::String&& value) { SetAllowedAccessControlHierarchyGroupId(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifier of the hierarchy group that a security profile uses to
+     * restrict access to resources in Amazon Connect.</p>
+     */
+    inline UpdateSecurityProfileRequest& WithAllowedAccessControlHierarchyGroupId(const char* value) { SetAllowedAccessControlHierarchyGroupId(value); return *this;}
+
   private:
 
     Aws::String m_description;
@@ -451,6 +564,12 @@ namespace Model
 
     Aws::Vector<Application> m_applications;
     bool m_applicationsHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_hierarchyRestrictedResources;
+    bool m_hierarchyRestrictedResourcesHasBeenSet = false;
+
+    Aws::String m_allowedAccessControlHierarchyGroupId;
+    bool m_allowedAccessControlHierarchyGroupIdHasBeenSet = false;
   };
 
 } // namespace Model

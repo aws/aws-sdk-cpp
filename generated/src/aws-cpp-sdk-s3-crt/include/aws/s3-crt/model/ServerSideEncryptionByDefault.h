@@ -81,10 +81,10 @@ namespace Model
     /**
      * <p>Amazon Web Services Key Management Service (KMS) customer Amazon Web Services
      * KMS key ID to use for the default encryption. This parameter is allowed if and
-     * only if <code>SSEAlgorithm</code> is set to <code>aws:kms</code>.</p> <p>You can
-     * specify the key ID, key alias, or the Amazon Resource Name (ARN) of the KMS
-     * key.</p> <ul> <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
-     * </p> </li> <li> <p>Key ARN:
+     * only if <code>SSEAlgorithm</code> is set to <code>aws:kms</code> or
+     * <code>aws:kms:dsse</code>.</p> <p>You can specify the key ID, key alias, or the
+     * Amazon Resource Name (ARN) of the KMS key.</p> <ul> <li> <p>Key ID:
+     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Key Alias: <code>alias/alias-name</code> </p> </li> </ul>
      * <p>If you use a key ID, you can run into a LogDestination undeliverable error
@@ -103,10 +103,10 @@ namespace Model
     /**
      * <p>Amazon Web Services Key Management Service (KMS) customer Amazon Web Services
      * KMS key ID to use for the default encryption. This parameter is allowed if and
-     * only if <code>SSEAlgorithm</code> is set to <code>aws:kms</code>.</p> <p>You can
-     * specify the key ID, key alias, or the Amazon Resource Name (ARN) of the KMS
-     * key.</p> <ul> <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
-     * </p> </li> <li> <p>Key ARN:
+     * only if <code>SSEAlgorithm</code> is set to <code>aws:kms</code> or
+     * <code>aws:kms:dsse</code>.</p> <p>You can specify the key ID, key alias, or the
+     * Amazon Resource Name (ARN) of the KMS key.</p> <ul> <li> <p>Key ID:
+     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Key Alias: <code>alias/alias-name</code> </p> </li> </ul>
      * <p>If you use a key ID, you can run into a LogDestination undeliverable error
@@ -125,10 +125,10 @@ namespace Model
     /**
      * <p>Amazon Web Services Key Management Service (KMS) customer Amazon Web Services
      * KMS key ID to use for the default encryption. This parameter is allowed if and
-     * only if <code>SSEAlgorithm</code> is set to <code>aws:kms</code>.</p> <p>You can
-     * specify the key ID, key alias, or the Amazon Resource Name (ARN) of the KMS
-     * key.</p> <ul> <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
-     * </p> </li> <li> <p>Key ARN:
+     * only if <code>SSEAlgorithm</code> is set to <code>aws:kms</code> or
+     * <code>aws:kms:dsse</code>.</p> <p>You can specify the key ID, key alias, or the
+     * Amazon Resource Name (ARN) of the KMS key.</p> <ul> <li> <p>Key ID:
+     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Key Alias: <code>alias/alias-name</code> </p> </li> </ul>
      * <p>If you use a key ID, you can run into a LogDestination undeliverable error
@@ -147,10 +147,10 @@ namespace Model
     /**
      * <p>Amazon Web Services Key Management Service (KMS) customer Amazon Web Services
      * KMS key ID to use for the default encryption. This parameter is allowed if and
-     * only if <code>SSEAlgorithm</code> is set to <code>aws:kms</code>.</p> <p>You can
-     * specify the key ID, key alias, or the Amazon Resource Name (ARN) of the KMS
-     * key.</p> <ul> <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
-     * </p> </li> <li> <p>Key ARN:
+     * only if <code>SSEAlgorithm</code> is set to <code>aws:kms</code> or
+     * <code>aws:kms:dsse</code>.</p> <p>You can specify the key ID, key alias, or the
+     * Amazon Resource Name (ARN) of the KMS key.</p> <ul> <li> <p>Key ID:
+     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Key Alias: <code>alias/alias-name</code> </p> </li> </ul>
      * <p>If you use a key ID, you can run into a LogDestination undeliverable error
@@ -169,10 +169,10 @@ namespace Model
     /**
      * <p>Amazon Web Services Key Management Service (KMS) customer Amazon Web Services
      * KMS key ID to use for the default encryption. This parameter is allowed if and
-     * only if <code>SSEAlgorithm</code> is set to <code>aws:kms</code>.</p> <p>You can
-     * specify the key ID, key alias, or the Amazon Resource Name (ARN) of the KMS
-     * key.</p> <ul> <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
-     * </p> </li> <li> <p>Key ARN:
+     * only if <code>SSEAlgorithm</code> is set to <code>aws:kms</code> or
+     * <code>aws:kms:dsse</code>.</p> <p>You can specify the key ID, key alias, or the
+     * Amazon Resource Name (ARN) of the KMS key.</p> <ul> <li> <p>Key ID:
+     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Key Alias: <code>alias/alias-name</code> </p> </li> </ul>
      * <p>If you use a key ID, you can run into a LogDestination undeliverable error
@@ -191,10 +191,10 @@ namespace Model
     /**
      * <p>Amazon Web Services Key Management Service (KMS) customer Amazon Web Services
      * KMS key ID to use for the default encryption. This parameter is allowed if and
-     * only if <code>SSEAlgorithm</code> is set to <code>aws:kms</code>.</p> <p>You can
-     * specify the key ID, key alias, or the Amazon Resource Name (ARN) of the KMS
-     * key.</p> <ul> <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
-     * </p> </li> <li> <p>Key ARN:
+     * only if <code>SSEAlgorithm</code> is set to <code>aws:kms</code> or
+     * <code>aws:kms:dsse</code>.</p> <p>You can specify the key ID, key alias, or the
+     * Amazon Resource Name (ARN) of the KMS key.</p> <ul> <li> <p>Key ID:
+     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Key Alias: <code>alias/alias-name</code> </p> </li> </ul>
      * <p>If you use a key ID, you can run into a LogDestination undeliverable error
@@ -213,10 +213,10 @@ namespace Model
     /**
      * <p>Amazon Web Services Key Management Service (KMS) customer Amazon Web Services
      * KMS key ID to use for the default encryption. This parameter is allowed if and
-     * only if <code>SSEAlgorithm</code> is set to <code>aws:kms</code>.</p> <p>You can
-     * specify the key ID, key alias, or the Amazon Resource Name (ARN) of the KMS
-     * key.</p> <ul> <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
-     * </p> </li> <li> <p>Key ARN:
+     * only if <code>SSEAlgorithm</code> is set to <code>aws:kms</code> or
+     * <code>aws:kms:dsse</code>.</p> <p>You can specify the key ID, key alias, or the
+     * Amazon Resource Name (ARN) of the KMS key.</p> <ul> <li> <p>Key ID:
+     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Key Alias: <code>alias/alias-name</code> </p> </li> </ul>
      * <p>If you use a key ID, you can run into a LogDestination undeliverable error
@@ -235,10 +235,10 @@ namespace Model
     /**
      * <p>Amazon Web Services Key Management Service (KMS) customer Amazon Web Services
      * KMS key ID to use for the default encryption. This parameter is allowed if and
-     * only if <code>SSEAlgorithm</code> is set to <code>aws:kms</code>.</p> <p>You can
-     * specify the key ID, key alias, or the Amazon Resource Name (ARN) of the KMS
-     * key.</p> <ul> <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
-     * </p> </li> <li> <p>Key ARN:
+     * only if <code>SSEAlgorithm</code> is set to <code>aws:kms</code> or
+     * <code>aws:kms:dsse</code>.</p> <p>You can specify the key ID, key alias, or the
+     * Amazon Resource Name (ARN) of the KMS key.</p> <ul> <li> <p>Key ID:
+     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Key Alias: <code>alias/alias-name</code> </p> </li> </ul>
      * <p>If you use a key ID, you can run into a LogDestination undeliverable error

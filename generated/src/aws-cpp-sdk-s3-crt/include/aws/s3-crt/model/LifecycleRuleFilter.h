@@ -26,8 +26,11 @@ namespace Model
 
   /**
    * <p>The <code>Filter</code> is used to identify objects that a Lifecycle Rule
-   * applies to. A <code>Filter</code> must have exactly one of <code>Prefix</code>,
-   * <code>Tag</code>, or <code>And</code> specified.</p><p><h3>See Also:</h3>   <a
+   * applies to. A <code>Filter</code> can have exactly one of <code>Prefix</code>,
+   * <code>Tag</code>, <code>ObjectSizeGreaterThan</code>,
+   * <code>ObjectSizeLessThan</code>, or <code>And</code> specified. If the
+   * <code>Filter</code> element is left empty, the Lifecycle Rule applies to all
+   * objects in the bucket.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/LifecycleRuleFilter">AWS
    * API Reference</a></p>
    */

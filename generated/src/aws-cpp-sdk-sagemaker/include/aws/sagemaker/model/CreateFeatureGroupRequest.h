@@ -42,73 +42,73 @@ namespace Model
 
     /**
      * <p>The name of the <code>FeatureGroup</code>. The name must be unique within an
-     * Amazon Web Services Region in an Amazon Web Services account. The name:</p> <ul>
-     * <li> <p>Must start and end with an alphanumeric character.</p> </li> <li> <p>Can
-     * only contain alphanumeric character and hyphens. Spaces are not allowed. </p>
-     * </li> </ul>
+     * Amazon Web Services Region in an Amazon Web Services account.</p> <p>The
+     * name:</p> <ul> <li> <p>Must start and end with an alphanumeric character.</p>
+     * </li> <li> <p>Can only include alphanumeric characters, underscores, and
+     * hyphens. Spaces are not allowed.</p> </li> </ul>
      */
     inline const Aws::String& GetFeatureGroupName() const{ return m_featureGroupName; }
 
     /**
      * <p>The name of the <code>FeatureGroup</code>. The name must be unique within an
-     * Amazon Web Services Region in an Amazon Web Services account. The name:</p> <ul>
-     * <li> <p>Must start and end with an alphanumeric character.</p> </li> <li> <p>Can
-     * only contain alphanumeric character and hyphens. Spaces are not allowed. </p>
-     * </li> </ul>
+     * Amazon Web Services Region in an Amazon Web Services account.</p> <p>The
+     * name:</p> <ul> <li> <p>Must start and end with an alphanumeric character.</p>
+     * </li> <li> <p>Can only include alphanumeric characters, underscores, and
+     * hyphens. Spaces are not allowed.</p> </li> </ul>
      */
     inline bool FeatureGroupNameHasBeenSet() const { return m_featureGroupNameHasBeenSet; }
 
     /**
      * <p>The name of the <code>FeatureGroup</code>. The name must be unique within an
-     * Amazon Web Services Region in an Amazon Web Services account. The name:</p> <ul>
-     * <li> <p>Must start and end with an alphanumeric character.</p> </li> <li> <p>Can
-     * only contain alphanumeric character and hyphens. Spaces are not allowed. </p>
-     * </li> </ul>
+     * Amazon Web Services Region in an Amazon Web Services account.</p> <p>The
+     * name:</p> <ul> <li> <p>Must start and end with an alphanumeric character.</p>
+     * </li> <li> <p>Can only include alphanumeric characters, underscores, and
+     * hyphens. Spaces are not allowed.</p> </li> </ul>
      */
     inline void SetFeatureGroupName(const Aws::String& value) { m_featureGroupNameHasBeenSet = true; m_featureGroupName = value; }
 
     /**
      * <p>The name of the <code>FeatureGroup</code>. The name must be unique within an
-     * Amazon Web Services Region in an Amazon Web Services account. The name:</p> <ul>
-     * <li> <p>Must start and end with an alphanumeric character.</p> </li> <li> <p>Can
-     * only contain alphanumeric character and hyphens. Spaces are not allowed. </p>
-     * </li> </ul>
+     * Amazon Web Services Region in an Amazon Web Services account.</p> <p>The
+     * name:</p> <ul> <li> <p>Must start and end with an alphanumeric character.</p>
+     * </li> <li> <p>Can only include alphanumeric characters, underscores, and
+     * hyphens. Spaces are not allowed.</p> </li> </ul>
      */
     inline void SetFeatureGroupName(Aws::String&& value) { m_featureGroupNameHasBeenSet = true; m_featureGroupName = std::move(value); }
 
     /**
      * <p>The name of the <code>FeatureGroup</code>. The name must be unique within an
-     * Amazon Web Services Region in an Amazon Web Services account. The name:</p> <ul>
-     * <li> <p>Must start and end with an alphanumeric character.</p> </li> <li> <p>Can
-     * only contain alphanumeric character and hyphens. Spaces are not allowed. </p>
-     * </li> </ul>
+     * Amazon Web Services Region in an Amazon Web Services account.</p> <p>The
+     * name:</p> <ul> <li> <p>Must start and end with an alphanumeric character.</p>
+     * </li> <li> <p>Can only include alphanumeric characters, underscores, and
+     * hyphens. Spaces are not allowed.</p> </li> </ul>
      */
     inline void SetFeatureGroupName(const char* value) { m_featureGroupNameHasBeenSet = true; m_featureGroupName.assign(value); }
 
     /**
      * <p>The name of the <code>FeatureGroup</code>. The name must be unique within an
-     * Amazon Web Services Region in an Amazon Web Services account. The name:</p> <ul>
-     * <li> <p>Must start and end with an alphanumeric character.</p> </li> <li> <p>Can
-     * only contain alphanumeric character and hyphens. Spaces are not allowed. </p>
-     * </li> </ul>
+     * Amazon Web Services Region in an Amazon Web Services account.</p> <p>The
+     * name:</p> <ul> <li> <p>Must start and end with an alphanumeric character.</p>
+     * </li> <li> <p>Can only include alphanumeric characters, underscores, and
+     * hyphens. Spaces are not allowed.</p> </li> </ul>
      */
     inline CreateFeatureGroupRequest& WithFeatureGroupName(const Aws::String& value) { SetFeatureGroupName(value); return *this;}
 
     /**
      * <p>The name of the <code>FeatureGroup</code>. The name must be unique within an
-     * Amazon Web Services Region in an Amazon Web Services account. The name:</p> <ul>
-     * <li> <p>Must start and end with an alphanumeric character.</p> </li> <li> <p>Can
-     * only contain alphanumeric character and hyphens. Spaces are not allowed. </p>
-     * </li> </ul>
+     * Amazon Web Services Region in an Amazon Web Services account.</p> <p>The
+     * name:</p> <ul> <li> <p>Must start and end with an alphanumeric character.</p>
+     * </li> <li> <p>Can only include alphanumeric characters, underscores, and
+     * hyphens. Spaces are not allowed.</p> </li> </ul>
      */
     inline CreateFeatureGroupRequest& WithFeatureGroupName(Aws::String&& value) { SetFeatureGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the <code>FeatureGroup</code>. The name must be unique within an
-     * Amazon Web Services Region in an Amazon Web Services account. The name:</p> <ul>
-     * <li> <p>Must start and end with an alphanumeric character.</p> </li> <li> <p>Can
-     * only contain alphanumeric character and hyphens. Spaces are not allowed. </p>
-     * </li> </ul>
+     * Amazon Web Services Region in an Amazon Web Services account.</p> <p>The
+     * name:</p> <ul> <li> <p>Must start and end with an alphanumeric character.</p>
+     * </li> <li> <p>Can only include alphanumeric characters, underscores, and
+     * hyphens. Spaces are not allowed.</p> </li> </ul>
      */
     inline CreateFeatureGroupRequest& WithFeatureGroupName(const char* value) { SetFeatureGroupName(value); return *this;}
 

@@ -56,7 +56,7 @@ namespace Model
      * Path-style requests are not supported. Directory bucket names must be unique in
      * the chosen Availability Zone. Bucket names must follow the format <code>
      * <i>bucket_base_name</i>--<i>az-id</i>--x-s3</code> (for example, <code>
-     * <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</code>). For information about
+     * <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</code>). For information about
      * bucket naming restrictions, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory
      * bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.</p> <p> <b>Access
@@ -90,7 +90,7 @@ namespace Model
      * Path-style requests are not supported. Directory bucket names must be unique in
      * the chosen Availability Zone. Bucket names must follow the format <code>
      * <i>bucket_base_name</i>--<i>az-id</i>--x-s3</code> (for example, <code>
-     * <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</code>). For information about
+     * <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</code>). For information about
      * bucket naming restrictions, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory
      * bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.</p> <p> <b>Access
@@ -124,7 +124,7 @@ namespace Model
      * Path-style requests are not supported. Directory bucket names must be unique in
      * the chosen Availability Zone. Bucket names must follow the format <code>
      * <i>bucket_base_name</i>--<i>az-id</i>--x-s3</code> (for example, <code>
-     * <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</code>). For information about
+     * <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</code>). For information about
      * bucket naming restrictions, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory
      * bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.</p> <p> <b>Access
@@ -158,7 +158,7 @@ namespace Model
      * Path-style requests are not supported. Directory bucket names must be unique in
      * the chosen Availability Zone. Bucket names must follow the format <code>
      * <i>bucket_base_name</i>--<i>az-id</i>--x-s3</code> (for example, <code>
-     * <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</code>). For information about
+     * <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</code>). For information about
      * bucket naming restrictions, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory
      * bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.</p> <p> <b>Access
@@ -192,7 +192,7 @@ namespace Model
      * Path-style requests are not supported. Directory bucket names must be unique in
      * the chosen Availability Zone. Bucket names must follow the format <code>
      * <i>bucket_base_name</i>--<i>az-id</i>--x-s3</code> (for example, <code>
-     * <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</code>). For information about
+     * <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</code>). For information about
      * bucket naming restrictions, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory
      * bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.</p> <p> <b>Access
@@ -226,7 +226,7 @@ namespace Model
      * Path-style requests are not supported. Directory bucket names must be unique in
      * the chosen Availability Zone. Bucket names must follow the format <code>
      * <i>bucket_base_name</i>--<i>az-id</i>--x-s3</code> (for example, <code>
-     * <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</code>). For information about
+     * <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</code>). For information about
      * bucket naming restrictions, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory
      * bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.</p> <p> <b>Access
@@ -260,7 +260,7 @@ namespace Model
      * Path-style requests are not supported. Directory bucket names must be unique in
      * the chosen Availability Zone. Bucket names must follow the format <code>
      * <i>bucket_base_name</i>--<i>az-id</i>--x-s3</code> (for example, <code>
-     * <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</code>). For information about
+     * <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</code>). For information about
      * bucket naming restrictions, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory
      * bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.</p> <p> <b>Access
@@ -294,7 +294,7 @@ namespace Model
      * Path-style requests are not supported. Directory bucket names must be unique in
      * the chosen Availability Zone. Bucket names must follow the format <code>
      * <i>bucket_base_name</i>--<i>az-id</i>--x-s3</code> (for example, <code>
-     * <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</code>). For information about
+     * <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</code>). For information about
      * bucket naming restrictions, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory
      * bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.</p> <p> <b>Access
@@ -428,32 +428,50 @@ namespace Model
 
 
     /**
-     * <p>Encoding type used by Amazon S3 to encode object keys in the response.</p>
+     * <p>Encoding type used by Amazon S3 to encode object keys in the response. If
+     * using <code>url</code>, non-ASCII characters used in an object's key name will
+     * be URL encoded. For example, the object test_file(3).png will appear as
+     * test_file%283%29.png.</p>
      */
     inline const EncodingType& GetEncodingType() const{ return m_encodingType; }
 
     /**
-     * <p>Encoding type used by Amazon S3 to encode object keys in the response.</p>
+     * <p>Encoding type used by Amazon S3 to encode object keys in the response. If
+     * using <code>url</code>, non-ASCII characters used in an object's key name will
+     * be URL encoded. For example, the object test_file(3).png will appear as
+     * test_file%283%29.png.</p>
      */
     inline bool EncodingTypeHasBeenSet() const { return m_encodingTypeHasBeenSet; }
 
     /**
-     * <p>Encoding type used by Amazon S3 to encode object keys in the response.</p>
+     * <p>Encoding type used by Amazon S3 to encode object keys in the response. If
+     * using <code>url</code>, non-ASCII characters used in an object's key name will
+     * be URL encoded. For example, the object test_file(3).png will appear as
+     * test_file%283%29.png.</p>
      */
     inline void SetEncodingType(const EncodingType& value) { m_encodingTypeHasBeenSet = true; m_encodingType = value; }
 
     /**
-     * <p>Encoding type used by Amazon S3 to encode object keys in the response.</p>
+     * <p>Encoding type used by Amazon S3 to encode object keys in the response. If
+     * using <code>url</code>, non-ASCII characters used in an object's key name will
+     * be URL encoded. For example, the object test_file(3).png will appear as
+     * test_file%283%29.png.</p>
      */
     inline void SetEncodingType(EncodingType&& value) { m_encodingTypeHasBeenSet = true; m_encodingType = std::move(value); }
 
     /**
-     * <p>Encoding type used by Amazon S3 to encode object keys in the response.</p>
+     * <p>Encoding type used by Amazon S3 to encode object keys in the response. If
+     * using <code>url</code>, non-ASCII characters used in an object's key name will
+     * be URL encoded. For example, the object test_file(3).png will appear as
+     * test_file%283%29.png.</p>
      */
     inline ListObjectsV2Request& WithEncodingType(const EncodingType& value) { SetEncodingType(value); return *this;}
 
     /**
-     * <p>Encoding type used by Amazon S3 to encode object keys in the response.</p>
+     * <p>Encoding type used by Amazon S3 to encode object keys in the response. If
+     * using <code>url</code>, non-ASCII characters used in an object's key name will
+     * be URL encoded. For example, the object test_file(3).png will appear as
+     * test_file%283%29.png.</p>
      */
     inline ListObjectsV2Request& WithEncodingType(EncodingType&& value) { SetEncodingType(std::move(value)); return *this;}
 

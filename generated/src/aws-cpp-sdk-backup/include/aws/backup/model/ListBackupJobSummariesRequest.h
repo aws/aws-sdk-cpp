@@ -133,7 +133,15 @@ namespace Model
      * <p>This parameter returns the job count for jobs with the specified state.</p>
      * <p>The the value ANY returns count of all states.</p> <p>
      * <code>AGGREGATE_ALL</code> aggregates job counts for all states and returns the
-     * sum.</p>
+     * sum.</p> <p> <code>Completed with issues</code> is a status found only in the
+     * Backup console. For API, this status refers to jobs with a state of
+     * <code>COMPLETED</code> and a <code>MessageCategory</code> with a value other
+     * than <code>SUCCESS</code>; that is, the status is completed but comes with a
+     * status message. To obtain the job count for <code>Completed with issues</code>,
+     * run two GET requests, and subtract the second, smaller number:</p> <p>GET
+     * /audit/backup-job-summaries?AggregationPeriod=FOURTEEN_DAYS&amp;State=COMPLETED</p>
+     * <p>GET
+     * /audit/backup-job-summaries?AggregationPeriod=FOURTEEN_DAYS&amp;MessageCategory=SUCCESS&amp;State=COMPLETED</p>
      */
     inline const BackupJobStatus& GetState() const{ return m_state; }
 
@@ -141,7 +149,15 @@ namespace Model
      * <p>This parameter returns the job count for jobs with the specified state.</p>
      * <p>The the value ANY returns count of all states.</p> <p>
      * <code>AGGREGATE_ALL</code> aggregates job counts for all states and returns the
-     * sum.</p>
+     * sum.</p> <p> <code>Completed with issues</code> is a status found only in the
+     * Backup console. For API, this status refers to jobs with a state of
+     * <code>COMPLETED</code> and a <code>MessageCategory</code> with a value other
+     * than <code>SUCCESS</code>; that is, the status is completed but comes with a
+     * status message. To obtain the job count for <code>Completed with issues</code>,
+     * run two GET requests, and subtract the second, smaller number:</p> <p>GET
+     * /audit/backup-job-summaries?AggregationPeriod=FOURTEEN_DAYS&amp;State=COMPLETED</p>
+     * <p>GET
+     * /audit/backup-job-summaries?AggregationPeriod=FOURTEEN_DAYS&amp;MessageCategory=SUCCESS&amp;State=COMPLETED</p>
      */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
@@ -149,7 +165,15 @@ namespace Model
      * <p>This parameter returns the job count for jobs with the specified state.</p>
      * <p>The the value ANY returns count of all states.</p> <p>
      * <code>AGGREGATE_ALL</code> aggregates job counts for all states and returns the
-     * sum.</p>
+     * sum.</p> <p> <code>Completed with issues</code> is a status found only in the
+     * Backup console. For API, this status refers to jobs with a state of
+     * <code>COMPLETED</code> and a <code>MessageCategory</code> with a value other
+     * than <code>SUCCESS</code>; that is, the status is completed but comes with a
+     * status message. To obtain the job count for <code>Completed with issues</code>,
+     * run two GET requests, and subtract the second, smaller number:</p> <p>GET
+     * /audit/backup-job-summaries?AggregationPeriod=FOURTEEN_DAYS&amp;State=COMPLETED</p>
+     * <p>GET
+     * /audit/backup-job-summaries?AggregationPeriod=FOURTEEN_DAYS&amp;MessageCategory=SUCCESS&amp;State=COMPLETED</p>
      */
     inline void SetState(const BackupJobStatus& value) { m_stateHasBeenSet = true; m_state = value; }
 
@@ -157,7 +181,15 @@ namespace Model
      * <p>This parameter returns the job count for jobs with the specified state.</p>
      * <p>The the value ANY returns count of all states.</p> <p>
      * <code>AGGREGATE_ALL</code> aggregates job counts for all states and returns the
-     * sum.</p>
+     * sum.</p> <p> <code>Completed with issues</code> is a status found only in the
+     * Backup console. For API, this status refers to jobs with a state of
+     * <code>COMPLETED</code> and a <code>MessageCategory</code> with a value other
+     * than <code>SUCCESS</code>; that is, the status is completed but comes with a
+     * status message. To obtain the job count for <code>Completed with issues</code>,
+     * run two GET requests, and subtract the second, smaller number:</p> <p>GET
+     * /audit/backup-job-summaries?AggregationPeriod=FOURTEEN_DAYS&amp;State=COMPLETED</p>
+     * <p>GET
+     * /audit/backup-job-summaries?AggregationPeriod=FOURTEEN_DAYS&amp;MessageCategory=SUCCESS&amp;State=COMPLETED</p>
      */
     inline void SetState(BackupJobStatus&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
@@ -165,7 +197,15 @@ namespace Model
      * <p>This parameter returns the job count for jobs with the specified state.</p>
      * <p>The the value ANY returns count of all states.</p> <p>
      * <code>AGGREGATE_ALL</code> aggregates job counts for all states and returns the
-     * sum.</p>
+     * sum.</p> <p> <code>Completed with issues</code> is a status found only in the
+     * Backup console. For API, this status refers to jobs with a state of
+     * <code>COMPLETED</code> and a <code>MessageCategory</code> with a value other
+     * than <code>SUCCESS</code>; that is, the status is completed but comes with a
+     * status message. To obtain the job count for <code>Completed with issues</code>,
+     * run two GET requests, and subtract the second, smaller number:</p> <p>GET
+     * /audit/backup-job-summaries?AggregationPeriod=FOURTEEN_DAYS&amp;State=COMPLETED</p>
+     * <p>GET
+     * /audit/backup-job-summaries?AggregationPeriod=FOURTEEN_DAYS&amp;MessageCategory=SUCCESS&amp;State=COMPLETED</p>
      */
     inline ListBackupJobSummariesRequest& WithState(const BackupJobStatus& value) { SetState(value); return *this;}
 
@@ -173,7 +213,15 @@ namespace Model
      * <p>This parameter returns the job count for jobs with the specified state.</p>
      * <p>The the value ANY returns count of all states.</p> <p>
      * <code>AGGREGATE_ALL</code> aggregates job counts for all states and returns the
-     * sum.</p>
+     * sum.</p> <p> <code>Completed with issues</code> is a status found only in the
+     * Backup console. For API, this status refers to jobs with a state of
+     * <code>COMPLETED</code> and a <code>MessageCategory</code> with a value other
+     * than <code>SUCCESS</code>; that is, the status is completed but comes with a
+     * status message. To obtain the job count for <code>Completed with issues</code>,
+     * run two GET requests, and subtract the second, smaller number:</p> <p>GET
+     * /audit/backup-job-summaries?AggregationPeriod=FOURTEEN_DAYS&amp;State=COMPLETED</p>
+     * <p>GET
+     * /audit/backup-job-summaries?AggregationPeriod=FOURTEEN_DAYS&amp;MessageCategory=SUCCESS&amp;State=COMPLETED</p>
      */
     inline ListBackupJobSummariesRequest& WithState(BackupJobStatus&& value) { SetState(std::move(value)); return *this;}
 

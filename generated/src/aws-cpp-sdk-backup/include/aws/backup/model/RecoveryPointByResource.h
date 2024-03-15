@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/backup/model/RecoveryPointStatus.h>
+#include <aws/backup/model/VaultType.h>
 #include <utility>
 
 namespace Aws
@@ -483,6 +484,43 @@ namespace Model
      */
     inline RecoveryPointByResource& WithResourceName(const char* value) { SetResourceName(value); return *this;}
 
+
+    /**
+     * <p>This is the type of vault in which the described recovery point is
+     * stored.</p>
+     */
+    inline const VaultType& GetVaultType() const{ return m_vaultType; }
+
+    /**
+     * <p>This is the type of vault in which the described recovery point is
+     * stored.</p>
+     */
+    inline bool VaultTypeHasBeenSet() const { return m_vaultTypeHasBeenSet; }
+
+    /**
+     * <p>This is the type of vault in which the described recovery point is
+     * stored.</p>
+     */
+    inline void SetVaultType(const VaultType& value) { m_vaultTypeHasBeenSet = true; m_vaultType = value; }
+
+    /**
+     * <p>This is the type of vault in which the described recovery point is
+     * stored.</p>
+     */
+    inline void SetVaultType(VaultType&& value) { m_vaultTypeHasBeenSet = true; m_vaultType = std::move(value); }
+
+    /**
+     * <p>This is the type of vault in which the described recovery point is
+     * stored.</p>
+     */
+    inline RecoveryPointByResource& WithVaultType(const VaultType& value) { SetVaultType(value); return *this;}
+
+    /**
+     * <p>This is the type of vault in which the described recovery point is
+     * stored.</p>
+     */
+    inline RecoveryPointByResource& WithVaultType(VaultType&& value) { SetVaultType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_recoveryPointArn;
@@ -514,6 +552,9 @@ namespace Model
 
     Aws::String m_resourceName;
     bool m_resourceNameHasBeenSet = false;
+
+    VaultType m_vaultType;
+    bool m_vaultTypeHasBeenSet = false;
   };
 
 } // namespace Model

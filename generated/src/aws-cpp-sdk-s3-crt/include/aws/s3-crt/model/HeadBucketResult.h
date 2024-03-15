@@ -67,7 +67,7 @@ namespace Model
     /**
      * <p>The name of the location where the bucket will be created.</p> <p>For
      * directory buckets, the AZ ID of the Availability Zone where the bucket is
-     * created. An example AZ ID value is <code>usw2-az2</code>.</p>  <p>This
+     * created. An example AZ ID value is <code>usw2-az1</code>.</p>  <p>This
      * functionality is only supported by directory buckets.</p> 
      */
     inline const Aws::String& GetBucketLocationName() const{ return m_bucketLocationName; }
@@ -75,7 +75,7 @@ namespace Model
     /**
      * <p>The name of the location where the bucket will be created.</p> <p>For
      * directory buckets, the AZ ID of the Availability Zone where the bucket is
-     * created. An example AZ ID value is <code>usw2-az2</code>.</p>  <p>This
+     * created. An example AZ ID value is <code>usw2-az1</code>.</p>  <p>This
      * functionality is only supported by directory buckets.</p> 
      */
     inline void SetBucketLocationName(const Aws::String& value) { m_bucketLocationName = value; }
@@ -83,7 +83,7 @@ namespace Model
     /**
      * <p>The name of the location where the bucket will be created.</p> <p>For
      * directory buckets, the AZ ID of the Availability Zone where the bucket is
-     * created. An example AZ ID value is <code>usw2-az2</code>.</p>  <p>This
+     * created. An example AZ ID value is <code>usw2-az1</code>.</p>  <p>This
      * functionality is only supported by directory buckets.</p> 
      */
     inline void SetBucketLocationName(Aws::String&& value) { m_bucketLocationName = std::move(value); }
@@ -91,7 +91,7 @@ namespace Model
     /**
      * <p>The name of the location where the bucket will be created.</p> <p>For
      * directory buckets, the AZ ID of the Availability Zone where the bucket is
-     * created. An example AZ ID value is <code>usw2-az2</code>.</p>  <p>This
+     * created. An example AZ ID value is <code>usw2-az1</code>.</p>  <p>This
      * functionality is only supported by directory buckets.</p> 
      */
     inline void SetBucketLocationName(const char* value) { m_bucketLocationName.assign(value); }
@@ -99,7 +99,7 @@ namespace Model
     /**
      * <p>The name of the location where the bucket will be created.</p> <p>For
      * directory buckets, the AZ ID of the Availability Zone where the bucket is
-     * created. An example AZ ID value is <code>usw2-az2</code>.</p>  <p>This
+     * created. An example AZ ID value is <code>usw2-az1</code>.</p>  <p>This
      * functionality is only supported by directory buckets.</p> 
      */
     inline HeadBucketResult& WithBucketLocationName(const Aws::String& value) { SetBucketLocationName(value); return *this;}
@@ -107,7 +107,7 @@ namespace Model
     /**
      * <p>The name of the location where the bucket will be created.</p> <p>For
      * directory buckets, the AZ ID of the Availability Zone where the bucket is
-     * created. An example AZ ID value is <code>usw2-az2</code>.</p>  <p>This
+     * created. An example AZ ID value is <code>usw2-az1</code>.</p>  <p>This
      * functionality is only supported by directory buckets.</p> 
      */
     inline HeadBucketResult& WithBucketLocationName(Aws::String&& value) { SetBucketLocationName(std::move(value)); return *this;}
@@ -115,7 +115,7 @@ namespace Model
     /**
      * <p>The name of the location where the bucket will be created.</p> <p>For
      * directory buckets, the AZ ID of the Availability Zone where the bucket is
-     * created. An example AZ ID value is <code>usw2-az2</code>.</p>  <p>This
+     * created. An example AZ ID value is <code>usw2-az1</code>.</p>  <p>This
      * functionality is only supported by directory buckets.</p> 
      */
     inline HeadBucketResult& WithBucketLocationName(const char* value) { SetBucketLocationName(value); return *this;}

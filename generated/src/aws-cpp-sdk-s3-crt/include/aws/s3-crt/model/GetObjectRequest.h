@@ -60,7 +60,7 @@ namespace Model
      * Path-style requests are not supported. Directory bucket names must be unique in
      * the chosen Availability Zone. Bucket names must follow the format <code>
      * <i>bucket_base_name</i>--<i>az-id</i>--x-s3</code> (for example, <code>
-     * <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</code>). For information about
+     * <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</code>). For information about
      * bucket naming restrictions, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory
      * bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.</p> <p> <b>Access
@@ -99,7 +99,7 @@ namespace Model
      * Path-style requests are not supported. Directory bucket names must be unique in
      * the chosen Availability Zone. Bucket names must follow the format <code>
      * <i>bucket_base_name</i>--<i>az-id</i>--x-s3</code> (for example, <code>
-     * <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</code>). For information about
+     * <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</code>). For information about
      * bucket naming restrictions, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory
      * bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.</p> <p> <b>Access
@@ -138,7 +138,7 @@ namespace Model
      * Path-style requests are not supported. Directory bucket names must be unique in
      * the chosen Availability Zone. Bucket names must follow the format <code>
      * <i>bucket_base_name</i>--<i>az-id</i>--x-s3</code> (for example, <code>
-     * <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</code>). For information about
+     * <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</code>). For information about
      * bucket naming restrictions, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory
      * bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.</p> <p> <b>Access
@@ -177,7 +177,7 @@ namespace Model
      * Path-style requests are not supported. Directory bucket names must be unique in
      * the chosen Availability Zone. Bucket names must follow the format <code>
      * <i>bucket_base_name</i>--<i>az-id</i>--x-s3</code> (for example, <code>
-     * <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</code>). For information about
+     * <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</code>). For information about
      * bucket naming restrictions, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory
      * bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.</p> <p> <b>Access
@@ -216,7 +216,7 @@ namespace Model
      * Path-style requests are not supported. Directory bucket names must be unique in
      * the chosen Availability Zone. Bucket names must follow the format <code>
      * <i>bucket_base_name</i>--<i>az-id</i>--x-s3</code> (for example, <code>
-     * <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</code>). For information about
+     * <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</code>). For information about
      * bucket naming restrictions, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory
      * bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.</p> <p> <b>Access
@@ -255,7 +255,7 @@ namespace Model
      * Path-style requests are not supported. Directory bucket names must be unique in
      * the chosen Availability Zone. Bucket names must follow the format <code>
      * <i>bucket_base_name</i>--<i>az-id</i>--x-s3</code> (for example, <code>
-     * <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</code>). For information about
+     * <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</code>). For information about
      * bucket naming restrictions, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory
      * bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.</p> <p> <b>Access
@@ -294,7 +294,7 @@ namespace Model
      * Path-style requests are not supported. Directory bucket names must be unique in
      * the chosen Availability Zone. Bucket names must follow the format <code>
      * <i>bucket_base_name</i>--<i>az-id</i>--x-s3</code> (for example, <code>
-     * <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</code>). For information about
+     * <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</code>). For information about
      * bucket naming restrictions, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory
      * bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.</p> <p> <b>Access
@@ -333,7 +333,7 @@ namespace Model
      * Path-style requests are not supported. Directory bucket names must be unique in
      * the chosen Availability Zone. Bucket names must follow the format <code>
      * <i>bucket_base_name</i>--<i>az-id</i>--x-s3</code> (for example, <code>
-     * <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</code>). For information about
+     * <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</code>). For information about
      * bucket naming restrictions, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory
      * bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.</p> <p> <b>Access

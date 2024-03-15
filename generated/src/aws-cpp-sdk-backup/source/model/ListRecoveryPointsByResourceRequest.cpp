@@ -19,7 +19,9 @@ ListRecoveryPointsByResourceRequest::ListRecoveryPointsByResourceRequest() :
     m_resourceArnHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
+    m_maxResultsHasBeenSet(false),
+    m_managedByAWSBackupOnly(false),
+    m_managedByAWSBackupOnlyHasBeenSet(false)
 {
 }
 
@@ -42,6 +44,13 @@ void ListRecoveryPointsByResourceRequest::AddQueryStringParameters(URI& uri) con
     {
       ss << m_maxResults;
       uri.AddQueryStringParameter("maxResults", ss.str());
+      ss.str("");
+    }
+
+    if(m_managedByAWSBackupOnlyHasBeenSet)
+    {
+      ss << m_managedByAWSBackupOnly;
+      uri.AddQueryStringParameter("managedByAWSBackupOnly", ss.str());
       ss.str("");
     }
 

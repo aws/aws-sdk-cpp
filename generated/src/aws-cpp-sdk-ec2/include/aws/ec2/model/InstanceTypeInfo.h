@@ -22,6 +22,8 @@
 #include <aws/ec2/model/NitroEnclavesSupport.h>
 #include <aws/ec2/model/NitroTpmSupport.h>
 #include <aws/ec2/model/NitroTpmInfo.h>
+#include <aws/ec2/model/MediaAcceleratorInfo.h>
+#include <aws/ec2/model/NeuronInfo.h>
 #include <aws/ec2/model/UsageClassType.h>
 #include <aws/ec2/model/RootDeviceType.h>
 #include <aws/ec2/model/VirtualizationType.h>
@@ -894,6 +896,68 @@ namespace Model
      */
     inline InstanceTypeInfo& WithNitroTpmInfo(NitroTpmInfo&& value) { SetNitroTpmInfo(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Describes the media accelerator settings for the instance type.</p>
+     */
+    inline const MediaAcceleratorInfo& GetMediaAcceleratorInfo() const{ return m_mediaAcceleratorInfo; }
+
+    /**
+     * <p>Describes the media accelerator settings for the instance type.</p>
+     */
+    inline bool MediaAcceleratorInfoHasBeenSet() const { return m_mediaAcceleratorInfoHasBeenSet; }
+
+    /**
+     * <p>Describes the media accelerator settings for the instance type.</p>
+     */
+    inline void SetMediaAcceleratorInfo(const MediaAcceleratorInfo& value) { m_mediaAcceleratorInfoHasBeenSet = true; m_mediaAcceleratorInfo = value; }
+
+    /**
+     * <p>Describes the media accelerator settings for the instance type.</p>
+     */
+    inline void SetMediaAcceleratorInfo(MediaAcceleratorInfo&& value) { m_mediaAcceleratorInfoHasBeenSet = true; m_mediaAcceleratorInfo = std::move(value); }
+
+    /**
+     * <p>Describes the media accelerator settings for the instance type.</p>
+     */
+    inline InstanceTypeInfo& WithMediaAcceleratorInfo(const MediaAcceleratorInfo& value) { SetMediaAcceleratorInfo(value); return *this;}
+
+    /**
+     * <p>Describes the media accelerator settings for the instance type.</p>
+     */
+    inline InstanceTypeInfo& WithMediaAcceleratorInfo(MediaAcceleratorInfo&& value) { SetMediaAcceleratorInfo(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Describes the Neuron accelerator settings for the instance type.</p>
+     */
+    inline const NeuronInfo& GetNeuronInfo() const{ return m_neuronInfo; }
+
+    /**
+     * <p>Describes the Neuron accelerator settings for the instance type.</p>
+     */
+    inline bool NeuronInfoHasBeenSet() const { return m_neuronInfoHasBeenSet; }
+
+    /**
+     * <p>Describes the Neuron accelerator settings for the instance type.</p>
+     */
+    inline void SetNeuronInfo(const NeuronInfo& value) { m_neuronInfoHasBeenSet = true; m_neuronInfo = value; }
+
+    /**
+     * <p>Describes the Neuron accelerator settings for the instance type.</p>
+     */
+    inline void SetNeuronInfo(NeuronInfo&& value) { m_neuronInfoHasBeenSet = true; m_neuronInfo = std::move(value); }
+
+    /**
+     * <p>Describes the Neuron accelerator settings for the instance type.</p>
+     */
+    inline InstanceTypeInfo& WithNeuronInfo(const NeuronInfo& value) { SetNeuronInfo(value); return *this;}
+
+    /**
+     * <p>Describes the Neuron accelerator settings for the instance type.</p>
+     */
+    inline InstanceTypeInfo& WithNeuronInfo(NeuronInfo&& value) { SetNeuronInfo(std::move(value)); return *this;}
+
   private:
 
     InstanceType m_instanceType;
@@ -976,6 +1040,12 @@ namespace Model
 
     NitroTpmInfo m_nitroTpmInfo;
     bool m_nitroTpmInfoHasBeenSet = false;
+
+    MediaAcceleratorInfo m_mediaAcceleratorInfo;
+    bool m_mediaAcceleratorInfoHasBeenSet = false;
+
+    NeuronInfo m_neuronInfo;
+    bool m_neuronInfoHasBeenSet = false;
   };
 
 } // namespace Model

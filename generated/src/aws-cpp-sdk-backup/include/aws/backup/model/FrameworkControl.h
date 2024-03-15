@@ -134,42 +134,60 @@ namespace Model
     /**
      * <p>The scope of a control. The control scope defines what the control will
      * evaluate. Three examples of control scopes are: a specific backup plan, all
-     * backup plans with a specific tag, or all backup plans.</p>
+     * backup plans with a specific tag, or all backup plans.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ControlScope.html">
+     * <code>ControlScope</code>.</a> </p>
      */
     inline const ControlScope& GetControlScope() const{ return m_controlScope; }
 
     /**
      * <p>The scope of a control. The control scope defines what the control will
      * evaluate. Three examples of control scopes are: a specific backup plan, all
-     * backup plans with a specific tag, or all backup plans.</p>
+     * backup plans with a specific tag, or all backup plans.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ControlScope.html">
+     * <code>ControlScope</code>.</a> </p>
      */
     inline bool ControlScopeHasBeenSet() const { return m_controlScopeHasBeenSet; }
 
     /**
      * <p>The scope of a control. The control scope defines what the control will
      * evaluate. Three examples of control scopes are: a specific backup plan, all
-     * backup plans with a specific tag, or all backup plans.</p>
+     * backup plans with a specific tag, or all backup plans.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ControlScope.html">
+     * <code>ControlScope</code>.</a> </p>
      */
     inline void SetControlScope(const ControlScope& value) { m_controlScopeHasBeenSet = true; m_controlScope = value; }
 
     /**
      * <p>The scope of a control. The control scope defines what the control will
      * evaluate. Three examples of control scopes are: a specific backup plan, all
-     * backup plans with a specific tag, or all backup plans.</p>
+     * backup plans with a specific tag, or all backup plans.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ControlScope.html">
+     * <code>ControlScope</code>.</a> </p>
      */
     inline void SetControlScope(ControlScope&& value) { m_controlScopeHasBeenSet = true; m_controlScope = std::move(value); }
 
     /**
      * <p>The scope of a control. The control scope defines what the control will
      * evaluate. Three examples of control scopes are: a specific backup plan, all
-     * backup plans with a specific tag, or all backup plans.</p>
+     * backup plans with a specific tag, or all backup plans.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ControlScope.html">
+     * <code>ControlScope</code>.</a> </p>
      */
     inline FrameworkControl& WithControlScope(const ControlScope& value) { SetControlScope(value); return *this;}
 
     /**
      * <p>The scope of a control. The control scope defines what the control will
      * evaluate. Three examples of control scopes are: a specific backup plan, all
-     * backup plans with a specific tag, or all backup plans.</p>
+     * backup plans with a specific tag, or all backup plans.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ControlScope.html">
+     * <code>ControlScope</code>.</a> </p>
      */
     inline FrameworkControl& WithControlScope(ControlScope&& value) { SetControlScope(std::move(value)); return *this;}
 

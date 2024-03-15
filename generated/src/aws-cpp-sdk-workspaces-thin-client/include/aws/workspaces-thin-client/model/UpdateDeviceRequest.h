@@ -192,55 +192,6 @@ namespace Model
      */
     inline UpdateDeviceRequest& WithSoftwareSetUpdateSchedule(SoftwareSetUpdateSchedule&& value) { SetSoftwareSetUpdateSchedule(std::move(value)); return *this;}
 
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Key Management Service key to use for
-     * the update.</p>
-     */
-    inline const Aws::String& GetKmsKeyArn() const{ return m_kmsKeyArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Key Management Service key to use for
-     * the update.</p>
-     */
-    inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Key Management Service key to use for
-     * the update.</p>
-     */
-    inline void SetKmsKeyArn(const Aws::String& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Key Management Service key to use for
-     * the update.</p>
-     */
-    inline void SetKmsKeyArn(Aws::String&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Key Management Service key to use for
-     * the update.</p>
-     */
-    inline void SetKmsKeyArn(const char* value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Key Management Service key to use for
-     * the update.</p>
-     */
-    inline UpdateDeviceRequest& WithKmsKeyArn(const Aws::String& value) { SetKmsKeyArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Key Management Service key to use for
-     * the update.</p>
-     */
-    inline UpdateDeviceRequest& WithKmsKeyArn(Aws::String&& value) { SetKmsKeyArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Key Management Service key to use for
-     * the update.</p>
-     */
-    inline UpdateDeviceRequest& WithKmsKeyArn(const char* value) { SetKmsKeyArn(value); return *this;}
-
   private:
 
     Aws::String m_id;
@@ -254,9 +205,6 @@ namespace Model
 
     SoftwareSetUpdateSchedule m_softwareSetUpdateSchedule;
     bool m_softwareSetUpdateScheduleHasBeenSet = false;
-
-    Aws::String m_kmsKeyArn;
-    bool m_kmsKeyArnHasBeenSet = false;
   };
 
 } // namespace Model
