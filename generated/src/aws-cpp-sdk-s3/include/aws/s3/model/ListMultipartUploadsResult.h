@@ -117,44 +117,72 @@ namespace Model
 
 
     /**
-     * <p>Upload ID after which listing began.</p>  <p>This functionality is not
-     * supported for directory buckets.</p> 
+     * <p>Together with key-marker, specifies the multipart upload after which listing
+     * should begin. If key-marker is not specified, the upload-id-marker parameter is
+     * ignored. Otherwise, any multipart uploads for a key equal to the key-marker
+     * might be included in the list only if they have an upload ID lexicographically
+     * greater than the specified <code>upload-id-marker</code>.</p>  <p>This
+     * functionality is not supported for directory buckets.</p> 
      */
     inline const Aws::String& GetUploadIdMarker() const{ return m_uploadIdMarker; }
 
     /**
-     * <p>Upload ID after which listing began.</p>  <p>This functionality is not
-     * supported for directory buckets.</p> 
+     * <p>Together with key-marker, specifies the multipart upload after which listing
+     * should begin. If key-marker is not specified, the upload-id-marker parameter is
+     * ignored. Otherwise, any multipart uploads for a key equal to the key-marker
+     * might be included in the list only if they have an upload ID lexicographically
+     * greater than the specified <code>upload-id-marker</code>.</p>  <p>This
+     * functionality is not supported for directory buckets.</p> 
      */
     inline void SetUploadIdMarker(const Aws::String& value) { m_uploadIdMarker = value; }
 
     /**
-     * <p>Upload ID after which listing began.</p>  <p>This functionality is not
-     * supported for directory buckets.</p> 
+     * <p>Together with key-marker, specifies the multipart upload after which listing
+     * should begin. If key-marker is not specified, the upload-id-marker parameter is
+     * ignored. Otherwise, any multipart uploads for a key equal to the key-marker
+     * might be included in the list only if they have an upload ID lexicographically
+     * greater than the specified <code>upload-id-marker</code>.</p>  <p>This
+     * functionality is not supported for directory buckets.</p> 
      */
     inline void SetUploadIdMarker(Aws::String&& value) { m_uploadIdMarker = std::move(value); }
 
     /**
-     * <p>Upload ID after which listing began.</p>  <p>This functionality is not
-     * supported for directory buckets.</p> 
+     * <p>Together with key-marker, specifies the multipart upload after which listing
+     * should begin. If key-marker is not specified, the upload-id-marker parameter is
+     * ignored. Otherwise, any multipart uploads for a key equal to the key-marker
+     * might be included in the list only if they have an upload ID lexicographically
+     * greater than the specified <code>upload-id-marker</code>.</p>  <p>This
+     * functionality is not supported for directory buckets.</p> 
      */
     inline void SetUploadIdMarker(const char* value) { m_uploadIdMarker.assign(value); }
 
     /**
-     * <p>Upload ID after which listing began.</p>  <p>This functionality is not
-     * supported for directory buckets.</p> 
+     * <p>Together with key-marker, specifies the multipart upload after which listing
+     * should begin. If key-marker is not specified, the upload-id-marker parameter is
+     * ignored. Otherwise, any multipart uploads for a key equal to the key-marker
+     * might be included in the list only if they have an upload ID lexicographically
+     * greater than the specified <code>upload-id-marker</code>.</p>  <p>This
+     * functionality is not supported for directory buckets.</p> 
      */
     inline ListMultipartUploadsResult& WithUploadIdMarker(const Aws::String& value) { SetUploadIdMarker(value); return *this;}
 
     /**
-     * <p>Upload ID after which listing began.</p>  <p>This functionality is not
-     * supported for directory buckets.</p> 
+     * <p>Together with key-marker, specifies the multipart upload after which listing
+     * should begin. If key-marker is not specified, the upload-id-marker parameter is
+     * ignored. Otherwise, any multipart uploads for a key equal to the key-marker
+     * might be included in the list only if they have an upload ID lexicographically
+     * greater than the specified <code>upload-id-marker</code>.</p>  <p>This
+     * functionality is not supported for directory buckets.</p> 
      */
     inline ListMultipartUploadsResult& WithUploadIdMarker(Aws::String&& value) { SetUploadIdMarker(std::move(value)); return *this;}
 
     /**
-     * <p>Upload ID after which listing began.</p>  <p>This functionality is not
-     * supported for directory buckets.</p> 
+     * <p>Together with key-marker, specifies the multipart upload after which listing
+     * should begin. If key-marker is not specified, the upload-id-marker parameter is
+     * ignored. Otherwise, any multipart uploads for a key equal to the key-marker
+     * might be included in the list only if they have an upload ID lexicographically
+     * greater than the specified <code>upload-id-marker</code>.</p>  <p>This
+     * functionality is not supported for directory buckets.</p> 
      */
     inline ListMultipartUploadsResult& WithUploadIdMarker(const char* value) { SetUploadIdMarker(value); return *this;}
 

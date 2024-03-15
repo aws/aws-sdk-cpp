@@ -21,6 +21,8 @@ CreateFleetRequest::CreateFleetRequest() :
     m_computeType(ComputeType::NOT_SET),
     m_computeTypeHasBeenSet(false),
     m_scalingConfigurationHasBeenSet(false),
+    m_overflowBehavior(FleetOverflowBehavior::NOT_SET),
+    m_overflowBehaviorHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -55,6 +57,11 @@ Aws::String CreateFleetRequest::SerializePayload() const
   {
    payload.WithObject("scalingConfiguration", m_scalingConfiguration.Jsonize());
 
+  }
+
+  if(m_overflowBehaviorHasBeenSet)
+  {
+   payload.WithString("overflowBehavior", FleetOverflowBehaviorMapper::GetNameForFleetOverflowBehavior(m_overflowBehavior));
   }
 
   if(m_tagsHasBeenSet)

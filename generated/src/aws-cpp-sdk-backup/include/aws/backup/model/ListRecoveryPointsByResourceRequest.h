@@ -176,6 +176,43 @@ namespace Model
      */
     inline ListRecoveryPointsByResourceRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
+
+    /**
+     * <p>This attribute filters recovery points based on ownership.</p> <p>If this is
+     * set to <code>TRUE</code>, the response will contain recovery points associated
+     * with the selected resources that are managed by Backup.</p> <p>If this is set to
+     * <code>FALSE</code>, the response will contain all recovery points associated
+     * with the selected resource.</p> <p>Type: Boolean</p>
+     */
+    inline bool GetManagedByAWSBackupOnly() const{ return m_managedByAWSBackupOnly; }
+
+    /**
+     * <p>This attribute filters recovery points based on ownership.</p> <p>If this is
+     * set to <code>TRUE</code>, the response will contain recovery points associated
+     * with the selected resources that are managed by Backup.</p> <p>If this is set to
+     * <code>FALSE</code>, the response will contain all recovery points associated
+     * with the selected resource.</p> <p>Type: Boolean</p>
+     */
+    inline bool ManagedByAWSBackupOnlyHasBeenSet() const { return m_managedByAWSBackupOnlyHasBeenSet; }
+
+    /**
+     * <p>This attribute filters recovery points based on ownership.</p> <p>If this is
+     * set to <code>TRUE</code>, the response will contain recovery points associated
+     * with the selected resources that are managed by Backup.</p> <p>If this is set to
+     * <code>FALSE</code>, the response will contain all recovery points associated
+     * with the selected resource.</p> <p>Type: Boolean</p>
+     */
+    inline void SetManagedByAWSBackupOnly(bool value) { m_managedByAWSBackupOnlyHasBeenSet = true; m_managedByAWSBackupOnly = value; }
+
+    /**
+     * <p>This attribute filters recovery points based on ownership.</p> <p>If this is
+     * set to <code>TRUE</code>, the response will contain recovery points associated
+     * with the selected resources that are managed by Backup.</p> <p>If this is set to
+     * <code>FALSE</code>, the response will contain all recovery points associated
+     * with the selected resource.</p> <p>Type: Boolean</p>
+     */
+    inline ListRecoveryPointsByResourceRequest& WithManagedByAWSBackupOnly(bool value) { SetManagedByAWSBackupOnly(value); return *this;}
+
   private:
 
     Aws::String m_resourceArn;
@@ -186,6 +223,9 @@ namespace Model
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet = false;
+
+    bool m_managedByAWSBackupOnly;
+    bool m_managedByAWSBackupOnlyHasBeenSet = false;
   };
 
 } // namespace Model

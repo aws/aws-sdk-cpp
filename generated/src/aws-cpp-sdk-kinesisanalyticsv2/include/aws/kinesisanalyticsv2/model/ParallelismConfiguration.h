@@ -27,9 +27,9 @@ namespace Model
    * <p>Describes parameters for how a Managed Service for Apache Flink application
    * executes multiple tasks simultaneously. For more information about parallelism,
    * see <a
-   * href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/dev/parallel.html">Parallel
+   * href="https://nightlies.apache.org/flink/flink-docs-release-1.18/dev/parallel.html">Parallel
    * Execution</a> in the <a
-   * href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache Flink
+   * href="https://nightlies.apache.org/flink/flink-docs-release-1.18/">Apache Flink
    * Documentation</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ParallelismConfiguration">AWS
    * API Reference</a></p>

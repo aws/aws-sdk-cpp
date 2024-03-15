@@ -669,7 +669,10 @@ namespace Model
      * <p>The launch specifications for the Spot Fleet request. If you specify
      * <code>LaunchSpecifications</code>, you can't specify
      * <code>LaunchTemplateConfigs</code>. If you include On-Demand capacity in your
-     * request, you must use <code>LaunchTemplateConfigs</code>.</p>
+     * request, you must use <code>LaunchTemplateConfigs</code>.</p>  <p>If an
+     * AMI specified in a launch specification is deregistered or disabled, no new
+     * instances can be launched from the AMI. For fleets of type
+     * <code>maintain</code>, the target capacity will not be maintained.</p> 
      */
     inline const Aws::Vector<SpotFleetLaunchSpecification>& GetLaunchSpecifications() const{ return m_launchSpecifications; }
 
@@ -677,7 +680,10 @@ namespace Model
      * <p>The launch specifications for the Spot Fleet request. If you specify
      * <code>LaunchSpecifications</code>, you can't specify
      * <code>LaunchTemplateConfigs</code>. If you include On-Demand capacity in your
-     * request, you must use <code>LaunchTemplateConfigs</code>.</p>
+     * request, you must use <code>LaunchTemplateConfigs</code>.</p>  <p>If an
+     * AMI specified in a launch specification is deregistered or disabled, no new
+     * instances can be launched from the AMI. For fleets of type
+     * <code>maintain</code>, the target capacity will not be maintained.</p> 
      */
     inline bool LaunchSpecificationsHasBeenSet() const { return m_launchSpecificationsHasBeenSet; }
 
@@ -685,7 +691,10 @@ namespace Model
      * <p>The launch specifications for the Spot Fleet request. If you specify
      * <code>LaunchSpecifications</code>, you can't specify
      * <code>LaunchTemplateConfigs</code>. If you include On-Demand capacity in your
-     * request, you must use <code>LaunchTemplateConfigs</code>.</p>
+     * request, you must use <code>LaunchTemplateConfigs</code>.</p>  <p>If an
+     * AMI specified in a launch specification is deregistered or disabled, no new
+     * instances can be launched from the AMI. For fleets of type
+     * <code>maintain</code>, the target capacity will not be maintained.</p> 
      */
     inline void SetLaunchSpecifications(const Aws::Vector<SpotFleetLaunchSpecification>& value) { m_launchSpecificationsHasBeenSet = true; m_launchSpecifications = value; }
 
@@ -693,7 +702,10 @@ namespace Model
      * <p>The launch specifications for the Spot Fleet request. If you specify
      * <code>LaunchSpecifications</code>, you can't specify
      * <code>LaunchTemplateConfigs</code>. If you include On-Demand capacity in your
-     * request, you must use <code>LaunchTemplateConfigs</code>.</p>
+     * request, you must use <code>LaunchTemplateConfigs</code>.</p>  <p>If an
+     * AMI specified in a launch specification is deregistered or disabled, no new
+     * instances can be launched from the AMI. For fleets of type
+     * <code>maintain</code>, the target capacity will not be maintained.</p> 
      */
     inline void SetLaunchSpecifications(Aws::Vector<SpotFleetLaunchSpecification>&& value) { m_launchSpecificationsHasBeenSet = true; m_launchSpecifications = std::move(value); }
 
@@ -701,7 +713,10 @@ namespace Model
      * <p>The launch specifications for the Spot Fleet request. If you specify
      * <code>LaunchSpecifications</code>, you can't specify
      * <code>LaunchTemplateConfigs</code>. If you include On-Demand capacity in your
-     * request, you must use <code>LaunchTemplateConfigs</code>.</p>
+     * request, you must use <code>LaunchTemplateConfigs</code>.</p>  <p>If an
+     * AMI specified in a launch specification is deregistered or disabled, no new
+     * instances can be launched from the AMI. For fleets of type
+     * <code>maintain</code>, the target capacity will not be maintained.</p> 
      */
     inline SpotFleetRequestConfigData& WithLaunchSpecifications(const Aws::Vector<SpotFleetLaunchSpecification>& value) { SetLaunchSpecifications(value); return *this;}
 
@@ -709,7 +724,10 @@ namespace Model
      * <p>The launch specifications for the Spot Fleet request. If you specify
      * <code>LaunchSpecifications</code>, you can't specify
      * <code>LaunchTemplateConfigs</code>. If you include On-Demand capacity in your
-     * request, you must use <code>LaunchTemplateConfigs</code>.</p>
+     * request, you must use <code>LaunchTemplateConfigs</code>.</p>  <p>If an
+     * AMI specified in a launch specification is deregistered or disabled, no new
+     * instances can be launched from the AMI. For fleets of type
+     * <code>maintain</code>, the target capacity will not be maintained.</p> 
      */
     inline SpotFleetRequestConfigData& WithLaunchSpecifications(Aws::Vector<SpotFleetLaunchSpecification>&& value) { SetLaunchSpecifications(std::move(value)); return *this;}
 
@@ -717,7 +735,10 @@ namespace Model
      * <p>The launch specifications for the Spot Fleet request. If you specify
      * <code>LaunchSpecifications</code>, you can't specify
      * <code>LaunchTemplateConfigs</code>. If you include On-Demand capacity in your
-     * request, you must use <code>LaunchTemplateConfigs</code>.</p>
+     * request, you must use <code>LaunchTemplateConfigs</code>.</p>  <p>If an
+     * AMI specified in a launch specification is deregistered or disabled, no new
+     * instances can be launched from the AMI. For fleets of type
+     * <code>maintain</code>, the target capacity will not be maintained.</p> 
      */
     inline SpotFleetRequestConfigData& AddLaunchSpecifications(const SpotFleetLaunchSpecification& value) { m_launchSpecificationsHasBeenSet = true; m_launchSpecifications.push_back(value); return *this; }
 
@@ -725,7 +746,10 @@ namespace Model
      * <p>The launch specifications for the Spot Fleet request. If you specify
      * <code>LaunchSpecifications</code>, you can't specify
      * <code>LaunchTemplateConfigs</code>. If you include On-Demand capacity in your
-     * request, you must use <code>LaunchTemplateConfigs</code>.</p>
+     * request, you must use <code>LaunchTemplateConfigs</code>.</p>  <p>If an
+     * AMI specified in a launch specification is deregistered or disabled, no new
+     * instances can be launched from the AMI. For fleets of type
+     * <code>maintain</code>, the target capacity will not be maintained.</p> 
      */
     inline SpotFleetRequestConfigData& AddLaunchSpecifications(SpotFleetLaunchSpecification&& value) { m_launchSpecificationsHasBeenSet = true; m_launchSpecifications.push_back(std::move(value)); return *this; }
 

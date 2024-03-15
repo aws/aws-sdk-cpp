@@ -32,6 +32,8 @@ Fleet::Fleet() :
     m_computeType(ComputeType::NOT_SET),
     m_computeTypeHasBeenSet(false),
     m_scalingConfigurationHasBeenSet(false),
+    m_overflowBehavior(FleetOverflowBehavior::NOT_SET),
+    m_overflowBehaviorHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -50,6 +52,8 @@ Fleet::Fleet(JsonView jsonValue) :
     m_computeType(ComputeType::NOT_SET),
     m_computeTypeHasBeenSet(false),
     m_scalingConfigurationHasBeenSet(false),
+    m_overflowBehavior(FleetOverflowBehavior::NOT_SET),
+    m_overflowBehaviorHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -127,6 +131,13 @@ Fleet& Fleet::operator =(JsonView jsonValue)
     m_scalingConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("overflowBehavior"))
+  {
+    m_overflowBehavior = FleetOverflowBehaviorMapper::GetFleetOverflowBehaviorForName(jsonValue.GetString("overflowBehavior"));
+
+    m_overflowBehaviorHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
@@ -198,6 +209,11 @@ JsonValue Fleet::Jsonize() const
   {
    payload.WithObject("scalingConfiguration", m_scalingConfiguration.Jsonize());
 
+  }
+
+  if(m_overflowBehaviorHasBeenSet)
+  {
+   payload.WithString("overflowBehavior", FleetOverflowBehaviorMapper::GetNameForFleetOverflowBehavior(m_overflowBehavior));
   }
 
   if(m_tagsHasBeenSet)

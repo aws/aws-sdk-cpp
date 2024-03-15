@@ -215,7 +215,7 @@ namespace Model
      * Path-style requests are not supported. Directory bucket names must be unique in
      * the chosen Availability Zone. Bucket names must follow the format <code>
      * <i>bucket_base_name</i>--<i>az-id</i>--x-s3</code> (for example, <code>
-     * <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</code>). For information about
+     * <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</code>). For information about
      * bucket naming restrictions, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory
      * bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.</p> <p> <b>Access
@@ -250,7 +250,7 @@ namespace Model
      * Path-style requests are not supported. Directory bucket names must be unique in
      * the chosen Availability Zone. Bucket names must follow the format <code>
      * <i>bucket_base_name</i>--<i>az-id</i>--x-s3</code> (for example, <code>
-     * <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</code>). For information about
+     * <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</code>). For information about
      * bucket naming restrictions, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory
      * bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.</p> <p> <b>Access
@@ -285,7 +285,7 @@ namespace Model
      * Path-style requests are not supported. Directory bucket names must be unique in
      * the chosen Availability Zone. Bucket names must follow the format <code>
      * <i>bucket_base_name</i>--<i>az-id</i>--x-s3</code> (for example, <code>
-     * <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</code>). For information about
+     * <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</code>). For information about
      * bucket naming restrictions, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory
      * bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.</p> <p> <b>Access
@@ -320,7 +320,7 @@ namespace Model
      * Path-style requests are not supported. Directory bucket names must be unique in
      * the chosen Availability Zone. Bucket names must follow the format <code>
      * <i>bucket_base_name</i>--<i>az-id</i>--x-s3</code> (for example, <code>
-     * <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</code>). For information about
+     * <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</code>). For information about
      * bucket naming restrictions, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory
      * bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.</p> <p> <b>Access
@@ -355,7 +355,7 @@ namespace Model
      * Path-style requests are not supported. Directory bucket names must be unique in
      * the chosen Availability Zone. Bucket names must follow the format <code>
      * <i>bucket_base_name</i>--<i>az-id</i>--x-s3</code> (for example, <code>
-     * <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</code>). For information about
+     * <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</code>). For information about
      * bucket naming restrictions, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory
      * bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.</p> <p> <b>Access
@@ -390,7 +390,7 @@ namespace Model
      * Path-style requests are not supported. Directory bucket names must be unique in
      * the chosen Availability Zone. Bucket names must follow the format <code>
      * <i>bucket_base_name</i>--<i>az-id</i>--x-s3</code> (for example, <code>
-     * <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</code>). For information about
+     * <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</code>). For information about
      * bucket naming restrictions, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory
      * bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.</p> <p> <b>Access
@@ -425,7 +425,7 @@ namespace Model
      * Path-style requests are not supported. Directory bucket names must be unique in
      * the chosen Availability Zone. Bucket names must follow the format <code>
      * <i>bucket_base_name</i>--<i>az-id</i>--x-s3</code> (for example, <code>
-     * <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</code>). For information about
+     * <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</code>). For information about
      * bucket naming restrictions, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory
      * bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.</p> <p> <b>Access
@@ -460,7 +460,7 @@ namespace Model
      * Path-style requests are not supported. Directory bucket names must be unique in
      * the chosen Availability Zone. Bucket names must follow the format <code>
      * <i>bucket_base_name</i>--<i>az-id</i>--x-s3</code> (for example, <code>
-     * <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</code>). For information about
+     * <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</code>). For information about
      * bucket naming restrictions, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory
      * bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.</p> <p> <b>Access
@@ -2340,7 +2340,7 @@ namespace Model
     /**
      * <p>The server-side encryption algorithm used when storing this object in Amazon
      * S3 (for example, <code>AES256</code>, <code>aws:kms</code>,
-     * <code>aws:kms:dsse</code>). Unrecognized or unsupported values won���t write a
+     * <code>aws:kms:dsse</code>). Unrecognized or unsupported values won’t write a
      * destination object and will receive a <code>400 Bad Request</code> response.
      * </p> <p>Amazon S3 automatically encrypts all new objects that are copied to an
      * S3 bucket. When copying an object, if you don't specify encryption information
@@ -2372,7 +2372,7 @@ namespace Model
     /**
      * <p>The server-side encryption algorithm used when storing this object in Amazon
      * S3 (for example, <code>AES256</code>, <code>aws:kms</code>,
-     * <code>aws:kms:dsse</code>). Unrecognized or unsupported values won���t write a
+     * <code>aws:kms:dsse</code>). Unrecognized or unsupported values won’t write a
      * destination object and will receive a <code>400 Bad Request</code> response.
      * </p> <p>Amazon S3 automatically encrypts all new objects that are copied to an
      * S3 bucket. When copying an object, if you don't specify encryption information
@@ -2404,7 +2404,7 @@ namespace Model
     /**
      * <p>The server-side encryption algorithm used when storing this object in Amazon
      * S3 (for example, <code>AES256</code>, <code>aws:kms</code>,
-     * <code>aws:kms:dsse</code>). Unrecognized or unsupported values won���t write a
+     * <code>aws:kms:dsse</code>). Unrecognized or unsupported values won’t write a
      * destination object and will receive a <code>400 Bad Request</code> response.
      * </p> <p>Amazon S3 automatically encrypts all new objects that are copied to an
      * S3 bucket. When copying an object, if you don't specify encryption information
@@ -2436,7 +2436,7 @@ namespace Model
     /**
      * <p>The server-side encryption algorithm used when storing this object in Amazon
      * S3 (for example, <code>AES256</code>, <code>aws:kms</code>,
-     * <code>aws:kms:dsse</code>). Unrecognized or unsupported values won���t write a
+     * <code>aws:kms:dsse</code>). Unrecognized or unsupported values won’t write a
      * destination object and will receive a <code>400 Bad Request</code> response.
      * </p> <p>Amazon S3 automatically encrypts all new objects that are copied to an
      * S3 bucket. When copying an object, if you don't specify encryption information
@@ -2468,7 +2468,7 @@ namespace Model
     /**
      * <p>The server-side encryption algorithm used when storing this object in Amazon
      * S3 (for example, <code>AES256</code>, <code>aws:kms</code>,
-     * <code>aws:kms:dsse</code>). Unrecognized or unsupported values won���t write a
+     * <code>aws:kms:dsse</code>). Unrecognized or unsupported values won’t write a
      * destination object and will receive a <code>400 Bad Request</code> response.
      * </p> <p>Amazon S3 automatically encrypts all new objects that are copied to an
      * S3 bucket. When copying an object, if you don't specify encryption information
@@ -2500,7 +2500,7 @@ namespace Model
     /**
      * <p>The server-side encryption algorithm used when storing this object in Amazon
      * S3 (for example, <code>AES256</code>, <code>aws:kms</code>,
-     * <code>aws:kms:dsse</code>). Unrecognized or unsupported values won���t write a
+     * <code>aws:kms:dsse</code>). Unrecognized or unsupported values won’t write a
      * destination object and will receive a <code>400 Bad Request</code> response.
      * </p> <p>Amazon S3 automatically encrypts all new objects that are copied to an
      * S3 bucket. When copying an object, if you don't specify encryption information

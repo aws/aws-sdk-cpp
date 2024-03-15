@@ -19,12 +19,14 @@ namespace Model
 {
 
 UserSearchFilter::UserSearchFilter() : 
-    m_tagFilterHasBeenSet(false)
+    m_tagFilterHasBeenSet(false),
+    m_userAttributeFilterHasBeenSet(false)
 {
 }
 
 UserSearchFilter::UserSearchFilter(JsonView jsonValue) : 
-    m_tagFilterHasBeenSet(false)
+    m_tagFilterHasBeenSet(false),
+    m_userAttributeFilterHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -38,6 +40,13 @@ UserSearchFilter& UserSearchFilter::operator =(JsonView jsonValue)
     m_tagFilterHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("UserAttributeFilter"))
+  {
+    m_userAttributeFilter = jsonValue.GetObject("UserAttributeFilter");
+
+    m_userAttributeFilterHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +57,12 @@ JsonValue UserSearchFilter::Jsonize() const
   if(m_tagFilterHasBeenSet)
   {
    payload.WithObject("TagFilter", m_tagFilter.Jsonize());
+
+  }
+
+  if(m_userAttributeFilterHasBeenSet)
+  {
+   payload.WithObject("UserAttributeFilter", m_userAttributeFilter.Jsonize());
 
   }
 

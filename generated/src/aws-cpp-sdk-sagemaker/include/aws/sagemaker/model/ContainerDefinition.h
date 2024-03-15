@@ -656,93 +656,119 @@ namespace Model
 
 
     /**
-     * <p>The environment variables to set in the Docker container. Each key and value
-     * in the <code>Environment</code> string to string map can have length of up to
-     * 1024. We support up to 16 entries in the map. </p>
+     * <p>The environment variables to set in the Docker container.</p> <p>The maximum
+     * length of each key and value in the <code>Environment</code> map is 1024 bytes.
+     * The maximum length of all keys and values in the map, combined, is 32 KB. If you
+     * pass multiple containers to a <code>CreateModel</code> request, then the maximum
+     * length of all of their maps, combined, is also 32 KB.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetEnvironment() const{ return m_environment; }
 
     /**
-     * <p>The environment variables to set in the Docker container. Each key and value
-     * in the <code>Environment</code> string to string map can have length of up to
-     * 1024. We support up to 16 entries in the map. </p>
+     * <p>The environment variables to set in the Docker container.</p> <p>The maximum
+     * length of each key and value in the <code>Environment</code> map is 1024 bytes.
+     * The maximum length of all keys and values in the map, combined, is 32 KB. If you
+     * pass multiple containers to a <code>CreateModel</code> request, then the maximum
+     * length of all of their maps, combined, is also 32 KB.</p>
      */
     inline bool EnvironmentHasBeenSet() const { return m_environmentHasBeenSet; }
 
     /**
-     * <p>The environment variables to set in the Docker container. Each key and value
-     * in the <code>Environment</code> string to string map can have length of up to
-     * 1024. We support up to 16 entries in the map. </p>
+     * <p>The environment variables to set in the Docker container.</p> <p>The maximum
+     * length of each key and value in the <code>Environment</code> map is 1024 bytes.
+     * The maximum length of all keys and values in the map, combined, is 32 KB. If you
+     * pass multiple containers to a <code>CreateModel</code> request, then the maximum
+     * length of all of their maps, combined, is also 32 KB.</p>
      */
     inline void SetEnvironment(const Aws::Map<Aws::String, Aws::String>& value) { m_environmentHasBeenSet = true; m_environment = value; }
 
     /**
-     * <p>The environment variables to set in the Docker container. Each key and value
-     * in the <code>Environment</code> string to string map can have length of up to
-     * 1024. We support up to 16 entries in the map. </p>
+     * <p>The environment variables to set in the Docker container.</p> <p>The maximum
+     * length of each key and value in the <code>Environment</code> map is 1024 bytes.
+     * The maximum length of all keys and values in the map, combined, is 32 KB. If you
+     * pass multiple containers to a <code>CreateModel</code> request, then the maximum
+     * length of all of their maps, combined, is also 32 KB.</p>
      */
     inline void SetEnvironment(Aws::Map<Aws::String, Aws::String>&& value) { m_environmentHasBeenSet = true; m_environment = std::move(value); }
 
     /**
-     * <p>The environment variables to set in the Docker container. Each key and value
-     * in the <code>Environment</code> string to string map can have length of up to
-     * 1024. We support up to 16 entries in the map. </p>
+     * <p>The environment variables to set in the Docker container.</p> <p>The maximum
+     * length of each key and value in the <code>Environment</code> map is 1024 bytes.
+     * The maximum length of all keys and values in the map, combined, is 32 KB. If you
+     * pass multiple containers to a <code>CreateModel</code> request, then the maximum
+     * length of all of their maps, combined, is also 32 KB.</p>
      */
     inline ContainerDefinition& WithEnvironment(const Aws::Map<Aws::String, Aws::String>& value) { SetEnvironment(value); return *this;}
 
     /**
-     * <p>The environment variables to set in the Docker container. Each key and value
-     * in the <code>Environment</code> string to string map can have length of up to
-     * 1024. We support up to 16 entries in the map. </p>
+     * <p>The environment variables to set in the Docker container.</p> <p>The maximum
+     * length of each key and value in the <code>Environment</code> map is 1024 bytes.
+     * The maximum length of all keys and values in the map, combined, is 32 KB. If you
+     * pass multiple containers to a <code>CreateModel</code> request, then the maximum
+     * length of all of their maps, combined, is also 32 KB.</p>
      */
     inline ContainerDefinition& WithEnvironment(Aws::Map<Aws::String, Aws::String>&& value) { SetEnvironment(std::move(value)); return *this;}
 
     /**
-     * <p>The environment variables to set in the Docker container. Each key and value
-     * in the <code>Environment</code> string to string map can have length of up to
-     * 1024. We support up to 16 entries in the map. </p>
+     * <p>The environment variables to set in the Docker container.</p> <p>The maximum
+     * length of each key and value in the <code>Environment</code> map is 1024 bytes.
+     * The maximum length of all keys and values in the map, combined, is 32 KB. If you
+     * pass multiple containers to a <code>CreateModel</code> request, then the maximum
+     * length of all of their maps, combined, is also 32 KB.</p>
      */
     inline ContainerDefinition& AddEnvironment(const Aws::String& key, const Aws::String& value) { m_environmentHasBeenSet = true; m_environment.emplace(key, value); return *this; }
 
     /**
-     * <p>The environment variables to set in the Docker container. Each key and value
-     * in the <code>Environment</code> string to string map can have length of up to
-     * 1024. We support up to 16 entries in the map. </p>
+     * <p>The environment variables to set in the Docker container.</p> <p>The maximum
+     * length of each key and value in the <code>Environment</code> map is 1024 bytes.
+     * The maximum length of all keys and values in the map, combined, is 32 KB. If you
+     * pass multiple containers to a <code>CreateModel</code> request, then the maximum
+     * length of all of their maps, combined, is also 32 KB.</p>
      */
     inline ContainerDefinition& AddEnvironment(Aws::String&& key, const Aws::String& value) { m_environmentHasBeenSet = true; m_environment.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The environment variables to set in the Docker container. Each key and value
-     * in the <code>Environment</code> string to string map can have length of up to
-     * 1024. We support up to 16 entries in the map. </p>
+     * <p>The environment variables to set in the Docker container.</p> <p>The maximum
+     * length of each key and value in the <code>Environment</code> map is 1024 bytes.
+     * The maximum length of all keys and values in the map, combined, is 32 KB. If you
+     * pass multiple containers to a <code>CreateModel</code> request, then the maximum
+     * length of all of their maps, combined, is also 32 KB.</p>
      */
     inline ContainerDefinition& AddEnvironment(const Aws::String& key, Aws::String&& value) { m_environmentHasBeenSet = true; m_environment.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The environment variables to set in the Docker container. Each key and value
-     * in the <code>Environment</code> string to string map can have length of up to
-     * 1024. We support up to 16 entries in the map. </p>
+     * <p>The environment variables to set in the Docker container.</p> <p>The maximum
+     * length of each key and value in the <code>Environment</code> map is 1024 bytes.
+     * The maximum length of all keys and values in the map, combined, is 32 KB. If you
+     * pass multiple containers to a <code>CreateModel</code> request, then the maximum
+     * length of all of their maps, combined, is also 32 KB.</p>
      */
     inline ContainerDefinition& AddEnvironment(Aws::String&& key, Aws::String&& value) { m_environmentHasBeenSet = true; m_environment.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The environment variables to set in the Docker container. Each key and value
-     * in the <code>Environment</code> string to string map can have length of up to
-     * 1024. We support up to 16 entries in the map. </p>
+     * <p>The environment variables to set in the Docker container.</p> <p>The maximum
+     * length of each key and value in the <code>Environment</code> map is 1024 bytes.
+     * The maximum length of all keys and values in the map, combined, is 32 KB. If you
+     * pass multiple containers to a <code>CreateModel</code> request, then the maximum
+     * length of all of their maps, combined, is also 32 KB.</p>
      */
     inline ContainerDefinition& AddEnvironment(const char* key, Aws::String&& value) { m_environmentHasBeenSet = true; m_environment.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The environment variables to set in the Docker container. Each key and value
-     * in the <code>Environment</code> string to string map can have length of up to
-     * 1024. We support up to 16 entries in the map. </p>
+     * <p>The environment variables to set in the Docker container.</p> <p>The maximum
+     * length of each key and value in the <code>Environment</code> map is 1024 bytes.
+     * The maximum length of all keys and values in the map, combined, is 32 KB. If you
+     * pass multiple containers to a <code>CreateModel</code> request, then the maximum
+     * length of all of their maps, combined, is also 32 KB.</p>
      */
     inline ContainerDefinition& AddEnvironment(Aws::String&& key, const char* value) { m_environmentHasBeenSet = true; m_environment.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The environment variables to set in the Docker container. Each key and value
-     * in the <code>Environment</code> string to string map can have length of up to
-     * 1024. We support up to 16 entries in the map. </p>
+     * <p>The environment variables to set in the Docker container.</p> <p>The maximum
+     * length of each key and value in the <code>Environment</code> map is 1024 bytes.
+     * The maximum length of all keys and values in the map, combined, is 32 KB. If you
+     * pass multiple containers to a <code>CreateModel</code> request, then the maximum
+     * length of all of their maps, combined, is also 32 KB.</p>
      */
     inline ContainerDefinition& AddEnvironment(const char* key, const char* value) { m_environmentHasBeenSet = true; m_environment.emplace(key, value); return *this; }
 

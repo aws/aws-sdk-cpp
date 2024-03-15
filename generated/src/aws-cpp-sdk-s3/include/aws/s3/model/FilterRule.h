@@ -24,10 +24,17 @@ namespace Model
 {
 
   /**
-   * <p>Specifies the Amazon S3 object key name to filter on and whether to filter on
-   * the suffix or prefix of the key name.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/FilterRule">AWS API
-   * Reference</a></p>
+   * <p>Specifies the Amazon S3 object key name to filter on. An object key name is
+   * the name assigned to an object in your Amazon S3 bucket. You specify whether to
+   * filter on the suffix or prefix of the object key name. A prefix is a specific
+   * string of characters at the beginning of an object key name, which you can use
+   * to organize objects. For example, you can start the key names of related objects
+   * with a prefix, such as <code>2023-</code> or <code>engineering/</code>. Then,
+   * you can use <code>FilterRule</code> to find objects in a bucket with key names
+   * that have the same prefix. A suffix is similar to a prefix, but it is at the end
+   * of the object key name instead of at the beginning.</p><p><h3>See Also:</h3>  
+   * <a href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/FilterRule">AWS
+   * API Reference</a></p>
    */
   class FilterRule
   {

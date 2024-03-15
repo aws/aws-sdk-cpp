@@ -11,6 +11,7 @@
 #include <aws/codebuild/model/EnvironmentType.h>
 #include <aws/codebuild/model/ComputeType.h>
 #include <aws/codebuild/model/ScalingConfigurationOutput.h>
+#include <aws/codebuild/model/FleetOverflowBehavior.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/codebuild/model/Tag.h>
 #include <utility>
@@ -662,6 +663,61 @@ namespace Model
 
 
     /**
+     * <p>The compute fleet overflow behavior.</p> <ul> <li> <p>For overflow behavior
+     * <code>QUEUE</code>, your overflow builds need to wait on the existing fleet
+     * instance to become available.</p> </li> <li> <p>For overflow behavior
+     * <code>ON_DEMAND</code>, your overflow builds run on CodeBuild on-demand.</p>
+     * </li> </ul>
+     */
+    inline const FleetOverflowBehavior& GetOverflowBehavior() const{ return m_overflowBehavior; }
+
+    /**
+     * <p>The compute fleet overflow behavior.</p> <ul> <li> <p>For overflow behavior
+     * <code>QUEUE</code>, your overflow builds need to wait on the existing fleet
+     * instance to become available.</p> </li> <li> <p>For overflow behavior
+     * <code>ON_DEMAND</code>, your overflow builds run on CodeBuild on-demand.</p>
+     * </li> </ul>
+     */
+    inline bool OverflowBehaviorHasBeenSet() const { return m_overflowBehaviorHasBeenSet; }
+
+    /**
+     * <p>The compute fleet overflow behavior.</p> <ul> <li> <p>For overflow behavior
+     * <code>QUEUE</code>, your overflow builds need to wait on the existing fleet
+     * instance to become available.</p> </li> <li> <p>For overflow behavior
+     * <code>ON_DEMAND</code>, your overflow builds run on CodeBuild on-demand.</p>
+     * </li> </ul>
+     */
+    inline void SetOverflowBehavior(const FleetOverflowBehavior& value) { m_overflowBehaviorHasBeenSet = true; m_overflowBehavior = value; }
+
+    /**
+     * <p>The compute fleet overflow behavior.</p> <ul> <li> <p>For overflow behavior
+     * <code>QUEUE</code>, your overflow builds need to wait on the existing fleet
+     * instance to become available.</p> </li> <li> <p>For overflow behavior
+     * <code>ON_DEMAND</code>, your overflow builds run on CodeBuild on-demand.</p>
+     * </li> </ul>
+     */
+    inline void SetOverflowBehavior(FleetOverflowBehavior&& value) { m_overflowBehaviorHasBeenSet = true; m_overflowBehavior = std::move(value); }
+
+    /**
+     * <p>The compute fleet overflow behavior.</p> <ul> <li> <p>For overflow behavior
+     * <code>QUEUE</code>, your overflow builds need to wait on the existing fleet
+     * instance to become available.</p> </li> <li> <p>For overflow behavior
+     * <code>ON_DEMAND</code>, your overflow builds run on CodeBuild on-demand.</p>
+     * </li> </ul>
+     */
+    inline Fleet& WithOverflowBehavior(const FleetOverflowBehavior& value) { SetOverflowBehavior(value); return *this;}
+
+    /**
+     * <p>The compute fleet overflow behavior.</p> <ul> <li> <p>For overflow behavior
+     * <code>QUEUE</code>, your overflow builds need to wait on the existing fleet
+     * instance to become available.</p> </li> <li> <p>For overflow behavior
+     * <code>ON_DEMAND</code>, your overflow builds run on CodeBuild on-demand.</p>
+     * </li> </ul>
+     */
+    inline Fleet& WithOverflowBehavior(FleetOverflowBehavior&& value) { SetOverflowBehavior(std::move(value)); return *this;}
+
+
+    /**
      * <p>A list of tag key and value pairs associated with this compute fleet.</p>
      * <p>These tags are available for use by Amazon Web Services services that support
      * CodeBuild build project tags.</p>
@@ -748,6 +804,9 @@ namespace Model
 
     ScalingConfigurationOutput m_scalingConfiguration;
     bool m_scalingConfigurationHasBeenSet = false;
+
+    FleetOverflowBehavior m_overflowBehavior;
+    bool m_overflowBehaviorHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;

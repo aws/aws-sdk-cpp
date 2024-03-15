@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>The Amazon Simple Storage (Amazon S3) location and and security configuration
-   * for <code>OfflineStore</code>.</p><p><h3>See Also:</h3>   <a
+   * <p>The Amazon Simple Storage (Amazon S3) location and security configuration for
+   * <code>OfflineStore</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/S3StorageConfig">AWS
    * API Reference</a></p>
    */

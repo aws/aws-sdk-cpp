@@ -493,27 +493,42 @@ namespace Model
 
 
     /**
-     * <p>Encoding type used by Amazon S3 to encode object keys in the response.</p>
+     * <p>Encoding type used by Amazon S3 to encode object keys in the response. If
+     * using <code>url</code>, non-ASCII characters used in an object's key name will
+     * be URL encoded. For example, the object test_file(3).png will appear as
+     * test_file%283%29.png.</p>
      */
     inline const EncodingType& GetEncodingType() const{ return m_encodingType; }
 
     /**
-     * <p>Encoding type used by Amazon S3 to encode object keys in the response.</p>
+     * <p>Encoding type used by Amazon S3 to encode object keys in the response. If
+     * using <code>url</code>, non-ASCII characters used in an object's key name will
+     * be URL encoded. For example, the object test_file(3).png will appear as
+     * test_file%283%29.png.</p>
      */
     inline void SetEncodingType(const EncodingType& value) { m_encodingType = value; }
 
     /**
-     * <p>Encoding type used by Amazon S3 to encode object keys in the response.</p>
+     * <p>Encoding type used by Amazon S3 to encode object keys in the response. If
+     * using <code>url</code>, non-ASCII characters used in an object's key name will
+     * be URL encoded. For example, the object test_file(3).png will appear as
+     * test_file%283%29.png.</p>
      */
     inline void SetEncodingType(EncodingType&& value) { m_encodingType = std::move(value); }
 
     /**
-     * <p>Encoding type used by Amazon S3 to encode object keys in the response.</p>
+     * <p>Encoding type used by Amazon S3 to encode object keys in the response. If
+     * using <code>url</code>, non-ASCII characters used in an object's key name will
+     * be URL encoded. For example, the object test_file(3).png will appear as
+     * test_file%283%29.png.</p>
      */
     inline ListObjectsResult& WithEncodingType(const EncodingType& value) { SetEncodingType(value); return *this;}
 
     /**
-     * <p>Encoding type used by Amazon S3 to encode object keys in the response.</p>
+     * <p>Encoding type used by Amazon S3 to encode object keys in the response. If
+     * using <code>url</code>, non-ASCII characters used in an object's key name will
+     * be URL encoded. For example, the object test_file(3).png will appear as
+     * test_file%283%29.png.</p>
      */
     inline ListObjectsResult& WithEncodingType(EncodingType&& value) { SetEncodingType(std::move(value)); return *this;}
 

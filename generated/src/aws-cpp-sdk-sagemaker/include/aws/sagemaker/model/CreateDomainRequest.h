@@ -434,58 +434,58 @@ namespace Model
 
 
     /**
-     * <p>SageMaker uses Amazon Web Services KMS to encrypt the EFS volume attached to
-     * the domain with an Amazon Web Services managed key by default. For more control,
-     * specify a customer managed key.</p>
+     * <p>SageMaker uses Amazon Web Services KMS to encrypt EFS and EBS volumes
+     * attached to the domain with an Amazon Web Services managed key by default. For
+     * more control, specify a customer managed key.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>SageMaker uses Amazon Web Services KMS to encrypt the EFS volume attached to
-     * the domain with an Amazon Web Services managed key by default. For more control,
-     * specify a customer managed key.</p>
+     * <p>SageMaker uses Amazon Web Services KMS to encrypt EFS and EBS volumes
+     * attached to the domain with an Amazon Web Services managed key by default. For
+     * more control, specify a customer managed key.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>SageMaker uses Amazon Web Services KMS to encrypt the EFS volume attached to
-     * the domain with an Amazon Web Services managed key by default. For more control,
-     * specify a customer managed key.</p>
+     * <p>SageMaker uses Amazon Web Services KMS to encrypt EFS and EBS volumes
+     * attached to the domain with an Amazon Web Services managed key by default. For
+     * more control, specify a customer managed key.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>SageMaker uses Amazon Web Services KMS to encrypt the EFS volume attached to
-     * the domain with an Amazon Web Services managed key by default. For more control,
-     * specify a customer managed key.</p>
+     * <p>SageMaker uses Amazon Web Services KMS to encrypt EFS and EBS volumes
+     * attached to the domain with an Amazon Web Services managed key by default. For
+     * more control, specify a customer managed key.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>SageMaker uses Amazon Web Services KMS to encrypt the EFS volume attached to
-     * the domain with an Amazon Web Services managed key by default. For more control,
-     * specify a customer managed key.</p>
+     * <p>SageMaker uses Amazon Web Services KMS to encrypt EFS and EBS volumes
+     * attached to the domain with an Amazon Web Services managed key by default. For
+     * more control, specify a customer managed key.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>SageMaker uses Amazon Web Services KMS to encrypt the EFS volume attached to
-     * the domain with an Amazon Web Services managed key by default. For more control,
-     * specify a customer managed key.</p>
+     * <p>SageMaker uses Amazon Web Services KMS to encrypt EFS and EBS volumes
+     * attached to the domain with an Amazon Web Services managed key by default. For
+     * more control, specify a customer managed key.</p>
      */
     inline CreateDomainRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>SageMaker uses Amazon Web Services KMS to encrypt the EFS volume attached to
-     * the domain with an Amazon Web Services managed key by default. For more control,
-     * specify a customer managed key.</p>
+     * <p>SageMaker uses Amazon Web Services KMS to encrypt EFS and EBS volumes
+     * attached to the domain with an Amazon Web Services managed key by default. For
+     * more control, specify a customer managed key.</p>
      */
     inline CreateDomainRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>SageMaker uses Amazon Web Services KMS to encrypt the EFS volume attached to
-     * the domain with an Amazon Web Services managed key by default. For more control,
-     * specify a customer managed key.</p>
+     * <p>SageMaker uses Amazon Web Services KMS to encrypt EFS and EBS volumes
+     * attached to the domain with an Amazon Web Services managed key by default. For
+     * more control, specify a customer managed key.</p>
      */
     inline CreateDomainRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
