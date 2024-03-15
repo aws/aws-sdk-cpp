@@ -7,7 +7,7 @@
 #include <aws/core/utils/logging/FormattedLogSystem.h>
 
 #include <aws/core/utils/DateTime.h>
-#include <aws/core/utils/Array.h>
+#include <aws/core/platform/Time.h>
 
 #include <fstream>
 #include <cstdarg>
@@ -40,6 +40,36 @@ static const char* GetLogPrefix(const LogLevel logLevel)
     return "[UNKNOWN] ";
 }
 
+static void AppendTimeStamp(Aws::String& statement)
+{
+    static const size_t TS_LEN = sizeof("2000-01-01 00:00:00.000") - 1;
+    const size_t oldStatementSz = statement.size();
+    const size_t newStatementSz = oldStatementSz + TS_LEN;
+    statement.resize(newStatementSz);
+
+    auto now = std::chrono::system_clock::now();
+    std::time_t time = std::chrono::system_clock::to_time_t(now);
+    struct tm gmtTimeStamp;
+    Aws::Time::GMTime(&gmtTimeStamp, time);
+
+    auto len = std::strftime(&statement[oldStatementSz], TS_LEN, "%Y-%m-%d %H:%M:%S", &gmtTimeStamp);
+    if (len)
+    {
+        int64_t ms = std::chrono::duration_cast<std::chrono::milliseconds>(now.time_since_epoch()).count();
+        ms = ms - ms / 1000 * 1000; // calculate the milliseconds as fraction.
+        statement[oldStatementSz + len++] = '.';
+        int divisor = 100;
+        while(divisor)
+        {
+            auto digit = ms / divisor;
+            statement[oldStatementSz + len++] = char('0' + digit);
+            ms = ms - divisor * digit;
+            divisor /= 10;
+        }
+        statement[oldStatementSz + len] = '\0';
+    }
+}
+
 static Aws::String CreateLogPrefixLine(LogLevel logLevel, const char* tag, const size_t statementSize = 80)
 {
     Aws::String prefix;
@@ -49,7 +79,7 @@ static Aws::String CreateLogPrefixLine(LogLevel logLevel, const char* tag, const
 
     prefix.reserve(statementLen);
     prefix = GetLogPrefix(logLevel);
-    prefix += DateTime::Now().CalculateGmtTimeWithMsPrecision();
+    AppendTimeStamp(prefix);
 
     prefix += ' ';
     prefix += tag;
