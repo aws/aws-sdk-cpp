@@ -22,6 +22,16 @@ namespace Aws
             REGIONAL //stands for using regional endpoint for us-east-1
         };
 
+
+        /** AWS_C_S3_RETRY_STRATEGY specifies the aws-c-s3 retry strategy to use. */
+        enum class AWS_C_S3_RETRY_STRATEGY
+        {
+            DEFAULT=0,  /* Defaults to standard now but may change. */
+            STANDARD,
+            EXPONENTIAL_BACKOFF,
+            NO_RETRY=-1,
+        };
+
         struct AWS_S3CRT_API S3CrtClientConfiguration : public Aws::Client::GenericClientConfiguration</*EndpointDiscoverySupported*/true>
         {
             using BaseClientConfigClass = Aws::Client::GenericClientConfiguration</*EndpointDiscoverySupported*/true>;
@@ -54,6 +64,7 @@ namespace Aws
 
             bool useVirtualAddressing = true;
             US_EAST_1_REGIONAL_ENDPOINT_OPTION useUSEast1RegionalEndPointOption = US_EAST_1_REGIONAL_ENDPOINT_OPTION::NOT_SET;
+            AWS_C_S3_RETRY_STRATEGY s3CrtRetryStrategy = AWS_C_S3_RETRY_STRATEGY::DEFAULT;
             bool disableMultiRegionAccessPoints = false;
             bool useArnRegion = false;
             Client::AWSAuthV4Signer::PayloadSigningPolicy payloadSigningPolicy = Client::AWSAuthV4Signer::PayloadSigningPolicy::RequestDependent;
