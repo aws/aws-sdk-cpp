@@ -13,6 +13,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateChannelRequest::CreateChannelRequest() : 
+    m_audiencesHasBeenSet(false),
     m_channelNameHasBeenSet(false),
     m_fillerSlateHasBeenSet(false),
     m_outputsHasBeenSet(false),
@@ -28,6 +29,17 @@ CreateChannelRequest::CreateChannelRequest() :
 Aws::String CreateChannelRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_audiencesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> audiencesJsonList(m_audiences.size());
+   for(unsigned audiencesIndex = 0; audiencesIndex < audiencesJsonList.GetLength(); ++audiencesIndex)
+   {
+     audiencesJsonList[audiencesIndex].AsString(m_audiences[audiencesIndex]);
+   }
+   payload.WithArray("Audiences", std::move(audiencesJsonList));
+
+  }
 
   if(m_fillerSlateHasBeenSet)
   {

@@ -390,6 +390,112 @@ namespace Model
     
     inline CreateIntegrationRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Data filtering options for the integration. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/zero-etl.filtering.html">Data
+     * filtering for Aurora zero-ETL integrations with Amazon Redshift</a>. </p>
+     * <p>Valid for: Integrations with Aurora MySQL source DB clusters only</p>
+     */
+    inline const Aws::String& GetDataFilter() const{ return m_dataFilter; }
+
+    /**
+     * <p>Data filtering options for the integration. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/zero-etl.filtering.html">Data
+     * filtering for Aurora zero-ETL integrations with Amazon Redshift</a>. </p>
+     * <p>Valid for: Integrations with Aurora MySQL source DB clusters only</p>
+     */
+    inline bool DataFilterHasBeenSet() const { return m_dataFilterHasBeenSet; }
+
+    /**
+     * <p>Data filtering options for the integration. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/zero-etl.filtering.html">Data
+     * filtering for Aurora zero-ETL integrations with Amazon Redshift</a>. </p>
+     * <p>Valid for: Integrations with Aurora MySQL source DB clusters only</p>
+     */
+    inline void SetDataFilter(const Aws::String& value) { m_dataFilterHasBeenSet = true; m_dataFilter = value; }
+
+    /**
+     * <p>Data filtering options for the integration. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/zero-etl.filtering.html">Data
+     * filtering for Aurora zero-ETL integrations with Amazon Redshift</a>. </p>
+     * <p>Valid for: Integrations with Aurora MySQL source DB clusters only</p>
+     */
+    inline void SetDataFilter(Aws::String&& value) { m_dataFilterHasBeenSet = true; m_dataFilter = std::move(value); }
+
+    /**
+     * <p>Data filtering options for the integration. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/zero-etl.filtering.html">Data
+     * filtering for Aurora zero-ETL integrations with Amazon Redshift</a>. </p>
+     * <p>Valid for: Integrations with Aurora MySQL source DB clusters only</p>
+     */
+    inline void SetDataFilter(const char* value) { m_dataFilterHasBeenSet = true; m_dataFilter.assign(value); }
+
+    /**
+     * <p>Data filtering options for the integration. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/zero-etl.filtering.html">Data
+     * filtering for Aurora zero-ETL integrations with Amazon Redshift</a>. </p>
+     * <p>Valid for: Integrations with Aurora MySQL source DB clusters only</p>
+     */
+    inline CreateIntegrationRequest& WithDataFilter(const Aws::String& value) { SetDataFilter(value); return *this;}
+
+    /**
+     * <p>Data filtering options for the integration. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/zero-etl.filtering.html">Data
+     * filtering for Aurora zero-ETL integrations with Amazon Redshift</a>. </p>
+     * <p>Valid for: Integrations with Aurora MySQL source DB clusters only</p>
+     */
+    inline CreateIntegrationRequest& WithDataFilter(Aws::String&& value) { SetDataFilter(std::move(value)); return *this;}
+
+    /**
+     * <p>Data filtering options for the integration. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/zero-etl.filtering.html">Data
+     * filtering for Aurora zero-ETL integrations with Amazon Redshift</a>. </p>
+     * <p>Valid for: Integrations with Aurora MySQL source DB clusters only</p>
+     */
+    inline CreateIntegrationRequest& WithDataFilter(const char* value) { SetDataFilter(value); return *this;}
+
+
+    /**
+     * <p>A description of the integration.</p>
+     */
+    inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>A description of the integration.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>A description of the integration.</p>
+     */
+    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+
+    /**
+     * <p>A description of the integration.</p>
+     */
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
+
+    /**
+     * <p>A description of the integration.</p>
+     */
+    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
+
+    /**
+     * <p>A description of the integration.</p>
+     */
+    inline CreateIntegrationRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /**
+     * <p>A description of the integration.</p>
+     */
+    inline CreateIntegrationRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+
+    /**
+     * <p>A description of the integration.</p>
+     */
+    inline CreateIntegrationRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+
   private:
 
     Aws::String m_sourceArn;
@@ -409,6 +515,12 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    Aws::String m_dataFilter;
+    bool m_dataFilterHasBeenSet = false;
+
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
   };
 
 } // namespace Model

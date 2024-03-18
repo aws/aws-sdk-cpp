@@ -36,12 +36,12 @@ namespace Model
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/Integration">AWS API
    * Reference</a></p>
    */
-  class DeleteIntegrationResult
+  class ModifyIntegrationResult
   {
   public:
-    AWS_RDS_API DeleteIntegrationResult();
-    AWS_RDS_API DeleteIntegrationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
-    AWS_RDS_API DeleteIntegrationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_RDS_API ModifyIntegrationResult();
+    AWS_RDS_API ModifyIntegrationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_RDS_API ModifyIntegrationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**
@@ -72,19 +72,19 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the database used as the source for
      * replication.</p>
      */
-    inline DeleteIntegrationResult& WithSourceArn(const Aws::String& value) { SetSourceArn(value); return *this;}
+    inline ModifyIntegrationResult& WithSourceArn(const Aws::String& value) { SetSourceArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the database used as the source for
      * replication.</p>
      */
-    inline DeleteIntegrationResult& WithSourceArn(Aws::String&& value) { SetSourceArn(std::move(value)); return *this;}
+    inline ModifyIntegrationResult& WithSourceArn(Aws::String&& value) { SetSourceArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the database used as the source for
      * replication.</p>
      */
-    inline DeleteIntegrationResult& WithSourceArn(const char* value) { SetSourceArn(value); return *this;}
+    inline ModifyIntegrationResult& WithSourceArn(const char* value) { SetSourceArn(value); return *this;}
 
 
     /**
@@ -115,19 +115,19 @@ namespace Model
      * <p>The ARN of the Redshift data warehouse used as the target for
      * replication.</p>
      */
-    inline DeleteIntegrationResult& WithTargetArn(const Aws::String& value) { SetTargetArn(value); return *this;}
+    inline ModifyIntegrationResult& WithTargetArn(const Aws::String& value) { SetTargetArn(value); return *this;}
 
     /**
      * <p>The ARN of the Redshift data warehouse used as the target for
      * replication.</p>
      */
-    inline DeleteIntegrationResult& WithTargetArn(Aws::String&& value) { SetTargetArn(std::move(value)); return *this;}
+    inline ModifyIntegrationResult& WithTargetArn(Aws::String&& value) { SetTargetArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the Redshift data warehouse used as the target for
      * replication.</p>
      */
-    inline DeleteIntegrationResult& WithTargetArn(const char* value) { SetTargetArn(value); return *this;}
+    inline ModifyIntegrationResult& WithTargetArn(const char* value) { SetTargetArn(value); return *this;}
 
 
     /**
@@ -153,17 +153,17 @@ namespace Model
     /**
      * <p>The name of the integration.</p>
      */
-    inline DeleteIntegrationResult& WithIntegrationName(const Aws::String& value) { SetIntegrationName(value); return *this;}
+    inline ModifyIntegrationResult& WithIntegrationName(const Aws::String& value) { SetIntegrationName(value); return *this;}
 
     /**
      * <p>The name of the integration.</p>
      */
-    inline DeleteIntegrationResult& WithIntegrationName(Aws::String&& value) { SetIntegrationName(std::move(value)); return *this;}
+    inline ModifyIntegrationResult& WithIntegrationName(Aws::String&& value) { SetIntegrationName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the integration.</p>
      */
-    inline DeleteIntegrationResult& WithIntegrationName(const char* value) { SetIntegrationName(value); return *this;}
+    inline ModifyIntegrationResult& WithIntegrationName(const char* value) { SetIntegrationName(value); return *this;}
 
 
     /**
@@ -189,17 +189,17 @@ namespace Model
     /**
      * <p>The ARN of the integration.</p>
      */
-    inline DeleteIntegrationResult& WithIntegrationArn(const Aws::String& value) { SetIntegrationArn(value); return *this;}
+    inline ModifyIntegrationResult& WithIntegrationArn(const Aws::String& value) { SetIntegrationArn(value); return *this;}
 
     /**
      * <p>The ARN of the integration.</p>
      */
-    inline DeleteIntegrationResult& WithIntegrationArn(Aws::String&& value) { SetIntegrationArn(std::move(value)); return *this;}
+    inline ModifyIntegrationResult& WithIntegrationArn(Aws::String&& value) { SetIntegrationArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the integration.</p>
      */
-    inline DeleteIntegrationResult& WithIntegrationArn(const char* value) { SetIntegrationArn(value); return *this;}
+    inline ModifyIntegrationResult& WithIntegrationArn(const char* value) { SetIntegrationArn(value); return *this;}
 
 
     /**
@@ -230,19 +230,19 @@ namespace Model
      * <p>The Amazon Web Services Key Management System (Amazon Web Services KMS) key
      * identifier for the key used to to encrypt the integration. </p>
      */
-    inline DeleteIntegrationResult& WithKMSKeyId(const Aws::String& value) { SetKMSKeyId(value); return *this;}
+    inline ModifyIntegrationResult& WithKMSKeyId(const Aws::String& value) { SetKMSKeyId(value); return *this;}
 
     /**
      * <p>The Amazon Web Services Key Management System (Amazon Web Services KMS) key
      * identifier for the key used to to encrypt the integration. </p>
      */
-    inline DeleteIntegrationResult& WithKMSKeyId(Aws::String&& value) { SetKMSKeyId(std::move(value)); return *this;}
+    inline ModifyIntegrationResult& WithKMSKeyId(Aws::String&& value) { SetKMSKeyId(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Web Services Key Management System (Amazon Web Services KMS) key
      * identifier for the key used to to encrypt the integration. </p>
      */
-    inline DeleteIntegrationResult& WithKMSKeyId(const char* value) { SetKMSKeyId(value); return *this;}
+    inline ModifyIntegrationResult& WithKMSKeyId(const char* value) { SetKMSKeyId(value); return *this;}
 
 
     /**
@@ -275,7 +275,7 @@ namespace Model
      * context</a> in the <i>Amazon Web Services Key Management Service Developer
      * Guide</i>.</p>
      */
-    inline DeleteIntegrationResult& WithAdditionalEncryptionContext(const Aws::Map<Aws::String, Aws::String>& value) { SetAdditionalEncryptionContext(value); return *this;}
+    inline ModifyIntegrationResult& WithAdditionalEncryptionContext(const Aws::Map<Aws::String, Aws::String>& value) { SetAdditionalEncryptionContext(value); return *this;}
 
     /**
      * <p>The encryption context for the integration. For more information, see <a
@@ -283,7 +283,7 @@ namespace Model
      * context</a> in the <i>Amazon Web Services Key Management Service Developer
      * Guide</i>.</p>
      */
-    inline DeleteIntegrationResult& WithAdditionalEncryptionContext(Aws::Map<Aws::String, Aws::String>&& value) { SetAdditionalEncryptionContext(std::move(value)); return *this;}
+    inline ModifyIntegrationResult& WithAdditionalEncryptionContext(Aws::Map<Aws::String, Aws::String>&& value) { SetAdditionalEncryptionContext(std::move(value)); return *this;}
 
     /**
      * <p>The encryption context for the integration. For more information, see <a
@@ -291,7 +291,7 @@ namespace Model
      * context</a> in the <i>Amazon Web Services Key Management Service Developer
      * Guide</i>.</p>
      */
-    inline DeleteIntegrationResult& AddAdditionalEncryptionContext(const Aws::String& key, const Aws::String& value) { m_additionalEncryptionContext.emplace(key, value); return *this; }
+    inline ModifyIntegrationResult& AddAdditionalEncryptionContext(const Aws::String& key, const Aws::String& value) { m_additionalEncryptionContext.emplace(key, value); return *this; }
 
     /**
      * <p>The encryption context for the integration. For more information, see <a
@@ -299,7 +299,7 @@ namespace Model
      * context</a> in the <i>Amazon Web Services Key Management Service Developer
      * Guide</i>.</p>
      */
-    inline DeleteIntegrationResult& AddAdditionalEncryptionContext(Aws::String&& key, const Aws::String& value) { m_additionalEncryptionContext.emplace(std::move(key), value); return *this; }
+    inline ModifyIntegrationResult& AddAdditionalEncryptionContext(Aws::String&& key, const Aws::String& value) { m_additionalEncryptionContext.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The encryption context for the integration. For more information, see <a
@@ -307,7 +307,7 @@ namespace Model
      * context</a> in the <i>Amazon Web Services Key Management Service Developer
      * Guide</i>.</p>
      */
-    inline DeleteIntegrationResult& AddAdditionalEncryptionContext(const Aws::String& key, Aws::String&& value) { m_additionalEncryptionContext.emplace(key, std::move(value)); return *this; }
+    inline ModifyIntegrationResult& AddAdditionalEncryptionContext(const Aws::String& key, Aws::String&& value) { m_additionalEncryptionContext.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The encryption context for the integration. For more information, see <a
@@ -315,7 +315,7 @@ namespace Model
      * context</a> in the <i>Amazon Web Services Key Management Service Developer
      * Guide</i>.</p>
      */
-    inline DeleteIntegrationResult& AddAdditionalEncryptionContext(Aws::String&& key, Aws::String&& value) { m_additionalEncryptionContext.emplace(std::move(key), std::move(value)); return *this; }
+    inline ModifyIntegrationResult& AddAdditionalEncryptionContext(Aws::String&& key, Aws::String&& value) { m_additionalEncryptionContext.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>The encryption context for the integration. For more information, see <a
@@ -323,7 +323,7 @@ namespace Model
      * context</a> in the <i>Amazon Web Services Key Management Service Developer
      * Guide</i>.</p>
      */
-    inline DeleteIntegrationResult& AddAdditionalEncryptionContext(const char* key, Aws::String&& value) { m_additionalEncryptionContext.emplace(key, std::move(value)); return *this; }
+    inline ModifyIntegrationResult& AddAdditionalEncryptionContext(const char* key, Aws::String&& value) { m_additionalEncryptionContext.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>The encryption context for the integration. For more information, see <a
@@ -331,7 +331,7 @@ namespace Model
      * context</a> in the <i>Amazon Web Services Key Management Service Developer
      * Guide</i>.</p>
      */
-    inline DeleteIntegrationResult& AddAdditionalEncryptionContext(Aws::String&& key, const char* value) { m_additionalEncryptionContext.emplace(std::move(key), value); return *this; }
+    inline ModifyIntegrationResult& AddAdditionalEncryptionContext(Aws::String&& key, const char* value) { m_additionalEncryptionContext.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>The encryption context for the integration. For more information, see <a
@@ -339,7 +339,7 @@ namespace Model
      * context</a> in the <i>Amazon Web Services Key Management Service Developer
      * Guide</i>.</p>
      */
-    inline DeleteIntegrationResult& AddAdditionalEncryptionContext(const char* key, const char* value) { m_additionalEncryptionContext.emplace(key, value); return *this; }
+    inline ModifyIntegrationResult& AddAdditionalEncryptionContext(const char* key, const char* value) { m_additionalEncryptionContext.emplace(key, value); return *this; }
 
 
     /**
@@ -360,12 +360,12 @@ namespace Model
     /**
      * <p>The current status of the integration.</p>
      */
-    inline DeleteIntegrationResult& WithStatus(const IntegrationStatus& value) { SetStatus(value); return *this;}
+    inline ModifyIntegrationResult& WithStatus(const IntegrationStatus& value) { SetStatus(value); return *this;}
 
     /**
      * <p>The current status of the integration.</p>
      */
-    inline DeleteIntegrationResult& WithStatus(IntegrationStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline ModifyIntegrationResult& WithStatus(IntegrationStatus&& value) { SetStatus(std::move(value)); return *this;}
 
 
     
@@ -378,16 +378,16 @@ namespace Model
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tags = std::move(value); }
 
     
-    inline DeleteIntegrationResult& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+    inline ModifyIntegrationResult& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     
-    inline DeleteIntegrationResult& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+    inline ModifyIntegrationResult& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     
-    inline DeleteIntegrationResult& AddTags(const Tag& value) { m_tags.push_back(value); return *this; }
+    inline ModifyIntegrationResult& AddTags(const Tag& value) { m_tags.push_back(value); return *this; }
 
     
-    inline DeleteIntegrationResult& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
+    inline ModifyIntegrationResult& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -412,13 +412,13 @@ namespace Model
      * <p>The time when the integration was created, in Universal Coordinated Time
      * (UTC).</p>
      */
-    inline DeleteIntegrationResult& WithCreateTime(const Aws::Utils::DateTime& value) { SetCreateTime(value); return *this;}
+    inline ModifyIntegrationResult& WithCreateTime(const Aws::Utils::DateTime& value) { SetCreateTime(value); return *this;}
 
     /**
      * <p>The time when the integration was created, in Universal Coordinated Time
      * (UTC).</p>
      */
-    inline DeleteIntegrationResult& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
+    inline ModifyIntegrationResult& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
 
 
     /**
@@ -439,22 +439,22 @@ namespace Model
     /**
      * <p>Any errors associated with the integration.</p>
      */
-    inline DeleteIntegrationResult& WithErrors(const Aws::Vector<IntegrationError>& value) { SetErrors(value); return *this;}
+    inline ModifyIntegrationResult& WithErrors(const Aws::Vector<IntegrationError>& value) { SetErrors(value); return *this;}
 
     /**
      * <p>Any errors associated with the integration.</p>
      */
-    inline DeleteIntegrationResult& WithErrors(Aws::Vector<IntegrationError>&& value) { SetErrors(std::move(value)); return *this;}
+    inline ModifyIntegrationResult& WithErrors(Aws::Vector<IntegrationError>&& value) { SetErrors(std::move(value)); return *this;}
 
     /**
      * <p>Any errors associated with the integration.</p>
      */
-    inline DeleteIntegrationResult& AddErrors(const IntegrationError& value) { m_errors.push_back(value); return *this; }
+    inline ModifyIntegrationResult& AddErrors(const IntegrationError& value) { m_errors.push_back(value); return *this; }
 
     /**
      * <p>Any errors associated with the integration.</p>
      */
-    inline DeleteIntegrationResult& AddErrors(IntegrationError&& value) { m_errors.push_back(std::move(value)); return *this; }
+    inline ModifyIntegrationResult& AddErrors(IntegrationError&& value) { m_errors.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -485,19 +485,19 @@ namespace Model
      * <p>Data filters for the integration. These filters determine which tables from
      * the source database are sent to the target Amazon Redshift data warehouse. </p>
      */
-    inline DeleteIntegrationResult& WithDataFilter(const Aws::String& value) { SetDataFilter(value); return *this;}
+    inline ModifyIntegrationResult& WithDataFilter(const Aws::String& value) { SetDataFilter(value); return *this;}
 
     /**
      * <p>Data filters for the integration. These filters determine which tables from
      * the source database are sent to the target Amazon Redshift data warehouse. </p>
      */
-    inline DeleteIntegrationResult& WithDataFilter(Aws::String&& value) { SetDataFilter(std::move(value)); return *this;}
+    inline ModifyIntegrationResult& WithDataFilter(Aws::String&& value) { SetDataFilter(std::move(value)); return *this;}
 
     /**
      * <p>Data filters for the integration. These filters determine which tables from
      * the source database are sent to the target Amazon Redshift data warehouse. </p>
      */
-    inline DeleteIntegrationResult& WithDataFilter(const char* value) { SetDataFilter(value); return *this;}
+    inline ModifyIntegrationResult& WithDataFilter(const char* value) { SetDataFilter(value); return *this;}
 
 
     /**
@@ -523,17 +523,17 @@ namespace Model
     /**
      * <p>A description of the integration.</p>
      */
-    inline DeleteIntegrationResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+    inline ModifyIntegrationResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
      * <p>A description of the integration.</p>
      */
-    inline DeleteIntegrationResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+    inline ModifyIntegrationResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>A description of the integration.</p>
      */
-    inline DeleteIntegrationResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline ModifyIntegrationResult& WithDescription(const char* value) { SetDescription(value); return *this;}
 
 
     
@@ -546,10 +546,10 @@ namespace Model
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
 
     
-    inline DeleteIntegrationResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
+    inline ModifyIntegrationResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
 
     
-    inline DeleteIntegrationResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline ModifyIntegrationResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
 
   private:
 

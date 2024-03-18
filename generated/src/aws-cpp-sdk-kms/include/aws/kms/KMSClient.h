@@ -2172,13 +2172,11 @@ namespace KMS
          * the same key material</a> into that KMS key, but you cannot import different key
          * material. You might reimport key material to replace key material that expired
          * or key material that you deleted. You might also reimport key material to change
-         * the expiration model or expiration date of the key material. Before reimporting
-         * key material, if necessary, call <a>DeleteImportedKeyMaterial</a> to delete the
-         * current imported key material. </p> <p>Each time you import key material into
-         * KMS, you can determine whether (<code>ExpirationModel</code>) and when
-         * (<code>ValidTo</code>) the key material expires. To change the expiration of
-         * your key material, you must import it again, either by calling
-         * <code>ImportKeyMaterial</code> or using the <a
+         * the expiration model or expiration date of the key material. </p> <p>Each time
+         * you import key material into KMS, you can determine whether
+         * (<code>ExpirationModel</code>) and when (<code>ValidTo</code>) the key material
+         * expires. To change the expiration of your key material, you must import it
+         * again, either by calling <code>ImportKeyMaterial</code> or using the <a
          * href="kms/latest/developerguide/importing-keys-import-key-material.html#importing-keys-import-key-material-console">import
          * features</a> of the KMS console.</p> <p>Before calling
          * <code>ImportKeyMaterial</code>:</p> <ul> <li> <p>Create or identify a KMS key
@@ -2849,7 +2847,7 @@ namespace KMS
         /**
          * <p>Deletes the specified grant. You revoke a grant to terminate the permissions
          * that the grant allows. For more information, see <a
-         * href="https://docs.aws.amazon.com/kms/latest/developerguide/managing-grants.html#grant-delete">Retiring
+         * href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#grant-delete">Retiring
          * and revoking grants</a> in the <i> <i>Key Management Service Developer Guide</i>
          * </i>.</p> <p>When you create, retire, or revoke a grant, there might be a brief
          * delay, usually less than five minutes, until the grant is available throughout

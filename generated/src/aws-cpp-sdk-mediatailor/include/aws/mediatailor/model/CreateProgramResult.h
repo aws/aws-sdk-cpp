@@ -10,6 +10,7 @@
 #include <aws/mediatailor/model/ClipRange.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/mediatailor/model/AdBreak.h>
+#include <aws/mediatailor/model/AudienceMedia.h>
 #include <utility>
 
 namespace Aws
@@ -106,6 +107,42 @@ namespace Model
      * <p>The ARN to assign to the program.</p>
      */
     inline CreateProgramResult& WithArn(const char* value) { SetArn(value); return *this;}
+
+
+    /**
+     * <p>The list of AudienceMedia defined in program.</p>
+     */
+    inline const Aws::Vector<AudienceMedia>& GetAudienceMedia() const{ return m_audienceMedia; }
+
+    /**
+     * <p>The list of AudienceMedia defined in program.</p>
+     */
+    inline void SetAudienceMedia(const Aws::Vector<AudienceMedia>& value) { m_audienceMedia = value; }
+
+    /**
+     * <p>The list of AudienceMedia defined in program.</p>
+     */
+    inline void SetAudienceMedia(Aws::Vector<AudienceMedia>&& value) { m_audienceMedia = std::move(value); }
+
+    /**
+     * <p>The list of AudienceMedia defined in program.</p>
+     */
+    inline CreateProgramResult& WithAudienceMedia(const Aws::Vector<AudienceMedia>& value) { SetAudienceMedia(value); return *this;}
+
+    /**
+     * <p>The list of AudienceMedia defined in program.</p>
+     */
+    inline CreateProgramResult& WithAudienceMedia(Aws::Vector<AudienceMedia>&& value) { SetAudienceMedia(std::move(value)); return *this;}
+
+    /**
+     * <p>The list of AudienceMedia defined in program.</p>
+     */
+    inline CreateProgramResult& AddAudienceMedia(const AudienceMedia& value) { m_audienceMedia.push_back(value); return *this; }
+
+    /**
+     * <p>The list of AudienceMedia defined in program.</p>
+     */
+    inline CreateProgramResult& AddAudienceMedia(AudienceMedia&& value) { m_audienceMedia.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -408,6 +445,8 @@ namespace Model
     Aws::Vector<AdBreak> m_adBreaks;
 
     Aws::String m_arn;
+
+    Aws::Vector<AudienceMedia> m_audienceMedia;
 
     Aws::String m_channelName;
 

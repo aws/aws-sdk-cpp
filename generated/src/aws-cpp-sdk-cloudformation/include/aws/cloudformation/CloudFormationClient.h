@@ -1820,6 +1820,32 @@ namespace CloudFormation
         }
 
         /**
+         * <p>Returns summary information about deployment targets for a stack
+         * set.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackSetAutoDeploymentTargets">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListStackSetAutoDeploymentTargetsOutcome ListStackSetAutoDeploymentTargets(const Model::ListStackSetAutoDeploymentTargetsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListStackSetAutoDeploymentTargets that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListStackSetAutoDeploymentTargetsRequestT = Model::ListStackSetAutoDeploymentTargetsRequest>
+        Model::ListStackSetAutoDeploymentTargetsOutcomeCallable ListStackSetAutoDeploymentTargetsCallable(const ListStackSetAutoDeploymentTargetsRequestT& request) const
+        {
+            return SubmitCallable(&CloudFormationClient::ListStackSetAutoDeploymentTargets, request);
+        }
+
+        /**
+         * An Async wrapper for ListStackSetAutoDeploymentTargets that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListStackSetAutoDeploymentTargetsRequestT = Model::ListStackSetAutoDeploymentTargetsRequest>
+        void ListStackSetAutoDeploymentTargetsAsync(const ListStackSetAutoDeploymentTargetsRequestT& request, const ListStackSetAutoDeploymentTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CloudFormationClient::ListStackSetAutoDeploymentTargets, request, handler, context);
+        }
+
+        /**
          * <p>Returns summary information about the results of a stack set
          * operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackSetOperationResults">AWS

@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     PROGRAM,
-    FILLER_SLATE
+    FILLER_SLATE,
+    ALTERNATE_MEDIA
   };
 
 namespace ScheduleEntryTypeMapper

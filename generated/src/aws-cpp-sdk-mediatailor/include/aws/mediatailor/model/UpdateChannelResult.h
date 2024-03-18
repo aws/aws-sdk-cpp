@@ -6,10 +6,10 @@
 #pragma once
 #include <aws/mediatailor/MediaTailor_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mediatailor/model/ChannelState.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/mediatailor/model/SlateSource.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/mediatailor/model/TimeShiftConfiguration.h>
 #include <aws/mediatailor/model/ResponseOutputItem.h>
@@ -73,6 +73,47 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) associated with the channel.</p>
      */
     inline UpdateChannelResult& WithArn(const char* value) { SetArn(value); return *this;}
+
+
+    /**
+     * <p>The list of audiences defined in channel.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetAudiences() const{ return m_audiences; }
+
+    /**
+     * <p>The list of audiences defined in channel.</p>
+     */
+    inline void SetAudiences(const Aws::Vector<Aws::String>& value) { m_audiences = value; }
+
+    /**
+     * <p>The list of audiences defined in channel.</p>
+     */
+    inline void SetAudiences(Aws::Vector<Aws::String>&& value) { m_audiences = std::move(value); }
+
+    /**
+     * <p>The list of audiences defined in channel.</p>
+     */
+    inline UpdateChannelResult& WithAudiences(const Aws::Vector<Aws::String>& value) { SetAudiences(value); return *this;}
+
+    /**
+     * <p>The list of audiences defined in channel.</p>
+     */
+    inline UpdateChannelResult& WithAudiences(Aws::Vector<Aws::String>&& value) { SetAudiences(std::move(value)); return *this;}
+
+    /**
+     * <p>The list of audiences defined in channel.</p>
+     */
+    inline UpdateChannelResult& AddAudiences(const Aws::String& value) { m_audiences.push_back(value); return *this; }
+
+    /**
+     * <p>The list of audiences defined in channel.</p>
+     */
+    inline UpdateChannelResult& AddAudiences(Aws::String&& value) { m_audiences.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The list of audiences defined in channel.</p>
+     */
+    inline UpdateChannelResult& AddAudiences(const char* value) { m_audiences.push_back(value); return *this; }
 
 
     /**
@@ -518,6 +559,8 @@ namespace Model
   private:
 
     Aws::String m_arn;
+
+    Aws::Vector<Aws::String> m_audiences;
 
     Aws::String m_channelName;
 

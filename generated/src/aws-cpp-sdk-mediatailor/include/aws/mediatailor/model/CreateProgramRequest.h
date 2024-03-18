@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediatailor/model/ScheduleConfiguration.h>
 #include <aws/mediatailor/model/AdBreak.h>
+#include <aws/mediatailor/model/AudienceMedia.h>
 #include <utility>
 
 namespace Aws
@@ -74,6 +75,47 @@ namespace Model
      * <p>The ad break configuration settings.</p>
      */
     inline CreateProgramRequest& AddAdBreaks(AdBreak&& value) { m_adBreaksHasBeenSet = true; m_adBreaks.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The list of AudienceMedia defined in program.</p>
+     */
+    inline const Aws::Vector<AudienceMedia>& GetAudienceMedia() const{ return m_audienceMedia; }
+
+    /**
+     * <p>The list of AudienceMedia defined in program.</p>
+     */
+    inline bool AudienceMediaHasBeenSet() const { return m_audienceMediaHasBeenSet; }
+
+    /**
+     * <p>The list of AudienceMedia defined in program.</p>
+     */
+    inline void SetAudienceMedia(const Aws::Vector<AudienceMedia>& value) { m_audienceMediaHasBeenSet = true; m_audienceMedia = value; }
+
+    /**
+     * <p>The list of AudienceMedia defined in program.</p>
+     */
+    inline void SetAudienceMedia(Aws::Vector<AudienceMedia>&& value) { m_audienceMediaHasBeenSet = true; m_audienceMedia = std::move(value); }
+
+    /**
+     * <p>The list of AudienceMedia defined in program.</p>
+     */
+    inline CreateProgramRequest& WithAudienceMedia(const Aws::Vector<AudienceMedia>& value) { SetAudienceMedia(value); return *this;}
+
+    /**
+     * <p>The list of AudienceMedia defined in program.</p>
+     */
+    inline CreateProgramRequest& WithAudienceMedia(Aws::Vector<AudienceMedia>&& value) { SetAudienceMedia(std::move(value)); return *this;}
+
+    /**
+     * <p>The list of AudienceMedia defined in program.</p>
+     */
+    inline CreateProgramRequest& AddAudienceMedia(const AudienceMedia& value) { m_audienceMediaHasBeenSet = true; m_audienceMedia.push_back(value); return *this; }
+
+    /**
+     * <p>The list of AudienceMedia defined in program.</p>
+     */
+    inline CreateProgramRequest& AddAudienceMedia(AudienceMedia&& value) { m_audienceMediaHasBeenSet = true; m_audienceMedia.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -315,6 +357,9 @@ namespace Model
 
     Aws::Vector<AdBreak> m_adBreaks;
     bool m_adBreaksHasBeenSet = false;
+
+    Aws::Vector<AudienceMedia> m_audienceMedia;
+    bool m_audienceMediaHasBeenSet = false;
 
     Aws::String m_channelName;
     bool m_channelNameHasBeenSet = false;

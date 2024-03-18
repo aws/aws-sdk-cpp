@@ -6,9 +6,9 @@
 #pragma once
 #include <aws/mediatailor/MediaTailor_EXPORTS.h>
 #include <aws/mediatailor/MediaTailorRequest.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediatailor/model/SlateSource.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mediatailor/model/TimeShiftConfiguration.h>
 #include <aws/mediatailor/model/RequestOutputItem.h>
 #include <utility>
@@ -34,6 +34,52 @@ namespace Model
     inline virtual const char* GetServiceRequestName() const override { return "UpdateChannel"; }
 
     AWS_MEDIATAILOR_API Aws::String SerializePayload() const override;
+
+
+    /**
+     * <p>The list of audiences defined in channel.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetAudiences() const{ return m_audiences; }
+
+    /**
+     * <p>The list of audiences defined in channel.</p>
+     */
+    inline bool AudiencesHasBeenSet() const { return m_audiencesHasBeenSet; }
+
+    /**
+     * <p>The list of audiences defined in channel.</p>
+     */
+    inline void SetAudiences(const Aws::Vector<Aws::String>& value) { m_audiencesHasBeenSet = true; m_audiences = value; }
+
+    /**
+     * <p>The list of audiences defined in channel.</p>
+     */
+    inline void SetAudiences(Aws::Vector<Aws::String>&& value) { m_audiencesHasBeenSet = true; m_audiences = std::move(value); }
+
+    /**
+     * <p>The list of audiences defined in channel.</p>
+     */
+    inline UpdateChannelRequest& WithAudiences(const Aws::Vector<Aws::String>& value) { SetAudiences(value); return *this;}
+
+    /**
+     * <p>The list of audiences defined in channel.</p>
+     */
+    inline UpdateChannelRequest& WithAudiences(Aws::Vector<Aws::String>&& value) { SetAudiences(std::move(value)); return *this;}
+
+    /**
+     * <p>The list of audiences defined in channel.</p>
+     */
+    inline UpdateChannelRequest& AddAudiences(const Aws::String& value) { m_audiencesHasBeenSet = true; m_audiences.push_back(value); return *this; }
+
+    /**
+     * <p>The list of audiences defined in channel.</p>
+     */
+    inline UpdateChannelRequest& AddAudiences(Aws::String&& value) { m_audiencesHasBeenSet = true; m_audiences.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The list of audiences defined in channel.</p>
+     */
+    inline UpdateChannelRequest& AddAudiences(const char* value) { m_audiencesHasBeenSet = true; m_audiences.push_back(value); return *this; }
 
 
     /**
@@ -204,6 +250,9 @@ namespace Model
     inline UpdateChannelRequest& WithTimeShiftConfiguration(TimeShiftConfiguration&& value) { SetTimeShiftConfiguration(std::move(value)); return *this;}
 
   private:
+
+    Aws::Vector<Aws::String> m_audiences;
+    bool m_audiencesHasBeenSet = false;
 
     Aws::String m_channelName;
     bool m_channelNameHasBeenSet = false;

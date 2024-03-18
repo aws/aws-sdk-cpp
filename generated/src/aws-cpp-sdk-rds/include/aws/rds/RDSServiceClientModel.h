@@ -136,6 +136,7 @@
 #include <aws/rds/model/ModifyDBSubnetGroupResult.h>
 #include <aws/rds/model/ModifyEventSubscriptionResult.h>
 #include <aws/rds/model/ModifyGlobalClusterResult.h>
+#include <aws/rds/model/ModifyIntegrationResult.h>
 #include <aws/rds/model/ModifyOptionGroupResult.h>
 #include <aws/rds/model/ModifyTenantDatabaseResult.h>
 #include <aws/rds/model/PromoteReadReplicaResult.h>
@@ -335,6 +336,7 @@ namespace Aws
       class ModifyDBSubnetGroupRequest;
       class ModifyEventSubscriptionRequest;
       class ModifyGlobalClusterRequest;
+      class ModifyIntegrationRequest;
       class ModifyOptionGroupRequest;
       class ModifyTenantDatabaseRequest;
       class PromoteReadReplicaRequest;
@@ -499,6 +501,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ModifyDBSubnetGroupResult, RDSError> ModifyDBSubnetGroupOutcome;
       typedef Aws::Utils::Outcome<ModifyEventSubscriptionResult, RDSError> ModifyEventSubscriptionOutcome;
       typedef Aws::Utils::Outcome<ModifyGlobalClusterResult, RDSError> ModifyGlobalClusterOutcome;
+      typedef Aws::Utils::Outcome<ModifyIntegrationResult, RDSError> ModifyIntegrationOutcome;
       typedef Aws::Utils::Outcome<ModifyOptionGroupResult, RDSError> ModifyOptionGroupOutcome;
       typedef Aws::Utils::Outcome<ModifyTenantDatabaseResult, RDSError> ModifyTenantDatabaseOutcome;
       typedef Aws::Utils::Outcome<PromoteReadReplicaResult, RDSError> PromoteReadReplicaOutcome;
@@ -663,6 +666,7 @@ namespace Aws
       typedef std::future<ModifyDBSubnetGroupOutcome> ModifyDBSubnetGroupOutcomeCallable;
       typedef std::future<ModifyEventSubscriptionOutcome> ModifyEventSubscriptionOutcomeCallable;
       typedef std::future<ModifyGlobalClusterOutcome> ModifyGlobalClusterOutcomeCallable;
+      typedef std::future<ModifyIntegrationOutcome> ModifyIntegrationOutcomeCallable;
       typedef std::future<ModifyOptionGroupOutcome> ModifyOptionGroupOutcomeCallable;
       typedef std::future<ModifyTenantDatabaseOutcome> ModifyTenantDatabaseOutcomeCallable;
       typedef std::future<PromoteReadReplicaOutcome> PromoteReadReplicaOutcomeCallable;
@@ -830,6 +834,7 @@ namespace Aws
     typedef std::function<void(const RDSClient*, const Model::ModifyDBSubnetGroupRequest&, const Model::ModifyDBSubnetGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyDBSubnetGroupResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::ModifyEventSubscriptionRequest&, const Model::ModifyEventSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyEventSubscriptionResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::ModifyGlobalClusterRequest&, const Model::ModifyGlobalClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyGlobalClusterResponseReceivedHandler;
+    typedef std::function<void(const RDSClient*, const Model::ModifyIntegrationRequest&, const Model::ModifyIntegrationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyIntegrationResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::ModifyOptionGroupRequest&, const Model::ModifyOptionGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyOptionGroupResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::ModifyTenantDatabaseRequest&, const Model::ModifyTenantDatabaseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyTenantDatabaseResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::PromoteReadReplicaRequest&, const Model::PromoteReadReplicaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PromoteReadReplicaResponseReceivedHandler;

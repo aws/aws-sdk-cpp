@@ -307,8 +307,8 @@ namespace TimestreamQuery
         /**
          * <p>A synchronous operation that allows you to submit a query with parameters to
          * be stored by Timestream for later running. Timestream only supports using this
-         * operation with the <code>PrepareQueryRequest$ValidateOnly</code> set to
-         * <code>true</code>. </p><p><h3>See Also:</h3>   <a
+         * operation with <code>ValidateOnly</code> set to <code>true</code>.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/timestream-query-2018-11-01/PrepareQuery">AWS
          * API Reference</a></p>
          */

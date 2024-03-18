@@ -16,6 +16,7 @@ using namespace Aws::Utils;
 using namespace Aws::Http;
 
 GetChannelScheduleRequest::GetChannelScheduleRequest() : 
+    m_audienceHasBeenSet(false),
     m_channelNameHasBeenSet(false),
     m_durationMinutesHasBeenSet(false),
     m_maxResults(0),
@@ -32,6 +33,13 @@ Aws::String GetChannelScheduleRequest::SerializePayload() const
 void GetChannelScheduleRequest::AddQueryStringParameters(URI& uri) const
 {
     Aws::StringStream ss;
+    if(m_audienceHasBeenSet)
+    {
+      ss << m_audience;
+      uri.AddQueryStringParameter("audience", ss.str());
+      ss.str("");
+    }
+
     if(m_durationMinutesHasBeenSet)
     {
       ss << m_durationMinutes;

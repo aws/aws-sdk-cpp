@@ -16,7 +16,9 @@ CreateIntegrationRequest::CreateIntegrationRequest() :
     m_integrationNameHasBeenSet(false),
     m_kMSKeyIdHasBeenSet(false),
     m_additionalEncryptionContextHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_dataFilterHasBeenSet(false),
+    m_descriptionHasBeenSet(false)
 {
 }
 
@@ -65,6 +67,16 @@ Aws::String CreateIntegrationRequest::SerializePayload() const
       item.OutputToStream(ss, "Tags.member.", tagsCount, "");
       tagsCount++;
     }
+  }
+
+  if(m_dataFilterHasBeenSet)
+  {
+    ss << "DataFilter=" << StringUtils::URLEncode(m_dataFilter.c_str()) << "&";
+  }
+
+  if(m_descriptionHasBeenSet)
+  {
+    ss << "Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
 
   ss << "Version=2014-10-31";

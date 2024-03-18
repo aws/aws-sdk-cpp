@@ -68,6 +68,42 @@ namespace Model
     inline GetKeyPolicyResult& WithPolicy(const char* value) { SetPolicy(value); return *this;}
 
 
+    /**
+     * <p>The name of the key policy. The only valid value is <code>default</code>.</p>
+     */
+    inline const Aws::String& GetPolicyName() const{ return m_policyName; }
+
+    /**
+     * <p>The name of the key policy. The only valid value is <code>default</code>.</p>
+     */
+    inline void SetPolicyName(const Aws::String& value) { m_policyName = value; }
+
+    /**
+     * <p>The name of the key policy. The only valid value is <code>default</code>.</p>
+     */
+    inline void SetPolicyName(Aws::String&& value) { m_policyName = std::move(value); }
+
+    /**
+     * <p>The name of the key policy. The only valid value is <code>default</code>.</p>
+     */
+    inline void SetPolicyName(const char* value) { m_policyName.assign(value); }
+
+    /**
+     * <p>The name of the key policy. The only valid value is <code>default</code>.</p>
+     */
+    inline GetKeyPolicyResult& WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
+
+    /**
+     * <p>The name of the key policy. The only valid value is <code>default</code>.</p>
+     */
+    inline GetKeyPolicyResult& WithPolicyName(Aws::String&& value) { SetPolicyName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the key policy. The only valid value is <code>default</code>.</p>
+     */
+    inline GetKeyPolicyResult& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -92,6 +128,8 @@ namespace Model
   private:
 
     Aws::String m_policy;
+
+    Aws::String m_policyName;
 
     Aws::String m_requestId;
   };

@@ -135,6 +135,52 @@ namespace Model
 
 
     /**
+     * <p>The list of audiences defined in ScheduleEntry.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetAudiences() const{ return m_audiences; }
+
+    /**
+     * <p>The list of audiences defined in ScheduleEntry.</p>
+     */
+    inline bool AudiencesHasBeenSet() const { return m_audiencesHasBeenSet; }
+
+    /**
+     * <p>The list of audiences defined in ScheduleEntry.</p>
+     */
+    inline void SetAudiences(const Aws::Vector<Aws::String>& value) { m_audiencesHasBeenSet = true; m_audiences = value; }
+
+    /**
+     * <p>The list of audiences defined in ScheduleEntry.</p>
+     */
+    inline void SetAudiences(Aws::Vector<Aws::String>&& value) { m_audiencesHasBeenSet = true; m_audiences = std::move(value); }
+
+    /**
+     * <p>The list of audiences defined in ScheduleEntry.</p>
+     */
+    inline ScheduleEntry& WithAudiences(const Aws::Vector<Aws::String>& value) { SetAudiences(value); return *this;}
+
+    /**
+     * <p>The list of audiences defined in ScheduleEntry.</p>
+     */
+    inline ScheduleEntry& WithAudiences(Aws::Vector<Aws::String>&& value) { SetAudiences(std::move(value)); return *this;}
+
+    /**
+     * <p>The list of audiences defined in ScheduleEntry.</p>
+     */
+    inline ScheduleEntry& AddAudiences(const Aws::String& value) { m_audiencesHasBeenSet = true; m_audiences.push_back(value); return *this; }
+
+    /**
+     * <p>The list of audiences defined in ScheduleEntry.</p>
+     */
+    inline ScheduleEntry& AddAudiences(Aws::String&& value) { m_audiencesHasBeenSet = true; m_audiences.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The list of audiences defined in ScheduleEntry.</p>
+     */
+    inline ScheduleEntry& AddAudiences(const char* value) { m_audiencesHasBeenSet = true; m_audiences.push_back(value); return *this; }
+
+
+    /**
      * <p>The name of the channel that uses this schedule.</p>
      */
     inline const Aws::String& GetChannelName() const{ return m_channelName; }
@@ -420,6 +466,9 @@ namespace Model
 
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_audiences;
+    bool m_audiencesHasBeenSet = false;
 
     Aws::String m_channelName;
     bool m_channelNameHasBeenSet = false;
