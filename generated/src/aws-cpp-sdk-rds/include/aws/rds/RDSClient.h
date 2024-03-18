@@ -4066,6 +4066,34 @@ namespace Aws
         }
 
         /**
+         * <p>Modifies a zero-ETL integration with Amazon Redshift.</p> 
+         * <p>Currently, you can only modify integrations that have Aurora MySQL source DB
+         * clusters. Integrations with Aurora PostgreSQL and RDS sources currently don't
+         * support modifying the integration.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyIntegration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ModifyIntegrationOutcome ModifyIntegration(const Model::ModifyIntegrationRequest& request) const;
+
+        /**
+         * A Callable wrapper for ModifyIntegration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ModifyIntegrationRequestT = Model::ModifyIntegrationRequest>
+        Model::ModifyIntegrationOutcomeCallable ModifyIntegrationCallable(const ModifyIntegrationRequestT& request) const
+        {
+            return SubmitCallable(&RDSClient::ModifyIntegration, request);
+        }
+
+        /**
+         * An Async wrapper for ModifyIntegration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ModifyIntegrationRequestT = Model::ModifyIntegrationRequest>
+        void ModifyIntegrationAsync(const ModifyIntegrationRequestT& request, const ModifyIntegrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RDSClient::ModifyIntegration, request, handler, context);
+        }
+
+        /**
          * <p>Modifies an existing option group.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyOptionGroup">AWS
          * API Reference</a></p>

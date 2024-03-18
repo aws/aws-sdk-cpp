@@ -46,37 +46,49 @@ namespace Model
 
     /**
      * <p>Indicates if the column is of type string, integer, Boolean, double,
-     * timestamp, date, time. </p>
+     * timestamp, date, time. For more information, see <a
+     * href="https://docs.aws.amazon.com/timestream/latest/developerguide/supported-data-types.html">Supported
+     * data types</a>.</p>
      */
     inline const ScalarType& GetScalarType() const{ return m_scalarType; }
 
     /**
      * <p>Indicates if the column is of type string, integer, Boolean, double,
-     * timestamp, date, time. </p>
+     * timestamp, date, time. For more information, see <a
+     * href="https://docs.aws.amazon.com/timestream/latest/developerguide/supported-data-types.html">Supported
+     * data types</a>.</p>
      */
     inline bool ScalarTypeHasBeenSet() const { return m_scalarTypeHasBeenSet; }
 
     /**
      * <p>Indicates if the column is of type string, integer, Boolean, double,
-     * timestamp, date, time. </p>
+     * timestamp, date, time. For more information, see <a
+     * href="https://docs.aws.amazon.com/timestream/latest/developerguide/supported-data-types.html">Supported
+     * data types</a>.</p>
      */
     inline void SetScalarType(const ScalarType& value) { m_scalarTypeHasBeenSet = true; m_scalarType = value; }
 
     /**
      * <p>Indicates if the column is of type string, integer, Boolean, double,
-     * timestamp, date, time. </p>
+     * timestamp, date, time. For more information, see <a
+     * href="https://docs.aws.amazon.com/timestream/latest/developerguide/supported-data-types.html">Supported
+     * data types</a>.</p>
      */
     inline void SetScalarType(ScalarType&& value) { m_scalarTypeHasBeenSet = true; m_scalarType = std::move(value); }
 
     /**
      * <p>Indicates if the column is of type string, integer, Boolean, double,
-     * timestamp, date, time. </p>
+     * timestamp, date, time. For more information, see <a
+     * href="https://docs.aws.amazon.com/timestream/latest/developerguide/supported-data-types.html">Supported
+     * data types</a>.</p>
      */
     inline Type& WithScalarType(const ScalarType& value) { SetScalarType(value); return *this;}
 
     /**
      * <p>Indicates if the column is of type string, integer, Boolean, double,
-     * timestamp, date, time. </p>
+     * timestamp, date, time. For more information, see <a
+     * href="https://docs.aws.amazon.com/timestream/latest/developerguide/supported-data-types.html">Supported
+     * data types</a>.</p>
      */
     inline Type& WithScalarType(ScalarType&& value) { SetScalarType(std::move(value)); return *this;}
 

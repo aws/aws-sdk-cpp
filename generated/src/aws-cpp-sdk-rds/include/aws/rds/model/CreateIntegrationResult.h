@@ -457,6 +457,85 @@ namespace Model
     inline CreateIntegrationResult& AddErrors(IntegrationError&& value) { m_errors.push_back(std::move(value)); return *this; }
 
 
+    /**
+     * <p>Data filters for the integration. These filters determine which tables from
+     * the source database are sent to the target Amazon Redshift data warehouse. </p>
+     */
+    inline const Aws::String& GetDataFilter() const{ return m_dataFilter; }
+
+    /**
+     * <p>Data filters for the integration. These filters determine which tables from
+     * the source database are sent to the target Amazon Redshift data warehouse. </p>
+     */
+    inline void SetDataFilter(const Aws::String& value) { m_dataFilter = value; }
+
+    /**
+     * <p>Data filters for the integration. These filters determine which tables from
+     * the source database are sent to the target Amazon Redshift data warehouse. </p>
+     */
+    inline void SetDataFilter(Aws::String&& value) { m_dataFilter = std::move(value); }
+
+    /**
+     * <p>Data filters for the integration. These filters determine which tables from
+     * the source database are sent to the target Amazon Redshift data warehouse. </p>
+     */
+    inline void SetDataFilter(const char* value) { m_dataFilter.assign(value); }
+
+    /**
+     * <p>Data filters for the integration. These filters determine which tables from
+     * the source database are sent to the target Amazon Redshift data warehouse. </p>
+     */
+    inline CreateIntegrationResult& WithDataFilter(const Aws::String& value) { SetDataFilter(value); return *this;}
+
+    /**
+     * <p>Data filters for the integration. These filters determine which tables from
+     * the source database are sent to the target Amazon Redshift data warehouse. </p>
+     */
+    inline CreateIntegrationResult& WithDataFilter(Aws::String&& value) { SetDataFilter(std::move(value)); return *this;}
+
+    /**
+     * <p>Data filters for the integration. These filters determine which tables from
+     * the source database are sent to the target Amazon Redshift data warehouse. </p>
+     */
+    inline CreateIntegrationResult& WithDataFilter(const char* value) { SetDataFilter(value); return *this;}
+
+
+    /**
+     * <p>A description of the integration.</p>
+     */
+    inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>A description of the integration.</p>
+     */
+    inline void SetDescription(const Aws::String& value) { m_description = value; }
+
+    /**
+     * <p>A description of the integration.</p>
+     */
+    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
+
+    /**
+     * <p>A description of the integration.</p>
+     */
+    inline void SetDescription(const char* value) { m_description.assign(value); }
+
+    /**
+     * <p>A description of the integration.</p>
+     */
+    inline CreateIntegrationResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /**
+     * <p>A description of the integration.</p>
+     */
+    inline CreateIntegrationResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+
+    /**
+     * <p>A description of the integration.</p>
+     */
+    inline CreateIntegrationResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -493,6 +572,10 @@ namespace Model
     Aws::Utils::DateTime m_createTime;
 
     Aws::Vector<IntegrationError> m_errors;
+
+    Aws::String m_dataFilter;
+
+    Aws::String m_description;
 
     ResponseMetadata m_responseMetadata;
   };

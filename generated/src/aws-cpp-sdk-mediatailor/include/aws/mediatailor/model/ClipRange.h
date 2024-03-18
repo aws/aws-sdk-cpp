@@ -60,10 +60,38 @@ namespace Model
      */
     inline ClipRange& WithEndOffsetMillis(long long value) { SetEndOffsetMillis(value); return *this;}
 
+
+    /**
+     * <p>The start offset of the clip range, in milliseconds. This offset truncates
+     * the start at the number of milliseconds into the duration of the VOD source.</p>
+     */
+    inline long long GetStartOffsetMillis() const{ return m_startOffsetMillis; }
+
+    /**
+     * <p>The start offset of the clip range, in milliseconds. This offset truncates
+     * the start at the number of milliseconds into the duration of the VOD source.</p>
+     */
+    inline bool StartOffsetMillisHasBeenSet() const { return m_startOffsetMillisHasBeenSet; }
+
+    /**
+     * <p>The start offset of the clip range, in milliseconds. This offset truncates
+     * the start at the number of milliseconds into the duration of the VOD source.</p>
+     */
+    inline void SetStartOffsetMillis(long long value) { m_startOffsetMillisHasBeenSet = true; m_startOffsetMillis = value; }
+
+    /**
+     * <p>The start offset of the clip range, in milliseconds. This offset truncates
+     * the start at the number of milliseconds into the duration of the VOD source.</p>
+     */
+    inline ClipRange& WithStartOffsetMillis(long long value) { SetStartOffsetMillis(value); return *this;}
+
   private:
 
     long long m_endOffsetMillis;
     bool m_endOffsetMillisHasBeenSet = false;
+
+    long long m_startOffsetMillis;
+    bool m_startOffsetMillisHasBeenSet = false;
   };
 
 } // namespace Model

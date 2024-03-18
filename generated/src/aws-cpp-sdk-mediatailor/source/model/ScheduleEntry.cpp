@@ -23,6 +23,7 @@ ScheduleEntry::ScheduleEntry() :
     m_approximateDurationSecondsHasBeenSet(false),
     m_approximateStartTimeHasBeenSet(false),
     m_arnHasBeenSet(false),
+    m_audiencesHasBeenSet(false),
     m_channelNameHasBeenSet(false),
     m_liveSourceNameHasBeenSet(false),
     m_programNameHasBeenSet(false),
@@ -39,6 +40,7 @@ ScheduleEntry::ScheduleEntry(JsonView jsonValue) :
     m_approximateDurationSecondsHasBeenSet(false),
     m_approximateStartTimeHasBeenSet(false),
     m_arnHasBeenSet(false),
+    m_audiencesHasBeenSet(false),
     m_channelNameHasBeenSet(false),
     m_liveSourceNameHasBeenSet(false),
     m_programNameHasBeenSet(false),
@@ -72,6 +74,16 @@ ScheduleEntry& ScheduleEntry::operator =(JsonView jsonValue)
     m_arn = jsonValue.GetString("Arn");
 
     m_arnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Audiences"))
+  {
+    Aws::Utils::Array<JsonView> audiencesJsonList = jsonValue.GetArray("Audiences");
+    for(unsigned audiencesIndex = 0; audiencesIndex < audiencesJsonList.GetLength(); ++audiencesIndex)
+    {
+      m_audiences.push_back(audiencesJsonList[audiencesIndex].AsString());
+    }
+    m_audiencesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ChannelName"))
@@ -147,6 +159,17 @@ JsonValue ScheduleEntry::Jsonize() const
   if(m_arnHasBeenSet)
   {
    payload.WithString("Arn", m_arn);
+
+  }
+
+  if(m_audiencesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> audiencesJsonList(m_audiences.size());
+   for(unsigned audiencesIndex = 0; audiencesIndex < audiencesJsonList.GetLength(); ++audiencesIndex)
+   {
+     audiencesJsonList[audiencesIndex].AsString(m_audiences[audiencesIndex]);
+   }
+   payload.WithArray("Audiences", std::move(audiencesJsonList));
 
   }
 

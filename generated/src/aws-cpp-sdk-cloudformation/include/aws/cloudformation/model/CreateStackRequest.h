@@ -539,7 +539,7 @@ namespace Model
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
      * <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
-     * <code>AWS::IAM::AccessKey</code> AWS::IAM::AccessKey</a> </p> </li> <li> <p> <a
+     * <code>AWS::IAM::AccessKey</code> </a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
      * <code>AWS::IAM::Group</code> </a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
@@ -602,7 +602,7 @@ namespace Model
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
      * <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
-     * <code>AWS::IAM::AccessKey</code> AWS::IAM::AccessKey</a> </p> </li> <li> <p> <a
+     * <code>AWS::IAM::AccessKey</code> </a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
      * <code>AWS::IAM::Group</code> </a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
@@ -665,7 +665,7 @@ namespace Model
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
      * <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
-     * <code>AWS::IAM::AccessKey</code> AWS::IAM::AccessKey</a> </p> </li> <li> <p> <a
+     * <code>AWS::IAM::AccessKey</code> </a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
      * <code>AWS::IAM::Group</code> </a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
@@ -728,7 +728,7 @@ namespace Model
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
      * <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
-     * <code>AWS::IAM::AccessKey</code> AWS::IAM::AccessKey</a> </p> </li> <li> <p> <a
+     * <code>AWS::IAM::AccessKey</code> </a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
      * <code>AWS::IAM::Group</code> </a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
@@ -791,7 +791,7 @@ namespace Model
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
      * <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
-     * <code>AWS::IAM::AccessKey</code> AWS::IAM::AccessKey</a> </p> </li> <li> <p> <a
+     * <code>AWS::IAM::AccessKey</code> </a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
      * <code>AWS::IAM::Group</code> </a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
@@ -854,7 +854,7 @@ namespace Model
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
      * <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
-     * <code>AWS::IAM::AccessKey</code> AWS::IAM::AccessKey</a> </p> </li> <li> <p> <a
+     * <code>AWS::IAM::AccessKey</code> </a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
      * <code>AWS::IAM::Group</code> </a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
@@ -917,7 +917,7 @@ namespace Model
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
      * <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
-     * <code>AWS::IAM::AccessKey</code> AWS::IAM::AccessKey</a> </p> </li> <li> <p> <a
+     * <code>AWS::IAM::AccessKey</code> </a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
      * <code>AWS::IAM::Group</code> </a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
@@ -980,7 +980,7 @@ namespace Model
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
      * <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
-     * <code>AWS::IAM::AccessKey</code> AWS::IAM::AccessKey</a> </p> </li> <li> <p> <a
+     * <code>AWS::IAM::AccessKey</code> </a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
      * <code>AWS::IAM::Group</code> </a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">

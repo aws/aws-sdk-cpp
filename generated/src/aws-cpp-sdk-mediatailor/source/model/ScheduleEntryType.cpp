@@ -22,6 +22,7 @@ namespace Aws
 
         static const int PROGRAM_HASH = HashingUtils::HashString("PROGRAM");
         static const int FILLER_SLATE_HASH = HashingUtils::HashString("FILLER_SLATE");
+        static const int ALTERNATE_MEDIA_HASH = HashingUtils::HashString("ALTERNATE_MEDIA");
 
 
         ScheduleEntryType GetScheduleEntryTypeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == FILLER_SLATE_HASH)
           {
             return ScheduleEntryType::FILLER_SLATE;
+          }
+          else if (hashCode == ALTERNATE_MEDIA_HASH)
+          {
+            return ScheduleEntryType::ALTERNATE_MEDIA;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -55,6 +60,8 @@ namespace Aws
             return "PROGRAM";
           case ScheduleEntryType::FILLER_SLATE:
             return "FILLER_SLATE";
+          case ScheduleEntryType::ALTERNATE_MEDIA:
+            return "ALTERNATE_MEDIA";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

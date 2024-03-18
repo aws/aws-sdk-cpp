@@ -116,42 +116,50 @@ namespace Model
 
 
     /**
-     * <p>The name of the key policy. The only valid value is <code>default</code>.</p>
+     * <p>The name of the key policy. If no policy name is specified, the default value
+     * is <code>default</code>. The only valid value is <code>default</code>.</p>
      */
     inline const Aws::String& GetPolicyName() const{ return m_policyName; }
 
     /**
-     * <p>The name of the key policy. The only valid value is <code>default</code>.</p>
+     * <p>The name of the key policy. If no policy name is specified, the default value
+     * is <code>default</code>. The only valid value is <code>default</code>.</p>
      */
     inline bool PolicyNameHasBeenSet() const { return m_policyNameHasBeenSet; }
 
     /**
-     * <p>The name of the key policy. The only valid value is <code>default</code>.</p>
+     * <p>The name of the key policy. If no policy name is specified, the default value
+     * is <code>default</code>. The only valid value is <code>default</code>.</p>
      */
     inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
 
     /**
-     * <p>The name of the key policy. The only valid value is <code>default</code>.</p>
+     * <p>The name of the key policy. If no policy name is specified, the default value
+     * is <code>default</code>. The only valid value is <code>default</code>.</p>
      */
     inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = std::move(value); }
 
     /**
-     * <p>The name of the key policy. The only valid value is <code>default</code>.</p>
+     * <p>The name of the key policy. If no policy name is specified, the default value
+     * is <code>default</code>. The only valid value is <code>default</code>.</p>
      */
     inline void SetPolicyName(const char* value) { m_policyNameHasBeenSet = true; m_policyName.assign(value); }
 
     /**
-     * <p>The name of the key policy. The only valid value is <code>default</code>.</p>
+     * <p>The name of the key policy. If no policy name is specified, the default value
+     * is <code>default</code>. The only valid value is <code>default</code>.</p>
      */
     inline PutKeyPolicyRequest& WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
 
     /**
-     * <p>The name of the key policy. The only valid value is <code>default</code>.</p>
+     * <p>The name of the key policy. If no policy name is specified, the default value
+     * is <code>default</code>. The only valid value is <code>default</code>.</p>
      */
     inline PutKeyPolicyRequest& WithPolicyName(Aws::String&& value) { SetPolicyName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the key policy. The only valid value is <code>default</code>.</p>
+     * <p>The name of the key policy. If no policy name is specified, the default value
+     * is <code>default</code>. The only valid value is <code>default</code>.</p>
      */
     inline PutKeyPolicyRequest& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
 

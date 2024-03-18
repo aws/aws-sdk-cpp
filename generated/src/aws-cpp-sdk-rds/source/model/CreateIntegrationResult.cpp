@@ -112,6 +112,16 @@ CreateIntegrationResult& CreateIntegrationResult::operator =(const Aws::AmazonWe
       }
 
     }
+    XmlNode dataFilterNode = resultNode.FirstChild("DataFilter");
+    if(!dataFilterNode.IsNull())
+    {
+      m_dataFilter = Aws::Utils::Xml::DecodeEscapedXmlText(dataFilterNode.GetText());
+    }
+    XmlNode descriptionNode = resultNode.FirstChild("Description");
+    if(!descriptionNode.IsNull())
+    {
+      m_description = Aws::Utils::Xml::DecodeEscapedXmlText(descriptionNode.GetText());
+    }
   }
 
   if (!rootNode.IsNull()) {

@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/rds/model/DeleteIntegrationResult.h>
+#include <aws/rds/model/ModifyIntegrationResult.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
@@ -17,25 +17,25 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteIntegrationResult::DeleteIntegrationResult() : 
+ModifyIntegrationResult::ModifyIntegrationResult() : 
     m_status(IntegrationStatus::NOT_SET)
 {
 }
 
-DeleteIntegrationResult::DeleteIntegrationResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
+ModifyIntegrationResult::ModifyIntegrationResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) : 
     m_status(IntegrationStatus::NOT_SET)
 {
   *this = result;
 }
 
-DeleteIntegrationResult& DeleteIntegrationResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
+ModifyIntegrationResult& ModifyIntegrationResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   const XmlDocument& xmlDocument = result.GetPayload();
   XmlNode rootNode = xmlDocument.GetRootElement();
   XmlNode resultNode = rootNode;
-  if (!rootNode.IsNull() && (rootNode.GetName() != "DeleteIntegrationResult"))
+  if (!rootNode.IsNull() && (rootNode.GetName() != "ModifyIntegrationResult"))
   {
-    resultNode = rootNode.FirstChild("DeleteIntegrationResult");
+    resultNode = rootNode.FirstChild("ModifyIntegrationResult");
   }
 
   if(!resultNode.IsNull())
@@ -127,7 +127,7 @@ DeleteIntegrationResult& DeleteIntegrationResult::operator =(const Aws::AmazonWe
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
-    AWS_LOGSTREAM_DEBUG("Aws::RDS::Model::DeleteIntegrationResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
+    AWS_LOGSTREAM_DEBUG("Aws::RDS::Model::ModifyIntegrationResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;
 }
