@@ -150,50 +150,90 @@ namespace Model
 
 
     /**
-     * <p>Defines the type of log that the source is sending. For Amazon CodeWhisperer,
-     * the valid value is <code>EVENT_LOGS</code>.</p>
+     * <p>Defines the type of log that the source is sending.</p> <ul> <li> <p>For
+     * Amazon CodeWhisperer, the valid value is <code>EVENT_LOGS</code>.</p> </li> <li>
+     * <p>For IAM Identity Centerr, the valid value is <code>ERROR_LOGS</code>.</p>
+     * </li> <li> <p>For Amazon WorkMail, the valid values are
+     * <code>ACCESS_CONTROL_LOGS</code>, <code>AUTHENTICATION_LOGS</code>,
+     * <code>WORKMAIL_AVAILABILITY_PROVIDER_LOGS</code>, and
+     * <code>WORKMAIL_MAILBOX_ACCESS_LOGS</code>.</p> </li> </ul>
      */
     inline const Aws::String& GetLogType() const{ return m_logType; }
 
     /**
-     * <p>Defines the type of log that the source is sending. For Amazon CodeWhisperer,
-     * the valid value is <code>EVENT_LOGS</code>.</p>
+     * <p>Defines the type of log that the source is sending.</p> <ul> <li> <p>For
+     * Amazon CodeWhisperer, the valid value is <code>EVENT_LOGS</code>.</p> </li> <li>
+     * <p>For IAM Identity Centerr, the valid value is <code>ERROR_LOGS</code>.</p>
+     * </li> <li> <p>For Amazon WorkMail, the valid values are
+     * <code>ACCESS_CONTROL_LOGS</code>, <code>AUTHENTICATION_LOGS</code>,
+     * <code>WORKMAIL_AVAILABILITY_PROVIDER_LOGS</code>, and
+     * <code>WORKMAIL_MAILBOX_ACCESS_LOGS</code>.</p> </li> </ul>
      */
     inline bool LogTypeHasBeenSet() const { return m_logTypeHasBeenSet; }
 
     /**
-     * <p>Defines the type of log that the source is sending. For Amazon CodeWhisperer,
-     * the valid value is <code>EVENT_LOGS</code>.</p>
+     * <p>Defines the type of log that the source is sending.</p> <ul> <li> <p>For
+     * Amazon CodeWhisperer, the valid value is <code>EVENT_LOGS</code>.</p> </li> <li>
+     * <p>For IAM Identity Centerr, the valid value is <code>ERROR_LOGS</code>.</p>
+     * </li> <li> <p>For Amazon WorkMail, the valid values are
+     * <code>ACCESS_CONTROL_LOGS</code>, <code>AUTHENTICATION_LOGS</code>,
+     * <code>WORKMAIL_AVAILABILITY_PROVIDER_LOGS</code>, and
+     * <code>WORKMAIL_MAILBOX_ACCESS_LOGS</code>.</p> </li> </ul>
      */
     inline void SetLogType(const Aws::String& value) { m_logTypeHasBeenSet = true; m_logType = value; }
 
     /**
-     * <p>Defines the type of log that the source is sending. For Amazon CodeWhisperer,
-     * the valid value is <code>EVENT_LOGS</code>.</p>
+     * <p>Defines the type of log that the source is sending.</p> <ul> <li> <p>For
+     * Amazon CodeWhisperer, the valid value is <code>EVENT_LOGS</code>.</p> </li> <li>
+     * <p>For IAM Identity Centerr, the valid value is <code>ERROR_LOGS</code>.</p>
+     * </li> <li> <p>For Amazon WorkMail, the valid values are
+     * <code>ACCESS_CONTROL_LOGS</code>, <code>AUTHENTICATION_LOGS</code>,
+     * <code>WORKMAIL_AVAILABILITY_PROVIDER_LOGS</code>, and
+     * <code>WORKMAIL_MAILBOX_ACCESS_LOGS</code>.</p> </li> </ul>
      */
     inline void SetLogType(Aws::String&& value) { m_logTypeHasBeenSet = true; m_logType = std::move(value); }
 
     /**
-     * <p>Defines the type of log that the source is sending. For Amazon CodeWhisperer,
-     * the valid value is <code>EVENT_LOGS</code>.</p>
+     * <p>Defines the type of log that the source is sending.</p> <ul> <li> <p>For
+     * Amazon CodeWhisperer, the valid value is <code>EVENT_LOGS</code>.</p> </li> <li>
+     * <p>For IAM Identity Centerr, the valid value is <code>ERROR_LOGS</code>.</p>
+     * </li> <li> <p>For Amazon WorkMail, the valid values are
+     * <code>ACCESS_CONTROL_LOGS</code>, <code>AUTHENTICATION_LOGS</code>,
+     * <code>WORKMAIL_AVAILABILITY_PROVIDER_LOGS</code>, and
+     * <code>WORKMAIL_MAILBOX_ACCESS_LOGS</code>.</p> </li> </ul>
      */
     inline void SetLogType(const char* value) { m_logTypeHasBeenSet = true; m_logType.assign(value); }
 
     /**
-     * <p>Defines the type of log that the source is sending. For Amazon CodeWhisperer,
-     * the valid value is <code>EVENT_LOGS</code>.</p>
+     * <p>Defines the type of log that the source is sending.</p> <ul> <li> <p>For
+     * Amazon CodeWhisperer, the valid value is <code>EVENT_LOGS</code>.</p> </li> <li>
+     * <p>For IAM Identity Centerr, the valid value is <code>ERROR_LOGS</code>.</p>
+     * </li> <li> <p>For Amazon WorkMail, the valid values are
+     * <code>ACCESS_CONTROL_LOGS</code>, <code>AUTHENTICATION_LOGS</code>,
+     * <code>WORKMAIL_AVAILABILITY_PROVIDER_LOGS</code>, and
+     * <code>WORKMAIL_MAILBOX_ACCESS_LOGS</code>.</p> </li> </ul>
      */
     inline PutDeliverySourceRequest& WithLogType(const Aws::String& value) { SetLogType(value); return *this;}
 
     /**
-     * <p>Defines the type of log that the source is sending. For Amazon CodeWhisperer,
-     * the valid value is <code>EVENT_LOGS</code>.</p>
+     * <p>Defines the type of log that the source is sending.</p> <ul> <li> <p>For
+     * Amazon CodeWhisperer, the valid value is <code>EVENT_LOGS</code>.</p> </li> <li>
+     * <p>For IAM Identity Centerr, the valid value is <code>ERROR_LOGS</code>.</p>
+     * </li> <li> <p>For Amazon WorkMail, the valid values are
+     * <code>ACCESS_CONTROL_LOGS</code>, <code>AUTHENTICATION_LOGS</code>,
+     * <code>WORKMAIL_AVAILABILITY_PROVIDER_LOGS</code>, and
+     * <code>WORKMAIL_MAILBOX_ACCESS_LOGS</code>.</p> </li> </ul>
      */
     inline PutDeliverySourceRequest& WithLogType(Aws::String&& value) { SetLogType(std::move(value)); return *this;}
 
     /**
-     * <p>Defines the type of log that the source is sending. For Amazon CodeWhisperer,
-     * the valid value is <code>EVENT_LOGS</code>.</p>
+     * <p>Defines the type of log that the source is sending.</p> <ul> <li> <p>For
+     * Amazon CodeWhisperer, the valid value is <code>EVENT_LOGS</code>.</p> </li> <li>
+     * <p>For IAM Identity Centerr, the valid value is <code>ERROR_LOGS</code>.</p>
+     * </li> <li> <p>For Amazon WorkMail, the valid values are
+     * <code>ACCESS_CONTROL_LOGS</code>, <code>AUTHENTICATION_LOGS</code>,
+     * <code>WORKMAIL_AVAILABILITY_PROVIDER_LOGS</code>, and
+     * <code>WORKMAIL_MAILBOX_ACCESS_LOGS</code>.</p> </li> </ul>
      */
     inline PutDeliverySourceRequest& WithLogType(const char* value) { SetLogType(value); return *this;}
 

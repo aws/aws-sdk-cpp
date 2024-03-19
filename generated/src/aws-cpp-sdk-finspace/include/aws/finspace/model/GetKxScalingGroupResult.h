@@ -109,43 +109,113 @@ namespace Model
 
     /**
      * <p> The memory and CPU capabilities of the scaling group host on which FinSpace
-     * Managed kdb clusters will be placed. </p>
+     * Managed kdb clusters will be placed.</p> <p>It can have one of the following
+     * values:</p> <ul> <li> <p> <code>kx.sg.4xlarge</code> – The host type with a
+     * configuration of 108 GiB memory and 16 vCPUs.</p> </li> <li> <p>
+     * <code>kx.sg.8xlarge</code> – The host type with a configuration of 216 GiB
+     * memory and 32 vCPUs.</p> </li> <li> <p> <code>kx.sg.16xlarge</code> – The host
+     * type with a configuration of 432 GiB memory and 64 vCPUs.</p> </li> <li> <p>
+     * <code>kx.sg.32xlarge</code> – The host type with a configuration of 864 GiB
+     * memory and 128 vCPUs.</p> </li> <li> <p> <code>kx.sg1.16xlarge</code> – The host
+     * type with a configuration of 1949 GiB memory and 64 vCPUs.</p> </li> <li> <p>
+     * <code>kx.sg1.24xlarge</code> – The host type with a configuration of 2948 GiB
+     * memory and 96 vCPUs.</p> </li> </ul>
      */
     inline const Aws::String& GetHostType() const{ return m_hostType; }
 
     /**
      * <p> The memory and CPU capabilities of the scaling group host on which FinSpace
-     * Managed kdb clusters will be placed. </p>
+     * Managed kdb clusters will be placed.</p> <p>It can have one of the following
+     * values:</p> <ul> <li> <p> <code>kx.sg.4xlarge</code> – The host type with a
+     * configuration of 108 GiB memory and 16 vCPUs.</p> </li> <li> <p>
+     * <code>kx.sg.8xlarge</code> – The host type with a configuration of 216 GiB
+     * memory and 32 vCPUs.</p> </li> <li> <p> <code>kx.sg.16xlarge</code> – The host
+     * type with a configuration of 432 GiB memory and 64 vCPUs.</p> </li> <li> <p>
+     * <code>kx.sg.32xlarge</code> – The host type with a configuration of 864 GiB
+     * memory and 128 vCPUs.</p> </li> <li> <p> <code>kx.sg1.16xlarge</code> – The host
+     * type with a configuration of 1949 GiB memory and 64 vCPUs.</p> </li> <li> <p>
+     * <code>kx.sg1.24xlarge</code> – The host type with a configuration of 2948 GiB
+     * memory and 96 vCPUs.</p> </li> </ul>
      */
     inline void SetHostType(const Aws::String& value) { m_hostType = value; }
 
     /**
      * <p> The memory and CPU capabilities of the scaling group host on which FinSpace
-     * Managed kdb clusters will be placed. </p>
+     * Managed kdb clusters will be placed.</p> <p>It can have one of the following
+     * values:</p> <ul> <li> <p> <code>kx.sg.4xlarge</code> – The host type with a
+     * configuration of 108 GiB memory and 16 vCPUs.</p> </li> <li> <p>
+     * <code>kx.sg.8xlarge</code> – The host type with a configuration of 216 GiB
+     * memory and 32 vCPUs.</p> </li> <li> <p> <code>kx.sg.16xlarge</code> – The host
+     * type with a configuration of 432 GiB memory and 64 vCPUs.</p> </li> <li> <p>
+     * <code>kx.sg.32xlarge</code> – The host type with a configuration of 864 GiB
+     * memory and 128 vCPUs.</p> </li> <li> <p> <code>kx.sg1.16xlarge</code> – The host
+     * type with a configuration of 1949 GiB memory and 64 vCPUs.</p> </li> <li> <p>
+     * <code>kx.sg1.24xlarge</code> – The host type with a configuration of 2948 GiB
+     * memory and 96 vCPUs.</p> </li> </ul>
      */
     inline void SetHostType(Aws::String&& value) { m_hostType = std::move(value); }
 
     /**
      * <p> The memory and CPU capabilities of the scaling group host on which FinSpace
-     * Managed kdb clusters will be placed. </p>
+     * Managed kdb clusters will be placed.</p> <p>It can have one of the following
+     * values:</p> <ul> <li> <p> <code>kx.sg.4xlarge</code> – The host type with a
+     * configuration of 108 GiB memory and 16 vCPUs.</p> </li> <li> <p>
+     * <code>kx.sg.8xlarge</code> – The host type with a configuration of 216 GiB
+     * memory and 32 vCPUs.</p> </li> <li> <p> <code>kx.sg.16xlarge</code> – The host
+     * type with a configuration of 432 GiB memory and 64 vCPUs.</p> </li> <li> <p>
+     * <code>kx.sg.32xlarge</code> – The host type with a configuration of 864 GiB
+     * memory and 128 vCPUs.</p> </li> <li> <p> <code>kx.sg1.16xlarge</code> – The host
+     * type with a configuration of 1949 GiB memory and 64 vCPUs.</p> </li> <li> <p>
+     * <code>kx.sg1.24xlarge</code> – The host type with a configuration of 2948 GiB
+     * memory and 96 vCPUs.</p> </li> </ul>
      */
     inline void SetHostType(const char* value) { m_hostType.assign(value); }
 
     /**
      * <p> The memory and CPU capabilities of the scaling group host on which FinSpace
-     * Managed kdb clusters will be placed. </p>
+     * Managed kdb clusters will be placed.</p> <p>It can have one of the following
+     * values:</p> <ul> <li> <p> <code>kx.sg.4xlarge</code> – The host type with a
+     * configuration of 108 GiB memory and 16 vCPUs.</p> </li> <li> <p>
+     * <code>kx.sg.8xlarge</code> – The host type with a configuration of 216 GiB
+     * memory and 32 vCPUs.</p> </li> <li> <p> <code>kx.sg.16xlarge</code> – The host
+     * type with a configuration of 432 GiB memory and 64 vCPUs.</p> </li> <li> <p>
+     * <code>kx.sg.32xlarge</code> – The host type with a configuration of 864 GiB
+     * memory and 128 vCPUs.</p> </li> <li> <p> <code>kx.sg1.16xlarge</code> – The host
+     * type with a configuration of 1949 GiB memory and 64 vCPUs.</p> </li> <li> <p>
+     * <code>kx.sg1.24xlarge</code> – The host type with a configuration of 2948 GiB
+     * memory and 96 vCPUs.</p> </li> </ul>
      */
     inline GetKxScalingGroupResult& WithHostType(const Aws::String& value) { SetHostType(value); return *this;}
 
     /**
      * <p> The memory and CPU capabilities of the scaling group host on which FinSpace
-     * Managed kdb clusters will be placed. </p>
+     * Managed kdb clusters will be placed.</p> <p>It can have one of the following
+     * values:</p> <ul> <li> <p> <code>kx.sg.4xlarge</code> – The host type with a
+     * configuration of 108 GiB memory and 16 vCPUs.</p> </li> <li> <p>
+     * <code>kx.sg.8xlarge</code> – The host type with a configuration of 216 GiB
+     * memory and 32 vCPUs.</p> </li> <li> <p> <code>kx.sg.16xlarge</code> – The host
+     * type with a configuration of 432 GiB memory and 64 vCPUs.</p> </li> <li> <p>
+     * <code>kx.sg.32xlarge</code> – The host type with a configuration of 864 GiB
+     * memory and 128 vCPUs.</p> </li> <li> <p> <code>kx.sg1.16xlarge</code> – The host
+     * type with a configuration of 1949 GiB memory and 64 vCPUs.</p> </li> <li> <p>
+     * <code>kx.sg1.24xlarge</code> – The host type with a configuration of 2948 GiB
+     * memory and 96 vCPUs.</p> </li> </ul>
      */
     inline GetKxScalingGroupResult& WithHostType(Aws::String&& value) { SetHostType(std::move(value)); return *this;}
 
     /**
      * <p> The memory and CPU capabilities of the scaling group host on which FinSpace
-     * Managed kdb clusters will be placed. </p>
+     * Managed kdb clusters will be placed.</p> <p>It can have one of the following
+     * values:</p> <ul> <li> <p> <code>kx.sg.4xlarge</code> – The host type with a
+     * configuration of 108 GiB memory and 16 vCPUs.</p> </li> <li> <p>
+     * <code>kx.sg.8xlarge</code> – The host type with a configuration of 216 GiB
+     * memory and 32 vCPUs.</p> </li> <li> <p> <code>kx.sg.16xlarge</code> – The host
+     * type with a configuration of 432 GiB memory and 64 vCPUs.</p> </li> <li> <p>
+     * <code>kx.sg.32xlarge</code> – The host type with a configuration of 864 GiB
+     * memory and 128 vCPUs.</p> </li> <li> <p> <code>kx.sg1.16xlarge</code> – The host
+     * type with a configuration of 1949 GiB memory and 64 vCPUs.</p> </li> <li> <p>
+     * <code>kx.sg1.24xlarge</code> – The host type with a configuration of 2948 GiB
+     * memory and 96 vCPUs.</p> </li> </ul>
      */
     inline GetKxScalingGroupResult& WithHostType(const char* value) { SetHostType(value); return *this;}
 

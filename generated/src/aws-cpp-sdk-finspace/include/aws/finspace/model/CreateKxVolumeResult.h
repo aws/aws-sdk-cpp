@@ -318,32 +318,37 @@ namespace Model
 
 
     /**
-     * <p>The number of availability zones you want to assign per cluster. Currently,
-     * FinSpace only support <code>SINGLE</code> for volumes.</p>
+     * <p>The number of availability zones you want to assign per volume. Currently,
+     * FinSpace only supports <code>SINGLE</code> for volumes. This places dataview in
+     * a single AZ.</p>
      */
     inline const KxAzMode& GetAzMode() const{ return m_azMode; }
 
     /**
-     * <p>The number of availability zones you want to assign per cluster. Currently,
-     * FinSpace only support <code>SINGLE</code> for volumes.</p>
+     * <p>The number of availability zones you want to assign per volume. Currently,
+     * FinSpace only supports <code>SINGLE</code> for volumes. This places dataview in
+     * a single AZ.</p>
      */
     inline void SetAzMode(const KxAzMode& value) { m_azMode = value; }
 
     /**
-     * <p>The number of availability zones you want to assign per cluster. Currently,
-     * FinSpace only support <code>SINGLE</code> for volumes.</p>
+     * <p>The number of availability zones you want to assign per volume. Currently,
+     * FinSpace only supports <code>SINGLE</code> for volumes. This places dataview in
+     * a single AZ.</p>
      */
     inline void SetAzMode(KxAzMode&& value) { m_azMode = std::move(value); }
 
     /**
-     * <p>The number of availability zones you want to assign per cluster. Currently,
-     * FinSpace only support <code>SINGLE</code> for volumes.</p>
+     * <p>The number of availability zones you want to assign per volume. Currently,
+     * FinSpace only supports <code>SINGLE</code> for volumes. This places dataview in
+     * a single AZ.</p>
      */
     inline CreateKxVolumeResult& WithAzMode(const KxAzMode& value) { SetAzMode(value); return *this;}
 
     /**
-     * <p>The number of availability zones you want to assign per cluster. Currently,
-     * FinSpace only support <code>SINGLE</code> for volumes.</p>
+     * <p>The number of availability zones you want to assign per volume. Currently,
+     * FinSpace only supports <code>SINGLE</code> for volumes. This places dataview in
+     * a single AZ.</p>
      */
     inline CreateKxVolumeResult& WithAzMode(KxAzMode&& value) { SetAzMode(std::move(value)); return *this;}
 

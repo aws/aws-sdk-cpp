@@ -8,6 +8,8 @@
 #include <aws/managedblockchain-query/model/QueryNetwork.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/managedblockchain-query/model/QueryTransactionEventType.h>
+#include <aws/managedblockchain-query/model/BlockchainInstant.h>
+#include <aws/managedblockchain-query/model/ConfirmationStatus.h>
 #include <utility>
 
 namespace Aws
@@ -72,50 +74,42 @@ namespace Model
 
 
     /**
-     * <p>The hash of the transaction. It is generated whenever a transaction is
-     * verified and added to the blockchain.</p>
+     * <p>The hash of a transaction. It is generated when a transaction is created.</p>
      */
     inline const Aws::String& GetTransactionHash() const{ return m_transactionHash; }
 
     /**
-     * <p>The hash of the transaction. It is generated whenever a transaction is
-     * verified and added to the blockchain.</p>
+     * <p>The hash of a transaction. It is generated when a transaction is created.</p>
      */
     inline bool TransactionHashHasBeenSet() const { return m_transactionHashHasBeenSet; }
 
     /**
-     * <p>The hash of the transaction. It is generated whenever a transaction is
-     * verified and added to the blockchain.</p>
+     * <p>The hash of a transaction. It is generated when a transaction is created.</p>
      */
     inline void SetTransactionHash(const Aws::String& value) { m_transactionHashHasBeenSet = true; m_transactionHash = value; }
 
     /**
-     * <p>The hash of the transaction. It is generated whenever a transaction is
-     * verified and added to the blockchain.</p>
+     * <p>The hash of a transaction. It is generated when a transaction is created.</p>
      */
     inline void SetTransactionHash(Aws::String&& value) { m_transactionHashHasBeenSet = true; m_transactionHash = std::move(value); }
 
     /**
-     * <p>The hash of the transaction. It is generated whenever a transaction is
-     * verified and added to the blockchain.</p>
+     * <p>The hash of a transaction. It is generated when a transaction is created.</p>
      */
     inline void SetTransactionHash(const char* value) { m_transactionHashHasBeenSet = true; m_transactionHash.assign(value); }
 
     /**
-     * <p>The hash of the transaction. It is generated whenever a transaction is
-     * verified and added to the blockchain.</p>
+     * <p>The hash of a transaction. It is generated when a transaction is created.</p>
      */
     inline TransactionEvent& WithTransactionHash(const Aws::String& value) { SetTransactionHash(value); return *this;}
 
     /**
-     * <p>The hash of the transaction. It is generated whenever a transaction is
-     * verified and added to the blockchain.</p>
+     * <p>The hash of a transaction. It is generated when a transaction is created.</p>
      */
     inline TransactionEvent& WithTransactionHash(Aws::String&& value) { SetTransactionHash(std::move(value)); return *this;}
 
     /**
-     * <p>The hash of the transaction. It is generated whenever a transaction is
-     * verified and added to the blockchain.</p>
+     * <p>The hash of a transaction. It is generated when a transaction is created.</p>
      */
     inline TransactionEvent& WithTransactionHash(const char* value) { SetTransactionHash(value); return *this;}
 
@@ -291,42 +285,42 @@ namespace Model
 
 
     /**
-     * <p>The blockchain address. for the contract</p>
+     * <p>The blockchain address for the contract</p>
      */
     inline const Aws::String& GetContractAddress() const{ return m_contractAddress; }
 
     /**
-     * <p>The blockchain address. for the contract</p>
+     * <p>The blockchain address for the contract</p>
      */
     inline bool ContractAddressHasBeenSet() const { return m_contractAddressHasBeenSet; }
 
     /**
-     * <p>The blockchain address. for the contract</p>
+     * <p>The blockchain address for the contract</p>
      */
     inline void SetContractAddress(const Aws::String& value) { m_contractAddressHasBeenSet = true; m_contractAddress = value; }
 
     /**
-     * <p>The blockchain address. for the contract</p>
+     * <p>The blockchain address for the contract</p>
      */
     inline void SetContractAddress(Aws::String&& value) { m_contractAddressHasBeenSet = true; m_contractAddress = std::move(value); }
 
     /**
-     * <p>The blockchain address. for the contract</p>
+     * <p>The blockchain address for the contract</p>
      */
     inline void SetContractAddress(const char* value) { m_contractAddressHasBeenSet = true; m_contractAddress.assign(value); }
 
     /**
-     * <p>The blockchain address. for the contract</p>
+     * <p>The blockchain address for the contract</p>
      */
     inline TransactionEvent& WithContractAddress(const Aws::String& value) { SetContractAddress(value); return *this;}
 
     /**
-     * <p>The blockchain address. for the contract</p>
+     * <p>The blockchain address for the contract</p>
      */
     inline TransactionEvent& WithContractAddress(Aws::String&& value) { SetContractAddress(std::move(value)); return *this;}
 
     /**
-     * <p>The blockchain address. for the contract</p>
+     * <p>The blockchain address for the contract</p>
      */
     inline TransactionEvent& WithContractAddress(const char* value) { SetContractAddress(value); return *this;}
 
@@ -373,73 +367,295 @@ namespace Model
 
 
     /**
-     * <p>The unique identifier of the transaction. It is generated whenever a
-     * transaction is verified and added to the blockchain.</p>
+     * <p>The identifier of a Bitcoin transaction. It is generated when a transaction
+     * is created.</p>
      */
     inline const Aws::String& GetTransactionId() const{ return m_transactionId; }
 
     /**
-     * <p>The unique identifier of the transaction. It is generated whenever a
-     * transaction is verified and added to the blockchain.</p>
+     * <p>The identifier of a Bitcoin transaction. It is generated when a transaction
+     * is created.</p>
      */
     inline bool TransactionIdHasBeenSet() const { return m_transactionIdHasBeenSet; }
 
     /**
-     * <p>The unique identifier of the transaction. It is generated whenever a
-     * transaction is verified and added to the blockchain.</p>
+     * <p>The identifier of a Bitcoin transaction. It is generated when a transaction
+     * is created.</p>
      */
     inline void SetTransactionId(const Aws::String& value) { m_transactionIdHasBeenSet = true; m_transactionId = value; }
 
     /**
-     * <p>The unique identifier of the transaction. It is generated whenever a
-     * transaction is verified and added to the blockchain.</p>
+     * <p>The identifier of a Bitcoin transaction. It is generated when a transaction
+     * is created.</p>
      */
     inline void SetTransactionId(Aws::String&& value) { m_transactionIdHasBeenSet = true; m_transactionId = std::move(value); }
 
     /**
-     * <p>The unique identifier of the transaction. It is generated whenever a
-     * transaction is verified and added to the blockchain.</p>
+     * <p>The identifier of a Bitcoin transaction. It is generated when a transaction
+     * is created.</p>
      */
     inline void SetTransactionId(const char* value) { m_transactionIdHasBeenSet = true; m_transactionId.assign(value); }
 
     /**
-     * <p>The unique identifier of the transaction. It is generated whenever a
-     * transaction is verified and added to the blockchain.</p>
+     * <p>The identifier of a Bitcoin transaction. It is generated when a transaction
+     * is created.</p>
      */
     inline TransactionEvent& WithTransactionId(const Aws::String& value) { SetTransactionId(value); return *this;}
 
     /**
-     * <p>The unique identifier of the transaction. It is generated whenever a
-     * transaction is verified and added to the blockchain.</p>
+     * <p>The identifier of a Bitcoin transaction. It is generated when a transaction
+     * is created.</p>
      */
     inline TransactionEvent& WithTransactionId(Aws::String&& value) { SetTransactionId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier of the transaction. It is generated whenever a
-     * transaction is verified and added to the blockchain.</p>
+     * <p>The identifier of a Bitcoin transaction. It is generated when a transaction
+     * is created.</p>
      */
     inline TransactionEvent& WithTransactionId(const char* value) { SetTransactionId(value); return *this;}
 
 
     /**
-     * <p>The position of the vout in the transaction output list.</p>
+     * <p>The position of the transaction output in the transaction output list.</p>
      */
     inline int GetVoutIndex() const{ return m_voutIndex; }
 
     /**
-     * <p>The position of the vout in the transaction output list.</p>
+     * <p>The position of the transaction output in the transaction output list.</p>
      */
     inline bool VoutIndexHasBeenSet() const { return m_voutIndexHasBeenSet; }
 
     /**
-     * <p>The position of the vout in the transaction output list.</p>
+     * <p>The position of the transaction output in the transaction output list.</p>
      */
     inline void SetVoutIndex(int value) { m_voutIndexHasBeenSet = true; m_voutIndex = value; }
 
     /**
-     * <p>The position of the vout in the transaction output list.</p>
+     * <p>The position of the transaction output in the transaction output list.</p>
      */
     inline TransactionEvent& WithVoutIndex(int value) { SetVoutIndex(value); return *this;}
+
+
+    /**
+     * <p>Specifies if the transaction output is spent or unspent. This is only
+     * returned for BITCOIN_VOUT event types.</p>  <p>This is only returned for
+     * <code>BITCOIN_VOUT</code> event types.</p> 
+     */
+    inline bool GetVoutSpent() const{ return m_voutSpent; }
+
+    /**
+     * <p>Specifies if the transaction output is spent or unspent. This is only
+     * returned for BITCOIN_VOUT event types.</p>  <p>This is only returned for
+     * <code>BITCOIN_VOUT</code> event types.</p> 
+     */
+    inline bool VoutSpentHasBeenSet() const { return m_voutSpentHasBeenSet; }
+
+    /**
+     * <p>Specifies if the transaction output is spent or unspent. This is only
+     * returned for BITCOIN_VOUT event types.</p>  <p>This is only returned for
+     * <code>BITCOIN_VOUT</code> event types.</p> 
+     */
+    inline void SetVoutSpent(bool value) { m_voutSpentHasBeenSet = true; m_voutSpent = value; }
+
+    /**
+     * <p>Specifies if the transaction output is spent or unspent. This is only
+     * returned for BITCOIN_VOUT event types.</p>  <p>This is only returned for
+     * <code>BITCOIN_VOUT</code> event types.</p> 
+     */
+    inline TransactionEvent& WithVoutSpent(bool value) { SetVoutSpent(value); return *this;}
+
+
+    /**
+     * <p>The transactionId that <i>created</i> the spent transaction output.</p>
+     *  <p>This is only returned for <code>BITCOIN_VIN</code> event types.</p>
+     * 
+     */
+    inline const Aws::String& GetSpentVoutTransactionId() const{ return m_spentVoutTransactionId; }
+
+    /**
+     * <p>The transactionId that <i>created</i> the spent transaction output.</p>
+     *  <p>This is only returned for <code>BITCOIN_VIN</code> event types.</p>
+     * 
+     */
+    inline bool SpentVoutTransactionIdHasBeenSet() const { return m_spentVoutTransactionIdHasBeenSet; }
+
+    /**
+     * <p>The transactionId that <i>created</i> the spent transaction output.</p>
+     *  <p>This is only returned for <code>BITCOIN_VIN</code> event types.</p>
+     * 
+     */
+    inline void SetSpentVoutTransactionId(const Aws::String& value) { m_spentVoutTransactionIdHasBeenSet = true; m_spentVoutTransactionId = value; }
+
+    /**
+     * <p>The transactionId that <i>created</i> the spent transaction output.</p>
+     *  <p>This is only returned for <code>BITCOIN_VIN</code> event types.</p>
+     * 
+     */
+    inline void SetSpentVoutTransactionId(Aws::String&& value) { m_spentVoutTransactionIdHasBeenSet = true; m_spentVoutTransactionId = std::move(value); }
+
+    /**
+     * <p>The transactionId that <i>created</i> the spent transaction output.</p>
+     *  <p>This is only returned for <code>BITCOIN_VIN</code> event types.</p>
+     * 
+     */
+    inline void SetSpentVoutTransactionId(const char* value) { m_spentVoutTransactionIdHasBeenSet = true; m_spentVoutTransactionId.assign(value); }
+
+    /**
+     * <p>The transactionId that <i>created</i> the spent transaction output.</p>
+     *  <p>This is only returned for <code>BITCOIN_VIN</code> event types.</p>
+     * 
+     */
+    inline TransactionEvent& WithSpentVoutTransactionId(const Aws::String& value) { SetSpentVoutTransactionId(value); return *this;}
+
+    /**
+     * <p>The transactionId that <i>created</i> the spent transaction output.</p>
+     *  <p>This is only returned for <code>BITCOIN_VIN</code> event types.</p>
+     * 
+     */
+    inline TransactionEvent& WithSpentVoutTransactionId(Aws::String&& value) { SetSpentVoutTransactionId(std::move(value)); return *this;}
+
+    /**
+     * <p>The transactionId that <i>created</i> the spent transaction output.</p>
+     *  <p>This is only returned for <code>BITCOIN_VIN</code> event types.</p>
+     * 
+     */
+    inline TransactionEvent& WithSpentVoutTransactionId(const char* value) { SetSpentVoutTransactionId(value); return *this;}
+
+
+    /**
+     * <p>The transactionHash that <i>created</i> the spent transaction output.</p>
+     *  <p>This is only returned for <code>BITCOIN_VIN</code> event types.</p>
+     * 
+     */
+    inline const Aws::String& GetSpentVoutTransactionHash() const{ return m_spentVoutTransactionHash; }
+
+    /**
+     * <p>The transactionHash that <i>created</i> the spent transaction output.</p>
+     *  <p>This is only returned for <code>BITCOIN_VIN</code> event types.</p>
+     * 
+     */
+    inline bool SpentVoutTransactionHashHasBeenSet() const { return m_spentVoutTransactionHashHasBeenSet; }
+
+    /**
+     * <p>The transactionHash that <i>created</i> the spent transaction output.</p>
+     *  <p>This is only returned for <code>BITCOIN_VIN</code> event types.</p>
+     * 
+     */
+    inline void SetSpentVoutTransactionHash(const Aws::String& value) { m_spentVoutTransactionHashHasBeenSet = true; m_spentVoutTransactionHash = value; }
+
+    /**
+     * <p>The transactionHash that <i>created</i> the spent transaction output.</p>
+     *  <p>This is only returned for <code>BITCOIN_VIN</code> event types.</p>
+     * 
+     */
+    inline void SetSpentVoutTransactionHash(Aws::String&& value) { m_spentVoutTransactionHashHasBeenSet = true; m_spentVoutTransactionHash = std::move(value); }
+
+    /**
+     * <p>The transactionHash that <i>created</i> the spent transaction output.</p>
+     *  <p>This is only returned for <code>BITCOIN_VIN</code> event types.</p>
+     * 
+     */
+    inline void SetSpentVoutTransactionHash(const char* value) { m_spentVoutTransactionHashHasBeenSet = true; m_spentVoutTransactionHash.assign(value); }
+
+    /**
+     * <p>The transactionHash that <i>created</i> the spent transaction output.</p>
+     *  <p>This is only returned for <code>BITCOIN_VIN</code> event types.</p>
+     * 
+     */
+    inline TransactionEvent& WithSpentVoutTransactionHash(const Aws::String& value) { SetSpentVoutTransactionHash(value); return *this;}
+
+    /**
+     * <p>The transactionHash that <i>created</i> the spent transaction output.</p>
+     *  <p>This is only returned for <code>BITCOIN_VIN</code> event types.</p>
+     * 
+     */
+    inline TransactionEvent& WithSpentVoutTransactionHash(Aws::String&& value) { SetSpentVoutTransactionHash(std::move(value)); return *this;}
+
+    /**
+     * <p>The transactionHash that <i>created</i> the spent transaction output.</p>
+     *  <p>This is only returned for <code>BITCOIN_VIN</code> event types.</p>
+     * 
+     */
+    inline TransactionEvent& WithSpentVoutTransactionHash(const char* value) { SetSpentVoutTransactionHash(value); return *this;}
+
+
+    /**
+     * <p>The position of the spent transaction output in the output list of the
+     * <i>creating transaction</i>.</p>  <p>This is only returned for
+     * <code>BITCOIN_VIN</code> event types.</p> 
+     */
+    inline int GetSpentVoutIndex() const{ return m_spentVoutIndex; }
+
+    /**
+     * <p>The position of the spent transaction output in the output list of the
+     * <i>creating transaction</i>.</p>  <p>This is only returned for
+     * <code>BITCOIN_VIN</code> event types.</p> 
+     */
+    inline bool SpentVoutIndexHasBeenSet() const { return m_spentVoutIndexHasBeenSet; }
+
+    /**
+     * <p>The position of the spent transaction output in the output list of the
+     * <i>creating transaction</i>.</p>  <p>This is only returned for
+     * <code>BITCOIN_VIN</code> event types.</p> 
+     */
+    inline void SetSpentVoutIndex(int value) { m_spentVoutIndexHasBeenSet = true; m_spentVoutIndex = value; }
+
+    /**
+     * <p>The position of the spent transaction output in the output list of the
+     * <i>creating transaction</i>.</p>  <p>This is only returned for
+     * <code>BITCOIN_VIN</code> event types.</p> 
+     */
+    inline TransactionEvent& WithSpentVoutIndex(int value) { SetSpentVoutIndex(value); return *this;}
+
+
+    
+    inline const BlockchainInstant& GetBlockchainInstant() const{ return m_blockchainInstant; }
+
+    
+    inline bool BlockchainInstantHasBeenSet() const { return m_blockchainInstantHasBeenSet; }
+
+    
+    inline void SetBlockchainInstant(const BlockchainInstant& value) { m_blockchainInstantHasBeenSet = true; m_blockchainInstant = value; }
+
+    
+    inline void SetBlockchainInstant(BlockchainInstant&& value) { m_blockchainInstantHasBeenSet = true; m_blockchainInstant = std::move(value); }
+
+    
+    inline TransactionEvent& WithBlockchainInstant(const BlockchainInstant& value) { SetBlockchainInstant(value); return *this;}
+
+    
+    inline TransactionEvent& WithBlockchainInstant(BlockchainInstant&& value) { SetBlockchainInstant(std::move(value)); return *this;}
+
+
+    /**
+     * <p>This container specifies whether the transaction has reached Finality.</p>
+     */
+    inline const ConfirmationStatus& GetConfirmationStatus() const{ return m_confirmationStatus; }
+
+    /**
+     * <p>This container specifies whether the transaction has reached Finality.</p>
+     */
+    inline bool ConfirmationStatusHasBeenSet() const { return m_confirmationStatusHasBeenSet; }
+
+    /**
+     * <p>This container specifies whether the transaction has reached Finality.</p>
+     */
+    inline void SetConfirmationStatus(const ConfirmationStatus& value) { m_confirmationStatusHasBeenSet = true; m_confirmationStatus = value; }
+
+    /**
+     * <p>This container specifies whether the transaction has reached Finality.</p>
+     */
+    inline void SetConfirmationStatus(ConfirmationStatus&& value) { m_confirmationStatusHasBeenSet = true; m_confirmationStatus = std::move(value); }
+
+    /**
+     * <p>This container specifies whether the transaction has reached Finality.</p>
+     */
+    inline TransactionEvent& WithConfirmationStatus(const ConfirmationStatus& value) { SetConfirmationStatus(value); return *this;}
+
+    /**
+     * <p>This container specifies whether the transaction has reached Finality.</p>
+     */
+    inline TransactionEvent& WithConfirmationStatus(ConfirmationStatus&& value) { SetConfirmationStatus(std::move(value)); return *this;}
 
   private:
 
@@ -472,6 +688,24 @@ namespace Model
 
     int m_voutIndex;
     bool m_voutIndexHasBeenSet = false;
+
+    bool m_voutSpent;
+    bool m_voutSpentHasBeenSet = false;
+
+    Aws::String m_spentVoutTransactionId;
+    bool m_spentVoutTransactionIdHasBeenSet = false;
+
+    Aws::String m_spentVoutTransactionHash;
+    bool m_spentVoutTransactionHashHasBeenSet = false;
+
+    int m_spentVoutIndex;
+    bool m_spentVoutIndexHasBeenSet = false;
+
+    BlockchainInstant m_blockchainInstant;
+    bool m_blockchainInstantHasBeenSet = false;
+
+    ConfirmationStatus m_confirmationStatus;
+    bool m_confirmationStatusHasBeenSet = false;
   };
 
 } // namespace Model

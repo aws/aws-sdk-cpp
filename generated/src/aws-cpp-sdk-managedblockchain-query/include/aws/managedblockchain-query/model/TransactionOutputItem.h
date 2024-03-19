@@ -41,50 +41,42 @@ namespace Model
 
 
     /**
-     * <p>The hash of the transaction. It is generated whenever a transaction is
-     * verified and added to the blockchain.</p>
+     * <p>The hash of a transaction. It is generated when a transaction is created.</p>
      */
     inline const Aws::String& GetTransactionHash() const{ return m_transactionHash; }
 
     /**
-     * <p>The hash of the transaction. It is generated whenever a transaction is
-     * verified and added to the blockchain.</p>
+     * <p>The hash of a transaction. It is generated when a transaction is created.</p>
      */
     inline bool TransactionHashHasBeenSet() const { return m_transactionHashHasBeenSet; }
 
     /**
-     * <p>The hash of the transaction. It is generated whenever a transaction is
-     * verified and added to the blockchain.</p>
+     * <p>The hash of a transaction. It is generated when a transaction is created.</p>
      */
     inline void SetTransactionHash(const Aws::String& value) { m_transactionHashHasBeenSet = true; m_transactionHash = value; }
 
     /**
-     * <p>The hash of the transaction. It is generated whenever a transaction is
-     * verified and added to the blockchain.</p>
+     * <p>The hash of a transaction. It is generated when a transaction is created.</p>
      */
     inline void SetTransactionHash(Aws::String&& value) { m_transactionHashHasBeenSet = true; m_transactionHash = std::move(value); }
 
     /**
-     * <p>The hash of the transaction. It is generated whenever a transaction is
-     * verified and added to the blockchain.</p>
+     * <p>The hash of a transaction. It is generated when a transaction is created.</p>
      */
     inline void SetTransactionHash(const char* value) { m_transactionHashHasBeenSet = true; m_transactionHash.assign(value); }
 
     /**
-     * <p>The hash of the transaction. It is generated whenever a transaction is
-     * verified and added to the blockchain.</p>
+     * <p>The hash of a transaction. It is generated when a transaction is created.</p>
      */
     inline TransactionOutputItem& WithTransactionHash(const Aws::String& value) { SetTransactionHash(value); return *this;}
 
     /**
-     * <p>The hash of the transaction. It is generated whenever a transaction is
-     * verified and added to the blockchain.</p>
+     * <p>The hash of a transaction. It is generated when a transaction is created.</p>
      */
     inline TransactionOutputItem& WithTransactionHash(Aws::String&& value) { SetTransactionHash(std::move(value)); return *this;}
 
     /**
-     * <p>The hash of the transaction. It is generated whenever a transaction is
-     * verified and added to the blockchain.</p>
+     * <p>The hash of a transaction. It is generated when a transaction is created.</p>
      */
     inline TransactionOutputItem& WithTransactionHash(const char* value) { SetTransactionHash(value); return *this;}
 

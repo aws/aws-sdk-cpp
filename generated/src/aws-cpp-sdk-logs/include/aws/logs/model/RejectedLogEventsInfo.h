@@ -36,43 +36,47 @@ namespace Model
 
 
     /**
-     * <p>The log events that are too new.</p>
+     * <p>The index of the first log event that is too new. This field is
+     * inclusive.</p>
      */
     inline int GetTooNewLogEventStartIndex() const{ return m_tooNewLogEventStartIndex; }
 
     /**
-     * <p>The log events that are too new.</p>
+     * <p>The index of the first log event that is too new. This field is
+     * inclusive.</p>
      */
     inline bool TooNewLogEventStartIndexHasBeenSet() const { return m_tooNewLogEventStartIndexHasBeenSet; }
 
     /**
-     * <p>The log events that are too new.</p>
+     * <p>The index of the first log event that is too new. This field is
+     * inclusive.</p>
      */
     inline void SetTooNewLogEventStartIndex(int value) { m_tooNewLogEventStartIndexHasBeenSet = true; m_tooNewLogEventStartIndex = value; }
 
     /**
-     * <p>The log events that are too new.</p>
+     * <p>The index of the first log event that is too new. This field is
+     * inclusive.</p>
      */
     inline RejectedLogEventsInfo& WithTooNewLogEventStartIndex(int value) { SetTooNewLogEventStartIndex(value); return *this;}
 
 
     /**
-     * <p>The log events that are dated too far in the past.</p>
+     * <p>The index of the last log event that is too old. This field is exclusive.</p>
      */
     inline int GetTooOldLogEventEndIndex() const{ return m_tooOldLogEventEndIndex; }
 
     /**
-     * <p>The log events that are dated too far in the past.</p>
+     * <p>The index of the last log event that is too old. This field is exclusive.</p>
      */
     inline bool TooOldLogEventEndIndexHasBeenSet() const { return m_tooOldLogEventEndIndexHasBeenSet; }
 
     /**
-     * <p>The log events that are dated too far in the past.</p>
+     * <p>The index of the last log event that is too old. This field is exclusive.</p>
      */
     inline void SetTooOldLogEventEndIndex(int value) { m_tooOldLogEventEndIndexHasBeenSet = true; m_tooOldLogEventEndIndex = value; }
 
     /**
-     * <p>The log events that are dated too far in the past.</p>
+     * <p>The index of the last log event that is too old. This field is exclusive.</p>
      */
     inline RejectedLogEventsInfo& WithTooOldLogEventEndIndex(int value) { SetTooOldLogEventEndIndex(value); return *this;}
 

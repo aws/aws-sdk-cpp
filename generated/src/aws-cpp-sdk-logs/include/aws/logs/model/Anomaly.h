@@ -9,6 +9,7 @@
 #include <aws/logs/model/State.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/logs/model/LogEvent.h>
 #include <aws/logs/model/PatternToken.h>
 #include <utility>
 
@@ -588,7 +589,7 @@ namespace Model
      * <p>An array of sample log event messages that are considered to be part of this
      * anomaly.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetLogSamples() const{ return m_logSamples; }
+    inline const Aws::Vector<LogEvent>& GetLogSamples() const{ return m_logSamples; }
 
     /**
      * <p>An array of sample log event messages that are considered to be part of this
@@ -600,43 +601,37 @@ namespace Model
      * <p>An array of sample log event messages that are considered to be part of this
      * anomaly.</p>
      */
-    inline void SetLogSamples(const Aws::Vector<Aws::String>& value) { m_logSamplesHasBeenSet = true; m_logSamples = value; }
+    inline void SetLogSamples(const Aws::Vector<LogEvent>& value) { m_logSamplesHasBeenSet = true; m_logSamples = value; }
 
     /**
      * <p>An array of sample log event messages that are considered to be part of this
      * anomaly.</p>
      */
-    inline void SetLogSamples(Aws::Vector<Aws::String>&& value) { m_logSamplesHasBeenSet = true; m_logSamples = std::move(value); }
+    inline void SetLogSamples(Aws::Vector<LogEvent>&& value) { m_logSamplesHasBeenSet = true; m_logSamples = std::move(value); }
 
     /**
      * <p>An array of sample log event messages that are considered to be part of this
      * anomaly.</p>
      */
-    inline Anomaly& WithLogSamples(const Aws::Vector<Aws::String>& value) { SetLogSamples(value); return *this;}
+    inline Anomaly& WithLogSamples(const Aws::Vector<LogEvent>& value) { SetLogSamples(value); return *this;}
 
     /**
      * <p>An array of sample log event messages that are considered to be part of this
      * anomaly.</p>
      */
-    inline Anomaly& WithLogSamples(Aws::Vector<Aws::String>&& value) { SetLogSamples(std::move(value)); return *this;}
+    inline Anomaly& WithLogSamples(Aws::Vector<LogEvent>&& value) { SetLogSamples(std::move(value)); return *this;}
 
     /**
      * <p>An array of sample log event messages that are considered to be part of this
      * anomaly.</p>
      */
-    inline Anomaly& AddLogSamples(const Aws::String& value) { m_logSamplesHasBeenSet = true; m_logSamples.push_back(value); return *this; }
+    inline Anomaly& AddLogSamples(const LogEvent& value) { m_logSamplesHasBeenSet = true; m_logSamples.push_back(value); return *this; }
 
     /**
      * <p>An array of sample log event messages that are considered to be part of this
      * anomaly.</p>
      */
-    inline Anomaly& AddLogSamples(Aws::String&& value) { m_logSamplesHasBeenSet = true; m_logSamples.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>An array of sample log event messages that are considered to be part of this
-     * anomaly.</p>
-     */
-    inline Anomaly& AddLogSamples(const char* value) { m_logSamplesHasBeenSet = true; m_logSamples.push_back(value); return *this; }
+    inline Anomaly& AddLogSamples(LogEvent&& value) { m_logSamplesHasBeenSet = true; m_logSamples.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -888,7 +883,7 @@ namespace Model
     Aws::Map<Aws::String, long long> m_histogram;
     bool m_histogramHasBeenSet = false;
 
-    Aws::Vector<Aws::String> m_logSamples;
+    Aws::Vector<LogEvent> m_logSamples;
     bool m_logSamplesHasBeenSet = false;
 
     Aws::Vector<PatternToken> m_patternTokens;

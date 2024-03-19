@@ -155,38 +155,32 @@ namespace Model
 
 
     /**
-     * <p>The order by which the results will be sorted. If <code>ASCENNDING</code> is
-     * selected, the results will be ordered by <code>fromTime</code>. </p>
+     * <p>The order by which the results will be sorted. </p>
      */
     inline const ListTransactionsSort& GetSort() const{ return m_sort; }
 
     /**
-     * <p>The order by which the results will be sorted. If <code>ASCENNDING</code> is
-     * selected, the results will be ordered by <code>fromTime</code>. </p>
+     * <p>The order by which the results will be sorted. </p>
      */
     inline bool SortHasBeenSet() const { return m_sortHasBeenSet; }
 
     /**
-     * <p>The order by which the results will be sorted. If <code>ASCENNDING</code> is
-     * selected, the results will be ordered by <code>fromTime</code>. </p>
+     * <p>The order by which the results will be sorted. </p>
      */
     inline void SetSort(const ListTransactionsSort& value) { m_sortHasBeenSet = true; m_sort = value; }
 
     /**
-     * <p>The order by which the results will be sorted. If <code>ASCENNDING</code> is
-     * selected, the results will be ordered by <code>fromTime</code>. </p>
+     * <p>The order by which the results will be sorted. </p>
      */
     inline void SetSort(ListTransactionsSort&& value) { m_sortHasBeenSet = true; m_sort = std::move(value); }
 
     /**
-     * <p>The order by which the results will be sorted. If <code>ASCENNDING</code> is
-     * selected, the results will be ordered by <code>fromTime</code>. </p>
+     * <p>The order by which the results will be sorted. </p>
      */
     inline ListTransactionsRequest& WithSort(const ListTransactionsSort& value) { SetSort(value); return *this;}
 
     /**
-     * <p>The order by which the results will be sorted. If <code>ASCENNDING</code> is
-     * selected, the results will be ordered by <code>fromTime</code>. </p>
+     * <p>The order by which the results will be sorted. </p>
      */
     inline ListTransactionsRequest& WithSort(ListTransactionsSort&& value) { SetSort(std::move(value)); return *this;}
 
@@ -233,7 +227,7 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of transactions to list.</p> <p>Default:<code>100</code>
+     * <p>The maximum number of transactions to list.</p> <p>Default: <code>100</code>
      * </p>  <p>Even if additional results can be retrieved, the request can
      * return less results than <code>maxResults</code> or an empty array of
      * results.</p> <p>To retrieve the next set of results, make another request with
@@ -243,7 +237,7 @@ namespace Model
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of transactions to list.</p> <p>Default:<code>100</code>
+     * <p>The maximum number of transactions to list.</p> <p>Default: <code>100</code>
      * </p>  <p>Even if additional results can be retrieved, the request can
      * return less results than <code>maxResults</code> or an empty array of
      * results.</p> <p>To retrieve the next set of results, make another request with
@@ -253,7 +247,7 @@ namespace Model
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>The maximum number of transactions to list.</p> <p>Default:<code>100</code>
+     * <p>The maximum number of transactions to list.</p> <p>Default: <code>100</code>
      * </p>  <p>Even if additional results can be retrieved, the request can
      * return less results than <code>maxResults</code> or an empty array of
      * results.</p> <p>To retrieve the next set of results, make another request with
@@ -263,7 +257,7 @@ namespace Model
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of transactions to list.</p> <p>Default:<code>100</code>
+     * <p>The maximum number of transactions to list.</p> <p>Default: <code>100</code>
      * </p>  <p>Even if additional results can be retrieved, the request can
      * return less results than <code>maxResults</code> or an empty array of
      * results.</p> <p>To retrieve the next set of results, make another request with
@@ -277,8 +271,8 @@ namespace Model
      * <p>This filter is used to include transactions in the response that haven't
      * reached <a
      * href="https://docs.aws.amazon.com/managed-blockchain/latest/ambq-dg/key-concepts.html#finality">
-     * <i>finality</i> </a>. Transactions that have reached finiality are always part
-     * of the response.</p>
+     * <i>finality</i> </a>. Transactions that have reached finality are always part of
+     * the response.</p>
      */
     inline const ConfirmationStatusFilter& GetConfirmationStatusFilter() const{ return m_confirmationStatusFilter; }
 
@@ -286,8 +280,8 @@ namespace Model
      * <p>This filter is used to include transactions in the response that haven't
      * reached <a
      * href="https://docs.aws.amazon.com/managed-blockchain/latest/ambq-dg/key-concepts.html#finality">
-     * <i>finality</i> </a>. Transactions that have reached finiality are always part
-     * of the response.</p>
+     * <i>finality</i> </a>. Transactions that have reached finality are always part of
+     * the response.</p>
      */
     inline bool ConfirmationStatusFilterHasBeenSet() const { return m_confirmationStatusFilterHasBeenSet; }
 
@@ -295,8 +289,8 @@ namespace Model
      * <p>This filter is used to include transactions in the response that haven't
      * reached <a
      * href="https://docs.aws.amazon.com/managed-blockchain/latest/ambq-dg/key-concepts.html#finality">
-     * <i>finality</i> </a>. Transactions that have reached finiality are always part
-     * of the response.</p>
+     * <i>finality</i> </a>. Transactions that have reached finality are always part of
+     * the response.</p>
      */
     inline void SetConfirmationStatusFilter(const ConfirmationStatusFilter& value) { m_confirmationStatusFilterHasBeenSet = true; m_confirmationStatusFilter = value; }
 
@@ -304,8 +298,8 @@ namespace Model
      * <p>This filter is used to include transactions in the response that haven't
      * reached <a
      * href="https://docs.aws.amazon.com/managed-blockchain/latest/ambq-dg/key-concepts.html#finality">
-     * <i>finality</i> </a>. Transactions that have reached finiality are always part
-     * of the response.</p>
+     * <i>finality</i> </a>. Transactions that have reached finality are always part of
+     * the response.</p>
      */
     inline void SetConfirmationStatusFilter(ConfirmationStatusFilter&& value) { m_confirmationStatusFilterHasBeenSet = true; m_confirmationStatusFilter = std::move(value); }
 
@@ -313,8 +307,8 @@ namespace Model
      * <p>This filter is used to include transactions in the response that haven't
      * reached <a
      * href="https://docs.aws.amazon.com/managed-blockchain/latest/ambq-dg/key-concepts.html#finality">
-     * <i>finality</i> </a>. Transactions that have reached finiality are always part
-     * of the response.</p>
+     * <i>finality</i> </a>. Transactions that have reached finality are always part of
+     * the response.</p>
      */
     inline ListTransactionsRequest& WithConfirmationStatusFilter(const ConfirmationStatusFilter& value) { SetConfirmationStatusFilter(value); return *this;}
 
@@ -322,8 +316,8 @@ namespace Model
      * <p>This filter is used to include transactions in the response that haven't
      * reached <a
      * href="https://docs.aws.amazon.com/managed-blockchain/latest/ambq-dg/key-concepts.html#finality">
-     * <i>finality</i> </a>. Transactions that have reached finiality are always part
-     * of the response.</p>
+     * <i>finality</i> </a>. Transactions that have reached finality are always part of
+     * the response.</p>
      */
     inline ListTransactionsRequest& WithConfirmationStatusFilter(ConfirmationStatusFilter&& value) { SetConfirmationStatusFilter(std::move(value)); return *this;}
 

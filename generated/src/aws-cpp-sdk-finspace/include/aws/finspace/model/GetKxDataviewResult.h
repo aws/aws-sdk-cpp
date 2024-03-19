@@ -111,42 +111,37 @@ namespace Model
 
 
     /**
-     * <p>The number of availability zones you want to assign per cluster. This can be
-     * one of the following </p> <ul> <li> <p> <code>SINGLE</code> – Assigns one
-     * availability zone per cluster.</p> </li> <li> <p> <code>MULTI</code> – Assigns
-     * all the availability zones per cluster.</p> </li> </ul>
+     * <p>The number of availability zones you want to assign per volume. Currently,
+     * FinSpace only supports <code>SINGLE</code> for volumes. This places dataview in
+     * a single AZ.</p>
      */
     inline const KxAzMode& GetAzMode() const{ return m_azMode; }
 
     /**
-     * <p>The number of availability zones you want to assign per cluster. This can be
-     * one of the following </p> <ul> <li> <p> <code>SINGLE</code> – Assigns one
-     * availability zone per cluster.</p> </li> <li> <p> <code>MULTI</code> – Assigns
-     * all the availability zones per cluster.</p> </li> </ul>
+     * <p>The number of availability zones you want to assign per volume. Currently,
+     * FinSpace only supports <code>SINGLE</code> for volumes. This places dataview in
+     * a single AZ.</p>
      */
     inline void SetAzMode(const KxAzMode& value) { m_azMode = value; }
 
     /**
-     * <p>The number of availability zones you want to assign per cluster. This can be
-     * one of the following </p> <ul> <li> <p> <code>SINGLE</code> – Assigns one
-     * availability zone per cluster.</p> </li> <li> <p> <code>MULTI</code> – Assigns
-     * all the availability zones per cluster.</p> </li> </ul>
+     * <p>The number of availability zones you want to assign per volume. Currently,
+     * FinSpace only supports <code>SINGLE</code> for volumes. This places dataview in
+     * a single AZ.</p>
      */
     inline void SetAzMode(KxAzMode&& value) { m_azMode = std::move(value); }
 
     /**
-     * <p>The number of availability zones you want to assign per cluster. This can be
-     * one of the following </p> <ul> <li> <p> <code>SINGLE</code> – Assigns one
-     * availability zone per cluster.</p> </li> <li> <p> <code>MULTI</code> – Assigns
-     * all the availability zones per cluster.</p> </li> </ul>
+     * <p>The number of availability zones you want to assign per volume. Currently,
+     * FinSpace only supports <code>SINGLE</code> for volumes. This places dataview in
+     * a single AZ.</p>
      */
     inline GetKxDataviewResult& WithAzMode(const KxAzMode& value) { SetAzMode(value); return *this;}
 
     /**
-     * <p>The number of availability zones you want to assign per cluster. This can be
-     * one of the following </p> <ul> <li> <p> <code>SINGLE</code> – Assigns one
-     * availability zone per cluster.</p> </li> <li> <p> <code>MULTI</code> – Assigns
-     * all the availability zones per cluster.</p> </li> </ul>
+     * <p>The number of availability zones you want to assign per volume. Currently,
+     * FinSpace only supports <code>SINGLE</code> for volumes. This places dataview in
+     * a single AZ.</p>
      */
     inline GetKxDataviewResult& WithAzMode(KxAzMode&& value) { SetAzMode(std::move(value)); return *this;}
 
@@ -396,6 +391,25 @@ namespace Model
 
 
     /**
+     * <p>Returns True if the dataview is created as writeable and False otherwise.
+     * </p>
+     */
+    inline bool GetReadWrite() const{ return m_readWrite; }
+
+    /**
+     * <p>Returns True if the dataview is created as writeable and False otherwise.
+     * </p>
+     */
+    inline void SetReadWrite(bool value) { m_readWrite = value; }
+
+    /**
+     * <p>Returns True if the dataview is created as writeable and False otherwise.
+     * </p>
+     */
+    inline GetKxDataviewResult& WithReadWrite(bool value) { SetReadWrite(value); return *this;}
+
+
+    /**
      * <p>A unique identifier for the kdb environment, from where you want to retrieve
      * the dataview details.</p>
      */
@@ -627,6 +641,8 @@ namespace Model
     Aws::String m_description;
 
     bool m_autoUpdate;
+
+    bool m_readWrite;
 
     Aws::String m_environmentId;
 

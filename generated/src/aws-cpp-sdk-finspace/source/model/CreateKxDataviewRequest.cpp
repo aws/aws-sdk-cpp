@@ -23,6 +23,8 @@ CreateKxDataviewRequest::CreateKxDataviewRequest() :
     m_segmentConfigurationsHasBeenSet(false),
     m_autoUpdate(false),
     m_autoUpdateHasBeenSet(false),
+    m_readWrite(false),
+    m_readWriteHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
@@ -71,6 +73,12 @@ Aws::String CreateKxDataviewRequest::SerializePayload() const
   if(m_autoUpdateHasBeenSet)
   {
    payload.WithBool("autoUpdate", m_autoUpdate);
+
+  }
+
+  if(m_readWriteHasBeenSet)
+  {
+   payload.WithBool("readWrite", m_readWrite);
 
   }
 

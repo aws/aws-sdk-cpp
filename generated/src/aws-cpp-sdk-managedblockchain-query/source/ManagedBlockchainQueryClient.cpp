@@ -26,6 +26,7 @@
 #include <aws/managedblockchain-query/model/GetTokenBalanceRequest.h>
 #include <aws/managedblockchain-query/model/GetTransactionRequest.h>
 #include <aws/managedblockchain-query/model/ListAssetContractsRequest.h>
+#include <aws/managedblockchain-query/model/ListFilteredTransactionEventsRequest.h>
 #include <aws/managedblockchain-query/model/ListTokenBalancesRequest.h>
 #include <aws/managedblockchain-query/model/ListTransactionEventsRequest.h>
 #include <aws/managedblockchain-query/model/ListTransactionsRequest.h>
@@ -299,6 +300,33 @@ ListAssetContractsOutcome ManagedBlockchainQueryClient::ListAssetContracts(const
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListAssetContracts, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
       endpointResolutionOutcome.GetResult().AddPathSegments("/list-asset-contracts");
       return ListAssetContractsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+ListFilteredTransactionEventsOutcome ManagedBlockchainQueryClient::ListFilteredTransactionEvents(const ListFilteredTransactionEventsRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListFilteredTransactionEvents);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListFilteredTransactionEvents, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListFilteredTransactionEvents, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListFilteredTransactionEvents, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListFilteredTransactionEvents",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListFilteredTransactionEventsOutcome>(
+    [&]()-> ListFilteredTransactionEventsOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListFilteredTransactionEvents, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/list-filtered-transaction-events");
+      return ListFilteredTransactionEventsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

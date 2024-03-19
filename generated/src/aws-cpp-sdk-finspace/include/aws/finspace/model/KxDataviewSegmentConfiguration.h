@@ -146,6 +146,43 @@ namespace Model
      */
     inline KxDataviewSegmentConfiguration& WithVolumeName(const char* value) { SetVolumeName(value); return *this;}
 
+
+    /**
+     * <p>Enables on-demand caching on the selected database path when a particular
+     * file or a column of the database is accessed. When on demand caching is
+     * <b>True</b>, dataviews perform minimal loading of files on the filesystem as
+     * needed. When it is set to <b>False</b>, everything is cached. The default value
+     * is <b>False</b>. </p>
+     */
+    inline bool GetOnDemand() const{ return m_onDemand; }
+
+    /**
+     * <p>Enables on-demand caching on the selected database path when a particular
+     * file or a column of the database is accessed. When on demand caching is
+     * <b>True</b>, dataviews perform minimal loading of files on the filesystem as
+     * needed. When it is set to <b>False</b>, everything is cached. The default value
+     * is <b>False</b>. </p>
+     */
+    inline bool OnDemandHasBeenSet() const { return m_onDemandHasBeenSet; }
+
+    /**
+     * <p>Enables on-demand caching on the selected database path when a particular
+     * file or a column of the database is accessed. When on demand caching is
+     * <b>True</b>, dataviews perform minimal loading of files on the filesystem as
+     * needed. When it is set to <b>False</b>, everything is cached. The default value
+     * is <b>False</b>. </p>
+     */
+    inline void SetOnDemand(bool value) { m_onDemandHasBeenSet = true; m_onDemand = value; }
+
+    /**
+     * <p>Enables on-demand caching on the selected database path when a particular
+     * file or a column of the database is accessed. When on demand caching is
+     * <b>True</b>, dataviews perform minimal loading of files on the filesystem as
+     * needed. When it is set to <b>False</b>, everything is cached. The default value
+     * is <b>False</b>. </p>
+     */
+    inline KxDataviewSegmentConfiguration& WithOnDemand(bool value) { SetOnDemand(value); return *this;}
+
   private:
 
     Aws::Vector<Aws::String> m_dbPaths;
@@ -153,6 +190,9 @@ namespace Model
 
     Aws::String m_volumeName;
     bool m_volumeNameHasBeenSet = false;
+
+    bool m_onDemand;
+    bool m_onDemandHasBeenSet = false;
   };
 
 } // namespace Model

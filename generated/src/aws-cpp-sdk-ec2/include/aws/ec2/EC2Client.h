@@ -8967,6 +8967,32 @@ namespace EC2
         }
 
         /**
+         * <p>Describes the specified EC2 Mac Dedicated Host or all of your EC2 Mac
+         * Dedicated Hosts.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeMacHosts">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeMacHostsOutcome DescribeMacHosts(const Model::DescribeMacHostsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeMacHosts that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeMacHostsRequestT = Model::DescribeMacHostsRequest>
+        Model::DescribeMacHostsOutcomeCallable DescribeMacHostsCallable(const DescribeMacHostsRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::DescribeMacHosts, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeMacHosts that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeMacHostsRequestT = Model::DescribeMacHostsRequest>
+        void DescribeMacHostsAsync(const DescribeMacHostsRequestT& request, const DescribeMacHostsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::DescribeMacHosts, request, handler, context);
+        }
+
+        /**
          * <p>Describes your managed prefix lists and any Amazon Web Services-managed
          * prefix lists.</p> <p>To view the entries for your prefix list, use
          * <a>GetManagedPrefixListEntries</a>.</p><p><h3>See Also:</h3>   <a

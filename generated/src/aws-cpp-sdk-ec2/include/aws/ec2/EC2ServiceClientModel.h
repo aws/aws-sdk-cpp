@@ -283,6 +283,7 @@
 #include <aws/ec2/model/DescribeLocalGatewayVirtualInterfacesResponse.h>
 #include <aws/ec2/model/DescribeLocalGatewaysResponse.h>
 #include <aws/ec2/model/DescribeLockedSnapshotsResponse.h>
+#include <aws/ec2/model/DescribeMacHostsResponse.h>
 #include <aws/ec2/model/DescribeManagedPrefixListsResponse.h>
 #include <aws/ec2/model/DescribeMovingAddressesResponse.h>
 #include <aws/ec2/model/DescribeNatGatewaysResponse.h>
@@ -911,6 +912,7 @@ namespace Aws
       class DescribeLocalGatewayVirtualInterfacesRequest;
       class DescribeLocalGatewaysRequest;
       class DescribeLockedSnapshotsRequest;
+      class DescribeMacHostsRequest;
       class DescribeManagedPrefixListsRequest;
       class DescribeMovingAddressesRequest;
       class DescribeNatGatewaysRequest;
@@ -1529,6 +1531,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeLocalGatewayVirtualInterfacesResponse, EC2Error> DescribeLocalGatewayVirtualInterfacesOutcome;
       typedef Aws::Utils::Outcome<DescribeLocalGatewaysResponse, EC2Error> DescribeLocalGatewaysOutcome;
       typedef Aws::Utils::Outcome<DescribeLockedSnapshotsResponse, EC2Error> DescribeLockedSnapshotsOutcome;
+      typedef Aws::Utils::Outcome<DescribeMacHostsResponse, EC2Error> DescribeMacHostsOutcome;
       typedef Aws::Utils::Outcome<DescribeManagedPrefixListsResponse, EC2Error> DescribeManagedPrefixListsOutcome;
       typedef Aws::Utils::Outcome<DescribeMovingAddressesResponse, EC2Error> DescribeMovingAddressesOutcome;
       typedef Aws::Utils::Outcome<DescribeNatGatewaysResponse, EC2Error> DescribeNatGatewaysOutcome;
@@ -2147,6 +2150,7 @@ namespace Aws
       typedef std::future<DescribeLocalGatewayVirtualInterfacesOutcome> DescribeLocalGatewayVirtualInterfacesOutcomeCallable;
       typedef std::future<DescribeLocalGatewaysOutcome> DescribeLocalGatewaysOutcomeCallable;
       typedef std::future<DescribeLockedSnapshotsOutcome> DescribeLockedSnapshotsOutcomeCallable;
+      typedef std::future<DescribeMacHostsOutcome> DescribeMacHostsOutcomeCallable;
       typedef std::future<DescribeManagedPrefixListsOutcome> DescribeManagedPrefixListsOutcomeCallable;
       typedef std::future<DescribeMovingAddressesOutcome> DescribeMovingAddressesOutcomeCallable;
       typedef std::future<DescribeNatGatewaysOutcome> DescribeNatGatewaysOutcomeCallable;
@@ -2768,6 +2772,7 @@ namespace Aws
     typedef std::function<void(const EC2Client*, const Model::DescribeLocalGatewayVirtualInterfacesRequest&, const Model::DescribeLocalGatewayVirtualInterfacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLocalGatewayVirtualInterfacesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeLocalGatewaysRequest&, const Model::DescribeLocalGatewaysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLocalGatewaysResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeLockedSnapshotsRequest&, const Model::DescribeLockedSnapshotsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLockedSnapshotsResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DescribeMacHostsRequest&, const Model::DescribeMacHostsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeMacHostsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeManagedPrefixListsRequest&, const Model::DescribeManagedPrefixListsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeManagedPrefixListsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeMovingAddressesRequest&, const Model::DescribeMovingAddressesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeMovingAddressesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeNatGatewaysRequest&, const Model::DescribeNatGatewaysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeNatGatewaysResponseReceivedHandler;

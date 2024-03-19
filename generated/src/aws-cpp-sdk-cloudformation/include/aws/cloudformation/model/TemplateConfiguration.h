@@ -47,9 +47,8 @@ namespace Model
      * all resources when the stack is deleted.</p> </li> <li> <p> <code>RETAIN</code>
      * - retain all resources when the stack is deleted.</p> </li> </ul> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html">
-     * <code>DeletionPolicy</code> attribute</a> in the <i>CloudFormation User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html">DeletionPolicy
+     * attribute</a> in the <i>CloudFormation User Guide</i>.</p>
      */
     inline const GeneratedTemplateDeletionPolicy& GetDeletionPolicy() const{ return m_deletionPolicy; }
 
@@ -59,9 +58,8 @@ namespace Model
      * all resources when the stack is deleted.</p> </li> <li> <p> <code>RETAIN</code>
      * - retain all resources when the stack is deleted.</p> </li> </ul> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html">
-     * <code>DeletionPolicy</code> attribute</a> in the <i>CloudFormation User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html">DeletionPolicy
+     * attribute</a> in the <i>CloudFormation User Guide</i>.</p>
      */
     inline bool DeletionPolicyHasBeenSet() const { return m_deletionPolicyHasBeenSet; }
 
@@ -71,9 +69,8 @@ namespace Model
      * all resources when the stack is deleted.</p> </li> <li> <p> <code>RETAIN</code>
      * - retain all resources when the stack is deleted.</p> </li> </ul> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html">
-     * <code>DeletionPolicy</code> attribute</a> in the <i>CloudFormation User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html">DeletionPolicy
+     * attribute</a> in the <i>CloudFormation User Guide</i>.</p>
      */
     inline void SetDeletionPolicy(const GeneratedTemplateDeletionPolicy& value) { m_deletionPolicyHasBeenSet = true; m_deletionPolicy = value; }
 
@@ -83,9 +80,8 @@ namespace Model
      * all resources when the stack is deleted.</p> </li> <li> <p> <code>RETAIN</code>
      * - retain all resources when the stack is deleted.</p> </li> </ul> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html">
-     * <code>DeletionPolicy</code> attribute</a> in the <i>CloudFormation User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html">DeletionPolicy
+     * attribute</a> in the <i>CloudFormation User Guide</i>.</p>
      */
     inline void SetDeletionPolicy(GeneratedTemplateDeletionPolicy&& value) { m_deletionPolicyHasBeenSet = true; m_deletionPolicy = std::move(value); }
 
@@ -95,9 +91,8 @@ namespace Model
      * all resources when the stack is deleted.</p> </li> <li> <p> <code>RETAIN</code>
      * - retain all resources when the stack is deleted.</p> </li> </ul> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html">
-     * <code>DeletionPolicy</code> attribute</a> in the <i>CloudFormation User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html">DeletionPolicy
+     * attribute</a> in the <i>CloudFormation User Guide</i>.</p>
      */
     inline TemplateConfiguration& WithDeletionPolicy(const GeneratedTemplateDeletionPolicy& value) { SetDeletionPolicy(value); return *this;}
 
@@ -107,9 +102,8 @@ namespace Model
      * all resources when the stack is deleted.</p> </li> <li> <p> <code>RETAIN</code>
      * - retain all resources when the stack is deleted.</p> </li> </ul> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html">
-     * <code>DeletionPolicy</code> attribute</a> in the <i>CloudFormation User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html">DeletionPolicy
+     * attribute</a> in the <i>CloudFormation User Guide</i>.</p>
      */
     inline TemplateConfiguration& WithDeletionPolicy(GeneratedTemplateDeletionPolicy&& value) { SetDeletionPolicy(std::move(value)); return *this;}
 
@@ -121,9 +115,8 @@ namespace Model
      * </li> <li> <p> <code>RETAIN</code> - retain all resources when the resource is
      * replaced during an update operation.</p> </li> </ul> <p>For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatereplacepolicy.html">
-     * <code>UpdateReplacePolicy</code> attribute</a> in the <i>CloudFormation User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatereplacepolicy.html">UpdateReplacePolicy
+     * attribute</a> in the <i>CloudFormation User Guide</i>.</p>
      */
     inline const GeneratedTemplateUpdateReplacePolicy& GetUpdateReplacePolicy() const{ return m_updateReplacePolicy; }
 
@@ -134,9 +127,8 @@ namespace Model
      * </li> <li> <p> <code>RETAIN</code> - retain all resources when the resource is
      * replaced during an update operation.</p> </li> </ul> <p>For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatereplacepolicy.html">
-     * <code>UpdateReplacePolicy</code> attribute</a> in the <i>CloudFormation User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatereplacepolicy.html">UpdateReplacePolicy
+     * attribute</a> in the <i>CloudFormation User Guide</i>.</p>
      */
     inline bool UpdateReplacePolicyHasBeenSet() const { return m_updateReplacePolicyHasBeenSet; }
 
@@ -147,9 +139,8 @@ namespace Model
      * </li> <li> <p> <code>RETAIN</code> - retain all resources when the resource is
      * replaced during an update operation.</p> </li> </ul> <p>For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatereplacepolicy.html">
-     * <code>UpdateReplacePolicy</code> attribute</a> in the <i>CloudFormation User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatereplacepolicy.html">UpdateReplacePolicy
+     * attribute</a> in the <i>CloudFormation User Guide</i>.</p>
      */
     inline void SetUpdateReplacePolicy(const GeneratedTemplateUpdateReplacePolicy& value) { m_updateReplacePolicyHasBeenSet = true; m_updateReplacePolicy = value; }
 
@@ -160,9 +151,8 @@ namespace Model
      * </li> <li> <p> <code>RETAIN</code> - retain all resources when the resource is
      * replaced during an update operation.</p> </li> </ul> <p>For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatereplacepolicy.html">
-     * <code>UpdateReplacePolicy</code> attribute</a> in the <i>CloudFormation User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatereplacepolicy.html">UpdateReplacePolicy
+     * attribute</a> in the <i>CloudFormation User Guide</i>.</p>
      */
     inline void SetUpdateReplacePolicy(GeneratedTemplateUpdateReplacePolicy&& value) { m_updateReplacePolicyHasBeenSet = true; m_updateReplacePolicy = std::move(value); }
 
@@ -173,9 +163,8 @@ namespace Model
      * </li> <li> <p> <code>RETAIN</code> - retain all resources when the resource is
      * replaced during an update operation.</p> </li> </ul> <p>For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatereplacepolicy.html">
-     * <code>UpdateReplacePolicy</code> attribute</a> in the <i>CloudFormation User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatereplacepolicy.html">UpdateReplacePolicy
+     * attribute</a> in the <i>CloudFormation User Guide</i>.</p>
      */
     inline TemplateConfiguration& WithUpdateReplacePolicy(const GeneratedTemplateUpdateReplacePolicy& value) { SetUpdateReplacePolicy(value); return *this;}
 
@@ -186,9 +175,8 @@ namespace Model
      * </li> <li> <p> <code>RETAIN</code> - retain all resources when the resource is
      * replaced during an update operation.</p> </li> </ul> <p>For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatereplacepolicy.html">
-     * <code>UpdateReplacePolicy</code> attribute</a> in the <i>CloudFormation User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatereplacepolicy.html">UpdateReplacePolicy
+     * attribute</a> in the <i>CloudFormation User Guide</i>.</p>
      */
     inline TemplateConfiguration& WithUpdateReplacePolicy(GeneratedTemplateUpdateReplacePolicy&& value) { SetUpdateReplacePolicy(std::move(value)); return *this;}
 

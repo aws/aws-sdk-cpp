@@ -80,22 +80,22 @@ namespace Model
 
 
     /**
-     * <p>The container of the <code>retryAfterSeconds</code> value.</p>
+     * <p>Specifies the <code>retryAfterSeconds</code> value.</p>
      */
     inline int GetRetryAfterSeconds() const{ return m_retryAfterSeconds; }
 
     /**
-     * <p>The container of the <code>retryAfterSeconds</code> value.</p>
+     * <p>Specifies the <code>retryAfterSeconds</code> value.</p>
      */
     inline bool RetryAfterSecondsHasBeenSet() const { return m_retryAfterSecondsHasBeenSet; }
 
     /**
-     * <p>The container of the <code>retryAfterSeconds</code> value.</p>
+     * <p>Specifies the <code>retryAfterSeconds</code> value.</p>
      */
     inline void SetRetryAfterSeconds(int value) { m_retryAfterSecondsHasBeenSet = true; m_retryAfterSeconds = value; }
 
     /**
-     * <p>The container of the <code>retryAfterSeconds</code> value.</p>
+     * <p>Specifies the <code>retryAfterSeconds</code> value.</p>
      */
     inline InternalServerException& WithRetryAfterSeconds(int value) { SetRetryAfterSeconds(value); return *this;}
 

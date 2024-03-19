@@ -75,10 +75,10 @@ namespace Model
      * <p>If the request doesn't return all the remaining results,
      * <code>NextToken</code> is set to a token. To retrieve the next set of results,
      * call <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListStackSetAutoDeploymentTargets.html">
-     * <code>ListStackSetAutoDeploymentTargets</code> </a> again and use that value for
-     * the <code>NextToken</code> parameter. If the request returns all results,
-     * <code>NextToken</code> is set to an empty string.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListStackSetAutoDeploymentTargets.html">ListStackSetAutoDeploymentTargets</a>
+     * again and use that value for the <code>NextToken</code> parameter. If the
+     * request returns all results, <code>NextToken</code> is set to an empty
+     * string.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
@@ -86,10 +86,10 @@ namespace Model
      * <p>If the request doesn't return all the remaining results,
      * <code>NextToken</code> is set to a token. To retrieve the next set of results,
      * call <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListStackSetAutoDeploymentTargets.html">
-     * <code>ListStackSetAutoDeploymentTargets</code> </a> again and use that value for
-     * the <code>NextToken</code> parameter. If the request returns all results,
-     * <code>NextToken</code> is set to an empty string.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListStackSetAutoDeploymentTargets.html">ListStackSetAutoDeploymentTargets</a>
+     * again and use that value for the <code>NextToken</code> parameter. If the
+     * request returns all results, <code>NextToken</code> is set to an empty
+     * string.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
@@ -97,10 +97,10 @@ namespace Model
      * <p>If the request doesn't return all the remaining results,
      * <code>NextToken</code> is set to a token. To retrieve the next set of results,
      * call <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListStackSetAutoDeploymentTargets.html">
-     * <code>ListStackSetAutoDeploymentTargets</code> </a> again and use that value for
-     * the <code>NextToken</code> parameter. If the request returns all results,
-     * <code>NextToken</code> is set to an empty string.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListStackSetAutoDeploymentTargets.html">ListStackSetAutoDeploymentTargets</a>
+     * again and use that value for the <code>NextToken</code> parameter. If the
+     * request returns all results, <code>NextToken</code> is set to an empty
+     * string.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
@@ -108,10 +108,10 @@ namespace Model
      * <p>If the request doesn't return all the remaining results,
      * <code>NextToken</code> is set to a token. To retrieve the next set of results,
      * call <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListStackSetAutoDeploymentTargets.html">
-     * <code>ListStackSetAutoDeploymentTargets</code> </a> again and use that value for
-     * the <code>NextToken</code> parameter. If the request returns all results,
-     * <code>NextToken</code> is set to an empty string.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListStackSetAutoDeploymentTargets.html">ListStackSetAutoDeploymentTargets</a>
+     * again and use that value for the <code>NextToken</code> parameter. If the
+     * request returns all results, <code>NextToken</code> is set to an empty
+     * string.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
@@ -119,10 +119,10 @@ namespace Model
      * <p>If the request doesn't return all the remaining results,
      * <code>NextToken</code> is set to a token. To retrieve the next set of results,
      * call <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListStackSetAutoDeploymentTargets.html">
-     * <code>ListStackSetAutoDeploymentTargets</code> </a> again and use that value for
-     * the <code>NextToken</code> parameter. If the request returns all results,
-     * <code>NextToken</code> is set to an empty string.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListStackSetAutoDeploymentTargets.html">ListStackSetAutoDeploymentTargets</a>
+     * again and use that value for the <code>NextToken</code> parameter. If the
+     * request returns all results, <code>NextToken</code> is set to an empty
+     * string.</p>
      */
     inline ListStackSetAutoDeploymentTargetsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
@@ -130,10 +130,10 @@ namespace Model
      * <p>If the request doesn't return all the remaining results,
      * <code>NextToken</code> is set to a token. To retrieve the next set of results,
      * call <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListStackSetAutoDeploymentTargets.html">
-     * <code>ListStackSetAutoDeploymentTargets</code> </a> again and use that value for
-     * the <code>NextToken</code> parameter. If the request returns all results,
-     * <code>NextToken</code> is set to an empty string.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListStackSetAutoDeploymentTargets.html">ListStackSetAutoDeploymentTargets</a>
+     * again and use that value for the <code>NextToken</code> parameter. If the
+     * request returns all results, <code>NextToken</code> is set to an empty
+     * string.</p>
      */
     inline ListStackSetAutoDeploymentTargetsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
@@ -141,10 +141,10 @@ namespace Model
      * <p>If the request doesn't return all the remaining results,
      * <code>NextToken</code> is set to a token. To retrieve the next set of results,
      * call <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListStackSetAutoDeploymentTargets.html">
-     * <code>ListStackSetAutoDeploymentTargets</code> </a> again and use that value for
-     * the <code>NextToken</code> parameter. If the request returns all results,
-     * <code>NextToken</code> is set to an empty string.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListStackSetAutoDeploymentTargets.html">ListStackSetAutoDeploymentTargets</a>
+     * again and use that value for the <code>NextToken</code> parameter. If the
+     * request returns all results, <code>NextToken</code> is set to an empty
+     * string.</p>
      */
     inline ListStackSetAutoDeploymentTargetsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

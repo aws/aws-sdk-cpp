@@ -33,6 +33,8 @@ KxDataviewListEntry::KxDataviewListEntry() :
     m_descriptionHasBeenSet(false),
     m_autoUpdate(false),
     m_autoUpdateHasBeenSet(false),
+    m_readWrite(false),
+    m_readWriteHasBeenSet(false),
     m_createdTimestampHasBeenSet(false),
     m_lastModifiedTimestampHasBeenSet(false),
     m_statusReasonHasBeenSet(false)
@@ -54,6 +56,8 @@ KxDataviewListEntry::KxDataviewListEntry(JsonView jsonValue) :
     m_descriptionHasBeenSet(false),
     m_autoUpdate(false),
     m_autoUpdateHasBeenSet(false),
+    m_readWrite(false),
+    m_readWriteHasBeenSet(false),
     m_createdTimestampHasBeenSet(false),
     m_lastModifiedTimestampHasBeenSet(false),
     m_statusReasonHasBeenSet(false)
@@ -144,6 +148,13 @@ KxDataviewListEntry& KxDataviewListEntry::operator =(JsonView jsonValue)
     m_autoUpdate = jsonValue.GetBool("autoUpdate");
 
     m_autoUpdateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("readWrite"))
+  {
+    m_readWrite = jsonValue.GetBool("readWrite");
+
+    m_readWriteHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("createdTimestamp"))
@@ -245,6 +256,12 @@ JsonValue KxDataviewListEntry::Jsonize() const
   if(m_autoUpdateHasBeenSet)
   {
    payload.WithBool("autoUpdate", m_autoUpdate);
+
+  }
+
+  if(m_readWriteHasBeenSet)
+  {
+   payload.WithBool("readWrite", m_readWrite);
 
   }
 

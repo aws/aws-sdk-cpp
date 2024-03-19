@@ -201,11 +201,10 @@ namespace CloudWatchLogs
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html">Enabling
          * logging from Amazon Web Services services.</a> </p> <p>A delivery destination
          * can represent a log group in CloudWatch Logs, an Amazon S3 bucket, or a delivery
-         * stream in Kinesis Data Firehose.</p> <p>To configure logs delivery between a
-         * supported Amazon Web Services service and a destination, you must do the
-         * following:</p> <ul> <li> <p>Create a delivery source, which is a logical object
-         * that represents the resource that is actually sending the logs. For more
-         * information, see <a
+         * stream in Firehose.</p> <p>To configure logs delivery between a supported Amazon
+         * Web Services service and a destination, you must do the following:</p> <ul> <li>
+         * <p>Create a delivery source, which is a logical object that represents the
+         * resource that is actually sending the logs. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliverySource.html">PutDeliverySource</a>.</p>
          * </li> <li> <p>Create a <i>delivery destination</i>, which is a logical object
          * that represents the actual delivery destination. For more information, see <a
@@ -873,9 +872,9 @@ namespace CloudWatchLogs
          * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliveryDestination.html">
          * <i>delivery destination</i> </a>.</p> <p>A delivery source represents an Amazon
          * Web Services resource that sends logs to an logs delivery destination. The
-         * destination can be CloudWatch Logs, Amazon S3, or Kinesis Data Firehose. Only
-         * some Amazon Web Services services support being configured as a delivery source.
-         * These services are listed in <a
+         * destination can be CloudWatch Logs, Amazon S3, or Firehose. Only some Amazon Web
+         * Services services support being configured as a delivery source. These services
+         * are listed in <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html">Enable
          * logging from Amazon Web Services services.</a> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeDeliveries">AWS
@@ -1338,9 +1337,9 @@ namespace CloudWatchLogs
          * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliveryDestination.html">
          * <i>delivery destination</i> </a>.</p> <p>A delivery source represents an Amazon
          * Web Services resource that sends logs to an logs delivery destination. The
-         * destination can be CloudWatch Logs, Amazon S3, or Kinesis Data Firehose. Only
-         * some Amazon Web Services services support being configured as a delivery source.
-         * These services are listed in <a
+         * destination can be CloudWatch Logs, Amazon S3, or Firehose. Only some Amazon Web
+         * Services services support being configured as a delivery source. These services
+         * are listed in <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html">Enable
          * logging from Amazon Web Services services.</a> </p> <p>You need to specify the
          * delivery <code>id</code> in this operation. You can find the IDs of the
@@ -1749,23 +1748,23 @@ namespace CloudWatchLogs
          * of log events from CloudWatch Logs to other Amazon Web Services services.
          * Account-level subscription filter policies apply to both existing log groups and
          * log groups that are created later in this account. Supported destinations are
-         * Kinesis Data Streams, Kinesis Data Firehose, and Lambda. When log events are
-         * sent to the receiving service, they are Base64 encoded and compressed with the
-         * GZIP format.</p> <p>The following destinations are supported for subscription
+         * Kinesis Data Streams, Firehose, and Lambda. When log events are sent to the
+         * receiving service, they are Base64 encoded and compressed with the GZIP
+         * format.</p> <p>The following destinations are supported for subscription
          * filters:</p> <ul> <li> <p>An Kinesis Data Streams data stream in the same
          * account as the subscription policy, for same-account delivery.</p> </li> <li>
-         * <p>An Kinesis Data Firehose data stream in the same account as the subscription
-         * policy, for same-account delivery.</p> </li> <li> <p>A Lambda function in the
-         * same account as the subscription policy, for same-account delivery.</p> </li>
-         * <li> <p>A logical destination in a different account created with <a
+         * <p>An Firehose data stream in the same account as the subscription policy, for
+         * same-account delivery.</p> </li> <li> <p>A Lambda function in the same account
+         * as the subscription policy, for same-account delivery.</p> </li> <li> <p>A
+         * logical destination in a different account created with <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestination.html">PutDestination</a>,
-         * for cross-account delivery. Kinesis Data Streams and Kinesis Data Firehose are
-         * supported as logical destinations.</p> </li> </ul> <p>Each account can have one
-         * account-level subscription filter policy. If you are updating an existing
-         * filter, you must specify the correct name in <code>PolicyName</code>. To perform
-         * a <code>PutAccountPolicy</code> subscription filter operation for any
-         * destination except a Lambda function, you must also have the
-         * <code>iam:PassRole</code> permission.</p><p><h3>See Also:</h3>   <a
+         * for cross-account delivery. Kinesis Data Streams and Firehose are supported as
+         * logical destinations.</p> </li> </ul> <p>Each account can have one account-level
+         * subscription filter policy. If you are updating an existing filter, you must
+         * specify the correct name in <code>PolicyName</code>. To perform a
+         * <code>PutAccountPolicy</code> subscription filter operation for any destination
+         * except a Lambda function, you must also have the <code>iam:PassRole</code>
+         * permission.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutAccountPolicy">AWS
          * API Reference</a></p>
          */
@@ -1845,11 +1844,11 @@ namespace CloudWatchLogs
          * <p>Creates or updates a logical <i>delivery destination</i>. A delivery
          * destination is an Amazon Web Services resource that represents an Amazon Web
          * Services service that logs can be sent to. CloudWatch Logs, Amazon S3, and
-         * Kinesis Data Firehose are supported as logs delivery destinations.</p> <p>To
-         * configure logs delivery between a supported Amazon Web Services service and a
-         * destination, you must do the following:</p> <ul> <li> <p>Create a delivery
-         * source, which is a logical object that represents the resource that is actually
-         * sending the logs. For more information, see <a
+         * Firehose are supported as logs delivery destinations.</p> <p>To configure logs
+         * delivery between a supported Amazon Web Services service and a destination, you
+         * must do the following:</p> <ul> <li> <p>Create a delivery source, which is a
+         * logical object that represents the resource that is actually sending the logs.
+         * For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliverySource.html">PutDeliverySource</a>.</p>
          * </li> <li> <p>Use <code>PutDeliveryDestination</code> to create a <i>delivery
          * destination</i>, which is a logical object that represents the actual delivery
@@ -1946,12 +1945,12 @@ namespace CloudWatchLogs
         /**
          * <p>Creates or updates a logical <i>delivery source</i>. A delivery source
          * represents an Amazon Web Services resource that sends logs to an logs delivery
-         * destination. The destination can be CloudWatch Logs, Amazon S3, or Kinesis Data
-         * Firehose.</p> <p>To configure logs delivery between a delivery destination and
-         * an Amazon Web Services service that is supported as a delivery source, you must
-         * do the following:</p> <ul> <li> <p>Use <code>PutDeliverySource</code> to create
-         * a delivery source, which is a logical object that represents the resource that
-         * is actually sending the logs. </p> </li> <li> <p>Use
+         * destination. The destination can be CloudWatch Logs, Amazon S3, or Firehose.</p>
+         * <p>To configure logs delivery between a delivery destination and an Amazon Web
+         * Services service that is supported as a delivery source, you must do the
+         * following:</p> <ul> <li> <p>Use <code>PutDeliverySource</code> to create a
+         * delivery source, which is a logical object that represents the resource that is
+         * actually sending the logs. </p> </li> <li> <p>Use
          * <code>PutDeliveryDestination</code> to create a <i>delivery destination</i>,
          * which is a logical object that represents the actual delivery destination. For
          * more information, see <a
@@ -2280,16 +2279,16 @@ namespace CloudWatchLogs
          * <p>A logical destination created with <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestination.html">PutDestination</a>
          * that belongs to a different account, for cross-account delivery. We currently
-         * support Kinesis Data Streams and Kinesis Data Firehose as logical
-         * destinations.</p> </li> <li> <p>An Amazon Kinesis Data Firehose delivery stream
-         * that belongs to the same account as the subscription filter, for same-account
-         * delivery.</p> </li> <li> <p>An Lambda function that belongs to the same account
-         * as the subscription filter, for same-account delivery.</p> </li> </ul> <p>Each
-         * log group can have up to two subscription filters associated with it. If you are
-         * updating an existing filter, you must specify the correct name in
-         * <code>filterName</code>. </p> <p>To perform a <code>PutSubscriptionFilter</code>
-         * operation for any destination except a Lambda function, you must also have the
-         * <code>iam:PassRole</code> permission.</p><p><h3>See Also:</h3>   <a
+         * support Kinesis Data Streams and Firehose as logical destinations.</p> </li>
+         * <li> <p>An Amazon Kinesis Data Firehose delivery stream that belongs to the same
+         * account as the subscription filter, for same-account delivery.</p> </li> <li>
+         * <p>An Lambda function that belongs to the same account as the subscription
+         * filter, for same-account delivery.</p> </li> </ul> <p>Each log group can have up
+         * to two subscription filters associated with it. If you are updating an existing
+         * filter, you must specify the correct name in <code>filterName</code>. </p> <p>To
+         * perform a <code>PutSubscriptionFilter</code> operation for any destination
+         * except a Lambda function, you must also have the <code>iam:PassRole</code>
+         * permission.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutSubscriptionFilter">AWS
          * API Reference</a></p>
          */

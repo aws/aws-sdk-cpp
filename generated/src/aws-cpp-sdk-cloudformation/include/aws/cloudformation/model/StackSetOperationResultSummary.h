@@ -316,64 +316,56 @@ namespace Model
     /**
      * <p>[Service-managed permissions] The organization root ID or organizational unit
      * (OU) IDs that you specified for <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">
-     * <code>DeploymentTargets</code> </a>.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
      */
     inline const Aws::String& GetOrganizationalUnitId() const{ return m_organizationalUnitId; }
 
     /**
      * <p>[Service-managed permissions] The organization root ID or organizational unit
      * (OU) IDs that you specified for <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">
-     * <code>DeploymentTargets</code> </a>.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
      */
     inline bool OrganizationalUnitIdHasBeenSet() const { return m_organizationalUnitIdHasBeenSet; }
 
     /**
      * <p>[Service-managed permissions] The organization root ID or organizational unit
      * (OU) IDs that you specified for <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">
-     * <code>DeploymentTargets</code> </a>.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
      */
     inline void SetOrganizationalUnitId(const Aws::String& value) { m_organizationalUnitIdHasBeenSet = true; m_organizationalUnitId = value; }
 
     /**
      * <p>[Service-managed permissions] The organization root ID or organizational unit
      * (OU) IDs that you specified for <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">
-     * <code>DeploymentTargets</code> </a>.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
      */
     inline void SetOrganizationalUnitId(Aws::String&& value) { m_organizationalUnitIdHasBeenSet = true; m_organizationalUnitId = std::move(value); }
 
     /**
      * <p>[Service-managed permissions] The organization root ID or organizational unit
      * (OU) IDs that you specified for <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">
-     * <code>DeploymentTargets</code> </a>.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
      */
     inline void SetOrganizationalUnitId(const char* value) { m_organizationalUnitIdHasBeenSet = true; m_organizationalUnitId.assign(value); }
 
     /**
      * <p>[Service-managed permissions] The organization root ID or organizational unit
      * (OU) IDs that you specified for <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">
-     * <code>DeploymentTargets</code> </a>.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
      */
     inline StackSetOperationResultSummary& WithOrganizationalUnitId(const Aws::String& value) { SetOrganizationalUnitId(value); return *this;}
 
     /**
      * <p>[Service-managed permissions] The organization root ID or organizational unit
      * (OU) IDs that you specified for <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">
-     * <code>DeploymentTargets</code> </a>.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
      */
     inline StackSetOperationResultSummary& WithOrganizationalUnitId(Aws::String&& value) { SetOrganizationalUnitId(std::move(value)); return *this;}
 
     /**
      * <p>[Service-managed permissions] The organization root ID or organizational unit
      * (OU) IDs that you specified for <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">
-     * <code>DeploymentTargets</code> </a>.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeploymentTargets.html">DeploymentTargets</a>.</p>
      */
     inline StackSetOperationResultSummary& WithOrganizationalUnitId(const char* value) { SetOrganizationalUnitId(value); return *this;}
 

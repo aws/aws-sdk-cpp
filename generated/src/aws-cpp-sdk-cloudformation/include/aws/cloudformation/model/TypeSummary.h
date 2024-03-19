@@ -77,72 +77,72 @@ namespace Model
     /**
      * <p>The name of the extension.</p> <p>If you specified a
      * <code>TypeNameAlias</code> when you call the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">
-     * <code>ActivateType</code> </a> API operation in your account and Region,
-     * CloudFormation considers that alias as the type name.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>
+     * API operation in your account and Region, CloudFormation considers that alias as
+     * the type name.</p>
      */
     inline const Aws::String& GetTypeName() const{ return m_typeName; }
 
     /**
      * <p>The name of the extension.</p> <p>If you specified a
      * <code>TypeNameAlias</code> when you call the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">
-     * <code>ActivateType</code> </a> API operation in your account and Region,
-     * CloudFormation considers that alias as the type name.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>
+     * API operation in your account and Region, CloudFormation considers that alias as
+     * the type name.</p>
      */
     inline bool TypeNameHasBeenSet() const { return m_typeNameHasBeenSet; }
 
     /**
      * <p>The name of the extension.</p> <p>If you specified a
      * <code>TypeNameAlias</code> when you call the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">
-     * <code>ActivateType</code> </a> API operation in your account and Region,
-     * CloudFormation considers that alias as the type name.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>
+     * API operation in your account and Region, CloudFormation considers that alias as
+     * the type name.</p>
      */
     inline void SetTypeName(const Aws::String& value) { m_typeNameHasBeenSet = true; m_typeName = value; }
 
     /**
      * <p>The name of the extension.</p> <p>If you specified a
      * <code>TypeNameAlias</code> when you call the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">
-     * <code>ActivateType</code> </a> API operation in your account and Region,
-     * CloudFormation considers that alias as the type name.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>
+     * API operation in your account and Region, CloudFormation considers that alias as
+     * the type name.</p>
      */
     inline void SetTypeName(Aws::String&& value) { m_typeNameHasBeenSet = true; m_typeName = std::move(value); }
 
     /**
      * <p>The name of the extension.</p> <p>If you specified a
      * <code>TypeNameAlias</code> when you call the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">
-     * <code>ActivateType</code> </a> API operation in your account and Region,
-     * CloudFormation considers that alias as the type name.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>
+     * API operation in your account and Region, CloudFormation considers that alias as
+     * the type name.</p>
      */
     inline void SetTypeName(const char* value) { m_typeNameHasBeenSet = true; m_typeName.assign(value); }
 
     /**
      * <p>The name of the extension.</p> <p>If you specified a
      * <code>TypeNameAlias</code> when you call the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">
-     * <code>ActivateType</code> </a> API operation in your account and Region,
-     * CloudFormation considers that alias as the type name.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>
+     * API operation in your account and Region, CloudFormation considers that alias as
+     * the type name.</p>
      */
     inline TypeSummary& WithTypeName(const Aws::String& value) { SetTypeName(value); return *this;}
 
     /**
      * <p>The name of the extension.</p> <p>If you specified a
      * <code>TypeNameAlias</code> when you call the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">
-     * <code>ActivateType</code> </a> API operation in your account and Region,
-     * CloudFormation considers that alias as the type name.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>
+     * API operation in your account and Region, CloudFormation considers that alias as
+     * the type name.</p>
      */
     inline TypeSummary& WithTypeName(Aws::String&& value) { SetTypeName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the extension.</p> <p>If you specified a
      * <code>TypeNameAlias</code> when you call the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">
-     * <code>ActivateType</code> </a> API operation in your account and Region,
-     * CloudFormation considers that alias as the type name.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>
+     * API operation in your account and Region, CloudFormation considers that alias as
+     * the type name.</p>
      */
     inline TypeSummary& WithTypeName(const char* value) { SetTypeName(value); return *this;}
 
@@ -153,9 +153,9 @@ namespace Model
      * extensions you have registered in your account. For public extensions, both
      * those provided by Amazon and published by third parties, CloudFormation returns
      * <code>null</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">
-     * <code>RegisterType</code> </a>.</p> <p>To set the default version of an
-     * extension, use <a>SetTypeDefaultVersion</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
+     * <p>To set the default version of an extension, use
+     * <a>SetTypeDefaultVersion</a>.</p>
      */
     inline const Aws::String& GetDefaultVersionId() const{ return m_defaultVersionId; }
 
@@ -165,9 +165,9 @@ namespace Model
      * extensions you have registered in your account. For public extensions, both
      * those provided by Amazon and published by third parties, CloudFormation returns
      * <code>null</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">
-     * <code>RegisterType</code> </a>.</p> <p>To set the default version of an
-     * extension, use <a>SetTypeDefaultVersion</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
+     * <p>To set the default version of an extension, use
+     * <a>SetTypeDefaultVersion</a>.</p>
      */
     inline bool DefaultVersionIdHasBeenSet() const { return m_defaultVersionIdHasBeenSet; }
 
@@ -177,9 +177,9 @@ namespace Model
      * extensions you have registered in your account. For public extensions, both
      * those provided by Amazon and published by third parties, CloudFormation returns
      * <code>null</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">
-     * <code>RegisterType</code> </a>.</p> <p>To set the default version of an
-     * extension, use <a>SetTypeDefaultVersion</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
+     * <p>To set the default version of an extension, use
+     * <a>SetTypeDefaultVersion</a>.</p>
      */
     inline void SetDefaultVersionId(const Aws::String& value) { m_defaultVersionIdHasBeenSet = true; m_defaultVersionId = value; }
 
@@ -189,9 +189,9 @@ namespace Model
      * extensions you have registered in your account. For public extensions, both
      * those provided by Amazon and published by third parties, CloudFormation returns
      * <code>null</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">
-     * <code>RegisterType</code> </a>.</p> <p>To set the default version of an
-     * extension, use <a>SetTypeDefaultVersion</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
+     * <p>To set the default version of an extension, use
+     * <a>SetTypeDefaultVersion</a>.</p>
      */
     inline void SetDefaultVersionId(Aws::String&& value) { m_defaultVersionIdHasBeenSet = true; m_defaultVersionId = std::move(value); }
 
@@ -201,9 +201,9 @@ namespace Model
      * extensions you have registered in your account. For public extensions, both
      * those provided by Amazon and published by third parties, CloudFormation returns
      * <code>null</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">
-     * <code>RegisterType</code> </a>.</p> <p>To set the default version of an
-     * extension, use <a>SetTypeDefaultVersion</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
+     * <p>To set the default version of an extension, use
+     * <a>SetTypeDefaultVersion</a>.</p>
      */
     inline void SetDefaultVersionId(const char* value) { m_defaultVersionIdHasBeenSet = true; m_defaultVersionId.assign(value); }
 
@@ -213,9 +213,9 @@ namespace Model
      * extensions you have registered in your account. For public extensions, both
      * those provided by Amazon and published by third parties, CloudFormation returns
      * <code>null</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">
-     * <code>RegisterType</code> </a>.</p> <p>To set the default version of an
-     * extension, use <a>SetTypeDefaultVersion</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
+     * <p>To set the default version of an extension, use
+     * <a>SetTypeDefaultVersion</a>.</p>
      */
     inline TypeSummary& WithDefaultVersionId(const Aws::String& value) { SetDefaultVersionId(value); return *this;}
 
@@ -225,9 +225,9 @@ namespace Model
      * extensions you have registered in your account. For public extensions, both
      * those provided by Amazon and published by third parties, CloudFormation returns
      * <code>null</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">
-     * <code>RegisterType</code> </a>.</p> <p>To set the default version of an
-     * extension, use <a>SetTypeDefaultVersion</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
+     * <p>To set the default version of an extension, use
+     * <a>SetTypeDefaultVersion</a>.</p>
      */
     inline TypeSummary& WithDefaultVersionId(Aws::String&& value) { SetDefaultVersionId(std::move(value)); return *this;}
 
@@ -237,9 +237,9 @@ namespace Model
      * extensions you have registered in your account. For public extensions, both
      * those provided by Amazon and published by third parties, CloudFormation returns
      * <code>null</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">
-     * <code>RegisterType</code> </a>.</p> <p>To set the default version of an
-     * extension, use <a>SetTypeDefaultVersion</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
+     * <p>To set the default version of an extension, use
+     * <a>SetTypeDefaultVersion</a>.</p>
      */
     inline TypeSummary& WithDefaultVersionId(const char* value) { SetDefaultVersionId(value); return *this;}
 
@@ -289,13 +289,12 @@ namespace Model
      * <p>When the specified extension version was registered. This applies only
      * to:</p> <ul> <li> <p>Private extensions you have registered in your account. For
      * more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">
-     * <code>RegisterType</code> </a>.</p> </li> <li> <p>Public extensions you have
-     * activated in your account with auto-update specified. For more information, see
-     * <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">
-     * <code>ActivateType</code> </a>.</p> </li> </ul> <p>For all other extension
-     * types, CloudFormation returns <code>null</code>.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
+     * </li> <li> <p>Public extensions you have activated in your account with
+     * auto-update specified. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>.</p>
+     * </li> </ul> <p>For all other extension types, CloudFormation returns
+     * <code>null</code>.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdated() const{ return m_lastUpdated; }
 
@@ -303,13 +302,12 @@ namespace Model
      * <p>When the specified extension version was registered. This applies only
      * to:</p> <ul> <li> <p>Private extensions you have registered in your account. For
      * more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">
-     * <code>RegisterType</code> </a>.</p> </li> <li> <p>Public extensions you have
-     * activated in your account with auto-update specified. For more information, see
-     * <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">
-     * <code>ActivateType</code> </a>.</p> </li> </ul> <p>For all other extension
-     * types, CloudFormation returns <code>null</code>.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
+     * </li> <li> <p>Public extensions you have activated in your account with
+     * auto-update specified. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>.</p>
+     * </li> </ul> <p>For all other extension types, CloudFormation returns
+     * <code>null</code>.</p>
      */
     inline bool LastUpdatedHasBeenSet() const { return m_lastUpdatedHasBeenSet; }
 
@@ -317,13 +315,12 @@ namespace Model
      * <p>When the specified extension version was registered. This applies only
      * to:</p> <ul> <li> <p>Private extensions you have registered in your account. For
      * more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">
-     * <code>RegisterType</code> </a>.</p> </li> <li> <p>Public extensions you have
-     * activated in your account with auto-update specified. For more information, see
-     * <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">
-     * <code>ActivateType</code> </a>.</p> </li> </ul> <p>For all other extension
-     * types, CloudFormation returns <code>null</code>.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
+     * </li> <li> <p>Public extensions you have activated in your account with
+     * auto-update specified. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>.</p>
+     * </li> </ul> <p>For all other extension types, CloudFormation returns
+     * <code>null</code>.</p>
      */
     inline void SetLastUpdated(const Aws::Utils::DateTime& value) { m_lastUpdatedHasBeenSet = true; m_lastUpdated = value; }
 
@@ -331,13 +328,12 @@ namespace Model
      * <p>When the specified extension version was registered. This applies only
      * to:</p> <ul> <li> <p>Private extensions you have registered in your account. For
      * more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">
-     * <code>RegisterType</code> </a>.</p> </li> <li> <p>Public extensions you have
-     * activated in your account with auto-update specified. For more information, see
-     * <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">
-     * <code>ActivateType</code> </a>.</p> </li> </ul> <p>For all other extension
-     * types, CloudFormation returns <code>null</code>.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
+     * </li> <li> <p>Public extensions you have activated in your account with
+     * auto-update specified. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>.</p>
+     * </li> </ul> <p>For all other extension types, CloudFormation returns
+     * <code>null</code>.</p>
      */
     inline void SetLastUpdated(Aws::Utils::DateTime&& value) { m_lastUpdatedHasBeenSet = true; m_lastUpdated = std::move(value); }
 
@@ -345,13 +341,12 @@ namespace Model
      * <p>When the specified extension version was registered. This applies only
      * to:</p> <ul> <li> <p>Private extensions you have registered in your account. For
      * more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">
-     * <code>RegisterType</code> </a>.</p> </li> <li> <p>Public extensions you have
-     * activated in your account with auto-update specified. For more information, see
-     * <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">
-     * <code>ActivateType</code> </a>.</p> </li> </ul> <p>For all other extension
-     * types, CloudFormation returns <code>null</code>.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
+     * </li> <li> <p>Public extensions you have activated in your account with
+     * auto-update specified. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>.</p>
+     * </li> </ul> <p>For all other extension types, CloudFormation returns
+     * <code>null</code>.</p>
      */
     inline TypeSummary& WithLastUpdated(const Aws::Utils::DateTime& value) { SetLastUpdated(value); return *this;}
 
@@ -359,13 +354,12 @@ namespace Model
      * <p>When the specified extension version was registered. This applies only
      * to:</p> <ul> <li> <p>Private extensions you have registered in your account. For
      * more information, see <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">
-     * <code>RegisterType</code> </a>.</p> </li> <li> <p>Public extensions you have
-     * activated in your account with auto-update specified. For more information, see
-     * <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">
-     * <code>ActivateType</code> </a>.</p> </li> </ul> <p>For all other extension
-     * types, CloudFormation returns <code>null</code>.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.</p>
+     * </li> <li> <p>Public extensions you have activated in your account with
+     * auto-update specified. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>.</p>
+     * </li> </ul> <p>For all other extension types, CloudFormation returns
+     * <code>null</code>.</p>
      */
     inline TypeSummary& WithLastUpdated(Aws::Utils::DateTime&& value) { SetLastUpdated(std::move(value)); return *this;}
 

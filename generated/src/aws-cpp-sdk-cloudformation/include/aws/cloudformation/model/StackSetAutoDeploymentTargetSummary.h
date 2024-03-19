@@ -26,9 +26,8 @@ namespace Model
 
   /**
    * <p>One of the targets for the stack set. Returned by the <a
-   * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListStackSetAutoDeploymentTargets.html">
-   * <code>ListStackSetAutoDeploymentTargets</code> </a> API operation.</p><p><h3>See
-   * Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ListStackSetAutoDeploymentTargets.html">ListStackSetAutoDeploymentTargets</a>
+   * API operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/StackSetAutoDeploymentTargetSummary">AWS
    * API Reference</a></p>
    */

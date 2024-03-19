@@ -90,8 +90,8 @@ namespace Model
      * <code>Audit</code> action must contain a <code>FindingsDestination</code>
      * object. You can optionally use that <code>FindingsDestination</code> object to
      * list one or more destinations to send audit findings to. If you specify
-     * destinations such as log groups, Kinesis Data Firehose streams, and S3 buckets,
-     * they must already exist.</p> </li> <li> <p>The second block must include both a
+     * destinations such as log groups, Firehose streams, and S3 buckets, they must
+     * already exist.</p> </li> <li> <p>The second block must include both a
      * <code>DataIdentifer</code> array and an <code>Operation</code> property with an
      * <code>Deidentify</code> action. The <code>DataIdentifer</code> array must
      * exactly match the <code>DataIdentifer</code> array in the first block of the
@@ -112,22 +112,22 @@ namespace Model
      * block:</p> <ul> <li> <p> <b>DestinationArn</b> The ARN of the destination to
      * deliver log events to. Supported destinations are:</p> <ul> <li> <p>An Kinesis
      * Data Streams data stream in the same account as the subscription policy, for
-     * same-account delivery.</p> </li> <li> <p>An Kinesis Data Firehose data stream in
-     * the same account as the subscription policy, for same-account delivery.</p>
-     * </li> <li> <p>A Lambda function in the same account as the subscription policy,
-     * for same-account delivery.</p> </li> <li> <p>A logical destination in a
-     * different account created with <a
+     * same-account delivery.</p> </li> <li> <p>An Firehose data stream in the same
+     * account as the subscription policy, for same-account delivery.</p> </li> <li>
+     * <p>A Lambda function in the same account as the subscription policy, for
+     * same-account delivery.</p> </li> <li> <p>A logical destination in a different
+     * account created with <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestination.html">PutDestination</a>,
-     * for cross-account delivery. Kinesis Data Streams and Kinesis Data Firehose are
-     * supported as logical destinations.</p> </li> </ul> </li> <li> <p> <b>RoleArn</b>
-     * The ARN of an IAM role that grants CloudWatch Logs permissions to deliver
-     * ingested log events to the destination stream. You don't need to provide the ARN
-     * when you are working with a logical destination for cross-account delivery.</p>
-     * </li> <li> <p> <b>FilterPattern</b> A filter pattern for subscribing to a
-     * filtered stream of log events.</p> </li> <li> <p> <b>Distribution</b>The method
-     * used to distribute log data to the destination. By default, log data is grouped
-     * by log stream, but the grouping can be set to <code>Random</code> for a more
-     * even distribution. This property is only applicable when the destination is an
+     * for cross-account delivery. Kinesis Data Streams and Firehose are supported as
+     * logical destinations.</p> </li> </ul> </li> <li> <p> <b>RoleArn</b> The ARN of
+     * an IAM role that grants CloudWatch Logs permissions to deliver ingested log
+     * events to the destination stream. You don't need to provide the ARN when you are
+     * working with a logical destination for cross-account delivery.</p> </li> <li>
+     * <p> <b>FilterPattern</b> A filter pattern for subscribing to a filtered stream
+     * of log events.</p> </li> <li> <p> <b>Distribution</b>The method used to
+     * distribute log data to the destination. By default, log data is grouped by log
+     * stream, but the grouping can be set to <code>Random</code> for a more even
+     * distribution. This property is only applicable when the destination is an
      * Kinesis Data Streams data stream.</p> </li> </ul>
      */
     inline const Aws::String& GetPolicyDocument() const{ return m_policyDocument; }
@@ -145,8 +145,8 @@ namespace Model
      * <code>Audit</code> action must contain a <code>FindingsDestination</code>
      * object. You can optionally use that <code>FindingsDestination</code> object to
      * list one or more destinations to send audit findings to. If you specify
-     * destinations such as log groups, Kinesis Data Firehose streams, and S3 buckets,
-     * they must already exist.</p> </li> <li> <p>The second block must include both a
+     * destinations such as log groups, Firehose streams, and S3 buckets, they must
+     * already exist.</p> </li> <li> <p>The second block must include both a
      * <code>DataIdentifer</code> array and an <code>Operation</code> property with an
      * <code>Deidentify</code> action. The <code>DataIdentifer</code> array must
      * exactly match the <code>DataIdentifer</code> array in the first block of the
@@ -167,22 +167,22 @@ namespace Model
      * block:</p> <ul> <li> <p> <b>DestinationArn</b> The ARN of the destination to
      * deliver log events to. Supported destinations are:</p> <ul> <li> <p>An Kinesis
      * Data Streams data stream in the same account as the subscription policy, for
-     * same-account delivery.</p> </li> <li> <p>An Kinesis Data Firehose data stream in
-     * the same account as the subscription policy, for same-account delivery.</p>
-     * </li> <li> <p>A Lambda function in the same account as the subscription policy,
-     * for same-account delivery.</p> </li> <li> <p>A logical destination in a
-     * different account created with <a
+     * same-account delivery.</p> </li> <li> <p>An Firehose data stream in the same
+     * account as the subscription policy, for same-account delivery.</p> </li> <li>
+     * <p>A Lambda function in the same account as the subscription policy, for
+     * same-account delivery.</p> </li> <li> <p>A logical destination in a different
+     * account created with <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestination.html">PutDestination</a>,
-     * for cross-account delivery. Kinesis Data Streams and Kinesis Data Firehose are
-     * supported as logical destinations.</p> </li> </ul> </li> <li> <p> <b>RoleArn</b>
-     * The ARN of an IAM role that grants CloudWatch Logs permissions to deliver
-     * ingested log events to the destination stream. You don't need to provide the ARN
-     * when you are working with a logical destination for cross-account delivery.</p>
-     * </li> <li> <p> <b>FilterPattern</b> A filter pattern for subscribing to a
-     * filtered stream of log events.</p> </li> <li> <p> <b>Distribution</b>The method
-     * used to distribute log data to the destination. By default, log data is grouped
-     * by log stream, but the grouping can be set to <code>Random</code> for a more
-     * even distribution. This property is only applicable when the destination is an
+     * for cross-account delivery. Kinesis Data Streams and Firehose are supported as
+     * logical destinations.</p> </li> </ul> </li> <li> <p> <b>RoleArn</b> The ARN of
+     * an IAM role that grants CloudWatch Logs permissions to deliver ingested log
+     * events to the destination stream. You don't need to provide the ARN when you are
+     * working with a logical destination for cross-account delivery.</p> </li> <li>
+     * <p> <b>FilterPattern</b> A filter pattern for subscribing to a filtered stream
+     * of log events.</p> </li> <li> <p> <b>Distribution</b>The method used to
+     * distribute log data to the destination. By default, log data is grouped by log
+     * stream, but the grouping can be set to <code>Random</code> for a more even
+     * distribution. This property is only applicable when the destination is an
      * Kinesis Data Streams data stream.</p> </li> </ul>
      */
     inline bool PolicyDocumentHasBeenSet() const { return m_policyDocumentHasBeenSet; }
@@ -200,8 +200,8 @@ namespace Model
      * <code>Audit</code> action must contain a <code>FindingsDestination</code>
      * object. You can optionally use that <code>FindingsDestination</code> object to
      * list one or more destinations to send audit findings to. If you specify
-     * destinations such as log groups, Kinesis Data Firehose streams, and S3 buckets,
-     * they must already exist.</p> </li> <li> <p>The second block must include both a
+     * destinations such as log groups, Firehose streams, and S3 buckets, they must
+     * already exist.</p> </li> <li> <p>The second block must include both a
      * <code>DataIdentifer</code> array and an <code>Operation</code> property with an
      * <code>Deidentify</code> action. The <code>DataIdentifer</code> array must
      * exactly match the <code>DataIdentifer</code> array in the first block of the
@@ -222,22 +222,22 @@ namespace Model
      * block:</p> <ul> <li> <p> <b>DestinationArn</b> The ARN of the destination to
      * deliver log events to. Supported destinations are:</p> <ul> <li> <p>An Kinesis
      * Data Streams data stream in the same account as the subscription policy, for
-     * same-account delivery.</p> </li> <li> <p>An Kinesis Data Firehose data stream in
-     * the same account as the subscription policy, for same-account delivery.</p>
-     * </li> <li> <p>A Lambda function in the same account as the subscription policy,
-     * for same-account delivery.</p> </li> <li> <p>A logical destination in a
-     * different account created with <a
+     * same-account delivery.</p> </li> <li> <p>An Firehose data stream in the same
+     * account as the subscription policy, for same-account delivery.</p> </li> <li>
+     * <p>A Lambda function in the same account as the subscription policy, for
+     * same-account delivery.</p> </li> <li> <p>A logical destination in a different
+     * account created with <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestination.html">PutDestination</a>,
-     * for cross-account delivery. Kinesis Data Streams and Kinesis Data Firehose are
-     * supported as logical destinations.</p> </li> </ul> </li> <li> <p> <b>RoleArn</b>
-     * The ARN of an IAM role that grants CloudWatch Logs permissions to deliver
-     * ingested log events to the destination stream. You don't need to provide the ARN
-     * when you are working with a logical destination for cross-account delivery.</p>
-     * </li> <li> <p> <b>FilterPattern</b> A filter pattern for subscribing to a
-     * filtered stream of log events.</p> </li> <li> <p> <b>Distribution</b>The method
-     * used to distribute log data to the destination. By default, log data is grouped
-     * by log stream, but the grouping can be set to <code>Random</code> for a more
-     * even distribution. This property is only applicable when the destination is an
+     * for cross-account delivery. Kinesis Data Streams and Firehose are supported as
+     * logical destinations.</p> </li> </ul> </li> <li> <p> <b>RoleArn</b> The ARN of
+     * an IAM role that grants CloudWatch Logs permissions to deliver ingested log
+     * events to the destination stream. You don't need to provide the ARN when you are
+     * working with a logical destination for cross-account delivery.</p> </li> <li>
+     * <p> <b>FilterPattern</b> A filter pattern for subscribing to a filtered stream
+     * of log events.</p> </li> <li> <p> <b>Distribution</b>The method used to
+     * distribute log data to the destination. By default, log data is grouped by log
+     * stream, but the grouping can be set to <code>Random</code> for a more even
+     * distribution. This property is only applicable when the destination is an
      * Kinesis Data Streams data stream.</p> </li> </ul>
      */
     inline void SetPolicyDocument(const Aws::String& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = value; }
@@ -255,8 +255,8 @@ namespace Model
      * <code>Audit</code> action must contain a <code>FindingsDestination</code>
      * object. You can optionally use that <code>FindingsDestination</code> object to
      * list one or more destinations to send audit findings to. If you specify
-     * destinations such as log groups, Kinesis Data Firehose streams, and S3 buckets,
-     * they must already exist.</p> </li> <li> <p>The second block must include both a
+     * destinations such as log groups, Firehose streams, and S3 buckets, they must
+     * already exist.</p> </li> <li> <p>The second block must include both a
      * <code>DataIdentifer</code> array and an <code>Operation</code> property with an
      * <code>Deidentify</code> action. The <code>DataIdentifer</code> array must
      * exactly match the <code>DataIdentifer</code> array in the first block of the
@@ -277,22 +277,22 @@ namespace Model
      * block:</p> <ul> <li> <p> <b>DestinationArn</b> The ARN of the destination to
      * deliver log events to. Supported destinations are:</p> <ul> <li> <p>An Kinesis
      * Data Streams data stream in the same account as the subscription policy, for
-     * same-account delivery.</p> </li> <li> <p>An Kinesis Data Firehose data stream in
-     * the same account as the subscription policy, for same-account delivery.</p>
-     * </li> <li> <p>A Lambda function in the same account as the subscription policy,
-     * for same-account delivery.</p> </li> <li> <p>A logical destination in a
-     * different account created with <a
+     * same-account delivery.</p> </li> <li> <p>An Firehose data stream in the same
+     * account as the subscription policy, for same-account delivery.</p> </li> <li>
+     * <p>A Lambda function in the same account as the subscription policy, for
+     * same-account delivery.</p> </li> <li> <p>A logical destination in a different
+     * account created with <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestination.html">PutDestination</a>,
-     * for cross-account delivery. Kinesis Data Streams and Kinesis Data Firehose are
-     * supported as logical destinations.</p> </li> </ul> </li> <li> <p> <b>RoleArn</b>
-     * The ARN of an IAM role that grants CloudWatch Logs permissions to deliver
-     * ingested log events to the destination stream. You don't need to provide the ARN
-     * when you are working with a logical destination for cross-account delivery.</p>
-     * </li> <li> <p> <b>FilterPattern</b> A filter pattern for subscribing to a
-     * filtered stream of log events.</p> </li> <li> <p> <b>Distribution</b>The method
-     * used to distribute log data to the destination. By default, log data is grouped
-     * by log stream, but the grouping can be set to <code>Random</code> for a more
-     * even distribution. This property is only applicable when the destination is an
+     * for cross-account delivery. Kinesis Data Streams and Firehose are supported as
+     * logical destinations.</p> </li> </ul> </li> <li> <p> <b>RoleArn</b> The ARN of
+     * an IAM role that grants CloudWatch Logs permissions to deliver ingested log
+     * events to the destination stream. You don't need to provide the ARN when you are
+     * working with a logical destination for cross-account delivery.</p> </li> <li>
+     * <p> <b>FilterPattern</b> A filter pattern for subscribing to a filtered stream
+     * of log events.</p> </li> <li> <p> <b>Distribution</b>The method used to
+     * distribute log data to the destination. By default, log data is grouped by log
+     * stream, but the grouping can be set to <code>Random</code> for a more even
+     * distribution. This property is only applicable when the destination is an
      * Kinesis Data Streams data stream.</p> </li> </ul>
      */
     inline void SetPolicyDocument(Aws::String&& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = std::move(value); }
@@ -310,8 +310,8 @@ namespace Model
      * <code>Audit</code> action must contain a <code>FindingsDestination</code>
      * object. You can optionally use that <code>FindingsDestination</code> object to
      * list one or more destinations to send audit findings to. If you specify
-     * destinations such as log groups, Kinesis Data Firehose streams, and S3 buckets,
-     * they must already exist.</p> </li> <li> <p>The second block must include both a
+     * destinations such as log groups, Firehose streams, and S3 buckets, they must
+     * already exist.</p> </li> <li> <p>The second block must include both a
      * <code>DataIdentifer</code> array and an <code>Operation</code> property with an
      * <code>Deidentify</code> action. The <code>DataIdentifer</code> array must
      * exactly match the <code>DataIdentifer</code> array in the first block of the
@@ -332,22 +332,22 @@ namespace Model
      * block:</p> <ul> <li> <p> <b>DestinationArn</b> The ARN of the destination to
      * deliver log events to. Supported destinations are:</p> <ul> <li> <p>An Kinesis
      * Data Streams data stream in the same account as the subscription policy, for
-     * same-account delivery.</p> </li> <li> <p>An Kinesis Data Firehose data stream in
-     * the same account as the subscription policy, for same-account delivery.</p>
-     * </li> <li> <p>A Lambda function in the same account as the subscription policy,
-     * for same-account delivery.</p> </li> <li> <p>A logical destination in a
-     * different account created with <a
+     * same-account delivery.</p> </li> <li> <p>An Firehose data stream in the same
+     * account as the subscription policy, for same-account delivery.</p> </li> <li>
+     * <p>A Lambda function in the same account as the subscription policy, for
+     * same-account delivery.</p> </li> <li> <p>A logical destination in a different
+     * account created with <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestination.html">PutDestination</a>,
-     * for cross-account delivery. Kinesis Data Streams and Kinesis Data Firehose are
-     * supported as logical destinations.</p> </li> </ul> </li> <li> <p> <b>RoleArn</b>
-     * The ARN of an IAM role that grants CloudWatch Logs permissions to deliver
-     * ingested log events to the destination stream. You don't need to provide the ARN
-     * when you are working with a logical destination for cross-account delivery.</p>
-     * </li> <li> <p> <b>FilterPattern</b> A filter pattern for subscribing to a
-     * filtered stream of log events.</p> </li> <li> <p> <b>Distribution</b>The method
-     * used to distribute log data to the destination. By default, log data is grouped
-     * by log stream, but the grouping can be set to <code>Random</code> for a more
-     * even distribution. This property is only applicable when the destination is an
+     * for cross-account delivery. Kinesis Data Streams and Firehose are supported as
+     * logical destinations.</p> </li> </ul> </li> <li> <p> <b>RoleArn</b> The ARN of
+     * an IAM role that grants CloudWatch Logs permissions to deliver ingested log
+     * events to the destination stream. You don't need to provide the ARN when you are
+     * working with a logical destination for cross-account delivery.</p> </li> <li>
+     * <p> <b>FilterPattern</b> A filter pattern for subscribing to a filtered stream
+     * of log events.</p> </li> <li> <p> <b>Distribution</b>The method used to
+     * distribute log data to the destination. By default, log data is grouped by log
+     * stream, but the grouping can be set to <code>Random</code> for a more even
+     * distribution. This property is only applicable when the destination is an
      * Kinesis Data Streams data stream.</p> </li> </ul>
      */
     inline void SetPolicyDocument(const char* value) { m_policyDocumentHasBeenSet = true; m_policyDocument.assign(value); }
@@ -365,8 +365,8 @@ namespace Model
      * <code>Audit</code> action must contain a <code>FindingsDestination</code>
      * object. You can optionally use that <code>FindingsDestination</code> object to
      * list one or more destinations to send audit findings to. If you specify
-     * destinations such as log groups, Kinesis Data Firehose streams, and S3 buckets,
-     * they must already exist.</p> </li> <li> <p>The second block must include both a
+     * destinations such as log groups, Firehose streams, and S3 buckets, they must
+     * already exist.</p> </li> <li> <p>The second block must include both a
      * <code>DataIdentifer</code> array and an <code>Operation</code> property with an
      * <code>Deidentify</code> action. The <code>DataIdentifer</code> array must
      * exactly match the <code>DataIdentifer</code> array in the first block of the
@@ -387,22 +387,22 @@ namespace Model
      * block:</p> <ul> <li> <p> <b>DestinationArn</b> The ARN of the destination to
      * deliver log events to. Supported destinations are:</p> <ul> <li> <p>An Kinesis
      * Data Streams data stream in the same account as the subscription policy, for
-     * same-account delivery.</p> </li> <li> <p>An Kinesis Data Firehose data stream in
-     * the same account as the subscription policy, for same-account delivery.</p>
-     * </li> <li> <p>A Lambda function in the same account as the subscription policy,
-     * for same-account delivery.</p> </li> <li> <p>A logical destination in a
-     * different account created with <a
+     * same-account delivery.</p> </li> <li> <p>An Firehose data stream in the same
+     * account as the subscription policy, for same-account delivery.</p> </li> <li>
+     * <p>A Lambda function in the same account as the subscription policy, for
+     * same-account delivery.</p> </li> <li> <p>A logical destination in a different
+     * account created with <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestination.html">PutDestination</a>,
-     * for cross-account delivery. Kinesis Data Streams and Kinesis Data Firehose are
-     * supported as logical destinations.</p> </li> </ul> </li> <li> <p> <b>RoleArn</b>
-     * The ARN of an IAM role that grants CloudWatch Logs permissions to deliver
-     * ingested log events to the destination stream. You don't need to provide the ARN
-     * when you are working with a logical destination for cross-account delivery.</p>
-     * </li> <li> <p> <b>FilterPattern</b> A filter pattern for subscribing to a
-     * filtered stream of log events.</p> </li> <li> <p> <b>Distribution</b>The method
-     * used to distribute log data to the destination. By default, log data is grouped
-     * by log stream, but the grouping can be set to <code>Random</code> for a more
-     * even distribution. This property is only applicable when the destination is an
+     * for cross-account delivery. Kinesis Data Streams and Firehose are supported as
+     * logical destinations.</p> </li> </ul> </li> <li> <p> <b>RoleArn</b> The ARN of
+     * an IAM role that grants CloudWatch Logs permissions to deliver ingested log
+     * events to the destination stream. You don't need to provide the ARN when you are
+     * working with a logical destination for cross-account delivery.</p> </li> <li>
+     * <p> <b>FilterPattern</b> A filter pattern for subscribing to a filtered stream
+     * of log events.</p> </li> <li> <p> <b>Distribution</b>The method used to
+     * distribute log data to the destination. By default, log data is grouped by log
+     * stream, but the grouping can be set to <code>Random</code> for a more even
+     * distribution. This property is only applicable when the destination is an
      * Kinesis Data Streams data stream.</p> </li> </ul>
      */
     inline PutAccountPolicyRequest& WithPolicyDocument(const Aws::String& value) { SetPolicyDocument(value); return *this;}
@@ -420,8 +420,8 @@ namespace Model
      * <code>Audit</code> action must contain a <code>FindingsDestination</code>
      * object. You can optionally use that <code>FindingsDestination</code> object to
      * list one or more destinations to send audit findings to. If you specify
-     * destinations such as log groups, Kinesis Data Firehose streams, and S3 buckets,
-     * they must already exist.</p> </li> <li> <p>The second block must include both a
+     * destinations such as log groups, Firehose streams, and S3 buckets, they must
+     * already exist.</p> </li> <li> <p>The second block must include both a
      * <code>DataIdentifer</code> array and an <code>Operation</code> property with an
      * <code>Deidentify</code> action. The <code>DataIdentifer</code> array must
      * exactly match the <code>DataIdentifer</code> array in the first block of the
@@ -442,22 +442,22 @@ namespace Model
      * block:</p> <ul> <li> <p> <b>DestinationArn</b> The ARN of the destination to
      * deliver log events to. Supported destinations are:</p> <ul> <li> <p>An Kinesis
      * Data Streams data stream in the same account as the subscription policy, for
-     * same-account delivery.</p> </li> <li> <p>An Kinesis Data Firehose data stream in
-     * the same account as the subscription policy, for same-account delivery.</p>
-     * </li> <li> <p>A Lambda function in the same account as the subscription policy,
-     * for same-account delivery.</p> </li> <li> <p>A logical destination in a
-     * different account created with <a
+     * same-account delivery.</p> </li> <li> <p>An Firehose data stream in the same
+     * account as the subscription policy, for same-account delivery.</p> </li> <li>
+     * <p>A Lambda function in the same account as the subscription policy, for
+     * same-account delivery.</p> </li> <li> <p>A logical destination in a different
+     * account created with <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestination.html">PutDestination</a>,
-     * for cross-account delivery. Kinesis Data Streams and Kinesis Data Firehose are
-     * supported as logical destinations.</p> </li> </ul> </li> <li> <p> <b>RoleArn</b>
-     * The ARN of an IAM role that grants CloudWatch Logs permissions to deliver
-     * ingested log events to the destination stream. You don't need to provide the ARN
-     * when you are working with a logical destination for cross-account delivery.</p>
-     * </li> <li> <p> <b>FilterPattern</b> A filter pattern for subscribing to a
-     * filtered stream of log events.</p> </li> <li> <p> <b>Distribution</b>The method
-     * used to distribute log data to the destination. By default, log data is grouped
-     * by log stream, but the grouping can be set to <code>Random</code> for a more
-     * even distribution. This property is only applicable when the destination is an
+     * for cross-account delivery. Kinesis Data Streams and Firehose are supported as
+     * logical destinations.</p> </li> </ul> </li> <li> <p> <b>RoleArn</b> The ARN of
+     * an IAM role that grants CloudWatch Logs permissions to deliver ingested log
+     * events to the destination stream. You don't need to provide the ARN when you are
+     * working with a logical destination for cross-account delivery.</p> </li> <li>
+     * <p> <b>FilterPattern</b> A filter pattern for subscribing to a filtered stream
+     * of log events.</p> </li> <li> <p> <b>Distribution</b>The method used to
+     * distribute log data to the destination. By default, log data is grouped by log
+     * stream, but the grouping can be set to <code>Random</code> for a more even
+     * distribution. This property is only applicable when the destination is an
      * Kinesis Data Streams data stream.</p> </li> </ul>
      */
     inline PutAccountPolicyRequest& WithPolicyDocument(Aws::String&& value) { SetPolicyDocument(std::move(value)); return *this;}
@@ -475,8 +475,8 @@ namespace Model
      * <code>Audit</code> action must contain a <code>FindingsDestination</code>
      * object. You can optionally use that <code>FindingsDestination</code> object to
      * list one or more destinations to send audit findings to. If you specify
-     * destinations such as log groups, Kinesis Data Firehose streams, and S3 buckets,
-     * they must already exist.</p> </li> <li> <p>The second block must include both a
+     * destinations such as log groups, Firehose streams, and S3 buckets, they must
+     * already exist.</p> </li> <li> <p>The second block must include both a
      * <code>DataIdentifer</code> array and an <code>Operation</code> property with an
      * <code>Deidentify</code> action. The <code>DataIdentifer</code> array must
      * exactly match the <code>DataIdentifer</code> array in the first block of the
@@ -497,22 +497,22 @@ namespace Model
      * block:</p> <ul> <li> <p> <b>DestinationArn</b> The ARN of the destination to
      * deliver log events to. Supported destinations are:</p> <ul> <li> <p>An Kinesis
      * Data Streams data stream in the same account as the subscription policy, for
-     * same-account delivery.</p> </li> <li> <p>An Kinesis Data Firehose data stream in
-     * the same account as the subscription policy, for same-account delivery.</p>
-     * </li> <li> <p>A Lambda function in the same account as the subscription policy,
-     * for same-account delivery.</p> </li> <li> <p>A logical destination in a
-     * different account created with <a
+     * same-account delivery.</p> </li> <li> <p>An Firehose data stream in the same
+     * account as the subscription policy, for same-account delivery.</p> </li> <li>
+     * <p>A Lambda function in the same account as the subscription policy, for
+     * same-account delivery.</p> </li> <li> <p>A logical destination in a different
+     * account created with <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestination.html">PutDestination</a>,
-     * for cross-account delivery. Kinesis Data Streams and Kinesis Data Firehose are
-     * supported as logical destinations.</p> </li> </ul> </li> <li> <p> <b>RoleArn</b>
-     * The ARN of an IAM role that grants CloudWatch Logs permissions to deliver
-     * ingested log events to the destination stream. You don't need to provide the ARN
-     * when you are working with a logical destination for cross-account delivery.</p>
-     * </li> <li> <p> <b>FilterPattern</b> A filter pattern for subscribing to a
-     * filtered stream of log events.</p> </li> <li> <p> <b>Distribution</b>The method
-     * used to distribute log data to the destination. By default, log data is grouped
-     * by log stream, but the grouping can be set to <code>Random</code> for a more
-     * even distribution. This property is only applicable when the destination is an
+     * for cross-account delivery. Kinesis Data Streams and Firehose are supported as
+     * logical destinations.</p> </li> </ul> </li> <li> <p> <b>RoleArn</b> The ARN of
+     * an IAM role that grants CloudWatch Logs permissions to deliver ingested log
+     * events to the destination stream. You don't need to provide the ARN when you are
+     * working with a logical destination for cross-account delivery.</p> </li> <li>
+     * <p> <b>FilterPattern</b> A filter pattern for subscribing to a filtered stream
+     * of log events.</p> </li> <li> <p> <b>Distribution</b>The method used to
+     * distribute log data to the destination. By default, log data is grouped by log
+     * stream, but the grouping can be set to <code>Random</code> for a more even
+     * distribution. This property is only applicable when the destination is an
      * Kinesis Data Streams data stream.</p> </li> </ul>
      */
     inline PutAccountPolicyRequest& WithPolicyDocument(const char* value) { SetPolicyDocument(value); return *this;}

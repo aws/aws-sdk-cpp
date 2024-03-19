@@ -41,64 +41,56 @@ namespace Model
     /**
      * <p>The ARN of the Amazon Web Services destination that this delivery destination
      * represents. That Amazon Web Services destination can be a log group in
-     * CloudWatch Logs, an Amazon S3 bucket, or a delivery stream in Kinesis Data
-     * Firehose.</p>
+     * CloudWatch Logs, an Amazon S3 bucket, or a delivery stream in Firehose.</p>
      */
     inline const Aws::String& GetDestinationResourceArn() const{ return m_destinationResourceArn; }
 
     /**
      * <p>The ARN of the Amazon Web Services destination that this delivery destination
      * represents. That Amazon Web Services destination can be a log group in
-     * CloudWatch Logs, an Amazon S3 bucket, or a delivery stream in Kinesis Data
-     * Firehose.</p>
+     * CloudWatch Logs, an Amazon S3 bucket, or a delivery stream in Firehose.</p>
      */
     inline bool DestinationResourceArnHasBeenSet() const { return m_destinationResourceArnHasBeenSet; }
 
     /**
      * <p>The ARN of the Amazon Web Services destination that this delivery destination
      * represents. That Amazon Web Services destination can be a log group in
-     * CloudWatch Logs, an Amazon S3 bucket, or a delivery stream in Kinesis Data
-     * Firehose.</p>
+     * CloudWatch Logs, an Amazon S3 bucket, or a delivery stream in Firehose.</p>
      */
     inline void SetDestinationResourceArn(const Aws::String& value) { m_destinationResourceArnHasBeenSet = true; m_destinationResourceArn = value; }
 
     /**
      * <p>The ARN of the Amazon Web Services destination that this delivery destination
      * represents. That Amazon Web Services destination can be a log group in
-     * CloudWatch Logs, an Amazon S3 bucket, or a delivery stream in Kinesis Data
-     * Firehose.</p>
+     * CloudWatch Logs, an Amazon S3 bucket, or a delivery stream in Firehose.</p>
      */
     inline void SetDestinationResourceArn(Aws::String&& value) { m_destinationResourceArnHasBeenSet = true; m_destinationResourceArn = std::move(value); }
 
     /**
      * <p>The ARN of the Amazon Web Services destination that this delivery destination
      * represents. That Amazon Web Services destination can be a log group in
-     * CloudWatch Logs, an Amazon S3 bucket, or a delivery stream in Kinesis Data
-     * Firehose.</p>
+     * CloudWatch Logs, an Amazon S3 bucket, or a delivery stream in Firehose.</p>
      */
     inline void SetDestinationResourceArn(const char* value) { m_destinationResourceArnHasBeenSet = true; m_destinationResourceArn.assign(value); }
 
     /**
      * <p>The ARN of the Amazon Web Services destination that this delivery destination
      * represents. That Amazon Web Services destination can be a log group in
-     * CloudWatch Logs, an Amazon S3 bucket, or a delivery stream in Kinesis Data
-     * Firehose.</p>
+     * CloudWatch Logs, an Amazon S3 bucket, or a delivery stream in Firehose.</p>
      */
     inline DeliveryDestinationConfiguration& WithDestinationResourceArn(const Aws::String& value) { SetDestinationResourceArn(value); return *this;}
 
     /**
      * <p>The ARN of the Amazon Web Services destination that this delivery destination
      * represents. That Amazon Web Services destination can be a log group in
-     * CloudWatch Logs, an Amazon S3 bucket, or a delivery stream in Kinesis Data
-     * Firehose.</p>
+     * CloudWatch Logs, an Amazon S3 bucket, or a delivery stream in Firehose.</p>
      */
     inline DeliveryDestinationConfiguration& WithDestinationResourceArn(Aws::String&& value) { SetDestinationResourceArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN of the Amazon Web Services destination that this delivery destination
      * represents. That Amazon Web Services destination can be a log group in
-     * CloudWatch Logs, an Amazon S3 bucket, or a delivery stream in Kinesis Data
-     * Firehose.</p>
+     * CloudWatch Logs, an Amazon S3 bucket, or a delivery stream in Firehose.</p>
      */
     inline DeliveryDestinationConfiguration& WithDestinationResourceArn(const char* value) { SetDestinationResourceArn(value); return *this;}
 
