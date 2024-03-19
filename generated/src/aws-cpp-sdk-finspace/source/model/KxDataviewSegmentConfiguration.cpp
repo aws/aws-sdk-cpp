@@ -20,13 +20,17 @@ namespace Model
 
 KxDataviewSegmentConfiguration::KxDataviewSegmentConfiguration() : 
     m_dbPathsHasBeenSet(false),
-    m_volumeNameHasBeenSet(false)
+    m_volumeNameHasBeenSet(false),
+    m_onDemand(false),
+    m_onDemandHasBeenSet(false)
 {
 }
 
 KxDataviewSegmentConfiguration::KxDataviewSegmentConfiguration(JsonView jsonValue) : 
     m_dbPathsHasBeenSet(false),
-    m_volumeNameHasBeenSet(false)
+    m_volumeNameHasBeenSet(false),
+    m_onDemand(false),
+    m_onDemandHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -50,6 +54,13 @@ KxDataviewSegmentConfiguration& KxDataviewSegmentConfiguration::operator =(JsonV
     m_volumeNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("onDemand"))
+  {
+    m_onDemand = jsonValue.GetBool("onDemand");
+
+    m_onDemandHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -71,6 +82,12 @@ JsonValue KxDataviewSegmentConfiguration::Jsonize() const
   if(m_volumeNameHasBeenSet)
   {
    payload.WithString("volumeName", m_volumeName);
+
+  }
+
+  if(m_onDemandHasBeenSet)
+  {
+   payload.WithBool("onDemand", m_onDemand);
 
   }
 

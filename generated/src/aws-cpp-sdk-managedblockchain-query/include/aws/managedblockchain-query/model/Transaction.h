@@ -136,50 +136,42 @@ namespace Model
 
 
     /**
-     * <p>The hash of the transaction. It is generated whenever a transaction is
-     * verified and added to the blockchain.</p>
+     * <p>The hash of a transaction. It is generated when a transaction is created.</p>
      */
     inline const Aws::String& GetTransactionHash() const{ return m_transactionHash; }
 
     /**
-     * <p>The hash of the transaction. It is generated whenever a transaction is
-     * verified and added to the blockchain.</p>
+     * <p>The hash of a transaction. It is generated when a transaction is created.</p>
      */
     inline bool TransactionHashHasBeenSet() const { return m_transactionHashHasBeenSet; }
 
     /**
-     * <p>The hash of the transaction. It is generated whenever a transaction is
-     * verified and added to the blockchain.</p>
+     * <p>The hash of a transaction. It is generated when a transaction is created.</p>
      */
     inline void SetTransactionHash(const Aws::String& value) { m_transactionHashHasBeenSet = true; m_transactionHash = value; }
 
     /**
-     * <p>The hash of the transaction. It is generated whenever a transaction is
-     * verified and added to the blockchain.</p>
+     * <p>The hash of a transaction. It is generated when a transaction is created.</p>
      */
     inline void SetTransactionHash(Aws::String&& value) { m_transactionHashHasBeenSet = true; m_transactionHash = std::move(value); }
 
     /**
-     * <p>The hash of the transaction. It is generated whenever a transaction is
-     * verified and added to the blockchain.</p>
+     * <p>The hash of a transaction. It is generated when a transaction is created.</p>
      */
     inline void SetTransactionHash(const char* value) { m_transactionHashHasBeenSet = true; m_transactionHash.assign(value); }
 
     /**
-     * <p>The hash of the transaction. It is generated whenever a transaction is
-     * verified and added to the blockchain.</p>
+     * <p>The hash of a transaction. It is generated when a transaction is created.</p>
      */
     inline Transaction& WithTransactionHash(const Aws::String& value) { SetTransactionHash(value); return *this;}
 
     /**
-     * <p>The hash of the transaction. It is generated whenever a transaction is
-     * verified and added to the blockchain.</p>
+     * <p>The hash of a transaction. It is generated when a transaction is created.</p>
      */
     inline Transaction& WithTransactionHash(Aws::String&& value) { SetTransactionHash(std::move(value)); return *this;}
 
     /**
-     * <p>The hash of the transaction. It is generated whenever a transaction is
-     * verified and added to the blockchain.</p>
+     * <p>The hash of a transaction. It is generated when a transaction is created.</p>
      */
     inline Transaction& WithTransactionHash(const char* value) { SetTransactionHash(value); return *this;}
 
@@ -705,50 +697,50 @@ namespace Model
 
 
     /**
-     * <p>The unique identifier of the transaction. It is generated whenever a
-     * transaction is verified and added to the blockchain.</p>
+     * <p>The identifier of a Bitcoin transaction. It is generated when a transaction
+     * is created.</p>
      */
     inline const Aws::String& GetTransactionId() const{ return m_transactionId; }
 
     /**
-     * <p>The unique identifier of the transaction. It is generated whenever a
-     * transaction is verified and added to the blockchain.</p>
+     * <p>The identifier of a Bitcoin transaction. It is generated when a transaction
+     * is created.</p>
      */
     inline bool TransactionIdHasBeenSet() const { return m_transactionIdHasBeenSet; }
 
     /**
-     * <p>The unique identifier of the transaction. It is generated whenever a
-     * transaction is verified and added to the blockchain.</p>
+     * <p>The identifier of a Bitcoin transaction. It is generated when a transaction
+     * is created.</p>
      */
     inline void SetTransactionId(const Aws::String& value) { m_transactionIdHasBeenSet = true; m_transactionId = value; }
 
     /**
-     * <p>The unique identifier of the transaction. It is generated whenever a
-     * transaction is verified and added to the blockchain.</p>
+     * <p>The identifier of a Bitcoin transaction. It is generated when a transaction
+     * is created.</p>
      */
     inline void SetTransactionId(Aws::String&& value) { m_transactionIdHasBeenSet = true; m_transactionId = std::move(value); }
 
     /**
-     * <p>The unique identifier of the transaction. It is generated whenever a
-     * transaction is verified and added to the blockchain.</p>
+     * <p>The identifier of a Bitcoin transaction. It is generated when a transaction
+     * is created.</p>
      */
     inline void SetTransactionId(const char* value) { m_transactionIdHasBeenSet = true; m_transactionId.assign(value); }
 
     /**
-     * <p>The unique identifier of the transaction. It is generated whenever a
-     * transaction is verified and added to the blockchain.</p>
+     * <p>The identifier of a Bitcoin transaction. It is generated when a transaction
+     * is created.</p>
      */
     inline Transaction& WithTransactionId(const Aws::String& value) { SetTransactionId(value); return *this;}
 
     /**
-     * <p>The unique identifier of the transaction. It is generated whenever a
-     * transaction is verified and added to the blockchain.</p>
+     * <p>The identifier of a Bitcoin transaction. It is generated when a transaction
+     * is created.</p>
      */
     inline Transaction& WithTransactionId(Aws::String&& value) { SetTransactionId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier of the transaction. It is generated whenever a
-     * transaction is verified and added to the blockchain.</p>
+     * <p>The identifier of a Bitcoin transaction. It is generated when a transaction
+     * is created.</p>
      */
     inline Transaction& WithTransactionId(const char* value) { SetTransactionId(value); return *this;}
 

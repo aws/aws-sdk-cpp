@@ -221,7 +221,7 @@ namespace Model
      * creation is in progress.</p> </li> <li> <p>CREATE_FAILED – The volume creation
      * has failed.</p> </li> <li> <p>ACTIVE – The volume is active.</p> </li> <li>
      * <p>UPDATING – The volume is in the process of being updated.</p> </li> <li>
-     * <p>UPDATE_FAILED – The update action failed.</p> </li> <li> <p>UPDATED �� The
+     * <p>UPDATE_FAILED – The update action failed.</p> </li> <li> <p>UPDATED – The
      * volume is successfully updated.</p> </li> <li> <p>DELETING – The volume is in
      * the process of being deleted.</p> </li> <li> <p>DELETE_FAILED – The system
      * failed to delete the volume.</p> </li> <li> <p>DELETED – The volume is
@@ -234,7 +234,7 @@ namespace Model
      * creation is in progress.</p> </li> <li> <p>CREATE_FAILED – The volume creation
      * has failed.</p> </li> <li> <p>ACTIVE – The volume is active.</p> </li> <li>
      * <p>UPDATING – The volume is in the process of being updated.</p> </li> <li>
-     * <p>UPDATE_FAILED – The update action failed.</p> </li> <li> <p>UPDATED �� The
+     * <p>UPDATE_FAILED – The update action failed.</p> </li> <li> <p>UPDATED – The
      * volume is successfully updated.</p> </li> <li> <p>DELETING – The volume is in
      * the process of being deleted.</p> </li> <li> <p>DELETE_FAILED – The system
      * failed to delete the volume.</p> </li> <li> <p>DELETED – The volume is
@@ -247,7 +247,7 @@ namespace Model
      * creation is in progress.</p> </li> <li> <p>CREATE_FAILED – The volume creation
      * has failed.</p> </li> <li> <p>ACTIVE – The volume is active.</p> </li> <li>
      * <p>UPDATING – The volume is in the process of being updated.</p> </li> <li>
-     * <p>UPDATE_FAILED – The update action failed.</p> </li> <li> <p>UPDATED �� The
+     * <p>UPDATE_FAILED – The update action failed.</p> </li> <li> <p>UPDATED – The
      * volume is successfully updated.</p> </li> <li> <p>DELETING – The volume is in
      * the process of being deleted.</p> </li> <li> <p>DELETE_FAILED – The system
      * failed to delete the volume.</p> </li> <li> <p>DELETED – The volume is
@@ -260,7 +260,7 @@ namespace Model
      * creation is in progress.</p> </li> <li> <p>CREATE_FAILED – The volume creation
      * has failed.</p> </li> <li> <p>ACTIVE – The volume is active.</p> </li> <li>
      * <p>UPDATING – The volume is in the process of being updated.</p> </li> <li>
-     * <p>UPDATE_FAILED – The update action failed.</p> </li> <li> <p>UPDATED �� The
+     * <p>UPDATE_FAILED – The update action failed.</p> </li> <li> <p>UPDATED – The
      * volume is successfully updated.</p> </li> <li> <p>DELETING – The volume is in
      * the process of being deleted.</p> </li> <li> <p>DELETE_FAILED – The system
      * failed to delete the volume.</p> </li> <li> <p>DELETED – The volume is
@@ -273,7 +273,7 @@ namespace Model
      * creation is in progress.</p> </li> <li> <p>CREATE_FAILED – The volume creation
      * has failed.</p> </li> <li> <p>ACTIVE – The volume is active.</p> </li> <li>
      * <p>UPDATING – The volume is in the process of being updated.</p> </li> <li>
-     * <p>UPDATE_FAILED – The update action failed.</p> </li> <li> <p>UPDATED �� The
+     * <p>UPDATE_FAILED – The update action failed.</p> </li> <li> <p>UPDATED – The
      * volume is successfully updated.</p> </li> <li> <p>DELETING – The volume is in
      * the process of being deleted.</p> </li> <li> <p>DELETE_FAILED – The system
      * failed to delete the volume.</p> </li> <li> <p>DELETED – The volume is
@@ -391,32 +391,37 @@ namespace Model
 
 
     /**
-     * <p>The number of availability zones you want to assign per cluster. Currently,
-     * FinSpace only support <code>SINGLE</code> for volumes.</p>
+     * <p>The number of availability zones you want to assign per volume. Currently,
+     * FinSpace only supports <code>SINGLE</code> for volumes. This places dataview in
+     * a single AZ.</p>
      */
     inline const KxAzMode& GetAzMode() const{ return m_azMode; }
 
     /**
-     * <p>The number of availability zones you want to assign per cluster. Currently,
-     * FinSpace only support <code>SINGLE</code> for volumes.</p>
+     * <p>The number of availability zones you want to assign per volume. Currently,
+     * FinSpace only supports <code>SINGLE</code> for volumes. This places dataview in
+     * a single AZ.</p>
      */
     inline void SetAzMode(const KxAzMode& value) { m_azMode = value; }
 
     /**
-     * <p>The number of availability zones you want to assign per cluster. Currently,
-     * FinSpace only support <code>SINGLE</code> for volumes.</p>
+     * <p>The number of availability zones you want to assign per volume. Currently,
+     * FinSpace only supports <code>SINGLE</code> for volumes. This places dataview in
+     * a single AZ.</p>
      */
     inline void SetAzMode(KxAzMode&& value) { m_azMode = std::move(value); }
 
     /**
-     * <p>The number of availability zones you want to assign per cluster. Currently,
-     * FinSpace only support <code>SINGLE</code> for volumes.</p>
+     * <p>The number of availability zones you want to assign per volume. Currently,
+     * FinSpace only supports <code>SINGLE</code> for volumes. This places dataview in
+     * a single AZ.</p>
      */
     inline GetKxVolumeResult& WithAzMode(const KxAzMode& value) { SetAzMode(value); return *this;}
 
     /**
-     * <p>The number of availability zones you want to assign per cluster. Currently,
-     * FinSpace only support <code>SINGLE</code> for volumes.</p>
+     * <p>The number of availability zones you want to assign per volume. Currently,
+     * FinSpace only supports <code>SINGLE</code> for volumes. This places dataview in
+     * a single AZ.</p>
      */
     inline GetKxVolumeResult& WithAzMode(KxAzMode&& value) { SetAzMode(std::move(value)); return *this;}
 

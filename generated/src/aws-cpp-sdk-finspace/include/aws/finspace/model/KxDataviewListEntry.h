@@ -167,50 +167,44 @@ namespace Model
 
 
     /**
-     * <p>The number of availability zones you want to assign per cluster. This can be
-     * one of the following </p> <ul> <li> <p> <code>SINGLE</code> – Assigns one
-     * availability zone per cluster.</p> </li> <li> <p> <code>MULTI</code> – Assigns
-     * all the availability zones per cluster.</p> </li> </ul>
+     * <p>The number of availability zones you want to assign per volume. Currently,
+     * FinSpace only supports <code>SINGLE</code> for volumes. This places dataview in
+     * a single AZ.</p>
      */
     inline const KxAzMode& GetAzMode() const{ return m_azMode; }
 
     /**
-     * <p>The number of availability zones you want to assign per cluster. This can be
-     * one of the following </p> <ul> <li> <p> <code>SINGLE</code> – Assigns one
-     * availability zone per cluster.</p> </li> <li> <p> <code>MULTI</code> – Assigns
-     * all the availability zones per cluster.</p> </li> </ul>
+     * <p>The number of availability zones you want to assign per volume. Currently,
+     * FinSpace only supports <code>SINGLE</code> for volumes. This places dataview in
+     * a single AZ.</p>
      */
     inline bool AzModeHasBeenSet() const { return m_azModeHasBeenSet; }
 
     /**
-     * <p>The number of availability zones you want to assign per cluster. This can be
-     * one of the following </p> <ul> <li> <p> <code>SINGLE</code> – Assigns one
-     * availability zone per cluster.</p> </li> <li> <p> <code>MULTI</code> – Assigns
-     * all the availability zones per cluster.</p> </li> </ul>
+     * <p>The number of availability zones you want to assign per volume. Currently,
+     * FinSpace only supports <code>SINGLE</code> for volumes. This places dataview in
+     * a single AZ.</p>
      */
     inline void SetAzMode(const KxAzMode& value) { m_azModeHasBeenSet = true; m_azMode = value; }
 
     /**
-     * <p>The number of availability zones you want to assign per cluster. This can be
-     * one of the following </p> <ul> <li> <p> <code>SINGLE</code> – Assigns one
-     * availability zone per cluster.</p> </li> <li> <p> <code>MULTI</code> – Assigns
-     * all the availability zones per cluster.</p> </li> </ul>
+     * <p>The number of availability zones you want to assign per volume. Currently,
+     * FinSpace only supports <code>SINGLE</code> for volumes. This places dataview in
+     * a single AZ.</p>
      */
     inline void SetAzMode(KxAzMode&& value) { m_azModeHasBeenSet = true; m_azMode = std::move(value); }
 
     /**
-     * <p>The number of availability zones you want to assign per cluster. This can be
-     * one of the following </p> <ul> <li> <p> <code>SINGLE</code> – Assigns one
-     * availability zone per cluster.</p> </li> <li> <p> <code>MULTI</code> – Assigns
-     * all the availability zones per cluster.</p> </li> </ul>
+     * <p>The number of availability zones you want to assign per volume. Currently,
+     * FinSpace only supports <code>SINGLE</code> for volumes. This places dataview in
+     * a single AZ.</p>
      */
     inline KxDataviewListEntry& WithAzMode(const KxAzMode& value) { SetAzMode(value); return *this;}
 
     /**
-     * <p>The number of availability zones you want to assign per cluster. This can be
-     * one of the following </p> <ul> <li> <p> <code>SINGLE</code> – Assigns one
-     * availability zone per cluster.</p> </li> <li> <p> <code>MULTI</code> – Assigns
-     * all the availability zones per cluster.</p> </li> </ul>
+     * <p>The number of availability zones you want to assign per volume. Currently,
+     * FinSpace only supports <code>SINGLE</code> for volumes. This places dataview in
+     * a single AZ.</p>
      */
     inline KxDataviewListEntry& WithAzMode(KxAzMode&& value) { SetAzMode(std::move(value)); return *this;}
 
@@ -513,6 +507,31 @@ namespace Model
 
 
     /**
+     * <p> Returns True if the dataview is created as writeable and False otherwise.
+     * </p>
+     */
+    inline bool GetReadWrite() const{ return m_readWrite; }
+
+    /**
+     * <p> Returns True if the dataview is created as writeable and False otherwise.
+     * </p>
+     */
+    inline bool ReadWriteHasBeenSet() const { return m_readWriteHasBeenSet; }
+
+    /**
+     * <p> Returns True if the dataview is created as writeable and False otherwise.
+     * </p>
+     */
+    inline void SetReadWrite(bool value) { m_readWriteHasBeenSet = true; m_readWrite = value; }
+
+    /**
+     * <p> Returns True if the dataview is created as writeable and False otherwise.
+     * </p>
+     */
+    inline KxDataviewListEntry& WithReadWrite(bool value) { SetReadWrite(value); return *this;}
+
+
+    /**
      * <p> The timestamp at which the dataview list entry was created in FinSpace. The
      * value is determined as epoch time in milliseconds. For example, the value for
      * Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
@@ -672,6 +691,9 @@ namespace Model
 
     bool m_autoUpdate;
     bool m_autoUpdateHasBeenSet = false;
+
+    bool m_readWrite;
+    bool m_readWriteHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdTimestamp;
     bool m_createdTimestampHasBeenSet = false;

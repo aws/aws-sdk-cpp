@@ -88,8 +88,8 @@ namespace Model
      * <code>Audit</code> action must contain a <code>FindingsDestination</code>
      * object. You can optionally use that <code>FindingsDestination</code> object to
      * list one or more destinations to send audit findings to. If you specify
-     * destinations such as log groups, Kinesis Data Firehose streams, and S3 buckets,
-     * they must already exist.</p> </li> <li> <p>The second block must include both a
+     * destinations such as log groups, Firehose streams, and S3 buckets, they must
+     * already exist.</p> </li> <li> <p>The second block must include both a
      * <code>DataIdentifer</code> array and an <code>Operation</code> property with an
      * <code>Deidentify</code> action. The <code>DataIdentifer</code> array must
      * exactly match the <code>DataIdentifer</code> array in the first block of the
@@ -121,8 +121,8 @@ namespace Model
      * <code>Audit</code> action must contain a <code>FindingsDestination</code>
      * object. You can optionally use that <code>FindingsDestination</code> object to
      * list one or more destinations to send audit findings to. If you specify
-     * destinations such as log groups, Kinesis Data Firehose streams, and S3 buckets,
-     * they must already exist.</p> </li> <li> <p>The second block must include both a
+     * destinations such as log groups, Firehose streams, and S3 buckets, they must
+     * already exist.</p> </li> <li> <p>The second block must include both a
      * <code>DataIdentifer</code> array and an <code>Operation</code> property with an
      * <code>Deidentify</code> action. The <code>DataIdentifer</code> array must
      * exactly match the <code>DataIdentifer</code> array in the first block of the
@@ -154,8 +154,8 @@ namespace Model
      * <code>Audit</code> action must contain a <code>FindingsDestination</code>
      * object. You can optionally use that <code>FindingsDestination</code> object to
      * list one or more destinations to send audit findings to. If you specify
-     * destinations such as log groups, Kinesis Data Firehose streams, and S3 buckets,
-     * they must already exist.</p> </li> <li> <p>The second block must include both a
+     * destinations such as log groups, Firehose streams, and S3 buckets, they must
+     * already exist.</p> </li> <li> <p>The second block must include both a
      * <code>DataIdentifer</code> array and an <code>Operation</code> property with an
      * <code>Deidentify</code> action. The <code>DataIdentifer</code> array must
      * exactly match the <code>DataIdentifer</code> array in the first block of the
@@ -187,8 +187,8 @@ namespace Model
      * <code>Audit</code> action must contain a <code>FindingsDestination</code>
      * object. You can optionally use that <code>FindingsDestination</code> object to
      * list one or more destinations to send audit findings to. If you specify
-     * destinations such as log groups, Kinesis Data Firehose streams, and S3 buckets,
-     * they must already exist.</p> </li> <li> <p>The second block must include both a
+     * destinations such as log groups, Firehose streams, and S3 buckets, they must
+     * already exist.</p> </li> <li> <p>The second block must include both a
      * <code>DataIdentifer</code> array and an <code>Operation</code> property with an
      * <code>Deidentify</code> action. The <code>DataIdentifer</code> array must
      * exactly match the <code>DataIdentifer</code> array in the first block of the
@@ -220,8 +220,8 @@ namespace Model
      * <code>Audit</code> action must contain a <code>FindingsDestination</code>
      * object. You can optionally use that <code>FindingsDestination</code> object to
      * list one or more destinations to send audit findings to. If you specify
-     * destinations such as log groups, Kinesis Data Firehose streams, and S3 buckets,
-     * they must already exist.</p> </li> <li> <p>The second block must include both a
+     * destinations such as log groups, Firehose streams, and S3 buckets, they must
+     * already exist.</p> </li> <li> <p>The second block must include both a
      * <code>DataIdentifer</code> array and an <code>Operation</code> property with an
      * <code>Deidentify</code> action. The <code>DataIdentifer</code> array must
      * exactly match the <code>DataIdentifer</code> array in the first block of the
@@ -253,8 +253,8 @@ namespace Model
      * <code>Audit</code> action must contain a <code>FindingsDestination</code>
      * object. You can optionally use that <code>FindingsDestination</code> object to
      * list one or more destinations to send audit findings to. If you specify
-     * destinations such as log groups, Kinesis Data Firehose streams, and S3 buckets,
-     * they must already exist.</p> </li> <li> <p>The second block must include both a
+     * destinations such as log groups, Firehose streams, and S3 buckets, they must
+     * already exist.</p> </li> <li> <p>The second block must include both a
      * <code>DataIdentifer</code> array and an <code>Operation</code> property with an
      * <code>Deidentify</code> action. The <code>DataIdentifer</code> array must
      * exactly match the <code>DataIdentifer</code> array in the first block of the
@@ -286,8 +286,8 @@ namespace Model
      * <code>Audit</code> action must contain a <code>FindingsDestination</code>
      * object. You can optionally use that <code>FindingsDestination</code> object to
      * list one or more destinations to send audit findings to. If you specify
-     * destinations such as log groups, Kinesis Data Firehose streams, and S3 buckets,
-     * they must already exist.</p> </li> <li> <p>The second block must include both a
+     * destinations such as log groups, Firehose streams, and S3 buckets, they must
+     * already exist.</p> </li> <li> <p>The second block must include both a
      * <code>DataIdentifer</code> array and an <code>Operation</code> property with an
      * <code>Deidentify</code> action. The <code>DataIdentifer</code> array must
      * exactly match the <code>DataIdentifer</code> array in the first block of the
@@ -319,8 +319,8 @@ namespace Model
      * <code>Audit</code> action must contain a <code>FindingsDestination</code>
      * object. You can optionally use that <code>FindingsDestination</code> object to
      * list one or more destinations to send audit findings to. If you specify
-     * destinations such as log groups, Kinesis Data Firehose streams, and S3 buckets,
-     * they must already exist.</p> </li> <li> <p>The second block must include both a
+     * destinations such as log groups, Firehose streams, and S3 buckets, they must
+     * already exist.</p> </li> <li> <p>The second block must include both a
      * <code>DataIdentifer</code> array and an <code>Operation</code> property with an
      * <code>Deidentify</code> action. The <code>DataIdentifer</code> array must
      * exactly match the <code>DataIdentifer</code> array in the first block of the

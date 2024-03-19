@@ -106,42 +106,42 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of contracts to list.</p> <p>Default:<code>100</code> </p>
-     *  <p>Even if additional results can be retrieved, the request can return
-     * less results than <code>maxResults</code> or an empty array of results.</p>
-     * <p>To retrieve the next set of results, make another request with the returned
-     * <code>nextToken</code> value. The value of <code>nextToken</code> is
-     * <code>null</code> when there are no more results to return</p> 
+     * <p>The maximum number of contracts to list.</p> <p>Default: <code>100</code>
+     * </p>  <p>Even if additional results can be retrieved, the request can
+     * return less results than <code>maxResults</code> or an empty array of
+     * results.</p> <p>To retrieve the next set of results, make another request with
+     * the returned <code>nextToken</code> value. The value of <code>nextToken</code>
+     * is <code>null</code> when there are no more results to return</p> 
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of contracts to list.</p> <p>Default:<code>100</code> </p>
-     *  <p>Even if additional results can be retrieved, the request can return
-     * less results than <code>maxResults</code> or an empty array of results.</p>
-     * <p>To retrieve the next set of results, make another request with the returned
-     * <code>nextToken</code> value. The value of <code>nextToken</code> is
-     * <code>null</code> when there are no more results to return</p> 
+     * <p>The maximum number of contracts to list.</p> <p>Default: <code>100</code>
+     * </p>  <p>Even if additional results can be retrieved, the request can
+     * return less results than <code>maxResults</code> or an empty array of
+     * results.</p> <p>To retrieve the next set of results, make another request with
+     * the returned <code>nextToken</code> value. The value of <code>nextToken</code>
+     * is <code>null</code> when there are no more results to return</p> 
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>The maximum number of contracts to list.</p> <p>Default:<code>100</code> </p>
-     *  <p>Even if additional results can be retrieved, the request can return
-     * less results than <code>maxResults</code> or an empty array of results.</p>
-     * <p>To retrieve the next set of results, make another request with the returned
-     * <code>nextToken</code> value. The value of <code>nextToken</code> is
-     * <code>null</code> when there are no more results to return</p> 
+     * <p>The maximum number of contracts to list.</p> <p>Default: <code>100</code>
+     * </p>  <p>Even if additional results can be retrieved, the request can
+     * return less results than <code>maxResults</code> or an empty array of
+     * results.</p> <p>To retrieve the next set of results, make another request with
+     * the returned <code>nextToken</code> value. The value of <code>nextToken</code>
+     * is <code>null</code> when there are no more results to return</p> 
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of contracts to list.</p> <p>Default:<code>100</code> </p>
-     *  <p>Even if additional results can be retrieved, the request can return
-     * less results than <code>maxResults</code> or an empty array of results.</p>
-     * <p>To retrieve the next set of results, make another request with the returned
-     * <code>nextToken</code> value. The value of <code>nextToken</code> is
-     * <code>null</code> when there are no more results to return</p> 
+     * <p>The maximum number of contracts to list.</p> <p>Default: <code>100</code>
+     * </p>  <p>Even if additional results can be retrieved, the request can
+     * return less results than <code>maxResults</code> or an empty array of
+     * results.</p> <p>To retrieve the next set of results, make another request with
+     * the returned <code>nextToken</code> value. The value of <code>nextToken</code>
+     * is <code>null</code> when there are no more results to return</p> 
      */
     inline ListAssetContractsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

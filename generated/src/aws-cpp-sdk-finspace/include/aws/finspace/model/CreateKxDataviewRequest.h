@@ -169,50 +169,44 @@ namespace Model
 
 
     /**
-     * <p>The number of availability zones you want to assign per cluster. This can be
-     * one of the following </p> <ul> <li> <p> <code>SINGLE</code> – Assigns one
-     * availability zone per cluster.</p> </li> <li> <p> <code>MULTI</code> – Assigns
-     * all the availability zones per cluster.</p> </li> </ul>
+     * <p>The number of availability zones you want to assign per volume. Currently,
+     * FinSpace only supports <code>SINGLE</code> for volumes. This places dataview in
+     * a single AZ.</p>
      */
     inline const KxAzMode& GetAzMode() const{ return m_azMode; }
 
     /**
-     * <p>The number of availability zones you want to assign per cluster. This can be
-     * one of the following </p> <ul> <li> <p> <code>SINGLE</code> – Assigns one
-     * availability zone per cluster.</p> </li> <li> <p> <code>MULTI</code> – Assigns
-     * all the availability zones per cluster.</p> </li> </ul>
+     * <p>The number of availability zones you want to assign per volume. Currently,
+     * FinSpace only supports <code>SINGLE</code> for volumes. This places dataview in
+     * a single AZ.</p>
      */
     inline bool AzModeHasBeenSet() const { return m_azModeHasBeenSet; }
 
     /**
-     * <p>The number of availability zones you want to assign per cluster. This can be
-     * one of the following </p> <ul> <li> <p> <code>SINGLE</code> – Assigns one
-     * availability zone per cluster.</p> </li> <li> <p> <code>MULTI</code> – Assigns
-     * all the availability zones per cluster.</p> </li> </ul>
+     * <p>The number of availability zones you want to assign per volume. Currently,
+     * FinSpace only supports <code>SINGLE</code> for volumes. This places dataview in
+     * a single AZ.</p>
      */
     inline void SetAzMode(const KxAzMode& value) { m_azModeHasBeenSet = true; m_azMode = value; }
 
     /**
-     * <p>The number of availability zones you want to assign per cluster. This can be
-     * one of the following </p> <ul> <li> <p> <code>SINGLE</code> – Assigns one
-     * availability zone per cluster.</p> </li> <li> <p> <code>MULTI</code> – Assigns
-     * all the availability zones per cluster.</p> </li> </ul>
+     * <p>The number of availability zones you want to assign per volume. Currently,
+     * FinSpace only supports <code>SINGLE</code> for volumes. This places dataview in
+     * a single AZ.</p>
      */
     inline void SetAzMode(KxAzMode&& value) { m_azModeHasBeenSet = true; m_azMode = std::move(value); }
 
     /**
-     * <p>The number of availability zones you want to assign per cluster. This can be
-     * one of the following </p> <ul> <li> <p> <code>SINGLE</code> – Assigns one
-     * availability zone per cluster.</p> </li> <li> <p> <code>MULTI</code> – Assigns
-     * all the availability zones per cluster.</p> </li> </ul>
+     * <p>The number of availability zones you want to assign per volume. Currently,
+     * FinSpace only supports <code>SINGLE</code> for volumes. This places dataview in
+     * a single AZ.</p>
      */
     inline CreateKxDataviewRequest& WithAzMode(const KxAzMode& value) { SetAzMode(value); return *this;}
 
     /**
-     * <p>The number of availability zones you want to assign per cluster. This can be
-     * one of the following </p> <ul> <li> <p> <code>SINGLE</code> – Assigns one
-     * availability zone per cluster.</p> </li> <li> <p> <code>MULTI</code> – Assigns
-     * all the availability zones per cluster.</p> </li> </ul>
+     * <p>The number of availability zones you want to assign per volume. Currently,
+     * FinSpace only supports <code>SINGLE</code> for volumes. This places dataview in
+     * a single AZ.</p>
      */
     inline CreateKxDataviewRequest& WithAzMode(KxAzMode&& value) { SetAzMode(std::move(value)); return *this;}
 
@@ -410,6 +404,71 @@ namespace Model
 
 
     /**
+     * <p> The option to specify whether you want to make the dataview writable to
+     * perform database maintenance. The following are some considerations related to
+     * writable dataviews.&#x2028;&#x2028;</p> <ul> <li> <p>You cannot create partial
+     * writable dataviews. When you create writeable dataviews you must provide the
+     * entire database path.</p> </li> <li> <p>You cannot perform updates on a
+     * writeable dataview. Hence, <code>autoUpdate</code> must be set as <b>False</b>
+     * if <code>readWrite</code> is <b>True</b> for a dataview.</p> </li> <li> <p>You
+     * must also use a unique volume for creating a writeable dataview. So, if you
+     * choose a volume that is already in use by another dataview, the dataview
+     * creation fails.</p> </li> <li> <p>Once you create a dataview as writeable, you
+     * cannot change it to read-only. So, you cannot update the <code>readWrite</code>
+     * parameter later.</p> </li> </ul>
+     */
+    inline bool GetReadWrite() const{ return m_readWrite; }
+
+    /**
+     * <p> The option to specify whether you want to make the dataview writable to
+     * perform database maintenance. The following are some considerations related to
+     * writable dataviews.&#x2028;&#x2028;</p> <ul> <li> <p>You cannot create partial
+     * writable dataviews. When you create writeable dataviews you must provide the
+     * entire database path.</p> </li> <li> <p>You cannot perform updates on a
+     * writeable dataview. Hence, <code>autoUpdate</code> must be set as <b>False</b>
+     * if <code>readWrite</code> is <b>True</b> for a dataview.</p> </li> <li> <p>You
+     * must also use a unique volume for creating a writeable dataview. So, if you
+     * choose a volume that is already in use by another dataview, the dataview
+     * creation fails.</p> </li> <li> <p>Once you create a dataview as writeable, you
+     * cannot change it to read-only. So, you cannot update the <code>readWrite</code>
+     * parameter later.</p> </li> </ul>
+     */
+    inline bool ReadWriteHasBeenSet() const { return m_readWriteHasBeenSet; }
+
+    /**
+     * <p> The option to specify whether you want to make the dataview writable to
+     * perform database maintenance. The following are some considerations related to
+     * writable dataviews.&#x2028;&#x2028;</p> <ul> <li> <p>You cannot create partial
+     * writable dataviews. When you create writeable dataviews you must provide the
+     * entire database path.</p> </li> <li> <p>You cannot perform updates on a
+     * writeable dataview. Hence, <code>autoUpdate</code> must be set as <b>False</b>
+     * if <code>readWrite</code> is <b>True</b> for a dataview.</p> </li> <li> <p>You
+     * must also use a unique volume for creating a writeable dataview. So, if you
+     * choose a volume that is already in use by another dataview, the dataview
+     * creation fails.</p> </li> <li> <p>Once you create a dataview as writeable, you
+     * cannot change it to read-only. So, you cannot update the <code>readWrite</code>
+     * parameter later.</p> </li> </ul>
+     */
+    inline void SetReadWrite(bool value) { m_readWriteHasBeenSet = true; m_readWrite = value; }
+
+    /**
+     * <p> The option to specify whether you want to make the dataview writable to
+     * perform database maintenance. The following are some considerations related to
+     * writable dataviews.&#x2028;&#x2028;</p> <ul> <li> <p>You cannot create partial
+     * writable dataviews. When you create writeable dataviews you must provide the
+     * entire database path.</p> </li> <li> <p>You cannot perform updates on a
+     * writeable dataview. Hence, <code>autoUpdate</code> must be set as <b>False</b>
+     * if <code>readWrite</code> is <b>True</b> for a dataview.</p> </li> <li> <p>You
+     * must also use a unique volume for creating a writeable dataview. So, if you
+     * choose a volume that is already in use by another dataview, the dataview
+     * creation fails.</p> </li> <li> <p>Once you create a dataview as writeable, you
+     * cannot change it to read-only. So, you cannot update the <code>readWrite</code>
+     * parameter later.</p> </li> </ul>
+     */
+    inline CreateKxDataviewRequest& WithReadWrite(bool value) { SetReadWrite(value); return *this;}
+
+
+    /**
      * <p>A description of the dataview.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
@@ -594,6 +653,9 @@ namespace Model
 
     bool m_autoUpdate;
     bool m_autoUpdateHasBeenSet = false;
+
+    bool m_readWrite;
+    bool m_readWriteHasBeenSet = false;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;

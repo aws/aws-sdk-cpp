@@ -246,11 +246,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) for the extension, in this account and
      * Region.</p> <p>For public extensions, this will be the ARN assigned when you
      * call the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">
-     * <code>ActivateType</code> </a> API operation in this account and Region. For
-     * private extensions, this will be the ARN assigned when you call the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">
-     * <code>RegisterType</code> </a> API operation in this account and Region.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>
+     * API operation in this account and Region. For private extensions, this will be
+     * the ARN assigned when you call the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>
+     * API operation in this account and Region.</p>
      */
     inline const Aws::String& GetTypeArn() const{ return m_typeArn; }
 
@@ -258,11 +258,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) for the extension, in this account and
      * Region.</p> <p>For public extensions, this will be the ARN assigned when you
      * call the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">
-     * <code>ActivateType</code> </a> API operation in this account and Region. For
-     * private extensions, this will be the ARN assigned when you call the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">
-     * <code>RegisterType</code> </a> API operation in this account and Region.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>
+     * API operation in this account and Region. For private extensions, this will be
+     * the ARN assigned when you call the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>
+     * API operation in this account and Region.</p>
      */
     inline bool TypeArnHasBeenSet() const { return m_typeArnHasBeenSet; }
 
@@ -270,11 +270,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) for the extension, in this account and
      * Region.</p> <p>For public extensions, this will be the ARN assigned when you
      * call the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">
-     * <code>ActivateType</code> </a> API operation in this account and Region. For
-     * private extensions, this will be the ARN assigned when you call the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">
-     * <code>RegisterType</code> </a> API operation in this account and Region.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>
+     * API operation in this account and Region. For private extensions, this will be
+     * the ARN assigned when you call the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>
+     * API operation in this account and Region.</p>
      */
     inline void SetTypeArn(const Aws::String& value) { m_typeArnHasBeenSet = true; m_typeArn = value; }
 
@@ -282,11 +282,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) for the extension, in this account and
      * Region.</p> <p>For public extensions, this will be the ARN assigned when you
      * call the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">
-     * <code>ActivateType</code> </a> API operation in this account and Region. For
-     * private extensions, this will be the ARN assigned when you call the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">
-     * <code>RegisterType</code> </a> API operation in this account and Region.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>
+     * API operation in this account and Region. For private extensions, this will be
+     * the ARN assigned when you call the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>
+     * API operation in this account and Region.</p>
      */
     inline void SetTypeArn(Aws::String&& value) { m_typeArnHasBeenSet = true; m_typeArn = std::move(value); }
 
@@ -294,11 +294,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) for the extension, in this account and
      * Region.</p> <p>For public extensions, this will be the ARN assigned when you
      * call the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">
-     * <code>ActivateType</code> </a> API operation in this account and Region. For
-     * private extensions, this will be the ARN assigned when you call the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">
-     * <code>RegisterType</code> </a> API operation in this account and Region.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>
+     * API operation in this account and Region. For private extensions, this will be
+     * the ARN assigned when you call the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>
+     * API operation in this account and Region.</p>
      */
     inline void SetTypeArn(const char* value) { m_typeArnHasBeenSet = true; m_typeArn.assign(value); }
 
@@ -306,11 +306,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) for the extension, in this account and
      * Region.</p> <p>For public extensions, this will be the ARN assigned when you
      * call the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">
-     * <code>ActivateType</code> </a> API operation in this account and Region. For
-     * private extensions, this will be the ARN assigned when you call the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">
-     * <code>RegisterType</code> </a> API operation in this account and Region.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>
+     * API operation in this account and Region. For private extensions, this will be
+     * the ARN assigned when you call the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>
+     * API operation in this account and Region.</p>
      */
     inline TypeConfigurationDetails& WithTypeArn(const Aws::String& value) { SetTypeArn(value); return *this;}
 
@@ -318,11 +318,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) for the extension, in this account and
      * Region.</p> <p>For public extensions, this will be the ARN assigned when you
      * call the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">
-     * <code>ActivateType</code> </a> API operation in this account and Region. For
-     * private extensions, this will be the ARN assigned when you call the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">
-     * <code>RegisterType</code> </a> API operation in this account and Region.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>
+     * API operation in this account and Region. For private extensions, this will be
+     * the ARN assigned when you call the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>
+     * API operation in this account and Region.</p>
      */
     inline TypeConfigurationDetails& WithTypeArn(Aws::String&& value) { SetTypeArn(std::move(value)); return *this;}
 
@@ -330,11 +330,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) for the extension, in this account and
      * Region.</p> <p>For public extensions, this will be the ARN assigned when you
      * call the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">
-     * <code>ActivateType</code> </a> API operation in this account and Region. For
-     * private extensions, this will be the ARN assigned when you call the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">
-     * <code>RegisterType</code> </a> API operation in this account and Region.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>
+     * API operation in this account and Region. For private extensions, this will be
+     * the ARN assigned when you call the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>
+     * API operation in this account and Region.</p>
      */
     inline TypeConfigurationDetails& WithTypeArn(const char* value) { SetTypeArn(value); return *this;}
 

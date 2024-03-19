@@ -175,7 +175,7 @@ Anomaly& Anomaly::operator =(JsonView jsonValue)
     Aws::Utils::Array<JsonView> logSamplesJsonList = jsonValue.GetArray("logSamples");
     for(unsigned logSamplesIndex = 0; logSamplesIndex < logSamplesJsonList.GetLength(); ++logSamplesIndex)
     {
-      m_logSamples.push_back(logSamplesJsonList[logSamplesIndex].AsString());
+      m_logSamples.push_back(logSamplesJsonList[logSamplesIndex].AsObject());
     }
     m_logSamplesHasBeenSet = true;
   }
@@ -316,7 +316,7 @@ JsonValue Anomaly::Jsonize() const
    Aws::Utils::Array<JsonValue> logSamplesJsonList(m_logSamples.size());
    for(unsigned logSamplesIndex = 0; logSamplesIndex < logSamplesJsonList.GetLength(); ++logSamplesIndex)
    {
-     logSamplesJsonList[logSamplesIndex].AsString(m_logSamples[logSamplesIndex]);
+     logSamplesJsonList[logSamplesIndex].AsObject(m_logSamples[logSamplesIndex].Jsonize());
    }
    payload.WithArray("logSamples", std::move(logSamplesJsonList));
 

@@ -219,37 +219,37 @@ namespace Model
 
     /**
      * <p>Displays whether the delivery destination associated with this delivery is
-     * CloudWatch Logs, Amazon S3, or Kinesis Data Firehose.</p>
+     * CloudWatch Logs, Amazon S3, or Firehose.</p>
      */
     inline const DeliveryDestinationType& GetDeliveryDestinationType() const{ return m_deliveryDestinationType; }
 
     /**
      * <p>Displays whether the delivery destination associated with this delivery is
-     * CloudWatch Logs, Amazon S3, or Kinesis Data Firehose.</p>
+     * CloudWatch Logs, Amazon S3, or Firehose.</p>
      */
     inline bool DeliveryDestinationTypeHasBeenSet() const { return m_deliveryDestinationTypeHasBeenSet; }
 
     /**
      * <p>Displays whether the delivery destination associated with this delivery is
-     * CloudWatch Logs, Amazon S3, or Kinesis Data Firehose.</p>
+     * CloudWatch Logs, Amazon S3, or Firehose.</p>
      */
     inline void SetDeliveryDestinationType(const DeliveryDestinationType& value) { m_deliveryDestinationTypeHasBeenSet = true; m_deliveryDestinationType = value; }
 
     /**
      * <p>Displays whether the delivery destination associated with this delivery is
-     * CloudWatch Logs, Amazon S3, or Kinesis Data Firehose.</p>
+     * CloudWatch Logs, Amazon S3, or Firehose.</p>
      */
     inline void SetDeliveryDestinationType(DeliveryDestinationType&& value) { m_deliveryDestinationTypeHasBeenSet = true; m_deliveryDestinationType = std::move(value); }
 
     /**
      * <p>Displays whether the delivery destination associated with this delivery is
-     * CloudWatch Logs, Amazon S3, or Kinesis Data Firehose.</p>
+     * CloudWatch Logs, Amazon S3, or Firehose.</p>
      */
     inline Delivery& WithDeliveryDestinationType(const DeliveryDestinationType& value) { SetDeliveryDestinationType(value); return *this;}
 
     /**
      * <p>Displays whether the delivery destination associated with this delivery is
-     * CloudWatch Logs, Amazon S3, or Kinesis Data Firehose.</p>
+     * CloudWatch Logs, Amazon S3, or Firehose.</p>
      */
     inline Delivery& WithDeliveryDestinationType(DeliveryDestinationType&& value) { SetDeliveryDestinationType(std::move(value)); return *this;}
 

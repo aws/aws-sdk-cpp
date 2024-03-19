@@ -240,8 +240,8 @@ namespace Model
      * <p>A list of <code>Parameter</code> structures that describes the input
      * parameters and their values used to create the change set. For more information,
      * see the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">
-     * <code>Parameter</code> </a> data type.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
+     * data type.</p>
      */
     inline const Aws::Vector<Parameter>& GetParameters() const{ return m_parameters; }
 
@@ -249,8 +249,8 @@ namespace Model
      * <p>A list of <code>Parameter</code> structures that describes the input
      * parameters and their values used to create the change set. For more information,
      * see the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">
-     * <code>Parameter</code> </a> data type.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
+     * data type.</p>
      */
     inline void SetParameters(const Aws::Vector<Parameter>& value) { m_parameters = value; }
 
@@ -258,8 +258,8 @@ namespace Model
      * <p>A list of <code>Parameter</code> structures that describes the input
      * parameters and their values used to create the change set. For more information,
      * see the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">
-     * <code>Parameter</code> </a> data type.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
+     * data type.</p>
      */
     inline void SetParameters(Aws::Vector<Parameter>&& value) { m_parameters = std::move(value); }
 
@@ -267,8 +267,8 @@ namespace Model
      * <p>A list of <code>Parameter</code> structures that describes the input
      * parameters and their values used to create the change set. For more information,
      * see the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">
-     * <code>Parameter</code> </a> data type.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
+     * data type.</p>
      */
     inline DescribeChangeSetResult& WithParameters(const Aws::Vector<Parameter>& value) { SetParameters(value); return *this;}
 
@@ -276,8 +276,8 @@ namespace Model
      * <p>A list of <code>Parameter</code> structures that describes the input
      * parameters and their values used to create the change set. For more information,
      * see the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">
-     * <code>Parameter</code> </a> data type.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
+     * data type.</p>
      */
     inline DescribeChangeSetResult& WithParameters(Aws::Vector<Parameter>&& value) { SetParameters(std::move(value)); return *this;}
 
@@ -285,8 +285,8 @@ namespace Model
      * <p>A list of <code>Parameter</code> structures that describes the input
      * parameters and their values used to create the change set. For more information,
      * see the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">
-     * <code>Parameter</code> </a> data type.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
+     * data type.</p>
      */
     inline DescribeChangeSetResult& AddParameters(const Parameter& value) { m_parameters.push_back(value); return *this; }
 
@@ -294,8 +294,8 @@ namespace Model
      * <p>A list of <code>Parameter</code> structures that describes the input
      * parameters and their values used to create the change set. For more information,
      * see the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">
-     * <code>Parameter</code> </a> data type.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
+     * data type.</p>
      */
     inline DescribeChangeSetResult& AddParameters(Parameter&& value) { m_parameters.push_back(std::move(value)); return *this; }
 
@@ -808,110 +808,100 @@ namespace Model
     /**
      * <p>Determines what action will be taken if stack creation fails. When this
      * parameter is specified, the <code>DisableRollback</code> parameter to the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">
-     * <code>ExecuteChangeSet</code> </a> API operation must not be specified. This
-     * must be one of these values:</p> <ul> <li> <p> <code>DELETE</code> - Deletes the
-     * change set if the stack creation fails. This is only valid when the
-     * <code>ChangeSetType</code> parameter is set to <code>CREATE</code>. If the
-     * deletion of the stack fails, the status of the stack is
-     * <code>DELETE_FAILED</code>.</p> </li> <li> <p> <code>DO_NOTHING</code> - if the
-     * stack creation fails, do nothing. This is equivalent to specifying
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a>
+     * API operation must not be specified. This must be one of these values:</p> <ul>
+     * <li> <p> <code>DELETE</code> - Deletes the change set if the stack creation
+     * fails. This is only valid when the <code>ChangeSetType</code> parameter is set
+     * to <code>CREATE</code>. If the deletion of the stack fails, the status of the
+     * stack is <code>DELETE_FAILED</code>.</p> </li> <li> <p> <code>DO_NOTHING</code>
+     * - if the stack creation fails, do nothing. This is equivalent to specifying
      * <code>true</code> for the <code>DisableRollback</code> parameter to the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">
-     * <code>ExecuteChangeSet</code> </a> API operation.</p> </li> <li> <p>
-     * <code>ROLLBACK</code> - if the stack creation fails, roll back the stack. This
-     * is equivalent to specifying <code>false</code> for the
-     * <code>DisableRollback</code> parameter to the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">
-     * <code>ExecuteChangeSet</code> </a> API operation.</p> </li> </ul>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a>
+     * API operation.</p> </li> <li> <p> <code>ROLLBACK</code> - if the stack creation
+     * fails, roll back the stack. This is equivalent to specifying <code>false</code>
+     * for the <code>DisableRollback</code> parameter to the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a>
+     * API operation.</p> </li> </ul>
      */
     inline const OnStackFailure& GetOnStackFailure() const{ return m_onStackFailure; }
 
     /**
      * <p>Determines what action will be taken if stack creation fails. When this
      * parameter is specified, the <code>DisableRollback</code> parameter to the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">
-     * <code>ExecuteChangeSet</code> </a> API operation must not be specified. This
-     * must be one of these values:</p> <ul> <li> <p> <code>DELETE</code> - Deletes the
-     * change set if the stack creation fails. This is only valid when the
-     * <code>ChangeSetType</code> parameter is set to <code>CREATE</code>. If the
-     * deletion of the stack fails, the status of the stack is
-     * <code>DELETE_FAILED</code>.</p> </li> <li> <p> <code>DO_NOTHING</code> - if the
-     * stack creation fails, do nothing. This is equivalent to specifying
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a>
+     * API operation must not be specified. This must be one of these values:</p> <ul>
+     * <li> <p> <code>DELETE</code> - Deletes the change set if the stack creation
+     * fails. This is only valid when the <code>ChangeSetType</code> parameter is set
+     * to <code>CREATE</code>. If the deletion of the stack fails, the status of the
+     * stack is <code>DELETE_FAILED</code>.</p> </li> <li> <p> <code>DO_NOTHING</code>
+     * - if the stack creation fails, do nothing. This is equivalent to specifying
      * <code>true</code> for the <code>DisableRollback</code> parameter to the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">
-     * <code>ExecuteChangeSet</code> </a> API operation.</p> </li> <li> <p>
-     * <code>ROLLBACK</code> - if the stack creation fails, roll back the stack. This
-     * is equivalent to specifying <code>false</code> for the
-     * <code>DisableRollback</code> parameter to the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">
-     * <code>ExecuteChangeSet</code> </a> API operation.</p> </li> </ul>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a>
+     * API operation.</p> </li> <li> <p> <code>ROLLBACK</code> - if the stack creation
+     * fails, roll back the stack. This is equivalent to specifying <code>false</code>
+     * for the <code>DisableRollback</code> parameter to the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a>
+     * API operation.</p> </li> </ul>
      */
     inline void SetOnStackFailure(const OnStackFailure& value) { m_onStackFailure = value; }
 
     /**
      * <p>Determines what action will be taken if stack creation fails. When this
      * parameter is specified, the <code>DisableRollback</code> parameter to the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">
-     * <code>ExecuteChangeSet</code> </a> API operation must not be specified. This
-     * must be one of these values:</p> <ul> <li> <p> <code>DELETE</code> - Deletes the
-     * change set if the stack creation fails. This is only valid when the
-     * <code>ChangeSetType</code> parameter is set to <code>CREATE</code>. If the
-     * deletion of the stack fails, the status of the stack is
-     * <code>DELETE_FAILED</code>.</p> </li> <li> <p> <code>DO_NOTHING</code> - if the
-     * stack creation fails, do nothing. This is equivalent to specifying
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a>
+     * API operation must not be specified. This must be one of these values:</p> <ul>
+     * <li> <p> <code>DELETE</code> - Deletes the change set if the stack creation
+     * fails. This is only valid when the <code>ChangeSetType</code> parameter is set
+     * to <code>CREATE</code>. If the deletion of the stack fails, the status of the
+     * stack is <code>DELETE_FAILED</code>.</p> </li> <li> <p> <code>DO_NOTHING</code>
+     * - if the stack creation fails, do nothing. This is equivalent to specifying
      * <code>true</code> for the <code>DisableRollback</code> parameter to the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">
-     * <code>ExecuteChangeSet</code> </a> API operation.</p> </li> <li> <p>
-     * <code>ROLLBACK</code> - if the stack creation fails, roll back the stack. This
-     * is equivalent to specifying <code>false</code> for the
-     * <code>DisableRollback</code> parameter to the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">
-     * <code>ExecuteChangeSet</code> </a> API operation.</p> </li> </ul>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a>
+     * API operation.</p> </li> <li> <p> <code>ROLLBACK</code> - if the stack creation
+     * fails, roll back the stack. This is equivalent to specifying <code>false</code>
+     * for the <code>DisableRollback</code> parameter to the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a>
+     * API operation.</p> </li> </ul>
      */
     inline void SetOnStackFailure(OnStackFailure&& value) { m_onStackFailure = std::move(value); }
 
     /**
      * <p>Determines what action will be taken if stack creation fails. When this
      * parameter is specified, the <code>DisableRollback</code> parameter to the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">
-     * <code>ExecuteChangeSet</code> </a> API operation must not be specified. This
-     * must be one of these values:</p> <ul> <li> <p> <code>DELETE</code> - Deletes the
-     * change set if the stack creation fails. This is only valid when the
-     * <code>ChangeSetType</code> parameter is set to <code>CREATE</code>. If the
-     * deletion of the stack fails, the status of the stack is
-     * <code>DELETE_FAILED</code>.</p> </li> <li> <p> <code>DO_NOTHING</code> - if the
-     * stack creation fails, do nothing. This is equivalent to specifying
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a>
+     * API operation must not be specified. This must be one of these values:</p> <ul>
+     * <li> <p> <code>DELETE</code> - Deletes the change set if the stack creation
+     * fails. This is only valid when the <code>ChangeSetType</code> parameter is set
+     * to <code>CREATE</code>. If the deletion of the stack fails, the status of the
+     * stack is <code>DELETE_FAILED</code>.</p> </li> <li> <p> <code>DO_NOTHING</code>
+     * - if the stack creation fails, do nothing. This is equivalent to specifying
      * <code>true</code> for the <code>DisableRollback</code> parameter to the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">
-     * <code>ExecuteChangeSet</code> </a> API operation.</p> </li> <li> <p>
-     * <code>ROLLBACK</code> - if the stack creation fails, roll back the stack. This
-     * is equivalent to specifying <code>false</code> for the
-     * <code>DisableRollback</code> parameter to the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">
-     * <code>ExecuteChangeSet</code> </a> API operation.</p> </li> </ul>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a>
+     * API operation.</p> </li> <li> <p> <code>ROLLBACK</code> - if the stack creation
+     * fails, roll back the stack. This is equivalent to specifying <code>false</code>
+     * for the <code>DisableRollback</code> parameter to the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a>
+     * API operation.</p> </li> </ul>
      */
     inline DescribeChangeSetResult& WithOnStackFailure(const OnStackFailure& value) { SetOnStackFailure(value); return *this;}
 
     /**
      * <p>Determines what action will be taken if stack creation fails. When this
      * parameter is specified, the <code>DisableRollback</code> parameter to the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">
-     * <code>ExecuteChangeSet</code> </a> API operation must not be specified. This
-     * must be one of these values:</p> <ul> <li> <p> <code>DELETE</code> - Deletes the
-     * change set if the stack creation fails. This is only valid when the
-     * <code>ChangeSetType</code> parameter is set to <code>CREATE</code>. If the
-     * deletion of the stack fails, the status of the stack is
-     * <code>DELETE_FAILED</code>.</p> </li> <li> <p> <code>DO_NOTHING</code> - if the
-     * stack creation fails, do nothing. This is equivalent to specifying
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a>
+     * API operation must not be specified. This must be one of these values:</p> <ul>
+     * <li> <p> <code>DELETE</code> - Deletes the change set if the stack creation
+     * fails. This is only valid when the <code>ChangeSetType</code> parameter is set
+     * to <code>CREATE</code>. If the deletion of the stack fails, the status of the
+     * stack is <code>DELETE_FAILED</code>.</p> </li> <li> <p> <code>DO_NOTHING</code>
+     * - if the stack creation fails, do nothing. This is equivalent to specifying
      * <code>true</code> for the <code>DisableRollback</code> parameter to the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">
-     * <code>ExecuteChangeSet</code> </a> API operation.</p> </li> <li> <p>
-     * <code>ROLLBACK</code> - if the stack creation fails, roll back the stack. This
-     * is equivalent to specifying <code>false</code> for the
-     * <code>DisableRollback</code> parameter to the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">
-     * <code>ExecuteChangeSet</code> </a> API operation.</p> </li> </ul>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a>
+     * API operation.</p> </li> <li> <p> <code>ROLLBACK</code> - if the stack creation
+     * fails, roll back the stack. This is equivalent to specifying <code>false</code>
+     * for the <code>DisableRollback</code> parameter to the <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a>
+     * API operation.</p> </li> </ul>
      */
     inline DescribeChangeSetResult& WithOnStackFailure(OnStackFailure&& value) { SetOnStackFailure(std::move(value)); return *this;}
 

@@ -20,14 +20,16 @@ using namespace Aws;
 UpdateKxDataviewResult::UpdateKxDataviewResult() : 
     m_azMode(KxAzMode::NOT_SET),
     m_status(KxDataviewStatus::NOT_SET),
-    m_autoUpdate(false)
+    m_autoUpdate(false),
+    m_readWrite(false)
 {
 }
 
 UpdateKxDataviewResult::UpdateKxDataviewResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_azMode(KxAzMode::NOT_SET),
     m_status(KxDataviewStatus::NOT_SET),
-    m_autoUpdate(false)
+    m_autoUpdate(false),
+    m_readWrite(false)
 {
   *this = result;
 }
@@ -98,6 +100,12 @@ UpdateKxDataviewResult& UpdateKxDataviewResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("autoUpdate"))
   {
     m_autoUpdate = jsonValue.GetBool("autoUpdate");
+
+  }
+
+  if(jsonValue.ValueExists("readWrite"))
+  {
+    m_readWrite = jsonValue.GetBool("readWrite");
 
   }
 

@@ -501,64 +501,64 @@ namespace Model
     /**
      * <p>A list of <code>Parameter</code> structures that specify input parameters for
      * the stack. For more information, see the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">
-     * <code>Parameter</code> </a> data type.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
+     * data type.</p>
      */
     inline const Aws::Vector<Parameter>& GetParameters() const{ return m_parameters; }
 
     /**
      * <p>A list of <code>Parameter</code> structures that specify input parameters for
      * the stack. For more information, see the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">
-     * <code>Parameter</code> </a> data type.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
+     * data type.</p>
      */
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
 
     /**
      * <p>A list of <code>Parameter</code> structures that specify input parameters for
      * the stack. For more information, see the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">
-     * <code>Parameter</code> </a> data type.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
+     * data type.</p>
      */
     inline void SetParameters(const Aws::Vector<Parameter>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
     /**
      * <p>A list of <code>Parameter</code> structures that specify input parameters for
      * the stack. For more information, see the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">
-     * <code>Parameter</code> </a> data type.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
+     * data type.</p>
      */
     inline void SetParameters(Aws::Vector<Parameter>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
 
     /**
      * <p>A list of <code>Parameter</code> structures that specify input parameters for
      * the stack. For more information, see the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">
-     * <code>Parameter</code> </a> data type.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
+     * data type.</p>
      */
     inline UpdateStackRequest& WithParameters(const Aws::Vector<Parameter>& value) { SetParameters(value); return *this;}
 
     /**
      * <p>A list of <code>Parameter</code> structures that specify input parameters for
      * the stack. For more information, see the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">
-     * <code>Parameter</code> </a> data type.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
+     * data type.</p>
      */
     inline UpdateStackRequest& WithParameters(Aws::Vector<Parameter>&& value) { SetParameters(std::move(value)); return *this;}
 
     /**
      * <p>A list of <code>Parameter</code> structures that specify input parameters for
      * the stack. For more information, see the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">
-     * <code>Parameter</code> </a> data type.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
+     * data type.</p>
      */
     inline UpdateStackRequest& AddParameters(const Parameter& value) { m_parametersHasBeenSet = true; m_parameters.push_back(value); return *this; }
 
     /**
      * <p>A list of <code>Parameter</code> structures that specify input parameters for
      * the stack. For more information, see the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">
-     * <code>Parameter</code> </a> data type.</p>
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
+     * data type.</p>
      */
     inline UpdateStackRequest& AddParameters(Parameter&& value) { m_parametersHasBeenSet = true; m_parameters.push_back(std::move(value)); return *this; }
 
@@ -582,20 +582,19 @@ namespace Model
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
      * <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
-     * <code>AWS::IAM::AccessKey</code> </a> </p> </li> <li> <p> <a
+     * AWS::IAM::AccessKey</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
-     * <code>AWS::IAM::Group</code> </a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
-     * <code>AWS::IAM::InstanceProfile</code> </a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
-     * <code> AWS::IAM::Policy</code> </a> </p> </li> <li> <p> <a
+     * AWS::IAM::Group</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>
+     * </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>
+     * </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
-     * <code>AWS::IAM::Role</code> </a> </p> </li> <li> <p> <a
+     * AWS::IAM::Role</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
-     * <code>AWS::IAM::User</code> </a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
-     * <code>AWS::IAM::UserToGroupAddition</code> </a> </p> </li> </ul> <p>For more
-     * information, see <a
+     * AWS::IAM::User</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>
+     * </p> </li> </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
      * IAM Resources in CloudFormation Templates</a>.</p> </li> <li> <p>
      * <code>CAPABILITY_AUTO_EXPAND</code> </p> <p>Some template contain macros. Macros
@@ -607,18 +606,18 @@ namespace Model
      * or more macros, and you choose to update a stack directly from the processed
      * template, without first reviewing the resulting changes in a change set, you
      * must acknowledge this capability. This includes the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">
-     * <code>AWS::Include</code> </a> and <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">
-     * <code>AWS::Serverless</code> </a> transforms, which are macros hosted by
-     * CloudFormation.</p> <p>If you want to update a stack from a stack template that
-     * contains macros <i>and</i> nested stacks, you must update the stack directly
-     * from the template using this capability.</p>  <p>You should only
-     * update stacks directly from a stack template that contains macros if you know
-     * what processing the macro performs.</p> <p>Each macro relies on an underlying
-     * Lambda service function for processing stack templates. Be aware that the Lambda
-     * function owner can update the function operation without CloudFormation being
-     * notified.</p>  <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
+     * and <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
+     * transforms, which are macros hosted by CloudFormation.</p> <p>If you want to
+     * update a stack from a stack template that contains macros <i>and</i> nested
+     * stacks, you must update the stack directly from the template using this
+     * capability.</p>  <p>You should only update stacks directly from a
+     * stack template that contains macros if you know what processing the macro
+     * performs.</p> <p>Each macro relies on an underlying Lambda service function for
+     * processing stack templates. Be aware that the Lambda function owner can update
+     * the function operation without CloudFormation being notified.</p> 
+     * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * CloudFormation Macros to Perform Custom Processing on Templates</a>.</p> </li>
      * </ul>  <p>Only one of the <code>Capabilities</code> and
@@ -645,20 +644,19 @@ namespace Model
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
      * <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
-     * <code>AWS::IAM::AccessKey</code> </a> </p> </li> <li> <p> <a
+     * AWS::IAM::AccessKey</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
-     * <code>AWS::IAM::Group</code> </a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
-     * <code>AWS::IAM::InstanceProfile</code> </a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
-     * <code> AWS::IAM::Policy</code> </a> </p> </li> <li> <p> <a
+     * AWS::IAM::Group</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>
+     * </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>
+     * </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
-     * <code>AWS::IAM::Role</code> </a> </p> </li> <li> <p> <a
+     * AWS::IAM::Role</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
-     * <code>AWS::IAM::User</code> </a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
-     * <code>AWS::IAM::UserToGroupAddition</code> </a> </p> </li> </ul> <p>For more
-     * information, see <a
+     * AWS::IAM::User</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>
+     * </p> </li> </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
      * IAM Resources in CloudFormation Templates</a>.</p> </li> <li> <p>
      * <code>CAPABILITY_AUTO_EXPAND</code> </p> <p>Some template contain macros. Macros
@@ -670,18 +668,18 @@ namespace Model
      * or more macros, and you choose to update a stack directly from the processed
      * template, without first reviewing the resulting changes in a change set, you
      * must acknowledge this capability. This includes the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">
-     * <code>AWS::Include</code> </a> and <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">
-     * <code>AWS::Serverless</code> </a> transforms, which are macros hosted by
-     * CloudFormation.</p> <p>If you want to update a stack from a stack template that
-     * contains macros <i>and</i> nested stacks, you must update the stack directly
-     * from the template using this capability.</p>  <p>You should only
-     * update stacks directly from a stack template that contains macros if you know
-     * what processing the macro performs.</p> <p>Each macro relies on an underlying
-     * Lambda service function for processing stack templates. Be aware that the Lambda
-     * function owner can update the function operation without CloudFormation being
-     * notified.</p>  <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
+     * and <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
+     * transforms, which are macros hosted by CloudFormation.</p> <p>If you want to
+     * update a stack from a stack template that contains macros <i>and</i> nested
+     * stacks, you must update the stack directly from the template using this
+     * capability.</p>  <p>You should only update stacks directly from a
+     * stack template that contains macros if you know what processing the macro
+     * performs.</p> <p>Each macro relies on an underlying Lambda service function for
+     * processing stack templates. Be aware that the Lambda function owner can update
+     * the function operation without CloudFormation being notified.</p> 
+     * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * CloudFormation Macros to Perform Custom Processing on Templates</a>.</p> </li>
      * </ul>  <p>Only one of the <code>Capabilities</code> and
@@ -708,20 +706,19 @@ namespace Model
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
      * <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
-     * <code>AWS::IAM::AccessKey</code> </a> </p> </li> <li> <p> <a
+     * AWS::IAM::AccessKey</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
-     * <code>AWS::IAM::Group</code> </a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
-     * <code>AWS::IAM::InstanceProfile</code> </a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
-     * <code> AWS::IAM::Policy</code> </a> </p> </li> <li> <p> <a
+     * AWS::IAM::Group</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>
+     * </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>
+     * </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
-     * <code>AWS::IAM::Role</code> </a> </p> </li> <li> <p> <a
+     * AWS::IAM::Role</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
-     * <code>AWS::IAM::User</code> </a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
-     * <code>AWS::IAM::UserToGroupAddition</code> </a> </p> </li> </ul> <p>For more
-     * information, see <a
+     * AWS::IAM::User</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>
+     * </p> </li> </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
      * IAM Resources in CloudFormation Templates</a>.</p> </li> <li> <p>
      * <code>CAPABILITY_AUTO_EXPAND</code> </p> <p>Some template contain macros. Macros
@@ -733,18 +730,18 @@ namespace Model
      * or more macros, and you choose to update a stack directly from the processed
      * template, without first reviewing the resulting changes in a change set, you
      * must acknowledge this capability. This includes the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">
-     * <code>AWS::Include</code> </a> and <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">
-     * <code>AWS::Serverless</code> </a> transforms, which are macros hosted by
-     * CloudFormation.</p> <p>If you want to update a stack from a stack template that
-     * contains macros <i>and</i> nested stacks, you must update the stack directly
-     * from the template using this capability.</p>  <p>You should only
-     * update stacks directly from a stack template that contains macros if you know
-     * what processing the macro performs.</p> <p>Each macro relies on an underlying
-     * Lambda service function for processing stack templates. Be aware that the Lambda
-     * function owner can update the function operation without CloudFormation being
-     * notified.</p>  <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
+     * and <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
+     * transforms, which are macros hosted by CloudFormation.</p> <p>If you want to
+     * update a stack from a stack template that contains macros <i>and</i> nested
+     * stacks, you must update the stack directly from the template using this
+     * capability.</p>  <p>You should only update stacks directly from a
+     * stack template that contains macros if you know what processing the macro
+     * performs.</p> <p>Each macro relies on an underlying Lambda service function for
+     * processing stack templates. Be aware that the Lambda function owner can update
+     * the function operation without CloudFormation being notified.</p> 
+     * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * CloudFormation Macros to Perform Custom Processing on Templates</a>.</p> </li>
      * </ul>  <p>Only one of the <code>Capabilities</code> and
@@ -771,20 +768,19 @@ namespace Model
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
      * <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
-     * <code>AWS::IAM::AccessKey</code> </a> </p> </li> <li> <p> <a
+     * AWS::IAM::AccessKey</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
-     * <code>AWS::IAM::Group</code> </a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
-     * <code>AWS::IAM::InstanceProfile</code> </a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
-     * <code> AWS::IAM::Policy</code> </a> </p> </li> <li> <p> <a
+     * AWS::IAM::Group</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>
+     * </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>
+     * </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
-     * <code>AWS::IAM::Role</code> </a> </p> </li> <li> <p> <a
+     * AWS::IAM::Role</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
-     * <code>AWS::IAM::User</code> </a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
-     * <code>AWS::IAM::UserToGroupAddition</code> </a> </p> </li> </ul> <p>For more
-     * information, see <a
+     * AWS::IAM::User</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>
+     * </p> </li> </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
      * IAM Resources in CloudFormation Templates</a>.</p> </li> <li> <p>
      * <code>CAPABILITY_AUTO_EXPAND</code> </p> <p>Some template contain macros. Macros
@@ -796,18 +792,18 @@ namespace Model
      * or more macros, and you choose to update a stack directly from the processed
      * template, without first reviewing the resulting changes in a change set, you
      * must acknowledge this capability. This includes the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">
-     * <code>AWS::Include</code> </a> and <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">
-     * <code>AWS::Serverless</code> </a> transforms, which are macros hosted by
-     * CloudFormation.</p> <p>If you want to update a stack from a stack template that
-     * contains macros <i>and</i> nested stacks, you must update the stack directly
-     * from the template using this capability.</p>  <p>You should only
-     * update stacks directly from a stack template that contains macros if you know
-     * what processing the macro performs.</p> <p>Each macro relies on an underlying
-     * Lambda service function for processing stack templates. Be aware that the Lambda
-     * function owner can update the function operation without CloudFormation being
-     * notified.</p>  <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
+     * and <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
+     * transforms, which are macros hosted by CloudFormation.</p> <p>If you want to
+     * update a stack from a stack template that contains macros <i>and</i> nested
+     * stacks, you must update the stack directly from the template using this
+     * capability.</p>  <p>You should only update stacks directly from a
+     * stack template that contains macros if you know what processing the macro
+     * performs.</p> <p>Each macro relies on an underlying Lambda service function for
+     * processing stack templates. Be aware that the Lambda function owner can update
+     * the function operation without CloudFormation being notified.</p> 
+     * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * CloudFormation Macros to Perform Custom Processing on Templates</a>.</p> </li>
      * </ul>  <p>Only one of the <code>Capabilities</code> and
@@ -834,20 +830,19 @@ namespace Model
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
      * <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
-     * <code>AWS::IAM::AccessKey</code> </a> </p> </li> <li> <p> <a
+     * AWS::IAM::AccessKey</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
-     * <code>AWS::IAM::Group</code> </a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
-     * <code>AWS::IAM::InstanceProfile</code> </a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
-     * <code> AWS::IAM::Policy</code> </a> </p> </li> <li> <p> <a
+     * AWS::IAM::Group</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>
+     * </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>
+     * </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
-     * <code>AWS::IAM::Role</code> </a> </p> </li> <li> <p> <a
+     * AWS::IAM::Role</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
-     * <code>AWS::IAM::User</code> </a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
-     * <code>AWS::IAM::UserToGroupAddition</code> </a> </p> </li> </ul> <p>For more
-     * information, see <a
+     * AWS::IAM::User</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>
+     * </p> </li> </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
      * IAM Resources in CloudFormation Templates</a>.</p> </li> <li> <p>
      * <code>CAPABILITY_AUTO_EXPAND</code> </p> <p>Some template contain macros. Macros
@@ -859,18 +854,18 @@ namespace Model
      * or more macros, and you choose to update a stack directly from the processed
      * template, without first reviewing the resulting changes in a change set, you
      * must acknowledge this capability. This includes the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">
-     * <code>AWS::Include</code> </a> and <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">
-     * <code>AWS::Serverless</code> </a> transforms, which are macros hosted by
-     * CloudFormation.</p> <p>If you want to update a stack from a stack template that
-     * contains macros <i>and</i> nested stacks, you must update the stack directly
-     * from the template using this capability.</p>  <p>You should only
-     * update stacks directly from a stack template that contains macros if you know
-     * what processing the macro performs.</p> <p>Each macro relies on an underlying
-     * Lambda service function for processing stack templates. Be aware that the Lambda
-     * function owner can update the function operation without CloudFormation being
-     * notified.</p>  <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
+     * and <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
+     * transforms, which are macros hosted by CloudFormation.</p> <p>If you want to
+     * update a stack from a stack template that contains macros <i>and</i> nested
+     * stacks, you must update the stack directly from the template using this
+     * capability.</p>  <p>You should only update stacks directly from a
+     * stack template that contains macros if you know what processing the macro
+     * performs.</p> <p>Each macro relies on an underlying Lambda service function for
+     * processing stack templates. Be aware that the Lambda function owner can update
+     * the function operation without CloudFormation being notified.</p> 
+     * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * CloudFormation Macros to Perform Custom Processing on Templates</a>.</p> </li>
      * </ul>  <p>Only one of the <code>Capabilities</code> and
@@ -897,20 +892,19 @@ namespace Model
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
      * <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
-     * <code>AWS::IAM::AccessKey</code> </a> </p> </li> <li> <p> <a
+     * AWS::IAM::AccessKey</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
-     * <code>AWS::IAM::Group</code> </a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
-     * <code>AWS::IAM::InstanceProfile</code> </a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
-     * <code> AWS::IAM::Policy</code> </a> </p> </li> <li> <p> <a
+     * AWS::IAM::Group</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>
+     * </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>
+     * </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
-     * <code>AWS::IAM::Role</code> </a> </p> </li> <li> <p> <a
+     * AWS::IAM::Role</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
-     * <code>AWS::IAM::User</code> </a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
-     * <code>AWS::IAM::UserToGroupAddition</code> </a> </p> </li> </ul> <p>For more
-     * information, see <a
+     * AWS::IAM::User</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>
+     * </p> </li> </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
      * IAM Resources in CloudFormation Templates</a>.</p> </li> <li> <p>
      * <code>CAPABILITY_AUTO_EXPAND</code> </p> <p>Some template contain macros. Macros
@@ -922,18 +916,18 @@ namespace Model
      * or more macros, and you choose to update a stack directly from the processed
      * template, without first reviewing the resulting changes in a change set, you
      * must acknowledge this capability. This includes the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">
-     * <code>AWS::Include</code> </a> and <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">
-     * <code>AWS::Serverless</code> </a> transforms, which are macros hosted by
-     * CloudFormation.</p> <p>If you want to update a stack from a stack template that
-     * contains macros <i>and</i> nested stacks, you must update the stack directly
-     * from the template using this capability.</p>  <p>You should only
-     * update stacks directly from a stack template that contains macros if you know
-     * what processing the macro performs.</p> <p>Each macro relies on an underlying
-     * Lambda service function for processing stack templates. Be aware that the Lambda
-     * function owner can update the function operation without CloudFormation being
-     * notified.</p>  <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
+     * and <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
+     * transforms, which are macros hosted by CloudFormation.</p> <p>If you want to
+     * update a stack from a stack template that contains macros <i>and</i> nested
+     * stacks, you must update the stack directly from the template using this
+     * capability.</p>  <p>You should only update stacks directly from a
+     * stack template that contains macros if you know what processing the macro
+     * performs.</p> <p>Each macro relies on an underlying Lambda service function for
+     * processing stack templates. Be aware that the Lambda function owner can update
+     * the function operation without CloudFormation being notified.</p> 
+     * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * CloudFormation Macros to Perform Custom Processing on Templates</a>.</p> </li>
      * </ul>  <p>Only one of the <code>Capabilities</code> and
@@ -960,20 +954,19 @@ namespace Model
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
      * <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
-     * <code>AWS::IAM::AccessKey</code> </a> </p> </li> <li> <p> <a
+     * AWS::IAM::AccessKey</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
-     * <code>AWS::IAM::Group</code> </a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
-     * <code>AWS::IAM::InstanceProfile</code> </a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
-     * <code> AWS::IAM::Policy</code> </a> </p> </li> <li> <p> <a
+     * AWS::IAM::Group</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>
+     * </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>
+     * </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
-     * <code>AWS::IAM::Role</code> </a> </p> </li> <li> <p> <a
+     * AWS::IAM::Role</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
-     * <code>AWS::IAM::User</code> </a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
-     * <code>AWS::IAM::UserToGroupAddition</code> </a> </p> </li> </ul> <p>For more
-     * information, see <a
+     * AWS::IAM::User</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>
+     * </p> </li> </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
      * IAM Resources in CloudFormation Templates</a>.</p> </li> <li> <p>
      * <code>CAPABILITY_AUTO_EXPAND</code> </p> <p>Some template contain macros. Macros
@@ -985,18 +978,18 @@ namespace Model
      * or more macros, and you choose to update a stack directly from the processed
      * template, without first reviewing the resulting changes in a change set, you
      * must acknowledge this capability. This includes the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">
-     * <code>AWS::Include</code> </a> and <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">
-     * <code>AWS::Serverless</code> </a> transforms, which are macros hosted by
-     * CloudFormation.</p> <p>If you want to update a stack from a stack template that
-     * contains macros <i>and</i> nested stacks, you must update the stack directly
-     * from the template using this capability.</p>  <p>You should only
-     * update stacks directly from a stack template that contains macros if you know
-     * what processing the macro performs.</p> <p>Each macro relies on an underlying
-     * Lambda service function for processing stack templates. Be aware that the Lambda
-     * function owner can update the function operation without CloudFormation being
-     * notified.</p>  <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
+     * and <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
+     * transforms, which are macros hosted by CloudFormation.</p> <p>If you want to
+     * update a stack from a stack template that contains macros <i>and</i> nested
+     * stacks, you must update the stack directly from the template using this
+     * capability.</p>  <p>You should only update stacks directly from a
+     * stack template that contains macros if you know what processing the macro
+     * performs.</p> <p>Each macro relies on an underlying Lambda service function for
+     * processing stack templates. Be aware that the Lambda function owner can update
+     * the function operation without CloudFormation being notified.</p> 
+     * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * CloudFormation Macros to Perform Custom Processing on Templates</a>.</p> </li>
      * </ul>  <p>Only one of the <code>Capabilities</code> and
@@ -1023,20 +1016,19 @@ namespace Model
      * associated with them and edit their permissions if necessary.</p> <ul> <li> <p>
      * <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
-     * <code>AWS::IAM::AccessKey</code> </a> </p> </li> <li> <p> <a
+     * AWS::IAM::AccessKey</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
-     * <code>AWS::IAM::Group</code> </a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
-     * <code>AWS::IAM::InstanceProfile</code> </a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
-     * <code> AWS::IAM::Policy</code> </a> </p> </li> <li> <p> <a
+     * AWS::IAM::Group</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">AWS::IAM::InstanceProfile</a>
+     * </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>
+     * </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
-     * <code>AWS::IAM::Role</code> </a> </p> </li> <li> <p> <a
+     * AWS::IAM::Role</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
-     * <code>AWS::IAM::User</code> </a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
-     * <code>AWS::IAM::UserToGroupAddition</code> </a> </p> </li> </ul> <p>For more
-     * information, see <a
+     * AWS::IAM::User</a> </p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>
+     * </p> </li> </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging
      * IAM Resources in CloudFormation Templates</a>.</p> </li> <li> <p>
      * <code>CAPABILITY_AUTO_EXPAND</code> </p> <p>Some template contain macros. Macros
@@ -1048,18 +1040,18 @@ namespace Model
      * or more macros, and you choose to update a stack directly from the processed
      * template, without first reviewing the resulting changes in a change set, you
      * must acknowledge this capability. This includes the <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">
-     * <code>AWS::Include</code> </a> and <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">
-     * <code>AWS::Serverless</code> </a> transforms, which are macros hosted by
-     * CloudFormation.</p> <p>If you want to update a stack from a stack template that
-     * contains macros <i>and</i> nested stacks, you must update the stack directly
-     * from the template using this capability.</p>  <p>You should only
-     * update stacks directly from a stack template that contains macros if you know
-     * what processing the macro performs.</p> <p>Each macro relies on an underlying
-     * Lambda service function for processing stack templates. Be aware that the Lambda
-     * function owner can update the function operation without CloudFormation being
-     * notified.</p>  <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a>
+     * and <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
+     * transforms, which are macros hosted by CloudFormation.</p> <p>If you want to
+     * update a stack from a stack template that contains macros <i>and</i> nested
+     * stacks, you must update the stack directly from the template using this
+     * capability.</p>  <p>You should only update stacks directly from a
+     * stack template that contains macros if you know what processing the macro
+     * performs.</p> <p>Each macro relies on an underlying Lambda service function for
+     * processing stack templates. Be aware that the Lambda function owner can update
+     * the function operation without CloudFormation being notified.</p> 
+     * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
      * CloudFormation Macros to Perform Custom Processing on Templates</a>.</p> </li>
      * </ul>  <p>Only one of the <code>Capabilities</code> and

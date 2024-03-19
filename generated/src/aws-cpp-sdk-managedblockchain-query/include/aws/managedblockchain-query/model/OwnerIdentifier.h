@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>The container for the identifier of the owner.</p><p><h3>See Also:</h3>   <a
+   * <p>The container for the owner identifier.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-query-2023-05-04/OwnerIdentifier">AWS
    * API Reference</a></p>
    */

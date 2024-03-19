@@ -31,11 +31,11 @@ namespace Model
    * <p>This structure contains information about one <i>delivery destination</i> in
    * your account. A delivery destination is an Amazon Web Services resource that
    * represents an Amazon Web Services service that logs can be sent to. CloudWatch
-   * Logs, Amazon S3, are supported as Kinesis Data Firehose delivery
-   * destinations.</p> <p>To configure logs delivery between a supported Amazon Web
-   * Services service and a destination, you must do the following:</p> <ul> <li>
-   * <p>Create a delivery source, which is a logical object that represents the
-   * resource that is actually sending the logs. For more information, see <a
+   * Logs, Amazon S3, are supported as Firehose delivery destinations.</p> <p>To
+   * configure logs delivery between a supported Amazon Web Services service and a
+   * destination, you must do the following:</p> <ul> <li> <p>Create a delivery
+   * source, which is a logical object that represents the resource that is actually
+   * sending the logs. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliverySource.html">PutDeliverySource</a>.</p>
    * </li> <li> <p>Create a <i>delivery destination</i>, which is a logical object
    * that represents the actual delivery destination. </p> </li> <li> <p>If you are
@@ -154,37 +154,37 @@ namespace Model
 
     /**
      * <p>Displays whether this delivery destination is CloudWatch Logs, Amazon S3, or
-     * Kinesis Data Firehose.</p>
+     * Firehose.</p>
      */
     inline const DeliveryDestinationType& GetDeliveryDestinationType() const{ return m_deliveryDestinationType; }
 
     /**
      * <p>Displays whether this delivery destination is CloudWatch Logs, Amazon S3, or
-     * Kinesis Data Firehose.</p>
+     * Firehose.</p>
      */
     inline bool DeliveryDestinationTypeHasBeenSet() const { return m_deliveryDestinationTypeHasBeenSet; }
 
     /**
      * <p>Displays whether this delivery destination is CloudWatch Logs, Amazon S3, or
-     * Kinesis Data Firehose.</p>
+     * Firehose.</p>
      */
     inline void SetDeliveryDestinationType(const DeliveryDestinationType& value) { m_deliveryDestinationTypeHasBeenSet = true; m_deliveryDestinationType = value; }
 
     /**
      * <p>Displays whether this delivery destination is CloudWatch Logs, Amazon S3, or
-     * Kinesis Data Firehose.</p>
+     * Firehose.</p>
      */
     inline void SetDeliveryDestinationType(DeliveryDestinationType&& value) { m_deliveryDestinationTypeHasBeenSet = true; m_deliveryDestinationType = std::move(value); }
 
     /**
      * <p>Displays whether this delivery destination is CloudWatch Logs, Amazon S3, or
-     * Kinesis Data Firehose.</p>
+     * Firehose.</p>
      */
     inline DeliveryDestination& WithDeliveryDestinationType(const DeliveryDestinationType& value) { SetDeliveryDestinationType(value); return *this;}
 
     /**
      * <p>Displays whether this delivery destination is CloudWatch Logs, Amazon S3, or
-     * Kinesis Data Firehose.</p>
+     * Firehose.</p>
      */
     inline DeliveryDestination& WithDeliveryDestinationType(DeliveryDestinationType&& value) { SetDeliveryDestinationType(std::move(value)); return *this;}
 

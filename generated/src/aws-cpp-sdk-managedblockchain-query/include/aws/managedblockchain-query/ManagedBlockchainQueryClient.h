@@ -227,6 +227,33 @@ namespace ManagedBlockchainQuery
         }
 
         /**
+         * <p>Lists all the transaction events for an address on the blockchain.</p> 
+         * <p>This operation is only supported on the Bitcoin networks.</p>
+         * <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-query-2023-05-04/ListFilteredTransactionEvents">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListFilteredTransactionEventsOutcome ListFilteredTransactionEvents(const Model::ListFilteredTransactionEventsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListFilteredTransactionEvents that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListFilteredTransactionEventsRequestT = Model::ListFilteredTransactionEventsRequest>
+        Model::ListFilteredTransactionEventsOutcomeCallable ListFilteredTransactionEventsCallable(const ListFilteredTransactionEventsRequestT& request) const
+        {
+            return SubmitCallable(&ManagedBlockchainQueryClient::ListFilteredTransactionEvents, request);
+        }
+
+        /**
+         * An Async wrapper for ListFilteredTransactionEvents that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListFilteredTransactionEventsRequestT = Model::ListFilteredTransactionEventsRequest>
+        void ListFilteredTransactionEventsAsync(const ListFilteredTransactionEventsRequestT& request, const ListFilteredTransactionEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ManagedBlockchainQueryClient::ListFilteredTransactionEvents, request, handler, context);
+        }
+
+        /**
          * <p>This action returns the following for a given blockchain network:</p> <ul>
          * <li> <p>Lists all token balances owned by an address (either a contract address
          * or a wallet address).</p> </li> <li> <p>Lists all token balances for all tokens
@@ -258,10 +285,9 @@ namespace ManagedBlockchainQuery
         }
 
         /**
-         * <p>An array of <code>TransactionEvent</code> objects. Each object contains
-         * details about the transaction event.</p>  <p>This action will return
-         * transaction details for all transactions that are <i>confirmed</i> on the
-         * blockchain, even if they have not reached <a
+         * <p>Lists all the transaction events for a transaction </p>  <p>This action
+         * will return transaction details for all transactions that are <i>confirmed</i>
+         * on the blockchain, even if they have not reached <a
          * href="https://docs.aws.amazon.com/managed-blockchain/latest/ambq-dg/key-concepts.html#finality">finality</a>.
          * </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-query-2023-05-04/ListTransactionEvents">AWS
@@ -288,8 +314,8 @@ namespace ManagedBlockchainQuery
         }
 
         /**
-         * <p>Lists all of the transactions on a given wallet address or to a specific
-         * contract.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists all the transaction events for a transaction.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-query-2023-05-04/ListTransactions">AWS
          * API Reference</a></p>
          */
