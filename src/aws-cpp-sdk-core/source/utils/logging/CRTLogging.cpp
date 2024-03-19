@@ -33,7 +33,8 @@ static int s_aws_logger_redirect_log(
         const char *format, ...)
 {
     AWS_UNREFERENCED_PARAM(logger);
-    if (!CRTLogSystem)
+    CRTLogSystemInterface* pLogger = CRTLogSystem.get();
+    if (!pLogger)
     {
         return AWS_OP_ERR;
     }
@@ -42,7 +43,7 @@ static int s_aws_logger_redirect_log(
     const char* subjectName = aws_log_subject_name(subject);
     va_list args;
     va_start(args, format);
-    CRTLogSystem->Log(logLevel, subjectName, format, args);
+    pLogger->Log(logLevel, subjectName, format, args);
     va_end(args);
     return AWS_OP_SUCCESS;
 }
@@ -51,10 +52,11 @@ static enum aws_log_level s_aws_logger_redirect_get_log_level(struct aws_logger 
 {
     AWS_UNREFERENCED_PARAM(logger);
     AWS_UNREFERENCED_PARAM(subject);
-    if (CRTLogSystem)
+    CRTLogSystemInterface* pLogger = CRTLogSystem.get();
+    if (pLogger)
     {
         assert(logger->p_impl == &s_sdkCrtLogger);
-        return (aws_log_level) (CRTLogSystem->GetLogLevel());
+        return (aws_log_level) (pLogger->GetLogLevel());
     }
     return AWS_LL_NONE;
 }
@@ -62,22 +64,24 @@ static enum aws_log_level s_aws_logger_redirect_get_log_level(struct aws_logger 
 static void s_aws_logger_redirect_clean_up(struct aws_logger *logger)
 {
     AWS_UNREFERENCED_PARAM(logger);
-    if (CRTLogSystem)
+    CRTLogSystemInterface* pLogger = CRTLogSystem.get();
+    if (pLogger)
     {
         assert(logger->p_impl == &s_sdkCrtLogger);
-        return CRTLogSystem->CleanUp();
+        return pLogger->CleanUp();
     }
 }
 
 static int s_aws_logger_redirect_set_log_level(struct aws_logger *logger, enum aws_log_level log_level)
 {
     AWS_UNREFERENCED_PARAM(logger);
-    if (!CRTLogSystem)
+    CRTLogSystemInterface* pLogger = CRTLogSystem.get();
+    if (!pLogger)
     {
         return AWS_OP_ERR;
     }
     assert(logger->p_impl == &s_sdkCrtLogger);
-    CRTLogSystem->SetLogLevel(static_cast<LogLevel>(log_level));
+    pLogger->SetLogLevel(static_cast<LogLevel>(log_level));
     return AWS_OP_SUCCESS;
 
 }
@@ -110,6 +114,10 @@ void InitializeCRTLogging(const std::shared_ptr<CRTLogSystemInterface>& inputCrt
 }
 
 void ShutdownCRTLogging() {
+    if (aws_logger_get() == &s_sdkCrtLogger)
+    {
+        aws_logger_set(nullptr);
+    }
     // GetLogSystem returns a raw pointer
     // so this is a hack to let all other threads finish their log statement after getting a LogSystem pointer
     // otherwise we would need to perform ref-counting on each logging statement
