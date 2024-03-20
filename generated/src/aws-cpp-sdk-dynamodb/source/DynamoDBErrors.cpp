@@ -53,6 +53,7 @@ static const int ITEM_COLLECTION_SIZE_LIMIT_EXCEEDED_HASH = HashingUtils::HashSt
 static const int BACKUP_NOT_FOUND_HASH = HashingUtils::HashString("BackupNotFoundException");
 static const int IDEMPOTENT_PARAMETER_MISMATCH_HASH = HashingUtils::HashString("IdempotentParameterMismatchException");
 static const int POINT_IN_TIME_RECOVERY_UNAVAILABLE_HASH = HashingUtils::HashString("PointInTimeRecoveryUnavailableException");
+static const int POLICY_NOT_FOUND_HASH = HashingUtils::HashString("PolicyNotFoundException");
 static const int TABLE_ALREADY_EXISTS_HASH = HashingUtils::HashString("TableAlreadyExistsException");
 static const int EXPORT_CONFLICT_HASH = HashingUtils::HashString("ExportConflictException");
 static const int GLOBAL_TABLE_ALREADY_EXISTS_HASH = HashingUtils::HashString("GlobalTableAlreadyExistsException");
@@ -147,6 +148,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == POINT_IN_TIME_RECOVERY_UNAVAILABLE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBErrors::POINT_IN_TIME_RECOVERY_UNAVAILABLE), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == POLICY_NOT_FOUND_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DynamoDBErrors::POLICY_NOT_FOUND), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == TABLE_ALREADY_EXISTS_HASH)
   {

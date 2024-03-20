@@ -17,6 +17,8 @@
 #include <aws/accessanalyzer/model/SnsTopicConfiguration.h>
 #include <aws/accessanalyzer/model/SqsQueueConfiguration.h>
 #include <aws/accessanalyzer/model/S3ExpressDirectoryBucketConfiguration.h>
+#include <aws/accessanalyzer/model/DynamodbStreamConfiguration.h>
+#include <aws/accessanalyzer/model/DynamodbTableConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -427,6 +429,68 @@ namespace Model
      */
     inline Configuration& WithS3ExpressDirectoryBucket(S3ExpressDirectoryBucketConfiguration&& value) { SetS3ExpressDirectoryBucket(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The access control configuration is for a DynamoDB stream.</p>
+     */
+    inline const DynamodbStreamConfiguration& GetDynamodbStream() const{ return m_dynamodbStream; }
+
+    /**
+     * <p>The access control configuration is for a DynamoDB stream.</p>
+     */
+    inline bool DynamodbStreamHasBeenSet() const { return m_dynamodbStreamHasBeenSet; }
+
+    /**
+     * <p>The access control configuration is for a DynamoDB stream.</p>
+     */
+    inline void SetDynamodbStream(const DynamodbStreamConfiguration& value) { m_dynamodbStreamHasBeenSet = true; m_dynamodbStream = value; }
+
+    /**
+     * <p>The access control configuration is for a DynamoDB stream.</p>
+     */
+    inline void SetDynamodbStream(DynamodbStreamConfiguration&& value) { m_dynamodbStreamHasBeenSet = true; m_dynamodbStream = std::move(value); }
+
+    /**
+     * <p>The access control configuration is for a DynamoDB stream.</p>
+     */
+    inline Configuration& WithDynamodbStream(const DynamodbStreamConfiguration& value) { SetDynamodbStream(value); return *this;}
+
+    /**
+     * <p>The access control configuration is for a DynamoDB stream.</p>
+     */
+    inline Configuration& WithDynamodbStream(DynamodbStreamConfiguration&& value) { SetDynamodbStream(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The access control configuration is for a DynamoDB table or index.</p>
+     */
+    inline const DynamodbTableConfiguration& GetDynamodbTable() const{ return m_dynamodbTable; }
+
+    /**
+     * <p>The access control configuration is for a DynamoDB table or index.</p>
+     */
+    inline bool DynamodbTableHasBeenSet() const { return m_dynamodbTableHasBeenSet; }
+
+    /**
+     * <p>The access control configuration is for a DynamoDB table or index.</p>
+     */
+    inline void SetDynamodbTable(const DynamodbTableConfiguration& value) { m_dynamodbTableHasBeenSet = true; m_dynamodbTable = value; }
+
+    /**
+     * <p>The access control configuration is for a DynamoDB table or index.</p>
+     */
+    inline void SetDynamodbTable(DynamodbTableConfiguration&& value) { m_dynamodbTableHasBeenSet = true; m_dynamodbTable = std::move(value); }
+
+    /**
+     * <p>The access control configuration is for a DynamoDB table or index.</p>
+     */
+    inline Configuration& WithDynamodbTable(const DynamodbTableConfiguration& value) { SetDynamodbTable(value); return *this;}
+
+    /**
+     * <p>The access control configuration is for a DynamoDB table or index.</p>
+     */
+    inline Configuration& WithDynamodbTable(DynamodbTableConfiguration&& value) { SetDynamodbTable(std::move(value)); return *this;}
+
   private:
 
     EbsSnapshotConfiguration m_ebsSnapshot;
@@ -464,6 +528,12 @@ namespace Model
 
     S3ExpressDirectoryBucketConfiguration m_s3ExpressDirectoryBucket;
     bool m_s3ExpressDirectoryBucketHasBeenSet = false;
+
+    DynamodbStreamConfiguration m_dynamodbStream;
+    bool m_dynamodbStreamHasBeenSet = false;
+
+    DynamodbTableConfiguration m_dynamodbTable;
+    bool m_dynamodbTableHasBeenSet = false;
   };
 
 } // namespace Model

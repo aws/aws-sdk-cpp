@@ -44,20 +44,20 @@ namespace Model
 
 
     /**
-     * <p>A map of one or more table names and, for each table, a list of operations to
-     * be performed (<code>DeleteRequest</code> or <code>PutRequest</code>). Each
-     * element in the map consists of the following:</p> <ul> <li> <p>
-     * <code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the
-     * specified item. The item to be deleted is identified by a <code>Key</code>
-     * subelement:</p> <ul> <li> <p> <code>Key</code> - A map of primary key attribute
-     * values that uniquely identify the item. Each entry in this map consists of an
-     * attribute name and an attribute value. For each primary key, you must provide
-     * <i>all</i> of the key attributes. For example, with a simple primary key, you
-     * only need to provide a value for the partition key. For a composite primary key,
-     * you must provide values for <i>both</i> the partition key and the sort key.</p>
-     * </li> </ul> </li> <li> <p> <code>PutRequest</code> - Perform a
-     * <code>PutItem</code> operation on the specified item. The item to be put is
-     * identified by an <code>Item</code> subelement:</p> <ul> <li> <p>
+     * <p>A map of one or more table names or table ARNs and, for each table, a list of
+     * operations to be performed (<code>DeleteRequest</code> or
+     * <code>PutRequest</code>). Each element in the map consists of the following:</p>
+     * <ul> <li> <p> <code>DeleteRequest</code> - Perform a <code>DeleteItem</code>
+     * operation on the specified item. The item to be deleted is identified by a
+     * <code>Key</code> subelement:</p> <ul> <li> <p> <code>Key</code> - A map of
+     * primary key attribute values that uniquely identify the item. Each entry in this
+     * map consists of an attribute name and an attribute value. For each primary key,
+     * you must provide <i>all</i> of the key attributes. For example, with a simple
+     * primary key, you only need to provide a value for the partition key. For a
+     * composite primary key, you must provide values for <i>both</i> the partition key
+     * and the sort key.</p> </li> </ul> </li> <li> <p> <code>PutRequest</code> -
+     * Perform a <code>PutItem</code> operation on the specified item. The item to be
+     * put is identified by an <code>Item</code> subelement:</p> <ul> <li> <p>
      * <code>Item</code> - A map of attributes and their values. Each entry in this map
      * consists of an attribute name and an attribute value. Attribute values must not
      * be null; string and binary type attributes must have lengths greater than zero;
@@ -70,20 +70,20 @@ namespace Model
     inline const Aws::Map<Aws::String, Aws::Vector<WriteRequest>>& GetRequestItems() const{ return m_requestItems; }
 
     /**
-     * <p>A map of one or more table names and, for each table, a list of operations to
-     * be performed (<code>DeleteRequest</code> or <code>PutRequest</code>). Each
-     * element in the map consists of the following:</p> <ul> <li> <p>
-     * <code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the
-     * specified item. The item to be deleted is identified by a <code>Key</code>
-     * subelement:</p> <ul> <li> <p> <code>Key</code> - A map of primary key attribute
-     * values that uniquely identify the item. Each entry in this map consists of an
-     * attribute name and an attribute value. For each primary key, you must provide
-     * <i>all</i> of the key attributes. For example, with a simple primary key, you
-     * only need to provide a value for the partition key. For a composite primary key,
-     * you must provide values for <i>both</i> the partition key and the sort key.</p>
-     * </li> </ul> </li> <li> <p> <code>PutRequest</code> - Perform a
-     * <code>PutItem</code> operation on the specified item. The item to be put is
-     * identified by an <code>Item</code> subelement:</p> <ul> <li> <p>
+     * <p>A map of one or more table names or table ARNs and, for each table, a list of
+     * operations to be performed (<code>DeleteRequest</code> or
+     * <code>PutRequest</code>). Each element in the map consists of the following:</p>
+     * <ul> <li> <p> <code>DeleteRequest</code> - Perform a <code>DeleteItem</code>
+     * operation on the specified item. The item to be deleted is identified by a
+     * <code>Key</code> subelement:</p> <ul> <li> <p> <code>Key</code> - A map of
+     * primary key attribute values that uniquely identify the item. Each entry in this
+     * map consists of an attribute name and an attribute value. For each primary key,
+     * you must provide <i>all</i> of the key attributes. For example, with a simple
+     * primary key, you only need to provide a value for the partition key. For a
+     * composite primary key, you must provide values for <i>both</i> the partition key
+     * and the sort key.</p> </li> </ul> </li> <li> <p> <code>PutRequest</code> -
+     * Perform a <code>PutItem</code> operation on the specified item. The item to be
+     * put is identified by an <code>Item</code> subelement:</p> <ul> <li> <p>
      * <code>Item</code> - A map of attributes and their values. Each entry in this map
      * consists of an attribute name and an attribute value. Attribute values must not
      * be null; string and binary type attributes must have lengths greater than zero;
@@ -96,20 +96,20 @@ namespace Model
     inline bool RequestItemsHasBeenSet() const { return m_requestItemsHasBeenSet; }
 
     /**
-     * <p>A map of one or more table names and, for each table, a list of operations to
-     * be performed (<code>DeleteRequest</code> or <code>PutRequest</code>). Each
-     * element in the map consists of the following:</p> <ul> <li> <p>
-     * <code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the
-     * specified item. The item to be deleted is identified by a <code>Key</code>
-     * subelement:</p> <ul> <li> <p> <code>Key</code> - A map of primary key attribute
-     * values that uniquely identify the item. Each entry in this map consists of an
-     * attribute name and an attribute value. For each primary key, you must provide
-     * <i>all</i> of the key attributes. For example, with a simple primary key, you
-     * only need to provide a value for the partition key. For a composite primary key,
-     * you must provide values for <i>both</i> the partition key and the sort key.</p>
-     * </li> </ul> </li> <li> <p> <code>PutRequest</code> - Perform a
-     * <code>PutItem</code> operation on the specified item. The item to be put is
-     * identified by an <code>Item</code> subelement:</p> <ul> <li> <p>
+     * <p>A map of one or more table names or table ARNs and, for each table, a list of
+     * operations to be performed (<code>DeleteRequest</code> or
+     * <code>PutRequest</code>). Each element in the map consists of the following:</p>
+     * <ul> <li> <p> <code>DeleteRequest</code> - Perform a <code>DeleteItem</code>
+     * operation on the specified item. The item to be deleted is identified by a
+     * <code>Key</code> subelement:</p> <ul> <li> <p> <code>Key</code> - A map of
+     * primary key attribute values that uniquely identify the item. Each entry in this
+     * map consists of an attribute name and an attribute value. For each primary key,
+     * you must provide <i>all</i> of the key attributes. For example, with a simple
+     * primary key, you only need to provide a value for the partition key. For a
+     * composite primary key, you must provide values for <i>both</i> the partition key
+     * and the sort key.</p> </li> </ul> </li> <li> <p> <code>PutRequest</code> -
+     * Perform a <code>PutItem</code> operation on the specified item. The item to be
+     * put is identified by an <code>Item</code> subelement:</p> <ul> <li> <p>
      * <code>Item</code> - A map of attributes and their values. Each entry in this map
      * consists of an attribute name and an attribute value. Attribute values must not
      * be null; string and binary type attributes must have lengths greater than zero;
@@ -122,20 +122,20 @@ namespace Model
     inline void SetRequestItems(const Aws::Map<Aws::String, Aws::Vector<WriteRequest>>& value) { m_requestItemsHasBeenSet = true; m_requestItems = value; }
 
     /**
-     * <p>A map of one or more table names and, for each table, a list of operations to
-     * be performed (<code>DeleteRequest</code> or <code>PutRequest</code>). Each
-     * element in the map consists of the following:</p> <ul> <li> <p>
-     * <code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the
-     * specified item. The item to be deleted is identified by a <code>Key</code>
-     * subelement:</p> <ul> <li> <p> <code>Key</code> - A map of primary key attribute
-     * values that uniquely identify the item. Each entry in this map consists of an
-     * attribute name and an attribute value. For each primary key, you must provide
-     * <i>all</i> of the key attributes. For example, with a simple primary key, you
-     * only need to provide a value for the partition key. For a composite primary key,
-     * you must provide values for <i>both</i> the partition key and the sort key.</p>
-     * </li> </ul> </li> <li> <p> <code>PutRequest</code> - Perform a
-     * <code>PutItem</code> operation on the specified item. The item to be put is
-     * identified by an <code>Item</code> subelement:</p> <ul> <li> <p>
+     * <p>A map of one or more table names or table ARNs and, for each table, a list of
+     * operations to be performed (<code>DeleteRequest</code> or
+     * <code>PutRequest</code>). Each element in the map consists of the following:</p>
+     * <ul> <li> <p> <code>DeleteRequest</code> - Perform a <code>DeleteItem</code>
+     * operation on the specified item. The item to be deleted is identified by a
+     * <code>Key</code> subelement:</p> <ul> <li> <p> <code>Key</code> - A map of
+     * primary key attribute values that uniquely identify the item. Each entry in this
+     * map consists of an attribute name and an attribute value. For each primary key,
+     * you must provide <i>all</i> of the key attributes. For example, with a simple
+     * primary key, you only need to provide a value for the partition key. For a
+     * composite primary key, you must provide values for <i>both</i> the partition key
+     * and the sort key.</p> </li> </ul> </li> <li> <p> <code>PutRequest</code> -
+     * Perform a <code>PutItem</code> operation on the specified item. The item to be
+     * put is identified by an <code>Item</code> subelement:</p> <ul> <li> <p>
      * <code>Item</code> - A map of attributes and their values. Each entry in this map
      * consists of an attribute name and an attribute value. Attribute values must not
      * be null; string and binary type attributes must have lengths greater than zero;
@@ -148,20 +148,20 @@ namespace Model
     inline void SetRequestItems(Aws::Map<Aws::String, Aws::Vector<WriteRequest>>&& value) { m_requestItemsHasBeenSet = true; m_requestItems = std::move(value); }
 
     /**
-     * <p>A map of one or more table names and, for each table, a list of operations to
-     * be performed (<code>DeleteRequest</code> or <code>PutRequest</code>). Each
-     * element in the map consists of the following:</p> <ul> <li> <p>
-     * <code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the
-     * specified item. The item to be deleted is identified by a <code>Key</code>
-     * subelement:</p> <ul> <li> <p> <code>Key</code> - A map of primary key attribute
-     * values that uniquely identify the item. Each entry in this map consists of an
-     * attribute name and an attribute value. For each primary key, you must provide
-     * <i>all</i> of the key attributes. For example, with a simple primary key, you
-     * only need to provide a value for the partition key. For a composite primary key,
-     * you must provide values for <i>both</i> the partition key and the sort key.</p>
-     * </li> </ul> </li> <li> <p> <code>PutRequest</code> - Perform a
-     * <code>PutItem</code> operation on the specified item. The item to be put is
-     * identified by an <code>Item</code> subelement:</p> <ul> <li> <p>
+     * <p>A map of one or more table names or table ARNs and, for each table, a list of
+     * operations to be performed (<code>DeleteRequest</code> or
+     * <code>PutRequest</code>). Each element in the map consists of the following:</p>
+     * <ul> <li> <p> <code>DeleteRequest</code> - Perform a <code>DeleteItem</code>
+     * operation on the specified item. The item to be deleted is identified by a
+     * <code>Key</code> subelement:</p> <ul> <li> <p> <code>Key</code> - A map of
+     * primary key attribute values that uniquely identify the item. Each entry in this
+     * map consists of an attribute name and an attribute value. For each primary key,
+     * you must provide <i>all</i> of the key attributes. For example, with a simple
+     * primary key, you only need to provide a value for the partition key. For a
+     * composite primary key, you must provide values for <i>both</i> the partition key
+     * and the sort key.</p> </li> </ul> </li> <li> <p> <code>PutRequest</code> -
+     * Perform a <code>PutItem</code> operation on the specified item. The item to be
+     * put is identified by an <code>Item</code> subelement:</p> <ul> <li> <p>
      * <code>Item</code> - A map of attributes and their values. Each entry in this map
      * consists of an attribute name and an attribute value. Attribute values must not
      * be null; string and binary type attributes must have lengths greater than zero;
@@ -174,20 +174,20 @@ namespace Model
     inline BatchWriteItemRequest& WithRequestItems(const Aws::Map<Aws::String, Aws::Vector<WriteRequest>>& value) { SetRequestItems(value); return *this;}
 
     /**
-     * <p>A map of one or more table names and, for each table, a list of operations to
-     * be performed (<code>DeleteRequest</code> or <code>PutRequest</code>). Each
-     * element in the map consists of the following:</p> <ul> <li> <p>
-     * <code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the
-     * specified item. The item to be deleted is identified by a <code>Key</code>
-     * subelement:</p> <ul> <li> <p> <code>Key</code> - A map of primary key attribute
-     * values that uniquely identify the item. Each entry in this map consists of an
-     * attribute name and an attribute value. For each primary key, you must provide
-     * <i>all</i> of the key attributes. For example, with a simple primary key, you
-     * only need to provide a value for the partition key. For a composite primary key,
-     * you must provide values for <i>both</i> the partition key and the sort key.</p>
-     * </li> </ul> </li> <li> <p> <code>PutRequest</code> - Perform a
-     * <code>PutItem</code> operation on the specified item. The item to be put is
-     * identified by an <code>Item</code> subelement:</p> <ul> <li> <p>
+     * <p>A map of one or more table names or table ARNs and, for each table, a list of
+     * operations to be performed (<code>DeleteRequest</code> or
+     * <code>PutRequest</code>). Each element in the map consists of the following:</p>
+     * <ul> <li> <p> <code>DeleteRequest</code> - Perform a <code>DeleteItem</code>
+     * operation on the specified item. The item to be deleted is identified by a
+     * <code>Key</code> subelement:</p> <ul> <li> <p> <code>Key</code> - A map of
+     * primary key attribute values that uniquely identify the item. Each entry in this
+     * map consists of an attribute name and an attribute value. For each primary key,
+     * you must provide <i>all</i> of the key attributes. For example, with a simple
+     * primary key, you only need to provide a value for the partition key. For a
+     * composite primary key, you must provide values for <i>both</i> the partition key
+     * and the sort key.</p> </li> </ul> </li> <li> <p> <code>PutRequest</code> -
+     * Perform a <code>PutItem</code> operation on the specified item. The item to be
+     * put is identified by an <code>Item</code> subelement:</p> <ul> <li> <p>
      * <code>Item</code> - A map of attributes and their values. Each entry in this map
      * consists of an attribute name and an attribute value. Attribute values must not
      * be null; string and binary type attributes must have lengths greater than zero;
@@ -200,20 +200,20 @@ namespace Model
     inline BatchWriteItemRequest& WithRequestItems(Aws::Map<Aws::String, Aws::Vector<WriteRequest>>&& value) { SetRequestItems(std::move(value)); return *this;}
 
     /**
-     * <p>A map of one or more table names and, for each table, a list of operations to
-     * be performed (<code>DeleteRequest</code> or <code>PutRequest</code>). Each
-     * element in the map consists of the following:</p> <ul> <li> <p>
-     * <code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the
-     * specified item. The item to be deleted is identified by a <code>Key</code>
-     * subelement:</p> <ul> <li> <p> <code>Key</code> - A map of primary key attribute
-     * values that uniquely identify the item. Each entry in this map consists of an
-     * attribute name and an attribute value. For each primary key, you must provide
-     * <i>all</i> of the key attributes. For example, with a simple primary key, you
-     * only need to provide a value for the partition key. For a composite primary key,
-     * you must provide values for <i>both</i> the partition key and the sort key.</p>
-     * </li> </ul> </li> <li> <p> <code>PutRequest</code> - Perform a
-     * <code>PutItem</code> operation on the specified item. The item to be put is
-     * identified by an <code>Item</code> subelement:</p> <ul> <li> <p>
+     * <p>A map of one or more table names or table ARNs and, for each table, a list of
+     * operations to be performed (<code>DeleteRequest</code> or
+     * <code>PutRequest</code>). Each element in the map consists of the following:</p>
+     * <ul> <li> <p> <code>DeleteRequest</code> - Perform a <code>DeleteItem</code>
+     * operation on the specified item. The item to be deleted is identified by a
+     * <code>Key</code> subelement:</p> <ul> <li> <p> <code>Key</code> - A map of
+     * primary key attribute values that uniquely identify the item. Each entry in this
+     * map consists of an attribute name and an attribute value. For each primary key,
+     * you must provide <i>all</i> of the key attributes. For example, with a simple
+     * primary key, you only need to provide a value for the partition key. For a
+     * composite primary key, you must provide values for <i>both</i> the partition key
+     * and the sort key.</p> </li> </ul> </li> <li> <p> <code>PutRequest</code> -
+     * Perform a <code>PutItem</code> operation on the specified item. The item to be
+     * put is identified by an <code>Item</code> subelement:</p> <ul> <li> <p>
      * <code>Item</code> - A map of attributes and their values. Each entry in this map
      * consists of an attribute name and an attribute value. Attribute values must not
      * be null; string and binary type attributes must have lengths greater than zero;
@@ -226,20 +226,20 @@ namespace Model
     inline BatchWriteItemRequest& AddRequestItems(const Aws::String& key, const Aws::Vector<WriteRequest>& value) { m_requestItemsHasBeenSet = true; m_requestItems.emplace(key, value); return *this; }
 
     /**
-     * <p>A map of one or more table names and, for each table, a list of operations to
-     * be performed (<code>DeleteRequest</code> or <code>PutRequest</code>). Each
-     * element in the map consists of the following:</p> <ul> <li> <p>
-     * <code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the
-     * specified item. The item to be deleted is identified by a <code>Key</code>
-     * subelement:</p> <ul> <li> <p> <code>Key</code> - A map of primary key attribute
-     * values that uniquely identify the item. Each entry in this map consists of an
-     * attribute name and an attribute value. For each primary key, you must provide
-     * <i>all</i> of the key attributes. For example, with a simple primary key, you
-     * only need to provide a value for the partition key. For a composite primary key,
-     * you must provide values for <i>both</i> the partition key and the sort key.</p>
-     * </li> </ul> </li> <li> <p> <code>PutRequest</code> - Perform a
-     * <code>PutItem</code> operation on the specified item. The item to be put is
-     * identified by an <code>Item</code> subelement:</p> <ul> <li> <p>
+     * <p>A map of one or more table names or table ARNs and, for each table, a list of
+     * operations to be performed (<code>DeleteRequest</code> or
+     * <code>PutRequest</code>). Each element in the map consists of the following:</p>
+     * <ul> <li> <p> <code>DeleteRequest</code> - Perform a <code>DeleteItem</code>
+     * operation on the specified item. The item to be deleted is identified by a
+     * <code>Key</code> subelement:</p> <ul> <li> <p> <code>Key</code> - A map of
+     * primary key attribute values that uniquely identify the item. Each entry in this
+     * map consists of an attribute name and an attribute value. For each primary key,
+     * you must provide <i>all</i> of the key attributes. For example, with a simple
+     * primary key, you only need to provide a value for the partition key. For a
+     * composite primary key, you must provide values for <i>both</i> the partition key
+     * and the sort key.</p> </li> </ul> </li> <li> <p> <code>PutRequest</code> -
+     * Perform a <code>PutItem</code> operation on the specified item. The item to be
+     * put is identified by an <code>Item</code> subelement:</p> <ul> <li> <p>
      * <code>Item</code> - A map of attributes and their values. Each entry in this map
      * consists of an attribute name and an attribute value. Attribute values must not
      * be null; string and binary type attributes must have lengths greater than zero;
@@ -252,20 +252,20 @@ namespace Model
     inline BatchWriteItemRequest& AddRequestItems(Aws::String&& key, const Aws::Vector<WriteRequest>& value) { m_requestItemsHasBeenSet = true; m_requestItems.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A map of one or more table names and, for each table, a list of operations to
-     * be performed (<code>DeleteRequest</code> or <code>PutRequest</code>). Each
-     * element in the map consists of the following:</p> <ul> <li> <p>
-     * <code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the
-     * specified item. The item to be deleted is identified by a <code>Key</code>
-     * subelement:</p> <ul> <li> <p> <code>Key</code> - A map of primary key attribute
-     * values that uniquely identify the item. Each entry in this map consists of an
-     * attribute name and an attribute value. For each primary key, you must provide
-     * <i>all</i> of the key attributes. For example, with a simple primary key, you
-     * only need to provide a value for the partition key. For a composite primary key,
-     * you must provide values for <i>both</i> the partition key and the sort key.</p>
-     * </li> </ul> </li> <li> <p> <code>PutRequest</code> - Perform a
-     * <code>PutItem</code> operation on the specified item. The item to be put is
-     * identified by an <code>Item</code> subelement:</p> <ul> <li> <p>
+     * <p>A map of one or more table names or table ARNs and, for each table, a list of
+     * operations to be performed (<code>DeleteRequest</code> or
+     * <code>PutRequest</code>). Each element in the map consists of the following:</p>
+     * <ul> <li> <p> <code>DeleteRequest</code> - Perform a <code>DeleteItem</code>
+     * operation on the specified item. The item to be deleted is identified by a
+     * <code>Key</code> subelement:</p> <ul> <li> <p> <code>Key</code> - A map of
+     * primary key attribute values that uniquely identify the item. Each entry in this
+     * map consists of an attribute name and an attribute value. For each primary key,
+     * you must provide <i>all</i> of the key attributes. For example, with a simple
+     * primary key, you only need to provide a value for the partition key. For a
+     * composite primary key, you must provide values for <i>both</i> the partition key
+     * and the sort key.</p> </li> </ul> </li> <li> <p> <code>PutRequest</code> -
+     * Perform a <code>PutItem</code> operation on the specified item. The item to be
+     * put is identified by an <code>Item</code> subelement:</p> <ul> <li> <p>
      * <code>Item</code> - A map of attributes and their values. Each entry in this map
      * consists of an attribute name and an attribute value. Attribute values must not
      * be null; string and binary type attributes must have lengths greater than zero;
@@ -278,20 +278,20 @@ namespace Model
     inline BatchWriteItemRequest& AddRequestItems(const Aws::String& key, Aws::Vector<WriteRequest>&& value) { m_requestItemsHasBeenSet = true; m_requestItems.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A map of one or more table names and, for each table, a list of operations to
-     * be performed (<code>DeleteRequest</code> or <code>PutRequest</code>). Each
-     * element in the map consists of the following:</p> <ul> <li> <p>
-     * <code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the
-     * specified item. The item to be deleted is identified by a <code>Key</code>
-     * subelement:</p> <ul> <li> <p> <code>Key</code> - A map of primary key attribute
-     * values that uniquely identify the item. Each entry in this map consists of an
-     * attribute name and an attribute value. For each primary key, you must provide
-     * <i>all</i> of the key attributes. For example, with a simple primary key, you
-     * only need to provide a value for the partition key. For a composite primary key,
-     * you must provide values for <i>both</i> the partition key and the sort key.</p>
-     * </li> </ul> </li> <li> <p> <code>PutRequest</code> - Perform a
-     * <code>PutItem</code> operation on the specified item. The item to be put is
-     * identified by an <code>Item</code> subelement:</p> <ul> <li> <p>
+     * <p>A map of one or more table names or table ARNs and, for each table, a list of
+     * operations to be performed (<code>DeleteRequest</code> or
+     * <code>PutRequest</code>). Each element in the map consists of the following:</p>
+     * <ul> <li> <p> <code>DeleteRequest</code> - Perform a <code>DeleteItem</code>
+     * operation on the specified item. The item to be deleted is identified by a
+     * <code>Key</code> subelement:</p> <ul> <li> <p> <code>Key</code> - A map of
+     * primary key attribute values that uniquely identify the item. Each entry in this
+     * map consists of an attribute name and an attribute value. For each primary key,
+     * you must provide <i>all</i> of the key attributes. For example, with a simple
+     * primary key, you only need to provide a value for the partition key. For a
+     * composite primary key, you must provide values for <i>both</i> the partition key
+     * and the sort key.</p> </li> </ul> </li> <li> <p> <code>PutRequest</code> -
+     * Perform a <code>PutItem</code> operation on the specified item. The item to be
+     * put is identified by an <code>Item</code> subelement:</p> <ul> <li> <p>
      * <code>Item</code> - A map of attributes and their values. Each entry in this map
      * consists of an attribute name and an attribute value. Attribute values must not
      * be null; string and binary type attributes must have lengths greater than zero;
@@ -304,20 +304,20 @@ namespace Model
     inline BatchWriteItemRequest& AddRequestItems(Aws::String&& key, Aws::Vector<WriteRequest>&& value) { m_requestItemsHasBeenSet = true; m_requestItems.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>A map of one or more table names and, for each table, a list of operations to
-     * be performed (<code>DeleteRequest</code> or <code>PutRequest</code>). Each
-     * element in the map consists of the following:</p> <ul> <li> <p>
-     * <code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the
-     * specified item. The item to be deleted is identified by a <code>Key</code>
-     * subelement:</p> <ul> <li> <p> <code>Key</code> - A map of primary key attribute
-     * values that uniquely identify the item. Each entry in this map consists of an
-     * attribute name and an attribute value. For each primary key, you must provide
-     * <i>all</i> of the key attributes. For example, with a simple primary key, you
-     * only need to provide a value for the partition key. For a composite primary key,
-     * you must provide values for <i>both</i> the partition key and the sort key.</p>
-     * </li> </ul> </li> <li> <p> <code>PutRequest</code> - Perform a
-     * <code>PutItem</code> operation on the specified item. The item to be put is
-     * identified by an <code>Item</code> subelement:</p> <ul> <li> <p>
+     * <p>A map of one or more table names or table ARNs and, for each table, a list of
+     * operations to be performed (<code>DeleteRequest</code> or
+     * <code>PutRequest</code>). Each element in the map consists of the following:</p>
+     * <ul> <li> <p> <code>DeleteRequest</code> - Perform a <code>DeleteItem</code>
+     * operation on the specified item. The item to be deleted is identified by a
+     * <code>Key</code> subelement:</p> <ul> <li> <p> <code>Key</code> - A map of
+     * primary key attribute values that uniquely identify the item. Each entry in this
+     * map consists of an attribute name and an attribute value. For each primary key,
+     * you must provide <i>all</i> of the key attributes. For example, with a simple
+     * primary key, you only need to provide a value for the partition key. For a
+     * composite primary key, you must provide values for <i>both</i> the partition key
+     * and the sort key.</p> </li> </ul> </li> <li> <p> <code>PutRequest</code> -
+     * Perform a <code>PutItem</code> operation on the specified item. The item to be
+     * put is identified by an <code>Item</code> subelement:</p> <ul> <li> <p>
      * <code>Item</code> - A map of attributes and their values. Each entry in this map
      * consists of an attribute name and an attribute value. Attribute values must not
      * be null; string and binary type attributes must have lengths greater than zero;
@@ -330,20 +330,20 @@ namespace Model
     inline BatchWriteItemRequest& AddRequestItems(const char* key, Aws::Vector<WriteRequest>&& value) { m_requestItemsHasBeenSet = true; m_requestItems.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A map of one or more table names and, for each table, a list of operations to
-     * be performed (<code>DeleteRequest</code> or <code>PutRequest</code>). Each
-     * element in the map consists of the following:</p> <ul> <li> <p>
-     * <code>DeleteRequest</code> - Perform a <code>DeleteItem</code> operation on the
-     * specified item. The item to be deleted is identified by a <code>Key</code>
-     * subelement:</p> <ul> <li> <p> <code>Key</code> - A map of primary key attribute
-     * values that uniquely identify the item. Each entry in this map consists of an
-     * attribute name and an attribute value. For each primary key, you must provide
-     * <i>all</i> of the key attributes. For example, with a simple primary key, you
-     * only need to provide a value for the partition key. For a composite primary key,
-     * you must provide values for <i>both</i> the partition key and the sort key.</p>
-     * </li> </ul> </li> <li> <p> <code>PutRequest</code> - Perform a
-     * <code>PutItem</code> operation on the specified item. The item to be put is
-     * identified by an <code>Item</code> subelement:</p> <ul> <li> <p>
+     * <p>A map of one or more table names or table ARNs and, for each table, a list of
+     * operations to be performed (<code>DeleteRequest</code> or
+     * <code>PutRequest</code>). Each element in the map consists of the following:</p>
+     * <ul> <li> <p> <code>DeleteRequest</code> - Perform a <code>DeleteItem</code>
+     * operation on the specified item. The item to be deleted is identified by a
+     * <code>Key</code> subelement:</p> <ul> <li> <p> <code>Key</code> - A map of
+     * primary key attribute values that uniquely identify the item. Each entry in this
+     * map consists of an attribute name and an attribute value. For each primary key,
+     * you must provide <i>all</i> of the key attributes. For example, with a simple
+     * primary key, you only need to provide a value for the partition key. For a
+     * composite primary key, you must provide values for <i>both</i> the partition key
+     * and the sort key.</p> </li> </ul> </li> <li> <p> <code>PutRequest</code> -
+     * Perform a <code>PutItem</code> operation on the specified item. The item to be
+     * put is identified by an <code>Item</code> subelement:</p> <ul> <li> <p>
      * <code>Item</code> - A map of attributes and their values. Each entry in this map
      * consists of an attribute name and an attribute value. Attribute values must not
      * be null; string and binary type attributes must have lengths greater than zero;

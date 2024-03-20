@@ -41,7 +41,8 @@ SavingsPlan::SavingsPlan() :
     m_recurringPaymentAmountHasBeenSet(false),
     m_termDurationInSeconds(0),
     m_termDurationInSecondsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_returnableUntilHasBeenSet(false)
 {
 }
 
@@ -68,7 +69,8 @@ SavingsPlan::SavingsPlan(JsonView jsonValue) :
     m_recurringPaymentAmountHasBeenSet(false),
     m_termDurationInSeconds(0),
     m_termDurationInSecondsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_returnableUntilHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -207,6 +209,13 @@ SavingsPlan& SavingsPlan::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("returnableUntil"))
+  {
+    m_returnableUntil = jsonValue.GetString("returnableUntil");
+
+    m_returnableUntilHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -325,6 +334,12 @@ JsonValue SavingsPlan::Jsonize() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_returnableUntilHasBeenSet)
+  {
+   payload.WithString("returnableUntil", m_returnableUntil);
 
   }
 

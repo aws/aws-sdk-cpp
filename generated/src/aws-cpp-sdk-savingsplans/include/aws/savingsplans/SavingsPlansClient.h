@@ -16,12 +16,13 @@ namespace Aws
 namespace SavingsPlans
 {
   /**
-   * <p>Savings Plans are a pricing model that offer significant savings on AWS usage
-   * (for example, on Amazon EC2 instances). You commit to a consistent amount of
-   * usage, in USD per hour, for a term of 1 or 3 years, and receive a lower price
-   * for that usage. For more information, see the <a
-   * href="https://docs.aws.amazon.com/savingsplans/latest/userguide/">AWS Savings
-   * Plans User Guide</a>.</p>
+   * <p>Savings Plans are a pricing model that offer significant savings on Amazon
+   * Web Services usage (for example, on Amazon EC2 instances). You commit to a
+   * consistent amount of usage per hour, in the specified currency, for a term of
+   * one or three years, and receive a lower price for that usage. For more
+   * information, see the <a
+   * href="https://docs.aws.amazon.com/savingsplans/latest/userguide/">Amazon Web
+   * Services Savings Plans User Guide</a>.</p>
    */
   class AWS_SAVINGSPLANS_API SavingsPlansClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SavingsPlansClient>
   {
@@ -133,7 +134,8 @@ namespace SavingsPlans
         }
 
         /**
-         * <p>Describes the specified Savings Plans rates.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the rates for the specified Savings Plan.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/savingsplans-2019-06-28/DescribeSavingsPlanRates">AWS
          * API Reference</a></p>
          */
@@ -183,7 +185,7 @@ namespace SavingsPlans
         }
 
         /**
-         * <p>Describes the specified Savings Plans offering rates.</p><p><h3>See
+         * <p>Describes the offering rates for the specified Savings Plans.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/savingsplans-2019-06-28/DescribeSavingsPlansOfferingRates">AWS
          * API Reference</a></p>
@@ -209,8 +211,8 @@ namespace SavingsPlans
         }
 
         /**
-         * <p>Describes the specified Savings Plans offerings.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Describes the offerings for the specified Savings Plans.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/savingsplans-2019-06-28/DescribeSavingsPlansOfferings">AWS
          * API Reference</a></p>
          */
@@ -257,6 +259,31 @@ namespace SavingsPlans
         void ListTagsForResourceAsync(const ListTagsForResourceRequestT& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SavingsPlansClient::ListTagsForResource, request, handler, context);
+        }
+
+        /**
+         * <p>Returns the specified Savings Plan.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/savingsplans-2019-06-28/ReturnSavingsPlan">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ReturnSavingsPlanOutcome ReturnSavingsPlan(const Model::ReturnSavingsPlanRequest& request) const;
+
+        /**
+         * A Callable wrapper for ReturnSavingsPlan that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ReturnSavingsPlanRequestT = Model::ReturnSavingsPlanRequest>
+        Model::ReturnSavingsPlanOutcomeCallable ReturnSavingsPlanCallable(const ReturnSavingsPlanRequestT& request) const
+        {
+            return SubmitCallable(&SavingsPlansClient::ReturnSavingsPlan, request);
+        }
+
+        /**
+         * An Async wrapper for ReturnSavingsPlan that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ReturnSavingsPlanRequestT = Model::ReturnSavingsPlanRequest>
+        void ReturnSavingsPlanAsync(const ReturnSavingsPlanRequestT& request, const ReturnSavingsPlanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SavingsPlansClient::ReturnSavingsPlan, request, handler, context);
         }
 
         /**

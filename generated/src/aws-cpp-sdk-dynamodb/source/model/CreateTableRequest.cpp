@@ -27,7 +27,8 @@ CreateTableRequest::CreateTableRequest() :
     m_tableClass(TableClass::NOT_SET),
     m_tableClassHasBeenSet(false),
     m_deletionProtectionEnabled(false),
-    m_deletionProtectionEnabledHasBeenSet(false)
+    m_deletionProtectionEnabledHasBeenSet(false),
+    m_resourcePolicyHasBeenSet(false)
 {
 }
 
@@ -127,6 +128,12 @@ Aws::String CreateTableRequest::SerializePayload() const
   if(m_deletionProtectionEnabledHasBeenSet)
   {
    payload.WithBool("DeletionProtectionEnabled", m_deletionProtectionEnabled);
+
+  }
+
+  if(m_resourcePolicyHasBeenSet)
+  {
+   payload.WithString("ResourcePolicy", m_resourcePolicy);
 
   }
 

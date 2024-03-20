@@ -37,50 +37,50 @@ namespace Model
 
 
     /**
-     * <p>The backups from the table specified by <code>TableName</code> are listed.
-     * </p>
+     * <p>Lists the backups from the table specified in <code>TableName</code>. You can
+     * also provide the Amazon Resource Name (ARN) of the table in this parameter.</p>
      */
     inline const Aws::String& GetTableName() const{ return m_tableName; }
 
     /**
-     * <p>The backups from the table specified by <code>TableName</code> are listed.
-     * </p>
+     * <p>Lists the backups from the table specified in <code>TableName</code>. You can
+     * also provide the Amazon Resource Name (ARN) of the table in this parameter.</p>
      */
     inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
 
     /**
-     * <p>The backups from the table specified by <code>TableName</code> are listed.
-     * </p>
+     * <p>Lists the backups from the table specified in <code>TableName</code>. You can
+     * also provide the Amazon Resource Name (ARN) of the table in this parameter.</p>
      */
     inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
 
     /**
-     * <p>The backups from the table specified by <code>TableName</code> are listed.
-     * </p>
+     * <p>Lists the backups from the table specified in <code>TableName</code>. You can
+     * also provide the Amazon Resource Name (ARN) of the table in this parameter.</p>
      */
     inline void SetTableName(Aws::String&& value) { m_tableNameHasBeenSet = true; m_tableName = std::move(value); }
 
     /**
-     * <p>The backups from the table specified by <code>TableName</code> are listed.
-     * </p>
+     * <p>Lists the backups from the table specified in <code>TableName</code>. You can
+     * also provide the Amazon Resource Name (ARN) of the table in this parameter.</p>
      */
     inline void SetTableName(const char* value) { m_tableNameHasBeenSet = true; m_tableName.assign(value); }
 
     /**
-     * <p>The backups from the table specified by <code>TableName</code> are listed.
-     * </p>
+     * <p>Lists the backups from the table specified in <code>TableName</code>. You can
+     * also provide the Amazon Resource Name (ARN) of the table in this parameter.</p>
      */
     inline ListBackupsRequest& WithTableName(const Aws::String& value) { SetTableName(value); return *this;}
 
     /**
-     * <p>The backups from the table specified by <code>TableName</code> are listed.
-     * </p>
+     * <p>Lists the backups from the table specified in <code>TableName</code>. You can
+     * also provide the Amazon Resource Name (ARN) of the table in this parameter.</p>
      */
     inline ListBackupsRequest& WithTableName(Aws::String&& value) { SetTableName(std::move(value)); return *this;}
 
     /**
-     * <p>The backups from the table specified by <code>TableName</code> are listed.
-     * </p>
+     * <p>Lists the backups from the table specified in <code>TableName</code>. You can
+     * also provide the Amazon Resource Name (ARN) of the table in this parameter.</p>
      */
     inline ListBackupsRequest& WithTableName(const char* value) { SetTableName(value); return *this;}
 

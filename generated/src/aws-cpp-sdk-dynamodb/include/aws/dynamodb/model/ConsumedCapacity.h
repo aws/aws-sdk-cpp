@@ -46,42 +46,58 @@ namespace Model
 
 
     /**
-     * <p>The name of the table that was affected by the operation.</p>
+     * <p>The name of the table that was affected by the operation. If you had
+     * specified the Amazon Resource Name (ARN) of a table in the input, you'll see the
+     * table ARN in the response.</p>
      */
     inline const Aws::String& GetTableName() const{ return m_tableName; }
 
     /**
-     * <p>The name of the table that was affected by the operation.</p>
+     * <p>The name of the table that was affected by the operation. If you had
+     * specified the Amazon Resource Name (ARN) of a table in the input, you'll see the
+     * table ARN in the response.</p>
      */
     inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
 
     /**
-     * <p>The name of the table that was affected by the operation.</p>
+     * <p>The name of the table that was affected by the operation. If you had
+     * specified the Amazon Resource Name (ARN) of a table in the input, you'll see the
+     * table ARN in the response.</p>
      */
     inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
 
     /**
-     * <p>The name of the table that was affected by the operation.</p>
+     * <p>The name of the table that was affected by the operation. If you had
+     * specified the Amazon Resource Name (ARN) of a table in the input, you'll see the
+     * table ARN in the response.</p>
      */
     inline void SetTableName(Aws::String&& value) { m_tableNameHasBeenSet = true; m_tableName = std::move(value); }
 
     /**
-     * <p>The name of the table that was affected by the operation.</p>
+     * <p>The name of the table that was affected by the operation. If you had
+     * specified the Amazon Resource Name (ARN) of a table in the input, you'll see the
+     * table ARN in the response.</p>
      */
     inline void SetTableName(const char* value) { m_tableNameHasBeenSet = true; m_tableName.assign(value); }
 
     /**
-     * <p>The name of the table that was affected by the operation.</p>
+     * <p>The name of the table that was affected by the operation. If you had
+     * specified the Amazon Resource Name (ARN) of a table in the input, you'll see the
+     * table ARN in the response.</p>
      */
     inline ConsumedCapacity& WithTableName(const Aws::String& value) { SetTableName(value); return *this;}
 
     /**
-     * <p>The name of the table that was affected by the operation.</p>
+     * <p>The name of the table that was affected by the operation. If you had
+     * specified the Amazon Resource Name (ARN) of a table in the input, you'll see the
+     * table ARN in the response.</p>
      */
     inline ConsumedCapacity& WithTableName(Aws::String&& value) { SetTableName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the table that was affected by the operation.</p>
+     * <p>The name of the table that was affected by the operation. If you had
+     * specified the Amazon Resource Name (ARN) of a table in the input, you'll see the
+     * table ARN in the response.</p>
      */
     inline ConsumedCapacity& WithTableName(const char* value) { SetTableName(value); return *this;}
 

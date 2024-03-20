@@ -489,6 +489,46 @@ namespace DynamoDB
         }
 
         /**
+         * <p>Deletes the resource-based policy attached to the resource, which can be a
+         * table or stream.</p> <p> <code>DeleteResourcePolicy</code> is an idempotent
+         * operation; running it multiple times on the same resource <i>doesn't</i> result
+         * in an error response, unless you specify an <code>ExpectedRevisionId</code>,
+         * which will then return a <code>PolicyNotFoundException</code>.</p> 
+         * <p>To make sure that you don't inadvertently lock yourself out of your own
+         * resources, the root principal in your Amazon Web Services account can perform
+         * <code>DeleteResourcePolicy</code> requests, even if your resource-based policy
+         * explicitly denies the root principal's access. </p>   <p>
+         * <code>DeleteResourcePolicy</code> is an asynchronous operation. If you issue a
+         * <code>GetResourcePolicy</code> request immediately after running the
+         * <code>DeleteResourcePolicy</code> request, DynamoDB might still return the
+         * deleted policy. This is because the policy for your resource might not have been
+         * deleted yet. Wait for a few seconds, and then try the
+         * <code>GetResourcePolicy</code> request again.</p> <p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DeleteResourcePolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteResourcePolicyOutcome DeleteResourcePolicy(const Model::DeleteResourcePolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteResourcePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteResourcePolicyRequestT = Model::DeleteResourcePolicyRequest>
+        Model::DeleteResourcePolicyOutcomeCallable DeleteResourcePolicyCallable(const DeleteResourcePolicyRequestT& request) const
+        {
+            return SubmitCallable(&DynamoDBClient::DeleteResourcePolicy, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteResourcePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteResourcePolicyRequestT = Model::DeleteResourcePolicyRequest>
+        void DeleteResourcePolicyAsync(const DeleteResourcePolicyRequestT& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DynamoDBClient::DeleteResourcePolicy, request, handler, context);
+        }
+
+        /**
          * <p>The <code>DeleteTable</code> operation deletes a table and all of its items.
          * After a <code>DeleteTable</code> request, the specified table is in the
          * <code>DELETING</code> state until DynamoDB completes the deletion. If the table
@@ -1138,6 +1178,57 @@ namespace DynamoDB
         }
 
         /**
+         * <p>Returns the resource-based policy document attached to the resource, which
+         * can be a table or stream, in JSON format.</p> <p> <code>GetResourcePolicy</code>
+         * follows an <a
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html">
+         * <i>eventually consistent</i> </a> model. The following list describes the
+         * outcomes when you issue the <code>GetResourcePolicy</code> request immediately
+         * after issuing another request:</p> <ul> <li> <p>If you issue a
+         * <code>GetResourcePolicy</code> request immediately after a
+         * <code>PutResourcePolicy</code> request, DynamoDB might return a
+         * <code>PolicyNotFoundException</code>.</p> </li> <li> <p>If you issue a
+         * <code>GetResourcePolicy</code>request immediately after a
+         * <code>DeleteResourcePolicy</code> request, DynamoDB might return the policy that
+         * was present before the deletion request.</p> </li> <li> <p>If you issue a
+         * <code>GetResourcePolicy</code> request immediately after a
+         * <code>CreateTable</code> request, which includes a resource-based policy,
+         * DynamoDB might return a <code>ResourceNotFoundException</code> or a
+         * <code>PolicyNotFoundException</code>.</p> </li> </ul> <p>Because
+         * <code>GetResourcePolicy</code> uses an <i>eventually consistent</i> query, the
+         * metadata for your policy or table might not be available at that moment. Wait
+         * for a few seconds, and then retry the <code>GetResourcePolicy</code>
+         * request.</p> <p>After a <code>GetResourcePolicy</code> request returns a policy
+         * created using the <code>PutResourcePolicy</code> request, you can assume the
+         * policy will start getting applied in the authorization of requests to the
+         * resource. Because this process is eventually consistent, it will take some time
+         * to apply the policy to all requests to a resource. Policies that you attach
+         * while creating a table using the <code>CreateTable</code> request will always be
+         * applied to all requests for that table.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/GetResourcePolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetResourcePolicyOutcome GetResourcePolicy(const Model::GetResourcePolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetResourcePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetResourcePolicyRequestT = Model::GetResourcePolicyRequest>
+        Model::GetResourcePolicyOutcomeCallable GetResourcePolicyCallable(const GetResourcePolicyRequestT& request) const
+        {
+            return SubmitCallable(&DynamoDBClient::GetResourcePolicy, request);
+        }
+
+        /**
+         * An Async wrapper for GetResourcePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetResourcePolicyRequestT = Model::GetResourcePolicyRequest>
+        void GetResourcePolicyAsync(const GetResourcePolicyRequestT& request, const GetResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DynamoDBClient::GetResourcePolicy, request, handler, context);
+        }
+
+        /**
          * <p> Imports table data from an S3 bucket. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ImportTable">AWS
          * API Reference</a></p>
@@ -1413,6 +1504,48 @@ namespace DynamoDB
         void PutItemAsync(const PutItemRequestT& request, const PutItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&DynamoDBClient::PutItem, request, handler, context);
+        }
+
+        /**
+         * <p>Attaches a resource-based policy document to the resource, which can be a
+         * table or stream. When you attach a resource-based policy using this API, the
+         * policy application is <a
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html">
+         * <i>eventually consistent</i> </a>.</p> <p> <code>PutResourcePolicy</code> is an
+         * idempotent operation; running it multiple times on the same resource using the
+         * same policy document will return the same revision ID. If you specify an
+         * <code>ExpectedRevisionId</code> which doesn't match the current policy's
+         * <code>RevisionId</code>, the <code>PolicyNotFoundException</code> will be
+         * returned.</p>  <p> <code>PutResourcePolicy</code> is an asynchronous
+         * operation. If you issue a <code>GetResourcePolicy</code> request immediately
+         * after a <code>PutResourcePolicy</code> request, DynamoDB might return your
+         * previous policy, if there was one, or return the
+         * <code>PolicyNotFoundException</code>. This is because
+         * <code>GetResourcePolicy</code> uses an eventually consistent query, and the
+         * metadata for your policy or table might not be available at that moment. Wait
+         * for a few seconds, and then try the <code>GetResourcePolicy</code> request
+         * again.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/PutResourcePolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutResourcePolicyOutcome PutResourcePolicy(const Model::PutResourcePolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutResourcePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename PutResourcePolicyRequestT = Model::PutResourcePolicyRequest>
+        Model::PutResourcePolicyOutcomeCallable PutResourcePolicyCallable(const PutResourcePolicyRequestT& request) const
+        {
+            return SubmitCallable(&DynamoDBClient::PutResourcePolicy, request);
+        }
+
+        /**
+         * An Async wrapper for PutResourcePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename PutResourcePolicyRequestT = Model::PutResourcePolicyRequest>
+        void PutResourcePolicyAsync(const PutResourcePolicyRequestT& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DynamoDBClient::PutResourcePolicy, request, handler, context);
         }
 
         /**
@@ -2019,9 +2152,8 @@ namespace DynamoDB
          * <code>UpdateTable</code> is an asynchronous operation; while it's executing, the
          * table status changes from <code>ACTIVE</code> to <code>UPDATING</code>. While
          * it's <code>UPDATING</code>, you can't issue another <code>UpdateTable</code>
-         * request on the base table nor any replicas. When the table returns to the
-         * <code>ACTIVE</code> state, the <code>UpdateTable</code> operation is
-         * complete.</p><p><h3>See Also:</h3>   <a
+         * request. When the table returns to the <code>ACTIVE</code> state, the
+         * <code>UpdateTable</code> operation is complete.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateTable">AWS
          * API Reference</a></p>
          */

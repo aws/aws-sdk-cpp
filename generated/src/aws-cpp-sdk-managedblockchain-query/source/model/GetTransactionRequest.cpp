@@ -14,6 +14,7 @@ using namespace Aws::Utils;
 
 GetTransactionRequest::GetTransactionRequest() : 
     m_transactionHashHasBeenSet(false),
+    m_transactionIdHasBeenSet(false),
     m_network(QueryNetwork::NOT_SET),
     m_networkHasBeenSet(false)
 {
@@ -26,6 +27,12 @@ Aws::String GetTransactionRequest::SerializePayload() const
   if(m_transactionHashHasBeenSet)
   {
    payload.WithString("transactionHash", m_transactionHash);
+
+  }
+
+  if(m_transactionIdHasBeenSet)
+  {
+   payload.WithString("transactionId", m_transactionId);
 
   }
 

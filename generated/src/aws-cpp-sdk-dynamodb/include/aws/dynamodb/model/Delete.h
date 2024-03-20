@@ -115,42 +115,50 @@ namespace Model
 
 
     /**
-     * <p>Name of the table in which the item to be deleted resides.</p>
+     * <p>Name of the table in which the item to be deleted resides. You can also
+     * provide the Amazon Resource Name (ARN) of the table in this parameter.</p>
      */
     inline const Aws::String& GetTableName() const{ return m_tableName; }
 
     /**
-     * <p>Name of the table in which the item to be deleted resides.</p>
+     * <p>Name of the table in which the item to be deleted resides. You can also
+     * provide the Amazon Resource Name (ARN) of the table in this parameter.</p>
      */
     inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
 
     /**
-     * <p>Name of the table in which the item to be deleted resides.</p>
+     * <p>Name of the table in which the item to be deleted resides. You can also
+     * provide the Amazon Resource Name (ARN) of the table in this parameter.</p>
      */
     inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
 
     /**
-     * <p>Name of the table in which the item to be deleted resides.</p>
+     * <p>Name of the table in which the item to be deleted resides. You can also
+     * provide the Amazon Resource Name (ARN) of the table in this parameter.</p>
      */
     inline void SetTableName(Aws::String&& value) { m_tableNameHasBeenSet = true; m_tableName = std::move(value); }
 
     /**
-     * <p>Name of the table in which the item to be deleted resides.</p>
+     * <p>Name of the table in which the item to be deleted resides. You can also
+     * provide the Amazon Resource Name (ARN) of the table in this parameter.</p>
      */
     inline void SetTableName(const char* value) { m_tableNameHasBeenSet = true; m_tableName.assign(value); }
 
     /**
-     * <p>Name of the table in which the item to be deleted resides.</p>
+     * <p>Name of the table in which the item to be deleted resides. You can also
+     * provide the Amazon Resource Name (ARN) of the table in this parameter.</p>
      */
     inline Delete& WithTableName(const Aws::String& value) { SetTableName(value); return *this;}
 
     /**
-     * <p>Name of the table in which the item to be deleted resides.</p>
+     * <p>Name of the table in which the item to be deleted resides. You can also
+     * provide the Amazon Resource Name (ARN) of the table in this parameter.</p>
      */
     inline Delete& WithTableName(Aws::String&& value) { SetTableName(std::move(value)); return *this;}
 
     /**
-     * <p>Name of the table in which the item to be deleted resides.</p>
+     * <p>Name of the table in which the item to be deleted resides. You can also
+     * provide the Amazon Resource Name (ARN) of the table in this parameter.</p>
      */
     inline Delete& WithTableName(const char* value) { SetTableName(value); return *this;}
 

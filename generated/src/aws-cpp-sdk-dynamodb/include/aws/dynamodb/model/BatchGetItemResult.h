@@ -44,79 +44,79 @@ namespace Model
 
 
     /**
-     * <p>A map of table name to a list of items. Each object in <code>Responses</code>
-     * consists of a table name, along with a map of attribute data consisting of the
-     * data type and attribute value.</p>
+     * <p>A map of table name or table ARN to a list of items. Each object in
+     * <code>Responses</code> consists of a table name or ARN, along with a map of
+     * attribute data consisting of the data type and attribute value.</p>
      */
     inline const Aws::Map<Aws::String, Aws::Vector<Aws::Map<Aws::String, AttributeValue>>>& GetResponses() const{ return m_responses; }
 
     /**
-     * <p>A map of table name to a list of items. Each object in <code>Responses</code>
-     * consists of a table name, along with a map of attribute data consisting of the
-     * data type and attribute value.</p>
+     * <p>A map of table name or table ARN to a list of items. Each object in
+     * <code>Responses</code> consists of a table name or ARN, along with a map of
+     * attribute data consisting of the data type and attribute value.</p>
      */
     inline void SetResponses(const Aws::Map<Aws::String, Aws::Vector<Aws::Map<Aws::String, AttributeValue>>>& value) { m_responses = value; }
 
     /**
-     * <p>A map of table name to a list of items. Each object in <code>Responses</code>
-     * consists of a table name, along with a map of attribute data consisting of the
-     * data type and attribute value.</p>
+     * <p>A map of table name or table ARN to a list of items. Each object in
+     * <code>Responses</code> consists of a table name or ARN, along with a map of
+     * attribute data consisting of the data type and attribute value.</p>
      */
     inline void SetResponses(Aws::Map<Aws::String, Aws::Vector<Aws::Map<Aws::String, AttributeValue>>>&& value) { m_responses = std::move(value); }
 
     /**
-     * <p>A map of table name to a list of items. Each object in <code>Responses</code>
-     * consists of a table name, along with a map of attribute data consisting of the
-     * data type and attribute value.</p>
+     * <p>A map of table name or table ARN to a list of items. Each object in
+     * <code>Responses</code> consists of a table name or ARN, along with a map of
+     * attribute data consisting of the data type and attribute value.</p>
      */
     inline BatchGetItemResult& WithResponses(const Aws::Map<Aws::String, Aws::Vector<Aws::Map<Aws::String, AttributeValue>>>& value) { SetResponses(value); return *this;}
 
     /**
-     * <p>A map of table name to a list of items. Each object in <code>Responses</code>
-     * consists of a table name, along with a map of attribute data consisting of the
-     * data type and attribute value.</p>
+     * <p>A map of table name or table ARN to a list of items. Each object in
+     * <code>Responses</code> consists of a table name or ARN, along with a map of
+     * attribute data consisting of the data type and attribute value.</p>
      */
     inline BatchGetItemResult& WithResponses(Aws::Map<Aws::String, Aws::Vector<Aws::Map<Aws::String, AttributeValue>>>&& value) { SetResponses(std::move(value)); return *this;}
 
     /**
-     * <p>A map of table name to a list of items. Each object in <code>Responses</code>
-     * consists of a table name, along with a map of attribute data consisting of the
-     * data type and attribute value.</p>
+     * <p>A map of table name or table ARN to a list of items. Each object in
+     * <code>Responses</code> consists of a table name or ARN, along with a map of
+     * attribute data consisting of the data type and attribute value.</p>
      */
     inline BatchGetItemResult& AddResponses(const Aws::String& key, const Aws::Vector<Aws::Map<Aws::String, AttributeValue>>& value) { m_responses.emplace(key, value); return *this; }
 
     /**
-     * <p>A map of table name to a list of items. Each object in <code>Responses</code>
-     * consists of a table name, along with a map of attribute data consisting of the
-     * data type and attribute value.</p>
+     * <p>A map of table name or table ARN to a list of items. Each object in
+     * <code>Responses</code> consists of a table name or ARN, along with a map of
+     * attribute data consisting of the data type and attribute value.</p>
      */
     inline BatchGetItemResult& AddResponses(Aws::String&& key, const Aws::Vector<Aws::Map<Aws::String, AttributeValue>>& value) { m_responses.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A map of table name to a list of items. Each object in <code>Responses</code>
-     * consists of a table name, along with a map of attribute data consisting of the
-     * data type and attribute value.</p>
+     * <p>A map of table name or table ARN to a list of items. Each object in
+     * <code>Responses</code> consists of a table name or ARN, along with a map of
+     * attribute data consisting of the data type and attribute value.</p>
      */
     inline BatchGetItemResult& AddResponses(const Aws::String& key, Aws::Vector<Aws::Map<Aws::String, AttributeValue>>&& value) { m_responses.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A map of table name to a list of items. Each object in <code>Responses</code>
-     * consists of a table name, along with a map of attribute data consisting of the
-     * data type and attribute value.</p>
+     * <p>A map of table name or table ARN to a list of items. Each object in
+     * <code>Responses</code> consists of a table name or ARN, along with a map of
+     * attribute data consisting of the data type and attribute value.</p>
      */
     inline BatchGetItemResult& AddResponses(Aws::String&& key, Aws::Vector<Aws::Map<Aws::String, AttributeValue>>&& value) { m_responses.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>A map of table name to a list of items. Each object in <code>Responses</code>
-     * consists of a table name, along with a map of attribute data consisting of the
-     * data type and attribute value.</p>
+     * <p>A map of table name or table ARN to a list of items. Each object in
+     * <code>Responses</code> consists of a table name or ARN, along with a map of
+     * attribute data consisting of the data type and attribute value.</p>
      */
     inline BatchGetItemResult& AddResponses(const char* key, Aws::Vector<Aws::Map<Aws::String, AttributeValue>>&& value) { m_responses.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A map of table name to a list of items. Each object in <code>Responses</code>
-     * consists of a table name, along with a map of attribute data consisting of the
-     * data type and attribute value.</p>
+     * <p>A map of table name or table ARN to a list of items. Each object in
+     * <code>Responses</code> consists of a table name or ARN, along with a map of
+     * attribute data consisting of the data type and attribute value.</p>
      */
     inline BatchGetItemResult& AddResponses(const char* key, const Aws::Vector<Aws::Map<Aws::String, AttributeValue>>& value) { m_responses.emplace(key, value); return *this; }
 

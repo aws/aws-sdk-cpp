@@ -167,42 +167,42 @@ namespace Model
 
 
     /**
-     * <p>The AWS products.</p>
+     * <p>The Amazon Web Services products.</p>
      */
     inline const Aws::Vector<SavingsPlanProductType>& GetProducts() const{ return m_products; }
 
     /**
-     * <p>The AWS products.</p>
+     * <p>The Amazon Web Services products.</p>
      */
     inline bool ProductsHasBeenSet() const { return m_productsHasBeenSet; }
 
     /**
-     * <p>The AWS products.</p>
+     * <p>The Amazon Web Services products.</p>
      */
     inline void SetProducts(const Aws::Vector<SavingsPlanProductType>& value) { m_productsHasBeenSet = true; m_products = value; }
 
     /**
-     * <p>The AWS products.</p>
+     * <p>The Amazon Web Services products.</p>
      */
     inline void SetProducts(Aws::Vector<SavingsPlanProductType>&& value) { m_productsHasBeenSet = true; m_products = std::move(value); }
 
     /**
-     * <p>The AWS products.</p>
+     * <p>The Amazon Web Services products.</p>
      */
     inline DescribeSavingsPlansOfferingRatesRequest& WithProducts(const Aws::Vector<SavingsPlanProductType>& value) { SetProducts(value); return *this;}
 
     /**
-     * <p>The AWS products.</p>
+     * <p>The Amazon Web Services products.</p>
      */
     inline DescribeSavingsPlansOfferingRatesRequest& WithProducts(Aws::Vector<SavingsPlanProductType>&& value) { SetProducts(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS products.</p>
+     * <p>The Amazon Web Services products.</p>
      */
     inline DescribeSavingsPlansOfferingRatesRequest& AddProducts(const SavingsPlanProductType& value) { m_productsHasBeenSet = true; m_products.push_back(value); return *this; }
 
     /**
-     * <p>The AWS products.</p>
+     * <p>The Amazon Web Services products.</p>
      */
     inline DescribeSavingsPlansOfferingRatesRequest& AddProducts(SavingsPlanProductType&& value) { m_productsHasBeenSet = true; m_products.push_back(std::move(value)); return *this; }
 
@@ -295,47 +295,56 @@ namespace Model
 
 
     /**
-     * <p>The specific AWS operation for the line item in the billing report.</p>
+     * <p>The specific Amazon Web Services operation for the line item in the billing
+     * report.</p>
      */
     inline const Aws::Vector<Aws::String>& GetOperations() const{ return m_operations; }
 
     /**
-     * <p>The specific AWS operation for the line item in the billing report.</p>
+     * <p>The specific Amazon Web Services operation for the line item in the billing
+     * report.</p>
      */
     inline bool OperationsHasBeenSet() const { return m_operationsHasBeenSet; }
 
     /**
-     * <p>The specific AWS operation for the line item in the billing report.</p>
+     * <p>The specific Amazon Web Services operation for the line item in the billing
+     * report.</p>
      */
     inline void SetOperations(const Aws::Vector<Aws::String>& value) { m_operationsHasBeenSet = true; m_operations = value; }
 
     /**
-     * <p>The specific AWS operation for the line item in the billing report.</p>
+     * <p>The specific Amazon Web Services operation for the line item in the billing
+     * report.</p>
      */
     inline void SetOperations(Aws::Vector<Aws::String>&& value) { m_operationsHasBeenSet = true; m_operations = std::move(value); }
 
     /**
-     * <p>The specific AWS operation for the line item in the billing report.</p>
+     * <p>The specific Amazon Web Services operation for the line item in the billing
+     * report.</p>
      */
     inline DescribeSavingsPlansOfferingRatesRequest& WithOperations(const Aws::Vector<Aws::String>& value) { SetOperations(value); return *this;}
 
     /**
-     * <p>The specific AWS operation for the line item in the billing report.</p>
+     * <p>The specific Amazon Web Services operation for the line item in the billing
+     * report.</p>
      */
     inline DescribeSavingsPlansOfferingRatesRequest& WithOperations(Aws::Vector<Aws::String>&& value) { SetOperations(std::move(value)); return *this;}
 
     /**
-     * <p>The specific AWS operation for the line item in the billing report.</p>
+     * <p>The specific Amazon Web Services operation for the line item in the billing
+     * report.</p>
      */
     inline DescribeSavingsPlansOfferingRatesRequest& AddOperations(const Aws::String& value) { m_operationsHasBeenSet = true; m_operations.push_back(value); return *this; }
 
     /**
-     * <p>The specific AWS operation for the line item in the billing report.</p>
+     * <p>The specific Amazon Web Services operation for the line item in the billing
+     * report.</p>
      */
     inline DescribeSavingsPlansOfferingRatesRequest& AddOperations(Aws::String&& value) { m_operationsHasBeenSet = true; m_operations.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The specific AWS operation for the line item in the billing report.</p>
+     * <p>The specific Amazon Web Services operation for the line item in the billing
+     * report.</p>
      */
     inline DescribeSavingsPlansOfferingRatesRequest& AddOperations(const char* value) { m_operationsHasBeenSet = true; m_operations.push_back(value); return *this; }
 
