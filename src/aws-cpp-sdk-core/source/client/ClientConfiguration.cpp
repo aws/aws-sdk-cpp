@@ -140,6 +140,7 @@ void setLegacyClientConfigurationParameters(ClientConfiguration& clientConfig)
     clientConfig.disableExpectHeader = false;
     clientConfig.enableClockSkewAdjustment = true;
     clientConfig.enableHostPrefixInjection = true;
+    clientConfig.enableHttpClientTrace = false;
     clientConfig.profileName = Aws::Auth::GetConfigProfileName();
 
     Aws::String disableCompressionConfig = clientConfig.LoadConfigFromEnvOrProfile(

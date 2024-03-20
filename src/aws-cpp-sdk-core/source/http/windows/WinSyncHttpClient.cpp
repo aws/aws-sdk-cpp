@@ -209,7 +209,7 @@ void WinSyncHttpClient::LogRequestInternalFailure() const
 
     DWORD error = GetLastError();
 
-    char messageBuffer[WINDOWS_ERROR_MESSAGE_BUFFER_SIZE];
+    char messageBuffer[WINDOWS_ERROR_MESSAGE_BUFFER_SIZE] = { 0 };
 
     FormatMessageA(
         FORMAT_MESSAGE_FROM_HMODULE |
@@ -220,7 +220,7 @@ void WinSyncHttpClient::LogRequestInternalFailure() const
         messageBuffer,
         WINDOWS_ERROR_MESSAGE_BUFFER_SIZE,
         nullptr);
-    AWS_LOGSTREAM_WARN(GetLogTag(), "Send request failed: " << messageBuffer);
+    AWS_LOGSTREAM_WARN(GetLogTag(), "Send request failed: Windows/WinHTTP error code is " << error << ": " << messageBuffer);
 
 }
 

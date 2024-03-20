@@ -29,6 +29,9 @@ public:
 
     using Base = HttpClient;
 
+    //sets level of logging
+    int CurlDebugCallback(CURL *handle, curl_infotype type, char *data, size_t size, void *userptr)
+
     //Creates client, initializes curl handle if it hasn't been created already.
     CurlHttpClient(const Aws::Client::ClientConfiguration& clientConfig);
 
@@ -69,6 +72,7 @@ private:
     Aws::String m_proxyCaFile;
     bool m_disableExpectHeader = false;
     bool m_allowRedirects = false;
+    bool m_enableHttpClientTrace = false;
     static std::atomic<bool> isInit;
     std::shared_ptr<smithy::components::tracing::TelemetryProvider> m_telemetryProvider;
 };
