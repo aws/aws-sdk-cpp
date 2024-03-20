@@ -26,6 +26,10 @@
 #include <iomanip>
 #include <cstring>
 
+#if __has_feature(address_sanitizer)
+#include <sanitizer/lsan_interface.h>
+#endif
+
 using namespace Aws;
 using namespace Aws::Client;
 using namespace Aws::Auth;
@@ -552,6 +556,40 @@ Aws::String AWSAuthV4Signer::GenerateStringToSign(const Aws::String& dateValue, 
 Aws::Utils::ByteBuffer AWSAuthV4Signer::ComputeHash(const Aws::String& secretKey,
         const Aws::String& simpleDate, const Aws::String& region, const Aws::String& serviceName) const
 {
+#if __has_feature(address_sanitizer)
+    /// Leak sanitizer (part of address sanitizer) thinks that a few bytes of memory in OpenSSL are allocated but never
+    /// released. More specifically, the leaked memory is in OpenSSL's error stack which is pre-allocated as empty at thread start. OpenSSL
+    /// registers the error stack and a deleter are in thread-local memory, and as the thread is destroyed at some point (at the latest at
+    /// program end), the memory is released.
+    /// For your reading pleasure, the reported leak is shown below.
+    /// Note that a better place to suppress this error would be in OpenSSL. Could not make the leaksan_interface.h include work ...
+    /// Note that AWSAuthV4Signer::ComputeHash(), i.e. this function, is also not the last one called before OpenSSL. We go for the broader
+    /// scope because Sha256HMACOpenSSLImpl is just one of many hash implementations, all of which potentially have the same problem ...
+    __lsan::ScopedDisabler lsan_disabler;
+
+    /// 2024-03-19 08:34:03 =================================================================
+    /// 2024-03-19 08:34:03 ==13149==ERROR: LeakSanitizer: detected memory leaks
+    /// 2024-03-19 08:34:03
+    /// 2024-03-19 08:34:03 Direct leak of 904 byte(s) in 1 object(s) allocated from:
+    /// 2024-03-19 08:34:03     #0 0x55f9cb5a18ee in malloc (/usr/bin/clickhouse+0xa9a48ee) (BuildId: b3766b865d6580f6dcba75acf37673d4aeedc2b6)
+    /// 2024-03-19 08:34:03     #1 0x55fa01e34070 in CRYPTO_malloc build_docker/./contrib/openssl/crypto/mem.c:202:11
+    /// 2024-03-19 08:34:03     #2 0x55fa01e34070 in CRYPTO_zalloc build_docker/./contrib/openssl/crypto/mem.c:222:11
+    /// 2024-03-19 08:34:03     #3 0x55fa01d6dcca in ossl_err_get_state_int build_docker/./contrib/openssl/crypto/err/err.c:691:17
+    /// 2024-03-19 08:34:03     #4 0x55fa01d71748 in ERR_set_mark build_docker/./contrib/openssl/crypto/err/err_mark.c:19:10
+    /// 2024-03-19 08:34:03     #5 0x55fa01f4735b in ossl_prov_digest_load_from_params build_docker/./contrib/openssl/providers/common/provider_util.c:194:5
+    /// 2024-03-19 08:34:03     #6 0x55fa01ff467a in hmac_set_ctx_params build_docker/./contrib/openssl/providers/implementations/macs/hmac_prov.c:307:10
+    /// 2024-03-19 08:34:03     #7 0x55fa01ff3ef2 in hmac_init build_docker/./contrib/openssl/providers/implementations/macs/hmac_prov.c:169:37
+    /// 2024-03-19 08:34:03     #8 0x55f9fb83c75b in Aws::Utils::Crypto::Sha256HMACOpenSSLImpl::Calculate(Aws::Utils::Array<unsigned char> const&, Aws::Utils::Array<unsigned char> const&) (/usr/bin/clickhouse+0x3ac3f75b) (BuildId: b3766b865d6580f6dcba75acf37673d4aeedc2b6)
+    /// 2024-03-19 08:34:03     #9 0x55f9fb82ebeb in Aws::Utils::Crypto::Sha256HMAC::Calculate(Aws::Utils::Array<unsigned char> const&, Aws::Utils::Array<unsigned char> const&) (/usr/bin/clickhouse+0x3ac31beb) (BuildId: b3766b865d6580f6dcba75acf37673d4aeedc2b6)
+    /// 2024-03-19 08:34:03     #10 0x55f9fb6d5afd in Aws::Client::AWSAuthV4Signer::ComputeHash(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> const&) const (/usr/bin/clickhouse+0x3aad8afd) (BuildId: b3766b865d6580f6dcba75acf37673d4aeedc2b6)
+    /// 2024-03-19 08:34:03     #11 0x55f9fb6e0bad in Aws::Client::AWSAuthV4Signer::SignRequest(Aws::Http::HttpRequest&, char const*, char const*, bool) const (/usr/bin/clickhouse+0x3aae3bad) (BuildId: b3766b865d6580f6dcba75acf37673d4aeedc2b6)
+    /// 2024-03-19 08:34:03     #12 0x55f9fb72651d in bool smithy::components::tracing::TracingUtils::MakeCallWithTiming<bool>(std::__1::function<bool ()>, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> const&, smithy::components::tracing::Meter const&, std::__1::map<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>, std::__1::less<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>>, std::__1::allocator<std::__1::pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> const, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>>>>&&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> const&) (/usr/bin/clickhouse+0x3ab2951d) (BuildId: b3766b865d6580f6dcba75acf37673d4aeedc2b6)
+    /// 2024-03-19 08:34:03     #13 0x55f9fb70adcb in Aws::Client::AWSClient::AttemptOneRequest(std::__1::shared_ptr<Aws::Http::HttpRequest> const&, Aws::AmazonWebServiceRequest const&, char const*, char const*, char const*) const (/usr/bin/clickhouse+0x3ab0ddcb) (BuildId: b3766b865d6580f6dcba75acf37673d4aeedc2b6)
+    /// 2024-03-19 08:34:03     #14 0x55f9fb6fdb17 in Aws::Client::AWSClient::AttemptExhaustively(Aws::Http::URI const&, Aws::AmazonWebServiceRequest const&, Aws::Http::HttpMethod, char const*, char const*, char const*) const (/usr/bin/clickhouse+0x3ab00b17) (BuildId: b3766b865d6580f6dcba75acf37673d4aeedc2b6)
+    /// 2024-03-19 08:34:03     #15 0x55f9fb756862 in Aws::Client::AWSXMLClient::MakeRequest(Aws::Http::URI const&, Aws::AmazonWebServiceRequest const&, Aws::Http::HttpMethod, char const*, char const*, char const*) const (/usr/bin/clickhouse+0x3ab59862) (BuildId: b3766b865d6580f6dcba75acf37673d4aeedc2b6)
+    /// 2024-03-19 08:34:03     #16 0x55f9fb756547 in Aws::Client::AWSXMLClient::MakeRequest(Aws::AmazonWebServiceRequest const&, Aws::Endpoint::AWSEndpoint const&, Aws::Http::HttpMethod, char const*, char const*, char const*) const (/usr/bin/clickhouse+0x3ab59547) (BuildId: b3766b865d6580f6dcba75acf37673d4aeedc2b6)
+    /// 2024-03-19 08:34:03     #17 0x55f9fbc08fab in Aws::Utils::Outcome<Aws::S3::Model::PutObjectResult, Aws::S3::S3Error> std::__1::__function::__policy_invoker<Aws::Utils::Outcome<Aws::S3::Model::PutObjectResult, Aws::S3::S3Error> ()>::__call_impl<std::__1::__function::__default_alloc_func<Aws::S3::S3Client::PutObject(Aws::S3::Model::PutObjectRequest const&) const::$_0, Aws::Utils::Outcome<Aws::S3::Model::PutObjectResult, Aws::S3::S3Error> ()>>(std::__1::__function::__policy_storage const*) S3Client.cpp
+#endif
     Aws::String signingKey(Aws::Auth::AWSAuthHelper::SIGNING_KEY);
     signingKey.append(secretKey);
     auto hashResult = m_HMAC->Calculate(ByteBuffer((unsigned char*)simpleDate.c_str(), simpleDate.length()),
