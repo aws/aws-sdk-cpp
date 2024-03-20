@@ -46,50 +46,66 @@ namespace Model
 
 
     /**
-     * <p>The name of the table containing the requested items; or, if you provide
+     * <p>The name of the table containing the requested items or if you provide
      * <code>IndexName</code>, the name of the table to which that index belongs.</p>
+     * <p>You can also provide the Amazon Resource Name (ARN) of the table in this
+     * parameter.</p>
      */
     inline const Aws::String& GetTableName() const{ return m_tableName; }
 
     /**
-     * <p>The name of the table containing the requested items; or, if you provide
+     * <p>The name of the table containing the requested items or if you provide
      * <code>IndexName</code>, the name of the table to which that index belongs.</p>
+     * <p>You can also provide the Amazon Resource Name (ARN) of the table in this
+     * parameter.</p>
      */
     inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
 
     /**
-     * <p>The name of the table containing the requested items; or, if you provide
+     * <p>The name of the table containing the requested items or if you provide
      * <code>IndexName</code>, the name of the table to which that index belongs.</p>
+     * <p>You can also provide the Amazon Resource Name (ARN) of the table in this
+     * parameter.</p>
      */
     inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
 
     /**
-     * <p>The name of the table containing the requested items; or, if you provide
+     * <p>The name of the table containing the requested items or if you provide
      * <code>IndexName</code>, the name of the table to which that index belongs.</p>
+     * <p>You can also provide the Amazon Resource Name (ARN) of the table in this
+     * parameter.</p>
      */
     inline void SetTableName(Aws::String&& value) { m_tableNameHasBeenSet = true; m_tableName = std::move(value); }
 
     /**
-     * <p>The name of the table containing the requested items; or, if you provide
+     * <p>The name of the table containing the requested items or if you provide
      * <code>IndexName</code>, the name of the table to which that index belongs.</p>
+     * <p>You can also provide the Amazon Resource Name (ARN) of the table in this
+     * parameter.</p>
      */
     inline void SetTableName(const char* value) { m_tableNameHasBeenSet = true; m_tableName.assign(value); }
 
     /**
-     * <p>The name of the table containing the requested items; or, if you provide
+     * <p>The name of the table containing the requested items or if you provide
      * <code>IndexName</code>, the name of the table to which that index belongs.</p>
+     * <p>You can also provide the Amazon Resource Name (ARN) of the table in this
+     * parameter.</p>
      */
     inline ScanRequest& WithTableName(const Aws::String& value) { SetTableName(value); return *this;}
 
     /**
-     * <p>The name of the table containing the requested items; or, if you provide
+     * <p>The name of the table containing the requested items or if you provide
      * <code>IndexName</code>, the name of the table to which that index belongs.</p>
+     * <p>You can also provide the Amazon Resource Name (ARN) of the table in this
+     * parameter.</p>
      */
     inline ScanRequest& WithTableName(Aws::String&& value) { SetTableName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the table containing the requested items; or, if you provide
+     * <p>The name of the table containing the requested items or if you provide
      * <code>IndexName</code>, the name of the table to which that index belongs.</p>
+     * <p>You can also provide the Amazon Resource Name (ARN) of the table in this
+     * parameter.</p>
      */
     inline ScanRequest& WithTableName(const char* value) { SetTableName(value); return *this;}
 

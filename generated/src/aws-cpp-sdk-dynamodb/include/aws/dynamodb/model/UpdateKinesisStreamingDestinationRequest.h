@@ -36,83 +36,91 @@ namespace Model
 
 
     /**
-     * <p>The table name for the Kinesis streaming destination input.</p>
+     * <p>The table name for the Kinesis streaming destination input. You can also
+     * provide the ARN of the table in this parameter.</p>
      */
     inline const Aws::String& GetTableName() const{ return m_tableName; }
 
     /**
-     * <p>The table name for the Kinesis streaming destination input.</p>
+     * <p>The table name for the Kinesis streaming destination input. You can also
+     * provide the ARN of the table in this parameter.</p>
      */
     inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
 
     /**
-     * <p>The table name for the Kinesis streaming destination input.</p>
+     * <p>The table name for the Kinesis streaming destination input. You can also
+     * provide the ARN of the table in this parameter.</p>
      */
     inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
 
     /**
-     * <p>The table name for the Kinesis streaming destination input.</p>
+     * <p>The table name for the Kinesis streaming destination input. You can also
+     * provide the ARN of the table in this parameter.</p>
      */
     inline void SetTableName(Aws::String&& value) { m_tableNameHasBeenSet = true; m_tableName = std::move(value); }
 
     /**
-     * <p>The table name for the Kinesis streaming destination input.</p>
+     * <p>The table name for the Kinesis streaming destination input. You can also
+     * provide the ARN of the table in this parameter.</p>
      */
     inline void SetTableName(const char* value) { m_tableNameHasBeenSet = true; m_tableName.assign(value); }
 
     /**
-     * <p>The table name for the Kinesis streaming destination input.</p>
+     * <p>The table name for the Kinesis streaming destination input. You can also
+     * provide the ARN of the table in this parameter.</p>
      */
     inline UpdateKinesisStreamingDestinationRequest& WithTableName(const Aws::String& value) { SetTableName(value); return *this;}
 
     /**
-     * <p>The table name for the Kinesis streaming destination input.</p>
+     * <p>The table name for the Kinesis streaming destination input. You can also
+     * provide the ARN of the table in this parameter.</p>
      */
     inline UpdateKinesisStreamingDestinationRequest& WithTableName(Aws::String&& value) { SetTableName(std::move(value)); return *this;}
 
     /**
-     * <p>The table name for the Kinesis streaming destination input.</p>
+     * <p>The table name for the Kinesis streaming destination input. You can also
+     * provide the ARN of the table in this parameter.</p>
      */
     inline UpdateKinesisStreamingDestinationRequest& WithTableName(const char* value) { SetTableName(value); return *this;}
 
 
     /**
-     * <p>The ARN for the Kinesis stream input.</p>
+     * <p>The Amazon Resource Name (ARN) for the Kinesis stream input.</p>
      */
     inline const Aws::String& GetStreamArn() const{ return m_streamArn; }
 
     /**
-     * <p>The ARN for the Kinesis stream input.</p>
+     * <p>The Amazon Resource Name (ARN) for the Kinesis stream input.</p>
      */
     inline bool StreamArnHasBeenSet() const { return m_streamArnHasBeenSet; }
 
     /**
-     * <p>The ARN for the Kinesis stream input.</p>
+     * <p>The Amazon Resource Name (ARN) for the Kinesis stream input.</p>
      */
     inline void SetStreamArn(const Aws::String& value) { m_streamArnHasBeenSet = true; m_streamArn = value; }
 
     /**
-     * <p>The ARN for the Kinesis stream input.</p>
+     * <p>The Amazon Resource Name (ARN) for the Kinesis stream input.</p>
      */
     inline void SetStreamArn(Aws::String&& value) { m_streamArnHasBeenSet = true; m_streamArn = std::move(value); }
 
     /**
-     * <p>The ARN for the Kinesis stream input.</p>
+     * <p>The Amazon Resource Name (ARN) for the Kinesis stream input.</p>
      */
     inline void SetStreamArn(const char* value) { m_streamArnHasBeenSet = true; m_streamArn.assign(value); }
 
     /**
-     * <p>The ARN for the Kinesis stream input.</p>
+     * <p>The Amazon Resource Name (ARN) for the Kinesis stream input.</p>
      */
     inline UpdateKinesisStreamingDestinationRequest& WithStreamArn(const Aws::String& value) { SetStreamArn(value); return *this;}
 
     /**
-     * <p>The ARN for the Kinesis stream input.</p>
+     * <p>The Amazon Resource Name (ARN) for the Kinesis stream input.</p>
      */
     inline UpdateKinesisStreamingDestinationRequest& WithStreamArn(Aws::String&& value) { SetStreamArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN for the Kinesis stream input.</p>
+     * <p>The Amazon Resource Name (ARN) for the Kinesis stream input.</p>
      */
     inline UpdateKinesisStreamingDestinationRequest& WithStreamArn(const char* value) { SetStreamArn(value); return *this;}
 

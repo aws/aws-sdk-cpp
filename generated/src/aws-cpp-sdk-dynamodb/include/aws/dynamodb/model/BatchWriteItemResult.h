@@ -49,8 +49,8 @@ namespace Model
      * <code>RequestItems</code>, so you can provide this value directly to a
      * subsequent <code>BatchWriteItem</code> operation. For more information, see
      * <code>RequestItems</code> in the Request Parameters section.</p> <p>Each
-     * <code>UnprocessedItems</code> entry consists of a table name and, for that
-     * table, a list of operations to perform (<code>DeleteRequest</code> or
+     * <code>UnprocessedItems</code> entry consists of a table name or table ARN and,
+     * for that table, a list of operations to perform (<code>DeleteRequest</code> or
      * <code>PutRequest</code>).</p> <ul> <li> <p> <code>DeleteRequest</code> - Perform
      * a <code>DeleteItem</code> operation on the specified item. The item to be
      * deleted is identified by a <code>Key</code> subelement:</p> <ul> <li> <p>
@@ -77,8 +77,8 @@ namespace Model
      * <code>RequestItems</code>, so you can provide this value directly to a
      * subsequent <code>BatchWriteItem</code> operation. For more information, see
      * <code>RequestItems</code> in the Request Parameters section.</p> <p>Each
-     * <code>UnprocessedItems</code> entry consists of a table name and, for that
-     * table, a list of operations to perform (<code>DeleteRequest</code> or
+     * <code>UnprocessedItems</code> entry consists of a table name or table ARN and,
+     * for that table, a list of operations to perform (<code>DeleteRequest</code> or
      * <code>PutRequest</code>).</p> <ul> <li> <p> <code>DeleteRequest</code> - Perform
      * a <code>DeleteItem</code> operation on the specified item. The item to be
      * deleted is identified by a <code>Key</code> subelement:</p> <ul> <li> <p>
@@ -105,8 +105,8 @@ namespace Model
      * <code>RequestItems</code>, so you can provide this value directly to a
      * subsequent <code>BatchWriteItem</code> operation. For more information, see
      * <code>RequestItems</code> in the Request Parameters section.</p> <p>Each
-     * <code>UnprocessedItems</code> entry consists of a table name and, for that
-     * table, a list of operations to perform (<code>DeleteRequest</code> or
+     * <code>UnprocessedItems</code> entry consists of a table name or table ARN and,
+     * for that table, a list of operations to perform (<code>DeleteRequest</code> or
      * <code>PutRequest</code>).</p> <ul> <li> <p> <code>DeleteRequest</code> - Perform
      * a <code>DeleteItem</code> operation on the specified item. The item to be
      * deleted is identified by a <code>Key</code> subelement:</p> <ul> <li> <p>
@@ -133,8 +133,8 @@ namespace Model
      * <code>RequestItems</code>, so you can provide this value directly to a
      * subsequent <code>BatchWriteItem</code> operation. For more information, see
      * <code>RequestItems</code> in the Request Parameters section.</p> <p>Each
-     * <code>UnprocessedItems</code> entry consists of a table name and, for that
-     * table, a list of operations to perform (<code>DeleteRequest</code> or
+     * <code>UnprocessedItems</code> entry consists of a table name or table ARN and,
+     * for that table, a list of operations to perform (<code>DeleteRequest</code> or
      * <code>PutRequest</code>).</p> <ul> <li> <p> <code>DeleteRequest</code> - Perform
      * a <code>DeleteItem</code> operation on the specified item. The item to be
      * deleted is identified by a <code>Key</code> subelement:</p> <ul> <li> <p>
@@ -161,8 +161,8 @@ namespace Model
      * <code>RequestItems</code>, so you can provide this value directly to a
      * subsequent <code>BatchWriteItem</code> operation. For more information, see
      * <code>RequestItems</code> in the Request Parameters section.</p> <p>Each
-     * <code>UnprocessedItems</code> entry consists of a table name and, for that
-     * table, a list of operations to perform (<code>DeleteRequest</code> or
+     * <code>UnprocessedItems</code> entry consists of a table name or table ARN and,
+     * for that table, a list of operations to perform (<code>DeleteRequest</code> or
      * <code>PutRequest</code>).</p> <ul> <li> <p> <code>DeleteRequest</code> - Perform
      * a <code>DeleteItem</code> operation on the specified item. The item to be
      * deleted is identified by a <code>Key</code> subelement:</p> <ul> <li> <p>
@@ -189,8 +189,8 @@ namespace Model
      * <code>RequestItems</code>, so you can provide this value directly to a
      * subsequent <code>BatchWriteItem</code> operation. For more information, see
      * <code>RequestItems</code> in the Request Parameters section.</p> <p>Each
-     * <code>UnprocessedItems</code> entry consists of a table name and, for that
-     * table, a list of operations to perform (<code>DeleteRequest</code> or
+     * <code>UnprocessedItems</code> entry consists of a table name or table ARN and,
+     * for that table, a list of operations to perform (<code>DeleteRequest</code> or
      * <code>PutRequest</code>).</p> <ul> <li> <p> <code>DeleteRequest</code> - Perform
      * a <code>DeleteItem</code> operation on the specified item. The item to be
      * deleted is identified by a <code>Key</code> subelement:</p> <ul> <li> <p>
@@ -217,8 +217,8 @@ namespace Model
      * <code>RequestItems</code>, so you can provide this value directly to a
      * subsequent <code>BatchWriteItem</code> operation. For more information, see
      * <code>RequestItems</code> in the Request Parameters section.</p> <p>Each
-     * <code>UnprocessedItems</code> entry consists of a table name and, for that
-     * table, a list of operations to perform (<code>DeleteRequest</code> or
+     * <code>UnprocessedItems</code> entry consists of a table name or table ARN and,
+     * for that table, a list of operations to perform (<code>DeleteRequest</code> or
      * <code>PutRequest</code>).</p> <ul> <li> <p> <code>DeleteRequest</code> - Perform
      * a <code>DeleteItem</code> operation on the specified item. The item to be
      * deleted is identified by a <code>Key</code> subelement:</p> <ul> <li> <p>
@@ -245,8 +245,8 @@ namespace Model
      * <code>RequestItems</code>, so you can provide this value directly to a
      * subsequent <code>BatchWriteItem</code> operation. For more information, see
      * <code>RequestItems</code> in the Request Parameters section.</p> <p>Each
-     * <code>UnprocessedItems</code> entry consists of a table name and, for that
-     * table, a list of operations to perform (<code>DeleteRequest</code> or
+     * <code>UnprocessedItems</code> entry consists of a table name or table ARN and,
+     * for that table, a list of operations to perform (<code>DeleteRequest</code> or
      * <code>PutRequest</code>).</p> <ul> <li> <p> <code>DeleteRequest</code> - Perform
      * a <code>DeleteItem</code> operation on the specified item. The item to be
      * deleted is identified by a <code>Key</code> subelement:</p> <ul> <li> <p>
@@ -273,8 +273,8 @@ namespace Model
      * <code>RequestItems</code>, so you can provide this value directly to a
      * subsequent <code>BatchWriteItem</code> operation. For more information, see
      * <code>RequestItems</code> in the Request Parameters section.</p> <p>Each
-     * <code>UnprocessedItems</code> entry consists of a table name and, for that
-     * table, a list of operations to perform (<code>DeleteRequest</code> or
+     * <code>UnprocessedItems</code> entry consists of a table name or table ARN and,
+     * for that table, a list of operations to perform (<code>DeleteRequest</code> or
      * <code>PutRequest</code>).</p> <ul> <li> <p> <code>DeleteRequest</code> - Perform
      * a <code>DeleteItem</code> operation on the specified item. The item to be
      * deleted is identified by a <code>Key</code> subelement:</p> <ul> <li> <p>
@@ -301,8 +301,8 @@ namespace Model
      * <code>RequestItems</code>, so you can provide this value directly to a
      * subsequent <code>BatchWriteItem</code> operation. For more information, see
      * <code>RequestItems</code> in the Request Parameters section.</p> <p>Each
-     * <code>UnprocessedItems</code> entry consists of a table name and, for that
-     * table, a list of operations to perform (<code>DeleteRequest</code> or
+     * <code>UnprocessedItems</code> entry consists of a table name or table ARN and,
+     * for that table, a list of operations to perform (<code>DeleteRequest</code> or
      * <code>PutRequest</code>).</p> <ul> <li> <p> <code>DeleteRequest</code> - Perform
      * a <code>DeleteItem</code> operation on the specified item. The item to be
      * deleted is identified by a <code>Key</code> subelement:</p> <ul> <li> <p>
@@ -329,8 +329,8 @@ namespace Model
      * <code>RequestItems</code>, so you can provide this value directly to a
      * subsequent <code>BatchWriteItem</code> operation. For more information, see
      * <code>RequestItems</code> in the Request Parameters section.</p> <p>Each
-     * <code>UnprocessedItems</code> entry consists of a table name and, for that
-     * table, a list of operations to perform (<code>DeleteRequest</code> or
+     * <code>UnprocessedItems</code> entry consists of a table name or table ARN and,
+     * for that table, a list of operations to perform (<code>DeleteRequest</code> or
      * <code>PutRequest</code>).</p> <ul> <li> <p> <code>DeleteRequest</code> - Perform
      * a <code>DeleteItem</code> operation on the specified item. The item to be
      * deleted is identified by a <code>Key</code> subelement:</p> <ul> <li> <p>

@@ -363,42 +363,50 @@ namespace Model
 
 
     /**
-     * <p>The specific AWS operation for the line item in the billing report.</p>
+     * <p>The specific Amazon Web Services operation for the line item in the billing
+     * report.</p>
      */
     inline const Aws::String& GetOperation() const{ return m_operation; }
 
     /**
-     * <p>The specific AWS operation for the line item in the billing report.</p>
+     * <p>The specific Amazon Web Services operation for the line item in the billing
+     * report.</p>
      */
     inline bool OperationHasBeenSet() const { return m_operationHasBeenSet; }
 
     /**
-     * <p>The specific AWS operation for the line item in the billing report.</p>
+     * <p>The specific Amazon Web Services operation for the line item in the billing
+     * report.</p>
      */
     inline void SetOperation(const Aws::String& value) { m_operationHasBeenSet = true; m_operation = value; }
 
     /**
-     * <p>The specific AWS operation for the line item in the billing report.</p>
+     * <p>The specific Amazon Web Services operation for the line item in the billing
+     * report.</p>
      */
     inline void SetOperation(Aws::String&& value) { m_operationHasBeenSet = true; m_operation = std::move(value); }
 
     /**
-     * <p>The specific AWS operation for the line item in the billing report.</p>
+     * <p>The specific Amazon Web Services operation for the line item in the billing
+     * report.</p>
      */
     inline void SetOperation(const char* value) { m_operationHasBeenSet = true; m_operation.assign(value); }
 
     /**
-     * <p>The specific AWS operation for the line item in the billing report.</p>
+     * <p>The specific Amazon Web Services operation for the line item in the billing
+     * report.</p>
      */
     inline SavingsPlanOffering& WithOperation(const Aws::String& value) { SetOperation(value); return *this;}
 
     /**
-     * <p>The specific AWS operation for the line item in the billing report.</p>
+     * <p>The specific Amazon Web Services operation for the line item in the billing
+     * report.</p>
      */
     inline SavingsPlanOffering& WithOperation(Aws::String&& value) { SetOperation(std::move(value)); return *this;}
 
     /**
-     * <p>The specific AWS operation for the line item in the billing report.</p>
+     * <p>The specific Amazon Web Services operation for the line item in the billing
+     * report.</p>
      */
     inline SavingsPlanOffering& WithOperation(const char* value) { SetOperation(value); return *this;}
 

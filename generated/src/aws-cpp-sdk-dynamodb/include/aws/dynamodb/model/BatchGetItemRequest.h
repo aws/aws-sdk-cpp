@@ -42,13 +42,13 @@ namespace Model
 
 
     /**
-     * <p>A map of one or more table names and, for each table, a map that describes
-     * one or more items to retrieve from that table. Each table name can be used only
-     * once per <code>BatchGetItem</code> request.</p> <p>Each element in the map of
-     * items to retrieve consists of the following:</p> <ul> <li> <p>
-     * <code>ConsistentRead</code> - If <code>true</code>, a strongly consistent read
-     * is used; if <code>false</code> (the default), an eventually consistent read is
-     * used.</p> </li> <li> <p> <code>ExpressionAttributeNames</code> - One or more
+     * <p>A map of one or more table names or table ARNs and, for each table, a map
+     * that describes one or more items to retrieve from that table. Each table name or
+     * ARN can be used only once per <code>BatchGetItem</code> request.</p> <p>Each
+     * element in the map of items to retrieve consists of the following:</p> <ul> <li>
+     * <p> <code>ConsistentRead</code> - If <code>true</code>, a strongly consistent
+     * read is used; if <code>false</code> (the default), an eventually consistent read
+     * is used.</p> </li> <li> <p> <code>ExpressionAttributeNames</code> - One or more
      * substitution tokens for attribute names in the <code>ProjectionExpression</code>
      * parameter. The following are some use cases for using
      * <code>ExpressionAttributeNames</code>:</p> <ul> <li> <p>To access an attribute
@@ -93,13 +93,13 @@ namespace Model
     inline const Aws::Map<Aws::String, KeysAndAttributes>& GetRequestItems() const{ return m_requestItems; }
 
     /**
-     * <p>A map of one or more table names and, for each table, a map that describes
-     * one or more items to retrieve from that table. Each table name can be used only
-     * once per <code>BatchGetItem</code> request.</p> <p>Each element in the map of
-     * items to retrieve consists of the following:</p> <ul> <li> <p>
-     * <code>ConsistentRead</code> - If <code>true</code>, a strongly consistent read
-     * is used; if <code>false</code> (the default), an eventually consistent read is
-     * used.</p> </li> <li> <p> <code>ExpressionAttributeNames</code> - One or more
+     * <p>A map of one or more table names or table ARNs and, for each table, a map
+     * that describes one or more items to retrieve from that table. Each table name or
+     * ARN can be used only once per <code>BatchGetItem</code> request.</p> <p>Each
+     * element in the map of items to retrieve consists of the following:</p> <ul> <li>
+     * <p> <code>ConsistentRead</code> - If <code>true</code>, a strongly consistent
+     * read is used; if <code>false</code> (the default), an eventually consistent read
+     * is used.</p> </li> <li> <p> <code>ExpressionAttributeNames</code> - One or more
      * substitution tokens for attribute names in the <code>ProjectionExpression</code>
      * parameter. The following are some use cases for using
      * <code>ExpressionAttributeNames</code>:</p> <ul> <li> <p>To access an attribute
@@ -144,13 +144,13 @@ namespace Model
     inline bool RequestItemsHasBeenSet() const { return m_requestItemsHasBeenSet; }
 
     /**
-     * <p>A map of one or more table names and, for each table, a map that describes
-     * one or more items to retrieve from that table. Each table name can be used only
-     * once per <code>BatchGetItem</code> request.</p> <p>Each element in the map of
-     * items to retrieve consists of the following:</p> <ul> <li> <p>
-     * <code>ConsistentRead</code> - If <code>true</code>, a strongly consistent read
-     * is used; if <code>false</code> (the default), an eventually consistent read is
-     * used.</p> </li> <li> <p> <code>ExpressionAttributeNames</code> - One or more
+     * <p>A map of one or more table names or table ARNs and, for each table, a map
+     * that describes one or more items to retrieve from that table. Each table name or
+     * ARN can be used only once per <code>BatchGetItem</code> request.</p> <p>Each
+     * element in the map of items to retrieve consists of the following:</p> <ul> <li>
+     * <p> <code>ConsistentRead</code> - If <code>true</code>, a strongly consistent
+     * read is used; if <code>false</code> (the default), an eventually consistent read
+     * is used.</p> </li> <li> <p> <code>ExpressionAttributeNames</code> - One or more
      * substitution tokens for attribute names in the <code>ProjectionExpression</code>
      * parameter. The following are some use cases for using
      * <code>ExpressionAttributeNames</code>:</p> <ul> <li> <p>To access an attribute
@@ -195,13 +195,13 @@ namespace Model
     inline void SetRequestItems(const Aws::Map<Aws::String, KeysAndAttributes>& value) { m_requestItemsHasBeenSet = true; m_requestItems = value; }
 
     /**
-     * <p>A map of one or more table names and, for each table, a map that describes
-     * one or more items to retrieve from that table. Each table name can be used only
-     * once per <code>BatchGetItem</code> request.</p> <p>Each element in the map of
-     * items to retrieve consists of the following:</p> <ul> <li> <p>
-     * <code>ConsistentRead</code> - If <code>true</code>, a strongly consistent read
-     * is used; if <code>false</code> (the default), an eventually consistent read is
-     * used.</p> </li> <li> <p> <code>ExpressionAttributeNames</code> - One or more
+     * <p>A map of one or more table names or table ARNs and, for each table, a map
+     * that describes one or more items to retrieve from that table. Each table name or
+     * ARN can be used only once per <code>BatchGetItem</code> request.</p> <p>Each
+     * element in the map of items to retrieve consists of the following:</p> <ul> <li>
+     * <p> <code>ConsistentRead</code> - If <code>true</code>, a strongly consistent
+     * read is used; if <code>false</code> (the default), an eventually consistent read
+     * is used.</p> </li> <li> <p> <code>ExpressionAttributeNames</code> - One or more
      * substitution tokens for attribute names in the <code>ProjectionExpression</code>
      * parameter. The following are some use cases for using
      * <code>ExpressionAttributeNames</code>:</p> <ul> <li> <p>To access an attribute
@@ -246,13 +246,13 @@ namespace Model
     inline void SetRequestItems(Aws::Map<Aws::String, KeysAndAttributes>&& value) { m_requestItemsHasBeenSet = true; m_requestItems = std::move(value); }
 
     /**
-     * <p>A map of one or more table names and, for each table, a map that describes
-     * one or more items to retrieve from that table. Each table name can be used only
-     * once per <code>BatchGetItem</code> request.</p> <p>Each element in the map of
-     * items to retrieve consists of the following:</p> <ul> <li> <p>
-     * <code>ConsistentRead</code> - If <code>true</code>, a strongly consistent read
-     * is used; if <code>false</code> (the default), an eventually consistent read is
-     * used.</p> </li> <li> <p> <code>ExpressionAttributeNames</code> - One or more
+     * <p>A map of one or more table names or table ARNs and, for each table, a map
+     * that describes one or more items to retrieve from that table. Each table name or
+     * ARN can be used only once per <code>BatchGetItem</code> request.</p> <p>Each
+     * element in the map of items to retrieve consists of the following:</p> <ul> <li>
+     * <p> <code>ConsistentRead</code> - If <code>true</code>, a strongly consistent
+     * read is used; if <code>false</code> (the default), an eventually consistent read
+     * is used.</p> </li> <li> <p> <code>ExpressionAttributeNames</code> - One or more
      * substitution tokens for attribute names in the <code>ProjectionExpression</code>
      * parameter. The following are some use cases for using
      * <code>ExpressionAttributeNames</code>:</p> <ul> <li> <p>To access an attribute
@@ -297,13 +297,13 @@ namespace Model
     inline BatchGetItemRequest& WithRequestItems(const Aws::Map<Aws::String, KeysAndAttributes>& value) { SetRequestItems(value); return *this;}
 
     /**
-     * <p>A map of one or more table names and, for each table, a map that describes
-     * one or more items to retrieve from that table. Each table name can be used only
-     * once per <code>BatchGetItem</code> request.</p> <p>Each element in the map of
-     * items to retrieve consists of the following:</p> <ul> <li> <p>
-     * <code>ConsistentRead</code> - If <code>true</code>, a strongly consistent read
-     * is used; if <code>false</code> (the default), an eventually consistent read is
-     * used.</p> </li> <li> <p> <code>ExpressionAttributeNames</code> - One or more
+     * <p>A map of one or more table names or table ARNs and, for each table, a map
+     * that describes one or more items to retrieve from that table. Each table name or
+     * ARN can be used only once per <code>BatchGetItem</code> request.</p> <p>Each
+     * element in the map of items to retrieve consists of the following:</p> <ul> <li>
+     * <p> <code>ConsistentRead</code> - If <code>true</code>, a strongly consistent
+     * read is used; if <code>false</code> (the default), an eventually consistent read
+     * is used.</p> </li> <li> <p> <code>ExpressionAttributeNames</code> - One or more
      * substitution tokens for attribute names in the <code>ProjectionExpression</code>
      * parameter. The following are some use cases for using
      * <code>ExpressionAttributeNames</code>:</p> <ul> <li> <p>To access an attribute
@@ -348,13 +348,13 @@ namespace Model
     inline BatchGetItemRequest& WithRequestItems(Aws::Map<Aws::String, KeysAndAttributes>&& value) { SetRequestItems(std::move(value)); return *this;}
 
     /**
-     * <p>A map of one or more table names and, for each table, a map that describes
-     * one or more items to retrieve from that table. Each table name can be used only
-     * once per <code>BatchGetItem</code> request.</p> <p>Each element in the map of
-     * items to retrieve consists of the following:</p> <ul> <li> <p>
-     * <code>ConsistentRead</code> - If <code>true</code>, a strongly consistent read
-     * is used; if <code>false</code> (the default), an eventually consistent read is
-     * used.</p> </li> <li> <p> <code>ExpressionAttributeNames</code> - One or more
+     * <p>A map of one or more table names or table ARNs and, for each table, a map
+     * that describes one or more items to retrieve from that table. Each table name or
+     * ARN can be used only once per <code>BatchGetItem</code> request.</p> <p>Each
+     * element in the map of items to retrieve consists of the following:</p> <ul> <li>
+     * <p> <code>ConsistentRead</code> - If <code>true</code>, a strongly consistent
+     * read is used; if <code>false</code> (the default), an eventually consistent read
+     * is used.</p> </li> <li> <p> <code>ExpressionAttributeNames</code> - One or more
      * substitution tokens for attribute names in the <code>ProjectionExpression</code>
      * parameter. The following are some use cases for using
      * <code>ExpressionAttributeNames</code>:</p> <ul> <li> <p>To access an attribute
@@ -399,13 +399,13 @@ namespace Model
     inline BatchGetItemRequest& AddRequestItems(const Aws::String& key, const KeysAndAttributes& value) { m_requestItemsHasBeenSet = true; m_requestItems.emplace(key, value); return *this; }
 
     /**
-     * <p>A map of one or more table names and, for each table, a map that describes
-     * one or more items to retrieve from that table. Each table name can be used only
-     * once per <code>BatchGetItem</code> request.</p> <p>Each element in the map of
-     * items to retrieve consists of the following:</p> <ul> <li> <p>
-     * <code>ConsistentRead</code> - If <code>true</code>, a strongly consistent read
-     * is used; if <code>false</code> (the default), an eventually consistent read is
-     * used.</p> </li> <li> <p> <code>ExpressionAttributeNames</code> - One or more
+     * <p>A map of one or more table names or table ARNs and, for each table, a map
+     * that describes one or more items to retrieve from that table. Each table name or
+     * ARN can be used only once per <code>BatchGetItem</code> request.</p> <p>Each
+     * element in the map of items to retrieve consists of the following:</p> <ul> <li>
+     * <p> <code>ConsistentRead</code> - If <code>true</code>, a strongly consistent
+     * read is used; if <code>false</code> (the default), an eventually consistent read
+     * is used.</p> </li> <li> <p> <code>ExpressionAttributeNames</code> - One or more
      * substitution tokens for attribute names in the <code>ProjectionExpression</code>
      * parameter. The following are some use cases for using
      * <code>ExpressionAttributeNames</code>:</p> <ul> <li> <p>To access an attribute
@@ -450,13 +450,13 @@ namespace Model
     inline BatchGetItemRequest& AddRequestItems(Aws::String&& key, const KeysAndAttributes& value) { m_requestItemsHasBeenSet = true; m_requestItems.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A map of one or more table names and, for each table, a map that describes
-     * one or more items to retrieve from that table. Each table name can be used only
-     * once per <code>BatchGetItem</code> request.</p> <p>Each element in the map of
-     * items to retrieve consists of the following:</p> <ul> <li> <p>
-     * <code>ConsistentRead</code> - If <code>true</code>, a strongly consistent read
-     * is used; if <code>false</code> (the default), an eventually consistent read is
-     * used.</p> </li> <li> <p> <code>ExpressionAttributeNames</code> - One or more
+     * <p>A map of one or more table names or table ARNs and, for each table, a map
+     * that describes one or more items to retrieve from that table. Each table name or
+     * ARN can be used only once per <code>BatchGetItem</code> request.</p> <p>Each
+     * element in the map of items to retrieve consists of the following:</p> <ul> <li>
+     * <p> <code>ConsistentRead</code> - If <code>true</code>, a strongly consistent
+     * read is used; if <code>false</code> (the default), an eventually consistent read
+     * is used.</p> </li> <li> <p> <code>ExpressionAttributeNames</code> - One or more
      * substitution tokens for attribute names in the <code>ProjectionExpression</code>
      * parameter. The following are some use cases for using
      * <code>ExpressionAttributeNames</code>:</p> <ul> <li> <p>To access an attribute
@@ -501,13 +501,13 @@ namespace Model
     inline BatchGetItemRequest& AddRequestItems(const Aws::String& key, KeysAndAttributes&& value) { m_requestItemsHasBeenSet = true; m_requestItems.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A map of one or more table names and, for each table, a map that describes
-     * one or more items to retrieve from that table. Each table name can be used only
-     * once per <code>BatchGetItem</code> request.</p> <p>Each element in the map of
-     * items to retrieve consists of the following:</p> <ul> <li> <p>
-     * <code>ConsistentRead</code> - If <code>true</code>, a strongly consistent read
-     * is used; if <code>false</code> (the default), an eventually consistent read is
-     * used.</p> </li> <li> <p> <code>ExpressionAttributeNames</code> - One or more
+     * <p>A map of one or more table names or table ARNs and, for each table, a map
+     * that describes one or more items to retrieve from that table. Each table name or
+     * ARN can be used only once per <code>BatchGetItem</code> request.</p> <p>Each
+     * element in the map of items to retrieve consists of the following:</p> <ul> <li>
+     * <p> <code>ConsistentRead</code> - If <code>true</code>, a strongly consistent
+     * read is used; if <code>false</code> (the default), an eventually consistent read
+     * is used.</p> </li> <li> <p> <code>ExpressionAttributeNames</code> - One or more
      * substitution tokens for attribute names in the <code>ProjectionExpression</code>
      * parameter. The following are some use cases for using
      * <code>ExpressionAttributeNames</code>:</p> <ul> <li> <p>To access an attribute
@@ -552,13 +552,13 @@ namespace Model
     inline BatchGetItemRequest& AddRequestItems(Aws::String&& key, KeysAndAttributes&& value) { m_requestItemsHasBeenSet = true; m_requestItems.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>A map of one or more table names and, for each table, a map that describes
-     * one or more items to retrieve from that table. Each table name can be used only
-     * once per <code>BatchGetItem</code> request.</p> <p>Each element in the map of
-     * items to retrieve consists of the following:</p> <ul> <li> <p>
-     * <code>ConsistentRead</code> - If <code>true</code>, a strongly consistent read
-     * is used; if <code>false</code> (the default), an eventually consistent read is
-     * used.</p> </li> <li> <p> <code>ExpressionAttributeNames</code> - One or more
+     * <p>A map of one or more table names or table ARNs and, for each table, a map
+     * that describes one or more items to retrieve from that table. Each table name or
+     * ARN can be used only once per <code>BatchGetItem</code> request.</p> <p>Each
+     * element in the map of items to retrieve consists of the following:</p> <ul> <li>
+     * <p> <code>ConsistentRead</code> - If <code>true</code>, a strongly consistent
+     * read is used; if <code>false</code> (the default), an eventually consistent read
+     * is used.</p> </li> <li> <p> <code>ExpressionAttributeNames</code> - One or more
      * substitution tokens for attribute names in the <code>ProjectionExpression</code>
      * parameter. The following are some use cases for using
      * <code>ExpressionAttributeNames</code>:</p> <ul> <li> <p>To access an attribute
@@ -603,13 +603,13 @@ namespace Model
     inline BatchGetItemRequest& AddRequestItems(const char* key, KeysAndAttributes&& value) { m_requestItemsHasBeenSet = true; m_requestItems.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A map of one or more table names and, for each table, a map that describes
-     * one or more items to retrieve from that table. Each table name can be used only
-     * once per <code>BatchGetItem</code> request.</p> <p>Each element in the map of
-     * items to retrieve consists of the following:</p> <ul> <li> <p>
-     * <code>ConsistentRead</code> - If <code>true</code>, a strongly consistent read
-     * is used; if <code>false</code> (the default), an eventually consistent read is
-     * used.</p> </li> <li> <p> <code>ExpressionAttributeNames</code> - One or more
+     * <p>A map of one or more table names or table ARNs and, for each table, a map
+     * that describes one or more items to retrieve from that table. Each table name or
+     * ARN can be used only once per <code>BatchGetItem</code> request.</p> <p>Each
+     * element in the map of items to retrieve consists of the following:</p> <ul> <li>
+     * <p> <code>ConsistentRead</code> - If <code>true</code>, a strongly consistent
+     * read is used; if <code>false</code> (the default), an eventually consistent read
+     * is used.</p> </li> <li> <p> <code>ExpressionAttributeNames</code> - One or more
      * substitution tokens for attribute names in the <code>ProjectionExpression</code>
      * parameter. The following are some use cases for using
      * <code>ExpressionAttributeNames</code>:</p> <ul> <li> <p>To access an attribute

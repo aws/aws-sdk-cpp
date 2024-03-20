@@ -291,73 +291,73 @@ namespace Model
 
 
     /**
-     * <p>The state.</p>
+     * <p>The current state.</p>
      */
     inline const SavingsPlanState& GetState() const{ return m_state; }
 
     /**
-     * <p>The state.</p>
+     * <p>The current state.</p>
      */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
-     * <p>The state.</p>
+     * <p>The current state.</p>
      */
     inline void SetState(const SavingsPlanState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
-     * <p>The state.</p>
+     * <p>The current state.</p>
      */
     inline void SetState(SavingsPlanState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
     /**
-     * <p>The state.</p>
+     * <p>The current state.</p>
      */
     inline SavingsPlan& WithState(const SavingsPlanState& value) { SetState(value); return *this;}
 
     /**
-     * <p>The state.</p>
+     * <p>The current state.</p>
      */
     inline SavingsPlan& WithState(SavingsPlanState&& value) { SetState(std::move(value)); return *this;}
 
 
     /**
-     * <p>The AWS Region.</p>
+     * <p>The Amazon Web Services Region.</p>
      */
     inline const Aws::String& GetRegion() const{ return m_region; }
 
     /**
-     * <p>The AWS Region.</p>
+     * <p>The Amazon Web Services Region.</p>
      */
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
 
     /**
-     * <p>The AWS Region.</p>
+     * <p>The Amazon Web Services Region.</p>
      */
     inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
 
     /**
-     * <p>The AWS Region.</p>
+     * <p>The Amazon Web Services Region.</p>
      */
     inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
 
     /**
-     * <p>The AWS Region.</p>
+     * <p>The Amazon Web Services Region.</p>
      */
     inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
 
     /**
-     * <p>The AWS Region.</p>
+     * <p>The Amazon Web Services Region.</p>
      */
     inline SavingsPlan& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
 
     /**
-     * <p>The AWS Region.</p>
+     * <p>The Amazon Web Services Region.</p>
      */
     inline SavingsPlan& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Region.</p>
+     * <p>The Amazon Web Services Region.</p>
      */
     inline SavingsPlan& WithRegion(const char* value) { SetRegion(value); return *this;}
 
@@ -538,42 +538,42 @@ namespace Model
 
 
     /**
-     * <p>The hourly commitment, in USD.</p>
+     * <p>The hourly commitment amount in the specified currency.</p>
      */
     inline const Aws::String& GetCommitment() const{ return m_commitment; }
 
     /**
-     * <p>The hourly commitment, in USD.</p>
+     * <p>The hourly commitment amount in the specified currency.</p>
      */
     inline bool CommitmentHasBeenSet() const { return m_commitmentHasBeenSet; }
 
     /**
-     * <p>The hourly commitment, in USD.</p>
+     * <p>The hourly commitment amount in the specified currency.</p>
      */
     inline void SetCommitment(const Aws::String& value) { m_commitmentHasBeenSet = true; m_commitment = value; }
 
     /**
-     * <p>The hourly commitment, in USD.</p>
+     * <p>The hourly commitment amount in the specified currency.</p>
      */
     inline void SetCommitment(Aws::String&& value) { m_commitmentHasBeenSet = true; m_commitment = std::move(value); }
 
     /**
-     * <p>The hourly commitment, in USD.</p>
+     * <p>The hourly commitment amount in the specified currency.</p>
      */
     inline void SetCommitment(const char* value) { m_commitmentHasBeenSet = true; m_commitment.assign(value); }
 
     /**
-     * <p>The hourly commitment, in USD.</p>
+     * <p>The hourly commitment amount in the specified currency.</p>
      */
     inline SavingsPlan& WithCommitment(const Aws::String& value) { SetCommitment(value); return *this;}
 
     /**
-     * <p>The hourly commitment, in USD.</p>
+     * <p>The hourly commitment amount in the specified currency.</p>
      */
     inline SavingsPlan& WithCommitment(Aws::String&& value) { SetCommitment(std::move(value)); return *this;}
 
     /**
-     * <p>The hourly commitment, in USD.</p>
+     * <p>The hourly commitment amount in the specified currency.</p>
      */
     inline SavingsPlan& WithCommitment(const char* value) { SetCommitment(value); return *this;}
 
@@ -746,6 +746,63 @@ namespace Model
      */
     inline SavingsPlan& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The time until when a return for the Savings Plan can be requested. If the
+     * Savings Plan is not returnable, the field reflects the Savings Plan start
+     * time.</p>
+     */
+    inline const Aws::String& GetReturnableUntil() const{ return m_returnableUntil; }
+
+    /**
+     * <p>The time until when a return for the Savings Plan can be requested. If the
+     * Savings Plan is not returnable, the field reflects the Savings Plan start
+     * time.</p>
+     */
+    inline bool ReturnableUntilHasBeenSet() const { return m_returnableUntilHasBeenSet; }
+
+    /**
+     * <p>The time until when a return for the Savings Plan can be requested. If the
+     * Savings Plan is not returnable, the field reflects the Savings Plan start
+     * time.</p>
+     */
+    inline void SetReturnableUntil(const Aws::String& value) { m_returnableUntilHasBeenSet = true; m_returnableUntil = value; }
+
+    /**
+     * <p>The time until when a return for the Savings Plan can be requested. If the
+     * Savings Plan is not returnable, the field reflects the Savings Plan start
+     * time.</p>
+     */
+    inline void SetReturnableUntil(Aws::String&& value) { m_returnableUntilHasBeenSet = true; m_returnableUntil = std::move(value); }
+
+    /**
+     * <p>The time until when a return for the Savings Plan can be requested. If the
+     * Savings Plan is not returnable, the field reflects the Savings Plan start
+     * time.</p>
+     */
+    inline void SetReturnableUntil(const char* value) { m_returnableUntilHasBeenSet = true; m_returnableUntil.assign(value); }
+
+    /**
+     * <p>The time until when a return for the Savings Plan can be requested. If the
+     * Savings Plan is not returnable, the field reflects the Savings Plan start
+     * time.</p>
+     */
+    inline SavingsPlan& WithReturnableUntil(const Aws::String& value) { SetReturnableUntil(value); return *this;}
+
+    /**
+     * <p>The time until when a return for the Savings Plan can be requested. If the
+     * Savings Plan is not returnable, the field reflects the Savings Plan start
+     * time.</p>
+     */
+    inline SavingsPlan& WithReturnableUntil(Aws::String&& value) { SetReturnableUntil(std::move(value)); return *this;}
+
+    /**
+     * <p>The time until when a return for the Savings Plan can be requested. If the
+     * Savings Plan is not returnable, the field reflects the Savings Plan start
+     * time.</p>
+     */
+    inline SavingsPlan& WithReturnableUntil(const char* value) { SetReturnableUntil(value); return *this;}
+
   private:
 
     Aws::String m_offeringId;
@@ -801,6 +858,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    Aws::String m_returnableUntil;
+    bool m_returnableUntilHasBeenSet = false;
   };
 
 } // namespace Model

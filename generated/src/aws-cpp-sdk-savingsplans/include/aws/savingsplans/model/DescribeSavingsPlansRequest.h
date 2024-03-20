@@ -194,42 +194,42 @@ namespace Model
 
 
     /**
-     * <p>The states.</p>
+     * <p>The current states of the Savings Plans.</p>
      */
     inline const Aws::Vector<SavingsPlanState>& GetStates() const{ return m_states; }
 
     /**
-     * <p>The states.</p>
+     * <p>The current states of the Savings Plans.</p>
      */
     inline bool StatesHasBeenSet() const { return m_statesHasBeenSet; }
 
     /**
-     * <p>The states.</p>
+     * <p>The current states of the Savings Plans.</p>
      */
     inline void SetStates(const Aws::Vector<SavingsPlanState>& value) { m_statesHasBeenSet = true; m_states = value; }
 
     /**
-     * <p>The states.</p>
+     * <p>The current states of the Savings Plans.</p>
      */
     inline void SetStates(Aws::Vector<SavingsPlanState>&& value) { m_statesHasBeenSet = true; m_states = std::move(value); }
 
     /**
-     * <p>The states.</p>
+     * <p>The current states of the Savings Plans.</p>
      */
     inline DescribeSavingsPlansRequest& WithStates(const Aws::Vector<SavingsPlanState>& value) { SetStates(value); return *this;}
 
     /**
-     * <p>The states.</p>
+     * <p>The current states of the Savings Plans.</p>
      */
     inline DescribeSavingsPlansRequest& WithStates(Aws::Vector<SavingsPlanState>&& value) { SetStates(std::move(value)); return *this;}
 
     /**
-     * <p>The states.</p>
+     * <p>The current states of the Savings Plans.</p>
      */
     inline DescribeSavingsPlansRequest& AddStates(const SavingsPlanState& value) { m_statesHasBeenSet = true; m_states.push_back(value); return *this; }
 
     /**
-     * <p>The states.</p>
+     * <p>The current states of the Savings Plans.</p>
      */
     inline DescribeSavingsPlansRequest& AddStates(SavingsPlanState&& value) { m_statesHasBeenSet = true; m_states.push_back(std::move(value)); return *this; }
 

@@ -77,49 +77,57 @@ namespace Model
 
 
     /**
-     * <p>The hourly commitment, in USD. This is a value between 0.001 and 1 million.
+     * <p>The hourly commitment, in the same currency of the
+     * <code>savingsPlanOfferingId</code>. This is a value between 0.001 and 1 million.
      * You cannot specify more than five digits after the decimal point.</p>
      */
     inline const Aws::String& GetCommitment() const{ return m_commitment; }
 
     /**
-     * <p>The hourly commitment, in USD. This is a value between 0.001 and 1 million.
+     * <p>The hourly commitment, in the same currency of the
+     * <code>savingsPlanOfferingId</code>. This is a value between 0.001 and 1 million.
      * You cannot specify more than five digits after the decimal point.</p>
      */
     inline bool CommitmentHasBeenSet() const { return m_commitmentHasBeenSet; }
 
     /**
-     * <p>The hourly commitment, in USD. This is a value between 0.001 and 1 million.
+     * <p>The hourly commitment, in the same currency of the
+     * <code>savingsPlanOfferingId</code>. This is a value between 0.001 and 1 million.
      * You cannot specify more than five digits after the decimal point.</p>
      */
     inline void SetCommitment(const Aws::String& value) { m_commitmentHasBeenSet = true; m_commitment = value; }
 
     /**
-     * <p>The hourly commitment, in USD. This is a value between 0.001 and 1 million.
+     * <p>The hourly commitment, in the same currency of the
+     * <code>savingsPlanOfferingId</code>. This is a value between 0.001 and 1 million.
      * You cannot specify more than five digits after the decimal point.</p>
      */
     inline void SetCommitment(Aws::String&& value) { m_commitmentHasBeenSet = true; m_commitment = std::move(value); }
 
     /**
-     * <p>The hourly commitment, in USD. This is a value between 0.001 and 1 million.
+     * <p>The hourly commitment, in the same currency of the
+     * <code>savingsPlanOfferingId</code>. This is a value between 0.001 and 1 million.
      * You cannot specify more than five digits after the decimal point.</p>
      */
     inline void SetCommitment(const char* value) { m_commitmentHasBeenSet = true; m_commitment.assign(value); }
 
     /**
-     * <p>The hourly commitment, in USD. This is a value between 0.001 and 1 million.
+     * <p>The hourly commitment, in the same currency of the
+     * <code>savingsPlanOfferingId</code>. This is a value between 0.001 and 1 million.
      * You cannot specify more than five digits after the decimal point.</p>
      */
     inline CreateSavingsPlanRequest& WithCommitment(const Aws::String& value) { SetCommitment(value); return *this;}
 
     /**
-     * <p>The hourly commitment, in USD. This is a value between 0.001 and 1 million.
+     * <p>The hourly commitment, in the same currency of the
+     * <code>savingsPlanOfferingId</code>. This is a value between 0.001 and 1 million.
      * You cannot specify more than five digits after the decimal point.</p>
      */
     inline CreateSavingsPlanRequest& WithCommitment(Aws::String&& value) { SetCommitment(std::move(value)); return *this;}
 
     /**
-     * <p>The hourly commitment, in USD. This is a value between 0.001 and 1 million.
+     * <p>The hourly commitment, in the same currency of the
+     * <code>savingsPlanOfferingId</code>. This is a value between 0.001 and 1 million.
      * You cannot specify more than five digits after the decimal point.</p>
      */
     inline CreateSavingsPlanRequest& WithCommitment(const char* value) { SetCommitment(value); return *this;}
@@ -127,143 +135,143 @@ namespace Model
 
     /**
      * <p>The up-front payment amount. This is a whole number between 50 and 99 percent
-     * of the total value of the Savings Plan. This parameter is supported only if the
+     * of the total value of the Savings Plan. This parameter is only supported if the
      * payment option is <code>Partial Upfront</code>.</p>
      */
     inline const Aws::String& GetUpfrontPaymentAmount() const{ return m_upfrontPaymentAmount; }
 
     /**
      * <p>The up-front payment amount. This is a whole number between 50 and 99 percent
-     * of the total value of the Savings Plan. This parameter is supported only if the
+     * of the total value of the Savings Plan. This parameter is only supported if the
      * payment option is <code>Partial Upfront</code>.</p>
      */
     inline bool UpfrontPaymentAmountHasBeenSet() const { return m_upfrontPaymentAmountHasBeenSet; }
 
     /**
      * <p>The up-front payment amount. This is a whole number between 50 and 99 percent
-     * of the total value of the Savings Plan. This parameter is supported only if the
+     * of the total value of the Savings Plan. This parameter is only supported if the
      * payment option is <code>Partial Upfront</code>.</p>
      */
     inline void SetUpfrontPaymentAmount(const Aws::String& value) { m_upfrontPaymentAmountHasBeenSet = true; m_upfrontPaymentAmount = value; }
 
     /**
      * <p>The up-front payment amount. This is a whole number between 50 and 99 percent
-     * of the total value of the Savings Plan. This parameter is supported only if the
+     * of the total value of the Savings Plan. This parameter is only supported if the
      * payment option is <code>Partial Upfront</code>.</p>
      */
     inline void SetUpfrontPaymentAmount(Aws::String&& value) { m_upfrontPaymentAmountHasBeenSet = true; m_upfrontPaymentAmount = std::move(value); }
 
     /**
      * <p>The up-front payment amount. This is a whole number between 50 and 99 percent
-     * of the total value of the Savings Plan. This parameter is supported only if the
+     * of the total value of the Savings Plan. This parameter is only supported if the
      * payment option is <code>Partial Upfront</code>.</p>
      */
     inline void SetUpfrontPaymentAmount(const char* value) { m_upfrontPaymentAmountHasBeenSet = true; m_upfrontPaymentAmount.assign(value); }
 
     /**
      * <p>The up-front payment amount. This is a whole number between 50 and 99 percent
-     * of the total value of the Savings Plan. This parameter is supported only if the
+     * of the total value of the Savings Plan. This parameter is only supported if the
      * payment option is <code>Partial Upfront</code>.</p>
      */
     inline CreateSavingsPlanRequest& WithUpfrontPaymentAmount(const Aws::String& value) { SetUpfrontPaymentAmount(value); return *this;}
 
     /**
      * <p>The up-front payment amount. This is a whole number between 50 and 99 percent
-     * of the total value of the Savings Plan. This parameter is supported only if the
+     * of the total value of the Savings Plan. This parameter is only supported if the
      * payment option is <code>Partial Upfront</code>.</p>
      */
     inline CreateSavingsPlanRequest& WithUpfrontPaymentAmount(Aws::String&& value) { SetUpfrontPaymentAmount(std::move(value)); return *this;}
 
     /**
      * <p>The up-front payment amount. This is a whole number between 50 and 99 percent
-     * of the total value of the Savings Plan. This parameter is supported only if the
+     * of the total value of the Savings Plan. This parameter is only supported if the
      * payment option is <code>Partial Upfront</code>.</p>
      */
     inline CreateSavingsPlanRequest& WithUpfrontPaymentAmount(const char* value) { SetUpfrontPaymentAmount(value); return *this;}
 
 
     /**
-     * <p>The time at which to purchase the Savings Plan, in UTC format
+     * <p>The purchase time of the Savings Plan in UTC format
      * (YYYY-MM-DDTHH:MM:SSZ).</p>
      */
     inline const Aws::Utils::DateTime& GetPurchaseTime() const{ return m_purchaseTime; }
 
     /**
-     * <p>The time at which to purchase the Savings Plan, in UTC format
+     * <p>The purchase time of the Savings Plan in UTC format
      * (YYYY-MM-DDTHH:MM:SSZ).</p>
      */
     inline bool PurchaseTimeHasBeenSet() const { return m_purchaseTimeHasBeenSet; }
 
     /**
-     * <p>The time at which to purchase the Savings Plan, in UTC format
+     * <p>The purchase time of the Savings Plan in UTC format
      * (YYYY-MM-DDTHH:MM:SSZ).</p>
      */
     inline void SetPurchaseTime(const Aws::Utils::DateTime& value) { m_purchaseTimeHasBeenSet = true; m_purchaseTime = value; }
 
     /**
-     * <p>The time at which to purchase the Savings Plan, in UTC format
+     * <p>The purchase time of the Savings Plan in UTC format
      * (YYYY-MM-DDTHH:MM:SSZ).</p>
      */
     inline void SetPurchaseTime(Aws::Utils::DateTime&& value) { m_purchaseTimeHasBeenSet = true; m_purchaseTime = std::move(value); }
 
     /**
-     * <p>The time at which to purchase the Savings Plan, in UTC format
+     * <p>The purchase time of the Savings Plan in UTC format
      * (YYYY-MM-DDTHH:MM:SSZ).</p>
      */
     inline CreateSavingsPlanRequest& WithPurchaseTime(const Aws::Utils::DateTime& value) { SetPurchaseTime(value); return *this;}
 
     /**
-     * <p>The time at which to purchase the Savings Plan, in UTC format
+     * <p>The purchase time of the Savings Plan in UTC format
      * (YYYY-MM-DDTHH:MM:SSZ).</p>
      */
     inline CreateSavingsPlanRequest& WithPurchaseTime(Aws::Utils::DateTime&& value) { SetPurchaseTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request.</p>
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request.</p>
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request.</p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request.</p>
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request.</p>
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request.</p>
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request.</p>
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request.</p>
      */
     inline CreateSavingsPlanRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request.</p>
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request.</p>
      */
     inline CreateSavingsPlanRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
-     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
-     * of the request.</p>
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request.</p>
      */
     inline CreateSavingsPlanRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 

@@ -25,6 +25,7 @@ namespace Aws
         static const int AWS_S3_MultiRegionAccessPoint_HASH = HashingUtils::HashString("AWS::S3::MultiRegionAccessPoint");
         static const int AWS_S3ObjectLambda_AccessPoint_HASH = HashingUtils::HashString("AWS::S3ObjectLambda::AccessPoint");
         static const int AWS_IAM_AssumeRolePolicyDocument_HASH = HashingUtils::HashString("AWS::IAM::AssumeRolePolicyDocument");
+        static const int AWS_DynamoDB_Table_HASH = HashingUtils::HashString("AWS::DynamoDB::Table");
 
 
         ValidatePolicyResourceType GetValidatePolicyResourceTypeForName(const Aws::String& name)
@@ -49,6 +50,10 @@ namespace Aws
           else if (hashCode == AWS_IAM_AssumeRolePolicyDocument_HASH)
           {
             return ValidatePolicyResourceType::AWS_IAM_AssumeRolePolicyDocument;
+          }
+          else if (hashCode == AWS_DynamoDB_Table_HASH)
+          {
+            return ValidatePolicyResourceType::AWS_DynamoDB_Table;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -76,6 +81,8 @@ namespace Aws
             return "AWS::S3ObjectLambda::AccessPoint";
           case ValidatePolicyResourceType::AWS_IAM_AssumeRolePolicyDocument:
             return "AWS::IAM::AssumeRolePolicyDocument";
+          case ValidatePolicyResourceType::AWS_DynamoDB_Table:
+            return "AWS::DynamoDB::Table";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

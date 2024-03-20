@@ -25,7 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Information about a property.</p><p><h3>See Also:</h3>   <a
+   * <p>Information about a Savings Plan offering property.</p><p><h3>See Also:</h3> 
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/savingsplans-2019-06-28/SavingsPlanOfferingProperty">AWS
    * API Reference</a></p>
    */

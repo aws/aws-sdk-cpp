@@ -30,6 +30,7 @@
 #include <aws/dynamodb/model/CreateTableRequest.h>
 #include <aws/dynamodb/model/DeleteBackupRequest.h>
 #include <aws/dynamodb/model/DeleteItemRequest.h>
+#include <aws/dynamodb/model/DeleteResourcePolicyRequest.h>
 #include <aws/dynamodb/model/DeleteTableRequest.h>
 #include <aws/dynamodb/model/DescribeBackupRequest.h>
 #include <aws/dynamodb/model/DescribeContinuousBackupsRequest.h>
@@ -50,6 +51,7 @@
 #include <aws/dynamodb/model/ExecuteTransactionRequest.h>
 #include <aws/dynamodb/model/ExportTableToPointInTimeRequest.h>
 #include <aws/dynamodb/model/GetItemRequest.h>
+#include <aws/dynamodb/model/GetResourcePolicyRequest.h>
 #include <aws/dynamodb/model/ImportTableRequest.h>
 #include <aws/dynamodb/model/ListBackupsRequest.h>
 #include <aws/dynamodb/model/ListContributorInsightsRequest.h>
@@ -59,6 +61,7 @@
 #include <aws/dynamodb/model/ListTablesRequest.h>
 #include <aws/dynamodb/model/ListTagsOfResourceRequest.h>
 #include <aws/dynamodb/model/PutItemRequest.h>
+#include <aws/dynamodb/model/PutResourcePolicyRequest.h>
 #include <aws/dynamodb/model/QueryRequest.h>
 #include <aws/dynamodb/model/RestoreTableFromBackupRequest.h>
 #include <aws/dynamodb/model/RestoreTableToPointInTimeRequest.h>
@@ -664,6 +667,67 @@ DeleteItemOutcome DynamoDBClient::DeleteItem(const DeleteItemRequest& request) c
       }
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteItem, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
       return DeleteItemOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+DeleteResourcePolicyOutcome DynamoDBClient::DeleteResourcePolicy(const DeleteResourcePolicyRequest& request) const
+{
+  AWS_OPERATION_GUARD(DeleteResourcePolicy);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteResourcePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteResourcePolicy, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DeleteResourcePolicy, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteResourcePolicy",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DeleteResourcePolicyOutcome>(
+    [&]()-> DeleteResourcePolicyOutcome {
+      ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
+      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value() && m_clientConfiguration.endpointOverride.empty();
+      if (enableEndpointDiscovery)
+      {
+          Aws::String endpointKey = "Shared";
+          Aws::String endpoint;
+          if (m_endpointsCache.Get(endpointKey, endpoint))
+          {
+              AWS_LOGSTREAM_TRACE("DeleteResourcePolicy", "Making request to cached endpoint: " << endpoint);
+              endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + endpoint;
+              endpointResolutionOutcome.GetResult().SetURI(endpoint);
+          }
+          else
+          {
+              AWS_LOGSTREAM_TRACE("DeleteResourcePolicy", "Endpoint discovery is enabled and there is no usable endpoint in cache. Discovering endpoints from service...");
+              DescribeEndpointsRequest endpointRequest;
+              auto endpointOutcome = DescribeEndpoints(endpointRequest);
+              if (endpointOutcome.IsSuccess() && !endpointOutcome.GetResult().GetEndpoints().empty())
+              {
+                  const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
+
+                  m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
+                  endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + item.GetAddress();
+                  AWS_LOGSTREAM_TRACE("DeleteResourcePolicy", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
+                  endpointResolutionOutcome.GetResult().SetURI(endpoint);
+              }
+              else
+              {
+                  AWS_LOGSTREAM_ERROR("DeleteResourcePolicy", "Failed to discover endpoints " << endpointOutcome.GetError() << "\n Endpoint discovery is not required for this operation, falling back to the regional endpoint.");
+                  endpointResolutionOutcome = endpointOutcome.GetError();
+              }
+          }
+      }
+      if (!enableEndpointDiscovery || !endpointResolutionOutcome.IsSuccess() || endpointResolutionOutcome.GetResult().GetURL().empty()) {
+          endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+              [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+              TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+              *meter,
+              {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      }
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteResourcePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      return DeleteResourcePolicyOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
@@ -1610,6 +1674,67 @@ GetItemOutcome DynamoDBClient::GetItem(const GetItemRequest& request) const
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+GetResourcePolicyOutcome DynamoDBClient::GetResourcePolicy(const GetResourcePolicyRequest& request) const
+{
+  AWS_OPERATION_GUARD(GetResourcePolicy);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetResourcePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, GetResourcePolicy, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, GetResourcePolicy, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetResourcePolicy",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<GetResourcePolicyOutcome>(
+    [&]()-> GetResourcePolicyOutcome {
+      ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
+      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value() && m_clientConfiguration.endpointOverride.empty();
+      if (enableEndpointDiscovery)
+      {
+          Aws::String endpointKey = "Shared";
+          Aws::String endpoint;
+          if (m_endpointsCache.Get(endpointKey, endpoint))
+          {
+              AWS_LOGSTREAM_TRACE("GetResourcePolicy", "Making request to cached endpoint: " << endpoint);
+              endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + endpoint;
+              endpointResolutionOutcome.GetResult().SetURI(endpoint);
+          }
+          else
+          {
+              AWS_LOGSTREAM_TRACE("GetResourcePolicy", "Endpoint discovery is enabled and there is no usable endpoint in cache. Discovering endpoints from service...");
+              DescribeEndpointsRequest endpointRequest;
+              auto endpointOutcome = DescribeEndpoints(endpointRequest);
+              if (endpointOutcome.IsSuccess() && !endpointOutcome.GetResult().GetEndpoints().empty())
+              {
+                  const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
+
+                  m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
+                  endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + item.GetAddress();
+                  AWS_LOGSTREAM_TRACE("GetResourcePolicy", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
+                  endpointResolutionOutcome.GetResult().SetURI(endpoint);
+              }
+              else
+              {
+                  AWS_LOGSTREAM_ERROR("GetResourcePolicy", "Failed to discover endpoints " << endpointOutcome.GetError() << "\n Endpoint discovery is not required for this operation, falling back to the regional endpoint.");
+                  endpointResolutionOutcome = endpointOutcome.GetError();
+              }
+          }
+      }
+      if (!enableEndpointDiscovery || !endpointResolutionOutcome.IsSuccess() || endpointResolutionOutcome.GetResult().GetURL().empty()) {
+          endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+              [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+              TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+              *meter,
+              {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      }
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetResourcePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      return GetResourcePolicyOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 ImportTableOutcome DynamoDBClient::ImportTable(const ImportTableRequest& request) const
 {
   AWS_OPERATION_GUARD(ImportTable);
@@ -2013,6 +2138,67 @@ PutItemOutcome DynamoDBClient::PutItem(const PutItemRequest& request) const
       }
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutItem, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
       return PutItemOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+PutResourcePolicyOutcome DynamoDBClient::PutResourcePolicy(const PutResourcePolicyRequest& request) const
+{
+  AWS_OPERATION_GUARD(PutResourcePolicy);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutResourcePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, PutResourcePolicy, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, PutResourcePolicy, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".PutResourcePolicy",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<PutResourcePolicyOutcome>(
+    [&]()-> PutResourcePolicyOutcome {
+      ResolveEndpointOutcome endpointResolutionOutcome = Aws::Endpoint::AWSEndpoint();
+      const bool enableEndpointDiscovery = m_clientConfiguration.enableEndpointDiscovery && m_clientConfiguration.enableEndpointDiscovery.value() && m_clientConfiguration.endpointOverride.empty();
+      if (enableEndpointDiscovery)
+      {
+          Aws::String endpointKey = "Shared";
+          Aws::String endpoint;
+          if (m_endpointsCache.Get(endpointKey, endpoint))
+          {
+              AWS_LOGSTREAM_TRACE("PutResourcePolicy", "Making request to cached endpoint: " << endpoint);
+              endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + endpoint;
+              endpointResolutionOutcome.GetResult().SetURI(endpoint);
+          }
+          else
+          {
+              AWS_LOGSTREAM_TRACE("PutResourcePolicy", "Endpoint discovery is enabled and there is no usable endpoint in cache. Discovering endpoints from service...");
+              DescribeEndpointsRequest endpointRequest;
+              auto endpointOutcome = DescribeEndpoints(endpointRequest);
+              if (endpointOutcome.IsSuccess() && !endpointOutcome.GetResult().GetEndpoints().empty())
+              {
+                  const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
+
+                  m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
+                  endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + item.GetAddress();
+                  AWS_LOGSTREAM_TRACE("PutResourcePolicy", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
+                  endpointResolutionOutcome.GetResult().SetURI(endpoint);
+              }
+              else
+              {
+                  AWS_LOGSTREAM_ERROR("PutResourcePolicy", "Failed to discover endpoints " << endpointOutcome.GetError() << "\n Endpoint discovery is not required for this operation, falling back to the regional endpoint.");
+                  endpointResolutionOutcome = endpointOutcome.GetError();
+              }
+          }
+      }
+      if (!enableEndpointDiscovery || !endpointResolutionOutcome.IsSuccess() || endpointResolutionOutcome.GetResult().GetURL().empty()) {
+          endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+              [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+              TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+              *meter,
+              {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      }
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutResourcePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      return PutResourcePolicyOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

@@ -92,32 +92,104 @@ namespace Model
 
 
     /**
-     * <p>A valid resource type.</p>
+     * <p>A valid resource type. To <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-contact-analysis-segment-streams.html">enable
+     * streaming for real-time analysis of contacts</a>, use the following types:</p>
+     * <ul> <li> <p>For chat contacts, use
+     * <code>REAL_TIME_CONTACT_ANALYSIS_CHAT_SEGMENTS</code>.</p> </li> <li> <p>For
+     * voice contacts, use <code>REAL_TIME_CONTACT_ANALYSIS_VOICE_SEGMENTS</code>.</p>
+     * </li> </ul>  <p> <code>REAL_TIME_CONTACT_ANALYSIS_SEGMENTS</code> is
+     * deprecated, but it is still supported and will apply only to VOICE channel
+     * contacts. Use <code>REAL_TIME_CONTACT_ANALYSIS_VOICE_SEGMENTS</code> for voice
+     * contacts moving forward.</p> <p>If you have previously associated a stream with
+     * <code>REAL_TIME_CONTACT_ANALYSIS_SEGMENTS</code>, no action is needed to update
+     * the stream to <code>REAL_TIME_CONTACT_ANALYSIS_VOICE_SEGMENTS</code>.</p>
+     * 
      */
     inline const InstanceStorageResourceType& GetResourceType() const{ return m_resourceType; }
 
     /**
-     * <p>A valid resource type.</p>
+     * <p>A valid resource type. To <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-contact-analysis-segment-streams.html">enable
+     * streaming for real-time analysis of contacts</a>, use the following types:</p>
+     * <ul> <li> <p>For chat contacts, use
+     * <code>REAL_TIME_CONTACT_ANALYSIS_CHAT_SEGMENTS</code>.</p> </li> <li> <p>For
+     * voice contacts, use <code>REAL_TIME_CONTACT_ANALYSIS_VOICE_SEGMENTS</code>.</p>
+     * </li> </ul>  <p> <code>REAL_TIME_CONTACT_ANALYSIS_SEGMENTS</code> is
+     * deprecated, but it is still supported and will apply only to VOICE channel
+     * contacts. Use <code>REAL_TIME_CONTACT_ANALYSIS_VOICE_SEGMENTS</code> for voice
+     * contacts moving forward.</p> <p>If you have previously associated a stream with
+     * <code>REAL_TIME_CONTACT_ANALYSIS_SEGMENTS</code>, no action is needed to update
+     * the stream to <code>REAL_TIME_CONTACT_ANALYSIS_VOICE_SEGMENTS</code>.</p>
+     * 
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
-     * <p>A valid resource type.</p>
+     * <p>A valid resource type. To <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-contact-analysis-segment-streams.html">enable
+     * streaming for real-time analysis of contacts</a>, use the following types:</p>
+     * <ul> <li> <p>For chat contacts, use
+     * <code>REAL_TIME_CONTACT_ANALYSIS_CHAT_SEGMENTS</code>.</p> </li> <li> <p>For
+     * voice contacts, use <code>REAL_TIME_CONTACT_ANALYSIS_VOICE_SEGMENTS</code>.</p>
+     * </li> </ul>  <p> <code>REAL_TIME_CONTACT_ANALYSIS_SEGMENTS</code> is
+     * deprecated, but it is still supported and will apply only to VOICE channel
+     * contacts. Use <code>REAL_TIME_CONTACT_ANALYSIS_VOICE_SEGMENTS</code> for voice
+     * contacts moving forward.</p> <p>If you have previously associated a stream with
+     * <code>REAL_TIME_CONTACT_ANALYSIS_SEGMENTS</code>, no action is needed to update
+     * the stream to <code>REAL_TIME_CONTACT_ANALYSIS_VOICE_SEGMENTS</code>.</p>
+     * 
      */
     inline void SetResourceType(const InstanceStorageResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
-     * <p>A valid resource type.</p>
+     * <p>A valid resource type. To <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-contact-analysis-segment-streams.html">enable
+     * streaming for real-time analysis of contacts</a>, use the following types:</p>
+     * <ul> <li> <p>For chat contacts, use
+     * <code>REAL_TIME_CONTACT_ANALYSIS_CHAT_SEGMENTS</code>.</p> </li> <li> <p>For
+     * voice contacts, use <code>REAL_TIME_CONTACT_ANALYSIS_VOICE_SEGMENTS</code>.</p>
+     * </li> </ul>  <p> <code>REAL_TIME_CONTACT_ANALYSIS_SEGMENTS</code> is
+     * deprecated, but it is still supported and will apply only to VOICE channel
+     * contacts. Use <code>REAL_TIME_CONTACT_ANALYSIS_VOICE_SEGMENTS</code> for voice
+     * contacts moving forward.</p> <p>If you have previously associated a stream with
+     * <code>REAL_TIME_CONTACT_ANALYSIS_SEGMENTS</code>, no action is needed to update
+     * the stream to <code>REAL_TIME_CONTACT_ANALYSIS_VOICE_SEGMENTS</code>.</p>
+     * 
      */
     inline void SetResourceType(InstanceStorageResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
-     * <p>A valid resource type.</p>
+     * <p>A valid resource type. To <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-contact-analysis-segment-streams.html">enable
+     * streaming for real-time analysis of contacts</a>, use the following types:</p>
+     * <ul> <li> <p>For chat contacts, use
+     * <code>REAL_TIME_CONTACT_ANALYSIS_CHAT_SEGMENTS</code>.</p> </li> <li> <p>For
+     * voice contacts, use <code>REAL_TIME_CONTACT_ANALYSIS_VOICE_SEGMENTS</code>.</p>
+     * </li> </ul>  <p> <code>REAL_TIME_CONTACT_ANALYSIS_SEGMENTS</code> is
+     * deprecated, but it is still supported and will apply only to VOICE channel
+     * contacts. Use <code>REAL_TIME_CONTACT_ANALYSIS_VOICE_SEGMENTS</code> for voice
+     * contacts moving forward.</p> <p>If you have previously associated a stream with
+     * <code>REAL_TIME_CONTACT_ANALYSIS_SEGMENTS</code>, no action is needed to update
+     * the stream to <code>REAL_TIME_CONTACT_ANALYSIS_VOICE_SEGMENTS</code>.</p>
+     * 
      */
     inline AssociateInstanceStorageConfigRequest& WithResourceType(const InstanceStorageResourceType& value) { SetResourceType(value); return *this;}
 
     /**
-     * <p>A valid resource type.</p>
+     * <p>A valid resource type. To <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/enable-contact-analysis-segment-streams.html">enable
+     * streaming for real-time analysis of contacts</a>, use the following types:</p>
+     * <ul> <li> <p>For chat contacts, use
+     * <code>REAL_TIME_CONTACT_ANALYSIS_CHAT_SEGMENTS</code>.</p> </li> <li> <p>For
+     * voice contacts, use <code>REAL_TIME_CONTACT_ANALYSIS_VOICE_SEGMENTS</code>.</p>
+     * </li> </ul>  <p> <code>REAL_TIME_CONTACT_ANALYSIS_SEGMENTS</code> is
+     * deprecated, but it is still supported and will apply only to VOICE channel
+     * contacts. Use <code>REAL_TIME_CONTACT_ANALYSIS_VOICE_SEGMENTS</code> for voice
+     * contacts moving forward.</p> <p>If you have previously associated a stream with
+     * <code>REAL_TIME_CONTACT_ANALYSIS_SEGMENTS</code>, no action is needed to update
+     * the stream to <code>REAL_TIME_CONTACT_ANALYSIS_VOICE_SEGMENTS</code>.</p>
+     * 
      */
     inline AssociateInstanceStorageConfigRequest& WithResourceType(InstanceStorageResourceType&& value) { SetResourceType(std::move(value)); return *this;}
 
