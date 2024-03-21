@@ -109,9 +109,12 @@ endif()
 
 add_library(${PROJECT_NAME} ${TestingResources_SRC})
 add_library(AWS::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
+add_library(aws_test_main source/external/gtest/src/gtest_main.cc)
 
 set_compiler_flags(${PROJECT_NAME})
 set_compiler_warnings(${PROJECT_NAME})
+set_compiler_flags(aws_test_main)
+set_compiler_warnings(aws_test_main)
 
 if(PLATFORM_CUSTOM)
   add_custom_testing_target_compile_definitions()
@@ -122,6 +125,12 @@ target_include_directories(${PROJECT_NAME} PUBLIC
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/aws/external>
         $<INSTALL_INTERFACE:include>)
 target_link_libraries(${PROJECT_NAME} ${PLATFORM_DEP_LIBS} ${PROJECT_LIBS})
+
+target_include_directories(aws_test_main PUBLIC
+        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/aws/external>
+        $<INSTALL_INTERFACE:include>)
+
+target_link_libraries(aws_test_main ${PROJECT_NAME})
 
 if(COMMAND add_custom_testing_link_libraries)
     add_custom_testing_link_libraries()
