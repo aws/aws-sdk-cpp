@@ -23,46 +23,56 @@ namespace CodeArtifact
    * repositories. You can also create an upstream relationship between a
    * CodeArtifact repository and another repository, which effectively merges their
    * contents from the point of view of a package manager client. </p> <p>
-   * <b>CodeArtifact Components</b> </p> <p>Use the information in this guide to help
-   * you work with the following CodeArtifact components:</p> <ul> <li> <p>
-   * <b>Repository</b>: A CodeArtifact repository contains a set of <a
+   * <b>CodeArtifact concepts</b> </p> <ul> <li> <p> <b>Repository</b>: A
+   * CodeArtifact repository contains a set of <a
    * href="https://docs.aws.amazon.com/codeartifact/latest/ug/welcome.html#welcome-concepts-package-version">package
    * versions</a>, each of which maps to a set of assets, or files. Repositories are
    * polyglot, so a single repository can contain packages of any supported type.
    * Each repository exposes endpoints for fetching and publishing packages using
    * tools like the <b> <code>npm</code> </b> CLI, the Maven CLI (<b>
    * <code>mvn</code> </b>), Python CLIs (<b> <code>pip</code> </b> and
-   * <code>twine</code>), and NuGet CLIs (<code>nuget</code> and
-   * <code>dotnet</code>).</p> </li> <li> <p> <b>Domain</b>: Repositories are
-   * aggregated into a higher-level entity known as a <i>domain</i>. All package
-   * assets and metadata are stored in the domain, but are consumed through
-   * repositories. A given package asset, such as a Maven JAR file, is stored once
-   * per domain, no matter how many repositories it's present in. All of the assets
-   * and metadata in a domain are encrypted with the same customer master key (CMK)
-   * stored in Key Management Service (KMS).</p> <p>Each repository is a member of a
-   * single domain and can't be moved to a different domain.</p> <p>The domain allows
-   * organizational policy to be applied across multiple repositories, such as which
-   * accounts can access repositories in the domain, and which public repositories
-   * can be used as sources of packages.</p> <p>Although an organization can have
-   * multiple domains, we recommend a single production domain that contains all
-   * published artifacts so that teams can find and share packages across their
-   * organization.</p> </li> <li> <p> <b>Package</b>: A <i>package</i> is a bundle of
-   * software and the metadata required to resolve dependencies and install the
-   * software. CodeArtifact supports <a
+   * <code>twine</code>), NuGet CLIs (<code>nuget</code> and <code>dotnet</code>),
+   * and the Swift package manager (<b> <code>swift</code> </b>).</p> </li> <li> <p>
+   * <b>Domain</b>: Repositories are aggregated into a higher-level entity known as a
+   * <i>domain</i>. All package assets and metadata are stored in the domain, but are
+   * consumed through repositories. A given package asset, such as a Maven JAR file,
+   * is stored once per domain, no matter how many repositories it's present in. All
+   * of the assets and metadata in a domain are encrypted with the same customer
+   * master key (CMK) stored in Key Management Service (KMS).</p> <p>Each repository
+   * is a member of a single domain and can't be moved to a different domain.</p>
+   * <p>The domain allows organizational policy to be applied across multiple
+   * repositories, such as which accounts can access repositories in the domain, and
+   * which public repositories can be used as sources of packages.</p> <p>Although an
+   * organization can have multiple domains, we recommend a single production domain
+   * that contains all published artifacts so that teams can find and share packages
+   * across their organization.</p> </li> <li> <p> <b>Package</b>: A <i>package</i>
+   * is a bundle of software and the metadata required to resolve dependencies and
+   * install the software. CodeArtifact supports <a
    * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-npm.html">npm</a>,
    * <a
    * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-python.html">PyPI</a>,
    * <a
    * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-maven">Maven</a>,
+   * <a
+   * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-nuget">NuGet</a>,
+   * <a
+   * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-swift">Swift</a>,
    * and <a
-   * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-nuget">NuGet</a>
+   * href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-generic">generic</a>
    * package formats.</p> <p>In CodeArtifact, a package consists of:</p> <ul> <li>
    * <p>A <i>name</i> (for example, <code>webpack</code> is the name of a popular npm
    * package)</p> </li> <li> <p>An optional namespace (for example,
    * <code>@types</code> in <code>@types/node</code>)</p> </li> <li> <p>A set of
    * versions (for example, <code>1.0.0</code>, <code>1.0.1</code>,
    * <code>1.0.2</code>, etc.)</p> </li> <li> <p> Package-level metadata (for
-   * example, npm tags)</p> </li> </ul> </li> <li> <p> <b>Package version</b>: A
+   * example, npm tags)</p> </li> </ul> </li> <li> <p> <b>Package group</b>: A group
+   * of packages that match a specified definition. Package groups can be used to
+   * apply configuration to multiple packages that match a defined pattern using
+   * package format, package namespace, and package name. You can use package groups
+   * to more conveniently configure package origin controls for multiple packages.
+   * Package origin controls are used to block or allow ingestion or publishing of
+   * new package versions, which protects users from malicious actions known as
+   * dependency substitution attacks.</p> </li> <li> <p> <b>Package version</b>: A
    * version of a package, such as <code>@types/node 12.6.9</code>. The version
    * number format and semantics vary for different package formats. For example, npm
    * package versions must conform to the <a href="https://semver.org/">Semantic
@@ -75,29 +85,35 @@ namespace CodeArtifact
    * CodeArtifact allows creating an upstream relationship between two
    * repositories.</p> </li> <li> <p> <b>Asset</b>: An individual file stored in
    * CodeArtifact associated with a package version, such as an npm <code>.tgz</code>
-   * file or Maven POM and JAR files.</p> </li> </ul> <p>CodeArtifact supports these
-   * operations:</p> <ul> <li> <p> <code>AssociateExternalConnection</code>: Adds an
-   * existing external connection to a repository. </p> </li> <li> <p>
+   * file or Maven POM and JAR files.</p> </li> </ul> <p> <b>CodeArtifact supported
+   * API operations</b> </p> <ul> <li> <p> <code>AssociateExternalConnection</code>:
+   * Adds an existing external connection to a repository. </p> </li> <li> <p>
    * <code>CopyPackageVersions</code>: Copies package versions from one repository to
    * another repository in the same domain.</p> </li> <li> <p>
-   * <code>CreateDomain</code>: Creates a domain</p> </li> <li> <p>
+   * <code>CreateDomain</code>: Creates a domain.</p> </li> <li> <p>
+   * <code>CreatePackageGroup</code>: Creates a package group.</p> </li> <li> <p>
    * <code>CreateRepository</code>: Creates a CodeArtifact repository in a domain.
    * </p> </li> <li> <p> <code>DeleteDomain</code>: Deletes a domain. You cannot
    * delete a domain that contains repositories. </p> </li> <li> <p>
    * <code>DeleteDomainPermissionsPolicy</code>: Deletes the resource policy that is
    * set on a domain.</p> </li> <li> <p> <code>DeletePackage</code>: Deletes a
    * package and all associated package versions.</p> </li> <li> <p>
-   * <code>DeletePackageVersions</code>: Deletes versions of a package. After a
-   * package has been deleted, it can be republished, but its assets and metadata
-   * cannot be restored because they have been permanently removed from storage.</p>
-   * </li> <li> <p> <code>DeleteRepository</code>: Deletes a repository. </p> </li>
-   * <li> <p> <code>DeleteRepositoryPermissionsPolicy</code>: Deletes the resource
-   * policy that is set on a repository.</p> </li> <li> <p>
+   * <code>DeletePackageGroup</code>: Deletes a package group. Does not delete
+   * packages or package versions that are associated with a package group.</p> </li>
+   * <li> <p> <code>DeletePackageVersions</code>: Deletes versions of a package.
+   * After a package has been deleted, it can be republished, but its assets and
+   * metadata cannot be restored because they have been permanently removed from
+   * storage.</p> </li> <li> <p> <code>DeleteRepository</code>: Deletes a repository.
+   * </p> </li> <li> <p> <code>DeleteRepositoryPermissionsPolicy</code>: Deletes the
+   * resource policy that is set on a repository.</p> </li> <li> <p>
    * <code>DescribeDomain</code>: Returns a <code>DomainDescription</code> object
    * that contains information about the requested domain.</p> </li> <li> <p>
    * <code>DescribePackage</code>: Returns a <a
    * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDescription.html">PackageDescription</a>
    * object that contains details about a package. </p> </li> <li> <p>
+   * <code>DescribePackageGroup</code>: Returns a <a
+   * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageGroup.html">PackageGroup</a>
+   * object that contains details about a package group. </p> </li> <li> <p>
    * <code>DescribePackageVersion</code>: Returns a <a
    * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html">PackageVersionDescription</a>
    * object that contains details about a package version. </p> </li> <li> <p>
@@ -108,6 +124,8 @@ namespace CodeArtifact
    * restored because they have been permanently removed from storage.</p> </li> <li>
    * <p> <code>DisassociateExternalConnection</code>: Removes an existing external
    * connection from a repository. </p> </li> <li> <p>
+   * <code>GetAssociatedPackageGroup</code>: Returns the most closely associated
+   * package group to the specified package.</p> </li> <li> <p>
    * <code>GetAuthorizationToken</code>: Generates a temporary authorization token
    * for accessing repositories in the domain. The token expires the authorization
    * period has passed. The default authorization period is 12 hours and can be
@@ -119,31 +137,44 @@ namespace CodeArtifact
    * Gets the readme file or descriptive text for a package version.</p> </li> <li>
    * <p> <code>GetRepositoryEndpoint</code>: Returns the endpoint of a repository for
    * a specific package format. A repository has one endpoint for each package
-   * format: </p> <ul> <li> <p> <code>maven</code> </p> </li> <li> <p>
-   * <code>npm</code> </p> </li> <li> <p> <code>nuget</code> </p> </li> <li> <p>
-   * <code>pypi</code> </p> </li> </ul> </li> <li> <p>
+   * format: </p> <ul> <li> <p> <code>generic</code> </p> </li> <li> <p>
+   * <code>maven</code> </p> </li> <li> <p> <code>npm</code> </p> </li> <li> <p>
+   * <code>nuget</code> </p> </li> <li> <p> <code>pypi</code> </p> </li> <li> <p>
+   * <code>swift</code> </p> </li> </ul> </li> <li> <p>
    * <code>GetRepositoryPermissionsPolicy</code>: Returns the resource policy that is
-   * set on a repository. </p> </li> <li> <p> <code>ListDomains</code>: Returns a
-   * list of <code>DomainSummary</code> objects. Each returned
+   * set on a repository. </p> </li> <li> <p>
+   * <code>ListAllowedRepositoriesForGroup</code>: Lists the allowed repositories for
+   * a package group that has origin configuration set to
+   * <code>ALLOW_SPECIFIC_REPOSITORIES</code>.</p> </li> <li> <p>
+   * <code>ListAssociatedPackages</code>: Returns a list of packages associated with
+   * the requested package group.</p> </li> <li> <p> <code>ListDomains</code>:
+   * Returns a list of <code>DomainSummary</code> objects. Each returned
    * <code>DomainSummary</code> object contains information about a domain.</p> </li>
    * <li> <p> <code>ListPackages</code>: Lists the packages in a repository.</p>
-   * </li> <li> <p> <code>ListPackageVersionAssets</code>: Lists the assets for a
-   * given package version.</p> </li> <li> <p>
-   * <code>ListPackageVersionDependencies</code>: Returns a list of the direct
-   * dependencies for a package version. </p> </li> <li> <p>
+   * </li> <li> <p> <code>ListPackageGroups</code>: Returns a list of package groups
+   * in the requested domain.</p> </li> <li> <p>
+   * <code>ListPackageVersionAssets</code>: Lists the assets for a given package
+   * version.</p> </li> <li> <p> <code>ListPackageVersionDependencies</code>: Returns
+   * a list of the direct dependencies for a package version. </p> </li> <li> <p>
    * <code>ListPackageVersions</code>: Returns a list of package versions for a
    * specified package in a repository.</p> </li> <li> <p>
    * <code>ListRepositories</code>: Returns a list of repositories owned by the
    * Amazon Web Services account that called this method.</p> </li> <li> <p>
    * <code>ListRepositoriesInDomain</code>: Returns a list of the repositories in a
-   * domain.</p> </li> <li> <p> <code>PublishPackageVersion</code>: Creates a new
-   * package version containing one or more assets.</p> </li> <li> <p>
-   * <code>PutDomainPermissionsPolicy</code>: Attaches a resource policy to a
-   * domain.</p> </li> <li> <p> <code>PutPackageOriginConfiguration</code>: Sets the
-   * package origin configuration for a package, which determine how new versions of
-   * the package can be added to a specific repository.</p> </li> <li> <p>
+   * domain.</p> </li> <li> <p> <code>ListSubPackageGroups</code>: Returns a list of
+   * direct children of the specified package group.</p> </li> <li> <p>
+   * <code>PublishPackageVersion</code>: Creates a new package version containing one
+   * or more assets.</p> </li> <li> <p> <code>PutDomainPermissionsPolicy</code>:
+   * Attaches a resource policy to a domain.</p> </li> <li> <p>
+   * <code>PutPackageOriginConfiguration</code>: Sets the package origin
+   * configuration for a package, which determine how new versions of the package can
+   * be added to a specific repository.</p> </li> <li> <p>
    * <code>PutRepositoryPermissionsPolicy</code>: Sets the resource policy on a
    * repository that specifies permissions to access it. </p> </li> <li> <p>
+   * <code>UpdatePackageGroup</code>: Updates a package group. This API cannot be
+   * used to update a package group's origin configuration or pattern.</p> </li> <li>
+   * <p> <code>UpdatePackageGroupOriginConfiguration</code>: Updates the package
+   * origin configuration for a package group.</p> </li> <li> <p>
    * <code>UpdatePackageVersionsStatus</code>: Updates the status of one or more
    * versions of a package.</p> </li> <li> <p> <code>UpdateRepository</code>: Updates
    * the properties of a repository.</p> </li> </ul>
@@ -296,6 +327,35 @@ namespace CodeArtifact
         }
 
         /**
+         * <p> Creates a package group. For more information about creating package groups,
+         * including example CLI commands, see <a
+         * href="https://docs.aws.amazon.com/codeartifact/latest/ug/create-package-group.html">Create
+         * a package group</a> in the <i>CodeArtifact User Guide</i>. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/CreatePackageGroup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreatePackageGroupOutcome CreatePackageGroup(const Model::CreatePackageGroupRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreatePackageGroup that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreatePackageGroupRequestT = Model::CreatePackageGroupRequest>
+        Model::CreatePackageGroupOutcomeCallable CreatePackageGroupCallable(const CreatePackageGroupRequestT& request) const
+        {
+            return SubmitCallable(&CodeArtifactClient::CreatePackageGroup, request);
+        }
+
+        /**
+         * An Async wrapper for CreatePackageGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreatePackageGroupRequestT = Model::CreatePackageGroupRequest>
+        void CreatePackageGroupAsync(const CreatePackageGroupRequestT& request, const CreatePackageGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CodeArtifactClient::CreatePackageGroup, request, handler, context);
+        }
+
+        /**
          * <p> Creates a repository. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/CreateRepository">AWS
          * API Reference</a></p>
@@ -398,6 +458,36 @@ namespace CodeArtifact
         void DeletePackageAsync(const DeletePackageRequestT& request, const DeletePackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CodeArtifactClient::DeletePackage, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes a package group. Deleting a package group does not delete packages or
+         * package versions associated with the package group. When a package group is
+         * deleted, the direct child package groups will become children of the package
+         * group's direct parent package group. Therefore, if any of the child groups are
+         * inheriting any settings from the parent, those settings could
+         * change.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/DeletePackageGroup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeletePackageGroupOutcome DeletePackageGroup(const Model::DeletePackageGroupRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeletePackageGroup that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeletePackageGroupRequestT = Model::DeletePackageGroupRequest>
+        Model::DeletePackageGroupOutcomeCallable DeletePackageGroupCallable(const DeletePackageGroupRequestT& request) const
+        {
+            return SubmitCallable(&CodeArtifactClient::DeletePackageGroup, request);
+        }
+
+        /**
+         * An Async wrapper for DeletePackageGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeletePackageGroupRequestT = Model::DeletePackageGroupRequest>
+        void DeletePackageGroupAsync(const DeletePackageGroupRequestT& request, const DeletePackageGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CodeArtifactClient::DeletePackageGroup, request, handler, context);
         }
 
         /**
@@ -546,6 +636,34 @@ namespace CodeArtifact
         }
 
         /**
+         * <p>Returns a <a
+         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageGroupDescription.html">PackageGroupDescription</a>
+         * object that contains information about the requested package
+         * group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/DescribePackageGroup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribePackageGroupOutcome DescribePackageGroup(const Model::DescribePackageGroupRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribePackageGroup that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribePackageGroupRequestT = Model::DescribePackageGroupRequest>
+        Model::DescribePackageGroupOutcomeCallable DescribePackageGroupCallable(const DescribePackageGroupRequestT& request) const
+        {
+            return SubmitCallable(&CodeArtifactClient::DescribePackageGroup, request);
+        }
+
+        /**
+         * An Async wrapper for DescribePackageGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribePackageGroupRequestT = Model::DescribePackageGroupRequest>
+        void DescribePackageGroupAsync(const DescribePackageGroupRequestT& request, const DescribePackageGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CodeArtifactClient::DescribePackageGroup, request, handler, context);
+        }
+
+        /**
          * <p> Returns a <a
          * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html">PackageVersionDescription</a>
          * object that contains information about the requested package version.
@@ -658,6 +776,40 @@ namespace CodeArtifact
         void DisposePackageVersionsAsync(const DisposePackageVersionsRequestT& request, const DisposePackageVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CodeArtifactClient::DisposePackageVersions, request, handler, context);
+        }
+
+        /**
+         * <p>Returns the most closely associated package group to the specified package.
+         * This API does not require that the package exist in any repository in the
+         * domain. As such, <code>GetAssociatedPackageGroup</code> can be used to see which
+         * package group's origin configuration applies to a package before that package is
+         * in a repository. This can be helpful to check if public packages are blocked
+         * without ingesting them.</p> <p>For information package group association and
+         * matching, see <a
+         * href="https://docs.aws.amazon.com/codeartifact/latest/ug/package-group-definition-syntax-matching-behavior.html">Package
+         * group definition syntax and matching behavior</a> in the <i>CodeArtifact User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/GetAssociatedPackageGroup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetAssociatedPackageGroupOutcome GetAssociatedPackageGroup(const Model::GetAssociatedPackageGroupRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetAssociatedPackageGroup that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetAssociatedPackageGroupRequestT = Model::GetAssociatedPackageGroupRequest>
+        Model::GetAssociatedPackageGroupOutcomeCallable GetAssociatedPackageGroupCallable(const GetAssociatedPackageGroupRequestT& request) const
+        {
+            return SubmitCallable(&CodeArtifactClient::GetAssociatedPackageGroup, request);
+        }
+
+        /**
+         * An Async wrapper for GetAssociatedPackageGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetAssociatedPackageGroupRequestT = Model::GetAssociatedPackageGroupRequest>
+        void GetAssociatedPackageGroupAsync(const GetAssociatedPackageGroupRequestT& request, const GetAssociatedPackageGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CodeArtifactClient::GetAssociatedPackageGroup, request, handler, context);
         }
 
         /**
@@ -793,8 +945,9 @@ namespace CodeArtifact
         /**
          * <p> Returns the endpoint of a repository for a specific package format. A
          * repository has one endpoint for each package format: </p> <ul> <li> <p>
-         * <code>maven</code> </p> </li> <li> <p> <code>npm</code> </p> </li> <li> <p>
-         * <code>nuget</code> </p> </li> <li> <p> <code>pypi</code> </p> </li>
+         * <code>generic</code> </p> </li> <li> <p> <code>maven</code> </p> </li> <li> <p>
+         * <code>npm</code> </p> </li> <li> <p> <code>nuget</code> </p> </li> <li> <p>
+         * <code>pypi</code> </p> </li> <li> <p> <code>swift</code> </p> </li>
          * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/GetRepositoryEndpoint">AWS
          * API Reference</a></p>
@@ -846,6 +999,65 @@ namespace CodeArtifact
         }
 
         /**
+         * <p>Lists the repositories in the added repositories list of the specified
+         * restriction type for a package group. For more information about restriction
+         * types and added repository lists, see <a
+         * href="https://docs.aws.amazon.com/codeartifact/latest/ug/package-group-origin-controls.html">Package
+         * group origin controls</a> in the <i>CodeArtifact User Guide</i>. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListAllowedRepositoriesForGroup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListAllowedRepositoriesForGroupOutcome ListAllowedRepositoriesForGroup(const Model::ListAllowedRepositoriesForGroupRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListAllowedRepositoriesForGroup that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListAllowedRepositoriesForGroupRequestT = Model::ListAllowedRepositoriesForGroupRequest>
+        Model::ListAllowedRepositoriesForGroupOutcomeCallable ListAllowedRepositoriesForGroupCallable(const ListAllowedRepositoriesForGroupRequestT& request) const
+        {
+            return SubmitCallable(&CodeArtifactClient::ListAllowedRepositoriesForGroup, request);
+        }
+
+        /**
+         * An Async wrapper for ListAllowedRepositoriesForGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListAllowedRepositoriesForGroupRequestT = Model::ListAllowedRepositoriesForGroupRequest>
+        void ListAllowedRepositoriesForGroupAsync(const ListAllowedRepositoriesForGroupRequestT& request, const ListAllowedRepositoriesForGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CodeArtifactClient::ListAllowedRepositoriesForGroup, request, handler, context);
+        }
+
+        /**
+         * <p>Returns a list of packages associated with the requested package group. For
+         * information package group association and matching, see <a
+         * href="https://docs.aws.amazon.com/codeartifact/latest/ug/package-group-definition-syntax-matching-behavior.html">Package
+         * group definition syntax and matching behavior</a> in the <i>CodeArtifact User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListAssociatedPackages">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListAssociatedPackagesOutcome ListAssociatedPackages(const Model::ListAssociatedPackagesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListAssociatedPackages that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListAssociatedPackagesRequestT = Model::ListAssociatedPackagesRequest>
+        Model::ListAssociatedPackagesOutcomeCallable ListAssociatedPackagesCallable(const ListAssociatedPackagesRequestT& request) const
+        {
+            return SubmitCallable(&CodeArtifactClient::ListAssociatedPackages, request);
+        }
+
+        /**
+         * An Async wrapper for ListAssociatedPackages that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListAssociatedPackagesRequestT = Model::ListAssociatedPackagesRequest>
+        void ListAssociatedPackagesAsync(const ListAssociatedPackagesRequestT& request, const ListAssociatedPackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CodeArtifactClient::ListAssociatedPackages, request, handler, context);
+        }
+
+        /**
          * <p> Returns a list of <a
          * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html">DomainSummary</a>
          * objects for all domains owned by the Amazon Web Services account that makes this
@@ -872,6 +1084,32 @@ namespace CodeArtifact
         void ListDomainsAsync(const ListDomainsRequestT& request, const ListDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CodeArtifactClient::ListDomains, request, handler, context);
+        }
+
+        /**
+         * <p>Returns a list of package groups in the requested domain.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListPackageGroups">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListPackageGroupsOutcome ListPackageGroups(const Model::ListPackageGroupsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListPackageGroups that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListPackageGroupsRequestT = Model::ListPackageGroupsRequest>
+        Model::ListPackageGroupsOutcomeCallable ListPackageGroupsCallable(const ListPackageGroupsRequestT& request) const
+        {
+            return SubmitCallable(&CodeArtifactClient::ListPackageGroups, request);
+        }
+
+        /**
+         * An Async wrapper for ListPackageGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListPackageGroupsRequestT = Model::ListPackageGroupsRequest>
+        void ListPackageGroupsAsync(const ListPackageGroupsRequestT& request, const ListPackageGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CodeArtifactClient::ListPackageGroups, request, handler, context);
         }
 
         /**
@@ -1047,6 +1285,35 @@ namespace CodeArtifact
         void ListRepositoriesInDomainAsync(const ListRepositoriesInDomainRequestT& request, const ListRepositoriesInDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CodeArtifactClient::ListRepositoriesInDomain, request, handler, context);
+        }
+
+        /**
+         * <p>Returns a list of direct children of the specified package group.</p> <p>For
+         * information package group hierarchy, see <a
+         * href="https://docs.aws.amazon.com/codeartifact/latest/ug/package-group-definition-syntax-matching-behavior.html">Package
+         * group definition syntax and matching behavior</a> in the <i>CodeArtifact User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListSubPackageGroups">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListSubPackageGroupsOutcome ListSubPackageGroups(const Model::ListSubPackageGroupsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListSubPackageGroups that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListSubPackageGroupsRequestT = Model::ListSubPackageGroupsRequest>
+        Model::ListSubPackageGroupsOutcomeCallable ListSubPackageGroupsCallable(const ListSubPackageGroupsRequestT& request) const
+        {
+            return SubmitCallable(&CodeArtifactClient::ListSubPackageGroups, request);
+        }
+
+        /**
+         * An Async wrapper for ListSubPackageGroups that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListSubPackageGroupsRequestT = Model::ListSubPackageGroupsRequest>
+        void ListSubPackageGroupsAsync(const ListSubPackageGroupsRequestT& request, const ListSubPackageGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CodeArtifactClient::ListSubPackageGroups, request, handler, context);
         }
 
         /**
@@ -1263,6 +1530,68 @@ namespace CodeArtifact
         void UntagResourceAsync(const UntagResourceRequestT& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CodeArtifactClient::UntagResource, request, handler, context);
+        }
+
+        /**
+         * <p>Updates a package group. This API cannot be used to update a package group's
+         * origin configuration or pattern. To update a package group's origin
+         * configuration, use <a
+         * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_UpdatePackageGroupOriginConfiguration.html">UpdatePackageGroupOriginConfiguration</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/UpdatePackageGroup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdatePackageGroupOutcome UpdatePackageGroup(const Model::UpdatePackageGroupRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdatePackageGroup that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdatePackageGroupRequestT = Model::UpdatePackageGroupRequest>
+        Model::UpdatePackageGroupOutcomeCallable UpdatePackageGroupCallable(const UpdatePackageGroupRequestT& request) const
+        {
+            return SubmitCallable(&CodeArtifactClient::UpdatePackageGroup, request);
+        }
+
+        /**
+         * An Async wrapper for UpdatePackageGroup that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdatePackageGroupRequestT = Model::UpdatePackageGroupRequest>
+        void UpdatePackageGroupAsync(const UpdatePackageGroupRequestT& request, const UpdatePackageGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CodeArtifactClient::UpdatePackageGroup, request, handler, context);
+        }
+
+        /**
+         * <p>Updates the package origin configuration for a package group.</p> <p>The
+         * package origin configuration determines how new versions of a package can be
+         * added to a repository. You can allow or block direct publishing of new package
+         * versions, or ingestion and retaining of new package versions from an external
+         * connection or upstream source. For more information about package group origin
+         * controls and configuration, see <a
+         * href="https://docs.aws.amazon.com/codeartifact/latest/ug/package-group-origin-controls.html">Package
+         * group origin controls</a> in the <i>CodeArtifact User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/UpdatePackageGroupOriginConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdatePackageGroupOriginConfigurationOutcome UpdatePackageGroupOriginConfiguration(const Model::UpdatePackageGroupOriginConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdatePackageGroupOriginConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdatePackageGroupOriginConfigurationRequestT = Model::UpdatePackageGroupOriginConfigurationRequest>
+        Model::UpdatePackageGroupOriginConfigurationOutcomeCallable UpdatePackageGroupOriginConfigurationCallable(const UpdatePackageGroupOriginConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&CodeArtifactClient::UpdatePackageGroupOriginConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for UpdatePackageGroupOriginConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdatePackageGroupOriginConfigurationRequestT = Model::UpdatePackageGroupOriginConfigurationRequest>
+        void UpdatePackageGroupOriginConfigurationAsync(const UpdatePackageGroupOriginConfigurationRequestT& request, const UpdatePackageGroupOriginConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CodeArtifactClient::UpdatePackageGroupOriginConfiguration, request, handler, context);
         }
 
         /**

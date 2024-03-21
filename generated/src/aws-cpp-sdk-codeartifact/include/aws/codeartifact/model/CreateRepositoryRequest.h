@@ -132,42 +132,42 @@ namespace Model
 
 
     /**
-     * <p> The name of the repository to create. </p>
+     * <p>The name of the repository to create. </p>
      */
     inline const Aws::String& GetRepository() const{ return m_repository; }
 
     /**
-     * <p> The name of the repository to create. </p>
+     * <p>The name of the repository to create. </p>
      */
     inline bool RepositoryHasBeenSet() const { return m_repositoryHasBeenSet; }
 
     /**
-     * <p> The name of the repository to create. </p>
+     * <p>The name of the repository to create. </p>
      */
     inline void SetRepository(const Aws::String& value) { m_repositoryHasBeenSet = true; m_repository = value; }
 
     /**
-     * <p> The name of the repository to create. </p>
+     * <p>The name of the repository to create. </p>
      */
     inline void SetRepository(Aws::String&& value) { m_repositoryHasBeenSet = true; m_repository = std::move(value); }
 
     /**
-     * <p> The name of the repository to create. </p>
+     * <p>The name of the repository to create. </p>
      */
     inline void SetRepository(const char* value) { m_repositoryHasBeenSet = true; m_repository.assign(value); }
 
     /**
-     * <p> The name of the repository to create. </p>
+     * <p>The name of the repository to create. </p>
      */
     inline CreateRepositoryRequest& WithRepository(const Aws::String& value) { SetRepository(value); return *this;}
 
     /**
-     * <p> The name of the repository to create. </p>
+     * <p>The name of the repository to create. </p>
      */
     inline CreateRepositoryRequest& WithRepository(Aws::String&& value) { SetRepository(std::move(value)); return *this;}
 
     /**
-     * <p> The name of the repository to create. </p>
+     * <p>The name of the repository to create. </p>
      */
     inline CreateRepositoryRequest& WithRepository(const char* value) { SetRepository(value); return *this;}
 

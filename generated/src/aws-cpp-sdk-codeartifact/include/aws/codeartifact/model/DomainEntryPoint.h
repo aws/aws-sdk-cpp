@@ -29,8 +29,11 @@ namespace Model
    * repository it was published to. For packages ingested from an external
    * repository, the entry point is the external connection that it was ingested
    * from. An external connection is a CodeArtifact repository that is connected to
-   * an external repository such as the npm registry or NuGet gallery.</p><p><h3>See
-   * Also:</h3>   <a
+   * an external repository such as the npm registry or NuGet gallery.</p> 
+   * <p>If a package version exists in a repository and is updated, for example if a
+   * package of the same version is added with additional assets, the package
+   * version's <code>DomainEntryPoint</code> will not change from the original
+   * package version's value.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/DomainEntryPoint">AWS
    * API Reference</a></p>
    */
