@@ -697,10 +697,10 @@ namespace kendra
         }
 
         /**
-         * <p>Deletes an existing Amazon Kendra index. An exception is not thrown if the
-         * index is already being deleted. While the index is being deleted, the
-         * <code>Status</code> field returned by a call to the <code>DescribeIndex</code>
-         * API is set to <code>DELETING</code>.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an Amazon Kendra index. An exception is not thrown if the index is
+         * already being deleted. While the index is being deleted, the <code>Status</code>
+         * field returned by a call to the <code>DescribeIndex</code> API is set to
+         * <code>DELETING</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeleteIndex">AWS
          * API Reference</a></p>
          */
@@ -792,7 +792,7 @@ namespace kendra
         }
 
         /**
-         * <p>Deletes an existing Amazon Kendra thesaurus. </p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an Amazon Kendra thesaurus. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeleteThesaurus">AWS
          * API Reference</a></p>
          */
@@ -954,8 +954,7 @@ namespace kendra
         }
 
         /**
-         * <p>Gets information about an existing Amazon Kendra index.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Gets information about an Amazon Kendra index.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeIndex">AWS
          * API Reference</a></p>
          */
@@ -1069,8 +1068,8 @@ namespace kendra
         }
 
         /**
-         * <p>Gets information about an existing Amazon Kendra thesaurus.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Gets information about an Amazon Kendra thesaurus.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeThesaurus">AWS
          * API Reference</a></p>
          */
@@ -1879,8 +1878,7 @@ namespace kendra
         }
 
         /**
-         * <p>Updates an existing Amazon Kendra data source connector.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Updates an Amazon Kendra data source connector.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateDataSource">AWS
          * API Reference</a></p>
          */
@@ -1962,7 +1960,7 @@ namespace kendra
         }
 
         /**
-         * <p>Updates an existing Amazon Kendra index.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates an Amazon Kendra index.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateIndex">AWS
          * API Reference</a></p>
          */

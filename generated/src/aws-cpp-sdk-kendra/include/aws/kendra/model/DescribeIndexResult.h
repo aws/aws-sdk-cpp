@@ -148,73 +148,73 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that gives Amazon Kendra
-     * permission to write to your Amazon Cloudwatch logs.</p>
+     * permission to write to your Amazon CloudWatch logs.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that gives Amazon Kendra
-     * permission to write to your Amazon Cloudwatch logs.</p>
+     * permission to write to your Amazon CloudWatch logs.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that gives Amazon Kendra
-     * permission to write to your Amazon Cloudwatch logs.</p>
+     * permission to write to your Amazon CloudWatch logs.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that gives Amazon Kendra
-     * permission to write to your Amazon Cloudwatch logs.</p>
+     * permission to write to your Amazon CloudWatch logs.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that gives Amazon Kendra
-     * permission to write to your Amazon Cloudwatch logs.</p>
+     * permission to write to your Amazon CloudWatch logs.</p>
      */
     inline DescribeIndexResult& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that gives Amazon Kendra
-     * permission to write to your Amazon Cloudwatch logs.</p>
+     * permission to write to your Amazon CloudWatch logs.</p>
      */
     inline DescribeIndexResult& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that gives Amazon Kendra
-     * permission to write to your Amazon Cloudwatch logs.</p>
+     * permission to write to your Amazon CloudWatch logs.</p>
      */
     inline DescribeIndexResult& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
 
     /**
-     * <p>The identifier of the KMScustomer master key (CMK) that is used to encrypt
+     * <p>The identifier of the KMS customer master key (CMK) that is used to encrypt
      * your data. Amazon Kendra doesn't support asymmetric CMKs.</p>
      */
     inline const ServerSideEncryptionConfiguration& GetServerSideEncryptionConfiguration() const{ return m_serverSideEncryptionConfiguration; }
 
     /**
-     * <p>The identifier of the KMScustomer master key (CMK) that is used to encrypt
+     * <p>The identifier of the KMS customer master key (CMK) that is used to encrypt
      * your data. Amazon Kendra doesn't support asymmetric CMKs.</p>
      */
     inline void SetServerSideEncryptionConfiguration(const ServerSideEncryptionConfiguration& value) { m_serverSideEncryptionConfiguration = value; }
 
     /**
-     * <p>The identifier of the KMScustomer master key (CMK) that is used to encrypt
+     * <p>The identifier of the KMS customer master key (CMK) that is used to encrypt
      * your data. Amazon Kendra doesn't support asymmetric CMKs.</p>
      */
     inline void SetServerSideEncryptionConfiguration(ServerSideEncryptionConfiguration&& value) { m_serverSideEncryptionConfiguration = std::move(value); }
 
     /**
-     * <p>The identifier of the KMScustomer master key (CMK) that is used to encrypt
+     * <p>The identifier of the KMS customer master key (CMK) that is used to encrypt
      * your data. Amazon Kendra doesn't support asymmetric CMKs.</p>
      */
     inline DescribeIndexResult& WithServerSideEncryptionConfiguration(const ServerSideEncryptionConfiguration& value) { SetServerSideEncryptionConfiguration(value); return *this;}
 
     /**
-     * <p>The identifier of the KMScustomer master key (CMK) that is used to encrypt
+     * <p>The identifier of the KMS customer master key (CMK) that is used to encrypt
      * your data. Amazon Kendra doesn't support asymmetric CMKs.</p>
      */
     inline DescribeIndexResult& WithServerSideEncryptionConfiguration(ServerSideEncryptionConfiguration&& value) { SetServerSideEncryptionConfiguration(std::move(value)); return *this;}
@@ -324,27 +324,27 @@ namespace Model
 
 
     /**
-     * <p>The Unix when the index was last updated.</p>
+     * <p>The Unix timestamp when the index was last updated.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
 
     /**
-     * <p>The Unix when the index was last updated.</p>
+     * <p>The Unix timestamp when the index was last updated.</p>
      */
     inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAt = value; }
 
     /**
-     * <p>The Unix when the index was last updated.</p>
+     * <p>The Unix timestamp when the index was last updated.</p>
      */
     inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAt = std::move(value); }
 
     /**
-     * <p>The Unix when the index was last updated.</p>
+     * <p>The Unix timestamp when the index was last updated.</p>
      */
     inline DescribeIndexResult& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
 
     /**
-     * <p>The Unix when the index was last updated.</p>
+     * <p>The Unix timestamp when the index was last updated.</p>
      */
     inline DescribeIndexResult& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
 
@@ -592,32 +592,37 @@ namespace Model
 
 
     /**
-     * <p>Whether you have enabled the configuration for fetching access levels of
-     * groups and users from an IAM Identity Center identity source.</p>
+     * <p>Whether you have enabled IAM Identity Center identity source for your users
+     * and groups. This is useful for user context filtering, where search results are
+     * filtered based on the user or their group access to documents.</p>
      */
     inline const UserGroupResolutionConfiguration& GetUserGroupResolutionConfiguration() const{ return m_userGroupResolutionConfiguration; }
 
     /**
-     * <p>Whether you have enabled the configuration for fetching access levels of
-     * groups and users from an IAM Identity Center identity source.</p>
+     * <p>Whether you have enabled IAM Identity Center identity source for your users
+     * and groups. This is useful for user context filtering, where search results are
+     * filtered based on the user or their group access to documents.</p>
      */
     inline void SetUserGroupResolutionConfiguration(const UserGroupResolutionConfiguration& value) { m_userGroupResolutionConfiguration = value; }
 
     /**
-     * <p>Whether you have enabled the configuration for fetching access levels of
-     * groups and users from an IAM Identity Center identity source.</p>
+     * <p>Whether you have enabled IAM Identity Center identity source for your users
+     * and groups. This is useful for user context filtering, where search results are
+     * filtered based on the user or their group access to documents.</p>
      */
     inline void SetUserGroupResolutionConfiguration(UserGroupResolutionConfiguration&& value) { m_userGroupResolutionConfiguration = std::move(value); }
 
     /**
-     * <p>Whether you have enabled the configuration for fetching access levels of
-     * groups and users from an IAM Identity Center identity source.</p>
+     * <p>Whether you have enabled IAM Identity Center identity source for your users
+     * and groups. This is useful for user context filtering, where search results are
+     * filtered based on the user or their group access to documents.</p>
      */
     inline DescribeIndexResult& WithUserGroupResolutionConfiguration(const UserGroupResolutionConfiguration& value) { SetUserGroupResolutionConfiguration(value); return *this;}
 
     /**
-     * <p>Whether you have enabled the configuration for fetching access levels of
-     * groups and users from an IAM Identity Center identity source.</p>
+     * <p>Whether you have enabled IAM Identity Center identity source for your users
+     * and groups. This is useful for user context filtering, where search results are
+     * filtered based on the user or their group access to documents.</p>
      */
     inline DescribeIndexResult& WithUserGroupResolutionConfiguration(UserGroupResolutionConfiguration&& value) { SetUserGroupResolutionConfiguration(std::move(value)); return *this;}
 

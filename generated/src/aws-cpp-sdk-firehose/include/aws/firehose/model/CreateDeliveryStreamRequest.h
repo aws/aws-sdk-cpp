@@ -455,7 +455,18 @@ namespace Model
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
      * Cost Allocation Tags</a> in the Amazon Web Services Billing and Cost Management
      * User Guide.</p> <p>You can specify up to 50 tags when creating a delivery
-     * stream.</p>
+     * stream.</p> <p>If you specify tags in the <code>CreateDeliveryStream</code>
+     * action, Amazon Data Firehose performs an additional authorization on the
+     * <code>firehose:TagDeliveryStream</code> action to verify if users have
+     * permissions to create tags. If you do not provide this permission, requests to
+     * create new Firehose delivery streams with IAM resource tags will fail with an
+     * <code>AccessDeniedException</code> such as following.</p> <p>
+     * <b>AccessDeniedException</b> </p> <p>User: arn:aws:sts::x:assumed-role/x/x is
+     * not authorized to perform: firehose:TagDeliveryStream on resource:
+     * arn:aws:firehose:us-east-1:x:deliverystream/x with an explicit deny in an
+     * identity-based policy.</p> <p>For an example IAM policy, see <a
+     * href="https://docs.aws.amazon.com/firehose/latest/APIReference/API_CreateDeliveryStream.html#API_CreateDeliveryStream_Examples">Tag
+     * example.</a> </p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
@@ -468,7 +479,18 @@ namespace Model
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
      * Cost Allocation Tags</a> in the Amazon Web Services Billing and Cost Management
      * User Guide.</p> <p>You can specify up to 50 tags when creating a delivery
-     * stream.</p>
+     * stream.</p> <p>If you specify tags in the <code>CreateDeliveryStream</code>
+     * action, Amazon Data Firehose performs an additional authorization on the
+     * <code>firehose:TagDeliveryStream</code> action to verify if users have
+     * permissions to create tags. If you do not provide this permission, requests to
+     * create new Firehose delivery streams with IAM resource tags will fail with an
+     * <code>AccessDeniedException</code> such as following.</p> <p>
+     * <b>AccessDeniedException</b> </p> <p>User: arn:aws:sts::x:assumed-role/x/x is
+     * not authorized to perform: firehose:TagDeliveryStream on resource:
+     * arn:aws:firehose:us-east-1:x:deliverystream/x with an explicit deny in an
+     * identity-based policy.</p> <p>For an example IAM policy, see <a
+     * href="https://docs.aws.amazon.com/firehose/latest/APIReference/API_CreateDeliveryStream.html#API_CreateDeliveryStream_Examples">Tag
+     * example.</a> </p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
@@ -481,7 +503,18 @@ namespace Model
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
      * Cost Allocation Tags</a> in the Amazon Web Services Billing and Cost Management
      * User Guide.</p> <p>You can specify up to 50 tags when creating a delivery
-     * stream.</p>
+     * stream.</p> <p>If you specify tags in the <code>CreateDeliveryStream</code>
+     * action, Amazon Data Firehose performs an additional authorization on the
+     * <code>firehose:TagDeliveryStream</code> action to verify if users have
+     * permissions to create tags. If you do not provide this permission, requests to
+     * create new Firehose delivery streams with IAM resource tags will fail with an
+     * <code>AccessDeniedException</code> such as following.</p> <p>
+     * <b>AccessDeniedException</b> </p> <p>User: arn:aws:sts::x:assumed-role/x/x is
+     * not authorized to perform: firehose:TagDeliveryStream on resource:
+     * arn:aws:firehose:us-east-1:x:deliverystream/x with an explicit deny in an
+     * identity-based policy.</p> <p>For an example IAM policy, see <a
+     * href="https://docs.aws.amazon.com/firehose/latest/APIReference/API_CreateDeliveryStream.html#API_CreateDeliveryStream_Examples">Tag
+     * example.</a> </p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
@@ -494,7 +527,18 @@ namespace Model
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
      * Cost Allocation Tags</a> in the Amazon Web Services Billing and Cost Management
      * User Guide.</p> <p>You can specify up to 50 tags when creating a delivery
-     * stream.</p>
+     * stream.</p> <p>If you specify tags in the <code>CreateDeliveryStream</code>
+     * action, Amazon Data Firehose performs an additional authorization on the
+     * <code>firehose:TagDeliveryStream</code> action to verify if users have
+     * permissions to create tags. If you do not provide this permission, requests to
+     * create new Firehose delivery streams with IAM resource tags will fail with an
+     * <code>AccessDeniedException</code> such as following.</p> <p>
+     * <b>AccessDeniedException</b> </p> <p>User: arn:aws:sts::x:assumed-role/x/x is
+     * not authorized to perform: firehose:TagDeliveryStream on resource:
+     * arn:aws:firehose:us-east-1:x:deliverystream/x with an explicit deny in an
+     * identity-based policy.</p> <p>For an example IAM policy, see <a
+     * href="https://docs.aws.amazon.com/firehose/latest/APIReference/API_CreateDeliveryStream.html#API_CreateDeliveryStream_Examples">Tag
+     * example.</a> </p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
@@ -507,7 +551,18 @@ namespace Model
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
      * Cost Allocation Tags</a> in the Amazon Web Services Billing and Cost Management
      * User Guide.</p> <p>You can specify up to 50 tags when creating a delivery
-     * stream.</p>
+     * stream.</p> <p>If you specify tags in the <code>CreateDeliveryStream</code>
+     * action, Amazon Data Firehose performs an additional authorization on the
+     * <code>firehose:TagDeliveryStream</code> action to verify if users have
+     * permissions to create tags. If you do not provide this permission, requests to
+     * create new Firehose delivery streams with IAM resource tags will fail with an
+     * <code>AccessDeniedException</code> such as following.</p> <p>
+     * <b>AccessDeniedException</b> </p> <p>User: arn:aws:sts::x:assumed-role/x/x is
+     * not authorized to perform: firehose:TagDeliveryStream on resource:
+     * arn:aws:firehose:us-east-1:x:deliverystream/x with an explicit deny in an
+     * identity-based policy.</p> <p>For an example IAM policy, see <a
+     * href="https://docs.aws.amazon.com/firehose/latest/APIReference/API_CreateDeliveryStream.html#API_CreateDeliveryStream_Examples">Tag
+     * example.</a> </p>
      */
     inline CreateDeliveryStreamRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
@@ -520,7 +575,18 @@ namespace Model
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
      * Cost Allocation Tags</a> in the Amazon Web Services Billing and Cost Management
      * User Guide.</p> <p>You can specify up to 50 tags when creating a delivery
-     * stream.</p>
+     * stream.</p> <p>If you specify tags in the <code>CreateDeliveryStream</code>
+     * action, Amazon Data Firehose performs an additional authorization on the
+     * <code>firehose:TagDeliveryStream</code> action to verify if users have
+     * permissions to create tags. If you do not provide this permission, requests to
+     * create new Firehose delivery streams with IAM resource tags will fail with an
+     * <code>AccessDeniedException</code> such as following.</p> <p>
+     * <b>AccessDeniedException</b> </p> <p>User: arn:aws:sts::x:assumed-role/x/x is
+     * not authorized to perform: firehose:TagDeliveryStream on resource:
+     * arn:aws:firehose:us-east-1:x:deliverystream/x with an explicit deny in an
+     * identity-based policy.</p> <p>For an example IAM policy, see <a
+     * href="https://docs.aws.amazon.com/firehose/latest/APIReference/API_CreateDeliveryStream.html#API_CreateDeliveryStream_Examples">Tag
+     * example.</a> </p>
      */
     inline CreateDeliveryStreamRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
@@ -533,7 +599,18 @@ namespace Model
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
      * Cost Allocation Tags</a> in the Amazon Web Services Billing and Cost Management
      * User Guide.</p> <p>You can specify up to 50 tags when creating a delivery
-     * stream.</p>
+     * stream.</p> <p>If you specify tags in the <code>CreateDeliveryStream</code>
+     * action, Amazon Data Firehose performs an additional authorization on the
+     * <code>firehose:TagDeliveryStream</code> action to verify if users have
+     * permissions to create tags. If you do not provide this permission, requests to
+     * create new Firehose delivery streams with IAM resource tags will fail with an
+     * <code>AccessDeniedException</code> such as following.</p> <p>
+     * <b>AccessDeniedException</b> </p> <p>User: arn:aws:sts::x:assumed-role/x/x is
+     * not authorized to perform: firehose:TagDeliveryStream on resource:
+     * arn:aws:firehose:us-east-1:x:deliverystream/x with an explicit deny in an
+     * identity-based policy.</p> <p>For an example IAM policy, see <a
+     * href="https://docs.aws.amazon.com/firehose/latest/APIReference/API_CreateDeliveryStream.html#API_CreateDeliveryStream_Examples">Tag
+     * example.</a> </p>
      */
     inline CreateDeliveryStreamRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
@@ -546,7 +623,18 @@ namespace Model
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
      * Cost Allocation Tags</a> in the Amazon Web Services Billing and Cost Management
      * User Guide.</p> <p>You can specify up to 50 tags when creating a delivery
-     * stream.</p>
+     * stream.</p> <p>If you specify tags in the <code>CreateDeliveryStream</code>
+     * action, Amazon Data Firehose performs an additional authorization on the
+     * <code>firehose:TagDeliveryStream</code> action to verify if users have
+     * permissions to create tags. If you do not provide this permission, requests to
+     * create new Firehose delivery streams with IAM resource tags will fail with an
+     * <code>AccessDeniedException</code> such as following.</p> <p>
+     * <b>AccessDeniedException</b> </p> <p>User: arn:aws:sts::x:assumed-role/x/x is
+     * not authorized to perform: firehose:TagDeliveryStream on resource:
+     * arn:aws:firehose:us-east-1:x:deliverystream/x with an explicit deny in an
+     * identity-based policy.</p> <p>For an example IAM policy, see <a
+     * href="https://docs.aws.amazon.com/firehose/latest/APIReference/API_CreateDeliveryStream.html#API_CreateDeliveryStream_Examples">Tag
+     * example.</a> </p>
      */
     inline CreateDeliveryStreamRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

@@ -50,42 +50,66 @@ namespace Model
 
 
     /**
-     * <p>The identifier for the query result.</p>
+     * <p>The unique identifier for the query result item id (<code>Id</code>) and the
+     * query result item document id (<code>DocumentId</code>) combined. The value of
+     * this field changes with every request, even when you have the same
+     * documents.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>The identifier for the query result.</p>
+     * <p>The unique identifier for the query result item id (<code>Id</code>) and the
+     * query result item document id (<code>DocumentId</code>) combined. The value of
+     * this field changes with every request, even when you have the same
+     * documents.</p>
      */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
-     * <p>The identifier for the query result.</p>
+     * <p>The unique identifier for the query result item id (<code>Id</code>) and the
+     * query result item document id (<code>DocumentId</code>) combined. The value of
+     * this field changes with every request, even when you have the same
+     * documents.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>The identifier for the query result.</p>
+     * <p>The unique identifier for the query result item id (<code>Id</code>) and the
+     * query result item document id (<code>DocumentId</code>) combined. The value of
+     * this field changes with every request, even when you have the same
+     * documents.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * <p>The identifier for the query result.</p>
+     * <p>The unique identifier for the query result item id (<code>Id</code>) and the
+     * query result item document id (<code>DocumentId</code>) combined. The value of
+     * this field changes with every request, even when you have the same
+     * documents.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p>The identifier for the query result.</p>
+     * <p>The unique identifier for the query result item id (<code>Id</code>) and the
+     * query result item document id (<code>DocumentId</code>) combined. The value of
+     * this field changes with every request, even when you have the same
+     * documents.</p>
      */
     inline QueryResultItem& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>The identifier for the query result.</p>
+     * <p>The unique identifier for the query result item id (<code>Id</code>) and the
+     * query result item document id (<code>DocumentId</code>) combined. The value of
+     * this field changes with every request, even when you have the same
+     * documents.</p>
      */
     inline QueryResultItem& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier for the query result.</p>
+     * <p>The unique identifier for the query result item id (<code>Id</code>) and the
+     * query result item document id (<code>DocumentId</code>) combined. The value of
+     * this field changes with every request, even when you have the same
+     * documents.</p>
      */
     inline QueryResultItem& WithId(const char* value) { SetId(value); return *this;}
 

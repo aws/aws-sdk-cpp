@@ -35,22 +35,34 @@ namespace Model
 
 
     /**
-     * <p> The number of seconds the vended session credentials are valid for. </p>
+     * <p> Used to determine how long sessions vended using this profile are valid for.
+     * See the <code>Expiration</code> section of the <a
+     * href="https://docs.aws.amazon.com/rolesanywhere/latest/userguide/authentication-create-session.html#credentials-object">CreateSession
+     * API documentation</a> page for more details. </p>
      */
     inline int GetDurationSeconds() const{ return m_durationSeconds; }
 
     /**
-     * <p> The number of seconds the vended session credentials are valid for. </p>
+     * <p> Used to determine how long sessions vended using this profile are valid for.
+     * See the <code>Expiration</code> section of the <a
+     * href="https://docs.aws.amazon.com/rolesanywhere/latest/userguide/authentication-create-session.html#credentials-object">CreateSession
+     * API documentation</a> page for more details. </p>
      */
     inline bool DurationSecondsHasBeenSet() const { return m_durationSecondsHasBeenSet; }
 
     /**
-     * <p> The number of seconds the vended session credentials are valid for. </p>
+     * <p> Used to determine how long sessions vended using this profile are valid for.
+     * See the <code>Expiration</code> section of the <a
+     * href="https://docs.aws.amazon.com/rolesanywhere/latest/userguide/authentication-create-session.html#credentials-object">CreateSession
+     * API documentation</a> page for more details. </p>
      */
     inline void SetDurationSeconds(int value) { m_durationSecondsHasBeenSet = true; m_durationSeconds = value; }
 
     /**
-     * <p> The number of seconds the vended session credentials are valid for. </p>
+     * <p> Used to determine how long sessions vended using this profile are valid for.
+     * See the <code>Expiration</code> section of the <a
+     * href="https://docs.aws.amazon.com/rolesanywhere/latest/userguide/authentication-create-session.html#credentials-object">CreateSession
+     * API documentation</a> page for more details. </p>
      */
     inline CreateProfileRequest& WithDurationSeconds(int value) { SetDurationSeconds(value); return *this;}
 
