@@ -56,37 +56,97 @@ namespace Model
 
     /**
      * <p>Provides the configuration information to connect to an Amazon S3 bucket as
-     * your data source.</p>
+     * your data source.</p>  <p>Amazon Kendra now supports an upgraded Amazon S3
+     * connector.</p> <p>You must now use the <a
+     * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_TemplateConfiguration.html">TemplateConfiguration</a>
+     * object instead of the <code>S3DataSourceConfiguration</code> object to configure
+     * your connector.</p> <p>Connectors configured using the older console and API
+     * architecture will continue to function as configured. However, you won't be able
+     * to edit or update them. If you want to edit or update your connector
+     * configuration, you must create a new connector.</p> <p>We recommended migrating
+     * your connector workflow to the upgraded version. Support for connectors
+     * configured using the older architecture is scheduled to end by June 2024.</p>
+     * 
      */
     inline const S3DataSourceConfiguration& GetS3Configuration() const{ return m_s3Configuration; }
 
     /**
      * <p>Provides the configuration information to connect to an Amazon S3 bucket as
-     * your data source.</p>
+     * your data source.</p>  <p>Amazon Kendra now supports an upgraded Amazon S3
+     * connector.</p> <p>You must now use the <a
+     * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_TemplateConfiguration.html">TemplateConfiguration</a>
+     * object instead of the <code>S3DataSourceConfiguration</code> object to configure
+     * your connector.</p> <p>Connectors configured using the older console and API
+     * architecture will continue to function as configured. However, you won't be able
+     * to edit or update them. If you want to edit or update your connector
+     * configuration, you must create a new connector.</p> <p>We recommended migrating
+     * your connector workflow to the upgraded version. Support for connectors
+     * configured using the older architecture is scheduled to end by June 2024.</p>
+     * 
      */
     inline bool S3ConfigurationHasBeenSet() const { return m_s3ConfigurationHasBeenSet; }
 
     /**
      * <p>Provides the configuration information to connect to an Amazon S3 bucket as
-     * your data source.</p>
+     * your data source.</p>  <p>Amazon Kendra now supports an upgraded Amazon S3
+     * connector.</p> <p>You must now use the <a
+     * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_TemplateConfiguration.html">TemplateConfiguration</a>
+     * object instead of the <code>S3DataSourceConfiguration</code> object to configure
+     * your connector.</p> <p>Connectors configured using the older console and API
+     * architecture will continue to function as configured. However, you won't be able
+     * to edit or update them. If you want to edit or update your connector
+     * configuration, you must create a new connector.</p> <p>We recommended migrating
+     * your connector workflow to the upgraded version. Support for connectors
+     * configured using the older architecture is scheduled to end by June 2024.</p>
+     * 
      */
     inline void SetS3Configuration(const S3DataSourceConfiguration& value) { m_s3ConfigurationHasBeenSet = true; m_s3Configuration = value; }
 
     /**
      * <p>Provides the configuration information to connect to an Amazon S3 bucket as
-     * your data source.</p>
+     * your data source.</p>  <p>Amazon Kendra now supports an upgraded Amazon S3
+     * connector.</p> <p>You must now use the <a
+     * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_TemplateConfiguration.html">TemplateConfiguration</a>
+     * object instead of the <code>S3DataSourceConfiguration</code> object to configure
+     * your connector.</p> <p>Connectors configured using the older console and API
+     * architecture will continue to function as configured. However, you won't be able
+     * to edit or update them. If you want to edit or update your connector
+     * configuration, you must create a new connector.</p> <p>We recommended migrating
+     * your connector workflow to the upgraded version. Support for connectors
+     * configured using the older architecture is scheduled to end by June 2024.</p>
+     * 
      */
     inline void SetS3Configuration(S3DataSourceConfiguration&& value) { m_s3ConfigurationHasBeenSet = true; m_s3Configuration = std::move(value); }
 
     /**
      * <p>Provides the configuration information to connect to an Amazon S3 bucket as
-     * your data source.</p>
+     * your data source.</p>  <p>Amazon Kendra now supports an upgraded Amazon S3
+     * connector.</p> <p>You must now use the <a
+     * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_TemplateConfiguration.html">TemplateConfiguration</a>
+     * object instead of the <code>S3DataSourceConfiguration</code> object to configure
+     * your connector.</p> <p>Connectors configured using the older console and API
+     * architecture will continue to function as configured. However, you won't be able
+     * to edit or update them. If you want to edit or update your connector
+     * configuration, you must create a new connector.</p> <p>We recommended migrating
+     * your connector workflow to the upgraded version. Support for connectors
+     * configured using the older architecture is scheduled to end by June 2024.</p>
+     * 
      */
     inline DataSourceConfiguration& WithS3Configuration(const S3DataSourceConfiguration& value) { SetS3Configuration(value); return *this;}
 
     /**
      * <p>Provides the configuration information to connect to an Amazon S3 bucket as
-     * your data source.</p>
+     * your data source.</p>  <p>Amazon Kendra now supports an upgraded Amazon S3
+     * connector.</p> <p>You must now use the <a
+     * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_TemplateConfiguration.html">TemplateConfiguration</a>
+     * object instead of the <code>S3DataSourceConfiguration</code> object to configure
+     * your connector.</p> <p>Connectors configured using the older console and API
+     * architecture will continue to function as configured. However, you won't be able
+     * to edit or update them. If you want to edit or update your connector
+     * configuration, you must create a new connector.</p> <p>We recommended migrating
+     * your connector workflow to the upgraded version. Support for connectors
+     * configured using the older architecture is scheduled to end by June 2024.</p>
+     * 
      */
     inline DataSourceConfiguration& WithS3Configuration(S3DataSourceConfiguration&& value) { SetS3Configuration(std::move(value)); return *this;}
 
@@ -408,74 +468,194 @@ namespace Model
 
     /**
      * <p>Provides the configuration information to connect to Amazon FSx as your data
-     * source.</p>
+     * source.</p>  <p>Amazon Kendra now supports an upgraded Amazon FSx Windows
+     * connector.</p> <p>You must now use the <a
+     * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_TemplateConfiguration.html">TemplateConfiguration</a>
+     * object instead of the <code>FsxConfiguration</code> object to configure your
+     * connector.</p> <p>Connectors configured using the older console and API
+     * architecture will continue to function as configured. However, you won't be able
+     * to edit or update them. If you want to edit or update your connector
+     * configuration, you must create a new connector.</p> <p>We recommended migrating
+     * your connector workflow to the upgraded version. Support for connectors
+     * configured using the older architecture is scheduled to end by June 2024.</p>
+     * 
      */
     inline const FsxConfiguration& GetFsxConfiguration() const{ return m_fsxConfiguration; }
 
     /**
      * <p>Provides the configuration information to connect to Amazon FSx as your data
-     * source.</p>
+     * source.</p>  <p>Amazon Kendra now supports an upgraded Amazon FSx Windows
+     * connector.</p> <p>You must now use the <a
+     * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_TemplateConfiguration.html">TemplateConfiguration</a>
+     * object instead of the <code>FsxConfiguration</code> object to configure your
+     * connector.</p> <p>Connectors configured using the older console and API
+     * architecture will continue to function as configured. However, you won't be able
+     * to edit or update them. If you want to edit or update your connector
+     * configuration, you must create a new connector.</p> <p>We recommended migrating
+     * your connector workflow to the upgraded version. Support for connectors
+     * configured using the older architecture is scheduled to end by June 2024.</p>
+     * 
      */
     inline bool FsxConfigurationHasBeenSet() const { return m_fsxConfigurationHasBeenSet; }
 
     /**
      * <p>Provides the configuration information to connect to Amazon FSx as your data
-     * source.</p>
+     * source.</p>  <p>Amazon Kendra now supports an upgraded Amazon FSx Windows
+     * connector.</p> <p>You must now use the <a
+     * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_TemplateConfiguration.html">TemplateConfiguration</a>
+     * object instead of the <code>FsxConfiguration</code> object to configure your
+     * connector.</p> <p>Connectors configured using the older console and API
+     * architecture will continue to function as configured. However, you won't be able
+     * to edit or update them. If you want to edit or update your connector
+     * configuration, you must create a new connector.</p> <p>We recommended migrating
+     * your connector workflow to the upgraded version. Support for connectors
+     * configured using the older architecture is scheduled to end by June 2024.</p>
+     * 
      */
     inline void SetFsxConfiguration(const FsxConfiguration& value) { m_fsxConfigurationHasBeenSet = true; m_fsxConfiguration = value; }
 
     /**
      * <p>Provides the configuration information to connect to Amazon FSx as your data
-     * source.</p>
+     * source.</p>  <p>Amazon Kendra now supports an upgraded Amazon FSx Windows
+     * connector.</p> <p>You must now use the <a
+     * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_TemplateConfiguration.html">TemplateConfiguration</a>
+     * object instead of the <code>FsxConfiguration</code> object to configure your
+     * connector.</p> <p>Connectors configured using the older console and API
+     * architecture will continue to function as configured. However, you won't be able
+     * to edit or update them. If you want to edit or update your connector
+     * configuration, you must create a new connector.</p> <p>We recommended migrating
+     * your connector workflow to the upgraded version. Support for connectors
+     * configured using the older architecture is scheduled to end by June 2024.</p>
+     * 
      */
     inline void SetFsxConfiguration(FsxConfiguration&& value) { m_fsxConfigurationHasBeenSet = true; m_fsxConfiguration = std::move(value); }
 
     /**
      * <p>Provides the configuration information to connect to Amazon FSx as your data
-     * source.</p>
+     * source.</p>  <p>Amazon Kendra now supports an upgraded Amazon FSx Windows
+     * connector.</p> <p>You must now use the <a
+     * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_TemplateConfiguration.html">TemplateConfiguration</a>
+     * object instead of the <code>FsxConfiguration</code> object to configure your
+     * connector.</p> <p>Connectors configured using the older console and API
+     * architecture will continue to function as configured. However, you won't be able
+     * to edit or update them. If you want to edit or update your connector
+     * configuration, you must create a new connector.</p> <p>We recommended migrating
+     * your connector workflow to the upgraded version. Support for connectors
+     * configured using the older architecture is scheduled to end by June 2024.</p>
+     * 
      */
     inline DataSourceConfiguration& WithFsxConfiguration(const FsxConfiguration& value) { SetFsxConfiguration(value); return *this;}
 
     /**
      * <p>Provides the configuration information to connect to Amazon FSx as your data
-     * source.</p>
+     * source.</p>  <p>Amazon Kendra now supports an upgraded Amazon FSx Windows
+     * connector.</p> <p>You must now use the <a
+     * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_TemplateConfiguration.html">TemplateConfiguration</a>
+     * object instead of the <code>FsxConfiguration</code> object to configure your
+     * connector.</p> <p>Connectors configured using the older console and API
+     * architecture will continue to function as configured. However, you won't be able
+     * to edit or update them. If you want to edit or update your connector
+     * configuration, you must create a new connector.</p> <p>We recommended migrating
+     * your connector workflow to the upgraded version. Support for connectors
+     * configured using the older architecture is scheduled to end by June 2024.</p>
+     * 
      */
     inline DataSourceConfiguration& WithFsxConfiguration(FsxConfiguration&& value) { SetFsxConfiguration(std::move(value)); return *this;}
 
 
     /**
      * <p>Provides the configuration information to connect to Slack as your data
-     * source.</p>
+     * source.</p>  <p>Amazon Kendra now supports an upgraded Slack
+     * connector.</p> <p>You must now use the <a
+     * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_TemplateConfiguration.html">TemplateConfiguration</a>
+     * object instead of the <code>SlackConfiguration</code> object to configure your
+     * connector.</p> <p>Connectors configured using the older console and API
+     * architecture will continue to function as configured. However, you won't be able
+     * to edit or update them. If you want to edit or update your connector
+     * configuration, you must create a new connector.</p> <p>We recommended migrating
+     * your connector workflow to the upgraded version. Support for connectors
+     * configured using the older architecture is scheduled to end by June 2024.</p>
+     * 
      */
     inline const SlackConfiguration& GetSlackConfiguration() const{ return m_slackConfiguration; }
 
     /**
      * <p>Provides the configuration information to connect to Slack as your data
-     * source.</p>
+     * source.</p>  <p>Amazon Kendra now supports an upgraded Slack
+     * connector.</p> <p>You must now use the <a
+     * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_TemplateConfiguration.html">TemplateConfiguration</a>
+     * object instead of the <code>SlackConfiguration</code> object to configure your
+     * connector.</p> <p>Connectors configured using the older console and API
+     * architecture will continue to function as configured. However, you won't be able
+     * to edit or update them. If you want to edit or update your connector
+     * configuration, you must create a new connector.</p> <p>We recommended migrating
+     * your connector workflow to the upgraded version. Support for connectors
+     * configured using the older architecture is scheduled to end by June 2024.</p>
+     * 
      */
     inline bool SlackConfigurationHasBeenSet() const { return m_slackConfigurationHasBeenSet; }
 
     /**
      * <p>Provides the configuration information to connect to Slack as your data
-     * source.</p>
+     * source.</p>  <p>Amazon Kendra now supports an upgraded Slack
+     * connector.</p> <p>You must now use the <a
+     * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_TemplateConfiguration.html">TemplateConfiguration</a>
+     * object instead of the <code>SlackConfiguration</code> object to configure your
+     * connector.</p> <p>Connectors configured using the older console and API
+     * architecture will continue to function as configured. However, you won't be able
+     * to edit or update them. If you want to edit or update your connector
+     * configuration, you must create a new connector.</p> <p>We recommended migrating
+     * your connector workflow to the upgraded version. Support for connectors
+     * configured using the older architecture is scheduled to end by June 2024.</p>
+     * 
      */
     inline void SetSlackConfiguration(const SlackConfiguration& value) { m_slackConfigurationHasBeenSet = true; m_slackConfiguration = value; }
 
     /**
      * <p>Provides the configuration information to connect to Slack as your data
-     * source.</p>
+     * source.</p>  <p>Amazon Kendra now supports an upgraded Slack
+     * connector.</p> <p>You must now use the <a
+     * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_TemplateConfiguration.html">TemplateConfiguration</a>
+     * object instead of the <code>SlackConfiguration</code> object to configure your
+     * connector.</p> <p>Connectors configured using the older console and API
+     * architecture will continue to function as configured. However, you won't be able
+     * to edit or update them. If you want to edit or update your connector
+     * configuration, you must create a new connector.</p> <p>We recommended migrating
+     * your connector workflow to the upgraded version. Support for connectors
+     * configured using the older architecture is scheduled to end by June 2024.</p>
+     * 
      */
     inline void SetSlackConfiguration(SlackConfiguration&& value) { m_slackConfigurationHasBeenSet = true; m_slackConfiguration = std::move(value); }
 
     /**
      * <p>Provides the configuration information to connect to Slack as your data
-     * source.</p>
+     * source.</p>  <p>Amazon Kendra now supports an upgraded Slack
+     * connector.</p> <p>You must now use the <a
+     * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_TemplateConfiguration.html">TemplateConfiguration</a>
+     * object instead of the <code>SlackConfiguration</code> object to configure your
+     * connector.</p> <p>Connectors configured using the older console and API
+     * architecture will continue to function as configured. However, you won't be able
+     * to edit or update them. If you want to edit or update your connector
+     * configuration, you must create a new connector.</p> <p>We recommended migrating
+     * your connector workflow to the upgraded version. Support for connectors
+     * configured using the older architecture is scheduled to end by June 2024.</p>
+     * 
      */
     inline DataSourceConfiguration& WithSlackConfiguration(const SlackConfiguration& value) { SetSlackConfiguration(value); return *this;}
 
     /**
      * <p>Provides the configuration information to connect to Slack as your data
-     * source.</p>
+     * source.</p>  <p>Amazon Kendra now supports an upgraded Slack
+     * connector.</p> <p>You must now use the <a
+     * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_TemplateConfiguration.html">TemplateConfiguration</a>
+     * object instead of the <code>SlackConfiguration</code> object to configure your
+     * connector.</p> <p>Connectors configured using the older console and API
+     * architecture will continue to function as configured. However, you won't be able
+     * to edit or update them. If you want to edit or update your connector
+     * configuration, you must create a new connector.</p> <p>We recommended migrating
+     * your connector workflow to the upgraded version. Support for connectors
+     * configured using the older architecture is scheduled to end by June 2024.</p>
+     * 
      */
     inline DataSourceConfiguration& WithSlackConfiguration(SlackConfiguration&& value) { SetSlackConfiguration(std::move(value)); return *this;}
 
@@ -593,37 +773,97 @@ namespace Model
 
     /**
      * <p>Provides the configuration information to connect to GitHub as your data
-     * source.</p>
+     * source.</p>  <p>Amazon Kendra now supports an upgraded GitHub
+     * connector.</p> <p>You must now use the <a
+     * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_TemplateConfiguration.html">TemplateConfiguration</a>
+     * object instead of the <code>GitHubConfiguration</code> object to configure your
+     * connector.</p> <p>Connectors configured using the older console and API
+     * architecture will continue to function as configured. However, you won’t be able
+     * to edit or update them. If you want to edit or update your connector
+     * configuration, you must create a new connector.</p> <p>We recommended migrating
+     * your connector workflow to the upgraded version. Support for connectors
+     * configured using the older architecture is scheduled to end by June 2024.</p>
+     * 
      */
     inline const GitHubConfiguration& GetGitHubConfiguration() const{ return m_gitHubConfiguration; }
 
     /**
      * <p>Provides the configuration information to connect to GitHub as your data
-     * source.</p>
+     * source.</p>  <p>Amazon Kendra now supports an upgraded GitHub
+     * connector.</p> <p>You must now use the <a
+     * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_TemplateConfiguration.html">TemplateConfiguration</a>
+     * object instead of the <code>GitHubConfiguration</code> object to configure your
+     * connector.</p> <p>Connectors configured using the older console and API
+     * architecture will continue to function as configured. However, you won’t be able
+     * to edit or update them. If you want to edit or update your connector
+     * configuration, you must create a new connector.</p> <p>We recommended migrating
+     * your connector workflow to the upgraded version. Support for connectors
+     * configured using the older architecture is scheduled to end by June 2024.</p>
+     * 
      */
     inline bool GitHubConfigurationHasBeenSet() const { return m_gitHubConfigurationHasBeenSet; }
 
     /**
      * <p>Provides the configuration information to connect to GitHub as your data
-     * source.</p>
+     * source.</p>  <p>Amazon Kendra now supports an upgraded GitHub
+     * connector.</p> <p>You must now use the <a
+     * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_TemplateConfiguration.html">TemplateConfiguration</a>
+     * object instead of the <code>GitHubConfiguration</code> object to configure your
+     * connector.</p> <p>Connectors configured using the older console and API
+     * architecture will continue to function as configured. However, you won’t be able
+     * to edit or update them. If you want to edit or update your connector
+     * configuration, you must create a new connector.</p> <p>We recommended migrating
+     * your connector workflow to the upgraded version. Support for connectors
+     * configured using the older architecture is scheduled to end by June 2024.</p>
+     * 
      */
     inline void SetGitHubConfiguration(const GitHubConfiguration& value) { m_gitHubConfigurationHasBeenSet = true; m_gitHubConfiguration = value; }
 
     /**
      * <p>Provides the configuration information to connect to GitHub as your data
-     * source.</p>
+     * source.</p>  <p>Amazon Kendra now supports an upgraded GitHub
+     * connector.</p> <p>You must now use the <a
+     * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_TemplateConfiguration.html">TemplateConfiguration</a>
+     * object instead of the <code>GitHubConfiguration</code> object to configure your
+     * connector.</p> <p>Connectors configured using the older console and API
+     * architecture will continue to function as configured. However, you won’t be able
+     * to edit or update them. If you want to edit or update your connector
+     * configuration, you must create a new connector.</p> <p>We recommended migrating
+     * your connector workflow to the upgraded version. Support for connectors
+     * configured using the older architecture is scheduled to end by June 2024.</p>
+     * 
      */
     inline void SetGitHubConfiguration(GitHubConfiguration&& value) { m_gitHubConfigurationHasBeenSet = true; m_gitHubConfiguration = std::move(value); }
 
     /**
      * <p>Provides the configuration information to connect to GitHub as your data
-     * source.</p>
+     * source.</p>  <p>Amazon Kendra now supports an upgraded GitHub
+     * connector.</p> <p>You must now use the <a
+     * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_TemplateConfiguration.html">TemplateConfiguration</a>
+     * object instead of the <code>GitHubConfiguration</code> object to configure your
+     * connector.</p> <p>Connectors configured using the older console and API
+     * architecture will continue to function as configured. However, you won’t be able
+     * to edit or update them. If you want to edit or update your connector
+     * configuration, you must create a new connector.</p> <p>We recommended migrating
+     * your connector workflow to the upgraded version. Support for connectors
+     * configured using the older architecture is scheduled to end by June 2024.</p>
+     * 
      */
     inline DataSourceConfiguration& WithGitHubConfiguration(const GitHubConfiguration& value) { SetGitHubConfiguration(value); return *this;}
 
     /**
      * <p>Provides the configuration information to connect to GitHub as your data
-     * source.</p>
+     * source.</p>  <p>Amazon Kendra now supports an upgraded GitHub
+     * connector.</p> <p>You must now use the <a
+     * href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_TemplateConfiguration.html">TemplateConfiguration</a>
+     * object instead of the <code>GitHubConfiguration</code> object to configure your
+     * connector.</p> <p>Connectors configured using the older console and API
+     * architecture will continue to function as configured. However, you won’t be able
+     * to edit or update them. If you want to edit or update your connector
+     * configuration, you must create a new connector.</p> <p>We recommended migrating
+     * your connector workflow to the upgraded version. Support for connectors
+     * configured using the older architecture is scheduled to end by June 2024.</p>
+     * 
      */
     inline DataSourceConfiguration& WithGitHubConfiguration(GitHubConfiguration&& value) { SetGitHubConfiguration(std::move(value)); return *this;}
 

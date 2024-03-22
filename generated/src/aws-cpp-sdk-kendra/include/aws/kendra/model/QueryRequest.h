@@ -87,56 +87,88 @@ namespace Model
     /**
      * <p>The input query text for the search. Amazon Kendra truncates queries at 30
      * token words, which excludes punctuation and stop words. Truncation still applies
-     * if you use Boolean or more advanced, complex queries. </p>
+     * if you use Boolean or more advanced, complex queries. For example, <code>Timeoff
+     * AND October AND Category:HR</code> is counted as 3 tokens: <code>timeoff</code>,
+     * <code>october</code>, <code>hr</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/searching-example.html#searching-index-query-syntax">Searching
+     * with advanced query syntax</a> in the Amazon Kendra Developer Guide. </p>
      */
     inline const Aws::String& GetQueryText() const{ return m_queryText; }
 
     /**
      * <p>The input query text for the search. Amazon Kendra truncates queries at 30
      * token words, which excludes punctuation and stop words. Truncation still applies
-     * if you use Boolean or more advanced, complex queries. </p>
+     * if you use Boolean or more advanced, complex queries. For example, <code>Timeoff
+     * AND October AND Category:HR</code> is counted as 3 tokens: <code>timeoff</code>,
+     * <code>october</code>, <code>hr</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/searching-example.html#searching-index-query-syntax">Searching
+     * with advanced query syntax</a> in the Amazon Kendra Developer Guide. </p>
      */
     inline bool QueryTextHasBeenSet() const { return m_queryTextHasBeenSet; }
 
     /**
      * <p>The input query text for the search. Amazon Kendra truncates queries at 30
      * token words, which excludes punctuation and stop words. Truncation still applies
-     * if you use Boolean or more advanced, complex queries. </p>
+     * if you use Boolean or more advanced, complex queries. For example, <code>Timeoff
+     * AND October AND Category:HR</code> is counted as 3 tokens: <code>timeoff</code>,
+     * <code>october</code>, <code>hr</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/searching-example.html#searching-index-query-syntax">Searching
+     * with advanced query syntax</a> in the Amazon Kendra Developer Guide. </p>
      */
     inline void SetQueryText(const Aws::String& value) { m_queryTextHasBeenSet = true; m_queryText = value; }
 
     /**
      * <p>The input query text for the search. Amazon Kendra truncates queries at 30
      * token words, which excludes punctuation and stop words. Truncation still applies
-     * if you use Boolean or more advanced, complex queries. </p>
+     * if you use Boolean or more advanced, complex queries. For example, <code>Timeoff
+     * AND October AND Category:HR</code> is counted as 3 tokens: <code>timeoff</code>,
+     * <code>october</code>, <code>hr</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/searching-example.html#searching-index-query-syntax">Searching
+     * with advanced query syntax</a> in the Amazon Kendra Developer Guide. </p>
      */
     inline void SetQueryText(Aws::String&& value) { m_queryTextHasBeenSet = true; m_queryText = std::move(value); }
 
     /**
      * <p>The input query text for the search. Amazon Kendra truncates queries at 30
      * token words, which excludes punctuation and stop words. Truncation still applies
-     * if you use Boolean or more advanced, complex queries. </p>
+     * if you use Boolean or more advanced, complex queries. For example, <code>Timeoff
+     * AND October AND Category:HR</code> is counted as 3 tokens: <code>timeoff</code>,
+     * <code>october</code>, <code>hr</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/searching-example.html#searching-index-query-syntax">Searching
+     * with advanced query syntax</a> in the Amazon Kendra Developer Guide. </p>
      */
     inline void SetQueryText(const char* value) { m_queryTextHasBeenSet = true; m_queryText.assign(value); }
 
     /**
      * <p>The input query text for the search. Amazon Kendra truncates queries at 30
      * token words, which excludes punctuation and stop words. Truncation still applies
-     * if you use Boolean or more advanced, complex queries. </p>
+     * if you use Boolean or more advanced, complex queries. For example, <code>Timeoff
+     * AND October AND Category:HR</code> is counted as 3 tokens: <code>timeoff</code>,
+     * <code>october</code>, <code>hr</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/searching-example.html#searching-index-query-syntax">Searching
+     * with advanced query syntax</a> in the Amazon Kendra Developer Guide. </p>
      */
     inline QueryRequest& WithQueryText(const Aws::String& value) { SetQueryText(value); return *this;}
 
     /**
      * <p>The input query text for the search. Amazon Kendra truncates queries at 30
      * token words, which excludes punctuation and stop words. Truncation still applies
-     * if you use Boolean or more advanced, complex queries. </p>
+     * if you use Boolean or more advanced, complex queries. For example, <code>Timeoff
+     * AND October AND Category:HR</code> is counted as 3 tokens: <code>timeoff</code>,
+     * <code>october</code>, <code>hr</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/searching-example.html#searching-index-query-syntax">Searching
+     * with advanced query syntax</a> in the Amazon Kendra Developer Guide. </p>
      */
     inline QueryRequest& WithQueryText(Aws::String&& value) { SetQueryText(std::move(value)); return *this;}
 
     /**
      * <p>The input query text for the search. Amazon Kendra truncates queries at 30
      * token words, which excludes punctuation and stop words. Truncation still applies
-     * if you use Boolean or more advanced, complex queries. </p>
+     * if you use Boolean or more advanced, complex queries. For example, <code>Timeoff
+     * AND October AND Category:HR</code> is counted as 3 tokens: <code>timeoff</code>,
+     * <code>october</code>, <code>hr</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/searching-example.html#searching-index-query-syntax">Searching
+     * with advanced query syntax</a> in the Amazon Kendra Developer Guide. </p>
      */
     inline QueryRequest& WithQueryText(const char* value) { SetQueryText(value); return *this;}
 

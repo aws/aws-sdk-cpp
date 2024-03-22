@@ -502,10 +502,11 @@ namespace RolesAnywhere
 
         /**
          * <p>Imports the certificate revocation list (CRL). A CRL is a list of
-         * certificates that have been revoked by the issuing certificate Authority (CA).
-         * IAM Roles Anywhere validates against the CRL before issuing credentials. </p>
-         * <p> <b>Required permissions: </b> <code>rolesanywhere:ImportCrl</code>.
-         * </p><p><h3>See Also:</h3>   <a
+         * certificates that have been revoked by the issuing certificate Authority (CA).In
+         * order to be properly imported, a CRL must be in PEM format. IAM Roles Anywhere
+         * validates against the CRL before issuing credentials. </p> <p> <b>Required
+         * permissions: </b> <code>rolesanywhere:ImportCrl</code>. </p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/ImportCrl">AWS
          * API Reference</a></p>
          */

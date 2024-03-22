@@ -86,31 +86,6 @@ namespace Model
 
 
     /**
-     * <p>The equal-to condition to be applied to a single field when querying for
-     * findings.</p>
-     */
-    inline double GetEq() const{ return m_eq; }
-
-    /**
-     * <p>The equal-to condition to be applied to a single field when querying for
-     * findings.</p>
-     */
-    inline bool EqHasBeenSet() const { return m_eqHasBeenSet; }
-
-    /**
-     * <p>The equal-to condition to be applied to a single field when querying for
-     * findings.</p>
-     */
-    inline void SetEq(double value) { m_eqHasBeenSet = true; m_eq = value; }
-
-    /**
-     * <p>The equal-to condition to be applied to a single field when querying for
-     * findings.</p>
-     */
-    inline NumberFilter& WithEq(double value) { SetEq(value); return *this;}
-
-
-    /**
      * <p> The greater-than condition to be applied to a single field when querying for
      * findings. </p>
      */
@@ -159,6 +134,31 @@ namespace Model
      */
     inline NumberFilter& WithLt(double value) { SetLt(value); return *this;}
 
+
+    /**
+     * <p>The equal-to condition to be applied to a single field when querying for
+     * findings.</p>
+     */
+    inline double GetEq() const{ return m_eq; }
+
+    /**
+     * <p>The equal-to condition to be applied to a single field when querying for
+     * findings.</p>
+     */
+    inline bool EqHasBeenSet() const { return m_eqHasBeenSet; }
+
+    /**
+     * <p>The equal-to condition to be applied to a single field when querying for
+     * findings.</p>
+     */
+    inline void SetEq(double value) { m_eqHasBeenSet = true; m_eq = value; }
+
+    /**
+     * <p>The equal-to condition to be applied to a single field when querying for
+     * findings.</p>
+     */
+    inline NumberFilter& WithEq(double value) { SetEq(value); return *this;}
+
   private:
 
     double m_gte;
@@ -167,14 +167,14 @@ namespace Model
     double m_lte;
     bool m_lteHasBeenSet = false;
 
-    double m_eq;
-    bool m_eqHasBeenSet = false;
-
     double m_gt;
     bool m_gtHasBeenSet = false;
 
     double m_lt;
     bool m_ltHasBeenSet = false;
+
+    double m_eq;
+    bool m_eqHasBeenSet = false;
   };
 
 } // namespace Model

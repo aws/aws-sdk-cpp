@@ -544,42 +544,54 @@ namespace Model
     /**
      * <p>Gets users and groups from IAM Identity Center identity source. To configure
      * this, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.
+     * This is useful for user context filtering, where search results are filtered
+     * based on the user or their group access to documents.</p>
      */
     inline const UserGroupResolutionConfiguration& GetUserGroupResolutionConfiguration() const{ return m_userGroupResolutionConfiguration; }
 
     /**
      * <p>Gets users and groups from IAM Identity Center identity source. To configure
      * this, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.
+     * This is useful for user context filtering, where search results are filtered
+     * based on the user or their group access to documents.</p>
      */
     inline bool UserGroupResolutionConfigurationHasBeenSet() const { return m_userGroupResolutionConfigurationHasBeenSet; }
 
     /**
      * <p>Gets users and groups from IAM Identity Center identity source. To configure
      * this, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.
+     * This is useful for user context filtering, where search results are filtered
+     * based on the user or their group access to documents.</p>
      */
     inline void SetUserGroupResolutionConfiguration(const UserGroupResolutionConfiguration& value) { m_userGroupResolutionConfigurationHasBeenSet = true; m_userGroupResolutionConfiguration = value; }
 
     /**
      * <p>Gets users and groups from IAM Identity Center identity source. To configure
      * this, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.
+     * This is useful for user context filtering, where search results are filtered
+     * based on the user or their group access to documents.</p>
      */
     inline void SetUserGroupResolutionConfiguration(UserGroupResolutionConfiguration&& value) { m_userGroupResolutionConfigurationHasBeenSet = true; m_userGroupResolutionConfiguration = std::move(value); }
 
     /**
      * <p>Gets users and groups from IAM Identity Center identity source. To configure
      * this, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.
+     * This is useful for user context filtering, where search results are filtered
+     * based on the user or their group access to documents.</p>
      */
     inline CreateIndexRequest& WithUserGroupResolutionConfiguration(const UserGroupResolutionConfiguration& value) { SetUserGroupResolutionConfiguration(value); return *this;}
 
     /**
      * <p>Gets users and groups from IAM Identity Center identity source. To configure
      * this, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.
+     * This is useful for user context filtering, where search results are filtered
+     * based on the user or their group access to documents.</p>
      */
     inline CreateIndexRequest& WithUserGroupResolutionConfiguration(UserGroupResolutionConfiguration&& value) { SetUserGroupResolutionConfiguration(std::move(value)); return *this;}
 

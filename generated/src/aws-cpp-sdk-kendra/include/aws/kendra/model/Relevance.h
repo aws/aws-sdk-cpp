@@ -44,36 +44,32 @@ namespace Model
     /**
      * <p>Indicates that this field determines how "fresh" a document is. For example,
      * if document 1 was created on November 5, and document 2 was created on October
-     * 31, document 1 is "fresher" than document 2. You can only set the
-     * <code>Freshness</code> field on one <code>DATE</code> type field. Only applies
-     * to <code>DATE</code> fields.</p>
+     * 31, document 1 is "fresher" than document 2. Only applies to <code>DATE</code>
+     * fields.</p>
      */
     inline bool GetFreshness() const{ return m_freshness; }
 
     /**
      * <p>Indicates that this field determines how "fresh" a document is. For example,
      * if document 1 was created on November 5, and document 2 was created on October
-     * 31, document 1 is "fresher" than document 2. You can only set the
-     * <code>Freshness</code> field on one <code>DATE</code> type field. Only applies
-     * to <code>DATE</code> fields.</p>
+     * 31, document 1 is "fresher" than document 2. Only applies to <code>DATE</code>
+     * fields.</p>
      */
     inline bool FreshnessHasBeenSet() const { return m_freshnessHasBeenSet; }
 
     /**
      * <p>Indicates that this field determines how "fresh" a document is. For example,
      * if document 1 was created on November 5, and document 2 was created on October
-     * 31, document 1 is "fresher" than document 2. You can only set the
-     * <code>Freshness</code> field on one <code>DATE</code> type field. Only applies
-     * to <code>DATE</code> fields.</p>
+     * 31, document 1 is "fresher" than document 2. Only applies to <code>DATE</code>
+     * fields.</p>
      */
     inline void SetFreshness(bool value) { m_freshnessHasBeenSet = true; m_freshness = value; }
 
     /**
      * <p>Indicates that this field determines how "fresh" a document is. For example,
      * if document 1 was created on November 5, and document 2 was created on October
-     * 31, document 1 is "fresher" than document 2. You can only set the
-     * <code>Freshness</code> field on one <code>DATE</code> type field. Only applies
-     * to <code>DATE</code> fields.</p>
+     * 31, document 1 is "fresher" than document 2. Only applies to <code>DATE</code>
+     * fields.</p>
      */
     inline Relevance& WithFreshness(bool value) { SetFreshness(value); return *this;}
 
@@ -207,8 +203,7 @@ namespace Model
      * a document with a rating score of 1.</p> <p>When the <code>RankOrder</code>
      * field is <code>DESCENDING</code>, lower numbers are better. For example, in a
      * task tracking application, a priority 1 task is more important than a priority 5
-     * task.</p> <p>Only applies to <code>LONG</code> and <code>DOUBLE</code>
-     * fields.</p>
+     * task.</p> <p>Only applies to <code>LONG</code> fields.</p>
      */
     inline const Order& GetRankOrder() const{ return m_rankOrder; }
 
@@ -219,8 +214,7 @@ namespace Model
      * a document with a rating score of 1.</p> <p>When the <code>RankOrder</code>
      * field is <code>DESCENDING</code>, lower numbers are better. For example, in a
      * task tracking application, a priority 1 task is more important than a priority 5
-     * task.</p> <p>Only applies to <code>LONG</code> and <code>DOUBLE</code>
-     * fields.</p>
+     * task.</p> <p>Only applies to <code>LONG</code> fields.</p>
      */
     inline bool RankOrderHasBeenSet() const { return m_rankOrderHasBeenSet; }
 
@@ -231,8 +225,7 @@ namespace Model
      * a document with a rating score of 1.</p> <p>When the <code>RankOrder</code>
      * field is <code>DESCENDING</code>, lower numbers are better. For example, in a
      * task tracking application, a priority 1 task is more important than a priority 5
-     * task.</p> <p>Only applies to <code>LONG</code> and <code>DOUBLE</code>
-     * fields.</p>
+     * task.</p> <p>Only applies to <code>LONG</code> fields.</p>
      */
     inline void SetRankOrder(const Order& value) { m_rankOrderHasBeenSet = true; m_rankOrder = value; }
 
@@ -243,8 +236,7 @@ namespace Model
      * a document with a rating score of 1.</p> <p>When the <code>RankOrder</code>
      * field is <code>DESCENDING</code>, lower numbers are better. For example, in a
      * task tracking application, a priority 1 task is more important than a priority 5
-     * task.</p> <p>Only applies to <code>LONG</code> and <code>DOUBLE</code>
-     * fields.</p>
+     * task.</p> <p>Only applies to <code>LONG</code> fields.</p>
      */
     inline void SetRankOrder(Order&& value) { m_rankOrderHasBeenSet = true; m_rankOrder = std::move(value); }
 
@@ -255,8 +247,7 @@ namespace Model
      * a document with a rating score of 1.</p> <p>When the <code>RankOrder</code>
      * field is <code>DESCENDING</code>, lower numbers are better. For example, in a
      * task tracking application, a priority 1 task is more important than a priority 5
-     * task.</p> <p>Only applies to <code>LONG</code> and <code>DOUBLE</code>
-     * fields.</p>
+     * task.</p> <p>Only applies to <code>LONG</code> fields.</p>
      */
     inline Relevance& WithRankOrder(const Order& value) { SetRankOrder(value); return *this;}
 
@@ -267,15 +258,14 @@ namespace Model
      * a document with a rating score of 1.</p> <p>When the <code>RankOrder</code>
      * field is <code>DESCENDING</code>, lower numbers are better. For example, in a
      * task tracking application, a priority 1 task is more important than a priority 5
-     * task.</p> <p>Only applies to <code>LONG</code> and <code>DOUBLE</code>
-     * fields.</p>
+     * task.</p> <p>Only applies to <code>LONG</code> fields.</p>
      */
     inline Relevance& WithRankOrder(Order&& value) { SetRankOrder(std::move(value)); return *this;}
 
 
     /**
      * <p>A list of values that should be given a different boost when they appear in
-     * the result list. For example, if you are boosting a field called "department,"
+     * the result list. For example, if you are boosting a field called "department",
      * query terms that match the department field are boosted in the result. However,
      * you can add entries from the department field to boost documents with those
      * values higher. </p> <p>For example, you can add entries to the map with names of
@@ -288,7 +278,7 @@ namespace Model
 
     /**
      * <p>A list of values that should be given a different boost when they appear in
-     * the result list. For example, if you are boosting a field called "department,"
+     * the result list. For example, if you are boosting a field called "department",
      * query terms that match the department field are boosted in the result. However,
      * you can add entries from the department field to boost documents with those
      * values higher. </p> <p>For example, you can add entries to the map with names of
@@ -301,7 +291,7 @@ namespace Model
 
     /**
      * <p>A list of values that should be given a different boost when they appear in
-     * the result list. For example, if you are boosting a field called "department,"
+     * the result list. For example, if you are boosting a field called "department",
      * query terms that match the department field are boosted in the result. However,
      * you can add entries from the department field to boost documents with those
      * values higher. </p> <p>For example, you can add entries to the map with names of
@@ -314,7 +304,7 @@ namespace Model
 
     /**
      * <p>A list of values that should be given a different boost when they appear in
-     * the result list. For example, if you are boosting a field called "department,"
+     * the result list. For example, if you are boosting a field called "department",
      * query terms that match the department field are boosted in the result. However,
      * you can add entries from the department field to boost documents with those
      * values higher. </p> <p>For example, you can add entries to the map with names of
@@ -327,7 +317,7 @@ namespace Model
 
     /**
      * <p>A list of values that should be given a different boost when they appear in
-     * the result list. For example, if you are boosting a field called "department,"
+     * the result list. For example, if you are boosting a field called "department",
      * query terms that match the department field are boosted in the result. However,
      * you can add entries from the department field to boost documents with those
      * values higher. </p> <p>For example, you can add entries to the map with names of
@@ -340,7 +330,7 @@ namespace Model
 
     /**
      * <p>A list of values that should be given a different boost when they appear in
-     * the result list. For example, if you are boosting a field called "department,"
+     * the result list. For example, if you are boosting a field called "department",
      * query terms that match the department field are boosted in the result. However,
      * you can add entries from the department field to boost documents with those
      * values higher. </p> <p>For example, you can add entries to the map with names of
@@ -353,7 +343,7 @@ namespace Model
 
     /**
      * <p>A list of values that should be given a different boost when they appear in
-     * the result list. For example, if you are boosting a field called "department,"
+     * the result list. For example, if you are boosting a field called "department",
      * query terms that match the department field are boosted in the result. However,
      * you can add entries from the department field to boost documents with those
      * values higher. </p> <p>For example, you can add entries to the map with names of
@@ -366,7 +356,7 @@ namespace Model
 
     /**
      * <p>A list of values that should be given a different boost when they appear in
-     * the result list. For example, if you are boosting a field called "department,"
+     * the result list. For example, if you are boosting a field called "department",
      * query terms that match the department field are boosted in the result. However,
      * you can add entries from the department field to boost documents with those
      * values higher. </p> <p>For example, you can add entries to the map with names of
@@ -379,7 +369,7 @@ namespace Model
 
     /**
      * <p>A list of values that should be given a different boost when they appear in
-     * the result list. For example, if you are boosting a field called "department,"
+     * the result list. For example, if you are boosting a field called "department",
      * query terms that match the department field are boosted in the result. However,
      * you can add entries from the department field to boost documents with those
      * values higher. </p> <p>For example, you can add entries to the map with names of

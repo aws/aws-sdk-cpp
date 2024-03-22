@@ -89,7 +89,7 @@ namespace Model
 
 
     /**
-     * <p>The name of the organization of the GitHub Enterprise Server (in-premise)
+     * <p>The name of the organization of the GitHub Enterprise Server (on-premises)
      * account you want to connect to. You can find your organization name by logging
      * into GitHub desktop and selecting <b>Your organizations</b> under your profile
      * picture dropdown.</p>
@@ -97,7 +97,7 @@ namespace Model
     inline const Aws::String& GetOrganizationName() const{ return m_organizationName; }
 
     /**
-     * <p>The name of the organization of the GitHub Enterprise Server (in-premise)
+     * <p>The name of the organization of the GitHub Enterprise Server (on-premises)
      * account you want to connect to. You can find your organization name by logging
      * into GitHub desktop and selecting <b>Your organizations</b> under your profile
      * picture dropdown.</p>
@@ -105,7 +105,7 @@ namespace Model
     inline bool OrganizationNameHasBeenSet() const { return m_organizationNameHasBeenSet; }
 
     /**
-     * <p>The name of the organization of the GitHub Enterprise Server (in-premise)
+     * <p>The name of the organization of the GitHub Enterprise Server (on-premises)
      * account you want to connect to. You can find your organization name by logging
      * into GitHub desktop and selecting <b>Your organizations</b> under your profile
      * picture dropdown.</p>
@@ -113,7 +113,7 @@ namespace Model
     inline void SetOrganizationName(const Aws::String& value) { m_organizationNameHasBeenSet = true; m_organizationName = value; }
 
     /**
-     * <p>The name of the organization of the GitHub Enterprise Server (in-premise)
+     * <p>The name of the organization of the GitHub Enterprise Server (on-premises)
      * account you want to connect to. You can find your organization name by logging
      * into GitHub desktop and selecting <b>Your organizations</b> under your profile
      * picture dropdown.</p>
@@ -121,7 +121,7 @@ namespace Model
     inline void SetOrganizationName(Aws::String&& value) { m_organizationNameHasBeenSet = true; m_organizationName = std::move(value); }
 
     /**
-     * <p>The name of the organization of the GitHub Enterprise Server (in-premise)
+     * <p>The name of the organization of the GitHub Enterprise Server (on-premises)
      * account you want to connect to. You can find your organization name by logging
      * into GitHub desktop and selecting <b>Your organizations</b> under your profile
      * picture dropdown.</p>
@@ -129,7 +129,7 @@ namespace Model
     inline void SetOrganizationName(const char* value) { m_organizationNameHasBeenSet = true; m_organizationName.assign(value); }
 
     /**
-     * <p>The name of the organization of the GitHub Enterprise Server (in-premise)
+     * <p>The name of the organization of the GitHub Enterprise Server (on-premises)
      * account you want to connect to. You can find your organization name by logging
      * into GitHub desktop and selecting <b>Your organizations</b> under your profile
      * picture dropdown.</p>
@@ -137,7 +137,7 @@ namespace Model
     inline OnPremiseConfiguration& WithOrganizationName(const Aws::String& value) { SetOrganizationName(value); return *this;}
 
     /**
-     * <p>The name of the organization of the GitHub Enterprise Server (in-premise)
+     * <p>The name of the organization of the GitHub Enterprise Server (on-premises)
      * account you want to connect to. You can find your organization name by logging
      * into GitHub desktop and selecting <b>Your organizations</b> under your profile
      * picture dropdown.</p>
@@ -145,7 +145,7 @@ namespace Model
     inline OnPremiseConfiguration& WithOrganizationName(Aws::String&& value) { SetOrganizationName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the organization of the GitHub Enterprise Server (in-premise)
+     * <p>The name of the organization of the GitHub Enterprise Server (on-premises)
      * account you want to connect to. You can find your organization name by logging
      * into GitHub desktop and selecting <b>Your organizations</b> under your profile
      * picture dropdown.</p>

@@ -82,42 +82,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the index you want to update.</p>
+     * <p>A new name for the index.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the index you want to update.</p>
+     * <p>A new name for the index.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name of the index you want to update.</p>
+     * <p>A new name for the index.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the index you want to update.</p>
+     * <p>A new name for the index.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the index you want to update.</p>
+     * <p>A new name for the index.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the index you want to update.</p>
+     * <p>A new name for the index.</p>
      */
     inline UpdateIndexRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the index you want to update.</p>
+     * <p>A new name for the index.</p>
      */
     inline UpdateIndexRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the index you want to update.</p>
+     * <p>A new name for the index.</p>
      */
     inline UpdateIndexRequest& WithName(const char* value) { SetName(value); return *this;}
 
@@ -397,44 +397,56 @@ namespace Model
 
 
     /**
-     * <p>Enables fetching access levels of groups and users from an IAM Identity
-     * Center identity source. To configure this, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
+     * <p>Gets users and groups from IAM Identity Center identity source. To configure
+     * this, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.
+     * This is useful for user context filtering, where search results are filtered
+     * based on the user or their group access to documents.</p>
      */
     inline const UserGroupResolutionConfiguration& GetUserGroupResolutionConfiguration() const{ return m_userGroupResolutionConfiguration; }
 
     /**
-     * <p>Enables fetching access levels of groups and users from an IAM Identity
-     * Center identity source. To configure this, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
+     * <p>Gets users and groups from IAM Identity Center identity source. To configure
+     * this, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.
+     * This is useful for user context filtering, where search results are filtered
+     * based on the user or their group access to documents.</p>
      */
     inline bool UserGroupResolutionConfigurationHasBeenSet() const { return m_userGroupResolutionConfigurationHasBeenSet; }
 
     /**
-     * <p>Enables fetching access levels of groups and users from an IAM Identity
-     * Center identity source. To configure this, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
+     * <p>Gets users and groups from IAM Identity Center identity source. To configure
+     * this, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.
+     * This is useful for user context filtering, where search results are filtered
+     * based on the user or their group access to documents.</p>
      */
     inline void SetUserGroupResolutionConfiguration(const UserGroupResolutionConfiguration& value) { m_userGroupResolutionConfigurationHasBeenSet = true; m_userGroupResolutionConfiguration = value; }
 
     /**
-     * <p>Enables fetching access levels of groups and users from an IAM Identity
-     * Center identity source. To configure this, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
+     * <p>Gets users and groups from IAM Identity Center identity source. To configure
+     * this, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.
+     * This is useful for user context filtering, where search results are filtered
+     * based on the user or their group access to documents.</p>
      */
     inline void SetUserGroupResolutionConfiguration(UserGroupResolutionConfiguration&& value) { m_userGroupResolutionConfigurationHasBeenSet = true; m_userGroupResolutionConfiguration = std::move(value); }
 
     /**
-     * <p>Enables fetching access levels of groups and users from an IAM Identity
-     * Center identity source. To configure this, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
+     * <p>Gets users and groups from IAM Identity Center identity source. To configure
+     * this, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.
+     * This is useful for user context filtering, where search results are filtered
+     * based on the user or their group access to documents.</p>
      */
     inline UpdateIndexRequest& WithUserGroupResolutionConfiguration(const UserGroupResolutionConfiguration& value) { SetUserGroupResolutionConfiguration(value); return *this;}
 
     /**
-     * <p>Enables fetching access levels of groups and users from an IAM Identity
-     * Center identity source. To configure this, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
+     * <p>Gets users and groups from IAM Identity Center identity source. To configure
+     * this, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.
+     * This is useful for user context filtering, where search results are filtered
+     * based on the user or their group access to documents.</p>
      */
     inline UpdateIndexRequest& WithUserGroupResolutionConfiguration(UserGroupResolutionConfiguration&& value) { SetUserGroupResolutionConfiguration(std::move(value)); return *this;}
 
