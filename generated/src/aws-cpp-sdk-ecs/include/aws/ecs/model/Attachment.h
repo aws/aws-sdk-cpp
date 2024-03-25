@@ -200,11 +200,10 @@ namespace Model
      * includes the network interface ID, the MAC address, the subnet ID, and the
      * private IPv4 address.</p> <p>For Service Connect services, this includes
      * <code>portName</code>, <code>clientAliases</code>, <code>discoveryName</code>,
-     * and <code>ingressPortOverride</code>.</p> <p>For elastic block storage, this
-     * includes <code>roleArn</code>, <code>encrypted</code>,
-     * <code>filesystemType</code>, <code>iops</code>, <code>kmsKeyId</code>,
-     * <code>sizeInGiB</code>, <code>snapshotId</code>, <code>tagSpecifications</code>,
-     * <code>throughput</code>, and <code>volumeType</code>.</p>
+     * and <code>ingressPortOverride</code>.</p> <p>For Elastic Block Storage, this
+     * includes <code>roleArn</code>, <code>deleteOnTermination</code>,
+     * <code>volumeName</code>, <code>volumeId</code>, and <code>statusReason</code>
+     * (only when the attachment fails to create or attach).</p>
      */
     inline const Aws::Vector<KeyValuePair>& GetDetails() const{ return m_details; }
 
@@ -213,11 +212,10 @@ namespace Model
      * includes the network interface ID, the MAC address, the subnet ID, and the
      * private IPv4 address.</p> <p>For Service Connect services, this includes
      * <code>portName</code>, <code>clientAliases</code>, <code>discoveryName</code>,
-     * and <code>ingressPortOverride</code>.</p> <p>For elastic block storage, this
-     * includes <code>roleArn</code>, <code>encrypted</code>,
-     * <code>filesystemType</code>, <code>iops</code>, <code>kmsKeyId</code>,
-     * <code>sizeInGiB</code>, <code>snapshotId</code>, <code>tagSpecifications</code>,
-     * <code>throughput</code>, and <code>volumeType</code>.</p>
+     * and <code>ingressPortOverride</code>.</p> <p>For Elastic Block Storage, this
+     * includes <code>roleArn</code>, <code>deleteOnTermination</code>,
+     * <code>volumeName</code>, <code>volumeId</code>, and <code>statusReason</code>
+     * (only when the attachment fails to create or attach).</p>
      */
     inline bool DetailsHasBeenSet() const { return m_detailsHasBeenSet; }
 
@@ -226,11 +224,10 @@ namespace Model
      * includes the network interface ID, the MAC address, the subnet ID, and the
      * private IPv4 address.</p> <p>For Service Connect services, this includes
      * <code>portName</code>, <code>clientAliases</code>, <code>discoveryName</code>,
-     * and <code>ingressPortOverride</code>.</p> <p>For elastic block storage, this
-     * includes <code>roleArn</code>, <code>encrypted</code>,
-     * <code>filesystemType</code>, <code>iops</code>, <code>kmsKeyId</code>,
-     * <code>sizeInGiB</code>, <code>snapshotId</code>, <code>tagSpecifications</code>,
-     * <code>throughput</code>, and <code>volumeType</code>.</p>
+     * and <code>ingressPortOverride</code>.</p> <p>For Elastic Block Storage, this
+     * includes <code>roleArn</code>, <code>deleteOnTermination</code>,
+     * <code>volumeName</code>, <code>volumeId</code>, and <code>statusReason</code>
+     * (only when the attachment fails to create or attach).</p>
      */
     inline void SetDetails(const Aws::Vector<KeyValuePair>& value) { m_detailsHasBeenSet = true; m_details = value; }
 
@@ -239,11 +236,10 @@ namespace Model
      * includes the network interface ID, the MAC address, the subnet ID, and the
      * private IPv4 address.</p> <p>For Service Connect services, this includes
      * <code>portName</code>, <code>clientAliases</code>, <code>discoveryName</code>,
-     * and <code>ingressPortOverride</code>.</p> <p>For elastic block storage, this
-     * includes <code>roleArn</code>, <code>encrypted</code>,
-     * <code>filesystemType</code>, <code>iops</code>, <code>kmsKeyId</code>,
-     * <code>sizeInGiB</code>, <code>snapshotId</code>, <code>tagSpecifications</code>,
-     * <code>throughput</code>, and <code>volumeType</code>.</p>
+     * and <code>ingressPortOverride</code>.</p> <p>For Elastic Block Storage, this
+     * includes <code>roleArn</code>, <code>deleteOnTermination</code>,
+     * <code>volumeName</code>, <code>volumeId</code>, and <code>statusReason</code>
+     * (only when the attachment fails to create or attach).</p>
      */
     inline void SetDetails(Aws::Vector<KeyValuePair>&& value) { m_detailsHasBeenSet = true; m_details = std::move(value); }
 
@@ -252,11 +248,10 @@ namespace Model
      * includes the network interface ID, the MAC address, the subnet ID, and the
      * private IPv4 address.</p> <p>For Service Connect services, this includes
      * <code>portName</code>, <code>clientAliases</code>, <code>discoveryName</code>,
-     * and <code>ingressPortOverride</code>.</p> <p>For elastic block storage, this
-     * includes <code>roleArn</code>, <code>encrypted</code>,
-     * <code>filesystemType</code>, <code>iops</code>, <code>kmsKeyId</code>,
-     * <code>sizeInGiB</code>, <code>snapshotId</code>, <code>tagSpecifications</code>,
-     * <code>throughput</code>, and <code>volumeType</code>.</p>
+     * and <code>ingressPortOverride</code>.</p> <p>For Elastic Block Storage, this
+     * includes <code>roleArn</code>, <code>deleteOnTermination</code>,
+     * <code>volumeName</code>, <code>volumeId</code>, and <code>statusReason</code>
+     * (only when the attachment fails to create or attach).</p>
      */
     inline Attachment& WithDetails(const Aws::Vector<KeyValuePair>& value) { SetDetails(value); return *this;}
 
@@ -265,11 +260,10 @@ namespace Model
      * includes the network interface ID, the MAC address, the subnet ID, and the
      * private IPv4 address.</p> <p>For Service Connect services, this includes
      * <code>portName</code>, <code>clientAliases</code>, <code>discoveryName</code>,
-     * and <code>ingressPortOverride</code>.</p> <p>For elastic block storage, this
-     * includes <code>roleArn</code>, <code>encrypted</code>,
-     * <code>filesystemType</code>, <code>iops</code>, <code>kmsKeyId</code>,
-     * <code>sizeInGiB</code>, <code>snapshotId</code>, <code>tagSpecifications</code>,
-     * <code>throughput</code>, and <code>volumeType</code>.</p>
+     * and <code>ingressPortOverride</code>.</p> <p>For Elastic Block Storage, this
+     * includes <code>roleArn</code>, <code>deleteOnTermination</code>,
+     * <code>volumeName</code>, <code>volumeId</code>, and <code>statusReason</code>
+     * (only when the attachment fails to create or attach).</p>
      */
     inline Attachment& WithDetails(Aws::Vector<KeyValuePair>&& value) { SetDetails(std::move(value)); return *this;}
 
@@ -278,11 +272,10 @@ namespace Model
      * includes the network interface ID, the MAC address, the subnet ID, and the
      * private IPv4 address.</p> <p>For Service Connect services, this includes
      * <code>portName</code>, <code>clientAliases</code>, <code>discoveryName</code>,
-     * and <code>ingressPortOverride</code>.</p> <p>For elastic block storage, this
-     * includes <code>roleArn</code>, <code>encrypted</code>,
-     * <code>filesystemType</code>, <code>iops</code>, <code>kmsKeyId</code>,
-     * <code>sizeInGiB</code>, <code>snapshotId</code>, <code>tagSpecifications</code>,
-     * <code>throughput</code>, and <code>volumeType</code>.</p>
+     * and <code>ingressPortOverride</code>.</p> <p>For Elastic Block Storage, this
+     * includes <code>roleArn</code>, <code>deleteOnTermination</code>,
+     * <code>volumeName</code>, <code>volumeId</code>, and <code>statusReason</code>
+     * (only when the attachment fails to create or attach).</p>
      */
     inline Attachment& AddDetails(const KeyValuePair& value) { m_detailsHasBeenSet = true; m_details.push_back(value); return *this; }
 
@@ -291,11 +284,10 @@ namespace Model
      * includes the network interface ID, the MAC address, the subnet ID, and the
      * private IPv4 address.</p> <p>For Service Connect services, this includes
      * <code>portName</code>, <code>clientAliases</code>, <code>discoveryName</code>,
-     * and <code>ingressPortOverride</code>.</p> <p>For elastic block storage, this
-     * includes <code>roleArn</code>, <code>encrypted</code>,
-     * <code>filesystemType</code>, <code>iops</code>, <code>kmsKeyId</code>,
-     * <code>sizeInGiB</code>, <code>snapshotId</code>, <code>tagSpecifications</code>,
-     * <code>throughput</code>, and <code>volumeType</code>.</p>
+     * and <code>ingressPortOverride</code>.</p> <p>For Elastic Block Storage, this
+     * includes <code>roleArn</code>, <code>deleteOnTermination</code>,
+     * <code>volumeName</code>, <code>volumeId</code>, and <code>statusReason</code>
+     * (only when the attachment fails to create or attach).</p>
      */
     inline Attachment& AddDetails(KeyValuePair&& value) { m_detailsHasBeenSet = true; m_details.push_back(std::move(value)); return *this; }
 

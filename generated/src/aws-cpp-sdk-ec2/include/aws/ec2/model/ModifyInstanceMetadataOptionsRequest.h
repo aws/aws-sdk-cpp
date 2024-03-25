@@ -91,9 +91,18 @@ namespace Model
      * required. You must send a session token in your instance metadata retrieval
      * requests. With this option, retrieving the IAM role credentials always returns
      * IMDSv2 credentials; IMDSv1 credentials are not available.</p> </li> </ul>
-     * <p>Default: If the value of <code>ImdsSupport</code> for the Amazon Machine
-     * Image (AMI) for your instance is <code>v2.0</code>, the default is
-     * <code>required</code>.</p>
+     * <p>Default:</p> <ul> <li> <p>If the value of <code>ImdsSupport</code> for the
+     * Amazon Machine Image (AMI) for your instance is <code>v2.0</code> and the
+     * account level default is set to <code>no-preference</code>, the default is
+     * <code>required</code>.</p> </li> <li> <p>If the value of
+     * <code>ImdsSupport</code> for the Amazon Machine Image (AMI) for your instance is
+     * <code>v2.0</code>, but the account level default is set to <code>V1 or
+     * V2</code>, the default is <code>optional</code>.</p> </li> </ul> <p>The default
+     * value can also be affected by other combinations of parameters. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html#instance-metadata-options-order-of-precedence">Order
+     * of precedence for instance metadata options</a> in the <i>Amazon EC2 User
+     * Guide</i>.</p>
      */
     inline const HttpTokensState& GetHttpTokens() const{ return m_httpTokens; }
 
@@ -107,9 +116,18 @@ namespace Model
      * required. You must send a session token in your instance metadata retrieval
      * requests. With this option, retrieving the IAM role credentials always returns
      * IMDSv2 credentials; IMDSv1 credentials are not available.</p> </li> </ul>
-     * <p>Default: If the value of <code>ImdsSupport</code> for the Amazon Machine
-     * Image (AMI) for your instance is <code>v2.0</code>, the default is
-     * <code>required</code>.</p>
+     * <p>Default:</p> <ul> <li> <p>If the value of <code>ImdsSupport</code> for the
+     * Amazon Machine Image (AMI) for your instance is <code>v2.0</code> and the
+     * account level default is set to <code>no-preference</code>, the default is
+     * <code>required</code>.</p> </li> <li> <p>If the value of
+     * <code>ImdsSupport</code> for the Amazon Machine Image (AMI) for your instance is
+     * <code>v2.0</code>, but the account level default is set to <code>V1 or
+     * V2</code>, the default is <code>optional</code>.</p> </li> </ul> <p>The default
+     * value can also be affected by other combinations of parameters. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html#instance-metadata-options-order-of-precedence">Order
+     * of precedence for instance metadata options</a> in the <i>Amazon EC2 User
+     * Guide</i>.</p>
      */
     inline bool HttpTokensHasBeenSet() const { return m_httpTokensHasBeenSet; }
 
@@ -123,9 +141,18 @@ namespace Model
      * required. You must send a session token in your instance metadata retrieval
      * requests. With this option, retrieving the IAM role credentials always returns
      * IMDSv2 credentials; IMDSv1 credentials are not available.</p> </li> </ul>
-     * <p>Default: If the value of <code>ImdsSupport</code> for the Amazon Machine
-     * Image (AMI) for your instance is <code>v2.0</code>, the default is
-     * <code>required</code>.</p>
+     * <p>Default:</p> <ul> <li> <p>If the value of <code>ImdsSupport</code> for the
+     * Amazon Machine Image (AMI) for your instance is <code>v2.0</code> and the
+     * account level default is set to <code>no-preference</code>, the default is
+     * <code>required</code>.</p> </li> <li> <p>If the value of
+     * <code>ImdsSupport</code> for the Amazon Machine Image (AMI) for your instance is
+     * <code>v2.0</code>, but the account level default is set to <code>V1 or
+     * V2</code>, the default is <code>optional</code>.</p> </li> </ul> <p>The default
+     * value can also be affected by other combinations of parameters. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html#instance-metadata-options-order-of-precedence">Order
+     * of precedence for instance metadata options</a> in the <i>Amazon EC2 User
+     * Guide</i>.</p>
      */
     inline void SetHttpTokens(const HttpTokensState& value) { m_httpTokensHasBeenSet = true; m_httpTokens = value; }
 
@@ -139,9 +166,18 @@ namespace Model
      * required. You must send a session token in your instance metadata retrieval
      * requests. With this option, retrieving the IAM role credentials always returns
      * IMDSv2 credentials; IMDSv1 credentials are not available.</p> </li> </ul>
-     * <p>Default: If the value of <code>ImdsSupport</code> for the Amazon Machine
-     * Image (AMI) for your instance is <code>v2.0</code>, the default is
-     * <code>required</code>.</p>
+     * <p>Default:</p> <ul> <li> <p>If the value of <code>ImdsSupport</code> for the
+     * Amazon Machine Image (AMI) for your instance is <code>v2.0</code> and the
+     * account level default is set to <code>no-preference</code>, the default is
+     * <code>required</code>.</p> </li> <li> <p>If the value of
+     * <code>ImdsSupport</code> for the Amazon Machine Image (AMI) for your instance is
+     * <code>v2.0</code>, but the account level default is set to <code>V1 or
+     * V2</code>, the default is <code>optional</code>.</p> </li> </ul> <p>The default
+     * value can also be affected by other combinations of parameters. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html#instance-metadata-options-order-of-precedence">Order
+     * of precedence for instance metadata options</a> in the <i>Amazon EC2 User
+     * Guide</i>.</p>
      */
     inline void SetHttpTokens(HttpTokensState&& value) { m_httpTokensHasBeenSet = true; m_httpTokens = std::move(value); }
 
@@ -155,9 +191,18 @@ namespace Model
      * required. You must send a session token in your instance metadata retrieval
      * requests. With this option, retrieving the IAM role credentials always returns
      * IMDSv2 credentials; IMDSv1 credentials are not available.</p> </li> </ul>
-     * <p>Default: If the value of <code>ImdsSupport</code> for the Amazon Machine
-     * Image (AMI) for your instance is <code>v2.0</code>, the default is
-     * <code>required</code>.</p>
+     * <p>Default:</p> <ul> <li> <p>If the value of <code>ImdsSupport</code> for the
+     * Amazon Machine Image (AMI) for your instance is <code>v2.0</code> and the
+     * account level default is set to <code>no-preference</code>, the default is
+     * <code>required</code>.</p> </li> <li> <p>If the value of
+     * <code>ImdsSupport</code> for the Amazon Machine Image (AMI) for your instance is
+     * <code>v2.0</code>, but the account level default is set to <code>V1 or
+     * V2</code>, the default is <code>optional</code>.</p> </li> </ul> <p>The default
+     * value can also be affected by other combinations of parameters. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html#instance-metadata-options-order-of-precedence">Order
+     * of precedence for instance metadata options</a> in the <i>Amazon EC2 User
+     * Guide</i>.</p>
      */
     inline ModifyInstanceMetadataOptionsRequest& WithHttpTokens(const HttpTokensState& value) { SetHttpTokens(value); return *this;}
 
@@ -171,9 +216,18 @@ namespace Model
      * required. You must send a session token in your instance metadata retrieval
      * requests. With this option, retrieving the IAM role credentials always returns
      * IMDSv2 credentials; IMDSv1 credentials are not available.</p> </li> </ul>
-     * <p>Default: If the value of <code>ImdsSupport</code> for the Amazon Machine
-     * Image (AMI) for your instance is <code>v2.0</code>, the default is
-     * <code>required</code>.</p>
+     * <p>Default:</p> <ul> <li> <p>If the value of <code>ImdsSupport</code> for the
+     * Amazon Machine Image (AMI) for your instance is <code>v2.0</code> and the
+     * account level default is set to <code>no-preference</code>, the default is
+     * <code>required</code>.</p> </li> <li> <p>If the value of
+     * <code>ImdsSupport</code> for the Amazon Machine Image (AMI) for your instance is
+     * <code>v2.0</code>, but the account level default is set to <code>V1 or
+     * V2</code>, the default is <code>optional</code>.</p> </li> </ul> <p>The default
+     * value can also be affected by other combinations of parameters. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html#instance-metadata-options-order-of-precedence">Order
+     * of precedence for instance metadata options</a> in the <i>Amazon EC2 User
+     * Guide</i>.</p>
      */
     inline ModifyInstanceMetadataOptionsRequest& WithHttpTokens(HttpTokensState&& value) { SetHttpTokens(std::move(value)); return *this;}
 

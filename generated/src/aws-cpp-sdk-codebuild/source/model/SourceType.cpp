@@ -23,6 +23,8 @@ namespace Aws
         static const int CODECOMMIT_HASH = HashingUtils::HashString("CODECOMMIT");
         static const int CODEPIPELINE_HASH = HashingUtils::HashString("CODEPIPELINE");
         static const int GITHUB_HASH = HashingUtils::HashString("GITHUB");
+        static const int GITLAB_HASH = HashingUtils::HashString("GITLAB");
+        static const int GITLAB_SELF_MANAGED_HASH = HashingUtils::HashString("GITLAB_SELF_MANAGED");
         static const int S3_HASH = HashingUtils::HashString("S3");
         static const int BITBUCKET_HASH = HashingUtils::HashString("BITBUCKET");
         static const int GITHUB_ENTERPRISE_HASH = HashingUtils::HashString("GITHUB_ENTERPRISE");
@@ -43,6 +45,14 @@ namespace Aws
           else if (hashCode == GITHUB_HASH)
           {
             return SourceType::GITHUB;
+          }
+          else if (hashCode == GITLAB_HASH)
+          {
+            return SourceType::GITLAB;
+          }
+          else if (hashCode == GITLAB_SELF_MANAGED_HASH)
+          {
+            return SourceType::GITLAB_SELF_MANAGED;
           }
           else if (hashCode == S3_HASH)
           {
@@ -82,6 +92,10 @@ namespace Aws
             return "CODEPIPELINE";
           case SourceType::GITHUB:
             return "GITHUB";
+          case SourceType::GITLAB:
+            return "GITLAB";
+          case SourceType::GITLAB_SELF_MANAGED:
+            return "GITLAB_SELF_MANAGED";
           case SourceType::S3:
             return "S3";
           case SourceType::BITBUCKET:

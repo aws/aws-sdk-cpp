@@ -28,8 +28,8 @@ namespace Model
 
   /**
    * <p>A cross-account attachment in Global Accelerator. A cross-account attachment
-   * specifies the <i>principals</i> who have permission to add to accelerators in
-   * their own account the resources in your account that you also list in the
+   * specifies the <i>principals</i> who have permission to work with
+   * <i>resources</i> in your account, which you also list in the
    * attachment.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/Attachment">AWS
    * API Reference</a></p>

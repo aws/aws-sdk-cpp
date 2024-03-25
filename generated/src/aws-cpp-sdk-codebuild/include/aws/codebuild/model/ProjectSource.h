@@ -49,11 +49,14 @@ namespace Model
      * code is in an CodeCommit repository.</p> </li> <li> <p>
      * <code>CODEPIPELINE</code>: The source code settings are specified in the source
      * action of a pipeline in CodePipeline.</p> </li> <li> <p> <code>GITHUB</code>:
-     * The source code is in a GitHub or GitHub Enterprise Cloud repository.</p> </li>
-     * <li> <p> <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub
-     * Enterprise Server repository.</p> </li> <li> <p> <code>NO_SOURCE</code>: The
-     * project does not have input source code.</p> </li> <li> <p> <code>S3</code>: The
-     * source code is in an Amazon S3 bucket.</p> </li> </ul>
+     * The source code is in a GitHub repository.</p> </li> <li> <p>
+     * <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise Server
+     * repository.</p> </li> <li> <p> <code>GITLAB</code>: The source code is in a
+     * GitLab repository.</p> </li> <li> <p> <code>GITLAB_SELF_MANAGED</code>: The
+     * source code is in a self-managed GitLab repository.</p> </li> <li> <p>
+     * <code>NO_SOURCE</code>: The project does not have input source code.</p> </li>
+     * <li> <p> <code>S3</code>: The source code is in an Amazon S3 bucket.</p> </li>
+     * </ul>
      */
     inline const SourceType& GetType() const{ return m_type; }
 
@@ -64,11 +67,14 @@ namespace Model
      * code is in an CodeCommit repository.</p> </li> <li> <p>
      * <code>CODEPIPELINE</code>: The source code settings are specified in the source
      * action of a pipeline in CodePipeline.</p> </li> <li> <p> <code>GITHUB</code>:
-     * The source code is in a GitHub or GitHub Enterprise Cloud repository.</p> </li>
-     * <li> <p> <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub
-     * Enterprise Server repository.</p> </li> <li> <p> <code>NO_SOURCE</code>: The
-     * project does not have input source code.</p> </li> <li> <p> <code>S3</code>: The
-     * source code is in an Amazon S3 bucket.</p> </li> </ul>
+     * The source code is in a GitHub repository.</p> </li> <li> <p>
+     * <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise Server
+     * repository.</p> </li> <li> <p> <code>GITLAB</code>: The source code is in a
+     * GitLab repository.</p> </li> <li> <p> <code>GITLAB_SELF_MANAGED</code>: The
+     * source code is in a self-managed GitLab repository.</p> </li> <li> <p>
+     * <code>NO_SOURCE</code>: The project does not have input source code.</p> </li>
+     * <li> <p> <code>S3</code>: The source code is in an Amazon S3 bucket.</p> </li>
+     * </ul>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
@@ -79,11 +85,14 @@ namespace Model
      * code is in an CodeCommit repository.</p> </li> <li> <p>
      * <code>CODEPIPELINE</code>: The source code settings are specified in the source
      * action of a pipeline in CodePipeline.</p> </li> <li> <p> <code>GITHUB</code>:
-     * The source code is in a GitHub or GitHub Enterprise Cloud repository.</p> </li>
-     * <li> <p> <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub
-     * Enterprise Server repository.</p> </li> <li> <p> <code>NO_SOURCE</code>: The
-     * project does not have input source code.</p> </li> <li> <p> <code>S3</code>: The
-     * source code is in an Amazon S3 bucket.</p> </li> </ul>
+     * The source code is in a GitHub repository.</p> </li> <li> <p>
+     * <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise Server
+     * repository.</p> </li> <li> <p> <code>GITLAB</code>: The source code is in a
+     * GitLab repository.</p> </li> <li> <p> <code>GITLAB_SELF_MANAGED</code>: The
+     * source code is in a self-managed GitLab repository.</p> </li> <li> <p>
+     * <code>NO_SOURCE</code>: The project does not have input source code.</p> </li>
+     * <li> <p> <code>S3</code>: The source code is in an Amazon S3 bucket.</p> </li>
+     * </ul>
      */
     inline void SetType(const SourceType& value) { m_typeHasBeenSet = true; m_type = value; }
 
@@ -94,11 +103,14 @@ namespace Model
      * code is in an CodeCommit repository.</p> </li> <li> <p>
      * <code>CODEPIPELINE</code>: The source code settings are specified in the source
      * action of a pipeline in CodePipeline.</p> </li> <li> <p> <code>GITHUB</code>:
-     * The source code is in a GitHub or GitHub Enterprise Cloud repository.</p> </li>
-     * <li> <p> <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub
-     * Enterprise Server repository.</p> </li> <li> <p> <code>NO_SOURCE</code>: The
-     * project does not have input source code.</p> </li> <li> <p> <code>S3</code>: The
-     * source code is in an Amazon S3 bucket.</p> </li> </ul>
+     * The source code is in a GitHub repository.</p> </li> <li> <p>
+     * <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise Server
+     * repository.</p> </li> <li> <p> <code>GITLAB</code>: The source code is in a
+     * GitLab repository.</p> </li> <li> <p> <code>GITLAB_SELF_MANAGED</code>: The
+     * source code is in a self-managed GitLab repository.</p> </li> <li> <p>
+     * <code>NO_SOURCE</code>: The project does not have input source code.</p> </li>
+     * <li> <p> <code>S3</code>: The source code is in an Amazon S3 bucket.</p> </li>
+     * </ul>
      */
     inline void SetType(SourceType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
@@ -109,11 +121,14 @@ namespace Model
      * code is in an CodeCommit repository.</p> </li> <li> <p>
      * <code>CODEPIPELINE</code>: The source code settings are specified in the source
      * action of a pipeline in CodePipeline.</p> </li> <li> <p> <code>GITHUB</code>:
-     * The source code is in a GitHub or GitHub Enterprise Cloud repository.</p> </li>
-     * <li> <p> <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub
-     * Enterprise Server repository.</p> </li> <li> <p> <code>NO_SOURCE</code>: The
-     * project does not have input source code.</p> </li> <li> <p> <code>S3</code>: The
-     * source code is in an Amazon S3 bucket.</p> </li> </ul>
+     * The source code is in a GitHub repository.</p> </li> <li> <p>
+     * <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise Server
+     * repository.</p> </li> <li> <p> <code>GITLAB</code>: The source code is in a
+     * GitLab repository.</p> </li> <li> <p> <code>GITLAB_SELF_MANAGED</code>: The
+     * source code is in a self-managed GitLab repository.</p> </li> <li> <p>
+     * <code>NO_SOURCE</code>: The project does not have input source code.</p> </li>
+     * <li> <p> <code>S3</code>: The source code is in an Amazon S3 bucket.</p> </li>
+     * </ul>
      */
     inline ProjectSource& WithType(const SourceType& value) { SetType(value); return *this;}
 
@@ -124,11 +139,14 @@ namespace Model
      * code is in an CodeCommit repository.</p> </li> <li> <p>
      * <code>CODEPIPELINE</code>: The source code settings are specified in the source
      * action of a pipeline in CodePipeline.</p> </li> <li> <p> <code>GITHUB</code>:
-     * The source code is in a GitHub or GitHub Enterprise Cloud repository.</p> </li>
-     * <li> <p> <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub
-     * Enterprise Server repository.</p> </li> <li> <p> <code>NO_SOURCE</code>: The
-     * project does not have input source code.</p> </li> <li> <p> <code>S3</code>: The
-     * source code is in an Amazon S3 bucket.</p> </li> </ul>
+     * The source code is in a GitHub repository.</p> </li> <li> <p>
+     * <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise Server
+     * repository.</p> </li> <li> <p> <code>GITLAB</code>: The source code is in a
+     * GitLab repository.</p> </li> <li> <p> <code>GITLAB_SELF_MANAGED</code>: The
+     * source code is in a self-managed GitLab repository.</p> </li> <li> <p>
+     * <code>NO_SOURCE</code>: The project does not have input source code.</p> </li>
+     * <li> <p> <code>S3</code>: The source code is in an Amazon S3 bucket.</p> </li>
+     * </ul>
      */
     inline ProjectSource& WithType(SourceType&& value) { SetType(std::move(value)); return *this;}
 
@@ -160,7 +178,19 @@ namespace Model
      * you do not need to finish creating the build project. You can leave the
      * CodeBuild console.) To instruct CodeBuild to use this connection, in the
      * <code>source</code> object, set the <code>auth</code> object's <code>type</code>
-     * value to <code>OAUTH</code>.</p> </li> <li> <p>For source code in a Bitbucket
+     * value to <code>OAUTH</code>.</p> </li> <li> <p>For source code in an GitLab or
+     * self-managed GitLab repository, the HTTPS clone URL to the repository that
+     * contains the source and the buildspec file. You must connect your Amazon Web
+     * Services account to your GitLab account. Use the CodeBuild console to start
+     * creating a build project. When you use the console to connect (or reconnect)
+     * with GitLab, on the Connections <b>Authorize application</b> page, choose
+     * <b>Authorize</b>. Then on the CodeStar Connections <b>Create GitLab
+     * connection</b> page, choose <b>Connect to GitLab</b>. (After you have connected
+     * to your GitLab account, you do not need to finish creating the build project.
+     * You can leave the CodeBuild console.) To instruct CodeBuild to override the
+     * default connection and use this connection instead, set the <code>auth</code>
+     * object's <code>type</code> value to <code>CODECONNECTIONS</code> in the
+     * <code>source</code> object.</p> </li> <li> <p>For source code in a Bitbucket
      * repository, the HTTPS clone URL to the repository that contains the source and
      * the buildspec file. You must connect your Amazon Web Services account to your
      * Bitbucket account. Use the CodeBuild console to start creating a build project.
@@ -203,7 +233,19 @@ namespace Model
      * you do not need to finish creating the build project. You can leave the
      * CodeBuild console.) To instruct CodeBuild to use this connection, in the
      * <code>source</code> object, set the <code>auth</code> object's <code>type</code>
-     * value to <code>OAUTH</code>.</p> </li> <li> <p>For source code in a Bitbucket
+     * value to <code>OAUTH</code>.</p> </li> <li> <p>For source code in an GitLab or
+     * self-managed GitLab repository, the HTTPS clone URL to the repository that
+     * contains the source and the buildspec file. You must connect your Amazon Web
+     * Services account to your GitLab account. Use the CodeBuild console to start
+     * creating a build project. When you use the console to connect (or reconnect)
+     * with GitLab, on the Connections <b>Authorize application</b> page, choose
+     * <b>Authorize</b>. Then on the CodeStar Connections <b>Create GitLab
+     * connection</b> page, choose <b>Connect to GitLab</b>. (After you have connected
+     * to your GitLab account, you do not need to finish creating the build project.
+     * You can leave the CodeBuild console.) To instruct CodeBuild to override the
+     * default connection and use this connection instead, set the <code>auth</code>
+     * object's <code>type</code> value to <code>CODECONNECTIONS</code> in the
+     * <code>source</code> object.</p> </li> <li> <p>For source code in a Bitbucket
      * repository, the HTTPS clone URL to the repository that contains the source and
      * the buildspec file. You must connect your Amazon Web Services account to your
      * Bitbucket account. Use the CodeBuild console to start creating a build project.
@@ -246,7 +288,19 @@ namespace Model
      * you do not need to finish creating the build project. You can leave the
      * CodeBuild console.) To instruct CodeBuild to use this connection, in the
      * <code>source</code> object, set the <code>auth</code> object's <code>type</code>
-     * value to <code>OAUTH</code>.</p> </li> <li> <p>For source code in a Bitbucket
+     * value to <code>OAUTH</code>.</p> </li> <li> <p>For source code in an GitLab or
+     * self-managed GitLab repository, the HTTPS clone URL to the repository that
+     * contains the source and the buildspec file. You must connect your Amazon Web
+     * Services account to your GitLab account. Use the CodeBuild console to start
+     * creating a build project. When you use the console to connect (or reconnect)
+     * with GitLab, on the Connections <b>Authorize application</b> page, choose
+     * <b>Authorize</b>. Then on the CodeStar Connections <b>Create GitLab
+     * connection</b> page, choose <b>Connect to GitLab</b>. (After you have connected
+     * to your GitLab account, you do not need to finish creating the build project.
+     * You can leave the CodeBuild console.) To instruct CodeBuild to override the
+     * default connection and use this connection instead, set the <code>auth</code>
+     * object's <code>type</code> value to <code>CODECONNECTIONS</code> in the
+     * <code>source</code> object.</p> </li> <li> <p>For source code in a Bitbucket
      * repository, the HTTPS clone URL to the repository that contains the source and
      * the buildspec file. You must connect your Amazon Web Services account to your
      * Bitbucket account. Use the CodeBuild console to start creating a build project.
@@ -289,7 +343,19 @@ namespace Model
      * you do not need to finish creating the build project. You can leave the
      * CodeBuild console.) To instruct CodeBuild to use this connection, in the
      * <code>source</code> object, set the <code>auth</code> object's <code>type</code>
-     * value to <code>OAUTH</code>.</p> </li> <li> <p>For source code in a Bitbucket
+     * value to <code>OAUTH</code>.</p> </li> <li> <p>For source code in an GitLab or
+     * self-managed GitLab repository, the HTTPS clone URL to the repository that
+     * contains the source and the buildspec file. You must connect your Amazon Web
+     * Services account to your GitLab account. Use the CodeBuild console to start
+     * creating a build project. When you use the console to connect (or reconnect)
+     * with GitLab, on the Connections <b>Authorize application</b> page, choose
+     * <b>Authorize</b>. Then on the CodeStar Connections <b>Create GitLab
+     * connection</b> page, choose <b>Connect to GitLab</b>. (After you have connected
+     * to your GitLab account, you do not need to finish creating the build project.
+     * You can leave the CodeBuild console.) To instruct CodeBuild to override the
+     * default connection and use this connection instead, set the <code>auth</code>
+     * object's <code>type</code> value to <code>CODECONNECTIONS</code> in the
+     * <code>source</code> object.</p> </li> <li> <p>For source code in a Bitbucket
      * repository, the HTTPS clone URL to the repository that contains the source and
      * the buildspec file. You must connect your Amazon Web Services account to your
      * Bitbucket account. Use the CodeBuild console to start creating a build project.
@@ -332,7 +398,19 @@ namespace Model
      * you do not need to finish creating the build project. You can leave the
      * CodeBuild console.) To instruct CodeBuild to use this connection, in the
      * <code>source</code> object, set the <code>auth</code> object's <code>type</code>
-     * value to <code>OAUTH</code>.</p> </li> <li> <p>For source code in a Bitbucket
+     * value to <code>OAUTH</code>.</p> </li> <li> <p>For source code in an GitLab or
+     * self-managed GitLab repository, the HTTPS clone URL to the repository that
+     * contains the source and the buildspec file. You must connect your Amazon Web
+     * Services account to your GitLab account. Use the CodeBuild console to start
+     * creating a build project. When you use the console to connect (or reconnect)
+     * with GitLab, on the Connections <b>Authorize application</b> page, choose
+     * <b>Authorize</b>. Then on the CodeStar Connections <b>Create GitLab
+     * connection</b> page, choose <b>Connect to GitLab</b>. (After you have connected
+     * to your GitLab account, you do not need to finish creating the build project.
+     * You can leave the CodeBuild console.) To instruct CodeBuild to override the
+     * default connection and use this connection instead, set the <code>auth</code>
+     * object's <code>type</code> value to <code>CODECONNECTIONS</code> in the
+     * <code>source</code> object.</p> </li> <li> <p>For source code in a Bitbucket
      * repository, the HTTPS clone URL to the repository that contains the source and
      * the buildspec file. You must connect your Amazon Web Services account to your
      * Bitbucket account. Use the CodeBuild console to start creating a build project.
@@ -375,7 +453,19 @@ namespace Model
      * you do not need to finish creating the build project. You can leave the
      * CodeBuild console.) To instruct CodeBuild to use this connection, in the
      * <code>source</code> object, set the <code>auth</code> object's <code>type</code>
-     * value to <code>OAUTH</code>.</p> </li> <li> <p>For source code in a Bitbucket
+     * value to <code>OAUTH</code>.</p> </li> <li> <p>For source code in an GitLab or
+     * self-managed GitLab repository, the HTTPS clone URL to the repository that
+     * contains the source and the buildspec file. You must connect your Amazon Web
+     * Services account to your GitLab account. Use the CodeBuild console to start
+     * creating a build project. When you use the console to connect (or reconnect)
+     * with GitLab, on the Connections <b>Authorize application</b> page, choose
+     * <b>Authorize</b>. Then on the CodeStar Connections <b>Create GitLab
+     * connection</b> page, choose <b>Connect to GitLab</b>. (After you have connected
+     * to your GitLab account, you do not need to finish creating the build project.
+     * You can leave the CodeBuild console.) To instruct CodeBuild to override the
+     * default connection and use this connection instead, set the <code>auth</code>
+     * object's <code>type</code> value to <code>CODECONNECTIONS</code> in the
+     * <code>source</code> object.</p> </li> <li> <p>For source code in a Bitbucket
      * repository, the HTTPS clone URL to the repository that contains the source and
      * the buildspec file. You must connect your Amazon Web Services account to your
      * Bitbucket account. Use the CodeBuild console to start creating a build project.
@@ -418,7 +508,19 @@ namespace Model
      * you do not need to finish creating the build project. You can leave the
      * CodeBuild console.) To instruct CodeBuild to use this connection, in the
      * <code>source</code> object, set the <code>auth</code> object's <code>type</code>
-     * value to <code>OAUTH</code>.</p> </li> <li> <p>For source code in a Bitbucket
+     * value to <code>OAUTH</code>.</p> </li> <li> <p>For source code in an GitLab or
+     * self-managed GitLab repository, the HTTPS clone URL to the repository that
+     * contains the source and the buildspec file. You must connect your Amazon Web
+     * Services account to your GitLab account. Use the CodeBuild console to start
+     * creating a build project. When you use the console to connect (or reconnect)
+     * with GitLab, on the Connections <b>Authorize application</b> page, choose
+     * <b>Authorize</b>. Then on the CodeStar Connections <b>Create GitLab
+     * connection</b> page, choose <b>Connect to GitLab</b>. (After you have connected
+     * to your GitLab account, you do not need to finish creating the build project.
+     * You can leave the CodeBuild console.) To instruct CodeBuild to override the
+     * default connection and use this connection instead, set the <code>auth</code>
+     * object's <code>type</code> value to <code>CODECONNECTIONS</code> in the
+     * <code>source</code> object.</p> </li> <li> <p>For source code in a Bitbucket
      * repository, the HTTPS clone URL to the repository that contains the source and
      * the buildspec file. You must connect your Amazon Web Services account to your
      * Bitbucket account. Use the CodeBuild console to start creating a build project.
@@ -461,7 +563,19 @@ namespace Model
      * you do not need to finish creating the build project. You can leave the
      * CodeBuild console.) To instruct CodeBuild to use this connection, in the
      * <code>source</code> object, set the <code>auth</code> object's <code>type</code>
-     * value to <code>OAUTH</code>.</p> </li> <li> <p>For source code in a Bitbucket
+     * value to <code>OAUTH</code>.</p> </li> <li> <p>For source code in an GitLab or
+     * self-managed GitLab repository, the HTTPS clone URL to the repository that
+     * contains the source and the buildspec file. You must connect your Amazon Web
+     * Services account to your GitLab account. Use the CodeBuild console to start
+     * creating a build project. When you use the console to connect (or reconnect)
+     * with GitLab, on the Connections <b>Authorize application</b> page, choose
+     * <b>Authorize</b>. Then on the CodeStar Connections <b>Create GitLab
+     * connection</b> page, choose <b>Connect to GitLab</b>. (After you have connected
+     * to your GitLab account, you do not need to finish creating the build project.
+     * You can leave the CodeBuild console.) To instruct CodeBuild to override the
+     * default connection and use this connection instead, set the <code>auth</code>
+     * object's <code>type</code> value to <code>CODECONNECTIONS</code> in the
+     * <code>source</code> object.</p> </li> <li> <p>For source code in a Bitbucket
      * repository, the HTTPS clone URL to the repository that contains the source and
      * the buildspec file. You must connect your Amazon Web Services account to your
      * Bitbucket account. Use the CodeBuild console to start creating a build project.
@@ -703,11 +817,12 @@ namespace Model
     /**
      * <p> Set to true to report the status of a build's start and finish to your
      * source provider. This option is valid only when your source provider is GitHub,
-     * GitHub Enterprise, or Bitbucket. If this is set and you use a different source
-     * provider, an <code>invalidInputException</code> is thrown. </p> <p>To be able to
-     * report the build status to the source provider, the user associated with the
-     * source provider must have write access to the repo. If the user does not have
-     * write access, the build status cannot be updated. For more information, see <a
+     * GitHub Enterprise, GitLab, GitLab Self Managed, or Bitbucket. If this is set and
+     * you use a different source provider, an <code>invalidInputException</code> is
+     * thrown. </p> <p>To be able to report the build status to the source provider,
+     * the user associated with the source provider must have write access to the repo.
+     * If the user does not have write access, the build status cannot be updated. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source
      * provider access</a> in the <i>CodeBuild User Guide</i>.</p> <p>The status of a
      * build triggered by a webhook is always reported to your source provider. </p>
@@ -719,11 +834,12 @@ namespace Model
     /**
      * <p> Set to true to report the status of a build's start and finish to your
      * source provider. This option is valid only when your source provider is GitHub,
-     * GitHub Enterprise, or Bitbucket. If this is set and you use a different source
-     * provider, an <code>invalidInputException</code> is thrown. </p> <p>To be able to
-     * report the build status to the source provider, the user associated with the
-     * source provider must have write access to the repo. If the user does not have
-     * write access, the build status cannot be updated. For more information, see <a
+     * GitHub Enterprise, GitLab, GitLab Self Managed, or Bitbucket. If this is set and
+     * you use a different source provider, an <code>invalidInputException</code> is
+     * thrown. </p> <p>To be able to report the build status to the source provider,
+     * the user associated with the source provider must have write access to the repo.
+     * If the user does not have write access, the build status cannot be updated. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source
      * provider access</a> in the <i>CodeBuild User Guide</i>.</p> <p>The status of a
      * build triggered by a webhook is always reported to your source provider. </p>
@@ -735,11 +851,12 @@ namespace Model
     /**
      * <p> Set to true to report the status of a build's start and finish to your
      * source provider. This option is valid only when your source provider is GitHub,
-     * GitHub Enterprise, or Bitbucket. If this is set and you use a different source
-     * provider, an <code>invalidInputException</code> is thrown. </p> <p>To be able to
-     * report the build status to the source provider, the user associated with the
-     * source provider must have write access to the repo. If the user does not have
-     * write access, the build status cannot be updated. For more information, see <a
+     * GitHub Enterprise, GitLab, GitLab Self Managed, or Bitbucket. If this is set and
+     * you use a different source provider, an <code>invalidInputException</code> is
+     * thrown. </p> <p>To be able to report the build status to the source provider,
+     * the user associated with the source provider must have write access to the repo.
+     * If the user does not have write access, the build status cannot be updated. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source
      * provider access</a> in the <i>CodeBuild User Guide</i>.</p> <p>The status of a
      * build triggered by a webhook is always reported to your source provider. </p>
@@ -751,11 +868,12 @@ namespace Model
     /**
      * <p> Set to true to report the status of a build's start and finish to your
      * source provider. This option is valid only when your source provider is GitHub,
-     * GitHub Enterprise, or Bitbucket. If this is set and you use a different source
-     * provider, an <code>invalidInputException</code> is thrown. </p> <p>To be able to
-     * report the build status to the source provider, the user associated with the
-     * source provider must have write access to the repo. If the user does not have
-     * write access, the build status cannot be updated. For more information, see <a
+     * GitHub Enterprise, GitLab, GitLab Self Managed, or Bitbucket. If this is set and
+     * you use a different source provider, an <code>invalidInputException</code> is
+     * thrown. </p> <p>To be able to report the build status to the source provider,
+     * the user associated with the source provider must have write access to the repo.
+     * If the user does not have write access, the build status cannot be updated. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source
      * provider access</a> in the <i>CodeBuild User Guide</i>.</p> <p>The status of a
      * build triggered by a webhook is always reported to your source provider. </p>

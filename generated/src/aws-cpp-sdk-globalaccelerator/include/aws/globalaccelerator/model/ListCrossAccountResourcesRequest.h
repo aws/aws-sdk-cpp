@@ -125,25 +125,25 @@ namespace Model
 
 
     /**
-     * <p>The number of cross-account endpoints objects that you want to return with
+     * <p>The number of cross-account resource objects that you want to return with
      * this call. The default value is 10.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The number of cross-account endpoints objects that you want to return with
+     * <p>The number of cross-account resource objects that you want to return with
      * this call. The default value is 10.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>The number of cross-account endpoints objects that you want to return with
+     * <p>The number of cross-account resource objects that you want to return with
      * this call. The default value is 10.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The number of cross-account endpoints objects that you want to return with
+     * <p>The number of cross-account resource objects that you want to return with
      * this call. The default value is 10.</p>
      */
     inline ListCrossAccountResourcesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}

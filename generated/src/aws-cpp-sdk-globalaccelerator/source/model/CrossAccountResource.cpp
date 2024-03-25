@@ -20,12 +20,14 @@ namespace Model
 
 CrossAccountResource::CrossAccountResource() : 
     m_endpointIdHasBeenSet(false),
+    m_cidrHasBeenSet(false),
     m_attachmentArnHasBeenSet(false)
 {
 }
 
 CrossAccountResource::CrossAccountResource(JsonView jsonValue) : 
     m_endpointIdHasBeenSet(false),
+    m_cidrHasBeenSet(false),
     m_attachmentArnHasBeenSet(false)
 {
   *this = jsonValue;
@@ -38,6 +40,13 @@ CrossAccountResource& CrossAccountResource::operator =(JsonView jsonValue)
     m_endpointId = jsonValue.GetString("EndpointId");
 
     m_endpointIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Cidr"))
+  {
+    m_cidr = jsonValue.GetString("Cidr");
+
+    m_cidrHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("AttachmentArn"))
@@ -57,6 +66,12 @@ JsonValue CrossAccountResource::Jsonize() const
   if(m_endpointIdHasBeenSet)
   {
    payload.WithString("EndpointId", m_endpointId);
+
+  }
+
+  if(m_cidrHasBeenSet)
+  {
+   payload.WithString("Cidr", m_cidr);
 
   }
 

@@ -23,6 +23,10 @@
 #include <aws/medialive/model/H265Tier.h>
 #include <aws/medialive/model/H265TimecodeInsertionBehavior.h>
 #include <aws/medialive/model/TimecodeBurninSettings.h>
+#include <aws/medialive/model/H265MvOverPictureBoundaries.h>
+#include <aws/medialive/model/H265MvTemporalPredictor.h>
+#include <aws/medialive/model/H265TilePadding.h>
+#include <aws/medialive/model/H265TreeblockSize.h>
 #include <utility>
 
 namespace Aws
@@ -1155,6 +1159,270 @@ This field is optional; when
      */
     inline H265Settings& WithTimecodeBurninSettings(TimecodeBurninSettings&& value) { SetTimecodeBurninSettings(std::move(value)); return *this;}
 
+
+    /**
+     * If you are setting up the picture as a tile, you must set this to "disabled". In
+     * all other configurations, you typically enter "enabled".
+     */
+    inline const H265MvOverPictureBoundaries& GetMvOverPictureBoundaries() const{ return m_mvOverPictureBoundaries; }
+
+    /**
+     * If you are setting up the picture as a tile, you must set this to "disabled". In
+     * all other configurations, you typically enter "enabled".
+     */
+    inline bool MvOverPictureBoundariesHasBeenSet() const { return m_mvOverPictureBoundariesHasBeenSet; }
+
+    /**
+     * If you are setting up the picture as a tile, you must set this to "disabled". In
+     * all other configurations, you typically enter "enabled".
+     */
+    inline void SetMvOverPictureBoundaries(const H265MvOverPictureBoundaries& value) { m_mvOverPictureBoundariesHasBeenSet = true; m_mvOverPictureBoundaries = value; }
+
+    /**
+     * If you are setting up the picture as a tile, you must set this to "disabled". In
+     * all other configurations, you typically enter "enabled".
+     */
+    inline void SetMvOverPictureBoundaries(H265MvOverPictureBoundaries&& value) { m_mvOverPictureBoundariesHasBeenSet = true; m_mvOverPictureBoundaries = std::move(value); }
+
+    /**
+     * If you are setting up the picture as a tile, you must set this to "disabled". In
+     * all other configurations, you typically enter "enabled".
+     */
+    inline H265Settings& WithMvOverPictureBoundaries(const H265MvOverPictureBoundaries& value) { SetMvOverPictureBoundaries(value); return *this;}
+
+    /**
+     * If you are setting up the picture as a tile, you must set this to "disabled". In
+     * all other configurations, you typically enter "enabled".
+     */
+    inline H265Settings& WithMvOverPictureBoundaries(H265MvOverPictureBoundaries&& value) { SetMvOverPictureBoundaries(std::move(value)); return *this;}
+
+
+    /**
+     * If you are setting up the picture as a tile, you must set this to "disabled". In
+     * other configurations, you typically enter "enabled".
+     */
+    inline const H265MvTemporalPredictor& GetMvTemporalPredictor() const{ return m_mvTemporalPredictor; }
+
+    /**
+     * If you are setting up the picture as a tile, you must set this to "disabled". In
+     * other configurations, you typically enter "enabled".
+     */
+    inline bool MvTemporalPredictorHasBeenSet() const { return m_mvTemporalPredictorHasBeenSet; }
+
+    /**
+     * If you are setting up the picture as a tile, you must set this to "disabled". In
+     * other configurations, you typically enter "enabled".
+     */
+    inline void SetMvTemporalPredictor(const H265MvTemporalPredictor& value) { m_mvTemporalPredictorHasBeenSet = true; m_mvTemporalPredictor = value; }
+
+    /**
+     * If you are setting up the picture as a tile, you must set this to "disabled". In
+     * other configurations, you typically enter "enabled".
+     */
+    inline void SetMvTemporalPredictor(H265MvTemporalPredictor&& value) { m_mvTemporalPredictorHasBeenSet = true; m_mvTemporalPredictor = std::move(value); }
+
+    /**
+     * If you are setting up the picture as a tile, you must set this to "disabled". In
+     * other configurations, you typically enter "enabled".
+     */
+    inline H265Settings& WithMvTemporalPredictor(const H265MvTemporalPredictor& value) { SetMvTemporalPredictor(value); return *this;}
+
+    /**
+     * If you are setting up the picture as a tile, you must set this to "disabled". In
+     * other configurations, you typically enter "enabled".
+     */
+    inline H265Settings& WithMvTemporalPredictor(H265MvTemporalPredictor&& value) { SetMvTemporalPredictor(std::move(value)); return *this;}
+
+
+    /**
+     * Set this field to set up the picture as a tile. You must also set tileWidth.
+The
+     * tile height must result in 22 or fewer rows in the frame. The tile width
+must
+     * result in 20 or fewer columns in the frame. And finally, the product of
+     * the
+column count and row count must be 64 of less.
+If the tile width and height
+     * are specified, MediaLive will override the video
+codec slices field with a value
+     * that MediaLive calculates
+     */
+    inline int GetTileHeight() const{ return m_tileHeight; }
+
+    /**
+     * Set this field to set up the picture as a tile. You must also set tileWidth.
+The
+     * tile height must result in 22 or fewer rows in the frame. The tile width
+must
+     * result in 20 or fewer columns in the frame. And finally, the product of
+     * the
+column count and row count must be 64 of less.
+If the tile width and height
+     * are specified, MediaLive will override the video
+codec slices field with a value
+     * that MediaLive calculates
+     */
+    inline bool TileHeightHasBeenSet() const { return m_tileHeightHasBeenSet; }
+
+    /**
+     * Set this field to set up the picture as a tile. You must also set tileWidth.
+The
+     * tile height must result in 22 or fewer rows in the frame. The tile width
+must
+     * result in 20 or fewer columns in the frame. And finally, the product of
+     * the
+column count and row count must be 64 of less.
+If the tile width and height
+     * are specified, MediaLive will override the video
+codec slices field with a value
+     * that MediaLive calculates
+     */
+    inline void SetTileHeight(int value) { m_tileHeightHasBeenSet = true; m_tileHeight = value; }
+
+    /**
+     * Set this field to set up the picture as a tile. You must also set tileWidth.
+The
+     * tile height must result in 22 or fewer rows in the frame. The tile width
+must
+     * result in 20 or fewer columns in the frame. And finally, the product of
+     * the
+column count and row count must be 64 of less.
+If the tile width and height
+     * are specified, MediaLive will override the video
+codec slices field with a value
+     * that MediaLive calculates
+     */
+    inline H265Settings& WithTileHeight(int value) { SetTileHeight(value); return *this;}
+
+
+    /**
+     * Set to "padded" to force MediaLive to add padding to the frame, to obtain a
+     * frame that is a whole multiple of the tile size.
+If you are setting up the
+     * picture as a tile, you must enter "padded".
+In all other configurations, you
+     * typically enter "none".
+     */
+    inline const H265TilePadding& GetTilePadding() const{ return m_tilePadding; }
+
+    /**
+     * Set to "padded" to force MediaLive to add padding to the frame, to obtain a
+     * frame that is a whole multiple of the tile size.
+If you are setting up the
+     * picture as a tile, you must enter "padded".
+In all other configurations, you
+     * typically enter "none".
+     */
+    inline bool TilePaddingHasBeenSet() const { return m_tilePaddingHasBeenSet; }
+
+    /**
+     * Set to "padded" to force MediaLive to add padding to the frame, to obtain a
+     * frame that is a whole multiple of the tile size.
+If you are setting up the
+     * picture as a tile, you must enter "padded".
+In all other configurations, you
+     * typically enter "none".
+     */
+    inline void SetTilePadding(const H265TilePadding& value) { m_tilePaddingHasBeenSet = true; m_tilePadding = value; }
+
+    /**
+     * Set to "padded" to force MediaLive to add padding to the frame, to obtain a
+     * frame that is a whole multiple of the tile size.
+If you are setting up the
+     * picture as a tile, you must enter "padded".
+In all other configurations, you
+     * typically enter "none".
+     */
+    inline void SetTilePadding(H265TilePadding&& value) { m_tilePaddingHasBeenSet = true; m_tilePadding = std::move(value); }
+
+    /**
+     * Set to "padded" to force MediaLive to add padding to the frame, to obtain a
+     * frame that is a whole multiple of the tile size.
+If you are setting up the
+     * picture as a tile, you must enter "padded".
+In all other configurations, you
+     * typically enter "none".
+     */
+    inline H265Settings& WithTilePadding(const H265TilePadding& value) { SetTilePadding(value); return *this;}
+
+    /**
+     * Set to "padded" to force MediaLive to add padding to the frame, to obtain a
+     * frame that is a whole multiple of the tile size.
+If you are setting up the
+     * picture as a tile, you must enter "padded".
+In all other configurations, you
+     * typically enter "none".
+     */
+    inline H265Settings& WithTilePadding(H265TilePadding&& value) { SetTilePadding(std::move(value)); return *this;}
+
+
+    /**
+     * Set this field to set up the picture as a tile. See tileHeight for more
+     * information.
+     */
+    inline int GetTileWidth() const{ return m_tileWidth; }
+
+    /**
+     * Set this field to set up the picture as a tile. See tileHeight for more
+     * information.
+     */
+    inline bool TileWidthHasBeenSet() const { return m_tileWidthHasBeenSet; }
+
+    /**
+     * Set this field to set up the picture as a tile. See tileHeight for more
+     * information.
+     */
+    inline void SetTileWidth(int value) { m_tileWidthHasBeenSet = true; m_tileWidth = value; }
+
+    /**
+     * Set this field to set up the picture as a tile. See tileHeight for more
+     * information.
+     */
+    inline H265Settings& WithTileWidth(int value) { SetTileWidth(value); return *this;}
+
+
+    /**
+     * Select the tree block size used for encoding. If you enter "auto", the encoder
+     * will pick the best size. If you are setting up the picture as a tile, you must
+     * set this to 32x32. In all other configurations, you typically enter "auto".
+     */
+    inline const H265TreeblockSize& GetTreeblockSize() const{ return m_treeblockSize; }
+
+    /**
+     * Select the tree block size used for encoding. If you enter "auto", the encoder
+     * will pick the best size. If you are setting up the picture as a tile, you must
+     * set this to 32x32. In all other configurations, you typically enter "auto".
+     */
+    inline bool TreeblockSizeHasBeenSet() const { return m_treeblockSizeHasBeenSet; }
+
+    /**
+     * Select the tree block size used for encoding. If you enter "auto", the encoder
+     * will pick the best size. If you are setting up the picture as a tile, you must
+     * set this to 32x32. In all other configurations, you typically enter "auto".
+     */
+    inline void SetTreeblockSize(const H265TreeblockSize& value) { m_treeblockSizeHasBeenSet = true; m_treeblockSize = value; }
+
+    /**
+     * Select the tree block size used for encoding. If you enter "auto", the encoder
+     * will pick the best size. If you are setting up the picture as a tile, you must
+     * set this to 32x32. In all other configurations, you typically enter "auto".
+     */
+    inline void SetTreeblockSize(H265TreeblockSize&& value) { m_treeblockSizeHasBeenSet = true; m_treeblockSize = std::move(value); }
+
+    /**
+     * Select the tree block size used for encoding. If you enter "auto", the encoder
+     * will pick the best size. If you are setting up the picture as a tile, you must
+     * set this to 32x32. In all other configurations, you typically enter "auto".
+     */
+    inline H265Settings& WithTreeblockSize(const H265TreeblockSize& value) { SetTreeblockSize(value); return *this;}
+
+    /**
+     * Select the tree block size used for encoding. If you enter "auto", the encoder
+     * will pick the best size. If you are setting up the picture as a tile, you must
+     * set this to 32x32. In all other configurations, you typically enter "auto".
+     */
+    inline H265Settings& WithTreeblockSize(H265TreeblockSize&& value) { SetTreeblockSize(std::move(value)); return *this;}
+
   private:
 
     H265AdaptiveQuantization m_adaptiveQuantization;
@@ -1246,6 +1514,24 @@ This field is optional; when
 
     TimecodeBurninSettings m_timecodeBurninSettings;
     bool m_timecodeBurninSettingsHasBeenSet = false;
+
+    H265MvOverPictureBoundaries m_mvOverPictureBoundaries;
+    bool m_mvOverPictureBoundariesHasBeenSet = false;
+
+    H265MvTemporalPredictor m_mvTemporalPredictor;
+    bool m_mvTemporalPredictorHasBeenSet = false;
+
+    int m_tileHeight;
+    bool m_tileHeightHasBeenSet = false;
+
+    H265TilePadding m_tilePadding;
+    bool m_tilePaddingHasBeenSet = false;
+
+    int m_tileWidth;
+    bool m_tileWidthHasBeenSet = false;
+
+    H265TreeblockSize m_treeblockSize;
+    bool m_treeblockSizeHasBeenSet = false;
   };
 
 } // namespace Model

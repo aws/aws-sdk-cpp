@@ -20,12 +20,14 @@ namespace Model
 
 Resource::Resource() : 
     m_endpointIdHasBeenSet(false),
+    m_cidrHasBeenSet(false),
     m_regionHasBeenSet(false)
 {
 }
 
 Resource::Resource(JsonView jsonValue) : 
     m_endpointIdHasBeenSet(false),
+    m_cidrHasBeenSet(false),
     m_regionHasBeenSet(false)
 {
   *this = jsonValue;
@@ -38,6 +40,13 @@ Resource& Resource::operator =(JsonView jsonValue)
     m_endpointId = jsonValue.GetString("EndpointId");
 
     m_endpointIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Cidr"))
+  {
+    m_cidr = jsonValue.GetString("Cidr");
+
+    m_cidrHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Region"))
@@ -57,6 +66,12 @@ JsonValue Resource::Jsonize() const
   if(m_endpointIdHasBeenSet)
   {
    payload.WithString("EndpointId", m_endpointId);
+
+  }
+
+  if(m_cidrHasBeenSet)
+  {
+   payload.WithString("Cidr", m_cidr);
 
   }
 
