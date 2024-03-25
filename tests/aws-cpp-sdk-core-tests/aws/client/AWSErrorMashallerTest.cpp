@@ -183,6 +183,9 @@ TEST_F(AWSErrorMarshallerTest, TestXmlErrorPayload)
     ASSERT_EQ("", error.GetMessage());
     ASSERT_EQ("", error.GetRequestId());
     ASSERT_TRUE(error.ShouldRetry());
+
+    AWSError<CoreErrors> emptyError;
+    error = emptyError; // ASAN must not complain.
 }
 
 TEST_F(AWSErrorMarshallerTest, TestCombinationsOfJsonErrorPayload)
