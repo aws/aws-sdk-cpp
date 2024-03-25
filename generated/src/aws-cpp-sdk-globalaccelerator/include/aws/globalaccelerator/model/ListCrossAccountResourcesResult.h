@@ -35,37 +35,37 @@ namespace Model
 
 
     /**
-     * <p>The endpoints attached to an accelerator in a cross-account attachment.</p>
+     * <p>The cross-account resources used with an accelerator.</p>
      */
     inline const Aws::Vector<CrossAccountResource>& GetCrossAccountResources() const{ return m_crossAccountResources; }
 
     /**
-     * <p>The endpoints attached to an accelerator in a cross-account attachment.</p>
+     * <p>The cross-account resources used with an accelerator.</p>
      */
     inline void SetCrossAccountResources(const Aws::Vector<CrossAccountResource>& value) { m_crossAccountResources = value; }
 
     /**
-     * <p>The endpoints attached to an accelerator in a cross-account attachment.</p>
+     * <p>The cross-account resources used with an accelerator.</p>
      */
     inline void SetCrossAccountResources(Aws::Vector<CrossAccountResource>&& value) { m_crossAccountResources = std::move(value); }
 
     /**
-     * <p>The endpoints attached to an accelerator in a cross-account attachment.</p>
+     * <p>The cross-account resources used with an accelerator.</p>
      */
     inline ListCrossAccountResourcesResult& WithCrossAccountResources(const Aws::Vector<CrossAccountResource>& value) { SetCrossAccountResources(value); return *this;}
 
     /**
-     * <p>The endpoints attached to an accelerator in a cross-account attachment.</p>
+     * <p>The cross-account resources used with an accelerator.</p>
      */
     inline ListCrossAccountResourcesResult& WithCrossAccountResources(Aws::Vector<CrossAccountResource>&& value) { SetCrossAccountResources(std::move(value)); return *this;}
 
     /**
-     * <p>The endpoints attached to an accelerator in a cross-account attachment.</p>
+     * <p>The cross-account resources used with an accelerator.</p>
      */
     inline ListCrossAccountResourcesResult& AddCrossAccountResources(const CrossAccountResource& value) { m_crossAccountResources.push_back(value); return *this; }
 
     /**
-     * <p>The endpoints attached to an accelerator in a cross-account attachment.</p>
+     * <p>The cross-account resources used with an accelerator.</p>
      */
     inline ListCrossAccountResourcesResult& AddCrossAccountResources(CrossAccountResource&& value) { m_crossAccountResources.push_back(std::move(value)); return *this; }
 

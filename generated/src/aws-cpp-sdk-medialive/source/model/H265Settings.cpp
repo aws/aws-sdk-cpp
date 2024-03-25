@@ -75,7 +75,19 @@ H265Settings::H265Settings() :
     m_tierHasBeenSet(false),
     m_timecodeInsertion(H265TimecodeInsertionBehavior::NOT_SET),
     m_timecodeInsertionHasBeenSet(false),
-    m_timecodeBurninSettingsHasBeenSet(false)
+    m_timecodeBurninSettingsHasBeenSet(false),
+    m_mvOverPictureBoundaries(H265MvOverPictureBoundaries::NOT_SET),
+    m_mvOverPictureBoundariesHasBeenSet(false),
+    m_mvTemporalPredictor(H265MvTemporalPredictor::NOT_SET),
+    m_mvTemporalPredictorHasBeenSet(false),
+    m_tileHeight(0),
+    m_tileHeightHasBeenSet(false),
+    m_tilePadding(H265TilePadding::NOT_SET),
+    m_tilePaddingHasBeenSet(false),
+    m_tileWidth(0),
+    m_tileWidthHasBeenSet(false),
+    m_treeblockSize(H265TreeblockSize::NOT_SET),
+    m_treeblockSizeHasBeenSet(false)
 {
 }
 
@@ -136,7 +148,19 @@ H265Settings::H265Settings(JsonView jsonValue) :
     m_tierHasBeenSet(false),
     m_timecodeInsertion(H265TimecodeInsertionBehavior::NOT_SET),
     m_timecodeInsertionHasBeenSet(false),
-    m_timecodeBurninSettingsHasBeenSet(false)
+    m_timecodeBurninSettingsHasBeenSet(false),
+    m_mvOverPictureBoundaries(H265MvOverPictureBoundaries::NOT_SET),
+    m_mvOverPictureBoundariesHasBeenSet(false),
+    m_mvTemporalPredictor(H265MvTemporalPredictor::NOT_SET),
+    m_mvTemporalPredictorHasBeenSet(false),
+    m_tileHeight(0),
+    m_tileHeightHasBeenSet(false),
+    m_tilePadding(H265TilePadding::NOT_SET),
+    m_tilePaddingHasBeenSet(false),
+    m_tileWidth(0),
+    m_tileWidthHasBeenSet(false),
+    m_treeblockSize(H265TreeblockSize::NOT_SET),
+    m_treeblockSizeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -353,6 +377,48 @@ H265Settings& H265Settings::operator =(JsonView jsonValue)
     m_timecodeBurninSettingsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("mvOverPictureBoundaries"))
+  {
+    m_mvOverPictureBoundaries = H265MvOverPictureBoundariesMapper::GetH265MvOverPictureBoundariesForName(jsonValue.GetString("mvOverPictureBoundaries"));
+
+    m_mvOverPictureBoundariesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("mvTemporalPredictor"))
+  {
+    m_mvTemporalPredictor = H265MvTemporalPredictorMapper::GetH265MvTemporalPredictorForName(jsonValue.GetString("mvTemporalPredictor"));
+
+    m_mvTemporalPredictorHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("tileHeight"))
+  {
+    m_tileHeight = jsonValue.GetInteger("tileHeight");
+
+    m_tileHeightHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("tilePadding"))
+  {
+    m_tilePadding = H265TilePaddingMapper::GetH265TilePaddingForName(jsonValue.GetString("tilePadding"));
+
+    m_tilePaddingHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("tileWidth"))
+  {
+    m_tileWidth = jsonValue.GetInteger("tileWidth");
+
+    m_tileWidthHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("treeblockSize"))
+  {
+    m_treeblockSize = H265TreeblockSizeMapper::GetH265TreeblockSizeForName(jsonValue.GetString("treeblockSize"));
+
+    m_treeblockSizeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -523,6 +589,38 @@ JsonValue H265Settings::Jsonize() const
   {
    payload.WithObject("timecodeBurninSettings", m_timecodeBurninSettings.Jsonize());
 
+  }
+
+  if(m_mvOverPictureBoundariesHasBeenSet)
+  {
+   payload.WithString("mvOverPictureBoundaries", H265MvOverPictureBoundariesMapper::GetNameForH265MvOverPictureBoundaries(m_mvOverPictureBoundaries));
+  }
+
+  if(m_mvTemporalPredictorHasBeenSet)
+  {
+   payload.WithString("mvTemporalPredictor", H265MvTemporalPredictorMapper::GetNameForH265MvTemporalPredictor(m_mvTemporalPredictor));
+  }
+
+  if(m_tileHeightHasBeenSet)
+  {
+   payload.WithInteger("tileHeight", m_tileHeight);
+
+  }
+
+  if(m_tilePaddingHasBeenSet)
+  {
+   payload.WithString("tilePadding", H265TilePaddingMapper::GetNameForH265TilePadding(m_tilePadding));
+  }
+
+  if(m_tileWidthHasBeenSet)
+  {
+   payload.WithInteger("tileWidth", m_tileWidth);
+
+  }
+
+  if(m_treeblockSizeHasBeenSet)
+  {
+   payload.WithString("treeblockSize", H265TreeblockSizeMapper::GetNameForH265TreeblockSize(m_treeblockSize));
   }
 
   return payload;

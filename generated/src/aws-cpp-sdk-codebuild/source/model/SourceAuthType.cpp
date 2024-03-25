@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int OAUTH_HASH = HashingUtils::HashString("OAUTH");
+        static const int CODECONNECTIONS_HASH = HashingUtils::HashString("CODECONNECTIONS");
 
 
         SourceAuthType GetSourceAuthTypeForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == OAUTH_HASH)
           {
             return SourceAuthType::OAUTH;
+          }
+          else if (hashCode == CODECONNECTIONS_HASH)
+          {
+            return SourceAuthType::CODECONNECTIONS;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -48,6 +53,8 @@ namespace Aws
             return {};
           case SourceAuthType::OAUTH:
             return "OAUTH";
+          case SourceAuthType::CODECONNECTIONS:
+            return "CODECONNECTIONS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

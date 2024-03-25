@@ -37,48 +37,72 @@ namespace Model
     /**
      * <p>The address range, in CIDR notation. This must be the exact range that you
      * provisioned. You can't advertise only a portion of the provisioned range.</p>
+     * <p> For more information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring
+     * your own IP addresses (BYOIP)</a> in the Global Accelerator Developer Guide.</p>
      */
     inline const Aws::String& GetCidr() const{ return m_cidr; }
 
     /**
      * <p>The address range, in CIDR notation. This must be the exact range that you
      * provisioned. You can't advertise only a portion of the provisioned range.</p>
+     * <p> For more information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring
+     * your own IP addresses (BYOIP)</a> in the Global Accelerator Developer Guide.</p>
      */
     inline bool CidrHasBeenSet() const { return m_cidrHasBeenSet; }
 
     /**
      * <p>The address range, in CIDR notation. This must be the exact range that you
      * provisioned. You can't advertise only a portion of the provisioned range.</p>
+     * <p> For more information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring
+     * your own IP addresses (BYOIP)</a> in the Global Accelerator Developer Guide.</p>
      */
     inline void SetCidr(const Aws::String& value) { m_cidrHasBeenSet = true; m_cidr = value; }
 
     /**
      * <p>The address range, in CIDR notation. This must be the exact range that you
      * provisioned. You can't advertise only a portion of the provisioned range.</p>
+     * <p> For more information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring
+     * your own IP addresses (BYOIP)</a> in the Global Accelerator Developer Guide.</p>
      */
     inline void SetCidr(Aws::String&& value) { m_cidrHasBeenSet = true; m_cidr = std::move(value); }
 
     /**
      * <p>The address range, in CIDR notation. This must be the exact range that you
      * provisioned. You can't advertise only a portion of the provisioned range.</p>
+     * <p> For more information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring
+     * your own IP addresses (BYOIP)</a> in the Global Accelerator Developer Guide.</p>
      */
     inline void SetCidr(const char* value) { m_cidrHasBeenSet = true; m_cidr.assign(value); }
 
     /**
      * <p>The address range, in CIDR notation. This must be the exact range that you
      * provisioned. You can't advertise only a portion of the provisioned range.</p>
+     * <p> For more information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring
+     * your own IP addresses (BYOIP)</a> in the Global Accelerator Developer Guide.</p>
      */
     inline AdvertiseByoipCidrRequest& WithCidr(const Aws::String& value) { SetCidr(value); return *this;}
 
     /**
      * <p>The address range, in CIDR notation. This must be the exact range that you
      * provisioned. You can't advertise only a portion of the provisioned range.</p>
+     * <p> For more information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring
+     * your own IP addresses (BYOIP)</a> in the Global Accelerator Developer Guide.</p>
      */
     inline AdvertiseByoipCidrRequest& WithCidr(Aws::String&& value) { SetCidr(std::move(value)); return *this;}
 
     /**
      * <p>The address range, in CIDR notation. This must be the exact range that you
      * provisioned. You can't advertise only a portion of the provisioned range.</p>
+     * <p> For more information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring
+     * your own IP addresses (BYOIP)</a> in the Global Accelerator Developer Guide.</p>
      */
     inline AdvertiseByoipCidrRequest& WithCidr(const char* value) { SetCidr(value); return *this;}
 

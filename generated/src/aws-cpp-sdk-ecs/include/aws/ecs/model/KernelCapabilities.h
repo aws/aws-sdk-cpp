@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>The Linux capabilities for the container that are added to or dropped from
-   * the default configuration provided by Docker. For more information about the
+   * <p>The Linux capabilities to add or remove from the default Docker configuration
+   * for a container defined in the task definition. For more information about the
    * default capabilities and the non-default available capabilities, see <a
    * href="https://docs.docker.com/engine/reference/run/#runtime-privilege-and-linux-capabilities">Runtime
    * privilege and Linux capabilities</a> in the <i>Docker run reference</i>. For

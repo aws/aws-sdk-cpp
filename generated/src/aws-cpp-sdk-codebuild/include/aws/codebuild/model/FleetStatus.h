@@ -44,10 +44,11 @@ namespace Model
      * <code>CREATING</code>: The compute fleet is being created.</p> </li> <li> <p>
      * <code>UPDATING</code>: The compute fleet is being updated.</p> </li> <li> <p>
      * <code>ROTATING</code>: The compute fleet is being rotated.</p> </li> <li> <p>
-     * <code>DELETING</code>: The compute fleet is being deleted.</p> </li> <li> <p>
-     * <code>CREATE_FAILED</code>: The compute fleet has failed to create.</p> </li>
-     * <li> <p> <code>UPDATE_ROLLBACK_FAILED</code>: The compute fleet has failed to
-     * update and could not rollback to previous state.</p> </li> <li> <p>
+     * <code>PENDING_DELETION</code>: The compute fleet is pending deletion.</p> </li>
+     * <li> <p> <code>DELETING</code>: The compute fleet is being deleted.</p> </li>
+     * <li> <p> <code>CREATE_FAILED</code>: The compute fleet has failed to create.</p>
+     * </li> <li> <p> <code>UPDATE_ROLLBACK_FAILED</code>: The compute fleet has failed
+     * to update and could not rollback to previous state.</p> </li> <li> <p>
      * <code>ACTIVE</code>: The compute fleet has succeeded and is active.</p> </li>
      * </ul>
      */
@@ -58,10 +59,11 @@ namespace Model
      * <code>CREATING</code>: The compute fleet is being created.</p> </li> <li> <p>
      * <code>UPDATING</code>: The compute fleet is being updated.</p> </li> <li> <p>
      * <code>ROTATING</code>: The compute fleet is being rotated.</p> </li> <li> <p>
-     * <code>DELETING</code>: The compute fleet is being deleted.</p> </li> <li> <p>
-     * <code>CREATE_FAILED</code>: The compute fleet has failed to create.</p> </li>
-     * <li> <p> <code>UPDATE_ROLLBACK_FAILED</code>: The compute fleet has failed to
-     * update and could not rollback to previous state.</p> </li> <li> <p>
+     * <code>PENDING_DELETION</code>: The compute fleet is pending deletion.</p> </li>
+     * <li> <p> <code>DELETING</code>: The compute fleet is being deleted.</p> </li>
+     * <li> <p> <code>CREATE_FAILED</code>: The compute fleet has failed to create.</p>
+     * </li> <li> <p> <code>UPDATE_ROLLBACK_FAILED</code>: The compute fleet has failed
+     * to update and could not rollback to previous state.</p> </li> <li> <p>
      * <code>ACTIVE</code>: The compute fleet has succeeded and is active.</p> </li>
      * </ul>
      */
@@ -72,10 +74,11 @@ namespace Model
      * <code>CREATING</code>: The compute fleet is being created.</p> </li> <li> <p>
      * <code>UPDATING</code>: The compute fleet is being updated.</p> </li> <li> <p>
      * <code>ROTATING</code>: The compute fleet is being rotated.</p> </li> <li> <p>
-     * <code>DELETING</code>: The compute fleet is being deleted.</p> </li> <li> <p>
-     * <code>CREATE_FAILED</code>: The compute fleet has failed to create.</p> </li>
-     * <li> <p> <code>UPDATE_ROLLBACK_FAILED</code>: The compute fleet has failed to
-     * update and could not rollback to previous state.</p> </li> <li> <p>
+     * <code>PENDING_DELETION</code>: The compute fleet is pending deletion.</p> </li>
+     * <li> <p> <code>DELETING</code>: The compute fleet is being deleted.</p> </li>
+     * <li> <p> <code>CREATE_FAILED</code>: The compute fleet has failed to create.</p>
+     * </li> <li> <p> <code>UPDATE_ROLLBACK_FAILED</code>: The compute fleet has failed
+     * to update and could not rollback to previous state.</p> </li> <li> <p>
      * <code>ACTIVE</code>: The compute fleet has succeeded and is active.</p> </li>
      * </ul>
      */
@@ -86,10 +89,11 @@ namespace Model
      * <code>CREATING</code>: The compute fleet is being created.</p> </li> <li> <p>
      * <code>UPDATING</code>: The compute fleet is being updated.</p> </li> <li> <p>
      * <code>ROTATING</code>: The compute fleet is being rotated.</p> </li> <li> <p>
-     * <code>DELETING</code>: The compute fleet is being deleted.</p> </li> <li> <p>
-     * <code>CREATE_FAILED</code>: The compute fleet has failed to create.</p> </li>
-     * <li> <p> <code>UPDATE_ROLLBACK_FAILED</code>: The compute fleet has failed to
-     * update and could not rollback to previous state.</p> </li> <li> <p>
+     * <code>PENDING_DELETION</code>: The compute fleet is pending deletion.</p> </li>
+     * <li> <p> <code>DELETING</code>: The compute fleet is being deleted.</p> </li>
+     * <li> <p> <code>CREATE_FAILED</code>: The compute fleet has failed to create.</p>
+     * </li> <li> <p> <code>UPDATE_ROLLBACK_FAILED</code>: The compute fleet has failed
+     * to update and could not rollback to previous state.</p> </li> <li> <p>
      * <code>ACTIVE</code>: The compute fleet has succeeded and is active.</p> </li>
      * </ul>
      */
@@ -100,10 +104,11 @@ namespace Model
      * <code>CREATING</code>: The compute fleet is being created.</p> </li> <li> <p>
      * <code>UPDATING</code>: The compute fleet is being updated.</p> </li> <li> <p>
      * <code>ROTATING</code>: The compute fleet is being rotated.</p> </li> <li> <p>
-     * <code>DELETING</code>: The compute fleet is being deleted.</p> </li> <li> <p>
-     * <code>CREATE_FAILED</code>: The compute fleet has failed to create.</p> </li>
-     * <li> <p> <code>UPDATE_ROLLBACK_FAILED</code>: The compute fleet has failed to
-     * update and could not rollback to previous state.</p> </li> <li> <p>
+     * <code>PENDING_DELETION</code>: The compute fleet is pending deletion.</p> </li>
+     * <li> <p> <code>DELETING</code>: The compute fleet is being deleted.</p> </li>
+     * <li> <p> <code>CREATE_FAILED</code>: The compute fleet has failed to create.</p>
+     * </li> <li> <p> <code>UPDATE_ROLLBACK_FAILED</code>: The compute fleet has failed
+     * to update and could not rollback to previous state.</p> </li> <li> <p>
      * <code>ACTIVE</code>: The compute fleet has succeeded and is active.</p> </li>
      * </ul>
      */
@@ -114,10 +119,11 @@ namespace Model
      * <code>CREATING</code>: The compute fleet is being created.</p> </li> <li> <p>
      * <code>UPDATING</code>: The compute fleet is being updated.</p> </li> <li> <p>
      * <code>ROTATING</code>: The compute fleet is being rotated.</p> </li> <li> <p>
-     * <code>DELETING</code>: The compute fleet is being deleted.</p> </li> <li> <p>
-     * <code>CREATE_FAILED</code>: The compute fleet has failed to create.</p> </li>
-     * <li> <p> <code>UPDATE_ROLLBACK_FAILED</code>: The compute fleet has failed to
-     * update and could not rollback to previous state.</p> </li> <li> <p>
+     * <code>PENDING_DELETION</code>: The compute fleet is pending deletion.</p> </li>
+     * <li> <p> <code>DELETING</code>: The compute fleet is being deleted.</p> </li>
+     * <li> <p> <code>CREATE_FAILED</code>: The compute fleet has failed to create.</p>
+     * </li> <li> <p> <code>UPDATE_ROLLBACK_FAILED</code>: The compute fleet has failed
+     * to update and could not rollback to previous state.</p> </li> <li> <p>
      * <code>ACTIVE</code>: The compute fleet has succeeded and is active.</p> </li>
      * </ul>
      */

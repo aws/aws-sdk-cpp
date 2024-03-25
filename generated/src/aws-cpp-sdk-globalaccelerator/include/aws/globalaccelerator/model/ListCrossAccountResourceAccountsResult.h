@@ -35,49 +35,49 @@ namespace Model
 
     /**
      * <p>The account IDs of principals (resource owners) in a cross-account attachment
-     * who can add endpoints (resources) listed in the same attachment.</p>
+     * who can work with resources listed in the same attachment.</p>
      */
     inline const Aws::Vector<Aws::String>& GetResourceOwnerAwsAccountIds() const{ return m_resourceOwnerAwsAccountIds; }
 
     /**
      * <p>The account IDs of principals (resource owners) in a cross-account attachment
-     * who can add endpoints (resources) listed in the same attachment.</p>
+     * who can work with resources listed in the same attachment.</p>
      */
     inline void SetResourceOwnerAwsAccountIds(const Aws::Vector<Aws::String>& value) { m_resourceOwnerAwsAccountIds = value; }
 
     /**
      * <p>The account IDs of principals (resource owners) in a cross-account attachment
-     * who can add endpoints (resources) listed in the same attachment.</p>
+     * who can work with resources listed in the same attachment.</p>
      */
     inline void SetResourceOwnerAwsAccountIds(Aws::Vector<Aws::String>&& value) { m_resourceOwnerAwsAccountIds = std::move(value); }
 
     /**
      * <p>The account IDs of principals (resource owners) in a cross-account attachment
-     * who can add endpoints (resources) listed in the same attachment.</p>
+     * who can work with resources listed in the same attachment.</p>
      */
     inline ListCrossAccountResourceAccountsResult& WithResourceOwnerAwsAccountIds(const Aws::Vector<Aws::String>& value) { SetResourceOwnerAwsAccountIds(value); return *this;}
 
     /**
      * <p>The account IDs of principals (resource owners) in a cross-account attachment
-     * who can add endpoints (resources) listed in the same attachment.</p>
+     * who can work with resources listed in the same attachment.</p>
      */
     inline ListCrossAccountResourceAccountsResult& WithResourceOwnerAwsAccountIds(Aws::Vector<Aws::String>&& value) { SetResourceOwnerAwsAccountIds(std::move(value)); return *this;}
 
     /**
      * <p>The account IDs of principals (resource owners) in a cross-account attachment
-     * who can add endpoints (resources) listed in the same attachment.</p>
+     * who can work with resources listed in the same attachment.</p>
      */
     inline ListCrossAccountResourceAccountsResult& AddResourceOwnerAwsAccountIds(const Aws::String& value) { m_resourceOwnerAwsAccountIds.push_back(value); return *this; }
 
     /**
      * <p>The account IDs of principals (resource owners) in a cross-account attachment
-     * who can add endpoints (resources) listed in the same attachment.</p>
+     * who can work with resources listed in the same attachment.</p>
      */
     inline ListCrossAccountResourceAccountsResult& AddResourceOwnerAwsAccountIds(Aws::String&& value) { m_resourceOwnerAwsAccountIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The account IDs of principals (resource owners) in a cross-account attachment
-     * who can add endpoints (resources) listed in the same attachment.</p>
+     * who can work with resources listed in the same attachment.</p>
      */
     inline ListCrossAccountResourceAccountsResult& AddResourceOwnerAwsAccountIds(const char* value) { m_resourceOwnerAwsAccountIds.push_back(value); return *this; }
 

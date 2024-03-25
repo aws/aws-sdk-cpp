@@ -121,170 +121,170 @@ namespace Model
     /**
      * <p>The principals to add to the cross-account attachment. A principal is an
      * account or the Amazon Resource Name (ARN) of an accelerator that the attachment
-     * gives permission to add the resources from another account, listed in the
-     * attachment.</p> <p>To add more than one principal, separate the account numbers
-     * or accelerator ARNs, or both, with commas.</p>
+     * gives permission to work with resources from another account. The resources are
+     * also listed in the attachment.</p> <p>To add more than one principal, separate
+     * the account numbers or accelerator ARNs, or both, with commas.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAddPrincipals() const{ return m_addPrincipals; }
 
     /**
      * <p>The principals to add to the cross-account attachment. A principal is an
      * account or the Amazon Resource Name (ARN) of an accelerator that the attachment
-     * gives permission to add the resources from another account, listed in the
-     * attachment.</p> <p>To add more than one principal, separate the account numbers
-     * or accelerator ARNs, or both, with commas.</p>
+     * gives permission to work with resources from another account. The resources are
+     * also listed in the attachment.</p> <p>To add more than one principal, separate
+     * the account numbers or accelerator ARNs, or both, with commas.</p>
      */
     inline bool AddPrincipalsHasBeenSet() const { return m_addPrincipalsHasBeenSet; }
 
     /**
      * <p>The principals to add to the cross-account attachment. A principal is an
      * account or the Amazon Resource Name (ARN) of an accelerator that the attachment
-     * gives permission to add the resources from another account, listed in the
-     * attachment.</p> <p>To add more than one principal, separate the account numbers
-     * or accelerator ARNs, or both, with commas.</p>
+     * gives permission to work with resources from another account. The resources are
+     * also listed in the attachment.</p> <p>To add more than one principal, separate
+     * the account numbers or accelerator ARNs, or both, with commas.</p>
      */
     inline void SetAddPrincipals(const Aws::Vector<Aws::String>& value) { m_addPrincipalsHasBeenSet = true; m_addPrincipals = value; }
 
     /**
      * <p>The principals to add to the cross-account attachment. A principal is an
      * account or the Amazon Resource Name (ARN) of an accelerator that the attachment
-     * gives permission to add the resources from another account, listed in the
-     * attachment.</p> <p>To add more than one principal, separate the account numbers
-     * or accelerator ARNs, or both, with commas.</p>
+     * gives permission to work with resources from another account. The resources are
+     * also listed in the attachment.</p> <p>To add more than one principal, separate
+     * the account numbers or accelerator ARNs, or both, with commas.</p>
      */
     inline void SetAddPrincipals(Aws::Vector<Aws::String>&& value) { m_addPrincipalsHasBeenSet = true; m_addPrincipals = std::move(value); }
 
     /**
      * <p>The principals to add to the cross-account attachment. A principal is an
      * account or the Amazon Resource Name (ARN) of an accelerator that the attachment
-     * gives permission to add the resources from another account, listed in the
-     * attachment.</p> <p>To add more than one principal, separate the account numbers
-     * or accelerator ARNs, or both, with commas.</p>
+     * gives permission to work with resources from another account. The resources are
+     * also listed in the attachment.</p> <p>To add more than one principal, separate
+     * the account numbers or accelerator ARNs, or both, with commas.</p>
      */
     inline UpdateCrossAccountAttachmentRequest& WithAddPrincipals(const Aws::Vector<Aws::String>& value) { SetAddPrincipals(value); return *this;}
 
     /**
      * <p>The principals to add to the cross-account attachment. A principal is an
      * account or the Amazon Resource Name (ARN) of an accelerator that the attachment
-     * gives permission to add the resources from another account, listed in the
-     * attachment.</p> <p>To add more than one principal, separate the account numbers
-     * or accelerator ARNs, or both, with commas.</p>
+     * gives permission to work with resources from another account. The resources are
+     * also listed in the attachment.</p> <p>To add more than one principal, separate
+     * the account numbers or accelerator ARNs, or both, with commas.</p>
      */
     inline UpdateCrossAccountAttachmentRequest& WithAddPrincipals(Aws::Vector<Aws::String>&& value) { SetAddPrincipals(std::move(value)); return *this;}
 
     /**
      * <p>The principals to add to the cross-account attachment. A principal is an
      * account or the Amazon Resource Name (ARN) of an accelerator that the attachment
-     * gives permission to add the resources from another account, listed in the
-     * attachment.</p> <p>To add more than one principal, separate the account numbers
-     * or accelerator ARNs, or both, with commas.</p>
+     * gives permission to work with resources from another account. The resources are
+     * also listed in the attachment.</p> <p>To add more than one principal, separate
+     * the account numbers or accelerator ARNs, or both, with commas.</p>
      */
     inline UpdateCrossAccountAttachmentRequest& AddAddPrincipals(const Aws::String& value) { m_addPrincipalsHasBeenSet = true; m_addPrincipals.push_back(value); return *this; }
 
     /**
      * <p>The principals to add to the cross-account attachment. A principal is an
      * account or the Amazon Resource Name (ARN) of an accelerator that the attachment
-     * gives permission to add the resources from another account, listed in the
-     * attachment.</p> <p>To add more than one principal, separate the account numbers
-     * or accelerator ARNs, or both, with commas.</p>
+     * gives permission to work with resources from another account. The resources are
+     * also listed in the attachment.</p> <p>To add more than one principal, separate
+     * the account numbers or accelerator ARNs, or both, with commas.</p>
      */
     inline UpdateCrossAccountAttachmentRequest& AddAddPrincipals(Aws::String&& value) { m_addPrincipalsHasBeenSet = true; m_addPrincipals.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The principals to add to the cross-account attachment. A principal is an
      * account or the Amazon Resource Name (ARN) of an accelerator that the attachment
-     * gives permission to add the resources from another account, listed in the
-     * attachment.</p> <p>To add more than one principal, separate the account numbers
-     * or accelerator ARNs, or both, with commas.</p>
+     * gives permission to work with resources from another account. The resources are
+     * also listed in the attachment.</p> <p>To add more than one principal, separate
+     * the account numbers or accelerator ARNs, or both, with commas.</p>
      */
     inline UpdateCrossAccountAttachmentRequest& AddAddPrincipals(const char* value) { m_addPrincipalsHasBeenSet = true; m_addPrincipals.push_back(value); return *this; }
 
 
     /**
      * <p>The principals to remove from the cross-account attachment. A principal is an
-     * account or the Amazon Resource Name (ARN) of an accelerator that is given
-     * permission to add the resources from another account, listed in the
-     * cross-account attachment.</p> <p>To remove more than one principal, separate the
-     * account numbers or accelerator ARNs, or both, with commas.</p>
+     * account or the Amazon Resource Name (ARN) of an accelerator that the attachment
+     * gives permission to work with resources from another account. The resources are
+     * also listed in the attachment.</p> <p>To remove more than one principal,
+     * separate the account numbers or accelerator ARNs, or both, with commas.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRemovePrincipals() const{ return m_removePrincipals; }
 
     /**
      * <p>The principals to remove from the cross-account attachment. A principal is an
-     * account or the Amazon Resource Name (ARN) of an accelerator that is given
-     * permission to add the resources from another account, listed in the
-     * cross-account attachment.</p> <p>To remove more than one principal, separate the
-     * account numbers or accelerator ARNs, or both, with commas.</p>
+     * account or the Amazon Resource Name (ARN) of an accelerator that the attachment
+     * gives permission to work with resources from another account. The resources are
+     * also listed in the attachment.</p> <p>To remove more than one principal,
+     * separate the account numbers or accelerator ARNs, or both, with commas.</p>
      */
     inline bool RemovePrincipalsHasBeenSet() const { return m_removePrincipalsHasBeenSet; }
 
     /**
      * <p>The principals to remove from the cross-account attachment. A principal is an
-     * account or the Amazon Resource Name (ARN) of an accelerator that is given
-     * permission to add the resources from another account, listed in the
-     * cross-account attachment.</p> <p>To remove more than one principal, separate the
-     * account numbers or accelerator ARNs, or both, with commas.</p>
+     * account or the Amazon Resource Name (ARN) of an accelerator that the attachment
+     * gives permission to work with resources from another account. The resources are
+     * also listed in the attachment.</p> <p>To remove more than one principal,
+     * separate the account numbers or accelerator ARNs, or both, with commas.</p>
      */
     inline void SetRemovePrincipals(const Aws::Vector<Aws::String>& value) { m_removePrincipalsHasBeenSet = true; m_removePrincipals = value; }
 
     /**
      * <p>The principals to remove from the cross-account attachment. A principal is an
-     * account or the Amazon Resource Name (ARN) of an accelerator that is given
-     * permission to add the resources from another account, listed in the
-     * cross-account attachment.</p> <p>To remove more than one principal, separate the
-     * account numbers or accelerator ARNs, or both, with commas.</p>
+     * account or the Amazon Resource Name (ARN) of an accelerator that the attachment
+     * gives permission to work with resources from another account. The resources are
+     * also listed in the attachment.</p> <p>To remove more than one principal,
+     * separate the account numbers or accelerator ARNs, or both, with commas.</p>
      */
     inline void SetRemovePrincipals(Aws::Vector<Aws::String>&& value) { m_removePrincipalsHasBeenSet = true; m_removePrincipals = std::move(value); }
 
     /**
      * <p>The principals to remove from the cross-account attachment. A principal is an
-     * account or the Amazon Resource Name (ARN) of an accelerator that is given
-     * permission to add the resources from another account, listed in the
-     * cross-account attachment.</p> <p>To remove more than one principal, separate the
-     * account numbers or accelerator ARNs, or both, with commas.</p>
+     * account or the Amazon Resource Name (ARN) of an accelerator that the attachment
+     * gives permission to work with resources from another account. The resources are
+     * also listed in the attachment.</p> <p>To remove more than one principal,
+     * separate the account numbers or accelerator ARNs, or both, with commas.</p>
      */
     inline UpdateCrossAccountAttachmentRequest& WithRemovePrincipals(const Aws::Vector<Aws::String>& value) { SetRemovePrincipals(value); return *this;}
 
     /**
      * <p>The principals to remove from the cross-account attachment. A principal is an
-     * account or the Amazon Resource Name (ARN) of an accelerator that is given
-     * permission to add the resources from another account, listed in the
-     * cross-account attachment.</p> <p>To remove more than one principal, separate the
-     * account numbers or accelerator ARNs, or both, with commas.</p>
+     * account or the Amazon Resource Name (ARN) of an accelerator that the attachment
+     * gives permission to work with resources from another account. The resources are
+     * also listed in the attachment.</p> <p>To remove more than one principal,
+     * separate the account numbers or accelerator ARNs, or both, with commas.</p>
      */
     inline UpdateCrossAccountAttachmentRequest& WithRemovePrincipals(Aws::Vector<Aws::String>&& value) { SetRemovePrincipals(std::move(value)); return *this;}
 
     /**
      * <p>The principals to remove from the cross-account attachment. A principal is an
-     * account or the Amazon Resource Name (ARN) of an accelerator that is given
-     * permission to add the resources from another account, listed in the
-     * cross-account attachment.</p> <p>To remove more than one principal, separate the
-     * account numbers or accelerator ARNs, or both, with commas.</p>
+     * account or the Amazon Resource Name (ARN) of an accelerator that the attachment
+     * gives permission to work with resources from another account. The resources are
+     * also listed in the attachment.</p> <p>To remove more than one principal,
+     * separate the account numbers or accelerator ARNs, or both, with commas.</p>
      */
     inline UpdateCrossAccountAttachmentRequest& AddRemovePrincipals(const Aws::String& value) { m_removePrincipalsHasBeenSet = true; m_removePrincipals.push_back(value); return *this; }
 
     /**
      * <p>The principals to remove from the cross-account attachment. A principal is an
-     * account or the Amazon Resource Name (ARN) of an accelerator that is given
-     * permission to add the resources from another account, listed in the
-     * cross-account attachment.</p> <p>To remove more than one principal, separate the
-     * account numbers or accelerator ARNs, or both, with commas.</p>
+     * account or the Amazon Resource Name (ARN) of an accelerator that the attachment
+     * gives permission to work with resources from another account. The resources are
+     * also listed in the attachment.</p> <p>To remove more than one principal,
+     * separate the account numbers or accelerator ARNs, or both, with commas.</p>
      */
     inline UpdateCrossAccountAttachmentRequest& AddRemovePrincipals(Aws::String&& value) { m_removePrincipalsHasBeenSet = true; m_removePrincipals.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The principals to remove from the cross-account attachment. A principal is an
-     * account or the Amazon Resource Name (ARN) of an accelerator that is given
-     * permission to add the resources from another account, listed in the
-     * cross-account attachment.</p> <p>To remove more than one principal, separate the
-     * account numbers or accelerator ARNs, or both, with commas.</p>
+     * account or the Amazon Resource Name (ARN) of an accelerator that the attachment
+     * gives permission to work with resources from another account. The resources are
+     * also listed in the attachment.</p> <p>To remove more than one principal,
+     * separate the account numbers or accelerator ARNs, or both, with commas.</p>
      */
     inline UpdateCrossAccountAttachmentRequest& AddRemovePrincipals(const char* value) { m_removePrincipalsHasBeenSet = true; m_removePrincipals.push_back(value); return *this; }
 
 
     /**
      * <p>The resources to add to the cross-account attachment. A resource listed in a
-     * cross-account attachment can be added to an accelerator by the principals that
+     * cross-account attachment can be used with an accelerator by the principals that
      * are listed in the attachment.</p> <p>To add more than one resource, separate the
      * resource ARNs with commas.</p>
      */
@@ -292,7 +292,7 @@ namespace Model
 
     /**
      * <p>The resources to add to the cross-account attachment. A resource listed in a
-     * cross-account attachment can be added to an accelerator by the principals that
+     * cross-account attachment can be used with an accelerator by the principals that
      * are listed in the attachment.</p> <p>To add more than one resource, separate the
      * resource ARNs with commas.</p>
      */
@@ -300,7 +300,7 @@ namespace Model
 
     /**
      * <p>The resources to add to the cross-account attachment. A resource listed in a
-     * cross-account attachment can be added to an accelerator by the principals that
+     * cross-account attachment can be used with an accelerator by the principals that
      * are listed in the attachment.</p> <p>To add more than one resource, separate the
      * resource ARNs with commas.</p>
      */
@@ -308,7 +308,7 @@ namespace Model
 
     /**
      * <p>The resources to add to the cross-account attachment. A resource listed in a
-     * cross-account attachment can be added to an accelerator by the principals that
+     * cross-account attachment can be used with an accelerator by the principals that
      * are listed in the attachment.</p> <p>To add more than one resource, separate the
      * resource ARNs with commas.</p>
      */
@@ -316,7 +316,7 @@ namespace Model
 
     /**
      * <p>The resources to add to the cross-account attachment. A resource listed in a
-     * cross-account attachment can be added to an accelerator by the principals that
+     * cross-account attachment can be used with an accelerator by the principals that
      * are listed in the attachment.</p> <p>To add more than one resource, separate the
      * resource ARNs with commas.</p>
      */
@@ -324,7 +324,7 @@ namespace Model
 
     /**
      * <p>The resources to add to the cross-account attachment. A resource listed in a
-     * cross-account attachment can be added to an accelerator by the principals that
+     * cross-account attachment can be used with an accelerator by the principals that
      * are listed in the attachment.</p> <p>To add more than one resource, separate the
      * resource ARNs with commas.</p>
      */
@@ -332,7 +332,7 @@ namespace Model
 
     /**
      * <p>The resources to add to the cross-account attachment. A resource listed in a
-     * cross-account attachment can be added to an accelerator by the principals that
+     * cross-account attachment can be used with an accelerator by the principals that
      * are listed in the attachment.</p> <p>To add more than one resource, separate the
      * resource ARNs with commas.</p>
      */
@@ -340,7 +340,7 @@ namespace Model
 
     /**
      * <p>The resources to add to the cross-account attachment. A resource listed in a
-     * cross-account attachment can be added to an accelerator by the principals that
+     * cross-account attachment can be used with an accelerator by the principals that
      * are listed in the attachment.</p> <p>To add more than one resource, separate the
      * resource ARNs with commas.</p>
      */
@@ -349,65 +349,65 @@ namespace Model
 
     /**
      * <p>The resources to remove from the cross-account attachment. A resource listed
-     * in a cross-account attachment can be added to an accelerator fy principals that
-     * are listed in the cross-account attachment.</p> <p>To remove more than one
-     * resource, separate the resource ARNs with commas.</p>
+     * in a cross-account attachment can be used with an accelerator by the principals
+     * that are listed in the attachment.</p> <p>To remove more than one resource,
+     * separate the resource ARNs with commas.</p>
      */
     inline const Aws::Vector<Resource>& GetRemoveResources() const{ return m_removeResources; }
 
     /**
      * <p>The resources to remove from the cross-account attachment. A resource listed
-     * in a cross-account attachment can be added to an accelerator fy principals that
-     * are listed in the cross-account attachment.</p> <p>To remove more than one
-     * resource, separate the resource ARNs with commas.</p>
+     * in a cross-account attachment can be used with an accelerator by the principals
+     * that are listed in the attachment.</p> <p>To remove more than one resource,
+     * separate the resource ARNs with commas.</p>
      */
     inline bool RemoveResourcesHasBeenSet() const { return m_removeResourcesHasBeenSet; }
 
     /**
      * <p>The resources to remove from the cross-account attachment. A resource listed
-     * in a cross-account attachment can be added to an accelerator fy principals that
-     * are listed in the cross-account attachment.</p> <p>To remove more than one
-     * resource, separate the resource ARNs with commas.</p>
+     * in a cross-account attachment can be used with an accelerator by the principals
+     * that are listed in the attachment.</p> <p>To remove more than one resource,
+     * separate the resource ARNs with commas.</p>
      */
     inline void SetRemoveResources(const Aws::Vector<Resource>& value) { m_removeResourcesHasBeenSet = true; m_removeResources = value; }
 
     /**
      * <p>The resources to remove from the cross-account attachment. A resource listed
-     * in a cross-account attachment can be added to an accelerator fy principals that
-     * are listed in the cross-account attachment.</p> <p>To remove more than one
-     * resource, separate the resource ARNs with commas.</p>
+     * in a cross-account attachment can be used with an accelerator by the principals
+     * that are listed in the attachment.</p> <p>To remove more than one resource,
+     * separate the resource ARNs with commas.</p>
      */
     inline void SetRemoveResources(Aws::Vector<Resource>&& value) { m_removeResourcesHasBeenSet = true; m_removeResources = std::move(value); }
 
     /**
      * <p>The resources to remove from the cross-account attachment. A resource listed
-     * in a cross-account attachment can be added to an accelerator fy principals that
-     * are listed in the cross-account attachment.</p> <p>To remove more than one
-     * resource, separate the resource ARNs with commas.</p>
+     * in a cross-account attachment can be used with an accelerator by the principals
+     * that are listed in the attachment.</p> <p>To remove more than one resource,
+     * separate the resource ARNs with commas.</p>
      */
     inline UpdateCrossAccountAttachmentRequest& WithRemoveResources(const Aws::Vector<Resource>& value) { SetRemoveResources(value); return *this;}
 
     /**
      * <p>The resources to remove from the cross-account attachment. A resource listed
-     * in a cross-account attachment can be added to an accelerator fy principals that
-     * are listed in the cross-account attachment.</p> <p>To remove more than one
-     * resource, separate the resource ARNs with commas.</p>
+     * in a cross-account attachment can be used with an accelerator by the principals
+     * that are listed in the attachment.</p> <p>To remove more than one resource,
+     * separate the resource ARNs with commas.</p>
      */
     inline UpdateCrossAccountAttachmentRequest& WithRemoveResources(Aws::Vector<Resource>&& value) { SetRemoveResources(std::move(value)); return *this;}
 
     /**
      * <p>The resources to remove from the cross-account attachment. A resource listed
-     * in a cross-account attachment can be added to an accelerator fy principals that
-     * are listed in the cross-account attachment.</p> <p>To remove more than one
-     * resource, separate the resource ARNs with commas.</p>
+     * in a cross-account attachment can be used with an accelerator by the principals
+     * that are listed in the attachment.</p> <p>To remove more than one resource,
+     * separate the resource ARNs with commas.</p>
      */
     inline UpdateCrossAccountAttachmentRequest& AddRemoveResources(const Resource& value) { m_removeResourcesHasBeenSet = true; m_removeResources.push_back(value); return *this; }
 
     /**
      * <p>The resources to remove from the cross-account attachment. A resource listed
-     * in a cross-account attachment can be added to an accelerator fy principals that
-     * are listed in the cross-account attachment.</p> <p>To remove more than one
-     * resource, separate the resource ARNs with commas.</p>
+     * in a cross-account attachment can be used with an accelerator by the principals
+     * that are listed in the attachment.</p> <p>To remove more than one resource,
+     * separate the resource ARNs with commas.</p>
      */
     inline UpdateCrossAccountAttachmentRequest& AddRemoveResources(Resource&& value) { m_removeResourcesHasBeenSet = true; m_removeResources.push_back(std::move(value)); return *this; }
 

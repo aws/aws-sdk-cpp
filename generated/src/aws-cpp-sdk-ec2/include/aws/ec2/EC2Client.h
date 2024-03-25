@@ -13319,6 +13319,36 @@ namespace EC2
         }
 
         /**
+         * <p>Gets the default instance metadata service (IMDS) settings that are set at
+         * the account level in the specified Amazon Web Services&#x2028; Region.</p>
+         * <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html#instance-metadata-options-order-of-precedence">Order
+         * of precedence for instance metadata options</a> in the <i>Amazon EC2 User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetInstanceMetadataDefaults">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetInstanceMetadataDefaultsOutcome GetInstanceMetadataDefaults(const Model::GetInstanceMetadataDefaultsRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetInstanceMetadataDefaults that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetInstanceMetadataDefaultsRequestT = Model::GetInstanceMetadataDefaultsRequest>
+        Model::GetInstanceMetadataDefaultsOutcomeCallable GetInstanceMetadataDefaultsCallable(const GetInstanceMetadataDefaultsRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::GetInstanceMetadataDefaults, request);
+        }
+
+        /**
+         * An Async wrapper for GetInstanceMetadataDefaults that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetInstanceMetadataDefaultsRequestT = Model::GetInstanceMetadataDefaultsRequest>
+        void GetInstanceMetadataDefaultsAsync(const GetInstanceMetadataDefaultsRequestT& request, const GetInstanceMetadataDefaultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::GetInstanceMetadataDefaults, request, handler, context);
+        }
+
+        /**
          * <p>Returns a list of instance types with the specified instance attributes. You
          * can use the response to preview the instance types without launching instances.
          * Note that the response does not consider capacity.</p> <p>When you specify
@@ -15210,10 +15240,42 @@ namespace EC2
         }
 
         /**
+         * <p>Modifies the default instance metadata service (IMDS) settings at the account
+         * level in the specified Amazon Web Services&#x2028; Region.</p>  <p>To
+         * remove a parameter's account-level default setting, specify
+         * <code>no-preference</code>. At instance launch, the value will come from the
+         * AMI, or from the launch parameter if specified. For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html#instance-metadata-options-order-of-precedence">Order
+         * of precedence for instance metadata options</a> in the <i>Amazon EC2 User
+         * Guide</i>.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceMetadataDefaults">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ModifyInstanceMetadataDefaultsOutcome ModifyInstanceMetadataDefaults(const Model::ModifyInstanceMetadataDefaultsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ModifyInstanceMetadataDefaults that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ModifyInstanceMetadataDefaultsRequestT = Model::ModifyInstanceMetadataDefaultsRequest>
+        Model::ModifyInstanceMetadataDefaultsOutcomeCallable ModifyInstanceMetadataDefaultsCallable(const ModifyInstanceMetadataDefaultsRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::ModifyInstanceMetadataDefaults, request);
+        }
+
+        /**
+         * An Async wrapper for ModifyInstanceMetadataDefaults that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ModifyInstanceMetadataDefaultsRequestT = Model::ModifyInstanceMetadataDefaultsRequest>
+        void ModifyInstanceMetadataDefaultsAsync(const ModifyInstanceMetadataDefaultsRequestT& request, const ModifyInstanceMetadataDefaultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::ModifyInstanceMetadataDefaults, request, handler, context);
+        }
+
+        /**
          * <p>Modify the instance metadata parameters on a running or stopped instance.
          * When you modify the parameters on a stopped instance, they are applied when the
          * instance is started. When you modify the parameters on a running instance, the
-         * API responds with a state of “pending”. After the parameter modifications are
+         * API responds with a state of “pending��. After the parameter modifications are
          * successfully applied to the instance, the state of the modifications changes
          * from “pending” to “applied” in subsequent describe-instances API calls. For more
          * information, see <a

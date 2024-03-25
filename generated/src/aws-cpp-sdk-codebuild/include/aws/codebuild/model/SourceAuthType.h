@@ -16,7 +16,8 @@ namespace Model
   enum class SourceAuthType
   {
     NOT_SET,
-    OAUTH
+    OAUTH,
+    CODECONNECTIONS
   };
 
 namespace SourceAuthTypeMapper

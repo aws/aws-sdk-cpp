@@ -43,8 +43,8 @@ namespace Model
      * Application Load Balancer, this is the Amazon Resource Name (ARN) of the
      * resource. If the endpoint is an Elastic IP address, this is the Elastic IP
      * address allocation ID. For Amazon EC2 instances, this is the EC2 instance ID. A
-     * resource must be valid and active when you add it as an endpoint.</p> <p>An
-     * Application Load Balancer can be either internal or internet-facing.</p>
+     * resource must be valid and active when you add it as an endpoint.</p> <p>For
+     * cross-account endpoints, this must be the ARN of the resource.</p>
      */
     inline const Aws::String& GetEndpointId() const{ return m_endpointId; }
 
@@ -53,8 +53,8 @@ namespace Model
      * Application Load Balancer, this is the Amazon Resource Name (ARN) of the
      * resource. If the endpoint is an Elastic IP address, this is the Elastic IP
      * address allocation ID. For Amazon EC2 instances, this is the EC2 instance ID. A
-     * resource must be valid and active when you add it as an endpoint.</p> <p>An
-     * Application Load Balancer can be either internal or internet-facing.</p>
+     * resource must be valid and active when you add it as an endpoint.</p> <p>For
+     * cross-account endpoints, this must be the ARN of the resource.</p>
      */
     inline bool EndpointIdHasBeenSet() const { return m_endpointIdHasBeenSet; }
 
@@ -63,8 +63,8 @@ namespace Model
      * Application Load Balancer, this is the Amazon Resource Name (ARN) of the
      * resource. If the endpoint is an Elastic IP address, this is the Elastic IP
      * address allocation ID. For Amazon EC2 instances, this is the EC2 instance ID. A
-     * resource must be valid and active when you add it as an endpoint.</p> <p>An
-     * Application Load Balancer can be either internal or internet-facing.</p>
+     * resource must be valid and active when you add it as an endpoint.</p> <p>For
+     * cross-account endpoints, this must be the ARN of the resource.</p>
      */
     inline void SetEndpointId(const Aws::String& value) { m_endpointIdHasBeenSet = true; m_endpointId = value; }
 
@@ -73,8 +73,8 @@ namespace Model
      * Application Load Balancer, this is the Amazon Resource Name (ARN) of the
      * resource. If the endpoint is an Elastic IP address, this is the Elastic IP
      * address allocation ID. For Amazon EC2 instances, this is the EC2 instance ID. A
-     * resource must be valid and active when you add it as an endpoint.</p> <p>An
-     * Application Load Balancer can be either internal or internet-facing.</p>
+     * resource must be valid and active when you add it as an endpoint.</p> <p>For
+     * cross-account endpoints, this must be the ARN of the resource.</p>
      */
     inline void SetEndpointId(Aws::String&& value) { m_endpointIdHasBeenSet = true; m_endpointId = std::move(value); }
 
@@ -83,8 +83,8 @@ namespace Model
      * Application Load Balancer, this is the Amazon Resource Name (ARN) of the
      * resource. If the endpoint is an Elastic IP address, this is the Elastic IP
      * address allocation ID. For Amazon EC2 instances, this is the EC2 instance ID. A
-     * resource must be valid and active when you add it as an endpoint.</p> <p>An
-     * Application Load Balancer can be either internal or internet-facing.</p>
+     * resource must be valid and active when you add it as an endpoint.</p> <p>For
+     * cross-account endpoints, this must be the ARN of the resource.</p>
      */
     inline void SetEndpointId(const char* value) { m_endpointIdHasBeenSet = true; m_endpointId.assign(value); }
 
@@ -93,8 +93,8 @@ namespace Model
      * Application Load Balancer, this is the Amazon Resource Name (ARN) of the
      * resource. If the endpoint is an Elastic IP address, this is the Elastic IP
      * address allocation ID. For Amazon EC2 instances, this is the EC2 instance ID. A
-     * resource must be valid and active when you add it as an endpoint.</p> <p>An
-     * Application Load Balancer can be either internal or internet-facing.</p>
+     * resource must be valid and active when you add it as an endpoint.</p> <p>For
+     * cross-account endpoints, this must be the ARN of the resource.</p>
      */
     inline EndpointConfiguration& WithEndpointId(const Aws::String& value) { SetEndpointId(value); return *this;}
 
@@ -103,8 +103,8 @@ namespace Model
      * Application Load Balancer, this is the Amazon Resource Name (ARN) of the
      * resource. If the endpoint is an Elastic IP address, this is the Elastic IP
      * address allocation ID. For Amazon EC2 instances, this is the EC2 instance ID. A
-     * resource must be valid and active when you add it as an endpoint.</p> <p>An
-     * Application Load Balancer can be either internal or internet-facing.</p>
+     * resource must be valid and active when you add it as an endpoint.</p> <p>For
+     * cross-account endpoints, this must be the ARN of the resource.</p>
      */
     inline EndpointConfiguration& WithEndpointId(Aws::String&& value) { SetEndpointId(std::move(value)); return *this;}
 
@@ -113,8 +113,8 @@ namespace Model
      * Application Load Balancer, this is the Amazon Resource Name (ARN) of the
      * resource. If the endpoint is an Elastic IP address, this is the Elastic IP
      * address allocation ID. For Amazon EC2 instances, this is the EC2 instance ID. A
-     * resource must be valid and active when you add it as an endpoint.</p> <p>An
-     * Application Load Balancer can be either internal or internet-facing.</p>
+     * resource must be valid and active when you add it as an endpoint.</p> <p>For
+     * cross-account endpoints, this must be the ARN of the resource.</p>
      */
     inline EndpointConfiguration& WithEndpointId(const char* value) { SetEndpointId(value); return *this;}
 
@@ -240,56 +240,56 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the cross-account attachment that specifies
      * the endpoints (resources) that can be added to accelerators and principals that
-     * have permission to add the endpoints to accelerators.</p>
+     * have permission to add the endpoints.</p>
      */
     inline const Aws::String& GetAttachmentArn() const{ return m_attachmentArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the cross-account attachment that specifies
      * the endpoints (resources) that can be added to accelerators and principals that
-     * have permission to add the endpoints to accelerators.</p>
+     * have permission to add the endpoints.</p>
      */
     inline bool AttachmentArnHasBeenSet() const { return m_attachmentArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the cross-account attachment that specifies
      * the endpoints (resources) that can be added to accelerators and principals that
-     * have permission to add the endpoints to accelerators.</p>
+     * have permission to add the endpoints.</p>
      */
     inline void SetAttachmentArn(const Aws::String& value) { m_attachmentArnHasBeenSet = true; m_attachmentArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the cross-account attachment that specifies
      * the endpoints (resources) that can be added to accelerators and principals that
-     * have permission to add the endpoints to accelerators.</p>
+     * have permission to add the endpoints.</p>
      */
     inline void SetAttachmentArn(Aws::String&& value) { m_attachmentArnHasBeenSet = true; m_attachmentArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the cross-account attachment that specifies
      * the endpoints (resources) that can be added to accelerators and principals that
-     * have permission to add the endpoints to accelerators.</p>
+     * have permission to add the endpoints.</p>
      */
     inline void SetAttachmentArn(const char* value) { m_attachmentArnHasBeenSet = true; m_attachmentArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the cross-account attachment that specifies
      * the endpoints (resources) that can be added to accelerators and principals that
-     * have permission to add the endpoints to accelerators.</p>
+     * have permission to add the endpoints.</p>
      */
     inline EndpointConfiguration& WithAttachmentArn(const Aws::String& value) { SetAttachmentArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the cross-account attachment that specifies
      * the endpoints (resources) that can be added to accelerators and principals that
-     * have permission to add the endpoints to accelerators.</p>
+     * have permission to add the endpoints.</p>
      */
     inline EndpointConfiguration& WithAttachmentArn(Aws::String&& value) { SetAttachmentArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the cross-account attachment that specifies
      * the endpoints (resources) that can be added to accelerators and principals that
-     * have permission to add the endpoints to accelerators.</p>
+     * have permission to add the endpoints.</p>
      */
     inline EndpointConfiguration& WithAttachmentArn(const char* value) { SetAttachmentArn(value); return *this;}
 

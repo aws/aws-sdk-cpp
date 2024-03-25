@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     OAUTH,
     BASIC_AUTH,
-    PERSONAL_ACCESS_TOKEN
+    PERSONAL_ACCESS_TOKEN,
+    CODECONNECTIONS
   };
 
 namespace AuthTypeMapper

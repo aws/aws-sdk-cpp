@@ -857,50 +857,42 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Web Services account alias (for example, <code>amazon</code>,
-     * <code>self</code>) or the Amazon Web Services account ID of the AMI owner.</p>
+     * <p>The owner alias (<code>amazon</code> | <code>aws-marketplace</code>).</p>
      */
     inline const Aws::String& GetImageOwnerAlias() const{ return m_imageOwnerAlias; }
 
     /**
-     * <p>The Amazon Web Services account alias (for example, <code>amazon</code>,
-     * <code>self</code>) or the Amazon Web Services account ID of the AMI owner.</p>
+     * <p>The owner alias (<code>amazon</code> | <code>aws-marketplace</code>).</p>
      */
     inline bool ImageOwnerAliasHasBeenSet() const { return m_imageOwnerAliasHasBeenSet; }
 
     /**
-     * <p>The Amazon Web Services account alias (for example, <code>amazon</code>,
-     * <code>self</code>) or the Amazon Web Services account ID of the AMI owner.</p>
+     * <p>The owner alias (<code>amazon</code> | <code>aws-marketplace</code>).</p>
      */
     inline void SetImageOwnerAlias(const Aws::String& value) { m_imageOwnerAliasHasBeenSet = true; m_imageOwnerAlias = value; }
 
     /**
-     * <p>The Amazon Web Services account alias (for example, <code>amazon</code>,
-     * <code>self</code>) or the Amazon Web Services account ID of the AMI owner.</p>
+     * <p>The owner alias (<code>amazon</code> | <code>aws-marketplace</code>).</p>
      */
     inline void SetImageOwnerAlias(Aws::String&& value) { m_imageOwnerAliasHasBeenSet = true; m_imageOwnerAlias = std::move(value); }
 
     /**
-     * <p>The Amazon Web Services account alias (for example, <code>amazon</code>,
-     * <code>self</code>) or the Amazon Web Services account ID of the AMI owner.</p>
+     * <p>The owner alias (<code>amazon</code> | <code>aws-marketplace</code>).</p>
      */
     inline void SetImageOwnerAlias(const char* value) { m_imageOwnerAliasHasBeenSet = true; m_imageOwnerAlias.assign(value); }
 
     /**
-     * <p>The Amazon Web Services account alias (for example, <code>amazon</code>,
-     * <code>self</code>) or the Amazon Web Services account ID of the AMI owner.</p>
+     * <p>The owner alias (<code>amazon</code> | <code>aws-marketplace</code>).</p>
      */
     inline Image& WithImageOwnerAlias(const Aws::String& value) { SetImageOwnerAlias(value); return *this;}
 
     /**
-     * <p>The Amazon Web Services account alias (for example, <code>amazon</code>,
-     * <code>self</code>) or the Amazon Web Services account ID of the AMI owner.</p>
+     * <p>The owner alias (<code>amazon</code> | <code>aws-marketplace</code>).</p>
      */
     inline Image& WithImageOwnerAlias(Aws::String&& value) { SetImageOwnerAlias(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Web Services account alias (for example, <code>amazon</code>,
-     * <code>self</code>) or the Amazon Web Services account ID of the AMI owner.</p>
+     * <p>The owner alias (<code>amazon</code> | <code>aws-marketplace</code>).</p>
      */
     inline Image& WithImageOwnerAlias(const char* value) { SetImageOwnerAlias(value); return *this;}
 

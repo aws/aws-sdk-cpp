@@ -19,6 +19,8 @@ namespace Model
     CODECOMMIT,
     CODEPIPELINE,
     GITHUB,
+    GITLAB,
+    GITLAB_SELF_MANAGED,
     S3,
     BITBUCKET,
     GITHUB_ENTERPRISE,

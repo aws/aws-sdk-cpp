@@ -90,56 +90,56 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the cross-account attachment that specifies
      * the endpoints (resources) that can be added to accelerators and principals that
-     * have permission to add the endpoints to accelerators.</p>
+     * have permission to add the endpoints.</p>
      */
     inline const Aws::String& GetAttachmentArn() const{ return m_attachmentArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the cross-account attachment that specifies
      * the endpoints (resources) that can be added to accelerators and principals that
-     * have permission to add the endpoints to accelerators.</p>
+     * have permission to add the endpoints.</p>
      */
     inline bool AttachmentArnHasBeenSet() const { return m_attachmentArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the cross-account attachment that specifies
      * the endpoints (resources) that can be added to accelerators and principals that
-     * have permission to add the endpoints to accelerators.</p>
+     * have permission to add the endpoints.</p>
      */
     inline void SetAttachmentArn(const Aws::String& value) { m_attachmentArnHasBeenSet = true; m_attachmentArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the cross-account attachment that specifies
      * the endpoints (resources) that can be added to accelerators and principals that
-     * have permission to add the endpoints to accelerators.</p>
+     * have permission to add the endpoints.</p>
      */
     inline void SetAttachmentArn(Aws::String&& value) { m_attachmentArnHasBeenSet = true; m_attachmentArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the cross-account attachment that specifies
      * the endpoints (resources) that can be added to accelerators and principals that
-     * have permission to add the endpoints to accelerators.</p>
+     * have permission to add the endpoints.</p>
      */
     inline void SetAttachmentArn(const char* value) { m_attachmentArnHasBeenSet = true; m_attachmentArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the cross-account attachment that specifies
      * the endpoints (resources) that can be added to accelerators and principals that
-     * have permission to add the endpoints to accelerators.</p>
+     * have permission to add the endpoints.</p>
      */
     inline CustomRoutingEndpointConfiguration& WithAttachmentArn(const Aws::String& value) { SetAttachmentArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the cross-account attachment that specifies
      * the endpoints (resources) that can be added to accelerators and principals that
-     * have permission to add the endpoints to accelerators.</p>
+     * have permission to add the endpoints.</p>
      */
     inline CustomRoutingEndpointConfiguration& WithAttachmentArn(Aws::String&& value) { SetAttachmentArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the cross-account attachment that specifies
      * the endpoints (resources) that can be added to accelerators and principals that
-     * have permission to add the endpoints to accelerators.</p>
+     * have permission to add the endpoints.</p>
      */
     inline CustomRoutingEndpointConfiguration& WithAttachmentArn(const char* value) { SetAttachmentArn(value); return *this;}
 
