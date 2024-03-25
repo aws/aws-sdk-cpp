@@ -134,6 +134,7 @@ void XmlNode::SetText(const Aws::String& textValue)
 {
     if (m_node != nullptr)
     {
+        assert(m_doc && m_doc->m_doc == m_node->GetDocument());
         Aws::External::tinyxml2::XMLText* text = m_doc->m_doc->NewText(textValue.c_str());
         m_node->InsertEndChild(text);
     }
@@ -141,12 +142,14 @@ void XmlNode::SetText(const Aws::String& textValue)
 
 XmlNode XmlNode::CreateChildElement(const Aws::String& name)
 {
+    assert(m_doc && m_doc->m_doc == m_node->GetDocument());
     Aws::External::tinyxml2::XMLElement* element = m_doc->m_doc->NewElement(name.c_str());
     return XmlNode(m_node->InsertEndChild(element), *m_doc);
 }
 
 XmlNode XmlNode::CreateSiblingElement(const Aws::String& name)
 {
+    assert(m_doc && m_doc->m_doc == m_node->GetDocument());
     Aws::External::tinyxml2::XMLElement* element = m_doc->m_doc->NewElement(name.c_str());
     return XmlNode(m_node->Parent()->InsertEndChild(element), *m_doc);
 }
@@ -193,6 +196,7 @@ XmlDocument& XmlDocument::operator=(const XmlDocument& other)
         if (m_doc != nullptr)
         {
             m_doc->Clear();
+            Aws::Delete(m_doc);
             m_doc = nullptr;
         }
     }
@@ -228,11 +232,13 @@ XmlDocument::~XmlDocument()
     if (m_doc)
     {
         Aws::Delete(m_doc);
+        m_doc = nullptr;
     }
 }
 
 void XmlDocument::InitDoc()
 {
+    assert(!m_doc);
     m_doc = Aws::New<Aws::External::tinyxml2::XMLDocument>(XML_SERIALIZER_ALLOCATION_TAG, true, Aws::External::tinyxml2::Whitespace::PRESERVE_WHITESPACE);
 }
 
