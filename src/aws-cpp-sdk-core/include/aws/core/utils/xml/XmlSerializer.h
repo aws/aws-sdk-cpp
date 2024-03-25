@@ -142,8 +142,8 @@ namespace Aws
                 //we do not own these.... I just had to change it from ref because the compiler was
                 //confused about which assignment operator to call. Do not... I repeat... do not delete
                 //these pointers in your destructor.
-                Aws::External::tinyxml2::XMLNode* m_node;
-                const XmlDocument* m_doc;
+                Aws::External::tinyxml2::XMLNode* m_node = nullptr;
+                const XmlDocument* m_doc = nullptr;
 
                 friend class XmlDocument;
             };
@@ -200,7 +200,7 @@ namespace Aws
             private:
                 void InitDoc();
 
-                Aws::External::tinyxml2::XMLDocument* m_doc;
+                Aws::External::tinyxml2::XMLDocument* m_doc = nullptr;
 
                 friend class XmlNode;
 
