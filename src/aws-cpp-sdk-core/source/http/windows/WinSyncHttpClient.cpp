@@ -99,16 +99,12 @@ bool WinSyncHttpClient::StreamPayloadToRequest(const std::shared_ptr<HttpRequest
         uint64_t bytesWritten;
         uint64_t bytesToRead = HTTP_REQUEST_WRITE_BUFFER_LENGTH;
         auto startingPos = payloadStream->tellg();
-        char streamBuffer[ HTTP_REQUEST_WRITE_BUFFER_LENGTH ];
         bool done = false;
         // aws-chunk = hex(chunk-size) + CRLF + chunk-data + CRLF
-        if (isAwsChunked)
-        {
-            // Length of hex(HTTP_REQUEST_WRITE_BUFFER_LENGTH) is 4;
-            // Length of each CRLF is 2.
-            // Reserve 8 bytes in total.
-            bytesToRead -= 8;
-        }
+        // Length of hex(HTTP_REQUEST_WRITE_BUFFER_LENGTH) is 4;
+        // Length of each CRLF is 2.
+        // Reserve 8 bytes in total, should the request be aws-chunked.
+        char streamBuffer[ HTTP_REQUEST_WRITE_BUFFER_LENGTH + 8 ];
         while(success && !done)
         {
             payloadStream->read(streamBuffer, bytesToRead);
