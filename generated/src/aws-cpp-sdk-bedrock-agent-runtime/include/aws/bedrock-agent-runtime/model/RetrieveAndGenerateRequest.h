@@ -36,69 +36,81 @@ namespace Model
 
 
     /**
-     * <p>Contains the query made to the knowledge base.</p>
+     * <p>Contains the query to be made to the knowledge base.</p>
      */
     inline const RetrieveAndGenerateInput& GetInput() const{ return m_input; }
 
     /**
-     * <p>Contains the query made to the knowledge base.</p>
+     * <p>Contains the query to be made to the knowledge base.</p>
      */
     inline bool InputHasBeenSet() const { return m_inputHasBeenSet; }
 
     /**
-     * <p>Contains the query made to the knowledge base.</p>
+     * <p>Contains the query to be made to the knowledge base.</p>
      */
     inline void SetInput(const RetrieveAndGenerateInput& value) { m_inputHasBeenSet = true; m_input = value; }
 
     /**
-     * <p>Contains the query made to the knowledge base.</p>
+     * <p>Contains the query to be made to the knowledge base.</p>
      */
     inline void SetInput(RetrieveAndGenerateInput&& value) { m_inputHasBeenSet = true; m_input = std::move(value); }
 
     /**
-     * <p>Contains the query made to the knowledge base.</p>
+     * <p>Contains the query to be made to the knowledge base.</p>
      */
     inline RetrieveAndGenerateRequest& WithInput(const RetrieveAndGenerateInput& value) { SetInput(value); return *this;}
 
     /**
-     * <p>Contains the query made to the knowledge base.</p>
+     * <p>Contains the query to be made to the knowledge base.</p>
      */
     inline RetrieveAndGenerateRequest& WithInput(RetrieveAndGenerateInput&& value) { SetInput(std::move(value)); return *this;}
 
 
     /**
-     * <p>Contains details about the resource being queried and the foundation model
-     * used for generation.</p>
+     * <p>Contains configurations for the knowledge base query and retrieval process.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query
+     * configurations</a>.</p>
      */
     inline const RetrieveAndGenerateConfiguration& GetRetrieveAndGenerateConfiguration() const{ return m_retrieveAndGenerateConfiguration; }
 
     /**
-     * <p>Contains details about the resource being queried and the foundation model
-     * used for generation.</p>
+     * <p>Contains configurations for the knowledge base query and retrieval process.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query
+     * configurations</a>.</p>
      */
     inline bool RetrieveAndGenerateConfigurationHasBeenSet() const { return m_retrieveAndGenerateConfigurationHasBeenSet; }
 
     /**
-     * <p>Contains details about the resource being queried and the foundation model
-     * used for generation.</p>
+     * <p>Contains configurations for the knowledge base query and retrieval process.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query
+     * configurations</a>.</p>
      */
     inline void SetRetrieveAndGenerateConfiguration(const RetrieveAndGenerateConfiguration& value) { m_retrieveAndGenerateConfigurationHasBeenSet = true; m_retrieveAndGenerateConfiguration = value; }
 
     /**
-     * <p>Contains details about the resource being queried and the foundation model
-     * used for generation.</p>
+     * <p>Contains configurations for the knowledge base query and retrieval process.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query
+     * configurations</a>.</p>
      */
     inline void SetRetrieveAndGenerateConfiguration(RetrieveAndGenerateConfiguration&& value) { m_retrieveAndGenerateConfigurationHasBeenSet = true; m_retrieveAndGenerateConfiguration = std::move(value); }
 
     /**
-     * <p>Contains details about the resource being queried and the foundation model
-     * used for generation.</p>
+     * <p>Contains configurations for the knowledge base query and retrieval process.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query
+     * configurations</a>.</p>
      */
     inline RetrieveAndGenerateRequest& WithRetrieveAndGenerateConfiguration(const RetrieveAndGenerateConfiguration& value) { SetRetrieveAndGenerateConfiguration(value); return *this;}
 
     /**
-     * <p>Contains details about the resource being queried and the foundation model
-     * used for generation.</p>
+     * <p>Contains configurations for the knowledge base query and retrieval process.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query
+     * configurations</a>.</p>
      */
     inline RetrieveAndGenerateRequest& WithRetrieveAndGenerateConfiguration(RetrieveAndGenerateConfiguration&& value) { SetRetrieveAndGenerateConfiguration(std::move(value)); return *this;}
 

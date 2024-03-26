@@ -133,63 +133,81 @@ namespace Model
 
 
     /**
-     * <p>Contains details about how the results should be returned.</p>
+     * <p>Contains configurations for the knowledge base query and retrieval process.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query
+     * configurations</a>.</p>
      */
     inline const KnowledgeBaseRetrievalConfiguration& GetRetrievalConfiguration() const{ return m_retrievalConfiguration; }
 
     /**
-     * <p>Contains details about how the results should be returned.</p>
+     * <p>Contains configurations for the knowledge base query and retrieval process.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query
+     * configurations</a>.</p>
      */
     inline bool RetrievalConfigurationHasBeenSet() const { return m_retrievalConfigurationHasBeenSet; }
 
     /**
-     * <p>Contains details about how the results should be returned.</p>
+     * <p>Contains configurations for the knowledge base query and retrieval process.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query
+     * configurations</a>.</p>
      */
     inline void SetRetrievalConfiguration(const KnowledgeBaseRetrievalConfiguration& value) { m_retrievalConfigurationHasBeenSet = true; m_retrievalConfiguration = value; }
 
     /**
-     * <p>Contains details about how the results should be returned.</p>
+     * <p>Contains configurations for the knowledge base query and retrieval process.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query
+     * configurations</a>.</p>
      */
     inline void SetRetrievalConfiguration(KnowledgeBaseRetrievalConfiguration&& value) { m_retrievalConfigurationHasBeenSet = true; m_retrievalConfiguration = std::move(value); }
 
     /**
-     * <p>Contains details about how the results should be returned.</p>
+     * <p>Contains configurations for the knowledge base query and retrieval process.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query
+     * configurations</a>.</p>
      */
     inline RetrieveRequest& WithRetrievalConfiguration(const KnowledgeBaseRetrievalConfiguration& value) { SetRetrievalConfiguration(value); return *this;}
 
     /**
-     * <p>Contains details about how the results should be returned.</p>
+     * <p>Contains configurations for the knowledge base query and retrieval process.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query
+     * configurations</a>.</p>
      */
     inline RetrieveRequest& WithRetrievalConfiguration(KnowledgeBaseRetrievalConfiguration&& value) { SetRetrievalConfiguration(std::move(value)); return *this;}
 
 
     /**
-     * <p>The query to send the knowledge base.</p>
+     * <p>Contains the query to send the knowledge base.</p>
      */
     inline const KnowledgeBaseQuery& GetRetrievalQuery() const{ return m_retrievalQuery; }
 
     /**
-     * <p>The query to send the knowledge base.</p>
+     * <p>Contains the query to send the knowledge base.</p>
      */
     inline bool RetrievalQueryHasBeenSet() const { return m_retrievalQueryHasBeenSet; }
 
     /**
-     * <p>The query to send the knowledge base.</p>
+     * <p>Contains the query to send the knowledge base.</p>
      */
     inline void SetRetrievalQuery(const KnowledgeBaseQuery& value) { m_retrievalQueryHasBeenSet = true; m_retrievalQuery = value; }
 
     /**
-     * <p>The query to send the knowledge base.</p>
+     * <p>Contains the query to send the knowledge base.</p>
      */
     inline void SetRetrievalQuery(KnowledgeBaseQuery&& value) { m_retrievalQueryHasBeenSet = true; m_retrievalQuery = std::move(value); }
 
     /**
-     * <p>The query to send the knowledge base.</p>
+     * <p>Contains the query to send the knowledge base.</p>
      */
     inline RetrieveRequest& WithRetrievalQuery(const KnowledgeBaseQuery& value) { SetRetrievalQuery(value); return *this;}
 
     /**
-     * <p>The query to send the knowledge base.</p>
+     * <p>Contains the query to send the knowledge base.</p>
      */
     inline RetrieveRequest& WithRetrievalQuery(KnowledgeBaseQuery&& value) { SetRetrievalQuery(std::move(value)); return *this;}
 

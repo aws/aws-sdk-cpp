@@ -27,8 +27,13 @@ namespace Model
 
   /**
    * <p>An object containing a segment of the generated response that is based on a
-   * source in the knowledge base, alongside information about the
-   * source.</p><p><h3>See Also:</h3>   <a
+   * source in the knowledge base, alongside information about the source.</p>
+   * <p>This data type is used in the following API operations:</p> <ul> <li> <p> <a
+   * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_Retrieve.html#API_agent-runtime_Retrieve_ResponseSyntax">Retrieve
+   * response</a> – in the <code>citations</code> field</p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_RetrieveAndGenerate.html#API_agent-runtime_RetrieveAndGenerate_ResponseSyntax">RetrieveAndGenerate
+   * response</a> – in the <code>citations</code> field</p> </li> </ul><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/Citation">AWS
    * API Reference</a></p>
    */

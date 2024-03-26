@@ -24,7 +24,17 @@ namespace Model
 {
 
   /**
-   * <p>Configurations for how to carry out the search.</p><p><h3>See Also:</h3>   <a
+   * <p>Configurations for how to perform the search query and return results. For
+   * more information, see <a
+   * href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query
+   * configurations</a>.</p> <p>This data type is used in the following API
+   * operations:</p> <ul> <li> <p> <a
+   * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_Retrieve.html#API_agent-runtime_Retrieve_RequestSyntax">Retrieve
+   * request</a> – in the <code>vectorSearchConfiguration</code> field</p> </li> <li>
+   * <p> <a
+   * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_RetrieveAndGenerate.html#API_agent-runtime_RetrieveAndGenerate_RequestSyntax">RetrieveAndGenerate
+   * request</a> – in the <code>vectorSearchConfiguration</code> field</p> </li>
+   * </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/KnowledgeBaseVectorSearchConfiguration">AWS
    * API Reference</a></p>
    */
@@ -38,34 +48,22 @@ namespace Model
 
 
     /**
-     * <p>The number of results to return.</p>  <p>The
-     * <code>numberOfResults</code> field is currently unsupported for
-     * <code>RetrieveAndGenerate</code>. Don't include it in this field if you are
-     * sending a <code>RetrieveAndGenerate</code> request.</p> 
+     * <p>The number of source chunks to retrieve.</p>
      */
     inline int GetNumberOfResults() const{ return m_numberOfResults; }
 
     /**
-     * <p>The number of results to return.</p>  <p>The
-     * <code>numberOfResults</code> field is currently unsupported for
-     * <code>RetrieveAndGenerate</code>. Don't include it in this field if you are
-     * sending a <code>RetrieveAndGenerate</code> request.</p> 
+     * <p>The number of source chunks to retrieve.</p>
      */
     inline bool NumberOfResultsHasBeenSet() const { return m_numberOfResultsHasBeenSet; }
 
     /**
-     * <p>The number of results to return.</p>  <p>The
-     * <code>numberOfResults</code> field is currently unsupported for
-     * <code>RetrieveAndGenerate</code>. Don't include it in this field if you are
-     * sending a <code>RetrieveAndGenerate</code> request.</p> 
+     * <p>The number of source chunks to retrieve.</p>
      */
     inline void SetNumberOfResults(int value) { m_numberOfResultsHasBeenSet = true; m_numberOfResults = value; }
 
     /**
-     * <p>The number of results to return.</p>  <p>The
-     * <code>numberOfResults</code> field is currently unsupported for
-     * <code>RetrieveAndGenerate</code>. Don't include it in this field if you are
-     * sending a <code>RetrieveAndGenerate</code> request.</p> 
+     * <p>The number of source chunks to retrieve.</p>
      */
     inline KnowledgeBaseVectorSearchConfiguration& WithNumberOfResults(int value) { SetNumberOfResults(value); return *this;}
 

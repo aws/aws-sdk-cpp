@@ -43,6 +43,7 @@ static const int UNKNOWN_MONITOR_HASH = HashingUtils::HashString("UnknownMonitor
 static const int BILL_EXPIRATION_HASH = HashingUtils::HashString("BillExpirationException");
 static const int INVALID_NEXT_TOKEN_HASH = HashingUtils::HashString("InvalidNextTokenException");
 static const int DATA_UNAVAILABLE_HASH = HashingUtils::HashString("DataUnavailableException");
+static const int BACKFILL_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("BackfillLimitExceededException");
 static const int GENERATION_EXISTS_HASH = HashingUtils::HashString("GenerationExistsException");
 
 
@@ -89,6 +90,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == DATA_UNAVAILABLE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CostExplorerErrors::DATA_UNAVAILABLE), RetryableType::NOT_RETRYABLE);
+  }
+  else if (hashCode == BACKFILL_LIMIT_EXCEEDED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CostExplorerErrors::BACKFILL_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
   }
   else if (hashCode == GENERATION_EXISTS_HASH)
   {

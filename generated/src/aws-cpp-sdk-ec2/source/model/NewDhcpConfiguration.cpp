@@ -39,7 +39,7 @@ NewDhcpConfiguration& NewDhcpConfiguration::operator =(const XmlNode& xmlNode)
 
   if(!resultNode.IsNull())
   {
-    XmlNode keyNode = resultNode.FirstChild("key");
+    XmlNode keyNode = resultNode.FirstChild("Key");
     if(!keyNode.IsNull())
     {
       m_key = Aws::Utils::Xml::DecodeEscapedXmlText(keyNode.GetText());

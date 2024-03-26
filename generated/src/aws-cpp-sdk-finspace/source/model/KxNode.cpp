@@ -21,14 +21,18 @@ namespace Model
 KxNode::KxNode() : 
     m_nodeIdHasBeenSet(false),
     m_availabilityZoneIdHasBeenSet(false),
-    m_launchTimeHasBeenSet(false)
+    m_launchTimeHasBeenSet(false),
+    m_status(KxNodeStatus::NOT_SET),
+    m_statusHasBeenSet(false)
 {
 }
 
 KxNode::KxNode(JsonView jsonValue) : 
     m_nodeIdHasBeenSet(false),
     m_availabilityZoneIdHasBeenSet(false),
-    m_launchTimeHasBeenSet(false)
+    m_launchTimeHasBeenSet(false),
+    m_status(KxNodeStatus::NOT_SET),
+    m_statusHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -56,6 +60,13 @@ KxNode& KxNode::operator =(JsonView jsonValue)
     m_launchTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("status"))
+  {
+    m_status = KxNodeStatusMapper::GetKxNodeStatusForName(jsonValue.GetString("status"));
+
+    m_statusHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -78,6 +89,11 @@ JsonValue KxNode::Jsonize() const
   if(m_launchTimeHasBeenSet)
   {
    payload.WithDouble("launchTime", m_launchTime.SecondsWithMSPrecision());
+  }
+
+  if(m_statusHasBeenSet)
+  {
+   payload.WithString("status", KxNodeStatusMapper::GetNameForKxNodeStatus(m_status));
   }
 
   return payload;

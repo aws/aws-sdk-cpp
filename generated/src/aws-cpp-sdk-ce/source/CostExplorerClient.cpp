@@ -48,11 +48,13 @@
 #include <aws/ce/model/GetSavingsPlansUtilizationDetailsRequest.h>
 #include <aws/ce/model/GetTagsRequest.h>
 #include <aws/ce/model/GetUsageForecastRequest.h>
+#include <aws/ce/model/ListCostAllocationTagBackfillHistoryRequest.h>
 #include <aws/ce/model/ListCostAllocationTagsRequest.h>
 #include <aws/ce/model/ListCostCategoryDefinitionsRequest.h>
 #include <aws/ce/model/ListSavingsPlansPurchaseRecommendationGenerationRequest.h>
 #include <aws/ce/model/ListTagsForResourceRequest.h>
 #include <aws/ce/model/ProvideAnomalyFeedbackRequest.h>
+#include <aws/ce/model/StartCostAllocationTagBackfillRequest.h>
 #include <aws/ce/model/StartSavingsPlansPurchaseRecommendationGenerationRequest.h>
 #include <aws/ce/model/TagResourceRequest.h>
 #include <aws/ce/model/UntagResourceRequest.h>
@@ -903,6 +905,32 @@ GetUsageForecastOutcome CostExplorerClient::GetUsageForecast(const GetUsageForec
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+ListCostAllocationTagBackfillHistoryOutcome CostExplorerClient::ListCostAllocationTagBackfillHistory(const ListCostAllocationTagBackfillHistoryRequest& request) const
+{
+  AWS_OPERATION_GUARD(ListCostAllocationTagBackfillHistory);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListCostAllocationTagBackfillHistory, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ListCostAllocationTagBackfillHistory, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ListCostAllocationTagBackfillHistory, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListCostAllocationTagBackfillHistory",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<ListCostAllocationTagBackfillHistoryOutcome>(
+    [&]()-> ListCostAllocationTagBackfillHistoryOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListCostAllocationTagBackfillHistory, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      return ListCostAllocationTagBackfillHistoryOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
 ListCostAllocationTagsOutcome CostExplorerClient::ListCostAllocationTags(const ListCostAllocationTagsRequest& request) const
 {
   AWS_OPERATION_GUARD(ListCostAllocationTags);
@@ -1027,6 +1055,32 @@ ProvideAnomalyFeedbackOutcome CostExplorerClient::ProvideAnomalyFeedback(const P
           {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
       AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ProvideAnomalyFeedback, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
       return ProvideAnomalyFeedbackOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+StartCostAllocationTagBackfillOutcome CostExplorerClient::StartCostAllocationTagBackfill(const StartCostAllocationTagBackfillRequest& request) const
+{
+  AWS_OPERATION_GUARD(StartCostAllocationTagBackfill);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartCostAllocationTagBackfill, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, StartCostAllocationTagBackfill, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, StartCostAllocationTagBackfill, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".StartCostAllocationTagBackfill",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<StartCostAllocationTagBackfillOutcome>(
+    [&]()-> StartCostAllocationTagBackfillOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartCostAllocationTagBackfill, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      return StartCostAllocationTagBackfillOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

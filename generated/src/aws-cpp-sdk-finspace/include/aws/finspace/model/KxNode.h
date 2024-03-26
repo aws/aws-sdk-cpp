@@ -7,6 +7,7 @@
 #include <aws/finspace/Finspace_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/finspace/model/KxNodeStatus.h>
 #include <utility>
 
 namespace Aws
@@ -170,6 +171,49 @@ namespace Model
      */
     inline KxNode& WithLaunchTime(Aws::Utils::DateTime&& value) { SetLaunchTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p> Specifies the status of the cluster nodes. </p> <ul> <li> <p>
+     * <code>RUNNING</code> – The node is actively serving.</p> </li> <li> <p>
+     * <code>PROVISIONING</code> – The node is being prepared.</p> </li> </ul>
+     */
+    inline const KxNodeStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p> Specifies the status of the cluster nodes. </p> <ul> <li> <p>
+     * <code>RUNNING</code> – The node is actively serving.</p> </li> <li> <p>
+     * <code>PROVISIONING</code> – The node is being prepared.</p> </li> </ul>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p> Specifies the status of the cluster nodes. </p> <ul> <li> <p>
+     * <code>RUNNING</code> – The node is actively serving.</p> </li> <li> <p>
+     * <code>PROVISIONING</code> – The node is being prepared.</p> </li> </ul>
+     */
+    inline void SetStatus(const KxNodeStatus& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /**
+     * <p> Specifies the status of the cluster nodes. </p> <ul> <li> <p>
+     * <code>RUNNING</code> – The node is actively serving.</p> </li> <li> <p>
+     * <code>PROVISIONING</code> – The node is being prepared.</p> </li> </ul>
+     */
+    inline void SetStatus(KxNodeStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
+
+    /**
+     * <p> Specifies the status of the cluster nodes. </p> <ul> <li> <p>
+     * <code>RUNNING</code> – The node is actively serving.</p> </li> <li> <p>
+     * <code>PROVISIONING</code> – The node is being prepared.</p> </li> </ul>
+     */
+    inline KxNode& WithStatus(const KxNodeStatus& value) { SetStatus(value); return *this;}
+
+    /**
+     * <p> Specifies the status of the cluster nodes. </p> <ul> <li> <p>
+     * <code>RUNNING</code> – The node is actively serving.</p> </li> <li> <p>
+     * <code>PROVISIONING</code> – The node is being prepared.</p> </li> </ul>
+     */
+    inline KxNode& WithStatus(KxNodeStatus&& value) { SetStatus(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_nodeId;
@@ -180,6 +224,9 @@ namespace Model
 
     Aws::Utils::DateTime m_launchTime;
     bool m_launchTimeHasBeenSet = false;
+
+    KxNodeStatus m_status;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

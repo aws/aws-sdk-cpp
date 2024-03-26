@@ -282,32 +282,50 @@ namespace Model
 
 
     /**
-     * <p>Contains parameters that specify various attributes of the session.</p>
+     * <p>Contains parameters that specify various attributes of the session. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html">Control
+     * session context</a>.</p>
      */
     inline const SessionState& GetSessionState() const{ return m_sessionState; }
 
     /**
-     * <p>Contains parameters that specify various attributes of the session.</p>
+     * <p>Contains parameters that specify various attributes of the session. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html">Control
+     * session context</a>.</p>
      */
     inline bool SessionStateHasBeenSet() const { return m_sessionStateHasBeenSet; }
 
     /**
-     * <p>Contains parameters that specify various attributes of the session.</p>
+     * <p>Contains parameters that specify various attributes of the session. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html">Control
+     * session context</a>.</p>
      */
     inline void SetSessionState(const SessionState& value) { m_sessionStateHasBeenSet = true; m_sessionState = value; }
 
     /**
-     * <p>Contains parameters that specify various attributes of the session.</p>
+     * <p>Contains parameters that specify various attributes of the session. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html">Control
+     * session context</a>.</p>
      */
     inline void SetSessionState(SessionState&& value) { m_sessionStateHasBeenSet = true; m_sessionState = std::move(value); }
 
     /**
-     * <p>Contains parameters that specify various attributes of the session.</p>
+     * <p>Contains parameters that specify various attributes of the session. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html">Control
+     * session context</a>.</p>
      */
     inline InvokeAgentRequest& WithSessionState(const SessionState& value) { SetSessionState(value); return *this;}
 
     /**
-     * <p>Contains parameters that specify various attributes of the session.</p>
+     * <p>Contains parameters that specify various attributes of the session. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html">Control
+     * session context</a>.</p>
      */
     inline InvokeAgentRequest& WithSessionState(SessionState&& value) { SetSessionState(std::move(value)); return *this;}
 

@@ -25,7 +25,14 @@ namespace Model
 
   /**
    * <p>Contains metadata about a part of the generated response that is accompanied
-   * by a citation.</p><p><h3>See Also:</h3>   <a
+   * by a citation.</p> <p>This data type is used in the following API
+   * operations:</p> <ul> <li> <p> <a
+   * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_Retrieve.html#API_agent-runtime_Retrieve_ResponseSyntax">Retrieve
+   * response</a> – in the <code>generatedResponsePart</code> field</p> </li> <li>
+   * <p> <a
+   * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_RetrieveAndGenerate.html#API_agent-runtime_RetrieveAndGenerate_ResponseSyntax">RetrieveAndGenerate
+   * response</a> – in the <code>generatedResponsePart</code> field</p> </li>
+   * </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/GeneratedResponsePart">AWS
    * API Reference</a></p>
    */

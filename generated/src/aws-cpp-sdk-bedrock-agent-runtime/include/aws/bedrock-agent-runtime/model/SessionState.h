@@ -34,8 +34,8 @@ namespace Model
    * request. Use session state attributes to control and provide conversational
    * context for your agent and to help customize your agent's behavior. For more
    * information, see <a
-   * href="https://docs.aws.amazon.com/bedrock/latest/userguide/sessionstate.html">Session
-   * context</a>.</p><p><h3>See Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html">Control
+   * session context</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/SessionState">AWS
    * API Reference</a></p>
    */

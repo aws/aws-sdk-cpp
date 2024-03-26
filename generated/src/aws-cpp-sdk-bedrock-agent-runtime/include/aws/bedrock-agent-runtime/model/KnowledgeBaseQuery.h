@@ -24,7 +24,11 @@ namespace Model
 {
 
   /**
-   * <p>Contains the query made to the knowledge base.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains the query made to the knowledge base.</p> <p>This data type is used
+   * in the following API operations:</p> <ul> <li> <p> <a
+   * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_Retrieve.html#API_agent-runtime_Retrieve_RequestSyntax">Retrieve
+   * request</a> – in the <code>retrievalQuery</code> field</p> </li> </ul><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/KnowledgeBaseQuery">AWS
    * API Reference</a></p>
    */
