@@ -30,6 +30,7 @@
 #include <aws/finspace/model/CreateKxUserRequest.h>
 #include <aws/finspace/model/CreateKxVolumeRequest.h>
 #include <aws/finspace/model/DeleteKxClusterRequest.h>
+#include <aws/finspace/model/DeleteKxClusterNodeRequest.h>
 #include <aws/finspace/model/DeleteKxDatabaseRequest.h>
 #include <aws/finspace/model/DeleteKxDataviewRequest.h>
 #include <aws/finspace/model/DeleteKxEnvironmentRequest.h>
@@ -519,6 +520,53 @@ DeleteKxClusterOutcome FinspaceClient::DeleteKxCluster(const DeleteKxClusterRequ
       endpointResolutionOutcome.GetResult().AddPathSegments("/clusters/");
       endpointResolutionOutcome.GetResult().AddPathSegment(request.GetClusterName());
       return DeleteKxClusterOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+DeleteKxClusterNodeOutcome FinspaceClient::DeleteKxClusterNode(const DeleteKxClusterNodeRequest& request) const
+{
+  AWS_OPERATION_GUARD(DeleteKxClusterNode);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteKxClusterNode, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.EnvironmentIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteKxClusterNode", "Required field: EnvironmentId, is not set");
+    return DeleteKxClusterNodeOutcome(Aws::Client::AWSError<FinspaceErrors>(FinspaceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EnvironmentId]", false));
+  }
+  if (!request.ClusterNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteKxClusterNode", "Required field: ClusterName, is not set");
+    return DeleteKxClusterNodeOutcome(Aws::Client::AWSError<FinspaceErrors>(FinspaceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ClusterName]", false));
+  }
+  if (!request.NodeIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteKxClusterNode", "Required field: NodeId, is not set");
+    return DeleteKxClusterNodeOutcome(Aws::Client::AWSError<FinspaceErrors>(FinspaceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [NodeId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, DeleteKxClusterNode, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, DeleteKxClusterNode, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".DeleteKxClusterNode",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<DeleteKxClusterNodeOutcome>(
+    [&]()-> DeleteKxClusterNodeOutcome {
+      auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+          [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+          TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+          *meter,
+          {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+      AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteKxClusterNode, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/kx/environments/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEnvironmentId());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/clusters/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetClusterName());
+      endpointResolutionOutcome.GetResult().AddPathSegments("/nodes/");
+      endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNodeId());
+      return DeleteKxClusterNodeOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
     },
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,

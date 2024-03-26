@@ -120,7 +120,7 @@ namespace Model
     /**
      * <p>A list of change request objects that are run in order. A change request
      * object consists of <code>changeType</code> , <code>s3Path</code>, and
-     * <code>dbPath</code>. A changeType can has the following values: </p> <ul> <li>
+     * <code>dbPath</code>. A changeType can have the following values: </p> <ul> <li>
      * <p>PUT – Adds or updates files in a database.</p> </li> <li> <p>DELETE – Deletes
      * files in a database.</p> </li> </ul> <p>All the change requests require a
      * mandatory <code>dbPath</code> attribute that defines the path within the
@@ -152,7 +152,7 @@ namespace Model
     /**
      * <p>A list of change request objects that are run in order. A change request
      * object consists of <code>changeType</code> , <code>s3Path</code>, and
-     * <code>dbPath</code>. A changeType can has the following values: </p> <ul> <li>
+     * <code>dbPath</code>. A changeType can have the following values: </p> <ul> <li>
      * <p>PUT – Adds or updates files in a database.</p> </li> <li> <p>DELETE – Deletes
      * files in a database.</p> </li> </ul> <p>All the change requests require a
      * mandatory <code>dbPath</code> attribute that defines the path within the
@@ -184,7 +184,7 @@ namespace Model
     /**
      * <p>A list of change request objects that are run in order. A change request
      * object consists of <code>changeType</code> , <code>s3Path</code>, and
-     * <code>dbPath</code>. A changeType can has the following values: </p> <ul> <li>
+     * <code>dbPath</code>. A changeType can have the following values: </p> <ul> <li>
      * <p>PUT – Adds or updates files in a database.</p> </li> <li> <p>DELETE – Deletes
      * files in a database.</p> </li> </ul> <p>All the change requests require a
      * mandatory <code>dbPath</code> attribute that defines the path within the
@@ -216,7 +216,7 @@ namespace Model
     /**
      * <p>A list of change request objects that are run in order. A change request
      * object consists of <code>changeType</code> , <code>s3Path</code>, and
-     * <code>dbPath</code>. A changeType can has the following values: </p> <ul> <li>
+     * <code>dbPath</code>. A changeType can have the following values: </p> <ul> <li>
      * <p>PUT – Adds or updates files in a database.</p> </li> <li> <p>DELETE – Deletes
      * files in a database.</p> </li> </ul> <p>All the change requests require a
      * mandatory <code>dbPath</code> attribute that defines the path within the
@@ -248,7 +248,7 @@ namespace Model
     /**
      * <p>A list of change request objects that are run in order. A change request
      * object consists of <code>changeType</code> , <code>s3Path</code>, and
-     * <code>dbPath</code>. A changeType can has the following values: </p> <ul> <li>
+     * <code>dbPath</code>. A changeType can have the following values: </p> <ul> <li>
      * <p>PUT – Adds or updates files in a database.</p> </li> <li> <p>DELETE – Deletes
      * files in a database.</p> </li> </ul> <p>All the change requests require a
      * mandatory <code>dbPath</code> attribute that defines the path within the
@@ -280,7 +280,7 @@ namespace Model
     /**
      * <p>A list of change request objects that are run in order. A change request
      * object consists of <code>changeType</code> , <code>s3Path</code>, and
-     * <code>dbPath</code>. A changeType can has the following values: </p> <ul> <li>
+     * <code>dbPath</code>. A changeType can have the following values: </p> <ul> <li>
      * <p>PUT – Adds or updates files in a database.</p> </li> <li> <p>DELETE – Deletes
      * files in a database.</p> </li> </ul> <p>All the change requests require a
      * mandatory <code>dbPath</code> attribute that defines the path within the
@@ -312,7 +312,7 @@ namespace Model
     /**
      * <p>A list of change request objects that are run in order. A change request
      * object consists of <code>changeType</code> , <code>s3Path</code>, and
-     * <code>dbPath</code>. A changeType can has the following values: </p> <ul> <li>
+     * <code>dbPath</code>. A changeType can have the following values: </p> <ul> <li>
      * <p>PUT – Adds or updates files in a database.</p> </li> <li> <p>DELETE – Deletes
      * files in a database.</p> </li> </ul> <p>All the change requests require a
      * mandatory <code>dbPath</code> attribute that defines the path within the
@@ -344,7 +344,7 @@ namespace Model
     /**
      * <p>A list of change request objects that are run in order. A change request
      * object consists of <code>changeType</code> , <code>s3Path</code>, and
-     * <code>dbPath</code>. A changeType can has the following values: </p> <ul> <li>
+     * <code>dbPath</code>. A changeType can have the following values: </p> <ul> <li>
      * <p>PUT – Adds or updates files in a database.</p> </li> <li> <p>DELETE – Deletes
      * files in a database.</p> </li> </ul> <p>All the change requests require a
      * mandatory <code>dbPath</code> attribute that defines the path within the

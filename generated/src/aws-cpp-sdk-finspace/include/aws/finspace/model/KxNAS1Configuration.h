@@ -70,22 +70,34 @@ namespace Model
 
 
     /**
-     * <p> The size of the network attached storage.</p>
+     * <p> The size of the network attached storage. For storage type
+     * <code>SSD_1000</code> and <code>SSD_250</code> you can select the minimum size
+     * as 1200 GB or increments of 2400 GB. For storage type <code>HDD_12</code> you
+     * can select the minimum size as 6000 GB or increments of 6000 GB.</p>
      */
     inline int GetSize() const{ return m_size; }
 
     /**
-     * <p> The size of the network attached storage.</p>
+     * <p> The size of the network attached storage. For storage type
+     * <code>SSD_1000</code> and <code>SSD_250</code> you can select the minimum size
+     * as 1200 GB or increments of 2400 GB. For storage type <code>HDD_12</code> you
+     * can select the minimum size as 6000 GB or increments of 6000 GB.</p>
      */
     inline bool SizeHasBeenSet() const { return m_sizeHasBeenSet; }
 
     /**
-     * <p> The size of the network attached storage.</p>
+     * <p> The size of the network attached storage. For storage type
+     * <code>SSD_1000</code> and <code>SSD_250</code> you can select the minimum size
+     * as 1200 GB or increments of 2400 GB. For storage type <code>HDD_12</code> you
+     * can select the minimum size as 6000 GB or increments of 6000 GB.</p>
      */
     inline void SetSize(int value) { m_sizeHasBeenSet = true; m_size = value; }
 
     /**
-     * <p> The size of the network attached storage.</p>
+     * <p> The size of the network attached storage. For storage type
+     * <code>SSD_1000</code> and <code>SSD_250</code> you can select the minimum size
+     * as 1200 GB or increments of 2400 GB. For storage type <code>HDD_12</code> you
+     * can select the minimum size as 6000 GB or increments of 6000 GB.</p>
      */
     inline KxNAS1Configuration& WithSize(int value) { SetSize(value); return *this;}
 

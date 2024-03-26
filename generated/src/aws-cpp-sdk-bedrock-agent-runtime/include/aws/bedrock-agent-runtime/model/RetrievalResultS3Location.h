@@ -24,7 +24,15 @@ namespace Model
 {
 
   /**
-   * <p>Contains the S3 location of the data source.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains the S3 location of the data source.</p> <p>This data type is used in
+   * the following API operations:</p> <ul> <li> <p> <a
+   * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_Retrieve.html#API_agent-runtime_Retrieve_ResponseSyntax">Retrieve
+   * response</a> – in the <code>s3Location</code> field</p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_RetrieveAndGenerate.html#API_agent-runtime_RetrieveAndGenerate_ResponseSyntax">RetrieveAndGenerate
+   * response</a> – in the <code>s3Location</code> field</p> </li> <li> <p> <a
+   * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_Retrieve.html#API_agent-runtime_Retrieve_ResponseSyntax">Retrieve
+   * response</a> – in the <code>s3Location</code> field</p> </li> </ul><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/RetrievalResultS3Location">AWS
    * API Reference</a></p>
    */

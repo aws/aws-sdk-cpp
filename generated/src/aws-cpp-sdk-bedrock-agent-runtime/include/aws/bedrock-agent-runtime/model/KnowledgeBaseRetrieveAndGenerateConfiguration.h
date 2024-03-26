@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
+#include <aws/bedrock-agent-runtime/model/GenerationConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/bedrock-agent-runtime/model/KnowledgeBaseRetrievalConfiguration.h>
 #include <utility>
@@ -25,8 +26,14 @@ namespace Model
 {
 
   /**
-   * <p>Contains details about the resource being queried.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>Contains details about the resource being queried.</p> <p>This data type is
+   * used in the following API operations:</p> <ul> <li> <p> <a
+   * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_Retrieve.html#API_agent-runtime_Retrieve_RequestSyntax">Retrieve
+   * request</a> – in the <code>knowledgeBaseConfiguration</code> field</p> </li>
+   * <li> <p> <a
+   * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_RetrieveAndGenerate.html#API_agent-runtime_RetrieveAndGenerate_RequestSyntax">RetrieveAndGenerate
+   * request</a> – in the <code>knowledgeBaseConfiguration</code> field</p> </li>
+   * </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/KnowledgeBaseRetrieveAndGenerateConfiguration">AWS
    * API Reference</a></p>
    */
@@ -37,6 +44,43 @@ namespace Model
     AWS_BEDROCKAGENTRUNTIME_API KnowledgeBaseRetrieveAndGenerateConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API KnowledgeBaseRetrieveAndGenerateConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>Contains configurations for response generation based on the knowwledge base
+     * query results.</p>
+     */
+    inline const GenerationConfiguration& GetGenerationConfiguration() const{ return m_generationConfiguration; }
+
+    /**
+     * <p>Contains configurations for response generation based on the knowwledge base
+     * query results.</p>
+     */
+    inline bool GenerationConfigurationHasBeenSet() const { return m_generationConfigurationHasBeenSet; }
+
+    /**
+     * <p>Contains configurations for response generation based on the knowwledge base
+     * query results.</p>
+     */
+    inline void SetGenerationConfiguration(const GenerationConfiguration& value) { m_generationConfigurationHasBeenSet = true; m_generationConfiguration = value; }
+
+    /**
+     * <p>Contains configurations for response generation based on the knowwledge base
+     * query results.</p>
+     */
+    inline void SetGenerationConfiguration(GenerationConfiguration&& value) { m_generationConfigurationHasBeenSet = true; m_generationConfiguration = std::move(value); }
+
+    /**
+     * <p>Contains configurations for response generation based on the knowwledge base
+     * query results.</p>
+     */
+    inline KnowledgeBaseRetrieveAndGenerateConfiguration& WithGenerationConfiguration(const GenerationConfiguration& value) { SetGenerationConfiguration(value); return *this;}
+
+    /**
+     * <p>Contains configurations for response generation based on the knowwledge base
+     * query results.</p>
+     */
+    inline KnowledgeBaseRetrieveAndGenerateConfiguration& WithGenerationConfiguration(GenerationConfiguration&& value) { SetGenerationConfiguration(std::move(value)); return *this;}
 
 
     /**
@@ -166,6 +210,9 @@ namespace Model
     inline KnowledgeBaseRetrieveAndGenerateConfiguration& WithRetrievalConfiguration(KnowledgeBaseRetrievalConfiguration&& value) { SetRetrievalConfiguration(std::move(value)); return *this;}
 
   private:
+
+    GenerationConfiguration m_generationConfiguration;
+    bool m_generationConfigurationHasBeenSet = false;
 
     Aws::String m_knowledgeBaseId;
     bool m_knowledgeBaseIdHasBeenSet = false;

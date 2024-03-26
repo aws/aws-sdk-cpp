@@ -311,6 +311,31 @@ namespace finspace
         }
 
         /**
+         * <p>Deletes the specified nodes from a cluster. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/finspace-2021-03-12/DeleteKxClusterNode">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteKxClusterNodeOutcome DeleteKxClusterNode(const Model::DeleteKxClusterNodeRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteKxClusterNode that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteKxClusterNodeRequestT = Model::DeleteKxClusterNodeRequest>
+        Model::DeleteKxClusterNodeOutcomeCallable DeleteKxClusterNodeCallable(const DeleteKxClusterNodeRequestT& request) const
+        {
+            return SubmitCallable(&FinspaceClient::DeleteKxClusterNode, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteKxClusterNode that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteKxClusterNodeRequestT = Model::DeleteKxClusterNodeRequest>
+        void DeleteKxClusterNodeAsync(const DeleteKxClusterNodeRequestT& request, const DeleteKxClusterNodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&FinspaceClient::DeleteKxClusterNode, request, handler, context);
+        }
+
+        /**
          * <p>Deletes the specified database and all of its associated data. This action is
          * irreversible. You must copy any data out of the database before deleting it if
          * the data is to be retained.</p><p><h3>See Also:</h3>   <a

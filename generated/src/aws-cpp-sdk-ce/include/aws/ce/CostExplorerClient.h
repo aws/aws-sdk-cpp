@@ -883,6 +883,32 @@ namespace CostExplorer
         }
 
         /**
+         * <p> Retrieves a list of your historical cost allocation tag backfill requests.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ListCostAllocationTagBackfillHistory">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListCostAllocationTagBackfillHistoryOutcome ListCostAllocationTagBackfillHistory(const Model::ListCostAllocationTagBackfillHistoryRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListCostAllocationTagBackfillHistory that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListCostAllocationTagBackfillHistoryRequestT = Model::ListCostAllocationTagBackfillHistoryRequest>
+        Model::ListCostAllocationTagBackfillHistoryOutcomeCallable ListCostAllocationTagBackfillHistoryCallable(const ListCostAllocationTagBackfillHistoryRequestT& request) const
+        {
+            return SubmitCallable(&CostExplorerClient::ListCostAllocationTagBackfillHistory, request);
+        }
+
+        /**
+         * An Async wrapper for ListCostAllocationTagBackfillHistory that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListCostAllocationTagBackfillHistoryRequestT = Model::ListCostAllocationTagBackfillHistoryRequest>
+        void ListCostAllocationTagBackfillHistoryAsync(const ListCostAllocationTagBackfillHistoryRequestT& request, const ListCostAllocationTagBackfillHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CostExplorerClient::ListCostAllocationTagBackfillHistory, request, handler, context);
+        }
+
+        /**
          * <p>Get a list of cost allocation tags. All inputs in the API are optional and
          * serve as filters. By default, all cost allocation tags are returned.
          * </p><p><h3>See Also:</h3>   <a
@@ -1018,6 +1044,35 @@ namespace CostExplorer
         void ProvideAnomalyFeedbackAsync(const ProvideAnomalyFeedbackRequestT& request, const ProvideAnomalyFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CostExplorerClient::ProvideAnomalyFeedback, request, handler, context);
+        }
+
+        /**
+         * <p> Request a cost allocation tag backfill. This will backfill the activation
+         * status (either <code>active</code> or <code>inactive</code>) for all tag keys
+         * from <code>para:BackfillFrom</code> up to the when this request is made.</p>
+         * <p>You can request a backfill once every 24 hours. </p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/StartCostAllocationTagBackfill">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartCostAllocationTagBackfillOutcome StartCostAllocationTagBackfill(const Model::StartCostAllocationTagBackfillRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartCostAllocationTagBackfill that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartCostAllocationTagBackfillRequestT = Model::StartCostAllocationTagBackfillRequest>
+        Model::StartCostAllocationTagBackfillOutcomeCallable StartCostAllocationTagBackfillCallable(const StartCostAllocationTagBackfillRequestT& request) const
+        {
+            return SubmitCallable(&CostExplorerClient::StartCostAllocationTagBackfill, request);
+        }
+
+        /**
+         * An Async wrapper for StartCostAllocationTagBackfill that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartCostAllocationTagBackfillRequestT = Model::StartCostAllocationTagBackfillRequest>
+        void StartCostAllocationTagBackfillAsync(const StartCostAllocationTagBackfillRequestT& request, const StartCostAllocationTagBackfillResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CostExplorerClient::StartCostAllocationTagBackfill, request, handler, context);
         }
 
         /**

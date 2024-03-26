@@ -24,12 +24,17 @@ namespace Model
 {
 
   /**
-   * <p>Contains details about how the results should be returned.</p> <p>This data
-   * type is used in the following API operations:</p> <ul> <li> <p> <a
+   * <p>Contains configurations for the knowledge base query and retrieval process.
+   * For more information, see <a
+   * href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query
+   * configurations</a>.</p> <p>This data type is used in the following API
+   * operations:</p> <ul> <li> <p> <a
    * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_Retrieve.html#API_agent-runtime_Retrieve_RequestSyntax">Retrieve
-   * request body</a> </p> </li> <li> <p> <a
+   * request</a> – in the <code>retrievalConfiguration</code> field</p> </li> <li>
+   * <p> <a
    * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_RetrieveAndGenerate.html#API_agent-runtime_RetrieveAndGenerate_RequestSyntax">RetrieveAndGenerate
-   * request body</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * request</a> – in the <code>retrievalConfiguration</code> field</p> </li>
+   * </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/KnowledgeBaseRetrievalConfiguration">AWS
    * API Reference</a></p>
    */
@@ -44,37 +49,49 @@ namespace Model
 
     /**
      * <p>Contains details about how the results from the vector search should be
-     * returned.</p>
+     * returned. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query
+     * configurations</a>.</p>
      */
     inline const KnowledgeBaseVectorSearchConfiguration& GetVectorSearchConfiguration() const{ return m_vectorSearchConfiguration; }
 
     /**
      * <p>Contains details about how the results from the vector search should be
-     * returned.</p>
+     * returned. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query
+     * configurations</a>.</p>
      */
     inline bool VectorSearchConfigurationHasBeenSet() const { return m_vectorSearchConfigurationHasBeenSet; }
 
     /**
      * <p>Contains details about how the results from the vector search should be
-     * returned.</p>
+     * returned. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query
+     * configurations</a>.</p>
      */
     inline void SetVectorSearchConfiguration(const KnowledgeBaseVectorSearchConfiguration& value) { m_vectorSearchConfigurationHasBeenSet = true; m_vectorSearchConfiguration = value; }
 
     /**
      * <p>Contains details about how the results from the vector search should be
-     * returned.</p>
+     * returned. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query
+     * configurations</a>.</p>
      */
     inline void SetVectorSearchConfiguration(KnowledgeBaseVectorSearchConfiguration&& value) { m_vectorSearchConfigurationHasBeenSet = true; m_vectorSearchConfiguration = std::move(value); }
 
     /**
      * <p>Contains details about how the results from the vector search should be
-     * returned.</p>
+     * returned. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query
+     * configurations</a>.</p>
      */
     inline KnowledgeBaseRetrievalConfiguration& WithVectorSearchConfiguration(const KnowledgeBaseVectorSearchConfiguration& value) { SetVectorSearchConfiguration(value); return *this;}
 
     /**
      * <p>Contains details about how the results from the vector search should be
-     * returned.</p>
+     * returned. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query
+     * configurations</a>.</p>
      */
     inline KnowledgeBaseRetrievalConfiguration& WithVectorSearchConfiguration(KnowledgeBaseVectorSearchConfiguration&& value) { SetVectorSearchConfiguration(std::move(value)); return *this;}
 

@@ -19,6 +19,7 @@ namespace Model
 {
 
 KnowledgeBaseRetrieveAndGenerateConfiguration::KnowledgeBaseRetrieveAndGenerateConfiguration() : 
+    m_generationConfigurationHasBeenSet(false),
     m_knowledgeBaseIdHasBeenSet(false),
     m_modelArnHasBeenSet(false),
     m_retrievalConfigurationHasBeenSet(false)
@@ -26,6 +27,7 @@ KnowledgeBaseRetrieveAndGenerateConfiguration::KnowledgeBaseRetrieveAndGenerateC
 }
 
 KnowledgeBaseRetrieveAndGenerateConfiguration::KnowledgeBaseRetrieveAndGenerateConfiguration(JsonView jsonValue) : 
+    m_generationConfigurationHasBeenSet(false),
     m_knowledgeBaseIdHasBeenSet(false),
     m_modelArnHasBeenSet(false),
     m_retrievalConfigurationHasBeenSet(false)
@@ -35,6 +37,13 @@ KnowledgeBaseRetrieveAndGenerateConfiguration::KnowledgeBaseRetrieveAndGenerateC
 
 KnowledgeBaseRetrieveAndGenerateConfiguration& KnowledgeBaseRetrieveAndGenerateConfiguration::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("generationConfiguration"))
+  {
+    m_generationConfiguration = jsonValue.GetObject("generationConfiguration");
+
+    m_generationConfigurationHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("knowledgeBaseId"))
   {
     m_knowledgeBaseId = jsonValue.GetString("knowledgeBaseId");
@@ -62,6 +71,12 @@ KnowledgeBaseRetrieveAndGenerateConfiguration& KnowledgeBaseRetrieveAndGenerateC
 JsonValue KnowledgeBaseRetrieveAndGenerateConfiguration::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_generationConfigurationHasBeenSet)
+  {
+   payload.WithObject("generationConfiguration", m_generationConfiguration.Jsonize());
+
+  }
 
   if(m_knowledgeBaseIdHasBeenSet)
   {
