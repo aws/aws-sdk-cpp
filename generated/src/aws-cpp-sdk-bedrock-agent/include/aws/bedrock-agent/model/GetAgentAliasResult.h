@@ -25,11 +25,6 @@ namespace BedrockAgent
 {
 namespace Model
 {
-  /**
-   * <p>Get Agent Alias Response</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/GetAgentAliasResponse">AWS
-   * API Reference</a></p>
-   */
   class GetAgentAliasResult
   {
   public:
@@ -38,19 +33,29 @@ namespace Model
     AWS_BEDROCKAGENT_API GetAgentAliasResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * <p>Contains information about the alias.</p>
+     */
     inline const AgentAlias& GetAgentAlias() const{ return m_agentAlias; }
 
-    
+    /**
+     * <p>Contains information about the alias.</p>
+     */
     inline void SetAgentAlias(const AgentAlias& value) { m_agentAlias = value; }
 
-    
+    /**
+     * <p>Contains information about the alias.</p>
+     */
     inline void SetAgentAlias(AgentAlias&& value) { m_agentAlias = std::move(value); }
 
-    
+    /**
+     * <p>Contains information about the alias.</p>
+     */
     inline GetAgentAliasResult& WithAgentAlias(const AgentAlias& value) { SetAgentAlias(value); return *this;}
 
-    
+    /**
+     * <p>Contains information about the alias.</p>
+     */
     inline GetAgentAliasResult& WithAgentAlias(AgentAlias&& value) { SetAgentAlias(std::move(value)); return *this;}
 
 

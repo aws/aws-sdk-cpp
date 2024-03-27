@@ -24,11 +24,6 @@ namespace BedrockAgent
 {
 namespace Model
 {
-  /**
-   * <p>Delete Action Group Response</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/DeleteAgentActionGroupResponse">AWS
-   * API Reference</a></p>
-   */
   class DeleteAgentActionGroupResult
   {
   public:

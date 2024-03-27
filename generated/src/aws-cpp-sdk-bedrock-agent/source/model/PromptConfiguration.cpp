@@ -19,57 +19,36 @@ namespace Model
 {
 
 PromptConfiguration::PromptConfiguration() : 
-    m_promptType(PromptType::NOT_SET),
-    m_promptTypeHasBeenSet(false),
+    m_basePromptTemplateHasBeenSet(false),
+    m_inferenceConfigurationHasBeenSet(false),
+    m_parserMode(CreationMode::NOT_SET),
+    m_parserModeHasBeenSet(false),
     m_promptCreationMode(CreationMode::NOT_SET),
     m_promptCreationModeHasBeenSet(false),
     m_promptState(PromptState::NOT_SET),
     m_promptStateHasBeenSet(false),
-    m_basePromptTemplateHasBeenSet(false),
-    m_inferenceConfigurationHasBeenSet(false),
-    m_parserMode(CreationMode::NOT_SET),
-    m_parserModeHasBeenSet(false)
+    m_promptType(PromptType::NOT_SET),
+    m_promptTypeHasBeenSet(false)
 {
 }
 
 PromptConfiguration::PromptConfiguration(JsonView jsonValue) : 
-    m_promptType(PromptType::NOT_SET),
-    m_promptTypeHasBeenSet(false),
+    m_basePromptTemplateHasBeenSet(false),
+    m_inferenceConfigurationHasBeenSet(false),
+    m_parserMode(CreationMode::NOT_SET),
+    m_parserModeHasBeenSet(false),
     m_promptCreationMode(CreationMode::NOT_SET),
     m_promptCreationModeHasBeenSet(false),
     m_promptState(PromptState::NOT_SET),
     m_promptStateHasBeenSet(false),
-    m_basePromptTemplateHasBeenSet(false),
-    m_inferenceConfigurationHasBeenSet(false),
-    m_parserMode(CreationMode::NOT_SET),
-    m_parserModeHasBeenSet(false)
+    m_promptType(PromptType::NOT_SET),
+    m_promptTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 PromptConfiguration& PromptConfiguration::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("promptType"))
-  {
-    m_promptType = PromptTypeMapper::GetPromptTypeForName(jsonValue.GetString("promptType"));
-
-    m_promptTypeHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("promptCreationMode"))
-  {
-    m_promptCreationMode = CreationModeMapper::GetCreationModeForName(jsonValue.GetString("promptCreationMode"));
-
-    m_promptCreationModeHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("promptState"))
-  {
-    m_promptState = PromptStateMapper::GetPromptStateForName(jsonValue.GetString("promptState"));
-
-    m_promptStateHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("basePromptTemplate"))
   {
     m_basePromptTemplate = jsonValue.GetString("basePromptTemplate");
@@ -91,27 +70,33 @@ PromptConfiguration& PromptConfiguration::operator =(JsonView jsonValue)
     m_parserModeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("promptCreationMode"))
+  {
+    m_promptCreationMode = CreationModeMapper::GetCreationModeForName(jsonValue.GetString("promptCreationMode"));
+
+    m_promptCreationModeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("promptState"))
+  {
+    m_promptState = PromptStateMapper::GetPromptStateForName(jsonValue.GetString("promptState"));
+
+    m_promptStateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("promptType"))
+  {
+    m_promptType = PromptTypeMapper::GetPromptTypeForName(jsonValue.GetString("promptType"));
+
+    m_promptTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
 JsonValue PromptConfiguration::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_promptTypeHasBeenSet)
-  {
-   payload.WithString("promptType", PromptTypeMapper::GetNameForPromptType(m_promptType));
-  }
-
-  if(m_promptCreationModeHasBeenSet)
-  {
-   payload.WithString("promptCreationMode", CreationModeMapper::GetNameForCreationMode(m_promptCreationMode));
-  }
-
-  if(m_promptStateHasBeenSet)
-  {
-   payload.WithString("promptState", PromptStateMapper::GetNameForPromptState(m_promptState));
-  }
 
   if(m_basePromptTemplateHasBeenSet)
   {
@@ -128,6 +113,21 @@ JsonValue PromptConfiguration::Jsonize() const
   if(m_parserModeHasBeenSet)
   {
    payload.WithString("parserMode", CreationModeMapper::GetNameForCreationMode(m_parserMode));
+  }
+
+  if(m_promptCreationModeHasBeenSet)
+  {
+   payload.WithString("promptCreationMode", CreationModeMapper::GetNameForCreationMode(m_promptCreationMode));
+  }
+
+  if(m_promptStateHasBeenSet)
+  {
+   payload.WithString("promptState", PromptStateMapper::GetNameForPromptState(m_promptState));
+  }
+
+  if(m_promptTypeHasBeenSet)
+  {
+   payload.WithString("promptType", PromptTypeMapper::GetNameForPromptType(m_promptType));
   }
 
   return payload;

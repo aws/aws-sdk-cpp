@@ -23,6 +23,7 @@ EksPodPropertiesDetail::EksPodPropertiesDetail() :
     m_hostNetwork(false),
     m_hostNetworkHasBeenSet(false),
     m_dnsPolicyHasBeenSet(false),
+    m_imagePullSecretsHasBeenSet(false),
     m_containersHasBeenSet(false),
     m_initContainersHasBeenSet(false),
     m_volumesHasBeenSet(false),
@@ -39,6 +40,7 @@ EksPodPropertiesDetail::EksPodPropertiesDetail(JsonView jsonValue) :
     m_hostNetwork(false),
     m_hostNetworkHasBeenSet(false),
     m_dnsPolicyHasBeenSet(false),
+    m_imagePullSecretsHasBeenSet(false),
     m_containersHasBeenSet(false),
     m_initContainersHasBeenSet(false),
     m_volumesHasBeenSet(false),
@@ -72,6 +74,16 @@ EksPodPropertiesDetail& EksPodPropertiesDetail::operator =(JsonView jsonValue)
     m_dnsPolicy = jsonValue.GetString("dnsPolicy");
 
     m_dnsPolicyHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("imagePullSecrets"))
+  {
+    Aws::Utils::Array<JsonView> imagePullSecretsJsonList = jsonValue.GetArray("imagePullSecrets");
+    for(unsigned imagePullSecretsIndex = 0; imagePullSecretsIndex < imagePullSecretsJsonList.GetLength(); ++imagePullSecretsIndex)
+    {
+      m_imagePullSecrets.push_back(imagePullSecretsJsonList[imagePullSecretsIndex].AsObject());
+    }
+    m_imagePullSecretsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("containers"))
@@ -154,6 +166,17 @@ JsonValue EksPodPropertiesDetail::Jsonize() const
   if(m_dnsPolicyHasBeenSet)
   {
    payload.WithString("dnsPolicy", m_dnsPolicy);
+
+  }
+
+  if(m_imagePullSecretsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> imagePullSecretsJsonList(m_imagePullSecrets.size());
+   for(unsigned imagePullSecretsIndex = 0; imagePullSecretsIndex < imagePullSecretsJsonList.GetLength(); ++imagePullSecretsIndex)
+   {
+     imagePullSecretsJsonList[imagePullSecretsIndex].AsObject(m_imagePullSecrets[imagePullSecretsIndex].Jsonize());
+   }
+   payload.WithArray("imagePullSecrets", std::move(imagePullSecretsJsonList));
 
   }
 

@@ -19,15 +19,15 @@ namespace Model
 {
 
 AgentAliasHistoryEvent::AgentAliasHistoryEvent() : 
-    m_routingConfigurationHasBeenSet(false),
     m_endDateHasBeenSet(false),
+    m_routingConfigurationHasBeenSet(false),
     m_startDateHasBeenSet(false)
 {
 }
 
 AgentAliasHistoryEvent::AgentAliasHistoryEvent(JsonView jsonValue) : 
-    m_routingConfigurationHasBeenSet(false),
     m_endDateHasBeenSet(false),
+    m_routingConfigurationHasBeenSet(false),
     m_startDateHasBeenSet(false)
 {
   *this = jsonValue;
@@ -35,6 +35,13 @@ AgentAliasHistoryEvent::AgentAliasHistoryEvent(JsonView jsonValue) :
 
 AgentAliasHistoryEvent& AgentAliasHistoryEvent::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("endDate"))
+  {
+    m_endDate = jsonValue.GetString("endDate");
+
+    m_endDateHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("routingConfiguration"))
   {
     Aws::Utils::Array<JsonView> routingConfigurationJsonList = jsonValue.GetArray("routingConfiguration");
@@ -43,13 +50,6 @@ AgentAliasHistoryEvent& AgentAliasHistoryEvent::operator =(JsonView jsonValue)
       m_routingConfiguration.push_back(routingConfigurationJsonList[routingConfigurationIndex].AsObject());
     }
     m_routingConfigurationHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("endDate"))
-  {
-    m_endDate = jsonValue.GetString("endDate");
-
-    m_endDateHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("startDate"))
@@ -66,6 +66,11 @@ JsonValue AgentAliasHistoryEvent::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_endDateHasBeenSet)
+  {
+   payload.WithString("endDate", m_endDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
   if(m_routingConfigurationHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> routingConfigurationJsonList(m_routingConfiguration.size());
@@ -75,11 +80,6 @@ JsonValue AgentAliasHistoryEvent::Jsonize() const
    }
    payload.WithArray("routingConfiguration", std::move(routingConfigurationJsonList));
 
-  }
-
-  if(m_endDateHasBeenSet)
-  {
-   payload.WithString("endDate", m_endDate.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_startDateHasBeenSet)

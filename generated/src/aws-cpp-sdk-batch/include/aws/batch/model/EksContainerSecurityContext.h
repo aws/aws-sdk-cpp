@@ -166,6 +166,31 @@ namespace Model
 
 
     /**
+     * <p>Whether or not a container or a Kubernetes pod is allowed to gain more
+     * privileges than its parent process. The default value is <code>false</code>.</p>
+     */
+    inline bool GetAllowPrivilegeEscalation() const{ return m_allowPrivilegeEscalation; }
+
+    /**
+     * <p>Whether or not a container or a Kubernetes pod is allowed to gain more
+     * privileges than its parent process. The default value is <code>false</code>.</p>
+     */
+    inline bool AllowPrivilegeEscalationHasBeenSet() const { return m_allowPrivilegeEscalationHasBeenSet; }
+
+    /**
+     * <p>Whether or not a container or a Kubernetes pod is allowed to gain more
+     * privileges than its parent process. The default value is <code>false</code>.</p>
+     */
+    inline void SetAllowPrivilegeEscalation(bool value) { m_allowPrivilegeEscalationHasBeenSet = true; m_allowPrivilegeEscalation = value; }
+
+    /**
+     * <p>Whether or not a container or a Kubernetes pod is allowed to gain more
+     * privileges than its parent process. The default value is <code>false</code>.</p>
+     */
+    inline EksContainerSecurityContext& WithAllowPrivilegeEscalation(bool value) { SetAllowPrivilegeEscalation(value); return *this;}
+
+
+    /**
      * <p>When this parameter is <code>true</code>, the container is given read-only
      * access to its root file system. The default value is <code>false</code>. This
      * parameter maps to <code>ReadOnlyRootFilesystem</code> policy in the <a
@@ -256,6 +281,9 @@ namespace Model
 
     bool m_privileged;
     bool m_privilegedHasBeenSet = false;
+
+    bool m_allowPrivilegeEscalation;
+    bool m_allowPrivilegeEscalationHasBeenSet = false;
 
     bool m_readOnlyRootFilesystem;
     bool m_readOnlyRootFilesystemHasBeenSet = false;

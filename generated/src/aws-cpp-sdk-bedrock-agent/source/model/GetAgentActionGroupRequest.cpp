@@ -13,9 +13,9 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 GetAgentActionGroupRequest::GetAgentActionGroupRequest() : 
+    m_actionGroupIdHasBeenSet(false),
     m_agentIdHasBeenSet(false),
-    m_agentVersionHasBeenSet(false),
-    m_actionGroupIdHasBeenSet(false)
+    m_agentVersionHasBeenSet(false)
 {
 }
 

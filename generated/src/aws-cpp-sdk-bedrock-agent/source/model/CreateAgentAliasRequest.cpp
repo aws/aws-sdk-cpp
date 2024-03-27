@@ -13,8 +13,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateAgentAliasRequest::CreateAgentAliasRequest() : 
-    m_agentIdHasBeenSet(false),
     m_agentAliasNameHasBeenSet(false),
+    m_agentIdHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_descriptionHasBeenSet(false),

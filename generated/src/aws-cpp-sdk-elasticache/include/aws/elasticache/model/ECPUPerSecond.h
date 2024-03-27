@@ -62,10 +62,38 @@ namespace Model
      */
     inline ECPUPerSecond& WithMaximum(int value) { SetMaximum(value); return *this;}
 
+
+    /**
+     * <p>The configuration for the minimum number of ECPUs the cache should be able
+     * consume per second.</p>
+     */
+    inline int GetMinimum() const{ return m_minimum; }
+
+    /**
+     * <p>The configuration for the minimum number of ECPUs the cache should be able
+     * consume per second.</p>
+     */
+    inline bool MinimumHasBeenSet() const { return m_minimumHasBeenSet; }
+
+    /**
+     * <p>The configuration for the minimum number of ECPUs the cache should be able
+     * consume per second.</p>
+     */
+    inline void SetMinimum(int value) { m_minimumHasBeenSet = true; m_minimum = value; }
+
+    /**
+     * <p>The configuration for the minimum number of ECPUs the cache should be able
+     * consume per second.</p>
+     */
+    inline ECPUPerSecond& WithMinimum(int value) { SetMinimum(value); return *this;}
+
   private:
 
     int m_maximum;
     bool m_maximumHasBeenSet = false;
+
+    int m_minimum;
+    bool m_minimumHasBeenSet = false;
   };
 
 } // namespace Model

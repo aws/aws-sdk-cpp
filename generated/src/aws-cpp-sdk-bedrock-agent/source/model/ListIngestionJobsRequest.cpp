@@ -13,13 +13,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 ListIngestionJobsRequest::ListIngestionJobsRequest() : 
-    m_knowledgeBaseIdHasBeenSet(false),
     m_dataSourceIdHasBeenSet(false),
     m_filtersHasBeenSet(false),
-    m_sortByHasBeenSet(false),
+    m_knowledgeBaseIdHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+    m_nextTokenHasBeenSet(false),
+    m_sortByHasBeenSet(false)
 {
 }
 
@@ -38,12 +38,6 @@ Aws::String ListIngestionJobsRequest::SerializePayload() const
 
   }
 
-  if(m_sortByHasBeenSet)
-  {
-   payload.WithObject("sortBy", m_sortBy.Jsonize());
-
-  }
-
   if(m_maxResultsHasBeenSet)
   {
    payload.WithInteger("maxResults", m_maxResults);
@@ -53,6 +47,12 @@ Aws::String ListIngestionJobsRequest::SerializePayload() const
   if(m_nextTokenHasBeenSet)
   {
    payload.WithString("nextToken", m_nextToken);
+
+  }
+
+  if(m_sortByHasBeenSet)
+  {
+   payload.WithObject("sortBy", m_sortBy.Jsonize());
 
   }
 

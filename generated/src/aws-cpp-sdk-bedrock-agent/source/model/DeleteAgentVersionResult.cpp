@@ -37,15 +37,15 @@ DeleteAgentVersionResult& DeleteAgentVersionResult::operator =(const Aws::Amazon
 
   }
 
-  if(jsonValue.ValueExists("agentVersion"))
-  {
-    m_agentVersion = jsonValue.GetString("agentVersion");
-
-  }
-
   if(jsonValue.ValueExists("agentStatus"))
   {
     m_agentStatus = AgentStatusMapper::GetAgentStatusForName(jsonValue.GetString("agentStatus"));
+
+  }
+
+  if(jsonValue.ValueExists("agentVersion"))
+  {
+    m_agentVersion = jsonValue.GetString("agentVersion");
 
   }
 

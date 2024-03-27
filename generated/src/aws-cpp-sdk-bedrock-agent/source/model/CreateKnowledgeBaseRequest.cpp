@@ -15,10 +15,10 @@ using namespace Aws::Utils;
 CreateKnowledgeBaseRequest::CreateKnowledgeBaseRequest() : 
     m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
-    m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
     m_knowledgeBaseConfigurationHasBeenSet(false),
+    m_nameHasBeenSet(false),
+    m_roleArnHasBeenSet(false),
     m_storageConfigurationHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
@@ -34,27 +34,27 @@ Aws::String CreateKnowledgeBaseRequest::SerializePayload() const
 
   }
 
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
-  }
-
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("description", m_description);
 
   }
 
-  if(m_roleArnHasBeenSet)
-  {
-   payload.WithString("roleArn", m_roleArn);
-
-  }
-
   if(m_knowledgeBaseConfigurationHasBeenSet)
   {
    payload.WithObject("knowledgeBaseConfiguration", m_knowledgeBaseConfiguration.Jsonize());
+
+  }
+
+  if(m_nameHasBeenSet)
+  {
+   payload.WithString("name", m_name);
+
+  }
+
+  if(m_roleArnHasBeenSet)
+  {
+   payload.WithString("roleArn", m_roleArn);
 
   }
 

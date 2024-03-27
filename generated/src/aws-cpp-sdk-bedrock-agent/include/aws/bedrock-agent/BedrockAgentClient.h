@@ -16,8 +16,8 @@ namespace Aws
 namespace BedrockAgent
 {
   /**
-   * <p>An example service, deployed with the Octane Service creator, which will echo
-   * the string</p>
+   * <p>Describes the API operations for creating and managing Amazon Bedrock
+   * agents.</p>
    */
   class AWS_BEDROCKAGENT_API BedrockAgentClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<BedrockAgentClient>
   {
@@ -78,8 +78,10 @@ namespace BedrockAgent
         virtual ~BedrockAgentClient();
 
         /**
-         * <p>Associate a Knowledge Base to an existing Amazon Bedrock Agent</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Associates a knowledge base with an agent. If a knowledge base is associated
+         * and its <code>indexState</code> is set to <code>Enabled</code>, the agent
+         * queries the knowledge base for information to augment its response to the
+         * user.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/AssociateAgentKnowledgeBase">AWS
          * API Reference</a></p>
          */
@@ -104,7 +106,24 @@ namespace BedrockAgent
         }
 
         /**
-         * <p>Creates an Amazon Bedrock Agent</p><p><h3>See Also:</h3>   <a
+         * <p>Creates an agent that orchestrates interactions between foundation models,
+         * data sources, software applications, user conversations, and APIs to carry out
+         * tasks to help customers.</p> <ul> <li> <p>Specify the following fields for
+         * security purposes.</p> <ul> <li> <p> <code>agentResourceRoleArn</code> – The ARN
+         * of the role with permissions to create an agent.</p> </li> <li> <p>(Optional)
+         * <code>customerEncryptionKeyArn</code> – The ARN of a KMS key to encrypt the
+         * creation of the agent.</p> </li> <li> <p>(Optional)
+         * <code>idleSessionTTLinSeconds</code> – Specify the number of seconds for which
+         * the agent should maintain session information. After this time expires, the
+         * subsequent <code>InvokeAgent</code> request begins a new session.</p> </li>
+         * </ul> </li> <li> <p>To override the default prompt behavior for agent
+         * orchestration and to use advanced prompts, include a
+         * <code>promptOverrideConfiguration</code> object. For more information, see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/advanced-prompts.html">Advanced
+         * prompts</a>.</p> </li> <li> <p>If you agent fails to be created, the response
+         * returns a list of <code>failureReasons</code> alongside a list of
+         * <code>recommendedActions</code> for you to troubleshoot.</p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/CreateAgent">AWS
          * API Reference</a></p>
          */
@@ -129,8 +148,19 @@ namespace BedrockAgent
         }
 
         /**
-         * <p>Creates an Action Group for existing Amazon Bedrock Agent</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates an action group for an agent. An action group represents the actions
+         * that an agent can carry out for the customer by defining the APIs that an agent
+         * can call and the logic for calling them.</p> <p>To allow your agent to request
+         * the user for additional information when trying to complete a task, add an
+         * action group with the <code>parentActionGroupSignature</code> field set to
+         * <code>AMAZON.UserInput</code>. You must leave the <code>description</code>,
+         * <code>apiSchema</code>, and <code>actionGroupExecutor</code> fields blank for
+         * this action group. During orchestration, if your agent determines that it needs
+         * to invoke an API in an action group, but doesn't have enough information to
+         * complete the API request, it will invoke this action group instead and return an
+         * <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_Observation.html">Observation</a>
+         * reprompting the user for more information.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/CreateAgentActionGroup">AWS
          * API Reference</a></p>
          */
@@ -155,8 +185,8 @@ namespace BedrockAgent
         }
 
         /**
-         * <p>Creates an Alias for an existing Amazon Bedrock Agent</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates an alias of an agent that can be used to deploy the
+         * agent.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/CreateAgentAlias">AWS
          * API Reference</a></p>
          */
@@ -181,7 +211,9 @@ namespace BedrockAgent
         }
 
         /**
-         * <p>Create a new data source</p><p><h3>See Also:</h3>   <a
+         * <p>Sets up a data source to be added to a knowledge base.</p>  <p>You
+         * can't change the <code>chunkingConfiguration</code> after you create the data
+         * source.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/CreateDataSource">AWS
          * API Reference</a></p>
          */
@@ -206,7 +238,39 @@ namespace BedrockAgent
         }
 
         /**
-         * <p>Create a new knowledge base</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a knowledge base that contains data sources from which information
+         * can be queried and used by LLMs. To create a knowledge base, you must first set
+         * up your data sources and configure a supported vector store. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-setup.html">Set
+         * up your data for ingestion</a>.</p>  <p>If you prefer to let Amazon
+         * Bedrock create and manage a vector store for you in Amazon OpenSearch Service,
+         * use the console. For more information, see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-create">Create
+         * a knowledge base</a>.</p>  <ul> <li> <p>Provide the <code>name</code> and
+         * an optional <code>description</code>.</p> </li> <li> <p>Provide the ARN with
+         * permissions to create a knowledge base in the <code>roleArn</code> field.</p>
+         * </li> <li> <p>Provide the embedding model to use in the
+         * <code>embeddingModelArn</code> field in the
+         * <code>knowledgeBaseConfiguration</code> object.</p> </li> <li> <p>Provide the
+         * configuration for your vector store in the <code>storageConfiguration</code>
+         * object.</p> <ul> <li> <p>For an Amazon OpenSearch Service database, use the
+         * <code>opensearchServerlessConfiguration</code> object. For more information, see
+         * <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-setup-oss.html">Create
+         * a vector store in Amazon OpenSearch Service</a>.</p> </li> <li> <p>For an Amazon
+         * Aurora database, use the <code>RdsConfiguration</code> object. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-setup-rds.html">Create
+         * a vector store in Amazon Aurora</a>.</p> </li> <li> <p>For a Pinecone database,
+         * use the <code>pineconeConfiguration</code> object. For more information, see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-setup-pinecone.html">Create
+         * a vector store in Pinecone</a>.</p> </li> <li> <p>For a Redis Enterprise Cloud
+         * database, use the <code>redisEnterpriseCloudConfiguration</code> object. For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-setup-redis.html">Create
+         * a vector store in Redis Enterprise Cloud</a>.</p> </li> </ul> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/CreateKnowledgeBase">AWS
          * API Reference</a></p>
          */
@@ -231,8 +295,7 @@ namespace BedrockAgent
         }
 
         /**
-         * <p>Deletes an Agent for existing Amazon Bedrock Agent</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Deletes an agent.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/DeleteAgent">AWS
          * API Reference</a></p>
          */
@@ -257,8 +320,7 @@ namespace BedrockAgent
         }
 
         /**
-         * <p>Deletes an Action Group for existing Amazon Bedrock Agent.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Deletes an action group in an agent.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/DeleteAgentActionGroup">AWS
          * API Reference</a></p>
          */
@@ -283,7 +345,7 @@ namespace BedrockAgent
         }
 
         /**
-         * <p>Deletes an Alias for a Amazon Bedrock Agent</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an alias of an agent.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/DeleteAgentAlias">AWS
          * API Reference</a></p>
          */
@@ -308,8 +370,7 @@ namespace BedrockAgent
         }
 
         /**
-         * <p>Deletes an Agent version for existing Amazon Bedrock Agent</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Deletes a version of an agent.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/DeleteAgentVersion">AWS
          * API Reference</a></p>
          */
@@ -334,7 +395,7 @@ namespace BedrockAgent
         }
 
         /**
-         * <p>Delete an existing data source</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a data source from a knowledge base.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/DeleteDataSource">AWS
          * API Reference</a></p>
          */
@@ -359,7 +420,11 @@ namespace BedrockAgent
         }
 
         /**
-         * <p>Delete an existing knowledge base</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a knowledge base. Before deleting a knowledge base, you should
+         * disassociate the knowledge base from any agents that it is associated with by
+         * making a <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_DisassociateAgentKnowledgeBase.html">DisassociateAgentKnowledgeBase</a>
+         * request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/DeleteKnowledgeBase">AWS
          * API Reference</a></p>
          */
@@ -384,8 +449,7 @@ namespace BedrockAgent
         }
 
         /**
-         * <p>Disassociate an existing Knowledge Base from an Amazon Bedrock
-         * Agent</p><p><h3>See Also:</h3>   <a
+         * <p>Disassociates a knowledge base from an agent.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/DisassociateAgentKnowledgeBase">AWS
          * API Reference</a></p>
          */
@@ -410,7 +474,7 @@ namespace BedrockAgent
         }
 
         /**
-         * <p>Gets an Agent for existing Amazon Bedrock Agent</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about an agent.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/GetAgent">AWS
          * API Reference</a></p>
          */
@@ -435,8 +499,8 @@ namespace BedrockAgent
         }
 
         /**
-         * <p>Gets an Action Group for existing Amazon Bedrock Agent Version</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Gets information about an action group for an agent.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/GetAgentActionGroup">AWS
          * API Reference</a></p>
          */
@@ -461,7 +525,7 @@ namespace BedrockAgent
         }
 
         /**
-         * <p>Describes an Alias for a Amazon Bedrock Agent</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about an alias of an agent.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/GetAgentAlias">AWS
          * API Reference</a></p>
          */
@@ -486,8 +550,8 @@ namespace BedrockAgent
         }
 
         /**
-         * <p>Gets a knowledge base associated to an existing Amazon Bedrock Agent
-         * Version</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about a knowledge base associated with an
+         * agent.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/GetAgentKnowledgeBase">AWS
          * API Reference</a></p>
          */
@@ -512,8 +576,7 @@ namespace BedrockAgent
         }
 
         /**
-         * <p>Gets an Agent version for existing Amazon Bedrock Agent</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Gets details about a version of an agent.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/GetAgentVersion">AWS
          * API Reference</a></p>
          */
@@ -538,7 +601,7 @@ namespace BedrockAgent
         }
 
         /**
-         * <p>Get an existing data source</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about a data source.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/GetDataSource">AWS
          * API Reference</a></p>
          */
@@ -563,7 +626,8 @@ namespace BedrockAgent
         }
 
         /**
-         * <p>Get an ingestion job</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about a ingestion job, in which a data source is added to a
+         * knowledge base.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/GetIngestionJob">AWS
          * API Reference</a></p>
          */
@@ -588,7 +652,7 @@ namespace BedrockAgent
         }
 
         /**
-         * <p>Get an existing knowledge base</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about a knoweldge base.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/GetKnowledgeBase">AWS
          * API Reference</a></p>
          */
@@ -613,8 +677,8 @@ namespace BedrockAgent
         }
 
         /**
-         * <p>Lists an Action Group for existing Amazon Bedrock Agent Version</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists the action groups for an agent and information about each
+         * one.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ListAgentActionGroups">AWS
          * API Reference</a></p>
          */
@@ -639,8 +703,8 @@ namespace BedrockAgent
         }
 
         /**
-         * <p>Lists all the Aliases for an Amazon Bedrock Agent</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Lists the aliases of an agent and information about each one.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ListAgentAliases">AWS
          * API Reference</a></p>
          */
@@ -665,8 +729,8 @@ namespace BedrockAgent
         }
 
         /**
-         * <p>List of Knowledge Bases associated to an existing Amazon Bedrock Agent
-         * Version</p><p><h3>See Also:</h3>   <a
+         * <p>Lists knowledge bases associated with an agent and information about each
+         * one.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ListAgentKnowledgeBases">AWS
          * API Reference</a></p>
          */
@@ -691,7 +755,8 @@ namespace BedrockAgent
         }
 
         /**
-         * <p>Lists Agent Versions</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the versions of an agent and information about each
+         * version.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ListAgentVersions">AWS
          * API Reference</a></p>
          */
@@ -716,7 +781,8 @@ namespace BedrockAgent
         }
 
         /**
-         * <p>Lists Agents</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the agents belonging to an account and information about each
+         * agent.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ListAgents">AWS
          * API Reference</a></p>
          */
@@ -741,7 +807,8 @@ namespace BedrockAgent
         }
 
         /**
-         * <p>List data sources</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the data sources in a knowledge base and information about each
+         * one.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ListDataSources">AWS
          * API Reference</a></p>
          */
@@ -766,7 +833,8 @@ namespace BedrockAgent
         }
 
         /**
-         * <p>List ingestion jobs</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the ingestion jobs for a data source and information about each of
+         * them.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ListIngestionJobs">AWS
          * API Reference</a></p>
          */
@@ -791,7 +859,8 @@ namespace BedrockAgent
         }
 
         /**
-         * <p>List Knowledge Bases</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the knowledge bases in an account and information about each of
+         * them.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ListKnowledgeBases">AWS
          * API Reference</a></p>
          */
@@ -816,7 +885,7 @@ namespace BedrockAgent
         }
 
         /**
-         * <p>List tags for a resource</p><p><h3>See Also:</h3>   <a
+         * <p>List all the tags for the resource you specify.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ListTagsForResource">AWS
          * API Reference</a></p>
          */
@@ -841,8 +910,8 @@ namespace BedrockAgent
         }
 
         /**
-         * <p>Prepares an existing Amazon Bedrock Agent to receive runtime
-         * requests</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a <code>DRAFT</code> version of the agent that can be used for
+         * internal testing.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/PrepareAgent">AWS
          * API Reference</a></p>
          */
@@ -867,7 +936,8 @@ namespace BedrockAgent
         }
 
         /**
-         * <p>Start a new ingestion job</p><p><h3>See Also:</h3>   <a
+         * <p>Begins an ingestion job, in which a data source is added to a knowledge
+         * base.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/StartIngestionJob">AWS
          * API Reference</a></p>
          */
@@ -892,7 +962,9 @@ namespace BedrockAgent
         }
 
         /**
-         * <p>Tag a resource</p><p><h3>See Also:</h3>   <a
+         * <p>Associate tags with a resource. For more information, see <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Tagging
+         * resources</a> in the Amazon Bedrock User Guide.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/TagResource">AWS
          * API Reference</a></p>
          */
@@ -917,7 +989,7 @@ namespace BedrockAgent
         }
 
         /**
-         * <p>Untag a resource</p><p><h3>See Also:</h3>   <a
+         * <p>Remove tags from a resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/UntagResource">AWS
          * API Reference</a></p>
          */
@@ -942,7 +1014,7 @@ namespace BedrockAgent
         }
 
         /**
-         * <p>Updates an existing Amazon Bedrock Agent</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the configuration of an agent.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/UpdateAgent">AWS
          * API Reference</a></p>
          */
@@ -967,7 +1039,7 @@ namespace BedrockAgent
         }
 
         /**
-         * <p>Updates an existing Action Group for Amazon Bedrock Agent</p><p><h3>See
+         * <p>Updates the configuration for an action group for an agent.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/UpdateAgentActionGroup">AWS
          * API Reference</a></p>
@@ -993,8 +1065,8 @@ namespace BedrockAgent
         }
 
         /**
-         * <p>Updates an existing Alias for an Amazon Bedrock Agent</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Updates configurations for an alias of an agent.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/UpdateAgentAlias">AWS
          * API Reference</a></p>
          */
@@ -1019,8 +1091,8 @@ namespace BedrockAgent
         }
 
         /**
-         * <p>Updates an existing Knowledge Base associated to an Amazon Bedrock
-         * Agent</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the configuration for a knowledge base that has been associated with
+         * an agent.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/UpdateAgentKnowledgeBase">AWS
          * API Reference</a></p>
          */
@@ -1045,7 +1117,10 @@ namespace BedrockAgent
         }
 
         /**
-         * <p>Update an existing data source</p><p><h3>See Also:</h3>   <a
+         * <p>Updates configurations for a data source.</p>  <p>You can't change
+         * the <code>chunkingConfiguration</code> after you create the data source. Specify
+         * the existing <code>chunkingConfiguration</code>.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/UpdateDataSource">AWS
          * API Reference</a></p>
          */
@@ -1070,7 +1145,16 @@ namespace BedrockAgent
         }
 
         /**
-         * <p>Update an existing knowledge base</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the configuration of a knowledge base with the fields that you
+         * specify. Because all fields will be overwritten, you must include the same
+         * values for fields that you want to keep the same.</p> <p>You can change the
+         * following fields:</p> <ul> <li> <p> <code>name</code> </p> </li> <li> <p>
+         * <code>description</code> </p> </li> <li> <p> <code>roleArn</code> </p> </li>
+         * </ul> <p>You can't change the <code>knowledgeBaseConfiguration</code> or
+         * <code>storageConfiguration</code> fields, so you must specify the same
+         * configurations as when you created the knowledge base. You can send a <a
+         * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_GetKnowledgeBase.html">GetKnowledgeBase</a>
+         * request and copy the same configurations.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/UpdateKnowledgeBase">AWS
          * API Reference</a></p>
          */
