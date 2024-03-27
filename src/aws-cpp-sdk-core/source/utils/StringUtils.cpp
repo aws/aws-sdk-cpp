@@ -90,6 +90,11 @@ Aws::Vector<Aws::String> StringUtils::Split(const Aws::String& toSplit, char spl
 
 Aws::Vector<Aws::String> StringUtils::Split(const Aws::String& toSplit, char splitOn, size_t numOfTargetParts, SplitOptions option)
 {
+    if (option == SplitOptions::INCLUDE_EMPTY_SEGMENTS)
+    {
+        return StringUtils::SplitWithSpaces(toSplit, splitOn);
+    }
+
     Aws::Vector<Aws::String> returnValues;
     Aws::StringStream input(toSplit);
     Aws::String item;
@@ -125,6 +130,21 @@ Aws::Vector<Aws::String> StringUtils::Split(const Aws::String& toSplit, char spl
         returnValues.emplace_back();
     }
 
+    return returnValues;
+}
+
+Aws::Vector<Aws::String> StringUtils::SplitWithSpaces(const Aws::String& toSplit, char splitOn)
+{
+    size_t pos = 0;
+    String split{toSplit};
+    Vector<String> returnValues;
+    while ((pos = split.find(splitOn)) != std::string::npos) {
+        returnValues.emplace_back(split.substr(0, pos));
+        split.erase(0, pos + 1);
+    }
+    if (!split.empty()) {
+        returnValues.emplace_back(split);
+    }
     return returnValues;
 }
 

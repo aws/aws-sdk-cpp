@@ -155,6 +155,7 @@ namespace Aws
         Aws::Http::SetInitCleanupCurlFlag(options.httpOptions.initAndCleanupCurl);
         Aws::Http::SetInstallSigPipeHandlerFlag(options.httpOptions.installSigPipeHandler);
         Aws::Http::SetCompliantRfc3986Encoding(options.httpOptions.compliantRfc3986Encoding);
+        Aws::Http::SetPreservePathSeparators(options.httpOptions.preservePathSeparators);
         Aws::Http::InitHttp();
         Aws::InitializeEnumOverflowContainer();
         cJSON_AS4CPP_Hooks hooks;
