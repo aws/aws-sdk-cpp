@@ -21,9 +21,6 @@ namespace Model
 {
 
   /**
-   * <p>Delete Agent Request</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/DeleteAgentRequest">AWS
-   * API Reference</a></p>
    */
   class DeleteAgentRequest : public BedrockAgentRequest
   {
@@ -42,63 +39,71 @@ namespace Model
 
 
     /**
-     * <p>Id generated at the server side when an Agent is created</p>
+     * <p>The unique identifier of the agent to delete.</p>
      */
     inline const Aws::String& GetAgentId() const{ return m_agentId; }
 
     /**
-     * <p>Id generated at the server side when an Agent is created</p>
+     * <p>The unique identifier of the agent to delete.</p>
      */
     inline bool AgentIdHasBeenSet() const { return m_agentIdHasBeenSet; }
 
     /**
-     * <p>Id generated at the server side when an Agent is created</p>
+     * <p>The unique identifier of the agent to delete.</p>
      */
     inline void SetAgentId(const Aws::String& value) { m_agentIdHasBeenSet = true; m_agentId = value; }
 
     /**
-     * <p>Id generated at the server side when an Agent is created</p>
+     * <p>The unique identifier of the agent to delete.</p>
      */
     inline void SetAgentId(Aws::String&& value) { m_agentIdHasBeenSet = true; m_agentId = std::move(value); }
 
     /**
-     * <p>Id generated at the server side when an Agent is created</p>
+     * <p>The unique identifier of the agent to delete.</p>
      */
     inline void SetAgentId(const char* value) { m_agentIdHasBeenSet = true; m_agentId.assign(value); }
 
     /**
-     * <p>Id generated at the server side when an Agent is created</p>
+     * <p>The unique identifier of the agent to delete.</p>
      */
     inline DeleteAgentRequest& WithAgentId(const Aws::String& value) { SetAgentId(value); return *this;}
 
     /**
-     * <p>Id generated at the server side when an Agent is created</p>
+     * <p>The unique identifier of the agent to delete.</p>
      */
     inline DeleteAgentRequest& WithAgentId(Aws::String&& value) { SetAgentId(std::move(value)); return *this;}
 
     /**
-     * <p>Id generated at the server side when an Agent is created</p>
+     * <p>The unique identifier of the agent to delete.</p>
      */
     inline DeleteAgentRequest& WithAgentId(const char* value) { SetAgentId(value); return *this;}
 
 
     /**
-     * <p>Skips checking if resource is in use when set to true. Defaults to false</p>
+     * <p>By default, this value is <code>false</code> and deletion is stopped if the
+     * resource is in use. If you set it to <code>true</code>, the resource will be
+     * deleted even if the resource is in use.</p>
      */
     inline bool GetSkipResourceInUseCheck() const{ return m_skipResourceInUseCheck; }
 
     /**
-     * <p>Skips checking if resource is in use when set to true. Defaults to false</p>
+     * <p>By default, this value is <code>false</code> and deletion is stopped if the
+     * resource is in use. If you set it to <code>true</code>, the resource will be
+     * deleted even if the resource is in use.</p>
      */
     inline bool SkipResourceInUseCheckHasBeenSet() const { return m_skipResourceInUseCheckHasBeenSet; }
 
     /**
-     * <p>Skips checking if resource is in use when set to true. Defaults to false</p>
+     * <p>By default, this value is <code>false</code> and deletion is stopped if the
+     * resource is in use. If you set it to <code>true</code>, the resource will be
+     * deleted even if the resource is in use.</p>
      */
     inline void SetSkipResourceInUseCheck(bool value) { m_skipResourceInUseCheckHasBeenSet = true; m_skipResourceInUseCheck = value; }
 
     /**
-     * <p>Skips checking if resource is in use when set to true. Defaults to false</p>
+     * <p>By default, this value is <code>false</code> and deletion is stopped if the
+     * resource is in use. If you set it to <code>true</code>, the resource will be
+     * deleted even if the resource is in use.</p>
      */
     inline DeleteAgentRequest& WithSkipResourceInUseCheck(bool value) { SetSkipResourceInUseCheck(value); return *this;}
 

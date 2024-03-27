@@ -33,19 +33,29 @@ namespace Model
     AWS_BEDROCKAGENT_API GetDataSourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * <p>Contains details about the data source.</p>
+     */
     inline const DataSource& GetDataSource() const{ return m_dataSource; }
 
-    
+    /**
+     * <p>Contains details about the data source.</p>
+     */
     inline void SetDataSource(const DataSource& value) { m_dataSource = value; }
 
-    
+    /**
+     * <p>Contains details about the data source.</p>
+     */
     inline void SetDataSource(DataSource&& value) { m_dataSource = std::move(value); }
 
-    
+    /**
+     * <p>Contains details about the data source.</p>
+     */
     inline GetDataSourceResult& WithDataSource(const DataSource& value) { SetDataSource(value); return *this;}
 
-    
+    /**
+     * <p>Contains details about the data source.</p>
+     */
     inline GetDataSourceResult& WithDataSource(DataSource&& value) { SetDataSource(std::move(value)); return *this;}
 
 

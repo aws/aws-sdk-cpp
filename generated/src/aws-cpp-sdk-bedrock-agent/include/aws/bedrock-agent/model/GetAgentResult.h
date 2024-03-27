@@ -25,11 +25,6 @@ namespace BedrockAgent
 {
 namespace Model
 {
-  /**
-   * <p>Get Agent Response</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/GetAgentResponse">AWS
-   * API Reference</a></p>
-   */
   class GetAgentResult
   {
   public:
@@ -38,19 +33,29 @@ namespace Model
     AWS_BEDROCKAGENT_API GetAgentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * <p>Contains details about the agent.</p>
+     */
     inline const Agent& GetAgent() const{ return m_agent; }
 
-    
+    /**
+     * <p>Contains details about the agent.</p>
+     */
     inline void SetAgent(const Agent& value) { m_agent = value; }
 
-    
+    /**
+     * <p>Contains details about the agent.</p>
+     */
     inline void SetAgent(Agent&& value) { m_agent = std::move(value); }
 
-    
+    /**
+     * <p>Contains details about the agent.</p>
+     */
     inline GetAgentResult& WithAgent(const Agent& value) { SetAgent(value); return *this;}
 
-    
+    /**
+     * <p>Contains details about the agent.</p>
+     */
     inline GetAgentResult& WithAgent(Agent&& value) { SetAgent(std::move(value)); return *this;}
 
 

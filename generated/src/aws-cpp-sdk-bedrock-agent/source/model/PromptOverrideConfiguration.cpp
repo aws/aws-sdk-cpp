@@ -19,20 +19,27 @@ namespace Model
 {
 
 PromptOverrideConfiguration::PromptOverrideConfiguration() : 
-    m_promptConfigurationsHasBeenSet(false),
-    m_overrideLambdaHasBeenSet(false)
+    m_overrideLambdaHasBeenSet(false),
+    m_promptConfigurationsHasBeenSet(false)
 {
 }
 
 PromptOverrideConfiguration::PromptOverrideConfiguration(JsonView jsonValue) : 
-    m_promptConfigurationsHasBeenSet(false),
-    m_overrideLambdaHasBeenSet(false)
+    m_overrideLambdaHasBeenSet(false),
+    m_promptConfigurationsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 PromptOverrideConfiguration& PromptOverrideConfiguration::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("overrideLambda"))
+  {
+    m_overrideLambda = jsonValue.GetString("overrideLambda");
+
+    m_overrideLambdaHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("promptConfigurations"))
   {
     Aws::Utils::Array<JsonView> promptConfigurationsJsonList = jsonValue.GetArray("promptConfigurations");
@@ -43,19 +50,18 @@ PromptOverrideConfiguration& PromptOverrideConfiguration::operator =(JsonView js
     m_promptConfigurationsHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("overrideLambda"))
-  {
-    m_overrideLambda = jsonValue.GetString("overrideLambda");
-
-    m_overrideLambdaHasBeenSet = true;
-  }
-
   return *this;
 }
 
 JsonValue PromptOverrideConfiguration::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_overrideLambdaHasBeenSet)
+  {
+   payload.WithString("overrideLambda", m_overrideLambda);
+
+  }
 
   if(m_promptConfigurationsHasBeenSet)
   {
@@ -65,12 +71,6 @@ JsonValue PromptOverrideConfiguration::Jsonize() const
      promptConfigurationsJsonList[promptConfigurationsIndex].AsObject(m_promptConfigurations[promptConfigurationsIndex].Jsonize());
    }
    payload.WithArray("promptConfigurations", std::move(promptConfigurationsJsonList));
-
-  }
-
-  if(m_overrideLambdaHasBeenSet)
-  {
-   payload.WithString("overrideLambda", m_overrideLambda);
 
   }
 

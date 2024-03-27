@@ -19,6 +19,7 @@ namespace Model
 {
 
 KnowledgeBaseVectorSearchConfiguration::KnowledgeBaseVectorSearchConfiguration() : 
+    m_filterHasBeenSet(false),
     m_numberOfResults(0),
     m_numberOfResultsHasBeenSet(false),
     m_overrideSearchType(SearchType::NOT_SET),
@@ -27,6 +28,7 @@ KnowledgeBaseVectorSearchConfiguration::KnowledgeBaseVectorSearchConfiguration()
 }
 
 KnowledgeBaseVectorSearchConfiguration::KnowledgeBaseVectorSearchConfiguration(JsonView jsonValue) : 
+    m_filterHasBeenSet(false),
     m_numberOfResults(0),
     m_numberOfResultsHasBeenSet(false),
     m_overrideSearchType(SearchType::NOT_SET),
@@ -37,6 +39,13 @@ KnowledgeBaseVectorSearchConfiguration::KnowledgeBaseVectorSearchConfiguration(J
 
 KnowledgeBaseVectorSearchConfiguration& KnowledgeBaseVectorSearchConfiguration::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("filter"))
+  {
+    m_filter = jsonValue.GetObject("filter");
+
+    m_filterHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("numberOfResults"))
   {
     m_numberOfResults = jsonValue.GetInteger("numberOfResults");
@@ -57,6 +66,12 @@ KnowledgeBaseVectorSearchConfiguration& KnowledgeBaseVectorSearchConfiguration::
 JsonValue KnowledgeBaseVectorSearchConfiguration::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_filterHasBeenSet)
+  {
+   payload.WithObject("filter", m_filter.Jsonize());
+
+  }
 
   if(m_numberOfResultsHasBeenSet)
   {

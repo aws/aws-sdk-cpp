@@ -16,9 +16,9 @@ using namespace Aws::Utils;
 using namespace Aws::Http;
 
 DeleteAgentActionGroupRequest::DeleteAgentActionGroupRequest() : 
+    m_actionGroupIdHasBeenSet(false),
     m_agentIdHasBeenSet(false),
     m_agentVersionHasBeenSet(false),
-    m_actionGroupIdHasBeenSet(false),
     m_skipResourceInUseCheck(false),
     m_skipResourceInUseCheckHasBeenSet(false)
 {

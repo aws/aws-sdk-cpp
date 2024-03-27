@@ -19,8 +19,8 @@ namespace Model
 {
 
 AgentKnowledgeBaseSummary::AgentKnowledgeBaseSummary() : 
-    m_knowledgeBaseIdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_knowledgeBaseIdHasBeenSet(false),
     m_knowledgeBaseState(KnowledgeBaseState::NOT_SET),
     m_knowledgeBaseStateHasBeenSet(false),
     m_updatedAtHasBeenSet(false)
@@ -28,8 +28,8 @@ AgentKnowledgeBaseSummary::AgentKnowledgeBaseSummary() :
 }
 
 AgentKnowledgeBaseSummary::AgentKnowledgeBaseSummary(JsonView jsonValue) : 
-    m_knowledgeBaseIdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_knowledgeBaseIdHasBeenSet(false),
     m_knowledgeBaseState(KnowledgeBaseState::NOT_SET),
     m_knowledgeBaseStateHasBeenSet(false),
     m_updatedAtHasBeenSet(false)
@@ -39,18 +39,18 @@ AgentKnowledgeBaseSummary::AgentKnowledgeBaseSummary(JsonView jsonValue) :
 
 AgentKnowledgeBaseSummary& AgentKnowledgeBaseSummary::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("knowledgeBaseId"))
-  {
-    m_knowledgeBaseId = jsonValue.GetString("knowledgeBaseId");
-
-    m_knowledgeBaseIdHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
 
     m_descriptionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("knowledgeBaseId"))
+  {
+    m_knowledgeBaseId = jsonValue.GetString("knowledgeBaseId");
+
+    m_knowledgeBaseIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("knowledgeBaseState"))
@@ -74,15 +74,15 @@ JsonValue AgentKnowledgeBaseSummary::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_knowledgeBaseIdHasBeenSet)
-  {
-   payload.WithString("knowledgeBaseId", m_knowledgeBaseId);
-
-  }
-
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("description", m_description);
+
+  }
+
+  if(m_knowledgeBaseIdHasBeenSet)
+  {
+   payload.WithString("knowledgeBaseId", m_knowledgeBaseId);
 
   }
 

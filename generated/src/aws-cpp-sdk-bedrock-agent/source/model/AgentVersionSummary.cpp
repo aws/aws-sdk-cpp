@@ -24,8 +24,8 @@ AgentVersionSummary::AgentVersionSummary() :
     m_agentStatusHasBeenSet(false),
     m_agentVersionHasBeenSet(false),
     m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_updatedAtHasBeenSet(false)
 {
 }
 
@@ -35,8 +35,8 @@ AgentVersionSummary::AgentVersionSummary(JsonView jsonValue) :
     m_agentStatusHasBeenSet(false),
     m_agentVersionHasBeenSet(false),
     m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_updatedAtHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -71,18 +71,18 @@ AgentVersionSummary& AgentVersionSummary::operator =(JsonView jsonValue)
     m_createdAtHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("updatedAt"))
-  {
-    m_updatedAt = jsonValue.GetString("updatedAt");
-
-    m_updatedAtHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
 
     m_descriptionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("updatedAt"))
+  {
+    m_updatedAt = jsonValue.GetString("updatedAt");
+
+    m_updatedAtHasBeenSet = true;
   }
 
   return *this;
@@ -114,15 +114,15 @@ JsonValue AgentVersionSummary::Jsonize() const
    payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_updatedAtHasBeenSet)
-  {
-   payload.WithString("updatedAt", m_updatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("description", m_description);
 
+  }
+
+  if(m_updatedAtHasBeenSet)
+  {
+   payload.WithString("updatedAt", m_updatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;

@@ -24,8 +24,8 @@ AgentSummary::AgentSummary() :
     m_agentStatus(AgentStatus::NOT_SET),
     m_agentStatusHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_latestAgentVersionHasBeenSet(false)
+    m_latestAgentVersionHasBeenSet(false),
+    m_updatedAtHasBeenSet(false)
 {
 }
 
@@ -35,8 +35,8 @@ AgentSummary::AgentSummary(JsonView jsonValue) :
     m_agentStatus(AgentStatus::NOT_SET),
     m_agentStatusHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_latestAgentVersionHasBeenSet(false)
+    m_latestAgentVersionHasBeenSet(false),
+    m_updatedAtHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -71,18 +71,18 @@ AgentSummary& AgentSummary::operator =(JsonView jsonValue)
     m_descriptionHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("updatedAt"))
-  {
-    m_updatedAt = jsonValue.GetString("updatedAt");
-
-    m_updatedAtHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("latestAgentVersion"))
   {
     m_latestAgentVersion = jsonValue.GetString("latestAgentVersion");
 
     m_latestAgentVersionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("updatedAt"))
+  {
+    m_updatedAt = jsonValue.GetString("updatedAt");
+
+    m_updatedAtHasBeenSet = true;
   }
 
   return *this;
@@ -115,15 +115,15 @@ JsonValue AgentSummary::Jsonize() const
 
   }
 
-  if(m_updatedAtHasBeenSet)
-  {
-   payload.WithString("updatedAt", m_updatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
   if(m_latestAgentVersionHasBeenSet)
   {
    payload.WithString("latestAgentVersion", m_latestAgentVersion);
 
+  }
+
+  if(m_updatedAtHasBeenSet)
+  {
+   payload.WithString("updatedAt", m_updatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;

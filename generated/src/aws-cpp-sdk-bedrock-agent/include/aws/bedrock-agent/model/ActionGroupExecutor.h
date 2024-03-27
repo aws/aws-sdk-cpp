@@ -24,7 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Type of Executors for an Action Group</p><p><h3>See Also:</h3>   <a
+   * <p>Contains details about the Lambda function containing the business logic that
+   * is carried out upon invoking the action.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ActionGroupExecutor">AWS
    * API Reference</a></p>
    */
@@ -37,28 +38,52 @@ namespace Model
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    
+    /**
+     * <p>The ARN of the Lambda function containing the business logic that is carried
+     * out upon invoking the action.</p>
+     */
     inline const Aws::String& GetLambda() const{ return m_lambda; }
 
-    
+    /**
+     * <p>The ARN of the Lambda function containing the business logic that is carried
+     * out upon invoking the action.</p>
+     */
     inline bool LambdaHasBeenSet() const { return m_lambdaHasBeenSet; }
 
-    
+    /**
+     * <p>The ARN of the Lambda function containing the business logic that is carried
+     * out upon invoking the action.</p>
+     */
     inline void SetLambda(const Aws::String& value) { m_lambdaHasBeenSet = true; m_lambda = value; }
 
-    
+    /**
+     * <p>The ARN of the Lambda function containing the business logic that is carried
+     * out upon invoking the action.</p>
+     */
     inline void SetLambda(Aws::String&& value) { m_lambdaHasBeenSet = true; m_lambda = std::move(value); }
 
-    
+    /**
+     * <p>The ARN of the Lambda function containing the business logic that is carried
+     * out upon invoking the action.</p>
+     */
     inline void SetLambda(const char* value) { m_lambdaHasBeenSet = true; m_lambda.assign(value); }
 
-    
+    /**
+     * <p>The ARN of the Lambda function containing the business logic that is carried
+     * out upon invoking the action.</p>
+     */
     inline ActionGroupExecutor& WithLambda(const Aws::String& value) { SetLambda(value); return *this;}
 
-    
+    /**
+     * <p>The ARN of the Lambda function containing the business logic that is carried
+     * out upon invoking the action.</p>
+     */
     inline ActionGroupExecutor& WithLambda(Aws::String&& value) { SetLambda(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The ARN of the Lambda function containing the business logic that is carried
+     * out upon invoking the action.</p>
+     */
     inline ActionGroupExecutor& WithLambda(const char* value) { SetLambda(value); return *this;}
 
   private:

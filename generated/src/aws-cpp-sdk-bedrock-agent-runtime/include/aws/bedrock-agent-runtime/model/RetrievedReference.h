@@ -7,6 +7,9 @@
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
 #include <aws/bedrock-agent-runtime/model/RetrievalResultContent.h>
 #include <aws/bedrock-agent-runtime/model/RetrievalResultLocation.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/Document.h>
 #include <utility>
 
 namespace Aws
@@ -106,6 +109,103 @@ namespace Model
      */
     inline RetrievedReference& WithLocation(RetrievalResultLocation&& value) { SetLocation(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Contains metadata attributes and their values for the file in the data
+     * source. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-ds.html#kb-ds-metadata">Metadata
+     * and filtering</a>.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::Utils::Document>& GetMetadata() const{ return m_metadata; }
+
+    /**
+     * <p>Contains metadata attributes and their values for the file in the data
+     * source. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-ds.html#kb-ds-metadata">Metadata
+     * and filtering</a>.</p>
+     */
+    inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
+
+    /**
+     * <p>Contains metadata attributes and their values for the file in the data
+     * source. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-ds.html#kb-ds-metadata">Metadata
+     * and filtering</a>.</p>
+     */
+    inline void SetMetadata(const Aws::Map<Aws::String, Aws::Utils::Document>& value) { m_metadataHasBeenSet = true; m_metadata = value; }
+
+    /**
+     * <p>Contains metadata attributes and their values for the file in the data
+     * source. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-ds.html#kb-ds-metadata">Metadata
+     * and filtering</a>.</p>
+     */
+    inline void SetMetadata(Aws::Map<Aws::String, Aws::Utils::Document>&& value) { m_metadataHasBeenSet = true; m_metadata = std::move(value); }
+
+    /**
+     * <p>Contains metadata attributes and their values for the file in the data
+     * source. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-ds.html#kb-ds-metadata">Metadata
+     * and filtering</a>.</p>
+     */
+    inline RetrievedReference& WithMetadata(const Aws::Map<Aws::String, Aws::Utils::Document>& value) { SetMetadata(value); return *this;}
+
+    /**
+     * <p>Contains metadata attributes and their values for the file in the data
+     * source. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-ds.html#kb-ds-metadata">Metadata
+     * and filtering</a>.</p>
+     */
+    inline RetrievedReference& WithMetadata(Aws::Map<Aws::String, Aws::Utils::Document>&& value) { SetMetadata(std::move(value)); return *this;}
+
+    /**
+     * <p>Contains metadata attributes and their values for the file in the data
+     * source. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-ds.html#kb-ds-metadata">Metadata
+     * and filtering</a>.</p>
+     */
+    inline RetrievedReference& AddMetadata(const Aws::String& key, const Aws::Utils::Document& value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, value); return *this; }
+
+    /**
+     * <p>Contains metadata attributes and their values for the file in the data
+     * source. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-ds.html#kb-ds-metadata">Metadata
+     * and filtering</a>.</p>
+     */
+    inline RetrievedReference& AddMetadata(Aws::String&& key, const Aws::Utils::Document& value) { m_metadataHasBeenSet = true; m_metadata.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Contains metadata attributes and their values for the file in the data
+     * source. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-ds.html#kb-ds-metadata">Metadata
+     * and filtering</a>.</p>
+     */
+    inline RetrievedReference& AddMetadata(const Aws::String& key, Aws::Utils::Document&& value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Contains metadata attributes and their values for the file in the data
+     * source. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-ds.html#kb-ds-metadata">Metadata
+     * and filtering</a>.</p>
+     */
+    inline RetrievedReference& AddMetadata(Aws::String&& key, Aws::Utils::Document&& value) { m_metadataHasBeenSet = true; m_metadata.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>Contains metadata attributes and their values for the file in the data
+     * source. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-ds.html#kb-ds-metadata">Metadata
+     * and filtering</a>.</p>
+     */
+    inline RetrievedReference& AddMetadata(const char* key, Aws::Utils::Document&& value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Contains metadata attributes and their values for the file in the data
+     * source. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-ds.html#kb-ds-metadata">Metadata
+     * and filtering</a>.</p>
+     */
+    inline RetrievedReference& AddMetadata(const char* key, const Aws::Utils::Document& value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, value); return *this; }
+
   private:
 
     RetrievalResultContent m_content;
@@ -113,6 +213,9 @@ namespace Model
 
     RetrievalResultLocation m_location;
     bool m_locationHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::Utils::Document> m_metadata;
+    bool m_metadataHasBeenSet = false;
   };
 
 } // namespace Model

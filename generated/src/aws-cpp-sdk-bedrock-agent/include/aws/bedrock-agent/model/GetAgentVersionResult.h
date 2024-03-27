@@ -25,11 +25,6 @@ namespace BedrockAgent
 {
 namespace Model
 {
-  /**
-   * <p>Get Agent Version Response</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/GetAgentVersionResponse">AWS
-   * API Reference</a></p>
-   */
   class GetAgentVersionResult
   {
   public:
@@ -38,19 +33,29 @@ namespace Model
     AWS_BEDROCKAGENT_API GetAgentVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * <p>Contains details about the version of the agent.</p>
+     */
     inline const AgentVersion& GetAgentVersion() const{ return m_agentVersion; }
 
-    
+    /**
+     * <p>Contains details about the version of the agent.</p>
+     */
     inline void SetAgentVersion(const AgentVersion& value) { m_agentVersion = value; }
 
-    
+    /**
+     * <p>Contains details about the version of the agent.</p>
+     */
     inline void SetAgentVersion(AgentVersion&& value) { m_agentVersion = std::move(value); }
 
-    
+    /**
+     * <p>Contains details about the version of the agent.</p>
+     */
     inline GetAgentVersionResult& WithAgentVersion(const AgentVersion& value) { SetAgentVersion(value); return *this;}
 
-    
+    /**
+     * <p>Contains details about the version of the agent.</p>
+     */
     inline GetAgentVersionResult& WithAgentVersion(AgentVersion&& value) { SetAgentVersion(std::move(value)); return *this;}
 
 

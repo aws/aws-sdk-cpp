@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/bedrock-agent-runtime/BedrockAgentRuntime_EXPORTS.h>
+#include <aws/bedrock-agent-runtime/model/RetrievalFilter.h>
 #include <aws/bedrock-agent-runtime/model/SearchType.h>
 #include <utility>
 
@@ -45,6 +46,55 @@ namespace Model
     AWS_BEDROCKAGENTRUNTIME_API KnowledgeBaseVectorSearchConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API KnowledgeBaseVectorSearchConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>Specifies the filters to use on the metadata in the knowledge base data
+     * sources before returning results. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query
+     * configurations</a>.</p>
+     */
+    inline const RetrievalFilter& GetFilter() const{ return m_filter; }
+
+    /**
+     * <p>Specifies the filters to use on the metadata in the knowledge base data
+     * sources before returning results. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query
+     * configurations</a>.</p>
+     */
+    inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
+
+    /**
+     * <p>Specifies the filters to use on the metadata in the knowledge base data
+     * sources before returning results. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query
+     * configurations</a>.</p>
+     */
+    inline void SetFilter(const RetrievalFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
+
+    /**
+     * <p>Specifies the filters to use on the metadata in the knowledge base data
+     * sources before returning results. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query
+     * configurations</a>.</p>
+     */
+    inline void SetFilter(RetrievalFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
+
+    /**
+     * <p>Specifies the filters to use on the metadata in the knowledge base data
+     * sources before returning results. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query
+     * configurations</a>.</p>
+     */
+    inline KnowledgeBaseVectorSearchConfiguration& WithFilter(const RetrievalFilter& value) { SetFilter(value); return *this;}
+
+    /**
+     * <p>Specifies the filters to use on the metadata in the knowledge base data
+     * sources before returning results. For more information, see <a
+     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query
+     * configurations</a>.</p>
+     */
+    inline KnowledgeBaseVectorSearchConfiguration& WithFilter(RetrievalFilter&& value) { SetFilter(std::move(value)); return *this;}
 
 
     /**
@@ -147,6 +197,9 @@ namespace Model
     inline KnowledgeBaseVectorSearchConfiguration& WithOverrideSearchType(SearchType&& value) { SetOverrideSearchType(std::move(value)); return *this;}
 
   private:
+
+    RetrievalFilter m_filter;
+    bool m_filterHasBeenSet = false;
 
     int m_numberOfResults;
     bool m_numberOfResultsHasBeenSet = false;

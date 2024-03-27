@@ -20,13 +20,15 @@ namespace Model
 
 RetrievedReference::RetrievedReference() : 
     m_contentHasBeenSet(false),
-    m_locationHasBeenSet(false)
+    m_locationHasBeenSet(false),
+    m_metadataHasBeenSet(false)
 {
 }
 
 RetrievedReference::RetrievedReference(JsonView jsonValue) : 
     m_contentHasBeenSet(false),
-    m_locationHasBeenSet(false)
+    m_locationHasBeenSet(false),
+    m_metadataHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +49,16 @@ RetrievedReference& RetrievedReference::operator =(JsonView jsonValue)
     m_locationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("metadata"))
+  {
+    Aws::Map<Aws::String, JsonView> metadataJsonMap = jsonValue.GetObject("metadata").GetAllObjects();
+    for(auto& metadataItem : metadataJsonMap)
+    {
+      m_metadata[metadataItem.first] = metadataItem.second.AsObject();
+    }
+    m_metadataHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +75,17 @@ JsonValue RetrievedReference::Jsonize() const
   if(m_locationHasBeenSet)
   {
    payload.WithObject("location", m_location.Jsonize());
+
+  }
+
+  if(m_metadataHasBeenSet)
+  {
+   JsonValue metadataJsonMap;
+   for(auto& metadataItem : m_metadata)
+   {
+     metadataJsonMap.WithObject(metadataItem.first, metadataItem.second.View());
+   }
+   payload.WithObject("metadata", std::move(metadataJsonMap));
 
   }
 

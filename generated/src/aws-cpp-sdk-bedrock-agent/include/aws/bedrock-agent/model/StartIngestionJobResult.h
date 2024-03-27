@@ -33,19 +33,29 @@ namespace Model
     AWS_BEDROCKAGENT_API StartIngestionJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * <p>An object containing information about the ingestion job.</p>
+     */
     inline const IngestionJob& GetIngestionJob() const{ return m_ingestionJob; }
 
-    
+    /**
+     * <p>An object containing information about the ingestion job.</p>
+     */
     inline void SetIngestionJob(const IngestionJob& value) { m_ingestionJob = value; }
 
-    
+    /**
+     * <p>An object containing information about the ingestion job.</p>
+     */
     inline void SetIngestionJob(IngestionJob&& value) { m_ingestionJob = std::move(value); }
 
-    
+    /**
+     * <p>An object containing information about the ingestion job.</p>
+     */
     inline StartIngestionJobResult& WithIngestionJob(const IngestionJob& value) { SetIngestionJob(value); return *this;}
 
-    
+    /**
+     * <p>An object containing information about the ingestion job.</p>
+     */
     inline StartIngestionJobResult& WithIngestionJob(IngestionJob&& value) { SetIngestionJob(std::move(value)); return *this;}
 
 

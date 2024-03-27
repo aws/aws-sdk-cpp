@@ -19,27 +19,20 @@ namespace Model
 {
 
 ValidationException::ValidationException() : 
-    m_messageHasBeenSet(false),
-    m_fieldListHasBeenSet(false)
+    m_fieldListHasBeenSet(false),
+    m_messageHasBeenSet(false)
 {
 }
 
 ValidationException::ValidationException(JsonView jsonValue) : 
-    m_messageHasBeenSet(false),
-    m_fieldListHasBeenSet(false)
+    m_fieldListHasBeenSet(false),
+    m_messageHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 ValidationException& ValidationException::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("message"))
-  {
-    m_message = jsonValue.GetString("message");
-
-    m_messageHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("fieldList"))
   {
     Aws::Utils::Array<JsonView> fieldListJsonList = jsonValue.GetArray("fieldList");
@@ -50,18 +43,19 @@ ValidationException& ValidationException::operator =(JsonView jsonValue)
     m_fieldListHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("message"))
+  {
+    m_message = jsonValue.GetString("message");
+
+    m_messageHasBeenSet = true;
+  }
+
   return *this;
 }
 
 JsonValue ValidationException::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_messageHasBeenSet)
-  {
-   payload.WithString("message", m_message);
-
-  }
 
   if(m_fieldListHasBeenSet)
   {
@@ -71,6 +65,12 @@ JsonValue ValidationException::Jsonize() const
      fieldListJsonList[fieldListIndex].AsObject(m_fieldList[fieldListIndex].Jsonize());
    }
    payload.WithArray("fieldList", std::move(fieldListJsonList));
+
+  }
+
+  if(m_messageHasBeenSet)
+  {
+   payload.WithString("message", m_message);
 
   }
 

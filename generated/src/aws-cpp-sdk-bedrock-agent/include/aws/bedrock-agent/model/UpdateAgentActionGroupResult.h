@@ -25,11 +25,6 @@ namespace BedrockAgent
 {
 namespace Model
 {
-  /**
-   * <p>Update Action Group Response</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/UpdateAgentActionGroupResponse">AWS
-   * API Reference</a></p>
-   */
   class UpdateAgentActionGroupResult
   {
   public:
@@ -38,19 +33,29 @@ namespace Model
     AWS_BEDROCKAGENT_API UpdateAgentActionGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * <p>Contains details about the action group that was updated.</p>
+     */
     inline const AgentActionGroup& GetAgentActionGroup() const{ return m_agentActionGroup; }
 
-    
+    /**
+     * <p>Contains details about the action group that was updated.</p>
+     */
     inline void SetAgentActionGroup(const AgentActionGroup& value) { m_agentActionGroup = value; }
 
-    
+    /**
+     * <p>Contains details about the action group that was updated.</p>
+     */
     inline void SetAgentActionGroup(AgentActionGroup&& value) { m_agentActionGroup = std::move(value); }
 
-    
+    /**
+     * <p>Contains details about the action group that was updated.</p>
+     */
     inline UpdateAgentActionGroupResult& WithAgentActionGroup(const AgentActionGroup& value) { SetAgentActionGroup(value); return *this;}
 
-    
+    /**
+     * <p>Contains details about the action group that was updated.</p>
+     */
     inline UpdateAgentActionGroupResult& WithAgentActionGroup(AgentActionGroup&& value) { SetAgentActionGroup(std::move(value)); return *this;}
 
 

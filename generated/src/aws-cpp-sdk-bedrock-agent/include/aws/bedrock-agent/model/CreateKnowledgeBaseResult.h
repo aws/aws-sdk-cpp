@@ -33,19 +33,29 @@ namespace Model
     AWS_BEDROCKAGENT_API CreateKnowledgeBaseResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * <p>Contains details about the knowledge base.</p>
+     */
     inline const KnowledgeBase& GetKnowledgeBase() const{ return m_knowledgeBase; }
 
-    
+    /**
+     * <p>Contains details about the knowledge base.</p>
+     */
     inline void SetKnowledgeBase(const KnowledgeBase& value) { m_knowledgeBase = value; }
 
-    
+    /**
+     * <p>Contains details about the knowledge base.</p>
+     */
     inline void SetKnowledgeBase(KnowledgeBase&& value) { m_knowledgeBase = std::move(value); }
 
-    
+    /**
+     * <p>Contains details about the knowledge base.</p>
+     */
     inline CreateKnowledgeBaseResult& WithKnowledgeBase(const KnowledgeBase& value) { SetKnowledgeBase(value); return *this;}
 
-    
+    /**
+     * <p>Contains details about the knowledge base.</p>
+     */
     inline CreateKnowledgeBaseResult& WithKnowledgeBase(KnowledgeBase&& value) { SetKnowledgeBase(std::move(value)); return *this;}
 
 

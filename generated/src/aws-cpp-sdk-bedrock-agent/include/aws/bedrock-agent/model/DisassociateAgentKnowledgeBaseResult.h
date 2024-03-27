@@ -24,11 +24,6 @@ namespace BedrockAgent
 {
 namespace Model
 {
-  /**
-   * <p>Disassociate Agent Knowledge Base Response</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/DisassociateAgentKnowledgeBaseResponse">AWS
-   * API Reference</a></p>
-   */
   class DisassociateAgentKnowledgeBaseResult
   {
   public:

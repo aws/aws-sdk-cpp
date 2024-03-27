@@ -17,9 +17,6 @@ namespace Model
 {
 
   /**
-   * <p>PrepareAgent Request</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/PrepareAgentRequest">AWS
-   * API Reference</a></p>
    */
   class PrepareAgentRequest : public BedrockAgentRequest
   {
@@ -36,42 +33,50 @@ namespace Model
 
 
     /**
-     * <p>Id generated at the server side when an Agent is created</p>
+     * <p>The unique identifier of the agent for which to create a <code>DRAFT</code>
+     * version.</p>
      */
     inline const Aws::String& GetAgentId() const{ return m_agentId; }
 
     /**
-     * <p>Id generated at the server side when an Agent is created</p>
+     * <p>The unique identifier of the agent for which to create a <code>DRAFT</code>
+     * version.</p>
      */
     inline bool AgentIdHasBeenSet() const { return m_agentIdHasBeenSet; }
 
     /**
-     * <p>Id generated at the server side when an Agent is created</p>
+     * <p>The unique identifier of the agent for which to create a <code>DRAFT</code>
+     * version.</p>
      */
     inline void SetAgentId(const Aws::String& value) { m_agentIdHasBeenSet = true; m_agentId = value; }
 
     /**
-     * <p>Id generated at the server side when an Agent is created</p>
+     * <p>The unique identifier of the agent for which to create a <code>DRAFT</code>
+     * version.</p>
      */
     inline void SetAgentId(Aws::String&& value) { m_agentIdHasBeenSet = true; m_agentId = std::move(value); }
 
     /**
-     * <p>Id generated at the server side when an Agent is created</p>
+     * <p>The unique identifier of the agent for which to create a <code>DRAFT</code>
+     * version.</p>
      */
     inline void SetAgentId(const char* value) { m_agentIdHasBeenSet = true; m_agentId.assign(value); }
 
     /**
-     * <p>Id generated at the server side when an Agent is created</p>
+     * <p>The unique identifier of the agent for which to create a <code>DRAFT</code>
+     * version.</p>
      */
     inline PrepareAgentRequest& WithAgentId(const Aws::String& value) { SetAgentId(value); return *this;}
 
     /**
-     * <p>Id generated at the server side when an Agent is created</p>
+     * <p>The unique identifier of the agent for which to create a <code>DRAFT</code>
+     * version.</p>
      */
     inline PrepareAgentRequest& WithAgentId(Aws::String&& value) { SetAgentId(std::move(value)); return *this;}
 
     /**
-     * <p>Id generated at the server side when an Agent is created</p>
+     * <p>The unique identifier of the agent for which to create a <code>DRAFT</code>
+     * version.</p>
      */
     inline PrepareAgentRequest& WithAgentId(const char* value) { SetAgentId(value); return *this;}
 

@@ -147,8 +147,8 @@ namespace BedrockAgentRuntime
 
         /**
          * <p>Queries a knowledge base and generates responses based on the retrieved
-         * results. The response cites up to five sources but only selects the ones that
-         * are relevant to the query.</p><p><h3>See Also:</h3>   <a
+         * results. The response only cites sources that are relevant to the
+         * query.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/RetrieveAndGenerate">AWS
          * API Reference</a></p>
          */

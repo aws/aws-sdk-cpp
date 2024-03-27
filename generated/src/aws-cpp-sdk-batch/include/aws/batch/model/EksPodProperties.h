@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/batch/model/EksMetadata.h>
+#include <aws/batch/model/ImagePullSecret.h>
 #include <aws/batch/model/EksContainer.h>
 #include <aws/batch/model/EksVolume.h>
 #include <utility>
@@ -313,6 +314,71 @@ namespace Model
 
 
     /**
+     * <p>References a Kubernetes secret resource. This object must start and end with
+     * an alphanumeric character, is required to be lowercase, can include periods (.)
+     * and hyphens (-), and can't contain more than 253 characters.</p> <p>
+     * <code>ImagePullSecret$name</code> is required when this object is used.</p>
+     */
+    inline const Aws::Vector<ImagePullSecret>& GetImagePullSecrets() const{ return m_imagePullSecrets; }
+
+    /**
+     * <p>References a Kubernetes secret resource. This object must start and end with
+     * an alphanumeric character, is required to be lowercase, can include periods (.)
+     * and hyphens (-), and can't contain more than 253 characters.</p> <p>
+     * <code>ImagePullSecret$name</code> is required when this object is used.</p>
+     */
+    inline bool ImagePullSecretsHasBeenSet() const { return m_imagePullSecretsHasBeenSet; }
+
+    /**
+     * <p>References a Kubernetes secret resource. This object must start and end with
+     * an alphanumeric character, is required to be lowercase, can include periods (.)
+     * and hyphens (-), and can't contain more than 253 characters.</p> <p>
+     * <code>ImagePullSecret$name</code> is required when this object is used.</p>
+     */
+    inline void SetImagePullSecrets(const Aws::Vector<ImagePullSecret>& value) { m_imagePullSecretsHasBeenSet = true; m_imagePullSecrets = value; }
+
+    /**
+     * <p>References a Kubernetes secret resource. This object must start and end with
+     * an alphanumeric character, is required to be lowercase, can include periods (.)
+     * and hyphens (-), and can't contain more than 253 characters.</p> <p>
+     * <code>ImagePullSecret$name</code> is required when this object is used.</p>
+     */
+    inline void SetImagePullSecrets(Aws::Vector<ImagePullSecret>&& value) { m_imagePullSecretsHasBeenSet = true; m_imagePullSecrets = std::move(value); }
+
+    /**
+     * <p>References a Kubernetes secret resource. This object must start and end with
+     * an alphanumeric character, is required to be lowercase, can include periods (.)
+     * and hyphens (-), and can't contain more than 253 characters.</p> <p>
+     * <code>ImagePullSecret$name</code> is required when this object is used.</p>
+     */
+    inline EksPodProperties& WithImagePullSecrets(const Aws::Vector<ImagePullSecret>& value) { SetImagePullSecrets(value); return *this;}
+
+    /**
+     * <p>References a Kubernetes secret resource. This object must start and end with
+     * an alphanumeric character, is required to be lowercase, can include periods (.)
+     * and hyphens (-), and can't contain more than 253 characters.</p> <p>
+     * <code>ImagePullSecret$name</code> is required when this object is used.</p>
+     */
+    inline EksPodProperties& WithImagePullSecrets(Aws::Vector<ImagePullSecret>&& value) { SetImagePullSecrets(std::move(value)); return *this;}
+
+    /**
+     * <p>References a Kubernetes secret resource. This object must start and end with
+     * an alphanumeric character, is required to be lowercase, can include periods (.)
+     * and hyphens (-), and can't contain more than 253 characters.</p> <p>
+     * <code>ImagePullSecret$name</code> is required when this object is used.</p>
+     */
+    inline EksPodProperties& AddImagePullSecrets(const ImagePullSecret& value) { m_imagePullSecretsHasBeenSet = true; m_imagePullSecrets.push_back(value); return *this; }
+
+    /**
+     * <p>References a Kubernetes secret resource. This object must start and end with
+     * an alphanumeric character, is required to be lowercase, can include periods (.)
+     * and hyphens (-), and can't contain more than 253 characters.</p> <p>
+     * <code>ImagePullSecret$name</code> is required when this object is used.</p>
+     */
+    inline EksPodProperties& AddImagePullSecrets(ImagePullSecret&& value) { m_imagePullSecretsHasBeenSet = true; m_imagePullSecrets.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The properties of the container that's used on the Amazon EKS pod.</p>
      */
     inline const Aws::Vector<EksContainer>& GetContainers() const{ return m_containers; }
@@ -584,6 +650,9 @@ namespace Model
 
     Aws::String m_dnsPolicy;
     bool m_dnsPolicyHasBeenSet = false;
+
+    Aws::Vector<ImagePullSecret> m_imagePullSecrets;
+    bool m_imagePullSecretsHasBeenSet = false;
 
     Aws::Vector<EksContainer> m_containers;
     bool m_containersHasBeenSet = false;

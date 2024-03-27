@@ -17,9 +17,6 @@ namespace Model
 {
 
   /**
-   * <p>List Action Groups Request</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ListAgentActionGroupsRequest">AWS
-   * API Reference</a></p>
    */
   class ListAgentActionGroupsRequest : public BedrockAgentRequest
   {
@@ -36,122 +33,182 @@ namespace Model
 
 
     /**
-     * <p>Id generated at the server side when an Agent is Listed</p>
+     * <p>The unique identifier of the agent.</p>
      */
     inline const Aws::String& GetAgentId() const{ return m_agentId; }
 
     /**
-     * <p>Id generated at the server side when an Agent is Listed</p>
+     * <p>The unique identifier of the agent.</p>
      */
     inline bool AgentIdHasBeenSet() const { return m_agentIdHasBeenSet; }
 
     /**
-     * <p>Id generated at the server side when an Agent is Listed</p>
+     * <p>The unique identifier of the agent.</p>
      */
     inline void SetAgentId(const Aws::String& value) { m_agentIdHasBeenSet = true; m_agentId = value; }
 
     /**
-     * <p>Id generated at the server side when an Agent is Listed</p>
+     * <p>The unique identifier of the agent.</p>
      */
     inline void SetAgentId(Aws::String&& value) { m_agentIdHasBeenSet = true; m_agentId = std::move(value); }
 
     /**
-     * <p>Id generated at the server side when an Agent is Listed</p>
+     * <p>The unique identifier of the agent.</p>
      */
     inline void SetAgentId(const char* value) { m_agentIdHasBeenSet = true; m_agentId.assign(value); }
 
     /**
-     * <p>Id generated at the server side when an Agent is Listed</p>
+     * <p>The unique identifier of the agent.</p>
      */
     inline ListAgentActionGroupsRequest& WithAgentId(const Aws::String& value) { SetAgentId(value); return *this;}
 
     /**
-     * <p>Id generated at the server side when an Agent is Listed</p>
+     * <p>The unique identifier of the agent.</p>
      */
     inline ListAgentActionGroupsRequest& WithAgentId(Aws::String&& value) { SetAgentId(std::move(value)); return *this;}
 
     /**
-     * <p>Id generated at the server side when an Agent is Listed</p>
+     * <p>The unique identifier of the agent.</p>
      */
     inline ListAgentActionGroupsRequest& WithAgentId(const char* value) { SetAgentId(value); return *this;}
 
 
     /**
-     * <p>Id generated at the server side when an Agent is Listed</p>
+     * <p>The version of the agent.</p>
      */
     inline const Aws::String& GetAgentVersion() const{ return m_agentVersion; }
 
     /**
-     * <p>Id generated at the server side when an Agent is Listed</p>
+     * <p>The version of the agent.</p>
      */
     inline bool AgentVersionHasBeenSet() const { return m_agentVersionHasBeenSet; }
 
     /**
-     * <p>Id generated at the server side when an Agent is Listed</p>
+     * <p>The version of the agent.</p>
      */
     inline void SetAgentVersion(const Aws::String& value) { m_agentVersionHasBeenSet = true; m_agentVersion = value; }
 
     /**
-     * <p>Id generated at the server side when an Agent is Listed</p>
+     * <p>The version of the agent.</p>
      */
     inline void SetAgentVersion(Aws::String&& value) { m_agentVersionHasBeenSet = true; m_agentVersion = std::move(value); }
 
     /**
-     * <p>Id generated at the server side when an Agent is Listed</p>
+     * <p>The version of the agent.</p>
      */
     inline void SetAgentVersion(const char* value) { m_agentVersionHasBeenSet = true; m_agentVersion.assign(value); }
 
     /**
-     * <p>Id generated at the server side when an Agent is Listed</p>
+     * <p>The version of the agent.</p>
      */
     inline ListAgentActionGroupsRequest& WithAgentVersion(const Aws::String& value) { SetAgentVersion(value); return *this;}
 
     /**
-     * <p>Id generated at the server side when an Agent is Listed</p>
+     * <p>The version of the agent.</p>
      */
     inline ListAgentActionGroupsRequest& WithAgentVersion(Aws::String&& value) { SetAgentVersion(std::move(value)); return *this;}
 
     /**
-     * <p>Id generated at the server side when an Agent is Listed</p>
+     * <p>The version of the agent.</p>
      */
     inline ListAgentActionGroupsRequest& WithAgentVersion(const char* value) { SetAgentVersion(value); return *this;}
 
 
-    
+    /**
+     * <p>The maximum number of results to return in the response. If the total number
+     * of results is greater than this value, use the token returned in the response in
+     * the <code>nextToken</code> field when making another request to return the next
+     * batch of results.</p>
+     */
     inline int GetMaxResults() const{ return m_maxResults; }
 
-    
+    /**
+     * <p>The maximum number of results to return in the response. If the total number
+     * of results is greater than this value, use the token returned in the response in
+     * the <code>nextToken</code> field when making another request to return the next
+     * batch of results.</p>
+     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
-    
+    /**
+     * <p>The maximum number of results to return in the response. If the total number
+     * of results is greater than this value, use the token returned in the response in
+     * the <code>nextToken</code> field when making another request to return the next
+     * batch of results.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
-    
+    /**
+     * <p>The maximum number of results to return in the response. If the total number
+     * of results is greater than this value, use the token returned in the response in
+     * the <code>nextToken</code> field when making another request to return the next
+     * batch of results.</p>
+     */
     inline ListAgentActionGroupsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
 
-    
+    /**
+     * <p>If the total number of results is greater than the <code>maxResults</code>
+     * value provided in the request, enter the token returned in the
+     * <code>nextToken</code> field in the response in this field to return the next
+     * batch of results.</p>
+     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
-    
+    /**
+     * <p>If the total number of results is greater than the <code>maxResults</code>
+     * value provided in the request, enter the token returned in the
+     * <code>nextToken</code> field in the response in this field to return the next
+     * batch of results.</p>
+     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
-    
+    /**
+     * <p>If the total number of results is greater than the <code>maxResults</code>
+     * value provided in the request, enter the token returned in the
+     * <code>nextToken</code> field in the response in this field to return the next
+     * batch of results.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
-    
+    /**
+     * <p>If the total number of results is greater than the <code>maxResults</code>
+     * value provided in the request, enter the token returned in the
+     * <code>nextToken</code> field in the response in this field to return the next
+     * batch of results.</p>
+     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
-    
+    /**
+     * <p>If the total number of results is greater than the <code>maxResults</code>
+     * value provided in the request, enter the token returned in the
+     * <code>nextToken</code> field in the response in this field to return the next
+     * batch of results.</p>
+     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
-    
+    /**
+     * <p>If the total number of results is greater than the <code>maxResults</code>
+     * value provided in the request, enter the token returned in the
+     * <code>nextToken</code> field in the response in this field to return the next
+     * batch of results.</p>
+     */
     inline ListAgentActionGroupsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
-    
+    /**
+     * <p>If the total number of results is greater than the <code>maxResults</code>
+     * value provided in the request, enter the token returned in the
+     * <code>nextToken</code> field in the response in this field to return the next
+     * batch of results.</p>
+     */
     inline ListAgentActionGroupsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>If the total number of results is greater than the <code>maxResults</code>
+     * value provided in the request, enter the token returned in the
+     * <code>nextToken</code> field in the response in this field to return the next
+     * batch of results.</p>
+     */
     inline ListAgentActionGroupsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:

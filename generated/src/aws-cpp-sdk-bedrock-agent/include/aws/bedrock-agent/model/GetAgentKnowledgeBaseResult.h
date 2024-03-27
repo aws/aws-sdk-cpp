@@ -25,11 +25,6 @@ namespace BedrockAgent
 {
 namespace Model
 {
-  /**
-   * <p>Get Agent Knowledge Base Response</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/GetAgentKnowledgeBaseResponse">AWS
-   * API Reference</a></p>
-   */
   class GetAgentKnowledgeBaseResult
   {
   public:
@@ -38,19 +33,29 @@ namespace Model
     AWS_BEDROCKAGENT_API GetAgentKnowledgeBaseResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * <p>Contains details about a knowledge base attached to an agent.</p>
+     */
     inline const AgentKnowledgeBase& GetAgentKnowledgeBase() const{ return m_agentKnowledgeBase; }
 
-    
+    /**
+     * <p>Contains details about a knowledge base attached to an agent.</p>
+     */
     inline void SetAgentKnowledgeBase(const AgentKnowledgeBase& value) { m_agentKnowledgeBase = value; }
 
-    
+    /**
+     * <p>Contains details about a knowledge base attached to an agent.</p>
+     */
     inline void SetAgentKnowledgeBase(AgentKnowledgeBase&& value) { m_agentKnowledgeBase = std::move(value); }
 
-    
+    /**
+     * <p>Contains details about a knowledge base attached to an agent.</p>
+     */
     inline GetAgentKnowledgeBaseResult& WithAgentKnowledgeBase(const AgentKnowledgeBase& value) { SetAgentKnowledgeBase(value); return *this;}
 
-    
+    /**
+     * <p>Contains details about a knowledge base attached to an agent.</p>
+     */
     inline GetAgentKnowledgeBaseResult& WithAgentKnowledgeBase(AgentKnowledgeBase&& value) { SetAgentKnowledgeBase(std::move(value)); return *this;}
 
 

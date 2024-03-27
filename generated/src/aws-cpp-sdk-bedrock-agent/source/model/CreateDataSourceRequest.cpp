@@ -13,12 +13,12 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateDataSourceRequest::CreateDataSourceRequest() : 
-    m_knowledgeBaseIdHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
     m_dataSourceConfigurationHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
+    m_knowledgeBaseIdHasBeenSet(false),
+    m_nameHasBeenSet(false),
     m_serverSideEncryptionConfigurationHasBeenSet(false),
     m_vectorIngestionConfigurationHasBeenSet(false)
 {
@@ -34,9 +34,9 @@ Aws::String CreateDataSourceRequest::SerializePayload() const
 
   }
 
-  if(m_nameHasBeenSet)
+  if(m_dataSourceConfigurationHasBeenSet)
   {
-   payload.WithString("name", m_name);
+   payload.WithObject("dataSourceConfiguration", m_dataSourceConfiguration.Jsonize());
 
   }
 
@@ -46,9 +46,9 @@ Aws::String CreateDataSourceRequest::SerializePayload() const
 
   }
 
-  if(m_dataSourceConfigurationHasBeenSet)
+  if(m_nameHasBeenSet)
   {
-   payload.WithObject("dataSourceConfiguration", m_dataSourceConfiguration.Jsonize());
+   payload.WithString("name", m_name);
 
   }
 

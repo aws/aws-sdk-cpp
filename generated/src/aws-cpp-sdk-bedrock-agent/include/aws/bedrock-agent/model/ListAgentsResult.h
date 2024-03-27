@@ -26,11 +26,6 @@ namespace BedrockAgent
 {
 namespace Model
 {
-  /**
-   * <p>List Agent Response</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ListAgentsResponse">AWS
-   * API Reference</a></p>
-   */
   class ListAgentsResult
   {
   public:
@@ -39,47 +34,89 @@ namespace Model
     AWS_BEDROCKAGENT_API ListAgentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * <p>A list of objects, each of which contains information about an agent.</p>
+     */
     inline const Aws::Vector<AgentSummary>& GetAgentSummaries() const{ return m_agentSummaries; }
 
-    
+    /**
+     * <p>A list of objects, each of which contains information about an agent.</p>
+     */
     inline void SetAgentSummaries(const Aws::Vector<AgentSummary>& value) { m_agentSummaries = value; }
 
-    
+    /**
+     * <p>A list of objects, each of which contains information about an agent.</p>
+     */
     inline void SetAgentSummaries(Aws::Vector<AgentSummary>&& value) { m_agentSummaries = std::move(value); }
 
-    
+    /**
+     * <p>A list of objects, each of which contains information about an agent.</p>
+     */
     inline ListAgentsResult& WithAgentSummaries(const Aws::Vector<AgentSummary>& value) { SetAgentSummaries(value); return *this;}
 
-    
+    /**
+     * <p>A list of objects, each of which contains information about an agent.</p>
+     */
     inline ListAgentsResult& WithAgentSummaries(Aws::Vector<AgentSummary>&& value) { SetAgentSummaries(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>A list of objects, each of which contains information about an agent.</p>
+     */
     inline ListAgentsResult& AddAgentSummaries(const AgentSummary& value) { m_agentSummaries.push_back(value); return *this; }
 
-    
+    /**
+     * <p>A list of objects, each of which contains information about an agent.</p>
+     */
     inline ListAgentsResult& AddAgentSummaries(AgentSummary&& value) { m_agentSummaries.push_back(std::move(value)); return *this; }
 
 
-    
+    /**
+     * <p>If the total number of results is greater than the <code>maxResults</code>
+     * value provided in the request, use this token when making another request in the
+     * <code>nextToken</code> field to return the next batch of results.</p>
+     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
-    
+    /**
+     * <p>If the total number of results is greater than the <code>maxResults</code>
+     * value provided in the request, use this token when making another request in the
+     * <code>nextToken</code> field to return the next batch of results.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
-    
+    /**
+     * <p>If the total number of results is greater than the <code>maxResults</code>
+     * value provided in the request, use this token when making another request in the
+     * <code>nextToken</code> field to return the next batch of results.</p>
+     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
-    
+    /**
+     * <p>If the total number of results is greater than the <code>maxResults</code>
+     * value provided in the request, use this token when making another request in the
+     * <code>nextToken</code> field to return the next batch of results.</p>
+     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
-    
+    /**
+     * <p>If the total number of results is greater than the <code>maxResults</code>
+     * value provided in the request, use this token when making another request in the
+     * <code>nextToken</code> field to return the next batch of results.</p>
+     */
     inline ListAgentsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
-    
+    /**
+     * <p>If the total number of results is greater than the <code>maxResults</code>
+     * value provided in the request, use this token when making another request in the
+     * <code>nextToken</code> field to return the next batch of results.</p>
+     */
     inline ListAgentsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>If the total number of results is greater than the <code>maxResults</code>
+     * value provided in the request, use this token when making another request in the
+     * <code>nextToken</code> field to return the next batch of results.</p>
+     */
     inline ListAgentsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
 

@@ -26,11 +26,6 @@ namespace BedrockAgent
 {
 namespace Model
 {
-  /**
-   * <p>List Agent Versions Response</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/ListAgentVersionsResponse">AWS
-   * API Reference</a></p>
-   */
   class ListAgentVersionsResult
   {
   public:
@@ -39,47 +34,96 @@ namespace Model
     AWS_BEDROCKAGENT_API ListAgentVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * <p>A list of objects, each of which contains information about a version of the
+     * agent.</p>
+     */
     inline const Aws::Vector<AgentVersionSummary>& GetAgentVersionSummaries() const{ return m_agentVersionSummaries; }
 
-    
+    /**
+     * <p>A list of objects, each of which contains information about a version of the
+     * agent.</p>
+     */
     inline void SetAgentVersionSummaries(const Aws::Vector<AgentVersionSummary>& value) { m_agentVersionSummaries = value; }
 
-    
+    /**
+     * <p>A list of objects, each of which contains information about a version of the
+     * agent.</p>
+     */
     inline void SetAgentVersionSummaries(Aws::Vector<AgentVersionSummary>&& value) { m_agentVersionSummaries = std::move(value); }
 
-    
+    /**
+     * <p>A list of objects, each of which contains information about a version of the
+     * agent.</p>
+     */
     inline ListAgentVersionsResult& WithAgentVersionSummaries(const Aws::Vector<AgentVersionSummary>& value) { SetAgentVersionSummaries(value); return *this;}
 
-    
+    /**
+     * <p>A list of objects, each of which contains information about a version of the
+     * agent.</p>
+     */
     inline ListAgentVersionsResult& WithAgentVersionSummaries(Aws::Vector<AgentVersionSummary>&& value) { SetAgentVersionSummaries(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>A list of objects, each of which contains information about a version of the
+     * agent.</p>
+     */
     inline ListAgentVersionsResult& AddAgentVersionSummaries(const AgentVersionSummary& value) { m_agentVersionSummaries.push_back(value); return *this; }
 
-    
+    /**
+     * <p>A list of objects, each of which contains information about a version of the
+     * agent.</p>
+     */
     inline ListAgentVersionsResult& AddAgentVersionSummaries(AgentVersionSummary&& value) { m_agentVersionSummaries.push_back(std::move(value)); return *this; }
 
 
-    
+    /**
+     * <p>If the total number of results is greater than the <code>maxResults</code>
+     * value provided in the request, use this token when making another request in the
+     * <code>nextToken</code> field to return the next batch of results.</p>
+     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
-    
+    /**
+     * <p>If the total number of results is greater than the <code>maxResults</code>
+     * value provided in the request, use this token when making another request in the
+     * <code>nextToken</code> field to return the next batch of results.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
-    
+    /**
+     * <p>If the total number of results is greater than the <code>maxResults</code>
+     * value provided in the request, use this token when making another request in the
+     * <code>nextToken</code> field to return the next batch of results.</p>
+     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
-    
+    /**
+     * <p>If the total number of results is greater than the <code>maxResults</code>
+     * value provided in the request, use this token when making another request in the
+     * <code>nextToken</code> field to return the next batch of results.</p>
+     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
-    
+    /**
+     * <p>If the total number of results is greater than the <code>maxResults</code>
+     * value provided in the request, use this token when making another request in the
+     * <code>nextToken</code> field to return the next batch of results.</p>
+     */
     inline ListAgentVersionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
-    
+    /**
+     * <p>If the total number of results is greater than the <code>maxResults</code>
+     * value provided in the request, use this token when making another request in the
+     * <code>nextToken</code> field to return the next batch of results.</p>
+     */
     inline ListAgentVersionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>If the total number of results is greater than the <code>maxResults</code>
+     * value provided in the request, use this token when making another request in the
+     * <code>nextToken</code> field to return the next batch of results.</p>
+     */
     inline ListAgentVersionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
 

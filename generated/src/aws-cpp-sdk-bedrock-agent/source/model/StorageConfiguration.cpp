@@ -19,35 +19,28 @@ namespace Model
 {
 
 StorageConfiguration::StorageConfiguration() : 
-    m_type(KnowledgeBaseStorageType::NOT_SET),
-    m_typeHasBeenSet(false),
     m_opensearchServerlessConfigurationHasBeenSet(false),
     m_pineconeConfigurationHasBeenSet(false),
+    m_rdsConfigurationHasBeenSet(false),
     m_redisEnterpriseCloudConfigurationHasBeenSet(false),
-    m_rdsConfigurationHasBeenSet(false)
+    m_type(KnowledgeBaseStorageType::NOT_SET),
+    m_typeHasBeenSet(false)
 {
 }
 
 StorageConfiguration::StorageConfiguration(JsonView jsonValue) : 
-    m_type(KnowledgeBaseStorageType::NOT_SET),
-    m_typeHasBeenSet(false),
     m_opensearchServerlessConfigurationHasBeenSet(false),
     m_pineconeConfigurationHasBeenSet(false),
+    m_rdsConfigurationHasBeenSet(false),
     m_redisEnterpriseCloudConfigurationHasBeenSet(false),
-    m_rdsConfigurationHasBeenSet(false)
+    m_type(KnowledgeBaseStorageType::NOT_SET),
+    m_typeHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 StorageConfiguration& StorageConfiguration::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("type"))
-  {
-    m_type = KnowledgeBaseStorageTypeMapper::GetKnowledgeBaseStorageTypeForName(jsonValue.GetString("type"));
-
-    m_typeHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("opensearchServerlessConfiguration"))
   {
     m_opensearchServerlessConfiguration = jsonValue.GetObject("opensearchServerlessConfiguration");
@@ -62,6 +55,13 @@ StorageConfiguration& StorageConfiguration::operator =(JsonView jsonValue)
     m_pineconeConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("rdsConfiguration"))
+  {
+    m_rdsConfiguration = jsonValue.GetObject("rdsConfiguration");
+
+    m_rdsConfigurationHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("redisEnterpriseCloudConfiguration"))
   {
     m_redisEnterpriseCloudConfiguration = jsonValue.GetObject("redisEnterpriseCloudConfiguration");
@@ -69,11 +69,11 @@ StorageConfiguration& StorageConfiguration::operator =(JsonView jsonValue)
     m_redisEnterpriseCloudConfigurationHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("rdsConfiguration"))
+  if(jsonValue.ValueExists("type"))
   {
-    m_rdsConfiguration = jsonValue.GetObject("rdsConfiguration");
+    m_type = KnowledgeBaseStorageTypeMapper::GetKnowledgeBaseStorageTypeForName(jsonValue.GetString("type"));
 
-    m_rdsConfigurationHasBeenSet = true;
+    m_typeHasBeenSet = true;
   }
 
   return *this;
@@ -82,11 +82,6 @@ StorageConfiguration& StorageConfiguration::operator =(JsonView jsonValue)
 JsonValue StorageConfiguration::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", KnowledgeBaseStorageTypeMapper::GetNameForKnowledgeBaseStorageType(m_type));
-  }
 
   if(m_opensearchServerlessConfigurationHasBeenSet)
   {
@@ -100,16 +95,21 @@ JsonValue StorageConfiguration::Jsonize() const
 
   }
 
+  if(m_rdsConfigurationHasBeenSet)
+  {
+   payload.WithObject("rdsConfiguration", m_rdsConfiguration.Jsonize());
+
+  }
+
   if(m_redisEnterpriseCloudConfigurationHasBeenSet)
   {
    payload.WithObject("redisEnterpriseCloudConfiguration", m_redisEnterpriseCloudConfiguration.Jsonize());
 
   }
 
-  if(m_rdsConfigurationHasBeenSet)
+  if(m_typeHasBeenSet)
   {
-   payload.WithObject("rdsConfiguration", m_rdsConfiguration.Jsonize());
-
+   payload.WithString("type", KnowledgeBaseStorageTypeMapper::GetNameForKnowledgeBaseStorageType(m_type));
   }
 
   return payload;

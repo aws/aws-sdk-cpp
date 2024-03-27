@@ -61,6 +61,27 @@ namespace Model
 
 
     /**
+     * <p>The lower limit for data storage the cache is set to use.</p>
+     */
+    inline int GetMinimum() const{ return m_minimum; }
+
+    /**
+     * <p>The lower limit for data storage the cache is set to use.</p>
+     */
+    inline bool MinimumHasBeenSet() const { return m_minimumHasBeenSet; }
+
+    /**
+     * <p>The lower limit for data storage the cache is set to use.</p>
+     */
+    inline void SetMinimum(int value) { m_minimumHasBeenSet = true; m_minimum = value; }
+
+    /**
+     * <p>The lower limit for data storage the cache is set to use.</p>
+     */
+    inline DataStorage& WithMinimum(int value) { SetMinimum(value); return *this;}
+
+
+    /**
      * <p>The unit that the storage is measured in, in GB.</p>
      */
     inline const DataStorageUnit& GetUnit() const{ return m_unit; }
@@ -94,6 +115,9 @@ namespace Model
 
     int m_maximum;
     bool m_maximumHasBeenSet = false;
+
+    int m_minimum;
+    bool m_minimumHasBeenSet = false;
 
     DataStorageUnit m_unit;
     bool m_unitHasBeenSet = false;
