@@ -590,6 +590,12 @@ int CurlDebugCallback(CURL *handle, curl_infotype type, char *data, size_t size,
     return 0;
 }
 
+#if defined(ENABLE_CURL_LOGGING)
+const bool FORCE_ENABLE_CURL_LOGGING = true;
+#else
+const bool FORCE_ENABLE_CURL_LOGGING = false;
+#endif
+
 
 CurlHttpClient::CurlHttpClient(const ClientConfiguration& clientConfig) :
     Base(),
@@ -603,7 +609,7 @@ CurlHttpClient::CurlHttpClient(const ClientConfiguration& clientConfig) :
     m_proxyPort(clientConfig.proxyPort), m_verifySSL(clientConfig.verifySSL), m_caPath(clientConfig.caPath),
     m_caFile(clientConfig.caFile), m_proxyCaPath(clientConfig.proxyCaPath), m_proxyCaFile(clientConfig.proxyCaFile),
     m_disableExpectHeader(clientConfig.disableExpectHeader),
-    m_enableHttpClientTrace(clientConfig.enableHttpClientTrace),
+    m_enableHttpClientTrace(clientConfig.enableHttpClientTrace || FORCE_ENABLE_CURL_LOGGING),
     m_telemetryProvider(clientConfig.telemetryProvider)
 {
     if (clientConfig.followRedirects == FollowRedirectsPolicy::NEVER ||
@@ -750,14 +756,12 @@ std::shared_ptr<HttpResponse> CurlHttpClient::MakeRequest(const std::shared_ptr<
             curl_easy_setopt(connectionHandle, CURLOPT_FOLLOWLOCATION, 0L);
         }
 
-#if defined(ENABLE_CURL_LOGGING) || m_enableHttpClientTrace
         if (m_enableHttpClientTrace)
         {
-            AWS_LOGSTREAM_DEBUG(CURL_HTTP_CLIENT_TAG, "Activating CURL traces");
+            AWS_LOGSTREAM_TRACE(CURL_HTTP_CLIENT_TAG, "Activating CURL traces");
+            curl_easy_setopt(connectionHandle, CURLOPT_VERBOSE, 1);
+            curl_easy_setopt(connectionHandle, CURLOPT_DEBUGFUNCTION, CurlDebugCallback);
         }
-        curl_easy_setopt(connectionHandle, CURLOPT_VERBOSE, 1);
-        curl_easy_setopt(connectionHandle, CURLOPT_DEBUGFUNCTION, CurlDebugCallback);
-#endif
 
         if (m_isUsingProxy)
         {

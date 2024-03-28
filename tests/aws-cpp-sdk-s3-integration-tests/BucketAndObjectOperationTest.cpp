@@ -178,6 +178,7 @@ namespace
             config.readRateLimiter = Limiter;
             config.writeRateLimiter = Limiter;
             config.executor = Aws::MakeShared<Aws::Utils::Threading::PooledThreadExecutor>(ALLOCATION_TAG, 4);
+            config.enableHttpClientTrace = true;
 
             //to use a proxy, uncomment the next two lines.
             if (USE_PROXY_FOR_TESTS)
