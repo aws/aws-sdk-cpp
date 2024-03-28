@@ -8,6 +8,7 @@
 #include <aws/core/Core_EXPORTS.h>
 
 #include <aws/core/http/HttpClient.h>
+#include <aws/core/http/Version.h>
 #include <aws/core/http/windows/WinSyncHttpClient.h>
 
 namespace Aws
@@ -53,8 +54,9 @@ namespace Aws
             bool DoReadData(void* hHttpRequest, char* body, uint64_t size, uint64_t& read) const override;
             void* GetClientModule() const override;
 
-            bool m_usingProxy;
-            bool m_verifySSL;
+            bool m_usingProxy = false;
+            bool m_verifySSL = true;
+            Aws::Http::Version m_version = Aws::Http::Version::HTTP_VERSION_2TLS;
             Aws::WString m_proxyUserName;
             Aws::WString m_proxyPassword;
         };

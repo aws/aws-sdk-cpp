@@ -29,25 +29,80 @@ using namespace Aws::Http::Standard;
 using namespace Aws::Utils;
 using namespace Aws::Utils::Logging;
 
-static void WinHttpEnableHttp2(void* handle)
+DWORD ConvertHttpVersionToWinHttpVersion(const Aws::Http::Version version)
 {
-#ifdef WINHTTP_HAS_H2
-    DWORD http2 = WINHTTP_PROTOCOL_FLAG_HTTP2;
-    if (!WinHttpSetOption(handle, WINHTTP_OPTION_ENABLE_HTTP_PROTOCOL, &http2, sizeof(http2)))
+    if (version == Version::HTTP_VERSION_NONE)
     {
-        AWS_LOGSTREAM_ERROR("WinHttpHttp2", "Failed to enable HTTP/2 on WinHttp handle: " << handle << ". Falling back to HTTP/1.1.");
-    }
-    else
-    {
-        AWS_LOGSTREAM_DEBUG("WinHttpHttp2", "HTTP/2 enabled on WinHttp handle: " << handle << ".");
-    }
+        /* WinHTTP http version None maps to HTTP1.1, however, libCurl None maps to "let http client decide", sticking to libCurl behavior here (use highest) */
+#if defined(WINHTTP_HAS_H3)
+        return WINHTTP_PROTOCOL_FLAG_HTTP3;
+#elif defined(WINHTTP_HAS_H2)
+        return WINHTTP_PROTOCOL_FLAG_HTTP2;
 #else
-    AWS_UNREFERENCED_PARAM(handle);
+        return 0x0;
+#endif
+    }
+    else if (version == Version::HTTP_VERSION_1_0)
+    {
+        return 0x0; // HTTP 1.1 can be still used, WinHTTP does not allow disabling 1,1
+    }
+    else if (version == Version::HTTP_VERSION_1_1)
+    {
+        return 0x0;
+    }
+#ifdef WINHTTP_HAS_H2
+    else if (version == Version::HTTP_VERSION_2_0 ||
+             version == Version::HTTP_VERSION_2TLS)
+    {
+        return WINHTTP_PROTOCOL_FLAG_HTTP2;
+    }
+    else if (version == Version::HTTP_VERSION_2_PRIOR_KNOWLEDGE)
+    {
+        AWS_LOGSTREAM_WARN("WinHttpHttp2", "Unable to set HTTP/2 with Prior Knowledge on WinHTTP, enabling regular HTTP2");
+        return WINHTTP_PROTOCOL_FLAG_HTTP2;
+    }
+#endif
+#ifdef WINHTTP_HAS_H3
+    else if (version == Version::HTTP_VERSION_3)
+    {
+        return WINHTTP_PROTOCOL_FLAG_HTTP3;
+    }
+    else if (version == Version::HTTP_VERSION_3ONLY)
+    {
+        AWS_LOGSTREAM_WARN("WinHttpHttp2", "Unable to set HTTP3 only on WinHTTP");
+        return WINHTTP_PROTOCOL_FLAG_HTTP3;
+    }
+#endif
+
+#ifdef WINHTTP_HAS_H2
+    AWS_LOGSTREAM_WARN("WinHttpHttp2", "Unable to map requested HTTP Version: (raw enum value) "
+                        << static_cast<std::underlying_type<Aws::Http::Version>::type>(version) << " defaulting to WINHTTP_PROTOCOL_FLAG_HTTP2");
+    return WINHTTP_PROTOCOL_FLAG_HTTP2;
+#else
+    AWS_LOGSTREAM_WARN("WinHttpHttp2", "Unable to map requested HTTP Version: (raw enum value) "
+                        << static_cast<std::underlying_type<Aws::Http::Version>::type>(version) << " defaulting to None (aka 1.1 and below)");
+    return 0x0;
 #endif
 }
 
+static void WinHttpSetHttpVersion(void* handle, const Aws::Http::Version version)
+{
+    DWORD winHttpVersion = ConvertHttpVersionToWinHttpVersion(version);
+    if (winHttpVersion == 0x0)
+    {
+        return;
+    }
+    if (!WinHttpSetOption(handle, WINHTTP_OPTION_ENABLE_HTTP_PROTOCOL, &winHttpVersion, sizeof(winHttpVersion)))
+    {
+        AWS_LOGSTREAM_ERROR("WinHttpHttp2", "Failed to set WINHTTP_OPTION_ENABLE_HTTP_PROTOCOL to " << winHttpVersion << " on WinHttp handle: " << handle);
+    }
+}
+
 WinHttpSyncHttpClient::WinHttpSyncHttpClient(const ClientConfiguration& config) :
-    Base()
+    Base(),
+    m_usingProxy(!config.proxyHost.empty()),
+    m_verifySSL(config.verifySSL),
+    m_version(config.version)
 {
     AWS_LOGSTREAM_INFO(GetLogTag(), "Creating http client with user agent " << config.userAgent << " with max connections " << config.maxConnections
         << " request timeout " << config.requestTimeoutMs << ",and connect timeout " << config.connectTimeoutMs);
@@ -72,7 +127,6 @@ WinHttpSyncHttpClient::WinHttpSyncHttpClient(const ClientConfiguration& config) 
         m_allowRedirects = true;
     }
 
-    m_usingProxy = !config.proxyHost.empty();
     //setup initial proxy config.
 
     Aws::WString proxyString;
@@ -105,8 +159,7 @@ WinHttpSyncHttpClient::WinHttpSyncHttpClient(const ClientConfiguration& config) 
     {
         AWS_LOGSTREAM_WARN(GetLogTag(), "Error setting timeouts " << GetLastError());
     }
-    WinHttpEnableHttp2(GetOpenHandle());
-    m_verifySSL = config.verifySSL;
+    WinHttpSetHttpVersion(GetOpenHandle(), m_version);
     if (m_verifySSL)
     {
         //disable insecure tls protocols, otherwise you might as well turn ssl verification off.
@@ -204,7 +257,7 @@ void* WinHttpSyncHttpClient::OpenRequest(const std::shared_ptr<HttpRequest>& req
             AWS_LOGSTREAM_FATAL(GetLogTag(), "Failed to turn off redirects!");
     }
 
-    WinHttpEnableHttp2(hHttpRequest);
+    WinHttpSetHttpVersion(hHttpRequest, m_version);
     return hHttpRequest;
 }
 
