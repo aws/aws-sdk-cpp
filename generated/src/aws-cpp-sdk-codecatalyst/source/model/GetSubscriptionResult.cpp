@@ -41,6 +41,18 @@ GetSubscriptionResult& GetSubscriptionResult::operator =(const Aws::AmazonWebSer
 
   }
 
+  if(jsonValue.ValueExists("pendingSubscriptionType"))
+  {
+    m_pendingSubscriptionType = jsonValue.GetString("pendingSubscriptionType");
+
+  }
+
+  if(jsonValue.ValueExists("pendingSubscriptionStartTime"))
+  {
+    m_pendingSubscriptionStartTime = jsonValue.GetString("pendingSubscriptionStartTime");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

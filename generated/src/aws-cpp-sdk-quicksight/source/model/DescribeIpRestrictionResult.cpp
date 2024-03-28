@@ -48,6 +48,24 @@ DescribeIpRestrictionResult& DescribeIpRestrictionResult::operator =(const Aws::
     }
   }
 
+  if(jsonValue.ValueExists("VpcIdRestrictionRuleMap"))
+  {
+    Aws::Map<Aws::String, JsonView> vpcIdRestrictionRuleMapJsonMap = jsonValue.GetObject("VpcIdRestrictionRuleMap").GetAllObjects();
+    for(auto& vpcIdRestrictionRuleMapItem : vpcIdRestrictionRuleMapJsonMap)
+    {
+      m_vpcIdRestrictionRuleMap[vpcIdRestrictionRuleMapItem.first] = vpcIdRestrictionRuleMapItem.second.AsString();
+    }
+  }
+
+  if(jsonValue.ValueExists("VpcEndpointIdRestrictionRuleMap"))
+  {
+    Aws::Map<Aws::String, JsonView> vpcEndpointIdRestrictionRuleMapJsonMap = jsonValue.GetObject("VpcEndpointIdRestrictionRuleMap").GetAllObjects();
+    for(auto& vpcEndpointIdRestrictionRuleMapItem : vpcEndpointIdRestrictionRuleMapJsonMap)
+    {
+      m_vpcEndpointIdRestrictionRuleMap[vpcEndpointIdRestrictionRuleMapItem.first] = vpcEndpointIdRestrictionRuleMapItem.second.AsString();
+    }
+  }
+
   if(jsonValue.ValueExists("Enabled"))
   {
     m_enabled = jsonValue.GetBool("Enabled");

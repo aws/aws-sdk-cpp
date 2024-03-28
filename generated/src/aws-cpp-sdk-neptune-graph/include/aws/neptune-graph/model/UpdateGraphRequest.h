@@ -108,25 +108,25 @@ namespace Model
 
     /**
      * <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for
-     * the graph. Min = 128</p>
+     * the graph.</p> <p>Min = 128</p>
      */
     inline int GetProvisionedMemory() const{ return m_provisionedMemory; }
 
     /**
      * <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for
-     * the graph. Min = 128</p>
+     * the graph.</p> <p>Min = 128</p>
      */
     inline bool ProvisionedMemoryHasBeenSet() const { return m_provisionedMemoryHasBeenSet; }
 
     /**
      * <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for
-     * the graph. Min = 128</p>
+     * the graph.</p> <p>Min = 128</p>
      */
     inline void SetProvisionedMemory(int value) { m_provisionedMemoryHasBeenSet = true; m_provisionedMemory = value; }
 
     /**
      * <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for
-     * the graph. Min = 128</p>
+     * the graph.</p> <p>Min = 128</p>
      */
     inline UpdateGraphRequest& WithProvisionedMemory(int value) { SetProvisionedMemory(value); return *this;}
 

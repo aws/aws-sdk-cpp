@@ -41,38 +41,32 @@ namespace Model
 
 
     /**
-     * <p> The name of the resource utilization metric name to customize. </p> 
-     * <p>Compute Optimizer only supports <code>CpuUtilization</code>.</p> 
+     * <p> The name of the resource utilization metric name to customize. </p>
      */
     inline const CustomizableMetricName& GetMetricName() const{ return m_metricName; }
 
     /**
-     * <p> The name of the resource utilization metric name to customize. </p> 
-     * <p>Compute Optimizer only supports <code>CpuUtilization</code>.</p> 
+     * <p> The name of the resource utilization metric name to customize. </p>
      */
     inline bool MetricNameHasBeenSet() const { return m_metricNameHasBeenSet; }
 
     /**
-     * <p> The name of the resource utilization metric name to customize. </p> 
-     * <p>Compute Optimizer only supports <code>CpuUtilization</code>.</p> 
+     * <p> The name of the resource utilization metric name to customize. </p>
      */
     inline void SetMetricName(const CustomizableMetricName& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
 
     /**
-     * <p> The name of the resource utilization metric name to customize. </p> 
-     * <p>Compute Optimizer only supports <code>CpuUtilization</code>.</p> 
+     * <p> The name of the resource utilization metric name to customize. </p>
      */
     inline void SetMetricName(CustomizableMetricName&& value) { m_metricNameHasBeenSet = true; m_metricName = std::move(value); }
 
     /**
-     * <p> The name of the resource utilization metric name to customize. </p> 
-     * <p>Compute Optimizer only supports <code>CpuUtilization</code>.</p> 
+     * <p> The name of the resource utilization metric name to customize. </p>
      */
     inline UtilizationPreference& WithMetricName(const CustomizableMetricName& value) { SetMetricName(value); return *this;}
 
     /**
-     * <p> The name of the resource utilization metric name to customize. </p> 
-     * <p>Compute Optimizer only supports <code>CpuUtilization</code>.</p> 
+     * <p> The name of the resource utilization metric name to customize. </p>
      */
     inline UtilizationPreference& WithMetricName(CustomizableMetricName&& value) { SetMetricName(std::move(value)); return *this;}
 

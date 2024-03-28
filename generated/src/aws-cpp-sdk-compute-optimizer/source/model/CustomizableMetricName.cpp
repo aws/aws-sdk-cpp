@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int CpuUtilization_HASH = HashingUtils::HashString("CpuUtilization");
+        static const int MemoryUtilization_HASH = HashingUtils::HashString("MemoryUtilization");
 
 
         CustomizableMetricName GetCustomizableMetricNameForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == CpuUtilization_HASH)
           {
             return CustomizableMetricName::CpuUtilization;
+          }
+          else if (hashCode == MemoryUtilization_HASH)
+          {
+            return CustomizableMetricName::MemoryUtilization;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -48,6 +53,8 @@ namespace Aws
             return {};
           case CustomizableMetricName::CpuUtilization:
             return "CpuUtilization";
+          case CustomizableMetricName::MemoryUtilization:
+            return "MemoryUtilization";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

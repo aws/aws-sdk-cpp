@@ -4414,8 +4414,10 @@ namespace QuickSight
         }
 
         /**
-         * <p>Updates the content and status of IP rules. To use this operation, you must
-         * provide the entire map of rules. You can use the
+         * <p>Updates the content and status of IP rules. Traffic from a source is allowed
+         * when the source satisfies either the <code>IpRestrictionRule</code>,
+         * <code>VpcIdRestrictionRule</code>, or <code>VpcEndpointIdRestrictionRule</code>.
+         * To use this operation, you must provide the entire map of rules. You can use the
          * <code>DescribeIpRestriction</code> operation to get the current rule
          * map.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateIpRestriction">AWS

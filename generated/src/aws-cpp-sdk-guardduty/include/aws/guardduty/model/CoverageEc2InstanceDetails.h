@@ -26,12 +26,8 @@ namespace Model
 {
 
   /**
-   *  <p>This API is also used when you use GuardDuty Runtime Monitoring for
-   * your Amazon EC2 instances (currently in preview release) and is subject to
-   * change. The use of this API is subject to Section 2 of the <a
-   * href="http://aws.amazon.com/service-terms/">Amazon Web Services Service
-   * Terms</a> ("Betas and Previews").</p>  <p>Contains information about the
-   * Amazon EC2 instance runtime coverage details.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains information about the Amazon EC2 instance runtime coverage
+   * details.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CoverageEc2InstanceDetails">AWS
    * API Reference</a></p>
    */

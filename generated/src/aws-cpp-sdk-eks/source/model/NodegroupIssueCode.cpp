@@ -53,6 +53,8 @@ namespace Aws
         static const int LimitExceeded_HASH = HashingUtils::HashString("LimitExceeded");
         static const int Unknown_HASH = HashingUtils::HashString("Unknown");
         static const int AutoScalingGroupInstanceRefreshActive_HASH = HashingUtils::HashString("AutoScalingGroupInstanceRefreshActive");
+        static const int KubernetesLabelInvalid_HASH = HashingUtils::HashString("KubernetesLabelInvalid");
+        static const int Ec2LaunchTemplateVersionMaxLimitExceeded_HASH = HashingUtils::HashString("Ec2LaunchTemplateVersionMaxLimitExceeded");
 
 
         NodegroupIssueCode GetNodegroupIssueCodeForName(const Aws::String& name)
@@ -190,6 +192,14 @@ namespace Aws
           {
             return NodegroupIssueCode::AutoScalingGroupInstanceRefreshActive;
           }
+          else if (hashCode == KubernetesLabelInvalid_HASH)
+          {
+            return NodegroupIssueCode::KubernetesLabelInvalid;
+          }
+          else if (hashCode == Ec2LaunchTemplateVersionMaxLimitExceeded_HASH)
+          {
+            return NodegroupIssueCode::Ec2LaunchTemplateVersionMaxLimitExceeded;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -272,6 +282,10 @@ namespace Aws
             return "Unknown";
           case NodegroupIssueCode::AutoScalingGroupInstanceRefreshActive:
             return "AutoScalingGroupInstanceRefreshActive";
+          case NodegroupIssueCode::KubernetesLabelInvalid:
+            return "KubernetesLabelInvalid";
+          case NodegroupIssueCode::Ec2LaunchTemplateVersionMaxLimitExceeded:
+            return "Ec2LaunchTemplateVersionMaxLimitExceeded";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

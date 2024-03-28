@@ -27,7 +27,8 @@ namespace Model
 {
 
   /**
-   * <p>A dataset parameter.</p><p><h3>See Also:</h3>   <a
+   * <p>A parameter that is created in a dataset. The parameter can be a string,
+   * integer, decimal, or datetime data type.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DatasetParameter">AWS
    * API Reference</a></p>
    */

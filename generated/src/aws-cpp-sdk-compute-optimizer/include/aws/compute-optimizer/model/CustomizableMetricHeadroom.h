@@ -18,6 +18,7 @@ namespace Model
     NOT_SET,
     PERCENT_30,
     PERCENT_20,
+    PERCENT_10,
     PERCENT_0
   };
 

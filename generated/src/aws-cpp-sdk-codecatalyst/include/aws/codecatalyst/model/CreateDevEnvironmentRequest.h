@@ -461,42 +461,50 @@ namespace Model
 
 
     /**
-     * <p>The name of the connection to use connect to a Amazon VPC.</p>
+     * <p>The name of the connection that will be used to connect to Amazon VPC, if
+     * any.</p>
      */
     inline const Aws::String& GetVpcConnectionName() const{ return m_vpcConnectionName; }
 
     /**
-     * <p>The name of the connection to use connect to a Amazon VPC.</p>
+     * <p>The name of the connection that will be used to connect to Amazon VPC, if
+     * any.</p>
      */
     inline bool VpcConnectionNameHasBeenSet() const { return m_vpcConnectionNameHasBeenSet; }
 
     /**
-     * <p>The name of the connection to use connect to a Amazon VPC.</p>
+     * <p>The name of the connection that will be used to connect to Amazon VPC, if
+     * any.</p>
      */
     inline void SetVpcConnectionName(const Aws::String& value) { m_vpcConnectionNameHasBeenSet = true; m_vpcConnectionName = value; }
 
     /**
-     * <p>The name of the connection to use connect to a Amazon VPC.</p>
+     * <p>The name of the connection that will be used to connect to Amazon VPC, if
+     * any.</p>
      */
     inline void SetVpcConnectionName(Aws::String&& value) { m_vpcConnectionNameHasBeenSet = true; m_vpcConnectionName = std::move(value); }
 
     /**
-     * <p>The name of the connection to use connect to a Amazon VPC.</p>
+     * <p>The name of the connection that will be used to connect to Amazon VPC, if
+     * any.</p>
      */
     inline void SetVpcConnectionName(const char* value) { m_vpcConnectionNameHasBeenSet = true; m_vpcConnectionName.assign(value); }
 
     /**
-     * <p>The name of the connection to use connect to a Amazon VPC.</p>
+     * <p>The name of the connection that will be used to connect to Amazon VPC, if
+     * any.</p>
      */
     inline CreateDevEnvironmentRequest& WithVpcConnectionName(const Aws::String& value) { SetVpcConnectionName(value); return *this;}
 
     /**
-     * <p>The name of the connection to use connect to a Amazon VPC.</p>
+     * <p>The name of the connection that will be used to connect to Amazon VPC, if
+     * any.</p>
      */
     inline CreateDevEnvironmentRequest& WithVpcConnectionName(Aws::String&& value) { SetVpcConnectionName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the connection to use connect to a Amazon VPC.</p>
+     * <p>The name of the connection that will be used to connect to Amazon VPC, if
+     * any.</p>
      */
     inline CreateDevEnvironmentRequest& WithVpcConnectionName(const char* value) { SetVpcConnectionName(value); return *this;}
 

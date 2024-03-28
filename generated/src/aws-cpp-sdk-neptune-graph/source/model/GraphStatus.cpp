@@ -27,6 +27,7 @@ namespace Aws
         static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
         static const int SNAPSHOTTING_HASH = HashingUtils::HashString("SNAPSHOTTING");
         static const int FAILED_HASH = HashingUtils::HashString("FAILED");
+        static const int IMPORTING_HASH = HashingUtils::HashString("IMPORTING");
 
 
         GraphStatus GetGraphStatusForName(const Aws::String& name)
@@ -60,6 +61,10 @@ namespace Aws
           {
             return GraphStatus::FAILED;
           }
+          else if (hashCode == IMPORTING_HASH)
+          {
+            return GraphStatus::IMPORTING;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -90,6 +95,8 @@ namespace Aws
             return "SNAPSHOTTING";
           case GraphStatus::FAILED:
             return "FAILED";
+          case GraphStatus::IMPORTING:
+            return "IMPORTING";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

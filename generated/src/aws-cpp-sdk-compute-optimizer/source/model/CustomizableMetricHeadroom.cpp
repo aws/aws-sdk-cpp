@@ -22,6 +22,7 @@ namespace Aws
 
         static const int PERCENT_30_HASH = HashingUtils::HashString("PERCENT_30");
         static const int PERCENT_20_HASH = HashingUtils::HashString("PERCENT_20");
+        static const int PERCENT_10_HASH = HashingUtils::HashString("PERCENT_10");
         static const int PERCENT_0_HASH = HashingUtils::HashString("PERCENT_0");
 
 
@@ -35,6 +36,10 @@ namespace Aws
           else if (hashCode == PERCENT_20_HASH)
           {
             return CustomizableMetricHeadroom::PERCENT_20;
+          }
+          else if (hashCode == PERCENT_10_HASH)
+          {
+            return CustomizableMetricHeadroom::PERCENT_10;
           }
           else if (hashCode == PERCENT_0_HASH)
           {
@@ -60,6 +65,8 @@ namespace Aws
             return "PERCENT_30";
           case CustomizableMetricHeadroom::PERCENT_20:
             return "PERCENT_20";
+          case CustomizableMetricHeadroom::PERCENT_10:
+            return "PERCENT_10";
           case CustomizableMetricHeadroom::PERCENT_0:
             return "PERCENT_0";
           default:
