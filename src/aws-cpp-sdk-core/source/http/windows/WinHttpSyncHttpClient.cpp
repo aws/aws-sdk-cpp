@@ -21,6 +21,7 @@
 #include <winhttp.h>
 #include <sstream>
 #include <iostream>
+#include <versionhelpers.h>
 
 using namespace Aws::Client;
 using namespace Aws::Http;
@@ -287,7 +288,9 @@ static void CALLBACK WinHttpSyncLogCallback(HINTERNET hInternet,
         }//found handler
     }
     if (!found)
+    {
         AWS_LOGSTREAM_DEBUG("WinHttp", "got unrecognized internet status " << dwInternetStatus);
+    }
 }
 
 WinHttpSyncHttpClient::WinHttpSyncHttpClient(const ClientConfiguration& config) :

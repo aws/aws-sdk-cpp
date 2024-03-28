@@ -300,6 +300,7 @@ namespace {
     void SetUp() override {
       S3ClientConfiguration configuration;
       configuration.region = "us-east-1";
+      configuration.enableHttpClientTrace = true;
       client = Aws::MakeShared<S3Client>(ALLOCATION_TAG, configuration);
     }
 

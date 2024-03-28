@@ -51,6 +51,7 @@ public:
         }
 
         Aws::Client::ClientConfiguration config;
+        config.enableHttpClientTrace = true;
 #ifdef _WIN32
         // TODO: remove this once we get H2 working with WinHttp client
         config.httpLibOverride = Aws::Http::TransferLibType::WIN_INET_CLIENT;
