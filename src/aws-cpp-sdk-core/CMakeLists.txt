@@ -194,6 +194,25 @@ elseif(ENABLE_WINDOWS_CLIENT)
         return 1;
         }" WINHTTP_HAS_H2)
 
+        check_cxx_source_runs("
+        #include <Windows.h>
+        #include <winhttp.h>
+        int main() {
+
+        auto handle = WinHttpOpen(L\"aws-cpp-sdk\"/*user-agent*/,
+        WINHTTP_ACCESS_TYPE_NO_PROXY,
+        nullptr/*pszProxyW*/,
+        nullptr/*pszProxyBypassW*/,
+        0/*dwFlags*/);
+
+        DWORD http3 = WINHTTP_PROTOCOL_FLAG_HTTP3;
+        if (WinHttpSetOption(handle, WINHTTP_OPTION_ENABLE_HTTP_PROTOCOL, &http3, sizeof(http3)))
+        {
+            return 0;
+        }
+        return 1;
+        }" WINHTTP_HAS_H3)
+
         set(CMAKE_REQUIRED_LIBRARIES "Wininet.lib")
         check_cxx_source_runs("
         #include <Windows.h>
@@ -528,6 +547,10 @@ endif()
 
 if (WINHTTP_HAS_H2)
     target_compile_definitions(${PROJECT_NAME} PRIVATE "WINHTTP_HAS_H2")
+endif()
+
+if (WINHTTP_HAS_H3)
+    target_compile_definitions(${PROJECT_NAME} PRIVATE "WINHTTP_HAS_H3")
 endif()
 
 if (CURL_HAS_H2)
