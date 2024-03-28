@@ -134,6 +134,47 @@ namespace Model
      */
     inline ThreatIntelligenceDetail& AddThreatNames(const char* value) { m_threatNamesHasBeenSet = true; m_threatNames.push_back(value); return *this; }
 
+
+    /**
+     * <p>SHA256 of the file that generated the finding.</p>
+     */
+    inline const Aws::String& GetThreatFileSha256() const{ return m_threatFileSha256; }
+
+    /**
+     * <p>SHA256 of the file that generated the finding.</p>
+     */
+    inline bool ThreatFileSha256HasBeenSet() const { return m_threatFileSha256HasBeenSet; }
+
+    /**
+     * <p>SHA256 of the file that generated the finding.</p>
+     */
+    inline void SetThreatFileSha256(const Aws::String& value) { m_threatFileSha256HasBeenSet = true; m_threatFileSha256 = value; }
+
+    /**
+     * <p>SHA256 of the file that generated the finding.</p>
+     */
+    inline void SetThreatFileSha256(Aws::String&& value) { m_threatFileSha256HasBeenSet = true; m_threatFileSha256 = std::move(value); }
+
+    /**
+     * <p>SHA256 of the file that generated the finding.</p>
+     */
+    inline void SetThreatFileSha256(const char* value) { m_threatFileSha256HasBeenSet = true; m_threatFileSha256.assign(value); }
+
+    /**
+     * <p>SHA256 of the file that generated the finding.</p>
+     */
+    inline ThreatIntelligenceDetail& WithThreatFileSha256(const Aws::String& value) { SetThreatFileSha256(value); return *this;}
+
+    /**
+     * <p>SHA256 of the file that generated the finding.</p>
+     */
+    inline ThreatIntelligenceDetail& WithThreatFileSha256(Aws::String&& value) { SetThreatFileSha256(std::move(value)); return *this;}
+
+    /**
+     * <p>SHA256 of the file that generated the finding.</p>
+     */
+    inline ThreatIntelligenceDetail& WithThreatFileSha256(const char* value) { SetThreatFileSha256(value); return *this;}
+
   private:
 
     Aws::String m_threatListName;
@@ -141,6 +182,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_threatNames;
     bool m_threatNamesHasBeenSet = false;
+
+    Aws::String m_threatFileSha256;
+    bool m_threatFileSha256HasBeenSet = false;
   };
 
 } // namespace Model

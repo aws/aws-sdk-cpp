@@ -476,82 +476,114 @@ namespace Model
 
 
     /**
-     * <p> The preference to control the resource’s CPU utilization thresholds -
-     * threshold and headroom. When this preference isn't specified, we use the
-     * following default values: </p> <ul> <li> <p> <code>P99_5</code> for
-     * threshold</p> </li> <li> <p> <code>PERCENT_17</code> for headroom</p> </li>
-     * </ul>  <p>You can only set this preference for the Amazon EC2 instance
-     * resource type.</p> 
+     * <p> The preference to control the resource’s CPU utilization threshold, CPU
+     * utilization headroom, and memory utilization headroom. When this preference
+     * isn't specified, we use the following default values. </p> <p>CPU
+     * utilization:</p> <ul> <li> <p> <code>P99_5</code> for threshold</p> </li> <li>
+     * <p> <code>PERCENT_20</code> for headroom</p> </li> </ul> <p>Memory
+     * utilization:</p> <ul> <li> <p> <code>PERCENT_20</code> for headroom</p> </li>
+     * </ul>  <ul> <li> <p>You can only set CPU and memory utilization
+     * preferences for the Amazon EC2 instance resource type.</p> </li> <li> <p>The
+     * threshold setting isn’t available for memory utilization.</p> </li> </ul>
+     * 
      */
     inline const Aws::Vector<UtilizationPreference>& GetUtilizationPreferences() const{ return m_utilizationPreferences; }
 
     /**
-     * <p> The preference to control the resource’s CPU utilization thresholds -
-     * threshold and headroom. When this preference isn't specified, we use the
-     * following default values: </p> <ul> <li> <p> <code>P99_5</code> for
-     * threshold</p> </li> <li> <p> <code>PERCENT_17</code> for headroom</p> </li>
-     * </ul>  <p>You can only set this preference for the Amazon EC2 instance
-     * resource type.</p> 
+     * <p> The preference to control the resource’s CPU utilization threshold, CPU
+     * utilization headroom, and memory utilization headroom. When this preference
+     * isn't specified, we use the following default values. </p> <p>CPU
+     * utilization:</p> <ul> <li> <p> <code>P99_5</code> for threshold</p> </li> <li>
+     * <p> <code>PERCENT_20</code> for headroom</p> </li> </ul> <p>Memory
+     * utilization:</p> <ul> <li> <p> <code>PERCENT_20</code> for headroom</p> </li>
+     * </ul>  <ul> <li> <p>You can only set CPU and memory utilization
+     * preferences for the Amazon EC2 instance resource type.</p> </li> <li> <p>The
+     * threshold setting isn’t available for memory utilization.</p> </li> </ul>
+     * 
      */
     inline bool UtilizationPreferencesHasBeenSet() const { return m_utilizationPreferencesHasBeenSet; }
 
     /**
-     * <p> The preference to control the resource’s CPU utilization thresholds -
-     * threshold and headroom. When this preference isn't specified, we use the
-     * following default values: </p> <ul> <li> <p> <code>P99_5</code> for
-     * threshold</p> </li> <li> <p> <code>PERCENT_17</code> for headroom</p> </li>
-     * </ul>  <p>You can only set this preference for the Amazon EC2 instance
-     * resource type.</p> 
+     * <p> The preference to control the resource’s CPU utilization threshold, CPU
+     * utilization headroom, and memory utilization headroom. When this preference
+     * isn't specified, we use the following default values. </p> <p>CPU
+     * utilization:</p> <ul> <li> <p> <code>P99_5</code> for threshold</p> </li> <li>
+     * <p> <code>PERCENT_20</code> for headroom</p> </li> </ul> <p>Memory
+     * utilization:</p> <ul> <li> <p> <code>PERCENT_20</code> for headroom</p> </li>
+     * </ul>  <ul> <li> <p>You can only set CPU and memory utilization
+     * preferences for the Amazon EC2 instance resource type.</p> </li> <li> <p>The
+     * threshold setting isn’t available for memory utilization.</p> </li> </ul>
+     * 
      */
     inline void SetUtilizationPreferences(const Aws::Vector<UtilizationPreference>& value) { m_utilizationPreferencesHasBeenSet = true; m_utilizationPreferences = value; }
 
     /**
-     * <p> The preference to control the resource’s CPU utilization thresholds -
-     * threshold and headroom. When this preference isn't specified, we use the
-     * following default values: </p> <ul> <li> <p> <code>P99_5</code> for
-     * threshold</p> </li> <li> <p> <code>PERCENT_17</code> for headroom</p> </li>
-     * </ul>  <p>You can only set this preference for the Amazon EC2 instance
-     * resource type.</p> 
+     * <p> The preference to control the resource’s CPU utilization threshold, CPU
+     * utilization headroom, and memory utilization headroom. When this preference
+     * isn't specified, we use the following default values. </p> <p>CPU
+     * utilization:</p> <ul> <li> <p> <code>P99_5</code> for threshold</p> </li> <li>
+     * <p> <code>PERCENT_20</code> for headroom</p> </li> </ul> <p>Memory
+     * utilization:</p> <ul> <li> <p> <code>PERCENT_20</code> for headroom</p> </li>
+     * </ul>  <ul> <li> <p>You can only set CPU and memory utilization
+     * preferences for the Amazon EC2 instance resource type.</p> </li> <li> <p>The
+     * threshold setting isn’t available for memory utilization.</p> </li> </ul>
+     * 
      */
     inline void SetUtilizationPreferences(Aws::Vector<UtilizationPreference>&& value) { m_utilizationPreferencesHasBeenSet = true; m_utilizationPreferences = std::move(value); }
 
     /**
-     * <p> The preference to control the resource’s CPU utilization thresholds -
-     * threshold and headroom. When this preference isn't specified, we use the
-     * following default values: </p> <ul> <li> <p> <code>P99_5</code> for
-     * threshold</p> </li> <li> <p> <code>PERCENT_17</code> for headroom</p> </li>
-     * </ul>  <p>You can only set this preference for the Amazon EC2 instance
-     * resource type.</p> 
+     * <p> The preference to control the resource’s CPU utilization threshold, CPU
+     * utilization headroom, and memory utilization headroom. When this preference
+     * isn't specified, we use the following default values. </p> <p>CPU
+     * utilization:</p> <ul> <li> <p> <code>P99_5</code> for threshold</p> </li> <li>
+     * <p> <code>PERCENT_20</code> for headroom</p> </li> </ul> <p>Memory
+     * utilization:</p> <ul> <li> <p> <code>PERCENT_20</code> for headroom</p> </li>
+     * </ul>  <ul> <li> <p>You can only set CPU and memory utilization
+     * preferences for the Amazon EC2 instance resource type.</p> </li> <li> <p>The
+     * threshold setting isn’t available for memory utilization.</p> </li> </ul>
+     * 
      */
     inline PutRecommendationPreferencesRequest& WithUtilizationPreferences(const Aws::Vector<UtilizationPreference>& value) { SetUtilizationPreferences(value); return *this;}
 
     /**
-     * <p> The preference to control the resource’s CPU utilization thresholds -
-     * threshold and headroom. When this preference isn't specified, we use the
-     * following default values: </p> <ul> <li> <p> <code>P99_5</code> for
-     * threshold</p> </li> <li> <p> <code>PERCENT_17</code> for headroom</p> </li>
-     * </ul>  <p>You can only set this preference for the Amazon EC2 instance
-     * resource type.</p> 
+     * <p> The preference to control the resource’s CPU utilization threshold, CPU
+     * utilization headroom, and memory utilization headroom. When this preference
+     * isn't specified, we use the following default values. </p> <p>CPU
+     * utilization:</p> <ul> <li> <p> <code>P99_5</code> for threshold</p> </li> <li>
+     * <p> <code>PERCENT_20</code> for headroom</p> </li> </ul> <p>Memory
+     * utilization:</p> <ul> <li> <p> <code>PERCENT_20</code> for headroom</p> </li>
+     * </ul>  <ul> <li> <p>You can only set CPU and memory utilization
+     * preferences for the Amazon EC2 instance resource type.</p> </li> <li> <p>The
+     * threshold setting isn’t available for memory utilization.</p> </li> </ul>
+     * 
      */
     inline PutRecommendationPreferencesRequest& WithUtilizationPreferences(Aws::Vector<UtilizationPreference>&& value) { SetUtilizationPreferences(std::move(value)); return *this;}
 
     /**
-     * <p> The preference to control the resource’s CPU utilization thresholds -
-     * threshold and headroom. When this preference isn't specified, we use the
-     * following default values: </p> <ul> <li> <p> <code>P99_5</code> for
-     * threshold</p> </li> <li> <p> <code>PERCENT_17</code> for headroom</p> </li>
-     * </ul>  <p>You can only set this preference for the Amazon EC2 instance
-     * resource type.</p> 
+     * <p> The preference to control the resource’s CPU utilization threshold, CPU
+     * utilization headroom, and memory utilization headroom. When this preference
+     * isn't specified, we use the following default values. </p> <p>CPU
+     * utilization:</p> <ul> <li> <p> <code>P99_5</code> for threshold</p> </li> <li>
+     * <p> <code>PERCENT_20</code> for headroom</p> </li> </ul> <p>Memory
+     * utilization:</p> <ul> <li> <p> <code>PERCENT_20</code> for headroom</p> </li>
+     * </ul>  <ul> <li> <p>You can only set CPU and memory utilization
+     * preferences for the Amazon EC2 instance resource type.</p> </li> <li> <p>The
+     * threshold setting isn’t available for memory utilization.</p> </li> </ul>
+     * 
      */
     inline PutRecommendationPreferencesRequest& AddUtilizationPreferences(const UtilizationPreference& value) { m_utilizationPreferencesHasBeenSet = true; m_utilizationPreferences.push_back(value); return *this; }
 
     /**
-     * <p> The preference to control the resource’s CPU utilization thresholds -
-     * threshold and headroom. When this preference isn't specified, we use the
-     * following default values: </p> <ul> <li> <p> <code>P99_5</code> for
-     * threshold</p> </li> <li> <p> <code>PERCENT_17</code> for headroom</p> </li>
-     * </ul>  <p>You can only set this preference for the Amazon EC2 instance
-     * resource type.</p> 
+     * <p> The preference to control the resource’s CPU utilization threshold, CPU
+     * utilization headroom, and memory utilization headroom. When this preference
+     * isn't specified, we use the following default values. </p> <p>CPU
+     * utilization:</p> <ul> <li> <p> <code>P99_5</code> for threshold</p> </li> <li>
+     * <p> <code>PERCENT_20</code> for headroom</p> </li> </ul> <p>Memory
+     * utilization:</p> <ul> <li> <p> <code>PERCENT_20</code> for headroom</p> </li>
+     * </ul>  <ul> <li> <p>You can only set CPU and memory utilization
+     * preferences for the Amazon EC2 instance resource type.</p> </li> <li> <p>The
+     * threshold setting isn’t available for memory utilization.</p> </li> </ul>
+     * 
      */
     inline PutRecommendationPreferencesRequest& AddUtilizationPreferences(UtilizationPreference&& value) { m_utilizationPreferencesHasBeenSet = true; m_utilizationPreferences.push_back(std::move(value)); return *this; }
 

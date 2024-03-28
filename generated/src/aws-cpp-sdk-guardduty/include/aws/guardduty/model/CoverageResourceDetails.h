@@ -141,62 +141,32 @@ namespace Model
 
 
     /**
-     *  <p>This API is also used when you use GuardDuty Runtime Monitoring for
-     * your Amazon EC2 instances (currently in preview release) and is subject to
-     * change. The use of this API is subject to Section 2 of the <a
-     * href="http://aws.amazon.com/service-terms/">Amazon Web Services Service
-     * Terms</a> ("Betas and Previews").</p>  <p>Information about the Amazon
-     * EC2 instance assessed for runtime coverage.</p>
+     * <p>Information about the Amazon EC2 instance assessed for runtime coverage.</p>
      */
     inline const CoverageEc2InstanceDetails& GetEc2InstanceDetails() const{ return m_ec2InstanceDetails; }
 
     /**
-     *  <p>This API is also used when you use GuardDuty Runtime Monitoring for
-     * your Amazon EC2 instances (currently in preview release) and is subject to
-     * change. The use of this API is subject to Section 2 of the <a
-     * href="http://aws.amazon.com/service-terms/">Amazon Web Services Service
-     * Terms</a> ("Betas and Previews").</p>  <p>Information about the Amazon
-     * EC2 instance assessed for runtime coverage.</p>
+     * <p>Information about the Amazon EC2 instance assessed for runtime coverage.</p>
      */
     inline bool Ec2InstanceDetailsHasBeenSet() const { return m_ec2InstanceDetailsHasBeenSet; }
 
     /**
-     *  <p>This API is also used when you use GuardDuty Runtime Monitoring for
-     * your Amazon EC2 instances (currently in preview release) and is subject to
-     * change. The use of this API is subject to Section 2 of the <a
-     * href="http://aws.amazon.com/service-terms/">Amazon Web Services Service
-     * Terms</a> ("Betas and Previews").</p>  <p>Information about the Amazon
-     * EC2 instance assessed for runtime coverage.</p>
+     * <p>Information about the Amazon EC2 instance assessed for runtime coverage.</p>
      */
     inline void SetEc2InstanceDetails(const CoverageEc2InstanceDetails& value) { m_ec2InstanceDetailsHasBeenSet = true; m_ec2InstanceDetails = value; }
 
     /**
-     *  <p>This API is also used when you use GuardDuty Runtime Monitoring for
-     * your Amazon EC2 instances (currently in preview release) and is subject to
-     * change. The use of this API is subject to Section 2 of the <a
-     * href="http://aws.amazon.com/service-terms/">Amazon Web Services Service
-     * Terms</a> ("Betas and Previews").</p>  <p>Information about the Amazon
-     * EC2 instance assessed for runtime coverage.</p>
+     * <p>Information about the Amazon EC2 instance assessed for runtime coverage.</p>
      */
     inline void SetEc2InstanceDetails(CoverageEc2InstanceDetails&& value) { m_ec2InstanceDetailsHasBeenSet = true; m_ec2InstanceDetails = std::move(value); }
 
     /**
-     *  <p>This API is also used when you use GuardDuty Runtime Monitoring for
-     * your Amazon EC2 instances (currently in preview release) and is subject to
-     * change. The use of this API is subject to Section 2 of the <a
-     * href="http://aws.amazon.com/service-terms/">Amazon Web Services Service
-     * Terms</a> ("Betas and Previews").</p>  <p>Information about the Amazon
-     * EC2 instance assessed for runtime coverage.</p>
+     * <p>Information about the Amazon EC2 instance assessed for runtime coverage.</p>
      */
     inline CoverageResourceDetails& WithEc2InstanceDetails(const CoverageEc2InstanceDetails& value) { SetEc2InstanceDetails(value); return *this;}
 
     /**
-     *  <p>This API is also used when you use GuardDuty Runtime Monitoring for
-     * your Amazon EC2 instances (currently in preview release) and is subject to
-     * change. The use of this API is subject to Section 2 of the <a
-     * href="http://aws.amazon.com/service-terms/">Amazon Web Services Service
-     * Terms</a> ("Betas and Previews").</p>  <p>Information about the Amazon
-     * EC2 instance assessed for runtime coverage.</p>
+     * <p>Information about the Amazon EC2 instance assessed for runtime coverage.</p>
      */
     inline CoverageResourceDetails& WithEc2InstanceDetails(CoverageEc2InstanceDetails&& value) { SetEc2InstanceDetails(std::move(value)); return *this;}
 

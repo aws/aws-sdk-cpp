@@ -254,19 +254,19 @@ namespace Model
 
     /**
      * <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for
-     * the graph. Min = 128</p>
+     * the graph.</p> <p>Min = 128</p>
      */
     inline int GetProvisionedMemory() const{ return m_provisionedMemory; }
 
     /**
      * <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for
-     * the graph. Min = 128</p>
+     * the graph.</p> <p>Min = 128</p>
      */
     inline void SetProvisionedMemory(int value) { m_provisionedMemory = value; }
 
     /**
      * <p>The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for
-     * the graph. Min = 128</p>
+     * the graph.</p> <p>Min = 128</p>
      */
     inline CreateGraphResult& WithProvisionedMemory(int value) { SetProvisionedMemory(value); return *this;}
 
@@ -309,19 +309,25 @@ namespace Model
 
     /**
      * <p>Specifies whether or not the graph can be reachable over the internet. All
-     * access to graphs is IAM authenticated.</p>
+     * access to graphs is IAM authenticated.</p>  <p>If enabling public
+     * connectivity for the first time, there will be a delay while it is enabled.</p>
+     * 
      */
     inline bool GetPublicConnectivity() const{ return m_publicConnectivity; }
 
     /**
      * <p>Specifies whether or not the graph can be reachable over the internet. All
-     * access to graphs is IAM authenticated.</p>
+     * access to graphs is IAM authenticated.</p>  <p>If enabling public
+     * connectivity for the first time, there will be a delay while it is enabled.</p>
+     * 
      */
     inline void SetPublicConnectivity(bool value) { m_publicConnectivity = value; }
 
     /**
      * <p>Specifies whether or not the graph can be reachable over the internet. All
-     * access to graphs is IAM authenticated.</p>
+     * access to graphs is IAM authenticated.</p>  <p>If enabling public
+     * connectivity for the first time, there will be a delay while it is enabled.</p>
+     * 
      */
     inline CreateGraphResult& WithPublicConnectivity(bool value) { SetPublicConnectivity(value); return *this;}
 
@@ -358,17 +364,20 @@ namespace Model
 
 
     /**
-     * <p>The number of replicas in other AZs.</p>
+     * <p>The number of replicas in other AZs.</p> <p>Default: If not specified, the
+     * default value is 1.</p>
      */
     inline int GetReplicaCount() const{ return m_replicaCount; }
 
     /**
-     * <p>The number of replicas in other AZs.</p>
+     * <p>The number of replicas in other AZs.</p> <p>Default: If not specified, the
+     * default value is 1.</p>
      */
     inline void SetReplicaCount(int value) { m_replicaCount = value; }
 
     /**
-     * <p>The number of replicas in other AZs.</p>
+     * <p>The number of replicas in other AZs.</p> <p>Default: If not specified, the
+     * default value is 1.</p>
      */
     inline CreateGraphResult& WithReplicaCount(int value) { SetReplicaCount(value); return *this;}
 

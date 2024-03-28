@@ -252,7 +252,7 @@ namespace Model
 
 
     /**
-     * <p> The resource’s CPU utilization threshold preferences, such as threshold and
+     * <p> The resource’s CPU and memory utilization preferences, such as threshold and
      * headroom, that were used to generate rightsizing recommendations. It considers
      * all applicable preferences that you set at the resource, account, and
      * organization level. </p> <p>To validate that the preference is applied to your
@@ -263,7 +263,7 @@ namespace Model
     inline const Aws::Vector<UtilizationPreference>& GetUtilizationPreferences() const{ return m_utilizationPreferences; }
 
     /**
-     * <p> The resource’s CPU utilization threshold preferences, such as threshold and
+     * <p> The resource’s CPU and memory utilization preferences, such as threshold and
      * headroom, that were used to generate rightsizing recommendations. It considers
      * all applicable preferences that you set at the resource, account, and
      * organization level. </p> <p>To validate that the preference is applied to your
@@ -274,7 +274,7 @@ namespace Model
     inline void SetUtilizationPreferences(const Aws::Vector<UtilizationPreference>& value) { m_utilizationPreferences = value; }
 
     /**
-     * <p> The resource’s CPU utilization threshold preferences, such as threshold and
+     * <p> The resource’s CPU and memory utilization preferences, such as threshold and
      * headroom, that were used to generate rightsizing recommendations. It considers
      * all applicable preferences that you set at the resource, account, and
      * organization level. </p> <p>To validate that the preference is applied to your
@@ -285,7 +285,7 @@ namespace Model
     inline void SetUtilizationPreferences(Aws::Vector<UtilizationPreference>&& value) { m_utilizationPreferences = std::move(value); }
 
     /**
-     * <p> The resource’s CPU utilization threshold preferences, such as threshold and
+     * <p> The resource’s CPU and memory utilization preferences, such as threshold and
      * headroom, that were used to generate rightsizing recommendations. It considers
      * all applicable preferences that you set at the resource, account, and
      * organization level. </p> <p>To validate that the preference is applied to your
@@ -296,7 +296,7 @@ namespace Model
     inline GetEffectiveRecommendationPreferencesResult& WithUtilizationPreferences(const Aws::Vector<UtilizationPreference>& value) { SetUtilizationPreferences(value); return *this;}
 
     /**
-     * <p> The resource’s CPU utilization threshold preferences, such as threshold and
+     * <p> The resource’s CPU and memory utilization preferences, such as threshold and
      * headroom, that were used to generate rightsizing recommendations. It considers
      * all applicable preferences that you set at the resource, account, and
      * organization level. </p> <p>To validate that the preference is applied to your
@@ -307,7 +307,7 @@ namespace Model
     inline GetEffectiveRecommendationPreferencesResult& WithUtilizationPreferences(Aws::Vector<UtilizationPreference>&& value) { SetUtilizationPreferences(std::move(value)); return *this;}
 
     /**
-     * <p> The resource’s CPU utilization threshold preferences, such as threshold and
+     * <p> The resource’s CPU and memory utilization preferences, such as threshold and
      * headroom, that were used to generate rightsizing recommendations. It considers
      * all applicable preferences that you set at the resource, account, and
      * organization level. </p> <p>To validate that the preference is applied to your
@@ -318,7 +318,7 @@ namespace Model
     inline GetEffectiveRecommendationPreferencesResult& AddUtilizationPreferences(const UtilizationPreference& value) { m_utilizationPreferences.push_back(value); return *this; }
 
     /**
-     * <p> The resource’s CPU utilization threshold preferences, such as threshold and
+     * <p> The resource’s CPU and memory utilization preferences, such as threshold and
      * headroom, that were used to generate rightsizing recommendations. It considers
      * all applicable preferences that you set at the resource, account, and
      * organization level. </p> <p>To validate that the preference is applied to your

@@ -880,6 +880,227 @@ namespace Model
      */
     inline RuntimeContext& AddMemoryRegions(const char* value) { m_memoryRegionsHasBeenSet = true; m_memoryRegions.push_back(value); return *this; }
 
+
+    /**
+     * <p>Name of the potentially suspicious tool.</p>
+     */
+    inline const Aws::String& GetToolName() const{ return m_toolName; }
+
+    /**
+     * <p>Name of the potentially suspicious tool.</p>
+     */
+    inline bool ToolNameHasBeenSet() const { return m_toolNameHasBeenSet; }
+
+    /**
+     * <p>Name of the potentially suspicious tool.</p>
+     */
+    inline void SetToolName(const Aws::String& value) { m_toolNameHasBeenSet = true; m_toolName = value; }
+
+    /**
+     * <p>Name of the potentially suspicious tool.</p>
+     */
+    inline void SetToolName(Aws::String&& value) { m_toolNameHasBeenSet = true; m_toolName = std::move(value); }
+
+    /**
+     * <p>Name of the potentially suspicious tool.</p>
+     */
+    inline void SetToolName(const char* value) { m_toolNameHasBeenSet = true; m_toolName.assign(value); }
+
+    /**
+     * <p>Name of the potentially suspicious tool.</p>
+     */
+    inline RuntimeContext& WithToolName(const Aws::String& value) { SetToolName(value); return *this;}
+
+    /**
+     * <p>Name of the potentially suspicious tool.</p>
+     */
+    inline RuntimeContext& WithToolName(Aws::String&& value) { SetToolName(std::move(value)); return *this;}
+
+    /**
+     * <p>Name of the potentially suspicious tool.</p>
+     */
+    inline RuntimeContext& WithToolName(const char* value) { SetToolName(value); return *this;}
+
+
+    /**
+     * <p>Category that the tool belongs to. Some of the examples are Backdoor Tool,
+     * Pentest Tool, Network Scanner, and Network Sniffer.</p>
+     */
+    inline const Aws::String& GetToolCategory() const{ return m_toolCategory; }
+
+    /**
+     * <p>Category that the tool belongs to. Some of the examples are Backdoor Tool,
+     * Pentest Tool, Network Scanner, and Network Sniffer.</p>
+     */
+    inline bool ToolCategoryHasBeenSet() const { return m_toolCategoryHasBeenSet; }
+
+    /**
+     * <p>Category that the tool belongs to. Some of the examples are Backdoor Tool,
+     * Pentest Tool, Network Scanner, and Network Sniffer.</p>
+     */
+    inline void SetToolCategory(const Aws::String& value) { m_toolCategoryHasBeenSet = true; m_toolCategory = value; }
+
+    /**
+     * <p>Category that the tool belongs to. Some of the examples are Backdoor Tool,
+     * Pentest Tool, Network Scanner, and Network Sniffer.</p>
+     */
+    inline void SetToolCategory(Aws::String&& value) { m_toolCategoryHasBeenSet = true; m_toolCategory = std::move(value); }
+
+    /**
+     * <p>Category that the tool belongs to. Some of the examples are Backdoor Tool,
+     * Pentest Tool, Network Scanner, and Network Sniffer.</p>
+     */
+    inline void SetToolCategory(const char* value) { m_toolCategoryHasBeenSet = true; m_toolCategory.assign(value); }
+
+    /**
+     * <p>Category that the tool belongs to. Some of the examples are Backdoor Tool,
+     * Pentest Tool, Network Scanner, and Network Sniffer.</p>
+     */
+    inline RuntimeContext& WithToolCategory(const Aws::String& value) { SetToolCategory(value); return *this;}
+
+    /**
+     * <p>Category that the tool belongs to. Some of the examples are Backdoor Tool,
+     * Pentest Tool, Network Scanner, and Network Sniffer.</p>
+     */
+    inline RuntimeContext& WithToolCategory(Aws::String&& value) { SetToolCategory(std::move(value)); return *this;}
+
+    /**
+     * <p>Category that the tool belongs to. Some of the examples are Backdoor Tool,
+     * Pentest Tool, Network Scanner, and Network Sniffer.</p>
+     */
+    inline RuntimeContext& WithToolCategory(const char* value) { SetToolCategory(value); return *this;}
+
+
+    /**
+     * <p>Name of the security service that has been potentially disabled.</p>
+     */
+    inline const Aws::String& GetServiceName() const{ return m_serviceName; }
+
+    /**
+     * <p>Name of the security service that has been potentially disabled.</p>
+     */
+    inline bool ServiceNameHasBeenSet() const { return m_serviceNameHasBeenSet; }
+
+    /**
+     * <p>Name of the security service that has been potentially disabled.</p>
+     */
+    inline void SetServiceName(const Aws::String& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
+
+    /**
+     * <p>Name of the security service that has been potentially disabled.</p>
+     */
+    inline void SetServiceName(Aws::String&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::move(value); }
+
+    /**
+     * <p>Name of the security service that has been potentially disabled.</p>
+     */
+    inline void SetServiceName(const char* value) { m_serviceNameHasBeenSet = true; m_serviceName.assign(value); }
+
+    /**
+     * <p>Name of the security service that has been potentially disabled.</p>
+     */
+    inline RuntimeContext& WithServiceName(const Aws::String& value) { SetServiceName(value); return *this;}
+
+    /**
+     * <p>Name of the security service that has been potentially disabled.</p>
+     */
+    inline RuntimeContext& WithServiceName(Aws::String&& value) { SetServiceName(std::move(value)); return *this;}
+
+    /**
+     * <p>Name of the security service that has been potentially disabled.</p>
+     */
+    inline RuntimeContext& WithServiceName(const char* value) { SetServiceName(value); return *this;}
+
+
+    /**
+     * <p>Example of the command line involved in the suspicious activity.</p>
+     */
+    inline const Aws::String& GetCommandLineExample() const{ return m_commandLineExample; }
+
+    /**
+     * <p>Example of the command line involved in the suspicious activity.</p>
+     */
+    inline bool CommandLineExampleHasBeenSet() const { return m_commandLineExampleHasBeenSet; }
+
+    /**
+     * <p>Example of the command line involved in the suspicious activity.</p>
+     */
+    inline void SetCommandLineExample(const Aws::String& value) { m_commandLineExampleHasBeenSet = true; m_commandLineExample = value; }
+
+    /**
+     * <p>Example of the command line involved in the suspicious activity.</p>
+     */
+    inline void SetCommandLineExample(Aws::String&& value) { m_commandLineExampleHasBeenSet = true; m_commandLineExample = std::move(value); }
+
+    /**
+     * <p>Example of the command line involved in the suspicious activity.</p>
+     */
+    inline void SetCommandLineExample(const char* value) { m_commandLineExampleHasBeenSet = true; m_commandLineExample.assign(value); }
+
+    /**
+     * <p>Example of the command line involved in the suspicious activity.</p>
+     */
+    inline RuntimeContext& WithCommandLineExample(const Aws::String& value) { SetCommandLineExample(value); return *this;}
+
+    /**
+     * <p>Example of the command line involved in the suspicious activity.</p>
+     */
+    inline RuntimeContext& WithCommandLineExample(Aws::String&& value) { SetCommandLineExample(std::move(value)); return *this;}
+
+    /**
+     * <p>Example of the command line involved in the suspicious activity.</p>
+     */
+    inline RuntimeContext& WithCommandLineExample(const char* value) { SetCommandLineExample(value); return *this;}
+
+
+    /**
+     * <p>The suspicious file path for which the threat intelligence details were
+     * found.</p>
+     */
+    inline const Aws::String& GetThreatFilePath() const{ return m_threatFilePath; }
+
+    /**
+     * <p>The suspicious file path for which the threat intelligence details were
+     * found.</p>
+     */
+    inline bool ThreatFilePathHasBeenSet() const { return m_threatFilePathHasBeenSet; }
+
+    /**
+     * <p>The suspicious file path for which the threat intelligence details were
+     * found.</p>
+     */
+    inline void SetThreatFilePath(const Aws::String& value) { m_threatFilePathHasBeenSet = true; m_threatFilePath = value; }
+
+    /**
+     * <p>The suspicious file path for which the threat intelligence details were
+     * found.</p>
+     */
+    inline void SetThreatFilePath(Aws::String&& value) { m_threatFilePathHasBeenSet = true; m_threatFilePath = std::move(value); }
+
+    /**
+     * <p>The suspicious file path for which the threat intelligence details were
+     * found.</p>
+     */
+    inline void SetThreatFilePath(const char* value) { m_threatFilePathHasBeenSet = true; m_threatFilePath.assign(value); }
+
+    /**
+     * <p>The suspicious file path for which the threat intelligence details were
+     * found.</p>
+     */
+    inline RuntimeContext& WithThreatFilePath(const Aws::String& value) { SetThreatFilePath(value); return *this;}
+
+    /**
+     * <p>The suspicious file path for which the threat intelligence details were
+     * found.</p>
+     */
+    inline RuntimeContext& WithThreatFilePath(Aws::String&& value) { SetThreatFilePath(std::move(value)); return *this;}
+
+    /**
+     * <p>The suspicious file path for which the threat intelligence details were
+     * found.</p>
+     */
+    inline RuntimeContext& WithThreatFilePath(const char* value) { SetThreatFilePath(value); return *this;}
+
   private:
 
     ProcessDetails m_modifyingProcess;
@@ -941,6 +1162,21 @@ namespace Model
 
     Aws::Vector<Aws::String> m_memoryRegions;
     bool m_memoryRegionsHasBeenSet = false;
+
+    Aws::String m_toolName;
+    bool m_toolNameHasBeenSet = false;
+
+    Aws::String m_toolCategory;
+    bool m_toolCategoryHasBeenSet = false;
+
+    Aws::String m_serviceName;
+    bool m_serviceNameHasBeenSet = false;
+
+    Aws::String m_commandLineExample;
+    bool m_commandLineExampleHasBeenSet = false;
+
+    Aws::String m_threatFilePath;
+    bool m_threatFilePathHasBeenSet = false;
   };
 
 } // namespace Model

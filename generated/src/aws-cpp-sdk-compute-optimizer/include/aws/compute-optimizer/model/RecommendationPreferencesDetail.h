@@ -395,66 +395,66 @@ namespace Model
 
 
     /**
-     * <p> The preference to control the resource’s CPU utilization thresholds -
-     * threshold and headroom. If the preference isn’t set, this object is null. </p>
-     *  <p>This preference is only available for the Amazon EC2 instance resource
-     * type.</p> 
+     * <p> The preference to control the resource’s CPU utilization threshold, CPU
+     * utilization headroom, and memory utilization headroom. If the preference isn’t
+     * set, this object is null. </p>  <p>This preference is only available for
+     * the Amazon EC2 instance resource type.</p> 
      */
     inline const Aws::Vector<UtilizationPreference>& GetUtilizationPreferences() const{ return m_utilizationPreferences; }
 
     /**
-     * <p> The preference to control the resource’s CPU utilization thresholds -
-     * threshold and headroom. If the preference isn’t set, this object is null. </p>
-     *  <p>This preference is only available for the Amazon EC2 instance resource
-     * type.</p> 
+     * <p> The preference to control the resource’s CPU utilization threshold, CPU
+     * utilization headroom, and memory utilization headroom. If the preference isn’t
+     * set, this object is null. </p>  <p>This preference is only available for
+     * the Amazon EC2 instance resource type.</p> 
      */
     inline bool UtilizationPreferencesHasBeenSet() const { return m_utilizationPreferencesHasBeenSet; }
 
     /**
-     * <p> The preference to control the resource’s CPU utilization thresholds -
-     * threshold and headroom. If the preference isn’t set, this object is null. </p>
-     *  <p>This preference is only available for the Amazon EC2 instance resource
-     * type.</p> 
+     * <p> The preference to control the resource’s CPU utilization threshold, CPU
+     * utilization headroom, and memory utilization headroom. If the preference isn’t
+     * set, this object is null. </p>  <p>This preference is only available for
+     * the Amazon EC2 instance resource type.</p> 
      */
     inline void SetUtilizationPreferences(const Aws::Vector<UtilizationPreference>& value) { m_utilizationPreferencesHasBeenSet = true; m_utilizationPreferences = value; }
 
     /**
-     * <p> The preference to control the resource’s CPU utilization thresholds -
-     * threshold and headroom. If the preference isn’t set, this object is null. </p>
-     *  <p>This preference is only available for the Amazon EC2 instance resource
-     * type.</p> 
+     * <p> The preference to control the resource’s CPU utilization threshold, CPU
+     * utilization headroom, and memory utilization headroom. If the preference isn’t
+     * set, this object is null. </p>  <p>This preference is only available for
+     * the Amazon EC2 instance resource type.</p> 
      */
     inline void SetUtilizationPreferences(Aws::Vector<UtilizationPreference>&& value) { m_utilizationPreferencesHasBeenSet = true; m_utilizationPreferences = std::move(value); }
 
     /**
-     * <p> The preference to control the resource’s CPU utilization thresholds -
-     * threshold and headroom. If the preference isn’t set, this object is null. </p>
-     *  <p>This preference is only available for the Amazon EC2 instance resource
-     * type.</p> 
+     * <p> The preference to control the resource’s CPU utilization threshold, CPU
+     * utilization headroom, and memory utilization headroom. If the preference isn’t
+     * set, this object is null. </p>  <p>This preference is only available for
+     * the Amazon EC2 instance resource type.</p> 
      */
     inline RecommendationPreferencesDetail& WithUtilizationPreferences(const Aws::Vector<UtilizationPreference>& value) { SetUtilizationPreferences(value); return *this;}
 
     /**
-     * <p> The preference to control the resource’s CPU utilization thresholds -
-     * threshold and headroom. If the preference isn’t set, this object is null. </p>
-     *  <p>This preference is only available for the Amazon EC2 instance resource
-     * type.</p> 
+     * <p> The preference to control the resource’s CPU utilization threshold, CPU
+     * utilization headroom, and memory utilization headroom. If the preference isn’t
+     * set, this object is null. </p>  <p>This preference is only available for
+     * the Amazon EC2 instance resource type.</p> 
      */
     inline RecommendationPreferencesDetail& WithUtilizationPreferences(Aws::Vector<UtilizationPreference>&& value) { SetUtilizationPreferences(std::move(value)); return *this;}
 
     /**
-     * <p> The preference to control the resource’s CPU utilization thresholds -
-     * threshold and headroom. If the preference isn’t set, this object is null. </p>
-     *  <p>This preference is only available for the Amazon EC2 instance resource
-     * type.</p> 
+     * <p> The preference to control the resource’s CPU utilization threshold, CPU
+     * utilization headroom, and memory utilization headroom. If the preference isn’t
+     * set, this object is null. </p>  <p>This preference is only available for
+     * the Amazon EC2 instance resource type.</p> 
      */
     inline RecommendationPreferencesDetail& AddUtilizationPreferences(const UtilizationPreference& value) { m_utilizationPreferencesHasBeenSet = true; m_utilizationPreferences.push_back(value); return *this; }
 
     /**
-     * <p> The preference to control the resource’s CPU utilization thresholds -
-     * threshold and headroom. If the preference isn’t set, this object is null. </p>
-     *  <p>This preference is only available for the Amazon EC2 instance resource
-     * type.</p> 
+     * <p> The preference to control the resource’s CPU utilization threshold, CPU
+     * utilization headroom, and memory utilization headroom. If the preference isn’t
+     * set, this object is null. </p>  <p>This preference is only available for
+     * the Amazon EC2 instance resource type.</p> 
      */
     inline RecommendationPreferencesDetail& AddUtilizationPreferences(UtilizationPreference&& value) { m_utilizationPreferencesHasBeenSet = true; m_utilizationPreferences.push_back(std::move(value)); return *this; }
 

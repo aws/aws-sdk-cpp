@@ -343,7 +343,7 @@ namespace Model
      * <code>Overprovisioned</code> </b> — When Compute Optimizer detects that there’s
      * excessive memory or CPU, an Amazon ECS service is considered over-provisioned.
      * An over-provisioned service might result in additional infrastructure costs.
-     * </p> </li> <li> <p> <b> <code>Optimized</code> </b> �� When both the CPU and
+     * </p> </li> <li> <p> <b> <code>Optimized</code> </b> — When both the CPU and
      * memory of your Amazon ECS service meet the performance requirements of your
      * workload, the service is considered optimized.</p> </li> </ul>
      */
@@ -358,7 +358,7 @@ namespace Model
      * <code>Overprovisioned</code> </b> — When Compute Optimizer detects that there’s
      * excessive memory or CPU, an Amazon ECS service is considered over-provisioned.
      * An over-provisioned service might result in additional infrastructure costs.
-     * </p> </li> <li> <p> <b> <code>Optimized</code> </b> �� When both the CPU and
+     * </p> </li> <li> <p> <b> <code>Optimized</code> </b> — When both the CPU and
      * memory of your Amazon ECS service meet the performance requirements of your
      * workload, the service is considered optimized.</p> </li> </ul>
      */
@@ -373,7 +373,7 @@ namespace Model
      * <code>Overprovisioned</code> </b> — When Compute Optimizer detects that there’s
      * excessive memory or CPU, an Amazon ECS service is considered over-provisioned.
      * An over-provisioned service might result in additional infrastructure costs.
-     * </p> </li> <li> <p> <b> <code>Optimized</code> </b> �� When both the CPU and
+     * </p> </li> <li> <p> <b> <code>Optimized</code> </b> — When both the CPU and
      * memory of your Amazon ECS service meet the performance requirements of your
      * workload, the service is considered optimized.</p> </li> </ul>
      */
@@ -388,7 +388,7 @@ namespace Model
      * <code>Overprovisioned</code> </b> — When Compute Optimizer detects that there’s
      * excessive memory or CPU, an Amazon ECS service is considered over-provisioned.
      * An over-provisioned service might result in additional infrastructure costs.
-     * </p> </li> <li> <p> <b> <code>Optimized</code> </b> �� When both the CPU and
+     * </p> </li> <li> <p> <b> <code>Optimized</code> </b> — When both the CPU and
      * memory of your Amazon ECS service meet the performance requirements of your
      * workload, the service is considered optimized.</p> </li> </ul>
      */
@@ -403,7 +403,7 @@ namespace Model
      * <code>Overprovisioned</code> </b> — When Compute Optimizer detects that there’s
      * excessive memory or CPU, an Amazon ECS service is considered over-provisioned.
      * An over-provisioned service might result in additional infrastructure costs.
-     * </p> </li> <li> <p> <b> <code>Optimized</code> </b> �� When both the CPU and
+     * </p> </li> <li> <p> <b> <code>Optimized</code> </b> — When both the CPU and
      * memory of your Amazon ECS service meet the performance requirements of your
      * workload, the service is considered optimized.</p> </li> </ul>
      */
@@ -418,7 +418,7 @@ namespace Model
      * <code>Overprovisioned</code> </b> — When Compute Optimizer detects that there’s
      * excessive memory or CPU, an Amazon ECS service is considered over-provisioned.
      * An over-provisioned service might result in additional infrastructure costs.
-     * </p> </li> <li> <p> <b> <code>Optimized</code> </b> �� When both the CPU and
+     * </p> </li> <li> <p> <b> <code>Optimized</code> </b> — When both the CPU and
      * memory of your Amazon ECS service meet the performance requirements of your
      * workload, the service is considered optimized.</p> </li> </ul>
      */

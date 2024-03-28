@@ -150,50 +150,66 @@ namespace Model
 
 
     /**
-     * <p>The second and top level domain involved in the activity that prompted
-     * GuardDuty to generate this finding.</p>
+     * <p>The second and top level domain involved in the activity that potentially
+     * prompted GuardDuty to generate this finding. For a list of top-level and
+     * second-level domains, see <a href="https://publicsuffix.org/">public suffix
+     * list</a>.</p>
      */
     inline const Aws::String& GetDomainWithSuffix() const{ return m_domainWithSuffix; }
 
     /**
-     * <p>The second and top level domain involved in the activity that prompted
-     * GuardDuty to generate this finding.</p>
+     * <p>The second and top level domain involved in the activity that potentially
+     * prompted GuardDuty to generate this finding. For a list of top-level and
+     * second-level domains, see <a href="https://publicsuffix.org/">public suffix
+     * list</a>.</p>
      */
     inline bool DomainWithSuffixHasBeenSet() const { return m_domainWithSuffixHasBeenSet; }
 
     /**
-     * <p>The second and top level domain involved in the activity that prompted
-     * GuardDuty to generate this finding.</p>
+     * <p>The second and top level domain involved in the activity that potentially
+     * prompted GuardDuty to generate this finding. For a list of top-level and
+     * second-level domains, see <a href="https://publicsuffix.org/">public suffix
+     * list</a>.</p>
      */
     inline void SetDomainWithSuffix(const Aws::String& value) { m_domainWithSuffixHasBeenSet = true; m_domainWithSuffix = value; }
 
     /**
-     * <p>The second and top level domain involved in the activity that prompted
-     * GuardDuty to generate this finding.</p>
+     * <p>The second and top level domain involved in the activity that potentially
+     * prompted GuardDuty to generate this finding. For a list of top-level and
+     * second-level domains, see <a href="https://publicsuffix.org/">public suffix
+     * list</a>.</p>
      */
     inline void SetDomainWithSuffix(Aws::String&& value) { m_domainWithSuffixHasBeenSet = true; m_domainWithSuffix = std::move(value); }
 
     /**
-     * <p>The second and top level domain involved in the activity that prompted
-     * GuardDuty to generate this finding.</p>
+     * <p>The second and top level domain involved in the activity that potentially
+     * prompted GuardDuty to generate this finding. For a list of top-level and
+     * second-level domains, see <a href="https://publicsuffix.org/">public suffix
+     * list</a>.</p>
      */
     inline void SetDomainWithSuffix(const char* value) { m_domainWithSuffixHasBeenSet = true; m_domainWithSuffix.assign(value); }
 
     /**
-     * <p>The second and top level domain involved in the activity that prompted
-     * GuardDuty to generate this finding.</p>
+     * <p>The second and top level domain involved in the activity that potentially
+     * prompted GuardDuty to generate this finding. For a list of top-level and
+     * second-level domains, see <a href="https://publicsuffix.org/">public suffix
+     * list</a>.</p>
      */
     inline DnsRequestAction& WithDomainWithSuffix(const Aws::String& value) { SetDomainWithSuffix(value); return *this;}
 
     /**
-     * <p>The second and top level domain involved in the activity that prompted
-     * GuardDuty to generate this finding.</p>
+     * <p>The second and top level domain involved in the activity that potentially
+     * prompted GuardDuty to generate this finding. For a list of top-level and
+     * second-level domains, see <a href="https://publicsuffix.org/">public suffix
+     * list</a>.</p>
      */
     inline DnsRequestAction& WithDomainWithSuffix(Aws::String&& value) { SetDomainWithSuffix(std::move(value)); return *this;}
 
     /**
-     * <p>The second and top level domain involved in the activity that prompted
-     * GuardDuty to generate this finding.</p>
+     * <p>The second and top level domain involved in the activity that potentially
+     * prompted GuardDuty to generate this finding. For a list of top-level and
+     * second-level domains, see <a href="https://publicsuffix.org/">public suffix
+     * list</a>.</p>
      */
     inline DnsRequestAction& WithDomainWithSuffix(const char* value) { SetDomainWithSuffix(value); return *this;}
 

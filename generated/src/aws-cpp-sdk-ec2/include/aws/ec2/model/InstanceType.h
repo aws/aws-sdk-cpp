@@ -798,7 +798,10 @@ namespace Model
     r7i_metal_24xl,
     r7i_metal_48xl,
     r7iz_metal_16xl,
-    r7iz_metal_32xl
+    r7iz_metal_32xl,
+    c7gd_metal,
+    m7gd_metal,
+    r7gd_metal
   };
 
 namespace InstanceTypeMapper

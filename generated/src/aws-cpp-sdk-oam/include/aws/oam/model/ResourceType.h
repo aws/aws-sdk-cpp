@@ -19,7 +19,8 @@ namespace Model
     AWS_CloudWatch_Metric,
     AWS_Logs_LogGroup,
     AWS_XRay_Trace,
-    AWS_ApplicationInsights_Application
+    AWS_ApplicationInsights_Application,
+    AWS_InternetMonitor_Monitor
   };
 
 namespace ResourceTypeMapper

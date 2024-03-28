@@ -16,7 +16,8 @@ namespace Model
   enum class CustomizableMetricName
   {
     NOT_SET,
-    CpuUtilization
+    CpuUtilization,
+    MemoryUtilization
   };
 
 namespace CustomizableMetricNameMapper

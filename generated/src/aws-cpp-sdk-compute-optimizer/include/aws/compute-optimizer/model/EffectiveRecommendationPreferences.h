@@ -384,7 +384,7 @@ namespace Model
 
 
     /**
-     * <p> The resource’s CPU utilization threshold preferences, such as threshold and
+     * <p> The resource’s CPU and memory utilization preferences, such as threshold and
      * headroom, that are used to generate rightsizing recommendations. </p> 
      * <p>This preference is only available for the Amazon EC2 instance resource
      * type.</p> 
@@ -392,7 +392,7 @@ namespace Model
     inline const Aws::Vector<UtilizationPreference>& GetUtilizationPreferences() const{ return m_utilizationPreferences; }
 
     /**
-     * <p> The resource’s CPU utilization threshold preferences, such as threshold and
+     * <p> The resource’s CPU and memory utilization preferences, such as threshold and
      * headroom, that are used to generate rightsizing recommendations. </p> 
      * <p>This preference is only available for the Amazon EC2 instance resource
      * type.</p> 
@@ -400,7 +400,7 @@ namespace Model
     inline bool UtilizationPreferencesHasBeenSet() const { return m_utilizationPreferencesHasBeenSet; }
 
     /**
-     * <p> The resource’s CPU utilization threshold preferences, such as threshold and
+     * <p> The resource’s CPU and memory utilization preferences, such as threshold and
      * headroom, that are used to generate rightsizing recommendations. </p> 
      * <p>This preference is only available for the Amazon EC2 instance resource
      * type.</p> 
@@ -408,7 +408,7 @@ namespace Model
     inline void SetUtilizationPreferences(const Aws::Vector<UtilizationPreference>& value) { m_utilizationPreferencesHasBeenSet = true; m_utilizationPreferences = value; }
 
     /**
-     * <p> The resource’s CPU utilization threshold preferences, such as threshold and
+     * <p> The resource’s CPU and memory utilization preferences, such as threshold and
      * headroom, that are used to generate rightsizing recommendations. </p> 
      * <p>This preference is only available for the Amazon EC2 instance resource
      * type.</p> 
@@ -416,7 +416,7 @@ namespace Model
     inline void SetUtilizationPreferences(Aws::Vector<UtilizationPreference>&& value) { m_utilizationPreferencesHasBeenSet = true; m_utilizationPreferences = std::move(value); }
 
     /**
-     * <p> The resource’s CPU utilization threshold preferences, such as threshold and
+     * <p> The resource’s CPU and memory utilization preferences, such as threshold and
      * headroom, that are used to generate rightsizing recommendations. </p> 
      * <p>This preference is only available for the Amazon EC2 instance resource
      * type.</p> 
@@ -424,7 +424,7 @@ namespace Model
     inline EffectiveRecommendationPreferences& WithUtilizationPreferences(const Aws::Vector<UtilizationPreference>& value) { SetUtilizationPreferences(value); return *this;}
 
     /**
-     * <p> The resource’s CPU utilization threshold preferences, such as threshold and
+     * <p> The resource’s CPU and memory utilization preferences, such as threshold and
      * headroom, that are used to generate rightsizing recommendations. </p> 
      * <p>This preference is only available for the Amazon EC2 instance resource
      * type.</p> 
@@ -432,7 +432,7 @@ namespace Model
     inline EffectiveRecommendationPreferences& WithUtilizationPreferences(Aws::Vector<UtilizationPreference>&& value) { SetUtilizationPreferences(std::move(value)); return *this;}
 
     /**
-     * <p> The resource’s CPU utilization threshold preferences, such as threshold and
+     * <p> The resource’s CPU and memory utilization preferences, such as threshold and
      * headroom, that are used to generate rightsizing recommendations. </p> 
      * <p>This preference is only available for the Amazon EC2 instance resource
      * type.</p> 
@@ -440,7 +440,7 @@ namespace Model
     inline EffectiveRecommendationPreferences& AddUtilizationPreferences(const UtilizationPreference& value) { m_utilizationPreferencesHasBeenSet = true; m_utilizationPreferences.push_back(value); return *this; }
 
     /**
-     * <p> The resource’s CPU utilization threshold preferences, such as threshold and
+     * <p> The resource’s CPU and memory utilization preferences, such as threshold and
      * headroom, that are used to generate rightsizing recommendations. </p> 
      * <p>This preference is only available for the Amazon EC2 instance resource
      * type.</p> 

@@ -131,6 +131,128 @@ namespace Model
 
 
     /**
+     * <p>A map of allowed VPC IDs and their rule descriptions.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetVpcIdRestrictionRuleMap() const{ return m_vpcIdRestrictionRuleMap; }
+
+    /**
+     * <p>A map of allowed VPC IDs and their rule descriptions.</p>
+     */
+    inline void SetVpcIdRestrictionRuleMap(const Aws::Map<Aws::String, Aws::String>& value) { m_vpcIdRestrictionRuleMap = value; }
+
+    /**
+     * <p>A map of allowed VPC IDs and their rule descriptions.</p>
+     */
+    inline void SetVpcIdRestrictionRuleMap(Aws::Map<Aws::String, Aws::String>&& value) { m_vpcIdRestrictionRuleMap = std::move(value); }
+
+    /**
+     * <p>A map of allowed VPC IDs and their rule descriptions.</p>
+     */
+    inline DescribeIpRestrictionResult& WithVpcIdRestrictionRuleMap(const Aws::Map<Aws::String, Aws::String>& value) { SetVpcIdRestrictionRuleMap(value); return *this;}
+
+    /**
+     * <p>A map of allowed VPC IDs and their rule descriptions.</p>
+     */
+    inline DescribeIpRestrictionResult& WithVpcIdRestrictionRuleMap(Aws::Map<Aws::String, Aws::String>&& value) { SetVpcIdRestrictionRuleMap(std::move(value)); return *this;}
+
+    /**
+     * <p>A map of allowed VPC IDs and their rule descriptions.</p>
+     */
+    inline DescribeIpRestrictionResult& AddVpcIdRestrictionRuleMap(const Aws::String& key, const Aws::String& value) { m_vpcIdRestrictionRuleMap.emplace(key, value); return *this; }
+
+    /**
+     * <p>A map of allowed VPC IDs and their rule descriptions.</p>
+     */
+    inline DescribeIpRestrictionResult& AddVpcIdRestrictionRuleMap(Aws::String&& key, const Aws::String& value) { m_vpcIdRestrictionRuleMap.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>A map of allowed VPC IDs and their rule descriptions.</p>
+     */
+    inline DescribeIpRestrictionResult& AddVpcIdRestrictionRuleMap(const Aws::String& key, Aws::String&& value) { m_vpcIdRestrictionRuleMap.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A map of allowed VPC IDs and their rule descriptions.</p>
+     */
+    inline DescribeIpRestrictionResult& AddVpcIdRestrictionRuleMap(Aws::String&& key, Aws::String&& value) { m_vpcIdRestrictionRuleMap.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>A map of allowed VPC IDs and their rule descriptions.</p>
+     */
+    inline DescribeIpRestrictionResult& AddVpcIdRestrictionRuleMap(const char* key, Aws::String&& value) { m_vpcIdRestrictionRuleMap.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A map of allowed VPC IDs and their rule descriptions.</p>
+     */
+    inline DescribeIpRestrictionResult& AddVpcIdRestrictionRuleMap(Aws::String&& key, const char* value) { m_vpcIdRestrictionRuleMap.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>A map of allowed VPC IDs and their rule descriptions.</p>
+     */
+    inline DescribeIpRestrictionResult& AddVpcIdRestrictionRuleMap(const char* key, const char* value) { m_vpcIdRestrictionRuleMap.emplace(key, value); return *this; }
+
+
+    /**
+     * <p>A map of allowed VPC endpoint IDs and their rule descriptions.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetVpcEndpointIdRestrictionRuleMap() const{ return m_vpcEndpointIdRestrictionRuleMap; }
+
+    /**
+     * <p>A map of allowed VPC endpoint IDs and their rule descriptions.</p>
+     */
+    inline void SetVpcEndpointIdRestrictionRuleMap(const Aws::Map<Aws::String, Aws::String>& value) { m_vpcEndpointIdRestrictionRuleMap = value; }
+
+    /**
+     * <p>A map of allowed VPC endpoint IDs and their rule descriptions.</p>
+     */
+    inline void SetVpcEndpointIdRestrictionRuleMap(Aws::Map<Aws::String, Aws::String>&& value) { m_vpcEndpointIdRestrictionRuleMap = std::move(value); }
+
+    /**
+     * <p>A map of allowed VPC endpoint IDs and their rule descriptions.</p>
+     */
+    inline DescribeIpRestrictionResult& WithVpcEndpointIdRestrictionRuleMap(const Aws::Map<Aws::String, Aws::String>& value) { SetVpcEndpointIdRestrictionRuleMap(value); return *this;}
+
+    /**
+     * <p>A map of allowed VPC endpoint IDs and their rule descriptions.</p>
+     */
+    inline DescribeIpRestrictionResult& WithVpcEndpointIdRestrictionRuleMap(Aws::Map<Aws::String, Aws::String>&& value) { SetVpcEndpointIdRestrictionRuleMap(std::move(value)); return *this;}
+
+    /**
+     * <p>A map of allowed VPC endpoint IDs and their rule descriptions.</p>
+     */
+    inline DescribeIpRestrictionResult& AddVpcEndpointIdRestrictionRuleMap(const Aws::String& key, const Aws::String& value) { m_vpcEndpointIdRestrictionRuleMap.emplace(key, value); return *this; }
+
+    /**
+     * <p>A map of allowed VPC endpoint IDs and their rule descriptions.</p>
+     */
+    inline DescribeIpRestrictionResult& AddVpcEndpointIdRestrictionRuleMap(Aws::String&& key, const Aws::String& value) { m_vpcEndpointIdRestrictionRuleMap.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>A map of allowed VPC endpoint IDs and their rule descriptions.</p>
+     */
+    inline DescribeIpRestrictionResult& AddVpcEndpointIdRestrictionRuleMap(const Aws::String& key, Aws::String&& value) { m_vpcEndpointIdRestrictionRuleMap.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A map of allowed VPC endpoint IDs and their rule descriptions.</p>
+     */
+    inline DescribeIpRestrictionResult& AddVpcEndpointIdRestrictionRuleMap(Aws::String&& key, Aws::String&& value) { m_vpcEndpointIdRestrictionRuleMap.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>A map of allowed VPC endpoint IDs and their rule descriptions.</p>
+     */
+    inline DescribeIpRestrictionResult& AddVpcEndpointIdRestrictionRuleMap(const char* key, Aws::String&& value) { m_vpcEndpointIdRestrictionRuleMap.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A map of allowed VPC endpoint IDs and their rule descriptions.</p>
+     */
+    inline DescribeIpRestrictionResult& AddVpcEndpointIdRestrictionRuleMap(Aws::String&& key, const char* value) { m_vpcEndpointIdRestrictionRuleMap.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>A map of allowed VPC endpoint IDs and their rule descriptions.</p>
+     */
+    inline DescribeIpRestrictionResult& AddVpcEndpointIdRestrictionRuleMap(const char* key, const char* value) { m_vpcEndpointIdRestrictionRuleMap.emplace(key, value); return *this; }
+
+
+    /**
      * <p>A value that specifies whether IP rules are turned on.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
@@ -188,6 +310,10 @@ namespace Model
     Aws::String m_awsAccountId;
 
     Aws::Map<Aws::String, Aws::String> m_ipRestrictionRuleMap;
+
+    Aws::Map<Aws::String, Aws::String> m_vpcIdRestrictionRuleMap;
+
+    Aws::Map<Aws::String, Aws::String> m_vpcEndpointIdRestrictionRuleMap;
 
     bool m_enabled;
 
