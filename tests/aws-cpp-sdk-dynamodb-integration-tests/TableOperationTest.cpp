@@ -175,6 +175,7 @@ protected:
         config.httpLibOverride = transferType;
         config.executor = Aws::MakeShared<Aws::Utils::Threading::PooledThreadExecutor>(ALLOCATION_TAG, 4);
         config.disableExpectHeader = true;
+        config.enableHttpClientTrace = true;
 
         //to test proxy functionality, uncomment the next two lines.
         //config.proxyHost = "localhost";
