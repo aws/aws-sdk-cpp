@@ -180,6 +180,27 @@ namespace Model
      */
     inline ListMonitorsRequest& WithMonitorStatus(const char* value) { SetMonitorStatus(value); return *this;}
 
+
+    /**
+     * <p>TBD </p>
+     */
+    inline bool GetIncludeLinkedAccounts() const{ return m_includeLinkedAccounts; }
+
+    /**
+     * <p>TBD </p>
+     */
+    inline bool IncludeLinkedAccountsHasBeenSet() const { return m_includeLinkedAccountsHasBeenSet; }
+
+    /**
+     * <p>TBD </p>
+     */
+    inline void SetIncludeLinkedAccounts(bool value) { m_includeLinkedAccountsHasBeenSet = true; m_includeLinkedAccounts = value; }
+
+    /**
+     * <p>TBD </p>
+     */
+    inline ListMonitorsRequest& WithIncludeLinkedAccounts(bool value) { SetIncludeLinkedAccounts(value); return *this;}
+
   private:
 
     Aws::String m_nextToken;
@@ -190,6 +211,9 @@ namespace Model
 
     Aws::String m_monitorStatus;
     bool m_monitorStatusHasBeenSet = false;
+
+    bool m_includeLinkedAccounts;
+    bool m_includeLinkedAccountsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -19,7 +19,9 @@ ListMonitorsRequest::ListMonitorsRequest() :
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
-    m_monitorStatusHasBeenSet(false)
+    m_monitorStatusHasBeenSet(false),
+    m_includeLinkedAccounts(false),
+    m_includeLinkedAccountsHasBeenSet(false)
 {
 }
 
@@ -49,6 +51,13 @@ void ListMonitorsRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_monitorStatus;
       uri.AddQueryStringParameter("MonitorStatus", ss.str());
+      ss.str("");
+    }
+
+    if(m_includeLinkedAccountsHasBeenSet)
+    {
+      ss << m_includeLinkedAccounts;
+      uri.AddQueryStringParameter("IncludeLinkedAccounts", ss.str());
       ss.str("");
     }
 

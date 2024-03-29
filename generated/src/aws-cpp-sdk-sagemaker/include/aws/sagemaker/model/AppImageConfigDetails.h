@@ -9,6 +9,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/sagemaker/model/KernelGatewayImageConfig.h>
 #include <aws/sagemaker/model/JupyterLabAppImageConfig.h>
+#include <aws/sagemaker/model/CodeEditorAppImageConfig.h>
 #include <utility>
 
 namespace Aws
@@ -252,6 +253,43 @@ namespace Model
      */
     inline AppImageConfigDetails& WithJupyterLabAppImageConfig(JupyterLabAppImageConfig&& value) { SetJupyterLabAppImageConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The configuration for the file system and the runtime, such as the
+     * environment variables and entry point.</p>
+     */
+    inline const CodeEditorAppImageConfig& GetCodeEditorAppImageConfig() const{ return m_codeEditorAppImageConfig; }
+
+    /**
+     * <p>The configuration for the file system and the runtime, such as the
+     * environment variables and entry point.</p>
+     */
+    inline bool CodeEditorAppImageConfigHasBeenSet() const { return m_codeEditorAppImageConfigHasBeenSet; }
+
+    /**
+     * <p>The configuration for the file system and the runtime, such as the
+     * environment variables and entry point.</p>
+     */
+    inline void SetCodeEditorAppImageConfig(const CodeEditorAppImageConfig& value) { m_codeEditorAppImageConfigHasBeenSet = true; m_codeEditorAppImageConfig = value; }
+
+    /**
+     * <p>The configuration for the file system and the runtime, such as the
+     * environment variables and entry point.</p>
+     */
+    inline void SetCodeEditorAppImageConfig(CodeEditorAppImageConfig&& value) { m_codeEditorAppImageConfigHasBeenSet = true; m_codeEditorAppImageConfig = std::move(value); }
+
+    /**
+     * <p>The configuration for the file system and the runtime, such as the
+     * environment variables and entry point.</p>
+     */
+    inline AppImageConfigDetails& WithCodeEditorAppImageConfig(const CodeEditorAppImageConfig& value) { SetCodeEditorAppImageConfig(value); return *this;}
+
+    /**
+     * <p>The configuration for the file system and the runtime, such as the
+     * environment variables and entry point.</p>
+     */
+    inline AppImageConfigDetails& WithCodeEditorAppImageConfig(CodeEditorAppImageConfig&& value) { SetCodeEditorAppImageConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_appImageConfigArn;
@@ -271,6 +309,9 @@ namespace Model
 
     JupyterLabAppImageConfig m_jupyterLabAppImageConfig;
     bool m_jupyterLabAppImageConfigHasBeenSet = false;
+
+    CodeEditorAppImageConfig m_codeEditorAppImageConfig;
+    bool m_codeEditorAppImageConfigHasBeenSet = false;
   };
 
 } // namespace Model

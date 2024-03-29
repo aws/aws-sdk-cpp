@@ -11,6 +11,10 @@
 
 namespace Aws
 {
+namespace Http
+{
+    class URI;
+} //namespace Http
 namespace InternetMonitor
 {
 namespace Model
@@ -30,6 +34,8 @@ namespace Model
     inline virtual const char* GetServiceRequestName() const override { return "GetHealthEvent"; }
 
     AWS_INTERNETMONITOR_API Aws::String SerializePayload() const override;
+
+    AWS_INTERNETMONITOR_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
     /**
@@ -129,6 +135,47 @@ namespace Model
      */
     inline GetHealthEventRequest& WithEventId(const char* value) { SetEventId(value); return *this;}
 
+
+    /**
+     * <p>TBD </p>
+     */
+    inline const Aws::String& GetLinkedAccountId() const{ return m_linkedAccountId; }
+
+    /**
+     * <p>TBD </p>
+     */
+    inline bool LinkedAccountIdHasBeenSet() const { return m_linkedAccountIdHasBeenSet; }
+
+    /**
+     * <p>TBD </p>
+     */
+    inline void SetLinkedAccountId(const Aws::String& value) { m_linkedAccountIdHasBeenSet = true; m_linkedAccountId = value; }
+
+    /**
+     * <p>TBD </p>
+     */
+    inline void SetLinkedAccountId(Aws::String&& value) { m_linkedAccountIdHasBeenSet = true; m_linkedAccountId = std::move(value); }
+
+    /**
+     * <p>TBD </p>
+     */
+    inline void SetLinkedAccountId(const char* value) { m_linkedAccountIdHasBeenSet = true; m_linkedAccountId.assign(value); }
+
+    /**
+     * <p>TBD </p>
+     */
+    inline GetHealthEventRequest& WithLinkedAccountId(const Aws::String& value) { SetLinkedAccountId(value); return *this;}
+
+    /**
+     * <p>TBD </p>
+     */
+    inline GetHealthEventRequest& WithLinkedAccountId(Aws::String&& value) { SetLinkedAccountId(std::move(value)); return *this;}
+
+    /**
+     * <p>TBD </p>
+     */
+    inline GetHealthEventRequest& WithLinkedAccountId(const char* value) { SetLinkedAccountId(value); return *this;}
+
   private:
 
     Aws::String m_monitorName;
@@ -136,6 +183,9 @@ namespace Model
 
     Aws::String m_eventId;
     bool m_eventIdHasBeenSet = false;
+
+    Aws::String m_linkedAccountId;
+    bool m_linkedAccountIdHasBeenSet = false;
   };
 
 } // namespace Model

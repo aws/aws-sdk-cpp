@@ -28,7 +28,10 @@ namespace IoTWireless
    * for sending a downlink message to devices in the group. By using Firmware
    * Updates Over-The-Air (FUOTA) API operations, you can create a FUOTA task and
    * schedule a session to update the firmware of individual devices or an entire
-   * group of devices in a multicast group.</p>
+   * group of devices in a multicast group.</p> <p>To connect to the AWS IoT Wireless
+   * Service, use the Service endpoints as described in <a
+   * href="https://docs.aws.amazon.com/general/latest/gr/iot-lorawan.html#iot-wireless_region">IoT
+   * Wireless Service endpoints</a> in the <i>AWS General Reference</i>.</p>
    */
   class AWS_IOTWIRELESS_API IoTWirelessClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<IoTWirelessClient>
   {
@@ -1181,6 +1184,57 @@ namespace IoTWireless
         void GetLogLevelsByResourceTypesAsync(const GetLogLevelsByResourceTypesRequestT& request, const GetLogLevelsByResourceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&IoTWirelessClient::GetLogLevelsByResourceTypes, request, handler, context);
+        }
+
+        /**
+         * <p>Get the metric configuration status for this account.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetMetricConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetMetricConfigurationOutcome GetMetricConfiguration(const Model::GetMetricConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetMetricConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetMetricConfigurationRequestT = Model::GetMetricConfigurationRequest>
+        Model::GetMetricConfigurationOutcomeCallable GetMetricConfigurationCallable(const GetMetricConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&IoTWirelessClient::GetMetricConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for GetMetricConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetMetricConfigurationRequestT = Model::GetMetricConfigurationRequest>
+        void GetMetricConfigurationAsync(const GetMetricConfigurationRequestT& request, const GetMetricConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTWirelessClient::GetMetricConfiguration, request, handler, context);
+        }
+
+        /**
+         * <p>Get metrics.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetMetrics">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetMetricsOutcome GetMetrics(const Model::GetMetricsRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetMetrics that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetMetricsRequestT = Model::GetMetricsRequest>
+        Model::GetMetricsOutcomeCallable GetMetricsCallable(const GetMetricsRequestT& request) const
+        {
+            return SubmitCallable(&IoTWirelessClient::GetMetrics, request);
+        }
+
+        /**
+         * An Async wrapper for GetMetrics that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetMetricsRequestT = Model::GetMetricsRequest>
+        void GetMetricsAsync(const GetMetricsRequestT& request, const GetMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTWirelessClient::GetMetrics, request, handler, context);
         }
 
         /**
@@ -2553,6 +2607,31 @@ namespace IoTWireless
         void UpdateLogLevelsByResourceTypesAsync(const UpdateLogLevelsByResourceTypesRequestT& request, const UpdateLogLevelsByResourceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&IoTWirelessClient::UpdateLogLevelsByResourceTypes, request, handler, context);
+        }
+
+        /**
+         * <p>Update the metric configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateMetricConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateMetricConfigurationOutcome UpdateMetricConfiguration(const Model::UpdateMetricConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateMetricConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateMetricConfigurationRequestT = Model::UpdateMetricConfigurationRequest>
+        Model::UpdateMetricConfigurationOutcomeCallable UpdateMetricConfigurationCallable(const UpdateMetricConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&IoTWirelessClient::UpdateMetricConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateMetricConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateMetricConfigurationRequestT = Model::UpdateMetricConfigurationRequest>
+        void UpdateMetricConfigurationAsync(const UpdateMetricConfigurationRequestT& request, const UpdateMetricConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTWirelessClient::UpdateMetricConfiguration, request, handler, context);
         }
 
         /**

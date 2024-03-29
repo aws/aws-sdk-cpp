@@ -8,6 +8,7 @@
 #include <aws/marketplace-catalog/model/OfferEntityIdFilter.h>
 #include <aws/marketplace-catalog/model/OfferNameFilter.h>
 #include <aws/marketplace-catalog/model/OfferProductIdFilter.h>
+#include <aws/marketplace-catalog/model/OfferResaleAuthorizationIdFilter.h>
 #include <aws/marketplace-catalog/model/OfferReleaseDateFilter.h>
 #include <aws/marketplace-catalog/model/OfferAvailabilityEndDateFilter.h>
 #include <aws/marketplace-catalog/model/OfferBuyerAccountsFilter.h>
@@ -138,6 +139,49 @@ namespace Model
      * <p>Allows filtering on the <code>ProductId</code> of an offer.</p>
      */
     inline OfferFilters& WithProductId(OfferProductIdFilter&& value) { SetProductId(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Allows filtering on the <code>ResaleAuthorizationId</code> of an offer.</p>
+     *  <p>Not all offers have a <code>ResaleAuthorizationId</code>. The response
+     * will only include offers for which you have permissions.</p> 
+     */
+    inline const OfferResaleAuthorizationIdFilter& GetResaleAuthorizationId() const{ return m_resaleAuthorizationId; }
+
+    /**
+     * <p>Allows filtering on the <code>ResaleAuthorizationId</code> of an offer.</p>
+     *  <p>Not all offers have a <code>ResaleAuthorizationId</code>. The response
+     * will only include offers for which you have permissions.</p> 
+     */
+    inline bool ResaleAuthorizationIdHasBeenSet() const { return m_resaleAuthorizationIdHasBeenSet; }
+
+    /**
+     * <p>Allows filtering on the <code>ResaleAuthorizationId</code> of an offer.</p>
+     *  <p>Not all offers have a <code>ResaleAuthorizationId</code>. The response
+     * will only include offers for which you have permissions.</p> 
+     */
+    inline void SetResaleAuthorizationId(const OfferResaleAuthorizationIdFilter& value) { m_resaleAuthorizationIdHasBeenSet = true; m_resaleAuthorizationId = value; }
+
+    /**
+     * <p>Allows filtering on the <code>ResaleAuthorizationId</code> of an offer.</p>
+     *  <p>Not all offers have a <code>ResaleAuthorizationId</code>. The response
+     * will only include offers for which you have permissions.</p> 
+     */
+    inline void SetResaleAuthorizationId(OfferResaleAuthorizationIdFilter&& value) { m_resaleAuthorizationIdHasBeenSet = true; m_resaleAuthorizationId = std::move(value); }
+
+    /**
+     * <p>Allows filtering on the <code>ResaleAuthorizationId</code> of an offer.</p>
+     *  <p>Not all offers have a <code>ResaleAuthorizationId</code>. The response
+     * will only include offers for which you have permissions.</p> 
+     */
+    inline OfferFilters& WithResaleAuthorizationId(const OfferResaleAuthorizationIdFilter& value) { SetResaleAuthorizationId(value); return *this;}
+
+    /**
+     * <p>Allows filtering on the <code>ResaleAuthorizationId</code> of an offer.</p>
+     *  <p>Not all offers have a <code>ResaleAuthorizationId</code>. The response
+     * will only include offers for which you have permissions.</p> 
+     */
+    inline OfferFilters& WithResaleAuthorizationId(OfferResaleAuthorizationIdFilter&& value) { SetResaleAuthorizationId(std::move(value)); return *this;}
 
 
     /**
@@ -335,6 +379,9 @@ namespace Model
 
     OfferProductIdFilter m_productId;
     bool m_productIdHasBeenSet = false;
+
+    OfferResaleAuthorizationIdFilter m_resaleAuthorizationId;
+    bool m_resaleAuthorizationIdHasBeenSet = false;
 
     OfferReleaseDateFilter m_releaseDate;
     bool m_releaseDateHasBeenSet = false;

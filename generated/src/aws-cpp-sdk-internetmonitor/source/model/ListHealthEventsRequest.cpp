@@ -23,7 +23,8 @@ ListHealthEventsRequest::ListHealthEventsRequest() :
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
     m_eventStatus(HealthEventStatus::NOT_SET),
-    m_eventStatusHasBeenSet(false)
+    m_eventStatusHasBeenSet(false),
+    m_linkedAccountIdHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,13 @@ void ListHealthEventsRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << HealthEventStatusMapper::GetNameForHealthEventStatus(m_eventStatus);
       uri.AddQueryStringParameter("EventStatus", ss.str());
+      ss.str("");
+    }
+
+    if(m_linkedAccountIdHasBeenSet)
+    {
+      ss << m_linkedAccountId;
+      uri.AddQueryStringParameter("LinkedAccountId", ss.str());
       ss.str("");
     }
 

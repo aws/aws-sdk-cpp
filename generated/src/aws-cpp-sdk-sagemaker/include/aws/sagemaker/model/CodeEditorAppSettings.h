@@ -7,6 +7,7 @@
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/sagemaker/model/ResourceSpec.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/sagemaker/model/CustomImage.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -59,6 +60,55 @@ namespace Model
 
     
     inline CodeEditorAppSettings& WithDefaultResourceSpec(ResourceSpec&& value) { SetDefaultResourceSpec(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A list of custom SageMaker images that are configured to run as a Code Editor
+     * app.</p>
+     */
+    inline const Aws::Vector<CustomImage>& GetCustomImages() const{ return m_customImages; }
+
+    /**
+     * <p>A list of custom SageMaker images that are configured to run as a Code Editor
+     * app.</p>
+     */
+    inline bool CustomImagesHasBeenSet() const { return m_customImagesHasBeenSet; }
+
+    /**
+     * <p>A list of custom SageMaker images that are configured to run as a Code Editor
+     * app.</p>
+     */
+    inline void SetCustomImages(const Aws::Vector<CustomImage>& value) { m_customImagesHasBeenSet = true; m_customImages = value; }
+
+    /**
+     * <p>A list of custom SageMaker images that are configured to run as a Code Editor
+     * app.</p>
+     */
+    inline void SetCustomImages(Aws::Vector<CustomImage>&& value) { m_customImagesHasBeenSet = true; m_customImages = std::move(value); }
+
+    /**
+     * <p>A list of custom SageMaker images that are configured to run as a Code Editor
+     * app.</p>
+     */
+    inline CodeEditorAppSettings& WithCustomImages(const Aws::Vector<CustomImage>& value) { SetCustomImages(value); return *this;}
+
+    /**
+     * <p>A list of custom SageMaker images that are configured to run as a Code Editor
+     * app.</p>
+     */
+    inline CodeEditorAppSettings& WithCustomImages(Aws::Vector<CustomImage>&& value) { SetCustomImages(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of custom SageMaker images that are configured to run as a Code Editor
+     * app.</p>
+     */
+    inline CodeEditorAppSettings& AddCustomImages(const CustomImage& value) { m_customImagesHasBeenSet = true; m_customImages.push_back(value); return *this; }
+
+    /**
+     * <p>A list of custom SageMaker images that are configured to run as a Code Editor
+     * app.</p>
+     */
+    inline CodeEditorAppSettings& AddCustomImages(CustomImage&& value) { m_customImagesHasBeenSet = true; m_customImages.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -119,6 +169,9 @@ namespace Model
 
     ResourceSpec m_defaultResourceSpec;
     bool m_defaultResourceSpecHasBeenSet = false;
+
+    Aws::Vector<CustomImage> m_customImages;
+    bool m_customImagesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_lifecycleConfigArns;
     bool m_lifecycleConfigArnsHasBeenSet = false;

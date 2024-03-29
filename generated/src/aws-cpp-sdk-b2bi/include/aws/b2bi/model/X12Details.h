@@ -87,38 +87,38 @@ namespace Model
 
 
     /**
-     * <p>Returns the version to use for the specified X12 transaction set. Supported
-     * versions are <code>4010</code>, <code>4030</code>, and <code>5010</code>.</p>
+     * <p>Returns the version to use for the specified X12 transaction set. <pre><code>
+     * &lt;/p&gt; </code></pre>
      */
     inline const X12Version& GetVersion() const{ return m_version; }
 
     /**
-     * <p>Returns the version to use for the specified X12 transaction set. Supported
-     * versions are <code>4010</code>, <code>4030</code>, and <code>5010</code>.</p>
+     * <p>Returns the version to use for the specified X12 transaction set. <pre><code>
+     * &lt;/p&gt; </code></pre>
      */
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
     /**
-     * <p>Returns the version to use for the specified X12 transaction set. Supported
-     * versions are <code>4010</code>, <code>4030</code>, and <code>5010</code>.</p>
+     * <p>Returns the version to use for the specified X12 transaction set. <pre><code>
+     * &lt;/p&gt; </code></pre>
      */
     inline void SetVersion(const X12Version& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
-     * <p>Returns the version to use for the specified X12 transaction set. Supported
-     * versions are <code>4010</code>, <code>4030</code>, and <code>5010</code>.</p>
+     * <p>Returns the version to use for the specified X12 transaction set. <pre><code>
+     * &lt;/p&gt; </code></pre>
      */
     inline void SetVersion(X12Version&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
 
     /**
-     * <p>Returns the version to use for the specified X12 transaction set. Supported
-     * versions are <code>4010</code>, <code>4030</code>, and <code>5010</code>.</p>
+     * <p>Returns the version to use for the specified X12 transaction set. <pre><code>
+     * &lt;/p&gt; </code></pre>
      */
     inline X12Details& WithVersion(const X12Version& value) { SetVersion(value); return *this;}
 
     /**
-     * <p>Returns the version to use for the specified X12 transaction set. Supported
-     * versions are <code>4010</code>, <code>4030</code>, and <code>5010</code>.</p>
+     * <p>Returns the version to use for the specified X12 transaction set. <pre><code>
+     * &lt;/p&gt; </code></pre>
      */
     inline X12Details& WithVersion(X12Version&& value) { SetVersion(std::move(value)); return *this;}
 

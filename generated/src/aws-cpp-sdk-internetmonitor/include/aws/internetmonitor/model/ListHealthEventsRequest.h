@@ -253,6 +253,47 @@ namespace Model
      */
     inline ListHealthEventsRequest& WithEventStatus(HealthEventStatus&& value) { SetEventStatus(std::move(value)); return *this;}
 
+
+    /**
+     * <p>TBD </p>
+     */
+    inline const Aws::String& GetLinkedAccountId() const{ return m_linkedAccountId; }
+
+    /**
+     * <p>TBD </p>
+     */
+    inline bool LinkedAccountIdHasBeenSet() const { return m_linkedAccountIdHasBeenSet; }
+
+    /**
+     * <p>TBD </p>
+     */
+    inline void SetLinkedAccountId(const Aws::String& value) { m_linkedAccountIdHasBeenSet = true; m_linkedAccountId = value; }
+
+    /**
+     * <p>TBD </p>
+     */
+    inline void SetLinkedAccountId(Aws::String&& value) { m_linkedAccountIdHasBeenSet = true; m_linkedAccountId = std::move(value); }
+
+    /**
+     * <p>TBD </p>
+     */
+    inline void SetLinkedAccountId(const char* value) { m_linkedAccountIdHasBeenSet = true; m_linkedAccountId.assign(value); }
+
+    /**
+     * <p>TBD </p>
+     */
+    inline ListHealthEventsRequest& WithLinkedAccountId(const Aws::String& value) { SetLinkedAccountId(value); return *this;}
+
+    /**
+     * <p>TBD </p>
+     */
+    inline ListHealthEventsRequest& WithLinkedAccountId(Aws::String&& value) { SetLinkedAccountId(std::move(value)); return *this;}
+
+    /**
+     * <p>TBD </p>
+     */
+    inline ListHealthEventsRequest& WithLinkedAccountId(const char* value) { SetLinkedAccountId(value); return *this;}
+
   private:
 
     Aws::String m_monitorName;
@@ -272,6 +313,9 @@ namespace Model
 
     HealthEventStatus m_eventStatus;
     bool m_eventStatusHasBeenSet = false;
+
+    Aws::String m_linkedAccountId;
+    bool m_linkedAccountIdHasBeenSet = false;
   };
 
 } // namespace Model

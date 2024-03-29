@@ -23,6 +23,7 @@ namespace Aws
         static const int CREATING_HASH = HashingUtils::HashString("CREATING");
         static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
         static const int ROTATING_HASH = HashingUtils::HashString("ROTATING");
+        static const int PENDING_DELETION_HASH = HashingUtils::HashString("PENDING_DELETION");
         static const int DELETING_HASH = HashingUtils::HashString("DELETING");
         static const int CREATE_FAILED_HASH = HashingUtils::HashString("CREATE_FAILED");
         static const int UPDATE_ROLLBACK_FAILED_HASH = HashingUtils::HashString("UPDATE_ROLLBACK_FAILED");
@@ -43,6 +44,10 @@ namespace Aws
           else if (hashCode == ROTATING_HASH)
           {
             return FleetStatusCode::ROTATING;
+          }
+          else if (hashCode == PENDING_DELETION_HASH)
+          {
+            return FleetStatusCode::PENDING_DELETION;
           }
           else if (hashCode == DELETING_HASH)
           {
@@ -82,6 +87,8 @@ namespace Aws
             return "UPDATING";
           case FleetStatusCode::ROTATING:
             return "ROTATING";
+          case FleetStatusCode::PENDING_DELETION:
+            return "PENDING_DELETION";
           case FleetStatusCode::DELETING:
             return "DELETING";
           case FleetStatusCode::CREATE_FAILED:
