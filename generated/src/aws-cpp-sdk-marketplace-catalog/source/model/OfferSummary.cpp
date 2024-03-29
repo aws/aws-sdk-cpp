@@ -21,6 +21,7 @@ namespace Model
 OfferSummary::OfferSummary() : 
     m_nameHasBeenSet(false),
     m_productIdHasBeenSet(false),
+    m_resaleAuthorizationIdHasBeenSet(false),
     m_releaseDateHasBeenSet(false),
     m_availabilityEndDateHasBeenSet(false),
     m_buyerAccountsHasBeenSet(false),
@@ -33,6 +34,7 @@ OfferSummary::OfferSummary() :
 OfferSummary::OfferSummary(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_productIdHasBeenSet(false),
+    m_resaleAuthorizationIdHasBeenSet(false),
     m_releaseDateHasBeenSet(false),
     m_availabilityEndDateHasBeenSet(false),
     m_buyerAccountsHasBeenSet(false),
@@ -57,6 +59,13 @@ OfferSummary& OfferSummary::operator =(JsonView jsonValue)
     m_productId = jsonValue.GetString("ProductId");
 
     m_productIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ResaleAuthorizationId"))
+  {
+    m_resaleAuthorizationId = jsonValue.GetString("ResaleAuthorizationId");
+
+    m_resaleAuthorizationIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ReleaseDate"))
@@ -116,6 +125,12 @@ JsonValue OfferSummary::Jsonize() const
   if(m_productIdHasBeenSet)
   {
    payload.WithString("ProductId", m_productId);
+
+  }
+
+  if(m_resaleAuthorizationIdHasBeenSet)
+  {
+   payload.WithString("ResaleAuthorizationId", m_resaleAuthorizationId);
 
   }
 

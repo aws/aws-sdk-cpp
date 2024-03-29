@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/model/KernelGatewayImageConfig.h>
 #include <aws/sagemaker/model/JupyterLabAppImageConfig.h>
+#include <aws/sagemaker/model/CodeEditorAppImageConfig.h>
 #include <aws/sagemaker/model/Tag.h>
 #include <utility>
 
@@ -211,6 +212,49 @@ namespace Model
      */
     inline CreateAppImageConfigRequest& WithJupyterLabAppImageConfig(JupyterLabAppImageConfig&& value) { SetJupyterLabAppImageConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The <code>CodeEditorAppImageConfig</code>. You can only specify one image
+     * kernel in the AppImageConfig API. This kernel is shown to users before the image
+     * starts. After the image runs, all kernels are visible in Code Editor.</p>
+     */
+    inline const CodeEditorAppImageConfig& GetCodeEditorAppImageConfig() const{ return m_codeEditorAppImageConfig; }
+
+    /**
+     * <p>The <code>CodeEditorAppImageConfig</code>. You can only specify one image
+     * kernel in the AppImageConfig API. This kernel is shown to users before the image
+     * starts. After the image runs, all kernels are visible in Code Editor.</p>
+     */
+    inline bool CodeEditorAppImageConfigHasBeenSet() const { return m_codeEditorAppImageConfigHasBeenSet; }
+
+    /**
+     * <p>The <code>CodeEditorAppImageConfig</code>. You can only specify one image
+     * kernel in the AppImageConfig API. This kernel is shown to users before the image
+     * starts. After the image runs, all kernels are visible in Code Editor.</p>
+     */
+    inline void SetCodeEditorAppImageConfig(const CodeEditorAppImageConfig& value) { m_codeEditorAppImageConfigHasBeenSet = true; m_codeEditorAppImageConfig = value; }
+
+    /**
+     * <p>The <code>CodeEditorAppImageConfig</code>. You can only specify one image
+     * kernel in the AppImageConfig API. This kernel is shown to users before the image
+     * starts. After the image runs, all kernels are visible in Code Editor.</p>
+     */
+    inline void SetCodeEditorAppImageConfig(CodeEditorAppImageConfig&& value) { m_codeEditorAppImageConfigHasBeenSet = true; m_codeEditorAppImageConfig = std::move(value); }
+
+    /**
+     * <p>The <code>CodeEditorAppImageConfig</code>. You can only specify one image
+     * kernel in the AppImageConfig API. This kernel is shown to users before the image
+     * starts. After the image runs, all kernels are visible in Code Editor.</p>
+     */
+    inline CreateAppImageConfigRequest& WithCodeEditorAppImageConfig(const CodeEditorAppImageConfig& value) { SetCodeEditorAppImageConfig(value); return *this;}
+
+    /**
+     * <p>The <code>CodeEditorAppImageConfig</code>. You can only specify one image
+     * kernel in the AppImageConfig API. This kernel is shown to users before the image
+     * starts. After the image runs, all kernels are visible in Code Editor.</p>
+     */
+    inline CreateAppImageConfigRequest& WithCodeEditorAppImageConfig(CodeEditorAppImageConfig&& value) { SetCodeEditorAppImageConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_appImageConfigName;
@@ -224,6 +268,9 @@ namespace Model
 
     JupyterLabAppImageConfig m_jupyterLabAppImageConfig;
     bool m_jupyterLabAppImageConfigHasBeenSet = false;
+
+    CodeEditorAppImageConfig m_codeEditorAppImageConfig;
+    bool m_codeEditorAppImageConfigHasBeenSet = false;
   };
 
 } // namespace Model

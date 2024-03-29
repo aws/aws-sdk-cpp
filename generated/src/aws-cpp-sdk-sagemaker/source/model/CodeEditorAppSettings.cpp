@@ -20,12 +20,14 @@ namespace Model
 
 CodeEditorAppSettings::CodeEditorAppSettings() : 
     m_defaultResourceSpecHasBeenSet(false),
+    m_customImagesHasBeenSet(false),
     m_lifecycleConfigArnsHasBeenSet(false)
 {
 }
 
 CodeEditorAppSettings::CodeEditorAppSettings(JsonView jsonValue) : 
     m_defaultResourceSpecHasBeenSet(false),
+    m_customImagesHasBeenSet(false),
     m_lifecycleConfigArnsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -38,6 +40,16 @@ CodeEditorAppSettings& CodeEditorAppSettings::operator =(JsonView jsonValue)
     m_defaultResourceSpec = jsonValue.GetObject("DefaultResourceSpec");
 
     m_defaultResourceSpecHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CustomImages"))
+  {
+    Aws::Utils::Array<JsonView> customImagesJsonList = jsonValue.GetArray("CustomImages");
+    for(unsigned customImagesIndex = 0; customImagesIndex < customImagesJsonList.GetLength(); ++customImagesIndex)
+    {
+      m_customImages.push_back(customImagesJsonList[customImagesIndex].AsObject());
+    }
+    m_customImagesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("LifecycleConfigArns"))
@@ -60,6 +72,17 @@ JsonValue CodeEditorAppSettings::Jsonize() const
   if(m_defaultResourceSpecHasBeenSet)
   {
    payload.WithObject("DefaultResourceSpec", m_defaultResourceSpec.Jsonize());
+
+  }
+
+  if(m_customImagesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> customImagesJsonList(m_customImages.size());
+   for(unsigned customImagesIndex = 0; customImagesIndex < customImagesJsonList.GetLength(); ++customImagesIndex)
+   {
+     customImagesJsonList[customImagesIndex].AsObject(m_customImages[customImagesIndex].Jsonize());
+   }
+   payload.WithArray("CustomImages", std::move(customImagesJsonList));
 
   }
 

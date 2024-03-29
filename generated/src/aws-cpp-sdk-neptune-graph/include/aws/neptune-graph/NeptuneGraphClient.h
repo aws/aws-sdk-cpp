@@ -704,6 +704,33 @@ namespace NeptuneGraph
         }
 
         /**
+         * <p>Import data into existing Neptune Analytics graph from Amazon Simple Storage
+         * Service (S3). The graph needs to be empty and in the AVAILABLE
+         * state.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/StartImportTask">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartImportTaskOutcome StartImportTask(const Model::StartImportTaskRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartImportTask that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartImportTaskRequestT = Model::StartImportTaskRequest>
+        Model::StartImportTaskOutcomeCallable StartImportTaskCallable(const StartImportTaskRequestT& request) const
+        {
+            return SubmitCallable(&NeptuneGraphClient::StartImportTask, request);
+        }
+
+        /**
+         * An Async wrapper for StartImportTask that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartImportTaskRequestT = Model::StartImportTaskRequest>
+        void StartImportTaskAsync(const StartImportTaskRequestT& request, const StartImportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&NeptuneGraphClient::StartImportTask, request, handler, context);
+        }
+
+        /**
          * <p>Adds tags to the specified resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/neptune-graph-2023-11-29/TagResource">AWS
          * API Reference</a></p>

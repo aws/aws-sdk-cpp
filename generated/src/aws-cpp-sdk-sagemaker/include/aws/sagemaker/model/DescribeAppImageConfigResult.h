@@ -9,6 +9,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/sagemaker/model/KernelGatewayImageConfig.h>
 #include <aws/sagemaker/model/JupyterLabAppImageConfig.h>
+#include <aws/sagemaker/model/CodeEditorAppImageConfig.h>
 #include <utility>
 
 namespace Aws
@@ -211,6 +212,32 @@ namespace Model
     inline DescribeAppImageConfigResult& WithJupyterLabAppImageConfig(JupyterLabAppImageConfig&& value) { SetJupyterLabAppImageConfig(std::move(value)); return *this;}
 
 
+    /**
+     * <p>The configuration of the Code Editor app.</p>
+     */
+    inline const CodeEditorAppImageConfig& GetCodeEditorAppImageConfig() const{ return m_codeEditorAppImageConfig; }
+
+    /**
+     * <p>The configuration of the Code Editor app.</p>
+     */
+    inline void SetCodeEditorAppImageConfig(const CodeEditorAppImageConfig& value) { m_codeEditorAppImageConfig = value; }
+
+    /**
+     * <p>The configuration of the Code Editor app.</p>
+     */
+    inline void SetCodeEditorAppImageConfig(CodeEditorAppImageConfig&& value) { m_codeEditorAppImageConfig = std::move(value); }
+
+    /**
+     * <p>The configuration of the Code Editor app.</p>
+     */
+    inline DescribeAppImageConfigResult& WithCodeEditorAppImageConfig(const CodeEditorAppImageConfig& value) { SetCodeEditorAppImageConfig(value); return *this;}
+
+    /**
+     * <p>The configuration of the Code Editor app.</p>
+     */
+    inline DescribeAppImageConfigResult& WithCodeEditorAppImageConfig(CodeEditorAppImageConfig&& value) { SetCodeEditorAppImageConfig(std::move(value)); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -245,6 +272,8 @@ namespace Model
     KernelGatewayImageConfig m_kernelGatewayImageConfig;
 
     JupyterLabAppImageConfig m_jupyterLabAppImageConfig;
+
+    CodeEditorAppImageConfig m_codeEditorAppImageConfig;
 
     Aws::String m_requestId;
   };

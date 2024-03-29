@@ -79,83 +79,99 @@ namespace Model
 
 
     /**
-     * <p>The AppEUI value.</p>
+     * <p>The AppEUI value. You specify this value when using LoRaWAN versions v1.0.2
+     * or v1.0.3.</p>
      */
     inline const Aws::String& GetAppEui() const{ return m_appEui; }
 
     /**
-     * <p>The AppEUI value.</p>
+     * <p>The AppEUI value. You specify this value when using LoRaWAN versions v1.0.2
+     * or v1.0.3.</p>
      */
     inline bool AppEuiHasBeenSet() const { return m_appEuiHasBeenSet; }
 
     /**
-     * <p>The AppEUI value.</p>
+     * <p>The AppEUI value. You specify this value when using LoRaWAN versions v1.0.2
+     * or v1.0.3.</p>
      */
     inline void SetAppEui(const Aws::String& value) { m_appEuiHasBeenSet = true; m_appEui = value; }
 
     /**
-     * <p>The AppEUI value.</p>
+     * <p>The AppEUI value. You specify this value when using LoRaWAN versions v1.0.2
+     * or v1.0.3.</p>
      */
     inline void SetAppEui(Aws::String&& value) { m_appEuiHasBeenSet = true; m_appEui = std::move(value); }
 
     /**
-     * <p>The AppEUI value.</p>
+     * <p>The AppEUI value. You specify this value when using LoRaWAN versions v1.0.2
+     * or v1.0.3.</p>
      */
     inline void SetAppEui(const char* value) { m_appEuiHasBeenSet = true; m_appEui.assign(value); }
 
     /**
-     * <p>The AppEUI value.</p>
+     * <p>The AppEUI value. You specify this value when using LoRaWAN versions v1.0.2
+     * or v1.0.3.</p>
      */
     inline OtaaV1_0_x& WithAppEui(const Aws::String& value) { SetAppEui(value); return *this;}
 
     /**
-     * <p>The AppEUI value.</p>
+     * <p>The AppEUI value. You specify this value when using LoRaWAN versions v1.0.2
+     * or v1.0.3.</p>
      */
     inline OtaaV1_0_x& WithAppEui(Aws::String&& value) { SetAppEui(std::move(value)); return *this;}
 
     /**
-     * <p>The AppEUI value.</p>
+     * <p>The AppEUI value. You specify this value when using LoRaWAN versions v1.0.2
+     * or v1.0.3.</p>
      */
     inline OtaaV1_0_x& WithAppEui(const char* value) { SetAppEui(value); return *this;}
 
 
     /**
-     * <p>The JoinEUI value.</p>
+     * <p>The JoinEUI value. You specify this value instead of the AppEUI when using
+     * LoRaWAN version v1.0.4.</p>
      */
     inline const Aws::String& GetJoinEui() const{ return m_joinEui; }
 
     /**
-     * <p>The JoinEUI value.</p>
+     * <p>The JoinEUI value. You specify this value instead of the AppEUI when using
+     * LoRaWAN version v1.0.4.</p>
      */
     inline bool JoinEuiHasBeenSet() const { return m_joinEuiHasBeenSet; }
 
     /**
-     * <p>The JoinEUI value.</p>
+     * <p>The JoinEUI value. You specify this value instead of the AppEUI when using
+     * LoRaWAN version v1.0.4.</p>
      */
     inline void SetJoinEui(const Aws::String& value) { m_joinEuiHasBeenSet = true; m_joinEui = value; }
 
     /**
-     * <p>The JoinEUI value.</p>
+     * <p>The JoinEUI value. You specify this value instead of the AppEUI when using
+     * LoRaWAN version v1.0.4.</p>
      */
     inline void SetJoinEui(Aws::String&& value) { m_joinEuiHasBeenSet = true; m_joinEui = std::move(value); }
 
     /**
-     * <p>The JoinEUI value.</p>
+     * <p>The JoinEUI value. You specify this value instead of the AppEUI when using
+     * LoRaWAN version v1.0.4.</p>
      */
     inline void SetJoinEui(const char* value) { m_joinEuiHasBeenSet = true; m_joinEui.assign(value); }
 
     /**
-     * <p>The JoinEUI value.</p>
+     * <p>The JoinEUI value. You specify this value instead of the AppEUI when using
+     * LoRaWAN version v1.0.4.</p>
      */
     inline OtaaV1_0_x& WithJoinEui(const Aws::String& value) { SetJoinEui(value); return *this;}
 
     /**
-     * <p>The JoinEUI value.</p>
+     * <p>The JoinEUI value. You specify this value instead of the AppEUI when using
+     * LoRaWAN version v1.0.4.</p>
      */
     inline OtaaV1_0_x& WithJoinEui(Aws::String&& value) { SetJoinEui(std::move(value)); return *this;}
 
     /**
-     * <p>The JoinEUI value.</p>
+     * <p>The JoinEUI value. You specify this value instead of the AppEUI when using
+     * LoRaWAN version v1.0.4.</p>
      */
     inline OtaaV1_0_x& WithJoinEui(const char* value) { SetJoinEui(value); return *this;}
 

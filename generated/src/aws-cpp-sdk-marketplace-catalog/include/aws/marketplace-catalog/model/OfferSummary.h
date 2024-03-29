@@ -123,6 +123,47 @@ namespace Model
 
 
     /**
+     * <p>The ResaleAuthorizationId of the offer.</p>
+     */
+    inline const Aws::String& GetResaleAuthorizationId() const{ return m_resaleAuthorizationId; }
+
+    /**
+     * <p>The ResaleAuthorizationId of the offer.</p>
+     */
+    inline bool ResaleAuthorizationIdHasBeenSet() const { return m_resaleAuthorizationIdHasBeenSet; }
+
+    /**
+     * <p>The ResaleAuthorizationId of the offer.</p>
+     */
+    inline void SetResaleAuthorizationId(const Aws::String& value) { m_resaleAuthorizationIdHasBeenSet = true; m_resaleAuthorizationId = value; }
+
+    /**
+     * <p>The ResaleAuthorizationId of the offer.</p>
+     */
+    inline void SetResaleAuthorizationId(Aws::String&& value) { m_resaleAuthorizationIdHasBeenSet = true; m_resaleAuthorizationId = std::move(value); }
+
+    /**
+     * <p>The ResaleAuthorizationId of the offer.</p>
+     */
+    inline void SetResaleAuthorizationId(const char* value) { m_resaleAuthorizationIdHasBeenSet = true; m_resaleAuthorizationId.assign(value); }
+
+    /**
+     * <p>The ResaleAuthorizationId of the offer.</p>
+     */
+    inline OfferSummary& WithResaleAuthorizationId(const Aws::String& value) { SetResaleAuthorizationId(value); return *this;}
+
+    /**
+     * <p>The ResaleAuthorizationId of the offer.</p>
+     */
+    inline OfferSummary& WithResaleAuthorizationId(Aws::String&& value) { SetResaleAuthorizationId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ResaleAuthorizationId of the offer.</p>
+     */
+    inline OfferSummary& WithResaleAuthorizationId(const char* value) { SetResaleAuthorizationId(value); return *this;}
+
+
+    /**
      * <p>The release date of the offer.</p>
      */
     inline const Aws::String& GetReleaseDate() const{ return m_releaseDate; }
@@ -328,6 +369,9 @@ namespace Model
 
     Aws::String m_productId;
     bool m_productIdHasBeenSet = false;
+
+    Aws::String m_resaleAuthorizationId;
+    bool m_resaleAuthorizationIdHasBeenSet = false;
 
     Aws::String m_releaseDate;
     bool m_releaseDateHasBeenSet = false;

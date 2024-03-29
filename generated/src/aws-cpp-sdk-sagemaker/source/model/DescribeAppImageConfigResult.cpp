@@ -65,6 +65,12 @@ DescribeAppImageConfigResult& DescribeAppImageConfigResult::operator =(const Aws
 
   }
 
+  if(jsonValue.ValueExists("CodeEditorAppImageConfig"))
+  {
+    m_codeEditorAppImageConfig = jsonValue.GetObject("CodeEditorAppImageConfig");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

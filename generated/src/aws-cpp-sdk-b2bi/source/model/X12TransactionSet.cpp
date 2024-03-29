@@ -24,17 +24,39 @@ namespace Aws
         static const int X12_180_HASH = HashingUtils::HashString("X12_180");
         static const int X12_204_HASH = HashingUtils::HashString("X12_204");
         static const int X12_210_HASH = HashingUtils::HashString("X12_210");
+        static const int X12_211_HASH = HashingUtils::HashString("X12_211");
         static const int X12_214_HASH = HashingUtils::HashString("X12_214");
         static const int X12_215_HASH = HashingUtils::HashString("X12_215");
+        static const int X12_259_HASH = HashingUtils::HashString("X12_259");
+        static const int X12_260_HASH = HashingUtils::HashString("X12_260");
+        static const int X12_266_HASH = HashingUtils::HashString("X12_266");
+        static const int X12_269_HASH = HashingUtils::HashString("X12_269");
+        static const int X12_270_HASH = HashingUtils::HashString("X12_270");
+        static const int X12_271_HASH = HashingUtils::HashString("X12_271");
+        static const int X12_274_HASH = HashingUtils::HashString("X12_274");
+        static const int X12_275_HASH = HashingUtils::HashString("X12_275");
+        static const int X12_276_HASH = HashingUtils::HashString("X12_276");
+        static const int X12_277_HASH = HashingUtils::HashString("X12_277");
+        static const int X12_278_HASH = HashingUtils::HashString("X12_278");
         static const int X12_310_HASH = HashingUtils::HashString("X12_310");
         static const int X12_315_HASH = HashingUtils::HashString("X12_315");
         static const int X12_322_HASH = HashingUtils::HashString("X12_322");
         static const int X12_404_HASH = HashingUtils::HashString("X12_404");
         static const int X12_410_HASH = HashingUtils::HashString("X12_410");
+        static const int X12_417_HASH = HashingUtils::HashString("X12_417");
+        static const int X12_421_HASH = HashingUtils::HashString("X12_421");
+        static const int X12_426_HASH = HashingUtils::HashString("X12_426");
+        static const int X12_810_HASH = HashingUtils::HashString("X12_810");
         static const int X12_820_HASH = HashingUtils::HashString("X12_820");
         static const int X12_824_HASH = HashingUtils::HashString("X12_824");
         static const int X12_830_HASH = HashingUtils::HashString("X12_830");
+        static const int X12_832_HASH = HashingUtils::HashString("X12_832");
+        static const int X12_834_HASH = HashingUtils::HashString("X12_834");
+        static const int X12_835_HASH = HashingUtils::HashString("X12_835");
+        static const int X12_837_HASH = HashingUtils::HashString("X12_837");
+        static const int X12_844_HASH = HashingUtils::HashString("X12_844");
         static const int X12_846_HASH = HashingUtils::HashString("X12_846");
+        static const int X12_849_HASH = HashingUtils::HashString("X12_849");
         static const int X12_850_HASH = HashingUtils::HashString("X12_850");
         static const int X12_852_HASH = HashingUtils::HashString("X12_852");
         static const int X12_855_HASH = HashingUtils::HashString("X12_855");
@@ -42,9 +64,14 @@ namespace Aws
         static const int X12_860_HASH = HashingUtils::HashString("X12_860");
         static const int X12_861_HASH = HashingUtils::HashString("X12_861");
         static const int X12_864_HASH = HashingUtils::HashString("X12_864");
+        static const int X12_865_HASH = HashingUtils::HashString("X12_865");
+        static const int X12_869_HASH = HashingUtils::HashString("X12_869");
+        static const int X12_870_HASH = HashingUtils::HashString("X12_870");
         static const int X12_940_HASH = HashingUtils::HashString("X12_940");
+        static const int X12_945_HASH = HashingUtils::HashString("X12_945");
         static const int X12_990_HASH = HashingUtils::HashString("X12_990");
         static const int X12_997_HASH = HashingUtils::HashString("X12_997");
+        static const int X12_999_HASH = HashingUtils::HashString("X12_999");
 
 
         X12TransactionSet GetX12TransactionSetForName(const Aws::String& name)
@@ -66,6 +93,10 @@ namespace Aws
           {
             return X12TransactionSet::X12_210;
           }
+          else if (hashCode == X12_211_HASH)
+          {
+            return X12TransactionSet::X12_211;
+          }
           else if (hashCode == X12_214_HASH)
           {
             return X12TransactionSet::X12_214;
@@ -73,6 +104,50 @@ namespace Aws
           else if (hashCode == X12_215_HASH)
           {
             return X12TransactionSet::X12_215;
+          }
+          else if (hashCode == X12_259_HASH)
+          {
+            return X12TransactionSet::X12_259;
+          }
+          else if (hashCode == X12_260_HASH)
+          {
+            return X12TransactionSet::X12_260;
+          }
+          else if (hashCode == X12_266_HASH)
+          {
+            return X12TransactionSet::X12_266;
+          }
+          else if (hashCode == X12_269_HASH)
+          {
+            return X12TransactionSet::X12_269;
+          }
+          else if (hashCode == X12_270_HASH)
+          {
+            return X12TransactionSet::X12_270;
+          }
+          else if (hashCode == X12_271_HASH)
+          {
+            return X12TransactionSet::X12_271;
+          }
+          else if (hashCode == X12_274_HASH)
+          {
+            return X12TransactionSet::X12_274;
+          }
+          else if (hashCode == X12_275_HASH)
+          {
+            return X12TransactionSet::X12_275;
+          }
+          else if (hashCode == X12_276_HASH)
+          {
+            return X12TransactionSet::X12_276;
+          }
+          else if (hashCode == X12_277_HASH)
+          {
+            return X12TransactionSet::X12_277;
+          }
+          else if (hashCode == X12_278_HASH)
+          {
+            return X12TransactionSet::X12_278;
           }
           else if (hashCode == X12_310_HASH)
           {
@@ -94,6 +169,22 @@ namespace Aws
           {
             return X12TransactionSet::X12_410;
           }
+          else if (hashCode == X12_417_HASH)
+          {
+            return X12TransactionSet::X12_417;
+          }
+          else if (hashCode == X12_421_HASH)
+          {
+            return X12TransactionSet::X12_421;
+          }
+          else if (hashCode == X12_426_HASH)
+          {
+            return X12TransactionSet::X12_426;
+          }
+          else if (hashCode == X12_810_HASH)
+          {
+            return X12TransactionSet::X12_810;
+          }
           else if (hashCode == X12_820_HASH)
           {
             return X12TransactionSet::X12_820;
@@ -106,9 +197,33 @@ namespace Aws
           {
             return X12TransactionSet::X12_830;
           }
+          else if (hashCode == X12_832_HASH)
+          {
+            return X12TransactionSet::X12_832;
+          }
+          else if (hashCode == X12_834_HASH)
+          {
+            return X12TransactionSet::X12_834;
+          }
+          else if (hashCode == X12_835_HASH)
+          {
+            return X12TransactionSet::X12_835;
+          }
+          else if (hashCode == X12_837_HASH)
+          {
+            return X12TransactionSet::X12_837;
+          }
+          else if (hashCode == X12_844_HASH)
+          {
+            return X12TransactionSet::X12_844;
+          }
           else if (hashCode == X12_846_HASH)
           {
             return X12TransactionSet::X12_846;
+          }
+          else if (hashCode == X12_849_HASH)
+          {
+            return X12TransactionSet::X12_849;
           }
           else if (hashCode == X12_850_HASH)
           {
@@ -138,9 +253,25 @@ namespace Aws
           {
             return X12TransactionSet::X12_864;
           }
+          else if (hashCode == X12_865_HASH)
+          {
+            return X12TransactionSet::X12_865;
+          }
+          else if (hashCode == X12_869_HASH)
+          {
+            return X12TransactionSet::X12_869;
+          }
+          else if (hashCode == X12_870_HASH)
+          {
+            return X12TransactionSet::X12_870;
+          }
           else if (hashCode == X12_940_HASH)
           {
             return X12TransactionSet::X12_940;
+          }
+          else if (hashCode == X12_945_HASH)
+          {
+            return X12TransactionSet::X12_945;
           }
           else if (hashCode == X12_990_HASH)
           {
@@ -149,6 +280,10 @@ namespace Aws
           else if (hashCode == X12_997_HASH)
           {
             return X12TransactionSet::X12_997;
+          }
+          else if (hashCode == X12_999_HASH)
+          {
+            return X12TransactionSet::X12_999;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -174,10 +309,34 @@ namespace Aws
             return "X12_204";
           case X12TransactionSet::X12_210:
             return "X12_210";
+          case X12TransactionSet::X12_211:
+            return "X12_211";
           case X12TransactionSet::X12_214:
             return "X12_214";
           case X12TransactionSet::X12_215:
             return "X12_215";
+          case X12TransactionSet::X12_259:
+            return "X12_259";
+          case X12TransactionSet::X12_260:
+            return "X12_260";
+          case X12TransactionSet::X12_266:
+            return "X12_266";
+          case X12TransactionSet::X12_269:
+            return "X12_269";
+          case X12TransactionSet::X12_270:
+            return "X12_270";
+          case X12TransactionSet::X12_271:
+            return "X12_271";
+          case X12TransactionSet::X12_274:
+            return "X12_274";
+          case X12TransactionSet::X12_275:
+            return "X12_275";
+          case X12TransactionSet::X12_276:
+            return "X12_276";
+          case X12TransactionSet::X12_277:
+            return "X12_277";
+          case X12TransactionSet::X12_278:
+            return "X12_278";
           case X12TransactionSet::X12_310:
             return "X12_310";
           case X12TransactionSet::X12_315:
@@ -188,14 +347,34 @@ namespace Aws
             return "X12_404";
           case X12TransactionSet::X12_410:
             return "X12_410";
+          case X12TransactionSet::X12_417:
+            return "X12_417";
+          case X12TransactionSet::X12_421:
+            return "X12_421";
+          case X12TransactionSet::X12_426:
+            return "X12_426";
+          case X12TransactionSet::X12_810:
+            return "X12_810";
           case X12TransactionSet::X12_820:
             return "X12_820";
           case X12TransactionSet::X12_824:
             return "X12_824";
           case X12TransactionSet::X12_830:
             return "X12_830";
+          case X12TransactionSet::X12_832:
+            return "X12_832";
+          case X12TransactionSet::X12_834:
+            return "X12_834";
+          case X12TransactionSet::X12_835:
+            return "X12_835";
+          case X12TransactionSet::X12_837:
+            return "X12_837";
+          case X12TransactionSet::X12_844:
+            return "X12_844";
           case X12TransactionSet::X12_846:
             return "X12_846";
+          case X12TransactionSet::X12_849:
+            return "X12_849";
           case X12TransactionSet::X12_850:
             return "X12_850";
           case X12TransactionSet::X12_852:
@@ -210,12 +389,22 @@ namespace Aws
             return "X12_861";
           case X12TransactionSet::X12_864:
             return "X12_864";
+          case X12TransactionSet::X12_865:
+            return "X12_865";
+          case X12TransactionSet::X12_869:
+            return "X12_869";
+          case X12TransactionSet::X12_870:
+            return "X12_870";
           case X12TransactionSet::X12_940:
             return "X12_940";
+          case X12TransactionSet::X12_945:
+            return "X12_945";
           case X12TransactionSet::X12_990:
             return "X12_990";
           case X12TransactionSet::X12_997:
             return "X12_997";
+          case X12TransactionSet::X12_999:
+            return "X12_999";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

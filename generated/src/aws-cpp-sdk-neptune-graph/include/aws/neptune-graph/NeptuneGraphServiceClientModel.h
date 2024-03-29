@@ -41,6 +41,7 @@
 #include <aws/neptune-graph/model/ListTagsForResourceResult.h>
 #include <aws/neptune-graph/model/ResetGraphResult.h>
 #include <aws/neptune-graph/model/RestoreGraphFromSnapshotResult.h>
+#include <aws/neptune-graph/model/StartImportTaskResult.h>
 #include <aws/neptune-graph/model/TagResourceResult.h>
 #include <aws/neptune-graph/model/UntagResourceResult.h>
 #include <aws/neptune-graph/model/UpdateGraphResult.h>
@@ -109,6 +110,7 @@ namespace Aws
       class ListTagsForResourceRequest;
       class ResetGraphRequest;
       class RestoreGraphFromSnapshotRequest;
+      class StartImportTaskRequest;
       class TagResourceRequest;
       class UntagResourceRequest;
       class UpdateGraphRequest;
@@ -139,6 +141,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, NeptuneGraphError> ListTagsForResourceOutcome;
       typedef Aws::Utils::Outcome<ResetGraphResult, NeptuneGraphError> ResetGraphOutcome;
       typedef Aws::Utils::Outcome<RestoreGraphFromSnapshotResult, NeptuneGraphError> RestoreGraphFromSnapshotOutcome;
+      typedef Aws::Utils::Outcome<StartImportTaskResult, NeptuneGraphError> StartImportTaskOutcome;
       typedef Aws::Utils::Outcome<TagResourceResult, NeptuneGraphError> TagResourceOutcome;
       typedef Aws::Utils::Outcome<UntagResourceResult, NeptuneGraphError> UntagResourceOutcome;
       typedef Aws::Utils::Outcome<UpdateGraphResult, NeptuneGraphError> UpdateGraphOutcome;
@@ -169,6 +172,7 @@ namespace Aws
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
       typedef std::future<ResetGraphOutcome> ResetGraphOutcomeCallable;
       typedef std::future<RestoreGraphFromSnapshotOutcome> RestoreGraphFromSnapshotOutcomeCallable;
+      typedef std::future<StartImportTaskOutcome> StartImportTaskOutcomeCallable;
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
       typedef std::future<UpdateGraphOutcome> UpdateGraphOutcomeCallable;
@@ -202,6 +206,7 @@ namespace Aws
     typedef std::function<void(const NeptuneGraphClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const NeptuneGraphClient*, const Model::ResetGraphRequest&, const Model::ResetGraphOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResetGraphResponseReceivedHandler;
     typedef std::function<void(const NeptuneGraphClient*, const Model::RestoreGraphFromSnapshotRequest&, const Model::RestoreGraphFromSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RestoreGraphFromSnapshotResponseReceivedHandler;
+    typedef std::function<void(const NeptuneGraphClient*, const Model::StartImportTaskRequest&, const Model::StartImportTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartImportTaskResponseReceivedHandler;
     typedef std::function<void(const NeptuneGraphClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const NeptuneGraphClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const NeptuneGraphClient*, const Model::UpdateGraphRequest&, const Model::UpdateGraphOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateGraphResponseReceivedHandler;
