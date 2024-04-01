@@ -27,7 +27,9 @@ namespace Model
 
   /**
    * <p>Designates the CloudWatch metric and statistic that provides the time series
-   * the anomaly detector uses as input.</p><p><h3>See Also:</h3>   <a
+   * the anomaly detector uses as input. If you have enabled unified cross-account
+   * observability, and this account is a monitoring account, the metric can be in
+   * the same account or a source account.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/SingleMetricAnomalyDetector">AWS
    * API Reference</a></p>
    */
@@ -40,6 +42,63 @@ namespace Model
 
     AWS_CLOUDWATCH_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     AWS_CLOUDWATCH_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
+
+
+    /**
+     * <p>If the CloudWatch metric that provides the time series that the anomaly
+     * detector uses as input is in another account, specify that account ID here. If
+     * you omit this parameter, the current account is used.</p>
+     */
+    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+
+    /**
+     * <p>If the CloudWatch metric that provides the time series that the anomaly
+     * detector uses as input is in another account, specify that account ID here. If
+     * you omit this parameter, the current account is used.</p>
+     */
+    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
+
+    /**
+     * <p>If the CloudWatch metric that provides the time series that the anomaly
+     * detector uses as input is in another account, specify that account ID here. If
+     * you omit this parameter, the current account is used.</p>
+     */
+    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
+
+    /**
+     * <p>If the CloudWatch metric that provides the time series that the anomaly
+     * detector uses as input is in another account, specify that account ID here. If
+     * you omit this parameter, the current account is used.</p>
+     */
+    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
+
+    /**
+     * <p>If the CloudWatch metric that provides the time series that the anomaly
+     * detector uses as input is in another account, specify that account ID here. If
+     * you omit this parameter, the current account is used.</p>
+     */
+    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
+
+    /**
+     * <p>If the CloudWatch metric that provides the time series that the anomaly
+     * detector uses as input is in another account, specify that account ID here. If
+     * you omit this parameter, the current account is used.</p>
+     */
+    inline SingleMetricAnomalyDetector& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
+
+    /**
+     * <p>If the CloudWatch metric that provides the time series that the anomaly
+     * detector uses as input is in another account, specify that account ID here. If
+     * you omit this parameter, the current account is used.</p>
+     */
+    inline SingleMetricAnomalyDetector& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
+
+    /**
+     * <p>If the CloudWatch metric that provides the time series that the anomaly
+     * detector uses as input is in another account, specify that account ID here. If
+     * you omit this parameter, the current account is used.</p>
+     */
+    inline SingleMetricAnomalyDetector& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
 
     /**
@@ -206,6 +265,9 @@ namespace Model
     inline SingleMetricAnomalyDetector& WithStat(const char* value) { SetStat(value); return *this;}
 
   private:
+
+    Aws::String m_accountId;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_namespace;
     bool m_namespaceHasBeenSet = false;

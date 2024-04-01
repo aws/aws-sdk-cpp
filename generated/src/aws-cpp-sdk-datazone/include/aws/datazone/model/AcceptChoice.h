@@ -40,6 +40,47 @@ namespace Model
 
 
     /**
+     * <p>The edit of the prediction.</p>
+     */
+    inline const Aws::String& GetEditedValue() const{ return m_editedValue; }
+
+    /**
+     * <p>The edit of the prediction.</p>
+     */
+    inline bool EditedValueHasBeenSet() const { return m_editedValueHasBeenSet; }
+
+    /**
+     * <p>The edit of the prediction.</p>
+     */
+    inline void SetEditedValue(const Aws::String& value) { m_editedValueHasBeenSet = true; m_editedValue = value; }
+
+    /**
+     * <p>The edit of the prediction.</p>
+     */
+    inline void SetEditedValue(Aws::String&& value) { m_editedValueHasBeenSet = true; m_editedValue = std::move(value); }
+
+    /**
+     * <p>The edit of the prediction.</p>
+     */
+    inline void SetEditedValue(const char* value) { m_editedValueHasBeenSet = true; m_editedValue.assign(value); }
+
+    /**
+     * <p>The edit of the prediction.</p>
+     */
+    inline AcceptChoice& WithEditedValue(const Aws::String& value) { SetEditedValue(value); return *this;}
+
+    /**
+     * <p>The edit of the prediction.</p>
+     */
+    inline AcceptChoice& WithEditedValue(Aws::String&& value) { SetEditedValue(std::move(value)); return *this;}
+
+    /**
+     * <p>The edit of the prediction.</p>
+     */
+    inline AcceptChoice& WithEditedValue(const char* value) { SetEditedValue(value); return *this;}
+
+
+    /**
      * <p>Specifies the prediction (aka, the automatically generated piece of metadata)
      * that can be accepted.</p>
      */
@@ -113,6 +154,9 @@ namespace Model
     inline AcceptChoice& WithPredictionTarget(const char* value) { SetPredictionTarget(value); return *this;}
 
   private:
+
+    Aws::String m_editedValue;
+    bool m_editedValueHasBeenSet = false;
 
     int m_predictionChoice;
     bool m_predictionChoiceHasBeenSet = false;

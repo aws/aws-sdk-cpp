@@ -390,7 +390,8 @@ namespace Model
      * <code>TimestampDescending</code> returns the newest data first and paginates
      * when the <code>MaxDatapoints</code> limit is reached.
      * <code>TimestampAscending</code> returns the oldest data first and paginates when
-     * the <code>MaxDatapoints</code> limit is reached.</p>
+     * the <code>MaxDatapoints</code> limit is reached.</p> <p>If you omit this
+     * parameter, the default of <code>TimestampDescending</code> is used.</p>
      */
     inline const ScanBy& GetScanBy() const{ return m_scanBy; }
 
@@ -399,7 +400,8 @@ namespace Model
      * <code>TimestampDescending</code> returns the newest data first and paginates
      * when the <code>MaxDatapoints</code> limit is reached.
      * <code>TimestampAscending</code> returns the oldest data first and paginates when
-     * the <code>MaxDatapoints</code> limit is reached.</p>
+     * the <code>MaxDatapoints</code> limit is reached.</p> <p>If you omit this
+     * parameter, the default of <code>TimestampDescending</code> is used.</p>
      */
     inline bool ScanByHasBeenSet() const { return m_scanByHasBeenSet; }
 
@@ -408,7 +410,8 @@ namespace Model
      * <code>TimestampDescending</code> returns the newest data first and paginates
      * when the <code>MaxDatapoints</code> limit is reached.
      * <code>TimestampAscending</code> returns the oldest data first and paginates when
-     * the <code>MaxDatapoints</code> limit is reached.</p>
+     * the <code>MaxDatapoints</code> limit is reached.</p> <p>If you omit this
+     * parameter, the default of <code>TimestampDescending</code> is used.</p>
      */
     inline void SetScanBy(const ScanBy& value) { m_scanByHasBeenSet = true; m_scanBy = value; }
 
@@ -417,7 +420,8 @@ namespace Model
      * <code>TimestampDescending</code> returns the newest data first and paginates
      * when the <code>MaxDatapoints</code> limit is reached.
      * <code>TimestampAscending</code> returns the oldest data first and paginates when
-     * the <code>MaxDatapoints</code> limit is reached.</p>
+     * the <code>MaxDatapoints</code> limit is reached.</p> <p>If you omit this
+     * parameter, the default of <code>TimestampDescending</code> is used.</p>
      */
     inline void SetScanBy(ScanBy&& value) { m_scanByHasBeenSet = true; m_scanBy = std::move(value); }
 
@@ -426,7 +430,8 @@ namespace Model
      * <code>TimestampDescending</code> returns the newest data first and paginates
      * when the <code>MaxDatapoints</code> limit is reached.
      * <code>TimestampAscending</code> returns the oldest data first and paginates when
-     * the <code>MaxDatapoints</code> limit is reached.</p>
+     * the <code>MaxDatapoints</code> limit is reached.</p> <p>If you omit this
+     * parameter, the default of <code>TimestampDescending</code> is used.</p>
      */
     inline GetMetricDataRequest& WithScanBy(const ScanBy& value) { SetScanBy(value); return *this;}
 
@@ -435,7 +440,8 @@ namespace Model
      * <code>TimestampDescending</code> returns the newest data first and paginates
      * when the <code>MaxDatapoints</code> limit is reached.
      * <code>TimestampAscending</code> returns the oldest data first and paginates when
-     * the <code>MaxDatapoints</code> limit is reached.</p>
+     * the <code>MaxDatapoints</code> limit is reached.</p> <p>If you omit this
+     * parameter, the default of <code>TimestampDescending</code> is used.</p>
      */
     inline GetMetricDataRequest& WithScanBy(ScanBy&& value) { SetScanBy(std::move(value)); return *this;}
 

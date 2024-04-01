@@ -1464,7 +1464,7 @@ namespace EMR
          * on, Amazon EMR notifies YARN and other applications on the cluster to stop
          * scheduling tasks with these nodes, moves the data, and then terminates the
          * nodes.</p> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/UsingEMR_UnhealthyNodeReplacement.html">graceful
+         * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-node-replacement.html">graceful
          * node replacement</a> in the <i>Amazon EMR Management Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/SetUnhealthyNodeReplacement">AWS

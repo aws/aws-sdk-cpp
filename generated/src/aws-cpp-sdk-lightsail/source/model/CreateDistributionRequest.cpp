@@ -21,7 +21,10 @@ CreateDistributionRequest::CreateDistributionRequest() :
     m_bundleIdHasBeenSet(false),
     m_ipAddressType(IpAddressType::NOT_SET),
     m_ipAddressTypeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_certificateNameHasBeenSet(false),
+    m_viewerMinimumTlsProtocolVersion(ViewerMinimumTlsProtocolVersionEnum::NOT_SET),
+    m_viewerMinimumTlsProtocolVersionHasBeenSet(false)
 {
 }
 
@@ -84,6 +87,17 @@ Aws::String CreateDistributionRequest::SerializePayload() const
    }
    payload.WithArray("tags", std::move(tagsJsonList));
 
+  }
+
+  if(m_certificateNameHasBeenSet)
+  {
+   payload.WithString("certificateName", m_certificateName);
+
+  }
+
+  if(m_viewerMinimumTlsProtocolVersionHasBeenSet)
+  {
+   payload.WithString("viewerMinimumTlsProtocolVersion", ViewerMinimumTlsProtocolVersionEnumMapper::GetNameForViewerMinimumTlsProtocolVersionEnum(m_viewerMinimumTlsProtocolVersion));
   }
 
   return payload.View().WriteReadable();

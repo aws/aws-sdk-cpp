@@ -11,6 +11,7 @@
 #include <aws/lightsail/model/CacheBehavior.h>
 #include <aws/lightsail/model/CacheSettings.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/lightsail/model/ViewerMinimumTlsProtocolVersionEnum.h>
 #include <aws/lightsail/model/CacheBehaviorPerPath.h>
 #include <utility>
 
@@ -288,6 +289,153 @@ namespace Model
      */
     inline UpdateDistributionRequest& WithIsEnabled(bool value) { SetIsEnabled(value); return *this;}
 
+
+    /**
+     * <p>Use this parameter to update the minimum TLS protocol version for the SSL/TLS
+     * certificate that's attached to the distribution.</p>
+     */
+    inline const ViewerMinimumTlsProtocolVersionEnum& GetViewerMinimumTlsProtocolVersion() const{ return m_viewerMinimumTlsProtocolVersion; }
+
+    /**
+     * <p>Use this parameter to update the minimum TLS protocol version for the SSL/TLS
+     * certificate that's attached to the distribution.</p>
+     */
+    inline bool ViewerMinimumTlsProtocolVersionHasBeenSet() const { return m_viewerMinimumTlsProtocolVersionHasBeenSet; }
+
+    /**
+     * <p>Use this parameter to update the minimum TLS protocol version for the SSL/TLS
+     * certificate that's attached to the distribution.</p>
+     */
+    inline void SetViewerMinimumTlsProtocolVersion(const ViewerMinimumTlsProtocolVersionEnum& value) { m_viewerMinimumTlsProtocolVersionHasBeenSet = true; m_viewerMinimumTlsProtocolVersion = value; }
+
+    /**
+     * <p>Use this parameter to update the minimum TLS protocol version for the SSL/TLS
+     * certificate that's attached to the distribution.</p>
+     */
+    inline void SetViewerMinimumTlsProtocolVersion(ViewerMinimumTlsProtocolVersionEnum&& value) { m_viewerMinimumTlsProtocolVersionHasBeenSet = true; m_viewerMinimumTlsProtocolVersion = std::move(value); }
+
+    /**
+     * <p>Use this parameter to update the minimum TLS protocol version for the SSL/TLS
+     * certificate that's attached to the distribution.</p>
+     */
+    inline UpdateDistributionRequest& WithViewerMinimumTlsProtocolVersion(const ViewerMinimumTlsProtocolVersionEnum& value) { SetViewerMinimumTlsProtocolVersion(value); return *this;}
+
+    /**
+     * <p>Use this parameter to update the minimum TLS protocol version for the SSL/TLS
+     * certificate that's attached to the distribution.</p>
+     */
+    inline UpdateDistributionRequest& WithViewerMinimumTlsProtocolVersion(ViewerMinimumTlsProtocolVersionEnum&& value) { SetViewerMinimumTlsProtocolVersion(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The name of the SSL/TLS certificate that you want to attach to the
+     * distribution.</p> <p>Only certificates with a status of <code>ISSUED</code> can
+     * be attached to a distribution.</p> <p>Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetCertificates.html">GetCertificates</a>
+     * action to get a list of certificate names that you can specify.</p>
+     */
+    inline const Aws::String& GetCertificateName() const{ return m_certificateName; }
+
+    /**
+     * <p>The name of the SSL/TLS certificate that you want to attach to the
+     * distribution.</p> <p>Only certificates with a status of <code>ISSUED</code> can
+     * be attached to a distribution.</p> <p>Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetCertificates.html">GetCertificates</a>
+     * action to get a list of certificate names that you can specify.</p>
+     */
+    inline bool CertificateNameHasBeenSet() const { return m_certificateNameHasBeenSet; }
+
+    /**
+     * <p>The name of the SSL/TLS certificate that you want to attach to the
+     * distribution.</p> <p>Only certificates with a status of <code>ISSUED</code> can
+     * be attached to a distribution.</p> <p>Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetCertificates.html">GetCertificates</a>
+     * action to get a list of certificate names that you can specify.</p>
+     */
+    inline void SetCertificateName(const Aws::String& value) { m_certificateNameHasBeenSet = true; m_certificateName = value; }
+
+    /**
+     * <p>The name of the SSL/TLS certificate that you want to attach to the
+     * distribution.</p> <p>Only certificates with a status of <code>ISSUED</code> can
+     * be attached to a distribution.</p> <p>Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetCertificates.html">GetCertificates</a>
+     * action to get a list of certificate names that you can specify.</p>
+     */
+    inline void SetCertificateName(Aws::String&& value) { m_certificateNameHasBeenSet = true; m_certificateName = std::move(value); }
+
+    /**
+     * <p>The name of the SSL/TLS certificate that you want to attach to the
+     * distribution.</p> <p>Only certificates with a status of <code>ISSUED</code> can
+     * be attached to a distribution.</p> <p>Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetCertificates.html">GetCertificates</a>
+     * action to get a list of certificate names that you can specify.</p>
+     */
+    inline void SetCertificateName(const char* value) { m_certificateNameHasBeenSet = true; m_certificateName.assign(value); }
+
+    /**
+     * <p>The name of the SSL/TLS certificate that you want to attach to the
+     * distribution.</p> <p>Only certificates with a status of <code>ISSUED</code> can
+     * be attached to a distribution.</p> <p>Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetCertificates.html">GetCertificates</a>
+     * action to get a list of certificate names that you can specify.</p>
+     */
+    inline UpdateDistributionRequest& WithCertificateName(const Aws::String& value) { SetCertificateName(value); return *this;}
+
+    /**
+     * <p>The name of the SSL/TLS certificate that you want to attach to the
+     * distribution.</p> <p>Only certificates with a status of <code>ISSUED</code> can
+     * be attached to a distribution.</p> <p>Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetCertificates.html">GetCertificates</a>
+     * action to get a list of certificate names that you can specify.</p>
+     */
+    inline UpdateDistributionRequest& WithCertificateName(Aws::String&& value) { SetCertificateName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the SSL/TLS certificate that you want to attach to the
+     * distribution.</p> <p>Only certificates with a status of <code>ISSUED</code> can
+     * be attached to a distribution.</p> <p>Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetCertificates.html">GetCertificates</a>
+     * action to get a list of certificate names that you can specify.</p>
+     */
+    inline UpdateDistributionRequest& WithCertificateName(const char* value) { SetCertificateName(value); return *this;}
+
+
+    /**
+     * <p>Indicates whether the default SSL/TLS certificate is attached to the
+     * distribution. The default value is <code>true</code>. When <code>true</code>,
+     * the distribution uses the default domain name such as
+     * <code>d111111abcdef8.cloudfront.net</code>.</p> <p> Set this value to
+     * <code>false</code> to attach a new certificate to the distribution.</p>
+     */
+    inline bool GetUseDefaultCertificate() const{ return m_useDefaultCertificate; }
+
+    /**
+     * <p>Indicates whether the default SSL/TLS certificate is attached to the
+     * distribution. The default value is <code>true</code>. When <code>true</code>,
+     * the distribution uses the default domain name such as
+     * <code>d111111abcdef8.cloudfront.net</code>.</p> <p> Set this value to
+     * <code>false</code> to attach a new certificate to the distribution.</p>
+     */
+    inline bool UseDefaultCertificateHasBeenSet() const { return m_useDefaultCertificateHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the default SSL/TLS certificate is attached to the
+     * distribution. The default value is <code>true</code>. When <code>true</code>,
+     * the distribution uses the default domain name such as
+     * <code>d111111abcdef8.cloudfront.net</code>.</p> <p> Set this value to
+     * <code>false</code> to attach a new certificate to the distribution.</p>
+     */
+    inline void SetUseDefaultCertificate(bool value) { m_useDefaultCertificateHasBeenSet = true; m_useDefaultCertificate = value; }
+
+    /**
+     * <p>Indicates whether the default SSL/TLS certificate is attached to the
+     * distribution. The default value is <code>true</code>. When <code>true</code>,
+     * the distribution uses the default domain name such as
+     * <code>d111111abcdef8.cloudfront.net</code>.</p> <p> Set this value to
+     * <code>false</code> to attach a new certificate to the distribution.</p>
+     */
+    inline UpdateDistributionRequest& WithUseDefaultCertificate(bool value) { SetUseDefaultCertificate(value); return *this;}
+
   private:
 
     Aws::String m_distributionName;
@@ -307,6 +455,15 @@ namespace Model
 
     bool m_isEnabled;
     bool m_isEnabledHasBeenSet = false;
+
+    ViewerMinimumTlsProtocolVersionEnum m_viewerMinimumTlsProtocolVersion;
+    bool m_viewerMinimumTlsProtocolVersionHasBeenSet = false;
+
+    Aws::String m_certificateName;
+    bool m_certificateNameHasBeenSet = false;
+
+    bool m_useDefaultCertificate;
+    bool m_useDefaultCertificateHasBeenSet = false;
   };
 
 } // namespace Model

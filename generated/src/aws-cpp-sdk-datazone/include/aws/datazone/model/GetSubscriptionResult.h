@@ -213,27 +213,32 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The details of the published asset for which the subscription grant is
+     * created.</p>
      */
     inline const SubscribedListing& GetSubscribedListing() const{ return m_subscribedListing; }
 
     /**
-     * <p/>
+     * <p>The details of the published asset for which the subscription grant is
+     * created.</p>
      */
     inline void SetSubscribedListing(const SubscribedListing& value) { m_subscribedListing = value; }
 
     /**
-     * <p/>
+     * <p>The details of the published asset for which the subscription grant is
+     * created.</p>
      */
     inline void SetSubscribedListing(SubscribedListing&& value) { m_subscribedListing = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The details of the published asset for which the subscription grant is
+     * created.</p>
      */
     inline GetSubscriptionResult& WithSubscribedListing(const SubscribedListing& value) { SetSubscribedListing(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The details of the published asset for which the subscription grant is
+     * created.</p>
      */
     inline GetSubscriptionResult& WithSubscribedListing(SubscribedListing&& value) { SetSubscribedListing(std::move(value)); return *this;}
 

@@ -33,83 +33,83 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The ID of the Amazon DataZone domain.</p>
      */
     inline const Aws::String& GetDomainIdentifier() const{ return m_domainIdentifier; }
 
     /**
-     * <p/>
+     * <p>The ID of the Amazon DataZone domain.</p>
      */
     inline bool DomainIdentifierHasBeenSet() const { return m_domainIdentifierHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The ID of the Amazon DataZone domain.</p>
      */
     inline void SetDomainIdentifier(const Aws::String& value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier = value; }
 
     /**
-     * <p/>
+     * <p>The ID of the Amazon DataZone domain.</p>
      */
     inline void SetDomainIdentifier(Aws::String&& value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The ID of the Amazon DataZone domain.</p>
      */
     inline void SetDomainIdentifier(const char* value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier.assign(value); }
 
     /**
-     * <p/>
+     * <p>The ID of the Amazon DataZone domain.</p>
      */
     inline DeleteListingRequest& WithDomainIdentifier(const Aws::String& value) { SetDomainIdentifier(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The ID of the Amazon DataZone domain.</p>
      */
     inline DeleteListingRequest& WithDomainIdentifier(Aws::String&& value) { SetDomainIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The ID of the Amazon DataZone domain.</p>
      */
     inline DeleteListingRequest& WithDomainIdentifier(const char* value) { SetDomainIdentifier(value); return *this;}
 
 
     /**
-     * <p/>
+     * <p>The ID of the listing to be deleted.</p>
      */
     inline const Aws::String& GetIdentifier() const{ return m_identifier; }
 
     /**
-     * <p/>
+     * <p>The ID of the listing to be deleted.</p>
      */
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The ID of the listing to be deleted.</p>
      */
     inline void SetIdentifier(const Aws::String& value) { m_identifierHasBeenSet = true; m_identifier = value; }
 
     /**
-     * <p/>
+     * <p>The ID of the listing to be deleted.</p>
      */
     inline void SetIdentifier(Aws::String&& value) { m_identifierHasBeenSet = true; m_identifier = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The ID of the listing to be deleted.</p>
      */
     inline void SetIdentifier(const char* value) { m_identifierHasBeenSet = true; m_identifier.assign(value); }
 
     /**
-     * <p/>
+     * <p>The ID of the listing to be deleted.</p>
      */
     inline DeleteListingRequest& WithIdentifier(const Aws::String& value) { SetIdentifier(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The ID of the listing to be deleted.</p>
      */
     inline DeleteListingRequest& WithIdentifier(Aws::String&& value) { SetIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The ID of the listing to be deleted.</p>
      */
     inline DeleteListingRequest& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
 

@@ -937,7 +937,11 @@ namespace CloudWatch
         /**
          * <p>Creates an anomaly detection model for a CloudWatch metric. You can use the
          * model to display a band of expected normal values when the metric is
-         * graphed.</p> <p>For more information, see <a
+         * graphed.</p> <p>If you have enabled unified cross-account observability, and
+         * this account is a monitoring account, the metric can be in the same account or a
+         * source account. You can specify the account ID in the object you specify in the
+         * <code>SingleMetricAnomalyDetector</code> parameter.</p> <p>For more information,
+         * see <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Anomaly_Detection.html">CloudWatch
          * Anomaly Detection</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutAnomalyDetector">AWS
@@ -975,27 +979,30 @@ namespace CloudWatch
          * can reduce alarm noise. You can create multiple metric alarms, and also create a
          * composite alarm and set up alerts only for the composite alarm. For example, you
          * could create a composite alarm that goes into ALARM state only when more than
-         * one of the underlying metric alarms are in ALARM state.</p> <p>Currently, the
-         * only alarm actions that can be taken by composite alarms are notifying SNS
-         * topics.</p>  <p>It is possible to create a loop or cycle of composite
-         * alarms, where composite alarm A depends on composite alarm B, and composite
-         * alarm B also depends on composite alarm A. In this scenario, you can't delete
-         * any composite alarm that is part of the cycle because there is always still a
-         * composite alarm that depends on that alarm that you want to delete.</p> <p>To
-         * get out of such a situation, you must break the cycle by changing the rule of
-         * one of the composite alarms in the cycle to remove a dependency that creates the
-         * cycle. The simplest change to make to break a cycle is to change the
-         * <code>AlarmRule</code> of one of the alarms to <code>false</code>. </p>
-         * <p>Additionally, the evaluation of composite alarms stops if CloudWatch detects
-         * a cycle in the evaluation path. </p>  <p>When this operation creates an
-         * alarm, the alarm state is immediately set to <code>INSUFFICIENT_DATA</code>. The
-         * alarm is then evaluated and its state is set appropriately. Any actions
-         * associated with the new state are then executed. For a composite alarm, this
-         * initial time after creation is the only time that the alarm can be in
-         * <code>INSUFFICIENT_DATA</code> state.</p> <p>When you update an existing alarm,
-         * its state is left unchanged, but the update completely overwrites the previous
-         * configuration of the alarm.</p> <p>To use this operation, you must be signed on
-         * with the <code>cloudwatch:PutCompositeAlarm</code> permission that is scoped to
+         * one of the underlying metric alarms are in ALARM state.</p> <p>Composite alarms
+         * can take the following actions:</p> <ul> <li> <p>Notify Amazon SNS topics.</p>
+         * </li> <li> <p>Invoke Lambda functions.</p> </li> <li> <p>Create OpsItems in
+         * Systems Manager Ops Center.</p> </li> <li> <p>Create incidents in Systems
+         * Manager Incident Manager.</p> </li> </ul>  <p>It is possible to create a
+         * loop or cycle of composite alarms, where composite alarm A depends on composite
+         * alarm B, and composite alarm B also depends on composite alarm A. In this
+         * scenario, you can't delete any composite alarm that is part of the cycle because
+         * there is always still a composite alarm that depends on that alarm that you want
+         * to delete.</p> <p>To get out of such a situation, you must break the cycle by
+         * changing the rule of one of the composite alarms in the cycle to remove a
+         * dependency that creates the cycle. The simplest change to make to break a cycle
+         * is to change the <code>AlarmRule</code> of one of the alarms to
+         * <code>false</code>. </p> <p>Additionally, the evaluation of composite alarms
+         * stops if CloudWatch detects a cycle in the evaluation path. </p>  <p>When
+         * this operation creates an alarm, the alarm state is immediately set to
+         * <code>INSUFFICIENT_DATA</code>. The alarm is then evaluated and its state is set
+         * appropriately. Any actions associated with the new state are then executed. For
+         * a composite alarm, this initial time after creation is the only time that the
+         * alarm can be in <code>INSUFFICIENT_DATA</code> state.</p> <p>When you update an
+         * existing alarm, its state is left unchanged, but the update completely
+         * overwrites the previous configuration of the alarm.</p> <p>To use this
+         * operation, you must be signed on with the
+         * <code>cloudwatch:PutCompositeAlarm</code> permission that is scoped to
          * <code>*</code>. You can't create a composite alarms if your
          * <code>cloudwatch:PutCompositeAlarm</code> permission has a narrower scope.</p>
          * <p>If you are an IAM user, you must have
@@ -1205,7 +1212,7 @@ namespace CloudWatch
          * <p>You can publish either individual data points in the <code>Value</code>
          * field, or arrays of values and the number of times each value occurred during
          * the period by using the <code>Values</code> and <code>Counts</code> fields in
-         * the <code>MetricDatum</code> structure. Using the <code>Values</code> and
+         * the <code>MetricData</code> structure. Using the <code>Values</code> and
          * <code>Counts</code> method enables you to publish up to 150 values per metric
          * with one <code>PutMetricData</code> request, and supports retrieving percentile
          * statistics on this data.</p> <p>Each <code>PutMetricData</code> request is

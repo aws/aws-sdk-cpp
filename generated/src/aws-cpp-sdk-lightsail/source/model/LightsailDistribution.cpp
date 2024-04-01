@@ -42,7 +42,8 @@ LightsailDistribution::LightsailDistribution() :
     m_ableToUpdateBundleHasBeenSet(false),
     m_ipAddressType(IpAddressType::NOT_SET),
     m_ipAddressTypeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_viewerMinimumTlsProtocolVersionHasBeenSet(false)
 {
 }
 
@@ -70,7 +71,8 @@ LightsailDistribution::LightsailDistribution(JsonView jsonValue) :
     m_ableToUpdateBundleHasBeenSet(false),
     m_ipAddressType(IpAddressType::NOT_SET),
     m_ipAddressTypeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_viewerMinimumTlsProtocolVersionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -226,6 +228,13 @@ LightsailDistribution& LightsailDistribution::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("viewerMinimumTlsProtocolVersion"))
+  {
+    m_viewerMinimumTlsProtocolVersion = jsonValue.GetString("viewerMinimumTlsProtocolVersion");
+
+    m_viewerMinimumTlsProtocolVersionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -362,6 +371,12 @@ JsonValue LightsailDistribution::Jsonize() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_viewerMinimumTlsProtocolVersionHasBeenSet)
+  {
+   payload.WithString("viewerMinimumTlsProtocolVersion", m_viewerMinimumTlsProtocolVersion);
 
   }
 

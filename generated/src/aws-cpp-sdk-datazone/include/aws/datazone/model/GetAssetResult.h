@@ -171,37 +171,37 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The external ID of the asset.</p>
      */
     inline const Aws::String& GetExternalIdentifier() const{ return m_externalIdentifier; }
 
     /**
-     * <p/>
+     * <p>The external ID of the asset.</p>
      */
     inline void SetExternalIdentifier(const Aws::String& value) { m_externalIdentifier = value; }
 
     /**
-     * <p/>
+     * <p>The external ID of the asset.</p>
      */
     inline void SetExternalIdentifier(Aws::String&& value) { m_externalIdentifier = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The external ID of the asset.</p>
      */
     inline void SetExternalIdentifier(const char* value) { m_externalIdentifier.assign(value); }
 
     /**
-     * <p/>
+     * <p>The external ID of the asset.</p>
      */
     inline GetAssetResult& WithExternalIdentifier(const Aws::String& value) { SetExternalIdentifier(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The external ID of the asset.</p>
      */
     inline GetAssetResult& WithExternalIdentifier(Aws::String&& value) { SetExternalIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The external ID of the asset.</p>
      */
     inline GetAssetResult& WithExternalIdentifier(const char* value) { SetExternalIdentifier(value); return *this;}
 
@@ -382,27 +382,27 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The listing of the asset.</p>
      */
     inline const AssetListingDetails& GetListing() const{ return m_listing; }
 
     /**
-     * <p/>
+     * <p>The listing of the asset.</p>
      */
     inline void SetListing(const AssetListingDetails& value) { m_listing = value; }
 
     /**
-     * <p/>
+     * <p>The listing of the asset.</p>
      */
     inline void SetListing(AssetListingDetails&& value) { m_listing = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The listing of the asset.</p>
      */
     inline GetAssetResult& WithListing(const AssetListingDetails& value) { SetListing(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The listing of the asset.</p>
      */
     inline GetAssetResult& WithListing(AssetListingDetails&& value) { SetListing(std::move(value)); return *this;}
 

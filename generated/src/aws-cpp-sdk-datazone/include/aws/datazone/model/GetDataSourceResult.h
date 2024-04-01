@@ -529,27 +529,27 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The recommendation configuration of the data source.</p>
      */
     inline const RecommendationConfiguration& GetRecommendation() const{ return m_recommendation; }
 
     /**
-     * <p/>
+     * <p>The recommendation configuration of the data source.</p>
      */
     inline void SetRecommendation(const RecommendationConfiguration& value) { m_recommendation = value; }
 
     /**
-     * <p/>
+     * <p>The recommendation configuration of the data source.</p>
      */
     inline void SetRecommendation(RecommendationConfiguration&& value) { m_recommendation = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The recommendation configuration of the data source.</p>
      */
     inline GetDataSourceResult& WithRecommendation(const RecommendationConfiguration& value) { SetRecommendation(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The recommendation configuration of the data source.</p>
      */
     inline GetDataSourceResult& WithRecommendation(RecommendationConfiguration&& value) { SetRecommendation(std::move(value)); return *this;}
 

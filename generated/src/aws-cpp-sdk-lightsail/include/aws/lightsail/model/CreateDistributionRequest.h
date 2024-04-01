@@ -12,6 +12,7 @@
 #include <aws/lightsail/model/CacheSettings.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/lightsail/model/IpAddressType.h>
+#include <aws/lightsail/model/ViewerMinimumTlsProtocolVersionEnum.h>
 #include <aws/lightsail/model/CacheBehaviorPerPath.h>
 #include <aws/lightsail/model/Tag.h>
 #include <utility>
@@ -414,6 +415,102 @@ namespace Model
      */
     inline CreateDistributionRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The name of the SSL/TLS certificate that you want to attach to the
+     * distribution.</p> <p>Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetCertificates.html">GetCertificates</a>
+     * action to get a list of certificate names that you can specify.</p>
+     */
+    inline const Aws::String& GetCertificateName() const{ return m_certificateName; }
+
+    /**
+     * <p>The name of the SSL/TLS certificate that you want to attach to the
+     * distribution.</p> <p>Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetCertificates.html">GetCertificates</a>
+     * action to get a list of certificate names that you can specify.</p>
+     */
+    inline bool CertificateNameHasBeenSet() const { return m_certificateNameHasBeenSet; }
+
+    /**
+     * <p>The name of the SSL/TLS certificate that you want to attach to the
+     * distribution.</p> <p>Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetCertificates.html">GetCertificates</a>
+     * action to get a list of certificate names that you can specify.</p>
+     */
+    inline void SetCertificateName(const Aws::String& value) { m_certificateNameHasBeenSet = true; m_certificateName = value; }
+
+    /**
+     * <p>The name of the SSL/TLS certificate that you want to attach to the
+     * distribution.</p> <p>Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetCertificates.html">GetCertificates</a>
+     * action to get a list of certificate names that you can specify.</p>
+     */
+    inline void SetCertificateName(Aws::String&& value) { m_certificateNameHasBeenSet = true; m_certificateName = std::move(value); }
+
+    /**
+     * <p>The name of the SSL/TLS certificate that you want to attach to the
+     * distribution.</p> <p>Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetCertificates.html">GetCertificates</a>
+     * action to get a list of certificate names that you can specify.</p>
+     */
+    inline void SetCertificateName(const char* value) { m_certificateNameHasBeenSet = true; m_certificateName.assign(value); }
+
+    /**
+     * <p>The name of the SSL/TLS certificate that you want to attach to the
+     * distribution.</p> <p>Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetCertificates.html">GetCertificates</a>
+     * action to get a list of certificate names that you can specify.</p>
+     */
+    inline CreateDistributionRequest& WithCertificateName(const Aws::String& value) { SetCertificateName(value); return *this;}
+
+    /**
+     * <p>The name of the SSL/TLS certificate that you want to attach to the
+     * distribution.</p> <p>Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetCertificates.html">GetCertificates</a>
+     * action to get a list of certificate names that you can specify.</p>
+     */
+    inline CreateDistributionRequest& WithCertificateName(Aws::String&& value) { SetCertificateName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the SSL/TLS certificate that you want to attach to the
+     * distribution.</p> <p>Use the <a
+     * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetCertificates.html">GetCertificates</a>
+     * action to get a list of certificate names that you can specify.</p>
+     */
+    inline CreateDistributionRequest& WithCertificateName(const char* value) { SetCertificateName(value); return *this;}
+
+
+    /**
+     * <p>The minimum TLS protocol version for the SSL/TLS certificate.</p>
+     */
+    inline const ViewerMinimumTlsProtocolVersionEnum& GetViewerMinimumTlsProtocolVersion() const{ return m_viewerMinimumTlsProtocolVersion; }
+
+    /**
+     * <p>The minimum TLS protocol version for the SSL/TLS certificate.</p>
+     */
+    inline bool ViewerMinimumTlsProtocolVersionHasBeenSet() const { return m_viewerMinimumTlsProtocolVersionHasBeenSet; }
+
+    /**
+     * <p>The minimum TLS protocol version for the SSL/TLS certificate.</p>
+     */
+    inline void SetViewerMinimumTlsProtocolVersion(const ViewerMinimumTlsProtocolVersionEnum& value) { m_viewerMinimumTlsProtocolVersionHasBeenSet = true; m_viewerMinimumTlsProtocolVersion = value; }
+
+    /**
+     * <p>The minimum TLS protocol version for the SSL/TLS certificate.</p>
+     */
+    inline void SetViewerMinimumTlsProtocolVersion(ViewerMinimumTlsProtocolVersionEnum&& value) { m_viewerMinimumTlsProtocolVersionHasBeenSet = true; m_viewerMinimumTlsProtocolVersion = std::move(value); }
+
+    /**
+     * <p>The minimum TLS protocol version for the SSL/TLS certificate.</p>
+     */
+    inline CreateDistributionRequest& WithViewerMinimumTlsProtocolVersion(const ViewerMinimumTlsProtocolVersionEnum& value) { SetViewerMinimumTlsProtocolVersion(value); return *this;}
+
+    /**
+     * <p>The minimum TLS protocol version for the SSL/TLS certificate.</p>
+     */
+    inline CreateDistributionRequest& WithViewerMinimumTlsProtocolVersion(ViewerMinimumTlsProtocolVersionEnum&& value) { SetViewerMinimumTlsProtocolVersion(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_distributionName;
@@ -439,6 +536,12 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    Aws::String m_certificateName;
+    bool m_certificateNameHasBeenSet = false;
+
+    ViewerMinimumTlsProtocolVersionEnum m_viewerMinimumTlsProtocolVersion;
+    bool m_viewerMinimumTlsProtocolVersionHasBeenSet = false;
   };
 
 } // namespace Model

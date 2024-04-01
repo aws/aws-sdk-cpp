@@ -313,37 +313,37 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The published asset for which the subscription grant is to be created.</p>
      */
     inline const Aws::Vector<SubscribedListing>& GetSubscribedListings() const{ return m_subscribedListings; }
 
     /**
-     * <p/>
+     * <p>The published asset for which the subscription grant is to be created.</p>
      */
     inline void SetSubscribedListings(const Aws::Vector<SubscribedListing>& value) { m_subscribedListings = value; }
 
     /**
-     * <p/>
+     * <p>The published asset for which the subscription grant is to be created.</p>
      */
     inline void SetSubscribedListings(Aws::Vector<SubscribedListing>&& value) { m_subscribedListings = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The published asset for which the subscription grant is to be created.</p>
      */
     inline CreateSubscriptionRequestResult& WithSubscribedListings(const Aws::Vector<SubscribedListing>& value) { SetSubscribedListings(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The published asset for which the subscription grant is to be created.</p>
      */
     inline CreateSubscriptionRequestResult& WithSubscribedListings(Aws::Vector<SubscribedListing>&& value) { SetSubscribedListings(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The published asset for which the subscription grant is to be created.</p>
      */
     inline CreateSubscriptionRequestResult& AddSubscribedListings(const SubscribedListing& value) { m_subscribedListings.push_back(value); return *this; }
 
     /**
-     * <p/>
+     * <p>The published asset for which the subscription grant is to be created.</p>
      */
     inline CreateSubscriptionRequestResult& AddSubscribedListings(SubscribedListing&& value) { m_subscribedListings.push_back(std::move(value)); return *this; }
 

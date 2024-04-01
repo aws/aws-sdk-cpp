@@ -38,37 +38,37 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The details of the asset for which the subscription grant is created.</p>
      */
     inline const Aws::Vector<SubscribedAsset>& GetAssets() const{ return m_assets; }
 
     /**
-     * <p/>
+     * <p>The details of the asset for which the subscription grant is created.</p>
      */
     inline void SetAssets(const Aws::Vector<SubscribedAsset>& value) { m_assets = value; }
 
     /**
-     * <p/>
+     * <p>The details of the asset for which the subscription grant is created.</p>
      */
     inline void SetAssets(Aws::Vector<SubscribedAsset>&& value) { m_assets = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The details of the asset for which the subscription grant is created.</p>
      */
     inline UpdateSubscriptionGrantStatusResult& WithAssets(const Aws::Vector<SubscribedAsset>& value) { SetAssets(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The details of the asset for which the subscription grant is created.</p>
      */
     inline UpdateSubscriptionGrantStatusResult& WithAssets(Aws::Vector<SubscribedAsset>&& value) { SetAssets(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The details of the asset for which the subscription grant is created.</p>
      */
     inline UpdateSubscriptionGrantStatusResult& AddAssets(const SubscribedAsset& value) { m_assets.push_back(value); return *this; }
 
     /**
-     * <p/>
+     * <p>The details of the asset for which the subscription grant is created.</p>
      */
     inline UpdateSubscriptionGrantStatusResult& AddAssets(SubscribedAsset&& value) { m_assets.push_back(std::move(value)); return *this; }
 
