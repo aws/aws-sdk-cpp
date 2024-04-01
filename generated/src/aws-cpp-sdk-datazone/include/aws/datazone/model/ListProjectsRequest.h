@@ -158,42 +158,42 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The name of the project.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p/>
+     * <p>The name of the project.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The name of the project.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p/>
+     * <p>The name of the project.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The name of the project.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p/>
+     * <p>The name of the project.</p>
      */
     inline ListProjectsRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The name of the project.</p>
      */
     inline ListProjectsRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The name of the project.</p>
      */
     inline ListProjectsRequest& WithName(const char* value) { SetName(value); return *this;}
 

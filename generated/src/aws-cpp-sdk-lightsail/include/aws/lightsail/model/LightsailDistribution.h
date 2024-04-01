@@ -870,6 +870,55 @@ namespace Model
      */
     inline LightsailDistribution& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The minimum TLS protocol version that the distribution can use to communicate
+     * with viewers.</p>
+     */
+    inline const Aws::String& GetViewerMinimumTlsProtocolVersion() const{ return m_viewerMinimumTlsProtocolVersion; }
+
+    /**
+     * <p>The minimum TLS protocol version that the distribution can use to communicate
+     * with viewers.</p>
+     */
+    inline bool ViewerMinimumTlsProtocolVersionHasBeenSet() const { return m_viewerMinimumTlsProtocolVersionHasBeenSet; }
+
+    /**
+     * <p>The minimum TLS protocol version that the distribution can use to communicate
+     * with viewers.</p>
+     */
+    inline void SetViewerMinimumTlsProtocolVersion(const Aws::String& value) { m_viewerMinimumTlsProtocolVersionHasBeenSet = true; m_viewerMinimumTlsProtocolVersion = value; }
+
+    /**
+     * <p>The minimum TLS protocol version that the distribution can use to communicate
+     * with viewers.</p>
+     */
+    inline void SetViewerMinimumTlsProtocolVersion(Aws::String&& value) { m_viewerMinimumTlsProtocolVersionHasBeenSet = true; m_viewerMinimumTlsProtocolVersion = std::move(value); }
+
+    /**
+     * <p>The minimum TLS protocol version that the distribution can use to communicate
+     * with viewers.</p>
+     */
+    inline void SetViewerMinimumTlsProtocolVersion(const char* value) { m_viewerMinimumTlsProtocolVersionHasBeenSet = true; m_viewerMinimumTlsProtocolVersion.assign(value); }
+
+    /**
+     * <p>The minimum TLS protocol version that the distribution can use to communicate
+     * with viewers.</p>
+     */
+    inline LightsailDistribution& WithViewerMinimumTlsProtocolVersion(const Aws::String& value) { SetViewerMinimumTlsProtocolVersion(value); return *this;}
+
+    /**
+     * <p>The minimum TLS protocol version that the distribution can use to communicate
+     * with viewers.</p>
+     */
+    inline LightsailDistribution& WithViewerMinimumTlsProtocolVersion(Aws::String&& value) { SetViewerMinimumTlsProtocolVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>The minimum TLS protocol version that the distribution can use to communicate
+     * with viewers.</p>
+     */
+    inline LightsailDistribution& WithViewerMinimumTlsProtocolVersion(const char* value) { SetViewerMinimumTlsProtocolVersion(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -931,6 +980,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    Aws::String m_viewerMinimumTlsProtocolVersion;
+    bool m_viewerMinimumTlsProtocolVersionHasBeenSet = false;
   };
 
 } // namespace Model

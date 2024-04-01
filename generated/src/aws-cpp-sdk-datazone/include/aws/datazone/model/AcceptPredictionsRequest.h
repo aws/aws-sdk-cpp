@@ -43,42 +43,50 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>Specifies the prediction (aka, the automatically generated piece of metadata)
+     * and the target (for example, a column name) that can be accepted.</p>
      */
     inline const Aws::Vector<AcceptChoice>& GetAcceptChoices() const{ return m_acceptChoices; }
 
     /**
-     * <p/>
+     * <p>Specifies the prediction (aka, the automatically generated piece of metadata)
+     * and the target (for example, a column name) that can be accepted.</p>
      */
     inline bool AcceptChoicesHasBeenSet() const { return m_acceptChoicesHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>Specifies the prediction (aka, the automatically generated piece of metadata)
+     * and the target (for example, a column name) that can be accepted.</p>
      */
     inline void SetAcceptChoices(const Aws::Vector<AcceptChoice>& value) { m_acceptChoicesHasBeenSet = true; m_acceptChoices = value; }
 
     /**
-     * <p/>
+     * <p>Specifies the prediction (aka, the automatically generated piece of metadata)
+     * and the target (for example, a column name) that can be accepted.</p>
      */
     inline void SetAcceptChoices(Aws::Vector<AcceptChoice>&& value) { m_acceptChoicesHasBeenSet = true; m_acceptChoices = std::move(value); }
 
     /**
-     * <p/>
+     * <p>Specifies the prediction (aka, the automatically generated piece of metadata)
+     * and the target (for example, a column name) that can be accepted.</p>
      */
     inline AcceptPredictionsRequest& WithAcceptChoices(const Aws::Vector<AcceptChoice>& value) { SetAcceptChoices(value); return *this;}
 
     /**
-     * <p/>
+     * <p>Specifies the prediction (aka, the automatically generated piece of metadata)
+     * and the target (for example, a column name) that can be accepted.</p>
      */
     inline AcceptPredictionsRequest& WithAcceptChoices(Aws::Vector<AcceptChoice>&& value) { SetAcceptChoices(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>Specifies the prediction (aka, the automatically generated piece of metadata)
+     * and the target (for example, a column name) that can be accepted.</p>
      */
     inline AcceptPredictionsRequest& AddAcceptChoices(const AcceptChoice& value) { m_acceptChoicesHasBeenSet = true; m_acceptChoices.push_back(value); return *this; }
 
     /**
-     * <p/>
+     * <p>Specifies the prediction (aka, the automatically generated piece of metadata)
+     * and the target (for example, a column name) that can be accepted.</p>
      */
     inline AcceptPredictionsRequest& AddAcceptChoices(AcceptChoice&& value) { m_acceptChoicesHasBeenSet = true; m_acceptChoices.push_back(std::move(value)); return *this; }
 
@@ -211,83 +219,83 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The identifier of the asset.</p>
      */
     inline const Aws::String& GetIdentifier() const{ return m_identifier; }
 
     /**
-     * <p/>
+     * <p>The identifier of the asset.</p>
      */
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The identifier of the asset.</p>
      */
     inline void SetIdentifier(const Aws::String& value) { m_identifierHasBeenSet = true; m_identifier = value; }
 
     /**
-     * <p/>
+     * <p>The identifier of the asset.</p>
      */
     inline void SetIdentifier(Aws::String&& value) { m_identifierHasBeenSet = true; m_identifier = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The identifier of the asset.</p>
      */
     inline void SetIdentifier(const char* value) { m_identifierHasBeenSet = true; m_identifier.assign(value); }
 
     /**
-     * <p/>
+     * <p>The identifier of the asset.</p>
      */
     inline AcceptPredictionsRequest& WithIdentifier(const Aws::String& value) { SetIdentifier(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The identifier of the asset.</p>
      */
     inline AcceptPredictionsRequest& WithIdentifier(Aws::String&& value) { SetIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The identifier of the asset.</p>
      */
     inline AcceptPredictionsRequest& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
 
 
     /**
-     * <p/>
+     * <p>The revision that is to be made to the asset.</p>
      */
     inline const Aws::String& GetRevision() const{ return m_revision; }
 
     /**
-     * <p/>
+     * <p>The revision that is to be made to the asset.</p>
      */
     inline bool RevisionHasBeenSet() const { return m_revisionHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The revision that is to be made to the asset.</p>
      */
     inline void SetRevision(const Aws::String& value) { m_revisionHasBeenSet = true; m_revision = value; }
 
     /**
-     * <p/>
+     * <p>The revision that is to be made to the asset.</p>
      */
     inline void SetRevision(Aws::String&& value) { m_revisionHasBeenSet = true; m_revision = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The revision that is to be made to the asset.</p>
      */
     inline void SetRevision(const char* value) { m_revisionHasBeenSet = true; m_revision.assign(value); }
 
     /**
-     * <p/>
+     * <p>The revision that is to be made to the asset.</p>
      */
     inline AcceptPredictionsRequest& WithRevision(const Aws::String& value) { SetRevision(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The revision that is to be made to the asset.</p>
      */
     inline AcceptPredictionsRequest& WithRevision(Aws::String&& value) { SetRevision(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The revision that is to be made to the asset.</p>
      */
     inline AcceptPredictionsRequest& WithRevision(const char* value) { SetRevision(value); return *this;}
 

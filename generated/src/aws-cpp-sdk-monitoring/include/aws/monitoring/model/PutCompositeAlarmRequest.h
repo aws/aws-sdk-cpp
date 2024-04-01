@@ -66,9 +66,17 @@ namespace Model
     /**
      * <p>The actions to execute when this alarm transitions to the <code>ALARM</code>
      * state from any other state. Each action is specified as an Amazon Resource Name
-     * (ARN).</p> <p>Valid Values:
+     * (ARN).</p> <p>Valid Values: ]</p> <p> <b>Amazon SNS actions:</b> </p> <p>
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
-     * | <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>
+     * </p> <p> <b>Lambda actions:</b> </p> <ul> <li> <p>Invoke the latest version of a
+     * Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>
+     * </code> </p> </li> <li> <p>Invoke a specific version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i>
+     * </code> </p> </li> <li> <p>Invoke a function by using an alias Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i>
+     * </code> </p> </li> </ul> <p> <b>Systems Manager actions:</b> </p> <p>
+     * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>
      * </code> </p>
      */
     inline const Aws::Vector<Aws::String>& GetAlarmActions() const{ return m_alarmActions; }
@@ -76,9 +84,17 @@ namespace Model
     /**
      * <p>The actions to execute when this alarm transitions to the <code>ALARM</code>
      * state from any other state. Each action is specified as an Amazon Resource Name
-     * (ARN).</p> <p>Valid Values:
+     * (ARN).</p> <p>Valid Values: ]</p> <p> <b>Amazon SNS actions:</b> </p> <p>
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
-     * | <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>
+     * </p> <p> <b>Lambda actions:</b> </p> <ul> <li> <p>Invoke the latest version of a
+     * Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>
+     * </code> </p> </li> <li> <p>Invoke a specific version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i>
+     * </code> </p> </li> <li> <p>Invoke a function by using an alias Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i>
+     * </code> </p> </li> </ul> <p> <b>Systems Manager actions:</b> </p> <p>
+     * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>
      * </code> </p>
      */
     inline bool AlarmActionsHasBeenSet() const { return m_alarmActionsHasBeenSet; }
@@ -86,9 +102,17 @@ namespace Model
     /**
      * <p>The actions to execute when this alarm transitions to the <code>ALARM</code>
      * state from any other state. Each action is specified as an Amazon Resource Name
-     * (ARN).</p> <p>Valid Values:
+     * (ARN).</p> <p>Valid Values: ]</p> <p> <b>Amazon SNS actions:</b> </p> <p>
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
-     * | <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>
+     * </p> <p> <b>Lambda actions:</b> </p> <ul> <li> <p>Invoke the latest version of a
+     * Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>
+     * </code> </p> </li> <li> <p>Invoke a specific version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i>
+     * </code> </p> </li> <li> <p>Invoke a function by using an alias Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i>
+     * </code> </p> </li> </ul> <p> <b>Systems Manager actions:</b> </p> <p>
+     * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>
      * </code> </p>
      */
     inline void SetAlarmActions(const Aws::Vector<Aws::String>& value) { m_alarmActionsHasBeenSet = true; m_alarmActions = value; }
@@ -96,9 +120,17 @@ namespace Model
     /**
      * <p>The actions to execute when this alarm transitions to the <code>ALARM</code>
      * state from any other state. Each action is specified as an Amazon Resource Name
-     * (ARN).</p> <p>Valid Values:
+     * (ARN).</p> <p>Valid Values: ]</p> <p> <b>Amazon SNS actions:</b> </p> <p>
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
-     * | <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>
+     * </p> <p> <b>Lambda actions:</b> </p> <ul> <li> <p>Invoke the latest version of a
+     * Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>
+     * </code> </p> </li> <li> <p>Invoke a specific version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i>
+     * </code> </p> </li> <li> <p>Invoke a function by using an alias Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i>
+     * </code> </p> </li> </ul> <p> <b>Systems Manager actions:</b> </p> <p>
+     * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>
      * </code> </p>
      */
     inline void SetAlarmActions(Aws::Vector<Aws::String>&& value) { m_alarmActionsHasBeenSet = true; m_alarmActions = std::move(value); }
@@ -106,9 +138,17 @@ namespace Model
     /**
      * <p>The actions to execute when this alarm transitions to the <code>ALARM</code>
      * state from any other state. Each action is specified as an Amazon Resource Name
-     * (ARN).</p> <p>Valid Values:
+     * (ARN).</p> <p>Valid Values: ]</p> <p> <b>Amazon SNS actions:</b> </p> <p>
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
-     * | <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>
+     * </p> <p> <b>Lambda actions:</b> </p> <ul> <li> <p>Invoke the latest version of a
+     * Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>
+     * </code> </p> </li> <li> <p>Invoke a specific version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i>
+     * </code> </p> </li> <li> <p>Invoke a function by using an alias Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i>
+     * </code> </p> </li> </ul> <p> <b>Systems Manager actions:</b> </p> <p>
+     * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>
      * </code> </p>
      */
     inline PutCompositeAlarmRequest& WithAlarmActions(const Aws::Vector<Aws::String>& value) { SetAlarmActions(value); return *this;}
@@ -116,9 +156,17 @@ namespace Model
     /**
      * <p>The actions to execute when this alarm transitions to the <code>ALARM</code>
      * state from any other state. Each action is specified as an Amazon Resource Name
-     * (ARN).</p> <p>Valid Values:
+     * (ARN).</p> <p>Valid Values: ]</p> <p> <b>Amazon SNS actions:</b> </p> <p>
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
-     * | <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>
+     * </p> <p> <b>Lambda actions:</b> </p> <ul> <li> <p>Invoke the latest version of a
+     * Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>
+     * </code> </p> </li> <li> <p>Invoke a specific version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i>
+     * </code> </p> </li> <li> <p>Invoke a function by using an alias Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i>
+     * </code> </p> </li> </ul> <p> <b>Systems Manager actions:</b> </p> <p>
+     * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>
      * </code> </p>
      */
     inline PutCompositeAlarmRequest& WithAlarmActions(Aws::Vector<Aws::String>&& value) { SetAlarmActions(std::move(value)); return *this;}
@@ -126,9 +174,17 @@ namespace Model
     /**
      * <p>The actions to execute when this alarm transitions to the <code>ALARM</code>
      * state from any other state. Each action is specified as an Amazon Resource Name
-     * (ARN).</p> <p>Valid Values:
+     * (ARN).</p> <p>Valid Values: ]</p> <p> <b>Amazon SNS actions:</b> </p> <p>
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
-     * | <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>
+     * </p> <p> <b>Lambda actions:</b> </p> <ul> <li> <p>Invoke the latest version of a
+     * Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>
+     * </code> </p> </li> <li> <p>Invoke a specific version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i>
+     * </code> </p> </li> <li> <p>Invoke a function by using an alias Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i>
+     * </code> </p> </li> </ul> <p> <b>Systems Manager actions:</b> </p> <p>
+     * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>
      * </code> </p>
      */
     inline PutCompositeAlarmRequest& AddAlarmActions(const Aws::String& value) { m_alarmActionsHasBeenSet = true; m_alarmActions.push_back(value); return *this; }
@@ -136,9 +192,17 @@ namespace Model
     /**
      * <p>The actions to execute when this alarm transitions to the <code>ALARM</code>
      * state from any other state. Each action is specified as an Amazon Resource Name
-     * (ARN).</p> <p>Valid Values:
+     * (ARN).</p> <p>Valid Values: ]</p> <p> <b>Amazon SNS actions:</b> </p> <p>
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
-     * | <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>
+     * </p> <p> <b>Lambda actions:</b> </p> <ul> <li> <p>Invoke the latest version of a
+     * Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>
+     * </code> </p> </li> <li> <p>Invoke a specific version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i>
+     * </code> </p> </li> <li> <p>Invoke a function by using an alias Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i>
+     * </code> </p> </li> </ul> <p> <b>Systems Manager actions:</b> </p> <p>
+     * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>
      * </code> </p>
      */
     inline PutCompositeAlarmRequest& AddAlarmActions(Aws::String&& value) { m_alarmActionsHasBeenSet = true; m_alarmActions.push_back(std::move(value)); return *this; }
@@ -146,9 +210,17 @@ namespace Model
     /**
      * <p>The actions to execute when this alarm transitions to the <code>ALARM</code>
      * state from any other state. Each action is specified as an Amazon Resource Name
-     * (ARN).</p> <p>Valid Values:
+     * (ARN).</p> <p>Valid Values: ]</p> <p> <b>Amazon SNS actions:</b> </p> <p>
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
-     * | <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>
+     * </p> <p> <b>Lambda actions:</b> </p> <ul> <li> <p>Invoke the latest version of a
+     * Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>
+     * </code> </p> </li> <li> <p>Invoke a specific version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i>
+     * </code> </p> </li> <li> <p>Invoke a function by using an alias Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i>
+     * </code> </p> </li> </ul> <p> <b>Systems Manager actions:</b> </p> <p>
+     * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>
      * </code> </p>
      */
     inline PutCompositeAlarmRequest& AddAlarmActions(const char* value) { m_alarmActionsHasBeenSet = true; m_alarmActions.push_back(value); return *this; }
@@ -568,81 +640,153 @@ namespace Model
     /**
      * <p>The actions to execute when this alarm transitions to the
      * <code>INSUFFICIENT_DATA</code> state from any other state. Each action is
-     * specified as an Amazon Resource Name (ARN).</p> <p>Valid Values:
+     * specified as an Amazon Resource Name (ARN).</p> <p>Valid Values: ]</p> <p>
+     * <b>Amazon SNS actions:</b> </p> <p>
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
-     * </p>
+     * </p> <p> <b>Lambda actions:</b> </p> <ul> <li> <p>Invoke the latest version of a
+     * Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>
+     * </code> </p> </li> <li> <p>Invoke a specific version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i>
+     * </code> </p> </li> <li> <p>Invoke a function by using an alias Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i>
+     * </code> </p> </li> </ul>
      */
     inline const Aws::Vector<Aws::String>& GetInsufficientDataActions() const{ return m_insufficientDataActions; }
 
     /**
      * <p>The actions to execute when this alarm transitions to the
      * <code>INSUFFICIENT_DATA</code> state from any other state. Each action is
-     * specified as an Amazon Resource Name (ARN).</p> <p>Valid Values:
+     * specified as an Amazon Resource Name (ARN).</p> <p>Valid Values: ]</p> <p>
+     * <b>Amazon SNS actions:</b> </p> <p>
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
-     * </p>
+     * </p> <p> <b>Lambda actions:</b> </p> <ul> <li> <p>Invoke the latest version of a
+     * Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>
+     * </code> </p> </li> <li> <p>Invoke a specific version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i>
+     * </code> </p> </li> <li> <p>Invoke a function by using an alias Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i>
+     * </code> </p> </li> </ul>
      */
     inline bool InsufficientDataActionsHasBeenSet() const { return m_insufficientDataActionsHasBeenSet; }
 
     /**
      * <p>The actions to execute when this alarm transitions to the
      * <code>INSUFFICIENT_DATA</code> state from any other state. Each action is
-     * specified as an Amazon Resource Name (ARN).</p> <p>Valid Values:
+     * specified as an Amazon Resource Name (ARN).</p> <p>Valid Values: ]</p> <p>
+     * <b>Amazon SNS actions:</b> </p> <p>
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
-     * </p>
+     * </p> <p> <b>Lambda actions:</b> </p> <ul> <li> <p>Invoke the latest version of a
+     * Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>
+     * </code> </p> </li> <li> <p>Invoke a specific version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i>
+     * </code> </p> </li> <li> <p>Invoke a function by using an alias Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i>
+     * </code> </p> </li> </ul>
      */
     inline void SetInsufficientDataActions(const Aws::Vector<Aws::String>& value) { m_insufficientDataActionsHasBeenSet = true; m_insufficientDataActions = value; }
 
     /**
      * <p>The actions to execute when this alarm transitions to the
      * <code>INSUFFICIENT_DATA</code> state from any other state. Each action is
-     * specified as an Amazon Resource Name (ARN).</p> <p>Valid Values:
+     * specified as an Amazon Resource Name (ARN).</p> <p>Valid Values: ]</p> <p>
+     * <b>Amazon SNS actions:</b> </p> <p>
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
-     * </p>
+     * </p> <p> <b>Lambda actions:</b> </p> <ul> <li> <p>Invoke the latest version of a
+     * Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>
+     * </code> </p> </li> <li> <p>Invoke a specific version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i>
+     * </code> </p> </li> <li> <p>Invoke a function by using an alias Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i>
+     * </code> </p> </li> </ul>
      */
     inline void SetInsufficientDataActions(Aws::Vector<Aws::String>&& value) { m_insufficientDataActionsHasBeenSet = true; m_insufficientDataActions = std::move(value); }
 
     /**
      * <p>The actions to execute when this alarm transitions to the
      * <code>INSUFFICIENT_DATA</code> state from any other state. Each action is
-     * specified as an Amazon Resource Name (ARN).</p> <p>Valid Values:
+     * specified as an Amazon Resource Name (ARN).</p> <p>Valid Values: ]</p> <p>
+     * <b>Amazon SNS actions:</b> </p> <p>
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
-     * </p>
+     * </p> <p> <b>Lambda actions:</b> </p> <ul> <li> <p>Invoke the latest version of a
+     * Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>
+     * </code> </p> </li> <li> <p>Invoke a specific version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i>
+     * </code> </p> </li> <li> <p>Invoke a function by using an alias Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i>
+     * </code> </p> </li> </ul>
      */
     inline PutCompositeAlarmRequest& WithInsufficientDataActions(const Aws::Vector<Aws::String>& value) { SetInsufficientDataActions(value); return *this;}
 
     /**
      * <p>The actions to execute when this alarm transitions to the
      * <code>INSUFFICIENT_DATA</code> state from any other state. Each action is
-     * specified as an Amazon Resource Name (ARN).</p> <p>Valid Values:
+     * specified as an Amazon Resource Name (ARN).</p> <p>Valid Values: ]</p> <p>
+     * <b>Amazon SNS actions:</b> </p> <p>
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
-     * </p>
+     * </p> <p> <b>Lambda actions:</b> </p> <ul> <li> <p>Invoke the latest version of a
+     * Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>
+     * </code> </p> </li> <li> <p>Invoke a specific version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i>
+     * </code> </p> </li> <li> <p>Invoke a function by using an alias Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i>
+     * </code> </p> </li> </ul>
      */
     inline PutCompositeAlarmRequest& WithInsufficientDataActions(Aws::Vector<Aws::String>&& value) { SetInsufficientDataActions(std::move(value)); return *this;}
 
     /**
      * <p>The actions to execute when this alarm transitions to the
      * <code>INSUFFICIENT_DATA</code> state from any other state. Each action is
-     * specified as an Amazon Resource Name (ARN).</p> <p>Valid Values:
+     * specified as an Amazon Resource Name (ARN).</p> <p>Valid Values: ]</p> <p>
+     * <b>Amazon SNS actions:</b> </p> <p>
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
-     * </p>
+     * </p> <p> <b>Lambda actions:</b> </p> <ul> <li> <p>Invoke the latest version of a
+     * Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>
+     * </code> </p> </li> <li> <p>Invoke a specific version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i>
+     * </code> </p> </li> <li> <p>Invoke a function by using an alias Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i>
+     * </code> </p> </li> </ul>
      */
     inline PutCompositeAlarmRequest& AddInsufficientDataActions(const Aws::String& value) { m_insufficientDataActionsHasBeenSet = true; m_insufficientDataActions.push_back(value); return *this; }
 
     /**
      * <p>The actions to execute when this alarm transitions to the
      * <code>INSUFFICIENT_DATA</code> state from any other state. Each action is
-     * specified as an Amazon Resource Name (ARN).</p> <p>Valid Values:
+     * specified as an Amazon Resource Name (ARN).</p> <p>Valid Values: ]</p> <p>
+     * <b>Amazon SNS actions:</b> </p> <p>
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
-     * </p>
+     * </p> <p> <b>Lambda actions:</b> </p> <ul> <li> <p>Invoke the latest version of a
+     * Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>
+     * </code> </p> </li> <li> <p>Invoke a specific version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i>
+     * </code> </p> </li> <li> <p>Invoke a function by using an alias Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i>
+     * </code> </p> </li> </ul>
      */
     inline PutCompositeAlarmRequest& AddInsufficientDataActions(Aws::String&& value) { m_insufficientDataActionsHasBeenSet = true; m_insufficientDataActions.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The actions to execute when this alarm transitions to the
      * <code>INSUFFICIENT_DATA</code> state from any other state. Each action is
-     * specified as an Amazon Resource Name (ARN).</p> <p>Valid Values:
+     * specified as an Amazon Resource Name (ARN).</p> <p>Valid Values: ]</p> <p>
+     * <b>Amazon SNS actions:</b> </p> <p>
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
-     * </p>
+     * </p> <p> <b>Lambda actions:</b> </p> <ul> <li> <p>Invoke the latest version of a
+     * Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>
+     * </code> </p> </li> <li> <p>Invoke a specific version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i>
+     * </code> </p> </li> <li> <p>Invoke a function by using an alias Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i>
+     * </code> </p> </li> </ul>
      */
     inline PutCompositeAlarmRequest& AddInsufficientDataActions(const char* value) { m_insufficientDataActionsHasBeenSet = true; m_insufficientDataActions.push_back(value); return *this; }
 
@@ -650,154 +794,265 @@ namespace Model
     /**
      * <p>The actions to execute when this alarm transitions to an <code>OK</code>
      * state from any other state. Each action is specified as an Amazon Resource Name
-     * (ARN).</p> <p>Valid Values:
+     * (ARN).</p> <p>Valid Values: ]</p> <p> <b>Amazon SNS actions:</b> </p> <p>
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
-     * </p>
+     * </p> <p> <b>Lambda actions:</b> </p> <ul> <li> <p>Invoke the latest version of a
+     * Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>
+     * </code> </p> </li> <li> <p>Invoke a specific version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i>
+     * </code> </p> </li> <li> <p>Invoke a function by using an alias Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i>
+     * </code> </p> </li> </ul>
      */
     inline const Aws::Vector<Aws::String>& GetOKActions() const{ return m_oKActions; }
 
     /**
      * <p>The actions to execute when this alarm transitions to an <code>OK</code>
      * state from any other state. Each action is specified as an Amazon Resource Name
-     * (ARN).</p> <p>Valid Values:
+     * (ARN).</p> <p>Valid Values: ]</p> <p> <b>Amazon SNS actions:</b> </p> <p>
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
-     * </p>
+     * </p> <p> <b>Lambda actions:</b> </p> <ul> <li> <p>Invoke the latest version of a
+     * Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>
+     * </code> </p> </li> <li> <p>Invoke a specific version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i>
+     * </code> </p> </li> <li> <p>Invoke a function by using an alias Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i>
+     * </code> </p> </li> </ul>
      */
     inline bool OKActionsHasBeenSet() const { return m_oKActionsHasBeenSet; }
 
     /**
      * <p>The actions to execute when this alarm transitions to an <code>OK</code>
      * state from any other state. Each action is specified as an Amazon Resource Name
-     * (ARN).</p> <p>Valid Values:
+     * (ARN).</p> <p>Valid Values: ]</p> <p> <b>Amazon SNS actions:</b> </p> <p>
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
-     * </p>
+     * </p> <p> <b>Lambda actions:</b> </p> <ul> <li> <p>Invoke the latest version of a
+     * Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>
+     * </code> </p> </li> <li> <p>Invoke a specific version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i>
+     * </code> </p> </li> <li> <p>Invoke a function by using an alias Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i>
+     * </code> </p> </li> </ul>
      */
     inline void SetOKActions(const Aws::Vector<Aws::String>& value) { m_oKActionsHasBeenSet = true; m_oKActions = value; }
 
     /**
      * <p>The actions to execute when this alarm transitions to an <code>OK</code>
      * state from any other state. Each action is specified as an Amazon Resource Name
-     * (ARN).</p> <p>Valid Values:
+     * (ARN).</p> <p>Valid Values: ]</p> <p> <b>Amazon SNS actions:</b> </p> <p>
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
-     * </p>
+     * </p> <p> <b>Lambda actions:</b> </p> <ul> <li> <p>Invoke the latest version of a
+     * Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>
+     * </code> </p> </li> <li> <p>Invoke a specific version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i>
+     * </code> </p> </li> <li> <p>Invoke a function by using an alias Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i>
+     * </code> </p> </li> </ul>
      */
     inline void SetOKActions(Aws::Vector<Aws::String>&& value) { m_oKActionsHasBeenSet = true; m_oKActions = std::move(value); }
 
     /**
      * <p>The actions to execute when this alarm transitions to an <code>OK</code>
      * state from any other state. Each action is specified as an Amazon Resource Name
-     * (ARN).</p> <p>Valid Values:
+     * (ARN).</p> <p>Valid Values: ]</p> <p> <b>Amazon SNS actions:</b> </p> <p>
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
-     * </p>
+     * </p> <p> <b>Lambda actions:</b> </p> <ul> <li> <p>Invoke the latest version of a
+     * Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>
+     * </code> </p> </li> <li> <p>Invoke a specific version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i>
+     * </code> </p> </li> <li> <p>Invoke a function by using an alias Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i>
+     * </code> </p> </li> </ul>
      */
     inline PutCompositeAlarmRequest& WithOKActions(const Aws::Vector<Aws::String>& value) { SetOKActions(value); return *this;}
 
     /**
      * <p>The actions to execute when this alarm transitions to an <code>OK</code>
      * state from any other state. Each action is specified as an Amazon Resource Name
-     * (ARN).</p> <p>Valid Values:
+     * (ARN).</p> <p>Valid Values: ]</p> <p> <b>Amazon SNS actions:</b> </p> <p>
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
-     * </p>
+     * </p> <p> <b>Lambda actions:</b> </p> <ul> <li> <p>Invoke the latest version of a
+     * Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>
+     * </code> </p> </li> <li> <p>Invoke a specific version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i>
+     * </code> </p> </li> <li> <p>Invoke a function by using an alias Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i>
+     * </code> </p> </li> </ul>
      */
     inline PutCompositeAlarmRequest& WithOKActions(Aws::Vector<Aws::String>&& value) { SetOKActions(std::move(value)); return *this;}
 
     /**
      * <p>The actions to execute when this alarm transitions to an <code>OK</code>
      * state from any other state. Each action is specified as an Amazon Resource Name
-     * (ARN).</p> <p>Valid Values:
+     * (ARN).</p> <p>Valid Values: ]</p> <p> <b>Amazon SNS actions:</b> </p> <p>
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
-     * </p>
+     * </p> <p> <b>Lambda actions:</b> </p> <ul> <li> <p>Invoke the latest version of a
+     * Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>
+     * </code> </p> </li> <li> <p>Invoke a specific version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i>
+     * </code> </p> </li> <li> <p>Invoke a function by using an alias Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i>
+     * </code> </p> </li> </ul>
      */
     inline PutCompositeAlarmRequest& AddOKActions(const Aws::String& value) { m_oKActionsHasBeenSet = true; m_oKActions.push_back(value); return *this; }
 
     /**
      * <p>The actions to execute when this alarm transitions to an <code>OK</code>
      * state from any other state. Each action is specified as an Amazon Resource Name
-     * (ARN).</p> <p>Valid Values:
+     * (ARN).</p> <p>Valid Values: ]</p> <p> <b>Amazon SNS actions:</b> </p> <p>
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
-     * </p>
+     * </p> <p> <b>Lambda actions:</b> </p> <ul> <li> <p>Invoke the latest version of a
+     * Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>
+     * </code> </p> </li> <li> <p>Invoke a specific version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i>
+     * </code> </p> </li> <li> <p>Invoke a function by using an alias Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i>
+     * </code> </p> </li> </ul>
      */
     inline PutCompositeAlarmRequest& AddOKActions(Aws::String&& value) { m_oKActionsHasBeenSet = true; m_oKActions.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The actions to execute when this alarm transitions to an <code>OK</code>
      * state from any other state. Each action is specified as an Amazon Resource Name
-     * (ARN).</p> <p>Valid Values:
+     * (ARN).</p> <p>Valid Values: ]</p> <p> <b>Amazon SNS actions:</b> </p> <p>
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </code>
-     * </p>
+     * </p> <p> <b>Lambda actions:</b> </p> <ul> <li> <p>Invoke the latest version of a
+     * Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>
+     * </code> </p> </li> <li> <p>Invoke a specific version of a Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i>
+     * </code> </p> </li> <li> <p>Invoke a function by using an alias Lambda function:
+     * <code>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i>
+     * </code> </p> </li> </ul>
      */
     inline PutCompositeAlarmRequest& AddOKActions(const char* value) { m_oKActionsHasBeenSet = true; m_oKActions.push_back(value); return *this; }
 
 
     /**
-     * <p>A list of key-value pairs to associate with the composite alarm. You can
-     * associate as many as 50 tags with an alarm.</p> <p>Tags can help you organize
-     * and categorize your resources. You can also use them to scope user permissions,
-     * by granting a user permission to access or change only resources with certain
-     * tag values.</p>
+     * <p>A list of key-value pairs to associate with the alarm. You can associate as
+     * many as 50 tags with an alarm. To be able to associate tags with the alarm when
+     * you create the alarm, you must have the <code>cloudwatch:TagResource</code>
+     * permission.</p> <p>Tags can help you organize and categorize your resources. You
+     * can also use them to scope user permissions by granting a user permission to
+     * access or change only resources with certain tag values.</p> <p>If you are using
+     * this operation to update an existing alarm, any tags you specify in this
+     * parameter are ignored. To change the tags of an existing alarm, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>A list of key-value pairs to associate with the composite alarm. You can
-     * associate as many as 50 tags with an alarm.</p> <p>Tags can help you organize
-     * and categorize your resources. You can also use them to scope user permissions,
-     * by granting a user permission to access or change only resources with certain
-     * tag values.</p>
+     * <p>A list of key-value pairs to associate with the alarm. You can associate as
+     * many as 50 tags with an alarm. To be able to associate tags with the alarm when
+     * you create the alarm, you must have the <code>cloudwatch:TagResource</code>
+     * permission.</p> <p>Tags can help you organize and categorize your resources. You
+     * can also use them to scope user permissions by granting a user permission to
+     * access or change only resources with certain tag values.</p> <p>If you are using
+     * this operation to update an existing alarm, any tags you specify in this
+     * parameter are ignored. To change the tags of an existing alarm, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>A list of key-value pairs to associate with the composite alarm. You can
-     * associate as many as 50 tags with an alarm.</p> <p>Tags can help you organize
-     * and categorize your resources. You can also use them to scope user permissions,
-     * by granting a user permission to access or change only resources with certain
-     * tag values.</p>
+     * <p>A list of key-value pairs to associate with the alarm. You can associate as
+     * many as 50 tags with an alarm. To be able to associate tags with the alarm when
+     * you create the alarm, you must have the <code>cloudwatch:TagResource</code>
+     * permission.</p> <p>Tags can help you organize and categorize your resources. You
+     * can also use them to scope user permissions by granting a user permission to
+     * access or change only resources with certain tag values.</p> <p>If you are using
+     * this operation to update an existing alarm, any tags you specify in this
+     * parameter are ignored. To change the tags of an existing alarm, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>A list of key-value pairs to associate with the composite alarm. You can
-     * associate as many as 50 tags with an alarm.</p> <p>Tags can help you organize
-     * and categorize your resources. You can also use them to scope user permissions,
-     * by granting a user permission to access or change only resources with certain
-     * tag values.</p>
+     * <p>A list of key-value pairs to associate with the alarm. You can associate as
+     * many as 50 tags with an alarm. To be able to associate tags with the alarm when
+     * you create the alarm, you must have the <code>cloudwatch:TagResource</code>
+     * permission.</p> <p>Tags can help you organize and categorize your resources. You
+     * can also use them to scope user permissions by granting a user permission to
+     * access or change only resources with certain tag values.</p> <p>If you are using
+     * this operation to update an existing alarm, any tags you specify in this
+     * parameter are ignored. To change the tags of an existing alarm, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>A list of key-value pairs to associate with the composite alarm. You can
-     * associate as many as 50 tags with an alarm.</p> <p>Tags can help you organize
-     * and categorize your resources. You can also use them to scope user permissions,
-     * by granting a user permission to access or change only resources with certain
-     * tag values.</p>
+     * <p>A list of key-value pairs to associate with the alarm. You can associate as
+     * many as 50 tags with an alarm. To be able to associate tags with the alarm when
+     * you create the alarm, you must have the <code>cloudwatch:TagResource</code>
+     * permission.</p> <p>Tags can help you organize and categorize your resources. You
+     * can also use them to scope user permissions by granting a user permission to
+     * access or change only resources with certain tag values.</p> <p>If you are using
+     * this operation to update an existing alarm, any tags you specify in this
+     * parameter are ignored. To change the tags of an existing alarm, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
      */
     inline PutCompositeAlarmRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>A list of key-value pairs to associate with the composite alarm. You can
-     * associate as many as 50 tags with an alarm.</p> <p>Tags can help you organize
-     * and categorize your resources. You can also use them to scope user permissions,
-     * by granting a user permission to access or change only resources with certain
-     * tag values.</p>
+     * <p>A list of key-value pairs to associate with the alarm. You can associate as
+     * many as 50 tags with an alarm. To be able to associate tags with the alarm when
+     * you create the alarm, you must have the <code>cloudwatch:TagResource</code>
+     * permission.</p> <p>Tags can help you organize and categorize your resources. You
+     * can also use them to scope user permissions by granting a user permission to
+     * access or change only resources with certain tag values.</p> <p>If you are using
+     * this operation to update an existing alarm, any tags you specify in this
+     * parameter are ignored. To change the tags of an existing alarm, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
      */
     inline PutCompositeAlarmRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>A list of key-value pairs to associate with the composite alarm. You can
-     * associate as many as 50 tags with an alarm.</p> <p>Tags can help you organize
-     * and categorize your resources. You can also use them to scope user permissions,
-     * by granting a user permission to access or change only resources with certain
-     * tag values.</p>
+     * <p>A list of key-value pairs to associate with the alarm. You can associate as
+     * many as 50 tags with an alarm. To be able to associate tags with the alarm when
+     * you create the alarm, you must have the <code>cloudwatch:TagResource</code>
+     * permission.</p> <p>Tags can help you organize and categorize your resources. You
+     * can also use them to scope user permissions by granting a user permission to
+     * access or change only resources with certain tag values.</p> <p>If you are using
+     * this operation to update an existing alarm, any tags you specify in this
+     * parameter are ignored. To change the tags of an existing alarm, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
      */
     inline PutCompositeAlarmRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>A list of key-value pairs to associate with the composite alarm. You can
-     * associate as many as 50 tags with an alarm.</p> <p>Tags can help you organize
-     * and categorize your resources. You can also use them to scope user permissions,
-     * by granting a user permission to access or change only resources with certain
-     * tag values.</p>
+     * <p>A list of key-value pairs to associate with the alarm. You can associate as
+     * many as 50 tags with an alarm. To be able to associate tags with the alarm when
+     * you create the alarm, you must have the <code>cloudwatch:TagResource</code>
+     * permission.</p> <p>Tags can help you organize and categorize your resources. You
+     * can also use them to scope user permissions by granting a user permission to
+     * access or change only resources with certain tag values.</p> <p>If you are using
+     * this operation to update an existing alarm, any tags you specify in this
+     * parameter are ignored. To change the tags of an existing alarm, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>
+     * or <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
      */
     inline PutCompositeAlarmRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

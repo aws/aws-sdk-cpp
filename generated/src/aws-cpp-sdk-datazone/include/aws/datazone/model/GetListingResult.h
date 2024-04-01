@@ -36,27 +36,27 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The timestamp of when the listing was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
 
     /**
-     * <p/>
+     * <p>The timestamp of when the listing was created.</p>
      */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAt = value; }
 
     /**
-     * <p/>
+     * <p>The timestamp of when the listing was created.</p>
      */
     inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAt = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The timestamp of when the listing was created.</p>
      */
     inline GetListingResult& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The timestamp of when the listing was created.</p>
      */
     inline GetListingResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
@@ -98,233 +98,233 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The description of the listing.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p/>
+     * <p>The description of the listing.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_description = value; }
 
     /**
-     * <p/>
+     * <p>The description of the listing.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The description of the listing.</p>
      */
     inline void SetDescription(const char* value) { m_description.assign(value); }
 
     /**
-     * <p/>
+     * <p>The description of the listing.</p>
      */
     inline GetListingResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The description of the listing.</p>
      */
     inline GetListingResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The description of the listing.</p>
      */
     inline GetListingResult& WithDescription(const char* value) { SetDescription(value); return *this;}
 
 
     /**
-     * <p/>
+     * <p>The ID of the Amazon DataZone domain.</p>
      */
     inline const Aws::String& GetDomainId() const{ return m_domainId; }
 
     /**
-     * <p/>
+     * <p>The ID of the Amazon DataZone domain.</p>
      */
     inline void SetDomainId(const Aws::String& value) { m_domainId = value; }
 
     /**
-     * <p/>
+     * <p>The ID of the Amazon DataZone domain.</p>
      */
     inline void SetDomainId(Aws::String&& value) { m_domainId = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The ID of the Amazon DataZone domain.</p>
      */
     inline void SetDomainId(const char* value) { m_domainId.assign(value); }
 
     /**
-     * <p/>
+     * <p>The ID of the Amazon DataZone domain.</p>
      */
     inline GetListingResult& WithDomainId(const Aws::String& value) { SetDomainId(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The ID of the Amazon DataZone domain.</p>
      */
     inline GetListingResult& WithDomainId(Aws::String&& value) { SetDomainId(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The ID of the Amazon DataZone domain.</p>
      */
     inline GetListingResult& WithDomainId(const char* value) { SetDomainId(value); return *this;}
 
 
     /**
-     * <p/>
+     * <p>The ID of the listing.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p/>
+     * <p>The ID of the listing.</p>
      */
     inline void SetId(const Aws::String& value) { m_id = value; }
 
     /**
-     * <p/>
+     * <p>The ID of the listing.</p>
      */
     inline void SetId(Aws::String&& value) { m_id = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The ID of the listing.</p>
      */
     inline void SetId(const char* value) { m_id.assign(value); }
 
     /**
-     * <p/>
+     * <p>The ID of the listing.</p>
      */
     inline GetListingResult& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The ID of the listing.</p>
      */
     inline GetListingResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The ID of the listing.</p>
      */
     inline GetListingResult& WithId(const char* value) { SetId(value); return *this;}
 
 
     /**
-     * <p/>
+     * <p>The details of a listing.</p>
      */
     inline const ListingItem& GetItem() const{ return m_item; }
 
     /**
-     * <p/>
+     * <p>The details of a listing.</p>
      */
     inline void SetItem(const ListingItem& value) { m_item = value; }
 
     /**
-     * <p/>
+     * <p>The details of a listing.</p>
      */
     inline void SetItem(ListingItem&& value) { m_item = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The details of a listing.</p>
      */
     inline GetListingResult& WithItem(const ListingItem& value) { SetItem(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The details of a listing.</p>
      */
     inline GetListingResult& WithItem(ListingItem&& value) { SetItem(std::move(value)); return *this;}
 
 
     /**
-     * <p/>
+     * <p>The revision of a listing.</p>
      */
     inline const Aws::String& GetListingRevision() const{ return m_listingRevision; }
 
     /**
-     * <p/>
+     * <p>The revision of a listing.</p>
      */
     inline void SetListingRevision(const Aws::String& value) { m_listingRevision = value; }
 
     /**
-     * <p/>
+     * <p>The revision of a listing.</p>
      */
     inline void SetListingRevision(Aws::String&& value) { m_listingRevision = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The revision of a listing.</p>
      */
     inline void SetListingRevision(const char* value) { m_listingRevision.assign(value); }
 
     /**
-     * <p/>
+     * <p>The revision of a listing.</p>
      */
     inline GetListingResult& WithListingRevision(const Aws::String& value) { SetListingRevision(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The revision of a listing.</p>
      */
     inline GetListingResult& WithListingRevision(Aws::String&& value) { SetListingRevision(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The revision of a listing.</p>
      */
     inline GetListingResult& WithListingRevision(const char* value) { SetListingRevision(value); return *this;}
 
 
     /**
-     * <p/>
+     * <p>The name of the listing.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p/>
+     * <p>The name of the listing.</p>
      */
     inline void SetName(const Aws::String& value) { m_name = value; }
 
     /**
-     * <p/>
+     * <p>The name of the listing.</p>
      */
     inline void SetName(Aws::String&& value) { m_name = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The name of the listing.</p>
      */
     inline void SetName(const char* value) { m_name.assign(value); }
 
     /**
-     * <p/>
+     * <p>The name of the listing.</p>
      */
     inline GetListingResult& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The name of the listing.</p>
      */
     inline GetListingResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The name of the listing.</p>
      */
     inline GetListingResult& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p/>
+     * <p>The status of the listing.</p>
      */
     inline const ListingStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p/>
+     * <p>The status of the listing.</p>
      */
     inline void SetStatus(const ListingStatus& value) { m_status = value; }
 
     /**
-     * <p/>
+     * <p>The status of the listing.</p>
      */
     inline void SetStatus(ListingStatus&& value) { m_status = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The status of the listing.</p>
      */
     inline GetListingResult& WithStatus(const ListingStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The status of the listing.</p>
      */
     inline GetListingResult& WithStatus(ListingStatus&& value) { SetStatus(std::move(value)); return *this;}
 

@@ -21,6 +21,7 @@ namespace Model
 {
 
 SingleMetricAnomalyDetector::SingleMetricAnomalyDetector() : 
+    m_accountIdHasBeenSet(false),
     m_namespaceHasBeenSet(false),
     m_metricNameHasBeenSet(false),
     m_dimensionsHasBeenSet(false),
@@ -29,6 +30,7 @@ SingleMetricAnomalyDetector::SingleMetricAnomalyDetector() :
 }
 
 SingleMetricAnomalyDetector::SingleMetricAnomalyDetector(const XmlNode& xmlNode) : 
+    m_accountIdHasBeenSet(false),
     m_namespaceHasBeenSet(false),
     m_metricNameHasBeenSet(false),
     m_dimensionsHasBeenSet(false),
@@ -43,6 +45,12 @@ SingleMetricAnomalyDetector& SingleMetricAnomalyDetector::operator =(const XmlNo
 
   if(!resultNode.IsNull())
   {
+    XmlNode accountIdNode = resultNode.FirstChild("AccountId");
+    if(!accountIdNode.IsNull())
+    {
+      m_accountId = Aws::Utils::Xml::DecodeEscapedXmlText(accountIdNode.GetText());
+      m_accountIdHasBeenSet = true;
+    }
     XmlNode namespaceNode = resultNode.FirstChild("Namespace");
     if(!namespaceNode.IsNull())
     {
@@ -80,6 +88,11 @@ SingleMetricAnomalyDetector& SingleMetricAnomalyDetector::operator =(const XmlNo
 
 void SingleMetricAnomalyDetector::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
+  if(m_accountIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AccountId=" << StringUtils::URLEncode(m_accountId.c_str()) << "&";
+  }
+
   if(m_namespaceHasBeenSet)
   {
       oStream << location << index << locationValue << ".Namespace=" << StringUtils::URLEncode(m_namespace.c_str()) << "&";
@@ -110,6 +123,10 @@ void SingleMetricAnomalyDetector::OutputToStream(Aws::OStream& oStream, const ch
 
 void SingleMetricAnomalyDetector::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
+  if(m_accountIdHasBeenSet)
+  {
+      oStream << location << ".AccountId=" << StringUtils::URLEncode(m_accountId.c_str()) << "&";
+  }
   if(m_namespaceHasBeenSet)
   {
       oStream << location << ".Namespace=" << StringUtils::URLEncode(m_namespace.c_str()) << "&";

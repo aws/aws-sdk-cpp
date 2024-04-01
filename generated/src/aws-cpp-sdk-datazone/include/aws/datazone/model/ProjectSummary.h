@@ -196,42 +196,50 @@ namespace Model
 
 
     /**
-     * <p>Reasons for failed project deletion</p>
+     * <p>Specifies the error message that is returned if the operation cannot be
+     * successfully completed.</p>
      */
     inline const Aws::Vector<ProjectDeletionError>& GetFailureReasons() const{ return m_failureReasons; }
 
     /**
-     * <p>Reasons for failed project deletion</p>
+     * <p>Specifies the error message that is returned if the operation cannot be
+     * successfully completed.</p>
      */
     inline bool FailureReasonsHasBeenSet() const { return m_failureReasonsHasBeenSet; }
 
     /**
-     * <p>Reasons for failed project deletion</p>
+     * <p>Specifies the error message that is returned if the operation cannot be
+     * successfully completed.</p>
      */
     inline void SetFailureReasons(const Aws::Vector<ProjectDeletionError>& value) { m_failureReasonsHasBeenSet = true; m_failureReasons = value; }
 
     /**
-     * <p>Reasons for failed project deletion</p>
+     * <p>Specifies the error message that is returned if the operation cannot be
+     * successfully completed.</p>
      */
     inline void SetFailureReasons(Aws::Vector<ProjectDeletionError>&& value) { m_failureReasonsHasBeenSet = true; m_failureReasons = std::move(value); }
 
     /**
-     * <p>Reasons for failed project deletion</p>
+     * <p>Specifies the error message that is returned if the operation cannot be
+     * successfully completed.</p>
      */
     inline ProjectSummary& WithFailureReasons(const Aws::Vector<ProjectDeletionError>& value) { SetFailureReasons(value); return *this;}
 
     /**
-     * <p>Reasons for failed project deletion</p>
+     * <p>Specifies the error message that is returned if the operation cannot be
+     * successfully completed.</p>
      */
     inline ProjectSummary& WithFailureReasons(Aws::Vector<ProjectDeletionError>&& value) { SetFailureReasons(std::move(value)); return *this;}
 
     /**
-     * <p>Reasons for failed project deletion</p>
+     * <p>Specifies the error message that is returned if the operation cannot be
+     * successfully completed.</p>
      */
     inline ProjectSummary& AddFailureReasons(const ProjectDeletionError& value) { m_failureReasonsHasBeenSet = true; m_failureReasons.push_back(value); return *this; }
 
     /**
-     * <p>Reasons for failed project deletion</p>
+     * <p>Specifies the error message that is returned if the operation cannot be
+     * successfully completed.</p>
      */
     inline ProjectSummary& AddFailureReasons(ProjectDeletionError&& value) { m_failureReasonsHasBeenSet = true; m_failureReasons.push_back(std::move(value)); return *this; }
 
@@ -319,32 +327,32 @@ namespace Model
 
 
     /**
-     * <p>Status of the project</p>
+     * <p>The status of the project.</p>
      */
     inline const ProjectStatus& GetProjectStatus() const{ return m_projectStatus; }
 
     /**
-     * <p>Status of the project</p>
+     * <p>The status of the project.</p>
      */
     inline bool ProjectStatusHasBeenSet() const { return m_projectStatusHasBeenSet; }
 
     /**
-     * <p>Status of the project</p>
+     * <p>The status of the project.</p>
      */
     inline void SetProjectStatus(const ProjectStatus& value) { m_projectStatusHasBeenSet = true; m_projectStatus = value; }
 
     /**
-     * <p>Status of the project</p>
+     * <p>The status of the project.</p>
      */
     inline void SetProjectStatus(ProjectStatus&& value) { m_projectStatusHasBeenSet = true; m_projectStatus = std::move(value); }
 
     /**
-     * <p>Status of the project</p>
+     * <p>The status of the project.</p>
      */
     inline ProjectSummary& WithProjectStatus(const ProjectStatus& value) { SetProjectStatus(value); return *this;}
 
     /**
-     * <p>Status of the project</p>
+     * <p>The status of the project.</p>
      */
     inline ProjectSummary& WithProjectStatus(ProjectStatus&& value) { SetProjectStatus(std::move(value)); return *this;}
 

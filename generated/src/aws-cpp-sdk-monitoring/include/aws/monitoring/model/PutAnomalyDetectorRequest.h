@@ -93,7 +93,7 @@ namespace Model
      * parameters in the same operation:</p> <ul> <li> <p> <code>Dimensions</code> </p>
      * </li> <li> <p> <code>MetricName</code> </p> </li> <li> <p>
      * <code>Namespace</code> </p> </li> <li> <p> <code>Stat</code> </p> </li> <li>
-     * <p>the <code>MetricMatchAnomalyDetector</code> parameters of
+     * <p>the <code>MetricMathAnomalyDetector</code> parameters of
      * <code>PutAnomalyDetectorInput</code> </p> </li> </ul> <p>Instead, specify the
      * single metric anomaly detector attributes as part of the property
      * <code>SingleMetricAnomalyDetector</code>.</p>
@@ -106,7 +106,7 @@ namespace Model
      * parameters in the same operation:</p> <ul> <li> <p> <code>Dimensions</code> </p>
      * </li> <li> <p> <code>MetricName</code> </p> </li> <li> <p>
      * <code>Namespace</code> </p> </li> <li> <p> <code>Stat</code> </p> </li> <li>
-     * <p>the <code>MetricMatchAnomalyDetector</code> parameters of
+     * <p>the <code>MetricMathAnomalyDetector</code> parameters of
      * <code>PutAnomalyDetectorInput</code> </p> </li> </ul> <p>Instead, specify the
      * single metric anomaly detector attributes as part of the property
      * <code>SingleMetricAnomalyDetector</code>.</p>
@@ -119,7 +119,7 @@ namespace Model
      * parameters in the same operation:</p> <ul> <li> <p> <code>Dimensions</code> </p>
      * </li> <li> <p> <code>MetricName</code> </p> </li> <li> <p>
      * <code>Namespace</code> </p> </li> <li> <p> <code>Stat</code> </p> </li> <li>
-     * <p>the <code>MetricMatchAnomalyDetector</code> parameters of
+     * <p>the <code>MetricMathAnomalyDetector</code> parameters of
      * <code>PutAnomalyDetectorInput</code> </p> </li> </ul> <p>Instead, specify the
      * single metric anomaly detector attributes as part of the property
      * <code>SingleMetricAnomalyDetector</code>.</p>
@@ -132,7 +132,7 @@ namespace Model
      * parameters in the same operation:</p> <ul> <li> <p> <code>Dimensions</code> </p>
      * </li> <li> <p> <code>MetricName</code> </p> </li> <li> <p>
      * <code>Namespace</code> </p> </li> <li> <p> <code>Stat</code> </p> </li> <li>
-     * <p>the <code>MetricMatchAnomalyDetector</code> parameters of
+     * <p>the <code>MetricMathAnomalyDetector</code> parameters of
      * <code>PutAnomalyDetectorInput</code> </p> </li> </ul> <p>Instead, specify the
      * single metric anomaly detector attributes as part of the property
      * <code>SingleMetricAnomalyDetector</code>.</p>
@@ -145,7 +145,7 @@ namespace Model
      * parameters in the same operation:</p> <ul> <li> <p> <code>Dimensions</code> </p>
      * </li> <li> <p> <code>MetricName</code> </p> </li> <li> <p>
      * <code>Namespace</code> </p> </li> <li> <p> <code>Stat</code> </p> </li> <li>
-     * <p>the <code>MetricMatchAnomalyDetector</code> parameters of
+     * <p>the <code>MetricMathAnomalyDetector</code> parameters of
      * <code>PutAnomalyDetectorInput</code> </p> </li> </ul> <p>Instead, specify the
      * single metric anomaly detector attributes as part of the property
      * <code>SingleMetricAnomalyDetector</code>.</p>
@@ -158,7 +158,7 @@ namespace Model
      * parameters in the same operation:</p> <ul> <li> <p> <code>Dimensions</code> </p>
      * </li> <li> <p> <code>MetricName</code> </p> </li> <li> <p>
      * <code>Namespace</code> </p> </li> <li> <p> <code>Stat</code> </p> </li> <li>
-     * <p>the <code>MetricMatchAnomalyDetector</code> parameters of
+     * <p>the <code>MetricMathAnomalyDetector</code> parameters of
      * <code>PutAnomalyDetectorInput</code> </p> </li> </ul> <p>Instead, specify the
      * single metric anomaly detector attributes as part of the property
      * <code>SingleMetricAnomalyDetector</code>.</p>

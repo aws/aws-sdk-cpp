@@ -168,42 +168,42 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The external identifier of the asset.</p>
      */
     inline const Aws::String& GetExternalIdentifier() const{ return m_externalIdentifier; }
 
     /**
-     * <p/>
+     * <p>The external identifier of the asset.</p>
      */
     inline bool ExternalIdentifierHasBeenSet() const { return m_externalIdentifierHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The external identifier of the asset.</p>
      */
     inline void SetExternalIdentifier(const Aws::String& value) { m_externalIdentifierHasBeenSet = true; m_externalIdentifier = value; }
 
     /**
-     * <p/>
+     * <p>The external identifier of the asset.</p>
      */
     inline void SetExternalIdentifier(Aws::String&& value) { m_externalIdentifierHasBeenSet = true; m_externalIdentifier = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The external identifier of the asset.</p>
      */
     inline void SetExternalIdentifier(const char* value) { m_externalIdentifierHasBeenSet = true; m_externalIdentifier.assign(value); }
 
     /**
-     * <p/>
+     * <p>The external identifier of the asset.</p>
      */
     inline CreateAssetRequest& WithExternalIdentifier(const Aws::String& value) { SetExternalIdentifier(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The external identifier of the asset.</p>
      */
     inline CreateAssetRequest& WithExternalIdentifier(Aws::String&& value) { SetExternalIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The external identifier of the asset.</p>
      */
     inline CreateAssetRequest& WithExternalIdentifier(const char* value) { SetExternalIdentifier(value); return *this;}
 

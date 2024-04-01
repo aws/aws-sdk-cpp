@@ -134,6 +134,31 @@ namespace DataZone
         }
 
         /**
+         * <p>Cancels the metadata generation run.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CancelMetadataGenerationRun">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CancelMetadataGenerationRunOutcome CancelMetadataGenerationRun(const Model::CancelMetadataGenerationRunRequest& request) const;
+
+        /**
+         * A Callable wrapper for CancelMetadataGenerationRun that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CancelMetadataGenerationRunRequestT = Model::CancelMetadataGenerationRunRequest>
+        Model::CancelMetadataGenerationRunOutcomeCallable CancelMetadataGenerationRunCallable(const CancelMetadataGenerationRunRequestT& request) const
+        {
+            return SubmitCallable(&DataZoneClient::CancelMetadataGenerationRun, request);
+        }
+
+        /**
+         * An Async wrapper for CancelMetadataGenerationRun that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CancelMetadataGenerationRunRequestT = Model::CancelMetadataGenerationRunRequest>
+        void CancelMetadataGenerationRunAsync(const CancelMetadataGenerationRunRequestT& request, const CancelMetadataGenerationRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DataZoneClient::CancelMetadataGenerationRun, request, handler, context);
+        }
+
+        /**
          * <p>Cancels the subscription to the specified asset.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CancelSubscription">AWS
@@ -435,7 +460,8 @@ namespace DataZone
         }
 
         /**
-         * <p/><p><h3>See Also:</h3>   <a
+         * <p>Publishes a listing (a record of an asset at a given time) or removes a
+         * listing from the catalog. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/CreateListingChangeSet">AWS
          * API Reference</a></p>
          */
@@ -868,7 +894,8 @@ namespace DataZone
         }
 
         /**
-         * <p/><p><h3>See Also:</h3>   <a
+         * <p>Deletes a listing (a record of an asset at a given time).</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/DeleteListing">AWS
          * API Reference</a></p>
          */
@@ -1374,7 +1401,8 @@ namespace DataZone
         }
 
         /**
-         * <p/><p><h3>See Also:</h3>   <a
+         * <p>Gets a listing (a record of an asset at a given time).</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetListing">AWS
          * API Reference</a></p>
          */
@@ -1396,6 +1424,32 @@ namespace DataZone
         void GetListingAsync(const GetListingRequestT& request, const GetListingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&DataZoneClient::GetListing, request, handler, context);
+        }
+
+        /**
+         * <p>Gets a metadata generation run in Amazon DataZone.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/GetMetadataGenerationRun">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetMetadataGenerationRunOutcome GetMetadataGenerationRun(const Model::GetMetadataGenerationRunRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetMetadataGenerationRun that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetMetadataGenerationRunRequestT = Model::GetMetadataGenerationRunRequest>
+        Model::GetMetadataGenerationRunOutcomeCallable GetMetadataGenerationRunCallable(const GetMetadataGenerationRunRequestT& request) const
+        {
+            return SubmitCallable(&DataZoneClient::GetMetadataGenerationRun, request);
+        }
+
+        /**
+         * An Async wrapper for GetMetadataGenerationRun that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetMetadataGenerationRunRequestT = Model::GetMetadataGenerationRunRequest>
+        void GetMetadataGenerationRunAsync(const GetMetadataGenerationRunRequestT& request, const GetMetadataGenerationRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DataZoneClient::GetMetadataGenerationRun, request, handler, context);
         }
 
         /**
@@ -1778,6 +1832,31 @@ namespace DataZone
         }
 
         /**
+         * <p>Lists all metadata generation runs.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListMetadataGenerationRuns">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListMetadataGenerationRunsOutcome ListMetadataGenerationRuns(const Model::ListMetadataGenerationRunsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListMetadataGenerationRuns that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListMetadataGenerationRunsRequestT = Model::ListMetadataGenerationRunsRequest>
+        Model::ListMetadataGenerationRunsOutcomeCallable ListMetadataGenerationRunsCallable(const ListMetadataGenerationRunsRequestT& request) const
+        {
+            return SubmitCallable(&DataZoneClient::ListMetadataGenerationRuns, request);
+        }
+
+        /**
+         * An Async wrapper for ListMetadataGenerationRuns that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListMetadataGenerationRunsRequestT = Model::ListMetadataGenerationRunsRequest>
+        void ListMetadataGenerationRunsAsync(const ListMetadataGenerationRunsRequestT& request, const ListMetadataGenerationRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DataZoneClient::ListMetadataGenerationRuns, request, handler, context);
+        }
+
+        /**
          * <p>Lists all Amazon DataZone notifications.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/ListNotifications">AWS
          * API Reference</a></p>
@@ -2132,7 +2211,8 @@ namespace DataZone
         }
 
         /**
-         * <p>Searches listings in Amazon DataZone.</p><p><h3>See Also:</h3>   <a
+         * <p>Searches listings (records of an asset at a given time) in Amazon
+         * DataZone.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/SearchListings">AWS
          * API Reference</a></p>
          */
@@ -2230,6 +2310,31 @@ namespace DataZone
         void StartDataSourceRunAsync(const StartDataSourceRunRequestT& request, const StartDataSourceRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&DataZoneClient::StartDataSourceRun, request, handler, context);
+        }
+
+        /**
+         * <p>Starts the metadata generation run.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/StartMetadataGenerationRun">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartMetadataGenerationRunOutcome StartMetadataGenerationRun(const Model::StartMetadataGenerationRunRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartMetadataGenerationRun that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartMetadataGenerationRunRequestT = Model::StartMetadataGenerationRunRequest>
+        Model::StartMetadataGenerationRunOutcomeCallable StartMetadataGenerationRunCallable(const StartMetadataGenerationRunRequestT& request) const
+        {
+            return SubmitCallable(&DataZoneClient::StartMetadataGenerationRun, request);
+        }
+
+        /**
+         * An Async wrapper for StartMetadataGenerationRun that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartMetadataGenerationRunRequestT = Model::StartMetadataGenerationRunRequest>
+        void StartMetadataGenerationRunAsync(const StartMetadataGenerationRunRequestT& request, const StartMetadataGenerationRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DataZoneClient::StartMetadataGenerationRun, request, handler, context);
         }
 
         /**

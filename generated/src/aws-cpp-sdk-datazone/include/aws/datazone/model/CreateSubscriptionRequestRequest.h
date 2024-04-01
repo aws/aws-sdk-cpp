@@ -176,42 +176,42 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The published asset for which the subscription grant is to be created.</p>
      */
     inline const Aws::Vector<SubscribedListingInput>& GetSubscribedListings() const{ return m_subscribedListings; }
 
     /**
-     * <p/>
+     * <p>The published asset for which the subscription grant is to be created.</p>
      */
     inline bool SubscribedListingsHasBeenSet() const { return m_subscribedListingsHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The published asset for which the subscription grant is to be created.</p>
      */
     inline void SetSubscribedListings(const Aws::Vector<SubscribedListingInput>& value) { m_subscribedListingsHasBeenSet = true; m_subscribedListings = value; }
 
     /**
-     * <p/>
+     * <p>The published asset for which the subscription grant is to be created.</p>
      */
     inline void SetSubscribedListings(Aws::Vector<SubscribedListingInput>&& value) { m_subscribedListingsHasBeenSet = true; m_subscribedListings = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The published asset for which the subscription grant is to be created.</p>
      */
     inline CreateSubscriptionRequestRequest& WithSubscribedListings(const Aws::Vector<SubscribedListingInput>& value) { SetSubscribedListings(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The published asset for which the subscription grant is to be created.</p>
      */
     inline CreateSubscriptionRequestRequest& WithSubscribedListings(Aws::Vector<SubscribedListingInput>&& value) { SetSubscribedListings(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The published asset for which the subscription grant is to be created.</p>
      */
     inline CreateSubscriptionRequestRequest& AddSubscribedListings(const SubscribedListingInput& value) { m_subscribedListingsHasBeenSet = true; m_subscribedListings.push_back(value); return *this; }
 
     /**
-     * <p/>
+     * <p>The published asset for which the subscription grant is to be created.</p>
      */
     inline CreateSubscriptionRequestRequest& AddSubscribedListings(SubscribedListingInput&& value) { m_subscribedListingsHasBeenSet = true; m_subscribedListings.push_back(std::move(value)); return *this; }
 

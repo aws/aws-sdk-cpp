@@ -118,22 +118,22 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>Specifies whether the search is managed.</p>
      */
     inline bool GetManaged() const{ return m_managed; }
 
     /**
-     * <p/>
+     * <p>Specifies whether the search is managed.</p>
      */
     inline bool ManagedHasBeenSet() const { return m_managedHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>Specifies whether the search is managed.</p>
      */
     inline void SetManaged(bool value) { m_managedHasBeenSet = true; m_managed = value; }
 
     /**
-     * <p/>
+     * <p>Specifies whether the search is managed.</p>
      */
     inline SearchTypesRequest& WithManaged(bool value) { SetManaged(value); return *this;}
 
@@ -257,42 +257,42 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The details of the search.</p>
      */
     inline const Aws::Vector<SearchInItem>& GetSearchIn() const{ return m_searchIn; }
 
     /**
-     * <p/>
+     * <p>The details of the search.</p>
      */
     inline bool SearchInHasBeenSet() const { return m_searchInHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The details of the search.</p>
      */
     inline void SetSearchIn(const Aws::Vector<SearchInItem>& value) { m_searchInHasBeenSet = true; m_searchIn = value; }
 
     /**
-     * <p/>
+     * <p>The details of the search.</p>
      */
     inline void SetSearchIn(Aws::Vector<SearchInItem>&& value) { m_searchInHasBeenSet = true; m_searchIn = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The details of the search.</p>
      */
     inline SearchTypesRequest& WithSearchIn(const Aws::Vector<SearchInItem>& value) { SetSearchIn(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The details of the search.</p>
      */
     inline SearchTypesRequest& WithSearchIn(Aws::Vector<SearchInItem>&& value) { SetSearchIn(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The details of the search.</p>
      */
     inline SearchTypesRequest& AddSearchIn(const SearchInItem& value) { m_searchInHasBeenSet = true; m_searchIn.push_back(value); return *this; }
 
     /**
-     * <p/>
+     * <p>The details of the search.</p>
      */
     inline SearchTypesRequest& AddSearchIn(SearchInItem&& value) { m_searchInHasBeenSet = true; m_searchIn.push_back(std::move(value)); return *this; }
 

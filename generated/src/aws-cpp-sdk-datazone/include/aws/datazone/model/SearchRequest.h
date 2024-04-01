@@ -311,42 +311,42 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The details of the search.</p>
      */
     inline const Aws::Vector<SearchInItem>& GetSearchIn() const{ return m_searchIn; }
 
     /**
-     * <p/>
+     * <p>The details of the search.</p>
      */
     inline bool SearchInHasBeenSet() const { return m_searchInHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The details of the search.</p>
      */
     inline void SetSearchIn(const Aws::Vector<SearchInItem>& value) { m_searchInHasBeenSet = true; m_searchIn = value; }
 
     /**
-     * <p/>
+     * <p>The details of the search.</p>
      */
     inline void SetSearchIn(Aws::Vector<SearchInItem>&& value) { m_searchInHasBeenSet = true; m_searchIn = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The details of the search.</p>
      */
     inline SearchRequest& WithSearchIn(const Aws::Vector<SearchInItem>& value) { SetSearchIn(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The details of the search.</p>
      */
     inline SearchRequest& WithSearchIn(Aws::Vector<SearchInItem>&& value) { SetSearchIn(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The details of the search.</p>
      */
     inline SearchRequest& AddSearchIn(const SearchInItem& value) { m_searchInHasBeenSet = true; m_searchIn.push_back(value); return *this; }
 
     /**
-     * <p/>
+     * <p>The details of the search.</p>
      */
     inline SearchRequest& AddSearchIn(SearchInItem&& value) { m_searchInHasBeenSet = true; m_searchIn.push_back(std::move(value)); return *this; }
 

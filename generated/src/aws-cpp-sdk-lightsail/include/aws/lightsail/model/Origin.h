@@ -183,6 +183,39 @@ namespace Model
      */
     inline Origin& WithProtocolPolicy(OriginProtocolPolicyEnum&& value) { SetProtocolPolicy(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The amount of time, in seconds, that the distribution waits for a response
+     * after forwarding a request to the origin. The minimum timeout is 1 second, the
+     * maximum is 60 seconds, and the default (if you don't specify otherwise) is 30
+     * seconds.</p>
+     */
+    inline int GetResponseTimeout() const{ return m_responseTimeout; }
+
+    /**
+     * <p>The amount of time, in seconds, that the distribution waits for a response
+     * after forwarding a request to the origin. The minimum timeout is 1 second, the
+     * maximum is 60 seconds, and the default (if you don't specify otherwise) is 30
+     * seconds.</p>
+     */
+    inline bool ResponseTimeoutHasBeenSet() const { return m_responseTimeoutHasBeenSet; }
+
+    /**
+     * <p>The amount of time, in seconds, that the distribution waits for a response
+     * after forwarding a request to the origin. The minimum timeout is 1 second, the
+     * maximum is 60 seconds, and the default (if you don't specify otherwise) is 30
+     * seconds.</p>
+     */
+    inline void SetResponseTimeout(int value) { m_responseTimeoutHasBeenSet = true; m_responseTimeout = value; }
+
+    /**
+     * <p>The amount of time, in seconds, that the distribution waits for a response
+     * after forwarding a request to the origin. The minimum timeout is 1 second, the
+     * maximum is 60 seconds, and the default (if you don't specify otherwise) is 30
+     * seconds.</p>
+     */
+    inline Origin& WithResponseTimeout(int value) { SetResponseTimeout(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -196,6 +229,9 @@ namespace Model
 
     OriginProtocolPolicyEnum m_protocolPolicy;
     bool m_protocolPolicyHasBeenSet = false;
+
+    int m_responseTimeout;
+    bool m_responseTimeoutHasBeenSet = false;
   };
 
 } // namespace Model
