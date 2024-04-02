@@ -296,111 +296,231 @@ namespace Model
 
 
     /**
-     * <p> A timestamp that indicates when the rule was created. </p> <p>Uses the
-     * <code>date-time</code> format specified in <a
-     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.</p>
+     * <p> A timestamp that indicates when the rule was created. </p> <p>This field
+     * accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after
+     * seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00.
+     * Here are valid timestamp formats with examples:</p> <ul> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
 
     /**
-     * <p> A timestamp that indicates when the rule was created. </p> <p>Uses the
-     * <code>date-time</code> format specified in <a
-     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.</p>
+     * <p> A timestamp that indicates when the rule was created. </p> <p>This field
+     * accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after
+     * seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00.
+     * Here are valid timestamp formats with examples:</p> <ul> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
 
     /**
-     * <p> A timestamp that indicates when the rule was created. </p> <p>Uses the
-     * <code>date-time</code> format specified in <a
-     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.</p>
+     * <p> A timestamp that indicates when the rule was created. </p> <p>This field
+     * accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after
+     * seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00.
+     * Here are valid timestamp formats with examples:</p> <ul> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
-     * <p> A timestamp that indicates when the rule was created. </p> <p>Uses the
-     * <code>date-time</code> format specified in <a
-     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.</p>
+     * <p> A timestamp that indicates when the rule was created. </p> <p>This field
+     * accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after
+     * seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00.
+     * Here are valid timestamp formats with examples:</p> <ul> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
 
     /**
-     * <p> A timestamp that indicates when the rule was created. </p> <p>Uses the
-     * <code>date-time</code> format specified in <a
-     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.</p>
+     * <p> A timestamp that indicates when the rule was created. </p> <p>This field
+     * accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after
+     * seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00.
+     * Here are valid timestamp formats with examples:</p> <ul> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline AutomationRulesMetadata& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
 
     /**
-     * <p> A timestamp that indicates when the rule was created. </p> <p>Uses the
-     * <code>date-time</code> format specified in <a
-     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.</p>
+     * <p> A timestamp that indicates when the rule was created. </p> <p>This field
+     * accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after
+     * seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00.
+     * Here are valid timestamp formats with examples:</p> <ul> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline AutomationRulesMetadata& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
 
     /**
      * <p> A timestamp that indicates when the rule was most recently updated. </p>
-     * <p>Uses the <code>date-time</code> format specified in <a
-     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.</p>
+     * <p>This field accepts only the specified formats. Timestamps can end with
+     * <code>Z</code> or <code>("+" / "-") time-hour [":" time-minute]</code>. The
+     * time-secfrac after seconds is limited to a maximum of 9 digits. The offset is
+     * bounded by +/-18:00. Here are valid timestamp formats with examples:</p> <ul>
+     * <li> <p> <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
 
     /**
      * <p> A timestamp that indicates when the rule was most recently updated. </p>
-     * <p>Uses the <code>date-time</code> format specified in <a
-     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.</p>
+     * <p>This field accepts only the specified formats. Timestamps can end with
+     * <code>Z</code> or <code>("+" / "-") time-hour [":" time-minute]</code>. The
+     * time-secfrac after seconds is limited to a maximum of 9 digits. The offset is
+     * bounded by +/-18:00. Here are valid timestamp formats with examples:</p> <ul>
+     * <li> <p> <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
 
     /**
      * <p> A timestamp that indicates when the rule was most recently updated. </p>
-     * <p>Uses the <code>date-time</code> format specified in <a
-     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.</p>
+     * <p>This field accepts only the specified formats. Timestamps can end with
+     * <code>Z</code> or <code>("+" / "-") time-hour [":" time-minute]</code>. The
+     * time-secfrac after seconds is limited to a maximum of 9 digits. The offset is
+     * bounded by +/-18:00. Here are valid timestamp formats with examples:</p> <ul>
+     * <li> <p> <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
 
     /**
      * <p> A timestamp that indicates when the rule was most recently updated. </p>
-     * <p>Uses the <code>date-time</code> format specified in <a
-     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.</p>
+     * <p>This field accepts only the specified formats. Timestamps can end with
+     * <code>Z</code> or <code>("+" / "-") time-hour [":" time-minute]</code>. The
+     * time-secfrac after seconds is limited to a maximum of 9 digits. The offset is
+     * bounded by +/-18:00. Here are valid timestamp formats with examples:</p> <ul>
+     * <li> <p> <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
 
     /**
      * <p> A timestamp that indicates when the rule was most recently updated. </p>
-     * <p>Uses the <code>date-time</code> format specified in <a
-     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.</p>
+     * <p>This field accepts only the specified formats. Timestamps can end with
+     * <code>Z</code> or <code>("+" / "-") time-hour [":" time-minute]</code>. The
+     * time-secfrac after seconds is limited to a maximum of 9 digits. The offset is
+     * bounded by +/-18:00. Here are valid timestamp formats with examples:</p> <ul>
+     * <li> <p> <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline AutomationRulesMetadata& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
 
     /**
      * <p> A timestamp that indicates when the rule was most recently updated. </p>
-     * <p>Uses the <code>date-time</code> format specified in <a
-     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.</p>
+     * <p>This field accepts only the specified formats. Timestamps can end with
+     * <code>Z</code> or <code>("+" / "-") time-hour [":" time-minute]</code>. The
+     * time-secfrac after seconds is limited to a maximum of 9 digits. The offset is
+     * bounded by +/-18:00. Here are valid timestamp formats with examples:</p> <ul>
+     * <li> <p> <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline AutomationRulesMetadata& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
 

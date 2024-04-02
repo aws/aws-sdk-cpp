@@ -38,7 +38,8 @@ namespace Model
      * <p> Used to determine how long sessions vended using this profile are valid for.
      * See the <code>Expiration</code> section of the <a
      * href="https://docs.aws.amazon.com/rolesanywhere/latest/userguide/authentication-create-session.html#credentials-object">CreateSession
-     * API documentation</a> page for more details. </p>
+     * API documentation</a> page for more details. In requests, if this value is not
+     * provided, the default value will be 3600. </p>
      */
     inline int GetDurationSeconds() const{ return m_durationSeconds; }
 
@@ -46,7 +47,8 @@ namespace Model
      * <p> Used to determine how long sessions vended using this profile are valid for.
      * See the <code>Expiration</code> section of the <a
      * href="https://docs.aws.amazon.com/rolesanywhere/latest/userguide/authentication-create-session.html#credentials-object">CreateSession
-     * API documentation</a> page for more details. </p>
+     * API documentation</a> page for more details. In requests, if this value is not
+     * provided, the default value will be 3600. </p>
      */
     inline bool DurationSecondsHasBeenSet() const { return m_durationSecondsHasBeenSet; }
 
@@ -54,7 +56,8 @@ namespace Model
      * <p> Used to determine how long sessions vended using this profile are valid for.
      * See the <code>Expiration</code> section of the <a
      * href="https://docs.aws.amazon.com/rolesanywhere/latest/userguide/authentication-create-session.html#credentials-object">CreateSession
-     * API documentation</a> page for more details. </p>
+     * API documentation</a> page for more details. In requests, if this value is not
+     * provided, the default value will be 3600. </p>
      */
     inline void SetDurationSeconds(int value) { m_durationSecondsHasBeenSet = true; m_durationSeconds = value; }
 
@@ -62,7 +65,8 @@ namespace Model
      * <p> Used to determine how long sessions vended using this profile are valid for.
      * See the <code>Expiration</code> section of the <a
      * href="https://docs.aws.amazon.com/rolesanywhere/latest/userguide/authentication-create-session.html#credentials-object">CreateSession
-     * API documentation</a> page for more details. </p>
+     * API documentation</a> page for more details. In requests, if this value is not
+     * provided, the default value will be 3600. </p>
      */
     inline CreateProfileRequest& WithDurationSeconds(int value) { SetDurationSeconds(value); return *this;}
 

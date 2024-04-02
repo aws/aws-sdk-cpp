@@ -332,349 +332,637 @@ namespace Model
 
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security findings
-     * provider first observed the potential security issue that a finding
-     * captured.</p> <p>A correctly formatted example is
-     * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
-     * and time should be separated by <code>T</code>. For more information, see <a
-     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>.</p>
+     * <p>A timestamp that indicates when the security findings provider first observed
+     * the potential security issue that a finding captured.</p> <p>This field accepts
+     * only the specified formats. Timestamps can end with <code>Z</code> or <code>("+"
+     * / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is
+     * limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are
+     * valid timestamp formats with examples:</p> <ul> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline const Aws::Vector<DateFilter>& GetFirstObservedAt() const{ return m_firstObservedAt; }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security findings
-     * provider first observed the potential security issue that a finding
-     * captured.</p> <p>A correctly formatted example is
-     * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
-     * and time should be separated by <code>T</code>. For more information, see <a
-     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>.</p>
+     * <p>A timestamp that indicates when the security findings provider first observed
+     * the potential security issue that a finding captured.</p> <p>This field accepts
+     * only the specified formats. Timestamps can end with <code>Z</code> or <code>("+"
+     * / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is
+     * limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are
+     * valid timestamp formats with examples:</p> <ul> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline bool FirstObservedAtHasBeenSet() const { return m_firstObservedAtHasBeenSet; }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security findings
-     * provider first observed the potential security issue that a finding
-     * captured.</p> <p>A correctly formatted example is
-     * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
-     * and time should be separated by <code>T</code>. For more information, see <a
-     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>.</p>
+     * <p>A timestamp that indicates when the security findings provider first observed
+     * the potential security issue that a finding captured.</p> <p>This field accepts
+     * only the specified formats. Timestamps can end with <code>Z</code> or <code>("+"
+     * / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is
+     * limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are
+     * valid timestamp formats with examples:</p> <ul> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline void SetFirstObservedAt(const Aws::Vector<DateFilter>& value) { m_firstObservedAtHasBeenSet = true; m_firstObservedAt = value; }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security findings
-     * provider first observed the potential security issue that a finding
-     * captured.</p> <p>A correctly formatted example is
-     * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
-     * and time should be separated by <code>T</code>. For more information, see <a
-     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>.</p>
+     * <p>A timestamp that indicates when the security findings provider first observed
+     * the potential security issue that a finding captured.</p> <p>This field accepts
+     * only the specified formats. Timestamps can end with <code>Z</code> or <code>("+"
+     * / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is
+     * limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are
+     * valid timestamp formats with examples:</p> <ul> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline void SetFirstObservedAt(Aws::Vector<DateFilter>&& value) { m_firstObservedAtHasBeenSet = true; m_firstObservedAt = std::move(value); }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security findings
-     * provider first observed the potential security issue that a finding
-     * captured.</p> <p>A correctly formatted example is
-     * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
-     * and time should be separated by <code>T</code>. For more information, see <a
-     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>.</p>
+     * <p>A timestamp that indicates when the security findings provider first observed
+     * the potential security issue that a finding captured.</p> <p>This field accepts
+     * only the specified formats. Timestamps can end with <code>Z</code> or <code>("+"
+     * / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is
+     * limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are
+     * valid timestamp formats with examples:</p> <ul> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline AwsSecurityFindingFilters& WithFirstObservedAt(const Aws::Vector<DateFilter>& value) { SetFirstObservedAt(value); return *this;}
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security findings
-     * provider first observed the potential security issue that a finding
-     * captured.</p> <p>A correctly formatted example is
-     * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
-     * and time should be separated by <code>T</code>. For more information, see <a
-     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>.</p>
+     * <p>A timestamp that indicates when the security findings provider first observed
+     * the potential security issue that a finding captured.</p> <p>This field accepts
+     * only the specified formats. Timestamps can end with <code>Z</code> or <code>("+"
+     * / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is
+     * limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are
+     * valid timestamp formats with examples:</p> <ul> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline AwsSecurityFindingFilters& WithFirstObservedAt(Aws::Vector<DateFilter>&& value) { SetFirstObservedAt(std::move(value)); return *this;}
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security findings
-     * provider first observed the potential security issue that a finding
-     * captured.</p> <p>A correctly formatted example is
-     * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
-     * and time should be separated by <code>T</code>. For more information, see <a
-     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>.</p>
+     * <p>A timestamp that indicates when the security findings provider first observed
+     * the potential security issue that a finding captured.</p> <p>This field accepts
+     * only the specified formats. Timestamps can end with <code>Z</code> or <code>("+"
+     * / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is
+     * limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are
+     * valid timestamp formats with examples:</p> <ul> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline AwsSecurityFindingFilters& AddFirstObservedAt(const DateFilter& value) { m_firstObservedAtHasBeenSet = true; m_firstObservedAt.push_back(value); return *this; }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security findings
-     * provider first observed the potential security issue that a finding
-     * captured.</p> <p>A correctly formatted example is
-     * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
-     * and time should be separated by <code>T</code>. For more information, see <a
-     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>.</p>
+     * <p>A timestamp that indicates when the security findings provider first observed
+     * the potential security issue that a finding captured.</p> <p>This field accepts
+     * only the specified formats. Timestamps can end with <code>Z</code> or <code>("+"
+     * / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is
+     * limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are
+     * valid timestamp formats with examples:</p> <ul> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline AwsSecurityFindingFilters& AddFirstObservedAt(DateFilter&& value) { m_firstObservedAtHasBeenSet = true; m_firstObservedAt.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security findings
-     * provider most recently observed the potential security issue that a finding
-     * captured.</p> <p>A correctly formatted example is
-     * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
-     * and time should be separated by <code>T</code>. For more information, see <a
-     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>.</p>
+     * <p>A timestamp that indicates when the security findings provider most recently
+     * observed the potential security issue that a finding captured.</p> <p>This field
+     * accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after
+     * seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00.
+     * Here are valid timestamp formats with examples:</p> <ul> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline const Aws::Vector<DateFilter>& GetLastObservedAt() const{ return m_lastObservedAt; }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security findings
-     * provider most recently observed the potential security issue that a finding
-     * captured.</p> <p>A correctly formatted example is
-     * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
-     * and time should be separated by <code>T</code>. For more information, see <a
-     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>.</p>
+     * <p>A timestamp that indicates when the security findings provider most recently
+     * observed the potential security issue that a finding captured.</p> <p>This field
+     * accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after
+     * seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00.
+     * Here are valid timestamp formats with examples:</p> <ul> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline bool LastObservedAtHasBeenSet() const { return m_lastObservedAtHasBeenSet; }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security findings
-     * provider most recently observed the potential security issue that a finding
-     * captured.</p> <p>A correctly formatted example is
-     * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
-     * and time should be separated by <code>T</code>. For more information, see <a
-     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>.</p>
+     * <p>A timestamp that indicates when the security findings provider most recently
+     * observed the potential security issue that a finding captured.</p> <p>This field
+     * accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after
+     * seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00.
+     * Here are valid timestamp formats with examples:</p> <ul> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline void SetLastObservedAt(const Aws::Vector<DateFilter>& value) { m_lastObservedAtHasBeenSet = true; m_lastObservedAt = value; }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security findings
-     * provider most recently observed the potential security issue that a finding
-     * captured.</p> <p>A correctly formatted example is
-     * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
-     * and time should be separated by <code>T</code>. For more information, see <a
-     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>.</p>
+     * <p>A timestamp that indicates when the security findings provider most recently
+     * observed the potential security issue that a finding captured.</p> <p>This field
+     * accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after
+     * seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00.
+     * Here are valid timestamp formats with examples:</p> <ul> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline void SetLastObservedAt(Aws::Vector<DateFilter>&& value) { m_lastObservedAtHasBeenSet = true; m_lastObservedAt = std::move(value); }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security findings
-     * provider most recently observed the potential security issue that a finding
-     * captured.</p> <p>A correctly formatted example is
-     * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
-     * and time should be separated by <code>T</code>. For more information, see <a
-     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>.</p>
+     * <p>A timestamp that indicates when the security findings provider most recently
+     * observed the potential security issue that a finding captured.</p> <p>This field
+     * accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after
+     * seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00.
+     * Here are valid timestamp formats with examples:</p> <ul> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline AwsSecurityFindingFilters& WithLastObservedAt(const Aws::Vector<DateFilter>& value) { SetLastObservedAt(value); return *this;}
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security findings
-     * provider most recently observed the potential security issue that a finding
-     * captured.</p> <p>A correctly formatted example is
-     * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
-     * and time should be separated by <code>T</code>. For more information, see <a
-     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>.</p>
+     * <p>A timestamp that indicates when the security findings provider most recently
+     * observed the potential security issue that a finding captured.</p> <p>This field
+     * accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after
+     * seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00.
+     * Here are valid timestamp formats with examples:</p> <ul> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline AwsSecurityFindingFilters& WithLastObservedAt(Aws::Vector<DateFilter>&& value) { SetLastObservedAt(std::move(value)); return *this;}
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security findings
-     * provider most recently observed the potential security issue that a finding
-     * captured.</p> <p>A correctly formatted example is
-     * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
-     * and time should be separated by <code>T</code>. For more information, see <a
-     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>.</p>
+     * <p>A timestamp that indicates when the security findings provider most recently
+     * observed the potential security issue that a finding captured.</p> <p>This field
+     * accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after
+     * seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00.
+     * Here are valid timestamp formats with examples:</p> <ul> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline AwsSecurityFindingFilters& AddLastObservedAt(const DateFilter& value) { m_lastObservedAtHasBeenSet = true; m_lastObservedAt.push_back(value); return *this; }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security findings
-     * provider most recently observed the potential security issue that a finding
-     * captured.</p> <p>A correctly formatted example is
-     * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
-     * and time should be separated by <code>T</code>. For more information, see <a
-     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>.</p>
+     * <p>A timestamp that indicates when the security findings provider most recently
+     * observed the potential security issue that a finding captured.</p> <p>This field
+     * accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after
+     * seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00.
+     * Here are valid timestamp formats with examples:</p> <ul> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline AwsSecurityFindingFilters& AddLastObservedAt(DateFilter&& value) { m_lastObservedAtHasBeenSet = true; m_lastObservedAt.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security findings
-     * provider captured the potential security issue that a finding captured.</p> <p>A
-     * correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
-     * cannot contain spaces, and date and time should be separated by <code>T</code>.
-     * For more information, see <a
-     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>.</p>
+     * <p>A timestamp that indicates when the security findings provider created the
+     * potential security issue that a finding reflects.</p> <p>This field accepts only
+     * the specified formats. Timestamps can end with <code>Z</code> or <code>("+" /
+     * "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is
+     * limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are
+     * valid timestamp formats with examples:</p> <ul> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline const Aws::Vector<DateFilter>& GetCreatedAt() const{ return m_createdAt; }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security findings
-     * provider captured the potential security issue that a finding captured.</p> <p>A
-     * correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
-     * cannot contain spaces, and date and time should be separated by <code>T</code>.
-     * For more information, see <a
-     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>.</p>
+     * <p>A timestamp that indicates when the security findings provider created the
+     * potential security issue that a finding reflects.</p> <p>This field accepts only
+     * the specified formats. Timestamps can end with <code>Z</code> or <code>("+" /
+     * "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is
+     * limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are
+     * valid timestamp formats with examples:</p> <ul> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security findings
-     * provider captured the potential security issue that a finding captured.</p> <p>A
-     * correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
-     * cannot contain spaces, and date and time should be separated by <code>T</code>.
-     * For more information, see <a
-     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>.</p>
+     * <p>A timestamp that indicates when the security findings provider created the
+     * potential security issue that a finding reflects.</p> <p>This field accepts only
+     * the specified formats. Timestamps can end with <code>Z</code> or <code>("+" /
+     * "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is
+     * limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are
+     * valid timestamp formats with examples:</p> <ul> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline void SetCreatedAt(const Aws::Vector<DateFilter>& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security findings
-     * provider captured the potential security issue that a finding captured.</p> <p>A
-     * correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
-     * cannot contain spaces, and date and time should be separated by <code>T</code>.
-     * For more information, see <a
-     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>.</p>
+     * <p>A timestamp that indicates when the security findings provider created the
+     * potential security issue that a finding reflects.</p> <p>This field accepts only
+     * the specified formats. Timestamps can end with <code>Z</code> or <code>("+" /
+     * "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is
+     * limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are
+     * valid timestamp formats with examples:</p> <ul> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline void SetCreatedAt(Aws::Vector<DateFilter>&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security findings
-     * provider captured the potential security issue that a finding captured.</p> <p>A
-     * correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
-     * cannot contain spaces, and date and time should be separated by <code>T</code>.
-     * For more information, see <a
-     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>.</p>
+     * <p>A timestamp that indicates when the security findings provider created the
+     * potential security issue that a finding reflects.</p> <p>This field accepts only
+     * the specified formats. Timestamps can end with <code>Z</code> or <code>("+" /
+     * "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is
+     * limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are
+     * valid timestamp formats with examples:</p> <ul> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline AwsSecurityFindingFilters& WithCreatedAt(const Aws::Vector<DateFilter>& value) { SetCreatedAt(value); return *this;}
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security findings
-     * provider captured the potential security issue that a finding captured.</p> <p>A
-     * correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
-     * cannot contain spaces, and date and time should be separated by <code>T</code>.
-     * For more information, see <a
-     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>.</p>
+     * <p>A timestamp that indicates when the security findings provider created the
+     * potential security issue that a finding reflects.</p> <p>This field accepts only
+     * the specified formats. Timestamps can end with <code>Z</code> or <code>("+" /
+     * "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is
+     * limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are
+     * valid timestamp formats with examples:</p> <ul> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline AwsSecurityFindingFilters& WithCreatedAt(Aws::Vector<DateFilter>&& value) { SetCreatedAt(std::move(value)); return *this;}
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security findings
-     * provider captured the potential security issue that a finding captured.</p> <p>A
-     * correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
-     * cannot contain spaces, and date and time should be separated by <code>T</code>.
-     * For more information, see <a
-     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>.</p>
+     * <p>A timestamp that indicates when the security findings provider created the
+     * potential security issue that a finding reflects.</p> <p>This field accepts only
+     * the specified formats. Timestamps can end with <code>Z</code> or <code>("+" /
+     * "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is
+     * limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are
+     * valid timestamp formats with examples:</p> <ul> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline AwsSecurityFindingFilters& AddCreatedAt(const DateFilter& value) { m_createdAtHasBeenSet = true; m_createdAt.push_back(value); return *this; }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security findings
-     * provider captured the potential security issue that a finding captured.</p> <p>A
-     * correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
-     * cannot contain spaces, and date and time should be separated by <code>T</code>.
-     * For more information, see <a
-     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>.</p>
+     * <p>A timestamp that indicates when the security findings provider created the
+     * potential security issue that a finding reflects.</p> <p>This field accepts only
+     * the specified formats. Timestamps can end with <code>Z</code> or <code>("+" /
+     * "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is
+     * limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are
+     * valid timestamp formats with examples:</p> <ul> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline AwsSecurityFindingFilters& AddCreatedAt(DateFilter&& value) { m_createdAtHasBeenSet = true; m_createdAt.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security findings
-     * provider last updated the finding record. </p> <p>A correctly formatted example
-     * is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and
-     * date and time should be separated by <code>T</code>. For more information, see
-     * <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section
-     * 5.6, Internet Date/Time Format</a>.</p>
+     * <p>A timestamp that indicates when the security findings provider last updated
+     * the finding record.</p> <p>This field accepts only the specified formats.
+     * Timestamps can end with <code>Z</code> or <code>("+" / "-") time-hour [":"
+     * time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9
+     * digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with
+     * examples:</p> <ul> <li> <p> <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline const Aws::Vector<DateFilter>& GetUpdatedAt() const{ return m_updatedAt; }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security findings
-     * provider last updated the finding record. </p> <p>A correctly formatted example
-     * is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and
-     * date and time should be separated by <code>T</code>. For more information, see
-     * <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section
-     * 5.6, Internet Date/Time Format</a>.</p>
+     * <p>A timestamp that indicates when the security findings provider last updated
+     * the finding record.</p> <p>This field accepts only the specified formats.
+     * Timestamps can end with <code>Z</code> or <code>("+" / "-") time-hour [":"
+     * time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9
+     * digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with
+     * examples:</p> <ul> <li> <p> <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security findings
-     * provider last updated the finding record. </p> <p>A correctly formatted example
-     * is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and
-     * date and time should be separated by <code>T</code>. For more information, see
-     * <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section
-     * 5.6, Internet Date/Time Format</a>.</p>
+     * <p>A timestamp that indicates when the security findings provider last updated
+     * the finding record.</p> <p>This field accepts only the specified formats.
+     * Timestamps can end with <code>Z</code> or <code>("+" / "-") time-hour [":"
+     * time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9
+     * digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with
+     * examples:</p> <ul> <li> <p> <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline void SetUpdatedAt(const Aws::Vector<DateFilter>& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security findings
-     * provider last updated the finding record. </p> <p>A correctly formatted example
-     * is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and
-     * date and time should be separated by <code>T</code>. For more information, see
-     * <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section
-     * 5.6, Internet Date/Time Format</a>.</p>
+     * <p>A timestamp that indicates when the security findings provider last updated
+     * the finding record.</p> <p>This field accepts only the specified formats.
+     * Timestamps can end with <code>Z</code> or <code>("+" / "-") time-hour [":"
+     * time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9
+     * digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with
+     * examples:</p> <ul> <li> <p> <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline void SetUpdatedAt(Aws::Vector<DateFilter>&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security findings
-     * provider last updated the finding record. </p> <p>A correctly formatted example
-     * is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and
-     * date and time should be separated by <code>T</code>. For more information, see
-     * <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section
-     * 5.6, Internet Date/Time Format</a>.</p>
+     * <p>A timestamp that indicates when the security findings provider last updated
+     * the finding record.</p> <p>This field accepts only the specified formats.
+     * Timestamps can end with <code>Z</code> or <code>("+" / "-") time-hour [":"
+     * time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9
+     * digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with
+     * examples:</p> <ul> <li> <p> <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline AwsSecurityFindingFilters& WithUpdatedAt(const Aws::Vector<DateFilter>& value) { SetUpdatedAt(value); return *this;}
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security findings
-     * provider last updated the finding record. </p> <p>A correctly formatted example
-     * is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and
-     * date and time should be separated by <code>T</code>. For more information, see
-     * <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section
-     * 5.6, Internet Date/Time Format</a>.</p>
+     * <p>A timestamp that indicates when the security findings provider last updated
+     * the finding record.</p> <p>This field accepts only the specified formats.
+     * Timestamps can end with <code>Z</code> or <code>("+" / "-") time-hour [":"
+     * time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9
+     * digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with
+     * examples:</p> <ul> <li> <p> <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline AwsSecurityFindingFilters& WithUpdatedAt(Aws::Vector<DateFilter>&& value) { SetUpdatedAt(std::move(value)); return *this;}
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security findings
-     * provider last updated the finding record. </p> <p>A correctly formatted example
-     * is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and
-     * date and time should be separated by <code>T</code>. For more information, see
-     * <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section
-     * 5.6, Internet Date/Time Format</a>.</p>
+     * <p>A timestamp that indicates when the security findings provider last updated
+     * the finding record.</p> <p>This field accepts only the specified formats.
+     * Timestamps can end with <code>Z</code> or <code>("+" / "-") time-hour [":"
+     * time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9
+     * digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with
+     * examples:</p> <ul> <li> <p> <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline AwsSecurityFindingFilters& AddUpdatedAt(const DateFilter& value) { m_updatedAtHasBeenSet = true; m_updatedAt.push_back(value); return *this; }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security findings
-     * provider last updated the finding record. </p> <p>A correctly formatted example
-     * is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and
-     * date and time should be separated by <code>T</code>. For more information, see
-     * <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section
-     * 5.6, Internet Date/Time Format</a>.</p>
+     * <p>A timestamp that indicates when the security findings provider last updated
+     * the finding record.</p> <p>This field accepts only the specified formats.
+     * Timestamps can end with <code>Z</code> or <code>("+" / "-") time-hour [":"
+     * time-minute]</code>. The time-secfrac after seconds is limited to a maximum of 9
+     * digits. The offset is bounded by +/-18:00. Here are valid timestamp formats with
+     * examples:</p> <ul> <li> <p> <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline AwsSecurityFindingFilters& AddUpdatedAt(DateFilter&& value) { m_updatedAtHasBeenSet = true; m_updatedAt.push_back(std::move(value)); return *this; }
 
@@ -2022,163 +2310,307 @@ namespace Model
 
 
     /**
-     * <p>A timestamp that identifies when the process was launched.</p> <p>A correctly
-     * formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot
-     * contain spaces, and date and time should be separated by <code>T</code>. For
-     * more information, see <a
-     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>.</p>
+     * <p>A timestamp that identifies when the process was launched.</p> <p>This field
+     * accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after
+     * seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00.
+     * Here are valid timestamp formats with examples:</p> <ul> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline const Aws::Vector<DateFilter>& GetProcessLaunchedAt() const{ return m_processLaunchedAt; }
 
     /**
-     * <p>A timestamp that identifies when the process was launched.</p> <p>A correctly
-     * formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot
-     * contain spaces, and date and time should be separated by <code>T</code>. For
-     * more information, see <a
-     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>.</p>
+     * <p>A timestamp that identifies when the process was launched.</p> <p>This field
+     * accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after
+     * seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00.
+     * Here are valid timestamp formats with examples:</p> <ul> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline bool ProcessLaunchedAtHasBeenSet() const { return m_processLaunchedAtHasBeenSet; }
 
     /**
-     * <p>A timestamp that identifies when the process was launched.</p> <p>A correctly
-     * formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot
-     * contain spaces, and date and time should be separated by <code>T</code>. For
-     * more information, see <a
-     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>.</p>
+     * <p>A timestamp that identifies when the process was launched.</p> <p>This field
+     * accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after
+     * seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00.
+     * Here are valid timestamp formats with examples:</p> <ul> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline void SetProcessLaunchedAt(const Aws::Vector<DateFilter>& value) { m_processLaunchedAtHasBeenSet = true; m_processLaunchedAt = value; }
 
     /**
-     * <p>A timestamp that identifies when the process was launched.</p> <p>A correctly
-     * formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot
-     * contain spaces, and date and time should be separated by <code>T</code>. For
-     * more information, see <a
-     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>.</p>
+     * <p>A timestamp that identifies when the process was launched.</p> <p>This field
+     * accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after
+     * seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00.
+     * Here are valid timestamp formats with examples:</p> <ul> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline void SetProcessLaunchedAt(Aws::Vector<DateFilter>&& value) { m_processLaunchedAtHasBeenSet = true; m_processLaunchedAt = std::move(value); }
 
     /**
-     * <p>A timestamp that identifies when the process was launched.</p> <p>A correctly
-     * formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot
-     * contain spaces, and date and time should be separated by <code>T</code>. For
-     * more information, see <a
-     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>.</p>
+     * <p>A timestamp that identifies when the process was launched.</p> <p>This field
+     * accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after
+     * seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00.
+     * Here are valid timestamp formats with examples:</p> <ul> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline AwsSecurityFindingFilters& WithProcessLaunchedAt(const Aws::Vector<DateFilter>& value) { SetProcessLaunchedAt(value); return *this;}
 
     /**
-     * <p>A timestamp that identifies when the process was launched.</p> <p>A correctly
-     * formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot
-     * contain spaces, and date and time should be separated by <code>T</code>. For
-     * more information, see <a
-     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>.</p>
+     * <p>A timestamp that identifies when the process was launched.</p> <p>This field
+     * accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after
+     * seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00.
+     * Here are valid timestamp formats with examples:</p> <ul> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline AwsSecurityFindingFilters& WithProcessLaunchedAt(Aws::Vector<DateFilter>&& value) { SetProcessLaunchedAt(std::move(value)); return *this;}
 
     /**
-     * <p>A timestamp that identifies when the process was launched.</p> <p>A correctly
-     * formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot
-     * contain spaces, and date and time should be separated by <code>T</code>. For
-     * more information, see <a
-     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>.</p>
+     * <p>A timestamp that identifies when the process was launched.</p> <p>This field
+     * accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after
+     * seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00.
+     * Here are valid timestamp formats with examples:</p> <ul> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline AwsSecurityFindingFilters& AddProcessLaunchedAt(const DateFilter& value) { m_processLaunchedAtHasBeenSet = true; m_processLaunchedAt.push_back(value); return *this; }
 
     /**
-     * <p>A timestamp that identifies when the process was launched.</p> <p>A correctly
-     * formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value cannot
-     * contain spaces, and date and time should be separated by <code>T</code>. For
-     * more information, see <a
-     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>.</p>
+     * <p>A timestamp that identifies when the process was launched.</p> <p>This field
+     * accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after
+     * seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00.
+     * Here are valid timestamp formats with examples:</p> <ul> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline AwsSecurityFindingFilters& AddProcessLaunchedAt(DateFilter&& value) { m_processLaunchedAtHasBeenSet = true; m_processLaunchedAt.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>A timestamp that identifies when the process was terminated.</p> <p>A
-     * correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
-     * cannot contain spaces, and date and time should be separated by <code>T</code>.
-     * For more information, see <a
-     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>.</p>
+     * <p>A timestamp that identifies when the process was terminated.</p> <p>This
+     * field accepts only the specified formats. Timestamps can end with <code>Z</code>
+     * or <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after
+     * seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00.
+     * Here are valid timestamp formats with examples:</p> <ul> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline const Aws::Vector<DateFilter>& GetProcessTerminatedAt() const{ return m_processTerminatedAt; }
 
     /**
-     * <p>A timestamp that identifies when the process was terminated.</p> <p>A
-     * correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
-     * cannot contain spaces, and date and time should be separated by <code>T</code>.
-     * For more information, see <a
-     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>.</p>
+     * <p>A timestamp that identifies when the process was terminated.</p> <p>This
+     * field accepts only the specified formats. Timestamps can end with <code>Z</code>
+     * or <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after
+     * seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00.
+     * Here are valid timestamp formats with examples:</p> <ul> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline bool ProcessTerminatedAtHasBeenSet() const { return m_processTerminatedAtHasBeenSet; }
 
     /**
-     * <p>A timestamp that identifies when the process was terminated.</p> <p>A
-     * correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
-     * cannot contain spaces, and date and time should be separated by <code>T</code>.
-     * For more information, see <a
-     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>.</p>
+     * <p>A timestamp that identifies when the process was terminated.</p> <p>This
+     * field accepts only the specified formats. Timestamps can end with <code>Z</code>
+     * or <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after
+     * seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00.
+     * Here are valid timestamp formats with examples:</p> <ul> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline void SetProcessTerminatedAt(const Aws::Vector<DateFilter>& value) { m_processTerminatedAtHasBeenSet = true; m_processTerminatedAt = value; }
 
     /**
-     * <p>A timestamp that identifies when the process was terminated.</p> <p>A
-     * correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
-     * cannot contain spaces, and date and time should be separated by <code>T</code>.
-     * For more information, see <a
-     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>.</p>
+     * <p>A timestamp that identifies when the process was terminated.</p> <p>This
+     * field accepts only the specified formats. Timestamps can end with <code>Z</code>
+     * or <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after
+     * seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00.
+     * Here are valid timestamp formats with examples:</p> <ul> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline void SetProcessTerminatedAt(Aws::Vector<DateFilter>&& value) { m_processTerminatedAtHasBeenSet = true; m_processTerminatedAt = std::move(value); }
 
     /**
-     * <p>A timestamp that identifies when the process was terminated.</p> <p>A
-     * correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
-     * cannot contain spaces, and date and time should be separated by <code>T</code>.
-     * For more information, see <a
-     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>.</p>
+     * <p>A timestamp that identifies when the process was terminated.</p> <p>This
+     * field accepts only the specified formats. Timestamps can end with <code>Z</code>
+     * or <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after
+     * seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00.
+     * Here are valid timestamp formats with examples:</p> <ul> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline AwsSecurityFindingFilters& WithProcessTerminatedAt(const Aws::Vector<DateFilter>& value) { SetProcessTerminatedAt(value); return *this;}
 
     /**
-     * <p>A timestamp that identifies when the process was terminated.</p> <p>A
-     * correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
-     * cannot contain spaces, and date and time should be separated by <code>T</code>.
-     * For more information, see <a
-     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>.</p>
+     * <p>A timestamp that identifies when the process was terminated.</p> <p>This
+     * field accepts only the specified formats. Timestamps can end with <code>Z</code>
+     * or <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after
+     * seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00.
+     * Here are valid timestamp formats with examples:</p> <ul> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline AwsSecurityFindingFilters& WithProcessTerminatedAt(Aws::Vector<DateFilter>&& value) { SetProcessTerminatedAt(std::move(value)); return *this;}
 
     /**
-     * <p>A timestamp that identifies when the process was terminated.</p> <p>A
-     * correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
-     * cannot contain spaces, and date and time should be separated by <code>T</code>.
-     * For more information, see <a
-     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>.</p>
+     * <p>A timestamp that identifies when the process was terminated.</p> <p>This
+     * field accepts only the specified formats. Timestamps can end with <code>Z</code>
+     * or <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after
+     * seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00.
+     * Here are valid timestamp formats with examples:</p> <ul> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline AwsSecurityFindingFilters& AddProcessTerminatedAt(const DateFilter& value) { m_processTerminatedAtHasBeenSet = true; m_processTerminatedAt.push_back(value); return *this; }
 
     /**
-     * <p>A timestamp that identifies when the process was terminated.</p> <p>A
-     * correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
-     * cannot contain spaces, and date and time should be separated by <code>T</code>.
-     * For more information, see <a
-     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>.</p>
+     * <p>A timestamp that identifies when the process was terminated.</p> <p>This
+     * field accepts only the specified formats. Timestamps can end with <code>Z</code>
+     * or <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after
+     * seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00.
+     * Here are valid timestamp formats with examples:</p> <ul> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline AwsSecurityFindingFilters& AddProcessTerminatedAt(DateFilter&& value) { m_processTerminatedAtHasBeenSet = true; m_processTerminatedAt.push_back(std::move(value)); return *this; }
 
@@ -3405,82 +3837,154 @@ namespace Model
 
 
     /**
-     * <p>A timestamp that identifies when the container was started.</p> <p>A
-     * correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
-     * cannot contain spaces, and date and time should be separated by <code>T</code>.
-     * For more information, see <a
-     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>.</p>
+     * <p>A timestamp that identifies when the container was started.</p> <p>This field
+     * accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after
+     * seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00.
+     * Here are valid timestamp formats with examples:</p> <ul> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline const Aws::Vector<DateFilter>& GetResourceContainerLaunchedAt() const{ return m_resourceContainerLaunchedAt; }
 
     /**
-     * <p>A timestamp that identifies when the container was started.</p> <p>A
-     * correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
-     * cannot contain spaces, and date and time should be separated by <code>T</code>.
-     * For more information, see <a
-     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>.</p>
+     * <p>A timestamp that identifies when the container was started.</p> <p>This field
+     * accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after
+     * seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00.
+     * Here are valid timestamp formats with examples:</p> <ul> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline bool ResourceContainerLaunchedAtHasBeenSet() const { return m_resourceContainerLaunchedAtHasBeenSet; }
 
     /**
-     * <p>A timestamp that identifies when the container was started.</p> <p>A
-     * correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
-     * cannot contain spaces, and date and time should be separated by <code>T</code>.
-     * For more information, see <a
-     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>.</p>
+     * <p>A timestamp that identifies when the container was started.</p> <p>This field
+     * accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after
+     * seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00.
+     * Here are valid timestamp formats with examples:</p> <ul> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline void SetResourceContainerLaunchedAt(const Aws::Vector<DateFilter>& value) { m_resourceContainerLaunchedAtHasBeenSet = true; m_resourceContainerLaunchedAt = value; }
 
     /**
-     * <p>A timestamp that identifies when the container was started.</p> <p>A
-     * correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
-     * cannot contain spaces, and date and time should be separated by <code>T</code>.
-     * For more information, see <a
-     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>.</p>
+     * <p>A timestamp that identifies when the container was started.</p> <p>This field
+     * accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after
+     * seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00.
+     * Here are valid timestamp formats with examples:</p> <ul> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline void SetResourceContainerLaunchedAt(Aws::Vector<DateFilter>&& value) { m_resourceContainerLaunchedAtHasBeenSet = true; m_resourceContainerLaunchedAt = std::move(value); }
 
     /**
-     * <p>A timestamp that identifies when the container was started.</p> <p>A
-     * correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
-     * cannot contain spaces, and date and time should be separated by <code>T</code>.
-     * For more information, see <a
-     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>.</p>
+     * <p>A timestamp that identifies when the container was started.</p> <p>This field
+     * accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after
+     * seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00.
+     * Here are valid timestamp formats with examples:</p> <ul> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline AwsSecurityFindingFilters& WithResourceContainerLaunchedAt(const Aws::Vector<DateFilter>& value) { SetResourceContainerLaunchedAt(value); return *this;}
 
     /**
-     * <p>A timestamp that identifies when the container was started.</p> <p>A
-     * correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
-     * cannot contain spaces, and date and time should be separated by <code>T</code>.
-     * For more information, see <a
-     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>.</p>
+     * <p>A timestamp that identifies when the container was started.</p> <p>This field
+     * accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after
+     * seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00.
+     * Here are valid timestamp formats with examples:</p> <ul> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline AwsSecurityFindingFilters& WithResourceContainerLaunchedAt(Aws::Vector<DateFilter>&& value) { SetResourceContainerLaunchedAt(std::move(value)); return *this;}
 
     /**
-     * <p>A timestamp that identifies when the container was started.</p> <p>A
-     * correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
-     * cannot contain spaces, and date and time should be separated by <code>T</code>.
-     * For more information, see <a
-     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>.</p>
+     * <p>A timestamp that identifies when the container was started.</p> <p>This field
+     * accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after
+     * seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00.
+     * Here are valid timestamp formats with examples:</p> <ul> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline AwsSecurityFindingFilters& AddResourceContainerLaunchedAt(const DateFilter& value) { m_resourceContainerLaunchedAtHasBeenSet = true; m_resourceContainerLaunchedAt.push_back(value); return *this; }
 
     /**
-     * <p>A timestamp that identifies when the container was started.</p> <p>A
-     * correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
-     * cannot contain spaces, and date and time should be separated by <code>T</code>.
-     * For more information, see <a
-     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>.</p>
+     * <p>A timestamp that identifies when the container was started.</p> <p>This field
+     * accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after
+     * seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00.
+     * Here are valid timestamp formats with examples:</p> <ul> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline AwsSecurityFindingFilters& AddResourceContainerLaunchedAt(DateFilter&& value) { m_resourceContainerLaunchedAtHasBeenSet = true; m_resourceContainerLaunchedAt.push_back(std::move(value)); return *this; }
 

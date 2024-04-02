@@ -202,6 +202,25 @@ namespace Model
 
 
     /**
+     * <p>Specifies whether the view supports the SQL dialects of one or more different
+     * query engines and can therefore be read by those engines.</p>
+     */
+    inline bool GetIsMultiDialectView() const{ return m_isMultiDialectView; }
+
+    /**
+     * <p>Specifies whether the view supports the SQL dialects of one or more different
+     * query engines and can therefore be read by those engines.</p>
+     */
+    inline void SetIsMultiDialectView(bool value) { m_isMultiDialectView = value; }
+
+    /**
+     * <p>Specifies whether the view supports the SQL dialects of one or more different
+     * query engines and can therefore be read by those engines.</p>
+     */
+    inline GetUnfilteredTableMetadataResult& WithIsMultiDialectView(bool value) { SetIsMultiDialectView(value); return *this;}
+
+
+    /**
      * <p>The resource ARN of the parent resource extracted from the request.</p>
      */
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
@@ -235,6 +254,31 @@ namespace Model
      * <p>The resource ARN of the parent resource extracted from the request.</p>
      */
     inline GetUnfilteredTableMetadataResult& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
+
+
+    /**
+     * <p>A flag that instructs the engine not to push user-provided operations into
+     * the logical plan of the view during query planning. However, if set this flag
+     * does not guarantee that the engine will comply. Refer to the engine's
+     * documentation to understand the guarantees provided, if any.</p>
+     */
+    inline bool GetIsProtected() const{ return m_isProtected; }
+
+    /**
+     * <p>A flag that instructs the engine not to push user-provided operations into
+     * the logical plan of the view during query planning. However, if set this flag
+     * does not guarantee that the engine will comply. Refer to the engine's
+     * documentation to understand the guarantees provided, if any.</p>
+     */
+    inline void SetIsProtected(bool value) { m_isProtected = value; }
+
+    /**
+     * <p>A flag that instructs the engine not to push user-provided operations into
+     * the logical plan of the view during query planning. However, if set this flag
+     * does not guarantee that the engine will comply. Refer to the engine's
+     * documentation to understand the guarantees provided, if any.</p>
+     */
+    inline GetUnfilteredTableMetadataResult& WithIsProtected(bool value) { SetIsProtected(value); return *this;}
 
 
     /**
@@ -313,7 +357,11 @@ namespace Model
 
     Aws::String m_queryAuthorizationId;
 
+    bool m_isMultiDialectView;
+
     Aws::String m_resourceArn;
+
+    bool m_isProtected;
 
     Aws::Vector<Permission> m_permissions;
 

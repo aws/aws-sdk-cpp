@@ -337,89 +337,169 @@ namespace Model
 
     /**
      * <p> A timestamp that indicates when the potential security issue captured by a
-     * finding was first observed by the security findings product. </p> <p>Uses the
-     * <code>date-time</code> format specified in <a
-     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.</p> <p> Array Members: Minimum number of
-     * 1 item. Maximum number of 20 items. </p>
+     * finding was first observed by the security findings product. </p> <p>This field
+     * accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after
+     * seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00.
+     * Here are valid timestamp formats with examples:</p> <ul> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul> <p> Array
+     * Members: Minimum number of 1 item. Maximum number of 20 items. </p>
      */
     inline const Aws::Vector<DateFilter>& GetFirstObservedAt() const{ return m_firstObservedAt; }
 
     /**
      * <p> A timestamp that indicates when the potential security issue captured by a
-     * finding was first observed by the security findings product. </p> <p>Uses the
-     * <code>date-time</code> format specified in <a
-     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.</p> <p> Array Members: Minimum number of
-     * 1 item. Maximum number of 20 items. </p>
+     * finding was first observed by the security findings product. </p> <p>This field
+     * accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after
+     * seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00.
+     * Here are valid timestamp formats with examples:</p> <ul> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul> <p> Array
+     * Members: Minimum number of 1 item. Maximum number of 20 items. </p>
      */
     inline bool FirstObservedAtHasBeenSet() const { return m_firstObservedAtHasBeenSet; }
 
     /**
      * <p> A timestamp that indicates when the potential security issue captured by a
-     * finding was first observed by the security findings product. </p> <p>Uses the
-     * <code>date-time</code> format specified in <a
-     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.</p> <p> Array Members: Minimum number of
-     * 1 item. Maximum number of 20 items. </p>
+     * finding was first observed by the security findings product. </p> <p>This field
+     * accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after
+     * seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00.
+     * Here are valid timestamp formats with examples:</p> <ul> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul> <p> Array
+     * Members: Minimum number of 1 item. Maximum number of 20 items. </p>
      */
     inline void SetFirstObservedAt(const Aws::Vector<DateFilter>& value) { m_firstObservedAtHasBeenSet = true; m_firstObservedAt = value; }
 
     /**
      * <p> A timestamp that indicates when the potential security issue captured by a
-     * finding was first observed by the security findings product. </p> <p>Uses the
-     * <code>date-time</code> format specified in <a
-     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.</p> <p> Array Members: Minimum number of
-     * 1 item. Maximum number of 20 items. </p>
+     * finding was first observed by the security findings product. </p> <p>This field
+     * accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after
+     * seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00.
+     * Here are valid timestamp formats with examples:</p> <ul> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul> <p> Array
+     * Members: Minimum number of 1 item. Maximum number of 20 items. </p>
      */
     inline void SetFirstObservedAt(Aws::Vector<DateFilter>&& value) { m_firstObservedAtHasBeenSet = true; m_firstObservedAt = std::move(value); }
 
     /**
      * <p> A timestamp that indicates when the potential security issue captured by a
-     * finding was first observed by the security findings product. </p> <p>Uses the
-     * <code>date-time</code> format specified in <a
-     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.</p> <p> Array Members: Minimum number of
-     * 1 item. Maximum number of 20 items. </p>
+     * finding was first observed by the security findings product. </p> <p>This field
+     * accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after
+     * seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00.
+     * Here are valid timestamp formats with examples:</p> <ul> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul> <p> Array
+     * Members: Minimum number of 1 item. Maximum number of 20 items. </p>
      */
     inline AutomationRulesFindingFilters& WithFirstObservedAt(const Aws::Vector<DateFilter>& value) { SetFirstObservedAt(value); return *this;}
 
     /**
      * <p> A timestamp that indicates when the potential security issue captured by a
-     * finding was first observed by the security findings product. </p> <p>Uses the
-     * <code>date-time</code> format specified in <a
-     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.</p> <p> Array Members: Minimum number of
-     * 1 item. Maximum number of 20 items. </p>
+     * finding was first observed by the security findings product. </p> <p>This field
+     * accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after
+     * seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00.
+     * Here are valid timestamp formats with examples:</p> <ul> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul> <p> Array
+     * Members: Minimum number of 1 item. Maximum number of 20 items. </p>
      */
     inline AutomationRulesFindingFilters& WithFirstObservedAt(Aws::Vector<DateFilter>&& value) { SetFirstObservedAt(std::move(value)); return *this;}
 
     /**
      * <p> A timestamp that indicates when the potential security issue captured by a
-     * finding was first observed by the security findings product. </p> <p>Uses the
-     * <code>date-time</code> format specified in <a
-     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.</p> <p> Array Members: Minimum number of
-     * 1 item. Maximum number of 20 items. </p>
+     * finding was first observed by the security findings product. </p> <p>This field
+     * accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after
+     * seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00.
+     * Here are valid timestamp formats with examples:</p> <ul> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul> <p> Array
+     * Members: Minimum number of 1 item. Maximum number of 20 items. </p>
      */
     inline AutomationRulesFindingFilters& AddFirstObservedAt(const DateFilter& value) { m_firstObservedAtHasBeenSet = true; m_firstObservedAt.push_back(value); return *this; }
 
     /**
      * <p> A timestamp that indicates when the potential security issue captured by a
-     * finding was first observed by the security findings product. </p> <p>Uses the
-     * <code>date-time</code> format specified in <a
-     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.</p> <p> Array Members: Minimum number of
-     * 1 item. Maximum number of 20 items. </p>
+     * finding was first observed by the security findings product. </p> <p>This field
+     * accepts only the specified formats. Timestamps can end with <code>Z</code> or
+     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after
+     * seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00.
+     * Here are valid timestamp formats with examples:</p> <ul> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul> <p> Array
+     * Members: Minimum number of 1 item. Maximum number of 20 items. </p>
      */
     inline AutomationRulesFindingFilters& AddFirstObservedAt(DateFilter&& value) { m_firstObservedAtHasBeenSet = true; m_firstObservedAt.push_back(std::move(value)); return *this; }
 
@@ -427,250 +507,490 @@ namespace Model
     /**
      * <p> A timestamp that indicates when the potential security issue captured by a
      * finding was most recently observed by the security findings product. </p>
-     * <p>Uses the <code>date-time</code> format specified in <a
-     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.</p> <p> Array Members: Minimum number of
-     * 1 item. Maximum number of 20 items. </p>
+     * <p>This field accepts only the specified formats. Timestamps can end with
+     * <code>Z</code> or <code>("+" / "-") time-hour [":" time-minute]</code>. The
+     * time-secfrac after seconds is limited to a maximum of 9 digits. The offset is
+     * bounded by +/-18:00. Here are valid timestamp formats with examples:</p> <ul>
+     * <li> <p> <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul> <p> Array
+     * Members: Minimum number of 1 item. Maximum number of 20 items. </p>
      */
     inline const Aws::Vector<DateFilter>& GetLastObservedAt() const{ return m_lastObservedAt; }
 
     /**
      * <p> A timestamp that indicates when the potential security issue captured by a
      * finding was most recently observed by the security findings product. </p>
-     * <p>Uses the <code>date-time</code> format specified in <a
-     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.</p> <p> Array Members: Minimum number of
-     * 1 item. Maximum number of 20 items. </p>
+     * <p>This field accepts only the specified formats. Timestamps can end with
+     * <code>Z</code> or <code>("+" / "-") time-hour [":" time-minute]</code>. The
+     * time-secfrac after seconds is limited to a maximum of 9 digits. The offset is
+     * bounded by +/-18:00. Here are valid timestamp formats with examples:</p> <ul>
+     * <li> <p> <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul> <p> Array
+     * Members: Minimum number of 1 item. Maximum number of 20 items. </p>
      */
     inline bool LastObservedAtHasBeenSet() const { return m_lastObservedAtHasBeenSet; }
 
     /**
      * <p> A timestamp that indicates when the potential security issue captured by a
      * finding was most recently observed by the security findings product. </p>
-     * <p>Uses the <code>date-time</code> format specified in <a
-     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.</p> <p> Array Members: Minimum number of
-     * 1 item. Maximum number of 20 items. </p>
+     * <p>This field accepts only the specified formats. Timestamps can end with
+     * <code>Z</code> or <code>("+" / "-") time-hour [":" time-minute]</code>. The
+     * time-secfrac after seconds is limited to a maximum of 9 digits. The offset is
+     * bounded by +/-18:00. Here are valid timestamp formats with examples:</p> <ul>
+     * <li> <p> <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul> <p> Array
+     * Members: Minimum number of 1 item. Maximum number of 20 items. </p>
      */
     inline void SetLastObservedAt(const Aws::Vector<DateFilter>& value) { m_lastObservedAtHasBeenSet = true; m_lastObservedAt = value; }
 
     /**
      * <p> A timestamp that indicates when the potential security issue captured by a
      * finding was most recently observed by the security findings product. </p>
-     * <p>Uses the <code>date-time</code> format specified in <a
-     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.</p> <p> Array Members: Minimum number of
-     * 1 item. Maximum number of 20 items. </p>
+     * <p>This field accepts only the specified formats. Timestamps can end with
+     * <code>Z</code> or <code>("+" / "-") time-hour [":" time-minute]</code>. The
+     * time-secfrac after seconds is limited to a maximum of 9 digits. The offset is
+     * bounded by +/-18:00. Here are valid timestamp formats with examples:</p> <ul>
+     * <li> <p> <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul> <p> Array
+     * Members: Minimum number of 1 item. Maximum number of 20 items. </p>
      */
     inline void SetLastObservedAt(Aws::Vector<DateFilter>&& value) { m_lastObservedAtHasBeenSet = true; m_lastObservedAt = std::move(value); }
 
     /**
      * <p> A timestamp that indicates when the potential security issue captured by a
      * finding was most recently observed by the security findings product. </p>
-     * <p>Uses the <code>date-time</code> format specified in <a
-     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.</p> <p> Array Members: Minimum number of
-     * 1 item. Maximum number of 20 items. </p>
+     * <p>This field accepts only the specified formats. Timestamps can end with
+     * <code>Z</code> or <code>("+" / "-") time-hour [":" time-minute]</code>. The
+     * time-secfrac after seconds is limited to a maximum of 9 digits. The offset is
+     * bounded by +/-18:00. Here are valid timestamp formats with examples:</p> <ul>
+     * <li> <p> <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul> <p> Array
+     * Members: Minimum number of 1 item. Maximum number of 20 items. </p>
      */
     inline AutomationRulesFindingFilters& WithLastObservedAt(const Aws::Vector<DateFilter>& value) { SetLastObservedAt(value); return *this;}
 
     /**
      * <p> A timestamp that indicates when the potential security issue captured by a
      * finding was most recently observed by the security findings product. </p>
-     * <p>Uses the <code>date-time</code> format specified in <a
-     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.</p> <p> Array Members: Minimum number of
-     * 1 item. Maximum number of 20 items. </p>
+     * <p>This field accepts only the specified formats. Timestamps can end with
+     * <code>Z</code> or <code>("+" / "-") time-hour [":" time-minute]</code>. The
+     * time-secfrac after seconds is limited to a maximum of 9 digits. The offset is
+     * bounded by +/-18:00. Here are valid timestamp formats with examples:</p> <ul>
+     * <li> <p> <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul> <p> Array
+     * Members: Minimum number of 1 item. Maximum number of 20 items. </p>
      */
     inline AutomationRulesFindingFilters& WithLastObservedAt(Aws::Vector<DateFilter>&& value) { SetLastObservedAt(std::move(value)); return *this;}
 
     /**
      * <p> A timestamp that indicates when the potential security issue captured by a
      * finding was most recently observed by the security findings product. </p>
-     * <p>Uses the <code>date-time</code> format specified in <a
-     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.</p> <p> Array Members: Minimum number of
-     * 1 item. Maximum number of 20 items. </p>
+     * <p>This field accepts only the specified formats. Timestamps can end with
+     * <code>Z</code> or <code>("+" / "-") time-hour [":" time-minute]</code>. The
+     * time-secfrac after seconds is limited to a maximum of 9 digits. The offset is
+     * bounded by +/-18:00. Here are valid timestamp formats with examples:</p> <ul>
+     * <li> <p> <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul> <p> Array
+     * Members: Minimum number of 1 item. Maximum number of 20 items. </p>
      */
     inline AutomationRulesFindingFilters& AddLastObservedAt(const DateFilter& value) { m_lastObservedAtHasBeenSet = true; m_lastObservedAt.push_back(value); return *this; }
 
     /**
      * <p> A timestamp that indicates when the potential security issue captured by a
      * finding was most recently observed by the security findings product. </p>
-     * <p>Uses the <code>date-time</code> format specified in <a
-     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.</p> <p> Array Members: Minimum number of
-     * 1 item. Maximum number of 20 items. </p>
+     * <p>This field accepts only the specified formats. Timestamps can end with
+     * <code>Z</code> or <code>("+" / "-") time-hour [":" time-minute]</code>. The
+     * time-secfrac after seconds is limited to a maximum of 9 digits. The offset is
+     * bounded by +/-18:00. Here are valid timestamp formats with examples:</p> <ul>
+     * <li> <p> <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul> <p> Array
+     * Members: Minimum number of 1 item. Maximum number of 20 items. </p>
      */
     inline AutomationRulesFindingFilters& AddLastObservedAt(DateFilter&& value) { m_lastObservedAtHasBeenSet = true; m_lastObservedAt.push_back(std::move(value)); return *this; }
 
 
     /**
      * <p> A timestamp that indicates when this finding record was created. </p>
-     * <p>Uses the <code>date-time</code> format specified in <a
-     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.</p> <p> Array Members: Minimum number of
-     * 1 item. Maximum number of 20 items. </p>
+     * <p>This field accepts only the specified formats. Timestamps can end with
+     * <code>Z</code> or <code>("+" / "-") time-hour [":" time-minute]</code>. The
+     * time-secfrac after seconds is limited to a maximum of 9 digits. The offset is
+     * bounded by +/-18:00. Here are valid timestamp formats with examples:</p> <ul>
+     * <li> <p> <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul> <p> Array
+     * Members: Minimum number of 1 item. Maximum number of 20 items. </p>
      */
     inline const Aws::Vector<DateFilter>& GetCreatedAt() const{ return m_createdAt; }
 
     /**
      * <p> A timestamp that indicates when this finding record was created. </p>
-     * <p>Uses the <code>date-time</code> format specified in <a
-     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.</p> <p> Array Members: Minimum number of
-     * 1 item. Maximum number of 20 items. </p>
+     * <p>This field accepts only the specified formats. Timestamps can end with
+     * <code>Z</code> or <code>("+" / "-") time-hour [":" time-minute]</code>. The
+     * time-secfrac after seconds is limited to a maximum of 9 digits. The offset is
+     * bounded by +/-18:00. Here are valid timestamp formats with examples:</p> <ul>
+     * <li> <p> <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul> <p> Array
+     * Members: Minimum number of 1 item. Maximum number of 20 items. </p>
      */
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
 
     /**
      * <p> A timestamp that indicates when this finding record was created. </p>
-     * <p>Uses the <code>date-time</code> format specified in <a
-     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.</p> <p> Array Members: Minimum number of
-     * 1 item. Maximum number of 20 items. </p>
+     * <p>This field accepts only the specified formats. Timestamps can end with
+     * <code>Z</code> or <code>("+" / "-") time-hour [":" time-minute]</code>. The
+     * time-secfrac after seconds is limited to a maximum of 9 digits. The offset is
+     * bounded by +/-18:00. Here are valid timestamp formats with examples:</p> <ul>
+     * <li> <p> <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul> <p> Array
+     * Members: Minimum number of 1 item. Maximum number of 20 items. </p>
      */
     inline void SetCreatedAt(const Aws::Vector<DateFilter>& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
      * <p> A timestamp that indicates when this finding record was created. </p>
-     * <p>Uses the <code>date-time</code> format specified in <a
-     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.</p> <p> Array Members: Minimum number of
-     * 1 item. Maximum number of 20 items. </p>
+     * <p>This field accepts only the specified formats. Timestamps can end with
+     * <code>Z</code> or <code>("+" / "-") time-hour [":" time-minute]</code>. The
+     * time-secfrac after seconds is limited to a maximum of 9 digits. The offset is
+     * bounded by +/-18:00. Here are valid timestamp formats with examples:</p> <ul>
+     * <li> <p> <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul> <p> Array
+     * Members: Minimum number of 1 item. Maximum number of 20 items. </p>
      */
     inline void SetCreatedAt(Aws::Vector<DateFilter>&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
 
     /**
      * <p> A timestamp that indicates when this finding record was created. </p>
-     * <p>Uses the <code>date-time</code> format specified in <a
-     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.</p> <p> Array Members: Minimum number of
-     * 1 item. Maximum number of 20 items. </p>
+     * <p>This field accepts only the specified formats. Timestamps can end with
+     * <code>Z</code> or <code>("+" / "-") time-hour [":" time-minute]</code>. The
+     * time-secfrac after seconds is limited to a maximum of 9 digits. The offset is
+     * bounded by +/-18:00. Here are valid timestamp formats with examples:</p> <ul>
+     * <li> <p> <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul> <p> Array
+     * Members: Minimum number of 1 item. Maximum number of 20 items. </p>
      */
     inline AutomationRulesFindingFilters& WithCreatedAt(const Aws::Vector<DateFilter>& value) { SetCreatedAt(value); return *this;}
 
     /**
      * <p> A timestamp that indicates when this finding record was created. </p>
-     * <p>Uses the <code>date-time</code> format specified in <a
-     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.</p> <p> Array Members: Minimum number of
-     * 1 item. Maximum number of 20 items. </p>
+     * <p>This field accepts only the specified formats. Timestamps can end with
+     * <code>Z</code> or <code>("+" / "-") time-hour [":" time-minute]</code>. The
+     * time-secfrac after seconds is limited to a maximum of 9 digits. The offset is
+     * bounded by +/-18:00. Here are valid timestamp formats with examples:</p> <ul>
+     * <li> <p> <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul> <p> Array
+     * Members: Minimum number of 1 item. Maximum number of 20 items. </p>
      */
     inline AutomationRulesFindingFilters& WithCreatedAt(Aws::Vector<DateFilter>&& value) { SetCreatedAt(std::move(value)); return *this;}
 
     /**
      * <p> A timestamp that indicates when this finding record was created. </p>
-     * <p>Uses the <code>date-time</code> format specified in <a
-     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.</p> <p> Array Members: Minimum number of
-     * 1 item. Maximum number of 20 items. </p>
+     * <p>This field accepts only the specified formats. Timestamps can end with
+     * <code>Z</code> or <code>("+" / "-") time-hour [":" time-minute]</code>. The
+     * time-secfrac after seconds is limited to a maximum of 9 digits. The offset is
+     * bounded by +/-18:00. Here are valid timestamp formats with examples:</p> <ul>
+     * <li> <p> <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul> <p> Array
+     * Members: Minimum number of 1 item. Maximum number of 20 items. </p>
      */
     inline AutomationRulesFindingFilters& AddCreatedAt(const DateFilter& value) { m_createdAtHasBeenSet = true; m_createdAt.push_back(value); return *this; }
 
     /**
      * <p> A timestamp that indicates when this finding record was created. </p>
-     * <p>Uses the <code>date-time</code> format specified in <a
-     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.</p> <p> Array Members: Minimum number of
-     * 1 item. Maximum number of 20 items. </p>
+     * <p>This field accepts only the specified formats. Timestamps can end with
+     * <code>Z</code> or <code>("+" / "-") time-hour [":" time-minute]</code>. The
+     * time-secfrac after seconds is limited to a maximum of 9 digits. The offset is
+     * bounded by +/-18:00. Here are valid timestamp formats with examples:</p> <ul>
+     * <li> <p> <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul> <p> Array
+     * Members: Minimum number of 1 item. Maximum number of 20 items. </p>
      */
     inline AutomationRulesFindingFilters& AddCreatedAt(DateFilter&& value) { m_createdAtHasBeenSet = true; m_createdAt.push_back(std::move(value)); return *this; }
 
 
     /**
      * <p> A timestamp that indicates when the finding record was most recently
-     * updated. </p> <p>Uses the <code>date-time</code> format specified in <a
-     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.</p> <p> Array Members: Minimum number of
-     * 1 item. Maximum number of 20 items. </p>
+     * updated. </p> <p>This field accepts only the specified formats. Timestamps can
+     * end with <code>Z</code> or <code>("+" / "-") time-hour [":" time-minute]</code>.
+     * The time-secfrac after seconds is limited to a maximum of 9 digits. The offset
+     * is bounded by +/-18:00. Here are valid timestamp formats with examples:</p> <ul>
+     * <li> <p> <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul> <p> Array
+     * Members: Minimum number of 1 item. Maximum number of 20 items. </p>
      */
     inline const Aws::Vector<DateFilter>& GetUpdatedAt() const{ return m_updatedAt; }
 
     /**
      * <p> A timestamp that indicates when the finding record was most recently
-     * updated. </p> <p>Uses the <code>date-time</code> format specified in <a
-     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.</p> <p> Array Members: Minimum number of
-     * 1 item. Maximum number of 20 items. </p>
+     * updated. </p> <p>This field accepts only the specified formats. Timestamps can
+     * end with <code>Z</code> or <code>("+" / "-") time-hour [":" time-minute]</code>.
+     * The time-secfrac after seconds is limited to a maximum of 9 digits. The offset
+     * is bounded by +/-18:00. Here are valid timestamp formats with examples:</p> <ul>
+     * <li> <p> <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul> <p> Array
+     * Members: Minimum number of 1 item. Maximum number of 20 items. </p>
      */
     inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
 
     /**
      * <p> A timestamp that indicates when the finding record was most recently
-     * updated. </p> <p>Uses the <code>date-time</code> format specified in <a
-     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.</p> <p> Array Members: Minimum number of
-     * 1 item. Maximum number of 20 items. </p>
+     * updated. </p> <p>This field accepts only the specified formats. Timestamps can
+     * end with <code>Z</code> or <code>("+" / "-") time-hour [":" time-minute]</code>.
+     * The time-secfrac after seconds is limited to a maximum of 9 digits. The offset
+     * is bounded by +/-18:00. Here are valid timestamp formats with examples:</p> <ul>
+     * <li> <p> <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul> <p> Array
+     * Members: Minimum number of 1 item. Maximum number of 20 items. </p>
      */
     inline void SetUpdatedAt(const Aws::Vector<DateFilter>& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
 
     /**
      * <p> A timestamp that indicates when the finding record was most recently
-     * updated. </p> <p>Uses the <code>date-time</code> format specified in <a
-     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.</p> <p> Array Members: Minimum number of
-     * 1 item. Maximum number of 20 items. </p>
+     * updated. </p> <p>This field accepts only the specified formats. Timestamps can
+     * end with <code>Z</code> or <code>("+" / "-") time-hour [":" time-minute]</code>.
+     * The time-secfrac after seconds is limited to a maximum of 9 digits. The offset
+     * is bounded by +/-18:00. Here are valid timestamp formats with examples:</p> <ul>
+     * <li> <p> <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul> <p> Array
+     * Members: Minimum number of 1 item. Maximum number of 20 items. </p>
      */
     inline void SetUpdatedAt(Aws::Vector<DateFilter>&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
 
     /**
      * <p> A timestamp that indicates when the finding record was most recently
-     * updated. </p> <p>Uses the <code>date-time</code> format specified in <a
-     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.</p> <p> Array Members: Minimum number of
-     * 1 item. Maximum number of 20 items. </p>
+     * updated. </p> <p>This field accepts only the specified formats. Timestamps can
+     * end with <code>Z</code> or <code>("+" / "-") time-hour [":" time-minute]</code>.
+     * The time-secfrac after seconds is limited to a maximum of 9 digits. The offset
+     * is bounded by +/-18:00. Here are valid timestamp formats with examples:</p> <ul>
+     * <li> <p> <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul> <p> Array
+     * Members: Minimum number of 1 item. Maximum number of 20 items. </p>
      */
     inline AutomationRulesFindingFilters& WithUpdatedAt(const Aws::Vector<DateFilter>& value) { SetUpdatedAt(value); return *this;}
 
     /**
      * <p> A timestamp that indicates when the finding record was most recently
-     * updated. </p> <p>Uses the <code>date-time</code> format specified in <a
-     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.</p> <p> Array Members: Minimum number of
-     * 1 item. Maximum number of 20 items. </p>
+     * updated. </p> <p>This field accepts only the specified formats. Timestamps can
+     * end with <code>Z</code> or <code>("+" / "-") time-hour [":" time-minute]</code>.
+     * The time-secfrac after seconds is limited to a maximum of 9 digits. The offset
+     * is bounded by +/-18:00. Here are valid timestamp formats with examples:</p> <ul>
+     * <li> <p> <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul> <p> Array
+     * Members: Minimum number of 1 item. Maximum number of 20 items. </p>
      */
     inline AutomationRulesFindingFilters& WithUpdatedAt(Aws::Vector<DateFilter>&& value) { SetUpdatedAt(std::move(value)); return *this;}
 
     /**
      * <p> A timestamp that indicates when the finding record was most recently
-     * updated. </p> <p>Uses the <code>date-time</code> format specified in <a
-     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.</p> <p> Array Members: Minimum number of
-     * 1 item. Maximum number of 20 items. </p>
+     * updated. </p> <p>This field accepts only the specified formats. Timestamps can
+     * end with <code>Z</code> or <code>("+" / "-") time-hour [":" time-minute]</code>.
+     * The time-secfrac after seconds is limited to a maximum of 9 digits. The offset
+     * is bounded by +/-18:00. Here are valid timestamp formats with examples:</p> <ul>
+     * <li> <p> <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul> <p> Array
+     * Members: Minimum number of 1 item. Maximum number of 20 items. </p>
      */
     inline AutomationRulesFindingFilters& AddUpdatedAt(const DateFilter& value) { m_updatedAtHasBeenSet = true; m_updatedAt.push_back(value); return *this; }
 
     /**
      * <p> A timestamp that indicates when the finding record was most recently
-     * updated. </p> <p>Uses the <code>date-time</code> format specified in <a
-     * href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>. The value cannot contain spaces. For example,
-     * <code>2020-03-22T13:22:13.933Z</code>.</p> <p> Array Members: Minimum number of
-     * 1 item. Maximum number of 20 items. </p>
+     * updated. </p> <p>This field accepts only the specified formats. Timestamps can
+     * end with <code>Z</code> or <code>("+" / "-") time-hour [":" time-minute]</code>.
+     * The time-secfrac after seconds is limited to a maximum of 9 digits. The offset
+     * is bounded by +/-18:00. Here are valid timestamp formats with examples:</p> <ul>
+     * <li> <p> <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul> <p> Array
+     * Members: Minimum number of 1 item. Maximum number of 20 items. </p>
      */
     inline AutomationRulesFindingFilters& AddUpdatedAt(DateFilter&& value) { m_updatedAtHasBeenSet = true; m_updatedAt.push_back(std::move(value)); return *this; }
 
@@ -2075,73 +2395,161 @@ namespace Model
 
 
     /**
-     * <p> The timestamp of when the note was updated. Uses the date-time format
-     * specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC
-     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain
-     * spaces. For example, <code>2020-03-22T13:22:13.933Z</code>. </p> <p> Array
+     * <p> The timestamp of when the note was updated.</p> <p>This field accepts only
+     * the specified formats. Timestamps can end with <code>Z</code> or <code>("+" /
+     * "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is
+     * limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are
+     * valid timestamp formats with examples:</p> <ul> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul> <p> Array
      * Members: Minimum number of 1 item. Maximum number of 20 items. </p>
      */
     inline const Aws::Vector<DateFilter>& GetNoteUpdatedAt() const{ return m_noteUpdatedAt; }
 
     /**
-     * <p> The timestamp of when the note was updated. Uses the date-time format
-     * specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC
-     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain
-     * spaces. For example, <code>2020-03-22T13:22:13.933Z</code>. </p> <p> Array
+     * <p> The timestamp of when the note was updated.</p> <p>This field accepts only
+     * the specified formats. Timestamps can end with <code>Z</code> or <code>("+" /
+     * "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is
+     * limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are
+     * valid timestamp formats with examples:</p> <ul> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul> <p> Array
      * Members: Minimum number of 1 item. Maximum number of 20 items. </p>
      */
     inline bool NoteUpdatedAtHasBeenSet() const { return m_noteUpdatedAtHasBeenSet; }
 
     /**
-     * <p> The timestamp of when the note was updated. Uses the date-time format
-     * specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC
-     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain
-     * spaces. For example, <code>2020-03-22T13:22:13.933Z</code>. </p> <p> Array
+     * <p> The timestamp of when the note was updated.</p> <p>This field accepts only
+     * the specified formats. Timestamps can end with <code>Z</code> or <code>("+" /
+     * "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is
+     * limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are
+     * valid timestamp formats with examples:</p> <ul> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul> <p> Array
      * Members: Minimum number of 1 item. Maximum number of 20 items. </p>
      */
     inline void SetNoteUpdatedAt(const Aws::Vector<DateFilter>& value) { m_noteUpdatedAtHasBeenSet = true; m_noteUpdatedAt = value; }
 
     /**
-     * <p> The timestamp of when the note was updated. Uses the date-time format
-     * specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC
-     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain
-     * spaces. For example, <code>2020-03-22T13:22:13.933Z</code>. </p> <p> Array
+     * <p> The timestamp of when the note was updated.</p> <p>This field accepts only
+     * the specified formats. Timestamps can end with <code>Z</code> or <code>("+" /
+     * "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is
+     * limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are
+     * valid timestamp formats with examples:</p> <ul> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul> <p> Array
      * Members: Minimum number of 1 item. Maximum number of 20 items. </p>
      */
     inline void SetNoteUpdatedAt(Aws::Vector<DateFilter>&& value) { m_noteUpdatedAtHasBeenSet = true; m_noteUpdatedAt = std::move(value); }
 
     /**
-     * <p> The timestamp of when the note was updated. Uses the date-time format
-     * specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC
-     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain
-     * spaces. For example, <code>2020-03-22T13:22:13.933Z</code>. </p> <p> Array
+     * <p> The timestamp of when the note was updated.</p> <p>This field accepts only
+     * the specified formats. Timestamps can end with <code>Z</code> or <code>("+" /
+     * "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is
+     * limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are
+     * valid timestamp formats with examples:</p> <ul> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul> <p> Array
      * Members: Minimum number of 1 item. Maximum number of 20 items. </p>
      */
     inline AutomationRulesFindingFilters& WithNoteUpdatedAt(const Aws::Vector<DateFilter>& value) { SetNoteUpdatedAt(value); return *this;}
 
     /**
-     * <p> The timestamp of when the note was updated. Uses the date-time format
-     * specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC
-     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain
-     * spaces. For example, <code>2020-03-22T13:22:13.933Z</code>. </p> <p> Array
+     * <p> The timestamp of when the note was updated.</p> <p>This field accepts only
+     * the specified formats. Timestamps can end with <code>Z</code> or <code>("+" /
+     * "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is
+     * limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are
+     * valid timestamp formats with examples:</p> <ul> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul> <p> Array
      * Members: Minimum number of 1 item. Maximum number of 20 items. </p>
      */
     inline AutomationRulesFindingFilters& WithNoteUpdatedAt(Aws::Vector<DateFilter>&& value) { SetNoteUpdatedAt(std::move(value)); return *this;}
 
     /**
-     * <p> The timestamp of when the note was updated. Uses the date-time format
-     * specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC
-     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain
-     * spaces. For example, <code>2020-03-22T13:22:13.933Z</code>. </p> <p> Array
+     * <p> The timestamp of when the note was updated.</p> <p>This field accepts only
+     * the specified formats. Timestamps can end with <code>Z</code> or <code>("+" /
+     * "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is
+     * limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are
+     * valid timestamp formats with examples:</p> <ul> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul> <p> Array
      * Members: Minimum number of 1 item. Maximum number of 20 items. </p>
      */
     inline AutomationRulesFindingFilters& AddNoteUpdatedAt(const DateFilter& value) { m_noteUpdatedAtHasBeenSet = true; m_noteUpdatedAt.push_back(value); return *this; }
 
     /**
-     * <p> The timestamp of when the note was updated. Uses the date-time format
-     * specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC
-     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain
-     * spaces. For example, <code>2020-03-22T13:22:13.933Z</code>. </p> <p> Array
+     * <p> The timestamp of when the note was updated.</p> <p>This field accepts only
+     * the specified formats. Timestamps can end with <code>Z</code> or <code>("+" /
+     * "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is
+     * limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are
+     * valid timestamp formats with examples:</p> <ul> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul> <p> Array
      * Members: Minimum number of 1 item. Maximum number of 20 items. </p>
      */
     inline AutomationRulesFindingFilters& AddNoteUpdatedAt(DateFilter&& value) { m_noteUpdatedAtHasBeenSet = true; m_noteUpdatedAt.push_back(std::move(value)); return *this; }

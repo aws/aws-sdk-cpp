@@ -18,12 +18,16 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 GetUnfilteredTableMetadataResult::GetUnfilteredTableMetadataResult() : 
-    m_isRegisteredWithLakeFormation(false)
+    m_isRegisteredWithLakeFormation(false),
+    m_isMultiDialectView(false),
+    m_isProtected(false)
 {
 }
 
 GetUnfilteredTableMetadataResult::GetUnfilteredTableMetadataResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_isRegisteredWithLakeFormation(false)
+    m_isRegisteredWithLakeFormation(false),
+    m_isMultiDialectView(false),
+    m_isProtected(false)
 {
   *this = result;
 }
@@ -67,9 +71,21 @@ GetUnfilteredTableMetadataResult& GetUnfilteredTableMetadataResult::operator =(c
 
   }
 
+  if(jsonValue.ValueExists("IsMultiDialectView"))
+  {
+    m_isMultiDialectView = jsonValue.GetBool("IsMultiDialectView");
+
+  }
+
   if(jsonValue.ValueExists("ResourceArn"))
   {
     m_resourceArn = jsonValue.GetString("ResourceArn");
+
+  }
+
+  if(jsonValue.ValueExists("IsProtected"))
+  {
+    m_isProtected = jsonValue.GetBool("IsProtected");
 
   }
 

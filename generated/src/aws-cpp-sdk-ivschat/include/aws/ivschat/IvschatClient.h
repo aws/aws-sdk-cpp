@@ -30,16 +30,14 @@ namespace ivschat
    * Amazon IVS Chat API. We refer to these as <i>applications</i>.</p> </li> <li>
    * <p>You create front-end client applications (browser and Android/iOS apps) using
    * the Amazon IVS Chat Messaging API. We refer to these as <i>clients</i>. </p>
-   * </li> </ul> <p> <b>Resources</b> </p> <p>The following resources are part of
-   * Amazon IVS Chat:</p> <ul> <li> <p> <b>LoggingConfiguration</b> — A configuration
-   * that allows customers to store and record sent messages in a chat room. See the
-   * Logging Configuration endpoints for more information.</p> </li> <li> <p>
-   * <b>Room</b> — The central Amazon IVS Chat resource through which clients connect
-   * to and exchange chat messages. See the Room endpoints for more information.</p>
-   * </li> </ul> <p> <b>Tagging</b> </p> <p>A <i>tag</i> is a metadata label that you
-   * assign to an AWS resource. A tag comprises a <i>key</i> and a <i>value</i>, both
-   * set by you. For example, you might set a tag as <code>topic:nature</code> to
-   * label a particular video category. See <a
+   * </li> </ul> <p> <b>Key Concepts</b> </p> <ul> <li> <p>
+   * <b>LoggingConfiguration</b> — A configuration that allows customers to store and
+   * record sent messages in a chat room.</p> </li> <li> <p> <b>Room</b> — The
+   * central Amazon IVS Chat resource through which clients connect to and exchange
+   * chat messages.</p> </li> </ul> <p> <b>Tagging</b> </p> <p>A <i>tag</i> is a
+   * metadata label that you assign to an AWS resource. A tag comprises a <i>key</i>
+   * and a <i>value</i>, both set by you. For example, you might set a tag as
+   * <code>topic:nature</code> to label a particular video category. See <a
    * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
    * AWS Resources</a> for more information, including restrictions that apply to
    * tags and "Tag naming limits and requirements"; Amazon IVS Chat has no
