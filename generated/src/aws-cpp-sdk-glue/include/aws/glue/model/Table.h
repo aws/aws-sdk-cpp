@@ -12,6 +12,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/glue/model/TableIdentifier.h>
 #include <aws/glue/model/FederatedTable.h>
+#include <aws/glue/model/ViewDefinition.h>
 #include <aws/glue/model/Column.h>
 #include <utility>
 
@@ -948,6 +949,68 @@ namespace Model
      */
     inline Table& WithFederatedTable(FederatedTable&& value) { SetFederatedTable(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A structure that contains all the information that defines the view,
+     * including the dialect or dialects for the view, and the query.</p>
+     */
+    inline const ViewDefinition& GetViewDefinition() const{ return m_viewDefinition; }
+
+    /**
+     * <p>A structure that contains all the information that defines the view,
+     * including the dialect or dialects for the view, and the query.</p>
+     */
+    inline bool ViewDefinitionHasBeenSet() const { return m_viewDefinitionHasBeenSet; }
+
+    /**
+     * <p>A structure that contains all the information that defines the view,
+     * including the dialect or dialects for the view, and the query.</p>
+     */
+    inline void SetViewDefinition(const ViewDefinition& value) { m_viewDefinitionHasBeenSet = true; m_viewDefinition = value; }
+
+    /**
+     * <p>A structure that contains all the information that defines the view,
+     * including the dialect or dialects for the view, and the query.</p>
+     */
+    inline void SetViewDefinition(ViewDefinition&& value) { m_viewDefinitionHasBeenSet = true; m_viewDefinition = std::move(value); }
+
+    /**
+     * <p>A structure that contains all the information that defines the view,
+     * including the dialect or dialects for the view, and the query.</p>
+     */
+    inline Table& WithViewDefinition(const ViewDefinition& value) { SetViewDefinition(value); return *this;}
+
+    /**
+     * <p>A structure that contains all the information that defines the view,
+     * including the dialect or dialects for the view, and the query.</p>
+     */
+    inline Table& WithViewDefinition(ViewDefinition&& value) { SetViewDefinition(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Specifies whether the view supports the SQL dialects of one or more different
+     * query engines and can therefore be read by those engines.</p>
+     */
+    inline bool GetIsMultiDialectView() const{ return m_isMultiDialectView; }
+
+    /**
+     * <p>Specifies whether the view supports the SQL dialects of one or more different
+     * query engines and can therefore be read by those engines.</p>
+     */
+    inline bool IsMultiDialectViewHasBeenSet() const { return m_isMultiDialectViewHasBeenSet; }
+
+    /**
+     * <p>Specifies whether the view supports the SQL dialects of one or more different
+     * query engines and can therefore be read by those engines.</p>
+     */
+    inline void SetIsMultiDialectView(bool value) { m_isMultiDialectViewHasBeenSet = true; m_isMultiDialectView = value; }
+
+    /**
+     * <p>Specifies whether the view supports the SQL dialects of one or more different
+     * query engines and can therefore be read by those engines.</p>
+     */
+    inline Table& WithIsMultiDialectView(bool value) { SetIsMultiDialectView(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -1012,6 +1075,12 @@ namespace Model
 
     FederatedTable m_federatedTable;
     bool m_federatedTableHasBeenSet = false;
+
+    ViewDefinition m_viewDefinition;
+    bool m_viewDefinitionHasBeenSet = false;
+
+    bool m_isMultiDialectView;
+    bool m_isMultiDialectViewHasBeenSet = false;
   };
 
 } // namespace Model

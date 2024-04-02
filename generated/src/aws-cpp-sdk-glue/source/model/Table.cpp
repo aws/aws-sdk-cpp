@@ -41,7 +41,10 @@ Table::Table() :
     m_targetTableHasBeenSet(false),
     m_catalogIdHasBeenSet(false),
     m_versionIdHasBeenSet(false),
-    m_federatedTableHasBeenSet(false)
+    m_federatedTableHasBeenSet(false),
+    m_viewDefinitionHasBeenSet(false),
+    m_isMultiDialectView(false),
+    m_isMultiDialectViewHasBeenSet(false)
 {
 }
 
@@ -68,7 +71,10 @@ Table::Table(JsonView jsonValue) :
     m_targetTableHasBeenSet(false),
     m_catalogIdHasBeenSet(false),
     m_versionIdHasBeenSet(false),
-    m_federatedTableHasBeenSet(false)
+    m_federatedTableHasBeenSet(false),
+    m_viewDefinitionHasBeenSet(false),
+    m_isMultiDialectView(false),
+    m_isMultiDialectViewHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -228,6 +234,20 @@ Table& Table::operator =(JsonView jsonValue)
     m_federatedTableHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ViewDefinition"))
+  {
+    m_viewDefinition = jsonValue.GetObject("ViewDefinition");
+
+    m_viewDefinitionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("IsMultiDialectView"))
+  {
+    m_isMultiDialectView = jsonValue.GetBool("IsMultiDialectView");
+
+    m_isMultiDialectViewHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -364,6 +384,18 @@ JsonValue Table::Jsonize() const
   if(m_federatedTableHasBeenSet)
   {
    payload.WithObject("FederatedTable", m_federatedTable.Jsonize());
+
+  }
+
+  if(m_viewDefinitionHasBeenSet)
+  {
+   payload.WithObject("ViewDefinition", m_viewDefinition.Jsonize());
+
+  }
+
+  if(m_isMultiDialectViewHasBeenSet)
+  {
+   payload.WithBool("IsMultiDialectView", m_isMultiDialectView);
 
   }
 

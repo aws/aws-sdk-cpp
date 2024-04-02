@@ -54,267 +54,387 @@ namespace Model
 
 
     /**
-     * <p> An ISO 8601-formatted timestamp that indicates the start time of the
-     * requested finding history. A correctly formatted example is
-     * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
-     * and time should be separated by <code>T</code>. For more information, see <a
-     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>.</p> <p>If you provide values for both
-     * <code>StartTime</code> and <code>EndTime</code>, Security Hub returns finding
-     * history for the specified time period. If you provide a value for
-     * <code>StartTime</code> but not for <code>EndTime</code>, Security Hub returns
-     * finding history from the <code>StartTime</code> to the time at which the API is
-     * called. If you provide a value for <code>EndTime</code> but not for
-     * <code>StartTime</code>, Security Hub returns finding history from the <a
+     * <p>A timestamp that indicates the start time of the requested finding
+     * history.</p> <p>If you provide values for both <code>StartTime</code> and
+     * <code>EndTime</code>, Security Hub returns finding history for the specified
+     * time period. If you provide a value for <code>StartTime</code> but not for
+     * <code>EndTime</code>, Security Hub returns finding history from the
+     * <code>StartTime</code> to the time at which the API is called. If you provide a
+     * value for <code>EndTime</code> but not for <code>StartTime</code>, Security Hub
+     * returns finding history from the <a
      * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_AwsSecurityFindingFilters.html#securityhub-Type-AwsSecurityFindingFilters-CreatedAt">CreatedAt</a>
      * timestamp of the finding to the <code>EndTime</code>. If you provide neither
      * <code>StartTime</code> nor <code>EndTime</code>, Security Hub returns finding
      * history from the CreatedAt timestamp of the finding to the time at which the API
      * is called. In all of these scenarios, the response is limited to 100 results,
-     * and the maximum time period is limited to 90 days. </p>
+     * and the maximum time period is limited to 90 days.</p> <p>This field accepts
+     * only the specified formats. Timestamps can end with <code>Z</code> or <code>("+"
+     * / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is
+     * limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are
+     * valid timestamp formats with examples:</p> <ul> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
 
     /**
-     * <p> An ISO 8601-formatted timestamp that indicates the start time of the
-     * requested finding history. A correctly formatted example is
-     * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
-     * and time should be separated by <code>T</code>. For more information, see <a
-     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>.</p> <p>If you provide values for both
-     * <code>StartTime</code> and <code>EndTime</code>, Security Hub returns finding
-     * history for the specified time period. If you provide a value for
-     * <code>StartTime</code> but not for <code>EndTime</code>, Security Hub returns
-     * finding history from the <code>StartTime</code> to the time at which the API is
-     * called. If you provide a value for <code>EndTime</code> but not for
-     * <code>StartTime</code>, Security Hub returns finding history from the <a
+     * <p>A timestamp that indicates the start time of the requested finding
+     * history.</p> <p>If you provide values for both <code>StartTime</code> and
+     * <code>EndTime</code>, Security Hub returns finding history for the specified
+     * time period. If you provide a value for <code>StartTime</code> but not for
+     * <code>EndTime</code>, Security Hub returns finding history from the
+     * <code>StartTime</code> to the time at which the API is called. If you provide a
+     * value for <code>EndTime</code> but not for <code>StartTime</code>, Security Hub
+     * returns finding history from the <a
      * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_AwsSecurityFindingFilters.html#securityhub-Type-AwsSecurityFindingFilters-CreatedAt">CreatedAt</a>
      * timestamp of the finding to the <code>EndTime</code>. If you provide neither
      * <code>StartTime</code> nor <code>EndTime</code>, Security Hub returns finding
      * history from the CreatedAt timestamp of the finding to the time at which the API
      * is called. In all of these scenarios, the response is limited to 100 results,
-     * and the maximum time period is limited to 90 days. </p>
+     * and the maximum time period is limited to 90 days.</p> <p>This field accepts
+     * only the specified formats. Timestamps can end with <code>Z</code> or <code>("+"
+     * / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is
+     * limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are
+     * valid timestamp formats with examples:</p> <ul> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
 
     /**
-     * <p> An ISO 8601-formatted timestamp that indicates the start time of the
-     * requested finding history. A correctly formatted example is
-     * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
-     * and time should be separated by <code>T</code>. For more information, see <a
-     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>.</p> <p>If you provide values for both
-     * <code>StartTime</code> and <code>EndTime</code>, Security Hub returns finding
-     * history for the specified time period. If you provide a value for
-     * <code>StartTime</code> but not for <code>EndTime</code>, Security Hub returns
-     * finding history from the <code>StartTime</code> to the time at which the API is
-     * called. If you provide a value for <code>EndTime</code> but not for
-     * <code>StartTime</code>, Security Hub returns finding history from the <a
+     * <p>A timestamp that indicates the start time of the requested finding
+     * history.</p> <p>If you provide values for both <code>StartTime</code> and
+     * <code>EndTime</code>, Security Hub returns finding history for the specified
+     * time period. If you provide a value for <code>StartTime</code> but not for
+     * <code>EndTime</code>, Security Hub returns finding history from the
+     * <code>StartTime</code> to the time at which the API is called. If you provide a
+     * value for <code>EndTime</code> but not for <code>StartTime</code>, Security Hub
+     * returns finding history from the <a
      * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_AwsSecurityFindingFilters.html#securityhub-Type-AwsSecurityFindingFilters-CreatedAt">CreatedAt</a>
      * timestamp of the finding to the <code>EndTime</code>. If you provide neither
      * <code>StartTime</code> nor <code>EndTime</code>, Security Hub returns finding
      * history from the CreatedAt timestamp of the finding to the time at which the API
      * is called. In all of these scenarios, the response is limited to 100 results,
-     * and the maximum time period is limited to 90 days. </p>
+     * and the maximum time period is limited to 90 days.</p> <p>This field accepts
+     * only the specified formats. Timestamps can end with <code>Z</code> or <code>("+"
+     * / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is
+     * limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are
+     * valid timestamp formats with examples:</p> <ul> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
-     * <p> An ISO 8601-formatted timestamp that indicates the start time of the
-     * requested finding history. A correctly formatted example is
-     * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
-     * and time should be separated by <code>T</code>. For more information, see <a
-     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>.</p> <p>If you provide values for both
-     * <code>StartTime</code> and <code>EndTime</code>, Security Hub returns finding
-     * history for the specified time period. If you provide a value for
-     * <code>StartTime</code> but not for <code>EndTime</code>, Security Hub returns
-     * finding history from the <code>StartTime</code> to the time at which the API is
-     * called. If you provide a value for <code>EndTime</code> but not for
-     * <code>StartTime</code>, Security Hub returns finding history from the <a
+     * <p>A timestamp that indicates the start time of the requested finding
+     * history.</p> <p>If you provide values for both <code>StartTime</code> and
+     * <code>EndTime</code>, Security Hub returns finding history for the specified
+     * time period. If you provide a value for <code>StartTime</code> but not for
+     * <code>EndTime</code>, Security Hub returns finding history from the
+     * <code>StartTime</code> to the time at which the API is called. If you provide a
+     * value for <code>EndTime</code> but not for <code>StartTime</code>, Security Hub
+     * returns finding history from the <a
      * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_AwsSecurityFindingFilters.html#securityhub-Type-AwsSecurityFindingFilters-CreatedAt">CreatedAt</a>
      * timestamp of the finding to the <code>EndTime</code>. If you provide neither
      * <code>StartTime</code> nor <code>EndTime</code>, Security Hub returns finding
      * history from the CreatedAt timestamp of the finding to the time at which the API
      * is called. In all of these scenarios, the response is limited to 100 results,
-     * and the maximum time period is limited to 90 days. </p>
+     * and the maximum time period is limited to 90 days.</p> <p>This field accepts
+     * only the specified formats. Timestamps can end with <code>Z</code> or <code>("+"
+     * / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is
+     * limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are
+     * valid timestamp formats with examples:</p> <ul> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
 
     /**
-     * <p> An ISO 8601-formatted timestamp that indicates the start time of the
-     * requested finding history. A correctly formatted example is
-     * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
-     * and time should be separated by <code>T</code>. For more information, see <a
-     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>.</p> <p>If you provide values for both
-     * <code>StartTime</code> and <code>EndTime</code>, Security Hub returns finding
-     * history for the specified time period. If you provide a value for
-     * <code>StartTime</code> but not for <code>EndTime</code>, Security Hub returns
-     * finding history from the <code>StartTime</code> to the time at which the API is
-     * called. If you provide a value for <code>EndTime</code> but not for
-     * <code>StartTime</code>, Security Hub returns finding history from the <a
+     * <p>A timestamp that indicates the start time of the requested finding
+     * history.</p> <p>If you provide values for both <code>StartTime</code> and
+     * <code>EndTime</code>, Security Hub returns finding history for the specified
+     * time period. If you provide a value for <code>StartTime</code> but not for
+     * <code>EndTime</code>, Security Hub returns finding history from the
+     * <code>StartTime</code> to the time at which the API is called. If you provide a
+     * value for <code>EndTime</code> but not for <code>StartTime</code>, Security Hub
+     * returns finding history from the <a
      * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_AwsSecurityFindingFilters.html#securityhub-Type-AwsSecurityFindingFilters-CreatedAt">CreatedAt</a>
      * timestamp of the finding to the <code>EndTime</code>. If you provide neither
      * <code>StartTime</code> nor <code>EndTime</code>, Security Hub returns finding
      * history from the CreatedAt timestamp of the finding to the time at which the API
      * is called. In all of these scenarios, the response is limited to 100 results,
-     * and the maximum time period is limited to 90 days. </p>
+     * and the maximum time period is limited to 90 days.</p> <p>This field accepts
+     * only the specified formats. Timestamps can end with <code>Z</code> or <code>("+"
+     * / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is
+     * limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are
+     * valid timestamp formats with examples:</p> <ul> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline GetFindingHistoryRequest& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
 
     /**
-     * <p> An ISO 8601-formatted timestamp that indicates the start time of the
-     * requested finding history. A correctly formatted example is
-     * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
-     * and time should be separated by <code>T</code>. For more information, see <a
-     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>.</p> <p>If you provide values for both
-     * <code>StartTime</code> and <code>EndTime</code>, Security Hub returns finding
-     * history for the specified time period. If you provide a value for
-     * <code>StartTime</code> but not for <code>EndTime</code>, Security Hub returns
-     * finding history from the <code>StartTime</code> to the time at which the API is
-     * called. If you provide a value for <code>EndTime</code> but not for
-     * <code>StartTime</code>, Security Hub returns finding history from the <a
+     * <p>A timestamp that indicates the start time of the requested finding
+     * history.</p> <p>If you provide values for both <code>StartTime</code> and
+     * <code>EndTime</code>, Security Hub returns finding history for the specified
+     * time period. If you provide a value for <code>StartTime</code> but not for
+     * <code>EndTime</code>, Security Hub returns finding history from the
+     * <code>StartTime</code> to the time at which the API is called. If you provide a
+     * value for <code>EndTime</code> but not for <code>StartTime</code>, Security Hub
+     * returns finding history from the <a
      * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_AwsSecurityFindingFilters.html#securityhub-Type-AwsSecurityFindingFilters-CreatedAt">CreatedAt</a>
      * timestamp of the finding to the <code>EndTime</code>. If you provide neither
      * <code>StartTime</code> nor <code>EndTime</code>, Security Hub returns finding
      * history from the CreatedAt timestamp of the finding to the time at which the API
      * is called. In all of these scenarios, the response is limited to 100 results,
-     * and the maximum time period is limited to 90 days. </p>
+     * and the maximum time period is limited to 90 days.</p> <p>This field accepts
+     * only the specified formats. Timestamps can end with <code>Z</code> or <code>("+"
+     * / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is
+     * limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are
+     * valid timestamp formats with examples:</p> <ul> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline GetFindingHistoryRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
 
     /**
      * <p> An ISO 8601-formatted timestamp that indicates the end time of the requested
-     * finding history. A correctly formatted example is
-     * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
-     * and time should be separated by <code>T</code>. For more information, see <a
-     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>.</p> <p>If you provide values for both
-     * <code>StartTime</code> and <code>EndTime</code>, Security Hub returns finding
-     * history for the specified time period. If you provide a value for
-     * <code>StartTime</code> but not for <code>EndTime</code>, Security Hub returns
-     * finding history from the <code>StartTime</code> to the time at which the API is
-     * called. If you provide a value for <code>EndTime</code> but not for
-     * <code>StartTime</code>, Security Hub returns finding history from the <a
+     * finding history.</p> <p>If you provide values for both <code>StartTime</code>
+     * and <code>EndTime</code>, Security Hub returns finding history for the specified
+     * time period. If you provide a value for <code>StartTime</code> but not for
+     * <code>EndTime</code>, Security Hub returns finding history from the
+     * <code>StartTime</code> to the time at which the API is called. If you provide a
+     * value for <code>EndTime</code> but not for <code>StartTime</code>, Security Hub
+     * returns finding history from the <a
      * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_AwsSecurityFindingFilters.html#securityhub-Type-AwsSecurityFindingFilters-CreatedAt">CreatedAt</a>
      * timestamp of the finding to the <code>EndTime</code>. If you provide neither
      * <code>StartTime</code> nor <code>EndTime</code>, Security Hub returns finding
      * history from the CreatedAt timestamp of the finding to the time at which the API
      * is called. In all of these scenarios, the response is limited to 100 results,
-     * and the maximum time period is limited to 90 days.</p>
+     * and the maximum time period is limited to 90 days.</p> <p>This field accepts
+     * only the specified formats. Timestamps can end with <code>Z</code> or <code>("+"
+     * / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is
+     * limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are
+     * valid timestamp formats with examples:</p> <ul> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
 
     /**
      * <p> An ISO 8601-formatted timestamp that indicates the end time of the requested
-     * finding history. A correctly formatted example is
-     * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
-     * and time should be separated by <code>T</code>. For more information, see <a
-     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>.</p> <p>If you provide values for both
-     * <code>StartTime</code> and <code>EndTime</code>, Security Hub returns finding
-     * history for the specified time period. If you provide a value for
-     * <code>StartTime</code> but not for <code>EndTime</code>, Security Hub returns
-     * finding history from the <code>StartTime</code> to the time at which the API is
-     * called. If you provide a value for <code>EndTime</code> but not for
-     * <code>StartTime</code>, Security Hub returns finding history from the <a
+     * finding history.</p> <p>If you provide values for both <code>StartTime</code>
+     * and <code>EndTime</code>, Security Hub returns finding history for the specified
+     * time period. If you provide a value for <code>StartTime</code> but not for
+     * <code>EndTime</code>, Security Hub returns finding history from the
+     * <code>StartTime</code> to the time at which the API is called. If you provide a
+     * value for <code>EndTime</code> but not for <code>StartTime</code>, Security Hub
+     * returns finding history from the <a
      * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_AwsSecurityFindingFilters.html#securityhub-Type-AwsSecurityFindingFilters-CreatedAt">CreatedAt</a>
      * timestamp of the finding to the <code>EndTime</code>. If you provide neither
      * <code>StartTime</code> nor <code>EndTime</code>, Security Hub returns finding
      * history from the CreatedAt timestamp of the finding to the time at which the API
      * is called. In all of these scenarios, the response is limited to 100 results,
-     * and the maximum time period is limited to 90 days.</p>
+     * and the maximum time period is limited to 90 days.</p> <p>This field accepts
+     * only the specified formats. Timestamps can end with <code>Z</code> or <code>("+"
+     * / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is
+     * limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are
+     * valid timestamp formats with examples:</p> <ul> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
 
     /**
      * <p> An ISO 8601-formatted timestamp that indicates the end time of the requested
-     * finding history. A correctly formatted example is
-     * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
-     * and time should be separated by <code>T</code>. For more information, see <a
-     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>.</p> <p>If you provide values for both
-     * <code>StartTime</code> and <code>EndTime</code>, Security Hub returns finding
-     * history for the specified time period. If you provide a value for
-     * <code>StartTime</code> but not for <code>EndTime</code>, Security Hub returns
-     * finding history from the <code>StartTime</code> to the time at which the API is
-     * called. If you provide a value for <code>EndTime</code> but not for
-     * <code>StartTime</code>, Security Hub returns finding history from the <a
+     * finding history.</p> <p>If you provide values for both <code>StartTime</code>
+     * and <code>EndTime</code>, Security Hub returns finding history for the specified
+     * time period. If you provide a value for <code>StartTime</code> but not for
+     * <code>EndTime</code>, Security Hub returns finding history from the
+     * <code>StartTime</code> to the time at which the API is called. If you provide a
+     * value for <code>EndTime</code> but not for <code>StartTime</code>, Security Hub
+     * returns finding history from the <a
      * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_AwsSecurityFindingFilters.html#securityhub-Type-AwsSecurityFindingFilters-CreatedAt">CreatedAt</a>
      * timestamp of the finding to the <code>EndTime</code>. If you provide neither
      * <code>StartTime</code> nor <code>EndTime</code>, Security Hub returns finding
      * history from the CreatedAt timestamp of the finding to the time at which the API
      * is called. In all of these scenarios, the response is limited to 100 results,
-     * and the maximum time period is limited to 90 days.</p>
+     * and the maximum time period is limited to 90 days.</p> <p>This field accepts
+     * only the specified formats. Timestamps can end with <code>Z</code> or <code>("+"
+     * / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is
+     * limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are
+     * valid timestamp formats with examples:</p> <ul> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
      * <p> An ISO 8601-formatted timestamp that indicates the end time of the requested
-     * finding history. A correctly formatted example is
-     * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
-     * and time should be separated by <code>T</code>. For more information, see <a
-     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>.</p> <p>If you provide values for both
-     * <code>StartTime</code> and <code>EndTime</code>, Security Hub returns finding
-     * history for the specified time period. If you provide a value for
-     * <code>StartTime</code> but not for <code>EndTime</code>, Security Hub returns
-     * finding history from the <code>StartTime</code> to the time at which the API is
-     * called. If you provide a value for <code>EndTime</code> but not for
-     * <code>StartTime</code>, Security Hub returns finding history from the <a
+     * finding history.</p> <p>If you provide values for both <code>StartTime</code>
+     * and <code>EndTime</code>, Security Hub returns finding history for the specified
+     * time period. If you provide a value for <code>StartTime</code> but not for
+     * <code>EndTime</code>, Security Hub returns finding history from the
+     * <code>StartTime</code> to the time at which the API is called. If you provide a
+     * value for <code>EndTime</code> but not for <code>StartTime</code>, Security Hub
+     * returns finding history from the <a
      * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_AwsSecurityFindingFilters.html#securityhub-Type-AwsSecurityFindingFilters-CreatedAt">CreatedAt</a>
      * timestamp of the finding to the <code>EndTime</code>. If you provide neither
      * <code>StartTime</code> nor <code>EndTime</code>, Security Hub returns finding
      * history from the CreatedAt timestamp of the finding to the time at which the API
      * is called. In all of these scenarios, the response is limited to 100 results,
-     * and the maximum time period is limited to 90 days.</p>
+     * and the maximum time period is limited to 90 days.</p> <p>This field accepts
+     * only the specified formats. Timestamps can end with <code>Z</code> or <code>("+"
+     * / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is
+     * limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are
+     * valid timestamp formats with examples:</p> <ul> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
 
     /**
      * <p> An ISO 8601-formatted timestamp that indicates the end time of the requested
-     * finding history. A correctly formatted example is
-     * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
-     * and time should be separated by <code>T</code>. For more information, see <a
-     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>.</p> <p>If you provide values for both
-     * <code>StartTime</code> and <code>EndTime</code>, Security Hub returns finding
-     * history for the specified time period. If you provide a value for
-     * <code>StartTime</code> but not for <code>EndTime</code>, Security Hub returns
-     * finding history from the <code>StartTime</code> to the time at which the API is
-     * called. If you provide a value for <code>EndTime</code> but not for
-     * <code>StartTime</code>, Security Hub returns finding history from the <a
+     * finding history.</p> <p>If you provide values for both <code>StartTime</code>
+     * and <code>EndTime</code>, Security Hub returns finding history for the specified
+     * time period. If you provide a value for <code>StartTime</code> but not for
+     * <code>EndTime</code>, Security Hub returns finding history from the
+     * <code>StartTime</code> to the time at which the API is called. If you provide a
+     * value for <code>EndTime</code> but not for <code>StartTime</code>, Security Hub
+     * returns finding history from the <a
      * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_AwsSecurityFindingFilters.html#securityhub-Type-AwsSecurityFindingFilters-CreatedAt">CreatedAt</a>
      * timestamp of the finding to the <code>EndTime</code>. If you provide neither
      * <code>StartTime</code> nor <code>EndTime</code>, Security Hub returns finding
      * history from the CreatedAt timestamp of the finding to the time at which the API
      * is called. In all of these scenarios, the response is limited to 100 results,
-     * and the maximum time period is limited to 90 days.</p>
+     * and the maximum time period is limited to 90 days.</p> <p>This field accepts
+     * only the specified formats. Timestamps can end with <code>Z</code> or <code>("+"
+     * / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is
+     * limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are
+     * valid timestamp formats with examples:</p> <ul> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline GetFindingHistoryRequest& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
 
     /**
      * <p> An ISO 8601-formatted timestamp that indicates the end time of the requested
-     * finding history. A correctly formatted example is
-     * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
-     * and time should be separated by <code>T</code>. For more information, see <a
-     * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
-     * Internet Date/Time Format</a>.</p> <p>If you provide values for both
-     * <code>StartTime</code> and <code>EndTime</code>, Security Hub returns finding
-     * history for the specified time period. If you provide a value for
-     * <code>StartTime</code> but not for <code>EndTime</code>, Security Hub returns
-     * finding history from the <code>StartTime</code> to the time at which the API is
-     * called. If you provide a value for <code>EndTime</code> but not for
-     * <code>StartTime</code>, Security Hub returns finding history from the <a
+     * finding history.</p> <p>If you provide values for both <code>StartTime</code>
+     * and <code>EndTime</code>, Security Hub returns finding history for the specified
+     * time period. If you provide a value for <code>StartTime</code> but not for
+     * <code>EndTime</code>, Security Hub returns finding history from the
+     * <code>StartTime</code> to the time at which the API is called. If you provide a
+     * value for <code>EndTime</code> but not for <code>StartTime</code>, Security Hub
+     * returns finding history from the <a
      * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_AwsSecurityFindingFilters.html#securityhub-Type-AwsSecurityFindingFilters-CreatedAt">CreatedAt</a>
      * timestamp of the finding to the <code>EndTime</code>. If you provide neither
      * <code>StartTime</code> nor <code>EndTime</code>, Security Hub returns finding
      * history from the CreatedAt timestamp of the finding to the time at which the API
      * is called. In all of these scenarios, the response is limited to 100 results,
-     * and the maximum time period is limited to 90 days.</p>
+     * and the maximum time period is limited to 90 days.</p> <p>This field accepts
+     * only the specified formats. Timestamps can end with <code>Z</code> or <code>("+"
+     * / "-") time-hour [":" time-minute]</code>. The time-secfrac after seconds is
+     * limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are
+     * valid timestamp formats with examples:</p> <ul> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
+     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
+     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
+     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
+     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
+     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline GetFindingHistoryRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 

@@ -1193,25 +1193,18 @@ namespace Model
      * <p>The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full ARN of the task definition to run. If a
      * <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision
-     * is used.</p> <p>When you create a policy for run-task, you can set the resource
-     * to be the latest task definition revision, or a specific revision.</p> <p>The
-     * full ARN value must match the value that you specified as the
-     * <code>Resource</code> of the principal's permissions policy.</p> <p>When you
-     * specify the policy resource as the latest task definition version (by setting
-     * the <code>Resource</code> in the policy to
-     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>),
-     * then set this value to
-     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>.</p>
-     * <p>When you specify the policy resource as a specific task definition version
-     * (by setting the <code>Resource</code> in the policy to
-     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:1</code>
-     * or
-     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*</code>),
-     * then set this value to
-     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:1</code>.</p>
+     * is used.</p> <p>The full ARN value must match the value that you specified as
+     * the <code>Resource</code> of the principal's permissions policy.</p> <p>When you
+     * specify a task definition, you must either specify a specific revision, or all
+     * revisions in the ARN.</p> <p>To specify a specific revision, include the
+     * revision number in the ARN. For example, to specify revision 2, use
+     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:2</code>.</p>
+     * <p>To specify all revisions, use the wildcard (*) in the ARN. For example, to
+     * specify all revisions, use
+     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*</code>.</p>
      * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-resources">Policy
-     * Resources for Amazon ECS</a> in the Amazon Elastic Container Service developer
+     * Resources for Amazon ECS</a> in the Amazon Elastic Container Service Developer
      * Guide.</p>
      */
     inline const Aws::String& GetTaskDefinition() const{ return m_taskDefinition; }
@@ -1220,25 +1213,18 @@ namespace Model
      * <p>The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full ARN of the task definition to run. If a
      * <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision
-     * is used.</p> <p>When you create a policy for run-task, you can set the resource
-     * to be the latest task definition revision, or a specific revision.</p> <p>The
-     * full ARN value must match the value that you specified as the
-     * <code>Resource</code> of the principal's permissions policy.</p> <p>When you
-     * specify the policy resource as the latest task definition version (by setting
-     * the <code>Resource</code> in the policy to
-     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>),
-     * then set this value to
-     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>.</p>
-     * <p>When you specify the policy resource as a specific task definition version
-     * (by setting the <code>Resource</code> in the policy to
-     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:1</code>
-     * or
-     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*</code>),
-     * then set this value to
-     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:1</code>.</p>
+     * is used.</p> <p>The full ARN value must match the value that you specified as
+     * the <code>Resource</code> of the principal's permissions policy.</p> <p>When you
+     * specify a task definition, you must either specify a specific revision, or all
+     * revisions in the ARN.</p> <p>To specify a specific revision, include the
+     * revision number in the ARN. For example, to specify revision 2, use
+     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:2</code>.</p>
+     * <p>To specify all revisions, use the wildcard (*) in the ARN. For example, to
+     * specify all revisions, use
+     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*</code>.</p>
      * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-resources">Policy
-     * Resources for Amazon ECS</a> in the Amazon Elastic Container Service developer
+     * Resources for Amazon ECS</a> in the Amazon Elastic Container Service Developer
      * Guide.</p>
      */
     inline bool TaskDefinitionHasBeenSet() const { return m_taskDefinitionHasBeenSet; }
@@ -1247,25 +1233,18 @@ namespace Model
      * <p>The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full ARN of the task definition to run. If a
      * <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision
-     * is used.</p> <p>When you create a policy for run-task, you can set the resource
-     * to be the latest task definition revision, or a specific revision.</p> <p>The
-     * full ARN value must match the value that you specified as the
-     * <code>Resource</code> of the principal's permissions policy.</p> <p>When you
-     * specify the policy resource as the latest task definition version (by setting
-     * the <code>Resource</code> in the policy to
-     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>),
-     * then set this value to
-     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>.</p>
-     * <p>When you specify the policy resource as a specific task definition version
-     * (by setting the <code>Resource</code> in the policy to
-     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:1</code>
-     * or
-     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*</code>),
-     * then set this value to
-     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:1</code>.</p>
+     * is used.</p> <p>The full ARN value must match the value that you specified as
+     * the <code>Resource</code> of the principal's permissions policy.</p> <p>When you
+     * specify a task definition, you must either specify a specific revision, or all
+     * revisions in the ARN.</p> <p>To specify a specific revision, include the
+     * revision number in the ARN. For example, to specify revision 2, use
+     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:2</code>.</p>
+     * <p>To specify all revisions, use the wildcard (*) in the ARN. For example, to
+     * specify all revisions, use
+     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*</code>.</p>
      * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-resources">Policy
-     * Resources for Amazon ECS</a> in the Amazon Elastic Container Service developer
+     * Resources for Amazon ECS</a> in the Amazon Elastic Container Service Developer
      * Guide.</p>
      */
     inline void SetTaskDefinition(const Aws::String& value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition = value; }
@@ -1274,25 +1253,18 @@ namespace Model
      * <p>The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full ARN of the task definition to run. If a
      * <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision
-     * is used.</p> <p>When you create a policy for run-task, you can set the resource
-     * to be the latest task definition revision, or a specific revision.</p> <p>The
-     * full ARN value must match the value that you specified as the
-     * <code>Resource</code> of the principal's permissions policy.</p> <p>When you
-     * specify the policy resource as the latest task definition version (by setting
-     * the <code>Resource</code> in the policy to
-     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>),
-     * then set this value to
-     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>.</p>
-     * <p>When you specify the policy resource as a specific task definition version
-     * (by setting the <code>Resource</code> in the policy to
-     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:1</code>
-     * or
-     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*</code>),
-     * then set this value to
-     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:1</code>.</p>
+     * is used.</p> <p>The full ARN value must match the value that you specified as
+     * the <code>Resource</code> of the principal's permissions policy.</p> <p>When you
+     * specify a task definition, you must either specify a specific revision, or all
+     * revisions in the ARN.</p> <p>To specify a specific revision, include the
+     * revision number in the ARN. For example, to specify revision 2, use
+     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:2</code>.</p>
+     * <p>To specify all revisions, use the wildcard (*) in the ARN. For example, to
+     * specify all revisions, use
+     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*</code>.</p>
      * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-resources">Policy
-     * Resources for Amazon ECS</a> in the Amazon Elastic Container Service developer
+     * Resources for Amazon ECS</a> in the Amazon Elastic Container Service Developer
      * Guide.</p>
      */
     inline void SetTaskDefinition(Aws::String&& value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition = std::move(value); }
@@ -1301,25 +1273,18 @@ namespace Model
      * <p>The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full ARN of the task definition to run. If a
      * <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision
-     * is used.</p> <p>When you create a policy for run-task, you can set the resource
-     * to be the latest task definition revision, or a specific revision.</p> <p>The
-     * full ARN value must match the value that you specified as the
-     * <code>Resource</code> of the principal's permissions policy.</p> <p>When you
-     * specify the policy resource as the latest task definition version (by setting
-     * the <code>Resource</code> in the policy to
-     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>),
-     * then set this value to
-     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>.</p>
-     * <p>When you specify the policy resource as a specific task definition version
-     * (by setting the <code>Resource</code> in the policy to
-     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:1</code>
-     * or
-     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*</code>),
-     * then set this value to
-     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:1</code>.</p>
+     * is used.</p> <p>The full ARN value must match the value that you specified as
+     * the <code>Resource</code> of the principal's permissions policy.</p> <p>When you
+     * specify a task definition, you must either specify a specific revision, or all
+     * revisions in the ARN.</p> <p>To specify a specific revision, include the
+     * revision number in the ARN. For example, to specify revision 2, use
+     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:2</code>.</p>
+     * <p>To specify all revisions, use the wildcard (*) in the ARN. For example, to
+     * specify all revisions, use
+     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*</code>.</p>
      * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-resources">Policy
-     * Resources for Amazon ECS</a> in the Amazon Elastic Container Service developer
+     * Resources for Amazon ECS</a> in the Amazon Elastic Container Service Developer
      * Guide.</p>
      */
     inline void SetTaskDefinition(const char* value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition.assign(value); }
@@ -1328,25 +1293,18 @@ namespace Model
      * <p>The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full ARN of the task definition to run. If a
      * <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision
-     * is used.</p> <p>When you create a policy for run-task, you can set the resource
-     * to be the latest task definition revision, or a specific revision.</p> <p>The
-     * full ARN value must match the value that you specified as the
-     * <code>Resource</code> of the principal's permissions policy.</p> <p>When you
-     * specify the policy resource as the latest task definition version (by setting
-     * the <code>Resource</code> in the policy to
-     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>),
-     * then set this value to
-     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>.</p>
-     * <p>When you specify the policy resource as a specific task definition version
-     * (by setting the <code>Resource</code> in the policy to
-     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:1</code>
-     * or
-     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*</code>),
-     * then set this value to
-     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:1</code>.</p>
+     * is used.</p> <p>The full ARN value must match the value that you specified as
+     * the <code>Resource</code> of the principal's permissions policy.</p> <p>When you
+     * specify a task definition, you must either specify a specific revision, or all
+     * revisions in the ARN.</p> <p>To specify a specific revision, include the
+     * revision number in the ARN. For example, to specify revision 2, use
+     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:2</code>.</p>
+     * <p>To specify all revisions, use the wildcard (*) in the ARN. For example, to
+     * specify all revisions, use
+     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*</code>.</p>
      * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-resources">Policy
-     * Resources for Amazon ECS</a> in the Amazon Elastic Container Service developer
+     * Resources for Amazon ECS</a> in the Amazon Elastic Container Service Developer
      * Guide.</p>
      */
     inline RunTaskRequest& WithTaskDefinition(const Aws::String& value) { SetTaskDefinition(value); return *this;}
@@ -1355,25 +1313,18 @@ namespace Model
      * <p>The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full ARN of the task definition to run. If a
      * <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision
-     * is used.</p> <p>When you create a policy for run-task, you can set the resource
-     * to be the latest task definition revision, or a specific revision.</p> <p>The
-     * full ARN value must match the value that you specified as the
-     * <code>Resource</code> of the principal's permissions policy.</p> <p>When you
-     * specify the policy resource as the latest task definition version (by setting
-     * the <code>Resource</code> in the policy to
-     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>),
-     * then set this value to
-     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>.</p>
-     * <p>When you specify the policy resource as a specific task definition version
-     * (by setting the <code>Resource</code> in the policy to
-     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:1</code>
-     * or
-     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*</code>),
-     * then set this value to
-     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:1</code>.</p>
+     * is used.</p> <p>The full ARN value must match the value that you specified as
+     * the <code>Resource</code> of the principal's permissions policy.</p> <p>When you
+     * specify a task definition, you must either specify a specific revision, or all
+     * revisions in the ARN.</p> <p>To specify a specific revision, include the
+     * revision number in the ARN. For example, to specify revision 2, use
+     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:2</code>.</p>
+     * <p>To specify all revisions, use the wildcard (*) in the ARN. For example, to
+     * specify all revisions, use
+     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*</code>.</p>
      * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-resources">Policy
-     * Resources for Amazon ECS</a> in the Amazon Elastic Container Service developer
+     * Resources for Amazon ECS</a> in the Amazon Elastic Container Service Developer
      * Guide.</p>
      */
     inline RunTaskRequest& WithTaskDefinition(Aws::String&& value) { SetTaskDefinition(std::move(value)); return *this;}
@@ -1382,25 +1333,18 @@ namespace Model
      * <p>The <code>family</code> and <code>revision</code>
      * (<code>family:revision</code>) or full ARN of the task definition to run. If a
      * <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision
-     * is used.</p> <p>When you create a policy for run-task, you can set the resource
-     * to be the latest task definition revision, or a specific revision.</p> <p>The
-     * full ARN value must match the value that you specified as the
-     * <code>Resource</code> of the principal's permissions policy.</p> <p>When you
-     * specify the policy resource as the latest task definition version (by setting
-     * the <code>Resource</code> in the policy to
-     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>),
-     * then set this value to
-     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>.</p>
-     * <p>When you specify the policy resource as a specific task definition version
-     * (by setting the <code>Resource</code> in the policy to
-     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:1</code>
-     * or
-     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*</code>),
-     * then set this value to
-     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:1</code>.</p>
+     * is used.</p> <p>The full ARN value must match the value that you specified as
+     * the <code>Resource</code> of the principal's permissions policy.</p> <p>When you
+     * specify a task definition, you must either specify a specific revision, or all
+     * revisions in the ARN.</p> <p>To specify a specific revision, include the
+     * revision number in the ARN. For example, to specify revision 2, use
+     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:2</code>.</p>
+     * <p>To specify all revisions, use the wildcard (*) in the ARN. For example, to
+     * specify all revisions, use
+     * <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*</code>.</p>
      * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-resources">Policy
-     * Resources for Amazon ECS</a> in the Amazon Elastic Container Service developer
+     * Resources for Amazon ECS</a> in the Amazon Elastic Container Service Developer
      * Guide.</p>
      */
     inline RunTaskRequest& WithTaskDefinition(const char* value) { SetTaskDefinition(value); return *this;}
